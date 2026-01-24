@@ -1,0 +1,681 @@
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
+import {
+  Send,
+  Bot,
+  User,
+  Sparkles,
+  BookOpen,
+  HelpCircle,
+  Lightbulb,
+  Target,
+  Brain,
+  Trash2,
+  Copy,
+  Check,
+  ChevronRight,
+  TrendingUp,
+  Zap,
+} from 'lucide-react';
+import { useAuth } from '../../hooks/useAuth';
+import { useStudy } from '../../hooks/useStudy';
+import { CPA_SECTIONS } from '../../config/examConfig';
+import {
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  limit,
+  getDocs,
+} from 'firebase/firestore';
+import { db } from '../../config/firebase';
+import { generateAIResponse } from '../../services/aiService';
+import clsx from 'clsx';
+
+// AI Tutor Modes
+const TUTOR_MODES = {
+  explain: {
+    id: 'explain',
+    label: 'Explain',
+    icon: BookOpen,
+    description: 'Get clear explanations',
+    color: 'primary',
+  },
+  socratic: {
+    id: 'socratic',
+    label: 'Guide Me',
+    icon: Brain,
+    description: 'Learn by thinking',
+    color: 'success',
+  },
+  quiz: {
+    id: 'quiz',
+    label: 'Quiz Me',
+    icon: Target,
+    description: 'Test your knowledge',
+    color: 'warning',
+  },
+};
+
+// Smart prompts based on user's weak areas
+const getSmartPrompts = (weakAreas = [], section = 'REG') => {
+  const basePrompts = [
+    {
+      icon: HelpCircle,
+      text: "What's the difference between a finance lease and an operating lease?",
+      category: 'Concept',
+      topics: ['far-leases'],
+    },
+    {
+      icon: Lightbulb,
+      text: 'Give me a mnemonic for remembering the S-Corp requirements',
+      category: 'Memory Tip',
+      topics: ['reg-business-tax'],
+    },
+    {
+      icon: Target,
+      text: 'Walk me through calculating adjusted basis in a partnership',
+      category: 'Step-by-Step',
+      topics: ['reg-business-tax'],
+    },
+    {
+      icon: TrendingUp,
+      text: 'What are the most tested topics on the ' + section + ' exam?',
+      category: 'High-Yield',
+      topics: [],
+    },
+  ];
+
+  // Add weak area prompt if available
+  if (weakAreas.length > 0) {
+    const weakTopic = weakAreas[0];
+    basePrompts.unshift({
+      icon: Zap,
+      text: `Help me understand ${weakTopic.name} better - I keep getting questions wrong`,
+      category: 'Weak Area',
+      topics: [weakTopic.id],
+      priority: true,
+    });
+  }
+
+  return basePrompts.slice(0, 4);
+};
+
+const AITutor = () => {
+  const { user, userProfile } = useAuth();
+  const { weeklyStats } = useStudy();
+  const location = useLocation();
+
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [copiedId, setCopiedId] = useState(null);
+  const [tutorMode, setTutorMode] = useState('explain');
+  const [conversationId, setConversationId] = useState(null);
+  const [weakAreas, setWeakAreas] = useState([]);
+  const [memoryLoaded, setMemoryLoaded] = useState(false);
+  const [contextFromPractice, setContextFromPractice] = useState(null);
+
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
+
+  const currentSection = userProfile?.examSection || 'REG';
+  const sectionInfo = CPA_SECTIONS[currentSection];
+
+  // Check for context passed from Practice page
+  useEffect(() => {
+    if (location.state?.context) {
+      setContextFromPractice(location.state.context);
+      // Clear the state so it doesn't persist on refresh
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
+  // Load user's weak areas and conversation history
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    const loadMemory = async () => {
+      try {
+        // Load weak areas from progress
+        const progressRef = doc(db, 'users', user.uid, 'progress', 'topics');
+        const progressSnap = await getDoc(progressRef);
+
+        if (progressSnap.exists()) {
+          const data = progressSnap.data();
+          const weak = Object.entries(data)
+            .filter(([_, v]) => v.attempted >= 3 && v.correct / v.attempted < 0.7)
+            .sort((a, b) => a[1].correct / a[1].attempted - b[1].correct / b[1].attempted)
+            .slice(0, 3)
+            .map(([id, v]) => ({
+              id,
+              name: v.name || id,
+              accuracy: Math.round((v.correct / v.attempted) * 100),
+            }));
+          setWeakAreas(weak);
+        }
+
+        // Load recent conversation
+        const convRef = collection(db, 'users', user.uid, 'conversations');
+        const convQuery = query(convRef, orderBy('updatedAt', 'desc'), limit(1));
+        const convSnap = await getDocs(convQuery);
+
+        if (!convSnap.empty) {
+          const recentConv = convSnap.docs[0];
+          const convData = recentConv.data();
+
+          // If conversation is less than 24 hours old, restore it
+          const hoursSince = (Date.now() - convData.updatedAt?.toMillis()) / (1000 * 60 * 60);
+          if (hoursSince < 24 && convData.messages?.length > 0) {
+            setConversationId(recentConv.id);
+            setMessages(
+              convData.messages.map((m) => ({
+                ...m,
+                timestamp: m.timestamp?.toDate?.() || new Date(m.timestamp),
+              }))
+            );
+            setMemoryLoaded(true);
+            return;
+          }
+        }
+
+        setMemoryLoaded(true);
+      } catch (error) {
+        console.error('Error loading AI memory:', error);
+        setMemoryLoaded(true);
+      }
+    };
+
+    loadMemory();
+  }, [user?.uid]);
+
+  // Show greeting after memory loads
+  useEffect(() => {
+    if (!memoryLoaded || messages.length > 0) return;
+
+    const greeting = buildGreeting();
+    setMessages([
+      {
+        id: 'greeting',
+        role: 'assistant',
+        content: greeting,
+        timestamp: new Date(),
+      },
+    ]);
+  }, [memoryLoaded]);
+
+  // Auto-send context from Practice page if present
+  useEffect(() => {
+    if (contextFromPractice && memoryLoaded && messages.length > 0 && !isLoading) {
+      // Auto-submit the question from practice
+      setInput(contextFromPractice);
+      setContextFromPractice(null);
+      // Small delay to let UI update, then send
+      setTimeout(() => {
+        handleSendWithContext(contextFromPractice);
+      }, 500);
+    }
+  }, [contextFromPractice, memoryLoaded, messages.length, isLoading]);
+
+  // Send message with direct context (for auto-send)
+  const handleSendWithContext = async (contextMessage) => {
+    if (!contextMessage.trim() || isLoading) return;
+
+    const userMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: contextMessage.trim(),
+      timestamp: new Date(),
+    };
+
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const response = await generateAIResponse(contextMessage.trim(), {
+        mode: tutorMode,
+        section: currentSection,
+        history: newMessages.slice(-6),
+        weakAreas,
+      });
+
+      const assistantMessage = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: response,
+        timestamp: new Date(),
+      };
+
+      const updatedMessages = [...newMessages, assistantMessage];
+      setMessages(updatedMessages);
+      saveConversation(updatedMessages);
+    } catch (error) {
+      console.error('AI response error:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content:
+            "I'm sorry, I had trouble processing that. Could you try rephrasing your question?",
+          timestamp: new Date(),
+          error: true,
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Auto-scroll to bottom
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // Save conversation to Firestore
+  const saveConversation = useCallback(
+    async (newMessages) => {
+      if (!user?.uid || newMessages.length <= 1) return;
+
+      try {
+        const convData = {
+          messages: newMessages.map((m) => ({
+            ...m,
+            timestamp: m.timestamp instanceof Date ? m.timestamp : new Date(),
+          })),
+          section: currentSection,
+          mode: tutorMode,
+          updatedAt: new Date(),
+        };
+
+        if (conversationId) {
+          await setDoc(doc(db, 'users', user.uid, 'conversations', conversationId), convData);
+        } else {
+          const newConvRef = await addDoc(collection(db, 'users', user.uid, 'conversations'), {
+            ...convData,
+            createdAt: new Date(),
+          });
+          setConversationId(newConvRef.id);
+        }
+      } catch (error) {
+        console.error('Error saving conversation:', error);
+      }
+    },
+    [user?.uid, conversationId, currentSection, tutorMode]
+  );
+
+  // Build personalized greeting
+  const buildGreeting = () => {
+    const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+
+    let message = `${greeting}, ${firstName}! I'm your AI study companion for **${sectionInfo?.shortName || 'the CPA exam'}**. 🎓\n\n`;
+
+    // Add context about weak areas
+    if (weakAreas.length > 0) {
+      message += `I noticed you're working on improving in **${weakAreas[0].name}** (${weakAreas[0].accuracy}% accuracy). I can help you strengthen that!\n\n`;
+    }
+
+    // Add context about study stats
+    if (weeklyStats?.totalQuestions > 0) {
+      message += `You've answered **${weeklyStats.totalQuestions} questions** this week with ${weeklyStats.accuracy}% accuracy. `;
+      if (weeklyStats.accuracy >= 75) {
+        message += `Great progress! 💪\n\n`;
+      } else {
+        message += `Let's work on getting that higher!\n\n`;
+      }
+    }
+
+    message += `**Choose how you'd like to learn:**\n• **Explain** - I'll give you clear, complete explanations\n• **Guide Me** - I'll ask questions to help you think through problems (Socratic method)\n• **Quiz Me** - I'll test your knowledge with questions\n\nWhat would you like to explore?`;
+
+    return message;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: input.trim(),
+      timestamp: new Date(),
+    };
+
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      // Call real AI service
+      const aiResponse = await generateAIResponse(
+        input.trim(),
+        tutorMode,
+        weakAreas,
+        currentSection,
+        messages
+      );
+
+      const finalMessages = [
+        ...newMessages,
+        {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: aiResponse,
+          timestamp: new Date(),
+        },
+      ];
+      setMessages(finalMessages);
+      saveConversation(finalMessages);
+    } catch (error) {
+      console.error('AI response error:', error);
+      const errorMessages = [
+        ...newMessages,
+        {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: "I'm having trouble connecting right now. Please try again in a moment.",
+          timestamp: new Date(),
+        },
+      ];
+      setMessages(errorMessages);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSuggestedPrompt = (prompt) => {
+    setInput(prompt);
+    inputRef.current?.focus();
+  };
+
+  const copyToClipboard = async (text, messageId) => {
+    await navigator.clipboard.writeText(text);
+    setCopiedId(messageId);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const clearChat = () => {
+    setConversationId(null);
+    setMessages([
+      {
+        id: 'greeting',
+        role: 'assistant',
+        content: `Fresh start! ${buildGreeting().split('\n\n').slice(1).join('\n\n')}`,
+        timestamp: new Date(),
+      },
+    ]);
+  };
+
+  const smartPrompts = getSmartPrompts(weakAreas, currentSection);
+
+  return (
+    <div className="h-[calc(100vh-8rem)] flex flex-col bg-slate-50 page-enter">
+      {/* Header */}
+      <div className="bg-white border-b border-slate-100 px-4 py-3">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h1 className="font-semibold text-slate-900">AI Tutor</h1>
+                <p className="text-xs text-slate-500">Powered by your study history</p>
+              </div>
+            </div>
+            <button
+              onClick={clearChat}
+              className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+              title="New conversation"
+            >
+              <Trash2 className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Mode Selector */}
+          <div className="flex gap-2">
+            {Object.values(TUTOR_MODES).map((mode) => {
+              const Icon = mode.icon;
+              const isActive = tutorMode === mode.id;
+              return (
+                <button
+                  key={mode.id}
+                  onClick={() => setTutorMode(mode.id)}
+                  className={clsx(
+                    'flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all',
+                    isActive
+                      ? mode.color === 'primary'
+                        ? 'bg-primary-100 text-primary-700'
+                        : mode.color === 'success'
+                          ? 'bg-success-100 text-success-700'
+                          : 'bg-warning-100 text-warning-700'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  )}
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{mode.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto p-4">
+        <div className="max-w-3xl mx-auto space-y-4">
+          {messages.map((message, index) => (
+            <div
+              key={message.id}
+              className={clsx(
+                'flex gap-3 stagger-item',
+                message.role === 'user' && 'flex-row-reverse'
+              )}
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
+              {/* Avatar */}
+              <div
+                className={clsx(
+                  'w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 shadow-soft',
+                  message.role === 'assistant'
+                    ? 'bg-gradient-to-br from-primary-500 to-primary-600'
+                    : 'bg-slate-700'
+                )}
+              >
+                {message.role === 'assistant' ? (
+                  <Sparkles className="w-4 h-4 text-white" />
+                ) : (
+                  <User className="w-4 h-4 text-white" />
+                )}
+              </div>
+
+              {/* Message Bubble */}
+              <div
+                className={clsx(
+                  'flex-1 max-w-[85%]',
+                  message.role === 'user' && 'flex flex-col items-end'
+                )}
+              >
+                <div
+                  className={clsx(
+                    'px-4 py-3 rounded-2xl',
+                    message.role === 'assistant'
+                      ? 'bg-white border border-slate-100 rounded-tl-md shadow-soft'
+                      : 'bg-slate-800 text-white rounded-tr-md'
+                  )}
+                >
+                  <div
+                    className={clsx(
+                      'prose prose-sm max-w-none',
+                      message.role === 'assistant' ? 'prose-slate' : 'prose-invert'
+                    )}
+                    dangerouslySetInnerHTML={{
+                      __html: formatMessage(message.content),
+                    }}
+                  />
+                </div>
+
+                {/* Copy action for assistant messages */}
+                {message.role === 'assistant' && message.id !== 'greeting' && (
+                  <button
+                    onClick={() => copyToClipboard(message.content, message.id)}
+                    className="text-xs text-slate-400 hover:text-slate-600 flex items-center gap-1 mt-1.5 ml-1"
+                  >
+                    {copiedId === message.id ? (
+                      <>
+                        <Check className="w-3 h-3" /> Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3 h-3" /> Copy
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+
+          {/* Loading indicator */}
+          {isLoading && (
+            <div className="flex gap-3">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-soft">
+                <Sparkles className="w-4 h-4 text-white" />
+              </div>
+              <div className="bg-white border border-slate-100 px-4 py-3 rounded-2xl rounded-tl-md shadow-soft">
+                <div className="flex items-center gap-1.5">
+                  <div
+                    className="w-2 h-2 bg-primary-400 rounded-full animate-bounce"
+                    style={{ animationDelay: '0ms' }}
+                  />
+                  <div
+                    className="w-2 h-2 bg-primary-400 rounded-full animate-bounce"
+                    style={{ animationDelay: '150ms' }}
+                  />
+                  <div
+                    className="w-2 h-2 bg-primary-400 rounded-full animate-bounce"
+                    style={{ animationDelay: '300ms' }}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div ref={messagesEndRef} />
+        </div>
+      </div>
+
+      {/* Smart Prompts - Show at start */}
+      {messages.length <= 1 && (
+        <div className="px-4 pb-3">
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {smartPrompts.map((prompt, index) => {
+                const Icon = prompt.icon;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleSuggestedPrompt(prompt.text)}
+                    className={clsx(
+                      'flex items-start gap-3 p-3 bg-white border rounded-xl transition-all text-left',
+                      prompt.priority
+                        ? 'border-warning-200 hover:border-warning-400 hover:bg-warning-50'
+                        : 'border-slate-100 hover:border-primary-200 hover:bg-primary-50'
+                    )}
+                  >
+                    <div
+                      className={clsx(
+                        'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0',
+                        prompt.priority ? 'bg-warning-100' : 'bg-primary-100'
+                      )}
+                    >
+                      <Icon
+                        className={clsx(
+                          'w-4 h-4',
+                          prompt.priority ? 'text-warning-600' : 'text-primary-600'
+                        )}
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <span
+                        className={clsx(
+                          'text-xs font-medium',
+                          prompt.priority ? 'text-warning-600' : 'text-primary-600'
+                        )}
+                      >
+                        {prompt.category}
+                      </span>
+                      <p className="text-sm text-slate-700 mt-0.5 line-clamp-2">{prompt.text}</p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Input Area */}
+      <div className="bg-white border-t border-slate-100 p-4">
+        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
+          <div className="flex items-end gap-3">
+            <div className="flex-1 relative">
+              <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSubmit(e);
+                  }
+                }}
+                placeholder={
+                  tutorMode === 'socratic'
+                    ? "Describe what you're trying to understand..."
+                    : tutorMode === 'quiz'
+                      ? 'Tell me a topic to quiz you on...'
+                      : 'Ask anything about the CPA exam...'
+                }
+                className="input resize-none"
+                rows={1}
+                style={{ minHeight: '48px', maxHeight: '120px' }}
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={!input.trim() || isLoading}
+              className={clsx(
+                'btn-icon rounded-xl transition-all flex-shrink-0',
+                input.trim() && !isLoading
+                  ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-soft'
+                  : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+              )}
+            >
+              <Send className="w-5 h-5" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+// Format message content
+const formatMessage = (content) => {
+  return content
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br>')
+    .replace(/• /g, '&bull; ');
+};
+
+export default AITutor;

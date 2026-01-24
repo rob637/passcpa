@@ -1,0 +1,12 @@
+# Ignore artifacts
+dist
+coverage
+node_modules
+*.min.js
+*.min.css
+
+# Ignore build output
+public/*.js
+
+# Ignore generated files
+package-lock.json

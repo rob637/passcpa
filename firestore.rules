@@ -1,0 +1,49 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the document
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Users collection - private to each user
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      
+      // All subcollections under user (study_plan, daily_log, progress, etc.)
+      match /{subcollection=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+    
+    // Questions collection - read-only for authenticated users
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // Temporarily allow writes for seeding
+    }
+    
+    // Lessons collection - read-only for authenticated users
+    match /lessons/{lessonId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Admin only via backend
+    }
+    
+    // Topics collection - read-only for authenticated users
+    match /topics/{topicId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Admin only via backend
+    }
+    
+    // Exam sections metadata - read-only
+    match /examSections/{sectionId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+  }
+}

@@ -13,117 +13,123 @@ import {
   Share2,
   Volume2,
   Pause,
-  Play,
+  AlertCircle,
+  List,
+  Table,
+  FileText,
 } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
+import { useAuth } from '../../hooks/useAuth';
+import { getLessonById, getLessonsBySection } from '../../data/lessons';
 import clsx from 'clsx';
 
-// Mock lesson content
-const MOCK_LESSON = {
-  id: 'reg-3-6',
-  title: 'Capital Gains & Losses',
-  area: 'Federal Taxation of Individuals',
-  duration: 30,
-  content: `
-    <h2>Overview</h2>
-    <p>Capital gains and losses arise from the sale or exchange of capital assets. Understanding how to properly classify and calculate these gains and losses is essential for the CPA exam.</p>
-    
-    <h3>What is a Capital Asset?</h3>
-    <p>Under IRC Section 1221, a <strong>capital asset</strong> is defined as all property held by a taxpayer <em>except</em> for specific exclusions:</p>
-    <ul>
-      <li>Inventory or property held for sale to customers</li>
-      <li>Depreciable property or real property used in a trade or business</li>
-      <li>Copyrights, literary, musical, or artistic compositions (if created by the taxpayer)</li>
-      <li>Accounts or notes receivable acquired in the ordinary course of business</li>
-      <li>U.S. government publications</li>
-      <li>Commodities derivative financial instruments held by dealers</li>
-      <li>Hedging transactions</li>
-      <li>Supplies regularly used or consumed in ordinary course of business</li>
-    </ul>
-    
-    <div class="callout callout-tip">
-      <strong>Exam Tip:</strong> The most common capital assets tested on the CPA exam include stocks, bonds, personal-use property (like your home or car), and investment property.
-    </div>
-    
-    <h3>Holding Period</h3>
-    <p>The holding period determines whether a gain or loss is short-term or long-term:</p>
-    <table>
-      <tr>
-        <th>Holding Period</th>
-        <th>Classification</th>
-        <th>Tax Rate</th>
-      </tr>
-      <tr>
-        <td>≤ 1 year</td>
-        <td>Short-term</td>
-        <td>Ordinary income rates (10%-37%)</td>
-      </tr>
-      <tr>
-        <td>> 1 year</td>
-        <td>Long-term</td>
-        <td>Preferential rates (0%, 15%, or 20%)</td>
-      </tr>
-    </table>
-    
-    <div class="callout callout-important">
-      <strong>Important:</strong> The holding period begins the day <em>after</em> acquisition and includes the day of sale. "More than one year" means at least one year and one day.
-    </div>
-    
-    <h3>Calculating Capital Gains and Losses</h3>
-    <p>The basic formula for calculating gain or loss is:</p>
-    <div class="formula">
-      <strong>Gain/Loss = Amount Realized - Adjusted Basis</strong>
-    </div>
-    <p>Where:</p>
-    <ul>
-      <li><strong>Amount Realized</strong> = Cash received + FMV of property received + Liabilities assumed by buyer</li>
-      <li><strong>Adjusted Basis</strong> = Original cost + Capital improvements - Depreciation</li>
-    </ul>
-    
-    <h3>Netting Process</h3>
-    <p>Capital gains and losses must be netted in a specific order:</p>
-    <ol>
-      <li>Net short-term capital gains (STCG) against short-term capital losses (STCL)</li>
-      <li>Net long-term capital gains (LTCG) against long-term capital losses (LTCL)</li>
-      <li>Net the results from steps 1 and 2 against each other</li>
-    </ol>
-    
-    <h3>Capital Loss Limitations</h3>
-    <p>Individual taxpayers can only deduct up to <strong>$3,000</strong> ($1,500 if married filing separately) of net capital losses against ordinary income each year. Excess losses are carried forward indefinitely.</p>
-    
-    <div class="callout callout-example">
-      <strong>Example:</strong> Sarah has $10,000 in LTCL and $2,000 in STCG. Her net capital loss is $8,000. She can deduct $3,000 this year and carry forward $5,000 to future years.
-    </div>
-  `,
-  keyPoints: [
-    'Capital assets are all property except specific exclusions under IRC §1221',
-    'Holding period > 1 year = long-term (preferential rates)',
-    'Netting: STCG/STCL first, then LTCG/LTCL, then combine',
-    '$3,000 annual limit on capital loss deduction ($1,500 MFS)',
-    'Unused capital losses carry forward indefinitely',
-  ],
-  relatedQuestions: 12,
-  nextLesson: { id: 'reg-3-7', title: 'Property Transactions' },
-  prevLesson: { id: 'reg-3-5', title: 'Tax Credits' },
+// Render different content section types
+const ContentSection = ({ section }) => {
+  switch (section.type) {
+    case 'text':
+      return (
+        <div className="prose prose-slate dark:prose-invert max-w-none">
+          {section.content.split('\n\n').map((paragraph, i) => (
+            <p key={i} dangerouslySetInnerHTML={{ 
+              __html: paragraph
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/•/g, '&#8226;')
+            }} />
+          ))}
+        </div>
+      );
+
+    case 'list':
+      return (
+        <div className="space-y-3">
+          {section.content.map((item, i) => (
+            <div key={i} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+              <dt className="font-semibold text-slate-900 dark:text-slate-100">{item.term}</dt>
+              <dd className="mt-1 text-slate-600 dark:text-slate-400">{item.definition}</dd>
+            </div>
+          ))}
+        </div>
+      );
+
+    case 'table':
+      return (
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+            <thead className="bg-slate-50 dark:bg-slate-800">
+              <tr>
+                {section.headers.map((header, i) => (
+                  <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-slate-100">
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-900">
+              {section.rows.map((row, i) => (
+                <tr key={i}>
+                  {row.map((cell, j) => (
+                    <td key={j} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-400">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+
+    case 'summary':
+      return (
+        <div className="bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 rounded-xl p-4">
+          <h4 className="font-semibold text-primary-900 dark:text-primary-100 mb-3 flex items-center gap-2">
+            <CheckCircle className="w-5 h-5" />
+            Key Takeaways
+          </h4>
+          <ul className="space-y-2">
+            {section.content.map((point, i) => (
+              <li key={i} className="flex items-start gap-2 text-primary-800 dark:text-primary-200">
+                <span className="text-primary-400 mt-1">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+
+    default:
+      return <p className="text-slate-600 dark:text-slate-400">{String(section.content)}</p>;
+  }
 };
 
 const LessonViewer = () => {
   const { lessonId } = useParams();
   const navigate = useNavigate();
   const { completeLesson, logActivity } = useStudy();
+  const { userProfile } = useAuth();
 
-  const [lesson, setLesson] = useState(MOCK_LESSON);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const [startTime] = useState(Date.now());
+
+  // Get lesson from real data
+  const lesson = getLessonById(lessonId);
+  
+  // Get prev/next lessons
+  const currentSection = userProfile?.examSection || lesson?.section || 'FAR';
+  const sectionLessons = getLessonsBySection(currentSection);
+  const currentIndex = sectionLessons.findIndex(l => l.id === lessonId);
+  const prevLesson = currentIndex > 0 ? sectionLessons[currentIndex - 1] : null;
+  const nextLesson = currentIndex < sectionLessons.length - 1 ? sectionLessons[currentIndex + 1] : null;
 
   // Track reading progress
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      const scrollPercent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
       setProgress(Math.min(100, scrollPercent));
 
       if (scrollPercent >= 90 && !isComplete) {
@@ -132,25 +138,66 @@ const LessonViewer = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    logActivity('lesson_started', { lessonId });
+    
+    if (logActivity && lessonId) {
+      logActivity({
+        type: 'lesson_started',
+        points: 0,
+        details: { lessonId },
+      });
+    }
+
+    // Scroll to top when lesson changes
+    window.scrollTo(0, 0);
+    setProgress(0);
+    setIsComplete(false);
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lessonId]);
+  }, [lessonId, logActivity]);
 
   const handleComplete = async () => {
-    await completeLesson(lessonId, lesson.title, lesson.area);
-    navigate('/lessons');
+    const timeSpent = Math.round((Date.now() - startTime) / 60000); // minutes
+    
+    if (completeLesson) {
+      await completeLesson(lessonId, lesson?.section || currentSection, timeSpent);
+    }
+    
+    if (nextLesson) {
+      navigate(`/lessons/${nextLesson.id}`);
+    } else {
+      navigate('/lessons');
+    }
   };
 
+  // Handle lesson not found
+  if (!lesson) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center p-4">
+        <div className="text-center">
+          <AlertCircle className="w-16 h-16 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
+            Lesson Not Found
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
+            The lesson you&apos;re looking for doesn&apos;t exist or has been moved.
+          </p>
+          <Link to="/lessons" className="btn-primary">
+            Back to Lessons
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-20 bg-white border-b border-slate-200">
+      <div className="sticky top-0 z-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <Link
               to="/lessons"
-              className="flex items-center gap-2 text-slate-600 hover:text-slate-900"
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="hidden sm:inline">Back to Lessons</span>
@@ -161,12 +208,12 @@ const LessonViewer = () => {
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 className={clsx(
                   'p-2 rounded-lg transition-colors',
-                  isBookmarked ? 'bg-amber-100 text-amber-600' : 'text-slate-400 hover:bg-slate-100'
+                  isBookmarked ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 )}
               >
                 <Bookmark className="w-5 h-5" />
               </button>
-              <button className="p-2 rounded-lg text-slate-400 hover:bg-slate-100">
+              <button className="p-2 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
                 <Share2 className="w-5 h-5" />
               </button>
               <button
@@ -174,9 +221,10 @@ const LessonViewer = () => {
                 className={clsx(
                   'p-2 rounded-lg transition-colors',
                   isPlaying
-                    ? 'bg-primary-100 text-primary-600'
-                    : 'text-slate-400 hover:bg-slate-100'
+                    ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
+                    : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 )}
+                title="Text-to-speech (coming soon)"
               >
                 {isPlaying ? <Pause className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
               </button>
@@ -184,7 +232,7 @@ const LessonViewer = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="h-1 bg-slate-100 rounded-full mt-3 overflow-hidden">
+          <div className="h-1 bg-slate-100 dark:bg-slate-800 rounded-full mt-3 overflow-hidden">
             <div
               className="h-full bg-primary-500 transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -197,106 +245,154 @@ const LessonViewer = () => {
       <div className="max-w-3xl mx-auto px-4 py-8">
         {/* Lesson Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-sm text-primary-600 mb-2">
+          <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-2">
             <BookOpen className="w-4 h-4" />
-            <span>{lesson.area}</span>
+            <span>{lesson.section}</span>
+            {lesson.difficulty && (
+              <>
+                <span className="text-slate-300 dark:text-slate-600">•</span>
+                <span className={clsx(
+                  'px-2 py-0.5 rounded text-xs font-medium',
+                  lesson.difficulty === 'beginner' && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+                  lesson.difficulty === 'intermediate' && 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                  lesson.difficulty === 'advanced' && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                )}>
+                  {lesson.difficulty}
+                </span>
+              </>
+            )}
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">{lesson.title}</h1>
-          <div className="flex items-center gap-4 text-sm text-slate-500">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">{lesson.title}</h1>
+          {lesson.description && (
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">{lesson.description}</p>
+          )}
+          <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
               {lesson.duration} min read
             </span>
-            <span className="flex items-center gap-1">
-              <HelpCircle className="w-4 h-4" />
-              {lesson.relatedQuestions} practice questions
-            </span>
+            {lesson.topics && lesson.topics.length > 0 && (
+              <span className="flex items-center gap-1">
+                <List className="w-4 h-4" />
+                {lesson.topics.length} topics
+              </span>
+            )}
           </div>
         </div>
 
-        {/* Lesson Content */}
-        <div
-          className="prose prose-slate max-w-none mb-12"
-          dangerouslySetInnerHTML={{ __html: lesson.content }}
-        />
-
-        {/* Key Points Summary */}
-        <div className="bg-primary-50 border border-primary-200 rounded-2xl p-6 mb-8">
-          <h3 className="font-semibold text-primary-900 mb-4 flex items-center gap-2">
-            <CheckCircle className="w-5 h-5" />
-            Key Points to Remember
-          </h3>
-          <ul className="space-y-2">
-            {lesson.keyPoints.map((point, index) => (
-              <li key={index} className="flex items-start gap-2 text-primary-800">
-                <span className="text-primary-400">•</span>
-                {point}
-              </li>
+        {/* Topics Tags */}
+        {lesson.topics && lesson.topics.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-8">
+            {lesson.topics.map((topic, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full text-sm"
+              >
+                {topic}
+              </span>
             ))}
-          </ul>
-        </div>
+          </div>
+        )}
+
+        {/* Lesson Content Sections */}
+        {lesson.content?.sections && (
+          <div className="space-y-8 mb-12">
+            {lesson.content.sections.map((section, index) => (
+              <div key={index}>
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+                  {section.type === 'list' && <List className="w-5 h-5 text-primary-500" />}
+                  {section.type === 'table' && <Table className="w-5 h-5 text-primary-500" />}
+                  {section.type === 'text' && <FileText className="w-5 h-5 text-primary-500" />}
+                  {section.type === 'summary' && <CheckCircle className="w-5 h-5 text-primary-500" />}
+                  {section.title}
+                </h2>
+                <ContentSection section={section} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Quiz Section if available */}
+        {lesson.content?.quiz && lesson.content.quiz.length > 0 && (
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 mb-8">
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+              <HelpCircle className="w-5 h-5 text-primary-500" />
+              Quick Check ({lesson.content.quiz.length} questions)
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-4">
+              Test your understanding of this lesson before moving on.
+            </p>
+            <Link
+              to={`/practice?lesson=${lessonId}`}
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              <HelpCircle className="w-4 h-4" />
+              Start Quiz
+            </Link>
+          </div>
+        )}
 
         {/* Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <Link
-            to={`/practice?topic=${lesson.id}`}
+            to={`/practice?section=${lesson.section}`}
             className="card p-4 hover:shadow-md transition-shadow group"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-success-100 rounded-xl flex items-center justify-center">
-                <HelpCircle className="w-5 h-5 text-success-600" />
+              <div className="w-10 h-10 bg-success-100 dark:bg-success-900/30 rounded-xl flex items-center justify-center">
+                <HelpCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
               </div>
               <div>
-                <h4 className="font-medium text-slate-900 group-hover:text-success-600">
+                <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-success-600 dark:group-hover:text-success-400">
                   Practice Questions
                 </h4>
-                <p className="text-sm text-slate-500">
-                  {lesson.relatedQuestions} questions available
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Test your knowledge
                 </p>
               </div>
             </div>
           </Link>
 
-          <Link to="/tutor" className="card p-4 hover:shadow-md transition-shadow group">
+          <Link to="/ai-tutor" className="card p-4 hover:shadow-md transition-shadow group">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center">
-                <Bot className="w-5 h-5 text-violet-600" />
+              <div className="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-xl flex items-center justify-center">
+                <Bot className="w-5 h-5 text-violet-600 dark:text-violet-400" />
               </div>
               <div>
-                <h4 className="font-medium text-slate-900 group-hover:text-violet-600">
-                  Ask Penny
+                <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400">
+                  Ask AI Tutor
                 </h4>
-                <p className="text-sm text-slate-500">Get help understanding this topic</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Get help understanding this topic</p>
               </div>
             </div>
           </Link>
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between gap-4 pt-8 border-t border-slate-200">
-          {lesson.prevLesson ? (
+        <div className="flex items-center justify-between gap-4 pt-8 border-t border-slate-200 dark:border-slate-700">
+          {prevLesson ? (
             <Link
-              to={`/lessons/${lesson.prevLesson.id}`}
-              className="flex items-center gap-2 text-slate-600 hover:text-primary-600"
+              to={`/lessons/${prevLesson.id}`}
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
             >
               <ChevronLeft className="w-5 h-5" />
               <div className="text-left">
-                <div className="text-xs text-slate-400">Previous</div>
-                <div className="font-medium">{lesson.prevLesson.title}</div>
+                <div className="text-xs text-slate-400 dark:text-slate-500">Previous</div>
+                <div className="font-medium">{prevLesson.title}</div>
               </div>
             </Link>
           ) : (
             <div />
           )}
 
-          {lesson.nextLesson ? (
+          {nextLesson ? (
             <Link
-              to={`/lessons/${lesson.nextLesson.id}`}
-              className="flex items-center gap-2 text-slate-600 hover:text-primary-600 text-right"
+              to={`/lessons/${nextLesson.id}`}
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 text-right"
             >
               <div>
-                <div className="text-xs text-slate-400">Next</div>
-                <div className="font-medium">{lesson.nextLesson.title}</div>
+                <div className="text-xs text-slate-400 dark:text-slate-500">Next</div>
+                <div className="font-medium">{nextLesson.title}</div>
               </div>
               <ChevronRight className="w-5 h-5" />
             </Link>
@@ -308,19 +404,19 @@ const LessonViewer = () => {
 
       {/* Completion Banner */}
       {isComplete && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-lg p-4 z-30">
+        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-lg p-4 z-30">
           <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-success-600" />
+              <div className="w-10 h-10 bg-success-100 dark:bg-success-900/30 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
               </div>
               <div>
-                <div className="font-medium text-slate-900">Lesson Complete!</div>
-                <div className="text-sm text-slate-500">+10 points earned</div>
+                <div className="font-medium text-slate-900 dark:text-slate-100">Lesson Complete!</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">+10 points earned</div>
               </div>
             </div>
             <button onClick={handleComplete} className="btn-primary">
-              Mark Complete & Continue
+              {nextLesson ? 'Continue to Next' : 'Back to Lessons'}
             </button>
           </div>
         </div>

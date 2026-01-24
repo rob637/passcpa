@@ -306,6 +306,80 @@ export const StudyProvider = ({ children }) => {
     }
   }, [user]);
 
+  // Get lesson progress
+  const getLessonProgress = useCallback(async () => {
+    if (!user) return {};
+
+    try {
+      const progressRef = doc(db, 'users', user.uid, 'progress', 'lessons');
+      const snapshot = await getDoc(progressRef);
+
+      if (snapshot.exists()) {
+        return snapshot.data();
+      }
+      return {};
+    } catch (error) {
+      console.error('Error fetching lesson progress:', error);
+      return {};
+    }
+  }, [user]);
+
+  // Get question history for a specific question
+  const getQuestionHistory = useCallback(async (questionId) => {
+    if (!user) return null;
+
+    try {
+      const historyRef = doc(db, 'users', user.uid, 'question_history', questionId);
+      const snapshot = await getDoc(historyRef);
+
+      if (snapshot.exists()) {
+        return snapshot.data();
+      }
+      return null;
+    } catch (error) {
+      console.error('Error fetching question history:', error);
+      return null;
+    }
+  }, [user]);
+
+  // Save question attempt
+  const saveQuestionAttempt = useCallback(async (questionId, isCorrect, selectedAnswer, timeSpent) => {
+    if (!user) return;
+
+    try {
+      const historyRef = doc(db, 'users', user.uid, 'question_history', questionId);
+      const existing = await getDoc(historyRef);
+      
+      const attempt = {
+        timestamp: new Date().toISOString(),
+        isCorrect,
+        selectedAnswer,
+        timeSpent,
+      };
+
+      if (existing.exists()) {
+        const data = existing.data();
+        await updateDoc(historyRef, {
+          attempts: [...(data.attempts || []), attempt],
+          totalAttempts: (data.totalAttempts || 0) + 1,
+          correctAttempts: (data.correctAttempts || 0) + (isCorrect ? 1 : 0),
+          lastAttempted: serverTimestamp(),
+        });
+      } else {
+        await setDoc(historyRef, {
+          questionId,
+          attempts: [attempt],
+          totalAttempts: 1,
+          correctAttempts: isCorrect ? 1 : 0,
+          firstAttempted: serverTimestamp(),
+          lastAttempted: serverTimestamp(),
+        });
+      }
+    } catch (error) {
+      console.error('Error saving question attempt:', error);
+    }
+  }, [user]);
+
   // Calculate daily progress percentage
   const dailyProgress = todayLog
     ? Math.min(100, Math.round((todayLog.earnedPoints / todayLog.goalPoints) * 100))
@@ -329,6 +403,9 @@ export const StudyProvider = ({ children }) => {
     completeLesson,
     completeSimulation,
     getTopicPerformance,
+    getLessonProgress,
+    getQuestionHistory,
+    saveQuestionAttempt,
   };
 
   return <StudyContext.Provider value={value}>{children}</StudyContext.Provider>;

@@ -7,10 +7,13 @@
  * - Tracks page views automatically
  * - Provides custom event tracking
  * - Respects user privacy preferences
+ * 
+ * SETUP: Replace GA_MEASUREMENT_ID with your GA4 Measurement ID from:
+ * https://analytics.google.com/ → Admin → Data Streams → Web Stream
  */
 
-// GA4 Measurement ID - Replace with your own
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with actual GA4 ID
+// GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
 let initialized = false;
 

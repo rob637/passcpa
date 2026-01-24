@@ -32,8 +32,6 @@ yarn-error.log*
 coverage/
 
 # Native platforms (Capacitor) - optional, can be regenerated
-ios/
-android/
 
 # Coverage
 coverage/

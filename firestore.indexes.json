@@ -1,0 +1,53 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "questionAttempts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "questionId", "order": "ASCENDING" },
+        { "fieldPath": "attemptedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "questionAttempts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "section", "order": "ASCENDING" },
+        { "fieldPath": "attemptedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "questionAttempts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "topicId", "order": "ASCENDING" },
+        { "fieldPath": "isCorrect", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "studySessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "section", "order": "ASCENDING" },
+        { "fieldPath": "startedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "dailyLogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "date", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "questions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "section", "order": "ASCENDING" },
+        { "fieldPath": "topicId", "order": "ASCENDING" },
+        { "fieldPath": "difficulty", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

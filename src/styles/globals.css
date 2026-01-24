@@ -1,0 +1,1065 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   PASSCPA - World-Class Design System
+   Google/Apple Quality • 2030 in 2026
+   ============================================ */
+
+/* CSS Variables */
+:root {
+  /* Safe areas for notched devices */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Premium easing curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Navigation height */
+  --nav-height: 64px;
+  --header-height: 56px;
+
+  /* Light mode colors */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-color-light: #f1f5f9;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode colors */
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #64748b;
+  --border-color: #334155;
+  --border-color-light: #1e293b;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: contain;
+  letter-spacing: -0.011em;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark mode body */
+.dark body,
+body.dark {
+  @apply bg-slate-900 text-slate-100;
+}
+
+/* Better text rendering */
+* {
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection color - Google Blue */
+::selection {
+  @apply bg-primary-100 text-primary-900;
+}
+
+.dark ::selection {
+  @apply bg-primary-900 text-primary-100;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+:focus:not(:focus-visible) {
+  @apply outline-none ring-0;
+}
+
+/* Scrollbar styling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+/* ============================================
+   SAFE AREAS
+   ============================================ */
+
+.safe-top {
+  padding-top: var(--safe-top);
+}
+
+.safe-bottom {
+  padding-bottom: var(--safe-bottom);
+}
+
+.safe-x {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+/* ============================================
+   BUTTONS - Haptic, Responsive, Beautiful
+   ============================================ */
+
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-xl
+         transition-all duration-200 select-none relative overflow-hidden;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 48px;
+  padding: 12px 24px;
+}
+
+/* Ripple effect base */
+.btn::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.btn:active::after {
+  @apply opacity-100;
+}
+
+/* Press effect */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary Button - Google Blue */
+.btn-primary {
+  @apply btn bg-primary-600 text-white shadow-soft;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-700 shadow-soft-lg;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  @apply bg-primary-800 shadow-soft;
+  transform: scale(0.97) translateY(0);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply btn bg-white text-slate-700 border border-slate-200;
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-800 text-slate-200 border-slate-700;
+}
+
+.btn-secondary:hover {
+  @apply bg-slate-50 border-slate-300;
+}
+
+.dark .btn-secondary:hover {
+  @apply bg-slate-700 border-slate-600;
+}
+
+.btn-secondary:active {
+  @apply bg-slate-100;
+}
+
+.dark .btn-secondary:active {
+  @apply bg-slate-600;
+}
+
+/* Ghost Button */
+.btn-ghost {
+  @apply btn bg-transparent text-slate-600;
+}
+
+.dark .btn-ghost {
+  @apply text-slate-300;
+}
+
+.btn-ghost:hover {
+  @apply bg-slate-100;
+}
+
+.dark .btn-ghost:hover {
+  @apply bg-slate-800;
+}
+
+.btn-ghost:active {
+  @apply bg-slate-200;
+}
+
+.dark .btn-ghost:active {
+  @apply bg-slate-700;
+}
+
+/* Success Button */
+.btn-success {
+  @apply btn bg-success-600 text-white shadow-soft;
+}
+
+.btn-success:hover {
+  @apply bg-success-700;
+}
+
+/* Danger Button */
+.btn-danger {
+  @apply btn bg-error-600 text-white shadow-soft;
+}
+
+.btn-danger:hover {
+  @apply bg-error-700;
+}
+
+/* Small Button */
+.btn-sm {
+  @apply text-sm;
+  min-height: 40px;
+  padding: 8px 16px;
+}
+
+/* Large Button */
+.btn-lg {
+  @apply text-lg;
+  min-height: 56px;
+  padding: 16px 32px;
+}
+
+/* Icon Button */
+.btn-icon {
+  @apply btn p-3;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* ============================================
+   CARDS - Clean, Elevated Surfaces
+   ============================================ */
+
+.card {
+  @apply bg-white rounded-2xl border border-slate-100;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.03),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.dark .card {
+  @apply bg-slate-800 border-slate-700;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-elevated {
+  @apply card border-transparent;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dark .card-elevated {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-elevated:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.dark .card-elevated:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Interactive Card */
+.card-interactive {
+  @apply card cursor-pointer transition-all duration-200;
+}
+
+.card-interactive:hover {
+  @apply border-slate-200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.dark .card-interactive:hover {
+  @apply border-slate-600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-interactive:active {
+  transform: scale(0.98) translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Card sections */
+.card-header {
+  @apply px-5 py-4 border-b border-slate-100;
+}
+
+.dark .card-header {
+  @apply border-slate-700;
+}
+
+.card-body {
+  @apply p-5;
+}
+
+.card-footer {
+  @apply px-5 py-4 bg-slate-50/50 border-t border-slate-100 rounded-b-2xl;
+}
+
+.dark .card-footer {
+  @apply bg-slate-900/50 border-slate-700;
+}
+
+/* ============================================
+   INPUTS - Clean, Focused, Responsive
+   ============================================ */
+
+.input {
+  @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl
+         text-slate-900 placeholder:text-slate-400
+         transition-all duration-200;
+  min-height: 48px;
+}
+
+.dark .input {
+  @apply bg-slate-800 border-slate-600 text-slate-100 placeholder:text-slate-500;
+}
+
+.input:hover {
+  @apply border-slate-300;
+}
+
+.dark .input:hover {
+  @apply border-slate-500;
+}
+
+.input:focus {
+  @apply border-primary-500 ring-4 ring-primary-500/10 outline-none;
+}
+
+.dark .input:focus {
+  @apply ring-primary-500/20;
+}
+
+.input-error {
+  @apply border-error-500;
+}
+
+.input-error:focus {
+  @apply ring-error-500/10;
+}
+
+/* Input group with icon */
+.input-group {
+  @apply relative;
+}
+
+.input-group .input {
+  @apply pl-12;
+}
+
+.input-group-icon {
+  @apply absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none;
+}
+
+/* ============================================
+   MCQ OPTIONS - The Heart of CPA Prep
+   ============================================ */
+
+.mcq-option {
+  @apply relative flex items-start gap-4 p-4 
+         bg-white border-2 border-slate-200 rounded-2xl
+         transition-all duration-200 cursor-pointer select-none;
+  min-height: 64px;
+}
+
+.dark .mcq-option {
+  @apply bg-slate-800 border-slate-600;
+}
+
+.mcq-option:hover {
+  @apply border-slate-300 bg-slate-50/50;
+}
+
+.dark .mcq-option:hover {
+  @apply border-slate-500 bg-slate-700/50;
+}
+
+.mcq-option:active {
+  transform: scale(0.99);
+}
+
+/* Option letter badge */
+.mcq-option-letter {
+  @apply flex-shrink-0 w-8 h-8 rounded-lg
+         bg-slate-100 text-slate-600
+         flex items-center justify-center
+         font-semibold text-sm transition-all duration-200;
+}
+
+.dark .mcq-option-letter {
+  @apply bg-slate-700 text-slate-300;
+}
+
+/* Selected state */
+.mcq-option-selected {
+  @apply border-primary-500 bg-primary-50/50;
+}
+
+.mcq-option-selected .mcq-option-letter {
+  @apply bg-primary-500 text-white;
+}
+
+/* Correct state */
+.mcq-option-correct {
+  @apply border-success-500 bg-success-50;
+}
+
+.mcq-option-correct .mcq-option-letter {
+  @apply bg-success-500 text-white;
+}
+
+/* Incorrect state */
+.mcq-option-incorrect {
+  @apply border-error-500 bg-error-50;
+}
+
+.mcq-option-incorrect .mcq-option-letter {
+  @apply bg-error-500 text-white;
+}
+
+/* Disabled state (after answer) */
+.mcq-option-disabled {
+  @apply cursor-default;
+}
+
+.mcq-option-disabled:hover {
+  @apply bg-white;
+}
+
+/* ============================================
+   PROGRESS COMPONENTS
+   ============================================ */
+
+/* Linear progress bar */
+.progress-bar {
+  @apply h-2 bg-slate-100 rounded-full overflow-hidden;
+}
+
+.dark .progress-bar {
+  @apply bg-slate-700;
+}
+
+.progress-bar-fill {
+  @apply h-full rounded-full transition-all duration-700;
+  transition-timing-function: var(--ease-out-expo);
+}
+
+.progress-bar-fill-primary {
+  @apply bg-gradient-to-r from-primary-500 to-primary-600;
+}
+
+.progress-bar-fill-success {
+  @apply bg-gradient-to-r from-success-500 to-success-600;
+}
+
+/* Circular progress ring */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  @apply stroke-slate-100;
+}
+
+.dark .progress-ring-bg {
+  @apply stroke-slate-700;
+}
+
+.progress-ring-fill {
+  @apply stroke-primary-500;
+  transition: stroke-dashoffset 0.8s var(--ease-out-expo);
+}
+
+/* ============================================
+   BADGES & CHIPS
+   ============================================ */
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-1 rounded-full 
+         text-xs font-semibold transition-colors;
+}
+
+.badge-primary {
+  @apply bg-primary-50 text-primary-700;
+}
+
+.badge-success {
+  @apply bg-success-50 text-success-700;
+}
+
+.badge-warning {
+  @apply bg-warning-50 text-warning-700;
+}
+
+.badge-error {
+  @apply bg-error-50 text-error-700;
+}
+
+.badge-neutral {
+  @apply bg-slate-100 text-slate-600;
+}
+
+.dark .badge-neutral {
+  @apply bg-slate-700 text-slate-300;
+}
+
+/* Chip (larger, often interactive) */
+.chip {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 
+         rounded-full text-sm font-medium
+         bg-slate-100 text-slate-700
+         transition-all duration-200;
+}
+
+.dark .chip {
+  @apply bg-slate-700 text-slate-200;
+}
+
+.chip-active {
+  @apply bg-primary-100 text-primary-700;
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton {
+  @apply bg-slate-200 rounded-lg relative overflow-hidden;
+}
+
+.dark .skeleton {
+  @apply bg-slate-700;
+}
+
+.skeleton::after {
+  content: '';
+  @apply absolute inset-0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Page transitions */
+.page-enter {
+  animation: pageEnter 0.35s var(--ease-out-expo);
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in animation */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered list items */
+.stagger-item {
+  animation: slideUp 0.4s var(--ease-out-expo) backwards;
+}
+
+.stagger-item:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-item:nth-child(2) {
+  animation-delay: 50ms;
+}
+.stagger-item:nth-child(3) {
+  animation-delay: 100ms;
+}
+.stagger-item:nth-child(4) {
+  animation-delay: 150ms;
+}
+.stagger-item:nth-child(5) {
+  animation-delay: 200ms;
+}
+.stagger-item:nth-child(6) {
+  animation-delay: 250ms;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast animation */
+.toast-enter {
+  animation: toastEnter 0.4s var(--ease-out-back);
+}
+
+@keyframes toastEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Number counter animation */
+.animate-number {
+  animation: numberPop 0.5s var(--ease-out-back);
+}
+
+@keyframes numberPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Success checkmark */
+.checkmark {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: checkDraw 0.4s var(--ease-out-expo) 0.2s forwards;
+}
+
+@keyframes checkDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.text-display {
+  @apply text-4xl font-bold tracking-tight text-slate-900;
+  letter-spacing: -0.02em;
+}
+
+.text-title {
+  @apply text-2xl font-bold text-slate-900;
+  letter-spacing: -0.015em;
+}
+
+.text-subtitle {
+  @apply text-lg font-semibold text-slate-800;
+}
+
+.text-body {
+  @apply text-base text-slate-600 leading-relaxed;
+}
+
+.text-caption {
+  @apply text-sm text-slate-500;
+}
+
+.text-micro {
+  @apply text-xs text-slate-400;
+}
+
+/* Prose for explanations */
+.prose {
+  @apply text-slate-700 leading-relaxed;
+}
+
+.prose h3 {
+  @apply text-lg font-semibold text-slate-900 mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose strong {
+  @apply font-semibold text-slate-900;
+}
+
+.prose ul {
+  @apply list-disc pl-5 mb-4 space-y-2;
+}
+
+.prose code {
+  @apply bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800;
+}
+
+/* ============================================
+   CALLOUTS & ALERTS
+   ============================================ */
+
+.callout {
+  @apply p-4 rounded-xl flex gap-3;
+}
+
+.callout-info {
+  @apply bg-primary-50 border border-primary-100;
+}
+
+.callout-success {
+  @apply bg-success-50 border border-success-100;
+}
+
+.callout-warning {
+  @apply bg-warning-50 border border-warning-100;
+}
+
+.callout-error {
+  @apply bg-error-50 border border-error-100;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+/* Bottom nav item */
+.nav-item {
+  @apply flex flex-col items-center justify-center gap-1 
+         py-2 px-3 rounded-xl transition-all duration-200
+         text-slate-500;
+  min-width: 64px;
+}
+
+.nav-item:active {
+  transform: scale(0.95);
+}
+
+.nav-item-active {
+  @apply text-primary-600;
+}
+
+.nav-item-active .nav-icon {
+  @apply text-primary-600;
+}
+
+/* Active indicator pill */
+.nav-indicator {
+  @apply absolute -top-1 w-12 h-1 bg-primary-500 rounded-full
+         transition-all duration-300;
+  transition-timing-function: var(--ease-out-expo);
+}
+
+/* ============================================
+   STATS CARDS
+   ============================================ */
+
+.stat-card {
+  @apply card p-4 text-center;
+}
+
+.stat-value {
+  @apply text-2xl font-bold text-slate-900;
+}
+
+.stat-label {
+  @apply text-sm text-slate-500 mt-1;
+}
+
+.stat-change {
+  @apply text-xs font-medium mt-2;
+}
+
+.stat-change-up {
+  @apply text-success-600;
+}
+
+.stat-change-down {
+  @apply text-error-600;
+}
+
+/* ============================================
+   STREAK & GAMIFICATION
+   ============================================ */
+
+.streak-badge {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 
+         bg-gradient-to-r from-warning-400 to-warning-500
+         text-white font-bold text-sm rounded-full shadow-soft;
+}
+
+.streak-flame {
+  animation: flameWobble 1s ease-in-out infinite;
+}
+
+@keyframes flameWobble {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* XP Badge */
+.xp-badge {
+  @apply inline-flex items-center gap-1 px-2 py-0.5
+         bg-primary-100 text-primary-700 
+         font-semibold text-xs rounded-full;
+}
+
+/* ============================================
+   EMPTY STATES
+   ============================================ */
+
+.empty-state {
+  @apply flex flex-col items-center justify-center py-16 px-6 text-center;
+}
+
+.empty-state-icon {
+  @apply w-20 h-20 bg-slate-100 rounded-3xl 
+         flex items-center justify-center mb-6;
+}
+
+.empty-state-title {
+  @apply text-xl font-semibold text-slate-900 mb-2;
+}
+
+.empty-state-description {
+  @apply text-slate-500 max-w-sm;
+}
+
+/* ============================================
+   GLASS EFFECTS
+   ============================================ */
+
+.glass {
+  @apply bg-white/80 backdrop-blur-lg;
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  @apply bg-slate-900/80;
+}
+
+.glass-dark {
+  @apply bg-slate-900/80 backdrop-blur-lg;
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+
+.divider {
+  @apply h-px bg-slate-100 my-4;
+}
+
+.dark .divider {
+  @apply bg-slate-700;
+}
+
+.divider-thick {
+  @apply h-2 bg-slate-100 my-0;
+}
+
+.dark .divider-thick {
+  @apply bg-slate-800;
+}
+
+/* ============================================
+   TOUCH TARGETS
+   ============================================ */
+
+.touch-target {
+  position: relative;
+}
+
+.touch-target::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .show-mobile-only {
+    display: none !important;
+  }
+}
+
+/* Larger tap targets on touch devices */
+@media (pointer: coarse) {
+  .btn {
+    min-height: 52px;
+  }
+
+  .mcq-option {
+    min-height: 72px;
+  }
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton {
+  @apply bg-slate-200 rounded animate-pulse;
+}
+
+.skeleton-text {
+  @apply h-4 bg-slate-200 rounded animate-pulse;
+}
+
+.skeleton-avatar {
+  @apply w-10 h-10 bg-slate-200 rounded-full animate-pulse;
+}
+
+.skeleton-card {
+  @apply bg-slate-100 rounded-xl p-4 animate-pulse;
+}

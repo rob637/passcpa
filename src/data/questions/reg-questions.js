@@ -1,0 +1,1298 @@
+// REG - Taxation and Regulation Questions
+// Comprehensive question bank for CPA exam preparation
+// Updated for 2026 AICPA Blueprints
+
+export const REG_QUESTIONS = [
+  // ==========================================
+  // AREA I: Ethics, Professional Responsibilities, and Federal Tax Procedures
+  // Blueprint: REG-I (10-20%)
+  // ==========================================
+
+  // Circular 230 - REG-I-A: Ethics and Responsibilities in Tax Practice
+  {
+    id: 'reg-eth-001',
+    section: 'REG',
+    // NEW: Blueprint tagging per 2026 AICPA structure
+    blueprintArea: 'REG-I',
+    blueprintGroup: 'REG-I-A',
+    blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
+    // Legacy fields (maintained for backward compatibility)
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Circular 230',
+    difficulty: 'medium',
+    skillLevel: 'Application', // Remember, Understand, Apply, Analyze, Evaluate
+    question:
+      'Under Circular 230, which of the following acts would NOT constitute disreputable conduct?',
+    options: [
+      'Willfully failing to file a federal tax return',
+      'Charging a contingent fee for representing a client in an IRS audit',
+      'Being convicted of a felony involving dishonesty',
+      'Giving false or misleading information to the Treasury Department',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Contingent fees ARE permitted for IRS examination matters, claims for refund, and judicial proceedings. They are only prohibited for preparing original tax returns. The other options all constitute disreputable conduct under Circular 230 §10.51.',
+    reference: '31 CFR Part 10 (Circular 230) §10.27, §10.51',
+  },
+  {
+    id: 'reg-eth-002',
+    section: 'REG',
+    blueprintArea: 'REG-I',
+    blueprintGroup: 'REG-I-A',
+    blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Circular 230',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question:
+      'A CPA prepares a tax return taking a position that has a "reasonable basis" but less than "substantial authority." Under Circular 230, what disclosure is required?',
+    options: [
+      'No disclosure required if reasonable basis exists',
+      'Must disclose on Form 8275 or 8275-R',
+      'Must obtain written consent from the client',
+      'Must notify the IRS within 30 days',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under Circular 230 §10.34, a practitioner may not sign a return with a position that lacks substantial authority unless the position has a reasonable basis AND is adequately disclosed on Form 8275 (or 8275-R for positions contrary to regulations).',
+    reference: 'Circular 230 §10.34',
+  },
+  {
+    id: 'reg-eth-003',
+    section: 'REG',
+    blueprintArea: 'REG-I',
+    blueprintGroup: 'REG-I-A',
+    blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Circular 230',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question:
+      'How long must a tax practitioner retain copies of tax returns and records under Circular 230?',
+    options: [
+      'Two years from the due date',
+      'Three years from the due date or filing date, whichever is later',
+      'Five years from the filing date',
+      'Seven years from the due date',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under Circular 230 §10.28, practitioners must retain copies of returns and a list of the name and taxpayer identification number of each client for whom a return was prepared for three years after the close of the return period.',
+    reference: 'Circular 230 §10.28',
+  },
+  {
+    id: 'reg-eth-004',
+    section: 'REG',
+    blueprintArea: 'REG-I',
+    blueprintGroup: 'REG-I-A',
+    blueprintTopic: 'REG-I-A-1', // Treasury Circular 230
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Circular 230',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Which of the following individuals may practice before the IRS?',
+    options: [
+      'Any individual with a college degree in accounting',
+      'An enrolled agent who has passed the IRS Special Enrollment Examination',
+      'A bookkeeper with 10 years of experience',
+      'A tax software developer',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Enrolled agents are authorized to practice before the IRS by passing the Special Enrollment Examination or through former IRS employment. CPAs and attorneys are also authorized. Education or experience alone does not grant practice rights.',
+    reference: 'Circular 230 §10.3',
+  },
+  {
+    id: 'reg-eth-005',
+    section: 'REG',
+    blueprintArea: 'REG-I',
+    blueprintGroup: 'REG-I-A',
+    blueprintTopic: 'REG-I-A-3', // Tax preparer penalties
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Preparer Penalties',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question:
+      "A tax return preparer understates a client's liability due to an unreasonable position. If no disclosure is made, what is the penalty under IRC §6694(a)?",
+    options: [
+      '$250 or 50% of income derived, whichever is greater',
+      '$1,000 or 50% of income derived, whichever is greater',
+      '$5,000 or 75% of income derived, whichever is greater',
+      'The greater of $1,000 or 100% of income derived',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under IRC §6694(a), the penalty for an unreasonable position without substantial authority is the greater of $1,000 or 50% of the income derived by the preparer from the return.',
+    reference: 'IRC §6694(a)',
+  },
+  {
+    id: 'reg-eth-006',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Preparer Penalties',
+    difficulty: 'medium',
+    question:
+      'The penalty for willful or reckless conduct by a tax return preparer under IRC §6694(b) is:',
+    options: [
+      '$1,000 or 50% of income derived',
+      '$5,000 or 75% of income derived, whichever is greater',
+      '$10,000 per return',
+      '$25,000 or 100% of income derived',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'IRC §6694(b) imposes a penalty of the greater of $5,000 or 75% of the income derived for willful attempt to understate tax liability or reckless/intentional disregard of rules.',
+    reference: 'IRC §6694(b)',
+  },
+  {
+    id: 'reg-eth-007',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Taxpayer Penalties',
+    difficulty: 'medium',
+    question:
+      'A taxpayer files their return 50 days late with tax due of $10,000. No reasonable cause exists. What is the failure-to-file penalty?',
+    options: [
+      '$500 (5% per month × 1 month)',
+      '$1,000 (5% per month × 2 months)',
+      '$2,500 (25% maximum)',
+      '$1,500 (5% per month × 2 months, net of failure-to-pay)',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'The failure-to-file penalty is 5% per month (or fraction) of the unpaid tax, up to 25%. For 50 days (2 months), this is 10% × $10,000 = $1,000. Note: if both penalties apply, the FTF penalty is reduced by the FTP penalty.',
+    reference: 'IRC §6651(a)(1)',
+  },
+  {
+    id: 'reg-eth-008',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'Taxpayer Penalties',
+    difficulty: 'hard',
+    question:
+      'The accuracy-related penalty under IRC §6662 applies to underpayments due to all of the following EXCEPT:',
+    options: [
+      'Negligence or disregard of rules',
+      'Substantial understatement of income tax',
+      'Substantial valuation misstatement',
+      'Failure to make estimated tax payments',
+    ],
+    correctAnswer: 3,
+    explanation:
+      'The accuracy-related penalty (20%) applies to negligence, substantial understatement, valuation misstatements, and other items listed in §6662. Failure to pay estimated taxes has its own penalty under §6654, not §6662.',
+    reference: 'IRC §6662, §6654',
+  },
+  {
+    id: 'reg-eth-009',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'IRS Procedures',
+    difficulty: 'medium',
+    question: 'Generally, the IRS must assess tax within how many years after a return is filed?',
+    options: ['Two years', 'Three years', 'Five years', 'Six years'],
+    correctAnswer: 1,
+    explanation:
+      'The general statute of limitations for assessment is three years from the later of the due date or the filing date of the return under IRC §6501(a).',
+    reference: 'IRC §6501(a)',
+  },
+  {
+    id: 'reg-eth-010',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'IRS Procedures',
+    difficulty: 'hard',
+    question: 'The statute of limitations for assessment extends to six years when:',
+    options: [
+      'The taxpayer claims excessive deductions',
+      'The taxpayer omits gross income exceeding 25% of the amount reported',
+      'The IRS suspects fraud',
+      'The taxpayer is under audit',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under IRC §6501(e), the statute extends to six years if the taxpayer omits from gross income an amount exceeding 25% of the gross income stated on the return. Fraud has no statute of limitations.',
+    reference: 'IRC §6501(e)',
+  },
+
+  // ==========================================
+  // AREA 2: Business Law
+  // ==========================================
+
+  // Contracts
+  {
+    id: 'reg-law-001',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Formation',
+    difficulty: 'medium',
+    question: 'Which of the following is required for a valid contract under common law?',
+    options: [
+      'Written documentation',
+      'Consideration by both parties',
+      'Approval by a notary',
+      'A minimum value of $500',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'The four elements of a valid contract are: (1) agreement (offer and acceptance), (2) consideration, (3) capacity, and (4) legality. Writing is only required for certain contracts under the Statute of Frauds.',
+    reference: 'Restatement (Second) of Contracts',
+  },
+  {
+    id: 'reg-law-002',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Formation',
+    difficulty: 'hard',
+    question: 'Under the UCC, an acceptance that contains additional terms:',
+    options: [
+      'Is a rejection and counteroffer',
+      'Is effective as an acceptance between merchants, with additional terms becoming part of the contract unless they materially alter it',
+      'Is void and unenforceable',
+      'Must be in writing to be effective',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under UCC §2-207 (the "battle of the forms"), an acceptance with additional terms is still an acceptance. Between merchants, additional terms become part of the contract unless they materially alter it, are objected to, or the offer limits acceptance to its terms.',
+    reference: 'UCC §2-207',
+  },
+  {
+    id: 'reg-law-003',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Formation',
+    difficulty: 'medium',
+    question:
+      "A merchant's written offer to buy or sell goods, signed and stating it will be held open, is irrevocable for:",
+    options: [
+      'A reasonable time not exceeding 30 days',
+      'A reasonable time not exceeding 3 months',
+      'One year',
+      'The time stated in the offer, with no maximum',
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Under UCC §2-205, a merchant's firm offer in a signed writing is irrevocable for the time stated or, if no time is stated, a reasonable time, but in no event exceeding three months.",
+    reference: 'UCC §2-205',
+  },
+  {
+    id: 'reg-law-004',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Statute of Frauds',
+    difficulty: 'medium',
+    question: 'Under the Statute of Frauds, which contract must be in writing to be enforceable?',
+    options: [
+      'A contract for services to be completed in 8 months',
+      'A contract for the sale of goods for $400',
+      'A contract for the sale of land',
+      'An oral employment contract for one year starting immediately',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Contracts for the sale of land must be in writing under the Statute of Frauds. Services completable within one year, goods under $500, and employment contracts performable within one year do not require writing.',
+    reference: 'Restatement (Second) of Contracts §110',
+  },
+  {
+    id: 'reg-law-005',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Performance',
+    difficulty: 'hard',
+    question: 'Under the UCC, the "perfect tender rule" allows a buyer to:',
+    options: [
+      'Accept goods even if they do not conform to the contract',
+      'Reject the entire shipment if goods fail to conform in any respect',
+      'Modify the contract terms without consideration',
+      'Demand specific performance for any breach',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under UCC §2-601, if goods fail to conform to the contract in any respect, the buyer may reject the whole, accept the whole, or accept some and reject the rest. This is the "perfect tender rule."',
+    reference: 'UCC §2-601',
+  },
+  {
+    id: 'reg-law-006',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Contracts - Remedies',
+    difficulty: 'medium',
+    question: 'Compensatory damages for breach of contract are designed to:',
+    options: [
+      'Punish the breaching party',
+      'Put the non-breaching party in the position they would have been in had the contract been performed',
+      'Return both parties to their pre-contract positions',
+      'Award triple the actual damages suffered',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Compensatory damages aim to give the non-breaching party the "benefit of the bargain" - placing them in the position they would have occupied had the contract been fully performed.',
+    reference: 'Restatement (Second) of Contracts §347',
+  },
+
+  // Agency
+  {
+    id: 'reg-law-007',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Agency',
+    difficulty: 'medium',
+    question: 'An agency relationship requires all of the following EXCEPT:',
+    options: [
+      'Consent of both parties',
+      'Written agreement',
+      'Control by the principal',
+      'Agent acting on behalf of the principal',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'An agency relationship requires consent, control by the principal, and the agent acting on behalf of the principal. It does NOT require a written agreement - agency can be created orally or by conduct.',
+    reference: 'Restatement (Third) of Agency §1.01',
+  },
+  {
+    id: 'reg-law-008',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Agency',
+    difficulty: 'hard',
+    question: 'A principal is liable for the torts of an agent when:',
+    options: [
+      'The agent commits any tort while employed',
+      'The agent acts within the scope of employment',
+      'The principal has given written authorization',
+      'The agent is an independent contractor',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under respondeat superior, a principal is vicariously liable for torts committed by an agent acting within the scope of employment. Independent contractors generally do not create vicarious liability.',
+    reference: 'Restatement (Third) of Agency §2.04',
+  },
+  {
+    id: 'reg-law-009',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Agency',
+    difficulty: 'medium',
+    question: "An agent's apparent authority is created by:",
+    options: [
+      "The agent's representations to third parties",
+      "The principal's manifestations to third parties",
+      'A written power of attorney',
+      "The agent's past conduct",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Apparent authority arises from the principal's manifestations to third parties that cause them to reasonably believe the agent has authority to act. It is NOT created by the agent's own representations.",
+    reference: 'Restatement (Third) of Agency §2.03',
+  },
+  {
+    id: 'reg-law-010',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Agency',
+    difficulty: 'easy',
+    question: 'Which of the following terminates an agency by operation of law?',
+    options: [
+      'Completion of the agency purpose',
+      'Mutual agreement of the parties',
+      'Death of the principal',
+      'Revocation by the principal',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Agency terminates by operation of law upon death or incapacity of either party, impossibility, or change in law. Completion, mutual agreement, and revocation are terminations by acts of the parties.',
+    reference: 'Restatement (Third) of Agency §3.07',
+  },
+
+  // Debtor-Creditor
+  {
+    id: 'reg-law-011',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Debtor-Creditor Relationships',
+    difficulty: 'medium',
+    question: 'In a Chapter 7 bankruptcy, which of the following claims has the highest priority?',
+    options: [
+      'Unsecured creditors',
+      'General administrative expenses of the estate',
+      'Wages owed to employees (up to limits)',
+      'Tax claims',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under the Bankruptcy Code §507, administrative expenses have priority over wages, which have priority over taxes, which have priority over general unsecured creditors.',
+    reference: '11 USC §507',
+  },
+  {
+    id: 'reg-law-012',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Debtor-Creditor Relationships',
+    difficulty: 'hard',
+    question: 'To perfect a security interest in goods, a creditor must:',
+    options: [
+      'Obtain a court judgment',
+      'File a financing statement or take possession',
+      'Have the debtor sign a promissory note',
+      'Register with the Secretary of State only',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under UCC Article 9, perfection of a security interest requires attachment plus either filing a financing statement (UCC-1) with the appropriate office or taking possession of the collateral.',
+    reference: 'UCC §9-310, §9-313',
+  },
+  {
+    id: 'reg-law-013',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Debtor-Creditor Relationships',
+    difficulty: 'medium',
+    question: 'A surety who pays a creditor has the right of:',
+    options: [
+      "Subrogation - stepping into the creditor's rights against the debtor",
+      "Attachment - seizing the debtor's property",
+      "Foreclosure - selling the debtor's property",
+      "Garnishment - taking the debtor's wages",
+    ],
+    correctAnswer: 0,
+    explanation:
+      "A surety who pays the debt has the right of subrogation, allowing them to step into the creditor's shoes and assert the creditor's rights against the principal debtor.",
+    reference: 'Restatement (Third) of Suretyship §27',
+  },
+
+  // Securities
+  {
+    id: 'reg-law-014',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Federal Securities Regulation',
+    difficulty: 'medium',
+    question:
+      'Under the Securities Act of 1933, which of the following is exempt from registration?',
+    options: [
+      'An IPO of common stock',
+      'A private placement under Regulation D',
+      'A secondary offering of registered securities',
+      'A public offering of bonds',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Private placements under Regulation D (Rules 504, 506) are exempt from registration under the Securities Act of 1933. IPOs, secondary offerings to the public, and public bond offerings require registration.',
+    reference: 'Securities Act of 1933 §4(a)(2), Regulation D',
+  },
+  {
+    id: 'reg-law-015',
+    section: 'REG',
+    topicId: 'reg-business-law',
+    topic: 'Business Law',
+    subtopic: 'Federal Securities Regulation',
+    difficulty: 'hard',
+    question:
+      'Under Section 10(b) of the Securities Exchange Act of 1934 and Rule 10b-5, a plaintiff must prove all of the following EXCEPT:',
+    options: [
+      'Material misstatement or omission',
+      'Scienter (intent to deceive)',
+      'Privity with the defendant',
+      'Reliance and causation',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Rule 10b-5 requires: (1) material misstatement/omission, (2) scienter, (3) connection to purchase/sale of securities, (4) reliance, (5) economic loss, (6) loss causation. Privity is NOT required.',
+    reference: 'SEC Rule 10b-5',
+  },
+
+  // ==========================================
+  // AREA 3: Federal Taxation of Individuals
+  // ==========================================
+
+  // Gross Income
+  {
+    id: 'reg-ind-001',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Gross Income - Inclusions',
+    difficulty: 'medium',
+    question: 'Which of the following is included in gross income?',
+    options: [
+      'Life insurance proceeds received due to death of insured',
+      'Gifts received from family members',
+      'Unemployment compensation',
+      "Workers' compensation benefits",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "Unemployment compensation is fully taxable and included in gross income. Life insurance death benefits, gifts, and workers' compensation are excluded from gross income under IRC §101, §102, and §104.",
+    reference: 'IRC §85',
+  },
+  {
+    id: 'reg-ind-002',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Gross Income - Inclusions',
+    difficulty: 'hard',
+    question:
+      'A taxpayer receives $50,000 in salary plus employer-paid health insurance premiums of $8,000. What amount is included in gross income?',
+    options: ['$50,000', '$58,000', '$42,000', '$54,000'],
+    correctAnswer: 0,
+    explanation:
+      'Only the $50,000 salary is included in gross income. Employer-paid health insurance premiums are excluded under IRC §106 as an employer-provided accident and health plan.',
+    reference: 'IRC §61, §106',
+  },
+  {
+    id: 'reg-ind-003',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Gross Income - Inclusions',
+    difficulty: 'medium',
+    question: 'Under the constructive receipt doctrine, income is taxable when:',
+    options: [
+      'Cash is actually received',
+      "It is credited to the taxpayer's account or made available without restriction",
+      'An invoice is sent',
+      'A contract is signed',
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Under the constructive receipt doctrine (Treas. Reg. §1.451-2), income is taxable when it is credited to the taxpayer's account, set apart, or otherwise made available so they may draw upon it at any time.",
+    reference: 'Treasury Reg. §1.451-2',
+  },
+  {
+    id: 'reg-ind-004',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Gross Income - Exclusions',
+    difficulty: 'medium',
+    question:
+      'A taxpayer receives a $5,000 scholarship. $3,500 is for tuition and $1,500 is for room and board. What amount is excluded from gross income?',
+    options: ['$5,000', '$3,500', '$1,500', '$0'],
+    correctAnswer: 1,
+    explanation:
+      'Under IRC §117, qualified scholarships for tuition and required fees are excluded from gross income. Amounts for room, board, and other living expenses are taxable.',
+    reference: 'IRC §117',
+  },
+  {
+    id: 'reg-ind-005',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Gross Income - Exclusions',
+    difficulty: 'hard',
+    question:
+      'A taxpayer sells their principal residence for $600,000. They purchased it 5 years ago for $350,000 and have lived in it continuously. What is the recognized gain if single?',
+    options: ['$250,000', '$0', '$100,000', '$350,000'],
+    correctAnswer: 1,
+    explanation:
+      'Under IRC §121, a single taxpayer may exclude up to $250,000 of gain ($500,000 if married filing jointly) on the sale of a principal residence if they owned and used it for at least 2 of the 5 years before sale. Gain is $250,000, fully excluded.',
+    reference: 'IRC §121',
+  },
+  {
+    id: 'reg-ind-006',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Above-the-Line Deductions',
+    difficulty: 'medium',
+    question: 'Which of the following is an above-the-line deduction (adjustment to gross income)?',
+    options: [
+      'Home mortgage interest',
+      'State income taxes paid',
+      'Student loan interest (up to $2,500)',
+      'Charitable contributions',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Student loan interest (up to $2,500) is an above-the-line deduction (adjustment to AGI) under IRC §221. Mortgage interest, state taxes, and charitable contributions are itemized (below-the-line) deductions.',
+    reference: 'IRC §62, §221',
+  },
+  {
+    id: 'reg-ind-007',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Above-the-Line Deductions',
+    difficulty: 'medium',
+    question:
+      'A self-employed individual pays $12,000 for health insurance for themselves and their family. How much can they deduct as an adjustment to income?',
+    options: ['$0', '$6,000', '$12,000', 'Limited to 7.5% of AGI'],
+    correctAnswer: 2,
+    explanation:
+      'Self-employed individuals may deduct 100% of health insurance premiums paid for themselves, spouse, and dependents as an above-the-line deduction under IRC §162(l), not subject to the 7.5% AGI floor.',
+    reference: 'IRC §162(l)',
+  },
+  {
+    id: 'reg-ind-008',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Itemized Deductions',
+    difficulty: 'medium',
+    question: 'The SALT deduction (state and local taxes) for 2024 is limited to:',
+    options: ['$5,000', '$10,000 ($5,000 if married filing separately)', '$15,000', 'No limit'],
+    correctAnswer: 1,
+    explanation:
+      'The Tax Cuts and Jobs Act limits the deduction for state and local taxes (income, sales, and property taxes) to $10,000 ($5,000 for MFS) through 2025.',
+    reference: 'IRC §164(b)(6)',
+  },
+  {
+    id: 'reg-ind-009',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Itemized Deductions',
+    difficulty: 'hard',
+    question: 'Home mortgage interest is deductible on acquisition debt up to:',
+    options: [
+      '$500,000',
+      '$750,000 for mortgages after December 15, 2017',
+      '$1,000,000',
+      'No limit',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'For mortgages originating after December 15, 2017, home mortgage interest is deductible on acquisition debt up to $750,000 ($375,000 MFS). Pre-December 16, 2017 mortgages retain the $1,000,000 limit.',
+    reference: 'IRC §163(h)(3)',
+  },
+  {
+    id: 'reg-ind-010',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Itemized Deductions',
+    difficulty: 'medium',
+    question: 'Medical expenses are deductible to the extent they exceed what percentage of AGI?',
+    options: ['2%', '7.5%', '10%', '12.5%'],
+    correctAnswer: 1,
+    explanation:
+      'Medical expenses are deductible as an itemized deduction to the extent they exceed 7.5% of AGI under IRC §213.',
+    reference: 'IRC §213',
+  },
+
+  // Capital Gains
+  {
+    id: 'reg-ind-011',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Capital Gains and Losses',
+    difficulty: 'medium',
+    question: 'To qualify for long-term capital gain treatment, property must be held for:',
+    options: [
+      'At least 6 months',
+      'More than one year',
+      'At least one year',
+      'More than 18 months',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Long-term capital gain treatment requires a holding period of MORE than one year (at least one year and one day). The holding period begins the day after acquisition.',
+    reference: 'IRC §1222',
+  },
+  {
+    id: 'reg-ind-012',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Capital Gains and Losses',
+    difficulty: 'hard',
+    question:
+      'A taxpayer has $20,000 LTCG, $8,000 STCL, and $5,000 LTCL. What is the net capital gain?',
+    options: ['$7,000 LTCG', '$12,000 LTCG', '$15,000 LTCG', '$20,000 LTCG'],
+    correctAnswer: 0,
+    explanation:
+      'Net LTCG = $20,000 - $5,000 = $15,000. Net STCL = $8,000. Final net = $15,000 LTCG - $8,000 STCL = $7,000 net LTCG, taxed at preferential rates.',
+    reference: 'IRC §1(h), §1222',
+  },
+  {
+    id: 'reg-ind-013',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Capital Gains and Losses',
+    difficulty: 'medium',
+    question: 'Collectibles held more than one year are taxed at a maximum rate of:',
+    options: ['15%', '20%', '25%', '28%'],
+    correctAnswer: 3,
+    explanation:
+      'Long-term capital gains on collectibles (art, antiques, stamps, coins, etc.) are taxed at a maximum rate of 28%, not the preferential 0%/15%/20% rates.',
+    reference: 'IRC §1(h)(4)',
+  },
+  {
+    id: 'reg-ind-014',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Capital Gains and Losses',
+    difficulty: 'easy',
+    question: 'The maximum capital loss deduction against ordinary income for individuals is:',
+    options: ['$1,000', '$3,000 ($1,500 if married filing separately)', '$5,000', 'Unlimited'],
+    correctAnswer: 1,
+    explanation:
+      'Individuals may deduct up to $3,000 ($1,500 MFS) of net capital losses against ordinary income annually. Excess losses carry forward indefinitely.',
+    reference: 'IRC §1211(b)',
+  },
+
+  // Credits
+  {
+    id: 'reg-ind-015',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Tax Credits',
+    difficulty: 'medium',
+    question: 'The Child Tax Credit for 2024 is:',
+    options: [
+      '$1,000 per qualifying child',
+      '$2,000 per qualifying child',
+      '$3,000 per qualifying child',
+      '$3,600 per qualifying child',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'The Child Tax Credit is $2,000 per qualifying child under age 17. Up to $1,600 is refundable as the Additional Child Tax Credit (ACTC).',
+    reference: 'IRC §24',
+  },
+  {
+    id: 'reg-ind-016',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Tax Credits',
+    difficulty: 'hard',
+    question: 'The Earned Income Tax Credit (EITC) is:',
+    options: [
+      'A nonrefundable credit',
+      'A refundable credit based on earned income',
+      'Available to all taxpayers regardless of income',
+      'Only available to self-employed individuals',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'The EITC is a refundable credit based on earned income for low-to-moderate income workers. It can result in a refund even if no tax is owed.',
+    reference: 'IRC §32',
+  },
+  {
+    id: 'reg-ind-017',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Tax Credits',
+    difficulty: 'medium',
+    question: 'The American Opportunity Credit provides a maximum benefit of:',
+    options: [
+      '$1,000 per student',
+      '$2,000 per student',
+      '$2,500 per student (40% refundable)',
+      '$4,000 per student',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'The American Opportunity Credit is 100% of the first $2,000 plus 25% of the next $2,000 in qualified education expenses, for a maximum of $2,500 per student. 40% ($1,000) is refundable.',
+    reference: 'IRC §25A',
+  },
+
+  // ==========================================
+  // AREA 4: Federal Taxation of Entities
+  // ==========================================
+
+  // C Corporations
+  {
+    id: 'reg-corp-001',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'C Corporations',
+    difficulty: 'medium',
+    question: 'The corporate tax rate for C corporations is:',
+    options: ['15%', '21%', '25%', 'Graduated from 15% to 35%'],
+    correctAnswer: 1,
+    explanation:
+      'Since the Tax Cuts and Jobs Act, C corporations are taxed at a flat 21% rate, replacing the previous graduated rate structure.',
+    reference: 'IRC §11',
+  },
+  {
+    id: 'reg-corp-002',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'C Corporations',
+    difficulty: 'hard',
+    question:
+      'The dividends received deduction for a corporation owning less than 20% of another corporation is:',
+    options: ['50%', '65%', '80%', '100%'],
+    correctAnswer: 0,
+    explanation:
+      'The dividends received deduction (DRD) is 50% for ownership <20%, 65% for ownership 20-79%, and 100% for ownership ≥80% (with affiliated group election).',
+    reference: 'IRC §243',
+  },
+  {
+    id: 'reg-corp-003',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'C Corporations',
+    difficulty: 'medium',
+    question: 'A distribution from a C corporation is treated as a dividend to the extent of:',
+    options: [
+      'Cash distributed',
+      'Current and accumulated earnings and profits',
+      "The corporation's paid-in capital",
+      "The shareholder's basis",
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Corporate distributions are dividends to the extent of current E&P (CE&P) first, then accumulated E&P (AE&P). Distributions exceeding E&P are return of capital, then capital gain.',
+    reference: 'IRC §301, §316',
+  },
+  {
+    id: 'reg-corp-004',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'C Corporations',
+    difficulty: 'hard',
+    question: 'To qualify for a tax-free incorporation under IRC §351, the transferors must have:',
+    options: [
+      'At least 50% control after the exchange',
+      'At least 80% control after the exchange',
+      '100% ownership after the exchange',
+      'Unanimous board approval',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under IRC §351, property transfers to a corporation are tax-free only if the transferors have control (at least 80% of voting stock and 80% of nonvoting stock) immediately after the exchange.',
+    reference: 'IRC §351, §368(c)',
+  },
+  {
+    id: 'reg-corp-005',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'C Corporations',
+    difficulty: 'medium',
+    question: 'The accumulated earnings tax applies when a corporation:',
+    options: [
+      'Has retained earnings exceeding $100,000',
+      'Accumulates earnings beyond reasonable business needs to avoid shareholder tax',
+      'Fails to pay dividends for three consecutive years',
+      'Has more than 100 shareholders',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'The accumulated earnings tax (20%) applies when a corporation accumulates earnings beyond reasonable business needs to help shareholders avoid tax on dividends.',
+    reference: 'IRC §531-§537',
+  },
+
+  // S Corporations
+  {
+    id: 'reg-scorp-001',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'S Corporations',
+    difficulty: 'medium',
+    question: 'An S corporation may have a maximum of:',
+    options: ['35 shareholders', '75 shareholders', '100 shareholders', 'Unlimited shareholders'],
+    correctAnswer: 2,
+    explanation:
+      'S corporations are limited to 100 shareholders. Family members can elect to be treated as one shareholder for this purpose.',
+    reference: 'IRC §1361(b)(1)(A)',
+  },
+  {
+    id: 'reg-scorp-002',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'S Corporations',
+    difficulty: 'hard',
+    question: 'Which of the following would terminate an S corporation election?',
+    options: [
+      'Having 95 shareholders',
+      'Issuing preferred stock',
+      'Making a distribution exceeding AAA',
+      'Having passive income of 20% of gross receipts',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'S corporations may only have one class of stock. Issuing preferred stock would create a second class and terminate the S election. The other items do not terminate the election.',
+    reference: 'IRC §1362(d)',
+  },
+  {
+    id: 'reg-scorp-003',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'S Corporations',
+    difficulty: 'medium',
+    question: 'S corporation income, deductions, and credits pass through to shareholders:',
+    options: [
+      'When distributed',
+      'Based on daily ownership percentage',
+      'At the discretion of the board',
+      'Only if the shareholder is an employee',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'S corporation items pass through to shareholders on a per-share, per-day basis regardless of whether distributions are made.',
+    reference: 'IRC §1366',
+  },
+  {
+    id: 'reg-scorp-004',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'S Corporations',
+    difficulty: 'hard',
+    question: "An S corporation shareholder's basis is increased by:",
+    options: [
+      "The shareholder's share of ordinary income and separately stated income items",
+      'Distributions received',
+      "The shareholder's share of losses",
+      'Corporate-level taxes paid',
+    ],
+    correctAnswer: 0,
+    explanation:
+      'Basis is increased by income items (ordinary and separately stated) and capital contributions. It is decreased by distributions, losses, and non-deductible expenses.',
+    reference: 'IRC §1367',
+  },
+
+  // Partnerships
+  {
+    id: 'reg-part-001',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'Partnership Taxation',
+    difficulty: 'medium',
+    question: "A partner's outside basis includes:",
+    options: [
+      "Only the partner's cash contributions",
+      'Cash plus property contributions plus share of partnership liabilities',
+      'The FMV of partnership property',
+      'Partnership income minus losses',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Outside basis includes: cash contributions + adjusted basis of property contributed + share of partnership liabilities (recourse and nonrecourse) + income items - losses - distributions.',
+    reference: 'IRC §722, §752',
+  },
+  {
+    id: 'reg-part-002',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'Partnership Taxation',
+    difficulty: 'hard',
+    question: "A partnership's inside basis in contributed property is generally:",
+    options: [
+      'The fair market value at contribution',
+      "The contributing partner's adjusted basis (carryover basis)",
+      'Zero',
+      'The agreed value among partners',
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Under IRC §723, a partnership's basis in contributed property is the contributing partner's adjusted basis (carryover basis), not FMV.",
+    reference: 'IRC §723',
+  },
+  {
+    id: 'reg-part-003',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'Partnership Taxation',
+    difficulty: 'medium',
+    question: 'Guaranteed payments to a partner are:',
+    options: [
+      'Treated as distributions',
+      'Deductible by the partnership and ordinary income to the partner',
+      'Not deductible by the partnership',
+      'Taxed as capital gains',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Guaranteed payments are deductible by the partnership in computing ordinary income and are ordinary income to the receiving partner, similar to salary.',
+    reference: 'IRC §707(c)',
+  },
+  {
+    id: 'reg-part-004',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'Partnership Taxation',
+    difficulty: 'hard',
+    question: 'A distribution of cash to a partner in excess of their basis results in:',
+    options: [
+      'Ordinary income',
+      'Capital gain',
+      'No gain until the partnership terminates',
+      'A negative basis account',
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Cash distributions exceeding a partner's basis trigger capital gain recognition. Partners cannot have negative basis.",
+    reference: 'IRC §731(a)',
+  },
+
+  // Additional Questions for Depth
+  {
+    id: 'reg-add-001',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Property Transactions',
+    difficulty: 'hard',
+    question:
+      'In a like-kind exchange under IRC §1031, which of the following is NOT qualifying property?',
+    options: [
+      'Commercial building exchanged for apartment complex',
+      'Farmland exchanged for office building',
+      'Rental house exchanged for stocks',
+      'Warehouse exchanged for raw land',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Like-kind exchanges are limited to real property held for investment or business use. Stocks, bonds, partnership interests, and personal property do not qualify.',
+    reference: 'IRC §1031',
+  },
+  {
+    id: 'reg-add-002',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'Property Transactions',
+    difficulty: 'medium',
+    question: 'When depreciable business property is sold at a gain, IRC §1245 requires:',
+    options: [
+      'All gain to be treated as capital gain',
+      'Recapture of depreciation as ordinary income',
+      'Deferral of all gain',
+      'Gain to be reported over 5 years',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'IRC §1245 requires that gain on sale of depreciable personal property be recaptured as ordinary income to the extent of prior depreciation deductions.',
+    reference: 'IRC §1245',
+  },
+  {
+    id: 'reg-add-003',
+    section: 'REG',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'AMT',
+    difficulty: 'hard',
+    question: 'Which of the following is a preference item for individual AMT purposes?',
+    options: [
+      'Standard deduction',
+      'Charitable contributions',
+      'Private activity bond interest (non-exempt)',
+      'Qualified business income deduction',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'Interest on private activity bonds (other than certain exempt facility bonds) is a preference item that must be added back for AMT. Standard deduction and QBI deduction are not allowed for AMT.',
+    reference: 'IRC §57',
+  },
+  {
+    id: 'reg-add-004',
+    section: 'REG',
+    topicId: 'reg-business-tax',
+    topic: 'Business Taxation',
+    subtopic: 'Qualified Business Income',
+    difficulty: 'hard',
+    question: 'The Section 199A qualified business income deduction is generally equal to:',
+    options: [
+      '10% of qualified business income',
+      '15% of qualified business income',
+      '20% of qualified business income, subject to limitations',
+      '25% of qualified business income',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'The QBI deduction is generally 20% of qualified business income from pass-through entities, subject to W-2 wage and capital limitations for higher-income taxpayers.',
+    reference: 'IRC §199A',
+  },
+  {
+    id: 'reg-add-005',
+    section: 'REG',
+    topicId: 'reg-ethics',
+    topic: 'Ethics and Professional Responsibility',
+    subtopic: 'AICPA Standards',
+    difficulty: 'medium',
+    question: 'Under AICPA Standards for Tax Services, a CPA may recommend a tax position if:',
+    options: [
+      'The client insists on taking the position',
+      'There is a realistic possibility of success if challenged',
+      'The position is not frivolous',
+      'At least a reasonable basis exists and it is properly disclosed',
+    ],
+    correctAnswer: 3,
+    explanation:
+      'Under SSTS No. 1, a CPA may recommend a position with reasonable basis if properly disclosed. Without disclosure, the position must have at least a "should" level of confidence.',
+    reference: 'AICPA SSTS No. 1',
+  },
+
+  // ==========================================
+  // H.R. 1 "ONE BIG BEAUTIFUL BILL" PROVISIONS
+  // Effective July 1, 2026 for exam purposes
+  // ==========================================
+
+  {
+    id: 'reg-hr1-001',
+    section: 'REG',
+    blueprintArea: 'REG-III',
+    blueprintGroup: 'REG-III-A',
+    blueprintTopic: 'REG-III-A-3',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'H.R.1 Tip Income',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    hr1: true,
+    effectiveDate: '2025-01-01',
+    question:
+      'Under H.R. 1 "One Big Beautiful Bill Act," tip income for service workers is:',
+    options: [
+      'Fully included in gross income',
+      'Excluded from gross income up to $5,000',
+      'Fully excluded from gross income',
+      'Excluded only if tips are reported to the employer',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'H.R. 1 provides that tips received by service workers (restaurant servers, bartenders, etc.) are fully excluded from gross income, effective for tax years beginning after December 31, 2024.',
+    reference: 'H.R. 1 §XXXX (One Big Beautiful Bill Act)',
+  },
+  {
+    id: 'reg-hr1-002',
+    section: 'REG',
+    blueprintArea: 'REG-III',
+    blueprintGroup: 'REG-III-B',
+    blueprintTopic: 'REG-III-B-4',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'H.R.1 SALT Deduction',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    hr1: true,
+    effectiveDate: '2025-01-01',
+    question:
+      'Under H.R. 1, what is the maximum state and local tax (SALT) deduction for a married couple filing jointly in 2025?',
+    options: [
+      '$10,000',
+      '$20,000',
+      '$30,000',
+      '$40,000',
+    ],
+    correctAnswer: 2,
+    explanation:
+      'H.R. 1 increases the SALT deduction cap from $10,000 to $30,000 for married couples filing jointly (and proportionally for other filing statuses), effective for tax years beginning after December 31, 2024.',
+    reference: 'H.R. 1 §XXXX (One Big Beautiful Bill Act)',
+  },
+  {
+    id: 'reg-hr1-003',
+    section: 'REG',
+    blueprintArea: 'REG-III',
+    blueprintGroup: 'REG-III-D',
+    blueprintTopic: 'REG-III-D-4',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'H.R.1 Child Tax Credit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    hr1: true,
+    effectiveDate: '2025-01-01',
+    question:
+      'Under H.R. 1, the enhanced child tax credit for a qualifying child under 17 is:',
+    options: [
+      '$2,000 per child',
+      '$2,500 per child',
+      '$3,000 per child',
+      '$3,600 per child',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'H.R. 1 increases the child tax credit to $2,500 per qualifying child under 17, with enhanced refundability provisions. The credit phases out at higher income levels.',
+    reference: 'H.R. 1 §XXXX (One Big Beautiful Bill Act)',
+  },
+  {
+    id: 'reg-hr1-004',
+    section: 'REG',
+    blueprintArea: 'REG-III',
+    blueprintGroup: 'REG-III-A',
+    blueprintTopic: 'REG-III-A-3',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'H.R.1 Income Exclusions',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    hr1: true,
+    effectiveDate: '2025-01-01',
+    question:
+      'A restaurant server receives $50,000 in wages and $25,000 in tips during 2025. Under H.R. 1, what amount is included in gross income?',
+    options: [
+      '$75,000',
+      '$50,000',
+      '$25,000',
+      '$0',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under H.R. 1, the $25,000 in tips is fully excluded from gross income. Only the $50,000 in regular wages is included. Note: Tips are still subject to FICA taxes.',
+    reference: 'H.R. 1 §XXXX (One Big Beautiful Bill Act)',
+  },
+  {
+    id: 'reg-hr1-005',
+    section: 'REG',
+    blueprintArea: 'REG-III',
+    blueprintGroup: 'REG-III-B',
+    blueprintTopic: 'REG-III-B-4',
+    topicId: 'reg-individual-tax',
+    topic: 'Individual Taxation',
+    subtopic: 'H.R.1 SALT Deduction',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    hr1: true,
+    effectiveDate: '2025-01-01',
+    question:
+      'In 2025, a single taxpayer pays $25,000 in state income taxes and $8,000 in property taxes. Under H.R. 1, what is the allowable SALT deduction?',
+    options: [
+      '$10,000',
+      '$15,000',
+      '$25,000',
+      '$33,000',
+    ],
+    correctAnswer: 1,
+    explanation:
+      'Under H.R. 1, the SALT cap for single filers is $15,000 (half of the $30,000 MFJ cap). Even though the taxpayer paid $33,000 in total state/local taxes, the deduction is limited to $15,000.',
+    reference: 'H.R. 1 §XXXX (One Big Beautiful Bill Act)',
+  },
+];
+
+export default REG_QUESTIONS;

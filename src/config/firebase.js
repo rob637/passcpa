@@ -48,6 +48,7 @@ if (typeof window !== 'undefined') {
 
 // Connect to emulators in development if enabled
 if (isDevelopment && useEmulators) {
+  // eslint-disable-next-line no-console
   console.log('🔧 Connecting to Firebase emulators...');
 
   try {
@@ -55,8 +56,10 @@ if (isDevelopment && useEmulators) {
     connectFirestoreEmulator(db, 'localhost', 8080);
     connectStorageEmulator(storage, 'localhost', 9199);
     connectFunctionsEmulator(functions, 'localhost', 5001);
+    // eslint-disable-next-line no-console
     console.log('✅ Connected to Firebase emulators');
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.warn('⚠️ Could not connect to emulators:', error.message);
   }
 }

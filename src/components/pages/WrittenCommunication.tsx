@@ -202,7 +202,7 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
         </Link>
         <h1 className="text-2xl font-bold text-slate-900">Written Communication Practice</h1>
         <p className="text-slate-600 mt-1">
-          Practice professional business writing for the BEC section
+          Practice professional business writing for the CPA Exam
         </p>
       </div>
 

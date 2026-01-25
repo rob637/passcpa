@@ -38,12 +38,6 @@ interface CPASection {
   description: string;
 }
 
-interface DailyGoalPreset {
-  name: string;
-  points: number;
-  time: string;
-}
-
 // Sub-component props
 interface SectionStepProps {
   selected: string;

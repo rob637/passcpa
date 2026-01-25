@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-import { collection, doc, writeBatch, getDocs, query, limit, deleteDoc } from 'firebase/firestore';
+import { collection, doc, writeBatch, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { Loader2, CheckCircle, AlertCircle, Trash2, Database } from 'lucide-react';
 

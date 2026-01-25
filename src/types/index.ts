@@ -3,7 +3,7 @@
 export type Difficulty = 'easy' | 'medium' | 'tough' | 'hard' | 'beginner' | 'intermediate' | 'advanced' | 'moderate'; // Unified difficulty types
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
-export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'BEC' | 'PREP'; // Added BEC for backward compat
+export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP';
 
 export interface LessonContentSection {
   title: string;

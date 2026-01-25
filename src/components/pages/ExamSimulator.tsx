@@ -71,17 +71,6 @@ const EXAM_CONFIG: Record<ExamSection, ExamConfig> = {
     totalTime: 4 * 60 * 60,
     passingScore: 75,
   },
-  BEC: {
-    testlets: [
-      { type: 'mcq', questions: 31, time: 45 * 60 },
-      { type: 'mcq', questions: 31, time: 45 * 60 },
-      { type: 'tbs', questions: 4, time: 45 * 60 },
-      { type: 'tbs', questions: 4, time: 45 * 60 },
-      { type: 'wc', questions: 3, time: 30 * 60 }, // Written communications
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
   BAR: {
     testlets: [
       { type: 'mcq', questions: 33, time: 45 * 60 },

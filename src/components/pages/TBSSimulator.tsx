@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   ArrowLeft,
-  ArrowRight,
   CheckCircle,
   XCircle,
   FileText,
@@ -16,7 +15,6 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { getTBSBySection } from '../../data/tbs';
-import { TBS_TYPES } from '../../types';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';

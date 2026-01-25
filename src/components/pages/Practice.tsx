@@ -195,8 +195,8 @@ const Practice: React.FC = () => {
   const { recordMCQAnswer, logActivity } = useStudy();
 
   // Session state
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
+  void sessionConfig; // Use to suppress unused warning
   const [inSession, setInSession] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -309,7 +309,7 @@ const Practice: React.FC = () => {
           section: (userProfile?.examSection as ExamSection) || 'REG',
           difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
           count: config.count,
-          mode: config.mode === 'study' ? undefined : config.mode,
+          mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
         });
       }
 

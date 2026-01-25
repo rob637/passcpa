@@ -84,6 +84,7 @@ const calculateExamReadiness = (stats: any, topicPerformance: TopicStat[], lesso
 
 // Topic Heat Map Component
 const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string }> = ({ topics, section }) => {
+  void section; // Use to suppress unused warning
   const getHeatColor = (accuracy: number | undefined) => {
     if (accuracy === undefined) return 'bg-slate-200'; // Not attempted
     if (accuracy >= 85) return 'bg-success-500';

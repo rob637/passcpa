@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, ReactNode } from 'react';
+import { lazy, Suspense, ReactNode } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 
@@ -12,7 +12,7 @@ import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider } from './components/common/Toast';
 import { ThemeProvider } from './providers/ThemeProvider';
-import { TourProvider, FirstTimePrompt } from './components/OnboardingTour';
+import { TourProvider } from './components/OnboardingTour';
 
 // ============================================
 // LAZY LOADED PAGES - Code Splitting

@@ -40,6 +40,7 @@ const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommun
 
 // Content Pages
 const Lessons = lazy(() => import('./components/pages/Lessons'));
+const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
 const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
 const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
@@ -243,6 +244,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Lessons />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/lessons/matrix"
+                    element={
+                      <SuspensePage>
+                        <LessonMatrix />
                       </SuspensePage>
                     }
                   />

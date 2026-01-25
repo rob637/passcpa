@@ -106,7 +106,7 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
   correctEntries,
 }) => {
   const [entries, setEntries] = useState<JournalEntryRow[]>(
-    value || template.map(() => ({ account: '', debit: '', credit: '' }))
+    value || (template && Array.isArray(template) ? template.map(() => ({ account: '', debit: '', credit: '' })) : [{ account: '', debit: '', credit: '' }])
   );
 
   const addRow = () => {

@@ -9,6 +9,7 @@ import {
   PlayCircle,
   Search,
   GraduationCap,
+  Layout,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -197,17 +198,26 @@ const Lessons: React.FC = () => {
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
-            style={{ backgroundColor: sectionInfo?.color || '#3B82F6' }}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: sectionInfo?.color || '#3B82F6' }}
+            >
+              {sectionInfo?.shortName || currentSection}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Lessons</h1>
+              <p className="text-slate-600 dark:text-slate-400">{sectionInfo?.name || currentSection}</p>
+            </div>
+          </div>
+          <Link 
+            to="/lessons/matrix" 
+            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
           >
-            {sectionInfo?.shortName || currentSection}
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Lessons</h1>
-            <p className="text-slate-600 dark:text-slate-400">{sectionInfo?.name || currentSection}</p>
-          </div>
+            <Layout className="w-4 h-4" />
+            <span className="hidden sm:inline">Course Matrix</span>
+          </Link>
         </div>
 
         {/* Stats */}

@@ -27,11 +27,6 @@ interface CPASection {
   color: string;
   description: string;
 }
-interface DailyGoalPreset {
-  name: string;
-  points: number;
-  time: string;
-}
 
 interface UserProfile {
   displayName?: string;
@@ -73,6 +68,7 @@ const Settings: React.FC = () => {
     streakReminder: true,
     newContent: false,
   });
+  void notifications; // Suppress unused warning while keeping state
 
   // New states for enhanced settings
   // const [notificationPermission, setNotificationPermission] = useState('default');

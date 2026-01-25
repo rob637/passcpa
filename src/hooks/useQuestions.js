@@ -1,19 +1,17 @@
-import { useState, useEffect, useCallback } from 'react';
-import { collection, query, where, getDocs, doc, getDoc, orderBy, limit } from 'firebase/firestore';
+import { useState, useCallback } from 'react';
+import { collection, query, where, getDocs, limit, doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { useAuth } from './useAuth';
 
 /**
  * Hook for fetching and managing questions from the question bank
  */
 export const useQuestions = (options = {}) => {
-  const { user } = useAuth();
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const { section, topicId, difficulty, count = 10, excludeAnswered = false } = options;
+  const { section, topicId, difficulty, count = 10 } = options;
 
   // Fetch questions based on criteria
   const fetchQuestions = useCallback(
@@ -23,7 +21,7 @@ export const useQuestions = (options = {}) => {
 
       try {
         const questionsRef = collection(db, 'content', 'questions', 'items');
-        let constraints = [];
+        const constraints = [];
 
         // Apply filters
         if (fetchOptions.section || section) {

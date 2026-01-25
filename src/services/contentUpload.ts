@@ -6,9 +6,7 @@ import { db } from '../config/firebase';
 // @ts-ignore
 import { ALL_QUESTIONS } from '../data/questions';
 // @ts-ignore
-import { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL, BEC_TBS_ALL } from '../data/tbs';
-// @ts-ignore
-import { BEC_WRITTEN_COMMUNICATIONS } from '../data/written-communication';
+import { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } from '../data/tbs';
 
 // Batch size for Firestore (max 500 per batch)
 const BATCH_SIZE = 400;
@@ -75,7 +73,7 @@ export async function uploadAllMCQs(onProgress: (status: string) => void) {
  */
 export async function uploadTBS(onProgress: (status: string) => void) {
     // Combine all TBS
-    const allTBS = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL];
+    const allTBS = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL];
     
     const tbsRef = collection(db, 'tbs');
     const existingSnap = await getDocs(tbsRef);
@@ -120,28 +118,12 @@ export async function uploadTBS(onProgress: (status: string) => void) {
 
 /**
  * Upload Written Communications
+ * @deprecated - WC is updated in 2026 model
  */
 export async function uploadWC(onProgress: (status: string) => void) {
-    if (!BEC_WRITTEN_COMMUNICATIONS || BEC_WRITTEN_COMMUNICATIONS.length === 0) return { uploaded: 0 };
-
-    const wcRef = collection(db, 'written_communications');
-    const existingSnap = await getDocs(wcRef);
-    const existingIds = new Set(existingSnap.docs.map(d => d.id));
-
-    const newWC = BEC_WRITTEN_COMMUNICATIONS.filter((wc: any) => !existingIds.has(wc.id));
-
-     if (newWC.length === 0) {
-        return { uploaded: 0, skipped: BEC_WRITTEN_COMMUNICATIONS.length };
-    }
-
-    const batch = writeBatch(db);
-    newWC.forEach((wc: any) => {
-        const docRef = doc(wcRef, wc.id);
-        batch.set(docRef, { ...wc, createdAt: new Date(), source: 'local_bank' });
-    });
-
-    await batch.commit();
-    return { uploaded: newWC.length, skipped: BEC_WRITTEN_COMMUNICATIONS.length - newWC.length };
+    // WC content is now part of lessons
+    if (onProgress) onProgress('Skipping legacy WC upload (deprecated)');
+    return { uploaded: 0, skipped: 0 };
 }
 
 export default {

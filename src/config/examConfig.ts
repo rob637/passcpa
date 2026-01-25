@@ -3,6 +3,16 @@
 // Tax sections (REG, TCP) will update July 1, 2026 for H.R. 1 provisions
 
 // ============================================================================
+// CRITICAL BLUEPRINT TRANSITION 2026
+// ============================================================================
+// Testing Jan 1 - June 30, 2026: 2025 Blueprint (Pre-OBBBA tax law)
+// Testing July 1 - Dec 31, 2026: 2026 Blueprint (H.R. 1 provisions)
+// 
+// This affects REG and TCP sections significantly.
+// FAR, AUD, BAR, ISC have minimal changes between blueprints.
+// ============================================================================
+
+// ============================================================================
 // CPA EVOLUTION MODEL OVERVIEW
 // - 3 Core Sections (mandatory): AUD, FAR, REG
 // - 3 Discipline Sections (choose 1): BAR, ISC, TCP
@@ -23,12 +33,28 @@ export interface SectionConfig {
   color: string;
   icon: string;
   description: string;
+  /** Which Blueprint version content was written for */
   blueprintVersion: string;
+  /** Does this section differ between 2025 and 2026 Blueprints? */
+  blueprintSensitive: boolean;
   careerFit?: string[];
   pendingUpdate?: {
     effectiveDate: string;
     description: string;
   };
+}
+
+/** Determines which Blueprint applies based on exam date */
+export function getBlueprintForDate(examDate: Date): '2025' | '2026' {
+  const july1_2026 = new Date('2026-07-01');
+  return examDate < july1_2026 ? '2025' : '2026';
+}
+
+/** Check if we're in the transition period (Jan-June 2026 when 2025 Blueprint applies) */
+export function isInBlueprintTransition(): boolean {
+  const now = new Date();
+  const july1_2026 = new Date('2026-07-01');
+  return now < july1_2026;
 }
 
 export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
@@ -48,6 +74,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'Compass',
     description: 'Master time management, scoring, and study strategies',
     blueprintVersion: 'Universal',
+    blueprintSensitive: false,
   },
 
   // =========================================================================
@@ -66,6 +93,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'Search',
     description: 'Ethics, risk assessment, audit evidence, and reporting',
     blueprintVersion: '2026.1',
+    blueprintSensitive: false, // Minimal changes between 2025 and 2026
   },
   FAR: {
     id: 'FAR',
@@ -80,6 +108,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'Calculator',
     description: 'Financial reporting for for-profit, NFP, and governmental entities',
     blueprintVersion: '2026.1',
+    blueprintSensitive: false, // Minimal changes between 2025 and 2026
   },
   REG: {
     id: 'REG',
@@ -94,6 +123,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'Scale',
     description: 'Ethics, business law, and federal tax compliance',
     blueprintVersion: '2026.1',
+    blueprintSensitive: true, // ⚠️ MAJOR changes between 2025 and 2026 Blueprints
     // H.R. 1 provisions become testable July 1, 2026
     pendingUpdate: {
       effectiveDate: '2026-07-01',
@@ -117,6 +147,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'TrendingUp',
     description: 'Technical accounting, state/local government, and data analytics',
     blueprintVersion: '2026.1',
+    blueprintSensitive: false, // Minimal changes between 2025 and 2026
     careerFit: ['Public Accounting', 'Corporate Finance', 'Government'],
   },
   ISC: {
@@ -132,6 +163,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'Shield',
     description: 'IT audit, data management, cybersecurity, and SOC engagements',
     blueprintVersion: '2026.1',
+    blueprintSensitive: false, // Minimal changes between 2025 and 2026
     careerFit: ['IT Audit', 'Cybersecurity', 'Risk Advisory'],
   },
   TCP: {
@@ -147,26 +179,13 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     icon: 'FileText',
     description: 'Advanced individual and entity tax planning',
     blueprintVersion: '2026.1',
+    blueprintSensitive: true, // ⚠️ MAJOR changes between 2025 and 2026 Blueprints
     careerFit: ['Tax Practice', 'Wealth Management', 'Corporate Tax'],
     // H.R. 1 provisions become testable July 1, 2026
     pendingUpdate: {
       effectiveDate: '2026-07-01',
       description: 'H.R. 1 "One Big Beautiful Bill" Act provisions',
     },
-  },
-  BEC: {
-    id: 'BEC',
-    name: 'Business Environment and Concepts',
-    shortName: 'BEC',
-    type: 'legacy',
-    examLength: 0,
-    questionTypes: { mcq: 0, tbs: 0 },
-    mcqWeight: 0,
-    tbsWeight: 0,
-    color: '#9ca3af',
-    icon: 'Briefcase',
-    description: 'Retired section (replaced by Disciplines)',
-    blueprintVersion: 'Legacy',
   },
 };
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { X, ChevronLeft, ChevronRight, Check, Lightbulb } from 'lucide-react';
 import { useTheme } from '../providers/ThemeProvider';
 
@@ -151,6 +152,11 @@ export const TourProvider = ({ children }) => {
   );
 };
 
+TourProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTour = () => {
   const context = useContext(TourContext);
   if (!context) {
@@ -345,6 +351,7 @@ const TourOverlay = () => {
 };
 
 // Hook to prompt first-time users
+// eslint-disable-next-line react-refresh/only-export-components
 export const useFirstTimePrompt = () => {
   const { hasSeenTour, startTour } = useTour();
   const [showPrompt, setShowPrompt] = useState(false);

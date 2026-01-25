@@ -3,6 +3,8 @@
  * Tracks session duration, question attempts, and study patterns
  */
 
+/* eslint-disable no-console */
+
 import { useEffect, useRef, useCallback } from 'react';
 
 // Lazy import analytics

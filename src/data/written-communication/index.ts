@@ -1,4 +1,4 @@
-// Written Communication Tasks for BEC Section
+// Written Communication Tasks for CPA Exam (PREP/Disciplines)
 // These simulate the actual CPA exam Written Communication tasks
 
 import { WCRubric, WCTask } from '../../types';
@@ -33,10 +33,10 @@ export const WC_RUBRIC: WCRubric = {
   },
 };
 
-export const BEC_WRITTEN_COMMUNICATIONS: WCTask[] = [
+export const WRITTEN_COMMUNICATIONS: WCTask[] = [
   {
     id: 'wc_001',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'Internal Controls',
     difficulty: 'moderate',
@@ -104,7 +104,7 @@ Respectfully,
   },
   {
     id: 'wc_002',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'Cost Accounting - Variance Analysis',
     difficulty: 'moderate',
@@ -181,7 +181,7 @@ Regards,
   },
   {
     id: 'wc_003',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'Corporate Governance',
     difficulty: 'medium',
@@ -262,7 +262,7 @@ Respectfully submitted,
   },
   {
     id: 'wc_004',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'IT General Controls',
     difficulty: 'moderate',
@@ -340,7 +340,7 @@ Regards,
   },
   {
     id: 'wc_005',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'Economics - Exchange Rates',
     difficulty: 'moderate',
@@ -421,7 +421,7 @@ Respectfully,
   },
   {
     id: 'wc_006',
-    section: 'BEC',
+    section: 'PREP',
     type: 'written_communication',
     topic: 'Financial Management - Capital Budgeting',
     difficulty: 'moderate',
@@ -520,23 +520,23 @@ Respectfully,
 
 // Helper functions
 export const getWCByTopic = (topic: string) => {
-  return BEC_WRITTEN_COMMUNICATIONS.filter((wc) =>
+  return WRITTEN_COMMUNICATIONS.filter((wc) =>
     wc.topic.toLowerCase().includes(topic.toLowerCase())
   );
 };
 
 export const getRandomWC = () => {
-  const index = Math.floor(Math.random() * BEC_WRITTEN_COMMUNICATIONS.length);
-  return BEC_WRITTEN_COMMUNICATIONS[index];
+  const index = Math.floor(Math.random() * WRITTEN_COMMUNICATIONS.length);
+  return WRITTEN_COMMUNICATIONS[index];
 };
 
 export const getWCStats = () => {
   return {
-    total: BEC_WRITTEN_COMMUNICATIONS.length,
-    byDifficulty: BEC_WRITTEN_COMMUNICATIONS.reduce((acc: Record<string, number>, wc) => {
+    total: WRITTEN_COMMUNICATIONS.length,
+    byDifficulty: WRITTEN_COMMUNICATIONS.reduce((acc: Record<string, number>, wc) => {
       acc[wc.difficulty] = (acc[wc.difficulty] || 0) + 1;
       return acc;
     }, {}),
-    topics: [...new Set(BEC_WRITTEN_COMMUNICATIONS.map((wc) => wc.topic))],
+    topics: [...new Set(WRITTEN_COMMUNICATIONS.map((wc) => wc.topic))],
   };
 };

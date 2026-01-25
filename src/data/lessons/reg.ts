@@ -4206,5 +4206,8 @@ export const regLessons: Lesson[] = [
             "Generating revenue alone doesn't make activity related",
             "Common activities: Gift shops, parking, advertising"
           ]
+        }
+      ]
+    }
   }
 ];

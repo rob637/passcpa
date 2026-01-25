@@ -25,7 +25,7 @@ service cloud.firestore {
     // Questions collection - read-only for authenticated users
     match /questions/{questionId} {
       allow read: if isAuthenticated();
-      allow write: if isAuthenticated(); // Temporarily allow writes for seeding
+      allow write: if false; // Read-only for users
     }
     
     // Lessons collection - read-only for authenticated users
@@ -44,6 +44,12 @@ service cloud.firestore {
     match /examSections/{sectionId} {
       allow read: if isAuthenticated();
       allow write: if false;
+    }
+
+    // System Errors - append only
+    match /system_errors/{errorId} {
+      allow create: if isAuthenticated(); // Users can log errors
+      allow read, update, delete: if false; // Admin only (via backend/console)
     }
   }
 }

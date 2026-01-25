@@ -16,6 +16,7 @@ import { CPA_SECTIONS, DAILY_GOAL_PRESETS } from '../../config/examConfig';
 import {
   getDailyReminderSettings,
 } from '../../services/notifications';
+import { getCacheStatus, clearCache } from '../../services/offlineCache';
 import { Timestamp } from 'firebase/firestore';
 import clsx from 'clsx';
 
@@ -76,69 +77,18 @@ const Settings: React.FC = () => {
   // New states for enhanced settings
   // const [notificationPermission, setNotificationPermission] = useState('default');
   const [reminderTime, setReminderTime] = useState('09:00');
-  // const [cacheStatus, setCacheStatus] = useState<any>(null);
-  // const [isOnline, setIsOnline] = useState(navigator.onLine);
-
+  const [cacheStatus, setCacheStatus] = useState<any>(null);
+  
   // Load settings on mount
   useEffect(() => {
-    // Notification permission
-    // setNotificationPermission(getNotificationPermission());
-
-    // Sound/haptic settings
-    // setSoundEnabledState(isSoundEnabled());
-    // const reminderSettings = getDailyReminderSettings();
-    // setReminderTime(reminderSettings.time);
-    // // Reminder settings
+    // Reminder settings
     const reminderSettings = getDailyReminderSettings();
     setReminderTime(reminderSettings.time);
     setNotifications((prev) => ({ ...prev, dailyReminder: reminderSettings.enabled }));
 
     // Cache status
-    // getCacheStatus().then(setCacheStatus);
-    
-    /* 
-    // Online status
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-
-    return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
-    };
-    */
+    getCacheStatus().then(setCacheStatus);
   }, []);
-
-  /*
-  // Request notification permission
-  const handleRequestNotifications = async () => {
-    const result = await requestNotificationPermission();
-    setNotificationPermission(result.permission);
-  };
-
-  // Toggle sound
-  const handleToggleSound = (enabled: boolean) => {
-    setSoundEnabled(enabled);
-    setSoundEnabledState(enabled);
-  };
-
-  // Toggle haptic
-  const handleToggleHaptic = (enabled: boolean) => {
-    setHapticEnabled(enabled);
-    setHapticEnabledState(enabled);
-  };
-
-  // Update reminder settings
-  const handleReminderChange = (key: string, value: any) => {
-    if (key === 'dailyReminder') {
-      setNotifications((prev) => ({ ...prev, dailyReminder: value }));
-      setupDailyReminder(reminderTime, value);
-    } else if (key === 'time') {
-      setReminderTime(value);
-      setupDailyReminder(value, notifications.dailyReminder);
-    }
-  };
 
   // Clear cache
   const handleClearCache = async () => {
@@ -146,7 +96,6 @@ const Settings: React.FC = () => {
     const status = await getCacheStatus();
     setCacheStatus(status);
   };
-  */
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -328,6 +277,38 @@ const Settings: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Offline Tab */}
+            {activeTab === 'offline' && (
+              <div className="card-body space-y-6">
+                 <div>
+                    <h2 className="text-lg font-semibold text-slate-900 mb-4">Offline Storage</h2>
+                    <p className="text-slate-600 mb-4">
+                      Manage your offline content. Caching lessons allows you to study without an internet connection.
+                    </p>
+                    
+                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
+                      <div className="flex items-center justify-between mb-2">
+                         <span className="font-medium text-slate-700">Questions Cached</span>
+                         <span className="font-bold text-slate-900">{cacheStatus?.questions_count || 0}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                         <span className="text-slate-500">Last Updated</span>
+                         <span className="text-slate-500">
+                           {cacheStatus?.questions_cached_at ? new Date(cacheStatus.questions_cached_at).toLocaleDateString() : 'Never'}
+                         </span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={handleClearCache}
+                      className="px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      Clear Offline Cache
+                    </button>
+                 </div>
               </div>
             )}
             

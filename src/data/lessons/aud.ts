@@ -1783,9 +1783,9 @@ export const audLessons: Lesson[] = [
           content: "**Example: Accounts Receivable**\n\n**Risk:** Economic downturn may impair collectibility\n\n**Assertion affected:** Valuation (net realizable value)\n\n**Response:** Test allowance for doubtful accounts:\n• Review aging\n• Evaluate subsequent cash receipts\n• Test management's estimation process\n• Assess adequacy of allowance"
         },
         {
-          title: '⚠️ Exam Trap: Don't Assess All Risks as High',
+          title: '⚠️ Exam Trap: Do Not Assess All Risks as High',
           type: 'warning',
-          content: "**Risk assessment requires JUDGMENT:**\n\n**Wrong:** Assess everything as high risk to be safe\n\n**Why this is wrong:**\n• Leads to overauditing\n• Inefficient use of resources\n• Doesn't reflect actual risk profile\n\n**Right approach:**\n• Thoughtful analysis of each area\n• Support with evidence\n• Different risks = different responses"
+          content: "**Risk assessment requires JUDGMENT:**\n\n**Wrong:** Assess everything as high risk to be safe\n\n**Why this is wrong:**\n• Leads to overauditing\n• Inefficient use of resources\n• Does not reflect actual risk profile\n\n**Right approach:**\n• Thoughtful analysis of each area\n• Support with evidence\n• Different risks = different responses"
         },
         {
           title: 'Documentation Requirements',
@@ -1862,7 +1862,7 @@ export const audLessons: Lesson[] = [
           ]
         },
         {
-          title: '⚠️ Exam Trap: Can't Skip Control Understanding',
+          title: '⚠️ Exam Trap: Cannot Skip Control Understanding',
           type: 'warning',
           content: "**For significant risks:**\n\nMust obtain understanding of controls EVEN IF not planning to rely on them!\n\n**Why?** Need to know:\n• What controls exist\n• Whether they're designed and implemented\n• Whether control deficiencies exist\n\n**This is different from testing operating effectiveness** (which remains optional if not relying)"
         },
@@ -3321,7 +3321,7 @@ export const audLessons: Lesson[] = [
           content: "**\"We cannot express an opinion\"**\n\n**Use when:**\n• Unable to obtain sufficient evidence\n• AND pervasive effect\n\n**Report includes:**\n• Basis for Disclaimer paragraph\n• Explains why evidence couldn't be obtained\n• States auditor does NOT express opinion\n\n**Auditor couldn't do the job!**"
         },
         {
-          title: '⚠️ Exam Trap: Can't Mix and Match',
+          title: '⚠️ Exam Trap: Cannot Mix and Match',
           type: 'warning',
           content: "**Each issue gets ONE opinion:**\n\n• Can't have qualified AND adverse\n• Different issues may require different treatments\n\n**When multiple issues:**\n• Use the MORE severe opinion\n• Adverse \"trumps\" qualified for GAAP issues\n• Disclaimer \"trumps\" qualified for scope issues\n\n**One report, one opinion (the worst one)!**"
         },

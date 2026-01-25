@@ -140,12 +140,12 @@ export default defineConfig({
             './src/components/pages/AdminSeed.jsx',
           ],
           'feature-ai': [
-            './src/components/pages/AITutor.jsx',
-            './src/services/aiService.js',
+            './src/components/pages/AITutor.tsx',
+            './src/services/aiService.ts',
           ],
           'feature-tbs': [
-            './src/components/pages/TBSSimulator.jsx',
-            './src/components/pages/WrittenCommunication.jsx',
+            './src/components/pages/TBSSimulator.tsx',
+            './src/components/pages/WrittenCommunication.tsx',
           ],
         },
       },

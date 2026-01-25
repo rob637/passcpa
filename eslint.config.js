@@ -25,6 +25,7 @@ export default [
         ...globals.browser,
         ...globals.es2021,
         ...globals.node,
+        vi: 'readonly',
       },
       parserOptions: {
         ecmaFeatures: {

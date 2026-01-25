@@ -33,13 +33,6 @@
       ]
     },
     {
-      "collectionGroup": "dailyLogs",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "date", "order": "DESCENDING" }
-      ]
-    },
-    {
       "collectionGroup": "questions",
       "queryScope": "COLLECTION",
       "fields": [

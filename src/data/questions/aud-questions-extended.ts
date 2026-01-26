@@ -8,7 +8,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   // AUDIT PLANNING
   // ==========================================
   {
-    id: 'aud-plan-001',
+    id: 'aud-ext-plan-001',
     section: 'AUD',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
@@ -22,7 +22,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 200',
   },
   {
-    id: 'aud-plan-002',
+    id: 'aud-ext-plan-002',
     section: 'AUD',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
@@ -41,7 +41,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 320.09',
   },
   {
-    id: 'aud-plan-003',
+    id: 'aud-ext-plan-003',
     section: 'AUD',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
@@ -805,7 +805,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
 
   // Ethics and Independence
   {
-    id: 'aud-eth-001',
+    id: 'aud-ext-eth-001',
     section: 'AUD',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
@@ -823,7 +823,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AICPA Code of Professional Conduct 1.000.010',
   },
   {
-    id: 'aud-eth-002',
+    id: 'aud-ext-eth-002',
     section: 'AUD',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
@@ -841,7 +841,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AICPA Code 1.295 Management Participation Threat',
   },
   {
-    id: 'aud-eth-003',
+    id: 'aud-ext-eth-003',
     section: 'AUD',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
@@ -861,7 +861,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
 
   // Risk Assessment
   {
-    id: 'aud-risk-001',
+    id: 'aud-ext-risk-001',
     section: 'AUD',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
@@ -879,7 +879,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 200 Audit Risk Model',
   },
   {
-    id: 'aud-risk-002',
+    id: 'aud-ext-risk-002',
     section: 'AUD',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
@@ -897,7 +897,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 315.32',
   },
   {
-    id: 'aud-risk-003',
+    id: 'aud-ext-risk-003',
     section: 'AUD',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
@@ -1028,46 +1028,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   },
 
   // Sampling
-  {
-    id: 'aud-samp-001',
-    section: 'AUD',
-    topicId: 'aud-sampling',
-    topic: 'Audit Sampling',
-    subtopic: 'Sample Size Factors',
-    difficulty: 'hard',
-    question: 'Increasing the tolerable rate of deviation in tests of controls will:',
-    options: [
-      'Increase sample size',
-      'Decrease sample size',
-      'Not affect sample size',
-      'Require use of statistical sampling',
-    ],
-    correctAnswer: 1,
-    explanation: 'Higher tolerable deviation rate (auditor willing to accept more errors) = smaller sample needed. Sample size is inversely related to tolerable deviation rate and directly related to expected deviation rate and confidence level.',
-    reference: 'AU-C 530 Sampling',
-  },
-  {
-    id: 'aud-samp-002',
-    section: 'AUD',
-    topicId: 'aud-sampling',
-    topic: 'Audit Sampling',
-    subtopic: 'Sampling Risk',
-    difficulty: 'medium',
-    question: 'The risk of incorrect acceptance in substantive testing is the risk that:',
-    options: [
-      'The auditor concludes a material misstatement exists when it doesn\'t',
-      'The auditor concludes the balance is materially correct when it is materially misstated',
-      'The auditor performs too many audit procedures',
-      'The auditor selects an unrepresentative sample',
-    ],
-    correctAnswer: 1,
-    explanation: 'Risk of incorrect acceptance = concluding balance is OK when it\'s materially misstated. This affects audit effectiveness (Type II error). Risk of incorrect rejection = concluding misstatement exists when it doesn\'t (affects efficiency, Type I error).',
-    reference: 'AU-C 530 Sampling Risks',
-  },
 
   // Audit Reports
   {
-    id: 'aud-rpt-001',
+    id: 'aud-ext-rpt-001',
     section: 'AUD',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
@@ -1085,7 +1049,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 701 Key Audit Matters',
   },
   {
-    id: 'aud-rpt-002',
+    id: 'aud-ext-rpt-002',
     section: 'AUD',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
@@ -1103,7 +1067,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 705 Modified Opinions',
   },
   {
-    id: 'aud-rpt-003',
+    id: 'aud-ext-rpt-003',
     section: 'AUD',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
@@ -1223,7 +1187,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
 
   // Evidence and Documentation
   {
-    id: 'aud-evid-001',
+    id: 'aud-ext-evid-001',
     section: 'AUD',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
@@ -1241,7 +1205,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 500.05',
   },
   {
-    id: 'aud-evid-002',
+    id: 'aud-ext-evid-002',
     section: 'AUD',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
@@ -1259,7 +1223,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AU-C 500.A31',
   },
   {
-    id: 'aud-evid-003',
+    id: 'aud-ext-evid-003',
     section: 'AUD',
     topicId: 'aud-evidence',
     topic: 'Audit Documentation',
@@ -1277,7 +1241,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     reference: 'AS 1215.14 / AU-C 230.A23',
   },
   {
-    id: 'aud-evid-004',
+    id: 'aud-ext-evid-004',
     section: 'AUD',
     topicId: 'aud-evidence',
     topic: 'Audit Documentation',
@@ -1296,116 +1260,8 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   },
 
   // Audit Planning
-  {
-    id: 'aud-plan-001',
-    section: 'AUD',
-    topicId: 'aud-planning',
-    topic: 'Audit Planning',
-    subtopic: 'Materiality',
-    difficulty: 'medium',
-    question: 'Performance materiality is typically:',
-    options: [
-      'Higher than overall materiality',
-      'Lower than overall materiality',
-      'Equal to overall materiality',
-      'Set by the client',
-    ],
-    correctAnswer: 1,
-    explanation: 'Performance materiality is set below overall materiality to reduce the risk that aggregate uncorrected/undetected misstatements exceed overall materiality. It is used for planning specific procedures.',
-    reference: 'AU-C 320.09',
-  },
-  {
-    id: 'aud-plan-002',
-    section: 'AUD',
-    topicId: 'aud-planning',
-    topic: 'Audit Planning',
-    subtopic: 'Analytical Procedures',
-    difficulty: 'medium',
-    question: 'Analytical procedures are REQUIRED:',
-    options: [
-      'Only in the planning stage',
-      'Only in the substantive testing stage',
-      'In both planning and overall review stages',
-      'Only when the auditor suspects fraud',
-    ],
-    correctAnswer: 2,
-    explanation: 'Analytical procedures are required in planning (to understand the entity) and overall review (to assess conclusions). They are optional but common during substantive testing.',
-    reference: 'AU-C 520.06',
-  },
-  {
-    id: 'aud-plan-003',
-    section: 'AUD',
-    topicId: 'aud-planning',
-    topic: 'Audit Planning',
-    subtopic: 'Understanding the Entity',
-    difficulty: 'medium',
-    question: 'Which is NOT a primary purpose of obtaining an understanding of the entity and its environment?',
-    options: [
-      'Identifying risks of material misstatement',
-      'Designing audit procedures responsive to assessed risks',
-      'Determining whether to accept the engagement',
-      'Establishing overall audit strategy',
-    ],
-    correctAnswer: 2,
-    explanation: 'Understanding the entity identifies and assesses RMM and designs responsive procedures. Engagement acceptance decision occurs before gaining this understanding and uses different criteria.',
-    reference: 'AU-C 315.05',
-  },
 
   // Internal Control
-  {
-    id: 'aud-ic-001',
-    section: 'AUD',
-    topicId: 'aud-internal-control',
-    topic: 'Internal Control',
-    subtopic: 'COSO Components',
-    difficulty: 'medium',
-    question: 'The "tone at the top" concept is most closely associated with which COSO component?',
-    options: [
-      'Risk Assessment',
-      'Control Activities',
-      'Control Environment',
-      'Information and Communication',
-    ],
-    correctAnswer: 2,
-    explanation: 'Control environment includes integrity, ethical values, and competence of personnel. "Tone at the top" reflects management\'s commitment to ethics and controls, setting the foundation for all other components.',
-    reference: 'COSO Framework - Control Environment',
-  },
-  {
-    id: 'aud-ic-002',
-    section: 'AUD',
-    topicId: 'aud-internal-control',
-    topic: 'Internal Control',
-    subtopic: 'Control Testing',
-    difficulty: 'hard',
-    question: 'If an auditor plans to rely on controls, they must test controls:',
-    options: [
-      'Only once every three years',
-      'At least annually when relying on them',
-      'Only when control risk is assessed as low',
-      'Only for significant accounts',
-    ],
-    correctAnswer: 1,
-    explanation: 'To rely on controls and reduce substantive testing, auditors must test operating effectiveness annually. Cannot assume controls tested in prior years are still effective without current evidence.',
-    reference: 'AU-C 330.11',
-  },
-  {
-    id: 'aud-ic-003',
-    section: 'AUD',
-    topicId: 'aud-internal-control',
-    topic: 'Internal Control',
-    subtopic: 'Deficiency Classification',
-    difficulty: 'hard',
-    question: 'A significant deficiency is defined as:',
-    options: [
-      'Any control deficiency',
-      'A deficiency less severe than a material weakness',
-      'A deficiency that merits attention of those charged with governance',
-      'A deficiency that results in a material misstatement',
-    ],
-    correctAnswer: 2,
-    explanation: 'Significant deficiency = deficiency or combination important enough to merit attention of those charged with governance, but less severe than a material weakness (which has reasonable possibility of material misstatement).',
-    reference: 'AU-C 265.07',
-  },
 
   // Substantive Procedures
   {
@@ -1464,60 +1320,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   },
 
   // Audit Reports
-  {
-    id: 'aud-rpt-001',
-    section: 'AUD',
-    topicId: 'aud-reports',
-    topic: 'Audit Reports',
-    subtopic: 'Emphasis of Matter',
-    difficulty: 'medium',
-    question: 'An emphasis-of-matter paragraph is used to draw attention to:',
-    options: [
-      'A material misstatement that management refuses to correct',
-      'A matter appropriately presented but fundamental to understanding',
-      'A scope limitation',
-      'A departure from GAAP',
-    ],
-    correctAnswer: 1,
-    explanation: 'Emphasis-of-matter highlights properly presented matters fundamental to users\' understanding (e.g., significant uncertainty, related party). It does not modify the opinion. Misstatements or departures would modify the opinion.',
-    reference: 'AU-C 706.06',
-  },
-  {
-    id: 'aud-rpt-002',
-    section: 'AUD',
-    topicId: 'aud-reports',
-    topic: 'Audit Reports',
-    subtopic: 'Qualified Opinion',
-    difficulty: 'hard',
-    question: 'A qualified opinion is appropriate when:',
-    options: [
-      'Misstatements are material and pervasive',
-      'Misstatements are material but not pervasive',
-      'The auditor cannot form an opinion',
-      'Financial statements are fairly presented',
-    ],
-    correctAnswer: 1,
-    explanation: 'Qualified = material but not pervasive. Adverse = material and pervasive. Disclaimer = unable to obtain sufficient evidence (pervasive). Unqualified = no material misstatements.',
-    reference: 'AU-C 705.07',
-  },
-  {
-    id: 'aud-rpt-003',
-    section: 'AUD',
-    topicId: 'aud-reports',
-    topic: 'Audit Reports',
-    subtopic: 'Comparative Statements',
-    difficulty: 'hard',
-    question: 'When prior period statements were audited by a predecessor auditor whose report is not presented, the successor auditor:',
-    options: [
-      'Must reaudit the prior period',
-      'Must include an other-matter paragraph about the predecessor',
-      'Cannot issue a report on current year statements',
-      'Assumes responsibility for the prior period opinion',
-    ],
-    correctAnswer: 1,
-    explanation: 'Successor includes other-matter paragraph stating: prior statements were audited by another auditor, date and type of opinion issued, and that the successor has not audited/reviewed them.',
-    reference: 'AU-C 700.55',
-  },
 
   // Special Engagements
   {
@@ -1824,42 +1626,6 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   },
 
   // Written Representations
-  {
-    id: 'aud-rep-001',
-    section: 'AUD',
-    topicId: 'aud-representations',
-    topic: 'Written Representations',
-    subtopic: 'Required Representations',
-    difficulty: 'medium',
-    question: 'The management representation letter is dated:',
-    options: [
-      'At the beginning of the audit',
-      'On the date of the auditor\'s report',
-      '30 days after year-end',
-      'At the end of fieldwork',
-    ],
-    correctAnswer: 1,
-    explanation: 'Management letter is dated on the audit report date, covering the period through that date. It\'s obtained at/near completion of audit to cover all matters through report date.',
-    reference: 'AU-C 580.15',
-  },
-  {
-    id: 'aud-rep-002',
-    section: 'AUD',
-    topicId: 'aud-representations',
-    topic: 'Written Representations',
-    subtopic: 'Refusal to Provide',
-    difficulty: 'hard',
-    question: 'If management refuses to provide a required written representation, the auditor should:',
-    options: [
-      'Issue an unqualified opinion with an emphasis-of-matter paragraph',
-      'Issue a qualified or adverse opinion',
-      'Disclaim an opinion due to scope limitation',
-      'Obtain the representation verbally and document it',
-    ],
-    correctAnswer: 2,
-    explanation: 'Refusal to provide required representations is a scope limitation sufficient to disclaim. It also raises questions about reliability of other representations and evidence.',
-    reference: 'AU-C 580.20',
-  },
 
   // Subsequent Events
   {

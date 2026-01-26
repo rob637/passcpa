@@ -14,6 +14,7 @@ import {
   Loader2,
   Keyboard,
   Sparkles,
+  AlertTriangle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -212,6 +213,12 @@ const Practice: React.FC = () => {
   // Timer
   const [startTime, setStartTime] = useState<number | null>(null);
   const [elapsed, setElapsed] = useState(0);
+  
+  // Report Issue state
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [reportType, setReportType] = useState<string>('');
+  const [reportDetails, setReportDetails] = useState('');
+  const [reportSubmitted, setReportSubmitted] = useState(false);
 
   const currentQuestion: Question | undefined = questions[currentIndex];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -424,6 +431,40 @@ const Practice: React.FC = () => {
     });
   }, [currentQuestion]);
 
+  // Report issue handler
+  const handleReportIssue = useCallback(async () => {
+    if (!currentQuestion || !reportType) return;
+    
+    try {
+      // Log the report (could be sent to Firestore in production)
+      console.log('Question Issue Report:', {
+        questionId: currentQuestion.id,
+        section: sessionConfig?.section,
+        type: reportType,
+        details: reportDetails,
+        timestamp: new Date().toISOString()
+      });
+      
+      if (logActivity) {
+        logActivity('question_reported', {
+          questionId: currentQuestion.id,
+          reportType,
+          details: reportDetails
+        });
+      }
+      
+      setReportSubmitted(true);
+      setTimeout(() => {
+        setShowReportModal(false);
+        setReportType('');
+        setReportDetails('');
+        setReportSubmitted(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to submit report:', error);
+    }
+  }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity]);
+
   // End session
   const endSession = () => {
     const totalQuestions = questions.length;
@@ -632,6 +673,13 @@ const Practice: React.FC = () => {
                   <BookOpen className="w-4 h-4" />
                   Review Lessons
                 </Link>
+                <button
+                  onClick={() => setShowReportModal(true)}
+                  className="btn-secondary text-sm flex items-center gap-2 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300"
+                >
+                  <AlertTriangle className="w-4 h-4" />
+                  Report Issue
+                </button>
               </div>
             </div>
           </div>
@@ -750,6 +798,99 @@ const Practice: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Report Issue Modal */}
+      {showReportModal && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={() => setShowReportModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-slate-800 rounded-2xl p-6 max-w-md mx-4 shadow-xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {reportSubmitted ? (
+              <div className="text-center py-4">
+                <CheckCircle className="w-12 h-12 text-success-500 mx-auto mb-3" />
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">
+                  Thank You!
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mt-1">
+                  Your report has been submitted.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="flex items-center gap-2 mb-4">
+                  <AlertTriangle className="w-5 h-5 text-amber-500" />
+                  <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                    Report an Issue
+                  </h3>
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                  Question ID: <code className="bg-slate-100 dark:bg-slate-700 px-1 rounded">{currentQuestion.id}</code>
+                </p>
+                
+                <div className="space-y-3 mb-4">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+                    Issue Type
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { value: 'wrong-answer', label: 'Wrong Answer' },
+                      { value: 'typo', label: 'Typo/Grammar' },
+                      { value: 'unclear', label: 'Unclear Question' },
+                      { value: 'outdated', label: 'Outdated Content' },
+                    ].map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => setReportType(option.value)}
+                        className={clsx(
+                          'px-3 py-2 rounded-lg text-sm font-medium transition-colors border',
+                          reportType === option.value
+                            ? 'bg-primary-100 border-primary-300 text-primary-700 dark:bg-primary-900 dark:border-primary-700 dark:text-primary-300'
+                            : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-300'
+                        )}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    Additional Details (optional)
+                  </label>
+                  <textarea
+                    value={reportDetails}
+                    onChange={(e) => setReportDetails(e.target.value)}
+                    placeholder="Please describe the issue..."
+                    className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                    rows={3}
+                  />
+                </div>
+
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowReportModal(false)}
+                    className="flex-1 btn-secondary"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleReportIssue}
+                    disabled={!reportType}
+                    className="flex-1 btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Submit Report
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -457,7 +457,7 @@ const Progress: React.FC = () => {
                   {sectionInfo?.name || 'Exam'} Proficiency
                 </h2>
                 <div className="text-sm font-medium text-slate-500">
-                  {topicPerformance.length}/{((EXAM_BLUEPRINTS as Record<string, any>)[currentSection] || []).reduce((acc: number, area: any) => acc + (area.topics?.length || 0), 0) || 15} Topics
+                  {topicPerformance.length}/{((EXAM_BLUEPRINTS as Record<string, any>)[currentSection]?.areas || []).reduce((acc: number, area: any) => acc + (area.groups?.reduce((g: number, grp: any) => g + (grp.topics?.length || 0), 0) || 0), 0) || 15} Topics
                 </div>
               </div>
               

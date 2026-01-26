@@ -49,6 +49,7 @@ const Achievements = lazy(() => import('./components/pages/Achievements'));
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
+const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
 
 // Legal Pages
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
@@ -208,6 +209,16 @@ function App() {
                     <AdminRoute>
                       <SuspensePage>
                         <AdminSeed />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/questions"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <QuestionEditor />
                       </SuspensePage>
                     </AdminRoute>
                   }

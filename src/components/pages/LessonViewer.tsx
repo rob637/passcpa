@@ -22,6 +22,7 @@ import {
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
 import { getLessonById, getLessonsBySection } from '../../data/lessons';
+import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection } from '../../types';
 
@@ -232,7 +233,6 @@ const LessonViewer: React.FC = () => {
   const { completeLesson, logActivity } = useStudy();
   const { userProfile } = useAuth();
 
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -328,16 +328,23 @@ const LessonViewer: React.FC = () => {
             </Link>
 
             <div className="flex items-center gap-2">
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={clsx(
-                  'p-2 rounded-lg transition-colors',
-                  isBookmarked ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
-                )}
-                aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
-              >
-                <Bookmark className="w-5 h-5" />
-              </button>
+              <BookmarkButton 
+                itemId={lessonId || ''} 
+                itemType="lesson" 
+                itemData={{ 
+                  title: lesson?.title,
+                  section: lesson?.section,
+                }}
+                size="md"
+              />
+              <NotesButton 
+                itemId={lessonId || ''}
+                itemData={{
+                  section: lesson?.section,
+                  title: lesson?.title,
+                }}
+                size="md"
+              />
               <button 
                 onClick={() => {
                   if (navigator.share && lesson) {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   TrendingUp,
   Target,
@@ -493,9 +494,12 @@ const Progress: React.FC = () => {
                 <div className="text-sm text-primary-200 mt-2">Accuracy is 62% - needs improvement</div>
               </div>
 
-              <button className="w-full py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-sm">
+              <Link 
+                to="/practice" 
+                className="w-full py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-sm block text-center"
+              >
                 Start Focused Session
-              </button>
+              </Link>
             </div>
           </div>
         </div>

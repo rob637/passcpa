@@ -50,6 +50,10 @@ const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 
+// Legal Pages
+const Terms = lazy(() => import('./components/pages/legal/Terms'));
+const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
+
 // Protected Route Component
 interface RouteProps {
   children: JSX.Element;
@@ -64,6 +68,30 @@ const ProtectedRoute = ({ children }: RouteProps) => {
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+// Admin-only Route - requires isAdmin: true in Firestore user profile
+const AdminRoute = ({ children }: RouteProps) => {
+  const { user, userProfile, loading } = useAuth();
+
+  if (loading) {
+    return <FullPageLoader />;
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Check admin status from Firestore user profile
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const isAdmin = (userProfile as any)?.isAdmin === true;
+  
+  if (!isAdmin) {
+    // Non-admins silently redirected to dashboard
+    return <Navigate to="/dashboard" replace />;
   }
 
   return children;
@@ -133,6 +161,24 @@ function App() {
                   />
                 </Route>
 
+                {/* Legal Pages (public) */}
+                <Route
+                  path="/terms"
+                  element={
+                    <SuspensePage>
+                      <Terms />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/privacy"
+                  element={
+                    <SuspensePage>
+                      <Privacy />
+                    </SuspensePage>
+                  }
+                />
+
                 {/* Onboarding (protected but different layout) */}
                 <Route
                   path="/onboarding"
@@ -145,25 +191,25 @@ function App() {
                   }
                 />
 
-                {/* Admin Routes (protected but different layout) */}
+                {/* Admin Routes - requires isAdmin: true in user profile */}
                 <Route
                   path="/admin/cms"
                   element={
-                    <ProtectedRoute>
+                    <AdminRoute>
                       <SuspensePage>
                         <AdminCMS />
                       </SuspensePage>
-                    </ProtectedRoute>
+                    </AdminRoute>
                   }
                 />
                 <Route
                   path="/admin/seed"
                   element={
-                    <ProtectedRoute>
+                    <AdminRoute>
                       <SuspensePage>
                         <AdminSeed />
                       </SuspensePage>
-                    </ProtectedRoute>
+                    </AdminRoute>
                   }
                 />
 

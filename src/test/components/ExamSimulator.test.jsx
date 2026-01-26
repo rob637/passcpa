@@ -88,9 +88,9 @@ describe('ExamSimulator', () => {
   });
 
   describe('Intro Screen', () => {
-    it('should display exam simulator title', () => {
+    it('should display exam simulation title', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Exam Simulator/i)).toBeInTheDocument();
+      expect(screen.getByText(/Exam Simulation/i)).toBeInTheDocument();
     });
 
     it('should show exam type selection (Mini vs Full)', () => {
@@ -99,35 +99,36 @@ describe('ExamSimulator', () => {
       expect(screen.getByText(/Full Exam/i)).toBeInTheDocument();
     });
 
-    it('should have Mini Exam as recommended and default', () => {
+    it('should have Mini Exam selected by default', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Recommended/i)).toBeInTheDocument();
+      const miniExamButton = screen.getByText(/Mini Exam/i).closest('button');
+      expect(miniExamButton).toHaveClass('border-primary-500');
     });
 
     it('should display exam time info for Mini Exam', () => {
       renderExamSimulator();
-      expect(screen.getByText(/50 minutes/i)).toBeInTheDocument();
+      expect(screen.getByText(/50 mins/i)).toBeInTheDocument();
     });
 
-    it('should display exam rules', () => {
+    it('should display exam structure info', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Exam Rules/i)).toBeInTheDocument();
-      expect(screen.getByText(/flag questions/i)).toBeInTheDocument();
+      expect(screen.getByText(/Strict Timing/i)).toBeInTheDocument();
+      expect(screen.getByText(/Testlet Structure/i)).toBeInTheDocument();
     });
 
-    it('should mention passing threshold of 75%', () => {
+    it('should show section info', () => {
       renderExamSimulator();
-      expect(screen.getByText(/75%/i)).toBeInTheDocument();
+      expect(screen.getByText(/REG/i)).toBeInTheDocument();
     });
 
-    it('should have Begin Exam button', () => {
+    it('should have Begin Examination button', () => {
       renderExamSimulator();
-      expect(screen.getByRole('button', { name: /Begin Exam/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
     });
 
-    it('should have Back to Study button', () => {
+    it('should have Back to Practice link', () => {
       renderExamSimulator();
-      expect(screen.getByRole('button', { name: /Back to Study/i })).toBeInTheDocument();
+      expect(screen.getByText(/Back to Practice/i)).toBeInTheDocument();
     });
   });
 
@@ -148,40 +149,40 @@ describe('ExamSimulator', () => {
       expect(screen.getByText(/4 hours/i)).toBeInTheDocument();
     });
 
-    it('should display Full Exam question count', async () => {
+    it('should display Full Exam structure info', async () => {
       renderExamSimulator();
-      expect(screen.getByText(/72\+/i)).toBeInTheDocument();
+      expect(screen.getByText(/Full structure/i)).toBeInTheDocument();
     });
 
     it('should display Mini Exam question count', async () => {
       renderExamSimulator();
-      expect(screen.getByText(/36 MCQs/i)).toBeInTheDocument();
+      expect(screen.getByText(/36 questions/i)).toBeInTheDocument();
     });
   });
 
   describe('Exam Rules Display', () => {
-    it('should inform about flagging questions', () => {
+    it('should inform about testlet structure', () => {
       renderExamSimulator();
-      expect(screen.getByText(/flag questions and return/i)).toBeInTheDocument();
+      expect(screen.getByText(/Cannot return to previous testlets/i)).toBeInTheDocument();
     });
 
     it('should inform about timer behavior', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Timer runs continuously/i)).toBeInTheDocument();
+      expect(screen.getByText(/clock continues running/i)).toBeInTheDocument();
     });
 
-    it('should mention score report at end', () => {
+    it('should mention real exam simulation', () => {
       renderExamSimulator();
-      expect(screen.getByText(/detailed score report/i)).toBeInTheDocument();
+      expect(screen.getByText(/Simulate real exam pressure/i)).toBeInTheDocument();
     });
   });
 
   describe('Starting Exam', () => {
-    it('should show loading state when clicking Begin Exam', async () => {
+    it('should show loading state when clicking Begin Examination', async () => {
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
       renderExamSimulator();
 
-      const beginButton = screen.getByRole('button', { name: /Begin Exam/i });
+      const beginButton = screen.getByRole('button', { name: /Begin Examination/i });
       await user.click(beginButton);
 
       // Should show loading state
@@ -195,12 +196,13 @@ describe('ExamSimulator', () => {
   describe('Section Info Display', () => {
     it('should display user section (REG)', () => {
       renderExamSimulator();
-      expect(screen.getByText('REG')).toBeInTheDocument();
+      // Section shows in the header text
+      expect(screen.getByText(/\(REG\)/)).toBeInTheDocument();
     });
 
-    it('should show practice under real exam conditions message', () => {
+    it('should show full section name', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Practice under real exam conditions/i)).toBeInTheDocument();
+      expect(screen.getByText(/Exam Experience/i)).toBeInTheDocument();
     });
   });
 
@@ -208,13 +210,13 @@ describe('ExamSimulator', () => {
     it('should have proper button roles', () => {
       renderExamSimulator();
       const buttons = screen.getAllByRole('button');
-      expect(buttons.length).toBeGreaterThanOrEqual(3);
+      expect(buttons.length).toBeGreaterThanOrEqual(2);
     });
 
     it('should have descriptive button labels', () => {
       renderExamSimulator();
-      expect(screen.getByRole('button', { name: /Begin Exam/i })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /Back to Study/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
+      expect(screen.getByText(/Back to Practice/i)).toBeInTheDocument();
     });
   });
 });

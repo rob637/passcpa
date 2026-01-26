@@ -20,7 +20,8 @@ export const useQuestions = (options = {}) => {
       setError(null);
 
       try {
-        const questionsRef = collection(db, 'content', 'questions', 'items');
+        // Use standard 'questions' collection path (unified with questionService)
+        const questionsRef = collection(db, 'questions');
         const constraints = [];
 
         // Apply filters
@@ -65,7 +66,8 @@ export const useQuestions = (options = {}) => {
   // Get single question by ID
   const getQuestion = useCallback(async (questionId) => {
     try {
-      const questionRef = doc(db, 'content', 'questions', 'items', questionId);
+      // Use standard 'questions' collection path (unified with questionService)
+      const questionRef = doc(db, 'questions', questionId);
       const snapshot = await getDoc(questionRef);
 
       if (snapshot.exists()) {

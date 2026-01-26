@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import {
   ArrowLeft,
   CheckCircle,
@@ -24,6 +25,14 @@ import { getLessonById, getLessonsBySection } from '../../data/lessons';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection } from '../../types';
 
+// Sanitize HTML to prevent XSS attacks
+const sanitizeHTML = (html: string): string => {
+  return DOMPurify.sanitize(html, {
+    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li'],
+    ALLOWED_ATTR: ['class'],
+  });
+};
+
 interface ContentSectionProps {
   section: LessonContentSection;
 }
@@ -37,9 +46,11 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
         <div className="prose prose-slate dark:prose-invert max-w-none">
           {section.content.split('\n\n').map((paragraph, i) => (
             <p key={i} dangerouslySetInnerHTML={{ 
-              __html: paragraph
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/•/g, '&#8226;')
+              __html: sanitizeHTML(
+                paragraph
+                  .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                  .replace(/•/g, '&#8226;')
+              )
             }} />
           ))}
         </div>
@@ -221,21 +232,55 @@ const LessonViewer: React.FC = () => {
                   'p-2 rounded-lg transition-colors',
                   isBookmarked ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 )}
+                aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
               >
                 <Bookmark className="w-5 h-5" />
               </button>
-              <button className="p-2 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+              <button 
+                onClick={() => {
+                  if (navigator.share && lesson) {
+                    navigator.share({
+                      title: lesson.title,
+                      text: `Check out this CPA lesson: ${lesson.title}`,
+                      url: window.location.href,
+                    }).catch(() => {});
+                  } else {
+                    // Fallback: copy link to clipboard
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Link copied to clipboard!');
+                  }
+                }}
+                className="p-2 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                aria-label="Share lesson"
+              >
                 <Share2 className="w-5 h-5" />
               </button>
               <button
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={() => {
+                  if ('speechSynthesis' in window && lesson) {
+                    if (isPlaying) {
+                      window.speechSynthesis.cancel();
+                      setIsPlaying(false);
+                    } else {
+                      const text = lesson.content.sections
+                        .filter(s => s.type === 'text' && typeof s.content === 'string')
+                        .map(s => s.content)
+                        .join('. ');
+                      const utterance = new SpeechSynthesisUtterance(text);
+                      utterance.onend = () => setIsPlaying(false);
+                      window.speechSynthesis.speak(utterance);
+                      setIsPlaying(true);
+                    }
+                  }
+                }}
                 className={clsx(
                   'p-2 rounded-lg transition-colors',
                   isPlaying
                     ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
                     : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                 )}
-                title="Text-to-speech (coming soon)"
+                aria-label={isPlaying ? 'Stop reading' : 'Read aloud'}
+                title={isPlaying ? 'Stop reading' : 'Read lesson aloud'}
               >
                 {isPlaying ? <Pause className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
               </button>

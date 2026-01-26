@@ -22,6 +22,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { CPA_SECTIONS } from '../../config/examConfig';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
+import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
 
 interface SessionConfig {
@@ -574,17 +575,37 @@ const Practice: React.FC = () => {
                 {currentQuestion.topic}
               </span>
             </div>
-            <button
-              onClick={toggleFlag}
-              className={clsx(
-                'p-2 rounded-lg transition-colors',
-                flagged.has(currentQuestion.id)
-                  ? 'bg-amber-100 text-amber-600'
-                  : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-amber-500'
-              )}
-            >
-              <Flag className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-1">
+              <BookmarkButton 
+                itemId={currentQuestion.id} 
+                itemType="question" 
+                itemData={{ 
+                  title: currentQuestion.question.slice(0, 100),
+                  section: currentQuestion.section,
+                  topic: currentQuestion.topic
+                }}
+                size="md"
+              />
+              <NotesButton 
+                itemId={currentQuestion.id}
+                itemData={{
+                  section: currentQuestion.section,
+                  topic: currentQuestion.topic
+                }}
+                size="md"
+              />
+              <button
+                onClick={toggleFlag}
+                className={clsx(
+                  'p-2 rounded-lg transition-colors',
+                  flagged.has(currentQuestion.id)
+                    ? 'bg-amber-100 text-amber-600'
+                    : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-amber-500'
+                )}
+              >
+                <Flag className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {/* Question Text */}

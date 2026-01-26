@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../../hooks/useAuth';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import {
   uploadAllQuestions,
   uploadSectionQuestions,
@@ -206,6 +206,25 @@ const AdminCMS = () => {
       <main className="max-w-7xl mx-auto px-4 py-6">
         {activeTab === 'questions' && (
           <div className="space-y-6">
+            {/* Quick Actions */}
+            <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 shadow-lg text-white">
+              <h3 className="text-lg font-semibold mb-3">Quick Actions</h3>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/admin/questions"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <span>✏️</span> Edit Individual Questions
+                </Link>
+                <Link
+                  to="/admin/seed"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg font-medium hover:bg-white/30 transition-colors"
+                >
+                  <span>🌱</span> Seed Database
+                </Link>
+              </div>
+            </div>
+
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Local Stats */}

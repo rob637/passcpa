@@ -39,28 +39,36 @@ export const useBookmarks = () => {
       return;
     }
 
-    const bookmarksRef = collection(db, 'users', user.uid, 'bookmarks');
-    const unsubBookmarks = onSnapshot(bookmarksRef, (snapshot) => {
-      const data: Record<string, BookmarkData> = {};
-      snapshot.docs.forEach((doc) => {
-        data[doc.id] = { id: doc.id, ...doc.data() } as BookmarkData;
-      });
-      setBookmarks(data);
-    });
+    let unsubBookmarks: (() => void) | undefined;
+    let unsubNotes: (() => void) | undefined;
 
-    const notesRef = collection(db, 'users', user.uid, 'notes');
-    const unsubNotes = onSnapshot(notesRef, (snapshot) => {
-      const data: Record<string, NoteData> = {};
-      snapshot.docs.forEach((doc) => {
-        data[doc.id] = { id: doc.id, ...doc.data() } as NoteData;
+    try {
+      const bookmarksRef = collection(db, 'users', user.uid, 'bookmarks');
+      unsubBookmarks = onSnapshot(bookmarksRef, (snapshot) => {
+        const data: Record<string, BookmarkData> = {};
+        snapshot.docs.forEach((doc) => {
+          data[doc.id] = { id: doc.id, ...doc.data() } as BookmarkData;
+        });
+        setBookmarks(data);
       });
-      setNotes(data);
+
+      const notesRef = collection(db, 'users', user.uid, 'notes');
+      unsubNotes = onSnapshot(notesRef, (snapshot) => {
+        const data: Record<string, NoteData> = {};
+        snapshot.docs.forEach((doc) => {
+          data[doc.id] = { id: doc.id, ...doc.data() } as NoteData;
+        });
+        setNotes(data);
+        setLoading(false);
+      });
+    } catch (error) {
+      console.error('Error setting up bookmarks/notes listeners:', error);
       setLoading(false);
-    });
+    }
 
     return () => {
-      unsubBookmarks();
-      unsubNotes();
+      if (typeof unsubBookmarks === 'function') unsubBookmarks();
+      if (typeof unsubNotes === 'function') unsubNotes();
     };
   }, [user?.uid]);
 

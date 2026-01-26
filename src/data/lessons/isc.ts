@@ -4067,5 +4067,492 @@ export const iscLessons: Lesson[] = [
         }
       ]
     }
+  },
+  // ==========================================
+  // ADDITIONAL ISC LESSONS
+  // ==========================================
+  {
+    id: 'ISC-IV-001',
+    section: 'ISC',
+    title: "Cloud Computing Security",
+    description: "Evaluate cloud security models, controls, and compliance",
+    order: 34,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Security", "Cloud Computing", "IT Controls"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Cloud adoption is ubiquitous! CPAs must understand cloud service models, shared responsibility, and how to evaluate cloud provider controls for SOC engagements and ITGC assessments."
+        },
+        {
+          title: 'Cloud Service Models',
+          type: 'table',
+          headers: ['Model', 'Provider Manages', 'Customer Manages', 'Examples'],
+          rows: [
+            ['IaaS', 'Hardware, virtualization, storage', 'OS, apps, data, access', 'AWS EC2, Azure VMs'],
+            ['PaaS', 'Infrastructure + runtime, middleware', 'Apps, data', 'Heroku, Google App Engine'],
+            ['SaaS', 'Everything except data', 'Data, user access', 'Salesforce, Microsoft 365']
+          ]
+        },
+        {
+          title: 'Shared Responsibility Model',
+          type: 'text',
+          content: "**Critical concept for auditors:**\n\n• Provider is responsible FOR the cloud (infrastructure security)\n• Customer is responsible IN the cloud (data, access, configuration)\n\n**As you move from IaaS → PaaS → SaaS, more responsibility shifts to provider**"
+        },
+        {
+          title: '🧠 Memory Aid: Cloud Responsibility',
+          type: 'callout',
+          content: "**\"Pizza as a Service\"**\n\nIaaS = You make pizza with their oven\nPaaS = You add toppings to their dough\nSaaS = You eat pizza they made\n\n**More convenience = Less control = More trust needed**"
+        },
+        {
+          title: 'Cloud Security Controls',
+          type: 'table',
+          headers: ['Control Area', 'Key Controls'],
+          rows: [
+            ['Identity & Access', 'SSO, MFA, privileged access management'],
+            ['Data Protection', 'Encryption at rest/transit, key management'],
+            ['Network Security', 'VPCs, firewalls, DDoS protection'],
+            ['Monitoring', 'SIEM, logging, threat detection'],
+            ['Compliance', 'SOC reports, certifications, contracts']
+          ]
+        },
+        {
+          title: 'Evaluating Cloud Providers',
+          type: 'text',
+          content: "**Due diligence checklist:**\n\n✓ SOC 2 Type II report (annual)\n✓ ISO 27001 certification\n✓ Data residency and jurisdiction\n✓ Business continuity/disaster recovery\n✓ Incident response procedures\n✓ Subservice organizations (4th parties)"
+        },
+        {
+          title: '⚠️ Exam Trap: Multi-Tenancy',
+          type: 'warning',
+          content: "**Cloud environments are multi-tenant!**\n\n• Your data shares infrastructure with others\n• Logical separation must be strong\n• Side-channel attacks are a risk\n• Data isolation controls are critical\n\n**Don't assume physical segregation exists!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IaaS/PaaS/SaaS determine responsibility split",
+            "Customer ALWAYS responsible for data and access",
+            "SOC 2 Type II is standard for cloud provider assurance",
+            "Multi-tenancy requires strong logical controls",
+            "Evaluate data residency, BCP, and incident response",
+            "4th party risk from subservice organizations"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-002',
+    section: 'ISC',
+    title: "Cybersecurity Frameworks and Standards",
+    description: "Apply NIST, ISO 27001, and other security frameworks",
+    order: 35,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Security", "Frameworks", "Compliance"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Security frameworks provide structured approaches to managing cyber risk. CPAs use them in SOC engagements, security assessments, and advising on governance structures."
+        },
+        {
+          title: 'NIST Cybersecurity Framework',
+          type: 'table',
+          headers: ['Function', 'Purpose', 'Example Activities'],
+          rows: [
+            ['Identify', 'Know your assets and risks', 'Asset inventory, risk assessment'],
+            ['Protect', 'Safeguard critical services', 'Access controls, training, encryption'],
+            ['Detect', 'Discover security events', 'Monitoring, anomaly detection'],
+            ['Respond', 'Take action on incidents', 'Incident response, communication'],
+            ['Recover', 'Restore capabilities', 'Recovery planning, improvements']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: NIST Functions',
+          type: 'callout',
+          content: "**\"I Prefer Doughnuts Regularly, Really!\"**\n\n**I**dentify what you have\n**P**rotect it from threats\n**D**etect when something happens\n**R**espond to incidents\n**R**ecover operations\n\n**Sequential flow from planning to restoration**"
+        },
+        {
+          title: 'ISO 27001 Overview',
+          type: 'text',
+          content: "**International standard for ISMS:**\n\n• Risk-based approach to security\n• Requires management commitment\n• Continuous improvement (PDCA)\n• 114 controls in Annex A\n• Certification available from accredited bodies\n\n**More prescriptive than NIST CSF**"
+        },
+        {
+          title: 'Framework Comparison',
+          type: 'table',
+          headers: ['Framework', 'Best For', 'Certification?'],
+          rows: [
+            ['NIST CSF', 'US organizations, flexibility', 'No (self-assessment)'],
+            ['ISO 27001', 'Global, formal certification', 'Yes'],
+            ['COBIT', 'IT governance, audit', 'Yes (ISACA)'],
+            ['CIS Controls', 'Technical prioritization', 'No'],
+            ['SOC 2', 'Service organizations', 'Yes (CPA report)']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Framework vs. Standard',
+          type: 'warning',
+          content: "**They're different!**\n\n**Framework:** Flexible guidance, principles-based\n(NIST CSF, COBIT)\n\n**Standard:** Specific requirements, certifiable\n(ISO 27001, PCI DSS)\n\n**Frameworks guide; Standards prescribe**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NIST CSF: Identify, Protect, Detect, Respond, Recover",
+            "ISO 27001: Certifiable international ISMS standard",
+            "COBIT: IT governance and management framework",
+            "Frameworks are flexible; Standards are prescriptive",
+            "Selection depends on industry, customers, regulations",
+            "Many organizations map multiple frameworks together"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-003',
+    section: 'ISC',
+    title: "Penetration Testing and Vulnerability Assessment",
+    description: "Understand security testing methodologies and their role in assurance",
+    order: 36,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Security", "Testing", "Vulnerability Management"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Security testing provides evidence of control effectiveness. CPAs evaluate penetration test results in SOC engagements and may recommend testing as part of security assessments."
+        },
+        {
+          title: 'Testing Types Comparison',
+          type: 'table',
+          headers: ['Type', 'Purpose', 'Depth', 'Frequency'],
+          rows: [
+            ['Vulnerability Scan', 'Find known weaknesses', 'Surface-level', 'Continuous/weekly'],
+            ['Penetration Test', 'Exploit vulnerabilities', 'Deep, targeted', 'Annual/semi-annual'],
+            ['Red Team', 'Simulate real attack', 'Most comprehensive', 'Annual or less'],
+            ['Bug Bounty', 'Crowdsourced testing', 'Varies', 'Ongoing']
+          ]
+        },
+        {
+          title: 'Penetration Test Phases',
+          type: 'text',
+          content: "**Standard methodology:**\n\n1. **Planning** - Scope, rules of engagement\n2. **Reconnaissance** - Gather information\n3. **Scanning** - Identify vulnerabilities\n4. **Exploitation** - Attempt to breach\n5. **Post-exploitation** - Assess impact\n6. **Reporting** - Document findings"
+        },
+        {
+          title: '🧠 Memory Aid: Pen Test Phases',
+          type: 'callout',
+          content: "**\"Please Remain Seated, Everyone's Panicking, Run!\"**\n\n**P**lanning the engagement\n**R**econnaissance gathering\n**S**canning for vulns\n**E**xploitation attempts\n**P**ost-exploitation impact\n**R**eporting results\n\n**Systematic approach to ethical hacking**"
+        },
+        {
+          title: '⚠️ Exam Trap: Scope Limitations',
+          type: 'warning',
+          content: "**Pen tests have limitations:**\n\n• Point-in-time assessment only\n• Scope excludes some systems\n• Tester skill varies\n• \"No findings\" ≠ Secure\n\n**Complement with continuous monitoring!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Vulnerability scan: Automated, broad, frequent",
+            "Penetration test: Manual, deep, periodic",
+            "Phases: Plan, Recon, Scan, Exploit, Post-exploit, Report",
+            "Scoping: Knowledge level, location, targets",
+            "Evaluate tester qualifications and scope adequacy",
+            "Pen tests are point-in-time, not continuous assurance"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-004',
+    section: 'ISC',
+    title: "Incident Response Planning",
+    description: "Evaluate and advise on security incident response capabilities",
+    order: 37,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Security", "Incident Response", "Business Continuity"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Incidents are inevitable! CPAs evaluate incident response capabilities in SOC engagements, advise on IRP development, and may serve as part of response teams for financial incidents."
+        },
+        {
+          title: 'Incident Response Phases',
+          type: 'table',
+          headers: ['Phase', 'Purpose', 'Key Activities'],
+          rows: [
+            ['Preparation', 'Be ready', 'Plan, train, tools, contacts'],
+            ['Identification', 'Detect and verify', 'Monitor, triage, classify'],
+            ['Containment', 'Stop spread', 'Isolate, preserve evidence'],
+            ['Eradication', 'Remove threat', 'Clean systems, patch vulns'],
+            ['Recovery', 'Restore operations', 'Rebuild, verify, monitor'],
+            ['Lessons Learned', 'Improve', 'Document, update plans']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: IR Phases',
+          type: 'callout',
+          content: "**\"People In Crisis Eventually Recover Lessons\"**\n\n**P**reparation (before)\n**I**dentification (detect)\n**C**ontainment (stop)\n**E**radication (remove)\n**R**ecovery (restore)\n**L**essons Learned (improve)\n\n**Circular process—lessons feed back to prep**"
+        },
+        {
+          title: '⚠️ Exam Trap: Evidence Preservation',
+          type: 'warning',
+          content: "**Forensic evidence is fragile!**\n\n• Create forensic images before changes\n• Document chain of custody\n• Don't run live tools on compromised systems\n• Preserve logs immediately\n\n**Eradication destroys evidence—preserve first!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Six phases: Prep, ID, Contain, Eradicate, Recover, Lessons",
+            "IRP should have clear roles, escalation, communications",
+            "Classify incidents by severity for appropriate response",
+            "Know notification requirements (GDPR, state laws, SEC)",
+            "Preserve evidence before eradication",
+            "Lessons learned feeds continuous improvement"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-005',
+    section: 'ISC',
+    title: "Identity and Access Management",
+    description: "Evaluate IAM controls and authentication mechanisms",
+    order: 38,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Security", "Access Controls", "Identity Management"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Access controls are foundational to ITGC! IAM determines who can access what—critical for segregation of duties, privileged access, and preventing unauthorized transactions."
+        },
+        {
+          title: 'IAM Components',
+          type: 'table',
+          headers: ['Component', 'Purpose', 'Examples'],
+          rows: [
+            ['Identity Store', 'Central user repository', 'Active Directory, LDAP'],
+            ['Authentication', 'Verify identity', 'Passwords, MFA, biometrics'],
+            ['Authorization', 'Determine permissions', 'RBAC, ABAC, ACLs'],
+            ['Administration', 'Manage lifecycle', 'Provisioning, deprovisioning'],
+            ['Audit', 'Track access events', 'Logging, access reviews']
+          ]
+        },
+        {
+          title: 'Authentication Factors',
+          type: 'text',
+          content: "**Three authentication factors:**\n\n**Something you KNOW:** Password, PIN\n**Something you HAVE:** Token, phone, smart card\n**Something you ARE:** Fingerprint, face, iris\n\n**MFA = Two or more factors**\n**2FA is minimum for sensitive access**"
+        },
+        {
+          title: '🧠 Memory Aid: Authentication Factors',
+          type: 'callout',
+          content: "**\"Know, Have, Are\"**\n\n**K**now = Brain (password)\n**H**ave = Hand (token)\n**A**re = Body (biometric)\n\n**Stronger when combined: Password + Token + Fingerprint**"
+        },
+        {
+          title: '⚠️ Exam Trap: Access Reviews',
+          type: 'warning',
+          content: "**Periodic access reviews are CRITICAL!**\n\n• Compare actual access to job requirements\n• Remove terminated user access immediately\n• Review privileged access frequently\n• Document review and remediation\n\n**\"Joiner-Mover-Leaver\" processes prevent access creep**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IAM: Identity store, authentication, authorization, admin, audit",
+            "Three factors: Know, Have, Are (MFA uses 2+)",
+            "RBAC is most common access control model",
+            "PAM protects privileged/admin accounts",
+            "Access reviews detect inappropriate access",
+            "Joiner-Mover-Leaver process manages lifecycle"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-006',
+    section: 'ISC',
+    title: "Encryption and Cryptography",
+    description: "Understand cryptographic controls for data protection",
+    order: 39,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Security", "Cryptography", "Data Protection"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Encryption protects data confidentiality! CPAs evaluate encryption controls for data at rest and in transit, assess key management, and understand its role in compliance."
+        },
+        {
+          title: 'Encryption Types',
+          type: 'table',
+          headers: ['Type', 'Keys', 'Speed', 'Use Cases'],
+          rows: [
+            ['Symmetric', 'Same key encrypt/decrypt', 'Fast', 'Data at rest, bulk data'],
+            ['Asymmetric', 'Public/private key pair', 'Slow', 'Key exchange, signatures'],
+            ['Hashing', 'One-way, no key', 'Fast', 'Passwords, integrity']
+          ]
+        },
+        {
+          title: 'Common Algorithms',
+          type: 'text',
+          content: "**Symmetric:** AES (128/256-bit) - current standard\n**Asymmetric:** RSA, ECC - key exchange/signatures\n**Hashing:** SHA-256, SHA-3 - integrity verification\n\n**Avoid:** DES, MD5, SHA-1 (deprecated/weak)"
+        },
+        {
+          title: '🧠 Memory Aid: Symmetric vs Asymmetric',
+          type: 'callout',
+          content: "**Symmetric = Same key (like house key)**\n• Fast but key distribution problem\n\n**Asymmetric = Different keys (like mailbox)**\n• Public key to encrypt, Private to decrypt\n• Solves key distribution\n\n**Use asymmetric to exchange symmetric keys!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Key Custody',
+          type: 'warning',
+          content: "**Encryption is only as strong as key protection!**\n\n• Who has access to encryption keys?\n• Cloud provider key management vs. BYOK\n• Escrow and recovery procedures\n• Separation of duties for key access\n\n**Bad key management = No real protection**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Symmetric: Fast, same key (AES)",
+            "Asymmetric: Slow, key pairs (RSA, ECC)",
+            "Hashing: One-way for integrity (SHA-256)",
+            "Key management lifecycle is critical",
+            "Protect data at rest and in transit",
+            "Key custody determines true protection level"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-007',
+    section: 'ISC',
+    title: "Data Privacy Regulations",
+    description: "Navigate GDPR, CCPA, and privacy compliance requirements",
+    order: 40,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Security", "Privacy", "Compliance"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Data privacy is a major compliance and risk area! CPAs advise on privacy programs, assess privacy controls in SOC engagements, and help organizations navigate regulatory requirements."
+        },
+        {
+          title: 'Major Privacy Regulations',
+          type: 'table',
+          headers: ['Regulation', 'Jurisdiction', 'Scope', 'Key Penalty'],
+          rows: [
+            ['GDPR', 'EU + global reach', 'EU resident data', 'Up to 4% global revenue'],
+            ['CCPA/CPRA', 'California', 'CA resident data', '$7,500 per violation'],
+            ['HIPAA', 'US healthcare', 'PHI', 'Up to $1.5M per category'],
+            ['GLBA', 'US financial', 'Consumer financial data', 'Up to $100K per violation']
+          ]
+        },
+        {
+          title: 'GDPR Key Principles',
+          type: 'text',
+          content: "**Seven principles:**\n\n1. **Lawfulness** - Legal basis for processing\n2. **Purpose limitation** - Specific, stated purposes\n3. **Data minimization** - Collect only what needed\n4. **Accuracy** - Keep data correct\n5. **Storage limitation** - Retain only as long as needed\n6. **Security** - Protect data appropriately\n7. **Accountability** - Demonstrate compliance"
+        },
+        {
+          title: '🧠 Memory Aid: GDPR Rights',
+          type: 'callout',
+          content: "**\"RAEPDOP\"** for Data Subject Rights:\n\n**R**ight to be informed\n**A**ccess\n**E**rasure (right to be forgotten)\n**P**ortability\n**D**ata rectification\n**O**bject to processing\n**P**revent automated decisions\n\n**RAEPDOP protects individuals!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Extraterritorial Reach',
+          type: 'warning',
+          content: "**GDPR applies beyond EU borders!**\n\n• Any organization processing EU resident data\n• Even if no EU presence\n• Include offering goods/services to EU\n• Or monitoring EU resident behavior\n\n**US companies often subject to GDPR!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "GDPR: EU regulation with global reach, severe penalties",
+            "Seven principles: Lawfulness through Accountability",
+            "Data subject rights: Access, erasure, portability, etc.",
+            "Privacy program: Policy, inventory, consent, DSAR, breach response",
+            "SOC 2 includes privacy criteria option",
+            "GDPR applies to US companies processing EU data"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-008',
+    section: 'ISC',
+    title: "Third-Party Risk Management",
+    description: "Evaluate vendor and third-party risks and controls",
+    order: 41,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Risk Management", "Vendor Management", "SOC"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for CPAs',
+          type: 'callout',
+          content: "Organizations rely heavily on third parties! CPAs assess vendor risks, evaluate SOC reports from service providers, and advise on third-party risk management programs."
+        },
+        {
+          title: 'Third-Party Risk Categories',
+          type: 'table',
+          headers: ['Category', 'Examples'],
+          rows: [
+            ['Operational', 'Service outages, quality failures'],
+            ['Compliance', 'Regulatory violations, audit failures'],
+            ['Strategic', 'Vendor viability, concentration risk'],
+            ['Reputational', 'Vendor incidents reflect on you'],
+            ['Cybersecurity', 'Data breaches at vendor'],
+            ['Financial', 'Vendor insolvency, cost overruns']
+          ]
+        },
+        {
+          title: 'TPRM Lifecycle',
+          type: 'text',
+          content: "**Third-Party Risk Management process:**\n\n1. **Planning:** Identify third-party needs\n2. **Due Diligence:** Assess vendor risks\n3. **Contracting:** Include risk provisions\n4. **Onboarding:** Implement controls\n5. **Monitoring:** Ongoing oversight\n6. **Termination:** Secure exit process"
+        },
+        {
+          title: '🧠 Memory Aid: Vendor Due Diligence',
+          type: 'callout',
+          content: "**\"FRISCO\"** for vendor assessment:\n\n**F**inancial stability\n**R**egulatory compliance\n**I**nformation security\n**S**ervice capability\n**C**ontinuity planning\n**O**perational controls\n\n**FRISCO covers key diligence areas!**"
+        },
+        {
+          title: '⚠️ Exam Trap: CUECs',
+          type: 'warning',
+          content: "**Complementary User Entity Controls matter!**\n\n• Service org controls assume you do your part\n• Review CUEC section in SOC report\n• Implement all applicable CUECs\n• Document your CUEC compliance\n\n**SOC opinion assumes CUECs are in place!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Third-party risks: Operational, compliance, strategic, cyber",
+            "TPRM lifecycle: Planning through Termination",
+            "Due diligence: FRISCO framework",
+            "SOC reports: Check scope, period, opinion, CUECs",
+            "Fourth-party risk from subservice organizations",
+            "Implement CUECs for SOC report reliance"
+          ]
+        }
+      ]
+    }
   }
 ];

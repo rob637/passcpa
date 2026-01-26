@@ -1,16 +1,64 @@
 // Core domain types
 
-export type Difficulty = 'easy' | 'medium' | 'tough' | 'hard' | 'beginner' | 'intermediate' | 'advanced' | 'moderate'; // Unified difficulty types
+/**
+ * Normalized Difficulty Levels
+ * - 'easy' / 'medium' / 'hard' are the canonical values for questions/TBS
+ * - 'beginner' / 'intermediate' / 'advanced' are allowed for lessons (maps to easy/medium/hard)
+ * - 'moderate' and 'tough' are deprecated aliases (use 'medium' and 'hard' instead)
+ */
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate' | 'advanced' | 'moderate' | 'tough';
+export type NormalizedDifficulty = 'easy' | 'medium' | 'hard';
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
-export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP';
+export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC';
+
+/** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
+export type LegacyExamSection = 'BEC';
+
+/** Maps various difficulty labels to normalized values */
+export const normalizeDifficulty = (d: Difficulty): NormalizedDifficulty => {
+  switch (d) {
+    case 'easy':
+    case 'beginner':
+      return 'easy';
+    case 'medium':
+    case 'intermediate':
+    case 'moderate':
+      return 'medium';
+    case 'hard':
+    case 'advanced':
+    case 'tough':
+      return 'hard';
+    default:
+      return 'medium';
+  }
+};
+
+/** Callout types for lesson content styling */
+export type CalloutType = 'important' | 'tip' | 'warning' | 'info' | 'exam-trap' | 'memory-aid';
+
+/** Definition list item for term/definition pairs */
+export interface DefinitionListItem {
+  term: string;
+  definition: string;
+}
 
 export interface LessonContentSection {
   title: string;
   type: 'text' | 'list' | 'table' | 'interactive' | 'dates' | 'callout' | 'example' | 'warning' | 'summary';
-  content?: string | Array<{ term: string; definition: string }> | { headers: string[]; rows: string[][] } | any;
-  headers?: string[]; // For tables
-  rows?: string[][]; // For tables
+  
+  // Content can be various formats depending on type
+  content?: string | DefinitionListItem[] | string[] | any;
+  
+  // For 'list' type - simple string array (alternative to content)
+  items?: string[];
+  
+  // For 'callout' type - styling variant
+  calloutType?: CalloutType;
+  
+  // For 'table' type
+  headers?: string[];
+  rows?: string[][];
 }
 
 export interface LessonContent {

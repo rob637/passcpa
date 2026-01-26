@@ -105,6 +105,17 @@ const EXAM_CONFIG: Record<ExamSection, ExamConfig> = {
      testlets: [],
      totalTime: 0,
      passingScore: 0,
+  },
+  /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
+  BEC: {
+     testlets: [
+      { type: 'mcq', questions: 31, time: 45 * 60 },
+      { type: 'mcq', questions: 31, time: 45 * 60 },
+      { type: 'tbs', questions: 4, time: 60 * 60 },
+      { type: 'wc', questions: 3, time: 30 * 60 },
+    ],
+     totalTime: 4 * 60 * 60,
+     passingScore: 75,
   }
 };
 

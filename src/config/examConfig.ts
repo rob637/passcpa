@@ -187,6 +187,26 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
       description: 'H.R. 1 "One Big Beautiful Bill" Act provisions',
     },
   },
+  
+  // =========================================================================
+  // LEGACY SECTION (Deprecated - Replaced by BAR, ISC, TCP in 2024)
+  // =========================================================================
+  /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
+  BEC: {
+    id: 'BEC' as ExamSection,
+    name: 'Business Environment and Concepts (Legacy)',
+    shortName: 'BEC',
+    type: 'legacy' as const,
+    examLength: 4,
+    questionTypes: { mcq: 62, tbs: 4 },
+    mcqWeight: 50,
+    tbsWeight: 50,
+    color: '#9ca3af', // gray - indicates legacy
+    icon: 'Archive',
+    description: '⚠️ DEPRECATED: Replaced by BAR, ISC, TCP in 2024. Content retained for historical reference.',
+    blueprintVersion: '2023-Legacy',
+    blueprintSensitive: false,
+  },
 };
 
 export const STRATEGY_SECTIONS = ['PREP'];

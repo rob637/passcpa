@@ -57,17 +57,37 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
       );
 
     case 'list':
-      if (!Array.isArray(section.content)) return null;
+      // Handle both formats: items[] (simple strings) or content[] ({term, definition})
+      const listItems = section.items || section.content;
+      if (!Array.isArray(listItems)) return null;
+      
+      // Check if it's a definition list (has term/definition) or simple list (strings)
+      const isDefinitionList = listItems.length > 0 && typeof listItems[0] === 'object' && 'term' in listItems[0];
+      
+      if (isDefinitionList) {
+        return (
+          <div className="space-y-3">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+            {listItems.map((item: any, i: number) => (
+              <div key={i} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+                <dt className="font-semibold text-slate-900 dark:text-slate-100">{item.term}</dt>
+                <dd className="mt-1 text-slate-600 dark:text-slate-400">{item.definition}</dd>
+              </div>
+            ))}
+          </div>
+        );
+      }
+      
+      // Simple string list
       return (
-        <div className="space-y-3">
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {section.content.map((item: any, i: number) => (
-            <div key={i} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-              <dt className="font-semibold text-slate-900 dark:text-slate-100">{item.term}</dt>
-              <dd className="mt-1 text-slate-600 dark:text-slate-400">{item.definition}</dd>
-            </div>
+        <ul className="space-y-2 ml-4">
+          {listItems.map((item: string, i: number) => (
+            <li key={i} className="flex items-start gap-2 text-slate-700 dark:text-slate-300">
+              <span className="text-primary-500 mt-1.5 text-sm">•</span>
+              <span>{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       );
 
     case 'table':
@@ -116,6 +136,88 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
               </li>
             ))}
           </ul>
+        </div>
+      );
+
+    case 'callout': {
+      // Support calloutType for different styling: important, tip, warning, info, exam-trap, memory-aid
+      const calloutType = (section as any).calloutType || 'info';
+      const calloutStyles: Record<string, { bg: string; border: string; text: string; icon: string }> = {
+        important: { 
+          bg: 'bg-amber-50 dark:bg-amber-900/20', 
+          border: 'border-amber-200 dark:border-amber-800', 
+          text: 'text-amber-800 dark:text-amber-200',
+          icon: '⚡'
+        },
+        tip: { 
+          bg: 'bg-green-50 dark:bg-green-900/20', 
+          border: 'border-green-200 dark:border-green-800', 
+          text: 'text-green-800 dark:text-green-200',
+          icon: '💡'
+        },
+        warning: { 
+          bg: 'bg-red-50 dark:bg-red-900/20', 
+          border: 'border-red-200 dark:border-red-800', 
+          text: 'text-red-800 dark:text-red-200',
+          icon: '⚠️'
+        },
+        info: { 
+          bg: 'bg-blue-50 dark:bg-blue-900/20', 
+          border: 'border-blue-200 dark:border-blue-800', 
+          text: 'text-blue-800 dark:text-blue-200',
+          icon: '💭'
+        },
+        'exam-trap': { 
+          bg: 'bg-red-50 dark:bg-red-900/20', 
+          border: 'border-red-300 dark:border-red-700', 
+          text: 'text-red-900 dark:text-red-100',
+          icon: '🎯'
+        },
+        'memory-aid': { 
+          bg: 'bg-purple-50 dark:bg-purple-900/20', 
+          border: 'border-purple-200 dark:border-purple-800', 
+          text: 'text-purple-800 dark:text-purple-200',
+          icon: '🧠'
+        },
+      };
+      const style = calloutStyles[calloutType] || calloutStyles.info;
+      
+      return (
+        <div className={`${style.bg} ${style.border} border rounded-xl p-4`}>
+          <div className={`${style.text} whitespace-pre-line`}>
+            {typeof section.content === 'string' 
+              ? section.content.replace(/\*\*(.*?)\*\*/g, '$1') // Strip markdown bold for now
+              : String(section.content)
+            }
+          </div>
+        </div>
+      );
+    }
+
+    case 'warning':
+      return (
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+            <div className="text-amber-800 dark:text-amber-200 whitespace-pre-line">
+              {typeof section.content === 'string' 
+                ? section.content.replace(/\*\*(.*?)\*\*/g, '$1')
+                : String(section.content)
+              }
+            </div>
+          </div>
+        </div>
+      );
+
+    case 'example':
+      return (
+        <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4">
+          <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+            📝 Example
+          </h4>
+          <div className="text-slate-700 dark:text-slate-300 whitespace-pre-line font-mono text-sm">
+            {typeof section.content === 'string' ? section.content : String(section.content)}
+          </div>
         </div>
       );
 

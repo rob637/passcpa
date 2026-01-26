@@ -130,7 +130,7 @@ export default defineConfig({
         manualChunks: {
           // Core vendor chunks
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore', 'firebase/storage'],
           'vendor-ui': ['lucide-react', 'clsx', 'date-fns'],
           'vendor-charts': ['recharts'],
           
@@ -147,10 +147,18 @@ export default defineConfig({
             './src/components/pages/TBSSimulator.tsx',
             './src/components/pages/WrittenCommunication.tsx',
           ],
+          // Data chunks - large lesson/question content
+          'data-lessons-far': ['./src/data/lessons/far.ts'],
+          'data-lessons-aud': ['./src/data/lessons/aud.ts'],
+          'data-lessons-reg': ['./src/data/lessons/reg.ts'],
+          'data-lessons-bar': ['./src/data/lessons/bar.ts'],
+          'data-lessons-isc': ['./src/data/lessons/isc.ts'],
+          'data-lessons-tcp': ['./src/data/lessons/tcp.ts'],
+          'data-tbs': ['./src/data/tbs/index.ts'],
         },
       },
     },
     // Increase chunk warning limit since we're intentionally chunking
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 700,
   },
 });

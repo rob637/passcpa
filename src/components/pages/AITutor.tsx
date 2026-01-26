@@ -483,7 +483,7 @@ const AITutor: React.FC = () => {
   return (
     <div className="h-[calc(100vh-8rem)] flex flex-col bg-slate-50 page-enter">
       {/* Header */}
-      <div className="bg-white border-b border-slate-100 px-4 py-3">
+      <div className="bg-white border-b border-slate-200 px-4 py-3">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
@@ -572,7 +572,7 @@ const AITutor: React.FC = () => {
                   className={clsx(
                     'px-4 py-3 rounded-2xl',
                     message.role === 'assistant'
-                      ? 'bg-white border border-slate-100 rounded-tl-md shadow-soft'
+                      ? 'bg-white border border-slate-200 rounded-tl-md shadow-soft'
                       : 'bg-slate-800 text-white rounded-tr-md'
                   )}
                 >
@@ -614,7 +614,7 @@ const AITutor: React.FC = () => {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-soft">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <div className="bg-white border border-slate-100 px-4 py-3 rounded-2xl rounded-tl-md shadow-soft">
+              <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-tl-md shadow-soft">
                 <div className="flex items-center gap-1.5">
                   <div
                     className="w-2 h-2 bg-primary-400 rounded-full animate-bounce"
@@ -652,7 +652,7 @@ const AITutor: React.FC = () => {
                       'flex items-start gap-3 p-3 bg-white border rounded-xl transition-all text-left',
                       prompt.priority
                         ? 'border-warning-200 hover:border-warning-400 hover:bg-warning-50'
-                        : 'border-slate-100 hover:border-primary-200 hover:bg-primary-50'
+                        : 'border-slate-200 hover:border-primary-300 hover:bg-primary-50 shadow-sm'
                     )}
                   >
                     <div
@@ -688,7 +688,7 @@ const AITutor: React.FC = () => {
       )}
 
       {/* Input Area */}
-      <div className="bg-white border-t border-slate-100 p-4">
+      <div className="bg-white border-t border-slate-200 p-4">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
           <div className="flex items-end gap-3">
             <div className="flex-1 relative">

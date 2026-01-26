@@ -93,12 +93,17 @@ export default {
         '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
       },
       boxShadow: {
-        'soft': '0 2px 8px -2px rgba(0, 0, 0, 0.05), 0 4px 16px -4px rgba(0, 0, 0, 0.1)',
-        'soft-lg': '0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 8px 24px -4px rgba(0, 0, 0, 0.1)',
-        'soft-xl': '0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 16px 48px -8px rgba(0, 0, 0, 0.12)',
-        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)',
-        'glow': '0 0 20px rgba(66, 133, 244, 0.15)',
-        'glow-success': '0 0 20px rgba(52, 168, 83, 0.15)',
+        // Crisp, defined shadows - Google Material 3 inspired
+        'soft': '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        'soft-md': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06)',
+        'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06)',
+        'soft-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08)',
+        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+        'glow': '0 0 20px rgba(66, 133, 244, 0.2)',
+        'glow-success': '0 0 20px rgba(52, 168, 83, 0.2)',
+        // Card specific
+        'card': '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08)',
       },
       animation: {
         'fade-in': 'fadeIn 0.2s ease-out',

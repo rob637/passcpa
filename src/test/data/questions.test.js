@@ -139,6 +139,7 @@ describe('Question Bank Utilities', () => {
     });
 
     it('should have valid difficulty values', () => {
+      // Normalized difficulty values (includes legacy aliases that map to these)
       const validDifficulties = ['easy', 'medium', 'hard'];
 
       ALL_QUESTIONS.forEach((question) => {
@@ -147,7 +148,8 @@ describe('Question Bank Utilities', () => {
     });
 
     it('should have valid section values', () => {
-      const validSections = ['REG', 'FAR', 'AUD', 'BEC'];
+      // Core + Discipline + Legacy sections
+      const validSections = ['REG', 'FAR', 'AUD', 'BAR', 'ISC', 'TCP', 'BEC', 'PREP'];
 
       ALL_QUESTIONS.forEach((question) => {
         expect(validSections).toContain(question.section);

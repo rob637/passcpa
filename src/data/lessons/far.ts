@@ -69,6 +69,11 @@ export const farLessons: Lesson[] = [
           content: "**Recognition** means recording an item in the financial statements. An item should be recognized when:\n\n1. It meets the **definition** of an element\n2. It is **measurable** with sufficient reliability\n3. The information is **relevant** (capable of making a difference)\n4. The information is a **faithful representation**\n\n**Measurement Bases:**\n• Historical cost (most common)\n• Current cost (replacement cost)\n• Current market value (exit price)\n• Net realizable value (expected selling price less costs)\n• Present value (discounted future cash flows)"
         },
         {
+          title: '📊 Quick Example: Measurement Bases',
+          type: 'example',
+          content: "ABC Company purchased equipment for $100,000. How would it be reported under different measurement bases?\n\n• Historical Cost: $100,000 (original purchase price)\n• Current Cost: $115,000 (what it would cost to replace today)\n• Fair Value: $90,000 (what a buyer would pay in an orderly transaction)\n• Net Realizable Value: $85,000 (selling price $90K minus $5K disposal costs)\n• Present Value: $78,000 (discounted future cash flows the asset will generate)\n\nKey insight: GAAP primarily uses historical cost, but fair value is increasingly required for financial instruments and impairment testing."
+        },
+        {
           title: 'Cost Constraint',
           type: 'text',
           content: "The **cost constraint** (formerly cost-benefit) recognizes that financial reporting imposes costs, and those costs should be justified by the benefits. This is why some disclosures are not required for smaller entities or why certain measurement approaches (like fair value for every asset) aren't mandated."

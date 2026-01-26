@@ -460,6 +460,15 @@ const WrittenCommunication: React.FC = () => {
                    </div>
                 </div>
              </div>
+
+             {/* Sample Response Viewer - available after submission or for study mode */}
+             {activeTask.sampleResponse && (
+               <SampleResponseViewer 
+                 sampleResponse={activeTask.sampleResponse}
+                 isVisible={showSample}
+                 onToggle={() => setShowSample(!showSample)}
+               />
+             )}
           </div>
 
           {/* Editor Area */}

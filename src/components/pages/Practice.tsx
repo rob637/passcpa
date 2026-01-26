@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronRight,
@@ -625,10 +625,13 @@ const Practice: React.FC = () => {
                   <Sparkles className="w-4 h-4" />
                   Ask AI to Explain More
                 </button>
-                <button className="btn-secondary text-sm flex items-center gap-2">
+                <Link
+                  to={`/study/${currentQuestion.section?.toLowerCase() || 'far'}`}
+                  className="btn-secondary text-sm flex items-center gap-2"
+                >
                   <BookOpen className="w-4 h-4" />
-                  Review Lesson
-                </button>
+                  Review Lessons
+                </Link>
               </div>
             </div>
           </div>

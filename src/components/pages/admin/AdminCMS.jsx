@@ -401,12 +401,39 @@ const AdminCMS = () => {
 
         {activeTab === 'lessons' && (
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Lesson Content Management</h3>
-            <div className="text-center py-12 text-gray-500">
-              <div className="text-4xl mb-4">📚</div>
-              <p>Lesson management coming soon...</p>
-              <p className="text-sm">
-                This will allow you to create, edit, and manage lesson content.
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Lesson Content Overview</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              {['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'].map((section) => (
+                <div key={section} className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <h4 className="font-bold text-gray-900 mb-2">{section}</h4>
+                  <p className="text-sm text-gray-600">
+                    Lessons are defined in <code className="text-xs bg-gray-200 px-1 rounded">src/data/lessons/{section.toLowerCase()}.ts</code>
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h4 className="font-medium text-blue-900 mb-2">📚 Adding/Editing Lessons</h4>
+              <p className="text-sm text-blue-800 mb-3">
+                Lessons are stored as TypeScript files in the codebase. To add or edit lessons:
+              </p>
+              <ol className="text-sm text-blue-800 list-decimal list-inside space-y-1">
+                <li>Edit the relevant file in <code className="bg-blue-100 px-1 rounded">src/data/lessons/</code></li>
+                <li>Follow the <code className="bg-blue-100 px-1 rounded">Lesson</code> type structure</li>
+                <li>Run <code className="bg-blue-100 px-1 rounded">npm run build</code> to verify</li>
+                <li>Deploy with <code className="bg-blue-100 px-1 rounded">firebase deploy</code></li>
+              </ol>
+            </div>
+            
+            <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <h4 className="font-medium text-amber-900 mb-2">⚡ Current Stats</h4>
+              <p className="text-sm text-amber-800">
+                Total lessons across all sections: <strong>303</strong>
+              </p>
+              <p className="text-xs text-amber-700 mt-1">
+                Blueprint transition system active (2025 → 2026)
               </p>
             </div>
           </div>

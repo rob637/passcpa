@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import {
   Send,
   User,
@@ -140,13 +141,19 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string = 'REG'): S
   return basePrompts.slice(0, 4);
 };
 
-// Format message content
+// Format message content with XSS protection
 const formatMessage = (content: string) => {
-  return content
+  const formatted = content
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
     .replace(/\n/g, '<br>')
     .replace(/• /g, '&bull; ');
+  
+  // Sanitize to prevent XSS attacks
+  return DOMPurify.sanitize(formatted, {
+    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li', 'code', 'pre'],
+    ALLOWED_ATTR: ['class'],
+  });
 };
 
 const AITutor: React.FC = () => {

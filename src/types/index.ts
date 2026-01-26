@@ -124,5 +124,6 @@ export interface UserProfile {
   examSection: ExamSection;
   createdAt: any; // Firestore Timestamp
   dailyGoal?: number;
+  isAdmin?: boolean; // Admin role for CMS access
 }
 

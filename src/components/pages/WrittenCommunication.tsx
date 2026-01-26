@@ -368,7 +368,7 @@ const WrittenCommunication: React.FC = () => {
   const [response, setResponse] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [scores, setScores] = useState<Record<string, number>>({});
-  // const [showSample, setShowSample] = useState(false);
+  const [showSample, setShowSample] = useState(false);
   
   // Placeholder tasks for now - ideally imported from data 
   const tasks: WCTask[] = [

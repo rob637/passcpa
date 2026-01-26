@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   User as UserIcon,
   Bell,
@@ -8,8 +8,11 @@ import {
   Wifi,
   LucideIcon,
   Loader2,
+  Camera,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS } from '../../config/examConfig';
@@ -50,6 +53,8 @@ const Settings: React.FC = () => {
   const [activeTab, setActiveTab] = useState('profile');
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Cast profile
   const profile = userProfile as UserProfile | null;
@@ -91,6 +96,37 @@ const Settings: React.FC = () => {
     await clearCache();
     const status = await getCacheStatus();
     setCacheStatus(status);
+  };
+
+  // Handle photo upload
+  const handlePhotoUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file || !user?.uid) return;
+
+    // Validate file type and size
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image must be less than 5MB');
+      return;
+    }
+
+    setIsUploadingPhoto(true);
+    try {
+      const storageRef = ref(storage, `users/${user.uid}/profile.${file.name.split('.').pop()}`);
+      await uploadBytes(storageRef, file);
+      const photoURL = await getDownloadURL(storageRef);
+      await updateUserProfile({ photoURL });
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 2000);
+    } catch (error) {
+      console.error('Error uploading photo:', error);
+      alert('Failed to upload photo. Please try again.');
+    } finally {
+      setIsUploadingPhoto(false);
+    }
   };
 
   const handleSave = async () => {
@@ -159,16 +195,40 @@ const Settings: React.FC = () => {
 
                   {/* Avatar */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      {profile?.photoURL ? (
-                        <img src={profile.photoURL} alt="" className="w-16 h-16 rounded-full" />
-                      ) : (
-                        <span className="text-2xl font-bold text-primary-600">
-                          {displayName?.charAt(0)?.toUpperCase() || 'U'}
-                        </span>
+                    <div className="relative w-16 h-16">
+                      <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center overflow-hidden">
+                        {profile?.photoURL ? (
+                          <img src={profile.photoURL} alt="" className="w-16 h-16 rounded-full object-cover" />
+                        ) : (
+                          <span className="text-2xl font-bold text-primary-600">
+                            {displayName?.charAt(0)?.toUpperCase() || 'U'}
+                          </span>
+                        )}
+                      </div>
+                      {isUploadingPhoto && (
+                        <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center">
+                          <Loader2 className="w-6 h-6 text-white animate-spin" />
+                        </div>
                       )}
                     </div>
-                    <button className="btn-secondary text-sm">Change Photo</button>
+                    <div>
+                      <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handlePhotoUpload}
+                        accept="image/*"
+                        className="hidden"
+                      />
+                      <button 
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={isUploadingPhoto}
+                        className="btn-secondary text-sm flex items-center gap-2"
+                      >
+                        <Camera className="w-4 h-4" />
+                        {isUploadingPhoto ? 'Uploading...' : 'Change Photo'}
+                      </button>
+                      <p className="text-xs text-slate-500 mt-1">Max 5MB, JPG/PNG</p>
+                    </div>
                   </div>
 
                   {/* Name */}

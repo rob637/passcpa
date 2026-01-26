@@ -12,9 +12,19 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
     
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+    
     // Users collection - private to each user
     match /users/{userId} {
       allow read, write: if isOwner(userId);
+      
+      // Prevent users from granting themselves admin status
+      allow update: if isOwner(userId) && 
+        (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin']));
       
       // All subcollections under user (study_plan, daily_log, progress, etc.)
       match /{subcollection=**} {
@@ -22,34 +32,34 @@ service cloud.firestore {
       }
     }
     
-    // Questions collection - read-only for authenticated users
+    // Questions collection - read-only for users, write for admins
     match /questions/{questionId} {
       allow read: if isAuthenticated();
-      allow write: if false; // Read-only for users
+      allow write: if isAdmin();
     }
     
-    // Lessons collection - read-only for authenticated users
+    // Lessons collection - read-only for users, write for admins
     match /lessons/{lessonId} {
       allow read: if isAuthenticated();
-      allow write: if false; // Admin only via backend
+      allow write: if isAdmin();
     }
     
-    // Topics collection - read-only for authenticated users
+    // Topics collection - read-only for users, write for admins
     match /topics/{topicId} {
       allow read: if isAuthenticated();
-      allow write: if false; // Admin only via backend
+      allow write: if isAdmin();
     }
     
     // Exam sections metadata - read-only
     match /examSections/{sectionId} {
       allow read: if isAuthenticated();
-      allow write: if false;
+      allow write: if isAdmin();
     }
 
     // System Errors - append only
     match /system_errors/{errorId} {
       allow create: if isAuthenticated(); // Users can log errors
-      allow read, update, delete: if false; // Admin only (via backend/console)
+      allow read, update, delete: if isAdmin(); // Admin only
     }
   }
 }

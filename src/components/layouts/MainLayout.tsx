@@ -70,6 +70,12 @@ const MainLayout = () => {
   // Track page views for analytics
   usePageTracking();
 
+  // Skip to main content handler
+  const handleSkipToMain = () => {
+    mainRef.current?.focus();
+    mainRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   // Track scroll for header shadow
   useEffect(() => {
     const handleScroll = () => {
@@ -120,9 +126,25 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col md:flex-row safe-top safe-bottom">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col md:flex-row safe-top safe-bottom">
+      {/* Skip Navigation Link - Accessibility */}
+      <a
+        href="#main-content"
+        onClick={(e) => {
+          e.preventDefault();
+          handleSkipToMain();
+        }}
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
+
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200 h-screen sticky top-0 z-40">
+      <aside 
+        className="hidden md:flex flex-col w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="p-6">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-soft-md">
@@ -177,16 +199,20 @@ const MainLayout = () => {
       {/* Mobile Top Bar */}
       <header
         className={clsx(
-          'md:hidden fixed top-0 left-0 right-0 bg-white z-40 transition-shadow duration-200 safe-top',
+          'md:hidden fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 z-40 transition-shadow duration-200 safe-top',
           scrolled && 'shadow-md'
         )}
+        role="banner"
       >
         <div className="flex items-center justify-between px-4 h-16">
-          <div className="font-bold text-lg text-slate-900">{getPageTitle()}</div>
+          <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{getPageTitle()}</div>
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 px-2 py-1 bg-orange-50 rounded-lg border border-orange-100">
-              <Flame className="w-4 h-4 text-orange-500" />
-              <span className="text-sm font-bold text-orange-700">{currentStreak}</span>
+            <div 
+              className="flex items-center gap-1.5 px-2 py-1 bg-orange-50 dark:bg-orange-900/30 rounded-lg border border-orange-100 dark:border-orange-800"
+              aria-label={`${currentStreak} day streak`}
+            >
+              <Flame className="w-4 h-4 text-orange-500" aria-hidden="true" />
+              <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{currentStreak}</span>
             </div>
             <ProgressRing progress={dailyProgress} size={32} />
           </div>
@@ -196,7 +222,11 @@ const MainLayout = () => {
       {/* Main Content */}
       <main
         ref={mainRef}
-        className="flex-1 w-full max-w-5xl mx-auto p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8"
+        id="main-content"
+        tabIndex={-1}
+        role="main"
+        aria-label="Main content"
+        className="flex-1 w-full max-w-5xl mx-auto p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
       >
         <Outlet />
       </main>
@@ -204,7 +234,9 @@ const MainLayout = () => {
       {/* Mobile Bottom Navigation */}
       <nav
         ref={navRef}
-        className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe z-50 safe-bottom"
+        className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
+        role="navigation"
+        aria-label="Mobile navigation"
       >
         <div className="relative flex items-center justify-around h-16">
           {/* Active Indicator */}
@@ -212,20 +244,22 @@ const MainLayout = () => {
             ref={indicatorRef}
             className="absolute top-0 w-12 h-1 bg-primary-600 rounded-b-full transition-all duration-300 ease-out opacity-0 pointer-events-none"
             style={{ left: 0 }}
+            aria-hidden="true"
           />
 
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
+              aria-label={item.label}
               className={({ isActive }) =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-1',
-                  isActive ? 'text-primary-600' : 'text-slate-400'
+                  isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
                 )
               }
             >
-              <item.icon className="w-6 h-6" />
+              <item.icon className="w-6 h-6" aria-hidden="true" />
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}

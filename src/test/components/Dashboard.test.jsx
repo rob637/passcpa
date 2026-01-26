@@ -164,9 +164,10 @@ describe('Dashboard', () => {
       expect(screen.getByText('Taxation and Regulation')).toBeInTheDocument();
     });
 
-    it('should have change section link', () => {
+    it('should link to study modules page', () => {
       renderDashboard();
-      expect(screen.getByRole('link', { name: /Change/i })).toHaveAttribute('href', '/settings');
+      // Section badge is now a clickable card that goes to /study
+      expect(screen.getByText('Tap to view study modules')).toBeInTheDocument();
     });
   });
 

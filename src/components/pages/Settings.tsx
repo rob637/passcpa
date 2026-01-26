@@ -369,7 +369,7 @@ const Settings: React.FC = () => {
             )}
             
             {/* Save Button */}
-            <div className="p-6 border-t border-slate-100 flex justify-end">
+            <div className="p-6 border-t border-slate-200 flex justify-end">
               <button
                 onClick={handleSave}
                 disabled={isSaving}

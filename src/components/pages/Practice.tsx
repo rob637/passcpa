@@ -617,7 +617,7 @@ const Practice: React.FC = () => {
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                 {currentQuestion.explanation}
               </p>
-              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 <button
                   onClick={askAI}
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"

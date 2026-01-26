@@ -615,7 +615,7 @@ const ExamSimulator: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-6">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-lg shadow-sm border border-slate-200 min-h-[400px] flex flex-col">
-                <div className="p-6 border-b border-slate-100">
+                <div className="p-6 border-b border-slate-200">
                   <div className="flex justify-between items-start mb-4">
                     <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
                       Question {currentIndex + 1} / {testletQuestions.length}

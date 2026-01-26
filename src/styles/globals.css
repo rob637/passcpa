@@ -24,17 +24,22 @@
   --nav-height: 64px;
   --header-height: 56px;
 
-  /* Light mode colors */
+  /* Light mode colors - Crisper, more defined */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f5f9;
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-tertiary: #94a3b8;
+  --text-tertiary: #64748b;
   --border-color: #e2e8f0;
+  --border-color-strong: #cbd5e1;
   --border-color-light: #f1f5f9;
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  /* Enhanced shadows for depth - Google Material 3 inspired */
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --card-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --card-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
 }
 
 /* Dark mode colors */
@@ -297,13 +302,12 @@ body.dark {
 
 /* ============================================
    CARDS - Clean, Elevated Surfaces
+   Google Material 3 Inspired
    ============================================ */
 
 .card {
-  @apply bg-white rounded-2xl border border-slate-100;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.03),
-    0 1px 3px rgba(0, 0, 0, 0.02);
+  @apply bg-white rounded-2xl border border-slate-200;
+  box-shadow: var(--card-shadow);
 }
 
 .dark .card {
@@ -314,11 +318,8 @@ body.dark {
 }
 
 .card-elevated {
-  @apply card border-transparent;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.04);
+  @apply card border-slate-200;
+  box-shadow: var(--card-shadow-md);
 }
 
 .dark .card-elevated {
@@ -329,10 +330,7 @@ body.dark {
 }
 
 .card-elevated:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.04),
-    0 8px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--card-shadow-lg);
 }
 
 .dark .card-elevated:hover {
@@ -348,8 +346,8 @@ body.dark {
 }
 
 .card-interactive:hover {
-  @apply border-slate-200;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  @apply border-slate-300;
+  box-shadow: var(--card-shadow-hover);
   transform: translateY(-2px);
 }
 
@@ -360,12 +358,12 @@ body.dark {
 
 .card-interactive:active {
   transform: scale(0.98) translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--card-shadow);
 }
 
 /* Card sections */
 .card-header {
-  @apply px-5 py-4 border-b border-slate-100;
+  @apply px-5 py-4 border-b border-slate-200;
 }
 
 .dark .card-header {
@@ -377,7 +375,7 @@ body.dark {
 }
 
 .card-footer {
-  @apply px-5 py-4 bg-slate-50/50 border-t border-slate-100 rounded-b-2xl;
+  @apply px-5 py-4 bg-slate-50 border-t border-slate-200 rounded-b-2xl;
 }
 
 .dark .card-footer {
@@ -389,7 +387,7 @@ body.dark {
    ============================================ */
 
 .input {
-  @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl
+  @apply w-full px-4 py-3 bg-white border border-slate-300 rounded-xl
          text-slate-900 placeholder:text-slate-400
          transition-all duration-200;
   min-height: 48px;
@@ -400,7 +398,7 @@ body.dark {
 }
 
 .input:hover {
-  @apply border-slate-300;
+  @apply border-slate-400;
 }
 
 .dark .input:hover {
@@ -445,6 +443,7 @@ body.dark {
          bg-white border-2 border-slate-200 rounded-2xl
          transition-all duration-200 cursor-pointer select-none;
   min-height: 64px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .dark .mcq-option {
@@ -452,7 +451,8 @@ body.dark {
 }
 
 .mcq-option:hover {
-  @apply border-slate-300 bg-slate-50/50;
+  @apply border-slate-300 bg-slate-50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .dark .mcq-option:hover {

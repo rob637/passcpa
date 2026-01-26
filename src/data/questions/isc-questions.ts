@@ -240,7 +240,7 @@ export const ISC_QUESTIONS: Question[] = [
   // ==========================================
 
   {
-    id: 'isc-soc-001',
+    id: 'isc-base-soc-001',
     section: 'ISC',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
@@ -260,7 +260,7 @@ export const ISC_QUESTIONS: Question[] = [
     skillLevel: 'Remembering and Understanding',
   },
   {
-    id: 'isc-soc-002',
+    id: 'isc-base-soc-002',
     section: 'ISC',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
@@ -280,7 +280,7 @@ export const ISC_QUESTIONS: Question[] = [
     skillLevel: 'Application',
   },
   {
-    id: 'isc-soc-003',
+    id: 'isc-base-soc-003',
     section: 'ISC',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
@@ -300,7 +300,7 @@ export const ISC_QUESTIONS: Question[] = [
     skillLevel: 'Application',
   },
   {
-    id: 'isc-soc-004',
+    id: 'isc-base-soc-004',
     section: 'ISC',
     topicId: 'isc-soc',
     topic: 'SOC Engagements',
@@ -345,7 +345,7 @@ export const ISC_QUESTIONS: Question[] = [
   // ==========================================
 
   {
-    id: 'isc-net-001',
+    id: 'isc-base-net-001',
     section: 'ISC',
     topicId: 'isc-network',
     topic: 'Network Security',
@@ -425,7 +425,7 @@ export const ISC_QUESTIONS: Question[] = [
     skillLevel: 'Application',
   },
   {
-    id: 'isc-cloud-001',
+    id: 'isc-base-cloud-001',
     section: 'ISC',
     topicId: 'isc-cloud',
     topic: 'Cloud Computing',
@@ -450,86 +450,6 @@ export const ISC_QUESTIONS: Question[] = [
   // ==========================================
 
   // SOC Engagements
-  {
-    id: 'isc-soc-001',
-    section: 'ISC',
-    topicId: 'isc-soc',
-    topic: 'SOC Engagements',
-    subtopic: 'SOC Report Types',
-    difficulty: 'medium',
-    question: 'A company needs to provide assurance about controls to its customers and their auditors. Which SOC report type is most appropriate for general distribution?',
-    options: [
-      'SOC 1 Type I',
-      'SOC 1 Type II',
-      'SOC 2 Type II',
-      'SOC 3',
-    ],
-    correctAnswer: 3,
-    explanation: 'SOC 3 reports are designed for general distribution and can be freely shared. SOC 1 and SOC 2 reports contain detailed control information and are restricted to specific users under NDA.',
-    reference: 'AICPA SOC Reports',
-    blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
-  },
-  {
-    id: 'isc-soc-002',
-    section: 'ISC',
-    topicId: 'isc-soc',
-    topic: 'SOC Engagements',
-    subtopic: 'SOC 1 vs SOC 2',
-    difficulty: 'medium',
-    question: 'A service organization processes payroll transactions for multiple clients. Which SOC report type addresses controls relevant to user entities\' financial statements?',
-    options: [
-      'SOC 1',
-      'SOC 2',
-      'SOC 3',
-      'SOC for Cybersecurity',
-    ],
-    correctAnswer: 0,
-    explanation: 'SOC 1 reports (formerly SAS 70) address controls relevant to user entities\' internal control over financial reporting. SOC 2 covers trust services criteria (security, availability, processing integrity, confidentiality, privacy).',
-    reference: 'AICPA SOC Reports',
-    blueprintArea: 'ISC-III',
-    skillLevel: 'Application',
-  },
-  {
-    id: 'isc-soc-003',
-    section: 'ISC',
-    topicId: 'isc-soc',
-    topic: 'SOC Engagements',
-    subtopic: 'Type I vs Type II',
-    difficulty: 'medium',
-    question: 'What is the key difference between a SOC 2 Type I and SOC 2 Type II report?',
-    options: [
-      'Type I covers security controls only; Type II covers all trust principles',
-      'Type I is for management only; Type II is for external distribution',
-      'Type I covers control design at a point in time; Type II covers operating effectiveness over a period',
-      'Type I is performed by internal auditors; Type II by external auditors',
-    ],
-    correctAnswer: 2,
-    explanation: 'Type I reports cover the design and implementation of controls at a specific point in time. Type II reports cover both design AND operating effectiveness of controls over a period (typically 6-12 months).',
-    reference: 'SOC Report Types',
-    blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
-  },
-  {
-    id: 'isc-soc-004',
-    section: 'ISC',
-    topicId: 'isc-soc',
-    topic: 'SOC Engagements',
-    subtopic: 'Trust Services Criteria',
-    difficulty: 'hard',
-    question: 'Which trust services criterion addresses whether system processing is complete, valid, accurate, timely, and authorized?',
-    options: [
-      'Security',
-      'Availability',
-      'Processing Integrity',
-      'Confidentiality',
-    ],
-    correctAnswer: 2,
-    explanation: 'Processing Integrity addresses whether system processing is complete, valid, accurate, timely, and authorized to meet the entity\'s objectives. Security is about protection from unauthorized access.',
-    reference: 'AICPA Trust Services Criteria',
-    blueprintArea: 'ISC-III',
-    skillLevel: 'Remembering and Understanding',
-  },
 
   // Cybersecurity & Threats
   {
@@ -821,26 +741,6 @@ export const ISC_QUESTIONS: Question[] = [
 
   // Network & Infrastructure Security
   {
-    id: 'isc-net-001',
-    section: 'ISC',
-    topicId: 'isc-network',
-    topic: 'Network Security',
-    subtopic: 'Firewalls',
-    difficulty: 'medium',
-    question: 'A firewall that examines network packets and makes decisions based only on source/destination IP and port is called:',
-    options: [
-      'Stateful inspection firewall',
-      'Packet filtering firewall',
-      'Application-level gateway',
-      'Next-generation firewall',
-    ],
-    correctAnswer: 1,
-    explanation: 'Packet filtering firewalls (stateless) examine individual packets based on IP addresses and ports without tracking connection state. Stateful firewalls track connections; application firewalls inspect content.',
-    reference: 'Network Security Controls',
-    blueprintArea: 'ISC-I',
-    skillLevel: 'Remembering and Understanding',
-  },
-  {
     id: 'isc-net-002',
     section: 'ISC',
     topicId: 'isc-network',
@@ -948,26 +848,6 @@ export const ISC_QUESTIONS: Question[] = [
   // ==========================================
   
   // Cloud Computing
-  {
-    id: 'isc-cloud-001',
-    section: 'ISC',
-    topicId: 'isc-cloud',
-    topic: 'Cloud Computing',
-    subtopic: 'Service Models',
-    difficulty: 'easy',
-    question: 'In which cloud service model does the customer have the MOST control over the computing environment?',
-    options: [
-      'Software as a Service (SaaS)',
-      'Platform as a Service (PaaS)',
-      'Infrastructure as a Service (IaaS)',
-      'Function as a Service (FaaS)',
-    ],
-    correctAnswer: 2,
-    explanation: 'IaaS provides virtual machines, storage, and networks where the customer controls the OS and applications. SaaS provides applications; PaaS provides development platforms; FaaS provides serverless execution.',
-    reference: 'Cloud Service Models',
-    blueprintArea: 'ISC-II',
-    skillLevel: 'Remembering and Understanding',
-  },
   {
     id: 'isc-cloud-002',
     section: 'ISC',

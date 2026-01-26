@@ -692,7 +692,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Equity and Stock Compensation
   {
-    id: 'far-eq-001',
+    id: 'far-extra2-eq-001',
     section: 'FAR',
     topicId: 'far-equity',
     topic: 'Stockholders Equity',
@@ -710,7 +710,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 505-30-30',
   },
   {
-    id: 'far-eq-002',
+    id: 'far-extra2-eq-002',
     section: 'FAR',
     topicId: 'far-equity',
     topic: 'Stockholders Equity',
@@ -728,7 +728,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 505-20-30',
   },
   {
-    id: 'far-eq-003',
+    id: 'far-extra2-eq-003',
     section: 'FAR',
     topicId: 'far-equity',
     topic: 'Stock Compensation',
@@ -804,7 +804,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Income Taxes
   {
-    id: 'far-tax-001',
+    id: 'far-extra2-tax-001',
     section: 'FAR',
     topicId: 'far-tax',
     topic: 'Income Taxes',
@@ -822,7 +822,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 740-10-30-18',
   },
   {
-    id: 'far-tax-002',
+    id: 'far-extra2-tax-002',
     section: 'FAR',
     topicId: 'far-tax',
     topic: 'Income Taxes',
@@ -842,7 +842,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Leases - Lessee
   {
-    id: 'far-lease-001',
+    id: 'far-extra2-lease-001',
     section: 'FAR',
     topicId: 'far-leases',
     topic: 'Leases',
@@ -860,7 +860,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 842-20-30-1',
   },
   {
-    id: 'far-lease-002',
+    id: 'far-extra2-lease-002',
     section: 'FAR',
     topicId: 'far-leases',
     topic: 'Leases',
@@ -1056,7 +1056,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Governmental Accounting
   {
-    id: 'far-gov-001',
+    id: 'far-extra2-gov-001',
     section: 'FAR',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
@@ -1074,7 +1074,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'GASB Fund Accounting',
   },
   {
-    id: 'far-gov-002',
+    id: 'far-extra2-gov-002',
     section: 'FAR',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
@@ -1092,7 +1092,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'GASB Codification 1600.106',
   },
   {
-    id: 'far-gov-003',
+    id: 'far-extra2-gov-003',
     section: 'FAR',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
@@ -1110,7 +1110,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'GASB 34',
   },
   {
-    id: 'far-gov-004',
+    id: 'far-extra2-gov-004',
     section: 'FAR',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
@@ -1148,7 +1148,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Not-for-Profit Accounting
   {
-    id: 'far-nfp-001',
+    id: 'far-extra2-nfp-001',
     section: 'FAR',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
@@ -1166,7 +1166,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 958-205 (ASU 2016-14)',
   },
   {
-    id: 'far-nfp-002',
+    id: 'far-extra2-nfp-002',
     section: 'FAR',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
@@ -1184,7 +1184,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 958-605-25',
   },
   {
-    id: 'far-nfp-003',
+    id: 'far-extra2-nfp-003',
     section: 'FAR',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
@@ -1202,7 +1202,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 958-720',
   },
   {
-    id: 'far-nfp-004',
+    id: 'far-extra2-nfp-004',
     section: 'FAR',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
@@ -1452,7 +1452,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Inventory
   {
-    id: 'far-inv-001',
+    id: 'far-extra2-inv-001',
     section: 'FAR',
     topicId: 'far-inventory',
     topic: 'Inventory',
@@ -1470,7 +1470,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 330 Inventory',
   },
   {
-    id: 'far-inv-002',
+    id: 'far-extra2-inv-002',
     section: 'FAR',
     topicId: 'far-inventory',
     topic: 'Inventory',
@@ -1488,7 +1488,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 330-10-35',
   },
   {
-    id: 'far-inv-003',
+    id: 'far-extra2-inv-003',
     section: 'FAR',
     topicId: 'far-inventory',
     topic: 'Inventory',
@@ -1676,7 +1676,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
 
   // Liabilities
   {
-    id: 'far-liab-001',
+    id: 'far-extra2-liab-001',
     section: 'FAR',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
@@ -1694,7 +1694,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     reference: 'ASC 470-10-45',
   },
   {
-    id: 'far-liab-002',
+    id: 'far-extra2-liab-002',
     section: 'FAR',
     topicId: 'far-liabilities',
     topic: 'Liabilities',

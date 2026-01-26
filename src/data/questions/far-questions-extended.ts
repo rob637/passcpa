@@ -387,7 +387,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   // FIXED ASSETS AND DEPRECIATION
   // ==========================================
   {
-    id: 'far-fa-001',
+    id: 'far-ext-fa-001',
     section: 'FAR',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
@@ -407,7 +407,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     reference: 'ASC 360-10-30',
   },
   {
-    id: 'far-fa-002',
+    id: 'far-ext-fa-002',
     section: 'FAR',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
@@ -422,7 +422,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
     reference: 'ASC 360-10-35',
   },
   {
-    id: 'far-fa-003',
+    id: 'far-ext-fa-003',
     section: 'FAR',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',

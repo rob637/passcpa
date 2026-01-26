@@ -64,7 +64,7 @@ vi.mock('../../services/feedback', () => ({
 
 const renderPractice = () => {
   return render(
-    <MemoryRouter initialEntries={['/practice']}>
+    <MemoryRouter initialEntries={['/practice']} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Practice />
     </MemoryRouter>
   );

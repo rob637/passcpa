@@ -213,7 +213,7 @@ const Dashboard = () => {
   return (
     <div className="p-4 sm:p-6 max-w-2xl mx-auto page-enter">
       {/* Greeting Section */}
-      <div className="mb-6">
+      <div className="mb-4">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           {getGreeting()}, {firstName}
         </h1>
@@ -221,6 +221,23 @@ const Dashboard = () => {
           {format(new Date(), 'EEEE, MMMM d')}
         </p>
       </div>
+
+      {/* Focus Area - Section Badge (moved to top) */}
+      {examSection && (
+        <Link to="/study" className="card p-4 flex items-center gap-4 mb-6 hover:shadow-soft-lg transition-shadow">
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold shadow-soft"
+            style={{ backgroundColor: examSection.color }}
+          >
+            {examSection.shortName}
+          </div>
+          <div className="flex-1">
+            <p className="font-semibold text-slate-900 dark:text-slate-100">{examSection.name}</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400">Tap to view study modules</p>
+          </div>
+          <ChevronRight className="w-5 h-5 text-slate-400" />
+        </Link>
+      )}
 
       {/* Exam Countdown - Only if set */}
       {examDate && daysUntilExam !== null && daysUntilExam > 0 && (
@@ -384,25 +401,6 @@ const Dashboard = () => {
           <StatCard icon={TrendingUp} value={currentStreak} label="Day Streak" color="warning" />
         </div>
       </div>
-
-      {/* Section Badge */}
-      {examSection && (
-        <div className="card p-4 flex items-center gap-4">
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
-            style={{ backgroundColor: examSection.color }}
-          >
-            {examSection.shortName}
-          </div>
-          <div className="flex-1">
-            <p className="font-semibold text-slate-900 dark:text-slate-100">{examSection.name}</p>
-            <p className="text-sm text-slate-500 dark:text-slate-400">{examSection.description}</p>
-          </div>
-          <Link to="/settings" className="text-sm text-primary-600 font-medium">
-            Change
-          </Link>
-        </div>
-      )}
     </div>
   );
 };

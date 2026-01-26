@@ -8,7 +8,7 @@ import clsx from 'clsx';
 
 // Navigation items with tour IDs
 const NAV_ITEMS = [
-  { path: '/dashboard', icon: Home, label: 'Home', tourId: 'dashboard' },
+  { path: '/dashboard', icon: Home, label: 'Dashboard', tourId: 'dashboard' },
   { path: '/study', icon: BookOpen, label: 'Study', tourId: 'study' },
   { path: '/practice', icon: Target, label: 'Practice', tourId: 'practice' },
   { path: '/progress', icon: BarChart3, label: 'Progress', tourId: 'progress' },

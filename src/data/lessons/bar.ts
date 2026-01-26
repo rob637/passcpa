@@ -2461,5 +2461,957 @@ export const barLessons: Lesson[] = [
         }
       ]
     }
+  },
+  // ==========================================
+  // ADDITIONAL BAR LESSONS - Business Analysis
+  // ==========================================
+  {
+    id: 'BAR-V-001',
+    section: 'BAR',
+    title: "Data Analytics Fundamentals",
+    description: "Understand data analytics concepts and applications in accounting",
+    order: 41,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Analysis", "Data Analytics"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Data analytics is transforming accounting! CPAs must understand how to use data to identify trends, anomalies, and insights. This is a growing focus area on the BAR exam!"
+        },
+        {
+          title: 'Types of Data Analytics',
+          type: 'table',
+          headers: ['Type', 'Purpose', 'Example'],
+          rows: [
+            ['Descriptive', 'What happened?', 'Revenue by region last quarter'],
+            ['Diagnostic', 'Why did it happen?', 'Root cause of variance'],
+            ['Predictive', 'What will happen?', 'Sales forecast models'],
+            ['Prescriptive', 'What should we do?', 'Optimal pricing recommendation']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Analytics Types',
+          type: 'callout',
+          content: "**\"DDPP\"** for analytics types:\n\n**D**escriptive → Look back\n**D**iagnostic → Dig deeper\n**P**redictive → Project forward\n**P**rescriptive → Provide action\n\n**Past → Why → Future → Action!**"
+        },
+        {
+          title: 'Data Analytics Process',
+          type: 'text',
+          content: "**CRISP-DM Framework:**\n\n1. **Business Understanding** - Define objectives\n2. **Data Understanding** - Explore available data\n3. **Data Preparation** - Clean and transform\n4. **Modeling** - Apply analytics techniques\n5. **Evaluation** - Assess results\n6. **Deployment** - Implement findings"
+        },
+        {
+          title: 'Key Analytics Tools',
+          type: 'text',
+          content: "**Common tools in practice:**\n\n• **Excel** - Basic analysis, pivot tables\n• **SQL** - Database queries\n• **Visualization** - Tableau, Power BI\n• **Statistical** - R, Python\n• **Audit-specific** - ACL, IDEA"
+        },
+        {
+          title: '⚠️ Exam Trap: Data Quality',
+          type: 'warning',
+          content: "**Garbage In, Garbage Out!**\n\n**Data quality dimensions:**\n• Accuracy\n• Completeness\n• Timeliness\n• Consistency\n\n**Analytics are only as good as the underlying data!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Four types: Descriptive, Diagnostic, Predictive, Prescriptive",
+            "CRISP-DM provides structured analytics approach",
+            "Data quality is critical for reliable analytics",
+            "CPAs use analytics for audit, fraud detection, forecasting",
+            "Visualization helps communicate insights",
+            "Understanding limitations is as important as capabilities"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-002',
+    section: 'BAR',
+    title: "Statistical Sampling and Analysis",
+    description: "Apply statistical concepts in audit and business contexts",
+    order: 42,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Data Analytics"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Statistical sampling allows conclusions about entire populations from testing samples. Understanding confidence levels, sampling risk, and projection techniques is essential for BAR!"
+        },
+        {
+          title: 'Sampling Approaches',
+          type: 'table',
+          headers: ['Approach', 'Method', 'Use Case'],
+          rows: [
+            ['Statistical', 'Random selection, quantified risk', 'Audit testing with precision'],
+            ['Non-statistical', 'Judgmental selection', 'Targeted testing, walkthroughs'],
+            ['Attribute', 'Test rate of occurrence', 'Control testing (deviation rate)'],
+            ['Variables', 'Test monetary amounts', 'Substantive testing (misstatement)']
+          ]
+        },
+        {
+          title: 'Key Statistical Concepts',
+          type: 'text',
+          content: "**Sampling Risk:**\n• Risk of incorrect conclusion from sample\n\n**Confidence Level:**\n• Probability sample represents population\n• 95% = 5% risk of incorrect conclusion\n\n**Tolerable Rate/Amount:**\n• Maximum acceptable deviation/error"
+        },
+        {
+          title: '🧠 Memory Aid: Sampling Risk',
+          type: 'callout',
+          content: "**\"RIRA\"** for sampling risks:\n\n**R**isk of **I**ncorrect **R**ejection = Alpha risk\n(Conclude controls ineffective when effective)\n\n**R**isk of **I**ncorrect **A**cceptance = Beta risk\n(Conclude controls effective when ineffective)\n\n**Beta is WORSE - could miss problems!**"
+        },
+        {
+          title: 'Sample Size Factors',
+          type: 'table',
+          headers: ['Factor', 'Effect on Sample Size'],
+          rows: [
+            ['Higher confidence needed', 'LARGER sample'],
+            ['Lower tolerable error', 'LARGER sample'],
+            ['Higher expected error', 'LARGER sample'],
+            ['Larger population', 'Slightly larger sample'],
+            ['More variability', 'LARGER sample']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Projection',
+          type: 'warning',
+          content: "**Project sample results to population!**\n\n• Found 2% deviation rate in sample\n• Project 2% to ENTIRE population\n• Add allowance for sampling risk\n\n**Don't just report sample results—EXTRAPOLATE!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Statistical sampling quantifies risk; non-statistical is judgmental",
+            "Attribute sampling for controls; Variables for amounts",
+            "Beta risk (incorrect acceptance) is more serious",
+            "Sample size increases with confidence and precision needs",
+            "Always project results to population",
+            "Consider both sampling and non-sampling risk"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-003',
+    section: 'BAR',
+    title: "Regression Analysis",
+    description: "Apply regression techniques for forecasting and analysis",
+    order: 43,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Data Analytics"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Regression analysis quantifies relationships between variables! It's used for budgeting, cost estimation, and analytical procedures in audit. BAR tests application of these concepts!"
+        },
+        {
+          title: 'Simple Linear Regression',
+          type: 'text',
+          content: "**Y = a + bX**\n\n**Where:**\n• Y = Dependent variable (what we predict)\n• X = Independent variable (predictor)\n• a = Y-intercept (fixed component)\n• b = Slope (variable component)\n\n**Example:** Total Cost = Fixed Cost + (Variable Rate × Units)"
+        },
+        {
+          title: 'Key Regression Statistics',
+          type: 'table',
+          headers: ['Statistic', 'What It Measures', 'Interpretation'],
+          rows: [
+            ['R-squared (R²)', 'Variation explained', '0.85 = 85% explained by model'],
+            ['Coefficient', 'Change in Y per unit X', 'Slope of relationship'],
+            ['Standard Error', 'Precision of estimate', 'Lower = more precise'],
+            ['P-value', 'Statistical significance', '<0.05 = significant']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: R-squared',
+          type: 'callout',
+          content: "**R² = \"Reliability\" (sort of)**\n\nR² of 0.90 means:\n• 90% of variation EXPLAINED by model\n• 10% due to other factors\n\n**Higher R² = Better fit (but check causation!)**"
+        },
+        {
+          title: 'Multiple Regression',
+          type: 'text',
+          content: "**Y = a + b₁X₁ + b₂X₂ + ... + bₙXₙ**\n\n**Uses multiple predictors:**\n• Sales = f(advertising, price, economy)\n• Cost = f(units, complexity, setup)\n\n**Watch for multicollinearity:**\n• When predictors are highly correlated\n• Makes individual coefficients unreliable"
+        },
+        {
+          title: '⚠️ Exam Trap: Correlation ≠ Causation',
+          type: 'warning',
+          content: "**High R² doesn't prove causation!**\n\n**Examples of spurious correlation:**\n• Ice cream sales and drowning (both caused by summer)\n• Stork population and births (both rural phenomena)\n\n**Always consider logical relationship!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Simple regression: Y = a + bX (one predictor)",
+            "Multiple regression: Multiple predictors",
+            "R² measures how well model explains variation",
+            "P-value tests statistical significance",
+            "Correlation does NOT prove causation",
+            "Watch for multicollinearity in multiple regression"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-004',
+    section: 'BAR',
+    title: "Variance Analysis Deep Dive",
+    description: "Master multi-level variance analysis for performance evaluation",
+    order: 44,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Managerial Accounting"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Variance analysis isolates reasons for differences between budgeted and actual results! Understanding how to decompose variances into price, quantity, and mix components is critical for BAR!"
+        },
+        {
+          title: 'Direct Material Variances',
+          type: 'text',
+          content: "**Price Variance:**\n(Actual Price − Standard Price) × Actual Quantity\n\n**Quantity Variance:**\n(Actual Quantity − Standard Quantity) × Standard Price\n\n**Total = Price + Quantity**"
+        },
+        {
+          title: 'Direct Labor Variances',
+          type: 'table',
+          headers: ['Variance', 'Formula', 'Favorable If'],
+          rows: [
+            ['Rate Variance', '(AR − SR) × AH', 'Actual Rate < Standard'],
+            ['Efficiency Variance', '(AH − SH) × SR', 'Actual Hours < Standard'],
+            ['Total Labor Variance', 'Rate + Efficiency', 'Total < Budget']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Variance Formulas',
+          type: 'callout',
+          content: "**\"PQ Sandwich\"** method:\n\nAP × AQ ←Price→ SP × AQ ←Quantity→ SP × SQ\n\n**Price uses ACTUAL quantity**\n**Quantity uses STANDARD price**\n\n**Sandwiched term (SP × AQ) is used for BOTH!**"
+        },
+        {
+          title: 'Overhead Variances',
+          type: 'text',
+          content: "**Variable Overhead:**\n• Spending Variance: Actual vs. budgeted at actual activity\n• Efficiency Variance: Activity variance × standard rate\n\n**Fixed Overhead:**\n• Budget Variance: Actual vs. budgeted fixed OH\n• Volume Variance: Budgeted vs. applied (capacity utilization)"
+        },
+        {
+          title: '⚠️ Exam Trap: Favorable vs. Unfavorable',
+          type: 'warning',
+          content: "**Favorable ≠ Good Management!**\n\n**Examples of misleading variances:**\n• Favorable price variance from inferior materials\n• Favorable labor efficiency from skipping steps\n• Favorable overhead from underproduction\n\n**Always investigate the CAUSE!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Price variance: Actual vs. Standard price × Actual qty",
+            "Quantity variance: Actual vs. Standard qty × Standard price",
+            "Labor: Rate and Efficiency variances",
+            "Overhead: Variable (spending/efficiency) and Fixed (budget/volume)",
+            "Sales: Price, Mix, and Quantity effects",
+            "Investigate causes, not just amounts"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-005',
+    section: 'BAR',
+    title: "Transfer Pricing",
+    description: "Understand transfer pricing methods and implications",
+    order: 45,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Managerial Accounting"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Transfer pricing determines how divisions within a company price internal transactions! It affects divisional performance evaluation, tax planning, and goal congruence. BAR tests these concepts!"
+        },
+        {
+          title: 'Transfer Pricing Methods',
+          type: 'table',
+          headers: ['Method', 'Price Set At', 'Best When'],
+          rows: [
+            ['Market-Based', 'External market price', 'Competitive external market exists'],
+            ['Cost-Based', 'Variable or full cost', 'No external market; cost data reliable'],
+            ['Cost-Plus', 'Cost + markup', 'No market; need profit incentive'],
+            ['Negotiated', 'Division agreement', 'Both divisions have bargaining power']
+          ]
+        },
+        {
+          title: 'Transfer Pricing Formula',
+          type: 'text',
+          content: "**Minimum Transfer Price (Selling Division):**\n\nMinimum TP = Variable Cost + Opportunity Cost\n\n**Where opportunity cost:**\n• If excess capacity: $0\n• If at capacity: Contribution margin lost\n\n**Maximum Transfer Price (Buying Division):**\nMaximum TP = External purchase price"
+        },
+        {
+          title: '🧠 Memory Aid: Transfer Pricing Range',
+          type: 'callout',
+          content: "**\"VOC to Market\"**\n\n**Floor:** Variable cost + Opportunity Cost (seller's minimum)\n**Ceiling:** Market price (buyer's maximum)\n\n**If Floor > Ceiling → Buy externally!**\n**If Floor < Ceiling → Internal transfer benefits company**"
+        },
+        {
+          title: 'Goal Congruence Issues',
+          type: 'text',
+          content: "**Transfer pricing should promote:**\n\n✓ Decisions optimal for company\n✓ Fair performance evaluation\n✓ Division manager motivation\n\n**Conflicts arise when:**\n• Tax optimization conflicts with performance\n• Division incentives conflict with corporate goals"
+        },
+        {
+          title: '⚠️ Exam Trap: Tax Implications',
+          type: 'warning',
+          content: "**International transfer pricing is heavily regulated!**\n\n• IRS requires arm's length transactions\n• Section 482 allows IRS to reallocate income\n• Documentation requirements are substantial\n\n**Tax optimization can't override arm's length principle!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Market-based pricing best when external market exists",
+            "Minimum TP = Variable cost + Opportunity cost",
+            "Maximum TP = External market price",
+            "Goal congruence: Individual decisions align with corporate goals",
+            "International TP requires arm's length pricing",
+            "Consider tax, performance evaluation, and motivation"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-006',
+    section: 'BAR',
+    title: "Balanced Scorecard and KPIs",
+    description: "Implement strategic performance measurement systems",
+    order: 46,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Analysis", "Performance Measurement"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Financial metrics alone don't tell the whole story! The Balanced Scorecard links strategy to operations through multiple perspectives. BAR tests understanding of comprehensive performance measurement!"
+        },
+        {
+          title: 'Four Perspectives',
+          type: 'table',
+          headers: ['Perspective', 'Key Question', 'Example Measures'],
+          rows: [
+            ['Financial', 'How do we look to shareholders?', 'ROI, EVA, Revenue growth'],
+            ['Customer', 'How do customers see us?', 'Satisfaction, Retention, Market share'],
+            ['Internal Process', 'What must we excel at?', 'Quality, Cycle time, Efficiency'],
+            ['Learning & Growth', 'Can we continue to improve?', 'Training, Innovation, Employee satisfaction']
+          ]
+        },
+        {
+          title: 'Strategy Map',
+          type: 'text',
+          content: "**Cause-and-effect relationships:**\n\nLearning & Growth → Improves\n↓\nInternal Processes → Drives\n↓\nCustomer Results → Generates\n↓\nFinancial Performance\n\n**Bottom perspectives ENABLE top perspectives**"
+        },
+        {
+          title: '🧠 Memory Aid: BSC Perspectives',
+          type: 'callout',
+          content: "**\"FICL\" = Financial success requires:**\n\n**F**inancial outcomes depend on...\n**I**nternal processes which need...\n**C**ustomer satisfaction built through...\n**L**earning & Growth\n\n**Start at bottom, flow to top!**"
+        },
+        {
+          title: 'Key Performance Indicators (KPIs)',
+          type: 'text',
+          content: "**Good KPIs are SMART:**\n\n• **S**pecific - Clear definition\n• **M**easurable - Quantifiable\n• **A**chievable - Realistic targets\n• **R**elevant - Linked to strategy\n• **T**ime-bound - Defined period\n\n**Leading vs. Lagging:**\n• Leading: Predict future (training hours)\n• Lagging: Report past (revenue)"
+        },
+        {
+          title: '⚠️ Exam Trap: Too Many Metrics',
+          type: 'warning',
+          content: "**More metrics ≠ Better measurement!**\n\n**Common mistakes:**\n• Measuring everything possible\n• Conflicting measures\n• Gaming the metrics\n• Ignoring qualitative factors\n\n**Focus on vital few, not trivial many!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "BSC: Financial, Customer, Internal Process, Learning & Growth",
+            "Strategy maps show cause-and-effect relationships",
+            "Leading indicators predict; Lagging indicators report",
+            "KPIs should be SMART",
+            "Balance quantitative and qualitative measures",
+            "Link measures to strategic objectives"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-007',
+    section: 'BAR',
+    title: "Economic Value Added (EVA)",
+    description: "Calculate and interpret residual income metrics",
+    order: 47,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Performance Measurement"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "EVA measures true economic profit after accounting for capital costs! Unlike accounting profit, EVA shows whether a company creates value for shareholders. This is a key BAR concept!"
+        },
+        {
+          title: 'EVA Formula',
+          type: 'text',
+          content: "**EVA = NOPAT − (Capital × WACC)**\n\n**Where:**\n• NOPAT = Net Operating Profit After Tax\n• Capital = Invested capital\n• WACC = Weighted Average Cost of Capital\n\n**Positive EVA = Value creation**\n**Negative EVA = Value destruction**"
+        },
+        {
+          title: 'EVA vs. Traditional Metrics',
+          type: 'table',
+          headers: ['Metric', 'Formula', 'Limitation'],
+          rows: [
+            ['Net Income', 'Revenue − Expenses', 'Ignores cost of equity'],
+            ['ROI', 'Income ÷ Investment', 'Percentage can mislead'],
+            ['Residual Income', 'Income − (Capital × Rate)', 'Dollar amount, not rate'],
+            ['EVA', 'NOPAT − Capital Charge', 'Requires adjustments']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: EVA Calculation',
+          type: 'callout',
+          content: "**\"NOPAT minus Capital Charge\"**\n\nStep 1: Calculate NOPAT (operating profit × (1 − tax rate))\nStep 2: Calculate Capital Charge (Capital × WACC)\nStep 3: EVA = Step 1 − Step 2\n\n**Positive = Creating shareholder value!**"
+        },
+        {
+          title: 'NOPAT Adjustments',
+          type: 'text',
+          content: "**Common adjustments to accounting profit:**\n\n• Add back: R&D expense (capitalize)\n• Add back: Goodwill amortization\n• Add back: Operating lease interest\n• Remove: Non-operating items\n\n**Goal: Reflect economic reality**"
+        },
+        {
+          title: '⚠️ Exam Trap: ROI vs. EVA Decisions',
+          type: 'warning',
+          content: "**ROI can lead to BAD decisions!**\n\n**Example:** Division with 15% ROI, Company WACC 10%\n• Project offers 12% return\n• Manager rejects (lowers division ROI)\n• But 12% > 10% WACC = Value creation!\n\n**EVA encourages all positive-NPV projects**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "EVA = NOPAT − (Capital × WACC)",
+            "Positive EVA indicates value creation",
+            "EVA addresses cost of equity that accounting ignores",
+            "ROI can lead to suboptimal decisions",
+            "NOPAT requires adjustments for economic profit",
+            "EVA aligns manager incentives with shareholders"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-008',
+    section: 'BAR',
+    title: "Business Process Improvement",
+    description: "Apply process improvement methodologies",
+    order: 48,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Analysis", "Operations"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "CPAs increasingly advise on operational efficiency! Understanding Lean, Six Sigma, and other process improvement methods helps identify waste and drive performance. BAR tests these concepts!"
+        },
+        {
+          title: 'Lean Principles',
+          type: 'text',
+          content: "**Eliminate waste (Muda):**\n\n**7 Types of Waste:**\n1. **T**ransportation\n2. **I**nventory\n3. **M**otion\n4. **W**aiting\n5. **O**verproduction\n6. **O**verprocessing\n7. **D**efects\n\n**Memory: TIM WOOD**"
+        },
+        {
+          title: 'Six Sigma DMAIC',
+          type: 'table',
+          headers: ['Phase', 'Purpose', 'Key Tools'],
+          rows: [
+            ['Define', 'Identify problem', 'Project charter, VOC'],
+            ['Measure', 'Quantify current state', 'Data collection, process maps'],
+            ['Analyze', 'Find root causes', 'Fishbone, 5 Whys, Pareto'],
+            ['Improve', 'Implement solutions', 'Pilot testing, DOE'],
+            ['Control', 'Sustain gains', 'Control charts, SOPs']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: DMAIC',
+          type: 'callout',
+          content: "**\"Dumb Managers Always Ignore Controls\"**\n\n**D**efine the problem\n**M**easure current performance\n**A**nalyze root causes\n**I**mprove the process\n**C**ontrol to sustain\n\n**Don't skip Control—gains will fade!**"
+        },
+        {
+          title: 'Theory of Constraints',
+          type: 'text',
+          content: "**Focus on bottlenecks:**\n\n1. **Identify** the constraint\n2. **Exploit** it (maximize throughput)\n3. **Subordinate** everything else to it\n4. **Elevate** (add capacity if needed)\n5. **Repeat** (find new constraint)\n\n**Throughput = Revenue − Direct Materials**"
+        },
+        {
+          title: '⚠️ Exam Trap: Local vs. Global Optima',
+          type: 'warning',
+          content: "**Improving one area may hurt overall!**\n\n**Example:**\n• Faster machine upstream of bottleneck\n• Creates more WIP inventory\n• Doesn't increase throughput\n• Wastes money!\n\n**Focus on the CONSTRAINT, not everywhere!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Lean: Eliminate 7 wastes (TIM WOOD)",
+            "Six Sigma: DMAIC methodology",
+            "Theory of Constraints: Focus on bottleneck",
+            "Throughput = Revenue − Direct Materials",
+            "Local optimization can hurt global performance",
+            "Control phase is essential for sustainability"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-009',
+    section: 'BAR',
+    title: "Risk Assessment and Management",
+    description: "Apply enterprise risk management frameworks",
+    order: 49,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Business Analysis", "Risk Management"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Enterprise Risk Management (ERM) is essential for modern business! CPAs must understand how to identify, assess, and respond to risks across the organization. BAR tests ERM concepts!"
+        },
+        {
+          title: 'COSO ERM Framework',
+          type: 'text',
+          content: "**Five Components:**\n\n1. **Governance & Culture** - Tone at top, oversight\n2. **Strategy & Objective-Setting** - Risk appetite aligned\n3. **Performance** - Identify and assess risks\n4. **Review & Revision** - Monitor changes\n5. **Information & Communication** - Reporting risks"
+        },
+        {
+          title: 'Risk Assessment Matrix',
+          type: 'table',
+          headers: ['Likelihood/Impact', 'Low Impact', 'Medium Impact', 'High Impact'],
+          rows: [
+            ['High Likelihood', 'Moderate', 'High', 'Critical'],
+            ['Medium Likelihood', 'Low', 'Moderate', 'High'],
+            ['Low Likelihood', 'Minimal', 'Low', 'Moderate']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Risk Responses',
+          type: 'callout',
+          content: "**\"TARA\"** for risk responses:\n\n**T**ransfer (insurance, outsource)\n**A**void (don't do the activity)\n**R**educe (controls, mitigation)\n**A**ccept (retain the risk)\n\n**Choose based on cost vs. benefit!**"
+        },
+        {
+          title: 'Risk Categories',
+          type: 'table',
+          headers: ['Category', 'Examples'],
+          rows: [
+            ['Strategic', 'Competition, market changes, reputation'],
+            ['Operational', 'Process failures, IT systems, fraud'],
+            ['Financial', 'Credit, liquidity, market risk'],
+            ['Compliance', 'Legal, regulatory, contractual'],
+            ['Reporting', 'Financial statement errors, disclosures']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Risk Appetite vs. Tolerance',
+          type: 'warning',
+          content: "**Risk Appetite ≠ Risk Tolerance!**\n\n**Risk Appetite:** Broad level of risk willing to accept\n(Strategic, board-level decision)\n\n**Risk Tolerance:** Acceptable variation in outcomes\n(Operational, management-level)\n\n**Tolerance should align with Appetite!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "COSO ERM: Five integrated components",
+            "Risk responses: Transfer, Avoid, Reduce, Accept",
+            "Assess risks by likelihood × impact",
+            "Risk appetite is strategic; tolerance is operational",
+            "Categories: Strategic, Operational, Financial, Compliance, Reporting",
+            "ERM should be integrated with strategy"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-010',
+    section: 'BAR',
+    title: "IFRS vs. US GAAP Key Differences",
+    description: "Compare major differences between IFRS and US GAAP",
+    order: 50,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "IFRS"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Global business requires understanding both frameworks! BAR tests key differences between IFRS and US GAAP. Focus on conceptual differences and major accounting treatments!"
+        },
+        {
+          title: 'Framework Differences',
+          type: 'table',
+          headers: ['Aspect', 'US GAAP', 'IFRS'],
+          rows: [
+            ['Approach', 'Rules-based', 'Principles-based'],
+            ['Standard setter', 'FASB', 'IASB'],
+            ['Inventory methods', 'LIFO allowed', 'LIFO prohibited'],
+            ['Revaluation', 'Generally prohibited', 'Allowed for PP&E, intangibles'],
+            ['Development costs', 'Expensed', 'Capitalize if criteria met']
+          ]
+        },
+        {
+          title: 'Inventory Differences',
+          type: 'text',
+          content: "**US GAAP:**\n• LIFO, FIFO, weighted average allowed\n• Lower of cost or market\n\n**IFRS:**\n• LIFO prohibited\n• Lower of cost or NRV\n• Reversal of write-downs allowed\n\n**Key exam point: LIFO → FIFO conversion**"
+        },
+        {
+          title: '🧠 Memory Aid: IFRS No LIFO',
+          type: 'callout',
+          content: "**\"IFRS = In France, Really no LIFO, Sorry!\"**\n\nIFRS prohibits LIFO because:\n• Doesn't reflect current prices on B/S\n• Often used for tax manipulation\n• Doesn't match physical flow\n\n**If converting LIFO to IFRS → Use FIFO or average**"
+        },
+        {
+          title: 'Property, Plant & Equipment',
+          type: 'table',
+          headers: ['Topic', 'US GAAP', 'IFRS'],
+          rows: [
+            ['Revaluation', 'Not allowed', 'Allowed (fair value model)'],
+            ['Component depreciation', 'Not required', 'Required'],
+            ['Impairment reversal', 'Prohibited', 'Required if indicators'],
+            ['Interest capitalization', 'Specific borrowings first', 'All borrowings weighted']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Convergence Status',
+          type: 'warning',
+          content: "**Some areas converged, some not!**\n\n**Converged:** Revenue (ASC 606/IFRS 15), Leases (similar)\n**NOT Converged:** Inventory, Revaluation, R&D, Impairment\n\n**Know which topics still differ!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IFRS is principles-based; US GAAP is rules-based",
+            "IFRS prohibits LIFO; allows revaluation",
+            "IFRS requires component depreciation",
+            "IFRS allows impairment reversal; GAAP doesn't",
+            "Revenue recognition now converged (ASC 606/IFRS 15)",
+            "R&D: IFRS capitalizes development; GAAP expenses"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-011',
+    section: 'BAR',
+    title: "Revenue Recognition: Complex Arrangements",
+    description: "Apply ASC 606 to complex multi-element arrangements",
+    order: 51,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Revenue"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Complex revenue arrangements with multiple deliverables require careful analysis! Understanding how to identify and allocate to performance obligations is critical for BAR!"
+        },
+        {
+          title: 'Identifying Performance Obligations',
+          type: 'text',
+          content: "**A promise is distinct if:**\n\n1. **Capable of being distinct** - Customer can benefit on its own or with readily available resources\n\n2. **Distinct within context** - Separately identifiable from other promises\n\n**If not distinct → Combine with other promises**"
+        },
+        {
+          title: 'Allocation Methods',
+          type: 'table',
+          headers: ['Method', 'When to Use', 'Approach'],
+          rows: [
+            ['Standalone Selling Price', 'Observable price exists', 'Use actual SSP'],
+            ['Adjusted Market Assessment', 'No SSP, market data available', 'Estimate from market'],
+            ['Expected Cost Plus Margin', 'No market data', 'Cost + reasonable margin'],
+            ['Residual', 'SSP highly variable', 'Remainder after other allocations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: When to Recognize',
+          type: 'callout',
+          content: "**\"POT\" Test for Over Time:**\n\n**P**erformed and consumed simultaneously\n**O**wner controls asset as created\n**T**ransferred progressively (no alternative use + payment right)\n\n**If ANY met → Recognize over time**\n**If NONE → Recognize at point in time**"
+        },
+        {
+          title: 'Variable Consideration',
+          type: 'text',
+          content: "**Estimate variable amounts:**\n\n• Discounts, rebates, refunds\n• Performance bonuses\n• Penalties\n\n**Methods:**\n• Expected value (probability-weighted)\n• Most likely amount\n\n**Constrain if significant reversal possible**"
+        },
+        {
+          title: '⚠️ Exam Trap: Bill-and-Hold',
+          type: 'warning',
+          content: "**Bill-and-hold may allow early recognition IF:**\n\n✓ Substantive reason for arrangement\n✓ Product separately identified as customer's\n✓ Product currently ready for transfer\n✓ Entity cannot use product or direct to another\n\n**Must meet ALL criteria!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Identify distinct performance obligations",
+            "Allocate transaction price using SSP hierarchy",
+            "Over time if: Simultaneous, Control, or No alternative use",
+            "Variable consideration: Expected value or most likely",
+            "Apply constraint to variable consideration",
+            "Bill-and-hold requires all criteria met"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-012',
+    section: 'BAR',
+    title: "Lease Accounting: Lessee",
+    description: "Apply ASC 842 lease accounting from lessee perspective",
+    order: 52,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Leases"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "ASC 842 brought most leases onto the balance sheet! Understanding ROU assets, lease liabilities, and the finance vs. operating distinction is essential for BAR!"
+        },
+        {
+          title: 'Lease Classification',
+          type: 'text',
+          content: "**Finance Lease if ANY:**\n\n1. Ownership transfers at end\n2. Bargain purchase option\n3. Lease term ≥ 75% of economic life\n4. PV of payments ≥ 90% of fair value\n5. Specialized asset with no alternative use\n\n**Otherwise → Operating Lease**"
+        },
+        {
+          title: 'Initial Measurement',
+          type: 'table',
+          headers: ['Component', 'Included in ROU Asset', 'Included in Lease Liability'],
+          rows: [
+            ['PV of lease payments', 'Yes', 'Yes'],
+            ['Initial direct costs', 'Yes', 'No'],
+            ['Prepaid rent', 'Yes', 'No'],
+            ['Lease incentives received', 'Deducted', 'Deducted']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Finance vs. Operating P&L',
+          type: 'callout',
+          content: "**Finance Lease:**\n• Amortization (ROU) + Interest (liability)\n• **Front-loaded** expense (higher early)\n\n**Operating Lease:**\n• Single **straight-line** lease expense\n• **Level** expense over term\n\n**Total expense same over life!**"
+        },
+        {
+          title: 'Subsequent Measurement',
+          type: 'text',
+          content: "**Finance Lease:**\n• ROU: Amortize (usually straight-line)\n• Liability: Effective interest method\n\n**Operating Lease:**\n• ROU: Adjusted to produce straight-line expense\n• Liability: Effective interest method\n\n**Lease liability = PV of remaining payments**"
+        },
+        {
+          title: '⚠️ Exam Trap: Short-Term Exemption',
+          type: 'warning',
+          content: "**Short-term lease (≤12 months):**\n\n• Can elect to NOT capitalize\n• Recognize expense straight-line\n• Must include renewals that are \"reasonably certain\"\n\n**\"Reasonably certain\" is a HIGH threshold!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Finance if: Transfer, BPO, 75% life, 90% FV, specialized",
+            "Both types: ROU asset and lease liability on B/S",
+            "Finance: Amortization + Interest (front-loaded)",
+            "Operating: Single straight-line expense",
+            "Short-term exemption: ≤12 months, policy election",
+            "Include options reasonably certain to exercise"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-013',
+    section: 'BAR',
+    title: "Stock-Based Compensation",
+    description: "Account for stock options and restricted stock",
+    order: 53,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Equity"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Stock compensation is common in public companies! Understanding measurement, recognition, and modification accounting is key for BAR and real-world practice!"
+        },
+        {
+          title: 'Measurement Date',
+          type: 'text',
+          content: "**Grant Date Fair Value:**\n\n• Stock options: Use option pricing model (Black-Scholes)\n• Restricted stock: Stock price on grant date\n• Performance awards: Probability-weighted outcomes\n\n**Fair value fixed at grant (usually)**"
+        },
+        {
+          title: 'Recognition Patterns',
+          type: 'table',
+          headers: ['Award Type', 'Service Condition', 'Recognition Pattern'],
+          rows: [
+            ['Options with cliff vesting', '3 years', 'Straight-line over 3 years'],
+            ['Options with graded vesting', '1/3 each year', 'Accelerated (each tranche separate)'],
+            ['Performance with target', 'Achieve metrics', 'Over service period, adjusted for probability'],
+            ['Market condition', 'Stock price target', 'Over service period (ignore outcome)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Service vs. Performance vs. Market',
+          type: 'callout',
+          content: "**Condition Types:**\n\n**Service:** Just stay employed → Recognize over period\n**Performance:** Hit targets → Adjust for probability\n**Market:** Stock price goal → Baked into FV, ignore outcome\n\n**Market is SPECIAL - never adjust expense!**"
+        },
+        {
+          title: 'Forfeitures',
+          type: 'text',
+          content: "**Policy choice:**\n\n**Option 1:** Estimate forfeitures at grant\n• Adjust as actual forfeitures differ\n\n**Option 2:** Recognize forfeitures as they occur\n• Simpler, but more volatility\n\n**Either way, total expense = Awards that vest**"
+        },
+        {
+          title: '⚠️ Exam Trap: Modifications',
+          type: 'warning',
+          content: "**Modification accounting:**\n\n• Calculate incremental FV (new − old)\n• Old: At modification date\n• New: With modified terms\n\n**Incremental value → Additional expense**\n\n**Cannot reduce expense below original grant value!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Measure at grant date fair value",
+            "Options: Use Black-Scholes or similar model",
+            "Service conditions: Straight-line or accelerated",
+            "Performance: Adjust for probability of achievement",
+            "Market conditions: Baked into FV, don't adjust",
+            "Modifications: Recognize incremental value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-014',
+    section: 'BAR',
+    title: "Foreign Currency Translation",
+    description: "Apply ASC 830 for foreign subsidiaries and transactions",
+    order: 54,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "International"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Multinational companies must translate foreign operations! The functional currency determination and translation method directly impact financial statements. BAR tests these concepts!"
+        },
+        {
+          title: 'Functional Currency Determination',
+          type: 'text',
+          content: "**Consider economic facts:**\n\n• Primary currency of cash flows\n• Currency of sales prices\n• Currency of costs\n• Currency of financing\n• Volume of intercompany transactions\n\n**Functional = Currency of primary economic environment**"
+        },
+        {
+          title: 'Translation Methods',
+          type: 'table',
+          headers: ['Method', 'When Used', 'Exchange Difference'],
+          rows: [
+            ['Current Rate', 'Functional ≠ Reporting', 'OCI (CTA)'],
+            ['Remeasurement (Temporal)', 'Functional = Reporting', 'Income Statement'],
+            ['Highly Inflationary', '3-yr cumulative > 100%', 'Remeasure (Income)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Current Rate Method',
+          type: 'callout',
+          content: "**\"ACE\" for Current Rate:**\n\n**A**ssets & Liabilities → Current rate\n**C**apital accounts → Historical rate\n**E**xpense/Revenue → Average rate (or historical)\n\n**Difference → OCI (Cumulative Translation Adjustment)**"
+        },
+        {
+          title: 'Remeasurement (Temporal)',
+          type: 'text',
+          content: "**When functional = parent's currency:**\n\n**Historical rate:**\n• Inventory (LIFO, FIFO specific)\n• PP&E, Depreciation\n• Prepaid expenses\n• Capital accounts\n\n**Current rate:**\n• Cash, Receivables, Payables\n• Most liabilities\n\n**Gain/loss → Income statement**"
+        },
+        {
+          title: '⚠️ Exam Trap: Highly Inflationary',
+          type: 'warning',
+          content: "**Special rules when inflation > 100% over 3 years:**\n\n• Use parent's currency as functional\n• Remeasure (even if otherwise wouldn't)\n• Gain/loss in income statement\n\n**Cannot use current rate method for hyperinflation!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Functional currency = Primary economic environment",
+            "Current rate: All A/L at current, equity at historical",
+            "Remeasurement: Monetary at current, non-monetary at historical",
+            "Current rate → OCI; Remeasurement → Income",
+            "Highly inflationary: Must remeasure (Income)",
+            "Foreign currency transactions: Gains/losses in income"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-V-015',
+    section: 'BAR',
+    title: "Income Tax Accounting: Advanced Topics",
+    description: "Master complex deferred tax and valuation allowance issues",
+    order: 55,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Taxes"],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Income tax accounting under ASC 740 involves complex judgments! Understanding deferred taxes, valuation allowances, and uncertain tax positions is critical for BAR!"
+        },
+        {
+          title: 'Deferred Tax Basics',
+          type: 'text',
+          content: "**Deferred Tax Asset (DTA):**\n• Future deductible amounts\n• Examples: Accrued expenses, NOL carryforwards\n\n**Deferred Tax Liability (DTL):**\n• Future taxable amounts\n• Examples: Accelerated depreciation, installment sales"
+        },
+        {
+          title: 'Valuation Allowance',
+          type: 'table',
+          headers: ['Evidence Type', 'Positive (No VA)', 'Negative (VA Needed)'],
+          rows: [
+            ['Earnings history', 'Cumulative income', 'Cumulative losses'],
+            ['Future income', 'Projections support', 'Uncertain projections'],
+            ['Tax strategies', 'Prudent, feasible', 'None available'],
+            ['Carryforward period', 'Sufficient time', 'Expiring soon']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: More Likely Than Not',
+          type: 'callout',
+          content: "**VA Test: \"More likely than not\"**\n\n>50% probability DTA won't be realized?\n→ Record valuation allowance\n\n**Weigh ALL evidence:**\n• Negative evidence gets more weight\n• Must overcome negative with positive\n• Projections alone usually insufficient"
+        },
+        {
+          title: 'Uncertain Tax Positions (FIN 48)',
+          type: 'text',
+          content: "**Two-step process:**\n\n**Step 1: Recognition**\n• More likely than not (>50%) to be sustained?\n• If no → No benefit recognized\n\n**Step 2: Measurement**\n• Largest amount >50% likely to be realized\n• Cumulative probability analysis"
+        },
+        {
+          title: '⚠️ Exam Trap: Rate Changes',
+          type: 'warning',
+          content: "**When tax rates change (enacted):**\n\n• Remeasure ALL deferred taxes\n• Use NEW rate (rate when differences reverse)\n• Adjustment goes to income tax expense\n\n**Enacted = Becomes law (not just proposed!)**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "DTA: Future deductions; DTL: Future taxable amounts",
+            "Valuation allowance if >50% won't realize DTA",
+            "Weigh positive and negative evidence",
+            "Uncertain positions: Two-step recognition/measurement",
+            "Rate changes: Remeasure at enacted rate",
+            "Adjustment from rate change → Tax expense"
+          ]
+        }
+      ]
+    }
   }
 ];

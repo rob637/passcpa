@@ -4,7 +4,7 @@
  * Supports multi-course architecture with backwards compatibility
  */
 
-import { collection, doc, getDoc, getDocs, query, where, orderBy } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, where, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { Lesson, CourseId } from '../types';
 import { DEFAULT_COURSE_ID } from '../types/course';
@@ -210,4 +210,66 @@ export function clearLessonsCache(courseId?: CourseId): void {
  */
 export async function preloadLessons(courseId: CourseId = DEFAULT_COURSE_ID): Promise<void> {
   await fetchAllLessons(courseId);
+}
+
+// ============================================================================
+// ADMIN CRUD Operations
+// ============================================================================
+
+/**
+ * Add a new lesson to Firestore
+ */
+export async function addLesson(lesson: Omit<Lesson, 'id'>): Promise<string> {
+  try {
+    const lessonsRef = collection(db, 'lessons');
+    const docRef = await addDoc(lessonsRef, {
+      ...lesson,
+      courseId: lesson.courseId || DEFAULT_COURSE_ID,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache to reflect new lesson
+    clearLessonsCache(lesson.courseId || DEFAULT_COURSE_ID);
+    
+    return docRef.id;
+  } catch (error) {
+    console.error('Error adding lesson:', error);
+    throw error;
+  }
+}
+
+/**
+ * Update an existing lesson
+ */
+export async function updateLesson(id: string, data: Partial<Lesson>): Promise<void> {
+  try {
+    const lessonRef = doc(db, 'lessons', id);
+    await updateDoc(lessonRef, {
+      ...data,
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache to reflect updates
+    clearLessonsCache();
+  } catch (error) {
+    console.error('Error updating lesson:', error);
+    throw error;
+  }
+}
+
+/**
+ * Delete a lesson
+ */
+export async function deleteLesson(id: string): Promise<void> {
+  try {
+    const lessonRef = doc(db, 'lessons', id);
+    await deleteDoc(lessonRef);
+    
+    // Clear cache
+    clearLessonsCache();
+  } catch (error) {
+    console.error('Error deleting lesson:', error);
+    throw error;
+  }
 }

@@ -379,13 +379,31 @@ const AdminCMS: React.FC = () => {
           <div className="space-y-6">
             {/* Quick Actions */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 shadow-lg text-white">
-              <h3 className="text-lg font-semibold mb-3">Quick Actions</h3>
+              <h3 className="text-lg font-semibold mb-3">Content Management</h3>
               <div className="flex flex-wrap gap-3">
                 <Link
                   to="/admin/questions"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
-                  <span>✏️</span> Edit Individual Questions
+                  <span>❓</span> Questions
+                </Link>
+                <Link
+                  to="/admin/lessons"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-green-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <span>📚</span> Lessons
+                </Link>
+                <Link
+                  to="/admin/wc"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <span>✍️</span> Written Communication
+                </Link>
+                <Link
+                  to="/admin/tbs"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <span>📊</span> TBS
                 </Link>
                 <Link
                   to="/admin/seed"

@@ -10,6 +10,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { fetchAllLessons } from '../../services/lessonService';
+import { useCourse } from '../../providers/CourseProvider';
 import type { ExamSection } from '../../types';
 import { 
   LESSON_MATRIX, 
@@ -147,6 +148,7 @@ const ObbbaIndicator = ({ note }: { note?: string }) => {
 
 const LessonMatrix: React.FC = () => {
   const navigate = useNavigate();
+  const { courseId } = useCourse();
   const [search, setSearch] = useState('');
   const [sectionFilter, setSectionFilter] = useState<string>('ALL');
   const [methodFilter, setMethodFilter] = useState<string>('ALL');
@@ -158,7 +160,7 @@ const LessonMatrix: React.FC = () => {
 
   // Fetch lessons from Firestore
   useEffect(() => {
-    fetchAllLessons()
+    fetchAllLessons(courseId)
       .then(lessons => {
         setAllLessons(lessons);
         setIsLoading(false);
@@ -167,7 +169,7 @@ const LessonMatrix: React.FC = () => {
         console.error('Failed to fetch lessons:', err);
         setIsLoading(false);
       });
-  }, []);
+  }, [courseId]);
   
   // Stats for info banner
   const obbbaCount = useMemo(() => getObbbaAffectedLessons().length, []);

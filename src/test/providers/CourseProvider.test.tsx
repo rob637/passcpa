@@ -6,6 +6,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+// Unmock CourseProvider for this test file - we need the real implementation
+vi.unmock('../../providers/CourseProvider');
+
 import { CourseProvider, useCourse, useCourseOptional } from '../../providers/CourseProvider';
 import { DEFAULT_COURSE_ID } from '../../types/course';
 

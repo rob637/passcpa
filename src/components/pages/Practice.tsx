@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
@@ -203,6 +204,7 @@ const Practice: React.FC = () => {
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
+  const { courseId } = useCourse();
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -332,6 +334,7 @@ const Practice: React.FC = () => {
           count: config.count,
           hr1Only: is2026, // Enforce 2026 Blueprint rules (e.g. OBBBA/H.R. 1 Tax provisions)
           mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
+          courseId, // Multi-course support
         });
       }
 

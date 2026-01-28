@@ -20,9 +20,9 @@ describe('AuthLayout', () => {
   it('renders the layout structure', () => {
     renderAuthLayout();
     
-    // Logo should have VoraPrep branding via img alt
-    const logo = screen.getByAltText('VoraPrep');
-    expect(logo).toBeInTheDocument();
+    // Logo should have VoraPrep branding via img alt - may have multiple (dark/light mode)
+    const logos = screen.getAllByAltText('VoraPrep');
+    expect(logos.length).toBeGreaterThan(0);
   });
 
   it('renders tagline', () => {

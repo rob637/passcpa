@@ -14,6 +14,8 @@ vi.mock('../../../hooks/useAuth', () => ({
       examDate: null,
     },
     updateUserProfile: vi.fn().mockResolvedValue({}),
+    resetPassword: vi.fn().mockResolvedValue({}),
+    signOut: vi.fn().mockResolvedValue({}),
   }),
 }));
 
@@ -24,6 +26,19 @@ vi.mock('../../../services/notifications', () => ({
 vi.mock('../../../services/offlineCache', () => ({
   getCacheStatus: vi.fn().mockResolvedValue({ size: 1024, items: 10 }),
   clearCache: vi.fn().mockResolvedValue({}),
+  cacheQuestions: vi.fn().mockResolvedValue({}),
+}));
+
+vi.mock('../../../services/questionService', () => ({
+  fetchQuestions: vi.fn().mockResolvedValue([]),
+}));
+
+vi.mock('../../../services/pushNotifications', () => ({
+  setupDailyReminder: vi.fn().mockResolvedValue(true),
+  getDailyReminderSettings: () => ({ time: '09:00', enabled: true }),
+  setWeeklyReportEnabled: vi.fn().mockResolvedValue(undefined),
+  isNative: false,
+  isWeb: true,
 }));
 
 vi.mock('../../../config/firebase', () => ({
@@ -33,8 +48,14 @@ vi.mock('../../../config/firebase', () => ({
 
 vi.mock('firebase/storage', () => ({
   ref: vi.fn(),
-  uploadBytes: vi.fn(),
-  getDownloadURL: vi.fn(),
+  uploadBytes: vi.fn().mockResolvedValue({}),
+  getDownloadURL: vi.fn().mockResolvedValue('https://example.com/photo.jpg'),
+}));
+
+vi.mock('firebase/firestore', () => ({
+  Timestamp: {
+    fromDate: vi.fn((date) => ({ toDate: () => date })),
+  },
 }));
 
 const renderSettings = () => {

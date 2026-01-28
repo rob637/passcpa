@@ -3,7 +3,65 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import WrittenCommunication from '../../../components/pages/WrittenCommunication';
 
-// Mock the data
+// Mock wcService (Firestore-based service)
+vi.mock('../../../services/wcService', () => ({
+  WC_RUBRIC: {
+    organization: {
+      weight: 0.25,
+      criteria: ['Clear opening', 'Logical flow', 'Transitions', 'Conclusion'],
+    },
+    development: {
+      weight: 0.4,
+      criteria: ['Addresses task', 'Examples', 'Understanding', 'Depth'],
+    },
+    expression: {
+      weight: 0.35,
+      criteria: ['Professional tone', 'Grammar', 'Vocabulary', 'Clarity'],
+    },
+  },
+  fetchAllWCTasks: vi.fn(() => Promise.resolve([
+    {
+      id: 'wc_001',
+      section: 'PREP',
+      type: 'written_communication',
+      topic: 'Internal Controls',
+      difficulty: 'moderate',
+      estimatedTime: 25,
+      scenario: 'Test scenario',
+      task: 'Write a memo',
+      guidelines: ['Professional tone'],
+      sampleResponse: 'Sample response',
+    },
+    {
+      id: 'wc_002',
+      section: 'PREP',
+      type: 'written_communication',
+      topic: 'Revenue Recognition',
+      difficulty: 'easy',
+      estimatedTime: 20,
+      scenario: 'Revenue scenario',
+      task: 'Write about revenue',
+      guidelines: ['Be specific'],
+      sampleResponse: 'Revenue sample',
+    },
+  ])),
+  fetchWCTasksBySection: vi.fn(() => Promise.resolve([])),
+  fetchWCTaskById: vi.fn(() => Promise.resolve(null)),
+  getRandomWCTask: vi.fn(() => Promise.resolve({
+    id: 'wc_001',
+    section: 'PREP',
+    type: 'written_communication',
+    topic: 'Internal Controls',
+    difficulty: 'moderate',
+    estimatedTime: 25,
+    scenario: 'Test scenario about internal controls',
+    task: 'Write a memo about internal control weaknesses',
+    guidelines: ['Use professional tone', 'Address all points'],
+    sampleResponse: 'This is a sample response for the task.',
+  })),
+}));
+
+// Mock the data (legacy - may still be imported somewhere)
 vi.mock('../../../data/written-communication', () => ({
   WC_RUBRIC: {
     organization: {
@@ -74,59 +132,79 @@ describe('WrittenCommunication', () => {
   });
 
   describe('Task Selection Screen', () => {
-    it('should render the page title', () => {
+    it('should render the page title', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText('Written Communication Practice')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Written Communication Practice')).toBeInTheDocument();
+      });
     });
 
-    it('should render back link to study', () => {
+    it('should render back link to study', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText('Back to Study')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Back to Study')).toBeInTheDocument();
+      });
     });
 
-    it('should render random task quick start', () => {
+    it('should render random task quick start', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText('Random Task')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Random Task')).toBeInTheDocument();
+      });
     });
 
-    it('should render Start button for random task', () => {
+    it('should render Start button for random task', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      const startButtons = screen.getAllByRole('button', { name: /start/i });
-      expect(startButtons.length).toBeGreaterThan(0);
+      await waitFor(() => {
+        const startButtons = screen.getAllByRole('button', { name: /start/i });
+        expect(startButtons.length).toBeGreaterThan(0);
+      });
     });
 
-    it('should render task list', () => {
+    it('should render task list', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      });
     });
 
-    it('should render available tasks', () => {
+    it('should render available tasks', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      // Just verify task list exists - the exact content depends on mock data
-      expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      });
     });
 
-    it('should render tips card', () => {
+    it('should render tips card', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText('Tips for WC Tasks')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Tips for WC Tasks')).toBeInTheDocument();
+      });
     });
 
-    it('should render tip items', () => {
+    it('should render tip items', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      expect(screen.getByText(/Use a professional business memo format/)).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText(/Use a professional business memo format/)).toBeInTheDocument();
+      });
       expect(screen.getByText(/Aim for 300-500 words/)).toBeInTheDocument();
     });
 
     it('should start random task when clicking random task start', async () => {
       renderWithRouter(<WrittenCommunication />);
+      
+      // Wait for loading to complete
+      await waitFor(() => {
+        expect(screen.getByText('Random Task')).toBeInTheDocument();
+      });
       
       // Find and click the start button in the random task section
       const startButtons = screen.getAllByRole('button', { name: /start/i });
@@ -141,6 +219,11 @@ describe('WrittenCommunication', () => {
     it('should select task when clicking on a task', async () => {
       renderWithRouter(<WrittenCommunication />);
       
+      // Wait for tasks to load
+      await waitFor(() => {
+        expect(screen.getByText('Internal Controls')).toBeInTheDocument();
+      });
+      
       fireEvent.click(screen.getByText('Internal Controls'));
       
       // Should transition to writing screen
@@ -151,11 +234,12 @@ describe('WrittenCommunication', () => {
   });
 
   describe('Task Display', () => {
-    it('should display task information', () => {
+    it('should display task information', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      // Task info should be displayed
-      expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
+      });
     });
   });
 
@@ -165,11 +249,12 @@ describe('WrittenCommunication', () => {
       expect(container).toBeInTheDocument();
     });
 
-    it('should have proper page structure', () => {
+    it('should have proper page structure', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      // Should have main sections
-      expect(screen.getByText('Written Communication Practice')).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Written Communication Practice')).toBeInTheDocument();
+      });
       expect(screen.getByText('Random Task')).toBeInTheDocument();
       expect(screen.getByText('Choose a Topic')).toBeInTheDocument();
       expect(screen.getByText('Tips for WC Tasks')).toBeInTheDocument();
@@ -177,11 +262,13 @@ describe('WrittenCommunication', () => {
   });
 
   describe('Navigation', () => {
-    it('should have link back to study', () => {
+    it('should have link back to study', async () => {
       renderWithRouter(<WrittenCommunication />);
       
-      const backLink = screen.getByText('Back to Study').closest('a');
-      expect(backLink).toHaveAttribute('href', '/study');
+      await waitFor(() => {
+        const backLink = screen.getByText('Back to Study').closest('a');
+        expect(backLink).toHaveAttribute('href', '/study');
+      });
     });
   });
 });
@@ -190,6 +277,11 @@ describe('WordCounter Component', () => {
   // WordCounter is internal, so we test it through WrittenCommunication
   it('should be tested through main component when writing screen is active', async () => {
     renderWithRouter(<WrittenCommunication />);
+    
+    // Wait for loading to complete
+    await waitFor(() => {
+      expect(screen.getByText('Random Task')).toBeInTheDocument();
+    });
     
     // Start a task to see the word counter
     const startButtons = screen.getAllByRole('button', { name: /start/i });

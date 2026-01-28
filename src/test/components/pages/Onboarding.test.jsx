@@ -17,7 +17,7 @@ vi.mock('../../../hooks/useAuth', () => ({
 
 vi.mock('../../../config/examConfig', () => ({
   CPA_SECTIONS: {
-    FAR: { name: 'Financial Accounting', shortName: 'FAR', color: '#3B82F6', description: 'Financial statements' },
+    FAR: { name: 'Financial Accounting', shortName: 'FAR', color: '#2563EB', description: 'Financial statements' },
     AUD: { name: 'Auditing', shortName: 'AUD', color: '#8B5CF6', description: 'Audit procedures' },
     REG: { name: 'Regulation', shortName: 'REG', color: '#10B981', description: 'Tax and law' },
     TCP: { name: 'Tax', shortName: 'TCP', color: '#EF4444', description: 'Tax planning' },

@@ -89,7 +89,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     questionTypes: { mcq: 78, tbs: 7 },
     mcqWeight: 50, // % of score
     tbsWeight: 50,
-    color: '#3b82f6', // blue
+    color: '#2563eb', // blue
     icon: 'Search',
     description: 'Ethics, risk assessment, audit evidence, and reporting',
     blueprintVersion: '2026.1',

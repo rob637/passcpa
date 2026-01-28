@@ -254,7 +254,7 @@ const LessonMatrix: React.FC = () => {
             </div>
             <button 
               onClick={() => setShowBlueprintInfo(false)}
-              className="text-blue-500 hover:text-blue-700 dark:text-blue-400 text-sm"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 text-sm"
             >
               Dismiss
             </button>

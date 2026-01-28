@@ -402,7 +402,7 @@ function generateWeeklyReportEmail(userData, stats) {
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #334155; max-width: 600px; margin: 0 auto; padding: 20px;">
   
   <div style="text-align: center; margin-bottom: 30px;">
-    <div style="display: inline-block; background: #3b82f6; color: white; padding: 10px 20px; border-radius: 12px; font-weight: bold; font-size: 20px;">
+    <div style="display: inline-block; background: #2563eb; color: white; padding: 10px 20px; border-radius: 12px; font-weight: bold; font-size: 20px;">
       📊 VoraPrep
     </div>
   </div>
@@ -418,7 +418,7 @@ function generateWeeklyReportEmail(userData, stats) {
   <!-- Stats Grid -->
   <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 25px 0;">
     <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; text-align: center;">
-      <div style="font-size: 32px; font-weight: bold; color: #3b82f6;">${stats.totalQuestions}</div>
+      <div style="font-size: 32px; font-weight: bold; color: #2563eb;">${stats.totalQuestions}</div>
       <div style="color: #64748b; font-size: 14px;">Questions Answered</div>
     </div>
     <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; text-align: center;">
@@ -457,7 +457,7 @@ function generateWeeklyReportEmail(userData, stats) {
   
   <!-- CTA Button -->
   <div style="text-align: center; margin: 30px 0;">
-    <a href="https://voraprep.com/practice" style="display: inline-block; background: #3b82f6; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    <a href="https://voraprep.com/practice" style="display: inline-block; background: #2563eb; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
       Continue Studying →
     </a>
   </div>
@@ -496,7 +496,7 @@ function generateWelcomeEmail(displayName) {
   <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
     
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 24px;">
+      <div style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 24px;">
         📚 VoraPrep
       </div>
     </div>
@@ -509,7 +509,7 @@ function generateWelcomeEmail(displayName) {
       You're one step closer to passing your CPA exam.
     </p>
     
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
+    <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
       <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">🎁 Beta Bonus</div>
       <div style="font-size: 16px; opacity: 0.95;">
         As a beta user, you have <strong>100% FREE access</strong> to all features:
@@ -552,7 +552,7 @@ function generateWelcomeEmail(displayName) {
     </div>
     
     <div style="text-align: center; margin: 35px 0;">
-      <a href="https://voraprep.com/dashboard" style="display: inline-block; background: #3b82f6; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
+      <a href="https://voraprep.com/dashboard" style="display: inline-block; background: #2563eb; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px;">
         Start Studying Now →
       </a>
     </div>
@@ -600,7 +600,7 @@ function generateWaitlistEmail(email) {
   <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
     
     <div style="text-align: center; margin-bottom: 30px;">
-      <div style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 24px;">
+      <div style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 24px;">
         📚 VoraPrep
       </div>
     </div>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep - Journal Entry Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      color: white;
+    }
+    
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
+    
+    .scenario {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .scenario-label {
+      color: #60a5fa;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    
+    .scenario-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+    
+    .journal-entry {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .journal-header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .journal-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .journal-date {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+    
+    .journal-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .journal-table th {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      text-align: left;
+      padding: 16px 20px;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    
+    .journal-table th:nth-child(2),
+    .journal-table th:nth-child(3) {
+      text-align: right;
+      width: 120px;
+    }
+    
+    .journal-table td {
+      padding: 20px;
+      color: #1e293b;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #f1f5f9;
+      opacity: 0;
+    }
+    
+    .journal-table td:nth-child(2),
+    .journal-table td:nth-child(3) {
+      text-align: right;
+      font-family: 'SF Mono', 'Monaco', monospace;
+      font-weight: 600;
+    }
+    
+    .journal-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .debit-row td:first-child {
+      font-weight: 600;
+      color: #1e40af;
+    }
+    
+    .credit-row td:first-child {
+      padding-left: 50px;
+      color: #475569;
+    }
+    
+    .amount-debit {
+      color: #059669 !important;
+    }
+    
+    .amount-credit {
+      color: #dc2626 !important;
+    }
+    
+    .totals-row {
+      background: #f8fafc;
+    }
+    
+    .totals-row td {
+      font-weight: 700 !important;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      border-top: 2px solid #e2e8f0;
+    }
+    
+    .explanation {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 12px;
+      opacity: 0;
+    }
+    
+    .explanation-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    
+    .explanation-icon {
+      width: 24px;
+      height: 24px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .explanation-title {
+      color: #10b981;
+      font-weight: 600;
+    }
+    
+    .explanation-text {
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+    
+    .highlight {
+      background: rgba(59, 130, 246, 0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Staggered row animations */
+    .journal-table tr:nth-child(1) td { animation: slideInLeft 0.5s ease forwards; animation-delay: 1s; }
+    .journal-table tr:nth-child(2) td:first-child { animation: slideInLeft 0.5s ease forwards; animation-delay: 1.8s; }
+    .journal-table tr:nth-child(2) td:nth-child(3) { animation: slideInRight 0.5s ease forwards; animation-delay: 2.2s; }
+    .journal-table tr:nth-child(3) td { animation: fadeIn 0.5s ease forwards; animation-delay: 3s; }
+    
+    .explanation {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 3.5s;
+    }
+    
+    .controls {
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    }
+    
+    .watermark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+    
+    .watermark-logo {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📚 Journal Entry Basics</h1>
+      <p>Recording a simple cash sale transaction</p>
+    </div>
+    
+    <div class="scenario">
+      <div class="scenario-label">📋 Transaction</div>
+      <div class="scenario-text">
+        On <strong>January 15, 2026</strong>, VoraCorp sold merchandise to a customer for <strong>$5,000 cash</strong>. 
+        The cost of the merchandise was $3,000.
+      </div>
+    </div>
+    
+    <div class="journal-entry">
+      <div class="journal-header">
+        <div class="journal-title">General Journal</div>
+        <div class="journal-date">January 15, 2026</div>
+      </div>
+      <table class="journal-table">
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th>Debit</th>
+            <th>Credit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="debit-row">
+            <td>Cash</td>
+            <td class="amount-debit">$5,000</td>
+            <td></td>
+          </tr>
+          <tr class="credit-row">
+            <td>Sales Revenue</td>
+            <td></td>
+            <td class="amount-credit">$5,000</td>
+          </tr>
+          <tr class="totals-row">
+            <td>Totals</td>
+            <td class="amount-debit">$5,000</td>
+            <td class="amount-credit">$5,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="explanation">
+      <div class="explanation-header">
+        <div class="explanation-icon">💡</div>
+        <div class="explanation-title">Why This Works</div>
+      </div>
+      <div class="explanation-text">
+        <span class="highlight">Cash (Asset)</span> increases → Debit<br>
+        <span class="highlight">Sales Revenue</span> increases → Credit<br><br>
+        <strong>Remember:</strong> Debits = Credits keeps the accounting equation balanced!<br>
+        Assets = Liabilities + Equity
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button class="btn" onclick="location.reload()">🔄 Replay Animation</button>
+    </div>
+  </div>
+  
+  <div class="watermark">
+    <div class="watermark-logo">V</div>
+    <span>VoraPrep</span>
+  </div>
+</body>
+</html>

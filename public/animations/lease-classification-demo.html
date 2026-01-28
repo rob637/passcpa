@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoraPrep - Lease Classification (ASC 842)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      padding: 40px;
+      color: white;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
+    
+    .mnemonic {
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.3s;
+    }
+    
+    .mnemonic-box {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+      border: 2px solid rgba(139, 92, 246, 0.4);
+      border-radius: 16px;
+      padding: 20px 40px;
+    }
+    
+    .mnemonic-label {
+      font-size: 0.875rem;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    
+    .mnemonic-text {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+    }
+    
+    .mnemonic-text span {
+      color: #f59e0b;
+    }
+    
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    
+    .criteria-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .criteria-card:nth-child(1) { animation: slideUp 0.5s ease forwards; animation-delay: 1s; }
+    .criteria-card:nth-child(2) { animation: slideUp 0.5s ease forwards; animation-delay: 1.3s; }
+    .criteria-card:nth-child(3) { animation: slideUp 0.5s ease forwards; animation-delay: 1.6s; }
+    .criteria-card:nth-child(4) { animation: slideUp 0.5s ease forwards; animation-delay: 1.9s; }
+    .criteria-card:nth-child(5) { animation: slideUp 0.5s ease forwards; animation-delay: 2.2s; }
+    
+    .criteria-letter {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+    }
+    
+    .criteria-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    
+    .criteria-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    
+    .criteria-threshold {
+      margin-top: 10px;
+      padding: 8px;
+      background: #fef3c7;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #92400e;
+    }
+    
+    .decision-flow {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+      animation-delay: 3s;
+    }
+    
+    .decision-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .decision-header h2 {
+      color: #1e293b;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    
+    .decision-header p {
+      color: #64748b;
+    }
+    
+    .decision-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .decision-question {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 500px;
+    }
+    
+    .decision-arrows {
+      display: flex;
+      gap: 100px;
+    }
+    
+    .decision-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .arrow-line {
+      width: 3px;
+      height: 40px;
+      background: #cbd5e1;
+    }
+    
+    .arrow-label {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    .arrow-label.yes {
+      background: #dcfce7;
+      color: #166534;
+    }
+    
+    .arrow-label.no {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    
+    .decision-result {
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    
+    .decision-result.finance {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: white;
+    }
+    
+    .decision-result.operating {
+      background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+      color: white;
+    }
+    
+    .result-subtitle {
+      font-size: 0.875rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+    
+    .exam-tip {
+      margin-top: 30px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 4s;
+    }
+    
+    .exam-tip-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .exam-tip-icon {
+      font-size: 1.5rem;
+    }
+    
+    .exam-tip-title {
+      color: #f59e0b;
+      font-weight: 700;
+    }
+    
+    .exam-tip-text {
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .controls {
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    }
+    
+    .watermark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+    
+    .watermark-logo {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏢 Lease Classification</h1>
+      <p>ASC 842: Finance Lease vs Operating Lease</p>
+    </div>
+    
+    <div class="mnemonic">
+      <div class="mnemonic-box">
+        <div class="mnemonic-label">🧠 Memory Trick</div>
+        <div class="mnemonic-text"><span>O</span> <span>W</span> <span>N</span> <span>E</span> <span>S</span></div>
+      </div>
+    </div>
+    
+    <div class="criteria-grid">
+      <div class="criteria-card">
+        <div class="criteria-letter">O</div>
+        <div class="criteria-title">Ownership</div>
+        <div class="criteria-desc">Title transfers to lessee at end of lease</div>
+      </div>
+      
+      <div class="criteria-card">
+        <div class="criteria-letter">W</div>
+        <div class="criteria-title">Written Option</div>
+        <div class="criteria-desc">Bargain purchase option lessee is reasonably certain to exercise</div>
+      </div>
+      
+      <div class="criteria-card">
+        <div class="criteria-letter">N</div>
+        <div class="criteria-title">Nearly All</div>
+        <div class="criteria-desc">Lease term covers major part of useful life</div>
+        <div class="criteria-threshold">≥ 75% rule of thumb</div>
+      </div>
+      
+      <div class="criteria-card">
+        <div class="criteria-letter">E</div>
+        <div class="criteria-title">Essentially All</div>
+        <div class="criteria-desc">PV of payments ≈ fair value of asset</div>
+        <div class="criteria-threshold">≥ 90% rule of thumb</div>
+      </div>
+      
+      <div class="criteria-card">
+        <div class="criteria-letter">S</div>
+        <div class="criteria-title">Specialized</div>
+        <div class="criteria-desc">Asset is so specialized it has no alternative use to lessor</div>
+      </div>
+    </div>
+    
+    <div class="decision-flow">
+      <div class="decision-header">
+        <h2>Classification Decision</h2>
+        <p>Does the lease meet ANY of the 5 OWNES criteria?</p>
+      </div>
+      
+      <div class="decision-tree">
+        <div class="decision-question">
+          Does the lease meet<br><strong>ANY ONE</strong> of the 5 criteria?
+        </div>
+        
+        <div class="decision-arrows">
+          <div class="decision-arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-label yes">YES ✓</div>
+            <div class="arrow-line"></div>
+            <div class="decision-result finance">
+              FINANCE LEASE
+              <div class="result-subtitle">Front-loaded expense pattern</div>
+            </div>
+          </div>
+          
+          <div class="decision-arrow">
+            <div class="arrow-line"></div>
+            <div class="arrow-label no">NO ✗</div>
+            <div class="arrow-line"></div>
+            <div class="decision-result operating">
+              OPERATING LEASE
+              <div class="result-subtitle">Straight-line expense pattern</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="exam-tip">
+      <div class="exam-tip-header">
+        <span class="exam-tip-icon">⚠️</span>
+        <span class="exam-tip-title">CPA Exam Trap</span>
+      </div>
+      <div class="exam-tip-text">
+        The 75% and 90% thresholds are <strong>guidelines, not bright lines</strong>. The exam may test scenarios at 74% or 89% - use judgment! Also remember: Under ASC 842, <strong>both</strong> finance and operating leases create a Right-of-Use asset and liability on the balance sheet. The difference is in the expense pattern on the income statement.
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button class="btn" onclick="location.reload()">🔄 Replay Animation</button>
+    </div>
+  </div>
+  
+  <div class="watermark">
+    <div class="watermark-logo">V</div>
+    <span>VoraPrep</span>
+  </div>
+</body>
+</html>

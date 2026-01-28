@@ -74,14 +74,12 @@ const Landing = () => {
     }
   };
 
-  // Comprehensive competitor comparison data
+  // Comprehensive competitor comparison data - focused on true differentiators
   const comparisonData = [
     { feature: 'Annual Price', voraprep: '$99/yr', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
     { feature: 'Price per Month', voraprep: '$8.25', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
     { feature: 'AI-Powered Tutor', voraprep: true, becker: false, roger: false, surgent: 'Limited', highlight: true },
-    { feature: 'Practice Questions', voraprep: '2,500+', becker: '9,200+', roger: '6,000+', surgent: '7,700+', highlight: false },
-    { feature: 'Task-Based Simulations', voraprep: '30+', becker: '400+', roger: '100+', surgent: '200+', highlight: false },
-    { feature: 'Video Lessons', voraprep: 'AI Explains', becker: '190+ hrs', roger: '100+ hrs', surgent: '350+ hrs', highlight: false },
+    { feature: 'Learning Style', voraprep: 'Active Practice', becker: 'Passive Video', roger: 'Passive Video', surgent: 'Passive Video', highlight: true },
     { feature: '2026 Blueprint Ready', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Adaptive Learning', voraprep: true, becker: 'Extra $$$', roger: false, surgent: true, highlight: true },
     { feature: 'Spaced Repetition', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
@@ -167,12 +165,12 @@ const Landing = () => {
     },
   ];
 
-  // Stats section
+  // Stats section - highlight our real strengths
   const stats = [
-    { value: 2508, label: 'Practice Questions', suffix: '+' },
-    { value: 303, label: 'Lessons', suffix: '' },
-    { value: 217, label: 'Study Hours', suffix: '' },
-    { value: 30, label: 'TBS Simulations', suffix: '+' },
+    { value: 2600, label: 'Practice Questions', suffix: '+' },
+    { value: 300, label: 'Lessons', suffix: '+' },
+    { value: 24, label: 'AI Tutor', suffix: '/7' },
+    { value: 97, label: 'Savings vs Becker', suffix: '%' },
   ];
 
   return (

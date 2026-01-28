@@ -1,5 +1,6 @@
 // Question Bank Service
 // Provides access to CPA exam questions from Firebase Firestore
+// Supports multi-course architecture with backwards compatibility
 
 import {
   collection,
@@ -18,7 +19,8 @@ import {
   QueryConstraint,
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { Question, ExamSection, Difficulty } from '../types';
+import { Question, ExamSection, Difficulty, CourseId } from '../types';
+import { DEFAULT_COURSE_ID } from '../types/course';
 
 interface FetchQuestionsOptions {
   section?: ExamSection;
@@ -32,11 +34,13 @@ interface FetchQuestionsOptions {
   mode?: 'random' | 'weak' | 'review' | 'exam';
   excludeIds?: string[];
   cursor?: any;
+  courseId?: CourseId; // Multi-course support
 }
 
 /**
  * Fetch questions from Firebase with optional filters
  * Supports both legacy topicId and new Blueprint-based filtering
+ * @param options - Filter options including optional courseId
  */
 export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promise<Question[]> {
   const {
@@ -54,6 +58,7 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     // mode = 'random', // random, weak, review, exam
     excludeIds = [],
     cursor = null,
+    courseId = DEFAULT_COURSE_ID, // Multi-course support with backwards compatibility
   } = options;
 
   try {
@@ -98,6 +103,12 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
       id: doc.id,
       ...doc.data(),
     }));
+
+    // Filter by courseId (including legacy questions without courseId)
+    questions = questions.filter((q: any) => {
+      const questionCourseId = q.courseId || DEFAULT_COURSE_ID;
+      return questionCourseId === courseId;
+    });
 
     // Filter excluded
     if (excludeIds.length > 0) {

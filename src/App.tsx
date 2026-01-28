@@ -13,6 +13,7 @@ import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 import { ToastProvider } from './components/common/Toast';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
+import { CourseProvider } from './providers/CourseProvider';
 
 // ============================================
 // LAZY LOADED PAGES - Code Splitting
@@ -139,25 +140,26 @@ function App() {
   return (
     <ErrorBoundary variant="page">
       <ThemeProvider>
-        <TourProvider>
-          <ToastProvider>
-            <ScrollToTop />
-            <Suspense fallback={<FullPageLoader />}>
-              <Routes>
-                {/* Public Auth Routes */}
-                <Route element={<AuthLayout />}>
-                  <Route
-                    path="/login"
-                    element={
-                      <PublicRoute>
-                        <SuspensePage>
-                          <Login />
-                        </SuspensePage>
-                      </PublicRoute>
-                    }
-                  />
-                  <Route
-                    path="/register"
+        <CourseProvider>
+          <TourProvider>
+            <ToastProvider>
+              <ScrollToTop />
+              <Suspense fallback={<FullPageLoader />}>
+                <Routes>
+                  {/* Public Auth Routes */}
+                  <Route element={<AuthLayout />}>
+                    <Route
+                      path="/login"
+                      element={
+                        <PublicRoute>
+                          <SuspensePage>
+                            <Login />
+                          </SuspensePage>
+                        </PublicRoute>
+                      }
+                    />
+                    <Route
+                      path="/register"
                     element={
                       <PublicRoute>
                         <SuspensePage>
@@ -402,11 +404,11 @@ function App() {
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>
             </Suspense>
-            {/* Added missing closing tags from original structure */}
           </ToastProvider>
         </TourProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+      </CourseProvider>
+    </ThemeProvider>
+  </ErrorBoundary>
   );
 }
 

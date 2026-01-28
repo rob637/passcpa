@@ -1,5 +1,12 @@
 // Core domain types
 
+// Import CourseId for use in this file
+import type { CourseId as CourseIdType } from './course';
+
+// Re-export course types for convenience
+export * from './course';
+export type { CourseId } from './course';
+
 /**
  * Normalized Difficulty Levels
  * - 'easy' / 'medium' / 'hard' are the canonical values for questions/TBS
@@ -67,6 +74,7 @@ export interface LessonContent {
 
 export interface Lesson {
   id: string;
+  courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
   section: ExamSection;
   title: string;
   description: string;
@@ -75,10 +83,16 @@ export interface Lesson {
   difficulty: Difficulty;
   topics: string[];
   content: LessonContent;
+  
+  // Optional blueprint mapping (exam-specific)
+  blueprintArea?: string;
+  blueprintTopic?: string;
+  skillLevel?: 'Remembering and Understanding' | 'Application' | 'Analysis' | 'Evaluation';
 }
 
 export interface Question {
   id: string;
+  courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
   section: ExamSection;
   topic: string;
   subtopic: string; // Made required to match existing data
@@ -133,6 +147,7 @@ export const TBS_TYPES = {
 
 export interface TBS {
   id: string;
+  courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
   section: ExamSection;
   type: TBSType;
   title?: string;

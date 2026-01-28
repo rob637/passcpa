@@ -7,6 +7,8 @@ import {
   signOut as firebaseSignOut,
   sendPasswordResetEmail,
   updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../config/firebase.js';
@@ -185,9 +187,46 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  // Google sign-in (placeholder - needs to be enabled in Firebase Console)
+  // Google sign-in
   const signInWithGoogle = async () => {
-    throw new Error('Google sign-in is not yet configured. Please use email/password.');
+    try {
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: 'select_account' });
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      // Check if user profile exists, create if not
+      const userRef = doc(db, 'users', user.uid);
+      const userDoc = await getDoc(userRef);
+      
+      if (!userDoc.exists()) {
+        // Create new profile for Google user
+        const newProfile: Omit<UserProfile, 'id'> = {
+          email: user.email || '',
+          displayName: user.displayName || '',
+          createdAt: serverTimestamp(),
+          onboardingComplete: false,
+          examSection: null,
+          examDate: null,
+          dailyGoal: 25,
+          studyPlanId: null,
+          settings: {
+            notifications: true,
+            darkMode: false,
+            soundEffects: true,
+          },
+        };
+        await setDoc(userRef, newProfile);
+        setUserProfile({ id: user.uid, ...newProfile });
+      } else {
+        await fetchUserProfile(user.uid);
+      }
+      
+      return user;
+    } catch (err: any) {
+      console.error('Google sign-in error:', err);
+      throw err;
+    }
   };
 
   const value: AuthContextType = {

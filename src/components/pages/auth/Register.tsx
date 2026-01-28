@@ -76,6 +76,12 @@ const Register = () => {
       navigate('/onboarding');
     } catch (err: any) {
       console.error('Google sign-up error:', err);
+      if (err.code === 'auth/popup-closed-by-user') {
+        // User closed the popup, don't show error
+        return;
+      } else if (err.code === 'auth/cancelled-popup-request') {
+        return;
+      }
       setError('Failed to sign up with Google. Please try again.');
     }
   };

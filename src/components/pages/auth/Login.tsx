@@ -42,10 +42,18 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     setError('');
     try {
-      await signInWithGoogle();
+      const user = await signInWithGoogle();
+      // Check if user needs onboarding (new Google user)
+      // The AuthProvider handles creating profile, we just navigate
       navigate('/dashboard');
     } catch (err: any) {
       console.error('Google sign-in error:', err);
+      if (err.code === 'auth/popup-closed-by-user') {
+        // User closed the popup, don't show error
+        return;
+      } else if (err.code === 'auth/cancelled-popup-request') {
+        return;
+      }
       setError('Failed to sign in with Google. Please try again.');
     }
   };

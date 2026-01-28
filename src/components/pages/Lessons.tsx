@@ -199,13 +199,13 @@ const Lessons: React.FC = () => {
     return (
       <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
         <div className="animate-pulse space-y-6">
-          <div className="h-12 bg-slate-200 rounded-xl w-1/3" />
+          <div className="h-12 bg-slate-200 dark:bg-slate-700 rounded-xl w-1/3" />
           <div className="grid grid-cols-3 gap-4">
-            <div className="h-24 bg-slate-200 rounded-xl" />
-            <div className="h-24 bg-slate-200 rounded-xl" />
-            <div className="h-24 bg-slate-200 rounded-xl" />
+            <div className="h-24 bg-slate-200 dark:bg-slate-700 rounded-xl" />
+            <div className="h-24 bg-slate-200 dark:bg-slate-700 rounded-xl" />
+            <div className="h-24 bg-slate-200 dark:bg-slate-700 rounded-xl" />
           </div>
-          <div className="h-64 bg-slate-200 rounded-xl" />
+          <div className="h-64 bg-slate-200 dark:bg-slate-700 rounded-xl" />
         </div>
       </div>
     );

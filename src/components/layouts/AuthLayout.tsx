@@ -30,8 +30,8 @@ const AuthLayout = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="flex items-center justify-center min-h-screen pt-20 pb-8 px-4 safe-top safe-bottom">
-        <div className="w-full max-w-md">
+      <div className="min-h-screen pt-24 pb-8 px-4 safe-top safe-bottom">
+        <div className="w-full max-w-md mx-auto">
           <Outlet />
           
           {/* Footer */}

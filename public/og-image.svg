@@ -10,7 +10,7 @@
     <!-- Blue accent gradient -->
     <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#3b82f6"/>
-      <stop offset="100%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
     </linearGradient>
     
     <!-- Green accent for badge -->
@@ -39,7 +39,7 @@
   
   <!-- Decorative gradient orbs -->
   <ellipse cx="150" cy="100" rx="300" ry="200" fill="#3b82f6" opacity="0.08"/>
-  <ellipse cx="1050" cy="530" rx="350" ry="250" fill="#8b5cf6" opacity="0.08"/>
+  <ellipse cx="1050" cy="530" rx="350" ry="250" fill="#1d4ed8" opacity="0.08"/>
   <ellipse cx="600" cy="315" rx="400" ry="200" fill="#3b82f6" opacity="0.05"/>
   
   <!-- Grid pattern overlay -->

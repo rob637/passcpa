@@ -179,11 +179,17 @@ const Landing = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
-              <BookOpen className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">VoraPrep</span>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/logo.svg" 
+              alt="VoraPrep" 
+              className="h-10 dark:hidden" 
+            />
+            <img 
+              src="/logo-white.svg" 
+              alt="VoraPrep" 
+              className="h-10 hidden dark:block" 
+            />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</a>

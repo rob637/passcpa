@@ -1,29 +1,29 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
+import {
+  fetchQuestions,
+  addQuestion,
+  updateQuestion,
+  deleteQuestion,
+} from '../../../services/questionService';
+import type { Question, ExamSection, Difficulty } from '../../../types';
 import {
   Plus,
   Pencil,
   Trash2,
   Search,
   Filter,
-  Download,
-  Upload,
   Save,
   X,
-  CheckCircle,
   AlertCircle,
   ChevronDown,
-  FileText,
-  BookOpen,
-  BarChart3,
-  Settings,
-  Users,
+  Loader,
 } from 'lucide-react';
 import clsx from 'clsx';
 
 // Admin email whitelist
-const ADMIN_EMAILS = ['admin@passcpa.com'];
+const ADMIN_EMAILS = ['admin@voraprep.com'];
 
 // Sample data structure
 const EXAM_SECTIONS = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
@@ -31,38 +31,44 @@ const DIFFICULTY_LEVELS = ['easy', 'medium', 'hard'];
 
 const QuestionEditor = () => {
   const { user, userProfile } = useAuth();
-  const [activeTab, setActiveTab] = useState('dashboard');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSection, setSelectedSection] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [isEditing, setIsEditing] = useState(false);
-  const [editingQuestion, setEditingQuestion] = useState(null);
+  const [editingQuestion, setEditingQuestion] = useState<Question | null>(null);
   const [showFilters, setShowFilters] = useState(false);
+  
+  // Data State
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   // Check admin access
-  const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email));
+  const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
 
-  // Sample questions for demo (in production, these would come from Firestore)
-  const [questions, setQuestions] = useState([
-    {
-      id: 'q-demo-1',
-      section: 'FAR',
-      topic: 'Revenue Recognition',
-      subtopic: 'ASC 606',
-      difficulty: 'medium',
-      question: 'Under ASC 606, when should revenue be recognized?',
-      options: [
-        'When cash is received',
-        'When a performance obligation is satisfied',
-        'At the end of the reporting period',
-        'When the contract is signed',
-      ],
-      correctAnswer: 1,
-      explanation: 'Under ASC 606, revenue is recognized when a performance obligation is satisfied.',
-      blueprintArea: 'Area I',
-      reference: 'ASC 606-10-25',
-    },
-  ]);
+  const loadQuestions = useCallback(async () => {
+    setIsLoading(true);
+    setError('');
+    try {
+      const options: any = { count: 50 }; // Limit to 50 for admin view to prevent overload
+      if (selectedSection !== 'all') options.section = selectedSection;
+      if (selectedDifficulty !== 'all') options.difficulty = selectedDifficulty;
+      
+      const data = await fetchQuestions(options);
+      setQuestions(data);
+    } catch (err) {
+      console.error('Error loading questions:', err);
+      setError('Failed to load questions. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [selectedSection, selectedDifficulty]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      loadQuestions();
+    }
+  }, [isAdmin, loadQuestions]);
 
   // Form state for new/edit question
   const [formData, setFormData] = useState({
@@ -78,48 +84,70 @@ const QuestionEditor = () => {
     reference: '',
   });
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string | number) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleOptionChange = (index, value) => {
+  const handleOptionChange = (index: number, value: string) => {
     const newOptions = [...formData.options];
     newOptions[index] = value;
     setFormData((prev) => ({ ...prev, options: newOptions }));
   };
 
-  const handleSaveQuestion = () => {
+  const handleSaveQuestion = async () => {
     if (!formData.question || !formData.explanation) {
       alert('Please fill in all required fields');
       return;
     }
 
-    if (editingQuestion) {
-      // Update existing
-      setQuestions((prev) =>
-        prev.map((q) => (q.id === editingQuestion.id ? { ...formData, id: editingQuestion.id } : q))
-      );
-    } else {
-      // Add new
-      const newQuestion = {
+    try {
+      const questionData = {
         ...formData,
-        id: `q-${Date.now()}`,
+        section: formData.section as ExamSection,
+        difficulty: formData.difficulty as Difficulty,
       };
-      setQuestions((prev) => [...prev, newQuestion]);
+      if (editingQuestion) {
+        // Update existing
+        await updateQuestion(editingQuestion.id, questionData);
+      } else {
+        // Add new
+        await addQuestion(questionData);
+      }
+      
+      await loadQuestions();
+      resetForm();
+    } catch (err) {
+      console.error('Error saving question:', err);
+      alert('Failed to save question');
     }
-
-    resetForm();
   };
 
-  const handleEditQuestion = (question) => {
-    setFormData(question);
+  const handleEditQuestion = (question: Question) => {
+    setFormData({
+      section: question.section,
+      topic: question.topic,
+      subtopic: question.subtopic || '',
+      difficulty: question.difficulty,
+      question: question.question,
+      options: question.options,
+      correctAnswer: question.correctAnswer,
+      explanation: question.explanation,
+      blueprintArea: question.blueprintArea || '',
+      reference: question.reference || '',
+    });
     setEditingQuestion(question);
     setIsEditing(true);
   };
 
-  const handleDeleteQuestion = (id) => {
+  const handleDeleteQuestion = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this question?')) {
-      setQuestions((prev) => prev.filter((q) => q.id !== id));
+      try {
+        await deleteQuestion(id);
+        await loadQuestions();
+      } catch (err) {
+        console.error('Error deleting question:', err);
+        alert('Failed to delete question');
+      }
     }
   };
 
@@ -300,49 +328,67 @@ const QuestionEditor = () => {
             </h2>
           </div>
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
-            {filteredQuestions.map((q) => (
-              <div key={q.id} className="p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-medium rounded">
-                        {q.section}
-                      </span>
-                      <span className={clsx(
-                        'px-2 py-0.5 text-xs font-medium rounded',
-                        q.difficulty === 'easy' && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-                        q.difficulty === 'medium' && 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
-                        q.difficulty === 'hard' && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-                      )}>
-                        {q.difficulty}
-                      </span>
-                      <span className="text-sm text-slate-500 dark:text-slate-400">{q.topic}</span>
-                    </div>
-                    <p className="text-slate-900 dark:text-slate-100 line-clamp-2">
-                      {q.question}
-                    </p>
+            {isLoading ? (
+              <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+                <Loader className="w-8 h-8 animate-spin mx-auto mb-2" />
+                <p>Loading questions from Firestore...</p>
+              </div>
+            ) : filteredQuestions.length === 0 ? (
+              <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+                {error ? (
+                  <div className="text-red-500 flex flex-col items-center">
+                    <AlertCircle className="w-6 h-6 mb-2" />
+                    {error}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => handleEditQuestion(q)}
-                      className="p-2 text-slate-400 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg"
-                    >
-                      <Pencil className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => handleDeleteQuestion(q.id)}
-                      className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                ) : (
+                  'No questions found matching your filters.'
+                )}
+              </div>
+            ) : (
+              filteredQuestions.map((q) => (
+                <div key={q.id} className="p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-medium rounded">
+                          {q.section}
+                        </span>
+                        <span
+                          className={clsx(
+                            'px-2 py-0.5 text-xs font-medium rounded',
+                            q.difficulty === 'easy' &&
+                              'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+                            q.difficulty === 'medium' &&
+                              'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+                            q.difficulty === 'hard' &&
+                              'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                          )}
+                        >
+                          {q.difficulty}
+                        </span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400">{q.topic}</span>
+                      </div>
+                      <p className="text-slate-900 dark:text-slate-100 line-clamp-2">
+                        {q.question}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => handleEditQuestion(q)}
+                        className="p-2 text-slate-400 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg"
+                      >
+                        <Pencil className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDeleteQuestion(q.id)}
+                        className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            {filteredQuestions.length === 0 && (
-              <div className="p-8 text-center text-slate-500 dark:text-slate-400">
-                No questions found. Create one to get started!
-              </div>
+              ))
             )}
           </div>
         </div>

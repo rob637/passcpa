@@ -113,7 +113,7 @@ describe('ThemeProvider', () => {
         result.current.toggleDarkMode();
       });
 
-      expect(window.localStorage.setItem).toHaveBeenCalledWith('passcpa-dark-mode', 'true');
+      expect(window.localStorage.setItem).toHaveBeenCalledWith('voraprep-dark-mode', 'true');
     });
 
     it('should update document class', () => {

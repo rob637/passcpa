@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
-import { getTBSBySection } from '../../data/tbs';
+import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
@@ -37,11 +37,6 @@ interface JournalEntryRow {
   account: string;
   debit: string | number;
   credit: string | number;
-}
-
-interface QuestionOption {
-  value: string;
-  label: string;
 }
 
 interface JournalEntryInputProps {
@@ -383,27 +378,75 @@ const TBSSimulator: React.FC = () => {
   const [showCalculator, setShowCalculator] = useState(false);
   const [showExhibits, setShowExhibits] = useState(false);
   const [score, setScore] = useState(0);
+  const [error, setError] = useState<string | null>(null);
 
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const tbsId = searchParams.get('id');
 
+  // Transform raw TBS data into the format expected by the component
+  const transformTbs = (rawTbs: any): TBSQuestion | null => {
+    if (!rawTbs) return null;
+    
+    // Get the first requirement for simple TBS types
+    const firstReq = rawTbs.requirements?.[0];
+    
+    // Map TBS type to component type
+    let componentType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
+    if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') componentType = 'journal';
+    else if (rawTbs.type === 'multiple_choice' || firstReq?.type === 'multiple_choice') componentType = 'mcq';
+    else if (rawTbs.type === 'written_communication') componentType = 'wc';
+    else if (rawTbs.type === 'calculation' || firstReq?.type === 'calculation') componentType = 'calculation';
+    
+    return {
+      id: rawTbs.id,
+      type: componentType,
+      title: rawTbs.title,
+      description: rawTbs.scenario || rawTbs.description || '',
+      data: {
+        // For journal entries
+        template: firstReq?.template || rawTbs.template || [{ account: '', debit: '', credit: '' }],
+        correctEntries: firstReq?.correctEntries || rawTbs.correctEntries,
+        // For calculations
+        correctAnswer: firstReq?.correctAnswer ?? rawTbs.correctAnswer ?? 0,
+        tolerance: firstReq?.tolerance ?? rawTbs.tolerance ?? 1,
+        // For multiple choice
+        options: firstReq?.options || rawTbs.options || [],
+        // Exhibits from hints/references
+        exhibits: rawTbs.exhibits || (rawTbs.hints ? [{ title: 'Hints', content: rawTbs.hints.join('\n') }] : undefined),
+      },
+      explanation: firstReq?.explanation || rawTbs.explanation,
+      difficulty: rawTbs.difficulty,
+      estimatedTime: rawTbs.timeEstimate,
+    };
+  };
+
   useEffect(() => {
     // Load TBS
-    if (tbsId) {
-      // Fetch specific TBS
-      // const loadedTbs = await getTBSById(tbsId);
-      // setTbs(loadedTbs);
-    } else {
-      // Get random TBS for section
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const sectionTbs = getTBSBySection(currentSection) as any[];
-      if (sectionTbs.length > 0) {
-        const randomTbs = sectionTbs[Math.floor(Math.random() * sectionTbs.length)];
-        setTbs(randomTbs);
-        setStartTime(Date.now());
+    const loadTBS = async () => {
+      if (tbsId) {
+        // Fetch specific TBS
+        const loadedTbs = await fetchTBSById(tbsId);
+        if (loadedTbs) {
+          setTbs(transformTbs(loadedTbs));
+          setStartTime(Date.now());
+        } else {
+          setError(`Simulation not found: ${tbsId}`);
+        }
+      } else {
+        // Get random TBS for section
+        const sectionTbs = await fetchTBSBySection(currentSection);
+        if (sectionTbs && sectionTbs.length > 0) {
+          const randomTbs = sectionTbs[Math.floor(Math.random() * sectionTbs.length)];
+          setTbs(transformTbs(randomTbs));
+          setStartTime(Date.now());
+        } else {
+          setError(`No simulations available for section: ${currentSection}`);
+        }
       }
-    }
+    };
+    
+    loadTBS();
   }, [tbsId, currentSection]);
 
   const handleSubmit = async () => {
@@ -444,6 +487,23 @@ const TBSSimulator: React.FC = () => {
   };
 
   if (!tbs) {
+    if (error) {
+       return (
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+          <div className="text-center p-8 bg-white rounded-xl shadow-lg border border-red-100 max-w-md">
+            <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-slate-900 mb-2">Unable to Load Simulation</h3>
+            <p className="text-slate-600 mb-6">{error}</p>
+            <button 
+              onClick={() => navigate('/practice')}
+              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition-colors"
+            >
+              Return to Practice
+            </button>
+          </div>
+        </div>
+       );
+    }
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">

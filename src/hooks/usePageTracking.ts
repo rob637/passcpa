@@ -18,7 +18,7 @@ export const usePageTracking = () => {
   // Track page view on route change
   useEffect(() => {
     const path = location.pathname;
-    const title = ROUTE_TITLES[path] || 'PassCPA';
+    const title = ROUTE_TITLES[path] || 'VoraPrep';
 
     // Small delay to ensure page title is updated
     const timeout = setTimeout(() => {

@@ -107,9 +107,9 @@ describe('Practice Component', () => {
 
       await waitFor(() => {
         expect(screen.getByText(/Number of Questions/i)).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: '5' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: '10' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: '20' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: '5 questions' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: '10 questions' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: '20 questions' })).toBeInTheDocument();
       });
     });
 
@@ -135,11 +135,11 @@ describe('Practice Component', () => {
       renderPractice();
 
       await waitFor(() => {
-        expect(screen.getByRole('button', { name: '20' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: '20 questions' })).toBeInTheDocument();
       });
 
-      await user.click(screen.getByRole('button', { name: '20' }));
-      const button20 = screen.getByRole('button', { name: '20' });
+      await user.click(screen.getByRole('button', { name: '20 questions' }));
+      const button20 = screen.getByRole('button', { name: '20 questions' });
       expect(button20).toBeInTheDocument();
     });
 

@@ -11,6 +11,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-cf-001',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Qualitative Characteristics',
@@ -31,6 +32,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-cf-002',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Elements',
@@ -46,6 +48,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-cf-003',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Recognition',
@@ -71,6 +74,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-fs-001',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Statements',
     subtopic: 'Balance Sheet',
@@ -90,6 +94,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-fs-002',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Statements',
     subtopic: 'Income Statement',
@@ -109,6 +114,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-fs-003',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Statements',
     subtopic: 'Comprehensive Income',
@@ -128,6 +134,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-fs-004',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Statements',
     subtopic: 'Statement of Cash Flows',
@@ -148,6 +155,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-fs-005',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Statements',
     subtopic: 'Statement of Cash Flows',
@@ -172,6 +180,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rec-001',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Bad Debt Estimation',
@@ -192,6 +201,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rec-002',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring',
@@ -211,6 +221,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rec-003',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Notes Receivable',
@@ -236,6 +247,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-inv-001',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Cost Flow Methods',
@@ -251,6 +263,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-inv-002',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Lower of Cost or NRV',
@@ -270,6 +283,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-inv-003',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'LIFO',
@@ -289,6 +303,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-inv-004',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Dollar-Value LIFO',
@@ -309,6 +324,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-ppe-001',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Capitalization',
@@ -328,6 +344,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-ppe-002',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Interest Capitalization',
@@ -347,6 +364,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-ppe-003',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Depreciation',
@@ -362,6 +380,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-ppe-004',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Property, Plant & Equipment',
     subtopic: 'Impairment',
@@ -387,6 +406,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-int-001',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Recognition',
@@ -406,6 +426,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-int-002',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Goodwill Impairment',
@@ -425,6 +446,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-int-003',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Software Costs',
@@ -449,6 +471,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-invest-001',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Classification',
@@ -464,6 +487,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-invest-002',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
@@ -483,6 +507,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-invest-003',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Debt Securities',
@@ -502,6 +527,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-invest-004',
     section: 'FAR',
+    blueprintArea: 'FAR-III',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Held-to-Maturity',
@@ -521,6 +547,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rev-001',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
@@ -540,6 +567,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rev-002',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Performance Obligations',
@@ -559,6 +587,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rev-003',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
@@ -578,6 +607,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-rev-004',
     section: 'FAR',
+    blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Costs',
@@ -602,6 +632,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-lease-001',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessee Classification',
@@ -621,6 +652,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-lease-002',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessee Accounting',
@@ -640,6 +672,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-lease-003',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Initial Measurement',
@@ -659,6 +692,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-lease-004',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Lessor Accounting',
@@ -683,6 +717,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-liab-001',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Bonds',
@@ -702,6 +737,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-liab-002',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Bonds',
@@ -722,6 +758,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-liab-003',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Contingencies',
@@ -741,6 +778,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-liab-004',
     section: 'FAR',
+    blueprintArea: 'FAR-IV',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Asset Retirement Obligations',
@@ -765,6 +803,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-tax-001',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Deferred Taxes',
@@ -784,6 +823,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-tax-002',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Deferred Taxes',
@@ -804,6 +844,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-tax-003',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Valuation Allowance',
@@ -823,6 +864,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-tax-004',
     section: 'FAR',
+    blueprintArea: 'FAR-I',
     topicId: 'far-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
@@ -847,6 +889,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-eq-001',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: "Stockholders' Equity",
     subtopic: 'Treasury Stock',
@@ -866,6 +909,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-eq-002',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: "Stockholders' Equity",
     subtopic: 'Stock Dividends',
@@ -885,6 +929,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-eq-003',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: "Stockholders' Equity",
     subtopic: 'Stock Compensation',
@@ -904,6 +949,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-eq-004',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-equity',
     topic: "Stockholders' Equity",
     subtopic: 'EPS',
@@ -928,6 +974,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-con-001',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-consolidation',
     topic: 'Consolidations',
     subtopic: 'Control',
@@ -947,6 +994,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-con-002',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-consolidation',
     topic: 'Consolidations',
     subtopic: 'Eliminations',
@@ -967,6 +1015,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-con-003',
     section: 'FAR',
+    blueprintArea: 'FAR-V',
     topicId: 'far-consolidation',
     topic: 'Consolidations',
     subtopic: 'Noncontrolling Interest',
@@ -991,6 +1040,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-gov-001',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
     subtopic: 'Fund Types',
@@ -1005,6 +1055,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-gov-002',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
     subtopic: 'Measurement Focus',
@@ -1024,6 +1075,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-gov-003',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
     subtopic: 'Modified Accrual',
@@ -1043,6 +1095,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-gov-004',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-government',
     topic: 'Governmental Accounting',
     subtopic: 'Fund Balance',
@@ -1063,6 +1116,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-nfp-001',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Net Assets',
@@ -1082,6 +1136,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-nfp-002',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributions',
@@ -1101,6 +1156,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-nfp-003',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Contributions',
@@ -1120,6 +1176,7 @@ export const FAR_QUESTIONS: Question[] = [
   {
     id: 'far-nfp-004',
     section: 'FAR',
+    blueprintArea: 'FAR-VI',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expenses',

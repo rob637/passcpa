@@ -10,6 +10,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-050',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
@@ -29,6 +30,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-051',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income',
@@ -48,6 +50,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-052',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions',
@@ -62,6 +65,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-053',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Credits',
@@ -81,6 +85,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-054',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
@@ -96,6 +101,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-055',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'AMT',
@@ -119,6 +125,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-050',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
@@ -138,6 +145,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-051',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
@@ -157,6 +165,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-052',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange',
@@ -176,6 +185,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-053',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange',
@@ -195,6 +205,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-054',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
@@ -214,6 +225,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-055',
     section: 'REG',
+    blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
@@ -237,6 +249,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-050',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Formation',
@@ -256,6 +269,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-051',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Distributions',
@@ -275,6 +289,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-052',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
@@ -290,6 +305,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-053',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Stock Redemptions',
@@ -309,6 +325,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-054',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Liquidations',
@@ -332,6 +349,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-050',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
@@ -351,6 +369,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-051',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Basis',
@@ -370,6 +389,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-052',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distributions',
@@ -389,6 +409,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-053',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
@@ -408,6 +429,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-054',
     section: 'REG',
+    blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
@@ -431,6 +453,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-050',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Eligibility',
@@ -445,6 +468,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-051',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Basis',
@@ -464,6 +488,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-052',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Distributions',
@@ -483,6 +508,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-053',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Built-in Gains Tax',
@@ -506,6 +532,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-050',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Contract Formation',
@@ -520,6 +547,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-051',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
@@ -539,6 +567,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-052',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency',
@@ -558,6 +587,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-053',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency Authority',
@@ -577,6 +607,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-054',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
@@ -596,6 +627,7 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-055',
     section: 'REG',
+    blueprintArea: 'REG-I',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Bankruptcy',

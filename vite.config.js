@@ -13,8 +13,8 @@ export default defineConfig({
       },
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'PassCPA - CPA Exam Prep',
-        short_name: 'PassCPA',
+        name: 'VoraPrep - CPA Exam Prep',
+        short_name: 'VoraPrep',
         description: 'AI-powered CPA exam prep that gets you to 75+',
         theme_color: '#1a73e8',
         background_color: '#f8fafc',
@@ -61,6 +61,18 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
         runtimeCaching: [
+          // Cache questions and lessons data including TBS
+          {
+            urlPattern: /\/src\/data\/.*\.(ts|json)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'content-data-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
+              }
+            }
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             handler: 'CacheFirst',
@@ -135,9 +147,11 @@ export default defineConfig({
           'vendor-charts': ['recharts'],
           
           // Feature chunks - separated for lazy loading
-          'feature-admin': [
-            './src/components/pages/admin/AdminCMS.jsx',
-            './src/components/pages/AdminSeed.jsx',
+          'feature-admin-cms': [
+            './src/components/pages/admin/AdminCMS.tsx',
+          ],
+          'feature-admin-seed': [
+            './src/components/pages/AdminSeed.tsx',
           ],
           'feature-ai': [
             './src/components/pages/AITutor.tsx',
@@ -147,14 +161,8 @@ export default defineConfig({
             './src/components/pages/TBSSimulator.tsx',
             './src/components/pages/WrittenCommunication.tsx',
           ],
-          // Data chunks - large lesson/question content
-          'data-lessons-far': ['./src/data/lessons/far.ts'],
-          'data-lessons-aud': ['./src/data/lessons/aud.ts'],
-          'data-lessons-reg': ['./src/data/lessons/reg.ts'],
-          'data-lessons-bar': ['./src/data/lessons/bar.ts'],
-          'data-lessons-isc': ['./src/data/lessons/isc.ts'],
-          'data-lessons-tcp': ['./src/data/lessons/tcp.ts'],
-          'data-tbs': ['./src/data/tbs/index.ts'],
+          // Data chunks - only needed for admin seeding, dynamically imported
+          // Removed explicit chunking since these are now dynamically imported via services
         },
       },
     },

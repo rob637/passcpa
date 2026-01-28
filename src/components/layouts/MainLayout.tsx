@@ -122,11 +122,11 @@ const MainLayout = () => {
     
     // Fallback using ROUTE_TITLES
     const path = location.pathname;
-    return ROUTE_TITLES[path] || 'PassCPA';
+    return ROUTE_TITLES[path] || 'VoraPrep';
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col md:flex-row safe-top safe-bottom">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"
@@ -139,18 +139,20 @@ const MainLayout = () => {
         Skip to main content
       </a>
 
-      {/* Desktop Sidebar */}
-      <aside 
-        className="hidden md:flex flex-col w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
-        role="navigation"
-        aria-label="Main navigation"
-      >
+      {/* App Shell - Max width container that centers the entire app */}
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-screen">
+        {/* Desktop Sidebar */}
+        <aside 
+          className="hidden md:flex flex-col w-64 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
+          role="navigation"
+          aria-label="Main navigation"
+        >
         <div className="p-6">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-soft-md">
               <span className="text-white font-bold text-lg">P</span>
             </div>
-            <h1 className="font-bold text-xl text-slate-900">PassCPA</h1>
+            <h1 className="font-bold text-xl text-slate-900">VoraPrep</h1>
           </div>
 
           <div className="space-y-1">
@@ -193,6 +195,11 @@ const MainLayout = () => {
               <span>{currentStreak} day streak!</span>
             </div>
           </div>
+          {/* Legal Disclaimer */}
+          <p className="mt-4 text-[10px] text-slate-400 leading-tight">
+            Not affiliated with AICPA, NASBA, or any state board. For educational purposes only.{' '}
+            <NavLink to="/terms" className="underline hover:text-slate-600">Terms</NavLink>
+          </p>
         </div>
       </aside>
 
@@ -226,12 +233,13 @@ const MainLayout = () => {
         tabIndex={-1}
         role="main"
         aria-label="Main content"
-        className="flex-1 w-full max-w-5xl mx-auto p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
+        className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
       >
         <Outlet />
       </main>
+      </div>{/* End App Shell */}
 
-      {/* Mobile Bottom Navigation */}
+      {/* Mobile Bottom Navigation - Outside app shell so it spans full width */}
       <nav
         ref={navRef}
         className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"

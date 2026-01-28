@@ -20,7 +20,8 @@ service cloud.firestore {
     
     // Users collection - private to each user
     match /users/{userId} {
-      allow read, write: if isOwner(userId);
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
       
       // Prevent users from granting themselves admin status
       allow update: if isOwner(userId) && 
@@ -44,6 +45,12 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
     
+    // TBS collection - read-only for users, write for admins
+    match /tbs/{tbsId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
     // Topics collection - read-only for users, write for admins
     match /topics/{topicId} {
       allow read: if isAuthenticated();
@@ -57,9 +64,21 @@ service cloud.firestore {
     }
 
     // System Errors - append only
-    match /system_errors/{errorId} {
+    match /error_logs/{errorId} {
       allow create: if isAuthenticated(); // Users can log errors
       allow read, update, delete: if isAdmin(); // Admin only
+    }
+
+    // Waitlist - public write (for landing page signup), admin read
+    match /waitlist/{emailId} {
+      allow create: if true; // Anyone can sign up for waitlist
+      allow read, update, delete: if isAdmin(); // Only admin can view/manage
+    }
+
+    // Feedback - authenticated write, admin read
+    match /feedback/{feedbackId} {
+      allow create: if isAuthenticated();
+      allow read, update, delete: if isAdmin();
     }
   }
 }

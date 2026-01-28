@@ -14,7 +14,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { CPA_SECTIONS } from '../../config/examConfig';
-import { getLessonsBySection } from '../../data/lessons';
+import { fetchLessonsBySection } from '../../services/lessonService';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
 
@@ -126,14 +126,24 @@ const Lessons: React.FC = () => {
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
+  const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
 
   // Cast to ExamSection if needed, or rely on string compatibility with fallback
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
-  // Get real lessons from data
-  // Assuming getLessonsBySection returns Lesson[]
-  const rawLessons = getLessonsBySection(currentSection);
+  // Fetch lessons from Firestore
+  useEffect(() => {
+    const fetchLessons = async () => {
+      try {
+        const lessons = await fetchLessonsBySection(currentSection);
+        setRawLessons(lessons);
+      } catch (error) {
+        console.error('Error fetching lessons:', error);
+      }
+    };
+    fetchLessons();
+  }, [currentSection]);
   
   // Fetch completed lessons from Firestore
   useEffect(() => {
@@ -223,7 +233,7 @@ const Lessons: React.FC = () => {
             className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
           >
             <Layout className="w-4 h-4" />
-            <span className="hidden sm:inline">Course Matrix</span>
+            <span className="hidden sm:inline">Study Guide</span>
           </Link>
         </div>
 

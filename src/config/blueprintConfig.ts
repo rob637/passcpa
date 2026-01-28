@@ -1,5 +1,5 @@
 /**
- * PassCPA Blueprint Configuration
+ * VoraPrep Blueprint Configuration
  * 
  * CRITICAL TRANSITION TIMELINE:
  * ┌─────────────────────────────────────────────────────────────────────────────┐

@@ -10,6 +10,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-plan-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Audit Risk Model',
@@ -24,6 +25,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-plan-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Materiality',
@@ -43,6 +45,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-plan-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Risk Assessment',
@@ -63,6 +66,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-plan-004',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Understanding the Entity',
@@ -82,6 +86,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-plan-005',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Engagement Letters',
@@ -105,6 +110,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-ic-001',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'COSO Components',
@@ -125,6 +131,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-ic-002',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Environment',
@@ -145,6 +152,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-ic-003',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Types of Controls',
@@ -164,6 +172,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-ic-004',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Deficiencies',
@@ -183,6 +192,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-ic-005',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Documentation',
@@ -202,6 +212,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ev-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Appropriateness',
@@ -221,6 +232,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ev-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Procedures',
@@ -235,6 +247,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ev-003',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Confirmations',
@@ -254,6 +267,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ev-004',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures',
@@ -274,6 +288,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ev-005',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Management Representations',
@@ -297,6 +312,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-samp-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sampling Risk',
@@ -316,6 +332,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-samp-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Attribute Sampling',
@@ -335,6 +352,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-samp-003',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sample Size',
@@ -354,6 +372,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-samp-004',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Variables Sampling',
@@ -373,6 +392,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-samp-005',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Evaluation',
@@ -396,6 +416,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rep-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Standard Report',
@@ -410,6 +431,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rep-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
@@ -429,6 +451,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rep-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
@@ -448,6 +471,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rep-004',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other Matters',
@@ -467,6 +491,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rep-005',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
@@ -491,6 +516,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-pr-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Independence',
@@ -510,6 +536,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-pr-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Confidentiality',
@@ -529,6 +556,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-pr-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Due Care',
@@ -548,6 +576,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-pr-004',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Fraud',
@@ -568,6 +597,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-pr-005',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Quality Control',
@@ -591,6 +621,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-oth-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Engagements',
     subtopic: 'Reviews',
@@ -605,6 +636,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-oth-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Engagements',
     subtopic: 'Compilations',
@@ -624,6 +656,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-oth-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Engagements',
     subtopic: 'Agreed-Upon Procedures',
@@ -643,6 +676,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-oth-004',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Engagements',
     subtopic: 'SOC Reports',
@@ -662,6 +696,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-oth-005',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-other',
     topic: 'Other Engagements',
     subtopic: 'Prospective Financial Statements',
@@ -685,6 +720,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Substantive Procedures',
@@ -705,6 +741,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Inventory',
@@ -724,6 +761,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Financial Statements',
@@ -744,6 +782,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-004',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'IT Controls',
@@ -763,6 +802,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-005',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Related Parties',
@@ -782,6 +822,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-add-006',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional',
     topic: 'Professional Responsibilities',
     subtopic: 'Subsequent Events',
@@ -807,6 +848,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-eth-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Conceptual Framework',
@@ -825,6 +867,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-eth-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Independence Impairment',
@@ -843,6 +886,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-eth-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Covered Members',
@@ -863,6 +907,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-risk-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Audit Risk Model',
@@ -881,6 +926,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-risk-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Significant Risks',
@@ -899,6 +945,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-risk-003',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Fraud Risk Factors',
@@ -919,6 +966,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ctrl-001',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'COSO Components',
@@ -937,6 +985,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ctrl-002',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Deficiency',
@@ -955,6 +1004,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ctrl-003',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Tests of Controls',
@@ -975,6 +1025,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-sub-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Confirmations',
@@ -993,6 +1044,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-sub-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Inventory Observation',
@@ -1011,6 +1063,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-sub-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Cutoff Testing',
@@ -1033,6 +1086,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rpt-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
@@ -1051,6 +1105,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rpt-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
@@ -1069,6 +1124,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-rpt-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
@@ -1089,6 +1145,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-grp-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-group',
     topic: 'Group Audits',
     subtopic: 'Component Auditor',
@@ -1109,6 +1166,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-rev-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reviews',
     topic: 'Reviews and Compilations',
     subtopic: 'Review Procedures',
@@ -1127,6 +1185,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-rev-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reviews',
     topic: 'Reviews and Compilations',
     subtopic: 'Review Independence',
@@ -1147,6 +1206,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-att-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Examination vs Review',
@@ -1165,6 +1225,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-att-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Pro Forma Financial Information',
@@ -1189,6 +1250,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-evid-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Sufficiency and Appropriateness',
@@ -1207,6 +1269,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-evid-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Reliability',
@@ -1225,6 +1288,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-evid-003',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Documentation',
     subtopic: 'Retention',
@@ -1243,6 +1307,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-evid-004',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Documentation',
     subtopic: 'Assembly Period',
@@ -1267,6 +1332,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-subst-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Accounts Receivable',
@@ -1285,6 +1351,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-subst-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Inventory',
@@ -1303,6 +1370,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-subst-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Cut-off Testing',
@@ -1325,6 +1393,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-spec-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Special Purpose Frameworks',
     subtopic: 'Cash Basis',
@@ -1343,6 +1412,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-spec-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Letters for Underwriters',
     subtopic: 'Comfort Letters',
@@ -1361,6 +1431,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-spec-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-special',
     topic: 'Service Organizations',
     subtopic: 'SOC Reports',
@@ -1381,6 +1452,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-qc-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'Engagement Quality Review',
@@ -1399,6 +1471,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-qc-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'Supervision',
@@ -1423,6 +1496,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-std-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-standards',
     topic: 'Professional Standards',
     subtopic: 'PCAOB vs AICPA',
@@ -1441,6 +1515,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-std-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-standards',
     topic: 'Professional Standards',
     subtopic: 'Generally Accepted Auditing Standards',
@@ -1459,6 +1534,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-std-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-standards',
     topic: 'Professional Standards',
     subtopic: 'Due Professional Care',
@@ -1479,6 +1555,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-accept-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-acceptance',
     topic: 'Engagement Acceptance',
     subtopic: 'Preconditions',
@@ -1497,6 +1574,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-accept-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-acceptance',
     topic: 'Engagement Acceptance',
     subtopic: 'Predecessor Communications',
@@ -1515,6 +1593,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-accept-003',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-acceptance',
     topic: 'Engagement Acceptance',
     subtopic: 'Engagement Letter',
@@ -1535,6 +1614,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-fraud-001',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Types of Fraud',
@@ -1553,6 +1633,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-fraud-002',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Risk Factors',
@@ -1571,6 +1652,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-fraud-003',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Brainstorming',
@@ -1591,6 +1673,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-rp-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-related-party',
     topic: 'Related Parties',
     subtopic: 'Identification',
@@ -1609,6 +1692,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-rp-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-related-party',
     topic: 'Related Parties',
     subtopic: 'Significant Transactions',
@@ -1631,6 +1715,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-subseq-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Auditor Procedures',
@@ -1649,6 +1734,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-subseq-002',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Dual Dating',
@@ -1669,6 +1755,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-law-001',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-laws',
     topic: 'Laws and Regulations',
     subtopic: 'Auditor Responsibility',
@@ -1687,6 +1774,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-101',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Understanding the Entity',
@@ -1705,6 +1793,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-102',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Materiality',
@@ -1723,6 +1812,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-103',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Environment',
@@ -1741,6 +1831,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-104',
     section: 'AUD',
+    blueprintArea: 'AUD-III',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'IT General Controls',
@@ -1759,6 +1850,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-105',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmations',
@@ -1777,6 +1869,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-106',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Analytical Procedures',
@@ -1795,6 +1888,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-107',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Management Representations',
@@ -1813,6 +1907,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-108',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Nonstatistical Sampling',
@@ -1831,6 +1926,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-109',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sample Selection Methods',
@@ -1849,6 +1945,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-110',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis-of-Matter',
@@ -1867,6 +1964,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-111',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other-Matter Paragraph',
@@ -1885,6 +1983,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-112',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Financial Statements',
@@ -1903,6 +2002,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-113',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional-responsibilities',
     topic: 'Professional Responsibilities',
     subtopic: 'Communication with TCWG',
@@ -1921,6 +2021,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-114',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional-responsibilities',
     topic: 'Professional Responsibilities',
     subtopic: 'Subsequent Discovery of Facts',
@@ -1939,6 +2040,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-115',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ssars',
     topic: 'Reviews and Compilations',
     subtopic: 'Preparation Engagement',
@@ -1957,6 +2059,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-116',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ssars',
     topic: 'Reviews and Compilations',
     subtopic: 'Compilation Report Elements',
@@ -1975,6 +2078,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-117',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Agreed-Upon Procedures',
@@ -1993,6 +2097,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-118',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-attestation',
     topic: 'Attestation Engagements',
     subtopic: 'Prospective Financial Statements',
@@ -2011,6 +2116,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-119',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Contingent Fees',
@@ -2029,6 +2135,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-120',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Client Advocacy',
@@ -2047,6 +2154,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-121',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Risk Factors',
@@ -2065,6 +2173,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-122',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Unpredictability',
@@ -2083,6 +2192,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-123',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'Engagement Quality Review',
@@ -2101,6 +2211,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-124',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'Documentation Retention',
@@ -2119,6 +2230,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-125',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-it',
     topic: 'IT Auditing',
     subtopic: 'Data Analytics',
@@ -2137,6 +2249,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-126',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-documentation',
     topic: 'Audit Documentation',
     subtopic: 'Workpaper Purposes',
@@ -2155,6 +2268,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-127',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-documentation',
     topic: 'Audit Documentation',
     subtopic: 'Assembly and Retention',
@@ -2173,6 +2287,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-128',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-specialists',
     topic: 'Using Specialists',
     subtopic: 'Auditor\'s Specialist',
@@ -2191,6 +2306,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-129',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-specialists',
     topic: 'Using Specialists',
     subtopic: 'Management\'s Specialist',
@@ -2209,6 +2325,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-130',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-related-parties',
     topic: 'Related Parties',
     subtopic: 'Identification Procedures',
@@ -2227,6 +2344,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-131',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-related-parties',
     topic: 'Related Parties',
     subtopic: 'Significant Transactions',
@@ -2245,6 +2363,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-132',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-estimates',
     topic: 'Accounting Estimates',
     subtopic: 'Risk Assessment',
@@ -2263,6 +2382,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-133',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-estimates',
     topic: 'Accounting Estimates',
     subtopic: 'Testing Methods',
@@ -2281,6 +2401,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-134',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-laws',
     topic: 'Compliance with Laws',
     subtopic: 'Direct vs Indirect Effect',
@@ -2299,6 +2420,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-135',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-laws',
     topic: 'Compliance with Laws',
     subtopic: 'Noncompliance Response',
@@ -2317,6 +2439,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-136',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-internal-audit',
     topic: 'Using Internal Audit',
     subtopic: 'Direct Assistance',
@@ -2335,6 +2458,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-137',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-internal-audit',
     topic: 'Using Internal Audit',
     subtopic: 'Reliance on Work',
@@ -2353,6 +2477,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-138',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-service-org',
     topic: 'Service Organizations',
     subtopic: 'Types of SOC Reports',
@@ -2371,6 +2496,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-139',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-service-org',
     topic: 'Service Organizations',
     subtopic: 'Complementary User Controls',
@@ -2389,6 +2515,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-140',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-governmental',
     topic: 'Governmental Audits',
     subtopic: 'Single Audit Requirements',
@@ -2407,6 +2534,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-141',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-governmental',
     topic: 'Governmental Audits',
     subtopic: 'Yellow Book',
@@ -2425,6 +2553,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-142',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-governmental',
     topic: 'Governmental Audits',
     subtopic: 'Compliance Testing',
@@ -2443,6 +2572,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-143',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-pcaob',
     topic: 'PCAOB Standards',
     subtopic: 'Integrated Audit',
@@ -2461,6 +2591,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-144',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-pcaob',
     topic: 'PCAOB Standards',
     subtopic: 'Critical Audit Matters',
@@ -2479,6 +2610,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-145',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional-responsibilities',
     topic: 'Professional Responsibilities',
     subtopic: 'Due Professional Care',
@@ -2497,6 +2629,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-146',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-professional-responsibilities',
     topic: 'Professional Responsibilities',
     subtopic: 'Confidentiality',
@@ -2515,6 +2648,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-147',
     section: 'AUD',
+    blueprintArea: 'AUD-II',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Audit Trail',
@@ -2533,6 +2667,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-148',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Disclaimer of Opinion',
@@ -2551,6 +2686,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-149',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Non-Audit Services',
@@ -2569,6 +2705,7 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'aud-ext-150',
     section: 'AUD',
+    blueprintArea: 'AUD-I',
     topicId: 'aud-emerging',
     topic: 'Emerging Issues',
     subtopic: 'Remote Auditing',

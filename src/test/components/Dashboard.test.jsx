@@ -42,6 +42,10 @@ vi.mock('../../hooks/useStudy', () => ({
   useStudy: () => mockStudyData,
 }));
 
+vi.mock('../../config/featureFlags', () => ({
+  isFeatureEnabled: vi.fn(() => true),
+}));
+
 const renderDashboard = () => {
   return render(
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>

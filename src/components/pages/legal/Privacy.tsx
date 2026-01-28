@@ -29,6 +29,14 @@ const Privacy: React.FC = () => {
           </p>
 
           <div className="prose prose-slate dark:prose-invert max-w-none">
+            {/* Independence Disclaimer */}
+            <div className="not-prose mb-6 p-3 bg-slate-100 dark:bg-slate-700 rounded-lg">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
+                VoraPrep is an independent educational platform not affiliated with AICPA, NASBA, 
+                Prometric, or any state board of accountancy.
+              </p>
+            </div>
+
             <h2>1. Information We Collect</h2>
             
             <h3>Account Information</h3>
@@ -116,7 +124,7 @@ const Privacy: React.FC = () => {
 
             <h2>8. Children's Privacy</h2>
             <p>
-              PassCPA is not intended for users under 18 years of age. We do not 
+              VoraPrep is not intended for users under 18 years of age. We do not 
               knowingly collect data from children.
             </p>
 
@@ -135,8 +143,8 @@ const Privacy: React.FC = () => {
             <h2>11. Contact Us</h2>
             <p>
               For privacy-related questions or to exercise your rights, contact us at{' '}
-              <a href="mailto:privacy@passcpa.com" className="text-primary-600 hover:underline">
-                privacy@passcpa.com
+              <a href="mailto:privacy@voraprep.com" className="text-primary-600 hover:underline">
+                privacy@voraprep.com
               </a>
             </p>
 

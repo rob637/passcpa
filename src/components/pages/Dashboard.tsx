@@ -20,6 +20,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { differenceInDays, format } from 'date-fns';
 import clsx from 'clsx';
+import { isFeatureEnabled } from '../../config/featureFlags';
 
 // Circular Progress Ring
 interface ProgressRingProps {
@@ -37,7 +38,7 @@ const ProgressRing = ({ progress = 0, size = 120, strokeWidth = 8 }: ProgressRin
 
   return (
     <div className="relative" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="transform -rotate-90">
+      <svg width={size} height={size} className="transform -rotate-90" aria-hidden="true">
         {/* Background circle */}
         <circle
           className="text-slate-100 dark:text-slate-700"
@@ -170,12 +171,21 @@ const StatCard = ({ icon: Icon, value, label, trend, color = 'slate' }: StatCard
 
 const Dashboard = () => {
   const { userProfile } = useAuth();
-  // @ts-ignore - weeklyStats and some extended props might be missing from base StudyContextType
   const { todayLog, currentStreak, dailyProgress, dailyGoalMet, weeklyStats } = useStudy();
 
   const examSection = userProfile?.examSection ? CPA_SECTIONS[userProfile.examSection as keyof typeof CPA_SECTIONS] : null;
   const examDate = userProfile?.examDate?.toDate?.() || userProfile?.examDate;
   const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
+
+  // Calculate motivational metrics
+  const pointsToGoal = todayLog ? Math.max(0, (todayLog.goalPoints || 50) - (todayLog.earnedPoints || 0)) : 50;
+  const questionsToGoal = Math.ceil(pointsToGoal / 2); // Avg 2 points per question
+  const isAlmostThere = !dailyGoalMet && dailyProgress >= 70;
+  
+  // Streak milestones
+  const streakMilestones = [7, 14, 30, 60, 90];
+  const nextStreakMilestone = streakMilestones.find(m => m > currentStreak) || 100;
+  const isStreakMilestone = streakMilestones.includes(currentStreak);
 
   // Get greeting based on time of day
   const getGreeting = () => {
@@ -196,7 +206,7 @@ const Dashboard = () => {
             <Sparkles className="w-10 h-10 text-primary-600" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
-            Welcome to PassCPA
+            Welcome to VoraPrep
           </h2>
           <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
             Let's personalize your study experience. This takes less than a minute.
@@ -211,7 +221,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="p-4 sm:p-6 max-w-2xl mx-auto page-enter">
+    <div className="p-4 sm:p-6 max-w-4xl mx-auto page-enter">
       {/* Greeting Section */}
       <div className="mb-4">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -299,16 +309,41 @@ const Dashboard = () => {
           <div>
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">Today's Progress</h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-              {dailyGoalMet ? 'Goal achieved! 🎉' : "Keep going, you're doing great!"}
+              {dailyGoalMet 
+                ? 'Goal achieved! 🎉' 
+                : isAlmostThere 
+                  ? `Almost there! Just ${questionsToGoal} more question${questionsToGoal === 1 ? '' : 's'}! 💪`
+                  : "Keep going, you're doing great!"}
             </p>
           </div>
           {currentStreak > 0 && (
-            <div className="streak-badge">
+            <div className="streak-badge relative">
               <Flame className="w-4 h-4 streak-flame" />
               <span>{currentStreak}</span>
+              {isStreakMilestone && (
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
+              )}
             </div>
           )}
         </div>
+
+        {/* Streak Milestone Celebration */}
+        {isStreakMilestone && currentStreak > 0 && (
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl p-3 mb-4 text-center">
+            <p className="text-sm font-medium text-yellow-800">
+              🏆 Amazing! {currentStreak}-day streak milestone reached!
+            </p>
+          </div>
+        )}
+
+        {/* Next milestone hint */}
+        {currentStreak > 0 && !isStreakMilestone && currentStreak >= nextStreakMilestone - 3 && (
+          <div className="bg-slate-50 rounded-xl p-3 mb-4 text-center">
+            <p className="text-xs text-slate-600">
+              🔥 {nextStreakMilestone - currentStreak} day{nextStreakMilestone - currentStreak === 1 ? '' : 's'} until your {nextStreakMilestone}-day streak badge!
+            </p>
+          </div>
+        )}
 
         <div className="flex items-center justify-center mb-6">
           <ProgressRing progress={dailyProgress} size={140} strokeWidth={10} />
@@ -318,14 +353,14 @@ const Dashboard = () => {
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {todayLog?.questionsAnswered || 0}
+              {todayLog?.questionsAttempted || 0}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400">Questions</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {todayLog?.questionsAnswered && todayLog.questionsAnswered > 0
-                ? Math.round((todayLog.questionsCorrect / todayLog.questionsAnswered) * 100)
+              {todayLog?.questionsAttempted && todayLog.questionsAttempted > 0
+                ? Math.round((todayLog.questionsCorrect / todayLog.questionsAttempted) * 100)
                 : 0}
               %
             </p>
@@ -333,7 +368,7 @@ const Dashboard = () => {
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {todayLog?.minutesStudied || 0}
+              {todayLog?.studyTimeMinutes || 0}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400">Minutes</p>
           </div>
@@ -351,13 +386,15 @@ const Dashboard = () => {
             sublabel="10 MCQs • ~15 min"
             color="primary"
           />
-          <QuickAction
-            to="/tbs"
-            icon={FileSpreadsheet}
-            label="Task-Based Simulations"
-            sublabel="Real exam TBS practice"
-            color="success"
-          />
+          {isFeatureEnabled('tbs') && (
+            <QuickAction
+              to="/tbs"
+              icon={FileSpreadsheet}
+              label="Task-Based Simulations"
+              sublabel="Real exam TBS practice"
+              color="success"
+            />
+          )}
           <QuickAction
             to="/study"
             icon={BookOpen}
@@ -365,14 +402,16 @@ const Dashboard = () => {
             sublabel="Review weak areas"
             color="warning"
           />
-          <QuickAction
-            to="/ai-tutor"
-            icon={Brain}
-            label="AI Tutor"
-            sublabel="Get instant explanations"
-            color="primary"
-            dataTour="ai-tutor"
-          />
+          {isFeatureEnabled('aiTutor') && (
+            <QuickAction
+              to="/ai-tutor"
+              icon={Brain}
+              label="AI Tutor"
+              sublabel="Get instant explanations"
+              color="primary"
+              dataTour="ai-tutor"
+            />
+          )}
         </div>
       </div>
 
@@ -385,12 +424,14 @@ const Dashboard = () => {
             value={weeklyStats?.totalQuestions || 0}
             label="Questions"
             color="primary"
+            trend={weeklyStats?.questionsTrend}
           />
           <StatCard
             icon={Trophy}
             value={`${weeklyStats?.accuracy || 0}%`}
             label="Accuracy"
             color="success"
+            trend={weeklyStats?.accuracyTrend}
           />
           <StatCard
             icon={Clock}

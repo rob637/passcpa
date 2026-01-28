@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Search, 
   Layout, 
@@ -8,7 +9,8 @@ import {
   AlertCircle,
   Sparkles
 } from 'lucide-react';
-import { getAllLessons } from '../../data/lessons';
+import { fetchAllLessons } from '../../services/lessonService';
+import type { ExamSection } from '../../types';
 import { 
   LESSON_MATRIX, 
   LessonMatrixEntry, 
@@ -17,7 +19,7 @@ import {
   getDifferingLessons,
   getLessonBlueprintVersion
 } from '../../data/lessonMatrix';
-import { Lesson, Difficulty, ExamSection } from '../../types';
+import { Lesson, Difficulty } from '../../types';
 
 // Get current blueprint based on date
 const getCurrentBlueprint = (): '2025' | '2026' => {
@@ -70,12 +72,15 @@ const SectionBadge = ({ section }: { section: ExamSection }) => {
     ISC: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
     TCP: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
     BEC: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
-    PREP: 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-300',
+    PREP: 'bg-indigo-50 text-indigo-600 border border-indigo-200 dark:bg-indigo-900/50 dark:text-indigo-300',
   };
+
+  // Display "Strategy" for PREP instead of the section code
+  const displayLabel = section === 'PREP' ? 'Strategy' : section;
 
   return (
     <span className={`px-2 py-1 rounded-md text-xs font-bold ${colors[section] || 'bg-gray-100 text-gray-800'}`}>
-      {section}
+      {displayLabel}
     </span>
   );
 };
@@ -86,29 +91,36 @@ const VersionBadge = ({ status }: { status: BlueprintVersionStatus }) => {
     'both': { 
       label: 'All Versions', 
       className: 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300',
-      icon: null
+      icon: null,
+      tooltip: 'This content is the same in both 2025 and 2026 Blueprints'
     },
     '2025': { 
-      label: '2025 Only', 
-      className: 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300',
-      icon: null
+      label: 'Ends Jun 30', 
+      className: 'bg-amber-100 text-amber-700 border border-amber-300 dark:bg-amber-900/50 dark:text-amber-300',
+      icon: <Calendar className="w-3 h-3" />,
+      tooltip: '2025 Blueprint only - tested through June 30, 2026'
     },
     '2026': { 
-      label: '2026 Only', 
-      className: 'bg-teal-100 text-teal-700 dark:bg-teal-900/50 dark:text-teal-300',
-      icon: <Sparkles className="w-3 h-3" />
+      label: 'Starts Jul 1', 
+      className: 'bg-teal-100 text-teal-700 border border-teal-300 dark:bg-teal-900/50 dark:text-teal-300',
+      icon: <Sparkles className="w-3 h-3" />,
+      tooltip: '2026 Blueprint only - tested starting July 1, 2026'
     },
     'differs': { 
-      label: 'Changes', 
-      className: 'bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300',
-      icon: <AlertCircle className="w-3 h-3" />
+      label: 'Content Changes', 
+      className: 'bg-orange-100 text-orange-700 border border-orange-300 dark:bg-orange-900/50 dark:text-orange-300',
+      icon: <AlertCircle className="w-3 h-3" />,
+      tooltip: 'This topic has different rules in 2025 vs 2026 Blueprint'
     },
   };
 
-  const { label, className, icon } = config[status];
+  const { label, className, icon, tooltip } = config[status];
 
   return (
-    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-medium ${className}`}>
+    <span 
+      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-medium ${className}`}
+      title={tooltip}
+    >
       {icon}
       {label}
     </span>
@@ -134,14 +146,28 @@ const ObbbaIndicator = ({ note }: { note?: string }) => {
 };
 
 const LessonMatrix: React.FC = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [sectionFilter, setSectionFilter] = useState<string>('ALL');
   const [methodFilter, setMethodFilter] = useState<string>('ALL');
   const [versionFilter, setVersionFilter] = useState<string>('ALL');
   const [showObbbaOnly, setShowObbbaOnly] = useState(false);
   const [showBlueprintInfo, setShowBlueprintInfo] = useState(true);
+  const [allLessons, setAllLessons] = useState<Lesson[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const allLessons = useMemo(() => getAllLessons(), []);
+  // Fetch lessons from Firestore
+  useEffect(() => {
+    fetchAllLessons()
+      .then(lessons => {
+        setAllLessons(lessons);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to fetch lessons:', err);
+        setIsLoading(false);
+      });
+  }, []);
   
   // Stats for info banner
   const obbbaCount = useMemo(() => getObbbaAffectedLessons().length, []);
@@ -173,16 +199,27 @@ const LessonMatrix: React.FC = () => {
     });
   }, [allLessons, search, sectionFilter, methodFilter, versionFilter, showObbbaOnly]);
 
+  if (isLoading) {
+    return (
+      <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
+        <div className="flex items-center justify-center py-12">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+          <span className="ml-3 text-slate-600 dark:text-slate-400">Loading lessons...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
           <Layout className="w-8 h-8 text-primary-600 dark:text-primary-400" />
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Course Matrix</h1>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Study Guide</h1>
         </div>
         <p className="text-slate-600 dark:text-slate-400">
-          Comprehensive index of all {allLessons.length} lessons across all CPA exam sections.
+          Browse all {allLessons.length} lessons across all CPA exam sections. Click any lesson to start learning.
         </p>
       </div>
 
@@ -246,9 +283,19 @@ const LessonMatrix: React.FC = () => {
               className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg text-sm bg-transparent dark:text-white"
             >
               <option value="ALL">All Sections</option>
-              {['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'PREP'].map(s => (
-                <option key={s} value={s}>{s}</option>
-              ))}
+              <optgroup label="Core Sections">
+                {['FAR', 'AUD', 'REG'].map(s => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </optgroup>
+              <optgroup label="Discipline Sections">
+                {['BAR', 'ISC', 'TCP'].map(s => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </optgroup>
+              <optgroup label="Study Resources">
+                <option value="PREP">Exam Strategy</option>
+              </optgroup>
             </select>
           </div>
 
@@ -326,12 +373,16 @@ const LessonMatrix: React.FC = () => {
                   const skillLevel = matrixEntry?.skillLevel;
 
                   return (
-                    <tr key={lesson.id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                    <tr 
+                      key={lesson.id} 
+                      className="hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer group"
+                      onClick={() => navigate(`/lessons/${lesson.id}`)}
+                    >
                       <td className="p-4 whitespace-nowrap">
                         <SectionBadge section={lesson.section} />
                       </td>
                       <td className="p-4">
-                        <div className="font-medium text-slate-900 dark:text-slate-100">{lesson.title}</div>
+                        <div className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{lesson.title}</div>
                         <div className="text-xs text-slate-500 mt-1 flex flex-wrap gap-1 items-center">
                           {lesson.topics.slice(0, 3).map((t, i) => (
                             <span key={i} className="inline-block bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-[10px]">

@@ -3,8 +3,7 @@
 
 import { db } from '../../config/firebase';
 import { collection, doc, writeBatch, getDocs, query, where } from 'firebase/firestore';
-import { ALL_QUESTIONS, getQuestionStats } from '../questions';
-import { ExamSection } from '../../types';
+import type { ExamSection } from '../../types';
 
 const QUESTIONS_COLLECTION = 'questions';
 const BATCH_SIZE = 500; // Firestore batch limit
@@ -19,10 +18,14 @@ interface UploadResults {
 
 /**
  * Upload all questions to Firestore
+ * Now accepts questions as a parameter for better code splitting
  * @param {Function} onProgress - Progress callback (percent, message)
  * @returns {Promise<{success: number, failed: number, errors: string[]}>}
  */
 export const uploadAllQuestions = async (onProgress: ProgressCallback = () => {}) => {
+  // Dynamically import questions to reduce bundle size
+  const { ALL_QUESTIONS } = await import('../questions');
+  
   const results: UploadResults = {
     success: 0,
     failed: 0,
@@ -233,5 +236,4 @@ export default {
   deleteAllQuestions,
   deleteSectionQuestions,
   getFirestoreQuestionCount,
-  getQuestionStats,
 };

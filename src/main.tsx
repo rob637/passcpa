@@ -8,7 +8,7 @@ import { AuthProvider } from './providers/AuthProvider';
 import { StudyProvider } from './providers/StudyProvider';
 import { initWebVitals } from './services/performance';
 import { initErrorTracking } from './services/errorTracking';
-import { initSkipLink } from './utils/accessibility';
+import { initSkipLinks } from './utils/accessibility';
 
 // Initialize performance monitoring
 initWebVitals();
@@ -18,7 +18,7 @@ initErrorTracking();
 
 // Initialize accessibility helpers after DOM is ready
 if (typeof window !== 'undefined') {
-  window.addEventListener('DOMContentLoaded', initSkipLink);
+  window.addEventListener('DOMContentLoaded', initSkipLinks);
 }
 
 // Register service worker for PWA

@@ -2,7 +2,8 @@
 // CPA Exam simulations for all sections
 
 import { TBS, TBS_TYPES, ExamSection, TBSType } from '../../types';
-import { ADDITIONAL_TBS, FAR_TBS_2, REG_TBS_2, AUD_TBS_2, BEC_TBS_2 } from './additional-tbs';
+// ADDITIONAL_TBS is exported from additional-tbs but merged into section arrays below
+import { /* ADDITIONAL_TBS, */ FAR_TBS_2, REG_TBS_2, AUD_TBS_2, BEC_TBS_2 } from './additional-tbs';
 
 // ==========================================
 // FAR - FINANCIAL ACCOUNTING TBS
@@ -1507,7 +1508,12 @@ export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2];
 export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2];
 export const BEC_TBS_ALL: TBS[] = [...BEC_TBS, ...BEC_TBS_2];
 
-export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL];
+// New sections use FAR/REG/AUD TBS for now (can be expanded later)
+export const BAR_TBS_ALL: TBS[] = [...FAR_TBS_ALL.slice(0, 3)]; // Business Analysis uses some FAR concepts
+export const ISC_TBS_ALL: TBS[] = [...AUD_TBS_ALL.slice(0, 2)]; // Info Systems uses some AUD concepts
+export const TCP_TBS_ALL: TBS[] = [...REG_TBS_ALL.slice(0, 3)]; // Tax Compliance uses REG concepts
+
+export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 
 // Helper functions
 export const getTBSBySection = (section: ExamSection) => {
@@ -1520,12 +1526,20 @@ export const getTBSBySection = (section: ExamSection) => {
       return AUD_TBS_ALL;
     case 'BEC':
       return BEC_TBS_ALL;
+    case 'BAR':
+      return BAR_TBS_ALL;
+    case 'ISC':
+      return ISC_TBS_ALL;
+    case 'TCP':
+      return TCP_TBS_ALL;
     default:
-      return [];
+      return FAR_TBS_ALL; // Default to FAR instead of empty
   }
 };
 
 export const getTBSByType = (type: TBSType) => ALL_TBS.filter((tbs) => tbs.type === type);
+
+export const getTBSById = (id: string) => ALL_TBS.find((tbs) => tbs.id === id);
 
 export const getTBSStats = () => ({
   total: ALL_TBS.length,

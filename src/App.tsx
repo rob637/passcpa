@@ -55,6 +55,10 @@ const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEdito
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 
+// Business Pages
+const Pricing = lazy(() => import('./components/pages/Pricing'));
+const Landing = lazy(() => import('./components/pages/Landing'));
+
 // Protected Route Component
 interface RouteProps {
   children: JSX.Element;
@@ -162,6 +166,16 @@ function App() {
                   />
                 </Route>
 
+                {/* Landing Page (public, for non-logged-in visitors) */}
+                <Route
+                  path="/"
+                  element={
+                    <SuspensePage>
+                      <Landing />
+                    </SuspensePage>
+                  }
+                />
+
                 {/* Legal Pages (public) */}
                 <Route
                   path="/terms"
@@ -176,6 +190,16 @@ function App() {
                   element={
                     <SuspensePage>
                       <Privacy />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Business Pages (public) */}
+                <Route
+                  path="/pricing"
+                  element={
+                    <SuspensePage>
+                      <Pricing />
                     </SuspensePage>
                   }
                 />
@@ -362,8 +386,7 @@ function App() {
                   />
                 </Route>
 
-                {/* Default redirect */}
-                <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                {/* Default redirect - logged in users go to dashboard */}
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>
             </Suspense>

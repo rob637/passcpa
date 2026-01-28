@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,11 +15,13 @@ import {
   Keyboard,
   Sparkles,
   AlertTriangle,
+  AlertCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { CPA_SECTIONS } from '../../config/examConfig';
+import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
@@ -103,14 +105,16 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                   key={mode.id}
                   onClick={() => setConfig((prev) => ({ ...prev, mode: mode.id as SessionConfig['mode'] }))}
                   className={clsx(
-                    'p-3 rounded-xl border-2 text-center transition-all',
+                    'p-3 rounded-xl border-2 text-center transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.mode === mode.id
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
                       : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
                   )}
+                  aria-pressed={config.mode === mode.id}
+                  aria-describedby={`desc-${mode.id}`}
                 >
                   <div className="font-medium text-slate-900 dark:text-slate-100">{mode.name}</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">{mode.desc}</div>
+                  <div id={`desc-${mode.id}`} className="text-xs text-slate-500 dark:text-slate-400">{mode.desc}</div>
                 </button>
               ))}
             </div>
@@ -127,11 +131,13 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                   key={count}
                   onClick={() => setConfig((prev) => ({ ...prev, count }))}
                   className={clsx(
-                    'flex-1 py-2 rounded-lg border-2 font-medium transition-all',
+                    'flex-1 py-2 rounded-lg border-2 font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.count === count
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
                       : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-300'
                   )}
+                  aria-label={`${count} questions`}
+                  aria-pressed={config.count === count}
                 >
                   {count}
                 </button>
@@ -155,11 +161,12 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                   key={diff.id}
                   onClick={() => setConfig((prev) => ({ ...prev, difficulty: diff.id as Difficulty | 'all' }))}
                   className={clsx(
-                    'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all',
+                    'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.difficulty === diff.id
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
                       : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-300'
                   )}
+                  aria-pressed={config.difficulty === diff.id}
                 >
                   {diff.name}
                 </button>
@@ -193,6 +200,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
 
 const Practice: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
 
@@ -304,6 +312,11 @@ const Practice: React.FC = () => {
     try {
       let fetchedQuestions: Question[];
 
+      // Determine Blueprint Version based on user's exam date
+      const examDate = userProfile?.examDate ? new Date(userProfile.examDate) : new Date();
+      const blueprintVersion = getBlueprintForExamDate(examDate);
+      const is2026 = blueprintVersion === '2026';
+
       if (config.mode === 'weak') {
         // Get questions from weak areas
         fetchedQuestions = await getWeakAreaQuestions(
@@ -317,6 +330,7 @@ const Practice: React.FC = () => {
           section: (userProfile?.examSection as ExamSection) || 'REG',
           difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
           count: config.count,
+          hr1Only: is2026, // Enforce 2026 Blueprint rules (e.g. OBBBA/H.R. 1 Tax provisions)
           mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
         });
       }
@@ -336,6 +350,23 @@ const Practice: React.FC = () => {
       setLoading(false);
     }
   };
+
+  // Auto-start weak areas session if mode=weak in URL
+  useEffect(() => {
+    const mode = searchParams.get('mode');
+    if (mode === 'weak' && userProfile && !inSession && !loading) {
+      const section = (userProfile.examSection || 'REG') as ExamSection;
+      startSession({
+        section,
+        mode: 'weak',
+        count: 20,
+        topics: [],
+        difficulty: 'all',
+      });
+    }
+    // Only run once on mount when mode=weak
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userProfile]);
 
   // Handle answer selection
   const handleSelectAnswer = useCallback((answerIndex: number) => {
@@ -376,7 +407,8 @@ const Practice: React.FC = () => {
         currentQuestion.topic,
         currentQuestion.subtopic,
         isCorrect,
-        currentQuestion.difficulty
+        currentQuestion.difficulty,
+        elapsed // Pass time spent in seconds
       );
     }
   }, [selectedAnswer, isAnswered, currentQuestion, elapsed, recordMCQAnswer]);
@@ -494,6 +526,41 @@ const Practice: React.FC = () => {
   }
 
   // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
+      </div>
+    );
+  }
+
+  // No questions available for selected criteria
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+            <AlertCircle className="w-8 h-8 text-slate-400" />
+          </div>
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+            No Questions Available
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-6">
+            There are no practice questions available for your selected section and criteria. 
+            Try adjusting your filters or selecting a different exam section.
+          </p>
+          <button
+            onClick={endSession}
+            className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Back to Setup
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Shouldn't happen, but handle edge case
   if (!currentQuestion) {
     return (
       <div className="min-h-screen flex items-center justify-center">

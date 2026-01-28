@@ -61,13 +61,15 @@ const Toast = ({ id, message, type = 'info', onDismiss }: ToastProps) => {
       )}
       role="alert"
     >
-      <Icon className="w-5 h-5 flex-shrink-0" />
+      <Icon className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
       <p className="text-sm font-medium flex-1">{message}</p>
       <button
+        type="button"
         onClick={() => onDismiss(id)}
         className="p-1 rounded-full hover:bg-white/20 transition-colors"
+        aria-label="Dismiss notification"
       >
-        <X className="w-4 h-4" />
+        <X className="w-4 h-4" aria-hidden="true" />
       </button>
     </div>
   );

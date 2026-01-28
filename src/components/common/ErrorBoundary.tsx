@@ -66,7 +66,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   handleReportBug = () => {
     const { error, errorInfo } = this.state;
-    const subject = encodeURIComponent('Bug Report: PassCPA App Error');
+    const subject = encodeURIComponent('Bug Report: VoraPrep App Error');
     const body = encodeURIComponent(`
 Error: ${error?.toString()}
 
@@ -81,7 +81,7 @@ Steps to reproduce:
 2. 
 3. 
     `);
-    window.open(`mailto:support@passcpa.com?subject=${subject}&body=${body}`);
+    window.open(`mailto:support@voraprep.com?subject=${subject}&body=${body}`);
   };
 
   render() {

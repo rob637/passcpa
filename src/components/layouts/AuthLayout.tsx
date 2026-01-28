@@ -9,7 +9,7 @@ const AuthLayout = () => {
           <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-soft-lg">
             <span className="text-white font-bold text-xl">Pass</span>
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">PassCPA</h1>
+          <h1 className="text-2xl font-bold text-slate-900">VoraPrep</h1>
           <p className="text-slate-500 mt-1">Pass the CPA Exam with Confidence</p>
         </div>
 
@@ -20,7 +20,7 @@ const AuthLayout = () => {
 
         {/* Footer */}
         <p className="text-center text-slate-400 text-sm mt-6">
-          © {new Date().getFullYear()} PassCPA. All rights reserved.
+          © {new Date().getFullYear()} VoraPrep. All rights reserved.
         </p>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import {
   BookOpen,
   HelpCircle,
@@ -12,6 +13,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { CPA_SECTIONS } from '../../config/examConfig';
+import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
 
 interface StudyMode {
@@ -28,9 +30,71 @@ interface StudyMode {
 const Study = () => {
   const { userProfile } = useAuth();
   const { todayLog, dailyProgress, dailyGoalMet } = useStudy();
+  const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
   const currentSection = userProfile?.examSection || 'REG';
   const sectionInfo = CPA_SECTIONS[currentSection as keyof typeof CPA_SECTIONS];
+
+  // Build recent items from today's activities (async)
+  useEffect(() => {
+    const fetchRecentItems = async () => {
+      if (!todayLog?.activities || !Array.isArray(todayLog.activities)) {
+        setRecentItems([]);
+        return;
+      }
+
+      // Get unique items (dedupe by lessonId or topic), most recent first
+      const seen = new Set<string>();
+      const items: { type: string; title: string; subtitle: string; link: string }[] = [];
+
+      // Sort by timestamp descending (most recent first)
+      const sortedActivities = [...todayLog.activities].sort((a, b) => 
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      );
+
+      for (const activity of sortedActivities) {
+        if (items.length >= 5) break; // Show max 5 recent items
+
+        if (activity.type === 'lesson' && activity.lessonId) {
+          if (seen.has(activity.lessonId)) continue;
+          seen.add(activity.lessonId);
+
+          const lesson = await fetchLessonById(activity.lessonId);
+          items.push({
+            type: 'lesson',
+            title: lesson?.title || activity.lessonId,
+            subtitle: 'Completed today',
+            link: `/lessons/${activity.lessonId}`,
+          });
+        } else if (activity.type === 'mcq' && activity.topic) {
+          const topicKey = `mcq-${activity.topic}`;
+          if (seen.has(topicKey)) continue;
+          seen.add(topicKey);
+
+          items.push({
+            type: 'practice',
+            title: activity.topic,
+            subtitle: activity.isCorrect ? 'Answered correctly' : 'Needs review',
+            link: '/practice',
+          });
+        } else if (activity.type === 'simulation' && activity.id) {
+          if (seen.has(activity.id)) continue;
+          seen.add(activity.id);
+
+          items.push({
+            type: 'simulation',
+            title: `TBS: ${activity.id}`,
+            subtitle: `Score: ${activity.score}%`,
+            link: `/tbs/${activity.id}`,
+          });
+        }
+      }
+
+      setRecentItems(items);
+    };
+
+    fetchRecentItems();
+  }, [todayLog?.activities]);
 
   // Study modes - expanded with new training types
   const studyModes: StudyMode[] = [
@@ -254,46 +318,45 @@ const Study = () => {
         </div>
       </div>
 
-      {/* Recent Activity - TODO: Types for recent items */}
+      {/* Recent Activity */}
       <div className="mt-8">
         <h2 className="font-semibold text-slate-900 mb-4">Continue Where You Left Off</h2>
 
         <div className="card">
           <div className="divide-y divide-slate-100">
-            {/* Mock recent items */}
-            {[
-              { type: 'lesson', title: 'Capital Gains & Losses', progress: 65, score: undefined },
-              { type: 'practice', title: 'Individual Taxation Quiz', score: '8/10', progress: undefined },
-              { type: 'lesson', title: 'Property Transactions', progress: 0, score: undefined },
-            ].map((item, index) => (
-              <Link
-                key={index}
-                to={item.type === 'lesson' ? '/lessons' : '/practice'}
-                className="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
-              >
-                <div
-                  className={clsx(
-                    'w-10 h-10 rounded-xl flex items-center justify-center',
-                    item.type === 'lesson' ? 'bg-primary-100' : 'bg-success-100'
-                  )}
+            {recentItems.length === 0 ? (
+              <div className="p-8 text-center text-slate-500">
+                <BookOpen className="w-12 h-12 mx-auto mb-3 text-slate-300" />
+                <p>No recent activity yet.</p>
+                <p className="text-sm">Start a lesson or practice session to track your progress!</p>
+              </div>
+            ) : (
+              recentItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.link}
+                  className="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
                 >
-                  {item.type === 'lesson' ? (
-                    <BookOpen className="w-5 h-5 text-primary-600" />
-                  ) : (
-                    <HelpCircle className="w-5 h-5 text-success-600" />
-                  )}
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-medium text-slate-900">{item.title}</h4>
-                  <div className="text-sm text-slate-500">
-                    {item.progress !== undefined
-                      ? `${item.progress}% complete`
-                      : `Score: ${item.score}`}
+                  <div
+                    className={clsx(
+                      'w-10 h-10 rounded-xl flex items-center justify-center',
+                      item.type === 'lesson' ? 'bg-primary-100' : 'bg-success-100'
+                    )}
+                  >
+                    {item.type === 'lesson' ? (
+                      <BookOpen className="w-5 h-5 text-primary-600" />
+                    ) : (
+                      <HelpCircle className="w-5 h-5 text-success-600" />
+                    )}
                   </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-slate-300" />
-              </Link>
-            ))}
+                  <div className="flex-1">
+                    <h4 className="font-medium text-slate-900">{item.title}</h4>
+                    <div className="text-sm text-slate-500">{item.subtitle}</div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-300" />
+                </Link>
+              ))
+            )}
           </div>
         </div>
       </div>

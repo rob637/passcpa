@@ -3,7 +3,7 @@
  * Replaces static data imports from data/written-communication
  */
 
-import { collection, query, where, getDocs, doc, getDoc, orderBy } from 'firebase/firestore';
+import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { WCTask, WCRubric, ExamSection } from '../types';
 
@@ -187,4 +187,84 @@ export async function searchWCTasks(searchTerm: string): Promise<WCTask[]> {
  */
 export function clearWCCache(): void {
   wcCache.clear();
+}
+
+// ============================================================================
+// ADMIN CRUD Operations
+// ============================================================================
+
+/**
+ * Add a new WC task to Firestore
+ */
+export async function addWCTask(task: Omit<WCTask, 'id'>): Promise<string> {
+  try {
+    const wcRef = collection(db, 'written-communication');
+    const docRef = await addDoc(wcRef, {
+      ...task,
+      type: 'written_communication',
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache
+    clearWCCache();
+    
+    return docRef.id;
+  } catch (error) {
+    console.error('Error adding WC task:', error);
+    throw error;
+  }
+}
+
+/**
+ * Update an existing WC task
+ */
+export async function updateWCTask(id: string, data: Partial<WCTask>): Promise<void> {
+  try {
+    const wcRef = doc(db, 'written-communication', id);
+    await updateDoc(wcRef, {
+      ...data,
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache
+    clearWCCache();
+  } catch (error) {
+    console.error('Error updating WC task:', error);
+    throw error;
+  }
+}
+
+/**
+ * Delete a WC task
+ */
+export async function deleteWCTask(id: string): Promise<void> {
+  try {
+    const wcRef = doc(db, 'written-communication', id);
+    await deleteDoc(wcRef);
+    
+    // Clear cache
+    clearWCCache();
+  } catch (error) {
+    console.error('Error deleting WC task:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get WC stats by section
+ */
+export async function getWCStats(): Promise<{ section: string; count: number }[]> {
+  const tasks = await fetchAllWCTasks();
+  const stats = new Map<string, number>();
+  
+  for (const task of tasks) {
+    const count = stats.get(task.section) || 0;
+    stats.set(task.section, count + 1);
+  }
+  
+  return Array.from(stats.entries()).map(([section, count]) => ({
+    section,
+    count
+  }));
 }

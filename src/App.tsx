@@ -51,6 +51,9 @@ const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
+const LessonEditor = lazy(() => import('./components/pages/admin/LessonEditor'));
+const WCEditor = lazy(() => import('./components/pages/admin/WCEditor'));
+const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
 
 // Legal Pages
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
@@ -257,6 +260,36 @@ function App() {
                     <AdminRoute>
                       <SuspensePage>
                         <QuestionEditor />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/lessons"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <LessonEditor />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/wc"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <WCEditor />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/tbs"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <TBSEditor />
                       </SuspensePage>
                     </AdminRoute>
                   }

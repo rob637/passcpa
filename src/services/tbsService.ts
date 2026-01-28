@@ -3,7 +3,7 @@
  * Replaces static data imports from data/tbs
  */
 
-import { collection, query, where, getDocs, doc, getDoc, orderBy } from 'firebase/firestore';
+import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { TBS, ExamSection } from '../types';
 
@@ -164,4 +164,65 @@ export function clearTBSCache(): void {
  */
 export async function preloadTBS(): Promise<void> {
   await fetchAllTBS();
+}
+
+// ============================================================================
+// ADMIN CRUD Operations
+// ============================================================================
+
+/**
+ * Add a new TBS to Firestore
+ */
+export async function addTBS(tbs: Omit<TBS, 'id'>): Promise<string> {
+  try {
+    const tbsRef = collection(db, 'tbs');
+    const docRef = await addDoc(tbsRef, {
+      ...tbs,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache
+    clearTBSCache();
+    
+    return docRef.id;
+  } catch (error) {
+    console.error('Error adding TBS:', error);
+    throw error;
+  }
+}
+
+/**
+ * Update an existing TBS
+ */
+export async function updateTBS(id: string, data: Partial<TBS>): Promise<void> {
+  try {
+    const tbsRef = doc(db, 'tbs', id);
+    await updateDoc(tbsRef, {
+      ...data,
+      updatedAt: serverTimestamp(),
+    });
+    
+    // Clear cache
+    clearTBSCache();
+  } catch (error) {
+    console.error('Error updating TBS:', error);
+    throw error;
+  }
+}
+
+/**
+ * Delete a TBS
+ */
+export async function deleteTBS(id: string): Promise<void> {
+  try {
+    const tbsRef = doc(db, 'tbs', id);
+    await deleteDoc(tbsRef);
+    
+    // Clear cache
+    clearTBSCache();
+  } catch (error) {
+    console.error('Error deleting TBS:', error);
+    throw error;
+  }
 }

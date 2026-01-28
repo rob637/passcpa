@@ -1,6 +1,4 @@
 # 💡 Idea Backlog
-Restructure Vora based on Phase _1_Multi_course_expansion
-
 Setup Android
 
 Setup Ios
@@ -47,7 +45,7 @@ Dev and Staging environments
 
 Validate email settings
 
-Should we have editors for all the content?
+Multiple environments
 
 Strips setup - get it done now?
 

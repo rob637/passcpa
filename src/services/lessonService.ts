@@ -1,24 +1,29 @@
 /**
  * Lesson Service
  * Fetches lessons from Firestore database
+ * Supports multi-course architecture with backwards compatibility
  */
 
 import { collection, doc, getDoc, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { Lesson } from '../types';
+import { Lesson, CourseId } from '../types';
+import { DEFAULT_COURSE_ID } from '../types/course';
 
-// Cache for lessons (in-memory)
-let lessonsCache: Lesson[] | null = null;
-let cacheTimestamp: number = 0;
+// Cache for lessons (in-memory) - keyed by courseId
+const lessonsCache: Map<CourseId, Lesson[]> = new Map();
+const cacheTimestamp: Map<CourseId, number> = new Map();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 /**
  * Fetch all lessons from Firestore
+ * @param courseId - Optional course filter (defaults to 'cpa' for backwards compatibility)
  */
-export async function fetchAllLessons(): Promise<Lesson[]> {
+export async function fetchAllLessons(courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
   // Return cache if valid
-  if (lessonsCache && Date.now() - cacheTimestamp < CACHE_DURATION) {
-    return lessonsCache;
+  const cached = lessonsCache.get(courseId);
+  const timestamp = cacheTimestamp.get(courseId) || 0;
+  if (cached && Date.now() - timestamp < CACHE_DURATION) {
+    return cached;
   }
 
   try {
@@ -27,7 +32,12 @@ export async function fetchAllLessons(): Promise<Lesson[]> {
     
     const lessons: Lesson[] = [];
     snapshot.forEach((doc) => {
-      lessons.push({ id: doc.id, ...doc.data() } as Lesson);
+      const data = doc.data() as Lesson;
+      // Filter by courseId - include lessons that match or have no courseId (legacy data)
+      const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
+      if (lessonCourseId === courseId) {
+        lessons.push({ id: doc.id, ...data });
+      }
     });
 
     // Sort by section and order
@@ -39,20 +49,22 @@ export async function fetchAllLessons(): Promise<Lesson[]> {
     });
 
     // Update cache
-    lessonsCache = lessons;
-    cacheTimestamp = Date.now();
+    lessonsCache.set(courseId, lessons);
+    cacheTimestamp.set(courseId, Date.now());
 
     return lessons;
   } catch (error) {
     console.error('Error fetching lessons:', error);
-    return lessonsCache || []; // Return stale cache if available
+    return lessonsCache.get(courseId) || []; // Return stale cache if available
   }
 }
 
 /**
  * Fetch lessons by section
+ * @param section - Exam section (e.g., 'FAR', 'AUD')
+ * @param courseId - Optional course filter (defaults to 'cpa')
  */
-export async function fetchLessonsBySection(section: string): Promise<Lesson[]> {
+export async function fetchLessonsBySection(section: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
   try {
     const lessonsRef = collection(db, 'lessons');
     const q = query(
@@ -65,25 +77,32 @@ export async function fetchLessonsBySection(section: string): Promise<Lesson[]> 
     const lessons: Lesson[] = [];
     
     snapshot.forEach((doc) => {
-      lessons.push({ id: doc.id, ...doc.data() } as Lesson);
+      const data = doc.data() as Lesson;
+      const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
+      if (lessonCourseId === courseId) {
+        lessons.push({ id: doc.id, ...data });
+      }
     });
 
     return lessons;
   } catch (error) {
     console.error(`Error fetching lessons for section ${section}:`, error);
     // Fallback to filtering all lessons
-    const allLessons = await fetchAllLessons();
+    const allLessons = await fetchAllLessons(courseId);
     return allLessons.filter(l => l.section.toUpperCase() === section.toUpperCase());
   }
 }
 
 /**
  * Fetch a single lesson by ID
+ * @param lessonId - The lesson ID
+ * @param courseId - Optional course filter for cache lookup (defaults to 'cpa')
  */
-export async function fetchLessonById(lessonId: string): Promise<Lesson | null> {
+export async function fetchLessonById(lessonId: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson | null> {
   // Check cache first
-  if (lessonsCache) {
-    const cached = lessonsCache.find(l => l.id === lessonId);
+  const courseCache = lessonsCache.get(courseId);
+  if (courseCache) {
+    const cached = courseCache.find(l => l.id === lessonId);
     if (cached) return cached;
   }
 
@@ -103,12 +122,13 @@ export async function fetchLessonById(lessonId: string): Promise<Lesson | null> 
 
 /**
  * Get lesson stats from cached data
+ * @param courseId - Optional course filter (defaults to 'cpa')
  */
-export async function getLessonStats(): Promise<{
+export async function getLessonStats(courseId: CourseId = DEFAULT_COURSE_ID): Promise<{
   total: number;
   bySection: Record<string, number>;
 }> {
-  const lessons = await fetchAllLessons();
+  const lessons = await fetchAllLessons(courseId);
   
   const bySection: Record<string, number> = {};
   lessons.forEach(lesson => {
@@ -124,9 +144,11 @@ export async function getLessonStats(): Promise<{
 
 /**
  * Search lessons by title or topics
+ * @param searchTerm - Search query
+ * @param courseId - Optional course filter (defaults to 'cpa')
  */
-export async function searchLessons(searchTerm: string): Promise<Lesson[]> {
-  const lessons = await fetchAllLessons();
+export async function searchLessons(searchTerm: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
+  const lessons = await fetchAllLessons(courseId);
   const term = searchTerm.toLowerCase();
   
   return lessons.filter(lesson => 
@@ -137,8 +159,10 @@ export async function searchLessons(searchTerm: string): Promise<Lesson[]> {
 
 /**
  * Get lessons by topic
+ * @param topic - Topic to filter by
+ * @param courseId - Optional course filter (defaults to 'cpa')
  */
-export async function fetchLessonsByTopic(topic: string): Promise<Lesson[]> {
+export async function fetchLessonsByTopic(topic: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
   try {
     const lessonsRef = collection(db, 'lessons');
     const q = query(
@@ -151,28 +175,39 @@ export async function fetchLessonsByTopic(topic: string): Promise<Lesson[]> {
     const lessons: Lesson[] = [];
     
     snapshot.forEach((doc) => {
-      lessons.push({ id: doc.id, ...doc.data() } as Lesson);
+      const data = doc.data() as Lesson;
+      const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
+      if (lessonCourseId === courseId) {
+        lessons.push({ id: doc.id, ...data });
+      }
     });
 
     return lessons;
   } catch (error) {
     console.error(`Error fetching lessons for topic ${topic}:`, error);
-    const allLessons = await fetchAllLessons();
+    const allLessons = await fetchAllLessons(courseId);
     return allLessons.filter(l => l.topics?.includes(topic));
   }
 }
 
 /**
  * Clear the lessons cache
+ * @param courseId - Optional course to clear cache for, or all if not provided
  */
-export function clearLessonsCache(): void {
-  lessonsCache = null;
-  cacheTimestamp = 0;
+export function clearLessonsCache(courseId?: CourseId): void {
+  if (courseId) {
+    lessonsCache.delete(courseId);
+    cacheTimestamp.delete(courseId);
+  } else {
+    lessonsCache.clear();
+    cacheTimestamp.clear();
+  }
 }
 
 /**
  * Preload lessons cache
+ * @param courseId - Optional course to preload (defaults to 'cpa')
  */
-export async function preloadLessons(): Promise<void> {
-  await fetchAllLessons();
+export async function preloadLessons(courseId: CourseId = DEFAULT_COURSE_ID): Promise<void> {
+  await fetchAllLessons(courseId);
 }

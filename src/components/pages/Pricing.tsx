@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check, Star, Shield, Sparkles, Gift, LucideIcon } from 'lucide-react';
 import { SUBSCRIPTION_PLANS, SubscriptionTier, SubscriptionPlan, useSubscription, IS_BETA_PERIOD } from '../../services/subscription';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
@@ -79,7 +80,42 @@ const Pricing = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-12 px-4">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+        <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
+          <Link to="/" className="flex items-center gap-3">
+            <img 
+              src="/logo.svg" 
+              alt="VoraPrep" 
+              className="h-10 dark:hidden" 
+            />
+            <img 
+              src="/logo-white.svg" 
+              alt="VoraPrep" 
+              className="h-10 hidden dark:block" 
+            />
+          </Link>
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/#features" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</Link>
+            <Link to="/#comparison" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Compare</Link>
+            <span className="text-blue-600 dark:text-blue-400 font-medium">Pricing</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link to="/login" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
+              Sign In
+            </Link>
+            <Link 
+              to="/register" 
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Start Free
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <div className="pt-24 pb-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -374,6 +410,7 @@ const Pricing = () => {
             Contact Support →
           </a>
         </div>
+      </div>
       </div>
     </div>
   );

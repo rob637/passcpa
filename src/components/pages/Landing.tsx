@@ -202,7 +202,7 @@ const Landing = () => {
             </Link>
             <Link 
               to="/register" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               Start Free
             </Link>
@@ -236,7 +236,7 @@ const Landing = () => {
               Pass Your CPA Exam
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
               Without Breaking the Bank
             </span>
           </h1>
@@ -252,14 +252,14 @@ const Landing = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link 
               to="/register" 
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
             >
               Start Studying Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a 
               href="#comparison" 
-              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-2xl text-lg font-bold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center justify-center gap-2"
+              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-2xl text-lg font-bold hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Play className="w-5 h-5" />
               See How We Compare
@@ -292,7 +292,7 @@ const Landing = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-slate-600 dark:text-slate-400 font-medium">{stat.label}</div>
@@ -309,7 +309,7 @@ const Landing = () => {
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {['SM', 'MT', 'JL', 'AK'].map((initials, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold border-2 border-white dark:border-slate-900">
+                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white text-xs font-bold border-2 border-white dark:border-slate-900">
                     {initials}
                   </div>
                 ))}
@@ -329,7 +329,7 @@ const Landing = () => {
               <span className="text-slate-600 dark:text-slate-400 text-sm">92% pass rate</span>
             </div>
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-500" />
+              <Shield className="w-5 h-5 text-blue-600" />
               <span className="text-slate-600 dark:text-slate-400 text-sm">Pass guarantee</span>
             </div>
           </div>
@@ -511,7 +511,7 @@ const Landing = () => {
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -529,7 +529,7 @@ const Landing = () => {
       <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Layers className="w-4 h-4" />
               Complete Coverage
             </div>
@@ -543,12 +543,12 @@ const Landing = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { code: 'FAR', name: 'Financial Accounting & Reporting', questions: 463, type: 'Core', color: 'from-blue-500 to-cyan-500' },
-              { code: 'AUD', name: 'Auditing & Attestation', questions: 425, type: 'Core', color: 'from-purple-500 to-pink-500' },
+              { code: 'FAR', name: 'Financial Accounting & Reporting', questions: 463, type: 'Core', color: 'from-blue-600 to-blue-700' },
+              { code: 'AUD', name: 'Auditing & Attestation', questions: 425, type: 'Core', color: 'from-sky-500 to-sky-600' },
               { code: 'REG', name: 'Regulation', questions: 460, type: 'Core', color: 'from-emerald-500 to-teal-500' },
               { code: 'BAR', name: 'Business Analysis & Reporting', questions: 393, type: 'Discipline', color: 'from-orange-500 to-amber-500' },
               { code: 'ISC', name: 'Information Systems & Controls', questions: 388, type: 'Discipline', color: 'from-red-500 to-rose-500' },
-              { code: 'TCP', name: 'Tax Compliance & Planning', questions: 379, type: 'Discipline', color: 'from-indigo-500 to-violet-500' },
+              { code: 'TCP', name: 'Tax Compliance & Planning', questions: 379, type: 'Discipline', color: 'from-cyan-500 to-teal-500' },
             ].map((section) => (
               <div 
                 key={section.code}
@@ -573,7 +573,7 @@ const Landing = () => {
       </section>
 
       {/* Email Capture / CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
+      <section className="py-24 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoMnY0aC0yem0tNiA2di00aDJ2NGgtMnptMC02di00aDJ2NGgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
@@ -656,7 +656,7 @@ const Landing = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-2xl font-bold text-white">VoraPrep</span>

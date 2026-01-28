@@ -378,7 +378,7 @@ const AdminCMS: React.FC = () => {
         {activeTab === 'questions' && (
           <div className="space-y-6">
             {/* Quick Actions */}
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 shadow-lg text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 shadow-lg text-white">
               <h3 className="text-lg font-semibold mb-3">Quick Actions</h3>
               <div className="flex flex-wrap gap-3">
                 <Link

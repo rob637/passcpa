@@ -219,7 +219,7 @@ const Lessons: React.FC = () => {
           <div className="flex items-center gap-3">
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
-              style={{ backgroundColor: sectionInfo?.color || '#3B82F6' }}
+              style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
             >
               {sectionInfo?.shortName || currentSection}
             </div>

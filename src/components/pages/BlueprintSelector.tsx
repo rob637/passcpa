@@ -67,7 +67,7 @@ export const ExamDateSelector: React.FC<ExamDateSelectorProps> = ({ onDateSelect
             onChange={handleDateChange}
             min={minDate}
             max={maxDate}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"
           />
         </div>
 
@@ -142,7 +142,7 @@ export const BlueprintComparison: React.FC<BlueprintComparisonProps> = ({
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-      <div className="px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div className="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <h2 className="text-xl font-bold">📋 2025 vs 2026 Blueprint Comparison</h2>
         <p className="text-sm opacity-90 mt-1">
           Key differences you need to know based on your exam date
@@ -462,7 +462,7 @@ export const BlueprintSelectorPage: React.FC = () => {
           <select
             value={selectedSection}
             onChange={(e) => setSelectedSection(e.target.value)}
-            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"
           >
             <option value="">All Sections</option>
             <option value="REG">REG - Taxation and Regulation</option>

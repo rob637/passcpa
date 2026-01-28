@@ -57,8 +57,6 @@ Upgrade to SendGrid?
 
 Move all my URLS to CloudFlare (Sagecg and CBR-labs)
 
-Resolve this memory issue
-
 Install Cursor - can be used in conjunction with codespaces
 
 Why are we mocking so much in our testing scrips - is that normal?  will it impact our app?

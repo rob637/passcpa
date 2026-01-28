@@ -1,5 +1,5 @@
-import { lazy, Suspense, ReactNode } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { lazy, Suspense, ReactNode, useEffect } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 
 // Layouts (always loaded - part of shell)
@@ -58,6 +58,17 @@ const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 // Business Pages
 const Pricing = lazy(() => import('./components/pages/Pricing'));
 const Landing = lazy(() => import('./components/pages/Landing'));
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+};
 
 // Protected Route Component
 interface RouteProps {
@@ -130,6 +141,7 @@ function App() {
       <ThemeProvider>
         <TourProvider>
           <ToastProvider>
+            <ScrollToTop />
             <Suspense fallback={<FullPageLoader />}>
               <Routes>
                 {/* Public Auth Routes */}

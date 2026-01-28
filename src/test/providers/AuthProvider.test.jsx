@@ -21,8 +21,10 @@ vi.mock('firebase/auth', () => ({
   createUserWithEmailAndPassword: (...args) => mockCreateUserWithEmailAndPassword(...args),
   signOut: (...args) => mockSignOut(...args),
   sendPasswordResetEmail: (...args) => mockSendPasswordResetEmail(...args),
-  GoogleAuthProvider: vi.fn(),
-  signInWithPopup: vi.fn(),
+  GoogleAuthProvider: vi.fn(() => ({
+    setCustomParameters: vi.fn(),
+  })),
+  signInWithPopup: vi.fn().mockRejectedValue(new Error('Popup blocked or cancelled')),
   updateProfile: (...args) => mockUpdateProfile(...args),
 }));
 
@@ -488,7 +490,7 @@ describe('AuthProvider', () => {
       }).rejects.toThrow('No user logged in');
     });
 
-    it('signInWithGoogle throws not configured error', async () => {
+    it('signInWithGoogle throws error on popup failure', async () => {
       let contextValues;
       const TestConsumer = () => {
         contextValues = useAuth();
@@ -507,7 +509,7 @@ describe('AuthProvider', () => {
         await act(async () => {
           await contextValues.signInWithGoogle();
         });
-      }).rejects.toThrow('Google sign-in is not yet configured');
+      }).rejects.toThrow('Popup blocked or cancelled');
     });
   });
 

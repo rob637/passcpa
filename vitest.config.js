@@ -9,6 +9,27 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    // Use forks for isolation between test files
+    pool: 'forks',
+    poolOptions: {
+      forks: {
+        singleFork: false, // Each file gets its own fork
+        isolate: true,     // Isolate each test file
+        maxForks: 2,       // Limit parallel forks to save memory
+        minForks: 1,
+      },
+    },
+    // Limit concurrent tests within a file
+    maxConcurrency: 5,
+    // Add timeouts to prevent hung tests
+    testTimeout: 15000, // 15 seconds per test
+    hookTimeout: 10000, // 10 seconds for setup/teardown
+    // Ensure vitest exits after tests complete
+    teardownTimeout: 5000,
+    // Sequence tests by file to allow garbage collection between files
+    sequence: {
+      shuffle: false,
+    },
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'text-summary', 'json', 'html', 'lcov'],

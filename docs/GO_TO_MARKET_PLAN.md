@@ -38,11 +38,11 @@
    - [ ] Replace placeholder testimonials with real beta user quotes
    - [ ] Add 3-5 genuine testimonials before paid launch
 
-3. **Google Sign-In** ✅ IMPLEMENTED (Jan 28, 2026)
+3. **Google Sign-In** ✅ COMPLETE (Jan 28, 2026)
    - [x] GoogleAuthProvider added to AuthProvider
    - [x] Creates Firestore profile for new Google users
-   - [ ] Enable Google provider in Firebase Console
-   - [ ] Add voraprep.com to authorized domains
+   - [x] Enable Google provider in Firebase Console ✅
+   - [x] Add voraprep.com to authorized domains ✅
 
 4. **Empty States & UX Polish**
    - [ ] Improve dashboard empty state for new users
@@ -193,7 +193,7 @@
 - ~~Email report sending (SendGrid config needed)~~ ✅ Switched to Gmail/Nodemailer (free, no third-party)
 - ~~OG image for social sharing (1200x630px)~~ ✅ Created Jan 28, 2026
 - [ ] Replace placeholder testimonials with real beta user quotes
-- [ ] Enable Google Sign-In in Firebase Console (Authentication → Sign-in method)
+- [x] Enable Google Sign-In in Firebase Console ✅ (Authentication → Sign-in method)
 
 ### 🎯 QUICK WINS (Can Do Today)
 1. ~~**Get Gemini API Key**~~ ✅ Already in `.env`
@@ -355,8 +355,8 @@
   - [ ] Blueprint update notifications - Future enhancement
   - [x] Notification preferences UI - Settings page working
   
-- [ ] **Remaining Configuration**
-  - [ ] Get FCM VAPID key from Firebase Console and add to `.env`
+- [x] **Remaining Configuration** ✅ COMPLETE
+  - [x] Get FCM VAPID key from Firebase Console and add to `.env` ✅
   - [x] ~~Set up SendGrid account~~ ✅ Switched to Gmail/Nodemailer (no third-party account needed)
   - [x] ~~Set Gmail App Password~~ ✅ Configured via `firebase functions:secrets:set`
 

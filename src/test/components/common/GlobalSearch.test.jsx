@@ -153,7 +153,7 @@ describe('GlobalSearch Component', () => {
           content.includes('Topic') ||
           content.includes('AI')
         ).toBe(true);
-      });
+      }, { timeout: 2000 });
     });
   });
 

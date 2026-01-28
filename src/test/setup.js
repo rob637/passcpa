@@ -11,7 +11,15 @@ vi.mock('../config/firebase', () => ({
     sendPasswordResetEmail: vi.fn(),
   },
   db: {},
+  storage: {},
   analytics: null,
+}));
+
+// Mock Firebase Storage
+vi.mock('firebase/storage', () => ({
+  ref: vi.fn(),
+  uploadBytes: vi.fn().mockResolvedValue({}),
+  getDownloadURL: vi.fn().mockResolvedValue('https://example.com/photo.jpg'),
 }));
 
 // Mock Google Auth Provider
@@ -137,5 +145,10 @@ Element.prototype.scrollIntoView = vi.fn();
 // Mock scrollTo (not available in jsdom)
 window.scrollTo = vi.fn();
 
+// Note: Service mocks (offlineCache, pushNotifications, questionService) 
+// are NOT globally mocked here because service test files need the actual implementations.
+// Component tests that use these services should mock them locally in their test files.
+
 // Suppress console errors in tests (optional)
+// vi.spyOn(console, 'error').mockImplementation(() => {});// Suppress console errors in tests (optional)
 // vi.spyOn(console, 'error').mockImplementation(() => {});

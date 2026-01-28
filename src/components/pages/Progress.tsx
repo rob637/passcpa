@@ -10,6 +10,8 @@ import {
   HelpCircle,
   BarChart3,
   Calendar,
+  Sparkles,
+  Play,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -368,19 +370,87 @@ const Progress: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 p-6 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600" />
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
+        {/* Header skeleton */}
+        <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded-xl w-48 mb-2 animate-pulse" />
+            <div className="h-5 bg-slate-100 dark:bg-slate-600 rounded-lg w-64 animate-pulse" />
+          </div>
+        </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+          {/* Cards skeleton */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="bg-white dark:bg-slate-800 rounded-xl p-6 animate-pulse">
+                <div className="h-10 w-10 bg-slate-200 dark:bg-slate-700 rounded-xl mb-4" />
+                <div className="h-8 bg-slate-200 dark:bg-slate-700 rounded-lg w-20 mb-2" />
+                <div className="h-4 bg-slate-100 dark:bg-slate-600 rounded w-24" />
+              </div>
+            ))}
+          </div>
+          {/* Chart skeleton */}
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-6 animate-pulse">
+            <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded-lg w-40 mb-4" />
+            <div className="h-48 bg-slate-100 dark:bg-slate-600 rounded-xl" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Empty state for new users with no progress data
+  const hasAnyProgress = stats.totalQuestions > 0 || lessonsCompleted > 0;
+  
+  if (!hasAnyProgress) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
+        <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
+            <p className="text-slate-600 dark:text-slate-400">Track your journey to CPA success</p>
+          </div>
+        </div>
+        
+        <div className="max-w-lg mx-auto px-4 py-16 text-center">
+          <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Sparkles className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+            Start Your CPA Journey
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+            Complete your first practice session or lesson to see your progress here. 
+            We'll track your accuracy, study time, and help you identify areas to focus on.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link 
+              to="/practice" 
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              <Play className="w-5 h-5" />
+              Start Practice
+            </Link>
+            <Link 
+              to="/lessons" 
+              className="inline-flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              <BookOpen className="w-5 h-5" />
+              View Lessons
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-20">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">My Progress</h1>
-          <p className="text-slate-600">Track your journey to CPA success</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
+          <p className="text-slate-600 dark:text-slate-400">Track your journey to CPA success</p>
         </div>
       </div>
 

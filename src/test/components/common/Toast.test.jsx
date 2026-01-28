@@ -116,11 +116,9 @@ describe('Toast Components', () => {
       fireEvent.click(screen.getByText('Trigger Toast'));
       expect(screen.getByText('Dismissible message')).toBeInTheDocument();
 
-      // Find and click the dismiss button (X icon button)
-      const dismissButton = screen.getByRole('button', { name: '' });
-      if (dismissButton) {
-        fireEvent.click(dismissButton);
-      }
+      // Find and click the dismiss button
+      const dismissButton = screen.getByRole('button', { name: /dismiss/i });
+      fireEvent.click(dismissButton);
     });
 
     it('can show multiple toasts', () => {

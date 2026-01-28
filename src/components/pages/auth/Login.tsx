@@ -42,7 +42,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     setError('');
     try {
-      const user = await signInWithGoogle();
+      await signInWithGoogle();
       // Check if user needs onboarding (new Google user)
       // The AuthProvider handles creating profile, we just navigate
       navigate('/dashboard');

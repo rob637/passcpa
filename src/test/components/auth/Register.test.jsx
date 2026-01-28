@@ -40,7 +40,7 @@ describe('Register Component', () => {
   describe('Rendering', () => {
     it('should render the registration form', () => {
       renderRegister();
-      expect(screen.getByRole('heading', { name: /create account/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /create your account/i })).toBeInTheDocument();
     });
 
     it('should render name fields', () => {

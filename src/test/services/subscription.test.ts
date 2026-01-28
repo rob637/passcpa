@@ -32,7 +32,6 @@ import {
   SUBSCRIPTION_PLANS,
   IS_BETA_PERIOD,
   type SubscriptionTier,
-  type PlanLimits
 } from '../../services/subscription';
 
 describe('subscription service', () => {

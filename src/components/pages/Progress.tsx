@@ -400,7 +400,7 @@ const Progress: React.FC = () => {
   }
 
   // Empty state for new users with no progress data
-  const hasAnyProgress = stats.totalQuestions > 0 || lessonsCompleted > 0;
+  const hasAnyProgress = overallStats.totalQuestions > 0 || overallStats.lessonsCompleted > 0;
   
   if (!hasAnyProgress) {
     return (

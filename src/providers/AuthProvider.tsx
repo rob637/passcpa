@@ -40,7 +40,7 @@ export interface AuthContextType {
   signIn: (email: string, password: string) => Promise<User>;
   signUp: (email: string, password: string, displayName: string) => Promise<User>;
   signOut: () => Promise<void>;
-  signInWithGoogle: () => Promise<void>;
+  signInWithGoogle: () => Promise<User>;
   resetPassword: (email: string) => Promise<void>;
   updateUserProfile: (updates: Partial<UserProfile>) => Promise<void>;
   refreshProfile: () => Promise<void>;
@@ -217,7 +217,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           },
         };
         await setDoc(userRef, newProfile);
-        setUserProfile({ id: user.uid, ...newProfile });
+        setUserProfile({ 
+          ...newProfile,
+          id: user.uid, 
+        } as UserProfile);
       } else {
         await fetchUserProfile(user.uid);
       }

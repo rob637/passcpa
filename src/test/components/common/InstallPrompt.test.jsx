@@ -149,8 +149,8 @@ describe('InstallPrompt Component', () => {
         expect(screen.getByText(/install voraprep/i)).toBeInTheDocument();
       });
 
-      const installButton = screen.getByRole('button', { name: /install/i });
-      fireEvent.click(installButton);
+      const installButtons = screen.getAllByRole('button', { name: /install/i });
+      fireEvent.click(installButtons[0]);
 
       await waitFor(() => {
         expect(mockPrompt).toHaveBeenCalled();

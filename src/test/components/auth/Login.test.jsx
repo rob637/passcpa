@@ -40,7 +40,7 @@ describe('Login Component', () => {
   describe('Rendering', () => {
     it('should render the login form', () => {
       renderLogin();
-      expect(screen.getByText('Welcome Back')).toBeInTheDocument();
+      expect(screen.getByText(/welcome back/i)).toBeInTheDocument();
       expect(screen.getByPlaceholderText(/you@example.com/i)).toBeInTheDocument();
       expect(screen.getByPlaceholderText(/enter your password/i)).toBeInTheDocument();
     });

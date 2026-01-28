@@ -143,6 +143,10 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string = 'REG'): S
 
 // Format message content with XSS protection
 const formatMessage = (content: string) => {
+  // Guard against non-string content
+  if (typeof content !== 'string') {
+    return '';
+  }
   const formatted = content
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')

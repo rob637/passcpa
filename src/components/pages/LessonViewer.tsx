@@ -10,7 +10,6 @@ import {
   BookOpen,
   HelpCircle,
   Bot,
-  Bookmark,
   Share2,
   Volume2,
   Pause,
@@ -21,10 +20,10 @@ import {
 } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
-import { getLessonById, getLessonsBySection } from '../../data/lessons';
+import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import clsx from 'clsx';
-import { LessonContentSection, ExamSection } from '../../types';
+import { LessonContentSection, ExamSection, Lesson } from '../../types';
 
 // Sanitize HTML to prevent XSS attacks
 const sanitizeHTML = (html: string): string => {
@@ -67,7 +66,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
       
       if (isDefinitionList) {
         return (
-          <div className="space-y-3">
+          <dl className="space-y-3" aria-label={section.title || "Terms and definitions"}>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {listItems.map((item: any, i: number) => (
               <div key={i} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
@@ -75,16 +74,16 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
                 <dd className="mt-1 text-slate-600 dark:text-slate-400">{item.definition}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         );
       }
       
       // Simple string list
       return (
-        <ul className="space-y-2 ml-4">
+        <ul className="space-y-2 ml-4" aria-label={section.title || "List"}>
           {listItems.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2 text-slate-700 dark:text-slate-300">
-              <span className="text-primary-500 mt-1.5 text-sm">•</span>
+              <span className="text-primary-500 mt-1.5 text-sm" aria-hidden="true">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -94,8 +93,9 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
     case 'table':
       if (!section.headers || !section.rows) return null;
       return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" role="region" aria-label={section.title || "Data table"}>
           <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+            <caption className="sr-only">{section.title}</caption>
             <thead className="bg-slate-50 dark:bg-slate-800">
               <tr>
                 {section.headers.map((header, i) => (
@@ -108,7 +108,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
             <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-900">
               {section.rows.map((row, i) => (
                 <tr key={i}>
-                  {row.map((cell, j) => (
+                  {(Array.isArray(row) ? row : (row as any).values || []).map((cell: string, j: number) => (
                     <td key={j} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-400">
                       {cell}
                     </td>
@@ -184,12 +184,19 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
       const style = calloutStyles[calloutType] || calloutStyles.info;
       
       return (
-        <div className={`${style.bg} ${style.border} border rounded-xl p-4`}>
-          <div className={`${style.text} whitespace-pre-line`}>
-            {typeof section.content === 'string' 
-              ? section.content.replace(/\*\*(.*?)\*\*/g, '$1') // Strip markdown bold for now
-              : String(section.content)
-            }
+        <div 
+          className={`${style.bg} ${style.border} border rounded-xl p-4`}
+          role="note"
+          aria-label={`${calloutType} callout`}
+        >
+          <div className="flex gap-3">
+             <span className="text-xl" aria-hidden="true">{style.icon}</span>
+             <div className={`${style.text} whitespace-pre-line flex-1`}>
+              {typeof section.content === 'string' 
+                ? section.content.replace(/\*\*(.*?)\*\*/g, '$1')
+                : String(section.content)
+              }
+             </div>
           </div>
         </div>
       );
@@ -237,13 +244,33 @@ const LessonViewer: React.FC = () => {
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [startTime] = useState(Date.now());
+  const [lesson, setLesson] = useState<Lesson | undefined>(undefined);
+  const [sectionLessons, setSectionLessons] = useState<Lesson[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Get lesson from real data
-  const lesson = lessonId ? getLessonById(lessonId) : undefined;
-  
-  // Get prev/next lessons
+  // Get lesson and section lessons from Firestore
   const currentSection = (userProfile?.examSection || lesson?.section || 'FAR') as ExamSection;
-  const sectionLessons = getLessonsBySection(currentSection);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        if (lessonId) {
+          const fetchedLesson = await fetchLessonById(lessonId);
+          setLesson(fetchedLesson || undefined);
+          
+          const section = userProfile?.examSection || fetchedLesson?.section || 'FAR';
+          const lessons = await fetchLessonsBySection(section as ExamSection);
+          setSectionLessons(lessons);
+        }
+      } catch (error) {
+        console.error('Error fetching lesson:', error);
+      }
+      setIsLoading(false);
+    };
+    fetchData();
+  }, [lessonId, userProfile?.examSection]);
+  
   const currentIndex = lessonId ? sectionLessons.findIndex(l => l.id === lessonId) : -1;
   const prevLesson = currentIndex > 0 ? sectionLessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < sectionLessons.length - 1 ? sectionLessons[currentIndex + 1] : null;
@@ -292,6 +319,18 @@ const LessonViewer: React.FC = () => {
       navigate('/lessons');
     }
   };
+
+  // Handle loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-slate-600 dark:text-slate-400">Loading lesson...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Handle lesson not found
   if (!lesson) {
@@ -361,10 +400,12 @@ const LessonViewer: React.FC = () => {
                 }}
                 className="p-2 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
                 aria-label="Share lesson"
+                type="button"
               >
-                <Share2 className="w-5 h-5" />
+                <Share2 className="w-5 h-5" aria-hidden="true" />
               </button>
               <button
+                type="button"
                 onClick={() => {
                   if ('speechSynthesis' in window && lesson) {
                     if (isPlaying) {
@@ -391,7 +432,7 @@ const LessonViewer: React.FC = () => {
                 aria-label={isPlaying ? 'Stop reading' : 'Read aloud'}
                 title={isPlaying ? 'Stop reading' : 'Read lesson aloud'}
               >
-                {isPlaying ? <Pause className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                {isPlaying ? <Pause className="w-5 h-5" aria-hidden="true" /> : <Volume2 className="w-5 h-5" aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -407,7 +448,7 @@ const LessonViewer: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-3xl mx-auto px-4 py-8">
+      <div className={`max-w-3xl mx-auto px-4 py-8 ${isComplete ? 'pb-28' : ''}`}>
         {/* Lesson Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-2">

@@ -189,29 +189,37 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
   },
   
   // =========================================================================
-  // LEGACY SECTION (Deprecated - Replaced by BAR, ISC, TCP in 2024)
+  // BEC - BUSINESS ENVIRONMENT AND CONCEPTS
+  // Valid for 2025 Blueprint (testable through June 30, 2026)
+  // Replaced by BAR, ISC, TCP for 2026 Blueprint
   // =========================================================================
-  /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
   BEC: {
     id: 'BEC' as ExamSection,
-    name: 'Business Environment and Concepts (Legacy)',
+    name: 'Business Environment and Concepts',
     shortName: 'BEC',
-    type: 'legacy' as const,
+    type: 'discipline' as const, // Valid discipline choice for 2025 Blueprint
     examLength: 4,
     questionTypes: { mcq: 62, tbs: 4 },
     mcqWeight: 50,
     tbsWeight: 50,
-    color: '#9ca3af', // gray - indicates legacy
-    icon: 'Archive',
-    description: '⚠️ DEPRECATED: Replaced by BAR, ISC, TCP in 2024. Content retained for historical reference.',
-    blueprintVersion: '2023-Legacy',
-    blueprintSensitive: false,
+    color: '#6366f1', // indigo - active section
+    icon: 'Briefcase',
+    description: '2025 Blueprint discipline covering corporate governance, economics, financial management, IT, and operations. Valid through June 30, 2026.',
+    blueprintVersion: '2025',
+    blueprintSensitive: true,
+    careerFit: ['Business Advisory', 'Consulting', 'Management'],
+    pendingUpdate: {
+      effectiveDate: '2026-07-01',
+      description: 'BEC will be replaced by BAR, ISC, and TCP disciplines starting July 1, 2026.',
+    },
   },
 };
 
 export const STRATEGY_SECTIONS = ['PREP'];
 export const CORE_SECTIONS = ['AUD', 'FAR', 'REG'];
 export const DISCIPLINE_SECTIONS = ['BAR', 'ISC', 'TCP'];
+/** All actual exam sections (excludes strategy sections like PREP) */
+export const EXAM_SECTIONS = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS];
 
 // ============================================================================
 // EXAM TIMING AND RULES

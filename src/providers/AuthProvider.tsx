@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../config/firebase.js';
+import { initializeNotifications } from '../services/pushNotifications';
 
 export interface UserProfile {
   id: string;
@@ -85,6 +86,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setUser(firebaseUser);
         // Fetch user profile from Firestore
         await fetchUserProfile(firebaseUser.uid);
+        
+        // Initialize notifications for this user
+        initializeNotifications(firebaseUser.uid).catch((err) => {
+          console.log('Notification initialization skipped:', err.message);
+        });
       } else {
         setUser(null);
         setUserProfile(null);

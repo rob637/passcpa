@@ -3,10 +3,17 @@
 
 import { collection, doc, writeBatch, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
-// @ts-ignore
-import { ALL_QUESTIONS } from '../data/questions';
-// @ts-ignore
-import { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } from '../data/tbs';
+
+// Dynamic imports for large data to reduce initial bundle size
+const loadAllQuestions = async () => {
+  const { ALL_QUESTIONS } = await import('../data/questions');
+  return ALL_QUESTIONS;
+};
+
+const loadTBSData = async () => {
+  const { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } = await import('../data/tbs');
+  return { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL };
+};
 
 // Batch size for Firestore (max 500 per batch)
 const BATCH_SIZE = 400;
@@ -16,6 +23,7 @@ const BATCH_SIZE = 400;
  */
 export async function uploadAllMCQs(onProgress: (status: string) => void) {
   const questionsRef = collection(db, 'questions');
+  const ALL_QUESTIONS = await loadAllQuestions();
 
   // Get existing question IDs to avoid duplicates
   const existingSnap = await getDocs(questionsRef);
@@ -72,6 +80,9 @@ export async function uploadAllMCQs(onProgress: (status: string) => void) {
  * Upload TBS simulations
  */
 export async function uploadTBS(onProgress: (status: string) => void) {
+    // Dynamically load TBS data
+    const { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } = await loadTBSData();
+    
     // Combine all TBS
     const allTBS = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL];
     

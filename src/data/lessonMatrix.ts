@@ -1,5 +1,5 @@
 /**
- * PassCPA Lesson Matrix
+ * VoraPrep Lesson Matrix
  * 2026 CPA Exam Blueprint Compliant
  * 
  * This matrix maps all 303 lessons to their corresponding AICPA Blueprint areas,
@@ -584,7 +584,7 @@ export function getLessonsByBlueprintArea(areaId: string): LessonMatrixEntry[] {
   return LESSON_MATRIX.filter(lesson => lesson.blueprintArea.areaId === areaId);
 }
 
-console.log('PassCPA Lesson Matrix loaded.');
+console.log('VoraPrep Lesson Matrix loaded.');
 console.log(`Total Lessons: ${LESSON_SUMMARY.totalLessons}`);
 console.log(`OBBBA-Affected Lessons: ${LESSON_SUMMARY.obbbaAffectedLessons}`);
 console.log(`Lessons with Blueprint Differences: ${BLUEPRINT_DIFFERENCES.size}`);

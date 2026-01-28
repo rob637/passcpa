@@ -3,7 +3,9 @@
 
 // Sound effects (base64 encoded short sounds for performance)
 // In a real app these would be paths to files
-const SOUNDS = {
+// TODO: Implement sound playback using these paths
+// @ts-expect-error Keeping for future sound implementation
+const _SOUNDS = {
   correct: '/sounds/correct.mp3',
   incorrect: '/sounds/incorrect.mp3',
   complete: '/sounds/complete.mp3',

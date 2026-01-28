@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
  */
 export const useDocumentTitle = (title: string, announceToScreenReader = true) => {
   useEffect(() => {
-    const baseTitle = 'PassCPA';
+    const baseTitle = 'VoraPrep';
     document.title = title ? `${title} | ${baseTitle}` : baseTitle;
 
     // Announce to screen readers on route change
@@ -29,6 +29,7 @@ export const useDocumentTitle = (title: string, announceToScreenReader = true) =
  * Route title mapping
  */
 export const ROUTE_TITLES: Record<string, string> = {
+  '/': 'CPA Exam Prep | Pass Your CPA on the First Try',
   '/dashboard': 'Dashboard',
   '/study': 'Study',
   '/practice': 'Practice Questions',
@@ -43,6 +44,7 @@ export const ROUTE_TITLES: Record<string, string> = {
   '/tutor': 'AI Tutor',
   '/ai-tutor': 'AI Tutor',
   '/settings': 'Settings',
+  '/pricing': 'Pricing',
   '/onboarding': 'Get Started',
   '/login': 'Sign In',
   '/register': 'Create Account',
@@ -58,7 +60,7 @@ export const useRouteTitle = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const baseTitle = 'PassCPA';
+    const baseTitle = 'VoraPrep';
     const path = location.pathname;
 
     // Check for exact match first

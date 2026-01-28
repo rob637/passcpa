@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import {
   doc,
   setDoc,
@@ -9,9 +9,9 @@ import {
   arrayUnion,
   collection,
   getDocs,
-  // query,
-  // where,
-  // Timestamp
+  getDoc,
+  query,
+  where,
 } from 'firebase/firestore';
 import { db } from '../config/firebase.js';
 import { useAuth } from './AuthProvider';
@@ -47,8 +47,17 @@ export interface StudyContextType {
   currentStreak: number;
   loading: boolean;
   dailyProgress: number; // calculated percentage
+  dailyGoalMet: boolean;
+  weeklyStats: {
+    totalQuestions: number;
+    accuracy: number;
+    totalMinutes: number;
+    questionsTrend: number;
+    accuracyTrend: number;
+  };
   setCurrentStreak: (streak: number) => void;
-  recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string) => Promise<void>;
+  recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string, timeSpentSeconds?: number) => Promise<void>;
+  completeLesson: (lessonId: string, section: string, timeSpent: number) => Promise<void>;
   completeSimulation: (id: string, score: number, timeSpent: number) => Promise<void>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getLessonProgress: () => Promise<Record<string, any>>;
@@ -79,6 +88,13 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
   const [todayLog, setTodayLog] = useState<DailyLog | null>(null);
   const [currentStreak, setCurrentStreak] = useState(0);
+  const [weeklyStats, setWeeklyStats] = useState<{
+    totalQuestions: number;
+    accuracy: number;
+    totalMinutes: number;
+    questionsTrend: number;
+    accuracyTrend: number;
+  }>({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
   const [loading, setLoading] = useState(true);
 
   const today = format(new Date(), 'yyyy-MM-dd');
@@ -146,26 +162,126 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     return () => unsubscribe();
   }, [user, today, userProfile?.dailyGoal]);
 
+  // Fetch weekly stats and calculate streak
+  useEffect(() => {
+    if (!user) {
+      setWeeklyStats({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
+      setCurrentStreak(0);
+      return;
+    }
+
+    const fetchWeeklyData = async () => {
+      try {
+        // Get logs for the past 7 days (this week)
+        const thisWeekDates: string[] = [];
+        for (let i = 0; i < 7; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          thisWeekDates.push(format(date, 'yyyy-MM-dd'));
+        }
+
+        // Get logs for the previous 7 days (last week) for comparison
+        const lastWeekDates: string[] = [];
+        for (let i = 7; i < 14; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          lastWeekDates.push(format(date, 'yyyy-MM-dd'));
+        }
+
+        const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
+        
+        // Fetch this week
+        const thisWeekQuery = query(dailyLogCollection, where('date', 'in', thisWeekDates));
+        const thisWeekSnapshot = await getDocs(thisWeekQuery);
+
+        let totalQuestions = 0;
+        let totalCorrect = 0;
+        let totalMinutes = 0;
+
+        thisWeekSnapshot.forEach((doc) => {
+          const data = doc.data();
+          totalQuestions += data.questionsAttempted || 0;
+          totalCorrect += data.questionsCorrect || 0;
+          totalMinutes += data.studyTimeMinutes || 0;
+        });
+
+        // Fetch last week for trend comparison
+        const lastWeekQuery = query(dailyLogCollection, where('date', 'in', lastWeekDates));
+        const lastWeekSnapshot = await getDocs(lastWeekQuery);
+
+        let lastWeekQuestions = 0;
+        let lastWeekCorrect = 0;
+
+        lastWeekSnapshot.forEach((doc) => {
+          const data = doc.data();
+          lastWeekQuestions += data.questionsAttempted || 0;
+          lastWeekCorrect += data.questionsCorrect || 0;
+        });
+
+        const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+        const lastWeekAccuracy = lastWeekQuestions > 0 ? Math.round((lastWeekCorrect / lastWeekQuestions) * 100) : 0;
+
+        // Calculate trends (percentage change from last week)
+        const questionsTrend = lastWeekQuestions > 0 
+          ? Math.round(((totalQuestions - lastWeekQuestions) / lastWeekQuestions) * 100)
+          : totalQuestions > 0 ? 100 : 0;
+        const accuracyTrend = lastWeekAccuracy > 0 
+          ? Math.round(accuracy - lastWeekAccuracy) // Simple difference for accuracy
+          : 0;
+
+        setWeeklyStats({ totalQuestions, accuracy, totalMinutes, questionsTrend, accuracyTrend });
+
+        // Calculate streak (consecutive days with earnedPoints > 0)
+        let streak = 0;
+        for (let i = 0; i < 30; i++) { // Check up to 30 days back
+          const checkDate = new Date();
+          checkDate.setDate(checkDate.getDate() - i);
+          const dateStr = format(checkDate, 'yyyy-MM-dd');
+          
+          const logRef = doc(db, 'users', user.uid, 'daily_log', dateStr);
+          const logSnap = await getDoc(logRef);
+          
+          if (logSnap.exists() && (logSnap.data().earnedPoints || 0) > 0) {
+            streak++;
+          } else if (i > 0) {
+            // Don't break on today (i=0) if no activity yet
+            break;
+          }
+        }
+        setCurrentStreak(streak);
+      } catch (error) {
+        console.error('Error fetching weekly data:', error);
+      }
+    };
+
+    fetchWeeklyData();
+  }, [user, todayLog]); // Re-run when todayLog changes (user did activity)
+
   // Implementations
-  const recordMCQAnswer = async (questionId: string, topic: string = 'General', subtopic: string = 'General', isCorrect: boolean, difficulty: string = 'medium') => {
+  const recordMCQAnswer = async (questionId: string, topic: string = 'General', subtopic: string = 'General', isCorrect: boolean, difficulty: string = 'medium', timeSpentSeconds: number = 0) => {
     if (!user) return;
     void subtopic;
     try {
         const points = isCorrect ? (difficulty === 'hard' ? 3 : difficulty === 'medium' ? 2 : 1) : 0;
+        // Convert seconds to minutes (round to 1 decimal place, minimum 0.1 min per question)
+        const timeSpentMinutes = Math.max(0.1, Math.round((timeSpentSeconds / 60) * 10) / 10);
         const logRef = doc(db, 'users', user.uid, 'daily_log', today);
         
-        await updateDoc(logRef, {
+        // Use setDoc with merge to handle case where doc doesn't exist yet
+        await setDoc(logRef, {
             earnedPoints: increment(points),
             questionsAttempted: increment(1),
             questionsCorrect: increment(isCorrect ? 1 : 0),
-             activities: arrayUnion({
+            studyTimeMinutes: increment(timeSpentMinutes),
+            activities: arrayUnion({
               type: 'mcq',
               questionId,
               topic,
               isCorrect,
+              timeSpentSeconds,
               timestamp: new Date().toISOString()
             })
-        });
+        }, { merge: true });
     } catch (e) {
         console.error("Error recording answer", e);
     }
@@ -193,6 +309,38 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       }
   };
 
+  const completeLesson = async (lessonId: string, section: string, timeSpent: number) => {
+      if (!user) return;
+      try {
+        const earnedPoints = 10; // Fixed points per lesson
+        const logRef = doc(db, 'users', user.uid, 'daily_log', today);
+        const lessonRef = doc(db, 'users', user.uid, 'lessons', lessonId);
+        
+        // Update daily log
+        await updateDoc(logRef, {
+            earnedPoints: increment(earnedPoints),
+            lessonsCompleted: increment(1),
+            studyTimeMinutes: increment(timeSpent),
+            activities: arrayUnion({
+              type: 'lesson',
+              lessonId,
+              section,
+              timeSpent,
+              timestamp: new Date().toISOString()
+            })
+        });
+        
+        // Mark lesson as completed in user's lessons subcollection
+        await setDoc(lessonRef, {
+          completedAt: serverTimestamp(),
+          section,
+          timeSpent,
+        }, { merge: true });
+      } catch (e) {
+          console.error("Error completing lesson", e);
+      }
+  };
+
   const getLessonProgress = async () => {
       if (!user) return {};
        try {
@@ -211,9 +359,43 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   }
 
   const getTopicPerformance = async () => {
-    // Mock for now, since we haven't implemented the aggregation backend yet
-    // In a real app, this would query a 'stats' subcollection or aggregation query
-    return [];
+    if (!user) return [];
+    
+    try {
+      // Aggregate topic performance from daily log activities
+      const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
+      const logsSnapshot = await getDocs(dailyLogCollection);
+      
+      const topicStats: Record<string, { correct: number; total: number }> = {};
+      
+      logsSnapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data.activities && Array.isArray(data.activities)) {
+          data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean }) => {
+            if (activity.type === 'mcq' && activity.topic) {
+              if (!topicStats[activity.topic]) {
+                topicStats[activity.topic] = { correct: 0, total: 0 };
+              }
+              topicStats[activity.topic].total++;
+              if (activity.isCorrect) {
+                topicStats[activity.topic].correct++;
+              }
+            }
+          });
+        }
+      });
+      
+      // Convert to array format expected by Progress page
+      return Object.entries(topicStats).map(([topic, stats]) => ({
+        id: topic,
+        topic,
+        accuracy: stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0,
+        questions: stats.total,
+      }));
+    } catch (error) {
+      console.error('Error fetching topic performance:', error);
+      return [];
+    }
   }
 
   // Calculate daily progress percentage
@@ -221,14 +403,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     ? Math.min(100, Math.round((todayLog.earnedPoints / todayLog.goalPoints) * 100)) 
     : 0;
 
+  const dailyGoalMet = dailyProgress >= 100;
+
   const value: StudyContextType = {
     studyPlan,
     todayLog,
     currentStreak,
     loading,
     dailyProgress,
+    dailyGoalMet,
+    weeklyStats,
     setCurrentStreak,
     recordMCQAnswer,
+    completeLesson,
     completeSimulation,
     getLessonProgress,
     getTopicPerformance

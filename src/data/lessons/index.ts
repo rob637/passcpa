@@ -8,6 +8,7 @@ import { regLessons } from './reg';
 import { barLessons } from './bar';
 import { iscLessons } from './isc';
 import { tcpLessons } from './tcp';
+import { becLessons } from './bec';
 import { Lesson } from '../../types';
 
 export const LESSONS: Record<string, Lesson[]> = {
@@ -28,25 +29,31 @@ export const LESSONS: Record<string, Lesson[]> = {
   reg: regLessons,
 
   // ==========================================
-  // BAR - BUSINESS ANALYSIS AND REPORTING
+  // BAR - BUSINESS ANALYSIS AND REPORTING (2026 Blueprint)
   // ==========================================
   bar: barLessons,
 
   // ==========================================
-  // ISC - INFORMATION SYSTEMS AND CONTROLS
+  // ISC - INFORMATION SYSTEMS AND CONTROLS (2026 Blueprint)
   // ==========================================
   isc: iscLessons,
 
   // ==========================================
-  // TCP - TAX COMPLIANCE AND PLANNING
+  // TCP - TAX COMPLIANCE AND PLANNING (2026 Blueprint)
   // ==========================================
   tcp: tcpLessons,
+
+  // ==========================================
+  // BEC - BUSINESS ENVIRONMENT AND CONCEPTS (2025 Blueprint)
+  // Valid through June 30, 2026
+  // ==========================================
+  bec: becLessons,
 
 };
 
 // Helper function to get all lessons
 export const getAllLessons = (): Lesson[] => {
-  return [...(LESSONS.prep || []), ...LESSONS.far, ...LESSONS.aud, ...LESSONS.reg, ...(LESSONS.bar || []), ...(LESSONS.isc || []), ...(LESSONS.tcp || [])];
+  return [...(LESSONS.prep || []), ...LESSONS.far, ...LESSONS.aud, ...LESSONS.reg, ...(LESSONS.bar || []), ...(LESSONS.isc || []), ...(LESSONS.tcp || []), ...(LESSONS.bec || [])];
 };
 
 // Get lessons by section
@@ -72,6 +79,7 @@ export const getLessonStats = () => {
       BAR: (LESSONS.bar || []).length,
       ISC: (LESSONS.isc || []).length,
       TCP: (LESSONS.tcp || []).length,
+      BEC: (LESSONS.bec || []).length, // Legacy - maps to BAR
     },
   };
 };

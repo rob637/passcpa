@@ -25,6 +25,13 @@ export default defineConfig({
     ['list'],
   ],
   
+  // Snapshot configuration for visual regression
+  snapshotDir: './e2e/snapshots',
+  snapshotPathTemplate: '{snapshotDir}/{testFileDir}/{testFileName}-{projectName}/{testName}-{arg}{ext}',
+  
+  // Update snapshots with: npm run test:e2e -- --update-snapshots
+  updateSnapshots: 'missing',
+  
   // Shared settings for all projects
   use: {
     // Base URL for tests

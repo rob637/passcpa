@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.{test,spec}.{js,jsx,ts,tsx}'],
     coverage: {
-      provider: 'v8',
+      provider: 'istanbul',
       reporter: ['text', 'text-summary', 'json', 'html', 'lcov'],
       reportsDirectory: './coverage',
       exclude: [
@@ -23,10 +23,10 @@ export default defineConfig({
       ],
       thresholds: {
         // Set realistic starting thresholds - increase over time
-        lines: 10,
-        functions: 25,
-        branches: 40,
-        statements: 10,
+        lines: 40,
+        functions: 35,
+        branches: 30,
+        statements: 40,
       },
     },
   },

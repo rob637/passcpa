@@ -19,6 +19,8 @@ import { db } from '../../config/firebase';
 import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
+import { generateStudyPlan } from '../../utils/studyPlanner';
+import { fetchAllLessons } from '../../services/lessonService';
 
 interface TopicStat {
   id: string;
@@ -240,7 +242,7 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
 const Progress: React.FC = () => {
   const { user, userProfile } = useAuth();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { currentStreak, getTopicPerformance } = useStudy() as any; // Cast to any to avoid TS errors for missing prop
+  const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy() as any;
   const [timeRange, setTimeRange] = useState('week');
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
@@ -248,11 +250,16 @@ const Progress: React.FC = () => {
     totalQuestions: 0,
     correctAnswers: 0,
     lessonsCompleted: 0,
-    totalLessons: 42,
+    totalLessons: 0,
     studyMinutes: 0,
     accuracy: 0,
   });
   const [loading, setLoading] = useState(true);
+
+  // Study Plan
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const examDate = (userProfile?.examDate as any)?.toDate?.() || new Date(userProfile?.examDate || Date.now());
+  const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
@@ -310,21 +317,29 @@ const Progress: React.FC = () => {
         );
 
         // Get topic performance
-        // Mocking or using provided function if valid
         let topicsData: TopicStat[] = [];
         if (getTopicPerformance) {
             topicsData = await getTopicPerformance();
-        } else {
-            // Placeholder if missing
-            topicsData = [];
         }
         setTopicPerformance(topicsData);
+
+        // Get lesson progress
+        let lessonsCompletedCount = 0;
+        if (getLessonProgress) {
+          const lessonProgress = await getLessonProgress();
+          lessonsCompletedCount = Object.keys(lessonProgress).length;
+        }
+
+        // Get total lessons for user's section
+        const allLessons = await fetchAllLessons();
+        const sectionLessons = allLessons.filter(l => l.section === currentSection);
+        const totalLessonsCount = sectionLessons.length || allLessons.length;
 
         setOverallStats({
           ...totals,
           accuracy: totals.totalQuestions > 0 ? Math.round((totals.correctAnswers / totals.totalQuestions) * 100) : 0,
-          lessonsCompleted: 0, // Need lessons completed
-          totalLessons: 42,
+          lessonsCompleted: lessonsCompletedCount,
+          totalLessons: totalLessonsCount,
         });
 
       } catch (error) {
@@ -335,7 +350,7 @@ const Progress: React.FC = () => {
     };
 
     loadProgressData();
-  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance]);
+  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection]);
 
   const readiness = calculateExamReadiness(
     overallStats,
@@ -343,6 +358,13 @@ const Progress: React.FC = () => {
     overallStats.lessonsCompleted,
     overallStats.totalLessons
   );
+
+  // Find weakest topic for recommendations
+  const weakestTopic = topicPerformance.length > 0
+    ? topicPerformance.reduce((weakest, topic) => 
+        topic.accuracy < weakest.accuracy ? topic : weakest
+      , topicPerformance[0])
+    : null;
 
   if (loading) {
     return (
@@ -356,13 +378,54 @@ const Progress: React.FC = () => {
     <div className="min-h-screen bg-slate-50 pb-20">
       {/* Header */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-2xl font-bold text-slate-900 mb-2">My Progress</h1>
           <p className="text-slate-600">Track your journey to CPA success</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+      {/* Study Plan Overview (New Feature) */}
+      {studyPlan && (
+        <div className="card p-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white mb-6">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-xl font-bold flex items-center gap-2">
+                <Target className="w-6 h-6 text-primary-400" />
+                Study Plan: {sectionInfo.name}
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
+              </p>
+            </div>
+            <div className="text-right hidden sm:block">
+              <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
+              <div className="text-xs text-slate-400">Modules / Day</div>
+            </div>
+          </div>
+          
+          {/* Milestones Progress Bar */}
+          <div className="relative pt-6 pb-2">
+            <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-primary-500 rounded-full transition-all duration-1000"
+                style={{ width: `${Math.min(100, Math.max(5, (1 - studyPlan.totalDays/90)*100))}%` }} 
+              />
+            </div>
+            <div className="mt-4 flex justify-between text-xs text-slate-400">
+              {studyPlan.milestones.map((m, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <div className="w-2 h-2 rounded-full bg-slate-600 mb-2 ring-4 ring-slate-900" />
+                  <span className="font-medium text-slate-300">{m.label}</span>
+                  <span>{m.date}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Stats Column */}
           <div className="lg:col-span-2 space-y-6">
@@ -473,7 +536,23 @@ const Progress: React.FC = () => {
                 <CheckCircle className="w-5 h-5 text-primary-600" />
                 Readiness Score
               </h2>
-              <ReadinessGauge readiness={readiness} examDate={userProfile?.examDate?.toDate()} />
+              <ReadinessGauge 
+                readiness={readiness} 
+                examDate={(() => {
+                  const ed = userProfile?.examDate;
+                  if (!ed) return undefined;
+                  // Handle Firestore Timestamp
+                  if (typeof (ed as any).toDate === 'function') {
+                    return (ed as any).toDate();
+                  }
+                  // Handle Serialized Timestamp (from local storage)
+                  if ((ed as any).seconds) {
+                    return new Date((ed as any).seconds * 1000);
+                  }
+                  // Handle Date string or Object
+                  return new Date(ed as any);
+                })()} 
+              />
             </div>
 
             {/* AI Recommendations */}
@@ -490,12 +569,25 @@ const Progress: React.FC = () => {
               
               <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm mb-4">
                 <div className="text-xs font-bold uppercase tracking-wider text-primary-200 mb-1">RECOMMENDATION</div>
-                <div className="font-medium">Review "Federal Taxation of Individuals"</div>
-                <div className="text-sm text-primary-200 mt-2">Accuracy is 62% - needs improvement</div>
+                {weakestTopic ? (
+                  <>
+                    <div className="font-medium">Review "{weakestTopic.topic}"</div>
+                    <div className="text-sm text-primary-200 mt-2">
+                      Accuracy is {Math.round(weakestTopic.accuracy)}% - needs improvement
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="font-medium">Start practicing!</div>
+                    <div className="text-sm text-primary-200 mt-2">
+                      Answer some questions to see personalized recommendations
+                    </div>
+                  </>
+                )}
               </div>
 
               <Link 
-                to="/practice" 
+                to="/practice?mode=weak" 
                 className="w-full py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors shadow-sm block text-center"
               >
                 Start Focused Session

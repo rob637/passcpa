@@ -16,11 +16,16 @@ import { BEC_QUESTIONS } from './bec-questions';
 
 // Extended question banks
 import { REG_QUESTIONS_EXTENDED } from './reg-questions-extended';
-import { ExamSection, QuestionDifficulty, Difficulty, normalizeDifficulty } from '../../types';
+import { ExamSection, Difficulty, normalizeDifficulty } from '../../types';
 import { FAR_QUESTIONS_EXTENDED } from './far-questions-extended';
 import { AUD_QUESTIONS_EXTENDED } from './aud-questions-extended';
 /** @deprecated Legacy BEC content */
 import { BEC_QUESTIONS_EXTENDED } from './bec-questions-extended';
+
+// Extended banks for new disciplines (2024+ CPA Evolution)
+import { TCP_QUESTIONS_EXTENDED } from './tcp-questions-extended';
+import { ISC_QUESTIONS_EXTENDED } from './isc-questions-extended';
+import { BAR_QUESTIONS_EXTENDED } from './bar-questions-extended';
 
 // Extra question banks (Sprint 5 expansion)
 import { REG_QUESTIONS_EXTRA } from './reg-questions-extra';
@@ -29,15 +34,55 @@ import { AUD_QUESTIONS_EXTRA } from './aud-questions-extra';
 /** @deprecated Legacy BEC content */
 import { BEC_QUESTIONS_EXTRA } from './bec-questions-extra';
 
-// Combined section questions (original + extended + extra)
-export const REG_ALL = [...REG_QUESTIONS, ...REG_QUESTIONS_EXTENDED, ...REG_QUESTIONS_EXTRA];
-export const FAR_ALL = [...FAR_QUESTIONS, ...FAR_QUESTIONS_EXTENDED, ...FAR_QUESTIONS_EXTRA];
-export const AUD_ALL = [...AUD_QUESTIONS, ...AUD_QUESTIONS_EXTENDED, ...AUD_QUESTIONS_EXTRA];
+// Additional question banks (World-Class expansion)
+import { REG_QUESTIONS_ADDITIONAL } from './reg-questions-additional';
+import { FAR_QUESTIONS_ADDITIONAL } from './far-questions-additional';
+import { AUD_QUESTIONS_ADDITIONAL } from './aud-questions-additional';
+import { BAR_QUESTIONS_ADDITIONAL } from './bar-questions-additional';
+import { ISC_QUESTIONS_ADDITIONAL } from './isc-questions-additional';
+import { TCP_QUESTIONS_ADDITIONAL } from './tcp-questions-additional';
+
+// Expanded question banks (World-Class expansion - batch 2)
+import { REG_QUESTIONS_EXPANDED } from './reg-questions-expanded';
+import { FAR_QUESTIONS_EXPANDED as FAR_QUESTIONS_EXPANDED_2 } from './far-questions-expanded';
+import { AUD_QUESTIONS_EXPANDED as AUD_QUESTIONS_EXPANDED_2 } from './aud-questions-expanded';
+import { BAR_QUESTIONS_EXPANDED } from './bar-questions-expanded';
+import { ISC_QUESTIONS_EXPANDED as ISC_QUESTIONS_EXPANDED_2 } from './isc-questions-expanded';
+import { TCP_QUESTIONS_EXPANDED as TCP_QUESTIONS_EXPANDED_2 } from './tcp-questions-expanded';
+
+// Comprehensive question banks (World-Class expansion - final batch)
+import { REG_QUESTIONS_COMPREHENSIVE } from './reg-questions-comprehensive';
+import { FAR_QUESTIONS_COMPREHENSIVE } from './far-questions-comprehensive';
+import { AUD_QUESTIONS_COMPREHENSIVE } from './aud-questions-comprehensive';
+import { BAR_QUESTIONS_COMPREHENSIVE } from './bar-questions-comprehensive';
+import { ISC_QUESTIONS_COMPREHENSIVE } from './isc-questions-comprehensive';
+import { TCP_QUESTIONS_COMPREHENSIVE } from './tcp-questions-comprehensive';
+
+// Mastery question banks (World-Class expansion - expert level)
+import { REG_QUESTIONS_MASTERY } from './reg-questions-mastery';
+import { FAR_QUESTIONS_MASTERY } from './far-questions-mastery';
+import { AUD_QUESTIONS_MASTERY } from './aud-questions-mastery';
+import { BAR_QUESTIONS_MASTERY } from './bar-questions-mastery';
+import { ISC_QUESTIONS_MASTERY } from './isc-questions-mastery';
+import { TCP_QUESTIONS_MASTERY } from './tcp-questions-mastery';
+
+// Elite question banks (World-Class expansion - final push to 2500+)
+import { REG_QUESTIONS_ELITE } from './reg-questions-elite';
+import { FAR_QUESTIONS_ELITE } from './far-questions-elite';
+import { AUD_QUESTIONS_ELITE } from './aud-questions-elite';
+import { BAR_QUESTIONS_ELITE } from './bar-questions-elite';
+import { ISC_QUESTIONS_ELITE } from './isc-questions-elite';
+import { TCP_QUESTIONS_ELITE } from './tcp-questions-elite';
+
+// Combined section questions (original + extended + extra + additional + expanded + comprehensive + mastery + elite)
+export const REG_ALL = [...REG_QUESTIONS, ...REG_QUESTIONS_EXTENDED, ...REG_QUESTIONS_EXTRA, ...REG_QUESTIONS_ADDITIONAL, ...REG_QUESTIONS_EXPANDED, ...REG_QUESTIONS_COMPREHENSIVE, ...REG_QUESTIONS_MASTERY, ...REG_QUESTIONS_ELITE];
+export const FAR_ALL = [...FAR_QUESTIONS, ...FAR_QUESTIONS_EXTENDED, ...FAR_QUESTIONS_EXTRA, ...FAR_QUESTIONS_ADDITIONAL, ...FAR_QUESTIONS_EXPANDED_2, ...FAR_QUESTIONS_COMPREHENSIVE, ...FAR_QUESTIONS_MASTERY, ...FAR_QUESTIONS_ELITE];
+export const AUD_ALL = [...AUD_QUESTIONS, ...AUD_QUESTIONS_EXTENDED, ...AUD_QUESTIONS_EXTRA, ...AUD_QUESTIONS_ADDITIONAL, ...AUD_QUESTIONS_EXPANDED_2, ...AUD_QUESTIONS_COMPREHENSIVE, ...AUD_QUESTIONS_MASTERY, ...AUD_QUESTIONS_ELITE];
 
 // New discipline question banks (2024+ CPA Evolution)
-export const BAR_ALL = [...BAR_QUESTIONS];
-export const ISC_ALL = [...ISC_QUESTIONS];
-export const TCP_ALL = [...TCP_QUESTIONS];
+export const BAR_ALL = [...BAR_QUESTIONS, ...BAR_QUESTIONS_EXTENDED, ...BAR_QUESTIONS_ADDITIONAL, ...BAR_QUESTIONS_EXPANDED, ...BAR_QUESTIONS_COMPREHENSIVE, ...BAR_QUESTIONS_MASTERY, ...BAR_QUESTIONS_ELITE];
+export const ISC_ALL = [...ISC_QUESTIONS, ...ISC_QUESTIONS_EXTENDED, ...ISC_QUESTIONS_ADDITIONAL, ...ISC_QUESTIONS_EXPANDED_2, ...ISC_QUESTIONS_COMPREHENSIVE, ...ISC_QUESTIONS_MASTERY, ...ISC_QUESTIONS_ELITE];
+export const TCP_ALL = [...TCP_QUESTIONS, ...TCP_QUESTIONS_EXTENDED, ...TCP_QUESTIONS_ADDITIONAL, ...TCP_QUESTIONS_EXPANDED_2, ...TCP_QUESTIONS_COMPREHENSIVE, ...TCP_QUESTIONS_MASTERY, ...TCP_QUESTIONS_ELITE];
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
 export const BEC_ALL = [...BEC_QUESTIONS, ...BEC_QUESTIONS_EXTENDED, ...BEC_QUESTIONS_EXTRA];

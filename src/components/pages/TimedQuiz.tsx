@@ -50,8 +50,7 @@ const TimedQuiz: React.FC = () => {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [flagged, setFlagged] = useState<Set<string>>(new Set());
   const [timeLeft, setTimeLeft] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [totalTime, setTotalTime] = useState(0);
+  const [_totalTime, setTotalTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [quizState, setQuizState] = useState<QuizState>('setup'); // setup, active, review, complete
   const [loading, setLoading] = useState(false);

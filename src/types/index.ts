@@ -102,6 +102,19 @@ export interface Question {
   hr1?: boolean; // Layout helper?
   effectiveDate?: string; // For regulation changes
   
+  // Video explanation support (World-Class feature)
+  videoExplanation?: {
+    url?: string;           // YouTube, Vimeo, or direct video URL
+    thumbnail?: string;     // Thumbnail image URL
+    duration?: number;      // Duration in seconds
+    title?: string;         // Video title
+    provider?: 'youtube' | 'vimeo' | 'direct' | 'placeholder';
+    transcriptUrl?: string; // URL to transcript for accessibility
+  };
+  
+  // AI-generated explanation (for dynamic content)
+  aiExplanation?: boolean;  // Whether to offer AI-powered explanation
+  
   // Legacy or optional
   choices?: string[]; // Sometimes used instead of options in legacy
 }

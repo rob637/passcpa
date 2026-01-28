@@ -3,7 +3,7 @@
 
 import { Question } from '../types';
 
-const DB_NAME = 'passcpa-offline';
+const DB_NAME = 'voraprep-offline';
 const DB_VERSION = 1;
 const QUESTIONS_STORE = 'questions';
 const TBS_STORE = 'tbs';

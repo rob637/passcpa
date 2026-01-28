@@ -93,20 +93,22 @@ const InstallPrompt = () => {
           </div>
 
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-slate-900">Install PassCPA</h3>
+            <h3 className="font-semibold text-slate-900">Install VoraPrep</h3>
             <p className="text-sm text-slate-500 mt-0.5">
               Add to home screen for quick access & offline study
             </p>
 
             <div className="flex items-center gap-2 mt-3">
               <button
+                type="button"
                 onClick={handleInstall}
                 className="btn-primary text-sm py-2 px-4 flex items-center gap-2"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4" aria-hidden="true" />
                 Install
               </button>
               <button
+                type="button"
                 onClick={handleDismiss}
                 className="text-sm text-slate-500 hover:text-slate-700 py-2 px-3"
               >
@@ -115,8 +117,8 @@ const InstallPrompt = () => {
             </div>
           </div>
 
-          <button onClick={handleDismiss} className="text-slate-400 hover:text-slate-600 p-1">
-            <X className="w-5 h-5" />
+          <button type="button" onClick={handleDismiss} className="text-slate-400 hover:text-slate-600 p-1" aria-label="Dismiss install prompt">
+            <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
       </div>

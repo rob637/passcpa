@@ -496,11 +496,13 @@ const AITutor: React.FC = () => {
               </div>
             </div>
             <button
+              type="button"
               onClick={clearChat}
               className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
               title="New conversation"
+              aria-label="Clear chat and start new conversation"
             >
-              <Trash2 className="w-5 h-5" />
+              <Trash2 className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
 
@@ -723,10 +725,14 @@ const AITutor: React.FC = () => {
                   ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-soft'
                   : 'bg-slate-100 text-slate-400 cursor-not-allowed'
               )}
+              aria-label="Send message"
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
+          <p className="text-[10px] text-slate-400 mt-2 text-center">
+            AI responses are for educational purposes only. Verify important information with authoritative sources.
+          </p>
         </form>
       </div>
     </div>

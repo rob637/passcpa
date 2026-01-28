@@ -4,7 +4,7 @@ import {
   Bell,
   Target,
   Shield,
-  Volume2,
+  MessageSquare,
   Wifi,
   LucideIcon,
   Loader2,
@@ -15,11 +15,14 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS } from '../../config/examConfig';
+import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS } from '../../config/examConfig';
 import {
+  setupDailyReminder,
   getDailyReminderSettings,
-} from '../../services/notifications';
-import { getCacheStatus, clearCache } from '../../services/offlineCache';
+  setWeeklyReportEnabled,
+} from '../../services/pushNotifications';
+import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offlineCache';
+import { fetchQuestions } from '../../services/questionService';
 import { Timestamp } from 'firebase/firestore';
 import clsx from 'clsx';
 
@@ -47,7 +50,7 @@ interface Tab {
 }
 
 const Settings: React.FC = () => {
-  const { user, userProfile, updateUserProfile } = useAuth();
+  const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   // const { } = useTheme(); // darkMode, toggleDarkMode unused in logic for now, only importing hooks
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
@@ -73,29 +76,53 @@ const Settings: React.FC = () => {
     streakReminder: true,
     newContent: false,
   });
-  void notifications; // Suppress unused warning while keeping state
 
   // New states for enhanced settings
   // const [notificationPermission, setNotificationPermission] = useState('default');
   const [reminderTime, setReminderTime] = useState('09:00');
   const [cacheStatus, setCacheStatus] = useState<any>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
   
   // Load settings on mount
   useEffect(() => {
-    // Reminder settings
+    // Reminder settings from localStorage
     const reminderSettings = getDailyReminderSettings();
     setReminderTime(reminderSettings.time);
     setNotifications((prev) => ({ ...prev, dailyReminder: reminderSettings.enabled }));
 
+    // Load notification preferences from profile
+    if (profile?.weeklyReportEnabled !== undefined) {
+      setNotifications((prev) => ({ ...prev, weeklyReport: profile.weeklyReportEnabled }));
+    }
+
     // Cache status
     getCacheStatus().then(setCacheStatus);
-  }, []);
+  }, [profile]);
 
   // Clear cache
   const handleClearCache = async () => {
     await clearCache();
     const status = await getCacheStatus();
     setCacheStatus(status);
+  };
+
+  // Download questions for offline use
+  const handleDownloadOffline = async () => {
+    setIsDownloading(true);
+    try {
+      // Fetch questions for user's section
+      const section = (profile?.examSection || 'REG') as any;
+      const questions = await fetchQuestions({ section, count: 500 });
+      await cacheQuestions(questions);
+      const status = await getCacheStatus();
+      setCacheStatus(status);
+      alert(`Successfully cached ${questions.length} questions for offline use!`);
+    } catch (error) {
+      console.error('Error downloading for offline:', error);
+      alert('Failed to download content. Please try again.');
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   // Handle photo upload
@@ -132,14 +159,29 @@ const Settings: React.FC = () => {
   const handleSave = async () => {
     setIsSaving(true);
     try {
+      // Save profile settings
       await updateUserProfile({
         displayName,
         examSection,
         dailyGoal,
         examDate: examDate ? new Date(examDate) : null,
-      });      // Update reminder settings
-      const time = reminderTime || '09:00'; // Access reminderTime to shut up TS
-      void time;
+        dailyReminderEnabled: notifications.dailyReminder,
+        dailyReminderTime: reminderTime || '09:00',
+        weeklyReportEnabled: notifications.weeklyReport,
+      });
+      
+      // Setup daily reminder using unified notification service
+      if (user?.uid) {
+        await setupDailyReminder(
+          user.uid,
+          notifications.dailyReminder,
+          reminderTime || '09:00'
+        );
+        
+        // Update weekly report preference
+        await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
+      }
+      
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 2000);
     } catch (error) {
@@ -153,7 +195,7 @@ const Settings: React.FC = () => {
     { id: 'profile', label: 'Profile', icon: UserIcon },
     { id: 'study', label: 'Study Plan', icon: Target },
     { id: 'notifications', label: 'Notifications', icon: Bell },
-    { id: 'feedback', label: 'Feedback & Sound', icon: Volume2 },
+    { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
     { id: 'offline', label: 'Offline', icon: Wifi },
     { id: 'account', label: 'Account', icon: Shield },
   ];
@@ -271,7 +313,9 @@ const Settings: React.FC = () => {
                       Current Exam Section
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {Object.entries(CPA_SECTIONS).map(([key, section]) => (
+                      {Object.entries(CPA_SECTIONS)
+                        .filter(([key]) => EXAM_SECTIONS.includes(key))
+                        .map(([key, section]) => (
                         <button
                           key={key}
                           onClick={() => setExamSection(key)}
@@ -342,12 +386,36 @@ const Settings: React.FC = () => {
                  <div>
                     <h2 className="text-lg font-semibold text-slate-900 mb-4">Offline Storage</h2>
                     <p className="text-slate-600 mb-4">
-                      Manage your offline content. Caching lessons allows you to study without an internet connection.
+                      Download questions for your exam section to study without an internet connection.
                     </p>
                     
+                    {/* Download Section */}
+                    <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-4">
+                      <h3 className="font-medium text-blue-900 mb-2">Download for Offline Study</h3>
+                      <p className="text-sm text-blue-700 mb-4">
+                        Download up to 500 {profile?.examSection || 'REG'} questions to practice anywhere, anytime.
+                      </p>
+                      <button
+                        onClick={handleDownloadOffline}
+                        disabled={isDownloading}
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isDownloading ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                            Downloading...
+                          </>
+                        ) : (
+                          'Download Questions'
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Cache Status */}
                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
+                      <h3 className="font-medium text-slate-900 mb-3">Current Cache</h3>
                       <div className="flex items-center justify-between mb-2">
-                         <span className="font-medium text-slate-700">Questions Cached</span>
+                         <span className="text-slate-600">Questions Cached</span>
                          <span className="font-bold text-slate-900">{cacheStatus?.questions_count || 0}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
@@ -358,39 +426,210 @@ const Settings: React.FC = () => {
                       </div>
                     </div>
 
-                    <button
-                      onClick={handleClearCache}
-                      className="px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      Clear Offline Cache
-                    </button>
+                    {/* Clear Cache */}
+                    {(cacheStatus?.questions_count > 0) && (
+                      <button
+                        onClick={handleClearCache}
+                        className="px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors"
+                      >
+                        Clear Offline Cache
+                      </button>
+                    )}
                  </div>
               </div>
             )}
-            
-            {/* Save Button */}
-            <div className="p-6 border-t border-slate-200 flex justify-end">
-              <button
-                onClick={handleSave}
-                disabled={isSaving}
-                className="btn-primary"
-              >
-                {isSaving ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                    Saving...
-                  </>
-                ) : (
-                  'Save Changes'
-                )}
-              </button>
-              {saveSuccess && (
-                  <div className="ml-4 flex items-center text-green-600 animate-fade-in">
-                       <span className="mr-2">Saved!</span>
-                       {/* Icon could go here */}
+
+            {/* Notifications Tab */}
+            {activeTab === 'notifications' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Notification Preferences</h2>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                      <div>
+                        <div className="font-medium text-slate-900">Daily Study Reminder</div>
+                        <div className="text-sm text-slate-500">Get a notification to maintain your streak</div>
+                      </div>
+                      <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={notifications.dailyReminder}
+                          onChange={(e) => setNotifications(prev => ({ ...prev, dailyReminder: e.target.checked }))}
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      </label>
+                    </div>
+
+                    {notifications.dailyReminder && (
+                      <div className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl ml-4">
+                        <div className="font-medium text-slate-900">Reminder Time</div>
+                        <input
+                          type="time"
+                          value={reminderTime}
+                          onChange={(e) => setReminderTime(e.target.value)}
+                          className="px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                        />
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                      <div>
+                        <div className="font-medium text-slate-900">Weekly Progress Report</div>
+                        <div className="text-sm text-slate-500">Email summary of your study performance (coming soon)</div>
+                      </div>
+                      <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={notifications.weeklyReport}
+                          onChange={(e) => setNotifications(prev => ({ ...prev, weeklyReport: e.target.checked }))}
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      </label>
+                    </div>
                   </div>
-              )}
-            </div>
+                </div>
+              </div>
+            )}
+
+            {/* Feedback & Support Tab */}
+            {activeTab === 'feedback' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Feedback & Support</h2>
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                      <h3 className="font-medium text-blue-900 mb-2">Have a suggestion?</h3>
+                      <p className="text-sm text-blue-700 mb-4">
+                        We value your input! Let us know how we can make VoraPrep better for you.
+                      </p>
+                      <a 
+                        href="mailto:support@voraprep.com?subject=VoraPrep%20Feedback"
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                      >
+                        Send Feedback
+                      </a>
+                    </div>
+                    
+                    <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                      <h3 className="font-medium text-slate-900 mb-2">Report an Issue</h3>
+                      <p className="text-sm text-slate-600 mb-4">
+                        Found a bug or content error? Please report it so we can fix it immediately.
+                      </p>
+                      <a 
+                        href="mailto:support@voraprep.com?subject=Bug%20Report"
+                        className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium"
+                      >
+                        Report a Bug
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Account Tab */}
+            {activeTab === 'account' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Account Management</h2>
+                  
+                  <div className="space-y-6">
+                    {/* Account Info */}
+                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                            User ID
+                          </div>
+                          <div className="text-sm font-mono text-slate-700 truncate">
+                            {user?.uid}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                            Email
+                          </div>
+                          <div className="text-sm text-slate-700">
+                            {user?.email}
+                          </div>
+                        </div>
+                        <div>
+                           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                            Account Created
+                           </div>
+                           <div className="text-sm text-slate-700">
+                             {user?.metadata.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'Unknown'}
+                           </div>
+                        </div>
+                        <div>
+                           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                            Last Login
+                           </div>
+                           <div className="text-sm text-slate-700">
+                             {user?.metadata.lastSignInTime ? new Date(user.metadata.lastSignInTime).toLocaleDateString() : 'Just now'}
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-slate-200 pt-6"></div>
+
+                    {/* Actions */}
+                    <h3 className="font-medium text-slate-900 mb-3">Security & Session</h3>
+                    <div className="space-y-3">
+                      <button
+                        onClick={async () => {
+                          try {
+                            await resetPassword(user?.email || '');
+                            alert('Password reset email sent! Check your inbox.');
+                          } catch (err) {
+                            alert('Failed to send reset email. Please try again.');
+                          }
+                        }}
+                        className="w-full sm:w-auto px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium flex items-center gap-2"
+                      >
+                        <Shield className="w-4 h-4" />
+                        Change Password
+                      </button>
+                      <button
+                        onClick={() => signOut()}
+                        className="w-full sm:w-auto px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium flex items-center gap-2"
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Save Button - only show on tabs with saveable settings */}
+            {['profile', 'study', 'notifications'].includes(activeTab) && (
+              <div className="p-6 border-t border-slate-200 flex justify-end">
+                <button
+                  onClick={handleSave}
+                  disabled={isSaving}
+                  className="btn-primary"
+                >
+                  {isSaving ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                      Saving...
+                    </>
+                  ) : (
+                    'Save Changes'
+                  )}
+                </button>
+                {saveSuccess && (
+                    <div className="ml-4 flex items-center text-green-600 animate-fade-in">
+                         <span className="mr-2">Saved!</span>
+                         {/* Icon could go here */}
+                    </div>
+                )}
+              </div>
+            )}
 
           </div>
         </div>

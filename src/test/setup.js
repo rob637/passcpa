@@ -71,6 +71,36 @@ const localStorageMock = {
 };
 Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
+// Mock AudioContext for feedback.ts tests
+class MockAudioContext {
+  destination = {};
+  currentTime = 0;
+  state = 'running';
+  createOscillator() {
+    return {
+      connect: vi.fn(),
+      frequency: { value: 0 },
+      type: 'sine',
+      start: vi.fn(),
+      stop: vi.fn(),
+    };
+  }
+  createGain() {
+    return {
+      connect: vi.fn(),
+      gain: {
+        setValueAtTime: vi.fn(),
+        exponentialRampToValueAtTime: vi.fn(),
+      },
+    };
+  }
+  resume() {
+    return Promise.resolve();
+  }
+}
+window.AudioContext = MockAudioContext;
+window.webkitAudioContext = MockAudioContext;
+
 // Mock IntersectionObserver
 class IntersectionObserverMock {
   constructor() {}

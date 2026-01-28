@@ -12,6 +12,8 @@ import {
   startAfter,
   writeBatch,
   addDoc,
+  updateDoc,
+  deleteDoc,
   serverTimestamp,
   QueryConstraint,
 } from 'firebase/firestore';
@@ -104,10 +106,55 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
 
     // Shuffle and limit
     const shuffled = shuffleArray(questions);
+    
+    if (shuffled.length === 0) {
+      console.log('No questions found in Firestore, attempting local fallback...');
+      return await fetchLocalQuestions(options);
+    }
+
     return shuffled.slice(0, count) as Question[];
 
   } catch (error) {
-    console.error('Error fetching questions:', error);
+    console.warn('Error fetching questions, failing back to local data:', error);
+    return await fetchLocalQuestions(options);
+  }
+}
+
+/**
+ * Fallback to local data when Firestore is empty or fails
+ */
+async function fetchLocalQuestions(options: FetchQuestionsOptions): Promise<Question[]> {
+  const { section, difficulty, count = 10, excludeIds = [] } = options;
+  
+  try {
+    const localData = await import('../data/questions');
+    let candidates: any[] = [];
+
+    switch (section) {
+      case 'FAR': candidates = localData.FAR_ALL; break;
+      case 'AUD': candidates = localData.AUD_ALL; break;
+      case 'REG': candidates = localData.REG_ALL; break;
+      case 'BEC': candidates = localData.BEC_ALL; break;
+      case 'BAR': candidates = localData.BAR_ALL; break;
+      case 'ISC': candidates = localData.ISC_ALL; break;
+      case 'TCP': candidates = localData.TCP_ALL; break;
+      default: 
+        // If no section specified, we might want to search all? 
+        // For now, return empty to avoid massive memory usage unless needed
+        candidates = [];
+    }
+
+    // Filter
+    const filtered = candidates.filter(q => {
+      if (difficulty && q.difficulty !== difficulty) return false;
+      if (excludeIds.includes(q.id)) return false;
+      return true;
+    });
+
+    const shuffled = shuffleArray(filtered);
+    return shuffled.slice(0, count) as Question[];
+  } catch (err) {
+    console.error('Local fallback failed:', err);
     return [];
   }
 }
@@ -233,6 +280,35 @@ export async function seedQuestions(questions: Question[]): Promise<number> {
   await batch.commit();
   console.log(`Seeded ${questions.length} questions`);
   return questions.length;
+}
+
+/**
+ * Update an existing question
+ */
+export async function updateQuestion(id: string, data: Partial<Question>): Promise<void> {
+  try {
+    const questionRef = doc(db, 'questions', id);
+    await updateDoc(questionRef, {
+      ...data,
+      updatedAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('Error updating question:', error);
+    throw error;
+  }
+}
+
+/**
+ * Delete a question
+ */
+export async function deleteQuestion(id: string): Promise<void> {
+  try {
+    const questionRef = doc(db, 'questions', id);
+    await deleteDoc(questionRef);
+  } catch (error) {
+    console.error('Error deleting question:', error);
+    throw error;
+  }
 }
 
 /**

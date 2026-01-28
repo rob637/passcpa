@@ -1,0 +1,29 @@
+# VoraPrep robots.txt
+# https://voraprep.com
+
+User-agent: *
+Allow: /
+Allow: /pricing
+Allow: /login
+Allow: /register
+Allow: /terms
+Allow: /privacy
+
+# Disallow app routes (require authentication)
+Disallow: /dashboard
+Disallow: /study
+Disallow: /practice
+Disallow: /flashcards
+Disallow: /quiz
+Disallow: /exam
+Disallow: /tbs
+Disallow: /lessons/*
+Disallow: /progress
+Disallow: /achievements
+Disallow: /tutor
+Disallow: /settings
+Disallow: /onboarding
+Disallow: /admin
+
+# Sitemap location
+Sitemap: https://voraprep.com/sitemap.xml

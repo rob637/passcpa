@@ -14,8 +14,9 @@ import {
 // import { useAuth } from '../../hooks/useAuth';
 import {
   WC_RUBRIC,
-  getRandomWC,
-} from '../../data/written-communication';
+  getRandomWCTask,
+  fetchAllWCTasks,
+} from '../../services/wcService';
 import clsx from 'clsx';
 import { WCTask } from '../../types';
 
@@ -369,12 +370,23 @@ const WrittenCommunication: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [scores, setScores] = useState<Record<string, number>>({});
   const [showSample, setShowSample] = useState(false);
+  const [tasks, setTasks] = useState<WCTask[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   
-  // Placeholder tasks for now - ideally imported from data 
-  const tasks: WCTask[] = [
-    getRandomWC()
-  ].filter(Boolean);
-
+  // Load tasks from Firestore
+  useEffect(() => {
+    const loadTasks = async () => {
+      setIsLoading(true);
+      try {
+        const allTasks = await fetchAllWCTasks();
+        setTasks(allTasks);
+      } catch (error) {
+        console.error('Error loading WC tasks:', error);
+      }
+      setIsLoading(false);
+    };
+    loadTasks();
+  }, []);
 
   const handleStartTask = (task: WCTask) => {
     setActiveTask(task);
@@ -382,6 +394,13 @@ const WrittenCommunication: React.FC = () => {
     setIsSubmitted(false);
     setScores({});
     setShowSample(false);
+  };
+  
+  const handleStartRandom = async () => {
+    const randomTask = await getRandomWCTask();
+    if (randomTask) {
+      handleStartTask(randomTask);
+    }
   };
 
   const handleSubmit = useCallback(() => {
@@ -401,11 +420,22 @@ const WrittenCommunication: React.FC = () => {
   }, [activeTask, response]);
 
   if (!activeTask) {
+    if (isLoading) {
+      return (
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+            <p className="text-slate-600">Loading writing tasks...</p>
+          </div>
+        </div>
+      );
+    }
+    
     return (
       <TaskSelectionScreen 
         tasks={tasks} 
         onSelectTask={handleStartTask}
-        onStartRandom={() => handleStartTask(getRandomWC())}
+        onStartRandom={handleStartRandom}
       />
     );
   }

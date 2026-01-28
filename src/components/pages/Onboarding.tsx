@@ -12,7 +12,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS } from '../../config/examConfig';
+import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS } from '../../config/examConfig';
 // STUDY_PLAN_TEMPLATES was unused
 import { serverTimestamp } from 'firebase/firestore';
 import clsx from 'clsx';
@@ -106,7 +106,9 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect }) => (
     </div>
 
     <div className="space-y-3">
-      {Object.entries(CPA_SECTIONS).map(([key, section]) => (
+      {Object.entries(CPA_SECTIONS)
+        .filter(([key]) => EXAM_SECTIONS.includes(key))
+        .map(([key, section]) => (
         <button
           key={key}
           onClick={() => onSelect(key)}

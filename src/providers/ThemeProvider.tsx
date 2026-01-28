@@ -16,7 +16,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     // Check localStorage first
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('passcpa-dark-mode');
+      const stored = localStorage.getItem('voraprep-dark-mode');
       if (stored !== null) {
         return stored === 'true';
       }
@@ -35,7 +35,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       root.classList.remove('dark');
     }
     // Persist preference
-    localStorage.setItem('passcpa-dark-mode', String(darkMode));
+    localStorage.setItem('voraprep-dark-mode', String(darkMode));
   }, [darkMode]);
 
   // Listen for system preference changes
@@ -44,7 +44,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
     const handleChange = (e: MediaQueryListEvent) => {
       // Only auto-switch if user hasn't manually set preference
-      const stored = localStorage.getItem('passcpa-dark-mode');
+      const stored = localStorage.getItem('voraprep-dark-mode');
       if (stored === null) {
         setDarkMode(e.matches);
       }

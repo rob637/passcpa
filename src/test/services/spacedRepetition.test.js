@@ -1,5 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { calculateNextReview, getDueCards } from '../../services/spacedRepetition';
+import { 
+  calculateNextReview, 
+  getDueCards, 
+  getStudyStats,
+  getSmartRecommendation 
+} from '../../services/spacedRepetition';
 
 describe('Spaced Repetition Algorithm', () => {
   describe('calculateNextReview', () => {
@@ -219,5 +224,178 @@ describe('Spaced Repetition - Edge Cases', () => {
     const dueCards = getDueCards(futureCards);
 
     expect(dueCards.length).toBe(0);
+  });
+});
+
+describe('getStudyStats', () => {
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const lastWeek = new Date(today);
+  lastWeek.setDate(lastWeek.getDate() - 7);
+
+  it('should count total cards', () => {
+    const cards = [{ id: '1' }, { id: '2' }, { id: '3' }];
+    const stats = getStudyStats(cards);
+    expect(stats.total).toBe(3);
+  });
+
+  it('should count new cards (no nextReview)', () => {
+    const cards = [
+      { id: '1', nextReview: null },
+      { id: '2' },
+      { id: '3', nextReview: today },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.new).toBe(2);
+  });
+
+  it('should count learning cards (interval < 1)', () => {
+    const cards = [
+      { id: '1', nextReview: today, interval: 0.5 },
+      { id: '2', nextReview: today, interval: 0 },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.learning).toBe(2);
+  });
+
+  it('should count review cards (interval 1-20)', () => {
+    const cards = [
+      { id: '1', nextReview: today, interval: 1 },
+      { id: '2', nextReview: today, interval: 10 },
+      { id: '3', nextReview: today, interval: 20 },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.review).toBe(3);
+  });
+
+  it('should count graduated cards (interval >= 21)', () => {
+    const cards = [
+      { id: '1', nextReview: today, interval: 21 },
+      { id: '2', nextReview: today, interval: 30 },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.graduated).toBe(2);
+  });
+
+  it('should count due today', () => {
+    const cards = [
+      { id: '1', nextReview: yesterday, interval: 1 },
+      { id: '2', nextReview: today, interval: 1 },
+      { id: '3', nextReview: tomorrow, interval: 1 },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.dueToday).toBe(2); // yesterday and today
+  });
+
+  it('should count overdue', () => {
+    const cards = [
+      { id: '1', nextReview: lastWeek, interval: 1 },
+      { id: '2', nextReview: yesterday, interval: 1 },
+      { id: '3', nextReview: today, interval: 1 },
+    ];
+    const stats = getStudyStats(cards);
+    expect(stats.overdue).toBe(2); // lastWeek and yesterday
+  });
+
+  it('should return zeros for empty array', () => {
+    const stats = getStudyStats([]);
+    expect(stats.total).toBe(0);
+    expect(stats.new).toBe(0);
+    expect(stats.dueToday).toBe(0);
+  });
+});
+
+describe('getSmartRecommendation', () => {
+  it('should recommend focusing on weak areas', () => {
+    const userProgress = {
+      dueCards: 0,
+      lastActivity: 'flashcards',
+      streakAtRisk: false,
+      pointsNeeded: 0,
+      currentStreak: 5,
+    };
+    const weakAreas = [{ id: 'dep', name: 'Depreciation', accuracy: 45 }];
+
+    const recommendations = getSmartRecommendation(userProgress, weakAreas);
+    
+    expect(recommendations.some(r => r.type === 'weak_area')).toBe(true);
+    expect(recommendations.find(r => r.type === 'weak_area').title).toContain('Depreciation');
+  });
+
+  it('should recommend due card reviews', () => {
+    const userProgress = {
+      dueCards: 10,
+      lastActivity: 'flashcards',
+      streakAtRisk: false,
+      pointsNeeded: 0,
+      currentStreak: 5,
+    };
+
+    const recommendations = getSmartRecommendation(userProgress, []);
+    
+    expect(recommendations.some(r => r.type === 'spaced_review')).toBe(true);
+    expect(recommendations.find(r => r.type === 'spaced_review').title).toContain('10');
+  });
+
+  it('should suggest variety when last activity was mcq', () => {
+    const userProgress = {
+      dueCards: 0,
+      lastActivity: 'mcq',
+      streakAtRisk: false,
+      pointsNeeded: 0,
+      currentStreak: 5,
+    };
+
+    const recommendations = getSmartRecommendation(userProgress, []);
+    
+    expect(recommendations.some(r => r.type === 'variety')).toBe(true);
+  });
+
+  it('should warn about streak at risk', () => {
+    const userProgress = {
+      dueCards: 0,
+      lastActivity: 'flashcards',
+      streakAtRisk: true,
+      pointsNeeded: 50,
+      currentStreak: 7,
+    };
+
+    const recommendations = getSmartRecommendation(userProgress, []);
+    
+    expect(recommendations.some(r => r.type === 'streak')).toBe(true);
+    expect(recommendations.find(r => r.type === 'streak').priority).toBe('urgent');
+  });
+
+  it('should sort by priority (urgent first)', () => {
+    const userProgress = {
+      dueCards: 10,
+      lastActivity: 'mcq',
+      streakAtRisk: true,
+      pointsNeeded: 50,
+      currentStreak: 7,
+    };
+    const weakAreas = [{ id: 'dep', name: 'Depreciation', accuracy: 45 }];
+
+    const recommendations = getSmartRecommendation(userProgress, weakAreas);
+    
+    // First recommendation should be urgent (streak)
+    expect(recommendations[0].priority).toBe('urgent');
+  });
+
+  it('should return empty array with no recommendations needed', () => {
+    const userProgress = {
+      dueCards: 0,
+      lastActivity: 'flashcards',
+      streakAtRisk: false,
+      pointsNeeded: 0,
+      currentStreak: 5,
+    };
+
+    const recommendations = getSmartRecommendation(userProgress, []);
+    
+    expect(recommendations.length).toBe(0);
   });
 });

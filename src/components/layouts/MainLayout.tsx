@@ -4,6 +4,7 @@ import { Home, BookOpen, Target, BarChart3, Settings, Flame } from 'lucide-react
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
+import { CourseSelector } from '../common/CourseSelector';
 import clsx from 'clsx';
 
 // Navigation items with tour IDs
@@ -148,12 +149,17 @@ const MainLayout = () => {
           aria-label="Main navigation"
         >
         <div className="p-6">
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-4">
             <img 
               src="/logo.svg" 
               alt="VoraPrep" 
               className="h-10" 
             />
+          </div>
+          
+          {/* Course Selector */}
+          <div className="mb-6">
+            <CourseSelector />
           </div>
 
           <div className="space-y-1">
@@ -213,7 +219,10 @@ const MainLayout = () => {
         role="banner"
       >
         <div className="flex items-center justify-between px-4 h-16">
-          <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{getPageTitle()}</div>
+          <div className="flex items-center gap-2">
+            <CourseSelector compact showComingSoon={false} />
+            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{getPageTitle()}</div>
+          </div>
           <div className="flex items-center gap-3">
             <div 
               className="flex items-center gap-1.5 px-2 py-1 bg-orange-50 dark:bg-orange-900/30 rounded-lg border border-orange-100 dark:border-orange-800"

@@ -149,6 +149,35 @@ window.scrollTo = vi.fn();
 // are NOT globally mocked here because service test files need the actual implementations.
 // Component tests that use these services should mock them locally in their test files.
 
+// Mock CourseProvider for components that use useCourse hook
+vi.mock('../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA Exam',
+      shortName: 'CPA',
+      description: 'Certified Public Accountant Exam',
+      sections: ['AUD', 'FAR', 'REG', 'TCP', 'BAR', 'ISC'],
+      firestoreCollection: 'questions',
+      lessonsCollection: 'lessons',
+    },
+    setCourse: vi.fn(),
+    availableCourses: [{
+      id: 'cpa',
+      name: 'CPA Exam',
+      shortName: 'CPA',
+      description: 'Certified Public Accountant Exam',
+      sections: ['AUD', 'FAR', 'REG', 'TCP', 'BAR', 'ISC'],
+      firestoreCollection: 'questions',
+      lessonsCollection: 'lessons',
+    }],
+    isLoading: false,
+    detectionSource: 'default',
+  }),
+  CourseProvider: ({ children }) => children,
+}));
+
 // Suppress console errors in tests (optional)
 // vi.spyOn(console, 'error').mockImplementation(() => {});// Suppress console errors in tests (optional)
 // vi.spyOn(console, 'error').mockImplementation(() => {});

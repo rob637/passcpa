@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
@@ -30,6 +31,7 @@ interface StudyMode {
 const Study = () => {
   const { userProfile } = useAuth();
   const { todayLog, dailyProgress, dailyGoalMet } = useStudy();
+  const { courseId } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
   const currentSection = userProfile?.examSection || 'REG';
@@ -59,7 +61,7 @@ const Study = () => {
           if (seen.has(activity.lessonId)) continue;
           seen.add(activity.lessonId);
 
-          const lesson = await fetchLessonById(activity.lessonId);
+          const lesson = await fetchLessonById(activity.lessonId, courseId);
           items.push({
             type: 'lesson',
             title: lesson?.title || activity.lessonId,

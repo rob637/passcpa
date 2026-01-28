@@ -11,6 +11,7 @@ import {
   Camera,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../providers/CourseProvider';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
@@ -51,6 +52,7 @@ interface Tab {
 
 const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
+  const { courseId } = useCourse();
   // const { } = useTheme(); // darkMode, toggleDarkMode unused in logic for now, only importing hooks
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
@@ -112,7 +114,7 @@ const Settings: React.FC = () => {
     try {
       // Fetch questions for user's section
       const section = (profile?.examSection || 'REG') as any;
-      const questions = await fetchQuestions({ section, count: 500 });
+      const questions = await fetchQuestions({ section, count: 500, courseId });
       await cacheQuestions(questions);
       const status = await getCacheStatus();
       setCacheStatus(status);

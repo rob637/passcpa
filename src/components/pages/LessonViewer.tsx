@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../providers/CourseProvider';
 import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import clsx from 'clsx';
@@ -239,6 +240,7 @@ const LessonViewer: React.FC = () => {
   const navigate = useNavigate();
   const { completeLesson, logActivity } = useStudy();
   const { userProfile } = useAuth();
+  const { courseId } = useCourse();
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -256,11 +258,11 @@ const LessonViewer: React.FC = () => {
       setIsLoading(true);
       try {
         if (lessonId) {
-          const fetchedLesson = await fetchLessonById(lessonId);
+          const fetchedLesson = await fetchLessonById(lessonId, courseId);
           setLesson(fetchedLesson || undefined);
           
           const section = userProfile?.examSection || fetchedLesson?.section || 'FAR';
-          const lessons = await fetchLessonsBySection(section as ExamSection);
+          const lessons = await fetchLessonsBySection(section as ExamSection, courseId);
           setSectionLessons(lessons);
         }
       } catch (error) {
@@ -269,7 +271,7 @@ const LessonViewer: React.FC = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, [lessonId, userProfile?.examSection]);
+  }, [lessonId, userProfile?.examSection, courseId]);
   
   const currentIndex = lessonId ? sectionLessons.findIndex(l => l.id === lessonId) : -1;
   const prevLesson = currentIndex > 0 ? sectionLessons[currentIndex - 1] : null;

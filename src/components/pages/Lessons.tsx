@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import clsx from 'clsx';
@@ -122,6 +123,7 @@ const groupLessonsByArea = (lessons: Lesson[], completedLessons: Set<string>): G
 const Lessons: React.FC = () => {
   const { userProfile } = useAuth();
   const { getLessonProgress } = useStudy();
+  const { courseId } = useCourse();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
@@ -136,14 +138,14 @@ const Lessons: React.FC = () => {
   useEffect(() => {
     const fetchLessons = async () => {
       try {
-        const lessons = await fetchLessonsBySection(currentSection);
+        const lessons = await fetchLessonsBySection(currentSection, courseId);
         setRawLessons(lessons);
       } catch (error) {
         console.error('Error fetching lessons:', error);
       }
     };
     fetchLessons();
-  }, [currentSection]);
+  }, [currentSection, courseId]);
   
   // Fetch completed lessons from Firestore
   useEffect(() => {

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS, EXAM_BLUEPRINTS } from '../../config/examConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -245,6 +246,7 @@ const Progress: React.FC = () => {
   const { user, userProfile } = useAuth();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy() as any;
+  const { courseId } = useCourse();
   const [timeRange, setTimeRange] = useState('week');
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
@@ -333,7 +335,7 @@ const Progress: React.FC = () => {
         }
 
         // Get total lessons for user's section
-        const allLessons = await fetchAllLessons();
+        const allLessons = await fetchAllLessons(courseId);
         const sectionLessons = allLessons.filter(l => l.section === currentSection);
         const totalLessonsCount = sectionLessons.length || allLessons.length;
 
@@ -352,7 +354,7 @@ const Progress: React.FC = () => {
     };
 
     loadProgressData();
-  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection]);
+  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection, courseId]);
 
   const readiness = calculateExamReadiness(
     overallStats,

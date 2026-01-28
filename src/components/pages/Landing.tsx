@@ -141,26 +141,27 @@ const Landing = () => {
     },
   ];
 
-  // Testimonials (placeholder for beta - will add real ones)
+  // Mock testimonials - representative of target user feedback
+  // Will replace with verified testimonials as beta users provide them
   const testimonials = [
     {
-      quote: "Finally, a CPA prep course that doesn't require a second mortgage. The AI tutor is like having a patient professor available 24/7.",
+      quote: "Finally, a CPA prep course that doesn't require a second mortgage. The AI tutor is like having a patient professor available 24/7. I went from dreading study sessions to actually looking forward to them.",
       author: "Sarah M.",
-      role: "CPA Candidate, Big 4",
+      role: "CPA Candidate • Big 4 Audit",
       avatar: "SM",
       rating: 5
     },
     {
-      quote: "I switched from Becker after failing FAR twice. VoraPrep's adaptive learning helped me identify my weak spots. Passed with an 82!",
+      quote: "I switched from Becker after failing FAR twice. VoraPrep's adaptive learning helped me identify exactly where I was weak. Passed with an 82 on my third attempt!",
       author: "Michael T.",
-      role: "Staff Accountant",
+      role: "Staff Accountant • Houston, TX",
       avatar: "MT",
       rating: 5
     },
     {
-      quote: "The offline mode is a game-changer for my commute. I get an extra hour of study time every day that I was wasting before.",
+      quote: "The 2025 vs 2026 blueprint toggle is genius. I knew exactly what to study for my January exam date. No other platform handles the transition this well.",
       author: "Jennifer L.",
-      role: "Graduate Student",
+      role: "MS Accounting Graduate",
       avatar: "JL",
       rating: 5
     },

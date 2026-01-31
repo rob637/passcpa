@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logger from '../../../utils/logger';
 import { Link } from 'react-router-dom';
 import { Mail, AlertCircle, Loader2, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
@@ -21,7 +22,7 @@ const ForgotPassword = () => {
       await resetPassword(email);
       setSuccess(true);
     } catch (err: any) {
-      console.error('Password reset error:', err);
+      logger.error('Password reset error:', err);
       if (err.code === 'auth/user-not-found') {
         // Don't reveal if email exists for security
         setSuccess(true);

@@ -376,7 +376,7 @@ const Pricing = () => {
                   <td className="py-3 px-4 text-center text-slate-400">✗</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 text-slate-600 dark:text-slate-300">AI Tutor</td>
+                  <td className="py-3 px-4 text-slate-600 dark:text-slate-300">Vory AI Companion</td>
                   <td className="py-3 px-4 text-center text-green-600">✓ Unlimited</td>
                   <td className="py-3 px-4 text-center text-slate-400">✗</td>
                   <td className="py-3 px-4 text-center text-slate-400">Limited</td>

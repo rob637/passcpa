@@ -355,7 +355,7 @@ describe('errorTracking', () => {
 
   describe('createErrorBoundaryClass', () => {
     it('should return error boundary configuration', () => {
-      const fallback = { type: 'div', props: { children: 'Error occurred' } };
+      const fallback = 'Error occurred' as unknown as React.ReactNode;
       const config = createErrorBoundaryClass(fallback);
 
       expect(config.fallback).toBe(fallback);

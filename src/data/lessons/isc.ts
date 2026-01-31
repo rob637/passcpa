@@ -10,6 +10,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Database Management", "Data Architecture"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-2',
     content: {
       sections: [
         {
@@ -104,6 +106,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Information Systems", "Data Modeling", "Database Design"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-2',
     content: {
       sections: [
         {
@@ -204,6 +208,8 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Data Governance", "Data Quality"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
     content: {
       sections: [
         {
@@ -312,6 +318,8 @@ export const iscLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Information Systems", "SQL", "Data Analytics", "Audit Technology"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-3',
     content: {
       sections: [
         {
@@ -416,6 +424,8 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'beginner',
     topics: ["Information Systems", "IT Infrastructure", "Hardware"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
     content: {
       sections: [
         {
@@ -533,6 +543,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Cloud Computing", "IT Infrastructure"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
     content: {
       sections: [
         {
@@ -644,6 +656,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Networking", "IT Infrastructure"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
     content: {
       sections: [
         {
@@ -767,6 +781,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Information Systems", "SDLC", "IT Governance"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-C-3',
     content: {
       sections: [
         {
@@ -878,6 +894,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Information Systems", "ITGC", "Change Management"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-B-3',
     content: {
       sections: [
         {
@@ -998,6 +1016,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Business Continuity", "Disaster Recovery"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-II-A-3',
     content: {
       sections: [
         {
@@ -1117,6 +1137,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Information Systems", "IT Governance", "Frameworks"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
     content: {
       sections: [
         {
@@ -1240,6 +1262,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Information Systems", "Data Analytics", "Big Data"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-3',
     content: {
       sections: [
         {
@@ -1369,6 +1393,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Security", "Cybersecurity", "Risk Assessment"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-2',
     content: {
       sections: [
         {
@@ -1484,6 +1510,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "IT Controls", "Risk Management"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-1',
     content: {
       sections: [
         {
@@ -1606,6 +1634,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Cryptography", "Data Protection"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-2',
     content: {
       sections: [
         {
@@ -1739,6 +1769,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Access Controls", "ITGC"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-2',
     content: {
       sections: [
         {
@@ -1860,6 +1892,8 @@ export const iscLessons: Lesson[] = [
     duration: 40,
     difficulty: 'beginner',
     topics: ["Security", "Physical Security", "IT Controls"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-3',
     content: {
       sections: [
         {
@@ -1987,6 +2021,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Identity Management", "Access Controls"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-2',
     content: {
       sections: [
         {
@@ -2122,6 +2158,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Privacy", "Compliance"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-1',
     content: {
       sections: [
         {
@@ -2244,6 +2282,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Privacy", "Healthcare Compliance"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-1',
     content: {
       sections: [
         {
@@ -2390,6 +2430,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Privacy", "International Compliance"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-1',
     content: {
       sections: [
         {
@@ -2531,6 +2573,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Security", "Incident Response", "Compliance"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-3',
     content: {
       sections: [
         {
@@ -2677,6 +2721,8 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Security", "Vulnerability Management", "Testing"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-2',
     content: {
       sections: [
         {
@@ -2819,6 +2865,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["SOC", "Service Organization Controls", "ICFR"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
     content: {
       sections: [
         {
@@ -2935,6 +2983,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["SOC", "Type 1", "Type 2", "Audit Evidence"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-2',
     content: {
       sections: [
         {
@@ -3060,6 +3110,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["SOC", "Control Objectives", "ICFR"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
     content: {
       sections: [
         {
@@ -3181,6 +3233,8 @@ export const iscLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["SOC", "Trust Services Criteria", "SOC 2"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-2',
     content: {
       sections: [
         {
@@ -3317,6 +3371,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["SOC", "SOC 2", "Examination", "Attestation"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-2',
     content: {
       sections: [
         {
@@ -3463,6 +3519,8 @@ export const iscLessons: Lesson[] = [
     duration: 35,
     difficulty: 'beginner',
     topics: ["SOC", "SOC 3", "General Use Reports"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
     content: {
       sections: [
         {
@@ -3569,6 +3627,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["SOC", "Cybersecurity", "Risk Management"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
     content: {
       sections: [
         {
@@ -3696,6 +3756,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["SOC", "Audit Evidence", "Financial Statement Audit"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
     content: {
       sections: [
         {
@@ -3830,6 +3892,8 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["SOC", "Subservice Organizations", "Third-Party Risk"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
     content: {
       sections: [
         {
@@ -3951,6 +4015,8 @@ export const iscLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["SOC", "Supply Chain", "Operations"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
     content: {
       sections: [
         {
@@ -4080,6 +4146,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Cloud Computing", "IT Controls"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4153,6 +4221,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Frameworks", "Compliance"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4223,6 +4293,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Security", "Testing", "Vulnerability Management"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4280,6 +4352,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Security", "Incident Response", "Business Continuity"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4334,6 +4408,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Access Controls", "Identity Management"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4392,6 +4468,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Cryptography", "Data Protection"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4448,6 +4526,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Privacy", "Compliance"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -4505,6 +4585,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Risk Management", "Vendor Management", "SOC"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {

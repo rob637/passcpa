@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -12,6 +12,7 @@ import {
 } from '../../services/achievements';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
+import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
 
 // Types
 interface CategoryInfo {
@@ -125,6 +126,25 @@ const Achievements: React.FC = () => {
   }, [user?.uid, userStats, currentStreak, todayLog, earnedAchievements]);
 
   const categories = Object.keys(CATEGORY_INFO);
+  const allTabs = ['all', ...categories];
+
+  // Keyboard navigation for category tabs
+  const handleCategoryChange = useCallback((category: string) => {
+    setSelectedCategory(category);
+  }, []);
+
+  const { tabListProps, getTabProps } = useTabKeyboard(
+    allTabs,
+    selectedCategory,
+    handleCategoryChange
+  );
+
+  // Modal keyboard handling
+  const handleCloseModal = useCallback(() => {
+    setShowUnlocked(null);
+  }, []);
+
+  useModalKeyboard({ onClose: handleCloseModal, enabled: !!showUnlocked });
 
   const filteredAchievements: Achievement[] =
     selectedCategory === 'all'
@@ -163,7 +183,10 @@ const Achievements: React.FC = () => {
 
       {/* Category Filter */}
       <div className="px-4 -mt-8 mb-4">
-        <div className="bg-white rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto">
+        <div 
+          className="bg-white rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto"
+          {...tabListProps}
+        >
           <button
             onClick={() => setSelectedCategory('all')}
             className={clsx(
@@ -172,6 +195,7 @@ const Achievements: React.FC = () => {
                 ? 'bg-primary-100 text-primary-700'
                 : 'text-slate-600 hover:bg-slate-100'
             )}
+            {...getTabProps('all')}
           >
             All
           </button>
@@ -189,6 +213,7 @@ const Achievements: React.FC = () => {
                     ? 'bg-primary-100 text-primary-700'
                     : 'text-slate-600 hover:bg-slate-100'
                 )}
+                {...getTabProps(cat)}
               >
                 <Icon className="w-4 h-4" />
                 {info.name}
@@ -283,22 +308,32 @@ const Achievements: React.FC = () => {
 
       {/* Unlock Celebration Modal */}
       {showUnlocked && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="achievement-title"
+        >
           <div
             className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"
             onClick={() => setShowUnlocked(null)}
+            aria-hidden="true"
           />
           <div className="relative bg-white rounded-2xl p-8 text-center max-w-sm w-full animate-bounce-in">
-            <div className="w-20 h-20 bg-gradient-to-br from-warning-400 to-warning-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl shadow-lg">
+            <div className="w-20 h-20 bg-gradient-to-br from-warning-400 to-warning-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl shadow-lg" aria-hidden="true">
               {showUnlocked.icon}
             </div>
-            <h2 className="text-xl font-bold text-slate-900 mb-1">Achievement Unlocked!</h2>
+            <h2 id="achievement-title" className="text-xl font-bold text-slate-900 mb-1">Achievement Unlocked!</h2>
             <h3 className="text-lg font-semibold text-primary-600 mb-2">{showUnlocked.name}</h3>
             <p className="text-slate-600 mb-4">{showUnlocked.description}</p>
             <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 text-success-700 rounded-full text-sm font-medium">
               +{showUnlocked.points} points
             </div>
-            <button onClick={() => setShowUnlocked(null)} className="mt-6 w-full btn-primary py-3">
+            <button 
+              onClick={() => setShowUnlocked(null)} 
+              className="mt-6 w-full btn-primary py-3"
+              autoFocus
+            >
               Awesome!
             </button>
           </div>

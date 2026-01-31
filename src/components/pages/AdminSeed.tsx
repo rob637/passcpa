@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { useAuth } from '../../hooks/useAuth';
 import { collection, doc, writeBatch, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -51,7 +52,7 @@ const AdminSeed: React.FC = () => {
         setSeedQuestions(questions);
         setSeedStats(getStats());
       } catch (error) {
-        console.error('Error loading seed data:', error);
+        logger.error('Error loading seed data:', error);
       } finally {
         setIsLoadingData(false);
       }
@@ -65,7 +66,7 @@ const AdminSeed: React.FC = () => {
       const snapshot = await getDocs(questionsRef);
       setQuestionCount(snapshot.size);
     } catch (error) {
-      console.error('Error checking questions:', error);
+      logger.error('Error checking questions:', error);
     }
   };
 
@@ -114,7 +115,7 @@ const AdminSeed: React.FC = () => {
       setMessage(`Successfully seeded ${totalCount} questions!`);
       checkQuestionCount();
     } catch (error) {
-      console.error('Error seeding:', error);
+      logger.error('Error seeding:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       setStatus('error');
       setMessage(`Error: ${errorMessage}`);
@@ -158,7 +159,7 @@ const AdminSeed: React.FC = () => {
       setMessage(`Deleted ${totalDeleted} questions.`);
       setQuestionCount(0);
     } catch (error) {
-      console.error('Error deleting:', error);
+      logger.error('Error deleting:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       setStatus('error');
       setMessage(`Error: ${errorMessage}`);

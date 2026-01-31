@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logger from '../../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Loader2, Check } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
@@ -54,7 +55,7 @@ const Register = () => {
       await signUp(formData.email, formData.password, displayName);
       navigate('/onboarding');
     } catch (err: any) {
-      console.error('Registration error:', err);
+      logger.error('Registration error:', err);
       if (err.code === 'auth/email-already-in-use') {
         setError('An account with this email already exists.');
       } else if (err.code === 'auth/invalid-email') {
@@ -75,7 +76,7 @@ const Register = () => {
       await signInWithGoogle();
       navigate('/onboarding');
     } catch (err: any) {
-      console.error('Google sign-up error:', err);
+      logger.error('Google sign-up error:', err);
       if (err.code === 'auth/popup-closed-by-user') {
         // User closed the popup, don't show error
         return;

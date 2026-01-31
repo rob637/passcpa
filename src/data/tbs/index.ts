@@ -4,6 +4,10 @@
 import { TBS, TBS_TYPES, ExamSection, TBSType } from '../../types';
 // ADDITIONAL_TBS is exported from additional-tbs but merged into section arrays below
 import { /* ADDITIONAL_TBS, */ FAR_TBS_2, REG_TBS_2, AUD_TBS_2, BEC_TBS_2 } from './additional-tbs';
+// New 2024 exam sections - native TBS content
+import { BAR_TBS } from './bar-tbs';
+import { ISC_TBS } from './isc-tbs';
+import { TCP_TBS } from './tcp-tbs';
 
 // ==========================================
 // FAR - FINANCIAL ACCOUNTING TBS
@@ -1508,10 +1512,10 @@ export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2];
 export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2];
 export const BEC_TBS_ALL: TBS[] = [...BEC_TBS, ...BEC_TBS_2];
 
-// New sections use FAR/REG/AUD TBS for now (can be expanded later)
-export const BAR_TBS_ALL: TBS[] = [...FAR_TBS_ALL.slice(0, 3)]; // Business Analysis uses some FAR concepts
-export const ISC_TBS_ALL: TBS[] = [...AUD_TBS_ALL.slice(0, 2)]; // Info Systems uses some AUD concepts
-export const TCP_TBS_ALL: TBS[] = [...REG_TBS_ALL.slice(0, 3)]; // Tax Compliance uses REG concepts
+// New 2024 CPA exam sections with NATIVE TBS content
+export const BAR_TBS_ALL: TBS[] = [...BAR_TBS]; // Business Analysis & Reporting - 10 native TBS
+export const ISC_TBS_ALL: TBS[] = [...ISC_TBS]; // Information Systems & Controls - 8 native TBS  
+export const TCP_TBS_ALL: TBS[] = [...TCP_TBS]; // Tax Compliance & Planning - 10 native TBS
 
 export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 

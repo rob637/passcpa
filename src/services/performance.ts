@@ -3,6 +3,8 @@
  * Tracks Core Web Vitals and custom app performance metrics
  */
 
+import logger from '../utils/logger';
+
 // Lazy import analytics to handle async initialization
 let analyticsInstance: { instance: any; logEvent: any } | null | undefined = null;
 
@@ -77,7 +79,7 @@ const reportWebVital = async (metric: any) => {
 
   // Log to console in development
   if (import.meta.env.DEV) {
-    console.log(`[Web Vital] ${name}:`, {
+    logger.log(`[Web Vital] ${name}:`, {
       value: Math.round(value),
       delta: Math.round(delta),
       rating: rating || classifyMetric(name, value),
@@ -113,11 +115,11 @@ export const initWebVitals = async (): Promise<void> => {
     onINP(reportWebVital);
 
     if (import.meta.env.DEV) {
-      console.log('[Performance] Web Vitals monitoring initialized');
+      logger.log('[Performance] Web Vitals monitoring initialized');
     }
   } catch (error) {
     if (import.meta.env.DEV) {
-      console.warn('[Performance] Failed to init web-vitals:', error);
+      logger.warn('[Performance] Failed to init web-vitals:', error);
     }
   }
 };
@@ -138,7 +140,7 @@ export const trackDuration = (metricName: string, startMark: string, endMark?: s
       
       if (lastEntry) {
         if (import.meta.env.DEV) {
-          console.log(`[Performance] ${metricName}: ${Math.round(lastEntry.duration)}ms`);
+          logger.log(`[Performance] ${metricName}: ${Math.round(lastEntry.duration)}ms`);
         }
         
         logAnalyticsEvent('custom_timing', {

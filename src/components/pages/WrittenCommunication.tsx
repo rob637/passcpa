@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -241,7 +242,7 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-slate-900">{task.topic}</h3>
                   <p className="text-sm text-slate-600 mt-1 line-clamp-2">
-                    {task.task.slice(0, 150)}...
+                    {(task.task || task.prompt || '').slice(0, 150)}...
                   </p>
                   <div className="flex items-center gap-4 mt-2">
                     <span className="text-xs text-slate-500 flex items-center gap-1">
@@ -381,7 +382,7 @@ const WrittenCommunication: React.FC = () => {
         const allTasks = await fetchAllWCTasks();
         setTasks(allTasks);
       } catch (error) {
-        console.error('Error loading WC tasks:', error);
+        logger.error('Error loading WC tasks:', error);
       }
       setIsLoading(false);
     };

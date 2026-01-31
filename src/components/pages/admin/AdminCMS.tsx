@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
@@ -121,7 +122,7 @@ const AdminCMS: React.FC = () => {
       });
       setUsersList(users);
     } catch (error) {
-      console.error('Error loading users', error);
+      logger.error('Error loading users', error);
       addLog('Error loading users: ' + (error instanceof Error ? error.message : String(error)), 'error');
     } finally {
       setIsLoadingUsers(false);
@@ -146,7 +147,7 @@ const AdminCMS: React.FC = () => {
       setSystemErrors(errors);
     } catch (error) {
        // If the index is missing, it will fail.
-      console.error('Error loading system errors', error);
+      logger.error('Error loading system errors', error);
        // Fallback without sort if index error happens (common in dev)
        if (String(error).includes('index')) {
           addLog('Index missing for error_logs. Fetching without sort.', 'warning');
@@ -189,7 +190,7 @@ const AdminCMS: React.FC = () => {
           { section: 'BEC', questions: BEC_QUESTIONS, color: 'cyan' },
         ]);
       } catch (error) {
-        console.error('Error loading question data:', error);
+        logger.error('Error loading question data:', error);
       } finally {
         setIsLoadingData(false);
       }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import {
   ChevronLeft,
@@ -315,14 +316,17 @@ const Practice: React.FC = () => {
       let fetchedQuestions: Question[];
 
       // Determine Blueprint Version based on user's exam date
-      const examDate = userProfile?.examDate ? new Date(userProfile.examDate) : new Date();
+      const rawExamDate = userProfile?.examDate;
+      const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function'
+        ? (rawExamDate as { toDate: () => Date }).toDate()
+        : rawExamDate ? new Date(rawExamDate as Date) : new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
       const is2026 = blueprintVersion === '2026';
 
       if (config.mode === 'weak') {
         // Get questions from weak areas
         fetchedQuestions = await getWeakAreaQuestions(
-          userProfile?.uid,
+          userProfile?.id || '',
           (userProfile?.examSection as ExamSection) || 'REG',
           config.count
         );
@@ -349,7 +353,7 @@ const Practice: React.FC = () => {
       setFlagged(new Set());
       setLoading(false);
     } catch (error) {
-      console.error('Error starting session:', error);
+      logger.error('Error starting session:', error);
       setLoading(false);
     }
   };
@@ -473,7 +477,7 @@ const Practice: React.FC = () => {
     
     try {
       // Log the report (could be sent to Firestore in production)
-      console.log('Question Issue Report:', {
+      logger.log('Question Issue Report:', {
         questionId: currentQuestion.id,
         section: sessionConfig?.section,
         type: reportType,
@@ -497,7 +501,7 @@ const Practice: React.FC = () => {
         setReportSubmitted(false);
       }, 2000);
     } catch (error) {
-      console.error('Failed to submit report:', error);
+      logger.error('Failed to submit report:', error);
     }
   }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity]);
 
@@ -755,7 +759,7 @@ const Practice: React.FC = () => {
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"
                 >
                   <Sparkles className="w-4 h-4" />
-                  Ask AI to Explain More
+                  Ask Vory to Explain
                 </button>
                 <Link
                   to={`/study/${currentQuestion.section?.toLowerCase() || 'far'}`}

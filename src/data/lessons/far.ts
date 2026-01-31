@@ -10,6 +10,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Conceptual Framework", "FASB", "Qualitative Characteristics"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-2',
     content: {
       sections: [
         {
@@ -101,6 +103,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Financial Statements", "Balance Sheet", "Income Statement", "Cash Flows"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-B-3',
     content: {
       sections: [
         {
@@ -188,6 +192,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["GAAP Hierarchy", "ASC", "FASB", "Standard Setting"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-1',
     content: {
       sections: [
         {
@@ -269,6 +275,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["SEC Reporting", "10-K", "10-Q", "8-K", "Public Companies"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-1',
     content: {
       sections: [
         {
@@ -367,6 +375,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["IFRS", "GAAP", "International Accounting", "Convergence"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-1',
     content: {
       sections: [
         {
@@ -475,6 +485,8 @@ export const farLessons: Lesson[] = [
     duration: 35,
     difficulty: 'intermediate',
     topics: ["Assets", "Cash", "Cash Equivalents"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -555,6 +567,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Assets", "Cash", "Bank Reconciliation"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -641,6 +655,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Assets", "Receivables", "Allowance Method"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-2',
     content: {
       sections: [
         {
@@ -725,6 +741,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Assets", "CECL", "Credit Losses", "ASC 326"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -828,6 +846,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Assets", "Receivables", "Notes Receivable", "Present Value"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-3',
     content: {
       sections: [
         {
@@ -922,6 +942,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Assets", "Receivables", "Factoring", "Transfers"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-2',
     content: {
       sections: [
         {
@@ -1024,6 +1046,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Assets", "Inventory", "Cost Flow"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-B-1',
     content: {
       sections: [
         {
@@ -1128,6 +1152,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Assets", "Inventory", "LCM", "NRV"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -1225,6 +1251,8 @@ export const farLessons: Lesson[] = [
     duration: 70,
     difficulty: 'advanced',
     topics: ["Assets", "Inventory", "Dollar-Value LIFO"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-B-1',
     content: {
       sections: [
         {
@@ -1329,6 +1357,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Assets", "Inventory", "Error Correction"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -1421,6 +1451,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Assets", "PPE", "Capitalization"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-1',
     content: {
       sections: [
         {
@@ -1532,6 +1564,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Assets", "PPE", "Depreciation"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-2',
     content: {
       sections: [
         {
@@ -1644,6 +1678,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Assets", "PPE", "Impairment"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-3',
     content: {
       sections: [
         {
@@ -1737,6 +1773,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Assets", "PPE", "Disposals", "Exchanges"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-1',
     content: {
       sections: [
         {
@@ -1839,6 +1877,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Assets", "Investments", "Debt Securities"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-E-1',
     content: {
       sections: [
         {
@@ -1940,6 +1980,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Assets", "Investments", "Equity Securities"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -2033,6 +2075,8 @@ export const farLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Assets", "Investments", "Equity Method"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-E-2',
     content: {
       sections: [
         {
@@ -2132,6 +2176,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Measurements", "Fair Value"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -2244,6 +2290,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Assets", "Intangibles", "R&D", "Software"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-D-2',
     content: {
       sections: [
         {
@@ -2349,6 +2397,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Assets", "Intangibles", "Amortization"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-D-1',
     content: {
       sections: [
         {
@@ -2449,6 +2499,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Assets", "Intangibles", "Goodwill", "Impairment"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-D-1',
     content: {
       sections: [
         {
@@ -2547,6 +2599,8 @@ export const farLessons: Lesson[] = [
     duration: 35,
     difficulty: 'intermediate',
     topics: ["Liabilities", "Current Liabilities", "Accruals"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -2640,6 +2694,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Liabilities", "ARO", "Environmental"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-3',
     content: {
       sections: [
         {
@@ -2745,6 +2801,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Liabilities", "Notes Payable", "Interest"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -2831,6 +2889,8 @@ export const farLessons: Lesson[] = [
     duration: 65,
     difficulty: 'intermediate',
     topics: ["Liabilities", "Bonds", "Long-term Debt"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-III-B-1',
     content: {
       sections: [
         {
@@ -2934,6 +2994,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Liabilities", "Bonds", "Debt Extinguishment"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-III-B-1',
     content: {
       sections: [
         {
@@ -3030,6 +3092,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Equity", "Stock", "Contributed Capital"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -3128,6 +3192,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Equity", "Treasury Stock"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -3226,6 +3292,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Equity", "Dividends"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -3324,6 +3392,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Equity", "Stock Compensation", "ASC 718"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     content: {
       sections: [
         {
@@ -3421,6 +3491,8 @@ export const farLessons: Lesson[] = [
     duration: 75,
     difficulty: 'advanced',
     topics: ["Revenue Recognition", "ASC 606", "Contracts"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -3539,6 +3611,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Revenue Recognition", "Performance Obligations", "ASC 606"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -3654,6 +3728,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Revenue Recognition", "Variable Consideration", "ASC 606"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -3770,6 +3846,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Revenue Recognition", "Contract Costs", "ASC 606"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -3895,6 +3973,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Leases", "ASC 842", "Classification"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-2',
     content: {
       sections: [
         {
@@ -4011,6 +4091,8 @@ export const farLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Leases", "ASC 842", "Lessee Accounting"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-2',
     content: {
       sections: [
         {
@@ -4133,6 +4215,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Leases", "ASC 842", "Lessor Accounting"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-2',
     content: {
       sections: [
         {
@@ -4261,6 +4345,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Leases", "ASC 842", "Sale-Leaseback"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-2',
     content: {
       sections: [
         {
@@ -4358,6 +4444,8 @@ export const farLessons: Lesson[] = [
     duration: 70,
     difficulty: 'advanced',
     topics: ["Income Taxes", "ASC 740", "Deferred Taxes"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -4463,6 +4551,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Income Taxes", "Temporary Differences", "Permanent Differences"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -4589,6 +4679,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Income Taxes", "Valuation Allowance", "DTA"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -4694,6 +4786,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Income Taxes", "Uncertain Tax Positions", "ASC 740"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -4798,6 +4892,8 @@ export const farLessons: Lesson[] = [
     duration: 75,
     difficulty: 'advanced',
     topics: ["Pensions", "Defined Benefit", "Pension Expense"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-3',
     content: {
       sections: [
         {
@@ -4907,6 +5003,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Pensions", "OPEB", "Retiree Benefits"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-3',
     content: {
       sections: [
         {
@@ -5014,6 +5112,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Contingencies", "Loss Contingencies", "Commitments"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -5131,6 +5231,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["EPS", "Basic EPS", "Diluted EPS"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -5248,6 +5350,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Cash Flows", "Operating Activities", "Indirect Method"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
     content: {
       sections: [
         {
@@ -5375,6 +5479,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Governmental", "Measurement Focus", "Basis of Accounting"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5465,6 +5571,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Governmental", "Fund Accounting", "Fund Types"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5564,6 +5672,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Governmental", "Budgetary Accounting", "Encumbrances"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5651,6 +5761,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Governmental", "Government-Wide", "Net Position"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5733,6 +5845,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Governmental", "Government-Wide", "Statement of Activities"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5820,6 +5934,8 @@ export const farLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Governmental", "Fund Statements"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5906,6 +6022,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Governmental", "Proprietary Funds"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -5999,6 +6117,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Governmental", "Fiduciary Funds"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     content: {
       sections: [
         {
@@ -6081,6 +6201,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Not-for-Profit", "Financial Statements"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     content: {
       sections: [
         {
@@ -6163,6 +6285,8 @@ export const farLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Not-for-Profit", "Statement of Activities"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     content: {
       sections: [
         {
@@ -6255,6 +6379,8 @@ export const farLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Not-for-Profit", "Cash Flows"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     content: {
       sections: [
         {
@@ -6346,6 +6472,8 @@ export const farLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Not-for-Profit", "Contributions", "Pledges"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     content: {
       sections: [
         {
@@ -6433,6 +6561,8 @@ export const farLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Not-for-Profit", "Split-Interest Agreements"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     content: {
       sections: [
         {

@@ -6,6 +6,7 @@
  */
 
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import logger from '../utils/logger';
 import { db } from '../config/firebase.js';
 
 // ============================================================================
@@ -72,13 +73,13 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
       '✨ BETA: All features unlocked!',
       'Unlimited questions',
       'All 6 exam sections',
-      'AI tutor included',
+      'Vory AI companion included',
       'TBS simulations',
       'Progress tracking',
     ] : [
       '50 questions per day',
       'All 6 exam sections',
-      '5 AI tutor messages/day',
+      '5 Vory messages/day',
       '1 TBS simulation/day',
       'Progress tracking',
     ],
@@ -107,7 +108,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
     interval: 'month',
     features: [
       'Unlimited questions',
-      'Unlimited AI tutor',
+      'Unlimited Vory access',
       'Unlimited TBS practice',
       'Offline mode',
       'Advanced analytics',
@@ -216,7 +217,7 @@ class SubscriptionService {
       }
       return null;
     } catch (error) {
-      console.error('Error fetching subscription:', error);
+      logger.error('Error fetching subscription:', error);
       return null;
     }
   }
@@ -437,7 +438,7 @@ export function useSubscription() {
         setLimits(SUBSCRIPTION_PLANS[sub.tier].limits);
         setIsPremium(sub.tier !== 'free' && sub.status === 'active');
       } catch (error) {
-        console.error('Error loading subscription:', error);
+        logger.error('Error loading subscription:', error);
         setLimits(SUBSCRIPTION_PLANS.free.limits);
       } finally {
         setLoading(false);

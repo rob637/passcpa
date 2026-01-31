@@ -8,7 +8,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Check, GraduationCap, Lock, Sparkles } from 'lucide-react';
 import { useCourse } from '../../providers/CourseProvider';
-import { getCourse, isCourseActive, ACTIVE_COURSES } from '../../courses';
+import { isCourseActive, ACTIVE_COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
 import clsx from 'clsx';
 
@@ -66,7 +66,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
   showComingSoon = true,
   className,
 }) => {
-  const { courseId, setCourse, availableCourses, userCourses } = useCourse();
+  const { courseId, setCourse, userCourses } = useCourse();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   

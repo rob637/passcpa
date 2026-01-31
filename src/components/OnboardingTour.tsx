@@ -93,9 +93,9 @@ const TOUR_STEPS: TourStep[] = [
   {
     id: 'ai-tutor',
     target: '[data-tour="ai-tutor"]',
-    title: 'AI Tutor',
+    title: 'Meet Vory',
     content:
-      'Get personalized help from our AI tutor. Ask questions about any CPA topic and get instant, detailed explanations tailored to your level.',
+      'Meet Vory, your AI study companion! Ask questions about any CPA topic and get instant, detailed explanations tailored to your level.',
     placement: 'bottom',
   },
   {

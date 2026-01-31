@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import { 
   Search, 
@@ -21,6 +22,7 @@ import {
   getLessonBlueprintVersion
 } from '../../data/lessonMatrix';
 import { Lesson, Difficulty } from '../../types';
+import { getAccessibleClickProps } from '../../hooks/useKeyboardNavigation';
 
 // Get current blueprint based on date
 const getCurrentBlueprint = (): '2025' | '2026' => {
@@ -166,7 +168,7 @@ const LessonMatrix: React.FC = () => {
         setIsLoading(false);
       })
       .catch(err => {
-        console.error('Failed to fetch lessons:', err);
+        logger.error('Failed to fetch lessons:', err);
         setIsLoading(false);
       });
   }, [courseId]);
@@ -377,8 +379,9 @@ const LessonMatrix: React.FC = () => {
                   return (
                     <tr 
                       key={lesson.id} 
-                      className="hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer group"
-                      onClick={() => navigate(`/lessons/${lesson.id}`)}
+                      className="hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer group focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
+                      {...getAccessibleClickProps(() => navigate(`/lessons/${lesson.id}`))}
+                      aria-label={`Open lesson: ${lesson.title}`}
                     >
                       <td className="p-4 whitespace-nowrap">
                         <SectionBadge section={lesson.section} />

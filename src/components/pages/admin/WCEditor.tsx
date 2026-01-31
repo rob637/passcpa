@@ -3,6 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
 import {
@@ -60,7 +61,7 @@ const WCEditor = () => {
       const statsData = await getWCStats();
       setStats(statsData);
     } catch (err) {
-      console.error('Error loading WC tasks:', err);
+      logger.error('Error loading WC tasks:', err);
       setError('Failed to load WC tasks. Please try again.');
     } finally {
       setIsLoading(false);
@@ -80,7 +81,8 @@ const WCEditor = () => {
     difficulty: Difficulty;
     estimatedTime: number;
     scenario: string;
-    instructions: string;
+    task: string;
+    prompt: string;
     sampleResponse: string;
   }>({
     section: 'FAR',
@@ -88,7 +90,8 @@ const WCEditor = () => {
     difficulty: 'medium',
     estimatedTime: 15,
     scenario: '',
-    instructions: '',
+    task: '',
+    prompt: '',
     sampleResponse: '',
   });
 
@@ -99,7 +102,8 @@ const WCEditor = () => {
       difficulty: 'medium',
       estimatedTime: 15,
       scenario: '',
-      instructions: '',
+      task: '',
+      prompt: '',
       sampleResponse: '',
     });
     setEditingTask(null);
@@ -114,7 +118,8 @@ const WCEditor = () => {
       difficulty: task.difficulty,
       estimatedTime: task.estimatedTime || 15,
       scenario: task.scenario || '',
-      instructions: task.instructions || '',
+      task: task.task || '',
+      prompt: task.prompt || '',
       sampleResponse: task.sampleResponse || '',
     });
     setIsEditing(true);
@@ -137,7 +142,8 @@ const WCEditor = () => {
         difficulty: formData.difficulty,
         estimatedTime: formData.estimatedTime,
         scenario: formData.scenario,
-        instructions: formData.instructions,
+        task: formData.task,
+        prompt: formData.prompt,
         sampleResponse: formData.sampleResponse,
       };
 
@@ -154,7 +160,7 @@ const WCEditor = () => {
       
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error saving WC task:', err);
+      logger.error('Error saving WC task:', err);
       setError('Failed to save WC task. Please try again.');
     } finally {
       setIsLoading(false);
@@ -171,7 +177,7 @@ const WCEditor = () => {
       setSuccessMessage('WC task deleted successfully!');
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error deleting WC task:', err);
+      logger.error('Error deleting WC task:', err);
       setError('Failed to delete WC task.');
     } finally {
       setIsLoading(false);
@@ -330,13 +336,24 @@ const WCEditor = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Instructions (optional)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Task Description</label>
               <textarea
-                value={formData.instructions}
-                onChange={(e) => setFormData(prev => ({ ...prev, instructions: e.target.value }))}
+                value={formData.task}
+                onChange={(e) => setFormData(prev => ({ ...prev, task: e.target.value }))}
                 className="w-full p-2 border border-gray-300 rounded-lg"
                 rows={3}
-                placeholder="Specific instructions for the candidate..."
+                placeholder="Task description/instructions for the candidate..."
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Writing Prompt</label>
+              <textarea
+                value={formData.prompt}
+                onChange={(e) => setFormData(prev => ({ ...prev, prompt: e.target.value }))}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                rows={3}
+                placeholder="The specific writing prompt..."
               />
             </div>
 

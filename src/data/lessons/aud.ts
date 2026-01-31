@@ -10,6 +10,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'beginner',
     topics: ["Engagements", "Assurance"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -96,6 +98,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Ethics", "Professional Conduct"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-2',
     content: {
       sections: [
         {
@@ -191,6 +195,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Ethics", "Independence", "Threats"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -285,6 +291,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Ethics", "Independence", "PCAOB", "SEC"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -377,6 +385,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Ethics", "Conflicts"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -459,6 +469,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Planning", "Engagement Letters"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-II-A-1',
     content: {
       sections: [
         {
@@ -546,6 +558,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Communication", "Governance"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -640,6 +654,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Quality Control", "SQMS"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-B-1',
     content: {
       sections: [
         {
@@ -737,6 +753,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'beginner',
     topics: ["Concepts", "Skepticism", "Judgment"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-2',
     content: {
       sections: [
         {
@@ -826,6 +844,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Documentation", "Working Papers"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
     content: {
       sections: [
         {
@@ -917,6 +937,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Planning", "Risk Assessment"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1006,6 +1028,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Planning", "Materiality"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-1',
     content: {
       sections: [
         {
@@ -1095,6 +1119,8 @@ export const audLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Risk Assessment", "Audit Risk"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1187,6 +1213,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Risk Assessment", "Industry"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1272,6 +1300,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Risk Assessment", "Business Strategy"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1356,6 +1386,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Risk Assessment", "Analytics"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-III-B-3',
     content: {
       sections: [
         {
@@ -1460,6 +1492,8 @@ export const audLessons: Lesson[] = [
     duration: 65,
     difficulty: 'intermediate',
     topics: ["Internal Control", "COSO"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-A-1',
     content: {
       sections: [
         {
@@ -1553,6 +1587,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Internal Control", "Control Testing"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-A-1',
     content: {
       sections: [
         {
@@ -1635,6 +1671,8 @@ export const audLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Internal Control", "IT Controls"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-A-1',
     content: {
       sections: [
         {
@@ -1728,6 +1766,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Risk Assessment", "RMM"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1817,6 +1857,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Risk Assessment", "Significant Risks"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
     content: {
       sections: [
         {
@@ -1896,6 +1938,8 @@ export const audLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Risk Assessment", "Fraud"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-3',
     content: {
       sections: [
         {
@@ -1983,6 +2027,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Audit Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2067,6 +2113,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Confirmations"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-2',
     content: {
       sections: [
         {
@@ -2149,6 +2197,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Analytics"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-3',
     content: {
       sections: [
         {
@@ -2236,6 +2286,8 @@ export const audLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Sampling", "Audit Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-1',
     content: {
       sections: [
         {
@@ -2323,6 +2375,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Sampling", "Audit Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-1',
     content: {
       sections: [
         {
@@ -2410,6 +2464,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Sampling", "Audit Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-1',
     content: {
       sections: [
         {
@@ -2487,6 +2543,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Audit Evidence", "Estimates"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2569,6 +2627,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Related Parties"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2646,6 +2706,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Audit Evidence", "Going Concern"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2729,6 +2791,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Subsequent Events"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2806,6 +2870,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Internal Audit"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2878,6 +2944,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Audit Evidence", "Group Audits"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -2960,6 +3028,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Audit Evidence", "Specialists"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
     content: {
       sections: [
         {
@@ -3032,6 +3102,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Substantive Testing", "Revenue"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-2',
     content: {
       sections: [
         {
@@ -3115,6 +3187,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Substantive Testing", "Inventory"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-2',
     content: {
       sections: [
         {
@@ -3197,6 +3271,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Reporting", "Audit Opinion"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
     content: {
       sections: [
         {
@@ -3274,6 +3350,8 @@ export const audLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Reporting", "Modified Opinions"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-2',
     content: {
       sections: [
         {
@@ -3355,6 +3433,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Reporting", "EOM"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-3',
     content: {
       sections: [
         {
@@ -3427,6 +3507,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Reporting", "Comparatives"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
     content: {
       sections: [
         {
@@ -3499,6 +3581,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Reporting", "KAM", "CAM"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
     content: {
       sections: [
         {
@@ -3571,6 +3655,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Attestation", "Examination"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-2',
     content: {
       sections: [
         {
@@ -3649,6 +3735,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Attestation", "Review"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-2',
     content: {
       sections: [
         {
@@ -3716,6 +3804,8 @@ export const audLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Attestation", "AUP"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-2',
     content: {
       sections: [
         {
@@ -3788,6 +3878,8 @@ export const audLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["SSARS", "Compilation"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-1',
     content: {
       sections: [
         {
@@ -3867,6 +3959,8 @@ export const audLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["SSARS", "Review"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-1',
     content: {
       sections: [
         {
@@ -3939,6 +4033,8 @@ export const audLessons: Lesson[] = [
     duration: 35,
     difficulty: 'beginner',
     topics: ["SSARS", "Preparation"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
     content: {
       sections: [
         {
@@ -4013,6 +4109,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Attestation", "SOC Reports"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-2',
     content: {
       sections: [
         {
@@ -4101,6 +4199,8 @@ export const audLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Government Auditing", "Single Audit"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
     content: {
       sections: [
         {

@@ -1,6 +1,8 @@
 // AI Service - Google Gemini Integration
 // For real AI responses in the CPA tutor
 
+import logger from '../utils/logger';
+
 const GEMINI_API_URL =
   'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
@@ -120,7 +122,7 @@ export const generateAIResponse = async (
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
-    // Fallback to smart mock responses if no API key
+    logger.warn('[AI Service] No API key found. Using offline response database.');
     return generateFallbackResponse(userMessage, mode, section);
   }
 
@@ -177,7 +179,7 @@ export const generateAIResponse = async (
 
     throw new Error('No response from Gemini');
   } catch (error) {
-    console.error('AI Service Error:', error);
+    logger.error('AI Service Error:', error);
     return generateFallbackResponse(userMessage, mode, section);
   }
 };

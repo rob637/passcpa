@@ -146,7 +146,7 @@ const Study = () => {
     },
     {
       id: 'tutor',
-      title: 'AI Tutor',
+      title: 'Ask Vory',
       description: 'Get personalized help from your AI study partner',
       icon: Sparkles,
       color: 'slate',

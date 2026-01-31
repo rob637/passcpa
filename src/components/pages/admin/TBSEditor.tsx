@@ -3,6 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
 import { fetchAllTBS, addTBS, updateTBS, deleteTBS } from '../../../services/tbsService';
@@ -39,8 +40,8 @@ const TBS_TYPES = [
   'analysis',
 ];
 
-// Local types for TBS editor
-interface TBSQuestion {
+// Local types for TBS editor form (simplified for editing)
+interface EditorTBSQuestion {
   id: string;
   type: string;
   prompt: string;
@@ -50,7 +51,7 @@ interface TBSQuestion {
   points: number;
 }
 
-interface TBSExhibit {
+interface EditorTBSExhibit {
   id: string;
   title: string;
   type: string;
@@ -82,7 +83,7 @@ const TBSEditor = () => {
       const data = await fetchAllTBS();
       setTBSList(data);
     } catch (err) {
-      console.error('Error loading TBS:', err);
+      logger.error('Error loading TBS:', err);
       setError('Failed to load TBS. Please try again.');
     } finally {
       setIsLoading(false);
@@ -104,8 +105,8 @@ const TBSEditor = () => {
     difficulty: Difficulty;
     estimatedTime: number;
     scenario: string;
-    exhibits: TBSExhibit[];
-    questions: TBSQuestion[];
+    exhibits: EditorTBSExhibit[];
+    questions: EditorTBSQuestion[];
     blueprintArea: string;
   }>({
     section: 'FAR',
@@ -147,8 +148,9 @@ const TBSEditor = () => {
       difficulty: tbs.difficulty,
       estimatedTime: tbs.estimatedTime || 20,
       scenario: tbs.scenario || '',
-      exhibits: tbs.exhibits || [],
-      questions: tbs.questions || [],
+      // Cast TBS types to editor types (editor uses simplified forms)
+      exhibits: (tbs.exhibits || []) as EditorTBSExhibit[],
+      questions: (tbs.questions || []) as EditorTBSQuestion[],
       blueprintArea: tbs.blueprintArea || '',
     });
     setIsEditing(true);
@@ -172,8 +174,9 @@ const TBSEditor = () => {
         difficulty: formData.difficulty,
         estimatedTime: formData.estimatedTime,
         scenario: formData.scenario,
-        exhibits: formData.exhibits,
-        questions: formData.questions,
+        // Cast editor types to TBS types (editor uses simplified forms)
+        exhibits: formData.exhibits as TBS['exhibits'],
+        questions: formData.questions as TBS['questions'],
         blueprintArea: formData.blueprintArea,
       };
 
@@ -190,7 +193,7 @@ const TBSEditor = () => {
 
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error saving TBS:', err);
+      logger.error('Error saving TBS:', err);
       setError('Failed to save TBS. Please try again.');
     } finally {
       setIsLoading(false);
@@ -207,7 +210,7 @@ const TBSEditor = () => {
       setSuccessMessage('TBS deleted successfully!');
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error deleting TBS:', err);
+      logger.error('Error deleting TBS:', err);
       setError('Failed to delete TBS.');
     } finally {
       setIsLoading(false);
@@ -216,7 +219,7 @@ const TBSEditor = () => {
 
   // Question management
   const addQuestion = () => {
-    const newQuestion: TBSQuestion = {
+    const newQuestion: EditorTBSQuestion = {
       id: `q-${Date.now()}`,
       type: 'multiple_choice',
       prompt: '',
@@ -231,7 +234,7 @@ const TBSEditor = () => {
     }));
   };
 
-  const updateQuestion = (index: number, field: keyof TBSQuestion, value: unknown) => {
+  const updateQuestion = (index: number, field: keyof EditorTBSQuestion, value: unknown) => {
     const updated = [...formData.questions];
     updated[index] = { ...updated[index], [field]: value };
     setFormData((prev) => ({ ...prev, questions: updated }));
@@ -246,7 +249,7 @@ const TBSEditor = () => {
 
   // Exhibit management
   const addExhibit = () => {
-    const newExhibit: TBSExhibit = {
+    const newExhibit: EditorTBSExhibit = {
       id: `ex-${Date.now()}`,
       title: '',
       type: 'document',
@@ -258,7 +261,7 @@ const TBSEditor = () => {
     }));
   };
 
-  const updateExhibit = (index: number, field: keyof TBSExhibit, value: unknown) => {
+  const updateExhibit = (index: number, field: keyof EditorTBSExhibit, value: unknown) => {
     const updated = [...formData.exhibits];
     updated[index] = { ...updated[index], [field]: value };
     setFormData((prev) => ({ ...prev, exhibits: updated }));

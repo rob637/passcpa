@@ -36,12 +36,6 @@ export const REG_QUESTIONS: Question[] = [
     explanation:
       'Contingent fees ARE permitted for IRS examination matters, claims for refund, and judicial proceedings. They are only prohibited for preparing original tax returns. The other options all constitute disreputable conduct under Circular 230 §10.51.',
     reference: '31 CFR Part 10 (Circular 230) §10.27, §10.51',
-    // Video explanation placeholder - World-Class feature
-    videoExplanation: {
-      provider: 'placeholder',
-      title: 'Understanding Circular 230 Contingent Fees',
-      duration: 180, // 3 minutes estimated
-    },
     aiExplanation: true,
   },
   {

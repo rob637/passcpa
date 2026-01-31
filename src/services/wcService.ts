@@ -6,6 +6,7 @@
 import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { WCTask, WCRubric, ExamSection } from '../types';
+import logger from '../utils/logger';
 
 // WC Rubric is small and doesn't change - keep it here as config
 export const WC_RUBRIC: WCRubric = {
@@ -83,7 +84,7 @@ export async function fetchAllWCTasks(): Promise<WCTask[]> {
     
     return tasks;
   } catch (error) {
-    console.error('Error fetching WC tasks from Firestore:', error);
+    logger.error('Error fetching WC tasks from Firestore:', error);
     return [];
   }
 }
@@ -120,7 +121,7 @@ export async function fetchWCTasksBySection(section: ExamSection): Promise<WCTas
     
     return tasks;
   } catch (error) {
-    console.error(`Error fetching WC tasks for section ${section}:`, error);
+    logger.error(`Error fetching WC tasks for section ${section}:`, error);
     return [];
   }
 }
@@ -146,7 +147,7 @@ export async function fetchWCTaskById(taskId: string): Promise<WCTask | null> {
     
     return null;
   } catch (error) {
-    console.error(`Error fetching WC task ${taskId}:`, error);
+    logger.error(`Error fetching WC task ${taskId}:`, error);
     return null;
   }
 }
@@ -164,7 +165,7 @@ export async function getRandomWCTask(section?: ExamSection): Promise<WCTask | n
     
     return tasks[Math.floor(Math.random() * tasks.length)];
   } catch (error) {
-    console.error('Error getting random WC task:', error);
+    logger.error('Error getting random WC task:', error);
     return null;
   }
 }
@@ -211,7 +212,7 @@ export async function addWCTask(task: Omit<WCTask, 'id'>): Promise<string> {
     
     return docRef.id;
   } catch (error) {
-    console.error('Error adding WC task:', error);
+    logger.error('Error adding WC task:', error);
     throw error;
   }
 }
@@ -230,7 +231,7 @@ export async function updateWCTask(id: string, data: Partial<WCTask>): Promise<v
     // Clear cache
     clearWCCache();
   } catch (error) {
-    console.error('Error updating WC task:', error);
+    logger.error('Error updating WC task:', error);
     throw error;
   }
 }
@@ -246,7 +247,7 @@ export async function deleteWCTask(id: string): Promise<void> {
     // Clear cache
     clearWCCache();
   } catch (error) {
-    console.error('Error deleting WC task:', error);
+    logger.error('Error deleting WC task:', error);
     throw error;
   }
 }

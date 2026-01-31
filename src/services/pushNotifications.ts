@@ -12,6 +12,7 @@ import { getApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage, Messaging } from 'firebase/messaging';
 import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import logger from '../utils/logger';
 
 // FCM VAPID key - get this from Firebase Console > Project Settings > Cloud Messaging
 const VAPID_KEY = import.meta.env.VITE_FIREBASE_VAPID_KEY || '';
@@ -38,7 +39,7 @@ export async function initializeFCM(): Promise<boolean> {
     
     // Listen for foreground messages
     onMessage(messagingInstance, (payload) => {
-      console.log('FCM message received in foreground:', payload);
+      logger.log('FCM message received in foreground:', payload);
       
       // Show as browser notification
       if (payload.notification) {
@@ -51,7 +52,7 @@ export async function initializeFCM(): Promise<boolean> {
     
     return true;
   } catch (error) {
-    console.error('FCM initialization failed:', error);
+    logger.error('FCM initialization failed:', error);
     return false;
   }
 }
@@ -66,7 +67,7 @@ export async function requestFCMToken(userId: string): Promise<string | null> {
     // Request notification permission first
     const permission = await Notification.requestPermission();
     if (permission !== 'granted') {
-      console.log('Notification permission denied');
+      logger.log('Notification permission denied');
       return null;
     }
     
@@ -76,13 +77,13 @@ export async function requestFCMToken(userId: string): Promise<string | null> {
     if (token) {
       // Save token to user's Firestore document
       await saveFCMToken(userId, token);
-      console.log('FCM token saved:', token.substring(0, 20) + '...');
+      logger.log('FCM token saved:', token.substring(0, 20) + '...');
       return token;
     }
     
     return null;
   } catch (error) {
-    console.error('Error getting FCM token:', error);
+    logger.error('Error getting FCM token:', error);
     return null;
   }
 }
@@ -130,7 +131,7 @@ export async function showBrowserNotification(title: string, body: string, optio
     });
     return true;
   } catch (error) {
-    console.error('Browser notification failed:', error);
+    logger.error('Browser notification failed:', error);
     return false;
   }
 }
@@ -152,7 +153,7 @@ export async function initializeLocalNotifications(): Promise<boolean> {
     if (result.display === 'granted') {
       // Listen for notification actions
       LocalNotifications.addListener('localNotificationActionPerformed', (notification) => {
-        console.log('Notification action performed:', notification);
+        logger.log('Notification action performed:', notification);
         // Handle notification tap - could navigate to specific page
       });
       
@@ -161,7 +162,7 @@ export async function initializeLocalNotifications(): Promise<boolean> {
     
     return false;
   } catch (error) {
-    console.error('Local notifications init failed:', error);
+    logger.error('Local notifications init failed:', error);
     return false;
   }
 }
@@ -200,10 +201,10 @@ export async function scheduleLocalNotification(options: {
     };
     
     await LocalNotifications.schedule(schedule);
-    console.log('Local notification scheduled:', options);
+    logger.log('Local notification scheduled:', options);
     return true;
   } catch (error) {
-    console.error('Failed to schedule local notification:', error);
+    logger.error('Failed to schedule local notification:', error);
     return false;
   }
 }
@@ -220,7 +221,7 @@ export async function cancelAllLocalNotifications(): Promise<void> {
       await LocalNotifications.cancel(pending);
     }
   } catch (error) {
-    console.error('Failed to cancel notifications:', error);
+    logger.error('Failed to cancel notifications:', error);
   }
 }
 

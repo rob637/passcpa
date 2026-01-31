@@ -1,5 +1,5 @@
 export const FEATURES = {
-  aiTutor: true, // Enabled with smart fallback responses - add VITE_GEMINI_API_KEY for full AI
+  aiTutor: true, // Vory - AI Study Companion - add VITE_GEMINI_API_KEY for full AI
   examSimulator: true,
   flashcards: true,
   tbs: true, // Task-Based Simulations

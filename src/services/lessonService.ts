@@ -8,6 +8,7 @@ import { collection, doc, getDoc, getDocs, query, where, orderBy, addDoc, update
 import { db } from '../config/firebase';
 import { Lesson, CourseId } from '../types';
 import { DEFAULT_COURSE_ID } from '../types/course';
+import logger from '../utils/logger';
 
 // Cache for lessons (in-memory) - keyed by courseId
 const lessonsCache: Map<CourseId, Lesson[]> = new Map();
@@ -36,7 +37,7 @@ export async function fetchAllLessons(courseId: CourseId = DEFAULT_COURSE_ID): P
       // Filter by courseId - include lessons that match or have no courseId (legacy data)
       const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
       if (lessonCourseId === courseId) {
-        lessons.push({ id: doc.id, ...data });
+        lessons.push({ ...data, id: doc.id });
       }
     });
 
@@ -54,7 +55,7 @@ export async function fetchAllLessons(courseId: CourseId = DEFAULT_COURSE_ID): P
 
     return lessons;
   } catch (error) {
-    console.error('Error fetching lessons:', error);
+    logger.error('Error fetching lessons:', error);
     return lessonsCache.get(courseId) || []; // Return stale cache if available
   }
 }
@@ -80,13 +81,13 @@ export async function fetchLessonsBySection(section: string, courseId: CourseId 
       const data = doc.data() as Lesson;
       const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
       if (lessonCourseId === courseId) {
-        lessons.push({ id: doc.id, ...data });
+        lessons.push({ ...data, id: doc.id });
       }
     });
 
     return lessons;
   } catch (error) {
-    console.error(`Error fetching lessons for section ${section}:`, error);
+    logger.error(`Error fetching lessons for section ${section}:`, error);
     // Fallback to filtering all lessons
     const allLessons = await fetchAllLessons(courseId);
     return allLessons.filter(l => l.section.toUpperCase() === section.toUpperCase());
@@ -115,7 +116,7 @@ export async function fetchLessonById(lessonId: string, courseId: CourseId = DEF
     }
     return null;
   } catch (error) {
-    console.error(`Error fetching lesson ${lessonId}:`, error);
+    logger.error(`Error fetching lesson ${lessonId}:`, error);
     return null;
   }
 }
@@ -178,13 +179,13 @@ export async function fetchLessonsByTopic(topic: string, courseId: CourseId = DE
       const data = doc.data() as Lesson;
       const lessonCourseId = data.courseId || DEFAULT_COURSE_ID;
       if (lessonCourseId === courseId) {
-        lessons.push({ id: doc.id, ...data });
+        lessons.push({ ...data, id: doc.id });
       }
     });
 
     return lessons;
   } catch (error) {
-    console.error(`Error fetching lessons for topic ${topic}:`, error);
+    logger.error(`Error fetching lessons for topic ${topic}:`, error);
     const allLessons = await fetchAllLessons(courseId);
     return allLessons.filter(l => l.topics?.includes(topic));
   }
@@ -234,7 +235,7 @@ export async function addLesson(lesson: Omit<Lesson, 'id'>): Promise<string> {
     
     return docRef.id;
   } catch (error) {
-    console.error('Error adding lesson:', error);
+    logger.error('Error adding lesson:', error);
     throw error;
   }
 }
@@ -253,7 +254,7 @@ export async function updateLesson(id: string, data: Partial<Lesson>): Promise<v
     // Clear cache to reflect updates
     clearLessonsCache();
   } catch (error) {
-    console.error('Error updating lesson:', error);
+    logger.error('Error updating lesson:', error);
     throw error;
   }
 }
@@ -269,7 +270,7 @@ export async function deleteLesson(id: string): Promise<void> {
     // Clear cache
     clearLessonsCache();
   } catch (error) {
-    console.error('Error deleting lesson:', error);
+    logger.error('Error deleting lesson:', error);
     throw error;
   }
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logger from '../../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
@@ -22,7 +23,7 @@ const Login = () => {
       await signIn(email, password);
       navigate('/dashboard');
     } catch (err: any) {
-      console.error('Login error:', err);
+      logger.error('Login error:', err);
       if (err.code === 'auth/invalid-credential') {
         setError('Invalid email or password. Please try again.');
       } else if (err.code === 'auth/user-not-found') {
@@ -47,7 +48,7 @@ const Login = () => {
       // The AuthProvider handles creating profile, we just navigate
       navigate('/dashboard');
     } catch (err: any) {
-      console.error('Google sign-in error:', err);
+      logger.error('Google sign-in error:', err);
       if (err.code === 'auth/popup-closed-by-user') {
         // User closed the popup, don't show error
         return;

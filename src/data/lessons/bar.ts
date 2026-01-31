@@ -10,6 +10,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Combinations"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-A-1',
     content: {
       sections: [
         {
@@ -145,6 +147,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Combinations"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-A-3',
     content: {
       sections: [
         {
@@ -217,6 +221,8 @@ export const barLessons: Lesson[] = [
     duration: 70,
     difficulty: 'advanced',
     topics: ["Business Combinations", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-1',
     content: {
       sections: [
         {
@@ -290,6 +296,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Combinations", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-2',
     content: {
       sections: [
         {
@@ -361,6 +369,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Combinations", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-2',
     content: {
       sections: [
         {
@@ -432,6 +442,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Combinations", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-3',
     content: {
       sections: [
         {
@@ -503,6 +515,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Business Combinations", "VIE"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-C-1',
     content: {
       sections: [
         {
@@ -570,6 +584,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Business Combinations", "VIE"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-C-2',
     content: {
       sections: [
         {
@@ -641,6 +657,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Business Combinations", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-1',
     content: {
       sections: [
         {
@@ -712,6 +730,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-1',
     content: {
       sections: [
         {
@@ -773,6 +793,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-2',
     content: {
       sections: [
         {
@@ -830,6 +852,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-1',
     content: {
       sections: [
         {
@@ -887,6 +911,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-B-1',
     content: {
       sections: [
         {
@@ -944,6 +970,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-B-2',
     content: {
       sections: [
         {
@@ -995,6 +1023,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-B-3',
     content: {
       sections: [
         {
@@ -1046,6 +1076,8 @@ export const barLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-1',
     content: {
       sections: [
         {
@@ -1103,6 +1135,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-C-2',
     content: {
       sections: [
         {
@@ -1160,6 +1194,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-C-2',
     content: {
       sections: [
         {
@@ -1217,6 +1253,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-D-2',
     content: {
       sections: [
         {
@@ -1274,6 +1312,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-D-2',
     content: {
       sections: [
         {
@@ -1332,6 +1372,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Technical Accounting"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-D-2',
     content: {
       sections: [
         {
@@ -1390,6 +1432,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
     content: {
       sections: [
         {
@@ -1452,6 +1496,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
     content: {
       sections: [
         {
@@ -1514,6 +1560,8 @@ export const barLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-3',
     content: {
       sections: [
         {
@@ -1577,6 +1625,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-3',
     content: {
       sections: [
         {
@@ -1640,6 +1690,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
     content: {
       sections: [
         {
@@ -1701,6 +1753,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
     content: {
       sections: [
         {
@@ -1764,6 +1818,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-B-1',
     content: {
       sections: [
         {
@@ -1827,6 +1883,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-B-3',
     content: {
       sections: [
         {
@@ -1889,6 +1947,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Governmental"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
     content: {
       sections: [
         {
@@ -1951,6 +2011,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
         {
@@ -2009,6 +2071,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-2',
     content: {
       sections: [
         {
@@ -2065,6 +2129,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
         {
@@ -2122,6 +2188,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-B-1',
     content: {
       sections: [
         {
@@ -2180,6 +2248,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-B-2',
     content: {
       sections: [
         {
@@ -2238,6 +2308,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-B-3',
     content: {
       sections: [
         {
@@ -2296,6 +2368,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
         {
@@ -2353,6 +2427,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-1',
     content: {
       sections: [
         {
@@ -2410,6 +2486,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Financial Analysis"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-B-2',
     content: {
       sections: [
         {
@@ -2474,6 +2552,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Analysis", "Data Analytics"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2536,6 +2616,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Data Analytics"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2605,6 +2687,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Data Analytics"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2667,6 +2751,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Managerial Accounting"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2728,6 +2814,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Managerial Accounting"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2790,6 +2878,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Analysis", "Performance Measurement"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2852,6 +2942,8 @@ export const barLessons: Lesson[] = [
     duration: 45,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Performance Measurement"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2914,6 +3006,8 @@ export const barLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Analysis", "Operations"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -2977,6 +3071,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Analysis", "Risk Management"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3045,6 +3141,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "IFRS"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3114,6 +3212,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Revenue"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3176,6 +3276,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Leases"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3238,6 +3340,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Equity"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3300,6 +3404,8 @@ export const barLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "International"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {
@@ -3361,6 +3467,8 @@ export const barLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Technical Accounting", "Taxes"],
+    blueprintArea: 'null',
+    blueprintTopic: 'null-A-1',
     content: {
       sections: [
         {

@@ -24,6 +24,8 @@
  * Last Updated: 2026-01
  */
 
+import logger from '../utils/logger';
+
 export type BlueprintVersionStatus = 'both' | '2025' | '2026' | 'differs';
 
 export interface BlueprintArea {
@@ -584,8 +586,8 @@ export function getLessonsByBlueprintArea(areaId: string): LessonMatrixEntry[] {
   return LESSON_MATRIX.filter(lesson => lesson.blueprintArea.areaId === areaId);
 }
 
-console.log('VoraPrep Lesson Matrix loaded.');
-console.log(`Total Lessons: ${LESSON_SUMMARY.totalLessons}`);
-console.log(`OBBBA-Affected Lessons: ${LESSON_SUMMARY.obbbaAffectedLessons}`);
-console.log(`Lessons with Blueprint Differences: ${BLUEPRINT_DIFFERENCES.size}`);
-console.log(`Total Study Hours: ~${LESSON_SUMMARY.totalHours} hours`);
+logger.log('VoraPrep Lesson Matrix loaded.');
+logger.log(`Total Lessons: ${LESSON_SUMMARY.totalLessons}`);
+logger.log(`OBBBA-Affected Lessons: ${LESSON_SUMMARY.obbbaAffectedLessons}`);
+logger.log(`Lessons with Blueprint Differences: ${BLUEPRINT_DIFFERENCES.size}`);
+logger.log(`Total Study Hours: ~${LESSON_SUMMARY.totalHours} hours`);

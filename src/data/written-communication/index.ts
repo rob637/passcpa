@@ -518,25 +518,62 @@ Respectfully,
   },
 ];
 
+// Import section-specific WC tasks
+import {
+  AUD_WC_TASKS,
+  FAR_WC_TASKS,
+  REG_WC_TASKS,
+  BAR_WC_TASKS,
+  ISC_WC_TASKS,
+  TCP_WC_TASKS,
+  BEC_WC_TASKS,
+  ALL_SECTION_WC_TASKS,
+} from './section-wc-tasks';
+
+// Re-export section-specific tasks
+export {
+  AUD_WC_TASKS,
+  FAR_WC_TASKS,
+  REG_WC_TASKS,
+  BAR_WC_TASKS,
+  ISC_WC_TASKS,
+  TCP_WC_TASKS,
+  BEC_WC_TASKS,
+  ALL_SECTION_WC_TASKS,
+};
+
+// Combined: General PREP tasks + Section-specific tasks
+export const ALL_WC_TASKS = [...WRITTEN_COMMUNICATIONS, ...ALL_SECTION_WC_TASKS];
+
 // Helper functions
 export const getWCByTopic = (topic: string) => {
-  return WRITTEN_COMMUNICATIONS.filter((wc) =>
+  return ALL_WC_TASKS.filter((wc) =>
     wc.topic.toLowerCase().includes(topic.toLowerCase())
   );
 };
 
-export const getRandomWC = () => {
-  const index = Math.floor(Math.random() * WRITTEN_COMMUNICATIONS.length);
-  return WRITTEN_COMMUNICATIONS[index];
+export const getWCBySection = (section: string) => {
+  return ALL_WC_TASKS.filter((wc) => wc.section === section);
+};
+
+export const getRandomWC = (section?: string) => {
+  const tasks = section ? getWCBySection(section) : ALL_WC_TASKS;
+  if (tasks.length === 0) return null;
+  const index = Math.floor(Math.random() * tasks.length);
+  return tasks[index];
 };
 
 export const getWCStats = () => {
   return {
-    total: WRITTEN_COMMUNICATIONS.length,
-    byDifficulty: WRITTEN_COMMUNICATIONS.reduce((acc: Record<string, number>, wc) => {
+    total: ALL_WC_TASKS.length,
+    bySection: ALL_WC_TASKS.reduce((acc: Record<string, number>, wc) => {
+      acc[wc.section] = (acc[wc.section] || 0) + 1;
+      return acc;
+    }, {}),
+    byDifficulty: ALL_WC_TASKS.reduce((acc: Record<string, number>, wc) => {
       acc[wc.difficulty] = (acc[wc.difficulty] || 0) + 1;
       return acc;
     }, {}),
-    topics: [...new Set(WRITTEN_COMMUNICATIONS.map((wc) => wc.topic))],
+    topics: [...new Set(ALL_WC_TASKS.map((wc) => wc.topic))],
   };
 };

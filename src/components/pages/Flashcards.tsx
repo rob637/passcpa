@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   RotateCcw,
@@ -147,7 +148,7 @@ const Flashcards: React.FC = () => {
         setCards(filteredCards);
         setStudyStats(getStudyStats(cardsWithSRS));
       } catch (error) {
-        console.error('Error loading flashcards:', error);
+        logger.error('Error loading flashcards:', error);
       } finally {
         setLoading(false);
       }

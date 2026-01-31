@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import logger from '../../utils/logger';
 import {
   User as UserIcon,
   Bell,
@@ -12,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
+import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
@@ -120,7 +122,7 @@ const Settings: React.FC = () => {
       setCacheStatus(status);
       alert(`Successfully cached ${questions.length} questions for offline use!`);
     } catch (error) {
-      console.error('Error downloading for offline:', error);
+      logger.error('Error downloading for offline:', error);
       alert('Failed to download content. Please try again.');
     } finally {
       setIsDownloading(false);
@@ -151,7 +153,7 @@ const Settings: React.FC = () => {
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 2000);
     } catch (error) {
-      console.error('Error uploading photo:', error);
+      logger.error('Error uploading photo:', error);
       alert('Failed to upload photo. Please try again.');
     } finally {
       setIsUploadingPhoto(false);
@@ -187,7 +189,7 @@ const Settings: React.FC = () => {
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 2000);
     } catch (error) {
-      console.error('Error saving settings:', error);
+      logger.error('Error saving settings:', error);
     } finally {
       setIsSaving(false);
     }
@@ -202,6 +204,17 @@ const Settings: React.FC = () => {
     { id: 'account', label: 'Account', icon: Shield },
   ];
 
+  // Keyboard navigation for tabs
+  const handleTabChange = useCallback((tabId: string) => {
+    setActiveTab(tabId);
+  }, []);
+
+  const { tabListProps, getTabProps } = useTabKeyboard(
+    tabs.map(t => t.id),
+    activeTab,
+    handleTabChange
+  );
+
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold text-slate-900 mb-6">Settings</h1>
@@ -209,7 +222,10 @@ const Settings: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
         <div className="md:w-56 flex-shrink-0">
-          <nav className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0">
+          <nav 
+            className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-2 md:pb-0"
+            {...tabListProps}
+          >
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -220,6 +236,7 @@ const Settings: React.FC = () => {
                     ? 'bg-primary-50 text-primary-700'
                     : 'text-slate-600 hover:bg-slate-50'
                 )}
+                {...getTabProps(tab.id)}
               >
                 <tab.icon className="w-5 h-5" />
                 <span className="font-medium">{tab.label}</span>

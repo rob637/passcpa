@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
   Search as SearchIcon,
@@ -42,7 +43,7 @@ const RESULT_TYPES: Record<string, SearchResultType> = {
   question: { icon: HelpCircle, color: 'primary', label: 'Question' },
   lesson: { icon: BookOpen, color: 'success', label: 'Lesson' },
   topic: { icon: FileText, color: 'warning', label: 'Topic' },
-  ai: { icon: Sparkles, color: 'slate', label: 'Ask AI' },
+  ai: { icon: Sparkles, color: 'slate', label: 'Ask Vory' },
 };
 
 const SECTIONS: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
@@ -313,7 +314,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
             }
           });
         } catch (err) {
-          console.log('Firestore search failed, using local results only');
+          logger.log('Firestore search failed, using local results only');
         }
       }
 
@@ -321,8 +322,8 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
       searchResults.push({
         id: 'ai-' + query,
         type: 'ai',
-        title: `Ask AI: "${query}"`,
-        subtitle: 'Get an explanation from AI Tutor',
+        title: `Ask Vory: "${query}"`,
+        subtitle: 'Ask Vory for an explanation',
         data: { query },
         score: 0,
       });
@@ -334,7 +335,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
 
       setResults(sortedResults);
     } catch (error) {
-      console.error('Search error:', error);
+      logger.error('Search error:', error);
     } finally {
       setLoading(false);
     }
@@ -399,7 +400,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions, topics, or ask AI..."
+              placeholder="Search questions, topics, or ask Vory..."
               className="flex-1 text-lg outline-none placeholder:text-slate-400 bg-transparent dark:text-white"
               aria-label="Search"
               aria-controls="search-results"

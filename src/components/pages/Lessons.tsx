@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
   BookOpen,
@@ -141,7 +142,7 @@ const Lessons: React.FC = () => {
         const lessons = await fetchLessonsBySection(currentSection, courseId);
         setRawLessons(lessons);
       } catch (error) {
-        console.error('Error fetching lessons:', error);
+        logger.error('Error fetching lessons:', error);
       }
     };
     fetchLessons();
@@ -163,7 +164,7 @@ const Lessons: React.FC = () => {
           setCompletedLessons(completed);
         }
       } catch (error) {
-        console.error('Error fetching lesson progress:', error);
+        logger.error('Error fetching lesson progress:', error);
       }
       setLoading(false);
     };

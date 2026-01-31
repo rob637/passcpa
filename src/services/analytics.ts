@@ -12,6 +12,8 @@
  * https://analytics.google.com/ → Admin → Data Streams → Web Stream
  */
 
+import logger from '../utils/logger';
+
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
@@ -25,13 +27,13 @@ export const initAnalytics = (): void => {
 
   // Check for Do Not Track
   if (navigator.doNotTrack === '1') {
-    console.log('Analytics disabled: Do Not Track enabled');
+    logger.log('Analytics disabled: Do Not Track enabled');
     return;
   }
 
   // Don't load in development unless explicitly enabled
   if (import.meta.env.DEV && !import.meta.env.VITE_ENABLE_ANALYTICS) {
-    console.log('Analytics disabled in development');
+    logger.log('Analytics disabled in development');
     return;
   }
 
@@ -55,7 +57,7 @@ export const initAnalytics = (): void => {
   });
 
   initialized = true;
-  console.log('Analytics initialized');
+  logger.log('Analytics initialized');
 };
 
 /**

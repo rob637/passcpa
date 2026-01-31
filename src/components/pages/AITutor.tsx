@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { useLocation } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import {
@@ -242,7 +243,7 @@ const AITutor: React.FC = () => {
 
         setMemoryLoaded(true);
       } catch (error) {
-        console.error('Error loading AI memory:', error);
+        logger.error('Error loading AI memory:', error);
         setMemoryLoaded(true);
       }
     };
@@ -257,7 +258,7 @@ const AITutor: React.FC = () => {
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-    let message = `${greeting}, ${firstName}! I'm your AI study companion for **${sectionInfo?.shortName || 'the CPA exam'}**. 🎓\n\n`;
+    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion for **${sectionInfo?.shortName || 'the CPA exam'}**. 🎓\n\n`;
 
     // Add context about weak areas
     if (weakAreas.length > 0) {
@@ -320,7 +321,7 @@ const AITutor: React.FC = () => {
           setConversationId(newConvRef.id);
         }
       } catch (error) {
-        console.error('Error saving conversation:', error);
+        logger.error('Error saving conversation:', error);
       }
     },
     [user?.uid, conversationId, currentSection, tutorMode]
@@ -367,7 +368,7 @@ const AITutor: React.FC = () => {
       setMessages(updatedMessages);
       saveConversation(updatedMessages);
     } catch (error) {
-      console.error('AI response error:', error);
+      logger.error('AI response error:', error);
       setMessages((prev) => [
         ...prev,
         {
@@ -443,7 +444,7 @@ const AITutor: React.FC = () => {
       setMessages(finalMessages);
       saveConversation(finalMessages);
     } catch (error) {
-      console.error('AI response error:', error);
+      logger.error('AI response error:', error);
       const errorMessages: Message[] = [
         ...newMessages,
         {
@@ -495,8 +496,8 @@ const AITutor: React.FC = () => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-semibold text-slate-900">AI Tutor</h1>
-                <p className="text-xs text-slate-500">Powered by your study history</p>
+                <h1 className="font-semibold text-slate-900">Vory</h1>
+                <p className="text-xs text-slate-500">Your AI Study Companion</p>
               </div>
             </div>
             <button

@@ -6,6 +6,7 @@
 import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { TBS, ExamSection } from '../types';
+import logger from '../utils/logger';
 
 // In-memory cache with TTL
 interface CacheEntry {
@@ -52,7 +53,7 @@ export async function fetchAllTBS(): Promise<TBS[]> {
     
     return simulations;
   } catch (error) {
-    console.error('Error fetching TBS from Firestore:', error);
+    logger.error('Error fetching TBS from Firestore:', error);
     return [];
   }
 }
@@ -89,7 +90,7 @@ export async function fetchTBSBySection(section: ExamSection): Promise<TBS[]> {
     
     return simulations;
   } catch (error) {
-    console.error(`Error fetching TBS for section ${section}:`, error);
+    logger.error(`Error fetching TBS for section ${section}:`, error);
     return [];
   }
 }
@@ -115,7 +116,7 @@ export async function fetchTBSById(tbsId: string): Promise<TBS | null> {
     
     return null;
   } catch (error) {
-    console.error(`Error fetching TBS ${tbsId}:`, error);
+    logger.error(`Error fetching TBS ${tbsId}:`, error);
     return null;
   }
 }
@@ -187,7 +188,7 @@ export async function addTBS(tbs: Omit<TBS, 'id'>): Promise<string> {
     
     return docRef.id;
   } catch (error) {
-    console.error('Error adding TBS:', error);
+    logger.error('Error adding TBS:', error);
     throw error;
   }
 }
@@ -206,7 +207,7 @@ export async function updateTBS(id: string, data: Partial<TBS>): Promise<void> {
     // Clear cache
     clearTBSCache();
   } catch (error) {
-    console.error('Error updating TBS:', error);
+    logger.error('Error updating TBS:', error);
     throw error;
   }
 }
@@ -222,7 +223,7 @@ export async function deleteTBS(id: string): Promise<void> {
     // Clear cache
     clearTBSCache();
   } catch (error) {
-    console.error('Error deleting TBS:', error);
+    logger.error('Error deleting TBS:', error);
     throw error;
   }
 }

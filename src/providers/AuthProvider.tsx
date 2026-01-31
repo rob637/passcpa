@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import logger from '../utils/logger';
 import {
   User,
   onAuthStateChanged,
@@ -13,23 +14,35 @@ import {
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
+import type { FieldValue, Timestamp } from 'firebase/firestore';
+
+// Firebase error type for proper catch handling
+interface FirebaseError extends Error {
+  code?: string;
+}
 
 export interface UserProfile {
   id: string;
+  uid?: string; // Alias for id, some code uses this
   email: string;
   displayName: string;
-  createdAt: any; // specific firebase type or generic
+  photoURL?: string | null; // User profile photo
+  createdAt: Timestamp | FieldValue; // Firestore Timestamp
   onboardingComplete: boolean;
+  onboardingCompletedAt?: Timestamp | Date | null;
   examSection: string | null;
-  examDate: any | null;
+  examDate: Timestamp | Date | null;
   dailyGoal: number;
   studyPlanId: string | null;
+  isAdmin?: boolean; // Admin role for CMS access
+  dailyReminderEnabled?: boolean;
+  dailyReminderTime?: string;
+  weeklyReportEnabled?: boolean;
   settings: {
     notifications: boolean;
     darkMode: boolean;
     soundEffects: boolean;
   };
-  [key: string]: any;
 }
 
 export interface AuthContextType {
@@ -76,7 +89,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setUserProfile(null);
       }
     } catch (err) {
-      console.error('Error fetching user profile:', err);
+      logger.error('Error fetching user profile:', err);
       setUserProfile(null);
     }
   };
@@ -91,7 +104,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         
         // Initialize notifications for this user
         initializeNotifications(firebaseUser.uid).catch((err) => {
-          console.log('Notification initialization skipped:', err.message);
+          logger.log('Notification initialization skipped:', err.message);
         });
       } else {
         setUser(null);
@@ -109,8 +122,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       return result.user;
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
       throw err;
     }
   };
@@ -144,8 +158,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
 
       return result.user;
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
       throw err;
     }
   };
@@ -157,8 +172,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       await firebaseSignOut(auth);
       setUser(null);
       setUserProfile(null);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
       throw err;
     }
   };
@@ -168,8 +184,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setError(null);
     try {
       await sendPasswordResetEmail(auth, email);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
       throw err;
     }
   };
@@ -181,8 +198,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       await setDoc(doc(db, 'users', user.uid), updates, { merge: true });
       setUserProfile((prev) => (prev ? { ...prev, ...updates } : null));
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
       throw err;
     }
   };
@@ -226,8 +244,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       }
       
       return user;
-    } catch (err: any) {
-      console.error('Google sign-in error:', err);
+    } catch (err) {
+      // Error logged by error boundary
       throw err;
     }
   };

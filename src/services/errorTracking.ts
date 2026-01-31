@@ -2,7 +2,9 @@
 // Production-grade error handling for world-class quality
 
 import { analytics, db, auth } from '../config/firebase';
+import logger from '../utils/logger';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import React from 'react';
 
 // Error severity levels
 export enum ErrorSeverity {
@@ -23,9 +25,25 @@ export enum ErrorCategory {
   UNKNOWN = 'unknown',
 }
 
+// Metric data structure
+interface MetricData {
+  name: string;
+  timestamp: string;
+  data: Record<string, unknown>;
+  sessionId: string;
+}
+
+// Error statistics structure
+interface ErrorStats {
+  total: number;
+  byCategory: Record<ErrorCategory, number>;
+  bySeverity: Record<ErrorSeverity, number>;
+  last24h: number;
+}
+
 // Error queue for batching
 let errorQueue: ErrorData[] = [];
-let flushTimeout: any = null;
+let flushTimeout: ReturnType<typeof setTimeout> | null = null;
 const FLUSH_INTERVAL = 5000; // 5 seconds
 const MAX_QUEUE_SIZE = 10;
 
@@ -37,7 +55,7 @@ export interface ErrorContext {
   colno?: number;
   componentStack?: string;
   category?: ErrorCategory;
-  [key: string]: any;
+  [key: string]: string | number | boolean | undefined | ErrorSeverity | ErrorCategory;
 }
 
 export interface ErrorData {
@@ -46,7 +64,7 @@ export interface ErrorData {
   stack?: string;
   category: ErrorCategory;
   severity: ErrorSeverity;
-  context: Record<string, any>;
+  context: Record<string, unknown>;
   sessionId: string;
 }
 
@@ -93,7 +111,7 @@ export const initErrorTracking = (): void => {
     }
   }
 
-  console.log('[ErrorTracking] Initialized');
+  logger.log('[ErrorTracking] Initialized');
 };
 
 /**
@@ -111,8 +129,8 @@ const getSessionId = (): string => {
 /**
  * Categorize error by type
  */
-const categorizeError = (error: any): ErrorCategory => {
-  const message = error?.message?.toLowerCase() || '';
+const categorizeError = (error: Error | unknown): ErrorCategory => {
+  const message = (error instanceof Error ? error.message : String(error)).toLowerCase();
 
   if (message.includes('network') || message.includes('fetch') || message.includes('offline')) {
     return ErrorCategory.NETWORK;
@@ -123,7 +141,7 @@ const categorizeError = (error: any): ErrorCategory => {
   if (message.includes('firebase') || message.includes('firestore')) {
     return ErrorCategory.FIREBASE;
   }
-  if (error?.name === 'ReactError' || message.includes('react')) {
+  if ((error instanceof Error && error.name === 'ReactError') || message.includes('react')) {
     return ErrorCategory.UI;
   }
   if (message.includes('validation') || message.includes('invalid')) {
@@ -136,11 +154,11 @@ const categorizeError = (error: any): ErrorCategory => {
 /**
  * Capture and track an error
  */
-export const captureError = (error: any, context: ErrorContext = {}): ErrorData => {
+export const captureError = (error: Error | unknown, context: ErrorContext = {}): ErrorData => {
   const errorData: ErrorData = {
     timestamp: new Date().toISOString(),
-    message: error?.message || String(error),
-    stack: error?.stack,
+    message: error instanceof Error ? error.message : String(error),
+    stack: error instanceof Error ? error.stack : undefined,
     category: context.category || categorizeError(error),
     severity: context.severity || ErrorSeverity.MEDIUM,
     context: {
@@ -160,7 +178,7 @@ export const captureError = (error: any, context: ErrorContext = {}): ErrorData 
 
   // Log in development
   if (import.meta.env.DEV) {
-    console.error('[ErrorTracking]', errorData);
+    logger.error('[ErrorTracking]', errorData);
   }
 
   // Flush if queue is full or critical
@@ -176,8 +194,8 @@ export const captureError = (error: any, context: ErrorContext = {}): ErrorData 
 /**
  * Capture a metric/event
  */
-export const captureMetric = (name: string, data: Record<string, any> = {}): any => {
-  const metric = {
+export const captureMetric = (name: string, data: Record<string, unknown> = {}): MetricData => {
+  const metric: MetricData = {
     name,
     timestamp: new Date().toISOString(),
     data,
@@ -185,7 +203,7 @@ export const captureMetric = (name: string, data: Record<string, any> = {}): any
   };
 
   if (import.meta.env.DEV) {
-    console.log('[Metric]', metric);
+    logger.log('[Metric]', metric);
   }
 
   // Send to analytics
@@ -238,7 +256,7 @@ const flushErrors = async () => {
     
     // Also log to console if in dev
     if (import.meta.env.DEV && errorsToSend.length > 0) {
-      console.log(`[ErrorTracking] Flushed ${errorsToSend.length} errors`);
+      logger.log(`[ErrorTracking] Flushed ${errorsToSend.length} errors`);
     }
 
     // Save to local storage as backup if offline
@@ -248,7 +266,7 @@ const flushErrors = async () => {
        localStorage.setItem('errorQueueBackup', JSON.stringify(newStoredErrors));
     }
   } catch (e) {
-    console.error('[ErrorTracking] Failed to sync errors', e);
+    logger.error('[ErrorTracking] Failed to sync errors', e);
     // Put back in queue? maybe, but risk loop
   }
 };
@@ -257,12 +275,12 @@ const flushErrors = async () => {
  * Create error boundary wrapper
  * Note: This should be used as a class component, not a function
  */
-export const createErrorBoundaryClass = (fallbackComponent: any = null) => {
+export const createErrorBoundaryClass = (fallbackComponent: React.ReactNode = null) => {
   // This function returns configuration for use with React's error boundary
   // The actual ErrorBoundary component is in components/common/ErrorBoundary.jsx
   return {
     fallback: fallbackComponent,
-    onError: (error: Error, errorInfo: any) => {
+    onError: (error: Error, errorInfo: { componentStack?: string }) => {
       captureError(error, {
         componentStack: errorInfo.componentStack,
         severity: ErrorSeverity.HIGH,
@@ -284,7 +302,7 @@ export const collectFeedback = async (errorId: string, feedback: string) => {
   };
 
   if (import.meta.env.DEV) {
-    console.log('[Feedback]', feedbackData);
+    logger.log('[Feedback]', feedbackData);
   }
 
   // Store feedback
@@ -298,19 +316,19 @@ export const collectFeedback = async (errorId: string, feedback: string) => {
 /**
  * Get error statistics
  */
-export const getErrorStats = () => {
-  const errors = JSON.parse(localStorage.getItem('errorLog') || '[]');
+export const getErrorStats = (): ErrorStats => {
+  const errors: ErrorData[] = JSON.parse(localStorage.getItem('errorLog') || '[]');
 
-  const stats: any = {
+  const stats: ErrorStats = {
     total: errors.length,
-    byCategory: {},
-    bySeverity: {},
+    byCategory: {} as Record<ErrorCategory, number>,
+    bySeverity: {} as Record<ErrorSeverity, number>,
     last24h: 0,
   };
 
   const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
-  errors.forEach((error: any) => {
+  errors.forEach((error: ErrorData) => {
     // By category
     stats.byCategory[error.category] = (stats.byCategory[error.category] || 0) + 1;
 

@@ -50,12 +50,50 @@ export interface DefinitionListItem {
   definition: string;
 }
 
+// TBS sub-types for type safety
+export interface TBSExhibit {
+  id: string;
+  title: string;
+  type: 'document' | 'spreadsheet' | 'form' | 'memo' | 'email' | 'image';
+  content: string | Record<string, unknown>;
+}
+
+export interface TBSQuestion {
+  id: string;
+  prompt: string;
+  type?: 'dropdown' | 'input' | 'checkbox' | 'radio';
+  options?: string[];
+  correctAnswer?: string | number | string[];
+}
+
+export interface TBSRequirement {
+  id: string;
+  text?: string;
+  question?: string; // Alternative to text
+  type?: string; // Type of requirement (calculation, journal_entry, etc.)
+  correctAnswer?: unknown; // Can be complex objects for certain TBS types
+  correctAnswers?: unknown; // Array of correct answers
+  correctEntries?: { account: string; debit: number | null; credit: number | null }[];
+  options?: string[];
+  tolerance?: number;
+  explanation?: string;
+  points?: number;
+  hints?: string[];
+  keyPoints?: string[];
+  template?: unknown; // Template for forms
+  items?: unknown[]; // List items for matching/classification
+  fields?: unknown[]; // Form fields
+  rubric?: unknown; // Grading rubric
+  multipleEntriesAllowed?: boolean;
+  [key: string]: unknown; // Allow additional properties
+}
+
 export interface LessonContentSection {
   title: string;
   type: 'text' | 'list' | 'table' | 'interactive' | 'dates' | 'callout' | 'example' | 'warning' | 'summary';
   
   // Content can be various formats depending on type
-  content?: string | DefinitionListItem[] | string[] | any;
+  content?: string | string[] | DefinitionListItem[] | string[][] | Record<string, unknown>;
   
   // For 'list' type - simple string array (alternative to content)
   items?: string[];
@@ -118,11 +156,11 @@ export interface Question {
   
   // Video explanation support (World-Class feature)
   videoExplanation?: {
-    url?: string;           // YouTube, Vimeo, or direct video URL
+    url: string;            // YouTube, Vimeo, or direct video URL (required when present)
     thumbnail?: string;     // Thumbnail image URL
     duration?: number;      // Duration in seconds
     title?: string;         // Video title
-    provider?: 'youtube' | 'vimeo' | 'direct' | 'placeholder';
+    provider?: 'youtube' | 'vimeo' | 'direct';
     transcriptUrl?: string; // URL to transcript for accessibility
   };
   
@@ -133,7 +171,7 @@ export interface Question {
   choices?: string[]; // Sometimes used instead of options in legacy
 }
 
-export type TBSType = 'journal_entry' | 'reconciliation' | 'document_review' | 'research' | 'calculation' | 'form_completion' | 'written_communication';
+export type TBSType = 'journal_entry' | 'reconciliation' | 'document_review' | 'research' | 'calculation' | 'form_completion' | 'written_communication' | 'multiple_choice';
 
 export const TBS_TYPES = {
   JOURNAL_ENTRY: 'journal_entry',
@@ -143,6 +181,7 @@ export const TBS_TYPES = {
   CALCULATION: 'calculation',
   FORM_COMPLETION: 'form_completion',
   WRITTEN_COMMUNICATION: 'written_communication',
+  MULTIPLE_CHOICE: 'multiple_choice',
 } as const;
 
 export interface TBS {
@@ -158,15 +197,16 @@ export interface TBS {
   topic?: string;
   scenario?: string;
 
-  exhibits?: any[]; // Define more strictly if possible
-  questions?: any[]; // Inner questions for the sim
-  requirements?: any[]; // Alternative to questions used in some data
+  exhibits?: TBSExhibit[]; // Exhibits like documents, spreadsheets
+  questions?: TBSQuestion[]; // Inner questions for the sim
+  requirements?: TBSRequirement[]; // Alternative to questions used in some data
 
   hints?: string[];
   references?: string[];
 
-  // ... add other fields as discovered
-  [key: string]: any; // Allow flexibility for now
+  // Blueprint mapping
+  blueprintArea?: string;
+  blueprintTopic?: string;
 }
 
 export interface WCRubricCategory {
@@ -188,7 +228,15 @@ export interface WCTask {
   difficulty: Difficulty;
   estimatedTime: number;
   scenario: string;
-  [key: string]: any;
+  prompt?: string; // Optional - some data uses task instead
+  task?: string; // The task description/instructions (optional in some data)
+  rubric?: WCRubric;
+  sampleResponse?: string;
+  hints?: string[];
+  references?: string[];
+  keyPoints?: string[]; // Key points for the response
+  blueprintArea?: string;
+  blueprintTopic?: string;
 }
 
 export interface UserProfile {
@@ -196,10 +244,16 @@ export interface UserProfile {
   email: string | null;
   displayName: string | null;
   photoURL: string | null;
-  examDate?: any; // Timestamp or Date
+  examDate?: Date | { seconds: number; nanoseconds: number }; // Date or Firestore Timestamp
   examSection: ExamSection;
-  createdAt: any; // Firestore Timestamp
+  createdAt: Date | { seconds: number; nanoseconds: number }; // Firestore Timestamp
   dailyGoal?: number;
   isAdmin?: boolean; // Admin role for CMS access
+  studyPlanId?: string; // Reference to study plan document
+  onboardingComplete?: boolean;
+  onboardingCompletedAt?: Date | { seconds: number; nanoseconds: number };
+  dailyReminderEnabled?: boolean;
+  dailyReminderTime?: string;
+  weeklyReportEnabled?: boolean;
 }
 

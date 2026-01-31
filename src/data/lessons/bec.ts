@@ -16,6 +16,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-I-001',
     section: 'BEC',
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-A-1',
     title: 'Corporate Governance Overview',
     description: 'Understand the foundations of corporate governance and accountability',
     order: 1,
@@ -66,6 +68,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-I-002',
     section: 'BEC',
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-A-2',
     title: 'Board of Directors Responsibilities',
     description: 'Learn the key roles and responsibilities of the board of directors',
     order: 2,
@@ -111,6 +115,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-I-003',
     section: 'BEC',
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-B-1',
     title: 'Sarbanes-Oxley Act (SOX) Requirements',
     description: 'Master the key corporate governance requirements under SOX',
     order: 3,
@@ -167,6 +173,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-II-001',
     section: 'BEC',
+    blueprintArea: 'BEC-II',
+    blueprintTopic: 'BEC-II-A-1',
     title: 'Supply and Demand Fundamentals',
     description: 'Understand basic economic principles of supply and demand',
     order: 4,
@@ -216,6 +224,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-II-002',
     section: 'BEC',
+    blueprintArea: 'BEC-II',
+    blueprintTopic: 'BEC-II-A-2',
     title: 'Price Elasticity of Demand',
     description: 'Calculate and interpret elasticity measures',
     order: 5,
@@ -273,6 +283,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-II-003',
     section: 'BEC',
+    blueprintArea: 'BEC-II',
+    blueprintTopic: 'BEC-II-B-1',
     title: 'Business Cycles and Economic Indicators',
     description: 'Understand economic cycles and key indicators',
     order: 6,
@@ -327,6 +339,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-III-001',
     section: 'BEC',
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-A-1',
     title: 'Time Value of Money',
     description: 'Master present value and future value calculations',
     order: 7,
@@ -378,6 +392,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-III-002',
     section: 'BEC',
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-A-2',
     title: 'Capital Budgeting Methods',
     description: 'Evaluate investment decisions using NPV, IRR, and payback',
     order: 8,
@@ -429,6 +445,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-III-003',
     section: 'BEC',
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-B-1',
     title: 'Working Capital Management',
     description: 'Manage current assets and liabilities effectively',
     order: 9,
@@ -483,6 +501,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-IV-001',
     section: 'BEC',
+    blueprintArea: 'BEC-IV',
+    blueprintTopic: 'BEC-IV-A-1',
     title: 'IT General Controls',
     description: 'Understand IT controls that apply across all systems',
     order: 10,
@@ -533,6 +553,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-IV-002',
     section: 'BEC',
+    blueprintArea: 'BEC-IV',
+    blueprintTopic: 'BEC-IV-B-1',
     title: 'Business Continuity and Disaster Recovery',
     description: 'Plan for business disruptions and system recovery',
     order: 11,
@@ -592,6 +614,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-V-001',
     section: 'BEC',
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-A-1',
     title: 'Cost Behavior and CVP Analysis',
     description: 'Analyze costs and perform cost-volume-profit analysis',
     order: 12,
@@ -648,6 +672,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-V-002',
     section: 'BEC',
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-B-1',
     title: 'Budgeting and Variance Analysis',
     description: 'Create budgets and analyze performance variances',
     order: 13,
@@ -703,6 +729,8 @@ export const becLessons: Lesson[] = [
   {
     id: 'BEC-V-003',
     section: 'BEC',
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-C-1',
     title: 'Quality Management and Performance Measures',
     description: 'Implement quality programs and measure performance',
     order: 14,

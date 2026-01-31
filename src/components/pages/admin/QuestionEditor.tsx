@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 import {
@@ -57,7 +58,7 @@ const QuestionEditor = () => {
       const data = await fetchQuestions(options);
       setQuestions(data);
     } catch (err) {
-      console.error('Error loading questions:', err);
+      logger.error('Error loading questions:', err);
       setError('Failed to load questions. Please try again.');
     } finally {
       setIsLoading(false);
@@ -117,7 +118,7 @@ const QuestionEditor = () => {
       await loadQuestions();
       resetForm();
     } catch (err) {
-      console.error('Error saving question:', err);
+      logger.error('Error saving question:', err);
       alert('Failed to save question');
     }
   };
@@ -145,7 +146,7 @@ const QuestionEditor = () => {
         await deleteQuestion(id);
         await loadQuestions();
       } catch (err) {
-        console.error('Error deleting question:', err);
+        logger.error('Error deleting question:', err);
         alert('Failed to delete question');
       }
     }

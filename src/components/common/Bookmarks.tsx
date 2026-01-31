@@ -1,26 +1,26 @@
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { Bookmark, BookmarkCheck, StickyNote, X, Save } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth.js';
-import { doc, setDoc, deleteDoc, collection, onSnapshot, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, deleteDoc, collection, onSnapshot, serverTimestamp, Timestamp, FieldValue } from 'firebase/firestore';
 import { db } from '../../config/firebase.js';
 import clsx from 'clsx';
 
 export interface BookmarkData {
   id: string;
   itemId: string;
-  itemType: string; // 'question' | 'lesson' | 'flashcard'
-  timestamp: any;
+  itemType: 'question' | 'lesson' | 'flashcard' | 'tbs';
+  timestamp: Timestamp | FieldValue;
   title?: string;
   path?: string;
-  createdAt?: any;
-  [key: string]: any;
+  createdAt?: Timestamp | FieldValue;
 }
 
 export interface NoteData {
   id: string; // Usually same as itemId
   content: string;
-  timestamp: any;
-  updatedAt: any;
+  timestamp: Timestamp | FieldValue;
+  updatedAt: Timestamp | FieldValue;
 }
 
 // Hook for bookmarks and notes
@@ -62,7 +62,7 @@ export const useBookmarks = () => {
         setLoading(false);
       });
     } catch (error) {
-      console.error('Error setting up bookmarks/notes listeners:', error);
+      logger.error('Error setting up bookmarks/notes listeners:', error);
       setLoading(false);
     }
 
@@ -82,7 +82,7 @@ export const useBookmarks = () => {
 
   // Toggle bookmark
   const toggleBookmark = useCallback(
-    async (itemId: string, itemType: string, itemData: any = {}) => {
+    async (itemId: string, itemType: BookmarkData['itemType'], itemData: { title?: string; question?: string } = {}) => {
       if (!user?.uid) return;
 
       const bookmarkRef = doc(db, 'users', user.uid, 'bookmarks', itemId);
@@ -93,12 +93,10 @@ export const useBookmarks = () => {
         await setDoc(bookmarkRef, {
           itemId,
           itemType,
-          type: itemType, // Handle legacy field if needed
           createdAt: serverTimestamp(),
           timestamp: serverTimestamp(),
           title: itemData.title || itemData.question || 'Untitled',
           path: window.location.pathname,
-          ...itemData,
         });
       }
     },
@@ -170,7 +168,7 @@ export const useBookmarks = () => {
 
 interface BookmarkButtonProps {
   itemId: string;
-  itemType: string;
+  itemType: BookmarkData['itemType'];
   itemData?: any;
   size?: 'sm' | 'md';
 }

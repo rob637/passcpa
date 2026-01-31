@@ -128,7 +128,8 @@ describe('Dashboard', () => {
 
     it('should display AI Tutor link', () => {
       renderDashboard();
-      expect(screen.getByText('AI Tutor')).toBeInTheDocument();
+      // AI Tutor is branded as "Ask Vory"
+      expect(screen.getByText('Ask Vory')).toBeInTheDocument();
     });
 
     it('should have correct navigation links', () => {
@@ -137,7 +138,8 @@ describe('Dashboard', () => {
         'href',
         '/practice'
       );
-      expect(screen.getByRole('link', { name: /AI Tutor/i })).toHaveAttribute('href', '/ai-tutor');
+      // AI Tutor link is labeled "Ask Vory"
+      expect(screen.getByRole('link', { name: /Ask Vory/i })).toHaveAttribute('href', '/ai-tutor');
     });
   });
 

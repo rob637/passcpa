@@ -2,6 +2,7 @@
 // Allows users to flag questions for review, report errors, or mark as too difficult
 
 import React, { useState, useCallback } from 'react';
+import logger from '../../utils/logger';
 import { useAuth } from '../../hooks/useAuth';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -167,7 +168,7 @@ export const QuestionFlagging: React.FC<QuestionFlaggingProps> = ({
         setSubmitted(false);
       }, 2000);
     } catch (error) {
-      console.error('Error submitting flag:', error);
+      logger.error('Error submitting flag:', error);
       announce('Failed to submit flag. Please try again.', 'assertive');
     } finally {
       setIsSubmitting(false);
@@ -359,7 +360,7 @@ export const QuickFlagButton: React.FC<{
         onToggle(newFlagged);
       }
     } catch (error) {
-      console.error('Error toggling flag:', error);
+      logger.error('Error toggling flag:', error);
       setFlagged(!newFlagged); // Revert on error
     }
   }, [user, questionId, section, flagged, onToggle]);

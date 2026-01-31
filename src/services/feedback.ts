@@ -1,20 +1,10 @@
 // Sound & Haptic Feedback Service
 // Provides audio and tactile feedback for engagement
 
-// Sound effects (base64 encoded short sounds for performance)
-// In a real app these would be paths to files
-// TODO: Implement sound playback using these paths
-// @ts-expect-error Keeping for future sound implementation
-const _SOUNDS = {
-  correct: '/sounds/correct.mp3',
-  incorrect: '/sounds/incorrect.mp3',
-  complete: '/sounds/complete.mp3',
-  streak: '/sounds/streak.mp3',
-  levelUp: '/sounds/level-up.mp3',
-  click: '/sounds/click.mp3',
-};
+// Sound effects
+// using Web Audio API for performance and zero-asset loading
 
-// Fallback: Use Web Audio API to generate tones
+// Audio Context Singleton
 const audioContext =
   typeof window !== 'undefined' ? new (window.AudioContext || (window as any).webkitAudioContext)() : null;
 

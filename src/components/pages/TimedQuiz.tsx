@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Clock,
@@ -86,7 +87,7 @@ const TimedQuiz: React.FC = () => {
       setAnswers({});
       setFlagged(new Set());
     } catch (error) {
-      console.error('Error loading quiz:', error);
+      logger.error('Error loading quiz:', error);
     } finally {
       setLoading(false);
     }

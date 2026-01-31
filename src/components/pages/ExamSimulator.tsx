@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
   Clock,
@@ -190,7 +191,7 @@ const ExamSimulator: React.FC = () => {
       setAnswers({});
       setFlagged(new Set());
     } catch (error) {
-      console.error('Error starting exam:', error);
+      logger.error('Error starting exam:', error);
     } finally {
       setLoading(false);
     }

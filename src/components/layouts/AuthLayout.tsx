@@ -3,8 +3,19 @@ import { Outlet, Link } from 'react-router-dom';
 const AuthLayout = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      {/* Skip Link for Accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
+      
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+        aria-label="Main navigation"
+      >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
           <Link to="/" className="flex items-center gap-3">
             <img 
@@ -30,7 +41,7 @@ const AuthLayout = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="min-h-screen pt-24 pb-8 px-4 safe-top safe-bottom">
+      <main id="main-content" className="min-h-screen pt-24 pb-8 px-4 safe-top safe-bottom">
         <div className="w-full max-w-md mx-auto">
           <Outlet />
           
@@ -39,7 +50,7 @@ const AuthLayout = () => {
             © {new Date().getFullYear()} VoraPrep. All rights reserved.
           </p>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

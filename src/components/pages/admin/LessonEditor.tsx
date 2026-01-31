@@ -3,6 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 import {
@@ -62,7 +63,7 @@ const LessonEditor = () => {
       const statsData = await getLessonStats();
       setStats(statsData);
     } catch (err) {
-      console.error('Error loading lessons:', err);
+      logger.error('Error loading lessons:', err);
       setError('Failed to load lessons. Please try again.');
     } finally {
       setIsLoading(false);
@@ -188,7 +189,7 @@ const LessonEditor = () => {
       
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error saving lesson:', err);
+      logger.error('Error saving lesson:', err);
       setError('Failed to save lesson. Please try again.');
     } finally {
       setIsLoading(false);
@@ -205,7 +206,7 @@ const LessonEditor = () => {
       setSuccessMessage('Lesson deleted successfully!');
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err) {
-      console.error('Error deleting lesson:', err);
+      logger.error('Error deleting lesson:', err);
       setError('Failed to delete lesson.');
     } finally {
       setIsLoading(false);

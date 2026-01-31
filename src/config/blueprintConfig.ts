@@ -13,6 +13,8 @@
  * Key differences between 2025 and 2026 Blueprints are documented below.
  */
 
+import logger from '../utils/logger';
+
 export type BlueprintVersion = '2025' | '2026';
 
 export interface BlueprintTransition {
@@ -465,6 +467,6 @@ export const BLUEPRINT_SUMMARY = {
   ],
 };
 
-console.log('Blueprint Configuration loaded.');
-console.log(`Current Blueprint: ${BLUEPRINT_SUMMARY.currentBlueprint}`);
-console.log(`Days until 2026 Blueprint: ${BLUEPRINT_SUMMARY.daysUntilChange}`);
+logger.log('Blueprint Configuration loaded.');
+logger.log(`Current Blueprint: ${BLUEPRINT_SUMMARY.currentBlueprint}`);
+logger.log(`Days until 2026 Blueprint: ${BLUEPRINT_SUMMARY.daysUntilChange}`);

@@ -10,6 +10,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Ethics", "Circular 230"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -97,6 +99,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Ethics", "SSTS"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -174,6 +178,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Ethics", "Penalties"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-2',
     content: {
       sections: [
         {
@@ -263,6 +269,8 @@ export const regLessons: Lesson[] = [
     duration: 40,
     difficulty: 'beginner',
     topics: ["Procedures", "Filing"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -342,6 +350,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Procedures", "Statute of Limitations"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -421,6 +431,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Procedures", "Audit", "Appeals"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -503,6 +515,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Procedures", "Penalties"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -586,6 +600,8 @@ export const regLessons: Lesson[] = [
     duration: 35,
     difficulty: 'intermediate',
     topics: ["Procedures", "Representation"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
     content: {
       sections: [
         {
@@ -670,6 +686,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Law", "Agency"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-B-1',
     content: {
       sections: [
         {
@@ -748,6 +766,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Business Law", "Agency"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-B-1',
     content: {
       sections: [
         {
@@ -837,6 +857,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Business Law", "Contracts"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
     content: {
       sections: [
         {
@@ -935,6 +957,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Business Law", "Contracts"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-3',
     content: {
       sections: [
         {
@@ -1035,6 +1059,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Business Law", "Contracts"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
     content: {
       sections: [
         {
@@ -1124,6 +1150,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Law", "Entity Selection"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
     content: {
       sections: [
         {
@@ -1209,6 +1237,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Business Law", "Partnerships", "LLCs"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
     content: {
       sections: [
         {
@@ -1293,6 +1323,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Business Law", "Corporations"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
     content: {
       sections: [
         {
@@ -1376,6 +1408,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Business Law", "Secured Transactions"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-B-2',
     content: {
       sections: [
         {
@@ -1459,6 +1493,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Business Law", "Bankruptcy"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-B-3',
     content: {
       sections: [
         {
@@ -1556,6 +1592,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Gross Income"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -1638,6 +1676,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Exclusions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -1732,6 +1772,8 @@ export const regLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "H.R. 1", "Tips"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -1805,6 +1847,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Deductions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -1886,6 +1930,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Deductions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -1965,6 +2011,8 @@ export const regLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Individual Tax", "QBI"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2042,6 +2090,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "H.R. 1", "SALT"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2109,6 +2159,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'beginner',
     topics: ["Individual Tax", "Filing Status"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2188,6 +2240,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Dependents"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2266,6 +2320,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Credits"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2338,6 +2394,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Credits"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2416,6 +2474,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "Credits", "Education"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2499,6 +2559,8 @@ export const regLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Individual Tax", "H.R. 1", "Credits"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2567,6 +2629,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Tax", "Basis"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2644,6 +2708,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Property Tax", "Capital Gains"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2720,6 +2786,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Tax", "Section 1231"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2798,6 +2866,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Tax", "Like-Kind Exchange"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2875,6 +2945,8 @@ export const regLessons: Lesson[] = [
     duration: 40,
     difficulty: 'intermediate',
     topics: ["Property Tax", "Home Sale"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
     content: {
       sections: [
         {
@@ -2948,6 +3020,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Tax", "C Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3020,6 +3094,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "C Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3093,6 +3169,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "C Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3166,6 +3244,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "C Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3227,6 +3307,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "C Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3293,6 +3375,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "S Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3360,6 +3444,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "S Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3426,6 +3512,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Entity Tax", "S Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3489,6 +3577,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Tax", "S Corporations"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3556,6 +3646,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Partnerships"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3628,6 +3720,8 @@ export const regLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Partnerships"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3701,6 +3795,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Partnerships"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3774,6 +3870,8 @@ export const regLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Partnerships"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3847,6 +3945,8 @@ export const regLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Trusts & Estates"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3920,6 +4020,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Entity Tax", "Trusts & Estates"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -3994,6 +4096,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "Trusts & Estates"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -4068,6 +4172,8 @@ export const regLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "Tax-Exempt"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {
@@ -4141,6 +4247,8 @@ export const regLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Entity Tax", "Tax-Exempt", "UBTI"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     content: {
       sections: [
         {

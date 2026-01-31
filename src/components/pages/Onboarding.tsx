@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
@@ -14,7 +15,6 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS } from '../../config/examConfig';
 // STUDY_PLAN_TEMPLATES was unused
-import { serverTimestamp } from 'firebase/firestore';
 import clsx from 'clsx';
 
 // Types
@@ -359,13 +359,13 @@ const Onboarding: React.FC = () => {
         examSection: selectedSection,
         examDate: new Date(examDate),
         dailyGoal,
-        studyPlan,
+        studyPlanId: studyPlan,
         onboardingComplete: true,
-        onboardingCompletedAt: serverTimestamp(),
+        onboardingCompletedAt: new Date(),
       });
       navigate('/dashboard');
     } catch (error) {
-      console.error('Error completing onboarding:', error);
+      logger.error('Error completing onboarding:', error);
     } finally {
       setIsSubmitting(false);
     }

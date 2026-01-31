@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp,
@@ -24,24 +25,7 @@ import clsx from 'clsx';
 import { ExamSection } from '../../types';
 import { generateStudyPlan } from '../../utils/studyPlanner';
 import { fetchAllLessons } from '../../services/lessonService';
-
-interface TopicStat {
-  id: string;
-  topic: string;
-  accuracy: number;
-  questions: number;
-}
-
-interface ReadinessData {
-  overall: number;
-  breakdown: {
-    accuracy: number;
-    coverage: number;
-    volume: number;
-    consistency: number;
-  };
-  status: 'ready' | 'almost' | 'more-study';
-}
+import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
 
 interface WeeklyActivity {
   date: Date;
@@ -51,42 +35,6 @@ interface WeeklyActivity {
   correct: number;
   minutes: number;
 }
-
-// Exam Readiness Calculator
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const calculateExamReadiness = (stats: any, topicPerformance: TopicStat[], lessonsCompleted: number, totalLessons: number): ReadinessData => {
-  // Weights for different factors
-  const weights = {
-    accuracy: 0.35, // Overall accuracy
-    coverage: 0.25, // Topics covered
-    volume: 0.2, // Questions attempted
-    consistency: 0.2, // Lesson progress
-  };
-
-  // Calculate scores (0-100)
-  const accuracyScore = Math.min(100, (stats.accuracy || 0) * 1.25); // 80% = 100 score
-  const coverageScore = Math.min(100, (topicPerformance.length / 15) * 100);
-  const volumeScore = Math.min(100, (stats.totalQuestions / 500) * 100);
-  const consistencyScore = totalLessons > 0 ? (lessonsCompleted / totalLessons) * 100 : 0;
-
-  const overallReadiness = Math.round(
-    accuracyScore * weights.accuracy +
-      coverageScore * weights.coverage +
-      volumeScore * weights.volume +
-      consistencyScore * weights.consistency
-  );
-
-  return {
-    overall: overallReadiness,
-    breakdown: {
-      accuracy: Math.round(accuracyScore),
-      coverage: Math.round(coverageScore),
-      volume: Math.round(volumeScore),
-      consistency: Math.round(consistencyScore),
-    },
-    status: overallReadiness >= 80 ? 'ready' : overallReadiness >= 60 ? 'almost' : 'more-study',
-  };
-};
 
 // Topic Heat Map Component
 const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string }> = ({ topics, section }) => {
@@ -150,28 +98,6 @@ const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string }> = ({ topi
 // Exam Readiness Gauge
 const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Date | undefined }> = ({ readiness, examDate }) => {
   const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'ready':
-        return 'text-success-600';
-      case 'almost':
-        return 'text-warning-600';
-      default:
-        return 'text-error-600';
-    }
-  };
-
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'ready':
-        return 'Exam Ready!';
-      case 'almost':
-        return 'Almost There';
-      default:
-        return 'Keep Studying';
-    }
-  };
 
   return (
     <div className="text-center">
@@ -262,7 +188,10 @@ const Progress: React.FC = () => {
 
   // Study Plan
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const examDate = (userProfile?.examDate as any)?.toDate?.() || new Date(userProfile?.examDate || Date.now());
+  const rawExamDate = userProfile?.examDate;
+  const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function'
+    ? (rawExamDate as { toDate: () => Date }).toDate()
+    : rawExamDate ? new Date(rawExamDate as Date) : new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
@@ -347,7 +276,7 @@ const Progress: React.FC = () => {
         });
 
       } catch (error) {
-        console.error('Error loading progress:', error);
+        logger.error('Error loading progress:', error);
       } finally {
         setLoading(false);
       }

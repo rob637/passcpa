@@ -1,0 +1,66 @@
+// Firebase Cloud Messaging Service Worker
+// This file handles background push notifications
+
+importScripts('https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/10.7.0/firebase-messaging-compat.js');
+
+// Initialize Firebase in the service worker
+firebase.initializeApp({
+  apiKey: "AIzaSyAGg1VknTBNJxeJ5d4O6Dg5dvLXfKTuoYM",
+  authDomain: "passcpa-dev.firebaseapp.com",
+  projectId: "passcpa-dev",
+  storageBucket: "passcpa-dev.firebasestorage.app",
+  messagingSenderId: "927993599009",
+  appId: "1:927993599009:web:9e0f63dced5a44a0ab1b18",
+  measurementId: "G-54Z8TZXMSK"
+});
+
+const messaging = firebase.messaging();
+
+// Handle background messages
+messaging.onBackgroundMessage((payload) => {
+  console.log('[firebase-messaging-sw.js] Received background message:', payload);
+
+  const notificationTitle = payload.notification?.title || 'PassCPA';
+  const notificationOptions = {
+    body: payload.notification?.body || 'You have a new notification',
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/icon-72x72.png',
+    tag: payload.data?.tag || 'passcpa-notification',
+    data: payload.data,
+    actions: [
+      { action: 'open', title: 'Open App' },
+      { action: 'dismiss', title: 'Dismiss' }
+    ]
+  };
+
+  self.registration.showNotification(notificationTitle, notificationOptions);
+});
+
+// Handle notification click
+self.addEventListener('notificationclick', (event) => {
+  console.log('[firebase-messaging-sw.js] Notification click:', event);
+  
+  event.notification.close();
+
+  if (event.action === 'dismiss') {
+    return;
+  }
+
+  // Open or focus the app
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
+      // Check if there's already a window open
+      for (const client of windowClients) {
+        if (client.url.includes('passcpa') && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      // Open new window if none found
+      if (clients.openWindow) {
+        const url = event.notification.data?.url || '/dashboard';
+        return clients.openWindow(url);
+      }
+    })
+  );
+});

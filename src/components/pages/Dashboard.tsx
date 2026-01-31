@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
   BookOpen,
@@ -14,13 +16,17 @@ import {
   Flame,
   TrendingUp,
   LucideIcon,
+  Target,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { differenceInDays, format } from 'date-fns';
 import clsx from 'clsx';
 import { isFeatureEnabled } from '../../config/featureFlags';
+import { calculateExamReadiness, getStatusText, getStatusColor, getStatusBgColor, ReadinessData, TopicStat } from '../../utils/examReadiness';
+import { fetchAllLessons } from '../../services/lessonService';
 
 // Circular Progress Ring
 interface ProgressRingProps {
@@ -134,6 +140,111 @@ interface StatCardProps {
   color?: 'slate' | 'primary' | 'success' | 'warning';
 }
 
+// Exam Readiness Widget Component
+interface ReadinessWidgetProps {
+  readiness: ReadinessData | null;
+  daysUntilExam: number | null;
+  loading: boolean;
+}
+
+const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetProps) => {
+  if (loading) {
+    return (
+      <div className="card p-5 mb-6 animate-pulse">
+        <div className="flex items-center gap-4">
+          <div className="w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-full" />
+          <div className="flex-1">
+            <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-24 mb-2" />
+            <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded w-32" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!readiness) {
+    return (
+      <Link to="/practice" className={clsx(
+        'card p-5 mb-6 border-2 flex items-center gap-4 hover:shadow-soft-lg transition-all',
+        'bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700'
+      )}>
+        <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
+          <Target className="w-8 h-8 text-slate-400" />
+        </div>
+        <div className="flex-1">
+          <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Exam Readiness</p>
+          <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Start practicing to see your score</p>
+        </div>
+        <ChevronRight className="w-5 h-5 text-slate-400" />
+      </Link>
+    );
+  }
+
+  const circumference = 2 * Math.PI * 28; // radius = 28
+  const offset = circumference - (readiness.overall / 100) * circumference;
+
+  return (
+    <Link 
+      to="/progress" 
+      className={clsx(
+        'card p-5 mb-6 border-2 flex items-center gap-4 hover:shadow-soft-lg transition-all',
+        getStatusBgColor(readiness.status)
+      )}
+    >
+      {/* Circular Progress */}
+      <div className="relative w-16 h-16 flex-shrink-0">
+        <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 64 64">
+          <circle
+            cx="32"
+            cy="32"
+            r="28"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="6"
+            className="text-slate-200 dark:text-slate-600"
+          />
+          <circle
+            cx="32"
+            cy="32"
+            r="28"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="6"
+            strokeLinecap="round"
+            className={getStatusColor(readiness.status)}
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className={clsx('text-lg font-bold', getStatusColor(readiness.status))}>
+            {readiness.overall}%
+          </span>
+        </div>
+      </div>
+
+      {/* Status Text */}
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Exam Readiness</p>
+        <p className={clsx('text-lg font-bold', getStatusColor(readiness.status))}>
+          {getStatusText(readiness.status)}
+        </p>
+        {daysUntilExam !== null && daysUntilExam > 0 && (
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            {daysUntilExam} days until exam
+          </p>
+        )}
+      </div>
+
+      {/* View Details Arrow */}
+      <div className="flex flex-col items-center">
+        <ChevronRight className="w-5 h-5 text-slate-400" />
+        <span className="text-xs text-slate-400 hidden sm:block">Details</span>
+      </div>
+    </Link>
+  );
+};
+
 const StatCard = ({ icon: Icon, value, label, trend, color = 'slate' }: StatCardProps) => {
   const colors = {
     slate: 'bg-slate-100 text-slate-600',
@@ -170,12 +281,77 @@ const StatCard = ({ icon: Icon, value, label, trend, color = 'slate' }: StatCard
 };
 
 const Dashboard = () => {
-  const { userProfile } = useAuth();
-  const { todayLog, currentStreak, dailyProgress, dailyGoalMet, weeklyStats } = useStudy();
+  const { user, userProfile } = useAuth();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { todayLog, currentStreak, dailyProgress, dailyGoalMet, weeklyStats, getTopicPerformance, getLessonProgress } = useStudy() as any;
+  const { courseId } = useCourse();
+
+  // Exam Readiness State
+  const [readiness, setReadiness] = useState<ReadinessData | null>(null);
+  const [readinessLoading, setReadinessLoading] = useState(true);
 
   const examSection = userProfile?.examSection ? CPA_SECTIONS[userProfile.examSection as keyof typeof CPA_SECTIONS] : null;
-  const examDate = userProfile?.examDate?.toDate?.() || userProfile?.examDate;
-  const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
+  const rawExamDate = userProfile?.examDate;
+  const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function' 
+    ? (rawExamDate as { toDate: () => Date }).toDate() 
+    : rawExamDate;
+  const daysUntilExam = examDate ? differenceInDays(new Date(examDate as Date), new Date()) : null;
+  const currentSection = userProfile?.examSection || 'REG';
+
+  // Fetch Exam Readiness Data
+  useEffect(() => {
+    if (!user?.uid || !userProfile?.onboardingComplete) {
+      setReadinessLoading(false);
+      return;
+    }
+
+    const loadReadinessData = async () => {
+      try {
+        // Get topic performance
+        let topicsData: TopicStat[] = [];
+        if (getTopicPerformance) {
+          topicsData = await getTopicPerformance();
+        }
+
+        // Get lesson progress
+        let lessonsCompletedCount = 0;
+        if (getLessonProgress) {
+          const lessonProgress = await getLessonProgress();
+          lessonsCompletedCount = Object.keys(lessonProgress).length;
+        }
+
+        // Get total lessons for user's section
+        const allLessons = await fetchAllLessons(courseId);
+        const sectionLessons = allLessons.filter((l: { section: string }) => l.section === currentSection);
+        const totalLessonsCount = sectionLessons.length || allLessons.length;
+
+        // Calculate readiness from weekly stats
+        const stats = {
+          totalQuestions: weeklyStats?.totalQuestions || 0,
+          accuracy: weeklyStats?.accuracy || 0,
+        };
+
+        // Only show readiness if user has some activity
+        if (stats.totalQuestions > 0 || lessonsCompletedCount > 0) {
+          const readinessData = calculateExamReadiness(
+            stats,
+            topicsData,
+            lessonsCompletedCount,
+            totalLessonsCount
+          );
+          setReadiness(readinessData);
+        } else {
+          setReadiness(null);
+        }
+      } catch (error) {
+        logger.error('Error loading readiness:', error);
+      } finally {
+        setReadinessLoading(false);
+      }
+    };
+
+    loadReadinessData();
+  }, [user?.uid, userProfile?.onboardingComplete, getTopicPerformance, getLessonProgress, weeklyStats, courseId, currentSection]);
 
   // Calculate motivational metrics
   const pointsToGoal = todayLog ? Math.max(0, (todayLog.goalPoints || 50) - (todayLog.earnedPoints || 0)) : 50;
@@ -303,6 +479,13 @@ const Dashboard = () => {
         </div>
       )}
 
+      {/* Exam Readiness Widget */}
+      <ReadinessWidget 
+        readiness={readiness} 
+        daysUntilExam={daysUntilExam} 
+        loading={readinessLoading} 
+      />
+
       {/* Daily Progress Card */}
       <div className="card-elevated mb-6 p-6">
         <div className="flex items-center justify-between mb-6">
@@ -406,8 +589,8 @@ const Dashboard = () => {
             <QuickAction
               to="/ai-tutor"
               icon={Brain}
-              label="AI Tutor"
-              sublabel="Get instant explanations"
+              label="Ask Vory"
+              sublabel="Your AI study companion"
               color="primary"
               dataTour="ai-tutor"
             />

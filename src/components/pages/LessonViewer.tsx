@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import {
@@ -82,7 +83,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
       // Simple string list
       return (
         <ul className="space-y-2 ml-4" aria-label={section.title || "List"}>
-          {listItems.map((item: string, i: number) => (
+          {(listItems as string[]).map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-slate-700 dark:text-slate-300">
               <span className="text-primary-500 mt-1.5 text-sm" aria-hidden="true">•</span>
               <span>{item}</span>
@@ -131,7 +132,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
           </h4>
           <ul className="space-y-2">
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {section.content.map((point: string, i: number) => (
+            {(section.content as unknown as string[]).map((point, i) => (
               <li key={i} className="flex items-start gap-2 text-primary-800 dark:text-primary-200">
                 <span className="text-primary-400 mt-1">•</span>
                 <span>{point}</span>
@@ -266,7 +267,7 @@ const LessonViewer: React.FC = () => {
           setSectionLessons(lessons);
         }
       } catch (error) {
-        console.error('Error fetching lesson:', error);
+        logger.error('Error fetching lesson:', error);
       }
       setIsLoading(false);
     };
@@ -570,7 +571,7 @@ const LessonViewer: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400">
-                  Ask AI Tutor
+                  Ask Vory
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Get help understanding this topic</p>
               </div>

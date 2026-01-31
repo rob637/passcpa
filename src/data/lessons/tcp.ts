@@ -10,6 +10,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Tax Planning", "Income Recognition", "Deferral"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-1',
     content: {
       sections: [
         {
@@ -133,6 +135,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Tax Planning", "Family Tax Planning", "Assignment of Income"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-1',
     content: {
       sections: [
         {
@@ -263,6 +267,8 @@ export const tcpLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Tax Planning", "H.R. 1", "TCJA"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-1',
     content: {
       sections: [
         {
@@ -389,6 +395,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Tax Planning", "Itemized Deductions", "Bunching"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-3',
     content: {
       sections: [
         {
@@ -520,6 +528,8 @@ export const tcpLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Tax Planning", "H.R. 1", "TCJA", "Itemized Deductions"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-3',
     content: {
       sections: [
         {
@@ -656,6 +666,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Tax Planning", "Capital Gains", "Investment Planning"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-III-B-1',
     content: {
       sections: [
         {
@@ -789,6 +801,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Tax Planning", "Qualified Opportunity Zones", "Capital Gains"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-III-B-1',
     content: {
       sections: [
         {
@@ -920,6 +934,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Tax Planning", "NIIT", "Investment Income"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-1',
     content: {
       sections: [
         {
@@ -1052,6 +1068,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Tax Planning", "Retirement Planning", "Roth IRA"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-C-1',
     content: {
       sections: [
         {
@@ -1194,6 +1212,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Tax Planning", "Charitable Contributions", "Philanthropy"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-A-1',
     content: {
       sections: [
         {
@@ -1329,6 +1349,8 @@ export const tcpLessons: Lesson[] = [
     duration: 65,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Business Formation", "Tax Planning"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-C-1',
     content: {
       sections: [
         {
@@ -1472,6 +1494,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Entity Planning", "Check-the-Box", "Entity Classification"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -1616,6 +1640,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Entity Planning", "State Tax", "Nexus"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -1750,6 +1776,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Entity Planning", "State Tax", "Apportionment"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -1886,6 +1914,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Reasonable Compensation", "Payroll Tax"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-D-1',
     content: {
       sections: [
         {
@@ -2023,6 +2053,8 @@ export const tcpLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Retirement Plans", "Employee Benefits"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -2165,6 +2197,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'intermediate',
     topics: ["Entity Planning", "Fringe Benefits", "Employee Compensation"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-D-1',
     content: {
       sections: [
         {
@@ -2314,6 +2348,8 @@ export const tcpLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Section 199A", "QBI Deduction"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -2443,6 +2479,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["International Tax", "GILTI", "CFC"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -2564,6 +2602,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["International Tax", "FDII", "BEAT"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -2701,6 +2741,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["International Tax", "Transfer Pricing", "Related Party"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-III-C-1',
     content: {
       sections: [
         {
@@ -2833,6 +2875,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Succession Planning", "Estate Planning"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
     content: {
       sections: [
         {
@@ -2978,6 +3022,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Equity Compensation", "Stock Options"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-D-1',
     content: {
       sections: [
         {
@@ -3115,6 +3161,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Entity Planning", "Partnership Taxation", "Special Allocations"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-B-2',
     content: {
       sections: [
         {
@@ -3252,6 +3300,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Transactions", "Installment Sales", "Tax Deferral"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-B-3',
     content: {
       sections: [
         {
@@ -3374,6 +3424,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Property Transactions", "Related Party Rules", "Loss Disallowance"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-C-1',
     content: {
       sections: [
         {
@@ -3487,6 +3539,8 @@ export const tcpLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Property Transactions", "Like-Kind Exchanges", "Section 1031"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-1',
     content: {
       sections: [
         {
@@ -3616,6 +3670,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Transactions", "M&A", "Business Sales"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-1',
     content: {
       sections: [
         {
@@ -3745,6 +3801,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Property Transactions", "M&A", "Section 338"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-1',
     content: {
       sections: [
         {
@@ -3870,6 +3928,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Property Transactions", "Corporate Liquidations", "Section 331"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-1',
     content: {
       sections: [
         {
@@ -3999,6 +4059,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'intermediate',
     topics: ["Gift & Estate", "Gift Tax", "Annual Exclusion"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-A-1',
     content: {
       sections: [
         {
@@ -4123,6 +4185,8 @@ export const tcpLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Gift & Estate", "Gift-Splitting", "Married Couples"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-A-1',
     content: {
       sections: [
         {
@@ -4243,6 +4307,8 @@ export const tcpLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Gift & Estate", "Valuation Discounts", "FLPs"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-A-1',
     content: {
       sections: [
         {
@@ -4366,6 +4432,8 @@ export const tcpLessons: Lesson[] = [
     duration: 60,
     difficulty: 'advanced',
     topics: ["Gift & Estate", "Estate Tax", "Valuation"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-B-1',
     content: {
       sections: [
         {
@@ -4504,6 +4572,8 @@ export const tcpLessons: Lesson[] = [
     duration: 45,
     difficulty: 'intermediate',
     topics: ["Gift & Estate", "Portability", "Estate Planning"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-B-2',
     content: {
       sections: [
         {
@@ -4627,6 +4697,8 @@ export const tcpLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Gift & Estate", "GST Tax", "Multi-Generational"],
+    blueprintArea: 'TCP-IV',
+    blueprintTopic: 'TCP-IV-C-1',
     content: {
       sections: [
         {

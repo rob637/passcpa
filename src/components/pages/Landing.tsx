@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -69,7 +70,7 @@ const Landing = () => {
       setSubmitted(true);
       setEmail('');
     } catch (err) {
-      console.error('Waitlist signup error:', err);
+      logger.error('Waitlist signup error:', err);
       setError('Something went wrong. Please try again.');
     }
   };
@@ -104,8 +105,8 @@ const Landing = () => {
     },
     {
       icon: Bot,
-      title: 'AI That Actually Helps',
-      description: 'Stuck on a concept? Our AI tutor explains it 10 different ways until it clicks. Available 24/7, never judges, infinitely patient.',
+      title: 'Meet Vory',
+      description: 'Stuck on a concept? Vory, your AI study companion, explains it 10 different ways until it clicks. Available 24/7, never judges, infinitely patient.',
       stat: '24/7',
       color: 'blue'
     },
@@ -143,7 +144,7 @@ const Landing = () => {
   // Will replace with verified testimonials as beta users provide them
   const testimonials = [
     {
-      quote: "Finally, a CPA prep course that doesn't require a second mortgage. The AI tutor is like having a patient professor available 24/7. I went from dreading study sessions to actually looking forward to them.",
+      quote: "Finally, a CPA prep course that doesn't require a second mortgage. Vory is like having a patient professor available 24/7. I went from dreading study sessions to actually looking forward to them.",
       author: "Sarah M.",
       role: "CPA Candidate • Big 4 Audit",
       avatar: "SM",
@@ -169,14 +170,25 @@ const Landing = () => {
   const stats = [
     { value: 2600, label: 'Practice Questions', suffix: '+' },
     { value: 300, label: 'Lessons', suffix: '+' },
-    { value: 24, label: 'AI Tutor', suffix: '/7' },
+    { value: 24, label: 'Vory AI', suffix: '/7' },
     { value: 97, label: 'Savings vs Becker', suffix: '%' },
   ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 overflow-hidden">
+      {/* Skip Link for Accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
+      
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+        aria-label="Main navigation"
+      >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
             <img 
@@ -210,6 +222,7 @@ const Landing = () => {
       </nav>
 
       {/* Hero Section */}
+      <main id="main-content">
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
@@ -648,9 +661,10 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-slate-950 text-slate-400">
+      <footer className="py-16 px-6 bg-slate-950 text-slate-400" role="contentinfo">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">

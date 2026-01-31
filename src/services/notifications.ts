@@ -1,6 +1,8 @@
 // Notification Service
 // Handles push notifications for study reminders
 
+import logger from '../utils/logger';
+
 /**
  * Check if notifications are supported
  */
@@ -100,7 +102,7 @@ export async function scheduleNotification(options: NotificationOptions): Promis
 
     return { success: true, scheduled: true };
   } catch (error: any) {
-    console.error('Notification error:', error);
+    logger.error('Notification error:', error);
     return { success: false, error: error.message };
   }
 }

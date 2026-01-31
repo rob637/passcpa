@@ -16,6 +16,7 @@ import {
 import { db } from '../config/firebase.js';
 import { useAuth } from './AuthProvider';
 import { format } from 'date-fns';
+import logger from '../utils/logger';
 
 export interface StudyPlan {
   id?: string;
@@ -118,7 +119,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         setLoading(false);
       },
       (error) => {
-        console.error('Error fetching study plan:', error);
+        logger.error('Error fetching study plan:', error);
         setLoading(false);
       }
     );
@@ -250,7 +251,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         }
         setCurrentStreak(streak);
       } catch (error) {
-        console.error('Error fetching weekly data:', error);
+        logger.error('Error fetching weekly data:', error);
       }
     };
 
@@ -283,7 +284,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             })
         }, { merge: true });
     } catch (e) {
-        console.error("Error recording answer", e);
+        logger.error("Error recording answer", e);
     }
   };
 
@@ -305,7 +306,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             })
         });
       } catch (e) {
-          console.error("Error completing simulation", e);
+          logger.error("Error completing simulation", e);
       }
   };
 
@@ -337,7 +338,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           timeSpent,
         }, { merge: true });
       } catch (e) {
-          console.error("Error completing lesson", e);
+          logger.error("Error completing lesson", e);
       }
   };
 
@@ -353,7 +354,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         });
         return progress;
       } catch (error) {
-        console.error('Error fetching lesson progress:', error);
+        logger.error('Error fetching lesson progress:', error);
         return {};
       }
   }
@@ -393,7 +394,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         questions: stats.total,
       }));
     } catch (error) {
-      console.error('Error fetching topic performance:', error);
+      logger.error('Error fetching topic performance:', error);
       return [];
     }
   }

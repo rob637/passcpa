@@ -21,6 +21,7 @@ import {
 import { db } from '../config/firebase';
 import { Question, ExamSection, Difficulty, CourseId } from '../types';
 import { DEFAULT_COURSE_ID } from '../types/course';
+import logger from '../utils/logger';
 
 interface FetchQuestionsOptions {
   section?: ExamSection;
@@ -119,14 +120,14 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     const shuffled = shuffleArray(questions);
     
     if (shuffled.length === 0) {
-      console.log('No questions found in Firestore, attempting local fallback...');
+      logger.log('No questions found in Firestore, attempting local fallback...');
       return await fetchLocalQuestions(options);
     }
 
     return shuffled.slice(0, count) as Question[];
 
   } catch (error) {
-    console.warn('Error fetching questions, failing back to local data:', error);
+    logger.warn('Error fetching questions, failing back to local data:', error);
     return await fetchLocalQuestions(options);
   }
 }
@@ -165,7 +166,7 @@ async function fetchLocalQuestions(options: FetchQuestionsOptions): Promise<Ques
     const shuffled = shuffleArray(filtered);
     return shuffled.slice(0, count) as Question[];
   } catch (err) {
-    console.error('Local fallback failed:', err);
+    logger.error('Local fallback failed:', err);
     return [];
   }
 }
@@ -183,7 +184,7 @@ export async function getQuestionById(questionId: string): Promise<Question | nu
     }
     return null;
   } catch (error) {
-    console.error('Error fetching question:', error);
+    logger.error('Error fetching question:', error);
     return null;
   }
 }
@@ -232,7 +233,7 @@ export async function getWeakAreaQuestions(userId: string, section: ExamSection,
 
     return shuffleArray(questions).slice(0, count);
   } catch (error) {
-    console.error('Error fetching weak area questions:', error);
+    logger.error('Error fetching weak area questions:', error);
     return fetchQuestions({ section, count });
   }
 }
@@ -248,7 +249,7 @@ export async function getQuestionCount(section?: ExamSection): Promise<number> {
     const snapshot = await getDocs(q);
     return snapshot.size;
   } catch (error) {
-    console.error('Error getting question count:', error);
+    logger.error('Error getting question count:', error);
     return 0;
   }
 }
@@ -266,7 +267,7 @@ export async function addQuestion(question: Omit<Question, 'id'>): Promise<strin
     });
     return docRef.id;
   } catch (error) {
-    console.error('Error adding question:', error);
+    logger.error('Error adding question:', error);
     throw error;
   }
 }
@@ -289,7 +290,7 @@ export async function seedQuestions(questions: Question[]): Promise<number> {
   }
 
   await batch.commit();
-  console.log(`Seeded ${questions.length} questions`);
+  logger.log(`Seeded ${questions.length} questions`);
   return questions.length;
 }
 
@@ -304,7 +305,7 @@ export async function updateQuestion(id: string, data: Partial<Question>): Promi
       updatedAt: serverTimestamp(),
     });
   } catch (error) {
-    console.error('Error updating question:', error);
+    logger.error('Error updating question:', error);
     throw error;
   }
 }
@@ -317,7 +318,7 @@ export async function deleteQuestion(id: string): Promise<void> {
     const questionRef = doc(db, 'questions', id);
     await deleteDoc(questionRef);
   } catch (error) {
-    console.error('Error deleting question:', error);
+    logger.error('Error deleting question:', error);
     throw error;
   }
 }

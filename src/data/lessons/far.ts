@@ -476,6 +476,154 @@ export const farLessons: Lesson[] = [
       ]
     }
   },
+  // ==========================================
+  // FAR-I ADDITIONAL: RECOGNITION & MEASUREMENT
+  // ==========================================
+  {
+    id: 'FAR-I-006',
+    section: 'FAR',
+    title: "Recognition Criteria and Derecognition",
+    description: "Apply the criteria for when to record and remove items from financial statements",
+    order: 91,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Conceptual Framework", "Recognition", "Derecognition"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Recognition determines WHEN items appear on financial statements! Understanding the criteria helps you reason through complex transactions. The exam tests recognition criteria for assets, liabilities, revenue, and expenses."
+        },
+        {
+          title: 'Recognition Criteria',
+          type: 'text',
+          content: "**An item should be recognized when:**\n\n1. **Meets definition** of an element (asset, liability, etc.)\n2. **Measurable** with sufficient reliability\n3. **Relevant** - capable of making a difference\n4. **Faithfully represented** - complete, neutral, free from error\n\n**All four criteria must be met!**"
+        },
+        {
+          title: 'Asset Recognition',
+          type: 'table',
+          headers: ['Criterion', 'Test', 'Example'],
+          rows: [
+            ['Present right', 'Control of resource', 'Equipment owned'],
+            ['Economic benefit', 'Will generate cash flows', 'Inventory to sell'],
+            ['Past transaction', 'Already occurred', 'Purchase completed'],
+            ['Measurable', 'Can determine amount', 'Invoice received']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Recognition',
+          type: 'callout',
+          content: "**\"MDRM\"** for recognition:\n\n**M**eets definition\n**D**eterminable (measurable)\n**R**elevant information\n**M**eets faithful representation\n\n**All four = Recognize it!**"
+        },
+        {
+          title: 'Derecognition',
+          type: 'text',
+          content: "**When to REMOVE items:**\n\n**Assets:**\n• No longer meets definition (no future benefit)\n• Sold, transferred, or consumed\n• Control is lost\n\n**Liabilities:**\n• Obligation extinguished\n• Legally released\n• Satisfied, cancelled, or expired\n\n**Recognize gain/loss on derecognition**"
+        },
+        {
+          title: 'Common Recognition Issues',
+          type: 'table',
+          headers: ['Item', 'Recognition Trigger', 'Key Consideration'],
+          rows: [
+            ['Contingent liability', 'Probable and estimable', 'Use \"probable\" threshold'],
+            ['Gain contingency', 'Usually NOT until realized', 'Conservative approach'],
+            ['Warranty liability', 'At point of sale', 'Estimate future costs'],
+            ['Gift/Grant', 'When conditions met', 'Conditional vs. unconditional']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Probable Definition',
+          type: 'warning',
+          content: "**Probable means different things!**\n\n**U.S. GAAP:** Probable = Likely to occur (~75%+)\n**IFRS:** Probable = More likely than not (>50%)\n\n**IFRS has a LOWER threshold for recognition!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Recognition requires: Definition, Measurable, Relevant, Faithful",
+            "Derecognition when no longer meets definition or control lost",
+            "Assets: Present right to future economic benefit",
+            "Liabilities: Present obligation to transfer resources",
+            "Contingencies: Probable and estimable for recognition",
+            "GAAP probable (~75%) vs. IFRS probable (>50%)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-I-007',
+    section: 'FAR',
+    title: "Measurement Bases and Fair Value Concepts",
+    description: "Apply different measurement approaches in financial reporting",
+    order: 92,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Conceptual Framework", "Measurement", "Fair Value"],
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "How you MEASURE an item affects reported amounts! GAAP uses different measurement bases for different items. Understanding when to use historical cost vs. fair value is essential for FAR!"
+        },
+        {
+          title: 'Measurement Bases',
+          type: 'table',
+          headers: ['Basis', 'Definition', 'Common Uses'],
+          rows: [
+            ['Historical Cost', 'Original transaction price', 'PP&E, most assets initially'],
+            ['Current Cost', 'Cost to replace today', 'Inventory (lower of cost/market)'],
+            ['Fair Value', 'Exit price in orderly market', 'Investments, derivatives'],
+            ['Net Realizable Value', 'Expected selling price − costs', 'Inventory, receivables'],
+            ['Present Value', 'Discounted future cash flows', 'Long-term liabilities, leases']
+          ]
+        },
+        {
+          title: 'Fair Value Hierarchy',
+          type: 'text',
+          content: "**ASC 820 Fair Value Hierarchy:**\n\n**Level 1:** Quoted prices in active markets\n• Most reliable\n• Example: NYSE stock prices\n\n**Level 2:** Observable inputs\n• Similar assets, dealer quotes\n• Example: Corporate bond prices\n\n**Level 3:** Unobservable inputs\n• Management estimates\n• Example: Private company valuation"
+        },
+        {
+          title: '🧠 Memory Aid: Fair Value Levels',
+          type: 'callout',
+          content: "**\"123 = QOE\"**\n\n**Level 1:** **Q**uoted prices (best)\n**Level 2:** **O**bservable inputs (good)\n**Level 3:** **E**stimates/models (least reliable)\n\n**Use highest level available!**"
+        },
+        {
+          title: 'Mixed Attribute Model',
+          type: 'text',
+          content: "**GAAP uses multiple measurement bases:**\n\n• **Historical Cost:** PP&E, intangibles, most assets\n• **Fair Value:** Trading securities, derivatives\n• **Amortized Cost:** Held-to-maturity securities\n• **NRV:** Inventory impairment\n• **Present Value:** Bonds payable, leases\n\n**No single approach—must know which applies!**"
+        },
+        {
+          title: 'Fair Value Option',
+          type: 'text',
+          content: "**ASC 825 allows optional fair value for:**\n\n• Financial assets and liabilities\n• Firm commitments\n• Loan commitments\n\n**Election:**\n• Irrevocable once made\n• Changes in FV go to earnings\n• Must disclose election\n\n**Reduces accounting mismatch**"
+        },
+        {
+          title: '⚠️ Exam Trap: Level 3 Disclosure',
+          type: 'warning',
+          content: "**Level 3 requires extensive disclosures:**\n\n• Description of valuation technique\n• Inputs used\n• Reconciliation of beginning to ending\n• Sensitivity analysis\n\n**More reliance on estimates = More disclosure!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "GAAP uses mixed attribute model (multiple bases)",
+            "Historical cost most common initial measurement",
+            "Fair value hierarchy: Level 1 (quoted) > Level 2 (observable) > Level 3 (estimates)",
+            "Present value used for long-term items",
+            "Fair value option available for financial instruments",
+            "Level 3 requires significant disclosure"
+          ]
+        }
+      ]
+    }
+  },
   {
     id: 'FAR-II-001',
     section: 'FAR',

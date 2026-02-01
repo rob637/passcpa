@@ -4780,7 +4780,645 @@ export const audLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // AUD: ADDITIONAL AUDIT TOPICS
+  // =============================================
+  {
+    id: 'AUD-IV-012',
+    section: 'AUD',
+    title: "Government Auditing Standards (Yellow Book)",
+    description: "Understand GAGAS requirements for government audits",
+    order: 57,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Government Audits", "Yellow Book", "GAGAS"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Government Auditing Standards (Yellow Book/GAGAS) apply to audits of governmental entities and those receiving federal funding! These build on GAAS with additional requirements. Essential AUD knowledge!"
+        },
+        {
+          title: 'Yellow Book Framework',
+          type: 'text',
+          content: "**Generally Accepted Government Auditing Standards (GAGAS):**\n\n• Issued by the Comptroller General (GAO)\n• Applies to government entities and recipients\n• Incorporates AICPA standards by reference\n• Adds additional independence and reporting requirements\n\n**Nicknamed \"Yellow Book\" for its cover color**"
+        },
+        {
+          title: 'Types of GAGAS Engagements',
+          type: 'table',
+          headers: ['Type', 'Description', 'Standards'],
+          rows: [
+            ['Financial audits', 'Opinion on financial statements', 'GAAS + GAGAS'],
+            ['Attestation', 'Opinion on subject matter', 'Attestation + GAGAS'],
+            ['Performance audits', 'Effectiveness and efficiency', 'GAGAS specific'],
+            ['Review (new)', 'Compliance reviews', 'GAGAS specific']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Yellow Book Extras',
+          type: 'callout',
+          content: "**\"GAAS Plus Extras\"**\n\n**Additional GAGAS requirements:**\n• More restrictive independence\n• CPE requirements (80 hours/2 years)\n• Quality control & peer review\n• Additional reporting elements\n\n**All GAAS requirements STILL apply!**"
+        },
+        {
+          title: 'Independence Requirements',
+          type: 'text',
+          content: "**More restrictive than AICPA:**\n\n**Threats framework:**\n• Self-interest, self-review, bias, familiarity, undue influence, management participation, structural\n\n**Prohibited nonaudit services:**\n• Preparing financial statements (sometimes)\n• Maintaining client records\n• Designing or implementing internal controls\n\n**Must document threats and safeguards**"
+        },
+        {
+          title: 'Reporting Requirements',
+          type: 'text',
+          content: "**Financial audit reports include:**\n\n• Opinion on financial statements (standard)\n• Report on internal control (required!)\n• Report on compliance (required!)\n\n**Internal control report:**\n• Material weaknesses\n• Significant deficiencies\n• Even if none found—still report!\n\n**More extensive than commercial audits**"
+        },
+        {
+          title: '⚠️ Exam Trap: Report Distribution',
+          type: 'warning',
+          content: "**Yellow Book reports are PUBLIC:**\n\n• Must be made available to public\n• Unless classified or sensitive\n• Posted on websites, clearinghouses\n\n**Different from private company audits!**\n\n**30-day response requirement:**\n• Management must respond to findings\n• Response included in report"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "GAGAS: Government Auditing Standards issued by GAO",
+            "Incorporates GAAS but adds additional requirements",
+            "Independence: More restrictive, threats framework",
+            "CPE: 80 hours every 2 years, including 24 in government",
+            "Reports include internal control and compliance",
+            "Reports generally available to public",
+            "Management response to findings required"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-013',
+    section: 'AUD',
+    title: "Single Audit (Uniform Guidance)",
+    description: "Understand single audit requirements for federal award recipients",
+    order: 58,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Government Audits", "Single Audit", "Uniform Guidance"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-C-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Organizations receiving federal awards must undergo single audits! Understanding the Uniform Guidance requirements, major program determination, and compliance testing is essential for AUD!"
+        },
+        {
+          title: 'Single Audit Threshold',
+          type: 'text',
+          content: "**When required:**\n\n**$750,000 or more in federal awards**\n(Fiscal years starting after 12/26/2014)\n\n**Applies to:**\n• State and local governments\n• Nonprofits\n• Colleges and universities\n• Indian tribes\n\n**Subrecipients may also require single audit**"
+        },
+        {
+          title: 'Single Audit Components',
+          type: 'table',
+          headers: ['Component', 'Description', 'Required?'],
+          rows: [
+            ['Financial statements', 'Entity-wide audit', 'Yes'],
+            ['Schedule of expenditures (SEFA)', 'Federal awards listing', 'Yes'],
+            ['Internal control over compliance', 'Major programs', 'Yes'],
+            ['Compliance testing', 'Major programs', 'Yes'],
+            ['Data collection form', 'SF-SAC submission', 'Yes']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Major Program',
+          type: 'callout',
+          content: "**\"Type A vs Type B\"**\n\n**Type A programs:**\n• Larger programs (threshold varies)\n• Generally $750K or 3% of total\n\n**Type B programs:**\n• Smaller programs\n\n**Risk-based selection:**\n• All high-risk Type A = Major\n• Some Type B may be elevated\n\n**At least 20% coverage of awards**"
+        },
+        {
+          title: 'Compliance Requirements',
+          type: 'text',
+          content: "**12 Types of Compliance:**\n\n• Activities allowed/unallowed\n• Allowable costs/cost principles\n• Cash management\n• Eligibility\n• Equipment/real property\n• Matching/level of effort\n• Period of performance\n• Procurement\n• Program income\n• Reporting\n• Subrecipient monitoring\n• Special tests and provisions"
+        },
+        {
+          title: 'Audit Findings',
+          type: 'text',
+          content: "**When to report:**\n\n**Compliance findings:**\n• Material noncompliance (opinion modifier)\n• Questioned costs (known + likely > $25,000)\n\n**Internal control findings:**\n• Material weaknesses\n• Significant deficiencies\n\n**Schedule of findings and questioned costs required**"
+        },
+        {
+          title: '⚠️ Exam Trap: Questioned Costs',
+          type: 'warning',
+          content: "**Report if known + likely > $25,000:**\n\n**Known costs:** Specifically identified\n**Likely costs:** Projection from sample\n\n**Can be:**\n• Unallowable costs\n• Undocumented costs\n• Costs outside eligibility\n\n**Questioned ≠ Disallowed** (final determination by feds)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Threshold: $750,000 in federal awards",
+            "SEFA: Schedule of Expenditures of Federal Awards required",
+            "Major programs: Risk-based selection, coverage thresholds",
+            "12 compliance requirements to test",
+            "Report questioned costs > $25,000 (known + likely)",
+            "Report internal control deficiencies for major programs",
+            "Submit Data Collection Form (SF-SAC) to clearinghouse"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-014',
+    section: 'AUD',
+    title: "Engagement Quality Review",
+    description: "Understand EQR requirements and the reviewer's responsibilities",
+    order: 59,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Quality Control", "Engagement Quality", "Standards"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Engagement Quality Review (EQR) is a critical quality control mechanism! Understanding when EQR is required and what the reviewer does helps ensure audit quality. This is an important AUD topic!"
+        },
+        {
+          title: 'When EQR Is Required',
+          type: 'text',
+          content: "**PCAOB (public companies):**\n• All audits and interim reviews\n• Required by standards\n\n**AICPA (nonissuers):**\n• Based on firm's quality management policies\n• High-risk engagements\n• May be required by regulators\n\n**Consider risk, complexity, public interest**"
+        },
+        {
+          title: 'EQR Reviewer Requirements',
+          type: 'table',
+          headers: ['Requirement', 'Description', 'Why'],
+          rows: [
+            ['Competence', 'Technical knowledge', 'Quality review'],
+            ['Objectivity', 'Not part of team', 'Fresh perspective'],
+            ['Authority', 'Can challenge team', 'Effective review'],
+            ['Cooling-off', 'Wait period after team', 'Independence']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: EQR Duties',
+          type: 'callout',
+          content: "**\"Review, Not Redo\"**\n\n**EQR reviewer does:**\n• Reviews significant judgments\n• Evaluates conclusions\n• Reads financial statements\n• Discusses with engagement partner\n\n**EQR reviewer does NOT:**\n• Re-perform all procedures\n• Replace team's judgment\n• Make final decisions"
+        },
+        {
+          title: 'Areas of Focus',
+          type: 'text',
+          content: "**EQR reviewer evaluates:**\n\n• Independence\n• Significant risks identified\n• Significant judgments made\n• Consultations on difficult matters\n• Significant deficiencies/material weaknesses\n• Uncorrected misstatements\n• Documentation appropriateness\n• Draft auditor's report\n\n**Focus on SIGNIFICANT matters**"
+        },
+        {
+          title: 'Documentation and Approval',
+          type: 'text',
+          content: "**EQR completion:**\n\n• Document procedures performed\n• Document conclusions\n• Resolve disagreements before report\n\n**Report release:**\n• Cannot release until EQR complete\n• EQR reviewer provides concurring approval\n\n**No backdating EQR completion!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Disagreements',
+          type: 'warning',
+          content: "**When EQR and team disagree:**\n\n• Consultation process\n• May involve firm leadership\n• Must resolve before report release\n\n**EQR does not have veto power, but:**\n• Firm must address concerns\n• Cannot release with unresolved disputes\n\n**Document the resolution!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "EQR required for public company audits (PCAOB)",
+            "Nonissuers: Based on firm policy and risk",
+            "Reviewer: Competent, objective, not on team",
+            "Focus on significant judgments and risks",
+            "Cannot release report until EQR complete",
+            "Resolve disagreements through consultation",
+            "Document EQR procedures and conclusions"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-015',
+    section: 'AUD',
+    title: "Communications with Those Charged with Governance",
+    description: "Master required and other communications with audit committees",
+    order: 60,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Audit Communications", "Governance", "Standards"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Effective communication with those charged with governance is essential! Understanding what must be communicated, when, and how helps maintain strong relationships and quality audits. Key AUD knowledge!"
+        },
+        {
+          title: 'Who Are \"Those Charged with Governance\"?',
+          type: 'text',
+          content: "**TCWG = Oversight responsibility for financial reporting:**\n\n• Audit committee (typical for public)\n• Board of directors\n• Owner-manager (small entities)\n• Supervisory board\n\n**May include subsets like audit committee**\n\n**Identify appropriate person(s) for communication**"
+        },
+        {
+          title: 'Required Communications',
+          type: 'table',
+          headers: ['Topic', 'When', 'How'],
+          rows: [
+            ['Auditor responsibilities', 'Planning', 'Written'],
+            ['Planned scope and timing', 'Planning', 'Oral/Written'],
+            ['Significant findings', 'Before report', 'Written (if significant)'],
+            ['Independence', 'Annually', 'Written (issuers)'],
+            ['Material weaknesses', 'Timely', 'Written'],
+            ['Significant deficiencies', 'Timely', 'Written']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Planning Communications',
+          type: 'callout',
+          content: "**\"SMART Planning\"**\n\n**S**cope and timing\n**M**ateriality approach\n**A**udit strategy\n**R**isks identified\n**T**iming of procedures\n\n**Allows TCWG to provide input early!**"
+        },
+        {
+          title: 'Significant Audit Findings',
+          type: 'text',
+          content: "**Communicate before report issuance:**\n\n• Significant accounting policies (initial selection, changes)\n• Significant estimates and judgments\n• Significant unusual transactions\n• Uncorrected misstatements\n• Material corrected misstatements\n• Difficulties encountered\n• Disagreements with management\n• Other matters requiring attention"
+        },
+        {
+          title: 'Internal Control Communications',
+          type: 'text',
+          content: "**Material weaknesses and significant deficiencies:**\n\n• Communicate in writing\n• To TCWG and management\n• Within 60 days of report release\n\n**Content:**\n• Definition of deficiency type\n• Description of deficiency\n• Potential effects\n\n**No deficiencies noted = Not required to communicate that**"
+        },
+        {
+          title: '⚠️ Exam Trap: Form of Communication',
+          type: 'warning',
+          content: "**Written vs oral:**\n\n**Must be WRITTEN:**\n• Material weaknesses\n• Significant deficiencies\n• Independence (issuers)\n• Fraud involving management\n• Significant findings (if requested)\n\n**May be oral:**\n• Planned scope and timing\n• Other less significant matters\n\n**If oral, document in workpapers!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "TCWG: Those with financial reporting oversight",
+            "Plan communications: Scope, timing, risks, materiality",
+            "Findings before report: Policies, estimates, difficulties",
+            "Written for: Material weaknesses, significant deficiencies",
+            "60 days: Deadline for internal control communications",
+            "Independence communication: Annual for issuers",
+            "Two-way communication: Allow TCWG input"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-016',
+    section: 'AUD',
+    title: "Related Party Transactions",
+    description: "Understand audit procedures for related party relationships and transactions",
+    order: 61,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Audit Procedures", "Related Parties", "Risk"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Related party transactions can be used to manipulate financial statements! Understanding how to identify, audit, and evaluate these transactions is critical. Related parties are a significant fraud risk indicator!"
+        },
+        {
+          title: 'What Are Related Parties?',
+          type: 'text',
+          content: "**Related parties include:**\n\n• Parent and subsidiaries\n• Entities under common control\n• Investors with significant influence\n• Management and close family\n• Principal owners (>10%)\n• Employee benefit plans\n\n**Arm's length presumption may NOT apply!**"
+        },
+        {
+          title: 'Audit Procedures',
+          type: 'table',
+          headers: ['Procedure', 'Purpose', 'Timing'],
+          rows: [
+            ['Inquire of management', 'Identify related parties', 'Planning'],
+            ['Review board minutes', 'Identify transactions', 'Throughout'],
+            ['Confirm with related parties', 'Verify terms', 'Substantive'],
+            ['Examine contracts/agreements', 'Understand terms', 'Substantive'],
+            ['Review SEC filings', 'Identify relationships', 'Planning/Final']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Related Party Red Flags',
+          type: 'callout',
+          content: "**\"UNUSUAL\"** transactions:\n\n**U**nusual terms (no interest, forgiven debt)\n**N**o business rationale\n**U**ndisclosed until late in audit\n**S**ubstance over form issues\n**U**nverified pricing\n**A**bnormal volume year-end\n**L**ack of documentation"
+        },
+        {
+          title: 'Risk Assessment',
+          type: 'text',
+          content: "**Related parties increase risk because:**\n\n• May not be at arm's length\n• May obscure substance\n• Inherent limitations in confirming\n• Management may have incentive to hide\n\n**Consider:**\n• Nature and extent of transactions\n• Business purpose\n• Whether TCWG approved\n• Whether properly disclosed"
+        },
+        {
+          title: 'Disclosure Requirements',
+          type: 'text',
+          content: "**GAAP requires disclosure of:**\n\n• Nature of relationship\n• Transaction descriptions\n• Dollar amounts\n• Amounts due to/from\n• Terms and manner of settlement\n\n**Cannot state \"at arm's length\" unless verified!**\n\n**Auditor: Evaluate completeness and adequacy**"
+        },
+        {
+          title: '⚠️ Exam Trap: Significant Transactions Outside Normal',
+          type: 'warning',
+          content: "**Extra scrutiny for:**\n\n• Transactions outside normal course\n• Significant transactions with related parties\n\n**Understand:**\n• Business rationale\n• Terms of transaction\n• Authorization\n\n**If no business rationale:**\n• Consider fraud risk\n• Potential omitted liability or asset"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Related parties: Parent, subs, management, significant owners",
+            "Arm's length presumption may not apply",
+            "Procedures: Inquire, review minutes, confirm, examine",
+            "Red flags: Unusual terms, no rationale, undisclosed",
+            "Cannot represent arm's length unless verified",
+            "Consider fraud risk for significant transactions",
+            "Evaluate disclosure completeness and adequacy"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-017',
+    section: 'AUD',
+    title: "Using the Work of a Specialist",
+    description: "Understand when and how auditors use specialists",
+    order: 62,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Audit Procedures", "Specialists", "Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Auditors can't be experts in everything! Understanding when to use specialists, how to evaluate their work, and reporting implications is essential. Common areas: valuations, actuarial, IT, legal!"
+        },
+        {
+          title: 'Types of Specialists',
+          type: 'text',
+          content: "**Auditor's specialist:**\n• Engaged by auditor\n• Works for auditor\n• Part of audit team (firm employee) or external\n\n**Management's specialist:**\n• Engaged by management\n• Prepares estimates for client\n• Work is evidence, not assistance\n\n**Different evaluation requirements!**"
+        },
+        {
+          title: 'Common Specialist Areas',
+          type: 'table',
+          headers: ['Area', 'Specialist Type', 'Example'],
+          rows: [
+            ['Valuations', 'Appraiser', 'Fair value of assets'],
+            ['Actuarial', 'Actuary', 'Pension liabilities'],
+            ['Legal', 'Attorney', 'Litigation outcomes'],
+            ['IT', 'IT specialist', 'System controls'],
+            ['Environmental', 'Engineer', 'Remediation costs'],
+            ['Taxes', 'Tax expert', 'Complex positions']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Evaluating Specialists',
+          type: 'callout',
+          content: "**\"CAR Check\"**\n\n**C**ompetence - Qualifications and credentials\n**A**ssumptions - Are they reasonable?\n**R**elevance - Does work address the assertion?\n\n**Plus: Objectivity (especially auditor's specialist)**"
+        },
+        {
+          title: 'Using Auditor\'s Specialist',
+          type: 'text',
+          content: "**Auditor responsibilities:**\n\n• Evaluate competence and objectivity\n• Reach understanding on scope/objectives\n• Evaluate appropriateness of work\n• Evaluate consistency with other evidence\n\n**Auditor takes responsibility for conclusion**\n\n**Cannot outsource judgment!**"
+        },
+        {
+          title: 'Evaluating Management\'s Specialist',
+          type: 'text',
+          content: "**Treat work as EVIDENCE:**\n\n• Evaluate competence and objectivity\n• Obtain understanding of specialist's work\n• Evaluate appropriateness as evidence\n• Consider source data used\n• Assess reasonableness of assumptions\n\n**Management's specialist work ≠ Auditor's work!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Report Reference',
+          type: 'warning',
+          content: "**Do NOT refer to specialist in standard unmodified report:**\n\n• Auditor takes full responsibility\n• Reference might be misunderstood as shared responsibility\n• Exception: Modified opinion where relevant\n\n**Engagement letter may reference specialists**\n**Workpapers should document use**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Auditor's specialist: Engaged by auditor, part of team",
+            "Management's specialist: Engaged by client, work is evidence",
+            "Evaluate: Competence, objectivity, assumptions, relevance",
+            "Auditor responsible for conclusions using specialist work",
+            "Cannot simply accept specialist conclusions",
+            "No report reference to specialist (usually)",
+            "Document understanding, scope, and evaluation"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-018',
+    section: 'AUD',
+    title: "Group Audits (Component Auditors)",
+    description: "Understand using the work of component auditors",
+    order: 63,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Group Audits", "Component Auditors", "Consolidation"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-D-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Large entities often have subsidiaries audited by other firms! Understanding group audit requirements, supervision, and reporting is essential. The group auditor remains responsible for the group opinion!"
+        },
+        {
+          title: 'Key Terms',
+          type: 'text',
+          content: "**Group engagement team:**\n• Partners and staff of group auditor\n• Responsible for group audit\n\n**Component auditor:**\n• Audits component (subsidiary, division)\n• May be same firm or different firm\n\n**Component:**\n• Entity or business unit with separate financial info"
+        },
+        {
+          title: 'Component Materiality',
+          type: 'table',
+          headers: ['Component Type', 'Significance', 'Procedures'],
+          rows: [
+            ['Significant - Financial', 'Large relative to group', 'Full audit'],
+            ['Significant - Risk', 'High risk areas', 'Targeted procedures'],
+            ['Not significant', 'Small and low risk', 'Analytics or none'],
+            ['Aggregation risk', 'Combined not significant', 'Consider collectively']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Group Auditor Duties',
+          type: 'callout',
+          content: "**\"SUPA\" responsibilities:**\n\n**S**cope determination\n**U**nderstanding component auditors\n**P**articipation in risk assessment\n**A**ssessment of component work\n\n**Cannot just accept component work blindly!**"
+        },
+        {
+          title: 'Understanding Component Auditors',
+          type: 'text',
+          content: "**Evaluate:**\n\n• Independence (meets requirements?)\n• Professional competence\n• Whether group team can be involved\n• Regulatory environment\n• Quality control processes\n\n**If concerns:**\n• Perform work directly\n• Or don't use component auditor's work"
+        },
+        {
+          title: 'Communication Requirements',
+          type: 'text',
+          content: "**Group auditor communicates to component:**\n\n• Work to be performed\n• Form of reports/conclusions needed\n• Materiality levels\n• Identified risks\n• Related party list\n• Findings requiring communication\n\n**Component communicates to group:**\n• Whether work completed as instructed\n• Significant findings\n• Overall conclusions"
+        },
+        {
+          title: '⚠️ Exam Trap: Report Reference',
+          type: 'warning',
+          content: "**Reference to component auditor in report:**\n\n**Old approach (still acceptable):**\n• Divided responsibility - reference to other auditor\n• Indicates portion audited by other auditor\n\n**Modern approach:**\n• No reference if group auditor takes full responsibility\n• Requires sufficient involvement\n\n**Cannot assume responsibility without sufficient involvement!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Group auditor responsible for group audit opinion",
+            "Component auditors audit subsidiaries/divisions",
+            "Evaluate component auditor competence and independence",
+            "Significant components: Full audit required",
+            "Communicate scope, materiality, risks to components",
+            "Review component work and conclusions",
+            "May reference or assume responsibility (choice)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-019',
+    section: 'AUD',
+    title: "Auditing Estimates",
+    description: "Master audit procedures for accounting estimates",
+    order: 64,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Audit Procedures", "Estimates", "Risk"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Estimates are everywhere in financial statements! From bad debts to fair values to useful lives, auditing estimates requires judgment about judgment. High estimation uncertainty = Higher inherent risk!"
+        },
+        {
+          title: 'Examples of Estimates',
+          type: 'table',
+          headers: ['Account', 'Estimate', 'Key Inputs'],
+          rows: [
+            ['Allowance for doubtful accounts', 'Expected credit losses', 'Historical data, economy'],
+            ['Warranty liability', 'Future claims', 'Claim rates, costs'],
+            ['Fair value of assets', 'Exit price', 'Models, assumptions'],
+            ['Useful life', 'Service period', 'Technology, usage'],
+            ['Contingent liabilities', 'Probable amount', 'Legal assessment'],
+            ['Pension liability', 'PBO', 'Discount rate, returns']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Estimation Risk Factors',
+          type: 'callout',
+          content: "**\"SCUM\"** increases estimation risk:\n\n**S**ubjectivity of inputs\n**C**omplexity of model/method\n**U**ncertainty in assumptions\n**M**anagement bias potential\n\n**More SCUM = More work needed!**"
+        },
+        {
+          title: 'Audit Approaches',
+          type: 'text',
+          content: "**Three approaches:**\n\n1. **Test management's process**\n   • Evaluate reasonableness of assumptions\n   • Test data used\n   • Evaluate model/methodology\n\n2. **Develop independent expectation**\n   • Use different model or assumptions\n   • Compare to management's estimate\n\n3. **Review subsequent events**\n   • Actual results vs estimate\n   • Provides evidence of reasonableness"
+        },
+        {
+          title: 'Evaluating Reasonableness',
+          type: 'text',
+          content: "**For assumptions, consider:**\n\n• Consistency with industry/economic conditions\n• Historical accuracy of prior estimates\n• Support for significant assumptions\n• Sensitivity to changes\n• Whether within reasonable range\n\n**Estimates often have a RANGE of reasonable values**"
+        },
+        {
+          title: 'Management Bias',
+          type: 'text',
+          content: "**Indicators of bias:**\n\n• Consistently favorable assumptions\n• Point estimates at aggressive end of range\n• Selective use of data\n• Changes in assumptions without rationale\n• Undue influence on specialists\n\n**Evaluate:**\n• Prior period estimate accuracy\n• Whether assumptions appropriate vs biased"
+        },
+        {
+          title: '⚠️ Exam Trap: Point Estimate vs Range',
+          type: 'warning',
+          content: "**When auditor's range differs:**\n\n• If management estimate within range → Acceptable\n• If outside range → Potential misstatement\n\n**Narrow the range:**\n• More evidence reduces uncertainty\n• Tighter range increases precision\n\n**Wide range = Consider qualitative factors**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Estimates pervasive in financial statements",
+            "Higher uncertainty = Higher inherent risk",
+            "Approaches: Test process, independent estimate, subsequent events",
+            "Evaluate assumptions: Support, consistency, reasonableness",
+            "Watch for management bias: One-sided, aggressive",
+            "Reasonable range: Management within range is acceptable",
+            "Consider specialist use for complex estimates"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-020',
+    section: 'AUD',
+    title: "Subsequent Events and Subsequently Discovered Facts",
+    description: "Understand audit procedures for events after period end",
+    order: 65,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Subsequent Events", "Audit Procedures", "Dating"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-E-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Events after year-end can significantly impact financial statements! Understanding the two types, required procedures, and report dating implications is essential. This is heavily tested on AUD!"
+        },
+        {
+          title: 'Two Types of Subsequent Events',
+          type: 'table',
+          headers: ['Type', 'Description', 'F/S Treatment'],
+          rows: [
+            ['Type I (Recognized)', 'Conditions existed at balance sheet date', 'Adjust F/S'],
+            ['Type II (Non-recognized)', 'Conditions arose after balance sheet date', 'Disclose only']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Type I vs Type II',
+          type: 'callout',
+          content: "**\"Existed vs Emerged\"**\n\n**Type I:** Condition **EXISTED** at year-end\n→ Provides additional evidence\n→ ADJUST financial statements\n\n**Type II:** Condition **EMERGED** after year-end\n→ New information only\n→ DISCLOSE but don't adjust\n\n**Example:** Lawsuit filed in January for December incident = Type I"
+        },
+        {
+          title: 'Audit Procedures',
+          type: 'text',
+          content: "**Perform through report date:**\n\n• Read minutes of board/shareholders\n• Review latest available interim F/S\n• Inquire of management about:\n  - New commitments/borrowings\n  - Sales of assets\n  - Unusual adjustments\n  - Subsequent events\n• Obtain written representations\n• Legal counsel inquiry (update)"
+        },
+        {
+          title: 'Subsequent Events Timeline',
+          type: 'text',
+          content: "**Key dates:**\n\n• **Balance sheet date** → Period end\n• **Fieldwork completion** → Procedures done\n• **Report date** → Date auditor signs report\n• **Report release** → Provided to client\n• **F/S issuance** → Made available publicly\n\n**Active duty: Through REPORT DATE**\n**Passive duty: Through ISSUANCE**"
+        },
+        {
+          title: 'Subsequently Discovered Facts',
+          type: 'text',
+          content: "**After report date but before issuance:**\n• Perform additional procedures\n• Consider F/S revision if material\n• May delay report\n\n**After F/S issued:**\n• No obligation to seek out information\n• BUT if becomes aware of material facts:\n  - Discuss with management\n  - Consider if F/S need revision\n  - May need to notify users"
+        },
+        {
+          title: '⚠️ Exam Trap: Dual Dating',
+          type: 'warning',
+          content: "**When subsequent event after original report date:**\n\n**Option 1: Dual date**\n• Original date, \"except for Note X which is as of [later date]\"\n• Responsibility limited to specific matter\n\n**Option 2: Update date**\n• Use new date for entire report\n• Responsibility extends to new date\n\n**Dual dating = More common, less exposure**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Type I: Existed at B/S date → Adjust F/S",
+            "Type II: Arose after B/S date → Disclose only",
+            "Active procedures through report date",
+            "Subsequent events procedures: Minutes, inquiries, interim F/S",
+            "After issuance: No duty to search, but respond if aware",
+            "Dual dating limits responsibility to specific matter",
+            "Going concern events considered separately"
+          ]
+        }
+      ]
+    }
   }
 ];
-
-

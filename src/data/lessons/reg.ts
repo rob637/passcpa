@@ -5524,5 +5524,436 @@ export const regLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // REG: ADDITIONAL TOPICS
+  // =============================================
+  {
+    id: 'REG-V-012',
+    section: 'REG',
+    title: "Like-Kind Exchanges (Section 1031)",
+    description: "Master tax-deferred exchanges of real property",
+    order: 75,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Individual Tax", "Property Transactions", "Tax Deferral"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Like-kind exchanges defer recognition of gain! Understanding the requirements, timing rules, and boot calculations is critical. Post-TCJA, only REAL property qualifies. This is a major tax planning tool!"
+        },
+        {
+          title: 'Basic Requirements',
+          type: 'text',
+          content: "**For tax-deferred treatment:**\n\n1. **Like-kind property:** Real property for real property\n2. **Held for business or investment** (both properties)\n3. **Timing rules met** (45-day/180-day)\n4. **Same taxpayer** (exchanger)\n\n**Post-TCJA:** Only real property qualifies (not personal property!)"
+        },
+        {
+          title: 'Timing Requirements',
+          type: 'table',
+          headers: ['Period', 'Requirement', 'Strict?'],
+          rows: [
+            ['45 days', 'Identify replacement property', 'Very strict'],
+            ['180 days', 'Receive replacement property', 'Very strict'],
+            ['Due date', 'Including extensions', 'Absolute limit'],
+            ['Identification', 'Written, signed', 'Required']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Timing',
+          type: 'callout',
+          content: "**\"45 to ID, 180 to Close\"**\n\n**Day 1:** Close on relinquished property\n**Day 45:** Must IDENTIFY replacement(s)\n**Day 180:** Must CLOSE on replacement\n\n**These are CALENDAR days!**\n**NO extensions (even with return extension)**"
+        },
+        {
+          title: 'Boot and Gain Recognition',
+          type: 'text',
+          content: "**Boot = Non-like-kind property received:**\n\n• Cash received\n• Debt relief (mortgage paid off)\n• Other property\n\n**Gain recognized = Lesser of:**\n• Gain realized, OR\n• Boot received\n\n**Can never recognize loss in like-kind exchange!**"
+        },
+        {
+          title: 'Basis Calculation',
+          type: 'text',
+          content: "**Basis of new property:**\n\n**Formula:**\nFMV of property received\n− Deferred gain\n+ Recognized gain\n= Basis of new property\n\n**Or shortcut:**\nBasis of old property\n− Boot received\n+ Boot paid\n+ Gain recognized\n= Basis of new property"
+        },
+        {
+          title: '⚠️ Exam Trap: Mortgage Boot',
+          type: 'warning',
+          content: "**Debt relief = Boot received!**\n\n**Net mortgage boot:**\n• Mortgage transferred TO other party\n• MINUS mortgage assumed FROM other party\n\n**Example:**\n• Your mortgage: $100K (transferred)\n• Their mortgage: $80K (assumed)\n• Net boot received: $20K\n\n**Cash paid can offset debt relief!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Like-kind: Only real property (post-TCJA)",
+            "45 days to identify, 180 days to close",
+            "Boot = Cash, debt relief, other property",
+            "Gain recognized = Lesser of gain realized or boot",
+            "Loss is NEVER recognized in §1031",
+            "Basis: FMV − Deferred gain + Recognized gain",
+            "Debt relief is boot; cash paid can offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-013',
+    section: 'REG',
+    title: "Involuntary Conversions (Section 1033)",
+    description: "Understand tax treatment of condemnations and casualties",
+    order: 76,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Property Transactions", "Tax Deferral"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-C-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When property is destroyed or condemned, you may receive insurance or award! Understanding §1033 allows deferral of gain by reinvesting. This provides relief in involuntary situations!"
+        },
+        {
+          title: 'What Is Involuntary Conversion?',
+          type: 'text',
+          content: "**Property compulsorily or involuntarily converted:**\n\n• Casualty (fire, storm, flood)\n• Theft\n• Condemnation (eminent domain)\n• Threat of condemnation\n\n**Conversion into:** Money (insurance, award)"
+        },
+        {
+          title: 'Deferral Requirements',
+          type: 'table',
+          headers: ['Requirement', 'Details', 'Notes'],
+          rows: [
+            ['Reinvest proceeds', 'In similar or related property', 'Not same taxpayer required'],
+            ['Replacement period', '2 years (3 for condemned real estate)', 'From END of tax year of gain'],
+            ['Make election', 'On tax return', 'File timely return']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Similar Property',
+          type: 'callout',
+          content: "**\"Similar Use\" NOT \"Like Kind\"**\n\n**§1033 is NARROWER than §1031:**\n\n**Must be similar in service or use:**\n• Factory → Factory\n• Rental house → Rental house\n\n**Condemnation of real estate:**\nCan use like-kind standard"
+        },
+        {
+          title: 'Gain Recognition Rules',
+          type: 'text',
+          content: "**Gain recognized = Lesser of:**\n\n• Gain realized, OR\n• Amount NOT reinvested\n\n**Example:**\n• Insurance received: $500,000\n• Basis: $300,000\n• Gain realized: $200,000\n• Reinvested: $450,000\n• Not reinvested: $50,000\n• **Gain recognized: $50,000**"
+        },
+        {
+          title: 'Basis of Replacement Property',
+          type: 'text',
+          content: "**Basis = Cost of replacement − Deferred gain**\n\n**Example (continuing):**\n• Cost of replacement: $450,000\n• Deferred gain: $150,000 ($200K - $50K recognized)\n• **Basis: $300,000**\n\n**Deferred gain reduces basis!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Timing',
+          type: 'warning',
+          content: "**Replacement period timing:**\n\n**Starts:** End of tax year in which gain realized\n**Ends:** 2 years later (or 3 for condemned RE)\n\n**NOT from date of conversion!**\n\n**Example:**\n• Casualty: March 2024\n• Tax year ends: December 31, 2024\n• Deadline: December 31, 2026"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Involuntary: Casualty, theft, condemnation",
+            "Gain deferred if reinvest in similar property",
+            "Replacement period: 2 years (3 for condemned RE)",
+            "Period starts at END of tax year of gain",
+            "Gain recognized = Lesser of gain or amount not reinvested",
+            "Basis of replacement reduced by deferred gain",
+            "§1033 requires similar use (narrower than §1031)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-014',
+    section: 'REG',
+    title: "Home Sale Exclusion (Section 121)",
+    description: "Master the $250K/$500K gain exclusion for principal residence",
+    order: 77,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Property Transactions", "Exclusion"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-C-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The home sale exclusion is a HUGE tax benefit! Understanding the ownership/use tests and partial exclusion rules helps maximize this benefit. Up to $500K of gain can be excluded!"
+        },
+        {
+          title: 'Basic Exclusion',
+          type: 'table',
+          headers: ['Filing Status', 'Maximum Exclusion', 'Requirements'],
+          rows: [
+            ['Single', '$250,000', 'Ownership + Use tests'],
+            ['MFJ (both qualify)', '$500,000', 'Both meet O + U'],
+            ['MFJ (one qualifies)', '$250,000', 'At least one meets O + U'],
+            ['MFS', '$250,000 each', 'Each must qualify']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: 2-Out-of-5 Rule',
+          type: 'callout',
+          content: "**\"Owned AND used 2 of last 5\"**\n\n**OWNERSHIP test:** Owned 2+ years\n**USE test:** Lived there 2+ years\n\n**During 5-year period ending on sale date**\n\n**Don't have to be consecutive!**"
+        },
+        {
+          title: 'Ownership and Use Tests',
+          type: 'text',
+          content: "**Both tests required:**\n\n**Ownership:** Owned for 2+ years during 5-year period\n\n**Use:** Used as principal residence for 2+ years during 5-year period\n\n**Periods don't have to overlap!**\n\n**Can count tacked period from spouse in divorce**"
+        },
+        {
+          title: 'Partial Exclusion',
+          type: 'text',
+          content: "**When tests not fully met:**\n\n**If sale due to:**\n• Change in employment (50+ miles)\n• Health reasons\n• Unforeseen circumstances\n\n**Formula:**\nPartial exclusion = Max exclusion × (Months used / 24)\n\n**Example:** Lived 18 months, single\n$250,000 × 18/24 = **$187,500** exclusion"
+        },
+        {
+          title: 'Frequency Limitation',
+          type: 'text',
+          content: "**One exclusion per 2 years:**\n\n• Can't have excluded gain on another home in 2 years before sale\n• Applies to each spouse individually\n\n**Married couple:**\n• If one spouse used exclusion within 2 years\n• Maximum is $250,000 (other spouse's portion)"
+        },
+        {
+          title: '⚠️ Exam Trap: Depreciation Recapture',
+          type: 'warning',
+          content: "**If home used for business/rental:**\n\n• Depreciation taken = Recaptured as ordinary income\n• CANNOT exclude depreciation recapture\n• Only gain above depreciation eligible\n\n**Example:**\n• Gain: $300,000\n• Depreciation: $40,000\n• Recaptured as ordinary: $40,000\n• Excluded: $260,000 (if single)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Exclusion: $250K single, $500K MFJ",
+            "2-out-of-5 rule: Owned AND used 2+ years",
+            "Periods don't have to be consecutive or overlap",
+            "Partial exclusion: For employment, health, unforeseen",
+            "Once every 2 years limitation",
+            "Depreciation cannot be excluded",
+            "Both spouses must meet tests for $500K"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-015',
+    section: 'REG',
+    title: "Capital Gains and Losses",
+    description: "Master capital gain rates and loss limitation rules",
+    order: 78,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Capital Gains", "Investment"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Capital gains have preferential tax rates! Understanding the netting process, rate brackets, and loss limitations is essential for investment tax planning. This is heavily tested on REG!"
+        },
+        {
+          title: 'Capital Gain Tax Rates',
+          type: 'table',
+          headers: ['Type', 'Rate', 'Holding Period'],
+          rows: [
+            ['Short-term', 'Ordinary rates', '<= 1 year'],
+            ['Long-term (0%)', '0%', 'Lower brackets'],
+            ['Long-term (15%)', '15%', 'Middle brackets'],
+            ['Long-term (20%)', '20%', 'Top bracket'],
+            ['Collectibles', '28%', 'Art, coins, etc.'],
+            ['Unrecaptured §1250', '25%', 'Depreciation on RE']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Holding Period',
+          type: 'callout',
+          content: "**\">1 Year = Long-term\"**\n\n**Count from day AFTER acquisition**\n**To day OF disposition**\n\n**Example:**\n• Buy: January 15, 2024\n• Must sell AFTER: January 15, 2025\n• January 15, 2025 = Still short-term!\n• January 16, 2025 = Long-term"
+        },
+        {
+          title: 'Netting Process',
+          type: 'text',
+          content: "**Step 1:** Net within each category\n• ST gains vs ST losses\n• LT gains vs LT losses\n\n**Step 2:** Net across categories\n• Net ST against Net LT\n\n**Results:**\n• Net LTCG: Preferential rate\n• Net STCG: Ordinary rate\n• Net loss: $3,000 deduction"
+        },
+        {
+          title: 'Capital Loss Rules',
+          type: 'text',
+          content: "**Individuals:**\n• Net capital loss: Deduct up to $3,000/year\n• Excess carries forward indefinitely\n• Character (ST/LT) preserved in carryforward\n\n**Corporations:**\n• No deduction against ordinary income\n• Carryback 3 years, forward 5 years\n• Only offsets capital gains"
+        },
+        {
+          title: 'Net Investment Income Tax (NIIT)',
+          type: 'text',
+          content: "**3.8% surtax on investment income:**\n\n**Applies when MAGI exceeds:**\n• $200,000 (single)\n• $250,000 (MFJ)\n\n**Investment income includes:**\n• Interest, dividends\n• Capital gains\n• Rental income\n• Passive income\n\n**Top effective rate: 20% + 3.8% = 23.8%**"
+        },
+        {
+          title: '⚠️ Exam Trap: Wash Sale Rule',
+          type: 'warning',
+          content: "**Loss disallowed if:**\n\n• Sell at loss AND\n• Buy substantially identical within 30 days before/after\n\n**61-day window total!**\n\n**Effect:**\n• Loss is deferred, not lost\n• Added to basis of new shares\n\n**Does NOT apply to gains!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Long-term: >1 year; Preferential rates 0%/15%/20%",
+            "Short-term: ≤1 year; Ordinary rates",
+            "Collectibles max: 28%; Unrecaptured §1250: 25%",
+            "Net losses: $3,000/year deduction (individuals)",
+            "Carryforward: Indefinite, character preserved",
+            "NIIT: 3.8% on investment income above thresholds",
+            "Wash sale: 30-day rule defers loss"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-015',
+    section: 'REG',
+    title: "Professional Responsibility: Circular 230",
+    description: "Understand IRS rules governing tax practitioners",
+    order: 79,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Professional Responsibility", "Circular 230", "Ethics"],
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Circular 230 governs practice before the IRS! Understanding practitioner duties, standards for positions, and penalties is essential for professional responsibility questions on REG!"
+        },
+        {
+          title: 'Who Is Covered?',
+          type: 'text',
+          content: "**Practitioners authorized to practice before IRS:**\n\n• Attorneys\n• CPAs\n• Enrolled agents\n• Enrolled actuaries\n• Enrolled retirement plan agents\n\n**\"Practice before IRS\" includes:**\nPreparing returns, representation, correspondence"
+        },
+        {
+          title: 'Standards for Tax Positions',
+          type: 'table',
+          headers: ['Situation', 'Standard Required', 'Meaning'],
+          rows: [
+            ['Signing returns', 'Reasonable basis', '~20% chance'],
+            ['Signing (disclosed)', 'Reasonable basis', 'Must disclose'],
+            ['Not frivolous', 'Minimum', '~10% chance'],
+            ['Oral advice', 'Good faith', 'All facts/circumstances']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Position Standards',
+          type: 'callout',
+          content: "**Standards (Low → High):**\n\n**Not frivolous:** ~10% (barely colorable)\n**Reasonable basis:** ~20% (disclosed positions)\n**Substantial authority:** ~40% (undisclosed, no penalty)\n**More likely than not:** >50% (tax shelters)\n\n**Higher standard = Stronger position needed**"
+        },
+        {
+          title: 'Due Diligence',
+          type: 'text',
+          content: "**Practitioner must:**\n\n• Exercise due diligence in preparing/filing\n• Not rely on client info if appears incorrect\n• Make reasonable inquiries\n• Advise client of consequences of positions\n\n**Cannot just accept what client says!**"
+        },
+        {
+          title: 'Key Prohibitions',
+          type: 'text',
+          content: "**May NOT:**\n\n• Charge unconscionable fees\n• Endorse or negotiate client's IRS check\n• Practice during suspension/disbarment\n• Assist disbarred practitioners\n• Give false or misleading information\n• Knowingly submit false documents\n\n**May NOT represent conflicting interests** (without consent)"
+        },
+        {
+          title: 'Written Advice Rules',
+          type: 'text',
+          content: "**When providing written tax advice:**\n\n• Base on reasonable factual assumptions\n• Consider all relevant facts\n• Don't rely on unreasonable assumptions\n• Don't take into account likelihood of audit\n\n**Must be based on good faith analysis**"
+        },
+        {
+          title: '⚠️ Exam Trap: Penalties',
+          type: 'warning',
+          content: "**OPR (Office of Professional Responsibility) can:**\n\n• Censure (public reprimand)\n• Suspend (temporary)\n• Disbar (permanent)\n• Impose monetary penalty\n\n**Violations include:**\n• Willful violations\n• Reckless conduct\n• Gross incompetence\n• Pattern of incompetence"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Circular 230 governs IRS practice",
+            "Applies to: CPAs, attorneys, enrolled agents",
+            "Signing returns: Reasonable basis required",
+            "Due diligence: Cannot blindly accept client info",
+            "Conflicts: Written consent required",
+            "Cannot negotiate client's IRS refund check",
+            "Penalties: Censure, suspension, disbarment"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-016',
+    section: 'REG',
+    title: "Agency Law",
+    description: "Understand principal-agent relationships and liability",
+    order: 80,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Law", "Agency", "Liability"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Agency law determines when one person can bind another! Understanding types of authority, agent duties, and principal liability is essential for business law questions on REG!"
+        },
+        {
+          title: 'Types of Authority',
+          type: 'table',
+          headers: ['Type', 'Source', 'Example'],
+          rows: [
+            ['Express', 'Stated by principal', 'Written or oral grant'],
+            ['Implied', 'Reasonably necessary', 'Incidental to express'],
+            ['Apparent', 'Principal\'s representations', 'Third party reasonably believes'],
+            ['Ratification', 'After-the-fact approval', 'Adopting unauthorized act']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Authority Types',
+          type: 'callout',
+          content: "**\"EIAR\"**\n\n**E**xpress - \"You may do X\"\n**I**mplied - Reasonable to accomplish X\n**A**pparent - Looks like authority to 3rd party\n**R**atification - \"I approve what you did\"\n\n**All can bind principal!**"
+        },
+        {
+          title: 'Agent Duties to Principal',
+          type: 'text',
+          content: "**Fiduciary duties:**\n\n• **Loyalty:** Act in principal's interest\n• **Obedience:** Follow instructions\n• **Care:** Use reasonable skill\n• **Disclosure:** Report material information\n• **Accounting:** Account for property/money\n\n**Agent must put principal's interests first!**"
+        },
+        {
+          title: 'Principal Duties to Agent',
+          type: 'text',
+          content: "**Principal must:**\n\n• Pay agreed compensation\n• Reimburse expenses\n• Indemnify for losses from authorized acts\n• Cooperate in agent's performance\n\n**Can be modified by agreement**"
+        },
+        {
+          title: 'Liability to Third Parties',
+          type: 'text',
+          content: "**Principal's liability:**\n• Bound by authorized acts\n• Bound by apparent authority\n• Liable for agent's torts in scope\n\n**Agent's liability:**\n• Personally liable if principal undisclosed\n• Personally liable if exceeds authority\n• Not liable if disclosed and authorized"
+        },
+        {
+          title: '⚠️ Exam Trap: Disclosed vs Undisclosed',
+          type: 'warning',
+          content: "**Disclosed principal:** Third party knows identity\n→ Principal bound, Agent usually not\n\n**Partially disclosed:** Knows agency, not identity\n→ Both may be liable\n\n**Undisclosed:** Third party doesn't know\n→ Agent personally liable\n→ Principal also liable when discovered"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Authority: Express, Implied, Apparent, Ratification",
+            "Agent owes fiduciary duties to principal",
+            "Principal liable for authorized agent acts",
+            "Apparent authority binds principal to third parties",
+            "Agent personally liable if principal undisclosed",
+            "Ratification requires knowledge and capacity",
+            "Principal liable for agent torts in scope of employment"
+          ]
+        }
+      ]
+    }
   }
 ];
+

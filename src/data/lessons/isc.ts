@@ -4864,5 +4864,447 @@ export const iscLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // ISC: ADDITIONAL INFORMATION SYSTEMS TOPICS
+  // =============================================
+  {
+    id: 'ISC-IV-005',
+    section: 'ISC',
+    title: "Encryption and Cryptography",
+    description: "Understand encryption types and cryptographic controls",
+    order: 55,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Cryptography", "Security", "Data Protection"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Encryption protects data confidentiality! Understanding symmetric vs asymmetric, hashing, and digital signatures is essential for ISC. This is how we keep data safe in transit and at rest!"
+        },
+        {
+          title: 'Symmetric Encryption',
+          type: 'text',
+          content: "**Same key for encryption and decryption:**\n\n**Characteristics:**\n• Fast, efficient for large data\n• Key distribution challenge\n• Both parties must have key\n\n**Examples:**\n• AES (Advanced Encryption Standard)\n• DES, 3DES (older)\n\n**Use case:** Encrypting stored data, bulk data transfer"
+        },
+        {
+          title: 'Asymmetric Encryption',
+          type: 'table',
+          headers: ['Key Type', 'Used For', 'Known To'],
+          rows: [
+            ['Public key', 'Encrypt messages TO owner', 'Everyone'],
+            ['Private key', 'Decrypt messages; Sign', 'Owner only'],
+            ['Both together', 'Create key pair', 'Mathematically linked']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Public/Private Keys',
+          type: 'callout',
+          content: "**\"Encrypt with Public, Sign with Private\"**\n\n**To send CONFIDENTIAL message:**\n→ Encrypt with recipient's PUBLIC key\n→ Only they can decrypt with PRIVATE key\n\n**To SIGN (prove it's from you):**\n→ Sign with YOUR private key\n→ Anyone can verify with your PUBLIC key"
+        },
+        {
+          title: 'Hashing',
+          type: 'text',
+          content: "**One-way function creating fixed-length output:**\n\n**Characteristics:**\n• Cannot reverse to original\n• Same input = Same hash (deterministic)\n• Small change = Completely different hash\n• Fixed length regardless of input\n\n**Examples:** SHA-256, SHA-3, MD5 (deprecated)\n\n**Use case:** Password storage, data integrity"
+        },
+        {
+          title: 'Digital Signatures',
+          type: 'text',
+          content: "**Provides authentication and integrity:**\n\n**Process:**\n1. Hash the message\n2. Encrypt hash with sender's PRIVATE key\n3. Attach signature to message\n\n**Verification:**\n1. Decrypt signature with sender's PUBLIC key\n2. Hash received message\n3. Compare hashes\n\n**Proves: Who sent it AND it wasn't changed**"
+        },
+        {
+          title: 'Digital Certificates',
+          type: 'text',
+          content: "**Issued by Certificate Authority (CA):**\n\n**Contains:**\n• Owner's public key\n• Owner's identity\n• CA's digital signature\n• Validity period\n\n**Purpose:**\n• Verify public key belongs to claimed entity\n• Enable trusted communication\n• Used in HTTPS/SSL/TLS"
+        },
+        {
+          title: '⚠️ Exam Trap: Encryption vs Hashing',
+          type: 'warning',
+          content: "**Encryption:** Reversible (decrypt with key)\n**Hashing:** One-way (cannot reverse)\n\n**Common mistake:**\n• Passwords should be HASHED, not encrypted\n• If encrypted, attacker with key gets all passwords\n• Hashed = Each must be cracked individually"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Symmetric: Same key both ways, fast, key distribution issue",
+            "Asymmetric: Public/Private pair, slower, solves distribution",
+            "Public key encrypts; Private key decrypts/signs",
+            "Hashing: One-way, fixed output, used for integrity",
+            "Digital signatures: Hash + Private key encryption",
+            "Certificates: CA verifies public key ownership",
+            "Passwords: Hash, don't encrypt"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-006',
+    section: 'ISC',
+    title: "Network Security Fundamentals",
+    description: "Understand firewalls, VPNs, and network security architecture",
+    order: 56,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Network Security", "Firewalls", "VPN"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Networks are the highways of data! Understanding how firewalls, VPNs, and network segmentation protect information is essential for ISC. This is the perimeter defense of cybersecurity!"
+        },
+        {
+          title: 'Firewalls',
+          type: 'text',
+          content: "**Network security barrier controlling traffic:**\n\n**Types:**\n• **Packet filtering:** Rules on IP/port\n• **Stateful inspection:** Tracks connection state\n• **Application layer:** Inspects content/protocol\n• **Next-gen (NGFW):** Deep packet inspection + IDS/IPS\n\n**Rule of thumb:** Deny all, allow specific"
+        },
+        {
+          title: 'Network Zones',
+          type: 'table',
+          headers: ['Zone', 'Description', 'Trust Level'],
+          rows: [
+            ['Internal/LAN', 'Corporate network', 'High trust'],
+            ['DMZ', 'Public-facing servers', 'Medium trust'],
+            ['External/Internet', 'Outside world', 'No trust'],
+            ['VLAN', 'Logical segmentation', 'Configurable']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: DMZ',
+          type: 'callout',
+          content: "**\"Demilitarized Zone\"**\n\n**Buffer between internal and external:**\n• Web servers\n• Email servers\n• FTP servers\n\n**If DMZ compromised:**\n→ Internal network still protected\n\n**Never put database in DMZ!**"
+        },
+        {
+          title: 'VPN - Virtual Private Network',
+          type: 'text',
+          content: "**Encrypted tunnel over public network:**\n\n**Types:**\n• **Site-to-site:** Office to office\n• **Remote access:** User to office\n• **SSL/TLS VPN:** Browser-based\n• **IPSec VPN:** Network layer encryption\n\n**Benefits:**\n• Encrypted communication\n• Appear as if on local network\n• Remote access to resources"
+        },
+        {
+          title: 'Intrusion Detection/Prevention',
+          type: 'text',
+          content: "**IDS - Intrusion Detection System:**\n• Monitors and ALERTS on threats\n• Passive (doesn't block)\n\n**IPS - Intrusion Prevention System:**\n• Monitors and BLOCKS threats\n• Active (stops attacks)\n\n**Detection methods:**\n• Signature-based (known patterns)\n• Anomaly-based (behavioral deviation)"
+        },
+        {
+          title: 'Network Segmentation',
+          type: 'text',
+          content: "**Dividing network into segments:**\n\n**Benefits:**\n• Contain breaches (lateral movement)\n• Regulatory compliance\n• Performance optimization\n• Access control by segment\n\n**Methods:**\n• VLANs (virtual)\n• Physical separation\n• Microsegmentation (software-defined)"
+        },
+        {
+          title: '⚠️ Exam Trap: Defense in Depth',
+          type: 'warning',
+          content: "**Multiple layers of security:**\n\n**Don't rely on just firewall!**\n\n**Layers:**\n• Perimeter (firewall, IPS)\n• Network (segmentation, monitoring)\n• Host (antivirus, patching)\n• Application (secure coding, WAF)\n• Data (encryption, DLP)\n\n**If one fails, others protect**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Firewalls control traffic based on rules",
+            "Next-gen firewalls include deep inspection",
+            "DMZ: Buffer zone for public-facing servers",
+            "VPN: Encrypted tunnel for remote access",
+            "IDS detects, IPS prevents intrusions",
+            "Network segmentation contains breaches",
+            "Defense in depth: Multiple security layers"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-007',
+    section: 'ISC',
+    title: "Data Analytics and Visualization",
+    description: "Apply data analytics techniques for audit and business insights",
+    order: 57,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Data Analytics", "Visualization", "Audit"],
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Data analytics transforms how we audit and analyze! Understanding techniques like regression, Benford's Law, and visualization is essential for modern CPAs. This is the future of the profession!"
+        },
+        {
+          title: 'Types of Analytics',
+          type: 'table',
+          headers: ['Type', 'Question Answered', 'Example'],
+          rows: [
+            ['Descriptive', 'What happened?', 'Summary statistics, dashboards'],
+            ['Diagnostic', 'Why did it happen?', 'Root cause analysis, drill-down'],
+            ['Predictive', 'What will happen?', 'Forecasting, regression'],
+            ['Prescriptive', 'What should we do?', 'Optimization, recommendations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Analytics Progression',
+          type: 'callout',
+          content: "**\"What → Why → Will → Should\"**\n\n**Descriptive:** What happened (past)\n**Diagnostic:** Why it happened (cause)\n**Predictive:** What will happen (future)\n**Prescriptive:** What to do (action)\n\n**Complexity and value increase →**"
+        },
+        {
+          title: 'Benford\'s Law',
+          type: 'text',
+          content: "**Expected distribution of first digits:**\n\n• 1 appears ~30% of the time\n• 9 appears ~5% of the time\n• Not uniform distribution!\n\n**Audit use:**\n• Compare actual to expected\n• Identify potential fraud or errors\n• Works on: Financial data, populations, invoices\n\n**Does NOT work on:** Assigned numbers, small ranges"
+        },
+        {
+          title: 'Regression Analysis',
+          type: 'text',
+          content: "**Statistical technique for relationships:**\n\n**Simple linear regression:**\ny = a + bx\n\n**Audit applications:**\n• Predict account balances\n• Identify outliers\n• Substantive analytical procedures\n\n**Key metrics:**\n• R² (explained variance)\n• Residuals (differences from prediction)"
+        },
+        {
+          title: 'Data Visualization',
+          type: 'text',
+          content: "**Choose the right chart:**\n\n• **Bar/Column:** Compare categories\n• **Line:** Trends over time\n• **Pie:** Parts of a whole (use sparingly!)\n• **Scatter:** Relationship between variables\n• **Heat map:** Intensity/concentration\n• **Dashboard:** Multiple metrics at once\n\n**Keep it simple—communicate clearly!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Data Quality',
+          type: 'warning',
+          content: "**Analytics only as good as the data!**\n\n**Data quality dimensions:**\n• Accuracy\n• Completeness\n• Timeliness\n• Consistency\n• Validity\n\n**GIGO = Garbage In, Garbage Out**\n\n**Always validate data before analysis!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Four types: Descriptive → Diagnostic → Predictive → Prescriptive",
+            "Benford's Law: Digit distribution for fraud detection",
+            "Regression: Predict values, identify outliers",
+            "Visualization: Match chart to message",
+            "Data quality critical—validate before analysis",
+            "Analytics enhances but doesn't replace judgment",
+            "Document methodology and conclusions"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-008',
+    section: 'ISC',
+    title: "Cloud Computing Models",
+    description: "Understand IaaS, PaaS, SaaS and cloud security considerations",
+    order: 58,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Cloud Computing", "Security", "Architecture"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Cloud computing has transformed IT! Understanding the service models, shared responsibility, and security considerations is essential for ISC. Most organizations now use cloud services!"
+        },
+        {
+          title: 'Service Models',
+          type: 'table',
+          headers: ['Model', 'What You Manage', 'Provider Manages'],
+          rows: [
+            ['IaaS', 'OS, Middleware, Apps, Data', 'Hardware, Virtualization, Network'],
+            ['PaaS', 'Apps and Data only', 'Everything else'],
+            ['SaaS', 'Just your data', 'Entire stack'],
+            ['On-Premise', 'Everything', 'Nothing']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Cloud Stack',
+          type: 'callout',
+          content: "**\"Pizza as a Service\"**\n\n**On-Premise:** Make pizza from scratch\n**IaaS:** Kitchen provided (infrastructure)\n**PaaS:** Kitchen + dough (platform)\n**SaaS:** Pizza delivered (software)\n\n**More \"aaS\" = Less you manage**"
+        },
+        {
+          title: 'Deployment Models',
+          type: 'text',
+          content: "**Public cloud:**\n• Shared infrastructure\n• AWS, Azure, Google Cloud\n• Cost-effective, scalable\n\n**Private cloud:**\n• Dedicated to one organization\n• On-premise or hosted\n• More control, higher cost\n\n**Hybrid cloud:**\n• Mix of public and private\n• Data sovereignty, flexibility"
+        },
+        {
+          title: 'Shared Responsibility Model',
+          type: 'text',
+          content: "**Security is shared:**\n\n**Provider responsible for:**\n• Physical security of data centers\n• Infrastructure security\n• Underlying platform/software\n\n**Customer responsible for:**\n• Data classification and protection\n• Access management\n• Application security (varies by model)\n\n**The line shifts based on service model!**"
+        },
+        {
+          title: 'Cloud Security Considerations',
+          type: 'text',
+          content: "**Key concerns:**\n\n• **Data location:** Where is data stored?\n• **Multi-tenancy:** Shared resources with others\n• **Vendor lock-in:** Portability challenges\n• **Compliance:** Regulatory requirements\n• **Incident response:** Who responds to breaches?\n• **Exit strategy:** Getting data out"
+        },
+        {
+          title: '⚠️ Exam Trap: SOC Reports for Cloud',
+          type: 'warning',
+          content: "**Auditing cloud providers:**\n\n**Request SOC reports:**\n• SOC 1: Financial reporting controls\n• SOC 2: Security, availability, etc.\n\n**Subservice organizations:**\n• Cloud provider may use other providers\n• Inclusive vs carve-out methods\n\n**Cannot audit provider directly!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IaaS: Infrastructure only (you manage most)",
+            "PaaS: Platform provided (you manage apps/data)",
+            "SaaS: Software delivered (you manage data only)",
+            "Shared responsibility: Security duties split",
+            "Public/Private/Hybrid deployment options",
+            "Consider: Location, compliance, vendor lock-in",
+            "Use SOC reports to assess cloud provider controls"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-009',
+    section: 'ISC',
+    title: "Change Management and SDLC",
+    description: "Understand software development lifecycle and change controls",
+    order: 59,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Change Management", "SDLC", "Controls"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Uncontrolled changes cause outages and security issues! Understanding SDLC phases and change management controls is critical for IT governance. This ensures systems remain reliable and secure!"
+        },
+        {
+          title: 'SDLC Phases',
+          type: 'table',
+          headers: ['Phase', 'Activities', 'Key Deliverable'],
+          rows: [
+            ['Planning', 'Feasibility, requirements', 'Project plan'],
+            ['Analysis', 'Detailed requirements', 'Requirements doc'],
+            ['Design', 'System architecture', 'Design specifications'],
+            ['Development', 'Coding, unit testing', 'Working software'],
+            ['Testing', 'Integration, UAT', 'Test results'],
+            ['Implementation', 'Deployment, training', 'Production system'],
+            ['Maintenance', 'Updates, support', 'Ongoing operation']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: SDLC',
+          type: 'callout',
+          content: "**\"Please Artfully Design Dynamic Technology In Motion\"**\n\n**P**lanning\n**A**nalysis\n**D**esign\n**D**evelopment\n**T**esting\n**I**mplementation\n**M**aintenance"
+        },
+        {
+          title: 'Development Methodologies',
+          type: 'text',
+          content: "**Waterfall:**\n• Sequential phases\n• Formal documentation\n• Changes difficult\n\n**Agile:**\n• Iterative sprints\n• Flexible to change\n• Continuous delivery\n\n**DevOps:**\n• Development + Operations\n• Continuous integration/deployment\n• Automation focus"
+        },
+        {
+          title: 'Change Management Controls',
+          type: 'text',
+          content: "**Key controls:**\n\n• **Request documentation:** All changes logged\n• **Impact assessment:** What could be affected?\n• **Approval:** Appropriate authorization\n• **Testing:** Before production deployment\n• **Rollback plan:** If something goes wrong\n• **Post-implementation review:** Did it work?\n\n**Separation of duties: Developers ≠ Implementers**"
+        },
+        {
+          title: 'Testing Types',
+          type: 'text',
+          content: "**Unit testing:** Individual components\n**Integration testing:** Components together\n**System testing:** Complete system\n**User Acceptance Testing (UAT):** End-user validation\n**Regression testing:** Ensure changes don't break existing\n\n**Progress: Unit → Integration → System → UAT**"
+        },
+        {
+          title: '⚠️ Exam Trap: Emergency Changes',
+          type: 'warning',
+          content: "**Emergency changes still need control!**\n\n**After the fact:**\n• Document the change\n• Obtain retroactive approval\n• Review and validate\n\n**Pre-authorization for emergencies:**\n• Define what qualifies as emergency\n• Limit who can make emergency changes\n• Review all emergency changes promptly"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SDLC: Planning through Maintenance phases",
+            "Waterfall: Sequential; Agile: Iterative",
+            "Change management: Request, assess, approve, test, deploy, review",
+            "Separation of duties: Devs shouldn't deploy to production",
+            "Testing progression: Unit → Integration → System → UAT",
+            "Emergency changes: Still document and review",
+            "Rollback plan always needed"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-010',
+    section: 'ISC',
+    title: "Identity and Access Management (IAM)",
+    description: "Understand authentication, authorization, and access controls",
+    order: 60,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["IAM", "Access Control", "Authentication"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Access control is the gatekeeper of security! Understanding authentication factors, authorization models, and access management is fundamental to ISC. Who can access what—and why?"
+        },
+        {
+          title: 'IAM Fundamentals',
+          type: 'text',
+          content: "**Three key concepts:**\n\n**Identification:** Who are you? (username)\n**Authentication:** Prove it! (password, biometrics)\n**Authorization:** What can you do? (permissions)\n\n**Plus:**\n**Accountability:** Track what you did (logging)"
+        },
+        {
+          title: 'Authentication Factors',
+          type: 'table',
+          headers: ['Factor', 'Type', 'Examples'],
+          rows: [
+            ['Something you know', 'Knowledge', 'Password, PIN, security question'],
+            ['Something you have', 'Possession', 'Token, smart card, phone'],
+            ['Something you are', 'Inherence', 'Fingerprint, face, iris'],
+            ['Somewhere you are', 'Location', 'GPS, IP address']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Multi-Factor Authentication',
+          type: 'callout',
+          content: "**\"Know-Have-Are\"**\n\n**MFA = Two or more DIFFERENT factors**\n\n**Good MFA:**\n• Password (know) + Token (have) ✓\n\n**NOT MFA:**\n• Password + Security question ✗\n(Both are \"something you know\")"
+        },
+        {
+          title: 'Access Control Models',
+          type: 'text',
+          content: "**Discretionary (DAC):**\n• Owner controls access\n• Flexible but risky\n\n**Mandatory (MAC):**\n• System enforces classification\n• Government/military use\n\n**Role-Based (RBAC):**\n• Access based on job role\n• Most common in business\n\n**Attribute-Based (ABAC):**\n• Policies based on attributes\n• Most flexible"
+        },
+        {
+          title: 'Principle of Least Privilege',
+          type: 'text',
+          content: "**Only access needed to do the job:**\n\n**Benefits:**\n• Reduces attack surface\n• Limits damage if compromised\n• Supports compliance\n\n**Implementation:**\n• Regular access reviews\n• Remove unnecessary access\n• Time-limited elevated access"
+        },
+        {
+          title: 'Privileged Access Management',
+          type: 'text',
+          content: "**Admin accounts need special handling:**\n\n• Separate admin and regular accounts\n• Strong authentication required\n• Session monitoring and recording\n• Just-in-time elevation\n• Regular rotation of credentials\n• Avoid shared admin accounts"
+        },
+        {
+          title: '⚠️ Exam Trap: SSO vs Federation',
+          type: 'warning',
+          content: "**Single Sign-On (SSO):**\n• One login for multiple apps\n• Within ONE organization\n\n**Federation:**\n• Trust between organizations\n• Use your company credentials elsewhere\n• Example: SAML, OAuth\n\n**Federation enables cross-org SSO**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IAM: Identification, Authentication, Authorization, Accountability",
+            "MFA: Two+ different factor types",
+            "RBAC: Access based on job role (most common)",
+            "Least privilege: Only access needed for job",
+            "Privileged accounts: Extra controls required",
+            "SSO: One login within org; Federation: Cross-org trust",
+            "Regular access reviews essential"
+          ]
+        }
+      ]
+    }
   }
 ];
+

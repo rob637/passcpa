@@ -1112,6 +1112,436 @@ export const becLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // BEC: ADDITIONAL TOPICS (Valid through 6/30/2026)
+  // =============================================
+  {
+    id: 'BEC-III-005',
+    section: 'BEC',
+    title: "Capital Budgeting Methods",
+    description: "Master NPV, IRR, and payback analysis for investment decisions",
+    order: 15,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Capital Budgeting", "NPV", "IRR"],
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Capital budgeting determines which projects get funded! Understanding NPV, IRR, and payback period helps evaluate investment decisions. This is fundamental corporate finance for BEC!"
+        },
+        {
+          title: 'Net Present Value (NPV)',
+          type: 'text',
+          content: "**Sum of present values of all cash flows:**\n\n**NPV = Σ [CFt / (1+r)^t] - Initial Investment**\n\n**Decision rule:**\n• NPV > 0 → Accept (creates value)\n• NPV < 0 → Reject (destroys value)\n• NPV = 0 → Indifferent\n\n**\"r\" = Required return (WACC or hurdle rate)**"
+        },
+        {
+          title: 'Capital Budgeting Methods',
+          type: 'table',
+          headers: ['Method', 'Rule', 'Considers TVM?', 'Weakness'],
+          rows: [
+            ['NPV', 'Positive = Accept', 'Yes', 'Requires discount rate'],
+            ['IRR', '> Hurdle = Accept', 'Yes', 'Multiple IRRs possible'],
+            ['Payback', '< Target = Accept', 'No (basic)', 'Ignores cash after payback'],
+            ['Discounted Payback', '< Target = Accept', 'Yes', 'Still ignores later cash'],
+            ['Profitability Index', '> 1 = Accept', 'Yes', 'Doesn\'t show dollar value']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: NPV vs IRR',
+          type: 'callout',
+          content: "**\"NPV tells you dollars, IRR tells you rate\"**\n\n**NPV:** Dollar value created\n**IRR:** Rate that makes NPV = 0\n\n**When they conflict, trust NPV!**\n\n**IRR assumes reinvestment at IRR rate** (often unrealistic)"
+        },
+        {
+          title: 'Internal Rate of Return (IRR)',
+          type: 'text',
+          content: "**Rate that makes NPV = 0:**\n\n**Decision rule:**\n• IRR > Required return → Accept\n• IRR < Required return → Reject\n\n**Problems with IRR:**\n• Multiple IRRs if cash flows change sign\n• Scale issues (100% on $1 vs 20% on $1M)\n• Mutually exclusive projects may conflict"
+        },
+        {
+          title: 'Payback Period',
+          type: 'text',
+          content: "**Time to recover initial investment:**\n\n**Basic payback:** Sum cash flows until = investment\n\n**Discounted payback:** Sum PV of cash flows\n\n**Weaknesses:**\n• Ignores time value (basic)\n• Ignores cash flows after payback\n• No objective decision rule\n\n**Use as screening tool, not primary method**"
+        },
+        {
+          title: '⚠️ Exam Trap: Relevant Cash Flows',
+          type: 'warning',
+          content: "**Include only incremental cash flows:**\n\n**Include:**\n• Additional revenues\n• Cost savings\n• Working capital changes\n• Salvage value\n\n**Exclude:**\n• Sunk costs (already spent)\n• Allocated overhead (not incremental)\n• Financing costs (in discount rate)\n\n**After-tax cash flows!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NPV: Best method—shows dollar value created",
+            "IRR: Rate making NPV = 0; compare to hurdle",
+            "Payback: Time to recover—ignores TVM and later cash",
+            "NPV > 0 = Accept; IRR > Hurdle = Accept",
+            "When NPV and IRR conflict, use NPV",
+            "Include only incremental, after-tax cash flows",
+            "Exclude sunk costs and allocated overhead"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-III-006',
+    section: 'BEC',
+    title: "Working Capital Management",
+    description: "Optimize cash, receivables, inventory, and payables",
+    order: 16,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Working Capital", "Cash Management", "Liquidity"],
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Working capital management affects daily operations! Understanding how to optimize cash, receivables, inventory, and payables is essential for liquidity and profitability. More cash tied up = Less available for growth!"
+        },
+        {
+          title: 'Working Capital Basics',
+          type: 'text',
+          content: "**Working Capital = Current Assets - Current Liabilities**\n\n**Components:**\n• Cash and marketable securities\n• Accounts receivable\n• Inventory\n• Accounts payable\n\n**Goal:** Balance liquidity with efficiency\n\n**Too much = Inefficient use of capital\nToo little = Risk of illiquidity**"
+        },
+        {
+          title: 'Cash Conversion Cycle',
+          type: 'table',
+          headers: ['Component', 'Formula', 'Goal'],
+          rows: [
+            ['Days Inventory (DIO)', '365 / Inventory turnover', 'Decrease'],
+            ['Days Receivable (DSO)', '365 / A/R turnover', 'Decrease'],
+            ['Days Payable (DPO)', '365 / A/P turnover', 'Increase'],
+            ['CCC', 'DIO + DSO - DPO', 'Minimize']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: CCC',
+          type: 'callout',
+          content: "**\"Cash → Inventory → Sales → Cash\"**\n\n**CCC = DIO + DSO - DPO**\n\n**Days to convert cash back to cash!**\n\n**Lower CCC = Better:**\n• Faster inventory movement\n• Quicker collections\n• Slower payments"
+        },
+        {
+          title: 'Cash Management',
+          type: 'text',
+          content: "**Goals:**\n• Maintain liquidity\n• Maximize return on excess cash\n• Minimize borrowing costs\n\n**Techniques:**\n• **Lockbox:** Faster collections\n• **Concentration banking:** Centralize funds\n• **Zero-balance accounts:** Efficient disbursements\n• **Float management:** Maximize benefit of timing"
+        },
+        {
+          title: 'Receivables Management',
+          type: 'text',
+          content: "**Credit policy components:**\n\n• **Credit standards:** Who gets credit?\n• **Credit terms:** 2/10, net 30\n• **Collection policy:** How aggressive?\n\n**Trade-off:**\n• Loose credit = More sales, more bad debts\n• Tight credit = Fewer bad debts, lost sales"
+        },
+        {
+          title: 'Inventory Management',
+          type: 'text',
+          content: "**Costs to balance:**\n\n• **Carrying costs:** Storage, insurance, obsolescence\n• **Ordering costs:** Setup, shipping\n• **Stockout costs:** Lost sales, rush orders\n\n**EOQ (Economic Order Quantity):**\nMinimizes total ordering + carrying costs\n\n**JIT (Just-in-Time):**\nMinimize inventory, rely on suppliers"
+        },
+        {
+          title: '⚠️ Exam Trap: Credit Terms',
+          type: 'warning',
+          content: "**\"2/10, net 30\" means:**\n• 2% discount if paid within 10 days\n• Full amount due in 30 days\n\n**Cost of NOT taking discount:**\n(Discount / (1-Discount)) × (365 / (Full - Discount period))\n\n**Example:** (2/98) × (365/20) = **37.2% annual cost!**\n\n**Almost always take the discount!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Working capital: Balance liquidity and efficiency",
+            "CCC: Days to convert cash through operations",
+            "Lower CCC = Better (faster cycle)",
+            "Cash management: Lockbox, concentration, float",
+            "Credit policy: Standards, terms, collection",
+            "Inventory: Balance carrying, ordering, stockout costs",
+            "Trade discounts usually worth taking (high implied rate)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-IV-003',
+    section: 'BEC',
+    title: "Economic Concepts: Supply and Demand",
+    description: "Understand market equilibrium and elasticity",
+    order: 17,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Economics", "Supply and Demand", "Elasticity"],
+    blueprintArea: 'BEC-IV',
+    blueprintTopic: 'BEC-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Economic concepts explain market behavior! Understanding supply, demand, and elasticity helps analyze business decisions and market conditions. This is foundational economics for BEC!"
+        },
+        {
+          title: 'Demand Basics',
+          type: 'text',
+          content: "**Law of demand:**\n• Price ↑ → Quantity demanded ↓\n• Price ↓ → Quantity demanded ↑\n\n**Demand shifters (TRIBE):**\n• **T**astes and preferences\n• **R**elated goods (substitutes, complements)\n• **I**ncome\n• **B**uyer expectations\n• **E**xternal factors (population)"
+        },
+        {
+          title: 'Supply Basics',
+          type: 'table',
+          headers: ['Concept', 'Effect', 'Example'],
+          rows: [
+            ['Price increase', 'Quantity supplied ↑', 'More profitable to produce'],
+            ['Input costs ↑', 'Supply shifts left', 'Higher material costs'],
+            ['Technology ↑', 'Supply shifts right', 'More efficient production'],
+            ['Expectations', 'Varies', 'Future price expectations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Shifts vs Movements',
+          type: 'callout',
+          content: "**\"Price moves ALONG, other factors SHIFT\"**\n\n**Movement along curve:**\n• Change in PRICE only\n• Same supply/demand curve\n\n**Shift of curve:**\n• Change in OTHER factors\n• New supply or demand curve"
+        },
+        {
+          title: 'Price Elasticity of Demand',
+          type: 'text',
+          content: "**Responsiveness of quantity to price:**\n\n**Ed = % Change in Quantity / % Change in Price**\n\n**|Ed| > 1:** Elastic (sensitive to price)\n**|Ed| < 1:** Inelastic (not sensitive)\n**|Ed| = 1:** Unit elastic\n\n**Elastic:** Luxury goods, many substitutes\n**Inelastic:** Necessities, few substitutes"
+        },
+        {
+          title: 'Market Equilibrium',
+          type: 'text',
+          content: "**Where supply = demand:**\n\n• No excess supply or demand\n• Price clears the market\n• Stable unless curves shift\n\n**Price above equilibrium:** Surplus (↓ pressure)\n**Price below equilibrium:** Shortage (↑ pressure)\n\n**Market forces push toward equilibrium**"
+        },
+        {
+          title: '⚠️ Exam Trap: Total Revenue Test',
+          type: 'warning',
+          content: "**To determine elasticity from revenue:**\n\n**Elastic demand:**\n• Price ↓ → Total revenue ↑\n• Price ↑ → Total revenue ↓\n\n**Inelastic demand:**\n• Price ↓ → Total revenue ↓\n• Price ↑ → Total revenue ↑\n\n**If elastic: Lower price to increase revenue**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Demand: Inverse relationship with price",
+            "Supply: Direct relationship with price",
+            "Equilibrium: Where supply = demand",
+            "Elasticity: Responsiveness to price change",
+            "Elastic: |Ed| > 1 (sensitive to price)",
+            "Inelastic: |Ed| < 1 (not sensitive)",
+            "Surplus pushes price down; Shortage pushes up"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-IV-004',
+    section: 'BEC',
+    title: "Market Structures",
+    description: "Compare perfect competition, monopoly, and oligopoly",
+    order: 18,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Economics", "Market Structure", "Competition"],
+    blueprintArea: 'BEC-IV',
+    blueprintTopic: 'BEC-IV-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Market structure affects pricing power and profitability! Understanding the characteristics of different market structures helps analyze competitive strategy and industry dynamics!"
+        },
+        {
+          title: 'Four Market Structures',
+          type: 'table',
+          headers: ['Structure', '# Sellers', 'Product', 'Pricing Power'],
+          rows: [
+            ['Perfect Competition', 'Many', 'Identical', 'Price taker'],
+            ['Monopolistic Competition', 'Many', 'Differentiated', 'Some'],
+            ['Oligopoly', 'Few', 'Similar/Different', 'Significant'],
+            ['Monopoly', 'One', 'Unique', 'Price maker']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Competition Spectrum',
+          type: 'callout',
+          content: "**Competition → Monopoly**\n\n**\"Perfect → Monopolistic → Oligo → Mono\"**\n\n**More competition:**\n• More sellers\n• Less pricing power\n• Lower profits\n\n**Less competition:**\n• Fewer sellers\n• More pricing power\n• Higher profits"
+        },
+        {
+          title: 'Perfect Competition',
+          type: 'text',
+          content: "**Characteristics:**\n• Many buyers and sellers\n• Identical products\n• Free entry/exit\n• Perfect information\n\n**Results:**\n• Price takers (no pricing power)\n• Normal profit in long run\n• P = MC (allocatively efficient)\n\n**Example:** Agricultural commodities"
+        },
+        {
+          title: 'Monopoly',
+          type: 'text',
+          content: "**Characteristics:**\n• Single seller\n• Unique product, no substitutes\n• High barriers to entry\n\n**Results:**\n• Price maker\n• Economic profit possible long-term\n• P > MC (allocatively inefficient)\n• May lead to government regulation\n\n**Examples:** Utilities, patented drugs"
+        },
+        {
+          title: 'Oligopoly and Monopolistic Competition',
+          type: 'text',
+          content: "**Oligopoly:**\n• Few large sellers\n• Interdependence in pricing\n• May collude (illegal) or compete\n• Game theory applies\n\n**Monopolistic competition:**\n• Many sellers\n• Differentiated products\n• Some pricing power\n• Free entry (profits erode)\n\n**Example:** Auto industry (oligopoly), restaurants (monopolistic)"
+        },
+        {
+          title: '⚠️ Exam Trap: Long-Run Profits',
+          type: 'warning',
+          content: "**Economic profit in long run:**\n\n**Perfect competition:** Zero (entry eliminates)\n**Monopolistic competition:** Zero (entry/exit)\n**Oligopoly:** Possible (barriers)\n**Monopoly:** Possible (high barriers)\n\n**Zero economic profit ≠ Zero accounting profit!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Perfect competition: Price takers, normal profit",
+            "Monopoly: Price makers, economic profit possible",
+            "Oligopoly: Few firms, interdependent pricing",
+            "Monopolistic competition: Differentiation, free entry",
+            "Barriers to entry determine long-run profits",
+            "More competition = Lower prices, lower profits",
+            "Economic profit = Zero in competitive long run"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-V-003',
+    section: 'BEC',
+    title: "Operations Management: Quality",
+    description: "Understand TQM, Six Sigma, and quality cost categories",
+    order: 19,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Operations", "Quality Management", "TQM"],
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Quality drives customer satisfaction and profitability! Understanding quality management concepts, cost of quality, and improvement methodologies is essential for BEC operations topics!"
+        },
+        {
+          title: 'Cost of Quality Categories',
+          type: 'table',
+          headers: ['Category', 'Type', 'Examples'],
+          rows: [
+            ['Prevention', 'Conformance', 'Training, design reviews, process planning'],
+            ['Appraisal', 'Conformance', 'Inspection, testing, quality audits'],
+            ['Internal Failure', 'Non-conformance', 'Rework, scrap, downtime'],
+            ['External Failure', 'Non-conformance', 'Warranty, returns, lawsuits, lost sales']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Quality Costs',
+          type: 'callout',
+          content: "**\"PAIF\" the costs:**\n\n**P**revention (upfront investment)\n**A**ppraisal (checking quality)\n**I**nternal failure (caught before ship)\n**E**xternal failure (customer finds it)\n\n**Invest in P and A to reduce I and E!**"
+        },
+        {
+          title: 'Total Quality Management (TQM)',
+          type: 'text',
+          content: "**Philosophy of continuous improvement:**\n\n**Principles:**\n• Customer focus\n• Continuous improvement (Kaizen)\n• Employee involvement\n• Process-centered\n• Data-driven decisions\n• Systems thinking\n\n**Everyone is responsible for quality!**"
+        },
+        {
+          title: 'Six Sigma',
+          type: 'text',
+          content: "**Data-driven quality methodology:**\n\n**Goal:** 3.4 defects per million opportunities\n\n**DMAIC framework:**\n• **D**efine the problem\n• **M**easure current performance\n• **A**nalyze causes\n• **I**mprove process\n• **C**ontrol future performance"
+        },
+        {
+          title: 'Lean Manufacturing',
+          type: 'text',
+          content: "**Eliminate waste (Muda):**\n\n**Seven wastes:**\n• Transportation\n• Inventory\n• Motion\n• Waiting\n• Overproduction\n• Over-processing\n• Defects\n\n**\"TIMWOOD\"**\n\n**JIT (Just-in-Time):** Produce only what's needed, when needed"
+        },
+        {
+          title: '⚠️ Exam Trap: Quality Cost Trade-offs',
+          type: 'warning',
+          content: "**Prevention and Appraisal vs Failure costs:**\n\n**Increasing prevention/appraisal:**\n→ Reduces failure costs\n→ May reduce TOTAL quality costs\n\n**Optimal quality:**\n→ Minimize TOTAL cost\n→ Not necessarily zero defects\n\n**External failure most expensive!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Quality costs: Prevention, Appraisal, Internal/External failure",
+            "Invest in prevention to reduce failure costs",
+            "TQM: Customer focus, continuous improvement, involvement",
+            "Six Sigma: DMAIC, 3.4 defects per million",
+            "Lean: Eliminate waste (TIMWOOD)",
+            "External failure is most costly category",
+            "Optimal quality minimizes TOTAL cost"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-V-004',
+    section: 'BEC',
+    title: "Variance Analysis",
+    description: "Calculate and interpret material, labor, and overhead variances",
+    order: 20,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Cost Accounting", "Variance Analysis", "Budgeting"],
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Variance analysis explains WHY actual differs from budget! Understanding how to calculate and interpret material, labor, and overhead variances is essential for cost control and BEC success!"
+        },
+        {
+          title: 'Variance Framework',
+          type: 'text',
+          content: "**Basic formula:**\nVariance = Actual - Standard (or Budget)\n\n**Favorable (F):** Actual < Standard (lower cost)\n**Unfavorable (U):** Actual > Standard (higher cost)\n\n**For revenue: Opposite interpretation!**\n\n**Goal:** Identify causes and responsibility"
+        },
+        {
+          title: 'Direct Material Variances',
+          type: 'table',
+          headers: ['Variance', 'Formula', 'Responsible'],
+          rows: [
+            ['Price Variance', '(AP - SP) × AQ', 'Purchasing'],
+            ['Quantity/Usage Variance', '(AQ - SQ) × SP', 'Production'],
+            ['AP = Actual Price', 'SP = Standard Price', ''],
+            ['AQ = Actual Quantity', 'SQ = Standard Quantity', '']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Material Variances',
+          type: 'callout',
+          content: "**\"Price uses Actual, Quantity uses Standard\"**\n\n**Price variance:**\n(AP - SP) × **AQ**\n\n**Quantity variance:**\n(AQ - SQ) × **SP**\n\n**AQ in middle—used in BOTH!**"
+        },
+        {
+          title: 'Direct Labor Variances',
+          type: 'text',
+          content: "**Rate (Price) Variance:**\n(AR - SR) × AH\n\n**Efficiency (Quantity) Variance:**\n(AH - SH) × SR\n\n**Where:**\n• AR = Actual rate per hour\n• SR = Standard rate\n• AH = Actual hours\n• SH = Standard hours allowed"
+        },
+        {
+          title: 'Overhead Variances',
+          type: 'text',
+          content: "**Two-variance method:**\n\n**Controllable variance:**\nActual OH - Flexible budget OH\n\n**Volume variance:**\nFlexible budget OH - Applied OH\n\n**Or four-variance method:**\n• Spending variance\n• Efficiency variance\n• Fixed budget variance\n• Volume variance"
+        },
+        {
+          title: '⚠️ Exam Trap: Favorable ≠ Good',
+          type: 'warning',
+          content: "**Favorable variance isn't always positive:**\n\n**Cheap materials (F price):**\n→ May cause quality issues\n→ May increase quantity variance (U)\n\n**Fast production (F efficiency):**\n→ May reduce quality\n→ May increase defects\n\n**Look at variances TOGETHER!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Variance = Actual − Standard",
+            "Material: Price variance + Quantity variance",
+            "Labor: Rate variance + Efficiency variance",
+            "Price variances: (AP − SP) × Actual quantity",
+            "Quantity variances: (Actual − Standard) × Standard price",
+            "Favorable doesn't always mean good—examine causes",
+            "Assign responsibility: Price = Purchasing, Efficiency = Production"
+          ]
+        }
+      ]
+    }
   }
 ];
 

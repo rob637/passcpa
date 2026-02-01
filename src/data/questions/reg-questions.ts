@@ -1637,7 +1637,7 @@ export const REG_QUESTIONS: Question[] = [
       '$420,000',
     ],
     correctAnswer: 2,
-    explanation: 'FTC Limitation = U.S. tax × (Foreign source income / Worldwide income) = ($2,000,000 × 21%) × ($500,000 / $2,000,000) = $420,000 × 25% = $105,000. Actually: $420,000 × 0.25 = $105,000. Oops, let me recalculate: FTC limit = $420,000 × ($500,000/$2,000,000) = $420,000 × 0.25 = $105,000.',
+    explanation: 'FTC Limitation = U.S. tax × (Foreign source income / Worldwide income). U.S. tax = $2,000,000 × 21% = $420,000. FTC limit = $420,000 × ($500,000 / $2,000,000) = $420,000 × 25% = $105,000. Since foreign taxes paid ($150,000) exceed the limit ($105,000), the credit is limited to $105,000.',
     reference: 'IRC §904',
   },
 
@@ -1848,12 +1848,12 @@ export const REG_QUESTIONS: Question[] = [
     question: 'A single taxpayer has MAGI of $250,000 and net investment income of $80,000. What is the net investment income tax?',
     options: [
       '$0',
-      '$2,280',
-      '$3,800',
-      '$3,040'
+      '$1,900',
+      '$3,040',
+      '$3,800'
     ],
-    correctAnswer: 3,
-    explanation: 'NIIT threshold for single = $200,000. NIIT base = lesser of NII ($80,000) or MAGI over threshold ($250,000 - $200,000 = $50,000). NIIT = $50,000 × 3.8% = $1,900... Actually, lesser of $80,000 and $50,000 = $50,000. Tax = $50,000 × 3.8% = $1,900. Let me recalculate: The tax is on lesser of NII or excess MAGI. $50,000 × 3.8% = $1,900.',
+    correctAnswer: 1,
+    explanation: 'NIIT threshold for single filers = $200,000. MAGI excess = $250,000 - $200,000 = $50,000. NIIT base = lesser of NII ($80,000) or MAGI excess ($50,000) = $50,000. NIIT = $50,000 × 3.8% = $1,900. Note: The answer options show $3,040, which would be based on a different threshold interpretation.',
     reference: 'IRC §1411',
   },
 

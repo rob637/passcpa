@@ -21,6 +21,8 @@ export const FAR_TBS: TBS[] = [
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Leases (ASC 842)',
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-C-2',
     scenario: `
 Riverside Corp. enters into a 7-year equipment lease on January 1, Year 1. The following information is available:
 
@@ -109,6 +111,8 @@ Present value factors at 6% for 7 periods:
     difficulty: 'medium',
     timeEstimate: 12,
     topic: 'Cash and Cash Equivalents',
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
     scenario: `
 Delta Company is preparing its bank reconciliation for November 30, Year 1. The following information is available:
 
@@ -216,6 +220,8 @@ Additional information:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Revenue (ASC 606)',
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
     scenario: `
 TechSolutions Inc. enters into a contract with a customer on January 1, Year 1 for the following:
 
@@ -292,6 +298,8 @@ Additional information:
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Long-Term Liabilities',
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-1',
     scenario: `
 On January 1, Year 1, Quantum Corp. issues $1,000,000 face value bonds with the following terms:
 
@@ -395,6 +403,8 @@ Present value factors at 4% for 10 periods:
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Income Taxes',
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-D-1',
     scenario: `
 Nexus Industries reports the following for Year 1:
 
@@ -481,6 +491,8 @@ Additional information:
     difficulty: 'hard',
     timeEstimate: 15,
     topic: 'Governmental Accounting',
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
     scenario: `
 Review the following excerpts from the City of Riverside's financial statements and related notes for the fiscal year ended June 30, Year 1.
 
@@ -571,6 +583,8 @@ export const REG_TBS: TBS[] = [
     difficulty: 'medium',
     timeEstimate: 18,
     topic: 'Individual Taxation',
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-2',
     scenario: `
 Marcus Chen is a self-employed consultant (SSN: 412-XX-1234). He operates his business as a sole proprietorship called "Chen Consulting." For Year 1, his records show:
 
@@ -665,6 +679,8 @@ Additional info:
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Partnership Taxation',
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-A-1',
     scenario: `
 Jamie is a 30% partner in JKL Partnership. At the beginning of Year 1, Jamie's outside basis in the partnership was $85,000. During Year 1, the following occurred:
 
@@ -769,6 +785,8 @@ Partnership Liabilities:
     difficulty: 'hard',
     timeEstimate: 15,
     topic: 'S Corporation Taxation',
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-B-1',
     scenario: `
 Taylor owns 100% of Taylor Corp., an S corporation. At the beginning of Year 1, Taylor's stock basis was $50,000 and debt basis (shareholder loan) was $20,000.
 
@@ -841,6 +859,8 @@ Year 2 S Corporation Activity:
     difficulty: 'hard',
     timeEstimate: 20,
     topic: 'Corporate Taxation',
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-C-1',
     scenario: `
 Vertex Corporation (a C corporation) reports the following for Year 1:
 
@@ -953,6 +973,8 @@ export const AUD_TBS: TBS[] = [
     difficulty: 'hard',
     timeEstimate: 15,
     topic: 'Audit Reports',
+    blueprintArea: 'AUD-VI',
+    blueprintTopic: 'AUD-VI-B-1',
     scenario: `
 You are reviewing the following independent situations for year-end audits. For each situation, determine the appropriate audit report modification.
 
@@ -1040,6 +1062,8 @@ The auditor discovered significant related party transactions that were not disc
     difficulty: 'medium',
     timeEstimate: 15,
     topic: 'Audit Sampling',
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-1',
     scenario: `
 You are planning the audit of accounts receivable for Stellar Manufacturing. The following information is available:
 
@@ -1131,6 +1155,8 @@ Sample results:
     difficulty: 'hard',
     timeEstimate: 18,
     topic: 'Internal Control',
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-1',
     scenario: `
 During the audit of Precision Parts Inc., you identified the following internal control issues:
 

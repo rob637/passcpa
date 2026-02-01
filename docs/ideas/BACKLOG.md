@@ -63,20 +63,11 @@ Gemini - we have been working on this app for a while.  I think we are close to 
 
 Please merge, build and deploy - i want to test at voraprep.com.  Then delete branch and create new branch called detail-review. 
 
-Let's review the 340 lessons - do they cover all areas of the 2025 and 2026 AICPA Blueprint - Are they World Class - would the AICPA be proud of these and think they were amazing and a lot of effort and work were put into them? Are they clear concise and accurate? Are they better than the competition? What more do we need to do?
+Let's review the 26 Task Based Simulations - do they cover all areas of the 2025 and 2026 AICPA Blueprint - Are they World Class - would the AICPA be proud of these and think they were amazing and a lot of effort and work were put into them? Are they clear concise and accurate? Are they better than the competition? What more do we need to do?
 
-Lessons
-Questions
-TBs
+Lessons - DONE
+Questions - IN-PROCESS
+TBS - IN-PROCESS
 Flash Cards
 Mock Exam
 Timed Quiz
-Complete Coverage First - Add the ~150 missing lessons to reach 95%+ Blueprint coverage
-
-Maintain Quality Standard - Keep the excellent instructional design you have
-
-Add Practice Integration - Link lessons to relevant MCQs and TBS
-
-H.R.1 Content - Add specific lessons on the new tax provisions (tip income, SALT, enhanced CTC)
-
-Fix Blueprint Mappings - 23 lessons have null blueprint topics

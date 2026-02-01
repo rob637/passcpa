@@ -14,6 +14,9 @@ import {
   Clock,
   Target,
   ArrowLeft,
+  BookOpen,
+  Calculator,
+  Lightbulb,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
@@ -23,6 +26,11 @@ import { calculateNextReview, getDueCards, getStudyStats } from '../../services/
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection } from '../../types';
+import {
+  ALL_DEDICATED_FLASHCARDS,
+  getFlashcardsBySection,
+  Flashcard as DedicatedFlashcard,
+} from '../../data/flashcards';
 
 interface RatingButton {
   rating: 'again' | 'hard' | 'good' | 'easy';
@@ -44,11 +52,17 @@ interface Flashcard extends Question {
   front: string;
   back: string;
   answer: string;
+  formula?: string;
+  mnemonic?: string;
+  example?: string;
+  cardType?: 'question' | 'definition' | 'formula' | 'mnemonic';
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   nextReview?: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; // For SRS data
 }
+
+type FlashcardType = 'all' | 'questions' | 'definitions' | 'formulas' | 'mnemonics';
 
 interface SessionStats {
   reviewed: number;
@@ -78,9 +92,11 @@ const Flashcards: React.FC = () => {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [studyStats, setStudyStats] = useState<any>(null);
+  const [cardType, setCardType] = useState<FlashcardType>('all');
 
   const mode = searchParams.get('mode') || 'review'; // review, new, all
   const topic = searchParams.get('topic');
+  const typeParam = searchParams.get('type') as FlashcardType | null;
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
 
   // Load flashcards
@@ -90,31 +106,81 @@ const Flashcards: React.FC = () => {
 
       setLoading(true);
       try {
-        // Get questions from local data via questionService
-        const questions = await fetchQuestions({
-          section: currentSection,
-          count: 100, // Get more for flashcard pool
-        });
+        // Determine effective card type filter
+        const effectiveType = typeParam || cardType;
+        
+        let allCards: Flashcard[] = [];
+        
+        // Get dedicated flashcards (definitions, formulas, mnemonics)
+        if (effectiveType === 'all' || effectiveType === 'definitions' || effectiveType === 'formulas' || effectiveType === 'mnemonics') {
+          const sectionFlashcards = getFlashcardsBySection(currentSection);
+          const dedicatedCards: Flashcard[] = sectionFlashcards
+            .filter((card: DedicatedFlashcard) => {
+              if (effectiveType === 'all') return true;
+              if (effectiveType === 'definitions') return card.type === 'definition';
+              if (effectiveType === 'formulas') return card.type === 'formula';
+              if (effectiveType === 'mnemonics') return card.type === 'mnemonic';
+              return true;
+            })
+            .map((card: DedicatedFlashcard) => ({
+              id: card.id,
+              question: card.front,
+              front: card.front,
+              back: formatDedicatedCardBack(card),
+              answer: formatDedicatedCardBack(card),
+              section: card.section as ExamSection,
+              topic: card.topic || card.blueprintArea,
+              difficulty: card.difficulty,
+              cardType: card.type as 'definition' | 'formula' | 'mnemonic',
+              formula: card.formula,
+              mnemonic: card.mnemonic,
+              example: card.example,
+              // Required Question fields with defaults
+              correctAnswer: 0,
+              options: [],
+              explanation: card.back,
+              blueprintArea: card.blueprintArea || '',
+              skillLevel: 'application' as const,
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } as any));
+          
+          allCards = [...allCards, ...dedicatedCards];
+        }
 
-        // Get user's SRS data from Firebase (user progress, not content)
+        // Get question-based flashcards
+        if (effectiveType === 'all' || effectiveType === 'questions') {
+          const questions = await fetchQuestions({
+            section: currentSection,
+            count: 100,
+          });
+          
+          const questionCards: Flashcard[] = questions.map((q) => ({
+            ...q,
+            question: q.question,
+            answer:
+              q.explanation ||
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              `The correct answer is: ${q.options?.[q.correctAnswer] || (q as any).choices?.[q.correctAnswer]}`,
+            front: q.question,
+            back:
+              q.explanation ||
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              `The correct answer is: ${q.options?.[q.correctAnswer] || (q as any).choices?.[q.correctAnswer]}`,
+            cardType: 'question' as const,
+          }));
+          
+          allCards = [...allCards, ...questionCards];
+        }
+
+        // Get user's SRS data from Firebase
         const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
         const srsSnap = await getDoc(srsRef);
         const srsData = srsSnap.exists() ? srsSnap.data() : {};
 
-        // Merge questions with SRS data
-        const cardsWithSRS: Flashcard[] = questions.map((q) => ({
-          ...q,
-          ...srsData[q.id],
-          question: q.question,
-          answer:
-            q.explanation ||
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            `The correct answer is: ${q.options?.[q.correctAnswer] || (q as any).choices?.[q.correctAnswer]}`,
-          front: q.question,
-          back:
-            q.explanation ||
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            `The correct answer is: ${q.options?.[q.correctAnswer] || (q as any).choices?.[q.correctAnswer]}`,
+        // Merge cards with SRS data
+        const cardsWithSRS: Flashcard[] = allCards.map((card) => ({
+          ...card,
+          ...srsData[card.id],
         }));
 
         // Filter based on mode
@@ -140,7 +206,24 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, currentSection, mode, topic]);
+  }, [user, currentSection, mode, topic, cardType, typeParam]);
+
+  // Helper function to format dedicated card backs with formula/mnemonic/example
+  const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {
+    let back = card.back;
+    
+    if (card.formula) {
+      back += `\n\n📐 Formula:\n${card.formula}`;
+    }
+    if (card.mnemonic) {
+      back += `\n\n💡 Remember:\n${card.mnemonic}`;
+    }
+    if (card.example) {
+      back += `\n\n📝 Example:\n${card.example}`;
+    }
+    
+    return back;
+  };
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -336,6 +419,70 @@ const Flashcards: React.FC = () => {
           </div>
         </div>
 
+        {/* Card Type Filter */}
+        <div className="max-w-2xl mx-auto mt-3 flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setCardType('all')}
+            className={clsx(
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
+              cardType === 'all'
+                ? 'bg-primary-100 text-primary-700 border border-primary-200'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            )}
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            All Cards
+          </button>
+          <button
+            onClick={() => setCardType('questions')}
+            className={clsx(
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
+              cardType === 'questions'
+                ? 'bg-primary-100 text-primary-700 border border-primary-200'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            )}
+          >
+            <Brain className="w-3.5 h-3.5" />
+            Questions
+          </button>
+          <button
+            onClick={() => setCardType('definitions')}
+            className={clsx(
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
+              cardType === 'definitions'
+                ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            )}
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            Definitions
+          </button>
+          <button
+            onClick={() => setCardType('formulas')}
+            className={clsx(
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
+              cardType === 'formulas'
+                ? 'bg-purple-100 text-purple-700 border border-purple-200'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            )}
+          >
+            <Calculator className="w-3.5 h-3.5" />
+            Formulas
+          </button>
+          <button
+            onClick={() => setCardType('mnemonics')}
+            className={clsx(
+              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
+              cardType === 'mnemonics'
+                ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+            )}
+          >
+            <Lightbulb className="w-3.5 h-3.5" />
+            Mnemonics
+          </button>
+        </div>
+
         {/* Progress bar */}
         <div className="max-w-2xl mx-auto mt-3">
           <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
@@ -372,14 +519,37 @@ const Flashcards: React.FC = () => {
               )}
               style={{ backfaceVisibility: 'hidden' }}
             >
-              <div className="text-xs text-primary-600 font-medium mb-3">
-                {currentCard.topic || 'Question'}
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs text-primary-600 font-medium">
+                  {currentCard.topic || 'Question'}
+                </span>
+                {currentCard.cardType && currentCard.cardType !== 'question' && (
+                  <span
+                    className={clsx(
+                      'text-xs px-2 py-0.5 rounded-full font-medium',
+                      currentCard.cardType === 'definition' && 'bg-blue-100 text-blue-700',
+                      currentCard.cardType === 'formula' && 'bg-purple-100 text-purple-700',
+                      currentCard.cardType === 'mnemonic' && 'bg-amber-100 text-amber-700'
+                    )}
+                  >
+                    {currentCard.cardType === 'definition' && '📖 Definition'}
+                    {currentCard.cardType === 'formula' && '📐 Formula'}
+                    {currentCard.cardType === 'mnemonic' && '💡 Mnemonic'}
+                  </span>
+                )}
               </div>
               <div className="flex-1 flex items-center justify-center">
                 <p className="text-lg sm:text-xl text-slate-900 text-center leading-relaxed">
                   {currentCard.front || currentCard.question}
                 </p>
               </div>
+              {currentCard.mnemonic && (
+                <div className="mt-4 text-center">
+                  <span className="inline-block bg-amber-50 text-amber-700 px-4 py-2 rounded-lg text-lg font-bold tracking-wider">
+                    {currentCard.mnemonic}
+                  </span>
+                </div>
+              )}
               <div className="text-center text-slate-400 text-sm mt-4">
                 <span className="hidden sm:inline">Press Space or </span>Tap to flip
               </div>
@@ -397,10 +567,41 @@ const Flashcards: React.FC = () => {
               }}
             >
               <div className="text-xs text-success-600 font-medium mb-3">Answer</div>
-              <div className="flex-1 flex items-center justify-center overflow-auto">
-                <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-                  {currentCard.back || currentCard.answer}
+              <div className="flex-1 flex flex-col items-center justify-center overflow-auto">
+                {/* Main answer/explanation */}
+                <p className="text-base sm:text-lg text-slate-700 leading-relaxed text-center whitespace-pre-wrap">
+                  {currentCard.cardType === 'question' 
+                    ? (currentCard.back || currentCard.answer)
+                    : currentCard.answer?.split('\n\n📐')[0]?.split('\n\n💡')[0]?.split('\n\n📝')[0] || currentCard.back
+                  }
                 </p>
+                
+                {/* Formula display (for formula cards) */}
+                {currentCard.formula && (
+                  <div className="mt-4 w-full max-w-md">
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                      <div className="text-xs text-purple-600 font-medium mb-2 flex items-center gap-1">
+                        <Calculator className="w-3.5 h-3.5" />
+                        Formula
+                      </div>
+                      <p className="text-purple-900 font-mono text-sm whitespace-pre-wrap">
+                        {currentCard.formula}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Example display (for formula cards) */}
+                {currentCard.example && (
+                  <div className="mt-3 w-full max-w-md">
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                      <div className="text-xs text-slate-600 font-medium mb-2">📝 Example</div>
+                      <p className="text-slate-700 text-sm">
+                        {currentCard.example}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -66,8 +66,14 @@ Please merge, build and deploy - i want to test at voraprep.com.  Then delete br
 Let's review the 26 Task Based Simulations - do they cover all areas of the 2025 and 2026 AICPA Blueprint - Are they World Class - would the AICPA be proud of these and think they were amazing and a lot of effort and work were put into them? Are they clear concise and accurate? Are they better than the competition? What more do we need to do?
 
 Lessons - DONE
-Questions - IN-PROCESS
-TBS - IN-PROCESS
-Flash Cards
-Mock Exam
+Questions - DONE
+TBS - DONE
+Flash Cards - IN-PROCESS
+Mock Exam - IN-PROCESS
 Timed Quiz
+
+
+
+Should we update our comparison chart on the marketing - adaptive learning, and all this new stuff?
+
+Do we know what the CPA Exam looks like - does our exams look similar ?

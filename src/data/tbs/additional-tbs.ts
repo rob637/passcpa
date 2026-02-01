@@ -2054,7 +2054,7 @@ Using the Internal Revenue Code and Treasury Regulations, locate the relevant gu
     references: ['IRC 199A(d)(2)', 'IRC 199A(d)(3)', 'Treas. Reg. 1.199A-5'],
   },
   {
-    id: 'aud-tbs-006',
+    id: 'aud-tbs-011',
     section: 'AUD',
     type: TBS_TYPES.RESEARCH,
     title: 'Research: Subsequent Events Procedures',
@@ -2137,7 +2137,7 @@ Using the AICPA Professional Standards (AU-C sections), locate the relevant guid
 // ==========================================
 export const WRITTEN_COMM_TBS: TBS[] = [
   {
-    id: 'aud-tbs-007',
+    id: 'aud-tbs-013',
     section: 'AUD',
     type: TBS_TYPES.WRITTEN_COMMUNICATION,
     title: 'Written Communication: Internal Control Deficiency Memo',

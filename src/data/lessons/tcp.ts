@@ -5101,5 +5101,730 @@ export const tcpLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // TCP-III: TAX PLANNING & ADVICE (Continued)
+  // =============================================
+  {
+    id: 'TCP-III-011',
+    section: 'TCP',
+    title: "Alternative Minimum Tax (AMT) for Corporations",
+    description: "Master the corporate AMT after TCJA and IRA changes",
+    order: 65,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Corporate Tax", "AMT", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The corporate AMT was repealed by TCJA but REINSTATED by the Inflation Reduction Act (IRA) for large corporations! Understanding this new 15% minimum tax is critical for TCP!"
+        },
+        {
+          title: 'Corporate AMT Timeline',
+          type: 'text',
+          content: "**History:**\n\n• **Pre-TCJA:** 20% AMT on corporations\n• **TCJA (2018):** AMT repealed for corporations\n• **IRA (2023+):** NEW 15% Corporate AMT for large corporations\n\n**The new AMT is different from the old one!**"
+        },
+        {
+          title: 'Who Is Subject to CAMT?',
+          type: 'text',
+          content: "**Corporate Alternative Minimum Tax (CAMT):**\n\n**Applicable Corporation:**\n• Average annual adjusted financial statement income (AFSI) > $1 billion\n• 3-year average\n• Aggregation rules for related groups\n\n**Certain foreign-parented groups:**\n• $1 billion worldwide AFSI, AND\n• $100 million US AFSI"
+        },
+        {
+          title: 'Computing CAMT',
+          type: 'table',
+          headers: ['Step', 'Description', 'Notes'],
+          rows: [
+            ['1', 'Start with book income (GAAP)', 'From financial statements'],
+            ['2', 'Adjustments', 'Add back certain items'],
+            ['3', '= Adjusted Financial Statement Income', 'AFSI'],
+            ['4', 'Apply 15% rate', 'CAMT liability'],
+            ['5', 'Compare to regular tax', 'Pay greater of two']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: CAMT Threshold',
+          type: 'callout',
+          content: "**\"Billion Dollar Minimum\"**\n\n• Only corps with $1B+ average income\n• Based on BOOK income (not taxable!)\n• 3-year lookback\n\n**Small corporations: NOT affected by CAMT**"
+        },
+        {
+          title: 'AFSI Adjustments',
+          type: 'text',
+          content: "**Key adjustments from book income:**\n\n**Add back:**\n• Federal income taxes (not deductible)\n• Certain foreign taxes\n\n**Reduce by:**\n• Depreciation adjustment (may use tax depreciation)\n• NOL deduction (limited)\n\n**Goal: Taxable base closer to economic income**"
+        },
+        {
+          title: '⚠️ Exam Trap: Regular Tax vs CAMT',
+          type: 'warning',
+          content: "**Corporation pays the GREATER of:**\n\n• Regular tax (21% on taxable income)\n• CAMT (15% on AFSI)\n\n**If CAMT > Regular:**\n• Excess = AMT credit carryforward\n• Can offset future regular tax\n\n**Most large corps still pay regular tax > CAMT**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CAMT: 15% minimum tax on large corporations (IRA 2023)",
+            "Threshold: $1 billion average AFSI over 3 years",
+            "Based on book income, not taxable income",
+            "Pay greater of regular tax or CAMT",
+            "Excess CAMT creates credit carryforward",
+            "Most corporations not affected (too small)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-012',
+    section: 'TCP',
+    title: "Retirement Plan Distributions & Taxation",
+    description: "Understand taxation of qualified plan and IRA distributions",
+    order: 66,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Retirement", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Retirement distributions are a HUGE area of tax planning! Early withdrawals, RMDs, Roth conversions—clients need guidance on timing and tax consequences. This is heavily tested!"
+        },
+        {
+          title: 'Types of Retirement Plans',
+          type: 'text',
+          content: "**Tax-Deferred (Traditional):**\n• 401(k), 403(b), Traditional IRA\n• Contributions: Pre-tax (deductible)\n• Growth: Tax-deferred\n• Distributions: Fully taxable as ordinary income\n\n**Tax-Free (Roth):**\n• Roth 401(k), Roth IRA\n• Contributions: After-tax (non-deductible)\n• Growth: Tax-free\n• Qualified distributions: Tax-free"
+        },
+        {
+          title: 'Early Distribution Penalty',
+          type: 'table',
+          headers: ['Situation', 'Tax Treatment', '10% Penalty?'],
+          rows: [
+            ['Distribution before 59½', 'Ordinary income', 'YES (usually)'],
+            ['Age 59½ or older', 'Ordinary income', 'NO'],
+            ['Disability', 'Ordinary income', 'NO'],
+            ['Death', 'Ordinary income', 'NO'],
+            ['72(t) substantially equal payments', 'Ordinary income', 'NO'],
+            ['First-time home ($10K max)', 'Ordinary income', 'NO (IRA only)'],
+            ['Higher education expenses', 'Ordinary income', 'NO (IRA only)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: 10% Penalty Exceptions',
+          type: 'callout',
+          content: "**\"MEDICS\"** - No 10% penalty:\n\n**M**edical expenses (>7.5% AGI)\n**E**ducation (IRA only)\n**D**isability\n**I**nherited (death)\n**C**ourt-ordered QDRO\n**S**ubstantially equal payments (72t)\n\n**Still ordinary income—just no 10%!**"
+        },
+        {
+          title: 'Required Minimum Distributions (RMDs)',
+          type: 'text',
+          content: "**Must begin by:**\n• Age 73 (SECURE 2.0)\n• April 1 of year after reaching 73\n\n**Calculation:**\n• Account balance ÷ Life expectancy factor\n\n**Penalty for failure:**\n• 25% of amount not distributed (was 50%)\n• 10% if corrected timely\n\n**Roth IRAs: No RMDs during owner's lifetime!**"
+        },
+        {
+          title: 'Roth Conversions',
+          type: 'text',
+          content: "**Converting Traditional to Roth:**\n\n**Tax consequence:**\n• Converted amount = Ordinary income NOW\n• No 10% penalty (even if under 59½)\n\n**Benefits:**\n• Future growth tax-free\n• No RMDs on Roth\n• Tax-free to heirs\n\n**Strategy:** Convert in low-income years"
+        },
+        {
+          title: '⚠️ Exam Trap: Basis in IRAs',
+          type: 'warning',
+          content: "**If you have non-deductible IRA contributions:**\n\n• Cannot just withdraw basis tax-free\n• Pro-rata rule applies\n• Must aggregate ALL traditional IRAs\n\n**Formula:**\nTaxable % = Pre-tax balance / Total IRA balance\n\n**Each distribution: Part taxable, part return of basis**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Traditional distributions: Ordinary income",
+            "Early withdrawal (before 59½): 10% penalty + tax",
+            "Many exceptions to 10% penalty (MEDICS)",
+            "RMDs begin at 73, penalty 25% if missed",
+            "Roth qualified distributions: Tax-free",
+            "Roth conversions: Pay tax now, tax-free later",
+            "Pro-rata rule for IRAs with basis"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-013',
+    section: 'TCP',
+    title: "Tax Research Methodology",
+    description: "Learn systematic approaches to researching tax questions",
+    order: 67,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Tax Research", "Professional Responsibilities"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "CPAs must know how to research complex tax questions! Understanding the hierarchy of authority and research methodology is essential for providing accurate tax advice. This is a key TCP skill!"
+        },
+        {
+          title: 'Tax Authority Hierarchy',
+          type: 'text',
+          content: "**Primary Authority (Most Weight):**\n\n1. **Internal Revenue Code (IRC)**\n2. **Treasury Regulations** (Final, Temporary, Proposed)\n3. **Court Decisions** (Supreme Court > Circuit Courts > Tax Court)\n4. **IRS Rulings** (Revenue Rulings, Revenue Procedures)\n\n**Secondary Authority:**\n• Tax services, treatises, articles\n• NOT binding but can guide research"
+        },
+        {
+          title: 'Types of Treasury Regulations',
+          type: 'table',
+          headers: ['Type', 'Authority Level', 'Effective?'],
+          rows: [
+            ['Final Regulations', 'Highest (below IRC)', 'Yes, until changed'],
+            ['Temporary Regulations', 'Same as Final', 'Yes, 3-year limit'],
+            ['Proposed Regulations', 'Limited authority', 'Not binding'],
+            ['Legislative Regs', 'Force of law', 'Very high authority'],
+            ['Interpretive Regs', 'IRS interpretation', 'Can be challenged']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Authority Weight',
+          type: 'callout',
+          content: "**\"SCRIPT\"** - Primary authority order:\n\n**S**tatute (IRC)\n**C**ourt decisions\n**R**egulations (Treasury)\n**I**RS Rulings\n**P**roposed regs (limited)\n**T**ax services (secondary)\n\n**Higher = More weight!**"
+        },
+        {
+          title: 'Research Process Steps',
+          type: 'text',
+          content: "**Systematic approach:**\n\n1. **Identify facts** - Understand the transaction\n2. **Identify issues** - What tax questions arise?\n3. **Find authority** - IRC, regs, rulings, cases\n4. **Analyze authority** - Apply to facts\n5. **Reach conclusion** - Document reasoning\n6. **Communicate** - Memo or opinion\n\n**Document EVERYTHING!**"
+        },
+        {
+          title: 'Substantial Authority Standard',
+          type: 'text',
+          content: "**For penalty protection:**\n\n**Substantial authority = ~40% likelihood**\n\n**Sources that count:**\n• IRC, Treasury Regs, Court cases\n• Revenue Rulings/Procedures\n• Joint Committee explanations\n• IRS Notices, Announcements\n\n**NOT substantial authority:**\n• Taxpayer-favorable settlements\n• Private letter rulings (to others)\n• Tax articles or treatises"
+        },
+        {
+          title: '⚠️ Exam Trap: Conflicting Authority',
+          type: 'warning',
+          content: "**When authorities conflict:**\n\n**Same level:** Use more recent\n**Different courts:** Use circuit where taxpayer located\n**IRS vs Court:** Courts override IRS positions\n**Supreme Court:** Binding nationwide\n\n**Document why you chose specific authority!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IRC is highest authority, then regulations, then courts/rulings",
+            "Treasury regs: Final and Temporary binding; Proposed not binding",
+            "Research process: Facts → Issues → Authority → Analysis → Conclusion",
+            "Substantial authority: ~40% likelihood of success",
+            "PLRs only apply to taxpayer who requested",
+            "When conflicting: Use Supreme Court or taxpayer's circuit",
+            "Always document research and reasoning"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-014',
+    section: 'TCP',
+    title: "Tax Penalties and Interest",
+    description: "Understand civil and criminal tax penalties",
+    order: 68,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Tax Compliance", "Penalties", "Professional Responsibilities"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Penalties can significantly increase a taxpayer's liability! Understanding penalty provisions helps CPAs advise clients on compliance and penalty abatement strategies. This is essential TCP knowledge!"
+        },
+        {
+          title: 'Failure to File vs Failure to Pay',
+          type: 'table',
+          headers: ['Penalty', 'Rate', 'Maximum', 'Key Points'],
+          rows: [
+            ['Failure to file', '5% per month', '25%', 'Based on tax due'],
+            ['Failure to pay', '0.5% per month', '25%', 'Based on tax due'],
+            ['Combined max', 'N/A', '47.5%', 'If both apply'],
+            ['Fraudulent failure', '15% per month', '75%', 'Fraud intent proven']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: FTF vs FTP',
+          type: 'callout',
+          content: "**\"Filing is 10x worse than Paying\"**\n\n• **F**ailure **T**o **F**ile: **5%**/month\n• **F**ailure **T**o **P**ay: **0.5%**/month\n\n**Message:** Always file on time, even if you can't pay!\n\n**Extension to file ≠ Extension to pay**"
+        },
+        {
+          title: 'Accuracy-Related Penalties',
+          type: 'text',
+          content: "**20% of underpayment due to:**\n\n• **Negligence** - Failure to exercise reasonable care\n• **Substantial understatement** - Understatement >10% of tax or $5,000\n• **Substantial valuation misstatement** - 150% or more overvaluation\n• **Gross valuation misstatement** - 200% or more (40% penalty!)\n\n**Defense:** Reasonable cause and good faith"
+        },
+        {
+          title: 'Substantial Understatement Defense',
+          type: 'text',
+          content: "**Avoid 20% penalty if:**\n\n1. **Substantial authority** for position (~40% chance), OR\n2. **Adequate disclosure** on return + reasonable basis (~20% chance)\n\n**For tax shelters:**\n• Must have substantial authority AND\n• Reasonably believe more likely than not to be sustained\n\n**Disclosure alone won't help shelters!**"
+        },
+        {
+          title: 'Civil Fraud Penalty',
+          type: 'text',
+          content: "**75% of underpayment attributable to fraud**\n\n**IRS burden:** Prove fraud by clear and convincing evidence\n\n**Badges of fraud:**\n• Understating income\n• Keeping two sets of books\n• False statements\n• Concealment of assets\n• Destruction of records\n\n**No statute of limitations on fraud!**"
+        },
+        {
+          title: 'Criminal Penalties',
+          type: 'table',
+          headers: ['Offense', 'Prison', 'Fine'],
+          rows: [
+            ['Tax evasion (§7201)', 'Up to 5 years', '$250K ($500K corp)'],
+            ['Fraud/false statement (§7206)', 'Up to 3 years', '$250K'],
+            ['Failure to file (§7203)', 'Up to 1 year', '$100K'],
+            ['Aiding/abetting (§7206(2))', 'Up to 3 years', '$250K']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Reasonable Cause',
+          type: 'warning',
+          content: "**Reasonable cause defense requires showing:**\n\n• Ordinary business care and prudence\n• Unable to comply despite efforts\n\n**Examples:**\n• Death or serious illness\n• Reliance on professional advice (must be reasonable)\n• Natural disaster\n\n**NOT reasonable cause:**\n• Didn't know the law\n• Relied on preparer without verifying"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Failure to file: 5%/month (max 25%); Failure to pay: 0.5%/month",
+            "Always file on time—penalty is 10x higher than late payment",
+            "Accuracy penalty: 20% for negligence or substantial understatement",
+            "Defenses: Substantial authority or adequate disclosure",
+            "Civil fraud: 75% penalty, no statute of limitations",
+            "Criminal: Tax evasion up to 5 years prison",
+            "Reasonable cause defense: Show ordinary care and prudence"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-015',
+    section: 'TCP',
+    title: "State and Local Tax (SALT) Considerations",
+    description: "Understand nexus, apportionment, and multistate planning",
+    order: 69,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["State Tax", "Tax Planning", "Business"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-E-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "State taxes add complexity to every business decision! Understanding nexus, apportionment, and the interplay of state taxes is essential for complete tax planning. The SALT deduction limit makes this even more critical!"
+        },
+        {
+          title: 'Nexus Basics',
+          type: 'text',
+          content: "**Nexus = Connection requiring tax filing**\n\n**Physical nexus:**\n• Employees in state\n• Property in state\n• Physical presence\n\n**Economic nexus (post-Wayfair):**\n• Sales exceeding threshold (often $100K or 200 transactions)\n• No physical presence required\n• State by state rules vary!"
+        },
+        {
+          title: 'Income Apportionment',
+          type: 'table',
+          headers: ['Method', 'Formula', 'Trend'],
+          rows: [
+            ['3-Factor (Traditional)', 'Sales + Property + Payroll / 3', 'Declining use'],
+            ['Double-weighted sales', '2×Sales + Prop + Pay / 4', 'Some states'],
+            ['Single sales factor', '100% Sales', 'Growing trend'],
+            ['Market-based sourcing', 'Where customer is', 'Services trend']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: SALT Deduction Limit',
+          type: 'callout',
+          content: "**\"$10K SALT Cap\"**\n\n• State and local tax deduction\n• Limited to $10,000 (individuals)\n• Includes income tax + property tax\n• TCJA through 2025\n\n**Workarounds:**\n• PTE elections (pass-through entity tax)\n• Charitable contributions"
+        },
+        {
+          title: 'Pass-Through Entity (PTE) Elections',
+          type: 'text',
+          content: "**Strategy to bypass SALT cap:**\n\n**How it works:**\n• Entity pays state tax at entity level\n• Deduction against federal business income\n• Not subject to $10K individual cap\n\n**IRS blessed:** Notice 2020-75\n\n**Most states now offer PTE election**\n\n**Must file election timely!**"
+        },
+        {
+          title: 'Sales Tax Considerations',
+          type: 'text',
+          content: "**Key issues:**\n\n• **Sourcing:** Origin vs destination\n• **Exemptions:** Resale, manufacturing, necessities\n• **Digital goods:** Growing taxation\n• **Services:** Historically exempt, changing\n\n**South Dakota v. Wayfair (2018):**\n• Economic nexus for sales tax upheld\n• Remote sellers must collect\n• Changed e-commerce taxation"
+        },
+        {
+          title: '⚠️ Exam Trap: Public Law 86-272',
+          type: 'warning',
+          content: "**P.L. 86-272 Protections:**\n\n• Solicitation of tangible goods = No income tax nexus\n• Only protects INCOME tax (not sales tax!)\n\n**Does NOT protect:**\n• Services\n• Intangibles\n• Activities beyond solicitation\n\n**States narrowly interpret this protection**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Nexus: Physical or economic connection to state",
+            "Post-Wayfair: Economic nexus common ($100K/200 transactions)",
+            "Apportionment: Trend toward single sales factor",
+            "SALT deduction capped at $10K for individuals",
+            "PTE elections: Bypass SALT cap for pass-throughs",
+            "P.L. 86-272: Limited protection for solicitation of goods",
+            "Sales tax: Destination sourcing, economic nexus"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-016',
+    section: 'TCP',
+    title: "Estimated Tax Payments",
+    description: "Master estimated tax rules for individuals and businesses",
+    order: 70,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ["Tax Compliance", "Individual Tax", "Corporate Tax"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Estimated tax payments are required throughout the year! Understanding safe harbors and calculations helps avoid underpayment penalties. This is a core compliance topic on TCP!"
+        },
+        {
+          title: 'Individual Estimated Taxes',
+          type: 'text',
+          content: "**Due dates:**\n• April 15, June 15, Sept 15, Jan 15\n\n**Who must pay:**\n• Expected tax liability ≥ $1,000\n• Withholding won't cover obligation\n\n**Safe harbors (no penalty if pay):**\n• 90% of current year tax, OR\n• 100% of prior year tax (110% if AGI > $150K)"
+        },
+        {
+          title: 'Safe Harbor Comparison',
+          type: 'table',
+          headers: ['Method', 'Requirement', 'Best When'],
+          rows: [
+            ['Current Year', '90% of current tax', 'Income decreasing'],
+            ['Prior Year (Regular)', '100% of prior tax', 'Income increasing'],
+            ['Prior Year (High AGI)', '110% of prior tax', 'AGI > $150K'],
+            ['Annualized Income', 'Complex calculation', 'Uneven income']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Safe Harbor',
+          type: 'callout',
+          content: "**\"90/100/110 Rule\"**\n\n• **90%** of THIS year's tax, OR\n• **100%** of LAST year's tax\n• **110%** if high income (>$150K AGI)\n\n**Easiest:** Pay 110% of prior year—no guessing needed!"
+        },
+        {
+          title: 'Corporate Estimated Taxes',
+          type: 'text',
+          content: "**Due dates:**\n• April 15, June 15, Sept 15, Dec 15\n\n**Required payments:**\n• 100% of current year tax, OR\n• 100% of prior year tax (if positive)\n\n**Large corporations ($1M+ taxable income):**\n• Can use prior year only for FIRST payment\n• Must pay 100% of current year for remaining\n\n**No 110% rule for corporations**"
+        },
+        {
+          title: 'Underpayment Penalty',
+          type: 'text',
+          content: "**Penalty = Interest on underpaid amount**\n\n**Rate:** Federal short-term rate + 3%\n\n**Waiver available if:**\n• Casualty, disaster, or unusual circumstance\n• Retired/disabled (age 62+) and reasonable cause\n\n**Penalty calculated quarterly—can vary by quarter!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Annualized Method',
+          type: 'warning',
+          content: "**For uneven income (seasonal, bonuses):**\n\n• Annualize income for each period\n• Calculate tax on annualized amount\n• Reduces penalty if income earned late\n\n**Must complete Schedule AI (Form 2210)**\n\n**Complex but can save penalty!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Individual due: April 15, June 15, Sept 15, Jan 15",
+            "Corporate due: April 15, June 15, Sept 15, Dec 15",
+            "Safe harbor: 90% current OR 100%/110% prior year",
+            "High income (>$150K): Use 110% of prior year",
+            "Large corporations: Prior year only for first payment",
+            "Annualized method: Reduces penalty for uneven income",
+            "Penalty = Interest rate on quarterly underpayments"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-017',
+    section: 'TCP',
+    title: "Net Operating Loss (NOL) Rules",
+    description: "Understand NOL carryforward rules and limitations",
+    order: 71,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Corporate Tax", "Individual Tax", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "NOLs are valuable tax assets! Understanding the rules for carryforwards, limitations, and planning opportunities is essential. TCJA significantly changed these rules!"
+        },
+        {
+          title: 'NOL Rules: Current Law',
+          type: 'text',
+          content: "**Post-TCJA rules (NOLs after 12/31/2017):**\n\n**Carryback:** None (generally)\n**Carryforward:** Indefinite\n**Limitation:** 80% of taxable income\n\n**Pre-TCJA NOLs:**\n• 20-year carryforward\n• 2-year carryback\n• No percentage limitation"
+        },
+        {
+          title: 'NOL Calculation',
+          type: 'table',
+          headers: ['Individual Modifications', 'Add Back', 'Why'],
+          rows: [
+            ['Non-business deductions', 'Yes (excess)', 'NOL = Business loss only'],
+            ['Personal exemptions', 'Yes', 'Not business related'],
+            ['Capital loss excess', 'Yes', '$3K limit doesn\'t apply'],
+            ['NOL deduction', 'Yes', 'Circular otherwise']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: 80% Limitation',
+          type: 'callout',
+          content: "**\"Keep 20% Taxable\"**\n\n• NOL can only offset 80% of income\n• Always pay tax on at least 20%\n• Applies to post-2017 NOLs\n\n**Example:**\nTaxable income: $100,000\nNOL available: $150,000\nNOL allowed: $80,000 (80% limit)\nTaxable: $20,000 remains"
+        },
+        {
+          title: 'Section 382 Limitation',
+          type: 'text',
+          content: "**Ownership change limitation:**\n\n**When triggered:**\n• >50% ownership change in 3 years\n• \"Loss corporation\" status\n\n**Annual limit:**\nFMV of corporation × Long-term tax-exempt rate\n\n**Effect:** Limits annual NOL usage after acquisition\n\n**Purpose:** Prevent trafficking in NOLs"
+        },
+        {
+          title: 'Planning Opportunities',
+          type: 'text',
+          content: "**Maximize NOL benefits:**\n\n1. **Accelerate income** into NOL year\n2. **Defer deductions** to future years\n3. **Watch ownership changes** (§382)\n4. **Monitor 80% limit** timing\n5. **Consider carryback elections** (if available)\n\n**Farming, insurance losses:** Special carryback rules"
+        },
+        {
+          title: '⚠️ Exam Trap: Which Rules Apply?',
+          type: 'warning',
+          content: "**Timing matters!**\n\n**Pre-2018 NOLs:**\n• 20-year carryforward\n• No 80% limit\n• May have carryback\n\n**Post-2017 NOLs:**\n• Indefinite carryforward\n• 80% taxable income limit\n• No carryback (usually)\n\n**Stack pre-2018 NOLs first!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Post-TCJA NOLs: Indefinite carryforward, 80% limit, no carryback",
+            "Pre-TCJA NOLs: 20-year carryforward, no % limit",
+            "Individual NOL: Business losses only (modifications required)",
+            "Section 382: Limits NOL after >50% ownership change",
+            "Stack older NOLs first (more favorable rules)",
+            "Special carryback for farming and insurance losses",
+            "Plan to accelerate income, defer deductions"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-018',
+    section: 'TCP',
+    title: "Accounting Method Changes",
+    description: "Learn how to change accounting methods for tax purposes",
+    order: 72,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Tax Compliance", "Accounting Methods", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-B-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Changing accounting methods can defer income or accelerate deductions! But you need IRS consent and must handle the §481(a) adjustment correctly. This is a sophisticated tax planning tool!"
+        },
+        {
+          title: 'Automatic vs Non-Automatic Changes',
+          type: 'table',
+          headers: ['Type', 'IRS Consent', 'Filing', 'Timing'],
+          rows: [
+            ['Automatic', 'Deemed granted', 'Form 3115', 'With return'],
+            ['Non-automatic', 'Required', 'Form 3115', 'During year'],
+            ['Advance consent', 'Ruling required', 'User fee', 'Before change']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Form 3115',
+          type: 'callout',
+          content: "**\"3115 = Method Change\"**\n\n• Application for Change in Accounting Method\n• File with tax return (automatic)\n• Or file during year (advance consent)\n\n**National office copy required for:**\n• Non-automatic changes\n• Certain automatic changes"
+        },
+        {
+          title: 'Section 481(a) Adjustment',
+          type: 'text',
+          content: "**Catch-up adjustment for method changes:**\n\n**Purpose:** Prevent duplication or omission of income/deductions\n\n**Calculation:**\n• Difference between old and new method\n• As of beginning of year of change\n\n**Positive adjustment:** Taxpayer owes more (spread over 4 years)\n**Negative adjustment:** Taxpayer deducts (take in year 1)"
+        },
+        {
+          title: 'Common Automatic Changes',
+          type: 'text',
+          content: "**Revenue Procedure 2023-34 (updated annually):**\n\n• Cash to accrual method\n• Change in depreciation method\n• Inventory method changes\n• Revenue recognition changes\n• Bad debt reserve to direct write-off\n\n**Must meet eligibility requirements**\n\n**Audit protection available for automatic changes**"
+        },
+        {
+          title: 'Taxpayer-Favorable vs IRS-Initiated',
+          type: 'text',
+          content: "**Taxpayer-initiated (voluntary):**\n• 4-year spread for positive §481(a)\n• Immediate recognition for negative\n• Audit protection\n\n**IRS-initiated (on exam):**\n• Entire adjustment in year of change\n• No spread period\n• May include penalties\n\n**Much better to change voluntarily!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Eligibility for Automatic',
+          type: 'warning',
+          content: "**Cannot use automatic procedures if:**\n\n• Under IRS examination for issue\n• Changed same method in past 5 years\n• Method is contrary to regulations\n\n**Must file correctly:**\n• Duplicate to national office (sometimes)\n• Timely with return\n• Include §481(a) adjustment"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Method changes require IRS consent (automatic or advance)",
+            "Form 3115 filed with return (automatic) or during year (advance)",
+            "§481(a) adjustment: Catch-up for switching methods",
+            "Positive adjustment: Spread over 4 years",
+            "Negative adjustment: Take immediately (year 1)",
+            "Voluntary changes: Better than IRS-initiated",
+            "Check Rev Proc for current automatic changes list"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-019',
+    section: 'TCP',
+    title: "Wealth Transfer Strategies",
+    description: "Understand estate and gift planning techniques",
+    order: 73,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Estate Tax", "Gift Tax", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-F-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "With $13.61 million exemption (2024) sunsetting in 2026, wealth transfer planning is critical! Understanding strategies to minimize transfer taxes while achieving client goals is essential for TCP!"
+        },
+        {
+          title: 'Annual Exclusion Gifting',
+          type: 'text',
+          content: "**$18,000 per donee (2024):**\n\n• Each donor can give to unlimited recipients\n• Spouses can split gifts ($36K together)\n• Present interest required\n• No gift tax, no return required (usually)\n\n**Compound effect:**\nMarried couple to married child + spouse + 2 grandkids:\n$36K × 4 = $144K/year tax-free!"
+        },
+        {
+          title: 'Grantor Retained Annuity Trust (GRAT)',
+          type: 'table',
+          headers: ['Feature', 'Description', 'Benefit'],
+          rows: [
+            ['Structure', 'Trust pays annuity to grantor', 'Low gift value'],
+            ['Term', '2+ years typically', 'Shorter = less mortality risk'],
+            ['Remainder', 'To beneficiaries after term', 'Growth passes tax-free'],
+            ['Zeroed-out', 'Annuity = FMV of gift', 'No gift tax'],
+            ['7520 rate', 'Hurdle rate for success', 'Low rates favor GRATs']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: GRAT Success',
+          type: 'callout',
+          content: "**\"Beat the Rate\"**\n\n• GRAT works if growth > §7520 rate\n• Appreciation passes to remaindermen\n• Gift value calculated at funding\n\n**Best for:**\n• Assets expected to appreciate\n• Low interest rate environment\n• Taxpayer survives term"
+        },
+        {
+          title: 'Intentionally Defective Grantor Trusts (IDGTs)',
+          type: 'text',
+          content: "**\"Defective\" for income tax, not estate/gift:**\n\n**Structure:**\n• Grantor taxed on trust income\n• Trust assets out of estate\n\n**Benefits:**\n• Grantor pays income tax (tax-free gift!)\n• Trust grows without income tax drag\n• Basis step-up issues (planning needed)\n\n**Often combined with sales to IDGT**"
+        },
+        {
+          title: 'Family Limited Partnerships (FLPs)',
+          type: 'text',
+          content: "**Transfer vehicle for family businesses/assets:**\n\n**Structure:**\n• Parents: General partners (control)\n• Children: Limited partners\n\n**Valuation discounts:**\n• Lack of marketability: 20-40%\n• Lack of control: 10-35%\n\n**IRS scrutiny:** Must have legitimate business purpose\n\n**Cannot be formed deathbed with no business reason**"
+        },
+        {
+          title: 'Charitable Strategies',
+          type: 'text',
+          content: "**Charitable Remainder Trust (CRT):**\n• Income to donor for life\n• Remainder to charity\n• Immediate income tax deduction\n• No capital gains on sale\n\n**Charitable Lead Trust (CLT):**\n• Income to charity for term\n• Remainder to family\n• Reduces gift/estate tax\n\n**Private foundation vs donor-advised fund**"
+        },
+        {
+          title: '⚠️ Exam Trap: Sunset Provisions',
+          type: 'warning',
+          content: "**TCJA exemption expires after 2025:**\n\n**Current (2024):** $13.61 million\n**Post-2025:** ~$7 million (projected)\n\n**\"Use it or lose it\" planning:**\n• Make large gifts before sunset\n• Anti-clawback regulations protect gifts\n\n**If client dies after sunset, gifts not added back!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Annual exclusion: $18K/donee (2024), no return needed",
+            "GRAT: Annuity trust, zeroed-out gift, appreciation passes tax-free",
+            "IDGT: Defective for income tax, grantor pays trust tax",
+            "FLP: Valuation discounts, must have business purpose",
+            "CRT: Income to donor, remainder to charity, immediate deduction",
+            "Exemption sunsets 2026: Plan large gifts before then",
+            "Anti-clawback protects gifts if exemption reduced"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-020',
+    section: 'TCP',
+    title: "Compensation Planning Strategies",
+    description: "Optimize tax treatment of employee compensation",
+    order: 74,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Compensation", "Tax Planning"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Compensation planning affects both employer and employee! Understanding the tax implications of salary, bonuses, equity, and fringe benefits helps maximize after-tax value. This is practical TCP planning!"
+        },
+        {
+          title: 'Types of Compensation',
+          type: 'table',
+          headers: ['Type', 'Employee Tax', 'Employer Deduction', 'Timing'],
+          rows: [
+            ['Salary/wages', 'Ordinary income', 'When paid', 'Constructive receipt'],
+            ['Bonus', 'Ordinary income', 'When paid', '2.5 month rule'],
+            ['Stock options (ISO)', 'Defer until sale', 'Generally none', 'AMT impact'],
+            ['Stock options (NQSO)', 'At exercise', 'At exercise', 'Spread = income'],
+            ['Restricted stock', 'At vest (or 83b)', 'At vest', '83(b) election']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: ISO vs NQSO',
+          type: 'callout',
+          content: "**\"ISO = Income Saved (sort Of)\"**\n\n**ISO:**\n• No regular tax at exercise\n• AMT preference item\n• LTCG if hold 1yr from exercise, 2yr from grant\n\n**NQSO:**\n• Ordinary income at exercise (spread)\n• Employer gets deduction\n• Basis = FMV at exercise"
+        },
+        {
+          title: 'Section 409A: Deferred Compensation',
+          type: 'text',
+          content: "**Nonqualified deferred comp rules:**\n\n**Requirements:**\n• Written plan\n• Election timing (prior year or 30 days of eligible)\n• Distribution events: Separation, death, disability, change in control, fixed date\n\n**Violation penalty:**\n• 20% additional tax + interest\n• All deferred amounts taxable\n\n**Strict rules—no informal arrangements!**"
+        },
+        {
+          title: 'Fringe Benefits',
+          type: 'text',
+          content: "**Tax-free to employee if:**\n\n• **Health insurance** (employer-paid premiums)\n• **Group-term life** (up to $50K coverage)\n• **Dependent care** (up to $5K)\n• **Educational assistance** (up to $5,250)\n• **De minimis fringes** (coffee, occasional meals)\n• **Working condition fringes** (job-related items)\n\n**Employer deducts, employee excludes!**"
+        },
+        {
+          title: 'Excess Compensation Issues',
+          type: 'text',
+          content: "**Reasonableness test (C corps):**\n• Compensation must be reasonable for services\n• Excess recharacterized as dividend (no deduction)\n• IRS scrutiny for owner-employees\n\n**$1 million limit (public companies):**\n• Deduction capped at $1M per covered employee\n• Performance-based exception eliminated by TCJA\n• CFO and next 3 highest paid included"
+        },
+        {
+          title: '⚠️ Exam Trap: Section 83(b) Election',
+          type: 'warning',
+          content: "**For restricted stock:**\n\n**Without 83(b):**\n• Taxed at vesting on FMV\n• Risk of higher tax if appreciates\n\n**With 83(b):**\n• Taxed NOW on current value\n• Future appreciation = Capital gain\n• Must file within 30 DAYS\n\n**Risk:** If forfeited, no refund of tax paid!"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Salary/wages: Ordinary income when received",
+            "ISO: No tax at exercise, LTCG treatment if held properly",
+            "NQSO: Ordinary income at exercise, employer deduction",
+            "Section 409A: Strict rules for deferred comp, 20% penalty",
+            "Many fringes tax-free to employee, deductible by employer",
+            "83(b) election: 30 days to elect, upfront tax for future LTCG",
+            "Reasonableness required; $1M limit for public companies"
+          ]
+        }
+      ]
+    }
   }
 ];

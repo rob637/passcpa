@@ -120,7 +120,7 @@ export const generateDailyPlan = async (
     
     weakAreaFocus.push(weak.topic);
     activities.push({
-      id: `weak-${weak.topic}-${Date.now()}`,
+      id: `weak-${weak.topic}-${today}`,
       type: 'mcq',
       title: `Strengthen: ${weak.topic}`,
       description: `Your accuracy is ${weak.accuracy}%. Let's improve it.`,
@@ -149,7 +149,7 @@ export const generateDailyPlan = async (
     
     weakAreaFocus.push(weak.topic);
     activities.push({
-      id: `review-${weak.topic}-${Date.now()}`,
+      id: `review-${weak.topic}-${today}`,
       type: 'mcq',
       title: `Review: ${weak.topic}`,
       description: `At ${weak.accuracy}% - close to mastery!`,
@@ -170,7 +170,7 @@ export const generateDailyPlan = async (
   // 3. MEDIUM: Flashcard review if cards are due
   if (state.flashcardsDue > 0 && remainingMinutes >= 10) {
     activities.push({
-      id: `flashcards-${Date.now()}`,
+      id: `flashcards-${today}`,
       type: 'flashcards',
       title: 'Spaced Review',
       description: `${state.flashcardsDue} cards due for review`,
@@ -241,7 +241,7 @@ export const generateDailyPlan = async (
     const weakTBSTopic = tbsTopics[Math.floor(Math.random() * tbsTopics.length)];
     
     activities.push({
-      id: `tbs-${Date.now()}`,
+      id: `tbs-${today}`,
       type: 'tbs',
       title: 'Task-Based Simulation',
       description: `Practice: ${weakTBSTopic}`,
@@ -260,7 +260,7 @@ export const generateDailyPlan = async (
   // 6. LOW: General practice if time remains
   if (remainingMinutes >= 10) {
     activities.push({
-      id: `practice-mixed-${Date.now()}`,
+      id: `practice-mixed-${today}`,
       type: 'mcq',
       title: 'Mixed Practice',
       description: 'Random questions across all topics',

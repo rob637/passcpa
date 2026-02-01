@@ -4632,100 +4632,155 @@ export const audLessons: Lesson[] = [
     }
   },
   {
-    id: 'AUD-IV-010',
+    id: 'AUD-III-013',
     section: 'AUD',
-    title: "SSARS: Compilation and Review Engagements",
-    description: "Understand non-audit services under SSARS",
+    title: "Audit Sampling Fundamentals",
+    description: "Master statistical and non-statistical sampling methods",
     order: 55,
-    duration: 50,
+    duration: 55,
     difficulty: 'intermediate',
-    topics: ["SSARS", "Compilation", "Review"],
-    blueprintArea: 'AUD-IV',
-    blueprintTopic: 'AUD-IV-C-1',
+    topics: ["Audit Sampling", "Audit Procedures"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-C-1',
     content: {
       sections: [
         {
           title: 'Why This Matters',
           type: 'callout',
-          content: "Not all engagements are audits! SSARS governs compilation and review engagements—lower levels of service that are common for smaller private companies. Understanding the differences in scope, procedures, and reporting is essential for AUD!"
+          content: "Auditors can't test every transaction! Sampling allows auditors to reach conclusions about an entire population by testing a subset. Understanding sampling risk, sample size, and how to evaluate results is essential for audit efficiency and effectiveness!"
         },
         {
-          title: 'SSARS Overview',
+          title: 'Why Use Sampling?',
           type: 'text',
-          content: "**Statements on Standards for Accounting and Review Services**\n\n**Applies to:**\n• Compilations\n• Reviews\n• Preparation of F/S\n\n**For NON-ISSUERS (private companies)**\n\n**Different from GAAS (audits) and PCAOB (public companies)**"
+          content: "**Sampling allows auditors to:**\n\n• Test a portion of the population\n• Draw conclusions about the whole population\n• Balance thoroughness with efficiency\n• Focus resources on higher-risk areas\n\n**Alternative:** 100% testing (usually impractical)"
         },
         {
-          title: 'Levels of Service Comparison',
+          title: 'Statistical vs Non-Statistical',
           type: 'table',
-          headers: ['Service', 'Assurance', 'Report'],
+          headers: ['Feature', 'Statistical', 'Non-Statistical'],
           rows: [
-            ['Audit', 'Reasonable (highest)', 'Opinion'],
-            ['Review', 'Limited', 'Conclusion'],
-            ['Compilation', 'None', 'No assurance'],
-            ['Preparation', 'None', 'No report required']
+            ['Selection', 'Random selection', 'Judgmental selection'],
+            ['Evaluation', 'Probability theory', 'Professional judgment'],
+            ['Precision', 'Can quantify', 'Cannot quantify'],
+            ['Documentation', 'More rigorous', 'Judgment-based'],
+            ['Validity', 'Both equally valid under GAAS', 'Both equally valid']
           ]
         },
         {
-          title: '🧠 Memory Aid: Assurance Levels',
+          title: 'Sampling Risk',
+          type: 'text',
+          content: "**Risk that sample conclusion differs from full population:**\n\n**Two types:**\n\n1. **Risk of incorrect acceptance** (Type II)\n   • Conclude no misstatement when there IS\n   • Effectiveness risk\n\n2. **Risk of incorrect rejection** (Type I)\n   • Conclude misstatement when there is NOT\n   • Efficiency risk"
+        },
+        {
+          title: '🧠 Memory Aid: Sampling Risks',
           type: 'callout',
-          content: "**\"ARCP\"** - Most to Least:\n\n**A**udit = Reasonable assurance (opinion)\n**R**eview = Limited assurance (conclusion)\n**C**ompilation = No assurance (report states it)\n**P**reparation = No assurance (no report)\n\n**More work = More assurance**"
+          content: "**\"Accept Bad, Reject Good\"**\n\n**Incorrect Acceptance (worse):**\n• Accepting BAD as good\n• Miss a misstatement\n• Relates to audit EFFECTIVENESS\n\n**Incorrect Rejection:**\n• Rejecting GOOD as bad\n• Do unnecessary work\n• Relates to audit EFFICIENCY\n\n**Incorrect acceptance is the bigger concern!**"
         },
         {
-          title: 'Compilation Engagements',
+          title: 'Sample Size Factors',
           type: 'text',
-          content: "**Accountant presents F/S based on management's info:**\n\n**Requirements:**\n• Obtain engagement letter\n• Understand the entity (limited)\n• Read F/S for obvious errors\n• NO verification of information\n• NO assurance provided\n\n**Essentially: \"We compiled what you gave us\""
+          content: "**Larger sample needed when:**\n\n• Lower acceptable risk of incorrect acceptance\n• Higher expected deviation rate\n• Higher tolerable deviation rate\n• Larger population (diminishing effect)\n• Greater population variability\n\n**Smaller sample:**\n• When opposite factors apply"
         },
         {
-          title: 'Compilation Report',
+          title: 'Types of Sampling',
           type: 'text',
-          content: "**Key elements:**\n\n• Management responsible for F/S\n• We compiled—did not audit or review\n• We do not express opinion or conclusion\n• F/S may be materially misstated\n\n**Independence not required but if NOT independent:**\n• Must disclose lack of independence\n• Need not disclose reason"
+          content: "**Tests of Controls (Attribute Sampling):**\n• Looking for deviations from prescribed controls\n• Binary outcome: Deviation or no deviation\n• Use: Compliance testing\n\n**Substantive Tests (Variables Sampling):**\n• Looking for monetary misstatements\n• Dollar amounts involved\n• Use: Account balance testing"
         },
         {
-          title: 'Review Engagements',
+          title: 'Selection Methods',
           type: 'text',
-          content: "**More than compilation, less than audit:**\n\n**Procedures:**\n• Inquiries of management\n• Analytical procedures\n• Obtain management representations\n\n**Provides LIMITED assurance:**\n\"We are not aware of material modifications needed\"\n\n**Independence IS required!**"
+          content: "**Random selection:**\n• Every item has equal chance\n• Computer or random number table\n\n**Systematic selection:**\n• Every nth item (with random start)\n• Must be careful of patterns\n\n**Haphazard selection:**\n• No conscious bias\n• Not truly random\n\n**Block selection:**\n• Consecutive items\n• Generally NOT appropriate for statistical"
         },
         {
-          title: 'Review Report',
-          type: 'text',
-          content: "**Key elements:**\n\n• Management responsible for F/S\n• Our responsibility: Conduct review per SSARS\n• Review is substantially less than an audit\n• We do not express an opinion\n• **Conclusion:** Nothing came to our attention indicating material modifications needed\n\n**Negative assurance language**"
-        },
-        {
-          title: 'Key Differences',
-          type: 'table',
-          headers: ['Feature', 'Compilation', 'Review'],
-          rows: [
-            ['Independence', 'Not required', 'Required'],
-            ['Inquiry/Analytical', 'Not required', 'Required'],
-            ['Rep letter', 'Not required', 'Required'],
-            ['Assurance', 'None', 'Limited'],
-            ['Report language', 'No assurance', 'Negative assurance']
-          ]
-        },
-        {
-          title: '⚠️ Exam Trap: Review Procedures',
+          title: '⚠️ Exam Trap: Sample Size Relationships',
           type: 'warning',
-          content: "**Review = Inquiry + Analytical procedures**\n\n**Review does NOT include:**\n• Testing internal controls\n• Obtaining audit evidence\n• Corroborating management responses\n• Physical examination\n• Confirmations\n\n**If you verify → It's an AUDIT, not a review!**"
-        },
-        {
-          title: 'Preparation of F/S',
-          type: 'text',
-          content: "**Lowest level of service:**\n\n• Prepare F/S from client records\n• No assurance whatsoever\n• No report required (but can issue one)\n• Each page must state: \"No assurance is provided\"\n\n**Engagement letter required**"
+          content: "**INVERSE relationship:**\n• Tolerable deviation ↑ = Sample size ↓\n• Acceptable risk ↑ = Sample size ↓\n\n**DIRECT relationship:**\n• Expected deviation ↑ = Sample size ↑\n• Population size ↑ = Sample size ↑ (slightly)\n\n**These are tested frequently!**"
         },
         {
           title: 'Key Takeaways',
           type: 'summary',
           content: [
-            "SSARS governs compilation, review, and preparation",
-            "Audit > Review > Compilation > Preparation (assurance levels)",
-            "Compilation: No assurance, independence NOT required",
-            "Review: Limited assurance, independence IS required",
-            "Review procedures: Inquiry and analytical only",
-            "Review uses negative assurance language in conclusion",
-            "If lack of independence in compilation, must disclose"
+            "Sampling: Test subset to conclude about population",
+            "Statistical and non-statistical both valid under GAAS",
+            "Incorrect acceptance: Bigger concern (effectiveness)",
+            "Incorrect rejection: Efficiency concern",
+            "Tolerable deviation ↑ = Sample size ↓ (inverse)",
+            "Expected deviation ↑ = Sample size ↑ (direct)",
+            "Attribute sampling for controls; Variables for balances"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-III-014',
+    section: 'AUD',
+    title: "Substantive Analytical Procedures",
+    description: "Use analytics as substantive evidence",
+    order: 56,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Analytical Procedures", "Substantive Testing"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Analytical procedures can be powerful substantive tests! When designed properly, comparing relationships and trends can provide strong evidence about account balances. Understanding when and how to use substantive analytics is essential for efficient auditing!"
+        },
+        {
+          title: 'Three Uses of Analytics',
+          type: 'text',
+          content: "**In an audit:**\n\n1. **Planning** (Required)\n   • Understand the entity\n   • Identify risk areas\n\n2. **Substantive testing** (Optional)\n   • Replace or supplement tests of details\n   • Provide evidence about assertions\n\n3. **Overall review** (Required)\n   • Final reasonableness check\n   • Identify concerns before opinion"
+        },
+        {
+          title: 'When to Use Substantive Analytics',
+          type: 'text',
+          content: "**Effective when:**\n\n• Plausible relationship exists\n• Data is reliable\n• Relationship is predictable\n• Precision can be developed\n\n**Examples:**\n• Depreciation expense (predictable relationship)\n• Payroll expense (hours × rate)\n• Interest income (balance × rate × time)"
+        },
+        {
+          title: '🧠 Memory Aid: Substantive Analytics',
+          type: 'callout',
+          content: "**\"PEDIR\"** for effective analytics:\n\n**P**lausible relationship\n**E**xpectation developed\n**D**ata reliability\n**I**nvestigate differences\n**R**ecord conclusions\n\n**If relationship isn't PREDICTABLE, analytics won't work!**"
+        },
+        {
+          title: 'Developing Expectations',
+          type: 'text',
+          content: "**Sources for expectations:**\n\n• Prior year amounts\n• Budgets and forecasts\n• Industry data\n• Non-financial data\n• Relationships among data elements\n\n**More precise expectation = Better evidence**\n\n**Must document the expectation!**"
+        },
+        {
+          title: 'Precision of Analytics',
+          type: 'text',
+          content: "**Factors affecting precision:**\n\n• Level of disaggregation (more detail = more precise)\n• Data reliability\n• Type of expectation\n• Threshold for investigation\n\n**Higher precision:**\n• Analyzing by month vs. year\n• Analyzing by location vs. total\n• Using operational data vs. financial only"
+        },
+        {
+          title: 'Investigation of Differences',
+          type: 'text',
+          content: "**When actual differs from expectation:**\n\n1. **Inquire of management**\n2. **Corroborate explanations**\n3. **Perform additional procedures if needed**\n\n**Do NOT accept explanations without corroboration!**\n\n**Unexplained differences = Potential misstatement**"
+        },
+        {
+          title: '⚠️ Exam Trap: Relying on Analytics',
+          type: 'warning',
+          content: "**Substantive analytics alone may NOT be enough for:**\n\n• Significant risks\n• Material balances requiring precision\n• Assertions where relationships aren't predictable\n\n**Often combined with tests of details**\n\n**Analytics good for reasonableness—not precision**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Analytics: Planning (required), Substantive (optional), Overall review (required)",
+            "Substantive analytics: Provide evidence about assertions",
+            "Effective when relationship is predictable",
+            "More disaggregation = More precision",
+            "Must investigate and corroborate differences",
+            "Cannot accept management explanations without proof",
+            "May combine with tests of details for best evidence"
           ]
         }
       ]
     }
   }
 ];
+
+

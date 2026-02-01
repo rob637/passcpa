@@ -25,8 +25,19 @@ if (typeof window !== 'undefined') {
 // Register service worker for PWA
 const updateSW = registerSW({
   onNeedRefresh() {
-    if (confirm('New content available. Reload?')) {
-      updateSW(true);
+    // Don't interrupt exams or practice sessions
+    const isInExam = window.location.pathname.includes('/exam') || 
+                     window.location.pathname.includes('/practice');
+    
+    if (isInExam) {
+      // Store update pending flag - will prompt after exam
+      sessionStorage.setItem('pwa-update-pending', 'true');
+      logger.log('PWA update available, deferred until exam completes');
+    } else {
+      // Safe to prompt user
+      if (confirm('New version available! Reload to update?')) {
+        updateSW(true);
+      }
     }
   },
   onOfflineReady() {

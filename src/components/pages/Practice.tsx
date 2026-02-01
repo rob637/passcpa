@@ -263,7 +263,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
           {/* Header */}
           <div className={clsx(
             'p-6 text-center text-white',
-            passed ? 'bg-gradient-to-br from-success-500 to-success-600' : 'bg-gradient-to-br from-warning-500 to-warning-600'
+            passed ? 'bg-gradient-to-br from-success-500 to-success-600' : 'bg-gradient-to-br from-primary-500 to-primary-600'
           )}>
             <div className={clsx(
               'w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3',
@@ -469,6 +469,7 @@ const Practice: React.FC = () => {
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
   const blueprintAreaParam = searchParams.get('blueprintArea');
+  const subtopicParam = searchParams.get('subtopic'); // Specific topic from lesson
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -605,7 +606,8 @@ const Practice: React.FC = () => {
         
         fetchedQuestions = await fetchQuestions({
           section,
-          blueprintArea: blueprintAreaParam || undefined, // Filter by lesson topic if provided
+          subtopic: subtopicParam || undefined, // Filter by specific lesson subtopic (most specific)
+          blueprintArea: !subtopicParam ? blueprintAreaParam || undefined : undefined, // Fallback to blueprintArea
           difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
           count: config.count,
           hr1Only: applyHr1Filter, // Only for tax sections (REG, TCP) in 2026
@@ -630,9 +632,11 @@ const Practice: React.FC = () => {
     }
   };
 
-  // Auto-start weak areas session if mode=weak in URL
+  // Auto-start session if mode=weak OR blueprintArea is specified (coming from lesson)
   useEffect(() => {
     const mode = searchParams.get('mode');
+    
+    // Auto-start weak areas practice
     if (mode === 'weak' && userProfile && !inSession && !loading) {
       const section = (userProfile.examSection || 'REG') as ExamSection;
       startSession({
@@ -643,7 +647,19 @@ const Practice: React.FC = () => {
         difficulty: 'all',
       });
     }
-    // Only run once on mount when mode=weak
+    
+    // Auto-start topic-specific practice when coming from a lesson (subtopic or blueprintArea)
+    if ((subtopicParam || blueprintAreaParam) && userProfile && !inSession && !loading && mode !== 'weak') {
+      const section = (userProfile.examSection || 'REG') as ExamSection;
+      startSession({
+        section,
+        mode: 'study',
+        count: 10,
+        topics: [],
+        difficulty: 'all',
+      });
+    }
+    // Only run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
 
@@ -829,7 +845,7 @@ const Practice: React.FC = () => {
           localStorage.setItem(storageKey, JSON.stringify(completed));
         }
       } catch (e) {
-        console.error('Failed to save daily plan completion:', e);
+        logger.error('Failed to save daily plan completion:', e);
       }
     }
     navigate('/home');
@@ -931,6 +947,16 @@ const Practice: React.FC = () => {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col bg-slate-50 dark:bg-slate-900 page-transition">
+      {/* Topic indicator when practicing specific topic from lesson */}
+      {(subtopicParam || blueprintAreaParam) && (
+        <div className="bg-primary-50 dark:bg-primary-900/30 border-b border-primary-200 dark:border-primary-800 px-4 py-2">
+          <div className="max-w-4xl mx-auto flex items-center gap-2 text-sm text-primary-700 dark:text-primary-300">
+            <BookOpen className="w-4 h-4" />
+            <span>Practicing topic: <strong>{subtopicParam || blueprintAreaParam}</strong></span>
+          </div>
+        </div>
+      )}
+      
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-3">

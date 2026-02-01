@@ -1323,3 +1323,74 @@ textarea:focus:not(:focus-visible),
   /* Visually hidden but announced */
   clip: rect(0, 0, 0, 0);
 }
+
+/* ============================================
+   AI TUTOR (VORY) MARKDOWN STYLES
+   ============================================ */
+
+/* AI generated tables */
+.ai-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.ai-table th,
+.ai-table td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ai-table th {
+  background: var(--bg-tertiary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ai-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ai-table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.dark .ai-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* AI generated headers */
+.ai-h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.ai-h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.875rem 0 0.375rem;
+  color: var(--text-primary);
+}
+
+.ai-h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+  color: var(--text-secondary);
+}
+
+/* AI inline code */
+.ai-code {
+  background: var(--bg-tertiary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.875em;
+}

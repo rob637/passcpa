@@ -11,6 +11,8 @@ interface FetchQuestionsOptions {
   blueprintArea?: string;
   blueprintGroup?: string;
   blueprintTopic?: string;
+  subtopic?: string; // Filter by specific subtopic (e.g., "Dollar-Value LIFO")
+  topic?: string; // Filter by topic (e.g., "Inventory")
   hr1Only?: boolean;
   difficulty?: Difficulty;
   count?: number;
@@ -63,6 +65,8 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     blueprintArea,
     blueprintGroup,
     blueprintTopic,
+    subtopic,
+    topic,
     hr1Only,
     difficulty,
     count = 10,
@@ -88,8 +92,14 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
       // Topic filter (legacy)
       if (topicId && q.topicId !== topicId) return false;
       
-      // Blueprint filters (2026 structure)
-      if (blueprintArea && q.blueprintArea !== blueprintArea) return false;
+      // Subtopic filter (most specific - e.g., "Dollar-Value LIFO")
+      if (subtopic && q.subtopic !== subtopic) return false;
+      
+      // Topic filter (e.g., "Inventory") - only if subtopic not specified
+      if (topic && !subtopic && q.topic !== topic) return false;
+      
+      // Blueprint filters (2026 structure) - only if topic/subtopic not specified
+      if (blueprintArea && !subtopic && !topic && q.blueprintArea !== blueprintArea) return false;
       if (blueprintGroup && q.blueprintGroup !== blueprintGroup) return false;
       if (blueprintTopic && q.blueprintTopic !== blueprintTopic) return false;
       

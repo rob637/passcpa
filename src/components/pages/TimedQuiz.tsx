@@ -22,7 +22,8 @@ import { useStudy } from '../../hooks/useStudy';
 import { fetchQuestions } from '../../services/questionService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection, Difficulty, CPA_SECTIONS } from '../../types';
+import { Question, ExamSection, Difficulty } from '../../types';
+import { CPA_SECTIONS } from '../../config/examConfig';
 
 interface QuizModeConfig {
   questions: number;

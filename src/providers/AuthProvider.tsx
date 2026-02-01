@@ -97,7 +97,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   // Listen to auth state changes
   useEffect(() => {
+    let authResolved = false;
+    
+    // Safety timeout to prevent infinite loading if Firebase doesn't respond
+    const timeout = setTimeout(() => {
+      if (!authResolved) {
+        logger.warn('Auth timeout - Firebase may be unreachable');
+        setLoading(false);
+      }
+    }, 10000); // 10 second timeout
+
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      authResolved = true;
+      clearTimeout(timeout);
       if (firebaseUser) {
         setUser(firebaseUser);
         // Fetch user profile from Firestore
@@ -114,7 +126,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => {
+      clearTimeout(timeout);
+      unsubscribe();
+    };
   }, []);
 
   // Sign in with email/password

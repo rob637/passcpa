@@ -429,7 +429,7 @@ const LessonViewer: React.FC = () => {
             localStorage.setItem(storageKey, JSON.stringify(completed));
           }
         } catch (e) {
-          console.error('Failed to save daily plan completion:', e);
+          logger.error('Failed to save daily plan completion:', e);
         }
       }
       navigate('/home');
@@ -684,7 +684,7 @@ const LessonViewer: React.FC = () => {
         {/* Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <Link
-            to={`/practice?section=${lesson.section}${lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
+            to={`/practice?section=${lesson.section}${lesson.topics?.[lesson.topics.length - 1] ? `&subtopic=${encodeURIComponent(lesson.topics[lesson.topics.length - 1])}` : lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
             className="card p-4 hover:shadow-md transition-shadow group"
           >
             <div className="flex items-center gap-3">

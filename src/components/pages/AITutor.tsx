@@ -142,21 +142,51 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string = 'REG'): S
   return basePrompts.slice(0, 4);
 };
 
-// Format message content with XSS protection
+// Format message content with XSS protection and markdown rendering
 const formatMessage = (content: string) => {
   // Guard against non-string content
   if (typeof content !== 'string') {
     return '';
   }
-  const formatted = content
+  
+  // Process markdown tables first (before other formatting)
+  let formatted = content;
+  
+  // Match markdown tables and convert to HTML
+  const tableRegex = /\|(.+)\|\n\|[-:|\s]+\|\n((?:\|.+\|\n?)+)/g;
+  formatted = formatted.replace(tableRegex, (match, headerRow, bodyRows) => {
+    const headers = headerRow.split('|').map((h: string) => h.trim()).filter(Boolean);
+    const rows = bodyRows.trim().split('\n').map((row: string) => 
+      row.split('|').map((cell: string) => cell.trim()).filter(Boolean)
+    );
+    
+    let table = '<table class="ai-table">';
+    table += '<thead><tr>' + headers.map((h: string) => `<th>${h}</th>`).join('') + '</tr></thead>';
+    table += '<tbody>';
+    rows.forEach((row: string[]) => {
+      table += '<tr>' + row.map((cell: string) => `<td>${cell}</td>`).join('') + '</tr>';
+    });
+    table += '</tbody></table>';
+    return table;
+  });
+  
+  // Handle headers (####, ###, ##)
+  formatted = formatted
+    .replace(/^#### (.+)$/gm, '<h4 class="ai-h4">$1</h4>')
+    .replace(/^### (.+)$/gm, '<h3 class="ai-h3">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2 class="ai-h2">$1</h2>');
+  
+  // Handle other markdown
+  formatted = formatted
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/`([^`]+)`/g, '<code class="ai-code">$1</code>')
     .replace(/\n/g, '<br>')
     .replace(/• /g, '&bull; ');
   
   // Sanitize to prevent XSS attacks
   return DOMPurify.sanitize(formatted, {
-    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li', 'code', 'pre'],
+    ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li', 'code', 'pre', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'h2', 'h3', 'h4'],
     ALLOWED_ATTR: ['class'],
   });
 };
@@ -217,30 +247,8 @@ const AITutor: React.FC = () => {
           setWeakAreas(weak);
         }
 
-        // Load recent conversation
-        const convRef = collection(db, 'users', user.uid, 'conversations');
-        const convQuery = query(convRef, orderBy('updatedAt', 'desc'), limit(1));
-        const convSnap = await getDocs(convQuery);
-
-        if (!convSnap.empty) {
-          const recentConv = convSnap.docs[0];
-          const convData = recentConv.data();
-
-          // If conversation is less than 24 hours old, restore it
-          const hoursSince = (Date.now() - convData.updatedAt?.toMillis()) / (1000 * 60 * 60);
-          if (hoursSince < 24 && convData.messages?.length > 0) {
-            setConversationId(recentConv.id);
-            setMessages(
-              convData.messages.map((m: any) => ({
-                ...m,
-                timestamp: m.timestamp?.toDate?.() || new Date(m.timestamp),
-              }))
-            );
-            setMemoryLoaded(true);
-            return;
-          }
-        }
-
+        // Don't restore old conversations - start fresh each time
+        // This keeps Vory focused on the current study topic
         setMemoryLoaded(true);
       } catch (error) {
         logger.error('Error loading AI memory:', error);

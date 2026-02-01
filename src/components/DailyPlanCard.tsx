@@ -9,6 +9,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import logger from '../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
   BookOpen,
@@ -125,7 +126,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         const generatedPlan = await generateDailyPlan(studyState, courseId);
         setPlan(generatedPlan);
       } catch (err) {
-        console.error('Error generating daily plan:', err);
+        logger.error('Error generating daily plan:', err);
         setError('Unable to generate your daily plan');
       } finally {
         setLoading(false);

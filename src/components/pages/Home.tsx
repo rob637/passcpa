@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
   BookOpen,
@@ -111,7 +112,7 @@ const Home = () => {
         );
         setReadinessData(readiness);
       } catch (error) {
-        console.error('Error loading home data:', error);
+        logger.error('Error loading home data:', error);
       } finally {
         setLoading(false);
       }
@@ -141,7 +142,7 @@ const Home = () => {
         await refreshStats();
       }
     } catch (error) {
-      console.error('Error changing section:', error);
+      logger.error('Error changing section:', error);
       // Revert on error
       setActiveSection(profile?.examSection || 'FAR');
     } finally {

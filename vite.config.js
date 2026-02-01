@@ -7,9 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt', // Don't auto-refresh - let user decide when to update
       devOptions: {
-        enabled: true // Enable PWA in development for testing
+        enabled: false // Disable PWA in development to avoid IndexedDB issues
       },
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
@@ -60,6 +60,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        skipWaiting: false, // Don't auto-activate new service worker during exam!
+        clientsClaim: false, // Let user control when to update
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           // Cache questions and lessons data including TBS
           {

@@ -56,9 +56,11 @@ export const getAllLessons = (): Lesson[] => {
   return [...(LESSONS.prep || []), ...LESSONS.far, ...LESSONS.aud, ...LESSONS.reg, ...(LESSONS.bar || []), ...(LESSONS.isc || []), ...(LESSONS.tcp || []), ...(LESSONS.bec || [])];
 };
 
-// Get lessons by section
+// Get lessons by section (sorted by order)
 export const getLessonsBySection = (section: string): Lesson[] => {
-  return LESSONS[section.toLowerCase()] || [];
+  const lessons = LESSONS[section.toLowerCase()] || [];
+  // Sort by order to ensure correct sequence
+  return [...lessons].sort((a, b) => (a.order || 0) - (b.order || 0));
 };
 
 // Get lesson by ID

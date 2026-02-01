@@ -4,14 +4,6 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
-import {
-  uploadAllQuestions,
-  uploadSectionQuestions,
-  deleteAllQuestions,
-  deleteSectionQuestions,
-  getFirestoreQuestionCount,
-} from '../../../data/services/bulkUpload';
-import type { Question, ExamSection } from '../../../types';
 
 // Dynamic imports for large question data to reduce bundle size
 const loadQuestionData = () => import('../../../data/questions');
@@ -60,17 +52,6 @@ interface LocalStats {
   topics: number;
 }
 
-interface FirestoreStats {
-  total: number;
-  bySection: Record<string, number>;
-}
-
-interface SectionConfig {
-  section: string;
-  questions: Question[];
-  color: string;
-}
-
 // ============================================================================
 // Constants
 // ============================================================================
@@ -81,8 +62,6 @@ const ADMIN_EMAILS: string[] = [
   // Add your email here
 ];
 
-const EXAM_SECTIONS: string[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
-
 // ============================================================================
 // Component
 // ============================================================================
@@ -91,14 +70,10 @@ const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>('content');
   const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
   const [message, setMessage] = useState<string>('');
   const [localStats, setLocalStats] = useState<LocalStats | null>(null);
-  const [firestoreStats, setFirestoreStats] = useState<FirestoreStats | null>(null);
   const [logs, setLogs] = useState<LogEntry[]>([]);
-  const [sectionConfigs, setSectionConfigs] = useState<SectionConfig[] | null>(null);
-  const [isLoadingData, setIsLoadingData] = useState(true);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
@@ -175,148 +150,23 @@ const AdminCMS: React.FC = () => {
     }
   }, [activeTab, loadUsers, loadSystemErrors]);
 
-  // Load question data dynamically
+  // Load question stats dynamically
   useEffect(() => {
     const loadData = async () => {
       try {
         const questionModule = await loadQuestionData();
-        const { getQuestionStats, REG_ALL, FAR_ALL, AUD_ALL, BAR_ALL, ISC_ALL, TCP_ALL, BEC_ALL } = questionModule;
-        
+        const { getQuestionStats } = questionModule;
         setLocalStats(getQuestionStats());
-        setSectionConfigs([
-          { section: 'REG', questions: REG_ALL, color: 'green' },
-          { section: 'FAR', questions: FAR_ALL, color: 'purple' },
-          { section: 'AUD', questions: AUD_ALL, color: 'yellow' },
-          { section: 'BAR', questions: BAR_ALL, color: 'blue' },
-          { section: 'ISC', questions: ISC_ALL, color: 'indigo' },
-          { section: 'TCP', questions: TCP_ALL, color: 'pink' },
-          { section: 'BEC', questions: BEC_ALL, color: 'cyan' },
-        ]);
       } catch (error) {
         logger.error('Error loading question data:', error);
-      } finally {
-        setIsLoadingData(false);
       }
     };
     loadData();
   }, []);
 
-  useEffect(() => {
-    // Load Firestore stats on mount
-    loadFirestoreStats();
-  }, []);
-
-  const loadFirestoreStats = async (): Promise<void> => {
-    try {
-      const stats = await getFirestoreQuestionCount();
-      setFirestoreStats(stats);
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      addLog('Error loading Firestore stats: ' + errorMessage, 'error');
-    }
-  };
-
   const addLog = (msg: string, type: LogType = 'info'): void => {
     const timestamp = new Date().toLocaleTimeString();
     setLogs((prev) => [...prev, { msg, type, timestamp }]);
-  };
-
-  const handleUploadAll = async (): Promise<void> => {
-    if (!window.confirm('⚠️ WARNING: This will OVERWRITE all questions in Firestore with the data from the code files. Any manual edits made in the CMS will be lost. Continue?')) return;
-
-    setIsUploading(true);
-    setProgress(0);
-    setMessage('');
-    addLog('Starting bulk upload of all questions...', 'info');
-
-    try {
-      const result = await uploadAllQuestions((percent, msg) => {
-        setProgress(percent);
-        setMessage(msg);
-      });
-
-      addLog(`Upload complete: ${result.success} succeeded, ${result.failed} failed`, 'success');
-      if (result.errors.length > 0) {
-        result.errors.forEach((err) => addLog(err, 'error'));
-      }
-
-      await loadFirestoreStats();
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      addLog('Upload failed: ' + errorMessage, 'error');
-    } finally {
-      setIsUploading(false);
-    }
-  };
-
-  const handleUploadSection = async (section: string, questions: Question[]): Promise<void> => {
-    if (!window.confirm(`Upload ${questions.length} ${section} questions?`)) return;
-
-    setIsUploading(true);
-    setProgress(0);
-    addLog(`Starting upload of ${section} questions...`, 'info');
-
-    try {
-      const result = await uploadSectionQuestions(section as ExamSection, questions, (percent, msg) => {
-        setProgress(percent);
-        setMessage(msg);
-      });
-
-      addLog(`${section} upload complete: ${result.success} succeeded`, 'success');
-      await loadFirestoreStats();
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      addLog(`${section} upload failed: ` + errorMessage, 'error');
-    } finally {
-      setIsUploading(false);
-    }
-  };
-
-  const handleDeleteAll = async (): Promise<void> => {
-    if (!window.confirm('⚠️ This will DELETE ALL questions from Firestore. Are you sure?')) return;
-    if (!window.confirm('This action cannot be undone. Type DELETE to confirm.')) return;
-
-    setIsDeleting(true);
-    setProgress(0);
-    addLog('Starting deletion of all questions...', 'warning');
-
-    try {
-      const result = await deleteAllQuestions((percent, msg) => {
-        setProgress(percent);
-        setMessage(msg);
-      });
-
-      addLog(`Deleted ${result.deleted} questions`, 'success');
-      await loadFirestoreStats();
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      addLog('Delete failed: ' + errorMessage, 'error');
-    } finally {
-      setIsDeleting(false);
-    }
-  };
-
-  const handleDeleteSection = async (section: string): Promise<void> => {
-    if (!window.confirm(`Delete all ${section} questions from Firestore?`)) return;
-
-    setIsDeleting(true);
-    setProgress(0);
-    addLog(`Deleting ${section} questions...`, 'warning');
-
-    try {
-      const result = await deleteSectionQuestions(section as ExamSection, (percent, msg) => {
-        setProgress(percent);
-        setMessage(msg);
-      });
-
-      addLog(`Deleted ${result.deleted} ${section} questions`, 'success');
-      await loadFirestoreStats();
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      addLog(`Delete ${section} failed: ` + errorMessage, 'error');
-    } finally {
-      setIsDeleting(false);
-    }
   };
 
   // ============================================================================
@@ -398,88 +248,61 @@ const AdminCMS: React.FC = () => {
                   <span>📚</span> View Lessons
                 </Link>
                 <Link
-                  to="/admin/wc"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                >
-                  <span>✍️</span> Edit WC
-                </Link>
-                <Link
                   to="/admin/tbs"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
                   <span>📊</span> View TBS
                 </Link>
+                <Link
+                  to="/admin/wc"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                >
+                  <span>✍️</span> View WC
+                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">BEC</span>
+                </Link>
               </div>
             </div>
 
-            {/* Stats Cards - Questions */}
-            <h3 className="text-lg font-semibold text-gray-800">📋 Questions</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Local Stats */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span className="text-xl">📦</span> Local Question Bank
-                </h3>
-                {localStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-blue-600">
-                      {localStats.total} questions
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(localStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-sm text-gray-500 mt-2">
-                      {localStats.topics} topics • {localStats.byDifficulty.easy} easy /{' '}
-                      {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
-                    </div>
-                  </div>
-                ) : (
-                  <div className="animate-pulse">Loading...</div>
-                )}
-              </div>
-
-              {/* Firestore Stats */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <span className="text-xl">🔥</span> Firestore Database
-                </h3>
-                {firestoreStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-orange-500">
-                      {firestoreStats.total} questions
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(firestoreStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <button
-                      onClick={loadFirestoreStats}
-                      className="text-sm text-blue-600 hover:underline"
-                    >
-                      Refresh stats
-                    </button>
-                  </div>
-                ) : (
-                  <div className="animate-pulse">Loading...</div>
-                )}
-              </div>
-            </div>
-
-            {/* Upload Controls */}
+            {/* Local Question Bank Stats */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Upload Questions</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <span className="text-xl">📦</span> Local Question Bank
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">
+                Questions are loaded from local TypeScript files for fast, offline-capable access.
+              </p>
+              {localStats ? (
+                <div className="space-y-3">
+                  <div className="text-3xl font-bold text-blue-600">
+                    {localStats.total} questions
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+                    {Object.entries(localStats.bySection).map(([section, count]) => (
+                      <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <span className="font-medium">{section}</span>
+                        <span className="text-gray-600">{count}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-sm text-gray-500 mt-2">
+                    {localStats.topics} topics • {localStats.byDifficulty.easy} easy /{' '}
+                    {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
+                  </div>
+                </div>
+              ) : (
+                <div className="animate-pulse">Loading...</div>
+              )}
+            </div>
+
+            {/* Upload Content to Firestore */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Upload Content</h3>
+              <p className="text-sm text-gray-500 mb-4">
+                Lessons, TBS, and WC tasks are stored in Firestore. Use these to sync content.
+              </p>
 
               {/* Progress Bar */}
-              {(isUploading || isDeleting) && (
+              {isUploading && (
                 <div className="mb-4">
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-600">{message}</span>
@@ -487,106 +310,19 @@ const AdminCMS: React.FC = () => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className={`h-2 rounded-full transition-all duration-300 ${isDeleting ? 'bg-red-500' : 'bg-blue-600'}`}
+                      className="h-2 rounded-full transition-all duration-300 bg-blue-600"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
                 </div>
               )}
 
-              <div className="space-y-4">
-                {/* Upload All Questions */}
-                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Upload All Questions</h4>
-                    <p className="text-sm text-gray-600">
-                      Upload entire question bank to Firestore
-                    </p>
-                  </div>
-                  <button
-                    onClick={handleUploadAll}
-                    disabled={isUploading || isDeleting}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    {isUploading ? (
-                      <>
-                        <span className="animate-spin">⏳</span> Uploading...
-                      </>
-                    ) : (
-                      <>
-                        <span>📤</span> Upload Questions
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                {/* Upload TBS */}
-                <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Upload All TBS Simulations</h4>
-                    <p className="text-sm text-gray-600">
-                      Upload Task-Based Simulations for all sections (FAR, AUD, REG, BEC, BAR, ISC, TCP)
-                    </p>
-                  </div>
-                  <button
-                    onClick={async () => {
-                      if (!window.confirm('Upload all TBS simulations to Firestore?')) return;
-                      setIsUploading(true);
-                      addLog('Starting TBS upload...', 'info');
-                      try {
-                        const { uploadTBS } = await import('../../../services/contentUpload');
-                        const result = await uploadTBS((msg) => addLog(msg, 'info'));
-                        addLog(`TBS upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
-                      } catch (error) {
-                        addLog('TBS upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
-                      } finally {
-                        setIsUploading(false);
-                      }
-                    }}
-                    disabled={isUploading || isDeleting}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    <span>📋</span> Upload TBS
-                  </button>
-                </div>
-
-                {/* Upload Written Communications */}
+              <div className="space-y-3">
+                {/* Upload Lessons */}
                 <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
                   <div>
-                    <h4 className="font-medium text-gray-900">Upload Written Communications</h4>
-                    <p className="text-sm text-gray-600">
-                      Upload WC tasks for all sections
-                    </p>
-                  </div>
-                  <button
-                    onClick={async () => {
-                      if (!window.confirm('Upload all Written Communication tasks to Firestore?')) return;
-                      setIsUploading(true);
-                      addLog('Starting WC upload...', 'info');
-                      try {
-                        const { uploadWC } = await import('../../../services/contentUpload');
-                        const result = await uploadWC((msg) => addLog(msg, 'info'));
-                        addLog(`WC upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
-                      } catch (error) {
-                        addLog('WC upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
-                      } finally {
-                        setIsUploading(false);
-                      }
-                    }}
-                    disabled={isUploading || isDeleting}
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    <span>✍️</span> Upload WC
-                  </button>
-                </div>
-
-                {/* Upload Lessons */}
-                <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Upload All Lessons</h4>
-                    <p className="text-sm text-gray-600">
-                      Upload lesson content for all sections
-                    </p>
+                    <h4 className="font-medium text-gray-900">Lessons</h4>
+                    <p className="text-sm text-gray-600">Upload lesson content to Firestore</p>
                   </div>
                   <button
                     onClick={async () => {
@@ -603,80 +339,75 @@ const AdminCMS: React.FC = () => {
                         setIsUploading(false);
                       }
                     }}
-                    disabled={isUploading || isDeleting}
-                    className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    disabled={isUploading}
+                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
-                    <span>📚</span> Upload Lessons
+                    <span>📚</span> Upload
                   </button>
                 </div>
 
-                {/* Section Uploads */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {isLoadingData ? (
-                    <div className="col-span-2 text-center py-8">
-                      <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                      <p className="text-gray-500">Loading question data...</p>
-                    </div>
-                  ) : sectionConfigs ? (
-                    sectionConfigs.map(({ section, questions, color }) => (
-                    <div key={section} className={`p-4 bg-${color}-50 rounded-lg`}>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-medium text-gray-900">{section}</h4>
-                          <p className="text-sm text-gray-600">{questions.length} questions</p>
-                        </div>
-                        <div className="flex gap-2">
-                          <button
-                            onClick={() => handleUploadSection(section, questions)}
-                            disabled={isUploading || isDeleting}
-                            className="px-3 py-1.5 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 text-sm"
-                          >
-                            Upload
-                          </button>
-                          <button
-                            onClick={() => handleDeleteSection(section)}
-                            disabled={isUploading || isDeleting}
-                            className="px-3 py-1.5 bg-white border border-red-300 text-red-600 rounded-lg hover:bg-red-50 disabled:opacity-50 text-sm"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    ))
-                  ) : (
-                    <div className="col-span-2 text-center py-4 text-red-500">
-                      Failed to load question data
-                    </div>
-                  )}
+                {/* Upload TBS */}
+                <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
+                  <div>
+                    <h4 className="font-medium text-gray-900">TBS Simulations</h4>
+                    <p className="text-sm text-gray-600">Upload Task-Based Simulations</p>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (!window.confirm('Upload all TBS simulations to Firestore?')) return;
+                      setIsUploading(true);
+                      addLog('Starting TBS upload...', 'info');
+                      try {
+                        const { uploadTBS } = await import('../../../services/contentUpload');
+                        const result = await uploadTBS((msg) => addLog(msg, 'info'));
+                        addLog(`TBS upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
+                      } catch (error) {
+                        addLog('TBS upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      } finally {
+                        setIsUploading(false);
+                      }
+                    }}
+                    disabled={isUploading}
+                    className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    <span>📊</span> Upload
+                  </button>
                 </div>
-              </div>
-            </div>
 
-            {/* Danger Zone */}
-            <div className="bg-red-50 rounded-xl p-6 border border-red-200">
-              <h3 className="text-lg font-semibold text-red-900 mb-4">⚠️ Danger Zone</h3>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-medium text-red-800">Delete All Questions</h4>
-                  <p className="text-sm text-red-600">
-                    Remove all questions from Firestore database
-                  </p>
+                {/* Upload WC */}
+                <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Written Communications</h4>
+                    <p className="text-sm text-gray-600">Upload WC tasks for BEC (2025 Blueprint)</p>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (!window.confirm('Upload all Written Communication tasks to Firestore?')) return;
+                      setIsUploading(true);
+                      addLog('Starting WC upload...', 'info');
+                      try {
+                        const { uploadWC } = await import('../../../services/contentUpload');
+                        const result = await uploadWC((msg) => addLog(msg, 'info'));
+                        addLog(`WC upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
+                      } catch (error) {
+                        addLog('WC upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      } finally {
+                        setIsUploading(false);
+                      }
+                    }}
+                    disabled={isUploading}
+                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    <span>✍️</span> Upload
+                  </button>
                 </div>
-                <button
-                  onClick={handleDeleteAll}
-                  disabled={isUploading || isDeleting}
-                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isDeleting ? 'Deleting...' : 'Delete All'}
-                </button>
               </div>
             </div>
 
             {/* Activity Log */}
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Activity Log</h3>
-              <div className="bg-gray-900 rounded-lg p-4 h-64 overflow-y-auto font-mono text-sm">
+              <div className="bg-gray-900 rounded-lg p-4 h-48 overflow-y-auto font-mono text-sm">
                 {logs.length === 0 ? (
                   <p className="text-gray-500">No activity yet...</p>
                 ) : (

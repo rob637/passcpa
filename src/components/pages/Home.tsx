@@ -16,7 +16,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS, EXAM_SECTIONS, isBefore2026Blueprint } from '../../config/examConfig';
+import { CPA_SECTIONS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
@@ -171,87 +171,101 @@ const Home = () => {
               </button>
             </div>
             <div className="p-4 space-y-2 overflow-y-auto">
-              {/* Core Sections */}
-              <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Core Sections (Required)</div>
-              {EXAM_SECTIONS.filter(s => ['AUD', 'FAR', 'REG'].includes(s)).map((sectionKey) => {
-                const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
-                const isSelected = sectionKey === activeSection;
+              {(() => {
+                // Determine available sections based on user's exam date
+                const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+                const userExamDate = examDate ? new Date(examDate) : new Date();
+                const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
+                const disciplineSections = is2025Blueprint
+                  ? ['BEC']
+                  : DISCIPLINE_SECTIONS_2026;
+                
                 return (
-                  <button
-                    key={sectionKey}
-                    onClick={() => handleSectionChange(sectionKey)}
-                    disabled={changingSection}
-                    className={clsx(
-                      'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
-                      isSelected
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                        : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
-                    )}
-                  >
-                    <div 
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                      style={{ backgroundColor: section?.color || '#6366f1' }}
-                    >
-                      {section?.shortName || sectionKey}
+                  <>
+                    {/* Core Sections */}
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Core Sections (Required)</div>
+                    {CORE_SECTIONS.map((sectionKey) => {
+                      const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
+                      const isSelected = sectionKey === activeSection;
+                      return (
+                        <button
+                          key={sectionKey}
+                          onClick={() => handleSectionChange(sectionKey)}
+                          disabled={changingSection}
+                          className={clsx(
+                            'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                            isSelected
+                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                              : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                          )}
+                        >
+                          <div 
+                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                            style={{ backgroundColor: section?.color || '#6366f1' }}
+                          >
+                            {section?.shortName || sectionKey}
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-slate-900 dark:text-slate-100">
+                              {section?.name || sectionKey}
+                            </div>
+                            <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                              {section?.description?.split('.')[0] || ''}
+                            </div>
+                          </div>
+                          {isSelected && (
+                            <Check className="w-5 h-5 text-primary-600" />
+                          )}
+                        </button>
+                      );
+                    })}
+                    
+                    {/* Discipline Sections */}
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-4 mb-2">
+                      Discipline (Choose One)
+                      {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
                     </div>
-                    <div className="flex-1">
-                      <div className="font-semibold text-slate-900 dark:text-slate-100">
-                        {section?.name || sectionKey}
-                      </div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
-                        {section?.description?.split('.')[0] || ''}
-                      </div>
-                    </div>
-                    {isSelected && (
-                      <Check className="w-5 h-5 text-primary-600" />
-                    )}
-                  </button>
+                    {disciplineSections.map((sectionKey) => {
+                      const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
+                      const isSelected = sectionKey === activeSection;
+                      const isBEC = sectionKey === 'BEC';
+                      return (
+                        <button
+                          key={sectionKey}
+                          onClick={() => handleSectionChange(sectionKey)}
+                          disabled={changingSection}
+                          className={clsx(
+                            'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                            isSelected
+                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                              : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
+                            isBEC && 'border-amber-300 dark:border-amber-700'
+                          )}
+                        >
+                          <div 
+                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                            style={{ backgroundColor: section?.color || '#6366f1' }}
+                          >
+                            {section?.shortName || sectionKey}
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                              {section?.name || sectionKey}
+                              {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
+                            </div>
+                            <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                              {section?.description?.split('.')[0] || ''}
+                            </div>
+                          </div>
+                          {isSelected && (
+                            <Check className="w-5 h-5 text-primary-600" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </>
                 );
-              })}
-              
-              {/* Discipline Sections */}
-              <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-4 mb-2">
-                Discipline (Choose One)
-                {isBefore2026Blueprint() && <span className="text-amber-600 ml-1">• BEC valid until June 30</span>}
-              </div>
-              {EXAM_SECTIONS.filter(s => !['AUD', 'FAR', 'REG'].includes(s)).map((sectionKey) => {
-                const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
-                const isSelected = sectionKey === activeSection;
-                const isBEC = sectionKey === 'BEC';
-                return (
-                  <button
-                    key={sectionKey}
-                    onClick={() => handleSectionChange(sectionKey)}
-                    disabled={changingSection}
-                    className={clsx(
-                      'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
-                      isSelected
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                        : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
-                      isBEC && 'border-amber-300 dark:border-amber-700'
-                    )}
-                  >
-                    <div 
-                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                      style={{ backgroundColor: section?.color || '#6366f1' }}
-                    >
-                      {section?.shortName || sectionKey}
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                        {section?.name || sectionKey}
-                        {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
-                      </div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
-                        {section?.description?.split('.')[0] || ''}
-                      </div>
-                    </div>
-                    {isSelected && (
-                      <Check className="w-5 h-5 text-primary-600" />
-                    )}
-                  </button>
-                );
-              })}
+              })()}
             </div>
           </div>
         </div>

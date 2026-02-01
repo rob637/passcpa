@@ -3521,5 +3521,768 @@ export const barLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // BAR: ADDITIONAL TECHNICAL ACCOUNTING TOPICS
+  // =============================================
+  {
+    id: 'BAR-IV-001',
+    section: 'BAR',
+    title: "Fair Value Measurements (ASC 820)",
+    description: "Master the fair value hierarchy and measurement techniques",
+    order: 56,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Fair Value"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Fair value measurements are everywhere in financial reporting! From investment securities to impairment testing to business combinations, understanding ASC 820 is critical for BAR success!"
+        },
+        {
+          title: 'Fair Value Definition',
+          type: 'text',
+          content: "**\"Exit price\" in an orderly transaction:**\n\n• Price to SELL an asset (not acquire)\n• Or price to TRANSFER a liability (not settle)\n• In the PRINCIPAL market (or most advantageous)\n• Between MARKET PARTICIPANTS\n• At the MEASUREMENT DATE\n\n**Exit price perspective is key!**"
+        },
+        {
+          title: 'Fair Value Hierarchy',
+          type: 'table',
+          headers: ['Level', 'Inputs', 'Examples', 'Reliability'],
+          rows: [
+            ['Level 1', 'Quoted prices, active markets', 'NYSE stocks, Treasury bonds', 'Most reliable'],
+            ['Level 2', 'Observable inputs', 'Similar assets, yield curves', 'Reliable'],
+            ['Level 3', 'Unobservable inputs', 'DCF models, internal estimates', 'Least reliable']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Fair Value Hierarchy',
+          type: 'callout',
+          content: "**\"1-2-3 Reliability\"**\n\n**Level 1:** Market QUOTES (observable)\n**Level 2:** Market-BASED (adjusted)\n**Level 3:** MODEL-BASED (unobservable)\n\n**Classify by LOWEST level of significant input!**"
+        },
+        {
+          title: 'Valuation Techniques',
+          type: 'text',
+          content: "**Three approaches:**\n\n1. **Market approach**\n   • Comparable transactions\n   • Quoted prices adjusted\n\n2. **Income approach**\n   • Discounted cash flows\n   • Option pricing models\n\n3. **Cost approach**\n   • Replacement cost\n   • Less depreciation\n\n**Use technique appropriate to circumstances; be consistent**"
+        },
+        {
+          title: 'Highest and Best Use',
+          type: 'text',
+          content: "**For nonfinancial assets:**\n\n**Fair value assumes highest and best use:**\n• Physically possible\n• Legally permissible\n• Financially feasible\n\n**May differ from current use**\n\n**Example:** Land valued as development site, not parking lot"
+        },
+        {
+          title: 'Disclosure Requirements',
+          type: 'text',
+          content: "**Required disclosures:**\n\n• Fair value by hierarchy level\n• Transfers between levels\n• Valuation techniques and inputs\n• Reconciliation of Level 3 (roll forward)\n• Sensitivity analysis for Level 3\n\n**Level 3 requires most disclosure**"
+        },
+        {
+          title: '⚠️ Exam Trap: Level Classification',
+          type: 'warning',
+          content: "**Classify by SIGNIFICANT inputs:**\n\n**If using multiple inputs:**\n• Use LOWEST level for classification\n• Example: DCF with market rate (L2) but internal projections (L3) = Level 3\n\n**Don't confuse:**\n• L2 adjusted prices ≠ L1\n• Observable inputs may still be L2"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Fair value: Exit price in orderly transaction",
+            "Level 1: Quoted prices in active markets (most reliable)",
+            "Level 2: Observable inputs other than quoted prices",
+            "Level 3: Unobservable inputs (least reliable, most disclosure)",
+            "Use market, income, or cost approach",
+            "Nonfinancial assets: Highest and best use",
+            "Classify by lowest level of significant input"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-002',
+    section: 'BAR',
+    title: "Segment Reporting (ASC 280)",
+    description: "Understand operating segment identification and disclosure",
+    order: 57,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Disclosures"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Segment reporting provides users with disaggregated information! Understanding how to identify reportable segments and what disclosures are required is key for BAR. The management approach is central!"
+        },
+        {
+          title: 'Management Approach',
+          type: 'text',
+          content: "**Segment information based on:**\n\n• How management organizes internally\n• Internal reports to CODM\n• Same basis as internal reporting\n\n**CODM = Chief Operating Decision Maker**\n• May be CEO, COO, or group\n• Person who allocates resources\n• Assesses segment performance"
+        },
+        {
+          title: 'Operating Segment Definition',
+          type: 'text',
+          content: "**All three criteria:**\n\n1. **Engages in business activities** that earn revenues and incur expenses\n\n2. **Operating results regularly reviewed** by CODM for resource allocation and performance assessment\n\n3. **Discrete financial information available** for the component\n\n**Not segments:** Corporate HQ, pension funds"
+        },
+        {
+          title: 'Quantitative Thresholds',
+          type: 'table',
+          headers: ['Test', 'Threshold', 'Calculation'],
+          rows: [
+            ['Revenue', '≥10%', 'External + Intersegment revenue'],
+            ['Profit/Loss', '≥10%', 'Greater of absolute profit or loss'],
+            ['Assets', '≥10%', 'Combined segment assets'],
+            ['75% Test', '≥75%', 'External revenue in reportable segments']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Segment Tests',
+          type: 'callout',
+          content: "**\"10-10-10, then 75\"**\n\n• **10%** of revenue\n• **10%** of profit OR loss (absolute)\n• **10%** of assets\n\n**Meet ONE = Reportable segment**\n\n**Then check:**\n• 75% of external revenue covered?\n• If not, add more segments"
+        },
+        {
+          title: 'Aggregation Criteria',
+          type: 'text',
+          content: "**May combine segments if SIMILAR:**\n\n• Nature of products/services\n• Nature of production processes\n• Type or class of customer\n• Distribution methods\n• Regulatory environment (if applicable)\n\n**ALL criteria must be met to aggregate**\n\n**Cannot aggregate just to avoid disclosure!**"
+        },
+        {
+          title: 'Required Disclosures',
+          type: 'text',
+          content: "**For each reportable segment:**\n\n• Segment revenue (external and intersegment)\n• Segment profit or loss (CODM measure)\n• Segment assets\n• Interest revenue and expense\n• Depreciation and amortization\n• Material items\n\n**Reconciliation to consolidated totals required**"
+        },
+        {
+          title: '⚠️ Exam Trap: Profit/Loss Test',
+          type: 'warning',
+          content: "**Use GREATER of absolute value:**\n\n**Example:**\n• Segment A: $500 profit\n• Segment B: ($800) loss\n• Segment C: $200 profit\n\n**Test base:** $800 (greater absolute)\n**10% threshold:** $80\n\n• A: Reportable ($500 > $80)\n• B: Reportable ($800 > $80)\n• C: Reportable ($200 > $80)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Management approach: Based on internal reporting to CODM",
+            "Operating segment: Three criteria (activity, review, discrete info)",
+            "Reportable if ≥10% of revenue, profit/loss, OR assets",
+            "75% test: Ensure sufficient external revenue covered",
+            "May aggregate similar segments (all criteria met)",
+            "Reconcile segment to consolidated totals",
+            "Profit/loss test: Use greater of absolute values"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-003',
+    section: 'BAR',
+    title: "Earnings Per Share: Complex Structures",
+    description: "Master EPS with convertibles, options, and contingent shares",
+    order: 58,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "EPS"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "EPS is one of the most scrutinized metrics! Complex securities like convertible debt and options require careful analysis. Understanding dilution and the treasury stock method is essential for BAR!"
+        },
+        {
+          title: 'EPS Framework',
+          type: 'text',
+          content: "**Two measures required:**\n\n**Basic EPS:**\nNet income − Preferred dividends / Weighted-average common shares\n\n**Diluted EPS:**\nAdjusted income / Adjusted shares\n(Include dilutive potential common shares)"
+        },
+        {
+          title: 'Treasury Stock Method',
+          type: 'table',
+          headers: ['Step', 'Options/Warrants', 'Notes'],
+          rows: [
+            ['1', 'Assume exercise at beginning', 'Or grant date if later'],
+            ['2', 'Proceeds = Exercise price × Options', 'Cash received'],
+            ['3', 'Repurchase shares at average price', 'Treasury stock method'],
+            ['4', 'Net shares = Issued − Repurchased', 'Dilutive effect']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Treasury Stock Method',
+          type: 'callout',
+          content: "**\"Exercise and Buy Back\"**\n\n1. Assume options exercised → Shares issued\n2. Use proceeds to buy back at market\n3. Difference = Dilution\n\n**Example:**\n• 1,000 options at $20\n• Average market price: $50\n• Shares issued: 1,000\n• Shares repurchased: $20K/$50 = 400\n• **Dilution: 600 shares**"
+        },
+        {
+          title: 'If-Converted Method',
+          type: 'text',
+          content: "**For convertible securities:**\n\n**Numerator adjustment:**\n• Add back interest (net of tax) for debt\n• Add back preferred dividends\n\n**Denominator adjustment:**\n• Add shares from conversion\n\n**Include ONLY if dilutive!**\n\n**Test:** Does including it reduce EPS?"
+        },
+        {
+          title: 'Antidilution Rules',
+          type: 'text',
+          content: "**Exclude if ANTIDILUTIVE:**\n\n**Options:** Antidilutive if exercise price > average market price\n\n**Convertibles:** Antidilutive if incremental EPS > Basic EPS\n\n**Order of inclusion:**\n1. Options/warrants (always first)\n2. Then convertibles in order of dilutive effect\n3. Stop when any security is antidilutive"
+        },
+        {
+          title: 'Contingently Issuable Shares',
+          type: 'text',
+          content: "**Include in diluted EPS if:**\n\n• Contingency conditions are MET at period end, AND\n• Issuance would be dilutive\n\n**Examples:**\n• Earnout shares (if target met)\n• Contingent acquisition consideration\n\n**If not met: Disclose but don't include**"
+        },
+        {
+          title: '⚠️ Exam Trap: Year-to-Date Calculations',
+          type: 'warning',
+          content: "**Diluted EPS must be recalculated:**\n\n• Don't just average quarterly EPS\n• Recalculate using YTD figures\n• Securities may be dilutive in YTD but not quarterly\n\n**Stock dividends/splits:**\n• Retroactively adjust ALL periods\n• As if split occurred at beginning"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Basic EPS: Net income to common / Weighted shares",
+            "Treasury stock method: Options at proceeds used to repurchase",
+            "If-converted: Add back interest/dividends, add shares",
+            "Include only if DILUTIVE (reduces EPS)",
+            "Options antidilutive if exercise price > market",
+            "Order: Options first, then convertibles by dilutiveness",
+            "Stock splits: Retroactively adjust all periods"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-004',
+    section: 'BAR',
+    title: "Business Combinations (ASC 805)",
+    description: "Master acquisition accounting and purchase price allocation",
+    order: 59,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "M&A"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Business combinations are major events requiring complex accounting! Understanding the acquisition method, purchase price allocation, and goodwill is essential for BAR. This is heavily tested!"
+        },
+        {
+          title: 'Acquisition Method Steps',
+          type: 'text',
+          content: "**Required steps:**\n\n1. **Identify the acquirer** (obtains control)\n2. **Determine acquisition date** (obtains control)\n3. **Measure consideration transferred** (fair value)\n4. **Recognize and measure identifiable assets/liabilities** (fair value)\n5. **Recognize goodwill or bargain purchase gain**"
+        },
+        {
+          title: 'Consideration Transferred',
+          type: 'table',
+          headers: ['Component', 'Measurement', 'Notes'],
+          rows: [
+            ['Cash', 'Face value', 'Date paid'],
+            ['Stock issued', 'Fair value', 'Acquisition date price'],
+            ['Contingent consideration', 'Fair value', 'Probability-weighted'],
+            ['Previously held interest', 'Fair value', 'Step acquisition'],
+            ['Assumed debt', 'Fair value', 'Part of net assets']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: What Gets Recognized',
+          type: 'callout',
+          content: "**\"Fair Value Everything\"**\n\n**Record at FV on acquisition date:**\n• Tangible assets\n• Intangible assets (even if not on books)\n• Liabilities assumed\n• Contingent liabilities\n• Noncontrolling interest\n\n**Acquiree's book values are IRRELEVANT!**"
+        },
+        {
+          title: 'Intangible Asset Recognition',
+          type: 'text',
+          content: "**Recognize separately from goodwill if:**\n\n**Contractual-legal criterion:**\n• Arises from contract or legal rights\n\n**OR Separability criterion:**\n• Can be sold, transferred, licensed, rented, exchanged\n\n**Examples:**\n• Customer relationships\n• Trade names\n• Technology\n• Noncompete agreements"
+        },
+        {
+          title: 'Goodwill Calculation',
+          type: 'text',
+          content: "**Goodwill = Consideration + NCI − Net identifiable assets at FV**\n\n**Components:**\n• Consideration transferred\n• Noncontrolling interest (if any)\n• Previously held interest (step acquisition)\n• MINUS fair value of identifiable net assets\n\n**If negative = Bargain purchase GAIN (recognize immediately)**"
+        },
+        {
+          title: 'Acquisition Costs',
+          type: 'text',
+          content: "**Expense as incurred:**\n• Legal fees\n• Finder's fees\n• Advisory fees\n• Due diligence costs\n\n**NOT part of consideration!**\n\n**Exception:** Debt/equity issuance costs follow respective standards (contra debt, equity reduction)"
+        },
+        {
+          title: '⚠️ Exam Trap: Bargain Purchase',
+          type: 'warning',
+          content: "**When FV of net assets > Consideration:**\n\n**Required steps:**\n1. Reassess identification and measurement\n2. Still negative? Recognize GAIN in P&L\n\n**Unusual—usually indicates:**\n• Distressed seller\n• Private company complexities\n• Measurement error\n\n**Verify before recording gain!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Acquisition method: All combinations (no pooling)",
+            "Measure all assets/liabilities at acquisition-date fair value",
+            "Intangibles: Recognize if contractual-legal or separable",
+            "Goodwill: Consideration + NCI − Fair value of net assets",
+            "Bargain purchase: Gain recognized immediately",
+            "Acquisition costs: Expense as incurred (not capitalized)",
+            "Contingent consideration: Fair value at acquisition date"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-005',
+    section: 'BAR',
+    title: "Impairment Testing (ASC 350/360)",
+    description: "Understand goodwill and long-lived asset impairment",
+    order: 60,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Impairment"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-D-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Impairment charges can devastate earnings! Understanding when and how to test goodwill, intangibles, and long-lived assets is critical. Different rules apply to different asset types!"
+        },
+        {
+          title: 'Impairment Framework',
+          type: 'table',
+          headers: ['Asset Type', 'Standard', 'Frequency', 'Test Approach'],
+          rows: [
+            ['Goodwill', 'ASC 350', 'Annual + triggers', 'One-step (FV vs carrying)'],
+            ['Indefinite-life intangibles', 'ASC 350', 'Annual + triggers', 'FV vs carrying'],
+            ['Finite-life intangibles', 'ASC 360', 'Triggers only', 'Recoverability then FV'],
+            ['PP&E', 'ASC 360', 'Triggers only', 'Recoverability then FV']
+          ]
+        },
+        {
+          title: 'Goodwill Impairment (Post-2017)',
+          type: 'text',
+          content: "**Simplified one-step test:**\n\n1. Compare fair value of reporting unit to carrying value\n2. If FV < Carrying: Impairment = difference\n3. Limited to goodwill amount (can't go negative)\n\n**No longer calculate implied fair value of goodwill!**\n\n**Qualitative option:** May skip quantitative if \"more likely than not\" FV > Carrying"
+        },
+        {
+          title: '🧠 Memory Aid: Long-Lived Assets (360)',
+          type: 'callout',
+          content: "**\"Two-Step Process\"**\n\n**Step 1: Recoverability Test**\n• Undiscounted cash flows vs Carrying value\n• If cash flows ≥ carrying → NO impairment, STOP\n\n**Step 2: Measurement (only if Step 1 fails)**\n• Impairment = Carrying − Fair value\n\n**Undiscounted for step 1, Fair value for step 2!**"
+        },
+        {
+          title: 'Triggering Events',
+          type: 'text',
+          content: "**Indicators requiring impairment testing:**\n\n• Significant decline in market value\n• Adverse changes in business climate\n• Regulatory changes\n• Significant cost overruns\n• Operating cash flow losses\n• Expectation of sale/disposal\n• Entity-specific events\n\n**Goodwill: Test at least annually regardless**"
+        },
+        {
+          title: 'Asset Grouping',
+          type: 'text',
+          content: "**Long-lived assets:**\n• Test at lowest level with identifiable cash flows\n• \"Asset group\" concept\n• Primary asset determines useful life of group\n\n**Goodwill:**\n• Test at reporting unit level\n• Operating segment or one level below\n• Allocate goodwill when segments change"
+        },
+        {
+          title: 'Held for Sale Classification',
+          type: 'text',
+          content: "**When long-lived asset is held for sale:**\n\n• Measure at lower of carrying or FV less cost to sell\n• Stop depreciation\n• Present separately on balance sheet\n• Previously recognized impairment may be recovered\n\n**Criteria:** Available, probable sale, actively marketed, expected within one year"
+        },
+        {
+          title: '⚠️ Exam Trap: Impairment Reversal',
+          type: 'warning',
+          content: "**Under U.S. GAAP:**\n\n**NO reversal for:**\n• Goodwill impairment\n• Indefinite-life intangibles\n• Long-lived assets held and used\n\n**CAN reverse:**\n• Held for sale (up to cumulative loss)\n\n**IFRS allows more reversal—know the difference!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Goodwill: One-step test (FV vs carrying), annual + triggers",
+            "Long-lived assets: Two-step (recoverability, then FV)",
+            "Recoverability uses undiscounted cash flows",
+            "Impairment measurement uses fair value",
+            "Test at lowest level with identifiable cash flows",
+            "Held for sale: Lower of carrying or FV less cost to sell",
+            "U.S. GAAP: Generally no reversal of impairment"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-006',
+    section: 'BAR',
+    title: "Foreign Currency Transactions (ASC 830)",
+    description: "Master foreign currency remeasurement and translation",
+    order: 61,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Foreign Currency"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-E-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Global operations mean foreign currency accounting! Understanding the difference between remeasurement (P&L) and translation (OCI) is essential. This is a classic BAR topic!"
+        },
+        {
+          title: 'Key Concepts',
+          type: 'text',
+          content: "**Functional currency:**\n• Currency of primary economic environment\n• Where entity generates/expends cash\n\n**Reporting currency:**\n• Currency of financial statements\n• Usually parent's functional currency\n\n**The relationship determines the method!**"
+        },
+        {
+          title: 'Two Methods',
+          type: 'table',
+          headers: ['Method', 'When Used', 'Gain/Loss Location'],
+          rows: [
+            ['Remeasurement', 'Books not in functional currency', 'Income statement'],
+            ['Translation', 'Functional → Reporting currency', 'OCI (CTA)'],
+            ['Both may apply', 'If books ≠ functional ≠ reporting', 'Both locations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Rate Selection',
+          type: 'callout',
+          content: "**Remeasurement: \"Monetary = Current\"**\n• Monetary items: Current rate\n• Nonmonetary items: Historical rate\n• Income: Weighted average (or transaction date)\n\n**Translation: \"Current Rate Everything\"**\n• All assets/liabilities: Current rate\n• Equity: Historical rate\n• Income: Weighted average"
+        },
+        {
+          title: 'Remeasurement (Temporal Method)',
+          type: 'text',
+          content: "**When books NOT in functional currency:**\n\n**Current rate:**\n• Cash, receivables, payables (monetary)\n\n**Historical rate:**\n• Inventory, PP&E, intangibles (nonmonetary)\n• Capital stock, APIC\n\n**Gain/loss:** Income statement\n\n**Purpose:** Convert to functional currency"
+        },
+        {
+          title: 'Translation (Current Rate Method)',
+          type: 'text',
+          content: "**When converting TO reporting currency:**\n\n**Current rate:**\n• All assets and liabilities\n\n**Historical rate:**\n• Common stock, APIC\n\n**Weighted average:**\n• Revenue and expense items\n\n**Translation adjustment:** OCI (Cumulative Translation Adjustment)\n\n**\"Plug\" to balance sheet**"
+        },
+        {
+          title: 'Highly Inflationary Economies',
+          type: 'text',
+          content: "**Cumulative inflation ≈ 100% over 3 years:**\n\n• Treat functional currency as REPORTING currency\n• Use remeasurement method\n• Gain/loss in income statement\n• Common examples: Venezuela, Argentina\n\n**IRS rule of thumb: 26%+ annual inflation**"
+        },
+        {
+          title: '⚠️ Exam Trap: CTA in Consolidation',
+          type: 'warning',
+          content: "**When sub is sold/liquidated:**\n\n• Reclassify CTA from OCI to income\n• Part of gain/loss on disposal\n\n**Intracompany transactions:**\n• Eliminate, but timing of rate matters\n• Gains/losses may not fully eliminate\n\n**Intercompany profit elimination uses historical rate**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Functional currency: Primary economic environment",
+            "Remeasurement: Books → Functional (gain/loss in P&L)",
+            "Translation: Functional → Reporting (CTA in OCI)",
+            "Remeasurement: Monetary current, Nonmonetary historical",
+            "Translation: All assets/liabilities current, Equity historical",
+            "Highly inflationary: Use remeasurement method",
+            "CTA reclassified to P&L on disposal"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-007',
+    section: 'BAR',
+    title: "Variable Interest Entities (VIEs)",
+    description: "Understand VIE identification and consolidation requirements",
+    order: 62,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Consolidation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-D-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "VIEs are a critical consolidation topic! Understanding when an entity must consolidate a VIE (even without majority ownership) is essential. Think Enron—this is why VIE rules exist!"
+        },
+        {
+          title: 'What Is a VIE?',
+          type: 'text',
+          content: "**Variable Interest Entity characteristics:**\n\n**Equity at risk is insufficient** to finance activities, OR\n\n**Equity holders lack:**\n• Power to direct significant activities, OR\n• Obligation to absorb expected losses, OR\n• Right to receive expected residual returns\n\n**If any characteristic exists → VIE**"
+        },
+        {
+          title: 'Variable Interests',
+          type: 'table',
+          headers: ['Interest Type', 'Variable?', 'Example'],
+          rows: [
+            ['Equity investment', 'Usually yes', 'Stock ownership'],
+            ['Guarantee', 'Yes', 'Debt guarantee'],
+            ['Subordinated debt', 'Often yes', 'Junior liens'],
+            ['Lease arrangements', 'Sometimes', 'Residual value guarantees'],
+            ['Service contracts', 'Sometimes', 'If absorbing risk']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Primary Beneficiary',
+          type: 'callout',
+          content: "**\"Power and Economics\"**\n\n**Must have BOTH:**\n\n1. **POWER** to direct activities that most significantly impact economic performance\n\n2. **ECONOMICS** - Obligation to absorb losses OR right to receive benefits that could be significant\n\n**Primary beneficiary = Consolidator**"
+        },
+        {
+          title: 'Primary Beneficiary Determination',
+          type: 'text',
+          content: "**Consolidate if PRIMARY BENEFICIARY:**\n\n**Power criterion:**\n• Ability to direct significant activities\n• Through ownership, contracts, or arrangements\n\n**Economics criterion:**\n• Potentially significant losses OR returns\n• Doesn't have to be most significant\n\n**Reassess continuously for triggering events**"
+        },
+        {
+          title: 'Related Party Considerations',
+          type: 'text',
+          content: "**When determining primary beneficiary:**\n\n• Consider interests held by related parties and de facto agents\n• May be single decision maker within group\n• Parent/sub relationships\n• Employees, other parties acting on behalf\n\n**Related parties may tip the balance!**"
+        },
+        {
+          title: 'Disclosures for VIEs',
+          type: 'text',
+          content: "**If consolidating VIE:**\n• Nature of VIE activities\n• How primary beneficiary determined\n• Significant judgments and assumptions\n\n**If significant variable interest but NOT primary beneficiary:**\n• Nature of involvement\n• Maximum exposure to loss\n• Any support provided\n\n**Extensive disclosure required**"
+        },
+        {
+          title: '⚠️ Exam Trap: Voting Interest vs VIE Model',
+          type: 'warning',
+          content: "**Two consolidation models:**\n\n**VIE model (check first):**\n• Is entity a VIE?\n• Who is primary beneficiary?\n\n**Voting interest model (if not VIE):**\n• Traditional >50% ownership\n• Controlling financial interest\n\n**VIE analysis comes FIRST!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "VIE: Insufficient equity at risk OR equity holders lack key rights",
+            "Primary beneficiary: Power + Economics (both required)",
+            "Power: Ability to direct significant activities",
+            "Economics: Obligation for losses or right to returns",
+            "Must reassess at triggering events",
+            "Consider related parties and de facto agents",
+            "VIE model takes precedence over voting interest model"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-008',
+    section: 'BAR',
+    title: "Stock-Based Compensation (ASC 718)",
+    description: "Master accounting for stock options and restricted stock",
+    order: 63,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Compensation"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-A-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Stock compensation is a major expense for many companies! Understanding grant-date fair value, vesting, and modifications is essential. This has significant impacts on earnings and EPS!"
+        },
+        {
+          title: 'Basic Principles',
+          type: 'text',
+          content: "**Measure at GRANT DATE fair value:**\n\n• Fair value determined once (at grant)\n• Expense recognized over service/vesting period\n• Credit to APIC (equity)\n\n**No mark-to-market after grant!**\n\n**Exception:** Liability-classified awards"
+        },
+        {
+          title: 'Award Types',
+          type: 'table',
+          headers: ['Type', 'Description', 'Fair Value Method'],
+          rows: [
+            ['Stock options', 'Right to buy at set price', 'Option pricing model (B-S)'],
+            ['Restricted stock', 'Stock with vesting restrictions', 'Stock price (minus dividend PV)'],
+            ['RSUs', 'Units converting to stock', 'Stock price'],
+            ['Performance awards', 'Vest based on targets', 'Adjusted for probability'],
+            ['SARs', 'Cash based on appreciation', 'Usually liability']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Service vs Performance',
+          type: 'callout',
+          content: "**\"Service = Straight-line; Performance = Probability\"**\n\n**Service condition:**\n• Expense over service period\n• Forfeitures reduce expense\n\n**Performance condition:**\n• Expense if probable of achievement\n• Adjust when probability changes\n\n**Market condition:**\n• Factor into grant-date fair value\n• Don't adjust later!"
+        },
+        {
+          title: 'Equity vs Liability Classification',
+          type: 'text',
+          content: "**Equity (most common):**\n• Settled in company's own stock\n• Fixed number of shares\n• Fair value at grant date only\n\n**Liability:**\n• Settled in cash\n• Variable number of shares at employee option\n• Remeasure at fair value each period\n• Greater P&L volatility"
+        },
+        {
+          title: 'Modifications',
+          type: 'text',
+          content: "**When terms change:**\n\n**Compare:**\n• Fair value of modified award vs\n• Fair value of original award (at modification date)\n\n**If value increases:**\n• Recognize incremental value\n• Over remaining service period\n\n**If value decreases:**\n• Continue recognizing original value\n• No reversal!"
+        },
+        {
+          title: 'Forfeitures',
+          type: 'text',
+          content: "**Two approaches:**\n\n**Estimate and true-up:**\n• Estimate forfeitures at grant\n• Adjust as actuals differ\n\n**Recognize as occur (election):**\n• No estimate\n• Reverse when forfeited\n\n**Election is accounting policy—apply consistently**"
+        },
+        {
+          title: '⚠️ Exam Trap: Tax Implications',
+          type: 'warning',
+          content: "**Deferred tax asset:**\n• Book expense creates DTA\n• Based on cumulative compensation expense\n\n**At exercise/vesting:**\n• Tax deduction = FV at that date\n• May differ from book expense\n\n**Windfall:** Tax benefit > Book expense → Equity\n**Shortfall:** Book expense > Tax benefit → Expense"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Measure at grant-date fair value (usually)",
+            "Expense over service/vesting period",
+            "Service conditions: Straight-line, adjust for forfeitures",
+            "Performance conditions: Expense when probable",
+            "Market conditions: In grant-date FV, no later adjustment",
+            "Liability awards: Remeasure each period",
+            "Modifications: Recognize incremental value, never reduce"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-009',
+    section: 'BAR',
+    title: "Financial Statement Analysis Ratios",
+    description: "Master key ratios for liquidity, solvency, and profitability",
+    order: 64,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Financial Analysis", "Ratios"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Ratio analysis is fundamental to financial statement analysis! Understanding liquidity, solvency, activity, and profitability ratios helps assess company performance. These are heavily tested on BAR!"
+        },
+        {
+          title: 'Liquidity Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Purpose'],
+          rows: [
+            ['Current ratio', 'Current assets / Current liabilities', 'Short-term liquidity'],
+            ['Quick ratio', '(Cash + Receivables) / CL', 'Immediate liquidity'],
+            ['Cash ratio', 'Cash / Current liabilities', 'Most conservative'],
+            ['Working capital', 'Current assets − CL', 'Absolute liquidity']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Liquidity Hierarchy',
+          type: 'callout',
+          content: "**\"From Loose to Tight\"**\n\n**Current ratio:** All current assets\n**Quick ratio:** Remove inventory and prepaids\n**Cash ratio:** Only cash and equivalents\n\n**Higher = More liquid**\n**But too high = Inefficient use of assets**"
+        },
+        {
+          title: 'Solvency/Leverage Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Interpretation'],
+          rows: [
+            ['Debt to equity', 'Total debt / Total equity', 'Leverage level'],
+            ['Debt to assets', 'Total debt / Total assets', 'Financed by debt %'],
+            ['Equity multiplier', 'Total assets / Total equity', 'Leverage factor'],
+            ['Interest coverage', 'EBIT / Interest expense', 'Ability to cover interest']
+          ]
+        },
+        {
+          title: 'Activity/Efficiency Ratios',
+          type: 'text',
+          content: "**Turnover ratios:**\n\n**Inventory turnover** = COGS / Avg inventory\n**Days in inventory** = 365 / Inventory turnover\n\n**A/R turnover** = Net credit sales / Avg A/R\n**Days sales outstanding** = 365 / A/R turnover\n\n**A/P turnover** = COGS / Avg A/P\n**Days payable outstanding** = 365 / A/P turnover\n\n**Asset turnover** = Revenue / Avg total assets"
+        },
+        {
+          title: 'Profitability Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Gross margin', 'Gross profit / Revenue', 'Pricing power'],
+            ['Operating margin', 'Operating income / Revenue', 'Operating efficiency'],
+            ['Net margin', 'Net income / Revenue', 'Bottom line profit %'],
+            ['ROA', 'Net income / Avg assets', 'Asset efficiency'],
+            ['ROE', 'Net income / Avg equity', 'Return to shareholders']
+          ]
+        },
+        {
+          title: 'DuPont Analysis',
+          type: 'text',
+          content: "**Breaking down ROE:**\n\n**ROE = Net margin × Asset turnover × Equity multiplier**\n\n**Expanded:**\nROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity)\n\n**Shows:**\n• Profitability (margin)\n• Efficiency (turnover)\n• Leverage (multiplier)\n\n**Pinpoints what's driving returns**"
+        },
+        {
+          title: '⚠️ Exam Trap: Average vs Ending',
+          type: 'warning',
+          content: "**Balance sheet items in denominators:**\n\n**Use AVERAGES for:**\n• Turnover ratios (inventory, A/R, A/P, assets)\n• ROA, ROE (assets, equity)\n\n**Use ENDING for:**\n• Current ratio, quick ratio (point-in-time)\n• Debt ratios (point-in-time)\n\n**Read questions carefully!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Liquidity: Current > Quick > Cash (progressively stricter)",
+            "Solvency: Debt ratios measure leverage, interest coverage measures safety",
+            "Activity: Turnover ratios measure efficiency, days ratios measure time",
+            "Profitability: Margins measure %, ROA/ROE measure returns",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "Use averages for flow/stock comparisons",
+            "Compare to industry and trend over time"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-010',
+    section: 'BAR',
+    title: "Cash Flow Statement Analysis",
+    description: "Analyze operating, investing, and financing cash flows",
+    order: 65,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Financial Analysis", "Cash Flow"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Cash is king! The statement of cash flows reveals the actual cash generated and used. Understanding operating cash flow quality and free cash flow is essential for financial analysis!"
+        },
+        {
+          title: 'Three Categories',
+          type: 'text',
+          content: "**Operating activities:**\n• Day-to-day business operations\n• Net income starting point (indirect)\n• Working capital changes\n\n**Investing activities:**\n• PP&E purchases and sales\n• Investments in securities\n• Acquisitions and divestitures\n\n**Financing activities:**\n• Debt borrowings and repayments\n• Stock issuances and repurchases\n• Dividends paid"
+        },
+        {
+          title: 'Cash Flow Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Purpose'],
+          rows: [
+            ['Operating cash ratio', 'CFO / Current liabilities', 'Cash-based liquidity'],
+            ['Cash flow coverage', 'CFO / Total debt', 'Debt service ability'],
+            ['Cash to income', 'CFO / Net income', 'Earnings quality'],
+            ['Free cash flow', 'CFO − CapEx', 'Discretionary cash']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Free Cash Flow',
+          type: 'callout',
+          content: "**\"Operating minus Maintaining\"**\n\n**FCF = CFO − Capital expenditures**\n\n**What's left after:**\n• Running the business (CFO)\n• Maintaining capacity (CapEx)\n\n**Positive FCF = Cash for:**\n• Dividends\n• Debt reduction\n• Acquisitions\n• Buybacks"
+        },
+        {
+          title: 'Earnings Quality Signals',
+          type: 'text',
+          content: "**Healthy signs:**\n• CFO > Net income (accruals support)\n• Consistent CFO growth\n• CFO funds CapEx and dividends\n\n**Warning signs:**\n• Net income >> CFO (aggressive accruals)\n• Negative CFO with positive earnings\n• Growing receivables/inventory\n• Declining payables\n\n**\"Cash doesn't lie\"**"
+        },
+        {
+          title: 'Cash Conversion Cycle',
+          type: 'text',
+          content: "**CCC = DIO + DSO − DPO**\n\n• **DIO:** Days inventory outstanding\n• **DSO:** Days sales outstanding\n• **DPO:** Days payable outstanding\n\n**Lower CCC = Faster cash conversion**\n\n**Negative CCC possible:** (Amazon model)\n• Collect before paying suppliers"
+        },
+        {
+          title: '⚠️ Exam Trap: Non-Cash Items',
+          type: 'warning',
+          content: "**Not on cash flow statement:**\n\n• Stock-based compensation (expense, no cash)\n• Depreciation (add-back)\n• Asset impairments (add-back)\n• Capitalized leases (disclosed separately)\n\n**Supplemental disclosure required for:**\n• Interest paid\n• Income taxes paid\n• Non-cash investing/financing"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CFO: Core business cash generation",
+            "Free cash flow: CFO minus CapEx",
+            "CFO > Net income = Quality earnings",
+            "Cash conversion cycle: DIO + DSO − DPO",
+            "Operating cash ratio: CFO / Current liabilities",
+            "Watch for earnings with no cash support",
+            "Supplemental disclosures show interest and taxes paid"
+          ]
+        }
+      ]
+    }
   }
 ];

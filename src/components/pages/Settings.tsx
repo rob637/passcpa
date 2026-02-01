@@ -10,6 +10,7 @@ import {
   LucideIcon,
   Loader2,
   Camera,
+  Info,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
@@ -18,7 +19,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS } from '../../config/examConfig';
+import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS, isBefore2026Blueprint } from '../../config/examConfig';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -398,6 +399,27 @@ const Settings: React.FC = () => {
                           </div>
                         </button>
                       ))}
+                    </div>
+                    
+                    {/* Blueprint Info Note */}
+                    <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                      <div className="flex gap-2">
+                        <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                        <div className="text-sm text-blue-800 dark:text-blue-200">
+                          {isBefore2026Blueprint() ? (
+                            <>
+                              <strong>2025 vs 2026 Blueprint:</strong> BEC is available through June 30, 2026. 
+                              Starting July 1, 2026, choose BAR, ISC, or TCP as your discipline section. 
+                              REG and TCP will also have significant tax law updates (OBBBA) after July 1.
+                            </>
+                          ) : (
+                            <>
+                              <strong>2026 Blueprint:</strong> Choose one discipline section (BAR, ISC, or TCP) 
+                              based on your career path. AUD, FAR, and REG are required for all candidates.
+                            </>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
 

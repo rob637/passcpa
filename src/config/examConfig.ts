@@ -51,7 +51,7 @@ export function getBlueprintForDate(examDate: Date): '2025' | '2026' {
 }
 
 /** Check if we're in the transition period (Jan-June 2026 when 2025 Blueprint applies) */
-export function isInBlueprintTransition(): boolean {
+export function isBefore2026Blueprint(): boolean {
   const now = new Date();
   const july1_2026 = new Date('2026-07-01');
   return now < july1_2026;
@@ -217,7 +217,11 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
 
 export const STRATEGY_SECTIONS = ['PREP'];
 export const CORE_SECTIONS = ['AUD', 'FAR', 'REG'];
-export const DISCIPLINE_SECTIONS = ['BAR', 'ISC', 'TCP'];
+export const DISCIPLINE_SECTIONS_2026 = ['BAR', 'ISC', 'TCP'];
+/** BEC is valid through June 30, 2026 */
+export const DISCIPLINE_SECTIONS = isBefore2026Blueprint() 
+  ? ['BEC', ...DISCIPLINE_SECTIONS_2026] 
+  : DISCIPLINE_SECTIONS_2026;
 /** All actual exam sections (excludes strategy sections like PREP) */
 export const EXAM_SECTIONS = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS];
 

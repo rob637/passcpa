@@ -578,6 +578,222 @@ const TBSSimulator: React.FC = () => {
     loadTBS();
   }, [tbsId, currentSection]);
 
+  // Score Written Communication responses based on AICPA criteria
+  // Evaluates: Organization, Development, Expression
+  const scoreWrittenCommunication = (
+    response: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    _data: any // Reserved for future rubric-based scoring
+  ): number => {
+    if (!response || response.trim().length === 0) return 0;
+    
+    const text = response.trim();
+    const words = text.split(/\s+/).filter(w => w.length > 0);
+    const wordCount = words.length;
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+    const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    const lowerText = text.toLowerCase();
+    
+    let score = 0;
+    const maxScore = 100;
+    
+    // 1. ORGANIZATION (30 points max)
+    let orgScore = 0;
+    
+    // Has professional memo format (TO, FROM, RE/SUBJECT, DATE)
+    const hasMemoFormat = /\b(to|from|re|subject|date)\s*:/i.test(text);
+    if (hasMemoFormat) orgScore += 10;
+    
+    // Has greeting/salutation
+    const hasGreeting = /\b(dear|hello|greetings|attention)\b/i.test(text);
+    if (hasGreeting) orgScore += 3;
+    
+    // Has closing
+    const hasClosing = /\b(sincerely|regards|respectfully|thank you|please (contact|let me know|reach out))\b/i.test(text);
+    if (hasClosing) orgScore += 5;
+    
+    // Multiple paragraphs (structured response)
+    if (paragraphs.length >= 3) orgScore += 12;
+    else if (paragraphs.length >= 2) orgScore += 7;
+    else orgScore += 2;
+    
+    score += Math.min(orgScore, 30);
+    
+    // 2. DEVELOPMENT (40 points max) - Content depth
+    let devScore = 0;
+    
+    // Adequate length (minimum 150 words for a professional memo)
+    if (wordCount >= 300) devScore += 15;
+    else if (wordCount >= 200) devScore += 12;
+    else if (wordCount >= 150) devScore += 8;
+    else if (wordCount >= 100) devScore += 4;
+    
+    // Multiple sentences per paragraph (developed ideas)
+    const avgSentencesPerParagraph = sentences.length / Math.max(paragraphs.length, 1);
+    if (avgSentencesPerParagraph >= 3) devScore += 10;
+    else if (avgSentencesPerParagraph >= 2) devScore += 5;
+    
+    // Technical/professional vocabulary usage
+    const technicalTerms = [
+      'internal control', 'audit', 'financial statement', 'material', 'reasonable',
+      'compliance', 'gaap', 'gasb', 'fasb', 'aicpa', 'pcaob', 'sox', 'coso',
+      'risk', 'procedure', 'assessment', 'framework', 'disclosure', 'opinion',
+      'deficiency', 'significant', 'management', 'governance', 'objective',
+      'component', 'monitoring', 'environment', 'activities', 'information'
+    ];
+    const technicalCount = technicalTerms.filter(term => lowerText.includes(term)).length;
+    if (technicalCount >= 5) devScore += 15;
+    else if (technicalCount >= 3) devScore += 10;
+    else if (technicalCount >= 1) devScore += 5;
+    
+    score += Math.min(devScore, 40);
+    
+    // 3. EXPRESSION (30 points max) - Writing quality
+    let expScore = 0;
+    
+    // Sentence variety (not all same length)
+    const sentenceLengths = sentences.map(s => s.trim().split(/\s+/).length);
+    const avgSentenceLength = sentenceLengths.reduce((a, b) => a + b, 0) / Math.max(sentenceLengths.length, 1);
+    
+    // Good sentence length (15-25 words average is professional)
+    if (avgSentenceLength >= 12 && avgSentenceLength <= 30) expScore += 10;
+    else if (avgSentenceLength >= 8) expScore += 5;
+    
+    // No excessive repetition (same word > 3% of content)
+    const wordFreq: Record<string, number> = {};
+    words.forEach(w => {
+      const word = w.toLowerCase().replace(/[^a-z]/g, '');
+      if (word.length > 3) wordFreq[word] = (wordFreq[word] || 0) + 1;
+    });
+    const maxFreq = Math.max(...Object.values(wordFreq), 0);
+    const repetitionRatio = maxFreq / wordCount;
+    if (repetitionRatio < 0.03) expScore += 10;
+    else if (repetitionRatio < 0.05) expScore += 5;
+    
+    // Uses transition words (indicates flow)
+    const transitions = ['however', 'therefore', 'additionally', 'furthermore', 'moreover',
+      'consequently', 'specifically', 'accordingly', 'in addition', 'as a result',
+      'first', 'second', 'third', 'finally', 'in conclusion'];
+    const transitionCount = transitions.filter(t => lowerText.includes(t)).length;
+    if (transitionCount >= 3) expScore += 10;
+    else if (transitionCount >= 1) expScore += 5;
+    
+    score += Math.min(expScore, 30);
+    
+    // Ensure minimum threshold (at least attempted the response)
+    if (wordCount < 50) return Math.min(score, 25); // Cap very short responses
+    
+    return Math.min(Math.round(score), maxScore);
+  };
+
+  // Helper function to normalize account names for comparison
+  const normalizeAccountName = (name: string): string => {
+    return name
+      .toLowerCase()
+      .replace(/[-_]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .replace(/[()]/g, '')
+      .replace(/\bacct\b/g, 'account')
+      .replace(/\bexp\b/g, 'expense')
+      .replace(/\brec\b/g, 'receivable')
+      .replace(/\bpay\b/g, 'payable')
+      .replace(/\binv\b/g, 'inventory')
+      .replace(/\bapic\b/g, 'additional paid in capital')
+      .replace(/\brou\b/g, 'right of use')
+      .replace(/\ba\/r\b/g, 'accounts receivable')
+      .replace(/\ba\/p\b/g, 'accounts payable')
+      .trim();
+  };
+
+  // Check if two account names are similar enough to be considered a match
+  const accountNamesMatch = (userAccount: string, correctAccount: string): boolean => {
+    const userNorm = normalizeAccountName(userAccount);
+    const correctNorm = normalizeAccountName(correctAccount);
+    
+    // Exact match after normalization
+    if (userNorm === correctNorm) return true;
+    
+    // Check if one contains the other (handles abbreviations)
+    if (userNorm.includes(correctNorm) || correctNorm.includes(userNorm)) return true;
+    
+    // Check key words match (for compound account names)
+    const userWords = userNorm.split(' ').filter(w => w.length > 2);
+    const correctWords = correctNorm.split(' ').filter(w => w.length > 2);
+    const matchingWords = userWords.filter(w => correctWords.some(cw => cw.includes(w) || w.includes(cw)));
+    
+    // If at least 50% of key words match, consider it a match
+    return matchingWords.length >= Math.ceil(correctWords.length * 0.5);
+  };
+
+  // Score a journal entry against correct entries
+  const scoreJournalEntry = (
+    userEntries: JournalEntryRow[],
+    correctEntries: { account: string; debit: number | null; credit: number | null }[],
+    tolerance: number = 5
+  ): number => {
+    if (!correctEntries || correctEntries.length === 0) return 0;
+    if (!userEntries || userEntries.length === 0) return 0;
+
+    let totalPoints = 0;
+    const maxPoints = correctEntries.length * 3; // 3 points per entry: account, debit, credit
+    const matchedCorrectIndices = new Set<number>();
+
+    // For each user entry, find the best matching correct entry
+    for (const userEntry of userEntries) {
+      const userAccount = (userEntry.account || '').trim();
+      const userDebit = userEntry.debit ? parseFloat(String(userEntry.debit)) : null;
+      const userCredit = userEntry.credit ? parseFloat(String(userEntry.credit)) : null;
+
+      // Skip empty entries
+      if (!userAccount && userDebit === null && userCredit === null) continue;
+
+      let bestMatchIndex = -1;
+      let bestMatchScore = 0;
+
+      for (let i = 0; i < correctEntries.length; i++) {
+        if (matchedCorrectIndices.has(i)) continue; // Already matched
+
+        const correct = correctEntries[i];
+        let matchScore = 0;
+
+        // Check account name (1 point)
+        if (userAccount && accountNamesMatch(userAccount, correct.account)) {
+          matchScore += 1;
+        }
+
+        // Check debit (1 point)
+        if (correct.debit !== null) {
+          if (userDebit !== null && Math.abs(userDebit - correct.debit) <= tolerance) {
+            matchScore += 1;
+          }
+        } else if (userDebit === null || userDebit === 0) {
+          matchScore += 1; // Correctly left blank
+        }
+
+        // Check credit (1 point)
+        if (correct.credit !== null) {
+          if (userCredit !== null && Math.abs(userCredit - correct.credit) <= tolerance) {
+            matchScore += 1;
+          }
+        } else if (userCredit === null || userCredit === 0) {
+          matchScore += 1; // Correctly left blank
+        }
+
+        if (matchScore > bestMatchScore) {
+          bestMatchScore = matchScore;
+          bestMatchIndex = i;
+        }
+      }
+
+      if (bestMatchIndex >= 0) {
+        matchedCorrectIndices.add(bestMatchIndex);
+        totalPoints += bestMatchScore;
+      }
+    }
+
+    return Math.round((totalPoints / maxPoints) * 100);
+  };
+
   const handleSubmit = async () => {
     if (!tbs) return;
     setSubmitted(true);
@@ -585,9 +801,12 @@ const TBSSimulator: React.FC = () => {
 
     // Calculate score based on type
     if (tbs.type === 'journal') {
-      // Simplified scoring for journal entries
-      // In a real app, this would be more complex matching logic
-      calculatedScore = 80; // Mock score
+      // Score journal entries by matching accounts and amounts
+      const userEntries = answer as JournalEntryRow[] || [];
+      const correctEntries = tbs.data.correctEntries;
+      const tolerance = tbs.data.tolerance || 5;
+      
+      calculatedScore = scoreJournalEntry(userEntries, correctEntries, tolerance);
     } else if (tbs.type === 'calculation') {
       const isCorrect =
         Math.abs(Number(answer) - tbs.data.correctAnswer) <= (tbs.data.tolerance || 0);
@@ -595,10 +814,7 @@ const TBSSimulator: React.FC = () => {
     } else if (tbs.type === 'mcq') {
       calculatedScore = answer === tbs.data.correctAnswer ? 100 : 0;
     } else if (tbs.type === 'wc') {
-        const wordCount = (answer || '').trim().split(/\s+/).length;
-        if(wordCount > 300) calculatedScore = 100;
-        else if(wordCount > 200) calculatedScore = 75;
-        else calculatedScore = 50;
+      calculatedScore = scoreWrittenCommunication(answer as string || '', tbs.data);
     }
 
     setScore(calculatedScore);

@@ -238,3 +238,190 @@ function shuffleArray<T>(array: T[]): T[] {
   }
   return shuffled;
 }
+
+/**
+ * Adaptive question selection based on user performance
+ * Prioritizes weak areas, includes spaced repetition, and adds variety
+ * 
+ * Distribution:
+ * - 50% weak topics (accuracy < 70%)
+ * - 30% stale topics (not practiced recently)
+ * - 20% random for variety
+ */
+export interface AdaptiveSelectionInput {
+  section: ExamSection;
+  count: number;
+  topicStats: Array<{
+    topic: string;
+    topicId?: string;
+    accuracy: number;
+    totalQuestions: number;
+    lastPracticed?: string;
+  }>;
+  previouslyMissedIds?: string[];
+  excludeIds?: string[];
+}
+
+export async function fetchAdaptiveQuestions(input: AdaptiveSelectionInput): Promise<{
+  questions: Question[];
+  breakdown: { topic: string; count: number; reason: string }[];
+}> {
+  const { section, count, topicStats, previouslyMissedIds = [], excludeIds = [] } = input;
+  const result: Question[] = [];
+  const breakdown: { topic: string; count: number; reason: string }[] = [];
+  const usedIds = new Set(excludeIds);
+  
+  // 1. First priority: Previously missed questions (if available)
+  if (previouslyMissedIds.length > 0) {
+    const missedCount = Math.min(Math.ceil(count * 0.2), previouslyMissedIds.length, 3);
+    for (const qId of previouslyMissedIds.slice(0, missedCount)) {
+      if (usedIds.has(qId)) continue;
+      const q = await getQuestionById(qId);
+      if (q) {
+        result.push(q);
+        usedIds.add(qId);
+      }
+    }
+    if (result.length > 0) {
+      breakdown.push({
+        topic: 'Previously Missed',
+        count: result.length,
+        reason: 'Review questions you got wrong before',
+      });
+    }
+  }
+  
+  const remaining = count - result.length;
+  if (remaining <= 0) {
+    return { questions: shuffleArray(result), breakdown };
+  }
+  
+  // 2. Weak topics (50% of remaining) - accuracy < 70%
+  const weakTopics = topicStats
+    .filter(t => t.accuracy < 70 && t.totalQuestions >= 3)
+    .sort((a, b) => a.accuracy - b.accuracy);
+  
+  const weakCount = Math.ceil(remaining * 0.5);
+  let weakFetched = 0;
+  
+  for (const topic of weakTopics) {
+    if (weakFetched >= weakCount) break;
+    const topicId = topic.topicId || topic.topic;
+    const questionsNeeded = Math.min(5, weakCount - weakFetched);
+    
+    const topicQuestions = await fetchQuestions({
+      section,
+      topicId,
+      count: questionsNeeded * 2, // Fetch extra to have options
+      excludeIds: Array.from(usedIds),
+    });
+    
+    for (const q of topicQuestions) {
+      if (weakFetched >= weakCount) break;
+      if (usedIds.has(q.id)) continue;
+      result.push(q);
+      usedIds.add(q.id);
+      weakFetched++;
+    }
+    
+    if (weakFetched > 0) {
+      breakdown.push({
+        topic: topic.topic,
+        count: weakFetched,
+        reason: `Weak area: ${topic.accuracy}% accuracy`,
+      });
+    }
+  }
+  
+  // 3. Stale topics (30% of remaining) - not practiced recently
+  const staleTopics = topicStats
+    .filter(t => {
+      if (!t.lastPracticed) return true;
+      const daysSince = Math.ceil(
+        (Date.now() - new Date(t.lastPracticed).getTime()) / (1000 * 60 * 60 * 24)
+      );
+      return daysSince > 5;
+    })
+    .filter(t => !weakTopics.find(w => w.topic === t.topic))
+    .sort((a, b) => {
+      const aDate = a.lastPracticed ? new Date(a.lastPracticed).getTime() : 0;
+      const bDate = b.lastPracticed ? new Date(b.lastPracticed).getTime() : 0;
+      return aDate - bDate;
+    });
+  
+  const staleCount = Math.ceil(remaining * 0.3);
+  let staleFetched = 0;
+  
+  for (const topic of staleTopics) {
+    if (staleFetched >= staleCount) break;
+    const topicId = topic.topicId || topic.topic;
+    const questionsNeeded = Math.min(3, staleCount - staleFetched);
+    
+    const topicQuestions = await fetchQuestions({
+      section,
+      topicId,
+      count: questionsNeeded * 2,
+      excludeIds: Array.from(usedIds),
+    });
+    
+    for (const q of topicQuestions) {
+      if (staleFetched >= staleCount) break;
+      if (usedIds.has(q.id)) continue;
+      result.push(q);
+      usedIds.add(q.id);
+      staleFetched++;
+    }
+    
+    if (staleFetched > 0) {
+      breakdown.push({
+        topic: topic.topic,
+        count: staleFetched,
+        reason: 'Not practiced recently',
+      });
+    }
+  }
+  
+  // 4. Fill remainder with random questions for variety
+  const varietyNeeded = count - result.length;
+  if (varietyNeeded > 0) {
+    const randomQuestions = await fetchQuestions({
+      section,
+      count: varietyNeeded * 2,
+      excludeIds: Array.from(usedIds),
+    });
+    
+    let varietyFetched = 0;
+    for (const q of randomQuestions) {
+      if (varietyFetched >= varietyNeeded) break;
+      if (usedIds.has(q.id)) continue;
+      result.push(q);
+      usedIds.add(q.id);
+      varietyFetched++;
+    }
+    
+    if (varietyFetched > 0) {
+      breakdown.push({
+        topic: 'Mixed Practice',
+        count: varietyFetched,
+        reason: 'Variety for well-rounded preparation',
+      });
+    }
+  }
+  
+  return { questions: shuffleArray(result), breakdown };
+}
+
+/**
+ * Get all unique topics for a section
+ */
+export async function getTopicsForSection(section: ExamSection): Promise<string[]> {
+  const questions = await loadSectionQuestions(section);
+  const topics = new Set<string>();
+  
+  for (const q of questions) {
+    if (q.topic) topics.add(q.topic);
+    if (q.topicId) topics.add(q.topicId);
+  }
+  
+  return Array.from(topics).sort();
+}

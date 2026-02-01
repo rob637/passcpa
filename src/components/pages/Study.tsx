@@ -16,13 +16,14 @@ import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
+import DailyPlanCard from '../DailyPlanCard';
 
 interface StudyMode {
   id: string;
   title: string;
   description: string;
   icon: LucideIcon;
-  color: 'primary' | 'success' | 'warning' | 'purple' | 'error' | 'slate';
+  color: 'primary' | 'success' | 'warning' | 'indigo' | 'error' | 'slate';
   link: string;
   recommended?: boolean;
   badge?: string;
@@ -31,7 +32,7 @@ interface StudyMode {
 const Study = () => {
   const { userProfile } = useAuth();
   const { todayLog, dailyProgress, dailyGoalMet } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId: _courseId } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
   const currentSection = userProfile?.examSection || 'REG';
@@ -61,7 +62,7 @@ const Study = () => {
           if (seen.has(activity.lessonId)) continue;
           seen.add(activity.lessonId);
 
-          const lesson = await fetchLessonById(activity.lessonId, courseId);
+          const lesson = await fetchLessonById(activity.lessonId);
           items.push({
             type: 'lesson',
             title: lesson?.title || activity.lessonId,
@@ -130,7 +131,7 @@ const Study = () => {
       title: 'Flashcard Review',
       description: 'Smart review for long-term retention',
       icon: Brain,
-      color: 'purple',
+      color: 'indigo',
       link: '/flashcards',
       badge: 'SMART',
     },
@@ -185,11 +186,11 @@ const Study = () => {
       border: 'border-error-200',
       hover: 'hover:border-error-400',
     },
-    purple: {
-      bg: 'bg-purple-100',
-      icon: 'text-purple-600',
-      border: 'border-purple-200',
-      hover: 'hover:border-purple-400',
+    indigo: {
+      bg: 'bg-indigo-100',
+      icon: 'text-indigo-600',
+      border: 'border-indigo-200',
+      hover: 'hover:border-indigo-400',
     },
     slate: {
       bg: 'bg-slate-100',
@@ -317,6 +318,11 @@ const Study = () => {
             );
           })}
         </div>
+      </div>
+
+      {/* Personalized Daily Plan */}
+      <div className="mt-8">
+        <DailyPlanCard />
       </div>
 
       {/* Recent Activity */}

@@ -17,6 +17,13 @@ import {
   Sparkles,
   AlertTriangle,
   AlertCircle,
+  Trophy,
+  TrendingUp,
+  ArrowRight,
+  RotateCcw,
+  FileSpreadsheet,
+  Brain,
+  Zap,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -200,6 +207,232 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
   );
 };
 
+// Session Results Component - Shows score and recommends next steps
+interface SessionResultsProps {
+  questions: Question[];
+  answers: Record<string, AnswerState>;
+  elapsed: number;
+  section: string;
+  onContinue: () => void;
+  onTryAgain: () => void;
+  onPracticeWeak: () => void;
+}
+
+const SessionResults: React.FC<SessionResultsProps> = ({
+  questions,
+  answers,
+  elapsed,
+  section,
+  onContinue,
+  onTryAgain,
+  onPracticeWeak,
+}) => {
+  const navigate = useNavigate();
+  
+  // Calculate results
+  const totalQuestions = questions.length;
+  const answeredCount = Object.keys(answers).length;
+  const correctCount = Object.values(answers).filter(a => a.correct).length;
+  const incorrectCount = answeredCount - correctCount;
+  const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+  const passed = accuracy >= 75;
+  
+  // Identify weak topics from wrong answers
+  const wrongQuestions = questions.filter(q => answers[q.id] && !answers[q.id].correct);
+  const weakTopics = [...new Set(wrongQuestions.map(q => q.topic || q.topicId || 'Unknown'))];
+  
+  // Format time
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}m ${secs}s`;
+  };
+  
+  // Points earned (estimate)
+  const pointsEarned = correctCount * 5 + answeredCount * 1;
+  
+  return (
+    <div className="min-h-[calc(100vh-4rem)] bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
+      <div className="max-w-lg w-full">
+        {/* Score Card */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden mb-6">
+          {/* Header */}
+          <div className={clsx(
+            'p-6 text-center text-white',
+            passed ? 'bg-gradient-to-br from-success-500 to-success-600' : 'bg-gradient-to-br from-warning-500 to-warning-600'
+          )}>
+            <div className={clsx(
+              'w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3',
+              passed ? 'bg-white/20' : 'bg-white/20'
+            )}>
+              {passed ? (
+                <Trophy className="w-8 h-8" />
+              ) : (
+                <Target className="w-8 h-8" />
+              )}
+            </div>
+            <h1 className="text-2xl font-bold mb-1">
+              {passed ? 'Great Work!' : 'Keep Going!'}
+            </h1>
+            <p className="text-white/80 text-sm">
+              {passed 
+                ? "You're building strong foundations!" 
+                : "Every question helps you learn. Let's strengthen those weak areas."}
+            </p>
+          </div>
+          
+          {/* Score Display */}
+          <div className="p-6 text-center border-b border-slate-200 dark:border-slate-700">
+            <div 
+              className="text-5xl font-bold mb-2"
+              style={{ color: accuracy >= 75 ? '#22c55e' : accuracy >= 50 ? '#f59e0b' : '#ef4444' }}
+            >
+              {accuracy}%
+            </div>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">
+              {correctCount} of {answeredCount} correct
+            </p>
+          </div>
+          
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-slate-700">
+            <div className="p-4 text-center">
+              <div className="flex items-center justify-center mb-1">
+                <CheckCircle className="w-4 h-4 text-success-500 mr-1" />
+                <span className="text-xl font-bold text-success-600">{correctCount}</span>
+              </div>
+              <p className="text-xs text-slate-500">Correct</p>
+            </div>
+            <div className="p-4 text-center">
+              <div className="flex items-center justify-center mb-1">
+                <XCircle className="w-4 h-4 text-error-500 mr-1" />
+                <span className="text-xl font-bold text-error-600">{incorrectCount}</span>
+              </div>
+              <p className="text-xs text-slate-500">Incorrect</p>
+            </div>
+            <div className="p-4 text-center">
+              <div className="flex items-center justify-center mb-1">
+                <Clock className="w-4 h-4 text-slate-400 mr-1" />
+                <span className="text-xl font-bold text-slate-700 dark:text-slate-300">{formatTime(elapsed)}</span>
+              </div>
+              <p className="text-xs text-slate-500">Time</p>
+            </div>
+          </div>
+          
+          {/* Points Earned */}
+          <div className="px-6 py-4 bg-primary-50 dark:bg-primary-900/20 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5 text-primary-500" />
+              <span className="font-medium text-slate-700 dark:text-slate-300">Points Earned</span>
+            </div>
+            <span className="text-xl font-bold text-primary-600">+{pointsEarned}</span>
+          </div>
+        </div>
+        
+        {/* Weak Areas (if any) */}
+        {weakTopics.length > 0 && (
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6 border border-amber-200 dark:border-amber-800">
+            <div className="flex items-center gap-2 mb-3">
+              <TrendingUp className="w-5 h-5 text-amber-500" />
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Focus Areas</h3>
+            </div>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+              Practice these topics to improve your score:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {weakTopics.slice(0, 5).map((topic, i) => (
+                <span 
+                  key={i}
+                  className="px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-sm"
+                >
+                  {topic}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Recommended Next Steps */}
+        <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6">
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Continue Learning</h3>
+          <div className="space-y-2">
+            {/* Primary CTA - changes based on performance */}
+            {weakTopics.length > 0 ? (
+              <button
+                onClick={onPracticeWeak}
+                className="w-full flex items-center justify-between p-3 rounded-xl bg-primary-50 dark:bg-primary-900/30 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center">
+                    <Target className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Practice Weak Areas</div>
+                    <div className="text-xs text-slate-500">15 questions on {weakTopics[0]}</div>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
+              </button>
+            ) : (
+              <button
+                onClick={onContinue}
+                className="w-full flex items-center justify-between p-3 rounded-xl bg-success-50 dark:bg-success-900/30 hover:bg-success-100 dark:hover:bg-success-900/50 transition-colors group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-success-500 flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Keep Practicing</div>
+                    <div className="text-xs text-slate-500">You're doing great!</div>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 text-success-500 group-hover:translate-x-1 transition-transform" />
+              </button>
+            )}
+            
+            {/* Secondary options */}
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => navigate('/tbs')}
+                className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                <FileSpreadsheet className="w-5 h-5 text-indigo-500" />
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Try TBS</span>
+              </button>
+              <button
+                onClick={() => navigate('/flashcards')}
+                className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                <Brain className="w-5 h-5 text-purple-500" />
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Footer Actions */}
+        <div className="flex gap-3">
+          <button
+            onClick={onTryAgain}
+            className="flex-1 btn-secondary flex items-center justify-center gap-2"
+          >
+            <RotateCcw className="w-4 h-4" />
+            New Session
+          </button>
+          <button
+            onClick={() => navigate('/progress')}
+            className="flex-1 btn-primary flex items-center justify-center gap-2"
+          >
+            <TrendingUp className="w-4 h-4" />
+            View Progress
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Practice: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -211,6 +444,7 @@ const Practice: React.FC = () => {
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
   void sessionConfig; // Use to suppress unused warning
   const [inSession, setInSession] = useState(false);
+  const [showResults, setShowResults] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // Question state
@@ -231,6 +465,9 @@ const Practice: React.FC = () => {
   const [reportType, setReportType] = useState<string>('');
   const [reportDetails, setReportDetails] = useState('');
   const [reportSubmitted, setReportSubmitted] = useState(false);
+  
+  // Track weak topics for targeted practice
+  const [weakTopicsFromSession, setWeakTopicsFromSession] = useState<string[]>([]);
 
   const currentQuestion: Question | undefined = questions[currentIndex];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -415,7 +652,8 @@ const Practice: React.FC = () => {
         currentQuestion.subtopic,
         isCorrect,
         currentQuestion.difficulty,
-        elapsed // Pass time spent in seconds
+        elapsed, // Pass time spent in seconds
+        currentQuestion.section // Pass section for section-specific tracking
       );
     }
   }, [selectedAnswer, isAnswered, currentQuestion, elapsed, recordMCQAnswer]);
@@ -505,7 +743,7 @@ const Practice: React.FC = () => {
     }
   }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity]);
 
-  // End session
+  // End session - show results instead of going back to setup
   const endSession = () => {
     const totalQuestions = questions.length;
     const answeredCount = Object.keys(answers).length;
@@ -522,10 +760,65 @@ const Practice: React.FC = () => {
       });
     }
 
-    // Show results or go back
+    // Identify weak topics from wrong answers
+    const wrongQuestions = questions.filter(q => answers[q.id] && !answers[q.id].correct);
+    const weakTopics = [...new Set(wrongQuestions.map(q => q.topic || q.topicId || 'Unknown'))];
+    setWeakTopicsFromSession(weakTopics);
+
+    // Show results screen
     setInSession(false);
-    setSessionConfig(null);
+    setShowResults(true);
   };
+  
+  // Reset and start new session
+  const handleTryAgain = () => {
+    setShowResults(false);
+    setSessionConfig(null);
+    setQuestions([]);
+    setAnswers({});
+    setCurrentIndex(0);
+    setElapsed(0);
+    setWeakTopicsFromSession([]);
+  };
+  
+  // Continue with more practice (same settings)
+  const handleContinue = () => {
+    setShowResults(false);
+    setAnswers({});
+    setCurrentIndex(0);
+    setElapsed(0);
+    // Restart with same config
+    if (sessionConfig) {
+      startSession(sessionConfig);
+    } else {
+      setSessionConfig(null);
+    }
+  };
+  
+  // Practice weak areas from this session
+  const handlePracticeWeak = () => {
+    setShowResults(false);
+    setAnswers({});
+    setCurrentIndex(0);
+    setElapsed(0);
+    // Navigate to weak area practice
+    navigate('/practice?mode=weak');
+  };
+
+  // Results screen
+  if (showResults) {
+    return (
+      <SessionResults
+        questions={questions}
+        answers={answers}
+        elapsed={elapsed}
+        section={userProfile?.examSection || 'REG'}
+        onContinue={handleContinue}
+        onTryAgain={handleTryAgain}
+        onPracticeWeak={handlePracticeWeak}
+      />
+    );
+  }
 
   // Session configuration screen
   if (!inSession) {

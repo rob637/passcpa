@@ -1,20 +1,23 @@
 import { useState, useEffect, useRef } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
-import { Home, BookOpen, Target, BarChart3, Settings, Flame } from 'lucide-react';
+import { Home, BookOpen, User, Flame } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
 import { CourseSelector } from '../common/CourseSelector';
 import clsx from 'clsx';
 
-// Navigation items with tour IDs
+// Navigation items - Simplified 3-tab navigation
 const NAV_ITEMS = [
-  { path: '/dashboard', icon: Home, label: 'Dashboard', tourId: 'dashboard' },
-  { path: '/study', icon: BookOpen, label: 'Study', tourId: 'study' },
-  { path: '/practice', icon: Target, label: 'Practice', tourId: 'practice' },
-  { path: '/progress', icon: BarChart3, label: 'Progress', tourId: 'progress' },
-  { path: '/settings', icon: Settings, label: 'Settings', tourId: 'settings' },
+  { path: '/home', icon: Home, label: 'Home', tourId: 'home', matchPaths: ['/home', '/practice', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'] },
+  { path: '/learn', icon: BookOpen, label: 'Learn', tourId: 'learn', matchPaths: ['/learn', '/lessons'] },
+  { path: '/you', icon: User, label: 'You', tourId: 'you', matchPaths: ['/you', '/progress', '/settings', '/achievements'] },
 ];
+
+// Check if current path matches nav item
+const isNavActive = (item: typeof NAV_ITEMS[0], pathname: string): boolean => {
+  return item.matchPaths.some(mp => pathname === mp || pathname.startsWith(mp + '/'));
+};
 
 interface ProgressRingProps {
   progress?: number;
@@ -93,7 +96,7 @@ const MainLayout = () => {
 
 
     const activeIndex = NAV_ITEMS.findIndex(
-      (item) => location.pathname === item.path || location.pathname.startsWith(item.path + '/')
+      (item) => isNavActive(item, location.pathname)
     );
 
     if (activeIndex >= 0) {
@@ -117,7 +120,7 @@ const MainLayout = () => {
   // Get current page title
   const getPageTitle = () => {
     const current = NAV_ITEMS.find(
-      (item) => location.pathname === item.path || location.pathname.startsWith(item.path + '/')
+      (item) => isNavActive(item, location.pathname)
     );
     if (current) return current.label;
     

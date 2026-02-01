@@ -22,7 +22,7 @@ export const FAR_TBS: TBS[] = [
     timeEstimate: 15,
     topic: 'Leases (ASC 842)',
     scenario: `
-Riverside Corp. enters into a 5-year equipment lease on January 1, Year 1. The following information is available:
+Riverside Corp. enters into a 7-year equipment lease on January 1, Year 1. The following information is available:
 
 • Fair value of equipment: $500,000
 • Annual lease payment: $95,000 (due at end of each year)
@@ -32,9 +32,9 @@ Riverside Corp. enters into a 5-year equipment lease on January 1, Year 1. The f
 • No transfer of ownership or purchase option
 • The equipment is not specialized
 
-Present value factors at 6% for 5 periods:
-• PV of ordinary annuity: 4.21236
-• PV of $1: 0.74726
+Present value factors at 6% for 7 periods:
+• PV of ordinary annuity: 5.58238
+• PV of $1: 0.66506
     `,
     requirements: [
       {
@@ -44,7 +44,7 @@ Present value factors at 6% for 5 periods:
         options: ['Finance lease', 'Operating lease'],
         correctAnswer: 0,
         explanation:
-          'The present value of lease payments ($95,000 × 4.21236 = $400,174) is 80% of fair value, which meets the finance lease criterion (≥75% of fair value).',
+          'This is a FINANCE lease. Testing the OWNES criteria: The lease term (7 years) is 87.5% of the useful life (8 years), which exceeds the 75% threshold. Additionally, the PV of lease payments ($95,000 × 5.58238 = $530,326) exceeds 100% of fair value. Either criterion alone would qualify this as a finance lease.',
       },
       {
         id: 'req-2',
@@ -55,8 +55,8 @@ Present value factors at 6% for 5 periods:
           { account: '', debit: '', credit: '' },
         ],
         correctEntries: [
-          { account: 'Right-of-Use Asset', debit: 400174, credit: null },
-          { account: 'Lease Liability', debit: null, credit: 400174 },
+          { account: 'Right-of-Use Asset', debit: 500000, credit: null },
+          { account: 'Lease Liability', debit: null, credit: 500000 },
         ],
         tolerance: 5, // Allow small rounding differences
       },
@@ -64,9 +64,9 @@ Present value factors at 6% for 5 periods:
         id: 'req-3',
         type: 'calculation',
         question: 'Calculate the interest expense for Year 1.',
-        correctAnswer: 24010,
+        correctAnswer: 30000,
         tolerance: 5,
-        explanation: '$400,174 × 6% = $24,010',
+        explanation: '$500,000 × 6% = $30,000',
       },
       {
         id: 'req-4',
@@ -78,8 +78,8 @@ Present value factors at 6% for 5 periods:
           { account: '', debit: '', credit: '' },
         ],
         correctEntries: [
-          { account: 'Interest Expense', debit: 24010, credit: null },
-          { account: 'Lease Liability', debit: 70990, credit: null },
+          { account: 'Interest Expense', debit: 30000, credit: null },
+          { account: 'Lease Liability', debit: 65000, credit: null },
           { account: 'Cash', debit: null, credit: 95000 },
         ],
         tolerance: 5,
@@ -113,7 +113,7 @@ Present value factors at 6% for 5 periods:
 Delta Company is preparing its bank reconciliation for November 30, Year 1. The following information is available:
 
 Balance per bank statement: $45,780
-Balance per company books: $42,650
+Balance per company books: $43,030
 
 Additional information:
 1. Deposit in transit: $8,500
@@ -158,7 +158,7 @@ Additional information:
             adjustedBalance: 47130,
           },
           bookSection: {
-            startingBalance: 42650,
+            startingBalance: 43030,
             additions: [
               { description: 'Note collected by bank', amount: 5250 },
               { description: 'Error correction (check #1540)', amount: 90 },
@@ -168,7 +168,7 @@ Additional information:
               { description: 'Bank service charge', amount: 75 },
               { description: 'NSF check - J. Smith', amount: 1200 },
             ],
-            adjustedBalance: 46750,
+            adjustedBalance: 47130,
           },
         },
       },
@@ -418,10 +418,10 @@ Additional information:
         id: 'req-1',
         type: 'calculation',
         question: 'Calculate taxable income for Year 1.',
-        correctAnswer: 462000,
+        correctAnswer: 504000,
         tolerance: 0,
         explanation:
-          '$500,000 - $25,000 (depreciation) - $12,000 (warranty) - $15,000 (muni interest) + $24,000 (prepaid rent) + $8,000 (fines, add back) = $480,000. Wait, let me recalculate: $500,000 - 25,000 + 12,000 - 15,000 + 24,000 + 8,000 = $504,000... Actually: Depreciation difference: 65,000 - 40,000 = 25,000 MORE tax depreciation, so subtract. Warranty: 30,000 - 18,000 = 12,000 LESS tax deduction, so add. Muni: Permanent difference, subtract 15,000. Prepaid rent: 24,000 more taxable, add. Fines: 8,000 add back. = 500,000 - 25,000 + 12,000 - 15,000 + 24,000 + 8,000 = 504,000',
+          'Start with pretax book income: $500,000. Adjustments: (1) Depreciation: Tax has $25,000 MORE deduction, so SUBTRACT $25,000. (2) Warranty: Tax has $12,000 LESS deduction (only $18k cash paid vs $30k expense), so ADD $12,000. (3) Municipal interest: Permanent exclusion, SUBTRACT $15,000. (4) Prepaid rent: Taxable when received, ADD $24,000. (5) Fines: Not deductible, ADD BACK $8,000. Taxable income = $500,000 - $25,000 + $12,000 - $15,000 + $24,000 + $8,000 = $504,000',
       },
       {
         id: 'req-2',
@@ -446,20 +446,20 @@ Additional information:
       {
         id: 'req-3',
         type: 'calculation',
-        question: 'Calculate the current income tax expense.',
+        question: 'Calculate the current income tax payable.',
         correctAnswer: 105840,
         tolerance: 5,
-        explanation: 'Taxable income × 21%',
+        explanation: 'Taxable income ($504,000) × 21% = $105,840',
       },
       {
         id: 'req-4',
         type: 'journal_entry',
         question: 'Prepare the journal entry to record income tax expense for Year 1.',
         correctEntries: [
-          { account: 'Income Tax Expense', debit: 100170, credit: null },
+          { account: 'Income Tax Expense', debit: 101535, credit: null },
           { account: 'Deferred Tax Asset', debit: 7560, credit: null },
-          { account: 'Deferred Tax Liability', debit: null, credit: 5250 },
-          { account: 'Income Tax Payable', debit: null, credit: 102480 },
+          { account: 'Deferred Tax Liability', debit: null, credit: 3255 },
+          { account: 'Income Tax Payable', debit: null, credit: 105840 },
         ],
         tolerance: 100,
         multipleEntriesAllowed: true,
@@ -897,10 +897,10 @@ Prior year NOL carryforward: $40,000
         id: 'req-4',
         type: 'calculation',
         question: 'Calculate total deductions (before charitable, DRD, and NOL).',
-        correctAnswer: 1081000,
+        correctAnswer: 1091000,
         tolerance: 100,
         explanation:
-          '$350,000 + $280,000 + $45,000 + $12,000 + $96,000 + $38,000 + $22,000 + $125,000 + $65,000 + $48,000 + $10,000 (50% meals) = $1,091,000. Note: Federal taxes not deductible.',
+          'Officers ($350,000) + Salaries ($280,000) + Repairs ($45,000) + Bad debts ($12,000) + Rent ($96,000) + Taxes ($38,000) + Interest ($22,000) + Depreciation ($125,000) + Advertising ($65,000) + Benefits ($48,000) + Meals 50% ($10,000) = $1,091,000. Note: Federal taxes ($85,000) are NOT deductible.',
       },
       {
         id: 'req-5',
@@ -1287,10 +1287,10 @@ PV of annuity, 5 years: 3.6048
         id: 'req-4',
         type: 'calculation',
         question: 'Calculate the Net Present Value (NPV) of the project.',
-        correctAnswer: 404540,
-        tolerance: 500,
+        correctAnswer: 424620,
+        tolerance: 1000,
         explanation:
-          'NPV = -$605,000 + ($275,000 × 3.6048) + ($67,500 × 0.5674) = -$605,000 + $991,320 + $38,300 = $424,620... Let me recalculate properly.',
+          'Years 1-4 operating CF: $275,000 each. Year 5 total CF: $275,000 + $37,500 (salvage after-tax) + $30,000 (WC) = $342,500. NPV = -$605,000 + ($275,000 × 0.8929) + ($275,000 × 0.7972) + ($275,000 × 0.7118) + ($275,000 × 0.6355) + ($342,500 × 0.5674) = -$605,000 + $245,548 + $219,230 + $195,745 + $174,763 + $194,334 = $424,620',
       },
       {
         id: 'req-5',
@@ -1377,10 +1377,10 @@ Alternative C: Automate production, increasing fixed costs by $60,000 but reduci
         id: 'req-4',
         type: 'calculation',
         question: 'Calculate operating income under Alternative A.',
-        correctAnswer: 86000,
+        correctAnswer: 98000,
         tolerance: 0,
         explanation:
-          '(11,500 × $32) - $270,000 = $368,000 - $270,000 = $98,000... Actually: (11,500 × $32) - ($240,000 + $30,000) = $368,000 - $270,000 = $98,000. Hmm, let me recalc: 10,000 × 1.15 = 11,500. CM = $32. Total CM = $368,000. FC = $270,000. OI = $98,000',
+          'Units = 10,000 × 1.15 = 11,500. CM/unit = $32. Total CM = 11,500 × $32 = $368,000. Fixed costs = $240,000 + $30,000 = $270,000. Operating income = $368,000 - $270,000 = $98,000',
       },
       {
         id: 'req-5',

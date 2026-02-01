@@ -844,7 +844,499 @@ Market data:
   },
 ];
 
+// ==========================================
+// RESEARCH TBS - GUARANTEED POINTS!
+// ==========================================
+export const RESEARCH_TBS: TBS[] = [
+  {
+    id: 'far-tbs-010',
+    section: 'FAR',
+    type: TBS_TYPES.RESEARCH,
+    title: 'Research: Revenue Recognition Timing',
+    difficulty: 'medium',
+    timeEstimate: 12,
+    topic: 'ASC 606 - Revenue Recognition',
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
+    scenario: `
+Your client, SoftTech Solutions Inc., sells software licenses bundled with 24-month customer support. The CFO is unsure whether revenue should be recognized at a point in time or over time.
+
+The client has provided the following facts:
+• Software license provides functional intellectual property
+• Customer support is a distinct performance obligation
+• Customer obtains control of software upon download
+• Support services are provided evenly over 24 months
+
+The CFO asks: "What does the authoritative literature say about when to recognize revenue over time versus at a point in time?"
+
+Using the FASB Accounting Standards Codification (ASC), locate the relevant guidance.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'research',
+        question: 'Which ASC section defines the criteria for recognizing revenue over time?',
+        searchTerms: ['revenue', 'over time', 'performance obligation', 'satisfied'],
+        correctCitation: 'ASC 606-10-25-27',
+        acceptableAnswers: ['606-10-25-27', 'ASC 606-10-25-27', '606-10-25-27 through 29'],
+        explanation: 'ASC 606-10-25-27 states that an entity transfers control of a good or service over time if ONE of three criteria is met: (1) customer simultaneously receives and consumes benefits, (2) entity\'s performance creates or enhances an asset the customer controls, or (3) entity\'s performance does not create an asset with alternative use and entity has enforceable right to payment.',
+      },
+      {
+        id: 'req-2',
+        type: 'research',
+        question: 'Which ASC paragraph addresses when control transfers "at a point in time"?',
+        searchTerms: ['point in time', 'control', 'transferred', 'revenue'],
+        correctCitation: 'ASC 606-10-25-30',
+        acceptableAnswers: ['606-10-25-30', 'ASC 606-10-25-30'],
+        explanation: 'ASC 606-10-25-30 states that if a performance obligation is not satisfied over time, an entity satisfies the performance obligation at a point in time, determining when the customer obtains control.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'Based on the authoritative guidance, how should SoftTech recognize revenue for the software license?',
+        options: [
+          'Over 24 months, as the support is provided',
+          'At a point in time, when the software is downloaded',
+          '50% at download, 50% over support period',
+          'Only after 24-month support period ends',
+        ],
+        correctAnswer: 1,
+        explanation: 'Per ASC 606-10-25-30, control of functional IP (the software license) transfers at a point in time when the customer can use and benefit from the software. Support is a separate performance obligation recognized over time.',
+      },
+    ],
+    hints: [
+      '🔍 RESEARCH TBS STRATEGY:',
+      '• Start with the master glossary or topic table of contents',
+      '• Use key phrases from the question as search terms',
+      '• Revenue recognition guidance is in ASC 606',
+      '• Look for "transfer of control" and "performance obligation"',
+      '',
+      '📖 NAVIGATION TIP:',
+      '• ASC 606-10-25 covers Recognition',
+      '• Paragraphs 27-29 = Over time criteria',
+      '• Paragraph 30+ = Point in time criteria',
+    ],
+    references: ['ASC 606-10-25-27', 'ASC 606-10-25-30', 'ASC 606-10-55-54'],
+  },
+  {
+    id: 'reg-tbs-008',
+    section: 'REG',
+    type: TBS_TYPES.RESEARCH,
+    title: 'Research: Section 199A Qualified Business Income',
+    difficulty: 'medium',
+    timeEstimate: 12,
+    topic: 'QBI Deduction - IRC Section 199A',
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-4',
+    scenario: `
+Your client, Dr. Sarah Chen, is a physician who operates her medical practice as an S corporation. She has taxable income of $450,000 and her share of the S corporation's qualified business income (QBI) is $320,000.
+
+Dr. Chen's tax preparer told her she might not qualify for the full Section 199A deduction because she is in a "specified service trade or business" (SSTB). She is confused about what constitutes an SSTB and the income limitations that apply.
+
+Using the Internal Revenue Code and Treasury Regulations, locate the relevant guidance.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'research',
+        question: 'Which IRC section defines "specified service trade or business" (SSTB)?',
+        searchTerms: ['specified service', 'trade or business', '199A', 'health'],
+        correctCitation: 'IRC Section 199A(d)(2)',
+        acceptableAnswers: ['199A(d)(2)', 'IRC 199A(d)(2)', 'Section 199A(d)(2)', '199A(d)(2)(A)'],
+        explanation: 'IRC Section 199A(d)(2) defines SSTB as any trade or business involving the performance of services in health, law, accounting, actuarial science, performing arts, consulting, athletics, financial services, brokerage services, or any trade where the principal asset is the reputation or skill of employees.',
+      },
+      {
+        id: 'req-2',
+        type: 'research',
+        question: 'What are the taxable income thresholds where SSTB limitations begin for married filing jointly?',
+        searchTerms: ['threshold', '199A', 'married', 'phase-out', 'taxable income'],
+        correctCitation: 'IRC Section 199A(d)(3)',
+        acceptableAnswers: ['199A(d)(3)', 'IRC 199A(d)(3)', 'Treas. Reg. 1.199A-5'],
+        explanation: 'IRC Section 199A(d)(3) establishes the threshold amounts. For MFJ, the threshold is $364,200 (2024, indexed for inflation) with a $100,000 phase-out range. For single filers, $182,100 with $50,000 phase-out.',
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'Based on the facts, what is the maximum Section 199A deduction Dr. Chen can claim if the SSTB completely disqualifies her? (Note: Taxable income of $450,000 exceeds the threshold plus phase-out range)',
+        correctAnswer: 0,
+        tolerance: 0,
+        explanation: 'Since Dr. Chen\'s taxable income ($450,000) exceeds the single filer threshold ($182,100) plus phase-out range ($50,000) = $232,100, and she operates an SSTB (health services), her QBI deduction is completely phased out to $0.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Which of the following activities is NOT classified as an SSTB under Section 199A?',
+        options: [
+          'Law firm',
+          'Accounting practice',
+          'Architecture firm',
+          'Medical practice',
+        ],
+        correctAnswer: 2,
+        explanation: 'Architecture and engineering are specifically EXCLUDED from the definition of SSTB under IRC 199A(d)(2)(B), making them eligible for the QBI deduction regardless of income.',
+      },
+    ],
+    hints: [
+      '🔍 TAX RESEARCH STRATEGY:',
+      '• IRC Section 199A is the primary source for QBI deduction',
+      '• Look in subsection (d) for SSTB definitions',
+      '• Treasury Regulations (1.199A-5) provide additional guidance',
+      '',
+      '📖 KEY TERMS TO SEARCH:',
+      '• "specified service trade or business"',
+      '• "threshold amount"',
+      '• "health, law, accounting"',
+    ],
+    references: ['IRC 199A(d)(2)', 'IRC 199A(d)(3)', 'Treas. Reg. 1.199A-5'],
+  },
+  {
+    id: 'aud-tbs-006',
+    section: 'AUD',
+    type: TBS_TYPES.RESEARCH,
+    title: 'Research: Subsequent Events Procedures',
+    difficulty: 'medium',
+    timeEstimate: 12,
+    topic: 'Subsequent Events - AU-C 560',
+    blueprintArea: 'AUD-V',
+    blueprintTopic: 'AUD-V-B-1',
+    scenario: `
+You are the senior auditor on the engagement for Precision Manufacturing Inc. The audit report date is February 15, Year 2, covering the year ended December 31, Year 1.
+
+On February 20, Year 2 (after the report date but before the financial statements were issued), you learned that the company's largest customer filed for bankruptcy. This customer represented 35% of accounts receivable at year-end.
+
+The engagement partner asks you to research the authoritative auditing standards to determine:
+1. What type of subsequent event this represents
+2. What the auditor's responsibilities are for events occurring after the report date
+
+Using the AICPA Professional Standards (AU-C sections), locate the relevant guidance.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'research',
+        question: 'Which AU-C section addresses the auditor\'s responsibilities for subsequent events?',
+        searchTerms: ['subsequent events', 'report date', 'events after'],
+        correctCitation: 'AU-C Section 560',
+        acceptableAnswers: ['AU-C 560', 'AU-C Section 560', 'AU-C 560.01'],
+        explanation: 'AU-C Section 560, "Subsequent Events and Subsequently Discovered Facts," addresses the auditor\'s responsibilities relating to subsequent events in an audit of financial statements.',
+      },
+      {
+        id: 'req-2',
+        type: 'research',
+        question: 'Which paragraph defines the period between the financial statement date and the date of the auditor\'s report?',
+        searchTerms: ['subsequent events period', 'financial statement date', 'report date'],
+        correctCitation: 'AU-C Section 560.06',
+        acceptableAnswers: ['AU-C 560.06', 'AU-C Section 560.06', '560.06'],
+        explanation: 'AU-C 560.06 defines "subsequent events" as events occurring between the date of the financial statements and the date of the auditor\'s report.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'What type of subsequent event does the customer bankruptcy represent?',
+        options: [
+          'Type I - Recognized subsequent event (requires adjustment)',
+          'Type II - Nonrecognized subsequent event (requires disclosure only)',
+          'Subsequently discovered fact',
+          'Not a subsequent event - outside the relevant period',
+        ],
+        correctAnswer: 2,
+        explanation: 'Since the event occurred AFTER the report date (Feb 15) but before issuance, this is a "subsequently discovered fact" per AU-C 560.14, not a subsequent event. The bankruptcy provides NEW information about conditions that did not exist at the balance sheet date.',
+      },
+      {
+        id: 'req-4',
+        type: 'research',
+        question: 'Which paragraph describes the auditor\'s responsibility when facts become known after the report date but before issuance?',
+        searchTerms: ['after the date of the auditor\'s report', 'before issuance', 'subsequently discovered'],
+        correctCitation: 'AU-C Section 560.14',
+        acceptableAnswers: ['AU-C 560.14', 'AU-C Section 560.14', '560.14-.17'],
+        explanation: 'AU-C 560.14 requires the auditor to discuss the matter with management and determine whether the financial statements need revision when facts become known after the report date but before issuance.',
+      },
+    ],
+    hints: [
+      '🔍 AUDIT RESEARCH STRATEGY:',
+      '• AU-C 560 covers subsequent events',
+      '• Key distinction: BEFORE vs. AFTER report date',
+      '• Type I = Conditions existed at B/S date (adjust)',
+      '• Type II = Conditions arose after B/S date (disclose)',
+      '',
+      '📖 SEARCH TIPS:',
+      '• Use "subsequent event" as primary search term',
+      '• Look for "date of the auditor\'s report"',
+      '• Check paragraph .14 for post-report date events',
+    ],
+    references: ['AU-C 560.06', 'AU-C 560.10', 'AU-C 560.14'],
+  },
+];
+
+// ==========================================
+// WRITTEN COMMUNICATION TBS
+// ==========================================
+export const WRITTEN_COMM_TBS: TBS[] = [
+  {
+    id: 'aud-tbs-007',
+    section: 'AUD',
+    type: TBS_TYPES.WRITTEN_COMMUNICATION,
+    title: 'Written Communication: Internal Control Deficiency Memo',
+    difficulty: 'medium',
+    timeEstimate: 20,
+    topic: 'Communication with Those Charged with Governance',
+    blueprintArea: 'AUD-VI',
+    blueprintTopic: 'AUD-VI-A-2',
+    scenario: `
+You are the senior auditor for GlobalTech Industries, a publicly traded company. During your audit of the year ended December 31, Year 1, you identified the following internal control deficiency:
+
+DEFICIENCY IDENTIFIED:
+The accounts payable department has only two employees. One employee handles vendor setup, invoice processing, AND check preparation. The second employee only reviews checks over $10,000. There is no segregation of duties for transactions under $10,000, which represent 85% of all transactions by volume.
+
+During testing, you identified three instances where fictitious vendors were created and paid, totaling $47,000. The fraud was committed by the accounts payable employee who was subsequently terminated.
+
+ADDITIONAL INFORMATION:
+• Company materiality: $500,000
+• Total accounts payable transactions: 15,000 per year
+• Average transaction: $3,200
+• This is the first year you have audited this client
+
+Your manager has asked you to draft a written communication to those charged with governance regarding this matter.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'written_response',
+        question: 'Draft a professional memo to the Audit Committee communicating this deficiency. Your response should include: (1) description of the deficiency, (2) classification as significant deficiency or material weakness, (3) potential consequences, and (4) recommendations.',
+        rubric: {
+          criteria: [
+            {
+              name: 'Professional Format',
+              maxPoints: 5,
+              description: 'Proper memo format with To, From, Date, Subject; professional tone',
+            },
+            {
+              name: 'Deficiency Description',
+              maxPoints: 10,
+              description: 'Clear description of the lack of segregation of duties and the transactions affected',
+            },
+            {
+              name: 'Classification Justification',
+              maxPoints: 15,
+              description: 'Correctly identifies as material weakness because fraud actually occurred; explains the severity',
+            },
+            {
+              name: 'Consequences Explained',
+              maxPoints: 10,
+              description: 'Discusses risk of undetected fraud, financial statement misstatement, reputational harm',
+            },
+            {
+              name: 'Recommendations',
+              maxPoints: 10,
+              description: 'Provides actionable recommendations: segregate duties, independent review, vendor master file controls',
+            },
+          ],
+          totalPoints: 50,
+          passingScore: 35,
+        },
+        sampleResponse: `TO: Audit Committee, GlobalTech Industries
+FROM: [Auditor Name], CPA
+DATE: February 15, Year 2
+RE: Communication of Material Weakness in Internal Control
+
+We have audited the financial statements of GlobalTech Industries for the year ended December 31, Year 1. In accordance with AU-C Section 265, we are required to communicate in writing any significant deficiencies or material weaknesses identified during our audit.
+
+MATERIAL WEAKNESS IDENTIFIED:
+
+Description:
+During our audit, we identified a material weakness in internal control over the accounts payable function. The company employs only two individuals in accounts payable, with one employee responsible for vendor setup, invoice processing, and check preparation for all transactions under $10,000. This lack of segregation of duties affects 85% of all transactions by volume.
+
+Classification:
+We have classified this as a material weakness rather than a significant deficiency because the control deficiency resulted in actual fraud. Our testing identified three instances of fictitious vendor payments totaling $47,000. A material weakness exists when there is a reasonable possibility that a material misstatement will not be prevented or detected on a timely basis.
+
+Consequences:
+This deficiency resulted in:
+• Direct financial loss of $47,000
+• Potential for additional undetected fraud
+• Risk of material misstatement in accounts payable and cash
+• Reputational harm and employee trust concerns
+
+Recommendations:
+We recommend the following corrective actions:
+1. Segregate vendor master file maintenance from payment processing
+2. Implement independent review for ALL disbursements, regardless of amount
+3. Require dual approval for new vendor additions
+4. Conduct periodic vendor master file reviews to identify duplicate or suspicious vendors
+5. Consider implementing positive pay or other banking controls
+
+This communication is intended solely for the information and use of management and those charged with governance and is not intended to be used by anyone other than these specified parties.`,
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Under AU-C 265, when must significant deficiencies and material weaknesses be communicated in writing?',
+        options: [
+          'Within 30 days of detection',
+          'Within 60 days of the report date',
+          'By the report release date or no later than 60 days after report release',
+          'Immediately upon detection',
+        ],
+        correctAnswer: 2,
+        explanation: 'AU-C 265.13 requires that significant deficiencies and material weaknesses be communicated in writing to those charged with governance on a timely basis, no later than 60 days following the report release date.',
+      },
+    ],
+    hints: [
+      '✍️ WRITTEN COMMUNICATION TIPS:',
+      '• Use professional memo format (To, From, Date, Subject)',
+      '• Be clear and concise - avoid jargon',
+      '• Support classification with specific facts',
+      '• Include actionable recommendations',
+      '',
+      '📋 KEY ELEMENTS:',
+      '• Material weakness vs. significant deficiency',
+      '• MW = reasonable possibility of material misstatement not prevented/detected',
+      '• Actual fraud occurrence typically = MW',
+    ],
+    references: ['AU-C 265', 'AU-C 260', 'PCAOB AS 1305'],
+  },
+  {
+    id: 'reg-tbs-009',
+    section: 'REG',
+    type: TBS_TYPES.WRITTEN_COMMUNICATION,
+    title: 'Written Communication: Tax Position Memo',
+    difficulty: 'medium',
+    timeEstimate: 18,
+    topic: 'Tax Research and Communication',
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-A-1',
+    scenario: `
+Your client, Evergreen Manufacturing LLC, is considering classifying several workers as independent contractors rather than employees. The CFO has asked for your professional opinion on the tax implications and risks.
+
+FACTS:
+• 12 workers perform assembly line work at the company's facility
+• Workers use company-provided equipment and tools
+• Company sets their schedules (8 AM - 5 PM, Monday-Friday)
+• Workers are paid hourly ($28/hour) with no benefits
+• Workers have been classified as contractors for 3 years
+• Total payments to these workers: $1,200,000 annually
+• Company currently issues 1099-NEC forms
+
+The CFO states: "We've always done it this way and never had a problem. Can you give us something in writing about whether we should be concerned?"
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'written_response',
+        question: 'Draft a professional memo to the CFO addressing the worker classification issue. Include: (1) analysis of the worker classification factors, (2) your conclusion on proper classification, (3) potential tax consequences of misclassification, and (4) recommendations.',
+        rubric: {
+          criteria: [
+            {
+              name: 'Professional Format',
+              maxPoints: 5,
+              description: 'Proper memo format; professional, objective tone',
+            },
+            {
+              name: 'Factor Analysis',
+              maxPoints: 15,
+              description: 'Discusses behavioral control, financial control, and relationship type factors per IRS guidance',
+            },
+            {
+              name: 'Correct Conclusion',
+              maxPoints: 10,
+              description: 'Concludes workers are likely employees based on facts; explains reasoning',
+            },
+            {
+              name: 'Tax Consequences',
+              maxPoints: 10,
+              description: 'Discusses back employment taxes, penalties, interest, potential fraud penalties',
+            },
+            {
+              name: 'Recommendations',
+              maxPoints: 10,
+              description: 'Provides clear path forward: reclassify, voluntary classification settlement program, or Section 530 relief',
+            },
+          ],
+          totalPoints: 50,
+          passingScore: 35,
+        },
+        sampleResponse: `TO: CFO, Evergreen Manufacturing LLC
+FROM: [Tax Advisor Name], CPA
+DATE: [Current Date]
+RE: Worker Classification Analysis - Independent Contractor vs. Employee
+
+EXECUTIVE SUMMARY:
+Based on our analysis of the relevant facts and IRS guidance, the 12 workers currently classified as independent contractors likely meet the criteria for employee status under federal tax law. We recommend immediate action to mitigate potential tax liabilities and penalties.
+
+ANALYSIS OF CLASSIFICATION FACTORS:
+
+The IRS uses a three-factor test to determine worker classification:
+
+1. Behavioral Control (Strongly suggests EMPLOYEE):
+   • Workers perform duties at company facility
+   • Company sets specific work hours (8 AM - 5 PM)
+   • Work is assembly line, implying company controls methods
+
+2. Financial Control (Strongly suggests EMPLOYEE):
+   • Company provides all equipment and tools
+   • Workers paid hourly (not by project)
+   • No opportunity for profit/loss typically associated with contractors
+
+3. Relationship Type (Suggests EMPLOYEE):
+   • Work is ongoing (3+ years)
+   • Workers perform core business function (assembly)
+   • No written contractor agreement mentioned
+
+CONCLUSION:
+Based on the preponderance of factors, these workers should be classified as EMPLOYEES for federal tax purposes.
+
+POTENTIAL TAX CONSEQUENCES OF MISCLASSIFICATION:
+
+If the IRS reclassifies these workers, Evergreen may be liable for:
+• Unpaid FICA taxes: ~$91,800/year ($1.2M × 7.65%)
+• Federal income tax withholding (estimated): $168,000/year
+• Penalties: Up to 100% of taxes due (3% + 20% + 40% + trust fund recovery)
+• Interest: Currently ~8% on unpaid amounts
+• Three-year exposure: Potentially $600,000+
+
+RECOMMENDATIONS:
+
+1. IMMEDIATE: Consult with employment tax counsel
+2. Consider IRS Voluntary Classification Settlement Program (VCSP)
+   - Pay 10% of one year's employment tax liability
+   - Avoid penalties and interest
+   - Prospective reclassification only
+3. If VCSP not viable, evaluate Section 530 safe harbor relief
+4. Reclassify workers as employees going forward
+5. Retain documentation of good faith reliance
+
+This memorandum is based on facts presented and current law. Tax positions should be evaluated periodically as facts or law change.`,
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'What is the employer\'s share of FICA taxes that would be owed if these workers are reclassified as employees?',
+        options: [
+          '6.2% (Social Security only)',
+          '7.65% (Social Security + Medicare)',
+          '15.3% (Both employer and employee share)',
+          '1.45% (Medicare only)',
+        ],
+        correctAnswer: 1,
+        explanation: 'The employer\'s share of FICA is 7.65% (6.2% Social Security + 1.45% Medicare). If workers are reclassified, the employer owes this amount on all compensation paid.',
+      },
+    ],
+    hints: [
+      '✍️ TAX MEMO WRITING TIPS:',
+      '• State conclusion early (executive summary)',
+      '• Apply facts to law systematically',
+      '• Quantify potential exposure',
+      '• Provide actionable recommendations',
+      '',
+      '📋 WORKER CLASSIFICATION:',
+      '• Behavioral Control = Who controls HOW work is done',
+      '• Financial Control = Business aspects (expenses, profit opportunity)',
+      '• Relationship Type = Benefits, permanence, key activity',
+    ],
+    references: ['IRC Section 3121', 'Rev. Rul. 87-41', 'IRS Publication 15-A'],
+  },
+];
+
 // Export all additional TBS
-export const ADDITIONAL_TBS = [...FAR_TBS_2, ...REG_TBS_2, ...AUD_TBS_2, ...BEC_TBS_2];
+export const ADDITIONAL_TBS = [...FAR_TBS_2, ...REG_TBS_2, ...AUD_TBS_2, ...BEC_TBS_2, ...RESEARCH_TBS, ...WRITTEN_COMM_TBS];
 
 export default ADDITIONAL_TBS;

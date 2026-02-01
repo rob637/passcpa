@@ -952,6 +952,292 @@ TESTING RESULTS:
     ],
     references: ['SOC 2 Examination Guide', 'Trust Services Criteria', 'AICPA Attestation Standards'],
   },
+  // =========================================================================
+  // AREA IV: Emerging Technologies (5-15%)
+  // =========================================================================
+  {
+    id: 'isc-tbs-009',
+    section: 'ISC',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'AI/ML Model Governance Assessment',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Artificial Intelligence and Machine Learning',
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-A-1',
+    scenario: `
+You are assessing the AI/ML governance framework for FinServ Bank, which uses machine learning models for credit decisioning. Review the following documentation:
+
+MODEL GOVERNANCE DOCUMENTATION:
+
+Model: Credit Score Predictor v3.2
+Purpose: Automated credit limit decisions for consumer credit cards
+Production Date: January 2024
+
+TRAINING DATA:
+• Source: 5 million historical credit applications (2018-2023)
+• Features: 47 input variables including income, employment, credit history
+• Protected attributes: Age, gender, zip code, marital status NOT used
+• Target variable: Default within 24 months (binary)
+
+MODEL PERFORMANCE (Validation Set):
+• AUC-ROC: 0.87
+• Accuracy: 82%
+• False Positive Rate (predicted default, actual good): 12%
+• False Negative Rate (predicted good, actual default): 23%
+
+FAIRNESS TESTING (Demographic Parity):
+• Approval rate - White applicants: 71%
+• Approval rate - Black applicants: 58%
+• Approval rate - Hispanic applicants: 62%
+• Approval rate - Asian applicants: 74%
+
+MODEL MONITORING:
+• Performance reviewed quarterly
+• Model retraining: "As needed"
+• Drift detection: Not implemented
+• Explainability: SHAP values available for individual decisions
+
+COMPLIANCE:
+• ECOA compliance review: Pending
+• Model risk management (SR 11-7): Documentation in progress
+• Model validation: Internal team only
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'The disparity in approval rates between demographic groups suggests what AI risk?',
+        options: [
+          'Model overfitting',
+          'Algorithmic bias / Disparate impact',
+          'Data leakage',
+          'Concept drift',
+        ],
+        correctAnswer: 1,
+        explanation: 'The 13-percentage-point gap between White (71%) and Black (58%) approval rates suggests potential disparate impact, a key AI fairness concern under ECOA and fair lending laws.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Which model governance weakness is MOST concerning from a regulatory perspective?',
+        options: [
+          'Quarterly performance review frequency',
+          'ECOA compliance review is pending',
+          'Internal-only model validation',
+          'No drift detection implemented',
+        ],
+        correctAnswer: 1,
+        explanation: 'For a credit decisioning model, pending ECOA (Equal Credit Opportunity Act) compliance is the highest regulatory risk. Disparate impact can result in significant regulatory penalties and lawsuits.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'The False Negative Rate of 23% means:',
+        options: [
+          '23% of predicted defaults actually did not default',
+          '23% of actual defaults were incorrectly predicted as good credit',
+          '23% of all predictions were wrong',
+          '23% of approved applications resulted in default',
+        ],
+        correctAnswer: 1,
+        explanation: 'False Negative Rate = actual defaults predicted as good. A 23% FNR means 23% of customers who defaulted were initially classified as good credit risks - a significant loss exposure.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'What is the purpose of SHAP values mentioned in the documentation?',
+        options: [
+          'To measure model accuracy',
+          'To provide explainability for individual predictions',
+          'To detect data drift',
+          'To validate training data quality',
+        ],
+        correctAnswer: 1,
+        explanation: 'SHAP (SHapley Additive exPlanations) values explain why a model made a specific prediction by showing each feature\'s contribution. This supports adverse action notices required under ECOA.',
+      },
+      {
+        id: 'req-5',
+        type: 'classification',
+        question: 'Classify each finding as High, Medium, or Low risk:',
+        items: [
+          'Pending ECOA compliance review',
+          'No drift detection',
+          'Internal-only validation',
+          'Quarterly monitoring',
+          'FNR of 23%',
+        ],
+        options: ['High', 'Medium', 'Low'],
+        correctAnswers: [
+          { item: 'Pending ECOA compliance review', answer: 'High' },
+          { item: 'No drift detection', answer: 'Medium' },
+          { item: 'Internal-only validation', answer: 'High' },
+          { item: 'Quarterly monitoring', answer: 'Low' },
+          { item: 'FNR of 23%', answer: 'Medium' },
+        ],
+      },
+    ],
+    hints: [
+      'SR 11-7 is the Federal Reserve guidance on model risk management',
+      'ECOA requires adverse action notices with specific reasons',
+      'Disparate impact can occur even without using protected attributes directly',
+      'Independent model validation is a regulatory expectation for material models',
+    ],
+    references: ['SR 11-7 Model Risk Management', 'ECOA', 'NIST AI RMF', 'Fair Lending Laws'],
+  },
+  {
+    id: 'isc-tbs-010',
+    section: 'ISC',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Blockchain and Smart Contract Audit',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Blockchain and Distributed Ledger Technology',
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-B-1',
+    scenario: `
+You are assessing controls over a blockchain-based payment system implemented by SupplyChain Corp. The system uses smart contracts for automated vendor payments upon delivery confirmation.
+
+SYSTEM ARCHITECTURE:
+
+Blockchain: Private permissioned (Hyperledger Fabric)
+Nodes: 15 nodes across 5 organizations (supply chain partners)
+Consensus: Practical Byzantine Fault Tolerance (PBFT)
+Smart Contract Language: Go (Golang)
+
+SMART CONTRACT: AutoPayment v2.1
+Purpose: Automatic payment release when delivery is confirmed
+Deployed: June 2024
+
+CONTRACT LOGIC (Simplified):
+1. Buyer creates purchase order on-chain
+2. Seller ships goods, updates status
+3. IoT sensors confirm delivery at buyer's warehouse
+4. Smart contract automatically releases payment
+5. Payment settled via integration with banking system
+
+SECURITY ASSESSMENT FINDINGS:
+
+1. Code Audit: External audit performed by ChainSec Inc.
+   - 2 High severity findings (patched before deployment)
+   - 5 Medium severity findings (3 patched, 2 accepted risks)
+   - No access control on updateDeliveryStatus function
+
+2. Key Management:
+   - Each organization manages own signing keys
+   - No formal key rotation policy
+   - Hardware security modules (HSM) used by 3 of 5 organizations
+
+3. Node Operations:
+   - 2 organizations running outdated Fabric version (1.4 vs current 2.5)
+   - No formal SLA for node uptime
+   - Backup procedures vary by organization
+
+4. Access Controls:
+   - Role-based access control implemented
+   - No multi-signature requirement for contract upgrades
+   - Admin keys held by single IT manager at each org
+
+TRANSACTION DATA:
+• Monthly transactions: 2,500
+• Average transaction value: $45,000
+• Largest single transaction: $2.3 million
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'What is the PRIMARY risk of "no access control on updateDeliveryStatus function"?',
+        options: [
+          'Performance degradation',
+          'Unauthorized parties could trigger fraudulent payments',
+          'Data confidentiality breach',
+          'Consensus mechanism failure',
+        ],
+        correctAnswer: 1,
+        explanation: 'If anyone can call updateDeliveryStatus, they could falsely confirm delivery and trigger automatic payment release without actual goods receipt - a direct fraud risk.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'The varying HSM adoption (3 of 5 organizations) creates what risk?',
+        options: [
+          'The blockchain won\'t function properly',
+          'Transactions will be slower',
+          'Key compromise at non-HSM orgs could compromise the network',
+          'Smart contracts won\'t execute',
+        ],
+        correctAnswer: 2,
+        explanation: 'A permissioned blockchain is only as secure as its weakest participant. Organizations without HSM protection are more vulnerable to key theft, potentially allowing unauthorized transaction signing.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'Why is single-signature contract upgrade authority a control weakness?',
+        options: [
+          'Contract upgrades are not possible on blockchain',
+          'Single person could maliciously modify contract logic',
+          'It violates blockchain immutability',
+          'It prevents emergency patches',
+        ],
+        correctAnswer: 1,
+        explanation: 'Smart contract upgrades with single-signature authority create insider threat risk. A malicious admin could modify payment logic. Multi-signature requirements provide segregation of duties.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'The outdated Fabric versions at 2 organizations is concerning because:',
+        options: [
+          'Transactions from those nodes won\'t be valid',
+          'Security vulnerabilities may be unpatched',
+          'Consensus requires all nodes on same version',
+          'Smart contracts won\'t execute on older versions',
+        ],
+        correctAnswer: 1,
+        explanation: 'Outdated software may have known security vulnerabilities. In a permissioned network, compromised nodes could potentially inject malicious transactions or expose sensitive data.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'PBFT consensus in this 15-node network requires how many nodes to agree for a valid transaction?',
+        options: [
+          'All 15 nodes (unanimous)',
+          'At least 11 nodes (2/3 + 1)',
+          'At least 8 nodes (simple majority)',
+          'At least 3 nodes (one per organization)',
+        ],
+        correctAnswer: 1,
+        explanation: 'PBFT tolerates up to (n-1)/3 byzantine (malicious) nodes. For 15 nodes, it tolerates 4 faulty nodes, requiring 11 (2/3 + 1) honest nodes to reach consensus.',
+      },
+      {
+        id: 'req-6',
+        type: 'classification',
+        question: 'Classify each finding as High, Medium, or Low risk:',
+        items: [
+          'No access control on updateDeliveryStatus',
+          'Varying HSM adoption',
+          'Single-signature contract upgrades',
+          'Outdated Fabric versions',
+          'No node uptime SLA',
+        ],
+        options: ['High', 'Medium', 'Low'],
+        correctAnswers: [
+          { item: 'No access control on updateDeliveryStatus', answer: 'High' },
+          { item: 'Varying HSM adoption', answer: 'High' },
+          { item: 'Single-signature contract upgrades', answer: 'High' },
+          { item: 'Outdated Fabric versions', answer: 'Medium' },
+          { item: 'No node uptime SLA', answer: 'Low' },
+        ],
+      },
+    ],
+    hints: [
+      'Smart contracts are "code is law" - bugs can\'t be easily fixed',
+      'Permissioned blockchains rely on trusted participants',
+      'PBFT: Byzantine Fault Tolerant up to (n-1)/3 faulty nodes',
+      'Multi-signature = multiple parties must approve critical actions',
+    ],
+    references: ['Hyperledger Fabric Documentation', 'AICPA Blockchain Guidance', 'NIST IR 8202'],
+  },
 ];
 
 export default ISC_TBS;

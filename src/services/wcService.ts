@@ -1,10 +1,9 @@
 /**
- * Written Communication Service - Firestore-based WC task fetching
- * Replaces static data imports from data/written-communication
+ * Written Communication Service - Local-first approach
+ * WC tasks are stored in TypeScript files for fast loading and offline support.
+ * Firebase is used only for user progress tracking, not WC content.
  */
 
-import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../config/firebase';
 import { WCTask, WCRubric, ExamSection } from '../types';
 import logger from '../utils/logger';
 
@@ -39,52 +38,41 @@ export const WC_RUBRIC: WCRubric = {
   },
 };
 
-// In-memory cache with TTL
-interface CacheEntry {
-  data: WCTask[];
-  timestamp: number;
-}
-
-const wcCache: Map<string, CacheEntry> = new Map();
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// Cache for WC tasks (in-memory)
+let wcCache: WCTask[] | null = null;
 
 /**
- * Check if cache entry is still valid
+ * Load all WC tasks from local data (with caching)
  */
-function isCacheValid(entry: CacheEntry | undefined): boolean {
-  if (!entry) return false;
-  return Date.now() - entry.timestamp < CACHE_TTL;
-}
-
-/**
- * Fetch all WC tasks from Firestore
- */
-export async function fetchAllWCTasks(): Promise<WCTask[]> {
-  const cacheKey = 'all';
-  const cached = wcCache.get(cacheKey);
-  
-  if (isCacheValid(cached)) {
-    return cached!.data;
+async function loadWCTasks(): Promise<WCTask[]> {
+  if (wcCache) {
+    return wcCache;
   }
 
   try {
-    const wcRef = collection(db, 'written-communication');
-    const q = query(wcRef, orderBy('topic'));
-    const snapshot = await getDocs(q);
-    
-    const tasks: WCTask[] = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as WCTask[];
-    
-    wcCache.set(cacheKey, {
-      data: tasks,
-      timestamp: Date.now()
-    });
-    
-    return tasks;
+    const { ALL_WC_TASKS } = await import('../data/written-communication');
+    wcCache = ALL_WC_TASKS;
+    return wcCache;
   } catch (error) {
-    logger.error('Error fetching WC tasks from Firestore:', error);
+    logger.error('Failed to load WC tasks:', error);
+    return [];
+  }
+}
+
+/**
+ * Fetch all WC tasks from local data
+ */
+export async function fetchAllWCTasks(): Promise<WCTask[]> {
+  try {
+    const allTasks = await loadWCTasks();
+    
+    // Sort by section and topic
+    return [...allTasks].sort((a, b) => {
+      if (a.section !== b.section) return a.section.localeCompare(b.section);
+      return a.topic.localeCompare(b.topic);
+    });
+  } catch (error) {
+    logger.error('Error fetching WC tasks:', error);
     return [];
   }
 }
@@ -93,33 +81,9 @@ export async function fetchAllWCTasks(): Promise<WCTask[]> {
  * Fetch WC tasks by section
  */
 export async function fetchWCTasksBySection(section: ExamSection): Promise<WCTask[]> {
-  const cacheKey = `section-${section}`;
-  const cached = wcCache.get(cacheKey);
-  
-  if (isCacheValid(cached)) {
-    return cached!.data;
-  }
-
   try {
-    const wcRef = collection(db, 'written-communication');
-    const q = query(
-      wcRef, 
-      where('section', '==', section),
-      orderBy('topic')
-    );
-    const snapshot = await getDocs(q);
-    
-    const tasks: WCTask[] = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as WCTask[];
-    
-    wcCache.set(cacheKey, {
-      data: tasks,
-      timestamp: Date.now()
-    });
-    
-    return tasks;
+    const { getWCBySection } = await import('../data/written-communication');
+    return getWCBySection(section);
   } catch (error) {
     logger.error(`Error fetching WC tasks for section ${section}:`, error);
     return [];
@@ -130,22 +94,9 @@ export async function fetchWCTasksBySection(section: ExamSection): Promise<WCTas
  * Fetch a single WC task by ID
  */
 export async function fetchWCTaskById(taskId: string): Promise<WCTask | null> {
-  // Check if we have it in any cache
-  for (const [, entry] of wcCache) {
-    if (isCacheValid(entry)) {
-      const found = entry.data.find(t => t.id === taskId);
-      if (found) return found;
-    }
-  }
-
   try {
-    const wcDoc = await getDoc(doc(db, 'written-communication', taskId));
-    
-    if (wcDoc.exists()) {
-      return { id: wcDoc.id, ...wcDoc.data() } as WCTask;
-    }
-    
-    return null;
+    const allTasks = await loadWCTasks();
+    return allTasks.find(t => t.id === taskId) || null;
   } catch (error) {
     logger.error(`Error fetching WC task ${taskId}:`, error);
     return null;
@@ -157,13 +108,8 @@ export async function fetchWCTaskById(taskId: string): Promise<WCTask | null> {
  */
 export async function getRandomWCTask(section?: ExamSection): Promise<WCTask | null> {
   try {
-    const tasks = section 
-      ? await fetchWCTasksBySection(section)
-      : await fetchAllWCTasks();
-    
-    if (tasks.length === 0) return null;
-    
-    return tasks[Math.floor(Math.random() * tasks.length)];
+    const { getRandomWC } = await import('../data/written-communication');
+    return getRandomWC(section) || null;
   } catch (error) {
     logger.error('Error getting random WC task:', error);
     return null;
@@ -174,7 +120,7 @@ export async function getRandomWCTask(section?: ExamSection): Promise<WCTask | n
  * Search WC tasks by topic
  */
 export async function searchWCTasks(searchTerm: string): Promise<WCTask[]> {
-  const all = await fetchAllWCTasks();
+  const all = await loadWCTasks();
   const term = searchTerm.toLowerCase();
   
   return all.filter(task =>
@@ -187,85 +133,31 @@ export async function searchWCTasks(searchTerm: string): Promise<WCTask[]> {
  * Clear the WC cache
  */
 export function clearWCCache(): void {
-  wcCache.clear();
-}
-
-// ============================================================================
-// ADMIN CRUD Operations
-// ============================================================================
-
-/**
- * Add a new WC task to Firestore
- */
-export async function addWCTask(task: Omit<WCTask, 'id'>): Promise<string> {
-  try {
-    const wcRef = collection(db, 'written-communication');
-    const docRef = await addDoc(wcRef, {
-      ...task,
-      type: 'written_communication',
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
-    
-    // Clear cache
-    clearWCCache();
-    
-    return docRef.id;
-  } catch (error) {
-    logger.error('Error adding WC task:', error);
-    throw error;
-  }
-}
-
-/**
- * Update an existing WC task
- */
-export async function updateWCTask(id: string, data: Partial<WCTask>): Promise<void> {
-  try {
-    const wcRef = doc(db, 'written-communication', id);
-    await updateDoc(wcRef, {
-      ...data,
-      updatedAt: serverTimestamp(),
-    });
-    
-    // Clear cache
-    clearWCCache();
-  } catch (error) {
-    logger.error('Error updating WC task:', error);
-    throw error;
-  }
-}
-
-/**
- * Delete a WC task
- */
-export async function deleteWCTask(id: string): Promise<void> {
-  try {
-    const wcRef = doc(db, 'written-communication', id);
-    await deleteDoc(wcRef);
-    
-    // Clear cache
-    clearWCCache();
-  } catch (error) {
-    logger.error('Error deleting WC task:', error);
-    throw error;
-  }
+  wcCache = null;
 }
 
 /**
  * Get WC stats by section
  */
 export async function getWCStats(): Promise<{ section: string; count: number }[]> {
-  const tasks = await fetchAllWCTasks();
-  const stats = new Map<string, number>();
-  
-  for (const task of tasks) {
-    const count = stats.get(task.section) || 0;
-    stats.set(task.section, count + 1);
+  try {
+    const { getWCStats: getStats } = await import('../data/written-communication');
+    const stats = getStats();
+    
+    return Object.entries(stats.bySection).map(([section, count]) => ({
+      section,
+      count: count as number,
+    }));
+  } catch (error) {
+    logger.error('Error getting WC stats:', error);
+    return [];
   }
-  
-  return Array.from(stats.entries()).map(([section, count]) => ({
-    section,
-    count
-  }));
+}
+
+/**
+ * Get total WC task count
+ */
+export async function getWCTotalCount(): Promise<number> {
+  const tasks = await loadWCTasks();
+  return tasks.length;
 }

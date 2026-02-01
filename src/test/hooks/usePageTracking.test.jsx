@@ -53,7 +53,7 @@ describe('usePageTracking', () => {
       vi.advanceTimersByTime(150);
     });
 
-    expect(trackPageView).toHaveBeenCalledWith('/dashboard', 'Dashboard');
+    expect(trackPageView).toHaveBeenCalledWith('/dashboard', 'Home');
   });
 
   it('uses VoraPrep title for unknown routes', async () => {

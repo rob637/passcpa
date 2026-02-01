@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   ArrowLeft,
   Clock,
@@ -189,18 +189,19 @@ interface TaskSelectionScreenProps {
   tasks: WCTask[];
   onSelectTask: (task: WCTask) => void;
   onStartRandom: () => void;
+  backPath: string;
 }
 
-const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSelectTask, onStartRandom }) => {
+const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSelectTask, onStartRandom, backPath }) => {
   return (
     <div className="p-4 sm:p-6 max-w-4xl mx-auto page-enter">
       <div className="mb-8">
         <Link
-          to="/study"
+          to={backPath}
           className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Study
+          {backPath === '/home' ? 'Back to Daily Plan' : 'Back to Study'}
         </Link>
         <h1 className="text-2xl font-bold text-slate-900">Written Communication Practice</h1>
         <p className="text-slate-600 mt-1">
@@ -295,9 +296,10 @@ interface ResultsScreenProps {
   scores: Record<string, number>;
   onTryAgain: () => void;
   onSelectNew: () => void;
+  backPath: string;
 }
 
-const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew }) => {
+const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew, backPath }) => {
   const totalScore = Object.entries(scores).reduce((acc, [key, score]) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const category = (WC_RUBRIC as any)[key];
@@ -310,11 +312,11 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew }) =>
     <div className="p-4 sm:p-6 max-w-4xl mx-auto page-enter">
       <div className="mb-6">
         <Link
-          to="/study"
+          to={backPath}
           className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Study
+          {backPath === '/home' ? 'Back to Daily Plan' : 'Back to Study'}
         </Link>
         <h1 className="text-2xl font-bold text-slate-900">Response Submitted</h1>
       </div>
@@ -366,6 +368,7 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew }) =>
 };
 
 const WrittenCommunication: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [activeTask, setActiveTask] = useState<WCTask | null>(null);
   const [response, setResponse] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -373,6 +376,10 @@ const WrittenCommunication: React.FC = () => {
   const [showSample, setShowSample] = useState(false);
   const [tasks, setTasks] = useState<WCTask[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Daily plan awareness
+  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
+  const backPath = fromDailyPlan ? '/home' : '/study';
   
   // Load tasks from Firestore
   useEffect(() => {
@@ -437,6 +444,7 @@ const WrittenCommunication: React.FC = () => {
         tasks={tasks} 
         onSelectTask={handleStartTask}
         onStartRandom={handleStartRandom}
+        backPath={backPath}
       />
     );
   }
@@ -449,6 +457,7 @@ const WrittenCommunication: React.FC = () => {
         scores={scores}
         onTryAgain={() => setIsSubmitted(false)}
         onSelectNew={() => setActiveTask(null)}
+        backPath={backPath}
       />
     );
   }

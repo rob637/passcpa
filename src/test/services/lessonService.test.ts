@@ -1,282 +1,205 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-
-// Mock Firebase
-vi.mock('../../config/firebase', () => ({
-  db: {},
-}));
-
-vi.mock('firebase/firestore', () => {
-  const mockLessons = [
-    {
-      id: 'lesson-1',
-      title: 'Tax Basics',
-      section: 'REG',
-      order: 1,
-      content: 'Tax content',
-      duration: 30,
-      difficulty: 'easy',
-    },
-    {
-      id: 'lesson-2',
-      title: 'Advanced Tax',
-      section: 'REG',
-      order: 2,
-      content: 'Advanced content',
-      duration: 45,
-      difficulty: 'hard',
-    },
-    {
-      id: 'lesson-3',
-      title: 'FAR Basics',
-      section: 'FAR',
-      order: 1,
-      content: 'FAR content',
-      duration: 40,
-      difficulty: 'medium',
-    },
-  ];
-
-  return {
-    collection: vi.fn(),
-    doc: vi.fn(),
-    getDoc: vi.fn().mockResolvedValue({
-      exists: () => true,
-      id: 'lesson-1',
-      data: () => mockLessons[0],
-    }),
-    getDocs: vi.fn().mockResolvedValue({
-      forEach: (callback: (doc: { id: string; data: () => unknown }) => void) => 
-        mockLessons.forEach((l) => callback({
-          id: l.id,
-          data: () => l,
-        })),
-      docs: mockLessons.map(l => ({ id: l.id, data: () => l })),
-    }),
-    query: vi.fn(),
-    where: vi.fn(),
-    orderBy: vi.fn(),
-  };
-});
-
-// Import after mocks
+/**
+ * Lesson Service Tests - Local-first Architecture
+ * Tests the lessonService which loads lessons from local TypeScript files.
+ */
+import { describe, it, expect, beforeEach } from 'vitest';
 import {
   fetchAllLessons,
   fetchLessonsBySection,
   fetchLessonById,
-  clearLessonsCache,
+  getLessonStats,
+  fetchLessonsByTopic,
+  searchLessons,
+  clearLessonCache,
 } from '../../services/lessonService';
 
 describe('lessonService', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
-    // Clear the cache before each test
-    clearLessonsCache?.();
+    // Clear cache before each test to ensure clean state
+    clearLessonCache();
   });
 
   describe('fetchAllLessons', () => {
-    it('fetches all lessons from Firestore', async () => {
+    it('fetches all lessons from local data', async () => {
       const lessons = await fetchAllLessons();
       expect(Array.isArray(lessons)).toBe(true);
+      expect(lessons.length).toBeGreaterThan(0);
     });
 
     it('returns lessons sorted by section and order', async () => {
       const lessons = await fetchAllLessons();
-      // Should be sorted
-      expect(lessons.length).toBeGreaterThanOrEqual(0);
+      
+      // Verify sorting - same section should be ordered by order field
+      for (let i = 1; i < lessons.length; i++) {
+        const prev = lessons[i - 1];
+        const curr = lessons[i];
+        if (prev.section === curr.section) {
+          expect(prev.order).toBeLessThanOrEqual(curr.order ?? Infinity);
+        }
+      }
     });
 
     it('caches lessons for subsequent calls', async () => {
       const firstCall = await fetchAllLessons();
       const secondCall = await fetchAllLessons();
-      // Both should return the same result (from cache)
-      expect(firstCall).toEqual(secondCall);
+      // Both should return equivalent arrays
+      expect(firstCall.length).toBe(secondCall.length);
+      expect(firstCall[0]?.id).toBe(secondCall[0]?.id);
+    });
+
+    it('filters by courseId', async () => {
+      const cpaLessons = await fetchAllLessons('cpa');
+      expect(cpaLessons.length).toBeGreaterThan(0);
+      // All lessons should be for 'cpa' course
+      cpaLessons.forEach(lesson => {
+        expect(lesson.courseId || 'cpa').toBe('cpa');
+      });
     });
   });
 
   describe('fetchLessonsBySection', () => {
     it('fetches lessons for a specific section', async () => {
-      const lessons = await fetchLessonsBySection('REG');
+      const lessons = await fetchLessonsBySection('FAR');
       expect(Array.isArray(lessons)).toBe(true);
+      expect(lessons.length).toBeGreaterThan(0);
+      lessons.forEach(lesson => {
+        expect(lesson.section).toBe('FAR');
+      });
     });
 
-    it('handles uppercase/lowercase section names', async () => {
-      const lower = await fetchLessonsBySection('reg');
-      const upper = await fetchLessonsBySection('REG');
-      // Both should work
-      expect(Array.isArray(lower)).toBe(true);
-      expect(Array.isArray(upper)).toBe(true);
+    it('handles case insensitive section names', async () => {
+      const lessons = await fetchLessonsBySection('far');
+      expect(lessons.length).toBeGreaterThan(0);
+      lessons.forEach(lesson => {
+        expect(lesson.section).toBe('FAR');
+      });
     });
 
     it('returns empty array for non-existent section', async () => {
       const lessons = await fetchLessonsBySection('NONEXISTENT');
-      expect(Array.isArray(lessons)).toBe(true);
+      expect(lessons).toEqual([]);
     });
   });
 
   describe('fetchLessonById', () => {
     it('fetches a single lesson by ID', async () => {
-      const lesson = await fetchLessonById('lesson-1');
-      // Should return a lesson or null
-      expect(lesson === null || typeof lesson === 'object').toBe(true);
+      // First get all lessons to find a valid ID
+      const allLessons = await fetchAllLessons();
+      expect(allLessons.length).toBeGreaterThan(0);
+      
+      const firstLesson = allLessons[0];
+      const lesson = await fetchLessonById(firstLesson.id);
+      
+      expect(lesson).not.toBeNull();
+      expect(lesson?.id).toBe(firstLesson.id);
     });
 
-    it('returns null for non-existent lesson', async () => {
-      const lesson = await fetchLessonById('non-existent-id');
-      // May return null or undefined
-      expect(lesson === null || lesson === undefined || typeof lesson === 'object').toBe(true);
-    });
-  });
-
-  describe('multi-course support', () => {
-    it('accepts courseId parameter in fetchAllLessons', async () => {
-      const lessons = await fetchAllLessons('cpa');
-      expect(Array.isArray(lessons)).toBe(true);
-    });
-
-    it('uses default course ID when not specified', async () => {
-      const lessons = await fetchAllLessons();
-      expect(Array.isArray(lessons)).toBe(true);
-    });
-
-    it('accepts courseId parameter in fetchLessonsBySection', async () => {
-      const lessons = await fetchLessonsBySection('REG', 'cpa');
-      expect(Array.isArray(lessons)).toBe(true);
-    });
-
-    it('accepts courseId parameter in fetchLessonById', async () => {
-      const lesson = await fetchLessonById('lesson-1', 'cpa');
-      expect(lesson === null || typeof lesson === 'object').toBe(true);
+    it('returns null for non-existent ID', async () => {
+      const lesson = await fetchLessonById('nonexistent-id-12345');
+      expect(lesson).toBeNull();
     });
   });
 
-  describe('caching behavior', () => {
-    it('clearLessonsCache function exists', async () => {
-      const service = await import('../../services/lessonService');
-      expect(typeof service.clearLessonsCache).toBe('function');
+  describe('getLessonStats', () => {
+    it('returns lesson statistics', async () => {
+      const stats = await getLessonStats();
+      
+      expect(stats.total).toBeGreaterThan(0);
+      expect(typeof stats.bySection).toBe('object');
+      expect(typeof stats.byDifficulty).toBe('object');
     });
 
-    it('cache expires after duration', async () => {
-      // Cache duration is 5 minutes (300000 ms)
-      const CACHE_DURATION = 5 * 60 * 1000;
-      expect(CACHE_DURATION).toBe(300000);
-    });
-  });
-
-  describe('error handling', () => {
-    it('returns empty array on fetch error for fetchAllLessons', async () => {
-      // The function should handle errors gracefully
-      const lessons = await fetchAllLessons();
-      expect(Array.isArray(lessons)).toBe(true);
-    });
-
-    it('falls back to filtering all lessons on fetchLessonsBySection error', async () => {
-      const lessons = await fetchLessonsBySection('FAR');
-      expect(Array.isArray(lessons)).toBe(true);
+    it('has stats for known sections', async () => {
+      const stats = await getLessonStats();
+      
+      // Should have at least one of the main sections
+      const hasKnownSection = ['FAR', 'AUD', 'REG', 'BAR', 'BEC'].some(
+        section => section in stats.bySection
+      );
+      expect(hasKnownSection).toBe(true);
     });
   });
 
-  describe('lesson data structure', () => {
-    it('lessons have id property', async () => {
-      const lessons = await fetchAllLessons();
-      if (lessons.length > 0) {
-        expect(lessons[0].id).toBeDefined();
+  describe('fetchLessonsByTopic', () => {
+    it('returns lessons matching a topic', async () => {
+      // Get all lessons first to find a topic
+      const allLessons = await fetchAllLessons();
+      const lessonWithTopic = allLessons.find(l => l.topic);
+      
+      if (lessonWithTopic && lessonWithTopic.topic) {
+        const topicLessons = await fetchLessonsByTopic(lessonWithTopic.topic);
+        expect(topicLessons.length).toBeGreaterThan(0);
       }
     });
 
-    it('lessons have title property', async () => {
-      const lessons = await fetchAllLessons();
-      if (lessons.length > 0) {
-        expect(lessons[0].title).toBeDefined();
-      }
+    it('returns empty array for non-matching topic', async () => {
+      const lessons = await fetchLessonsByTopic('xyz123nonexistenttopic456');
+      expect(lessons).toEqual([]);
+    });
+  });
+
+  describe('searchLessons', () => {
+    it('finds lessons by title keyword', async () => {
+      const allLessons = await fetchAllLessons();
+      const firstLesson = allLessons[0];
+      
+      // Search by first word of title
+      const searchWord = firstLesson.title.split(' ')[0];
+      const results = await searchLessons(searchWord);
+      
+      expect(results.length).toBeGreaterThan(0);
+      expect(results.some(r => r.id === firstLesson.id)).toBe(true);
     });
 
-    it('lessons have section property', async () => {
-      const lessons = await fetchAllLessons();
-      if (lessons.length > 0) {
-        expect(lessons[0].section).toBeDefined();
-      }
+    it('is case insensitive', async () => {
+      const allLessons = await fetchAllLessons();
+      const firstLesson = allLessons[0];
+      
+      const searchWord = firstLesson.title.split(' ')[0];
+      const upperResults = await searchLessons(searchWord.toUpperCase());
+      const lowerResults = await searchLessons(searchWord.toLowerCase());
+      
+      expect(upperResults.length).toBe(lowerResults.length);
+    });
+
+    it('returns empty array for no matches', async () => {
+      const results = await searchLessons('xyz123nonexistent456abc');
+      expect(results).toEqual([]);
+    });
+  });
+
+  describe('clearLessonCache', () => {
+    it('clears the cache', async () => {
+      // Load lessons to populate cache
+      const firstCall = await fetchAllLessons();
+      
+      // Clear cache
+      clearLessonCache();
+      
+      // Next call should reload (won't be same reference)
+      const secondCall = await fetchAllLessons();
+      
+      // After clear, it's a fresh load, so reference should be different
+      // (unless the implementation changed - this tests the cache clearing behavior)
+      expect(secondCall.length).toBe(firstCall.length);
     });
   });
 
   describe('module exports', () => {
-    it('exports fetchAllLessons function', async () => {
-      const service = await import('../../services/lessonService');
-      expect(typeof service.fetchAllLessons).toBe('function');
+    it('exports fetchAllLessons function', () => {
+      expect(typeof fetchAllLessons).toBe('function');
     });
 
-    it('exports fetchLessonsBySection function', async () => {
-      const service = await import('../../services/lessonService');
-      expect(typeof service.fetchLessonsBySection).toBe('function');
+    it('exports fetchLessonsBySection function', () => {
+      expect(typeof fetchLessonsBySection).toBe('function');
     });
 
-    it('exports fetchLessonById function', async () => {
-      const service = await import('../../services/lessonService');
-      expect(typeof service.fetchLessonById).toBe('function');
+    it('exports fetchLessonById function', () => {
+      expect(typeof fetchLessonById).toBe('function');
     });
 
-    it('exports clearLessonsCache function', async () => {
-      const service = await import('../../services/lessonService');
-      expect(typeof service.clearLessonsCache).toBe('function');
+    it('exports clearLessonCache function', () => {
+      expect(typeof clearLessonCache).toBe('function');
     });
-  });
-});
-
-describe('lessonService sorting', () => {
-  it('sorts lessons by section first', async () => {
-    const lessons = await fetchAllLessons();
-    // Lessons should be sorted by section
-    if (lessons.length > 1) {
-      for (let i = 1; i < lessons.length; i++) {
-        const prev = lessons[i - 1];
-        const curr = lessons[i];
-        if (prev.section !== curr.section) {
-          expect(prev.section.localeCompare(curr.section)).toBeLessThanOrEqual(0);
-        }
-      }
-    }
-  });
-
-  it('sorts lessons by order within same section', async () => {
-    const lessons = await fetchAllLessons();
-    // Within same section, should be sorted by order
-    if (lessons.length > 1) {
-      for (let i = 1; i < lessons.length; i++) {
-        const prev = lessons[i - 1];
-        const curr = lessons[i];
-        if (prev.section === curr.section) {
-          expect((prev.order || 0) <= (curr.order || 0)).toBe(true);
-        }
-      }
-    }
-  });
-});
-
-describe('lessonService section filtering', () => {
-  it('returns array when filtering by FAR', async () => {
-    const lessons = await fetchLessonsBySection('FAR');
-    expect(Array.isArray(lessons)).toBe(true);
-  });
-
-  it('returns array when filtering by AUD', async () => {
-    const lessons = await fetchLessonsBySection('AUD');
-    expect(Array.isArray(lessons)).toBe(true);
-  });
-
-  it('returns array when filtering by REG', async () => {
-    const lessons = await fetchLessonsBySection('REG');
-    expect(Array.isArray(lessons)).toBe(true);
-  });
-
-  it('returns array when filtering by BAR', async () => {
-    const lessons = await fetchLessonsBySection('BAR');
-    expect(Array.isArray(lessons)).toBe(true);
-  });
-
-  it('handles case-insensitive section names', async () => {
-    const lessonsLower = await fetchLessonsBySection('far');
-    const lessonsUpper = await fetchLessonsBySection('FAR');
-    // Both should return arrays
-    expect(Array.isArray(lessonsLower)).toBe(true);
-    expect(Array.isArray(lessonsUpper)).toBe(true);
   });
 });

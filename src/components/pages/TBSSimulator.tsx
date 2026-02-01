@@ -508,6 +508,10 @@ const TBSSimulator: React.FC = () => {
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const tbsId = searchParams.get('id');
+  
+  // Daily plan awareness
+  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
+  const activityId = searchParams.get('activityId');
 
   // Transform raw TBS data into the format expected by the component
   const transformTbs = (rawTbs: any): TBSQuestion | null => {
@@ -822,6 +826,17 @@ const TBSSimulator: React.FC = () => {
     // Save progress
     const timeSpent = startTime ? Math.round((Date.now() - startTime) / 60000) : 0;
     await completeSimulation(tbs.id, calculatedScore, timeSpent);
+    
+    // If from daily plan, save completion to localStorage
+    if (fromDailyPlan && activityId) {
+      const today = new Date().toISOString().split('T')[0];
+      const storageKey = `dailyplan_completed_${today}`;
+      const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      if (!existing.includes(activityId)) {
+        existing.push(activityId);
+        localStorage.setItem(storageKey, JSON.stringify(existing));
+      }
+    }
   };
 
   const handleReset = () => {
@@ -865,7 +880,7 @@ const TBSSimulator: React.FC = () => {
       <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between shadow-md z-10">
         <div className="flex items-center gap-4">
           <button
-            onClick={() => navigate('/study')}
+            onClick={() => navigate(fromDailyPlan ? '/home' : '/study')}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -1042,14 +1057,30 @@ const TBSSimulator: React.FC = () => {
                     <RotateCcw className="w-4 h-4" />
                     Reset
                 </button>
-                <button
-                  onClick={handleSubmit}
-                  disabled={submitted}
-                  className="btn-primary flex items-center gap-2 px-8"
-                >
-                  {submitted ? 'Submitted' : 'Submit Answer'}
-                  {!submitted && <Send className="w-4 h-4" />}
-                </button>
+                <div className="flex items-center gap-3">
+                  {submitted && fromDailyPlan && (
+                    <button
+                      onClick={() => navigate('/home')}
+                      className="btn-primary flex items-center gap-2 px-6"
+                    >
+                      Back to Daily Plan
+                    </button>
+                  )}
+                  <button
+                    onClick={handleSubmit}
+                    disabled={submitted}
+                    className={clsx(
+                      "flex items-center gap-2 px-8",
+                      submitted 
+                        ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
+                        : "btn-primary"
+                    )}
+                  >
+                    {submitted ? 'Submitted' : 'Submit Answer'}
+                    {!submitted && <Send className="w-4 h-4" />}
+                    {submitted && <CheckCircle className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

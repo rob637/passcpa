@@ -13,13 +13,6 @@ const loadQuestionData = () => import('../../../data/questions');
 // ============================================================================
 
 type TabType = 'content' | 'users' | 'logs' | 'settings';
-type LogType = 'info' | 'success' | 'error' | 'warning';
-
-interface LogEntry {
-  msg: string;
-  type: LogType;
-  timestamp: string;
-}
 
 interface UserDocument {
   id: string; // Document ID (uid)
@@ -69,11 +62,7 @@ const ADMIN_EMAILS: string[] = [
 const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>('content');
-  const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [progress, setProgress] = useState<number>(0);
-  const [message, setMessage] = useState<string>('');
   const [localStats, setLocalStats] = useState<LocalStats | null>(null);
-  const [logs, setLogs] = useState<LogEntry[]>([]);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
@@ -163,11 +152,6 @@ const AdminCMS: React.FC = () => {
     };
     loadData();
   }, []);
-
-  const addLog = (msg: string, type: LogType = 'info'): void => {
-    const timestamp = new Date().toLocaleTimeString();
-    setLogs((prev) => [...prev, { msg, type, timestamp }]);
-  };
 
   // ============================================================================
   // Render Guards
@@ -293,143 +277,6 @@ const AdminCMS: React.FC = () => {
                 <div className="animate-pulse">Loading...</div>
               )}
             </div>
-
-            {/* Upload Content to Firestore */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Upload Content</h3>
-              <p className="text-sm text-gray-500 mb-4">
-                Lessons, TBS, and WC tasks are stored in Firestore. Use these to sync content.
-              </p>
-
-              {/* Progress Bar */}
-              {isUploading && (
-                <div className="mb-4">
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-600">{message}</span>
-                    <span className="font-medium">{progress}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className="h-2 rounded-full transition-all duration-300 bg-blue-600"
-                      style={{ width: `${progress}%` }}
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div className="space-y-3">
-                {/* Upload Lessons */}
-                <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Lessons</h4>
-                    <p className="text-sm text-gray-600">Upload lesson content to Firestore</p>
-                  </div>
-                  <button
-                    onClick={async () => {
-                      if (!window.confirm('Upload all lessons to Firestore?')) return;
-                      setIsUploading(true);
-                      addLog('Starting Lessons upload...', 'info');
-                      try {
-                        const { uploadLessons } = await import('../../../services/contentUpload');
-                        const result = await uploadLessons((msg) => addLog(msg, 'info'));
-                        addLog(`Lessons upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
-                      } catch (error) {
-                        addLog('Lessons upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
-                      } finally {
-                        setIsUploading(false);
-                      }
-                    }}
-                    disabled={isUploading}
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    <span>📚</span> Upload
-                  </button>
-                </div>
-
-                {/* Upload TBS */}
-                <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">TBS Simulations</h4>
-                    <p className="text-sm text-gray-600">Upload Task-Based Simulations</p>
-                  </div>
-                  <button
-                    onClick={async () => {
-                      if (!window.confirm('Upload all TBS simulations to Firestore?')) return;
-                      setIsUploading(true);
-                      addLog('Starting TBS upload...', 'info');
-                      try {
-                        const { uploadTBS } = await import('../../../services/contentUpload');
-                        const result = await uploadTBS((msg) => addLog(msg, 'info'));
-                        addLog(`TBS upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
-                      } catch (error) {
-                        addLog('TBS upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
-                      } finally {
-                        setIsUploading(false);
-                      }
-                    }}
-                    disabled={isUploading}
-                    className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    <span>📊</span> Upload
-                  </button>
-                </div>
-
-                {/* Upload WC */}
-                <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
-                  <div>
-                    <h4 className="font-medium text-gray-900">Written Communications</h4>
-                    <p className="text-sm text-gray-600">Upload WC tasks for BEC (2025 Blueprint)</p>
-                  </div>
-                  <button
-                    onClick={async () => {
-                      if (!window.confirm('Upload all Written Communication tasks to Firestore?')) return;
-                      setIsUploading(true);
-                      addLog('Starting WC upload...', 'info');
-                      try {
-                        const { uploadWC } = await import('../../../services/contentUpload');
-                        const result = await uploadWC((msg) => addLog(msg, 'info'));
-                        addLog(`WC upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
-                      } catch (error) {
-                        addLog('WC upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
-                      } finally {
-                        setIsUploading(false);
-                      }
-                    }}
-                    disabled={isUploading}
-                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-                  >
-                    <span>✍️</span> Upload
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Activity Log */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Activity Log</h3>
-              <div className="bg-gray-900 rounded-lg p-4 h-48 overflow-y-auto font-mono text-sm">
-                {logs.length === 0 ? (
-                  <p className="text-gray-500">No activity yet...</p>
-                ) : (
-                  logs.map((log, i) => (
-                    <div
-                      key={i}
-                      className={`${
-                        log.type === 'error'
-                          ? 'text-red-400'
-                          : log.type === 'success'
-                            ? 'text-green-400'
-                            : log.type === 'warning'
-                              ? 'text-yellow-400'
-                              : 'text-gray-300'
-                      }`}
-                    >
-                      <span className="text-gray-500">[{log.timestamp}]</span> {log.msg}
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
           </div>
         )}
 
@@ -507,8 +354,10 @@ const AdminCMS: React.FC = () => {
                             </span>
                           </td>
                           <td className="p-3 text-sm text-gray-600">
-                            {/* Handle string or Timestamp */}
-                            {u.lastLogin ? String(u.lastLogin) : '—'}
+                            {/* Handle Timestamp or string */}
+                            {u.lastLogin && typeof u.lastLogin === 'object' && 'seconds' in (u.lastLogin as any)
+                              ? new Date((u.lastLogin as any).seconds * 1000).toLocaleDateString()
+                              : u.lastLogin ? String(u.lastLogin) : '—'}
                           </td>
                            <td className="p-3 text-sm text-gray-600">
                             {u.createdAt && typeof u.createdAt === 'object' && 'seconds' in u.createdAt

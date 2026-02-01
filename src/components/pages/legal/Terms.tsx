@@ -9,7 +9,7 @@ const Terms: React.FC = () => {
       <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <Link 
-            to="/login" 
+            to="/help" 
             className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700"
           >
             <ArrowLeft className="w-5 h-5" />

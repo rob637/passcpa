@@ -13,11 +13,9 @@ vi.mock('../../../hooks/useStudy', () => ({
 vi.mock('../../../hooks/useDocumentTitle', () => ({
   useRouteTitle: vi.fn(),
   ROUTE_TITLES: {
-    '/dashboard': 'Dashboard',
-    '/study': 'Study',
-    '/practice': 'Practice',
-    '/progress': 'Progress',
-    '/settings': 'Settings',
+    '/home': 'Home',
+    '/learn': 'Learn',
+    '/you': 'You',
   },
 }));
 
@@ -28,16 +26,14 @@ vi.mock('../../../hooks/usePageTracking', () => ({
 import MainLayout from '../../../components/layouts/MainLayout';
 
 describe('MainLayout', () => {
-  const renderMainLayout = (initialRoute = '/dashboard') => {
+  const renderMainLayout = (initialRoute = '/home') => {
     return render(
       <MemoryRouter initialEntries={[initialRoute]}>
         <Routes>
           <Route element={<MainLayout />}>
-            <Route path="/dashboard" element={<div data-testid="dashboard-content">Dashboard Content</div>} />
-            <Route path="/study" element={<div data-testid="study-content">Study Content</div>} />
-            <Route path="/practice" element={<div data-testid="practice-content">Practice Content</div>} />
-            <Route path="/progress" element={<div data-testid="progress-content">Progress Content</div>} />
-            <Route path="/settings" element={<div data-testid="settings-content">Settings Content</div>} />
+            <Route path="/home" element={<div data-testid="home-content">Home Content</div>} />
+            <Route path="/learn" element={<div data-testid="learn-content">Learn Content</div>} />
+            <Route path="/you" element={<div data-testid="you-content">You Content</div>} />
           </Route>
         </Routes>
       </MemoryRouter>
@@ -55,25 +51,23 @@ describe('MainLayout', () => {
   });
 
   it('renders the outlet content', () => {
-    renderMainLayout('/dashboard');
+    renderMainLayout('/home');
     
-    expect(screen.getByTestId('dashboard-content')).toBeInTheDocument();
+    expect(screen.getByTestId('home-content')).toBeInTheDocument();
   });
 
   it('renders different content based on route', () => {
-    renderMainLayout('/study');
+    renderMainLayout('/learn');
     
-    expect(screen.getByTestId('study-content')).toBeInTheDocument();
+    expect(screen.getByTestId('learn-content')).toBeInTheDocument();
   });
 
   it('renders navigation with all nav items', () => {
     renderMainLayout();
     
-    expect(screen.getAllByText('Dashboard').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Study').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Practice').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Progress').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Settings').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Home').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Learn').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('You').length).toBeGreaterThan(0);
   });
 
   it('renders skip to main content link', () => {
@@ -159,25 +153,25 @@ describe('MainLayout', () => {
   });
 
   describe('Navigation links', () => {
-    it('renders Dashboard link', () => {
+    it('renders Home link', () => {
       renderMainLayout();
       
-      const dashboardLinks = screen.getAllByRole('link', { name: /dashboard/i });
-      expect(dashboardLinks.length).toBeGreaterThan(0);
+      const homeLinks = screen.getAllByRole('link', { name: /home/i });
+      expect(homeLinks.length).toBeGreaterThan(0);
     });
 
-    it('renders Study link', () => {
+    it('renders Learn link', () => {
       renderMainLayout();
       
-      const studyLinks = screen.getAllByRole('link', { name: /study/i });
-      expect(studyLinks.length).toBeGreaterThan(0);
+      const learnLinks = screen.getAllByRole('link', { name: /learn/i });
+      expect(learnLinks.length).toBeGreaterThan(0);
     });
 
-    it('renders Practice link', () => {
+    it('renders You link', () => {
       renderMainLayout();
       
-      const practiceLinks = screen.getAllByRole('link', { name: /practice/i });
-      expect(practiceLinks.length).toBeGreaterThan(0);
+      const youLinks = screen.getAllByRole('link', { name: /you/i });
+      expect(youLinks.length).toBeGreaterThan(0);
     });
   });
 

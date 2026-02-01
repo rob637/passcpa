@@ -216,6 +216,8 @@ interface SessionResultsProps {
   onContinue: () => void;
   onTryAgain: () => void;
   onPracticeWeak: () => void;
+  onBackToDailyPlan?: () => void;
+  fromDailyPlan?: boolean;
 }
 
 const SessionResults: React.FC<SessionResultsProps> = ({
@@ -226,6 +228,8 @@ const SessionResults: React.FC<SessionResultsProps> = ({
   onContinue,
   onTryAgain,
   onPracticeWeak,
+  onBackToDailyPlan,
+  fromDailyPlan,
 }) => {
   const navigate = useNavigate();
   
@@ -413,20 +417,41 @@ const SessionResults: React.FC<SessionResultsProps> = ({
         
         {/* Footer Actions */}
         <div className="flex gap-3">
-          <button
-            onClick={onTryAgain}
-            className="flex-1 btn-secondary flex items-center justify-center gap-2"
-          >
-            <RotateCcw className="w-4 h-4" />
-            New Session
-          </button>
-          <button
-            onClick={() => navigate('/progress')}
-            className="flex-1 btn-primary flex items-center justify-center gap-2"
-          >
-            <TrendingUp className="w-4 h-4" />
-            View Progress
-          </button>
+          {fromDailyPlan && onBackToDailyPlan ? (
+            <>
+              <button
+                onClick={onBackToDailyPlan}
+                className="flex-1 btn-primary flex items-center justify-center gap-2"
+              >
+                <CheckCircle className="w-4 h-4" />
+                Back to Daily Plan
+              </button>
+              <button
+                onClick={onTryAgain}
+                className="flex-1 btn-secondary flex items-center justify-center gap-2"
+              >
+                <RotateCcw className="w-4 h-4" />
+                New Session
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={onTryAgain}
+                className="flex-1 btn-secondary flex items-center justify-center gap-2"
+              >
+                <RotateCcw className="w-4 h-4" />
+                New Session
+              </button>
+              <button
+                onClick={() => navigate('/progress')}
+                className="flex-1 btn-primary flex items-center justify-center gap-2"
+              >
+                <TrendingUp className="w-4 h-4" />
+                View Progress
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -439,6 +464,10 @@ const Practice: React.FC = () => {
   const { userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
   const { courseId } = useCourse();
+  
+  // Check if coming from daily plan
+  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
+  const activityId = searchParams.get('activityId');
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -781,6 +810,25 @@ const Practice: React.FC = () => {
     setWeakTopicsFromSession([]);
   };
   
+  // Back to daily plan (marks activity complete)
+  const handleBackToDailyPlan = () => {
+    if (activityId) {
+      // Save completion directly to localStorage
+      const storageKey = `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+      try {
+        const existing = localStorage.getItem(storageKey);
+        const completed = existing ? JSON.parse(existing) : [];
+        if (!completed.includes(activityId)) {
+          completed.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(completed));
+        }
+      } catch (e) {
+        console.error('Failed to save daily plan completion:', e);
+      }
+    }
+    navigate('/home');
+  };
+  
   // Continue with more practice (same settings)
   const handleContinue = () => {
     setShowResults(false);
@@ -816,6 +864,8 @@ const Practice: React.FC = () => {
         onContinue={handleContinue}
         onTryAgain={handleTryAgain}
         onPracticeWeak={handlePracticeWeak}
+        onBackToDailyPlan={handleBackToDailyPlan}
+        fromDailyPlan={fromDailyPlan}
       />
     );
   }

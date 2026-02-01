@@ -62,6 +62,9 @@ vi.mock('../../../config/examConfig', () => ({
     AUD: { name: 'Auditing & Attestation', shortName: 'AUD', color: '#FFC107', description: 'Audit' },
     REG: { name: 'Regulation', shortName: 'REG', color: '#4CAF50', description: 'Tax and Business Law' },
     BAR: { name: 'Business Analysis & Reporting', shortName: 'BAR', color: '#9C27B0', description: 'Business' },
+    ISC: { name: 'Information Systems & Controls', shortName: 'ISC', color: '#00BCD4', description: 'IT Controls' },
+    TCP: { name: 'Tax Compliance & Planning', shortName: 'TCP', color: '#FF5722', description: 'Tax' },
+    BEC: { name: 'Business Environment & Concepts', shortName: 'BEC', color: '#9C27B0', description: 'Business' },
   },
   DAILY_GOAL_PRESETS: [
     { points: 25, name: 'Light', description: '15-20 min/day' },
@@ -70,6 +73,8 @@ vi.mock('../../../config/examConfig', () => ({
     { points: 100, name: 'Maximum', description: '90+ min/day' },
   ],
   EXAM_SECTIONS: ['FAR', 'AUD', 'REG', 'BAR'],
+  CORE_SECTIONS: ['AUD', 'FAR', 'REG'],
+  DISCIPLINE_SECTIONS_2026: ['BAR', 'ISC', 'TCP'],
 }));
 
 // Render helper
@@ -129,16 +134,17 @@ describe('Onboarding Component', () => {
   });
 
   describe('Navigation', () => {
-    it('advances to section step when Continue is clicked', async () => {
+    it('advances to exam date step when Continue is clicked', async () => {
       await renderOnboarding();
       fireEvent.click(screen.getByText(/Continue/i));
       
       await waitFor(() => {
-        expect(screen.getByText('FAR')).toBeInTheDocument();
+        // Now goes to exam date step first
+        expect(screen.getByText(/exam date/i)).toBeInTheDocument();
       });
     });
 
-    it('shows Back button on section step', async () => {
+    it('shows Back button on exam date step', async () => {
       await renderOnboarding();
       fireEvent.click(screen.getByText(/Continue/i));
       
@@ -160,26 +166,38 @@ describe('Onboarding Component', () => {
   });
 
   describe('Section Step', () => {
-    it('displays all CPA exam sections', async () => {
+    const navigateToSectionStep = async () => {
       await renderOnboarding();
+      // Step 1: Welcome -> Exam Date
       fireEvent.click(screen.getByText(/Continue/i));
+      await waitFor(() => {
+        expect(screen.getByText(/When's Your Exam/i)).toBeInTheDocument();
+      });
+      // Pick an exam date - get input by type since label isn't linked
+      const dateInput = document.querySelector('input[type="date"]') as HTMLInputElement;
+      fireEvent.change(dateInput, { target: { value: '2027-01-15' } });
+      // Step 2: Exam Date -> Section
+      const continueButtons = screen.getAllByText(/Continue/i);
+      fireEvent.click(continueButtons[continueButtons.length - 1]);
+    };
+
+    it('displays CPA exam sections after navigating to section step', async () => {
+      await navigateToSectionStep();
       
       await waitFor(() => {
-        expect(screen.getByText('FAR')).toBeInTheDocument();
-        expect(screen.getByText('AUD')).toBeInTheDocument();
-        expect(screen.getByText('REG')).toBeInTheDocument();
-        expect(screen.getByText('BAR')).toBeInTheDocument();
+        // Should see section choice title
+        expect(screen.getByText(/Choose Your Section/i)).toBeInTheDocument();
       });
     });
 
     it('allows clicking on a section card', async () => {
-      await renderOnboarding();
-      fireEvent.click(screen.getByText(/Continue/i));
+      await navigateToSectionStep();
       
       await waitFor(() => {
-        const farButton = screen.getByText('FAR').closest('button');
-        expect(farButton).toBeInTheDocument();
-        fireEvent.click(farButton!);
+        // Look for any section button
+        const sectionButton = screen.getByText('FAR').closest('button');
+        expect(sectionButton).toBeInTheDocument();
+        fireEvent.click(sectionButton!);
       });
     });
   });

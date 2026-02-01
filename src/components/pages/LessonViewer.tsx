@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logger from '../../utils/logger';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, useSearchParams } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import {
   ArrowLeft,
@@ -320,9 +320,14 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
 const LessonViewer: React.FC = () => {
   const { lessonId } = useParams<{ lessonId: string }>();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { completeLesson, logActivity } = useStudy();
   const { userProfile } = useAuth();
   const { courseId } = useCourse();
+  
+  // Check if coming from daily plan
+  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
+  const activityId = searchParams.get('activityId');
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -411,6 +416,26 @@ const LessonViewer: React.FC = () => {
       await completeLesson(lessonId, lesson.section || currentSection, timeSpent);
     }
     
+    // If coming from daily plan, save completion to localStorage and return to home
+    if (fromDailyPlan) {
+      if (activityId) {
+        // Save completion directly to localStorage
+        const storageKey = `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+        try {
+          const existing = localStorage.getItem(storageKey);
+          const completed = existing ? JSON.parse(existing) : [];
+          if (!completed.includes(activityId)) {
+            completed.push(activityId);
+            localStorage.setItem(storageKey, JSON.stringify(completed));
+          }
+        } catch (e) {
+          console.error('Failed to save daily plan completion:', e);
+        }
+      }
+      navigate('/home');
+      return;
+    }
+    
     if (goToNext && nextLesson) {
       navigate(`/lessons/${nextLesson.id}`);
     } else {
@@ -456,13 +481,13 @@ const LessonViewer: React.FC = () => {
       <div className="sticky top-0 z-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
-            <Link
-              to="/lessons"
+            <button
+              onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
               className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span className="hidden sm:inline">Back to Lessons</span>
-            </Link>
+              <span className="hidden sm:inline">{fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
+            </button>
 
             <div className="flex items-center gap-2">
               <BookmarkButton 

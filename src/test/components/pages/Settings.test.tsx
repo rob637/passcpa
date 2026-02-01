@@ -141,6 +141,9 @@ vi.mock('../../../config/examConfig', () => ({
     { points: 100, name: 'Maximum' },
   ],
   EXAM_SECTIONS: ['FAR', 'AUD', 'REG', 'BAR'],
+  CORE_SECTIONS: ['AUD', 'FAR', 'REG'],
+  DISCIPLINE_SECTIONS_2026: ['BAR', 'ISC', 'TCP'],
+  isBefore2026Blueprint: () => false,
 }));
 
 // Wrapper component

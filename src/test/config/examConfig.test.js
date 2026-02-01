@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   CPA_SECTIONS,
   getBlueprintForDate,
-  isInBlueprintTransition,
+  isBefore2026Blueprint,
   CORE_SECTIONS,
   DISCIPLINE_SECTIONS,
   STRATEGY_SECTIONS,
@@ -118,9 +118,9 @@ describe('Exam Configuration', () => {
     });
   });
 
-  describe('isInBlueprintTransition', () => {
+  describe('isBefore2026Blueprint', () => {
     it('should return boolean', () => {
-      const result = isInBlueprintTransition();
+      const result = isBefore2026Blueprint();
       expect(typeof result).toBe('boolean');
     });
   });

@@ -5,17 +5,26 @@ export * from './types';
 export * from './definitions';
 export * from './formulas';
 export * from './mnemonics';
+export * from './expanded-definitions';
+export * from './expanded-formulas';
+export * from './expanded-rules';
 
 import { Flashcard } from './types';
 import { ALL_DEFINITIONS } from './definitions';
 import { ALL_FORMULAS } from './formulas';
 import { ALL_MNEMONICS } from './mnemonics';
+import { ALL_EXPANDED_DEFINITIONS } from './expanded-definitions';
+import { ALL_EXPANDED_FORMULAS } from './expanded-formulas';
+import { ALL_RULES_AND_LIMITS } from './expanded-rules';
 
 // Combined collection of all dedicated flashcards
 export const ALL_DEDICATED_FLASHCARDS: Flashcard[] = [
   ...ALL_DEFINITIONS,
   ...ALL_FORMULAS,
   ...ALL_MNEMONICS,
+  ...ALL_EXPANDED_DEFINITIONS,
+  ...ALL_EXPANDED_FORMULAS,
+  ...ALL_RULES_AND_LIMITS,
 ];
 
 // Get flashcards by section

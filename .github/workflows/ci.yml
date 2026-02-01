@@ -1,43 +1,45 @@
-name: CI/CD
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, staging, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main, staging]
+
+env:
+  NODE_VERSION: '20.x'
 
 jobs:
+  # ============================================
+  # Build and Test (runs on all branches)
+  # ============================================
   build-and-test:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Lint
         run: npm run lint
-        
+
       - name: Type Check
         run: npx tsc --noEmit
-        
-      - name: Test
+
+      - name: Unit Tests
         run: npm run test:run
-        
+
       - name: Build
         run: npm run build
         env:
+          # Use appropriate secrets based on target environment
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
           VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
@@ -51,49 +53,113 @@ jobs:
         with:
           name: dist
           path: dist/
+          retention-days: 7
 
-  # Deploy to Firebase Hosting on merge to main
+  # ============================================
+  # Deploy to Development (develop branch)
+  # ============================================
+  deploy-development:
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    environment:
+      name: development
+      url: https://passcpa-dev.web.app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Deploy to Firebase (Development)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
+          channelId: live
+          projectId: passcpa-dev
+
+  # ============================================
+  # Deploy to Staging (staging branch)
+  # ============================================
+  deploy-staging:
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://voraprep-staging.web.app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Deploy to Firebase (Staging)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STAGING }}
+          channelId: live
+          projectId: voraprep-staging
+
+  # ============================================
+  # Deploy to Production (main branch)
+  # ============================================
   deploy-production:
     needs: build-and-test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    
+    environment:
+      name: production
+      url: https://voraprep.com
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/
-          
-      - name: Deploy to Firebase Hosting
+
+      - name: Deploy to Firebase (Production)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}
           channelId: live
-          projectId: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          projectId: voraprep-prod
 
-  # Deploy preview for PRs
+  # ============================================
+  # PR Preview Deployments
+  # ============================================
   deploy-preview:
     needs: build-and-test
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/
-          
-      - name: Deploy Preview to Firebase Hosting
+
+      - name: Deploy Preview
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
-          # Creates a unique preview URL for each PR
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
+          projectId: passcpa-dev
+          # Auto-generates unique preview URL for each PR

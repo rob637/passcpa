@@ -8,6 +8,14 @@ import { /* ADDITIONAL_TBS, */ FAR_TBS_2, REG_TBS_2, AUD_TBS_2, BEC_TBS_2 } from
 import { BAR_TBS } from './bar-tbs';
 import { ISC_TBS } from './isc-tbs';
 import { TCP_TBS } from './tcp-tbs';
+// Blueprint gap fill - covers FAR-VI, FAR-VII, AUD-VII, TCP-V, ISC-V, BAR-V
+import { TBS_GAP_FILL } from './tbs-gap-fill';
+// Application-based TBS (post-2024: research skills integrated into scenarios, not standalone)
+import { APPLICATION_TBS } from './application-tbs';
+// Tax form completion and research TBS - Form 1065, 1120S, Schedule C, Form 709, IRC research
+import { TAX_FORM_TBS, TAX_RESEARCH_TBS } from './tax-form-research-tbs';
+// Additional tax form and research TBS - K-1, 4797, 706, 1040, 1099-R, home office, NIIT
+import { ADDITIONAL_TAX_FORM_TBS, ADDITIONAL_RESEARCH_TBS } from './tax-form-research-tbs-2';
 
 // ==========================================
 // FAR - FINANCIAL ACCOUNTING TBS
@@ -1542,15 +1550,29 @@ Please contact me if you have any questions regarding our internal control frame
 ];
 
 // Combine all TBS (original + additional)
-export const FAR_TBS_ALL: TBS[] = [...FAR_TBS, ...FAR_TBS_2];
-export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2];
-export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2];
+// Combine base TBS with additional TBS for legacy sections
+// Gap fill TBS distributed to appropriate sections
+const FAR_GAP_FILL = TBS_GAP_FILL.filter(t => t.section === 'FAR');
+const AUD_GAP_FILL = TBS_GAP_FILL.filter(t => t.section === 'AUD');
+const TCP_GAP_FILL = TBS_GAP_FILL.filter(t => t.section === 'TCP');
+const ISC_GAP_FILL = TBS_GAP_FILL.filter(t => t.section === 'ISC');
+const BAR_GAP_FILL = TBS_GAP_FILL.filter(t => t.section === 'BAR');
+
+// Application-based TBS (integrated research skills) distributed to sections
+const FAR_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'FAR');
+const AUD_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'AUD');
+const TCP_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'TCP');
+const BAR_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'BAR');
+
+export const FAR_TBS_ALL: TBS[] = [...FAR_TBS, ...FAR_TBS_2, ...FAR_GAP_FILL, ...FAR_APPLICATION];
+export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2, ...TAX_FORM_TBS, ...TAX_RESEARCH_TBS.filter(t => t.section === 'REG'), ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'REG'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'REG')];
+export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2, ...AUD_GAP_FILL, ...AUD_APPLICATION, ...TAX_RESEARCH_TBS.filter(t => t.section === 'AUD'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'AUD')];
 export const BEC_TBS_ALL: TBS[] = [...BEC_TBS, ...BEC_TBS_2];
 
 // New 2024 CPA exam sections with NATIVE TBS content
-export const BAR_TBS_ALL: TBS[] = [...BAR_TBS]; // Business Analysis & Reporting - 10 native TBS
-export const ISC_TBS_ALL: TBS[] = [...ISC_TBS]; // Information Systems & Controls - 8 native TBS  
-export const TCP_TBS_ALL: TBS[] = [...TCP_TBS]; // Tax Compliance & Planning - 10 native TBS
+export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATION]; // Business Analysis & Reporting
+export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL]; // Information Systems & Controls  
+export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...TAX_RESEARCH_TBS.filter(t => t.section === 'TCP'), ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'TCP')]; // Tax Compliance & Planning
 
 export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 

@@ -530,6 +530,9 @@ import {
   ALL_SECTION_WC_TASKS,
 } from './section-wc-tasks';
 
+// Import expanded WC tasks (comprehensive coverage)
+import { WC_EXPANDED } from './wc-expanded';
+
 // Re-export section-specific tasks
 export {
   AUD_WC_TASKS,
@@ -540,10 +543,11 @@ export {
   TCP_WC_TASKS,
   BEC_WC_TASKS,
   ALL_SECTION_WC_TASKS,
+  WC_EXPANDED,
 };
 
-// Combined: General PREP tasks + Section-specific tasks
-export const ALL_WC_TASKS = [...WRITTEN_COMMUNICATIONS, ...ALL_SECTION_WC_TASKS];
+// Combined: General PREP tasks + Section-specific tasks + Expanded
+export const ALL_WC_TASKS = [...WRITTEN_COMMUNICATIONS, ...ALL_SECTION_WC_TASKS, ...WC_EXPANDED];
 
 // Helper functions
 export const getWCByTopic = (topic: string) => {

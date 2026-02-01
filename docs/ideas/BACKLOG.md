@@ -47,7 +47,7 @@ Validate email settings
 
 Multiple environments
 
-Strips setup - get it done now?
+Stripe setup - get it done now?
 
 Need TIN
 
@@ -57,23 +57,47 @@ Move all my URLS to CloudFlare (Sagecg and CBR-labs)
 
 Install Cursor - can be used in conjunction with codespaces
 
-
-
 Gemini - we have been working on this app for a while.  I think we are close to World Class but I want you to do a complete review of the app looking at all aspects including but not limited to the flow of user experience, the user interface, the code structure and compilation, the testing, the depth and quality of the lesson content, the depth and quality of the questions content, clarification and full inclusion of the 2025 AICPA Blueprint and the 2026 AICPA Blueprint, ease of use of the app, meeting accessibility standards, solid settings and administration capabilities, etc.  this needs to be viewed as meeting World Class Standards including Google and Apple quality.  Very professional with wide moats between the competitors Becker, Gleim, UWorld, Surgent, Ninja, etc.  Please provide ratings and percentages for each area on how close we are to meeting world class standards and Google quality.  Please identify any placeholders or mock data.  
 
 Please merge, build and deploy - i want to test at voraprep.com.  Then delete branch and create new branch called detail-review. 
 
-Let's review the 26 Task Based Simulations - do they cover all areas of the 2025 and 2026 AICPA Blueprint - Are they World Class - would the AICPA be proud of these and think they were amazing and a lot of effort and work were put into them? Are they clear concise and accurate? Are they better than the competition? What more do we need to do?
+Now let's do an extremely detailed review of all the content and how it is interelated (Lessons, Questions, TBS, Flash Cards, Mock Exams, and Timed Quizzes) - does it cover all areas of the 2025 and 2026 AICPA Blueprint - Are they World Class - would the AICPA be proud of these and think they were amazing and a lot of effort and work were put into them? Are they clear concise and accurate? Are they better than the competition? Are they integrated well together?  What more do we need to do?  what grades do we get?  Content is critical - we need to slow down and make sure it is amazing and world class - all areas - where are we weak?
 
 Lessons - DONE
 Questions - DONE
 TBS - DONE
 Flash Cards - DONE
-Mock Exam - IN-PROCESS
-Timed Quiz
-
-
+Mock Exam - DONE
+Timed Quiz - DONE
 
 Should we update our comparison chart on the marketing - adaptive learning, and all this new stuff?
 
-Do we know what the CPA Exam looks like - does our exams look similar ?
+Next Steps for Store Submission
+Sync Capacitor to native projects:
+
+Build Android APK/AAB:
+
+Build iOS (on Mac):
+
+Open ios/App/App.xcworkspace in Xcode
+Archive and upload to App Store Connect
+Firebase Console:
+
+Add com.voraprep.app to your Firebase project
+Download new google-services.json (Android)
+Download new GoogleService-Info.plist (iOS)
+Would you like me to help with any of these next steps?
+
+main branch      →  Production  (voraprep.com)                 │
+│  staging branch   →  Staging     (staging.voraprep.com)         │
+│  develop branch   →  Development (dev.voraprep.com) ← Codespace │
+│  feature/*        →  PR Previews (auto-generated URLs)          │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│                     Firebase Projects                            │
+├─────────────────────────────────────────────────────────────────┤
+│  voraprep-prod    →  Production (real users, real data)         │
+│  voraprep-staging →  Staging (QA testing, production copy)      │
+   passcpa-dev      →  Development (your current project)         │
+└─────────────────────────────────────────────────────────────────┘

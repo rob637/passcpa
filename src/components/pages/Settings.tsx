@@ -68,7 +68,7 @@ const formatDateForInput = (date: Timestamp | Date | string | undefined): string
       return new Date(date).toISOString().split('T')[0];
     }
   } catch (e) {
-    console.error('Error formatting date:', e);
+    logger.error('Error formatting date:', e);
   }
   return '';
 };

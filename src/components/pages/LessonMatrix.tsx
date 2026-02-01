@@ -17,6 +17,7 @@ import {
   LESSON_MATRIX, 
   LessonMatrixEntry, 
   BlueprintVersionStatus,
+  BLUEPRINT_AREAS,
   getObbbaAffectedLessons,
   getDifferingLessons,
   getLessonBlueprintVersion
@@ -37,6 +38,12 @@ const currentBlueprint = getCurrentBlueprint();
 const lessonMatrixMap = new Map<string, LessonMatrixEntry>(
   LESSON_MATRIX.map(entry => [entry.lessonId, entry])
 );
+
+// Create a flat map of all blueprint areas for quick lookup by areaId
+const blueprintAreaMap = new Map<string, { areaName: string; weight: string }>();
+Object.values(BLUEPRINT_AREAS).flat().forEach(area => {
+  blueprintAreaMap.set(area.areaId, { areaName: area.areaName, weight: area.weight });
+});
 
 const getDeliveryMethod = (lesson: Lesson): string => {
   const types = new Set(lesson.content.sections.map(s => s.type));
@@ -184,23 +191,41 @@ const LessonMatrix: React.FC = () => {
   }, [allLessons]);
 
   const filteredLessons = useMemo(() => {
-    return allLessons.filter(lesson => {
-      const matchesSearch = lesson.title.toLowerCase().includes(search.toLowerCase()) || 
-                            lesson.topics.some(t => t.toLowerCase().includes(search.toLowerCase()));
+    const result = allLessons.filter(lesson => {
+      // Search filter - title and topics
+      const matchesSearch = search === '' || 
+        lesson.title.toLowerCase().includes(search.toLowerCase()) || 
+        lesson.topics.some(t => t.toLowerCase().includes(search.toLowerCase())) ||
+        (lesson.blueprintArea || '').toLowerCase().includes(search.toLowerCase());
+      
+      // Section filter
       const matchesSection = sectionFilter === 'ALL' || lesson.section === sectionFilter;
+      
+      // Method filter
       const matchesMethod = methodFilter === 'ALL' || getDeliveryMethod(lesson) === methodFilter;
       
-      // Blueprint version filter
-      const versionStatus = getLessonBlueprintVersion(lesson.id);
+      // Version filter based on section and BLUEPRINT_DIFFERENCES
+      // BEC = 2025 only (legacy), BAR/ISC/TCP = 2026 only (CPA Evolution)
+      const matrixEntry = lessonMatrixMap.get(lesson.id);
+      let versionStatus: string;
+      if (lesson.section === 'BEC') {
+        versionStatus = '2025'; // BEC is 2025 Blueprint only (legacy)
+      } else if (['BAR', 'ISC', 'TCP'].includes(lesson.section)) {
+        versionStatus = '2026'; // Discipline sections are 2026 only (CPA Evolution)
+      } else {
+        // FAR, AUD, REG - check if content differs between blueprints
+        versionStatus = matrixEntry ? getLessonBlueprintVersion(lesson.id) : 'both';
+      }
       const matchesVersion = versionFilter === 'ALL' || versionStatus === versionFilter;
       
-      // OBBBA filter
-      const matrixEntry = lessonMatrixMap.get(lesson.id);
+      // OBBBA/H.R.1 filter - check matrix entry
       const isObbba = matrixEntry?.obbbaAffected || false;
       const matchesObbba = !showObbbaOnly || isObbba;
       
       return matchesSearch && matchesSection && matchesMethod && matchesVersion && matchesObbba;
     });
+    
+    return result;
   }, [allLessons, search, sectionFilter, methodFilter, versionFilter, showObbbaOnly]);
 
   if (isLoading) {
@@ -297,6 +322,9 @@ const LessonMatrix: React.FC = () => {
                   <option key={s} value={s}>{s}</option>
                 ))}
               </optgroup>
+              <optgroup label="Legacy (2025 Blueprint)">
+                <option value="BEC">BEC</option>
+              </optgroup>
               <optgroup label="Study Resources">
                 <option value="PREP">Exam Strategy</option>
               </optgroup>
@@ -350,7 +378,7 @@ const LessonMatrix: React.FC = () => {
       {/* Matrix Table */}
       <div className="overflow-hidden bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse" key={`${search}-${sectionFilter}-${methodFilter}-${versionFilter}-${showObbbaOnly}`}>
             <thead>
               <tr className="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
                 <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider w-20">Section</th>
@@ -371,7 +399,17 @@ const LessonMatrix: React.FC = () => {
               ) : (
                 filteredLessons.map((lesson) => {
                   const matrixEntry = lessonMatrixMap.get(lesson.id);
-                  const versionStatus = getLessonBlueprintVersion(lesson.id);
+                  
+                  // Version status: BEC=2025, BAR/ISC/TCP=2026, others check matrix
+                  let versionStatus: BlueprintVersionStatus;
+                  if (lesson.section === 'BEC') {
+                    versionStatus = '2025';
+                  } else if (['BAR', 'ISC', 'TCP'].includes(lesson.section)) {
+                    versionStatus = '2026';
+                  } else {
+                    versionStatus = getLessonBlueprintVersion(lesson.id);
+                  }
+                  
                   const isObbba = matrixEntry?.obbbaAffected || false;
                   const transitionNote = matrixEntry?.transitionNote;
                   const skillLevel = matrixEntry?.skillLevel;
@@ -401,21 +439,29 @@ const LessonMatrix: React.FC = () => {
                         </div>
                       </td>
                       <td className="p-4 hidden lg:table-cell">
-                        {matrixEntry?.blueprintArea ? (
-                          <div>
-                            <div className="text-sm text-slate-700 dark:text-slate-300">{matrixEntry.blueprintArea.areaName}</div>
-                            <div className="text-[10px] text-slate-400 flex items-center gap-2 mt-0.5">
-                              <span>{matrixEntry.blueprintArea.weight}</span>
-                              {skillLevel && (
-                                <span className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 rounded">
-                                  {skillLevel}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        ) : (
-                          <span className="text-slate-400 text-sm">—</span>
-                        )}
+                        {(() => {
+                          // First try matrix entry, then fall back to lesson's own blueprintArea
+                          const areaFromMatrix = matrixEntry?.blueprintArea;
+                          const areaFromLesson = lesson.blueprintArea ? blueprintAreaMap.get(lesson.blueprintArea) : null;
+                          const areaInfo = areaFromMatrix || (areaFromLesson ? { areaName: areaFromLesson.areaName, weight: areaFromLesson.weight } : null);
+                          
+                          if (areaInfo) {
+                            return (
+                              <div>
+                                <div className="text-sm text-slate-700 dark:text-slate-300">{areaInfo.areaName}</div>
+                                <div className="text-[10px] text-slate-400 flex items-center gap-2 mt-0.5">
+                                  <span>{areaInfo.weight}</span>
+                                  {skillLevel && (
+                                    <span className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 rounded">
+                                      {skillLevel}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          }
+                          return <span className="text-slate-400 text-sm">—</span>;
+                        })()}
                       </td>
                       <td className="p-4 hidden md:table-cell whitespace-nowrap">
                         <VersionBadge status={versionStatus} />

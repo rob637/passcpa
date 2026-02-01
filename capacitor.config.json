@@ -1,5 +1,18 @@
 {
-  "appId": "com.cpareview.app",
-  "appName": "CPA Review",
-  "webDir": "dist"
+  "appId": "com.voraprep.app",
+  "appName": "VoraPrep",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#1a73e8",
+      "showSpinner": false
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  }
 }

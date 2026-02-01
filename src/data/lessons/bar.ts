@@ -3521,5 +3521,189 @@ export const barLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'BAR-II-010',
+    section: 'BAR',
+    title: "Derivative Instruments",
+    description: "Understand accounting for options, forwards, futures, and swaps",
+    order: 56,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Technical Accounting", "Derivatives"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Derivatives are everywhere in modern business! Understanding how to account for options, forwards, futures, and swaps—and when hedge accounting applies—is essential for BAR and real-world financial reporting!"
+        },
+        {
+          title: 'What is a Derivative?',
+          type: 'text',
+          content: "**Three characteristics (ASC 815):**\n\n1. **Underlying + Notional amount** (rate × amount)\n2. **Little or no initial investment** (vs buying asset directly)\n3. **Net settlement possible** (don't have to take delivery)\n\n**Common derivatives:** Options, forwards, futures, swaps"
+        },
+        {
+          title: 'Types of Derivatives',
+          type: 'table',
+          headers: ['Type', 'Description'],
+          rows: [
+            ['Forward', 'Custom contract to buy/sell at future date at set price'],
+            ['Future', 'Standardized forward, exchange-traded, marked daily'],
+            ['Option', 'Right (not obligation) to buy (call) or sell (put)'],
+            ['Swap', 'Exchange of cash flows (interest rate, currency)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Derivative Types',
+          type: 'callout',
+          content: "**\"FFOS\"** = Four derivative types:\n\n**F**orwards (custom, OTC)\n**F**utures (standardized, exchange)\n**O**ptions (right, not obligation)\n**S**waps (exchange cash flows)\n\n**All share the three characteristics!**"
+        },
+        {
+          title: 'General Derivative Accounting',
+          type: 'text',
+          content: "**Without hedge accounting:**\n\n• Record derivative at FAIR VALUE on balance sheet\n• Changes in fair value → Income statement\n• Creates volatility in earnings!\n\n**With hedge accounting:**\n• Can defer gains/losses to match hedged item\n• Reduces earnings volatility\n• Must meet strict requirements"
+        },
+        {
+          title: 'When is Hedge Accounting Allowed?',
+          type: 'text',
+          content: "**Requirements:**\n\n1. Formal designation and documentation at inception\n2. Expected to be highly effective\n3. Effectiveness assessed regularly\n4. Hedged item creates exposure to gain/loss\n\n**Without proper documentation: NO hedge accounting!**"
+        },
+        {
+          title: 'Types of Hedges',
+          type: 'table',
+          headers: ['Hedge Type', 'Purpose', 'G/L Location'],
+          rows: [
+            ['Fair Value Hedge', 'Hedge changes in FV of asset/liability', 'Income (offset by hedged item)'],
+            ['Cash Flow Hedge', 'Hedge variability in expected cash flows', 'OCI (until hedged item affects income)'],
+            ['Net Investment Hedge', 'Hedge FX exposure in foreign subsidiary', 'OCI (CTA)']
+          ]
+        },
+        {
+          title: 'Fair Value Hedge',
+          type: 'text',
+          content: "**Hedges changes in fair value of:**\n• Recognized asset or liability\n• Unrecognized firm commitment\n\n**Accounting:**\n• Derivative gains/losses → Income\n• ALSO adjust hedged item's carrying value → Income\n• Gains and losses offset (if effective)\n\n**Example:** Hedge FV of fixed-rate debt with interest rate swap"
+        },
+        {
+          title: 'Cash Flow Hedge',
+          type: 'text',
+          content: "**Hedges variability in cash flows of:**\n• Forecasted transaction\n• Variable-rate debt payments\n\n**Accounting:**\n• Effective portion → OCI\n• Ineffective portion → Income\n• Reclassify from OCI when hedged item affects income\n\n**Example:** Hedge forecasted inventory purchase with forward contract"
+        },
+        {
+          title: '⚠️ Exam Trap: OCI vs Income',
+          type: 'warning',
+          content: "**Cash Flow Hedge:**\nEffective portion → OCI (deferred)\nIneffective portion → Income (immediately)\n\n**Fair Value Hedge:**\nALL changes → Income (both derivative AND hedged item)\n\n**Know where gains/losses go for each type!**"
+        },
+        {
+          title: 'Embedded Derivatives',
+          type: 'text',
+          content: "**Derivative within a host contract:**\n\n**Must bifurcate (separate) if:**\n1. Economic characteristics not closely related to host\n2. Hybrid instrument not at fair value through income\n3. Embedded would be a derivative if standalone\n\n**Example:** Convertible bond (debt host + conversion option)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Derivative: Underlying + Notional, Little investment, Net settlement",
+            "Without hedge accounting: Fair value changes → Income (volatile)",
+            "Fair value hedge: Derivative + Hedged item both → Income",
+            "Cash flow hedge: Effective → OCI, Ineffective → Income",
+            "Hedge accounting requires formal documentation at inception",
+            "Embedded derivatives may need to be bifurcated",
+            "Must test effectiveness to continue hedge accounting"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-IV-010',
+    section: 'BAR',
+    title: "Prospective Financial Information",
+    description: "Prepare and present financial forecasts and projections",
+    order: 57,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Financial Analysis", "Forecasting"],
+    blueprintArea: 'BAR-IV',
+    blueprintTopic: 'BAR-IV-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Prospective financial information (PFI) helps users understand potential future outcomes! Understanding the difference between forecasts and projections—and how to present them—is tested on BAR and important for advisory work!"
+        },
+        {
+          title: 'Forecast vs Projection',
+          type: 'table',
+          headers: ['Type', 'Definition', 'Use'],
+          rows: [
+            ['Forecast', 'Expected results (best estimate)', 'General use'],
+            ['Projection', 'Results given hypothetical assumptions', 'Limited use (what-if)']
+          ]
+        },
+        {
+          title: 'Financial Forecast',
+          type: 'text',
+          content: "**Based on expected conditions:**\n\n• Management's best estimate of future results\n• Reflects conditions expected to exist\n• Actions management expects to take\n\n**Can be distributed to:**\n• Third parties (banks, investors)\n• General use\n\n**\"What we EXPECT to happen\""
+        },
+        {
+          title: 'Financial Projection',
+          type: 'text',
+          content: "**Based on hypothetical assumptions:**\n\n• \"What if\" scenarios\n• Conditions may or may not occur\n• Explores alternative outcomes\n\n**Limited use only:**\n• Must understand limitations\n• Generally for management use\n• May mislead general users\n\n**\"What MIGHT happen if...\""
+        },
+        {
+          title: '🧠 Memory Aid: Forecast vs Projection',
+          type: 'callout',
+          content: "**\"Forecast = Facts (expected)\"**\n**\"Projection = Possibilities (hypothetical)\"**\n\n**Forecast:** Weatherman's best guess\n**Projection:** \"If a hurricane hits, here's what happens\"\n\n**General use vs Limited use**"
+        },
+        {
+          title: 'Components of PFI',
+          type: 'list',
+          content: [
+            "**Summary of significant assumptions** (basis for numbers)",
+            "**Summary of significant accounting policies** (GAAP basis)",
+            "**Description of assumptions** - Management responsible for reasonableness",
+            "**Narrative description** - What the projection/forecast represents",
+            "**Period covered** - Usually one year or less"
+          ]
+        },
+        {
+          title: 'Preparer Responsibilities',
+          type: 'text',
+          content: "**Management/preparer must:**\n\n• Have reasonable basis for assumptions\n• Present in conformity with AICPA guidelines\n• Include summary of assumptions\n• Identify type (forecast vs projection)\n• Limit distribution of projections\n\n**PFI is NOT audited F/S—different standards apply**"
+        },
+        {
+          title: 'CPA Involvement with PFI',
+          type: 'table',
+          headers: ['Service', 'Level', 'Report'],
+          rows: [
+            ['Compilation', 'None', 'Assembled without assurance'],
+            ['Examination', 'Opinion', 'Reasonable basis for assumptions?'],
+            ['Agreed-upon procedures', 'Findings', 'Results of specific procedures']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Who Uses What',
+          type: 'warning',
+          content: "**Forecast = General use** (banks, investors OK)\n**Projection = Limited use only**\n\n**Why?**\n• Projections use hypothetical assumptions\n• General users may not understand limitations\n• Could be misleading without context\n\n**Never distribute projections to general public!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Forecast: Expected results based on expected conditions (general use)",
+            "Projection: Hypothetical results based on what-if assumptions (limited use)",
+            "Both require summary of significant assumptions",
+            "Management responsible for assumption reasonableness",
+            "CPA can compile, examine, or perform agreed-upon procedures",
+            "Never distribute projections for general use",
+            "PFI has its own presentation standards (not GAAP F/S)"
+          ]
+        }
+      ]
+    }
   }
 ];

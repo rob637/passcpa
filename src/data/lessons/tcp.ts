@@ -4818,5 +4818,288 @@ export const tcpLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'TCP-II-010',
+    section: 'TCP',
+    title: "Check-the-Box Entity Classification",
+    description: "Master elective entity classification rules for tax purposes",
+    order: 37,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Entity Tax Planning", "Classification"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Entity classification can dramatically impact tax consequences! The check-the-box rules give taxpayers flexibility to choose how their entity is taxed. Understanding defaults and elections is essential for TCP and tax planning!"
+        },
+        {
+          title: 'What is Check-the-Box?',
+          type: 'text',
+          content: "**Elective entity classification (Form 8832):**\n\n• Allows eligible entities to choose tax classification\n• \"Check a box\" to select treatment\n• Simplifies what used to be complex classification tests\n\n**Applies to:** LLCs, partnerships, foreign entities\n**Does NOT apply to:** Corporations (per se corporations)"
+        },
+        {
+          title: 'Default Classifications',
+          type: 'table',
+          headers: ['Entity Type', 'Default Classification'],
+          rows: [
+            ['Single-member LLC (domestic)', 'Disregarded entity'],
+            ['Multi-member LLC (domestic)', 'Partnership'],
+            ['Foreign eligible entity (limited liability)', 'Corporation'],
+            ['Foreign eligible entity (unlimited liability)', 'Partnership (if 2+ owners)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Defaults',
+          type: 'callout',
+          content: "**\"DIPS\"** for Domestic LLC Defaults:\n\n**D**isregarded = Single member\n**I**f multiple members\n**P**artnership = Default\n**S** corp requires election!\n\n**Domestic LLCs default to pass-through!**"
+        },
+        {
+          title: 'Election Options',
+          type: 'text',
+          content: "**Domestic eligible entities can elect:**\n\n• Corporation (C corp treatment)\n• Partnership (if 2+ members)\n• Disregarded (if single member)\n\n**Foreign eligible entities can elect:**\n• Corporation\n• Partnership or disregarded\n\n**Once classified as corporation, can also elect S corp (Form 2553)**"
+        },
+        {
+          title: 'Per Se Corporations',
+          type: 'text',
+          content: "**Automatically treated as corporations—no election available:**\n\n• Business entity organized as corporation\n• Insurance companies\n• State-chartered banks\n• Government-owned entities\n• Certain publicly traded partnerships\n• Specific foreign entities listed in regulations\n\n**Cannot \"check the box\" to avoid corporate treatment**"
+        },
+        {
+          title: 'Making the Election',
+          type: 'text',
+          content: "**Form 8832 requirements:**\n\n• File within 75 days BEFORE or 12 months AFTER effective date\n• All owners must consent (or single owner)\n• Specify effective date\n• Cannot change election for 60 months (generally)\n\n**Late elections possible with reasonable cause relief**"
+        },
+        {
+          title: 'Tax Consequences of Election Change',
+          type: 'table',
+          headers: ['From', 'To', 'Tax Consequence'],
+          rows: [
+            ['Partnership', 'Corporation', 'Deemed contribution (351 likely)'],
+            ['Corporation', 'Partnership', 'Deemed liquidation (taxable!)'],
+            ['Disregarded', 'Corporation', 'Deemed contribution (351 likely)'],
+            ['Disregarded', 'Partnership', 'Contribution of assets']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Conversion Consequences',
+          type: 'warning',
+          content: "**Converting FROM corporation is TAXABLE!**\n\n**Corporation → Partnership or Disregarded:**\n• Deemed liquidation occurs\n• Corporation recognizes gain on all assets\n• Shareholders recognize gain on deemed distribution\n• DOUBLE TAX potential!\n\n**Avoid electing into corporation status without careful planning**"
+        },
+        {
+          title: 'S Corporation Election',
+          type: 'text',
+          content: "**S corp requires TWO elections:**\n\n1. First be classified as corporation (default or 8832)\n2. Then elect S corp status (Form 2553)\n\n**S corp election deadlines:**\n• Within 75 days of beginning of tax year\n• Or any time during preceding year\n• Late election relief available"
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'list',
+          content: [
+            "**Self-employment tax** - LLC/partnership = SE tax; S corp = reasonable salary",
+            "**Liability protection** - Same regardless of tax classification",
+            "**Exit strategy** - C corps face double tax; pass-throughs don't",
+            "**State taxes** - Some states don't recognize S corps",
+            "**Investor types** - S corps have shareholder restrictions"
+          ]
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Check-the-box allows elective tax classification",
+            "Single-member LLC defaults to disregarded; multi-member to partnership",
+            "Per se corporations cannot elect different treatment",
+            "Form 8832 for entity classification; Form 2553 for S corp",
+            "Converting FROM corporation triggers deemed liquidation (taxable)",
+            "60-month limitation on changing elections",
+            "S corp election requires corporate classification first"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-III-010',
+    section: 'TCP',
+    title: "Section 338 Elections",
+    description: "Understand deemed asset sale treatment in stock acquisitions",
+    order: 38,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Business Dispositions", "M&A"],
+    blueprintArea: 'TCP-III',
+    blueprintTopic: 'TCP-III-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When acquiring a corporation's stock, buyers usually want stepped-up asset basis. Section 338 elections convert a stock purchase into a deemed asset purchase for tax purposes. Understanding when and how to use 338 is crucial for M&A tax planning!"
+        },
+        {
+          title: 'Why Step-Up Matters',
+          type: 'text',
+          content: "**Stock purchase (no 338):**\n• Buyer gets carryover basis in assets\n• No depreciation benefit from purchase price\n• Inherits all tax attributes (NOLs, etc.)\n\n**Asset purchase or 338 election:**\n• Buyer gets stepped-up basis in assets\n• Future depreciation deductions\n• Generally better for buyer"
+        },
+        {
+          title: 'Two Types of Section 338 Elections',
+          type: 'table',
+          headers: ['Type', 'Parties', 'Tax Consequence'],
+          rows: [
+            ['338(g)', 'Buyer only', 'Deemed sale by target; Buyer pays target\'s tax!'],
+            ['338(h)(10)', 'Buyer AND Seller', 'Deemed sale by target; Seller reports gain']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: 338 Elections',
+          type: 'callout',
+          content: "**\"G is Grim, H is Happy\"**\n\n**338(g):** BUYER pays tax on deemed sale\n• Grim for buyer (double tax effect)\n• Rarely used\n\n**338(h)(10):** SELLER reports gain\n• Happy compromise\n• More commonly used"
+        },
+        {
+          title: 'Section 338(g) Election',
+          type: 'text',
+          content: "**Requirements:**\n• Corporate acquirer\n• Qualified stock purchase (80%+ in 12 months)\n• Election by buyer alone\n\n**Consequences:**\n• Target treated as selling ALL assets\n• Target recognizes gain/loss\n• NEW target has stepped-up basis\n• Buyer indirectly bears target's tax!\n\n**Rarely beneficial—creates phantom tax cost**"
+        },
+        {
+          title: 'Section 338(h)(10) Election',
+          type: 'text',
+          content: "**Requirements:**\n• Target is S corp or member of consolidated group\n• Buyer and seller BOTH elect\n• Qualified stock purchase\n\n**Consequences:**\n• Treated as asset sale by old target\n• Stock sale ignored for tax purposes\n• Seller reports gain on deemed asset sale\n• Buyer gets stepped-up basis\n\n**More commonly used—win-win possible**"
+        },
+        {
+          title: 'Qualified Stock Purchase',
+          type: 'text',
+          content: "**Must acquire 80%+ of target stock:**\n\n• By vote AND value\n• Within 12-month acquisition period\n• Through purchase (not tax-free exchange)\n• Certain stock excluded (preferred without voting/conversion)\n\n**80% threshold is strict—must be met precisely**"
+        },
+        {
+          title: 'Example: 338(h)(10)',
+          type: 'example',
+          content: "**S Corp Target:**\n• Assets FMV: $10M\n• Asset basis: $2M\n• Stock purchase price: $10M\n\n**Without 338(h)(10):**\n• Shareholders report stock gain\n• Buyer gets carryover asset basis ($2M)\n• No step-up\n\n**With 338(h)(10):**\n• Deemed asset sale: $8M gain flows to shareholders\n• Buyer gets stepped-up asset basis ($10M)\n• Future depreciation on full $10M\n\n**Same tax to seller, but buyer benefits from step-up!**"
+        },
+        {
+          title: 'Allocation of Purchase Price',
+          type: 'text',
+          content: "**ADSP (Aggregate Deemed Sales Price):**\n\n**Allocate to assets in order:**\n1. Cash and deposits\n2. Actively traded securities\n3. Receivables, inventory\n4. Other tangible and intangible assets\n5. Section 197 intangibles\n6. Goodwill and going concern\n\n**Residual method—like asset purchase allocation**"
+        },
+        {
+          title: '⚠️ Exam Trap: When 338(g) Makes Sense',
+          type: 'warning',
+          content: "**338(g) is RARELY beneficial because:**\n\n• Buyer effectively pays target's tax\n• But might make sense when:\n  - Target has NOL to offset gain\n  - Foreign acquisition (no double tax)\n  - Tax attributes must be purged\n\n**338(h)(10) is almost always preferred when available!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "338 converts stock purchase to deemed asset purchase for tax",
+            "338(g): Buyer-only election, buyer bears target's tax (rarely used)",
+            "338(h)(10): Joint election, seller reports gain (more common)",
+            "338(h)(10) requires S corp or consolidated group target",
+            "Qualified stock purchase: 80%+ acquired in 12 months",
+            "Benefit: Stepped-up asset basis for buyer = more depreciation",
+            "Allocate purchase price using residual method"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-II-011',
+    section: 'TCP',
+    title: "International Tax Basics for Tax Planning",
+    description: "Understand fundamental international tax concepts for planning",
+    order: 39,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["International Tax", "Tax Planning"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-C-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Global business requires understanding of international tax rules! From foreign tax credits to GILTI, international tax affects entity selection and planning. TCP tests basic international concepts that every tax planner should know!"
+        },
+        {
+          title: 'Worldwide vs Territorial Taxation',
+          type: 'text',
+          content: "**US uses WORLDWIDE system (with modifications):**\n\n• US persons taxed on worldwide income\n• Foreign income may be deferred (through foreign subs)\n• Foreign tax credit prevents double taxation\n\n**TCJA (2017) added territorial elements:**\n• Participation exemption (100% DRD for certain dividends)\n• But GILTI captures some foreign income"
+        },
+        {
+          title: 'Key International Tax Terms',
+          type: 'table',
+          headers: ['Term', 'Meaning'],
+          rows: [
+            ['CFC', 'Controlled Foreign Corporation (>50% US-owned)'],
+            ['PFIC', 'Passive Foreign Investment Company'],
+            ['GILTI', 'Global Intangible Low-Taxed Income'],
+            ['FDII', 'Foreign-Derived Intangible Income (deduction)'],
+            ['Subpart F', 'Current taxation of certain CFC income']
+          ]
+        },
+        {
+          title: 'Foreign Tax Credit',
+          type: 'text',
+          content: "**Prevents double taxation:**\n\n• Credit for foreign taxes paid\n• Limited to US tax on foreign income\n• Excess credits can be carried forward/back\n\n**Formula:**\n\nFTC Limit = US Tax × (Foreign Source Income / Worldwide Income)\n\n**Cannot reduce US tax below zero**"
+        },
+        {
+          title: '🧠 Memory Aid: FTC Limit',
+          type: 'callout',
+          content: "**\"Can't get more credit than you'd pay\"**\n\n**FTC is limited to:**\nUS tax rate × Foreign income\n\n**Example:**\n• Foreign income: $100\n• US tax rate: 21%\n• Foreign tax paid: 30%\n\n• FTC limit: $21\n• Excess $9 carried forward\n\n**High-tax foreign income = Excess credits**"
+        },
+        {
+          title: 'Controlled Foreign Corporations (CFCs)',
+          type: 'text',
+          content: "**CFC = Foreign corporation with >50% US shareholder ownership**\n\n**US shareholders must include:**\n• Subpart F income (passive, mobile income)\n• GILTI (post-TCJA)\n\n**Even without dividend!**\n\n**\"10% US shareholder\" = owns 10%+ by vote or value**"
+        },
+        {
+          title: 'Subpart F Income',
+          type: 'text',
+          content: "**Certain CFC income taxed currently to US shareholders:**\n\n**Types:**\n• Foreign base company sales income\n• Foreign base company services income\n• Foreign personal holding company income\n• Insurance income\n\n**Purpose:** Prevent deferral of easily-shifted income\n\n**No deferral benefit for Subpart F!**"
+        },
+        {
+          title: 'GILTI (Global Intangible Low-Taxed Income)',
+          type: 'text',
+          content: "**Post-TCJA anti-deferral regime:**\n\n**GILTI = CFC's tested income minus deemed return on tangible assets**\n\n**Effect:**\n• Captures excess returns (attributed to intangibles)\n• Taxed currently to US shareholders\n• 50% deduction available (21% × 50% = 10.5% effective rate)\n• Foreign tax credit available (80%)\n\n**Minimum tax on foreign earnings**"
+        },
+        {
+          title: 'FDII Deduction',
+          type: 'text',
+          content: "**Incentive for US exports of intangibles:**\n\n• Deduction for foreign-derived income from intangibles\n• 37.5% deduction (effective rate: 13.125%)\n• Must be income from foreign customers\n• Reduces US tax on export income\n\n**GILTI taxes foreign profits; FDII incentivizes US production**"
+        },
+        {
+          title: '⚠️ Exam Trap: GILTI vs Subpart F',
+          type: 'warning',
+          content: "**Both cause current inclusion, but different!**\n\n**Subpart F:**\n• Passive/mobile income specifically\n• No 50% deduction\n• Full FTC available\n\n**GILTI:**\n• Residual CFC income (after Subpart F)\n• 50% deduction available\n• 80% FTC haircut\n\n**Subpart F = worse tax treatment!**"
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'list',
+          content: [
+            "**Entity selection** - Branch vs subsidiary affects deferral",
+            "**Location of IP** - Drives where income is earned",
+            "**Transfer pricing** - Must be arm's length",
+            "**Check-the-box** - Can create/eliminate CFCs",
+            "**Foreign tax credits** - Manage high/low-tax baskets",
+            "**FDII benefits** - Keep intangibles in US, sell abroad"
+          ]
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "US taxes worldwide income but allows FTC for foreign taxes",
+            "CFC = >50% US-owned foreign corporation",
+            "Subpart F income: Taxed currently, no deferral",
+            "GILTI: Minimum tax on CFC excess returns (10.5% effective)",
+            "FDII: Deduction for US export income (13.125% effective)",
+            "FTC limited to US tax on foreign income",
+            "Planning involves entity choice, IP location, transfer pricing"
+          ]
+        }
+      ]
+    }
   }
 ];

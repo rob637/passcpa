@@ -6646,5 +6646,469 @@ export const farLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'FAR-III-018',
+    section: 'FAR',
+    title: "Defined Benefit Pension Plans",
+    description: "Master pension accounting including the PBO, plan assets, and net pension cost",
+    order: 66,
+    duration: 65,
+    difficulty: 'advanced',
+    topics: ["Pensions", "Employee Benefits"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Pension accounting is one of the most complex topics on FAR! Understanding the components of pension expense, balance sheet presentation, and OCI impacts is essential. Many candidates struggle here—master this and you'll stand out!"
+        },
+        {
+          title: 'Defined Benefit vs Defined Contribution',
+          type: 'table',
+          headers: ['Feature', 'Defined Benefit', 'Defined Contribution'],
+          rows: [
+            ['Promise', 'Specific future benefit', 'Specific current contribution'],
+            ['Investment Risk', 'Employer bears', 'Employee bears'],
+            ['Complexity', 'Very complex', 'Simple'],
+            ['Example', 'Traditional pension', '401(k), 403(b)']
+          ]
+        },
+        {
+          title: 'Key Pension Terms',
+          type: 'text',
+          content: "**Projected Benefit Obligation (PBO):**\n• Present value of ALL benefits earned to date\n• Uses projected future salary increases\n• PRIMARY measure used in US GAAP\n\n**Plan Assets:**\n• Fair value of investments set aside for pension\n• Held in trust, separate from company\n\n**Funded Status = Plan Assets - PBO**"
+        },
+        {
+          title: 'Funded Status on Balance Sheet',
+          type: 'text',
+          content: "**Net Pension Asset or Liability:**\n\n• **Overfunded (Assets > PBO):** Report net asset\n• **Underfunded (PBO > Assets):** Report net liability\n\n**Single amount on balance sheet = Funded status**\n\n**No more minimum liability or intangible asset!**"
+        },
+        {
+          title: '🧠 Memory Aid: Pension Expense Components',
+          type: 'callout',
+          content: "**\"SIR-AGE\"** for Pension Cost:\n\n**S**ervice cost (+)\n**I**nterest cost (+)\n**R**eturn on assets (-)\n**A**mortization of prior service cost (+/-)\n**G**ains and losses amortization (+/-)\n**E**xpected, not actual return!\n\n**Service and Interest ADD; Return SUBTRACTS**"
+        },
+        {
+          title: 'Pension Cost Components',
+          type: 'table',
+          headers: ['Component', 'Description', 'Income Statement Location'],
+          rows: [
+            ['Service Cost', 'Benefits earned during year', 'Operating expense'],
+            ['Interest Cost', 'Interest on PBO', 'Non-operating/Other'],
+            ['Expected Return', 'Expected earnings on plan assets', 'Non-operating/Other'],
+            ['Prior Service Amortization', 'Plan amendments recognition', 'Non-operating/Other'],
+            ['Gain/Loss Amortization', 'Corridor method excess', 'Non-operating/Other']
+          ]
+        },
+        {
+          title: 'Service Cost',
+          type: 'text',
+          content: "**Benefits earned by employees THIS YEAR**\n\n• Calculated by actuary\n• Based on pension formula\n• Uses current salary levels projected forward\n\n**This is the ONLY component in operating income!**\n\n**All other components = Non-operating**"
+        },
+        {
+          title: 'Interest Cost',
+          type: 'text',
+          content: "**Interest on the growing PBO:**\n\n**Formula:** Beginning PBO × Discount Rate\n\n**Think of it as:**\n• PBO is a liability growing over time\n• Interest accrues at the discount rate\n\n**Increases pension expense**"
+        },
+        {
+          title: 'Expected Return on Plan Assets',
+          type: 'text',
+          content: "**Expected earnings from investments:**\n\n**Formula:** Beginning Plan Assets × Expected Return Rate\n\n**Note:** Use EXPECTED return, not actual!\n\n**Difference:** Actual vs Expected → OCI (deferred)\n\n**Reduces pension expense (negative component)**"
+        },
+        {
+          title: 'Prior Service Cost',
+          type: 'text',
+          content: "**When plan is amended retroactively:**\n\n1. Measure change in PBO from amendment\n2. Record in OCI immediately\n3. Amortize to expense over remaining service period\n\n**Example:** Company increases pension formula for past years → Increases PBO → Prior service cost"
+        },
+        {
+          title: 'Gains and Losses (Corridor Method)',
+          type: 'text',
+          content: "**Gains/Losses arise from:**\n• Actuarial assumption changes\n• Difference between expected and actual returns\n\n**Accumulated in OCI until:**\n• Exceed the \"corridor\" (10% of greater of PBO or Assets)\n• Then amortize excess over average remaining service\n\n**This is the CORRIDOR approach - smooths volatility**"
+        },
+        {
+          title: '⚠️ Exam Trap: Expected vs Actual Return',
+          type: 'warning',
+          content: "**In pension expense: Use EXPECTED return!**\n\n**Example:**\n• Expected return: $100,000\n• Actual return: $80,000\n• Difference: $20,000 loss\n\n**Pension expense uses:** $100,000 expected\n**The $20,000 loss goes to:** OCI (deferred)\n\n**Never use actual return in pension expense directly!**"
+        },
+        {
+          title: 'Sample Calculation',
+          type: 'example',
+          content: "**Pension Expense Calculation:**\n\n• Service cost: $200,000\n• Interest cost (PBO $2M × 5%): $100,000\n• Expected return ($1.5M × 6%): ($90,000)\n• Prior service amortization: $15,000\n• Loss amortization: $10,000\n\n**Total Pension Expense: $235,000**\n\n**Journal Entry:**\nDr Pension Expense    $235,000\nDr OCI (various)      XXX\n    Cr Pension Asset/Liability   XXX\n    Cr Cash (contribution)       XXX"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Funded status = Plan assets - PBO (single B/S amount)",
+            "SIR-AGE: Service, Interest, Return, Amortizations",
+            "Service cost = ONLY component in operating income",
+            "Use EXPECTED return, not actual (difference to OCI)",
+            "Prior service cost: OCI, then amortize",
+            "Corridor: 10% of greater of PBO or assets",
+            "Overfunded = Asset; Underfunded = Liability"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-019',
+    section: 'FAR',
+    title: "Basic Earnings Per Share (EPS)",
+    description: "Calculate and present basic EPS for simple capital structures",
+    order: 67,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["EPS", "Financial Analysis"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-F-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "EPS is one of the most watched metrics by investors! Public companies must present EPS on the income statement. Understanding basic vs diluted EPS and the calculation nuances is heavily tested on FAR!"
+        },
+        {
+          title: 'Basic EPS Formula',
+          type: 'text',
+          content: "**Basic EPS = (Net Income - Preferred Dividends) / Weighted Average Common Shares**\n\n**Numerator:** Income available to common shareholders\n**Denominator:** Weighted average shares outstanding\n\n**Must subtract preferred dividends!**"
+        },
+        {
+          title: 'Who Must Report EPS?',
+          type: 'text',
+          content: "**Required for:**\n• Public companies (SEC registrants)\n• Companies planning to go public\n\n**NOT required for:**\n• Private companies\n• Not-for-profits\n\n**Presented ON the face of income statement**"
+        },
+        {
+          title: '🧠 Memory Aid: Basic EPS',
+          type: 'callout',
+          content: "**\"NIP over WAC\"**\n\n**N**et Income\n**I**minus (less)\n**P**referred dividends\n_______________\n**W**eighted\n**A**verage\n**C**ommon shares\n\n**Top = what's for common; Bottom = how many common**"
+        },
+        {
+          title: 'Preferred Dividend Treatment',
+          type: 'table',
+          headers: ['Type', 'Treatment in EPS'],
+          rows: [
+            ['Cumulative preferred', 'Subtract FULL dividend (whether declared or not)'],
+            ['Non-cumulative preferred', 'Subtract ONLY if declared'],
+            ['Participating preferred', 'Special allocation required']
+          ]
+        },
+        {
+          title: 'Weighted Average Shares',
+          type: 'text',
+          content: "**Calculate shares on time-weighted basis:**\n\n**Example:**\n• 100,000 shares for 6 months\n• 150,000 shares for 6 months\n\n**Weighted avg = (100,000 × 6/12) + (150,000 × 6/12)**\n**= 50,000 + 75,000 = 125,000 shares**\n\n**Use actual days or months for precision**"
+        },
+        {
+          title: 'Stock Dividends and Splits',
+          type: 'text',
+          content: "**Treat as if occurred at BEGINNING of year!**\n\n**Example:** 2-for-1 split on July 1\n• January 1 shares: 100,000\n• After split: 200,000\n\n**Weighted average:** 200,000 for ENTIRE year\n\n**Also RESTATE prior period EPS for comparability!**"
+        },
+        {
+          title: 'Treasury Stock',
+          type: 'text',
+          content: "**Treasury shares reduce weighted average:**\n\n**Example:**\n• 1/1: 200,000 shares outstanding\n• 4/1: Buy back 20,000 shares\n\n**Weighted avg:**\n(200,000 × 3/12) + (180,000 × 9/12)\n= 50,000 + 135,000 = 185,000 shares"
+        },
+        {
+          title: '⚠️ Exam Trap: Stock Dividends vs Repurchases',
+          type: 'warning',
+          content: "**Stock dividends/splits:** Apply RETROACTIVELY to entire year (and prior years)\n\n**Stock repurchases:** Apply PROSPECTIVELY from purchase date\n\n**Why different?**\n• Splits/dividends don't change company value\n• Repurchases are economic transactions"
+        },
+        {
+          title: 'EPS Presentation',
+          type: 'text',
+          content: "**Income statement presentation:**\n\n• EPS from continuing operations\n• EPS from discontinued operations\n• EPS for net income\n\n**Both basic AND diluted EPS required**\n\n**Show on face of income statement, not just notes**"
+        },
+        {
+          title: 'Sample Calculation',
+          type: 'example',
+          content: "**Calculate Basic EPS:**\n\n• Net income: $500,000\n• Preferred dividends (cumulative): $50,000\n• Common shares 1/1: 100,000\n• Issued 4/1: 20,000 additional\n• 2-for-1 split on 9/1\n\n**Step 1: Adjust for split**\n• 1/1 shares: 100,000 × 2 = 200,000\n• 4/1 issue: 20,000 × 2 = 40,000\n\n**Step 2: Weighted average**\n(200,000 × 3/12) + (240,000 × 9/12) = 230,000\n\n**Step 3: Calculate EPS**\n($500,000 - $50,000) / 230,000 = **$1.96**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Basic EPS = (Net Income - Preferred Dividends) / Weighted Avg Shares",
+            "Cumulative preferred: Deduct whether declared or not",
+            "Weighted average: Time-weight share changes",
+            "Stock splits/dividends: Apply retroactively to entire year",
+            "Treasury stock purchases: Apply from purchase date forward",
+            "Required for public companies, on face of income statement",
+            "Restate prior periods for splits/dividends"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-020',
+    section: 'FAR',
+    title: "Diluted Earnings Per Share",
+    description: "Calculate diluted EPS with convertibles, options, and other dilutive securities",
+    order: 68,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["EPS", "Financial Analysis", "Complex Capital"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-F-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Diluted EPS shows the 'worst case' scenario if all potentially dilutive securities converted. Understanding the if-converted and treasury stock methods is essential for FAR—these calculations appear frequently on the exam!"
+        },
+        {
+          title: 'What is Diluted EPS?',
+          type: 'text',
+          content: "**Diluted EPS = Income available / (Weighted Avg + Potential Shares)**\n\n**Shows impact of:**\n• Convertible bonds\n• Convertible preferred stock\n• Stock options and warrants\n• Contingent shares\n\n**Always ≤ Basic EPS (cannot exceed basic)**"
+        },
+        {
+          title: 'Two Key Methods',
+          type: 'table',
+          headers: ['Security', 'Method', 'Adjustments'],
+          rows: [
+            ['Convertible bonds', 'If-Converted', 'Add back interest (net of tax), add shares'],
+            ['Convertible preferred', 'If-Converted', 'Add back pref dividends, add shares'],
+            ['Options/Warrants', 'Treasury Stock', 'Add net new shares only']
+          ]
+        },
+        {
+          title: 'If-Converted Method: Convertible Bonds',
+          type: 'text',
+          content: "**Assume bonds converted at beginning of year:**\n\n**Numerator adjustment:**\n• Add back interest expense (net of tax)\n• Interest wouldn't be paid if converted\n\n**Denominator adjustment:**\n• Add shares that would be issued\n\n**Test:** Only include if DILUTIVE (reduces EPS)"
+        },
+        {
+          title: '🧠 Memory Aid: If-Converted',
+          type: 'callout',
+          content: "**\"IF converted, what changes?\"**\n\n**Convertible BONDS:**\n• No more interest expense = Income UP (add back)\n• More shares = Shares UP\n\n**Convertible PREFERRED:**\n• No more preferred dividends = Income UP\n• More common shares = Shares UP\n\n**Both: Income goes UP, Shares go UP**"
+        },
+        {
+          title: 'If-Converted Method: Convertible Preferred',
+          type: 'text',
+          content: "**Assume preferred converted at beginning of year:**\n\n**Numerator adjustment:**\n• Don't subtract preferred dividends\n• (They wouldn't exist if converted)\n\n**Denominator adjustment:**\n• Add common shares from conversion\n\n**No tax adjustment needed (dividends aren't deductible)**"
+        },
+        {
+          title: 'Treasury Stock Method: Options',
+          type: 'text',
+          content: "**For options and warrants:**\n\n1. Assume all options exercised\n2. Company receives exercise price\n3. Company buys back shares at average market price\n4. NET new shares added to denominator\n\n**Formula:**\nNet shares = Options - (Options × Exercise Price / Avg Market Price)\n\n**Or:** Options × (Market - Exercise) / Market"
+        },
+        {
+          title: 'Treasury Stock Method Example',
+          type: 'example',
+          content: "**Options outstanding:**\n• 10,000 options\n• Exercise price: $20\n• Average market price: $50\n\n**Step 1:** Assume exercise: Receive $200,000 (10,000 × $20)\n\n**Step 2:** Buy back shares: $200,000 / $50 = 4,000 shares\n\n**Step 3:** Net new shares = 10,000 - 4,000 = **6,000 shares**\n\n**Only these 6,000 added to denominator!**"
+        },
+        {
+          title: 'When Are Options Dilutive?',
+          type: 'text',
+          content: "**Options are dilutive when:**\nExercise price < Average market price\n(In-the-money options)\n\n**Options are anti-dilutive when:**\nExercise price > Average market price\n(Out-of-the-money options)\n\n**Anti-dilutive securities are EXCLUDED!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Antidilutive Securities',
+          type: 'warning',
+          content: "**NEVER include antidilutive securities!**\n\n**A security is antidilutive if:**\n• Including it INCREASES EPS\n• Convertible: Incremental EPS > Basic EPS\n• Options: Exercise price > Market price\n\n**Must test EACH security separately**\n\n**Aggregate approach:** Order by most dilutive first"
+        },
+        {
+          title: 'Order of Inclusion (Aggregate Test)',
+          type: 'text',
+          content: "**Steps for multiple dilutive securities:**\n\n1. Calculate basic EPS\n2. Rank securities by dilutive impact (most dilutive first)\n3. Add one at a time\n4. Stop when adding security would be antidilutive\n\n**For convertibles:** Rank by incremental EPS\n(Earnings adjustment / Share adjustment)"
+        },
+        {
+          title: 'Sample Comprehensive Calculation',
+          type: 'example',
+          content: "**Given:**\n• Net income: $1,000,000\n• Preferred dividends: $100,000\n• Basic shares: 200,000\n• Convertible bonds: $500,000 face, 8% interest, converts to 20,000 shares\n• Tax rate: 25%\n• Stock options: 10,000 options at $30, market = $50\n\n**Basic EPS:** ($1,000,000 - $100,000) / 200,000 = **$4.50**\n\n**Convertible bond adjustment:**\n• Interest add-back: $40,000 × (1-25%) = $30,000\n• New shares: 20,000\n\n**Options (Treasury Stock):**\n• Net shares: 10,000 × ($50-$30)/$50 = 4,000\n\n**Diluted EPS:**\n($900,000 + $30,000) / (200,000 + 20,000 + 4,000)\n= $930,000 / 224,000 = **$4.15**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Diluted EPS includes potentially dilutive securities",
+            "Convertibles: If-converted method (add back interest/dividends, add shares)",
+            "Options: Treasury stock method (only net new shares)",
+            "Options dilutive only when market > exercise price",
+            "NEVER include antidilutive securities",
+            "Test each security—stop when adding would increase EPS",
+            "Diluted EPS must be ≤ Basic EPS"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-021',
+    section: 'FAR',
+    title: "Income Tax Accounting: Deferred Taxes",
+    description: "Master deferred tax assets, liabilities, and temporary differences",
+    order: 69,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Income Taxes", "Deferred Taxes"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Deferred tax accounting bridges the gap between GAAP and tax reporting! Understanding temporary differences, DTAs, DTLs, and valuation allowances is crucial for FAR. This topic appears in almost every exam!"
+        },
+        {
+          title: 'Book vs Tax Differences',
+          type: 'table',
+          headers: ['Type', 'Description', 'Deferred Tax?'],
+          rows: [
+            ['Temporary', 'Will reverse in future periods', 'YES - Creates DTA or DTL'],
+            ['Permanent', 'Never reverses', 'NO - No deferred tax']
+          ]
+        },
+        {
+          title: 'Temporary Differences',
+          type: 'text',
+          content: "**Differences that create future taxable or deductible amounts:**\n\n**Creates DTL (future taxable):**\n• Accelerated tax depreciation\n• Installment sale income\n• Prepaid expenses (deducted for tax, not book)\n\n**Creates DTA (future deductible):**\n• Bad debt expense (allowance method)\n• Warranty expense\n• Accrued expenses not yet deductible"
+        },
+        {
+          title: '🧠 Memory Aid: DTA vs DTL',
+          type: 'callout',
+          content: "**\"PAID less now → DTL; PAID more now → DTA\"**\n\n**DTL:** Tax paid NOW less than book expense\n• Will pay MORE tax in future\n• It's a LIABILITY\n\n**DTA:** Tax paid NOW more than book expense\n• Will pay LESS tax in future\n• It's an ASSET (future benefit)"
+        },
+        {
+          title: 'Calculating Deferred Taxes',
+          type: 'text',
+          content: "**Step 1:** Identify temporary differences\n**Step 2:** Determine if each creates DTA or DTL\n**Step 3:** Multiply by ENACTED tax rate\n**Step 4:** Assess need for valuation allowance on DTAs\n\n**Use the tax rate expected when difference reverses!**"
+        },
+        {
+          title: 'Common Temporary Differences',
+          type: 'table',
+          headers: ['Item', 'Book vs Tax', 'Creates'],
+          rows: [
+            ['Depreciation', 'Book < Tax early years', 'DTL'],
+            ['Bad debt allowance', 'Book > Tax (direct write-off)', 'DTA'],
+            ['Warranty liability', 'Book accrued, Tax when paid', 'DTA'],
+            ['Prepaid rent', 'Tax deducts now, Book later', 'DTL'],
+            ['Installment sales', 'Book full income, Tax when collected', 'DTL']
+          ]
+        },
+        {
+          title: 'Permanent Differences (No Deferred Tax)',
+          type: 'text',
+          content: "**Never reverse - affect current tax only:**\n\n• Municipal bond interest (book income, not taxable)\n• Life insurance premiums on executives\n• Fines and penalties (book expense, not deductible)\n• 50% meals deduction limit\n• Dividends received deduction\n\n**These affect effective tax rate, not deferred taxes**"
+        },
+        {
+          title: 'Journal Entry Approach',
+          type: 'text',
+          content: "**Annual deferred tax entry:**\n\nDr Income Tax Expense (plug)\n   Cr Income Tax Payable (current tax due)\n   Cr Deferred Tax Liability (increase in DTL)\nor\nDr Deferred Tax Asset (increase in DTA)\n\n**Expense = Current tax +/- Changes in deferred taxes**"
+        },
+        {
+          title: '⚠️ Exam Trap: Rate Changes',
+          type: 'warning',
+          content: "**When tax rates change:**\n\n• Adjust ALL existing deferred taxes\n• Use NEW enacted rate\n• Adjustment goes through income tax expense\n\n**Example:** DTL of $100,000 at 35%\nRate changes to 21%\nNew DTL = Temp diff × 21%\nDifference = Benefit (reduce expense)"
+        },
+        {
+          title: 'Balance Sheet Classification',
+          type: 'text',
+          content: "**ALL deferred taxes are NONCURRENT:**\n\n• Deferred Tax Assets → Noncurrent asset\n• Deferred Tax Liabilities → Noncurrent liability\n\n**Net within same tax jurisdiction:**\n• Net DTA and DTL for same entity/jurisdiction\n• Different jurisdictions shown separately"
+        },
+        {
+          title: 'Sample Calculation',
+          type: 'example',
+          content: "**Year 1:**\n• Book income: $500,000\n• Taxable income: $400,000\n• Difference: $100,000 (depreciation timing)\n• Tax rate: 21%\n\n**Current tax:** $400,000 × 21% = $84,000\n**DTL created:** $100,000 × 21% = $21,000\n\n**Entry:**\nDr Income Tax Expense    $105,000\n    Cr Income Tax Payable    $84,000\n    Cr Deferred Tax Liability $21,000\n\n**Effective rate:** $105,000 / $500,000 = 21%"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Temporary differences reverse; Permanent differences don't",
+            "DTL = Will pay MORE tax later (tax < book now)",
+            "DTA = Will pay LESS tax later (tax > book now)",
+            "Use enacted rate expected when difference reverses",
+            "Rate changes: Adjust deferred taxes through expense",
+            "All deferred taxes are noncurrent on balance sheet",
+            "Net within same jurisdiction, separate different jurisdictions"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-022',
+    section: 'FAR',
+    title: "Deferred Tax Asset Valuation Allowance",
+    description: "Determine when a valuation allowance is needed for deferred tax assets",
+    order: 70,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Income Taxes", "Valuation Allowance"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-C-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "A DTA is only valuable if the company will have future taxable income to use it! The valuation allowance is one of the most judgment-intensive areas in accounting—and a favorite FAR exam topic!"
+        },
+        {
+          title: 'What is a Valuation Allowance?',
+          type: 'text',
+          content: "**Contra-asset reducing DTA to realizable amount**\n\n**Required when:**\n\"More likely than not\" (>50%) that some portion of DTA will NOT be realized\n\n**Like an allowance for doubtful accounts—but for deferred taxes**"
+        },
+        {
+          title: 'Assessing Realizability',
+          type: 'text',
+          content: "**Consider all available evidence:**\n\n**Positive evidence (supports no VA needed):**\n• Existing contracts/backlogs\n• Strong earnings history\n• Appreciated assets\n• Deferred tax liabilities that will reverse\n\n**Negative evidence (supports VA needed):**\n• Cumulative losses in recent years\n• History of unused carryforwards expiring\n• Unsettled circumstances creating uncertainty"
+        },
+        {
+          title: 'Sources of Future Taxable Income',
+          type: 'list',
+          content: [
+            "**Reversal of existing DTLs** in same jurisdiction",
+            "**Future taxable income** (exclusive of reversing differences)",
+            "**Tax planning strategies** that would create taxable income",
+            "**Carryback to prior years** (if available)"
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: \"More Likely Than Not\"',
+          type: 'callout',
+          content: "**MLTN = More than 50% likely**\n\n**Question to ask:**\n\"Is it more likely than not that we WON'T use this DTA?\"\n\n**If YES → Need valuation allowance**\n**If NO → No valuation allowance needed**\n\n**Weight of evidence determines answer**"
+        },
+        {
+          title: 'Journal Entry for Valuation Allowance',
+          type: 'text',
+          content: "**To establish or increase VA:**\n\nDr Income Tax Expense\n    Cr Valuation Allowance (contra to DTA)\n\n**To decrease VA (improved outlook):**\n\nDr Valuation Allowance\n    Cr Income Tax Expense (benefit)\n\n**VA is presented as offset to DTA on balance sheet**"
+        },
+        {
+          title: 'Cumulative Loss Test',
+          type: 'text',
+          content: "**Three-year cumulative loss is significant negative evidence:**\n\n• Very difficult to overcome\n• Must have strong positive evidence to avoid VA\n• Objectively verifiable\n\n**But not automatic!**\n• Consider nature of losses\n• Unusual or nonrecurring?\n• Future profitability reasonably expected?"
+        },
+        {
+          title: '⚠️ Exam Trap: Changing the VA',
+          type: 'warning',
+          content: "**VA is reassessed EVERY reporting period!**\n\n**Company turns profitable:**\n• Reassess need for VA\n• May release (reduce) VA\n• Benefit goes through income tax expense\n\n**This can significantly impact earnings!**\n\n**Disclosure of VA changes required**"
+        },
+        {
+          title: 'Example Scenario',
+          type: 'example',
+          content: "**Company has:**\n• DTA from NOL carryforward: $500,000\n• Three years of losses (cumulative loss)\n• Expect modest profits next 2 years\n• DTL that will reverse: $200,000\n\n**Analysis:**\n• Negative evidence: Cumulative losses\n• Positive evidence: DTL reversal\n• Expected income insufficient\n\n**Conclusion:** VA needed for portion not supported\nVA = $500,000 - $200,000 = $300,000"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "VA needed when MLTN (>50%) DTA won't be realized",
+            "Consider all positive and negative evidence",
+            "Three-year cumulative loss = significant negative evidence",
+            "Sources: DTL reversals, future income, tax strategies, carrybacks",
+            "VA recorded against income tax expense",
+            "Reassess VA every period—changes go through expense",
+            "VA is contra-asset that reduces DTA on balance sheet"
+          ]
+        }
+      ]
+    }
   }
 ];

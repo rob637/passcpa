@@ -80,10 +80,12 @@ const ScrollToTop = () => {
 // Protected Route Component
 interface RouteProps {
   children: JSX.Element;
+  skipOnboarding?: boolean;
 }
 
-const ProtectedRoute = ({ children }: RouteProps) => {
-  const { user, loading } = useAuth();
+const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
+  const { user, userProfile, loading } = useAuth();
+  const location = useLocation();
 
   if (loading) {
     return <FullPageLoader />;
@@ -91,6 +93,11 @@ const ProtectedRoute = ({ children }: RouteProps) => {
 
   if (!user) {
     return <Navigate to="/login" replace />;
+  }
+
+  // Redirect to onboarding if not complete (unless we're already on onboarding page or skipOnboarding is true)
+  if (!skipOnboarding && userProfile && !userProfile.onboardingComplete && location.pathname !== '/onboarding') {
+    return <Navigate to="/onboarding" replace />;
   }
 
   return children;
@@ -236,7 +243,7 @@ function App() {
                 <Route
                   path="/onboarding"
                   element={
-                    <ProtectedRoute>
+                    <ProtectedRoute skipOnboarding>
                       <SuspensePage>
                         <Onboarding />
                       </SuspensePage>

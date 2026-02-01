@@ -5954,6 +5954,342 @@ export const regLessons: Lesson[] = [
         }
       ]
     }
+  },
+  // ==========================================
+  // H.R.1 - ONE BIG BEAUTIFUL BILL ACT OF 2025
+  // ==========================================
+  {
+    id: 'REG-III-026',
+    section: 'REG',
+    title: "Tax-Free Tip Income (H.R.1)",
+    description: "Understand the new tax exemption for qualifying tip income",
+    order: 81,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Individual Taxation", "Gross Income", "Legislative Updates"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "H.R.1 (One Big Beautiful Bill Act of 2025) introduced a new above-the-line deduction for qualifying tip income! This is a major change affecting millions of hospitality workers and their tax planning."
+        },
+        {
+          title: 'Key Provisions',
+          type: 'table',
+          headers: ['Element', 'Requirement', 'Details'],
+          rows: [
+            ['Eligible Workers', 'Tipped occupations', 'Food service, hospitality, beauty services'],
+            ['Deduction Type', 'Above-the-line', 'Reduces AGI directly'],
+            ['Maximum Benefit', 'Capped amount', 'Subject to income phase-outs'],
+            ['Effective Date', 'Tax years 2025+', 'Applies to tips received after enactment'],
+            ['Documentation', 'Employer reporting', 'Tips must be reported on W-2']
+          ]
+        },
+        {
+          title: 'Qualifying Tips',
+          type: 'text',
+          content: "**Tips that qualify for the deduction:**\n\n• Cash tips received directly from customers\n• Credit card tips processed through employer\n• Tips from tip pools and sharing arrangements\n• Service charges designated as tips\n\n**Must be properly reported to employer!**"
+        },
+        {
+          title: '🧠 Memory Aid: Tip Deduction Rules',
+          type: 'callout',
+          content: "**\"TIPS\"** for qualification:\n\n**T**ipped occupation (defined categories)\n**I**ncome under threshold (phase-out applies)\n**P**roperly reported (on W-2)\n**S**ervice-related (food, hospitality, beauty)\n\n**Above-the-line = Available even without itemizing!**"
+        },
+        {
+          title: 'Income Phase-Outs',
+          type: 'text',
+          content: "**Deduction phases out for higher earners:**\n\n• Single filers: Phase-out begins at $160,000 AGI\n• MFJ filers: Phase-out begins at $320,000 AGI\n• Completely phased out $40,000 above threshold\n\n**Calculate modified AGI excluding tips for threshold**"
+        },
+        {
+          title: '⚠️ Exam Trap: Still Subject to FICA',
+          type: 'warning',
+          content: "**Tips are exempt from INCOME tax, NOT payroll tax!**\n\n• Social Security tax still applies\n• Medicare tax still applies\n• Employer FICA obligation unchanged\n\n**Only the federal income tax exclusion is new!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "H.R.1 creates above-the-line deduction for qualifying tips",
+            "Applies to food service, hospitality, beauty workers",
+            "Tips must be properly reported to employer",
+            "Phase-outs apply for higher income taxpayers",
+            "FICA taxes still apply - only income tax exempted",
+            "Effective for tax years beginning after 2024"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-027',
+    section: 'REG',
+    title: "SALT Deduction Changes (H.R.1)",
+    description: "Navigate the revised State and Local Tax deduction limits",
+    order: 82,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Taxation", "Itemized Deductions", "Legislative Updates"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The $10,000 SALT cap has been one of the most debated provisions! H.R.1 modifies this limitation. Understanding the current rules and changes is essential for REG!"
+        },
+        {
+          title: 'SALT Cap Timeline',
+          type: 'table',
+          headers: ['Period', 'SALT Limit', 'Status'],
+          rows: [
+            ['Pre-2018', 'Unlimited', 'Historical (pre-TCJA)'],
+            ['2018-2025', '$10,000 ($5,000 MFS)', 'Original TCJA limit'],
+            ['2025+', '$40,000 (projected)', 'H.R.1 increase (subject to phase-out)']
+          ]
+        },
+        {
+          title: 'What Qualifies as SALT',
+          type: 'text',
+          content: "**Deductible state and local taxes:**\n\n• State and local income taxes, OR\n• State and local sales taxes (elect one)\n• Real property taxes\n• Personal property taxes\n\n**NOT included:**\n• Foreign taxes (separate FTC)\n• Fees and assessments (non-tax)"
+        },
+        {
+          title: '🧠 Memory Aid: SALT Components',
+          type: 'callout',
+          content: "**\"SIPR\"** for SALT:\n\n**S**tate income tax (or sales tax)\n**I**s limited to the cap\n**P**roperty tax (real property)\n**R**eal and personal property taxes\n\n**Choose income OR sales, not both!**"
+        },
+        {
+          title: 'Phase-Out Structure',
+          type: 'text',
+          content: "**Higher cap phases out for wealthy:**\n\n• Full $40,000 cap: AGI under $500,000 (MFJ)\n• Reduced cap: AGI $500,000 - $1,000,000\n• Minimum cap: AGI over $1,000,000\n\n**Single filers: Half of MFJ thresholds**"
+        },
+        {
+          title: 'Married Filing Separately',
+          type: 'text',
+          content: "**Special rules for MFS:**\n\n• Cap is HALF of the MFJ amount\n• $20,000 maximum (under new rules)\n• Phase-out thresholds also halved\n\n**Marriage penalty consideration!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Workarounds',
+          type: 'warning',
+          content: "**Common SALT workarounds:**\n\n• Pass-through entity tax elections (some states)\n• Charitable contributions to state credit programs\n• Business deductions on Schedule C/E\n\n**IRS has challenged some aggressive strategies!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SALT = State income/sales + Property taxes",
+            "Original TCJA cap: $10,000 ($5,000 MFS)",
+            "H.R.1 increases cap with phase-outs for high earners",
+            "Must choose between income tax OR sales tax",
+            "Property taxes are always included in SALT",
+            "Business taxes on Sch C/E are NOT subject to SALT cap"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-028',
+    section: 'REG',
+    title: "Enhanced Child Tax Credit (H.R.1)",
+    description: "Apply the expanded Child Tax Credit provisions",
+    order: 83,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Taxation", "Tax Credits", "Legislative Updates"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Child Tax Credit is one of the most valuable family tax benefits! H.R.1 enhances the credit amount and modifies eligibility. Understanding these changes is critical for REG!"
+        },
+        {
+          title: 'CTC Enhancement Summary',
+          type: 'table',
+          headers: ['Element', 'Previous Law', 'H.R.1 Changes'],
+          rows: [
+            ['Credit Amount', '$2,000 per child', '$2,500 per child'],
+            ['Refundable Portion', '$1,600 (ACTC)', '$2,000 (enhanced ACTC)'],
+            ['Age Limit', 'Under 17', 'Under 18'],
+            ['Phase-out Start (MFJ)', '$400,000', '$400,000 (unchanged)'],
+            ['SSN Requirement', 'Required', 'Required (unchanged)']
+          ]
+        },
+        {
+          title: 'Qualifying Child Requirements',
+          type: 'text',
+          content: "**Child must meet ALL tests:**\n\n• **Age:** Under 18 at year-end (increased from 17)\n• **Relationship:** Son, daughter, stepchild, etc.\n• **Residency:** Lived with taxpayer > 6 months\n• **Support:** Child didn't provide > 50% of own support\n• **SSN:** Must have valid SSN\n• **Dependent:** Claimed as dependent on return"
+        },
+        {
+          title: '🧠 Memory Aid: CTC Tests',
+          type: 'callout',
+          content: "**\"ARRSSD\"** for qualifying:\n\n**A**ge - Under 18 (H.R.1 change!)\n**R**elationship - Close family member\n**R**esidency - Lived together > 6 months\n**S**upport - Child not self-supporting\n**S**SN - Valid Social Security Number\n**D**ependent - Claimed on return\n\n**Remember: 18 is the NEW age limit!**"
+        },
+        {
+          title: 'Refundable vs. Nonrefundable',
+          type: 'text',
+          content: "**Two components of CTC:**\n\n**Nonrefundable:** Reduces tax to zero\n**Refundable (ACTC):** Up to $2,000 refundable\n\n**ACTC calculation:**\n• 15% of earned income over $2,500\n• Capped at refundable limit\n\n**Must have earned income for refundable portion!**"
+        },
+        {
+          title: 'Phase-Out Calculation',
+          type: 'text',
+          content: "**Credit reduces for high income:**\n\n• MFJ: Phase-out begins at $400,000\n• Other: Phase-out begins at $200,000\n• Reduction: $50 per $1,000 over threshold\n\n**Example:** MFJ with $420,000 AGI\n= $20,000 over ÷ $1,000 × $50\n= $1,000 reduction per child"
+        },
+        {
+          title: '⚠️ Exam Trap: SSN Requirement',
+          type: 'warning',
+          content: "**SSN is STRICTLY required for CTC!**\n\n• ITIN holders do NOT qualify\n• SSN must be issued BEFORE due date\n• Adopted children: ATIN acceptable temporarily\n\n**No SSN = No CTC (but may get $500 ODC)**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "H.R.1 increases CTC to $2,500 per qualifying child",
+            "Age limit increased to under 18 (was under 17)",
+            "Refundable portion (ACTC) increased to $2,000",
+            "Phase-out: $400,000 MFJ, $200,000 others",
+            "Valid SSN required - no ITIN",
+            "Must have earned income for refundable portion"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-029',
+    section: 'REG',
+    title: "Auto Loan Interest Deduction (H.R.1)",
+    description: "Understand the new deduction for auto loan interest",
+    order: 84,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ["Individual Taxation", "Itemized Deductions", "Legislative Updates"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "H.R.1 introduces a NEW deduction for auto loan interest on American-made vehicles! This is a significant departure from historical tax treatment of personal auto interest."
+        },
+        {
+          title: 'Deduction Requirements',
+          type: 'table',
+          headers: ['Requirement', 'Details'],
+          rows: [
+            ['Vehicle Type', 'Must be assembled in the United States'],
+            ['Use', 'Personal use (commuting, family)'],
+            ['Loan Type', 'Secured auto loan from lender'],
+            ['Maximum Deduction', 'Interest on first $100,000 of loan'],
+            ['Deduction Type', 'Above-the-line (reduces AGI)']
+          ]
+        },
+        {
+          title: 'American-Made Requirement',
+          type: 'text',
+          content: "**Final assembly must be in USA:**\n\n• VIN identifies assembly location\n• Check EPA fuel economy label\n• Many \"foreign\" brands qualify (Toyota, Honda plants)\n• Some \"American\" brands don't (imported models)\n\n**Assembly location, not brand, determines eligibility!**"
+        },
+        {
+          title: '🧠 Memory Aid: Auto Interest Rules',
+          type: 'callout',
+          content: "**\"MULA\"** for auto deduction:\n\n**M**ade in USA (final assembly)\n**U**p to $100,000 loan limit\n**L**oan interest only (not lease)\n**A**bove-the-line deduction\n\n**Unlike mortgage interest - this is above-the-line!**"
+        },
+        {
+          title: 'Limitations',
+          type: 'text',
+          content: "**What does NOT qualify:**\n\n• Leased vehicles (no loan interest)\n• Foreign-assembled vehicles\n• Business-use portion (use Sch C instead)\n• Interest on loans over $100,000\n• Credit card interest used for car\n\n**Personal use, American-made, direct loan only!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Above-the-Line Benefit',
+          type: 'warning',
+          content: "**Unlike mortgage interest, auto interest is ABOVE-THE-LINE:**\n\n• Available even with standard deduction\n• Reduces AGI (helps other phase-outs)\n• No itemizing required\n\n**Much more valuable than if itemized!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "New H.R.1 deduction for auto loan interest",
+            "Vehicle must be assembled in USA",
+            "Maximum: Interest on $100,000 loan",
+            "Above-the-line deduction (no itemizing needed)",
+            "Leases do NOT qualify - must be loan",
+            "Check VIN for assembly location"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-030',
+    section: 'REG',
+    title: "No Tax on Overtime (H.R.1)",
+    description: "Apply the tax exemption for qualifying overtime pay",
+    order: 85,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Individual Taxation", "Gross Income", "Legislative Updates"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "H.R.1 creates an above-the-line deduction for qualifying overtime pay! This major provision benefits millions of hourly workers and changes how overtime is taxed."
+        },
+        {
+          title: 'Overtime Deduction Rules',
+          type: 'table',
+          headers: ['Element', 'Requirement'],
+          rows: [
+            ['Qualifying Overtime', 'Hours worked over 40/week'],
+            ['Rate Requirement', 'Paid at 1.5x or higher regular rate'],
+            ['Deduction Type', 'Above-the-line (reduces AGI)'],
+            ['Documentation', 'Must be reported separately on W-2'],
+            ['Income Limit', 'Phase-out for higher earners']
+          ]
+        },
+        {
+          title: 'Who Qualifies',
+          type: 'text',
+          content: "**Eligible workers:**\n\n• Non-exempt employees under FLSA\n• Hourly workers\n• Some salaried non-exempt employees\n\n**NOT eligible:**\n• Exempt employees (no OT premium)\n• Self-employed (no defined OT)\n• Gig workers (typically 1099)"
+        },
+        {
+          title: '🧠 Memory Aid: OT Deduction',
+          type: 'callout',
+          content: "**\"FLOP\"** for overtime deduction:\n\n**F**LSA covered (non-exempt)\n**L**egitimate overtime (>40 hrs/week)\n**O**ne-and-a-half rate (minimum)\n**P**hase-out applies (income limits)\n\n**Must be TRUE overtime, not regular pay!**"
+        },
+        {
+          title: 'Phase-Out Limits',
+          type: 'text',
+          content: "**Deduction reduces for higher earners:**\n\n• Single: Phase-out begins at $150,000\n• MFJ: Phase-out begins at $300,000\n• Completely phased out $50,000 above\n\n**Calculate without OT to determine eligibility**"
+        },
+        {
+          title: '⚠️ Exam Trap: Still Subject to FICA',
+          type: 'warning',
+          content: "**Like tip income - FICA still applies!**\n\n• Social Security tax: Still withheld\n• Medicare tax: Still withheld\n• Employer taxes: Unchanged\n\n**Only federal INCOME tax is reduced!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "H.R.1 creates above-the-line deduction for overtime",
+            "Only FLSA-covered overtime qualifies",
+            "Must be paid at 1.5x or higher rate",
+            "Phase-outs apply for higher income taxpayers",
+            "FICA taxes still apply to overtime",
+            "Must be separately identified on W-2"
+          ]
+        }
+      ]
+    }
   }
 ];
 

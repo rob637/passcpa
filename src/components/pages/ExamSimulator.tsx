@@ -18,6 +18,10 @@ import {
   // Eye,
   BookOpen,
   ArrowLeft,
+  BarChart3,
+  Sparkles,
+  GraduationCap,
+  ClipboardCheck,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -26,7 +30,10 @@ import { db } from '../../config/firebase';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection } from '../../types';
+import { Question, ExamSection, TBS } from '../../types';
+import { TBSRenderer } from '../exam/TBSRenderer';
+import { getMockExamsBySection, getMockExamById, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/mock-exams';
+import { getTBSBySection } from '../../data/tbs';
 
 interface TestletConfig {
   type: 'mcq' | 'tbs' | 'wc';
@@ -130,7 +137,19 @@ const MINI_EXAM: ExamConfig = {
   passingScore: 75,
 };
 
-type ExamState = 'intro' | 'exam' | 'break' | 'review' | 'complete';
+// Mini exam with TBS for full experience
+const MINI_EXAM_WITH_TBS: ExamConfig = {
+  testlets: [
+    { type: 'mcq', questions: 12, time: 15 * 60 },
+    { type: 'mcq', questions: 12, time: 15 * 60 },
+    { type: 'tbs', questions: 2, time: 20 * 60 },
+  ],
+  totalTime: 50 * 60, // 50 minutes
+  passingScore: 75,
+};
+
+type ExamState = 'intro' | 'mock-selection' | 'exam' | 'break' | 'review' | 'complete';
+type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
 
 const ExamSimulator: React.FC = () => {
   const navigate = useNavigate();
@@ -138,34 +157,61 @@ const ExamSimulator: React.FC = () => {
   const { completeSimulation } = useStudy();
 
   const [examState, setExamState] = useState<ExamState>('intro');
+  const [examMode, setExamMode] = useState<ExamMode>('mini');
+  const [selectedMockExam, setSelectedMockExam] = useState<MockExamConfig | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [tbsItems, setTbsItems] = useState<TBS[]>([]);
   const [currentTestlet, setCurrentTestlet] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [tbsAnswers, setTbsAnswers] = useState<Record<string, Record<string, unknown>>>({});
   const [flagged, setFlagged] = useState<Set<string>>(new Set());
   const [timeLeft, setTimeLeft] = useState(0);
   // const [isPaused, setIsPaused] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [isMiniExam, setIsMiniExam] = useState(true);
   const [showCalculator, setShowCalculator] = useState(false);
   const [startTime, setStartTime] = useState<number | null>(null);
+  const [blueprintScores, setBlueprintScores] = useState<Record<string, { correct: number; total: number }>>({});
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timerRef = useRef<any>(null);
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
-  const examConfig = isMiniExam ? MINI_EXAM : EXAM_CONFIG[currentSection];
+  const availableMockExams = getMockExamsBySection(currentSection);
+  
+  // Determine exam config based on mode
+  const examConfig = useMemo(() => {
+    if (examMode === 'curated' && selectedMockExam) {
+      return {
+        testlets: selectedMockExam.testlets.map(t => ({
+          type: t.type as 'mcq' | 'tbs' | 'wc',
+          questions: t.questionCount,
+          time: t.timeAllocation,
+        })),
+        totalTime: selectedMockExam.totalTime,
+        passingScore: selectedMockExam.passingScore,
+      };
+    }
+    if (examMode === 'mini-tbs') return MINI_EXAM_WITH_TBS;
+    if (examMode === 'full') return EXAM_CONFIG[currentSection];
+    return MINI_EXAM;
+  }, [examMode, selectedMockExam, currentSection]);
 
   // Load questions for exam
   const startExam = async () => {
     setLoading(true);
     try {
-      const totalQuestions = examConfig.testlets.reduce((sum, t) => sum + t.questions, 0);
+      // Calculate MCQ and TBS counts
+      const mcqTestlets = examConfig.testlets.filter(t => t.type === 'mcq');
+      const tbsTestlets = examConfig.testlets.filter(t => t.type === 'tbs');
+      const totalMcqQuestions = mcqTestlets.reduce((sum, t) => sum + t.questions, 0);
+      const totalTbsQuestions = tbsTestlets.reduce((sum, t) => sum + t.questions, 0);
 
+      // Load MCQ questions from Firestore
       const questionsQuery = query(
         collection(db, 'questions'),
         where('section', '==', currentSection),
-        limit(totalQuestions)
+        limit(totalMcqQuestions)
       );
 
       const snapshot = await getDocs(questionsQuery);
@@ -175,21 +221,51 @@ const ExamSimulator: React.FC = () => {
         .sort(() => Math.random() - 0.5) as Question[];
 
       // If not enough questions, fill with duplicates (shuffled)
-      while (loadedQuestions.length < totalQuestions) {
+      while (loadedQuestions.length < totalMcqQuestions) {
         const filler = loadedQuestions
-          .slice(0, totalQuestions - loadedQuestions.length)
+          .slice(0, totalMcqQuestions - loadedQuestions.length)
           .map((q) => ({ ...q, id: `${q.id}-dup-${Math.random()}` }));
         loadedQuestions = [...loadedQuestions, ...filler];
       }
 
-      setQuestions(loadedQuestions.slice(0, totalQuestions));
+      setQuestions(loadedQuestions.slice(0, totalMcqQuestions));
+
+      // Load TBS items if exam includes TBS testlets
+      if (totalTbsQuestions > 0) {
+        const allTbs = getTBSBySection(currentSection);
+        
+        // If curated exam with specific TBS IDs, use those
+        if (examMode === 'curated' && selectedMockExam) {
+          const curatedTbs: TBS[] = [];
+          for (const testlet of selectedMockExam.testlets) {
+            if (testlet.type === 'tbs' && testlet.tbsIds) {
+              const tbs = loadTestletTBS(testlet, currentSection);
+              curatedTbs.push(...tbs);
+            } else if (testlet.type === 'tbs') {
+              // Random selection for non-curated TBS testlets
+              const shuffled = [...allTbs].sort(() => Math.random() - 0.5);
+              curatedTbs.push(...shuffled.slice(0, testlet.questionCount));
+            }
+          }
+          setTbsItems(curatedTbs.slice(0, totalTbsQuestions));
+        } else {
+          // Random TBS selection for mini/full exams
+          const shuffledTbs = [...allTbs].sort(() => Math.random() - 0.5);
+          setTbsItems(shuffledTbs.slice(0, totalTbsQuestions));
+        }
+      } else {
+        setTbsItems([]);
+      }
+
       setTimeLeft(examConfig.totalTime);
       setStartTime(Date.now());
       setExamState('exam');
       setCurrentTestlet(0);
       setCurrentIndex(0);
       setAnswers({});
+      setTbsAnswers({});
       setFlagged(new Set());
+      setBlueprintScores({});
     } catch (error) {
       logger.error('Error starting exam:', error);
     } finally {
@@ -254,18 +330,44 @@ const ExamSimulator: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [examState, currentIndex]);
 
-  // Get current testlet questions
+  // Get current testlet questions or TBS
   const testletQuestions = useMemo(() => {
     if (!examConfig) return [];
-    let start = 0;
-    for (let i = 0; i < currentTestlet; i++) {
-      start += examConfig.testlets[i].questions;
-    }
     const testlet = examConfig.testlets[currentTestlet];
-    return questions.slice(start, start + testlet.questions);
+    if (!testlet) return [];
+    
+    if (testlet.type === 'mcq') {
+      // Calculate which MCQ questions belong to this testlet
+      let mcqStart = 0;
+      for (let i = 0; i < currentTestlet; i++) {
+        if (examConfig.testlets[i].type === 'mcq') {
+          mcqStart += examConfig.testlets[i].questions;
+        }
+      }
+      return questions.slice(mcqStart, mcqStart + testlet.questions);
+    }
+    return []; // TBS handled separately
   }, [currentTestlet, examConfig, questions]);
 
-  const currentQuestion = testletQuestions[currentIndex];
+  // Get current testlet TBS items
+  const testletTBS = useMemo(() => {
+    if (!examConfig) return [];
+    const testlet = examConfig.testlets[currentTestlet];
+    if (!testlet || testlet.type !== 'tbs') return [];
+    
+    // Calculate which TBS items belong to this testlet
+    let tbsStart = 0;
+    for (let i = 0; i < currentTestlet; i++) {
+      if (examConfig.testlets[i].type === 'tbs') {
+        tbsStart += examConfig.testlets[i].questions;
+      }
+    }
+    return tbsItems.slice(tbsStart, tbsStart + testlet.questions);
+  }, [currentTestlet, examConfig, tbsItems]);
+
+  const currentTestletType = examConfig?.testlets[currentTestlet]?.type || 'mcq';
+  const currentQuestion = currentTestletType === 'mcq' ? testletQuestions[currentIndex] : null;
+  const currentTBS = currentTestletType === 'tbs' ? testletTBS[currentIndex] : null;
 
   const formatTime = (seconds: number) => {
     const hrs = Math.floor(seconds / 3600);
@@ -283,12 +385,24 @@ const ExamSimulator: React.FC = () => {
     feedback.tap();
   }, [currentQuestion]);
 
+  // Handle TBS answer changes
+  const handleTBSAnswerChange = useCallback((tbsId: string, requirementId: string, value: unknown) => {
+    setTbsAnswers((prev) => ({
+      ...prev,
+      [tbsId]: {
+        ...(prev[tbsId] || {}),
+        [requirementId]: value,
+      },
+    }));
+  }, []);
+
   const handleNext = useCallback(() => {
-    if (currentIndex < testletQuestions.length - 1) {
+    const maxIndex = currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1;
+    if (currentIndex < maxIndex) {
       setCurrentIndex((i) => i + 1);
     }
     feedback.click();
-  }, [currentIndex, testletQuestions.length]);
+  }, [currentIndex, testletQuestions.length, testletTBS.length, currentTestletType]);
 
   const handlePrevious = useCallback(() => {
     if (currentIndex > 0) {
@@ -298,18 +412,19 @@ const ExamSimulator: React.FC = () => {
   }, [currentIndex]);
 
   const toggleFlag = useCallback(() => {
-    if (!currentQuestion) return;
+    const itemId = currentTestletType === 'tbs' ? currentTBS?.id : currentQuestion?.id;
+    if (!itemId) return;
     setFlagged((prev) => {
       const next = new Set(prev);
-      if (next.has(currentQuestion.id)) {
-        next.delete(currentQuestion.id);
+      if (next.has(itemId)) {
+        next.delete(itemId);
       } else {
-        next.add(currentQuestion.id);
+        next.add(itemId);
       }
       return next;
     });
     feedback.tap();
-  }, [currentQuestion]);
+  }, [currentQuestion, currentTBS, currentTestletType]);
 
   const handleNextTestlet = () => {
     if (currentTestlet < examConfig.testlets.length - 1) {
@@ -337,20 +452,91 @@ const ExamSimulator: React.FC = () => {
     let correct = 0;
     let incorrect = 0;
     let unanswered = 0;
+    const blueprintResults: Record<string, { correct: number; total: number }> = {};
 
+    // Score MCQ questions
     questions.forEach((q) => {
       const userAnswer = answers[q.id];
+      const area = q.blueprintArea || 'Unknown';
+      
+      if (!blueprintResults[area]) {
+        blueprintResults[area] = { correct: 0, total: 0 };
+      }
+      blueprintResults[area].total++;
+      
       if (userAnswer === undefined) {
         unanswered++;
       } else if (userAnswer === q.correctAnswer) {
         correct++;
+        blueprintResults[area].correct++;
       } else {
         incorrect++;
       }
     });
 
-    const percentage = questions.length > 0 ? Math.round((correct / questions.length) * 100) : 0;
-    return { correct, incorrect, unanswered, percentage };
+    // Score TBS (simplified scoring - in reality this would be more complex)
+    let tbsCorrect = 0;
+    let tbsTotal = 0;
+    tbsItems.forEach((tbs) => {
+      const userTbsAnswers = tbsAnswers[tbs.id] || {};
+      const area = tbs.blueprintArea || 'Unknown';
+      
+      if (!blueprintResults[area]) {
+        blueprintResults[area] = { correct: 0, total: 0 };
+      }
+      
+      tbs.requirements.forEach((req) => {
+        tbsTotal++;
+        blueprintResults[area].total++;
+        
+        const userAnswer = userTbsAnswers[req.id];
+        if (userAnswer !== undefined && userAnswer !== null) {
+          // Simplified scoring - real TBS scoring is more nuanced
+          if (req.type === 'calculation' && req.correctAnswer !== undefined) {
+            const numAnswer = typeof userAnswer === 'number' ? userAnswer : parseFloat(String(userAnswer));
+            const tolerance = req.tolerance || 0;
+            if (Math.abs(numAnswer - req.correctAnswer) <= tolerance) {
+              tbsCorrect++;
+              blueprintResults[area].correct++;
+            }
+          } else if (req.type === 'multiple_choice' && req.correctOption !== undefined) {
+            if (userAnswer === req.correctOption) {
+              tbsCorrect++;
+              blueprintResults[area].correct++;
+            }
+          } else {
+            // For other types, give partial credit if answered
+            tbsCorrect += 0.5;
+            blueprintResults[area].correct += 0.5;
+          }
+        }
+      });
+    });
+
+    // Combined scoring (MCQ ~50%, TBS ~50% per AICPA weighting)
+    const mcqWeight = 0.5;
+    const tbsWeight = 0.5;
+    
+    const mcqScore = questions.length > 0 ? (correct / questions.length) * 100 : 0;
+    const tbsScore = tbsTotal > 0 ? (tbsCorrect / tbsTotal) * 100 : 0;
+    
+    const percentage = tbsItems.length > 0
+      ? Math.round(mcqScore * mcqWeight + tbsScore * tbsWeight)
+      : Math.round(mcqScore);
+
+    setBlueprintScores(blueprintResults);
+
+    return { 
+      correct, 
+      incorrect, 
+      unanswered, 
+      percentage,
+      mcqScore: Math.round(mcqScore),
+      tbsScore: Math.round(tbsScore),
+      tbsCorrect,
+      tbsTotal,
+      blueprintResults,
+    };
   };
 
   if (examState === 'intro') {

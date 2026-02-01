@@ -11,14 +11,18 @@ import {
   Flag,
   Trophy,
   Target,
+  Settings,
+  ChevronDown,
+  BookOpen,
+  Zap,
+  AlertCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
-import { db } from '../../config/firebase';
+import { fetchQuestions } from '../../services/questionService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection } from '../../types';
+import { Question, ExamSection, Difficulty, CPA_SECTIONS } from '../../types';
 
 interface QuizModeConfig {
   questions: number;
@@ -35,9 +39,57 @@ const QUIZ_MODES: QuizModes = {
   standard: { questions: 20, timePerQuestion: 90, name: 'Standard Quiz' },
   challenge: { questions: 30, timePerQuestion: 60, name: 'Challenge Mode' },
   exam: { questions: 36, timePerQuestion: 75, name: 'Exam Simulation' },
+  weak: { questions: 15, timePerQuestion: 90, name: 'Weak Areas' },
+  custom: { questions: 10, timePerQuestion: 90, name: 'Custom Quiz' },
 };
 
-type QuizState = 'setup' | 'active' | 'review' | 'complete';
+// Blueprint areas for targeting specific content
+const BLUEPRINT_AREAS: Record<ExamSection, { id: string; name: string }[]> = {
+  FAR: [
+    { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting' },
+    { id: 'FAR-II', name: 'Select Financial Statement Accounts' },
+    { id: 'FAR-III', name: 'Select Transactions' },
+    { id: 'FAR-IV', name: 'State and Local Governments' },
+    { id: 'FAR-V', name: 'Not-for-Profit Entities' },
+  ],
+  AUD: [
+    { id: 'AUD-I', name: 'Ethics & Professional Responsibilities' },
+    { id: 'AUD-II', name: 'Assessing Risk & Developing Response' },
+    { id: 'AUD-III', name: 'Performing Procedures & Obtaining Evidence' },
+    { id: 'AUD-IV', name: 'Forming Conclusions & Reporting' },
+    { id: 'AUD-V', name: 'Accounting & Review Services' },
+  ],
+  REG: [
+    { id: 'REG-I', name: 'Ethics, Professional Responsibilities & Tax Procedures' },
+    { id: 'REG-II', name: 'Business Law' },
+    { id: 'REG-III', name: 'Federal Taxation of Property Transactions' },
+    { id: 'REG-IV', name: 'Federal Taxation of Individuals' },
+    { id: 'REG-V', name: 'Federal Taxation of Entities' },
+  ],
+  BAR: [
+    { id: 'BAR-I', name: 'Business Analysis' },
+    { id: 'BAR-II', name: 'Technical Accounting & Reporting' },
+    { id: 'BAR-III', name: 'State & Local Government Concepts' },
+    { id: 'BAR-IV', name: 'Not-for-Profit Concepts' },
+  ],
+  ISC: [
+    { id: 'ISC-I', name: 'Information Systems & Data Management' },
+    { id: 'ISC-II', name: 'Security, Confidentiality & Privacy' },
+    { id: 'ISC-III', name: 'Technology-Enabled Finance Transformation' },
+  ],
+  TCP: [
+    { id: 'TCP-I', name: 'Tax Compliance & Planning for Individuals' },
+    { id: 'TCP-II', name: 'Entity Tax Compliance' },
+    { id: 'TCP-III', name: 'Entity Tax Planning' },
+    { id: 'TCP-IV', name: 'Property Transactions' },
+  ],
+  BEC: [
+    { id: 'BEC-I', name: 'Enterprise Risk Management' },
+    { id: 'BEC-II', name: 'Economics' },
+  ],
+};
+
+type QuizState = 'setup' | 'active' | 'review' | 'complete' | 'explanations';
 
 const TimedQuiz: React.FC = () => {
   const navigate = useNavigate();
@@ -53,35 +105,50 @@ const TimedQuiz: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(0);
   const [_totalTime, setTotalTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [quizState, setQuizState] = useState<QuizState>('setup'); // setup, active, review, complete
+  const [quizState, setQuizState] = useState<QuizState>('setup'); // setup, active, review, complete, explanations
   const [loading, setLoading] = useState(false);
+  
+  // New setup options
+  const [selectedSection, setSelectedSection] = useState<ExamSection | 'all'>('all');
+  const [selectedBlueprintArea, setSelectedBlueprintArea] = useState<string>('all');
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
+  const [customQuestionCount, setCustomQuestionCount] = useState(10);
+  const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
+  const [reviewIndex, setReviewIndex] = useState(0);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timerRef = useRef<any>(null);
   const mode = searchParams.get('mode') || 'quick';
   const quizConfig = QUIZ_MODES[mode] || QUIZ_MODES.quick;
-  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+  const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
 
   // Load questions
   const startQuiz = async () => {
     setLoading(true);
     try {
-      const questionsQuery = query(
-        collection(db, 'questions'),
-        where('section', '==', currentSection),
-        limit(quizConfig.questions)
-      );
+      const questionCount = mode === 'custom' ? customQuestionCount : quizConfig.questions;
+      
+      // Use local questionService instead of Firebase for faster loading
+      const loadedQuestions = await fetchQuestions({
+        section: selectedSection !== 'all' ? selectedSection : currentSection,
+        blueprintArea: selectedBlueprintArea !== 'all' ? selectedBlueprintArea : undefined,
+        difficulty: selectedDifficulty !== 'all' ? selectedDifficulty : undefined,
+        count: questionCount,
+        mode: mode === 'weak' ? 'weak' : 'random',
+      });
 
-      const snapshot = await getDocs(questionsQuery);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const loadedQuestions = snapshot.docs
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map((doc) => ({ id: doc.id, ...doc.data() } as any))
-        .sort(() => Math.random() - 0.5) as Question[];
+      if (loadedQuestions.length === 0) {
+        logger.warn('No questions found for selected filters');
+        setLoading(false);
+        return;
+      }
 
-      setQuestions(loadedQuestions);
-      setTimeLeft(quizConfig.questions * quizConfig.timePerQuestion);
-      setTotalTime(quizConfig.questions * quizConfig.timePerQuestion);
+      // Shuffle questions
+      const shuffled = [...loadedQuestions].sort(() => Math.random() - 0.5);
+
+      setQuestions(shuffled);
+      setTimeLeft(shuffled.length * quizConfig.timePerQuestion);
+      setTotalTime(shuffled.length * quizConfig.timePerQuestion);
       setQuizState('active');
       setCurrentIndex(0);
       setAnswers({});
@@ -238,10 +305,13 @@ const TimedQuiz: React.FC = () => {
 
   // Setup Screen
   if (quizState === 'setup') {
+    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
+    const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
+    
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-        <div className="max-w-md w-full">
-          <div className="text-center mb-8">
+      <div className="min-h-screen bg-slate-50 p-4">
+        <div className="max-w-lg mx-auto">
+          <div className="text-center mb-6">
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="w-8 h-8 text-primary-600" />
             </div>
@@ -249,8 +319,9 @@ const TimedQuiz: React.FC = () => {
             <p className="text-slate-600">Test yourself under exam conditions</p>
           </div>
 
-          <div className="space-y-3 mb-8">
-            {Object.entries(QUIZ_MODES).map(([key, config]) => (
+          {/* Quiz Mode Selection */}
+          <div className="space-y-3 mb-6">
+            {Object.entries(QUIZ_MODES).filter(([key]) => key !== 'custom').map(([key, config]) => (
               <button
                 key={key}
                 onClick={() => navigate(`/quiz?mode=${key}`)}
@@ -262,10 +333,16 @@ const TimedQuiz: React.FC = () => {
                 )}
               >
                 <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-semibold text-slate-900">{config.name}</div>
-                    <div className="text-sm text-slate-600">
-                      {config.questions} questions • {config.timePerQuestion}s each
+                  <div className="flex items-center gap-3">
+                    {key === 'weak' && <AlertCircle className="w-5 h-5 text-warning-500" />}
+                    {key === 'exam' && <Target className="w-5 h-5 text-error-500" />}
+                    {key === 'challenge' && <Zap className="w-5 h-5 text-purple-500" />}
+                    {(key === 'quick' || key === 'standard') && <Clock className="w-5 h-5 text-primary-500" />}
+                    <div>
+                      <div className="font-semibold text-slate-900">{config.name}</div>
+                      <div className="text-sm text-slate-600">
+                        {config.questions} questions • {config.timePerQuestion}s each
+                      </div>
                     </div>
                   </div>
                   <div className="text-right">
@@ -278,6 +355,99 @@ const TimedQuiz: React.FC = () => {
             ))}
           </div>
 
+          {/* Advanced Options Toggle */}
+          <button
+            onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+            className="w-full flex items-center justify-between p-3 text-slate-600 hover:text-slate-900 mb-4"
+          >
+            <span className="flex items-center gap-2">
+              <Settings className="w-4 h-4" />
+              <span className="text-sm font-medium">Quiz Options</span>
+            </span>
+            <ChevronDown className={clsx('w-4 h-4 transition-transform', showAdvancedOptions && 'rotate-180')} />
+          </button>
+
+          {/* Advanced Options Panel */}
+          {showAdvancedOptions && (
+            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-6 space-y-4">
+              {/* Section Selection */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Exam Section</label>
+                <select
+                  value={selectedSection}
+                  onChange={(e) => {
+                    setSelectedSection(e.target.value as ExamSection | 'all');
+                    setSelectedBlueprintArea('all');
+                  }}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                >
+                  <option value="all">Current Section ({userProfile?.examSection || 'REG'})</option>
+                  {Object.entries(CPA_SECTIONS).map(([key, section]) => (
+                    <option key={key} value={key}>{section.shortName} - {section.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Blueprint Area Selection */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  <BookOpen className="w-4 h-4 inline mr-1" />
+                  Blueprint Area
+                </label>
+                <select
+                  value={selectedBlueprintArea}
+                  onChange={(e) => setSelectedBlueprintArea(e.target.value)}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                >
+                  <option value="all">All Areas</option>
+                  {blueprintAreas.map((area) => (
+                    <option key={area.id} value={area.id}>{area.id}: {area.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Difficulty Selection */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Difficulty</label>
+                <div className="flex gap-2">
+                  {(['all', 'easy', 'medium', 'hard'] as const).map((diff) => (
+                    <button
+                      key={diff}
+                      onClick={() => setSelectedDifficulty(diff)}
+                      className={clsx(
+                        'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors',
+                        selectedDifficulty === diff
+                          ? diff === 'easy' ? 'bg-success-100 text-success-700 border-2 border-success-300'
+                          : diff === 'medium' ? 'bg-warning-100 text-warning-700 border-2 border-warning-300'
+                          : diff === 'hard' ? 'bg-error-100 text-error-700 border-2 border-error-300'
+                          : 'bg-primary-100 text-primary-700 border-2 border-primary-300'
+                          : 'bg-slate-100 text-slate-600 border-2 border-transparent hover:bg-slate-200'
+                      )}
+                    >
+                      {diff === 'all' ? 'All' : diff.charAt(0).toUpperCase() + diff.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Custom Question Count (only for custom mode) */}
+              {mode === 'custom' && (
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Number of Questions</label>
+                  <input
+                    type="range"
+                    min="5"
+                    max="50"
+                    value={customQuestionCount}
+                    onChange={(e) => setCustomQuestionCount(parseInt(e.target.value))}
+                    className="w-full"
+                  />
+                  <div className="text-center text-sm text-slate-600 mt-1">{customQuestionCount} questions</div>
+                </div>
+              )}
+            </div>
+          )}
+
           <button
             onClick={startQuiz}
             disabled={loading}
@@ -287,10 +457,10 @@ const TimedQuiz: React.FC = () => {
           </button>
 
           <button
-            onClick={() => navigate('/study')}
+            onClick={() => navigate('/home')}
             className="w-full mt-3 py-2 text-slate-600 hover:text-slate-900"
           >
-            Back to Study
+            Back to Home
           </button>
         </div>
       </div>
@@ -421,12 +591,195 @@ const TimedQuiz: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 mb-4">
             <button onClick={() => setQuizState('setup')} className="btn-secondary flex-1">
               Try Again
             </button>
             <button onClick={() => navigate('/progress')} className="btn-primary flex-1">
               View Progress
+            </button>
+          </div>
+          
+          {/* Review Explanations Button */}
+          <button
+            onClick={() => {
+              setReviewIndex(0);
+              setQuizState('explanations');
+            }}
+            className="w-full py-3 bg-slate-100 text-slate-700 rounded-xl font-medium hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
+          >
+            <BookOpen className="w-5 h-5" />
+            Review All Explanations
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Explanations Review Screen
+  if (quizState === 'explanations') {
+    const reviewQuestion = questions[reviewIndex];
+    const userAnswer = answers[reviewQuestion?.id];
+    const isCorrect = userAnswer === reviewQuestion?.correctAnswer;
+    const wasAnswered = userAnswer !== undefined;
+
+    return (
+      <div className="min-h-screen bg-slate-50 flex flex-col">
+        {/* Header */}
+        <div className="bg-white border-b border-slate-100 px-4 py-3 sticky top-0 z-10">
+          <div className="max-w-3xl mx-auto flex items-center justify-between">
+            <button
+              onClick={() => setQuizState('complete')}
+              className="text-slate-600 hover:text-slate-900"
+            >
+              ← Back to Results
+            </button>
+            <span className="font-medium text-slate-900">
+              Review {reviewIndex + 1} / {questions.length}
+            </span>
+            <div className="w-20" />
+          </div>
+          
+          {/* Progress bar */}
+          <div className="max-w-3xl mx-auto mt-3">
+            <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-primary-500 transition-all"
+                style={{ width: `${((reviewIndex + 1) / questions.length) * 100}%` }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Question Review */}
+        <div className="flex-1 p-4 overflow-auto">
+          <div className="max-w-3xl mx-auto space-y-4">
+            {/* Result Badge */}
+            <div className={clsx(
+              'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium',
+              !wasAnswered ? 'bg-slate-100 text-slate-600'
+                : isCorrect ? 'bg-success-100 text-success-700'
+                : 'bg-error-100 text-error-700'
+            )}>
+              {!wasAnswered ? (
+                <><Clock className="w-4 h-4" /> Skipped</>
+              ) : isCorrect ? (
+                <><CheckCircle className="w-4 h-4" /> Correct</>
+              ) : (
+                <><XCircle className="w-4 h-4" /> Incorrect</>
+              )}
+            </div>
+
+            {/* Question */}
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+              <div className="text-xs text-primary-600 font-medium mb-2">
+                {reviewQuestion?.topic || reviewQuestion?.blueprintArea || currentSection}
+              </div>
+              <p className="text-lg text-slate-900 leading-relaxed">{reviewQuestion?.question}</p>
+            </div>
+
+            {/* Options with correct/incorrect highlighting */}
+            <div className="space-y-2">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {(reviewQuestion?.options || (reviewQuestion as any)?.choices || []).map((option: string, idx: number) => {
+                const isUserAnswer = userAnswer === idx;
+                const isCorrectAnswer = reviewQuestion?.correctAnswer === idx;
+                
+                return (
+                  <div
+                    key={idx}
+                    className={clsx(
+                      'w-full p-4 rounded-xl border-2 flex items-start gap-3',
+                      isCorrectAnswer
+                        ? 'border-success-500 bg-success-50'
+                        : isUserAnswer && !isCorrectAnswer
+                        ? 'border-error-500 bg-error-50'
+                        : 'border-slate-200 bg-white'
+                    )}
+                  >
+                    <span
+                      className={clsx(
+                        'w-8 h-8 rounded-lg flex items-center justify-center font-medium flex-shrink-0',
+                        isCorrectAnswer
+                          ? 'bg-success-500 text-white'
+                          : isUserAnswer
+                          ? 'bg-error-500 text-white'
+                          : 'bg-slate-100 text-slate-600'
+                      )}
+                    >
+                      {isCorrectAnswer ? <CheckCircle className="w-5 h-5" /> : 
+                       isUserAnswer ? <XCircle className="w-5 h-5" /> : 
+                       String.fromCharCode(65 + idx)}
+                    </span>
+                    <span className={clsx(
+                      'pt-1',
+                      isCorrectAnswer ? 'text-success-700 font-medium' : 'text-slate-700'
+                    )}>
+                      {option}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Explanation */}
+            {reviewQuestion?.explanation && (
+              <div className="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                <h3 className="text-sm font-semibold text-primary-800 mb-2 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  Explanation
+                </h3>
+                <p className="text-primary-900 leading-relaxed">{reviewQuestion.explanation}</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Navigation Footer */}
+        <div className="bg-white border-t border-slate-100 px-4 py-3">
+          <div className="max-w-3xl mx-auto flex items-center justify-between">
+            <button
+              onClick={() => setReviewIndex(i => Math.max(0, i - 1))}
+              disabled={reviewIndex === 0}
+              className="btn-secondary disabled:opacity-30"
+            >
+              Previous
+            </button>
+
+            <div className="flex gap-1">
+              {questions.slice(Math.max(0, reviewIndex - 3), reviewIndex + 4).map((q, idx) => {
+                const actualIdx = Math.max(0, reviewIndex - 3) + idx;
+                const isAnswered = answers[q.id] !== undefined;
+                const wasCorrect = answers[q.id] === q.correctAnswer;
+                
+                return (
+                  <button
+                    key={q.id}
+                    onClick={() => setReviewIndex(actualIdx)}
+                    className={clsx(
+                      'w-8 h-8 rounded-lg text-xs font-medium transition-colors',
+                      actualIdx === reviewIndex
+                        ? 'bg-primary-500 text-white'
+                        : !isAnswered
+                        ? 'bg-slate-100 text-slate-500'
+                        : wasCorrect
+                        ? 'bg-success-100 text-success-700'
+                        : 'bg-error-100 text-error-700'
+                    )}
+                  >
+                    {actualIdx + 1}
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              onClick={() => setReviewIndex(i => Math.min(questions.length - 1, i + 1))}
+              disabled={reviewIndex === questions.length - 1}
+              className="btn-primary disabled:opacity-30 flex items-center gap-2"
+            >
+              Next
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

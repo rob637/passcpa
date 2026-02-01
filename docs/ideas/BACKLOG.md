@@ -68,7 +68,7 @@ Let's review the 26 Task Based Simulations - do they cover all areas of the 2025
 Lessons - DONE
 Questions - DONE
 TBS - DONE
-Flash Cards - IN-PROCESS
+Flash Cards - DONE
 Mock Exam - IN-PROCESS
 Timed Quiz
 

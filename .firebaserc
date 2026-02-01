@@ -16,14 +16,14 @@
     "voraprep-staging": {
       "hosting": {
         "voraprep": [
-          "voraprep-staging"
+          "voraprep"
         ]
       }
     },
     "voraprep-prod": {
       "hosting": {
         "voraprep": [
-          "voraprep-prod"
+          "voraprep-de523"
         ]
       }
     }

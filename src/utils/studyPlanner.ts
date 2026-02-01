@@ -18,10 +18,11 @@ export const generateStudyPlan = (_examSectionId: string, examDate: Date): Study
   // Estimate module count (roughly 30-40 lessons per section + 2 reviews)
   const totalModules = 40; 
   
-  // Reserve last 14 days for final review
-  const studyDays = Math.max(1, daysUntilExam - 14);
+  // Reserve last 14 days for final review (minimum 7 days to avoid crazy numbers)
+  const studyDays = Math.max(7, daysUntilExam - 14);
   
-  const modulesPerDay = Number((totalModules / studyDays).toFixed(1));
+  // Cap modulesPerDay at a reasonable maximum (10) to avoid showing unrealistic numbers
+  const modulesPerDay = Math.min(10, Number((totalModules / studyDays).toFixed(1)));
   
   const milestones = [
     { date: format(today, 'MMM d'), label: 'Start' },

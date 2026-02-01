@@ -762,7 +762,10 @@ const Practice: React.FC = () => {
                   Ask Vory to Explain
                 </button>
                 <Link
-                  to={`/study/${currentQuestion.section?.toLowerCase() || 'far'}`}
+                  to={currentQuestion.blueprintArea 
+                    ? `/lessons/${currentQuestion.blueprintArea}-001`
+                    : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}`
+                  }
                   className="btn-secondary text-sm flex items-center gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
@@ -883,14 +886,23 @@ const Practice: React.FC = () => {
             )}
           </div>
 
-          <button
-            onClick={nextQuestion}
-            disabled={currentIndex === questions.length - 1}
-            className="btn-primary flex items-center gap-2"
-          >
-            Next
-            <ChevronRight className="w-5 h-5" />
-          </button>
+          {currentIndex === questions.length - 1 ? (
+            <button
+              onClick={endSession}
+              className="btn-primary flex items-center gap-2 bg-green-600 hover:bg-green-700"
+            >
+              Finish
+              <CheckCircle className="w-5 h-5" />
+            </button>
+          ) : (
+            <button
+              onClick={nextQuestion}
+              className="btn-primary flex items-center gap-2"
+            >
+              Next
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          )}
         </div>
       </div>
 

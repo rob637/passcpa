@@ -17,8 +17,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'The audit risk model is expressed as: AR = IR × CR × DR. If audit risk is set at 5%, inherent risk is 80%, and control risk is 50%, what is the acceptable detection risk?',
-    options: ['6.25%', '12.5%', '20%', '50%'],
-    correctAnswer: 1,
+    options: ['6.25%',
+      '50%',
+      '20%',
+      '12.5%'],
+    correctAnswer: 3,
     explanation: 'DR = AR ÷ (IR × CR) = 0.05 ÷ (0.80 × 0.50) = 0.05 ÷ 0.40 = 0.125 = 12.5%',
     reference: 'AU-C 200',
   },
@@ -32,12 +35,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Performance materiality is set:',
     options: [
-      'Equal to overall materiality',
-      'Higher than overall materiality',
       'Lower than overall materiality',
-      'At the discretion of the client',
+      'Higher than overall materiality',
+      'Equal to overall materiality',
+      'At the discretion of the client'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Performance materiality is set lower than overall materiality to reduce the risk that undetected and uncorrected misstatements aggregate to an amount exceeding overall materiality.',
     reference: 'AU-C 320.09',
@@ -53,12 +56,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Which of the following is a significant risk that requires special audit consideration?',
     options: [
-      'Routine transactions',
       'Management override of controls',
+      'Routine transactions',
       'Automated controls',
-      'Immaterial account balances',
+      'Immaterial account balances'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Management override of controls is always presumed to be a significant risk because management can circumvent even well-designed controls. Revenue recognition fraud is also presumed.',
     reference: 'AU-C 240.31',
@@ -93,12 +96,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'easy',
     question: 'An engagement letter should be agreed upon:',
     options: [
-      'After fieldwork begins',
       'Before the audit starts',
+      'After fieldwork begins',
       'At the conclusion of the audit',
-      'Only for new clients',
+      'Only for new clients'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The engagement letter should be agreed upon before the audit commences. It establishes terms, scope, responsibilities, and objectives. Required for all audits, even recurring engagements (though may update existing letter).',
     reference: 'AU-C 210.09',
@@ -118,12 +121,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       'The COSO framework includes five components of internal control. Which is NOT one of them?',
     options: [
-      'Control environment',
-      'Risk assessment',
       'External verification',
-      'Monitoring activities',
+      'Risk assessment',
+      'Control environment',
+      'Monitoring activities'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'COSO components: Control Environment, Risk Assessment, Control Activities, Information & Communication, and Monitoring Activities. External verification is not a component.',
     reference: 'AU-C 315',
@@ -161,10 +164,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Detective control',
       'Corrective control',
-      'Preventive control',
       'Compensating control',
+      'Preventive control'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Preventive controls stop errors before they occur (e.g., segregation of duties, authorization). Detective controls identify errors after they occur (e.g., reconciliations). Corrective controls fix errors.',
     reference: 'AU-C 315',
@@ -179,12 +182,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'A significant deficiency in internal control is:',
     options: [
-      'Less severe than a material weakness',
-      'More severe than a material weakness',
       'The same as a material weakness',
-      'Not required to be communicated',
+      'More severe than a material weakness',
+      'Less severe than a material weakness',
+      'Not required to be communicated'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation:
       'A significant deficiency is less severe than a material weakness but important enough to merit attention. Both must be communicated in writing to those charged with governance. Material weaknesses must also go to management.',
     reference: 'AU-C 265.07',
@@ -199,7 +202,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'Which method of documenting internal control provides the most detailed information about document flow?',
-    options: ['Narrative', 'Flowchart', 'Internal control questionnaire', 'Risk matrix'],
+    options: [
+      'Narrative',
+      'Flowchart',
+      'Internal control questionnaire',
+      'Risk matrix'
+    ],
     correctAnswer: 1,
     explanation:
       'Flowcharts provide visual representation of document and information flow through the system. Narratives describe processes in writing. Questionnaires use yes/no questions.',
@@ -238,7 +246,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Procedures',
     difficulty: 'easy',
     question: 'Which audit procedure involves examining records or documents?',
-    options: ['Inquiry', 'Observation', 'Inspection', 'Recalculation'],
+    options: [
+      'Inquiry',
+      'Observation',
+      'Inspection',
+      'Recalculation'
+    ],
     correctAnswer: 2,
     explanation:
       'Inspection involves examining records, documents, or tangible assets. Inquiry involves seeking information from knowledgeable persons. Observation involves watching a process. Recalculation involves checking mathematical accuracy.',
@@ -275,12 +288,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Analytical procedures are required to be performed during which phases of the audit?',
     options: [
-      'Planning only',
       'Planning and overall review',
+      'Planning only',
       'Planning, substantive testing, and overall review',
-      'Substantive testing only',
+      'Substantive testing only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Analytical procedures are required during (1) planning (to understand entity and identify risks) and (2) overall review near audit conclusion. Using them as substantive procedures is optional.',
     reference: 'AU-C 520',
@@ -296,11 +309,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'If management refuses to provide a representation letter:',
     options: [
       'The auditor may still issue an unmodified opinion',
-      'The auditor should disclaim an opinion',
-      'The representation letter is not required',
       'The auditor should issue an adverse opinion',
+      'The representation letter is not required',
+      'The auditor should disclaim an opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       "A representation letter is required in every audit. Management's refusal to provide it is a scope limitation. The auditor should disclaim an opinion or withdraw from the engagement.",
     reference: 'AU-C 580.26',
@@ -319,12 +332,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The risk of assessing control risk too low is a:',
     options: [
-      'Risk of incorrect rejection',
       'Risk of incorrect acceptance',
+      'Risk of incorrect rejection',
       'Non-sampling risk',
-      'Detection risk',
+      'Detection risk'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       "Risk of incorrect acceptance (Type II error): The risk that the sample supports the conclusion that control is effective when it actually is not. This is the auditor's main concern in tests of controls.",
     reference: 'AU-C 530.A1',
@@ -360,11 +373,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Increasing the tolerable rate of deviation will:',
     options: [
       'Increase sample size',
-      'Decrease sample size',
       'Not affect sample size',
-      'Require 100% testing',
+      'Decrease sample size',
+      'Require 100% testing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Tolerable deviation rate has an inverse relationship with sample size. Higher tolerable rate = auditor accepts more errors = smaller sample needed. Lower tolerable rate = larger sample needed.',
     reference: 'AU-C 530.A9',
@@ -422,8 +435,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Standard Report',
     difficulty: 'easy',
     question: 'In an unmodified audit report, the auditor expresses:',
-    options: ['Absolute assurance', 'Limited assurance', 'Reasonable assurance', 'No assurance'],
-    correctAnswer: 2,
+    options: ['Absolute assurance',
+      'Limited assurance',
+      'No assurance',
+      'Reasonable assurance'],
+    correctAnswer: 3,
     explanation:
       'An audit provides reasonable assurance (not absolute) that financial statements are free from material misstatement. Reasonable assurance is a high level of assurance.',
     reference: 'AU-C 700.11',
@@ -438,12 +454,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'An adverse opinion is issued when:',
     options: [
-      'The auditor cannot obtain sufficient evidence',
-      'Misstatements are material but not pervasive',
       'Misstatements are material and pervasive',
-      'The client restricts the scope',
+      'Misstatements are material but not pervasive',
+      'The auditor cannot obtain sufficient evidence',
+      'The client restricts the scope'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Adverse opinion = material AND pervasive misstatement (financial statements do not present fairly). Qualified = material but not pervasive. Disclaimer = cannot obtain evidence (scope limitation) that is material and pervasive.',
     reference: 'AU-C 705',
@@ -459,11 +475,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An Emphasis of Matter paragraph is added to highlight:',
     options: [
       'A material misstatement',
-      'A scope limitation',
       'A matter appropriately presented but fundamental to users',
-      "Management's refusal to provide representations",
+      'A scope limitation',
+      "Management's refusal to provide representations"
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Emphasis of Matter paragraphs draw attention to matters appropriately presented/disclosed that are fundamental to understanding the financial statements (e.g., going concern, related party transactions).',
     reference: 'AU-C 706',
@@ -479,11 +495,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A KAM (Key Audit Matter) is required in audit reports for:',
     options: [
       'All entities',
-      'Public companies only (PCAOB)',
-      'Private companies only',
       'Government entities only',
+      'Private companies only',
+      'Public companies only (PCAOB)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'PCAOB requires communication of Critical Audit Matters (CAMs) for audits of public companies. AICPA standards allow KAMs but do not require them for non-issuers.',
     reference: 'AS 3101, AU-C 701',
@@ -499,12 +515,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       "When substantial doubt about going concern exists and management's plans adequately mitigate the doubt:",
     options: [
-      'No modification to the report is necessary',
-      'Emphasis of Matter paragraph is required',
       'Qualified opinion is required',
-      'Adverse opinion is required',
+      'Emphasis of Matter paragraph is required',
+      'No modification to the report is necessary',
+      'Adverse opinion is required'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation:
       "If management's plans adequately mitigate substantial doubt about going concern, no going concern conclusion is reached and no modification is required. If doubt remains, disclose and add EOM paragraph.",
     reference: 'AU-C 570',
@@ -524,11 +540,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following impairs independence under AICPA rules?',
     options: [
       'Owning an immaterial indirect investment in an attest client',
-      'Owning a direct financial interest in an attest client',
       'Performing tax services for an attest client',
-      'Providing bookkeeping services with management oversight',
+      'Owning a direct financial interest in an attest client',
+      'Providing bookkeeping services with management oversight'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Any direct financial interest in an attest client impairs independence, regardless of materiality. Immaterial indirect investments and non-attest services with proper safeguards may be permitted.',
     reference: 'ET 1.210',
@@ -543,12 +559,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'easy',
     question: 'A CPA may disclose confidential client information without consent when:',
     options: [
-      'Responding to a valid subpoena',
       'A potential client requests references',
+      'Responding to a valid subpoena',
       'Seeking to gain a new client',
-      'Negotiating with a competitor',
+      'Negotiating with a competitor'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'Disclosure without consent is permitted in limited situations: response to subpoena/court order, peer review, ethics investigation, or as required by law/professional standards.',
     reference: 'ET 1.700',
@@ -585,11 +601,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
       'When an auditor discovers fraud, communication to those charged with governance is required:',
     options: [
       'Only if the fraud is material',
-      'For all fraud involving management',
-      'Only if requested by the client',
       'Only for fraud over $10,000',
+      'Only if requested by the client',
+      'For all fraud involving management'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'All fraud involving senior management must be communicated to those charged with governance, regardless of materiality. Other fraud is communicated unless clearly inconsequential.',
     reference: 'AU-C 240.40',
@@ -627,7 +643,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Reviews',
     difficulty: 'medium',
     question: 'In a review engagement, the accountant provides:',
-    options: ['Reasonable assurance', 'Limited assurance', 'No assurance', 'Absolute assurance'],
+    options: [
+      'Reasonable assurance',
+      'Limited assurance',
+      'No assurance',
+      'Absolute assurance'
+    ],
     correctAnswer: 1,
     explanation:
       'A review provides limited (moderate) assurance, expressed as "not aware of any material modifications." It consists primarily of inquiry and analytical procedures, not detailed testing.',
@@ -643,12 +664,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'easy',
     question: 'In a compilation engagement, the accountant:',
     options: [
-      'Provides reasonable assurance',
-      'Provides limited assurance',
       'Does not express an opinion or provide assurance',
-      'Issues an unmodified opinion',
+      'Provides limited assurance',
+      'Provides reasonable assurance',
+      'Issues an unmodified opinion'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Compilation provides no assurance. The accountant assists in presenting financial statements in proper form but does not verify accuracy. The report states no opinion is expressed.',
     reference: 'AR-C 80',
@@ -664,11 +685,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An agreed-upon procedures engagement results in:',
     options: [
       'An opinion on the financial statements',
-      'A report listing findings based on procedures performed',
       'Limited assurance on specified elements',
-      'An examination report',
+      'A report listing findings based on procedures performed',
+      'An examination report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'AUP engagements result in a report of findings/results from specified procedures agreed upon by specified parties. No opinion or assurance is provided. Users draw their own conclusions.',
     reference: 'AT-C 215',
@@ -703,12 +724,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'An examination of a financial forecast results in:',
     options: [
-      'Reasonable assurance that assumptions are appropriate',
+      'Compilation without assurance',
       'Reasonable assurance that results will be achieved',
       'Limited assurance on assumptions',
-      'Compilation without assurance',
+      'Reasonable assurance that assumptions are appropriate'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Examination of prospective financial statements provides reasonable assurance that assumptions are reasonable and the presentation conforms to guidelines. No assurance that forecasted results will be achieved.',
     reference: 'AT-C 305',
@@ -728,12 +749,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Which direction of testing addresses the completeness assertion for accounts payable?',
     options: [
-      'From recorded payables to supporting documents',
       'From receiving reports to recorded payables',
+      'From recorded payables to supporting documents',
       'From cash disbursements journal to payables',
-      'From general ledger to subsidiary ledger',
+      'From general ledger to subsidiary ledger'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Completeness testing goes from source to records. For payables, trace from receiving reports (source) to recorded payables to ensure all received goods are recorded. Existence goes records to source.',
     reference: 'AU-C 500',
@@ -750,10 +771,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Verify the mathematical accuracy of inventory sheets',
       'Identify obsolete inventory',
-      'Evaluate whether procedures provide reliable count',
       'Count 100% of inventory items',
+      'Evaluate whether procedures provide reliable count'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       "Inventory observation evaluates whether the client's count procedures are being followed and are adequate to produce a reliable count. The auditor tests counts but does not count all inventory.",
     reference: 'AU-C 501.04',
@@ -769,12 +790,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question:
       'If prior period financial statements were audited by a predecessor auditor whose report is not reissued, the current auditor should:',
     options: [
-      'Express an opinion on both years',
       "Include an Other Matter paragraph referring to predecessor's report",
+      'Express an opinion on both years',
       'Disclaim on the prior year',
-      'Refuse to present comparative statements',
+      'Refuse to present comparative statements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'When predecessor report is not reissued, the current auditor includes an Other Matter paragraph indicating: the prior period was audited by another auditor, the date and type of opinion, and any modification reasons.',
     reference: 'AU-C 700.A41',
@@ -810,11 +831,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When significant related party transactions exist:',
     options: [
       'The auditor must always modify the opinion',
-      'The auditor should obtain understanding of the transactions and evaluate disclosure',
       'Related parties must be eliminated',
-      'An emphasis of matter paragraph is always required',
+      'The auditor should obtain understanding of the transactions and evaluate disclosure',
+      'An emphasis of matter paragraph is always required'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'The auditor must understand related party relationships and transactions, evaluate whether properly accounted for and disclosed, and assess fraud risk. Not all related party situations require modified opinions.',
     reference: 'AU-C 550',
@@ -829,12 +850,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Type 2 subsequent events are events that:',
     options: [
-      'Existed at the balance sheet date',
       'Occurred after the balance sheet date but before report release',
+      'Existed at the balance sheet date',
       'Require adjustment to the financial statements',
-      'Provide evidence about conditions at balance sheet date',
+      'Provide evidence about conditions at balance sheet date'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Type 2 events occur after balance sheet date (conditions did not exist at that date). They require disclosure but not adjustment. Type 1 events provide evidence of conditions at balance sheet date and require adjustment.',
     reference: 'AU-C 560',
@@ -856,11 +877,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Under the AICPA Code of Professional Conduct\'s conceptual framework, if a member identifies a threat to compliance with rules, the member should:',
     options: [
       'Immediately withdraw from the engagement',
-      'Apply safeguards to eliminate or reduce the threat to acceptable levels',
       'Document the threat and proceed with the engagement',
-      'Report the threat to the state board of accountancy',
+      'Apply safeguards to eliminate or reduce the threat to acceptable levels',
+      'Report the threat to the state board of accountancy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The conceptual framework requires members to identify threats to compliance, evaluate their significance, and apply safeguards to reduce threats to acceptable levels. Withdrawal is a last resort if safeguards are ineffective.',
     reference: 'AICPA Code of Professional Conduct 1.000.010',
   },
@@ -875,11 +896,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following would impair an auditor\'s independence under AICPA rules?',
     options: [
       'Owning mutual fund shares that include client stock as part of a diversified portfolio',
-      'Having a checking account at a client bank covered by FDIC insurance',
       'Performing bookkeeping services for an attest client while also performing the audit',
-      'Having a close friend who is a non-accounting employee of the client',
+      'Having a checking account at a client bank covered by FDIC insurance',
+      'Having a close friend who is a non-accounting employee of the client'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Performing bookkeeping (management function) for an attest client impairs independence because the auditor would be auditing their own work. Diversified mutual funds, insured deposits, and non-financial relationships typically don\'t impair independence.',
     reference: 'AICPA Code 1.295 Management Participation Threat',
   },
@@ -895,10 +916,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Partner on the engagement',
       'Staff assigned to the engagement',
-      'Partner in the same office who provides non-attest services to other clients',
       'Any partner who evaluates the engagement partner\'s performance',
+      'Partner in the same office who provides non-attest services to other clients'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Covered members include: engagement team, those who evaluate/compensate engagement partner, partners in the same office who provide attest services, and others with influence over the engagement. Partners providing only non-attest services are generally not covered.',
     reference: 'AICPA Code 0.400.04 Covered Member Definition',
   },
@@ -952,12 +973,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'The fraud triangle includes all of the following EXCEPT:',
     options: [
-      'Incentive/Pressure',
+      'Capability',
       'Opportunity',
       'Rationalization',
-      'Capability',
+      'Incentive/Pressure'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'The classic fraud triangle has three elements: Incentive/Pressure, Opportunity, and Rationalization. Some models add a fourth element (Capability), but the traditional fraud triangle does not include it.',
     reference: 'AU-C 240 Fraud Risk Factors',
   },
@@ -974,11 +995,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'The COSO Internal Control Framework includes five interrelated components. Which component addresses management\'s philosophy, integrity, and ethical values?',
     options: [
       'Risk Assessment',
-      'Control Environment',
-      'Information and Communication',
       'Monitoring Activities',
+      'Information and Communication',
+      'Control Environment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Control Environment is the foundation and includes: integrity and ethical values, board oversight, organizational structure, commitment to competence, and accountability. It sets the tone for the organization.',
     reference: 'COSO Internal Control Framework',
   },
@@ -993,11 +1014,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A significant deficiency in internal control is:',
     options: [
       'Any deficiency that requires management attention',
-      'A deficiency, or combination, that is less severe than a material weakness yet important enough to merit attention',
       'Always considered a material weakness',
-      'A deficiency that will cause a misstatement',
+      'A deficiency, or combination, that is less severe than a material weakness yet important enough to merit attention',
+      'A deficiency that will cause a misstatement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Significant deficiency is less severe than material weakness but still warrants attention. Material weakness = reasonable possibility of material misstatement not prevented/detected. Significant deficiency doesn\'t rise to that level but is important.',
     reference: 'AU-C 265 Control Deficiencies',
   },
@@ -1013,10 +1034,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Walkthrough',
       'Inquiry of personnel',
-      'Reperformance of the control',
       'Reading the control documentation',
+      'Reperformance of the control'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Reperformance tests operating effectiveness by the auditor independently executing the control. Walkthroughs test design and implementation. Inquiry alone is insufficient for operating effectiveness. Reading documentation tests design only.',
     reference: 'AU-C 330 Tests of Controls',
   },
@@ -1032,12 +1053,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'When using negative confirmations for accounts receivable, non-responses:',
     options: [
-      'Provide the same evidence as positive confirmation responses',
       'Are assumed to indicate agreement with the recorded balance',
+      'Provide the same evidence as positive confirmation responses',
       'Require additional procedures to be performed',
-      'Indicate a significant audit finding',
+      'Indicate a significant audit finding'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Negative confirmations ask recipients to respond only if they disagree. Non-responses are assumed to indicate agreement. However, this provides less reliable evidence than positive confirmations because non-response could mean many things.',
     reference: 'AU-C 505 Confirmations',
   },
@@ -1071,11 +1092,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'To test sales cutoff at year-end, the auditor should:',
     options: [
       'Confirm all December sales with customers',
-      'Examine shipping documents for sales recorded shortly before and after year-end',
-      'Verify that all sales are approved by management',
       'Foot the sales journal for the entire year',
+      'Verify that all sales are approved by management',
+      'Examine shipping documents for sales recorded shortly before and after year-end'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cutoff testing examines transactions around year-end to verify recording in proper period. Shipping documents (with dates) provide evidence of when control passed. Test sales a few days before and after to catch misstatements.',
     reference: 'AU-C 330 Cutoff Procedures',
   },
@@ -1131,12 +1152,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'If management\'s plans successfully mitigate substantial doubt about going concern:',
     options: [
-      'No mention of going concern is required in the report',
-      'An adverse opinion is required',
       'The auditor should include an Emphasis of Matter paragraph',
-      'A qualified opinion is required',
+      'An adverse opinion is required',
+      'No mention of going concern is required in the report',
+      'A qualified opinion is required'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'If substantial doubt existed but was alleviated by management\'s plans, the auditor should include an Emphasis of Matter paragraph (not modify the opinion) if management\'s disclosures are adequate.',
     reference: 'AU-C 570 Going Concern',
   },
@@ -1175,10 +1196,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Tests of controls',
       'Detailed substantive testing',
-      'Inquiry and analytical procedures',
       'Physical inspection and observation',
+      'Inquiry and analytical procedures'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Review engagements provide limited assurance through inquiry and analytical procedures. No tests of controls or detailed substantive testing. This provides a lower level of assurance than an audit.',
     reference: 'SSARS AR-C 90',
   },
@@ -1213,12 +1234,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'An examination engagement under the attestation standards provides:',
     options: [
-      'Limited assurance similar to a review',
       'Reasonable assurance similar to an audit',
+      'Limited assurance similar to a review',
       'No assurance',
-      'Absolute assurance',
+      'Absolute assurance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Examination provides reasonable assurance (same as audit). Review provides limited assurance. Agreed-upon procedures provide no assurance (findings only). No engagement provides absolute assurance.',
     reference: 'SSAE AT-C 105',
   },
@@ -1232,12 +1253,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'When reporting on pro forma financial information, the practitioner reports on whether:',
     options: [
-      'The transaction will definitely occur',
       'The assumptions are reasonable and presentation complies with guidelines',
+      'The transaction will definitely occur',
       'The pro forma amounts are accurate predictions',
-      'The company will achieve the projected results',
+      'The company will achieve the projected results'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The practitioner reports on whether management\'s assumptions are reasonable and whether the pro forma information is presented in accordance with applicable guidelines. Not predicting outcomes or guaranteeing accuracy.',
     reference: 'AT-C 310 Pro Forma Financial Information',
   },
@@ -1297,10 +1318,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '3 years',
       '5 years from report release',
-      '7 years from report release',
       '10 years',
+      '7 years from report release'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under PCAOB and AICPA standards, audit documentation must be retained for 7 years from the report release date. Some jurisdictions may require longer retention.',
     reference: 'AS 1215.14 / AU-C 230.A23',
   },
@@ -1339,12 +1360,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Positive confirmations are most appropriate when:',
     options: [
-      'Individual balances are small and numerous',
       'Individual balances are large or unusual items exist',
+      'Individual balances are small and numerous',
       'Internal controls are very strong',
-      'Customers are unlikely to respond',
+      'Customers are unlikely to respond'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Positive confirmations (require response regardless) are used for large/unusual balances or when increased reliability is needed. Negative confirmations (respond only if disagree) suit numerous small balances with strong controls.',
     reference: 'AU-C 505.15',
   },
@@ -1359,11 +1380,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Observation of physical inventory primarily tests which assertion?',
     options: [
       'Valuation',
-      'Rights and obligations',
       'Existence',
-      'Presentation',
+      'Rights and obligations',
+      'Presentation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Physical observation tests existence (inventory physically exists). Valuation is tested through pricing tests. Rights (ownership) is tested through purchase documents. Presentation is tested through disclosure review.',
     reference: 'AU-C 501.04',
   },
@@ -1378,11 +1399,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Cut-off testing of sales transactions primarily addresses:',
     options: [
       'Existence and valuation',
-      'Completeness and occurrence',
-      'Rights and presentation',
       'Classification only',
+      'Rights and presentation',
+      'Completeness and occurrence'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Cut-off tests ensure transactions are recorded in the correct period. Testing before year-end addresses completeness (all transactions recorded). Testing after year-end addresses occurrence (no premature recording).',
     reference: 'AU-C 330',
   },
@@ -1421,10 +1442,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Management of the company',
       'All shareholders',
-      'Underwriters in a securities offering',
       'Regulatory agencies',
+      'Underwriters in a securities offering'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Comfort letters are issued to underwriters in connection with securities offerings. They cover matters like independence, unaudited interim information, and procedures on specific data. Subject to AU-C 920.',
     reference: 'AU-C 920.02',
   },
@@ -1459,12 +1480,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'An engagement quality reviewer must:',
     options: [
-      'Be a partner not involved in the engagement',
       'Have made all significant audit judgments',
+      'Be a partner not involved in the engagement',
       'Be employed by the client',
-      'Review only adverse opinions',
+      'Review only adverse opinions'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Engagement quality reviewer must be qualified and objective (not involved in the engagement). They review significant judgments and conclusions before report release.',
     reference: 'AS 1220.03 / QC 10.38',
   },
@@ -1479,11 +1500,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Partners and managers are responsible for:',
     options: [
       'Performing all detailed testing',
-      'Directing, supervising, and reviewing the work of team members',
-      'Preparing all workpapers',
       'Client accounting functions',
+      'Preparing all workpapers',
+      'Directing, supervising, and reviewing the work of team members'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Partners/managers plan, direct, supervise, and review engagement work. Staff perform detailed procedures under supervision. The partner is responsible for the engagement and opinion.',
     reference: 'AU-C 220.15',
   },
@@ -1542,11 +1563,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Due professional care requires the auditor to:',
     options: [
       'Guarantee the financial statements are free of fraud',
-      'Exercise professional skepticism throughout the audit',
       'Review every transaction',
-      'Accept all management assertions without question',
+      'Exercise professional skepticism throughout the audit',
+      'Accept all management assertions without question'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Due care requires professional skepticism - a questioning mind, critical assessment of evidence, and alertness to contradictory evidence. It does not guarantee finding all fraud or errors.',
     reference: 'AU-C 200.17',
   },
@@ -1563,11 +1584,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Before accepting an audit engagement, the auditor must establish that:',
     options: [
       'The fee is above market rate',
-      'Management acknowledges its responsibility for the financial statements',
       'The company is profitable',
-      'Prior auditors have resigned',
+      'Management acknowledges its responsibility for the financial statements',
+      'Prior auditors have resigned'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Preconditions include: acceptable financial reporting framework used, management acknowledges responsibility for F/S, internal control, and providing access/information to auditor.',
     reference: 'AU-C 210.06',
   },
@@ -1581,12 +1602,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Before accepting an audit engagement, the successor auditor is required to:',
     options: [
-      'Review all prior year workpapers',
       'Inquire of the predecessor about matters relevant to acceptance',
+      'Review all prior year workpapers',
       'Obtain a copy of the prior management letter',
-      'Reperform prior year audit procedures',
+      'Reperform prior year audit procedures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The successor must request permission from prospective client to communicate with predecessor about matters bearing on acceptance, including disagreements, fraud, and integrity concerns.',
     reference: 'AU-C 210.12',
   },
@@ -1601,11 +1622,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An engagement letter should include:',
     options: [
       'The auditor\'s final opinion',
-      'Objective and scope of the audit, and management\'s responsibilities',
       'Only the fee and payment terms',
-      'Guarantees about finding fraud',
+      'Objective and scope of the audit, and management\'s responsibilities',
+      'Guarantees about finding fraud'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Engagement letter documents audit objective, scope, auditor and management responsibilities, financial reporting framework, expected report form, and limitations of an audit.',
     reference: 'AU-C 210.10',
   },
@@ -1622,11 +1643,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following is an example of misappropriation of assets?',
     options: [
       'Overstating revenue through fictitious sales',
-      'Stealing inventory and falsifying records to conceal the theft',
-      'Understating liabilities to improve financial ratios',
       'Recording expenses in wrong periods',
+      'Understating liabilities to improve financial ratios',
+      'Stealing inventory and falsifying records to conceal the theft'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Misappropriation = theft of assets. Fraudulent financial reporting = intentional misstatement of financial statements. Stealing inventory is theft; the other options are fraudulent reporting.',
     reference: 'AU-C 240.04',
   },
@@ -1642,10 +1663,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Rationalization',
       'Opportunity',
-      'Incentive/Pressure',
       'Attitude',
+      'Incentive/Pressure'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Fraud triangle: Incentive/Pressure (why commit fraud), Opportunity (ability to commit), Rationalization (justify the action). Pressure to meet targets is an incentive to commit fraudulent reporting.',
     reference: 'AU-C 240.A25',
   },
@@ -1660,11 +1681,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'The engagement team discussion about fraud risks should:',
     options: [
       'Occur only if fraud is suspected',
-      'Include brainstorming about how and where fraud could occur',
-      'Be limited to the engagement partner only',
       'Focus only on cash accounts',
+      'Be limited to the engagement partner only',
+      'Include brainstorming about how and where fraud could occur'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Required brainstorming session: team discusses susceptibility to fraud, how management could commit/conceal fraud, and how assets could be misappropriated. Sets tone of skepticism.',
     reference: 'AU-C 240.16',
   },
@@ -1681,11 +1702,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'The auditor should obtain an understanding of related party relationships to:',
     options: [
       'Determine the audit fee',
-      'Identify risks of material misstatement and evaluate disclosures',
       'Decide whether to accept the engagement',
-      'Calculate materiality',
+      'Identify risks of material misstatement and evaluate disclosures',
+      'Calculate materiality'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Related party transactions may not be at arm\'s length, creating risk of misstatement. Understanding relationships helps identify undisclosed related parties and assess disclosure adequacy.',
     reference: 'AU-C 550.12',
   },
@@ -1700,11 +1721,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A related party transaction outside the normal course of business requires the auditor to:',
     options: [
       'Automatically modify the opinion',
-      'Evaluate the business rationale and whether terms indicate fraud',
       'Disclose in the engagement letter',
-      'Withdraw from the engagement',
+      'Evaluate the business rationale and whether terms indicate fraud',
+      'Withdraw from the engagement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Significant unusual transactions, especially with related parties, may indicate fraud risk. Auditor evaluates business purpose and whether terms suggest improper earnings management or fraud.',
     reference: 'AU-C 550.18',
   },
@@ -1723,11 +1744,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Auditor procedures for subsequent events extend through:',
     options: [
       'Year-end',
-      'The date of the auditor\'s report',
       '90 days after year-end',
-      'The date the F/S are issued',
+      'The date of the auditor\'s report',
+      'The date the F/S are issued'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Active subsequent event procedures extend through the audit report date. After report date, auditor has no obligation to perform procedures unless facts become known that would have affected the report.',
     reference: 'AU-C 560.12',
   },
@@ -1742,11 +1763,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Dual dating the audit report is used when:',
     options: [
       'The audit extends past the normal deadline',
-      'A subsequent event occurred after the original report date that is disclosed',
-      'Two partners sign the report',
       'The client operates in multiple jurisdictions',
+      'Two partners sign the report',
+      'A subsequent event occurred after the original report date that is disclosed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Dual dating (e.g., "March 15, 20X6, except Note X dated March 25, 20X6") limits auditor responsibility for subsequent events after original date to only the specific matter disclosed.',
     reference: 'AU-C 560.14',
   },
@@ -1763,11 +1784,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Regarding illegal acts with direct financial statement effect, the auditor must:',
     options: [
       'Report all violations to authorities',
-      'Perform procedures to identify material misstatements from such acts',
-      'Guarantee detection of all illegal acts',
       'Only be concerned with fraud, not illegal acts',
+      'Guarantee detection of all illegal acts',
+      'Perform procedures to identify material misstatements from such acts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'For laws with direct F/S effect (tax, pension), auditor performs procedures as part of normal audit. For laws with indirect effect, auditor is not expected to detect unless brought to attention.',
     reference: 'AU-C 250.10',
   },
@@ -1782,11 +1803,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which is NOT a required procedure for understanding the entity and its environment?',
     options: [
       'Inquiries of management',
-      'Analytical procedures',
-      'Observation and inspection',
       'Confirmation of account balances',
+      'Observation and inspection',
+      'Analytical procedures'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Risk assessment procedures include inquiry, analytical procedures, and observation/inspection. Confirmations are substantive procedures performed later, not part of initial risk assessment.',
     reference: 'AU-C 315.06',
   },
@@ -1802,10 +1823,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Equal to overall materiality',
       'Higher than overall materiality',
-      'Lower than overall materiality',
       'Only for public companies',
+      'Lower than overall materiality'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Performance materiality is set lower than overall materiality to reduce the risk that aggregate uncorrected and undetected misstatements exceed overall materiality.',
     reference: 'AU-C 320.09',
   },
@@ -1840,10 +1861,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Program change management',
       'Logical access security',
-      'Three-way matching of invoices',
       'System development lifecycle',
+      'Three-way matching of invoices'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'ITGCs include access security, change management, operations, and system development. Three-way matching is an application control (specific to the purchasing process), not an ITGC.',
     reference: 'AU-C 315.A99',
   },
@@ -1878,10 +1899,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Data is reliable and predictable',
       'Testing disaggregated data',
-      'The relationship being tested is not stable',
       'Using industry comparisons',
+      'The relationship being tested is not stable'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Analytical procedures work best with stable, predictable relationships. When relationships are volatile or not stable, the procedures produce less reliable evidence.',
     reference: 'AU-C 520.A5',
   },
@@ -1897,10 +1918,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'The balance sheet date',
       'The date audit fieldwork begins',
-      'The date of the auditor\'s report',
       'Any date management chooses',
+      'The date of the auditor\'s report'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'The representation letter is dated the same date as the auditor\'s report to ensure representations cover the entire period including subsequent events through report date.',
     reference: 'AU-C 580.A21',
   },
@@ -1915,11 +1936,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In nonstatistical sampling, sample size is determined by:',
     options: [
       'Computer-generated random numbers only',
-      'Professional judgment based on relevant factors',
       'A fixed percentage of the population',
-      'Regulatory requirements only',
+      'Professional judgment based on relevant factors',
+      'Regulatory requirements only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Nonstatistical sampling uses professional judgment to consider factors like tolerable misstatement, expected misstatement, and desired confidence. It does not use statistical formulas.',
     reference: 'AU-C 530.A10',
   },
@@ -1933,12 +1954,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'easy',
     question: 'Haphazard selection means:',
     options: [
-      'Using a random number generator',
       'Selecting items without any conscious bias but not random',
+      'Using a random number generator',
       'Selecting every nth item',
-      'Selecting based on dollar amounts',
+      'Selecting based on dollar amounts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Haphazard selection is making selections without any conscious bias (not deliberately including or excluding items). It differs from random selection, which uses random numbers.',
     reference: 'AU-C 530.A23',
   },
@@ -1972,11 +1993,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An other-matter paragraph is used to:',
     options: [
       'Highlight a properly disclosed uncertainty',
-      'Communicate matters other than those presented in F/S',
       'Express a qualified opinion',
-      'Disclaim an opinion',
+      'Communicate matters other than those presented in F/S',
+      'Disclaim an opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Other-matter paragraphs communicate matters not presented or disclosed in F/S that are relevant to users\' understanding of the audit, such as restriction on distribution of the report.',
     reference: 'AU-C 706.08',
   },
@@ -1991,11 +2012,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When a predecessor auditor\'s report is not reissued, the successor auditor:',
     options: [
       'Cannot issue a report',
-      'Must audit the prior period',
       'Includes an other-matter paragraph describing the situation',
-      'Issues an adverse opinion on prior period',
+      'Must audit the prior period',
+      'Issues an adverse opinion on prior period'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'When the predecessor\'s report is not reissued, the successor adds an other-matter paragraph stating that prior period was audited by another auditor, the date and type of opinion.',
     reference: 'AU-C 700.A53',
   },
@@ -2009,12 +2030,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Which matter must be communicated to those charged with governance?',
     options: [
-      'All journal entries',
       'Significant audit findings including significant deficiencies',
+      'All journal entries',
       'Immaterial adjusting entries',
-      'Audit fee negotiation details',
+      'Audit fee negotiation details'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Auditors must communicate significant audit findings including significant deficiencies/material weaknesses, significant accounting policies, management judgments, and audit adjustments.',
     reference: 'AU-C 260.12',
   },
@@ -2029,11 +2050,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'If an auditor discovers facts after report release that would have affected the report, the auditor should first:',
     options: [
       'Do nothing if F/S are already distributed',
-      'Discuss with management and determine if F/S need revision',
       'Issue a new audit report immediately',
-      'Notify the SEC directly',
+      'Discuss with management and determine if F/S need revision',
+      'Notify the SEC directly'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'The auditor should discuss with management, consider whether F/S need revision, and if so, inquire how management will address. If material, the auditor takes action to prevent reliance.',
     reference: 'AU-C 560.14',
   },
@@ -2085,12 +2106,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'In an agreed-upon procedures engagement:',
     options: [
-      'The practitioner expresses an opinion',
       'Users must agree to the procedures and assume responsibility',
+      'The practitioner expresses an opinion',
       'The practitioner provides negative assurance',
-      'Procedures are determined solely by the practitioner',
+      'Procedures are determined solely by the practitioner'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'In AUP engagements, the engaging party specifies and agrees to procedures. The practitioner reports findings only (no opinion or assurance). Users draw their own conclusions.',
     reference: 'AT-C 215.09',
   },
@@ -2124,11 +2145,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Contingent fees for audit services are:',
     options: [
       'Permitted if disclosed',
-      'Prohibited as a threat to independence',
-      'Permitted for private companies only',
       'Allowed up to 10% of the audit fee',
+      'Permitted for private companies only',
+      'Prohibited as a threat to independence'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Contingent fees for audits and reviews create self-interest threats too significant to mitigate. They are prohibited. Contingent fees may be permitted for certain non-attest services.',
     reference: 'AICPA Code ET 1.510',
   },
@@ -2162,11 +2183,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Fraud risk factors related to misappropriation of assets include:',
     options: [
       'High management turnover',
-      'Inadequate physical safeguards over assets',
       'Aggressive accounting policies',
-      'Complex organizational structure',
+      'Inadequate physical safeguards over assets',
+      'Complex organizational structure'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Misappropriation risk factors include inadequate physical safeguards, lack of segregation of duties, and inadequate management oversight. Aggressive accounting relates to fraudulent reporting.',
     reference: 'AU-C 240.A28',
   },
@@ -2180,12 +2201,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Incorporating unpredictability in audit procedures means:',
     options: [
-      'Using only statistical sampling',
       'Performing unannounced visits or varying timing/locations/procedures',
+      'Using only statistical sampling',
       'Changing auditors each year',
-      'Using different materiality each year',
+      'Using different materiality each year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Unpredictability helps address fraud by making it harder for fraudsters to anticipate procedures. Examples: surprise counts, testing unusual locations, varying timing and scope.',
     reference: 'AU-C 240.A35',
   },
@@ -2200,11 +2221,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An engagement quality review is required for:',
     options: [
       'All audit engagements',
-      'Audits of issuers and engagements where required by firm policy or law',
       'Only reviews and compilations',
-      'Engagements over $1 million in fees',
+      'Audits of issuers and engagements where required by firm policy or law',
+      'Engagements over $1 million in fees'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'EQR is required for audits of issuers (SEC registrants) under PCAOB standards. For non-issuers, firms establish policies based on risk criteria. It is not required for all engagements.',
     reference: 'QM 2.22',
   },
@@ -2219,11 +2240,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Audit documentation should be retained for at least:',
     options: [
       'One year',
-      'Three years',
       'Five years',
-      'Ten years',
+      'Three years',
+      'Ten years'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'AU-C 230 requires retention for at least 5 years from report date. PCAOB requires 7 years for issuers. Some state boards may have longer requirements.',
     reference: 'AU-C 230.A22',
   },
@@ -2237,12 +2258,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Using data analytics in an audit can:',
     options: [
-      'Replace all substantive procedures',
-      'Eliminate the need for professional judgment',
       'Enable testing of entire populations and identify anomalies',
-      'Only be used by IT specialists',
+      'Eliminate the need for professional judgment',
+      'Replace all substantive procedures',
+      'Only be used by IT specialists'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Data analytics enables testing 100% of populations, identifying outliers and anomalies, and improving audit efficiency. It supplements but does not replace professional judgment.',
     reference: 'AU-C 500.A33',
   },
@@ -2277,10 +2298,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '30 days after report release',
       '45 days after report release',
-      '60 days after report release',
       '90 days after report release',
+      '60 days after report release'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Auditor has 60 days after report release to assemble final audit file. After assembly, cannot delete or discard, but may add with documentation of who/when/why. Retain 5 years minimum.',
     reference: 'AU-C 230.15',
   },
@@ -2295,11 +2316,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When using an auditor\'s specialist, the auditor:',
     options: [
       'Transfers responsibility to the specialist',
-      'Remains solely responsible for the audit opinion',
       'Must hire only firm employees',
-      'Cannot use specialist work as audit evidence',
+      'Remains solely responsible for the audit opinion',
+      'Cannot use specialist work as audit evidence'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Auditor remains solely responsible for opinion even when using specialist. Must evaluate specialist competence, objectivity, and the appropriateness of work as audit evidence.',
     reference: 'AU-C 620.04',
   },
@@ -2314,11 +2335,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When management uses a specialist to assist in financial reporting, the auditor should:',
     options: [
       'Automatically accept the specialist\'s conclusions',
-      'Evaluate the specialist\'s competence, objectivity, and work',
-      'Hire a separate specialist to verify',
       'Issue a qualified opinion',
+      'Hire a separate specialist to verify',
+      'Evaluate the specialist\'s competence, objectivity, and work'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Auditor evaluates management\'s specialist as part of obtaining sufficient evidence. Consider competence, capabilities, objectivity, and whether work is appropriate for intended use.',
     reference: 'AU-C 500.08',
   },
@@ -2352,11 +2373,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'For significant related party transactions outside normal business, the auditor should:',
     options: [
       'Assume they are arm\'s length',
-      'Evaluate business rationale and whether terms indicate fraud or error',
       'Automatically issue adverse opinion',
-      'Report to regulatory authorities',
+      'Evaluate business rationale and whether terms indicate fraud or error',
+      'Report to regulatory authorities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Significant unusual transactions with related parties require heightened skepticism. Evaluate business purpose, consider if designed to misrepresent or conceal. May indicate fraud risk factor.',
     reference: 'AU-C 550.23',
   },
@@ -2409,11 +2430,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Laws with direct effect on financial statement amounts include:',
     options: [
       'Environmental regulations',
-      'Tax and pension laws',
       'Occupational safety laws',
-      'Antitrust regulations',
+      'Tax and pension laws',
+      'Antitrust regulations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Direct effect laws: tax (liability/expense), pension (obligations), revenue recognition rules. Auditor performs substantive procedures. Indirect effect laws don\'t directly determine amounts.',
     reference: 'AU-C 250.06',
   },
@@ -2466,11 +2487,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Before using internal audit work, the external auditor must evaluate:',
     options: [
       'Only the size of internal audit department',
-      'Objectivity, competence, and systematic/disciplined approach',
-      'Internal audit\'s budget',
       'Number of years in operation',
+      'Internal audit\'s budget',
+      'Objectivity, competence, and systematic/disciplined approach'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Evaluate: objectivity (reporting structure, policies), technical competence (qualifications, resources), systematic approach (planning, documentation, supervision, review, quality control).',
     reference: 'AU-C 610.08',
   },
@@ -2485,11 +2506,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A SOC 1 Type 2 report covers:',
     options: [
       'Design of controls at a point in time',
-      'Design and operating effectiveness over a period',
-      'Security, availability, and confidentiality',
       'Cybersecurity risk management',
+      'Security, availability, and confidentiality',
+      'Design and operating effectiveness over a period'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'SOC 1: ICFR relevant controls. Type 1: design at a point. Type 2: design and operating effectiveness over period. SOC 2 covers Trust Services Criteria (security, availability, etc.).',
     reference: 'AT-C 320',
   },
@@ -2504,11 +2525,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Complementary user entity controls (CUECs) are:',
     options: [
       'Controls the service organization implements',
-      'Controls the user entity must implement for service org controls to be effective',
-      'Optional additional controls',
       'Controls tested by the service auditor',
+      'Optional additional controls',
+      'Controls the user entity must implement for service org controls to be effective'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'CUECs are controls identified by service org that user entities must implement. Service org controls may depend on user implementing CUECs. User auditor must consider whether client implemented them.',
     reference: 'AU-C 402.13',
   },
@@ -2542,11 +2563,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Government Auditing Standards (Yellow Book) include standards for:',
     options: [
       'Financial audits only',
-      'Financial audits, attestation engagements, and performance audits',
-      'Only performance audits',
       'Tax return preparation',
+      'Only performance audits',
+      'Financial audits, attestation engagements, and performance audits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GAGAS covers financial audits, attestation engagements, and performance audits. Incorporates AICPA standards plus additional requirements (independence, CPE, quality control, reporting).',
     reference: 'GAGAS 2018 Revision',
   },
@@ -2560,12 +2581,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Major program determination in a single audit is based on:',
     options: [
-      'Random selection only',
       'Risk-based assessment considering program size and risk',
+      'Random selection only',
       'All programs over $100,000',
-      'Management\'s choice',
+      'Management\'s choice'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Major programs identified using risk-based approach: Type A (larger programs) and Type B (smaller) assessed for risk. Low-risk Type A programs tested less frequently. High-risk Type B may be tested.',
     reference: '2 CFR 200.518',
   },
@@ -2580,11 +2601,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In an integrated audit of a public company, the auditor expresses:',
     options: [
       'Only an opinion on financial statements',
-      'Separate opinions on F/S and internal control over financial reporting',
       'A single combined opinion',
-      'No opinion on internal control',
+      'Separate opinions on F/S and internal control over financial reporting',
+      'No opinion on internal control'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Integrated audit: two separate opinions - one on F/S, one on ICFR. Both based on combined audit work. Material weakness in ICFR results in adverse ICFR opinion.',
     reference: 'AS 2201',
   },
@@ -2600,10 +2621,10 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'All companies',
       'Large accelerated filers and accelerated filers only',
-      'All issuers except EGCs, brokers, and investment companies',
       'Only companies with audit failures',
+      'All issuers except EGCs, brokers, and investment companies'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'CAMs required for audits of issuers except emerging growth companies (EGCs), brokers/dealers, and registered investment companies. CAMs are matters requiring especially challenging judgment or involving complex auditor judgment.',
     reference: 'AS 3101',
   },
@@ -2637,11 +2658,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'An auditor may disclose confidential client information without consent:',
     options: [
       'Never',
-      'In response to valid subpoena or to comply with laws/standards',
-      'To any interested party',
       'To competitors of the client',
+      'To any interested party',
+      'In response to valid subpoena or to comply with laws/standards'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Confidentiality exceptions: subpoena, quality review, response to AICPA/state board investigation, compliance with laws. Otherwise, maintain confidentiality even after engagement ends.',
     reference: 'AICPA Code ET 1.700',
   },
@@ -2656,11 +2677,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'The concept of audit trail refers to:',
     options: [
       'Physical path through the office',
-      'Documentary evidence linking transactions from initiation through recording',
-      'Auditor\'s travel expenses',
       'Client\'s marketing materials',
+      'Auditor\'s travel expenses',
+      'Documentary evidence linking transactions from initiation through recording'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Audit trail: sequence of documents/electronic records allowing transaction tracing from source (order, receipt) through processing to financial statements. Essential for testing and fraud detection.',
     reference: 'AU-C 500',
   },
@@ -2674,12 +2695,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'A disclaimer of opinion is appropriate when:',
     options: [
-      'The F/S have immaterial misstatements',
       'The auditor is unable to obtain sufficient appropriate evidence',
+      'The F/S have immaterial misstatements',
       'There is a change in accounting principle',
-      'The entity is a going concern',
+      'The entity is a going concern'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Disclaimer: cannot obtain sufficient appropriate evidence and possible effects are material and pervasive. Also required when multiple uncertainties make it impossible to form opinion.',
     reference: 'AU-C 705.10',
   },
@@ -2694,11 +2715,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Providing bookkeeping services to an audit client threatens independence unless:',
     options: [
       'The services are immaterial',
-      'Management takes responsibility, auditor does not act as management, and appropriate safeguards applied',
-      'Another firm provides the service',
       'Bookkeeping is done by partner\'s spouse',
+      'Another firm provides the service',
+      'Management takes responsibility, auditor does not act as management, and appropriate safeguards applied'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Bookkeeping for audit clients: management must take responsibility for results, auditor cannot make management decisions, cannot audit own work, and implement safeguards. More restricted for issuers.',
     reference: 'AICPA Code ET 1.295',
   },
@@ -2712,12 +2733,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'When performing audit procedures remotely, auditors should:',
     options: [
-      'Reduce the extent of procedures',
       'Evaluate technology risks, verify information integrity, and maintain documentation standards',
+      'Reduce the extent of procedures',
       'Eliminate physical inspection requirements',
-      'Accept client representations without corroboration',
+      'Accept client representations without corroboration'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Remote auditing requires: evaluate IT security for remote access, verify document integrity, consider alternative procedures when physical inspection impractical, maintain documentation quality.',
     reference: 'CAQ Remote Auditing Guidance',
   },
@@ -2730,12 +2751,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Testing the completeness assertion for liabilities is best accomplished by:',
     options: [
-      'Confirming recorded liabilities',
       'Searching for unrecorded liabilities through subsequent payments and open invoices',
+      'Confirming recorded liabilities',
       'Vouching entries to invoices',
-      'Reviewing the general ledger',
+      'Reviewing the general ledger'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Completeness for liabilities: search for unrecorded items. Examine subsequent disbursements, open invoice files, receiving reports without invoices, loan agreements. Tracing starts outside records.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
@@ -2751,11 +2772,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'To test the rights assertion for inventory, an auditor should:',
     options: [
       'Count the inventory',
-      'Examine vendor invoices, consignment agreements, and ownership documents',
       'Calculate inventory turnover',
-      'Observe inventory storage',
+      'Examine vendor invoices, consignment agreements, and ownership documents',
+      'Observe inventory storage'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Rights and obligations: entity owns or controls assets, liabilities are entity\'s obligations. For inventory: examine purchase invoices, consignment agreements, title documents, collateral agreements.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
@@ -2771,11 +2792,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Cutoff testing for sales revenue typically involves:',
     options: [
       'Confirming all sales',
-      'Comparing shipping documents dates to sales invoice dates around year-end',
       'Recalculating all invoices',
-      'Reviewing the sales budget',
+      'Comparing shipping documents dates to sales invoice dates around year-end',
+      'Reviewing the sales budget'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Cutoff: transactions recorded in proper period. For sales: compare shipping dates (FOB terms) to invoice dates near year-end. Test several days before and after cutoff. Proper transfer of title timing.',
     reference: 'AU-C 500',
     blueprintArea: 'AUD-II',
@@ -2790,12 +2811,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Tolerable misstatement is used in sampling to:',
     options: [
-      'Calculate sample size and evaluate results; it is the maximum misstatement acceptable in the population',
+      'Plan the audit timeline',
       'Determine materiality for the audit',
       'Set the audit fee',
-      'Plan the audit timeline',
+      'Calculate sample size and evaluate results; it is the maximum misstatement acceptable in the population'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Tolerable misstatement: application of performance materiality to a sampling procedure. Maximum error auditor will accept in population. Used to determine sample size and evaluate sample results.',
     reference: 'AU-C 530',
     blueprintArea: 'AUD-II',
@@ -2811,11 +2832,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Monetary unit sampling (MUS) is most effective for testing:',
     options: [
       'Understatement of liabilities',
-      'Overstatement of assets (since larger items have greater chance of selection)',
       'Processing controls',
-      'Qualitative matters',
+      'Overstatement of assets (since larger items have greater chance of selection)',
+      'Qualitative matters'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'MUS: probability proportional to size. Each dollar is a sampling unit. Larger items more likely selected. Best for overstatement testing (existence). Less effective for understatement (zero-balance items).',
     reference: 'AU-C 530',
     blueprintArea: 'AUD-II',
@@ -2831,11 +2852,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A dual-purpose test:',
     options: [
       'Tests only controls',
-      'Tests both control effectiveness and substantive evidence from the same sample',
       'Tests only account balances',
-      'Requires two auditors',
+      'Tests both control effectiveness and substantive evidence from the same sample',
+      'Requires two auditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Dual-purpose test: simultaneously tests control operating effectiveness and provides substantive evidence. Efficient when control test supports reduced substantive testing. Different evaluation for each purpose.',
     reference: 'AU-C 330',
     blueprintArea: 'AUD-II',
@@ -2891,11 +2912,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When a predecessor auditor\'s report on prior-period statements is not reissued:',
     options: [
       'The prior period must be audited again',
-      'The successor auditor references the predecessor auditor in the report',
-      'The prior period can be omitted',
       'An adverse opinion is required',
+      'The prior period can be omitted',
+      'The successor auditor references the predecessor auditor in the report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Predecessor not reissuing: successor makes reference in report (prior period audited by other auditor, report date, opinion type, reasons for modification if any). No responsibility taken.',
     reference: 'AU-C 700',
     blueprintArea: 'AUD-III',
@@ -2910,12 +2931,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'An Other Matter paragraph in an audit report is used to:',
     options: [
-      'Describe a material misstatement',
       'Draw attention to a matter not presented in the financial statements that is relevant to users\' understanding',
+      'Describe a material misstatement',
       'Issue a qualified opinion',
-      'Disclaim an opinion',
+      'Disclaim an opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Other Matter: relevant to understanding (1) the audit, (2) auditor\'s responsibilities, or (3) auditor\'s report. Not presented/disclosed in F/S. Differs from Emphasis of Matter (F/S item).',
     reference: 'AU-C 706',
     blueprintArea: 'AUD-III',
@@ -2931,11 +2952,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A CPA may disclose confidential client information without consent when:',
     options: [
       'Another client requests it',
-      'Complying with a valid subpoena, peer review, or professional ethics investigation',
       'Marketing services to prospects',
-      'Discussing with colleagues socially',
+      'Complying with a valid subpoena, peer review, or professional ethics investigation',
+      'Discussing with colleagues socially'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Confidentiality exceptions: court order/subpoena, peer review, ethics investigation, AICPA Professional Ethics Division, state CPA society, state board. Also for suspected illegal acts in some cases.',
     reference: 'AICPA Code ET 1.700',
     blueprintArea: 'AUD-IV',
@@ -2950,12 +2971,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'An advocacy threat to independence arises when:',
     options: [
-      'An auditor has a financial interest in the client',
       'An auditor promotes a client\'s position to the point of compromising objectivity',
+      'An auditor has a financial interest in the client',
       'An auditor performs non-audit services',
-      'An auditor is friends with management',
+      'An auditor is friends with management'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Advocacy threat: promoting client position (legal/regulatory proceedings, securities offerings) to extent objectivity compromised. Safeguards: separate personnel, quality review, legal counsel review.',
     reference: 'AICPA Code ET 1.210',
     blueprintArea: 'AUD-IV',
@@ -2971,11 +2992,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'The fraud triangle consists of:',
     options: [
       'Assets, liabilities, equity',
-      'Incentive/pressure, opportunity, and rationalization',
-      'Planning, execution, concealment',
       'Prevention, detection, correction',
+      'Planning, execution, concealment',
+      'Incentive/pressure, opportunity, and rationalization'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Fraud triangle: (1) Incentive/pressure (financial need, targets), (2) Opportunity (weak controls, access), (3) Rationalization (justification). All three typically present for fraud.',
     reference: 'AU-C 240',
     blueprintArea: 'AUD-II',
@@ -2990,12 +3011,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Fraud-related journal entry testing should focus on:',
     options: [
-      'All journal entries equally',
       'Unusual entries, especially those recorded late in the period or by unexpected personnel',
+      'All journal entries equally',
       'Only large entries',
-      'System-generated entries only',
+      'System-generated entries only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Focus on: entries near period-end, unusual amounts, unusual accounts, prepared by unexpected personnel, round amounts, recurring pattern, little/no explanation. Revenue recognition fraud often via JEs.',
     reference: 'AU-C 240',
     blueprintArea: 'AUD-II',
@@ -3011,11 +3032,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When using an IT specialist, the auditor:',
     options: [
       'Has no responsibility for the specialist\'s work',
-      'Remains responsible for conclusions and must evaluate specialist competence and work adequacy',
-      'Must supervise all specialist activities',
       'Can rely entirely on specialist conclusions',
+      'Must supervise all specialist activities',
+      'Remains responsible for conclusions and must evaluate specialist competence and work adequacy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Using specialists: auditor responsible for conclusions. Evaluate specialist competence/objectivity, understand nature of work, evaluate adequacy for audit purposes. No reduced responsibility.',
     reference: 'AU-C 620',
     blueprintArea: 'AUD-II',
@@ -3031,11 +3052,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Once tested, automated application controls typically:',
     options: [
       'Need retesting each year',
-      'Can be relied upon with less retesting if ITGCs are effective',
       'Never need retesting',
-      'Should be tested monthly',
+      'Can be relied upon with less retesting if ITGCs are effective',
+      'Should be tested monthly'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Automated controls: inherent consistency (programmed = consistent). If ITGCs effective (change management, access), less retesting needed. If ITGC deficiencies, more app control testing required.',
     reference: 'AU-C 330',
     blueprintArea: 'AUD-II',
@@ -3091,11 +3112,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A review report provides:',
     options: [
       'Reasonable assurance',
-      'Limited assurance (negative assurance) that no material modifications needed',
-      'No assurance',
       'Absolute assurance',
+      'No assurance',
+      'Limited assurance (negative assurance) that no material modifications needed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Review: limited assurance (negative form). "Nothing came to attention causing belief that F/S not in accordance with GAAP." Less than audit (reasonable assurance), more than compilation (no assurance).',
     reference: 'AR-C 90',
     blueprintArea: 'AUD-III',
@@ -3111,11 +3132,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Review procedures primarily consist of:',
     options: [
       'Detailed testing and inspection',
-      'Inquiries of management and analytical procedures',
-      'Confirmations and observations',
       'Tests of controls',
+      'Confirmations and observations',
+      'Inquiries of management and analytical procedures'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Review procedures: primarily inquiry and analytical procedures. May also include reading F/S, obtaining management representations. No tests of controls, detailed substantive tests, or confirmations required.',
     reference: 'AR-C 90',
     blueprintArea: 'AUD-III',
@@ -3131,11 +3152,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A compilation report states that the accountant:',
     options: [
       'Provides reasonable assurance',
-      'Has not audited or reviewed and does not express an opinion or provide any assurance',
       'Provides limited assurance',
-      'Guarantees accuracy',
+      'Has not audited or reviewed and does not express an opinion or provide any assurance',
+      'Guarantees accuracy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Compilation: no assurance provided. Accountant assists in presenting F/S in proper form. Report states did not audit or review, no opinion or assurance. Management responsible for F/S.',
     reference: 'AR-C 80',
     blueprintArea: 'AUD-III',
@@ -3170,12 +3191,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'A SOC 2 report covers controls related to:',
     options: [
-      'Financial statement accounts only',
       'Trust services criteria: security, availability, processing integrity, confidentiality, privacy',
+      'Financial statement accounts only',
       'Tax compliance only',
-      'Employee benefits only',
+      'Employee benefits only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'SOC 2: trust services criteria (TSC). Security always included; availability, processing integrity, confidentiality, privacy optional based on scope. Type I = design; Type II = design + operating effectiveness.',
     reference: 'SOC 2 Guide',
     blueprintArea: 'AUD-III',
@@ -3190,12 +3211,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'An engagement quality review is required for:',
     options: [
-      'All audit engagements',
       'Public company audits and other engagements as determined by firm policy',
+      'All audit engagements',
       'Only first-year audits',
-      'Only when errors are found',
+      'Only when errors are found'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'EQR: required for all PCAOB audits (issuers). For non-issuers, firm determines criteria (public interest entities, significant risk, complex). Objective evaluation by partner not on engagement team.',
     reference: 'QC 10 / PCAOB QC 1000',
     blueprintArea: 'AUD-IV',
@@ -3231,12 +3252,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Audit evidence from prior periods may be used in the current audit if:',
     options: [
-      'It is always reliable regardless of changes',
       'Conditions have not changed and prior evidence remains relevant',
+      'It is always reliable regardless of changes',
       'The client requests it',
-      'Prior year opinion was unmodified',
+      'Prior year opinion was unmodified'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Prior period evidence may be relevant if conditions unchanged (internal controls, nature of transactions). Auditor must assess continued relevance, perform procedures to determine if still valid.',
     reference: 'AU-C 500.09',
     blueprintArea: 'AUD-II',
@@ -3272,11 +3293,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In nonstatistical sampling:',
     options: [
       'Sample size is mathematically determined',
-      'Auditor uses professional judgment for sample size and evaluation',
       'Results cannot be projected to population',
-      'It is never appropriate',
+      'Auditor uses professional judgment for sample size and evaluation',
+      'It is never appropriate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Nonstatistical: auditor judgment for sample size and evaluation. Can still be effective if properly applied. Must project results to population. No precision or confidence level calculated.',
     reference: 'AU-C 530.05',
     blueprintArea: 'AUD-II',
@@ -3291,12 +3312,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The allowance for sampling risk in substantive testing is the difference between:',
     options: [
-      'Tolerable and expected misstatement',
       'Sample result and true (but unknown) population value',
+      'Tolerable and expected misstatement',
       'Upper and lower deviation rates',
-      'Materiality and performance materiality',
+      'Materiality and performance materiality'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Sampling risk: risk sample not representative. Allowance = difference between sample result and unknown true value. Statistical sampling measures this precisely. Nonstatistical uses judgment.',
     reference: 'AU-C 530.A1',
     blueprintArea: 'AUD-II',
@@ -3312,11 +3333,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When documenting control deficiencies, the auditor must include:',
     options: [
       'Only significant deficiencies',
-      'All identified deficiencies regardless of severity',
       'Only those communicated to management',
-      'Only material weaknesses',
+      'All identified deficiencies regardless of severity',
+      'Only material weaknesses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Document ALL control deficiencies identified. Evaluate severity to determine if significant deficiency or material weakness. Communication requirements differ by severity. Documentation supports conclusions.',
     reference: 'AU-C 265.A8',
     blueprintArea: 'AUD-I',
@@ -3331,12 +3352,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Entity-level controls that operate at a precision level sufficient to detect material misstatements:',
     options: [
-      'Cannot be tested directly',
       'May reduce the extent of testing at the assertion level',
+      'Cannot be tested directly',
       'Replace all process-level testing',
-      'Are only relevant for small entities',
+      'Are only relevant for small entities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Effective entity-level controls (monitoring, management review of financials) may reduce extent of lower-level testing. Must operate at sufficient precision. Cannot completely replace transaction-level testing.',
     reference: 'AU-C 315.A60',
     blueprintArea: 'AUD-I',
@@ -3351,12 +3372,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The presumption of fraud risk in revenue recognition:',
     options: [
-      'Can never be rebutted',
       'Can be rebutted with specific reasons and documentation',
+      'Can never be rebutted',
       'Applies only to certain industries',
-      'Only applies to accrual basis reporting',
+      'Only applies to accrual basis reporting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Revenue fraud presumption: rebuttable. Document specific reasons (simple, low-risk transactions; no incentives). If rebutted, document basis. Still required to consider all significant fraud risks including revenue.',
     reference: 'AU-C 240.27',
     blueprintArea: 'AUD-II',
@@ -3392,11 +3413,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A scope limitation imposed by the client may result in:',
     options: [
       'Unmodified opinion only',
-      'Qualified opinion or disclaimer, and possible withdrawal from engagement',
-      'Adverse opinion',
       'No effect on the report',
+      'Adverse opinion',
+      'Qualified opinion or disclaimer, and possible withdrawal from engagement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Client-imposed scope limitation: more serious than circumstantial. Consider withdrawing if pervasive. If cannot withdraw, disclaim or qualify based on pervasiveness. Communicate with TCWG.',
     reference: 'AU-C 705.13',
     blueprintArea: 'AUD-III',
@@ -3412,11 +3433,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'When auditing comparative financial statements and prior period was audited by a predecessor:',
     options: [
       'Current auditor must re-audit prior period',
-      'Predecessor auditor report may be reissued, or current auditor references predecessor',
-      'Prior period is always presented unaudited',
       'Comparative statements cannot be presented',
+      'Prior period is always presented unaudited',
+      'Predecessor auditor report may be reissued, or current auditor references predecessor'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Options: predecessor reissues report (with engagement letter, consider subsequent events), or current auditor refers to predecessor report (identify predecessor, type of opinion, date). Read predecessor report.',
     reference: 'AU-C 700.42',
     blueprintArea: 'AUD-III',
@@ -3452,11 +3473,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A contingent fee arrangement for an audit engagement is:',
     options: [
       'Permitted if disclosed',
-      'Prohibited as it impairs independence',
       'Permitted for non-issuers only',
-      'Allowed with client consent',
+      'Prohibited as it impairs independence',
+      'Allowed with client consent'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Contingent fees: prohibited for attestation engagements (audit, review, examination). Creates self-interest threat. Permitted for non-attestation (tax, consulting with limits). Independence impairment if contingent.',
     reference: 'ET 1.510.001',
     blueprintArea: 'AUD-IV',
@@ -3471,12 +3492,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'If an auditor\'s close relative is employed by the audit client in a key position:',
     options: [
-      'No independence issue',
       'Independence is impaired',
+      'No independence issue',
       'Disclosure is sufficient',
-      'Only an issue for issuers',
+      'Only an issue for issuers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Close relative (parent, sibling, nondependent child) in key position at client: impairs independence for covered member. Key position = significant influence over accounting/financial reporting.',
     reference: 'ET 1.270',
     blueprintArea: 'AUD-IV',
@@ -3492,11 +3513,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'General IT controls (GITCs) affect:',
     options: [
       'Only specific applications',
-      'All applications and data in the IT environment',
-      'Manual controls only',
       'Only financial statement assertions',
+      'Manual controls only',
+      'All applications and data in the IT environment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'GITCs: pervasive controls over IT environment. Include access security, program change controls, computer operations, program development. Weakness can affect all applications. Test before relying on application controls.',
     reference: 'AU-C 315.A91',
     blueprintArea: 'AUD-II',
@@ -3511,12 +3532,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'In a highly automated environment, the audit trail:',
     options: [
-      'Always exists in paper form',
       'May exist only electronically for a limited time',
+      'Always exists in paper form',
       'Is not needed',
-      'Is maintained by the auditor',
+      'Is maintained by the auditor'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'IT audit trail: may be electronic only, available for limited period. Plan timing of tests. Consider need for CAATs. Data retention policies affect evidence availability. May require tests at interim dates.',
     reference: 'AU-C 315.A94',
     blueprintArea: 'AUD-II',
@@ -3532,11 +3553,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In a preparation engagement, the accountant:',
     options: [
       'Must be independent',
-      'Is not required to be independent or issue a report',
-      'Provides limited assurance',
       'Must perform analytical procedures',
+      'Provides limited assurance',
+      'Is not required to be independent or issue a report'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Preparation: prepare financials using client records. No independence required. No report required (but legend required on each page). No assurance provided. Lowest level of service.',
     reference: 'AR-C 70',
     blueprintArea: 'AUD-III',
@@ -3552,11 +3573,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'If the accountant becomes aware of a material departure from GAAP in a compilation:',
     options: [
       'Must withdraw',
-      'Disclose departure and its effects in a separate paragraph',
       'Issue an adverse opinion',
-      'Convert to a review engagement',
+      'Disclose departure and its effects in a separate paragraph',
+      'Convert to a review engagement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Compilation with known departures: disclose departure and effects if known (or state cannot determine). Separate paragraph after responsibilities paragraph. May complete engagement with disclosure.',
     reference: 'AR-C 80.35',
     blueprintArea: 'AUD-III',
@@ -3571,12 +3592,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'A financial projection differs from a forecast because projections:',
     options: [
-      'Are based on expected conditions',
       'Are based on hypothetical assumptions (what if scenarios)',
+      'Are based on expected conditions',
       'Cannot be examined',
-      'Provide more assurance',
+      'Provide more assurance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Forecast: based on expected conditions. Projection: hypothetical assumptions (what if). Projections limited use (parties who understand assumptions). Forecasts may be general or limited use.',
     reference: 'AT-C 305',
     blueprintArea: 'AUD-III',
@@ -3592,11 +3613,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In a compliance attestation engagement, the practitioner:',
     options: [
       'Guarantees compliance',
-      'Provides opinion or conclusion on entity compliance with specified requirements',
-      'Only performs compilation',
       'Must be a lawyer',
+      'Only performs compilation',
+      'Provides opinion or conclusion on entity compliance with specified requirements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Compliance attestation: examine (opinion) or review (limited assurance) entity compliance with laws, regulations, contracts, grants. Use AT-C 315. Responsible party assertion required.',
     reference: 'AT-C 315',
     blueprintArea: 'AUD-III',
@@ -3632,11 +3653,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'In single audits, Type A programs are generally:',
     options: [
       'All programs regardless of size',
-      'Larger programs exceeding a dollar threshold based on total federal awards',
-      'Only programs with compliance issues',
       'Programs selected by the client',
+      'Only programs with compliance issues',
+      'Larger programs exceeding a dollar threshold based on total federal awards'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Type A: larger programs (generally >$750K or 3% of total awards, whichever larger). Type B: smaller programs. Must test all high-risk Type A. Select some Type B as major programs. Risk-based approach.',
     reference: '2 CFR 200.518',
     blueprintArea: 'AUD-III',
@@ -3652,11 +3673,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'Tone at the top in a CPA firm refers to:',
     options: [
       'The physical office environment',
-      'Leadership commitment to quality, ethics, and professional standards',
-      'Client retention policies',
       'Fee structures',
+      'Client retention policies',
+      'Leadership commitment to quality, ethics, and professional standards'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Tone at the top: firm leadership demonstrates commitment to quality over commercial interests. Communicates importance of ethics, professional skepticism, compliance. Foundation of quality control system.',
     reference: 'QC 10.07',
     blueprintArea: 'AUD-IV',
@@ -3672,11 +3693,11 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     question: 'A hot review in auditing refers to:',
     options: [
       'Review performed after report issuance',
-      'Timely review of work as audit progresses',
-      'Review only of significant areas',
       'External quality review',
+      'Review only of significant areas',
+      'Timely review of work as audit progresses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Hot review: review work timely as completed. Allows corrections before concluding. More effective than cold review (after completion). Supervision and review integral to quality control.',
     reference: 'AU-C 220.17',
     blueprintArea: 'AUD-IV',
@@ -3711,12 +3732,12 @@ export const AUD_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Auditing segment disclosures requires:',
     options: [
-      'A separate engagement',
       'Understanding how management determined segments and testing classification and allocation',
+      'A separate engagement',
       'Only reading the disclosures',
-      'Confirming with segment managers',
+      'Confirming with segment managers'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Segment disclosures: understand management\'s segment determination, test classification consistency, verify allocation methods, test mathematical accuracy, evaluate completeness of disclosure.',
     reference: 'AU-C 501.A12',
     blueprintArea: 'AUD-II',

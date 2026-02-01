@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -26,6 +26,87 @@ import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonSer
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection, Lesson } from '../../types';
+
+// Clean text for speech synthesis - remove markdown and punctuation that sounds weird
+const cleanTextForSpeech = (text: string): string => {
+  return text
+    // Remove markdown headers
+    .replace(/#{1,6}\s*/g, '')
+    // Remove bold/italic markers
+    .replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1')
+    .replace(/_{1,2}([^_]+)_{1,2}/g, '$1')
+    // Remove bullet points
+    .replace(/^[-*•]\s*/gm, '')
+    // Remove numbered lists formatting
+    .replace(/^\d+\.\s*/gm, '')
+    // Replace multiple dashes/underscores with pause
+    .replace(/[-_]{2,}/g, ', ')
+    // Remove HTML tags
+    .replace(/<[^>]+>/g, '')
+    // Replace special characters that get spoken
+    .replace(/[&]/g, ' and ')
+    .replace(/[<>]/g, '')
+    .replace(/\$/g, ' dollars ')
+    .replace(/%/g, ' percent ')
+    // Clean up parenthetical content - make it flow better
+    .replace(/\(([^)]+)\)/g, ', $1, ')
+    // Replace colons and semicolons with natural pauses
+    .replace(/[:;]/g, ', ')
+    // Remove quotes around words
+    .replace(/["'`]/g, '')
+    // Clean up multiple spaces/newlines
+    .replace(/\n+/g, '. ')
+    .replace(/\s+/g, ' ')
+    // Clean up multiple periods/commas
+    .replace(/[.,]{2,}/g, '.')
+    .replace(/,\s*\./g, '.')
+    .trim();
+};
+
+// Get the best available voice for natural speech
+const getBestVoice = (): SpeechSynthesisVoice | null => {
+  const voices = window.speechSynthesis.getVoices();
+  
+  // Priority order for natural-sounding voices (free)
+  const preferredVoices = [
+    // Google voices (most natural, available in Chrome)
+    'Google US English',
+    'Google UK English Female',
+    'Google UK English Male',
+    // Microsoft Edge voices (very natural)
+    'Microsoft Zira',
+    'Microsoft David',
+    'Microsoft Mark',
+    'Microsoft Jenny',
+    'Microsoft Aria',
+    // macOS voices
+    'Samantha',
+    'Alex',
+    'Karen',
+    // Other natural voices
+    'English United States',
+    'en-US',
+  ];
+  
+  // Try to find a preferred voice
+  for (const preferred of preferredVoices) {
+    const voice = voices.find(v => 
+      v.name.includes(preferred) || 
+      v.lang.startsWith('en') && v.name.toLowerCase().includes(preferred.toLowerCase())
+    );
+    if (voice) return voice;
+  }
+  
+  // Fallback: find any English voice that's not the robotic default
+  const englishVoice = voices.find(v => 
+    v.lang.startsWith('en') && 
+    (v.name.includes('Female') || v.name.includes('Male') || v.localService === false)
+  );
+  if (englishVoice) return englishVoice;
+  
+  // Last resort: any English voice
+  return voices.find(v => v.lang.startsWith('en')) || null;
+};
 
 // Sanitize HTML to prevent XSS attacks
 const sanitizeHTML = (html: string): string => {
@@ -254,6 +335,15 @@ const LessonViewer: React.FC = () => {
   // Get lesson and section lessons from Firestore
   const currentSection = (userProfile?.examSection || lesson?.section || 'FAR') as ExamSection;
   
+  // Cleanup TTS when navigating away from the lesson
+  useEffect(() => {
+    return () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+  
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -286,6 +376,7 @@ const LessonViewer: React.FC = () => {
       const scrollPercent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
       setProgress(Math.min(100, scrollPercent));
 
+      // Show completion prompt when user has read most of the lesson
       if (scrollPercent >= 90) {
         setIsComplete((prev) => (prev ? prev : true));
       }
@@ -301,7 +392,11 @@ const LessonViewer: React.FC = () => {
       });
     }
 
-    // Scroll to top when lesson changes
+    // Stop TTS and scroll to top when lesson changes
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    setIsPlaying(false);
     window.scrollTo(0, 0);
     setProgress(0);
     setIsComplete(false);
@@ -309,14 +404,14 @@ const LessonViewer: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lessonId, logActivity]);
 
-  const handleComplete = async () => {
+  const handleComplete = async (goToNext: boolean = true) => {
     const timeSpent = Math.round((Date.now() - startTime) / 60000); // minutes
     
     if (completeLesson && lessonId && lesson) {
       await completeLesson(lessonId, lesson.section || currentSection, timeSpent);
     }
     
-    if (nextLesson) {
+    if (goToNext && nextLesson) {
       navigate(`/lessons/${nextLesson.id}`);
     } else {
       navigate('/lessons');
@@ -415,12 +510,30 @@ const LessonViewer: React.FC = () => {
                       window.speechSynthesis.cancel();
                       setIsPlaying(false);
                     } else {
-                      const text = lesson.content.sections
+                      // Get text from all text sections
+                      const rawText = lesson.content.sections
                         .filter(s => s.type === 'text' && typeof s.content === 'string')
                         .map(s => s.content)
                         .join('. ');
-                      const utterance = new SpeechSynthesisUtterance(text);
+                      
+                      // Clean text for natural speech
+                      const cleanedText = cleanTextForSpeech(rawText);
+                      
+                      const utterance = new SpeechSynthesisUtterance(cleanedText);
+                      
+                      // Get a natural-sounding voice
+                      const voice = getBestVoice();
+                      if (voice) {
+                        utterance.voice = voice;
+                      }
+                      
+                      // Natural speech settings
+                      utterance.rate = 0.95; // Slightly slower than default
+                      utterance.pitch = 1.0;
+                      
                       utterance.onend = () => setIsPlaying(false);
+                      utterance.onerror = () => setIsPlaying(false);
+                      
                       window.speechSynthesis.speak(utterance);
                       setIsPlaying(true);
                     }
@@ -613,22 +726,32 @@ const LessonViewer: React.FC = () => {
         </div>
       </div>
 
-      {/* Completion Banner */}
+      {/* Completion Prompt Banner - appears when user has scrolled through lesson */}
       {isComplete && (
         <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-lg p-4 z-30">
           <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-success-100 dark:bg-success-900/30 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
+              <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400" />
               </div>
               <div>
-                <div className="font-medium text-slate-900 dark:text-slate-100">Lesson Complete!</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">+10 points earned</div>
+                <div className="font-medium text-slate-900 dark:text-slate-100">Ready to mark complete?</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">You&apos;ll earn +10 points</div>
               </div>
             </div>
-            <button onClick={handleComplete} className="btn-primary">
-              {nextLesson ? 'Continue to Next' : 'Back to Lessons'}
-            </button>
+            <div className="flex items-center gap-3">
+              <button 
+                onClick={() => navigate('/lessons')}
+                className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 flex items-center gap-1"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Exit to Lessons
+              </button>
+              <button onClick={() => handleComplete(nextLesson ? true : false)} className="btn-primary flex items-center gap-2">
+                <CheckCircle className="w-4 h-4" />
+                Mark Complete {nextLesson ? '& Continue' : ''}
+              </button>
+            </div>
           </div>
         </div>
       )}

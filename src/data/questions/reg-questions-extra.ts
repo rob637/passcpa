@@ -39,10 +39,10 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Gambling winnings',
       'Unemployment compensation',
-      'Life insurance proceeds paid by reason of death',
       'Punitive damages in a lawsuit',
+      'Life insurance proceeds paid by reason of death'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Life insurance proceeds paid by reason of death are excluded from gross income under IRC §101. Gambling winnings, unemployment, and punitive damages are all taxable.',
     reference: 'IRC §101',
@@ -56,8 +56,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Deductions',
     difficulty: 'medium',
     question: 'The standard deduction for 2024 for a single taxpayer is:',
-    options: ['$12,950', '$13,850', '$14,600', '$27,700'],
-    correctAnswer: 2,
+    options: [
+      '$12,950',
+      '$13,850',
+      '$27,700',
+      '$14,600'
+    ],
+    correctAnswer: 3,
     explanation:
       'For 2024, the standard deduction is $14,600 for single filers, $29,200 for MFJ, $21,900 for HOH. Additional amounts for blind/elderly.',
     reference: 'IRC §63(c)',
@@ -73,11 +78,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'The Child Tax Credit for 2024 is:',
     options: [
       '$1,000 per child, fully refundable',
-      '$2,000 per child, with up to $1,700 refundable',
-      '$3,000 per child under 18',
       '$3,600 per child under 6',
+      '$3,000 per child under 18',
+      '$2,000 per child, with up to $1,700 refundable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'For 2024, the Child Tax Credit is $2,000 per qualifying child under 17. Up to $1,700 is refundable as the Additional Child Tax Credit. Subject to income phaseouts.',
     reference: 'IRC §24',
@@ -132,12 +137,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Property received as a gift takes what basis?',
     options: [
-      'Fair market value at date of gift',
       "Donor's adjusted basis (carryover basis) for gain purposes",
+      'Fair market value at date of gift',
       'Zero basis',
-      'The amount of gift tax paid',
+      'The amount of gift tax paid'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       "For gain purposes, gift property takes the donor's carryover basis. For loss, if FMV at gift date is lower, the FMV is used. This prevents transferring losses via gifts.",
     reference: 'IRC §1015',
@@ -153,11 +158,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'Property inherited from a decedent receives:',
     options: [
       'Carryover basis from the decedent',
-      'Stepped-up (or down) basis to FMV at date of death',
-      'Zero basis',
       "The decedent's original cost",
+      'Zero basis',
+      'Stepped-up (or down) basis to FMV at date of death'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Inherited property receives a stepped-up (or stepped-down) basis to fair market value at the date of death (or alternate valuation date if elected).',
     reference: 'IRC §1014',
@@ -173,11 +178,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'Under IRC §1031, like-kind exchange treatment applies to:',
     options: [
       'Any business property exchange',
-      'Real property held for investment or business use',
-      'Real and personal property held for investment',
       'Inventory and dealer property',
+      'Real and personal property held for investment',
+      'Real property held for investment or business use'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Post-TCJA, §1031 applies only to real property held for productive use in trade/business or investment. Personal property, inventory, and stock are excluded.',
     reference: 'IRC §1031',
@@ -233,11 +238,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: '§1245 depreciation recapture applies to:',
     options: [
       'All depreciable property',
-      'Depreciable personal property and certain real property',
-      'Land only',
       'Buildings only',
+      'Land only',
+      'Depreciable personal property and certain real property'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       '§1245 recapture applies to depreciable personal property (and some real property like §1245 property) and treats gain as ordinary to the extent of depreciation taken.',
     reference: 'IRC §1245',
@@ -257,11 +262,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'For §351 nonrecognition treatment, transferors must receive:',
     options: [
       'Any stock',
-      'At least 50% control immediately after exchange',
       'At least 80% control immediately after exchange',
-      '100% of all stock',
+      'At least 50% control immediately after exchange',
+      '100% of all stock'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'For §351 tax-free incorporation, transferors as a group must control 80% or more of the corporation immediately after the exchange. Control means 80% voting and 80% of each class.',
     reference: 'IRC §351',
@@ -276,12 +281,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Corporate distributions are taxable dividends to the extent of:',
     options: [
-      'Amount received',
       'Current and accumulated E&P',
+      'Amount received',
       'Current E&P only',
-      'Accumulated E&P only',
+      'Accumulated E&P only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Distributions are dividends (taxable) to extent of E&P (current plus accumulated). Excess is return of capital (reduces basis), then capital gain.',
     reference: 'IRC §301',
@@ -296,8 +301,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question:
       "A corporation owning 25% of another corporation's stock may deduct what percentage of dividends received?",
-    options: ['50%', '65%', '80%', '100%'],
-    correctAnswer: 1,
+    options: ['50%',
+      '80%',
+      '65%',
+      '100%'],
+    correctAnswer: 2,
     explanation:
       'DRD rates: <20% ownership = 50%, 20-79% ownership = 65%, 80%+ ownership = 100%. Subject to taxable income limitations.',
     reference: 'IRC §243',
@@ -313,11 +321,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'For exchange treatment under §302, a stock redemption must:',
     options: [
       'Be for all shareholders equally',
-      'Meet one of the tests: substantially disproportionate, complete termination, or not essentially equivalent to dividend',
-      'Be approved by the IRS',
       'Involve only preferred stock',
+      'Be approved by the IRS',
+      'Meet one of the tests: substantially disproportionate, complete termination, or not essentially equivalent to dividend'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Exchange treatment (capital gain) requires meeting: substantially disproportionate, complete termination, not essentially equivalent to dividend, or partial liquidation (corporate shareholders).',
     reference: 'IRC §302',
@@ -333,11 +341,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'In a complete liquidation, the liquidating corporation:',
     options: [
       'Never recognizes gain or loss',
-      'Recognizes gain and loss as if property were sold at FMV',
-      'Recognizes only gains, not losses',
       'Defers all gain to shareholders',
+      'Recognizes only gains, not losses',
+      'Recognizes gain and loss as if property were sold at FMV'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'In complete liquidation under §336, the corporation recognizes gain/loss as if it sold property at FMV. Exceptions for related parties and certain tax-avoidance situations.',
     reference: 'IRC §336',
@@ -357,11 +365,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'A partner contributing property to a partnership in exchange for an interest:',
     options: [
       'Always recognizes gain',
-      'Generally recognizes no gain (tax-free)',
-      'Recognizes gain only if receiving a controlling interest',
       'Recognizes gain if FMV exceeds basis',
+      'Recognizes gain only if receiving a controlling interest',
+      'Generally recognizes no gain (tax-free)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under §721, no gain or loss is recognized on contribution of property for a partnership interest. Exceptions: contribution of services, certain disguised sales.',
     reference: 'IRC §721',
@@ -377,11 +385,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: "A partner's outside basis in their partnership interest is increased by:",
     options: [
       'Partnership losses allocated',
-      'Distributions received',
       'Share of partnership liabilities',
-      'Guaranteed payments received',
+      'Distributions received',
+      'Guaranteed payments received'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Outside basis increases by: contributions, share of income, share of liabilities. Decreases by: distributions, share of losses, decrease in liability share.',
     reference: 'IRC §752',
@@ -417,11 +425,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'Guaranteed payments to partners are:',
     options: [
       'Treated as distributions',
-      'Ordinary income to the partner, deductible by partnership',
-      'Capital gains to the partner',
       'Not deductible by the partnership',
+      'Capital gains to the partner',
+      'Ordinary income to the partner, deductible by partnership'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Guaranteed payments are for services or capital without regard to income. Ordinary income to partner, deductible by partnership in determining ordinary income.',
     reference: 'IRC §707(c)',
@@ -437,11 +445,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'For a special allocation to be respected for tax purposes, it must:',
     options: [
       'Be approved by IRS',
-      'Have substantial economic effect',
-      'Benefit all partners equally',
       'Be made in writing',
+      'Benefit all partners equally',
+      'Have substantial economic effect'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Special allocations must have substantial economic effect to be respected. This generally requires capital account maintenance and liquidation per capital accounts.',
     reference: 'IRC §704(b)',
@@ -476,11 +484,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: "An S corporation shareholder's basis is increased by:",
     options: [
       'Corporate-level debt',
-      'Share of separately stated income and non-separately stated income',
       'Distributions received',
-      'Share of corporate expenses',
+      'Share of separately stated income and non-separately stated income',
+      'Share of corporate expenses'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'S corp stock basis increases by income items (separately and non-separately stated), decreases by distributions, losses, and non-deductible expenses. Unlike partnerships, corporate debt does not increase shareholder basis.',
     reference: 'IRC §1367',
@@ -496,11 +504,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'S corporation distributions to shareholders are:',
     options: [
       'Always taxable as dividends',
-      'Tax-free to extent of stock basis, then capital gain',
       'Always tax-free',
-      'Ordinary income',
+      'Tax-free to extent of stock basis, then capital gain',
+      'Ordinary income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'For S corps with no C corp E&P, distributions are tax-free return of basis, then capital gain. AAA ordering rules apply if C corp E&P exists.',
     reference: 'IRC §1368',
@@ -538,8 +546,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Contract Formation',
     difficulty: 'easy',
     question: 'A valid contract requires all of the following EXCEPT:',
-    options: ['Offer and acceptance', 'Consideration', 'A written document', 'Legal capacity'],
-    correctAnswer: 2,
+    options: ['Offer and acceptance',
+      'A written document',
+      'Consideration',
+      'Legal capacity'],
+    correctAnswer: 1,
     explanation:
       'Contracts require: offer, acceptance, consideration, capacity, and legality. Writing is only required for certain contracts under Statute of Frauds.',
     reference: 'Restatement (Second) of Contracts',
@@ -554,12 +565,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under the Statute of Frauds, which contract must be in writing?',
     options: [
-      'A contract for services worth $400',
       'A contract for sale of goods for $600',
+      'A contract for services worth $400',
       'A contract performed within one month',
-      'A contract for personal services',
+      'A contract for personal services'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'UCC requires writing for sale of goods ≥$500. Also: real property, contracts not performed within 1 year, suretyship, marriage, executor promises.',
     reference: 'UCC §2-201',
@@ -574,12 +585,12 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A principal is liable for the torts of an agent when:',
     options: [
-      'The agent acts within the scope of employment',
+      'The tort is intentional',
       'The principal has deep pockets',
       'The agent is independent',
-      'The tort is intentional',
+      'The agent acts within the scope of employment'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Under respondeat superior, a principal/employer is vicariously liable for agent/employee torts committed within the scope of employment.',
     reference: 'Restatement (Third) of Agency',
@@ -595,11 +606,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'Apparent authority arises from:',
     options: [
       'Express grant by principal',
-      "Reasonable belief of third party based on principal's conduct",
       "Agent's own statements",
-      'Implied necessity',
+      "Reasonable belief of third party based on principal's conduct",
+      'Implied necessity'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "Apparent authority exists when a third party reasonably believes the agent has authority based on the principal's manifestations (not agent's statements).",
     reference: 'Restatement (Third) of Agency §2.03',
@@ -615,11 +626,11 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     question: 'To perfect a security interest in goods, a creditor must:',
     options: [
       'Have a written security agreement only',
-      'File a financing statement with the appropriate office',
       'Take possession of the collateral only',
-      'Notify the debtor',
+      'File a financing statement with the appropriate office',
+      'Notify the debtor'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Perfection typically requires filing a UCC-1 financing statement. Alternative methods include possession (for tangible collateral) or control (for certain intangibles).',
     reference: 'UCC §9-310',
@@ -636,10 +647,10 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Credit card debt',
       'Medical bills',
-      'Student loans (absent undue hardship)',
       'Personal loans',
+      'Student loans (absent undue hardship)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Student loans are generally non-dischargeable unless the debtor proves undue hardship. Also non-dischargeable: taxes within 3 years, child support, fraud debts.',
     reference: '11 USC §523',

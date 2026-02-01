@@ -11,9 +11,9 @@ const AuthLayout = () => {
         Skip to main content
       </a>
       
-      {/* Navigation */}
+      {/* Navigation - NOT fixed, flows with content */}
       <nav 
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+        className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
         aria-label="Main navigation"
       >
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
@@ -41,7 +41,7 @@ const AuthLayout = () => {
       </nav>
 
       {/* Main Content */}
-      <main id="main-content" className="min-h-screen pt-24 pb-8 px-4 safe-top safe-bottom">
+      <main id="main-content" className="py-8 px-4">
         <div className="w-full max-w-md mx-auto">
           <Outlet />
           

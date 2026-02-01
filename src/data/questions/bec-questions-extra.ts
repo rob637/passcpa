@@ -17,11 +17,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Under best practices for corporate governance, the board of directors should:',
     options: [
       'Consist entirely of management',
-      'Have a majority of independent directors',
-      'Meet only annually',
       'Be appointed by the CEO',
+      'Meet only annually',
+      'Have a majority of independent directors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Good corporate governance requires board independence. NYSE and NASDAQ require majority independent boards for listed companies. Independence helps ensure management oversight.',
     reference: 'SOX and Exchange Rules',
@@ -36,11 +36,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'SOX requires public company audit committees to:',
     options: [
       'Include at least one management member',
-      'Be directly responsible for hiring and overseeing the external auditor',
-      'Meet monthly',
       'Approve all company transactions',
+      'Meet monthly',
+      'Be directly responsible for hiring and overseeing the external auditor'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'SOX §301 requires the audit committee to be directly responsible for appointment, compensation, and oversight of the external auditor. All members must be independent.',
     reference: 'SOX §301',
@@ -55,11 +55,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'SOX §404 requires management to:',
     options: [
       'Prepare financial statements',
-      'Assess and report on internal control over financial reporting',
       'Hire internal auditors',
-      'Approve all journal entries',
+      'Assess and report on internal control over financial reporting',
+      'Approve all journal entries'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'SOX §404 requires management to assess and include a report on internal control effectiveness in the annual report. Large accelerated filers also require auditor attestation.',
     reference: 'SOX §404',
@@ -73,12 +73,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'An effective ethics program should include:',
     options: [
-      'Punishment without prevention',
       'Code of conduct, training, and reporting mechanisms',
+      'Punishment without prevention',
       'External monitoring only',
-      'Financial incentives for ethical behavior',
+      'Financial incentives for ethical behavior'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Effective ethics programs include: written code of conduct, ethics training, anonymous reporting (whistleblower) mechanisms, and consistent enforcement.',
     reference: 'Federal Sentencing Guidelines',
@@ -96,12 +96,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'When demand increases while supply remains constant:',
     options: [
-      'Price and quantity both decrease',
       'Price increases and quantity increases',
+      'Price and quantity both decrease',
       'Price increases and quantity decreases',
-      'Price and quantity remain unchanged',
+      'Price and quantity remain unchanged'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'An increase in demand (rightward shift) with constant supply leads to higher equilibrium price and higher equilibrium quantity.',
     reference: 'Microeconomics Principles',
@@ -116,11 +116,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'If demand is elastic (elasticity > 1), a price increase will:',
     options: [
       'Increase total revenue',
-      'Decrease total revenue',
-      'Not affect total revenue',
       'Double total revenue',
+      'Not affect total revenue',
+      'Decrease total revenue'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Elastic demand means quantity changes more than proportionally to price. A price increase causes quantity demanded to fall more than proportionally, reducing total revenue.',
     reference: 'Microeconomics Principles',
@@ -134,12 +134,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A monopolistically competitive market is characterized by:',
     options: [
-      'One seller with unique product',
       'Many sellers with differentiated products',
+      'One seller with unique product',
       'Many sellers with identical products',
-      'Few sellers with high barriers to entry',
+      'Few sellers with high barriers to entry'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Monopolistic competition has: many sellers, differentiated products (some pricing power), low barriers to entry, non-price competition (advertising). Examples: restaurants, retail.',
     reference: 'Microeconomics Principles',
@@ -155,10 +155,10 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Real GDP',
       'Nominal GDP',
-      'The overall price level in the economy',
       'Unemployment rate',
+      'The overall price level in the economy'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'GDP deflator = (Nominal GDP / Real GDP) × 100. It measures the average price level of all goods and services produced in the economy.',
     reference: 'Macroeconomics Principles',
@@ -173,11 +173,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'The four phases of a business cycle are:',
     options: [
       'Growth, decline, growth, decline',
-      'Expansion, peak, contraction, trough',
-      'Bull, bear, bull, bear',
       'Inflation, deflation, inflation, deflation',
+      'Bull, bear, bull, bear',
+      'Expansion, peak, contraction, trough'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Business cycles consist of: expansion (growth), peak (turning point), contraction (recession), and trough (bottom) before the next expansion.',
     reference: 'Macroeconomics Principles',
@@ -214,7 +214,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question:
       'The present value of $10,000 to be received in 3 years at 8% discount rate is approximately:',
-    options: ['$7,938', '$8,573', '$9,259', '$10,800'],
+    options: [
+      '$7,938',
+      '$8,573',
+      '$9,259',
+      '$10,800'
+    ],
     correctAnswer: 0,
     explanation: 'PV = FV / (1+r)^n = $10,000 / (1.08)^3 = $10,000 / 1.2597 = $7,938',
     reference: 'Time Value of Money',
@@ -229,11 +234,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Net Present Value (NPV) should be used for capital budgeting because it:',
     options: [
       'Is easier to calculate than IRR',
-      'Accounts for time value of money and measures value creation in dollars',
       'Ignores cash flows after payback',
-      'Uses accounting income',
+      'Accounts for time value of money and measures value creation in dollars',
+      'Uses accounting income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'NPV accounts for time value of money, considers all cash flows, and measures absolute value creation in dollars. Positive NPV = value creation for shareholders.',
     reference: 'Capital Budgeting',
@@ -267,11 +272,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Weighted Average Cost of Capital (WACC) is calculated using:',
     options: [
       'Book values only',
-      'Market values of debt and equity weighted by their proportions',
       'Historical costs only',
-      'Par values of securities',
+      'Market values of debt and equity weighted by their proportions',
+      'Par values of securities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'WACC = (E/V × Re) + (D/V × Rd × (1-T)). Use market values of equity and debt. Debt cost is after-tax due to interest deductibility.',
     reference: 'Cost of Capital',
@@ -286,11 +291,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'The cash conversion cycle equals:',
     options: [
       'Days inventory + Days receivables',
-      'Days inventory + Days receivables - Days payables',
-      'Days receivables - Days payables',
       'Days inventory - Days payables',
+      'Days receivables - Days payables',
+      'Days inventory + Days receivables - Days payables'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'CCC = DIO + DSO - DPO (Days Inventory Outstanding + Days Sales Outstanding - Days Payables Outstanding). Measures days of cash tied up in operations.',
     reference: 'Working Capital Management',
@@ -322,12 +327,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'IT governance frameworks like COBIT help organizations:',
     options: [
-      'Develop software faster',
       'Align IT with business objectives and manage IT risks',
+      'Develop software faster',
       'Reduce hardware costs only',
-      'Eliminate all cybersecurity risks',
+      'Eliminate all cybersecurity risks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'COBIT (Control Objectives for Information Technology) provides a framework for IT governance, ensuring IT supports business goals, manages risks, and uses resources responsibly.',
     reference: 'COBIT Framework',
@@ -342,11 +347,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Multi-factor authentication (MFA) requires:',
     options: [
       'Multiple passwords',
-      'Two or more different types of authentication factors',
       'Biometric scanning only',
-      'Annual password changes',
+      'Two or more different types of authentication factors',
+      'Annual password changes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'MFA requires 2+ factors from: something you know (password), something you have (token/phone), something you are (biometrics). Stronger than single-factor.',
     reference: 'Cybersecurity Best Practices',
@@ -362,10 +367,10 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Stores less data',
       'Is optimized for transaction processing',
-      'Is optimized for analytical queries and reporting',
       'Contains only current data',
+      'Is optimized for analytical queries and reporting'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Data warehouses store historical data from multiple sources, optimized for complex analytical queries and reporting (OLAP). Operational databases handle day-to-day transactions (OLTP).',
     reference: 'Data Management',
@@ -381,10 +386,10 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Requirements gathering phase',
       'Design phase',
-      'Testing phase before implementation',
       'Maintenance phase',
+      'Testing phase before implementation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'UAT is the final testing phase where end users verify the system meets requirements and functions as expected before going live (implementation).',
     reference: 'SDLC',
@@ -398,12 +403,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'Software as a Service (SaaS) means:',
     options: [
-      'The customer manages servers',
       'The provider delivers applications over the internet',
+      'The customer manages servers',
       'The customer owns the hardware',
-      'Software is installed locally',
+      'Software is installed locally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'SaaS delivers software applications over the internet on a subscription basis. Provider manages infrastructure, platform, and application. Examples: Salesforce, Office 365.',
     reference: 'Cloud Computing Models',
@@ -418,11 +423,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Recovery Point Objective (RPO) defines:',
     options: [
       'How quickly systems must be restored',
-      'Maximum acceptable data loss measured in time',
-      'Number of backup copies required',
       'Hardware replacement timeline',
+      'Number of backup copies required',
+      'Maximum acceptable data loss measured in time'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'RPO defines the maximum acceptable data loss (e.g., 1 hour RPO means backups every hour). RTO (Recovery Time Objective) defines how quickly systems must be restored.',
     reference: 'Business Continuity',
@@ -441,11 +446,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Activity-based costing (ABC) allocates overhead based on:',
     options: [
       'Direct labor hours only',
-      'Multiple cost drivers related to activities that cause costs',
-      'Machine hours only',
       'Sales revenue',
+      'Machine hours only',
+      'Multiple cost drivers related to activities that cause costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'ABC identifies activities that drive costs and uses multiple cost drivers (not just volume-based) to allocate overhead more accurately. Better for diverse products.',
     reference: 'Cost Accounting',
@@ -459,12 +464,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'An unfavorable material price variance indicates:',
     options: [
-      'More material was used than planned',
       'Material was purchased at a higher price than standard',
+      'More material was used than planned',
       'Sales were lower than expected',
-      'Labor was inefficient',
+      'Labor was inefficient'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Material price variance = (Actual Price - Standard Price) × Actual Quantity. Unfavorable means actual price exceeded standard. Material quantity variance measures usage.',
     reference: 'Variance Analysis',
@@ -478,12 +483,12 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Prevention costs in quality management include:',
     options: [
-      'Rework of defective products',
-      'Warranty claims',
       'Training and quality planning',
-      'Customer returns',
+      'Warranty claims',
+      'Rework of defective products',
+      'Customer returns'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Prevention costs are incurred to prevent defects: training, quality planning, process improvement. Appraisal costs test products. Internal/external failure costs result from defects.',
     reference: 'Total Quality Management',
@@ -517,11 +522,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'A flexible budget:',
     options: [
       'Is prepared for one level of activity only',
-      'Adjusts for changes in activity level',
-      'Is never revised during the year',
       'Ignores variable costs',
+      'Is never revised during the year',
+      'Adjusts for changes in activity level'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'A flexible budget adjusts budgeted amounts for actual activity level, enabling meaningful comparison of actual vs. budgeted costs at the same activity level.',
     reference: 'Budgeting',
@@ -536,11 +541,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'Economic Value Added (EVA) equals:',
     options: [
       'Net income minus taxes',
-      'NOPAT minus (Capital × Cost of Capital)',
-      'Revenue minus expenses',
       'Gross profit minus operating expenses',
+      'Revenue minus expenses',
+      'NOPAT minus (Capital × Cost of Capital)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'EVA = NOPAT - (Invested Capital × WACC). Measures economic profit after deducting the cost of all capital. Positive EVA indicates value creation.',
     reference: 'Performance Measurement',
@@ -560,10 +565,10 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Threat of new entrants',
       'Bargaining power of suppliers',
-      'Government regulation',
       'Rivalry among existing competitors',
+      'Government regulation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       "Porter's Five Forces: (1) Threat of new entrants, (2) Bargaining power of suppliers, (3) Bargaining power of buyers, (4) Threat of substitutes, (5) Rivalry among competitors.",
     reference: 'Competitive Strategy',
@@ -578,11 +583,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'A cost leadership strategy focuses on:',
     options: [
       'Unique product features',
-      'Becoming the lowest cost producer in the industry',
-      'Serving a narrow market segment',
       'Premium pricing',
+      'Serving a narrow market segment',
+      'Becoming the lowest cost producer in the industry'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Cost leadership aims to be the lowest cost producer, allowing lower prices or higher margins. Requires efficiency, economies of scale, and tight cost controls.',
     reference: 'Porter Generic Strategies',
@@ -597,11 +602,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'The balanced scorecard includes which four perspectives?',
     options: [
       'Revenue, cost, profit, growth',
-      'Financial, customer, internal process, learning and growth',
-      'Marketing, operations, HR, finance',
       'Short-term, medium-term, long-term, perpetual',
+      'Marketing, operations, HR, finance',
+      'Financial, customer, internal process, learning and growth'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The balanced scorecard measures performance across four perspectives: Financial, Customer, Internal Business Process, and Learning and Growth, providing a balanced view beyond just financial metrics.',
     reference: 'Balanced Scorecard',
@@ -616,11 +621,11 @@ export const BEC_QUESTIONS_EXTRA: Question[] = [
     question: 'In SWOT analysis, "opportunities" refer to:',
     options: [
       'Internal capabilities',
-      'Internal weaknesses to address',
       'External favorable conditions to exploit',
-      'Potential external threats',
+      'Internal weaknesses to address',
+      'Potential external threats'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'SWOT: Strengths and Weaknesses are internal; Opportunities and Threats are external. Opportunities are external conditions favorable to the organization.',
     reference: 'Strategic Analysis',

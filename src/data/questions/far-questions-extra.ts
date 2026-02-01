@@ -17,12 +17,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under ASC 606, what is the first step in recognizing revenue?',
     options: [
-      'Determine the transaction price',
       'Identify the contract with a customer',
+      'Determine the transaction price',
       'Identify the performance obligations',
-      'Allocate the transaction price',
+      'Allocate the transaction price'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The five-step model: 1) Identify contract, 2) Identify performance obligations, 3) Determine transaction price, 4) Allocate price to obligations, 5) Recognize revenue when obligations satisfied.',
     reference: 'ASC 606-10-25-1',
@@ -58,11 +58,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Variable consideration should be estimated using:',
     options: [
       'The most likely amount only',
-      'The expected value only',
       'Either expected value or most likely amount, whichever is more predictive',
-      'Historical cost',
+      'The expected value only',
+      'Historical cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Variable consideration is estimated using either the expected value method (probability-weighted amounts) or most likely amount method, whichever better predicts the consideration entitled to.',
     reference: 'ASC 606-10-32-8',
@@ -121,12 +121,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A finance lease for a lessee is classified when:',
     options: [
-      'Lease term is more than 50% of economic life',
       'Any of the five classification criteria are met',
+      'Lease term is more than 50% of economic life',
       'The lease is non-cancelable',
-      'The leased asset is real estate',
+      'The leased asset is real estate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A lease is a finance lease if ANY of five criteria are met: transfer of ownership, purchase option reasonably certain, term ≥75% of life, PV of payments ≥90% of fair value, or specialized asset.',
     reference: 'ASC 842-10-25-2',
@@ -142,11 +142,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The initial measurement of a right-of-use asset includes:',
     options: [
       'Lease payments only',
-      'Lease liability plus initial direct costs and prepaid rent, minus lease incentives',
-      'Fair value of the underlying asset',
       'Present value of variable lease payments',
+      'Fair value of the underlying asset',
+      'Lease liability plus initial direct costs and prepaid rent, minus lease incentives'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'ROU asset = Lease liability + Initial direct costs + Prepaid lease payments − Lease incentives received. Variable payments not based on an index are excluded from the initial measurement.',
     reference: 'ASC 842-20-30-5',
@@ -162,11 +162,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'For an operating lease, the lessee recognizes:',
     options: [
       'Interest expense and amortization separately',
-      'A single lease cost on a straight-line basis',
       'Variable rent only',
-      'No expense until lease termination',
+      'A single lease cost on a straight-line basis',
+      'No expense until lease termination'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Operating leases recognize a single lease cost (combined interest and amortization) on a straight-line basis. Finance leases separately recognize interest expense (effective interest) and amortization.',
     reference: 'ASC 842-20-25-6',
@@ -180,8 +180,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Short-term Leases',
     difficulty: 'easy',
     question: 'A short-term lease exemption applies to leases with a term of:',
-    options: ['6 months or less', '12 months or less', '24 months or less', '36 months or less'],
-    correctAnswer: 1,
+    options: ['6 months or less',
+      '36 months or less',
+      '24 months or less',
+      '12 months or less'],
+    correctAnswer: 3,
     explanation:
       'Lessees may elect not to recognize lease assets/liabilities for short-term leases (12 months or less at commencement with no purchase option reasonably certain to exercise).',
     reference: 'ASC 842-20-25-2',
@@ -221,11 +224,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A deferred tax liability arises from:',
     options: [
       'A permanent difference',
-      'A temporary difference that will result in future taxable amounts',
-      'A temporary difference that will result in future deductible amounts',
       'Net operating loss carryforwards',
+      'A temporary difference that will result in future deductible amounts',
+      'A temporary difference that will result in future taxable amounts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'DTLs arise from temporary differences that will result in future taxable amounts (book income > tax income now, reverse later). Examples: accelerated depreciation for tax, installment sales.',
     reference: 'ASC 740-10-25-20',
@@ -281,11 +284,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When enacted tax rates change, deferred tax balances are:',
     options: [
       'Not adjusted',
-      'Adjusted in the period of enactment with effect in income tax expense',
       'Adjusted retroactively',
-      'Adjusted only at year end',
+      'Adjusted in the period of enactment with effect in income tax expense',
+      'Adjusted only at year end'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Deferred taxes are remeasured using newly enacted rates in the period the rate change is enacted. The effect is recognized in continuing operations, not as prior period adjustment.',
     reference: 'ASC 740-10-35-4',
@@ -299,8 +302,13 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Permanent Differences',
     difficulty: 'easy',
     question: 'Which of the following is a permanent difference?',
-    options: ['Depreciation', 'Warranty expense', 'Municipal bond interest', 'Prepaid rent'],
-    correctAnswer: 2,
+    options: [
+      'Municipal bond interest',
+      'Warranty expense',
+      'Prepaid rent',
+      'Depreciation'
+    ],
+    correctAnswer: 0,
     explanation:
       'Municipal bond interest is a permanent difference—never taxable. Depreciation, warranties, and prepaid rent create temporary differences that reverse over time.',
     reference: 'ASC 740-10-25-2',
@@ -320,11 +328,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Stock options granted to employees are measured at:',
     options: [
       'Intrinsic value at grant date',
-      'Fair value at grant date',
-      'Fair value at vesting date',
       'Exercise price',
+      'Fair value at vesting date',
+      'Fair value at grant date'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under ASC 718, employee stock options are measured at fair value on the grant date. This amount is expensed over the requisite service period (usually the vesting period).',
     reference: 'ASC 718-10-30-2',
@@ -340,11 +348,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Compensation expense for graded vesting stock options should be recognized:',
     options: [
       'On the grant date',
-      'On the vesting date',
       'Over the requisite service period using accelerated attribution or straight-line',
-      'When options are exercised',
+      'On the vesting date',
+      'When options are exercised'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'For graded vesting, each tranche can be treated separately (accelerated) or the entire award on straight-line basis. Either method recognized over requisite service period.',
     reference: 'ASC 718-10-35-8',
@@ -360,11 +368,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under ASC 718, forfeitures of stock compensation can be:',
     options: [
       'Only estimated at grant date',
-      'Only recognized when they occur',
       'Either estimated at grant date or recognized when they occur',
-      'Ignored for accounting purposes',
+      'Only recognized when they occur',
+      'Ignored for accounting purposes'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Companies can elect to estimate forfeitures at grant date (and revise as needed) or account for forfeitures as they occur. The choice is an accounting policy election.',
     reference: 'ASC 718-10-35-3',
@@ -383,12 +391,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under GAAP, consolidation is required when a parent has:',
     options: [
-      'More than 50% ownership',
       'A controlling financial interest',
+      'More than 50% ownership',
       'Significant influence',
-      'Any investment in another entity',
+      'Any investment in another entity'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Consolidation is required when a parent has a controlling financial interest. For voting interest entities, this is typically >50% voting rights. VIEs have different criteria (primary beneficiary).',
     reference: 'ASC 810-10-15-8',
@@ -423,12 +431,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'In consolidation, intercompany profit in ending inventory is:',
     options: [
-      'Never eliminated',
-      'Eliminated against the selling entity',
       'Eliminated from consolidated inventory and profit, allocated to NCI only in downstream sales',
-      'Recognized as a deferred revenue',
+      'Eliminated against the selling entity',
+      'Never eliminated',
+      'Recognized as a deferred revenue'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Unrealized intercompany profit in ending inventory is eliminated. For downstream (parent to sub) sales, 100% is eliminated against parent. For upstream, NCI shares in the elimination.',
     reference: 'ASC 810-10-45-1',
@@ -443,12 +451,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under the acquisition method, identifiable assets and liabilities are recorded at:',
     options: [
-      'Book value',
       'Fair value at acquisition date',
+      'Book value',
       'Historical cost of the acquiree',
-      'The lower of cost or market',
+      'The lower of cost or market'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The acquisition method requires recording identifiable assets acquired and liabilities assumed at fair value on the acquisition date. Goodwill is the excess of consideration over net fair value.',
     reference: 'ASC 805-20-30-1',
@@ -508,11 +516,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'For available-for-sale debt securities, credit losses are:',
     options: [
       'Recognized in OCI',
-      'Recognized in net income with a valuation allowance',
-      'Not recognized until sale',
       'Recognized in retained earnings directly',
+      'Not recognized until sale',
+      'Recognized in net income with a valuation allowance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under the CECL model, credit losses on AFS debt securities are recognized in net income through an allowance. Non-credit impairment remains in OCI.',
     reference: 'ASC 326-30-35-3',
@@ -528,11 +536,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The equity method is used when an investor has:',
     options: [
       'Less than 20% ownership',
-      'Significant influence (typically 20-50%)',
-      'More than 50% ownership',
       'Any ownership in a public company',
+      'More than 50% ownership',
+      'Significant influence (typically 20-50%)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The equity method applies when an investor has significant influence but not control. 20-50% ownership is presumed to indicate significant influence, but other factors matter.',
     reference: 'ASC 323-10-15-6',
@@ -547,12 +555,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'The fair value option under ASC 825:',
     options: [
-      'Must be applied to all financial instruments',
       'Is irrevocable once elected for a specific instrument',
+      'Must be applied to all financial instruments',
       'Can be changed each reporting period',
-      'Applies only to derivatives',
+      'Applies only to derivatives'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The fair value option election is irrevocable and made at initial recognition (or upon certain events). Once elected for an instrument, it cannot be changed. Applied instrument by instrument.',
     reference: 'ASC 825-10-25-1',
@@ -571,12 +579,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'Interest paid is classified as:',
     options: [
-      'Operating activity',
       'Investing activity',
+      'Operating activity',
       'Financing activity',
-      'Either operating or financing, by election',
+      'Either operating or financing, by election'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'Under US GAAP, interest paid is classified as operating activity. Under IFRS, it can be operating or financing. Interest received is also operating under US GAAP.',
     reference: 'ASC 230-10-45-17',
@@ -613,10 +621,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Operating activities',
       'Investing activities',
-      'Financing activities',
       'Supplemental disclosure only',
+      'Financing activities'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Dividends paid to shareholders are financing activities (outflows). Dividends received from investments are operating activities under US GAAP.',
     reference: 'ASC 230-10-45-15',
@@ -632,11 +640,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A building acquired by issuing stock should be:',
     options: [
       'Included in investing activities',
-      'Included in financing activities',
       'Disclosed as a significant non-cash transaction',
-      'Excluded from all disclosures',
+      'Included in financing activities',
+      'Excluded from all disclosures'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       "Significant non-cash investing and financing activities must be disclosed separately, either in a schedule or narrative. They don't appear in the cash flow statement body.",
     reference: 'ASC 230-10-50-3',
@@ -654,8 +662,13 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Fund Accounting',
     difficulty: 'medium',
     question: 'The General Fund is a type of:',
-    options: ['Proprietary fund', 'Fiduciary fund', 'Governmental fund', 'Component unit'],
-    correctAnswer: 2,
+    options: [
+      'Fiduciary fund',
+      'Governmental fund',
+      'Proprietary fund',
+      'Component unit'
+    ],
+    correctAnswer: 1,
     explanation:
       'The General Fund is the primary governmental fund, accounting for all financial resources not required to be in another fund. Governmental funds use modified accrual.',
     reference: 'GASB Codification 1300',
@@ -671,11 +684,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Governmental funds use what measurement focus?',
     options: [
       'Economic resources and accrual',
-      'Current financial resources and modified accrual',
       'Cash basis',
-      'Economic resources and modified accrual',
+      'Current financial resources and modified accrual',
+      'Economic resources and modified accrual'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Governmental funds (General, Special Revenue, Capital Projects, Debt Service, Permanent) use current financial resources focus with modified accrual accounting.',
     reference: 'GASB Codification 1600',
@@ -691,11 +704,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'NFP net assets are classified as:',
     options: [
       'Restricted and unrestricted',
-      'Without donor restrictions and with donor restrictions',
-      'Permanently restricted, temporarily restricted, and unrestricted',
       'Operating and non-operating',
+      'Permanently restricted, temporarily restricted, and unrestricted',
+      'Without donor restrictions and with donor restrictions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under ASU 2016-14, NFP net assets are classified as: with donor restrictions and without donor restrictions (replacing the three-category system).',
     reference: 'ASC 958-210-45-1',
@@ -711,11 +724,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A conditional contribution is recognized as revenue:',
     options: [
       'When received',
-      'When the condition is substantially met',
-      'Over the expected period of benefit',
       'Never, until the donor releases it',
+      'Over the expected period of benefit',
+      'When the condition is substantially met'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Conditional contributions are recognized when the condition is substantially met. Before then, cash received is recorded as a refundable advance (liability).',
     reference: 'ASC 958-605-25-5A',
@@ -737,11 +750,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under the cost method for treasury stock, when shares are reissued above cost:',
     options: [
       'A gain is recognized in net income',
-      'Retained earnings is credited',
       'Additional paid-in capital is credited for the excess',
-      'Treasury stock is credited for the selling price',
+      'Retained earnings is credited',
+      'Treasury stock is credited for the selling price'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Treasury stock under cost method: debit Cash for proceeds, credit Treasury Stock for cost, credit APIC-Treasury Stock for excess. No gain recognized (cannot generate income from own stock transactions).',
     reference: 'ASC 505-30-30',
   },
@@ -774,12 +787,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'When employee stock options are forfeited before vesting, the company should:',
     options: [
-      'Continue recognizing expense through original vesting date',
       'Reverse previously recognized compensation expense',
+      'Continue recognizing expense through original vesting date',
       'Recognize additional expense equal to the option value',
-      'Make no adjustment',
+      'Make no adjustment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'When options are forfeited pre-vesting, previously recognized compensation expense is reversed. If using estimated forfeitures, adjust estimate prospectively. Actual forfeiture triggers true-up.',
     reference: 'ASC 718-10-35',
   },
@@ -815,11 +828,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When bonds payable are retired early at a price exceeding carrying value, the company records:',
     options: [
       'A gain on extinguishment',
-      'A loss on extinguishment',
       'A prior period adjustment',
-      'An adjustment to additional paid-in capital',
+      'A loss on extinguishment',
+      'An adjustment to additional paid-in capital'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Retirement price > carrying value = loss. The loss equals the difference between the reacquisition price and the carrying value (par ± unamortized premium/discount - unamortized issue costs).',
     reference: 'ASC 470-50-40',
   },
@@ -834,11 +847,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under the book value method, when convertible bonds are converted to common stock:',
     options: [
       'A gain or loss is recognized',
-      'The carrying value of bonds becomes the value of equity issued',
-      'Fair value of stock issued determines the conversion value',
       'The conversion is recorded at par value of stock only',
+      'Fair value of stock issued determines the conversion value',
+      'The carrying value of bonds becomes the value of equity issued'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Book value method: no gain/loss on conversion. Debit Bonds Payable, debit Premium (if any) or credit Discount, credit Common Stock at par, credit APIC for excess. Total equity = carrying value of bonds.',
     reference: 'ASC 470-20-40',
   },
@@ -855,11 +868,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A company has a deferred tax asset of $100,000 and determines it is more likely than not that only $60,000 will be realized. The valuation allowance should be:',
     options: [
       '$100,000',
-      '$60,000',
       '$40,000',
-      '$0',
+      '$60,000',
+      '$0'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Valuation allowance reduces DTA to realizable amount. $100,000 DTA - $40,000 valuation allowance = $60,000 net DTA. "More likely than not" (>50%) is the threshold.',
     reference: 'ASC 740-10-30-18',
   },
@@ -874,11 +887,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Which of the following creates a deferred tax liability?',
     options: [
       'Warranty expense accrued for book, deducted when paid for tax',
-      'Accelerated depreciation for tax, straight-line for book',
-      'Bad debt expense estimated for book, direct write-off for tax',
       'Prepaid rent deducted when paid for tax, expensed over time for book',
+      'Bad debt expense estimated for book, direct write-off for tax',
+      'Accelerated depreciation for tax, straight-line for book'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Accelerated depreciation creates a DTL because tax depreciation exceeds book depreciation initially (taxable income < book income), creating a future taxable amount when it reverses.',
     reference: 'ASC 740-10-25',
   },
@@ -894,12 +907,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under ASC 842, the lease liability is measured at:',
     options: [
-      'Total undiscounted lease payments',
       'Present value of lease payments discounted at the lessee\'s incremental borrowing rate or rate implicit in lease',
+      'Total undiscounted lease payments',
       'Fair value of the underlying asset',
-      'Minimum rental payments only',
+      'Minimum rental payments only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lease liability = PV of lease payments using rate implicit in lease (if determinable) or lessee\'s incremental borrowing rate. Includes fixed payments, variable payments based on index/rate, purchase options reasonably certain to be exercised.',
     reference: 'ASC 842-20-30-1',
   },
@@ -914,11 +927,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The right-of-use asset includes all of the following EXCEPT:',
     options: [
       'The initial lease liability amount',
-      'Lease payments made before commencement',
-      'Initial direct costs incurred by lessee',
       'Estimated cost to dismantle asset at end of lease',
+      'Initial direct costs incurred by lessee',
+      'Lease payments made before commencement'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'ROU asset = Initial lease liability + prepaid lease payments + initial direct costs - lease incentives received. Asset retirement obligations for dismantlement are separate from ROU asset measurement.',
     reference: 'ASC 842-20-30-5',
   },
@@ -934,12 +947,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'The measurement period for a business combination:',
     options: [
-      'Is exactly one year from acquisition date',
       'Cannot exceed one year from acquisition date',
+      'Is exactly one year from acquisition date',
       'Is determined by the SEC',
-      'Begins one year after acquisition',
+      'Begins one year after acquisition'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'The measurement period allows acquirer to adjust provisional amounts as new information is obtained about facts existing at acquisition date. Cannot exceed one year. Adjustments are recognized as if known at acquisition.',
     reference: 'ASC 805-10-25-17',
   },
@@ -953,12 +966,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Contingent consideration in a business combination classified as a liability is subsequently:',
     options: [
-      'Not remeasured',
       'Remeasured at fair value with changes in earnings',
+      'Not remeasured',
       'Adjusted only in the measurement period',
-      'Amortized over the expected payment period',
+      'Amortized over the expected payment period'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Contingent consideration classified as liability or equity: liabilities remeasured at fair value with changes in earnings; equity not remeasured. Classification depends on settlement terms.',
     reference: 'ASC 805-30-35-1',
   },
@@ -974,12 +987,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'When translating foreign subsidiary financial statements, translation adjustments are recorded in:',
     options: [
-      'Net income',
       'Other comprehensive income',
+      'Net income',
       'Retained earnings directly',
-      'Additional paid-in capital',
+      'Additional paid-in capital'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Translation (functional currency ≠ reporting currency): balance sheet at current rate, income statement at average rate. Translation adjustments go to OCI (cumulative translation adjustment). Remeasurement gains/losses go to income.',
     reference: 'ASC 830-30-45-12',
   },
@@ -993,12 +1006,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'A U.S. company purchases inventory from a foreign supplier, payable in foreign currency. At settlement, the dollar strengthened. The company records:',
     options: [
-      'A foreign exchange gain',
+      'An adjustment to inventory cost',
       'A foreign exchange loss',
       'No gain or loss',
-      'An adjustment to inventory cost',
+      'A foreign exchange gain'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Stronger dollar = fewer dollars needed to settle foreign currency payable = gain. FC payable was recorded at transaction date rate; at settlement, a stronger dollar means the liability can be settled for fewer dollars.',
     reference: 'ASC 830-20-35',
   },
@@ -1014,12 +1027,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'A company reports its defined benefit pension plan\'s funded status as:',
     options: [
-      'The difference between plan assets and service cost',
       'The projected benefit obligation minus fair value of plan assets',
+      'The difference between plan assets and service cost',
       'The accumulated benefit obligation only',
-      'Plan assets minus vested benefits',
+      'Plan assets minus vested benefits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Funded status = PBO - Plan Assets at fair value. If negative (underfunded), report as liability. If positive (overfunded), report as asset. This is the net pension asset/liability on the balance sheet.',
     reference: 'ASC 715-30-25',
   },
@@ -1035,10 +1048,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Interest cost',
       'Expected return on plan assets',
-      'Service cost',
       'Amortization of prior service cost',
+      'Service cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Under ASU 2017-07, only service cost is presented with other employee compensation costs (typically operating income). Other components are presented outside operating income (typically "other income/expense").',
     reference: 'ASC 715-30-35-4',
   },
@@ -1054,12 +1067,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'An operating segment is reportable if it meets any of the 10% tests for:',
     options: [
-      'Revenue, profit/loss, or assets',
-      'Revenue and net income only',
       'Assets and liabilities',
-      'Employees and locations',
+      'Revenue and net income only',
+      'Revenue, profit/loss, or assets',
+      'Employees and locations'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Reportable if segment\'s revenue ≥10% of combined revenue, OR absolute profit/loss ≥10% of greater of combined profit or combined loss, OR assets ≥10% of combined assets.',
     reference: 'ASC 280-10-50-12',
   },
@@ -1076,11 +1089,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When calculating diluted EPS, convertible bonds are included if:',
     options: [
       'They are always included',
-      'The conversion would decrease EPS (be dilutive)',
-      'The conversion would increase EPS (be antidilutive)',
       'They mature within one year',
+      'The conversion would increase EPS (be antidilutive)',
+      'The conversion would decrease EPS (be dilutive)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Diluted EPS includes potential common shares only if dilutive (reduces EPS). Test: add back after-tax interest, add converted shares. If incremental EPS < basic EPS, include. If antidilutive, exclude.',
     reference: 'ASC 260-10-45-21',
   },
@@ -1094,12 +1107,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under the treasury stock method for stock options, the dilutive effect is calculated as:',
     options: [
-      'All options assumed exercised',
       'Options exercised, proceeds used to buy back shares at average price',
+      'All options assumed exercised',
       'Options exercised, proceeds used to buy back shares at ending price',
-      'Net share increase regardless of option price',
+      'Net share increase regardless of option price'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Treasury stock method: assume options exercised, company receives proceeds, uses proceeds to repurchase shares at average market price. Dilutive shares = shares from exercise - shares repurchased. Only dilutive if exercise price < average price.',
     reference: 'ASC 260-10-45-23',
   },
@@ -1138,12 +1151,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under modified accrual accounting, revenues are recognized when:',
     options: [
-      'Earned regardless of collectibility',
       'Measurable and available to finance current period expenditures',
+      'Earned regardless of collectibility',
       'Cash is received',
-      'Services are rendered',
+      'Services are rendered'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Modified accrual recognizes revenues when measurable and available. "Available" typically means collected within 60 days of year-end. This is less than full accrual but more than cash basis.',
     reference: 'GASB Codification 1600.106',
   },
@@ -1159,10 +1172,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Statement of Net Position',
       'Statement of Activities',
-      'Statement of Revenues, Expenditures, and Changes in Fund Balance',
       'Statement of Cash Flows for proprietary funds',
+      'Statement of Revenues, Expenditures, and Changes in Fund Balance'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Government-wide statements include Statement of Net Position and Statement of Activities (accrual basis). The Statement of Revenues, Expenditures, and Changes in Fund Balance is a fund-level governmental fund statement.',
     reference: 'GASB 34',
   },
@@ -1177,11 +1190,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'At year-end, outstanding encumbrances that will be honored next year should be reported as:',
     options: [
       'Expenditures in the current year',
-      'A commitment in notes to financial statements only',
       'A component of committed or assigned fund balance',
-      'A liability on the balance sheet',
+      'A commitment in notes to financial statements only',
+      'A liability on the balance sheet'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Outstanding encumbrances represent committed resources. Under GASB 54, they are reported as committed or assigned fund balance, depending on the level of constraint, not as expenditures until goods/services are received.',
     reference: 'GASB 54',
   },
@@ -1196,11 +1209,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'In government-wide statements, "net investment in capital assets" represents:',
     options: [
       'All capital assets at historical cost',
-      'Capital assets net of depreciation and related debt',
-      'Capital assets available for sale',
       'Cash reserved for capital projects',
+      'Capital assets available for sale',
+      'Capital assets net of depreciation and related debt'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Net investment in capital assets = capital assets (net of accumulated depreciation) minus outstanding debt related to acquisition/construction of those assets, plus unspent proceeds.',
     reference: 'GASB 34',
   },
@@ -1236,11 +1249,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A donor pledges $100,000 to be paid over 4 years with no restrictions. How should the NFP record this?',
     options: [
       '$25,000 revenue each year as payments are received',
-      '$100,000 contribution revenue with donor restriction',
       'Present value of $100,000 as contribution revenue without donor restriction',
-      'Nothing until all payments are received',
+      '$100,000 contribution revenue with donor restriction',
+      'Nothing until all payments are received'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Unconditional pledges are recognized at present value when the promise is made. Time restrictions (multi-year) alone create "with donor restriction" classification until due, but this question says no restrictions, implying immediate availability.',
     reference: 'ASC 958-605-25',
   },
@@ -1254,12 +1267,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Not-for-profit financial statements must present expenses by:',
     options: [
-      'Natural classification only',
-      'Functional classification only',
       'Both natural and functional classification',
-      'Neither natural nor functional classification',
+      'Functional classification only',
+      'Natural classification only',
+      'Neither natural nor functional classification'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'ASU 2016-14 requires NFPs to present expenses by both function (program services vs. supporting activities) and nature (salaries, rent, etc.) in one location.',
     reference: 'ASC 958-720',
   },
@@ -1273,12 +1286,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'A grant requiring the NFP to provide matching funds is recognized when:',
     options: [
-      'The grant agreement is signed',
       'The conditions are substantially met',
+      'The grant agreement is signed',
       'The grant period begins',
-      'Cash is received',
+      'Cash is received'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Conditional contributions (with barriers and right of return/release) are recognized when conditions are substantially met. A matching requirement is a barrier that must be overcome before recognition.',
     reference: 'ASC 958-605-25-11',
   },
@@ -1295,11 +1308,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under ASC 606, variable consideration is included in the transaction price:',
     options: [
       'At the maximum possible amount',
-      'At the most likely amount or expected value, subject to constraint',
       'Only when it becomes certain',
-      'At the minimum possible amount',
+      'At the most likely amount or expected value, subject to constraint',
+      'At the minimum possible amount'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Variable consideration is estimated using expected value or most likely amount. It is constrained so that significant revenue reversal is not probable. Updated each reporting period.',
     reference: 'ASC 606-10-32-11',
   },
@@ -1314,11 +1327,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A contract modification that adds distinct goods at standalone selling price is accounted for as:',
     options: [
       'A cumulative catch-up adjustment',
-      'A separate contract',
       'A termination of the old contract',
-      'Prospectively with the remaining goods combined',
+      'A separate contract',
+      'Prospectively with the remaining goods combined'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'When modification adds distinct goods/services at standalone selling price, treat as a separate contract. If not distinct or not at SSP, modify existing contract (prospectively or cumulative catch-up).',
     reference: 'ASC 606-10-25-12',
   },
@@ -1333,11 +1346,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A company is the principal in a transaction if it:',
     options: [
       'Receives a commission on the sale',
-      'Controls the goods or services before transfer to the customer',
       'Never takes title to the goods',
-      'Has no inventory risk',
+      'Controls the goods or services before transfer to the customer',
+      'Has no inventory risk'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Principal controls goods/services before transfer (recognizes gross revenue). Agent arranges for another party to provide (recognizes net commission). Control indicators: primary responsibility, inventory risk, pricing discretion.',
     reference: 'ASC 606-10-55-36',
   },
@@ -1354,11 +1367,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A change in the estimated useful life of equipment is accounted for:',
     options: [
       'Retrospectively with restatement',
-      'Prospectively from the date of change',
       'As a prior period adjustment',
-      'By restating all prior periods',
+      'Prospectively from the date of change',
+      'By restating all prior periods'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Changes in estimate are handled prospectively - applied to current and future periods. The remaining book value is depreciated over the new remaining useful life. No restatement of prior periods.',
     reference: 'ASC 250-10-45-17',
   },
@@ -1372,12 +1385,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A voluntary change from FIFO to LIFO is generally accounted for:',
     options: [
-      'Prospectively because retrospective application is impracticable',
       'Retrospectively with full restatement',
+      'Prospectively because retrospective application is impracticable',
       'As a cumulative effect adjustment to retained earnings',
-      'As a change in estimate',
+      'As a change in estimate'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Changes to LIFO are typically applied prospectively because determining prior period LIFO layers is impracticable. The opening inventory under FIFO becomes the base LIFO layer.',
     reference: 'ASC 250-10-45-6',
   },
@@ -1413,11 +1426,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A major customer declares bankruptcy after year-end but had significant receivable balance at year-end. This is:',
     options: [
       'Type II - disclose only',
-      'Type I - adjust the financial statements',
       'Not a subsequent event',
-      'Requires reissuance of the financial statements',
+      'Type I - adjust the financial statements',
+      'Requires reissuance of the financial statements'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Type I events provide evidence about conditions existing at the balance sheet date. Customer bankruptcy suggesting collectibility issues at year-end requires adjusting the receivable allowance in the financial statements.',
     reference: 'ASC 855-10-25',
   },
@@ -1431,12 +1444,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'For SEC filers, subsequent events are evaluated through the date that financial statements are:',
     options: [
-      'Prepared',
-      'Approved by management',
       'Issued',
-      'Filed with the SEC',
+      'Approved by management',
+      'Prepared',
+      'Filed with the SEC'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'SEC filers evaluate subsequent events through the issuance date. Non-SEC filers evaluate through the date statements are available to be issued. Both require disclosure of the evaluation date.',
     reference: 'ASC 855-10-25-1A',
   },
@@ -1453,11 +1466,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A loss contingency must be accrued when:',
     options: [
       'A loss is possible and can be estimated',
-      'A loss is probable and can be reasonably estimated',
       'A loss is remote but material',
-      'Any potential loss exists',
+      'A loss is probable and can be reasonably estimated',
+      'Any potential loss exists'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Accrue when (1) probable that a loss has been incurred and (2) amount can be reasonably estimated. Probable means likely to occur. If only possible, disclose. Remote losses generally require no disclosure.',
     reference: 'ASC 450-20-25-2',
   },
@@ -1493,11 +1506,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Level 2 inputs in the fair value hierarchy include:',
     options: [
       'Quoted prices in active markets for identical assets',
-      'Observable inputs other than Level 1 prices',
       'Unobservable inputs based on entity assumptions',
-      'Historical cost information',
+      'Observable inputs other than Level 1 prices',
+      'Historical cost information'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Level 1 = quoted prices for identical assets in active markets. Level 2 = observable inputs (quoted prices for similar assets, interest rates, yield curves). Level 3 = unobservable, entity-specific inputs.',
     reference: 'ASC 820-10-35-37',
   },
@@ -1512,11 +1525,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When measuring fair value, the income approach:',
     options: [
       'Uses comparable market transactions',
-      'Converts future amounts to a single present value',
       'Determines cost to replace the asset',
-      'Uses quoted market prices only',
+      'Converts future amounts to a single present value',
+      'Uses quoted market prices only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Income approach converts future cash flows to present value (DCF). Market approach uses comparable transactions. Cost approach determines current replacement cost. All maximize observable inputs.',
     reference: 'ASC 820-10-35-24',
   },
@@ -1537,11 +1550,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'During periods of rising prices, which inventory method results in the highest net income?',
     options: [
       'LIFO',
-      'FIFO',
-      'Weighted average',
       'Specific identification',
+      'Weighted average',
+      'FIFO'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'FIFO assigns oldest (lower) costs to COGS, leaving newer (higher) costs in ending inventory. This results in lower COGS and higher net income during inflation. LIFO has opposite effect.',
     reference: 'ASC 330 Inventory',
   },
@@ -1555,12 +1568,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under ASC 330, inventory should be written down to net realizable value when:',
     options: [
-      'Market value increases above cost',
       'NRV falls below cost',
+      'Market value increases above cost',
       'Only at year-end',
-      'The inventory is sold',
+      'The inventory is sold'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Inventory is measured at lower of cost or NRV (for non-LIFO). NRV = estimated selling price less completion and disposal costs. Write-down required when NRV < cost. Subsequent recovery allowed.',
     reference: 'ASC 330-10-35',
   },
@@ -1575,11 +1588,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'In dollar-value LIFO, a price index is used to:',
     options: [
       'Calculate FIFO inventory',
-      'Convert current year costs to base year costs to measure real inventory changes',
-      'Determine replacement cost',
       'Calculate lower of cost or market',
+      'Determine replacement cost',
+      'Convert current year costs to base year costs to measure real inventory changes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Dollar-value LIFO uses a price index to convert ending inventory to base year dollars, measuring real quantity changes. Layers are added only when real inventory increases, valued at that year\'s price level.',
     reference: 'ASC 330-10-30',
   },
@@ -1597,10 +1610,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Repairs to correct damage during installation',
       'Training costs for employees to operate the equipment',
-      'Freight and installation costs',
       'Insurance during the first year of use',
+      'Freight and installation costs'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Capitalize all costs necessary to get an asset ready for intended use: purchase price, freight, installation, testing. Training and operating costs are expensed. Damage repairs are unusual, typically expensed.',
     reference: 'ASC 360-10-30',
   },
@@ -1615,11 +1628,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Component depreciation requires:',
     options: [
       'Using the same depreciation method for all assets',
-      'Separately depreciating significant parts with different useful lives',
-      'Immediate expensing of all repairs',
       'Using straight-line method only',
+      'Immediate expensing of all repairs',
+      'Separately depreciating significant parts with different useful lives'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Components with different useful lives (e.g., building structure vs. roof vs. HVAC) should be depreciated separately. This provides more accurate depreciation expense matching asset consumption.',
     reference: 'ASC 360-10-35',
   },
@@ -1633,12 +1646,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under ASC 360, an impairment loss on a long-lived asset is recognized when:',
     options: [
-      'Fair value declines below carrying amount',
       'Carrying amount exceeds undiscounted future cash flows, with loss measured as carrying amount minus fair value',
+      'Fair value declines below carrying amount',
       'Any decline in market value occurs',
-      'The asset is fully depreciated',
+      'The asset is fully depreciated'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Two-step test: (1) Recoverability - compare carrying amount to undiscounted cash flows. If unrecoverable, (2) Measure loss as carrying amount minus fair value. Different from indefinite-lived intangibles.',
     reference: 'ASC 360-10-35-17',
   },
@@ -1655,11 +1668,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under U.S. GAAP, research and development costs are:',
     options: [
       'Capitalized and amortized',
-      'Expensed as incurred',
       'Capitalized until commercial feasibility',
-      'Deferred until revenue is generated',
+      'Expensed as incurred',
+      'Deferred until revenue is generated'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'R&D costs are expensed as incurred under U.S. GAAP (ASC 730). Exception: software development costs after technological feasibility can be capitalized. IFRS allows capitalizing development costs meeting criteria.',
     reference: 'ASC 730-10-25',
   },
@@ -1673,12 +1686,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under ASC 350, goodwill impairment is measured as:',
     options: [
-      'Carrying amount minus undiscounted cash flows',
       'Excess of carrying amount of reporting unit over its fair value, limited to goodwill carrying amount',
+      'Carrying amount minus undiscounted cash flows',
       'Fair value minus original cost',
-      'Book value minus liquidation value',
+      'Book value minus liquidation value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Goodwill impairment = excess of reporting unit carrying amount (including goodwill) over fair value of reporting unit, but limited to goodwill balance. Optional qualitative assessment can precede quantitative test.',
     reference: 'ASC 350-20-35',
   },
@@ -1693,11 +1706,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Customer relationships acquired in a business combination are:',
     options: [
       'Expensed immediately',
-      'Recognized as separate intangible assets and amortized',
-      'Included in goodwill only',
       'Not recognized under U.S. GAAP',
+      'Included in goodwill only',
+      'Recognized as separate intangible assets and amortized'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Customer relationships meeting recognition criteria (separable or contractual-legal) are recognized separately from goodwill at fair value and amortized over estimated useful life.',
     reference: 'ASC 805-20-55',
   },
@@ -1713,12 +1726,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Under U.S. GAAP, interest paid is classified as:',
     options: [
-      'Operating activity',
-      'Investing activity',
       'Financing activity',
-      'Either operating or financing',
+      'Investing activity',
+      'Operating activity',
+      'Either operating or financing'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'U.S. GAAP requires interest paid and received to be classified as operating. IFRS allows choice between operating and financing (paid) or operating and investing (received).',
     reference: 'ASC 230-10-45',
   },
@@ -1733,11 +1746,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When using the indirect method, an increase in accounts receivable is:',
     options: [
       'Added to net income',
-      'Subtracted from net income',
       'Reported as investing activity',
-      'Ignored in operating section',
+      'Subtracted from net income',
+      'Ignored in operating section'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Increase in A/R means revenue > cash received (accrual > cash). Subtract from net income to convert to cash basis. Conversely, decrease in A/R is added back.',
     reference: 'ASC 230-10-45-28',
   },
@@ -1752,11 +1765,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A company issues stock to acquire land. This transaction is:',
     options: [
       'Reported in investing activities',
-      'Reported in financing activities',
       'Disclosed as a non-cash investing and financing activity',
-      'Not reported anywhere',
+      'Reported in financing activities',
+      'Not reported anywhere'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Non-cash transactions (issuing stock for assets, converting debt to equity, acquiring assets through finance lease) are disclosed separately, not in the statement of cash flows itself.',
     reference: 'ASC 230-10-50',
   },
@@ -1773,11 +1786,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A long-term debt is classified as current if:',
     options: [
       'Interest rates increase',
-      'It matures within one year and refinancing is not demonstrated',
-      'The company has a refinancing plan',
       'The debt is secured',
+      'The company has a refinancing plan',
+      'It matures within one year and refinancing is not demonstrated'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Debt due within one year is current unless: refinancing is completed before F/S issuance, or demonstrated ability/intent to refinance exists. Intent alone is insufficient.',
     reference: 'ASC 470-10-45',
   },
@@ -1791,12 +1804,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A company sells products with a 1-year warranty. The warranty obligation is:',
     options: [
-      'Recognized only when claims are paid',
       'Estimated and accrued at time of sale',
+      'Recognized only when claims are paid',
       'Disclosed but not accrued',
-      'Recorded only at year-end',
+      'Recorded only at year-end'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Assurance-type warranties (included in sales price) are accrued at sale based on estimated claims. The liability is adjusted as experience develops. Service-type warranties are revenue contracts.',
     reference: 'ASC 460-10-25',
   },
@@ -1814,10 +1827,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Increasing consolidated inventory',
       'Decreasing the seller\'s cost of goods sold',
-      'Decreasing consolidated cost of goods sold/increasing inventory',
       'Eliminating both inventory and retained earnings',
+      'Decreasing consolidated cost of goods sold/increasing inventory'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Intercompany profit in ending inventory overstates consolidated inventory and understates COGS. Elimination: reduce inventory to cost, reduce COGS (or credit unrealized profit). Opposite in following year.',
     reference: 'ASC 810 Consolidation',
   },
@@ -1871,10 +1884,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Accrued when probable',
       'Accrued when estimable',
-      'Disclosed but not accrued until realized',
       'Never disclosed',
+      'Disclosed but not accrued until realized'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Gain contingencies are not accrued due to conservatism. They may be disclosed but care should be taken to avoid misleading implications about likelihood of realization.',
     reference: 'ASC 450-30-25',
   },
@@ -1907,12 +1920,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'On January 20, after year-end but before issuing F/S, an entity\u0027s warehouse is destroyed by fire. This requires:',
     options: [
-      'Adjustment to year-end F/S',
       'Disclosure only (Type II event)',
+      'Adjustment to year-end F/S',
       'No action needed',
-      'Restatement of prior periods',
+      'Restatement of prior periods'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Type II events arise from conditions occurring after the balance sheet date. The fire occurred after year-end, so it did not exist at 12/31. Disclose but do not adjust the F/S.',
     reference: 'ASC 855-10-55',
   },
@@ -1946,11 +1959,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'When using multiple valuation techniques, an entity should:',
     options: [
       'Always use the highest value',
-      'Always use the lowest value',
       'Use the result most representative of fair value in the circumstances',
-      'Average all results',
+      'Always use the lowest value',
+      'Average all results'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'When multiple techniques yield different results, management evaluates the reasonableness and selects the amount most representative of fair value given the specific facts and circumstances.',
     reference: 'ASC 820-10-35-24',
   },
@@ -2003,11 +2016,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Which cost should NOT be capitalized as part of equipment cost?',
     options: [
       'Freight charges',
-      'Installation costs',
-      'Testing costs before productive use',
       'Repairs after equipment is in use',
+      'Testing costs before productive use',
+      'Installation costs'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Capitalize all costs necessary to bring asset to condition and location for intended use: purchase, freight, installation, testing. Repairs after equipment is operational are period expenses.',
     reference: 'ASC 360-10-30',
   },
@@ -2021,12 +2034,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'An asset retirement obligation (ARO) is initially measured at:',
     options: [
-      'Undiscounted expected future cash flows',
       'Fair value (present value of expected cash flows)',
+      'Undiscounted expected future cash flows',
       'Replacement cost',
-      'Zero until costs are incurred',
+      'Zero until costs are incurred'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'AROs are measured at fair value when incurred, typically the present value of expected future cash flows. The liability is credited and the asset cost is debited. The liability accretes over time.',
     reference: 'ASC 410-20-25',
   },
@@ -2061,10 +2074,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Amortized over 40 years',
       'Amortized over its useful life',
-      'Not amortized but tested for impairment annually',
       'Written off immediately',
+      'Not amortized but tested for impairment annually'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Indefinite-lived intangibles (e.g., certain trademarks) are not amortized. They are tested for impairment at least annually by comparing fair value to carrying amount.',
     reference: 'ASC 350-30-35',
   },
@@ -2079,11 +2092,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A contract modification that adds distinct goods at standalone selling price is accounted for as:',
     options: [
       'A cumulative catch-up adjustment',
-      'A separate contract (prospective)',
-      'Termination of old contract and new contract',
       'Retrospective restatement',
+      'Termination of old contract and new contract',
+      'A separate contract (prospective)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'When a modification adds distinct goods/services at standalone selling price, it is treated as a separate contract accounted for prospectively. Other modifications may require catch-up or termination treatment.',
     reference: 'ASC 606-10-25-12',
   },
@@ -2098,11 +2111,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Revenue from a license that grants a right to access IP (functional IP with significant ongoing activities) is recognized:',
     options: [
       'At the point in time the license is granted',
-      'Over time as the customer benefits',
-      'When cash is received',
       'At contract inception',
+      'When cash is received',
+      'Over time as the customer benefits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Right to access licenses (where licensor undertakes activities significantly affecting IP) are satisfied over time. Right to use licenses (static IP) are point-in-time.',
     reference: 'ASC 606-10-55-58',
   },
@@ -2136,11 +2149,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Contributed services are recognized as revenue when they:',
     options: [
       'Are always recognized',
-      'Create or enhance nonfinancial assets OR require specialized skills and would be purchased if not donated',
-      'Exceed $5,000 in value',
       'Are provided by licensed professionals only',
+      'Exceed $5,000 in value',
+      'Create or enhance nonfinancial assets OR require specialized skills and would be purchased if not donated'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Contributed services are recognized if they (1) create/enhance nonfinancial assets or (2) require specialized skills, are provided by those with the skills, and would typically be purchased if not donated.',
     reference: 'ASC 958-605-25',
   },
@@ -2154,12 +2167,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Which fund balance classification represents amounts constrained by the government itself?',
     options: [
-      'Restricted',
       'Committed',
+      'Restricted',
       'Assigned',
-      'Unassigned',
+      'Unassigned'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Committed fund balance is constrained by the governing body (e.g., city council resolution). Restricted is externally imposed. Assigned is intended use set by management. Unassigned is residual in General Fund.',
     reference: 'GASB 54',
   },
@@ -2173,12 +2186,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Sales taxes collected by merchants for a government are recognized as revenue:',
     options: [
-      'When the sale occurs (underlying transaction)',
-      'When collected by the merchant',
       'When remitted to the government',
-      'At the beginning of the fiscal year',
+      'When collected by the merchant',
+      'When the sale occurs (underlying transaction)',
+      'At the beginning of the fiscal year'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: 'Derived tax revenues (sales, income taxes) are recognized when the underlying exchange transaction occurs, provided the resources are available. This matches revenue to the taxable event.',
     reference: 'GASB 33',
   },
@@ -2213,10 +2226,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'A financing activity',
       'An investing activity',
-      'An operating activity',
       'A noncash transaction disclosed separately',
+      'An operating activity'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation: 'Noncash investing and financing activities (debt converted to equity, assets acquired via capital lease, stock dividends) are disclosed in a separate schedule or notes, not in the cash flow statement.',
     reference: 'ASC 230-10-50',
   },
@@ -2230,12 +2243,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'In a 2-for-1 stock split, total stockholders\u0027 equity:',
     options: [
-      'Doubles',
-      'Is reduced by half',
       'Remains unchanged',
-      'Increases by par value of new shares',
+      'Is reduced by half',
+      'Doubles',
+      'Increases by par value of new shares'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Stock splits do not change total equity. They only change the number of shares and par value per share proportionally. A 2-for-1 split doubles shares and halves par per share.',
     reference: 'ASC 505-20-25',
   },
@@ -2287,12 +2300,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'A change in the useful life of a depreciable asset is accounted for:',
     options: [
-      'Retrospectively with restatement',
       'Prospectively from the date of change',
+      'Retrospectively with restatement',
       'As an error correction',
-      'By immediate write-off',
+      'By immediate write-off'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Changes in estimates (useful life, salvage value, bad debt percentages) are accounted for prospectively. Adjust depreciation for current and future periods; no restatement of prior periods.',
     reference: 'ASC 250-10-45',
   },
@@ -2327,10 +2340,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Fair value with changes in OCI',
       'Fair value with changes in net income',
-      'Amortized cost',
       'Lower of cost or market',
+      'Amortized cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'HTM securities are reported at amortized cost because the intent is to hold to maturity. Premium/discount is amortized using effective interest method. Must have intent and ability to hold.',
     reference: 'ASC 320-10-25',
   },
@@ -2345,11 +2358,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under the equity method, when the investee reports net income, the investor:',
     options: [
       'Records dividend income',
-      'Debits Investment and credits Equity in Investee Income',
       'Credits the Investment account',
-      'Records no entry until dividends received',
+      'Debits Investment and credits Equity in Investee Income',
+      'Records no entry until dividends received'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Equity method: investor records share of investee income (Dr. Investment, Cr. Equity Income). Dividends reduce investment (Dr. Cash, Cr. Investment). This reflects one-line consolidation concept.',
     reference: 'ASC 323-10-35',
   },
@@ -2364,11 +2377,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'An entity that elects the fair value option for a financial instrument:',
     options: [
       'Must apply it to all similar instruments',
-      'Reports changes in fair value in net income',
-      'Cannot change the election',
       'Both B and C are correct',
+      'Cannot change the election',
+      'Reports changes in fair value in net income'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Fair value option election is irrevocable and made instrument-by-instrument. Changes in FV go to net income. Simplifies hedge accounting in some cases but increases income volatility.',
     reference: 'ASC 825-10-25',
   },
@@ -2382,12 +2395,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'In a cash flow hedge, the effective portion of the gain or loss on the derivative is reported in:',
     options: [
-      'Net income immediately',
       'Other comprehensive income until the hedged transaction affects earnings',
+      'Net income immediately',
       'Retained earnings directly',
-      'A liability account',
+      'A liability account'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Cash flow hedge: effective portion in OCI, reclassified to earnings when hedged transaction affects earnings. Ineffective portion goes directly to earnings. Must document and test effectiveness.',
     reference: 'ASC 815-30-35',
   },
@@ -2420,12 +2433,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'A large accelerated filer must file Form 10-K within:',
     options: [
-      '60 days after fiscal year end',
+      '120 days after fiscal year end',
       '75 days after fiscal year end',
       '90 days after fiscal year end',
-      '120 days after fiscal year end',
+      '60 days after fiscal year end'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: 'Large accelerated filers (market cap ≥$700M): 10-K in 60 days. Accelerated filers ($75M-$700M): 75 days. Non-accelerated: 90 days. SRCs: 90 days.',
     reference: 'SEC Regulation S-X',
   },
@@ -2440,11 +2453,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Form 8-K must be filed within how many business days of a triggering event?',
     options: [
       '2 business days',
-      '4 business days',
-      '10 business days',
       '30 business days',
+      '10 business days',
+      '4 business days'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Form 8-K reports material events (acquisitions, dispositions, changes in control, auditor changes, etc.) within 4 business days. Some items have different deadlines or are filed voluntarily.',
     reference: 'SEC Form 8-K Instructions',
   },
@@ -2478,11 +2491,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A company must consolidate a VIE if it is the primary beneficiary, which means it has:',
     options: [
       'Majority voting rights',
-      'Power to direct significant activities AND obligation to absorb losses or right to receive benefits',
       'Any investment in the entity',
-      'A contractual relationship only',
+      'Power to direct significant activities AND obligation to absorb losses or right to receive benefits',
+      'A contractual relationship only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Primary beneficiary has (1) power to direct activities most significantly impacting VIE\'s economic performance, AND (2) obligation to absorb losses or right to receive benefits that could be significant. Both required.',
     reference: 'ASC 810-10-25',
   },
@@ -2498,10 +2511,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Increases',
       'Decreases',
-      'Remains unchanged',
       'Is revalued to fair value',
+      'Remains unchanged'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Purchase of existing interest is transaction between partners (old and new). Partnership records only reclassification of capital accounts. Total capital unchanged. Payment goes to selling partner, not partnership.',
     reference: 'Partnership Accounting Principles',
   },
@@ -2515,12 +2528,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'In partnership liquidation, the order of payment is:',
     options: [
-      'Partners\' capital, then outside creditors',
       'Outside creditors, partners\' loans, partners\' capital',
+      'Partners\' capital, then outside creditors',
       'Pro rata to all parties',
-      'Partners\' loans first, then creditors',
+      'Partners\' loans first, then creditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Liquidation priority: (1) outside creditors, (2) partners\' loans (treated as capital in some cases), (3) partners\' capital balances. Partners bear losses per profit/loss ratio.',
     reference: 'UPA Partnership Liquidation',
   },
@@ -2536,10 +2549,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Notes only',
       'Statement of activities only',
-      'Statement of functional expenses or notes',
       'No such requirement exists',
+      'Statement of functional expenses or notes'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'NFPs must present expenses by function (program, management/general, fundraising) and nature (salaries, rent, etc.). Can be in a separate statement or matrix format, or in the notes.',
     reference: 'ASC 958-720-45',
   },
@@ -2554,11 +2567,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'NFPs must disclose information about:',
     options: [
       'Only restricted assets',
-      'Liquidity and availability of resources to meet cash needs for one year',
-      'Future fundraising plans',
       'Donor names and amounts',
+      'Future fundraising plans',
+      'Liquidity and availability of resources to meet cash needs for one year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'ASU 2016-14 requires NFPs to disclose qualitative and quantitative information about liquidity and availability of resources to meet operating needs for one year from balance sheet date.',
     reference: 'ASC 958-210-50',
   },
@@ -2572,12 +2585,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'In governmental budgetary accounting, Encumbrances represent:',
     options: [
-      'Actual expenditures',
       'Commitments for future expenditures (purchase orders)',
+      'Actual expenditures',
       'Revenue estimates',
-      'Fund balance reserves',
+      'Fund balance reserves'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Encumbrances record commitments for goods/services ordered but not yet received. Helps track budget availability. Reversed when goods received and actual expenditure recorded.',
     reference: 'GASB Budgetary Accounting',
   },
@@ -2591,12 +2604,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'In government-wide financial statements, capital assets are:',
     options: [
-      'Not reported',
       'Reported at historical cost less accumulated depreciation',
+      'Not reported',
       'Reported at fair value',
-      'Expensed when purchased',
+      'Expensed when purchased'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Government-wide statements (full accrual) report capital assets at historical cost less depreciation (except infrastructure using modified approach and certain heritage assets). Fund statements may differ.',
     reference: 'GASB 34',
   },
@@ -2611,11 +2624,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The quick ratio excludes which current asset?',
     options: [
       'Cash',
-      'Marketable securities',
       'Inventory',
-      'Accounts receivable',
+      'Marketable securities',
+      'Accounts receivable'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Quick (acid-test) ratio = (Cash + Marketable securities + Receivables) / Current liabilities. Excludes inventory as less liquid. More conservative than current ratio.',
     reference: 'Financial Analysis',
   },
@@ -2649,11 +2662,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The debt-to-equity ratio measures:',
     options: [
       'Short-term liquidity',
-      'The proportion of financing from creditors versus owners',
-      'Operating efficiency',
       'Profitability',
+      'Operating efficiency',
+      'The proportion of financing from creditors versus owners'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Debt-to-equity = Total debt / Total equity. Higher ratio means more financial leverage/risk. Creditors prefer lower ratios. Compare to industry norms.',
     reference: 'Financial Analysis',
   },
@@ -2725,11 +2738,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A component qualifies as discontinued operations when it:',
     options: [
       'Is sold at a loss',
-      'Represents a strategic shift that has or will have major effect on operations/financial results',
-      'Is any separately identifiable segment',
       'Has been held for more than one year',
+      'Is any separately identifiable segment',
+      'Represents a strategic shift that has or will have major effect on operations/financial results'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Discontinued operations: disposal (or held for sale) of component representing strategic shift with major effect. Examples: major line of business, geographical area, or equity method investment meeting criteria.',
     reference: 'ASC 205-20-45',
   },
@@ -2745,10 +2758,10 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Unrealized gains on available-for-sale debt securities',
       'Foreign currency translation adjustments',
-      'Unrealized gains on trading securities',
       'Pension prior service cost adjustments',
+      'Unrealized gains on trading securities'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Trading securities gains/losses go to net income, not OCI. OCI includes: AFS debt securities unrealized gains/losses, hedging derivatives, pension adjustments, and foreign currency translation.',
     reference: 'ASC 220-10-45',
   },
@@ -2762,12 +2775,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Costs incurred during the application development stage of internal-use software are:',
     options: [
-      'Expensed as incurred',
       'Capitalized',
+      'Expensed as incurred',
       'Recorded as a liability',
-      'Deferred indefinitely',
+      'Deferred indefinitely'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Internal-use software: Preliminary stage costs expensed. Application development stage costs capitalized (coding, testing, installation). Post-implementation/operation stage costs generally expensed.',
     reference: 'ASC 350-40-25',
   },
@@ -2781,11 +2794,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'For software to be sold, capitalization begins when:',
     options: [
       'The project is approved',
-      'Technological feasibility is established',
       'First sale occurs',
-      'Development begins',
+      'Technological feasibility is established',
+      'Development begins'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Software to be sold: costs before technological feasibility are R&D (expensed). After technological feasibility, capitalize until available for release. Amortize greater of straight-line or revenue ratio.',
     reference: 'ASC 985-20-25',
     blueprintArea: 'FAR-I',
@@ -2800,12 +2813,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under dollar-value LIFO, layers are expressed in:',
     options: [
-      'Current year dollars',
       'Base year dollars and converted using price indices',
+      'Current year dollars',
       'Average cost',
-      'Specific identification',
+      'Specific identification'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Dollar-value LIFO: ending inventory at current prices, convert to base-year dollars using price index, compare to prior base-year amount, apply LIFO to base-year layers, convert back to acquisition cost.',
     reference: 'ASC 330-10',
     blueprintArea: 'FAR-I',
@@ -2841,11 +2854,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under composite depreciation, when an asset is retired:',
     options: [
       'A gain or loss is recognized',
-      'No gain or loss is recognized; the difference is charged to accumulated depreciation',
-      'A gain is always recognized',
       'A loss is always recognized',
+      'A gain is always recognized',
+      'No gain or loss is recognized; the difference is charged to accumulated depreciation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Composite depreciation: group assets together, use weighted-average life. On retirement, remove cost, credit cash/proceeds, plug accumulated depreciation. No gain/loss (absorbed in accumulated depreciation).',
     reference: 'ASC 360-10-35',
     blueprintArea: 'FAR-I',
@@ -2861,11 +2874,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'An exchange of assets has commercial substance if:',
     options: [
       'The assets are similar',
-      'The cash flow characteristics (timing, risk, amount) of the asset received differ significantly from the asset given up',
-      'No cash is exchanged',
       'Both parties are related',
+      'No cash is exchanged',
+      'The cash flow characteristics (timing, risk, amount) of the asset received differ significantly from the asset given up'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Commercial substance: configuration of cash flows (risk, timing, amount) changes significantly. If commercial substance, recognize full gain/loss. Without commercial substance, defer gain unless boot received.',
     reference: 'ASC 845-10-30',
     blueprintArea: 'FAR-I',
@@ -2880,12 +2893,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'An asset retirement obligation (ARO) is initially measured at:',
     options: [
-      'Undiscounted expected cash flows',
       'Fair value (present value of expected cash flows)',
+      'Undiscounted expected cash flows',
       'Historical cost of removal',
-      'Zero',
+      'Zero'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ARO initially at fair value (PV of expected cash flows). Debit asset retirement cost (capitalize as part of asset), credit ARO liability. Subsequently: accrete liability, depreciate asset cost.',
     reference: 'ASC 410-20-25',
     blueprintArea: 'FAR-I',
@@ -2920,12 +2933,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'When treasury stock is formally retired, the excess of cost over par value is charged to:',
     options: [
-      'Retained earnings only',
       'Additional paid-in capital from original issuance, then retained earnings',
+      'Retained earnings only',
       'Treasury stock account',
-      'Common stock account',
+      'Common stock account'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Retire treasury stock: remove common stock at par, charge APIC from original issuance first, excess to retained earnings. Credit treasury stock. If below original issuance price, credit APIC.',
     reference: 'ASC 505-30-30',
     blueprintArea: 'FAR-I',
@@ -3001,11 +3014,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'For a sale and leaseback transaction to qualify as a sale under ASC 842:',
     options: [
       'Any lease terms are acceptable',
-      'The transaction must meet the control transfer requirements of ASC 606',
-      'The leaseback must be a finance lease',
       'No repurchase options are needed',
+      'The leaseback must be a finance lease',
+      'The transaction must meet the control transfer requirements of ASC 606'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Sale-leaseback: must meet ASC 606 sale criteria (control transferred). If not a sale (repurchase option, etc.), account as financing. If sale, derecognize asset, recognize lease, adjust gain/loss for off-market terms.',
     reference: 'ASC 842-40-25',
     blueprintArea: 'FAR-II',
@@ -3021,11 +3034,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A lease modification that grants an additional right-of-use not in the original lease is accounted for as:',
     options: [
       'Always a separate new lease',
-      'A separate lease if the additional right is priced commensurate with its standalone price',
       'An adjustment to the original lease',
-      'A termination of the old lease',
+      'A separate lease if the additional right is priced commensurate with its standalone price',
+      'A termination of the old lease'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Modification = separate lease if: grants additional right-of-use AND consideration increases commensurate with standalone price. Otherwise, remeasure lease liability with revised discount rate, adjust ROU asset.',
     reference: 'ASC 842-10-25',
     blueprintArea: 'FAR-II',
@@ -3041,11 +3054,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'The primary beneficiary of a VIE is the entity that has:',
     options: [
       'The largest equity investment',
-      'Power to direct activities that most significantly impact economic performance AND obligation to absorb losses or right to receive benefits',
-      'Voting control',
       'The longest relationship with the VIE',
+      'Voting control',
+      'Power to direct activities that most significantly impact economic performance AND obligation to absorb losses or right to receive benefits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Primary beneficiary has both: (1) power to direct activities most significantly impacting VIE\'s economic performance, AND (2) obligation to absorb losses or right to receive benefits that could be significant.',
     reference: 'ASC 810-10-25',
     blueprintArea: 'FAR-II',
@@ -3061,11 +3074,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Push-down accounting:',
     options: [
       'Is always required',
-      'Allows (or requires) the acquired entity to reflect the acquirer\'s basis in its separate financial statements',
       'Is prohibited under GAAP',
-      'Only applies to public companies',
+      'Allows (or requires) the acquired entity to reflect the acquirer\'s basis in its separate financial statements',
+      'Only applies to public companies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Push-down: acquired entity\'s separate statements reflect acquirer\'s cost basis (new basis accounting). Elective when change-in-control event occurs. Establishes new accounting and reporting basis.',
     reference: 'ASC 805-50',
     blueprintArea: 'FAR-II',
@@ -3101,11 +3114,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A governmental fund is reported as a major fund if it meets:',
     options: [
       'Any size threshold',
-      '10% of the fund category AND 5% of governmental and enterprise funds combined',
-      'Only the 10% test',
       'Only the 5% test',
+      'Only the 10% test',
+      '10% of the fund category AND 5% of governmental and enterprise funds combined'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Major fund: (1) 10% of total governmental or enterprise fund assets, liabilities, revenues, or expenditures, AND (2) 5% of total governmental plus enterprise funds for same element. General fund always major.',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
@@ -3120,12 +3133,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Under GASB 75, the total OPEB liability is measured as:',
     options: [
-      'Cash payments expected',
       'Present value of projected benefit payments attributed to past service',
+      'Cash payments expected',
       'Annual premium cost',
-      'Accumulated contributions',
+      'Accumulated contributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Total OPEB liability: PV of projected benefits attributed to past periods of service using entry-age normal cost method. Similar to GASB 68 pension standards. Report net OPEB liability on statement of net position.',
     reference: 'GASB 75',
     blueprintArea: 'FAR-IV',
@@ -3141,11 +3154,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under ASU 2020-07, contributed nonfinancial assets must be:',
     options: [
       'Combined with cash contributions',
-      'Presented as a separate line item with enhanced disclosures about valuation',
-      'Excluded from the statement of activities',
       'Reported at cost only',
+      'Excluded from the statement of activities',
+      'Presented as a separate line item with enhanced disclosures about valuation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'ASU 2020-07: present contributed nonfinancial assets (gifts-in-kind) as separate line in statement of activities. Disclose: valuation techniques, donor restrictions, utilization policies.',
     reference: 'ASU 2020-07',
     blueprintArea: 'FAR-III',
@@ -3161,11 +3174,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A charitable lead trust held by a nonprofit is measured at:',
     options: [
       'Face value of assets',
-      'Present value of expected future cash flows',
-      'Historical cost',
       'Zero until received',
+      'Historical cost',
+      'Present value of expected future cash flows'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Split-interest agreements: nonprofit records assets at FV, liability to beneficiaries at PV of expected payments. Contribution revenue = difference. Remeasure annually; changes in PV affect contribution or liability.',
     reference: 'ASC 958-30',
     blueprintArea: 'FAR-III',
@@ -3181,11 +3194,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under ASC 740-10, a tax position is recognized only if it is:',
     options: [
       'Probable of being sustained',
-      'More likely than not to be sustained upon examination based on technical merits',
       'Certain to be sustained',
-      'Approved by the IRS',
+      'More likely than not to be sustained upon examination based on technical merits',
+      'Approved by the IRS'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Two-step process: (1) Recognition - more likely than not (>50%) to be sustained. (2) Measurement - largest amount >50% likely to be realized. Disclose unrecognized tax benefits in notes.',
     reference: 'ASC 740-10-25',
     blueprintArea: 'FAR-II',
@@ -3200,12 +3213,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Intraperiod tax allocation requires allocating income tax expense to:',
     options: [
-      'Only continuing operations',
       'Continuing operations, discontinued operations, OCI, and other items',
+      'Only continuing operations',
       'Only the income statement',
-      'Future periods',
+      'Future periods'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Intraperiod allocation: allocate total tax to continuing operations, discontinued operations, OCI, prior period adjustments, capital transactions. Each item reported net of its tax effect.',
     reference: 'ASC 740-20',
     blueprintArea: 'FAR-II',
@@ -3221,11 +3234,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'In a bargain purchase (negative goodwill), the acquirer:',
     options: [
       'Records goodwill as an asset',
-      'Reassesses identifiable assets and liabilities, then recognizes gain in earnings',
-      'Amortizes the excess over 40 years',
       'Records a liability',
+      'Amortizes the excess over 40 years',
+      'Reassesses identifiable assets and liabilities, then recognizes gain in earnings'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Bargain purchase: FV of net assets > consideration. First reassess all assets/liabilities for completeness and measurement. If bargain remains, recognize gain in earnings immediately.',
     reference: 'ASC 805-30-25',
     blueprintArea: 'FAR-II',
@@ -3241,11 +3254,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Contingent consideration in a business combination is initially measured at:',
     options: [
       'Zero',
-      'Fair value at acquisition date',
       'Maximum possible amount',
-      'Minimum possible amount',
+      'Fair value at acquisition date',
+      'Minimum possible amount'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Contingent consideration: include at FV as part of acquisition cost. Subsequently: if classified as liability, remeasure at FV with changes in earnings. If classified as equity, no remeasurement.',
     reference: 'ASC 805-30-25',
     blueprintArea: 'FAR-II',
@@ -3261,11 +3274,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under the direct method, cash paid for operating expenses equals:',
     options: [
       'Operating expenses reported on income statement',
-      'Operating expenses +/- changes in prepaid expenses and accrued liabilities',
-      'Net income times a conversion factor',
       'Total expenses minus depreciation',
+      'Net income times a conversion factor',
+      'Operating expenses +/- changes in prepaid expenses and accrued liabilities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Direct method: adjust accrual expenses to cash. Increase in prepaid = more cash paid. Increase in accrued liability = less cash paid. Remove non-cash items (depreciation, amortization).',
     reference: 'ASC 230-10-45',
     blueprintArea: 'FAR-II',
@@ -3281,11 +3294,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Significant noncash investing and financing activities are:',
     options: [
       'Included in operating activities',
-      'Disclosed in a separate schedule or narrative, not in the statement of cash flows',
-      'Ignored completely',
       'Shown as financing activities',
+      'Ignored completely',
+      'Disclosed in a separate schedule or narrative, not in the statement of cash flows'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Noncash transactions (debt conversion to equity, assets acquired via capital lease, stock dividends): disclose separately. Do not include in cash flow statement. Required supplemental disclosure.',
     reference: 'ASC 230-10-50',
     blueprintArea: 'FAR-II',
@@ -3322,11 +3335,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Consignment inventory is recorded as inventory by:',
     options: [
       'The consignee (entity holding the goods)',
-      'The consignor (entity that owns the goods)',
       'Both parties equally',
-      'Neither party until sale to customer',
+      'The consignor (entity that owns the goods)',
+      'Neither party until sale to customer'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Consignor retains ownership until sale to ultimate customer. Consignor records as inventory (cost + shipping). Consignee has no inventory or liability. Revenue recognized when consignee sells to customer.',
     reference: 'ASC 606-10-55',
     blueprintArea: 'FAR-I',
@@ -3341,12 +3354,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Interest can be capitalized on assets that are:',
     options: [
-      'All assets',
       'Assets constructed for own use, assets produced for sale requiring substantial period for completion',
+      'All assets',
       'Only inventory',
-      'Only land',
+      'Only land'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Capitalize interest during acquisition/construction period for: assets built for own use, discrete projects for sale/lease. Not for inventory routinely produced. Cap = lesser of actual or avoidable interest.',
     reference: 'ASC 835-20',
     blueprintArea: 'FAR-I',
@@ -3361,12 +3374,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'When a building is destroyed by fire and insurance proceeds exceed book value:',
     options: [
-      'A gain is recognized',
       'A loss is recognized',
+      'A gain is recognized',
       'No gain or loss, apply proceeds to new asset',
-      'Gain deferred indefinitely',
+      'Gain deferred indefinitely'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Involuntary conversion: recognize gain/loss immediately = insurance proceeds minus carrying value. GAAP requires immediate recognition. Tax treatment differs (potential deferral under IRC 1033).',
     reference: 'ASC 610-30',
     blueprintArea: 'FAR-I',
@@ -3382,11 +3395,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Costs incurred in the application development stage of internal-use software are:',
     options: [
       'Always expensed',
-      'Capitalized if specific criteria are met',
-      'Capitalized only if directly related to marketing',
       'Deferred until software is sold',
+      'Capitalized only if directly related to marketing',
+      'Capitalized if specific criteria are met'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Internal-use software: expense preliminary stage costs. Capitalize application development costs (coding, testing, installation). Expense post-implementation costs (training, maintenance). Amortize over useful life.',
     reference: 'ASC 350-40',
     blueprintArea: 'FAR-I',
@@ -3402,11 +3415,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'In a business combination, customer relationships are recognized as:',
     options: [
       'Part of goodwill only',
-      'A separate intangible asset if identifiable',
-      'Expensed immediately',
       'Never recognized',
+      'Expensed immediately',
+      'A separate intangible asset if identifiable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Customer relationships acquired in business combination: recognize separately from goodwill if identifiable (arise from contractual rights or separable). Finite life, amortize. Test for impairment.',
     reference: 'ASC 805-20-25',
     blueprintArea: 'FAR-III',
@@ -3422,11 +3435,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Variable consideration is constrained to the extent that:',
     options: [
       'It exceeds the transaction price',
-      'It is probable a significant reversal will NOT occur when uncertainty is resolved',
-      'Customer payment is uncertain',
       'The contract is not in writing',
+      'Customer payment is uncertain',
+      'It is probable a significant reversal will NOT occur when uncertainty is resolved'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Variable consideration constraint: include in transaction price only to extent that significant revenue reversal is not probable. Consider likelihood and magnitude. Update each period.',
     reference: 'ASC 606-10-32',
     blueprintArea: 'FAR-II',
@@ -3461,12 +3474,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Variable lease payments based on an index or rate are:',
     options: [
-      'Never included in lease liability',
       'Included in lease liability based on index/rate at commencement',
+      'Never included in lease liability',
       'Expensed as incurred',
-      'Treated as contingent rent',
+      'Treated as contingent rent'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Variable payments based on index/rate: include in lease liability using rate at commencement. Remeasure only when lease liability is remeasured. Variable payments based on usage/performance: expense as incurred.',
     reference: 'ASC 842-10-30',
     blueprintArea: 'FAR-II',
@@ -3481,12 +3494,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Lease incentives received from the lessor are:',
     options: [
-      'Recognized as income immediately',
       'Reduce the right-of-use asset',
+      'Recognized as income immediately',
       'Increase the lease liability',
-      'Deferred and amortized over lease term',
+      'Deferred and amortized over lease term'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Lease incentives (tenant improvement allowances, rent holidays): reduce ROU asset. Include in measurement of lease liability if not yet received. Effect: lower depreciation expense over lease term.',
     reference: 'ASC 842-10-30',
     blueprintArea: 'FAR-II',
@@ -3502,11 +3515,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Under the if-converted method for convertible debt EPS:',
     options: [
       'Interest expense is added back to net income',
-      'Interest expense (net of tax) is added back to net income, shares assumed converted from beginning',
-      'No adjustment to numerator',
       'Convert at market price',
+      'No adjustment to numerator',
+      'Interest expense (net of tax) is added back to net income, shares assumed converted from beginning'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'If-converted method: add back interest expense (net of tax) to numerator. Add shares that would be issued upon conversion to denominator. Use if dilutive. Reflects conversion as if occurred at beginning.',
     reference: 'ASC 260-10-45',
     blueprintArea: 'FAR-II',
@@ -3522,11 +3535,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Compensation expense for restricted stock units (RSUs) is:',
     options: [
       'Recognized only when shares vest',
-      'Recognized over the requisite service period based on grant-date fair value',
-      'Based on market price at vesting',
       'Never recognized until settlement',
+      'Based on market price at vesting',
+      'Recognized over the requisite service period based on grant-date fair value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'RSUs: measure at grant-date fair value (stock price for non-market conditions). Recognize expense over requisite service period (usually vesting period). Credit to APIC. Similar to restricted stock.',
     reference: 'ASC 718-10-35',
     blueprintArea: 'FAR-II',
@@ -3541,12 +3554,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'When an ESOP borrows to purchase shares, the employer:',
     options: [
-      'Records no entry',
       'Records the debt and a contra-equity account for unearned ESOP shares',
+      'Records no entry',
       'Records the shares as treasury stock',
-      'Expenses the entire purchase immediately',
+      'Expenses the entire purchase immediately'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'ESOP: employer guarantees debt, records liability. Contra-equity (unearned ESOP shares) = deferred compensation. As shares allocated to employees, release from suspense, recognize compensation expense.',
     reference: 'ASC 718-40',
     blueprintArea: 'FAR-II',
@@ -3581,12 +3594,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'When a subsidiary acquires the parent bonds on the open market:',
     options: [
-      'No consolidation entry needed',
       'Eliminate intercompany investment and liability, recognize constructive gain/loss',
+      'No consolidation entry needed',
       'Simply offset assets and liabilities',
-      'Record as investment income',
+      'Record as investment income'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Intercompany bond acquisition: constructive retirement. Eliminate investment and liability. Difference = constructive gain/loss (reported in consolidation). Attribute to purchaser entity (subsidiary here).',
     reference: 'ASC 810-10-45',
     blueprintArea: 'FAR-III',
@@ -3601,12 +3614,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Governmental funds use which measurement focus?',
     options: [
-      'Economic resources',
       'Current financial resources',
+      'Economic resources',
       'Cash basis',
-      'Accrual basis',
+      'Accrual basis'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Governmental funds: current financial resources focus. Measure current assets, liabilities, fund balance. Capital assets and long-term debt reported at government-wide level. Proprietary funds use economic resources focus.',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
@@ -3642,11 +3655,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'Infrastructure assets of a government are reported in:',
     options: [
       'Governmental fund statements',
-      'Government-wide statements only',
-      'Notes to financial statements only',
       'A separate infrastructure report',
+      'Notes to financial statements only',
+      'Government-wide statements only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Infrastructure (roads, bridges, water systems): report in government-wide statement of net position. Depreciate unless using modified approach. Not reported in governmental fund statements (different measurement focus).',
     reference: 'GASB 34',
     blueprintArea: 'FAR-IV',
@@ -3662,11 +3675,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A conditional promise to give is recognized as contribution revenue when:',
     options: [
       'The promise is made',
-      'Conditions are substantially met or explicitly waived',
-      'Cash is received',
       'The donor dies',
+      'Cash is received',
+      'Conditions are substantially met or explicitly waived'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Conditional promise: recognize when barrier overcome (conditions met) and right of return/release lapses. Before met: no receivable or revenue. Unconditional: recognize when promised based on fair value.',
     reference: 'ASC 958-605',
     blueprintArea: 'FAR-IV',
@@ -3682,11 +3695,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'An art museum that does not recognize or capitalize its collection must:',
     options: [
       'Still report collection items on the statement of financial position',
-      'Disclose its capitalization policy and describe the collection in notes',
-      'Impute a value based on replacement cost',
       'Record as expense when acquired',
+      'Impute a value based on replacement cost',
+      'Disclose its capitalization policy and describe the collection in notes'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Collections (art, historical treasures): may capitalize, not capitalize, or capitalize prospectively. If not capitalized, must disclose policy, describe collection, and present separately in statement of activities.',
     reference: 'ASC 958-360',
     blueprintArea: 'FAR-IV',
@@ -3722,11 +3735,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'A tax credit differs from a tax deduction because a credit:',
     options: [
       'Reduces taxable income',
-      'Directly reduces tax liability dollar-for-dollar',
       'Is always refundable',
-      'Only applies to corporations',
+      'Directly reduces tax liability dollar-for-dollar',
+      'Only applies to corporations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Deduction: reduces taxable income (benefit = marginal rate x deduction). Credit: reduces tax liability directly (dollar-for-dollar). Credits more valuable. May be nonrefundable (limited to tax liability) or refundable.',
     reference: 'ASC 740-10',
     blueprintArea: 'FAR-II',
@@ -3741,12 +3754,12 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'Prior service cost from a plan amendment is recognized in:',
     options: [
-      'Net income immediately',
       'Other comprehensive income, then amortized over future service period',
+      'Net income immediately',
       'Retained earnings directly',
-      'A regulatory asset',
+      'A regulatory asset'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Prior service cost: debit OCI (loss), credit PBO. Amortize to pension expense over remaining service period of active participants (or life expectancy if most inactive). Straight-line method common.',
     reference: 'ASC 715-30-35',
     blueprintArea: 'FAR-II',
@@ -3762,11 +3775,11 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
     question: 'In pension accounting, the difference between expected and actual return on plan assets is:',
     options: [
       'Recognized immediately in income',
-      'Recorded in OCI and amortized using corridor approach',
       'Ignored',
-      'Always expensed',
+      'Recorded in OCI and amortized using corridor approach',
+      'Always expensed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Asset gain/loss: actual return minus expected return. Record in OCI. If cumulative gains/losses in AOCI exceed corridor (10% of greater of PBO or plan assets), amortize excess over average remaining service.',
     reference: 'ASC 715-30-35',
     blueprintArea: 'FAR-II',

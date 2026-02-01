@@ -25,8 +25,8 @@ interface Step {
 
 const STEPS: Step[] = [
   { id: 'welcome', title: 'Welcome' },
-  { id: 'section', title: 'Choose Section' },
   { id: 'exam-date', title: 'Exam Date' },
+  { id: 'section', title: 'Choose Section' },
   { id: 'daily-goal', title: 'Daily Goal' },
   { id: 'complete', title: 'All Set!' },
 ];
@@ -42,12 +42,12 @@ interface CPASection {
 interface SectionStepProps {
   selected: string;
   onSelect: (id: string) => void;
+  examDate: string;
 }
 
 interface ExamDateStepProps {
   value: string;
   onChange: (val: string) => void;
-  section: string;
 }
 
 interface DailyGoalStepProps {
@@ -79,12 +79,12 @@ const WelcomeStep: React.FC = () => (
       <h3 className="font-semibold text-primary-900 mb-2">What we'll cover:</h3>
       <ul className="space-y-2 text-sm text-primary-700">
         <li className="flex items-center gap-2">
-          <BookOpen className="w-4 h-4" />
-          Which exam section you're preparing for
-        </li>
-        <li className="flex items-center gap-2">
           <Calendar className="w-4 h-4" />
           Your target exam date
+        </li>
+        <li className="flex items-center gap-2">
+          <BookOpen className="w-4 h-4" />
+          Which exam section you're preparing for
         </li>
         <li className="flex items-center gap-2">
           <Target className="w-4 h-4" />
@@ -95,7 +95,20 @@ const WelcomeStep: React.FC = () => (
   </div>
 );
 
-const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect }) => (
+const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate }) => {
+  // Determine which blueprint applies based on exam date
+  const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+  const examDateObj = examDate ? new Date(examDate) : new Date();
+  const is2025Blueprint = examDateObj < BLUEPRINT_CUTOFF;
+  
+  // Filter sections based on blueprint
+  // 2025: AUD, FAR, REG + BEC
+  // 2026: AUD, FAR, REG + BAR, ISC, TCP
+  const availableSections = is2025Blueprint
+    ? ['AUD', 'FAR', 'REG', 'BEC']
+    : EXAM_SECTIONS;
+
+  return (
   <div>
     <div className="text-center mb-6">
       <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -105,9 +118,21 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect }) => (
       <p className="text-slate-600 mt-2">Which CPA exam section are you studying for?</p>
     </div>
 
+    {/* Blueprint indicator */}
+    <div className={clsx(
+      'mb-4 px-4 py-2 rounded-lg text-sm text-center',
+      is2025Blueprint ? 'bg-amber-50 text-amber-800' : 'bg-blue-50 text-blue-800'
+    )}>
+      {is2025Blueprint ? (
+        <>📋 <strong>2025 Blueprint</strong> (exam before July 1, 2026)</>
+      ) : (
+        <>📋 <strong>2026 Blueprint</strong> (exam on/after July 1, 2026)</>
+      )}
+    </div>
+
     <div className="space-y-3">
       {Object.entries(CPA_SECTIONS)
-        .filter(([key]) => EXAM_SECTIONS.includes(key))
+        .filter(([key]) => availableSections.includes(key))
         .map(([key, section]) => (
         <button
           key={key}
@@ -135,15 +160,27 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect }) => (
         </button>
       ))}
     </div>
-  </div>
-);
 
-const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, section }) => {
-  const sectionInfo = section ? CPA_SECTIONS[section as keyof typeof CPA_SECTIONS] as CPASection : null;
+    {/* Note about changing sections */}
+    <div className="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-3">
+      <p className="text-xs text-slate-600 text-center">
+        📝 Studying for multiple sections? You can switch your active section anytime in <strong>Settings</strong>.
+      </p>
+    </div>
+  </div>
+  );
+};
+
+const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
   const today = new Date().toISOString().split('T')[0];
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
   const maxDateStr = maxDate.toISOString().split('T')[0];
+  
+  // Determine blueprint based on selected date
+  const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+  const selectedDate = value ? new Date(value) : null;
+  const is2025Blueprint = selectedDate && selectedDate < BLUEPRINT_CUTOFF;
 
   return (
     <div>
@@ -152,25 +189,15 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, section })
           <Calendar className="w-6 h-6 text-primary-600" />
         </div>
         <h2 className="text-xl font-bold text-slate-900">When's Your Exam?</h2>
-        <p className="text-slate-600 mt-2">We'll create a study plan based on your timeline</p>
+        <p className="text-slate-600 mt-2">This determines which exam sections are available to you</p>
       </div>
 
-      {sectionInfo && (
-        <div className="bg-slate-50 rounded-xl p-4 mb-6">
-          <div className="flex items-center gap-3">
-            <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-              style={{ backgroundColor: sectionInfo.color }}
-            >
-              {sectionInfo.shortName}
-            </div>
-            <div>
-              <div className="font-medium text-slate-900">{sectionInfo.name}</div>
-              <div className="text-sm text-slate-500">{sectionInfo.shortName} Section</div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Why we're asking */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+        <p className="text-sm text-blue-800">
+          <strong>Why does this matter?</strong> The CPA exam changes on July 1, 2026. Before that date, you can take <strong>BEC</strong>. After that date, BEC is replaced by <strong>BAR, ISC, and TCP</strong> disciplines.
+        </p>
+      </div>
 
       <div className="mb-6">
         <label className="block text-sm font-medium text-slate-700 mb-2">Target Exam Date</label>
@@ -184,10 +211,29 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, section })
         />
       </div>
 
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-        <p className="text-sm text-amber-800">
-          <strong>Tip:</strong> Most candidates need 6-8 weeks to prepare for each section. Don't
-          worry - you can always adjust this later!
+      {/* Blueprint indicator */}
+      {selectedDate && (
+        <div className={clsx(
+          'mb-4 px-4 py-3 rounded-xl text-sm',
+          is2025Blueprint ? 'bg-amber-50 border border-amber-200' : 'bg-green-50 border border-green-200'
+        )}>
+          {is2025Blueprint ? (
+            <div className="text-amber-800">
+              <strong>✓ 2025 Blueprint</strong>
+              <p className="mt-1 text-xs">Sections available: AUD, FAR, REG, or BEC</p>
+            </div>
+          ) : (
+            <div className="text-green-800">
+              <strong>✓ 2026 Blueprint</strong>
+              <p className="mt-1 text-xs">Sections available: AUD, FAR, REG, or a Discipline (BAR, ISC, TCP)</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <p className="text-sm text-slate-600">
+          <strong>Tip:</strong> Most candidates need 6-8 weeks to prepare. You can change this later in Settings.
         </p>
       </div>
     </div>
@@ -246,13 +292,19 @@ const DailyGoalStep: React.FC<DailyGoalStepProps> = ({ goal, onGoalChange }) => 
 
 const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoal }) => {
   const sectionInfo = section ? CPA_SECTIONS[section as keyof typeof CPA_SECTIONS] as CPASection : null;
+  
+  // Parse date string as local date (not UTC) to avoid timezone shift
   const formattedDate = examDate
-    ? new Date(examDate).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
+    ? (() => {
+        const [year, month, day] = examDate.split('-').map(Number);
+        const localDate = new Date(year, month - 1, day); // month is 0-indexed
+        return localDate.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+      })()
     : '';
   // Cast DAILY_GOAL_PRESETS to any or type if accessible
   const goalPreset = (DAILY_GOAL_PRESETS as any[]).find((p) => p.points === dailyGoal);
@@ -355,9 +407,13 @@ const Onboarding: React.FC = () => {
   const handleComplete = async () => {
     setIsSubmitting(true);
     try {
+      // Parse date as local date to avoid timezone shift
+      const [year, month, day] = examDate.split('-').map(Number);
+      const localExamDate = new Date(year, month - 1, day);
+      
       await updateUserProfile({
         examSection: selectedSection,
-        examDate: new Date(examDate),
+        examDate: localExamDate,
         dailyGoal,
         studyPlanId: studyPlan,
         onboardingComplete: true,
@@ -375,10 +431,10 @@ const Onboarding: React.FC = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
         return <WelcomeStep />;
-      case 'section':
-        return <SectionStep selected={selectedSection} onSelect={setSelectedSection} />;
       case 'exam-date':
-        return <ExamDateStep value={examDate} onChange={setExamDate} section={selectedSection} />;
+        return <ExamDateStep value={examDate} onChange={setExamDate} />;
+      case 'section':
+        return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} />;
       case 'daily-goal':
         return (
           <DailyGoalStep

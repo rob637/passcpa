@@ -11,8 +11,8 @@ const loadAllQuestions = async () => {
 };
 
 const loadTBSData = async () => {
-  const { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } = await import('../data/tbs');
-  return { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL };
+  const { ALL_TBS } = await import('../data/tbs');
+  return ALL_TBS;
 };
 
 // Batch size for Firestore (max 500 per batch)
@@ -77,14 +77,11 @@ export async function uploadAllMCQs(onProgress: (status: string) => void) {
 }
 
 /**
- * Upload TBS simulations
+ * Upload TBS simulations (all sections: FAR, AUD, REG, BEC, BAR, ISC, TCP)
  */
 export async function uploadTBS(onProgress: (status: string) => void) {
-    // Dynamically load TBS data
-    const { FAR_TBS_ALL, REG_TBS_ALL, AUD_TBS_ALL } = await loadTBSData();
-    
-    // Combine all TBS
-    const allTBS = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL];
+    // Dynamically load ALL TBS data
+    const allTBS = await loadTBSData();
     
     const tbsRef = collection(db, 'tbs');
     const existingSnap = await getDocs(tbsRef);
@@ -128,17 +125,109 @@ export async function uploadTBS(onProgress: (status: string) => void) {
 }
 
 /**
- * Upload Written Communications
- * @deprecated - WC is updated in 2026 model
+ * Upload Written Communications (all sections)
  */
 export async function uploadWC(onProgress: (status: string) => void) {
-    // WC content is now part of lessons
-    if (onProgress) onProgress('Skipping legacy WC upload (deprecated)');
-    return { uploaded: 0, skipped: 0 };
+    // Dynamically load WC data
+    const { ALL_WC_TASKS } = await import('../data/written-communication');
+    
+    const wcRef = collection(db, 'written-communication');
+    const existingSnap = await getDocs(wcRef);
+    const existingIds = new Set(existingSnap.docs.map(d => d.id));
+
+    const newWC = ALL_WC_TASKS.filter((wc: any) => !existingIds.has(wc.id));
+
+    if (newWC.length === 0) {
+        return { uploaded: 0, skipped: ALL_WC_TASKS.length, message: 'All WC tasks already exist' };
+    }
+
+    let currentBatch = writeBatch(db);
+    let batchCount = 0;
+    const batches = [];
+
+    for (const wc of newWC) {
+        const docRef = doc(wcRef, wc.id);
+        currentBatch.set(docRef, {
+            ...wc,
+            createdAt: new Date(),
+            source: 'local_bank',
+            verified: true
+        });
+
+        batchCount++;
+        if (batchCount >= BATCH_SIZE) {
+            batches.push(currentBatch);
+            currentBatch = writeBatch(db);
+            batchCount = 0;
+        }
+    }
+
+    if (batchCount > 0) batches.push(currentBatch);
+
+    for (let i = 0; i < batches.length; i++) {
+        if (onProgress) onProgress(`Uploading WC Batch ${i+1}/${batches.length}`);
+        await batches[i].commit();
+    }
+
+    return { uploaded: newWC.length, skipped: ALL_WC_TASKS.length - newWC.length };
+}
+
+/**
+ * Upload all Lessons to Firestore
+ */
+export async function uploadLessons(onProgress: (status: string) => void) {
+    // Dynamically load Lessons data
+    const lessonsModule = await import('../data/lessons');
+    const allLessons = lessonsModule.getAllLessons ? lessonsModule.getAllLessons() : [];
+    
+    if (!allLessons || allLessons.length === 0) {
+        throw new Error('No lessons found to upload. Check data/lessons exports.');
+    }
+    
+    const lessonsRef = collection(db, 'lessons');
+    const existingSnap = await getDocs(lessonsRef);
+    const existingIds = new Set(existingSnap.docs.map(d => d.id));
+
+    const newLessons = allLessons.filter((lesson: any) => !existingIds.has(lesson.id));
+
+    if (newLessons.length === 0) {
+        return { uploaded: 0, skipped: allLessons.length, message: 'All lessons already exist' };
+    }
+
+    let currentBatch = writeBatch(db);
+    let batchCount = 0;
+    const batches = [];
+
+    for (const lesson of newLessons) {
+        const docRef = doc(lessonsRef, lesson.id);
+        currentBatch.set(docRef, {
+            ...lesson,
+            createdAt: new Date(),
+            source: 'local_bank',
+            verified: true
+        });
+
+        batchCount++;
+        if (batchCount >= BATCH_SIZE) {
+            batches.push(currentBatch);
+            currentBatch = writeBatch(db);
+            batchCount = 0;
+        }
+    }
+
+    if (batchCount > 0) batches.push(currentBatch);
+
+    for (let i = 0; i < batches.length; i++) {
+        if (onProgress) onProgress(`Uploading Lessons Batch ${i+1}/${batches.length}`);
+        await batches[i].commit();
+    }
+
+    return { uploaded: newLessons.length, skipped: allLessons.length - newLessons.length };
 }
 
 export default {
     uploadAllMCQs,
     uploadTBS,
-    uploadWC
+    uploadWC,
+    uploadLessons
 };

@@ -260,13 +260,17 @@ const Progress: React.FC = () => {
         let lessonsCompletedCount = 0;
         if (getLessonProgress) {
           const lessonProgress = await getLessonProgress();
-          lessonsCompletedCount = Object.keys(lessonProgress).length;
+          // Only count lessons for the current section
+          lessonsCompletedCount = Object.values(lessonProgress).filter(
+            (lesson: any) => lesson.section === currentSection
+          ).length;
         }
 
         // Get total lessons for user's section
         const allLessons = await fetchAllLessons(courseId);
         const sectionLessons = allLessons.filter(l => l.section === currentSection);
-        const totalLessonsCount = sectionLessons.length || allLessons.length;
+        // If no lessons uploaded for section, default to 0 to avoid misleading progress
+        const totalLessonsCount = sectionLessons.length;
 
         setOverallStats({
           ...totals,
@@ -406,12 +410,12 @@ const Progress: React.FC = () => {
             </div>
           </div>
           
-          {/* Milestones Progress Bar */}
+          {/* Milestones Progress Bar - based on content completion, not time */}
           <div className="relative pt-6 pb-2">
             <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-primary-500 rounded-full transition-all duration-1000"
-                style={{ width: `${Math.min(100, Math.max(5, (1 - studyPlan.totalDays/90)*100))}%` }} 
+                style={{ width: `${Math.min(100, Math.max(2, (overallStats.lessonsCompleted / Math.max(1, overallStats.totalLessons)) * 100))}%` }} 
               />
             </div>
             <div className="mt-4 flex justify-between text-xs text-slate-400">
@@ -451,7 +455,11 @@ const Progress: React.FC = () => {
                   <Clock className="w-4 h-4" />
                   <span className="text-sm font-medium">Study Time</span>
                 </div>
-                <div className="text-2xl font-bold text-slate-900">{Math.round(overallStats.studyMinutes / 60)}h</div>
+                <div className="text-2xl font-bold text-slate-900">
+                  {overallStats.studyMinutes >= 60 
+                    ? `${Math.round(overallStats.studyMinutes / 60)}h` 
+                    : `${Math.round(overallStats.studyMinutes)}m`}
+                </div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
                 <div className="flex items-center gap-2 text-slate-500 mb-2">

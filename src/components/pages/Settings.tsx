@@ -42,9 +42,35 @@ interface UserProfile {
   photoURL?: string;
   examSection?: string;
   dailyGoal?: number;
-  examDate?: Timestamp;
+  examDate?: Timestamp | Date | string;
   [key: string]: any;
 }
+
+// Helper to convert various date formats to YYYY-MM-DD string
+const formatDateForInput = (date: Timestamp | Date | string | undefined): string => {
+  if (!date) return '';
+  
+  try {
+    // If it's a Firestore Timestamp
+    if (date && typeof date === 'object' && 'toDate' in date && typeof date.toDate === 'function') {
+      return date.toDate().toISOString().split('T')[0];
+    }
+    // If it's already a Date object
+    if (date instanceof Date) {
+      return date.toISOString().split('T')[0];
+    }
+    // If it's a string (already formatted or ISO string)
+    if (typeof date === 'string') {
+      // If it's already YYYY-MM-DD format
+      if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+      // Try parsing as ISO string
+      return new Date(date).toISOString().split('T')[0];
+    }
+  } catch (e) {
+    console.error('Error formatting date:', e);
+  }
+  return '';
+};
 
 interface Tab {
   id: string;
@@ -70,9 +96,17 @@ const Settings: React.FC = () => {
   const [displayName, setDisplayName] = useState(profile?.displayName || '');
   const [examSection, setExamSection] = useState(profile?.examSection || 'REG');
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
-  const [examDate, setExamDate] = useState(
-    profile?.examDate?.toDate?.()?.toISOString().split('T')[0] || ''
-  );
+  const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
+
+  // Sync form state when profile changes (e.g., after reset)
+  useEffect(() => {
+    if (profile) {
+      setDisplayName(profile.displayName || '');
+      setExamSection(profile.examSection || 'REG');
+      setDailyGoal(profile.dailyGoal || 50);
+      setExamDate(formatDateForInput(profile.examDate));
+    }
+  }, [profile]);
   
   const [notifications, setNotifications] = useState({
     dailyReminder: true,
@@ -89,10 +123,18 @@ const Settings: React.FC = () => {
   
   // Load settings on mount
   useEffect(() => {
-    // Reminder settings from localStorage
+    // Reminder settings - prefer profile settings, fallback to localStorage
     const reminderSettings = getDailyReminderSettings();
-    setReminderTime(reminderSettings.time);
-    setNotifications((prev) => ({ ...prev, dailyReminder: reminderSettings.enabled }));
+    
+    // Use profile setting if available, otherwise use localStorage
+    const dailyReminderEnabled = profile?.dailyReminderEnabled !== undefined 
+      ? profile.dailyReminderEnabled 
+      : reminderSettings.enabled;
+    
+    const dailyReminderTime = profile?.dailyReminderTime || reminderSettings.time || '09:00';
+    
+    setReminderTime(dailyReminderTime);
+    setNotifications((prev) => ({ ...prev, dailyReminder: dailyReminderEnabled }));
 
     // Load notification preferences from profile
     if (profile?.weeklyReportEnabled !== undefined) {

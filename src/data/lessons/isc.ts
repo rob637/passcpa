@@ -5662,5 +5662,299 @@ export const iscLessons: Lesson[] = [
         }
       ]
     }
+  },
+  // ==========================================
+  // ISC-IV: EMERGING TECHNOLOGIES
+  // ==========================================
+  {
+    id: 'ISC-IV-009',
+    section: 'ISC',
+    title: "Artificial Intelligence in Accounting",
+    description: "Understand AI applications, risks, and governance in accounting",
+    order: 80,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Emerging Technology", "AI", "Machine Learning", "Governance"],
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "AI is transforming accounting and audit! From automated journal entries to predictive analytics, CPAs must understand AI capabilities, limitations, and the governance needed to use it responsibly."
+        },
+        {
+          title: 'AI Applications in Accounting',
+          type: 'table',
+          headers: ['Application', 'Use Case', 'Example'],
+          rows: [
+            ['Document Processing', 'Extract data from invoices', 'OCR with intelligent capture'],
+            ['Anomaly Detection', 'Identify unusual transactions', 'Fraud detection algorithms'],
+            ['Predictive Analytics', 'Forecast accounts', 'Revenue projections, bad debt'],
+            ['Natural Language', 'Process contracts, queries', 'Lease extraction, chatbots'],
+            ['Process Automation', 'Automate repetitive tasks', 'Journal entry creation']
+          ]
+        },
+        {
+          title: 'Types of AI/ML',
+          type: 'text',
+          content: "**Machine Learning Categories:**\n\n**Supervised Learning:**\n• Trained on labeled data\n• Classification, regression\n• Example: Fraud detection (labeled as fraud/not fraud)\n\n**Unsupervised Learning:**\n• Finds patterns in unlabeled data\n• Clustering, anomaly detection\n• Example: Customer segmentation\n\n**Deep Learning:**\n• Neural networks with many layers\n• Image/text processing\n• Example: Invoice data extraction"
+        },
+        {
+          title: '🧠 Memory Aid: AI Risks',
+          type: 'callout',
+          content: "**\"BEAD\"** for AI risks:\n\n**B**ias in training data\n**E**xplainability (black box)\n**A**ccountability unclear\n**D**ata quality dependencies\n\n**AI amplifies biases in data!**"
+        },
+        {
+          title: 'AI Governance Framework',
+          type: 'text',
+          content: "**Key governance elements:**\n\n• **Accountability:** Who is responsible for AI decisions?\n• **Transparency:** Can outputs be explained?\n• **Fairness:** Are results unbiased?\n• **Privacy:** Is personal data protected?\n• **Security:** Are models protected from attacks?\n• **Human Oversight:** Are humans in the loop?\n\n**Document AI use in audit methodology!**"
+        },
+        {
+          title: 'AI in Audit',
+          type: 'table',
+          headers: ['Phase', 'AI Application', 'Benefit'],
+          rows: [
+            ['Planning', 'Risk assessment models', 'Better risk identification'],
+            ['Testing', '100% population analysis', 'Full coverage vs. sampling'],
+            ['Analytics', 'Trend and pattern detection', 'Deeper insights'],
+            ['Reporting', 'Automated report drafting', 'Efficiency gains']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: AI Limitations',
+          type: 'warning',
+          content: "**AI is NOT a silver bullet:**\n\n• Cannot replace professional judgment\n• Outputs require validation\n• Models can \"drift\" over time\n• Training data may be outdated\n• Adversarial attacks possible\n\n**AI assists—it doesn't replace auditors!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "AI applications: Document processing, anomaly detection, predictions",
+            "Supervised learning uses labeled data; unsupervised finds patterns",
+            "Key risks: Bias, explainability, accountability, data quality",
+            "Governance: Accountability, transparency, fairness, oversight",
+            "AI enhances audit but doesn't replace judgment",
+            "Document AI methodology and validate outputs"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-010',
+    section: 'ISC',
+    title: "Blockchain and Distributed Ledger Technology",
+    description: "Evaluate blockchain applications and risks in accounting",
+    order: 81,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Emerging Technology", "Blockchain", "Distributed Ledger", "Smart Contracts"],
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Blockchain promises transparent, immutable records! CPAs must understand how distributed ledgers work, their accounting implications, and how to audit blockchain-based systems."
+        },
+        {
+          title: 'Blockchain Fundamentals',
+          type: 'text',
+          content: "**Core concepts:**\n\n• **Distributed Ledger:** Shared database across nodes\n• **Blocks:** Groups of transactions\n• **Chain:** Blocks linked cryptographically\n• **Consensus:** Agreement on valid transactions\n• **Immutability:** Past records can't be altered\n\n**No central authority—decentralized trust**"
+        },
+        {
+          title: 'Blockchain Types',
+          type: 'table',
+          headers: ['Type', 'Access', 'Consensus', 'Use Case'],
+          rows: [
+            ['Public', 'Anyone can join', 'Proof of Work/Stake', 'Cryptocurrencies'],
+            ['Private', 'Invitation only', 'Designated validators', 'Enterprise systems'],
+            ['Consortium', 'Group of organizations', 'Shared governance', 'Industry platforms'],
+            ['Hybrid', 'Public + Private elements', 'Mixed', 'Selective transparency']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Blockchain Properties',
+          type: 'callout',
+          content: "**\"DITCH\"** for blockchain:\n\n**D**ecentralized (no single point)\n**I**mmutable (tamper-evident)\n**T**ransparent (shared view)\n**C**ryptographic (secured)\n**H**istory preserved (audit trail)\n\n**Trust through technology, not institutions**"
+        },
+        {
+          title: 'Smart Contracts',
+          type: 'text',
+          content: "**Self-executing code on blockchain:**\n\n• Automatically execute when conditions met\n• No intermediary needed\n• Code is law—executes exactly as written\n\n**Examples:**\n• Escrow release on delivery confirmation\n• Royalty payments on usage\n• Insurance claims processing\n\n**Risk:** Code bugs = permanent errors"
+        },
+        {
+          title: 'Accounting Implications',
+          type: 'text',
+          content: "**Triple-Entry Accounting:**\n• Debits, credits, AND blockchain record\n• Third entry provides verification\n\n**Audit considerations:**\n• Blockchain as audit evidence\n• Smart contract logic review\n• Key management controls\n• Off-chain data linkage\n\n**Continuous audit potential**"
+        },
+        {
+          title: '⚠️ Exam Trap: Blockchain ≠ Perfect Audit Trail',
+          type: 'warning',
+          content: "**Blockchain limitations for audit:**\n\n• Garbage in, garbage out still applies\n• Data ENTERED may be wrong\n• Off-chain events not captured\n• Key loss = permanent access loss\n• Smart contract vulnerabilities\n\n**Immutability doesn't mean accuracy!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Blockchain: Distributed, immutable, cryptographic ledger",
+            "Types: Public, Private, Consortium, Hybrid",
+            "Smart contracts: Self-executing code",
+            "Triple-entry accounting: Transaction + blockchain verification",
+            "Audit evidence: Strong for what's recorded",
+            "Limitations: Input accuracy, key management, code bugs"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-011',
+    section: 'ISC',
+    title: "Robotic Process Automation (RPA)",
+    description: "Implement and control software robots for accounting processes",
+    order: 82,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Emerging Technology", "RPA", "Automation", "Controls"],
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "RPA automates repetitive tasks using software bots! Many accounting departments deploy RPA for reconciliations, data entry, and reporting. CPAs must understand both the benefits and the control requirements!"
+        },
+        {
+          title: 'What RPA Does',
+          type: 'table',
+          headers: ['Task', 'Manual Process', 'RPA Automation'],
+          rows: [
+            ['Data Entry', 'Copy/paste between systems', 'Bot reads and transfers'],
+            ['Reconciliation', 'Compare spreadsheets', 'Automated matching'],
+            ['Report Generation', 'Run queries, format', 'Scheduled, automatic'],
+            ['Invoice Processing', 'Key data from invoices', 'Extract and post'],
+            ['Bank Reconciliation', 'Match transactions', 'Continuous matching']
+          ]
+        },
+        {
+          title: 'RPA vs. Traditional Automation',
+          type: 'text',
+          content: "**RPA characteristics:**\n\n• Works at UI level (like a human)\n• Non-invasive (no system changes)\n• Quick to deploy\n• Rule-based processing\n• No coding required (often)\n\n**vs. API Integration:**\n• Deeper, more stable\n• Requires development\n• Better for high-volume\n• More maintainable long-term"
+        },
+        {
+          title: '🧠 Memory Aid: RPA Risks',
+          type: 'callout',
+          content: "**\"SCALE\"** for RPA risks:\n\n**S**egregation of duties compromised\n**C**hange management for bot logic\n**A**ccess creep (bots accumulate permissions)\n**L**ogging and monitoring gaps\n**E**rror handling not defined\n\n**Treat bots like employees—with controls!**"
+        },
+        {
+          title: 'RPA Control Framework',
+          type: 'text',
+          content: "**Essential controls:**\n\n• **Access Management:** Bots have unique IDs, least privilege\n• **Credential Storage:** Secure vault for passwords\n• **Change Management:** Approve and test bot changes\n• **Monitoring:** Log all bot activities\n• **Error Handling:** Define exception processes\n• **Business Continuity:** What if bots fail?\n\n**Governance = Success**"
+        },
+        {
+          title: 'Attended vs. Unattended Bots',
+          type: 'table',
+          headers: ['Type', 'Execution', 'Use Case', 'Risk Level'],
+          rows: [
+            ['Attended', 'Triggered by user', 'Desktop assistance', 'Lower (human oversight)'],
+            ['Unattended', 'Scheduled/event-driven', 'Batch processing', 'Higher (no real-time oversight)'],
+            ['Hybrid', 'Both modes', 'Flexible processes', 'Varies by mode']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Bot Proliferation',
+          type: 'warning',
+          content: "**\"Bot sprawl\" is a real risk:**\n\n• Departments create bots without IT\n• No inventory of active bots\n• Outdated bots still running\n• Security gaps multiply\n\n**Centralized governance essential!**\n\n**Audit must include RPA in ITGC scope!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "RPA automates repetitive, rule-based tasks",
+            "Works at UI level—quick to deploy",
+            "Treat bots like employees with controls",
+            "Key controls: Access, credentials, change management",
+            "Attended bots: User-triggered, lower risk",
+            "Unattended bots: Scheduled, require more controls",
+            "Bot inventory and governance essential"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-012',
+    section: 'ISC',
+    title: "Quantum Computing and Future Technologies",
+    description: "Prepare for quantum computing impacts on cryptography and security",
+    order: 83,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Emerging Technology", "Quantum Computing", "Cryptography", "Future"],
+    blueprintArea: 'ISC-IV',
+    blueprintTopic: 'ISC-IV-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Quantum computing will break current encryption! While still emerging, CPAs and IT auditors must understand the coming \"crypto-apocalypse\" and how organizations are preparing through post-quantum cryptography."
+        },
+        {
+          title: 'Quantum Computing Basics',
+          type: 'text',
+          content: "**How it differs from classical:**\n\n**Classical Computing:**\n• Bits: 0 OR 1\n• Sequential processing\n• Deterministic\n\n**Quantum Computing:**\n• Qubits: 0 AND 1 (superposition)\n• Parallel processing\n• Probabilistic\n\n**Exponential speedup for certain problems**"
+        },
+        {
+          title: 'Cryptography Impact',
+          type: 'table',
+          headers: ['Algorithm', 'Current Status', 'Quantum Threat'],
+          rows: [
+            ['RSA', 'Widely used encryption', 'Broken by Shor\'s algorithm'],
+            ['ECC', 'Modern key exchange', 'Broken by quantum'],
+            ['AES-256', 'Symmetric encryption', 'Weakened but survivable'],
+            ['SHA-256', 'Hashing', 'Weakened but usable'],
+            ['Post-Quantum', 'Being standardized', 'Designed to resist quantum']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Quantum Threat',
+          type: 'callout',
+          content: "**\"Y2Q\"** - Year to Quantum\n\n**What's at risk:**\n• Digital signatures\n• Key exchange (HTTPS, VPN)\n• Encrypted data storage\n• Blockchain cryptography\n\n**\"Harvest Now, Decrypt Later\"**\n• Adversaries storing encrypted data today\n• Will decrypt when quantum available"
+        },
+        {
+          title: 'Post-Quantum Cryptography',
+          type: 'text',
+          content: "**NIST PQC Standards (2024):**\n\n• **CRYSTALS-Kyber:** Key encapsulation\n• **CRYSTALS-Dilithium:** Digital signatures\n• **FALCON:** Digital signatures\n• **SPHINCS+:** Hash-based signatures\n\n**Migration planning:**\n• Inventory cryptographic assets\n• Assess data sensitivity\n• Plan migration timeline\n• Test PQC implementations"
+        },
+        {
+          title: 'Audit Considerations',
+          type: 'text',
+          content: "**Questions for IT auditors:**\n\n• Does the organization have a crypto inventory?\n• Is there a quantum readiness assessment?\n• What's the migration timeline?\n• Are long-lived data assets protected?\n• Is \"harvest now, decrypt later\" considered?\n\n**This is a 5-10 year strategic risk**"
+        },
+        {
+          title: '⚠️ Exam Trap: Timeline',
+          type: 'warning',
+          content: "**Quantum computers aren't here YET but:**\n\n• Cryptographic migration takes years\n• Data encrypted today may be decrypted later\n• Organizations must start planning NOW\n• NIST standards are final (2024)\n\n**It's a future risk requiring present action!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Quantum computers will break RSA, ECC encryption",
+            "Symmetric encryption (AES-256) weakened but survivable",
+            "Post-quantum cryptography standards now finalized",
+            "\"Harvest now, decrypt later\" is a present threat",
+            "Organizations need crypto inventory and migration plan",
+            "CPAs should include quantum readiness in risk assessments"
+          ]
+        }
+      ]
+    }
   }
 ];

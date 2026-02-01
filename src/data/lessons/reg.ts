@@ -6290,6 +6290,221 @@ export const regLessons: Lesson[] = [
         }
       ]
     }
+  },
+  // ==========================================
+  // REG-V: TAX PROCEDURES & ADMINISTRATION
+  // ==========================================
+  {
+    id: 'REG-V-003',
+    section: 'REG',
+    title: "IRS Audit Process and Taxpayer Rights",
+    description: "Navigate IRS examinations and understand taxpayer protections",
+    order: 86,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Tax Procedures", "IRS", "Taxpayer Rights"],
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Understanding the IRS audit process is essential for CPAs! You'll advise clients through examinations and must know their rights. The exam tests both procedures and taxpayer protections!"
+        },
+        {
+          title: 'Types of IRS Examinations',
+          type: 'table',
+          headers: ['Type', 'Description', 'Scope'],
+          rows: [
+            ['Correspondence Audit', 'Mail-based, specific issues', 'Limited (1-2 items)'],
+            ['Office Audit', 'At IRS office', 'Moderate (several items)'],
+            ['Field Audit', 'At taxpayer location', 'Comprehensive (full return)'],
+            ['TCMP Audit', 'Random selection, line-by-line', 'Complete (rare now)']
+          ]
+        },
+        {
+          title: 'Selection Methods',
+          type: 'text',
+          content: "**How returns are selected:**\n\n• **DIF Score:** Discriminant Function System scores deviation from norms\n• **Information Matching:** W-2s, 1099s don't match return\n• **Related Examinations:** Partner audits trigger related returns\n• **Industry Campaigns:** IRS targets specific industries\n• **Random Selection:** Small percentage for compliance studies"
+        },
+        {
+          title: '🧠 Memory Aid: Taxpayer Bill of Rights',
+          type: 'callout',
+          content: "**\"RAPFI\"** for key rights:\n\n**R**ight to be informed\n**A**ppeal rights (independent review)\n**P**rivacy and confidentiality\n**F**inality (know when audit ends)\n**I**nnocent spouse relief\n\n**Plus:** Representation, quality service, challenge IRS position"
+        },
+        {
+          title: 'Statute of Limitations',
+          type: 'text',
+          content: "**Time limits for IRS assessment:**\n\n• **Standard:** 3 years from filing or due date (later)\n• **25% Omission:** 6 years if >25% income omitted\n• **Fraud:** Unlimited - no statute\n• **No Return Filed:** Unlimited\n\n**Refund claims:** 3 years from filing OR 2 years from payment (later)"
+        },
+        {
+          title: 'Examination Outcomes',
+          type: 'table',
+          headers: ['Outcome', 'Description', 'Next Step'],
+          rows: [
+            ['No Change', 'IRS accepts return as filed', 'Case closed'],
+            ['Agreed', 'Taxpayer accepts adjustments', 'Sign Form 870, pay'],
+            ['Unagreed', 'Taxpayer disagrees', 'Appeals or litigation']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Extending the Statute',
+          type: 'warning',
+          content: "**IRS can request extension (Form 872):**\n\n• Taxpayer may voluntarily extend\n• Often requested near statute expiration\n• Cannot be forced, but refusal may accelerate assessment\n\n**Strategic decision—consult carefully!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Three main audit types: Correspondence, Office, Field",
+            "DIF scores identify returns that deviate from norms",
+            "Standard statute of limitations: 3 years",
+            "25% omission extends to 6 years; fraud is unlimited",
+            "Taxpayers have formal rights (Taxpayer Bill of Rights)",
+            "Can extend statute voluntarily via Form 872"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-004',
+    section: 'REG',
+    title: "IRS Appeals and Litigation",
+    description: "Understand the administrative and judicial remedies for tax disputes",
+    order: 87,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Tax Procedures", "Appeals", "Tax Court"],
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When taxpayers disagree with IRS findings, they have appeal options! Knowing the paths through Appeals and the courts is essential for representing clients effectively."
+        },
+        {
+          title: 'Administrative Appeals',
+          type: 'text',
+          content: "**IRS Office of Appeals:**\n\n• Independent of examination function\n• Goal: Resolve disputes without litigation\n• Considers hazards of litigation\n• Can settle cases based on risk\n\n**How to access:**\n1. File written protest (if >$25,000)\n2. File small case request (if ≤$25,000)\n3. Conference with Appeals Officer"
+        },
+        {
+          title: 'Judicial Forums',
+          type: 'table',
+          headers: ['Court', 'Payment Required?', 'Jury Trial?', 'Precedent'],
+          rows: [
+            ['Tax Court', 'No (petition before paying)', 'No', 'Follows own precedent'],
+            ['District Court', 'Yes (pay first, sue for refund)', 'Yes', 'Follows Circuit Court'],
+            ['Court of Federal Claims', 'Yes (pay first)', 'No', 'Follows Federal Circuit']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Court Selection',
+          type: 'callout',
+          content: "**\"Don't Pay? Tax Court Today!\"**\n\n**Tax Court:** No payment required\n**District/Claims:** Pay first, sue for refund\n\n**Want jury?** District Court only\n**No payment?** Tax Court only"
+        },
+        {
+          title: 'Tax Court Procedures',
+          type: 'text',
+          content: "**Regular Tax Court:**\n• Judges are tax specialists\n• Formal procedures\n• Decisions are precedential\n\n**Small Tax Cases (S Cases):**\n• Disputes ≤$50,000 per year\n• Simplified procedures\n• Decision is final, no appeal\n• Faster resolution"
+        },
+        {
+          title: 'Appeal Path',
+          type: 'text',
+          content: "**Typical litigation flow:**\n\n1. IRS Notice of Deficiency (90-day letter)\n2. File petition in Tax Court (90 days)\n3. Trial and decision\n4. Appeal to Circuit Court\n5. Possible Supreme Court review\n\n**Miss 90-day deadline = Must pay first!**"
+        },
+        {
+          title: '⚠️ Exam Trap: 90-Day Letter',
+          type: 'warning',
+          content: "**Notice of Deficiency (90-day letter):**\n\n• Required before Tax Court petition\n• 90 days to petition (150 if outside US)\n• Mailing is effective date\n• Missing deadline loses Tax Court access\n\n**Critical deadline—don't miss it!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Appeals Office: Independent review, settlement-oriented",
+            "Tax Court: No prepayment, tax specialists",
+            "District Court: Prepay required, jury available",
+            "Court of Federal Claims: Prepay required, no jury",
+            "90-day letter: Must petition within 90 days for Tax Court",
+            "Small cases ≤$50K: Simplified, but no appeal"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-005',
+    section: 'REG',
+    title: "Tax Penalties and Interest",
+    description: "Apply accuracy-related, fraud, and failure-to-file/pay penalties",
+    order: 88,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Tax Procedures", "Penalties", "Interest"],
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Tax penalties are heavily tested on REG! Understanding penalty rates, reasonable cause defenses, and how to avoid penalties is essential for tax practice and the exam!"
+        },
+        {
+          title: 'Common Penalties',
+          type: 'table',
+          headers: ['Penalty', 'Rate', 'Trigger'],
+          rows: [
+            ['Failure to File', '5% per month, max 25%', 'Late filing'],
+            ['Failure to Pay', '0.5% per month, max 25%', 'Late payment'],
+            ['Accuracy-Related', '20% of underpayment', 'Negligence, substantial understatement'],
+            ['Fraud', '75% of underpayment', 'Intentional tax evasion'],
+            ['Frivolous Return', '$5,000', 'Tax protester positions']
+          ]
+        },
+        {
+          title: 'Accuracy-Related Penalties',
+          type: 'text',
+          content: "**20% penalty applies to:**\n\n• **Negligence:** Lack of reasonable attempt to comply\n• **Substantial Understatement:** Greater of 10% of tax or $5,000\n• **Substantial Valuation Misstatement:** 150%+ of correct value\n• **Transaction Without Economic Substance:** Lacks business purpose\n\n**Defenses:** Reasonable cause, good faith, adequate disclosure"
+        },
+        {
+          title: '🧠 Memory Aid: Penalty Rates',
+          type: 'callout',
+          content: "**\"5-0.5-20-75\"**\n\n**5**% - Failure to File (per month)\n**0.5**% - Failure to Pay (per month)\n**20**% - Accuracy-Related\n**75**% - Fraud\n\n**Filing is 10x more penalized than paying!**"
+        },
+        {
+          title: 'Reasonable Cause Defense',
+          type: 'text',
+          content: "**Penalties may be abated for reasonable cause:**\n\n• Death or serious illness\n• Unavoidable absence\n• Fire, casualty, or natural disaster\n• Inability to obtain records\n• Reliance on professional advice (if reasonable)\n\n**Must show ordinary business care and prudence**"
+        },
+        {
+          title: 'Interest on Underpayments',
+          type: 'text',
+          content: "**Interest runs on:**\n\n• Tax underpayments\n• Penalties\n• From due date until paid\n\n**Rate:** Federal short-term rate + 3%\n**Compounded:** Daily\n\n**Interest CANNOT be waived** (unlike penalties)"
+        },
+        {
+          title: '⚠️ Exam Trap: Combined Penalties',
+          type: 'warning',
+          content: "**When both FTF and FTP apply:**\n\n• Failure to File reduced by Failure to Pay amount\n• Effectively: FTF = 4.5%, FTP = 0.5%\n• Combined = 5% per month\n• Max FTF = 22.5%, Max FTP = 25%\n\n**Maximum combined = 47.5% + interest!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Failure to File: 5% per month (max 25%)",
+            "Failure to Pay: 0.5% per month (max 25%)",
+            "Accuracy-related: 20% for negligence, understatement",
+            "Fraud: 75% of underpayment",
+            "Reasonable cause can abate penalties, not interest",
+            "Interest cannot be waived, runs from due date"
+          ]
+        }
+      ]
+    }
   }
 ];
 

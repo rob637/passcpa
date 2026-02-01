@@ -3454,6 +3454,407 @@ export const regLessons: Lesson[] = [
     }
   },
   {
+    id: 'REG-III-019',
+    section: 'REG',
+    title: "Above-the-Line Deductions",
+    description: "Master adjustments to income that reduce AGI",
+    order: 37,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Deductions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Above-the-line deductions (adjustments to income) are valuable because EVERYONE can claim them—regardless of whether you itemize! These reduce AGI, which can unlock other tax benefits. Know these cold for REG!"
+        },
+        {
+          title: 'What are Above-the-Line Deductions?',
+          type: 'text',
+          content: "**Deductions subtracted from gross income to arrive at AGI:**\n\n• Available to ALL taxpayers (itemizers AND standard deduction)\n• Listed on Schedule 1 (Form 1040)\n• Reduce AGI, which affects many other calculations\n\n**AGI affects:** Medical deduction floor, passive loss limits, IRA deduction, education credits"
+        },
+        {
+          title: 'Common Above-the-Line Deductions',
+          type: 'table',
+          headers: ['Deduction', 'Limit'],
+          rows: [
+            ['Educator expenses', '$300 per educator'],
+            ['Self-employment tax', '50% of SE tax paid'],
+            ['Self-employed health insurance', '100% of premiums'],
+            ['Self-employed retirement', 'Contribution limits apply'],
+            ['Student loan interest', '$2,500 (phaseout applies)'],
+            ['HSA contributions', '$4,150 single / $8,300 family (2024)'],
+            ['Traditional IRA contributions', '$7,000 ($8,000 if 50+)'],
+            ['Alimony paid (pre-2019 divorces)', 'Amount paid']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Above-the-Line',
+          type: 'callout',
+          content: "**\"SHEA\" deductions:**\n\n**S**elf-employment (tax, health, retirement)\n**H**SA contributions\n**E**ducator expenses\n**A**limony (pre-2019 only)\n\n**Plus: Student loan interest, IRA contributions**"
+        },
+        {
+          title: 'Self-Employment Deductions',
+          type: 'text',
+          content: "**Three key SE deductions:**\n\n1. **50% of SE tax** - Deduct half of 15.3% paid\n2. **SE health insurance** - 100% of premiums for self and family\n3. **SE retirement** - SEP, SIMPLE, Solo 401(k)\n\n**Health insurance limit:** Cannot exceed net SE income\n\n**Retirement limit:** Based on plan type and income"
+        },
+        {
+          title: 'Student Loan Interest',
+          type: 'text',
+          content: "**Deduction for interest on qualified education loans:**\n\n• Maximum: $2,500 per year\n• Available even if you don't itemize\n• Loan must be for taxpayer, spouse, or dependent\n• Phaseout based on MAGI\n\n**2024 phaseout:**\n• Single: $80,000-$95,000\n• MFJ: $165,000-$195,000"
+        },
+        {
+          title: 'Health Savings Account (HSA)',
+          type: 'text',
+          content: "**Triple tax benefit:**\n\n1. Contributions are above-the-line deduction\n2. Earnings grow tax-free\n3. Distributions for medical expenses tax-free\n\n**Requirements:**\n• Must have high-deductible health plan (HDHP)\n• Cannot be enrolled in Medicare\n• Cannot be claimed as dependent"
+        },
+        {
+          title: '⚠️ Exam Trap: IRA Deduction Limits',
+          type: 'warning',
+          content: "**Traditional IRA deduction may be LIMITED if:**\n\n• Covered by employer retirement plan, AND\n• MAGI exceeds threshold\n\n**2024 phaseout (if covered):**\n• Single: $77,000-$87,000\n• MFJ: $123,000-$143,000\n\n**Spouse not covered:** Higher phaseout\n**Not covered by plan:** Full deduction allowed"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Above-the-line deductions available to ALL taxpayers",
+            "Reduce AGI, which affects other tax benefits",
+            "SE: 50% of SE tax, health insurance, retirement",
+            "Student loan interest: Up to $2,500 (phaseout applies)",
+            "HSA: Triple tax benefit (deduction, growth, distribution)",
+            "IRA deduction may be limited if covered by employer plan",
+            "Educator expenses: $300 per qualifying teacher"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-020',
+    section: 'REG',
+    title: "Itemized Deductions",
+    description: "Master Schedule A deductions including SALT, mortgage interest, and charitable",
+    order: 38,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Itemized Deductions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Itemized deductions on Schedule A compete with the standard deduction! After TCJA doubled the standard deduction, fewer taxpayers itemize—but understanding the rules is still essential for tax planning and the REG exam!"
+        },
+        {
+          title: 'Itemize or Standard Deduction?',
+          type: 'text',
+          content: "**2024 Standard Deduction:**\n\n• Single: $14,600\n• MFJ: $29,200\n• Head of Household: $21,900\n• Additional if 65+ or blind: $1,550-$1,950\n\n**Itemize ONLY if itemized deductions exceed standard!**"
+        },
+        {
+          title: 'Major Itemized Deductions',
+          type: 'table',
+          headers: ['Category', 'Limit/Rules'],
+          rows: [
+            ['Medical expenses', 'Excess over 7.5% of AGI'],
+            ['State and local taxes (SALT)', '$10,000 cap ($5,000 MFS)'],
+            ['Mortgage interest', 'On $750,000 of acquisition debt'],
+            ['Charitable contributions', '60% of AGI (cash to public charity)'],
+            ['Casualty/theft losses', 'Only federally declared disasters']
+          ]
+        },
+        {
+          title: 'Medical Expenses',
+          type: 'text',
+          content: "**Deduct ONLY amounts exceeding 7.5% of AGI:**\n\n**Deductible:**\n• Doctor, dental, hospital bills\n• Prescription drugs\n• Health insurance premiums (not pre-tax)\n• Long-term care (with limits)\n• Medical transportation\n\n**NOT deductible:** Cosmetic surgery, gym memberships, OTC drugs"
+        },
+        {
+          title: 'State and Local Taxes (SALT)',
+          type: 'text',
+          content: "**$10,000 cap on SALT deduction:**\n\n**Includes:**\n• State income tax OR sales tax (choose one)\n• Real property taxes\n• Personal property taxes\n\n**Cap:** $10,000 total ($5,000 if MFS)\n\n**H.R. 1 Note:** Cap may change after July 1, 2026"
+        },
+        {
+          title: '🧠 Memory Aid: SALT Cap',
+          type: 'callout',
+          content: "**\"10K is the SALT limit\"**\n\n**S**tate income tax (OR sales)\n**A**nd\n**L**ocal property\n**T**axes\n\n**Total capped at $10,000!**\n\n**High-tax state? Hurts more.**"
+        },
+        {
+          title: 'Mortgage Interest',
+          type: 'text',
+          content: "**Deductible on acquisition debt up to $750,000:**\n\n**Qualified residence:**\n• Principal residence AND\n• One other residence (vacation home)\n\n**Post-TCJA rules:**\n• No deduction for home equity interest (unless used to improve home)\n• $750,000 limit for loans after 12/15/2017\n• Pre-12/15/2017 loans: $1,000,000 limit"
+        },
+        {
+          title: 'Charitable Contributions',
+          type: 'text',
+          content: "**AGI limits depend on type:**\n\n• Cash to public charity: 60% of AGI\n• Property to public charity: 30% of AGI\n• Capital gain property: 30% of AGI\n• Private foundations: 30%/20%\n\n**Excess carries forward 5 years**\n\n**Substantiation required:** Receipt for $250+ donations"
+        },
+        {
+          title: '⚠️ Exam Trap: Charitable Property Deduction',
+          type: 'warning',
+          content: "**Deduction amount depends on property type:**\n\n**Capital gain property held >1 year:**\n• Deduct FMV (no gain recognized)\n• 30% AGI limit\n\n**Ordinary income property:**\n• Deduct LESSER of basis or FMV\n• Appreciation not deductible\n\n**Watch what's being donated!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Itemize only if deductions exceed standard deduction",
+            "Medical: Only excess over 7.5% of AGI",
+            "SALT: $10,000 cap on state/local taxes",
+            "Mortgage interest: On $750,000 acquisition debt max",
+            "Charitable: 60% AGI (cash), 30% AGI (property)",
+            "Home equity interest not deductible (unless for improvements)",
+            "Casualty losses only for federally declared disasters"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-021',
+    section: 'REG',
+    title: "Tax Credits: Child, Dependent Care, and Education",
+    description: "Master refundable and nonrefundable individual tax credits",
+    order: 39,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Tax Credits"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Tax credits are more valuable than deductions—they reduce tax dollar-for-dollar! Understanding the major credits (Child Tax Credit, EITC, education credits) is essential for REG and for serving individual tax clients!"
+        },
+        {
+          title: 'Credits vs Deductions',
+          type: 'text',
+          content: "**Credits are better than deductions!**\n\n**Deduction:** Reduces taxable income\n• $1,000 deduction × 24% rate = $240 tax savings\n\n**Credit:** Reduces tax directly\n• $1,000 credit = $1,000 tax savings\n\n**Refundable credits:** Can generate refund even if no tax owed"
+        },
+        {
+          title: 'Child Tax Credit',
+          type: 'text',
+          content: "**2024 amounts:**\n\n• **$2,000** per qualifying child (under 17)\n• **$500** credit for other dependents\n\n**Refundable portion:** Up to $1,700 (ACTC)\n\n**Phaseout:** $400,000 MFJ / $200,000 others\n\n**Requirements:** Child must have SSN, be US citizen/resident"
+        },
+        {
+          title: 'Earned Income Tax Credit (EITC)',
+          type: 'text',
+          content: "**Refundable credit for low-moderate income workers:**\n\n**2024 maximum credit:**\n• 0 children: ~$632\n• 1 child: ~$4,213\n• 2 children: ~$6,960\n• 3+ children: ~$7,830\n\n**Must have earned income**\n**Investment income limit:** $11,600"
+        },
+        {
+          title: '🧠 Memory Aid: EITC Requirements',
+          type: 'callout',
+          content: "**\"EITC needs EARNED\":**\n\n**E**arned income required\n**A**GI limits apply\n**R**esidency requirements\n**N**o excess investment income\n**E**ligible filing status\n**D**ue diligence by preparer!\n\n**Most valuable credit for low-income families**"
+        },
+        {
+          title: 'Education Credits',
+          type: 'table',
+          headers: ['Feature', 'American Opportunity', 'Lifetime Learning'],
+          rows: [
+            ['Max credit', '$2,500 per student', '$2,000 per return'],
+            ['Refundable?', '40% ($1,000)', 'No'],
+            ['Years available', 'First 4 years only', 'Unlimited'],
+            ['Enrollment', 'At least half-time', 'At least one course'],
+            ['Felony drug?', 'Disqualifies', 'No restriction']
+          ]
+        },
+        {
+          title: 'American Opportunity Credit (AOTC)',
+          type: 'text',
+          content: "**For undergraduate students:**\n\n• **100%** of first $2,000 of expenses\n• **25%** of next $2,000\n• **Maximum:** $2,500 per student\n• **40% refundable** ($1,000 max)\n\n**Expenses:** Tuition, fees, books, supplies\n\n**Phaseout:** $80,000-$90,000 (single)"
+        },
+        {
+          title: 'Child and Dependent Care Credit',
+          type: 'text',
+          content: "**Credit for care expenses while working:**\n\n**Eligible expenses:**\n• Up to $3,000 for one dependent\n• Up to $6,000 for two or more\n\n**Credit rate:** 20-35% based on AGI\n\n**Requirements:**\n• Child under 13 OR disabled dependent\n• Both spouses must work (or one in school)\n• Cannot use expenses claimed for FSA"
+        },
+        {
+          title: '⚠️ Exam Trap: Preparer Due Diligence',
+          type: 'warning',
+          content: "**Form 8867 required for:**\n\n• Earned Income Credit\n• Child Tax Credit\n• American Opportunity Credit\n• Head of Household status\n\n**Preparer penalty: $560 per failure!**\n\n**Must ask questions and document answers!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Credits reduce tax dollar-for-dollar (better than deductions)",
+            "Child Tax Credit: $2,000/child, up to $1,700 refundable",
+            "EITC: Refundable credit, requires earned income",
+            "AOTC: Up to $2,500, 40% refundable, first 4 years only",
+            "Lifetime Learning: Up to $2,000, not refundable, unlimited years",
+            "Dependent Care: 20-35% of up to $6,000 expenses",
+            "Preparer due diligence required (Form 8867)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-022',
+    section: 'REG',
+    title: "Filing Status and Dependents",
+    description: "Determine correct filing status and dependency exemptions",
+    order: 40,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Filing Status"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Filing status affects tax rates, standard deduction, and credit eligibility! Determining the correct status—especially Head of Household—is heavily tested. Understanding the qualifying child/relative tests is essential!"
+        },
+        {
+          title: 'Five Filing Statuses',
+          type: 'table',
+          headers: ['Status', 'Requirements'],
+          rows: [
+            ['Single', 'Unmarried and don\'t qualify for other status'],
+            ['Married Filing Jointly', 'Married on 12/31, both agree to file together'],
+            ['Married Filing Separately', 'Married but choose to file separately'],
+            ['Head of Household', 'Unmarried + maintain household for dependent'],
+            ['Qualifying Surviving Spouse', 'Spouse died in prior 2 years + dependent child']
+          ]
+        },
+        {
+          title: 'Head of Household (HOH)',
+          type: 'text',
+          content: "**Better rates than Single! Requirements:**\n\n1. **Unmarried** on December 31 (or considered unmarried)\n2. **Paid >50%** of household costs\n3. **Qualifying person** lived with you >6 months\n\n**Qualifying persons:**\n• Qualifying child\n• Parent (doesn't have to live with you)\n• Qualifying relative who lived with you"
+        },
+        {
+          title: '🧠 Memory Aid: HOH Requirements',
+          type: 'callout',
+          content: "**\"UPC\"** for Head of Household:\n\n**U**nmarried (or treated as)\n**P**aid over 50% of household\n**C**hild or qualifying person lives there\n\n**Parent is exception: Can live elsewhere but you support!**"
+        },
+        {
+          title: 'Qualifying Child Test',
+          type: 'text',
+          content: "**CARES test:**\n\n• **C**lose relative (child, sibling, etc.)\n• **A**ge: Under 19, or under 24 if student, or any age if disabled\n• **R**esidency: Lived with taxpayer >6 months\n• **E**liminate: No joint return (with exceptions)\n• **S**upport: Child didn't provide >50% of own support\n\n**Must meet ALL tests**"
+        },
+        {
+          title: 'Qualifying Relative Test',
+          type: 'text',
+          content: "**SUPORT test:**\n\n• **S**upport: You provide >50%\n• **U**nder gross income limit ($5,050 for 2024)\n• **P**recludes from being qualifying child\n• **O**nly citizens/residents (or N. American)\n• **R**elative OR member of household\n• **T**axpayer not claimed as dependent\n\n**No age test for qualifying relatives!**"
+        },
+        {
+          title: 'Who Can Claim the Dependent?',
+          type: 'text',
+          content: "**Tiebreaker rules if multiple can claim:**\n\n1. **Parent wins** over non-parent\n2. **Longer residence** if both parents (custodial)\n3. **Higher AGI** if same residence\n4. **Noncustodial parent** if Form 8332 signed\n\n**Form 8332:** Custodial parent releases claim"
+        },
+        {
+          title: 'Considered Unmarried',
+          type: 'text',
+          content: "**Married but can file HOH if:**\n\n• Lived apart from spouse last 6 months of year\n• Paid >50% of household costs\n• Home is principal residence for dependent child\n• Would file separate return\n\n**Allows better rates and HOH benefits**"
+        },
+        {
+          title: '⚠️ Exam Trap: Claiming Child of Divorced Parents',
+          type: 'warning',
+          content: "**Custodial parent has priority!**\n\n**But noncustodial parent can claim:**\n• If custodial signs Form 8332\n• Noncustodial gets: Child Tax Credit, dependency\n• Custodial keeps: HOH status, EITC, Dep Care Credit\n\n**Form 8332 doesn't transfer everything!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Five statuses: Single, MFJ, MFS, HOH, QSS",
+            "HOH: Unmarried + >50% household + qualifying person",
+            "Qualifying child: CARES test (age, residency, support)",
+            "Qualifying relative: SUPORT test (income limit applies)",
+            "Tiebreaker: Parent wins, then longer residence, then higher AGI",
+            "Form 8332: Release claim to noncustodial parent",
+            "HOH only for dependent—not just any household member"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-023',
+    section: 'REG',
+    title: "Qualified Business Income Deduction (Section 199A)",
+    description: "Master the 20% pass-through deduction",
+    order: 41,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Individual Tax", "QBI Deduction"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-B-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Section 199A deduction can reduce effective tax rates on pass-through income by 20%! But it's complex—with income limits, SSTB rules, and W-2/property tests. This is heavily tested on REG!"
+        },
+        {
+          title: 'Basic QBI Deduction',
+          type: 'text',
+          content: "**20% deduction for qualified business income:**\n\n• From pass-through entities (S corps, partnerships, sole props)\n• Or qualified REIT dividends and PTP income\n• Deducted from taxable income (below the line)\n• Not from AGI (doesn't affect AGI-based limits)\n\n**Maximum benefit:** Reduces effective rate by ~20%"
+        },
+        {
+          title: 'Simplified Rule (Below Threshold)',
+          type: 'text',
+          content: "**If taxable income below threshold:**\n\n**2024 thresholds:**\n• Single: $191,950\n• MFJ: $383,900\n\n**Deduction = 20% of QBI**\n\n**No W-2/property limitations**\n**No SSTB restrictions**\n\n**Simple!**"
+        },
+        {
+          title: 'What is QBI?',
+          type: 'text',
+          content: "**Qualified Business Income includes:**\n\n• Net income from qualified trade or business\n• Conducted in the US\n• Does NOT include:\n  - Capital gains/losses\n  - Interest income (unless business)\n  - Reasonable compensation (S corp)\n  - Guaranteed payments (partnership)\n  - Investment income"
+        },
+        {
+          title: '🧠 Memory Aid: QBI Exclusions',
+          type: 'callout',
+          content: "**\"CRIG\" is NOT QBI:**\n\n**C**apital gains\n**R**easonable compensation (S corp wages)\n**I**nvestment income\n**G**uaranteed payments (partnership)\n\n**These are carved out of QBI!**"
+        },
+        {
+          title: 'Specified Service Trades/Businesses (SSTB)',
+          type: 'text',
+          content: "**SSTBs get NO deduction above income threshold:**\n\n**SSTB includes:**\n• Health, law, accounting\n• Actuarial science, performing arts, consulting\n• Athletics, financial services, brokerage\n• Any business where principal asset is reputation/skill\n\n**Engineering and architecture are NOT SSTB!**"
+        },
+        {
+          title: 'W-2/Property Limitation',
+          type: 'text',
+          content: "**Above income threshold, deduction limited to GREATER of:**\n\n**Option 1:** 50% of W-2 wages\n\n**Option 2:** 25% of W-2 wages + 2.5% of UBIA (property)\n\n**UBIA = Unadjusted Basis Immediately After Acquisition**\n\n**Capital-intensive businesses use Option 2**"
+        },
+        {
+          title: 'Phase-In Range',
+          type: 'text',
+          content: "**Between threshold and threshold + $50,000/$100,000:**\n\n• Single: $191,950 - $241,950\n• MFJ: $383,900 - $483,900\n\n**Limitations phase IN:**\n• SSTB limitation phases in\n• W-2/property limitation phases in\n\n**Complex calculations in this range!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Overall Limitation',
+          type: 'warning',
+          content: "**QBI deduction ALSO limited to:**\n\n**Lesser of:**\n1. Combined QBI deduction (from all businesses)\n2. 20% of taxable income minus net capital gains\n\n**Cannot deduct more than 20% of taxable income!**\n\n**This is the \"overall cap\"**"
+        },
+        {
+          title: 'Example Calculation',
+          type: 'example',
+          content: "**Below threshold - Simple:**\n\nTaxable income: $150,000 (MFJ)\nQBI from S corp: $80,000\n\nDeduction = $80,000 × 20% = **$16,000**\n\n**Above threshold - Limited:**\n\nTaxable income: $500,000\nQBI: $200,000\nW-2 wages: $50,000\n\nW-2 limit: $50,000 × 50% = $25,000\n20% of QBI: $200,000 × 20% = $40,000\n\nDeduction = **$25,000** (limited)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "QBI deduction: Up to 20% of qualified business income",
+            "Below threshold: Simple 20% deduction, no limits",
+            "Above threshold: W-2/property limitations apply",
+            "SSTBs: No deduction above threshold (phases out)",
+            "QBI excludes: Reasonable comp, guaranteed payments, capital gains",
+            "Overall cap: Cannot exceed 20% of taxable income",
+            "Engineering and architecture are NOT SSTB"
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'REG-IV-001',
     section: 'REG',
     title: "C Corporation Formation (Section 351)",

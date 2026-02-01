@@ -6193,6 +6193,164 @@ export const farLessons: Lesson[] = [
     }
   },
   {
+    id: 'FAR-IV-009',
+    section: 'FAR',
+    title: "Government Fund Accounting: General and Special Revenue",
+    description: "Master the two primary governmental fund types",
+    order: 59,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Governmental", "Fund Accounting"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The General Fund and Special Revenue Funds account for most of a government's day-to-day operations! Understanding how these funds work—including budgetary entries, revenue recognition, and expenditure recording—is essential for FAR governmental questions!"
+        },
+        {
+          title: 'General Fund Overview',
+          type: 'text',
+          content: "**The General Fund is the \"main operating fund\":**\n\n• Accounts for all resources NOT required to be in another fund\n• Most significant fund for most governments\n• Only ONE General Fund per government\n• Records day-to-day operations\n\n**Common revenues:** Property taxes, sales taxes, fees, fines"
+        },
+        {
+          title: 'General Fund Characteristics',
+          type: 'text',
+          content: "**Measurement focus:** Current financial resources\n**Basis of accounting:** Modified accrual\n\n**What appears on balance sheet:**\n• Current assets (cash, receivables, inventory)\n• Current liabilities (payables)\n• Fund balance classifications\n\n**What does NOT appear:**\n• Capital assets (no depreciation)\n• Long-term debt"
+        },
+        {
+          title: 'Budgetary Accounting',
+          type: 'text',
+          content: "**Governments must adopt legal budgets:**\n\n**Recording the budget (beginning of year):**\n```\nDr: Estimated Revenues         $5,000,000\nDr: Budgetary Fund Balance       200,000\n   Cr: Appropriations           $4,800,000\n   Cr: Estimated Other Uses       400,000\n```\n\n**Reverse at year-end when closing!**\n\n**Purpose:** Legal control over spending"
+        },
+        {
+          title: '🧠 Memory Aid: Budgetary Entries',
+          type: 'callout',
+          content: "**\"DEAR COCA\" for Budget Entry:**\n\n**D**ebit: **E**stimated **R**evenues (expected income)\n**C**redit: **A**ppropriations (spending authority)\n\n**Balance goes to Budgetary Fund Balance**\n\n**Surplus budget:** Credit Budgetary FB\n**Deficit budget:** Debit Budgetary FB"
+        },
+        {
+          title: 'Special Revenue Funds',
+          type: 'text',
+          content: "**Account for resources restricted to specific purposes:**\n\n**Examples:**\n• Gas tax revenue → Road maintenance fund\n• Hotel tax → Tourism fund\n• Grant revenue → Grant fund\n\n**Same accounting as General Fund:**\n• Current financial resources\n• Modified accrual basis\n\n**When required:** When legally mandated OR resource provider requires"
+        },
+        {
+          title: 'Revenue Recognition - Modified Accrual',
+          type: 'text',
+          content: "**Revenue recognized when:**\n\n**1. Measurable** - Amount can be reasonably estimated\n**2. Available** - Collected within availability period\n\n**Availability period:** Typically 60 days after year-end\n\n**Example:**\nProperty tax billed Dec 1, due Jan 15:\n• If collected by Feb 28 → Revenue this year\n• If collected March 15 → Deferred inflow this year"
+        },
+        {
+          title: 'Expenditure Recognition',
+          type: 'text',
+          content: "**Expenditures recorded when fund liability incurred:**\n\n**Current expenditures:** When goods/services received\n**Capital outlays:** When asset acquired (not capitalized!)\n\n**Special timing rules:**\n• Debt principal/interest → When legally due\n• Compensated absences → When paid (or matured)\n• Claims/judgments → When paid\n\n**No depreciation expense in governmental funds!**"
+        },
+        {
+          title: 'Encumbrance Accounting',
+          type: 'text',
+          content: "**Record purchase orders before goods received:**\n\n**When PO issued:**\n```\nDr: Encumbrances            $10,000\n   Cr: Budgetary Fund Balance  $10,000\n```\n\n**When goods received:**\n```\nDr: Budgetary Fund Balance  $10,000\n   Cr: Encumbrances            $10,000\n\nDr: Expenditures            $10,200\n   Cr: Vouchers Payable        $10,200\n```\n\n**Prevents overspending appropriations!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Outstanding Encumbrances',
+          type: 'warning',
+          content: "**At year-end, outstanding encumbrances:**\n\n• Close to Fund Balance - Committed or Assigned\n• NOT reported as liabilities (goods not received)\n• Represent future commitments\n\n**Next year:** May re-encumber if policy permits\n\n**On balance sheet:** Shown in Fund Balance classifications"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "General Fund: Main operating fund, only one per government",
+            "Special Revenue: Restricted revenue sources, similar accounting",
+            "Modified accrual: Revenue when measurable AND available",
+            "Budget entry: DR Est. Revenue, CR Appropriations",
+            "Encumbrances: Record POs to control spending",
+            "Capital outlays: Expenditures, not capitalized",
+            "Outstanding encumbrances: Close to Fund Balance"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-IV-010',
+    section: 'FAR',
+    title: "Capital Projects and Debt Service Funds",
+    description: "Master funds for capital improvements and debt repayment",
+    order: 60,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Governmental", "Fund Accounting", "Debt Service"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Capital Projects Funds account for major construction and acquisitions, while Debt Service Funds handle debt repayment. Understanding how these funds interact with long-term assets and liabilities is critical for FAR governmental questions!"
+        },
+        {
+          title: 'Capital Projects Fund Overview',
+          type: 'text',
+          content: "**Account for resources used to acquire capital assets:**\n\n**Common uses:**\n• Building construction\n• Major equipment purchases\n• Infrastructure projects\n\n**Funding sources:**\n• Bond proceeds\n• Grants\n• Transfers from General Fund\n\n**Same measurement focus/basis as General Fund!**"
+        },
+        {
+          title: 'Bond Proceeds in Capital Projects Fund',
+          type: 'text',
+          content: "**Recording bond issuance:**\n\n**At par:**\n```\nDr: Cash                    $1,000,000\n   Cr: Other Financing Sources $1,000,000\n```\n\n**Premium goes to Debt Service Fund:**\n```\nDr: Cash                    $1,050,000\n   Cr: OFS - Bond Proceeds     $1,000,000\n   Cr: OFS - Premium             $50,000\n```\n\n**No long-term debt recorded in Capital Projects Fund!**"
+        },
+        {
+          title: 'Construction Expenditures',
+          type: 'text',
+          content: "**Construction costs are EXPENDITURES (not assets):**\n\n**Progress billings:**\n```\nDr: Expenditures           $500,000\n   Cr: Contracts Payable      $500,000\n```\n\n**Retention:**\n```\nDr: Expenditures           $50,000\n   Cr: Contracts Payable - Retention $50,000\n```\n\n**Asset appears in Government-wide statements only!**"
+        },
+        {
+          title: '🧠 Memory Aid: Where Things Go',
+          type: 'callout',
+          content: "**\"Capital Projects = Cash In, Cash Out\"**\n\n**In the Capital Projects Fund:**\n• Bond proceeds (Other Financing Source)\n• Expenditures (cash going out)\n• NO capital assets\n• NO long-term debt\n\n**In Government-Wide Statements:**\n• Capital assets (construction in progress)\n• Long-term debt (bonds payable)\n\n**Two views of same transaction!**"
+        },
+        {
+          title: 'Debt Service Fund Overview',
+          type: 'text',
+          content: "**Account for resources used to pay long-term debt:**\n\n**Purpose:**\n• Accumulate resources for debt payments\n• Pay principal and interest when due\n\n**Revenue sources:**\n• Transfers from General Fund\n• Property taxes dedicated to debt\n• Bond premium transferred from Capital Projects\n\n**Expenditures recognized when LEGALLY DUE!**"
+        },
+        {
+          title: 'Debt Service Expenditures',
+          type: 'text',
+          content: "**Principal and interest recognized when legally due:**\n\n**NOT when accrued!**\n\n**Example:** $1M bond, interest due Jan 1 and July 1\n\nFiscal year-end June 30:\n• Interest for Jan-June: NOT recorded as expenditure\n• Interest due July 1: Expenditure in NEXT year\n\n**Exception:** If resources available and payment imminent, accrue"
+        },
+        {
+          title: 'Fund Balance Accumulation',
+          type: 'text',
+          content: "**Debt Service Funds accumulate resources:**\n\n**Over time:**\n• Resources transferred in\n• Held until debt payments due\n• Expenditure only when legally due\n\n**May result in significant fund balance**\n\n**Classification:** Restricted for debt service"
+        },
+        {
+          title: '⚠️ Exam Trap: Principal vs Interest',
+          type: 'warning',
+          content: "**Both principal AND interest:**\n\n• Recorded as EXPENDITURES when legally due\n• NO distinction on fund statements\n• Both reduce fund balance equally\n\n**In Government-Wide:**\n• Principal reduces bonds payable\n• Interest is expense\n\n**Different treatment between the two views!**"
+        },
+        {
+          title: 'Reconciliation Items',
+          type: 'text',
+          content: "**Converting to Government-Wide:**\n\n**Add back:**\n• Capital asset purchases (recorded as expenditure)\n• Principal payments (reduced debt, not expense)\n\n**Remove:**\n• Bond proceeds (it's a liability, not revenue)\n\n**Add:**\n• Depreciation expense\n• Accrued interest (not paid yet)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Capital Projects: Major capital asset acquisitions",
+            "Bond proceeds = Other Financing Sources (not revenue)",
+            "Construction costs = Expenditures (not capital assets)",
+            "Debt Service: Accumulates resources for debt payment",
+            "Principal/interest = Expenditure when LEGALLY DUE",
+            "No long-term debt in governmental fund balance sheets",
+            "Reconcile to Government-Wide for complete picture"
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'FAR-V-001',
     section: 'FAR',
     title: "NFP Statement of Financial Position",
@@ -6642,6 +6800,161 @@ export const farLessons: Lesson[] = [
             "Charitable lead trust: NFP gets income, donor gets remainder",
             "Gift annuity: NFP owns assets, pays fixed annuity to donor",
             "Classified as 'with donor restrictions' until trust terminates"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-006',
+    section: 'FAR',
+    title: "NFP Functional Expense Reporting",
+    description: "Master expense allocation and the Statement of Functional Expenses",
+    order: 66,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Not-for-Profit", "Functional Expenses"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Donors want to know how their money is spent! NFPs must report expenses by function (programs vs support) AND by nature (salaries, rent, etc.). The Statement of Functional Expenses shows this important information!"
+        },
+        {
+          title: 'Two Ways to Classify Expenses',
+          type: 'text',
+          content: "**By Function (what the money does):**\n• Program services\n• Management and general\n• Fundraising\n\n**By Nature (what was purchased):**\n• Salaries and benefits\n• Rent and utilities\n• Supplies\n• Professional services\n• Depreciation"
+        },
+        {
+          title: 'Functional Categories',
+          type: 'table',
+          headers: ['Category', 'Description', 'Examples'],
+          rows: [
+            ['Program Services', 'Mission-related activities', 'Education, research, counseling'],
+            ['Management & General', 'Overall administration', 'Executive salaries, accounting, legal'],
+            ['Fundraising', 'Donor solicitation', 'Events, mailings, development staff']
+          ]
+        },
+        {
+          title: 'Statement of Functional Expenses',
+          type: 'text',
+          content: "**Matrix format required:**\n\n• Rows: Expenses by NATURE\n• Columns: Expenses by FUNCTION\n• Shows how each type of expense supports each activity\n\n**Required for:**\n• Voluntary health and welfare organizations (always)\n• Other NFPs (encouraged, statement or notes)\n\n**ASU 2016-14:** Enhanced disclosure requirements"
+        },
+        {
+          title: '🧠 Memory Aid: Functional Expense Matrix',
+          type: 'callout',
+          content: "**Think of a GRID:**\n\n```\n                  Programs  M&G  Fundraising\nSalaries          $500K    $80K    $40K\nRent               $50K    $10K     $5K\nSupplies           $20K     $3K     $2K\n```\n\n**Rows = NATURE (what bought)**\n**Columns = FUNCTION (why bought)**\n**Must allocate shared costs!**"
+        },
+        {
+          title: 'Expense Allocation',
+          type: 'text',
+          content: "**Many costs must be allocated:**\n\n**Direct costs:** Charge directly to function\n\n**Shared costs:** Allocate using reasonable basis:\n• Salaries → Time spent\n• Rent → Square footage\n• Utilities → Square footage\n• Depreciation → Use or square footage\n\n**Document allocation methodology!**"
+        },
+        {
+          title: 'Program Ratio',
+          type: 'text',
+          content: "**Key metric donors watch:**\n\nProgram Ratio = Program Expenses / Total Expenses\n\n**Higher = Better** (more going to mission)\n\n**Typical expectations:**\n• 75%+ considered good by many raters\n• Below 50% raises concerns\n\n**Watchdog groups like Charity Navigator use this!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Joint Costs',
+          type: 'warning',
+          content: "**Multi-purpose activities (e.g., educational mailing that also solicits):**\n\n**Can allocate to BOTH program AND fundraising IF:**\n1. Purpose criteria met (would do without solicitation)\n2. Audience criteria met (selected for reasons other than ability to give)\n3. Content criteria met (serves program/M&G function)\n\n**ALL THREE criteria must be met to allocate to program!**\n**Otherwise → 100% Fundraising**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Expenses reported by function AND by nature",
+            "Functions: Program, Management & General, Fundraising",
+            "Statement of Functional Expenses: Matrix format",
+            "Shared costs allocated using reasonable bases",
+            "Program ratio: Program expenses / Total expenses",
+            "Joint costs: Must meet all three criteria to allocate to program",
+            "Document allocation methodology"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-007',
+    section: 'FAR',
+    title: "Healthcare Entity Accounting",
+    description: "Learn the unique accounting for hospitals and healthcare organizations",
+    order: 67,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Healthcare", "Not-for-Profit"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Healthcare entities—hospitals, clinics, and health systems—have unique accounting requirements, especially for patient service revenue and charity care! Understanding these special rules is essential for FAR healthcare questions!"
+        },
+        {
+          title: 'Types of Healthcare Entities',
+          type: 'text',
+          content: "**Healthcare entities can be:**\n\n• **For-profit:** Follow business GAAP\n• **Government:** Follow GASB standards\n• **Not-for-profit:** Follow FASB NFP standards\n\n**Most FAR questions focus on NFP healthcare**\n\n**Same functional expense reporting as other NFPs**"
+        },
+        {
+          title: 'Patient Service Revenue',
+          type: 'text',
+          content: "**Revenue recognition (ASC 606):**\n\n**Transaction price = Amount expect to collect**\n\n• Start with gross charges\n• Less: Contractual adjustments (insurance discounts)\n• Less: Implicit price concessions (expected bad debts)\n• = Net patient service revenue\n\n**Report NET amount (single line)**"
+        },
+        {
+          title: 'Contractual Adjustments',
+          type: 'text',
+          content: "**Differences between charges and insurance payments:**\n\n**Example:**\nCharges for procedure: $10,000\nInsurance pays: $6,500\nContractual adjustment: $3,500\n\n**Recorded as reduction of revenue, NOT expense**\n\n**Third-party payers:**\n• Medicare\n• Medicaid\n• Commercial insurance"
+        },
+        {
+          title: '🧠 Memory Aid: Revenue Components',
+          type: 'callout',
+          content: "**\"GROSS minus REDUCTIONS = NET\"**\n\n**Gross patient service revenue**\n- Contractual adjustments (insurance deals)\n- Implicit price concessions (won't collect)\n- Charity care (never expected to collect)\n= **Net patient service revenue**\n\n**Only report the NET!**"
+        },
+        {
+          title: 'Charity Care',
+          type: 'text',
+          content: "**Services provided for free or reduced price:**\n\n**ASU 2016-14 treatment:**\n• NOT recorded as revenue\n• NOT recorded as bad debt expense\n• Disclosed in notes:\n  - Policy for providing charity care\n  - Quantified (e.g., at cost)\n\n**Why not revenue?** Never expected to collect"
+        },
+        {
+          title: 'Bad Debts vs Charity Care',
+          type: 'table',
+          headers: ['Item', 'Bad Debts', 'Charity Care'],
+          rows: [
+            ['Patient expectation', 'Expected to pay', 'Not expected to pay'],
+            ['Ability to pay', 'Has ability (but doesn\'t)', 'No ability'],
+            ['Treatment', 'Implicit price concession', 'Not recognized'],
+            ['Revenue effect', 'Reduces net revenue', 'No revenue recorded'],
+            ['Disclosure', 'May be in notes', 'Required disclosure']
+          ]
+        },
+        {
+          title: 'Healthcare Operating Statement',
+          type: 'text',
+          content: "**Typical format:**\n\n**Operating revenues:**\n• Net patient service revenue\n• Premium revenue (capitation)\n• Other operating revenue\n\n**Operating expenses:**\n• By function (nursing, support, admin)\n\n**Non-operating:**\n• Investment income\n• Contributions"
+        },
+        {
+          title: '⚠️ Exam Trap: Malpractice Claims',
+          type: 'warning',
+          content: "**Healthcare entities have significant malpractice exposure:**\n\n**Record liability when:**\n• Probable AND\n• Reasonably estimable\n\n**Uninsured claims:**\n• Accrue expected losses\n• Use actuarial estimates\n\n**Insurance recoveries:**\n• Asset only if probable"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Healthcare can be for-profit, government, or NFP",
+            "Patient service revenue: Net amount expected to collect",
+            "Contractual adjustments: Reduce revenue (insurance deals)",
+            "Charity care: Not revenue, disclosed in notes",
+            "Bad debts: Implicit price concession, reduces revenue",
+            "Malpractice: Accrue when probable and estimable",
+            "Most FAR questions focus on NFP healthcare"
           ]
         }
       ]

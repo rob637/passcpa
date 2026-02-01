@@ -540,9 +540,19 @@ const AdminCMS: React.FC = () => {
                         await batch.commit();
                         addLog('✅ Account reset complete! Redirecting to onboarding...', 'success');
                         
-                        // Clear local storage
+                        // Clear local storage - including all dailyplan keys
                         localStorage.removeItem('voraprep_study_state');
                         localStorage.removeItem('voraprep_progress');
+                        
+                        // Clear all dailyplan_completed entries
+                        const keysToRemove: string[] = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                          const key = localStorage.key(i);
+                          if (key && key.startsWith('dailyplan_completed_')) {
+                            keysToRemove.push(key);
+                          }
+                        }
+                        keysToRemove.forEach(key => localStorage.removeItem(key));
                         
                         // Redirect to onboarding after short delay
                         setTimeout(() => {

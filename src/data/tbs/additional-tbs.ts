@@ -2400,7 +2400,921 @@ This memorandum is based on facts presented and current law. Tax positions shoul
   },
 ];
 
+// ==========================================
+// EASY DIFFICULTY TBS - Entry Level
+// ==========================================
+export const EASY_TBS: TBS[] = [
+  {
+    id: 'far-tbs-011',
+    section: 'FAR',
+    type: TBS_TYPES.JOURNAL_ENTRY,
+    title: 'Basic Adjusting Entries',
+    difficulty: 'easy',
+    timeEstimate: 8,
+    topic: 'Adjusting Entries',
+    blueprintArea: 'FAR-I',
+    blueprintTopic: 'FAR-I-A-1',
+    scenario: `
+You are preparing year-end adjusting entries for SimpleStart Company (December 31, Year 1).
+
+SITUATION A: On September 1, Year 1, the company paid $12,000 for a one-year insurance policy. The entire amount was recorded as Prepaid Insurance.
+
+SITUATION B: The company has a $100,000 note payable with 6% annual interest. Interest is paid annually on March 1. No interest has been recorded since the last payment.
+
+SITUATION C: On December 15, Year 1, the company received $6,000 for services to be performed in January Year 2. The full amount was recorded as Service Revenue.
+
+SITUATION D: Employees earned $8,500 in wages during the last week of December that will be paid on January 5, Year 2.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'calculation',
+        question: 'For Situation A, what is the insurance expense for Year 1?',
+        correctAnswer: 4000,
+        tolerance: 0,
+        explanation: '$12,000 × (4 months ÷ 12 months) = $4,000. September through December = 4 months of coverage used.',
+      },
+      {
+        id: 'req-2',
+        type: 'journal_entry',
+        question: 'Prepare the adjusting entry for Situation A.',
+        correctEntries: [
+          { account: 'Insurance Expense', debit: 4000, credit: null },
+          { account: 'Prepaid Insurance', debit: null, credit: 4000 },
+        ],
+        tolerance: 0,
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'For Situation B, what is the accrued interest at December 31?',
+        correctAnswer: 5000,
+        tolerance: 0,
+        explanation: '$100,000 × 6% × (10 months ÷ 12 months) = $5,000. Interest accrues from March 1 through December 31.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'For Situation C, what adjusting entry is needed?',
+        options: [
+          'Debit Service Revenue $6,000; Credit Unearned Revenue $6,000',
+          'Debit Unearned Revenue $6,000; Credit Service Revenue $6,000',
+          'No entry needed - revenue was earned',
+          'Debit Cash $6,000; Credit Service Revenue $6,000',
+        ],
+        correctAnswer: 0,
+        explanation: 'Revenue was recorded but not earned. It must be deferred until January when services are performed.',
+      },
+      {
+        id: 'req-5',
+        type: 'journal_entry',
+        question: 'Prepare the adjusting entry for Situation D (accrued wages).',
+        correctEntries: [
+          { account: 'Wages Expense', debit: 8500, credit: null },
+          { account: 'Wages Payable', debit: null, credit: 8500 },
+        ],
+        tolerance: 0,
+      },
+    ],
+    hints: [
+      'Prepaid items: Expense the portion that has been used',
+      'Accrued interest = Principal × Rate × Time',
+      'Unearned revenue: Defer revenue not yet earned',
+      'Accrued expenses: Record expenses incurred but not yet paid',
+    ],
+    references: ['ASC 250-10'],
+  },
+  {
+    id: 'far-tbs-012',
+    section: 'FAR',
+    type: TBS_TYPES.CALCULATION,
+    title: 'Depreciation Methods Comparison',
+    difficulty: 'easy',
+    timeEstimate: 10,
+    topic: 'Depreciation',
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-1',
+    scenario: `
+QuickGrow Company purchased equipment on January 1, Year 1:
+• Cost: $50,000
+• Salvage value: $5,000
+• Useful life: 5 years
+• Estimated total units of production: 90,000 units
+• Actual units produced Year 1: 22,000 units
+
+Calculate depreciation expense for Year 1 under each method.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'calculation',
+        question: 'Calculate Year 1 depreciation using the straight-line method.',
+        correctAnswer: 9000,
+        tolerance: 0,
+        explanation: '($50,000 - $5,000) ÷ 5 years = $9,000 per year',
+      },
+      {
+        id: 'req-2',
+        type: 'calculation',
+        question: 'Calculate Year 1 depreciation using double-declining balance.',
+        correctAnswer: 20000,
+        tolerance: 0,
+        explanation: '$50,000 × (2 ÷ 5) = $50,000 × 40% = $20,000. Note: Salvage not used in DDB calculation.',
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'Calculate Year 1 depreciation using units of production.',
+        correctAnswer: 11000,
+        tolerance: 0,
+        explanation: '($50,000 - $5,000) ÷ 90,000 units × 22,000 units = $0.50 × 22,000 = $11,000',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Which method results in the HIGHEST net income for Year 1?',
+        options: [
+          'Straight-line ($9,000 depreciation)',
+          'Double-declining balance ($20,000 depreciation)',
+          'Units of production ($11,000 depreciation)',
+          'All methods result in the same net income',
+        ],
+        correctAnswer: 0,
+        explanation: 'Lower depreciation = higher net income. Straight-line has the lowest Year 1 depreciation.',
+      },
+    ],
+    hints: [
+      'Straight-line: (Cost - Salvage) ÷ Life',
+      'DDB: Book Value × (2 ÷ Life) - ignore salvage until the end',
+      'Units: (Cost - Salvage) ÷ Total Units × Units This Period',
+    ],
+    references: ['ASC 360-10-35'],
+  },
+  {
+    id: 'reg-tbs-015',
+    section: 'REG',
+    type: TBS_TYPES.CALCULATION,
+    title: 'Individual Tax Deductions - Standard vs. Itemized',
+    difficulty: 'easy',
+    timeEstimate: 10,
+    topic: 'Individual Taxation',
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-A-1',
+    scenario: `
+John and Mary Smith (married filing jointly) have the following information for Year 1:
+
+Income:
+• John's W-2 wages: $95,000
+• Mary's W-2 wages: $65,000
+• Interest income: $2,000
+
+Potential Itemized Deductions:
+• State and local taxes (SALT): $18,000 (note: limited to $10,000)
+• Home mortgage interest: $12,000
+• Charitable contributions: $3,500
+• Medical expenses: $6,500 (AGI threshold is 7.5%)
+
+The standard deduction for MFJ in Year 1 is $27,700.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'calculation',
+        question: 'Calculate the Smiths\' Adjusted Gross Income (AGI).',
+        correctAnswer: 162000,
+        tolerance: 0,
+        explanation: '$95,000 + $65,000 + $2,000 = $162,000',
+      },
+      {
+        id: 'req-2',
+        type: 'calculation',
+        question: 'Calculate the allowable SALT deduction.',
+        correctAnswer: 10000,
+        tolerance: 0,
+        explanation: 'SALT is limited to $10,000 even though they paid $18,000.',
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'Calculate the deductible medical expenses (if any).',
+        correctAnswer: 0,
+        tolerance: 0,
+        explanation: 'AGI threshold = $162,000 × 7.5% = $12,150. Medical expenses of $6,500 do not exceed this floor.',
+      },
+      {
+        id: 'req-4',
+        type: 'calculation',
+        question: 'Calculate total itemized deductions.',
+        correctAnswer: 25500,
+        tolerance: 0,
+        explanation: 'SALT ($10,000) + Mortgage Interest ($12,000) + Charitable ($3,500) + Medical ($0) = $25,500',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'Should the Smiths itemize or take the standard deduction?',
+        options: [
+          'Itemize - $25,500 exceeds the standard deduction',
+          'Standard deduction - $27,700 exceeds itemized deductions',
+          'Either option results in the same taxable income',
+          'They must itemize because they own a home',
+        ],
+        correctAnswer: 1,
+        explanation: 'Standard deduction ($27,700) > Itemized deductions ($25,500). They should take the standard deduction.',
+      },
+    ],
+    hints: [
+      'SALT deduction is capped at $10,000 (MFJ)',
+      'Medical expenses must exceed 7.5% of AGI to be deductible',
+      'Choose whichever is greater: standard or itemized',
+    ],
+    references: ['IRC Section 63', 'IRC Section 164', 'IRC Section 213'],
+  },
+  {
+    id: 'aud-tbs-014',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Basic Audit Procedures Matching',
+    difficulty: 'easy',
+    timeEstimate: 8,
+    topic: 'Audit Procedures',
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-B-1',
+    scenario: `
+Match each audit procedure with the primary assertion it tests and the account it would be applied to.
+
+AUDIT PROCEDURES:
+A. Send confirmation letters to customers
+B. Observe the client counting inventory
+C. Trace recorded sales to shipping documents
+D. Vouch recorded purchases to vendor invoices
+E. Perform cutoff testing near year-end
+F. Review subsequent cash receipts
+G. Inspect fixed asset additions
+H. Recalculate depreciation expense
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Match each procedure to its PRIMARY assertion:',
+        items: ['Confirmation to customers', 'Inventory observation', 'Trace sales to shipping docs', 'Subsequent cash receipts test'],
+        options: ['Existence', 'Completeness', 'Valuation', 'Cutoff'],
+        correctAnswers: [
+          { item: 'Confirmation to customers', answer: 'Existence' },
+          { item: 'Inventory observation', answer: 'Existence' },
+          { item: 'Trace sales to shipping docs', answer: 'Existence' },
+          { item: 'Subsequent cash receipts test', answer: 'Valuation' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Which procedure BEST tests completeness of accounts payable?',
+        options: [
+          'Confirm balances with vendors',
+          'Vouch recorded payables to invoices',
+          'Search for unrecorded liabilities (review subsequent disbursements)',
+          'Recalculate the payables balance',
+        ],
+        correctAnswer: 2,
+        explanation: 'Completeness is tested by looking for items that SHOULD be recorded but might be missing. Searching subsequent disbursements finds payables that existed at year-end but were not recorded.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'Vouching from the general ledger to source documents primarily tests:',
+        options: [
+          'Completeness - finding unrecorded transactions',
+          'Existence - verifying recorded transactions occurred',
+          'Presentation - proper disclosure',
+          'Rights and obligations',
+        ],
+        correctAnswer: 1,
+        explanation: 'Vouching goes FROM the records TO supporting evidence, testing whether recorded items actually exist.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Tracing from source documents to the general ledger primarily tests:',
+        options: [
+          'Existence - verifying recorded transactions occurred',
+          'Completeness - finding unrecorded transactions',
+          'Accuracy - mathematical correctness',
+          'Valuation - proper amounts',
+        ],
+        correctAnswer: 1,
+        explanation: 'Tracing goes FROM source documents TO the records, testing whether transactions that occurred were actually recorded (completeness).',
+      },
+    ],
+    hints: [
+      'Vouching: Records → Source docs = Tests Existence',
+      'Tracing: Source docs → Records = Tests Completeness',
+      'Confirmations test Existence (the customer confirms they owe the money)',
+      'Cutoff testing ensures transactions are in the correct period',
+    ],
+    references: ['AU-C 500', 'AU-C 505', 'AU-C 501'],
+  },
+  {
+    id: 'aud-tbs-015',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Understanding the Audit Report',
+    difficulty: 'easy',
+    timeEstimate: 8,
+    topic: 'Audit Reports',
+    blueprintArea: 'AUD-V',
+    blueprintTopic: 'AUD-V-A-1',
+    scenario: `
+Review the following excerpts from audit reports and identify the type of opinion and any modifications:
+
+REPORT A:
+"In our opinion, the financial statements referred to above present fairly, in all material respects, the financial position of ABC Company..."
+
+REPORT B:
+"In our opinion, except for the effects of not recording depreciation as discussed in the Basis for Qualified Opinion paragraph, the financial statements present fairly..."
+
+REPORT C:
+"Because of the significance of the matter described in the Basis for Disclaimer of Opinion paragraph, we were unable to obtain sufficient appropriate audit evidence..."
+
+REPORT D:
+"In our opinion, because of the significance of the matter discussed in the Basis for Adverse Opinion paragraph, the financial statements do not present fairly..."
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Classify each report excerpt:',
+        items: ['Report A', 'Report B', 'Report C', 'Report D'],
+        options: ['Unmodified Opinion', 'Qualified Opinion', 'Adverse Opinion', 'Disclaimer of Opinion'],
+        correctAnswers: [
+          { item: 'Report A', answer: 'Unmodified Opinion' },
+          { item: 'Report B', answer: 'Qualified Opinion' },
+          { item: 'Report C', answer: 'Disclaimer of Opinion' },
+          { item: 'Report D', answer: 'Adverse Opinion' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Report B (Qualified Opinion) uses what key phrase?',
+        options: [
+          '"present fairly in all material respects"',
+          '"except for the effects of"',
+          '"do not present fairly"',
+          '"we were unable to obtain"',
+        ],
+        correctAnswer: 1,
+        explanation: 'A qualified opinion uses "except for" language - meaning the statements are fairly presented EXCEPT for a specific matter.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'What caused Report C (Disclaimer)?',
+        options: [
+          'A material departure from GAAP',
+          'A scope limitation preventing sufficient evidence',
+          'A going concern issue',
+          'Related party transactions',
+        ],
+        correctAnswer: 1,
+        explanation: '"Unable to obtain sufficient appropriate audit evidence" indicates a scope limitation so severe the auditor cannot express an opinion.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Which opinion is MOST severe (indicates the worst problem)?',
+        options: [
+          'Qualified Opinion',
+          'Adverse Opinion',
+          'Disclaimer of Opinion',
+          'All modified opinions are equally severe',
+        ],
+        correctAnswer: 1,
+        explanation: 'Adverse opinion states the financial statements DO NOT present fairly - this is the most severe opinion indicating material and pervasive misstatement.',
+      },
+    ],
+    hints: [
+      'Unmodified = "presents fairly" (clean opinion)',
+      'Qualified = "except for" (one specific issue)',
+      'Adverse = "do not present fairly" (statements are wrong)',
+      'Disclaimer = "unable to" (no opinion at all)',
+    ],
+    references: ['AU-C 700', 'AU-C 705', 'AU-C 706'],
+  },
+  {
+    id: 'isc-tbs-011',
+    section: 'ISC',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'IT General Controls Basics',
+    difficulty: 'easy',
+    timeEstimate: 10,
+    topic: 'IT Controls',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-1',
+    scenario: `
+You are reviewing IT General Controls (ITGCs) for a client. Classify each control into the appropriate ITGC category.
+
+CONTROLS TO CLASSIFY:
+A. Passwords must be at least 8 characters with complexity requirements
+B. All program changes must be approved before moving to production
+C. Daily backup of all data to an offsite location
+D. Segregation of duties between developers and those who deploy code
+E. Firewall rules reviewed and updated quarterly
+F. Terminated employees have access removed within 24 hours
+G. Disaster recovery plan tested annually
+H. New users require manager approval before access is granted
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Classify each control into an ITGC category:',
+        items: ['Password complexity', 'Program change approval', 'Daily backups', 'Developer segregation of duties'],
+        options: ['Access Controls', 'Change Management', 'Computer Operations', 'Program Development'],
+        correctAnswers: [
+          { item: 'Password complexity', answer: 'Access Controls' },
+          { item: 'Program change approval', answer: 'Change Management' },
+          { item: 'Daily backups', answer: 'Computer Operations' },
+          { item: 'Developer segregation of duties', answer: 'Change Management' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Controls F and H (user provisioning and deprovisioning) belong to which category?',
+        options: [
+          'Access Controls',
+          'Change Management',
+          'Computer Operations',
+          'Physical Security',
+        ],
+        correctAnswer: 0,
+        explanation: 'User provisioning (adding) and deprovisioning (removing) are Access Controls - they determine WHO can access systems.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'Control G (disaster recovery testing) is important because:',
+        options: [
+          'It prevents unauthorized access',
+          'It ensures changes are properly approved',
+          'It validates the organization can recover from disruptions',
+          'It encrypts sensitive data',
+        ],
+        correctAnswer: 2,
+        explanation: 'Disaster recovery testing (part of Computer Operations/Business Continuity) validates the organization can recover systems and data after a disruption.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'If ITGCs are weak, what impact does this have on the audit?',
+        options: [
+          'No impact - ITGCs are optional',
+          'The auditor cannot rely on automated application controls',
+          'Only affects the IT audit, not financial statement audit',
+          'The audit must be delayed until controls are fixed',
+        ],
+        correctAnswer: 1,
+        explanation: 'Weak ITGCs mean the auditor cannot trust that automated controls (like system calculations) are working properly, requiring more substantive testing.',
+      },
+    ],
+    hints: [
+      'Access Controls: WHO can access (passwords, user provisioning)',
+      'Change Management: HOW changes are controlled (approvals, testing)',
+      'Computer Operations: Daily operations (backups, job scheduling, DR)',
+      'Program Development: Building new systems (SDLC)',
+    ],
+    references: ['COSO Framework', 'COBIT', 'AU-C 315'],
+  },
+  {
+    id: 'tcp-tbs-011',
+    section: 'TCP',
+    type: TBS_TYPES.CALCULATION,
+    title: 'Basic Corporate Tax Calculation',
+    difficulty: 'easy',
+    timeEstimate: 10,
+    topic: 'Corporate Taxation',
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
+    scenario: `
+SimpleCorp Inc. is a C corporation with the following Year 1 information:
+
+Income:
+• Gross receipts from sales: $2,000,000
+• Cost of goods sold: $1,200,000
+• Interest income from corporate bonds: $15,000
+• Dividend income from 25%-owned domestic corporation: $40,000
+
+Deductions:
+• Officer salaries: $250,000
+• Other salaries: $180,000
+• Rent expense: $60,000
+• Depreciation: $45,000
+• Interest expense: $12,000
+• Charitable contributions: $35,000 (made in cash)
+
+The corporate tax rate is 21%.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'calculation',
+        question: 'Calculate gross profit.',
+        correctAnswer: 800000,
+        tolerance: 0,
+        explanation: 'Gross receipts ($2,000,000) - COGS ($1,200,000) = $800,000',
+      },
+      {
+        id: 'req-2',
+        type: 'calculation',
+        question: 'Calculate total income before deductions.',
+        correctAnswer: 855000,
+        tolerance: 0,
+        explanation: 'Gross profit ($800,000) + Interest ($15,000) + Dividends ($40,000) = $855,000',
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'Calculate the dividends received deduction (DRD). Hint: 25%-owned = 65% DRD.',
+        correctAnswer: 26000,
+        tolerance: 0,
+        explanation: '$40,000 × 65% = $26,000. Corporations owning 20%-50% receive a 65% DRD.',
+      },
+      {
+        id: 'req-4',
+        type: 'calculation',
+        question: 'Calculate total deductions (include DRD but before charitable limitation check).',
+        correctAnswer: 608000,
+        tolerance: 0,
+        explanation: 'Salaries ($430,000) + Rent ($60,000) + Depreciation ($45,000) + Interest ($12,000) + Charitable ($35,000) + DRD ($26,000) = $608,000',
+      },
+      {
+        id: 'req-5',
+        type: 'calculation',
+        question: 'Calculate taxable income.',
+        correctAnswer: 247000,
+        tolerance: 0,
+        explanation: 'Total income ($855,000) - Total deductions ($608,000) = $247,000',
+      },
+    ],
+    hints: [
+      'DRD: <20% ownership = 50%, 20-80% ownership = 65%, >80% ownership = 100%',
+      'Charitable contribution limit for corps = 10% of taxable income (before DRD and charitable)',
+      'Corporate tax rate is flat 21%',
+    ],
+    references: ['IRC Section 243', 'IRC Section 170', 'IRC Section 11'],
+  },
+  {
+    id: 'bar-tbs-011',
+    section: 'BAR',
+    type: TBS_TYPES.CALCULATION,
+    title: 'Basic Variance Analysis',
+    difficulty: 'easy',
+    timeEstimate: 10,
+    topic: 'Cost Accounting',
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-B-1',
+    scenario: `
+QuickMake Company produces widgets and uses standard costing. The standards for one widget are:
+
+Direct Materials: 2 pounds at $5 per pound = $10
+Direct Labor: 0.5 hours at $20 per hour = $10
+
+Actual results for October (produced 1,000 widgets):
+
+Direct Materials:
+• Purchased and used: 2,100 pounds
+• Actual cost: $9,975 ($4.75 per pound)
+
+Direct Labor:
+• Actual hours: 520 hours
+• Actual cost: $10,920 ($21 per hour)
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'calculation',
+        question: 'Calculate the materials price variance.',
+        correctAnswer: -525,
+        tolerance: 0,
+        explanation: '(Actual Price - Standard Price) × Actual Qty = ($4.75 - $5.00) × 2,100 = -$525 (Favorable)',
+      },
+      {
+        id: 'req-2',
+        type: 'calculation',
+        question: 'Calculate the materials quantity variance.',
+        correctAnswer: 500,
+        tolerance: 0,
+        explanation: '(Actual Qty - Standard Qty) × Standard Price = (2,100 - 2,000) × $5 = $500 (Unfavorable)',
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'Calculate the labor rate variance.',
+        correctAnswer: 520,
+        tolerance: 0,
+        explanation: '(Actual Rate - Standard Rate) × Actual Hours = ($21 - $20) × 520 = $520 (Unfavorable)',
+      },
+      {
+        id: 'req-4',
+        type: 'calculation',
+        question: 'Calculate the labor efficiency variance.',
+        correctAnswer: 400,
+        tolerance: 0,
+        explanation: '(Actual Hours - Standard Hours) × Standard Rate = (520 - 500) × $20 = $400 (Unfavorable)',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'The favorable materials price variance could indicate:',
+        options: [
+          'Workers were more efficient',
+          'Lower quality materials were purchased',
+          'More materials were used than expected',
+          'The standard was set too high',
+        ],
+        correctAnswer: 1,
+        explanation: 'A favorable price variance means the company paid less than expected. This could mean good purchasing, but also might indicate lower quality materials.',
+      },
+    ],
+    hints: [
+      'Price/Rate variance: Isolate the PRICE by using Actual Quantity',
+      'Quantity/Efficiency variance: Isolate the QUANTITY by using Standard Price',
+      'Favorable (F) = Less than standard = GOOD for costs',
+      'Unfavorable (U) = More than standard = BAD for costs',
+    ],
+    references: ['Standard Cost Accounting', 'Variance Analysis'],
+  },
+];
+
+// ==========================================
+// FAR NFP/GOVERNMENT TBS
+// ==========================================
+export const FAR_NFP_GOVT_TBS: TBS[] = [
+  {
+    id: 'far-tbs-013',
+    section: 'FAR',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Government Fund Accounting Basics',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Governmental Accounting',
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
+    scenario: `
+City of Riverside has the following transactions during the fiscal year. Classify each transaction to the appropriate fund type.
+
+TRANSACTIONS:
+A. Received $5,000,000 in property tax revenue for general operations
+B. Issued $10,000,000 in bonds to build a new city hall
+C. Collected $800,000 in water and sewer fees from residents
+D. Received $1,200,000 restricted grant for road improvements
+E. Made principal and interest payments on outstanding general obligation bonds
+F. Received pension contributions from employees to be invested
+G. Paid salaries to police officers and firefighters
+H. Collected parking meter fees designated for downtown improvements
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Classify each transaction to the appropriate fund:',
+        items: ['Property tax revenue', 'Bond issuance for city hall', 'Water/sewer fees', 'Grant for roads'],
+        options: ['General Fund', 'Capital Projects Fund', 'Enterprise Fund', 'Special Revenue Fund'],
+        correctAnswers: [
+          { item: 'Property tax revenue', answer: 'General Fund' },
+          { item: 'Bond issuance for city hall', answer: 'Capital Projects Fund' },
+          { item: 'Water/sewer fees', answer: 'Enterprise Fund' },
+          { item: 'Grant for roads', answer: 'Special Revenue Fund' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Transaction E (debt service payments) would be recorded in which fund?',
+        options: [
+          'General Fund',
+          'Debt Service Fund',
+          'Capital Projects Fund',
+          'Enterprise Fund',
+        ],
+        correctAnswer: 1,
+        explanation: 'The Debt Service Fund accounts for financial resources used for principal and interest payments on general long-term debt.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'Transaction F (pension contributions) would be recorded in which fund type?',
+        options: [
+          'Governmental Fund',
+          'Proprietary Fund',
+          'Fiduciary Fund (Pension Trust)',
+          'Special Revenue Fund',
+        ],
+        correctAnswer: 2,
+        explanation: 'Pension plans are recorded in Fiduciary Funds (Pension Trust Funds) because the government holds these assets in a trustee capacity for employees.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Which characteristic distinguishes Enterprise Funds from other governmental funds?',
+        options: [
+          'They use modified accrual accounting',
+          'They charge fees for services like a business',
+          'They can only be used for capital projects',
+          'They require a balanced budget',
+        ],
+        correctAnswer: 1,
+        explanation: 'Enterprise Funds account for activities that charge fees similar to private businesses (utilities, airports, parking). They use full accrual accounting.',
+      },
+    ],
+    hints: [
+      'General Fund: General operations funded by taxes',
+      'Special Revenue Fund: Revenue legally restricted for specific purposes',
+      'Capital Projects Fund: Major construction projects',
+      'Enterprise Fund: Business-type activities that charge fees',
+      'Fiduciary Funds: Assets held in trust for others (pensions)',
+    ],
+    references: ['GASB Statement 34', 'GASB Statement 54'],
+  },
+  {
+    id: 'far-tbs-014',
+    section: 'FAR',
+    type: TBS_TYPES.JOURNAL_ENTRY,
+    title: 'Not-for-Profit Revenue Recognition',
+    difficulty: 'medium',
+    timeEstimate: 12,
+    topic: 'Not-for-Profit Accounting',
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-B-1',
+    scenario: `
+Helping Hands, a not-for-profit organization, has the following transactions:
+
+A. Received an unconditional pledge of $100,000 to be paid over 5 years ($20,000 per year). The appropriate discount rate is 5%.
+
+B. Received a $50,000 donation with donor stipulation that it be used for the new building campaign (a board-designated fund also exists for this purpose).
+
+C. Received a $25,000 grant that requires the organization to provide tutoring services to 500 students. As of year-end, 300 students have been tutored.
+
+D. Received donated legal services valued at $15,000. The attorney would have been paid for these services if not donated.
+
+E. A volunteer helped at the annual fundraiser. Her regular job pays $25/hour and she volunteered for 10 hours.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'How should Transaction A (multi-year pledge) be recorded?',
+        options: [
+          'Record $100,000 as contribution revenue when pledge is received',
+          'Record $20,000 per year as cash is received',
+          'Record present value of $100,000 as contribution revenue, recognize interest over time',
+          'Do not record until all cash is received',
+        ],
+        correctAnswer: 2,
+        explanation: 'Multi-year unconditional pledges are recorded at present value when received. The discount is accreted to interest revenue over the pledge period.',
+      },
+      {
+        id: 'req-2',
+        type: 'classification',
+        question: 'Classify Transaction B ($50,000 for building campaign) to the correct net asset class:',
+        items: ['$50,000 building donation'],
+        options: ['Without Donor Restrictions', 'With Donor Restrictions'],
+        correctAnswers: [
+          { item: '$50,000 building donation', answer: 'With Donor Restrictions' },
+        ],
+      },
+      {
+        id: 'req-3',
+        type: 'calculation',
+        question: 'For Transaction C, how much revenue should be recognized at year-end?',
+        correctAnswer: 15000,
+        tolerance: 0,
+        explanation: 'Conditional contribution based on barrier (tutoring 500 students). Revenue recognized as barrier is overcome: $25,000 × (300/500) = $15,000',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'Should Transaction D (donated legal services) be recorded as revenue?',
+        options: [
+          'No - services can never be recorded as contributions',
+          'Yes - specialized services that would otherwise be purchased are recorded',
+          'Only if the attorney provides documentation',
+          'Only if the amount exceeds $10,000',
+        ],
+        correctAnswer: 1,
+        explanation: 'Donated services are recorded if they (1) create or enhance non-financial assets, or (2) require specialized skills, would be purchased if not donated, and are provided by those possessing those skills.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'Should Transaction E (fundraiser volunteer) be recorded?',
+        options: [
+          'Yes - record $250 as contributed services and expense',
+          'No - general volunteer services do not meet recognition criteria',
+          'Yes - all volunteer hours must be tracked and reported',
+          'Only if the volunteer is a professional fundraiser',
+        ],
+        correctAnswer: 1,
+        explanation: 'General volunteer services (not creating assets, not specialized skills) are not recorded. The volunteer at a fundraiser does not meet the criteria for contributed service recognition.',
+      },
+    ],
+    hints: [
+      'Unconditional pledges: Record immediately at present value',
+      'Conditional pledges: Record when conditions (barriers) are met',
+      'Donor restrictions ≠ Board designations (donor vs. internal)',
+      'Contributed services: Must be specialized AND would be purchased',
+    ],
+    references: ['ASC 958-605', 'ASC 958-310'],
+  },
+  {
+    id: 'far-tbs-015',
+    section: 'FAR',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Government-Wide vs. Fund Financial Statements',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Governmental Reporting',
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-2',
+    scenario: `
+You are reviewing the financial statements of the City of Maplewood. The city has prepared both government-wide and fund financial statements.
+
+Consider the following items and determine the appropriate treatment:
+
+A. Capital assets (infrastructure - roads and bridges): $50,000,000
+B. General obligation bonds payable: $30,000,000
+C. Property tax revenue: $12,000,000
+D. Purchase of police vehicles: $500,000
+E. Depreciation on government buildings: $2,000,000
+F. Long-term compensated absences liability: $800,000
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'For each item, determine if it appears on Government-Wide Statements:',
+        items: ['Capital assets', 'GO bonds payable', 'Depreciation expense', 'Compensated absences liability'],
+        options: ['Yes - Included', 'No - Excluded'],
+        correctAnswers: [
+          { item: 'Capital assets', answer: 'Yes - Included' },
+          { item: 'GO bonds payable', answer: 'Yes - Included' },
+          { item: 'Depreciation expense', answer: 'Yes - Included' },
+          { item: 'Compensated absences liability', answer: 'Yes - Included' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In the General Fund (governmental fund statements), how are capital assets recorded?',
+        options: [
+          'As assets on the balance sheet with accumulated depreciation',
+          'As expenditures when purchased, not as assets',
+          'At fair value each year',
+          'Only if they exceed $1 million',
+        ],
+        correctAnswer: 1,
+        explanation: 'Governmental funds use modified accrual. Capital assets are recorded as expenditures when purchased and do NOT appear on the fund balance sheet.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'What measurement focus do government-wide statements use?',
+        options: [
+          'Current financial resources focus',
+          'Economic resources focus (full accrual)',
+          'Cash basis',
+          'Modified cash basis',
+        ],
+        correctAnswer: 1,
+        explanation: 'Government-wide statements use economic resources measurement focus and full accrual accounting - similar to commercial accounting.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'When bond proceeds are received, governmental funds record:',
+        options: [
+          'A liability for bonds payable',
+          'An "other financing source"',
+          'Revenue from financing activities',
+          'No entry until the money is spent',
+        ],
+        correctAnswer: 1,
+        explanation: 'Bond proceeds are reported as "Other Financing Sources" in governmental funds, not as liabilities (long-term debt is not recorded in fund statements).',
+      },
+    ],
+    hints: [
+      'Government-wide = Full accrual (like a business)',
+      'Governmental funds = Modified accrual (current resources focus)',
+      'Long-term assets and liabilities: Government-wide only',
+      'Capital outlay = Expenditure in funds, Asset on government-wide',
+    ],
+    references: ['GASB Statement 34', 'GASB Statement 63'],
+  },
+];
+
 // Export all additional TBS
-export const ADDITIONAL_TBS = [...FAR_TBS_2, ...REG_TBS_2, ...AUD_TBS_2, ...BEC_TBS_2, ...RESEARCH_TBS, ...WRITTEN_COMM_TBS];
+export const ADDITIONAL_TBS = [...FAR_TBS_2, ...REG_TBS_2, ...AUD_TBS_2, ...BEC_TBS_2, ...RESEARCH_TBS, ...WRITTEN_COMM_TBS, ...EASY_TBS, ...FAR_NFP_GOVT_TBS];
 
 export default ADDITIONAL_TBS;

@@ -57,9 +57,9 @@ export interface StudyContextType {
     accuracyTrend: number;
   };
   setCurrentStreak: (streak: number) => void;
-  recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string, timeSpentSeconds?: number) => Promise<void>;
+  recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string, timeSpentSeconds?: number, section?: string) => Promise<void>;
   completeLesson: (lessonId: string, section: string, timeSpent: number) => Promise<void>;
-  completeSimulation: (id: string, score: number, timeSpent: number) => Promise<void>;
+  completeSimulation: (id: string, score: number, timeSpent: number, section?: string) => Promise<void>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getLessonProgress: () => Promise<Record<string, any>>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -259,7 +259,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   }, [user, todayLog]); // Re-run when todayLog changes (user did activity)
 
   // Implementations
-  const recordMCQAnswer = async (questionId: string, topic: string = 'General', subtopic: string = 'General', isCorrect: boolean, difficulty: string = 'medium', timeSpentSeconds: number = 0) => {
+  const recordMCQAnswer = async (questionId: string, topic: string = 'General', subtopic: string = 'General', isCorrect: boolean, difficulty: string = 'medium', timeSpentSeconds: number = 0, section?: string) => {
     if (!user) return;
     void subtopic;
     try {
@@ -278,6 +278,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               type: 'mcq',
               questionId,
               topic,
+              section: section || 'unknown',
               isCorrect,
               timeSpentSeconds,
               timestamp: new Date().toISOString()
@@ -288,7 +289,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     }
   };
 
-  const completeSimulation = async (id: string, score: number, timeSpent: number) => {
+  const completeSimulation = async (id: string, score: number, timeSpent: number, section?: string) => {
       if (!user) return;
       try {
         const earnedPoints = Math.round((score / 100) * 50); // Max 50 points per sim
@@ -300,6 +301,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             activities: arrayUnion({
               type: 'simulation',
               id,
+              section: section || 'unknown',
               score,
               timeSpent,
               timestamp: new Date().toISOString()

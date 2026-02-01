@@ -26,11 +26,13 @@ const Register = lazy(() => import('./components/pages/auth/Register'));
 const ForgotPassword = lazy(() => import('./components/pages/auth/ForgotPassword'));
 
 // Core Pages (most used)
-const Dashboard = lazy(() => import('./components/pages/Dashboard'));
-const Study = lazy(() => import('./components/pages/Study'));
+const Home = lazy(() => import('./components/pages/Home'));
+const Dashboard = lazy(() => import('./components/pages/Dashboard')); // Keep for redirect
+const Study = lazy(() => import('./components/pages/Study')); // Keep for redirect
 const Practice = lazy(() => import('./components/pages/Practice'));
 const Progress = lazy(() => import('./components/pages/Progress'));
 const Settings = lazy(() => import('./components/pages/Settings'));
+const You = lazy(() => import('./components/pages/You'));
 
 // Training Modes
 const Flashcards = lazy(() => import('./components/pages/Flashcards'));
@@ -110,14 +112,14 @@ const AdminRoute = ({ children }: RouteProps) => {
   const isAdmin = (userProfile as any)?.isAdmin === true;
   
   if (!isAdmin) {
-    // Non-admins silently redirected to dashboard
-    return <Navigate to="/dashboard" replace />;
+    // Non-admins silently redirected to home
+    return <Navigate to="/home" replace />;
   }
 
   return children;
 };
 
-// Public Route (redirect to dashboard if logged in)
+// Public Route (redirect to home if logged in)
 const PublicRoute = ({ children }: RouteProps) => {
   const { user, loading } = useAuth();
 
@@ -126,7 +128,7 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/home" replace />;
   }
 
   return children;
@@ -303,22 +305,43 @@ function App() {
                     </ProtectedRoute>
                   }
                 >
+                  {/* New primary routes */}
                   <Route
-                    path="/dashboard"
+                    path="/home"
                     element={
                       <SuspensePage>
-                        <Dashboard />
+                        <Home />
                       </SuspensePage>
                     }
+                  />
+                  <Route
+                    path="/learn"
+                    element={
+                      <SuspensePage>
+                        <Lessons />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/you"
+                    element={
+                      <SuspensePage>
+                        <You />
+                      </SuspensePage>
+                    }
+                  />
+                  
+                  {/* Legacy route redirects for backwards compatibility */}
+                  <Route
+                    path="/dashboard"
+                    element={<Navigate to="/home" replace />}
                   />
                   <Route
                     path="/study"
-                    element={
-                      <SuspensePage>
-                        <Study />
-                      </SuspensePage>
-                    }
+                    element={<Navigate to="/learn" replace />}
                   />
+                  
+                  {/* Keep these routes accessible */}
                   <Route
                     path="/practice"
                     element={
@@ -433,8 +456,8 @@ function App() {
                   />
                 </Route>
 
-                {/* Default redirect - logged in users go to dashboard */}
-                <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                {/* Default redirect - logged in users go to home */}
+                <Route path="*" element={<Navigate to="/home" replace />} />
               </Routes>
             </Suspense>
           </ToastProvider>

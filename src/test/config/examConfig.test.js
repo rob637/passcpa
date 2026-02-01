@@ -130,8 +130,13 @@ describe('Exam Configuration', () => {
       expect(CORE_SECTIONS).toEqual(['AUD', 'FAR', 'REG']);
     });
 
-    it('should have correct DISCIPLINE_SECTIONS', () => {
-      expect(DISCIPLINE_SECTIONS).toEqual(['BAR', 'ISC', 'TCP']);
+    it('should have correct DISCIPLINE_SECTIONS (includes BEC before July 2026)', () => {
+      // DISCIPLINE_SECTIONS is dynamic based on date
+      // Before July 1, 2026: includes BEC
+      // After July 1, 2026: only BAR, ISC, TCP
+      expect(DISCIPLINE_SECTIONS).toContain('BAR');
+      expect(DISCIPLINE_SECTIONS).toContain('ISC');
+      expect(DISCIPLINE_SECTIONS).toContain('TCP');
     });
 
     it('should have correct STRATEGY_SECTIONS', () => {

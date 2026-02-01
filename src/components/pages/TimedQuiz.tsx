@@ -211,12 +211,8 @@ const TimedQuiz: React.FC = () => {
       const userAnswer = answers[q.id];
       if (userAnswer !== undefined && recordMCQAnswer) {
         const isCorrect = userAnswer === q.correctAnswer;
-        // In TimedQuiz.jsx, it passed 3 args: (q.id, q.topic, isCorrect)
-        // Check useStudy signature if possible, typically recordMCQAnswer(id, topic, subtopic, correct, difficulty)
-        // I'll provide defaults for subtopic/difficulty if needed or use what I have.
-        // Assuming TS will check this. If signature mismatch, I'll need to fix.
-        // I will use 'quiz' as subtopic and q.difficulty if available or 'medium'.
-        await recordMCQAnswer(q.id, q.topic, 'quiz', isCorrect, q.difficulty || 'medium');
+        // Pass section for section-specific tracking
+        await recordMCQAnswer(q.id, q.topic, 'quiz', isCorrect, q.difficulty || 'medium', 0, q.section);
       }
     }
   };

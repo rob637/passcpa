@@ -595,9 +595,9 @@ Exchange Structure:
         id: 'req-5',
         type: 'calculation',
         question: 'Calculate the basis of the replacement property (shopping center).',
-        correctAnswer: 2100000,
+        correctAnswer: 2200000,
         tolerance: 0,
-        explanation: 'Basis of replacement = FMV of replacement ($3,200,000) - Deferred gain ($1,000,000) = $2,200,000. OR: Old basis ($1,400,000) + Cash paid ($100,000) + New mortgage ($1,500,000) + Recognized gain ($100,000) - Mortgage relief ($800,000) - Cash boot ($100,000) = $2,200,000',
+        explanation: 'Basis of replacement = FMV of replacement ($3,200,000) - Deferred gain ($1,000,000) = $2,200,000. Alternative calculation: Old basis ($1,400,000) + Cash paid ($100,000) + New mortgage ($1,500,000) + Recognized gain ($100,000) - Mortgage relief ($800,000) - Cash boot ($100,000) = $2,200,000',
       },
       {
         id: 'req-6',

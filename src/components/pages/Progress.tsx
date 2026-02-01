@@ -210,6 +210,11 @@ const Progress: React.FC = () => {
           end: new Date(),
         });
 
+        // Track section-specific stats
+        let sectionQuestions = 0;
+        let sectionCorrect = 0;
+        let sectionMinutes = 0;
+
         const dailyData = await Promise.all(
           days.map(async (date) => {
             const dateKey = format(date, 'yyyy-MM-dd');
@@ -218,13 +223,37 @@ const Progress: React.FC = () => {
 
             if (logSnap.exists()) {
               const data = logSnap.data();
+              
+              // Filter activities by current section for section-specific stats
+              const activities = data.activities || [];
+              const sectionActivities = activities.filter(
+                (a: { section?: string; type?: string }) => 
+                  a.section === currentSection || 
+                  // Include legacy activities without section
+                  (!a.section && a.type === 'mcq')
+              );
+              
+              // Count section-specific MCQs
+              const mcqActivities = sectionActivities.filter((a: { type?: string }) => a.type === 'mcq');
+              const correctMcqs = mcqActivities.filter((a: { isCorrect?: boolean }) => a.isCorrect).length;
+              
+              sectionQuestions += mcqActivities.length;
+              sectionCorrect += correctMcqs;
+              
+              // Estimate time per activity
+              const sectionTime = sectionActivities.reduce(
+                (sum: number, a: { timeSpentSeconds?: number }) => sum + (a.timeSpentSeconds || 0), 
+                0
+              ) / 60;
+              sectionMinutes += sectionTime;
+
               return {
                 date,
                 points: data.earnedPoints || 0,
                 goal: data.goalPoints || userProfile?.dailyGoal || 50,
-                questions: data.questionsAttempted || 0,
-                correct: data.questionsCorrect || 0,
-                minutes: data.studyTimeMinutes || 0,
+                questions: mcqActivities.length, // Section-specific
+                correct: correctMcqs, // Section-specific
+                minutes: Math.round(sectionTime), // Section-specific
               };
             }
             return {
@@ -238,16 +267,6 @@ const Progress: React.FC = () => {
           })
         );
         setWeeklyActivity(dailyData);
-
-        // Calculate totals
-        const totals = dailyData.reduce(
-          (acc, day) => ({
-            totalQuestions: acc.totalQuestions + day.questions,
-            correctAnswers: acc.correctAnswers + day.correct,
-            studyMinutes: acc.studyMinutes + day.minutes,
-          }),
-          { totalQuestions: 0, correctAnswers: 0, studyMinutes: 0 }
-        );
 
         // Get topic performance
         let topicsData: TopicStat[] = [];
@@ -273,8 +292,10 @@ const Progress: React.FC = () => {
         const totalLessonsCount = sectionLessons.length;
 
         setOverallStats({
-          ...totals,
-          accuracy: totals.totalQuestions > 0 ? Math.round((totals.correctAnswers / totals.totalQuestions) * 100) : 0,
+          totalQuestions: sectionQuestions,
+          correctAnswers: sectionCorrect,
+          studyMinutes: Math.round(sectionMinutes),
+          accuracy: sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0,
           lessonsCompleted: lessonsCompletedCount,
           totalLessons: totalLessonsCount,
         });

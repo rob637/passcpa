@@ -1,0 +1,442 @@
+/**
+ * DailyPlan Component
+ * 
+ * Displays a personalized daily study plan with:
+ * - Activity cards (lessons, MCQs, TBS, flashcards)
+ * - Progress tracking
+ * - Priority indicators
+ * - One-click navigation to each activity
+ */
+
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+  BookOpen,
+  Target,
+  FileSpreadsheet,
+  Brain,
+  CheckCircle,
+  Clock,
+  ChevronRight,
+  Sparkles,
+  Zap,
+  AlertCircle,
+  Loader2,
+  RefreshCw,
+  Calendar,
+} from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
+import { useStudy } from '../hooks/useStudy';
+import { useCourse } from '../providers/CourseProvider';
+import { generateDailyPlan, DailyPlan, DailyActivity } from '../services/dailyPlanService';
+import clsx from 'clsx';
+
+interface DailyPlanCardProps {
+  compact?: boolean;
+  onActivityStart?: (activity: DailyActivity) => void;
+}
+
+const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivityStart }) => {
+  const navigate = useNavigate();
+  const { userProfile } = useAuth();
+  const { stats, dailyProgress, getTopicPerformance } = useStudy();
+  const { courseId } = useCourse();
+  
+  const [plan, setPlan] = useState<DailyPlan | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [completedActivities] = useState<Set<string>>(new Set());
+  const [expanded, setExpanded] = useState(false);
+
+  // Load daily plan
+  useEffect(() => {
+    const loadPlan = async () => {
+      if (!userProfile) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        // Get topic performance data
+        const topicStats = getTopicPerformance ? await getTopicPerformance() : [];
+        
+        // Handle examDate which could be Date, Timestamp, or string
+        let examDateStr: string | undefined;
+        const rawExamDate = (userProfile as any).examDate;
+        if (rawExamDate) {
+          if (typeof rawExamDate === 'string') {
+            examDateStr = rawExamDate;
+          } else if (rawExamDate instanceof Date) {
+            examDateStr = rawExamDate.toISOString().split('T')[0];
+          } else if (typeof rawExamDate.toDate === 'function') {
+            // Firestore Timestamp
+            examDateStr = rawExamDate.toDate().toISOString().split('T')[0];
+          }
+        }
+        
+        // Build user study state
+        const studyState = {
+          section: (userProfile as any).examSection || 'FAR',
+          examDate: examDateStr,
+          dailyGoal: (userProfile as any).dailyGoal || 50,
+          topicStats: topicStats.map((t: any) => ({
+            topic: t.topic || t.id,
+            topicId: t.topicId || t.id,
+            accuracy: t.accuracy || 0,
+            totalQuestions: t.questions || t.totalQuestions || 0,
+            correct: t.correct || Math.round((t.accuracy || 0) * (t.questions || t.totalQuestions || 0) / 100),
+            lastPracticed: t.lastPracticed,
+          })),
+          lessonProgress: (userProfile as any).lessonProgress || {},
+          flashcardsDue: (stats as any)?.flashcardsDue || 0,
+          currentStreak: (stats as any)?.currentStreak || 0,
+          todayPoints: Math.round((dailyProgress / 100) * ((userProfile as any).dailyGoal || 50)),
+        };
+        
+        const generatedPlan = await generateDailyPlan(studyState, courseId);
+        setPlan(generatedPlan);
+      } catch (err) {
+        console.error('Error generating daily plan:', err);
+        setError('Unable to generate your daily plan');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadPlan();
+  }, [userProfile, stats, dailyProgress, getTopicPerformance, courseId]);
+
+  // Handle activity click
+  const handleActivityClick = (activity: DailyActivity) => {
+    if (onActivityStart) {
+      onActivityStart(activity);
+    }
+    
+    // Navigate based on activity type
+    switch (activity.type) {
+      case 'lesson':
+        navigate(`/lessons/${activity.params.lessonId}`);
+        break;
+      case 'mcq':
+        if (activity.params.topic) {
+          navigate(`/practice?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}`);
+        } else {
+          navigate('/practice');
+        }
+        break;
+      case 'tbs':
+        navigate('/tbs');
+        break;
+      case 'flashcards':
+        navigate('/flashcards');
+        break;
+      default:
+        navigate('/study');
+    }
+  };
+
+  // Get icon for activity type
+  const getActivityIcon = (type: string) => {
+    switch (type) {
+      case 'lesson': return BookOpen;
+      case 'mcq': return Target;
+      case 'tbs': return FileSpreadsheet;
+      case 'flashcards': return Brain;
+      default: return Sparkles;
+    }
+  };
+
+  // Get color for activity type
+  const getActivityColor = (type: string) => {
+    switch (type) {
+      case 'lesson': return 'text-primary-500 bg-primary-100 dark:bg-primary-900/30';
+      case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
+      case 'tbs': return 'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30';
+      case 'flashcards': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';
+      default: return 'text-slate-500 bg-slate-100 dark:bg-slate-800';
+    }
+  };
+
+  // Get priority badge
+  const getPriorityBadge = (priority: string) => {
+    switch (priority) {
+      case 'critical':
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400">Critical</span>;
+      case 'high':
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400">High</span>;
+      default:
+        return null;
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
+        <div className="flex items-center justify-center py-8">
+          <Loader2 className="w-6 h-6 animate-spin text-primary-500" />
+          <span className="ml-2 text-slate-500">Creating your personalized plan...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !plan) {
+    return (
+      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
+        <div className="flex items-center justify-center py-8 text-slate-500">
+          <AlertCircle className="w-5 h-5 mr-2" />
+          {error || 'Unable to load daily plan'}
+        </div>
+      </div>
+    );
+  }
+
+  const completedCount = completedActivities.size;
+  const totalActivities = plan.activities.length;
+  const progress = totalActivities > 0 ? Math.round((completedCount / totalActivities) * 100) : 0;
+
+  // Compact view for dashboard (can expand inline)
+  if (compact && !expanded) {
+    const nextActivity = plan.activities.find((a: DailyActivity) => !completedActivities.has(a.id));
+    
+    return (
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+        {/* Header */}
+        <div className="p-4 border-b border-slate-200 dark:border-slate-700">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary-500" />
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
+            </div>
+            <span className="text-sm text-slate-500">
+              {completedCount}/{totalActivities} done
+            </span>
+          </div>
+          {/* Progress bar */}
+          <div className="mt-2 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-primary-500 transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        </div>
+        
+        {/* Next Activity - highlighted as primary CTA */}
+        {nextActivity ? (
+          <div 
+            className="p-4 bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
+            onClick={() => handleActivityClick(nextActivity)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                {React.createElement(getActivityIcon(nextActivity.type), { className: 'w-6 h-6 text-white' })}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white text-lg">
+                    {nextActivity.title}
+                  </span>
+                  {nextActivity.priority === 'critical' && (
+                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 text-white">Critical</span>
+                  )}
+                </div>
+                <p className="text-sm text-white/80">{nextActivity.reason}</p>
+              </div>
+              <div className="flex items-center gap-1 bg-white/20 px-4 py-2 rounded-xl text-white font-semibold">
+                Start <ChevronRight className="w-4 h-4" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600">
+            <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
+            <p className="text-white font-medium">All done for today! 🎉</p>
+            <p className="text-white/80 text-sm">Come back tomorrow for your next plan</p>
+          </div>
+        )}
+        
+        {/* Remaining activities preview */}
+        {totalActivities > 1 && (
+          <div className="p-3 bg-slate-50 dark:bg-slate-900/50">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                <span>Up next:</span>
+                <div className="flex gap-1">
+                  {plan.activities.slice(1, 4).map((activity: DailyActivity, idx: number) => (
+                    <div 
+                      key={idx}
+                      className={clsx(
+                        'w-6 h-6 rounded flex items-center justify-center',
+                        getActivityColor(activity.type)
+                      )}
+                      title={activity.title}
+                    >
+                      {React.createElement(getActivityIcon(activity.type), { className: 'w-3 h-3' })}
+                    </div>
+                  ))}
+                  {plan.activities.length > 4 && (
+                    <span className="text-xs text-slate-400">+{plan.activities.length - 4}</span>
+                  )}
+                </div>
+              </div>
+              <button
+                onClick={() => setExpanded(true)}
+                className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+              >
+                View All →
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Full/expanded view
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+      {/* Header */}
+      <div className="p-4 border-b border-slate-200 dark:border-slate-700">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary-500" />
+              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Your Daily Plan</h2>
+            </div>
+            <p className="text-slate-500 text-sm mt-1">
+              {plan.summary.weakAreaFocus.length > 0 
+                ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
+                : 'Personalized for your progress'}
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            {compact && (
+              <button
+                onClick={() => setExpanded(false)}
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-500"
+              >
+                Collapse ↑
+              </button>
+            )}
+            <button
+              onClick={() => window.location.reload()}
+              className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+              title="Refresh plan"
+            >
+              <RefreshCw className="w-5 h-5 text-slate-500" />
+            </button>
+          </div>
+        </div>
+        
+        {/* Progress bar */}
+        <div className="mt-3">
+          <div className="flex items-center justify-between text-sm mb-1">
+            <span className="text-slate-500">{completedCount}/{totalActivities} activities</span>
+            <span className="font-medium text-primary-600">~{plan.estimatedMinutes} min total</span>
+          </div>
+          <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-gradient-to-r from-primary-500 to-primary-400 transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+        </div>
+      </div>
+      
+      {/* Activities list */}
+      <div className="divide-y divide-slate-200 dark:divide-slate-700">
+        {plan.activities.map((activity: DailyActivity, index: number) => {
+          const isComplete = completedActivities.has(activity.id);
+          const Icon = getActivityIcon(activity.type);
+          
+          return (
+            <div
+              key={activity.id}
+              className={clsx(
+                'p-4 transition-colors',
+                isComplete ? 'bg-slate-50 dark:bg-slate-800/50 opacity-60' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50'
+              )}
+            >
+              <div className="flex items-start gap-3">
+                {/* Step number / completion */}
+                <div className="flex flex-col items-center">
+                  {isComplete ? (
+                    <div className="w-8 h-8 rounded-full bg-success-500 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                      {index + 1}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Activity content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className={clsx(
+                      'w-6 h-6 rounded flex items-center justify-center',
+                      getActivityColor(activity.type)
+                    )}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <span className={clsx(
+                      'font-medium',
+                      isComplete ? 'text-slate-500 line-through' : 'text-slate-900 dark:text-slate-100'
+                    )}>
+                      {activity.title}
+                    </span>
+                    {getPriorityBadge(activity.priority)}
+                  </div>
+                  
+                  <p className="text-sm text-slate-500 line-clamp-1">{activity.reason}</p>
+                  
+                  <div className="flex items-center gap-3 text-xs text-slate-400 mt-1">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      ~{activity.estimatedMinutes}m
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Zap className="w-3 h-3" />
+                      +{activity.points}pts
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Action button */}
+                {!isComplete ? (
+                  <button
+                    onClick={() => handleActivityClick(activity)}
+                    className="px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors"
+                  >
+                    Start
+                  </button>
+                ) : (
+                  <span className="px-3 py-1.5 bg-success-100 text-success-700 text-xs font-medium rounded-lg">
+                    Done
+                  </span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* Footer */}
+      <div className="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
+        <div className="flex items-center gap-3">
+          <Sparkles className="w-5 h-5 text-primary-500" />
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            {completedCount === 0 
+              ? "Complete activities in order for the best learning flow"
+              : completedCount < totalActivities 
+                ? `${totalActivities - completedCount} more to go - you're doing great!`
+                : "Amazing! Come back tomorrow for your next personalized plan"}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DailyPlanCard;

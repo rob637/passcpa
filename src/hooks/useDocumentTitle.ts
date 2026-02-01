@@ -30,8 +30,11 @@ export const useDocumentTitle = (title: string, announceToScreenReader = true) =
  */
 export const ROUTE_TITLES: Record<string, string> = {
   '/': 'CPA Exam Prep | Pass Your CPA on the First Try',
-  '/dashboard': 'Dashboard',
-  '/study': 'Study',
+  '/home': 'Home',
+  '/learn': 'Learn',
+  '/you': 'You',
+  '/dashboard': 'Home', // Redirect alias
+  '/study': 'Learn', // Redirect alias
   '/practice': 'Practice Questions',
   '/flashcards': 'Flashcards',
   '/quiz': 'Timed Quiz',

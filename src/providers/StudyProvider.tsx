@@ -317,26 +317,53 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const logRef = doc(db, 'users', user.uid, 'daily_log', today);
         const lessonRef = doc(db, 'users', user.uid, 'lessons', lessonId);
         
-        // Update daily log
-        await updateDoc(logRef, {
-            earnedPoints: increment(earnedPoints),
-            lessonsCompleted: increment(1),
-            studyTimeMinutes: increment(timeSpent),
-            activities: arrayUnion({
+        // Check if daily log exists, create if not
+        const logSnap = await getDoc(logRef);
+        if (!logSnap.exists()) {
+          // Create the daily log first
+          await setDoc(logRef, {
+            date: today,
+            goalPoints: userProfile?.dailyGoal || 50,
+            earnedPoints: earnedPoints,
+            questionsAttempted: 0,
+            questionsCorrect: 0,
+            lessonsCompleted: 1,
+            simulationsCompleted: 0,
+            studyTimeMinutes: timeSpent,
+            createdAt: serverTimestamp(),
+            activities: [{
               type: 'lesson',
               lessonId,
               section,
               timeSpent,
               timestamp: new Date().toISOString()
-            })
-        });
+            }]
+          });
+        } else {
+          // Update existing daily log
+          await updateDoc(logRef, {
+              earnedPoints: increment(earnedPoints),
+              lessonsCompleted: increment(1),
+              studyTimeMinutes: increment(timeSpent),
+              activities: arrayUnion({
+                type: 'lesson',
+                lessonId,
+                section,
+                timeSpent,
+                timestamp: new Date().toISOString()
+              })
+          });
+        }
         
         // Mark lesson as completed in user's lessons subcollection
         await setDoc(lessonRef, {
           completedAt: serverTimestamp(),
+          status: 'completed',
           section,
           timeSpent,
         }, { merge: true });
+        
+        logger.log('Lesson completed:', lessonId);
       } catch (e) {
           logger.error("Error completing lesson", e);
       }

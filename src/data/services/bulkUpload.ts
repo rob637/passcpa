@@ -216,13 +216,13 @@ export const getFirestoreQuestionCount = async () => {
 
   const counts: { total: number; bySection: Record<string, number> } = {
     total: snapshot.size,
-    bySection: { FAR: 0, AUD: 0, REG: 0, BEC: 0 },
+    bySection: {},
   };
 
   snapshot.forEach((doc) => {
     const section = doc.data().section;
-    if (counts.bySection[section] !== undefined) {
-      counts.bySection[section]++;
+    if (section) {
+      counts.bySection[section] = (counts.bySection[section] || 0) + 1;
     }
   });
 

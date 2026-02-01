@@ -12,6 +12,7 @@ import {
   signInWithPopup,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { getFunctions, httpsCallable } from 'firebase/functions';
 import { auth, db } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import type { FieldValue, Timestamp } from 'firebase/firestore';
@@ -179,15 +180,28 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  // Reset password
+  // Reset password with custom branded email via Cloud Function
   const resetPassword = async (email: string) => {
     setError(null);
     try {
-      await sendPasswordResetEmail(auth, email);
+      // Try custom branded email first (via Cloud Function)
+      const functions = getFunctions();
+      const sendCustomPasswordReset = httpsCallable(functions, 'sendCustomPasswordReset');
+      await sendCustomPasswordReset({ email });
     } catch (err) {
-      const error = err as FirebaseError;
-      setError(error.message);
-      throw err;
+      // Fallback to Firebase's default email if Cloud Function fails
+      logger.warn('Custom reset email failed, using Firebase default:', err);
+      try {
+        const actionCodeSettings = {
+          url: 'https://voraprep.com/login',
+          handleCodeInApp: false,
+        };
+        await sendPasswordResetEmail(auth, email, actionCodeSettings);
+      } catch (fallbackErr) {
+        const error = fallbackErr as FirebaseError;
+        setError(error.message);
+        throw fallbackErr;
+      }
     }
   };
 

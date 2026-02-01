@@ -18,12 +18,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question:
       'Which of the following types of audit evidence is generally considered most reliable?',
     options: [
-      'Oral representations from management',
-      'Internally generated documents',
       'External confirmations received directly by the auditor',
-      'Pre-numbered documents from the client',
+      'Internally generated documents',
+      'Oral representations from management',
+      'Pre-numbered documents from the client'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'External confirmations received directly by the auditor are generally most reliable because they are generated externally and transmitted directly to the auditor, minimizing the opportunity for manipulation.',
     reference: 'AU-C 500.A31',
@@ -60,11 +60,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
       'When using negative confirmations for accounts receivable, which condition is NOT required?',
     options: [
       'The assessed risk of material misstatement is low',
-      'A large number of small balances is involved',
-      'The auditor has no reason to believe respondents will disregard requests',
       'Management has provided written authorization for confirmations',
+      'The auditor has no reason to believe respondents will disregard requests',
+      'A large number of small balances is involved'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'Written management authorization is not a condition for using negative confirmations. The three conditions are: low RMM, large number of small balances, and no reason to believe respondents will disregard requests.',
     reference: 'AU-C 505.15',
@@ -80,11 +80,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'Sampling risk is the risk that:',
     options: [
       'The auditor fails to recognize errors in the sample',
-      'The sample is not representative of the population',
       "The auditor's conclusion based on a sample differs from the conclusion if the entire population were tested",
-      'The client has manipulated the sample items',
+      'The sample is not representative of the population',
+      'The client has manipulated the sample items'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       "Sampling risk is the risk that the auditor's conclusion based on a sample may differ from the conclusion if the entire population were subjected to the same audit procedure.",
     reference: 'AU-C 530.05',
@@ -126,10 +126,10 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Control environment',
       'Risk assessment',
-      'Audit committee oversight',
       'Monitoring activities',
+      'Audit committee oversight'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'The five COSO components are: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities. Audit committee oversight is part of control environment, not a separate component.',
     reference: 'COSO Framework',
@@ -144,12 +144,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'Segregation of duties requires separating all of the following EXCEPT:',
     options: [
-      'Authorization of transactions',
+      'Preparation of financial statements',
       'Recording of transactions',
       'Custody of related assets',
-      'Preparation of financial statements',
+      'Authorization of transactions'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'The three key functions to segregate are: authorization, recording/accounting, and custody. Financial statement preparation is a higher-level accounting function, not a custody or authorization function.',
     reference: 'AU-C 315.A81',
@@ -164,12 +164,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: 'General IT controls include all of the following EXCEPT:',
     options: [
-      'Program change controls',
-      'Access security controls',
       'Input validation checks',
-      'Computer operations controls',
+      'Access security controls',
+      'Program change controls',
+      'Computer operations controls'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Input validation checks are application controls, not general IT controls. General IT controls include: program development, program changes, access security, and computer operations.',
     reference: 'AU-C 315.A102',
@@ -186,11 +186,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
       'An auditor decides to increase the assessed level of control risk. The auditor should:',
     options: [
       'Increase tests of controls',
-      'Increase substantive procedures',
       'Issue a qualified opinion',
-      'Withdraw from the engagement',
+      'Increase substantive procedures',
+      'Withdraw from the engagement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'When control risk is assessed higher, the auditor must reduce detection risk by increasing substantive procedures. This maintains the planned level of audit risk.',
     reference: 'AU-C 330.07',
@@ -206,11 +206,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'A significant deficiency is:',
     options: [
       'A deficiency that results in a material misstatement',
-      'A deficiency less severe than a material weakness but important enough to merit attention',
       'Any deficiency in design or operation of controls',
-      'A deficiency that must be reported to regulators',
+      'A deficiency less severe than a material weakness but important enough to merit attention',
+      'A deficiency that must be reported to regulators'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'A significant deficiency is a deficiency, or combination of deficiencies, that is less severe than a material weakness but important enough to merit attention by those charged with governance.',
     reference: 'AU-C 265.07',
@@ -230,11 +230,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'An unmodified audit opinion indicates that:',
     options: [
       'The financial statements are fraud-free',
-      'The financial statements are presented fairly in all material respects',
-      'The company is financially healthy',
       'All transactions were verified by the auditor',
+      'The company is financially healthy',
+      'The financial statements are presented fairly in all material respects'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'An unmodified opinion states the financial statements are presented fairly, in all material respects, in accordance with the applicable framework. It does not guarantee absence of fraud or financial health.',
     reference: 'AU-C 700.35',
@@ -249,12 +249,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'An auditor should issue a qualified opinion when:',
     options: [
-      'Misstatements are pervasive to the financial statements',
       'Misstatements are material but not pervasive',
+      'Misstatements are pervasive to the financial statements',
       'The auditor is unable to obtain sufficient evidence and effects could be pervasive',
-      'There are significant deficiencies in internal control',
+      'There are significant deficiencies in internal control'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A qualified opinion is issued when misstatements are material but not pervasive, or when the auditor cannot obtain sufficient evidence but possible effects are not pervasive. Pervasive issues lead to adverse or disclaimer.',
     reference: 'AU-C 705.08',
@@ -271,11 +271,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
       'When management refuses to provide a required representation letter, the auditor should:',
     options: [
       'Issue a qualified opinion',
-      'Issue an adverse opinion',
       'Disclaim an opinion',
-      'Issue an unmodified opinion with emphasis of matter',
+      'Issue an adverse opinion',
+      'Issue an unmodified opinion with emphasis of matter'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Refusal to provide required written representations is a scope limitation significant enough to disclaim an opinion. The representation letter is required for every audit.',
     reference: 'AU-C 580.20',
@@ -291,12 +291,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question:
       'When substantial doubt exists about going concern but adequate disclosure is made, the auditor should:',
     options: [
-      'Issue a qualified opinion',
       'Issue an unmodified opinion with emphasis-of-matter paragraph',
+      'Issue a qualified opinion',
       'Issue an adverse opinion',
-      'Disclaim an opinion',
+      'Disclaim an opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'When going concern uncertainty exists with adequate disclosure, the auditor issues an unmodified opinion with an emphasis-of-matter paragraph drawing attention to the going concern note.',
     reference: 'AU-C 570.19',
@@ -313,11 +313,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
       'When the prior period statements were audited by a predecessor auditor whose report is not reissued, the current auditor should:',
     options: [
       'Reaudit the prior period',
-      'Include an other-matter paragraph describing the situation',
-      'Issue a disclaimer on the prior period',
       'Omit reference to the prior period',
+      'Issue a disclaimer on the prior period',
+      'Include an other-matter paragraph describing the situation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       "When the predecessor's report is not reissued, the current auditor includes an other-matter paragraph indicating the prior period was audited by another auditor, the type of opinion, and if modified, the reasons.",
     reference: 'AU-C 700.A61',
@@ -357,11 +357,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'Which statement about auditor responsibility for fraud is correct?',
     options: [
       'The auditor must detect all fraud',
-      'The auditor has the same responsibility for material misstatements whether caused by fraud or error',
-      'The auditor has greater responsibility for detecting management fraud than employee fraud',
       'The auditor is not responsible for preventing fraud',
+      'The auditor has greater responsibility for detecting management fraud than employee fraud',
+      'The auditor has the same responsibility for material misstatements whether caused by fraud or error'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The auditor has the same responsibility for obtaining reasonable assurance about material misstatements, whether caused by fraud or error. Detection is harder for fraud due to concealment.',
     reference: 'AU-C 240.05',
@@ -376,12 +376,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'Which fraud-related risk is always presumed to exist?',
     options: [
-      'Risk of material misstatement in cash',
       'Risk of management override of controls',
+      'Risk of material misstatement in cash',
       'Risk of employee embezzlement',
-      'Risk of vendor kickbacks',
+      'Risk of vendor kickbacks'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Risk of material misstatement due to management override of controls is always presumed because management is in a unique position to perpetrate fraud by overriding otherwise effective controls.',
     reference: 'AU-C 240.31',
@@ -397,12 +397,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question:
       'When fraud is detected that involves senior management, the auditor should communicate the matter to:',
     options: [
-      'Lower level management',
       'Those charged with governance',
+      'Lower level management',
       'Law enforcement',
-      'The SEC',
+      'The SEC'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Fraud involving senior management should be communicated to those charged with governance (e.g., audit committee). External reporting to law enforcement or regulators is generally not required unless legally mandated.',
     reference: 'AU-C 240.40',
@@ -441,12 +441,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'medium',
     question: 'An engagement quality control review is required for:',
     options: [
-      'All audit engagements',
       'Audits of public companies and certain high-risk engagements',
+      'All audit engagements',
       'Only first-year audits',
-      'Audits where the opinion is modified',
+      'Audits where the opinion is modified'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'PCAOB standards require engagement quality review for all public company audits. AICPA standards require it for certain engagements as defined by firm policy (typically public companies and high-risk).',
     reference: 'QC 10.38',
@@ -505,10 +505,10 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     options: [
       'Planned scope and timing of the audit',
       'Significant audit findings',
-      'Client management salary information',
       'Auditor independence',
+      'Client management salary information'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Required communications include: planned scope and timing, significant findings (including difficulties), and auditor independence. Detailed management compensation is not a required audit communication.',
     reference: 'AU-C 260.12',
@@ -528,11 +528,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'In a group audit, the group engagement partner is responsible for:',
     options: [
       'Only the work performed by the group engagement team',
-      'The direction, supervision, and performance of the group audit, including work of component auditors',
-      'Delegating all responsibility to component auditors',
       'Auditing only the parent company',
+      'Delegating all responsibility to component auditors',
+      'The direction, supervision, and performance of the group audit, including work of component auditors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The group engagement partner is responsible for the direction, supervision, and performance of the entire group audit engagement, including overseeing and evaluating work of component auditors.',
     reference: 'AU-C 600.11',
@@ -548,11 +548,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'Related party transactions require:',
     options: [
       'No special consideration',
-      'Identification and risk assessment but not disclosure',
       'Identification, evaluation of accounting treatment, and appropriate disclosure',
-      'Automatic rejection by the auditor',
+      'Identification and risk assessment but not disclosure',
+      'Automatic rejection by the auditor'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'The auditor must identify related parties, understand their relationships and transactions, assess risks, evaluate accounting treatment, and determine if appropriate disclosure is made.',
     reference: 'AU-C 550.12',
@@ -567,12 +567,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'hard',
     question: "When evaluating management's point estimate, the auditor should:",
     options: [
-      "Accept the estimate if it falls within the auditor's range",
-      "Require management to use the auditor's point estimate",
       'Consider whether the estimate is reasonable and indicators of possible management bias',
-      'Always use a specialist to evaluate estimates',
+      "Require management to use the auditor's point estimate",
+      "Accept the estimate if it falls within the auditor's range",
+      'Always use a specialist to evaluate estimates'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       "The auditor evaluates whether management's estimate is reasonable and whether indicators of possible management bias exist. Even estimates within a range may indicate bias if consistently at one end.",
     reference: 'AU-C 540.17',
@@ -633,11 +633,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
       'Management refuses to allow the auditor to send accounts receivable confirmations. The auditor should:',
     options: [
       "Accept management's refusal and perform alternative procedures",
-      'Evaluate the refusal, inquire about reasons, and consider implications for risk assessment',
-      'Immediately withdraw from the engagement',
       'Issue an adverse opinion',
+      'Immediately withdraw from the engagement',
+      'Evaluate the refusal, inquire about reasons, and consider implications for risk assessment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The auditor should inquire about reasons for refusal, evaluate validity of reasons, consider implications for risk assessment, perform alternative procedures, and if unable to obtain sufficient evidence, consider report implications.',
     reference: 'AU-C 505.08',
@@ -673,11 +673,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'Dual-purpose tests allow the auditor to:',
     options: [
       'Test two different account balances simultaneously',
-      'Test controls and substantive matters from the same transaction',
       'Use two different sampling methods',
-      'Obtain evidence from two different sources',
+      'Test controls and substantive matters from the same transaction',
+      'Obtain evidence from two different sources'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Dual-purpose tests allow testing both the operating effectiveness of a control and the substantive aspects of a transaction using the same sample, improving efficiency.',
     reference: 'AU-C 330.A31',
@@ -715,8 +715,13 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     subtopic: 'Review',
     difficulty: 'medium',
     question: 'A review engagement provides:',
-    options: ['No assurance', 'Limited assurance', 'Reasonable assurance', 'Absolute assurance'],
-    correctAnswer: 1,
+    options: [
+      'No assurance',
+      'Reasonable assurance',
+      'Limited assurance',
+      'Absolute assurance'
+    ],
+    correctAnswer: 2,
     explanation:
       'A review provides limited assurance (negative assurance) that no material modifications are needed. It primarily involves analytical procedures and inquiries, not the detailed testing of an audit.',
     reference: 'SSARS AR-C 90.05',
@@ -732,11 +737,11 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     question: 'In an agreed-upon procedures engagement:',
     options: [
       'The auditor determines appropriate procedures',
-      'The engaging party specifies the procedures',
       'The auditor provides assurance on the subject matter',
-      'GAAS must be followed',
+      'The engaging party specifies the procedures',
+      'GAAS must be followed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'In agreed-upon procedures, the engaging party and often the responsible party specify the procedures. The practitioner reports findings without providing assurance on the subject matter.',
     reference: 'SSAE AT-C 215.09',
@@ -751,12 +756,12 @@ export const AUD_QUESTIONS_EXTRA: Question[] = [
     difficulty: 'easy',
     question: 'A preparation engagement differs from a compilation because:',
     options: [
-      'No report is required in a preparation engagement',
+      'Preparation requires analytical procedures',
       'Independence is required for preparation',
       'Preparation provides more assurance',
-      'Preparation requires analytical procedures',
+      'No report is required in a preparation engagement'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       "In a preparation engagement, no report is issued by the accountant. A legend is required on each page stating no assurance is provided. Compilations require an accountant's report.",
     reference: 'SSARS AR-C 70.06',

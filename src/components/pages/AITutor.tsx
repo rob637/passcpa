@@ -580,13 +580,15 @@ const AITutor: React.FC = () => {
                     'px-4 py-3 rounded-2xl',
                     message.role === 'assistant'
                       ? 'bg-white border border-slate-200 rounded-tl-md shadow-soft'
-                      : 'bg-slate-800 text-white rounded-tr-md'
+                      : 'bg-blue-600 text-white rounded-tr-md'
                   )}
                 >
                   <div
                     className={clsx(
                       'prose prose-sm max-w-none',
-                      message.role === 'assistant' ? 'prose-slate' : 'prose-invert'
+                      message.role === 'assistant' 
+                        ? 'prose-slate' 
+                        : 'prose-invert [&>*]:text-white [&>p]:text-white'
                     )}
                     dangerouslySetInnerHTML={{
                       __html: formatMessage(message.content),

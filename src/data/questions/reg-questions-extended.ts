@@ -17,8 +17,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "A taxpayer received the following in the current year: Salary $80,000; Jury duty pay $300; Municipal bond interest $2,000; Life insurance proceeds from deceased spouse $100,000. What is the taxpayer's gross income?",
-    options: ['$80,300', '$82,300', '$180,300', '$182,300'],
-    correctAnswer: 0,
+    options: [
+      '$82,300',
+      '$180,300',
+      '$80,300',
+      '$182,300'
+    ],
+    correctAnswer: 2,
     explanation:
       'Gross income includes salary ($80,000) and jury duty pay ($300). Municipal bond interest is tax-exempt under IRC §103. Life insurance proceeds paid by reason of death are excluded under IRC §101(a). Total: $80,300.',
     reference: 'IRC §61, §101, §103',
@@ -33,8 +38,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "An employee received $5,000 of employer-provided educational assistance for an MBA program. The employee's AGI is $70,000. How much is taxable?",
-    options: ['$0', '$250', '$5,000', '$4,750'],
-    correctAnswer: 0,
+    options: [
+      '$250',
+      '$5,000',
+      '$0',
+      '$4,750'
+    ],
+    correctAnswer: 2,
     explanation:
       'Under IRC §127, up to $5,250 of employer-provided educational assistance is excludable from gross income annually, regardless of whether the education is job-related. The $5,000 received is fully excludable.',
     reference: 'IRC §127',
@@ -50,12 +60,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A cash-basis taxpayer received a $10,000 check from a client on December 29, Year 1, but did not deposit it until January 3, Year 2. When is the income recognized?',
     options: [
-      'Year 1, when the check was received',
+      'Split equally between Year 1 and Year 2',
       'Year 2, when the check was deposited',
       'Year 2, when the check cleared',
-      'Split equally between Year 1 and Year 2',
+      'Year 1, when the check was received'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Under the constructive receipt doctrine, income is taxable when it is made available to the taxpayer without substantial restrictions. Receipt of a check constitutes constructive receipt, even if not deposited until the next year.',
     reference: 'IRC §451, Reg. §1.451-2',
@@ -90,8 +100,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "A taxpayer purchased an annuity for $72,000. The annuity pays $12,000 per year for 10 years. How much of the first year's payment is taxable?",
-    options: ['$0', '$4,800', '$7,200', '$12,000'],
-    correctAnswer: 1,
+    options: [
+      '$7,200',
+      '$0',
+      '$4,800',
+      '$12,000'
+    ],
+    correctAnswer: 2,
     explanation:
       'Using the exclusion ratio: Investment/Expected return = $72,000/$120,000 = 60% excluded. Each $12,000 payment: $7,200 excluded (return of capital) and $4,800 taxable (earnings).',
     reference: 'IRC §72',
@@ -106,8 +121,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "A taxpayer won a car valued at $25,000 in a radio contest. The taxpayer's tax bracket is 24%. What is included in gross income?",
-    options: ['$0 - prizes are excluded', '$6,000', '$19,000', '$25,000'],
-    correctAnswer: 3,
+    options: [
+      '$0 - prizes are excluded',
+      '$19,000',
+      '$25,000',
+      '$6,000'
+    ],
+    correctAnswer: 2,
     explanation:
       'Prizes and awards are generally included in gross income at fair market value under IRC §74. The full $25,000 value of the car is taxable. The tax bracket is used to calculate tax liability, not gross income.',
     reference: 'IRC §74',
@@ -122,8 +142,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'An employee receives free parking in an employer-owned lot. The monthly fair market value is $300. The 2024 excludable limit for qualified parking is $315/month. How much is taxable annually?',
-    options: ['$0', '$180', '$3,600', '$3,780'],
-    correctAnswer: 0,
+    options: [
+      '$3,600',
+      '$0',
+      '$180',
+      '$3,780'
+    ],
+    correctAnswer: 1,
     explanation:
       'Since the monthly parking value ($300) is less than the monthly exclusion limit ($315), the entire benefit is excluded from gross income as a qualified transportation fringe benefit.',
     reference: 'IRC §132(f)',
@@ -138,8 +163,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A taxpayer sold their principal residence for $600,000. They paid $350,000 for it 8 years ago and made $50,000 in capital improvements. The taxpayer is single. What is the taxable gain?',
-    options: ['$0', '$50,000', '$200,000', '$250,000'],
-    correctAnswer: 1,
+    options: [
+      '$0',
+      '$250,000',
+      '$50,000',
+      '$200,000'
+    ],
+    correctAnswer: 2,
     explanation:
       'Gain = $600,000 - ($350,000 + $50,000) = $200,000. Single taxpayers can exclude up to $250,000 of gain on principal residence sale under §121. Since gain ($200,000) < exclusion ($250,000), taxable gain is $0. Wait, let me recalculate - the answer should be $0, not $50,000.',
     reference: 'IRC §121',
@@ -154,8 +184,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A divorced taxpayer receives $2,000/month from their ex-spouse under a divorce agreement executed in 2015: $1,200 designated as alimony and $800 as child support. What is the annual taxable income from these payments?',
-    options: ['$0', '$9,600', '$14,400', '$24,000'],
-    correctAnswer: 2,
+    options: ['$0',
+      '$9,600',
+      '$24,000',
+      '$14,400'],
+    correctAnswer: 3,
     explanation:
       'For divorce agreements executed before 2019, alimony is taxable to the recipient and deductible by the payer. Child support is never taxable. Annual taxable: $1,200 × 12 = $14,400.',
     reference: 'IRC §71 (pre-2019 agreements)',
@@ -172,10 +205,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Employer-provided group term life insurance coverage up to $50,000',
       'No-additional-cost services',
-      'Country club membership',
       'Working condition fringe benefits',
+      'Country club membership'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Country club memberships are specifically excluded from the definition of qualified fringe benefits and are taxable. Group term life (up to $50,000), no-additional-cost services, and working condition fringes are excludable.',
     reference: 'IRC §132, §79',
@@ -194,7 +227,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A self-employed individual paid $8,000 for health insurance for themselves and their family. Their net self-employment income was $50,000. What is the deduction for AGI?',
-    options: ['$0', '$4,000', '$7,065', '$8,000'],
+    options: [
+      '$0',
+      '$4,000',
+      '$7,065',
+      '$8,000'
+    ],
     correctAnswer: 3,
     explanation:
       'Self-employed individuals can deduct 100% of health insurance premiums paid for themselves, spouse, and dependents as an above-the-line deduction, limited to net self-employment income. The full $8,000 is deductible.',
@@ -210,8 +248,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A taxpayer contributed $7,000 to a traditional IRA. Their AGI is $85,000, they are 45 years old, single, and covered by an employer retirement plan. The 2024 phase-out range for single filers is $77,000-$87,000. What is the deductible IRA contribution?',
-    options: ['$0', '$1,400', '$5,600', '$7,000'],
-    correctAnswer: 1,
+    options: ['$1,400',
+      '$0',
+      '$5,600',
+      '$7,000'],
+    correctAnswer: 0,
     explanation:
       'Phase-out calculation: ($85,000 - $77,000) / $10,000 = 80% phased out. Deductible amount = $7,000 × 20% = $1,400. The taxpayer can still make a non-deductible contribution for the remaining $5,600.',
     reference: 'IRC §219(g)',
@@ -226,8 +267,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A taxpayer paid $4,500 in student loan interest during the year. Their modified AGI is $75,000 and they file as single. The phase-out range begins at $75,000. What is the maximum deduction?',
-    options: ['$0', '$1,500', '$2,500', '$4,500'],
-    correctAnswer: 2,
+    options: [
+      '$2,500',
+      '$1,500',
+      '$0',
+      '$4,500'
+    ],
+    correctAnswer: 0,
     explanation:
       'Student loan interest deduction is limited to $2,500 and begins phasing out at $75,000 MAGI. At exactly $75,000, the taxpayer is at the beginning of the phase-out, so the full $2,500 maximum is available.',
     reference: 'IRC §221',
@@ -243,11 +289,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following is a deduction FOR adjusted gross income (above-the-line)?',
     options: [
       'Home mortgage interest',
-      'State income taxes paid',
       'Self-employment tax (50%)',
-      'Unreimbursed employee business expenses',
+      'State income taxes paid',
+      'Unreimbursed employee business expenses'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'The deductible portion of self-employment tax (50% of SE tax) is an above-the-line deduction. Mortgage interest and state taxes are itemized deductions. Employee business expenses are no longer deductible (TCJA).',
     reference: 'IRC §164(f)',
@@ -262,8 +308,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A teacher spent $400 on classroom supplies. What is the maximum educator expense deduction for AGI?',
-    options: ['$250', '$300', '$400', '$500'],
-    correctAnswer: 1,
+    options: [
+      '$500',
+      '$250',
+      '$400',
+      '$300'
+    ],
+    correctAnswer: 3,
     explanation:
       'Eligible educators can deduct up to $300 (2024) of unreimbursed expenses for classroom supplies as an above-the-line deduction. The $400 spent exceeds the limit, so only $300 is deductible.',
     reference: 'IRC §62(a)(2)(D)',
@@ -282,8 +333,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "A taxpayer's AGI is $100,000. They paid $12,000 in medical expenses, $6,000 in prescription drugs, and received $3,000 insurance reimbursement. What is the medical expense deduction?",
-    options: ['$7,500', '$8,000', '$15,000', '$18,000'],
-    correctAnswer: 0,
+    options: [
+      '$15,000',
+      '$8,000',
+      '$18,000',
+      '$7,500'
+    ],
+    correctAnswer: 3,
     explanation:
       'Total medical: $12,000 + $6,000 - $3,000 = $15,000. Floor = 7.5% × $100,000 = $7,500. Deduction = $15,000 - $7,500 = $7,500.',
     reference: 'IRC §213',
@@ -297,8 +353,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Itemized Deductions',
     difficulty: 'easy',
     question: 'The SALT deduction (state and local taxes) is limited to:',
-    options: ['$5,000', '$10,000', '$15,000', 'No limit'],
-    correctAnswer: 1,
+    options: [
+      '$10,000',
+      '$15,000',
+      '$5,000',
+      'No limit'
+    ],
+    correctAnswer: 0,
     explanation:
       'The Tax Cuts and Jobs Act limits the SALT deduction (state/local income or sales taxes plus real property taxes) to $10,000 ($5,000 MFS) through 2025.',
     reference: 'IRC §164(b)(6)',
@@ -313,8 +374,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A taxpayer donated stock with FMV of $20,000 and basis of $5,000 to a public charity. Their AGI is $100,000. What is the maximum charitable deduction this year?',
-    options: ['$5,000', '$20,000', '$30,000', '$60,000'],
-    correctAnswer: 1,
+    options: [
+      '$20,000',
+      '$30,000',
+      '$5,000',
+      '$60,000'
+    ],
+    correctAnswer: 0,
     explanation:
       'Appreciated capital gain property donated to public charities is deductible at FMV, limited to 30% of AGI. Limit = 30% × $100,000 = $30,000. Since $20,000 < $30,000, the full $20,000 is deductible.',
     reference: 'IRC §170(b)(1)(C)',
@@ -331,10 +397,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Interest on a $1,500,000 acquisition mortgage obtained in 2019',
       'Interest on home equity debt used to buy a car',
-      'Interest on a loan to purchase a third home',
       'Interest on acquisition debt up to $750,000 for a loan obtained in 2020',
+      'Interest on a loan to purchase a third home'
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
     explanation:
       'For mortgages after 12/15/2017, interest is deductible on acquisition debt up to $750,000. Home equity interest is only deductible if used to improve the home. Only two homes qualify.',
     reference: 'IRC §163(h)',
@@ -349,7 +415,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A taxpayer paid $5,000 in points to obtain a mortgage to purchase their principal residence. The loan is for 30 years. How much can be deducted in Year 1?',
-    options: ['$0', '$167', '$2,500', '$5,000'],
+    options: [
+      '$0',
+      '$167',
+      '$2,500',
+      '$5,000'
+    ],
     correctAnswer: 3,
     explanation:
       'Points paid on a mortgage to acquire a principal residence are fully deductible in the year paid if: (1) the loan is for acquiring/improving the home, (2) points are established practice in the area, and (3) not excessive.',
@@ -369,8 +440,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A taxpayer paid $8,000 in child care expenses for their 4-year-old while working. Their AGI is $35,000. What is the maximum child care credit?',
-    options: ['$600', '$1,050', '$1,200', '$2,400'],
-    correctAnswer: 1,
+    options: [
+      '$600',
+      '$1,200',
+      '$1,050',
+      '$2,400'
+    ],
+    correctAnswer: 2,
     explanation:
       'Maximum qualifying expenses for one child = $3,000. At AGI of $35,000, credit rate = 35% (rates decrease above $15,000 AGI). Credit = $3,000 × 35% = $1,050.',
     reference: 'IRC §21',
@@ -384,8 +460,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Tax Credits',
     difficulty: 'easy',
     question: 'The Child Tax Credit for a qualifying child under age 17 is:',
-    options: ['$500', '$1,000', '$1,500', '$2,000'],
-    correctAnswer: 3,
+    options: [
+      '$500',
+      '$2,000',
+      '$1,000',
+      '$1,500'
+    ],
+    correctAnswer: 1,
     explanation:
       'The Child Tax Credit is $2,000 per qualifying child under age 17. Up to $1,600 (2024) is refundable as the Additional Child Tax Credit. Phase-out begins at $400,000 MFJ / $200,000 other.',
     reference: 'IRC §24',
@@ -400,8 +481,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "A taxpayer paid $5,000 in qualified tuition for their dependent child's freshman year of college. Their MAGI is $75,000 (single). What is the American Opportunity Tax Credit?",
-    options: ['$1,000', '$2,000', '$2,500', '$5,000'],
-    correctAnswer: 2,
+    options: [
+      '$2,500',
+      '$2,000',
+      '$5,000',
+      '$1,000'
+    ],
+    correctAnswer: 0,
     explanation:
       'AOTC = 100% of first $2,000 + 25% of next $2,000 = $2,000 + $500 = $2,500. Phase-out begins at $80,000 MAGI for single filers. At $75,000, no phase-out applies.',
     reference: 'IRC §25A',
@@ -436,8 +522,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A taxpayer adopted a child with special needs. They incurred $20,000 in qualified adoption expenses. What is the maximum adoption credit for 2024?',
-    options: ['$14,890', '$15,950', '$16,810', '$20,000'],
-    correctAnswer: 2,
+    options: ['$16,810',
+      '$15,950',
+      '$14,890',
+      '$20,000'],
+    correctAnswer: 0,
     explanation:
       'For special needs adoptions, the full credit amount ($16,810 for 2024) is available regardless of actual expenses. For other adoptions, the credit equals qualified expenses up to the limit.',
     reference: 'IRC §23',
@@ -456,8 +545,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "A taxpayer received stock as a gift. The donor's basis was $10,000 and FMV at date of gift was $8,000. If sold for $7,000, what is the loss?",
-    options: ['$0', '$1,000', '$3,000', '$10,000'],
-    correctAnswer: 1,
+    options: [
+      '$10,000',
+      '$0',
+      '$3,000',
+      '$1,000'
+    ],
+    correctAnswer: 3,
     explanation:
       'When FMV at gift < donor\'s basis, dual basis rules apply. For loss: basis = FMV at gift ($8,000). Loss = $8,000 - $7,000 = $1,000. The $2,000 "built-in loss" at gift disappears.',
     reference: 'IRC §1015',
@@ -472,8 +566,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "A taxpayer inherited stock that the decedent bought for $20,000. FMV was $50,000 at date of death and $55,000 six months later. The estate did not elect alternate valuation. What is the heir's basis?",
-    options: ['$20,000', '$50,000', '$52,500', '$55,000'],
-    correctAnswer: 1,
+    options: ['$20,000',
+      '$55,000',
+      '$52,500',
+      '$50,000'],
+    correctAnswer: 3,
     explanation:
       'Inherited property receives a stepped-up (or stepped-down) basis to FMV at date of death. Since no alternate valuation was elected, basis = $50,000 (DOD value).',
     reference: 'IRC §1014',
@@ -488,8 +585,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A taxpayer in the 24% bracket sold stock held for 14 months at a $10,000 gain. What is the tax on this gain?',
-    options: ['$0', '$1,500', '$2,000', '$2,400'],
-    correctAnswer: 1,
+    options: [
+      '$1,500',
+      '$2,000',
+      '$0',
+      '$2,400'
+    ],
+    correctAnswer: 0,
     explanation:
       'Property held more than one year qualifies for long-term capital gain rates. For a taxpayer in the 24% bracket, LTCG rate is 15%. Tax = $10,000 × 15% = $1,500.',
     reference: 'IRC §1(h)',
@@ -505,12 +607,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A taxpayer has: LTCG $20,000; LTCL $5,000; STCG $3,000; STCL $10,000. What is the net capital gain/loss?',
     options: [
-      '$8,000 net long-term gain',
+      '$3,000 net loss',
       '$15,000 net long-term gain',
       '$12,000 net long-term gain',
-      '$3,000 net loss',
+      '$8,000 net long-term gain'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Net LTCG = $20,000 - $5,000 = $15,000. Net STCL = $10,000 - $3,000 = $7,000. Overall = $15,000 - $7,000 = $8,000 net LTCG.',
     reference: 'IRC §1222',
@@ -528,10 +630,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '$15,000 ordinary income',
       '$15,000 Section 1231 gain',
-      '$15,000 Section 1245 recapture (ordinary)',
       '$10,000 Section 1231 gain, $5,000 ordinary',
+      '$15,000 Section 1245 recapture (ordinary)'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Adjusted basis = $50,000 - $35,000 = $15,000. Gain = $30,000 - $15,000 = $15,000. Under §1245, gain on depreciable personal property is recaptured as ordinary income to extent of depreciation taken. All $15,000 is ordinary (limited to $35,000 depreciation).',
     reference: 'IRC §1245',
@@ -546,8 +648,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A commercial building (not residential) was sold for $400,000. Original cost was $300,000, straight-line depreciation taken was $80,000. What is the §1250 unrecaptured gain taxed at 25%?',
-    options: ['$0', '$80,000', '$100,000', '$180,000'],
-    correctAnswer: 1,
+    options: [
+      '$100,000',
+      '$0',
+      '$80,000',
+      '$180,000'
+    ],
+    correctAnswer: 2,
     explanation:
       'Adjusted basis = $300,000 - $80,000 = $220,000. Gain = $400,000 - $220,000 = $180,000. Unrecaptured §1250 gain = depreciation taken = $80,000 (taxed at 25%). Remaining $100,000 is §1231 gain (LTCG rates).',
     reference: 'IRC §1250, §1(h)(1)(E)',
@@ -566,8 +673,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "A partner contributes property with FMV of $100,000 and basis of $60,000 for a 25% partnership interest. What is the partner's basis in the partnership interest?",
-    options: ['$25,000', '$60,000', '$100,000', '$40,000 gain recognized'],
-    correctAnswer: 1,
+    options: [
+      '$60,000',
+      '$100,000',
+      '$25,000',
+      '$40,000 gain recognized'
+    ],
+    correctAnswer: 0,
     explanation:
       "Under §721, no gain is recognized on contribution of property to a partnership. The partner's basis in the partnership interest equals their basis in the contributed property ($60,000).",
     reference: 'IRC §721, §722',
@@ -582,8 +694,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "A partner's beginning basis is $50,000. Partnership results: ordinary income $30,000 (partner's share); tax-exempt income $5,000; distributions $20,000; nondeductible expenses $3,000. What is ending basis?",
-    options: ['$42,000', '$57,000', '$62,000', '$65,000'],
-    correctAnswer: 2,
+    options: ['$62,000',
+      '$57,000',
+      '$42,000',
+      '$65,000'],
+    correctAnswer: 0,
     explanation:
       'Basis = $50,000 + $30,000 (income) + $5,000 (tax-exempt) - $20,000 (distributions) - $3,000 (nondeductible) = $62,000.',
     reference: 'IRC §705',
@@ -642,10 +757,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Zero - only nonrecourse debt affects basis',
       '50% of the debt',
-      'Based on economic risk of loss',
       '100% if they are the managing partner',
+      'Based on economic risk of loss'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       "Recourse debt is allocated based on which partners bear the economic risk of loss (who would pay if partnership couldn't). This may differ from profit/loss ratios based on guarantees or other factors.",
     reference: 'IRC §752, Reg. §1.752-2',
@@ -665,11 +780,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following would terminate an S election?',
     options: [
       'Having 100 shareholders',
-      'Issuing a second class of stock with different voting rights only',
       'Having a nonresident alien shareholder',
-      'Having an estate as a shareholder',
+      'Issuing a second class of stock with different voting rights only',
+      'Having an estate as a shareholder'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Nonresident aliens cannot be S corporation shareholders. Having one would terminate the S election. Different voting rights are allowed; only different distribution rights create a second class. 100 shareholders is the limit. Estates can be shareholders.',
     reference: 'IRC §1361(b)',
@@ -684,7 +799,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       "An S corporation shareholder's beginning stock basis is $30,000. Their share of: ordinary income $20,000; separately stated deductions $8,000; distributions $25,000. What is ending stock basis?",
-    options: ['$17,000', '$22,000', '$42,000', '$47,000'],
+    options: [
+      '$17,000',
+      '$22,000',
+      '$42,000',
+      '$47,000'
+    ],
     correctAnswer: 0,
     explanation:
       'Basis = $30,000 + $20,000 (income) - $8,000 (deductions) - $25,000 (distributions) = $17,000. Distributions reduce basis but not below zero.',
@@ -701,12 +821,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       "An S corporation's AAA balance is $50,000 and it has $30,000 of accumulated E&P from C corporation years. It distributes $70,000 to its sole shareholder (basis $100,000). How is the distribution taxed?",
     options: [
-      '$70,000 return of capital',
       '$50,000 return of capital, $20,000 dividend',
+      '$70,000 return of capital',
       '$50,000 return of capital, $20,000 capital gain',
-      '$50,000 dividend, $20,000 return of capital',
+      '$50,000 dividend, $20,000 return of capital'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Distributions come from AAA first (tax-free return of capital if basis exists), then accumulated E&P (dividend), then remaining AAA, then return of basis, then capital gain. Here: $50,000 AAA + $20,000 E&P dividend.',
     reference: 'IRC §1368',
@@ -722,12 +842,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A C corporation with appreciated assets ($100,000 built-in gain) elects S status. In Year 2 after the election, it sells the assets recognizing the $100,000 gain. The recognition period is 5 years. What tax is owed at the corporate level?',
     options: [
-      "$0 - S corporations don't pay tax",
       '$21,000 (21% corporate rate)',
+      "$0 - S corporations don't pay tax",
       '$15,000 (15% capital gains rate)',
-      'Depends on state tax law',
+      'Depends on state tax law'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The built-in gains tax applies to net recognized built-in gains during the recognition period (5 years). Tax = $100,000 × 21% = $21,000. This is in addition to pass-through taxation to shareholders.',
     reference: 'IRC §1374',
@@ -788,8 +908,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       "Corporation A owns 25% of Corporation B's stock and receives $100,000 in dividends. What is the dividends received deduction?",
-    options: ['$50,000', '$65,000', '$100,000', '$0'],
-    correctAnswer: 1,
+    options: [
+      '$50,000',
+      '$100,000',
+      '$65,000',
+      '$0'
+    ],
+    correctAnswer: 2,
     explanation:
       'Ownership between 20% and less than 80% qualifies for a 65% dividends received deduction. DRD = $100,000 × 65% = $65,000. (20% or less = 50%; 80% or more = 100%).',
     reference: 'IRC §243',
@@ -804,8 +929,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A corporation has taxable income of $200,000 and a net operating loss carryforward of $300,000. What is the maximum NOL deduction?',
-    options: ['$60,000', '$160,000', '$200,000', '$300,000'],
-    correctAnswer: 1,
+    options: [
+      '$200,000',
+      '$60,000',
+      '$160,000',
+      '$300,000'
+    ],
+    correctAnswer: 2,
     explanation:
       'For NOLs arising in tax years after 2017, the deduction is limited to 80% of taxable income. Maximum deduction = $200,000 × 80% = $160,000. Remaining $140,000 carries forward.',
     reference: 'IRC §172(a)',
@@ -820,7 +950,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A corporation has taxable income of $500,000 before charitable contributions. It contributed $75,000 to charity. What is the deductible amount this year?',
-    options: ['$50,000', '$75,000', '$150,000', '$500,000'],
+    options: [
+      '$50,000',
+      '$75,000',
+      '$150,000',
+      '$500,000'
+    ],
     correctAnswer: 0,
     explanation:
       'Corporate charitable contributions are limited to 10% of taxable income computed before the contribution deduction. Limit = $500,000 × 10% = $50,000. Excess $25,000 carries forward 5 years.',
@@ -836,8 +971,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A corporation accumulates $300,000 beyond reasonable business needs. The accumulated earnings credit is $250,000. What is the accumulated earnings tax base?',
-    options: ['$0', '$50,000', '$250,000', '$300,000'],
-    correctAnswer: 1,
+    options: [
+      '$0',
+      '$250,000',
+      '$300,000',
+      '$50,000'
+    ],
+    correctAnswer: 3,
     explanation:
       'Accumulated earnings tax applies to accumulated taxable income (modified taxable income less dividends paid and accumulated earnings credit). Base = $300,000 - $250,000 = $50,000.',
     reference: 'IRC §531-537',
@@ -855,8 +995,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Annual Exclusion',
     difficulty: 'easy',
     question: 'In 2024, what is the annual gift tax exclusion per donee?',
-    options: ['$15,000', '$17,000', '$18,000', '$36,000'],
-    correctAnswer: 2,
+    options: [
+      '$15,000',
+      '$17,000',
+      '$36,000',
+      '$18,000'
+    ],
+    correctAnswer: 3,
     explanation:
       'The 2024 annual gift tax exclusion is $18,000 per donee. A married couple electing gift-splitting can give $36,000 per donee.',
     reference: 'IRC §2503(b)',
@@ -894,11 +1039,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
       "A donor gives property worth $100,000 with a basis of $40,000 to a trust. The trust pays income to donor's spouse for life, remainder to children. What is the taxable gift?",
     options: [
       '$0 (marital deduction)',
-      '$40,000 (basis)',
-      '$100,000 (FMV)',
       'Value of remainder interest only',
+      '$100,000 (FMV)',
+      '$40,000 (basis)'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'The gift to the spouse qualifies for marital deduction only if it is a qualifying income interest (QTIP). The gift of the remainder interest to children is a taxable present interest gift.',
     reference: 'IRC §2523, §2702',
@@ -915,11 +1060,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
       'Decedent owned life insurance on their own life with face value of $500,000. The policy named a revocable trust as beneficiary. Is this included in the gross estate?',
     options: [
       'No - life insurance passes outside probate',
-      'Yes - included at $500,000',
       'Only if premiums were paid within 3 years of death',
-      'Only if the estate paid the premiums',
+      'Yes - included at $500,000',
+      'Only if the estate paid the premiums'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "Life insurance on decedent's life is included in gross estate if: (1) payable to estate, OR (2) decedent had incidents of ownership. Owning a policy on your own life = incidents of ownership. Include at face value.",
     reference: 'IRC §2042',
@@ -935,11 +1080,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Which of the following is NOT deductible from the gross estate?',
     options: [
       'Funeral expenses',
-      'Debts of the decedent',
-      'Federal income tax on income earned before death',
       'Federal estate tax',
+      'Federal income tax on income earned before death',
+      'Debts of the decedent'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'Federal estate tax is computed after deductions; it is not itself deductible. Funeral expenses, debts, and income tax liabilities owed at death are deductible from the gross estate.',
     reference: 'IRC §2053',
@@ -959,11 +1104,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'For a contract to be enforceable, which of the following must exist?',
     options: [
       'Written documentation',
-      'Consideration from both parties',
-      'Notarization',
       'Legal representation',
+      'Notarization',
+      'Consideration from both parties'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Valid contracts require: (1) offer, (2) acceptance, (3) consideration, (4) capacity, and (5) legality. Consideration (bargained-for exchange) must flow from both parties. Writing is only required for certain contracts (Statute of Frauds).',
     reference: 'Contract Law - Elements',
@@ -998,7 +1143,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'An agent exceeds their authority and signs a contract on behalf of the principal. The principal later accepts the benefits of the contract. This is known as:',
-    options: ['Express authority', 'Implied authority', 'Apparent authority', 'Ratification'],
+    options: [
+      'Express authority',
+      'Implied authority',
+      'Apparent authority',
+      'Ratification'
+    ],
     correctAnswer: 3,
     explanation:
       'Ratification occurs when a principal accepts the benefits of an unauthorized act by an agent, thereby affirming the act and becoming bound by it. This creates authority retroactively.',
@@ -1016,11 +1166,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
       "A third party deals with an agent believing the agent has authority based on the principal's representations. This is:",
     options: [
       'Express authority',
-      'Implied authority',
       'Apparent authority',
-      'Emergency authority',
+      'Implied authority',
+      'Emergency authority'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       "Apparent (ostensible) authority exists when the principal's conduct leads a third party to reasonably believe the agent has authority. It is based on the principal's representations to third parties, not the agent.",
     reference: 'Agency Law - Apparent Authority',
@@ -1036,12 +1186,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       'Under UCC Article 2, if a contract for the sale of goods does not specify a place for delivery, delivery is:',
     options: [
-      "At the buyer's place of business",
       "At the seller's place of business",
+      "At the buyer's place of business",
       'At a common carrier',
-      'Wherever the buyer specifies',
+      'Wherever the buyer specifies'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       "UCC §2-308 provides that unless otherwise agreed, the place for delivery is the seller's place of business, or if none, the seller's residence.",
     reference: 'UCC §2-308',
@@ -1062,10 +1212,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Standard deduction',
       'Charitable contributions',
-      'Private activity bond interest',
       'Home mortgage interest',
+      'Private activity bond interest'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Interest on private activity bonds issued after August 7, 1986 (except certain bonds) is a tax preference item that must be added back for AMT. Standard deduction is an adjustment, not preference. Charitable and mortgage interest are generally allowed for AMT.',
     reference: 'IRC §57',
@@ -1080,12 +1230,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'In calculating AMT, which item is added back (adjustment)?',
     options: [
-      'Charitable contributions',
-      'Medical expenses above the AMT floor',
       'State income taxes paid',
-      'Investment interest expense',
+      'Medical expenses above the AMT floor',
+      'Charitable contributions',
+      'Investment interest expense'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'State and local income taxes (SALT) are NOT deductible for AMT purposes. This is a significant adjustment. Charitable contributions and investment interest are generally allowed for both regular tax and AMT.',
     reference: 'IRC §56',
@@ -1121,11 +1271,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The penalty for failure to file a return by the due date (without extension) is:',
     options: [
       '0.5% per month up to 25%',
-      '5% per month up to 25%',
-      '10% per month up to 50%',
       'A flat $500 penalty',
+      '10% per month up to 50%',
+      '5% per month up to 25%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The failure-to-file penalty is 5% of unpaid tax for each month (or part) the return is late, up to a maximum of 25%. If both penalties apply, failure-to-file is reduced by failure-to-pay amount.',
     reference: 'IRC §6651',
@@ -1140,12 +1290,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'easy',
     question: 'The penalty for failure to pay tax by the due date is:',
     options: [
-      '0.5% per month up to 25%',
-      '5% per month up to 25%',
       '1% per month up to 50%',
-      'Interest only, no penalty',
+      '5% per month up to 25%',
+      '0.5% per month up to 25%',
+      'Interest only, no penalty'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation:
       'The failure-to-pay penalty is 0.5% of unpaid tax per month (or part), up to 25%. This is in addition to interest on the unpaid balance.',
     reference: 'IRC §6651',
@@ -1161,11 +1311,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: "Before the IRS can levy a taxpayer's property, it must:",
     options: [
       'Obtain a court order',
-      'Provide 30 days written notice',
-      'Publish notice in a newspaper',
       'File a tax lien',
+      'Publish notice in a newspaper',
+      'Provide 30 days written notice'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Before levying, the IRS must send a Final Notice of Intent to Levy providing 30 days for the taxpayer to request a Collection Due Process hearing. A tax lien secures the debt but is not required before levy.',
     reference: 'IRC §6331',
@@ -1181,12 +1331,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question:
       'A taxpayer receives a Notice of Deficiency (90-day letter). To petition the Tax Court:',
     options: [
-      'They must pay the deficiency first',
-      'They have 30 days to petition',
       'They have 90 days to petition without paying',
-      'They must file an administrative appeal first',
+      'They have 30 days to petition',
+      'They must pay the deficiency first',
+      'They must file an administrative appeal first'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'The Tax Court is a prepayment forum - taxpayers can petition within 90 days (150 days if addressed outside the US) without first paying the deficiency. This is the only prepayment option.',
     reference: 'IRC §6213',
@@ -1237,8 +1387,13 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'A sole proprietor has net self-employment income of $150,000. What is the self-employment tax (Social Security wage base for 2024 is $168,600)?',
-    options: ['$21,195', '$22,950', '$21,194', '$11,475'],
-    correctAnswer: 0,
+    options: [
+      '$21,194',
+      '$21,195',
+      '$22,950',
+      '$11,475'
+    ],
+    correctAnswer: 1,
     explanation:
       'SE income for tax = $150,000 × 92.35% = $138,525. SE tax = ($138,525 × 12.4% Social Security) + ($138,525 × 2.9% Medicare) = $17,177 + $4,017 = $21,194 (approximately $21,195).',
     reference: 'IRC §1401',
@@ -1253,12 +1408,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'To claim a qualifying child, which test does NOT need to be met?',
     options: [
-      'Relationship test',
+      'Income test (gross income limit)',
       'Age test',
       'Support test (child provides less than half)',
-      'Income test (gross income limit)',
+      'Relationship test'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'Qualifying child tests: relationship, age, residency, support (child does NOT provide more than half their own support), and joint return. There is NO gross income test for qualifying children (unlike qualifying relatives).',
     reference: 'IRC §152(c)',
@@ -1275,11 +1430,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
       'A single taxpayer provides 100% support for their 30-year-old child who lives with them but earned $6,000 in wages. Can the taxpayer claim the child as a dependent in 2024?',
     options: [
       'Yes, as a qualifying child',
-      'Yes, as a qualifying relative',
       'No, the child fails the gross income test',
-      'No, the child is too old',
+      'Yes, as a qualifying relative',
+      'No, the child is too old'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'The 30-year-old fails the age test for qualifying child. For qualifying relative: the gross income test requires income below $5,050 (2024). With $6,000 income, the child fails the qualifying relative test. Not a dependent.',
     reference: 'IRC §152(d)',
@@ -1294,12 +1449,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'For 2024, the 0% long-term capital gains rate applies to taxpayers with taxable income up to:',
     options: [
-      '$44,625 for single filers',
       '$89,250 for single filers',
+      '$44,625 for single filers',
       '$100,000 for single filers',
-      'All taxpayers regardless of income',
+      'All taxpayers regardless of income'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'The 0% LTCG rate applies to single filers with taxable income up to $44,625 (2024). From $44,626-$492,300 the rate is 15%. Above $492,300 the rate is 20%.',
     reference: 'IRC §1(h)',
   },
@@ -1333,11 +1488,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The QBI deduction is limited to the greater of 50% of W-2 wages OR 25% of W-2 wages plus 2.5% of:',
     options: [
       'Total assets',
-      'Unadjusted basis of qualified property',
       'Net income',
-      'Gross receipts',
+      'Unadjusted basis of qualified property',
+      'Gross receipts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Above income thresholds, QBI deduction is limited to greater of: (1) 50% of W-2 wages, or (2) 25% of W-2 wages + 2.5% of UBIA of qualified property. This benefits capital-intensive businesses.',
     reference: 'IRC §199A(b)',
   },
@@ -1352,11 +1507,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Under the hobby loss rules, an activity is presumed to be for profit if it produces a profit in:',
     options: [
       '2 of the last 5 years',
-      '3 of the last 5 years',
-      '4 of the last 5 years',
       '5 of the last 7 years',
+      '4 of the last 5 years',
+      '3 of the last 5 years'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'An activity is presumed profit-motivated if profitable in 3 of 5 consecutive years (2 of 7 for horses). Hobby losses cannot offset other income; deductions limited to hobby income.',
     reference: 'IRC §183',
   },
@@ -1370,12 +1525,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'The gross profit percentage in an installment sale equals:',
     options: [
-      'Gain ÷ Selling price',
       'Gain ÷ Adjusted basis',
+      'Gain ÷ Selling price',
       'Selling price ÷ Gain',
-      'Adjusted basis ÷ Selling price',
+      'Adjusted basis ÷ Selling price'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Gross profit % = Gain ÷ Contract price. Each payment received × GP% = taxable gain that year. This spreads gain recognition over the collection period.',
     reference: 'IRC §453',
   },
@@ -1389,12 +1544,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'If you sell property at a loss to a related party, the loss is:',
     options: [
-      'Fully deductible',
       'Disallowed but may reduce gain on subsequent sale by related party',
+      'Fully deductible',
       'Deferred until you sell other property',
-      'Deductible as a capital loss only',
+      'Deductible as a capital loss only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Losses on sales to related parties (family, controlled entities) are disallowed under §267. However, the related party can use the disallowed loss to reduce gain on a later sale.',
     reference: 'IRC §267',
   },
@@ -1409,11 +1564,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A wash sale occurs when substantially identical securities are purchased within:',
     options: [
       '15 days before or after the sale',
-      '30 days before or after the sale',
       '60 days before or after the sale',
-      '90 days before or after the sale',
+      '30 days before or after the sale',
+      '90 days before or after the sale'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Wash sale rule disallows loss if substantially identical securities acquired within 30 days before or after sale (61-day window total). Disallowed loss adds to basis of replacement shares.',
     reference: 'IRC §1091',
   },
@@ -1428,11 +1583,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The accumulated earnings tax is imposed at a rate of:',
     options: [
       '15%',
-      '20%',
-      '21%',
       '37%',
+      '21%',
+      '20%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'AET is 20% on accumulated taxable income (taxable income adjusted less dividends paid and accumulated earnings credit). It penalizes C corps accumulating earnings to avoid shareholder tax.',
     reference: 'IRC §531',
   },
@@ -1465,12 +1620,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
-      '10% of taxable income (computed before the contribution)',
       '25% of taxable income',
+      '10% of taxable income (computed before the contribution)',
       '50% of taxable income',
-      '60% of taxable income',
+      '60% of taxable income'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: 'Corporate charitable deduction limited to 10% of taxable income before contributions, DRD, NOL carryback, and capital loss carryback. Excess carries forward 5 years.',
     reference: 'IRC §170(b)(2)',
   },
@@ -1485,11 +1640,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The built-in gains tax applies when an S corp that was formerly a C corp sells appreciated assets within:',
     options: [
       '3 years of S election',
-      '5 years of S election',
-      '7 years of S election',
       '10 years of S election',
+      '7 years of S election',
+      '5 years of S election'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Built-in gains tax (21% corporate rate) applies to appreciated assets held when C corp elected S status, if sold within 5 years of election. This prevents avoiding corporate-level tax.',
     reference: 'IRC §1374',
   },
@@ -1504,11 +1659,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'If an S corp has accumulated C corp E&P and passive investment income exceeds 25% of gross receipts for 3 consecutive years:',
     options: [
       'A penalty tax is imposed',
-      'The S election terminates',
-      'Distributions are treated as dividends',
       'The corporation becomes a PHC',
+      'Distributions are treated as dividends',
+      'The S election terminates'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'S election terminates if: (1) has C corp E&P at year-end, and (2) passive investment income >25% of gross receipts for 3 consecutive years. Can also trigger excess net passive income tax.',
     reference: 'IRC §1362(d)(3)',
   },
@@ -1542,11 +1697,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'In a complete liquidation of a partner\'s interest, loss is recognized only if the distribution consists solely of:',
     options: [
       'Any property',
-      'Money, unrealized receivables, and inventory',
       'Hot assets only',
-      'Appreciated property',
+      'Money, unrealized receivables, and inventory',
+      'Appreciated property'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Loss on liquidating distribution recognized only if partner receives only money, unrealized receivables, and inventory, and total is less than outside basis. No loss if any other property received.',
     reference: 'IRC §731(a)(2)',
   },
@@ -1579,12 +1734,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The generation-skipping transfer tax exemption for 2024 is:',
     options: [
-      '$6.94 million',
-      '$12.92 million',
       '$13.61 million',
-      '$18.00 million',
+      '$12.92 million',
+      '$6.94 million',
+      '$18.00 million'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'GST exemption equals the estate tax exemption: $13.61 million for 2024. GST tax (40% rate) applies to transfers to skip persons (generally grandchildren) after exemption exhausted.',
     reference: 'IRC §2631',
   },
@@ -1599,11 +1754,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A QPRT allows a grantor to transfer a residence while:',
     options: [
       'Retaining ownership forever',
-      'Retaining the right to live in it for a term, then it passes to beneficiaries',
-      'Receiving a full fair market value deduction',
       'Avoiding all gift tax',
+      'Receiving a full fair market value deduction',
+      'Retaining the right to live in it for a term, then it passes to beneficiaries'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'QPRT allows transfer of residence with retained term interest. Gift value is remainder interest (discounted). If grantor survives term, home passes free of estate tax. If dies during term, included in estate.',
     reference: 'IRC §2702',
   },
@@ -1655,12 +1810,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Under UCC Article 2, the statute of frauds requires a writing for sales of goods priced at or above:',
     options: [
-      '$250',
       '$500',
+      '$250',
       '$1,000',
-      '$5,000',
+      '$5,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'UCC §2-201 requires contracts for sale of goods $500 or more to be evidenced by a writing signed by party to be charged. Exceptions exist for specially manufactured goods, admission, and partial performance.',
     reference: 'UCC §2-201',
   },
@@ -1674,12 +1829,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'An agent\'s apparent authority exists when:',
     options: [
-      'The agent believes they have authority',
       'The principal\'s conduct causes a third party to reasonably believe agent has authority',
+      'The agent believes they have authority',
       'Authority is explicitly granted in writing',
-      'The agent and third party agree',
+      'The agent and third party agree'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Apparent authority arises from principal\'s words or conduct that lead a third party to reasonably believe the agent has authority. Principal is bound even if actual authority was not granted.',
     reference: 'Restatement (Third) Agency §2.03',
   },
@@ -1694,11 +1849,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A security interest attaches when all of the following occur EXCEPT:',
     options: [
       'Value is given',
-      'Debtor has rights in the collateral',
-      'Security agreement is authenticated',
       'Financing statement is filed',
+      'Security agreement is authenticated',
+      'Debtor has rights in the collateral'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation: 'Attachment requires: (1) value given, (2) debtor has rights in collateral, (3) authenticated security agreement (or possession). Filing is for perfection, not attachment.',
     reference: 'UCC §9-203',
   },
@@ -1712,12 +1867,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'In a Chapter 7 bankruptcy, which claim has the LOWEST priority?',
     options: [
-      'Administrative expenses',
+      'Equity security holders',
       'Wages earned within 180 days of filing (up to limit)',
       'General unsecured creditors',
-      'Equity security holders',
+      'Administrative expenses'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation: 'Priority order: secured, then administrative, wages, taxes, general unsecured. Equity holders (shareholders) are last. Often general unsecured receive little; equity usually nothing.',
     reference: '11 USC §507',
   },
@@ -1732,11 +1887,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'To be negotiable under UCC Article 3, an instrument must contain:',
     options: [
       'A conditional promise to pay',
-      'An unconditional promise or order to pay a fixed amount of money',
-      'A statement of the underlying obligation',
       'The signature of the payee',
+      'A statement of the underlying obligation',
+      'An unconditional promise or order to pay a fixed amount of money'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Negotiability requires: unconditional promise/order, fixed amount of money, payable to bearer or order, payable on demand or at definite time, no unauthorized undertaking. Conditions destroy negotiability.',
     reference: 'UCC §3-104',
   },
@@ -1751,11 +1906,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The maximum deduction for student loan interest is:',
     options: [
       '$1,500',
-      '$2,000',
       '$2,500',
-      '$4,000',
+      '$2,000',
+      '$4,000'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Student loan interest deduction is up to $2,500, taken as adjustment to income (above-the-line). Phase-out applies based on MAGI. Must be legally obligated on qualified education loan.',
     reference: 'IRC §221',
   },
@@ -1769,12 +1924,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Under §1031, like-kind exchange treatment for real property requires the replacement property to be identified within:',
     options: [
-      '30 days',
       '45 days',
+      '30 days',
       '90 days',
-      '180 days',
+      '180 days'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Like-kind exchange: identify replacement property within 45 days, close within 180 days (or tax return due date if earlier). Post-TCJA, only real property qualifies.',
     reference: 'IRC §1031(a)(3)',
   },
@@ -1789,11 +1944,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'In a like-kind exchange, gain is recognized to the extent of:',
     options: [
       'Total gain realized',
-      'Boot received (cash plus FMV of non-like-kind property)',
       'Fair market value of property given up',
-      'Adjusted basis of property given up',
+      'Boot received (cash plus FMV of non-like-kind property)',
+      'Adjusted basis of property given up'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Gain recognized = lesser of (1) gain realized or (2) boot received. Boot includes cash, net debt relief, and FMV of non-like-kind property received. Cannot recognize loss in §1031.',
     reference: 'IRC §1031(b)',
   },
@@ -1826,12 +1981,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Material participation requires the taxpayer to meet one of seven tests, including participation of more than:',
     options: [
-      '100 hours',
-      '250 hours',
       '500 hours',
-      '1,000 hours',
+      '250 hours',
+      '100 hours',
+      '1,000 hours'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation: 'Material participation: 500+ hours in activity, substantially all participation, 100+ hours and not less than any other participant, significant participation activities totaling 500+, or other tests.',
     reference: 'Temp. Reg. §1.469-5T',
   },
@@ -1846,11 +2001,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'To qualify as a real estate professional, the taxpayer must:',
     options: [
       'Own any rental property',
-      'Perform 750+ hours in real property trades/businesses AND more than half of personal services',
       'Be a licensed real estate agent',
-      'Have rental income exceeding $100,000',
+      'Perform 750+ hours in real property trades/businesses AND more than half of personal services',
+      'Have rental income exceeding $100,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'RE professional: (1) >50% of personal services in real property businesses, AND (2) 750+ hours in such activities. If met, rental activities can be non-passive if material participation test also met.',
     reference: 'IRC §469(c)(7)',
   },
@@ -1865,11 +2020,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Common AMT preference items and adjustments include all EXCEPT:',
     options: [
       'Incentive stock option bargain element',
-      'Private activity bond interest',
       'Charitable contributions',
-      'Accelerated depreciation adjustment',
+      'Private activity bond interest',
+      'Accelerated depreciation adjustment'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation: 'Charitable contributions not an AMT preference (same for regular and AMT). AMT items: ISO spread, private activity bond interest, percentage depletion, intangible drilling costs, depreciation timing.',
     reference: 'IRC §56-58',
   },
@@ -1903,11 +2058,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The accuracy-related penalty under §6662 is:',
     options: [
       '10% of underpayment',
-      '20% of underpayment',
       '50% of underpayment',
-      '75% of underpayment',
+      '20% of underpayment',
+      '75% of underpayment'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Accuracy-related penalty: 20% for negligence, substantial understatement (>$5,000 or 10% of tax), substantial valuation misstatement, etc. Increases to 40% for gross valuation misstatements.',
     reference: 'IRC §6662',
   },
@@ -1923,10 +2078,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '20% of underpayment',
       '50% of underpayment',
-      '75% of underpayment due to fraud',
       '100% of underpayment',
+      '75% of underpayment due to fraud'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Civil fraud penalty: 75% of underpayment due to fraud. Burden of proof on IRS. If fraud proven for any item, entire underpayment presumed fraudulent unless taxpayer proves otherwise.',
     reference: 'IRC §6663',
   },
@@ -1941,11 +2096,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The failure to file penalty is:',
     options: [
       '0.5% per month up to 25%',
-      '5% per month up to 25%',
-      '1% per month up to 12%',
       '10% flat penalty',
+      '1% per month up to 12%',
+      '5% per month up to 25%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Failure to file: 5% of unpaid tax per month (or fraction), max 25%. Reduced by failure to pay penalty if both apply. Minimum penalty applies for returns over 60 days late.',
     reference: 'IRC §6651(a)(1)',
   },
@@ -1960,11 +2115,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Under TCJA, corporate NOLs arising after 2017 can offset:',
     options: [
       '100% of taxable income',
-      '80% of taxable income with indefinite carryforward',
-      '90% of taxable income for 20 years',
       '50% of taxable income for 10 years',
+      '90% of taxable income for 20 years',
+      '80% of taxable income with indefinite carryforward'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Post-2017 NOLs: limited to 80% of taxable income, indefinite carryforward, no carryback (except farming). CARES Act temporarily allowed carryback for 2018-2020 losses.',
     reference: 'IRC §172',
   },
@@ -1998,11 +2153,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Large corporations must base estimated tax payments on:',
     options: [
       'Prior year tax only',
-      'Current year tax liability (cannot use prior year safe harbor)',
-      '90% of prior year',
       'Any amount the corporation chooses',
+      '90% of prior year',
+      'Current year tax liability (cannot use prior year safe harbor)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Large corps (taxable income $1M+ in any of 3 prior years) cannot use prior year safe harbor for estimated taxes. Must estimate current year liability. Can use prior year only for first quarterly payment.',
     reference: 'IRC §6655',
   },
@@ -2035,12 +2190,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The Accumulated Adjustments Account (AAA) is used to:',
     options: [
-      'Track basis in S corp stock',
       'Determine if distributions are from S corp earnings or C corp E&P',
+      'Track basis in S corp stock',
       'Calculate shareholder\'s at-risk amount',
-      'Determine passive activity limitations',
+      'Determine passive activity limitations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'AAA tracks S corp accumulated income (tax-free distributions). For S corps with C corp E&P, distributions come from AAA first (tax-free), then E&P (dividend), then return of capital.',
     reference: 'IRC §1368(c)',
   },
@@ -2055,11 +2210,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A §754 election allows:',
     options: [
       'The partnership to become an S corporation',
-      'Basis adjustment to partnership assets upon sale of interest or distribution',
       'Deferral of partner income',
-      'Tax-free liquidation of partnership',
+      'Basis adjustment to partnership assets upon sale of interest or distribution',
+      'Tax-free liquidation of partnership'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: '§754 election: optional basis adjustment to partnership assets. Applies §743(b) on transfer of interest or §734(b) on distribution. Adjustments specific to transferee partner. Election irrevocable.',
     reference: 'IRC §754',
   },
@@ -2075,10 +2230,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Never',
       'Only if the partner works more than 500 hours',
-      'On distributive share of ordinary business income',
       'Only on guaranteed payments',
+      'On distributive share of ordinary business income'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'General partners: SE tax on distributive share of ordinary trade/business income plus guaranteed payments. Limited partners: only guaranteed payments subject to SE tax (with exceptions).',
     reference: 'IRC §1402(a)',
   },
@@ -2094,10 +2249,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Offer and acceptance',
       'Consideration',
-      'Written documentation',
       'Capacity to contract',
+      'Written documentation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Valid contract elements: offer, acceptance, consideration, legality, and capacity. Writing required only for certain contracts under statute of frauds (real estate, >1 year, goods ≥$500, etc.).',
     reference: 'Contract Law Principles',
   },
@@ -2111,12 +2266,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Specific performance is a remedy typically available for:',
     options: [
-      'All breach of contract cases',
       'Unique goods or real property where money damages are inadequate',
+      'All breach of contract cases',
       'Personal service contracts',
-      'Any contract over $10,000',
+      'Any contract over $10,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Specific performance: equitable remedy when money damages inadequate. Available for unique items (land, rare goods). Not for personal services (would be involuntary servitude). Court orders performance.',
     reference: 'Contract Remedies',
   },
@@ -2131,11 +2286,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Members of an LLC have liability that is:',
     options: [
       'Unlimited for all debts',
-      'Limited to their investment (absent personal guarantees or tortious conduct)',
-      'Joint and several with other members',
       'Limited only for tax purposes',
+      'Joint and several with other members',
+      'Limited to their investment (absent personal guarantees or tortious conduct)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'LLC members have limited liability: risk of loss limited to investment. Exceptions: personal guarantees, own tortious conduct, piercing the veil. Operating agreement governs internal matters.',
     reference: 'LLC Law',
   },
@@ -2150,11 +2305,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'To be a holder in due course, one must take a negotiable instrument:',
     options: [
       'From the original payee only',
-      'For value, in good faith, without notice of defect',
-      'With knowledge of all claims and defenses',
       'After maturity date',
+      'With knowledge of all claims and defenses',
+      'For value, in good faith, without notice of defect'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'HDC requirements: take for value, in good faith, without notice of (1) overdue/dishonored, (2) unauthorized signature, (3) claims or defenses. HDC takes free of personal defenses.',
     reference: 'UCC §3-302',
   },
@@ -2168,12 +2323,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Under Circular 230, a practitioner must exercise due diligence in:',
     options: [
-      'Only tax return preparation',
       'Preparing returns, determining correctness, and advising clients',
+      'Only tax return preparation',
       'Only written opinions',
-      'Only matters over $100,000',
+      'Only matters over $100,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Due diligence required for: preparing/filing returns, determining correctness of oral/written representations, advising clients. Must make reasonable inquiries if information appears incorrect.',
     reference: 'Circular 230 §10.22',
   },
@@ -2207,11 +2362,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A paid tax return preparer must have:',
     options: [
       'A CPA license',
-      'A valid Preparer Tax Identification Number (PTIN)',
-      'An enrolled agent designation',
       'A law degree',
+      'An enrolled agent designation',
+      'A valid Preparer Tax Identification Number (PTIN)'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'All paid preparers must have PTIN (annual registration with IRS). CPAs, attorneys, EAs, and others must have PTIN. PTIN must appear on returns. Penalty for failure to include.',
     reference: 'IRC §6109',
   },
@@ -2244,11 +2399,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Medical expenses are deductible to the extent they exceed:',
     options: [
       '5% of AGI',
-      '7.5% of AGI',
       '10% of AGI',
-      '2% of AGI',
+      '7.5% of AGI',
+      '2% of AGI'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Medical expense floor is 7.5% of AGI (made permanent). Only expenses above threshold are deductible. Includes medical, dental, long-term care premiums (limited), transportation for medical care.',
     reference: 'IRC §213',
     blueprintArea: 'REG-I',
@@ -2264,11 +2419,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Gambling losses are deductible:',
     options: [
       'Without limitation',
-      'Only to the extent of gambling winnings',
-      'Not at all',
       'Up to $3,000',
+      'Not at all',
+      'Only to the extent of gambling winnings'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Gambling losses: deductible as itemized deduction only to extent of gambling winnings. No net gambling loss deduction. Must keep adequate records of both wins and losses.',
     reference: 'IRC §165(d)',
     blueprintArea: 'REG-I',
@@ -2284,11 +2439,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The simplified home office deduction is:',
     options: [
       'Unlimited based on expenses',
-      '$5 per square foot, maximum 300 square feet ($1,500)',
       '$10 per square foot',
-      'Not available to self-employed',
+      '$5 per square foot, maximum 300 square feet ($1,500)',
+      'Not available to self-employed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Simplified method: $5/sq ft up to 300 sq ft max ($1,500). Alternative to regular method (actual expenses). Must be regular and exclusive use. Employees cannot deduct post-TCJA.',
     reference: 'Rev. Proc. 2013-13',
     blueprintArea: 'REG-I',
@@ -2305,10 +2460,10 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     options: [
       '$100',
       '$250',
-      '$300',
       '$500',
+      '$300'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation: 'Educator expense: $300 above-the-line deduction for K-12 teachers for classroom supplies, professional development. Eligible educators work 900+ hours in school year.',
     reference: 'IRC §62(a)(2)(D)',
     blueprintArea: 'REG-I',
@@ -2323,12 +2478,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The accumulated earnings tax applies to:',
     options: [
-      'All corporations',
       'C corporations accumulating earnings beyond reasonable business needs to avoid shareholder tax',
+      'All corporations',
       'S corporations',
-      'Partnerships',
+      'Partnerships'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'AET: penalty tax (20%) on C corps accumulating earnings to avoid shareholder dividend tax. Exemption: first $250K ($150K for PSCs). Must demonstrate reasonable business needs for retention.',
     reference: 'IRC §531-537',
     blueprintArea: 'REG-II',
@@ -2344,11 +2499,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A corporation is a personal holding company if:',
     options: [
       'It has any passive income',
-      'More than 50% owned by 5 or fewer individuals AND 60%+ gross income is passive',
       'It is publicly traded',
-      'It has more than 100 shareholders',
+      'More than 50% owned by 5 or fewer individuals AND 60%+ gross income is passive',
+      'It has more than 100 shareholders'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'PHC: (1) 50% owned (directly/indirectly) by 5 or fewer individuals, AND (2) 60%+ adjusted ordinary gross income is PHC income (dividends, interest, rents, royalties). 20% penalty tax.',
     reference: 'IRC §541-547',
     blueprintArea: 'REG-II',
@@ -2363,12 +2518,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'A loss on worthless securities is treated as:',
     options: [
-      'Ordinary loss',
       'Long-term capital loss (deemed sold on last day of year)',
+      'Ordinary loss',
       'Short-term capital loss',
-      'No loss allowed',
+      'No loss allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Worthless securities: deemed sold on last day of tax year for zero. Capital loss (LTCL if held >1 year, regardless of actual holding start). Exception: ordinary loss if §1244 stock qualifies.',
     reference: 'IRC §165(g)',
     blueprintArea: 'REG-II',
@@ -2383,12 +2538,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Guaranteed payments to partners are:',
     options: [
-      'Distributions of capital',
       'Deductible by partnership, ordinary income to partner regardless of partnership profit',
+      'Distributions of capital',
       'Tax-free to recipient',
-      'Capital gains',
+      'Capital gains'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Guaranteed payments: for services or capital use, paid regardless of income. Partnership deducts (reduces ordinary income). Partner reports as ordinary income. Subject to SE tax.',
     reference: 'IRC §707(c)',
     blueprintArea: 'REG-II',
@@ -2424,11 +2579,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The order of adjustments to S corporation shareholder basis is:',
     options: [
       'Distributions, losses, income',
-      'Income, distributions, nondeductible expenses, losses',
       'Losses first, then income',
-      'Any order',
+      'Income, distributions, nondeductible expenses, losses',
+      'Any order'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'S corp basis order: (1) increase for income, (2) decrease for distributions (nontaxable to extent of basis), (3) decrease for nondeductible expenses, (4) decrease for losses/deductions.',
     reference: 'IRC §1368, Reg §1.1367-1',
     blueprintArea: 'REG-II',
@@ -2523,12 +2678,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Under the statute of frauds, which contracts must be in writing?',
     options: [
-      'All contracts',
       'Contracts for sale of goods $500+, land, and contracts not performable within one year',
+      'All contracts',
       'Only employment contracts',
-      'Only oral contracts',
+      'Only oral contracts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Statute of frauds: requires writing for sale of goods $500+ (UCC), land interests, cannot be performed within 1 year, suretyship, marriage consideration. Writing must be signed.',
     reference: 'UCC §2-201, Restatement Contracts',
     blueprintArea: 'REG-IV',
@@ -2544,11 +2699,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The parol evidence rule:',
     options: [
       'Prohibits all oral agreements',
-      'Excludes prior or contemporaneous oral evidence that contradicts a written integrated contract',
-      'Requires all contracts to be oral',
       'Applies only to criminal cases',
+      'Requires all contracts to be oral',
+      'Excludes prior or contemporaneous oral evidence that contradicts a written integrated contract'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Parol evidence: cannot use prior/contemporaneous oral statements to contradict final written agreement. Exceptions: fraud, mistake, ambiguity, conditions precedent, subsequent modifications.',
     reference: 'Contract Law',
     blueprintArea: 'REG-IV',
@@ -2564,11 +2719,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'An agency relationship terminates by operation of law upon:',
     options: [
       'Any disagreement',
-      'Death, incapacity, or bankruptcy of principal or agent',
-      'Completion of any task',
       'Request of third party',
+      'Completion of any task',
+      'Death, incapacity, or bankruptcy of principal or agent'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Agency termination by operation of law: death, incapacity, bankruptcy of principal or agent. Also: subject matter destruction, illegality, war between nations. No notice required.',
     reference: 'Agency Law',
     blueprintArea: 'REG-IV',
@@ -2603,12 +2758,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'The AICPA conceptual framework approach to ethics requires:',
     options: [
-      'Strict rule following only',
       'Identifying threats, evaluating significance, and applying safeguards',
+      'Strict rule following only',
       'Avoiding all client relationships',
-      'Following only state board rules',
+      'Following only state board rules'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Conceptual framework: identify threats (self-interest, self-review, advocacy, familiarity, undue influence), evaluate significance, apply safeguards. Used when specific rules don\'t cover situation.',
     reference: 'AICPA Code ET 1.000',
     blueprintArea: 'REG-IV',
@@ -2643,12 +2798,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'The §121 exclusion for sale of principal residence provides:',
     options: [
-      '$100,000 exclusion per person',
       '$250,000 exclusion ($500,000 MFJ) if owned and used as principal residence 2 of last 5 years',
+      '$100,000 exclusion per person',
       'Unlimited exclusion',
-      'Deferral only, no exclusion',
+      'Deferral only, no exclusion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: '§121: exclude $250K gain ($500K MFJ if both spouses meet test). Must own and use as principal residence 2 of 5 years before sale. Generally once every 2 years. Partial exclusion for unforeseen circumstances.',
     reference: 'IRC §121',
     blueprintArea: 'REG-I',
@@ -2664,11 +2819,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'For divorce agreements executed after December 31, 2018:',
     options: [
       'Alimony is deductible by payer and taxable to recipient',
-      'Alimony is not deductible by payer and not taxable to recipient',
-      'Alimony is always tax-free',
       'Child support is deductible',
+      'Alimony is always tax-free',
+      'Alimony is not deductible by payer and not taxable to recipient'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'TCJA changed alimony: for agreements post-2018, no deduction for payer, no income to recipient. Child support was always nondeductible/nontaxable. Pre-2019 agreements follow old rules.',
     reference: 'IRC §71, §215',
     blueprintArea: 'REG-I',
@@ -2683,12 +2838,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'A corporation may immediately expense organizational costs up to:',
     options: [
-      '$10,000',
       '$5,000 (reduced by costs over $50,000)',
+      '$10,000',
       '$50,000',
-      'No immediate deduction allowed',
+      'No immediate deduction allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Organizational costs: expense up to $5,000 (reduced dollar-for-dollar by costs exceeding $50,000). Remainder amortized over 180 months. Same rules for start-up costs.',
     reference: 'IRC §248',
     blueprintArea: 'REG-II',
@@ -2724,11 +2879,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The general statute of limitations for IRS assessment is:',
     options: [
       '2 years from filing',
-      '3 years from later of filing or due date',
-      '5 years from filing',
       'No time limit',
+      '5 years from filing',
+      '3 years from later of filing or due date'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'General SOL: 3 years from later of filing or due date. Extended to 6 years if >25% gross income omission. No limit for fraud or failure to file. Claims for refund: later of 3 years from filing or 2 years from payment.',
     reference: 'IRC §6501',
     blueprintArea: 'REG-IV',
@@ -2745,11 +2900,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Social Security benefits may be taxable up to:',
     options: [
       '50% of benefits',
-      '85% of benefits',
-      '100% of benefits',
       'Benefits are never taxable',
+      '100% of benefits',
+      '85% of benefits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Social Security taxation: based on provisional income (AGI + tax-exempt interest + 50% benefits). Up to 50% taxable at lower thresholds, up to 85% at higher thresholds. Never 100% taxable.',
     reference: 'IRC §86',
     blueprintArea: 'REG-I',
@@ -2765,11 +2920,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The child tax credit for 2024 is:',
     options: [
       '$1,000 per qualifying child',
-      '$2,000 per qualifying child with up to $1,700 refundable',
       '$3,000 per qualifying child',
-      '$3,600 per qualifying child',
+      '$2,000 per qualifying child with up to $1,700 refundable',
+      '$3,600 per qualifying child'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Child tax credit 2024: $2,000 per qualifying child under 17. Up to $1,700 refundable (additional child tax credit). Phases out at $400K MFJ, $200K other. Income limits for refundable portion.',
     reference: 'IRC §24',
     blueprintArea: 'REG-I',
@@ -2785,11 +2940,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'To qualify for the foreign earned income exclusion, the taxpayer must meet:',
     options: [
       'Only the physical presence test',
-      'Either the bona fide residence test OR the physical presence test',
-      'Both tests simultaneously',
       'Only the bona fide residence test',
+      'Both tests simultaneously',
+      'Either the bona fide residence test OR the physical presence test'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'FEIE: requires tax home in foreign country AND either bona fide residence test (full tax year) OR physical presence test (330 days in 12-month period). 2024 exclusion approximately $126,500.',
     reference: 'IRC §911',
     blueprintArea: 'REG-I',
@@ -2825,11 +2980,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'In an installment sale, if stated interest is below the applicable federal rate:',
     options: [
       'No adjustment needed',
-      'Interest is imputed at AFR, reducing the selling price',
       'The sale is disallowed',
-      'The buyer deducts more interest',
+      'Interest is imputed at AFR, reducing the selling price',
+      'The buyer deducts more interest'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Imputed interest: if stated rate < AFR, recharacterize portion of principal as interest. Reduces selling price and installment gain. Buyer amortizes OID. §1274 and §483 rules apply.',
     reference: 'IRC §1274',
     blueprintArea: 'REG-II',
@@ -2845,11 +3000,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Section 1245 recapture as ordinary income is limited to:',
     options: [
       'The total gain on sale',
-      'The lesser of gain realized or accumulated depreciation',
-      'The original cost of the asset',
       'Only straight-line depreciation',
+      'The original cost of the asset',
+      'The lesser of gain realized or accumulated depreciation'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: '§1245 recapture: ordinary income = lesser of gain realized or depreciation allowed/allowable. Any excess is §1231 gain. Applies to tangible personal property, amortizable §197 intangibles.',
     reference: 'IRC §1245',
     blueprintArea: 'REG-II',
@@ -2865,11 +3020,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Under current law, Section 1250 recapture for real property typically results in:',
     options: [
       'Full recapture as ordinary income',
-      'Unrecaptured Section 1250 gain taxed at 25%',
-      'No recapture for real property',
       'Capital gains rate only',
+      'No recapture for real property',
+      'Unrecaptured Section 1250 gain taxed at 25%'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Real property (post-1986): straight-line depreciation only. §1250 recapture limited. Unrecaptured §1250 gain (accumulated depreciation) taxed at maximum 25%. Excess is regular LTCG.',
     reference: 'IRC §1250',
     blueprintArea: 'REG-II',
@@ -2885,11 +3040,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Personal holding company (PHC) income includes:',
     options: [
       'Only dividends',
-      'Dividends, interest, royalties, and certain rents',
-      'Only ordinary business income',
       'Capital gains only',
+      'Only ordinary business income',
+      'Dividends, interest, royalties, and certain rents'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'PHC income: passive income including dividends, interest, royalties, annuities, rents (if <50% gross income). PHC tax = 20% on undistributed PHC income. Avoid by distributing income.',
     reference: 'IRC §543',
     blueprintArea: 'REG-II',
@@ -2904,12 +3059,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Corporate NOLs arising after 2017 are:',
     options: [
-      'Carried back 2 years and forward 20 years',
       'Carried forward indefinitely but limited to 80% of taxable income',
+      'Carried back 2 years and forward 20 years',
       'Fully deductible in any carryforward year',
-      'Not allowed',
+      'Not allowed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Post-2017 NOLs: no carryback (with exceptions), carry forward indefinitely, limited to 80% of taxable income. CARES Act allowed some carrybacks for 2018-2020 NOLs.',
     reference: 'IRC §172',
     blueprintArea: 'REG-II',
@@ -2944,12 +3099,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'A Section 754 election allows:',
     options: [
-      'The partnership to be treated as a corporation',
       'Adjustment to inside basis upon transfer of partnership interest or distribution',
+      'The partnership to be treated as a corporation',
       'Deferral of partnership income',
-      'Special allocation to new partners',
+      'Special allocation to new partners'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: '§754 election: adjust inside basis to reflect outside basis upon sale/exchange (§743(b)) or distribution (§734(b)). Eliminates disparities between inside and outside basis. Irrevocable once made.',
     reference: 'IRC §754',
     blueprintArea: 'REG-II',
@@ -2965,11 +3120,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The built-in gains tax applies when an S corporation:',
     options: [
       'Makes any asset sale',
-      'Was previously a C corporation and sells appreciated assets within 5 years of conversion',
       'Has more than 100 shareholders',
-      'Makes a distribution',
+      'Was previously a C corporation and sells appreciated assets within 5 years of conversion',
+      'Makes a distribution'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'BIG tax: 21% on net recognized built-in gains during 5-year recognition period. Applies to former C corps converting to S. Built-in gain = FMV minus basis at conversion. Prevents avoidance of corporate-level tax.',
     reference: 'IRC §1374',
     blueprintArea: 'REG-II',
@@ -2985,11 +3140,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'When a C corporation using LIFO converts to S corporation:',
     options: [
       'No adjustment needed',
-      'LIFO recapture amount is recognized as income in last C corp year',
       'LIFO continues unchanged',
-      'Inventory is written off',
+      'LIFO recapture amount is recognized as income in last C corp year',
+      'Inventory is written off'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'LIFO recapture: C corp using LIFO must include LIFO reserve in income in last C corp year. Tax paid over 4 years. Prevents avoiding corporate tax on inventory appreciation.',
     reference: 'IRC §1363(d)',
     blueprintArea: 'REG-II',
@@ -3005,11 +3160,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'The portability election allows:',
     options: [
       'Transfer of unused gift tax exclusion',
-      'Transfer of deceased spouse\'s unused exemption (DSUE) to surviving spouse',
-      'Skipping estate tax entirely',
       'Unlimited marital deduction',
+      'Skipping estate tax entirely',
+      'Transfer of deceased spouse\'s unused exemption (DSUE) to surviving spouse'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Portability: surviving spouse can use deceased spouse\'s unused exemption. Must file estate return electing portability. DSUE amount carried to survivor. Only last deceased spouse\'s DSUE available.',
     reference: 'IRC §2010(c)',
     blueprintArea: 'REG-III',
@@ -3044,12 +3199,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'To be a holder in due course, one must take an instrument:',
     options: [
-      'With knowledge of defenses',
       'For value, in good faith, without notice of claims or defenses',
+      'With knowledge of defenses',
       'Only from the original payee',
-      'After maturity',
+      'After maturity'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'HDC requirements: holder, took for value, good faith, without notice (overdue, dishonored, claims, defenses, unauthorized signature). HDC takes free of personal defenses, subject to real defenses.',
     reference: 'UCC 3-302',
     blueprintArea: 'REG-IV',
@@ -3065,11 +3220,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Attachment of a security interest requires:',
     options: [
       'Filing a financing statement only',
-      'Value given, debtor has rights, and security agreement authenticated',
       'Court order',
-      'Delivery of collateral',
+      'Value given, debtor has rights, and security agreement authenticated',
+      'Delivery of collateral'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Attachment: (1) value given by secured party, (2) debtor has rights in collateral, (3) security agreement authenticated describing collateral. Creates enforceable security interest. Perfection is separate step.',
     reference: 'UCC 9-203',
     blueprintArea: 'REG-IV',
@@ -3104,12 +3259,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Under Circular 230, written tax advice must:',
     options: [
-      'Guarantee a specific outcome',
       'Consider all relevant facts, not rely on unreasonable assumptions',
+      'Guarantee a specific outcome',
       'Be signed by a CPA only',
-      'Be filed with the IRS',
+      'Be filed with the IRS'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'Written advice: must consider relevant facts, relate law to facts, not rely on unreasonable factual assumptions or unreasonable legal assumptions. Higher standards for marketed opinions.',
     reference: 'Circular 230 §10.37',
     blueprintArea: 'REG-IV',
@@ -3125,11 +3280,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'A tax preparer\'s due diligence requirement includes:',
     options: [
       'Auditing the client\'s books',
-      'Making reasonable inquiries to determine correctness of information',
-      'Guaranteeing no audit',
       'Reviewing all bank statements',
+      'Guaranteeing no audit',
+      'Making reasonable inquiries to determine correctness of information'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Due diligence: cannot ignore implications of information furnished. Make reasonable inquiries if information appears incorrect, inconsistent, or incomplete. Increased diligence for certain credits (EITC, CTC, AOTC).',
     reference: 'Circular 230 §10.22',
     blueprintArea: 'REG-IV',
@@ -3145,11 +3300,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'IRS audit selection includes:',
     options: [
       'Random selection only',
-      'DIF scoring, document matching, related examinations, and random selection',
       'Selection by taxpayer request',
-      'Alphabetical order',
+      'DIF scoring, document matching, related examinations, and random selection',
+      'Alphabetical order'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'Audit selection: DIF (discriminant function) scoring, document matching (information returns vs tax return), related examinations (partnership/S corp items), random selection, informants.',
     reference: 'IRM 4.10',
     blueprintArea: 'REG-IV',
@@ -3164,12 +3319,12 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'An offer in compromise may be accepted based on:',
     options: [
-      'Taxpayer preference only',
       'Doubt as to collectibility, doubt as to liability, or effective tax administration',
+      'Taxpayer preference only',
       'Financial hardship only',
-      'First-time penalty abatement',
+      'First-time penalty abatement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: 'OIC grounds: (1) doubt as to liability, (2) doubt as to collectibility (cannot pay full amount), (3) effective tax administration (hardship, equity). Must be current on filings. Application fee required.',
     reference: 'IRC §7122',
     blueprintArea: 'REG-IV',
@@ -3205,11 +3360,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'Moving expenses for 2024 are:',
     options: [
       'Deductible for all taxpayers who relocate for work',
-      'Deductible only for active duty military members',
-      'Fully deductible above the line',
       'Itemized deduction only',
+      'Fully deductible above the line',
+      'Deductible only for active duty military members'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation: 'Moving expenses: suspended for non-military 2018-2025 (TCJA). Active duty military moving pursuant to orders may still deduct reasonable moving expenses. Above-the-line deduction when available.',
     reference: 'IRC §217',
     blueprintArea: 'REG-I',
@@ -3225,11 +3380,11 @@ export const REG_QUESTIONS_EXTENDED: Question[] = [
     question: 'For individual AMT, common adjustments include:',
     options: [
       'Adding back standard deduction only',
-      'Adding back state and local taxes, adding back certain itemized deductions, using AMT depreciation',
       'Subtracting charitable contributions',
-      'Adding back all retirement contributions',
+      'Adding back state and local taxes, adding back certain itemized deductions, using AMT depreciation',
+      'Adding back all retirement contributions'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: 'AMT adjustments: add back SALT deduction, miscellaneous itemized deductions, difference in depreciation, exercise of ISOs. AMT exemption phases out at higher incomes. Compare regular tax to tentative minimum tax.',
     reference: 'IRC §55-59',
     blueprintArea: 'REG-I',

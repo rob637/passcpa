@@ -82,6 +82,7 @@ interface TBSQuestion {
   type: 'journal' | 'calculation' | 'mcq' | 'wc';
   title: string;
   description: string;
+  question?: string; // The specific question/task for this requirement
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any; // Flexible data depending on type
   estimatedTime?: number;
@@ -364,6 +365,130 @@ const WrittenCommunicationInput: React.FC<WrittenCommunicationInputProps> = ({
   );
 };
 
+// Simple Calculator Component
+const SimpleCalculator: React.FC = () => {
+  const [display, setDisplay] = useState('0');
+  const [previousValue, setPreviousValue] = useState<string | null>(null);
+  const [operation, setOperation] = useState<string | null>(null);
+  const [waitingForOperand, setWaitingForOperand] = useState(false);
+
+  const inputDigit = (digit: string) => {
+    if (waitingForOperand) {
+      setDisplay(digit);
+      setWaitingForOperand(false);
+    } else {
+      setDisplay(display === '0' ? digit : display + digit);
+    }
+  };
+
+  const inputDecimal = () => {
+    if (waitingForOperand) {
+      setDisplay('0.');
+      setWaitingForOperand(false);
+    } else if (!display.includes('.')) {
+      setDisplay(display + '.');
+    }
+  };
+
+  const clear = () => {
+    setDisplay('0');
+    setPreviousValue(null);
+    setOperation(null);
+    setWaitingForOperand(false);
+  };
+
+  const performOperation = (nextOperation: string) => {
+    const inputValue = parseFloat(display);
+
+    if (previousValue === null) {
+      setPreviousValue(display);
+    } else if (operation) {
+      const currentValue = parseFloat(previousValue);
+      let result = 0;
+
+      switch (operation) {
+        case '+': result = currentValue + inputValue; break;
+        case '-': result = currentValue - inputValue; break;
+        case '×': result = currentValue * inputValue; break;
+        case '÷': result = inputValue !== 0 ? currentValue / inputValue : 0; break;
+        default: result = inputValue;
+      }
+
+      setDisplay(String(result));
+      setPreviousValue(String(result));
+    }
+
+    setWaitingForOperand(true);
+    setOperation(nextOperation);
+  };
+
+  const calculate = () => {
+    if (!operation || previousValue === null) return;
+
+    const inputValue = parseFloat(display);
+    const currentValue = parseFloat(previousValue);
+    let result = 0;
+
+    switch (operation) {
+      case '+': result = currentValue + inputValue; break;
+      case '-': result = currentValue - inputValue; break;
+      case '×': result = currentValue * inputValue; break;
+      case '÷': result = inputValue !== 0 ? currentValue / inputValue : 0; break;
+      default: result = inputValue;
+    }
+
+    setDisplay(String(result));
+    setPreviousValue(null);
+    setOperation(null);
+    setWaitingForOperand(true);
+  };
+
+  const buttons = [
+    ['C', '±', '%', '÷'],
+    ['7', '8', '9', '×'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
+  ];
+
+  const handleButton = (btn: string) => {
+    if (btn >= '0' && btn <= '9') inputDigit(btn);
+    else if (btn === '.') inputDecimal();
+    else if (btn === 'C') clear();
+    else if (btn === '±') setDisplay(String(-parseFloat(display)));
+    else if (btn === '%') setDisplay(String(parseFloat(display) / 100));
+    else if (btn === '=') calculate();
+    else performOperation(btn);
+  };
+
+  return (
+    <div className="p-3">
+      <div className="bg-slate-900 text-white text-right text-2xl font-mono p-3 rounded mb-2 overflow-x-auto">
+        {display}
+      </div>
+      <div className="grid grid-cols-4 gap-1">
+        {buttons.flat().map((btn, idx) => (
+          <button
+            key={idx}
+            onClick={() => handleButton(btn)}
+            className={clsx(
+              'p-3 rounded text-lg font-medium transition-colors',
+              btn === '0' && 'col-span-2',
+              btn === 'C' || btn === '±' || btn === '%'
+                ? 'bg-slate-600 text-white hover:bg-slate-500'
+                : btn === '÷' || btn === '×' || btn === '-' || btn === '+' || btn === '='
+                ? 'bg-primary-500 text-white hover:bg-primary-400'
+                : 'bg-slate-700 text-white hover:bg-slate-600'
+            )}
+          >
+            {btn}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const TBSSimulator: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -403,6 +528,7 @@ const TBSSimulator: React.FC = () => {
       type: componentType,
       title: rawTbs.title,
       description: rawTbs.scenario || rawTbs.description || '',
+      question: firstReq?.question || rawTbs.question || '',
       data: {
         // For journal entries
         template: firstReq?.template || rawTbs.template || [{ account: '', debit: '', credit: '' }],
@@ -412,8 +538,11 @@ const TBSSimulator: React.FC = () => {
         tolerance: firstReq?.tolerance ?? rawTbs.tolerance ?? 1,
         // For multiple choice
         options: firstReq?.options || rawTbs.options || [],
-        // Exhibits from hints/references
-        exhibits: rawTbs.exhibits || (rawTbs.hints ? [{ title: 'Hints', content: rawTbs.hints.join('\n') }] : undefined),
+        // Hints - shown in panel when user needs help
+        hints: rawTbs.hints ? rawTbs.hints.join('\n\n• ') : null,
+        hasHints: !!rawTbs.hints && rawTbs.hints.length > 0,
+        // Exhibits - reference materials (separate from hints)
+        exhibits: rawTbs.exhibits,
       },
       explanation: firstReq?.explanation || rawTbs.explanation,
       difficulty: rawTbs.difficulty,
@@ -537,16 +666,18 @@ const TBSSimulator: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowExhibits(!showExhibits)}
-            className={clsx(
-              'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
-              showExhibits ? 'bg-primary-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-            )}
-          >
-            <FileText className="w-4 h-4" />
-            Exhibits
-          </button>
+          {(tbs.data.hasHints || tbs.data.exhibits) && (
+            <button
+              onClick={() => setShowExhibits(!showExhibits)}
+              className={clsx(
+                'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                showExhibits ? 'bg-primary-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              )}
+            >
+              <FileText className="w-4 h-4" />
+              {tbs.data.hasHints ? 'Hints' : 'Exhibits'}
+            </button>
+          )}
           <button
             onClick={() => setShowCalculator(!showCalculator)}
             className={clsx(
@@ -580,7 +711,20 @@ const TBSSimulator: React.FC = () => {
               </div>
             </div>
 
-            {/* Exhibits Panel (Collapsible) */}
+            {/* Hints Panel (Collapsible) */}
+            {showExhibits && tbs.data.hasHints && (
+              <div className="bg-amber-50 rounded-xl shadow-sm border border-amber-200 p-5">
+                <div className="font-bold text-amber-800 mb-3 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5" />
+                  Hints
+                </div>
+                <div className="text-sm text-amber-900 space-y-2">
+                  <p className="whitespace-pre-line">• {tbs.data.hints}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Exhibits Panel (Collapsible) - for actual document exhibits */}
             {showExhibits && tbs.data.exhibits && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -611,6 +755,15 @@ const TBSSimulator: React.FC = () => {
                   </div>
                 )}
               </div>
+              
+              {/* Question/Task */}
+              {tbs.question && (
+                <div className="px-6 py-4 bg-primary-50 border-b border-primary-100">
+                  <p className="text-slate-800 font-medium">
+                    <span className="text-primary-600 font-bold">Task:</span> {tbs.question}
+                  </p>
+                </div>
+              )}
               
               <div className="p-6">
                 {tbs.type === 'journal' && (
@@ -689,8 +842,8 @@ const TBSSimulator: React.FC = () => {
       
        {/* Calculator Overlay */}
           {showCalculator && (
-            <div className="absolute top-20 right-4 w-64 h-80 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
-              <div className="bg-slate-700 p-2 flex justify-between items-center rounded-t-lg cursor-move">
+            <div className="absolute top-20 right-4 w-64 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
+              <div className="bg-slate-700 p-2 flex justify-between items-center rounded-t-lg">
                 <span className="text-xs text-slate-300 font-bold uppercase">Calculator</span>
                 <button
                   onClick={() => setShowCalculator(false)}
@@ -699,9 +852,7 @@ const TBSSimulator: React.FC = () => {
                   <XCircle className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex-1 p-4 flex items-center justify-center text-slate-500 text-sm italic">
-                Basic Calculator
-              </div>
+              <SimpleCalculator />
             </div>
           )}
     </div>

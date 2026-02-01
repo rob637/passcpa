@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "passcpa-dev"
-  }
+  },
+  "targets": {
+    "passcpa-dev": {
+      "hosting": {
+        "voraprep": [
+          "passcpa-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

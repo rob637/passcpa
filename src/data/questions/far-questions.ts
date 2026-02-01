@@ -82,11 +82,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Which of the following would be classified as a current liability?',
     options: [
       'Bonds payable due in 18 months that will be refinanced with long-term debt before the balance sheet date',
-      'Bonds payable due in 6 months with no refinancing arrangement',
-      'A note payable due in 13 months',
       'Deferred tax liability expected to reverse in 2 years',
+      'A note payable due in 13 months',
+      'Bonds payable due in 6 months with no refinancing arrangement'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Bonds due in 6 months with no refinancing arrangement must be classified as current. If refinancing occurs before the balance sheet date, it can be classified as non-current.',
     reference: 'ASC 470-10-45',
@@ -103,10 +103,10 @@ export const FAR_QUESTIONS: Question[] = [
     options: [
       'An extraordinary item',
       'Part of continuing operations',
-      'Discontinued operations, net of tax',
       'An unusual item in other income',
+      'Discontinued operations, net of tax'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Disposal of a component that represents a strategic shift (like an entire division) is reported as discontinued operations, separate from continuing operations, net of tax.',
     reference: 'ASC 205-20',
@@ -122,11 +122,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Which of the following is included in other comprehensive income (OCI)?',
     options: [
       'Realized gains on available-for-sale debt securities',
-      'Unrealized holding gains on trading securities',
       'Foreign currency translation adjustments',
-      'Impairment losses on goodwill',
+      'Unrealized holding gains on trading securities',
+      'Impairment losses on goodwill'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'OCI includes: unrealized gains/losses on AFS debt securities, foreign currency translation adjustments, pension adjustments, and cash flow hedge gains/losses. Trading securities gains go to net income.',
     reference: 'ASC 220-10-45',
@@ -142,12 +142,12 @@ export const FAR_QUESTIONS: Question[] = [
     question:
       'Under the indirect method, which adjustment is made to reconcile net income to operating cash flows?',
     options: [
-      'Add increases in accounts receivable',
-      'Subtract depreciation expense',
       'Add decreases in inventory',
-      'Add increases in accounts payable and subtract depreciation',
+      'Subtract depreciation expense',
+      'Add increases in accounts receivable',
+      'Add increases in accounts payable and subtract depreciation'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Decreases in current assets (like inventory) are added; increases in current assets are subtracted. Depreciation is added back. Increases in current liabilities are added.',
     reference: 'ASC 230-10-45',
@@ -162,12 +162,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'Interest paid is classified as which type of cash flow under U.S. GAAP?',
     options: [
-      'Operating activity',
+      "Either operating or financing at company's election",
       'Investing activity',
       'Financing activity',
-      "Either operating or financing at company's election",
+      'Operating activity'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Under U.S. GAAP, interest paid is classified as an operating activity. Under IFRS, companies may classify it as operating or financing.',
     reference: 'ASC 230-10-45-17',
@@ -230,11 +230,11 @@ export const FAR_QUESTIONS: Question[] = [
       'A company receives a $100,000, 3-year, non-interest-bearing note. If the market rate is 8%, the note should be recorded at:',
     options: [
       '$100,000',
-      'Present value of $100,000 at 8% for 3 years',
       '$100,000 less estimated bad debts',
-      'Face value less a contra account',
+      'Present value of $100,000 at 8% for 3 years',
+      'Face value less a contra account'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "Non-interest-bearing notes are recorded at present value, with the discount amortized as interest income over the note's life.",
     reference: 'ASC 835-30',
@@ -254,8 +254,13 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       'During a period of rising prices, which inventory method results in the highest net income?',
-    options: ['LIFO', 'FIFO', 'Weighted average', 'Specific identification'],
-    correctAnswer: 1,
+    options: [
+      'FIFO',
+      'LIFO',
+      'Weighted average',
+      'Specific identification'
+    ],
+    correctAnswer: 0,
     explanation:
       'FIFO results in the highest net income during rising prices because older (lower) costs are expensed, leaving higher-valued inventory on the balance sheet.',
     reference: 'ASC 330-10-30',
@@ -271,11 +276,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Under ASC 330, inventory should be measured at:',
     options: [
       'Lower of cost or market',
-      'Lower of cost or net realizable value',
-      'Historical cost only',
       'Fair value',
+      'Historical cost only',
+      'Lower of cost or net realizable value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under the 2015 FASB simplification (for non-LIFO inventory), inventory is measured at the lower of cost or net realizable value (NRV = selling price less costs to complete and sell).',
     reference: 'ASC 330-10-35-1B',
@@ -291,11 +296,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'A company using LIFO liquidates a layer from 5 years ago. This results in:',
     options: [
       'Lower gross profit due to higher COGS',
-      'Higher gross profit due to lower (older) costs flowing through COGS',
       'No effect on gross profit',
-      'A restatement of prior periods',
+      'Higher gross profit due to lower (older) costs flowing through COGS',
+      'A restatement of prior periods'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'LIFO liquidation occurs when units sold exceed units purchased. Old, lower costs are matched against current revenues, artificially inflating gross profit.',
     reference: 'ASC 330-10-35-4',
@@ -310,8 +315,13 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question:
       'Under dollar-value LIFO, the ending inventory at base-year prices is $200,000, beginning inventory at base-year prices was $180,000, and the current-year price index is 1.10. The LIFO layer added this year is:',
-    options: ['$20,000', '$22,000', '$18,182', '$220,000'],
-    correctAnswer: 1,
+    options: [
+      '$20,000',
+      '$220,000',
+      '$18,182',
+      '$22,000'
+    ],
+    correctAnswer: 3,
     explanation:
       'LIFO layer added = ($200,000 - $180,000) × 1.10 = $20,000 × 1.10 = $22,000. The layer is valued at current year prices.',
     reference: 'ASC 330-10-30',
@@ -333,10 +343,10 @@ export const FAR_QUESTIONS: Question[] = [
     options: [
       'Annual maintenance costs',
       'Insurance during the first year of use',
-      'Testing costs before placing equipment in service',
       'Repairs after equipment is in use',
+      'Testing costs before placing equipment in service'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Costs to bring an asset to its intended use are capitalized, including purchase price, freight, installation, and testing. Maintenance, insurance during operations, and repairs are expensed.',
     reference: 'ASC 360-10-30-1',
@@ -352,11 +362,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Interest costs are capitalized when:',
     options: [
       'Any debt is outstanding',
-      "Assets are being constructed for the company's own use and expenditures and interest costs are being incurred",
       'Assets are purchased for immediate use',
-      'The company chooses to capitalize as an accounting policy',
+      "Assets are being constructed for the company's own use and expenditures and interest costs are being incurred",
+      'The company chooses to capitalize as an accounting policy'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Interest capitalization is required (not optional) for assets constructed for own use when (1) expenditures are being incurred, (2) construction activities are occurring, and (3) interest is being incurred.',
     reference: 'ASC 835-20-15',
@@ -371,8 +381,13 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       'Using double-declining balance, an asset with $100,000 cost, $10,000 salvage value, and 5-year life has Year 1 depreciation of:',
-    options: ['$18,000', '$36,000', '$40,000', '$20,000'],
-    correctAnswer: 2,
+    options: [
+      '$40,000',
+      '$36,000',
+      '$20,000',
+      '$18,000'
+    ],
+    correctAnswer: 0,
     explanation:
       'DDB rate = 2 × (1/5) = 40%. Year 1 depreciation = $100,000 × 40% = $40,000. Note: salvage value is ignored in the calculation but limits total depreciation.',
     reference: 'ASC 360-10-35',
@@ -389,11 +404,11 @@ export const FAR_QUESTIONS: Question[] = [
       'An asset with carrying value $500,000, undiscounted future cash flows $450,000, and fair value $400,000 should be:',
     options: [
       'Written down to $450,000',
-      'Written down to $400,000',
       'Not impaired',
-      'Written down to $350,000',
+      'Written down to $400,000',
+      'Written down to $350,000'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Step 1: Recoverability test - compare carrying value ($500,000) to undiscounted cash flows ($450,000). Since CV > UCF, impairment exists. Step 2: Measure impairment as CV - FV = $500,000 - $400,000 = $100,000 loss.',
     reference: 'ASC 360-10-35-17',
@@ -413,12 +428,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Research and development costs are generally:',
     options: [
-      'Capitalized as incurred',
       'Expensed as incurred',
+      'Capitalized as incurred',
       'Capitalized if successful',
-      'Deferred and amortized',
+      'Deferred and amortized'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Under U.S. GAAP, R&D costs are expensed as incurred. Certain software development costs may be capitalized after technological feasibility.',
     reference: 'ASC 730-10-25-1',
@@ -434,11 +449,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Under the simplified goodwill impairment test, impairment is measured as:',
     options: [
       'Carrying amount of goodwill minus implied fair value of goodwill',
-      'Carrying amount of reporting unit minus fair value of reporting unit, not to exceed goodwill',
-      'Fair value of goodwill minus carrying amount',
       'Book value minus market capitalization',
+      'Fair value of goodwill minus carrying amount',
+      'Carrying amount of reporting unit minus fair value of reporting unit, not to exceed goodwill'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under the simplified approach (post-2017), impairment = carrying amount of reporting unit - fair value of reporting unit, limited to the carrying amount of goodwill (cannot go below zero).',
     reference: 'ASC 350-20-35-8C',
@@ -454,11 +469,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Costs of computer software developed for sale are expensed until:',
     options: [
       'A working model is completed',
-      'Technological feasibility is established',
       'The product is released',
-      'Revenue exceeds costs',
+      'Technological feasibility is established',
+      'Revenue exceeds costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Software development costs are expensed until technological feasibility is established (e.g., completion of a detailed program design or working model). After that, costs are capitalized.',
     reference: 'ASC 985-20-25-1',
@@ -478,8 +493,11 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       "A company owns 35% of another company's voting stock. This investment should be accounted for using:",
-    options: ['Fair value method', 'Equity method', 'Consolidation', 'Cost method'],
-    correctAnswer: 1,
+    options: ['Equity method',
+      'Fair value method',
+      'Consolidation',
+      'Cost method'],
+    correctAnswer: 0,
     explanation:
       'Ownership of 20-50% creates a presumption of significant influence, requiring the equity method. The investor records its share of investee income/loss and adjusts the carrying value.',
     reference: 'ASC 323-10-15-6',
@@ -494,12 +512,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: "Under the equity method, an investor's carrying amount is increased by:",
     options: [
-      'Dividends received',
       'Share of investee net income',
+      'Dividends received',
       'Amortization of excess purchase price',
-      'Unrealized intercompany profits',
+      'Unrealized intercompany profits'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Under equity method: Investment increased by share of investee income, decreased by dividends received and share of losses. Excess cost amortization also reduces the investment.',
     reference: 'ASC 323-10-35-4',
@@ -515,11 +533,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Available-for-sale (AFS) debt securities are reported at:',
     options: [
       'Amortized cost',
-      'Fair value with unrealized gains/losses in net income',
       'Fair value with unrealized gains/losses in OCI',
-      'Lower of cost or market',
+      'Fair value with unrealized gains/losses in net income',
+      'Lower of cost or market'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'AFS debt securities are reported at fair value. Unrealized holding gains/losses are reported in OCI (not net income) until realized.',
     reference: 'ASC 320-10-35-1',
@@ -533,8 +551,11 @@ export const FAR_QUESTIONS: Question[] = [
     subtopic: 'Held-to-Maturity',
     difficulty: 'easy',
     question: 'Held-to-maturity debt securities are reported at:',
-    options: ['Fair value', 'Amortized cost', 'Lower of cost or fair value', 'Original cost'],
-    correctAnswer: 1,
+    options: ['Fair value',
+      'Original cost',
+      'Lower of cost or fair value',
+      'Amortized cost'],
+    correctAnswer: 3,
     explanation:
       'HTM securities are reported at amortized cost because the company intends and is able to hold them to maturity, making fair value fluctuations irrelevant.',
     reference: 'ASC 320-10-35-1',
@@ -574,12 +595,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'A performance obligation is satisfied over time if:',
     options: [
-      'The customer receives and consumes benefits as the entity performs',
-      'The contract is for more than one year',
       'Payment is received in installments',
-      'The customer has title to the goods',
+      'The contract is for more than one year',
+      'The customer receives and consumes benefits as the entity performs',
+      'The customer has title to the goods'
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation:
       "A performance obligation is satisfied over time if: (1) customer receives/consumes benefits as performed, (2) entity's performance creates/enhances customer-controlled asset, or (3) no alternative use exists and entity has right to payment.",
     reference: 'ASC 606-10-25-27',
@@ -595,11 +616,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Variable consideration should be estimated using:',
     options: [
       'The maximum possible amount',
-      'The minimum possible amount',
       'Expected value or most likely amount, whichever is more predictive',
-      'Fair value of the consideration',
+      'The minimum possible amount',
+      'Fair value of the consideration'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Variable consideration is estimated using either the expected value (probability-weighted amounts) or the most likely amount, whichever method better predicts the consideration.',
     reference: 'ASC 606-10-32-8',
@@ -639,12 +660,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'A lease is classified as a finance lease if:',
     options: [
-      "The lease term is at least 50% of the asset's economic life",
       'Ownership transfers to the lessee or a purchase option is reasonably certain to be exercised',
+      "The lease term is at least 50% of the asset's economic life",
       'The lessee has the right to cancel at any time',
-      'Lease payments are variable',
+      'Lease payments are variable'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Finance lease criteria include: ownership transfer, purchase option reasonably certain, lease term is major part of economic life, PV equals substantially all of FV, or specialized nature.',
     reference: 'ASC 842-10-25-2',
@@ -660,11 +681,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'For an operating lease, the lessee records:',
     options: [
       'No asset or liability',
-      'A right-of-use asset and lease liability, with straight-line lease expense',
-      'A right-of-use asset and lease liability, with front-loaded interest expense',
       'Only rent expense as paid',
+      'A right-of-use asset and lease liability, with front-loaded interest expense',
+      'A right-of-use asset and lease liability, with straight-line lease expense'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under ASC 842, operating leases are recorded with a right-of-use asset and lease liability. Total lease expense is recognized on a straight-line basis (unlike finance leases which have front-loaded interest).',
     reference: 'ASC 842-20-25-6',
@@ -699,12 +720,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'A lessor classifies a lease as a sales-type lease when:',
     options: [
-      'The lease term is less than one year',
-      'The lease payments are variable',
       'Any one of the five finance lease criteria is met AND collectibility is probable',
-      'The asset has a residual value guarantee',
+      'The lease payments are variable',
+      'The lease term is less than one year',
+      'The asset has a residual value guarantee'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'For lessors, a sales-type lease requires meeting at least one of the five criteria (same as finance lease criteria) AND collectibility of lease payments must be probable.',
     reference: 'ASC 842-10-25-3',
@@ -724,12 +745,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'A bond issued at a premium will have:',
     options: [
-      'A stated rate lower than the market rate',
       'A stated rate higher than the market rate',
+      'A stated rate lower than the market rate',
       'A stated rate equal to the market rate',
-      'No stated rate',
+      'No stated rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A bond is issued at a premium when its stated (coupon) rate exceeds the market rate at issuance. Investors pay more than face value to obtain the higher interest payments.',
     reference: 'ASC 835-30',
@@ -745,12 +766,12 @@ export const FAR_QUESTIONS: Question[] = [
     question:
       'Under the effective interest method, interest expense on a bond issued at a discount will:',
     options: [
-      'Remain constant over the life of the bond',
-      'Decrease over the life of the bond',
       'Increase over the life of the bond',
-      'Equal the cash interest paid',
+      'Decrease over the life of the bond',
+      'Remain constant over the life of the bond',
+      'Equal the cash interest paid'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'For bonds issued at a discount, carrying value increases as discount is amortized. Interest expense = Carrying value × Effective rate, so interest expense increases each period.',
     reference: 'ASC 835-30-35-2',
@@ -766,11 +787,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'A loss contingency is accrued when:',
     options: [
       'The loss is possible and estimable',
-      'The loss is probable and reasonably estimable',
       'The loss is remote',
-      'A lawsuit is filed',
+      'The loss is probable and reasonably estimable',
+      'A lawsuit is filed'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Under ASC 450, a loss contingency is accrued when (1) it is probable that a loss has been incurred, and (2) the amount can be reasonably estimated. If only possible, disclose in notes.',
     reference: 'ASC 450-20-25-2',
@@ -785,12 +806,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'An asset retirement obligation (ARO) is initially measured at:',
     options: [
-      'Expected cash flows, undiscounted',
       'Fair value (present value of expected cash flows)',
+      'Expected cash flows, undiscounted',
       'Amount to be paid at retirement',
-      'Cost to remove the asset currently',
+      'Cost to remove the asset currently'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'AROs are initially recorded at fair value, which is typically the present value of expected cash flows needed to settle the obligation. An equal amount is capitalized to the related asset.',
     reference: 'ASC 410-20-25-4',
@@ -872,11 +893,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Under ASC 740-10, a tax position is recognized only if:',
     options: [
       'It is certain to be sustained',
-      'It is more likely than not to be sustained upon examination',
-      'It is probably going to be challenged',
       'The company has received a private letter ruling',
+      'It is probably going to be challenged',
+      'It is more likely than not to be sustained upon examination'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'A tax position is recognized only if it is more likely than not (>50% probability) to be sustained upon examination by tax authorities based on technical merits.',
     reference: 'ASC 740-10-25-6',
@@ -897,11 +918,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Under the cost method, treasury stock is recorded at:',
     options: [
       'Par value',
-      'Purchase price paid to reacquire the shares',
-      'Fair value at year-end',
       'Original issue price',
+      'Fair value at year-end',
+      'Purchase price paid to reacquire the shares'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       "Under the cost method, treasury stock is recorded at the price paid to reacquire the shares and reported as a reduction of total stockholders' equity.",
     reference: 'ASC 505-30-30',
@@ -916,12 +937,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'A small stock dividend (less than 20-25% of outstanding shares) is recorded at:',
     options: [
-      'Par value of shares issued',
       'Fair market value of shares issued',
+      'Par value of shares issued',
       'Book value of shares issued',
-      'No entry required',
+      'No entry required'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Small stock dividends are recorded at fair market value. Retained earnings is debited; common stock (par) and APIC are credited. Large dividends (>25%) use par value.',
     reference: 'ASC 505-20-30-3',
@@ -937,11 +958,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Stock options granted to employees are measured at:',
     options: [
       'Intrinsic value at grant date',
-      'Fair value at grant date',
-      'Fair value at exercise date',
       'Par value of underlying shares',
+      'Fair value at exercise date',
+      'Fair value at grant date'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Under ASC 718, share-based payments to employees are measured at grant-date fair value, typically using an option pricing model like Black-Scholes.',
     reference: 'ASC 718-10-30-2',
@@ -983,10 +1004,10 @@ export const FAR_QUESTIONS: Question[] = [
     options: [
       'Any ownership interest',
       'Significant influence (20-50%)',
-      'Controlling financial interest',
       'A written agreement to consolidate',
+      'Controlling financial interest'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Consolidation is required when a parent has a controlling financial interest, typically through majority voting ownership or variable interest entity (VIE) control.',
     reference: 'ASC 810-10-15-8',
@@ -1002,12 +1023,12 @@ export const FAR_QUESTIONS: Question[] = [
     question:
       'Intercompany profit on inventory sold downstream (parent to sub) and remaining in ending inventory is eliminated against:',
     options: [
-      'Noncontrolling interest',
       "The selling entity (parent's retained earnings)",
+      'Noncontrolling interest',
       "Subsidiary's retained earnings",
-      'Both controlling and noncontrolling interest proportionally',
+      'Both controlling and noncontrolling interest proportionally'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Downstream intercompany profits are eliminated entirely against the parent (selling entity). Upstream profits are eliminated against NCI and controlling interest proportionally.',
     reference: 'ASC 810-10-45-1',
@@ -1063,11 +1084,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Governmental funds use which measurement focus and basis of accounting?',
     options: [
       'Economic resources and accrual basis',
-      'Current financial resources and modified accrual basis',
       'Economic resources and modified accrual basis',
-      'Cash basis only',
+      'Current financial resources and modified accrual basis',
+      'Cash basis only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Governmental funds use current financial resources measurement focus and modified accrual basis. Proprietary funds use economic resources and full accrual basis.',
     reference: 'GASB Statement No. 34',
@@ -1083,11 +1104,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'Under modified accrual, revenues are recognized when:',
     options: [
       'Earned only',
-      'Earned and available',
-      'Cash is received',
       'Measurable and available',
+      'Cash is received',
+      'Earned and available'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'Under modified accrual, revenues are recognized when measurable and available. Available means collectible within the current period or soon enough to pay current liabilities (typically 60 days).',
     reference: 'GASB Statement No. 33',
@@ -1102,7 +1123,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       'Fund balance that can only be used for specific purposes established by external parties is classified as:',
-    options: ['Committed', 'Assigned', 'Restricted', 'Nonspendable'],
+    options: [
+      'Committed',
+      'Assigned',
+      'Restricted',
+      'Nonspendable'
+    ],
     correctAnswer: 2,
     explanation:
       "Restricted fund balance is limited by external parties (grantors, creditors, laws). Committed is limited by government's highest decision-making authority. Assigned is intended for specific purposes.",
@@ -1124,11 +1150,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'NFP financial statements classify net assets into:',
     options: [
       'Three categories: unrestricted, temporarily restricted, permanently restricted',
-      'Two categories: with donor restrictions and without donor restrictions',
       'One category: general net assets',
-      'Four categories based on liquidity',
+      'Two categories: with donor restrictions and without donor restrictions',
+      'Four categories based on liquidity'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Under ASU 2016-14, NFPs classify net assets into two categories: (1) with donor restrictions and (2) without donor restrictions.',
     reference: 'ASC 958-210-45-1',
@@ -1144,11 +1170,11 @@ export const FAR_QUESTIONS: Question[] = [
     question: 'An unconditional promise to give should be recognized:',
     options: [
       'When cash is received',
-      'When the promise is made, at present value if due in more than one year',
-      'Only if legally enforceable',
       'At the end of the fiscal year',
+      'Only if legally enforceable',
+      'When the promise is made, at present value if due in more than one year'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Unconditional promises to give are recognized as contribution revenue when made. If due in more than one year, they are recorded at present value.',
     reference: 'ASC 958-605-25-2',
@@ -1163,12 +1189,12 @@ export const FAR_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Donated services are recognized as contribution revenue only if they:',
     options: [
-      'Have any value to the organization',
       'Create or enhance nonfinancial assets, or require specialized skills and would be purchased if not donated',
+      'Have any value to the organization',
       'Are provided by professionals',
-      'Exceed $5,000 in value',
+      'Exceed $5,000 in value'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Donated services are recognized only if they: (1) create or enhance nonfinancial assets, or (2) require specialized skills, are provided by someone with those skills, and would typically be purchased if not donated.',
     reference: 'ASC 958-605-25-16',
@@ -1185,10 +1211,10 @@ export const FAR_QUESTIONS: Question[] = [
     options: [
       'Natural classification only',
       'Functional classification only',
-      'Both functional and natural classification',
       "Either functional or natural, at management's discretion",
+      'Both functional and natural classification'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'NFPs must present expenses by both functional classification (program vs. support) and natural classification (salaries, rent, etc.), either on the face of the statements or in the notes.',
     reference: 'ASC 958-720-45-1',

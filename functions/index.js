@@ -2,10 +2,12 @@
  * VoraPrep Cloud Functions (Gen 2)
  * - Daily study reminder push notifications (FCM)
  * - Weekly progress report emails (Nodemailer/Gmail)
+ * - Custom branded password reset emails
  */
 
 const { onSchedule } = require('firebase-functions/v2/scheduler');
 const { onDocumentUpdated, onDocumentCreated } = require('firebase-functions/v2/firestore');
+const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
 
@@ -29,6 +31,134 @@ if (GMAIL_USER && GMAIL_APP_PASSWORD) {
       pass: GMAIL_APP_PASSWORD,
     },
   });
+}
+
+// ============================================================================
+// CUSTOM BRANDED PASSWORD RESET EMAIL
+// Sends a friendly, VoraPrep-branded password reset email
+// ============================================================================
+
+exports.sendCustomPasswordReset = onCall({
+  cors: true, // Allow all origins for this public function
+  enforceAppCheck: false, // Not requiring app check for password reset
+}, async (request) => {
+  const { email } = request.data;
+  
+  if (!email) {
+    throw new HttpsError('invalid-argument', 'Email is required');
+  }
+
+  if (!emailTransporter) {
+    throw new HttpsError('failed-precondition', 'Email service not configured');
+  }
+
+  try {
+    // Generate Firebase password reset link
+    const resetLink = await admin.auth().generatePasswordResetLink(email, {
+      url: 'https://voraprep.com/login',
+    });
+
+    // Send branded email
+    await emailTransporter.sendMail({
+      from: `"VoraPrep" <${GMAIL_USER}>`,
+      to: email,
+      subject: '🔐 Reset Your VoraPrep Password',
+      html: getPasswordResetEmailHTML(email, resetLink),
+    });
+
+    console.log(`Password reset email sent to ${email}`);
+    return { success: true };
+  } catch (error) {
+    console.error('Password reset error:', error);
+    
+    // Handle user not found gracefully (don't reveal if email exists)
+    if (error.code === 'auth/user-not-found') {
+      return { success: true }; // Silent success for security
+    }
+    
+    throw new HttpsError('internal', 'Failed to send password reset email');
+  }
+});
+
+// Password Reset Email Template
+function getPasswordResetEmailHTML(email, resetLink) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Your VoraPrep Password</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
+        </div>
+        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0; text-align: center;">
+        Reset Your Password
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0; text-align: center;">
+        Hi there! 👋 We received a request to reset the password for your VoraPrep account.
+      </p>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${resetLink}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Reset My Password
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        This link will expire in 1 hour for security reasons.
+      </p>
+      
+      <div style="border-top: 1px solid #e2e8f0; margin: 30px 0; padding-top: 20px;">
+        <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">
+          <strong>Didn't request this?</strong> No worries! You can safely ignore this email and your password will remain unchanged.
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 14px; line-height: 1.6; margin: 20px 0 0 0;">
+        If the button doesn't work, copy and paste this link into your browser:
+      </p>
+      <p style="color: #3b82f6; font-size: 12px; word-break: break-all; margin: 10px 0 0 0;">
+        ${resetLink}
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        This email was sent to ${email}
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <strong>VoraPrep</strong> - Your AI-Powered CPA Exam Prep Partner
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
 }
 
 // ============================================================================

@@ -185,7 +185,7 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
 
   return (
     <Link 
-      to="/progress" 
+      to="/study" 
       className={clsx(
         'card p-5 mb-6 border-2 flex items-center gap-4 hover:shadow-soft-lg transition-all',
         getStatusBgColor(readiness.status)
@@ -532,28 +532,39 @@ const Dashboard = () => {
           <ProgressRing progress={dailyProgress} size={140} strokeWidth={10} />
         </div>
 
-        {/* Today's stats */}
-        <div className="grid grid-cols-3 gap-4 text-center">
+        {/* Today's stats - show what contributed to progress */}
+        <div className="grid grid-cols-4 gap-3 text-center">
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {todayLog?.questionsAttempted || 0}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Questions</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">MCQs</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {todayLog?.questionsAttempted && todayLog.questionsAttempted > 0
-                ? Math.round((todayLog.questionsCorrect / todayLog.questionsAttempted) * 100)
-                : 0}
-              %
+              {todayLog?.lessonsCompleted || 0}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Accuracy</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Lessons</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {todayLog?.studyTimeMinutes || 0}
+              {todayLog?.simulationsCompleted || 0}
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">TBS</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              {Math.round(todayLog?.studyTimeMinutes || 0)}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400">Minutes</p>
+          </div>
+        </div>
+        
+        {/* Points breakdown - subtle hint explaining the percentage */}
+        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+          <div className="flex items-center justify-between text-xs text-slate-500">
+            <span>Today's Points</span>
+            <span className="font-medium">{todayLog?.earnedPoints || 0} / {todayLog?.goalPoints || 50} pts</span>
           </div>
         </div>
       </div>

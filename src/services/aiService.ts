@@ -65,8 +65,35 @@ const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHi
 };
 
 // Fallback responses when API is unavailable
-const generateFallbackResponse = (input: string, mode: string, _section: string) => {
-  const lowerInput = input.toLowerCase();
+const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = []) => {
+  const lowerInput = input.toLowerCase().trim();
+  
+  // Check if this looks like an answer to a previous quiz question
+  const lastAssistantMessage = [...conversationHistory].reverse().find(m => m.role === 'assistant')?.content || '';
+  const isQuizAnswer = mode === 'quiz' && lastAssistantMessage.includes('Question:') && (
+    lowerInput.length < 50 || // Short answers are likely quiz responses
+    lowerInput.match(/^[a-d]$/) || // Single letter answer
+    lowerInput.includes('operating') ||
+    lowerInput.includes('finance') ||
+    lowerInput.includes('capital') ||
+    lowerInput.includes('ordinary')
+  );
+
+  // Handle quiz answers
+  if (isQuizAnswer && lastAssistantMessage.includes('lease')) {
+    if (lowerInput.includes('operating')) {
+      return `**Correct!** ✅ This is an **operating lease**.\n\n**Here's why:**\n\nLet's check the 5 finance lease criteria (OWNES):\n\n1. **O**wnership transfers? ❌ No\n2. **W**ritten purchase option? ❌ No\n3. **N**early all useful life (≥75%)? ❌ 4/5 years = 80%... wait, that's ≥75%! 🤔\n\nActually, let me recalculate:\n• Lease term: 4 years\n• Useful life: 5 years  \n• 4/5 = 80% ≥ 75% ✅\n\n**Hmm, this could actually be a finance lease** under the useful life test!\n\nAlso check:\n• PV of payments: $85,000\n• Fair value: $100,000\n• 85/100 = 85% ≤ 90% ❌\n\n**Key insight:** The 75% useful life test IS met (80% ≥ 75%), so this would be classified as a **finance lease**, not operating!\n\n🎯 **Exam trap:** Always check ALL criteria - one "yes" makes it a finance lease!\n\nWant another question?`;
+    } else if (lowerInput.includes('finance')) {
+      return `**Correct!** ✅ Great job!\n\n**This is a finance lease** because:\n\n• Lease term (4 years) / Useful life (5 years) = **80%**\n• 80% ≥ 75% threshold ✅\n\nThe useful life criterion is met!\n\n**Note:** Even though the PV test wasn't met (85% < 90%), only ONE criterion needs to be satisfied for finance lease classification.\n\n🎯 **Exam tip:** Always test ALL 5 criteria systematically. The exam loves to give you scenarios where multiple criteria are close to the threshold!\n\nReady for another question?`;
+    }
+  }
+
+  // Handle S Corp quiz answers  
+  if (isQuizAnswer && lastAssistantMessage.includes('S Corporation') && lastAssistantMessage.includes('DISQUALIFY')) {
+    if (lowerInput === 'd' || lowerInput.includes('nonresident') || lowerInput.includes('alien')) {
+      return `**Correct!** ✅ Answer: **D) Nonresident alien shareholder**\n\n**Why D is correct:**\nS corporations can ONLY have these shareholders:\n• US citizens\n• Resident aliens\n• Certain trusts and estates\n\nNonresident aliens are **prohibited** shareholders.\n\n**Why the others are wrong:**\n• A) 95 shareholders - OK (limit is 100)\n• B) Single-member LLC - OK (disregarded, owner is the shareholder)\n• C) Voting/non-voting stock - OK (economic rights must be same, voting can differ)\n\n🎯 **Exam tip:** Remember "DISC" - especially the I for Individuals (domestic only)!\n\nWant another S corp question?`;
+    }
+  }
 
   // SOCRATIC MODE
   if (mode === 'socratic') {
@@ -123,7 +150,7 @@ export const generateAIResponse = async (
 
   if (!apiKey) {
     logger.warn('[AI Service] No API key found. Using offline response database.');
-    return generateFallbackResponse(userMessage, mode, section);
+    return generateFallbackResponse(userMessage, mode, section, conversationHistory);
   }
 
   try {
@@ -168,6 +195,14 @@ export const generateAIResponse = async (
     });
 
     if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const errorMessage = errorData?.error?.message || `HTTP ${response.status}`;
+      logger.error(`Gemini API error: ${errorMessage}`);
+      
+      // Check for specific error types
+      if (errorMessage.includes('leaked') || errorMessage.includes('PERMISSION_DENIED')) {
+        throw new Error('API_KEY_INVALID');
+      }
       throw new Error(`Gemini API error: ${response.status}`);
     }
 
@@ -180,7 +215,13 @@ export const generateAIResponse = async (
     throw new Error('No response from Gemini');
   } catch (error) {
     logger.error('AI Service Error:', error);
-    return generateFallbackResponse(userMessage, mode, section);
+    
+    // Show specific message for API key issues
+    if (error instanceof Error && error.message === 'API_KEY_INVALID') {
+      return `⚠️ **AI Service Temporarily Unavailable**\n\nThe AI API key needs to be refreshed. In the meantime, here's a helpful response:\n\n---\n\n${generateFallbackResponse(userMessage, mode, section, conversationHistory)}`;
+    }
+    
+    return generateFallbackResponse(userMessage, mode, section, conversationHistory);
   }
 };
 

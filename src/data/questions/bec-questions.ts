@@ -20,11 +20,11 @@ export const BEC_QUESTIONS: Question[] = [
       "Which of the following is a primary responsibility of a company's board of directors?",
     options: [
       'Day-to-day management of operations',
-      'Oversight of management and strategic direction',
-      'Preparing financial statements',
       'Conducting the annual audit',
+      'Preparing financial statements',
+      'Oversight of management and strategic direction'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       "The board provides oversight of management, sets strategic direction, and ensures accountability. Day-to-day operations are management's responsibility.",
     reference: 'SOX Corporate Governance',
@@ -38,12 +38,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Under SOX, the audit committee must consist of:',
     options: [
-      'At least one independent director',
-      'A majority of independent directors',
       'All independent directors',
-      'Management representatives',
+      'A majority of independent directors',
+      'At least one independent director',
+      'Management representatives'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'SOX requires that all members of the audit committee be independent directors. At least one must be a "financial expert."',
     reference: 'SOX Section 301',
@@ -58,11 +58,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'SOX Section 404 requires management to:',
     options: [
       'Conduct the annual financial audit',
-      'Assess and report on the effectiveness of internal control over financial reporting',
-      'Guarantee there are no material misstatements',
       'Appoint the external auditor',
+      'Guarantee there are no material misstatements',
+      'Assess and report on the effectiveness of internal control over financial reporting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Section 404 requires management to assess internal control over financial reporting (ICFR) and include a report on this assessment in the annual report.',
     reference: 'SOX Section 404',
@@ -80,8 +80,13 @@ export const BEC_QUESTIONS: Question[] = [
     subtopic: 'Supply and Demand',
     difficulty: 'easy',
     question: 'When the price of a good increases, ceteris paribus, the quantity demanded will:',
-    options: ['Increase', 'Decrease', 'Remain unchanged', 'Become unpredictable'],
-    correctAnswer: 1,
+    options: [
+      'Decrease',
+      'Remain unchanged',
+      'Increase',
+      'Become unpredictable'
+    ],
+    correctAnswer: 0,
     explanation:
       'The law of demand states that, all else equal, as price increases, quantity demanded decreases (inverse relationship).',
     reference: 'Basic Economic Principles',
@@ -96,12 +101,12 @@ export const BEC_QUESTIONS: Question[] = [
     question:
       'If the price elasticity of demand for a product is -2.0, a 10% price increase will result in:',
     options: [
-      '2% decrease in quantity demanded',
-      '5% decrease in quantity demanded',
       '20% decrease in quantity demanded',
-      '2% increase in quantity demanded',
+      '5% decrease in quantity demanded',
+      '2% decrease in quantity demanded',
+      '2% increase in quantity demanded'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'Price elasticity = % change in quantity / % change in price. If elasticity = -2.0 and price increases 10%, quantity decreases by 20%.',
     reference: 'Price Elasticity',
@@ -114,8 +119,13 @@ export const BEC_QUESTIONS: Question[] = [
     subtopic: 'Market Structures',
     difficulty: 'medium',
     question: 'A market with many sellers, differentiated products, and free entry/exit is:',
-    options: ['Perfect competition', 'Monopolistic competition', 'Oligopoly', 'Monopoly'],
-    correctAnswer: 1,
+    options: [
+      'Monopolistic competition',
+      'Perfect competition',
+      'Oligopoly',
+      'Monopoly'
+    ],
+    correctAnswer: 0,
     explanation:
       'Monopolistic competition has many sellers with differentiated products and free entry/exit. Perfect competition has homogeneous products.',
     reference: 'Market Structures',
@@ -130,11 +140,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'During a recession, which of the following typically occurs?',
     options: [
       'GDP increases, unemployment decreases',
-      'GDP decreases, unemployment increases',
       'GDP increases, unemployment increases',
-      'GDP decreases, unemployment decreases',
+      'GDP decreases, unemployment increases',
+      'GDP decreases, unemployment decreases'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "A recession is characterized by declining GDP and rising unemployment. It's part of the contraction phase of the business cycle.",
     reference: 'Business Cycle Theory',
@@ -148,12 +158,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'To combat inflation, the Federal Reserve would most likely:',
     options: [
-      'Lower the discount rate',
-      'Purchase government securities',
       'Raise the federal funds rate',
-      'Decrease reserve requirements',
+      'Purchase government securities',
+      'Lower the discount rate',
+      'Decrease reserve requirements'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'To fight inflation, the Fed uses contractionary policy: raising interest rates, selling securities, or increasing reserve requirements to reduce money supply.',
     reference: 'Federal Reserve Monetary Policy',
@@ -172,8 +182,13 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       'An investment of $10,000 at 8% compounded annually will be worth approximately how much after 3 years?',
-    options: ['$12,400', '$12,597', '$12,800', '$10,800'],
-    correctAnswer: 1,
+    options: [
+      '$12,597',
+      '$10,800',
+      '$12,800',
+      '$12,400'
+    ],
+    correctAnswer: 0,
     explanation: 'FV = PV × (1 + r)^n = $10,000 × (1.08)^3 = $10,000 × 1.2597 = $12,597',
     reference: 'Time Value of Money',
   },
@@ -244,11 +259,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: "A company's weighted average cost of capital (WACC) is calculated using:",
     options: [
       'Only equity costs',
-      'Only debt costs',
       'The after-tax cost of debt and cost of equity, weighted by market values',
-      'The before-tax cost of debt and cost of equity',
+      'Only debt costs',
+      'The before-tax cost of debt and cost of equity'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'WACC = (E/V × Re) + (D/V × Rd × (1-T)). Debt cost is after-tax because interest is tax-deductible. Weights should be market values.',
     reference: 'Weighted Average Cost of Capital',
@@ -264,10 +279,10 @@ export const BEC_QUESTIONS: Question[] = [
     options: [
       'Contains no debt',
       'Contains 100% debt',
-      'Balances tax benefits of debt against bankruptcy costs',
       'Is irrelevant to firm value',
+      'Balances tax benefits of debt against bankruptcy costs'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Trade-off theory: optimal structure balances tax shield from debt interest against financial distress/bankruptcy costs. More debt increases risk but provides tax benefits.',
     reference: 'Capital Structure Theory',
@@ -287,11 +302,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'The CPU (Central Processing Unit) performs:',
     options: [
       'Long-term data storage',
-      'Processing and calculations',
-      'Network communication',
       'Power supply regulation',
+      'Network communication',
+      'Processing and calculations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'The CPU is the "brain" that executes instructions and performs calculations. Storage is handled by drives; RAM provides temporary working memory.',
     reference: 'Computer Hardware Fundamentals',
@@ -306,11 +321,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'Two-factor authentication requires:',
     options: [
       'Two passwords',
-      'Two different types of authentication (e.g., something you know and something you have)',
       'Two security questions',
-      'Two login attempts',
+      'Two different types of authentication (e.g., something you know and something you have)',
+      'Two login attempts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Multi-factor authentication uses multiple categories: something you know (password), something you have (token), something you are (biometric).',
     reference: 'IT Security',
@@ -323,8 +338,13 @@ export const BEC_QUESTIONS: Question[] = [
     subtopic: 'Security',
     difficulty: 'hard',
     question: 'Encryption that uses the same key for encryption and decryption is called:',
-    options: ['Asymmetric encryption', 'Symmetric encryption', 'Hashing', 'Digital signature'],
-    correctAnswer: 1,
+    options: [
+      'Asymmetric encryption',
+      'Hashing',
+      'Digital signature',
+      'Symmetric encryption'
+    ],
+    correctAnswer: 3,
     explanation:
       'Symmetric encryption uses one shared key. Asymmetric uses a key pair (public/private). AES is symmetric; RSA is asymmetric.',
     reference: 'Cryptography',
@@ -340,10 +360,10 @@ export const BEC_QUESTIONS: Question[] = [
     options: [
       'Hierarchical tree structures',
       'Network graphs',
-      'Tables with rows and columns',
       'Sequential files',
+      'Tables with rows and columns'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Relational databases organize data in tables (relations) with rows (records/tuples) and columns (fields/attributes), linked by keys.',
     reference: 'Database Management',
@@ -357,12 +377,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Software as a Service (SaaS) provides:',
     options: [
-      'Infrastructure (servers, storage) only',
-      'Platform for application development only',
       'Complete applications accessed via the internet',
-      'Physical data center space',
+      'Platform for application development only',
+      'Infrastructure (servers, storage) only',
+      'Physical data center space'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'SaaS delivers complete software applications over the internet (e.g., Gmail, Salesforce). IaaS provides infrastructure; PaaS provides development platforms.',
     reference: 'Cloud Computing Models',
@@ -401,11 +421,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'Total Quality Management (TQM) emphasizes:',
     options: [
       'Inspection at the end of production',
-      'Continuous improvement throughout the organization',
       'Accepting a certain defect rate',
-      'Quality is only the responsibility of the quality department',
+      'Continuous improvement throughout the organization',
+      'Quality is only the responsibility of the quality department'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "TQM involves organization-wide commitment to continuous improvement, customer focus, employee involvement, and process improvement. Quality is everyone's responsibility.",
     reference: 'Total Quality Management',
@@ -419,12 +439,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'The economic order quantity (EOQ) model minimizes:',
     options: [
-      'Purchase price only',
+      'Total of ordering costs and carrying costs',
       'Order costs only',
       'Carrying costs only',
-      'Total of ordering costs and carrying costs',
+      'Purchase price only'
     ],
-    correctAnswer: 3,
+    correctAnswer: 0,
     explanation:
       'EOQ balances ordering costs (decrease with larger orders) and carrying costs (increase with larger orders) to minimize total inventory costs.',
     reference: 'Economic Order Quantity',
@@ -442,8 +462,13 @@ export const BEC_QUESTIONS: Question[] = [
     subtopic: 'Cost Behavior',
     difficulty: 'easy',
     question: 'A cost that changes in total in direct proportion to changes in activity level is:',
-    options: ['Fixed cost', 'Variable cost', 'Mixed cost', 'Step cost'],
-    correctAnswer: 1,
+    options: [
+      'Fixed cost',
+      'Step cost',
+      'Mixed cost',
+      'Variable cost'
+    ],
+    correctAnswer: 3,
     explanation:
       'Variable costs change in total proportionally with activity but stay constant per unit. Fixed costs stay constant in total but vary per unit.',
     reference: 'Cost Behavior',
@@ -457,12 +482,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'The contribution margin per unit equals:',
     options: [
-      'Sales price minus all costs',
       'Sales price minus variable cost per unit',
+      'Sales price minus all costs',
       'Sales price minus fixed cost per unit',
-      'Net income divided by units',
+      'Net income divided by units'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Contribution margin = Sales price - Variable costs. It represents the amount available to cover fixed costs and provide profit.',
     reference: 'Cost-Volume-Profit Analysis',
@@ -476,8 +501,13 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question:
       'A company has fixed costs of $100,000, variable costs of $6 per unit, and sells for $10 per unit. The break-even point in units is:',
-    options: ['10,000 units', '16,667 units', '25,000 units', '100,000 units'],
-    correctAnswer: 2,
+    options: [
+      '10,000 units',
+      '16,667 units',
+      '100,000 units',
+      '25,000 units'
+    ],
+    correctAnswer: 3,
     explanation:
       'Break-even = Fixed costs / Contribution margin per unit = $100,000 / ($10 - $6) = $100,000 / $4 = 25,000 units.',
     reference: 'Break-Even Analysis',
@@ -510,7 +540,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question:
       'If actual price is $12, standard price is $10, and actual quantity is 1,000 units, the material price variance is:',
-    options: ['$2,000 favorable', '$2,000 unfavorable', '$10,000 favorable', '$10,000 unfavorable'],
+    options: [
+      '$2,000 favorable',
+      '$2,000 unfavorable',
+      '$10,000 favorable',
+      '$10,000 unfavorable'
+    ],
     correctAnswer: 1,
     explanation:
       'Price variance = (Actual price - Standard price) × Actual quantity = ($12 - $10) × 1,000 = $2,000 Unfavorable (paid more than standard).',
@@ -526,11 +561,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'Activity-based costing (ABC) differs from traditional costing by:',
     options: [
       'Using only volume-based cost drivers',
-      'Assigning overhead based on multiple cost drivers related to activities',
-      'Ignoring overhead costs',
       'Using only direct labor for allocation',
+      'Ignoring overhead costs',
+      'Assigning overhead based on multiple cost drivers related to activities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'ABC identifies activities that cause overhead and assigns costs using appropriate cost drivers, providing more accurate product costing than volume-only methods.',
     reference: 'Activity-Based Costing',
@@ -549,12 +584,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Return on assets (ROA) is calculated as:',
     options: [
-      'Net income / Total assets',
       'Net income / Total equity',
+      'Net income / Total assets',
       'Sales / Total assets',
-      'Net income / Sales',
+      'Net income / Sales'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       'ROA = Net income / Total assets. It measures how efficiently assets generate profit. ROE = Net income / Equity.',
     reference: 'Profitability Ratios',
@@ -569,11 +604,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'The current ratio is:',
     options: [
       'Current liabilities / Current assets',
-      'Current assets / Current liabilities',
-      'Cash / Current liabilities',
       'Quick assets / Current liabilities',
+      'Cash / Current liabilities',
+      'Current assets / Current liabilities'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Current ratio = Current assets / Current liabilities. It measures short-term liquidity. Higher is generally better (>1.0 typically desired).',
     reference: 'Liquidity Ratios',
@@ -587,12 +622,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'The balanced scorecard includes which four perspectives?',
     options: [
-      'Financial, Customer, Internal Processes, Learning & Growth',
       'Revenue, Expenses, Assets, Liabilities',
+      'Financial, Customer, Internal Processes, Learning & Growth',
       'Marketing, Finance, Operations, HR',
-      'Planning, Organizing, Leading, Controlling',
+      'Planning, Organizing, Leading, Controlling'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       "The balanced scorecard's four perspectives: Financial (shareholder value), Customer (satisfaction), Internal Business Processes (efficiency), Learning & Growth (innovation, people).",
     reference: 'Balanced Scorecard',
@@ -606,8 +641,13 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question:
       'A division has operating income of $500,000, invested capital of $2,000,000, and cost of capital of 12%. Residual income is:',
-    options: ['$260,000', '$240,000', '$500,000', '$1,500,000'],
-    correctAnswer: 0,
+    options: [
+      '$240,000',
+      '$260,000',
+      '$500,000',
+      '$1,500,000'
+    ],
+    correctAnswer: 1,
     explanation:
       'Residual income = Operating income - (Invested capital × Cost of capital) = $500,000 - ($2,000,000 × 12%) = $500,000 - $240,000 = $260,000.',
     reference: 'Residual Income',
@@ -627,11 +667,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'Structured data is:',
     options: [
       "Data that doesn't fit into predefined formats",
-      'Data organized in a defined format like databases and spreadsheets',
       'Video and audio files',
-      'Social media posts',
+      'Data organized in a defined format like databases and spreadsheets',
+      'Social media posts'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Structured data fits into rows and columns (databases, spreadsheets). Unstructured data lacks predefined format (text, video, images, social media).',
     reference: 'Data Types',
@@ -684,11 +724,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'Regression analysis is used to:',
     options: [
       'Calculate averages',
-      'Model relationships between dependent and independent variables',
       'Sort data alphabetically',
-      'Encrypt data',
+      'Model relationships between dependent and independent variables',
+      'Encrypt data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Regression analysis models the relationship between variables, allowing prediction of a dependent variable based on independent variables.',
     reference: 'Statistical Analysis',
@@ -703,11 +743,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'The "3 V\'s" of big data refer to:',
     options: [
       'Value, Vision, Velocity',
-      'Volume, Variety, Velocity',
       'Volume, Validity, Value',
-      'Verification, Validation, Volume',
+      'Volume, Variety, Velocity',
+      'Verification, Validation, Volume'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       "The original 3 V's: Volume (amount), Variety (types), Velocity (speed of creation/processing). Sometimes expanded to include Veracity and Value.",
     reference: 'Big Data Characteristics',
@@ -744,11 +784,11 @@ export const BEC_QUESTIONS: Question[] = [
     question: 'In the critical path method (CPM), the critical path is:',
     options: [
       'The shortest path through the network',
-      'The path with the most slack time',
       'The longest path through the network',
-      'The path with the lowest cost',
+      'The path with the most slack time',
+      'The path with the lowest cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'The critical path is the longest path through the project network, determining minimum project duration. Activities on it have zero slack.',
     reference: 'Project Management',
@@ -762,7 +802,12 @@ export const BEC_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question:
       'The general transfer pricing rule for maximizing company-wide profits when excess capacity exists is:',
-    options: ['Market price', 'Full cost plus markup', 'Variable cost', 'Negotiated price'],
+    options: [
+      'Market price',
+      'Full cost plus markup',
+      'Variable cost',
+      'Negotiated price'
+    ],
     correctAnswer: 2,
     explanation:
       'With excess capacity, transfer at variable cost encourages internal transfers that benefit the company overall. Market price is used when no excess capacity.',

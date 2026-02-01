@@ -1,59 +1,47 @@
 /**
- * TBS Service - Firestore-based Task-Based Simulation fetching
- * Replaces static data imports from data/tbs
+ * TBS Service - Local-first approach
+ * Task-Based Simulations are stored in TypeScript files for fast loading and offline support.
+ * Firebase is used only for user progress tracking, not TBS content.
  */
 
-import { collection, query, where, getDocs, doc, getDoc, orderBy, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../config/firebase';
 import { TBS, ExamSection } from '../types';
 import logger from '../utils/logger';
 
-// In-memory cache with TTL
-interface CacheEntry {
-  data: TBS[];
-  timestamp: number;
-}
-
-const tbsCache: Map<string, CacheEntry> = new Map();
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// Cache for TBS (in-memory)
+let tbsCache: TBS[] | null = null;
 
 /**
- * Check if cache entry is still valid
+ * Load all TBS from local data (with caching)
  */
-function isCacheValid(entry: CacheEntry | undefined): boolean {
-  if (!entry) return false;
-  return Date.now() - entry.timestamp < CACHE_TTL;
-}
-
-/**
- * Fetch all TBS simulations from Firestore
- */
-export async function fetchAllTBS(): Promise<TBS[]> {
-  const cacheKey = 'all';
-  const cached = tbsCache.get(cacheKey);
-  
-  if (isCacheValid(cached)) {
-    return cached!.data;
+async function loadAllTBS(): Promise<TBS[]> {
+  if (tbsCache) {
+    return tbsCache;
   }
 
   try {
-    const tbsRef = collection(db, 'tbs');
-    const q = query(tbsRef, orderBy('section'), orderBy('title'));
-    const snapshot = await getDocs(q);
-    
-    const simulations: TBS[] = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as TBS[];
-    
-    tbsCache.set(cacheKey, {
-      data: simulations,
-      timestamp: Date.now()
-    });
-    
-    return simulations;
+    const tbsData = await import('../data/tbs');
+    tbsCache = tbsData.ALL_TBS || [];
+    return tbsCache;
   } catch (error) {
-    logger.error('Error fetching TBS from Firestore:', error);
+    logger.error('Failed to load TBS:', error);
+    return [];
+  }
+}
+
+/**
+ * Fetch all TBS simulations from local data
+ */
+export async function fetchAllTBS(): Promise<TBS[]> {
+  try {
+    const allTBS = await loadAllTBS();
+    
+    // Sort by section and title
+    return [...allTBS].sort((a, b) => {
+      if (a.section !== b.section) return a.section.localeCompare(b.section);
+      return a.title.localeCompare(b.title);
+    });
+  } catch (error) {
+    logger.error('Error fetching all TBS:', error);
     return [];
   }
 }
@@ -62,33 +50,9 @@ export async function fetchAllTBS(): Promise<TBS[]> {
  * Fetch TBS simulations by exam section
  */
 export async function fetchTBSBySection(section: ExamSection): Promise<TBS[]> {
-  const cacheKey = `section-${section}`;
-  const cached = tbsCache.get(cacheKey);
-  
-  if (isCacheValid(cached)) {
-    return cached!.data;
-  }
-
   try {
-    const tbsRef = collection(db, 'tbs');
-    const q = query(
-      tbsRef, 
-      where('section', '==', section),
-      orderBy('title')
-    );
-    const snapshot = await getDocs(q);
-    
-    const simulations: TBS[] = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as TBS[];
-    
-    tbsCache.set(cacheKey, {
-      data: simulations,
-      timestamp: Date.now()
-    });
-    
-    return simulations;
+    const { getTBSBySection } = await import('../data/tbs');
+    return getTBSBySection(section);
   } catch (error) {
     logger.error(`Error fetching TBS for section ${section}:`, error);
     return [];
@@ -99,22 +63,9 @@ export async function fetchTBSBySection(section: ExamSection): Promise<TBS[]> {
  * Fetch a single TBS by ID
  */
 export async function fetchTBSById(tbsId: string): Promise<TBS | null> {
-  // Check if we have it in any cache
-  for (const [, entry] of tbsCache) {
-    if (isCacheValid(entry)) {
-      const found = entry.data.find(t => t.id === tbsId);
-      if (found) return found;
-    }
-  }
-
   try {
-    const tbsDoc = await getDoc(doc(db, 'tbs', tbsId));
-    
-    if (tbsDoc.exists()) {
-      return { id: tbsDoc.id, ...tbsDoc.data() } as TBS;
-    }
-    
-    return null;
+    const { getTBSById } = await import('../data/tbs');
+    return getTBSById(tbsId) || null;
   } catch (error) {
     logger.error(`Error fetching TBS ${tbsId}:`, error);
     return null;
@@ -122,108 +73,75 @@ export async function fetchTBSById(tbsId: string): Promise<TBS | null> {
 }
 
 /**
- * Search TBS by title or topic
- */
-export async function searchTBS(searchTerm: string): Promise<TBS[]> {
-  const all = await fetchAllTBS();
-  const term = searchTerm.toLowerCase();
-  
-  return all.filter(tbs =>
-    (tbs.title || '').toLowerCase().includes(term) ||
-    tbs.topic?.toLowerCase().includes(term) ||
-    tbs.scenario?.toLowerCase().includes(term)
-  );
-}
-
-/**
- * Get TBS stats by section
+ * Get TBS statistics by section
  */
 export async function getTBSStats(): Promise<{ section: ExamSection; count: number }[]> {
-  const all = await fetchAllTBS();
-  const stats = new Map<ExamSection, number>();
-  
-  for (const tbs of all) {
-    const count = stats.get(tbs.section) || 0;
-    stats.set(tbs.section, count + 1);
+  try {
+    const { getTBSStats: getStats } = await import('../data/tbs');
+    const stats = getStats();
+    
+    return Object.entries(stats.bySection).map(([section, count]) => ({
+      section: section as ExamSection,
+      count: count as number,
+    }));
+  } catch (error) {
+    logger.error('Error getting TBS stats:', error);
+    return [];
   }
-  
-  return Array.from(stats.entries()).map(([section, count]) => ({
-    section,
-    count
-  }));
 }
 
 /**
- * Clear the TBS cache
+ * Fetch TBS by type (e.g., 'journal-entry', 'document-review')
+ */
+export async function fetchTBSByType(type: string): Promise<TBS[]> {
+  try {
+    const { getTBSByType } = await import('../data/tbs');
+    return getTBSByType(type as any);
+  } catch (error) {
+    logger.error(`Error fetching TBS by type ${type}:`, error);
+    return [];
+  }
+}
+
+/**
+ * Search TBS by query
+ */
+export async function searchTBS(searchQuery: string): Promise<TBS[]> {
+  try {
+    const allTBS = await loadAllTBS();
+    const query = searchQuery.toLowerCase();
+    
+    return allTBS.filter(tbs => 
+      tbs.title?.toLowerCase().includes(query) ||
+      tbs.scenario?.toLowerCase().includes(query) ||
+      tbs.section?.toLowerCase().includes(query)
+    );
+  } catch (error) {
+    logger.error('Error searching TBS:', error);
+    return [];
+  }
+}
+
+/**
+ * Get total TBS count
+ */
+export async function getTBSCount(section?: ExamSection): Promise<number> {
+  try {
+    if (section) {
+      const sectionTBS = await fetchTBSBySection(section);
+      return sectionTBS.length;
+    }
+    const allTBS = await loadAllTBS();
+    return allTBS.length;
+  } catch (error) {
+    logger.error('Error getting TBS count:', error);
+    return 0;
+  }
+}
+
+/**
+ * Clear the TBS cache (useful for testing or forcing reload)
  */
 export function clearTBSCache(): void {
-  tbsCache.clear();
-}
-
-/**
- * Preload TBS for faster access
- */
-export async function preloadTBS(): Promise<void> {
-  await fetchAllTBS();
-}
-
-// ============================================================================
-// ADMIN CRUD Operations
-// ============================================================================
-
-/**
- * Add a new TBS to Firestore
- */
-export async function addTBS(tbs: Omit<TBS, 'id'>): Promise<string> {
-  try {
-    const tbsRef = collection(db, 'tbs');
-    const docRef = await addDoc(tbsRef, {
-      ...tbs,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
-    
-    // Clear cache
-    clearTBSCache();
-    
-    return docRef.id;
-  } catch (error) {
-    logger.error('Error adding TBS:', error);
-    throw error;
-  }
-}
-
-/**
- * Update an existing TBS
- */
-export async function updateTBS(id: string, data: Partial<TBS>): Promise<void> {
-  try {
-    const tbsRef = doc(db, 'tbs', id);
-    await updateDoc(tbsRef, {
-      ...data,
-      updatedAt: serverTimestamp(),
-    });
-    
-    // Clear cache
-    clearTBSCache();
-  } catch (error) {
-    logger.error('Error updating TBS:', error);
-    throw error;
-  }
-}
-
-/**
- * Delete a TBS
- */
-export async function deleteTBS(id: string): Promise<void> {
-  try {
-    const tbsRef = doc(db, 'tbs', id);
-    await deleteDoc(tbsRef);
-    
-    // Clear cache
-    clearTBSCache();
-  } catch (error) {
-    logger.error('Error deleting TBS:', error);
-    throw error;
-  }
+  tbsCache = null;
 }

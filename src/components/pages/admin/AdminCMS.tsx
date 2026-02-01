@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import {
   uploadAllQuestions,
@@ -20,7 +20,7 @@ const loadQuestionData = () => import('../../../data/questions');
 // Types
 // ============================================================================
 
-type TabType = 'questions' | 'lessons' | 'users' | 'logs' | 'settings';
+type TabType = 'content' | 'users' | 'logs' | 'settings';
 type LogType = 'info' | 'success' | 'error' | 'warning';
 
 interface LogEntry {
@@ -81,7 +81,7 @@ const ADMIN_EMAILS: string[] = [
   // Add your email here
 ];
 
-const EXAM_SECTIONS: string[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
+const EXAM_SECTIONS: string[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
 
 // ============================================================================
 // Component
@@ -89,7 +89,7 @@ const EXAM_SECTIONS: string[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
 
 const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
-  const [activeTab, setActiveTab] = useState<TabType>('questions');
+  const [activeTab, setActiveTab] = useState<TabType>('content');
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
@@ -180,14 +180,17 @@ const AdminCMS: React.FC = () => {
     const loadData = async () => {
       try {
         const questionModule = await loadQuestionData();
-        const { getQuestionStats, REG_QUESTIONS, FAR_QUESTIONS, AUD_QUESTIONS, BEC_QUESTIONS } = questionModule;
+        const { getQuestionStats, REG_ALL, FAR_ALL, AUD_ALL, BAR_ALL, ISC_ALL, TCP_ALL, BEC_ALL } = questionModule;
         
         setLocalStats(getQuestionStats());
         setSectionConfigs([
-          { section: 'REG', questions: REG_QUESTIONS, color: 'green' },
-          { section: 'FAR', questions: FAR_QUESTIONS, color: 'purple' },
-          { section: 'AUD', questions: AUD_QUESTIONS, color: 'yellow' },
-          { section: 'BEC', questions: BEC_QUESTIONS, color: 'cyan' },
+          { section: 'REG', questions: REG_ALL, color: 'green' },
+          { section: 'FAR', questions: FAR_ALL, color: 'purple' },
+          { section: 'AUD', questions: AUD_ALL, color: 'yellow' },
+          { section: 'BAR', questions: BAR_ALL, color: 'blue' },
+          { section: 'ISC', questions: ISC_ALL, color: 'indigo' },
+          { section: 'TCP', questions: TCP_ALL, color: 'pink' },
+          { section: 'BEC', questions: BEC_ALL, color: 'cyan' },
         ]);
       } catch (error) {
         logger.error('Error loading question data:', error);
@@ -358,7 +361,7 @@ const AdminCMS: React.FC = () => {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-2 border-b border-gray-200 overflow-x-auto">
-          {(['questions', 'lessons', 'users', 'logs', 'settings'] as TabType[]).map((tab) => (
+          {(['content', 'users', 'logs', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -368,7 +371,7 @@ const AdminCMS: React.FC = () => {
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
-              {tab}
+              {tab === 'content' ? '📦 Content' : tab}
             </button>
           ))}
         </div>
@@ -376,46 +379,41 @@ const AdminCMS: React.FC = () => {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 py-6">
-        {activeTab === 'questions' && (
+        {activeTab === 'content' && (
           <div className="space-y-6">
-            {/* Quick Actions */}
+            {/* Quick Links to Editors */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 shadow-lg text-white">
-              <h3 className="text-lg font-semibold mb-3">Content Management</h3>
+              <h3 className="text-lg font-semibold mb-3">Content Editors</h3>
               <div className="flex flex-wrap gap-3">
                 <Link
                   to="/admin/questions"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
-                  <span>❓</span> Questions
+                  <span>❓</span> View Questions
                 </Link>
                 <Link
                   to="/admin/lessons"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-green-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
-                  <span>📚</span> Lessons
+                  <span>📚</span> View Lessons
                 </Link>
                 <Link
                   to="/admin/wc"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
-                  <span>✍️</span> Written Communication
+                  <span>✍️</span> Edit WC
                 </Link>
                 <Link
                   to="/admin/tbs"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
-                  <span>📊</span> TBS
-                </Link>
-                <Link
-                  to="/admin/seed"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg font-medium hover:bg-white/30 transition-colors"
-                >
-                  <span>🌱</span> Seed Database
+                  <span>📊</span> View TBS
                 </Link>
               </div>
             </div>
 
-            {/* Stats Cards */}
+            {/* Stats Cards - Questions */}
+            <h3 className="text-lg font-semibold text-gray-800">📋 Questions</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Local Stats */}
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -497,7 +495,7 @@ const AdminCMS: React.FC = () => {
               )}
 
               <div className="space-y-4">
-                {/* Upload All */}
+                {/* Upload All Questions */}
                 <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
                   <div>
                     <h4 className="font-medium text-gray-900">Upload All Questions</h4>
@@ -516,9 +514,99 @@ const AdminCMS: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <span>📤</span> Upload All
+                        <span>📤</span> Upload Questions
                       </>
                     )}
+                  </button>
+                </div>
+
+                {/* Upload TBS */}
+                <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Upload All TBS Simulations</h4>
+                    <p className="text-sm text-gray-600">
+                      Upload Task-Based Simulations for all sections (FAR, AUD, REG, BEC, BAR, ISC, TCP)
+                    </p>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (!window.confirm('Upload all TBS simulations to Firestore?')) return;
+                      setIsUploading(true);
+                      addLog('Starting TBS upload...', 'info');
+                      try {
+                        const { uploadTBS } = await import('../../../services/contentUpload');
+                        const result = await uploadTBS((msg) => addLog(msg, 'info'));
+                        addLog(`TBS upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
+                      } catch (error) {
+                        addLog('TBS upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      } finally {
+                        setIsUploading(false);
+                      }
+                    }}
+                    disabled={isUploading || isDeleting}
+                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    <span>📋</span> Upload TBS
+                  </button>
+                </div>
+
+                {/* Upload Written Communications */}
+                <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Upload Written Communications</h4>
+                    <p className="text-sm text-gray-600">
+                      Upload WC tasks for all sections
+                    </p>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (!window.confirm('Upload all Written Communication tasks to Firestore?')) return;
+                      setIsUploading(true);
+                      addLog('Starting WC upload...', 'info');
+                      try {
+                        const { uploadWC } = await import('../../../services/contentUpload');
+                        const result = await uploadWC((msg) => addLog(msg, 'info'));
+                        addLog(`WC upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
+                      } catch (error) {
+                        addLog('WC upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      } finally {
+                        setIsUploading(false);
+                      }
+                    }}
+                    disabled={isUploading || isDeleting}
+                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    <span>✍️</span> Upload WC
+                  </button>
+                </div>
+
+                {/* Upload Lessons */}
+                <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg">
+                  <div>
+                    <h4 className="font-medium text-gray-900">Upload All Lessons</h4>
+                    <p className="text-sm text-gray-600">
+                      Upload lesson content for all sections
+                    </p>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (!window.confirm('Upload all lessons to Firestore?')) return;
+                      setIsUploading(true);
+                      addLog('Starting Lessons upload...', 'info');
+                      try {
+                        const { uploadLessons } = await import('../../../services/contentUpload');
+                        const result = await uploadLessons((msg) => addLog(msg, 'info'));
+                        addLog(`Lessons upload complete: ${result.uploaded} uploaded, ${result.skipped} skipped`, 'success');
+                      } catch (error) {
+                        addLog('Lessons upload failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      } finally {
+                        setIsUploading(false);
+                      }
+                    }}
+                    disabled={isUploading || isDeleting}
+                    className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    <span>📚</span> Upload Lessons
                   </button>
                 </div>
 
@@ -614,46 +702,6 @@ const AdminCMS: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'lessons' && (
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Lesson Content Overview</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-              {EXAM_SECTIONS.map((section) => (
-                <div key={section} className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                  <h4 className="font-bold text-gray-900 mb-2">{section}</h4>
-                  <p className="text-sm text-gray-600">
-                    Lessons are defined in <code className="text-xs bg-gray-200 px-1 rounded">src/data/lessons/{section.toLowerCase()}.ts</code>
-                  </p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h4 className="font-medium text-blue-900 mb-2">📚 Adding/Editing Lessons</h4>
-              <p className="text-sm text-blue-800 mb-3">
-                Lessons are stored as TypeScript files in the codebase. To add or edit lessons:
-              </p>
-              <ol className="text-sm text-blue-800 list-decimal list-inside space-y-1">
-                <li>Edit the relevant file in <code className="bg-blue-100 px-1 rounded">src/data/lessons/</code></li>
-                <li>Follow the <code className="bg-blue-100 px-1 rounded">Lesson</code> type structure</li>
-                <li>Run <code className="bg-blue-100 px-1 rounded">npm run build</code> to verify</li>
-                <li>Deploy with <code className="bg-blue-100 px-1 rounded">firebase deploy</code></li>
-              </ol>
-            </div>
-            
-            <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <h4 className="font-medium text-amber-900 mb-2">⚡ Current Stats</h4>
-              <p className="text-sm text-amber-800">
-                Total lessons across all sections: <strong>303</strong>
-              </p>
-              <p className="text-xs text-amber-700 mt-1">
-                Blueprint transition system active (2025 → 2026)
-              </p>
-            </div>
-          </div>
-        )}
-
         {activeTab === 'users' && (
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
@@ -693,7 +741,28 @@ const AdminCMS: React.FC = () => {
                     ) : (
                       usersList.map((u) => (
                         <tr key={u.id} className="hover:bg-gray-50">
-                          <td className="p-3 font-mono text-sm">{u.email || '—'}</td>
+                          <td className="p-3 font-mono text-sm">
+                            {u.email || '—'}
+                            {!u.email && (
+                              <button
+                                onClick={async () => {
+                                  const email = window.prompt('Enter email for this user:', '');
+                                  if (!email) return;
+                                  try {
+                                    const userRef = doc(db, 'users', u.id);
+                                    await updateDoc(userRef, { email });
+                                    addLog(`Updated email for ${u.id} to ${email}`, 'success');
+                                    loadUsers();
+                                  } catch (err) {
+                                    addLog('Failed to update: ' + String(err), 'error');
+                                  }
+                                }}
+                                className="ml-2 text-xs text-blue-600 hover:underline"
+                              >
+                                [fix]
+                              </button>
+                            )}
+                          </td>
                           <td className="p-3">{u.displayName || '—'}</td>
                           <td className="p-3">
                             <span
@@ -761,7 +830,7 @@ const AdminCMS: React.FC = () => {
                         <p className="font-medium text-gray-900 mb-2">{err.message}</p>
                         {err.context && (
                           <div className="text-sm text-gray-600 mb-2">
-                            <strong>Context:</strong> {err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
+                            <strong>Context:</strong> {typeof err.context === 'object' ? JSON.stringify(err.context) : err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
                           </div>
                         )}
                         {err.stack && (
@@ -796,6 +865,133 @@ const AdminCMS: React.FC = () => {
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Firebase Project</h4>
                 <p className="text-sm text-gray-600">Project: passcpa-dev</p>
+              </div>
+              
+              {/* Reset Account Section */}
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <h4 className="font-medium text-red-900 mb-2">🔄 Reset My Account (Testing)</h4>
+                <p className="text-sm text-red-700 mb-4">
+                  Reset your account to test the app from the beginning. This will delete:
+                </p>
+                <ul className="text-sm text-red-600 list-disc list-inside mb-4">
+                  <li>All progress data</li>
+                  <li>Question history & performance</li>
+                  <li>Completed lessons</li>
+                  <li>Achievements & badges</li>
+                  <li>Study streaks</li>
+                  <li>Bookmarks & flagged questions</li>
+                  <li>Onboarding status (will show onboarding again)</li>
+                </ul>
+                <div className="flex gap-3">
+                  <button
+                    onClick={async () => {
+                      if (!user) return;
+                      const confirmed = window.confirm(
+                        '⚠️ ARE YOU SURE?\n\nThis will permanently delete ALL your progress and study data. You will need to go through onboarding again.\n\nThis cannot be undone!'
+                      );
+                      if (!confirmed) return;
+                      
+                      const doubleConfirm = window.confirm(
+                        '🚨 FINAL CONFIRMATION\n\nType "RESET" mentally and click OK to proceed with the full account reset.'
+                      );
+                      if (!doubleConfirm) return;
+
+                      try {
+                        addLog('Starting account reset...', 'info');
+                        const batch = writeBatch(db);
+                        const userId = user.uid;
+                        
+                        // Collections to delete
+                        const collectionsToDelete = [
+                          'daily_log',           // Topic performance & study time
+                          'lessons',             // Completed lessons tracking
+                          'progress',
+                          'questionHistory', 
+                          'lessonProgress',
+                          'achievements',
+                          'bookmarks',
+                          'flaggedQuestions',
+                          'studySessions',
+                          'examResults',
+                          'flashcardProgress',
+                          'questionAttempts',    // Individual question attempts
+                        ];
+                        
+                        // Delete subcollections under user
+                        for (const collName of collectionsToDelete) {
+                          try {
+                            const subColRef = collection(db, 'users', userId, collName);
+                            const subDocs = await getDocs(subColRef);
+                            subDocs.forEach((docSnap) => {
+                              batch.delete(docSnap.ref);
+                            });
+                            addLog(`Queued ${subDocs.size} ${collName} docs for deletion`, 'info');
+                          } catch (e) {
+                            // Collection might not exist, that's ok
+                          }
+                        }
+                        
+                        // Reset user profile to initial state
+                        const userRef = doc(db, 'users', userId);
+                        batch.update(userRef, {
+                          onboardingComplete: false,
+                          examSection: null,
+                          currentStreak: 0,
+                          longestStreak: 0,
+                          totalStudyTime: 0,
+                          questionsAnswered: 0,
+                          questionsCorrect: 0,
+                          lessonsCompleted: 0,
+                          lastStudyDate: null,
+                          blueprintYear: null,
+                          studyGoal: null,
+                          examDate: null,
+                          achievements: [],
+                          resetAt: new Date().toISOString(),
+                        });
+                        
+                        await batch.commit();
+                        addLog('✅ Account reset complete! Redirecting to onboarding...', 'success');
+                        
+                        // Clear local storage
+                        localStorage.removeItem('voraprep_study_state');
+                        localStorage.removeItem('voraprep_progress');
+                        
+                        // Redirect to onboarding after short delay
+                        setTimeout(() => {
+                          window.location.href = '/onboarding';
+                        }, 1500);
+                      } catch (error) {
+                        logger.error('Reset error:', error);
+                        addLog('❌ Reset failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
+                  >
+                    🔄 Reset My Account
+                  </button>
+                  <button
+                    onClick={async () => {
+                      if (!user) return;
+                      const confirmed = window.confirm('Reset onboarding only? You\'ll see the onboarding flow again without losing progress.');
+                      if (!confirmed) return;
+                      
+                      try {
+                        const userRef = doc(db, 'users', user.uid);
+                        await updateDoc(userRef, { onboardingComplete: false });
+                        addLog('✅ Onboarding reset! Redirecting...', 'success');
+                        setTimeout(() => {
+                          window.location.href = '/onboarding';
+                        }, 1000);
+                      } catch (error) {
+                        addLog('❌ Failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
+                  >
+                    🎯 Reset Onboarding Only
+                  </button>
+                </div>
               </div>
             </div>
           </div>

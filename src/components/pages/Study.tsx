@@ -124,16 +124,15 @@ const Study = () => {
       icon: FileSpreadsheet,
       color: 'warning',
       link: '/tbs',
-      badge: 'TBS',
     },
     {
       id: 'flashcards',
       title: 'Flashcard Review',
-      description: 'Spaced repetition for long-term retention',
+      description: 'Smart review for long-term retention',
       icon: Brain,
       color: 'purple',
       link: '/flashcards',
-      badge: 'SRS',
+      badge: 'SMART',
     },
     {
       id: 'exam',
@@ -142,7 +141,7 @@ const Study = () => {
       icon: GraduationCap,
       color: 'error',
       link: '/exam',
-      badge: 'PRO',
+      badge: '4 HRS',
     },
     {
       id: 'tutor',
@@ -260,7 +259,7 @@ const Study = () => {
             </div>
             <div>
               <div className="text-xl font-bold text-slate-900">
-                {todayLog?.studyTimeMinutes || 0}
+                {Math.round(todayLog?.studyTimeMinutes || 0)}
               </div>
               <div className="text-xs text-slate-500">Minutes</div>
             </div>

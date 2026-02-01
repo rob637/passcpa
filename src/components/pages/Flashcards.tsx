@@ -16,9 +16,9 @@ import {
   ArrowLeft,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-// import { useStudy } from '../../hooks/useStudy'; // recordMCQAnswer is unused in code, imported but unused
-import { collection, query, where, getDocs, doc, setDoc, getDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
+import { fetchQuestions } from '../../services/questionService';
 import { calculateNextReview, getDueCards, getStudyStats } from '../../services/spacedRepetition';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
@@ -90,28 +90,13 @@ const Flashcards: React.FC = () => {
 
       setLoading(true);
       try {
-        // Get questions from Firestore
-        let questionsQuery = query(
-          collection(db, 'questions'),
-          where('section', '==', currentSection)
-        );
+        // Get questions from local data via questionService
+        const questions = await fetchQuestions({
+          section: currentSection,
+          count: 100, // Get more for flashcard pool
+        });
 
-        if (topic) {
-          questionsQuery = query(
-            collection(db, 'questions'),
-            where('section', '==', currentSection),
-            where('topic', '==', topic)
-          );
-        }
-
-        const questionsSnap = await getDocs(questionsQuery);
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const questions = questionsSnap.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as Question[];
-
-        // Get user's SRS data
+        // Get user's SRS data from Firebase (user progress, not content)
         const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
         const srsSnap = await getDoc(srsRef);
         const srsData = srsSnap.exists() ? srsSnap.data() : {};

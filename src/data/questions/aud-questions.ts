@@ -40,11 +40,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'A "covered member" for independence purposes includes all of the following EXCEPT:',
     options: [
       'An individual on the attest engagement team',
-      'A partner in the office where the lead attest partner practices',
       'Any partner in any office of the firm',
-      'An individual in a position to influence the attest engagement',
+      'A partner in the office where the lead attest partner practices',
+      'An individual in a position to influence the attest engagement'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Covered members include: engagement team, those who influence the engagement, partners in the engagement office, and the firm itself. Not all partners firm-wide are covered members.',
     reference: 'AICPA Code of Conduct ET 0.400.12',
@@ -58,8 +58,13 @@ export const AUD_QUESTIONS: Question[] = [
     subtopic: 'SEC Independence',
     difficulty: 'hard',
     question: 'Under SEC rules, audit partner rotation is required every:',
-    options: ['3 years', '5 years', '7 years', '10 years'],
-    correctAnswer: 1,
+    options: [
+      '3 years',
+      '10 years',
+      '5 years',
+      '7 years'
+    ],
+    correctAnswer: 2,
     explanation:
       'SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role.',
     reference: 'SEC Regulation S-X Rule 2-01(c)(6)',
@@ -76,10 +81,10 @@ export const AUD_QUESTIONS: Question[] = [
     options: [
       'Tax compliance services',
       'Tax planning advice',
-      'Bookkeeping services',
       'Due diligence services for potential acquisitions',
+      'Bookkeeping services'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'SOX prohibits bookkeeping, financial information systems design, appraisal services, internal audit outsourcing, management functions, HR services, broker-dealer services, and certain legal services.',
     reference: 'SOX Section 201',
@@ -118,8 +123,13 @@ export const AUD_QUESTIONS: Question[] = [
     subtopic: 'Audit Risk Model',
     difficulty: 'medium',
     question: 'The audit risk model is expressed as:',
-    options: ['AR = IR + CR + DR', 'AR = IR × CR × DR', 'AR = IR × CR / DR', 'AR = (IR + CR) × DR'],
-    correctAnswer: 1,
+    options: [
+      'AR = IR × CR × DR',
+      'AR = (IR + CR) × DR',
+      'AR = IR × CR / DR',
+      'AR = IR + CR + DR'
+    ],
+    correctAnswer: 0,
     explanation:
       'Audit Risk = Inherent Risk × Control Risk × Detection Risk. The auditor sets acceptable AR, assesses IR and CR, then determines DR to achieve the desired AR level.',
     reference: 'AU-C 200.A42',
@@ -134,12 +144,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'When inherent risk and control risk are assessed as high, the auditor should:',
     options: [
-      'Withdraw from the engagement',
       'Set detection risk at a low level',
+      'Withdraw from the engagement',
       'Set detection risk at a high level',
-      'Rely primarily on tests of controls',
+      'Rely primarily on tests of controls'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'When IR and CR are high, the risk of material misstatement (RMM) is high. To maintain acceptable audit risk, detection risk must be set low, requiring more extensive substantive procedures.',
     reference: 'AU-C 315.A142',
@@ -155,11 +165,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'Performance materiality is set at an amount:',
     options: [
       'Equal to overall materiality',
-      'Greater than overall materiality',
       'Less than overall materiality',
-      'Determined by management',
+      'Greater than overall materiality',
+      'Determined by management'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Performance materiality is set below overall materiality to reduce the risk that the aggregate of uncorrected and undetected misstatements exceeds overall materiality.',
     reference: 'AU-C 320.09',
@@ -175,11 +185,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: "Understanding the entity's internal control is required primarily to:",
     options: [
       'Express an opinion on internal control',
-      'Identify and assess risks of material misstatement',
       'Prepare the financial statements',
-      'Determine if the entity should be audited',
+      'Identify and assess risks of material misstatement',
+      'Determine if the entity should be audited'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'The auditor obtains an understanding of internal control to identify types of potential misstatements, factors affecting RMM, and to design appropriate audit procedures.',
     reference: 'AU-C 315.12',
@@ -234,8 +244,13 @@ export const AUD_QUESTIONS: Question[] = [
     subtopic: 'COSO Framework',
     difficulty: 'medium',
     question: 'The COSO Internal Control Framework includes how many components?',
-    options: ['Three', 'Four', 'Five', 'Six'],
-    correctAnswer: 2,
+    options: [
+      'Six',
+      'Four',
+      'Three',
+      'Five'
+    ],
+    correctAnswer: 3,
     explanation:
       'COSO has five components: (1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information and Communication, and (5) Monitoring Activities.',
     reference: 'COSO Internal Control - Integrated Framework',
@@ -265,12 +280,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Tests of controls are performed when the auditor:',
     options: [
-      'Plans to rely on the operating effectiveness of controls',
+      'Issues a disclaimer of opinion',
       'Assesses control risk at maximum',
       'Performs only substantive procedures',
-      'Issues a disclaimer of opinion',
+      'Plans to rely on the operating effectiveness of controls'
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation:
       'Tests of controls are required when the auditor plans to rely on controls to reduce substantive testing, or when substantive procedures alone cannot provide sufficient evidence.',
     reference: 'AU-C 330.08',
@@ -285,12 +300,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'A significant deficiency is:',
     options: [
-      'Any control deficiency',
       'A deficiency, or combination, that is less severe than a material weakness but important enough to merit attention',
+      'Any control deficiency',
       'A deficiency that results in a material misstatement',
-      'The same as a material weakness',
+      'The same as a material weakness'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A significant deficiency is important enough to merit attention by those charged with governance but is less severe than a material weakness. Material weakness = reasonable possibility of material misstatement not prevented/detected.',
     reference: 'AU-C 265.07',
@@ -306,11 +321,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'The auditor must communicate in writing to management:',
     options: [
       'All control deficiencies identified',
-      'Only material weaknesses',
       'Significant deficiencies and material weaknesses',
-      'Control deficiencies only if requested by management',
+      'Only material weaknesses',
+      'Control deficiencies only if requested by management'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'The auditor must communicate in writing significant deficiencies and material weaknesses to those charged with governance. Other deficiencies may be communicated orally.',
     reference: 'AU-C 265.11',
@@ -331,11 +346,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'The appropriateness of audit evidence relates to:',
     options: [
       'The quantity of evidence',
-      'The relevance and reliability of evidence',
-      'The cost of obtaining evidence',
       'The timing of obtaining evidence',
+      'The cost of obtaining evidence',
+      'The relevance and reliability of evidence'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Appropriateness measures the quality of evidence - its relevance to the assertion being tested and its reliability. Sufficiency measures the quantity of evidence.',
     reference: 'AU-C 500.06',
@@ -351,11 +366,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'Which of the following sources of evidence is generally most reliable?',
     options: [
       'Oral representations from management',
-      'Documents generated internally by the client',
       'Documents received directly from independent third parties',
-      'Computations made by the auditor',
+      'Documents generated internally by the client',
+      'Computations made by the auditor'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'External evidence from independent third parties (confirmations, bank statements) is generally more reliable than internal documents or oral representations.',
     reference: 'AU-C 500.A31',
@@ -407,10 +422,10 @@ export const AUD_QUESTIONS: Question[] = [
     options: [
       'Only high-risk areas',
       'Only material account balances',
-      'All relevant assertions for each material class of transactions, account balance, and disclosure',
       'Only when tests of controls are not performed',
+      'All relevant assertions for each material class of transactions, account balance, and disclosure'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Regardless of assessed risk or reliance on controls, substantive procedures are required for all relevant assertions for material transaction classes, balances, and disclosures.',
     reference: 'AU-C 330.18',
@@ -432,10 +447,10 @@ export const AUD_QUESTIONS: Question[] = [
     options: [
       'Risk of incorrect acceptance',
       'Risk of incorrect rejection',
-      'Risk affecting audit effectiveness',
       'Risk affecting audit efficiency',
+      'Risk affecting audit effectiveness'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Assessing control risk too low (concluding controls are effective when they are not) affects audit effectiveness - it could lead to failing to detect material misstatements.',
     reference: 'AU-C 530.05',
@@ -449,8 +464,13 @@ export const AUD_QUESTIONS: Question[] = [
     subtopic: 'Sample Size',
     difficulty: 'hard',
     question: 'As the tolerable rate of deviation decreases, the required sample size:',
-    options: ['Decreases', 'Increases', 'Remains unchanged', 'Depends on the population size'],
-    correctAnswer: 1,
+    options: [
+      'Depends on the population size',
+      'Decreases',
+      'Remains unchanged',
+      'Increases'
+    ],
+    correctAnswer: 3,
     explanation:
       'A lower tolerable deviation rate requires a larger sample to provide confidence that the actual rate does not exceed the tolerable rate.',
     reference: 'AU-C 530.A11',
@@ -487,11 +507,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'Type I subsequent events require:',
     options: [
       'Disclosure only',
-      'Adjustment to the financial statements',
       'No action',
-      'A modified opinion',
+      'Adjustment to the financial statements',
+      'A modified opinion'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Type I subsequent events provide evidence of conditions existing at the balance sheet date. They require adjustment. Type II events (conditions arising after) require disclosure only.',
     reference: 'AU-C 560.09',
@@ -546,8 +566,13 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question:
       'Audit documentation should be assembled within how many days after the report release date?',
-    options: ['30 days', '45 days', '60 days', '90 days'],
-    correctAnswer: 2,
+    options: [
+      '60 days',
+      '45 days',
+      '90 days',
+      '30 days'
+    ],
+    correctAnswer: 0,
     explanation:
       'The audit documentation must be assembled in a final file within 60 days after the report release date. After assembly, no deletions are permitted.',
     reference: 'AU-C 230.14',
@@ -589,10 +614,10 @@ export const AUD_QUESTIONS: Question[] = [
     options: [
       'The auditor cannot form an opinion',
       'Misstatements are material and pervasive',
-      'Misstatements are material but not pervasive',
       'The entity is not a going concern',
+      'Misstatements are material but not pervasive'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Qualified opinion: material but not pervasive misstatements or scope limitations. Adverse: material AND pervasive misstatements. Disclaimer: material AND pervasive scope limitations.',
     reference: 'AU-C 705.07',
@@ -608,11 +633,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'When is an adverse opinion appropriate?',
     options: [
       'When the auditor cannot obtain sufficient evidence',
-      'When misstatements are material and pervasive',
-      'When there is a scope limitation',
       'When there is substantial doubt about going concern',
+      'When there is a scope limitation',
+      'When misstatements are material and pervasive'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'An adverse opinion is issued when misstatements are both material AND pervasive to the financial statements - they are so significant that the statements are misleading.',
     reference: 'AU-C 705.08',
@@ -627,12 +652,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'An Emphasis of Matter paragraph is added when:',
     options: [
-      'The auditor wants to modify the opinion',
       'The auditor wants to draw attention to a matter appropriately presented in the financial statements',
+      'The auditor wants to modify the opinion',
       'There is a scope limitation',
-      'The financial statements depart from GAAP',
+      'The financial statements depart from GAAP'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Emphasis of Matter draws attention to matters properly presented (e.g., significant uncertainty, subsequent event). It does not modify the opinion. Other Matter relates to non-FS matters.',
     reference: 'AU-C 706.06',
@@ -649,11 +674,11 @@ export const AUD_QUESTIONS: Question[] = [
       'When there is substantial doubt about going concern but disclosure is adequate, the auditor:',
     options: [
       'Issues an adverse opinion',
-      'Issues a qualified opinion',
       'Issues an unmodified opinion with an Emphasis of Matter paragraph',
-      'Disclaims an opinion',
+      'Issues a qualified opinion',
+      'Disclaims an opinion'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'If going concern disclosure is adequate, an unmodified opinion is issued with an Emphasis of Matter (or separate section for SAS 134) drawing attention to the going concern uncertainty.',
     reference: 'AU-C 570.22',
@@ -673,12 +698,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'A review provides what level of assurance?',
     options: [
-      'Reasonable assurance (high)',
       'Limited assurance (moderate)',
+      'Reasonable assurance (high)',
       'No assurance',
-      'Absolute assurance',
+      'Absolute assurance'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A review provides limited (moderate) assurance - less than an audit (reasonable/high) but more than a compilation (no assurance). The conclusion is negative form.',
     reference: 'AR-C 90.04',
@@ -693,12 +718,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'The report on a review engagement expresses:',
     options: [
-      'An opinion that financial statements are fairly presented',
       'A conclusion that nothing came to attention indicating statements are not fairly presented',
+      'An opinion that financial statements are fairly presented',
       'A guarantee of the accuracy of the financial statements',
-      'Assurance that internal controls are effective',
+      'Assurance that internal controls are effective'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Review reports express negative assurance - "nothing came to our attention" rather than positive assurance that statements are fairly presented.',
     reference: 'AR-C 90.36',
@@ -713,12 +738,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'In a compilation engagement, the accountant:',
     options: [
-      'Obtains reasonable assurance',
-      'Performs inquiry and analytical procedures',
       'Assists management in presenting financial statements without obtaining assurance',
-      'Tests internal controls',
+      'Performs inquiry and analytical procedures',
+      'Obtains reasonable assurance',
+      'Tests internal controls'
     ],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
       'A compilation involves assisting management in presenting financial information without obtaining assurance. No procedures are performed to verify accuracy.',
     reference: 'AR-C 80.04',
@@ -753,12 +778,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'hard',
     question: 'A SOC 1 report is primarily intended for:',
     options: [
-      'The general public',
       'User entities and their auditors to evaluate controls affecting financial reporting',
+      'The general public',
       'Evaluating cybersecurity',
-      'Regulatory compliance only',
+      'Regulatory compliance only'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       "SOC 1 reports address controls at a service organization relevant to user entities' internal control over financial reporting. SOC 2 covers security, availability, confidentiality, etc.",
     reference: 'AT-C 320',
@@ -776,11 +801,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'Audit procedures for related party transactions should include:',
     options: [
       "Accepting management's representations without corroboration",
-      "Evaluating the business purpose and whether terms are equivalent to arm's length",
-      'Ignoring immaterial related party transactions',
       'Relying solely on inquiry of management',
+      'Ignoring immaterial related party transactions',
+      "Evaluating the business purpose and whether terms are equivalent to arm's length"
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       "The auditor should evaluate the business rationale and whether transactions are at arm's length terms. Special procedures apply due to increased fraud risk.",
     reference: 'AU-C 550.19',
@@ -795,12 +820,12 @@ export const AUD_QUESTIONS: Question[] = [
     difficulty: 'medium',
     question: 'Before using the work of internal auditors, the external auditor must evaluate:',
     options: [
-      "Only the internal audit department's budget",
       'The objectivity, competence, and work of the internal auditors',
+      "Only the internal audit department's budget",
       'Whether internal auditors are CPAs',
-      'Only whether the audit committee approves',
+      'Only whether the audit committee approves'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'The external auditor evaluates the objectivity, technical competence, and systematic approach of internal auditors before using their work.',
     reference: 'AU-C 610.11',
@@ -816,11 +841,11 @@ export const AUD_QUESTIONS: Question[] = [
     question: 'General IT controls include all of the following EXCEPT:',
     options: [
       'Program change controls',
-      'Access security controls',
-      'Computer operations controls',
       'Input validation checks on specific transactions',
+      'Computer operations controls',
+      'Access security controls'
     ],
-    correctAnswer: 3,
+    correctAnswer: 1,
     explanation:
       'General IT controls (ITGCs) are pervasive: access security, change management, computer operations, and backup/recovery. Input validation is an application control, specific to a transaction type.',
     reference: 'AU-C 315.A115',

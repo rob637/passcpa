@@ -17,11 +17,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'The primary role of an audit committee is to:',
     options: [
       "Prepare the company's financial statements",
-      'Oversee the financial reporting process and internal controls',
       'Conduct the annual audit',
-      'Manage day-to-day operations',
+      'Oversee the financial reporting process and internal controls',
+      'Manage day-to-day operations'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'The audit committee (independent board members) oversees financial reporting, internal controls, and the external audit. They do not prepare statements (management) or conduct audits (external auditors).',
     reference: 'Corporate Governance - SOX',
@@ -35,12 +35,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Under SOX Section 404, management must:',
     options: [
-      'Prepare a report on the effectiveness of ICFR',
       'Guarantee the accuracy of financial statements',
+      'Prepare a report on the effectiveness of ICFR',
       'Eliminate all fraud risk',
-      'Conduct the annual audit',
+      'Conduct the annual audit'
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
       "SOX 404 requires management to assess and report on the effectiveness of internal control over financial reporting (ICFR). For large accelerated filers, the external auditor must also attest to management's assessment.",
     reference: 'SOX Section 404',
@@ -55,11 +55,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'A code of conduct in an organization is designed to:',
     options: [
       'Replace internal controls',
-      'Set expectations for ethical behavior',
       'Guarantee legal compliance',
-      'Eliminate the need for oversight',
+      'Set expectations for ethical behavior',
+      'Eliminate the need for oversight'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'A code of conduct establishes standards and expectations for ethical behavior. It complements (not replaces) controls and does not guarantee outcomes but helps shape organizational culture.',
     reference: 'Corporate Governance',
@@ -114,7 +114,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Supply and Demand',
     difficulty: 'easy',
     question: 'If demand increases while supply remains constant, the equilibrium price will:',
-    options: ['Decrease', 'Increase', 'Remain the same', 'Become unstable'],
+    options: [
+      'Decrease',
+      'Increase',
+      'Remain the same',
+      'Become unstable'
+    ],
     correctAnswer: 1,
     explanation:
       'When demand increases with constant supply, there is excess demand at the original price. This drives price up until a new equilibrium is reached at a higher price and higher quantity.',
@@ -130,11 +135,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'If price elasticity of demand is -2.0, a 10% price increase will cause:',
     options: [
       'A 5% decrease in quantity demanded',
-      'A 20% decrease in quantity demanded',
-      'A 20% increase in quantity demanded',
       'No change in quantity demanded',
+      'A 20% increase in quantity demanded',
+      'A 20% decrease in quantity demanded'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Price elasticity of demand = % change in quantity ÷ % change in price. If elasticity = -2.0 and price increases 10%, then quantity changes by -2.0 × 10% = -20% (decreases by 20%).',
     reference: 'Microeconomics - Elasticity',
@@ -147,8 +152,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Market Structures',
     difficulty: 'medium',
     question: 'A market with many sellers of differentiated products is:',
-    options: ['Perfect competition', 'Monopolistic competition', 'Oligopoly', 'Monopoly'],
-    correctAnswer: 1,
+    options: [
+      'Perfect competition',
+      'Oligopoly',
+      'Monopolistic competition',
+      'Monopoly'
+    ],
+    correctAnswer: 2,
     explanation:
       'Monopolistic competition: many sellers, differentiated products, low barriers to entry. Perfect competition: many sellers, identical products. Oligopoly: few sellers. Monopoly: one seller.',
     reference: 'Microeconomics - Market Structures',
@@ -162,12 +172,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'GDP measured using the expenditure approach equals:',
     options: [
-      'Wages + Rent + Interest + Profits',
       'C + I + G + (X - M)',
+      'Wages + Rent + Interest + Profits',
       'Value of all goods and services produced',
-      'GNP minus net factor payments from abroad',
+      'GNP minus net factor payments from abroad'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Expenditure approach: GDP = C (consumption) + I (investment) + G (government spending) + NX (net exports = exports - imports). Income approach uses wages, rent, interest, profits.',
     reference: 'Macroeconomics - GDP',
@@ -223,8 +233,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question:
       'An investment of $10,000 today at 8% annually will be worth how much in 5 years? (FV factor = 1.4693)',
-    options: ['$14,000', '$14,693', '$15,000', '$18,000'],
-    correctAnswer: 1,
+    options: [
+      '$14,693',
+      '$15,000',
+      '$14,000',
+      '$18,000'
+    ],
+    correctAnswer: 0,
     explanation:
       'FV = PV × (1 + r)^n = $10,000 × 1.4693 = $14,693. The future value factor for 8% over 5 years is 1.4693.',
     reference: 'Finance - TVM',
@@ -238,8 +253,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A project has initial cost of $100,000 and generates annual cash flows of $30,000 for 5 years. At 10% discount rate, PV of annuity factor = 3.791. What is the NPV?',
-    options: ['$13,730', '$50,000', '$13,730 negative', '$113,730'],
-    correctAnswer: 0,
+    options: [
+      '$13,730 negative',
+      '$13,730',
+      '$50,000',
+      '$113,730'
+    ],
+    correctAnswer: 1,
     explanation:
       'NPV = PV of cash flows - Initial cost = ($30,000 × 3.791) - $100,000 = $113,730 - $100,000 = $13,730 positive.',
     reference: 'Finance - Capital Budgeting',
@@ -253,12 +273,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'The internal rate of return (IRR) is the discount rate that:',
     options: [
-      'Maximizes net present value',
       'Makes net present value equal to zero',
+      'Maximizes net present value',
       'Minimizes the payback period',
-      'Equals the cost of capital',
+      'Equals the cost of capital'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'IRR is the discount rate where NPV = 0. If IRR exceeds the cost of capital, the project creates value. IRR does not necessarily maximize NPV or equal cost of capital.',
     reference: 'Finance - IRR',
@@ -271,8 +291,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Working Capital',
     difficulty: 'medium',
     question: 'The cash conversion cycle equals:',
-    options: ['DSO + DIO - DPO', 'DSO - DIO + DPO', 'DSO + DIO + DPO', 'DSO - DIO - DPO'],
-    correctAnswer: 0,
+    options: ['DSO - DIO - DPO',
+      'DSO - DIO + DPO',
+      'DSO + DIO + DPO',
+      'DSO + DIO - DPO'],
+    correctAnswer: 3,
     explanation:
       'Cash Conversion Cycle = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payables Outstanding (DPO). It measures how long cash is tied up in working capital.',
     reference: 'Finance - Working Capital',
@@ -286,8 +309,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'Using CAPM, if the risk-free rate is 3%, beta is 1.2, and market risk premium is 6%, the cost of equity is:',
-    options: ['7.2%', '9.0%', '10.2%', '12.0%'],
-    correctAnswer: 2,
+    options: [
+      '12.0%',
+      '9.0%',
+      '7.2%',
+      '10.2%'
+    ],
+    correctAnswer: 3,
     explanation:
       'CAPM: Re = Rf + β(Rm - Rf) = 3% + 1.2(6%) = 3% + 7.2% = 10.2%. Market risk premium is (Rm - Rf), which is given as 6%.',
     reference: 'Finance - CAPM',
@@ -301,8 +329,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'A company has operating income of $200,000 and fixed costs of $150,000. The degree of operating leverage is:',
-    options: ['1.75', '2.33', '1.33', '0.75'],
-    correctAnswer: 0,
+    options: [
+      '1.33',
+      '2.33',
+      '0.75',
+      '1.75'
+    ],
+    correctAnswer: 3,
     explanation:
       'DOL = Contribution Margin / Operating Income. Here, CM = Operating Income + Fixed Costs = $200,000 + $150,000 = $350,000. DOL = $350,000 / $200,000 = 1.75.',
     reference: 'Finance - Leverage',
@@ -319,8 +352,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Cost Behavior',
     difficulty: 'easy',
     question: 'A cost that remains constant in total as activity increases is:',
-    options: ['Variable cost', 'Fixed cost', 'Mixed cost', 'Step cost'],
-    correctAnswer: 1,
+    options: [
+      'Variable cost',
+      'Mixed cost',
+      'Fixed cost',
+      'Step cost'
+    ],
+    correctAnswer: 2,
     explanation:
       'Fixed costs remain constant in total regardless of activity level (within relevant range). Variable costs change in total with activity. Per-unit fixed costs decrease as volume increases.',
     reference: 'Cost Accounting - Cost Behavior',
@@ -365,11 +403,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'In job order costing, overhead is applied based on:',
     options: [
       'Actual overhead costs incurred',
-      'A predetermined overhead rate',
-      'Direct materials cost only',
       'The number of products sold',
+      'Direct materials cost only',
+      'A predetermined overhead rate'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Job costing uses a predetermined overhead rate (estimated overhead ÷ estimated activity base) to apply overhead. Actual overhead may differ, creating over/under-applied overhead.',
     reference: 'Cost Accounting - Job Costing',
@@ -403,11 +441,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'The primary benefit of activity-based costing over traditional costing is:',
     options: [
       'Simpler calculations',
-      'Lower overhead costs',
       'More accurate product cost allocation',
-      'Faster processing',
+      'Lower overhead costs',
+      'Faster processing'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'ABC uses multiple cost drivers to allocate overhead based on activities that cause costs, resulting in more accurate product costs, especially with diverse products and complex operations.',
     reference: 'Cost Accounting - ABC',
@@ -463,12 +501,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Just-in-time inventory management aims to:',
     options: [
-      'Maximize inventory levels for safety',
       'Minimize inventory levels and waste',
+      'Maximize inventory levels for safety',
       'Order in large batches for discounts',
-      'Increase carrying costs',
+      'Increase carrying costs'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'JIT minimizes inventory by producing/receiving goods only as needed. Benefits: reduced carrying costs, less waste, improved quality. Requires reliable suppliers and demand forecasting.',
     reference: 'Operations - JIT',
@@ -481,8 +519,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Performance Measures',
     difficulty: 'medium',
     question: 'Throughput time includes all EXCEPT:',
-    options: ['Process time', 'Inspection time', 'Move time', 'Idle time after delivery'],
-    correctAnswer: 3,
+    options: [
+      'Process time',
+      'Move time',
+      'Idle time after delivery',
+      'Inspection time'
+    ],
+    correctAnswer: 2,
     explanation:
       'Throughput time = Process time + Inspection time + Move time + Queue (wait) time. It measures time from start of production to completion. Time after delivery is not part of throughput.',
     reference: 'Operations - Performance',
@@ -497,11 +540,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'Kaizen refers to:',
     options: [
       'Breakthrough improvement projects',
-      'Continuous incremental improvement',
       'Zero defect production',
-      'Computer-integrated manufacturing',
+      'Continuous incremental improvement',
+      'Computer-integrated manufacturing'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Kaizen is continuous, incremental improvement involving all employees. It contrasts with breakthrough/radical improvement. Key principle: small improvements over time yield significant results.',
     reference: 'Operations - Lean',
@@ -520,11 +563,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'Segregation of duties in IT requires separating:',
     options: [
       'Marketing and sales functions',
-      'Programming, operations, and data custody',
       'Manufacturing and distribution',
-      'Purchasing and receiving',
+      'Programming, operations, and data custody',
+      'Purchasing and receiving'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'IT segregation separates: programming (system changes), operations (running systems), and data custody (data control/security). This prevents unauthorized changes and fraud.',
     reference: 'IT - Controls',
@@ -538,12 +581,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'In a relational database, a foreign key:',
     options: [
-      'Uniquely identifies each record in a table',
       "Links one table to another table's primary key",
+      'Uniquely identifies each record in a table',
       'Encrypts sensitive data',
-      'Stores backup data',
+      'Stores backup data'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'A foreign key in one table references the primary key in another table, establishing relationships between tables. Primary key uniquely identifies records in a table.',
     reference: 'IT - Databases',
@@ -558,11 +601,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'A firewall protects against:',
     options: [
       'Power outages',
-      'Unauthorized network access',
       'Hardware failures',
-      'Employee errors',
+      'Unauthorized network access',
+      'Employee errors'
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation:
       'Firewalls filter network traffic based on rules, blocking unauthorized access while allowing legitimate traffic. They are a key perimeter security control.',
     reference: 'IT - Security',
@@ -576,12 +619,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'medium',
     question: 'Public key infrastructure (PKI) is used for:',
     options: [
-      'Physical building access',
       'Digital certificates and encryption',
+      'Physical building access',
       'Inventory management',
-      'Financial reporting',
+      'Financial reporting'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'PKI manages digital certificates for encryption, digital signatures, and authentication. It uses asymmetric encryption with public/private key pairs.',
     reference: 'IT - E-Commerce',
@@ -615,11 +658,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'A hot site for disaster recovery:',
     options: [
       'Has no equipment or data',
-      'Has equipment but no current data',
       'Is fully equipped with current data and ready to operate',
-      'Is the primary data center',
+      'Has equipment but no current data',
+      'Is the primary data center'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Hot site: fully equipped, current data, operational immediately. Warm site: equipped but needs current data loaded. Cold site: empty facility needing equipment and data.',
     reference: 'IT - Business Continuity',
@@ -656,12 +699,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'Systematic risk is:',
     options: [
-      'Risk specific to one company',
       'Market-wide risk that cannot be diversified',
+      'Risk specific to one company',
       'Risk from poor management',
-      'Risk that can be eliminated through diversification',
+      'Risk that can be eliminated through diversification'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Systematic (market) risk affects all securities and cannot be diversified away (e.g., interest rates, inflation). Unsystematic (company-specific) risk can be reduced through diversification.',
     reference: 'Finance - Risk',
@@ -677,10 +720,10 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Firms should use 100% equity',
       'Firms should use 100% debt',
-      'Optimal capital structure balances tax benefits of debt against financial distress costs',
       'Capital structure does not matter',
+      'Optimal capital structure balances tax benefits of debt against financial distress costs'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Trade-off theory: optimal debt level balances tax shield benefits (interest deductibility) against costs of financial distress (bankruptcy risk). MM with taxes shows debt adds value, but distress costs limit it.',
     reference: 'Finance - Capital Structure',
@@ -694,12 +737,12 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question: 'A call option gives the holder the right to:',
     options: [
-      'Sell an asset at a specified price',
       'Buy an asset at a specified price',
+      'Sell an asset at a specified price',
       'Require the seller to buy the asset',
-      'Receive dividends',
+      'Receive dividends'
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation:
       'Call option: right to BUY at strike price. Put option: right to SELL at strike price. Options give rights (not obligations) to the holder. The writer has the obligation.',
     reference: 'Finance - Derivatives',
@@ -717,8 +760,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     difficulty: 'hard',
     question:
       'Standard price is $10/unit, standard quantity is 2 units per finished good. Actual: 2,100 units used for 1,000 finished goods at $9.50/unit. What is the materials quantity variance?',
-    options: ['$1,000 unfavorable', '$1,000 favorable', '$950 unfavorable', '$950 favorable'],
-    correctAnswer: 0,
+    options: [
+      '$950 unfavorable',
+      '$1,000 unfavorable',
+      '$1,000 favorable',
+      '$950 favorable'
+    ],
+    correctAnswer: 1,
     explanation:
       'Standard quantity for actual output = 1,000 × 2 = 2,000 units. Quantity variance = (Actual qty - Standard qty) × Standard price = (2,100 - 2,000) × $10 = $1,000 unfavorable.',
     reference: 'Cost Accounting - Variances',
@@ -734,10 +782,10 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     options: [
       'Market price',
       'Full cost plus markup',
-      'Variable cost plus opportunity cost',
       'Negotiated price',
+      'Variable cost plus opportunity cost'
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
     explanation:
       'Minimum transfer price = Variable cost + Opportunity cost (lost contribution from external sales). If no external market or excess capacity, opportunity cost may be zero.',
     reference: 'Cost Accounting - Transfer Pricing',
@@ -772,11 +820,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
       'A company has excess capacity. Variable cost is $30/unit, fixed cost is $20/unit (based on normal volume). A special order offers $35/unit. The company should:',
     options: [
       'Reject because price is below full cost',
-      'Accept because price exceeds variable cost',
-      'Accept only if price covers fixed costs',
       'Reject because it affects regular sales',
+      'Accept only if price covers fixed costs',
+      'Accept because price exceeds variable cost'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'With excess capacity and no impact on regular sales, accept if price ($35) > variable cost ($30). The $5 contribution margin adds to profit. Fixed costs are not relevant (already being incurred).',
     reference: 'Cost Accounting - Special Order',
@@ -793,8 +841,13 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     subtopic: 'Master Budget',
     difficulty: 'medium',
     question: 'The starting point for a master budget is typically the:',
-    options: ['Production budget', 'Sales budget', 'Cash budget', 'Capital budget'],
-    correctAnswer: 1,
+    options: [
+      'Sales budget',
+      'Capital budget',
+      'Cash budget',
+      'Production budget'
+    ],
+    correctAnswer: 0,
     explanation:
       'The sales budget is prepared first because all other budgets depend on expected sales volume. From sales → production → materials, labor, overhead → cash budget.',
     reference: 'Budgeting - Master Budget',
@@ -809,11 +862,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'A flexible budget differs from a static budget because it:',
     options: [
       'Is prepared at the end of the period',
-      'Adjusts for actual activity level',
-      'Includes only fixed costs',
       'Is less accurate',
+      'Includes only fixed costs',
+      'Adjusts for actual activity level'
     ],
-    correctAnswer: 1,
+    correctAnswer: 3,
     explanation:
       'Flexible budgets adjust budgeted amounts for actual activity level, allowing meaningful comparison. Static budgets are based on one expected activity level and may not reflect actual conditions.',
     reference: 'Budgeting - Flexible Budget',
@@ -828,11 +881,11 @@ export const BEC_QUESTIONS_EXTENDED: Question[] = [
     question: 'The balanced scorecard includes all EXCEPT:',
     options: [
       'Financial perspective',
-      'Customer perspective',
       'Competitor perspective',
-      'Learning and growth perspective',
+      'Customer perspective',
+      'Learning and growth perspective'
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
       'Balanced Scorecard perspectives: (1) Financial, (2) Customer, (3) Internal Business Process, (4) Learning and Growth. Competitor analysis is separate from BSC.',
     reference: 'Budgeting - Balanced Scorecard',

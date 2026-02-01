@@ -79,16 +79,17 @@ const Landing = () => {
   const comparisonData = [
     { feature: 'Annual Price', voraprep: '$99/yr', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
     { feature: 'Price per Month', voraprep: '$8.25', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
-    { feature: 'AI-Powered Tutor', voraprep: true, becker: false, roger: false, surgent: 'Limited', highlight: true },
+    { feature: 'AI Tutor Included', voraprep: true, becker: 'Extra $$$', roger: false, surgent: 'Limited', highlight: true },
     { feature: 'Learning Style', voraprep: 'Active Practice', becker: 'Passive Video', roger: 'Passive Video', surgent: 'Passive Video', highlight: true },
-    { feature: '2026 Blueprint Ready', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
+    { feature: '2025 & 2026 Blueprint', voraprep: true, becker: '2026 only', roger: '2026 only', surgent: '2026 only', highlight: true },
+    { feature: 'BEC Section Included', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Adaptive Learning', voraprep: true, becker: 'Extra $$$', roger: false, surgent: true, highlight: true },
     { feature: 'Spaced Repetition', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Mobile App', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Offline Mode', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Progress Analytics', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Free Trial', voraprep: 'Full Access', becker: '14 days', roger: '3 days', surgent: '5 days', highlight: true },
-    { feature: 'Credit Card Required', voraprep: false, becker: true, roger: true, surgent: true, highlight: true },
+    { feature: 'No Credit Card to Start', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Pass Guarantee', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Flashcards', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Study Planner', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
@@ -546,10 +547,10 @@ const Landing = () => {
               Complete Coverage
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-              All 6 CPA Exam Sections
+              All 7 CPA Exam Sections
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Updated for the 2026 CPA Exam Blueprint with both Core and Discipline sections
+              Updated for the 2026 Blueprint with Core + Discipline sections, plus BEC for 2025 Blueprint compliance
             </p>
           </div>
 
@@ -561,6 +562,7 @@ const Landing = () => {
               { code: 'BAR', name: 'Business Analysis & Reporting', questions: 393, type: 'Discipline', color: 'from-orange-500 to-amber-500' },
               { code: 'ISC', name: 'Information Systems & Controls', questions: 388, type: 'Discipline', color: 'from-red-500 to-rose-500' },
               { code: 'TCP', name: 'Tax Compliance & Planning', questions: 379, type: 'Discipline', color: 'from-cyan-500 to-teal-500' },
+              { code: 'BEC', name: 'Business Environment & Concepts', questions: 119, type: '2025 Blueprint', color: 'from-purple-500 to-violet-500' },
             ].map((section) => (
               <div 
                 key={section.code}

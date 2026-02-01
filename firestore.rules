@@ -51,6 +51,12 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    // Written Communications collection - read-only for users, write for admins
+    match /written-communication/{wcId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
     // Topics collection - read-only for users, write for admins
     match /topics/{topicId} {
       allow read: if isAuthenticated();

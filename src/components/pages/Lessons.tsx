@@ -158,7 +158,7 @@ const Lessons: React.FC = () => {
           const completed = new Set(
             Object.entries(progress || {})
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              .filter(([, data]: [string, any]) => data.status === 'completed')
+              .filter(([, data]: [string, any]) => data.status === 'completed' || data.completedAt)
               .map(([lessonId]) => lessonId)
           );
           setCompletedLessons(completed);

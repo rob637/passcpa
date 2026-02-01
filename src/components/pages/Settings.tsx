@@ -19,7 +19,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
 // import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS, isBefore2026Blueprint } from '../../config/examConfig';
+import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -374,32 +374,44 @@ const Settings: React.FC = () => {
                     <label className="block text-sm font-medium text-slate-700 mb-2">
                       Current Exam Section
                     </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {Object.entries(CPA_SECTIONS)
-                        .filter(([key]) => EXAM_SECTIONS.includes(key))
-                        .map(([key, section]) => (
-                        <button
-                          key={key}
-                          onClick={() => setExamSection(key)}
-                          className={clsx(
-                            'p-3 rounded-xl border-2 text-left transition-all',
-                            examSection === key
-                              ? 'border-primary-500 bg-primary-50'
-                              : 'border-slate-200 hover:border-primary-300'
-                          )}
-                        >
-                          <div
-                            className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
-                            style={{ backgroundColor: (section as CPASection).color }}
-                          >
-                            {(section as CPASection).shortName}
-                          </div>
-                          <div className="text-sm font-medium text-slate-900">
-                            {(section as CPASection).shortName}
-                          </div>
-                        </button>
-                      ))}
-                    </div>
+                    {(() => {
+                      // Determine available sections based on user's exam date
+                      const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+                      const userExamDate = examDate ? new Date(examDate) : new Date();
+                      const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
+                      const availableSections = is2025Blueprint
+                        ? [...CORE_SECTIONS, 'BEC']
+                        : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+                      
+                      return (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          {Object.entries(CPA_SECTIONS)
+                            .filter(([key]) => availableSections.includes(key))
+                            .map(([key, section]) => (
+                            <button
+                              key={key}
+                              onClick={() => setExamSection(key)}
+                              className={clsx(
+                                'p-3 rounded-xl border-2 text-left transition-all',
+                                examSection === key
+                                  ? 'border-primary-500 bg-primary-50'
+                                  : 'border-slate-200 hover:border-primary-300'
+                              )}
+                            >
+                              <div
+                                className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
+                                style={{ backgroundColor: (section as CPASection).color }}
+                              >
+                                {(section as CPASection).shortName}
+                              </div>
+                              <div className="text-sm font-medium text-slate-900">
+                                {(section as CPASection).shortName}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      );
+                    })()}
                     
                     {/* Blueprint Info Note */}
                     <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">

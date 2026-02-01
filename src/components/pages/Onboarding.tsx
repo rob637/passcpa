@@ -13,7 +13,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS, EXAM_SECTIONS } from '../../config/examConfig';
+import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 // STUDY_PLAN_TEMPLATES was unused
 import clsx from 'clsx';
 
@@ -102,11 +102,11 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate 
   const is2025Blueprint = examDateObj < BLUEPRINT_CUTOFF;
   
   // Filter sections based on blueprint
-  // 2025: AUD, FAR, REG + BEC
-  // 2026: AUD, FAR, REG + BAR, ISC, TCP
+  // 2025 Blueprint (before July 1, 2026): AUD, FAR, REG + BEC
+  // 2026 Blueprint (on/after July 1, 2026): AUD, FAR, REG + BAR, ISC, TCP
   const availableSections = is2025Blueprint
-    ? ['AUD', 'FAR', 'REG', 'BEC']
-    : EXAM_SECTIONS;
+    ? [...CORE_SECTIONS, 'BEC']
+    : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
 
   return (
   <div>

@@ -684,7 +684,7 @@ const LessonViewer: React.FC = () => {
         {/* Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <Link
-            to={`/practice?section=${lesson.section}`}
+            to={`/practice?section=${lesson.section}${lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
             className="card p-4 hover:shadow-md transition-shadow group"
           >
             <div className="flex items-center gap-3">
@@ -696,7 +696,7 @@ const LessonViewer: React.FC = () => {
                   Practice Questions
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Test your knowledge
+                  Test your knowledge on this topic
                 </p>
               </div>
             </div>

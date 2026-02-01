@@ -468,6 +468,7 @@ const Practice: React.FC = () => {
   // Check if coming from daily plan
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
+  const blueprintAreaParam = searchParams.get('blueprintArea');
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -604,6 +605,7 @@ const Practice: React.FC = () => {
         
         fetchedQuestions = await fetchQuestions({
           section,
+          blueprintArea: blueprintAreaParam || undefined, // Filter by lesson topic if provided
           difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
           count: config.count,
           hr1Only: applyHr1Filter, // Only for tax sections (REG, TCP) in 2026

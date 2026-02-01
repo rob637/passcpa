@@ -4284,5 +4284,357 @@ export const barLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // BAR: ADDITIONAL ADVANCED TOPICS
+  // =============================================
+  {
+    id: 'BAR-III-010',
+    section: 'BAR',
+    title: "Prospective Financial Information",
+    description: "Understand forecasts, projections, and pro forma statements",
+    order: 66,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Financial Analysis", "Forecasting", "Pro Forma"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Forward-looking financial information requires different analysis! Understanding forecasts vs projections, and how to evaluate assumptions, is critical for BAR!"
+        },
+        {
+          title: 'Types of Prospective Statements',
+          type: 'text',
+          content: "**Forecast:**\n• Expected future results\n• Based on expected conditions\n• General distribution allowed\n\n**Projection:**\n• \"What if\" scenarios\n• Hypothetical assumptions\n• Limited distribution only\n\n**Key difference:** Expected vs Hypothetical"
+        },
+        {
+          title: 'Evaluation Criteria',
+          type: 'table',
+          headers: ['Criterion', 'Question to Ask', 'Red Flag'],
+          rows: [
+            ['Reasonableness', 'Are assumptions realistic?', 'Growth >> Industry'],
+            ['Consistency', 'Do assumptions align?', 'Conflicting trends'],
+            ['Completeness', 'All material items?', 'Missing key costs'],
+            ['Support', 'Evidence for assumptions?', 'No supporting data']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Assumption Testing',
+          type: 'callout',
+          content: "**\"RICH\" Assumptions:**\n\n**R**easonable - Based on reality\n**I**nternally consistent - Math works\n**C**omplete - Nothing missing\n**H**istorically grounded - Ties to past\n\n**Challenge every assumption!**"
+        },
+        {
+          title: 'Pro Forma Financial Statements',
+          type: 'text',
+          content: "**Common uses:**\n\n• Merger/acquisition analysis\n• Significant transactions\n• IPO presentations\n• Restructuring scenarios\n\n**SEC Regulation S-X Article 11:**\n• Specific requirements for filings\n• Historical period adjustments\n• Transaction adjustments"
+        },
+        {
+          title: 'Sensitivity Analysis',
+          type: 'text',
+          content: "**Test impact of changes:**\n\n• What if revenue is 10% lower?\n• What if costs increase 5%?\n• What if interest rates rise?\n\n**Helps identify:**\n• Key drivers\n• Break-even points\n• Risk scenarios\n\n**Show ranges, not just point estimates**"
+        },
+        {
+          title: '⚠️ Exam Trap: Attestation Standards',
+          type: 'warning',
+          content: "**CPAs can provide:**\n\n**Examination:** High assurance on forecasts/projections\n**Compilation:** No assurance, procedures only\n**Agreed-upon procedures:** Specific testing\n\n**Cannot examine projections for general use!**\n\n**Projections = Limited use only**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Forecast: Expected conditions (general use)",
+            "Projection: Hypothetical scenarios (limited use)",
+            "Test assumptions for reasonableness and consistency",
+            "Sensitivity analysis reveals key drivers",
+            "Pro forma: Shows impact of transactions",
+            "CPAs can examine forecasts, not general-use projections",
+            "Challenge all assumptions systematically"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-III-011',
+    section: 'BAR',
+    title: "Valuation Concepts and Methods",
+    description: "Understand approaches to business and asset valuation",
+    order: 67,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Valuation", "DCF", "Market Approach"],
+    blueprintArea: 'BAR-II',
+    blueprintTopic: 'BAR-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Valuation is used everywhere—M&A, fair value, impairment testing! Understanding the three valuation approaches and when to use each is essential for BAR analysis!"
+        },
+        {
+          title: 'Three Valuation Approaches',
+          type: 'table',
+          headers: ['Approach', 'Basis', 'Best For'],
+          rows: [
+            ['Income', 'Present value of future cash flows', 'Operating businesses'],
+            ['Market', 'Comparable transactions/companies', 'When comparables exist'],
+            ['Cost/Asset', 'Replacement or reproduction cost', 'Asset-heavy companies']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: When to Use Which',
+          type: 'callout',
+          content: "**\"IMC\"**\n\n**I**ncome: Future earnings power matters\n**M**arket: Good comparables available\n**C**ost: Asset values dominate\n\n**Often use multiple approaches!**\n**Reconcile and weight the conclusions**"
+        },
+        {
+          title: 'Discounted Cash Flow (DCF)',
+          type: 'text',
+          content: "**Steps:**\n\n1. Project future cash flows\n2. Determine discount rate (WACC)\n3. Calculate present value\n4. Add terminal value (PV)\n5. Sum = Enterprise value\n6. Subtract debt = Equity value\n\n**Terminal value often 60-80% of total!**"
+        },
+        {
+          title: 'Market Multiples',
+          type: 'text',
+          content: "**Common multiples:**\n\n**EV/EBITDA:**\n• Enterprise value / EBITDA\n• Most common for M&A\n\n**P/E Ratio:**\n• Price / Earnings per share\n• Equity value focus\n\n**EV/Revenue:**\n• For high-growth, unprofitable companies\n\n**Adjust for differences in companies!**"
+        },
+        {
+          title: 'Discount Rate (WACC)',
+          type: 'text',
+          content: "**Weighted Average Cost of Capital:**\n\nWACC = (E/V × Re) + (D/V × Rd × (1-T))\n\n**Where:**\n• E = Market value of equity\n• D = Market value of debt\n• V = E + D\n• Re = Cost of equity (CAPM)\n• Rd = Cost of debt\n• T = Tax rate"
+        },
+        {
+          title: '⚠️ Exam Trap: Control Premium',
+          type: 'warning',
+          content: "**When buying control:**\n\n**Add control premium** to minority value\n• Typically 20-40%\n• For ability to direct company\n\n**When valuing minority interest:**\n**Subtract discount** from control value\n• Lack of control discount\n• Lack of marketability discount\n\n**Premiums/discounts can be significant!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Three approaches: Income, Market, Cost",
+            "DCF: PV of future cash flows + Terminal value",
+            "WACC: Weighted cost of debt and equity",
+            "Market: Use comparable multiples",
+            "Control premium for majority stakes",
+            "Minority discounts for lack of control/marketability",
+            "Often use and reconcile multiple approaches"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-II-010',
+    section: 'BAR',
+    title: "Data Analytics Fundamentals",
+    description: "Understand data analysis techniques for accountants",
+    order: 68,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Data Analytics", "Business Intelligence", "Analysis"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Data analytics transforms how accounting works! Understanding analytics types, data visualization, and statistical concepts is essential for modern accountants. BAR tests these skills!"
+        },
+        {
+          title: 'Types of Analytics',
+          type: 'table',
+          headers: ['Type', 'Question Asked', 'Example'],
+          rows: [
+            ['Descriptive', 'What happened?', 'Sales by region last quarter'],
+            ['Diagnostic', 'Why did it happen?', 'Root cause of variance'],
+            ['Predictive', 'What will happen?', 'Revenue forecast model'],
+            ['Prescriptive', 'What should we do?', 'Optimal pricing recommendation']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Analytics Progression',
+          type: 'callout',
+          content: "**\"DDPP\"** - Value increases:\n\n**D**escriptive: Hindsight (reporting)\n**D**iagnostic: Insight (analysis)\n**P**redictive: Foresight (forecasting)\n**P**rescriptive: Optimization (AI)\n\n**Most accounting is still descriptive!**"
+        },
+        {
+          title: 'Data Quality Dimensions',
+          type: 'text',
+          content: "**Good data is:**\n\n• **Accurate:** Correct values\n• **Complete:** No missing data\n• **Consistent:** Same across sources\n• **Timely:** Current and available\n• **Valid:** Correct format/type\n• **Unique:** No duplicates\n\n**\"Garbage in, garbage out\"**"
+        },
+        {
+          title: 'Visualization Best Practices',
+          type: 'text',
+          content: "**Choose appropriate charts:**\n\n• **Trends over time:** Line chart\n• **Comparisons:** Bar chart\n• **Proportions:** Pie chart (sparingly!)\n• **Correlations:** Scatter plot\n• **Distributions:** Histogram\n\n**Keep it simple—avoid chartjunk!**"
+        },
+        {
+          title: 'Statistical Concepts',
+          type: 'text',
+          content: "**Key measures:**\n\n**Central tendency:**\n• Mean (average), Median (middle), Mode (most common)\n\n**Dispersion:**\n• Range, Standard deviation, Variance\n\n**Relationships:**\n• Correlation (strength), Regression (prediction)\n\n**Correlation ≠ Causation!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Outliers',
+          type: 'warning',
+          content: "**Outliers affect analysis:**\n\n• Can skew mean significantly\n• Median more resistant\n• May indicate errors OR important exceptions\n\n**Don't automatically exclude!**\n\n**Investigate outliers:**\n• Data error?\n• Fraud?\n• Legitimate unusual transaction?"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Four types: Descriptive → Prescriptive",
+            "Data quality: Accurate, complete, consistent, timely",
+            "Match visualization to data type",
+            "Mean affected by outliers; median more robust",
+            "Correlation ≠ Causation",
+            "Investigate outliers—don't just exclude",
+            "Most accounting still descriptive analytics"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-II-011',
+    section: 'BAR',
+    title: "Regression Analysis",
+    description: "Understand regression for financial forecasting and analysis",
+    order: 69,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Data Analytics", "Regression", "Statistical Analysis"],
+    blueprintArea: 'BAR-III',
+    blueprintTopic: 'BAR-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Regression predicts outcomes! Understanding how to use regression for cost estimation, forecasting, and relationship analysis is essential for analytical skills on BAR!"
+        },
+        {
+          title: 'Simple Linear Regression',
+          type: 'text',
+          content: "**Y = a + bX**\n\n• **Y:** Dependent variable (what we predict)\n• **X:** Independent variable (predictor)\n• **a:** Y-intercept (fixed portion)\n• **b:** Slope (variable portion)\n\n**Example:** Cost = Fixed + (Variable × Units)\n\n**a = Fixed costs, b = Variable cost per unit**"
+        },
+        {
+          title: 'Regression Statistics',
+          type: 'table',
+          headers: ['Statistic', 'Meaning', 'Good Value'],
+          rows: [
+            ['R-squared (R²)', 'Variation explained', 'Closer to 1.0'],
+            ['Adjusted R²', 'R² adjusted for variables', 'Closer to 1.0'],
+            ['Standard error', 'Prediction precision', 'Lower is better'],
+            ['P-value', 'Statistical significance', '< 0.05 typically']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: R-Squared',
+          type: 'callout',
+          content: "**\"Percent explained\"**\n\n**R² = 0.85:**\n• 85% of variation in Y\n• Explained by X\n\n**Higher R² = Better fit**\n\n**But NOT always causation!**\n**And NOT always a good model**"
+        },
+        {
+          title: 'High-Low Method',
+          type: 'text',
+          content: "**Simple cost estimation:**\n\n**Variable cost per unit:**\n(Highest cost − Lowest cost) / (Highest activity − Lowest activity)\n\n**Fixed cost:**\nTotal cost − (Variable × Activity)\n\n**Limitations:**\n• Only uses two points\n• Outliers can distort\n• Less accurate than regression"
+        },
+        {
+          title: 'Multiple Regression',
+          type: 'text',
+          content: "**Multiple predictors:**\n\nY = a + b₁X₁ + b₂X₂ + ... + bₙXₙ\n\n**Examples:**\n• Sales = f(advertising, price, seasonality)\n• Cost = f(units, batches, complexity)\n\n**Caution: Multicollinearity**\n• When Xs are correlated with each other\n• Distorts coefficient estimates"
+        },
+        {
+          title: '⚠️ Exam Trap: Assumptions',
+          type: 'warning',
+          content: "**Regression assumptions:**\n\n• **Linearity:** Relationship is linear\n• **Independence:** Observations independent\n• **Normality:** Residuals normally distributed\n• **Homoscedasticity:** Constant variance\n\n**Violate assumptions = Unreliable results!**\n\n**Always plot residuals to check**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Y = a + bX: a is fixed, b is variable",
+            "R² measures how well model explains variation",
+            "Higher R² = Better fit (but check assumptions)",
+            "P-value < 0.05 typically means significant",
+            "High-low method: Quick but less accurate",
+            "Multiple regression: Many predictors",
+            "Check assumptions—violations distort results"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BAR-I-015',
+    section: 'BAR',
+    title: "Hedging and Derivatives",
+    description: "Understand hedge accounting and derivative instruments",
+    order: 70,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Derivatives", "Hedging", "Risk Management"],
+    blueprintArea: 'BAR-I',
+    blueprintTopic: 'BAR-I-F-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Derivatives manage risk—but the accounting is complex! Understanding hedge types, effectiveness testing, and reporting is essential. This is advanced BAR material!"
+        },
+        {
+          title: 'Derivative Basics',
+          type: 'text',
+          content: "**Derivative characteristics:**\n\n• Value derived from underlying (rate, price, index)\n• Little or no initial net investment\n• Settled at future date\n\n**Common types:**\n• Forwards and futures\n• Options\n• Swaps\n\n**Recorded at FAIR VALUE**"
+        },
+        {
+          title: 'Hedge Types',
+          type: 'table',
+          headers: ['Hedge Type', 'Hedges Against', 'Gain/Loss Recognition'],
+          rows: [
+            ['Fair value', 'Changes in FV of asset/liability', 'Earnings (offset hedged item)'],
+            ['Cash flow', 'Variability of future cash flows', 'OCI, then earnings when CF occurs'],
+            ['Net investment', 'FX exposure in foreign sub', 'OCI (CTA)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Where Goes the Gain?',
+          type: 'callout',
+          content: "**\"Fair → Found in earnings\"**\n**\"Cash → Cached in OCI\"**\n\n**Fair value hedge:**\n• Both derivative AND hedged item in earnings\n• Offset each other\n\n**Cash flow hedge:**\n• Derivative in OCI\n• Reclassify when cash flow affects earnings"
+        },
+        {
+          title: 'Hedge Effectiveness',
+          type: 'text',
+          content: "**Must be highly effective:**\n\n**ASC 815 requirements:**\n• Formal documentation at inception\n• Hedge expected to be highly effective\n• Ongoing effectiveness assessment\n\n**Quantitative tests:**\n• 80-125% range (old guidance)\n• Qualitative assessment allowed if designed well"
+        },
+        {
+          title: 'Common Hedge Scenarios',
+          type: 'text',
+          content: "**Fair value:**\n• Fixed-rate debt (hedge rate changes)\n• Inventory (hedge price changes)\n\n**Cash flow:**\n• Forecasted purchase (hedge price)\n• Variable-rate debt (hedge rate)\n• Forecasted foreign sale (hedge FX)\n\n**Net investment:**\n• Foreign subsidiary equity"
+        },
+        {
+          title: '⚠️ Exam Trap: Discontinuing Hedges',
+          type: 'warning',
+          content: "**When hedge relationship ends:**\n\n**Fair value hedge:**\n• Stop adjusting hedged item\n• Amortize basis adjustment\n\n**Cash flow hedge:**\n• If forecasted transaction probable: OCI stays\n• If not probable: Reclassify OCI to earnings immediately\n\n**Documentation failures = No hedge accounting!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Derivatives: Fair value, from underlying",
+            "Fair value hedge: Both items in earnings",
+            "Cash flow hedge: Derivative in OCI until realized",
+            "Net investment: Foreign sub, gains/losses in CTA",
+            "Must document and prove effectiveness",
+            "Discontinue hedge = Follow specific rules",
+            "Documentation is critical for hedge accounting"
+          ]
+        }
+      ]
+    }
   }
 ];

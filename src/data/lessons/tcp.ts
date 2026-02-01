@@ -5826,5 +5826,363 @@ export const tcpLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // TCP: ADDITIONAL ADVANCED TOPICS
+  // =============================================
+  {
+    id: 'TCP-II-015',
+    section: 'TCP',
+    title: "Partnership Taxation Fundamentals",
+    description: "Master pass-through taxation and basis rules",
+    order: 75,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Partnership Tax", "Pass-through", "Basis"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnerships are a major pass-through entity! Understanding flow-through taxation, basis rules, and special allocations is essential for TCP. Complex but highly testable!"
+        },
+        {
+          title: 'Pass-Through Taxation',
+          type: 'text',
+          content: "**No entity-level tax:**\n\n• Partnership files Form 1065 (informational)\n• Items flow to partners on Schedule K-1\n• Character of items preserved\n• Partners report on personal returns\n\n**Partners taxed whether or not distributed!**"
+        },
+        {
+          title: 'Partner Basis',
+          type: 'table',
+          headers: ['Event', 'Effect on Basis', 'Notes'],
+          rows: [
+            ['Initial contribution', 'Cash/property basis', 'Carryover for property'],
+            ['Share of income', 'Increase', 'Including tax-exempt'],
+            ['Share of loss', 'Decrease', 'Subject to limits'],
+            ['Distributions', 'Decrease', 'Cash first'],
+            ['Share of liabilities', 'Increase', 'Based on allocation']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Basis Order',
+          type: 'callout',
+          content: "**\"I SLID\" for basis adjustments:**\n\n**I**ncrease for Income\n**S**ubtract Losses\n**L**ess Distributions\n**I**ncrease for share of liabilities\n**D**on't go below zero!\n\n**Order matters at year-end!**"
+        },
+        {
+          title: 'Loss Limitation Rules',
+          type: 'text',
+          content: "**Four hurdles for loss deduction:**\n\n1. **Basis limitation:** Cannot exceed outside basis\n2. **At-risk limitation:** Amount economically at risk\n3. **Passive activity rules:** PAL limitations apply\n4. **Excess business loss:** $500K/$250K limit\n\n**Apply in ORDER!**"
+        },
+        {
+          title: 'Guaranteed Payments',
+          type: 'text',
+          content: "**Payments for services/capital use:**\n\n**To partner:**\n• Ordinary income (like salary)\n• Reported on K-1\n• Subject to SE tax\n\n**To partnership:**\n• Deductible expense\n• Before computing partnership income\n\n**Not affected by partnership profit/loss**"
+        },
+        {
+          title: '⚠️ Exam Trap: Property Contributions',
+          type: 'warning',
+          content: "**Contributed property:**\n\n**Generally no gain/loss recognized:**\n• Partner takes carryover basis\n• Partnership takes carryover basis\n• Holding period tacks\n\n**Exceptions (gain recognized):**\n• Investment company\n• Partnership assumes excess liabilities\n• Services for interest"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "No entity tax—items flow through to partners",
+            "Character of income/loss preserved",
+            "Partner basis: Contributions + Income − Distributions − Losses + Liabilities",
+            "Four loss limits: Basis, At-risk, PAL, Excess business",
+            "Guaranteed payments: Ordinary income to partner",
+            "Property contributions: Generally no gain/loss",
+            "Schedule K-1 reports each partner's share"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-II-016',
+    section: 'TCP',
+    title: "S Corporation Taxation",
+    description: "Understand S corp requirements and taxation rules",
+    order: 76,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["S Corporation Tax", "Pass-through", "Shareholder Basis"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "S corps combine corporate liability protection with pass-through taxation! Understanding eligibility, basis rules, and the differences from partnerships is critical for TCP!"
+        },
+        {
+          title: 'S Corporation Requirements',
+          type: 'text',
+          content: "**To elect S status:**\n\n• Domestic corporation\n• 100 or fewer shareholders\n• Only eligible shareholders (individuals, estates, certain trusts)\n• One class of stock\n• No ineligible corporations as shareholders\n\n**All shareholders must consent to election!**"
+        },
+        {
+          title: 'S Corp vs Partnership Basis',
+          type: 'table',
+          headers: ['Feature', 'S Corporation', 'Partnership'],
+          rows: [
+            ['Debt basis', 'Only shareholder loans', 'Share of ALL liabilities'],
+            ['Basis order', 'Stock, then debt', 'Combined outside basis'],
+            ['Restore debt basis', 'After stock basis', 'N/A'],
+            ['Distributions', 'Stock basis only', 'Outside basis']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: S Corp Basis',
+          type: 'callout',
+          content: "**S Corp = Stock + Debt (personal loans only)**\n\n**Key difference from partnership:**\n• Entity debt does NOT increase basis\n• Only loans FROM shareholder TO S corp\n\n**\"S = Shareholders own debt only\"**"
+        },
+        {
+          title: 'Shareholder Basis Rules',
+          type: 'text',
+          content: "**Ordering rules (year-end):**\n\n1. Increase for income items\n2. Decrease for distributions (not below zero)\n3. Decrease for non-deductible expenses\n4. Decrease for losses (not below zero)\n\n**Losses in excess of stock basis:**\n• Reduce debt basis (creates gain later)\n• Carry forward excess losses"
+        },
+        {
+          title: 'Built-In Gains Tax',
+          type: 'text',
+          content: "**When C corp converts to S:**\n\n• 5-year recognition period\n• Tax on built-in gains at corporate rate\n• Limited to net built-in gain at conversion\n\n**Purpose:** Prevent C corps from avoiding double taxation by converting to S\n\n**Also: LIFO recapture tax**"
+        },
+        {
+          title: '⚠️ Exam Trap: Reasonable Compensation',
+          type: 'warning',
+          content: "**Shareholder-employees MUST receive:**\n\n• Reasonable salary for services\n• Subject to FICA/payroll taxes\n\n**IRS scrutiny if:**\n• All income as distributions\n• No or minimal salary\n• Services rendered\n\n**Consequences:** Reclassification + penalties"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "S corp: 100 shareholders, one class stock, eligible owners",
+            "Pass-through taxation, no entity tax (usually)",
+            "Basis includes stock + shareholder loans only",
+            "Entity debt does NOT increase shareholder basis",
+            "Built-in gains tax on C to S conversion",
+            "Reasonable compensation required",
+            "Distributions tax-free to extent of basis"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-II-017',
+    section: 'TCP',
+    title: "C Corporation Taxation Overview",
+    description: "Understand corporate tax calculation and distributions",
+    order: 77,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Corporate Tax", "Dividends", "E&P"],
+    blueprintArea: 'TCP-II',
+    blueprintTopic: 'TCP-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "C corps face double taxation—understanding how to minimize it is key! Corporate tax rates, E&P calculations, and dividend treatment are essential TCP knowledge!"
+        },
+        {
+          title: 'Corporate Tax Rate',
+          type: 'text',
+          content: "**Post-TCJA:**\n\n• Flat 21% corporate rate\n• No graduated brackets\n• No AMT for most corporations\n\n**Personal service corporations:**\n• Also 21% (previously 35% flat rate)\n\n**State taxes:** Additional (vary by state)"
+        },
+        {
+          title: 'Earnings and Profits (E&P)',
+          type: 'table',
+          headers: ['Adjustment', 'Taxable Income to E&P', 'Direction'],
+          rows: [
+            ['Federal income tax', 'Subtract', 'Reduces E&P'],
+            ['Tax-exempt interest', 'Add', 'Increases E&P'],
+            ['Excess depreciation', 'Add back', 'Use ADS for E&P'],
+            ['Life insurance proceeds', 'Add', 'Increases E&P'],
+            ['Dividends paid', 'Subtract', 'Reduces E&P']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: E&P Purpose',
+          type: 'callout',
+          content: "**E&P = \"Economic Ability to Pay Dividends\"**\n\n**Distribution treatment:**\n1. Dividend (to extent of E&P)\n2. Return of capital (to extent of basis)\n3. Capital gain (excess)\n\n**E&P determines dividend portion!**"
+        },
+        {
+          title: 'Distribution Ordering',
+          type: 'text',
+          content: "**When corporation distributes cash:**\n\n**1. Current E&P first** (pro rata by date)\n**2. Accumulated E&P** (in order made)\n**3. Return of capital** (reduce stock basis)\n**4. Capital gain** (after basis is zero)\n\n**Each layer has different tax treatment**"
+        },
+        {
+          title: 'Dividends Received Deduction',
+          type: 'text',
+          content: "**Corporate shareholders get DRD:**\n\n**Ownership %** → **DRD %**\n• < 20%: 50% DRD\n• 20-80%: 65% DRD\n• > 80%: 100% DRD (affiliated group)\n\n**Purpose:** Reduce triple taxation\n\n**Taxable income limitation may apply**"
+        },
+        {
+          title: '⚠️ Exam Trap: Accumulated Earnings Tax',
+          type: 'warning',
+          content: "**20% penalty on excess accumulation:**\n\n**When:**\n• Accumulation beyond reasonable business needs\n• Purpose: Avoid shareholder-level tax\n\n**Credit allowed:**\n• Greater of $250K or business needs\n• $150K for PSCs\n\n**Document business purpose for accumulation!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Corporate rate: Flat 21%",
+            "E&P measures ability to pay dividends",
+            "Distributions: Dividend → Return of capital → Capital gain",
+            "Current E&P allocated pro rata by date",
+            "DRD reduces corporate dividend taxation",
+            "Accumulated earnings tax: 20% on excess",
+            "Document business needs for accumulations"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-I-010',
+    section: 'TCP',
+    title: "Tax Credits: Business and Individual",
+    description: "Understand major tax credits and their application",
+    order: 78,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Tax Credits", "Individual Tax", "Business Tax"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Credits are more valuable than deductions—they reduce tax dollar-for-dollar! Understanding major credits, limitations, and refundability is essential for tax planning!"
+        },
+        {
+          title: 'Credit vs Deduction',
+          type: 'text',
+          content: "**Key difference:**\n\n**Deduction:** Reduces taxable income\n• Value = Amount × Marginal rate\n\n**Credit:** Reduces tax directly\n• Value = Dollar for dollar\n\n**Example:** $1,000 at 24% bracket\n• Deduction saves: $240\n• Credit saves: $1,000"
+        },
+        {
+          title: 'Individual Tax Credits',
+          type: 'table',
+          headers: ['Credit', 'Max Amount', 'Refundable?'],
+          rows: [
+            ['Child Tax Credit', '$2,000/child', 'Partially ($1,600)'],
+            ['Child/Dependent Care', '$3,000-6,000', 'No'],
+            ['EITC', 'Varies (up to ~$7,400)', 'Yes'],
+            ['American Opportunity', '$2,500', 'Partially (40%)'],
+            ['Lifetime Learning', '$2,000', 'No'],
+            ['Saver\'s Credit', '$1,000-2,000', 'No']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Refundable Credits',
+          type: 'callout',
+          content: "**\"RACE\" for refundable:**\n\n**R**efundable = Get money even if no tax\n**A**OTC (40% refundable)\n**C**hild Tax Credit (partially)\n**E**ITC (fully refundable)\n\n**Nonrefundable = Only reduces tax to zero**"
+        },
+        {
+          title: 'Business Tax Credits',
+          type: 'text',
+          content: "**Common business credits:**\n\n• **R&D Credit:** Qualified research expenses\n• **Work Opportunity Credit:** Targeted group hiring\n• **Disabled Access Credit:** Small business accessibility\n• **Low-Income Housing Credit:** Affordable housing\n• **General Business Credit:** Carryback 1, Forward 20\n\n**Subject to ordering and limitation rules**"
+        },
+        {
+          title: 'Foreign Tax Credit',
+          type: 'text',
+          content: "**For taxes paid to foreign countries:**\n\n**Limitation:**\nFTC = US Tax × (Foreign source income / Worldwide income)\n\n**Cannot exceed US tax on foreign income**\n\n**Excess credits:**\n• Carryback 1 year\n• Carryforward 10 years\n\n**Alternative: Deduct instead of credit**"
+        },
+        {
+          title: '⚠️ Exam Trap: Phase-outs',
+          type: 'warning',
+          content: "**Many credits phase out at higher incomes:**\n\n**Child Tax Credit:** Starts at $200K/$400K\n**EITC:** Varies by filing status\n**Education credits:** ~$80K-90K range\n\n**Always check income limits!**\n\n**Phase-out can make marginal rate very high**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Credits reduce tax dollar-for-dollar",
+            "Refundable credits can create refund",
+            "CTC: $2,000, partially refundable",
+            "EITC: Fully refundable, low income",
+            "Education: AOTC ($2,500) vs LLC ($2,000)",
+            "FTC limited to US tax on foreign income",
+            "Watch for phase-outs at higher incomes"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'TCP-I-011',
+    section: 'TCP',
+    title: "Qualified Business Income Deduction (Section 199A)",
+    description: "Master the 20% pass-through deduction rules",
+    order: 79,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Pass-through", "Tax Deductions", "Tax Planning"],
+    blueprintArea: 'TCP-I',
+    blueprintTopic: 'TCP-I-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The QBI deduction can be worth 20% of qualified business income! Understanding the limitations, phase-outs, and planning opportunities is essential for pass-through entity planning!"
+        },
+        {
+          title: 'Basic QBI Deduction',
+          type: 'text',
+          content: "**20% deduction for:**\n\n• Sole proprietors (Schedule C)\n• Partners (Schedule K-1)\n• S corp shareholders (Schedule K-1)\n• REIT dividends\n• PTP income\n\n**Deducted from AGI (not itemized)**\n\n**Maximum: 20% of QBI**"
+        },
+        {
+          title: 'Limitations',
+          type: 'table',
+          headers: ['Limitation', 'Threshold (MFJ)', 'Effect'],
+          rows: [
+            ['Taxable income limit', 'All levels', 'Lesser of QBI or TI'],
+            ['W-2/property limit', '> $364,200', '50% W-2 OR 25% W-2 + 2.5% property'],
+            ['SSTB phase-out', '> $364,200', 'Complete exclusion above threshold'],
+            ['Overall cap', 'All levels', '20% of (TI − Net cap gains)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: SSTB',
+          type: 'callout',
+          content: "**Specified Service Trade or Business:**\n\n**\"HELP!\"**\n**H**ealth\n**E**ngineering... wait no, not included!\n**L**aw\n**P**erforming arts\n\n**Also:** Accounting, consulting, financial services, athletics\n\n**Engineering and Architecture are NOT SSTB!**"
+        },
+        {
+          title: 'W-2 Wage Limitation',
+          type: 'text',
+          content: "**Above threshold, limited to greater of:**\n\n**Option 1:** 50% of W-2 wages\n**Option 2:** 25% of W-2 wages + 2.5% of UBIA\n\n**UBIA:** Unadjusted Basis Immediately After Acquisition (property)\n\n**Below threshold:** No W-2/property limit applies"
+        },
+        {
+          title: 'Planning Strategies',
+          type: 'text',
+          content: "**Maximize QBI deduction:**\n\n• Aggregate related businesses\n• Increase W-2 wages (S corps especially)\n• Consider REIT investments\n• Manage taxable income around thresholds\n• Evaluate entity structure\n\n**SSTB owners:** Stay below threshold if possible"
+        },
+        {
+          title: '⚠️ Exam Trap: What\'s NOT QBI',
+          type: 'warning',
+          content: "**Excluded from QBI:**\n\n• Wages/salary (employee income)\n• Investment income (portfolio)\n• Guaranteed payments for services\n• Reasonable compensation (S corp)\n• Short-term capital gains\n\n**QBI = Business PROFIT, not all income!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "20% deduction on qualified business income",
+            "Available to pass-through owners and REIT investors",
+            "W-2 wage/property limit above threshold",
+            "SSTB completely excluded above threshold",
+            "Engineering and architecture NOT SSTB",
+            "Excludes wages, investment income, guaranteed payments",
+            "Below AGI deduction (not itemized)"
+          ]
+        }
+      ]
+    }
   }
 ];

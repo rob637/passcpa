@@ -598,11 +598,15 @@ const Practice: React.FC = () => {
         );
       } else {
         // Normal fetch with filters
+        const section = (userProfile?.examSection as ExamSection) || 'REG';
+        // HR1 filter only applies to REG/TCP sections (tax law updates)
+        const applyHr1Filter = is2026 && (section === 'REG' || section === 'TCP');
+        
         fetchedQuestions = await fetchQuestions({
-          section: (userProfile?.examSection as ExamSection) || 'REG',
+          section,
           difficulty: config.difficulty !== 'all' ? config.difficulty : undefined,
           count: config.count,
-          hr1Only: is2026, // Enforce 2026 Blueprint rules (e.g. OBBBA/H.R. 1 Tax provisions)
+          hr1Only: applyHr1Filter, // Only for tax sections (REG, TCP) in 2026
           mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
           courseId, // Multi-course support
         });

@@ -7423,5 +7423,713 @@ export const farLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // FAR: ADDITIONAL FINANCIAL ACCOUNTING TOPICS
+  // =============================================
+  {
+    id: 'FAR-V-020',
+    section: 'FAR',
+    title: "Revenue Recognition: Multiple Performance Obligations",
+    description: "Master allocation of transaction price to performance obligations",
+    order: 85,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Revenue Recognition", "ASC 606"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Many contracts have multiple performance obligations! Understanding how to identify and allocate the transaction price is critical. This is one of the most complex areas of revenue recognition!"
+        },
+        {
+          title: 'Identifying Performance Obligations',
+          type: 'text',
+          content: "**Two criteria (BOTH must be met):**\n\n1. **Distinct:** Customer can benefit on its own or with readily available resources\n\n2. **Separately identifiable:** Not highly interdependent or integrated with other promises\n\n**If both met → Separate performance obligation**"
+        },
+        {
+          title: 'Allocation Methods',
+          type: 'table',
+          headers: ['Method', 'When Used', 'How Applied'],
+          rows: [
+            ['Standalone selling price', 'Observable price exists', 'Use actual price charged separately'],
+            ['Adjusted market assessment', 'No observable', 'What market would pay'],
+            ['Expected cost plus margin', 'No observable', 'Cost + reasonable margin'],
+            ['Residual approach', 'Highly variable price', 'Total less other allocations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Allocation Steps',
+          type: 'callout',
+          content: "**\"STAR\"** method:\n\n**S**tandalone prices - Determine for each PO\n**T**otal transaction price - Determine amount\n**A**llocate based on relative SSP\n**R**ecognize as each PO is satisfied\n\n**Formula:**\nAllocated = (SSP of PO / Total SSP) × Transaction Price"
+        },
+        {
+          title: 'Allocating Discounts',
+          type: 'text',
+          content: "**General rule:** Allocate discount proportionally to all POs\n\n**Exception - Allocate to specific POs if:**\n• Entity regularly sells each PO separately, AND\n• Observable evidence discount relates to only some POs, AND\n• Items in bundle approximate standalone prices\n\n**Variable consideration:** May allocate entirely to one PO if specifically relates"
+        },
+        {
+          title: 'Series of Distinct Goods/Services',
+          type: 'text',
+          content: "**When treated as single PO:**\n\n• Each distinct good/service is substantially the same, AND\n• Same pattern of transfer to customer\n\n**Examples:**\n• Monthly cleaning services\n• Daily transaction processing\n\n**Simplifies accounting—single measure of progress**"
+        },
+        {
+          title: '⚠️ Exam Trap: Highly Interdependent',
+          type: 'warning',
+          content: "**NOT separately identifiable if:**\n\n• Significant integration service\n• One modifies or customizes another\n• Highly interdependent\n\n**Example:** Software + significant customization = ONE PO\n\n**Don't default to assuming everything is separate!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Performance obligation: Distinct AND separately identifiable",
+            "Allocate transaction price based on relative SSP",
+            "SSP methods: Observable > Market > Cost-plus > Residual",
+            "Discounts generally allocated proportionally",
+            "Series of similar services may be single PO",
+            "Integration may combine promises into one PO",
+            "Recognize revenue as each PO satisfied"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-021',
+    section: 'FAR',
+    title: "Revenue Recognition: Contract Modifications",
+    description: "Understand accounting for changes to revenue contracts",
+    order: 86,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ["Revenue Recognition", "ASC 606"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Contracts change all the time! Understanding how to account for modifications—new contract, cumulative adjustment, or prospective—is essential. The answer depends on whether goods/services are distinct!"
+        },
+        {
+          title: 'What Is a Contract Modification?',
+          type: 'text',
+          content: "**Change to:**\n• Scope (adding goods/services)\n• Price (changing transaction price)\n• Both\n\n**Must be approved by parties**\n\n**Examples:**\n• Change orders\n• Add-on services\n• Price adjustments\n• Quantity changes"
+        },
+        {
+          title: 'Three Accounting Models',
+          type: 'table',
+          headers: ['Model', 'When', 'Accounting'],
+          rows: [
+            ['Separate contract', 'Distinct + Standalone price', 'New contract, no adjustment to old'],
+            ['Terminate + New', 'Distinct but NOT standalone price', 'Cumulative catch-up, new POs prospective'],
+            ['Part of existing', 'NOT distinct', 'Cumulative catch-up adjustment']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Modification Flowchart',
+          type: 'callout',
+          content: "**Ask two questions:**\n\n**Q1:** Are added goods/services distinct?\n→ NO = Part of existing contract (catch-up)\n→ YES = Go to Q2\n\n**Q2:** Is price at standalone?\n→ YES = Separate contract\n→ NO = Terminate and create new"
+        },
+        {
+          title: 'Separate Contract Treatment',
+          type: 'text',
+          content: "**Treat as new contract when:**\n\n• Additional goods/services are distinct, AND\n• Price increases by standalone selling price\n\n**Result:**\n• Original contract unaffected\n• New contract starts fresh\n• No cumulative adjustment\n\n**Think of it as a completely new sale**"
+        },
+        {
+          title: 'Cumulative Catch-Up',
+          type: 'text',
+          content: "**When modification changes measure of progress:**\n\n**Steps:**\n1. Revise total transaction price\n2. Revise total estimated costs (if applicable)\n3. Calculate new % complete\n4. Apply to revised revenue\n5. Recognize difference as adjustment\n\n**Catch-up in period of modification!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Termination Model',
+          type: 'warning',
+          content: "**Terminate + New is NOT intuitive:**\n\n**When goods are distinct but NOT at standalone price:**\n• Allocate remaining transaction price\n• Include modification consideration\n• Recognize previously recognized revenue as starting point\n\n**Remaining POs treated prospectively**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Modification: Change to scope, price, or both",
+            "Separate contract: Distinct goods + Standalone price",
+            "Terminate + New: Distinct goods but NOT standalone",
+            "Part of existing: Goods NOT distinct",
+            "Cumulative catch-up: Adjust in period of modification",
+            "Ask: Distinct? Then: Standalone price?",
+            "Document modification accounting at time of change"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-022',
+    section: 'FAR',
+    title: "Inventory: Lower of Cost or Net Realizable Value",
+    description: "Apply LCNRV testing and write-down accounting",
+    order: 87,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Inventory", "Valuation"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Inventory must not be overstated! Understanding the lower of cost or NRV test ensures inventory is carried at the right amount. GAAP simplified this with ASU 2015-11!"
+        },
+        {
+          title: 'LCNRV Rule (Post-ASU 2015-11)',
+          type: 'text',
+          content: "**For most inventory:**\n\n**Lower of:**\n• Cost (FIFO, LIFO, weighted average), OR\n• Net Realizable Value (NRV)\n\n**NRV = Estimated selling price − Costs to complete − Costs to sell**\n\n**If NRV < Cost → Write down**"
+        },
+        {
+          title: 'Old vs New Rules',
+          type: 'table',
+          headers: ['Aspect', 'Old Rule (LCM)', 'New Rule (LCNRV)'],
+          rows: [
+            ['Ceiling', 'NRV', 'N/A - Just use NRV'],
+            ['Floor', 'NRV − Normal profit', 'N/A - Just use NRV'],
+            ['Market', 'Replacement cost (within ceiling/floor)', 'Not applicable'],
+            ['Applies to', 'All methods', 'Not LIFO/retail method']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: LCNRV Simplified',
+          type: 'callout',
+          content: "**\"Two numbers—pick the lower\"**\n\n• Cost (what you paid)\n• NRV (what you'll get, net)\n\n**No more ceiling/floor!**\n\n**Exception:** LIFO and retail method still use old LCM approach"
+        },
+        {
+          title: 'Application Level',
+          type: 'text',
+          content: "**Apply test to:**\n\n• Individual items (most common)\n• Categories of similar items\n• Total inventory (rare)\n\n**Be consistent!**\n\n**Testing at item level:**\n• Most conservative\n• Catches individual write-downs\n• Required for significant items"
+        },
+        {
+          title: 'Write-Down and Recovery',
+          type: 'text',
+          content: "**Write-down entry:**\n\nDr Loss on Inventory Write-down (or COGS)\n    Cr Inventory\n\n**Recovery:**\n• Can reverse write-down if NRV increases\n• Only up to original cost\n• Not above original carrying amount\n\n**New cost basis = Written-down amount**"
+        },
+        {
+          title: '⚠️ Exam Trap: LIFO and Retail Method',
+          type: 'warning',
+          content: "**LCNRV does NOT apply to:**\n\n• LIFO inventory\n• Retail inventory method\n\n**These STILL use old LCM:**\n• Market = Replacement cost\n• Subject to ceiling (NRV) and floor (NRV − profit)\n\n**Read the question carefully!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "LCNRV: Lower of Cost or NRV (simplified from LCM)",
+            "NRV = Selling price − Completion costs − Selling costs",
+            "If NRV < Cost → Write down inventory",
+            "Apply at item, category, or total level",
+            "Write-down: Dr Loss/COGS, Cr Inventory",
+            "Can reverse write-down, but not above original cost",
+            "LIFO and retail method still use old LCM"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-023',
+    section: 'FAR',
+    title: "Troubled Debt Restructuring (ASC 470-60)",
+    description: "Understand debtor and creditor accounting for restructured debt",
+    order: 88,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Debt", "Restructuring"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When borrowers face financial difficulty, debt often gets restructured! Understanding both debtor and creditor accounting is essential. ASU 2022-02 significantly changed these rules!"
+        },
+        {
+          title: 'What Is Troubled Debt?',
+          type: 'text',
+          content: "**Creditor grants concession NOT otherwise granted:**\n\n• Debtor experiencing financial difficulty\n• Creditor agrees to modify terms\n• Modification wouldn't be granted normally\n\n**Examples:**\n• Reduced interest rate\n• Extended maturity\n• Reduced principal\n• Transfer of assets in settlement"
+        },
+        {
+          title: 'Types of Restructuring',
+          type: 'table',
+          headers: ['Type', 'Description', 'Debtor Effect'],
+          rows: [
+            ['Settlement', 'Pay less than carrying value', 'Gain recognized'],
+            ['Asset transfer', 'Transfer asset to creditor', 'Gain on debt + Asset G/L'],
+            ['Equity transfer', 'Issue equity for debt', 'Gain recognized'],
+            ['Modification', 'Change terms of debt', 'Depends on test']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Settlement Gain',
+          type: 'callout',
+          content: "**Debtor gains when paying less:**\n\n**Gain = Carrying value − Amount paid**\n\n**If transferring asset:**\n1. Asset sold at FV → G/L on sale\n2. Debt settled at FV → G/L on settlement\n\n**Two separate transactions!**"
+        },
+        {
+          title: 'Modification Accounting (Debtor)',
+          type: 'text',
+          content: "**Post-ASU 2022-02:**\n\n**Compare future cash flows to carrying amount:**\n\n• If future payments < Carrying → Gain recognized\n• If future payments ≥ Carrying → No immediate gain\n  - Adjust effective interest rate\n  - Prospective treatment\n\n**No longer use old 10% test for distressed modifications**"
+        },
+        {
+          title: 'Creditor Accounting',
+          type: 'text',
+          content: "**When restructuring occurs:**\n\n• Measure loan at present value of future cash flows\n• Use original effective interest rate\n• Difference = Adjustment to allowance (or direct write-off)\n\n**Consider impairment:**\n• If collateral dependent: Fair value of collateral\n• Expected credit loss model applies"
+        },
+        {
+          title: '⚠️ Exam Trap: ASU 2022-02 Changes',
+          type: 'warning',
+          content: "**Major changes for creditors:**\n\n**OLD (TDR specific):**\n• Separate TDR designation\n• Different impairment model\n\n**NEW (ASU 2022-02):**\n• Eliminated TDR designation for creditors\n• Use CECL expected loss model\n• Enhanced disclosure requirements\n\n**Debtor accounting: Less change**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "TDR: Creditor grants concession to distressed debtor",
+            "Settlement: Debtor recognizes gain for forgiveness",
+            "Asset transfer: Separate gain/loss on asset and debt",
+            "Modification: Compare future payments to carrying value",
+            "Creditor: Use CECL model, no separate TDR category",
+            "Present value calculations use original effective rate",
+            "ASU 2022-02 simplified creditor accounting"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-024',
+    section: 'FAR',
+    title: "Software Development Costs",
+    description: "Understand capitalization of internal-use and for-sale software",
+    order: 89,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Intangibles", "Software", "Capitalization"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Software costs can be significant! Understanding when to capitalize vs expense is critical. Different rules apply to internal-use software vs software for sale!"
+        },
+        {
+          title: 'Two Types of Software',
+          type: 'table',
+          headers: ['Type', 'Standard', 'Key Concept'],
+          rows: [
+            ['Internal-use', 'ASC 350-40', 'Capitalize application development'],
+            ['Software for sale', 'ASC 985-20', 'Capitalize after technological feasibility'],
+            ['Cloud computing (SaaS)', 'ASC 350-40', 'Generally expense (service arrangement)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Internal-Use Phases',
+          type: 'callout',
+          content: "**\"PED\" = Expense-Capitalize-Expense**\n\n**P**reliminary → EXPENSE\n**E**xploration, planning, evaluation\n\n**D**evelopment → CAPITALIZE\nApplication development stage\n\n**Post-implementation** → EXPENSE\nTraining, maintenance"
+        },
+        {
+          title: 'Internal-Use Software (ASC 350-40)',
+          type: 'text',
+          content: "**Preliminary stage:** Expense\n• Conceptual formulation\n• Vendor evaluation\n• Feasibility analysis\n\n**Application development:** Capitalize\n• Coding, testing\n• Configuration\n• Installation to hardware\n\n**Post-implementation:** Expense\n• Training, maintenance\n• Data conversion (unless for new capabilities)"
+        },
+        {
+          title: 'Software for Sale (ASC 985-20)',
+          type: 'text',
+          content: "**Before technological feasibility:** Expense all costs\n\n**After technological feasibility:**\n• Capitalize until ready for release\n• Amortize over sales life\n\n**Technological feasibility achieved when:**\n• Detailed program design complete, OR\n• Working model completed and confirmed"
+        },
+        {
+          title: 'Amortization',
+          type: 'text',
+          content: "**Internal-use software:**\n• Straight-line over useful life\n• Generally 3-7 years\n\n**Software for sale:**\n• Greater of:\n  - Straight-line over estimated life, OR\n  - Revenue ratio (revenue/total expected revenue)\n\n**Subject to impairment testing**"
+        },
+        {
+          title: '⚠️ Exam Trap: Cloud Computing Costs',
+          type: 'warning',
+          content: "**Hosting arrangements (SaaS):**\n\n**If NO software asset obtained:**\n• Implementation costs = Service contract\n• Capitalize and expense over contract term\n\n**If software license obtained:**\n• Treat as internal-use software\n• Capitalize development costs\n\n**Substance over form!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Internal-use: Capitalize application development stage",
+            "For sale: Capitalize after technological feasibility",
+            "Preliminary and post-implementation: Always expense",
+            "Technological feasibility: Detailed design or working model",
+            "Amortize over useful life or revenue pattern",
+            "Cloud computing: Generally expense unless license obtained",
+            "Subject to impairment testing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-025',
+    section: 'FAR',
+    title: "Asset Retirement Obligations (ARO)",
+    description: "Account for legal obligations to retire long-lived assets",
+    order: 90,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Long-Lived Assets", "ARO", "Present Value"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-E-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Many assets come with retirement obligations! Understanding how to recognize, measure, and update AROs is essential. Think oil wells, mines, nuclear plants—obligations to restore the environment!"
+        },
+        {
+          title: 'What Is an ARO?',
+          type: 'text',
+          content: "**Legal obligation to retire long-lived asset:**\n\n• Dismantling\n• Removal\n• Site restoration\n\n**Arises from:**\n• Existing laws/regulations\n• Written or oral agreements\n• Promises implied by past practice\n\n**Must be legally enforceable**"
+        },
+        {
+          title: 'Initial Measurement',
+          type: 'table',
+          headers: ['Component', 'Measurement', 'Where Recorded'],
+          rows: [
+            ['ARO Liability', 'Fair value (PV of expected costs)', 'Liability'],
+            ['Asset retirement cost', 'Same amount', 'Added to asset cost'],
+            ['Credit-adjusted rate', 'Entity-specific rate', 'Used for PV']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: ARO Entry',
+          type: 'callout',
+          content: "**Initial recognition:**\n\nDr Asset (retirement cost)\n    Cr ARO Liability (PV of obligation)\n\n**Both increase at inception!**\n\n**Over time:**\n• Asset portion depreciated\n• Liability accretes (interest)"
+        },
+        {
+          title: 'Subsequent Measurement',
+          type: 'text',
+          content: "**Asset retirement cost:**\n• Depreciate over asset life\n• Systematic and rational method\n\n**ARO Liability:**\n• Accretion expense each period\n• Uses credit-adjusted risk-free rate\n• Accretion = Beginning liability × Rate\n\n**Adjustments for estimate changes**"
+        },
+        {
+          title: 'Changes in Estimates',
+          type: 'text',
+          content: "**When expected costs change:**\n\n**Upward revision:**\n• Increase liability at current rate\n• Increase asset (new layer)\n• Depreciate over remaining life\n\n**Downward revision:**\n• Decrease liability at original rate\n• Decrease asset (not below zero)\n• Debit expense if exceeds asset"
+        },
+        {
+          title: '⚠️ Exam Trap: Settlement',
+          type: 'warning',
+          content: "**When obligation settled:**\n\n**If settle for more than liability:**\nDr ARO Liability\nDr Loss on settlement\n    Cr Cash\n\n**If settle for less:**\nDr ARO Liability\n    Cr Gain on settlement\n    Cr Cash\n\n**Timing differences can cause G/L**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "ARO: Legal obligation to retire long-lived asset",
+            "Initial: PV of expected costs → Liability AND Asset",
+            "Depreciate asset portion over useful life",
+            "Accrete liability using credit-adjusted rate",
+            "Upward revisions: New layer at current rate",
+            "Downward revisions: Reduce at original rate",
+            "Settlement difference → Gain or loss"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-026',
+    section: 'FAR',
+    title: "Contingencies and Loss Accruals",
+    description: "Apply contingency recognition and disclosure rules",
+    order: 91,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Contingencies", "Loss Accruals", "Disclosure"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-F-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Contingencies can make or break financial statements! Understanding when to accrue, disclose, or ignore contingencies is essential. Litigation, warranties, guarantees—these are everywhere!"
+        },
+        {
+          title: 'Loss Contingency Framework',
+          type: 'table',
+          headers: ['Likelihood', 'Amount Estimable?', 'Treatment'],
+          rows: [
+            ['Probable (likely)', 'Yes', 'ACCRUE liability'],
+            ['Probable (likely)', 'No (range available)', 'Accrue minimum of range'],
+            ['Probable (likely)', 'No (not estimable)', 'DISCLOSE only'],
+            ['Reasonably possible', 'N/A', 'DISCLOSE only'],
+            ['Remote', 'N/A', 'No action (usually)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Probable = Accrue',
+          type: 'callout',
+          content: "**\"Probable AND Estimable\"**\n\nTo ACCRUE:\n• **P**robable (likely to occur)\n• **E**stimable (can measure)\n\n**Both required!**\n\n**Probable but NOT estimable:**\n→ Disclose, don't accrue"
+        },
+        {
+          title: 'Measurement of Loss',
+          type: 'text',
+          content: "**When amount is a range:**\n\n**If best estimate within range exists:**\n• Accrue best estimate\n\n**If no best estimate:**\n• Accrue MINIMUM of range\n• Disclose full range\n\n**Example:**\nRange: $1M - $5M\nNo best estimate → Accrue $1M"
+        },
+        {
+          title: 'Disclosure Requirements',
+          type: 'text',
+          content: "**For accrued contingencies:**\n• Nature of contingency\n• Amount accrued\n\n**For disclosed (not accrued):**\n• Nature of contingency\n• Estimate of possible loss (or state cannot estimate)\n\n**May omit if prejudicial** (rare exception for litigation)"
+        },
+        {
+          title: 'Gain Contingencies',
+          type: 'text',
+          content: "**Conservative treatment:**\n\n• NEVER accrue gain contingencies\n• May disclose if probable\n• Avoid misleading implications\n\n**Examples:**\n• Pending lawsuits (plaintiff)\n• Claims for insurance recovery\n• Tax refund claims\n\n**Recognize only when realized!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Warranty Costs',
+          type: 'warning',
+          content: "**Warranty = Always accrue!**\n\n• Sale occurs → Probable warranty claims\n• Past history → Estimable amount\n\n**Accrue at time of sale:**\nDr Warranty Expense\n    Cr Warranty Liability\n\n**When claims paid:**\nDr Warranty Liability\n    Cr Cash/Parts"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Accrue if: Probable AND Estimable",
+            "Disclose if: Probable but not estimable, or Reasonably possible",
+            "Remote contingencies: Generally no action",
+            "Range with no best estimate: Accrue minimum",
+            "Gain contingencies: NEVER accrue, may disclose",
+            "Warranties: Always accrue (probable and estimable)",
+            "May omit disclosure if prejudicial (litigation)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-027',
+    section: 'FAR',
+    title: "Equity Method Investments",
+    description: "Master accounting for significant influence investments",
+    order: 92,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Investments", "Equity Method"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Equity method applies to investments with significant influence! Understanding how to apply it—including basis differences and intercompany transactions—is critical for FAR!"
+        },
+        {
+          title: 'When to Use Equity Method',
+          type: 'text',
+          content: "**Significant influence presumed at 20-50% ownership:**\n\n**Indicators of significant influence:**\n• Board representation\n• Policy-making participation\n• Material transactions\n• Interchange of personnel\n• Technical dependence\n\n**Can rebut presumption either direction**"
+        },
+        {
+          title: 'Basic Equity Method Entries',
+          type: 'table',
+          headers: ['Event', 'Journal Entry', 'Effect on Investment'],
+          rows: [
+            ['Record % of income', 'Dr Investment, Cr Equity income', 'Increase'],
+            ['Record % of loss', 'Dr Equity loss, Cr Investment', 'Decrease'],
+            ['Receive dividends', 'Dr Cash, Cr Investment', 'Decrease'],
+            ['Excess amortization', 'Dr Equity income, Cr Investment', 'Decrease']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Investment Balance',
+          type: 'callout',
+          content: "**\"CIDE\"** changes investment:\n\n**C**ost (initial investment)\n**I**ncome (% of investee earnings)\n**D**ividends (received)\n**E**xcess amortization (basis differences)\n\n**Investment = Cost + Income − Dividends − Excess**"
+        },
+        {
+          title: 'Basis Differences',
+          type: 'text',
+          content: "**When cost ≠ % of book value:**\n\n**Excess over book value:**\n• Allocate to identifiable assets (FV > BV)\n• Remainder = Goodwill\n\n**Amortization:**\n• Depreciable assets → Amortize over useful life\n• Inventory → Expense when sold\n• Goodwill → Not amortized (but test for impairment)\n\n**Reduces equity income each period**"
+        },
+        {
+          title: 'Intercompany Transactions',
+          type: 'text',
+          content: "**Eliminate investor's % of unrealized profit:**\n\n**Downstream (investor → investee):**\n• Eliminate % of profit from investor's income\n\n**Upstream (investee → investor):**\n• Eliminate % of profit from equity income\n\n**Profit realized when asset sold to third party**"
+        },
+        {
+          title: 'Investment Below Zero',
+          type: 'text',
+          content: "**When losses exceed investment:**\n\n• Stop recognizing losses at zero\n• Continue recognizing if:\n  - Guaranteed investee debt\n  - Made loans/advances\n  - Committed to provide support\n\n**Apply losses to other investments in investee first**"
+        },
+        {
+          title: '⚠️ Exam Trap: Change in Level of Influence',
+          type: 'warning',
+          content: "**If drop below 20%:**\n• Stop equity method\n• Carry investment at FV (usually)\n• Use new basis going forward\n\n**If acquire additional and exceed 50%:**\n• Now consolidated\n• Remeasure prior investment to FV\n• Recognize gain/loss"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Equity method: 20-50% ownership (significant influence)",
+            "Record % of income; dividends reduce investment",
+            "Basis differences: Allocate excess to assets, amortize",
+            "Goodwill: Not amortized, test for impairment",
+            "Intercompany: Eliminate % of unrealized profit",
+            "Losses limited to investment plus committed amounts",
+            "Change in influence: Stop/start method, remeasure"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-028',
+    section: 'FAR',
+    title: "Consolidation: Noncontrolling Interests",
+    description: "Account for NCI in consolidated financial statements",
+    order: 93,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Consolidation", "NCI"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When parent owns less than 100%, noncontrolling interest exists! Understanding how to present NCI in consolidated statements—and what gets allocated to it—is essential for FAR!"
+        },
+        {
+          title: 'What Is NCI?',
+          type: 'text',
+          content: "**Noncontrolling interest:**\n\n• Portion of subsidiary NOT owned by parent\n• Equity component of consolidated F/S\n• Presented within equity, separate from parent's equity\n\n**Example:**\nParent owns 80% of Sub\nNCI = 20% of Sub"
+        },
+        {
+          title: 'Initial Measurement',
+          type: 'table',
+          headers: ['Method', 'NCI Measurement', 'Goodwill'],
+          rows: [
+            ['Full goodwill (most common)', 'Fair value of NCI', 'Includes NCI portion'],
+            ['Proportionate goodwill', 'NCI % × Sub book value', 'Only parent\'s portion']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: NCI in Equity',
+          type: 'callout',
+          content: "**NCI is EQUITY, not liability!**\n\n**Presented:**\n• Within equity section\n• Separate line from parent's equity\n\n**Allocate to NCI:**\n• % of subsidiary income/loss\n• % of OCI\n• Dividends to NCI shareholders"
+        },
+        {
+          title: 'Consolidated Income Statement',
+          type: 'text',
+          content: "**Bottom of income statement:**\n\nNet income: $X\n  Net income attributable to NCI: $(Y)\n  Net income attributable to Parent: $X-Y\n\n**NCI gets their %:**\n• Of subsidiary's net income\n• After fair value adjustments\n• Including excess amortization"
+        },
+        {
+          title: 'Changes in Ownership',
+          type: 'text',
+          content: "**Parent buys more (stays in control):**\n• Equity transaction (APIC adjustment)\n• No gain/loss recognized\n• NCI decreases\n\n**Parent sells some (maintains control):**\n• Equity transaction (APIC adjustment)\n• No gain/loss recognized\n• NCI increases\n\n**Deconsolidation (loses control):**\n• Gain/loss recognized in P&L"
+        },
+        {
+          title: '⚠️ Exam Trap: Losses Exceeding NCI',
+          type: 'warning',
+          content: "**Under current GAAP:**\n\n• Losses allocated to NCI even if goes negative\n• NCI can have negative balance\n• Parent absorbs all losses historically is OLD rule\n\n**NCI shares in ALL income and losses!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NCI: Portion of subsidiary not owned by parent",
+            "Presented in equity, separate from parent's equity",
+            "Full goodwill: Measure NCI at fair value",
+            "Allocate % of income, loss, and OCI to NCI",
+            "Changes maintaining control: Equity transactions",
+            "Loss of control: Gain/loss recognized",
+            "Losses can make NCI balance negative"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-029',
+    section: 'FAR',
+    title: "Statement of Cash Flows: Operating Section",
+    description: "Master direct and indirect methods for operating activities",
+    order: 94,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Cash Flows", "Operating Activities"],
+    blueprintArea: 'FAR-IV',
+    blueprintTopic: 'FAR-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The operating section is the most complex part of the cash flow statement! Understanding both indirect and direct methods—and the adjustments needed—is essential for FAR!"
+        },
+        {
+          title: 'Two Methods',
+          type: 'text',
+          content: "**Indirect method (most common):**\n• Start with net income\n• Adjust for non-cash items\n• Adjust for working capital changes\n\n**Direct method:**\n• Show gross cash receipts/payments\n• Requires supplemental reconciliation\n\n**Same total CFO—different presentation**"
+        },
+        {
+          title: 'Indirect Method Adjustments',
+          type: 'table',
+          headers: ['Item', 'Adjustment', 'Why'],
+          rows: [
+            ['Depreciation', 'ADD', 'Non-cash expense'],
+            ['Gain on sale', 'SUBTRACT', 'Investing, not operating'],
+            ['Loss on sale', 'ADD', 'Investing, not operating'],
+            ['↑ Receivables', 'SUBTRACT', 'Sales > Cash collected'],
+            ['↓ Inventory', 'ADD', 'COGS > Purchases'],
+            ['↑ Payables', 'ADD', 'Expenses > Cash paid'],
+            ['Deferred tax expense', 'ADD', 'Non-cash portion']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Working Capital',
+          type: 'callout',
+          content: "**\"IOLA\"** for current assets:\n\n**I**ncrease in asset = **O**ut (subtract)\n**L**oss of asset = **A**dd\n\n**Opposite for liabilities:**\n• Increase in liability = ADD\n• Decrease in liability = SUBTRACT"
+        },
+        {
+          title: 'Direct Method Categories',
+          type: 'text',
+          content: "**Cash receipts:**\n• Cash collected from customers\n• Interest received\n• Dividends received\n\n**Cash payments:**\n• Cash paid to suppliers\n• Cash paid to employees\n• Interest paid\n• Income taxes paid"
+        },
+        {
+          title: 'Converting to Direct Method',
+          type: 'text',
+          content: "**Cash from customers:**\nSales − ↑A/R (or + ↓A/R)\n\n**Cash to suppliers:**\nCOGS + ↑Inventory − ↑A/P\n\n**Cash for expenses:**\nExpenses + ↑Prepaids − ↑Accrued liabilities\n\n**Use T-accounts to trace!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Interest and Dividends',
+          type: 'warning',
+          content: "**Under U.S. GAAP:**\n\n**Operating:**\n• Interest paid\n• Interest received\n• Dividends received\n\n**Financing:**\n• Dividends PAID\n\n**IFRS allows more flexibility in classification!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Indirect: Net income → Adjustments → CFO",
+            "Add back non-cash expenses (depreciation, amortization)",
+            "Remove gains (subtract), add back losses",
+            "Current asset increase = Subtract; Decrease = Add",
+            "Current liability increase = Add; Decrease = Subtract",
+            "Direct: Gross receipts and payments shown",
+            "Interest paid/received = Operating (GAAP)"
+          ]
+        }
+      ]
+    }
   }
 ];

@@ -30,11 +30,13 @@ vi.mock('firebase/auth', () => ({
 
 const mockGetDoc = vi.fn().mockResolvedValue({ exists: () => false });
 const mockSetDoc = vi.fn().mockResolvedValue({});
+const mockUpdateDoc = vi.fn().mockResolvedValue({});
 
 vi.mock('firebase/firestore', () => ({
   doc: vi.fn(() => ({})),
   getDoc: (...args) => mockGetDoc(...args),
   setDoc: (...args) => mockSetDoc(...args),
+  updateDoc: (...args) => mockUpdateDoc(...args),
   onSnapshot: vi.fn(() => () => {}),
   serverTimestamp: vi.fn(() => new Date()),
 }));

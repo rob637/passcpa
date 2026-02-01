@@ -425,7 +425,7 @@ const You: React.FC = () => {
         </Link>
 
         <Link
-          to="/terms"
+          to="/help"
           className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
         >
           <div className="flex items-center gap-3">

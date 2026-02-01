@@ -11,7 +11,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { auth, db } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
@@ -122,6 +122,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setError(null);
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
+      // Update last login timestamp
+      await updateDoc(doc(db, 'users', result.user.uid), {
+        lastLogin: serverTimestamp(),
+      }).catch(() => {}); // Silent fail if user doc doesn't exist yet
       return result.user;
     } catch (err) {
       const error = err as FirebaseError;
@@ -248,12 +252,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             soundEffects: true,
           },
         };
-        await setDoc(userRef, newProfile);
+        await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
         setUserProfile({ 
           ...newProfile,
           id: user.uid, 
         } as UserProfile);
       } else {
+        // Update last login for existing user
+        await updateDoc(userRef, { lastLogin: serverTimestamp() });
         await fetchUserProfile(user.uid);
       }
       

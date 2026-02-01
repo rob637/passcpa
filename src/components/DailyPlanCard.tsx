@@ -31,6 +31,19 @@ import { useCourse } from '../providers/CourseProvider';
 import { generateDailyPlan, DailyPlan, DailyActivity } from '../services/dailyPlanService';
 import clsx from 'clsx';
 
+// Storage key for today's completed activities
+const getStorageKey = () => `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+
+// Helper to load completed activities from localStorage
+const loadCompletedFromStorage = (): Set<string> => {
+  try {
+    const stored = localStorage.getItem(getStorageKey());
+    return stored ? new Set(JSON.parse(stored)) : new Set();
+  } catch {
+    return new Set();
+  }
+};
+
 interface DailyPlanCardProps {
   compact?: boolean;
   onActivityStart?: (activity: DailyActivity) => void;
@@ -45,8 +58,24 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [plan, setPlan] = useState<DailyPlan | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [completedActivities] = useState<Set<string>>(new Set());
+  const [completedActivities, setCompletedActivities] = useState<Set<string>>(loadCompletedFromStorage);
   const [expanded, setExpanded] = useState(false);
+
+  // Refresh completed activities from localStorage on mount and when page becomes visible
+  useEffect(() => {
+    // Refresh on mount
+    setCompletedActivities(loadCompletedFromStorage());
+    
+    // Also refresh when user returns to tab (in case they completed on another device/tab)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        setCompletedActivities(loadCompletedFromStorage());
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
 
   // Load daily plan
   useEffect(() => {
@@ -112,23 +141,26 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       onActivityStart(activity);
     }
     
+    // Store the current activity ID for completion tracking
+    const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
+    
     // Navigate based on activity type
     switch (activity.type) {
       case 'lesson':
-        navigate(`/lessons/${activity.params.lessonId}`);
+        navigate(`/lessons/${activity.params.lessonId}?${fromParam}`);
         break;
       case 'mcq':
         if (activity.params.topic) {
-          navigate(`/practice?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}`);
+          navigate(`/practice?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
         } else {
-          navigate('/practice');
+          navigate(`/practice?${fromParam}`);
         }
         break;
       case 'tbs':
-        navigate('/tbs');
+        navigate(`/tbs?${fromParam}`);
         break;
       case 'flashcards':
-        navigate('/flashcards');
+        navigate(`/flashcards?${fromParam}`);
         break;
       default:
         navigate('/study');

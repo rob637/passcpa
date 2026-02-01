@@ -89,11 +89,11 @@ describe('useDocumentTitle', () => {
 
   describe('ROUTE_TITLES', () => {
     it('has title for dashboard route', () => {
-      expect(ROUTE_TITLES['/dashboard']).toBe('Dashboard');
+      expect(ROUTE_TITLES['/dashboard']).toBe('Home');
     });
 
     it('has title for study route', () => {
-      expect(ROUTE_TITLES['/study']).toBe('Study');
+      expect(ROUTE_TITLES['/study']).toBe('Learn');
     });
 
     it('has title for practice route', () => {

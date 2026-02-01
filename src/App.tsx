@@ -60,6 +60,7 @@ const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
 // Legal Pages
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
+const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 
 // Business Pages
 const Pricing = lazy(() => import('./components/pages/Pricing'));
@@ -196,6 +197,14 @@ function App() {
                 />
 
                 {/* Legal Pages (public) */}
+                <Route
+                  path="/help"
+                  element={
+                    <SuspensePage>
+                      <HelpLegal />
+                    </SuspensePage>
+                  }
+                />
                 <Route
                   path="/terms"
                   element={

@@ -1,0 +1,135 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  ArrowLeft, 
+  FileText, 
+  Shield, 
+  Mail, 
+  MessageCircle, 
+  ExternalLink,
+  ChevronRight,
+  HelpCircle
+} from 'lucide-react';
+
+const HelpLegal: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+      {/* Header */}
+      <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
+          <Link 
+            to="/you" 
+            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+          <div className="flex items-center gap-2">
+            <HelpCircle className="w-5 h-5 text-primary-600" />
+            <h1 className="font-semibold text-slate-900 dark:text-slate-100">Help & Legal</h1>
+          </div>
+        </div>
+      </header>
+
+      {/* Content */}
+      <main className="max-w-4xl mx-auto px-4 py-6">
+        {/* Support Section */}
+        <div className="mb-6">
+          <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">
+            Support
+          </h2>
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <a
+              href="mailto:support@voraprep.com"
+              className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                </div>
+                <div>
+                  <span className="font-medium text-slate-900 dark:text-slate-100">Email Support</span>
+                  <p className="text-xs text-slate-500">support@voraprep.com</p>
+                </div>
+              </div>
+              <ExternalLink className="w-5 h-5 text-slate-400" />
+            </a>
+
+            <a
+              href="mailto:feedback@voraprep.com"
+              className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-success-100 dark:bg-success-900/30 flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
+                </div>
+                <div>
+                  <span className="font-medium text-slate-900 dark:text-slate-100">Send Feedback</span>
+                  <p className="text-xs text-slate-500">Help us improve VoraPrep</p>
+                </div>
+              </div>
+              <ExternalLink className="w-5 h-5 text-slate-400" />
+            </a>
+          </div>
+        </div>
+
+        {/* Legal Section */}
+        <div className="mb-6">
+          <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">
+            Legal
+          </h2>
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <Link
+              to="/terms"
+              className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                  <FileText className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                </div>
+                <div>
+                  <span className="font-medium text-slate-900 dark:text-slate-100">Terms of Service</span>
+                  <p className="text-xs text-slate-500">Usage terms and conditions</p>
+                </div>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-400" />
+            </Link>
+
+            <Link
+              to="/privacy"
+              className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                </div>
+                <div>
+                  <span className="font-medium text-slate-900 dark:text-slate-100">Privacy Policy</span>
+                  <p className="text-xs text-slate-500">How we handle your data</p>
+                </div>
+              </div>
+              <ChevronRight className="w-5 h-5 text-slate-400" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-4 border border-amber-200 dark:border-amber-700">
+          <h3 className="text-amber-800 dark:text-amber-200 font-semibold mb-2">Important Notice</h3>
+          <p className="text-sm text-amber-700 dark:text-amber-300">
+            VoraPrep is an <strong>independent educational resource</strong> and is not affiliated with, 
+            endorsed by, or sponsored by the American Institute of Certified Public Accountants (AICPA), 
+            the National Association of State Boards of Accountancy (NASBA), Prometric, or any state 
+            board of accountancy.
+          </p>
+        </div>
+
+        {/* Version */}
+        <div className="text-center text-xs text-slate-400 mt-8">
+          <p>VoraPrep v1.0</p>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default HelpLegal;

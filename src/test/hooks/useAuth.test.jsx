@@ -9,7 +9,7 @@ import {
   updateProfile,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 
 // Test wrapper
 const wrapper = ({ children }) => <AuthProvider>{children}</AuthProvider>;
@@ -22,6 +22,8 @@ describe('useAuth Hook', () => {
       callback(null);
       return vi.fn(); // unsubscribe function
     });
+    // Mock updateDoc to resolve (for lastLogin tracking)
+    updateDoc.mockResolvedValue(undefined);
   });
 
   describe('Initial State', () => {
@@ -161,7 +163,12 @@ describe('useAuth Hook', () => {
         await result.current.resetPassword('test@example.com');
       });
 
-      expect(sendPasswordResetEmail).toHaveBeenCalledWith(expect.anything(), 'test@example.com');
+      // resetPassword is called with auth, email, and actionCodeSettings
+      expect(sendPasswordResetEmail).toHaveBeenCalledWith(
+        expect.anything(),
+        'test@example.com',
+        expect.any(Object)
+      );
     });
   });
 

@@ -4146,8 +4146,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Cloud Computing", "IT Controls"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-1',
     content: {
       sections: [
         {
@@ -4221,8 +4221,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Frameworks", "Compliance"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-1',
     content: {
       sections: [
         {
@@ -4293,8 +4293,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Security", "Testing", "Vulnerability Management"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-2',
     content: {
       sections: [
         {
@@ -4352,8 +4352,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Security", "Incident Response", "Business Continuity"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-B-3',
     content: {
       sections: [
         {
@@ -4408,8 +4408,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Access Controls", "Identity Management"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-2',
     content: {
       sections: [
         {
@@ -4468,8 +4468,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Cryptography", "Data Protection"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-C-2',
     content: {
       sections: [
         {
@@ -4526,8 +4526,8 @@ export const iscLessons: Lesson[] = [
     duration: 55,
     difficulty: 'advanced',
     topics: ["Security", "Privacy", "Compliance"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
     content: {
       sections: [
         {
@@ -4585,8 +4585,8 @@ export const iscLessons: Lesson[] = [
     duration: 50,
     difficulty: 'advanced',
     topics: ["Risk Management", "Vendor Management", "SOC"],
-    blueprintArea: 'null',
-    blueprintTopic: 'null-A-1',
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-C-1',
     content: {
       sections: [
         {

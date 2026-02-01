@@ -478,6 +478,534 @@ Year 1 thresholds for single filers:
     ],
     references: ['IRC Section 199A', 'Reg. 1.199A-1'],
   },
+  // ==========================================
+  // REG BUSINESS LAW TBS (REG-I & REG-II)
+  // ==========================================
+  {
+    id: 'reg-tbs-010',
+    section: 'REG',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Contract Formation and Enforceability',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Contract Law',
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-A-1',
+    scenario: `
+You are advising clients on various contract-related issues. Review each scenario and determine the contract law implications.
+
+SCENARIO A - OFFER AND ACCEPTANCE:
+On Monday, Seller emails Buyer: "I'll sell you my car for $15,000. Let me know by Friday." On Wednesday, Seller sells the car to Third Party for $16,000. On Thursday, Buyer emails "I accept your offer."
+
+SCENARIO B - CONSIDERATION:
+Parent promises to pay $50,000 to Adult Child "because you have been such a good child over the years." Parent later refuses to pay.
+
+SCENARIO C - STATUTE OF FRAUDS:
+Landlord and Tenant orally agree to a 2-year commercial lease at $3,000/month. Tenant moves in and pays 6 months' rent. Landlord then tries to evict Tenant, claiming no valid lease exists.
+
+SCENARIO D - CAPACITY:
+A 17-year-old purchases a $3,000 laptop for college on credit. After turning 18, the now-adult makes three monthly payments before deciding to return the laptop and void the contract.
+
+SCENARIO E - MUTUAL MISTAKE:
+Seller and Buyer agree to sell "the painting in the attic" for $500. Both believe it's a reproduction. The painting turns out to be an original worth $50,000.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'In Scenario A, is there an enforceable contract between Seller and Buyer?',
+        options: [
+          'Yes, because Buyer accepted within the time specified',
+          'No, because Seller revoked the offer by selling to Third Party',
+          'Yes, because the offer was irrevocable until Friday',
+          'No, because email is not a valid medium for acceptance',
+        ],
+        correctAnswer: 1,
+        explanation: 'An offer can be revoked any time before acceptance, even if a time limit was stated (unless consideration was paid for an option). Selling to Third Party was an effective revocation.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In Scenario B, is Parent\'s promise enforceable?',
+        options: [
+          'Yes, promissory estoppel applies',
+          'Yes, moral consideration is sufficient',
+          'No, past consideration is no consideration',
+          'No, but only because the promise was gratuitous',
+        ],
+        correctAnswer: 2,
+        explanation: 'Past consideration (being a good child in the past) is not valid consideration. A promise based on past events lacks the bargained-for exchange required for enforceability.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'In Scenario C, can Tenant enforce the oral lease?',
+        options: [
+          'No, leases over 1 year must be in writing',
+          'Yes, partial performance can satisfy Statute of Frauds',
+          'No, because landlord is the party to be charged',
+          'Yes, but only for the 6 months already paid',
+        ],
+        correctAnswer: 1,
+        explanation: 'While the Statute of Frauds requires leases over 1 year to be in writing, part performance (taking possession and paying rent) can satisfy the statute in many jurisdictions.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'In Scenario D, can the adult void the contract?',
+        options: [
+          'Yes, minors can void contracts even after reaching majority',
+          'No, ratification occurred through continued payments after age 18',
+          'Yes, but only if the laptop is returned unused',
+          'No, because laptops for college are necessities',
+        ],
+        correctAnswer: 1,
+        explanation: 'Making payments after reaching the age of majority constitutes ratification of the contract. The right to disaffirm was waived through affirmative conduct.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'In Scenario E, what remedy is available?',
+        options: [
+          'Seller can rescind due to mutual mistake',
+          'Buyer can keep the painting at the agreed price',
+          'The contract is void and must be unwound',
+          'Seller can demand reformation to fair value',
+        ],
+        correctAnswer: 0,
+        explanation: 'Mutual mistake as to a basic assumption (the painting\'s authenticity) allows the adversely affected party to rescind. Seller can void the contract and recover the painting.',
+      },
+    ],
+    hints: [
+      'Offers can be revoked before acceptance unless option contract exists',
+      'Past consideration is NOT valid consideration',
+      'Statute of Frauds: MYLEGS (Marriage, Year+, Land, Executor, Goods $500+, Surety)',
+      'Minors can disaffirm contracts, but ratification after 18 waives that right',
+    ],
+    references: ['Restatement (Second) of Contracts', 'UCC Article 2', 'Statute of Frauds'],
+  },
+  {
+    id: 'reg-tbs-011',
+    section: 'REG',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Agency Law and Employment Relationships',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Agency Law',
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-B-1',
+    scenario: `
+Review the following agency and employment scenarios:
+
+SCENARIO A - ACTUAL VS. APPARENT AUTHORITY:
+ABC Corp hires Sales Agent with written authority to sell products up to $10,000. Without ABC's knowledge, Sales Agent tells Customer that she can approve deals up to $50,000. Customer, relying on this, signs a $40,000 purchase order.
+
+SCENARIO B - INDEPENDENT CONTRACTOR VS. EMPLOYEE:
+Tech Consultant works for StartupCo. She uses her own laptop, sets her own hours, works for multiple clients, and invoices monthly. StartupCo provides office space when needed but doesn't supervise her methods.
+
+SCENARIO C - RESPONDEAT SUPERIOR:
+Delivery Driver, while on an approved delivery route for Employer, detours to pick up personal dry cleaning. While parked at the dry cleaner, Driver negligently backs into Pedestrian.
+
+SCENARIO D - DISCLOSED VS. UNDISCLOSED PRINCIPAL:
+Purchasing Agent buys supplies for Manufacturing Co., but doesn't reveal who she represents. Agent signs the contract in her own name. Seller later learns Manufacturing Co. was the principal.
+
+SCENARIO E - DUTY OF LOYALTY:
+CFO of PublicCo learns that the company plans to acquire LandCo at a premium. Before the announcement, CFO personally buys LandCo shares.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'In Scenario A, is ABC Corp bound by the $40,000 contract?',
+        options: [
+          'No, because Sales Agent exceeded actual authority',
+          'Yes, because Sales Agent had apparent authority',
+          'No, because Customer should have verified authority',
+          'Yes, because ratification is automatic',
+        ],
+        correctAnswer: 1,
+        explanation: 'Apparent authority exists when a principal\'s conduct leads a third party to reasonably believe the agent has authority. ABC created apparent authority by allowing Sales Agent to represent herself as having deal authority.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In Scenario B, how should Tech Consultant be classified?',
+        options: [
+          'Employee, because she uses StartupCo office space',
+          'Independent contractor, based on the factors described',
+          'Employee, because she works regularly for StartupCo',
+          'Cannot determine without a written agreement',
+        ],
+        correctAnswer: 1,
+        explanation: 'Key independent contractor factors present: own equipment, sets own hours, multiple clients, control over methods. The occasional office use is not determinative.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'In Scenario C, is Employer liable for Pedestrian\'s injuries?',
+        options: [
+          'Yes, the detour was a minor frolic',
+          'No, the personal errand was outside scope of employment',
+          'Yes, because driving was within the job duties',
+          'No, because the vehicle was parked, not in operation',
+        ],
+        correctAnswer: 1,
+        explanation: 'A substantial deviation for personal purposes (frolic) takes the employee outside the scope of employment. The personal dry cleaning errand was not within the authorized activities.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'In Scenario D, who can Seller hold liable on the contract?',
+        options: [
+          'Only Manufacturing Co. (the principal)',
+          'Only Purchasing Agent (who signed)',
+          'Either Manufacturing Co. or Purchasing Agent',
+          'Neither, because the contract is void',
+        ],
+        correctAnswer: 2,
+        explanation: 'With an undisclosed principal, the third party can hold either the agent (who signed) or the principal (once discovered) liable. The third party must elect and can only recover once.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'In Scenario E, what duties did CFO breach?',
+        options: [
+          'Duty of care only',
+          'Duty of loyalty and prohibition on insider trading',
+          'No duties breached if CFO made a profit',
+          'Only securities laws, not fiduciary duties',
+        ],
+        correctAnswer: 1,
+        explanation: 'CFO breached the fiduciary duty of loyalty by trading on material non-public information. This also violates securities laws (insider trading under Rule 10b-5).',
+      },
+    ],
+    hints: [
+      'Apparent authority protects third parties who reasonably rely on appearance of authority',
+      'Independent contractor factors: control, tools, multiple clients, method of payment',
+      'Respondeat superior: employer liable for torts within scope of employment',
+      'Undisclosed principal: third party can sue agent or principal once discovered',
+    ],
+    references: ['Restatement (Third) of Agency', 'IRC Section 3121', 'Securities Exchange Act'],
+  },
+  {
+    id: 'reg-tbs-012',
+    section: 'REG',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Business Entity Formation and Liability',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Business Structures',
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-A-1',
+    scenario: `
+Review the following scenarios regarding business entity formation and liability:
+
+SCENARIO A - PARTNERSHIP FORMATION:
+Alex and Blake agree to "go into business together selling crafts." They don't file any documents with the state. They split profits 50/50. Blake orders $50,000 of inventory from Vendor on credit. Vendor now wants payment.
+
+SCENARIO B - LIMITED PARTNER LIABILITY:
+Chris is a limited partner in Deluxe LP. The partnership agreement restricts Chris to a passive investment role. Chris attends weekly management meetings, approves the annual budget, and frequently advises the general partner on operations. The partnership defaults on a loan.
+
+SCENARIO C - LLC PIERCING THE VEIL:
+Dana forms a single-member LLC but never opens a separate bank account. Dana pays personal expenses from business receipts and doesn't maintain meeting minutes. When the LLC can't pay a $100,000 judgment, Creditor sues Dana personally.
+
+SCENARIO D - CORPORATION FORMATION:
+Three incorporators file articles of incorporation with the state, which acknowledges receipt. Before the certificate of incorporation is issued, they sign a contract to lease office space for "NewCorp, Inc." The state then rejects the filing due to a name conflict.
+
+SCENARIO E - S CORP ELECTION:
+A newly formed corporation with two shareholders (both U.S. citizens) wants S status. They file Form 2553 on March 1 for a calendar-year election, and the corporation began operations January 15.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'In Scenario A, what type of entity exists and who is liable to Vendor?',
+        options: [
+          'No entity; Alex and Blake individually liable',
+          'General partnership; both Alex and Blake jointly liable',
+          'General partnership; only Blake liable (made the order)',
+          'Limited partnership; Blake is general partner only',
+        ],
+        correctAnswer: 1,
+        explanation: 'A general partnership forms automatically when two or more persons carry on a business for profit. No filing required. All general partners are jointly and severally liable for partnership debts.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In Scenario B, can Chris be held personally liable for the loan?',
+        options: [
+          'No, limited partners are never personally liable',
+          'Yes, Chris participated in management losing limited liability',
+          'No, unless Chris guaranteed the loan',
+          'Yes, but only to the extent of capital contribution',
+        ],
+        correctAnswer: 1,
+        explanation: 'Under RULPA and ULPA, limited partners who participate in control of the business may lose their limited liability protection. Chris\'s active management participation likely crossed this line.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'In Scenario C, will the court likely pierce the LLC veil?',
+        options: [
+          'No, LLCs cannot be pierced',
+          'Yes, due to failure to observe formalities and commingling',
+          'No, single-member LLCs don\'t require formalities',
+          'Yes, but only if fraud is proven',
+        ],
+        correctAnswer: 1,
+        explanation: 'Courts may pierce the LLC veil when there is: (1) commingling of funds, (2) failure to maintain entity formalities, (3) undercapitalization, or (4) use of entity to perpetrate fraud or injustice.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'In Scenario D, who is liable on the office lease?',
+        options: [
+          'NewCorp, Inc. as a de facto corporation',
+          'The three incorporators personally, jointly and severally',
+          'No one; the lease is void without a valid corporation',
+          'Only the incorporator who signed the lease',
+        ],
+        correctAnswer: 1,
+        explanation: 'Since the incorporation was never completed (filing rejected), no corporation exists. Those acting on behalf of a non-existent corporation are personally liable as promoters.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'In Scenario E, is the S election valid?',
+        options: [
+          'Yes, filed within 2.5 months of formation',
+          'No, should have been filed by February 15',
+          'Yes, effective for the following tax year',
+          'No, must wait until next year to file',
+        ],
+        correctAnswer: 0,
+        explanation: 'Form 2553 must be filed by the 15th day of the 3rd month (2.5 months) from the earlier of when the S election is to take effect or when the corporation first has assets. March 1 is within 2.5 months of January 15.',
+      },
+    ],
+    hints: [
+      'General partnership = automatic formation when carrying on business for profit',
+      'Limited partners lose protection if they participate in control',
+      'Piercing veil factors: commingling, undercapitalization, formalities, fraud',
+      'S election: File within 2.5 months of beginning of tax year (or business start)',
+    ],
+    references: ['RUPA', 'RULPA', 'RULLCA', 'IRC Section 1362'],
+  },
+  {
+    id: 'reg-tbs-013',
+    section: 'REG',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'UCC Article 2 - Sales Transactions',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Uniform Commercial Code',
+    blueprintArea: 'REG-I',
+    blueprintTopic: 'REG-I-C-1',
+    scenario: `
+Review the following sales transaction scenarios under UCC Article 2:
+
+SCENARIO A - STATUTE OF FRAUDS:
+Manufacturer (merchant) sends Retailer (merchant) a signed purchase order for 1,000 widgets at $500 each. Retailer receives it, reads it, but doesn't respond for 15 days. Manufacturer ships the widgets; Retailer refuses delivery.
+
+SCENARIO B - BATTLE OF THE FORMS:
+Buyer sends a purchase order for equipment at $10,000, with arbitration clause. Seller responds with acknowledgment at $10,000, but adds "all disputes to be litigated in Seller's state." Both forms reference the equipment. Buyer accepts delivery.
+
+SCENARIO C - RISK OF LOSS:
+FedParts (merchant seller) agrees to sell auto parts to AutoShop (buyer). Terms: "F.O.B. Seller's warehouse." FedParts loads goods onto carrier. During transit, the goods are destroyed in a truck accident.
+
+SCENARIO D - WARRANTIES:
+Hardware Store sells a lawn mower. Store's sign says "AS-IS - NO WARRANTIES." Salesperson tells customer, "This mower will easily cut grass up to 12 inches tall." Customer buys; mower can only handle grass up to 6 inches.
+
+SCENARIO E - PERFECT TENDER RULE:
+Furniture Co. delivers 100 chairs to Restaurant. Upon inspection, Restaurant finds 3 chairs have minor scratches that don't affect use. Restaurant rejects the entire shipment.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'In Scenario A, is Retailer bound by the contract?',
+        options: [
+          'No, Retailer never signed anything',
+          'Yes, under the merchant\'s exception (failed to object within 10 days)',
+          'No, the Statute of Frauds requires Retailer\'s signature',
+          'Yes, but only for half the quantity',
+        ],
+        correctAnswer: 1,
+        explanation: 'Under UCC 2-201(2), between merchants, a written confirmation satisfies the Statute of Frauds unless the recipient objects in writing within 10 days. Retailer\'s 15-day silence bound them.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In Scenario B, which dispute resolution term governs?',
+        options: [
+          'Arbitration (Buyer\'s term)',
+          'Litigation in Seller\'s state',
+          'Neither; UCC gap-filler applies',
+          'Whichever party filed suit first',
+        ],
+        correctAnswer: 2,
+        explanation: 'Under UCC 2-207, when both parties are merchants and terms conflict, the conflicting terms "knock out" and UCC default rules apply. Neither arbitration nor specific venue governs.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'In Scenario C, who bears the risk of loss for the destroyed goods?',
+        options: [
+          'FedParts (seller), because goods were damaged',
+          'AutoShop (buyer), because risk passed at shipment (F.O.B. origin)',
+          'The carrier, because damage occurred in transit',
+          'Shared equally between buyer and seller',
+        ],
+        correctAnswer: 1,
+        explanation: 'F.O.B. seller\'s warehouse (F.O.B. origin) means risk of loss passes when seller delivers goods to the carrier. Buyer bears the loss for damage during transit.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'In Scenario D, can the customer recover for breach of warranty?',
+        options: [
+          'No, the AS-IS disclaimer eliminated all warranties',
+          'Yes, express warranty (oral statement) cannot be disclaimed',
+          'No, oral statements don\'t create warranties',
+          'Yes, but only under implied warranty of merchantability',
+        ],
+        correctAnswer: 1,
+        explanation: 'The salesperson\'s specific statement about performance ("cuts 12-inch grass") created an express warranty. Express warranties cannot be disclaimed, even with AS-IS language.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'In Scenario E, is Restaurant\'s rejection of all 100 chairs proper?',
+        options: [
+          'Yes, perfect tender rule allows rejection for any defect',
+          'No, must accept conforming goods and reject only defective ones',
+          'No, minor scratches don\'t justify rejection',
+          'Yes, but only if done within reasonable time',
+        ],
+        correctAnswer: 0,
+        explanation: 'Under UCC 2-601, the perfect tender rule allows buyer to reject the whole shipment if goods or tender fail to conform in any respect. Even minor defects justify rejection.',
+      },
+    ],
+    hints: [
+      'Merchant\'s exception: written confirmation binds if no objection in 10 days',
+      'Battle of forms: conflicting terms knock out; UCC fills gaps',
+      'F.O.B. origin = risk passes at shipment; F.O.B. destination = risk at delivery',
+      'Express warranties cannot be disclaimed (unlike implied warranties)',
+    ],
+    references: ['UCC 2-201', 'UCC 2-207', 'UCC 2-509', 'UCC 2-313', 'UCC 2-601'],
+  },
+  {
+    id: 'reg-tbs-014',
+    section: 'REG',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Debtor-Creditor Relationships and Bankruptcy',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Debtor-Creditor Law',
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-B-1',
+    scenario: `
+Review the following debtor-creditor and bankruptcy scenarios:
+
+SCENARIO A - SECURED TRANSACTIONS:
+Bank takes a security interest in Retailer's inventory. Bank properly files a financing statement. Later, Retailer borrows from Finance Co., granting a security interest in the same inventory. Finance Co. files 30 days later. Retailer defaults on both loans.
+
+SCENARIO B - SURETYSHIP:
+Guarantor signs a guarantee for Debtor's $100,000 loan from Bank. Debtor and Bank later agree to extend the loan term by one year and increase the interest rate. Guarantor is not notified. Debtor defaults.
+
+SCENARIO C - BANKRUPTCY FILING:
+Individual files Chapter 7 bankruptcy with the following assets:
+• Primary residence: $300,000 value, $280,000 mortgage
+• Car: $8,000 value, $6,000 loan
+• Checking account: $2,500
+• Retirement account (401k): $150,000
+• Personal belongings: $5,000
+
+SCENARIO D - PREFERENTIAL TRANSFER:
+30 days before filing Chapter 7, Debtor repaid a $10,000 personal loan from his mother-in-law. The loan was unsecured and had been outstanding for 2 years.
+
+SCENARIO E - DISCHARGE:
+Debtor completes Chapter 7 proceedings. Outstanding debts include:
+• Credit card debt: $25,000
+• Student loans: $40,000
+• Income taxes (3 years old): $15,000
+• Child support arrears: $12,000
+• Personal injury judgment (drunk driving): $100,000
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'In Scenario A, who has priority in the inventory?',
+        options: [
+          'Bank, because it filed first (first in time, first in right)',
+          'Finance Co., because it has a purchase-money security interest',
+          'Both share pro-rata based on loan amounts',
+          'Bank, but only for inventory present when it filed',
+        ],
+        correctAnswer: 0,
+        explanation: 'Under UCC Article 9, when two secured parties have perfected security interests in the same collateral, priority goes to the first to file or perfect. Bank filed first.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'In Scenario B, what is the effect on Guarantor\'s obligation?',
+        options: [
+          'Guarantor remains fully liable for $100,000',
+          'Guarantor is completely discharged',
+          'Guarantor is liable only for the original terms',
+          'Guarantor is liable but can seek contribution',
+        ],
+        correctAnswer: 1,
+        explanation: 'Material modification of the underlying debt without the surety\'s consent discharges the surety. Extending term and increasing interest rate are material modifications.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'In Scenario C, which asset is fully exempt from the bankruptcy estate?',
+        options: [
+          'Primary residence equity ($20,000)',
+          'Car equity ($2,000)',
+          'Retirement account (401k) - $150,000',
+          'All assets are partially exempt',
+        ],
+        correctAnswer: 2,
+        explanation: 'ERISA-qualified retirement accounts (401k, IRA to limits) are fully exempt from bankruptcy under federal law. The 401k cannot be touched by creditors.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'In Scenario D, can the trustee recover the payment to mother-in-law?',
+        options: [
+          'No, family payments are protected',
+          'Yes, preferential transfer to insider within 1 year lookback',
+          'No, because the loan was legitimate',
+          'Yes, but only if mother-in-law received more than creditors',
+        ],
+        correctAnswer: 1,
+        explanation: 'Payments to insiders (relatives by marriage qualify) can be avoided if made within 1 year of filing and on account of an antecedent debt. The 30-day payment is within the 1-year insider lookback.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'In Scenario E, which debts will NOT be discharged?',
+        options: [
+          'Credit card debt only',
+          'Student loans, child support, and DUI judgment',
+          'Student loans, taxes, child support, and DUI judgment',
+          'All debts except credit cards',
+        ],
+        correctAnswer: 2,
+        explanation: 'Non-dischargeable debts include: student loans (absent hardship), recent taxes (generally within 3 years), domestic support obligations, and debts for willful/malicious injury (DUI causing injury).',
+      },
+    ],
+    hints: [
+      'UCC 9: First to file or perfect has priority (exceptions for PMSIs)',
+      'Suretyship: Material modification without consent = discharge',
+      'Bankruptcy exemptions: Homestead, retirement accounts, tools of trade',
+      'Preferential transfers: 90 days general, 1 year for insiders',
+    ],
+    references: ['UCC Article 9', 'Bankruptcy Code 11 USC', '11 USC 547', '11 USC 523'],
+  },
 ];
 
 // ==========================================
@@ -658,6 +1186,542 @@ Firm policy benchmarks:
       '• Net Income × 5% = most common starting point',
     ],
     references: ['AU-C 320', 'AU-C 450'],
+  },
+  {
+    id: 'aud-tbs-006',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Analytical Procedures and Ratio Analysis',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Substantive Procedures',
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-C-1',
+    scenario: `
+You are performing analytical procedures for Cascade Industries as part of the Year 2 audit. The following comparative financial data is available:
+
+                              Year 2          Year 1          Industry Avg
+Revenue                    $12,500,000     $11,200,000          N/A
+Cost of Goods Sold          $7,875,000      $6,720,000          N/A
+Gross Profit                $4,625,000      $4,480,000          N/A
+Operating Expenses          $3,100,000      $2,800,000          N/A
+Net Income                  $1,525,000      $1,680,000          N/A
+
+Accounts Receivable         $2,350,000      $1,568,000          N/A
+Inventory                   $1,890,000      $1,400,000          N/A
+Total Assets               $15,000,000     $12,800,000          N/A
+
+Key Ratios:
+Gross Profit Margin            37.0%           40.0%          38.0%
+Days Sales Outstanding           69              51              45
+Inventory Turnover               4.2             4.8             5.2
+Current Ratio                    1.8             2.1             2.0
+
+Your expectations based on industry trends were:
+• Revenue increase of 8-10%
+• Gross profit margin of 39-41%
+• DSO of 45-50 days
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'Which ratio presents the most significant audit concern requiring investigation?',
+        options: [
+          'Gross profit margin - declined 3 percentage points',
+          'Days sales outstanding - increased from 51 to 69 days',
+          'Inventory turnover - decreased from 4.8 to 4.2',
+          'Current ratio - decreased from 2.1 to 1.8',
+        ],
+        correctAnswer: 1,
+        explanation: 'DSO increased by 35% (18 days) and is now 24 days above industry average. This significant deterioration in collections could indicate revenue recognition issues, collectibility problems, or fictitious receivables.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'The gross profit margin decline from 40% to 37% could indicate:',
+        options: [
+          'Improved purchasing efficiency',
+          'Possible inventory obsolescence not recorded',
+          'Understated sales returns and allowances',
+          'Both B and C are possible concerns',
+        ],
+        correctAnswer: 3,
+        explanation: 'A declining gross profit margin could indicate unrecorded inventory write-downs or understated sales returns. Both require additional audit procedures.',
+      },
+      {
+        id: 'req-3',
+        type: 'classification',
+        question: 'For each finding, identify the most appropriate follow-up procedure:',
+        items: ['DSO increased significantly', 'Gross margin declined', 'Inventory turnover slowed'],
+        options: ['Test AR aging and subsequent collections', 'Review inventory for obsolescence', 'Analyze pricing and cost trends', 'All are appropriate responses'],
+        correctAnswers: [
+          { item: 'DSO increased significantly', answer: 'Test AR aging and subsequent collections' },
+          { item: 'Gross margin declined', answer: 'Analyze pricing and cost trends' },
+          { item: 'Inventory turnover slowed', answer: 'Review inventory for obsolescence' },
+        ],
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'When management explains DSO increased due to "extended payment terms for key customers," the auditor should:',
+        options: [
+          'Accept the explanation and document it',
+          'Corroborate by reviewing sales contracts and customer correspondence',
+          'Reduce the scope of receivables testing',
+          'Issue a qualified opinion for the collectibility concern',
+        ],
+        correctAnswer: 1,
+        explanation: 'Management explanations should be corroborated with evidence. Review contracts for modified terms and test subsequent collections to verify collectibility.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'If revenue increased 11.6% but the expectation was 8-10%, this suggests:',
+        options: [
+          'No concern - higher revenue is always positive',
+          'Possible overstatement requiring cutoff and existence testing',
+          'The expectation was too conservative',
+          'Management is effective at growing the business',
+        ],
+        correctAnswer: 1,
+        explanation: 'Revenue exceeding expectations, combined with deteriorating DSO, raises concerns about revenue recognition (cutoff) and existence of recorded sales.',
+      },
+    ],
+    hints: [
+      'DSO Formula: (Accounts Receivable / Revenue) × 365',
+      'Significant changes from prior year AND industry require investigation',
+      'Corroborate all management explanations with evidence',
+      'Multiple ratios moving adversely may indicate related issues',
+    ],
+    references: ['AU-C 520', 'AU-C 315', 'AU-C 330'],
+  },
+  {
+    id: 'aud-tbs-007',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Audit Evidence Evaluation',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Audit Evidence',
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-1',
+    scenario: `
+You are evaluating audit evidence obtained during the audit of Pinnacle Corporation. For each situation, determine the sufficiency and appropriateness of the evidence.
+
+SITUATION A - CASH CONFIRMATION
+The auditor sent positive confirmations to all banks where Pinnacle has accounts. Results:
+• Sent: 5 confirmations
+• Returned and agreed: 3
+• Returned with differences (timing): 1
+• Not returned: 1 (balance $2.3 million)
+
+SITUATION B - ACCOUNTS RECEIVABLE
+For a sample of 40 receivables totaling $800,000:
+• Customer confirmations returned agreeing: 28
+• Customers who did not respond: 8 (totaling $180,000)
+• Confirmations returned with differences: 4 (totaling $45,000)
+For non-responses, the auditor examined subsequent cash receipts.
+
+SITUATION C - INVENTORY OBSERVATION
+The auditor observed the physical inventory count at the main warehouse (70% of inventory value). Due to timing, the auditor was unable to observe the count at a remote location (30% of inventory).
+
+SITUATION D - RELATED PARTY TRANSACTIONS
+Management provided a representation letter stating there are no related party transactions. The auditor did not perform additional procedures.
+
+SITUATION E - LEGAL CONTINGENCIES
+The client's legal counsel responded to the audit inquiry but refused to provide any specific information about pending litigation, citing attorney-client privilege.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'For Situation A (non-responding bank), what should the auditor do?',
+        options: [
+          'Accept the internal records as sufficient evidence',
+          'Send a second confirmation request',
+          'Perform alternative procedures such as examining bank statements',
+          'Qualify the audit opinion for scope limitation',
+        ],
+        correctAnswer: 2,
+        explanation: 'For bank confirmations, non-responses require follow-up. If a second request is unanswered, alternative procedures (examining bank statements, testing reconciling items) should be performed before considering scope limitations.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'For Situation B, the examination of subsequent cash receipts for non-responding customers:',
+        options: [
+          'Is not an acceptable alternative procedure',
+          'Provides evidence about existence but not accuracy of amounts',
+          'Provides sufficient evidence about existence and valuation',
+          'Should only be used if management refuses to cooperate',
+        ],
+        correctAnswer: 2,
+        explanation: 'Subsequent cash receipts provide strong evidence of both existence (customer paid) and valuation (amount collected matches recorded amount). This is an appropriate alternative procedure for non-responses.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'For Situation C (unobserved inventory at remote location), the auditor should:',
+        options: [
+          'Accept management representations about the remote inventory',
+          'Perform alternative procedures or observe on an alternative date',
+          'Immediately withdraw from the engagement',
+          'Issue an adverse opinion',
+        ],
+        correctAnswer: 1,
+        explanation: 'If inventory is material and the auditor cannot observe, alternative procedures include observing on another date (with rollforward/rollback) or having another auditor observe. A scope limitation may result only if alternatives are not feasible.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'For Situation D (related party reliance on management representations only):',
+        options: [
+          'Management representations are sufficient for related parties',
+          'This is a deficiency - additional procedures should be performed',
+          'Related party procedures are optional',
+          'The auditor should resign due to management dishonesty',
+        ],
+        correctAnswer: 1,
+        explanation: 'AU-C 550 requires procedures beyond inquiry and management representations for related parties. The auditor should review board minutes, contracts, and make inquiries of others with knowledge.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'For Situation E (attorney refusing to respond):',
+        options: [
+          'This is normal and acceptable',
+          'The auditor should consider a scope limitation',
+          'Management representations about litigation are sufficient',
+          'The auditor should subpoena the attorney',
+        ],
+        correctAnswer: 1,
+        explanation: 'Attorney refusal to respond to audit inquiries about litigation is a scope limitation. The auditor cannot rely solely on management representations for legal contingencies.',
+      },
+    ],
+    hints: [
+      'External evidence is generally more reliable than internal evidence',
+      'Management representations alone are rarely sufficient for significant matters',
+      'Scope limitations may require a qualified opinion or disclaimer',
+      'Alternative procedures must provide equivalent level of assurance',
+    ],
+    references: ['AU-C 500', 'AU-C 501', 'AU-C 505', 'AU-C 550', 'AU-C 501'],
+  },
+  {
+    id: 'aud-tbs-008',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Risk Assessment and Audit Response',
+    difficulty: 'hard',
+    timeEstimate: 20,
+    topic: 'Risk Assessment',
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-C-1',
+    scenario: `
+You are performing risk assessment for Quantum Tech Corp, a rapidly growing technology company. Based on your understanding of the entity, you have identified the following factors:
+
+ENTITY-LEVEL FACTORS:
+• New CFO hired 6 months ago (third CFO in 2 years)
+• Company going through IPO process - significant pressure to meet earnings targets
+• Complex revenue recognition due to multiple-element arrangements
+• Management compensation heavily tied to stock price performance
+
+ACCOUNT-LEVEL FACTORS:
+Account               Balance      Prior Misstatements    Complexity
+Revenue              $85M         Material adjustment     High
+Accounts Receivable  $18M         None                    Low
+Stock Compensation   $4M          Material weakness       High
+Capitalized Software $12M         Prior audit finding     Medium
+Inventory            $8M          None                    Low
+
+CONTROL OBSERVATIONS:
+• IT general controls have not been tested in prior year
+• Revenue recognition policy was recently changed
+• Journal entry review process is informal
+• No internal audit function
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Classify each account as Higher Risk or Lower Risk of material misstatement:',
+        items: ['Revenue', 'Accounts Receivable', 'Stock Compensation', 'Capitalized Software', 'Inventory'],
+        options: ['Higher Risk', 'Lower Risk'],
+        correctAnswers: [
+          { item: 'Revenue', answer: 'Higher Risk' },
+          { item: 'Accounts Receivable', answer: 'Lower Risk' },
+          { item: 'Stock Compensation', answer: 'Higher Risk' },
+          { item: 'Capitalized Software', answer: 'Higher Risk' },
+          { item: 'Inventory', answer: 'Lower Risk' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'Which factor creates the HIGHEST fraud risk?',
+        options: [
+          'New CFO hired recently',
+          'IPO pressure combined with management compensation tied to stock price',
+          'Complex revenue recognition',
+          'No internal audit function',
+        ],
+        correctAnswer: 1,
+        explanation: 'The fraud triangle requires incentive, opportunity, and rationalization. IPO pressure plus stock-based compensation creates strong financial incentive for management to misstate earnings.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'For revenue (identified as a significant risk), the auditor should:',
+        options: [
+          'Reduce testing since there was a prior material adjustment',
+          'Perform substantive procedures addressing the specific risks',
+          'Rely primarily on controls testing',
+          'Consider withdrawing from the engagement',
+        ],
+        correctAnswer: 1,
+        explanation: 'For significant risks, AU-C 330 requires substantive procedures specifically responsive to the assessed risk. Control testing alone is never sufficient for significant risks.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'The lack of IT general controls testing in the prior year means:',
+        options: [
+          'The current year auditor can rely on prior year testing',
+          'IT general controls must be tested before relying on any automated controls',
+          'The auditor should only perform substantive procedures',
+          'This is not a significant concern for a technology company',
+        ],
+        correctAnswer: 1,
+        explanation: 'Before relying on application controls, IT general controls (access, change management, operations) must be tested. Prior year testing cannot be relied upon for current year controls.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'The informal journal entry review process indicates:',
+        options: [
+          'A control deficiency requiring evaluation',
+          'A significant deficiency to be communicated to governance',
+          'An acceptable process for a smaller company',
+          'No concern if entries appear reasonable',
+        ],
+        correctAnswer: 0,
+        explanation: 'An informal journal entry review process represents a control deficiency. Journal entry review is a key control for fraud prevention. The severity depends on compensating controls.',
+      },
+    ],
+    hints: [
+      'Fraud risk factors: Incentive, Opportunity, Rationalization (the fraud triangle)',
+      'Significant risks require substantive procedures - cannot rely on controls alone',
+      'Prior misstatements indicate increased risk in current period',
+      'IPO situations create high pressure on management',
+    ],
+    references: ['AU-C 315', 'AU-C 330', 'AU-C 240', 'AU-C 265'],
+  },
+  {
+    id: 'aud-tbs-009',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Independence and Ethics Evaluation',
+    difficulty: 'medium',
+    timeEstimate: 15,
+    topic: 'Professional Responsibilities',
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-B-1',
+    scenario: `
+You are the ethics partner at Anderson & Associates CPAs. Evaluate the following independence situations for your firm's audit clients:
+
+SITUATION A - Financial Interest
+Staff auditor Sarah owns 50 shares of Gamma Corp (an audit client) that she inherited last month. The shares are worth $1,200. Sarah is not on the Gamma audit team.
+
+SITUATION B - Employment Relationship
+Partner Tom's daughter accepted a position as Senior Accountant at Delta Industries, an audit client. The position reports to the CFO. Tom is not involved in the Delta audit.
+
+SITUATION C - Non-Audit Services
+For Epsilon Corp (a public company audit client), the firm is asked to design and implement a new accounting information system. The client will make all management decisions.
+
+SITUATION D - Business Relationship
+The firm entered into a joint venture with Zeta Corp (an audit client) to develop audit software. The firm has a 30% interest in the venture.
+
+SITUATION E - Former Employment
+Manager Jessica joined the firm 6 months ago. Before joining, she was the Controller at Theta Industries, which the firm audits. Jessica has not been assigned to the Theta audit.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'multiple_choice',
+        question: 'For Situation A (staff auditor inherited shares), independence is:',
+        options: [
+          'Impaired because any ownership of audit client stock is prohibited',
+          'Not impaired because Sarah is not on the engagement team',
+          'Impaired unless Sarah sells the shares within 30 days',
+          'Not impaired because the amount is immaterial',
+        ],
+        correctAnswer: 2,
+        explanation: 'Under AICPA rules, unsolicited financial interests (like inheritance) must be disposed of as soon as practicable. A reasonable period (typically 30 days) is allowed for disposition.',
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'For Situation B (partner\'s daughter as Senior Accountant), independence is:',
+        options: [
+          'Impaired - close family members cannot work for audit clients',
+          'Not impaired because Tom is not on the audit',
+          'Impaired because the daughter is in an accounting role',
+          'Not impaired if she does not report to a partner on the engagement',
+        ],
+        correctAnswer: 2,
+        explanation: 'A partner\'s immediate family member in an accounting role at an audit client impairs independence, even if the partner is not on the engagement, because the family member could influence the financial statements.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'For Situation C (designing accounting system for public client), independence is:',
+        options: [
+          'Not impaired if client makes all management decisions',
+          'Impaired - this is a prohibited non-audit service for public companies',
+          'Not impaired if pre-approved by the audit committee',
+          'Impaired only if the system records financial transactions',
+        ],
+        correctAnswer: 1,
+        explanation: 'For SEC registrants (public companies), designing and implementing accounting information systems is prohibited regardless of client approval or management decision-making.',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'For Situation D (joint venture with audit client), independence is:',
+        options: [
+          'Impaired - this is a prohibited business relationship',
+          'Not impaired if the joint venture is immaterial to the firm',
+          'Not impaired because developing audit software is related to attest services',
+          'Impaired only if the venture is profitable',
+        ],
+        correctAnswer: 0,
+        explanation: 'A joint venture with an audit client constitutes a prohibited business relationship that impairs independence regardless of materiality or purpose.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'For Situation E (former Controller now at firm), independence is:',
+        options: [
+          'Impaired for any period Jessica was Controller',
+          'Not impaired if Jessica is not on the engagement and has no influence',
+          'Impaired for one year cooling-off period',
+          'Not impaired because Jessica is a manager, not a partner',
+        ],
+        correctAnswer: 1,
+        explanation: 'Former employees of audit clients can work on the audit if they: (1) have no remaining connection to the client, (2) are not in a position to influence the audit, and (3) amounts previously subject to their work are not significant to current audit.',
+      },
+    ],
+    hints: [
+      'Financial interests: Direct ownership always impairs; inherited must be disposed promptly',
+      'Employment: Immediate family in accounting roles impairs independence',
+      'Public companies have stricter rules under PCAOB and SEC regulations',
+      'Business relationships (joint ventures, loans) generally impair independence',
+    ],
+    references: ['AICPA Code of Professional Conduct', 'SEC Rule 2-01', 'PCAOB Ethics Rules'],
+  },
+  {
+    id: 'aud-tbs-010',
+    section: 'AUD',
+    type: TBS_TYPES.DOCUMENT_REVIEW,
+    title: 'Audit Report Modifications',
+    difficulty: 'hard',
+    timeEstimate: 18,
+    topic: 'Reporting',
+    blueprintArea: 'AUD-V',
+    blueprintTopic: 'AUD-V-B-1',
+    scenario: `
+You are reviewing the following situations to determine the appropriate audit report modification:
+
+SITUATION A - Inventory Scope Limitation
+You were engaged to audit XYZ Corp after year-end. The company did not have adequate records to allow you to apply alternative procedures to verify the existence and condition of inventory ($4 million). Total assets are $30 million. Inventory is material.
+
+SITUATION B - Going Concern Doubt
+ABC Company has recurring losses and negative operating cash flows. Management's plans include securing a new line of credit (letter of intent obtained) and cost reductions. You believe substantial doubt about going concern exists and disclosures are adequate.
+
+SITUATION C - Departure from GAAP
+DEF Corp uses a revenue recognition method that does not conform to ASC 606. The effect is material but not pervasive. Management refuses to change.
+
+SITUATION D - Emphasis of Matter
+GHI Industries is involved in significant litigation disclosed in the notes. The outcome is uncertain but properly disclosed. No departure from GAAP exists.
+
+SITUATION E - Inconsistency
+JKL Corp changed from LIFO to FIFO for inventory valuation this year. The change is properly disclosed and justified. Prior year financial statements were not restated.
+    `,
+    requirements: [
+      {
+        id: 'req-1',
+        type: 'classification',
+        question: 'Match each situation with the appropriate report modification:',
+        items: ['Situation A - Inventory scope', 'Situation B - Going concern', 'Situation C - GAAP departure', 'Situation D - Litigation', 'Situation E - Accounting change'],
+        options: ['Qualified Opinion', 'Adverse Opinion', 'Disclaimer of Opinion', 'Unmodified with Emphasis', 'Unmodified with Other Matter'],
+        correctAnswers: [
+          { item: 'Situation A - Inventory scope', answer: 'Qualified Opinion' },
+          { item: 'Situation B - Going concern', answer: 'Unmodified with Emphasis' },
+          { item: 'Situation C - GAAP departure', answer: 'Qualified Opinion' },
+          { item: 'Situation D - Litigation', answer: 'Unmodified with Emphasis' },
+          { item: 'Situation E - Accounting change', answer: 'Unmodified with Emphasis' },
+        ],
+      },
+      {
+        id: 'req-2',
+        type: 'multiple_choice',
+        question: 'For Situation A, if inventory were pervasive (60% of assets), the appropriate opinion would be:',
+        options: [
+          'Qualified opinion',
+          'Adverse opinion',
+          'Disclaimer of opinion',
+          'Unmodified opinion with emphasis paragraph',
+        ],
+        correctAnswer: 2,
+        explanation: 'A scope limitation that is both material and pervasive requires a disclaimer of opinion because the auditor cannot express an opinion on the financial statements as a whole.',
+      },
+      {
+        id: 'req-3',
+        type: 'multiple_choice',
+        question: 'For Situation B, the going concern paragraph should be placed:',
+        options: [
+          'Before the opinion paragraph',
+          'After the opinion paragraph in an Emphasis of Matter section',
+          'In the Basis for Opinion paragraph',
+          'In a separate report attached to the audit report',
+        ],
+        correctAnswer: 1,
+        explanation: 'Going concern emphasis paragraphs are placed after the opinion paragraph and include a heading such as "Material Uncertainty Related to Going Concern" or "Emphasis of Matter."',
+      },
+      {
+        id: 'req-4',
+        type: 'multiple_choice',
+        question: 'For Situation C, if the GAAP departure were both material and pervasive, the appropriate opinion would be:',
+        options: [
+          'Qualified opinion',
+          'Adverse opinion',
+          'Disclaimer of opinion',
+          'Unmodified with emphasis paragraph',
+        ],
+        correctAnswer: 1,
+        explanation: 'A material and pervasive departure from GAAP requires an adverse opinion because the financial statements do not present fairly in accordance with the applicable framework.',
+      },
+      {
+        id: 'req-5',
+        type: 'multiple_choice',
+        question: 'Which situation would NOT require any modification to the standard unmodified report?',
+        options: [
+          'Situation B - Going concern',
+          'Situation D - Litigation (if properly disclosed)',
+          'Situation E - Accounting change',
+          'None - all require some form of modification or emphasis',
+        ],
+        correctAnswer: 3,
+        explanation: 'All five situations require some modification: going concern, material uncertainty, and consistency changes require emphasis paragraphs; GAAP departures and scope limitations require modified opinions.',
+      },
+    ],
+    hints: [
+      'Material but not pervasive = Qualified; Material and pervasive = Adverse/Disclaimer',
+      'Scope limitation pervasive = Disclaimer; GAAP departure pervasive = Adverse',
+      'Going concern, litigation uncertainty, and accounting changes = Emphasis paragraph',
+      'Emphasis paragraphs do not modify the opinion - still unmodified',
+    ],
+    references: ['AU-C 705', 'AU-C 706', 'AU-C 570', 'AU-C 708'],
   },
 ];
 

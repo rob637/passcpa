@@ -5160,5 +5160,369 @@ export const regLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'REG-IV-019',
+    section: 'REG',
+    title: "Partnership Liquidations and Terminations",
+    description: "Master partnership wind-up tax rules",
+    order: 55,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Entity Tax", "Partnerships"],
+    blueprintArea: 'REG-IV',
+    blueprintTopic: 'REG-IV-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnerships eventually end! Understanding liquidating distributions vs. sales, and when a partnership terminates for tax purposes, is essential. These rules differ significantly from current distributions!"
+        },
+        {
+          title: 'Partnership Termination',
+          type: 'text',
+          content: "**A partnership terminates when:**\n\n• No part of business continues to be carried on\n• By any partner\n• In a partnership\n\n**TCJA eliminated technical terminations!**\n\n**Sale of 50%+ interest no longer terminates partnership**"
+        },
+        {
+          title: 'Liquidating vs Current Distributions',
+          type: 'table',
+          headers: ['Feature', 'Current Distribution', 'Liquidating Distribution'],
+          rows: [
+            ['Partner status', 'Remains a partner', 'Exits the partnership'],
+            ['Basis reduction', 'Reduces outside basis', 'Zeroes out basis'],
+            ['Loss recognition', 'NEVER recognized', 'MAY be recognized'],
+            ['Gain on property', 'Generally no gain', 'Generally no gain']
+          ]
+        },
+        {
+          title: 'Liquidating Distribution Rules',
+          type: 'text',
+          content: "**Gain recognized when:**\n• Cash exceeds outside basis\n\n**Loss recognized when:**\n• Only money, inventory, unrealized receivables received\n• FMV less than outside basis\n\n**Property distributions:**\n• Basis = Carryover (limited to outside basis)\n• Generally no gain/loss"
+        },
+        {
+          title: '🧠 Memory Aid: Liquidation Loss',
+          type: 'callout',
+          content: "**\"MIR\" = Loss possible**\n\n**M**oney only\n**I**nventory only\n**R**eceivables only\n\n**Get MIR items + FMV < basis = Recognize LOSS**\n\n**Get ANY other property = NO loss recognition**"
+        },
+        {
+          title: 'Section 736 Payments',
+          type: 'text',
+          content: "**Payments to retiring/deceased partner:**\n\n**736(a): Income payments**\n• Distributive share or guaranteed payments\n• Ordinary income to recipient\n• Deductible to partnership\n\n**736(b): Property payments**\n• For partner's interest in partnership assets\n• Exchange treatment to partner\n• No deduction to partnership"
+        },
+        {
+          title: '⚠️ Exam Trap: Hot Assets',
+          type: 'warning',
+          content: "**Hot assets = Ordinary income!**\n\n**Hot assets include:**\n• Unrealized receivables\n• Substantially appreciated inventory\n\n**Section 751(b):** Ordinary gain if:\n• Hot assets exchanged for non-hot\n• Or vice versa\n\n**Cannot convert ordinary income to capital gain!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Partnership terminates when business ceases entirely",
+            "TCJA: 50%+ sale no longer terminates",
+            "Liquidating loss: Only if receive MIR (money, inventory, receivables)",
+            "736(a): Income items; 736(b): Property items",
+            "Hot assets trigger ordinary income treatment",
+            "Cannot convert ordinary income to capital gain via distribution"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-001',
+    section: 'REG',
+    title: "Gift Tax Fundamentals",
+    description: "Master federal gift tax rules and exclusions",
+    order: 56,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Transfer Tax", "Gift Tax"],
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Gift tax is part of the unified transfer tax system! Understanding annual exclusions, lifetime exemptions, and what constitutes a taxable gift is essential for estate planning and REG. Many candidates overlook gift tax!"
+        },
+        {
+          title: 'Gift Tax Overview',
+          type: 'text',
+          content: "**Unified transfer tax system:**\n\n• Gift tax (lifetime transfers)\n• Estate tax (death transfers)\n• Generation-skipping tax (to skip persons)\n\n**Gift tax is paid by DONOR, not donee!**\n\n**Unified credit shelters both gift and estate taxes**"
+        },
+        {
+          title: 'What is a Gift?',
+          type: 'text',
+          content: "**Transfer without adequate consideration:**\n\n• Voluntary\n• Without full value in return\n• Complete transfer (donor gives up control)\n\n**Incomplete gift = No current gift tax**\n\n**Below-market loans may be deemed gifts (imputed interest)**"
+        },
+        {
+          title: 'Annual Exclusion',
+          type: 'text',
+          content: "**$18,000 per donee (2024):**\n\n• Per donor, per donee, per year\n• Must be present interest (not future)\n• Unlimited number of donees\n• Indexed for inflation\n\n**Married couples can split gifts:**\n$18,000 × 2 = $36,000 per donee"
+        },
+        {
+          title: '🧠 Memory Aid: Gift Exclusions',
+          type: 'callout',
+          content: "**\"TEMP\"** gifts are tax-free:\n\n**T**uition (paid directly to institution)\n**E**xclusion amount ($18K annual)\n**M**edical (paid directly to provider)\n**P**olitical contributions\n\n**TEMP gifts = No gift tax!**"
+        },
+        {
+          title: 'Unlimited Exclusions',
+          type: 'table',
+          headers: ['Type', 'Requirement', 'Amount'],
+          rows: [
+            ['Medical expenses', 'Pay directly to provider', 'Unlimited'],
+            ['Tuition', 'Pay directly to school', 'Unlimited'],
+            ['Gifts to spouse', 'US citizen spouse', 'Unlimited marital deduction'],
+            ['Charity', 'Qualified organization', 'Unlimited charitable deduction']
+          ]
+        },
+        {
+          title: 'Unified Credit',
+          type: 'text',
+          content: "**Lifetime exemption (2024): $13.61 million**\n\n• Shelters both gift and estate taxes\n• Use during life reduces estate exemption\n• Indexed for inflation\n\n**Sunset warning:** Returns to ~$5-6M in 2026 unless extended\n\n**Gift tax rate: 40% (same as estate tax)**"
+        },
+        {
+          title: '⚠️ Exam Trap: Present vs. Future Interest',
+          type: 'warning',
+          content: "**Annual exclusion requires PRESENT interest!**\n\n**Present interest:** Immediate use/enjoyment\n**Future interest:** Enjoyment postponed (no exclusion)\n\n**Trust gifts:**\n• Outright gift to trust beneficiary = Present\n• Remainder interest = Future\n• Crummey power = Creates present interest"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Gift tax paid by DONOR (not donee)",
+            "Annual exclusion: $18,000 per donee (2024)",
+            "Unlimited: Medical and tuition paid directly",
+            "Present interest required for annual exclusion",
+            "Lifetime exemption: $13.61M (unified with estate)",
+            "Gift splitting doubles exclusion for married couples",
+            "40% tax rate on taxable gifts"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-V-002',
+    section: 'REG',
+    title: "Estate Tax Fundamentals",
+    description: "Understand federal estate tax basics",
+    order: 57,
+    duration: 60,
+    difficulty: 'intermediate',
+    topics: ["Transfer Tax", "Estate Tax"],
+    blueprintArea: 'REG-V',
+    blueprintTopic: 'REG-V-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Estate tax applies to wealth transferred at death! Understanding what's included in the gross estate, available deductions, and the unified credit is essential for wealth planning and REG!"
+        },
+        {
+          title: 'Estate Tax Calculation',
+          type: 'text',
+          content: "**Basic formula:**\n\nGross estate\n− Deductions\n= Taxable estate\n× Tax rate (40%)\n= Tentative tax\n− Unified credit\n− Other credits\n= Estate tax due"
+        },
+        {
+          title: 'Gross Estate Inclusions',
+          type: 'table',
+          headers: ['Item', 'Amount Included'],
+          rows: [
+            ['Property owned at death', 'FMV at date of death'],
+            ['Life insurance', 'If incidents of ownership or payable to estate'],
+            ['Jointly owned property', 'Depends on type of ownership'],
+            ['General power of appointment', 'Full value of property'],
+            ['Transfers within 3 years', 'Life insurance premiums, gift tax paid'],
+            ['Retained interests', 'Transfers with retained life estate']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Gross Estate',
+          type: 'callout',
+          content: "**\"PILL JAR\"** for inclusions:\n\n**P**roperty owned\n**I**nsurance (if incidents owned)\n**L**ife estate retained\n**L**imited/General powers\n**J**oint interests\n**A**nnuities\n**R**evocable transfers\n\n**If you had control or benefit, it's in the estate!**"
+        },
+        {
+          title: 'Estate Tax Deductions',
+          type: 'text',
+          content: "**Key deductions:**\n\n• **Marital deduction:** Unlimited (US citizen spouse)\n• **Charitable deduction:** Unlimited\n• **Debts and expenses:** Funeral, admin, claims\n• **Losses:** Casualty/theft during admin\n• **State death taxes:** Deduction allowed"
+        },
+        {
+          title: 'Unified Credit and Portability',
+          type: 'text',
+          content: "**2024 exemption: $13.61 million**\n\n**Portability:** Unused exemption transfers to surviving spouse\n• Must elect on timely filed estate return\n• Only from last deceased spouse\n• Effectively doubles exemption for married couples\n\n**DSUE:** Deceased Spousal Unused Exclusion"
+        },
+        {
+          title: 'Valuation Date',
+          type: 'text',
+          content: "**Two options:**\n\n**Date of death:** General rule\n\n**Alternate valuation date:** 6 months later\n• Only if reduces estate AND estate tax\n• Irrevocable election\n• Property distributed uses distribution date value\n\n**Executor chooses which benefits estate most**"
+        },
+        {
+          title: '⚠️ Exam Trap: Marital Deduction Requirements',
+          type: 'warning',
+          content: "**Marital deduction requires:**\n\n• Property passing TO spouse\n• Included in gross estate\n• Not terminable interest (generally)\n• Spouse must be US citizen\n\n**Non-citizen spouse:** Use QDOT (Qualified Domestic Trust) instead\n\n**Unlimited = Potential for massive deduction!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Gross estate: Property + insurance + retained interests",
+            "Marital deduction: Unlimited (US citizen spouse)",
+            "Charitable deduction: Unlimited",
+            "Unified credit: $13.61M exemption (2024)",
+            "Portability: Transfer unused exemption to spouse",
+            "Alternate valuation: 6 months after death (if reduces tax)",
+            "40% tax rate on taxable estate"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-024',
+    section: 'REG',
+    title: "Installment Sales",
+    description: "Master installment method for deferred payment sales",
+    order: 58,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Individual Tax", "Property Transactions"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-E-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Installment sales let you spread gain recognition over multiple years as you receive payments! This powerful tax planning tool helps sellers manage tax liability. Understanding the rules—and exceptions—is critical for REG!"
+        },
+        {
+          title: 'Installment Method Basics',
+          type: 'text',
+          content: "**Report gain as payments received:**\n\n• At least one payment after year of sale\n• Automatically applies (unless elect out)\n• Cannot use for losses\n\n**Formula:**\nGain recognized = Payment × Gross profit %"
+        },
+        {
+          title: 'Gross Profit Percentage',
+          type: 'text',
+          content: "**GP% = Gross Profit / Contract Price**\n\n**Gross Profit:**\nSelling price − Adjusted basis − Selling expenses\n\n**Contract Price:**\nSelling price − Mortgage assumed (to extent of basis)\n\n**Each payment × GP% = Gain recognized**"
+        },
+        {
+          title: '🧠 Memory Aid: Installment Formula',
+          type: 'callout',
+          content: "**\"GPP\" for installment:**\n\n**G**ross profit ÷\n**P**rice (contract) =\n**P**ercentage × Payment = Gain\n\n**Example:**\nSale price: $100,000\nBasis: $40,000\nGP: $60,000\nGP%: 60%\nPayment: $20,000\nGain: $12,000"
+        },
+        {
+          title: 'Ineligible for Installment Method',
+          type: 'table',
+          headers: ['Cannot Use For', 'Reason'],
+          rows: [
+            ['Inventory sales', 'Ordinary course of business'],
+            ['Dealer sales', 'Regular property sales business'],
+            ['Depreciation recapture', 'All recapture in year of sale'],
+            ['Publicly traded securities', 'Easy to value/sell'],
+            ['Losses', 'No benefit to spreading']
+          ]
+        },
+        {
+          title: 'Related Party Sales',
+          type: 'text',
+          content: "**Special rules apply:**\n\n**If related buyer resells within 2 years:**\n• Original seller recognizes remaining gain\n• Prevents using installment to shift income\n\n**Related parties:**\n• Family (siblings, spouse, ancestors, descendants)\n• Controlled entities (>50%)"
+        },
+        {
+          title: '⚠️ Exam Trap: Depreciation Recapture',
+          type: 'warning',
+          content: "**Recapture is NOT eligible for installment!**\n\n**Year of sale recognize:**\n• ALL depreciation recapture (§1245, §1250)\n\n**Spread over time:**\n• Only §1231 gain above recapture\n\n**Recapture comes first, installment second!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Installment: Spread gain as payments received",
+            "GP% = Gross profit / Contract price",
+            "Gain = Payment × GP%",
+            "Cannot use for inventory, dealers, losses, recapture",
+            "Depreciation recapture: ALL in year of sale",
+            "Related party resale within 2 years accelerates gain",
+            "Can elect out if desired"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-III-025',
+    section: 'REG',
+    title: "Passive Activity Loss Rules",
+    description: "Master PAL limitations and material participation",
+    order: 59,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Individual Tax", "Passive Activities"],
+    blueprintArea: 'REG-III',
+    blueprintTopic: 'REG-III-F-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Passive activity loss rules prevent using rental and investment losses to offset wages and business income! Understanding material participation and the rental exceptions is essential for individual tax planning and REG!"
+        },
+        {
+          title: 'Passive Activity Basics',
+          type: 'text',
+          content: "**Two types of passive activities:**\n\n1. **Rental activities** (generally passive)\n2. **Business activities** where you don't materially participate\n\n**Key rule:** Passive losses only offset passive income\n\n**Excess losses:** Suspended and carried forward"
+        },
+        {
+          title: 'Material Participation Tests',
+          type: 'table',
+          headers: ['Test', 'Requirement'],
+          rows: [
+            ['500-hour test', '500+ hours during year'],
+            ['Substantially all test', 'Your participation is substantially all'],
+            ['100-hour test', '100+ hours AND no one participates more'],
+            ['Significant participation', '500+ hours total across multiple activities'],
+            ['5-year test', 'Materially participated any 5 of last 10 years'],
+            ['Personal service', 'Any 3 prior years for personal service activity']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Material Participation',
+          type: 'callout',
+          content: "**\"500 is the MAGIC number\"**\n\n**500 hours = Definitely materially participate**\n\n**Below 500?** Try other tests:\n• 100 hours + most participation\n• Substantially all participation\n• Historical participation\n\n**Meet ANY test = Material participation**"
+        },
+        {
+          title: 'Rental Real Estate Exception',
+          type: 'text',
+          content: "**$25,000 allowance for rental losses:**\n\n**Requirements:**\n• Actively participate (less than material)\n• Own at least 10%\n• AGI below threshold\n\n**Phaseout:**\n• Begins at $100,000 AGI\n• Fully phased out at $150,000\n• $1 reduction per $2 of AGI over $100K"
+        },
+        {
+          title: 'Real Estate Professional',
+          type: 'text',
+          content: "**Rental not passive if:**\n\n1. >50% of personal services in real property businesses\n2. >750 hours in real property businesses\n3. Materially participate in each rental\n\n**Meet all three = Rentals are NOT passive**\n\n**Can offset wages with rental losses!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Disposition Unlocks Losses',
+          type: 'warning',
+          content: "**Suspended losses released on disposition!**\n\n**Fully taxable disposition:**\n• Sale to unrelated party\n• All suspended losses deductible\n• Against any type of income\n\n**Not fully taxable:**\n• Gift (losses transfer to donee)\n• Death (losses lost unless deducted on 1041)\n• Related party (losses stay suspended)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Passive losses only offset passive income",
+            "500 hours = Material participation",
+            "Rental: Generally passive (with exceptions)",
+            "$25,000 allowance: Active participation, AGI limits",
+            "Real estate professional: Rentals not passive",
+            "Suspended losses: Carry forward until disposition",
+            "Taxable sale releases all suspended losses"
+          ]
+        }
+      ]
+    }
   }
 ];

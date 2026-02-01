@@ -7,7 +7,32 @@ https://voraprep-staging.web.app/
 https://voraprep-staging.web.app/admin/cms
 
 https://voraprep-prod.web.app/
+https://voraprep.com
 https://voraprep-prod.web.app/admin/cms
+
+git checkout develop
+# make your changes...
+git add -A && git commit -m "feat: your change"
+git push
+npm run deploy:dev  # test at passcpa-dev.web.app
+
+git checkout staging
+git merge develop
+git push
+npm run deploy:staging  # test at voraprep-staging.web.app
+
+git checkout main
+git merge staging
+git push
+npm run deploy:prod  # live at voraprep.com
+
+
+
+
+
+
+
+
 
 
 

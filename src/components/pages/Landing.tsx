@@ -80,10 +80,9 @@ const Landing = () => {
     { feature: 'Annual Price', voraprep: '$99/yr', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
     { feature: 'Price per Month', voraprep: '$8.25', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
     { feature: 'AI Tutor Included', voraprep: true, becker: 'Extra $$$', roger: false, surgent: 'Limited', highlight: true },
-    { feature: 'AI-Graded Written Communication', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Learning Style', voraprep: 'Active Practice', becker: 'Passive Video', roger: 'Passive Video', surgent: 'Passive Video', highlight: true },
-    { feature: '2025 & 2026 Blueprint', voraprep: true, becker: '2026 only', roger: '2026 only', surgent: '2026 only', highlight: true },
-    { feature: 'BEC Section Included', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
+    { feature: '2025 & 2026 Blueprint', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
+    { feature: 'BEC Section Included', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Adaptive Learning', voraprep: true, becker: 'Extra $$$', roger: false, surgent: true, highlight: true },
     { feature: 'Spaced Repetition', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Task-Based Simulations', voraprep: '100+', becker: true, roger: true, surgent: true, highlight: false },
@@ -173,8 +172,8 @@ const Landing = () => {
 
   // Stats section - highlight our real strengths
   const stats = [
-    { value: 2600, label: 'Practice Questions', suffix: '+' },
-    { value: 300, label: 'Lessons', suffix: '+' },
+    { value: 2900, label: 'Practice Questions', suffix: '+' },
+    { value: 950, label: 'Lessons', suffix: '+' },
     { value: 24, label: 'Vory AI', suffix: '/7' },
     { value: 97, label: 'Savings vs Becker', suffix: '%' },
   ];
@@ -262,7 +261,7 @@ const Landing = () => {
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
             <span className="font-semibold text-emerald-600"> 97% cheaper</span> than Becker.
             <br className="hidden md:block" />
-            2,500+ questions. Adaptive learning. Zero credit card required.
+            2,900+ questions. Adaptive learning. Zero credit card required.
           </p>
 
           {/* CTA Buttons */}
@@ -319,39 +318,7 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Social Proof Bar */}
-      <section className="py-8 bg-slate-100 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {['SM', 'MT', 'JL', 'AK'].map((initials, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white text-xs font-bold border-2 border-white dark:border-slate-900">
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <span className="text-slate-600 dark:text-slate-400 text-sm">Join 1,000+ students</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-5 h-5 text-amber-400 fill-amber-400" />
-                ))}
-              </div>
-              <span className="text-slate-600 dark:text-slate-400 text-sm">4.9/5 rating</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-emerald-500" />
-              <span className="text-slate-600 dark:text-slate-400 text-sm">92% pass rate</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-600" />
-              <span className="text-slate-600 dark:text-slate-400 text-sm">Pass guarantee</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Social Proof Bar - Removed until we have real user data */}
 
       {/* Why VoraPrep Section */}
       <section id="features" className="py-24 px-6 bg-white dark:bg-slate-950">
@@ -500,47 +467,7 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 px-6 bg-white dark:bg-slate-950">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <MessageSquare className="w-4 h-4" />
-              What Students Say
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-              Real Results, Real Stories
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-700 dark:text-slate-300 text-lg mb-6 leading-relaxed">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-900 dark:text-white">{testimonial.author}</div>
-                    <div className="text-sm text-slate-500 dark:text-slate-400">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section - Removed until we have real testimonials */}
 
       {/* CPA Sections Coverage */}
       <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900">

@@ -53,7 +53,9 @@ interface LocalStats {
 // Admin email whitelist - add your email here
 const ADMIN_EMAILS: string[] = [
   'admin@voraprep.com',
-  // Add your email here
+  'rob@sagecg.com',
+  'rob@voraprep.com',
+  'rob@leaderreps.com',
 ];
 
 // ============================================================================

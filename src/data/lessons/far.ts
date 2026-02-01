@@ -8131,5 +8131,432 @@ export const farLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // FAR: GOVERNMENT ACCOUNTING
+  // =============================================
+  {
+    id: 'FAR-V-030',
+    section: 'FAR',
+    title: "Government Fund Accounting Basics",
+    description: "Master the fund structure and measurement focus",
+    order: 95,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Government Accounting", "Fund Accounting", "GASB"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Government accounting uses FUNDS to track resources! Understanding the fund categories, measurement focus, and basis of accounting is essential. This is a major FAR topic!"
+        },
+        {
+          title: 'Fund Categories',
+          type: 'table',
+          headers: ['Category', 'Fund Types', 'Purpose'],
+          rows: [
+            ['Governmental', 'General, Special Revenue, Capital Projects, Debt Service, Permanent', 'Most activities'],
+            ['Proprietary', 'Enterprise, Internal Service', 'Business-type'],
+            ['Fiduciary', 'Custodial, Pension, Investment Trust, Private-purpose Trust', 'Held for others']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: "GR CEPS DIP"',
+          type: 'callout',
+          content: "**Governmental funds:**\n\n**G**eneral\n**R**evenue (Special)\n**C**apital Projects\n**E**mergency... wait, no:\n**D**ebt Service\n**P**ermanent\n\n**\"Go Run CoPs, Dr. Peppers\"**"
+        },
+        {
+          title: 'Measurement Focus and Basis',
+          type: 'text',
+          content: "**Governmental funds:**\n• **Focus:** Current financial resources\n• **Basis:** Modified accrual\n• Report assets that can be spent\n\n**Proprietary & Fiduciary:**\n• **Focus:** Economic resources\n• **Basis:** Full accrual\n• Like commercial accounting"
+        },
+        {
+          title: 'Modified Accrual Basis',
+          type: 'text',
+          content: "**Revenues recognized when:**\n• Measurable AND Available\n• Available = Collected within 60 days\n\n**Expenditures recognized when:**\n• Liability incurred (usually)\n• Exceptions: Debt service, claims/judgments\n\n**No depreciation in governmental funds!**"
+        },
+        {
+          title: 'Fund Balance Categories',
+          type: 'table',
+          headers: ['Category', 'Constraint', 'Example'],
+          rows: [
+            ['Nonspendable', 'Form precludes', 'Inventory, prepaid'],
+            ['Restricted', 'External constraint', 'Grant requirements'],
+            ['Committed', 'Highest internal action', 'Board resolution'],
+            ['Assigned', 'Management intent', 'Encumbrances'],
+            ['Unassigned', 'None', 'General fund only']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: General Fund',
+          type: 'warning',
+          content: "**General Fund is UNIQUE:**\n\n• Only fund that can have UNASSIGNED balance\n• Must be used for activities not assigned elsewhere\n• All governments MUST have General Fund\n\n**Other funds can have NEGATIVE assigned balance = Unassigned**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Three fund categories: Governmental, Proprietary, Fiduciary",
+            "Governmental: Modified accrual, current resources",
+            "Proprietary/Fiduciary: Full accrual, economic resources",
+            "Modified accrual: Measurable AND available",
+            "Fund balance: Nonspendable → Unassigned hierarchy",
+            "Only General Fund can have unassigned balance",
+            "No depreciation in governmental funds"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-031',
+    section: 'FAR',
+    title: "Government-wide Financial Statements",
+    description: "Understand full accrual conversion and dual perspective",
+    order: 96,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["Government Accounting", "GASB", "Financial Statements"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Government-wide statements show the BIG PICTURE! Understanding the conversion from fund-level modified accrual to government-wide full accrual is a key exam skill!"
+        },
+        {
+          title: 'Government-wide Statements',
+          type: 'text',
+          content: "**Two required statements:**\n\n**1. Statement of Net Position**\n• Assets + Deferred outflows\n• − Liabilities − Deferred inflows\n• = Net Position\n\n**2. Statement of Activities**\n• Program revenues vs expenses\n• Net (expense) revenue format"
+        },
+        {
+          title: 'Conversion Adjustments',
+          type: 'table',
+          headers: ['Fund Level', 'Government-wide Adjustment', 'Effect'],
+          rows: [
+            ['Capital outlay', 'Capitalize as asset', 'Add asset'],
+            ['No depreciation', 'Add depreciation expense', 'Reduce net position'],
+            ['Bond proceeds (OFS)', 'Record as liability', 'Add liability'],
+            ['Principal payment', 'Reduce liability', 'No expense'],
+            ['Receivables > 60 days', 'Add to revenue', 'Increase revenue']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Full Accrual',
+          type: 'callout',
+          content: "**\"GLAAD\" Adjustments:**\n\n**G**apital assets (capitalize)\n**L**ong-term liabilities (add)\n**A**ccrued revenues (beyond 60 days)\n**A**ccrued expenses\n**D**epreciation (add expense)\n\n**Modified → Full accrual**"
+        },
+        {
+          title: 'Net Position Categories',
+          type: 'text',
+          content: "**Three categories:**\n\n**1. Net investment in capital assets**\n• Capital assets, net of depreciation\n• Less related debt\n\n**2. Restricted**\n• External restrictions\n\n**3. Unrestricted**\n• Everything else"
+        },
+        {
+          title: 'Statement of Activities Format',
+          type: 'text',
+          content: "**Net (expense) format:**\n\nExpenses\n− Program revenues (charges, grants)\n= Net expense\n\n+ General revenues (taxes, interest)\n= Change in net position\n\n**Separates governmental from business-type**"
+        },
+        {
+          title: '⚠️ Exam Trap: Internal Service Funds',
+          type: 'warning',
+          content: "**ISF on government-wide statements:**\n\n• Report with GOVERNMENTAL activities\n• NOT with business-type activities\n• Because ISF primarily serves governmental\n\n**Enterprise funds = Business-type activities**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Government-wide: Full accrual, economic resources",
+            "Two statements: Net Position, Activities",
+            "Convert fund statements → Government-wide",
+            "Add capital assets, long-term debt, depreciation",
+            "Net position: Invested in capital, Restricted, Unrestricted",
+            "Internal service funds → Governmental activities",
+            "Net expense format shows cost of services"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-032',
+    section: 'FAR',
+    title: "Not-for-Profit Financial Statements",
+    description: "Master NFP financial statement requirements",
+    order: 97,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["NFP Accounting", "Financial Statements", "Net Assets"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "NFP financial statements are different from business! Understanding net asset classes, statement formats, and donor restrictions is essential for FAR. Major testing area!"
+        },
+        {
+          title: 'Required Financial Statements',
+          type: 'text',
+          content: "**Four required statements:**\n\n1. **Statement of Financial Position** (like B/S)\n2. **Statement of Activities** (like I/S)\n3. **Statement of Cash Flows** (similar)\n4. **Statement of Functional Expenses** (unique!)\n\n**All follow ASC 958**"
+        },
+        {
+          title: 'Net Asset Classes',
+          type: 'table',
+          headers: ['Class', 'Restrictions', 'Examples'],
+          rows: [
+            ['Without restrictions', 'None', 'General contributions'],
+            ['With restrictions', 'Donor-imposed', 'Purpose or time-restricted'],
+            ['Perpetual', 'Never spent (principal)', 'Endowment principal']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Two Classes Now',
+          type: 'callout',
+          content: "**OLD (3 classes):**\n• Unrestricted\n• Temporarily restricted\n• Permanently restricted\n\n**NEW (2 classes - ASU 2016-14):**\n• **Without** donor restrictions\n• **With** donor restrictions\n\n**Simpler!**"
+        },
+        {
+          title: 'Statement of Activities',
+          type: 'text',
+          content: "**Shows:**\n• Revenues (by net asset class)\n• Expenses (only without restrictions)\n• Net releases from restrictions\n• Change in net assets\n\n**Expenses always in \"without restrictions\"**\n\n**Contributions increase restricted or unrestricted**"
+        },
+        {
+          title: 'Statement of Functional Expenses',
+          type: 'text',
+          content: "**Shows expenses by:**\n\n**Function:**\n• Program services\n• Supporting activities (management, fundraising)\n\n**Nature:**\n• Salaries, rent, depreciation, etc.\n\n**Matrix format showing both**"
+        },
+        {
+          title: '⚠️ Exam Trap: Expense Classification',
+          type: 'warning',
+          content: "**Joint costs allocation:**\n\nWhen activity has multiple purposes (program + fundraising):\n\n• Must meet 3 criteria to allocate\n• Purpose, Audience, Content tests\n• If all three not met: 100% to fundraising\n\n**Fundraising ratio is watched closely!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Four NFP statements required",
+            "Two net asset classes: With/Without restrictions",
+            "Expenses always shown without restrictions",
+            "Releases shift from restricted → unrestricted",
+            "Functional expenses: Program vs Supporting",
+            "Joint cost allocation: 3 criteria required",
+            "Statement of functional expenses is unique to NFP"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-V-033',
+    section: 'FAR',
+    title: "NFP Contributions and Promises",
+    description: "Apply contribution recognition and pledges receivable",
+    order: 98,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ["NFP Accounting", "Contributions", "Pledges"],
+    blueprintArea: 'FAR-V',
+    blueprintTopic: 'FAR-V-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Contributions are the lifeblood of NFPs! Understanding when to recognize revenue, how to handle promises, and conditional vs unconditional gifts is critical!"
+        },
+        {
+          title: 'Contribution Recognition',
+          type: 'text',
+          content: "**Unconditional contributions:**\n• Recognize when received/promised\n• Either restricted or unrestricted\n\n**Conditional contributions:**\n• Record when condition is met\n• Before that: No revenue or receivable\n\n**Key distinction on exam!**"
+        },
+        {
+          title: 'Conditional vs Unconditional',
+          type: 'table',
+          headers: ['Type', 'Has', 'Recognition'],
+          rows: [
+            ['Unconditional', 'Restriction only', 'Immediate'],
+            ['Conditional', 'Barrier to entitlement', 'When condition met'],
+            ['Conditional', 'Right of return/release', 'When condition met']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Barrier Test',
+          type: 'callout',
+          content: "**\"Barrier\" = Must DO something**\n\n**Conditional (barrier exists):**\n• \"Raise matching funds\"\n• \"Achieve certain outcomes\"\n\n**Unconditional (restriction only):**\n• \"Use for scholarships\"\n• \"Spend after Jan 1, 2025\"\n\n**Restriction = How to use**\n**Condition = Must earn it**"
+        },
+        {
+          title: 'Promises to Give (Pledges)',
+          type: 'text',
+          content: "**Unconditional pledge:**\n• Record at fair value\n• Multi-year: Present value\n• Allow for uncollectibles\n\n**Recognition:**\n• < 1 year: Without restrictions (unless restricted)\n• > 1 year: With restrictions (time restriction implied)\n\n**As time passes: Release restriction**"
+        },
+        {
+          title: 'Contributed Services',
+          type: 'text',
+          content: "**Only recognize if:**\n\n• Create/enhance nonfinancial asset, OR\n• Require specialized skills AND\n  Would be purchased if not donated\n\n**Examples:**\n✓ Attorney provides legal services\n✓ Electrician wires building\n✗ Volunteer shelving books\n✗ General administrative help"
+        },
+        {
+          title: '⚠️ Exam Trap: Donor-Imposed',
+          type: 'warning',
+          content: "**Only DONOR can impose restrictions!**\n\n• Board cannot restrict net assets\n• Board can \"designate\" but it's still unrestricted\n• Called \"board-designated\"\n\n**Disclosure required but NOT separately classified!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Unconditional: Recognize immediately at FV",
+            "Conditional: Barrier + Right of return must be met",
+            "Multi-year pledges: PV, time-restricted",
+            "Release restrictions when met",
+            "Contributed services: Specialized skills required",
+            "Board designation ≠ Donor restriction",
+            "Conditional: No revenue until condition met"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-020',
+    section: 'FAR',
+    title: "Bonds Payable: Premium and Discount",
+    description: "Master bond issuance and effective interest method",
+    order: 99,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Liabilities", "Bonds", "Effective Interest"],
+    blueprintArea: 'FAR-II',
+    blueprintTopic: 'FAR-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Bonds are major financing! Understanding premium vs discount, effective interest method, and interest expense calculation is essential. Heavily tested on FAR!"
+        },
+        {
+          title: 'Bond Price vs Face',
+          type: 'table',
+          headers: ['Scenario', 'Price', 'Result'],
+          rows: [
+            ['Market rate = Stated rate', 'At par', 'No premium/discount'],
+            ['Market rate < Stated rate', 'At premium', 'Issued above face'],
+            ['Market rate > Stated rate', 'At discount', 'Issued below face']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Rate Relationship',
+          type: 'callout',
+          content: "**\"Investors want MARKET rate\"**\n\n**High stated rate = Premium:**\nInvestors pay MORE for higher interest\n\n**Low stated rate = Discount:**\nInvestors pay LESS for lower interest\n\n**Market rate ALWAYS wins!**"
+        },
+        {
+          title: 'Effective Interest Method',
+          type: 'text',
+          content: "**Each period:**\n\n**Interest expense** = Carrying value × Market rate\n\n**Cash payment** = Face value × Stated rate\n\n**Difference = Amortization**\n\n• Premium: Expense < Cash → Reduce premium\n• Discount: Expense > Cash → Reduce discount"
+        },
+        {
+          title: 'Amortization Entries',
+          type: 'text',
+          content: "**Premium amortization:**\nDr Interest expense (smaller)\nDr Premium on bonds (difference)\n    Cr Cash (stated × face)\n\n**Discount amortization:**\nDr Interest expense (larger)\n    Cr Discount on bonds (difference)\n    Cr Cash (stated × face)"
+        },
+        {
+          title: 'Carrying Value Over Time',
+          type: 'text',
+          content: "**Premium bonds:**\n• Carrying value DECREASES\n• Approaches face value at maturity\n\n**Discount bonds:**\n• Carrying value INCREASES\n• Approaches face value at maturity\n\n**At maturity: CV = Face value (always)**"
+        },
+        {
+          title: '⚠️ Exam Trap: Interest Expense Trend',
+          type: 'warning',
+          content: "**Interest expense changes each period!**\n\n**Premium:**\n• CV decreases → Interest expense decreases\n\n**Discount:**\n• CV increases → Interest expense increases\n\n**Expense = CV × Market rate**\n**CV changes → Expense changes**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Market rate < Stated = Premium (pay more)",
+            "Market rate > Stated = Discount (pay less)",
+            "Interest expense = CV × Market rate",
+            "Cash paid = Face × Stated rate",
+            "Premium: Expense decreases over time",
+            "Discount: Expense increases over time",
+            "At maturity: CV = Face value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'FAR-III-021',
+    section: 'FAR',
+    title: "Deferred Revenue and Contract Liabilities",
+    description: "Understand performance obligations and timing",
+    order: 100,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Revenue Recognition", "Liabilities", "ASC 606"],
+    blueprintArea: 'FAR-III',
+    blueprintTopic: 'FAR-III-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Cash received before performance creates a contract liability! Understanding when to recognize versus defer revenue is fundamental to proper financial reporting!"
+        },
+        {
+          title: 'Contract Liability Definition',
+          type: 'text',
+          content: "**Contract liability (deferred revenue):**\n\n• Entity received consideration\n• Performance obligation not yet satisfied\n• Obligation to transfer goods/services\n\n**Examples:**\n• Advance payments\n• Subscriptions received in advance\n• Gift cards"
+        },
+        {
+          title: 'Recognition Pattern',
+          type: 'table',
+          headers: ['Event', 'Debit', 'Credit'],
+          rows: [
+            ['Receive cash (advance)', 'Cash', 'Contract liability'],
+            ['Satisfy obligation', 'Contract liability', 'Revenue'],
+            ['Partial performance', 'Contract liability (partial)', 'Revenue (partial)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Earned vs Received',
+          type: 'callout',
+          content: "**Revenue recognition:**\n\n**Cash received ≠ Revenue earned**\n\n**Must satisfy performance obligation!**\n\n**Cash first → Contract liability**\n**Obligation first → Contract asset**"
+        },
+        {
+          title: 'Gift Card Breakage',
+          type: 'text',
+          content: "**Some gift cards never redeemed:**\n\n**If breakage estimated:**\n• Recognize revenue proportionally\n• As customer redeems other cards\n\n**If breakage not estimable:**\n• Recognize when likelihood of redemption is remote\n\n**Still a contract liability until recognized!**"
+        },
+        {
+          title: 'Customer Prepayments',
+          type: 'text',
+          content: "**Common scenarios:**\n\n• Magazine subscriptions\n• Maintenance contracts\n• Season tickets\n• Rent received in advance\n\n**Recognize:**\n• Over time as services provided\n• At point in time when goods delivered\n\n**Match revenue to performance!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Balance Sheet Classification',
+          type: 'warning',
+          content: "**Current vs Noncurrent:**\n\n• Satisfy within 12 months = Current\n• Satisfy after 12 months = Noncurrent\n\n**Multi-year contracts:**\n• Allocate between current and noncurrent\n• Based on when obligations will be satisfied"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Contract liability: Cash received, obligation pending",
+            "Recognize revenue when obligation satisfied",
+            "Gift card breakage: Proportional or remote method",
+            "Match revenue recognition to performance",
+            "Current/Noncurrent based on timing",
+            "Advance payment is NOT revenue",
+            "Contract liability ≠ Accounts payable"
+          ]
+        }
+      ]
+    }
   }
 ];

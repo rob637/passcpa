@@ -5420,5 +5420,573 @@ export const audLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // AUD: ADDITIONAL TOPICS
+  // =============================================
+  {
+    id: 'AUD-I-015',
+    section: 'AUD',
+    title: "Professional Skepticism and Judgment",
+    description: "Understand the foundation of quality auditing",
+    order: 66,
+    duration: 45,
+    difficulty: 'foundational',
+    topics: ["Professional Skepticism", "Audit Standards", "Ethics"],
+    blueprintArea: 'AUD-I',
+    blueprintTopic: 'AUD-I-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Professional skepticism is the foundation of auditing! It's not assuming management is dishonest, but being alert to conditions indicating possible misstatement. Critical for every audit!"
+        },
+        {
+          title: 'Professional Skepticism Defined',
+          type: 'text',
+          content: "**An attitude that includes:**\n\n• Questioning mind\n• Alert to conditions indicating possible misstatement due to fraud or error\n• Critical assessment of evidence\n\n**NOT:**\n• Assuming dishonesty\n• Satisfied with less than persuasive evidence\n• Dismissive of explanations"
+        },
+        {
+          title: 'Elements of Skepticism',
+          type: 'table',
+          headers: ['Element', 'Description', 'Application'],
+          rows: [
+            ['Questioning mind', 'Ask \"why\" and \"how\"', 'All phases'],
+            ['Critical assessment', 'Evaluate evidence objectively', 'Substantive testing'],
+            ['Alert to inconsistencies', 'Note contradictions', 'Evidence gathering'],
+            ['Professional judgment', 'Apply experience', 'Conclusions']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: QACE',
+          type: 'callout',
+          content: "**Skepticism = \"QACE\"**\n\n**Q**uestioning mind\n**A**lert to misstatement\n**C**ritical assessment\n**E**vidence evaluation\n\n**Applied throughout the audit!**"
+        },
+        {
+          title: 'Professional Judgment',
+          type: 'text',
+          content: "**Applying training, knowledge, experience to make decisions about:**\n\n• Materiality\n• Nature/timing/extent of procedures\n• Evidence sufficiency and appropriateness\n• Conclusions reached\n\n**Not arbitrary—must be supportable!**"
+        },
+        {
+          title: 'Documentation of Judgment',
+          type: 'text',
+          content: "**Workpapers should show:**\n\n• What was considered\n• How conclusion was reached\n• Support for professional judgments\n\n**Key areas:**\n• Materiality determination\n• Risk assessments\n• Sampling decisions\n• Estimates evaluation"
+        },
+        {
+          title: '⚠️ Exam Trap: Over-reliance on Prior Experience',
+          type: 'warning',
+          content: "**Skepticism failures:**\n\n• Assuming honesty based on past audits\n• Not challenging management representations\n• Failing to pursue red flags\n• Accepting explanations too readily\n\n**Prior good experience ≠ Less skepticism!**\n**Each audit stands alone**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Skepticism: Questioning mind, not assuming dishonesty",
+            "Alert to conditions indicating misstatement",
+            "Critical assessment of ALL evidence",
+            "Professional judgment must be supportable",
+            "Document basis for significant judgments",
+            "Prior clean audits don't reduce skepticism",
+            "Applied throughout every audit"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-015',
+    section: 'AUD',
+    title: "Risk of Material Misstatement",
+    description: "Master the audit risk model components",
+    order: 67,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Audit Risk", "Risk Assessment", "Planning"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The audit risk model drives everything! Understanding inherent risk, control risk, and detection risk—and how they interact—is fundamental to audit planning and execution!"
+        },
+        {
+          title: 'Audit Risk Model',
+          type: 'text',
+          content: "**AR = IR × CR × DR**\n\n**Audit Risk (AR):** Risk of incorrect opinion\n**Inherent Risk (IR):** Susceptibility to misstatement\n**Control Risk (CR):** Risk controls won't prevent/detect\n**Detection Risk (DR):** Risk auditor won't detect\n\n**Auditor controls DR only!**"
+        },
+        {
+          title: 'Risk Components',
+          type: 'table',
+          headers: ['Risk', 'Set By', 'Auditor Controls?'],
+          rows: [
+            ['Inherent', 'Nature of business/account', 'No'],
+            ['Control', 'Client\'s internal controls', 'No'],
+            ['Detection', 'Nature/timing/extent of procedures', 'YES'],
+            ['Audit', 'Firm policy', 'Target set']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: RMM = IR × CR',
+          type: 'callout',
+          content: "**Risk of Material Misstatement (RMM):**\n\n**RMM = IR × CR**\n\n**This is what EXISTS in the F/S**\n\n**Higher RMM:**\n→ Need LOWER Detection Risk\n→ More audit work required\n→ More persuasive evidence needed"
+        },
+        {
+          title: 'Factors Affecting Inherent Risk',
+          type: 'text',
+          content: "**Entity-level:**\n• Industry characteristics\n• Business complexity\n• Economic conditions\n\n**Account-level:**\n• Complexity of calculations\n• Subjectivity of estimates\n• Susceptibility to theft\n• Related party transactions\n• Non-routine transactions"
+        },
+        {
+          title: 'Inverse Relationship',
+          type: 'text',
+          content: "**Key relationship:**\n\n**RMM ↑ = DR must ↓**\n\n**To lower detection risk:**\n• More substantive procedures\n• Larger sample sizes\n• More experienced staff\n• Later testing (closer to year-end)\n• More locations tested"
+        },
+        {
+          title: '⚠️ Exam Trap: Assessed vs Actual',
+          type: 'warning',
+          content: "**Auditor ASSESSES inherent and control risk:**\n\n• Assessment may differ from actual\n• More conservative = More audit work\n• Cannot reduce RMM by more testing\n• Can only reduce DR by more testing\n\n**If assessed RMM is WRONG:**\n→ Audit may not detect misstatement!"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "AR = IR × CR × DR",
+            "RMM = IR × CR (exists in F/S)",
+            "Auditor only controls detection risk",
+            "Higher RMM requires lower DR (more work)",
+            "Inherent risk: Nature of account/transaction",
+            "Control risk: Effectiveness of controls",
+            "Cannot reduce RMM through additional testing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-016',
+    section: 'AUD',
+    title: "Understanding Internal Control",
+    description: "Master the five components of internal control",
+    order: 68,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Internal Control", "COSO", "Risk Assessment"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Understanding internal control is REQUIRED on every audit! The COSO framework components and how they're documented and tested is essential knowledge for AUD!"
+        },
+        {
+          title: 'Five Components of Internal Control',
+          type: 'table',
+          headers: ['Component', 'Description', 'Focus'],
+          rows: [
+            ['Control Environment', 'Tone at the top', 'Ethics, governance, competence'],
+            ['Risk Assessment', 'Entity\'s process', 'Identifying/analyzing risks'],
+            ['Control Activities', 'Policies/procedures', 'Prevent/detect misstatement'],
+            ['Information & Communication', 'Systems', 'Relevant, timely info'],
+            ['Monitoring', 'Ongoing/separate evaluations', 'Controls operating effectively']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: CRIME',
+          type: 'callout',
+          content: "**\"CRIME\" Components:**\n\n**C**ontrol Environment\n**R**isk Assessment\n**I**nformation & Communication\n**M**onitoring\n**E**xisting Control Activities\n\n**Must understand ALL five!**"
+        },
+        {
+          title: 'Control Environment',
+          type: 'text',
+          content: "**The foundation—\"tone at the top\":**\n\n• Board/audit committee oversight\n• Management's philosophy\n• Integrity and ethical values\n• Commitment to competence\n• Organizational structure\n• Assignment of authority\n• HR policies\n\n**Sets discipline and structure for other components**"
+        },
+        {
+          title: 'Control Activities',
+          type: 'text',
+          content: "**Policies and procedures addressing risks:**\n\n**Types:**\n• Authorizations\n• Segregation of duties\n• Performance reviews\n• Information processing (IT/manual)\n• Physical controls\n• Reconciliations\n\n**Apply at various levels—entity and transaction**"
+        },
+        {
+          title: 'Obtaining Understanding',
+          type: 'text',
+          content: "**Procedures:**\n\n• Inquiry of personnel\n• Observation of operations\n• Inspection of documents\n• Tracing transactions (walkthroughs)\n\n**Document understanding using:**\n• Narratives\n• Flowcharts\n• Questionnaires\n• Combination approach"
+        },
+        {
+          title: '⚠️ Exam Trap: Understanding vs Testing',
+          type: 'warning',
+          content: "**Understanding controls ≠ Testing controls!**\n\n**Understanding (always required):**\n• Design of controls\n• Whether implemented\n\n**Testing (may or may not do):**\n• Operating effectiveness\n• Only if relying on controls\n\n**Can skip testing if not relying!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Five components: CRIME (or COSO framework)",
+            "Control environment is the foundation",
+            "Understanding is REQUIRED on every audit",
+            "Obtain through inquiry, observation, inspection",
+            "Document via narratives, flowcharts, questionnaires",
+            "Understanding ≠ Testing",
+            "Test only if planning to rely on controls"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-017',
+    section: 'AUD',
+    title: "Tests of Controls",
+    description: "Understand when and how to test internal controls",
+    order: 69,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Internal Control", "Tests of Controls", "Audit Evidence"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-B-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Testing controls allows you to rely on them and reduce substantive testing! But you must understand when to test, how to test, and what deviations mean. Efficiency and effectiveness!"
+        },
+        {
+          title: 'When to Test Controls',
+          type: 'text',
+          content: "**Test controls when:**\n\n• Planning to rely on controls\n• Controls appear effective\n• More efficient than substantive only\n\n**Must test when:**\n• Substantive procedures alone insufficient\n• Significant risk (must understand controls)\n• Required by standards (issuer audits)"
+        },
+        {
+          title: 'Nature of Tests of Controls',
+          type: 'table',
+          headers: ['Procedure', 'Description', 'Best For'],
+          rows: [
+            ['Inquiry', 'Ask how controls work', 'Initial understanding'],
+            ['Observation', 'Watch control in action', 'Segregation of duties'],
+            ['Inspection', 'Examine evidence of control', 'Approvals, reconciliations'],
+            ['Reperformance', 'Redo the control', 'Highest assurance']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: RIIO (Strongest to Weakest)',
+          type: 'callout',
+          content: "**Audit Evidence Strength:**\n\n**R**eperformance (best)\n**I**nspection\n**I**nquiry + Observation\n**O**nly Inquiry (weakest)\n\n**Inquiry ALONE is NEVER sufficient!**\n\n**Combine inquiry with other procedures!**"
+        },
+        {
+          title: 'Extent of Testing',
+          type: 'text',
+          content: "**Factors affecting sample size:**\n\n• Frequency of control operation\n• Reliance level (more reliance = more testing)\n• Deviation rate expected\n• Control risk assessed\n\n**Daily control: Test more transactions**\n**Quarterly control: Test each quarter**"
+        },
+        {
+          title: 'Timing of Tests',
+          type: 'text',
+          content: "**Interim testing:**\n• Can test before year-end\n• Must update/extend to year-end\n\n**Roll-forward procedures:**\n• Inquiry about changes\n• Test remaining period\n• Amount depends on length/changes\n\n**More time elapsed = More rollforward work**"
+        },
+        {
+          title: '⚠️ Exam Trap: Control Deviations',
+          type: 'warning',
+          content: "**Deviation found—now what?**\n\n**Consider:**\n• Nature and cause of deviation\n• Whether isolated or pattern\n• Impact on control reliance\n\n**Options:**\n• Expand testing\n• Test compensating controls\n• Increase substantive testing\n• Revise control risk assessment"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Test controls when planning to rely on them",
+            "Reperformance provides best evidence",
+            "Inquiry alone is NEVER sufficient",
+            "Sample size based on reliance and frequency",
+            "Interim testing requires rollforward",
+            "Deviations may require expanded testing",
+            "Control testing → Reduced substantive testing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-III-015',
+    section: 'AUD',
+    title: "Audit Evidence Requirements",
+    description: "Master sufficiency and appropriateness of evidence",
+    order: 70,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Audit Evidence", "Audit Procedures", "Documentation"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "All audit conclusions must be supported by evidence! Understanding what makes evidence sufficient and appropriate—and the types of procedures to obtain it—is fundamental to auditing!"
+        },
+        {
+          title: 'Evidence Quality',
+          type: 'text',
+          content: "**Two dimensions:**\n\n**Sufficiency:** Quantity of evidence\n• Enough to support conclusion\n• Affected by risk and quality\n\n**Appropriateness:** Quality of evidence\n• Relevance (pertains to assertion)\n• Reliability (trustworthy)"
+        },
+        {
+          title: 'Reliability Factors',
+          type: 'table',
+          headers: ['Factor', 'More Reliable', 'Less Reliable'],
+          rows: [
+            ['Source', 'External independent', 'Client-prepared'],
+            ['Control environment', 'Strong controls', 'Weak controls'],
+            ['Form', 'Documentary', 'Oral'],
+            ['Auditor involvement', 'Obtained directly', 'Provided by client'],
+            ['Original vs copy', 'Original', 'Copy/fax']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: DEOS',
+          type: 'callout',
+          content: "**Reliable Evidence = DEOS**\n\n**D**irect auditor involvement\n**E**xternal source\n**O**riginal document\n**S**trong controls context\n\n**Bank confirmation > Client's bank statement**"
+        },
+        {
+          title: 'Types of Audit Procedures',
+          type: 'text',
+          content: "**Risk assessment procedures:**\n• Understand entity/environment\n• Identify/assess risks\n\n**Further audit procedures:**\n• Tests of controls\n• Substantive procedures\n  - Tests of details\n  - Substantive analytics\n\n**All provide evidence!**"
+        },
+        {
+          title: 'Management Representations',
+          type: 'text',
+          content: "**Required on every audit:**\n\n• Acknowledges responsibility\n• Confirms F/S representations\n• Covers specific assertions\n\n**Important:**\n• Complements, does NOT replace other evidence\n• Written representation required\n• Dated as of report date"
+        },
+        {
+          title: '⚠️ Exam Trap: Conflicting Evidence',
+          type: 'warning',
+          content: "**When evidence conflicts:**\n\n• Cannot ignore inconsistency\n• Must investigate and resolve\n• May need to modify procedures\n• Consider reliability of each source\n• Document resolution\n\n**Audit report CANNOT be issued with unresolved conflicts!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Evidence: Sufficient (quantity) + Appropriate (quality)",
+            "Appropriateness = Relevance + Reliability",
+            "External, direct, original = More reliable",
+            "Internal, oral, copies = Less reliable",
+            "Management representations complement other evidence",
+            "Conflicting evidence must be resolved",
+            "Higher risk = More evidence needed"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-III-016',
+    section: 'AUD',
+    title: "Substantive Procedures",
+    description: "Master tests of details and substantive analytics",
+    order: 71,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Substantive Testing", "Audit Procedures", "Evidence"],
+    blueprintArea: 'AUD-III',
+    blueprintTopic: 'AUD-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Substantive procedures detect MATERIAL MISSTATEMENTS! Understanding tests of details vs analytics—and when to use each—is essential for effective and efficient audits!"
+        },
+        {
+          title: 'Types of Substantive Procedures',
+          type: 'text',
+          content: "**Two types:**\n\n**1. Tests of Details**\n• Examine specific transactions/balances\n• Higher precision\n• More time-consuming\n\n**2. Substantive Analytical Procedures**\n• Develop expectations, compare\n• Broader coverage\n• Generally less precise"
+        },
+        {
+          title: 'Tests of Details',
+          type: 'table',
+          headers: ['Procedure', 'Description', 'Typical Use'],
+          rows: [
+            ['Confirmation', 'Third-party verification', 'A/R, Cash, Debt'],
+            ['Inspection', 'Examine documents', 'Invoices, contracts'],
+            ['Recalculation', 'Verify math', 'Depreciation, accruals'],
+            ['Reperformance', 'Redo procedure', 'Reconciliations'],
+            ['Vouching', 'From records to support', 'Existence'],
+            ['Tracing', 'From support to records', 'Completeness']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Vouch vs Trace',
+          type: 'callout',
+          content: "**Direction matters!**\n\n**VOUCH:** Records → Support\n• Test EXISTENCE (recorded items exist)\n\n**TRACE:** Support → Records\n• Test COMPLETENESS (items recorded)\n\n**\"Vouch Out, Trace In\"**"
+        },
+        {
+          title: 'Substantive Analytics',
+          type: 'text',
+          content: "**Steps:**\n\n1. Develop expectation (independent data)\n2. Define acceptable difference\n3. Compare expectation to recorded\n4. Investigate significant differences\n\n**Example:**\n• Expected rent: $10,000/month × 12 = $120,000\n• Recorded: $118,000\n• Difference: $2,000 (investigate)"
+        },
+        {
+          title: 'Designing Substantive Procedures',
+          type: 'text',
+          content: "**Consider:**\n\n• Assessed risk of material misstatement\n• Assertions being tested\n• Nature of account/transaction\n• Reliability of data for analytics\n\n**Higher risk = More tests of details**\n**Significant risk = Tests of details required**"
+        },
+        {
+          title: '⚠️ Exam Trap: Assertions Tested',
+          type: 'warning',
+          content: "**Match procedure to assertion!**\n\n**Confirmations test:**\n• Existence, Rights, Cutoff\n\n**NOT effective for:**\n• Valuation (confirms balance, not collectibility)\n\n**For A/R valuation:**\n• Test allowance separately\n• Review subsequent collections\n• Aging analysis"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Substantive = Detect material misstatements",
+            "Tests of details: Precise, transaction-level",
+            "Analytics: Expectation vs recorded amounts",
+            "Vouch for existence, Trace for completeness",
+            "Higher risk = More tests of details",
+            "Match procedures to assertions",
+            "Significant risk requires tests of details"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-021',
+    section: 'AUD',
+    title: "Modification to the Auditor's Report",
+    description: "Understand qualified, adverse, and disclaimer opinions",
+    order: 72,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Audit Reports", "Modified Opinions", "GAAS"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When things go wrong, you can't issue a clean opinion! Understanding when to qualify, when to go adverse, and when to disclaim is critical. Report modifications significantly impact users!"
+        },
+        {
+          title: 'Types of Modified Opinions',
+          type: 'table',
+          headers: ['Type', 'Reason', 'Impact'],
+          rows: [
+            ['Qualified', 'Material, not pervasive', 'Except for'],
+            ['Adverse', 'Material AND pervasive', 'Not fairly presented'],
+            ['Disclaimer', 'Unable to obtain evidence', 'No opinion']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Modification Grid',
+          type: 'callout',
+          content: "**GAAP Departure:**\n• Material only → Qualified\n• Material + Pervasive → Adverse\n\n**Scope Limitation:**\n• Material only → Qualified\n• Material + Pervasive → Disclaimer\n\n**\"Pervasive = Affects many areas\"**"
+        },
+        {
+          title: 'Qualified Opinion',
+          type: 'text',
+          content: "**Use when:**\n• Misstatement is material but not pervasive, OR\n• Unable to obtain sufficient evidence but not pervasive\n\n**Report language:**\n• \"In our opinion, EXCEPT FOR [the matter], the F/S present fairly...\"\n\n**Basis for Qualified Opinion paragraph explains the issue**"
+        },
+        {
+          title: 'Adverse Opinion',
+          type: 'text',
+          content: "**Use when:**\n• Material misstatement(s) AND\n• Pervasive (affects many areas/accounts)\n\n**Report language:**\n• \"In our opinion, BECAUSE OF [the matter], the F/S DO NOT present fairly...\"\n\n**Basis for Adverse Opinion paragraph explains**\n\n**Most serious modification!**"
+        },
+        {
+          title: 'Disclaimer of Opinion',
+          type: 'text',
+          content: "**Use when:**\n• Unable to obtain sufficient appropriate evidence AND\n• Possible effects are both material and pervasive\n\n**Report language:**\n• \"We DO NOT EXPRESS AN OPINION on the F/S\"\n\n**Basis for Disclaimer paragraph explains\n\n**No opinion given at all!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Pervasive Defined',
+          type: 'warning',
+          content: "**Pervasive effects:**\n\n• Not confined to specific elements\n• If confined, represent substantial portion\n• For disclosures, fundamental to understanding\n\n**Examples of pervasive:**\n• Going concern (affects all F/S)\n• Revenue recognition issue (affects many accounts)\n• Fraud in management override"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Qualified: Material, not pervasive (except for)",
+            "Adverse: Material AND pervasive (does not present fairly)",
+            "Disclaimer: Cannot obtain evidence, pervasive (no opinion)",
+            "Pervasive = Affects many areas or substantial portion",
+            "Add Basis paragraph before opinion paragraph",
+            "GAAP departure → Qualified or Adverse",
+            "Scope limitation → Qualified or Disclaimer"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-022',
+    section: 'AUD',
+    title: "Emphasis-of-Matter and Other-Matter Paragraphs",
+    description: "Understand when to add explanatory paragraphs",
+    order: 73,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ["Audit Reports", "EOM", "OM Paragraphs"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Sometimes you need to highlight matters WITHOUT modifying the opinion! Understanding EOM vs OM paragraphs—and when each is required vs optional—is essential for proper reporting!"
+        },
+        {
+          title: 'EOM vs OM',
+          type: 'text',
+          content: "**Emphasis-of-Matter (EOM):**\n• Draws attention to matter PRESENTED or DISCLOSED in F/S\n• Fundamental to users' understanding\n\n**Other-Matter (OM):**\n• Relevant matter NOT presented in F/S\n• Relevant to understanding audit, responsibilities\n\n**Neither modifies the opinion!**"
+        },
+        {
+          title: 'Common EOM Situations',
+          type: 'table',
+          headers: ['Situation', 'Required?', 'Notes'],
+          rows: [
+            ['Change in accounting principle', 'Required', 'Voluntary with restatement'],
+            ['Substantial doubt about going concern', 'Required', 'If adequately disclosed'],
+            ['Significant subsequent event', 'Optional', 'May highlight'],
+            ['Related party transactions', 'Optional', 'If unusual'],
+            ['Correction of prior period error', 'Required', 'When F/S restated']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: EOM Content',
+          type: 'callout',
+          content: "**EOM must include:**\n\n• Clear reference to the matter\n• Reference to disclosure note\n• Statement that opinion is NOT modified\n\n**\"See Note X regarding...\"**\n\n**Placed AFTER Opinion paragraph**"
+        },
+        {
+          title: 'Common OM Situations',
+          type: 'text',
+          content: "**Other-Matter paragraphs for:**\n\n• Restricting use of report\n• Reporting on other legal/regulatory requirements\n• Prior period audited by predecessor\n• Supplementary information\n• Other information in document\n\n**Not about F/S disclosure—about the AUDIT**"
+        },
+        {
+          title: 'Placement',
+          type: 'text',
+          content: "**Location in report:**\n\n**EOM paragraphs:**\n• After Opinion paragraph\n• Before Other-Matter\n\n**OM paragraphs:**\n• After EOM (if any)\n• Before signature\n\n**Use heading \"Emphasis of Matter\" or \"Other Matter\"**"
+        },
+        {
+          title: '⚠️ Exam Trap: Going Concern',
+          type: 'warning',
+          content: "**Going concern treatment:**\n\n**If substantial doubt EXISTS and ADEQUATELY DISCLOSED:**\n• Add EOM paragraph\n• Unmodified opinion\n\n**If substantial doubt and NOT disclosed:**\n• Modify opinion (qualified or adverse)\n\n**Going concern ≠ Automatic modified opinion!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "EOM: Highlights matter in F/S disclosures",
+            "OM: Addresses matters outside F/S",
+            "Neither modifies the opinion",
+            "Required EOM: Going concern, accounting changes, corrections",
+            "Must state opinion is not modified",
+            "EOM after Opinion, OM after EOM",
+            "Going concern with disclosure = EOM, not modified opinion"
+          ]
+        }
+      ]
+    }
   }
 ];

@@ -5305,6 +5305,362 @@ export const iscLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // ISC: ADDITIONAL ADVANCED TOPICS
+  // =============================================
+  {
+    id: 'ISC-II-015',
+    section: 'ISC',
+    title: "Cybersecurity Frameworks",
+    description: "Understand NIST CSF, ISO 27001, and COBIT",
+    order: 75,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Cybersecurity", "Frameworks", "Governance"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Frameworks provide structure for security programs! Understanding NIST CSF, ISO 27001, and COBIT helps organizations implement comprehensive security. Essential for ISC!"
+        },
+        {
+          title: 'NIST Cybersecurity Framework',
+          type: 'text',
+          content: "**Five core functions:**\n\n**Identify:** Asset management, risk assessment\n**Protect:** Access controls, training, technology\n**Detect:** Monitoring, anomaly detection\n**Respond:** Response planning, communications\n**Recover:** Recovery planning, improvements\n\n**Widely adopted, flexible framework**"
+        },
+        {
+          title: 'Framework Comparison',
+          type: 'table',
+          headers: ['Framework', 'Focus', 'Best For'],
+          rows: [
+            ['NIST CSF', 'Cybersecurity risk', 'Any organization'],
+            ['ISO 27001', 'Information security management', 'Certification needed'],
+            ['COBIT', 'IT governance', 'Enterprise IT governance'],
+            ['SOC 2', 'Trust service criteria', 'Service organizations'],
+            ['PCI DSS', 'Payment card security', 'Card processing']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: NIST Functions',
+          type: 'callout',
+          content: "**\"I.P.D.R.R.\" = \"I Prefer Donuts Right, Right?\"**\n\n**I**dentify - Know what you have\n**P**rotect - Prevent bad things\n**D**etect - Find when it happens\n**R**espond - Handle the incident\n**R**ecover - Return to normal"
+        },
+        {
+          title: 'ISO 27001 Overview',
+          type: 'text',
+          content: "**International standard for ISMS:**\n\n• Information Security Management System\n• Certifiable standard\n• Risk-based approach\n• Continuous improvement (PDCA)\n• 114 controls in Annex A\n\n**Shows commitment to security to stakeholders**"
+        },
+        {
+          title: 'COBIT Framework',
+          type: 'text',
+          content: "**Control Objectives for IT:**\n\n**Governance domains:**\n• Evaluate, Direct, Monitor (EDM)\n\n**Management domains:**\n• Align, Plan, Organize (APO)\n• Build, Acquire, Implement (BAI)\n• Deliver, Service, Support (DSS)\n• Monitor, Evaluate, Assess (MEA)\n\n**Links IT goals to business goals**"
+        },
+        {
+          title: '⚠️ Exam Trap: Framework vs Standard',
+          type: 'warning',
+          content: "**Frameworks:** Guidance, flexible\n• NIST CSF - Can adopt partially\n• COBIT - Scalable implementation\n\n**Standards:** Specific requirements\n• ISO 27001 - Must meet all to certify\n• PCI DSS - Mandatory for card processors\n\n**Frameworks inform, standards require**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NIST CSF: Identify, Protect, Detect, Respond, Recover",
+            "ISO 27001: Certifiable ISMS standard",
+            "COBIT: IT governance linking to business goals",
+            "Frameworks provide flexibility; standards have requirements",
+            "Most organizations use multiple frameworks",
+            "Choose based on industry and compliance needs",
+            "All emphasize risk-based approach"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-II-016',
+    section: 'ISC',
+    title: "Incident Response and Forensics",
+    description: "Master incident handling and digital evidence",
+    order: 76,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Incident Response", "Forensics", "Security"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When security incidents happen, response matters! Understanding the incident response lifecycle and evidence handling protects organizations legally and operationally. Critical for ISC!"
+        },
+        {
+          title: 'Incident Response Phases',
+          type: 'text',
+          content: "**NIST SP 800-61 phases:**\n\n**1. Preparation:** Plans, tools, training\n**2. Detection/Analysis:** Identify and assess\n**3. Containment/Eradication/Recovery:** Stop, remove, restore\n**4. Post-Incident:** Lessons learned, improvements\n\n**Cyclical process—learn and improve!**"
+        },
+        {
+          title: 'Incident Classification',
+          type: 'table',
+          headers: ['Category', 'Examples', 'Priority'],
+          rows: [
+            ['Malware', 'Ransomware, viruses', 'High'],
+            ['Unauthorized access', 'Hacking, stolen creds', 'High'],
+            ['Data breach', 'PII exposure, theft', 'Critical'],
+            ['Denial of service', 'DDoS attacks', 'Medium-High'],
+            ['Insider threat', 'Employee misuse', 'High']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Response Actions',
+          type: 'callout',
+          content: "**Containment options - \"SIDS\":**\n\n**S**egment - Isolate affected systems\n**I**nvalidate - Revoke credentials\n**D**isable - Turn off services/accounts\n**S**hut down - Last resort\n\n**Goal: Stop spread, preserve evidence**"
+        },
+        {
+          title: 'Digital Forensics Basics',
+          type: 'text',
+          content: "**Evidence handling principles:**\n\n**Chain of custody:**\n• Document who handled evidence\n• When and why\n• Maintain integrity\n\n**Forensic imaging:**\n• Bit-for-bit copy of storage\n• Never work on original\n• Hash to verify integrity (MD5, SHA)"
+        },
+        {
+          title: 'Order of Volatility',
+          type: 'text',
+          content: "**Collect most volatile first:**\n\n1. **Registers, cache** (nanoseconds)\n2. **RAM** (power-dependent)\n3. **Temp files, swap** (may be overwritten)\n4. **Hard disk** (persistent)\n5. **Logs, backups** (remote storage)\n6. **Archival media** (CD, tape)\n\n**Power off = RAM lost!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Legal Considerations',
+          type: 'warning',
+          content: "**Before incident occurs:**\n\n• Define legal hold procedures\n• Know notification requirements (breach laws)\n• Establish law enforcement relationships\n• Train on evidence handling\n\n**During incident:**\n• Don't destroy potential evidence\n• Involve legal counsel\n• Document everything"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Four phases: Preparation, Detection, Containment/Recovery, Post-Incident",
+            "Preparation before incidents is critical",
+            "Chain of custody protects evidence integrity",
+            "Collect volatile evidence first",
+            "Never work on original evidence",
+            "Document all actions during response",
+            "Post-incident review improves future response"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-III-010',
+    section: 'ISC',
+    title: "IT Audit Techniques",
+    description: "Understand IT audit methodology and procedures",
+    order: 77,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["IT Audit", "Controls Testing", "Audit Procedures"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "IT auditing requires specialized techniques! Understanding CAATs, testing approaches, and IT-specific procedures is essential for auditing in the digital age. Key ISC knowledge!"
+        },
+        {
+          title: 'IT Audit Planning',
+          type: 'text',
+          content: "**Key considerations:**\n\n• **IT environment understanding:** Systems, processes, controls\n• **Risk assessment:** Where are IT-related risks?\n• **Materiality:** How IT impacts financial statements\n• **Specialists:** When to involve IT expertise\n\n**IT permeates most audits today!**"
+        },
+        {
+          title: 'CAATs - Computer Assisted Audit Techniques',
+          type: 'table',
+          headers: ['Technique', 'Description', 'Use Case'],
+          rows: [
+            ['Test data', 'Submit fake transactions', 'Test processing controls'],
+            ['Parallel simulation', 'Reprocess with auditor software', 'Verify calculations'],
+            ['Embedded audit modules', 'Monitor transactions continuously', 'High-volume systems'],
+            ['Generalized audit software', 'Analyze data files', 'Most common (ACL, IDEA)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: CAATs Benefits',
+          type: 'callout',
+          content: "**\"TEST\" more efficiently:**\n\n**T**otal population testing possible\n**E**fficiency improved\n**S**ampling enhanced\n**T**esting consistency\n\n**CAATs = Do more with less time**"
+        },
+        {
+          title: 'Generalized Audit Software',
+          type: 'text',
+          content: "**Common functions:**\n\n• **Data extraction:** Pull from systems\n• **Stratification:** Group by characteristics\n• **Gap testing:** Find missing sequences\n• **Duplicate testing:** Identify duplicates\n• **Calculations:** Recalculate, foot, cross-foot\n• **Sampling:** Statistical and non-statistical\n\n**Examples:** ACL, IDEA, Excel (limited)"
+        },
+        {
+          title: 'General Controls Testing',
+          type: 'text',
+          content: "**ITGC categories:**\n\n• **Access controls:** Logical and physical\n• **Program change controls:** Authorization, testing\n• **Program development:** SDLC compliance\n• **Computer operations:** Backups, job scheduling\n\n**Weak ITGCs = Weak application controls**"
+        },
+        {
+          title: '⚠️ Exam Trap: Application vs General Controls',
+          type: 'warning',
+          content: "**General controls:** Environment-wide\n• Affect all applications\n• Must test before relying on app controls\n\n**Application controls:** Transaction-level\n• Input, processing, output controls\n• Specific to each application\n\n**ITGC failure undermines ALL app controls!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CAATs enable efficient, comprehensive testing",
+            "Generalized audit software most commonly used",
+            "Test data: Submit fake transactions",
+            "Parallel simulation: Reprocess with auditor software",
+            "ITGCs must be tested first",
+            "Weak ITGCs undermine application controls",
+            "100% testing possible with CAATs"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-III-011',
+    section: 'ISC',
+    title: "SOC Reports: Types and Uses",
+    description: "Understand Service Organization Control reports",
+    order: 78,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["SOC Reports", "Service Auditors", "Controls"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Organizations increasingly rely on service providers! SOC reports provide assurance on controls at those providers. Understanding report types and uses is essential for both ISC and AUD!"
+        },
+        {
+          title: 'SOC Report Types',
+          type: 'table',
+          headers: ['Report', 'Focus', 'Users'],
+          rows: [
+            ['SOC 1', 'Controls over financial reporting', 'User auditors'],
+            ['SOC 2 Type I', 'Trust Services Criteria (design)', 'Management/specified parties'],
+            ['SOC 2 Type II', 'Trust Services Criteria (operating)', 'Management/specified parties'],
+            ['SOC 3', 'Trust Services (general use)', 'Public/marketing']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Type I vs Type II',
+          type: 'callout',
+          content: "**Type I = \"I\" = \"In-place\" (point in time)**\n• Controls designed and implemented\n• As of a specific date\n\n**Type II = \"II\" = \"Interval\" (period of time)**\n• Operating effectiveness\n• Over a period (usually 12 months)\n\n**Type II is stronger!**"
+        },
+        {
+          title: 'Trust Services Criteria',
+          type: 'text',
+          content: "**SOC 2 evaluates five criteria:**\n\n• **Security:** Common criterion (always included)\n• **Availability:** System uptime/accessibility\n• **Processing Integrity:** Complete, accurate processing\n• **Confidentiality:** Protection of confidential info\n• **Privacy:** Personal information handling\n\n**Security always required; others optional**"
+        },
+        {
+          title: 'Using SOC Reports',
+          type: 'text',
+          content: "**For user auditors:**\n\n• Evaluate service auditor competence\n• Assess scope and period covered\n• Review description of controls\n• Consider complementary user entity controls (CUECs)\n• Evaluate exceptions noted\n\n**SOC report does NOT eliminate all procedures!**"
+        },
+        {
+          title: 'Complementary User Entity Controls',
+          type: 'text',
+          content: "**CUECs = Your organization's controls:**\n\n• Necessary for service org controls to be effective\n• Listed in SOC report description\n• USER must implement and operate\n\n**Example:** Strong passwords (service org) requires user to enforce password policy\n\n**Test CUECs at your organization!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Report Restrictions',
+          type: 'warning',
+          content: "**SOC 1 and SOC 2:**\n• Restricted use reports\n• Only for intended users\n• Cannot distribute publicly\n\n**SOC 3:**\n• General use (public)\n• Less detail\n• Marketing/website use\n\n**Bridge letter:** Covers gap between report period and year-end"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SOC 1: Financial reporting controls",
+            "SOC 2: Trust Services Criteria (five areas)",
+            "Type I: Design only (point in time)",
+            "Type II: Operating effectiveness (period)",
+            "Security is always included in SOC 2",
+            "CUECs must be tested by user organization",
+            "SOC 1/2 are restricted; SOC 3 is public"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-I-015',
+    section: 'ISC',
+    title: "Emerging Technologies and Risks",
+    description: "Understand AI, blockchain, and IoT security considerations",
+    order: 79,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Emerging Technology", "AI", "Blockchain", "IoT"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "New technologies bring new risks! Understanding security considerations for AI, blockchain, IoT, and other emerging tech is essential for modern information systems competence!"
+        },
+        {
+          title: 'Artificial Intelligence Risks',
+          type: 'text',
+          content: "**AI/ML security considerations:**\n\n**Bias and fairness:**\n• Training data may embed bias\n• Decisions may discriminate\n\n**Explainability:**\n• \"Black box\" problem\n• Regulatory requirements for explanation\n\n**Data poisoning:**\n• Attackers manipulate training data\n• Model produces incorrect outputs"
+        },
+        {
+          title: 'Technology Risk Comparison',
+          type: 'table',
+          headers: ['Technology', 'Key Risk', 'Control Focus'],
+          rows: [
+            ['AI/ML', 'Bias, explainability', 'Training data quality, governance'],
+            ['Blockchain', 'Key management, smart contracts', 'Secure key storage, code review'],
+            ['IoT', 'Device security, scale', 'Segmentation, updates, inventory'],
+            ['Cloud', 'Shared responsibility', 'Configuration, access management'],
+            ['RPA', 'Uncontrolled bots', 'Access controls, monitoring']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: IoT Risks',
+          type: 'callout',
+          content: "**IoT = \"Insecure of Things\"**\n\n**Common issues:**\n• Default passwords unchanged\n• No update mechanism\n• Weak encryption\n• No authentication\n\n**Billions of devices, minimal security!**"
+        },
+        {
+          title: 'Blockchain Considerations',
+          type: 'text',
+          content: "**Security aspects:**\n\n**Strengths:**\n• Immutability (tamper-evident)\n• Decentralization\n• Cryptographic security\n\n**Risks:**\n• Private key management critical\n• Smart contract vulnerabilities\n• 51% attacks (public chains)\n• Regulatory uncertainty"
+        },
+        {
+          title: 'Cloud Security Responsibility',
+          type: 'text',
+          content: "**Shared responsibility model:**\n\n**IaaS:** Customer manages most\n• OS, applications, data\n\n**PaaS:** Shared\n• Customer: Application and data\n• Provider: Platform and infrastructure\n\n**SaaS:** Provider manages most\n• Customer: Data and access\n\n**\"Security OF cloud vs IN cloud\"**"
+        },
+        {
+          title: '⚠️ Exam Trap: RPA Controls',
+          type: 'warning',
+          content: "**Robotic Process Automation risks:**\n\n• Bots have user credentials\n• Unmonitored execution\n• Access creep over time\n• No segregation of duties\n\n**Controls needed:**\n• Secure credential storage\n• Logging and monitoring\n• Regular access reviews\n• Change management for bot logic"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "AI risks: Bias, explainability, data poisoning",
+            "Blockchain: Key management and smart contract security",
+            "IoT: Massive scale, minimal built-in security",
+            "Cloud: Understand shared responsibility model",
+            "RPA: Bots need same controls as human users",
+            "New tech = New risks to assess",
+            "Governance frameworks must evolve"
+          ]
+        }
+      ]
+    }
   }
 ];
-

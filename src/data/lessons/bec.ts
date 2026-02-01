@@ -1542,6 +1542,436 @@ export const becLessons: Lesson[] = [
         }
       ]
     }
+  },
+
+  // =============================================
+  // BEC: ADDITIONAL TOPICS (Valid through 6/30/2026)
+  // =============================================
+  {
+    id: 'BEC-I-005',
+    section: 'BEC',
+    title: "Corporate Governance",
+    description: "Understand board responsibilities and governance structures",
+    order: 21,
+    duration: 45,
+    difficulty: 'foundational',
+    topics: ["Corporate Governance", "Board of Directors", "Ethics"],
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Good governance protects stakeholders and drives performance! Understanding board responsibilities, committee functions, and governance best practices is fundamental to BEC!"
+        },
+        {
+          title: 'Board of Directors Role',
+          type: 'text',
+          content: "**Primary responsibilities:**\n\n• Hire, evaluate, and compensate CEO\n• Set strategic direction\n• Oversee risk management\n• Ensure legal compliance\n• Protect shareholder interests\n\n**Fiduciary duties:**\n• Duty of care\n• Duty of loyalty\n• Duty of good faith"
+        },
+        {
+          title: 'Key Board Committees',
+          type: 'table',
+          headers: ['Committee', 'Function', 'Composition'],
+          rows: [
+            ['Audit', 'Financial reporting, internal controls', 'All independent'],
+            ['Compensation', 'Executive pay', 'All independent'],
+            ['Nominating/Governance', 'Board selection, governance', 'Majority independent'],
+            ['Risk', 'Enterprise risk oversight', 'Varies']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Audit Committee',
+          type: 'callout',
+          content: "**Audit committee requirements (SEC):**\n\n**\"I.E.F.\"**\n**I**ndependent - All members\n**E**xpert - Financial expert required\n**F**inancial literacy - All members\n\n**Hires and oversees external auditor!**"
+        },
+        {
+          title: 'Independence Requirements',
+          type: 'text',
+          content: "**Independent directors:**\n\n• No material relationship with company\n• Not an employee\n• Not a significant shareholder\n• No business relationships\n• Family member limitations\n\n**NYSE/NASDAQ require majority independence**"
+        },
+        {
+          title: 'Internal Controls Responsibilities',
+          type: 'text',
+          content: "**Management:**\n• Establishes and maintains IC\n• Assesses effectiveness annually (404a)\n\n**Audit committee:**\n• Oversees financial reporting\n• Reviews IC with auditors\n• Receives IC reports\n\n**External auditor (accelerated filers):**\n• Attests to IC effectiveness (404b)"
+        },
+        {
+          title: '⚠️ Exam Trap: Tone at the Top',
+          type: 'warning',
+          content: "**Governance starts with culture:**\n\n• CEO and board set ethical tone\n• Code of conduct essential\n• Whistleblower mechanisms required\n• Actions must match words\n\n**Weak tone = Weak controls**\n**Example: Enron had great written policies...**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Board: Hire CEO, strategy, risk, compliance",
+            "Fiduciary duties: Care, loyalty, good faith",
+            "Audit committee: All independent, financial expert",
+            "Majority of board should be independent",
+            "Management responsible for internal controls",
+            "Audit committee oversees financial reporting",
+            "Tone at the top drives culture"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-I-006',
+    section: 'BEC',
+    title: "Economic Cycles and Indicators",
+    description: "Understand business cycles and economic measures",
+    order: 22,
+    duration: 45,
+    difficulty: 'foundational',
+    topics: ["Economics", "Business Cycles", "Indicators"],
+    blueprintArea: 'BEC-II',
+    blueprintTopic: 'BEC-II-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Understanding where we are in the economic cycle matters for business decisions! Recognizing leading, lagging, and coincident indicators helps predict and respond to economic changes!"
+        },
+        {
+          title: 'Business Cycle Phases',
+          type: 'text',
+          content: "**Four phases:**\n\n**Expansion:** Growing GDP, low unemployment\n**Peak:** Maximum output, may trigger inflation\n**Contraction (Recession):** Declining GDP\n**Trough:** Bottom of cycle, recovery begins\n\n**Technical recession:** Two consecutive quarters of declining GDP"
+        },
+        {
+          title: 'Economic Indicators',
+          type: 'table',
+          headers: ['Type', 'Definition', 'Examples'],
+          rows: [
+            ['Leading', 'Predict future economy', 'Stock prices, building permits, money supply'],
+            ['Coincident', 'Move with economy', 'GDP, employment, industrial production'],
+            ['Lagging', 'Follow economy', 'Unemployment rate, CPI, business loans']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Indicator Types',
+          type: 'callout',
+          content: "**\"Leaders Plan Ahead\"**\n\n**Leading indicators:**\n• Stock market (forward-looking)\n• Building permits (planned construction)\n• Consumer expectations\n\n**Unemployment RATE is lagging!**\n(Takes time to hire/fire)"
+        },
+        {
+          title: 'Key Economic Measures',
+          type: 'text',
+          content: "**GDP - Gross Domestic Product:**\n• Total value of goods/services produced\n• GDP = C + I + G + (X - M)\n\n**Inflation measures:**\n• CPI - Consumer prices\n• PPI - Producer prices\n• GDP deflator - Overall price level\n\n**Unemployment rate:**\n• Unemployed / Labor force"
+        },
+        {
+          title: 'Monetary vs Fiscal Policy',
+          type: 'text',
+          content: "**Monetary (Federal Reserve):**\n• Interest rates\n• Money supply\n• Reserve requirements\n\n**Fiscal (Congress/President):**\n• Government spending\n• Taxation\n• Budget deficits/surpluses\n\n**Both influence economic conditions**"
+        },
+        {
+          title: '⚠️ Exam Trap: Real vs Nominal',
+          type: 'warning',
+          content: "**Nominal:** Current dollar terms\n**Real:** Adjusted for inflation\n\n**Real GDP = Nominal GDP / Price index**\n\n**Use REAL for comparisons over time!**\n\n**Example:**\n• 5% nominal growth\n• 3% inflation\n• Real growth: ~2%"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Cycle: Expansion → Peak → Contraction → Trough",
+            "Recession: Two quarters declining GDP",
+            "Leading indicators: Predict economy",
+            "Lagging indicators: Confirm trends",
+            "GDP = C + I + G + (X - M)",
+            "Monetary policy: Fed; Fiscal: Government",
+            "Real vs Nominal: Adjust for inflation"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-III-010',
+    section: 'BEC',
+    title: "Cost-Volume-Profit Analysis",
+    description: "Master breakeven analysis and profit planning",
+    order: 23,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["CVP Analysis", "Breakeven", "Cost Accounting"],
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "CVP analysis helps managers make pricing, volume, and cost decisions! Understanding breakeven points, contribution margin, and profit targets is essential for business decision-making!"
+        },
+        {
+          title: 'Key CVP Concepts',
+          type: 'text',
+          content: "**Contribution margin:**\nSales price − Variable costs\n\n**CM ratio:**\nCM / Sales price\n\n**Breakeven point:**\nWhere Total Revenue = Total Costs\nWhere CM covers Fixed Costs exactly"
+        },
+        {
+          title: 'Breakeven Formulas',
+          type: 'table',
+          headers: ['Formula', 'Purpose', 'Expression'],
+          rows: [
+            ['BE Units', 'Units to sell', 'Fixed costs / CM per unit'],
+            ['BE Dollars', 'Revenue needed', 'Fixed costs / CM ratio'],
+            ['Target Profit Units', 'Units for profit', '(FC + Target) / CM per unit'],
+            ['Target Profit $', 'Revenue for profit', '(FC + Target) / CM ratio']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Breakeven',
+          type: 'callout',
+          content: "**\"Fixed divided by Unit\"**\n\n**Breakeven units:**\nFixed Costs / CM per unit\n\n**Breakeven dollars:**\nFixed Costs / CM ratio\n\n**Just cover fixed costs!**"
+        },
+        {
+          title: 'CVP Assumptions',
+          type: 'text',
+          content: "**CVP analysis assumes:**\n\n• Costs are linear (within relevant range)\n• Selling price is constant\n• Sales mix is constant (multiple products)\n• Units produced = Units sold\n• Variable costs are truly variable\n\n**Violations limit accuracy!**"
+        },
+        {
+          title: 'Operating Leverage',
+          type: 'text',
+          content: "**Degree of Operating Leverage:**\nDOL = CM / Operating income\n\n**Higher DOL means:**\n• More fixed costs\n• More risk\n• Greater profit swing from sales changes\n\n**Example:** DOL of 3\n• 10% sales increase = 30% profit increase\n• 10% sales decrease = 30% profit decrease"
+        },
+        {
+          title: '⚠️ Exam Trap: After-Tax Target',
+          type: 'warning',
+          content: "**For after-tax target profit:**\n\n**Pre-tax target = After-tax target / (1 − Tax rate)**\n\n**Then use in formulas:**\n(FC + Pre-tax target) / CM\n\n**Example:**\n• Want $100K after-tax\n• Tax rate: 25%\n• Pre-tax needed: $100K / 0.75 = $133,333"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CM = Price − Variable cost",
+            "Breakeven units = FC / CM per unit",
+            "Breakeven $ = FC / CM ratio",
+            "Target profit: Add target to FC in formula",
+            "DOL measures profit sensitivity to sales",
+            "High DOL = More fixed costs = More risk",
+            "After-tax target: Gross up for taxes"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-IV-005',
+    section: 'BEC',
+    title: "Budgeting and Forecasting",
+    description: "Understand budget types and the budgeting process",
+    order: 24,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Budgeting", "Forecasting", "Planning"],
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Budgeting translates strategy into numbers! Understanding budget types, the master budget, and behavioral considerations helps managers plan and control operations effectively!"
+        },
+        {
+          title: 'Budget Purposes',
+          type: 'text',
+          content: "**Budgets serve to:**\n\n• **Plan:** Allocate resources\n• **Coordinate:** Align departments\n• **Communicate:** Share expectations\n• **Motivate:** Set targets\n• **Control:** Compare actual to plan\n• **Evaluate:** Measure performance"
+        },
+        {
+          title: 'Master Budget Components',
+          type: 'table',
+          headers: ['Budget', 'Starts With', 'Feeds Into'],
+          rows: [
+            ['Sales budget', 'Sales forecast', 'Everything else'],
+            ['Production budget', 'Sales + Inventory', 'Material, labor, OH'],
+            ['Direct materials', 'Production needs', 'Cash budget'],
+            ['Direct labor', 'Production needs', 'Cash budget'],
+            ['Overhead', 'Production needs', 'Cash budget'],
+            ['Cash budget', 'All above', 'Pro forma financials']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Budget Sequence',
+          type: 'callout',
+          content: "**\"Sales drives the machine\"**\n\n**Order:**\n1. Sales budget (start here!)\n2. Production budget\n3. Materials/Labor/OH budgets\n4. Selling & Admin budget\n5. Cash budget\n6. Pro forma statements"
+        },
+        {
+          title: 'Budget Types',
+          type: 'text',
+          content: "**Static budget:**\n• Fixed for one activity level\n• Good for planning\n\n**Flexible budget:**\n• Adjusts for actual activity\n• Better for performance evaluation\n\n**Rolling/continuous budget:**\n• Adds month as month ends\n• Always 12 months ahead"
+        },
+        {
+          title: 'Budgeting Approaches',
+          type: 'text',
+          content: "**Top-down:** Management sets\n• Quick but less buy-in\n\n**Bottom-up (Participative):** Employees input\n• Slower but better buy-in\n\n**Zero-based:** Justify from zero\n• Time-consuming but thorough\n\n**Activity-based:** Based on activities\n• Links costs to drivers"
+        },
+        {
+          title: '⚠️ Exam Trap: Budgetary Slack',
+          type: 'warning',
+          content: "**Slack = Padding the budget:**\n\n• Managers understate revenue\n• Overstate expenses\n• Easier to meet targets\n\n**Problems:**\n• Inefficient resource allocation\n• Poor decision-making\n\n**Reduce by:** Top management review, stretch targets"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Budgets: Plan, coordinate, communicate, control",
+            "Sales budget starts the process",
+            "Production = Sales + Ending − Beginning inventory",
+            "Static: Fixed level; Flexible: Adjusts to actual",
+            "Rolling budget: Always 12 months ahead",
+            "Participative: Better buy-in but slower",
+            "Watch for budgetary slack"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-IV-006',
+    section: 'BEC',
+    title: "Financial Ratios and Analysis",
+    description: "Calculate and interpret key financial ratios",
+    order: 25,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Financial Analysis", "Ratios", "Performance"],
+    blueprintArea: 'BEC-IV',
+    blueprintTopic: 'BEC-IV-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Financial ratios reveal company health! Understanding liquidity, solvency, profitability, and efficiency ratios is essential for analyzing performance and making business decisions!"
+        },
+        {
+          title: 'Liquidity Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Current ratio', 'Current assets / Current liabilities', 'Short-term solvency'],
+            ['Quick ratio', '(Cash + A/R + Securities) / CL', 'Immediate liquidity'],
+            ['Cash ratio', 'Cash / Current liabilities', 'Most conservative'],
+            ['Working capital', 'CA − CL', 'Cushion in dollars']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Quick Ratio',
+          type: 'callout',
+          content: "**\"Quick = No Slow Assets\"**\n\n**Quick assets:**\n• Cash ✓\n• Marketable securities ✓\n• Accounts receivable ✓\n\n**NOT quick:**\n• Inventory ✗ (takes time to sell)\n• Prepaids ✗ (can't pay bills with them)"
+        },
+        {
+          title: 'Activity/Efficiency Ratios',
+          type: 'text',
+          content: "**Inventory turnover:**\nCOGS / Average inventory\n(Days = 365 / turnover)\n\n**Receivables turnover:**\nNet credit sales / Average A/R\n(Days = 365 / turnover)\n\n**Asset turnover:**\nSales / Average total assets\n\n**Higher turnover = More efficient**"
+        },
+        {
+          title: 'Profitability Ratios',
+          type: 'text',
+          content: "**Gross margin:**\n(Sales − COGS) / Sales\n\n**Profit margin:**\nNet income / Sales\n\n**ROA:**\nNet income / Average total assets\n\n**ROE:**\nNet income / Average stockholders' equity\n\n**Higher = More profitable**"
+        },
+        {
+          title: 'Leverage Ratios',
+          type: 'text',
+          content: "**Debt-to-equity:**\nTotal debt / Total equity\n\n**Debt-to-assets:**\nTotal debt / Total assets\n\n**Times interest earned:**\nEBIT / Interest expense\n\n**Higher debt ratios = More financial risk**\n**Higher TIE = Better coverage**"
+        },
+        {
+          title: 'DuPont Analysis',
+          type: 'text',
+          content: "**Decomposes ROE:**\n\n**ROE = Profit margin × Asset turnover × Leverage**\n\nOr:\nNet income/Sales × Sales/Assets × Assets/Equity\n\n**Shows three drivers of return:**\n• Profitability\n• Efficiency\n• Financial leverage"
+        },
+        {
+          title: '⚠️ Exam Trap: Interpretation',
+          type: 'warning',
+          content: "**Context matters!**\n\n• Compare to industry averages\n• Compare to prior periods\n• Higher isn't always better\n\n**Examples:**\n• Very high current ratio = Too much tied up?\n• Very high inventory turnover = Stockouts?\n\n**Trend analysis is key!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Liquidity: Current ratio, Quick ratio, Cash ratio",
+            "Quick ratio excludes inventory and prepaids",
+            "Activity: Turnover ratios (higher = faster)",
+            "Profitability: ROA, ROE, Profit margins",
+            "Leverage: Debt ratios, Times interest earned",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "Compare to industry and trends"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-II-005',
+    section: 'BEC',
+    title: "Interest Rates and Monetary Policy",
+    description: "Understand how the Fed influences the economy",
+    order: 26,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ["Economics", "Monetary Policy", "Interest Rates"],
+    blueprintArea: 'BEC-II',
+    blueprintTopic: 'BEC-II-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Interest rates affect everything in business! Understanding how the Federal Reserve controls money supply and rates helps explain economic conditions and their impact on organizations!"
+        },
+        {
+          title: 'Federal Reserve Tools',
+          type: 'text',
+          content: "**Primary tools:**\n\n**1. Open market operations:**\n• Buy securities = Expand money supply\n• Sell securities = Contract money supply\n\n**2. Discount rate:**\n• Rate Fed charges banks\n\n**3. Reserve requirements:**\n• % banks must hold"
+        },
+        {
+          title: 'Policy Effects',
+          type: 'table',
+          headers: ['Action', 'Money Supply', 'Interest Rates', 'Economy'],
+          rows: [
+            ['Buy securities', 'Increase', 'Decrease', 'Stimulate'],
+            ['Sell securities', 'Decrease', 'Increase', 'Slow down'],
+            ['Lower discount rate', 'Increase', 'Decrease', 'Stimulate'],
+            ['Raise reserve req', 'Decrease', 'Increase', 'Slow down']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Fed Goals',
+          type: 'callout',
+          content: "**\"Dual Mandate\"**\n\n**1. Maximum employment**\n**2. Stable prices (2% inflation target)**\n\n**When unemployment high:** Stimulate\n**When inflation high:** Contract\n\n**Often a tradeoff!**"
+        },
+        {
+          title: 'Interest Rate Types',
+          type: 'text',
+          content: "**Key rates:**\n\n**Federal funds rate:**\n• Banks lend to each other overnight\n• Fed's target rate\n\n**Prime rate:**\n• Base rate for best customers\n• Usually fed funds + 3%\n\n**LIBOR/SOFR:**\n• International benchmark rates"
+        },
+        {
+          title: 'Yield Curve',
+          type: 'text',
+          content: "**Relationship of rates to maturity:**\n\n**Normal (upward):**\n• Long-term rates > Short-term\n• Healthy economy expected\n\n**Flat:**\n• Similar rates across maturities\n• Uncertainty\n\n**Inverted:**\n• Short-term > Long-term\n• Recession predictor"
+        },
+        {
+          title: '⚠️ Exam Trap: Inflation Effects',
+          type: 'warning',
+          content: "**Fisher Effect:**\n\nNominal rate ≈ Real rate + Expected inflation\n\n**Example:**\n• Real rate: 2%\n• Expected inflation: 3%\n• Nominal rate: ~5%\n\n**Higher inflation → Higher interest rates**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Fed tools: Open market ops, Discount rate, Reserves",
+            "Buy securities = More money = Lower rates",
+            "Dual mandate: Employment + Price stability",
+            "Federal funds rate is key policy rate",
+            "Inverted yield curve predicts recession",
+            "Nominal rate = Real rate + Inflation",
+            "Higher inflation → Higher interest rates"
+          ]
+        }
+      ]
+    }
   }
 ];
 

@@ -4636,5 +4636,233 @@ export const iscLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'ISC-IV-009',
+    section: 'ISC',
+    title: "SOC Examination Deep Dive",
+    description: "Master SOC 1, SOC 2, and SOC 3 examination requirements",
+    order: 42,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["SOC", "Attestation", "Service Organizations"],
+    blueprintArea: 'ISC-III',
+    blueprintTopic: 'ISC-III-B-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "SOC examinations are core to ISC! CPAs perform these engagements and rely on SOC reports for audit evidence. Understanding the differences between SOC 1, 2, and 3—and Type I vs Type II—is heavily tested!"
+        },
+        {
+          title: 'SOC Report Comparison',
+          type: 'table',
+          headers: ['Feature', 'SOC 1', 'SOC 2', 'SOC 3'],
+          rows: [
+            ['Purpose', 'ICFR impact', 'Trust Services', 'Trust Services'],
+            ['Users', 'User auditors/management', 'Management/specified', 'General public'],
+            ['Standard', 'AT-C 320', 'AT-C 205', 'AT-C 205'],
+            ['Criteria', 'Control objectives', 'TSC (COSO-based)', 'TSC'],
+            ['Distribution', 'Restricted', 'Restricted', 'Unrestricted'],
+            ['Detail', 'Full description', 'Full description', 'Summary only']
+          ]
+        },
+        {
+          title: 'Type I vs Type II',
+          type: 'text',
+          content: "**Type I (Point in Time):**\n• Design of controls as of a date\n• Controls SUITABLY DESIGNED\n• No operating effectiveness testing\n\n**Type II (Period of Time):**\n• Design AND operating effectiveness\n• Covers minimum 6-month period (typically 12)\n• Controls OPERATING EFFECTIVELY\n\n**Type II is more valuable—proves controls actually work!**"
+        },
+        {
+          title: '🧠 Memory Aid: SOC Types',
+          type: 'callout',
+          content: "**\"1 = Financial, 2 = Ops, 3 = Public\"**\n\n**SOC 1:** Controls over Financial reporting (ICFR)\n**SOC 2:** Controls over Operations (Trust Services)\n**SOC 3:** Same as 2, but Public-friendly\n\n**Type I = Snapshot (design)**\n**Type II = Movie (operating)**"
+        },
+        {
+          title: 'Trust Services Criteria (TSC)',
+          type: 'text',
+          content: "**Five categories (SOC 2 basis):**\n\n1. **Security** (Common Criteria - REQUIRED)\n2. **Availability** - System is available for operation\n3. **Processing Integrity** - Processing is complete, accurate\n4. **Confidentiality** - Info is protected as committed\n5. **Privacy** - Personal info handled per policy\n\n**Security is ALWAYS included; others optional**"
+        },
+        {
+          title: 'SOC Report Components',
+          type: 'text',
+          content: "**Standard SOC 2 Type II report sections:**\n\n1. **Auditor's Report** - Opinion on controls\n2. **Management's Assertion** - Responsibility statement\n3. **System Description** - Infrastructure, people, data\n4. **Control Activities** - Description of each control\n5. **Tests & Results** - Procedures and findings\n\n**Section 5 = Most valuable for user auditors!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Carve-Out vs Inclusive',
+          type: 'warning',
+          content: "**How subservice organizations are handled:**\n\n**Carve-out method:**\n• Excludes subservice org controls\n• Identifies what subservice org does\n• User must get separate assurance\n\n**Inclusive method:**\n• Includes subservice org controls in scope\n• Tests subservice org controls\n• More complete—but harder to get\n\n**Most reports use carve-out method!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SOC 1: ICFR impact; SOC 2: Trust Services; SOC 3: Public",
+            "Type I: Design only; Type II: Design + Operating effectiveness",
+            "TSC: Security (required), Availability, PI, Confidentiality, Privacy",
+            "User auditors use SOC reports as audit evidence",
+            "Check period covered, opinion, exceptions, CUECs",
+            "Carve-out excludes subservice orgs; inclusive includes them"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-010',
+    section: 'ISC',
+    title: "IT Governance and Control Frameworks",
+    description: "Apply COBIT, ITIL, and governance frameworks",
+    order: 43,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["IT Governance", "COBIT", "ITIL", "Frameworks"],
+    blueprintArea: 'ISC-I',
+    blueprintTopic: 'ISC-I-A-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "IT governance frameworks help organizations align IT with business objectives! CPAs evaluate IT governance in audits and advisory engagements. COBIT and ITIL are the most common frameworks tested on ISC!"
+        },
+        {
+          title: 'COBIT 2019 Overview',
+          type: 'text',
+          content: "**Control Objectives for Information and Related Technology:**\n\n**Purpose:** Governance and management of enterprise IT\n\n**Key concepts:**\n• **Governance:** Ensure stakeholder needs met (Evaluate-Direct-Monitor)\n• **Management:** Plan, build, run, and monitor IT\n\n**40 governance/management objectives organized by domain**"
+        },
+        {
+          title: 'COBIT Domains',
+          type: 'table',
+          headers: ['Domain', 'Code', 'Focus'],
+          rows: [
+            ['Evaluate, Direct, Monitor', 'EDM', 'Governance (board level)'],
+            ['Align, Plan, Organize', 'APO', 'Strategic planning'],
+            ['Build, Acquire, Implement', 'BAI', 'Solutions and changes'],
+            ['Deliver, Service, Support', 'DSS', 'Operations'],
+            ['Monitor, Evaluate, Assess', 'MEA', 'Performance monitoring']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: COBIT Domains',
+          type: 'callout',
+          content: "**\"Every Day Makes A Better DSS MEA\"**\n\n**EDM** = Executive oversight\n**APO** = Architecture and Planning\n**BAI** = Building systems\n**DSS** = Daily operations\n**MEA** = Measuring results\n\n**Flow: Plan → Build → Run → Monitor**"
+        },
+        {
+          title: 'ITIL Overview',
+          type: 'text',
+          content: "**Information Technology Infrastructure Library:**\n\n**Purpose:** IT Service Management (ITSM) best practices\n\n**ITIL 4 Service Value Chain:**\n• Plan, Improve, Engage\n• Design & Transition\n• Obtain/Build, Deliver & Support\n\n**Focus: Delivering VALUE through IT services**"
+        },
+        {
+          title: 'COBIT vs ITIL',
+          type: 'table',
+          headers: ['Aspect', 'COBIT', 'ITIL'],
+          rows: [
+            ['Focus', 'Governance & Control', 'Service Management'],
+            ['Scope', 'Enterprise IT', 'IT Operations'],
+            ['Primary users', 'Auditors, governance', 'IT operations'],
+            ['Orientation', 'Control objectives', 'Process practices'],
+            ['Certification', 'Framework assessment', 'Individual certification']
+          ]
+        },
+        {
+          title: 'Key ITSM Processes',
+          type: 'text',
+          content: "**Critical ITIL processes:**\n\n• **Incident Management:** Restore service quickly\n• **Problem Management:** Find and fix root causes\n• **Change Management:** Control changes to minimize risk\n• **Configuration Management:** Track IT assets (CMDB)\n• **Service Level Management:** Define and monitor SLAs"
+        },
+        {
+          title: '⚠️ Exam Trap: Incident vs Problem',
+          type: 'warning',
+          content: "**Different processes!**\n\n**Incident Management:**\n• Restore service ASAP\n• Workarounds acceptable\n• Speed is priority\n\n**Problem Management:**\n• Find ROOT CAUSE\n• Prevent recurrence\n• Quality over speed\n\n**Incident = Symptom; Problem = Disease**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "COBIT: IT governance framework (auditor-focused)",
+            "COBIT domains: EDM, APO, BAI, DSS, MEA",
+            "ITIL: IT service management best practices",
+            "Incident = Restore quickly; Problem = Fix root cause",
+            "Change management: Control changes to minimize risk",
+            "Both frameworks can be used together"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'ISC-IV-011',
+    section: 'ISC',
+    title: "Business Continuity and Disaster Recovery",
+    description: "Evaluate BCP/DR plans and recovery capabilities",
+    order: 44,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Continuity", "Disaster Recovery", "Risk Management"],
+    blueprintArea: 'ISC-II',
+    blueprintTopic: 'ISC-II-A-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Disasters happen! CPAs evaluate whether organizations can survive disruptions. Understanding BCP/DR concepts—especially RTO and RPO—is essential for risk assessments and SOC engagements!"
+        },
+        {
+          title: 'BCP vs DR',
+          type: 'text',
+          content: "**Business Continuity Planning (BCP):**\n• Overall organizational resilience\n• People, processes, facilities\n• Keep business running\n\n**Disaster Recovery (DR):**\n• IT-focused recovery\n• Systems and data restoration\n• Subset of BCP\n\n**BCP is broader; DR is technical**"
+        },
+        {
+          title: 'Critical Metrics',
+          type: 'table',
+          headers: ['Metric', 'Definition', 'Question It Answers'],
+          rows: [
+            ['RTO', 'Recovery Time Objective', 'How FAST must we recover?'],
+            ['RPO', 'Recovery Point Objective', 'How much DATA can we lose?'],
+            ['MTPD', 'Max Tolerable Period of Disruption', 'How long before business fails?'],
+            ['MTBF', 'Mean Time Between Failures', 'How reliable is the system?']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: RTO vs RPO',
+          type: 'callout',
+          content: "**\"Time vs Point\"**\n\n**RTO = TIME to recover (looking forward)**\n• \"We need systems back in 4 hours\"\n\n**RPO = POINT of data (looking backward)**\n• \"We can lose up to 1 hour of data\"\n\n**RTO = Downtime tolerance**\n**RPO = Data loss tolerance**"
+        },
+        {
+          title: 'Recovery Site Options',
+          type: 'table',
+          headers: ['Type', 'Description', 'Recovery Time', 'Cost'],
+          rows: [
+            ['Hot Site', 'Fully equipped, ready to go', 'Minutes to hours', 'Highest'],
+            ['Warm Site', 'Hardware ready, needs data', 'Hours to days', 'Medium'],
+            ['Cold Site', 'Empty facility, needs everything', 'Days to weeks', 'Lowest'],
+            ['Cloud DR', 'Cloud-based recovery', 'Variable (can be hot)', 'Pay per use']
+          ]
+        },
+        {
+          title: 'BIA - Business Impact Analysis',
+          type: 'text',
+          content: "**Foundation of BCP planning:**\n\n1. Identify critical business functions\n2. Determine impact of disruption over time\n3. Establish recovery priorities (RTO/RPO)\n4. Identify dependencies\n5. Calculate financial/operational impact\n\n**BIA drives recovery strategy decisions!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Testing Requirements',
+          type: 'warning',
+          content: "**Plans are worthless if not tested!**\n\n**Test types (increasing realism):**\n• **Tabletop:** Discussion-based walkthrough\n• **Walkthrough:** Step-by-step review\n• **Simulation:** Realistic scenario\n• **Full interruption:** Actually failover\n\n**Minimum annual testing recommended**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "BCP: Business-wide; DR: IT-focused",
+            "RTO: How fast to recover; RPO: Data loss tolerance",
+            "Hot site: Fast recovery; Cold site: Slow but cheap",
+            "BIA identifies critical functions and priorities",
+            "Test plans regularly (tabletop to full interruption)",
+            "Document and update plans after tests and changes"
+          ]
+        }
+      ]
+    }
   }
 ];

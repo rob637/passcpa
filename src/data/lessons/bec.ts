@@ -166,6 +166,130 @@ export const becLessons: Lesson[] = [
       ]
     }
   },
+  {
+    id: 'BEC-I-004',
+    section: 'BEC',
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-B-1',
+    title: 'Internal Control Frameworks',
+    description: 'Apply COSO and other internal control frameworks',
+    order: 4,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Internal Controls', 'COSO', 'Risk Management'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Internal controls are fundamental to reliable financial reporting! The COSO framework is THE standard for internal control—used by auditors, management, and regulators. BEC tests these concepts heavily!"
+        },
+        {
+          title: 'COSO Internal Control Framework',
+          type: 'text',
+          content: "**Committee of Sponsoring Organizations (COSO):**\n\n**Purpose:** Framework for designing, implementing, and evaluating internal control\n\n**Three objectives:**\n1. Effective and efficient operations\n2. Reliable financial reporting\n3. Compliance with laws/regulations\n\n**Used for SOX 404 compliance**"
+        },
+        {
+          title: 'Five Components of Internal Control',
+          type: 'table',
+          headers: ['Component', 'Description'],
+          rows: [
+            ['Control Environment', 'Tone at the top, ethics, oversight'],
+            ['Risk Assessment', 'Identify and analyze risks'],
+            ['Control Activities', 'Policies and procedures'],
+            ['Information & Communication', 'Relevant info captured and shared'],
+            ['Monitoring', 'Ongoing and separate evaluations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: COSO Components',
+          type: 'callout',
+          content: "**\"CRIME\"** for the 5 components:\n\n**C**ontrol Environment (foundation)\n**R**isk Assessment (identify risks)\n**I**nformation & Communication (share info)\n**M**onitoring Activities (evaluate)\n**(Control Activiti)E**s (procedures)\n\n**Or: \"Can Robots Ignore Massive Elephants?\"**"
+        },
+        {
+          title: 'COSO ERM Framework',
+          type: 'text',
+          content: "**Enterprise Risk Management expands COSO:**\n\n**Additional focus:**\n• Strategic objectives\n• Enterprise-wide risk view\n• Risk appetite and tolerance\n• Portfolio view of risk\n\n**Components:** Governance, Strategy, Performance, Review, Information"
+        },
+        {
+          title: '⚠️ Exam Trap: Limitations of Internal Control',
+          type: 'warning',
+          content: "**Even good controls have limitations:**\n\n• Human error and judgment\n• Management override\n• Collusion among employees\n• Cost-benefit constraints\n• Unusual transactions\n\n**Reasonable assurance—not absolute!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "COSO: Standard framework for internal control",
+            "5 components: Environment, Risk, Activities, Info, Monitoring",
+            "Control Environment: Foundation (tone at the top)",
+            "ERM: Enterprise-wide, strategic risk view",
+            "Limitations: Override, collusion, cost-benefit, human error",
+            "Reasonable assurance—not absolute guarantee"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-I-005',
+    section: 'BEC',
+    blueprintArea: 'BEC-I',
+    blueprintTopic: 'BEC-I-C-1',
+    title: 'Enterprise Risk Management',
+    description: 'Implement comprehensive ERM programs',
+    order: 5,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Risk Management', 'ERM', 'Strategic Planning'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Risk management is crucial for organizational success! ERM provides a structured approach to identifying, assessing, and responding to risks enterprise-wide. CPAs advise on and evaluate ERM programs!"
+        },
+        {
+          title: 'ERM Definition',
+          type: 'text',
+          content: "**Enterprise Risk Management:**\n\n\"A process, effected by an entity's board of directors, management, and other personnel, applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite, to provide reasonable assurance regarding the achievement of entity objectives.\"\n\n**Key: Enterprise-wide, strategy-linked**"
+        },
+        {
+          title: 'Risk Appetite vs Tolerance',
+          type: 'text',
+          content: "**Risk Appetite:**\n• Amount and type of risk willing to accept\n• Strategic level—set by board\n• \"We're aggressive on growth\"\n\n**Risk Tolerance:**\n• Acceptable variation from objectives\n• Operational level—set by management\n• \"Revenue can vary ±5%\"\n\n**Appetite = How hungry; Tolerance = How much can stomach**"
+        },
+        {
+          title: 'Risk Response Strategies',
+          type: 'table',
+          headers: ['Strategy', 'Description', 'Example'],
+          rows: [
+            ['Avoid', 'Eliminate the risk', 'Exit risky business line'],
+            ['Reduce', 'Mitigate likelihood/impact', 'Implement controls'],
+            ['Share', 'Transfer to third party', 'Insurance, outsourcing'],
+            ['Accept', 'Acknowledge and monitor', 'Self-insure small risks']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Risk Responses',
+          type: 'callout',
+          content: "**\"ARSA\"** (like the soccer chant!):\n\n**A**void (don't do it)\n**R**educe (control it)\n**S**hare (transfer it)\n**A**ccept (live with it)\n\n**Choose based on risk appetite and cost-benefit!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "ERM: Enterprise-wide, strategy-linked risk management",
+            "Risk appetite: Strategic willingness to take risk",
+            "Risk tolerance: Acceptable variation from objectives",
+            "Four responses: Avoid, Reduce, Share, Accept",
+            "Board sets appetite; Management manages tolerance",
+            "Cost-benefit drives response selection"
+          ]
+        }
+      ]
+    }
+  },
 
   // ==========================================
   // AREA 2: ECONOMIC CONCEPTS
@@ -177,7 +301,7 @@ export const becLessons: Lesson[] = [
     blueprintTopic: 'BEC-II-A-1',
     title: 'Supply and Demand Fundamentals',
     description: 'Understand basic economic principles of supply and demand',
-    order: 4,
+    order: 6,
     duration: 45,
     difficulty: 'beginner',
     topics: ['Economics', 'Microeconomics'],
@@ -779,6 +903,211 @@ export const becLessons: Lesson[] = [
             "TQM focuses on continuous improvement",
             "Balanced scorecard: Financial, Customer, Internal, Learning",
             "External failure costs are most damaging (reputation)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-V-004',
+    section: 'BEC',
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-B-1',
+    title: 'Process Costing and Job Order Costing',
+    description: 'Apply appropriate costing methods to different production environments',
+    order: 15,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Cost Accounting', 'Process Costing', 'Job Costing'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Different businesses need different costing methods! Understanding when to use job order vs process costing—and how each works—is essential for BEC and management accounting!"
+        },
+        {
+          title: 'Job Order vs Process Costing',
+          type: 'table',
+          headers: ['Feature', 'Job Order', 'Process'],
+          rows: [
+            ['Products', 'Unique, custom', 'Homogeneous, mass'],
+            ['Cost tracking', 'By job/batch', 'By department/process'],
+            ['Examples', 'Custom furniture, consulting', 'Oil refining, chemicals'],
+            ['WIP accounts', 'One per job', 'One per department']
+          ]
+        },
+        {
+          title: 'Job Order Costing Flow',
+          type: 'text',
+          content: "**Cost flow through accounts:**\n\n1. **Raw Materials** → Materials issued to jobs\n2. **Work in Process** → Accumulate DM, DL, OH per job\n3. **Finished Goods** → Job completed\n4. **COGS** → Job delivered to customer\n\n**Each job has its own job cost sheet!**"
+        },
+        {
+          title: 'Process Costing: Equivalent Units',
+          type: 'text',
+          content: "**Key concept for partially complete units:**\n\n**Equivalent Units = Physical units × % Complete**\n\n**Example:**\n• 1,000 units 40% complete\n• = 400 equivalent units\n\n**Used to allocate costs fairly**"
+        },
+        {
+          title: '🧠 Memory Aid: FIFO vs Weighted Average',
+          type: 'callout',
+          content: "**Two methods for process costing:**\n\n**Weighted Average:**\n• Blends beginning WIP with current costs\n• Simpler calculation\n• \"What's our average cost?\"\n\n**FIFO:**\n• Keeps periods separate\n• More accurate for performance evaluation\n• \"What did THIS period cost?\""
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Job order: Unique products, costs tracked by job",
+            "Process: Homogeneous products, costs by department",
+            "Equivalent units: Physical units × % complete",
+            "Weighted average: Blends costs (simpler)",
+            "FIFO: Keeps periods separate (more accurate)"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-V-005',
+    section: 'BEC',
+    blueprintArea: 'BEC-V',
+    blueprintTopic: 'BEC-V-D-1',
+    title: 'Ratio Analysis and Financial Metrics',
+    description: 'Calculate and interpret key financial ratios',
+    order: 16,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Financial Analysis', 'Ratios', 'Performance Metrics'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Ratios tell the story behind the numbers! Understanding how to calculate and interpret financial ratios is essential for business analysis, lending decisions, and the BEC exam!"
+        },
+        {
+          title: 'Liquidity Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Current Ratio', 'Current Assets / Current Liabilities', 'Short-term solvency'],
+            ['Quick Ratio', '(Cash + AR + Securities) / CL', 'Immediate liquidity'],
+            ['Cash Ratio', 'Cash / Current Liabilities', 'Most conservative']
+          ]
+        },
+        {
+          title: 'Profitability Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Measures'],
+          rows: [
+            ['Gross Margin', 'Gross Profit / Revenue', 'Production efficiency'],
+            ['Net Profit Margin', 'Net Income / Revenue', 'Overall profitability'],
+            ['ROA', 'Net Income / Total Assets', 'Asset utilization'],
+            ['ROE', 'Net Income / Equity', 'Return to shareholders']
+          ]
+        },
+        {
+          title: 'DuPont Analysis',
+          type: 'text',
+          content: "**Breaking down ROE:**\n\n**ROE = Net Margin × Asset Turnover × Equity Multiplier**\n\n• Net Margin = NI / Sales (profitability)\n• Asset Turnover = Sales / Assets (efficiency)\n• Equity Multiplier = Assets / Equity (leverage)\n\n**Identifies DRIVERS of return on equity**"
+        },
+        {
+          title: '🧠 Memory Aid: DuPont Formula',
+          type: 'callout',
+          content: "**\"PAL\" drives ROE:**\n\n**P**rofitability (Net Margin)\n**A**ctivity (Asset Turnover)\n**L**everage (Equity Multiplier)\n\n**Your PAL helps you earn returns!**\n\n**ROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity)**"
+        },
+        {
+          title: 'Leverage Ratios',
+          type: 'table',
+          headers: ['Ratio', 'Formula', 'Meaning'],
+          rows: [
+            ['Debt to Equity', 'Total Debt / Equity', 'Financial leverage'],
+            ['Debt to Assets', 'Total Debt / Total Assets', '% financed by debt'],
+            ['Times Interest Earned', 'EBIT / Interest Expense', 'Ability to pay interest']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: High vs Low Ratios',
+          type: 'warning',
+          content: "**Not all \"high\" is good!**\n\n**Higher is BETTER:**\n• Current ratio (more liquid)\n• Profit margins (more profitable)\n• Times interest earned (safer)\n\n**Higher may be WORSE:**\n• Debt/Equity (more risk)\n• Days in A/R (slow collection)\n• Days in inventory (overstocked)"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Liquidity: Current, Quick, Cash ratios",
+            "Profitability: Margins, ROA, ROE",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "Leverage: Debt/Equity, Times Interest Earned",
+            "Compare to industry benchmarks and trends",
+            "Context matters—high isn't always good"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'BEC-III-004',
+    section: 'BEC',
+    blueprintArea: 'BEC-III',
+    blueprintTopic: 'BEC-III-B-1',
+    title: 'Cost of Capital',
+    description: 'Calculate WACC and understand capital structure',
+    order: 10,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Financial Management', 'Cost of Capital', 'WACC'],
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The cost of capital is the hurdle rate for investment decisions! Understanding how to calculate WACC and individual component costs is essential for capital budgeting and corporate finance questions on BEC!"
+        },
+        {
+          title: 'WACC Formula',
+          type: 'text',
+          content: "**Weighted Average Cost of Capital:**\n\n**WACC = (E/V × Re) + (D/V × Rd × (1-T))**\n\nWhere:\n• E = Market value of equity\n• D = Market value of debt\n• V = E + D (total value)\n• Re = Cost of equity\n• Rd = Cost of debt\n• T = Tax rate\n\n**Debt cost is tax-adjusted (interest is deductible!)**"
+        },
+        {
+          title: 'Cost of Equity Methods',
+          type: 'table',
+          headers: ['Method', 'Formula', 'Use When'],
+          rows: [
+            ['CAPM', 'Rf + β(Rm - Rf)', 'Public companies with beta'],
+            ['Dividend Growth', 'D1/P0 + g', 'Stable dividend companies'],
+            ['Bond Yield + Premium', 'Rd + Risk premium', 'Estimation approach']
+          ]
+        },
+        {
+          title: 'CAPM Explained',
+          type: 'text',
+          content: "**Capital Asset Pricing Model:**\n\n**Re = Rf + β(Rm - Rf)**\n\n• **Rf** = Risk-free rate (T-bills)\n• **β** = Beta (systematic risk measure)\n• **Rm - Rf** = Market risk premium\n\n**β > 1**: More volatile than market\n**β < 1**: Less volatile than market\n**β = 1**: Moves with market"
+        },
+        {
+          title: '🧠 Memory Aid: CAPM',
+          type: 'callout',
+          content: "**\"Start Safe, Add Risk\"**\n\nRe = Risk-free + (Your risk × Market premium)\n\n**Higher beta = Higher required return**\n\n**Example:**\nRf = 3%, β = 1.5, (Rm-Rf) = 6%\nRe = 3% + 1.5(6%) = 3% + 9% = **12%**"
+        },
+        {
+          title: 'Cost of Debt',
+          type: 'text',
+          content: "**After-tax cost of debt:**\n\n**Rd(1-T) = Cost of debt × (1 - Tax rate)**\n\n**Example:**\n• Bond yield: 8%\n• Tax rate: 25%\n• After-tax cost: 8% × (1-0.25) = **6%**\n\n**Interest is tax deductible—debt is cheaper than it looks!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Market vs Book Values',
+          type: 'warning',
+          content: "**Use MARKET values for WACC weights!**\n\n• Market value of equity = Stock price × Shares\n• Market value of debt = Trading price of bonds\n\n**Book values may differ significantly**\n\n**Market values reflect current economics**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "WACC: Blended cost of debt and equity",
+            "Debt cost is after-tax (interest deductible)",
+            "CAPM: Re = Rf + β(Rm - Rf)",
+            "Beta measures systematic (market) risk",
+            "Use market values for weights, not book values",
+            "WACC = Hurdle rate for capital budgeting"
           ]
         }
       ]

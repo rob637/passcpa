@@ -13,6 +13,7 @@ const loadQuestionData = () => import('../../../data/questions');
 // ============================================================================
 
 type TabType = 'content' | 'users' | 'logs' | 'settings';
+type LogType = 'info' | 'success' | 'error' | 'warning';
 
 interface UserDocument {
   id: string; // Document ID (uid)
@@ -72,6 +73,12 @@ const AdminCMS: React.FC = () => {
 
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
+
+  // Helper to log messages (used in reset functionality)
+  const addLog = (msg: string, type: LogType = 'info'): void => {
+    const prefix = type === 'success' ? '✓' : type === 'error' ? '✗' : type === 'warning' ? '⚠' : 'ℹ';
+    logger.info(`[AdminCMS] ${prefix} ${msg}`);
+  };
 
   // Load Users
   const loadUsers = useCallback(async () => {

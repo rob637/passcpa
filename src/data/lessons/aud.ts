@@ -4275,5 +4275,457 @@ export const audLessons: Lesson[] = [
         }
       ]
     }
+  },
+  {
+    id: 'AUD-II-010',
+    section: 'AUD',
+    title: "Components of Internal Control",
+    description: "Master the five COSO internal control components",
+    order: 51,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Internal Control", "COSO"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Internal control is the FOUNDATION of audit risk assessment! Auditors must understand and evaluate the client's controls to determine the nature, timing, and extent of further procedures. The COSO framework is the standard—know it cold!"
+        },
+        {
+          title: 'What is Internal Control?',
+          type: 'text',
+          content: "**Process designed to provide reasonable assurance about:**\n\n• Reliability of financial reporting\n• Effectiveness/efficiency of operations\n• Compliance with laws and regulations\n\n**Internal control is a PROCESS, not an event**\n\n**Provides REASONABLE, not absolute, assurance**"
+        },
+        {
+          title: 'The Five COSO Components',
+          type: 'table',
+          headers: ['Component', 'Focus'],
+          rows: [
+            ['Control Environment', 'Tone at the top, ethics, governance'],
+            ['Risk Assessment', 'Identifying and analyzing risks'],
+            ['Control Activities', 'Policies and procedures'],
+            ['Information & Communication', 'Capturing and sharing information'],
+            ['Monitoring', 'Ongoing and separate evaluations']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: COSO Components',
+          type: 'callout',
+          content: "**\"CRIME\"** stops fraud:\n\n**C**ontrol Environment\n**R**isk Assessment\n**I**nformation & Communication\n**M**onitoring\n**E**xisting Control Activities\n\n**Or: \"CRICA\" (sounds like \"criteria\")**"
+        },
+        {
+          title: 'Control Environment',
+          type: 'text',
+          content: "**The foundation—sets the tone:**\n\n• Integrity and ethical values\n• Board of directors oversight\n• Organizational structure\n• Commitment to competence\n• Accountability\n\n**\"Tone at the top\"—most important component!**\n\n**If control environment is weak, other controls may be ineffective**"
+        },
+        {
+          title: 'Risk Assessment',
+          type: 'text',
+          content: "**Entity's process to identify and respond to risks:**\n\n• Identify risks to objectives\n• Analyze likelihood and impact\n• Determine risk response\n• Consider fraud risk\n• Address changes in environment\n\n**Management's risk assessment ≠ Auditor's risk assessment**"
+        },
+        {
+          title: 'Control Activities',
+          type: 'text',
+          content: "**Actions to address risks:**\n\n**Types:**\n• Preventive (stop errors before they occur)\n• Detective (find errors after they occur)\n\n**Examples:**\n• Authorizations and approvals\n• Segregation of duties\n• Reconciliations\n• Physical controls\n• IT general and application controls"
+        },
+        {
+          title: 'Information and Communication',
+          type: 'text',
+          content: "**Capturing and sharing relevant information:**\n\n**Information systems:**\n• Identify and capture transactions\n• Maintain accountability\n• Enable financial reporting\n\n**Communication:**\n• Internal (employees understand roles)\n• External (customers, suppliers, regulators)"
+        },
+        {
+          title: 'Monitoring',
+          type: 'text',
+          content: "**Ongoing assessment of control effectiveness:**\n\n**Ongoing monitoring:**\n• Built into normal operations\n• Real-time feedback\n\n**Separate evaluations:**\n• Internal audit\n• Periodic assessments\n\n**Deficiencies reported to management and those charged with governance**"
+        },
+        {
+          title: '⚠️ Exam Trap: Required Understanding',
+          type: 'warning',
+          content: "**Auditor must obtain understanding of ALL five components!**\n\n**Even if not testing controls:**\n• Still need to understand control environment\n• Evaluate design of controls\n• Determine if controls are implemented\n\n**Cannot skip internal control assessment!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "COSO: Control Environment, Risk Assessment, Control Activities, Information/Communication, Monitoring",
+            "Control environment is the foundation ('tone at the top')",
+            "Internal control provides reasonable, not absolute, assurance",
+            "Auditor must understand all five components",
+            "Control activities: Preventive and detective",
+            "Monitoring includes ongoing and separate evaluations",
+            "Deficiencies communicated to management and governance"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-011',
+    section: 'AUD',
+    title: "IT General and Application Controls",
+    description: "Understand IT controls in an automated environment",
+    order: 52,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Internal Control", "IT Controls"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-C-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Almost every audit involves IT systems! Understanding IT general controls (ITGCs) and application controls is essential. Weak ITGCs can undermine ALL application controls, so auditors must evaluate the IT environment carefully!"
+        },
+        {
+          title: 'ITGCs vs Application Controls',
+          type: 'table',
+          headers: ['Type', 'Scope', 'Examples'],
+          rows: [
+            ['IT General Controls', 'Apply across ALL systems', 'Access security, change management'],
+            ['Application Controls', 'Specific to ONE application', 'Input validation, calculations']
+          ]
+        },
+        {
+          title: 'IT General Control Categories',
+          type: 'list',
+          content: [
+            "**Access to Programs and Data** - Who can access what?",
+            "**Program Change Management** - How are changes controlled?",
+            "**Program Development** - How are new systems built?",
+            "**Computer Operations** - How are systems run day-to-day?"
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: ITGC Categories',
+          type: 'callout',
+          content: "**\"ACPO\"** for ITGCs:\n\n**A**ccess controls\n**C**hange management\n**P**rogram development\n**O**perations controls\n\n**\"ACPO\" protects the systems!**"
+        },
+        {
+          title: 'Access Controls',
+          type: 'text',
+          content: "**Restrict access to authorized users:**\n\n• User IDs and passwords\n• Role-based access\n• Segregation of duties in systems\n• Physical security of hardware\n\n**Key principle:** Least privilege\n\n**Risks:** Unauthorized access, data theft, fraud"
+        },
+        {
+          title: 'Change Management',
+          type: 'text',
+          content: "**Control changes to programs and data:**\n\n• Change request documentation\n• Testing before implementation\n• Approval procedures\n• Separation of development and production\n\n**Risks:** Unauthorized changes, bugs, system failures"
+        },
+        {
+          title: 'Application Controls',
+          type: 'text',
+          content: "**Controls within specific applications:**\n\n**Input controls:**\n• Validation checks\n• Edit checks\n• Batch totals\n\n**Processing controls:**\n• Calculations\n• Data matching\n\n**Output controls:**\n• Report distribution\n• Reconciliations"
+        },
+        {
+          title: 'Input Control Examples',
+          type: 'table',
+          headers: ['Control', 'Purpose'],
+          rows: [
+            ['Validity check', 'Data is within allowed values'],
+            ['Range check', 'Number is within acceptable range'],
+            ['Reasonableness test', 'Data makes sense'],
+            ['Check digit', 'Catches transcription errors'],
+            ['Hash total', 'Verifies data completeness']
+          ]
+        },
+        {
+          title: 'Why ITGCs Matter to Auditors',
+          type: 'text',
+          content: "**If ITGCs are weak:**\n\n• Application controls may be unreliable\n• Cannot rely on automated controls\n• May need more substantive testing\n\n**If ITGCs are strong:**\n\n• Application controls likely effective\n• Can reduce substantive testing\n• More efficient audit"
+        },
+        {
+          title: '⚠️ Exam Trap: Automated vs Manual Controls',
+          type: 'warning',
+          content: "**Automated controls are CONSISTENT:**\n\n• Once tested, perform identically each time\n• Less susceptible to human error\n• May only need to test once if ITGCs effective\n\n**Manual controls vary:**\n• Human error, fatigue, judgment\n• Need to test throughout the period\n\n**But automated controls depend on ITGCs!**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "ITGCs support ALL applications; Application controls are specific",
+            "ITGC categories: Access, Change, Development, Operations",
+            "Weak ITGCs can undermine all application controls",
+            "Input controls: Validation, edit checks, batch totals",
+            "Automated controls are consistent but need strong ITGCs",
+            "Auditor must understand IT environment and controls",
+            "Strong ITGCs allow reduced substantive testing"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-012',
+    section: 'AUD',
+    title: "Materiality in Planning and Performing the Audit",
+    description: "Determine planning and performance materiality levels",
+    order: 53,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Audit Planning", "Materiality"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-A-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Materiality drives the entire audit! It determines how much work to do, what errors to report, and whether to modify the opinion. Understanding how to set and apply materiality is fundamental to audit planning!"
+        },
+        {
+          title: 'What is Materiality?',
+          type: 'text',
+          content: "**Materiality is:**\n\nThe magnitude of an omission or misstatement that could influence decisions of financial statement users.\n\n**Key concept:** Would this matter to users' decisions?\n\n**Materiality is based on auditor JUDGMENT**"
+        },
+        {
+          title: 'Types of Materiality',
+          type: 'table',
+          headers: ['Type', 'Purpose', 'Amount'],
+          rows: [
+            ['Overall Materiality', 'F/S as a whole', 'Full benchmark amount'],
+            ['Performance Materiality', 'Individual account testing', 'Lower than overall'],
+            ['Tolerable Misstatement', 'Sampling threshold', 'Lower than overall'],
+            ['Clearly Trivial', 'Below this, don\'t accumulate', 'Much lower (e.g., 5% of materiality)']
+          ]
+        },
+        {
+          title: 'Setting Overall Materiality',
+          type: 'text',
+          content: "**Common benchmarks:**\n\n• 5% of pre-tax income (for-profit)\n• 0.5-1% of total revenue\n• 0.5-1% of total assets\n• 1-2% of equity\n\n**Choice depends on:**\n• Entity type and users\n• Stability of benchmark\n• Relevant factors"
+        },
+        {
+          title: '🧠 Memory Aid: Materiality Benchmarks',
+          type: 'callout',
+          content: "**\"TREAT\"** benchmarks:\n\n**T**otal assets (0.5-1%)\n**R**evenue (0.5-1%)\n**E**quity (1-2%)\n**A**ssets, net (NFP: 1-2%)\n**T**ax-adjusted income (5%)\n\n**Pre-tax income = most common for for-profits**"
+        },
+        {
+          title: 'Performance Materiality',
+          type: 'text',
+          content: "**Set BELOW overall materiality:**\n\n**Purpose:** Reduce risk that aggregate of undetected + detected misstatements exceeds overall materiality\n\n**Typically 50-75% of overall materiality**\n\n**Consider:**\n• Risk of undetected misstatements\n• Experience with prior audits\n• Nature and volume of misstatements expected"
+        },
+        {
+          title: 'Factors Affecting Materiality',
+          type: 'text',
+          content: "**Qualitative factors can make small amounts material:**\n\n• Involves fraud or illegal acts\n• Affects loan covenant compliance\n• Changes a loss into profit (or vice versa)\n• Affects executive compensation\n• Involves related parties\n• Affects segment reporting\n• Previously communicated to users"
+        },
+        {
+          title: 'Revising Materiality',
+          type: 'text',
+          content: "**Materiality may change during audit:**\n\n**Reasons to revise:**\n• Significant change in circumstances\n• New information obtained\n• Original benchmark no longer appropriate\n\n**If revised downward:**\n• May need additional procedures\n• Evaluate if work already done is sufficient"
+        },
+        {
+          title: '⚠️ Exam Trap: Materiality Direction',
+          type: 'warning',
+          content: "**Lower materiality = MORE audit work!**\n\n• Lower tolerable misstatement\n• Larger sample sizes\n• More accounts tested\n\n**Higher materiality = LESS audit work**\n\n**Risk moves inversely with materiality**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Materiality = Magnitude that could influence user decisions",
+            "Common benchmark: 5% of pre-tax income (for-profit)",
+            "Performance materiality set below overall materiality",
+            "Qualitative factors can make small amounts material",
+            "Materiality is auditor judgment, not a bright line",
+            "Lower materiality = More audit work required",
+            "Materiality may be revised during the audit"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-II-013',
+    section: 'AUD',
+    title: "Fraud Risk Assessment",
+    description: "Identify and respond to fraud risk factors in the audit",
+    order: 54,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ["Risk Assessment", "Fraud"],
+    blueprintArea: 'AUD-II',
+    blueprintTopic: 'AUD-II-D-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Fraud is a significant audit risk! AU-C 240 requires auditors to specifically consider fraud risk throughout the audit. Understanding the fraud triangle and how to respond to identified risks is essential for AUD!"
+        },
+        {
+          title: 'The Fraud Triangle',
+          type: 'text',
+          content: "**Three conditions present when fraud occurs:**\n\n1. **Incentive/Pressure** - Reason to commit fraud\n2. **Opportunity** - Ability to commit fraud\n3. **Rationalization** - Justification for behavior\n\n**All three typically present in fraud situations**"
+        },
+        {
+          title: '🧠 Memory Aid: Fraud Triangle',
+          type: 'callout',
+          content: "**\"POR\"** = Pressure, Opportunity, Rationalization\n\n**Think:**\n\"POOR judgment leads to fraud\"\n\n**P**ressure (I NEED the money)\n**O**pportunity (I CAN take it)\n**R**ationalization (It's OK because...)"
+        },
+        {
+          title: 'Two Types of Fraud',
+          type: 'table',
+          headers: ['Type', 'Description', 'Who'],
+          rows: [
+            ['Fraudulent Financial Reporting', 'Intentional misstatement of F/S', 'Management'],
+            ['Misappropriation of Assets', 'Theft of company assets', 'Employees or management']
+          ]
+        },
+        {
+          title: 'Fraud Risk Factors: Incentive/Pressure',
+          type: 'text',
+          content: "**Examples:**\n\n• Financial targets or expectations to meet\n• Personal financial difficulties\n• Compensation tied to financial results\n• Threat of bankruptcy or hostile takeover\n• Highly competitive industry\n• High debt with restrictive covenants"
+        },
+        {
+          title: 'Fraud Risk Factors: Opportunity',
+          type: 'text',
+          content: "**Examples:**\n\n• Weak internal controls\n• Poor tone at the top\n• Inadequate oversight by board/audit committee\n• Complex organizational structure\n• High turnover in accounting personnel\n• Significant related party transactions\n• Ineffective monitoring of management"
+        },
+        {
+          title: 'Fraud Risk Factors: Rationalization',
+          type: 'text',
+          content: "**Examples:**\n\n• \"Everyone does it\"\n• \"I'll pay it back later\"\n• \"The company owes me\"\n• Management disregard for controls or ethics\n• Strained relationship between management and auditor\n• History of violations or lawsuits"
+        },
+        {
+          title: 'Required Fraud Procedures',
+          type: 'list',
+          content: [
+            "**Discussion among engagement team** about fraud risks",
+            "**Inquiries of management** about fraud and controls",
+            "**Analytical procedures** to identify unusual relationships",
+            "**Consider fraud risk factors** in risk assessment",
+            "**Presumed risks:** Revenue recognition, management override"
+          ]
+        },
+        {
+          title: 'Management Override',
+          type: 'text',
+          content: "**ALWAYS presumed to be a significant risk!**\n\n**Why?** Management can override controls\n\n**Required procedures:**\n• Test journal entries and adjustments\n• Review accounting estimates for bias\n• Evaluate business rationale for unusual transactions\n\n**Cannot be mitigated away—must be addressed**"
+        },
+        {
+          title: '⚠️ Exam Trap: Revenue Recognition Presumption',
+          type: 'warning',
+          content: "**Revenue recognition fraud risk is PRESUMED!**\n\n**Can rebut only with:**\n• Documented specific reasons\n• No relevant fraud risk factors identified\n• No unusual incentives\n\n**Even if rebutted, document rationale**\n\n**Most audits: Cannot rebut—must address**"
+        },
+        {
+          title: 'Responding to Fraud Risks',
+          type: 'text',
+          content: "**Modify audit approach:**\n\n• Increase professional skepticism\n• Assign more experienced staff\n• Change nature, timing, extent of procedures\n• Perform procedures at unexpected times\n• Address management override\n• Evaluate selection of accounting policies"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Fraud triangle: Pressure, Opportunity, Rationalization",
+            "Two types: Fraudulent reporting and asset misappropriation",
+            "Revenue recognition fraud risk is presumed (can rebut with documentation)",
+            "Management override is ALWAYS a significant risk",
+            "Required: Test journal entries, review estimates, evaluate unusual transactions",
+            "Team discussion about fraud risks required",
+            "Professional skepticism increased when fraud risks identified"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'AUD-IV-010',
+    section: 'AUD',
+    title: "SSARS: Compilation and Review Engagements",
+    description: "Understand non-audit services under SSARS",
+    order: 55,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["SSARS", "Compilation", "Review"],
+    blueprintArea: 'AUD-IV',
+    blueprintTopic: 'AUD-IV-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Not all engagements are audits! SSARS governs compilation and review engagements—lower levels of service that are common for smaller private companies. Understanding the differences in scope, procedures, and reporting is essential for AUD!"
+        },
+        {
+          title: 'SSARS Overview',
+          type: 'text',
+          content: "**Statements on Standards for Accounting and Review Services**\n\n**Applies to:**\n• Compilations\n• Reviews\n• Preparation of F/S\n\n**For NON-ISSUERS (private companies)**\n\n**Different from GAAS (audits) and PCAOB (public companies)**"
+        },
+        {
+          title: 'Levels of Service Comparison',
+          type: 'table',
+          headers: ['Service', 'Assurance', 'Report'],
+          rows: [
+            ['Audit', 'Reasonable (highest)', 'Opinion'],
+            ['Review', 'Limited', 'Conclusion'],
+            ['Compilation', 'None', 'No assurance'],
+            ['Preparation', 'None', 'No report required']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Assurance Levels',
+          type: 'callout',
+          content: "**\"ARCP\"** - Most to Least:\n\n**A**udit = Reasonable assurance (opinion)\n**R**eview = Limited assurance (conclusion)\n**C**ompilation = No assurance (report states it)\n**P**reparation = No assurance (no report)\n\n**More work = More assurance**"
+        },
+        {
+          title: 'Compilation Engagements',
+          type: 'text',
+          content: "**Accountant presents F/S based on management's info:**\n\n**Requirements:**\n• Obtain engagement letter\n• Understand the entity (limited)\n• Read F/S for obvious errors\n• NO verification of information\n• NO assurance provided\n\n**Essentially: \"We compiled what you gave us\""
+        },
+        {
+          title: 'Compilation Report',
+          type: 'text',
+          content: "**Key elements:**\n\n• Management responsible for F/S\n• We compiled—did not audit or review\n• We do not express opinion or conclusion\n• F/S may be materially misstated\n\n**Independence not required but if NOT independent:**\n• Must disclose lack of independence\n• Need not disclose reason"
+        },
+        {
+          title: 'Review Engagements',
+          type: 'text',
+          content: "**More than compilation, less than audit:**\n\n**Procedures:**\n• Inquiries of management\n• Analytical procedures\n• Obtain management representations\n\n**Provides LIMITED assurance:**\n\"We are not aware of material modifications needed\"\n\n**Independence IS required!**"
+        },
+        {
+          title: 'Review Report',
+          type: 'text',
+          content: "**Key elements:**\n\n• Management responsible for F/S\n• Our responsibility: Conduct review per SSARS\n• Review is substantially less than an audit\n• We do not express an opinion\n• **Conclusion:** Nothing came to our attention indicating material modifications needed\n\n**Negative assurance language**"
+        },
+        {
+          title: 'Key Differences',
+          type: 'table',
+          headers: ['Feature', 'Compilation', 'Review'],
+          rows: [
+            ['Independence', 'Not required', 'Required'],
+            ['Inquiry/Analytical', 'Not required', 'Required'],
+            ['Rep letter', 'Not required', 'Required'],
+            ['Assurance', 'None', 'Limited'],
+            ['Report language', 'No assurance', 'Negative assurance']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Review Procedures',
+          type: 'warning',
+          content: "**Review = Inquiry + Analytical procedures**\n\n**Review does NOT include:**\n• Testing internal controls\n• Obtaining audit evidence\n• Corroborating management responses\n• Physical examination\n• Confirmations\n\n**If you verify → It's an AUDIT, not a review!**"
+        },
+        {
+          title: 'Preparation of F/S',
+          type: 'text',
+          content: "**Lowest level of service:**\n\n• Prepare F/S from client records\n• No assurance whatsoever\n• No report required (but can issue one)\n• Each page must state: \"No assurance is provided\"\n\n**Engagement letter required**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SSARS governs compilation, review, and preparation",
+            "Audit > Review > Compilation > Preparation (assurance levels)",
+            "Compilation: No assurance, independence NOT required",
+            "Review: Limited assurance, independence IS required",
+            "Review procedures: Inquiry and analytical only",
+            "Review uses negative assurance language in conclusion",
+            "If lack of independence in compilation, must disclose"
+          ]
+        }
+      ]
+    }
   }
 ];

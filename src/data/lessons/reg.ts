@@ -1584,6 +1584,448 @@ export const regLessons: Lesson[] = [
     }
   },
   {
+    id: 'REG-II-011',
+    section: 'REG',
+    title: "Secured Transactions: UCC Article 9",
+    description: "Master secured transactions including attachment, perfection, and priority",
+    order: 15,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ["Business Law", "Secured Transactions", "UCC"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-D-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Secured transactions govern how creditors protect their interests in collateral. Understanding attachment, perfection, and priority is essential for advising business clients and is heavily tested on REG!"
+        },
+        {
+          title: 'What is a Security Interest?',
+          type: 'text',
+          content: "**Security interest = Interest in personal property that secures payment**\n\n**Key terms:**\n• **Debtor** - Person who owes the debt\n• **Secured party** - Creditor with security interest\n• **Collateral** - Property securing the debt\n• **Security agreement** - Contract creating security interest"
+        },
+        {
+          title: 'Attachment: Creating Security Interest',
+          type: 'text',
+          content: "**Three requirements for attachment:**\n\n1. **Value given** - Creditor gives something (loan, credit)\n2. **Debtor has rights** - In the collateral\n3. **Security agreement** - Authenticated description of collateral\n\n**When all three occur = Security interest ATTACHES**\n\n**Attachment makes it enforceable against debtor**"
+        },
+        {
+          title: '🧠 Memory Aid: Attachment - VRS',
+          type: 'callout',
+          content: "**\"VRS\"** for Attachment:\n\n**V**alue given by secured party\n**R**ights in collateral (debtor has)\n**S**ecurity agreement (authenticated)\n\n**\"Very Risky Securities need all three!\"**"
+        },
+        {
+          title: 'Perfection: Protecting Against Third Parties',
+          type: 'text',
+          content: "**Perfection = Notice to the world of security interest**\n\n**Methods of perfection:**\n• **Filing** - UCC-1 financing statement (most common)\n• **Possession** - Creditor takes collateral\n• **Control** - Bank accounts, investment securities\n• **Automatic** - PMSIs in consumer goods\n\n**Perfection protects against other creditors!**"
+        },
+        {
+          title: 'Filing a Financing Statement',
+          type: 'table',
+          headers: ['Requirement', 'Details'],
+          rows: [
+            ['Debtor name', 'Exact legal name (errors may invalidate)'],
+            ['Secured party name', 'Creditor identification'],
+            ['Collateral description', 'Reasonably identifies collateral'],
+            ['Where to file', 'Secretary of State (most collateral)'],
+            ['Duration', '5 years (can be continued)']
+          ]
+        },
+        {
+          title: 'Purchase Money Security Interest (PMSI)',
+          type: 'text',
+          content: "**PMSI = Security interest in goods securing their purchase price**\n\n**Example:** Bank loans money to buy equipment, takes security interest in that equipment\n\n**Special priority rules:**\n• PMSI in inventory - Must perfect BEFORE delivery\n• PMSI in other goods - 20 days after delivery to perfect\n\n**PMSIs get SUPER-PRIORITY over earlier-filed interests!**"
+        },
+        {
+          title: 'Priority Rules',
+          type: 'table',
+          headers: ['Situation', 'Priority Rule'],
+          rows: [
+            ['Perfected vs Unperfected', 'Perfected wins'],
+            ['Both Perfected', 'First to file or perfect wins'],
+            ['Both Unperfected', 'First to attach wins'],
+            ['PMSI vs Earlier Filed', 'PMSI wins (if timely perfected)'],
+            ['Buyer in Ordinary Course', 'Buyer takes free of security interest']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Buyer in Ordinary Course',
+          type: 'warning',
+          content: "**A buyer in ordinary course of business takes FREE of security interest!**\n\n**Example:**\n• Bank has security interest in store's inventory\n• Customer buys item from store (ordinary course)\n• Customer owns item FREE of bank's security interest\n\n**Buyer must not know interest is unauthorized**"
+        },
+        {
+          title: 'Default and Remedies',
+          type: 'text',
+          content: "**Upon default, secured party may:**\n\n• Take possession of collateral (self-help if no breach of peace)\n• Sell collateral (commercially reasonable manner)\n• Accept collateral in satisfaction (strict foreclosure)\n• Sue on the debt\n\n**Surplus goes to debtor; deficiency owed by debtor**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Attachment: Value + Rights + Security Agreement",
+            "Perfection: Filing, possession, control, or automatic",
+            "File UCC-1 with Secretary of State (5-year duration)",
+            "First to file or perfect generally wins priority",
+            "PMSI has super-priority if timely perfected",
+            "Buyer in ordinary course takes free of security interest",
+            "Upon default: Repossess, sell, apply proceeds"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-012',
+    section: 'REG',
+    title: "Business Entity Formation: Sole Proprietorships",
+    description: "Understand the simplest form of business organization",
+    order: 16,
+    duration: 35,
+    difficulty: 'beginner',
+    topics: ["Business Law", "Business Entities"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-C-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The sole proprietorship is the most common and simplest business form! Understanding its advantages and limitations helps advise clients choosing an entity structure. REG tests entity selection extensively!"
+        },
+        {
+          title: 'What is a Sole Proprietorship?',
+          type: 'text',
+          content: "**One person owns and operates the business**\n\n• No separate legal entity\n• Owner IS the business\n• No formal filing required to start\n• May need licenses/permits\n\n**Default structure when individual starts business alone**"
+        },
+        {
+          title: 'Formation Requirements',
+          type: 'text',
+          content: "**Simple formation:**\n\n• Just start doing business!\n• May need:\n  - Business license (local)\n  - DBA/Fictitious name filing\n  - Industry-specific permits\n  - EIN (if employees)\n\n**No state filing required for the entity itself**"
+        },
+        {
+          title: 'Advantages',
+          type: 'list',
+          content: [
+            "**Easy to form** - No paperwork or legal fees",
+            "**Complete control** - Owner makes all decisions",
+            "**Simple taxation** - Report on Schedule C",
+            "**No double taxation** - Income flows to personal return",
+            "**Easy to dissolve** - Just stop doing business",
+            "**Minimal compliance** - No annual reports or meetings"
+          ]
+        },
+        {
+          title: 'Disadvantages',
+          type: 'list',
+          content: [
+            "**Unlimited personal liability** - Owner liable for ALL business debts",
+            "**Self-employment tax** - On all net earnings (15.3%)",
+            "**Limited capital raising** - Cannot sell ownership interests",
+            "**Limited life** - Ends when owner dies/stops",
+            "**No employee benefits** - Cannot be own employee"
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Sole Prop Characteristics',
+          type: 'callout',
+          content: "**\"SIMPLE but RISKY\"**\n\n**SIMPLE:**\n• Single owner\n• Individual control\n• Minimal paperwork\n• Personal return (Schedule C)\n• Low cost\n• Easy start/stop\n\n**RISKY = Unlimited personal liability!**"
+        },
+        {
+          title: 'Tax Treatment',
+          type: 'text',
+          content: "**Schedule C (Form 1040):**\n\n• Report income and expenses\n• Net profit = Self-employment income\n• Subject to:\n  - Income tax (regular rates)\n  - Self-employment tax (15.3%)\n  - Deduct 50% of SE tax above the line\n\n**Quarterly estimated payments typically required**"
+        },
+        {
+          title: '⚠️ Exam Trap: Liability',
+          type: 'warning',
+          content: "**Business debts = Personal debts!**\n\n**Example:** Sole proprietor's business is sued for $500,000\n\n**At risk:**\n• Business assets\n• Personal home\n• Personal bank accounts\n• Personal investments\n• ALL personal assets!\n\n**No liability protection whatsoever**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Simplest business form - no state filing required",
+            "Owner has complete control but unlimited liability",
+            "Income reported on Schedule C (Form 1040)",
+            "Subject to self-employment tax (15.3%)",
+            "Default structure for individual doing business alone",
+            "Cannot raise capital by selling ownership",
+            "Business ends when owner dies or stops operating"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-013',
+    section: 'REG',
+    title: "Business Entity Formation: LLCs",
+    description: "Master Limited Liability Company formation and characteristics",
+    order: 17,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ["Business Law", "Business Entities", "LLC"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-C-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "LLCs combine the best features of corporations and partnerships! They're the most popular choice for new businesses. Understanding LLC formation, liability protection, and tax flexibility is essential for REG!"
+        },
+        {
+          title: 'What is an LLC?',
+          type: 'text',
+          content: "**Limited Liability Company:**\n\n• Separate legal entity from owners\n• Owners called \"members\"\n• Combines liability protection with tax flexibility\n• State law entity (not federal)\n\n**Best of both worlds: Corp liability + Partnership taxation**"
+        },
+        {
+          title: 'Formation Requirements',
+          type: 'text',
+          content: "**To form an LLC:**\n\n1. **File Articles of Organization** with state\n2. **Choose a name** (must include \"LLC\" or similar)\n3. **Designate registered agent**\n4. **Pay filing fees**\n\n**Operating Agreement** (highly recommended but not always required):\n• Governs internal affairs\n• Member rights and duties\n• Profit/loss allocation\n• Management structure"
+        },
+        {
+          title: 'Management Structure',
+          type: 'table',
+          headers: ['Type', 'Description'],
+          rows: [
+            ['Member-Managed', 'All members participate in management (default)'],
+            ['Manager-Managed', 'Designated managers run business']
+          ]
+        },
+        {
+          title: 'Liability Protection',
+          type: 'text',
+          content: "**Members have LIMITED LIABILITY:**\n\n• Generally not personally liable for LLC debts\n• At risk only for capital contribution\n• Personal assets protected\n\n**Exceptions (piercing the veil):**\n• Personal guarantees\n• Commingling funds\n• Undercapitalization\n• Failure to observe formalities"
+        },
+        {
+          title: '🧠 Memory Aid: LLC Benefits',
+          type: 'callout',
+          content: "**\"FLIP\"** for LLC advantages:\n\n**F**lexibility in management\n**L**imited liability protection\n**I**ncome flows through (no double tax)\n**P**ass-through tax treatment (default)\n\n**FLIP to an LLC for protection + flexibility!**"
+        },
+        {
+          title: 'Tax Classification (Check-the-Box)',
+          type: 'text',
+          content: "**LLCs choose their tax treatment:**\n\n**Single-member LLC:**\n• Default: Disregarded entity (Schedule C)\n• Can elect: S Corp or C Corp\n\n**Multi-member LLC:**\n• Default: Partnership (Form 1065)\n• Can elect: S Corp or C Corp\n\n**File Form 8832 to change classification**"
+        },
+        {
+          title: 'LLC vs Other Entities',
+          type: 'table',
+          headers: ['Feature', 'LLC', 'Corp', 'Partnership'],
+          rows: [
+            ['Liability Protection', 'Yes', 'Yes', 'No (general)'],
+            ['Default Pass-through', 'Yes', 'No', 'Yes'],
+            ['Ownership Flexibility', 'High', 'Limited (S Corp)', 'High'],
+            ['Formalities Required', 'Minimal', 'Extensive', 'Minimal'],
+            ['Self-Employment Tax', 'Maybe', 'No (wages)', 'Yes']
+          ]
+        },
+        {
+          title: '⚠️ Exam Trap: Self-Employment Tax',
+          type: 'warning',
+          content: "**LLC members may owe SE tax!**\n\n**Active members:** Usually subject to SE tax on distributive share\n\n**S Corp election advantage:**\n• Pay reasonable salary (FICA on wages only)\n• Take distributions (no SE tax)\n\n**LLC taxed as partnership = More SE tax exposure**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "LLC provides liability protection + tax flexibility",
+            "Form by filing Articles of Organization with state",
+            "Operating Agreement governs internal affairs",
+            "Default tax: Disregarded (single) or Partnership (multi)",
+            "Can elect S Corp or C Corp taxation",
+            "Member-managed (default) or manager-managed",
+            "Limited liability but watch for piercing the veil"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-014',
+    section: 'REG',
+    title: "Partnership Formation and General Partners",
+    description: "Understand partnership formation, rights, and liabilities",
+    order: 18,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Business Law", "Business Entities", "Partnership"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-C-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnerships are common business structures and heavily tested on REG! Understanding formation, partner duties, and especially the JOINT AND SEVERAL LIABILITY of general partners is critical for advising clients!"
+        },
+        {
+          title: 'What is a Partnership?',
+          type: 'text',
+          content: "**Association of two or more persons to carry on a business for profit**\n\n• No formal filing required (general partnership)\n• Can be formed by conduct alone\n• Partnership agreement recommended\n• Each partner is an agent of the partnership"
+        },
+        {
+          title: 'Types of Partnerships',
+          type: 'table',
+          headers: ['Type', 'Filing', 'Liability'],
+          rows: [
+            ['General Partnership (GP)', 'None required', 'All partners unlimited liability'],
+            ['Limited Partnership (LP)', 'File certificate', 'GPs unlimited; LPs limited'],
+            ['Limited Liability Partnership (LLP)', 'File registration', 'Partners protected from each other']
+          ]
+        },
+        {
+          title: 'Partnership Formation',
+          type: 'text',
+          content: "**No formalities required for GP:**\n\n• Oral or written agreement\n• Intent to share profits\n• Co-ownership of business\n• Can form accidentally!\n\n**Partnership agreement should address:**\n• Capital contributions\n• Profit/loss sharing\n• Management rights\n• Dissolution procedures"
+        },
+        {
+          title: '🧠 Memory Aid: Formation Elements',
+          type: 'callout',
+          content: "**\"PIC\"** creates a Partnership:\n\n**P**rofit sharing intent\n**I**ntent to do business together\n**C**o-ownership of business\n\n**Sharing profits creates PRESUMPTION of partnership!**"
+        },
+        {
+          title: 'Partner Rights',
+          type: 'list',
+          content: [
+            "**Equal management rights** (unless agreed otherwise)",
+            "**Equal share of profits** (default rule)",
+            "**Indemnification** for proper partnership expenses",
+            "**Access to books** and records",
+            "**Compensation** only for winding up (default)",
+            "**New partners** require unanimous consent"
+          ]
+        },
+        {
+          title: 'Partner Duties',
+          type: 'text',
+          content: "**Fiduciary duties to partnership:**\n\n• **Duty of Loyalty** - No competing, no self-dealing\n• **Duty of Care** - Refrain from gross negligence\n• **Duty of Good Faith** - Fair dealing\n\n**Cannot eliminate duty of loyalty or good faith by agreement**"
+        },
+        {
+          title: 'Partner Liability',
+          type: 'text',
+          content: "**JOINT AND SEVERAL LIABILITY:**\n\n• Each general partner liable for ALL partnership debts\n• Creditor can sue any one partner for entire debt\n• Partners can seek contribution from others\n• Personal assets at risk!\n\n**Incoming partner:** Liable only for new debts (not prior)\n**Outgoing partner:** Remains liable unless released"
+        },
+        {
+          title: '⚠️ Exam Trap: Joint and Several',
+          type: 'warning',
+          content: "**Partnership has $1M debt, 4 partners:**\n\n**Can creditor sue one partner for $1M?** YES!\n\n• Each partner liable for entire amount\n• That partner seeks contribution from others\n• If others can't pay, one partner stuck with full debt\n\n**This is the BIGGEST RISK of general partnerships!**"
+        },
+        {
+          title: 'Partnership Property',
+          type: 'text',
+          content: "**Property contributed becomes partnership property:**\n\n• Titled in partnership name\n• Used for partnership purposes\n• Purchased with partnership funds\n\n**Partners have no individual rights in specific property**\n\n**Interest in partnership is personal property**"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Partnership: 2+ persons carrying on business for profit",
+            "No formal filing required for general partnership",
+            "Sharing profits creates presumption of partnership",
+            "General partners have joint and several liability",
+            "Fiduciary duties: Loyalty, care, good faith",
+            "Equal management and profit sharing (default)",
+            "Incoming partner: Not liable for pre-existing debts"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'REG-II-015',
+    section: 'REG',
+    title: "Corporation Formation and Characteristics",
+    description: "Master corporate formation, governance, and shareholder rights",
+    order: 19,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ["Business Law", "Business Entities", "Corporation"],
+    blueprintArea: 'REG-II',
+    blueprintTopic: 'REG-II-C-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Corporations are the most formal business structure with the strongest liability protection! Understanding formation, governance, and shareholder rights is essential for REG and advising business clients!"
+        },
+        {
+          title: 'What is a Corporation?',
+          type: 'text',
+          content: "**Separate legal entity created under state law**\n\n• Distinct from its owners (shareholders)\n• Can own property, sue, be sued\n• Perpetual existence (survives owners)\n• Centralized management (board of directors)\n\n**Limited liability for shareholders**"
+        },
+        {
+          title: 'Formation: Articles of Incorporation',
+          type: 'text',
+          content: "**File Articles with Secretary of State:**\n\n**Required provisions:**\n• Corporate name (must include \"Inc.\" or similar)\n• Number of authorized shares\n• Registered agent and office\n• Incorporator name(s)\n\n**Optional provisions:**\n• Purpose (any lawful purpose)\n• Par value of shares\n• Director names"
+        },
+        {
+          title: 'Corporate Structure',
+          type: 'table',
+          headers: ['Level', 'Role'],
+          rows: [
+            ['Shareholders', 'Elect directors, approve major changes'],
+            ['Board of Directors', 'Policy, oversight, hire officers'],
+            ['Officers', 'Day-to-day management (CEO, CFO, etc.)']
+          ]
+        },
+        {
+          title: '🧠 Memory Aid: Corporate Hierarchy',
+          type: 'callout',
+          content: "**\"SBO\"** - Top to Bottom:\n\n**S**hareholders (owners - vote)\n**B**oard (directors - oversee)\n**O**fficers (managers - operate)\n\n**\"Shareholders elect Board who hire Officers\"**"
+        },
+        {
+          title: 'Shareholder Rights',
+          type: 'list',
+          content: [
+            "**Vote** for directors and major changes",
+            "**Receive dividends** if declared by board",
+            "**Inspect** books and records (proper purpose)",
+            "**Sue derivatively** on behalf of corporation",
+            "**Preemptive rights** to maintain ownership % (if granted)",
+            "**Share in liquidation** proceeds (after creditors)"
+          ]
+        },
+        {
+          title: 'Board of Directors Duties',
+          type: 'text',
+          content: "**Fiduciary duties:**\n\n• **Duty of Care** - Informed decisions, reasonable inquiry\n• **Duty of Loyalty** - No self-dealing, corporate opportunity\n• **Business Judgment Rule** - Protects good faith decisions\n\n**Board sets policy; does NOT manage day-to-day**"
+        },
+        {
+          title: 'Piercing the Corporate Veil',
+          type: 'text',
+          content: "**When shareholders lose liability protection:**\n\n• **Commingling** - Personal and corporate funds mixed\n• **Undercapitalization** - Inadequate funding\n• **Alter ego** - No separation between owner and corp\n• **Fraud** - Corp used to perpetrate fraud\n• **Formality failures** - No meetings, minutes, records\n\n**Courts can hold shareholders personally liable!**"
+        },
+        {
+          title: '⚠️ Exam Trap: Formalities Matter',
+          type: 'warning',
+          content: "**To maintain liability protection:**\n\n✓ Hold annual shareholder meetings\n✓ Maintain minutes and records\n✓ Keep separate bank accounts\n✓ Adequately capitalize the business\n✓ Use corporate name on contracts\n\n**Skip formalities = Risk personal liability!**"
+        },
+        {
+          title: 'De Jure vs De Facto Corporation',
+          type: 'text',
+          content: "**De Jure Corporation:**\n• Properly formed under state law\n• Full liability protection\n\n**De Facto Corporation:**\n• Good faith attempt to incorporate\n• Colorable compliance with law\n• Business conducted as corporation\n• Limited protection from most creditors\n\n**Corporation by Estoppel:** One who deals with entity as corporation cannot later deny it"
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Corporation is separate legal entity from owners",
+            "Form by filing Articles of Incorporation with state",
+            "Shareholders elect board; board hires officers",
+            "Directors owe fiduciary duties (care, loyalty)",
+            "Business judgment rule protects good faith decisions",
+            "Piercing veil: Commingling, undercapitalization, fraud",
+            "Maintain formalities to preserve liability protection"
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'REG-III-001',
     section: 'REG',
     title: "Gross Income: Inclusions",

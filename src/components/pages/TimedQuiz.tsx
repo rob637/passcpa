@@ -88,6 +88,9 @@ const BLUEPRINT_AREAS: Record<ExamSection, { id: string; name: string }[]> = {
     { id: 'BEC-I', name: 'Enterprise Risk Management' },
     { id: 'BEC-II', name: 'Economics' },
   ],
+  PREP: [
+    { id: 'PREP-I', name: 'CPA Exam Preparation' },
+  ],
 };
 
 type QuizState = 'setup' | 'active' | 'review' | 'complete' | 'explanations';

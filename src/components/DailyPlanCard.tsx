@@ -249,35 +249,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     }
   };
 
-  // Handle marking activity as complete (exposed for programmatic completion)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleMarkComplete = useCallback(async (activityId: string) => {
-    if (!user?.uid) return;
-    
-    try {
-      // Save to Firestore
-      await markActivityCompleted(user.uid, activityId);
-      
-      // Update local state
-      setCompletedActivities(prev => {
-        const updated = new Set(prev);
-        updated.add(activityId);
-        saveCompletedToStorage(updated); // Also save to localStorage
-        return updated;
-      });
-      
-      logger.log('Activity marked complete:', activityId);
-    } catch (error) {
-      logger.error('Error marking activity complete:', error);
-      // Still update localStorage as fallback
-      setCompletedActivities(prev => {
-        const updated = new Set(prev);
-        updated.add(activityId);
-        saveCompletedToStorage(updated);
-        return updated;
-      });
-    }
-  }, [user?.uid]);
+  // NOTE: handleMarkComplete was removed to satisfy noUnusedLocals.
+  // Activity completion is handled directly in handleComplete() above.
 
   // Get icon for activity type
   const getActivityIcon = (type: string) => {

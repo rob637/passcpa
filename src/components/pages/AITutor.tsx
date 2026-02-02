@@ -26,10 +26,6 @@ import {
   setDoc,
   collection,
   addDoc,
-  query,
-  orderBy,
-  limit,
-  getDocs,
   Timestamp
 } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -154,7 +150,7 @@ const formatMessage = (content: string) => {
   
   // Match markdown tables and convert to HTML
   const tableRegex = /\|(.+)\|\n\|[-:|\s]+\|\n((?:\|.+\|\n?)+)/g;
-  formatted = formatted.replace(tableRegex, (match, headerRow, bodyRows) => {
+  formatted = formatted.replace(tableRegex, (_match, headerRow, bodyRows) => {
     const headers = headerRow.split('|').map((h: string) => h.trim()).filter(Boolean);
     const rows = bodyRows.trim().split('\n').map((row: string) => 
       row.split('|').map((cell: string) => cell.trim()).filter(Boolean)

@@ -29,8 +29,6 @@ const VerifyEmail = lazy(() => import('./components/pages/auth/VerifyEmail'));
 
 // Core Pages (most used)
 const Home = lazy(() => import('./components/pages/Home'));
-const Dashboard = lazy(() => import('./components/pages/Dashboard')); // Keep for redirect
-const Study = lazy(() => import('./components/pages/Study')); // Keep for redirect
 const Practice = lazy(() => import('./components/pages/Practice'));
 const Progress = lazy(() => import('./components/pages/Progress'));
 const Settings = lazy(() => import('./components/pages/Settings'));

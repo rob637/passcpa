@@ -176,8 +176,8 @@ describe('questionService', () => {
       const questions = await fetchQuestions({ section: 'FAR', count: 5 });
       questions.forEach(q => {
         // MCQ questions should have options
-        if (q.type !== 'TBS') {
-          expect(q.options || q.answers).toBeDefined();
+        if ((q as any).type !== 'TBS') {
+          expect(q.options || (q as any).answers).toBeDefined();
         }
       });
     });

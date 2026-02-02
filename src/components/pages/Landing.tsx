@@ -8,11 +8,9 @@ import {
   Brain, 
   Target, 
   CheckCircle,
-  Star,
   ArrowRight,
   Zap,
   Shield,
-  TrendingUp,
   X,
   Smartphone,
   Bot,
@@ -23,7 +21,6 @@ import {
   DollarSign,
   Layers,
   RefreshCw,
-  MessageSquare,
   Check
 } from 'lucide-react';
 
@@ -144,8 +141,9 @@ const Landing = () => {
     },
   ];
 
-  // Mock testimonials - representative of target user feedback
-  // Will replace with verified testimonials as beta users provide them
+  // Mock testimonials - commented out until we have verified real testimonials
+  // Uncomment when ready to display testimonials section
+  /*
   const testimonials = [
     {
       quote: "Finally, a CPA prep course that doesn't require a second mortgage. Vory is like having a patient professor available 24/7. I went from dreading study sessions to actually looking forward to them.",
@@ -169,6 +167,7 @@ const Landing = () => {
       rating: 5
     },
   ];
+  */
 
   // Stats section - highlight our real strengths
   const stats = [

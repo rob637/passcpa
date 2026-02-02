@@ -224,7 +224,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
   questions,
   answers,
   elapsed,
-  section,
+  section: _section,
   onContinue,
   onTryAgain,
   onPracticeWeak,
@@ -234,7 +234,6 @@ const SessionResults: React.FC<SessionResultsProps> = ({
   const navigate = useNavigate();
   
   // Calculate results
-  const totalQuestions = questions.length;
   const answeredCount = Object.keys(answers).length;
   const correctCount = Object.values(answers).filter(a => a.correct).length;
   const incorrectCount = answeredCount - correctCount;
@@ -498,7 +497,7 @@ const Practice: React.FC = () => {
   const [reportSubmitted, setReportSubmitted] = useState(false);
   
   // Track weak topics for targeted practice
-  const [weakTopicsFromSession, setWeakTopicsFromSession] = useState<string[]>([]);
+  const [, setWeakTopicsFromSession] = useState<string[]>([]);
 
   const currentQuestion: Question | undefined = questions[currentIndex];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -124,10 +124,10 @@ describe('lessonService', () => {
     it('returns lessons matching a topic', async () => {
       // Get all lessons first to find a topic
       const allLessons = await fetchAllLessons();
-      const lessonWithTopic = allLessons.find(l => l.topic);
+      const lessonWithTopics = allLessons.find(l => l.topics && l.topics.length > 0);
       
-      if (lessonWithTopic && lessonWithTopic.topic) {
-        const topicLessons = await fetchLessonsByTopic(lessonWithTopic.topic);
+      if (lessonWithTopics && lessonWithTopics.topics && lessonWithTopics.topics[0]) {
+        const topicLessons = await fetchLessonsByTopic(lessonWithTopics.topics[0]);
         expect(topicLessons.length).toBeGreaterThan(0);
       }
     });

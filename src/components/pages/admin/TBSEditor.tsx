@@ -66,7 +66,7 @@ const TBSEditor = () => {
   // Filter TBS
   const filteredTBS = tbsList.filter((tbs) => {
     const matchesSearch =
-      tbs.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (tbs.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       tbs.scenario?.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesSection = selectedSection === 'all' || tbs.section === selectedSection;
     return matchesSearch && matchesSection;
@@ -216,7 +216,7 @@ const TBSEditor = () => {
                         </span>
                         <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {tbs.timeLimit || 15} min
+                          {tbs.estimatedTime || tbs.timeEstimate || 15} min
                         </span>
                       </div>
                       <h3 className="font-medium text-slate-900 dark:text-slate-100">{tbs.title}</h3>
@@ -268,7 +268,7 @@ const TBSEditor = () => {
                 </span>
                 <span className="text-sm text-slate-500 flex items-center gap-1">
                   <Clock className="w-4 h-4" />
-                  {viewingTBS.timeLimit || 15} min
+                  {viewingTBS.estimatedTime || viewingTBS.timeEstimate || 15} min
                 </span>
               </div>
 
@@ -290,7 +290,7 @@ const TBSEditor = () => {
                   <ul className="space-y-2">
                     {viewingTBS.requirements.map((req, idx) => (
                       <li key={idx} className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg text-sm">
-                        {req}
+                        {req.text || req.question || JSON.stringify(req)}
                       </li>
                     ))}
                   </ul>

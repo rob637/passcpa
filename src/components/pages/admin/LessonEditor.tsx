@@ -8,10 +8,9 @@ import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
 import { fetchAllLessons, getLessonStats } from '../../../services/lessonService';
-import type { Lesson, ExamSection } from '../../../types';
+import type { Lesson, ExamSection, LessonContentSection } from '../../../types';
 import {
   Search,
-  AlertCircle,
   Loader,
   BookOpen,
   Clock,
@@ -20,7 +19,6 @@ import {
   Database,
   Info,
 } from 'lucide-react';
-import clsx from 'clsx';
 
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com', 'rob@leaderreps.com'];
@@ -68,7 +66,7 @@ const LessonEditor = () => {
   const filteredLessons = lessons.filter((l) => {
     const matchesSearch =
       l.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      l.topic?.toLowerCase().includes(searchQuery.toLowerCase());
+      l.topics?.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesSection = selectedSection === 'all' || l.section === selectedSection;
     return matchesSearch && matchesSection;
   });
@@ -209,11 +207,11 @@ const LessonEditor = () => {
                         </span>
                         <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {lesson.estimatedTime || 15} min
+                          {lesson.duration || 15} min
                         </span>
                       </div>
                       <h3 className="font-medium text-slate-900 dark:text-slate-100">{lesson.title}</h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{lesson.topic}</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{lesson.topics?.join(', ') || 'No topics'}</p>
                     </div>
                     <button
                       onClick={() => setViewingLesson(lesson)}
@@ -256,7 +254,7 @@ const LessonEditor = () => {
                 </span>
                 <span className="text-sm text-slate-500 flex items-center gap-1">
                   <Clock className="w-4 h-4" />
-                  {viewingLesson.estimatedTime || 15} min
+                  {viewingLesson.duration || 15} min
                 </span>
               </div>
 
@@ -266,8 +264,8 @@ const LessonEditor = () => {
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Topic</h3>
-                <p className="text-slate-900 dark:text-white">{viewingLesson.topic}</p>
+                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Topics</h3>
+                <p className="text-slate-900 dark:text-white">{viewingLesson.topics?.join(', ') || 'No topics'}</p>
               </div>
 
               {viewingLesson.description && (
@@ -277,13 +275,13 @@ const LessonEditor = () => {
                 </div>
               )}
 
-              {viewingLesson.content && viewingLesson.content.length > 0 && (
+              {viewingLesson.content && viewingLesson.content.sections && viewingLesson.content.sections.length > 0 && (
                 <div>
                   <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
-                    Content Sections ({viewingLesson.content.length})
+                    Content Sections ({viewingLesson.content.sections.length})
                   </h3>
                   <div className="space-y-2">
-                    {viewingLesson.content.slice(0, 5).map((section, idx) => (
+                    {viewingLesson.content.sections.slice(0, 5).map((section: LessonContentSection, idx: number) => (
                       <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs font-medium text-slate-500 uppercase">{section.type}</span>
@@ -298,9 +296,9 @@ const LessonEditor = () => {
                         </p>
                       </div>
                     ))}
-                    {viewingLesson.content.length > 5 && (
+                    {viewingLesson.content.sections.length > 5 && (
                       <p className="text-sm text-slate-500 text-center">
-                        + {viewingLesson.content.length - 5} more sections
+                        + {viewingLesson.content.sections.length - 5} more sections
                       </p>
                     )}
                   </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
 import { useParams, useNavigate, Link, useSearchParams } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -354,7 +354,7 @@ const LessonViewer: React.FC = () => {
       setIsLoading(true);
       try {
         if (lessonId) {
-          const fetchedLesson = await fetchLessonById(lessonId, courseId);
+          const fetchedLesson = await fetchLessonById(lessonId);
           setLesson(fetchedLesson || undefined);
           
           const section = userProfile?.examSection || fetchedLesson?.section || 'FAR';

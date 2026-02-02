@@ -413,7 +413,7 @@ const Flashcards: React.FC = () => {
       <div className="bg-white border-b border-slate-100 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <button
-            onClick={() => navigate('/study')}
+            onClick={() => navigate('/home')}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-900"
           >
             <ArrowLeft className="w-5 h-5" />

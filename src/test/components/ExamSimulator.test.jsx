@@ -126,9 +126,9 @@ describe('ExamSimulator', () => {
       expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
     });
 
-    it('should have Back to Practice link', () => {
+    it('should have Back to Home link', () => {
       renderExamSimulator();
-      expect(screen.getByText(/Back to Practice/i)).toBeInTheDocument();
+      expect(screen.getByText(/Back to Home/i)).toBeInTheDocument();
     });
   });
 
@@ -216,7 +216,7 @@ describe('ExamSimulator', () => {
     it('should have descriptive button labels', () => {
       renderExamSimulator();
       expect(screen.getByRole('button', { name: /Begin Examination/i })).toBeInTheDocument();
-      expect(screen.getByText(/Back to Practice/i)).toBeInTheDocument();
+      expect(screen.getByText(/Back to Home/i)).toBeInTheDocument();
     });
   });
 });

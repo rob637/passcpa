@@ -547,11 +547,11 @@ const ExamSimulator: React.FC = () => {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
         <div className="max-w-3xl w-full">
           <button
-            onClick={() => navigate('/practice')}
+            onClick={() => navigate('/home')}
             className="mb-6 flex items-center text-slate-500 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Practice
+            Back to Home
           </button>
 
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

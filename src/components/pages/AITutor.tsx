@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import {
   Send,
@@ -16,6 +16,7 @@ import {
   Check,
   TrendingUp,
   Zap,
+  ArrowLeft
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -191,6 +192,7 @@ const AITutor: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { weeklyStats } = useStudy();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -259,6 +261,14 @@ const AITutor: React.FC = () => {
   const buildGreeting = useCallback(() => {
     const p = userProfile as UserProfile | null;
     const firstName = p?.displayName?.split(' ')[0] || 'there';
+    
+    // Check for context from navigation (e.g. from LessonViewer)
+    const state = location.state as { lessonTitle?: string; section?: string; topic?: string } | null;
+    
+    if (state?.lessonTitle) {
+      return `Hi ${firstName}! I see you're studying **${state.lessonTitle}**.\n\nI can help you understand this topic better. Would you like a **summary**, want me to **quiz you** on it, or help you **solve a specific problem**?`;
+    }
+
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
@@ -282,7 +292,7 @@ const AITutor: React.FC = () => {
     message += `**Choose how you'd like to learn:**\n• **Explain** - I'll give you clear, complete explanations\n• **Guide Me** - I'll ask questions to help you think through problems (Socratic method)\n• **Quiz Me** - I'll test your knowledge with questions\n\nWhat would you like to explore?`;
 
     return message;
-  }, [userProfile, sectionInfo?.shortName, weakAreas, weeklyStats]);
+  }, [userProfile, sectionInfo?.shortName, weakAreas, weeklyStats, location.state]);
 
   // Show greeting after memory loads
   useEffect(() => {
@@ -496,6 +506,13 @@ const AITutor: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
+              <button
+                onClick={() => navigate('/home')}
+                className="p-2 -ml-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                aria-label="Back to Home"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>

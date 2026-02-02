@@ -315,6 +315,14 @@ const TimedQuiz: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 p-4">
         <div className="max-w-lg mx-auto">
+          <button
+            onClick={() => navigate('/home')}
+            className="mb-4 flex items-center text-slate-500 hover:text-slate-900 transition-colors"
+          >
+            <ArrowRight className="w-4 h-4 mr-1 rotate-180" />
+            Back to Home
+          </button>
+          
           <div className="text-center mb-6">
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="w-8 h-8 text-primary-600" />

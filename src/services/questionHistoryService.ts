@@ -512,7 +512,7 @@ export const getSmartQuestionSelection = async (
   
   const dueCount = Math.ceil(targetCount * dueWeight);
   const incorrectCount = Math.ceil(targetCount * incorrectWeight);
-  const freshCount = targetCount - dueCount - incorrectCount;
+  const freshCount = Math.ceil(targetCount * freshWeight);
   
   // Fetch from each category
   const [dueQuestions, incorrectQuestions, freshQuestions] = await Promise.all([

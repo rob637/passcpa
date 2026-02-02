@@ -64,6 +64,7 @@ const DifficultyBadge = ({ difficulty }: { difficulty: Difficulty }) => {
     advanced: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
     hard: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
     tough: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
+    foundational: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300',
   };
 
   return (

@@ -38,7 +38,7 @@ export async function fetchAllTBS(): Promise<TBS[]> {
     // Sort by section and title
     return [...allTBS].sort((a, b) => {
       if (a.section !== b.section) return a.section.localeCompare(b.section);
-      return a.title.localeCompare(b.title);
+      return (a.title || '').localeCompare(b.title || '');
     });
   } catch (error) {
     logger.error('Error fetching all TBS:', error);

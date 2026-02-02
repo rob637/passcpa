@@ -13,7 +13,7 @@ export type { CourseId } from './course';
  * - 'beginner' / 'intermediate' / 'advanced' are allowed for lessons (maps to easy/medium/hard)
  * - 'moderate' and 'tough' are deprecated aliases (use 'medium' and 'hard' instead)
  */
-export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate' | 'advanced' | 'moderate' | 'tough';
+export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate' | 'advanced' | 'moderate' | 'tough' | 'foundational';
 export type NormalizedDifficulty = 'easy' | 'medium' | 'hard';
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
@@ -27,6 +27,7 @@ export const normalizeDifficulty = (d: Difficulty): NormalizedDifficulty => {
   switch (d) {
     case 'easy':
     case 'beginner':
+    case 'foundational':
       return 'easy';
     case 'medium':
     case 'intermediate':

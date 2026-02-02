@@ -35,7 +35,7 @@ describe('tbsService', () => {
         const prev = tbs[i - 1];
         const curr = tbs[i];
         if (prev.section === curr.section) {
-          expect(prev.title.localeCompare(curr.title)).toBeLessThanOrEqual(0);
+          expect((prev.title || '').localeCompare(curr.title || '')).toBeLessThanOrEqual(0);
         }
       }
     });
@@ -124,7 +124,7 @@ describe('tbsService', () => {
       const firstTBS = allTBS[0];
       
       // Search by first word of title
-      const searchWord = firstTBS.title.split(' ')[0];
+      const searchWord = (firstTBS.title || 'test').split(' ')[0];
       const results = await searchTBS(searchWord);
       
       expect(results.length).toBeGreaterThan(0);
@@ -134,7 +134,7 @@ describe('tbsService', () => {
       const allTBS = await fetchAllTBS();
       const firstTBS = allTBS[0];
       
-      const searchWord = firstTBS.title.split(' ')[0];
+      const searchWord = (firstTBS.title || 'test').split(' ')[0];
       const upperResults = await searchTBS(searchWord.toUpperCase());
       const lowerResults = await searchTBS(searchWord.toLowerCase());
       

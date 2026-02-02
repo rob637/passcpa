@@ -95,9 +95,9 @@ export async function fetchLessonById(lessonId: string): Promise<Lesson | null> 
 
 /**
  * Get lesson statistics
- * @param courseId - Optional course filter
+ * @param _courseId - Optional course filter (reserved for future use)
  */
-export async function getLessonStats(courseId: CourseId = DEFAULT_COURSE_ID): Promise<{
+export async function getLessonStats(_courseId: CourseId = DEFAULT_COURSE_ID): Promise<{
   total: number;
   bySection: Record<string, number>;
   byDifficulty: Record<string, number>;
@@ -106,7 +106,7 @@ export async function getLessonStats(courseId: CourseId = DEFAULT_COURSE_ID): Pr
     const { getLessonStats: getStats } = await import('../data/lessons');
     const stats = getStats();
     
-    // If courseId filtering needed, we'd need to filter here
+    // If _courseId filtering needed, we'd need to filter here
     // For now, return the full stats since most content is for 'cpa' course
     return {
       total: stats.total,
@@ -128,7 +128,7 @@ export async function fetchLessonsByTopic(topic: string, courseId: CourseId = DE
   try {
     const allLessons = await fetchAllLessons(courseId);
     return allLessons.filter(lesson => 
-      lesson.topic?.toLowerCase().includes(topic.toLowerCase()) ||
+      lesson.topics?.some(t => t.toLowerCase().includes(topic.toLowerCase())) ||
       lesson.title?.toLowerCase().includes(topic.toLowerCase())
     );
   } catch (error) {
@@ -149,7 +149,7 @@ export async function searchLessons(searchQuery: string, courseId: CourseId = DE
     
     return allLessons.filter(lesson => 
       lesson.title?.toLowerCase().includes(query) ||
-      lesson.topic?.toLowerCase().includes(query) ||
+      lesson.topics?.some(t => t.toLowerCase().includes(query)) ||
       lesson.description?.toLowerCase().includes(query)
     );
   } catch (error) {

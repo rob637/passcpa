@@ -27,7 +27,6 @@ import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection } from '../../types';
 import {
-  ALL_DEDICATED_FLASHCARDS,
   getFlashcardsBySection,
   Flashcard as DedicatedFlashcard,
 } from '../../data/flashcards';

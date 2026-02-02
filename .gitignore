@@ -17,6 +17,10 @@ build/
 # The .env.development, .env.staging, .env.production files are templates
 # Actual secrets should be in .env.local or GitHub Secrets
 
+# Migration script secrets
+scripts/.env.migration.local
+scripts/.env.*.local
+
 # IDE
 .idea/
 .vscode/

@@ -26,6 +26,7 @@ import { ExamSection } from '../../types';
 import { generateStudyPlan } from '../../utils/studyPlanner';
 import { fetchAllLessons } from '../../services/lessonService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
+import Leaderboard from '../Leaderboard';
 
 interface WeeklyActivity {
   date: Date;
@@ -623,6 +624,9 @@ const Progress: React.FC = () => {
                 Start Focused Session
               </Link>
             </div>
+
+            {/* Community Leaderboard Widget */}
+            <Leaderboard compact />
           </div>
         </div>
       </div>

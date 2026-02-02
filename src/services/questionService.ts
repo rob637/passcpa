@@ -4,6 +4,7 @@
 
 import { Question, ExamSection, Difficulty } from '../types';
 import logger from '../utils/logger';
+import { getSmartQuestionSelection } from './questionHistoryService';
 
 interface FetchQuestionsOptions {
   section?: ExamSection;
@@ -18,6 +19,10 @@ interface FetchQuestionsOptions {
   count?: number;
   mode?: 'random' | 'weak' | 'review' | 'exam';
   excludeIds?: string[];
+  userId?: string; // For smart question selection - uses spaced repetition
+  useSmartSelection?: boolean; // Enable intelligent question selection
+  courseId?: string; // Multi-course support
+  examDate?: string; // For adaptive review weights near exam
 }
 
 // Cache for loaded questions to avoid re-importing
@@ -57,6 +62,12 @@ async function loadSectionQuestions(section: ExamSection): Promise<Question[]> {
 /**
  * Fetch questions from local data with optional filters
  * This is the primary way to get questions - fast, offline-capable
+ * 
+ * When useSmartSelection is enabled and userId is provided, questions are
+ * selected using spaced repetition principles:
+ * - 40% due for review (based on SM-2 algorithm)
+ * - 30% recently answered incorrectly
+ * - 30% fresh/never-seen questions
  */
 export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promise<Question[]> {
   const {
@@ -71,7 +82,8 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     difficulty,
     count = 10,
     excludeIds = [],
-  } = options;
+    userId,
+    useSmartSelection = false,    examDate,  } = options;
 
   try {
     let candidates: Question[] = [];
@@ -115,7 +127,37 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
       return true;
     });
 
-    // Shuffle and return requested count
+    // Use smart selection if enabled and user is authenticated
+    if (useSmartSelection && userId && section) {
+      try {
+        const smartSelection = await getSmartQuestionSelection(
+          userId,
+          section, // section is required for smart selection
+          filtered.map(q => q.id),
+          count,
+          examDate // Pass exam date for adaptive weights
+        );
+        
+        // Map selected IDs back to full question objects, preserving order
+        const questionMap = new Map(filtered.map(q => [q.id, q]));
+        const orderedQuestions: Question[] = [];
+        
+        for (const id of smartSelection.questionIds) {
+          const q = questionMap.get(id);
+          if (q) orderedQuestions.push(q);
+        }
+        
+        // Log selection breakdown for debugging
+        logger.debug(`Smart selection: ${smartSelection.breakdown.due} due, ${smartSelection.breakdown.incorrect} incorrect, ${smartSelection.breakdown.fresh} fresh`);
+        
+        return orderedQuestions;
+      } catch (smartError) {
+        // Fallback to random selection if smart selection fails
+        logger.error('Smart selection failed, using random:', smartError);
+      }
+    }
+
+    // Shuffle and return requested count (default behavior)
     const shuffled = shuffleArray(filtered);
     return shuffled.slice(0, count);
 

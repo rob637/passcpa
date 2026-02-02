@@ -604,6 +604,12 @@ const Practice: React.FC = () => {
         // HR1 filter only applies to REG/TCP sections (tax law updates)
         const applyHr1Filter = is2026 && (section === 'REG' || section === 'TCP');
         
+        // Use smart selection for study mode (spaced repetition + fresh questions)
+        const shouldUseSmartSelection = config.mode === 'study' && !!userProfile?.id;
+        
+        // Get exam date for adaptive review weights
+        const examDateStr = examDate ? examDate.toISOString().split('T')[0] : undefined;
+        
         fetchedQuestions = await fetchQuestions({
           section,
           subtopic: subtopicParam || undefined, // Filter by specific lesson subtopic (most specific)
@@ -613,6 +619,9 @@ const Practice: React.FC = () => {
           hr1Only: applyHr1Filter, // Only for tax sections (REG, TCP) in 2026
           mode: (config.mode === 'study' ? undefined : config.mode) as any, // Cast to fix strict type overlap
           courseId, // Multi-course support
+          userId: userProfile?.id, // For smart question selection
+          useSmartSelection: shouldUseSmartSelection, // Enable spaced repetition for study mode
+          examDate: examDateStr, // For adaptive weights near exam date
         });
       }
 
@@ -848,7 +857,13 @@ const Practice: React.FC = () => {
         logger.error('Failed to save daily plan completion:', e);
       }
     }
-    navigate('/home');
+    
+    // Navigate back with completion signal for DailyPlanCard
+    const params = new URLSearchParams();
+    params.set('from', 'dailyplan');
+    if (activityId) params.set('activityId', activityId);
+    params.set('completed', 'true');
+    navigate(`/home?${params.toString()}`);
   };
   
   // Continue with more practice (same settings)

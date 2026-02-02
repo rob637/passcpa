@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
+import '../../styles/prometric.css';
 import {
   Clock,
   AlertTriangle,
@@ -158,6 +159,7 @@ const ExamSimulator: React.FC = () => {
 
   const [examState, setExamState] = useState<ExamState>('intro');
   const [examMode, setExamMode] = useState<ExamMode>('mini');
+  const [usePrometricTheme, setUsePrometricTheme] = useState(false);
   const [selectedMockExam, setSelectedMockExam] = useState<MockExamConfig | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [tbsItems, setTbsItems] = useState<TBS[]>([]);
@@ -688,6 +690,37 @@ const ExamSimulator: React.FC = () => {
                 )}
               </div>
 
+              {/* Prometric Theme Toggle */}
+              <div className="mb-6 p-4 bg-slate-100 rounded-xl border border-slate-200">
+                <label className="flex items-center justify-between cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
+                      <span className="text-slate-300 text-xs font-bold">WIN</span>
+                    </div>
+                    <div>
+                      <div className="font-medium text-slate-900">Prometric Interface Mode</div>
+                      <div className="text-sm text-slate-500">
+                        Practice with the exact look of the real exam
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={usePrometricTheme}
+                      onChange={(e) => setUsePrometricTheme(e.target.checked)}
+                      className="sr-only peer"
+                    />
+                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                  </div>
+                </label>
+                {usePrometricTheme && (
+                  <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+                    <strong>Heads up:</strong> The Prometric interface uses a dated 1990s aesthetic that matches the real CPA exam. This helps reduce test-day anxiety by familiarizing you with the actual testing environment.
+                  </div>
+                )}
+              </div>
+
               <button
                 onClick={startExam}
                 disabled={loading}
@@ -836,6 +869,43 @@ const ExamSimulator: React.FC = () => {
   // Break Screen
   if (examState === 'break') {
     const nextTestlet = examConfig.testlets[currentTestlet];
+    
+    // Prometric Break Screen
+    if (usePrometricTheme) {
+      return (
+        <div className="prometric-break">
+          <div className="prometric-break-box">
+            <div className="prometric-break-title">Scheduled Break</div>
+            <div className="prometric-break-content">
+              <div className="prometric-break-icon">⏸</div>
+              <div className="prometric-break-heading">Break Time</div>
+              <div className="prometric-break-text">
+                The exam timer has been paused. Take a moment to rest your eyes and stretch before continuing.
+              </div>
+              <div className="prometric-break-next">
+                <strong>Next Section:</strong><br />
+                {nextTestlet?.type === 'mcq'
+                  ? 'Multiple Choice Questions'
+                  : nextTestlet?.type === 'tbs'
+                    ? 'Task-Based Simulations'
+                    : 'Written Communication'}
+              </div>
+              <button
+                onClick={() => {
+                  setExamState('exam');
+                  setStartTime(Date.now() - (examConfig.totalTime - timeLeft) * 1000);
+                }}
+                className="prometric-break-btn"
+              >
+                Resume Examination
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Modern Break Screen
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center text-white">
@@ -882,6 +952,127 @@ const ExamSimulator: React.FC = () => {
     const results = calculateResults();
     const passed = results.percentage >= examConfig.passingScore;
 
+    // Prometric Results Screen
+    if (usePrometricTheme) {
+      return (
+        <div className="prometric-theme prometric-results">
+          <div className="prometric-results-window">
+            <div className="prometric-results-titlebar">
+              <span>Examination Results - {selectedMockExam?.name || 'Mock Exam'}</span>
+              <div className="prometric-titlebar-buttons">
+                <button className="prometric-titlebar-btn">_</button>
+                <button className="prometric-titlebar-btn">□</button>
+                <button className="prometric-titlebar-btn">×</button>
+              </div>
+            </div>
+            <div className="prometric-results-content">
+              <div className="prometric-results-header">
+                <div className="prometric-score-display">
+                  <div className="prometric-score-label">Final Score</div>
+                  <div className={clsx(
+                    'prometric-score-value',
+                    passed ? 'passing' : 'failing'
+                  )}>
+                    {results.percentage}
+                  </div>
+                  <div className="prometric-score-target">
+                    Passing Score: {examConfig.passingScore}
+                  </div>
+                </div>
+                <div className={clsx(
+                  'prometric-result-status',
+                  passed ? 'pass' : 'fail'
+                )}>
+                  {passed ? '✓ CREDIT' : '✗ NO CREDIT'}
+                </div>
+              </div>
+
+              <div className="prometric-results-divider" />
+
+              <div className="prometric-results-section">
+                <div className="prometric-section-title">Score Summary</div>
+                <table className="prometric-results-table">
+                  <tbody>
+                    <tr>
+                      <td>Multiple Choice Correct:</td>
+                      <td>{results.correct} of {questions.length}</td>
+                    </tr>
+                    <tr>
+                      <td>Multiple Choice Score:</td>
+                      <td>{results.mcqScore}%</td>
+                    </tr>
+                    {tbsItems.length > 0 && (
+                      <>
+                        <tr>
+                          <td>Task-Based Simulations:</td>
+                          <td>{Math.round(results.tbsCorrect || 0)} of {results.tbsTotal} requirements</td>
+                        </tr>
+                        <tr>
+                          <td>TBS Score:</td>
+                          <td>{results.tbsScore}%</td>
+                        </tr>
+                      </>
+                    )}
+                    <tr className="prometric-results-total">
+                      <td>Weighted Score:</td>
+                      <td>{results.percentage}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {Object.keys(blueprintScores).length > 0 && (
+                <>
+                  <div className="prometric-results-divider" />
+                  <div className="prometric-results-section">
+                    <div className="prometric-section-title">Performance by Content Area</div>
+                    <table className="prometric-results-table">
+                      <thead>
+                        <tr>
+                          <th>Content Area</th>
+                          <th>Correct</th>
+                          <th>%</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(blueprintScores)
+                          .sort(([a], [b]) => a.localeCompare(b))
+                          .map(([area, score]) => {
+                            const pct = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
+                            return (
+                              <tr key={area}>
+                                <td>{area}</td>
+                                <td>{score.correct}/{score.total}</td>
+                                <td className={pct < 60 ? 'weak' : ''}>{pct}%</td>
+                              </tr>
+                            );
+                          })}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              )}
+
+              <div className="prometric-results-divider" />
+
+              <div className="prometric-results-actions">
+                <button onClick={() => navigate('/practice')} className="prometric-btn">
+                  Exit
+                </button>
+                <button onClick={() => setExamState('intro')} className="prometric-btn">
+                  Retake Exam
+                </button>
+                <button onClick={() => navigate('/progress')} className="prometric-btn prometric-btn-primary">
+                  View Detailed Analytics
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Modern Results Screen
     return (
       <div className="min-h-screen bg-slate-50 py-8 px-4">
         <div className="max-w-3xl mx-auto">
@@ -1044,6 +1235,246 @@ const ExamSimulator: React.FC = () => {
   }
 
   // Active Exam Interface
+  // Prometric Theme Interface
+  if (usePrometricTheme) {
+    return (
+      <div className="prometric-theme h-screen flex flex-col overflow-hidden">
+        {/* Prometric Header - Windows-style title bar */}
+        <div className="prometric-header">
+          <div className="prometric-header-title">
+            <span className="prometric-header-section">{currentSection} - {sectionInfo?.name}</span>
+            <div className="prometric-header-divider" />
+            <span className="prometric-header-info">
+              Testlet {currentTestlet + 1} of {examConfig.testlets.length} ({currentTestletType === 'tbs' ? 'Task-Based Simulation' : 'Multiple Choice'})
+            </span>
+          </div>
+          <div className="prometric-header-right">
+            <div className={clsx('prometric-timer', timeLeft < 300 && 'warning')}>
+              {formatTime(timeLeft)}
+            </div>
+          </div>
+        </div>
+
+        {/* Prometric Toolbar */}
+        <div className="prometric-toolbar">
+          <button
+            onClick={() => setShowCalculator(!showCalculator)}
+            className={clsx('prometric-toolbar-btn', showCalculator && 'active')}
+          >
+            <Calculator className="w-4 h-4" />
+            Calculator
+          </button>
+          <div className="prometric-toolbar-separator" />
+          <button
+            onClick={toggleFlag}
+            className={clsx('prometric-toolbar-btn', currentQuestion?.id && flagged.has(currentQuestion.id) && 'active')}
+          >
+            <Flag className="w-4 h-4" />
+            {currentQuestion?.id && flagged.has(currentQuestion.id) ? 'Unflag' : 'Flag'}
+          </button>
+          <div className="flex-1" />
+          <span className="text-xs text-gray-600">
+            {currentTestletType === 'tbs' 
+              ? `Task ${currentIndex + 1} of ${testletTBS.length}`
+              : `Question ${currentIndex + 1} of ${testletQuestions.length}`
+            }
+          </span>
+        </div>
+
+        {/* Main Content */}
+        <div className="prometric-content flex-1">
+          <div className="prometric-main relative">
+            {/* Calculator Overlay */}
+            {showCalculator && (
+              <div className="prometric-calculator">
+                <div className="prometric-calculator-title">
+                  <span>Calculator</span>
+                  <button className="prometric-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
+                </div>
+                <div className="prometric-calculator-display">0</div>
+                <div className="prometric-calculator-buttons">
+                  {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
+                    <button 
+                      key={btn} 
+                      className={clsx(
+                        'prometric-calc-btn',
+                        ['+','-','*','/'].includes(btn) && 'operator',
+                        btn === '=' && 'equals'
+                      )}
+                    >
+                      {btn}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {currentTestletType === 'tbs' && currentTBS ? (
+              /* TBS Rendering in Prometric style */
+              <div className="prometric-tbs-container">
+                <div className="prometric-tbs-tabs">
+                  <button className="prometric-tbs-tab active">Instructions</button>
+                  <button className="prometric-tbs-tab">Resources</button>
+                </div>
+                <div className="prometric-tbs-content">
+                  <TBSRenderer
+                    tbs={currentTBS}
+                    answers={tbsAnswers[currentTBS.id] || {}}
+                    onAnswerChange={(reqId: string, value: unknown) => handleTBSAnswerChange(currentTBS.id, reqId, value)}
+                    isReview={false}
+                  />
+                </div>
+              </div>
+            ) : (
+              /* MCQ Rendering in Prometric style */
+              <>
+                <div className="prometric-question-header">
+                  <span className="prometric-question-number">
+                    Question {currentIndex + 1} of {testletQuestions.length}
+                  </span>
+                  <button
+                    onClick={toggleFlag}
+                    className={clsx(
+                      'prometric-flag-btn',
+                      currentQuestion?.id && flagged.has(currentQuestion.id) && 'flagged'
+                    )}
+                  >
+                    <Flag className="w-3 h-3" />
+                    {currentQuestion?.id && flagged.has(currentQuestion.id) ? 'Flagged for Review' : 'Flag for Review'}
+                  </button>
+                </div>
+
+                <div className="prometric-question-body">
+                  <div className="prometric-question-text">
+                    {currentQuestion?.question}
+                  </div>
+
+                  <div className="prometric-options">
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                    {(currentQuestion?.options || (currentQuestion as any)?.choices || []).map(
+                      (option: string, idx: number) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleSelectAnswer(idx)}
+                          className={clsx(
+                            'prometric-option',
+                            currentQuestion?.id && answers[currentQuestion.id] === idx && 'selected'
+                          )}
+                        >
+                          <span className="prometric-option-letter">
+                            {String.fromCharCode(65 + idx)}
+                          </span>
+                          <span className="prometric-option-text">{option}</span>
+                        </button>
+                      )
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Prometric Navigation */}
+        <div className="prometric-nav">
+          <div className="prometric-nav-buttons">
+            <button
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+              className="prometric-nav-btn"
+            >
+              « Previous
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={currentIndex === (currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1)}
+              className="prometric-nav-btn"
+            >
+              Next »
+            </button>
+          </div>
+
+          {/* Question Grid */}
+          <div className="prometric-question-grid">
+            {currentTestletType === 'tbs' ? (
+              testletTBS.map((tbs, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={clsx(
+                    'prometric-grid-btn',
+                    currentIndex === i && 'current',
+                    Object.keys(tbsAnswers[tbs.id] || {}).length > 0 && 'answered',
+                    flagged.has(tbs.id) && 'flagged'
+                  )}
+                >
+                  {i + 1}
+                </button>
+              ))
+            ) : (
+              testletQuestions.map((q, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={clsx(
+                    'prometric-grid-btn',
+                    currentIndex === i && 'current',
+                    answers[q.id] !== undefined && 'answered',
+                    flagged.has(q.id) && 'flagged'
+                  )}
+                >
+                  {i + 1}
+                </button>
+              ))
+            )}
+          </div>
+
+          <div className="prometric-nav-buttons">
+            {currentIndex === (currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1) ? (
+              <button
+                onClick={handleNextTestlet}
+                className="prometric-nav-btn primary"
+              >
+                {currentTestlet < examConfig.testlets.length - 1
+                  ? 'Submit Testlet »'
+                  : 'Submit Exam »'}
+              </button>
+            ) : (
+              <button onClick={handleNext} className="prometric-nav-btn primary">
+                Next »
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Status Bar */}
+        <div className="prometric-status">
+          <div className="prometric-status-left">
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator answered" />
+              <span>Answered</span>
+            </div>
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator flagged" />
+              <span>Flagged</span>
+            </div>
+            <div className="prometric-status-item">
+              <div className="prometric-status-indicator unanswered" />
+              <span>Unanswered</span>
+            </div>
+          </div>
+          <span>
+            Answered: {currentTestletType === 'tbs' 
+              ? Object.keys(tbsAnswers).filter(id => testletTBS.some(t => t.id === id)).length 
+              : Object.keys(answers).filter(id => testletQuestions.some(q => q.id === id)).length
+            } of {currentTestletType === 'tbs' ? testletTBS.length : testletQuestions.length}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // Modern Theme Interface (existing)
   return (
     <div className="h-screen bg-slate-100 flex flex-col overflow-hidden">
       {/* Exam Header */}
@@ -1158,7 +1589,7 @@ const ExamSimulator: React.FC = () => {
                           onClick={() => handleSelectAnswer(idx)}
                           className={clsx(
                             'w-full p-4 rounded border text-left transition-all flex items-start gap-4 group',
-                            answers[currentQuestion?.id] === idx
+                            currentQuestion?.id && answers[currentQuestion.id] === idx
                               ? 'border-primary-600 bg-primary-50 ring-1 ring-primary-600'
                               : 'border-slate-300 bg-white hover:border-primary-400 hover:shadow-sm'
                           )}
@@ -1166,7 +1597,7 @@ const ExamSimulator: React.FC = () => {
                           <span
                             className={clsx(
                               'w-6 h-6 rounded-full border flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5 transition-colors',
-                              answers[currentQuestion?.id] === idx
+                              currentQuestion?.id && answers[currentQuestion.id] === idx
                                 ? 'border-primary-600 bg-primary-600 text-white'
                                 : 'border-slate-300 text-slate-500 group-hover:border-primary-400 group-hover:text-primary-600'
                             )}

@@ -1,7 +1,7 @@
 /**
  * VoraPrep Cloud Functions (Gen 2)
  * - Daily study reminder push notifications (FCM)
- * - Weekly progress report emails (Nodemailer/Gmail)
+ * - Weekly progress report emails (Resend)
  * - Custom branded password reset emails
  */
 
@@ -9,28 +9,22 @@ const { onSchedule } = require('firebase-functions/v2/scheduler');
 const { onDocumentUpdated, onDocumentCreated } = require('firebase-functions/v2/firestore');
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 // Initialize Firebase Admin
 admin.initializeApp();
 const db = admin.firestore();
 const messaging = admin.messaging();
 
-// Email configuration using Gmail SMTP (free, 500/day limit)
-// Set via: firebase functions:secrets:set GMAIL_USER GMAIL_APP_PASSWORD
-// Get app password: Google Account → Security → 2FA → App Passwords
-const GMAIL_USER = process.env.GMAIL_USER; // e.g., noreply@voraprep.com or your Gmail
-const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD; // 16-char app password
+// Email configuration using Resend (3,000 free emails/month)
+// Set via: firebase functions:secrets:set RESEND_API_KEY
+// Get API key from: https://resend.com/api-keys
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 
-let emailTransporter = null;
-if (GMAIL_USER && GMAIL_APP_PASSWORD) {
-  emailTransporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: GMAIL_USER,
-      pass: GMAIL_APP_PASSWORD,
-    },
-  });
+let resend = null;
+if (RESEND_API_KEY) {
+  resend = new Resend(RESEND_API_KEY);
 }
 
 // ============================================================================
@@ -48,8 +42,8 @@ exports.sendCustomPasswordReset = onCall({
     throw new HttpsError('invalid-argument', 'Email is required');
   }
 
-  if (!emailTransporter) {
-    throw new HttpsError('failed-precondition', 'Email service not configured');
+  if (!resend) {
+    throw new HttpsError('failed-precondition', 'Email service not configured. Set RESEND_API_KEY.');
   }
 
   try {
@@ -58,13 +52,18 @@ exports.sendCustomPasswordReset = onCall({
       url: 'https://voraprep.com/login',
     });
 
-    // Send branded email
-    await emailTransporter.sendMail({
-      from: `"VoraPrep" <${GMAIL_USER}>`,
+    // Send branded email via Resend
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
       to: email,
       subject: '🔐 Reset Your VoraPrep Password',
       html: getPasswordResetEmailHTML(email, resetLink),
     });
+
+    if (error) {
+      console.error('Resend error:', error);
+      throw new Error(error.message);
+    }
 
     console.log(`Password reset email sent to ${email}`);
     return { success: true };
@@ -271,8 +270,8 @@ exports.sendWeeklyReports = onSchedule({
   memory: '512MiB',
   timeoutSeconds: 120,
 }, async (event) => {
-  if (!emailTransporter) {
-    console.error('Email not configured (set GMAIL_USER and GMAIL_APP_PASSWORD)');
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
     return;
   }
   
@@ -303,12 +302,14 @@ exports.sendWeeklyReports = onSchedule({
       const emailContent = generateWeeklyReportEmail(userData, weeklyStats);
       
       try {
-        await emailTransporter.sendMail({
-          from: `"VoraPrep" <${GMAIL_USER}>`,
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
           to: userEmail,
           subject: `📊 Your Weekly CPA Study Report - ${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
           html: emailContent,
         });
+        
+        if (error) throw new Error(error.message);
         sentCount++;
       } catch (emailError) {
         console.error(`Failed to send email to ${userEmail}:`, emailError.message);
@@ -353,7 +354,7 @@ exports.sendWelcomeEmail = onDocumentCreated({
   document: 'users/{userId}',
   memory: '256MiB',
 }, async (event) => {
-  if (!emailTransporter) {
+  if (!resend) {
     console.log('Email not configured, skipping welcome email');
     return;
   }
@@ -368,12 +369,14 @@ exports.sendWelcomeEmail = onDocumentCreated({
   }
   
   try {
-    await emailTransporter.sendMail({
-      from: `"VoraPrep" <${GMAIL_USER}>`,
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
       to: userEmail,
       subject: `Welcome to VoraPrep, ${displayName}! 🎉`,
       html: generateWelcomeEmail(displayName),
     });
+    
+    if (error) throw new Error(error.message);
     console.log(`Welcome email sent to ${userEmail}`);
   } catch (error) {
     console.error('Error sending welcome email:', error);
@@ -389,7 +392,7 @@ exports.sendWaitlistConfirmation = onDocumentCreated({
   document: 'waitlist/{entryId}',
   memory: '256MiB',
 }, async (event) => {
-  if (!emailTransporter) {
+  if (!resend) {
     console.log('Email not configured, skipping waitlist email');
     return;
   }
@@ -403,12 +406,14 @@ exports.sendWaitlistConfirmation = onDocumentCreated({
   }
   
   try {
-    await emailTransporter.sendMail({
-      from: `"VoraPrep" <${GMAIL_USER}>`,
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
       to: email,
       subject: "You're on the VoraPrep Beta List! 🚀",
       html: generateWaitlistEmail(email),
     });
+    
+    if (error) throw new Error(error.message);
     console.log(`Waitlist confirmation sent to ${email}`);
   } catch (error) {
     console.error('Error sending waitlist email:', error);

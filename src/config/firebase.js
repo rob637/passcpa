@@ -2,26 +2,36 @@
 // This will be a SEPARATE Firebase project from Reppy
 
 import { initializeApp, getApps } from 'firebase/app';
-import { getAuth, connectAuthEmulator } from 'firebase/auth';
+import { getAuth, connectAuthEmulator, browserLocalPersistence, browserSessionPersistence, indexedDBLocalPersistence, setPersistence } from 'firebase/auth';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage, connectStorageEmulator } from 'firebase/storage';
 import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
 import { getAnalytics, isSupported } from 'firebase/analytics';
+import logger from '../utils/logger';
 
-// Environment detection
+// ============================================
+// Environment Detection & Validation
+// ============================================
+
 const isDevelopment = import.meta.env.DEV;
 const useEmulators = import.meta.env.VITE_USE_EMULATORS === 'true';
+const declaredEnvironment = import.meta.env.VITE_ENVIRONMENT || 'development';
 
-// Validate required environment variables
+// Required environment variables
 const requiredEnvVars = [
   'VITE_FIREBASE_API_KEY',
   'VITE_FIREBASE_AUTH_DOMAIN',
   'VITE_FIREBASE_PROJECT_ID',
 ];
 
+// Validate required environment variables
 const missingVars = requiredEnvVars.filter(varName => !import.meta.env[varName]);
-if (missingVars.length > 0 && !isDevelopment) {
-  console.error(`Missing required Firebase config: ${missingVars.join(', ')}`);
+if (missingVars.length > 0) {
+  const errorMsg = `Missing required Firebase config: ${missingVars.join(', ')}`;
+  console.error(`❌ ${errorMsg}`);
+  if (!isDevelopment) {
+    throw new Error(errorMsg);
+  }
 }
 
 // Firebase config - requires environment variables
@@ -35,6 +45,39 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+// ============================================
+// Environment Mismatch Detection
+// ============================================
+
+// Map project IDs to expected environments
+const PROJECT_ENVIRONMENT_MAP = {
+  'passcpa-dev': 'development',
+  'voraprep-staging': 'staging',
+  'voraprep-prod': 'production',
+};
+
+const expectedEnvironment = PROJECT_ENVIRONMENT_MAP[firebaseConfig.projectId];
+
+// Warn if there's a mismatch between declared environment and project ID
+if (expectedEnvironment && expectedEnvironment !== declaredEnvironment) {
+  console.warn(
+    `⚠️ Environment mismatch detected!\n` +
+    `   Declared: ${declaredEnvironment}\n` +
+    `   Project ID suggests: ${expectedEnvironment}\n` +
+    `   This could lead to data corruption. Please verify your configuration.`
+  );
+}
+
+// Log environment info in non-production
+if (declaredEnvironment !== 'production') {
+  logger.log(
+    `🔥 Firebase initialized:\n` +
+    `   Environment: ${declaredEnvironment}\n` +
+    `   Project: ${firebaseConfig.projectId}\n` +
+    `   Emulators: ${useEmulators ? 'enabled' : 'disabled'}`
+  );
+}
+
 // Initialize Firebase (prevent re-initialization)
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
@@ -43,6 +86,24 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const functions = getFunctions(app);
+
+// Set auth persistence with fallback for corrupted IndexedDB
+(async () => {
+  try {
+    // Try IndexedDB first (best persistence)
+    await setPersistence(auth, indexedDBLocalPersistence);
+  } catch (e) {
+    console.warn('IndexedDB auth persistence failed, falling back to localStorage');
+    try {
+      // Fall back to localStorage
+      await setPersistence(auth, browserLocalPersistence);
+    } catch (e2) {
+      console.warn('localStorage auth persistence failed, falling back to session');
+      // Last resort: session storage (won't persist across tabs/browser close)
+      await setPersistence(auth, browserSessionPersistence);
+    }
+  }
+})();
 
 // Initialize Analytics (only in browser, not in SSR)
 export let analytics = null;

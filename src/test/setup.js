@@ -30,6 +30,7 @@ vi.mock('firebase/auth', () => ({
   createUserWithEmailAndPassword: vi.fn(),
   signOut: vi.fn(),
   sendPasswordResetEmail: vi.fn(),
+  sendEmailVerification: vi.fn().mockResolvedValue(undefined),
   onAuthStateChanged: vi.fn(),
   updateProfile: vi.fn(),
 }));

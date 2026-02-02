@@ -1,0 +1,1017 @@
+/**
+ * Prometric Exam Theme
+ * 
+ * Mimics the dated 1990s-style interface of the actual CPA exam at Prometric testing centers.
+ * This helps students build familiarity with the real exam interface to reduce anxiety.
+ * 
+ * Key characteristics:
+ * - Windows 95/98 aesthetic with flat gray panels
+ * - Blue title bars (classic Windows style)
+ * - Hard-edged, beveled buttons
+ * - System fonts (Tahoma, MS Sans Serif)
+ * - Low contrast colors
+ * - Minimal whitespace
+ */
+
+/* Prometric Theme Container */
+.prometric-theme {
+  --pm-bg: #c0c0c0;
+  --pm-bg-light: #d4d4d4;
+  --pm-bg-dark: #808080;
+  --pm-panel: #ececec;
+  --pm-border: #808080;
+  --pm-border-light: #ffffff;
+  --pm-border-dark: #404040;
+  --pm-text: #000000;
+  --pm-text-muted: #555555;
+  --pm-blue: #000080;
+  --pm-blue-light: #0000aa;
+  --pm-highlight: #000080;
+  --pm-highlight-text: #ffffff;
+  --pm-link: #0000ff;
+  --pm-warning: #ff0000;
+  --pm-success: #008000;
+  --pm-button-face: #c0c0c0;
+  --pm-button-highlight: #ffffff;
+  --pm-button-shadow: #808080;
+  
+  font-family: 'Tahoma', 'Segoe UI', 'MS Sans Serif', Arial, sans-serif;
+  font-size: 12px;
+  background-color: var(--pm-bg);
+  color: var(--pm-text);
+  line-height: 1.4;
+}
+
+/* ======================================
+   HEADER BAR (Title Bar Style)
+   ====================================== */
+.prometric-header {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #404040;
+  min-height: 28px;
+}
+
+.prometric-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prometric-header-section {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prometric-header-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.prometric-header-info {
+  font-weight: normal;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.prometric-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.prometric-timer {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  background: #000;
+  color: #00ff00;
+  padding: 2px 8px;
+  border: 1px inset #808080;
+  letter-spacing: 1px;
+}
+
+.prometric-timer.warning {
+  color: #ff0000;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.7; }
+}
+
+/* ======================================
+   TOOLBAR (Icon Buttons)
+   ====================================== */
+.prometric-toolbar {
+  background: var(--pm-bg);
+  border-bottom: 1px solid var(--pm-border-dark);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prometric-toolbar-btn {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 4px 8px;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 70px;
+  justify-content: center;
+}
+
+.prometric-toolbar-btn:hover {
+  background: var(--pm-bg-light);
+}
+
+.prometric-toolbar-btn:active,
+.prometric-toolbar-btn.active {
+  border-color: var(--pm-button-shadow) var(--pm-button-highlight) var(--pm-button-highlight) var(--pm-button-shadow);
+  background: var(--pm-bg-dark);
+}
+
+.prometric-toolbar-btn:disabled {
+  color: var(--pm-border);
+  cursor: not-allowed;
+}
+
+.prometric-toolbar-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.prometric-toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background: var(--pm-border);
+  margin: 0 4px;
+}
+
+/* ======================================
+   MAIN CONTENT AREA
+   ====================================== */
+.prometric-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background: var(--pm-bg);
+}
+
+.prometric-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+  border: 2px solid;
+  border-color: var(--pm-button-shadow) var(--pm-button-highlight) var(--pm-button-highlight) var(--pm-button-shadow);
+  background: white;
+  overflow: hidden;
+}
+
+/* ======================================
+   QUESTION PANEL
+   ====================================== */
+.prometric-question-header {
+  background: var(--pm-bg);
+  border-bottom: 1px solid var(--pm-border-dark);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prometric-question-number {
+  font-weight: bold;
+  font-size: 11px;
+  color: var(--pm-text);
+}
+
+.prometric-flag-btn {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 2px 8px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prometric-flag-btn:hover {
+  background: var(--pm-bg-light);
+}
+
+.prometric-flag-btn.flagged {
+  background: #ffff00;
+  color: #000;
+}
+
+.prometric-question-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.prometric-question-text {
+  margin-bottom: 20px;
+  color: var(--pm-text);
+}
+
+/* ======================================
+   ANSWER OPTIONS
+   ====================================== */
+.prometric-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prometric-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.prometric-option:hover {
+  background: #e8e8e8;
+}
+
+.prometric-option.selected {
+  background: #000080;
+  color: white;
+}
+
+.prometric-option.selected .prometric-option-letter {
+  background: white;
+  color: #000080;
+  border-color: white;
+}
+
+.prometric-option-letter {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  flex-shrink: 0;
+  background: white;
+}
+
+.prometric-option-text {
+  flex: 1;
+  padding-top: 1px;
+}
+
+/* ======================================
+   NAVIGATION BAR
+   ====================================== */
+.prometric-nav {
+  background: var(--pm-bg);
+  border-top: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prometric-nav-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.prometric-nav-btn {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 80px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.prometric-nav-btn:hover {
+  background: var(--pm-bg-light);
+}
+
+.prometric-nav-btn:active {
+  border-color: var(--pm-button-shadow) var(--pm-button-highlight) var(--pm-button-highlight) var(--pm-button-shadow);
+}
+
+.prometric-nav-btn:disabled {
+  color: var(--pm-border);
+  cursor: not-allowed;
+}
+
+.prometric-nav-btn.primary {
+  background: #000080;
+  color: white;
+  border-color: #0000aa #000066 #000066 #0000aa;
+}
+
+.prometric-nav-btn.primary:hover {
+  background: #0000aa;
+}
+
+.prometric-nav-btn.primary:active {
+  background: #000066;
+  border-color: #000066 #0000aa #0000aa #000066;
+}
+
+/* ======================================
+   QUESTION GRID (Navigator)
+   ====================================== */
+.prometric-question-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 4px;
+  background: var(--pm-bg-dark);
+  border: 1px inset var(--pm-border);
+  max-width: 400px;
+}
+
+.prometric-grid-btn {
+  width: 24px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.prometric-grid-btn:hover {
+  background: #e0e0e0;
+}
+
+.prometric-grid-btn.current {
+  background: #000080;
+  color: white;
+  border-color: #000080;
+}
+
+.prometric-grid-btn.answered {
+  background: #90ee90;
+  color: #000;
+}
+
+.prometric-grid-btn.flagged {
+  background: #ffff00;
+  color: #000;
+}
+
+.prometric-grid-btn.answered.flagged {
+  background: linear-gradient(135deg, #90ee90 50%, #ffff00 50%);
+}
+
+/* ======================================
+   CALCULATOR (Pop-up Window Style)
+   ====================================== */
+.prometric-calculator {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 220px;
+  background: var(--pm-bg);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.prometric-calculator-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prometric-calculator-close {
+  background: var(--pm-button-face);
+  border: 1px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  width: 16px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: inherit;
+}
+
+.prometric-calculator-display {
+  background: #e8f0e8;
+  border: 2px inset var(--pm-border);
+  margin: 4px;
+  padding: 4px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  text-align: right;
+}
+
+.prometric-calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 4px;
+}
+
+.prometric-calc-btn {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.prometric-calc-btn:hover {
+  background: var(--pm-bg-light);
+}
+
+.prometric-calc-btn:active {
+  border-color: var(--pm-button-shadow) var(--pm-button-highlight) var(--pm-button-highlight) var(--pm-button-shadow);
+}
+
+.prometric-calc-btn.operator {
+  background: #ffe0e0;
+}
+
+.prometric-calc-btn.equals {
+  background: #e0e0ff;
+}
+
+/* ======================================
+   STATUS BAR
+   ====================================== */
+.prometric-status {
+  background: var(--pm-bg);
+  border-top: 1px solid var(--pm-border);
+  padding: 2px 8px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prometric-status-left {
+  display: flex;
+  gap: 16px;
+}
+
+.prometric-status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prometric-status-indicator {
+  width: 10px;
+  height: 10px;
+  border: 1px inset var(--pm-border);
+}
+
+.prometric-status-indicator.answered {
+  background: #90ee90;
+}
+
+.prometric-status-indicator.flagged {
+  background: #ffff00;
+}
+
+.prometric-status-indicator.unanswered {
+  background: white;
+}
+
+/* ======================================
+   BREAK SCREEN
+   ====================================== */
+.prometric-break {
+  background: #000080;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Tahoma', Arial, sans-serif;
+}
+
+.prometric-break-box {
+  background: var(--pm-bg);
+  border: 4px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 0;
+  width: 400px;
+  text-align: center;
+}
+
+.prometric-break-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.prometric-break-content {
+  padding: 24px;
+  color: black;
+}
+
+.prometric-break-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.prometric-break-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.prometric-break-text {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.prometric-break-next {
+  background: var(--pm-bg-light);
+  border: 1px solid var(--pm-border);
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.prometric-break-btn {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  padding: 8px 32px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ======================================
+   RESULTS SCREEN
+   ====================================== */
+.prometric-results {
+  background: var(--pm-bg);
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prometric-results-window {
+  background: white;
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.prometric-results-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 3px 4px 3px 8px;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prometric-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.prometric-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  background: var(--pm-bg);
+  border: 1px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  color: black;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.prometric-results-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.prometric-results-content {
+  padding: 16px;
+}
+
+.prometric-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.prometric-score-display {
+  text-align: center;
+  padding: 16px 24px;
+  border: 2px inset var(--pm-border);
+  background: #f0f0f0;
+}
+
+.prometric-score-label {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.prometric-score-value {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+
+.prometric-score-value.passing {
+  color: #008000;
+}
+
+.prometric-score-value.failing {
+  color: #cc0000;
+}
+
+.prometric-score-target {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.prometric-result-status {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: 2px solid;
+}
+
+.prometric-result-status.pass {
+  background: #d4edda;
+  border-color: #008000;
+  color: #008000;
+}
+
+.prometric-result-status.fail {
+  background: #f8d7da;
+  border-color: #cc0000;
+  color: #cc0000;
+}
+
+.prometric-results-divider {
+  height: 1px;
+  background: var(--pm-border);
+  margin: 16px 0;
+}
+
+.prometric-results-section {
+  margin-bottom: 16px;
+}
+
+.prometric-section-title {
+  font-weight: bold;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.prometric-results-score {
+  text-align: center;
+  padding: 24px;
+  border: 2px inset var(--pm-border);
+  background: #f8f8f8;
+  margin-bottom: 16px;
+}
+
+.prometric-score-number {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+.prometric-score-number.pass {
+  color: #008000;
+}
+
+.prometric-score-number.fail {
+  color: #ff0000;
+}
+
+.prometric-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.prometric-results-table th,
+.prometric-results-table td {
+  border: 1px solid var(--pm-border);
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.prometric-results-table th {
+  background: var(--pm-bg);
+  font-weight: bold;
+}
+
+.prometric-results-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.prometric-results-table .prometric-results-total {
+  font-weight: bold;
+  background: #e8e8e8 !important;
+}
+
+.prometric-results-table td.weak {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.prometric-results-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.prometric-results-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--pm-border);
+}
+
+/* ======================================
+   TBS SPECIFIC STYLES
+   ====================================== */
+.prometric-tbs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.prometric-tbs-tabs {
+  background: var(--pm-bg);
+  border-bottom: 1px solid var(--pm-border);
+  display: flex;
+  padding: 4px 4px 0;
+}
+
+.prometric-tbs-tab {
+  background: var(--pm-bg-light);
+  border: 1px solid var(--pm-border);
+  border-bottom: none;
+  padding: 4px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  margin-right: 2px;
+  font-family: inherit;
+}
+
+.prometric-tbs-tab:hover {
+  background: white;
+}
+
+.prometric-tbs-tab.active {
+  background: white;
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+  font-weight: bold;
+}
+
+.prometric-tbs-content {
+  flex: 1;
+  overflow: auto;
+  background: white;
+  padding: 16px;
+}
+
+.prometric-tbs-exhibit {
+  position: fixed;
+  background: white;
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 200;
+  min-width: 300px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.prometric-tbs-exhibit-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.prometric-tbs-exhibit-content {
+  padding: 12px;
+  overflow: auto;
+  flex: 1;
+  font-size: 12px;
+}
+
+/* ======================================
+   SCROLLBAR STYLING (Windows Classic)
+   ====================================== */
+.prometric-theme ::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.prometric-theme ::-webkit-scrollbar-track {
+  background: var(--pm-bg-light);
+  border: 1px solid var(--pm-border);
+}
+
+.prometric-theme ::-webkit-scrollbar-thumb {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+}
+
+.prometric-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--pm-bg);
+}
+
+.prometric-theme ::-webkit-scrollbar-button {
+  background: var(--pm-button-face);
+  border: 2px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* ======================================
+   INTRO SCREEN (Modified for Prometric)
+   ====================================== */
+.prometric-intro {
+  background: #000080;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.prometric-intro-window {
+  background: var(--pm-bg);
+  border: 4px solid;
+  border-color: var(--pm-button-highlight) var(--pm-button-shadow) var(--pm-button-shadow) var(--pm-button-highlight);
+  width: 100%;
+  max-width: 500px;
+}
+
+.prometric-intro-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prometric-intro-content {
+  padding: 20px;
+  background: white;
+  margin: 8px;
+  border: 2px inset var(--pm-border);
+}
+
+.prometric-intro-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.prometric-intro-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 8px;
+}
+
+.prometric-intro-section {
+  font-size: 14px;
+  color: #000;
+}
+
+.prometric-intro-info {
+  background: #f0f0f0;
+  border: 1px solid var(--pm-border);
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 11px;
+}
+
+.prometric-intro-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dotted var(--pm-border);
+}
+
+.prometric-intro-info-row:last-child {
+  border-bottom: none;
+}
+
+.prometric-intro-warning {
+  background: #fff0f0;
+  border: 1px solid #ff0000;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: #cc0000;
+}
+
+.prometric-intro-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+}

@@ -21,6 +21,7 @@ vi.mock('firebase/auth', () => ({
   createUserWithEmailAndPassword: (...args) => mockCreateUserWithEmailAndPassword(...args),
   signOut: (...args) => mockSignOut(...args),
   sendPasswordResetEmail: (...args) => mockSendPasswordResetEmail(...args),
+  sendEmailVerification: vi.fn().mockResolvedValue(undefined),
   GoogleAuthProvider: vi.fn(() => ({
     setCustomParameters: vi.fn(),
   })),

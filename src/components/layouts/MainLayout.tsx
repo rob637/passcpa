@@ -11,7 +11,7 @@ import clsx from 'clsx';
 const NAV_ITEMS = [
   { path: '/home', icon: Home, label: 'Home', tourId: 'home', matchPaths: ['/home', '/practice', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'] },
   { path: '/learn', icon: BookOpen, label: 'Learn', tourId: 'learn', matchPaths: ['/learn', '/lessons'] },
-  { path: '/you', icon: User, label: 'You', tourId: 'you', matchPaths: ['/you', '/progress', '/settings', '/achievements'] },
+  { path: '/you', icon: User, label: 'You', tourId: 'you', matchPaths: ['/you', '/progress', '/settings', '/achievements', '/community'] },
 ];
 
 // Check if current path matches nav item

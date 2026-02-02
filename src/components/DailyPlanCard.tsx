@@ -3,12 +3,13 @@
  * 
  * Displays a personalized daily study plan with:
  * - Activity cards (lessons, MCQs, TBS, flashcards)
- * - Progress tracking
+ * - Progress tracking (synced to Firestore)
  * - Priority indicators
+ * - Carryover of incomplete activities from yesterday
  * - One-click navigation to each activity
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import logger from '../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -25,14 +26,21 @@ import {
   Loader2,
   RefreshCw,
   Calendar,
+  RotateCcw,
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { useCourse } from '../providers/CourseProvider';
-import { generateDailyPlan, DailyPlan, DailyActivity } from '../services/dailyPlanService';
+import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
+import { 
+  getOrCreateTodaysPlan, 
+  markActivityCompleted,
+  PersistedDailyPlan,
+} from '../services/dailyPlanPersistence';
+import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
 import clsx from 'clsx';
 
-// Storage key for today's completed activities
+// Storage key for today's completed activities (fallback for offline)
 const getStorageKey = () => `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
 
 // Helper to load completed activities from localStorage
@@ -45,6 +53,15 @@ const loadCompletedFromStorage = (): Set<string> => {
   }
 };
 
+// Helper to save completed activities to localStorage (fallback)
+const saveCompletedToStorage = (completed: Set<string>): void => {
+  try {
+    localStorage.setItem(getStorageKey(), JSON.stringify(Array.from(completed)));
+  } catch {
+    // Storage full or unavailable
+  }
+};
+
 interface DailyPlanCardProps {
   compact?: boolean;
   onActivityStart?: (activity: DailyActivity) => void;
@@ -52,89 +69,153 @@ interface DailyPlanCardProps {
 
 const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivityStart }) => {
   const navigate = useNavigate();
-  const { userProfile } = useAuth();
-  const { stats, dailyProgress, getTopicPerformance } = useStudy();
+  const { userProfile, user } = useAuth();
+  const { stats, dailyProgress, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId } = useCourse();
   
-  const [plan, setPlan] = useState<DailyPlan | null>(null);
+  const [plan, setPlan] = useState<PersistedDailyPlan | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [completedActivities, setCompletedActivities] = useState<Set<string>>(loadCompletedFromStorage);
+  const [completedActivities, setCompletedActivities] = useState<Set<string>>(new Set());
   const [expanded, setExpanded] = useState(false);
+  const [hasCarryover, setHasCarryover] = useState(false);
 
-  // Refresh completed activities from localStorage on mount and when page becomes visible
-  useEffect(() => {
-    // Refresh on mount
-    setCompletedActivities(loadCompletedFromStorage());
+  // Load daily plan from Firestore (with caching and carryover)
+  const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
+    if (!userProfile || !user?.uid) return;
     
-    // Also refresh when user returns to tab (in case they completed on another device/tab)
+    setLoading(true);
+    setError(null);
+    
+    try {
+      // Get topic performance data
+      const topicStats = getTopicPerformance ? await getTopicPerformance() : [];
+      
+      // CRITICAL: Fetch actual lesson progress from Firestore subcollection
+      const lessonProgressData = getLessonProgress ? await getLessonProgress() : {};
+      
+      // Transform lesson progress to { lessonId: progressPercent }
+      const lessonProgress: Record<string, number> = {};
+      Object.entries(lessonProgressData).forEach(([lessonId, data]: [string, any]) => {
+        if (data.status === 'completed' || data.completedAt) {
+          lessonProgress[lessonId] = 100;
+        } else if (typeof data.progress === 'number') {
+          lessonProgress[lessonId] = data.progress;
+        } else {
+          lessonProgress[lessonId] = 50;
+        }
+      });
+      
+      // Handle examDate which could be Date, Timestamp, or string
+      let examDateStr: string | undefined;
+      const rawExamDate = (userProfile as any).examDate;
+      if (rawExamDate) {
+        if (typeof rawExamDate === 'string') {
+          examDateStr = rawExamDate;
+        } else if (rawExamDate instanceof Date) {
+          examDateStr = rawExamDate.toISOString().split('T')[0];
+        } else if (typeof rawExamDate.toDate === 'function') {
+          examDateStr = rawExamDate.toDate().toISOString().split('T')[0];
+        }
+      }
+      
+      // Build user study state
+      const section = (userProfile as any).examSection || 'FAR';
+      const [tbsStats, questionsDue] = await Promise.all([
+          getTBSHistory(user.uid, section),
+          getDueQuestions(user.uid, section)
+      ]);
+
+      const studyState: UserStudyState = {
+        section,
+        examDate: examDateStr,
+        dailyGoal: (userProfile as any).dailyGoal || 50,
+        topicStats: topicStats.map((t: any) => ({
+          topic: t.topic || t.id,
+          topicId: t.topicId || t.id,
+          accuracy: t.accuracy || 0,
+          totalQuestions: t.questions || t.totalQuestions || 0,
+          correct: t.correct || Math.round((t.accuracy || 0) * (t.questions || t.totalQuestions || 0) / 100),
+          lastPracticed: t.lastPracticed,
+        })),
+        tbsStats, 
+        questionsDue,
+        lessonProgress,
+        flashcardsDue: (stats as any)?.flashcardsDue || 0,
+        currentStreak: (stats as any)?.currentStreak || 0,
+        todayPoints: Math.round((dailyProgress / 100) * ((userProfile as any).dailyGoal || 50)),
+      };
+      
+      // Use the persistence layer to get/create today's plan
+      // This handles caching and carryover automatically!
+      const persistedPlan = await getOrCreateTodaysPlan(
+        user.uid,
+        studyState,
+        courseId,
+        forceRegenerate
+      );
+      
+      setPlan(persistedPlan);
+      setCompletedActivities(new Set(persistedPlan.completedActivities || []));
+      setHasCarryover(!!persistedPlan.carryoverFrom);
+      
+      // Also save to localStorage as fallback
+      saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
+    } catch (err) {
+      logger.error('Error loading daily plan:', err);
+      setError('Unable to load your daily plan');
+      // Try localStorage fallback
+      setCompletedActivities(loadCompletedFromStorage());
+    } finally {
+      setLoading(false);
+    }
+  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId]);
+
+  // Load plan on mount
+  useEffect(() => {
+    loadPlan();
+  }, [loadPlan]);
+
+  // Check URL params for returning from an activity (auto-completion)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    const activityId = params.get('activityId');
+    const completed = params.get('completed');
+    
+    // If returning from dailyplan activity AND it was marked completed
+    if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
+      // Mark the activity as complete
+      markActivityCompleted(user.uid, activityId).then(() => {
+        setCompletedActivities(prev => {
+          const updated = new Set(prev);
+          updated.add(activityId);
+          saveCompletedToStorage(updated);
+          return updated;
+        });
+        logger.log('Activity auto-marked complete from return:', activityId);
+        
+        // Clean up URL params
+        const url = new URL(window.location.href);
+        url.searchParams.delete('from');
+        url.searchParams.delete('activityId');
+        url.searchParams.delete('completed');
+        window.history.replaceState({}, '', url.pathname);
+      }).catch(err => logger.error('Failed to auto-mark activity:', err));
+    }
+  }, [user?.uid]);
+
+  // Refresh when page becomes visible (sync across devices)
+  useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        setCompletedActivities(loadCompletedFromStorage());
+        loadPlan(); // Refresh from Firestore
       }
     };
     
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, []);
-
-  // Load daily plan
-  useEffect(() => {
-    const loadPlan = async () => {
-      if (!userProfile) return;
-      
-      setLoading(true);
-      setError(null);
-      
-      try {
-        // Get topic performance data
-        const topicStats = getTopicPerformance ? await getTopicPerformance() : [];
-        
-        // Handle examDate which could be Date, Timestamp, or string
-        let examDateStr: string | undefined;
-        const rawExamDate = (userProfile as any).examDate;
-        if (rawExamDate) {
-          if (typeof rawExamDate === 'string') {
-            examDateStr = rawExamDate;
-          } else if (rawExamDate instanceof Date) {
-            examDateStr = rawExamDate.toISOString().split('T')[0];
-          } else if (typeof rawExamDate.toDate === 'function') {
-            // Firestore Timestamp
-            examDateStr = rawExamDate.toDate().toISOString().split('T')[0];
-          }
-        }
-        
-        // Build user study state
-        const studyState = {
-          section: (userProfile as any).examSection || 'FAR',
-          examDate: examDateStr,
-          dailyGoal: (userProfile as any).dailyGoal || 50,
-          topicStats: topicStats.map((t: any) => ({
-            topic: t.topic || t.id,
-            topicId: t.topicId || t.id,
-            accuracy: t.accuracy || 0,
-            totalQuestions: t.questions || t.totalQuestions || 0,
-            correct: t.correct || Math.round((t.accuracy || 0) * (t.questions || t.totalQuestions || 0) / 100),
-            lastPracticed: t.lastPracticed,
-          })),
-          lessonProgress: (userProfile as any).lessonProgress || {},
-          flashcardsDue: (stats as any)?.flashcardsDue || 0,
-          currentStreak: (stats as any)?.currentStreak || 0,
-          todayPoints: Math.round((dailyProgress / 100) * ((userProfile as any).dailyGoal || 50)),
-        };
-        
-        const generatedPlan = await generateDailyPlan(studyState, courseId);
-        setPlan(generatedPlan);
-      } catch (err) {
-        logger.error('Error generating daily plan:', err);
-        setError('Unable to generate your daily plan');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    loadPlan();
-  }, [userProfile, stats, dailyProgress, getTopicPerformance, courseId]);
+  }, [loadPlan]);
 
   // Handle activity click
   const handleActivityClick = (activity: DailyActivity) => {
@@ -167,6 +248,36 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         navigate('/study');
     }
   };
+
+  // Handle marking activity as complete (exposed for programmatic completion)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleMarkComplete = useCallback(async (activityId: string) => {
+    if (!user?.uid) return;
+    
+    try {
+      // Save to Firestore
+      await markActivityCompleted(user.uid, activityId);
+      
+      // Update local state
+      setCompletedActivities(prev => {
+        const updated = new Set(prev);
+        updated.add(activityId);
+        saveCompletedToStorage(updated); // Also save to localStorage
+        return updated;
+      });
+      
+      logger.log('Activity marked complete:', activityId);
+    } catch (error) {
+      logger.error('Error marking activity complete:', error);
+      // Still update localStorage as fallback
+      setCompletedActivities(prev => {
+        const updated = new Set(prev);
+        updated.add(activityId);
+        saveCompletedToStorage(updated);
+        return updated;
+      });
+    }
+  }, [user?.uid]);
 
   // Get icon for activity type
   const getActivityIcon = (type: string) => {
@@ -335,6 +446,12 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-primary-500" />
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Your Daily Plan</h2>
+              {hasCarryover && (
+                <span className="px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs rounded-full flex items-center gap-1">
+                  <RotateCcw className="w-3 h-3" />
+                  Includes yesterday's tasks
+                </span>
+              )}
             </div>
             <p className="text-slate-500 text-sm mt-1">
               {plan.summary.weakAreaFocus.length > 0 
@@ -352,9 +469,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               </button>
             )}
             <button
-              onClick={() => window.location.reload()}
+              onClick={() => loadPlan(true)}
               className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
-              title="Refresh plan"
+              title="Regenerate plan"
             >
               <RefreshCw className="w-5 h-5 text-slate-500" />
             </button>

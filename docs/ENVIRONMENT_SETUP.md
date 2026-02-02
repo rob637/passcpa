@@ -180,6 +180,82 @@ The GitHub Actions workflow (`.github/workflows/ci.yml`) handles:
 - [ ] Enable Firebase Auth security features
 - [ ] Set up budget alerts for Firebase billing
 
+## 🛡️ Environment Safety Features
+
+VoraPrep includes multiple safety guards to prevent environment cross-contamination:
+
+### 1. Runtime Environment Indicator
+A visual badge appears in development and staging environments showing:
+- 🔧 DEV (green) - Development environment
+- 🧪 STAGING (yellow) - Staging environment
+- Hidden in production (no visual indicator)
+
+### 2. CI/CD Environment Isolation
+Each environment has its own:
+- Build job with environment-specific secrets
+- Build verification step that checks for environment mismatches
+- Dedicated GitHub Environment with optional approval gates
+
+### 3. Firebase Config Validation
+At runtime, the app:
+- Validates all required environment variables exist
+- Detects mismatches between `VITE_ENVIRONMENT` and `projectId`
+- Logs environment info in non-production builds
+
+### 4. Safe Migration Scripts
+All migration scripts require explicit environment specification:
+
+```bash
+# Development (no confirmation required)
+FIREBASE_ENV=development npx tsx scripts/migrate_to_db.ts
+
+# Staging (5-second delay to cancel)
+FIREBASE_ENV=staging npx tsx scripts/migrate_to_db.ts
+
+# Production (requires flag AND manual confirmation)
+FIREBASE_ENV=production npx tsx scripts/migrate_to_db.ts --confirm-production
+```
+
+## 🔐 Required GitHub Secrets
+
+### Development Environment Secrets
+| Secret Name | Description |
+|-------------|-------------|
+| `FIREBASE_SERVICE_ACCOUNT_DEV` | Service account JSON for deployment |
+| `FIREBASE_DEV_API_KEY` | Firebase API key |
+| `FIREBASE_DEV_AUTH_DOMAIN` | passcpa-dev.firebaseapp.com |
+| `FIREBASE_DEV_PROJECT_ID` | passcpa-dev |
+| `FIREBASE_DEV_STORAGE_BUCKET` | passcpa-dev.firebasestorage.app |
+| `FIREBASE_DEV_MESSAGING_SENDER_ID` | Sender ID |
+| `FIREBASE_DEV_APP_ID` | App ID |
+
+### Staging Environment Secrets
+| Secret Name | Description |
+|-------------|-------------|
+| `FIREBASE_SERVICE_ACCOUNT_STAGING` | Service account JSON |
+| `FIREBASE_STAGING_API_KEY` | Firebase API key |
+| `FIREBASE_STAGING_AUTH_DOMAIN` | voraprep-staging.firebaseapp.com |
+| `FIREBASE_STAGING_PROJECT_ID` | voraprep-staging |
+| `FIREBASE_STAGING_STORAGE_BUCKET` | voraprep-staging.firebasestorage.app |
+| `FIREBASE_STAGING_MESSAGING_SENDER_ID` | Sender ID |
+| `FIREBASE_STAGING_APP_ID` | App ID |
+
+### Production Environment Secrets
+| Secret Name | Description |
+|-------------|-------------|
+| `FIREBASE_SERVICE_ACCOUNT_PROD` | Service account JSON |
+| `FIREBASE_PROD_API_KEY` | Firebase API key |
+| `FIREBASE_PROD_AUTH_DOMAIN` | voraprep-prod.firebaseapp.com |
+| `FIREBASE_PROD_PROJECT_ID` | voraprep-prod |
+| `FIREBASE_PROD_STORAGE_BUCKET` | voraprep-prod.firebasestorage.app |
+| `FIREBASE_PROD_MESSAGING_SENDER_ID` | Sender ID |
+| `FIREBASE_PROD_APP_ID` | App ID |
+
+### Shared Secrets
+| Secret Name | Description |
+|-------------|-------------|
+| `VITE_GEMINI_API_KEY` | AI tutor API key (same across environments) |
+
 ## 📱 Mobile App Environments
 
 For Capacitor (iOS/Android), each environment needs:

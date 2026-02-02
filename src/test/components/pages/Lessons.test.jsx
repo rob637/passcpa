@@ -56,12 +56,13 @@ vi.mock('../../../hooks/useStudy', () => ({
 
 vi.mock('../../../config/examConfig', () => ({
   CPA_SECTIONS: {
-    AUD: { name: 'Auditing and Attestation', shortName: 'AUD' },
-    FAR: { name: 'Financial Accounting and Reporting', shortName: 'FAR' },
-    REG: { name: 'Regulation', shortName: 'REG' },
-    TCP: { name: 'Tax Compliance and Planning', shortName: 'TCP' },
-    BAR: { name: 'Business Analysis and Reporting', shortName: 'BAR' },
-    ISC: { name: 'Information Systems and Controls', shortName: 'ISC' },
+    AUD: { name: 'Auditing and Attestation', shortName: 'AUD', color: '#2563EB' },
+    FAR: { name: 'Financial Accounting and Reporting', shortName: 'FAR', color: '#2563EB' },
+    REG: { name: 'Regulation', shortName: 'REG', color: '#DC2626' },
+    TCP: { name: 'Tax Compliance and Planning', shortName: 'TCP', color: '#059669' },
+    BAR: { name: 'Business Analysis and Reporting', shortName: 'BAR', color: '#7C3AED' },
+    ISC: { name: 'Information Systems and Controls', shortName: 'ISC', color: '#0891B2' },
+    PREP: { name: 'Exam Strategy & Preparation', shortName: 'PREP', color: '#6366f1', type: 'strategy' },
   },
 }));
 

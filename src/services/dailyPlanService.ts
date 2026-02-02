@@ -14,6 +14,7 @@
 import { fetchLessonsBySection } from './lessonService';
 import { POINT_VALUES } from '../config/examConfig';
 import type { CourseId } from '../types';
+import { TBSHistoryEntry } from './questionHistoryService';
 
 export interface DailyActivity {
   id: string;
@@ -69,6 +70,8 @@ export interface UserStudyState {
   examDate?: string;
   dailyGoal: number;
   topicStats: TopicStats[];
+  tbsStats?: TBSHistoryEntry[]; // Added TBS stats
+  questionsDue?: string[]; // Added Due Questions (Spaced Repetition)
   lessonProgress: Record<string, number>; // lessonId -> progress %
   flashcardsDue: number;
   currentStreak: number;
@@ -167,6 +170,28 @@ export const generateDailyPlan = async (
     remainingMinutes -= ACTIVITY_DURATION.mcq_10;
   }
   
+  // 3a. HIGH: Spaced Repetition (Questions Due)
+  // This is critical for retention - catches items you are about to forget
+  if (state.questionsDue && state.questionsDue.length >= 5 && remainingMinutes >= 15) {
+      const dueCount = Math.min(state.questionsDue.length, 15);
+      activities.push({
+          id: `review-due-${today}`,
+          type: 'mcq',
+          title: 'Retention Review',
+          description: `${state.questionsDue.length} questions due for spaced repetition`,
+          estimatedMinutes: ACTIVITY_DURATION.mcq_15,
+          points: dueCount * MCQ_AVG_POINTS,
+          priority: 'high',
+          reason: 'Spaced repetition: Review these now to lock them in long-term memory',
+          params: {
+              section: state.section,
+              questionCount: dueCount,
+              mode: 'study', // Will trigger smart selection which prioritizes these due questions
+          }
+      });
+      remainingMinutes -= ACTIVITY_DURATION.mcq_15;
+  }
+
   // 3. MEDIUM: Flashcard review if cards are due
   if (state.flashcardsDue > 0 && remainingMinutes >= 10) {
     activities.push({
@@ -238,20 +263,69 @@ export const generateDailyPlan = async (
   const tbsNeeded = activities.filter(a => a.type === 'tbs').length === 0;
   if (tbsNeeded && remainingMinutes >= 15) {
     const tbsTopics = getTBSTopicsForSection(state.section);
-    const weakTBSTopic = tbsTopics[Math.floor(Math.random() * tbsTopics.length)];
-    
+    let targetTBSTopic = tbsTopics[0];
+    let reason = 'TBS = 50% of your exam score. Practice daily!';
+    let tbsPriority: 'critical' | 'high' | 'medium' | 'low' = 'medium';
+
+    // Intelligent selection using TBS history
+    if (state.tbsStats && state.tbsStats.length > 0) {
+       const sectionStats = state.tbsStats.filter(s => s.section === state.section);
+       
+       // Build a set of mastered TBS topics (approximate from IDs)
+       const masteredTopicPatterns = sectionStats
+           .filter(s => s.mastered)
+           .map(s => s.tbsId.toLowerCase());
+       
+       // Find topics NOT yet practiced or not mastered
+       const unpracticedTopics = tbsTopics.filter(topic => {
+           const topicLower = topic.toLowerCase().replace(/\\s+/g, '-');
+           return !masteredTopicPatterns.some(pattern => 
+               pattern.includes(topicLower) || topicLower.includes(pattern.split('-')[0])
+           );
+       });
+       
+       if (unpracticedTopics.length > 0) {
+           // Prioritize topics never attempted
+           targetTBSTopic = unpracticedTopics[0];
+           reason = `New TBS topic: You haven't practiced ${targetTBSTopic} yet`;
+           tbsPriority = 'high'; // Elevate priority for coverage gaps
+       } else {
+           // All topics practiced - focus on lowest scoring
+           const weakestStats = sectionStats
+               .filter(s => !s.mastered)
+               .sort((a, b) => (a.avgScore || 0) - (b.avgScore || 0));
+           
+           if (weakestStats.length > 0) {
+               // Try to match ID pattern back to topic name
+               const weakestId = weakestStats[0].tbsId.toLowerCase();
+               const matchedTopic = tbsTopics.find(t => 
+                   weakestId.includes(t.toLowerCase().replace(/\\s+/g, '-')) ||
+                   t.toLowerCase().includes(weakestId.split('-')[0])
+               );
+               targetTBSTopic = matchedTopic || tbsTopics[0];
+               reason = `Weak TBS: ${Math.round(weakestStats[0].avgScore)}% avg score - improve this`;
+               tbsPriority = 'high';
+           }
+       }
+    } else {
+        // No history - rotate through topics by day
+        const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+        targetTBSTopic = tbsTopics[dayOfYear % tbsTopics.length];
+        reason = `Introduction: ${targetTBSTopic} simulation practice`;
+    }
+
     activities.push({
       id: `tbs-${today}`,
       type: 'tbs',
       title: 'Task-Based Simulation',
-      description: `Practice: ${weakTBSTopic}`,
+      description: `Practice: ${targetTBSTopic}`,
       estimatedMinutes: ACTIVITY_DURATION.tbs,
       points: POINT_VALUES.tbs_basic,
-      priority: 'medium',
-      reason: 'TBS = 50% of your exam score. Practice daily!',
+      priority: tbsPriority,
+      reason,
       params: {
         section: state.section,
-        topic: weakTBSTopic,
+        topic: targetTBSTopic,
       },
     });
     remainingMinutes -= ACTIVITY_DURATION.tbs;

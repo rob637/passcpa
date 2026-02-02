@@ -114,7 +114,7 @@ describe('Register Component', () => {
       fireEvent.click(screen.getByRole('button', { name: /create account/i }));
 
       await waitFor(() => {
-        expect(mockNavigate).toHaveBeenCalledWith('/onboarding');
+        expect(mockNavigate).toHaveBeenCalledWith('/verify-email');
       });
     });
 

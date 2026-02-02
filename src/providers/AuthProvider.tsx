@@ -7,13 +7,14 @@ import {
   createUserWithEmailAndPassword,
   signOut as firebaseSignOut,
   sendPasswordResetEmail,
+  sendEmailVerification,
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
-import { getFunctions, httpsCallable } from 'firebase/functions';
-import { auth, db } from '../config/firebase.js';
+import { httpsCallable } from 'firebase/functions';
+import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import type { FieldValue, Timestamp } from 'firebase/firestore';
 
@@ -56,6 +57,7 @@ export interface AuthContextType {
   signOut: () => Promise<void>;
   signInWithGoogle: () => Promise<User>;
   resetPassword: (email: string) => Promise<void>;
+  resendVerificationEmail: () => Promise<void>;
   updateUserProfile: (updates: Partial<UserProfile>) => Promise<void>;
   refreshProfile: () => Promise<void>;
 }
@@ -158,6 +160,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Update display name
       await updateProfile(result.user, { displayName });
 
+      // Send email verification
+      await sendEmailVerification(result.user, {
+        url: `${window.location.origin}/login`,
+      });
+
       // Create user document in Firestore
       const newUserProfile: Omit<UserProfile, 'id'> = {
         email,
@@ -192,6 +199,29 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       await firebaseSignOut(auth);
       setUser(null);
       setUserProfile(null);
+      
+      // Clear user-specific cached data to prevent data leakage between accounts
+      const keysToRemove = Object.keys(localStorage).filter(key => 
+        key.startsWith('daily_plan_') || 
+        key.startsWith('dailyplan_completed_')
+      );
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+    } catch (err) {
+      const error = err as FirebaseError;
+      setError(error.message);
+      throw err;
+    }
+  };
+
+  // Resend email verification
+  const resendVerificationEmail = async () => {
+    if (!user) throw new Error('No user logged in');
+    if (user.emailVerified) throw new Error('Email already verified');
+    
+    try {
+      await sendEmailVerification(user, {
+        url: `${window.location.origin}/login`,
+      });
     } catch (err) {
       const error = err as FirebaseError;
       setError(error.message);
@@ -204,7 +234,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setError(null);
     try {
       // Try custom branded email first (via Cloud Function)
-      const functions = getFunctions();
+      // Use the functions instance from firebase.js that's configured for the correct project
       const sendCustomPasswordReset = httpsCallable(functions, 'sendCustomPasswordReset');
       await sendCustomPasswordReset({ email });
     } catch (err) {
@@ -212,7 +242,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       logger.warn('Custom reset email failed, using Firebase default:', err);
       try {
         const actionCodeSettings = {
-          url: 'https://voraprep.com/login',
+          url: `${window.location.origin}/login`,
           handleCodeInApp: false,
         };
         await sendPasswordResetEmail(auth, email, actionCodeSettings);
@@ -295,6 +325,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     signOut,
     signInWithGoogle,
     resetPassword,
+    resendVerificationEmail,
     updateUserProfile,
     refreshProfile: async () => {
         if (user) await fetchUserProfile(user.uid);

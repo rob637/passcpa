@@ -107,7 +107,7 @@ describe('ExamSimulator', () => {
 
     it('should display exam time info for Mini Exam', () => {
       renderExamSimulator();
-      expect(screen.getByText(/50 mins/i)).toBeInTheDocument();
+      expect(screen.getAllByText(/50 mins/i).length).toBeGreaterThan(0);
     });
 
     it('should display exam structure info', () => {
@@ -151,12 +151,12 @@ describe('ExamSimulator', () => {
 
     it('should display Full Exam structure info', async () => {
       renderExamSimulator();
-      expect(screen.getByText(/Full structure/i)).toBeInTheDocument();
+      expect(screen.getByText(/Full AICPA structure/i)).toBeInTheDocument();
     });
 
     it('should display Mini Exam question count', async () => {
       renderExamSimulator();
-      expect(screen.getByText(/36 questions/i)).toBeInTheDocument();
+      expect(screen.getByText(/36 MCQs/i)).toBeInTheDocument();
     });
   });
 

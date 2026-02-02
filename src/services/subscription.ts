@@ -167,16 +167,15 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   },
   lifetime: {
     tier: 'lifetime',
-    name: 'Founding Member',
-    price: 199,
+    name: 'Lifetime Access',
+    price: 399,
     interval: 'once',
     features: [
-      'Pro forever',
+      'Lifetime CPA access',
       'One-time payment',
-      'Lifetime updates',
-      'Future exam prep included',
+      'All future updates',
+      'Blueprint changes included',
       'Founding Member badge',
-      'Vote on new features',
     ],
     limits: {
       questionsPerDay: Infinity,

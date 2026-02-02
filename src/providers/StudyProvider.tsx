@@ -17,6 +17,7 @@ import { db } from '../config/firebase.js';
 import { useAuth } from './AuthProvider';
 import { format } from 'date-fns';
 import logger from '../utils/logger';
+import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
 
 export interface StudyPlan {
   id?: string;
@@ -284,6 +285,15 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               timestamp: new Date().toISOString()
             })
         }, { merge: true });
+        
+        // IMPORTANT: Also record in question history for spaced repetition & deduplication
+        await recordQuestionAnswer(user.uid, {
+          questionId,
+          isCorrect,
+          topic: topic || 'General',
+          section: section || 'unknown',
+          answeredAt: new Date(),
+        });
     } catch (e) {
         logger.error("Error recording answer", e);
     }
@@ -307,6 +317,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               timestamp: new Date().toISOString()
             })
         });
+        
+        // Record in TBS history for mastery tracking
+        await recordTBSResult(user.uid, id, score, section || 'unknown', timeSpent * 60);
       } catch (e) {
           logger.error("Error completing simulation", e);
       }

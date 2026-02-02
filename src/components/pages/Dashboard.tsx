@@ -17,6 +17,7 @@ import {
   TrendingUp,
   LucideIcon,
   Target,
+  Compass,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -573,6 +574,13 @@ const Dashboard = () => {
       <div className="mb-6">
         <h2 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Quick Start</h2>
         <div className="space-y-3">
+          <QuickAction
+            to="/lessons?section=PREP"
+            icon={Compass}
+            label="Exam Strategy & Tips"
+            sublabel="How to study, test tactics, mental game"
+            color="primary"
+          />
           <QuickAction
             to="/practice"
             icon={Play}

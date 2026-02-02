@@ -2,6 +2,7 @@
 // Caches questions in IndexedDB for offline practice
 
 import { Question } from '../types';
+import { logger } from '../utils/logger';
 
 const DB_NAME = 'voraprep-offline';
 const DB_VERSION = 1;
@@ -10,6 +11,45 @@ const TBS_STORE = 'tbs';
 const META_STORE = 'meta';
 
 let dbInstance: IDBDatabase | null = null;
+let dbOpenAttempts = 0;
+const MAX_DB_ATTEMPTS = 2;
+
+/**
+ * Check if IndexedDB is available
+ */
+function isIndexedDBAvailable(): boolean {
+  try {
+    if (typeof indexedDB === 'undefined') {
+      return false;
+    }
+    // Test that we can actually call open
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Delete the database (for recovery from corruption)
+ */
+async function deleteDatabase(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    dbInstance = null;
+    const deleteRequest = indexedDB.deleteDatabase(DB_NAME);
+    deleteRequest.onsuccess = () => {
+      logger.info('IndexedDB database deleted for recovery');
+      resolve();
+    };
+    deleteRequest.onerror = () => {
+      logger.error('Failed to delete IndexedDB:', deleteRequest.error);
+      reject(deleteRequest.error);
+    };
+    deleteRequest.onblocked = () => {
+      logger.warn('Database deletion blocked - close other tabs');
+      resolve(); // Continue anyway
+    };
+  });
+}
 
 /**
  * Open/create the IndexedDB database
@@ -17,38 +57,80 @@ let dbInstance: IDBDatabase | null = null;
 async function openDB(): Promise<IDBDatabase> {
   if (dbInstance) return dbInstance;
 
+  // Check if IndexedDB is available
+  if (!isIndexedDBAvailable()) {
+    throw new Error('IndexedDB is not available. Offline storage requires IndexedDB support.');
+  }
+
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    try {
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
 
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => {
-      dbInstance = request.result;
-      resolve(dbInstance);
-    };
+      request.onerror = async () => {
+        const error = request.error;
+        logger.error('IndexedDB open error:', error);
+        
+        // If this is a corruption error and we haven't tried recovery yet
+        if (dbOpenAttempts < MAX_DB_ATTEMPTS && 
+            error?.message?.includes('Internal error')) {
+          dbOpenAttempts++;
+          logger.info(`Attempting IndexedDB recovery (attempt ${dbOpenAttempts})`);
+          
+          try {
+            await deleteDatabase();
+            // Retry opening
+            const retryRequest = indexedDB.open(DB_NAME, DB_VERSION);
+            retryRequest.onerror = () => reject(new Error('IndexedDB storage is corrupted. Please clear your browser data and try again.'));
+            retryRequest.onsuccess = () => {
+              dbInstance = retryRequest.result;
+              dbOpenAttempts = 0;
+              resolve(dbInstance);
+            };
+            retryRequest.onupgradeneeded = handleUpgrade;
+          } catch (deleteError) {
+            reject(new Error('IndexedDB storage is corrupted. Please clear your browser data and try again.'));
+          }
+        } else {
+          reject(error || new Error('Failed to open IndexedDB'));
+        }
+      };
+      
+      request.onsuccess = () => {
+        dbInstance = request.result;
+        dbOpenAttempts = 0;
+        resolve(dbInstance);
+      };
 
-    request.onupgradeneeded = (event: IDBVersionChangeEvent) => {
-      const db = (event.target as IDBOpenDBRequest).result;
-
-      // Questions store
-      if (!db.objectStoreNames.contains(QUESTIONS_STORE)) {
-        const questionsStore = db.createObjectStore(QUESTIONS_STORE, { keyPath: 'id' });
-        questionsStore.createIndex('section', 'section', { unique: false });
-        questionsStore.createIndex('topic', 'topic', { unique: false });
-        questionsStore.createIndex('difficulty', 'difficulty', { unique: false });
-      }
-
-      // TBS store
-      if (!db.objectStoreNames.contains(TBS_STORE)) {
-        const tbsStore = db.createObjectStore(TBS_STORE, { keyPath: 'id' });
-        tbsStore.createIndex('section', 'section', { unique: false });
-      }
-
-      // Metadata store
-      if (!db.objectStoreNames.contains(META_STORE)) {
-        db.createObjectStore(META_STORE, { keyPath: 'key' });
-      }
-    };
+      request.onupgradeneeded = handleUpgrade;
+      
+    } catch (err) {
+      logger.error('IndexedDB open exception:', err);
+      reject(new Error('IndexedDB is not available in this browser mode.'));
+    }
   });
+}
+
+function handleUpgrade(event: IDBVersionChangeEvent) {
+  const db = (event.target as IDBOpenDBRequest).result;
+
+  // Questions store
+  if (!db.objectStoreNames.contains(QUESTIONS_STORE)) {
+    const questionsStore = db.createObjectStore(QUESTIONS_STORE, { keyPath: 'id' });
+    questionsStore.createIndex('section', 'section', { unique: false });
+    questionsStore.createIndex('topic', 'topic', { unique: false });
+    questionsStore.createIndex('difficulty', 'difficulty', { unique: false });
+  }
+
+  // TBS store
+  if (!db.objectStoreNames.contains(TBS_STORE)) {
+    const tbsStore = db.createObjectStore(TBS_STORE, { keyPath: 'id' });
+    tbsStore.createIndex('section', 'section', { unique: false });
+  }
+
+  // Metadata store
+  if (!db.objectStoreNames.contains(META_STORE)) {
+    db.createObjectStore(META_STORE, { keyPath: 'key' });
+  }
 }
 
 /**

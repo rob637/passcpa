@@ -76,6 +76,8 @@ const Flashcards: React.FC = () => {
   const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchParams] = useSearchParams();
+  const fromDailyPlan = searchParams.get('from') === 'dailyplan';
+  const activityId = searchParams.get('activityId');
   const { user, userProfile } = useAuth();
   // const { recordMCQAnswer } = useStudy(); // Unused in original code
 
@@ -387,7 +389,17 @@ const Flashcards: React.FC = () => {
             >
               Review Again
             </button>
-            <button onClick={() => navigate('/study')} className="btn-primary">
+            <button onClick={() => {
+              if (fromDailyPlan && activityId) {
+                const params = new URLSearchParams();
+                params.set('from', 'dailyplan');
+                params.set('activityId', activityId);
+                params.set('completed', 'true');
+                navigate(`/home?${params.toString()}`);
+              } else {
+                navigate('/study');
+              }
+            }} className="btn-primary">
               Done
             </button>
           </div>

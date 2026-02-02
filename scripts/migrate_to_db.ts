@@ -1,26 +1,26 @@
+/**
+ * Database Migration Script
+ * 
+ * SAFE USAGE:
+ *   FIREBASE_ENV=development npx tsx scripts/migrate_to_db.ts
+ *   FIREBASE_ENV=staging npx tsx scripts/migrate_to_db.ts
+ *   FIREBASE_ENV=production npx tsx scripts/migrate_to_db.ts --confirm-production
+ * 
+ * NEVER run without specifying FIREBASE_ENV!
+ */
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, doc, writeBatch, getDoc } from 'firebase/firestore';
+import { collection, doc, writeBatch, getDoc } from 'firebase/firestore';
+import { initializeFirebaseForMigration, logMigrationAction } from './lib/firebase-admin';
 import { ALL_QUESTIONS } from '../src/data/questions/index';
-// Need to handle the relative imports in the data files which might break in a standalone script
-// We will rely on vite-node or tsx to handle the module resolution
 import { LESSONS } from '../src/data/lessons/index';
 import { ALL_TBS } from '../src/data/tbs/index';
 
-const firebaseConfig = {
-  apiKey: process.env.VITE_FIREBASE_API_KEY || "AIzaSyA4YQJ-XyJgQ1-r_xqt4eM-N1Sd05Yv9ak",
-  authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || "passcpa-dev.firebaseapp.com",
-  projectId: process.env.VITE_FIREBASE_PROJECT_ID || "passcpa-dev",
-  storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || "passcpa-dev.firebasestorage.app",
-  messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "592178009498",
-  appId: process.env.VITE_FIREBASE_APP_ID || "1:592178009498:web:c1d5a12b9e3ff9b53a53e7"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// These will be set after initialization
+let db: Awaited<ReturnType<typeof initializeFirebaseForMigration>>['db'];
+let environment: Awaited<ReturnType<typeof initializeFirebaseForMigration>>['environment'];
 
 async function migrateQuestions() {
-    console.log(`Starting migration of ${ALL_QUESTIONS.length} questions...`);
+    logMigrationAction(`Starting migration of ${ALL_QUESTIONS.length} questions...`, environment);
     const batchSize = 400; // Firestore limit is 500
     const chunks = [];
     
@@ -40,12 +40,12 @@ async function migrateQuestions() {
         });
         await batch.commit();
         count += chunk.length;
-        console.log(`Migrated ${count}/${ALL_QUESTIONS.length} questions`);
+        logMigrationAction(`Migrated ${count}/${ALL_QUESTIONS.length} questions`, environment);
     }
 }
 
 async function migrateLessons() {
-    console.log('Starting migration of lessons...');
+    logMigrationAction('Starting migration of lessons...', environment);
     let totalLessons = 0;
     const batch = writeBatch(db);
     let opCount = 0;
@@ -72,7 +72,7 @@ async function migrateLessons() {
 }
 
 async function migrateTBS() {
-     console.log(`Starting migration of ${ALL_TBS.length} simulations...`);
+     logMigrationAction(`Starting migration of ${ALL_TBS.length} simulations...`, environment);
      const batch = writeBatch(db);
      // TBS count is small (26), one batch is fine
      for (const tbs of ALL_TBS) {
@@ -81,16 +81,27 @@ async function migrateTBS() {
          batch.set(ref, data, { merge: true });
      }
      await batch.commit();
-     console.log(`Migrated ${ALL_TBS.length} simulations`);
+     logMigrationAction(`Migrated ${ALL_TBS.length} simulations`, environment);
 }
 
 async function run() {
     try {
+        // Initialize Firebase with safety checks
+        const firebaseInstance = await initializeFirebaseForMigration();
+        db = firebaseInstance.db;
+        environment = firebaseInstance.environment;
+
+        logMigrationAction('Migration starting...', environment, {
+          projectId: firebaseInstance.projectId,
+          questionsCount: ALL_QUESTIONS.length,
+          tbsCount: ALL_TBS.length,
+        });
+
         await migrateTBS();
         // Remaking migrateLessons to be safe
-        let allLessons = [];
+        const allLessons: any[] = [];
         Object.values(LESSONS).forEach(list => allLessons.push(...list));
-        console.log(`Found ${allLessons.length} lessons to migrate`);
+        logMigrationAction(`Found ${allLessons.length} lessons to migrate`, environment);
         
         const lessonChunks = [];
         for(let i=0; i<allLessons.length; i+=400) {
@@ -122,12 +133,12 @@ async function run() {
                 batch.set(ref, data, { merge: true });
             });
             await batch.commit();
-            console.log(`Batch of lessons committed`);
+            logMigrationAction(`Batch of lessons committed`, environment);
         }
 
         await migrateQuestions();
         
-        console.log('Migration Complete');
+        logMigrationAction('Migration Complete', environment);
         process.exit(0);
     } catch (e) {
         console.error(e);

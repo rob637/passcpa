@@ -23,6 +23,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonService';
+import { fetchQuestions } from '../../services/questionService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection, Lesson } from '../../types';
@@ -336,6 +337,7 @@ const LessonViewer: React.FC = () => {
   const [lesson, setLesson] = useState<Lesson | undefined>(undefined);
   const [sectionLessons, setSectionLessons] = useState<Lesson[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasPracticeQuestions, setHasPracticeQuestions] = useState<boolean>(false);
 
   // Get lesson and section lessons from Firestore
   const currentSection = (userProfile?.examSection || lesson?.section || 'FAR') as ExamSection;
@@ -360,6 +362,17 @@ const LessonViewer: React.FC = () => {
           const section = userProfile?.examSection || fetchedLesson?.section || 'FAR';
           const lessons = await fetchLessonsBySection(section as ExamSection, courseId);
           setSectionLessons(lessons);
+
+          // Check if practice questions exist for this lesson
+          if (fetchedLesson) {
+            const questions = await fetchQuestions({
+              section: fetchedLesson.section,
+              subtopic: fetchedLesson.topics?.[fetchedLesson.topics.length - 1],
+              blueprintArea: fetchedLesson.blueprintArea,
+              count: 1
+            });
+            setHasPracticeQuestions(questions.length > 0);
+          }
         }
       } catch (error) {
         logger.error('Error fetching lesson:', error);
@@ -689,26 +702,37 @@ const LessonViewer: React.FC = () => {
 
         {/* Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <Link
-            to={`/practice?section=${lesson.section}${lesson.topics?.[lesson.topics.length - 1] ? `&subtopic=${encodeURIComponent(lesson.topics[lesson.topics.length - 1])}` : lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
+          {hasPracticeQuestions && (
+            <Link
+              to={`/practice?section=${lesson.section}${lesson.topics?.[lesson.topics.length - 1] ? `&subtopic=${encodeURIComponent(lesson.topics[lesson.topics.length - 1])}` : lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
+              className="card p-4 hover:shadow-md transition-shadow group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-success-100 dark:bg-success-900/30 rounded-xl flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-success-600 dark:group-hover:text-success-400">
+                    Practice Questions
+                  </h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Test your knowledge on this topic
+                  </p>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          <Link 
+            to="/ai-tutor" 
+            state={{ 
+              lessonTitle: lesson.title, 
+              lessonId: lesson.id,
+              section: lesson.section,
+              topic: lesson.topics?.[lesson.topics.length - 1] 
+            }}
             className="card p-4 hover:shadow-md transition-shadow group"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-success-100 dark:bg-success-900/30 rounded-xl flex items-center justify-center">
-                <HelpCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
-              </div>
-              <div>
-                <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-success-600 dark:group-hover:text-success-400">
-                  Practice Questions
-                </h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Test your knowledge on this topic
-                </p>
-              </div>
-            </div>
-          </Link>
-
-          <Link to="/ai-tutor" className="card p-4 hover:shadow-md transition-shadow group">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-xl flex items-center justify-center">
                 <Bot className="w-5 h-5 text-violet-600 dark:text-violet-400" />
@@ -757,30 +781,35 @@ const LessonViewer: React.FC = () => {
         </div>
       </div>
 
-      {/* Completion Prompt Banner - appears when user has scrolled through lesson */}
+      {/* Completion Prompt Banner - Floating Pill Design */}
       {isComplete && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-lg p-4 z-30">
-          <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-              </div>
-              <div>
-                <div className="font-medium text-slate-900 dark:text-slate-100">Ready to mark complete?</div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">You&apos;ll earn +10 points</div>
+        <div className="fixed bottom-6 inset-x-0 flex justify-center items-center z-40 px-4 pointer-events-none">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700 p-2 pl-5 pr-2 flex items-center gap-4 max-w-2xl w-full sm:w-auto animate-in fade-in slide-in-from-bottom-4 pointer-events-auto">
+            <div className="flex-1 sm:flex-none">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-success-50 dark:bg-success-900/20 rounded-full flex items-center justify-center shrink-0">
+                  <CheckCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
+                </div>
+                <div>
+                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Lesson Complete!</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Ready for the next one?</div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            
+            <div className="flex items-center gap-2">
               <button 
                 onClick={() => navigate('/lessons')}
-                className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 flex items-center gap-1"
+                className="px-3 py-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
               >
-                <ArrowLeft className="w-4 h-4" />
-                Exit to Lessons
+                Exit
               </button>
-              <button onClick={() => handleComplete(nextLesson ? true : false)} className="btn-primary flex items-center gap-2">
-                <CheckCircle className="w-4 h-4" />
-                Mark Complete {nextLesson ? '& Continue' : ''}
+              <button 
+                onClick={() => handleComplete(nextLesson ? true : false)} 
+                className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2 whitespace-nowrap"
+              >
+                <span>Complete & Continue</span>
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>

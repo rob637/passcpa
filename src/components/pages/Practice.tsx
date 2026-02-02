@@ -599,7 +599,10 @@ const Practice: React.FC = () => {
         );
       } else {
         // Normal fetch with filters
-        const section = (userProfile?.examSection as ExamSection) || 'REG';
+        // Prioritize section from config, fallback to URL param, then profile, then default
+        const urlSection = searchParams.get('section') as ExamSection;
+        const section = config.section || urlSection || (userProfile?.examSection as ExamSection) || 'REG';
+        
         // HR1 filter only applies to REG/TCP sections (tax law updates)
         const applyHr1Filter = is2026 && (section === 'REG' || section === 'TCP');
         
@@ -658,7 +661,9 @@ const Practice: React.FC = () => {
     
     // Auto-start topic-specific practice when coming from a lesson (subtopic or blueprintArea)
     if ((subtopicParam || blueprintAreaParam) && userProfile && !inSession && !loading && mode !== 'weak') {
-      const section = (userProfile.examSection || 'REG') as ExamSection;
+      const urlSection = searchParams.get('section') as ExamSection;
+      const section = urlSection || (userProfile.examSection || 'REG') as ExamSection;
+      
       startSession({
         section,
         mode: 'study',

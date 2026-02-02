@@ -211,11 +211,12 @@ jobs:
       - name: Verify environment in build
         run: |
           echo "🔍 Verifying build targets correct environment..."
-          if grep -r "voraprep-prod" dist/ 2>/dev/null; then
+          # Check for Firebase project ID in config (look for projectId assignments)
+          if grep -rE 'projectId["\s:]*["\s]*voraprep-prod' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Production config found in development build!"
             exit 1
           fi
-          if grep -r "voraprep-staging" dist/ 2>/dev/null; then
+          if grep -rE 'projectId["\s:]*["\s]*voraprep-staging' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Staging config found in development build!"
             exit 1
           fi
@@ -252,11 +253,12 @@ jobs:
       - name: Verify environment in build
         run: |
           echo "🔍 Verifying build targets correct environment..."
-          if grep -r "voraprep-prod" dist/ 2>/dev/null; then
+          # Check for Firebase project ID in config (look for projectId assignments)
+          if grep -rE 'projectId["\s:]*["\s]*voraprep-prod' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Production config found in staging build!"
             exit 1
           fi
-          if grep -r "passcpa-dev" dist/ 2>/dev/null; then
+          if grep -rE 'projectId["\s:]*["\s]*passcpa-dev' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Development config found in staging build!"
             exit 1
           fi
@@ -293,11 +295,12 @@ jobs:
       - name: Verify environment in build
         run: |
           echo "🔍 Verifying build targets correct environment..."
-          if grep -r "passcpa-dev" dist/ 2>/dev/null; then
+          # Check for Firebase project ID in config (look for projectId assignments)
+          if grep -rE 'projectId["\s:]*["\s]*passcpa-dev' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Development config found in production build!"
             exit 1
           fi
-          if grep -r "voraprep-staging" dist/ 2>/dev/null; then
+          if grep -rE 'projectId["\s:]*["\s]*voraprep-staging' dist/assets/*.js 2>/dev/null; then
             echo "❌ ERROR: Staging config found in production build!"
             exit 1
           fi

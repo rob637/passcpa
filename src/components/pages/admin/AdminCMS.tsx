@@ -453,7 +453,8 @@ const AdminCMS: React.FC = () => {
               </div>
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Firebase Project</h4>
-                <p className="text-sm text-gray-600">Project: passcpa-dev</p>
+                <p className="text-sm text-gray-600">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
+                <p className="text-sm text-gray-500">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
               </div>
               
               {/* Reset Account Section */}

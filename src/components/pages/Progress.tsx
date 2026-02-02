@@ -243,9 +243,16 @@ const Progress: React.FC = () => {
               
               // Estimate time per activity
               const sectionTime = sectionActivities.reduce(
-                (sum: number, a: { timeSpentSeconds?: number }) => sum + (a.timeSpentSeconds || 0), 
+                (sum: number, a: { timeSpentSeconds?: number; timeSpent?: number }) => {
+                  if (a.timeSpentSeconds) {
+                    return sum + (a.timeSpentSeconds / 60);
+                  } else if (a.timeSpent) {
+                    return sum + a.timeSpent;
+                  }
+                  return sum;
+                }, 
                 0
-              ) / 60;
+              );
               sectionMinutes += sectionTime;
 
               return {

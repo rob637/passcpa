@@ -49,23 +49,49 @@ const firebaseConfig = {
 // Environment Mismatch Detection
 // ============================================
 
-// Map project IDs to expected environments
-const PROJECT_ENVIRONMENT_MAP = {
-  'passcpa-dev': 'development',
-  'voraprep-staging': 'staging',
-  'voraprep-prod': 'production',
+// Validate that the configured project ID matches the declared environment
+// This catches misconfiguration during builds
+const validateEnvironmentMatch = () => {
+  const projectId = firebaseConfig.projectId;
+  
+  // Expected project ID patterns for each environment
+  const isDevProject = projectId?.includes('-dev');
+  const isStagingProject = projectId?.includes('staging');
+  const isProdProject = projectId?.includes('prod') && !projectId?.includes('-dev');
+  
+  let expectedEnv = null;
+  if (isDevProject) expectedEnv = 'development';
+  else if (isStagingProject) expectedEnv = 'staging';
+  else if (isProdProject) expectedEnv = 'production';
+  
+  if (expectedEnv && expectedEnv !== declaredEnvironment) {
+    console.warn(
+      `⚠️ Environment mismatch detected!\n` +
+      `   Declared: ${declaredEnvironment}\n` +
+      `   Project ID suggests: ${expectedEnv}\n` +
+      `   This could lead to data corruption. Please verify your configuration.`
+    );
+  }
 };
 
-const expectedEnvironment = PROJECT_ENVIRONMENT_MAP[firebaseConfig.projectId];
+validateEnvironmentMatch();
 
-// Warn if there's a mismatch between declared environment and project ID
-if (expectedEnvironment && expectedEnvironment !== declaredEnvironment) {
-  console.warn(
-    `⚠️ Environment mismatch detected!\n` +
-    `   Declared: ${declaredEnvironment}\n` +
-    `   Project ID suggests: ${expectedEnvironment}\n` +
-    `   This could lead to data corruption. Please verify your configuration.`
-  );
+// SAFETY CHECK: Prevent Production Config on Development URLs
+// This prevents "npm run build" (prod default) from being accidentally deployed to dev
+if (typeof window !== 'undefined') {
+  const hostname = window.location.hostname;
+  const isDevUrl = hostname.includes('passcpa-dev') || hostname.includes('localhost') || hostname.includes('127.0.0.1');
+  const isProdConfig = firebaseConfig.projectId === 'voraprep-prod';
+
+  if (isDevUrl && isProdConfig) {
+    const errorMsg = 'CRITICAL CONFIG ERROR: Production database connection detected on Development URL. \n\n' +
+      'This usually happens when you run "npm run build" (defaults to Prod) instead of "npm run build:dev".\n\n' +
+      'Please rebuild with: npm run build:dev';
+    
+    // Stop execution and alert user
+    alert(errorMsg);
+    throw new Error(errorMsg);
+  }
 }
 
 // Log environment info in non-production

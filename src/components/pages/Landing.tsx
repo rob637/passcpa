@@ -74,8 +74,8 @@ const Landing = () => {
 
   // Comprehensive competitor comparison data - focused on true differentiators
   const comparisonData = [
-    { feature: 'Annual Price', voraprep: '$99/yr', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
-    { feature: 'Price per Month', voraprep: '$8.25', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
+    { feature: 'Annual Price', voraprep: 'Free (Beta)', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
+    { feature: 'Price per Month', voraprep: '$0', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
     { feature: 'AI Tutor Included', voraprep: true, becker: 'Extra $$$', roger: false, surgent: 'Limited', highlight: true },
     { feature: 'Learning Style', voraprep: 'Active Practice', becker: 'Passive Video', roger: 'Passive Video', surgent: 'Passive Video', highlight: true },
     { feature: '2025 & 2026 Blueprint', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
@@ -99,9 +99,9 @@ const Landing = () => {
   const whyVoraPrep = [
     {
       icon: DollarSign,
-      title: '97% Cheaper',
-      description: 'Why pay $3,500+ when you can get the same results for $99/year? We believe quality education shouldn\'t cost a fortune.',
-      stat: '$99/yr',
+      title: '100% Free (Beta)',
+      description: 'Get full access to all features during our public beta. No credit card required, valid through the entire beta period.',
+      stat: '$0/yr',
       color: 'emerald'
     },
     {
@@ -174,7 +174,7 @@ const Landing = () => {
     { value: 2900, label: 'Practice Questions', suffix: '+' },
     { value: 950, label: 'Lessons', suffix: '+' },
     { value: 24, label: 'Vory AI', suffix: '/7' },
-    { value: 97, label: 'Savings vs Becker', suffix: '%' },
+    { value: 100, label: 'Free vs Becker', suffix: '%' },
   ];
 
   return (
@@ -258,7 +258,7 @@ const Landing = () => {
           
           <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
-            <span className="font-semibold text-emerald-600"> 97% cheaper</span> than Becker.
+            <span className="font-semibold text-emerald-600"> 100% Free</span> during Beta.
             <br className="hidden md:block" />
             2,900+ questions. Adaptive learning. Zero credit card required.
           </p>

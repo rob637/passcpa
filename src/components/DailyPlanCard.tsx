@@ -364,6 +364,15 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               </div>
             </div>
           </div>
+        ) : dailyProgress < 100 ? (
+          <div 
+            className="p-4 text-center bg-gradient-to-r from-indigo-500 to-indigo-600 cursor-pointer hover:from-indigo-600 hover:to-indigo-700 transition-all"
+            onClick={() => navigate('/study')}
+          >
+            <Target className="w-8 h-8 text-white mx-auto mb-2" />
+            <p className="text-white font-medium">Daily plan complete! 🎯</p>
+            <p className="text-white/80 text-sm">Continue studying to hit your daily goal</p>
+          </div>
         ) : (
           <div className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600">
             <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />

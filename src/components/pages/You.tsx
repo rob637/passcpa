@@ -21,7 +21,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
-import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
+import { format, subDays, eachDayOfInterval, differenceInDays, startOfWeek, endOfWeek, isAfter } from 'date-fns';
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
@@ -135,10 +135,13 @@ const You: React.FC = () => {
     const loadData = async () => {
       setLoading(true);
       try {
-        // Get weekly activity (last 7 days for the chart)
+        // Get weekly activity (Current Week: Mon-Sun)
+        const startOfCurrentWeek = startOfWeek(new Date(), { weekStartsOn: 1 }); // Monday
+        const endOfCurrentWeek = endOfWeek(new Date(), { weekStartsOn: 1 }); // Sunday
+        
         const days = eachDayOfInterval({
-          start: subDays(new Date(), 6),
-          end: new Date(),
+          start: startOfCurrentWeek,
+          end: endOfCurrentWeek,
         });
 
         // Track section-specific stats
@@ -148,6 +151,11 @@ const You: React.FC = () => {
 
         const dailyData = await Promise.all(
           days.map(async (date) => {
+            // Don't query future dates
+            if (isAfter(date, new Date())) {
+              return { date, questions: 0 };
+            }
+
             const dateKey = format(date, 'yyyy-MM-dd');
             const logRef = doc(db, 'users', user.uid, 'daily_log', dateKey);
             const logSnap = await getDoc(logRef);
@@ -171,11 +179,18 @@ const You: React.FC = () => {
               sectionQuestions += mcqActivities.length;
               sectionCorrect += correctMcqs;
               
-              // Estimate time per activity (activities store timeSpentSeconds)
+              // Estimate time per activity (activities store timeSpentSeconds for MCQs, timeSpent (mins) for others)
               const sectionTime = sectionActivities.reduce(
-                (sum: number, a: { timeSpentSeconds?: number }) => sum + (a.timeSpentSeconds || 0), 
+                (sum: number, a: { timeSpentSeconds?: number; timeSpent?: number }) => {
+                  if (a.timeSpentSeconds) {
+                    return sum + (a.timeSpentSeconds / 60);
+                  } else if (a.timeSpent) {
+                    return sum + a.timeSpent;
+                  }
+                  return sum;
+                }, 
                 0
-              ) / 60; // Convert to minutes
+              );
               sectionMinutes += sectionTime;
 
               return {
@@ -349,7 +364,11 @@ const You: React.FC = () => {
             <span className="text-xs text-slate-500">Accuracy</span>
           </div>
           <div className="text-center">
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{Math.round(overallStats.studyMinutes / 60)}h</div>
+            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+              {overallStats.studyMinutes < 60 
+                ? `${overallStats.studyMinutes}m` 
+                : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
+            </div>
             <span className="text-xs text-slate-500">Study Time</span>
           </div>
         </div>

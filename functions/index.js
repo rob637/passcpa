@@ -21,6 +21,8 @@ const messaging = admin.messaging();
 // Get API key from: https://resend.com/api-keys
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
+// Email to receive admin notifications (e.g. new signups)
+const ADMIN_EMAIL = 'rob@sagecg.com';
 
 let resend = null;
 if (RESEND_API_KEY) {
@@ -35,6 +37,7 @@ if (RESEND_API_KEY) {
 exports.sendCustomPasswordReset = onCall({
   cors: true, // Allow all origins for this public function
   enforceAppCheck: false, // Not requiring app check for password reset
+  secrets: ['RESEND_API_KEY'],
 }, async (request) => {
   const { email } = request.data;
   
@@ -172,9 +175,14 @@ exports.sendDailyReminders = onSchedule({
   timeoutSeconds: 60,
 }, async (event) => {
   const now = new Date();
-  const currentHour = now.getHours().toString().padStart(2, '0');
+  // Get hour in NY timezone to match the scheduler and likely user base
+  const currentHour = new Intl.DateTimeFormat('en-US', { 
+    timeZone: 'America/New_York', 
+    hour: '2-digit', 
+    hourCycle: 'h23' 
+  }).format(now);
   
-  console.log(`Checking for daily reminders at hour ${currentHour}`);
+  console.log(`Checking for daily reminders at hour ${currentHour} (NY time)`);
   
   try {
     // Find users with reminder enabled
@@ -269,6 +277,7 @@ exports.sendWeeklyReports = onSchedule({
   timeZone: 'America/New_York',
   memory: '512MiB',
   timeoutSeconds: 120,
+  secrets: ['RESEND_API_KEY'],
 }, async (event) => {
   if (!resend) {
     console.error('Email not configured (set RESEND_API_KEY)');
@@ -353,6 +362,7 @@ exports.onFcmTokenUpdate = onDocumentUpdated({
 exports.sendWelcomeEmail = onDocumentCreated({
   document: 'users/{userId}',
   memory: '256MiB',
+  secrets: ['RESEND_API_KEY'],
 }, async (event) => {
   if (!resend) {
     console.log('Email not configured, skipping welcome email');
@@ -391,6 +401,7 @@ exports.sendWelcomeEmail = onDocumentCreated({
 exports.sendWaitlistConfirmation = onDocumentCreated({
   document: 'waitlist/{entryId}',
   memory: '256MiB',
+  secrets: ['RESEND_API_KEY'],
 }, async (event) => {
   if (!resend) {
     console.log('Email not configured, skipping waitlist email');
@@ -415,6 +426,15 @@ exports.sendWaitlistConfirmation = onDocumentCreated({
     
     if (error) throw new Error(error.message);
     console.log(`Waitlist confirmation sent to ${email}`);
+
+    // Notify Admin
+    await resend.emails.send({
+      from: FROM_EMAIL,
+      to: ADMIN_EMAIL,
+      subject: `🚀 New Beta Signup: ${email}`,
+      html: `<p><strong>${email}</strong> just signed up for the VoraPrep Beta waitlist.</p>`,
+    });
+
   } catch (error) {
     console.error('Error sending waitlist email:', error);
   }
@@ -765,7 +785,7 @@ function generateWaitlistEmail(email) {
     <div style="margin: 20px 0;">
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
-        <span style="color: #334155;">2,500+ practice questions across all CPA sections</span>
+        <span style="color: #334155;">2,900+ practice questions across all CPA sections</span>
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
@@ -773,7 +793,7 @@ function generateWaitlistEmail(email) {
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
-        <span style="color: #334155;">300+ lessons covering FAR, AUD, REG, BAR, ISC, TCP</span>
+        <span style="color: #334155;">950+ lessons covering FAR, AUD, REG, BAR, ISC, TCP</span>
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
@@ -788,7 +808,7 @@ function generateWaitlistEmail(email) {
     <div style="background: #fef3c7; border: 1px solid #fcd34d; padding: 20px; border-radius: 12px; margin: 25px 0;">
       <div style="font-weight: 600; color: #92400e; margin-bottom: 5px;">⚡ Limited Time</div>
       <div style="color: #78350f; font-size: 14px;">
-        Beta users who sign up now will receive <strong>Founding Member</strong> pricing ($199 lifetime access) when we launch paid plans in Q3 2026.
+        Beta users will receive special <strong>Founding Member</strong> benefits (and lowest potential pricing) for life when we launch paid plans.
       </div>
     </div>
     

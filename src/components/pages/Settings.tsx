@@ -164,9 +164,16 @@ const Settings: React.FC = () => {
       const status = await getCacheStatus();
       setCacheStatus(status);
       alert(`Successfully cached ${questions.length} questions for offline use!`);
-    } catch (error) {
+    } catch (error: any) {
       logger.error('Error downloading for offline:', error);
-      alert('Failed to download content. Please try again.');
+      // Provide more helpful error messages
+      if (error?.message?.includes('IndexedDB is not available')) {
+        alert('Offline storage is not available in private/incognito mode. Please use a regular browser window.');
+      } else if (error?.message?.includes('corrupted')) {
+        alert('Your offline storage appears to be corrupted. Please go to your browser settings, clear site data for this site, and try again.');
+      } else {
+        alert('Failed to download content. Please try again or check your browser settings.');
+      }
     } finally {
       setIsDownloading(false);
     }

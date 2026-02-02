@@ -52,6 +52,7 @@ export const ROUTE_TITLES: Record<string, string> = {
   '/login': 'Sign In',
   '/register': 'Create Account',
   '/forgot-password': 'Reset Password',
+  '/verify-email': 'Verify Email',
   '/admin/cms': 'Admin CMS',
   '/admin/seed': 'Admin Seed',
 };

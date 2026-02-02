@@ -371,40 +371,40 @@
 
 > **Note:** Firebase Auth emails can be customized in Firebase Console → Authentication → Templates
 
-#### Custom Emails (Gmail/Nodemailer) - Current Setup
+#### Custom Emails (Resend) - Current Setup
 | Email Type | Trigger | Status |
 |------------|---------|--------|
 | Welcome email | New user signup | ✅ Cloud Function ready |
 | Waitlist confirmation | Waitlist signup | ✅ Cloud Function ready |
 | Weekly progress report | Sunday 9am | ✅ Cloud Function ready |
+| Password reset | User request | ✅ Custom branded email |
 
 **Configuration:**
 ```bash
-firebase functions:secrets:set GMAIL_USER    # e.g., noreply@voraprep.com
-firebase functions:secrets:set GMAIL_APP_PASSWORD  # 16-char app password
+firebase functions:secrets:set RESEND_API_KEY --project passcpa-dev
+firebase functions:secrets:set RESEND_API_KEY --project voraprep-staging
+firebase functions:secrets:set RESEND_API_KEY --project voraprep-prod
 ```
 
-**Limits:** 500 emails/day (Gmail) or 2,000/day (Google Workspace)
+**Limits:** 3,000 emails/month (Resend free tier)
 
-#### Future: SendGrid Migration (When Scaling Past 500 Users)
+**DNS Setup (Cloudflare):**
+- Add SPF, DKIM records from Resend dashboard
+- Domain: voraprep.com
+
+#### Future: Scaling Past 3,000 Emails/Month
 | Tier | Cost | Emails/Month | When to Use |
 |------|------|--------------|-------------|
-| **Gmail (Current)** | Free | 15,000 | Beta (0-500 users) |
-| **SendGrid Free** | Free | 100/day (3K/mo) | Transitional |
-| **SendGrid Essentials** | $19.95/mo | 50,000 | 500-2,000 users |
-| **SendGrid Pro** | $89.95/mo | 100,000 | 2,000+ users |
-
-**Migration Path:**
-1. ✅ **Now (Beta):** Gmail/Nodemailer - zero cost, no setup
-2. **Q3 2026 (Soft Launch):** Evaluate if 500/day is sufficient
-3. **When needed:** Switch to SendGrid (code already exists, just swap credentials)
+| **Resend Free (Current)** | Free | 3,000 | Beta (0-500 users) |
+| **Resend Pro** | $20/mo | 50,000 | 500-2,000 users |
+| **Resend Enterprise** | Custom | Unlimited | 2,000+ users |
 
 ### 1.6 Security Hardening
-- [ ] **Authentication**
-  - Rate limiting on auth endpoints
-  - Password strength requirements
-  - Account lockout after failed attempts
-  - Email verification required
+- [x] **Authentication**
+  - Rate limiting on auth endpoints (Firebase built-in)
+  - Password strength requirements ✅ Frontend validation
+  - Account lockout after failed attempts (Firebase built-in)
+  - Email verification required ✅ Implemented
   
 - [ ] **Admin Security**
   - [x] Role-based access control (RBAC) - Admin emails hardcoded, Firestore rules enforce

@@ -60,7 +60,7 @@ describe('subscription service', () => {
       expect(SUBSCRIPTION_PLANS.monthly.price).toBe(12.99);
       expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(29.99);
       expect(SUBSCRIPTION_PLANS.annual.price).toBe(99);
-      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(199);
+      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(399);
     });
 
     it('should have correct intervals for each tier', () => {

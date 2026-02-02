@@ -189,7 +189,7 @@ describe('Lesson difficulty levels', () => {
   it('lessons have valid difficulty levels', async () => {
     const { getAllLessons } = await import('../../../data/lessons');
     const lessons = getAllLessons();
-    const validDifficulties = ['beginner', 'easy', 'intermediate', 'medium', 'moderate', 'advanced', 'hard', 'tough'];
+    const validDifficulties = ['beginner', 'easy', 'intermediate', 'medium', 'moderate', 'advanced', 'hard', 'tough', 'foundational'];
     
     lessons.forEach(lesson => {
       if (lesson.difficulty) {

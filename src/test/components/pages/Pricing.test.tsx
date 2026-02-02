@@ -1,47 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-
-// Mock subscription service
-vi.mock('../../../services/subscription', () => ({
-  SUBSCRIPTION_PLANS: {
-    free: {
-      tier: 'free',
-      name: 'Free',
-      price: 0,
-      features: ['Basic features'],
-    },
-    monthly: {
-      tier: 'monthly',
-      name: 'Monthly',
-      price: 14.99,
-      features: ['All features'],
-    },
-    quarterly: {
-      tier: 'quarterly',
-      name: 'Quarterly',
-      price: 34.99,
-      features: ['All features', 'Save 23%'],
-    },
-    annual: {
-      tier: 'annual',
-      name: 'Annual',
-      price: 99,
-      features: ['All features', 'Best value'],
-    },
-    lifetime: {
-      tier: 'lifetime',
-      name: 'Lifetime',
-      price: 299,
-      features: ['All features forever'],
-    },
-  },
-  useSubscription: vi.fn(() => ({
-    subscription: null,
-    loading: false,
-  })),
-  IS_BETA_PERIOD: true,
-}));
 
 // Mock document title hook
 vi.mock('../../../hooks/useDocumentTitle', () => ({
@@ -49,7 +8,6 @@ vi.mock('../../../hooks/useDocumentTitle', () => ({
 }));
 
 import Pricing from '../../../components/pages/Pricing';
-import { useSubscription } from '../../../services/subscription';
 
 const renderWithRouter = (ui: React.ReactElement) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>);
@@ -58,153 +16,141 @@ const renderWithRouter = (ui: React.ReactElement) => {
 describe('Pricing', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    (useSubscription as ReturnType<typeof vi.fn>).mockReturnValue({
-      subscription: null,
-      loading: false,
-    });
   });
 
   describe('rendering', () => {
     it('should render the pricing page', () => {
       renderWithRouter(<Pricing />);
-
-      // Should show page heading
       expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-    });
-
-    it('should show loading state when subscription is loading', () => {
-      (useSubscription as ReturnType<typeof vi.fn>).mockReturnValue({
-        subscription: null,
-        loading: true,
-      });
-
-      renderWithRouter(<Pricing />);
-
-      // Should have loading spinner
-      expect(document.querySelector('.animate-spin')).toBeInTheDocument();
     });
 
     it('should render navigation with logo', () => {
       renderWithRouter(<Pricing />);
-
       const logos = screen.getAllByAltText('VoraPrep');
       expect(logos.length).toBeGreaterThan(0);
     });
 
     it('should have links to features and login', () => {
       renderWithRouter(<Pricing />);
-
-      // Check for navigation links (may have text or just be present)
       const links = screen.getAllByRole('link');
       expect(links.length).toBeGreaterThan(0);
     });
   });
 
-  describe('plan display', () => {
-    it('should display free plan', () => {
+  describe('beta messaging', () => {
+    it('should display beta badge', () => {
       renderWithRouter(<Pricing />);
-
-      expect(screen.getByText('Free')).toBeInTheDocument();
+      expect(screen.getByText(/BETA.*100% FREE/)).toBeInTheDocument();
     });
 
-    it('should display annual plan', () => {
+    it('should display $0 price', () => {
       renderWithRouter(<Pricing />);
-
-      const annualElements = screen.getAllByText('Annual');
-      expect(annualElements.length).toBeGreaterThan(0);
+      expect(screen.getByText('$0')).toBeInTheDocument();
     });
 
-    it('should show beta message during beta period', () => {
+    it('should show "Free During Beta" heading', () => {
       renderWithRouter(<Pricing />);
-
-      // During beta, free tier should be highlighted
-      const startFreeButtons = screen.getAllByText(/Start Free|Coming/);
-      expect(startFreeButtons.length).toBeGreaterThan(0);
+      expect(screen.getByText('Free During Beta')).toBeInTheDocument();
     });
 
-    it('should display pricing amounts', () => {
+    it('should mention no credit card required', () => {
       renderWithRouter(<Pricing />);
-
-      // Free tier should show $0
-      expect(screen.getByText('$0') || screen.getByText(/free/i)).toBeInTheDocument();
-    });
-  });
-
-  describe('billing interval toggle', () => {
-    it('should have billing interval toggle', () => {
-      renderWithRouter(<Pricing />);
-
-      // Look for monthly/annual toggle - use getAllByText since there are multiple matches
-      const monthlyElements = screen.queryAllByText(/monthly/i);
-      const annualElements = screen.queryAllByText(/annual/i);
-      
-      expect(monthlyElements.length > 0 || annualElements.length > 0).toBe(true);
-    });
-  });
-
-  describe('current plan indication', () => {
-    it('should indicate current plan for subscribed users', () => {
-      (useSubscription as ReturnType<typeof vi.fn>).mockReturnValue({
-        subscription: { tier: 'free' },
-        loading: false,
-      });
-
-      renderWithRouter(<Pricing />);
-
-      // The CTA for free should change when user has free subscription
-      expect(document.body).toBeInTheDocument();
-    });
-
-    it('should disable paid plans during beta', () => {
-      renderWithRouter(<Pricing />);
-
-      // Paid plans should show "Coming Q3 2026" during beta
-      const comingSoonButtons = screen.getAllByText(/Coming Q3 2026/);
-      expect(comingSoonButtons.length).toBeGreaterThan(0);
-    });
-  });
-
-  describe('plan selection', () => {
-    it('should show alert when selecting paid plan during beta', () => {
-      const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
-      
-      renderWithRouter(<Pricing />);
-
-      // Try to click a plan card (if not disabled)
-      const selectButtons = screen.getAllByRole('button');
-      const enabledButton = selectButtons.find(btn => !btn.hasAttribute('disabled'));
-      
-      if (enabledButton) {
-        fireEvent.click(enabledButton);
-      }
-
-      // Clean up
-      alertSpy.mockRestore();
+      const noCardText = screen.getAllByText(/No credit card/i);
+      expect(noCardText.length).toBeGreaterThan(0);
     });
   });
 
   describe('features display', () => {
+    it('should display CPA exam features', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/All 6 CPA exam sections/)).toBeInTheDocument();
+      expect(screen.getByText(/practice questions/i)).toBeInTheDocument();
+    });
+
+    it('should display AI tutor feature', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/AI tutor.*Vory/i)).toBeInTheDocument();
+    });
+
     it('should display feature checkmarks', () => {
       renderWithRouter(<Pricing />);
-
-      // Plans typically have check marks for features
       const checkmarks = document.querySelectorAll('svg');
       expect(checkmarks.length).toBeGreaterThan(0);
     });
   });
 
-  describe('responsive design', () => {
-    it('should render on mobile viewport', () => {
-      // Simulate mobile viewport
-      Object.defineProperty(window, 'innerWidth', {
-        writable: true,
-        configurable: true,
-        value: 375,
-      });
-
+  describe('why free section', () => {
+    it('should explain why VoraPrep is free', () => {
       renderWithRouter(<Pricing />);
+      expect(screen.getByText(/Why is VoraPrep free/)).toBeInTheDocument();
+    });
 
-      expect(document.body).toBeInTheDocument();
+    it('should mention beta users get to keep access', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/beta users keep their access/i)).toBeInTheDocument();
+    });
+  });
+
+  describe('coming soon exams', () => {
+    it('should display coming soon section', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/More Exams Coming Soon/)).toBeInTheDocument();
+    });
+
+    it('should list CMA exam', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('CMA')).toBeInTheDocument();
+      expect(screen.getByText(/Certified Management Accountant/)).toBeInTheDocument();
+    });
+
+    it('should list EA exam', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('EA')).toBeInTheDocument();
+      expect(screen.getByText(/Enrolled Agent/)).toBeInTheDocument();
+    });
+
+    it('should list CIA exam', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('CIA')).toBeInTheDocument();
+      expect(screen.getByText(/Certified Internal Auditor/)).toBeInTheDocument();
+    });
+  });
+
+  describe('FAQ section', () => {
+    it('should have FAQ section', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('Questions?')).toBeInTheDocument();
+    });
+
+    it('should answer "Is it really free?"', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/Is it really free/)).toBeInTheDocument();
+    });
+
+    it('should compare to Becker', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText(/Becker costs/)).toBeInTheDocument();
+    });
+  });
+
+  describe('contact section', () => {
+    it('should display support email', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('support@voraprep.com')).toBeInTheDocument();
+    });
+  });
+
+  describe('CTA buttons', () => {
+    it('should have Start Free Today button', () => {
+      renderWithRouter(<Pricing />);
+      expect(screen.getByText('Start Free Today')).toBeInTheDocument();
+    });
+
+    it('should link to register page', () => {
+      renderWithRouter(<Pricing />);
+      const registerLinks = screen.getAllByRole('link', { name: /Start Free/i });
+      expect(registerLinks.length).toBeGreaterThan(0);
+      expect(registerLinks[0]).toHaveAttribute('href', '/register');
     });
   });
 });

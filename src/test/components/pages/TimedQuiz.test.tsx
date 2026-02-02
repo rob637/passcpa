@@ -129,9 +129,9 @@ describe('TimedQuiz Component', () => {
       expect(screen.getByText('Start Quiz')).toBeInTheDocument();
     });
 
-    it('shows Back to Study button', async () => {
+    it('shows Back to Home button', async () => {
       await renderTimedQuiz();
-      expect(screen.getByText('Back to Study')).toBeInTheDocument();
+      expect(screen.getByText('Back to Home')).toBeInTheDocument();
     });
 
     it('displays estimated time for quick mode (15 min)', async () => {
@@ -181,9 +181,9 @@ describe('TimedQuiz Component', () => {
   });
 
   describe('Back Navigation', () => {
-    it('Back to Study button is present', async () => {
+    it('Back to Home button is present', async () => {
       await renderTimedQuiz();
-      const backButton = screen.getByText('Back to Study');
+      const backButton = screen.getByText('Back to Home');
       expect(backButton).toBeInTheDocument();
     });
   });

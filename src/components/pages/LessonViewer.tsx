@@ -432,7 +432,13 @@ const LessonViewer: React.FC = () => {
           logger.error('Failed to save daily plan completion:', e);
         }
       }
-      navigate('/home');
+      
+      // Navigate back with completion signal for DailyPlanCard
+      const params = new URLSearchParams();
+      params.set('from', 'dailyplan');
+      if (activityId) params.set('activityId', activityId);
+      params.set('completed', 'true');
+      navigate(`/home?${params.toString()}`);
       return;
     }
     

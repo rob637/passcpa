@@ -1060,7 +1060,13 @@ const TBSSimulator: React.FC = () => {
                 <div className="flex items-center gap-3">
                   {submitted && fromDailyPlan && (
                     <button
-                      onClick={() => navigate('/home')}
+                      onClick={() => {
+                        const params = new URLSearchParams();
+                        params.set('from', 'dailyplan');
+                        if (activityId) params.set('activityId', activityId);
+                        params.set('completed', 'true');
+                        navigate(`/home?${params.toString()}`);
+                      }}
                       className="btn-primary flex items-center gap-2 px-6"
                     >
                       Back to Daily Plan

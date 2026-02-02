@@ -11,9 +11,9 @@ env:
 
 jobs:
   # ============================================
-  # Build and Test (runs on all branches)
+  # Lint and Test (runs on all branches)
   # ============================================
-  build-and-test:
+  lint-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,22 +36,155 @@ jobs:
       - name: Unit Tests
         run: npm run test:run
 
-      - name: Build
-        run: npm run build
+  # ============================================
+  # Build for Development (develop branch)
+  # ============================================
+  build-development:
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/develop' || (github.event_name == 'pull_request' && github.base_ref == 'develop')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for Development
+        run: npm run build:dev
         env:
-          # Use appropriate secrets based on target environment
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
-          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
-          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
-          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
-          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
-          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_ENVIRONMENT: development
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_DEV_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_DEV_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_DEV_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_DEV_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_DEV_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_DEV_APP_ID }}
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist
+          name: dist-development
+          path: dist/
+          retention-days: 7
+
+  # ============================================
+  # Build for Staging (staging branch)
+  # ============================================
+  build-staging:
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/staging' || (github.event_name == 'pull_request' && github.base_ref == 'staging')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for Staging
+        run: npm run build:staging
+        env:
+          VITE_ENVIRONMENT: staging
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_STAGING_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_STAGING_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_STAGING_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STAGING_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_STAGING_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_STAGING_APP_ID }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-staging
+          path: dist/
+          retention-days: 7
+
+  # ============================================
+  # Build for Production (main branch)
+  # ============================================
+  build-production:
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for Production
+        run: npm run build:prod
+        env:
+          VITE_ENVIRONMENT: production
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_PROD_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_PROD_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROD_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_PROD_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_PROD_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_PROD_APP_ID }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-production
+          path: dist/
+          retention-days: 7
+
+  # ============================================
+  # Build for PR Previews (to dev environment)
+  # ============================================
+  build-preview:
+    needs: lint-and-test
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for Preview (Dev Environment)
+        run: npm run build:dev
+        env:
+          VITE_ENVIRONMENT: development
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_DEV_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_DEV_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_DEV_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_DEV_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_DEV_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_DEV_APP_ID }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-preview
           path: dist/
           retention-days: 7
 
@@ -59,7 +192,7 @@ jobs:
   # Deploy to Development (develop branch)
   # ============================================
   deploy-development:
-    needs: build-and-test
+    needs: build-development
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     environment:
@@ -72,8 +205,21 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist-development
           path: dist/
+
+      - name: Verify environment in build
+        run: |
+          echo "🔍 Verifying build targets correct environment..."
+          if grep -r "voraprep-prod" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Production config found in development build!"
+            exit 1
+          fi
+          if grep -r "voraprep-staging" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Staging config found in development build!"
+            exit 1
+          fi
+          echo "✅ Build verified for development environment"
 
       - name: Deploy to Firebase (Development)
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -87,7 +233,7 @@ jobs:
   # Deploy to Staging (staging branch)
   # ============================================
   deploy-staging:
-    needs: build-and-test
+    needs: build-staging
     if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
     runs-on: ubuntu-latest
     environment:
@@ -100,8 +246,21 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist-staging
           path: dist/
+
+      - name: Verify environment in build
+        run: |
+          echo "🔍 Verifying build targets correct environment..."
+          if grep -r "voraprep-prod" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Production config found in staging build!"
+            exit 1
+          fi
+          if grep -r "passcpa-dev" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Development config found in staging build!"
+            exit 1
+          fi
+          echo "✅ Build verified for staging environment"
 
       - name: Deploy to Firebase (Staging)
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -115,7 +274,7 @@ jobs:
   # Deploy to Production (main branch)
   # ============================================
   deploy-production:
-    needs: build-and-test
+    needs: build-production
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
@@ -128,8 +287,21 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist-production
           path: dist/
+
+      - name: Verify environment in build
+        run: |
+          echo "🔍 Verifying build targets correct environment..."
+          if grep -r "passcpa-dev" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Development config found in production build!"
+            exit 1
+          fi
+          if grep -r "voraprep-staging" dist/ 2>/dev/null; then
+            echo "❌ ERROR: Staging config found in production build!"
+            exit 1
+          fi
+          echo "✅ Build verified for production environment"
 
       - name: Deploy to Firebase (Production)
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -143,7 +315,7 @@ jobs:
   # PR Preview Deployments
   # ============================================
   deploy-preview:
-    needs: build-and-test
+    needs: build-preview
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
@@ -153,7 +325,7 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist-preview
           path: dist/
 
       - name: Deploy Preview

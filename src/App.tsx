@@ -14,6 +14,7 @@ import { ToastProvider } from './components/common/Toast';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider } from './providers/CourseProvider';
+import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
 // ============================================
 // LAZY LOADED PAGES - Code Splitting
@@ -24,6 +25,7 @@ import { CourseProvider } from './providers/CourseProvider';
 const Login = lazy(() => import('./components/pages/auth/Login'));
 const Register = lazy(() => import('./components/pages/auth/Register'));
 const ForgotPassword = lazy(() => import('./components/pages/auth/ForgotPassword'));
+const VerifyEmail = lazy(() => import('./components/pages/auth/VerifyEmail'));
 
 // Core Pages (most used)
 const Home = lazy(() => import('./components/pages/Home'));
@@ -47,6 +49,7 @@ const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
 const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
 const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
+const Community = lazy(() => import('./components/pages/Community'));
 
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
@@ -157,6 +160,7 @@ function App() {
           <TourProvider>
             <ToastProvider>
               <ScrollToTop />
+              <EnvironmentIndicator />
               <Suspense fallback={<FullPageLoader />}>
                 <Routes>
                   {/* Public Auth Routes */}
@@ -189,6 +193,14 @@ function App() {
                           <ForgotPassword />
                         </SuspensePage>
                       </PublicRoute>
+                    }
+                  />
+                  <Route
+                    path="/verify-email"
+                    element={
+                      <SuspensePage>
+                        <VerifyEmail />
+                      </SuspensePage>
                     }
                   />
                 </Route>
@@ -435,6 +447,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Progress />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/community"
+                    element={
+                      <SuspensePage>
+                        <Community />
                       </SuspensePage>
                     }
                   />

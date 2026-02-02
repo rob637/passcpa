@@ -53,7 +53,7 @@ const Register = () => {
     try {
       const displayName = `${formData.firstName} ${formData.lastName}`.trim();
       await signUp(formData.email, formData.password, displayName);
-      navigate('/onboarding');
+      navigate('/verify-email');
     } catch (err: any) {
       logger.error('Registration error:', err);
       if (err.code === 'auth/email-already-in-use') {

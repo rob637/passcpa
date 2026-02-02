@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   BookOpen,
   CheckCircle,
@@ -11,6 +11,7 @@ import {
   Search,
   GraduationCap,
   Layout,
+  Compass,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -125,14 +126,19 @@ const Lessons: React.FC = () => {
   const { userProfile } = useAuth();
   const { getLessonProgress } = useStudy();
   const { courseId } = useCourse();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
 
-  // Cast to ExamSection if needed, or rely on string compatibility with fallback
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  // Support switching between user's exam section and PREP
+  const userSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  const viewingSection = searchParams.get('section') === 'PREP' ? 'PREP' as ExamSection : userSection;
+  const isViewingPrep = viewingSection === 'PREP';
+  
+  const currentSection = viewingSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
   // Fetch lessons from Firestore
@@ -216,6 +222,34 @@ const Lessons: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+      {/* Section Toggle - Switch between exam section and PREP */}
+      <div className="flex gap-2 mb-4">
+        <button
+          onClick={() => setSearchParams({})}
+          className={clsx(
+            'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors',
+            !isViewingPrep
+              ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
+              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
+          )}
+        >
+          <BookOpen className="w-4 h-4" />
+          {CPA_SECTIONS[userSection]?.shortName || userSection} Lessons
+        </button>
+        <button
+          onClick={() => setSearchParams({ section: 'PREP' })}
+          className={clsx(
+            'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors',
+            isViewingPrep
+              ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300'
+              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
+          )}
+        >
+          <Compass className="w-4 h-4" />
+          Exam Strategy
+        </button>
+      </div>
+
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
@@ -224,20 +258,26 @@ const Lessons: React.FC = () => {
               className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
               style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
             >
-              {sectionInfo?.shortName || currentSection}
+              {isViewingPrep ? <Compass className="w-6 h-6" /> : (sectionInfo?.shortName || currentSection)}
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Lessons</h1>
-              <p className="text-slate-600 dark:text-slate-400">{sectionInfo?.name || currentSection}</p>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                {isViewingPrep ? 'Exam Strategy' : 'Lessons'}
+              </h1>
+              <p className="text-slate-600 dark:text-slate-400">
+                {isViewingPrep ? 'Tips, tactics & mental game for the CPA exam' : (sectionInfo?.name || currentSection)}
+              </p>
             </div>
           </div>
-          <Link 
-            to="/lessons/matrix" 
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
-          >
-            <Layout className="w-4 h-4" />
-            <span className="hidden sm:inline">Study Guide</span>
-          </Link>
+          {!isViewingPrep && (
+            <Link 
+              to="/lessons/matrix" 
+              className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
+            >
+              <Layout className="w-4 h-4" />
+              <span className="hidden sm:inline">Study Guide</span>
+            </Link>
+          )}
         </div>
 
         {/* Stats */}

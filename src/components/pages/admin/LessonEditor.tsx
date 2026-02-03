@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 // Admin email whitelist
-const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com', 'rob@leaderreps.com'];
+const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
 
 const EXAM_SECTIONS: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
 

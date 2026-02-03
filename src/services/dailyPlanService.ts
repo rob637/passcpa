@@ -7,14 +7,20 @@
  * - Progress gaps (unstarted lessons, untested topics)
  * - Exam date proximity (intensity scaling)
  * - Learning variety (mix MCQs, lessons, TBS)
+ * - NEW: Curriculum awareness (only quiz on topics from completed lessons)
  * 
  * Philosophy: 70% reinforcement (weak areas), 30% new material
  */
 
 import { fetchLessonsBySection } from './lessonService';
 import { POINT_VALUES } from '../config/examConfig';
-import type { CourseId } from '../types';
+import type { CourseId, ExamSection } from '../types';
 import { TBSHistoryEntry } from './questionHistoryService';
+import { 
+  getCoveredTopics, 
+  getPreviewTopics, 
+  getUnlockedTBSTypes 
+} from './curriculumService';
 
 export interface DailyActivity {
   id: string;
@@ -76,6 +82,9 @@ export interface UserStudyState {
   flashcardsDue: number;
   currentStreak: number;
   todayPoints: number;
+  // NEW: Curriculum-aware options
+  enableCurriculumFilter?: boolean; // Filter MCQs to covered topics only
+  enablePreviewMode?: boolean; // Allow 10% lookahead for next topics
 }
 
 // Average points per MCQ (used for estimates)
@@ -112,8 +121,56 @@ export const generateDailyPlan = async (
   // Track what we're adding for summary
   const weakAreaFocus: string[] = [];
   
+  // NEW: Get covered topics for curriculum filtering
+  let coveredTopics: Set<string> = new Set();
+  let previewTopics: Set<string> = new Set();
+  
+  if (state.enableCurriculumFilter) {
+    coveredTopics = await getCoveredTopics(
+      state.lessonProgress, 
+      state.section as ExamSection, 
+      courseId
+    );
+    
+    // Add preview topics if enabled (10% lookahead)
+    if (state.enablePreviewMode) {
+      previewTopics = await getPreviewTopics(
+        state.lessonProgress,
+        state.section as ExamSection,
+        0.1, // 10% lookahead
+        courseId
+      );
+    }
+  }
+  
+  // Filter topic stats to only covered topics (if curriculum filter enabled)
+  const filteredTopicStats = state.enableCurriculumFilter && coveredTopics.size > 0
+    ? state.topicStats.filter(t => {
+        const normalizedTopic = t.topic.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+        // Check if topic is covered or in preview
+        for (const covered of coveredTopics) {
+          const normalizedCovered = covered.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+          if (normalizedTopic === normalizedCovered ||
+              normalizedTopic.includes(normalizedCovered) ||
+              normalizedCovered.includes(normalizedTopic)) {
+            return true;
+          }
+        }
+        // Check preview topics too
+        for (const preview of previewTopics) {
+          const normalizedPreview = preview.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+          if (normalizedTopic === normalizedPreview ||
+              normalizedTopic.includes(normalizedPreview) ||
+              normalizedPreview.includes(normalizedTopic)) {
+            return true;
+          }
+        }
+        return false;
+      })
+    : state.topicStats;
+  
   // 1. CRITICAL: Weak areas first (accuracy < 60%)
-  const criticalWeakAreas = state.topicStats
+  const criticalWeakAreas = filteredTopicStats
     .filter(t => t.accuracy < 60 && t.totalQuestions >= 3)
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, 3);
@@ -142,7 +199,7 @@ export const generateDailyPlan = async (
   }
   
   // 2. HIGH: Medium weak areas (60-70% accuracy)
-  const mediumWeakAreas = state.topicStats
+  const mediumWeakAreas = filteredTopicStats
     .filter(t => t.accuracy >= 60 && t.accuracy < 70 && t.totalQuestions >= 3)
     .sort((a, b) => a.accuracy - b.accuracy)
     .slice(0, 2);
@@ -260,75 +317,127 @@ export const generateDailyPlan = async (
   
   // 5. MEDIUM: TBS practice (critical - 50% of exam!)
   // Check if they've done any TBS today based on activities
+  // NEW: Also check if TBS is unlocked based on lesson progress
   const tbsNeeded = activities.filter(a => a.type === 'tbs').length === 0;
   if (tbsNeeded && remainingMinutes >= 15) {
     const tbsTopics = getTBSTopicsForSection(state.section);
     let targetTBSTopic = tbsTopics[0];
     let reason = 'TBS = 50% of your exam score. Practice daily!';
     let tbsPriority: 'critical' | 'high' | 'medium' | 'low' = 'medium';
-
-    // Intelligent selection using TBS history
-    if (state.tbsStats && state.tbsStats.length > 0) {
-       const sectionStats = state.tbsStats.filter(s => s.section === state.section);
-       
-       // Build a set of mastered TBS topics (approximate from IDs)
-       const masteredTopicPatterns = sectionStats
-           .filter(s => s.mastered)
-           .map(s => s.tbsId.toLowerCase());
-       
-       // Find topics NOT yet practiced or not mastered
-       const unpracticedTopics = tbsTopics.filter(topic => {
-           const topicLower = topic.toLowerCase().replace(/\\s+/g, '-');
-           return !masteredTopicPatterns.some(pattern => 
-               pattern.includes(topicLower) || topicLower.includes(pattern.split('-')[0])
-           );
-       });
-       
-       if (unpracticedTopics.length > 0) {
-           // Prioritize topics never attempted
-           targetTBSTopic = unpracticedTopics[0];
-           reason = `New TBS topic: You haven't practiced ${targetTBSTopic} yet`;
-           tbsPriority = 'high'; // Elevate priority for coverage gaps
-       } else {
-           // All topics practiced - focus on lowest scoring
-           const weakestStats = sectionStats
-               .filter(s => !s.mastered)
-               .sort((a, b) => (a.avgScore || 0) - (b.avgScore || 0));
-           
-           if (weakestStats.length > 0) {
-               // Try to match ID pattern back to topic name
-               const weakestId = weakestStats[0].tbsId.toLowerCase();
-               const matchedTopic = tbsTopics.find(t => 
-                   weakestId.includes(t.toLowerCase().replace(/\\s+/g, '-')) ||
-                   t.toLowerCase().includes(weakestId.split('-')[0])
-               );
-               targetTBSTopic = matchedTopic || tbsTopics[0];
-               reason = `Weak TBS: ${Math.round(weakestStats[0].avgScore)}% avg score - improve this`;
-               tbsPriority = 'high';
-           }
-       }
-    } else {
-        // No history - rotate through topics by day
-        const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
-        targetTBSTopic = tbsTopics[dayOfYear % tbsTopics.length];
-        reason = `Introduction: ${targetTBSTopic} simulation practice`;
+    let tbsLocked = false;
+    let lockedReason = '';
+    
+    // NEW: Check curriculum unlock status for TBS
+    if (state.enableCurriculumFilter) {
+      const unlockedTBS = await getUnlockedTBSTypes(
+        state.section as ExamSection,
+        state.lessonProgress,
+        courseId
+      );
+      
+      // Filter to only unlocked TBS types
+      const unlockedTypes = unlockedTBS.filter(t => t.isUnlocked).map(t => t.type);
+      const lockedTypes = unlockedTBS.filter(t => !t.isUnlocked);
+      
+      if (unlockedTypes.length === 0) {
+        // No TBS unlocked yet - recommend completing lessons first
+        tbsLocked = true;
+        if (lockedTypes.length > 0) {
+          const nextToUnlock = lockedTypes.sort((a, b) => b.progress - a.progress)[0];
+          lockedReason = `Complete more lessons to unlock TBS practice. ${nextToUnlock.type} is ${nextToUnlock.progress}% unlocked.`;
+        }
+      } else {
+        // Filter tbsTopics to only unlocked ones
+        const filteredTbsTopics = tbsTopics.filter(t => 
+          unlockedTypes.some(u => u.toLowerCase() === t.toLowerCase())
+        );
+        if (filteredTbsTopics.length > 0) {
+          // Only consider unlocked TBS topics for selection
+          targetTBSTopic = filteredTbsTopics[0];
+          reason = `Unlocked TBS: ${targetTBSTopic} - you've learned the prerequisites!`;
+        }
+      }
     }
+    
+    if (!tbsLocked) {
+      // Intelligent selection using TBS history
+      if (state.tbsStats && state.tbsStats.length > 0) {
+         const sectionStats = state.tbsStats.filter(s => s.section === state.section);
+         
+         // Build a set of mastered TBS topics (approximate from IDs)
+         const masteredTopicPatterns = sectionStats
+             .filter(s => s.mastered)
+             .map(s => s.tbsId.toLowerCase());
+         
+         // Find topics NOT yet practiced or not mastered
+         const unpracticedTopics = tbsTopics.filter(topic => {
+             const topicLower = topic.toLowerCase().replace(/\\s+/g, '-');
+             return !masteredTopicPatterns.some(pattern => 
+                 pattern.includes(topicLower) || topicLower.includes(pattern.split('-')[0])
+             );
+         });
+         
+         if (unpracticedTopics.length > 0) {
+             // Prioritize topics never attempted
+             targetTBSTopic = unpracticedTopics[0];
+             reason = `New TBS topic: You haven't practiced ${targetTBSTopic} yet`;
+             tbsPriority = 'high'; // Elevate priority for coverage gaps
+         } else {
+             // All topics practiced - focus on lowest scoring
+             const weakestStats = sectionStats
+                 .filter(s => !s.mastered)
+                 .sort((a, b) => (a.avgScore || 0) - (b.avgScore || 0));
+             
+             if (weakestStats.length > 0) {
+                 // Try to match ID pattern back to topic name
+                 const weakestId = weakestStats[0].tbsId.toLowerCase();
+                 const matchedTopic = tbsTopics.find(t => 
+                     weakestId.includes(t.toLowerCase().replace(/\\s+/g, '-')) ||
+                     t.toLowerCase().includes(weakestId.split('-')[0])
+                 );
+                 targetTBSTopic = matchedTopic || tbsTopics[0];
+                 reason = `Weak TBS: ${Math.round(weakestStats[0].avgScore)}% avg score - improve this`;
+                 tbsPriority = 'high';
+             }
+         }
+      } else {
+          // No history - rotate through topics by day
+          const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+          targetTBSTopic = tbsTopics[dayOfYear % tbsTopics.length];
+          reason = `Introduction: ${targetTBSTopic} simulation practice`;
+      }
 
-    activities.push({
-      id: `tbs-${today}`,
-      type: 'tbs',
-      title: 'Task-Based Simulation',
-      description: `Practice: ${targetTBSTopic}`,
-      estimatedMinutes: ACTIVITY_DURATION.tbs,
-      points: POINT_VALUES.tbs_basic,
-      priority: tbsPriority,
-      reason,
-      params: {
-        section: state.section,
-        topic: targetTBSTopic,
-      },
-    });
-    remainingMinutes -= ACTIVITY_DURATION.tbs;
+      activities.push({
+        id: `tbs-${today}`,
+        type: 'tbs',
+        title: 'Task-Based Simulation',
+        description: `Practice: ${targetTBSTopic}`,
+        estimatedMinutes: ACTIVITY_DURATION.tbs,
+        points: POINT_VALUES.tbs_basic,
+        priority: tbsPriority,
+        reason,
+        params: {
+          section: state.section,
+          topic: targetTBSTopic,
+        },
+      });
+      remainingMinutes -= ACTIVITY_DURATION.tbs;
+    } else {
+      // TBS is locked - add a hint activity instead
+      activities.push({
+        id: `tbs-locked-${today}`,
+        type: 'lesson',
+        title: '🔒 Unlock TBS Practice',
+        description: lockedReason || 'Complete foundational lessons first',
+        estimatedMinutes: 5,
+        points: 0,
+        priority: 'low',
+        reason: 'TBS requires understanding of prerequisite topics',
+        params: {
+          section: state.section,
+        },
+      });
+    }
   }
   
   // 6. LOW: General practice if time remains

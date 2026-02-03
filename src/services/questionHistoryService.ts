@@ -472,6 +472,17 @@ export const getFreshQuestions = async (
   return fresh.slice(0, maxCount);
 };
 
+export interface CurriculumFilterOptions {
+  /** Topics the user has covered via completed lessons */
+  coveredTopics?: Set<string>;
+  /** Additional "preview" topics for lookahead mode */
+  previewTopics?: Set<string>;
+  /** Map of questionId -> topic for filtering */
+  questionTopicMap?: Map<string, string>;
+  /** If true, only include questions from covered topics */
+  enableCurriculumFilter?: boolean;
+}
+
 /**
  * Get smart question selection for practice
  * Mix of: due for review, recently incorrect, fresh
@@ -479,14 +490,69 @@ export const getFreshQuestions = async (
  *   - Normal: 40% due, 30% incorrect, 30% fresh
  *   - Crunch time (<14 days): 50% due, 35% incorrect, 15% fresh (focus on retention)
  *   - Final week (<7 days): 60% due, 30% incorrect, 10% fresh (maximum review)
+ * 
+ * NEW: Supports curriculum-aware filtering to only include questions from topics
+ * the user has studied via lessons.
  */
 export const getSmartQuestionSelection = async (
   userId: string,
   section: string,
   allQuestionIds: string[],
   targetCount: number = 15,
-  examDate?: string // Optional exam date for adaptive weights
-): Promise<{ questionIds: string[]; breakdown: { due: number; incorrect: number; fresh: number } }> => {
+  examDate?: string, // Optional exam date for adaptive weights
+  curriculumOptions?: CurriculumFilterOptions // NEW: Curriculum filtering
+): Promise<{ questionIds: string[]; breakdown: { due: number; incorrect: number; fresh: number; filtered?: number } }> => {
+  // NEW: Apply curriculum filtering if enabled
+  let filteredQuestionIds = allQuestionIds;
+  let filteredOutCount = 0;
+  
+  if (curriculumOptions?.enableCurriculumFilter && 
+      curriculumOptions.coveredTopics && 
+      curriculumOptions.questionTopicMap) {
+    const { coveredTopics, previewTopics, questionTopicMap } = curriculumOptions;
+    
+    // Build allowed topics set (covered + optional preview)
+    const allowedTopics = new Set([...coveredTopics]);
+    if (previewTopics) {
+      for (const topic of previewTopics) {
+        allowedTopics.add(topic);
+      }
+    }
+    
+    // Filter questions to only those from allowed topics
+    const originalCount = allQuestionIds.length;
+    filteredQuestionIds = allQuestionIds.filter(qId => {
+      const topic = questionTopicMap.get(qId);
+      if (!topic) return false; // No topic mapping = exclude
+      
+      // Normalize and check for match
+      const normalizedTopic = topic.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+      
+      // Check if any allowed topic matches
+      for (const allowed of allowedTopics) {
+        const normalizedAllowed = allowed.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+        if (normalizedTopic === normalizedAllowed ||
+            normalizedTopic.includes(normalizedAllowed) ||
+            normalizedAllowed.includes(normalizedTopic)) {
+          return true;
+        }
+      }
+      return false;
+    });
+    
+    filteredOutCount = originalCount - filteredQuestionIds.length;
+    
+    if (filteredQuestionIds.length === 0) {
+      // No questions match covered topics - fall back to all questions
+      // This prevents empty results for users who haven't completed lessons
+      logger.debug(`Curriculum filter: No matching questions for covered topics. Using all ${originalCount} questions.`);
+      filteredQuestionIds = allQuestionIds;
+      filteredOutCount = 0;
+    } else {
+      logger.debug(`Curriculum filter: ${filteredQuestionIds.length}/${originalCount} questions match covered topics`);
+    }
+  }
+  
   // Calculate adaptive weights based on exam proximity
   let dueWeight = 0.4;
   let incorrectWeight = 0.3;
@@ -514,21 +580,26 @@ export const getSmartQuestionSelection = async (
   const incorrectCount = Math.ceil(targetCount * incorrectWeight);
   const freshCount = Math.ceil(targetCount * freshWeight);
   
-  // Fetch from each category
+  // Fetch from each category (use filtered question IDs)
   const [dueQuestions, incorrectQuestions, freshQuestions] = await Promise.all([
     getDueQuestions(userId, section, dueCount),
     getRecentlyIncorrect(userId, section, 7, incorrectCount),
-    getFreshQuestions(userId, section, allQuestionIds, freshCount + 10), // Get extra fresh in case we need to fill
+    getFreshQuestions(userId, section, filteredQuestionIds, freshCount + 10), // Get extra fresh in case we need to fill
   ]);
+  
+  // Filter due and incorrect questions to only those in filtered pool (curriculum-aware)
+  const filteredIdSet = new Set(filteredQuestionIds);
+  const curriculumAwareDue = dueQuestions.filter(id => filteredIdSet.has(id));
+  const curriculumAwareIncorrect = incorrectQuestions.filter(id => filteredIdSet.has(id));
   
   // Combine and deduplicate
   const selected = new Set<string>();
   
-  // Add due questions first (highest priority)
-  dueQuestions.forEach(id => selected.add(id));
+  // Add due questions first (highest priority) - curriculum-aware
+  curriculumAwareDue.forEach(id => selected.add(id));
   
-  // Add incorrect questions (if not already in due)
-  incorrectQuestions.forEach(id => {
+  // Add incorrect questions (if not already in due) - curriculum-aware
+  curriculumAwareIncorrect.forEach(id => {
     if (selected.size < targetCount) {
       selected.add(id);
     }
@@ -541,9 +612,9 @@ export const getSmartQuestionSelection = async (
     }
   });
   
-  // If still not enough, add random from all questions
+  // If still not enough, add random from filtered questions (curriculum-aware)
   if (selected.size < targetCount) {
-    const shuffled = [...allQuestionIds].sort(() => Math.random() - 0.5);
+    const shuffled = [...filteredQuestionIds].sort(() => Math.random() - 0.5);
     for (const id of shuffled) {
       if (selected.size >= targetCount) break;
       selected.add(id);
@@ -553,9 +624,10 @@ export const getSmartQuestionSelection = async (
   return {
     questionIds: Array.from(selected),
     breakdown: {
-      due: Math.min(dueQuestions.length, dueCount),
-      incorrect: Math.min(incorrectQuestions.length, incorrectCount),
+      due: Math.min(curriculumAwareDue.length, dueCount),
+      incorrect: Math.min(curriculumAwareIncorrect.length, incorrectCount),
       fresh: Math.min(freshQuestions.length, freshCount),
+      filtered: filteredOutCount, // NEW: Track how many were filtered by curriculum
     },
   };
 };

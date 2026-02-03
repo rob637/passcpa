@@ -144,6 +144,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         flashcardsDue: (stats as any)?.flashcardsDue || 0,
         currentStreak: (stats as any)?.currentStreak || 0,
         todayPoints: Math.round((dailyProgress / 100) * ((userProfile as any).dailyGoal || 50)),
+        // NEW: Enable curriculum-aware learning - only quiz on covered topics
+        enableCurriculumFilter: (userProfile as any).enableCurriculumFilter ?? true, // Default to enabled
+        enablePreviewMode: (userProfile as any).enablePreviewMode ?? false, // Optional 10% lookahead
       };
       
       // Use the persistence layer to get/create today's plan

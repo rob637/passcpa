@@ -16,7 +16,10 @@ const SYSTEM_PROMPTS: Record<string, string> = {
 - Provide mnemonics and memory tricks when helpful
 - Keep explanations concise but thorough
 
-IMPORTANT: You ONLY help with CPA exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your CPA exam tutor! I can only help with accounting, auditing, tax, and business topics. What CPA concept can I explain for you?"
+IMPORTANT CONVERSATION RULES:
+1. You ONLY help with CPA exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your CPA exam tutor! I can only help with accounting, auditing, tax, and business topics. What CPA concept can I explain for you?"
+2. When you offer a practice problem and the user responds with "yes", "sure", "ok", etc., IMMEDIATELY give them the practice problem. Do NOT ask clarifying questions about what "yes" means.
+3. Pay attention to conversation context. Short responses like "yes", "no", "ok", "thanks" are almost always responses to your previous message, not new topics.
 
 Format your responses with **bold** for key terms, bullet points for lists, and clear section headers.`,
 
@@ -28,7 +31,10 @@ Format your responses with **bold** for key terms, bullet points for lists, and 
 - Only reveal the answer after they've worked through the logic
 - Help them build understanding, not just memorization
 
-IMPORTANT: You ONLY help with CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+IMPORTANT CONVERSATION RULES:
+1. You ONLY help with CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+2. When the user responds with "yes", "sure", "ok" to your offers, proceed with what you offered. Don't ask what they mean by "yes".
+3. Pay attention to conversation flow - interpret short responses in context of your previous message.
 
 Start by asking what they already know, then build from there with questions.`,
 
@@ -39,7 +45,10 @@ Start by asking what they already know, then build from there with questions.`,
 - Focus on commonly tested topics and exam traps
 - Vary difficulty based on user's performance
 
-IMPORTANT: You ONLY create quizzes about CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+IMPORTANT CONVERSATION RULES:
+1. You ONLY create quizzes about CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+2. When the user responds "yes" or "sure" to "want another question?", give them another question immediately.
+3. Interpret short answers (A, B, C, D, or brief responses) as quiz answers, not new topics.
 
 Format: Present the question clearly, wait for their answer, then provide detailed feedback.`,
 };
@@ -74,6 +83,42 @@ const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHi
 const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false) => {
   const lowerInput = input.toLowerCase().trim();
   
+  // Get the last assistant message for context
+  const lastAssistantMessage = [...conversationHistory].reverse().find(m => m.role === 'assistant')?.content || '';
+  
+  // Check if user is responding to a yes/no question from Vory
+  const isYesNoResponse = /^(yes|yeah|yep|sure|ok|okay|please|no|nope|nah)\.?!?$/i.test(lowerInput);
+  const voryAskedForPractice = lastAssistantMessage.toLowerCase().includes('would you like a practice problem') ||
+    lastAssistantMessage.toLowerCase().includes('want another question') ||
+    lastAssistantMessage.toLowerCase().includes('ready for another') ||
+    lastAssistantMessage.toLowerCase().includes('want me to walk through') ||
+    lastAssistantMessage.toLowerCase().includes('would you like me to') ||
+    lastAssistantMessage.toLowerCase().includes('want a practice') ||
+    lastAssistantMessage.toLowerCase().includes('want me to explain');
+  
+  // Handle "yes" responses to Vory's offers
+  if (isYesNoResponse && voryAskedForPractice) {
+    const isYes = /^(yes|yeah|yep|sure|ok|okay|please)\.?!?$/i.test(lowerInput);
+    
+    if (isYes) {
+      // Generate relevant practice based on what was discussed
+      if (lastAssistantMessage.toLowerCase().includes('lease')) {
+        return `**Practice Problem: Lease Classification** 📝\n\nBeta Corp enters into a lease with these terms:\n• **Asset:** Manufacturing equipment\n• **Lease term:** 3 years\n• **Useful life:** 4 years\n• **PV of lease payments:** $72,000\n• **Fair value:** $80,000\n• **No ownership transfer**, **no purchase option**\n\n**Question:** How should Beta Corp classify this lease under ASC 842?\n\n**Work through the OWNES criteria:**\n• O - Ownership transfer? \n• W - Written purchase option?\n• N - Nearly all useful life (≥75%)?\n• E - Essentially all fair value (≥90% PV)?\n• S - Specialized asset?\n\n*Calculate and tell me: Finance lease or Operating lease?*`;
+      }
+      if (lastAssistantMessage.toLowerCase().includes('1031') || lastAssistantMessage.toLowerCase().includes('like-kind')) {
+        return `**Practice Problem: §1031 Exchange** 📝\n\nTaylor owns an office building with:\n• **Adjusted basis:** $200,000\n• **Fair market value:** $350,000\n• **Mortgage:** $50,000\n\nTaylor exchanges it for:\n• **Warehouse FMV:** $320,000\n• **Assumes mortgage on warehouse:** $40,000\n• **Receives cash:** $20,000\n\n**Calculate:**\n1. Realized gain\n2. Recognized gain\n3. Basis in the new warehouse\n\n*Show your work and I'll check it!*`;
+      }
+      if (lastAssistantMessage.toLowerCase().includes('capital gain')) {
+        return `**Practice Problem: Capital Gains** 📝\n\nJordan (single filer) has the following in 2024:\n• **Salary:** $60,000\n• **STCG from stock:** $5,000\n• **LTCG from stock held 2 years:** $15,000\n• **LTCL from another stock:** $8,000\n\n**Questions:**\n1. What is Jordan's net capital gain/loss?\n2. How much is taxed at ordinary rates vs. preferential rates?\n3. If Jordan had a net capital loss instead, how much could be deducted?\n\n*Work through each step!*`;
+      }
+      // Generic practice offer
+      return `Great! Let's practice! 📝\n\n**What topic would you like a practice problem on?**\n\n• Lease classification (ASC 842)\n• Like-kind exchanges (§1031)\n• Capital gains taxation\n• S corporation requirements\n• Partnership basis\n• Revenue recognition\n\n*Pick one and I'll give you an exam-style question!*`;
+    } else {
+      // User said no
+      return `No problem! 👍\n\n**What else would you like to explore?**\n\nI can:\n• Explain another concept\n• Give you a different type of practice problem\n• Walk through a specific scenario you're struggling with\n\nWhat's next on your study list?`;
+    }
+  }
+  
   // Check for off-topic questions first
   const cpaKeywords = ['accounting', 'audit', 'tax', 'gaap', 'fasb', 'asc', 'irc', 'basis', 'depreciation', 
     'amortization', 'lease', 'revenue', 'expense', 'asset', 'liability', 'equity', 'debit', 'credit',
@@ -93,7 +138,6 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   }
   
   // Check if this looks like an answer to a previous quiz question
-  const lastAssistantMessage = [...conversationHistory].reverse().find(m => m.role === 'assistant')?.content || '';
   const isQuizAnswer = mode === 'quiz' && lastAssistantMessage.includes('Question:') && (
     lowerInput.length < 50 || // Short answers are likely quiz responses
     lowerInput.match(/^[a-d]$/) || // Single letter answer

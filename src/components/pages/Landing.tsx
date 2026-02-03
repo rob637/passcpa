@@ -75,24 +75,20 @@ const Landing = () => {
   // Comprehensive competitor comparison data - focused on true differentiators
   const comparisonData = [
     { feature: 'Annual Price', voraprep: 'Free (Beta)', becker: '$3,499', roger: '$2,095', surgent: '$1,799', highlight: true },
-    { feature: 'Price per Month', voraprep: '$0', becker: '$292', roger: '$175', surgent: '$150', highlight: false },
     { feature: 'AI Tutor Included', voraprep: true, becker: 'Extra $$$', roger: false, surgent: 'Limited', highlight: true },
+    { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', becker: 'Extra $$$', roger: false, surgent: 'Basic', highlight: true },
+    { feature: 'Weak Area Auto-Detection', voraprep: true, becker: false, roger: false, surgent: 'Limited', highlight: true },
+    { feature: 'SM-2 Spaced Repetition', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
+    { feature: 'AI Daily Study Plans', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
+    { feature: 'Curriculum-Aware Practice', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Learning Style', voraprep: 'Active Practice', becker: 'Passive Video', roger: 'Passive Video', surgent: 'Passive Video', highlight: true },
     { feature: '2025 & 2026 Blueprint', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
-    { feature: 'BEC Section Included', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
-    { feature: 'Adaptive Learning', voraprep: true, becker: 'Extra $$$', roger: false, surgent: true, highlight: true },
-    { feature: 'Spaced Repetition', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Task-Based Simulations', voraprep: '100+', becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Curated Mock Exams', voraprep: '18 Exams', becker: true, roger: true, surgent: true, highlight: false },
     { feature: 'Prometric-Style Interface', voraprep: true, becker: true, roger: false, surgent: false, highlight: true },
-    { feature: 'Mobile App', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
-    { feature: 'Offline Mode', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
-    { feature: 'Progress Analytics', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
+    { feature: 'PWA + Offline Mode', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
     { feature: 'Free Trial', voraprep: 'Full Access', becker: '14 days', roger: '3 days', surgent: '5 days', highlight: true },
     { feature: 'No Credit Card to Start', voraprep: true, becker: false, roger: false, surgent: false, highlight: true },
-    { feature: 'Pass Guarantee', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
-    { feature: 'Flashcards', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
-    { feature: 'Study Planner', voraprep: true, becker: true, roger: true, surgent: true, highlight: false },
   ];
 
   // Why VoraPrep section data
@@ -105,6 +101,13 @@ const Landing = () => {
       color: 'emerald'
     },
     {
+      icon: Brain,
+      title: 'True Adaptive Learning',
+      description: 'Not just random questions. Our AI tracks your weak areas, adjusts difficulty in real-time, and focuses 70% of your practice on topics you struggle with most.',
+      stat: 'AI-Powered',
+      color: 'purple'
+    },
+    {
       icon: Bot,
       title: 'Meet Vory',
       description: 'Stuck on a concept? Vory, your AI study companion, explains it 10 different ways until it clicks. Available 24/7, never judges, infinitely patient.',
@@ -112,23 +115,37 @@ const Landing = () => {
       color: 'blue'
     },
     {
-      icon: Brain,
-      title: 'Learn Smarter, Not Harder',
-      description: 'Our spaced repetition algorithm shows you questions right before you\'d forget them. Science-backed, efficiency-maximized.',
-      stat: '40% Faster',
+      icon: RefreshCw,
+      title: 'SM-2 Spaced Repetition',
+      description: 'The same algorithm Anki uses. We calculate exactly when you\'re about to forget something and quiz you at the perfect moment for maximum retention.',
+      stat: '2x Retention',
       color: 'sky'
+    },
+    {
+      icon: Target,
+      title: 'Curriculum-Aware Practice',
+      description: 'We only quiz you on topics you\'ve actually studied. No frustrating questions on material you haven\'t learned yet — just logical, efficient progression.',
+      stat: 'Smart Flow',
+      color: 'rose'
+    },
+    {
+      icon: Zap,
+      title: 'Personalized Daily Plans',
+      description: 'AI generates your daily study plan based on exam date, weak areas, and learning pace. Know exactly what to study each day — no guesswork.',
+      stat: 'Auto-Plan',
+      color: 'amber'
     },
     {
       icon: Smartphone,
       title: 'Study Anywhere',
-      description: 'Full offline mode. Study on the subway, in a coffee shop, or anywhere without WiFi. Your progress syncs when you\'re back online.',
+      description: 'Full offline mode with PWA support. Study on the subway, in a coffee shop, or anywhere without WiFi. Progress syncs automatically.',
       stat: 'Offline Ready',
       color: 'orange'
     },
     {
-      icon: Target,
+      icon: Layers,
       title: '2026 Blueprint Native',
-      description: 'Built from scratch for the new CPA exam format. Not retrofitted, not updated — designed specifically for you.',
+      description: 'Built from scratch for the new CPA exam format. Not retrofitted, not updated — designed specifically for Core + Discipline structure.',
       stat: 'Day 1 Ready',
       color: 'red'
     },
@@ -260,7 +277,7 @@ const Landing = () => {
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
             <span className="font-semibold text-emerald-600"> 100% Free</span> during Beta.
             <br className="hidden md:block" />
-            2,900+ questions. Adaptive learning. Zero credit card required.
+            2,900+ questions. <span className="font-semibold text-purple-600">True adaptive learning</span>. SM-2 spaced repetition. Zero credit card.
           </p>
 
           {/* CTA Buttons */}
@@ -332,15 +349,15 @@ const Landing = () => {
       <section id="features" className="py-24 px-6 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              <Zap className="w-4 h-4" />
-              Why Students Choose Us
+            <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Brain className="w-4 h-4" />
+              AI-Powered Adaptive Learning
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-              The Smarter Way to Pass
+              Learn Smarter, Not Longer
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              We built VoraPrep because paying $3,500 for exam prep is insane. Here's why we're different.
+              Our AI doesn't just track your progress — it actively adapts to how <em>you</em> learn. Every question, every session, optimized for <em>your</em> path to 75+.
             </p>
           </div>
 
@@ -349,7 +366,10 @@ const Landing = () => {
               const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
                 emerald: { bg: 'bg-emerald-100 dark:bg-emerald-900/30', text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-200 dark:border-emerald-800' },
                 blue: { bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'text-blue-600 dark:text-blue-400', border: 'border-blue-200 dark:border-blue-800' },
+                purple: { bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'text-purple-600 dark:text-purple-400', border: 'border-purple-200 dark:border-purple-800' },
                 sky: { bg: 'bg-sky-100 dark:bg-sky-900/30', text: 'text-sky-600 dark:text-sky-400', border: 'border-sky-200 dark:border-sky-800' },
+                rose: { bg: 'bg-rose-100 dark:bg-rose-900/30', text: 'text-rose-600 dark:text-rose-400', border: 'border-rose-200 dark:border-rose-800' },
+                amber: { bg: 'bg-amber-100 dark:bg-amber-900/30', text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-200 dark:border-amber-800' },
                 orange: { bg: 'bg-orange-100 dark:bg-orange-900/30', text: 'text-orange-600 dark:text-orange-400', border: 'border-orange-200 dark:border-orange-800' },
                 red: { bg: 'bg-red-100 dark:bg-red-900/30', text: 'text-red-600 dark:text-red-400', border: 'border-red-200 dark:border-red-800' },
                 teal: { bg: 'bg-teal-100 dark:bg-teal-900/30', text: 'text-teal-600 dark:text-teal-400', border: 'border-teal-200 dark:border-teal-800' },
@@ -479,7 +499,90 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Testimonials Section - Removed until we have real testimonials */}
+      {/* How Adaptive Learning Works */}
+      <section className="py-24 px-6 bg-white dark:bg-slate-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <Sparkles className="w-4 h-4" />
+              The VoraPrep Difference
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+              How Our AI Learns You
+            </h2>
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Most prep courses give you random questions. We give you the <em>right</em> questions at the <em>right</em> time.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                step: '1',
+                title: 'You Study a Lesson',
+                description: 'Complete lessons at your own pace. Our system tracks exactly what topics you\'ve covered.',
+                icon: BookOpen,
+                color: 'from-blue-500 to-blue-600'
+              },
+              {
+                step: '2',
+                title: 'AI Unlocks Questions',
+                description: 'We only quiz you on material you\'ve learned. No frustrating questions on topics you haven\'t studied yet.',
+                icon: Target,
+                color: 'from-purple-500 to-purple-600'
+              },
+              {
+                step: '3',
+                title: 'We Find Your Weak Spots',
+                description: 'Our engine detects topics where you\'re below 70% accuracy and automatically prioritizes them.',
+                icon: Brain,
+                color: 'from-rose-500 to-rose-600'
+              },
+              {
+                step: '4',
+                title: 'Spaced Repetition Kicks In',
+                description: 'The SM-2 algorithm schedules reviews right before you\'d forget. Maximum retention, minimum time.',
+                icon: RefreshCw,
+                color: 'from-emerald-500 to-emerald-600'
+              },
+            ].map((item) => (
+              <div key={item.step} className="relative">
+                <div className={`absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                  {item.step}
+                </div>
+                <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 pt-10 h-full border border-slate-200 dark:border-slate-800">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center mb-4`}>
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              The Result? Study 40% Less, Retain 2x More
+            </h3>
+            <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+              Stop wasting time on topics you already know. Stop being frustrated by questions you haven't studied. 
+              Our adaptive system means every minute counts toward your 75+.
+            </p>
+            <Link 
+              to="/register" 
+              className="inline-flex items-center gap-2 bg-white text-purple-600 px-8 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Experience Smart Learning
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CPA Sections Coverage */}
       <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900">

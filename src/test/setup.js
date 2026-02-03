@@ -12,7 +12,9 @@ vi.mock('../config/firebase', () => ({
   },
   db: {},
   storage: {},
+  functions: {},
   analytics: null,
+  default: {},
 }));
 
 // Mock Firebase Storage

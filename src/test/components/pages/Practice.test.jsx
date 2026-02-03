@@ -83,12 +83,12 @@ describe('Practice Component', () => {
       expect(screen.getByRole('combobox')).toBeInTheDocument();
     });
 
-    it.skip('shows practice mode options', () => {
+    it('shows practice mode options', () => {
       renderPractice();
       expect(screen.getByText('Practice Mode')).toBeInTheDocument();
       expect(screen.getByText('Study')).toBeInTheDocument();
       expect(screen.getByText('Timed')).toBeInTheDocument();
-      expect(screen.getByText('Exam')).toBeInTheDocument();
+      expect(screen.getByText('Exam Sim')).toBeInTheDocument();
     });
 
     it('shows question count options', () => {
@@ -100,9 +100,13 @@ describe('Practice Component', () => {
       expect(screen.getByRole('button', { name: '30 questions' })).toBeInTheDocument();
     });
 
-    it.skip('shows difficulty options', () => {
+    it('shows difficulty options in advanced panel', () => {
       renderPractice();
-      expect(screen.getByText('Difficulty')).toBeInTheDocument();
+      // Click to expand advanced options
+      const advancedBtn = screen.getByText('Advanced Options');
+      fireEvent.click(advancedBtn);
+      
+      expect(screen.getByText('Difficulty Level')).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'All Levels' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Easy' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Medium' })).toBeInTheDocument();
@@ -129,11 +133,15 @@ describe('Practice Component', () => {
       expect(count20).toHaveClass('border-primary-500');
     });
 
-    it.skip('allows selecting difficulty levels', () => {
+    it('allows selecting difficulty levels', () => {
       renderPractice();
+      // Open advanced options first
+      const advancedBtn = screen.getByText('Advanced Options');
+      fireEvent.click(advancedBtn);
+      
       const hardButton = screen.getByRole('button', { name: 'Hard' });
       fireEvent.click(hardButton);
-      expect(hardButton).toHaveClass('border-primary-500');
+      expect(hardButton).toHaveAttribute('aria-pressed', 'true');
     });
 
     it('allows changing exam section', () => {

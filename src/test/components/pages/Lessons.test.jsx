@@ -87,10 +87,11 @@ describe('Lessons Component', () => {
   });
 
   describe('Rendering', () => {
-    it.skip('renders the lessons page', async () => {
+    it('renders the lessons page', async () => {
       renderLessons();
       await waitFor(() => {
-        expect(screen.getByText('Lessons')).toBeInTheDocument();
+        // The title shows "Lessons" for non-PREP sections
+        expect(screen.getByRole('heading', { name: /Lessons/i })).toBeInTheDocument();
       });
     });
 

@@ -76,7 +76,6 @@ const ADMIN_EMAILS: string[] = [
   'admin@voraprep.com',
   'rob@sagecg.com',
   'rob@voraprep.com',
-  'rob@leaderreps.com',
 ];
 
 // ============================================================================

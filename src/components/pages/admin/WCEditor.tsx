@@ -25,7 +25,7 @@ import {
 import clsx from 'clsx';
 
 // Admin email whitelist
-const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com', 'rob@leaderreps.com'];
+const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
 
 const EXAM_SECTIONS: ExamSection[] = ['AUD', 'FAR', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
 

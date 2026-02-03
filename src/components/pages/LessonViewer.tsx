@@ -554,11 +554,45 @@ const LessonViewer: React.FC = () => {
                       window.speechSynthesis.cancel();
                       setIsPlaying(false);
                     } else {
-                      // Get text from all text sections
-                      const rawText = lesson.content.sections
-                        .filter(s => s.type === 'text' && typeof s.content === 'string')
-                        .map(s => s.content)
-                        .join('. ');
+                      // Build complete lesson text starting from title
+                      const textParts: string[] = [];
+                      
+                      // Start with title and description
+                      textParts.push(lesson.title);
+                      if (lesson.description) {
+                        textParts.push(lesson.description);
+                      }
+                      
+                      // Get text from all readable sections
+                      lesson.content.sections.forEach(section => {
+                        if (section.title) {
+                          textParts.push(section.title);
+                        }
+                        
+                        if (typeof section.content === 'string') {
+                          textParts.push(section.content);
+                        } else if (Array.isArray(section.content)) {
+                          // Handle list content (strings or definition items)
+                          section.content.forEach(item => {
+                            if (typeof item === 'string') {
+                              textParts.push(item);
+                            } else if (item && typeof item === 'object' && 'term' in item) {
+                              textParts.push(`${item.term}: ${item.definition}`);
+                            }
+                          });
+                        }
+                        
+                        // Handle items array for lists
+                        if (section.items && Array.isArray(section.items)) {
+                          section.items.forEach(item => {
+                            if (typeof item === 'string') {
+                              textParts.push(item);
+                            }
+                          });
+                        }
+                      });
+                      
+                      const rawText = textParts.join('. ');
                       
                       // Clean text for natural speech
                       const cleanedText = cleanTextForSpeech(rawText);

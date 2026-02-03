@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon } from 'lucide-react';
+import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
@@ -13,6 +13,7 @@ import {
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
+import ShareableAchievementCard from '../ShareableAchievementCard';
 
 // Types
 interface CategoryInfo {
@@ -52,12 +53,13 @@ interface Achievement {
 }
 
 const Achievements: React.FC = () => {
-  const { user } = useAuth();
+  const { user, userProfile } = useAuth();
   const { currentStreak, todayLog } = useStudy();
   const [earnedAchievements, setEarnedAchievements] = useState<string[]>([]);
   const [userStats, setUserStats] = useState<UserStats | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [showUnlocked, setShowUnlocked] = useState<Achievement | null>(null);
+  const [showShareCard, setShowShareCard] = useState<Achievement | null>(null);
 
   // Load user stats and achievements
   useEffect(() => {
@@ -300,6 +302,17 @@ const Achievements: React.FC = () => {
                     </div>
                   </div>
                 )}
+
+                {/* Share button for earned achievements */}
+                {isEarned && (
+                  <button
+                    onClick={() => setShowShareCard(achievement)}
+                    className="mt-2 flex items-center gap-1.5 text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                  >
+                    <Share2 className="w-3.5 h-3.5" />
+                    Share achievement
+                  </button>
+                )}
               </div>
             </div>
           );
@@ -329,15 +342,37 @@ const Achievements: React.FC = () => {
             <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 text-success-700 rounded-full text-sm font-medium">
               +{showUnlocked.points} points
             </div>
-            <button 
-              onClick={() => setShowUnlocked(null)} 
-              className="mt-6 w-full btn-primary py-3"
-              autoFocus
-            >
-              Awesome!
-            </button>
+            <div className="mt-6 flex gap-3">
+              <button 
+                onClick={() => {
+                  setShowShareCard(showUnlocked);
+                  setShowUnlocked(null);
+                }} 
+                className="flex-1 btn-secondary py-3 flex items-center justify-center gap-2"
+              >
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+              <button 
+                onClick={() => setShowUnlocked(null)} 
+                className="flex-1 btn-primary py-3"
+                autoFocus
+              >
+                Awesome!
+              </button>
+            </div>
           </div>
         </div>
+      )}
+
+      {/* Share Card Modal */}
+      {showShareCard && (
+        <ShareableAchievementCard
+          achievement={showShareCard}
+          userName={userProfile?.displayName?.split(' ')[0]}
+          streak={currentStreak}
+          onClose={() => setShowShareCard(null)}
+        />
       )}
     </div>
   );

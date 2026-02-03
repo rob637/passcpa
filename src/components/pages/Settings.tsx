@@ -118,10 +118,30 @@ const Settings: React.FC = () => {
   });
 
   // New states for enhanced settings
-  // const [notificationPermission, setNotificationPermission] = useState('default');
+  const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>('default');
   const [reminderTime, setReminderTime] = useState('09:00');
   const [cacheStatus, setCacheStatus] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState(false);
+  
+  // Check notification permission on mount
+  useEffect(() => {
+    if (typeof Notification !== 'undefined') {
+      setNotificationPermission(Notification.permission);
+    }
+  }, []);
+
+  // Request notification permission
+  const requestNotificationPermission = async () => {
+    if (typeof Notification !== 'undefined') {
+      const permission = await Notification.requestPermission();
+      setNotificationPermission(permission);
+      if (permission === 'granted' && user?.uid) {
+        // Import and call requestFCMToken
+        const { requestFCMToken } = await import('../../services/pushNotifications');
+        await requestFCMToken(user.uid);
+      }
+    }
+  };
   
   // Load settings on mount
   useEffect(() => {
@@ -581,11 +601,44 @@ const Settings: React.FC = () => {
               <div className="card-body space-y-6">
                 <div>
                   <h2 className="text-lg font-semibold text-slate-900 mb-4">Notification Preferences</h2>
+                  
+                  {/* Browser Notification Permission Status */}
+                  {typeof Notification !== 'undefined' && notificationPermission !== 'granted' && (
+                    <div className={`p-4 rounded-xl mb-4 ${notificationPermission === 'denied' ? 'bg-red-50 border border-red-200' : 'bg-amber-50 border border-amber-200'}`}>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className={`font-medium ${notificationPermission === 'denied' ? 'text-red-900' : 'text-amber-900'}`}>
+                            {notificationPermission === 'denied' ? '🔕 Notifications Blocked' : '🔔 Enable Browser Notifications'}
+                          </div>
+                          <div className={`text-sm ${notificationPermission === 'denied' ? 'text-red-700' : 'text-amber-700'}`}>
+                            {notificationPermission === 'denied' 
+                              ? 'You\'ve blocked notifications. Enable them in your browser settings to receive study reminders.'
+                              : 'Allow notifications to receive daily study reminders in your browser.'}
+                          </div>
+                        </div>
+                        {notificationPermission !== 'denied' && (
+                          <button
+                            onClick={requestNotificationPermission}
+                            className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 text-sm font-medium whitespace-nowrap"
+                          >
+                            Enable Now
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {notificationPermission === 'granted' && (
+                    <div className="p-3 bg-green-50 border border-green-200 rounded-xl mb-4">
+                      <div className="text-sm text-green-700">✓ Browser notifications enabled</div>
+                    </div>
+                  )}
+                  
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>
                         <div className="font-medium text-slate-900">Daily Study Reminder</div>
-                        <div className="text-sm text-slate-500">Get a notification to maintain your streak</div>
+                        <div className="text-sm text-slate-500">Get a push notification to maintain your streak</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -613,7 +666,7 @@ const Settings: React.FC = () => {
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>
                         <div className="font-medium text-slate-900">Weekly Progress Report</div>
-                        <div className="text-sm text-slate-500">Email summary of your study performance (coming soon)</div>
+                        <div className="text-sm text-slate-500">Email summary of your study performance every Sunday</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input

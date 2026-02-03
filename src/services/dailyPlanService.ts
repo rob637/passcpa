@@ -325,7 +325,6 @@ export const generateDailyPlan = async (
     let reason = 'TBS = 50% of your exam score. Practice daily!';
     let tbsPriority: 'critical' | 'high' | 'medium' | 'low' = 'medium';
     let tbsLocked = false;
-    let lockedReason = '';
     
     // NEW: Check curriculum unlock status for TBS
     if (state.enableCurriculumFilter) {
@@ -337,15 +336,10 @@ export const generateDailyPlan = async (
       
       // Filter to only unlocked TBS types
       const unlockedTypes = unlockedTBS.filter(t => t.isUnlocked).map(t => t.type);
-      const lockedTypes = unlockedTBS.filter(t => !t.isUnlocked);
       
       if (unlockedTypes.length === 0) {
-        // No TBS unlocked yet - recommend completing lessons first
+        // No TBS unlocked yet - skip TBS, lessons will naturally unlock it
         tbsLocked = true;
-        if (lockedTypes.length > 0) {
-          const nextToUnlock = lockedTypes.sort((a, b) => b.progress - a.progress)[0];
-          lockedReason = `Complete more lessons to unlock TBS practice. ${nextToUnlock.type} is ${nextToUnlock.progress}% unlocked.`;
-        }
       } else {
         // Filter tbsTopics to only unlocked ones
         const filteredTbsTopics = tbsTopics.filter(t => 

@@ -21,15 +21,17 @@ service cloud.firestore {
     // Users collection - private to each user
     match /users/{userId} {
       allow read: if isOwner(userId) || isAdmin();
-      allow write: if isOwner(userId);
       
-      // Prevent users from granting themselves admin status
-      allow update: if isOwner(userId) && 
+      // Regular users can update their own profile but NOT the isAdmin field
+      allow write: if isOwner(userId) && 
         (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin']));
+      
+      // Admins can update any user's profile including isAdmin field
+      allow update: if isAdmin();
       
       // All subcollections under user (study_plan, daily_log, progress, etc.)
       match /{subcollection=**} {
-        allow read, write: if isOwner(userId);
+        allow read, write: if isOwner(userId) || isAdmin();
       }
     }
     

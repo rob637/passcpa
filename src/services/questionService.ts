@@ -4,7 +4,7 @@
 
 import { Question, ExamSection, Difficulty } from '../types';
 import logger from '../utils/logger';
-import { getSmartQuestionSelection } from './questionHistoryService';
+import { getSmartQuestionSelection, CurriculumFilterOptions } from './questionHistoryService';
 
 interface FetchQuestionsOptions {
   section?: ExamSection;
@@ -23,6 +23,8 @@ interface FetchQuestionsOptions {
   useSmartSelection?: boolean; // Enable intelligent question selection
   courseId?: string; // Multi-course support
   examDate?: string; // For adaptive review weights near exam
+  // NEW: Curriculum-aware options
+  curriculumOptions?: CurriculumFilterOptions; // Filter to covered topics only
 }
 
 // Cache for loaded questions to avoid re-importing
@@ -83,7 +85,10 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     count = 10,
     excludeIds = [],
     userId,
-    useSmartSelection = false,    examDate,  } = options;
+    useSmartSelection = false,
+    examDate,
+    curriculumOptions, // NEW: Curriculum filtering options
+  } = options;
 
   try {
     let candidates: Question[] = [];
@@ -130,12 +135,27 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     // Use smart selection if enabled and user is authenticated
     if (useSmartSelection && userId && section) {
       try {
+        // Build question topic map for curriculum filtering
+        const questionTopicMap = new Map<string, string>();
+        for (const q of filtered) {
+          questionTopicMap.set(q.id, q.topic);
+        }
+        
+        // Merge curriculum options with the topic map
+        const mergedCurriculumOptions: CurriculumFilterOptions | undefined = curriculumOptions 
+          ? {
+              ...curriculumOptions,
+              questionTopicMap, // Always include topic map for filtering
+            }
+          : undefined;
+        
         const smartSelection = await getSmartQuestionSelection(
           userId,
           section, // section is required for smart selection
           filtered.map(q => q.id),
           count,
-          examDate // Pass exam date for adaptive weights
+          examDate, // Pass exam date for adaptive weights
+          mergedCurriculumOptions // NEW: Pass curriculum filtering options
         );
         
         // Map selected IDs back to full question objects, preserving order
@@ -148,7 +168,7 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
         }
         
         // Log selection breakdown for debugging
-        logger.debug(`Smart selection: ${smartSelection.breakdown.due} due, ${smartSelection.breakdown.incorrect} incorrect, ${smartSelection.breakdown.fresh} fresh`);
+        logger.debug(`Smart selection: ${smartSelection.breakdown.due} due, ${smartSelection.breakdown.incorrect} incorrect, ${smartSelection.breakdown.fresh} fresh${smartSelection.breakdown.filtered ? `, ${smartSelection.breakdown.filtered} filtered by curriculum` : ''}`);
         
         return orderedQuestions;
       } catch (smartError) {

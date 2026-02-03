@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   BookOpen,
   CheckCircle,
@@ -136,7 +136,6 @@ const Lessons: React.FC = () => {
   const { getLessonProgress } = useStudy();
   const { courseId } = useCourse();
   const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
-  const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
@@ -392,21 +391,17 @@ const Lessons: React.FC = () => {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-bold">
-                        {isViewingPrep ? 'P' : `F${areaIndex + 1}`}
+                        {`F${areaIndex + 1}`}
                       </span>
                       <div>
                         <h2 className="font-semibold text-slate-900 dark:text-slate-100">{area.title}</h2>
                         {/* Content counts per area */}
                         <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                           <span>{area.lessons.length} Lessons</span>
-                          {!isViewingPrep && (
-                            <>
-                              <span className="text-slate-300 dark:text-slate-600">·</span>
-                              <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
-                              <span className="text-slate-300 dark:text-slate-600">·</span>
-                              <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
-                            </>
-                          )}
+                          <span className="text-slate-300 dark:text-slate-600">·</span>
+                          <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
+                          <span className="text-slate-300 dark:text-slate-600">·</span>
+                          <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
                         </div>
                       </div>
                     </div>

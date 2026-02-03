@@ -728,13 +728,13 @@ const Settings: React.FC = () => {
                            <div>
                              <div className="font-medium text-slate-900">Google Account</div>
                              <div className="text-sm text-slate-500">
-                               {user?.providerData.some(p => p.providerId === 'google.com') 
+                               {user?.providerData?.some(p => p.providerId === 'google.com') 
                                  ? 'Connected' 
                                  : 'Not connected'}
                              </div>
                            </div>
                          </div>
-                         {user?.providerData.some(p => p.providerId === 'google.com') ? (
+                         {user?.providerData?.some(p => p.providerId === 'google.com') ? (
                            <button 
                              onClick={handleUnlinkGoogle}
                              className="text-sm text-red-600 hover:text-red-700 font-medium px-3 py-1.5 hover:bg-red-50 rounded-lg transition-colors"

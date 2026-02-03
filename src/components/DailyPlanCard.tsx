@@ -79,6 +79,10 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [completedActivities, setCompletedActivities] = useState<Set<string>>(new Set());
   const [expanded, setExpanded] = useState(false);
   const [hasCarryover, setHasCarryover] = useState(false);
+  
+  // Track section to detect changes
+  const currentSection = (userProfile as any)?.examSection || 'FAR';
+  const [lastLoadedSection, setLastLoadedSection] = useState<string | null>(null);
 
   // Load daily plan from Firestore (with caching and carryover)
   const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
@@ -161,6 +165,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       setPlan(persistedPlan);
       setCompletedActivities(new Set(persistedPlan.completedActivities || []));
       setHasCarryover(!!persistedPlan.carryoverFrom);
+      setLastLoadedSection(studyState.section); // Track which section we loaded
       
       // Also save to localStorage as fallback
       saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
@@ -178,6 +183,15 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   useEffect(() => {
     loadPlan();
   }, [loadPlan]);
+  
+  // Force regenerate plan when section changes
+  useEffect(() => {
+    // Only trigger if we've loaded a plan before and section has changed
+    if (lastLoadedSection && lastLoadedSection !== currentSection) {
+      logger.log(`Section changed from ${lastLoadedSection} to ${currentSection}, regenerating daily plan`);
+      loadPlan(true); // Force regenerate for new section
+    }
+  }, [currentSection, lastLoadedSection, loadPlan]);
 
   // Check URL params for returning from an activity (auto-completion)
   useEffect(() => {

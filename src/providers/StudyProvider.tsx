@@ -57,7 +57,9 @@ export interface StudyContextType {
     questionsTrend: number;
     accuracyTrend: number;
   };
+  stats: { totalQuestions: number; accuracy: number } | null; // Section-filtered stats
   setCurrentStreak: (streak: number) => void;
+  refreshStats: () => Promise<void>; // NEW: Force refresh stats
   recordMCQAnswer: (questionId: string, topic: string | undefined, subtopic: string | undefined, isCorrect: boolean, difficulty: string, timeSpentSeconds?: number, section?: string) => Promise<void>;
   completeLesson: (lessonId: string, section: string, timeSpent: number) => Promise<void>;
   completeSimulation: (id: string, score: number, timeSpent: number, section?: string) => Promise<void>;
@@ -90,6 +92,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const [studyPlan, setStudyPlan] = useState<StudyPlan | null>(null);
   const [todayLog, setTodayLog] = useState<DailyLog | null>(null);
   const [currentStreak, setCurrentStreak] = useState(0);
+  const [stats, setStats] = useState<{ totalQuestions: number; accuracy: number } | null>(null);
   const [weeklyStats, setWeeklyStats] = useState<{
     totalQuestions: number;
     accuracy: number;
@@ -98,8 +101,12 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     accuracyTrend: number;
   }>({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
   const [loading, setLoading] = useState(true);
+  const [statsVersion, setStatsVersion] = useState(0); // Trigger re-fetch when incremented
 
   const today = format(new Date(), 'yyyy-MM-dd');
+  
+  // Get current section from userProfile (used for filtering)
+  const currentSection = (userProfile as any)?.examSection || 'FAR';
 
   // Fetch study plan when user changes
   useEffect(() => {
@@ -164,10 +171,11 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     return () => unsubscribe();
   }, [user, today, userProfile?.dailyGoal]);
 
-  // Fetch weekly stats and calculate streak
+  // Fetch weekly stats and calculate streak - now section-aware
   useEffect(() => {
     if (!user) {
       setWeeklyStats({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
+      setStats(null);
       setCurrentStreak(0);
       return;
     }
@@ -199,12 +207,25 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         let totalQuestions = 0;
         let totalCorrect = 0;
         let totalMinutes = 0;
+        // Section-filtered counts
+        let sectionQuestions = 0;
+        let sectionCorrect = 0;
 
-        thisWeekSnapshot.forEach((doc) => {
-          const data = doc.data();
+        thisWeekSnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
           totalQuestions += data.questionsAttempted || 0;
           totalCorrect += data.questionsCorrect || 0;
           totalMinutes += data.studyTimeMinutes || 0;
+          
+          // Count section-specific questions from activities
+          if (data.activities && Array.isArray(data.activities)) {
+            data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
+              if (activity.type === 'mcq' && activity.section === currentSection) {
+                sectionQuestions++;
+                if (activity.isCorrect) sectionCorrect++;
+              }
+            });
+          }
         });
 
         // Fetch last week for trend comparison
@@ -214,14 +235,17 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         let lastWeekQuestions = 0;
         let lastWeekCorrect = 0;
 
-        lastWeekSnapshot.forEach((doc) => {
-          const data = doc.data();
+        lastWeekSnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
           lastWeekQuestions += data.questionsAttempted || 0;
           lastWeekCorrect += data.questionsCorrect || 0;
         });
 
         const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
         const lastWeekAccuracy = lastWeekQuestions > 0 ? Math.round((lastWeekCorrect / lastWeekQuestions) * 100) : 0;
+        
+        // Section-specific accuracy
+        const sectionAccuracy = sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0;
 
         // Calculate trends (percentage change from last week)
         const questionsTrend = lastWeekQuestions > 0 
@@ -232,6 +256,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           : 0;
 
         setWeeklyStats({ totalQuestions, accuracy, totalMinutes, questionsTrend, accuracyTrend });
+        
+        // Set section-filtered stats
+        setStats({ totalQuestions: sectionQuestions, accuracy: sectionAccuracy });
 
         // Calculate streak (consecutive days with earnedPoints > 0)
         let streak = 0;
@@ -257,7 +284,12 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     };
 
     fetchWeeklyData();
-  }, [user, todayLog]); // Re-run when todayLog changes (user did activity)
+  }, [user, todayLog, currentSection, statsVersion]); // Re-run when section changes or stats forced refresh
+  
+  // Function to force refresh stats (called when section changes)
+  const refreshStats = async () => {
+    setStatsVersion(v => v + 1); // Increment version to trigger useEffect
+  };
 
   // Implementations
   const recordMCQAnswer = async (questionId: string, topic: string = 'General', subtopic: string = 'General', isCorrect: boolean, difficulty: string = 'medium', timeSpentSeconds: number = 0, section?: string) => {
@@ -460,7 +492,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     dailyProgress,
     dailyGoalMet,
     weeklyStats,
+    stats, // NEW: Section-filtered stats
     setCurrentStreak,
+    refreshStats, // NEW: Force refresh function
     recordMCQAnswer,
     completeLesson,
     completeSimulation,

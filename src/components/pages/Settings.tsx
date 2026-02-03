@@ -120,6 +120,7 @@ const Settings: React.FC = () => {
   // New states for enhanced settings
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>('default');
   const [reminderTime, setReminderTime] = useState('09:00');
+  const [timezone, setTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York');
   const [cacheStatus, setCacheStatus] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState(false);
   
@@ -161,6 +162,11 @@ const Settings: React.FC = () => {
     // Load notification preferences from profile
     if (profile?.weeklyReportEnabled !== undefined) {
       setNotifications((prev) => ({ ...prev, weeklyReport: profile.weeklyReportEnabled }));
+    }
+    
+    // Load timezone from profile or auto-detect
+    if (profile?.timezone) {
+      setTimezone(profile.timezone);
     }
 
     // Cache status
@@ -277,6 +283,7 @@ const Settings: React.FC = () => {
         dailyReminderEnabled: notifications.dailyReminder,
         dailyReminderTime: reminderTime || '09:00',
         weeklyReportEnabled: notifications.weeklyReport,
+        timezone,
       });
       
       // Setup daily reminder using unified notification service
@@ -662,6 +669,44 @@ const Settings: React.FC = () => {
                         />
                       </div>
                     )}
+                    
+                    {/* Timezone Selector */}
+                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                      <div>
+                        <div className="font-medium text-slate-900">Your Timezone</div>
+                        <div className="text-sm text-slate-500">Used for notification timing</div>
+                      </div>
+                      <select
+                        value={timezone}
+                        onChange={(e) => setTimezone(e.target.value)}
+                        className="px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 bg-white text-sm max-w-[200px]"
+                      >
+                        <optgroup label="North America">
+                          <option value="America/New_York">Eastern (ET)</option>
+                          <option value="America/Chicago">Central (CT)</option>
+                          <option value="America/Denver">Mountain (MT)</option>
+                          <option value="America/Los_Angeles">Pacific (PT)</option>
+                          <option value="America/Anchorage">Alaska (AKT)</option>
+                          <option value="Pacific/Honolulu">Hawaii (HT)</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                          <option value="Asia/Tokyo">Tokyo (JST)</option>
+                          <option value="Asia/Shanghai">China (CST)</option>
+                          <option value="Asia/Singapore">Singapore (SGT)</option>
+                          <option value="Asia/Kolkata">India (IST)</option>
+                          <option value="Asia/Dubai">Dubai (GST)</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                          <option value="Europe/London">London (GMT/BST)</option>
+                          <option value="Europe/Paris">Paris (CET)</option>
+                          <option value="Europe/Berlin">Berlin (CET)</option>
+                        </optgroup>
+                        <optgroup label="Other">
+                          <option value="Australia/Sydney">Sydney (AEST)</option>
+                          <option value="Pacific/Auckland">Auckland (NZST)</option>
+                        </optgroup>
+                      </select>
+                    </div>
 
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>

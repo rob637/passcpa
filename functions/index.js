@@ -170,19 +170,13 @@ function getPasswordResetEmailHTML(email, resetLink) {
 
 exports.sendDailyReminders = onSchedule({
   schedule: 'every 60 minutes',
-  timeZone: 'America/New_York',
+  timeZone: 'UTC', // Run in UTC, check each user's timezone individually
   memory: '256MiB',
   timeoutSeconds: 60,
 }, async (event) => {
   const now = new Date();
-  // Get hour in NY timezone to match the scheduler and likely user base
-  const currentHour = new Intl.DateTimeFormat('en-US', { 
-    timeZone: 'America/New_York', 
-    hour: '2-digit', 
-    hourCycle: 'h23' 
-  }).format(now);
   
-  console.log(`Checking for daily reminders at hour ${currentHour} (NY time)`);
+  console.log(`Checking for daily reminders at ${now.toISOString()}`);
   
   try {
     // Find users with reminder enabled
@@ -197,16 +191,32 @@ exports.sendDailyReminders = onSchedule({
       const reminderTime = userData.dailyReminderTime || '09:00';
       const reminderHour = reminderTime.split(':')[0];
       
-      // Check if this is the right hour for this user
-      if (reminderHour !== currentHour) continue;
+      // Get user's timezone (default to America/New_York for legacy users)
+      const userTimezone = userData.timezone || 'America/New_York';
+      
+      // Get current hour in user's timezone
+      const currentHourInUserTz = new Intl.DateTimeFormat('en-US', { 
+        timeZone: userTimezone, 
+        hour: '2-digit', 
+        hourCycle: 'h23' 
+      }).format(now);
+      
+      // Check if this is the right hour for this user in THEIR timezone
+      if (reminderHour !== currentHourInUserTz) continue;
       
       // Check if user has FCM tokens
       const fcmTokens = userData.fcmTokens || [];
       if (fcmTokens.length === 0) continue;
       
-      // Check if user already studied today
-      const today = now.toISOString().split('T')[0];
-      const todayLogRef = db.collection('users').doc(userDoc.id).collection('daily_log').doc(today);
+      // Get today's date in user's timezone
+      const todayInUserTz = new Intl.DateTimeFormat('en-CA', {
+        timeZone: userTimezone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).format(now); // Returns YYYY-MM-DD format
+      
+      const todayLogRef = db.collection('users').doc(userDoc.id).collection('daily_log').doc(todayInUserTz);
       const todayLog = await todayLogRef.get();
       
       let message = getContextualReminder(now);

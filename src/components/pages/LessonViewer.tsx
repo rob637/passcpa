@@ -782,72 +782,51 @@ const LessonViewer: React.FC = () => {
       </div>
 
       {/* Sticky Bottom Bar for Mobile Actions */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 z-50 flex items-center justify-between gap-4 safe-bottom">
-        {prevLesson ? (
-          <Link
-            to={`/lessons/${prevLesson.id}`}
-            className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </Link>
-        ) : (
-          <div className="w-11" /> // Spacer
-        )}
-        
-        {nextLesson ? (
+      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 z-50 safe-bottom">
+        <div className="flex items-center gap-3">
+          {prevLesson && (
+            <Link
+              to={`/lessons/${prevLesson.id}`}
+              className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
+              aria-label="Previous lesson"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Link>
+          )}
+          
           <button
-              onClick={() => handleComplete(true)} // Mark complete and go next
-              className="flex-1 btn-primary py-3 flex items-center justify-center gap-2"
+            onClick={() => handleComplete(nextLesson ? true : false)}
+            className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3.5 px-6 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
           >
-            <span>Complete & Next</span>
-            <ChevronRight className="w-4 h-4" />
+            {isComplete ? (
+              <>
+                <CheckCircle className="w-5 h-5" />
+                <span>{nextLesson ? 'Continue' : 'Done'}</span>
+              </>
+            ) : (
+              <>
+                <span>{nextLesson ? 'Complete & Continue' : 'Complete Lesson'}</span>
+              </>
+            )}
+            {nextLesson && <ChevronRight className="w-5 h-5" />}
           </button>
-        ) : (
-           <button
-              onClick={() => handleComplete(false)}
-              className="flex-1 btn-primary py-3 flex items-center justify-center gap-2"
-          >
-            <CheckCircle className="w-4 h-4" />
-            <span>Finish Lesson</span>
-          </button>
-        )}
+        </div>
       </div>
 
       {/* Spacer for sticky bottom bar */}
       <div className="h-24 md:hidden" />
 
-      {/* Completion Prompt Banner (Desktop Only - Mobile uses sticky bar) */}
+      {/* Completion Prompt Banner (Desktop Only - Clean, Google-style floating bar) */}
       {isComplete && (
         <div className="hidden md:flex fixed bottom-6 inset-x-0 justify-center items-center z-40 px-4 pointer-events-none">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700 p-2 pl-5 pr-2 flex items-center gap-4 max-w-2xl w-full sm:w-auto animate-in fade-in slide-in-from-bottom-4 pointer-events-auto">
-            <div className="flex-1 sm:flex-none">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-success-50 dark:bg-success-900/20 rounded-full flex items-center justify-center shrink-0">
-                  <CheckCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Lesson Complete!</div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">Ready for the next one?</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={() => navigate('/lessons')}
-                className="px-3 py-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg"
-              >
-                Exit
-              </button>
-              <button 
-                onClick={() => handleComplete(nextLesson ? true : false)} 
-                className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>Complete & Continue</span>
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+          <button 
+            onClick={() => handleComplete(nextLesson ? true : false)} 
+            className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full text-base font-semibold shadow-xl shadow-primary-600/30 transition-all active:scale-95 flex items-center gap-3 pointer-events-auto animate-in fade-in slide-in-from-bottom-4"
+          >
+            <CheckCircle className="w-5 h-5" />
+            <span>{nextLesson ? 'Continue to Next Lesson' : 'Complete Lesson'}</span>
+            {nextLesson && <ChevronRight className="w-5 h-5" />}
+          </button>
         </div>
       )}
     </div>

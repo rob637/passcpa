@@ -117,14 +117,14 @@ describe('studyPlanner', () => {
       expect(halfwayMilestone).toBeDefined();
     });
 
-    it('should have Content Complete milestone', () => {
+    it('should have Review Starts milestone', () => {
       const examDate = new Date('2025-03-15');
 
       (differenceInDays as ReturnType<typeof vi.fn>).mockReturnValue(59);
 
       const plan = generateStudyPlan('FAR', examDate);
 
-      const completeMilestone = plan.milestones.find(m => m.label === 'Content Complete (Begin Review)');
+      const completeMilestone = plan.milestones.find(m => m.label === 'Review Starts');
       expect(completeMilestone).toBeDefined();
     });
 

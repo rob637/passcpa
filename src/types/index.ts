@@ -256,5 +256,6 @@ export interface UserProfile {
   dailyReminderEnabled?: boolean;
   dailyReminderTime?: string;
   weeklyReportEnabled?: boolean;
+  timezone?: string; // IANA timezone string (e.g., "America/New_York")
 }
 

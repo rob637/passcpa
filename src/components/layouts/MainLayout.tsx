@@ -252,14 +252,14 @@ const MainLayout = () => {
       </main>
       </div>{/* End App Shell */}
 
-      {/* Mobile Bottom Navigation - Outside app shell so it spans full width */}
+      {/* Mobile Bottom Navigation - Optimized Height */}
       <nav
         ref={navRef}
-        className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
+        className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur dark:bg-slate-800/95 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
         role="navigation"
         aria-label="Mobile navigation"
       >
-        <div className="relative flex items-center justify-around h-16">
+        <div className="relative flex items-center justify-around h-14">
           {/* Active Indicator */}
           <div
             ref={indicatorRef}
@@ -275,12 +275,12 @@ const MainLayout = () => {
               aria-label={item.label}
               className={({ isActive }) =>
                 clsx(
-                  'nav-link flex flex-col items-center justify-center w-full h-full gap-1',
+                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
                   isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
                 )
               }
             >
-              <item.icon className="w-6 h-6" aria-hidden="true" />
+              <item.icon className="w-5 h-5" aria-hidden="true" />
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}

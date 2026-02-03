@@ -259,9 +259,9 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
           icon: '🎯'
         },
         'memory-aid': { 
-          bg: 'bg-purple-50 dark:bg-purple-900/20', 
-          border: 'border-purple-200 dark:border-purple-800', 
-          text: 'text-purple-800 dark:text-purple-200',
+          bg: 'bg-primary-50 dark:bg-primary-900/20', 
+          border: 'border-primary-200 dark:border-primary-800', 
+          text: 'text-primary-800 dark:text-primary-200',
           icon: '🧠'
         },
       };
@@ -734,11 +734,11 @@ const LessonViewer: React.FC = () => {
             className="card p-4 hover:shadow-md transition-shadow group"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-xl flex items-center justify-center">
-                <Bot className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+              <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                <Bot className="w-5 h-5 text-primary-600 dark:text-primary-400" />
               </div>
               <div>
-                <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400">
+                <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   Ask Vory
                 </h4>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Get help understanding this topic</p>
@@ -781,9 +781,44 @@ const LessonViewer: React.FC = () => {
         </div>
       </div>
 
-      {/* Completion Prompt Banner - Floating Pill Design */}
+      {/* Sticky Bottom Bar for Mobile Actions */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 z-50 flex items-center justify-between gap-4 safe-bottom">
+        {prevLesson ? (
+          <Link
+            to={`/lessons/${prevLesson.id}`}
+            className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Link>
+        ) : (
+          <div className="w-11" /> // Spacer
+        )}
+        
+        {nextLesson ? (
+          <button
+              onClick={() => handleComplete(true)} // Mark complete and go next
+              className="flex-1 btn-primary py-3 flex items-center justify-center gap-2"
+          >
+            <span>Complete & Next</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        ) : (
+           <button
+              onClick={() => handleComplete(false)}
+              className="flex-1 btn-primary py-3 flex items-center justify-center gap-2"
+          >
+            <CheckCircle className="w-4 h-4" />
+            <span>Finish Lesson</span>
+          </button>
+        )}
+      </div>
+
+      {/* Spacer for sticky bottom bar */}
+      <div className="h-24 md:hidden" />
+
+      {/* Completion Prompt Banner (Desktop Only - Mobile uses sticky bar) */}
       {isComplete && (
-        <div className="fixed bottom-6 inset-x-0 flex justify-center items-center z-40 px-4 pointer-events-none">
+        <div className="hidden md:flex fixed bottom-6 inset-x-0 justify-center items-center z-40 px-4 pointer-events-none">
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700 p-2 pl-5 pr-2 flex items-center gap-4 max-w-2xl w-full sm:w-auto animate-in fade-in slide-in-from-bottom-4 pointer-events-auto">
             <div className="flex-1 sm:flex-none">
               <div className="flex items-center gap-3">

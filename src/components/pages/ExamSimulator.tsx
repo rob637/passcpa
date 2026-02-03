@@ -177,6 +177,8 @@ const ExamSimulator: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timerRef = useRef<any>(null);
+  // Ref for scrolling to top of question on navigation (mobile fix)
+  const questionTopRef = useRef<HTMLDivElement>(null);
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const availableMockExams = getMockExamsBySection(currentSection);
@@ -398,20 +400,38 @@ const ExamSimulator: React.FC = () => {
     }));
   }, []);
 
+  // Helper to scroll to top of question (mobile fix)
+  const scrollToQuestionTop = useCallback(() => {
+    if (questionTopRef.current) {
+      questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
+  // Navigate to a specific question and scroll to top
+  const goToQuestion = useCallback((index: number) => {
+    setCurrentIndex(index);
+    scrollToQuestionTop();
+  }, [scrollToQuestionTop]);
+
   const handleNext = useCallback(() => {
     const maxIndex = currentTestletType === 'tbs' ? testletTBS.length - 1 : testletQuestions.length - 1;
     if (currentIndex < maxIndex) {
       setCurrentIndex((i) => i + 1);
+      scrollToQuestionTop();
     }
     feedback.click();
-  }, [currentIndex, testletQuestions.length, testletTBS.length, currentTestletType]);
+  }, [currentIndex, testletQuestions.length, testletTBS.length, currentTestletType, scrollToQuestionTop]);
 
   const handlePrevious = useCallback(() => {
     if (currentIndex > 0) {
       setCurrentIndex((i) => i - 1);
+      scrollToQuestionTop();
     }
     feedback.tap();
-  }, [currentIndex]);
+  }, [currentIndex, scrollToQuestionTop]);
 
   const toggleFlag = useCallback(() => {
     const itemId = currentTestletType === 'tbs' ? currentTBS?.id : currentQuestion?.id;
@@ -1157,10 +1177,10 @@ const ExamSimulator: React.FC = () => {
                       {results.correct}/{questions.length} correct
                     </div>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-xl">
-                    <div className="text-2xl font-bold text-purple-700">{results.tbsScore}%</div>
-                    <div className="text-sm text-purple-600">TBS Score</div>
-                    <div className="text-xs text-purple-500 mt-1">
+                  <div className="bg-primary-50 p-4 rounded-xl">
+                    <div className="text-2xl font-bold text-primary-700">{results.tbsScore}%</div>
+                    <div className="text-sm text-primary-600">TBS Score</div>
+                    <div className="text-xs text-primary-500 mt-1">
                       {Math.round(results.tbsCorrect || 0)}/{results.tbsTotal} requirements
                     </div>
                   </div>
@@ -1282,7 +1302,7 @@ const ExamSimulator: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="prometric-content flex-1">
+        <div ref={questionTopRef} className="prometric-content flex-1">
           <div className="prometric-main relative">
             {/* Calculator Overlay */}
             {showCalculator && (
@@ -1400,7 +1420,7 @@ const ExamSimulator: React.FC = () => {
               testletTBS.map((tbs, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrentIndex(i)}
+                  onClick={() => goToQuestion(i)}
                   className={clsx(
                     'prometric-grid-btn',
                     currentIndex === i && 'current',
@@ -1415,7 +1435,7 @@ const ExamSimulator: React.FC = () => {
               testletQuestions.map((q, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrentIndex(i)}
+                  onClick={() => goToQuestion(i)}
                   className={clsx(
                     'prometric-grid-btn',
                     currentIndex === i && 'current',
@@ -1538,7 +1558,7 @@ const ExamSimulator: React.FC = () => {
           )}
 
           {/* Question Area */}
-          <div className="flex-1 overflow-y-auto p-6">
+          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6">
             <div className="max-w-4xl mx-auto">
               {currentTestletType === 'tbs' && currentTBS ? (
                 /* TBS Rendering */
@@ -1633,13 +1653,13 @@ const ExamSimulator: React.FC = () => {
                   testletTBS.map((tbs, i) => (
                     <button
                       key={i}
-                      onClick={() => setCurrentIndex(i)}
+                      onClick={() => goToQuestion(i)}
                       className={clsx(
                         'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
                         currentIndex === i
                           ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2'
                           : Object.keys(tbsAnswers[tbs.id] || {}).length > 0
-                            ? 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                            ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
                             : 'bg-slate-100 text-slate-500 hover:bg-slate-200',
                         flagged.has(tbs.id) && 'ring-2 ring-warning-400 z-10'
                       )}
@@ -1652,7 +1672,7 @@ const ExamSimulator: React.FC = () => {
                   testletQuestions.map((q, i) => (
                     <button
                       key={i}
-                      onClick={() => setCurrentIndex(i)}
+                      onClick={() => goToQuestion(i)}
                       className={clsx(
                         'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
                         currentIndex === i

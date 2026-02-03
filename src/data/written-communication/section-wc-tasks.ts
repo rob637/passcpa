@@ -681,7 +681,8 @@ Margaret wants to:
 ];
 
 // ==========================================================================
-// BEC - Business Environment and Concepts WC Tasks (through June 2026)
+// BEC - Business Environment and Concepts WC Tasks
+// ⚠️ BEC ends June 30, 2026 - WC is unique to BEC section
 // ==========================================================================
 export const BEC_WC_TASKS: WCTask[] = [
   {

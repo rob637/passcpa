@@ -8,17 +8,19 @@ const GEMINI_API_URL =
 
 // System prompts for different tutor modes
 const SYSTEM_PROMPTS: Record<string, string> = {
-  explain: `You are an expert CPA exam tutor. Your role is to:
-- Give clear, complete explanations of accounting and tax concepts
+  explain: `You are Vory, an expert CPA exam tutor for VoraPrep. Your role is to:
+- Give clear, complete explanations of accounting, auditing, tax, and business concepts ONLY
 - Highlight HIGH-YIELD points that are frequently tested on the CPA exam
 - Use tables, bullet points, and formatting for clarity
 - Include relevant IRC sections, ASC standards, or GAAP references
 - Provide mnemonics and memory tricks when helpful
 - Keep explanations concise but thorough
 
+IMPORTANT: You ONLY help with CPA exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your CPA exam tutor! I can only help with accounting, auditing, tax, and business topics. What CPA concept can I explain for you?"
+
 Format your responses with **bold** for key terms, bullet points for lists, and clear section headers.`,
 
-  socratic: `You are a Socratic CPA tutor. Your role is to:
+  socratic: `You are Vory, a Socratic CPA tutor for VoraPrep. Your role is to:
 - NEVER give direct answers immediately
 - Ask probing questions to help the student think through the problem
 - Guide them step-by-step with questions
@@ -26,14 +28,18 @@ Format your responses with **bold** for key terms, bullet points for lists, and 
 - Only reveal the answer after they've worked through the logic
 - Help them build understanding, not just memorization
 
+IMPORTANT: You ONLY help with CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+
 Start by asking what they already know, then build from there with questions.`,
 
-  quiz: `You are a CPA exam quiz master. Your role is to:
+  quiz: `You are Vory, a CPA exam quiz master for VoraPrep. Your role is to:
 - Generate realistic CPA exam-style multiple choice questions
 - Include 4 options (A, B, C, D) with plausible distractors
 - After the user answers, explain why the correct answer is right AND why each wrong answer is wrong
 - Focus on commonly tested topics and exam traps
 - Vary difficulty based on user's performance
+
+IMPORTANT: You ONLY create quizzes about CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
 
 Format: Present the question clearly, wait for their answer, then provide detailed feedback.`,
 };
@@ -65,8 +71,26 @@ const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHi
 };
 
 // Fallback responses when API is unavailable
-const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = []) => {
+const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false) => {
   const lowerInput = input.toLowerCase().trim();
+  
+  // Check for off-topic questions first
+  const cpaKeywords = ['accounting', 'audit', 'tax', 'gaap', 'fasb', 'asc', 'irc', 'basis', 'depreciation', 
+    'amortization', 'lease', 'revenue', 'expense', 'asset', 'liability', 'equity', 'debit', 'credit',
+    'journal', 'ledger', 'financial', 'statement', 'balance sheet', 'income', 'cash flow', 'ratio',
+    'inventory', 'fifo', 'lifo', 'receivable', 'payable', 'bond', 'stock', 'dividend', 'partnership',
+    's corp', 'c corp', 'llc', 'sole proprietor', 'irs', '1031', '1099', 'w-2', 'capital gain', 'loss',
+    'deduction', 'credit', 'exclusion', 'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud',
+    'materiality', 'sampling', 'attestation', 'compilation', 'review', 'assertion', 'disclosure',
+    'consolidation', 'subsidiary', 'goodwill', 'impairment', 'pension', 'benefit', 'aro', 'contingency',
+    'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', 'exam', 'blueprint', 'testlet', 'simulation'];
+  
+  const isOnTopic = cpaKeywords.some(keyword => lowerInput.includes(keyword)) || lowerInput.length < 15;
+  
+  // Off-topic response
+  if (!isOnTopic && lowerInput.length > 20) {
+    return `🎓 **I'm Vory, your CPA exam tutor!**\n\nI specialize in helping you pass the CPA exam. I can explain:\n\n• **FAR** - Financial Accounting & Reporting\n• **AUD** - Auditing & Attestation  \n• **REG** - Regulation (Tax & Business Law)\n• **BAR/ISC/TCP** - Discipline sections\n\nWhat CPA topic can I help you with? Try asking about leases, revenue recognition, tax basis, or any exam concept!`;
+  }
   
   // Check if this looks like an answer to a previous quiz question
   const lastAssistantMessage = [...conversationHistory].reverse().find(m => m.role === 'assistant')?.content || '';
@@ -135,7 +159,7 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   }
 
   // Default
-  return `I'd be happy to help you understand **${input}**! 📚\n\n**To give you the best explanation, could you tell me:**\n1. What specific aspect is unclear?\n2. Are you working on a particular problem?\n3. What have you already studied on this topic?\n\n*The more context you give me, the better I can tailor my explanation!*\n\n**Tip:** Add your Gemini API key to .env (VITE_GEMINI_API_KEY) for unlimited AI-powered responses!`;
+  return `I'd be happy to help you understand **${input}**! 📚\n\n**To give you the best explanation, could you tell me:**\n1. What specific aspect is unclear?\n2. Are you working on a particular problem?\n3. What have you already studied on this topic?\n\n*The more context you give me, the better I can tailor my explanation!*${isApiError ? '\n\n*Note: Using offline mode. Some features may be limited.*' : ''}`;
 };
 
 // Call Gemini API
@@ -199,8 +223,35 @@ export const generateAIResponse = async (
       const errorMessage = errorData?.error?.message || `HTTP ${response.status}`;
       logger.error(`Gemini API error: ${errorMessage}`);
       
-      // Check for specific error types
-      if (errorMessage.includes('leaked') || errorMessage.includes('PERMISSION_DENIED')) {
+      // Check for specific error types - API key issues
+      if (
+        errorMessage.includes('API_KEY_INVALID') ||
+        errorMessage.includes('PERMISSION_DENIED') ||
+        errorMessage.includes('API key not valid') ||
+        errorMessage.includes('API key expired') ||
+        errorMessage.includes('invalid API key') ||
+        response.status === 400 ||
+        response.status === 401 ||
+        response.status === 403
+      ) {
+        // Log for admin notification
+        logger.error('[ADMIN ALERT] Gemini API key is invalid or expired! Status:', response.status, 'Message:', errorMessage);
+        
+        // Track the failure for admin dashboard (can be picked up by error tracking)
+        try {
+          // Store in localStorage for admin to see
+          const failures = JSON.parse(localStorage.getItem('ai_api_failures') || '[]');
+          failures.push({
+            timestamp: new Date().toISOString(),
+            status: response.status,
+            message: errorMessage,
+          });
+          // Keep only last 10 failures
+          localStorage.setItem('ai_api_failures', JSON.stringify(failures.slice(-10)));
+        } catch {
+          // Ignore localStorage errors
+        }
+        
         throw new Error('API_KEY_INVALID');
       }
       throw new Error(`Gemini API error: ${response.status}`);
@@ -218,10 +269,10 @@ export const generateAIResponse = async (
     
     // Show specific message for API key issues
     if (error instanceof Error && error.message === 'API_KEY_INVALID') {
-      return `⚠️ **AI Service Temporarily Unavailable**\n\nThe AI API key needs to be refreshed. In the meantime, here's a helpful response:\n\n---\n\n${generateFallbackResponse(userMessage, mode, section, conversationHistory)}`;
+      return `⚠️ **AI Service Temporarily Unavailable**\n\nI'm currently in offline mode. Here's what I can help with:\n\n---\n\n${generateFallbackResponse(userMessage, mode, section, conversationHistory, true)}`;
     }
     
-    return generateFallbackResponse(userMessage, mode, section, conversationHistory);
+    return generateFallbackResponse(userMessage, mode, section, conversationHistory, true);
   }
 };
 

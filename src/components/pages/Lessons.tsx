@@ -12,12 +12,17 @@ import {
   GraduationCap,
   Layout,
   Compass,
+  FileText,
+  ClipboardCheck,
+  Trophy,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { fetchLessonsBySection } from '../../services/lessonService';
+import { getQuestionStats } from '../../services/questionService';
+import { getTBSCount } from '../../services/tbsService';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
 
@@ -41,6 +46,8 @@ interface DisplayLesson {
 
 interface GroupedArea extends AreaDefinition {
   lessons: DisplayLesson[];
+  mcqCount?: number;
+  tbsCount?: number;
 }
 
 // Group lessons by topic area for display
@@ -132,6 +139,7 @@ const Lessons: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
+  const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
 
   // Support switching between user's exam section and PREP
   const userSection = (userProfile?.examSection || 'FAR') as ExamSection;
@@ -141,17 +149,32 @@ const Lessons: React.FC = () => {
   const currentSection = viewingSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
-  // Fetch lessons from Firestore
+  // Fetch lessons and content counts
   useEffect(() => {
-    const fetchLessons = async () => {
+    const fetchLessonsAndCounts = async () => {
       try {
+        // Fetch lessons
         const lessons = await fetchLessonsBySection(currentSection, courseId);
         setRawLessons(lessons);
+        
+        // Fetch content counts for section (skip for PREP)
+        if (currentSection !== 'PREP') {
+          const [questionStats, tbsCount] = await Promise.all([
+            getQuestionStats(),
+            getTBSCount(currentSection as ExamSection),
+          ]);
+          setContentCounts({
+            mcq: questionStats.bySection[currentSection] || 0,
+            tbs: tbsCount,
+          });
+        } else {
+          setContentCounts({ mcq: 0, tbs: 0 });
+        }
       } catch (error) {
         logger.error('Error fetching lessons:', error);
       }
     };
-    fetchLessons();
+    fetchLessonsAndCounts();
   }, [currentSection, courseId]);
   
   // Fetch completed lessons from Firestore
@@ -221,7 +244,7 @@ const Lessons: React.FC = () => {
   }
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+    <div className="px-2 py-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Section Toggle - Switch between exam section and PREP */}
       <div className="flex gap-2 mb-4">
         <button
@@ -280,25 +303,53 @@ const Lessons: React.FC = () => {
           )}
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {completedCount}/{totalLessons}
+        {/* Stats - Becker-style content counts */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <div className="card p-3 text-center">
+            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
+              <BookOpen className="w-5 h-5 text-primary-500" />
+              {totalLessons}
             </div>
-            <div className="text-sm text-slate-500 dark:text-slate-400">Completed</div>
+            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Lessons</div>
           </div>
-          <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+          {!isViewingPrep && (
+            <>
+              <div className="card p-3 text-center">
+                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
+                  <FileText className="w-5 h-5" />
+                  {contentCounts.mcq}
+                </div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">MCQs</div>
+              </div>
+              <div className="card p-3 text-center">
+                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
+                  <ClipboardCheck className="w-5 h-5" />
+                  {contentCounts.tbs}
+                </div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TBS</div>
+              </div>
+            </>
+          )}
+          <div className="card p-3 text-center">
+            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-success-600">
+              <Trophy className="w-5 h-5" />
               {progressPercent}%
             </div>
-            <div className="text-sm text-slate-500 dark:text-slate-400">Progress</div>
+            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Complete</div>
           </div>
-          <div className="card p-4 text-center">
-            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              {Math.round(totalDuration / 60)}h
-            </div>
-            <div className="text-sm text-slate-500 dark:text-slate-400">Total Time</div>
+        </div>
+        
+        {/* Progress bar */}
+        <div className="mb-6">
+          <div className="flex justify-between text-sm text-slate-600 dark:text-slate-400 mb-2">
+            <span>{completedCount} of {totalLessons} lessons completed</span>
+            <span>{Math.round(totalDuration / 60)}h total study time</span>
+          </div>
+          <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-gradient-to-r from-primary-500 to-success-500 rounded-full transition-all duration-500"
+              style={{ width: `${progressPercent}%` }}
+            />
           </div>
         </div>
 
@@ -339,27 +390,58 @@ const Lessons: React.FC = () => {
 
           return (
             <div key={area.id} className="card">
-              {/* Area Header */}
+              {/* Area Header - Study Journey Style */}
               <div className="card-header">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">
-                        Area {areaIndex + 1}
+                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-bold">
+                        {isViewingPrep ? 'P' : `F${areaIndex + 1}`}
                       </span>
-                      {areaProgress === 100 && <CheckCircle className="w-4 h-4 text-success-500" />}
+                      <div>
+                        <h2 className="font-semibold text-slate-900 dark:text-slate-100">{area.title}</h2>
+                        {/* Content counts per area */}
+                        <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                          <span>{area.lessons.length} Lessons</span>
+                          {!isViewingPrep && (
+                            <>
+                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
+                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                    <h2 className="font-semibold text-slate-900 dark:text-slate-100 mt-1">{area.title}</h2>
                   </div>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-slate-900 dark:text-slate-100">{areaProgress}%</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {areaCompleted}/{area.lessons.length}
-                    </div>
+                  <div className="text-right flex items-center gap-3">
+                    {areaProgress === 100 && (
+                      <div className="flex items-center gap-1 text-success-600 dark:text-success-400">
+                        <CheckCircle className="w-5 h-5" />
+                        <span className="text-sm font-medium">Complete</span>
+                      </div>
+                    )}
+                    {areaProgress < 100 && (
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-slate-900 dark:text-slate-100">{areaProgress}%</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          {areaCompleted}/{area.lessons.length}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div className="mt-3 progress-bar">
-                  <div className="progress-bar-fill" style={{ width: `${areaProgress}%` }} />
+                <div className="mt-3 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                  <div 
+                    className={clsx(
+                      'h-full rounded-full transition-all duration-500',
+                      areaProgress === 100 
+                        ? 'bg-success-500' 
+                        : 'bg-primary-500'
+                    )}
+                    style={{ width: `${areaProgress}%` }} 
+                  />
                 </div>
               </div>
 

@@ -80,20 +80,28 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }
   
   return (
     <div className="flex items-end justify-between gap-1 h-16">
-      {activity.map((day, i) => (
-        <div key={i} className="flex flex-col items-center flex-1">
-          <div 
-            className={clsx(
-              'w-full rounded-t transition-all',
-              day.questions > 0 ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-700'
-            )}
-            style={{ height: `${Math.max((day.questions / maxQuestions) * 100, day.questions > 0 ? 20 : 10)}%` }}
-          />
-          <span className="text-[10px] text-slate-400 mt-1">
-            {format(day.date, 'EEE').charAt(0)}
-          </span>
-        </div>
-      ))}
+      {activity.map((day, i) => {
+        const isActive = day.questions > 0;
+        const height = Math.max((day.questions / maxQuestions) * 100, isActive ? 20 : 10);
+        
+        return (
+          <div key={i} className="flex-1 flex flex-col items-center h-full">
+            {/* Bar wrapper needs h-full for percentage heights to work */}
+            <div className="flex-1 w-full flex items-end">
+              <div 
+                className={clsx(
+                  'w-full rounded-t transition-all',
+                  isActive ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-700'
+                )}
+                style={{ height: `${height}%` }}
+              />
+            </div>
+            <span className="text-[10px] text-slate-400 mt-1">
+              {format(day.date, 'EEE').charAt(0)}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -102,10 +110,19 @@ const You: React.FC = () => {
   const { user, userProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId } = useCourse();
-  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number }[]>([]);
+  
+  // Initialize with current week's dates (Mon-Sun) for consistent chart rendering
+  const getInitialWeeklyActivity = () => {
+    const start = startOfWeek(new Date(), { weekStartsOn: 1 });
+    const end = endOfWeek(new Date(), { weekStartsOn: 1 });
+    return eachDayOfInterval({ start, end }).map(date => ({ date, questions: 0 }));
+  };
+  
+  const [weeklyActivity, setWeeklyActivity] = useState<{ date: Date; questions: number }[]>(getInitialWeeklyActivity);
   const [overallStats, setOverallStats] = useState({
     totalQuestions: 0,
     correctAnswers: 0,
+    tbsCompleted: 0,
     lessonsCompleted: 0,
     totalLessons: 0,
     studyMinutes: 0,
@@ -147,6 +164,7 @@ const You: React.FC = () => {
         // Track section-specific stats
         let sectionQuestions = 0;
         let sectionCorrect = 0;
+        let sectionTbs = 0;
         let sectionMinutes = 0;
 
         const dailyData = await Promise.all(
@@ -176,8 +194,12 @@ const You: React.FC = () => {
               const mcqActivities = sectionActivities.filter((a: { type?: string }) => a.type === 'mcq');
               const correctMcqs = mcqActivities.filter((a: { isCorrect?: boolean }) => a.isCorrect).length;
               
+              // Count section-specific TBS
+              const tbsActivities = sectionActivities.filter((a: { type?: string }) => a.type === 'tbs');
+              
               sectionQuestions += mcqActivities.length;
               sectionCorrect += correctMcqs;
+              sectionTbs += tbsActivities.length;
               
               // Estimate time per activity (activities store timeSpentSeconds for MCQs, timeSpent (mins) for others)
               const sectionTime = sectionActivities.reduce(
@@ -207,7 +229,7 @@ const You: React.FC = () => {
         // Get topic performance (section-filtered)
         let topicsData: { id: string; topic: string; accuracy: number; questions: number }[] = [];
         if (getTopicPerformance) {
-          topicsData = await getTopicPerformance();
+          topicsData = await getTopicPerformance(examSection);
         }
         setTopicPerformance(topicsData);
 
@@ -228,18 +250,21 @@ const You: React.FC = () => {
         setOverallStats({
           totalQuestions: sectionQuestions,
           correctAnswers: sectionCorrect,
+          tbsCompleted: sectionTbs,
           lessonsCompleted: lessonsCompletedCount,
           totalLessons: totalLessonsCount,
           studyMinutes: Math.round(sectionMinutes),
           accuracy: sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0,
         });
 
-        // Calculate readiness with proper parameters
+        // Calculate readiness with proper parameters including TBS
         const readiness = calculateExamReadiness(
           { totalQuestions: sectionQuestions, accuracy: sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0 },
           topicsData,
           lessonsCompletedCount,
-          totalLessonsCount
+          totalLessonsCount,
+          sectionTbs,
+          20
         );
         setReadinessData(readiness);
 
@@ -346,8 +371,9 @@ const You: React.FC = () => {
           </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-4 gap-2 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+        {/* Quick Stats - 2 rows showing key metrics */}
+        <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+          {/* Row 1: Streak, MCQs, TBS */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-orange-500 mb-1">
               <Flame className="w-4 h-4" />
@@ -357,7 +383,19 @@ const You: React.FC = () => {
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.totalQuestions}</div>
-            <span className="text-xs text-slate-500">Questions</span>
+            <span className="text-xs text-slate-500">MCQs</span>
+          </div>
+          <div className="text-center">
+            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
+            <span className="text-xs text-slate-500">TBS</span>
+          </div>
+          
+          {/* Row 2: Lessons, Accuracy, Time */}
+          <div className="text-center">
+            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
+              {overallStats.lessonsCompleted}/{overallStats.totalLessons}
+            </div>
+            <span className="text-xs text-slate-500">Lessons</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
@@ -369,13 +407,13 @@ const You: React.FC = () => {
                 ? `${overallStats.studyMinutes}m` 
                 : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
             </div>
-            <span className="text-xs text-slate-500">Study Time</span>
+            <span className="text-xs text-slate-500">Time</span>
           </div>
         </div>
       </div>
 
       {/* Readiness & Weekly Activity */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Readiness */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
           <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">Exam Ready</h3>
@@ -433,8 +471,8 @@ const You: React.FC = () => {
           className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-              <Users className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+            <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+              <Users className="w-5 h-5 text-primary-600 dark:text-primary-400" />
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>

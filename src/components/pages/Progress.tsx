@@ -13,6 +13,9 @@ import {
   Calendar,
   Sparkles,
   Play,
+  ChevronDown,
+  ChevronUp,
+  FileText,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -23,10 +26,12 @@ import { db } from '../../config/firebase';
 import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
-import { generateStudyPlan } from '../../utils/studyPlanner';
+import { generateStudyPlan, calculatePaceStatus, type PaceStatus } from '../../utils/studyPlanner';
 import { fetchAllLessons } from '../../services/lessonService';
+import { getTBSHistory } from '../../services/questionHistoryService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
 import Leaderboard from '../Leaderboard';
+import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 
 interface WeeklyActivity {
   date: Date;
@@ -37,46 +42,307 @@ interface WeeklyActivity {
   minutes: number;
 }
 
-// Topic Heat Map Component
+interface UnitStats {
+  id: string;
+  name: string;
+  lessonsComplete: number;
+  lessonsTotal: number;
+  mcqAnswered: number;
+  mcqCorrect: number;
+  accuracy: number;
+  progress: number;
+}
+
+// Units Report Component (Becker-style table)
+const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ unitStats, section }) => {
+  const [expanded, setExpanded] = useState(true);
+  const [sortBy, setSortBy] = useState<'name' | 'progress' | 'accuracy'>('name');
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
+  
+  const sectionInfo = CPA_SECTIONS[section as ExamSection];
+  
+  const sortedUnits = [...unitStats].sort((a, b) => {
+    const multiplier = sortDir === 'asc' ? 1 : -1;
+    if (sortBy === 'name') return a.name.localeCompare(b.name) * multiplier;
+    if (sortBy === 'progress') return (a.progress - b.progress) * multiplier;
+    return (a.accuracy - b.accuracy) * multiplier;
+  });
+  
+  const handleSort = (column: 'name' | 'progress' | 'accuracy') => {
+    if (sortBy === column) {
+      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(column);
+      setSortDir('asc');
+    }
+  };
+  
+  if (unitStats.length === 0) return null;
+  
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 mb-6 overflow-hidden">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <div 
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold"
+            style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
+          >
+            {sectionInfo?.shortName || section}
+          </div>
+          <div className="text-left">
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <FileText className="w-5 h-5 text-primary-600" />
+              Units Report
+            </h2>
+            <p className="text-sm text-slate-500">Detailed progress by blueprint area</p>
+          </div>
+        </div>
+        {expanded ? (
+          <ChevronUp className="w-5 h-5 text-slate-400" />
+        ) : (
+          <ChevronDown className="w-5 h-5 text-slate-400" />
+        )}
+      </button>
+      
+      {expanded && (
+        <div className="px-6 pb-6">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-slate-700">
+                  <th 
+                    className="text-left py-3 px-2 font-semibold text-slate-600 dark:text-slate-400 cursor-pointer hover:text-slate-900 dark:hover:text-white"
+                    onClick={() => handleSort('name')}
+                  >
+                    <span className="flex items-center gap-1">
+                      Unit
+                      {sortBy === 'name' && (sortDir === 'asc' ? '↑' : '↓')}
+                    </span>
+                  </th>
+                  <th className="text-center py-3 px-2 font-semibold text-slate-600 dark:text-slate-400">
+                    Lessons
+                  </th>
+                  <th className="text-center py-3 px-2 font-semibold text-slate-600 dark:text-slate-400">
+                    MCQs
+                  </th>
+                  <th 
+                    className="text-center py-3 px-2 font-semibold text-slate-600 dark:text-slate-400 cursor-pointer hover:text-slate-900 dark:hover:text-white"
+                    onClick={() => handleSort('accuracy')}
+                  >
+                    <span className="flex items-center justify-center gap-1">
+                      Accuracy
+                      {sortBy === 'accuracy' && (sortDir === 'asc' ? '↑' : '↓')}
+                    </span>
+                  </th>
+                  <th 
+                    className="text-center py-3 px-2 font-semibold text-slate-600 dark:text-slate-400 cursor-pointer hover:text-slate-900 dark:hover:text-white"
+                    onClick={() => handleSort('progress')}
+                  >
+                    <span className="flex items-center justify-center gap-1">
+                      Progress
+                      {sortBy === 'progress' && (sortDir === 'asc' ? '↑' : '↓')}
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedUnits.map((unit, index) => (
+                  <tr 
+                    key={unit.id}
+                    className={clsx(
+                      'border-b border-slate-100 dark:border-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors',
+                      index % 2 === 0 && 'bg-slate-50/50 dark:bg-slate-800/50'
+                    )}
+                  >
+                    <td className="py-3 px-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+                          {unit.id}
+                        </span>
+                        <span className="font-medium text-slate-900 dark:text-white truncate max-w-[200px]">
+                          {unit.name}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3 px-2 text-center">
+                      <span className={clsx(
+                        'font-medium',
+                        unit.lessonsComplete === unit.lessonsTotal && unit.lessonsTotal > 0
+                          ? 'text-success-600'
+                          : 'text-slate-700 dark:text-slate-300'
+                      )}>
+                        {unit.lessonsComplete}/{unit.lessonsTotal}
+                      </span>
+                    </td>
+                    <td className="py-3 px-2 text-center">
+                      <span className="text-slate-700 dark:text-slate-300">
+                        {unit.mcqCorrect}/{unit.mcqAnswered}
+                      </span>
+                    </td>
+                    <td className="py-3 px-2 text-center">
+                      <span className={clsx(
+                        'font-semibold',
+                        unit.accuracy >= 75 ? 'text-success-600' :
+                        unit.accuracy >= 50 ? 'text-warning-600' :
+                        unit.mcqAnswered === 0 ? 'text-slate-400' : 'text-error-600'
+                      )}>
+                        {unit.mcqAnswered > 0 ? `${unit.accuracy}%` : '—'}
+                      </span>
+                    </td>
+                    <td className="py-3 px-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                          <div 
+                            className={clsx(
+                              'h-full rounded-full transition-all',
+                              unit.progress === 100 ? 'bg-success-500' : 'bg-primary-500'
+                            )}
+                            style={{ width: `${unit.progress}%` }}
+                          />
+                        </div>
+                        <span className="text-xs font-medium text-slate-500 w-9 text-right">
+                          {unit.progress}%
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          {/* Summary row */}
+          <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-sm">
+            <div className="flex gap-4">
+              <div className="text-slate-600 dark:text-slate-400">
+                <span className="font-semibold text-slate-900 dark:text-white">
+                  {unitStats.reduce((a, u) => a + u.lessonsComplete, 0)}
+                </span>
+                /{unitStats.reduce((a, u) => a + u.lessonsTotal, 0)} Lessons
+              </div>
+              <div className="text-slate-600 dark:text-slate-400">
+                <span className="font-semibold text-slate-900 dark:text-white">
+                  {unitStats.reduce((a, u) => a + u.mcqAnswered, 0)}
+                </span> MCQs Attempted
+              </div>
+            </div>
+            <div className="text-primary-600 font-semibold">
+              {Math.round(unitStats.reduce((a, u) => a + u.progress, 0) / Math.max(1, unitStats.length))}% Overall
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Blueprint areas for each section
+const BLUEPRINT_AREAS: Record<string, { id: string; name: string; shortName: string }[]> = {
+  FAR: [
+    { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting', shortName: 'Framework' },
+    { id: 'FAR-II', name: 'Select Financial Statement Accounts', shortName: 'Accounts' },
+    { id: 'FAR-III', name: 'Select Transactions', shortName: 'Transactions' },
+    { id: 'FAR-IV', name: 'State and Local Governments', shortName: 'Gov\'t' },
+    { id: 'FAR-V', name: 'Not-for-Profit Entities', shortName: 'NFP' },
+  ],
+  AUD: [
+    { id: 'AUD-I', name: 'Ethics & Professional Responsibilities', shortName: 'Ethics' },
+    { id: 'AUD-II', name: 'Assessing Risk & Developing Response', shortName: 'Risk' },
+    { id: 'AUD-III', name: 'Performing Procedures & Obtaining Evidence', shortName: 'Evidence' },
+    { id: 'AUD-IV', name: 'Forming Conclusions & Reporting', shortName: 'Reporting' },
+    { id: 'AUD-V', name: 'Accounting & Review Services', shortName: 'SSARS' },
+  ],
+  REG: [
+    { id: 'REG-I', name: 'Ethics, Professional Responsibilities & Tax Procedures', shortName: 'Ethics' },
+    { id: 'REG-II', name: 'Business Law', shortName: 'Law' },
+    { id: 'REG-III', name: 'Federal Taxation of Property Transactions', shortName: 'Property' },
+    { id: 'REG-IV', name: 'Federal Taxation of Individuals', shortName: 'Individual' },
+    { id: 'REG-V', name: 'Federal Taxation of Entities', shortName: 'Entity' },
+  ],
+  BAR: [
+    { id: 'BAR-I', name: 'Business Analysis', shortName: 'Analysis' },
+    { id: 'BAR-II', name: 'Technical Accounting & Reporting', shortName: 'Technical' },
+    { id: 'BAR-III', name: 'State & Local Government Concepts', shortName: 'Gov\'t' },
+    { id: 'BAR-IV', name: 'Not-for-Profit Concepts', shortName: 'NFP' },
+  ],
+  ISC: [
+    { id: 'ISC-I', name: 'Information Systems & Data Management', shortName: 'Systems' },
+    { id: 'ISC-II', name: 'Security, Confidentiality & Privacy', shortName: 'Security' },
+    { id: 'ISC-III', name: 'Technology-Enabled Finance Transformation', shortName: 'FinTech' },
+  ],
+  TCP: [
+    { id: 'TCP-I', name: 'Tax Compliance & Planning for Individuals', shortName: 'Individual' },
+    { id: 'TCP-II', name: 'Entity Tax Compliance', shortName: 'Compliance' },
+    { id: 'TCP-III', name: 'Entity Tax Planning', shortName: 'Planning' },
+    { id: 'TCP-IV', name: 'Property Transactions', shortName: 'Property' },
+  ],
+};
+
+// Topic Heat Map Component - Now organized by Blueprint Areas
 const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string }> = ({ topics, section }) => {
-  void section; // Use to suppress unused warning
+  const blueprintAreas = BLUEPRINT_AREAS[section] || [];
+  
   const getHeatColor = (accuracy: number | undefined) => {
-    if (accuracy === undefined) return 'bg-slate-200'; // Not attempted
-    if (accuracy >= 85) return 'bg-success-500';
-    if (accuracy >= 75) return 'bg-success-300';
-    if (accuracy >= 65) return 'bg-warning-400';
+    if (accuracy === undefined) return 'bg-slate-200 dark:bg-slate-700'; // Not attempted
+    if (accuracy >= 75) return 'bg-success-500';
     if (accuracy >= 50) return 'bg-warning-500';
     return 'bg-error-500';
   };
 
+  // Group topics by blueprint area
+  const getAreaStats = (areaId: string) => {
+    const areaTopics = topics.filter(t => 
+      t.id?.startsWith(areaId) || t.topic?.includes(areaId)
+    );
+    if (areaTopics.length === 0) return { accuracy: undefined, questions: 0 };
+    
+    const totalQuestions = areaTopics.reduce((sum, t) => sum + t.questions, 0);
+    const weightedAccuracy = areaTopics.reduce((sum, t) => sum + (t.accuracy * t.questions), 0);
+    return {
+      accuracy: totalQuestions > 0 ? Math.round(weightedAccuracy / totalQuestions) : undefined,
+      questions: totalQuestions
+    };
+  };
+
   return (
-    <div className="space-y-4">
-      {/* Simple grid heat map */}
-      <div className="grid grid-cols-5 sm:grid-cols-10 gap-1">
-        {topics.slice(0, 20).map((topic, i) => (
-          <div
-            key={i}
-            className={clsx(
-              'aspect-square rounded-sm transition-all hover:scale-110 cursor-pointer',
-              getHeatColor(topic.accuracy)
-            )}
-            title={`${topic.topic || topic.id}: ${topic.accuracy ?? 0}% (${topic.questions} Q)`}
-          />
-        ))}
-        {/* Fill empty slots */}
-        {Array.from({ length: Math.max(0, 20 - topics.length) }).map((_, i) => (
-          <div
-            key={`empty-${i}`}
-            className="aspect-square rounded-sm bg-slate-100"
-            title="Not yet attempted"
-          />
-        ))}
+    <div className="space-y-3">
+      {/* Blueprint area cards */}
+      <div className="space-y-2">
+        {blueprintAreas.map((area) => {
+          const stats = getAreaStats(area.id);
+          return (
+            <div 
+              key={area.id}
+              className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            >
+              <div 
+                className={clsx(
+                  'w-10 h-10 rounded-md flex items-center justify-center text-white text-xs font-bold shrink-0',
+                  getHeatColor(stats.accuracy)
+                )}
+              >
+                {stats.accuracy !== undefined ? `${stats.accuracy}%` : '—'}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                  {area.id}: {area.shortName}
+                </div>
+                <div className="text-xs text-slate-500 truncate">
+                  {stats.questions > 0 ? `${stats.questions} questions` : 'Not attempted'}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-center gap-4 text-xs text-slate-500">
+      <div className="flex items-center justify-center gap-4 text-xs text-slate-500 pt-2 border-t border-slate-100 dark:border-slate-700">
         <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-slate-200" />
+          <div className="w-3 h-3 rounded-sm bg-slate-200 dark:bg-slate-700" />
           <span>Not tried</span>
         </div>
         <div className="flex items-center gap-1">
@@ -146,7 +412,7 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
         </div>
       )}
 
-      {/* Breakdown */}
+      {/* Breakdown - 2x2 grid with 5 items */}
       <div className="grid grid-cols-2 gap-2 mt-4 text-xs">
         <div className="bg-slate-50 rounded-lg p-2">
           <div className="font-medium text-slate-900">{readiness.breakdown.accuracy}%</div>
@@ -161,7 +427,7 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
           <div className="text-slate-500">Volume</div>
         </div>
         <div className="bg-slate-50 rounded-lg p-2">
-          <div className="font-medium text-slate-900">{readiness.breakdown.consistency}%</div>
+          <div className="font-medium text-slate-900">{readiness.breakdown.lessons}%</div>
           <div className="text-slate-500">Lessons</div>
         </div>
       </div>
@@ -177,6 +443,7 @@ const Progress: React.FC = () => {
   const [timeRange, setTimeRange] = useState('week');
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
+  const [unitStats, setUnitStats] = useState<UnitStats[]>([]);
   const [overallStats, setOverallStats] = useState({
     totalQuestions: 0,
     correctAnswers: 0,
@@ -184,6 +451,8 @@ const Progress: React.FC = () => {
     totalLessons: 0,
     studyMinutes: 0,
     accuracy: 0,
+    tbsCompleted: 0,
+    totalTbs: 20,
   });
   const [loading, setLoading] = useState(true);
 
@@ -276,10 +545,10 @@ const Progress: React.FC = () => {
         );
         setWeeklyActivity(dailyData);
 
-        // Get topic performance
+        // Get topic performance filtered by current section
         let topicsData: TopicStat[] = [];
         if (getTopicPerformance) {
-            topicsData = await getTopicPerformance();
+            topicsData = await getTopicPerformance(currentSection);
         }
         setTopicPerformance(topicsData);
 
@@ -299,6 +568,63 @@ const Progress: React.FC = () => {
         // If no lessons uploaded for section, default to 0 to avoid misleading progress
         const totalLessonsCount = sectionLessons.length;
 
+        // Get TBS history for section
+        const tbsHistory = await getTBSHistory(user.uid, currentSection);
+        const tbsCompletedCount = tbsHistory.length;
+
+        // Calculate unit stats for Units Report (Becker-style)
+        const blueprintAreas = getBlueprintForExamDate(new Date())
+          .filter(bp => bp.section === currentSection);
+        
+        // Get lesson progress for mapping
+        let lessonProgress: Record<string, any> = {};
+        if (getLessonProgress) {
+          lessonProgress = await getLessonProgress();
+        }
+        
+        const calculatedUnitStats: UnitStats[] = blueprintAreas.map(bp => {
+          // Find lessons for this blueprint area
+          const areaLessons = sectionLessons.filter(l => 
+            l.blueprintArea === bp.area || 
+            l.topic?.startsWith(bp.area) ||
+            l.id?.startsWith(bp.area.toLowerCase())
+          );
+          
+          // Find topic performance for this area
+          const areaTopics = topicsData.filter(t => 
+            t.topic?.startsWith(bp.area) || 
+            t.id?.startsWith(bp.area)
+          );
+          
+          const lessonsComplete = areaLessons.filter(l => 
+            lessonProgress[l.id]?.status === 'completed' || 
+            lessonProgress[l.id]?.completedAt
+          ).length;
+          
+          const mcqAnswered = areaTopics.reduce((sum, t) => sum + (t.questions || 0), 0);
+          const mcqCorrect = areaTopics.reduce((sum, t) => sum + Math.round((t.accuracy || 0) * (t.questions || 0) / 100), 0);
+          
+          // Calculate progress as weighted average of lessons and questions
+          const lessonWeight = 0.6;
+          const mcqWeight = 0.4;
+          const lessonProgress = areaLessons.length > 0 ? (lessonsComplete / areaLessons.length) * 100 : 0;
+          const mcqProgress = mcqAnswered > 0 ? Math.min(100, mcqAnswered / 10 * 100) : 0; // 10 MCQs = 100%
+          const progress = Math.round(lessonProgress * lessonWeight + mcqProgress * mcqWeight);
+          
+          return {
+            id: bp.area,
+            name: bp.name,
+            lessonsComplete,
+            lessonsTotal: areaLessons.length,
+            mcqAnswered,
+            mcqCorrect,
+            accuracy: mcqAnswered > 0 ? Math.round((mcqCorrect / mcqAnswered) * 100) : 0,
+            progress,
+          };
+        });
+        
+        setUnitStats(calculatedUnitStats);
+
         setOverallStats({
           totalQuestions: sectionQuestions,
           correctAnswers: sectionCorrect,
@@ -306,6 +632,8 @@ const Progress: React.FC = () => {
           accuracy: sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0,
           lessonsCompleted: lessonsCompletedCount,
           totalLessons: totalLessonsCount,
+          tbsCompleted: tbsCompletedCount,
+          totalTbs: 20, // Baseline TBS count per section
         });
 
       } catch (error) {
@@ -322,7 +650,9 @@ const Progress: React.FC = () => {
     overallStats,
     topicPerformance,
     overallStats.lessonsCompleted,
-    overallStats.totalLessons
+    overallStats.totalLessons,
+    overallStats.tbsCompleted,
+    overallStats.totalTbs
   );
 
   // Find weakest topic for recommendations
@@ -421,7 +751,23 @@ const Progress: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
       {/* Study Plan Overview (New Feature) */}
-      {studyPlan && (
+      {studyPlan && (() => {
+        const paceInfo = calculatePaceStatus(
+          studyPlan, 
+          overallStats.lessonsCompleted, 
+          overallStats.totalLessons
+        );
+        
+        const paceStyles: Record<PaceStatus, { bg: string; text: string; icon: string }> = {
+          'ahead': { bg: 'bg-emerald-500/20', text: 'text-emerald-400', icon: '🎯' },
+          'on-track': { bg: 'bg-primary-500/20', text: 'text-primary-400', icon: '✓' },
+          'slightly-behind': { bg: 'bg-amber-500/20', text: 'text-amber-400', icon: '📚' },
+          'behind': { bg: 'bg-amber-500/20', text: 'text-amber-400', icon: '⚡' }
+        };
+        
+        const style = paceStyles[paceInfo.status];
+        
+        return (
         <div className="card p-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white mb-6">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -439,26 +785,51 @@ const Progress: React.FC = () => {
             </div>
           </div>
           
-          {/* Milestones Progress Bar - based on content completion, not time */}
+          {/* Pace Status Indicator */}
+          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${style.bg} mb-4`}>
+            <span>{style.icon}</span>
+            <span className={`text-sm font-medium ${style.text}`}>{paceInfo.message}</span>
+            {paceInfo.status !== 'on-track' && paceInfo.status !== 'ahead' && (
+              <span className="text-xs text-slate-400 ml-1">
+                ({paceInfo.adjustedPace}/day needed)
+              </span>
+            )}
+          </div>
+          
+          {/* Milestones Progress Bar - positioned proportionally based on actual dates */}
           <div className="relative pt-6 pb-2">
+            {/* Progress bar background */}
             <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-primary-500 rounded-full transition-all duration-1000"
                 style={{ width: `${Math.min(100, Math.max(2, (overallStats.lessonsCompleted / Math.max(1, overallStats.totalLessons)) * 100))}%` }} 
               />
             </div>
-            <div className="mt-4 flex justify-between text-xs text-slate-400">
+            
+            {/* Milestone markers - positioned proportionally */}
+            <div className="relative mt-4 h-16">
               {studyPlan.milestones.map((m, i) => (
-                <div key={i} className="flex flex-col items-center">
+                <div 
+                  key={i} 
+                  className="absolute flex flex-col items-center text-xs text-slate-400"
+                  style={{ 
+                    left: `${m.position}%`,
+                    transform: i === 0 ? 'translateX(0)' : i === studyPlan.milestones.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)'
+                  }}
+                >
                   <div className="w-2 h-2 rounded-full bg-slate-600 mb-2 ring-4 ring-slate-900" />
-                  <span className="font-medium text-slate-300">{m.label}</span>
+                  <span className="font-medium text-slate-300 whitespace-nowrap">{m.label}</span>
                   <span>{m.date}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      )}
+        );
+      })()}
+      
+        {/* Units Report - Becker-style detailed breakdown */}
+        <UnitsReport unitStats={unitStats} section={currentSection} />
       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Stats Column */}
@@ -500,53 +871,107 @@ const Progress: React.FC = () => {
             </div>
 
             {/* Activity Chart */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-primary-600" />
                   Weekly Activity
                 </h2>
                 <select
                   value={timeRange}
                   onChange={(e) => setTimeRange(e.target.value)}
-                  className="bg-slate-50 border-none rounded-lg text-sm font-medium text-slate-600 focus:ring-0 cursor-pointer"
+                  className="bg-slate-50 dark:bg-slate-700 border-none rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 focus:ring-0 cursor-pointer"
                 >
                   <option value="week">Past 7 Days</option>
                   <option value="month">Past 30 Days</option>
                 </select>
               </div>
 
-              <div className="h-64 flex items-end justify-between gap-2">
+              {/* Summary stats row */}
+              <div className="grid grid-cols-3 gap-4 mb-6 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                <div className="text-center">
+                  <div className="text-xl font-bold text-primary-600">
+                    {weeklyActivity.reduce((sum, d) => sum + d.questions, 0)}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">MCQs</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-emerald-600">
+                    {weeklyActivity.reduce((sum, d) => sum + d.correct, 0)}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Correct</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-amber-600">
+                    {weeklyActivity.reduce((sum, d) => sum + d.minutes, 0) >= 60
+                      ? `${Math.round(weeklyActivity.reduce((sum, d) => sum + d.minutes, 0) / 60)}h`
+                      : `${weeklyActivity.reduce((sum, d) => sum + d.minutes, 0)}m`}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Time</div>
+                </div>
+              </div>
+
+              <div className="h-48 flex items-end justify-between gap-2">
                 {weeklyActivity.map((day, i) => {
-                  const height = Math.min(100, (day.points / day.goal) * 100);
+                  const maxQuestions = Math.max(...weeklyActivity.map(d => d.questions), 1);
+                  const height = Math.max(8, (day.questions / maxQuestions) * 100);
                   const isToday = format(day.date, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd');
+                  const accuracy = day.questions > 0 ? Math.round((day.correct / day.questions) * 100) : 0;
 
                   return (
                     <div key={i} className="flex-1 flex flex-col items-center gap-2 group">
-                      <div className="w-full relative h-full flex items-end">
+                      {/* Question count label */}
+                      <div className="text-xs font-medium text-slate-500 dark:text-slate-400 h-5">
+                        {day.questions > 0 ? day.questions : ''}
+                      </div>
+                      <div className="w-full relative flex-1 flex items-end">
                         <div
                           className={clsx(
-                            'w-full rounded-t-lg transition-all duration-500 min-h-[4px]',
-                            day.points >= day.goal
-                              ? 'bg-success-500'
-                              : isToday
-                                ? 'bg-primary-500'
-                                : 'bg-primary-200 group-hover:bg-primary-300'
+                            'w-full rounded-t-lg transition-all duration-500',
+                            day.questions === 0
+                              ? 'bg-slate-200 dark:bg-slate-600'
+                              : accuracy >= 75
+                                ? 'bg-success-500'
+                                : accuracy >= 50
+                                  ? 'bg-warning-500'
+                                  : isToday
+                                    ? 'bg-primary-500'
+                                    : 'bg-primary-300'
                           )}
-                          style={{ height: `${height}%` }}
+                          style={{ height: `${height}%`, minHeight: day.questions > 0 ? '20px' : '4px' }}
                         />
                         {/* Tooltip */}
                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 p-2 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
-                          <div className="font-bold">{day.points} pts</div>
-                          <div>{day.questions} Qs</div>
+                          <div className="font-bold">{day.questions} questions</div>
+                          <div>{day.correct} correct ({accuracy}%)</div>
+                          <div>{day.minutes}m study time</div>
                         </div>
                       </div>
-                      <div className="text-xs text-slate-400 font-medium">
+                      <div className={clsx(
+                        "text-xs font-medium",
+                        isToday ? "text-primary-600" : "text-slate-400"
+                      )}>
                         {format(day.date, 'EEE')}
                       </div>
                     </div>
                   );
                 })}
+              </div>
+              
+              {/* Legend */}
+              <div className="flex items-center justify-center gap-4 text-xs text-slate-500 dark:text-slate-400 mt-4 pt-3 border-t border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 rounded-sm bg-success-500" />
+                  <span>≥75%</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 rounded-sm bg-warning-500" />
+                  <span>50-74%</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 rounded-sm bg-primary-300" />
+                  <span>&lt;50%</span>
+                </div>
               </div>
             </div>
 

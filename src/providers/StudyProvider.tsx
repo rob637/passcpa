@@ -401,7 +401,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       }
   }
 
-  const getTopicPerformance = async () => {
+  const getTopicPerformance = async (section?: string) => {
     if (!user) return [];
     
     try {
@@ -414,7 +414,11 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       logsSnapshot.forEach((doc) => {
         const data = doc.data();
         if (data.activities && Array.isArray(data.activities)) {
-          data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean }) => {
+          data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean; section?: string }) => {
+            // Filter by section if provided
+            if (section && activity.section && activity.section !== section) {
+              return;
+            }
             if (activity.type === 'mcq' && activity.topic) {
               if (!topicStats[activity.topic]) {
                 topicStats[activity.topic] = { correct: 0, total: 0 };

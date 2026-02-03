@@ -65,6 +65,7 @@ html {
   -webkit-touch-callout: none;
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+  overscroll-behavior-y: none; /* Prevent rubber-banding */
 }
 
 body {
@@ -78,13 +79,20 @@ body {
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none; /* Prevent rubber-banding */
   letter-spacing: -0.011em;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+/* Prevent auto-zoom on iOS inputs */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* Dark mode body */

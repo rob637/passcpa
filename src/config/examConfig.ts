@@ -143,7 +143,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     questionTypes: { mcq: 50, tbs: 7 },
     mcqWeight: 50,
     tbsWeight: 50,
-    color: '#8b5cf6', // violet
+    color: '#1a73e8', // primary blue
     icon: 'TrendingUp',
     description: 'Technical accounting, state/local government, and data analytics',
     blueprintVersion: '2026.1',
@@ -190,27 +190,27 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
   
   // =========================================================================
   // BEC - BUSINESS ENVIRONMENT AND CONCEPTS
-  // Valid for 2025 Blueprint (testable through June 30, 2026)
-  // Replaced by BAR, ISC, TCP for 2026 Blueprint
+  // 2025 Blueprint - testable through June 30, 2026
+  // Replaced by BAR, ISC, TCP for 2026 Blueprint (July 1, 2026+)
   // =========================================================================
   BEC: {
     id: 'BEC' as ExamSection,
     name: 'Business Environment and Concepts',
     shortName: 'BEC',
-    type: 'discipline' as const, // Valid discipline choice for 2025 Blueprint
+    type: 'discipline' as const,
     examLength: 4,
     questionTypes: { mcq: 62, tbs: 4 },
     mcqWeight: 50,
     tbsWeight: 50,
     color: '#6366f1', // indigo - active section
     icon: 'Briefcase',
-    description: '2025 Blueprint discipline covering corporate governance, economics, financial management, IT, and operations. Valid through June 30, 2026.',
+    description: '2025 Blueprint discipline covering corporate governance, economics, financial management, IT, operations, and written communication. Valid through June 30, 2026.',
     blueprintVersion: '2025',
     blueprintSensitive: true,
     careerFit: ['Business Advisory', 'Consulting', 'Management'],
     pendingUpdate: {
       effectiveDate: '2026-07-01',
-      description: 'BEC will be replaced by BAR, ISC, and TCP disciplines starting July 1, 2026.',
+      description: 'BEC ends June 30, 2026. Replaced by BAR, ISC, and TCP disciplines.',
     },
   },
 };
@@ -218,7 +218,7 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
 export const STRATEGY_SECTIONS = ['PREP'];
 export const CORE_SECTIONS = ['AUD', 'FAR', 'REG'];
 export const DISCIPLINE_SECTIONS_2026 = ['BAR', 'ISC', 'TCP'];
-/** BEC is valid through June 30, 2026 */
+/** BEC is valid through June 30, 2026. After that only BAR/ISC/TCP */
 export const DISCIPLINE_SECTIONS = isBefore2026Blueprint() 
   ? ['BEC', ...DISCIPLINE_SECTIONS_2026] 
   : DISCIPLINE_SECTIONS_2026;
@@ -1363,7 +1363,7 @@ export const SCORE_RANGES = {
   failing: { min: 0, max: 74, label: 'Needs More Preparation', color: 'red' },
   passing: { min: 75, max: 84, label: 'Passing', color: 'green' },
   strong: { min: 85, max: 94, label: 'Strong Performance', color: 'blue' },
-  excellent: { min: 95, max: 100, label: 'Excellent', color: 'purple' },
+  excellent: { min: 95, max: 100, label: 'Excellent', color: 'primary' },
 };
 
 // ============================================================================

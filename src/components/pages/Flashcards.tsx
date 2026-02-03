@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
@@ -99,6 +99,9 @@ const Flashcards: React.FC = () => {
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+
+  // Ref for scrolling to top of card on navigation (mobile fix)
+  const cardTopRef = useRef<HTMLDivElement>(null);
 
   // Load flashcards
   useEffect(() => {
@@ -253,10 +256,21 @@ const Flashcards: React.FC = () => {
 
   const currentCard = cards[currentIndex];
 
+  // Helper to scroll to top of card (mobile fix)
+  const scrollToCardTop = useCallback(() => {
+    if (cardTopRef.current) {
+      cardTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   const nextCard = () => {
     if (currentIndex < cards.length - 1) {
       setCurrentIndex((i) => i + 1);
       setIsFlipped(false);
+      scrollToCardTop();
       feedback.tap();
     }
   };
@@ -265,6 +279,7 @@ const Flashcards: React.FC = () => {
     if (currentIndex > 0) {
       setCurrentIndex((i) => i - 1);
       setIsFlipped(false);
+      scrollToCardTop();
       feedback.tap();
     }
   };
@@ -473,7 +488,7 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'formulas'
-                ? 'bg-purple-100 text-purple-700 border border-purple-200'
+                ? 'bg-indigo-100 text-indigo-700 border border-indigo-200'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             )}
           >
@@ -506,7 +521,7 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div className="flex-1 flex items-center justify-center p-4">
+      <div ref={cardTopRef} className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           <div
@@ -539,7 +554,7 @@ const Flashcards: React.FC = () => {
                     className={clsx(
                       'text-xs px-2 py-0.5 rounded-full font-medium',
                       currentCard.cardType === 'definition' && 'bg-blue-100 text-blue-700',
-                      currentCard.cardType === 'formula' && 'bg-purple-100 text-purple-700',
+                      currentCard.cardType === 'formula' && 'bg-indigo-100 text-indigo-700',
                       currentCard.cardType === 'mnemonic' && 'bg-amber-100 text-amber-700'
                     )}
                   >
@@ -590,12 +605,12 @@ const Flashcards: React.FC = () => {
                 {/* Formula display (for formula cards) */}
                 {currentCard.formula && (
                   <div className="mt-4 w-full max-w-md">
-                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                      <div className="text-xs text-purple-600 font-medium mb-2 flex items-center gap-1">
+                    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                      <div className="text-xs text-indigo-600 font-medium mb-2 flex items-center gap-1">
                         <Calculator className="w-3.5 h-3.5" />
                         Formula
                       </div>
-                      <p className="text-purple-900 font-mono text-sm whitespace-pre-wrap">
+                      <p className="text-indigo-900 font-mono text-sm whitespace-pre-wrap">
                         {currentCard.formula}
                       </p>
                     </div>

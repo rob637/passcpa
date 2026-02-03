@@ -23,6 +23,7 @@ import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import DailyPlanCard from '../DailyPlanCard';
+import StudyTimeCard from '../StudyTimeCard';
 
 // Tutor messages based on context
 const getTutorMessage = (streak: number, readiness: number, timeOfDay: string): string => {
@@ -324,6 +325,27 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Exam Date Prompt - Show when no exam date set */}
+      {!examDate && (
+        <Link
+          to="/settings"
+          className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 border border-primary-200 dark:border-primary-700 rounded-xl hover:shadow-md transition-all"
+        >
+          <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center flex-shrink-0">
+            <Calendar className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+          </div>
+          <div className="flex-1">
+            <div className="font-semibold text-slate-900 dark:text-slate-100">
+              When is your {sectionInfo?.shortName || activeSection} exam?
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              Set your exam date for personalized study pacing
+            </div>
+          </div>
+          <Sparkles className="w-5 h-5 text-primary-500" />
+        </Link>
+      )}
+
       {/* Today's Personalized Plan - This IS the primary CTA now */}
       <DailyPlanCard compact />
 
@@ -359,6 +381,9 @@ const Home = () => {
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
         </Link>
       </div>
+
+      {/* Study Time Card - Becker-style donut chart */}
+      <StudyTimeCard />
 
       {/* More Options (collapsible feel, always visible) */}
       <div className="space-y-2">

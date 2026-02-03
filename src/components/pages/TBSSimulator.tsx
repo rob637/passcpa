@@ -77,17 +77,27 @@ interface WrittenCommunicationInputProps {
   showCorrect?: boolean;
 }
 
-interface TBSQuestion {
+// Individual task/requirement within a TBS
+interface TBSTask {
   id: string;
   type: 'journal' | 'calculation' | 'mcq' | 'wc';
-  title: string;
-  description: string;
-  question?: string; // The specific question/task for this requirement
+  question: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any; // Flexible data depending on type
+  explanation?: string;
+}
+
+// Full TBS with scenario + multiple tasks
+interface TBSQuestion {
+  id: string;
+  title: string;
+  description: string; // The scenario
+  tasks: TBSTask[]; // Multiple tasks/tabs
   estimatedTime?: number;
   difficulty?: 'easy' | 'medium' | 'hard';
-  explanation?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  exhibits?: any[];
+  hints?: string[];
 }
 
 // Journal Entry Component
@@ -496,13 +506,16 @@ const TBSSimulator: React.FC = () => {
   const { completeSimulation } = useStudy();
 
   const [tbs, setTbs] = useState<TBSQuestion | null>(null);
+  // Track answers for each task by task id
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [answer, setAnswer] = useState<any>(null);
+  const [answers, setAnswers] = useState<Record<string, any>>({});
+  const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [startTime, setStartTime] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
   const [showExhibits, setShowExhibits] = useState(false);
   const [score, setScore] = useState(0);
+  const [taskScores, setTaskScores] = useState<Record<string, number>>({});
   const [error, setError] = useState<string | null>(null);
 
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
@@ -513,46 +526,93 @@ const TBSSimulator: React.FC = () => {
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
 
+  // Get current task
+  const currentTask = tbs?.tasks[currentTaskIndex] || null;
+  const totalTasks = tbs?.tasks.length || 0;
+
   // Transform raw TBS data into the format expected by the component
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const transformTbs = (rawTbs: any): TBSQuestion | null => {
     if (!rawTbs) return null;
     
-    // Get the first requirement for simple TBS types
-    const firstReq = rawTbs.requirements?.[0];
+    // Get all requirements/tasks
+    const requirements = rawTbs.requirements || [];
     
-    // Map TBS type to component type
-    let componentType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
-    if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') componentType = 'journal';
-    else if (rawTbs.type === 'multiple_choice' || firstReq?.type === 'multiple_choice') componentType = 'mcq';
-    else if (rawTbs.type === 'written_communication') componentType = 'wc';
-    else if (rawTbs.type === 'calculation' || firstReq?.type === 'calculation') componentType = 'calculation';
+    // Transform each requirement into a task
+    const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
+      // Map requirement type to component type
+      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
+      if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
+      else if (req.type === 'multiple_choice') taskType = 'mcq';
+      else if (req.type === 'written_communication') taskType = 'wc';
+      else if (req.type === 'calculation') taskType = 'calculation';
+      
+      return {
+        id: req.id || `task-${index + 1}`,
+        type: taskType,
+        question: req.question || '',
+        data: {
+          // For journal entries
+          template: req.template || [{ account: '', debit: '', credit: '' }],
+          correctEntries: req.correctEntries,
+          // For calculations
+          correctAnswer: req.correctAnswer ?? 0,
+          tolerance: req.tolerance ?? 1,
+          // For multiple choice
+          options: req.options || [],
+          correctAnswer_mcq: req.correctAnswer, // Store separately for MCQ
+        },
+        explanation: req.explanation,
+      };
+    });
+    
+    // If no requirements, create a single task from the TBS itself (legacy format)
+    if (tasks.length === 0) {
+      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
+      if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
+      else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
+      else if (rawTbs.type === 'written_communication') taskType = 'wc';
+      
+      tasks.push({
+        id: 'task-1',
+        type: taskType,
+        question: rawTbs.question || '',
+        data: {
+          template: rawTbs.template || [{ account: '', debit: '', credit: '' }],
+          correctEntries: rawTbs.correctEntries,
+          correctAnswer: rawTbs.correctAnswer ?? 0,
+          tolerance: rawTbs.tolerance ?? 1,
+          options: rawTbs.options || [],
+          correctAnswer_mcq: rawTbs.correctAnswer,
+        },
+        explanation: rawTbs.explanation,
+      });
+    }
     
     return {
       id: rawTbs.id,
-      type: componentType,
       title: rawTbs.title,
       description: rawTbs.scenario || rawTbs.description || '',
-      question: firstReq?.question || rawTbs.question || '',
-      data: {
-        // For journal entries
-        template: firstReq?.template || rawTbs.template || [{ account: '', debit: '', credit: '' }],
-        correctEntries: firstReq?.correctEntries || rawTbs.correctEntries,
-        // For calculations
-        correctAnswer: firstReq?.correctAnswer ?? rawTbs.correctAnswer ?? 0,
-        tolerance: firstReq?.tolerance ?? rawTbs.tolerance ?? 1,
-        // For multiple choice
-        options: firstReq?.options || rawTbs.options || [],
-        // Hints - shown in panel when user needs help
-        hints: rawTbs.hints ? rawTbs.hints.join('\n\n• ') : null,
-        hasHints: !!rawTbs.hints && rawTbs.hints.length > 0,
-        // Exhibits - reference materials (separate from hints)
-        exhibits: rawTbs.exhibits,
-      },
-      explanation: firstReq?.explanation || rawTbs.explanation,
-      difficulty: rawTbs.difficulty,
+      tasks,
       estimatedTime: rawTbs.timeEstimate,
+      difficulty: rawTbs.difficulty,
+      exhibits: rawTbs.exhibits,
+      hints: rawTbs.hints,
     };
   };
+
+  // Update answer for current task
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const updateAnswer = (value: any) => {
+    if (!currentTask) return;
+    setAnswers(prev => ({
+      ...prev,
+      [currentTask.id]: value
+    }));
+  };
+
+  // Get answer for current task
+  const currentAnswer = currentTask ? answers[currentTask.id] : null;
 
   useEffect(() => {
     // Load TBS
@@ -798,34 +858,53 @@ const TBSSimulator: React.FC = () => {
     return Math.round((totalPoints / maxPoints) * 100);
   };
 
+  // Score a single task
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const scoreTask = (task: TBSTask, answer: any): number => {
+    if (task.type === 'journal') {
+      const userEntries = answer as JournalEntryRow[] || [];
+      const correctEntries = task.data.correctEntries;
+      const tolerance = task.data.tolerance || 5;
+      return scoreJournalEntry(userEntries, correctEntries, tolerance);
+    } else if (task.type === 'calculation') {
+      const isCorrect = Math.abs(Number(answer) - task.data.correctAnswer) <= (task.data.tolerance || 0);
+      return isCorrect ? 100 : 0;
+    } else if (task.type === 'mcq') {
+      // MCQ correct answer is stored in correctAnswer_mcq (index) or correctAnswer
+      const correctIndex = task.data.correctAnswer_mcq ?? task.data.correctAnswer;
+      return answer === correctIndex ? 100 : 0;
+    } else if (task.type === 'wc') {
+      return scoreWrittenCommunication(answer as string || '', task.data);
+    }
+    return 0;
+  };
+
   const handleSubmit = async () => {
     if (!tbs) return;
     setSubmitted(true);
-    let calculatedScore = 0;
-
-    // Calculate score based on type
-    if (tbs.type === 'journal') {
-      // Score journal entries by matching accounts and amounts
-      const userEntries = answer as JournalEntryRow[] || [];
-      const correctEntries = tbs.data.correctEntries;
-      const tolerance = tbs.data.tolerance || 5;
-      
-      calculatedScore = scoreJournalEntry(userEntries, correctEntries, tolerance);
-    } else if (tbs.type === 'calculation') {
-      const isCorrect =
-        Math.abs(Number(answer) - tbs.data.correctAnswer) <= (tbs.data.tolerance || 0);
-      calculatedScore = isCorrect ? 100 : 0;
-    } else if (tbs.type === 'mcq') {
-      calculatedScore = answer === tbs.data.correctAnswer ? 100 : 0;
-    } else if (tbs.type === 'wc') {
-      calculatedScore = scoreWrittenCommunication(answer as string || '', tbs.data);
+    
+    // Score all tasks
+    const scores: Record<string, number> = {};
+    let totalScore = 0;
+    
+    for (const task of tbs.tasks) {
+      const taskAnswer = answers[task.id];
+      const taskScore = scoreTask(task, taskAnswer);
+      scores[task.id] = taskScore;
+      totalScore += taskScore;
     }
-
-    setScore(calculatedScore);
+    
+    setTaskScores(scores);
+    
+    // Calculate average score across all tasks
+    const averageScore = tbs.tasks.length > 0 
+      ? Math.round(totalScore / tbs.tasks.length) 
+      : 0;
+    setScore(averageScore);
 
     // Save progress
     const timeSpent = startTime ? Math.round((Date.now() - startTime) / 60000) : 0;
-    await completeSimulation(tbs.id, calculatedScore, timeSpent);
+    await completeSimulation(tbs.id, averageScore, timeSpent);
     
     // If from daily plan, save completion to localStorage
     if (fromDailyPlan && activityId) {
@@ -841,7 +920,9 @@ const TBSSimulator: React.FC = () => {
 
   const handleReset = () => {
     setSubmitted(false);
-    setAnswer(null);
+    setAnswers({});
+    setTaskScores({});
+    setCurrentTaskIndex(0);
     setStartTime(Date.now());
     setScore(0);
   };
@@ -889,7 +970,7 @@ const TBSSimulator: React.FC = () => {
             <div className="font-bold">{tbs.title}</div>
             <div className="text-xs text-slate-400 flex items-center gap-2">
               <span className="bg-primary-600 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
-                {TBS_LABELS[tbs.type] || tbs.type}
+                {totalTasks} {totalTasks === 1 ? 'Task' : 'Tasks'}
               </span>
               <span>{sectionInfo?.name || currentSection}</span>
             </div>
@@ -897,7 +978,7 @@ const TBSSimulator: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          {(tbs.data.hasHints || tbs.data.exhibits) && (
+          {(tbs.hints || tbs.exhibits) && (
             <button
               onClick={() => setShowExhibits(!showExhibits)}
               className={clsx(
@@ -906,7 +987,7 @@ const TBSSimulator: React.FC = () => {
               )}
             >
               <FileText className="w-4 h-4" />
-              {tbs.data.hasHints ? 'Hints' : 'Exhibits'}
+              {tbs.hints ? 'Hints' : 'Exhibits'}
             </button>
           )}
           <button
@@ -936,35 +1017,36 @@ const TBSSimulator: React.FC = () => {
                 <Lightbulb className="w-5 h-5 text-warning-500" />
                 Scenario
               </h2>
-              <div className="prose prose-slate max-w-none text-slate-700">
-                 {/* Replaced dangerouslySetInnerHTML with simple rendering for now, or use a sanitizer later */}
+              <div className="prose prose-slate max-w-none text-slate-700 whitespace-pre-line">
                  {tbs.description}
               </div>
             </div>
 
             {/* Hints Panel (Collapsible) */}
-            {showExhibits && tbs.data.hasHints && (
+            {showExhibits && tbs.hints && tbs.hints.length > 0 && (
               <div className="bg-amber-50 rounded-xl shadow-sm border border-amber-200 p-5">
                 <div className="font-bold text-amber-800 mb-3 flex items-center gap-2">
                   <Lightbulb className="w-5 h-5" />
                   Hints
                 </div>
                 <div className="text-sm text-amber-900 space-y-2">
-                  <p className="whitespace-pre-line">• {tbs.data.hints}</p>
+                  {tbs.hints.map((hint, idx) => (
+                    <p key={idx}>• {hint}</p>
+                  ))}
                 </div>
               </div>
             )}
 
             {/* Exhibits Panel (Collapsible) - for actual document exhibits */}
-            {showExhibits && tbs.data.exhibits && (
+            {showExhibits && tbs.exhibits && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                {tbs.data.exhibits.map((exhibit: any, idx: number) => (
+                {tbs.exhibits.map((exhibit: any, idx: number) => (
                   <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                     <div className="font-bold text-slate-800 border-b pb-2 mb-3">
                       {exhibit.title}
                     </div>
-                    <div className="text-sm text-slate-600 font-mono bg-slate-50 p-3 rounded border">
+                    <div className="text-sm text-slate-600 font-mono bg-slate-50 p-3 rounded border whitespace-pre-wrap">
                       {exhibit.content}
                     </div>
                   </div>
@@ -972,123 +1054,228 @@ const TBSSimulator: React.FC = () => {
               </div>
             )}
 
-            {/* Answer Area */}
-            <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-              <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
-                <h3 className="font-bold text-slate-800">Your Response</h3>
-                {submitted && (
-                  <div className={clsx(
-                    "px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1",
-                    score >= 75 ? "bg-success-100 text-success-700" : "bg-error-100 text-error-700"
-                  )}>
-                    {score >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
-                    Score: {score}%
+            {/* Task Tabs - Like real CPA exam */}
+            {totalTasks > 1 && (
+              <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="flex border-b border-slate-200 overflow-x-auto">
+                  {tbs.tasks.map((task, index) => {
+                    const taskScore = taskScores[task.id];
+                    const hasAnswer = answers[task.id] !== undefined;
+                    const isActive = index === currentTaskIndex;
+                    
+                    return (
+                      <button
+                        key={task.id}
+                        onClick={() => setCurrentTaskIndex(index)}
+                        className={clsx(
+                          'flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap',
+                          isActive
+                            ? 'border-primary-600 text-primary-600 bg-primary-50'
+                            : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                        )}
+                      >
+                        <span className={clsx(
+                          'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold',
+                          submitted && taskScore !== undefined
+                            ? taskScore >= 75
+                              ? 'bg-success-100 text-success-700'
+                              : 'bg-error-100 text-error-700'
+                            : hasAnswer
+                              ? 'bg-primary-100 text-primary-700'
+                              : 'bg-slate-100 text-slate-600'
+                        )}>
+                          {submitted && taskScore !== undefined ? (
+                            taskScore >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />
+                          ) : (
+                            index + 1
+                          )}
+                        </span>
+                        Task {index + 1}
+                        <span className="text-xs text-slate-400">
+                          ({TBS_LABELS[task.type] || task.type})
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Answer Area for Current Task */}
+            {currentTask && (
+              <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-bold text-slate-800">
+                      {totalTasks > 1 ? `Task ${currentTaskIndex + 1} of ${totalTasks}` : 'Your Response'}
+                    </h3>
+                    <span className="text-xs bg-slate-200 text-slate-600 px-2 py-1 rounded-full">
+                      {TBS_LABELS[currentTask.type] || currentTask.type}
+                    </span>
+                  </div>
+                  {submitted && taskScores[currentTask.id] !== undefined && (
+                    <div className={clsx(
+                      "px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1",
+                      taskScores[currentTask.id] >= 75 ? "bg-success-100 text-success-700" : "bg-error-100 text-error-700"
+                    )}>
+                      {taskScores[currentTask.id] >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                      {taskScores[currentTask.id]}%
+                    </div>
+                  )}
+                </div>
+                
+                {/* Question/Task */}
+                {currentTask.question && (
+                  <div className="px-6 py-4 bg-primary-50 border-b border-primary-100">
+                    <p className="text-slate-800 font-medium">
+                      <span className="text-primary-600 font-bold">Task:</span> {currentTask.question}
+                    </p>
                   </div>
                 )}
-              </div>
-              
-              {/* Question/Task */}
-              {tbs.question && (
-                <div className="px-6 py-4 bg-primary-50 border-b border-primary-100">
-                  <p className="text-slate-800 font-medium">
-                    <span className="text-primary-600 font-bold">Task:</span> {tbs.question}
-                  </p>
-                </div>
-              )}
-              
-              <div className="p-6">
-                {tbs.type === 'journal' && (
-                  <JournalEntryInput
-                    template={tbs.data.template}
-                    value={answer}
-                    onChange={setAnswer}
-                    disabled={submitted}
-                    showCorrect={submitted}
-                    correctEntries={tbs.data.correctEntries}
-                  />
-                )}
-
-                {tbs.type === 'calculation' && (
-                  <CalculationInput
-                    value={answer}
-                    onChange={setAnswer}
-                    disabled={submitted}
-                    showCorrect={submitted}
-                    correctAnswer={tbs.data.correctAnswer}
-                    tolerance={tbs.data.tolerance}
-                    explanation={tbs.explanation}
-                  />
-                )}
-
-                {tbs.type === 'mcq' && (
-                  <MultipleChoiceInput
-                    options={tbs.data.options}
-                    value={answer}
-                    onChange={setAnswer}
-                    disabled={submitted}
-                    showCorrect={submitted}
-                    correctAnswer={tbs.data.correctAnswer}
-                    explanation={tbs.explanation}
-                  />
-                )}
-
-                 {tbs.type === 'wc' && (
-                  <WrittenCommunicationInput
-                    value={answer}
-                    onChange={setAnswer}
-                    disabled={submitted}
-                    showCorrect={submitted}
-                  />
-                )}
-              </div>
-
-               {submitted && tbs.explanation && (
-                <div className="bg-blue-50 p-6 border-t border-blue-100">
-                    <h4 className="font-bold text-blue-900 mb-2">Explanation</h4>
-                    <p className="text-blue-800">{tbs.explanation}</p>
-                </div>
-               )}
-
-              <div className="bg-slate-50 px-6 py-4 border-t border-slate-200 flex justify-between">
-                <button
-                  onClick={handleReset}
-                  className="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2"
-                >
-                    <RotateCcw className="w-4 h-4" />
-                    Reset
-                </button>
-                <div className="flex items-center gap-3">
-                  {submitted && fromDailyPlan && (
-                    <button
-                      onClick={() => {
-                        const params = new URLSearchParams();
-                        params.set('from', 'dailyplan');
-                        if (activityId) params.set('activityId', activityId);
-                        params.set('completed', 'true');
-                        navigate(`/home?${params.toString()}`);
-                      }}
-                      className="btn-primary flex items-center gap-2 px-6"
-                    >
-                      Back to Daily Plan
-                    </button>
+                
+                <div className="p-6">
+                  {currentTask.type === 'journal' && (
+                    <JournalEntryInput
+                      template={currentTask.data.template}
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctEntries={currentTask.data.correctEntries}
+                    />
                   )}
-                  <button
-                    onClick={handleSubmit}
-                    disabled={submitted}
-                    className={clsx(
-                      "flex items-center gap-2 px-8",
-                      submitted 
-                        ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
-                        : "btn-primary"
+
+                  {currentTask.type === 'calculation' && (
+                    <CalculationInput
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswer={currentTask.data.correctAnswer}
+                      tolerance={currentTask.data.tolerance}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
+                  {currentTask.type === 'mcq' && (
+                    <MultipleChoiceInput
+                      options={currentTask.data.options}
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswer={currentTask.data.correctAnswer_mcq ?? currentTask.data.correctAnswer}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
+                  {currentTask.type === 'wc' && (
+                    <WrittenCommunicationInput
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                    />
+                  )}
+                </div>
+
+                {submitted && currentTask.explanation && (
+                  <div className="bg-blue-50 p-6 border-t border-blue-100">
+                    <h4 className="font-bold text-blue-900 mb-2">Explanation</h4>
+                    <p className="text-blue-800">{currentTask.explanation}</p>
+                  </div>
+                )}
+
+                {/* Navigation + Submit */}
+                <div className="bg-slate-50 px-6 py-4 border-t border-slate-200 flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={handleReset}
+                      className="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                      Reset
+                    </button>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    {/* Task navigation */}
+                    {totalTasks > 1 && (
+                      <div className="flex items-center gap-2 mr-4">
+                        <button
+                          onClick={() => setCurrentTaskIndex(Math.max(0, currentTaskIndex - 1))}
+                          disabled={currentTaskIndex === 0}
+                          className={clsx(
+                            "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                            currentTaskIndex === 0
+                              ? "text-slate-400 cursor-not-allowed"
+                              : "text-slate-600 hover:bg-slate-200"
+                          )}
+                        >
+                          ← Previous
+                        </button>
+                        <span className="text-sm text-slate-500">
+                          {currentTaskIndex + 1} / {totalTasks}
+                        </span>
+                        <button
+                          onClick={() => setCurrentTaskIndex(Math.min(totalTasks - 1, currentTaskIndex + 1))}
+                          disabled={currentTaskIndex === totalTasks - 1}
+                          className={clsx(
+                            "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                            currentTaskIndex === totalTasks - 1
+                              ? "text-slate-400 cursor-not-allowed"
+                              : "text-slate-600 hover:bg-slate-200"
+                          )}
+                        >
+                          Next →
+                        </button>
+                      </div>
                     )}
-                  >
-                    {submitted ? 'Submitted' : 'Submit Answer'}
-                    {!submitted && <Send className="w-4 h-4" />}
-                    {submitted && <CheckCircle className="w-4 h-4" />}
-                  </button>
+                    
+                    {submitted && fromDailyPlan && (
+                      <button
+                        onClick={() => {
+                          const params = new URLSearchParams();
+                          params.set('from', 'dailyplan');
+                          if (activityId) params.set('activityId', activityId);
+                          params.set('completed', 'true');
+                          navigate(`/home?${params.toString()}`);
+                        }}
+                        className="btn-primary flex items-center gap-2 px-6"
+                      >
+                        Back to Daily Plan
+                      </button>
+                    )}
+                    
+                    {/* Overall score badge when submitted */}
+                    {submitted && (
+                      <div className={clsx(
+                        "px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2",
+                        score >= 75 ? "bg-success-100 text-success-700" : "bg-error-100 text-error-700"
+                      )}>
+                        {score >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                        Overall: {score}%
+                      </div>
+                    )}
+                    
+                    <button
+                      onClick={handleSubmit}
+                      disabled={submitted}
+                      className={clsx(
+                        "flex items-center gap-2 px-8",
+                        submitted 
+                          ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
+                          : "btn-primary"
+                      )}
+                    >
+                      {submitted ? 'Submitted' : 'Submit All'}
+                      {!submitted && <Send className="w-4 h-4" />}
+                      {submitted && <CheckCircle className="w-4 h-4" />}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

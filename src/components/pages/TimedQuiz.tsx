@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
@@ -122,6 +122,8 @@ const TimedQuiz: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timerRef = useRef<any>(null);
+  // Ref for scrolling to top of question on navigation (mobile fix)
+  const questionTopRef = useRef<HTMLDivElement>(null);
   const mode = searchParams.get('mode') || 'quick';
   const quizConfig = QUIZ_MODES[mode] || QUIZ_MODES.quick;
   const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
@@ -210,9 +212,15 @@ const TimedQuiz: React.FC = () => {
       } else if (e.key === 'Enter' && selectedAnswer !== null) {
         handleNext();
       } else if (e.key === 'ArrowRight') {
-        if (currentIndex < questions.length - 1) setCurrentIndex((i) => i + 1);
+        if (currentIndex < questions.length - 1) {
+          setCurrentIndex((i) => i + 1);
+          scrollToQuestionTop();
+        }
       } else if (e.key === 'ArrowLeft') {
-        if (currentIndex > 0) setCurrentIndex((i) => i - 1);
+        if (currentIndex > 0) {
+          setCurrentIndex((i) => i - 1);
+          scrollToQuestionTop();
+        }
       } else if (key === 'f') {
         toggleFlag();
       } else if (key === 'p') {
@@ -226,6 +234,16 @@ const TimedQuiz: React.FC = () => {
   }, [quizState, currentIndex, questions.length, selectedAnswer]);
 
   const currentQuestion = questions[currentIndex];
+
+  // Helper to scroll to top of question (mobile fix)
+  const scrollToQuestionTop = useCallback(() => {
+    if (questionTopRef.current) {
+      questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -245,6 +263,7 @@ const TimedQuiz: React.FC = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((i) => i + 1);
       setSelectedAnswer(answers[questions[currentIndex + 1]?.id] ?? null);
+      scrollToQuestionTop();
     } else {
       setQuizState('review');
     }
@@ -255,6 +274,7 @@ const TimedQuiz: React.FC = () => {
     if (currentIndex > 0) {
       setCurrentIndex((i) => i - 1);
       setSelectedAnswer(answers[questions[currentIndex - 1]?.id] ?? null);
+      scrollToQuestionTop();
     }
     feedback.tap();
   };
@@ -348,7 +368,7 @@ const TimedQuiz: React.FC = () => {
                   <div className="flex items-center gap-3">
                     {key === 'weak' && <AlertCircle className="w-5 h-5 text-warning-500" />}
                     {key === 'exam' && <Target className="w-5 h-5 text-error-500" />}
-                    {key === 'challenge' && <Zap className="w-5 h-5 text-purple-500" />}
+                    {key === 'challenge' && <Zap className="w-5 h-5 text-primary-500" />}
                     {(key === 'quick' || key === 'standard') && <Clock className="w-5 h-5 text-primary-500" />}
                     <div>
                       <div className="font-semibold text-slate-900">{config.name}</div>
@@ -866,7 +886,7 @@ const TimedQuiz: React.FC = () => {
       )}
 
       {/* Question */}
-      <div className="flex-1 p-4">
+      <div ref={questionTopRef} className="flex-1 p-4">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl shadow-sm p-6 mb-4">
             <div className="text-xs text-primary-600 font-medium mb-2">

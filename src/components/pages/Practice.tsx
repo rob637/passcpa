@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Flag,
   Clock,
   CheckCircle,
@@ -24,6 +25,7 @@ import {
   FileSpreadsheet,
   Brain,
   Zap,
+  History,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -31,10 +33,15 @@ import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
+import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
+import { formatDistanceToNow } from 'date-fns';
+
+// Question status filter options (like Becker)
+type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct' | 'flagged';
 
 interface SessionConfig {
   section: ExamSection;
@@ -42,6 +49,10 @@ interface SessionConfig {
   count: number;
   topics: string[];
   difficulty: Difficulty | 'all';
+  // New Becker-style filters
+  questionStatus: QuestionStatus;
+  blueprintArea: string;
+  scoringMode: 'practice' | 'exam'; // Practice = immediate feedback, Exam = end only
 }
 
 interface AnswerState {
@@ -55,17 +66,48 @@ interface SessionSetupProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   userProfile: any;
   loading: boolean;
+  userId?: string;
 }
 
 // Session Setup Component
-const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading }) => {
+const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
+  const [showAdvanced, setShowAdvanced] = useState(false);
+  const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
+  const [historyLoading, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
     section: (userProfile?.examSection || 'REG') as ExamSection,
     mode: 'study', // study, timed, exam, weak
     count: 10,
     topics: [],
     difficulty: 'all',
+    questionStatus: 'all',
+    blueprintArea: 'all',
+    scoringMode: 'practice',
   });
+
+  // Blueprint areas for current section
+  const blueprintAreas = getBlueprintForExamDate(new Date())
+    .filter(bp => bp.section === config.section)
+    .map(bp => ({ id: bp.area, name: bp.name }));
+
+  // Load practice history
+  useEffect(() => {
+    const loadHistory = async () => {
+      if (!userId) {
+        setHistoryLoading(false);
+        return;
+      }
+      try {
+        const sessions = await getPracticeSessions(userId, 5);
+        setPracticeHistory(sessions);
+      } catch (error) {
+        logger.error('Error loading practice history:', error);
+      } finally {
+        setHistoryLoading(false);
+      }
+    };
+    loadHistory();
+  }, [userId]);
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto">
@@ -88,7 +130,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             </label>
             <select
               value={config.section}
-              onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection }))}
+              onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
               className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               {Object.entries(CPA_SECTIONS).map(([key, s]) => (
@@ -99,43 +141,56 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             </select>
           </div>
 
-          {/* Practice Mode */}
+          {/* Practice Mode - Now 2x2 Grid like Becker */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Practice Mode
             </label>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {[
-                { id: 'study', name: 'Study', desc: 'Learn at your pace' },
-                { id: 'timed', name: 'Timed', desc: '90 sec per question' },
-                { id: 'exam', name: 'Exam', desc: 'Simulate real exam' },
-              ].map((mode) => (
-                <button
-                  key={mode.id}
-                  onClick={() => setConfig((prev) => ({ ...prev, mode: mode.id as SessionConfig['mode'] }))}
-                  className={clsx(
-                    'p-3 rounded-xl border-2 text-center transition-all focus:ring-2 focus:ring-primary-500/50',
-                    config.mode === mode.id
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                  )}
-                  aria-pressed={config.mode === mode.id}
-                  aria-describedby={`desc-${mode.id}`}
-                >
-                  <div className="font-medium text-slate-900 dark:text-slate-100">{mode.name}</div>
-                  <div id={`desc-${mode.id}`} className="text-xs text-slate-500 dark:text-slate-400">{mode.desc}</div>
-                </button>
-              ))}
+                { id: 'study', name: 'Study', desc: 'Learn at your pace', icon: BookOpen },
+                { id: 'timed', name: 'Timed', desc: '90 sec per question', icon: Clock },
+                { id: 'exam', name: 'Exam Sim', desc: 'Full exam conditions', icon: Target },
+                { id: 'weak', name: 'Weak Areas', desc: 'Focus on struggles', icon: Sparkles },
+              ].map((mode) => {
+                const Icon = mode.icon;
+                return (
+                  <button
+                    key={mode.id}
+                    onClick={() => setConfig((prev) => ({ ...prev, mode: mode.id as SessionConfig['mode'] }))}
+                    className={clsx(
+                      'p-4 rounded-xl border-2 text-left transition-all focus:ring-2 focus:ring-primary-500/50',
+                      config.mode === mode.id
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
+                    )}
+                    aria-pressed={config.mode === mode.id}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={clsx(
+                        'w-10 h-10 rounded-lg flex items-center justify-center',
+                        config.mode === mode.id ? 'bg-primary-500 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-500'
+                      )}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-slate-900 dark:text-slate-100">{mode.name}</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">{mode.desc}</div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Question Count */}
+          {/* Question Count - Now with slider + presets */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Number of Questions
             </label>
-            <div className="flex items-center gap-3">
-              {[5, 10, 20, 30].map((count) => (
+            <div className="flex items-center gap-3 mb-2">
+              {[5, 10, 20, 30, 50].map((count) => (
                 <button
                   key={count}
                   onClick={() => setConfig((prev) => ({ ...prev, count }))}
@@ -152,36 +207,150 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Difficulty */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Difficulty
-            </label>
-            <div className="flex items-center gap-3">
-              {[
-                { id: 'all', name: 'All Levels' },
-                { id: 'easy', name: 'Easy' },
-                { id: 'medium', name: 'Medium' },
-                { id: 'hard', name: 'Hard' },
-              ].map((diff) => (
-                <button
-                  key={diff.id}
-                  onClick={() => setConfig((prev) => ({ ...prev, difficulty: diff.id as Difficulty | 'all' }))}
-                  className={clsx(
-                    'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
-                    config.difficulty === diff.id
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                      : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-300'
-                  )}
-                  aria-pressed={config.difficulty === diff.id}
-                >
-                  {diff.name}
-                </button>
-              ))}
+            <input
+              type="range"
+              min="5"
+              max="100"
+              step="5"
+              value={config.count}
+              onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
+              className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
+            />
+            <div className="flex justify-between text-xs text-slate-400 mt-1">
+              <span>5</span>
+              <span className="font-medium text-primary-600">{config.count} questions</span>
+              <span>100</span>
             </div>
           </div>
+
+          {/* Question Status Filter - Like Becker */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Question Status
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { id: 'all', name: 'All Questions', icon: Shuffle },
+                { id: 'unanswered', name: 'Unanswered', icon: Target },
+                { id: 'incorrect', name: 'Incorrect', icon: XCircle },
+                { id: 'correct', name: 'Correct', icon: CheckCircle },
+                { id: 'flagged', name: 'Flagged', icon: Flag },
+              ].map((status) => {
+                const Icon = status.icon;
+                return (
+                  <button
+                    key={status.id}
+                    onClick={() => setConfig((prev) => ({ ...prev, questionStatus: status.id as QuestionStatus }))}
+                    className={clsx(
+                      'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
+                      config.questionStatus === status.id
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
+                        : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-300'
+                    )}
+                    aria-pressed={config.questionStatus === status.id}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {status.name}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Advanced Options Toggle */}
+          <button
+            onClick={() => setShowAdvanced(!showAdvanced)}
+            className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium"
+          >
+            {showAdvanced ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+            Advanced Options
+          </button>
+
+          {/* Advanced Options Panel */}
+          {showAdvanced && (
+            <div className="space-y-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+              {/* Blueprint Area Filter */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Blueprint Area
+                </label>
+                <select
+                  value={config.blueprintArea}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, blueprintArea: e.target.value }))}
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                >
+                  <option value="all">All Areas</option>
+                  {blueprintAreas.map((area) => (
+                    <option key={area.id} value={area.id}>
+                      {area.id} - {area.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Difficulty */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Difficulty Level
+                </label>
+                <div className="flex items-center gap-3">
+                  {[
+                    { id: 'all', name: 'All Levels' },
+                    { id: 'easy', name: 'Easy' },
+                    { id: 'medium', name: 'Medium' },
+                    { id: 'hard', name: 'Hard' },
+                  ].map((diff) => (
+                    <button
+                      key={diff.id}
+                      onClick={() => setConfig((prev) => ({ ...prev, difficulty: diff.id as Difficulty | 'all' }))}
+                      className={clsx(
+                        'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
+                        config.difficulty === diff.id
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
+                          : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-300'
+                      )}
+                      aria-pressed={config.difficulty === diff.id}
+                    >
+                      {diff.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Scoring Mode */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Scoring Mode
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'practice' }))}
+                    className={clsx(
+                      'p-3 rounded-xl border-2 text-left transition-all',
+                      config.scoringMode === 'practice'
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
+                    )}
+                  >
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Practice</div>
+                    <div className="text-xs text-slate-500">Immediate feedback after each question</div>
+                  </button>
+                  <button
+                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'exam' }))}
+                    className={clsx(
+                      'p-3 rounded-xl border-2 text-left transition-all',
+                      config.scoringMode === 'exam'
+                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
+                    )}
+                  >
+                    <div className="font-medium text-slate-900 dark:text-slate-100">Exam</div>
+                    <div className="text-xs text-slate-500">Score revealed at end only</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Start Button */}
           <button
@@ -203,6 +372,64 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
           </button>
         </div>
       </div>
+
+      {/* Attempts List - Like Becker */}
+      {practiceHistory.length > 0 && (
+        <div className="card mt-6">
+          <div className="card-body">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <History className="w-5 h-5 text-slate-500" />
+                <h2 className="font-semibold text-slate-900 dark:text-slate-100">Attempts List</h2>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              {practiceHistory.map((session, index) => (
+                <div
+                  key={session.id}
+                  className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-sm font-bold text-primary-600">
+                      #{index + 1}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className={clsx(
+                          'text-xs px-2 py-0.5 rounded-full font-medium',
+                          session.mode === 'study' && 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                          session.mode === 'timed' && 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+                          session.mode === 'exam' && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                          session.mode === 'weak' && 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
+                        )}>
+                          {session.mode === 'study' ? 'Practice' : session.mode.charAt(0).toUpperCase() + session.mode.slice(1)}
+                        </span>
+                        <span className="text-sm text-slate-600 dark:text-slate-400">
+                          {session.questionCount} questions
+                        </span>
+                      </div>
+                      <div className="text-xs text-slate-400 mt-0.5">
+                        {formatDistanceToNow(session.completedAt, { addSuffix: true })}
+                      </div>
+                    </div>
+                  </div>
+                  <div className={clsx(
+                    'text-lg font-bold',
+                    session.accuracy >= 75 ? 'text-success-600' : session.accuracy >= 50 ? 'text-warning-600' : 'text-error-600'
+                  )}>
+                    {session.accuracy}%
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs text-slate-500 mt-4 text-center">
+              The Practice Test score is the percentage of questions you answered correctly.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -407,7 +634,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 onClick={() => navigate('/flashcards')}
                 className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
               >
-                <Brain className="w-5 h-5 text-purple-500" />
+                <Brain className="w-5 h-5 text-primary-500" />
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
               </button>
             </div>
@@ -460,7 +687,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
 const Practice: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { userProfile } = useAuth();
+  const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
   const { courseId } = useCourse();
   
@@ -495,6 +722,9 @@ const Practice: React.FC = () => {
   const [reportType, setReportType] = useState<string>('');
   const [reportDetails, setReportDetails] = useState('');
   const [reportSubmitted, setReportSubmitted] = useState(false);
+  
+  // Ref for scrolling to top of question on navigation (mobile fix)
+  const questionTopRef = useRef<HTMLDivElement>(null);
   
   // Track weak topics for targeted practice
   const [, setWeakTopicsFromSession] = useState<string[]>([]);
@@ -745,6 +975,17 @@ const Practice: React.FC = () => {
     setCurrentIndex(index);
     setSelectedAnswer(answers[questions[index]?.id]?.selected ?? null);
     setShowExplanation(answers[questions[index]?.id] !== undefined);
+    
+    // Scroll to top - use multiple methods for cross-platform reliability (especially mobile)
+    // scrollIntoView is more reliable on mobile/Capacitor than window.scrollTo
+    if (questionTopRef.current) {
+      questionTopRef.current.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+    // Fallback for window scroll
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Also try document scroll for iOS
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [answers, questions]);
 
   const nextQuestion = useCallback(() => {
@@ -812,16 +1053,31 @@ const Practice: React.FC = () => {
     const totalQuestions = questions.length;
     const answeredCount = Object.keys(answers).length;
     const correctCount = Object.values(answers).filter((a) => a.correct).length;
+    const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
 
     if (logActivity) {
       logActivity('practice_completed', {
         totalQuestions,
         answeredCount,
         correctCount,
-        accuracy: answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0,
+        accuracy,
         totalTime: elapsed,
         details: undefined // or provide details if needed
       });
+    }
+
+    // Save practice session to history for Attempts List
+    if (user?.uid && sessionConfig) {
+      savePracticeSession(user.uid, {
+        section: sessionConfig.section,
+        mode: sessionConfig.mode,
+        questionCount: totalQuestions,
+        correctCount,
+        accuracy,
+        timeSpentSeconds: elapsed,
+        blueprintArea: sessionConfig.blueprintArea !== 'all' ? sessionConfig.blueprintArea : undefined,
+        difficulty: sessionConfig.difficulty !== 'all' ? sessionConfig.difficulty : undefined,
+      }).catch(err => logger.error('Failed to save practice session:', err));
     }
 
     // Identify weak topics from wrong answers
@@ -913,7 +1169,7 @@ const Practice: React.FC = () => {
 
   // Session configuration screen
   if (!inSession) {
-    return <SessionSetup onStart={startSession} userProfile={userProfile} loading={loading} />;
+    return <SessionSetup onStart={startSession} userProfile={userProfile} loading={loading} userId={user?.uid} />;
   }
 
   // Loading state
@@ -1024,7 +1280,7 @@ const Practice: React.FC = () => {
       </div>
 
       {/* Question Content */}
-      <div className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto w-full">
+      <div ref={questionTopRef} className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto w-full">
         <div className="card mb-4">
           {/* Question Header */}
           <div className="card-header flex items-center justify-between">

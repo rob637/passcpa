@@ -104,7 +104,7 @@ const FLAG_OPTIONS: Array<{
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+    color: 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400',
     description: 'This content may be outdated or incorrect',
   },
 ];

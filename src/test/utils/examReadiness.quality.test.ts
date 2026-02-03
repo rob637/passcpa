@@ -88,7 +88,7 @@ describe('Exam Readiness Calculation', () => {
         expect(result.breakdown.volume).toBe(50);
       });
 
-      it('calculates consistency component correctly (20% weight)', () => {
+      it('calculates lessons component correctly (20% weight)', () => {
         const result = calculateExamReadiness(
           baseStats,
           createTopics(15),
@@ -97,7 +97,7 @@ describe('Exam Readiness Calculation', () => {
         );
         
         // 10/20 * 100 = 50%
-        expect(result.breakdown.consistency).toBe(50);
+        expect(result.breakdown.lessons).toBe(50);
       });
     });
 
@@ -119,6 +119,8 @@ describe('Exam Readiness Calculation', () => {
           { ...baseStats, accuracy: 70, totalQuestions: 300 },
           createTopics(10),
           12,
+          20,
+          10, // Add some TBS to reach 'almost' threshold
           20
         );
         
@@ -161,7 +163,7 @@ describe('Exam Readiness Calculation', () => {
           20
         );
         
-        expect(result.breakdown.consistency).toBe(0);
+        expect(result.breakdown.lessons).toBe(0);
       });
 
       it('handles zero total lessons', () => {
@@ -172,7 +174,7 @@ describe('Exam Readiness Calculation', () => {
           0 // zero total lessons
         );
         
-        expect(result.breakdown.consistency).toBe(0);
+        expect(result.breakdown.lessons).toBe(0);
       });
 
       it('handles zero accuracy', () => {
@@ -201,12 +203,14 @@ describe('Exam Readiness Calculation', () => {
     });
 
     describe('Score Weighting', () => {
-      it('uses correct weights (35/25/20/20)', () => {
-        // Perfect scores in all areas
+      it('uses correct weights (25/15/20/20/20 with TBS)', () => {
+        // Perfect scores in all areas including TBS
         const result = calculateExamReadiness(
           { ...baseStats, accuracy: 80, totalQuestions: 500 },
           createTopics(15), // 100% coverage
           20, // 100% lessons
+          20,
+          20, // 100% TBS
           20
         );
         

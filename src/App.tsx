@@ -36,6 +36,7 @@ const You = lazy(() => import('./components/pages/You'));
 
 // Training Modes
 const Flashcards = lazy(() => import('./components/pages/Flashcards'));
+const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
 const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
@@ -45,6 +46,7 @@ const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommun
 const Lessons = lazy(() => import('./components/pages/Lessons'));
 const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
 const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
+const StudyJourney = lazy(() => import('./components/pages/StudyJourney'));
 const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
 const Community = lazy(() => import('./components/pages/Community'));
@@ -380,6 +382,14 @@ function App() {
                     path="/flashcards"
                     element={
                       <SuspensePage>
+                        <FlashcardSetup />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/flashcards/session"
+                    element={
+                      <SuspensePage>
                         <Flashcards />
                       </SuspensePage>
                     }
@@ -421,6 +431,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Lessons />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/journey"
+                    element={
+                      <SuspensePage>
+                        <StudyJourney />
                       </SuspensePage>
                     }
                   />

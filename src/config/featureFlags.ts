@@ -3,7 +3,7 @@ export const FEATURES = {
   examSimulator: true,
   flashcards: true,
   tbs: true, // Task-Based Simulations
-  writtenCommunication: false, // Removed in 2024 Evolution, retained for legacy
+  writtenCommunication: true, // Required for BEC section
   adminTools: true,
   blueprint2026Preview: true, // Allow users to toggle 2026 content preview
   offlineMode: true,

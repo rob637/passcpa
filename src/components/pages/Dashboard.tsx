@@ -308,10 +308,10 @@ const Dashboard = () => {
 
     const loadReadinessData = async () => {
       try {
-        // Get topic performance
+        // Get topic performance for current section
         let topicsData: TopicStat[] = [];
         if (getTopicPerformance) {
-          topicsData = await getTopicPerformance();
+          topicsData = await getTopicPerformance(currentSection);
         }
 
         // Get lesson progress

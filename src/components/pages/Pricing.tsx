@@ -118,12 +118,12 @@ const Pricing = () => {
                 the best CPA prep platform available.
               </p>
               <p>
-                In exchange for your input, you get full access to everything — no limits, no catches. 
-                When we're ready for paid plans, beta users keep their access.
+                In exchange for your feedback, you get full access during beta — no limits. 
+                When we launch paid plans, founding members get exclusive pricing locked in for life.
               </p>
               <div className="flex items-center gap-3 pt-4">
                 <Users className="w-5 h-5 text-blue-600" />
-                <span className="font-medium text-slate-900 dark:text-white">Be a founding member. Shape the future of CPA prep.</span>
+                <span className="font-medium text-slate-900 dark:text-white">Be a founding member. Lock in your discount forever.</span>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ const Pricing = () => {
                 </h3>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
                   We'll introduce paid plans for new users. Beta users who helped us build VoraPrep 
-                  will be taken care of.
+                  will receive founding member pricing — a significant lifetime discount on any plan.
                 </p>
               </div>
               <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">

@@ -97,9 +97,10 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
   }
   
   const formatTime = (minutes: number): string => {
-    if (minutes < 60) return `${minutes}m`;
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
+    const roundedMinutes = Math.round(minutes);
+    if (roundedMinutes < 60) return `${roundedMinutes}m`;
+    const hours = Math.floor(roundedMinutes / 60);
+    const mins = roundedMinutes % 60;
     return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
   };
 

@@ -113,11 +113,18 @@ describe('Practice Component', () => {
       });
     });
 
-    it.skip('should display difficulty selector', async () => {
+    it('should display difficulty selector in advanced options', async () => {
+      const user = userEvent.setup();
       renderPractice();
 
+      // Click to open advanced options
       await waitFor(() => {
-        expect(screen.getByText(/Difficulty/i)).toBeInTheDocument();
+        expect(screen.getByText(/Advanced Options/i)).toBeInTheDocument();
+      });
+      await user.click(screen.getByText(/Advanced Options/i));
+
+      await waitFor(() => {
+        expect(screen.getByText(/Difficulty Level/i)).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /All Levels/i })).toBeInTheDocument();
       });
     });
@@ -143,16 +150,22 @@ describe('Practice Component', () => {
       expect(button20).toBeInTheDocument();
     });
 
-    it.skip('should allow selecting different difficulty levels', async () => {
+    it('should allow selecting different difficulty levels', async () => {
       const user = userEvent.setup();
       renderPractice();
+
+      // Open advanced options first
+      await waitFor(() => {
+        expect(screen.getByText(/Advanced Options/i)).toBeInTheDocument();
+      });
+      await user.click(screen.getByText(/Advanced Options/i));
 
       await waitFor(() => {
         expect(screen.getByRole('button', { name: /Hard/i })).toBeInTheDocument();
       });
 
       await user.click(screen.getByRole('button', { name: /Hard/i }));
-      expect(screen.getByRole('button', { name: /Hard/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Hard/i })).toHaveAttribute('aria-pressed', 'true');
     });
   });
 
@@ -180,17 +193,17 @@ describe('Practice Component', () => {
       expect(timedButton).toHaveClass('border-primary-500');
     });
 
-    it.skip('should allow selecting Exam mode', async () => {
+    it('should allow selecting Exam Sim mode', async () => {
       const user = userEvent.setup();
       renderPractice();
 
       await waitFor(() => {
-        // Find the Exam mode button (contains "Simulate real exam" text)
-        expect(screen.getByText(/Simulate real exam/i)).toBeInTheDocument();
+        // Find the Exam Sim mode button (contains "Full exam conditions" text)
+        expect(screen.getByText(/Exam Sim/i)).toBeInTheDocument();
       });
 
-      // Find the Exam button in the practice modes section by its description
-      const examModeButton = screen.getByText(/Simulate real exam/i).closest('button');
+      // Find the Exam Sim button in the practice modes section
+      const examModeButton = screen.getByText(/Exam Sim/i).closest('button');
       await user.click(examModeButton);
 
       expect(examModeButton).toHaveClass('border-primary-500');
@@ -241,14 +254,15 @@ describe('Practice Component', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('should have proper form labels', async () => {
+    it('should have proper form labels', async () => {
       renderPractice();
 
       await waitFor(() => {
         expect(screen.getByText(/Exam Section/i)).toBeInTheDocument();
         expect(screen.getByText(/Practice Mode/i)).toBeInTheDocument();
         expect(screen.getByText(/Number of Questions/i)).toBeInTheDocument();
-        expect(screen.getByText(/Difficulty/i)).toBeInTheDocument();
+        // Difficulty is now in Advanced Options, so check that section exists
+        expect(screen.getByText(/Advanced Options/i)).toBeInTheDocument();
       });
     });
 

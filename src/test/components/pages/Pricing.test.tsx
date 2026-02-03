@@ -85,9 +85,9 @@ describe('Pricing', () => {
       expect(screen.getByText(/Why is VoraPrep free/)).toBeInTheDocument();
     });
 
-    it('should mention beta users get to keep access', () => {
+    it('should mention founding member pricing', () => {
       renderWithRouter(<Pricing />);
-      expect(screen.getByText(/beta users keep their access/i)).toBeInTheDocument();
+      expect(screen.getByText(/founding members get exclusive pricing/i)).toBeInTheDocument();
     });
   });
 

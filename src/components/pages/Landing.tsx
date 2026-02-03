@@ -407,9 +407,11 @@ const Landing = () => {
                     <th className="px-6 py-5 text-left text-slate-600 dark:text-slate-400 font-semibold">Feature</th>
                     <th className="px-6 py-5 text-center">
                       <div className="flex flex-col items-center">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-2">
-                          <BookOpen className="w-5 h-5 text-white" />
-                        </div>
+                        <img 
+                          src="/logo-icon.svg" 
+                          alt="VoraPrep" 
+                          className="w-10 h-10 mb-2"
+                        />
                         <span className="text-blue-600 dark:text-blue-400 font-bold">VoraPrep</span>
                       </div>
                     </th>

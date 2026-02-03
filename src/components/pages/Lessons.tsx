@@ -11,10 +11,11 @@ import {
   Search,
   GraduationCap,
   Layout,
-  Compass,
   FileText,
   ClipboardCheck,
   Trophy,
+  Bookmark,
+  StickyNote,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -23,6 +24,7 @@ import { CPA_SECTIONS } from '../../config/examConfig';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
+import { useBookmarks } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
 
@@ -133,20 +135,25 @@ const Lessons: React.FC = () => {
   const { userProfile } = useAuth();
   const { getLessonProgress } = useStudy();
   const { courseId } = useCourse();
+  const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
+  const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
 
-  // Support switching between user's exam section and PREP
-  const userSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const viewingSection = searchParams.get('section') === 'PREP' ? 'PREP' as ExamSection : userSection;
-  const isViewingPrep = viewingSection === 'PREP';
-  
-  const currentSection = viewingSection;
+  // Get bookmarked lesson IDs
+  const bookmarkedLessonIds = new Set(
+    getAllBookmarks()
+      .filter(b => b.itemType === 'lesson')
+      .map(b => b.itemId)
+  );
+
+  // Current exam section from user profile
+  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
   // Fetch lessons and content counts
@@ -157,19 +164,15 @@ const Lessons: React.FC = () => {
         const lessons = await fetchLessonsBySection(currentSection, courseId);
         setRawLessons(lessons);
         
-        // Fetch content counts for section (skip for PREP)
-        if (currentSection !== 'PREP') {
-          const [questionStats, tbsCount] = await Promise.all([
-            getQuestionStats(),
-            getTBSCount(currentSection as ExamSection),
+        // Fetch content counts for section
+        const [questionStats, tbsCount] = await Promise.all([
+          getQuestionStats(),
+          getTBSCount(currentSection as ExamSection),
           ]);
           setContentCounts({
             mcq: questionStats.bySection[currentSection] || 0,
             tbs: tbsCount,
           });
-        } else {
-          setContentCounts({ mcq: 0, tbs: 0 });
-        }
       } catch (error) {
         logger.error('Error fetching lessons:', error);
       }
@@ -204,19 +207,23 @@ const Lessons: React.FC = () => {
   // Group lessons into areas with completion status
   const lessonAreas = groupLessonsByArea(rawLessons, completedLessons);
 
-  // Filter lessons based on search
+  // Filter lessons based on search and bookmarks
   const filteredAreas = lessonAreas
     .map((area) => ({
       ...area,
-      lessons: area.lessons.filter((lesson) =>
-        lesson.title.toLowerCase().includes(searchQuery.toLowerCase())
-      ),
+      lessons: area.lessons.filter((lesson) => {
+        const matchesSearch = lesson.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesBookmark = !showBookmarkedOnly || bookmarkedLessonIds.has(lesson.id);
+        return matchesSearch && matchesBookmark;
+      }),
     }))
     .filter((area) => selectedArea === null || area.id === selectedArea)
-    .filter((area) => searchQuery === '' || area.lessons.length > 0);
+    .filter((area) => searchQuery === '' || area.lessons.length > 0)
+    .filter((area) => !showBookmarkedOnly || area.lessons.length > 0);
 
   // Calculate stats
   const totalLessons = lessonAreas.reduce((acc, area) => acc + area.lessons.length, 0);
+  const bookmarkedCount = bookmarkedLessonIds.size;
   const completedCount = lessonAreas.reduce(
     (acc, area) => acc + area.lessons.filter((l) => l.completed).length,
     0
@@ -245,34 +252,6 @@ const Lessons: React.FC = () => {
 
   return (
     <div className="px-2 py-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-      {/* Section Toggle - Switch between exam section and PREP */}
-      <div className="flex gap-2 mb-4">
-        <button
-          onClick={() => setSearchParams({})}
-          className={clsx(
-            'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors',
-            !isViewingPrep
-              ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
-          )}
-        >
-          <BookOpen className="w-4 h-4" />
-          {CPA_SECTIONS[userSection]?.shortName || userSection} Lessons
-        </button>
-        <button
-          onClick={() => setSearchParams({ section: 'PREP' })}
-          className={clsx(
-            'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors',
-            isViewingPrep
-              ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300'
-              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
-          )}
-        >
-          <Compass className="w-4 h-4" />
-          Exam Strategy
-        </button>
-      </div>
-
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
@@ -281,26 +260,24 @@ const Lessons: React.FC = () => {
               className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
               style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
             >
-              {isViewingPrep ? <Compass className="w-6 h-6" /> : (sectionInfo?.shortName || currentSection)}
+              {sectionInfo?.shortName || currentSection}
             </div>
             <div>
               <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                {isViewingPrep ? 'Exam Strategy' : 'Lessons'}
+                Lessons
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                {isViewingPrep ? 'Tips, tactics & mental game for the CPA exam' : (sectionInfo?.name || currentSection)}
+                {sectionInfo?.name || currentSection}
               </p>
             </div>
           </div>
-          {!isViewingPrep && (
-            <Link 
-              to="/lessons/matrix" 
-              className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
-            >
-              <Layout className="w-4 h-4" />
-              <span className="hidden sm:inline">Study Guide</span>
-            </Link>
-          )}
+          <Link 
+            to="/lessons/matrix" 
+            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
+          >
+            <Layout className="w-4 h-4" />
+            <span className="hidden sm:inline">Study Guide</span>
+          </Link>
         </div>
 
         {/* Stats - Becker-style content counts */}
@@ -312,24 +289,20 @@ const Lessons: React.FC = () => {
             </div>
             <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Lessons</div>
           </div>
-          {!isViewingPrep && (
-            <>
-              <div className="card p-3 text-center">
-                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
-                  <FileText className="w-5 h-5" />
-                  {contentCounts.mcq}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">MCQs</div>
-              </div>
-              <div className="card p-3 text-center">
-                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
-                  <ClipboardCheck className="w-5 h-5" />
-                  {contentCounts.tbs}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TBS</div>
-              </div>
-            </>
-          )}
+          <div className="card p-3 text-center">
+            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
+              <FileText className="w-5 h-5" />
+              {contentCounts.mcq}
+            </div>
+            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">MCQs</div>
+          </div>
+          <div className="card p-3 text-center">
+            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
+              <ClipboardCheck className="w-5 h-5" />
+              {contentCounts.tbs}
+            </div>
+            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TBS</div>
+          </div>
           <div className="card p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-success-600">
               <Trophy className="w-5 h-5" />
@@ -365,6 +338,29 @@ const Lessons: React.FC = () => {
               className="w-full pl-10 pr-4 py-2 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100"
             />
           </div>
+          
+          {/* Bookmarks filter */}
+          <button
+            onClick={() => setShowBookmarkedOnly(!showBookmarkedOnly)}
+            className={clsx(
+              'flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors border',
+              showBookmarkedOnly
+                ? 'bg-amber-100 text-amber-700 border-amber-300 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700'
+                : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-600 dark:hover:bg-slate-700'
+            )}
+          >
+            <Bookmark className={clsx('w-4 h-4', showBookmarkedOnly && 'fill-current')} />
+            <span className="hidden sm:inline">Saved</span>
+            {bookmarkedCount > 0 && (
+              <span className={clsx(
+                'px-1.5 py-0.5 rounded-full text-xs font-bold',
+                showBookmarkedOnly ? 'bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-200' : 'bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+              )}>
+                {bookmarkedCount}
+              </span>
+            )}
+          </button>
+          
           <select
             value={selectedArea || ''}
             onChange={(e) => setSelectedArea(e.target.value || null)}
@@ -509,6 +505,13 @@ const Lessons: React.FC = () => {
                             </span>
                           )}
                           {isNext && <span className="text-primary-600 dark:text-primary-400 font-medium">Up Next</span>}
+                          {/* Bookmark/Notes indicators */}
+                          {isBookmarked(lesson.id) && (
+                            <Bookmark className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                          )}
+                          {getNote(lesson.id) && (
+                            <StickyNote className="w-3.5 h-3.5 text-blue-500" />
+                          )}
                         </div>
                       </div>
 
@@ -530,8 +533,25 @@ const Lessons: React.FC = () => {
         })}
       </div>
 
+      {/* Empty State for Bookmarks filter */}
+      {filteredAreas.length === 0 && showBookmarkedOnly && (
+        <div className="card p-8 text-center">
+          <Bookmark className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">No saved lessons</h3>
+          <p className="text-slate-600 dark:text-slate-400">
+            Bookmark lessons while studying to quickly find them later
+          </p>
+          <button 
+            onClick={() => setShowBookmarkedOnly(false)}
+            className="btn-primary mt-4"
+          >
+            View All Lessons
+          </button>
+        </div>
+      )}
+
       {/* Empty State */}
-      {filteredAreas.length === 0 && rawLessons.length > 0 && (
+      {filteredAreas.length === 0 && rawLessons.length > 0 && !showBookmarkedOnly && (
         <div className="card p-8 text-center">
           <BookOpen className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
           <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">No lessons found</h3>

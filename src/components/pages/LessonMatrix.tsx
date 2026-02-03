@@ -58,7 +58,6 @@ const getDeliveryMethod = (lesson: Lesson): string => {
   const exampleCount = typeCounts['example'] || 0;
   const interactiveCount = typeCounts['interactive'] || 0;
   const tableCount = typeCounts['table'] || 0;
-  const textCount = (typeCounts['text'] || 0) + (typeCounts['callout'] || 0) + (typeCounts['warning'] || 0);
   
   // Classify based on dominant content type (>30% threshold for special types)
   if (interactiveCount > 0) return 'Interactive Module';

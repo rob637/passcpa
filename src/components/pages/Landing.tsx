@@ -361,11 +361,13 @@ const Landing = () => {
                   key={index}
                   className={`group p-8 rounded-3xl border-2 ${colors.border} bg-white dark:bg-slate-900 hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
                 >
-                  <div className={`w-14 h-14 ${colors.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    <item.icon className={`w-7 h-7 ${colors.text}`} />
-                  </div>
-                  <div className={`inline-block px-3 py-1 ${colors.bg} ${colors.text} rounded-full text-sm font-bold mb-4`}>
-                    {item.stat}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`w-12 h-12 ${colors.bg} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                      <item.icon className={`w-6 h-6 ${colors.text}`} />
+                    </div>
+                    <div className={`px-3 py-1 ${colors.bg} ${colors.text} rounded-full text-sm font-bold`}>
+                      {item.stat}
+                    </div>
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
                     {item.title}

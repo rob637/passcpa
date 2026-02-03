@@ -17,6 +17,7 @@ vi.mock('../../hooks/useStudy', () => ({
   useStudy: () => ({
     completeLesson: vi.fn(),
     logActivity: vi.fn(),
+    getLessonProgress: vi.fn().mockResolvedValue({}),
   }),
 }));
 
@@ -77,6 +78,13 @@ vi.mock('../../data/lessons', () => ({
 vi.mock('../../components/common/Bookmarks', () => ({
   BookmarkButton: ({ itemId }) => <button data-testid={`bookmark-${itemId}`}>Bookmark</button>,
   NotesButton: ({ itemId }) => <button data-testid={`notes-${itemId}`}>Notes</button>,
+  useBookmarks: () => ({
+    isBookmarked: vi.fn(() => false),
+    getAllBookmarks: vi.fn(() => []),
+    getNote: vi.fn(() => null),
+    toggleBookmark: vi.fn(),
+    saveNote: vi.fn(),
+  }),
 }));
 
 // Mock DOMPurify

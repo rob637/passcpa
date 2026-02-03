@@ -210,13 +210,13 @@ const Landing = () => {
             <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Compare</a>
             <Link to="/pricing" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pricing</Link>
           </div>
-          <div className="flex items-center gap-3">
-            <Link to="/login" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
+          <div className="flex items-center gap-2 md:gap-3">
+            <Link to="/login" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
               Sign In
             </Link>
             <Link 
               to="/register" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               Start Free
             </Link>
@@ -282,24 +282,33 @@ const Landing = () => {
           </div>
 
           {/* No Credit Card Emphasis */}
-          <div className="flex flex-wrap justify-center gap-6 mb-16">
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-emerald-600" />
+          <div className="flex flex-col items-center gap-4 mb-16">
+            <Link 
+              to="/login"
+              className="md:hidden text-slate-500 hover:text-blue-600 font-medium text-sm transition-colors mb-2"
+            >
+              Already have an account? Sign In
+            </Link>
+            
+            <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-emerald-600" />
+                </div>
+                <span>No credit card required</span>
               </div>
-              <span>No credit card required</span>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-emerald-600" />
+                </div>
+                <span>Full access during beta</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-emerald-600" />
-              </div>
-              <span>Full access during beta</span>
-            </div>
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-emerald-600" />
-              </div>
-              <span>Cancel anytime</span>
+            
+            {/* Mobile-only Login Link */}
+            <div className="md:hidden">
+               <span className="text-slate-500">Already have an account? </span>
+               <Link to="/login" className="font-semibold text-blue-600 hover:text-blue-700">Sign In</Link>
             </div>
           </div>
 
@@ -492,7 +501,7 @@ const Landing = () => {
               { code: 'BAR', name: 'Business Analysis & Reporting', questions: 393, type: 'Discipline', color: 'from-orange-500 to-amber-500' },
               { code: 'ISC', name: 'Information Systems & Controls', questions: 388, type: 'Discipline', color: 'from-red-500 to-rose-500' },
               { code: 'TCP', name: 'Tax Compliance & Planning', questions: 379, type: 'Discipline', color: 'from-cyan-500 to-teal-500' },
-              { code: 'BEC', name: 'Business Environment & Concepts', questions: 119, type: '2025 Blueprint', color: 'from-purple-500 to-violet-500' },
+              { code: 'BEC', name: 'Business Environment & Concepts', questions: 119, type: '2025 Blueprint', color: 'from-primary-500 to-primary-600' },
             ].map((section) => (
               <div 
                 key={section.code}

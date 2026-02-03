@@ -88,8 +88,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     setError(null);
     
     try {
-      // Get topic performance data
-      const topicStats = getTopicPerformance ? await getTopicPerformance() : [];
+      // Get topic performance data for current section
+      const section = userProfile?.examSection;
+      const topicStats = getTopicPerformance ? await getTopicPerformance(section) : [];
       
       // CRITICAL: Fetch actual lesson progress from Firestore subcollection
       const lessonProgressData = getLessonProgress ? await getLessonProgress() : {};
@@ -119,11 +120,10 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         }
       }
       
-      // Build user study state
-      const section = (userProfile as any).examSection || 'FAR';
+      // Build user study state - use section from above
       const [tbsStats, questionsDue] = await Promise.all([
-          getTBSHistory(user.uid, section),
-          getDueQuestions(user.uid, section)
+          getTBSHistory(user.uid, section || 'FAR'),
+          getDueQuestions(user.uid, section || 'FAR')
       ]);
 
       const studyState: UserStudyState = {
@@ -185,8 +185,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
-      // Mark the activity as complete
-      markActivityCompleted(user.uid, activityId).then(() => {
+      // Mark the activity as complete - pass section for correct cache key
+      const section = plan?.section || (userProfile as any)?.examSection || 'FAR';
+      markActivityCompleted(user.uid, activityId, section).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);
           updated.add(activityId);
@@ -269,7 +270,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'lesson': return 'text-primary-500 bg-primary-100 dark:bg-primary-900/30';
       case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
       case 'tbs': return 'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30';
-      case 'flashcards': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';
+      case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
       default: return 'text-slate-500 bg-slate-100 dark:bg-slate-800';
     }
   };
@@ -341,25 +342,25 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         {/* Next Activity - highlighted as primary CTA */}
         {nextActivity ? (
           <div 
-            className="p-4 bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
+            className="p-3 sm:p-4 bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
             onClick={() => handleActivityClick(nextActivity)}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-12 h-12 rounded-xl bg-white/20 flex shrink-0 items-center justify-center">
                 {React.createElement(getActivityIcon(nextActivity.type), { className: 'w-6 h-6 text-white' })}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="font-bold text-white text-lg">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-bold text-white text-lg leading-tight">
                     {nextActivity.title}
                   </span>
                   {nextActivity.priority === 'critical' && (
-                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 text-white">Critical</span>
+                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 text-white shrink-0">Critical</span>
                   )}
                 </div>
-                <p className="text-sm text-white/80">{nextActivity.reason}</p>
+                <p className="text-sm text-white/80 mt-0.5 line-clamp-1">{nextActivity.reason}</p>
               </div>
-              <div className="flex items-center gap-1 bg-white/20 px-4 py-2 rounded-xl text-white font-semibold">
+              <div className="flex shrink-0 items-center gap-1 bg-white/20 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-white font-semibold text-sm sm:text-base">
                 Start <ChevronRight className="w-4 h-4" />
               </div>
             </div>

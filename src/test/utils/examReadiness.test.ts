@@ -24,13 +24,13 @@ describe('examReadiness', () => {
         questions: 30,
       });
 
-      const result = calculateExamReadiness(stats, topicPerformance, 50, 50);
+      const result = calculateExamReadiness(stats, topicPerformance, 50, 50, 20, 20);
 
       expect(result.overall).toBeGreaterThanOrEqual(80);
       expect(result.status).toBe('ready');
       expect(result.breakdown.accuracy).toBe(100);
       expect(result.breakdown.volume).toBe(100);
-      expect(result.breakdown.consistency).toBe(100);
+      expect(result.breakdown.lessons).toBe(100);
     });
 
     it('calculates readiness for beginner student', () => {
@@ -63,9 +63,10 @@ describe('examReadiness', () => {
         questions: 25,
       });
 
-      const result = calculateExamReadiness(stats, topicPerformance, 30, 50);
+      const result = calculateExamReadiness(stats, topicPerformance, 30, 50, 10, 20);
 
-      expect(result.overall).toBeGreaterThanOrEqual(60);
+      // With TBS included, score should be in 'almost' range
+      expect(result.overall).toBeGreaterThanOrEqual(55);
       expect(result.overall).toBeLessThan(80);
       expect(result.status).toBe('almost');
     });
@@ -84,7 +85,7 @@ describe('examReadiness', () => {
       expect(result.breakdown.accuracy).toBe(0);
       expect(result.breakdown.coverage).toBe(0);
       expect(result.breakdown.volume).toBe(0);
-      expect(result.breakdown.consistency).toBe(0);
+      expect(result.breakdown.lessons).toBe(0);
     });
 
     it('handles zero total lessons', () => {
@@ -95,7 +96,7 @@ describe('examReadiness', () => {
 
       const result = calculateExamReadiness(stats, [], 0, 0);
 
-      expect(result.breakdown.consistency).toBe(0);
+      expect(result.breakdown.lessons).toBe(0);
     });
 
     it('caps accuracy score at 100', () => {
@@ -160,7 +161,7 @@ describe('examReadiness', () => {
       expect(result.breakdown).toHaveProperty('accuracy');
       expect(result.breakdown).toHaveProperty('coverage');
       expect(result.breakdown).toHaveProperty('volume');
-      expect(result.breakdown).toHaveProperty('consistency');
+      expect(result.breakdown).toHaveProperty('lessons');
     });
 
     it('handles undefined accuracy in stats', () => {
@@ -225,7 +226,7 @@ describe('examReadiness', () => {
           accuracy: 80,
           coverage: 70,
           volume: 60,
-          consistency: 90,
+          lessons: 90,
         },
         status: 'almost',
       };

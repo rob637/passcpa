@@ -3,10 +3,10 @@ import { Lesson } from '../../types';
 /**
  * BEC - Business Environment and Concepts Lessons
  * 
- * ⚠️ IMPORTANT: BEC is part of the 2025 Blueprint (testable through June 30, 2026)
+ * ⚠️ IMPORTANT: BEC is testable through June 30, 2026 (2025 Blueprint)
  * Starting July 1, 2026, BEC is replaced by BAR, ISC, and TCP disciplines.
  * 
- * This content is designed for candidates testing under the 2025 Blueprint.
+ * Includes Written Communication tasks (unique to BEC section).
  */
 
 export const becLessons: Lesson[] = [

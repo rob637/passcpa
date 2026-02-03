@@ -56,17 +56,29 @@ const getTodayDate = (): string => {
 
 /**
  * Fetch today's plan from Firestore (if exists) or LocalStorage (offline)
+ * @param userId - User ID
+ * @param section - Exam section (e.g., 'FAR', 'AUD') - if provided, only returns plan if section matches
  */
-export const fetchTodaysPlan = async (userId: string): Promise<PersistedDailyPlan | null> => {
+export const fetchTodaysPlan = async (userId: string, section?: string): Promise<PersistedDailyPlan | null> => {
   if (!userId) return null;
 
   const today = getTodayDate();
   
   // Try LocalStorage first (cache-first strategy)
+  // Cache key now includes section to prevent cross-section plan reuse
+  const cacheKey = section 
+    ? `daily_plan_${userId}_${today}_${section}`
+    : `daily_plan_${userId}_${today}`;
+    
   try {
-      const localData = localStorage.getItem(`daily_plan_${userId}_${today}`);
+      const localData = localStorage.getItem(cacheKey);
       if (localData) {
           const parsed = JSON.parse(localData);
+          // Verify section matches if specified (extra safety check)
+          if (section && parsed.section !== section) {
+              logger.log(`Cached plan section (${parsed.section}) doesn't match requested (${section}), will regenerate`);
+              return null;
+          }
           // Convert date strings back to Date objects
           return {
               ...parsed,
@@ -79,7 +91,11 @@ export const fetchTodaysPlan = async (userId: string): Promise<PersistedDailyPla
   }
 
   try {
-    const planRef = doc(db, 'users', userId, 'daily_plans', today);
+    // Firestore path includes section to keep plans separate per section
+    const docPath = section 
+      ? `${today}_${section}`
+      : today;
+    const planRef = doc(db, 'users', userId, 'daily_plans', docPath);
     const snapshot = await getDoc(planRef);
 
     if (snapshot.exists()) {
@@ -90,8 +106,17 @@ export const fetchTodaysPlan = async (userId: string): Promise<PersistedDailyPla
         updatedAt: data.updatedAt?.toDate?.() || new Date(),
       } as PersistedDailyPlan;
       
-      // Update local cache
-      localStorage.setItem(`daily_plan_${userId}_${today}`, JSON.stringify(plan));
+      // Verify section matches if specified
+      if (section && plan.section !== section) {
+        logger.log(`Firestore plan section (${plan.section}) doesn't match requested (${section}), will regenerate`);
+        return null;
+      }
+      
+      // Update local cache with section in key
+      const cacheKey = section 
+        ? `daily_plan_${userId}_${today}_${section}`
+        : `daily_plan_${userId}_${today}`;
+      localStorage.setItem(cacheKey, JSON.stringify(plan));
       
       return plan;
     }
@@ -160,18 +185,20 @@ export const getOrCreateTodaysPlan = async (
   forceRegenerate: boolean = false
 ): Promise<PersistedDailyPlan> => {
   const today = getTodayDate();
+  const section = state.section; // Use section from study state for cache key
 
   // Try to fetch existing plan (unless force regenerate)
+  // Pass section to ensure we get a plan for the current section
   if (!forceRegenerate) {
-    const existingPlan = await fetchTodaysPlan(userId);
+    const existingPlan = await fetchTodaysPlan(userId, section);
     if (existingPlan) {
-      logger.log('Using cached daily plan from Firestore');
+      logger.log(`Using cached daily plan for section ${section}`);
       return existingPlan;
     }
   }
 
   // Generate new plan
-  logger.log('Generating new daily plan...');
+  logger.log(`Generating new daily plan for section ${section}...`);
   const newPlan = await generateDailyPlan(state, courseId);
 
   // Get carryover activities from recent previous days
@@ -203,16 +230,19 @@ export const getOrCreateTodaysPlan = async (
   // Save to Firestore and LocalStorage
   try {
     // 1. Save to LocalStorage (Immediate / Offline)
-    localStorage.setItem(`daily_plan_${userId}_${today}`, JSON.stringify(persistedPlan));
+    // Cache key includes section to keep plans separate
+    const cacheKey = `daily_plan_${userId}_${today}_${section}`;
+    localStorage.setItem(cacheKey, JSON.stringify(persistedPlan));
 
-    // 2. Save to Firestore
-    const planRef = doc(db, 'users', userId, 'daily_plans', today);
+    // 2. Save to Firestore - document path includes section
+    const docPath = `${today}_${section}`;
+    const planRef = doc(db, 'users', userId, 'daily_plans', docPath);
     await setDoc(planRef, {
       ...persistedPlan,
       createdAt: Timestamp.fromDate(persistedPlan.createdAt),
       updatedAt: Timestamp.fromDate(persistedPlan.updatedAt),
     });
-    logger.log('Daily plan saved to Firestore');
+    logger.log(`Daily plan saved for section ${section}`);
   } catch (error) {
     logger.error('Error saving daily plan:', error);
     // Return plan anyway (can work in offline mode mostly)
@@ -223,29 +253,40 @@ export const getOrCreateTodaysPlan = async (
 
 /**
  * Mark an activity as completed
+ * @param userId - User ID
+ * @param activityId - Activity ID to mark complete
+ * @param section - Exam section for the plan (e.g., 'FAR', 'AUD')
  */
 export const markActivityCompleted = async (
   userId: string,
-  activityId: string
+  activityId: string,
+  section?: string
 ): Promise<void> => {
   if (!userId || !activityId) return;
   const today = getTodayDate();
 
   try {
     // 1. Update LocalStorage first
-    const localData = localStorage.getItem(`daily_plan_${userId}_${today}`);
+    // Try section-specific key first, fall back to legacy key
+    const sectionKey = section ? `daily_plan_${userId}_${today}_${section}` : null;
+    const legacyKey = `daily_plan_${userId}_${today}`;
+    const cacheKey = sectionKey && localStorage.getItem(sectionKey) ? sectionKey : legacyKey;
+    
+    const localData = localStorage.getItem(cacheKey);
     if (localData) {
         const plan = JSON.parse(localData);
         if (!plan.completedActivities) plan.completedActivities = [];
         if (!plan.completedActivities.includes(activityId)) {
             plan.completedActivities.push(activityId);
             plan.updatedAt = new Date();
-            localStorage.setItem(`daily_plan_${userId}_${today}`, JSON.stringify(plan));
+            localStorage.setItem(cacheKey, JSON.stringify(plan));
         }
     }
 
     // 2. Update Firestore
-    const planRef = doc(db, 'users', userId, 'daily_plans', today);
+    // Try section-specific doc path first
+    const docPath = section ? `${today}_${section}` : today;
+    const planRef = doc(db, 'users', userId, 'daily_plans', docPath);
 
     await updateDoc(planRef, {
       completedActivities: arrayUnion(activityId),
@@ -261,11 +302,14 @@ export const markActivityCompleted = async (
 
 /**
  * Get completion status for today's activities
+ * @param userId - User ID
+ * @param section - Optional exam section for section-specific plan
  */
 export const getTodaysCompletionStatus = async (
-  userId: string
+  userId: string,
+  section?: string
 ): Promise<Set<string>> => {
-  const plan = await fetchTodaysPlan(userId);
+  const plan = await fetchTodaysPlan(userId, section);
   return new Set(plan?.completedActivities || []);
 };
 

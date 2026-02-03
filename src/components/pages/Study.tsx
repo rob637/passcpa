@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Sparkles,
   FileSpreadsheet,
+  PenTool,
   LucideIcon,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -23,7 +24,7 @@ interface StudyMode {
   title: string;
   description: string;
   icon: LucideIcon;
-  color: 'primary' | 'success' | 'warning' | 'indigo' | 'error' | 'slate';
+  color: 'primary' | 'success' | 'warning' | 'indigo' | 'error' | 'slate' | 'purple';
   link: string;
   recommended?: boolean;
   badge?: string;
@@ -126,6 +127,16 @@ const Study = () => {
       color: 'warning',
       link: '/tbs',
     },
+    // Written Communication - Required for BEC section
+    ...(currentSection === 'BEC' ? [{
+      id: 'wc',
+      title: 'Written Communication',
+      description: 'Practice professional memos, letters, and reports',
+      icon: PenTool,
+      color: 'purple' as const,
+      link: '/written-communication',
+      badge: 'BEC',
+    }] : []),
     {
       id: 'flashcards',
       title: 'Flashcard Review',
@@ -197,6 +208,12 @@ const Study = () => {
       icon: 'text-slate-600',
       border: 'border-slate-200',
       hover: 'hover:border-slate-400',
+    },
+    purple: {
+      bg: 'bg-primary-100',
+      icon: 'text-primary-600',
+      border: 'border-primary-200',
+      hover: 'hover:border-primary-400',
     },
   };
 

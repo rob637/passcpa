@@ -2,8 +2,9 @@ import { useState, useEffect, useCallback } from 'react';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, deleteDoc, where, getCountFromServer } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
+import { FEATURES } from '../../../config/featureFlags';
 
 // Dynamic imports for large question data to reduce bundle size
 const loadQuestionData = () => import('../../../data/questions');
@@ -12,7 +13,7 @@ const loadQuestionData = () => import('../../../data/questions');
 // Types
 // ============================================================================
 
-type TabType = 'content' | 'users' | 'logs' | 'settings';
+type TabType = 'content' | 'users' | 'analytics' | 'tools' | 'logs' | 'settings';
 type LogType = 'info' | 'success' | 'error' | 'warning';
 
 interface UserDocument {
@@ -23,6 +24,26 @@ interface UserDocument {
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
   lastLogin?: string; // If you track this
+  subscription?: {
+    tier?: string;
+    status?: string;
+    currentPeriodEnd?: { seconds: number };
+    trialEnd?: { seconds: number };
+  };
+}
+
+interface AnalyticsData {
+  totalUsers: number;
+  activeToday: number;
+  activeThisWeek: number;
+  activeThisMonth: number;
+  newUsersThisWeek: number;
+  bySection: Record<string, number>;
+  bySubscription: Record<string, number>;
+}
+
+interface FeatureFlagState {
+  [key: string]: boolean;
 }
 
 interface SystemError {
@@ -66,12 +87,38 @@ const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>('content');
   const [localStats, setLocalStats] = useState<LocalStats | null>(null);
+  const [lessonStats, setLessonStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
+  const [tbsStats, setTbsStats] = useState<{ total: number; bySection: Record<string, number>; byType?: Record<string, number> } | null>(null);
+  const [wcStats, setWcStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<UserDocument[]>([]);
+  const [userSearch, setUserSearch] = useState('');
+  const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
+
+  // Analytics state
+  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
+  const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(false);
+
+  // Feature flags state (local copy for UI)
+  const [featureFlags, setFeatureFlags] = useState<FeatureFlagState>({
+    aiTutor: FEATURES.aiTutor,
+    examSimulator: FEATURES.examSimulator,
+    flashcards: FEATURES.flashcards,
+    tbs: FEATURES.tbs,
+    writtenCommunication: FEATURES.writtenCommunication,
+    studyPlan: FEATURES.studyPlan,
+  });
+  const [maintenanceMode, setMaintenanceMode] = useState(false);
+
+  // User lookup state
+  const [lookupQuery, setLookupQuery] = useState('');
+  const [lookupResult, setLookupResult] = useState<UserDocument | null>(null);
+  const [isLookingUp, setIsLookingUp] = useState(false);
 
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
@@ -87,13 +134,14 @@ const AdminCMS: React.FC = () => {
     if (!isAdmin) return;
     setIsLoadingUsers(true);
     try {
-      const q = query(collection(db, 'users'), limit(50)); // Limit to 50 for now
+      const q = query(collection(db, 'users'), limit(200)); // Increased limit
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
       querySnapshot.forEach((doc) => {
         users.push({ id: doc.id, ...doc.data() } as UserDocument);
       });
       setUsersList(users);
+      setFilteredUsers(users);
     } catch (error) {
       logger.error('Error loading users', error);
       addLog('Error loading users: ' + (error instanceof Error ? error.message : String(error)), 'error');
@@ -101,6 +149,192 @@ const AdminCMS: React.FC = () => {
       setIsLoadingUsers(false);
     }
   }, [isAdmin]);
+
+  // Filter users when search or filter changes
+  useEffect(() => {
+    let result = [...usersList];
+    
+    // Apply search
+    if (userSearch.trim()) {
+      const searchLower = userSearch.toLowerCase();
+      result = result.filter(u => 
+        u.email?.toLowerCase().includes(searchLower) ||
+        u.displayName?.toLowerCase().includes(searchLower) ||
+        u.id.toLowerCase().includes(searchLower)
+      );
+    }
+    
+    // Apply filter
+    if (userFilter === 'admin') {
+      result = result.filter(u => u.isAdmin);
+    } else if (userFilter === 'premium') {
+      result = result.filter(u => 
+        u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)
+      );
+    } else if (userFilter === 'free') {
+      result = result.filter(u => !u.subscription?.tier || u.subscription.tier === 'free');
+    } else if (userFilter === 'trial') {
+      result = result.filter(u => u.subscription?.status === 'trialing');
+    }
+    
+    setFilteredUsers(result);
+  }, [usersList, userSearch, userFilter]);
+
+  // Load Analytics
+  const loadAnalytics = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingAnalytics(true);
+    try {
+      // Get total user count
+      const usersRef = collection(db, 'users');
+      const totalSnapshot = await getCountFromServer(usersRef);
+      const totalUsers = totalSnapshot.data().count;
+
+      // Get all users for detailed stats (limited for performance)
+      const q = query(collection(db, 'users'), limit(500));
+      const querySnapshot = await getDocs(q);
+      const users: UserDocument[] = [];
+      querySnapshot.forEach((doc) => {
+        users.push({ id: doc.id, ...doc.data() } as UserDocument);
+      });
+
+      // Calculate date ranges
+      const now = new Date();
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const weekAgo = new Date(todayStart.getTime() - 7 * 24 * 60 * 60 * 1000);
+      const monthAgo = new Date(todayStart.getTime() - 30 * 24 * 60 * 60 * 1000);
+
+      // Active users (simplified - based on createdAt for now, real impl would use lastActive)
+      let activeToday = 0;
+      let activeThisWeek = 0;
+      let activeThisMonth = 0;
+      let newUsersThisWeek = 0;
+      const bySection: Record<string, number> = { AUD: 0, BEC: 0, FAR: 0, REG: 0, TCP: 0, ISC: 0, BAR: 0 };
+      const bySubscription: Record<string, number> = { free: 0, monthly: 0, quarterly: 0, annual: 0, lifetime: 0 };
+
+      users.forEach(u => {
+        const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
+        
+        // Count by section
+        if (u.examSection && bySection.hasOwnProperty(u.examSection)) {
+          bySection[u.examSection]++;
+        }
+        
+        // Count by subscription
+        const tier = u.subscription?.tier || 'free';
+        if (bySubscription.hasOwnProperty(tier)) {
+          bySubscription[tier]++;
+        } else {
+          bySubscription.free++;
+        }
+        
+        // New users
+        if (createdAt && createdAt >= weekAgo) {
+          newUsersThisWeek++;
+          if (createdAt >= todayStart) {
+            activeToday++;
+          }
+        }
+        
+        // Rough activity estimate (would need proper tracking)
+        if (createdAt && createdAt >= monthAgo) {
+          activeThisMonth++;
+          if (createdAt >= weekAgo) {
+            activeThisWeek++;
+          }
+        }
+      });
+
+      setAnalytics({
+        totalUsers,
+        activeToday,
+        activeThisWeek,
+        activeThisMonth,
+        newUsersThisWeek,
+        bySection,
+        bySubscription,
+      });
+    } catch (error) {
+      logger.error('Error loading analytics', error);
+      addLog('Error loading analytics: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLoadingAnalytics(false);
+    }
+  }, [isAdmin]);
+
+  // User lookup by email or ID
+  const lookupUser = useCallback(async () => {
+    if (!isAdmin || !lookupQuery.trim()) return;
+    setIsLookingUp(true);
+    setLookupResult(null);
+    try {
+      // Try by UID first
+      const userDoc = await getDocs(query(collection(db, 'users'), where('__name__', '==', lookupQuery.trim()), limit(1)));
+      if (!userDoc.empty) {
+        const doc = userDoc.docs[0];
+        setLookupResult({ id: doc.id, ...doc.data() } as UserDocument);
+        return;
+      }
+      
+      // Try by email
+      const emailQuery = await getDocs(query(collection(db, 'users'), where('email', '==', lookupQuery.trim()), limit(1)));
+      if (!emailQuery.empty) {
+        const doc = emailQuery.docs[0];
+        setLookupResult({ id: doc.id, ...doc.data() } as UserDocument);
+        return;
+      }
+      
+      addLog('User not found: ' + lookupQuery, 'warning');
+    } catch (error) {
+      logger.error('Error looking up user', error);
+      addLog('Lookup error: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLookingUp(false);
+    }
+  }, [isAdmin, lookupQuery]);
+
+  // Toggle admin status for a user
+  const toggleAdminStatus = async (userId: string, currentIsAdmin: boolean) => {
+    if (!isAdmin) return;
+    const confirmMsg = currentIsAdmin 
+      ? 'Remove admin privileges from this user?' 
+      : 'Grant admin privileges to this user?';
+    if (!window.confirm(confirmMsg)) return;
+    
+    try {
+      const userRef = doc(db, 'users', userId);
+      await updateDoc(userRef, { isAdmin: !currentIsAdmin });
+      addLog(`Admin status ${currentIsAdmin ? 'removed from' : 'granted to'} user ${userId}`, 'success');
+      loadUsers();
+    } catch (error) {
+      logger.error('Error toggling admin status', error);
+      addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
+
+  // Grant/revoke premium access
+  const setSubscriptionTier = async (userId: string, tier: 'free' | 'lifetime') => {
+    if (!isAdmin) return;
+    const confirmMsg = tier === 'lifetime'
+      ? 'Grant LIFETIME premium access to this user?'
+      : 'Remove premium access from this user?';
+    if (!window.confirm(confirmMsg)) return;
+    
+    try {
+      const userRef = doc(db, 'users', userId);
+      await updateDoc(userRef, { 
+        'subscription.tier': tier,
+        'subscription.status': tier === 'lifetime' ? 'active' : 'inactive',
+        'subscription.grantedBy': user?.email,
+        'subscription.grantedAt': new Date().toISOString(),
+      });
+      addLog(`${tier === 'lifetime' ? 'Granted' : 'Revoked'} premium for user ${userId}`, 'success');
+      loadUsers();
+    } catch (error) {
+      logger.error('Error updating subscription', error);
+      addLog('Failed to update subscription: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    }
+  };
 
   // Load System Errors
   const loadSystemErrors = useCallback(async () => {
@@ -139,24 +373,83 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin]);
 
+  // Clear all system errors
+  const clearSystemErrors = useCallback(async () => {
+    if (!isAdmin) return;
+    
+    const confirmClear = window.confirm(
+      `Are you sure you want to delete all ${systemErrors.length} error logs? This cannot be undone.`
+    );
+    if (!confirmClear) return;
+    
+    setIsLoadingErrors(true);
+    try {
+      // Delete in batches (Firestore limit is 500 per batch)
+      const batch = writeBatch(db);
+      let count = 0;
+      
+      for (const err of systemErrors) {
+        batch.delete(doc(db, 'error_logs', err.id));
+        count++;
+        
+        // Commit batch if we hit 500
+        if (count >= 500) {
+          await batch.commit();
+          count = 0;
+        }
+      }
+      
+      // Commit any remaining
+      if (count > 0) {
+        await batch.commit();
+      }
+      
+      setSystemErrors([]);
+      addLog(`Cleared ${systemErrors.length} error logs`, 'success');
+    } catch (error) {
+      logger.error('Error clearing system errors', error);
+      addLog('Failed to clear error logs: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLoadingErrors(false);
+    }
+  }, [isAdmin, systemErrors]);
+
   // Effect to load tab data
   useEffect(() => {
     if (activeTab === 'users') {
       loadUsers();
     } else if (activeTab === 'logs') {
       loadSystemErrors();
+    } else if (activeTab === 'analytics') {
+      loadAnalytics();
     }
-  }, [activeTab, loadUsers, loadSystemErrors]);
+  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics]);
 
   // Load question stats dynamically
   useEffect(() => {
     const loadData = async () => {
       try {
+        // Load Questions
         const questionModule = await loadQuestionData();
         const { getQuestionStats } = questionModule;
         setLocalStats(getQuestionStats());
+        
+        // Load Lessons
+        const lessonModule = await import('../../../data/lessons');
+        const lessonData = lessonModule.getLessonStats();
+        setLessonStats({ total: lessonData.total, bySection: lessonData.bySection });
+        
+        // Load TBS
+        const tbsModule = await import('../../../data/tbs');
+        const tbsData = tbsModule.getTBSStats();
+        setTbsStats({ total: tbsData.total, bySection: tbsData.bySection, byType: tbsData.byType });
+        
+        // Load WC
+        const wcModule = await import('../../../data/written-communication');
+        const wcData = wcModule.getWCStats();
+        setWcStats({ total: wcData.total, bySection: wcData.bySection });
       } catch (error) {
-        logger.error('Error loading question data:', error);
+        logger.error('Error loading content stats:', error);
       }
     };
     loadData();
@@ -204,7 +497,7 @@ const AdminCMS: React.FC = () => {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-2 border-b border-gray-200 overflow-x-auto">
-          {(['content', 'users', 'logs', 'settings'] as TabType[]).map((tab) => (
+          {(['content', 'users', 'analytics', 'tools', 'logs', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -214,7 +507,12 @@ const AdminCMS: React.FC = () => {
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
-              {tab === 'content' ? '📦 Content' : tab}
+              {tab === 'content' && '📦 Content'}
+              {tab === 'users' && '👥 Users'}
+              {tab === 'analytics' && '📊 Analytics'}
+              {tab === 'tools' && '🛠️ Tools'}
+              {tab === 'logs' && '📋 Logs'}
+              {tab === 'settings' && '⚙️ Settings'}
             </button>
           ))}
         </div>
@@ -225,7 +523,7 @@ const AdminCMS: React.FC = () => {
         {activeTab === 'content' && (
           <div className="space-y-6">
             {/* Quick Links to Editors */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 shadow-lg text-white">
+            <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 shadow-lg text-white">
               <h3 className="text-lg font-semibold mb-3">Content Editors</h3>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -248,7 +546,7 @@ const AdminCMS: React.FC = () => {
                 </Link>
                 <Link
                   to="/admin/wc"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
                   <span>✍️</span> View WC
                   <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">BEC</span>
@@ -256,130 +554,685 @@ const AdminCMS: React.FC = () => {
               </div>
             </div>
 
-            {/* Local Question Bank Stats */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-xl">📦</span> Local Question Bank
-              </h3>
-              <p className="text-sm text-gray-500 mb-4">
-                Questions are loaded from local TypeScript files for fast, offline-capable access.
-              </p>
-              {localStats ? (
-                <div className="space-y-3">
-                  <div className="text-3xl font-bold text-blue-600">
-                    {localStats.total} questions
+            {/* Content Stats Grid - All 4 types */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Questions */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="text-xl">❓</span> Questions (MCQ)
+                </h3>
+                {localStats ? (
+                  <div className="space-y-3">
+                    <div className="text-3xl font-bold text-blue-600">
+                      {localStats.total.toLocaleString()}
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      {Object.entries(localStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600">{count}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {localStats.byDifficulty.easy} easy / {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
+                    </div>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
-                    {Object.entries(localStats.bySection).map(([section, count]) => (
-                      <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                        <span className="font-medium">{section}</span>
-                        <span className="text-gray-600">{count}</span>
+                ) : (
+                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
+                )}
+              </div>
+
+              {/* Lessons */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="text-xl">📚</span> Lessons
+                </h3>
+                {lessonStats ? (
+                  <div className="space-y-3">
+                    <div className="text-3xl font-bold text-green-600">
+                      {lessonStats.total.toLocaleString()}
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      {Object.entries(lessonStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600">{count}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
+                )}
+              </div>
+
+              {/* TBS */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="text-xl">📊</span> Task-Based Simulations
+                </h3>
+                {tbsStats ? (
+                  <div className="space-y-3">
+                    <div className="text-3xl font-bold text-orange-600">
+                      {tbsStats.total.toLocaleString()}
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      {Object.entries(tbsStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600">{count}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {tbsStats.byType && (
+                      <div className="text-xs text-gray-500">
+                        {Object.entries(tbsStats.byType).slice(0, 4).map(([type, count]) => 
+                          `${type.replace('_', ' ')}: ${count}`
+                        ).join(' • ')}
                       </div>
-                    ))}
+                    )}
                   </div>
-                  <div className="text-sm text-gray-500 mt-2">
-                    {localStats.topics} topics • {localStats.byDifficulty.easy} easy /{' '}
-                    {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
+                ) : (
+                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
+                )}
+              </div>
+
+              {/* Written Communication */}
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="text-xl">✍️</span> Written Communication
+                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">BEC only</span>
+                </h3>
+                {wcStats ? (
+                  <div className="space-y-3">
+                    <div className="text-3xl font-bold text-primary-600">
+                      {wcStats.total.toLocaleString()}
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      {Object.entries(wcStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600">{count}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-xs text-amber-600">
+                      ⚠️ BEC ends June 30, 2026 - WC not tested in other sections
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div className="animate-pulse">Loading...</div>
-              )}
+                ) : (
+                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
+                )}
+              </div>
             </div>
           </div>
         )}
 
         {activeTab === 'users' && (
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
-              <span>User Management</span>
-              <button
-                onClick={loadUsers}
-                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors"
-              >
-                Refresh
-              </button>
-            </h3>
-            
-            {isLoadingUsers ? (
-               <div className="text-center py-8">
-                <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-500">Loading users...</p>
+          <div className="space-y-6">
+            {/* User Stats Summary */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
+                <div className="text-sm text-gray-500">Total Users</div>
               </div>
-            ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-gray-50 border-b border-gray-200">
-                      <th className="p-3 font-medium text-gray-600">Email</th>
-                      <th className="p-3 font-medium text-gray-600">Name</th>
-                      <th className="p-3 font-medium text-gray-600">Role</th>
-                      <th className="p-3 font-medium text-gray-600">Last Login</th>
-                      <th className="p-3 font-medium text-gray-600">Joined</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    {usersList.length === 0 ? (
-                      <tr>
-                        <td colSpan={5} className="p-4 text-center text-gray-500">
-                          No users found (or permission denied).
-                        </td>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl font-bold text-primary-600">{usersList.filter(u => u.isAdmin).length}</div>
+                <div className="text-sm text-gray-500">Admins</div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl font-bold text-green-600">
+                  {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
+                </div>
+                <div className="text-sm text-gray-500">Premium</div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl font-bold text-amber-600">
+                  {usersList.filter(u => u.subscription?.status === 'trialing').length}
+                </div>
+                <div className="text-sm text-gray-500">Trial</div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl font-bold text-gray-600">
+                  {usersList.filter(u => !u.subscription?.tier || u.subscription.tier === 'free').length}
+                </div>
+                <div className="text-sm text-gray-500">Free</div>
+              </div>
+            </div>
+
+            {/* User Lookup Tool */}
+            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                🔍 User Lookup
+              </h3>
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  value={lookupQuery}
+                  onChange={(e) => setLookupQuery(e.target.value)}
+                  placeholder="Enter email or user ID..."
+                  className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  onKeyDown={(e) => e.key === 'Enter' && lookupUser()}
+                />
+                <button
+                  onClick={lookupUser}
+                  disabled={isLookingUp || !lookupQuery.trim()}
+                  className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 transition-colors"
+                >
+                  {isLookingUp ? 'Searching...' : 'Lookup'}
+                </button>
+              </div>
+              {lookupResult && (
+                <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-semibold text-gray-900">{lookupResult.email || 'No email'}</p>
+                      <p className="text-sm text-gray-500 font-mono">{lookupResult.id}</p>
+                      <p className="text-sm text-gray-600 mt-1">
+                        Section: {lookupResult.examSection || 'Not set'} • 
+                        Tier: {lookupResult.subscription?.tier || 'free'} • 
+                        Status: {lookupResult.subscription?.status || 'N/A'}
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => toggleAdminStatus(lookupResult.id, !!lookupResult.isAdmin)}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 text-gray-700'} hover:opacity-80`}
+                      >
+                        {lookupResult.isAdmin ? 'Remove Admin' : 'Make Admin'}
+                      </button>
+                      <button
+                        onClick={() => setSubscriptionTier(lookupResult.id, lookupResult.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'} hover:opacity-80`}
+                      >
+                        {lookupResult.subscription?.tier === 'lifetime' ? 'Revoke Premium' : 'Grant Lifetime'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* User Management Table */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">User Management</h3>
+                <div className="flex flex-wrap gap-3 items-center">
+                  {/* Search */}
+                  <input
+                    type="text"
+                    value={userSearch}
+                    onChange={(e) => setUserSearch(e.target.value)}
+                    placeholder="Search users..."
+                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  {/* Filter */}
+                  <select
+                    value={userFilter}
+                    onChange={(e) => setUserFilter(e.target.value as typeof userFilter)}
+                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="all">All Users</option>
+                    <option value="admin">Admins Only</option>
+                    <option value="premium">Premium Only</option>
+                    <option value="free">Free Only</option>
+                    <option value="trial">Trial Only</option>
+                  </select>
+                  <span className="text-sm text-gray-500">
+                    Showing {filteredUsers.length} of {usersList.length}
+                  </span>
+                  <button
+                    onClick={loadUsers}
+                    className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors"
+                  >
+                    Refresh
+                  </button>
+                </div>
+              </div>
+            
+              {isLoadingUsers ? (
+                 <div className="text-center py-8">
+                  <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
+                  <p className="text-gray-500">Loading users...</p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-gray-50 border-b border-gray-200">
+                        <th className="p-3 font-medium text-gray-600">Email</th>
+                        <th className="p-3 font-medium text-gray-600">Section</th>
+                        <th className="p-3 font-medium text-gray-600">Subscription</th>
+                        <th className="p-3 font-medium text-gray-600">Role</th>
+                        <th className="p-3 font-medium text-gray-600">Joined</th>
+                        <th className="p-3 font-medium text-gray-600">Actions</th>
                       </tr>
-                    ) : (
-                      usersList.map((u) => (
-                        <tr key={u.id} className="hover:bg-gray-50">
-                          <td className="p-3 font-mono text-sm">
-                            {u.email || '—'}
-                            {!u.email && (
-                              <button
-                                onClick={async () => {
-                                  const email = window.prompt('Enter email for this user:', '');
-                                  if (!email) return;
-                                  try {
-                                    const userRef = doc(db, 'users', u.id);
-                                    await updateDoc(userRef, { email });
-                                    addLog(`Updated email for ${u.id} to ${email}`, 'success');
-                                    loadUsers();
-                                  } catch (err) {
-                                    addLog('Failed to update: ' + String(err), 'error');
-                                  }
-                                }}
-                                className="ml-2 text-xs text-blue-600 hover:underline"
-                              >
-                                [fix]
-                              </button>
-                            )}
-                          </td>
-                          <td className="p-3">{u.displayName || '—'}</td>
-                          <td className="p-3">
-                            <span
-                              className={`px-2 py-1 rounded text-xs font-semibold ${
-                                u.isAdmin
-                                  ? 'bg-purple-100 text-purple-700'
-                                  : 'bg-green-100 text-green-700'
-                              }`}
-                            >
-                              {u.isAdmin ? 'Admin' : 'Student'}
-                            </span>
-                          </td>
-                          <td className="p-3 text-sm text-gray-600">
-                            {/* Handle Timestamp or string */}
-                            {u.lastLogin && typeof u.lastLogin === 'object' && 'seconds' in (u.lastLogin as any)
-                              ? new Date((u.lastLogin as any).seconds * 1000).toLocaleDateString()
-                              : u.lastLogin ? String(u.lastLogin) : '—'}
-                          </td>
-                           <td className="p-3 text-sm text-gray-600">
-                            {u.createdAt && typeof u.createdAt === 'object' && 'seconds' in u.createdAt
-                              ? new Date((u.createdAt as any).seconds * 1000).toLocaleDateString()
-                              : '—'}
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {filteredUsers.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="p-4 text-center text-gray-500">
+                            {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
+                      ) : (
+                        filteredUsers.slice(0, 100).map((u) => (
+                          <tr key={u.id} className="hover:bg-gray-50">
+                            <td className="p-3">
+                              <div className="font-medium text-sm">{u.email || '—'}</div>
+                              <div className="text-xs text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
+                            </td>
+                            <td className="p-3">
+                              <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
+                                {u.examSection || 'N/A'}
+                              </span>
+                            </td>
+                            <td className="p-3">
+                              <span
+                                className={`px-2 py-1 rounded text-xs font-semibold ${
+                                  u.subscription?.tier === 'lifetime' ? 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800' :
+                                  u.subscription?.tier === 'annual' ? 'bg-green-100 text-green-700' :
+                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 text-blue-700' :
+                                  u.subscription?.tier === 'monthly' ? 'bg-primary-100 text-primary-700' :
+                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 text-amber-700' :
+                                  'bg-gray-100 text-gray-600'
+                                }`}
+                              >
+                                {u.subscription?.tier || 'free'}
+                                {u.subscription?.status === 'trialing' && ' (trial)'}
+                              </span>
+                            </td>
+                            <td className="p-3">
+                              <span
+                                className={`px-2 py-1 rounded text-xs font-semibold ${
+                                  u.isAdmin
+                                    ? 'bg-primary-100 text-primary-700'
+                                    : 'bg-gray-100 text-gray-600'
+                                }`}
+                              >
+                                {u.isAdmin ? 'Admin' : 'User'}
+                              </span>
+                            </td>
+                             <td className="p-3 text-sm text-gray-600">
+                              {u.createdAt && typeof u.createdAt === 'object' && 'seconds' in u.createdAt
+                                ? new Date((u.createdAt as { seconds: number }).seconds * 1000).toLocaleDateString()
+                                : '—'}
+                            </td>
+                            <td className="p-3">
+                              <div className="flex gap-1">
+                                <button
+                                  onClick={() => toggleAdminStatus(u.id, !!u.isAdmin)}
+                                  className="px-2 py-1 text-xs bg-primary-50 text-primary-600 rounded hover:bg-primary-100"
+                                  title={u.isAdmin ? 'Remove admin' : 'Make admin'}
+                                >
+                                  {u.isAdmin ? '👤' : '👑'}
+                                </button>
+                                <button
+                                  onClick={() => setSubscriptionTier(u.id, u.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
+                                  className="px-2 py-1 text-xs bg-amber-50 text-amber-600 rounded hover:bg-amber-100"
+                                  title={u.subscription?.tier === 'lifetime' ? 'Revoke premium' : 'Grant lifetime'}
+                                >
+                                  {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                  {filteredUsers.length > 100 && (
+                    <p className="text-center text-sm text-gray-500 mt-4">
+                      Showing first 100 of {filteredUsers.length} users. Use search to find specific users.
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'analytics' && (
+          <div className="space-y-6">
+            {/* Analytics Header */}
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-semibold text-gray-900">📊 Analytics Dashboard</h3>
+              <button
+                onClick={loadAnalytics}
+                disabled={isLoadingAnalytics}
+                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+              >
+                {isLoadingAnalytics ? 'Loading...' : 'Refresh'}
+              </button>
+            </div>
+
+            {isLoadingAnalytics ? (
+              <div className="text-center py-12">
+                <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
+                <p className="text-gray-500">Calculating analytics...</p>
+              </div>
+            ) : analytics ? (
+              <>
+                {/* Key Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+                    <div className="text-4xl font-bold">{analytics.totalUsers.toLocaleString()}</div>
+                    <div className="text-blue-100 text-sm mt-1">Total Users</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white">
+                    <div className="text-4xl font-bold">{analytics.newUsersThisWeek}</div>
+                    <div className="text-green-100 text-sm mt-1">New This Week</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-6 text-white">
+                    <div className="text-4xl font-bold">{analytics.activeThisWeek}</div>
+                    <div className="text-primary-100 text-sm mt-1">Active This Week</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl p-6 text-white">
+                    <div className="text-4xl font-bold">{analytics.activeThisMonth}</div>
+                    <div className="text-amber-100 text-sm mt-1">Active This Month</div>
+                  </div>
+                </div>
+
+                {/* Charts Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Users by Section */}
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h4 className="font-semibold text-gray-900 mb-4">Users by Exam Section</h4>
+                    <div className="space-y-3">
+                      {Object.entries(analytics.bySection)
+                        .filter(([, count]) => count > 0)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([section, count]) => {
+                          const percentage = analytics.totalUsers > 0 ? (count / analytics.totalUsers * 100) : 0;
+                          return (
+                            <div key={section}>
+                              <div className="flex justify-between text-sm mb-1">
+                                <span className="font-medium">{section}</span>
+                                <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                              </div>
+                              <div className="w-full bg-gray-200 rounded-full h-2">
+                                <div 
+                                  className="bg-blue-600 h-2 rounded-full transition-all duration-500" 
+                                  style={{ width: `${Math.min(percentage * 2, 100)}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      {Object.entries(analytics.bySection).filter(([, count]) => count > 0).length === 0 && (
+                        <p className="text-gray-500 text-sm">No section data available</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Users by Subscription */}
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h4 className="font-semibold text-gray-900 mb-4">Users by Subscription</h4>
+                    <div className="space-y-3">
+                      {[
+                        { key: 'lifetime', label: 'Lifetime', color: 'bg-gradient-to-r from-amber-400 to-yellow-500' },
+                        { key: 'annual', label: 'Annual', color: 'bg-green-500' },
+                        { key: 'quarterly', label: 'Quarterly', color: 'bg-blue-500' },
+                        { key: 'monthly', label: 'Monthly', color: 'bg-primary-500' },
+                        { key: 'free', label: 'Free', color: 'bg-gray-400' },
+                      ].map(({ key, label, color }) => {
+                        const count = analytics.bySubscription[key] || 0;
+                        const percentage = analytics.totalUsers > 0 ? (count / analytics.totalUsers * 100) : 0;
+                        return (
+                          <div key={key}>
+                            <div className="flex justify-between text-sm mb-1">
+                              <span className="font-medium">{label}</span>
+                              <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2">
+                              <div 
+                                className={`${color} h-2 rounded-full transition-all duration-500`} 
+                                style={{ width: `${percentage}%` }}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <div className="flex justify-between text-sm">
+                        <span className="font-medium text-gray-700">Premium Users</span>
+                        <span className="font-bold text-green-600">
+                          {(analytics.bySubscription.lifetime || 0) + 
+                           (analytics.bySubscription.annual || 0) + 
+                           (analytics.bySubscription.quarterly || 0) + 
+                           (analytics.bySubscription.monthly || 0)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <h4 className="font-semibold text-gray-900 mb-4">Quick Stats</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-blue-600">{analytics.activeToday}</div>
+                      <div className="text-xs text-gray-500">Active Today</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600">
+                        {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
+                      </div>
+                      <div className="text-xs text-gray-500">WAU Rate</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-primary-600">
+                        {analytics.totalUsers > 0 ? ((analytics.activeThisMonth / analytics.totalUsers) * 100).toFixed(1) : 0}%
+                      </div>
+                      <div className="text-xs text-gray-500">MAU Rate</div>
+                    </div>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-amber-600">
+                        {((analytics.bySubscription.lifetime || 0) + 
+                          (analytics.bySubscription.annual || 0) + 
+                          (analytics.bySubscription.quarterly || 0) + 
+                          (analytics.bySubscription.monthly || 0)) > 0 
+                          ? (((analytics.bySubscription.lifetime || 0) + 
+                              (analytics.bySubscription.annual || 0) + 
+                              (analytics.bySubscription.quarterly || 0) + 
+                              (analytics.bySubscription.monthly || 0)) / analytics.totalUsers * 100).toFixed(1)
+                          : 0}%
+                      </div>
+                      <div className="text-xs text-gray-500">Conversion Rate</div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="text-center py-12 text-gray-500">
+                Click Refresh to load analytics data
               </div>
             )}
+          </div>
+        )}
+
+        {activeTab === 'tools' && (
+          <div className="space-y-6">
+            {/* Feature Flags */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                🎛️ Feature Flags
+                <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 px-1 rounded">featureFlags.ts</code> and redeploy.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(featureFlags).map(([flag, enabled]) => (
+                  <div 
+                    key={flag} 
+                    className={`flex items-center justify-between p-4 rounded-lg border ${
+                      enabled ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'
+                    }`}
+                  >
+                    <div>
+                      <span className="font-medium text-gray-900">{flag}</span>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        {flag === 'aiTutor' && 'Vory AI assistant'}
+                        {flag === 'examSimulator' && 'Full exam simulation'}
+                        {flag === 'flashcards' && 'Flashcard study mode'}
+                        {flag === 'tbs' && 'Task-Based Simulations'}
+                        {flag === 'writtenCommunication' && 'Written Communication (BEC only)'}
+                        {flag === 'studyPlan' && 'AI-generated study plans'}
+                      </p>
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      enabled ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
+                    }`}>
+                      {enabled ? 'ON' : 'OFF'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* System Tools */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">🛠️ System Tools</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Maintenance Mode Toggle */}
+                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">Maintenance Mode</h4>
+                    <button
+                      onClick={() => {
+                        const newState = !maintenanceMode;
+                        setMaintenanceMode(newState);
+                        localStorage.setItem('admin_maintenance_mode', String(newState));
+                        addLog(`Maintenance mode ${newState ? 'enabled' : 'disabled'}`, newState ? 'warning' : 'success');
+                      }}
+                      className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                        maintenanceMode 
+                          ? 'bg-red-600 text-white hover:bg-red-700' 
+                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      }`}
+                    >
+                      {maintenanceMode ? 'Disable' : 'Enable'}
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    When enabled, shows maintenance message to non-admin users.
+                  </p>
+                </div>
+
+                {/* Cache Refresh */}
+                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">Clear Local Cache</h4>
+                    <button
+                      onClick={() => {
+                        const keysCleared: string[] = [];
+                        ['voraprep_study_state', 'voraprep_progress', 'ai_api_failures'].forEach(key => {
+                          if (localStorage.getItem(key)) {
+                            localStorage.removeItem(key);
+                            keysCleared.push(key);
+                          }
+                        });
+                        // Clear dailyplan keys
+                        for (let i = localStorage.length - 1; i >= 0; i--) {
+                          const key = localStorage.key(i);
+                          if (key && key.startsWith('dailyplan_')) {
+                            localStorage.removeItem(key);
+                            keysCleared.push(key);
+                          }
+                        }
+                        addLog(`Cleared ${keysCleared.length} cache entries`, 'success');
+                        alert(`Cleared ${keysCleared.length} cache entries. Page will reload.`);
+                        window.location.reload();
+                      }}
+                      className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                    >
+                      Clear Cache
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Clears local storage cache for study state and progress.
+                  </p>
+                </div>
+
+                {/* Force Reload */}
+                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">Force Hard Reload</h4>
+                    <button
+                      onClick={() => {
+                        if (window.confirm('This will fully reload the app. Continue?')) {
+                          window.location.href = window.location.href + '?cache=' + Date.now();
+                        }
+                      }}
+                      className="px-3 py-1 rounded text-sm font-medium bg-amber-600 text-white hover:bg-amber-700 transition-colors"
+                    >
+                      Hard Reload
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Forces a complete page reload bypassing cache.
+                  </p>
+                </div>
+
+                {/* Export Users */}
+                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">Export User List</h4>
+                    <button
+                      onClick={() => {
+                        if (usersList.length === 0) {
+                          alert('Load users first (go to Users tab)');
+                          return;
+                        }
+                        const csv = [
+                          'Email,UID,Section,Subscription,IsAdmin,CreatedAt',
+                          ...usersList.map(u => 
+                            `"${u.email || ''}","${u.id}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
+                          )
+                        ].join('\n');
+                        const blob = new Blob([csv], { type: 'text/csv' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `voraprep_users_${new Date().toISOString().split('T')[0]}.csv`;
+                        a.click();
+                        URL.revokeObjectURL(url);
+                        addLog('Exported user list to CSV', 'success');
+                      }}
+                      className="px-3 py-1 rounded text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition-colors"
+                    >
+                      Export CSV
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Download user list as CSV file.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Beta Mode Status */}
+            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                🚀 Beta Mode Status
+              </h3>
+              <div className="flex items-center gap-4">
+                <div className={`px-4 py-2 rounded-lg font-medium ${
+                  true /* IS_BETA from subscription.ts */
+                    ? 'bg-green-100 text-green-700 border border-green-200' 
+                    : 'bg-gray-100 text-gray-700 border border-gray-200'
+                }`}>
+                  Beta Mode: <strong>ACTIVE</strong>
+                </div>
+                <p className="text-sm text-gray-600">
+                  All premium features are currently free during beta. Change <code className="bg-white px-1 rounded">IS_BETA</code> in subscription.ts to disable.
+                </p>
+              </div>
+            </div>
           </div>
         )}
 
@@ -387,12 +1240,24 @@ const AdminCMS: React.FC = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
               <span>System Error Logs</span>
-               <button
-                onClick={loadSystemErrors}
-                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors"
-              >
-                Refresh
-              </button>
+              <div className="flex items-center gap-2">
+                {systemErrors.length > 0 && (
+                  <button
+                    onClick={clearSystemErrors}
+                    disabled={isLoadingErrors}
+                    className="text-sm px-3 py-1 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
+                  >
+                    Clear All ({systemErrors.length})
+                  </button>
+                )}
+                <button
+                  onClick={loadSystemErrors}
+                  disabled={isLoadingErrors}
+                  className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                >
+                  Refresh
+                </button>
+              </div>
             </h3>
 
             {isLoadingErrors ? (
@@ -442,6 +1307,50 @@ const AdminCMS: React.FC = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Admin Settings</h3>
             <div className="space-y-4">
+              {/* AI Service Status */}
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <h4 className="font-medium text-blue-900 mb-2">🤖 AI Service Status (Vory)</h4>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-blue-700">Gemini API Key:</span>
+                    <span className={`text-sm font-medium ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600' : 'text-red-600'}`}>
+                      {import.meta.env.VITE_GEMINI_API_KEY ? '✓ Configured' : '✗ Not Set'}
+                    </span>
+                  </div>
+                  {(() => {
+                    try {
+                      const failures = JSON.parse(localStorage.getItem('ai_api_failures') || '[]');
+                      if (failures.length > 0) {
+                        const lastFailure = failures[failures.length - 1];
+                        return (
+                          <div className="mt-2 p-2 bg-red-100 border border-red-300 rounded">
+                            <p className="text-sm font-medium text-red-800">⚠️ Recent API Failures ({failures.length})</p>
+                            <p className="text-xs text-red-600 mt-1">
+                              Last: {new Date(lastFailure.timestamp).toLocaleString()} - {lastFailure.message}
+                            </p>
+                            <button
+                              onClick={() => {
+                                localStorage.removeItem('ai_api_failures');
+                                window.location.reload();
+                              }}
+                              className="mt-2 text-xs text-red-700 underline hover:no-underline"
+                            >
+                              Clear failures
+                            </button>
+                          </div>
+                        );
+                      }
+                      return <p className="text-sm text-green-600">✓ No recent failures</p>;
+                    } catch {
+                      return null;
+                    }
+                  })()}
+                  <p className="text-xs text-blue-600 mt-2">
+                    To update the API key, add VITE_GEMINI_API_KEY to GitHub Secrets and redeploy.
+                  </p>
+                </div>
+              </div>
+
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Admin Access</h4>
                 <p className="text-sm text-gray-600 mb-2">Authorized admin emails:</p>

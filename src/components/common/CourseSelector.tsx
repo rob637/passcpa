@@ -39,7 +39,7 @@ const COURSE_DISPLAY: Record<CourseId, {
   ea: { 
     name: 'Enrolled Agent', 
     shortName: 'EA', 
-    color: 'bg-purple-500',
+    color: 'bg-primary-500',
     icon: '🏛️',
     comingSoon: true,
   },

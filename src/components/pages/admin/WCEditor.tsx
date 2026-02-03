@@ -102,7 +102,7 @@ const WCEditor = () => {
               </Link>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                  <FileText className="w-6 h-6 text-purple-600" />
+                  <FileText className="w-6 h-6 text-primary-600" />
                   Written Communication Tasks
                 </h1>
                 <p className="text-sm text-gray-500">View WC prompts and scenarios (local data)</p>
@@ -132,9 +132,9 @@ const WCEditor = () => {
               <div className="text-sm text-gray-500">{section}</div>
             </div>
           ))}
-          <div className="bg-purple-50 p-4 rounded-lg shadow-sm border border-purple-200">
-            <div className="text-2xl font-bold text-purple-700">{tasks.length}</div>
-            <div className="text-sm text-purple-600">Total</div>
+          <div className="bg-primary-50 p-4 rounded-lg shadow-sm border border-primary-200">
+            <div className="text-2xl font-bold text-primary-700">{tasks.length}</div>
+            <div className="text-sm text-primary-600">Total</div>
           </div>
         </div>
 
@@ -153,7 +153,7 @@ const WCEditor = () => {
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex gap-2">
-                  <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-sm font-medium">
+                  <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded text-sm font-medium">
                     {viewingTask.section}
                   </span>
                   <span className={clsx(
@@ -248,7 +248,7 @@ const WCEditor = () => {
         {/* Tasks List */}
         {isLoading && !tasks.length ? (
           <div className="flex items-center justify-center py-12">
-            <Loader className="w-8 h-8 animate-spin text-purple-600" />
+            <Loader className="w-8 h-8 animate-spin text-primary-600" />
           </div>
         ) : (
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
@@ -272,7 +272,7 @@ const WCEditor = () => {
                       </div>
                     </td>
                     <td className="px-4 py-3">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-sm font-medium">
+                      <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded text-sm font-medium">
                         {task.section}
                       </span>
                     </td>
@@ -296,7 +296,7 @@ const WCEditor = () => {
                       <div className="flex items-center justify-end gap-2">
                         <button
                           onClick={() => setViewingTask(task)}
-                          className="p-2 text-purple-600 hover:bg-purple-50 rounded-lg"
+                          className="p-2 text-primary-600 hover:bg-primary-50 rounded-lg"
                           title="View"
                         >
                           <Eye className="w-4 h-4" />

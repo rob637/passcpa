@@ -422,22 +422,11 @@ export const generateDailyPlan = async (
         },
       });
       remainingMinutes -= ACTIVITY_DURATION.tbs;
-    } else {
-      // TBS is locked - add a hint activity instead
-      activities.push({
-        id: `tbs-locked-${today}`,
-        type: 'lesson',
-        title: '🔒 Unlock TBS Practice',
-        description: lockedReason || 'Complete foundational lessons first',
-        estimatedMinutes: 5,
-        points: 0,
-        priority: 'low',
-        reason: 'TBS requires understanding of prerequisite topics',
-        params: {
-          section: state.section,
-        },
-      });
     }
+    // NOTE: When TBS is locked, we simply don't add it to the plan.
+    // The lesson recommendations (section 4) already handle suggesting
+    // the next lesson to complete, which will naturally unlock TBS.
+    // This prevents showing "Start" buttons on activities users can't access.
   }
   
   // 6. LOW: General practice if time remains

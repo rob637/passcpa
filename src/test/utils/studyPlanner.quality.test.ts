@@ -100,7 +100,7 @@ describe('Study Planner - Quality Tests', () => {
       const examDate = new Date('2026-05-01');
       const plan = generateStudyPlan('FAR', examDate);
       
-      // Milestones should be: Start, Halfway, Content Complete, Exam Day
+      // Milestones should be: Start, Halfway, Review Starts, Exam Day
       expect(plan.milestones[0].label).toBe('Start');
       expect(plan.milestones[3].label).toBe('Exam Day');
     });

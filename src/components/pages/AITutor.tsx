@@ -600,16 +600,15 @@ const AITutor: React.FC = () => {
                   className={clsx(
                     'px-4 py-3 rounded-2xl',
                     message.role === 'assistant'
-                      ? 'bg-white border border-slate-200 rounded-tl-md shadow-soft'
-                      : 'bg-blue-600 text-white rounded-tr-md'
+                      ? 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-tl-md shadow-soft'
+                      : 'bg-primary-600 rounded-tr-md'
                   )}
                 >
                   <div
                     className={clsx(
-                      'prose prose-sm max-w-none',
                       message.role === 'assistant' 
-                        ? 'prose-slate' 
-                        : 'prose-invert [&>*]:text-white [&>p]:text-white'
+                        ? 'prose prose-sm max-w-none prose-slate dark:prose-invert' 
+                        : 'text-white text-sm'
                     )}
                     dangerouslySetInnerHTML={{
                       __html: formatMessage(message.content),

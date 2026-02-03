@@ -413,6 +413,9 @@ const Onboarding: React.FC = () => {
       const [year, month, day] = examDate.split('-').map(Number);
       const localExamDate = new Date(year, month - 1, day);
       
+      // Auto-detect user's timezone
+      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
+      
       await updateUserProfile({
         examSection: selectedSection,
         examDate: localExamDate,
@@ -420,6 +423,7 @@ const Onboarding: React.FC = () => {
         studyPlanId: studyPlan,
         onboardingComplete: true,
         onboardingCompletedAt: new Date(),
+        timezone: userTimezone,
       });
       navigate('/dashboard');
     } catch (error) {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
-import { Home, BookOpen, User, Flame } from 'lucide-react';
+import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
+import { Home, BookOpen, User, Flame, Compass } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
@@ -14,9 +14,22 @@ const NAV_ITEMS = [
   { path: '/you', icon: User, label: 'You', tourId: 'you', matchPaths: ['/you', '/progress', '/settings', '/achievements', '/community'] },
 ];
 
+// Exam Strategy section - always accessible
+const STRATEGY_NAV = {
+  path: '/lessons?section=PREP',
+  icon: Compass,
+  label: 'Strategy',
+  tourId: 'strategy',
+};
+
 // Check if current path matches nav item
 const isNavActive = (item: typeof NAV_ITEMS[0], pathname: string): boolean => {
   return item.matchPaths.some(mp => pathname === mp || pathname.startsWith(mp + '/'));
+};
+
+// Check if Strategy nav is active (matches /lessons?section=PREP)
+const isStrategyActive = (pathname: string, searchParams: URLSearchParams): boolean => {
+  return pathname === '/lessons' && searchParams.get('section') === 'PREP';
 };
 
 interface ProgressRingProps {
@@ -62,11 +75,15 @@ const ProgressRing = ({ progress = 0, size = 32, strokeWidth = 3 }: ProgressRing
 
 const MainLayout = () => {
   const location = useLocation();
+  const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
+  
+  // Check if Strategy section is active
+  const strategyActive = isStrategyActive(location.pathname, searchParams);
 
   // Set document title based on route
   useRouteTitle();
@@ -94,10 +111,17 @@ const MainLayout = () => {
   useEffect(() => {
     if (!navRef.current || !indicatorRef.current) return;
 
-
-    const activeIndex = NAV_ITEMS.findIndex(
-      (item) => isNavActive(item, location.pathname)
-    );
+    // Find active index - check Strategy first, then regular nav items
+    let activeIndex = -1;
+    
+    if (strategyActive) {
+      // Strategy is the 4th item (index 3)
+      activeIndex = NAV_ITEMS.length; // After all NAV_ITEMS
+    } else {
+      activeIndex = NAV_ITEMS.findIndex(
+        (item) => isNavActive(item, location.pathname)
+      );
+    }
 
     if (activeIndex >= 0) {
       const navItems = navRef.current.querySelectorAll('.nav-link');
@@ -114,11 +138,14 @@ const MainLayout = () => {
         indicatorRef.current.style.opacity = '1';
       }
     }
-  }, [location.pathname]);
+  }, [location.pathname, strategyActive]);
 
 
   // Get current page title
   const getPageTitle = () => {
+    // Check Strategy first
+    if (strategyActive) return 'Exam Strategy';
+    
     const current = NAV_ITEMS.find(
       (item) => isNavActive(item, location.pathname)
     );
@@ -173,9 +200,9 @@ const MainLayout = () => {
                 className={({ isActive }) =>
                   clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
-                    isActive
-                      ? 'bg-primary-50 text-primary-700 shadow-sm'
-                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                    isActive && !strategyActive
+                      ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
+                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-700'
                   )
                 }
               >
@@ -183,6 +210,25 @@ const MainLayout = () => {
                 {item.label}
               </NavLink>
             ))}
+          </div>
+          
+          {/* Exam Strategy Section - Always Visible */}
+          <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+              Exam Strategy
+            </span>
+            <NavLink
+              to={STRATEGY_NAV.path}
+              className={clsx(
+                'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium mt-2',
+                strategyActive
+                  ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
+                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-700'
+              )}
+            >
+              <Compass className="w-5 h-5" />
+              Strategy & Tips
+            </NavLink>
           </div>
         </div>
 
@@ -252,7 +298,7 @@ const MainLayout = () => {
       </main>
       </div>{/* End App Shell */}
 
-      {/* Mobile Bottom Navigation - Optimized Height */}
+      {/* Mobile Bottom Navigation - 4-tab with Strategy */}
       <nav
         ref={navRef}
         className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur dark:bg-slate-800/95 border-t border-slate-200 dark:border-slate-700 pb-safe z-50 safe-bottom"
@@ -276,7 +322,7 @@ const MainLayout = () => {
               className={({ isActive }) =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
+                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
                 )
               }
             >
@@ -284,6 +330,19 @@ const MainLayout = () => {
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}
+          
+          {/* Strategy Tab */}
+          <NavLink
+            to={STRATEGY_NAV.path}
+            aria-label="Exam Strategy"
+            className={clsx(
+              'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
+              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
+            )}
+          >
+            <Compass className="w-5 h-5" aria-hidden="true" />
+            <span className="text-[10px] font-medium">Strategy</span>
+          </NavLink>
         </div>
       </nav>
     </div>

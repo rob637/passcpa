@@ -119,7 +119,7 @@ export const generateStudyPlan = (_examSectionId: string, examDate: Date): Study
     },
     { 
       date: format(addDays(today, contentCompleteDay), 'MMM d'), 
-      label: 'Content Complete (Begin Review)',
+      label: 'Review Starts',
       position: (contentCompleteDay / examDay) * 100,
       dayFromStart: contentCompleteDay
     },

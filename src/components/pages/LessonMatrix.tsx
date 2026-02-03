@@ -46,11 +46,24 @@ Object.values(BLUEPRINT_AREAS).flat().forEach(area => {
 });
 
 const getDeliveryMethod = (lesson: Lesson): string => {
-  const types = new Set(lesson.content.sections.map(s => s.type));
-  // Priority based detailed classification
-  if (types.has('interactive')) return 'Interactive Module';
-  if (types.has('example')) return 'Case Study / Example';
-  if (types.has('table') && types.has('list')) return 'Structured Data Review';
+  const sections = lesson.content.sections;
+  const typeCounts: Record<string, number> = {};
+  
+  // Count each section type
+  sections.forEach(s => {
+    typeCounts[s.type] = (typeCounts[s.type] || 0) + 1;
+  });
+  
+  const total = sections.length;
+  const exampleCount = typeCounts['example'] || 0;
+  const interactiveCount = typeCounts['interactive'] || 0;
+  const tableCount = typeCounts['table'] || 0;
+  const textCount = (typeCounts['text'] || 0) + (typeCounts['callout'] || 0) + (typeCounts['warning'] || 0);
+  
+  // Classify based on dominant content type (>30% threshold for special types)
+  if (interactiveCount > 0) return 'Interactive Module';
+  if (exampleCount >= 2 || (exampleCount > 0 && exampleCount / total >= 0.3)) return 'Case Study / Example';
+  if (tableCount >= 2 || (tableCount > 0 && tableCount / total >= 0.25)) return 'Structured Data Review';
   return 'Core Concept Reading';
 };
 

@@ -32,6 +32,45 @@ interface UserDocument {
   };
 }
 
+interface UserActivityData {
+  questionHistory: Array<{
+    questionId: string;
+    correct: boolean;
+    answeredAt: { seconds: number };
+    section?: string;
+    topic?: string;
+  }>;
+  dailyLogs: Array<{
+    date: string;
+    questionsAnswered: number;
+    correctAnswers: number;
+    lessonsCompleted: number;
+    studyMinutes: number;
+  }>;
+  practiceSessions: Array<{
+    id: string;
+    startedAt: { seconds: number };
+    completedAt?: { seconds: number };
+    section?: string;
+    questionsAnswered: number;
+    accuracy: number;
+  }>;
+  recentConversations: Array<{
+    id: string;
+    title?: string;
+    updatedAt: { seconds: number };
+    messageCount: number;
+  }>;
+  stats: {
+    totalQuestions: number;
+    totalCorrect: number;
+    overallAccuracy: number;
+    studyStreak: number;
+    totalStudyMinutes: number;
+    lastActiveDate: string | null;
+  };
+}
+
 interface AnalyticsData {
   totalUsers: number;
   activeToday: number;
@@ -118,6 +157,11 @@ const AdminCMS: React.FC = () => {
   const [lookupQuery, setLookupQuery] = useState('');
   const [lookupResult, setLookupResult] = useState<UserDocument | null>(null);
   const [isLookingUp, setIsLookingUp] = useState(false);
+  
+  // Detailed user view state
+  const [selectedUser, setSelectedUser] = useState<UserDocument | null>(null);
+  const [userActivity, setUserActivity] = useState<UserActivityData | null>(null);
+  const [isLoadingActivity, setIsLoadingActivity] = useState(false);
 
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
@@ -291,6 +335,106 @@ const AdminCMS: React.FC = () => {
       setIsLookingUp(false);
     }
   }, [isAdmin, lookupQuery]);
+
+  // Load detailed user activity data
+  const loadUserActivity = useCallback(async (userDoc: UserDocument) => {
+    if (!isAdmin) return;
+    setSelectedUser(userDoc);
+    setIsLoadingActivity(true);
+    setUserActivity(null);
+    
+    try {
+      const userId = userDoc.id;
+      
+      // Load question history (last 100)
+      const questionHistoryRef = collection(db, 'users', userId, 'question_history');
+      const questionHistoryQuery = query(questionHistoryRef, orderBy('answeredAt', 'desc'), limit(100));
+      const questionHistorySnap = await getDocs(questionHistoryQuery);
+      const questionHistory = questionHistorySnap.docs.map(doc => ({
+        questionId: doc.id,
+        ...doc.data()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      })) as any[];
+      
+      // Load daily logs (last 30 days)
+      const dailyLogRef = collection(db, 'users', userId, 'daily_log');
+      const dailyLogQuery = query(dailyLogRef, orderBy('date', 'desc'), limit(30));
+      const dailyLogSnap = await getDocs(dailyLogQuery);
+      const dailyLogs = dailyLogSnap.docs.map(doc => ({
+        date: doc.id,
+        ...doc.data()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      })) as any[];
+      
+      // Load practice sessions (last 20)
+      const sessionsRef = collection(db, 'users', userId, 'practice_sessions');
+      const sessionsQuery = query(sessionsRef, orderBy('startedAt', 'desc'), limit(20));
+      const sessionsSnap = await getDocs(sessionsQuery);
+      const practiceSessions = sessionsSnap.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      })) as any[];
+      
+      // Load recent AI conversations (last 10)
+      const conversationsRef = collection(db, 'users', userId, 'conversations');
+      const conversationsQuery = query(conversationsRef, orderBy('updatedAt', 'desc'), limit(10));
+      const conversationsSnap = await getDocs(conversationsQuery);
+      const recentConversations = conversationsSnap.docs.map(doc => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          title: data.title || 'Untitled',
+          updatedAt: data.updatedAt,
+          messageCount: data.messages?.length || 0
+        };
+      });
+      
+      // Calculate stats
+      const totalQuestions = questionHistory.length;
+      const totalCorrect = questionHistory.filter(q => q.correct).length;
+      const overallAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+      const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyMinutes || 0), 0);
+      const lastActiveDate = dailyLogs.length > 0 ? dailyLogs[0].date : null;
+      
+      // Calculate study streak
+      let studyStreak = 0;
+      const today = new Date().toISOString().split('T')[0];
+      const sortedDates = dailyLogs.map(l => l.date).sort().reverse();
+      for (const date of sortedDates) {
+        const expectedDate = new Date();
+        expectedDate.setDate(expectedDate.getDate() - studyStreak);
+        const expected = expectedDate.toISOString().split('T')[0];
+        if (date === expected || date === today) {
+          studyStreak++;
+        } else {
+          break;
+        }
+      }
+      
+      setUserActivity({
+        questionHistory,
+        dailyLogs,
+        practiceSessions,
+        recentConversations,
+        stats: {
+          totalQuestions,
+          totalCorrect,
+          overallAccuracy,
+          studyStreak,
+          totalStudyMinutes,
+          lastActiveDate
+        }
+      });
+      
+      addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
+    } catch (error) {
+      logger.error('Error loading user activity', error);
+      addLog('Error loading activity: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLoadingActivity(false);
+    }
+  }, [isAdmin]);
 
   // Toggle admin status for a user
   const toggleAdminStatus = async (userId: string, currentIsAdmin: boolean) => {
@@ -736,6 +880,12 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="flex gap-2">
                       <button
+                        onClick={() => loadUserActivity(lookupResult)}
+                        className="px-3 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200"
+                      >
+                        View Activity
+                      </button>
+                      <button
                         onClick={() => toggleAdminStatus(lookupResult.id, !!lookupResult.isAdmin)}
                         className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 text-gray-700'} hover:opacity-80`}
                       >
@@ -860,6 +1010,13 @@ const AdminCMS: React.FC = () => {
                             </td>
                             <td className="p-3">
                               <div className="flex gap-1">
+                                <button
+                                  onClick={() => loadUserActivity(u)}
+                                  className="px-2 py-1 text-xs bg-blue-50 text-blue-600 rounded hover:bg-blue-100"
+                                  title="View activity"
+                                >
+                                  👁️
+                                </button>
                                 <button
                                   onClick={() => toggleAdminStatus(u.id, !!u.isAdmin)}
                                   className="px-2 py-1 text-xs bg-primary-50 text-primary-600 rounded hover:bg-primary-100"
@@ -1505,6 +1662,194 @@ const AdminCMS: React.FC = () => {
           </div>
         )}
       </main>
+
+      {/* User Activity Detail Modal */}
+      {selectedUser && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-blue-600 to-primary-600 text-white p-6">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
+                  <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
+                  <div className="flex gap-3 mt-2 text-sm">
+                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
+                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
+                    {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}
+                  </div>
+                </div>
+                <button
+                  onClick={() => { setSelectedUser(null); setUserActivity(null); }}
+                  className="text-white/80 hover:text-white text-2xl leading-none"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Body */}
+            <div className="flex-1 overflow-y-auto p-6">
+              {isLoadingActivity ? (
+                <div className="flex items-center justify-center py-12">
+                  <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full" />
+                  <span className="ml-3 text-gray-600">Loading activity data...</span>
+                </div>
+              ) : userActivity ? (
+                <div className="space-y-6">
+                  {/* Stats Summary */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-blue-50 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-blue-700">{userActivity.stats.totalQuestions}</div>
+                      <div className="text-sm text-blue-600">Questions Answered</div>
+                    </div>
+                    <div className="bg-green-50 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-green-700">{userActivity.stats.overallAccuracy}%</div>
+                      <div className="text-sm text-green-600">Accuracy</div>
+                    </div>
+                    <div className="bg-amber-50 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-amber-700">{userActivity.stats.studyStreak}</div>
+                      <div className="text-sm text-amber-600">Day Streak</div>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-purple-700">{Math.round(userActivity.stats.totalStudyMinutes / 60)}h</div>
+                      <div className="text-sm text-purple-600">Study Time</div>
+                    </div>
+                  </div>
+
+                  {/* Last Active */}
+                  {userActivity.stats.lastActiveDate && (
+                    <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
+                      <strong>Last Active:</strong> {userActivity.stats.lastActiveDate}
+                    </div>
+                  )}
+
+                  {/* Recent Daily Activity */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">📅 Recent Daily Activity</h4>
+                    {userActivity.dailyLogs.length > 0 ? (
+                      <div className="bg-gray-50 rounded-lg overflow-hidden">
+                        <table className="w-full text-sm">
+                          <thead className="bg-gray-100">
+                            <tr>
+                              <th className="p-2 text-left">Date</th>
+                              <th className="p-2 text-center">Questions</th>
+                              <th className="p-2 text-center">Correct</th>
+                              <th className="p-2 text-center">Lessons</th>
+                              <th className="p-2 text-center">Minutes</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
+                              <tr key={i} className="border-t border-gray-200">
+                                <td className="p-2">{log.date}</td>
+                                <td className="p-2 text-center">{log.questionsAnswered || 0}</td>
+                                <td className="p-2 text-center text-green-600">{log.correctAnswers || 0}</td>
+                                <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
+                                <td className="p-2 text-center">{log.studyMinutes || 0}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">No daily activity recorded.</p>
+                    )}
+                  </div>
+
+                  {/* Practice Sessions */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">📝 Recent Practice Sessions</h4>
+                    {userActivity.practiceSessions.length > 0 ? (
+                      <div className="space-y-2">
+                        {userActivity.practiceSessions.slice(0, 5).map((session) => (
+                          <div key={session.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                            <div>
+                              <span className="font-medium">{session.section || 'Practice'}</span>
+                              <span className="text-gray-500 text-sm ml-2">
+                                {session.startedAt?.seconds 
+                                  ? new Date(session.startedAt.seconds * 1000).toLocaleDateString()
+                                  : 'Unknown date'}
+                              </span>
+                            </div>
+                            <div className="flex gap-4 text-sm">
+                              <span>{session.questionsAnswered || 0} Q</span>
+                              <span className={session.accuracy >= 75 ? 'text-green-600' : session.accuracy >= 50 ? 'text-amber-600' : 'text-red-600'}>
+                                {session.accuracy || 0}%
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">No practice sessions recorded.</p>
+                    )}
+                  </div>
+
+                  {/* AI Conversations */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">🤖 Vory Conversations</h4>
+                    {userActivity.recentConversations.length > 0 ? (
+                      <div className="space-y-2">
+                        {userActivity.recentConversations.map((conv) => (
+                          <div key={conv.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                            <span className="font-medium">{conv.title}</span>
+                            <div className="text-sm text-gray-500">
+                              {conv.messageCount} messages • 
+                              {conv.updatedAt?.seconds 
+                                ? new Date(conv.updatedAt.seconds * 1000).toLocaleDateString()
+                                : ''}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">No AI conversations.</p>
+                    )}
+                  </div>
+
+                  {/* Recent Question History */}
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">❓ Recent Questions ({userActivity.questionHistory.length})</h4>
+                    {userActivity.questionHistory.length > 0 ? (
+                      <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto">
+                        <div className="flex flex-wrap gap-1">
+                          {userActivity.questionHistory.slice(0, 50).map((q, i) => (
+                            <span 
+                              key={i} 
+                              className={`w-6 h-6 rounded text-xs flex items-center justify-center ${q.correct ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}
+                              title={`${q.questionId} - ${q.correct ? 'Correct' : 'Incorrect'}`}
+                            >
+                              {q.correct ? '✓' : '✗'}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-xs text-gray-500 mt-2">
+                          Showing last {Math.min(50, userActivity.questionHistory.length)} of {userActivity.questionHistory.length} questions
+                        </p>
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">No question history.</p>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <p className="text-gray-500 text-center py-8">No activity data available.</p>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t p-4 flex justify-end gap-3">
+              <button
+                onClick={() => { setSelectedUser(null); setUserActivity(null); }}
+                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

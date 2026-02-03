@@ -99,12 +99,12 @@ describe('Onboarding Component', () => {
   describe('Welcome Step', () => {
     it('renders the welcome step initially', async () => {
       await renderOnboarding();
-      expect(screen.getByText(/Welcome to CPA Review/i)).toBeInTheDocument();
+      expect(screen.getByText(/Welcome to VoraPrep/i)).toBeInTheDocument();
     });
 
-    it('displays CPA logo', async () => {
+    it('displays VoraPrep logo', async () => {
       await renderOnboarding();
-      expect(screen.getByText('CPA')).toBeInTheDocument();
+      expect(screen.getByAltText('VoraPrep')).toBeInTheDocument();
     });
 
     it('shows what we will cover section', async () => {
@@ -161,7 +161,7 @@ describe('Onboarding Component', () => {
         fireEvent.click(screen.getByText('Back'));
       });
       
-      expect(screen.getByText(/Welcome to CPA Review/i)).toBeInTheDocument();
+      expect(screen.getByText(/Welcome to VoraPrep/i)).toBeInTheDocument();
     });
   });
 

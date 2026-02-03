@@ -67,10 +67,12 @@ interface CompleteStepProps {
 // Step Components
 const WelcomeStep: React.FC = () => (
   <div className="text-center">
-    <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-      <span className="text-3xl font-bold text-white">CPA</span>
-    </div>
-    <h1 className="text-2xl font-bold text-slate-900 mb-3">Welcome to CPA Review! 🎉</h1>
+    <img 
+      src="/logo-icon.svg" 
+      alt="VoraPrep" 
+      className="w-20 h-20 mx-auto mb-6"
+    />
+    <h1 className="text-2xl font-bold text-slate-900 mb-3">Welcome to VoraPrep! 🎉</h1>
     <p className="text-slate-600 mb-6">
       You're about to start your journey to becoming a CPA. Let's set up your personalized study
       plan in just a few steps.

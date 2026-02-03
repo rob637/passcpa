@@ -64,7 +64,7 @@ export interface StudyContextType {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getLessonProgress: () => Promise<Record<string, any>>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getTopicPerformance: () => Promise<any[]>;
+  getTopicPerformance: (section?: string) => Promise<any[]>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; 
 }

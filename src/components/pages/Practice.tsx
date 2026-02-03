@@ -32,6 +32,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { CPA_SECTIONS } from '../../config/examConfig';
+import { CPA_COURSE } from '../../courses/cpa/config';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import feedback from '../../services/feedback';
@@ -73,7 +74,7 @@ interface SessionSetupProps {
 const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
-  const [historyLoading, setHistoryLoading] = useState(true);
+  const [, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
     section: (userProfile?.examSection || 'REG') as ExamSection,
     mode: 'study', // study, timed, exam, weak
@@ -86,9 +87,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
   });
 
   // Blueprint areas for current section
-  const blueprintAreas = getBlueprintForExamDate(new Date())
-    .filter(bp => bp.section === config.section)
-    .map(bp => ({ id: bp.area, name: bp.name }));
+  const sectionConfig = CPA_COURSE.sections.find(s => s.id === config.section);
+  const blueprintAreas = sectionConfig?.blueprintAreas?.map(bp => ({ id: bp.id, name: bp.name })) || [];
 
   // Load practice history
   useEffect(() => {
@@ -886,6 +886,9 @@ const Practice: React.FC = () => {
         count: 20,
         topics: [],
         difficulty: 'all',
+        questionStatus: 'all',
+        blueprintArea: 'all',
+        scoringMode: 'practice',
       });
     }
     
@@ -900,6 +903,9 @@ const Practice: React.FC = () => {
         count: 10,
         topics: [],
         difficulty: 'all',
+        questionStatus: 'all',
+        blueprintArea: blueprintAreaParam || 'all',
+        scoringMode: 'practice',
       });
     }
     // Only run once on mount

@@ -21,7 +21,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
-import { format, subDays, eachDayOfInterval, differenceInDays, startOfWeek, endOfWeek, isAfter } from 'date-fns';
+import { format, eachDayOfInterval, differenceInDays, startOfWeek, endOfWeek, isAfter } from 'date-fns';
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';

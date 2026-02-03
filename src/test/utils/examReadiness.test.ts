@@ -227,6 +227,7 @@ describe('examReadiness', () => {
           coverage: 70,
           volume: 60,
           lessons: 90,
+          tbs: 75,
         },
         status: 'almost',
       };

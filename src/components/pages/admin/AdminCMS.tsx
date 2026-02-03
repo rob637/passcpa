@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, deleteDoc, where, getCountFromServer } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 
@@ -105,13 +105,13 @@ const AdminCMS: React.FC = () => {
   const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(false);
 
   // Feature flags state (local copy for UI)
-  const [featureFlags, setFeatureFlags] = useState<FeatureFlagState>({
+  const [featureFlags] = useState<FeatureFlagState>({
     aiTutor: FEATURES.aiTutor,
     examSimulator: FEATURES.examSimulator,
     flashcards: FEATURES.flashcards,
     tbs: FEATURES.tbs,
     writtenCommunication: FEATURES.writtenCommunication,
-    studyPlan: FEATURES.studyPlan,
+    offlineMode: FEATURES.offlineMode,
   });
   const [maintenanceMode, setMaintenanceMode] = useState(false);
 

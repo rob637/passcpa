@@ -89,7 +89,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     try {
       // Get topic performance data for current section
-      const section = userProfile?.examSection;
+      const section = userProfile?.examSection || undefined;
       const topicStats = getTopicPerformance ? await getTopicPerformance(section) : [];
       
       // CRITICAL: Fetch actual lesson progress from Firestore subcollection
@@ -127,7 +127,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       ]);
 
       const studyState: UserStudyState = {
-        section,
+        section: section || 'FAR',
         examDate: examDateStr,
         dailyGoal: (userProfile as any).dailyGoal || 50,
         topicStats: topicStats.map((t: any) => ({

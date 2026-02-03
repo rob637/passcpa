@@ -31,7 +31,7 @@ import { fetchAllLessons } from '../../services/lessonService';
 import { getTBSHistory } from '../../services/questionHistoryService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
 import Leaderboard from '../Leaderboard';
-import { getBlueprintForExamDate } from '../../config/blueprintConfig';
+import { CPA_COURSE } from '../../courses/cpa/config';
 
 interface WeeklyActivity {
   date: Date;
@@ -573,32 +573,32 @@ const Progress: React.FC = () => {
         const tbsCompletedCount = tbsHistory.length;
 
         // Calculate unit stats for Units Report (Becker-style)
-        const blueprintAreas = getBlueprintForExamDate(new Date())
-          .filter(bp => bp.section === currentSection);
+        const sectionConfig = CPA_COURSE.sections.find(s => s.id === currentSection);
+        const blueprintAreas = sectionConfig?.blueprintAreas || [];
         
         // Get lesson progress for mapping
-        let lessonProgress: Record<string, any> = {};
+        let lessonProgressData: Record<string, any> = {};
         if (getLessonProgress) {
-          lessonProgress = await getLessonProgress();
+          lessonProgressData = await getLessonProgress();
         }
         
         const calculatedUnitStats: UnitStats[] = blueprintAreas.map(bp => {
           // Find lessons for this blueprint area
           const areaLessons = sectionLessons.filter(l => 
-            l.blueprintArea === bp.area || 
-            l.topic?.startsWith(bp.area) ||
-            l.id?.startsWith(bp.area.toLowerCase())
+            l.blueprintArea === bp.id || 
+            l.topics?.some(t => t.startsWith(bp.id)) ||
+            l.id?.startsWith(bp.id.toLowerCase())
           );
           
           // Find topic performance for this area
           const areaTopics = topicsData.filter(t => 
-            t.topic?.startsWith(bp.area) || 
-            t.id?.startsWith(bp.area)
+            t.topic?.startsWith(bp.id) || 
+            t.id?.startsWith(bp.id)
           );
           
           const lessonsComplete = areaLessons.filter(l => 
-            lessonProgress[l.id]?.status === 'completed' || 
-            lessonProgress[l.id]?.completedAt
+            lessonProgressData[l.id]?.status === 'completed' || 
+            lessonProgressData[l.id]?.completedAt
           ).length;
           
           const mcqAnswered = areaTopics.reduce((sum, t) => sum + (t.questions || 0), 0);
@@ -612,7 +612,7 @@ const Progress: React.FC = () => {
           const progress = Math.round(lessonProgress * lessonWeight + mcqProgress * mcqWeight);
           
           return {
-            id: bp.area,
+            id: bp.id,
             name: bp.name,
             lessonsComplete,
             lessonsTotal: areaLessons.length,

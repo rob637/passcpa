@@ -1,6 +1,7 @@
 import { lazy, Suspense, ReactNode, useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
+import { scrollToTop } from './utils/scroll';
 
 // Layouts (always loaded - part of shell)
 import MainLayout from './components/layouts/MainLayout';
@@ -74,7 +75,7 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, [pathname]);
   
   return null;

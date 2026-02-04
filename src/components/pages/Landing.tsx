@@ -105,7 +105,7 @@ const Landing = () => {
       title: 'True Adaptive Learning',
       description: 'Not just random questions. Our AI tracks your weak areas, adjusts difficulty in real-time, and focuses 70% of your practice on topics you struggle with most.',
       stat: 'AI-Powered',
-      color: 'purple'
+      color: 'blue'
     },
     {
       icon: Bot,
@@ -243,7 +243,7 @@ const Landing = () => {
 
       {/* Hero Section */}
       <main id="main-content">
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 px-6 overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoMnY0aC0yem0tNiA2di00aDJ2NGgtMnptMC02di00aDJ2NGgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
@@ -277,7 +277,7 @@ const Landing = () => {
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
             <span className="font-semibold text-emerald-600"> 100% Free</span> during Beta.
             <br className="hidden md:block" />
-            2,900+ questions. <span className="font-semibold text-purple-600">True adaptive learning</span>. SM-2 spaced repetition. Zero credit card.
+            2,900+ questions. <span className="font-semibold text-blue-600">True adaptive learning</span>. SM-2 spaced repetition. Zero credit card.
           </p>
 
           {/* CTA Buttons */}
@@ -299,22 +299,15 @@ const Landing = () => {
           </div>
 
           {/* No Credit Card Emphasis */}
-          <div className="flex flex-col items-center gap-4 mb-16">
-            <Link 
-              to="/login"
-              className="md:hidden text-slate-500 hover:text-blue-600 font-medium text-sm transition-colors mb-2"
-            >
-              Already have an account? Sign In
-            </Link>
-            
-            <div className="flex flex-wrap justify-center gap-6">
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+          <div className="flex flex-col items-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
                 <span>No credit card required</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
@@ -322,11 +315,11 @@ const Landing = () => {
               </div>
             </div>
             
-            {/* Mobile-only Login Link */}
-            <div className="md:hidden">
-               <span className="text-slate-500">Already have an account? </span>
-               <Link to="/login" className="font-semibold text-blue-600 hover:text-blue-700">Sign In</Link>
-            </div>
+            {/* Login Link - visible on mobile */}
+            <p className="md:hidden text-sm text-slate-500">
+              Already have an account?{' '}
+              <Link to="/login" className="font-semibold text-blue-600 hover:text-blue-700">Sign In</Link>
+            </p>
           </div>
 
           {/* Stats */}
@@ -346,10 +339,10 @@ const Landing = () => {
       {/* Social Proof Bar - Removed until we have real user data */}
 
       {/* Why VoraPrep Section */}
-      <section id="features" className="py-24 px-6 bg-white dark:bg-slate-950">
+      <section id="features" className="py-12 md:py-20 px-6 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Brain className="w-4 h-4" />
               AI-Powered Adaptive Learning
             </div>
@@ -403,7 +396,7 @@ const Landing = () => {
       </section>
 
       {/* Comprehensive Comparison Section */}
-      <section id="comparison" className="py-24 px-6 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+      <section id="comparison" className="py-12 md:py-20 px-6 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -500,10 +493,10 @@ const Landing = () => {
       </section>
 
       {/* How Adaptive Learning Works */}
-      <section className="py-24 px-6 bg-white dark:bg-slate-950">
+      <section className="py-12 md:py-20 px-6 bg-white dark:bg-slate-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-100 to-blue-100 dark:from-teal-900/30 dark:to-blue-900/30 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Sparkles className="w-4 h-4" />
               The VoraPrep Difference
             </div>
@@ -529,7 +522,7 @@ const Landing = () => {
                 title: 'AI Unlocks Questions',
                 description: 'We only quiz you on material you\'ve learned. No frustrating questions on topics you haven\'t studied yet.',
                 icon: Target,
-                color: 'from-purple-500 to-purple-600'
+                color: 'from-sky-500 to-sky-600'
               },
               {
                 step: '3',
@@ -565,17 +558,17 @@ const Landing = () => {
             ))}
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <div className="mt-8 bg-gradient-to-r from-teal-600 to-blue-600 rounded-3xl p-6 md:p-10 text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
               The Result? Study 40% Less, Retain 2x More
             </h3>
-            <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+            <p className="text-base text-white/90 mb-5 max-w-2xl mx-auto">
               Stop wasting time on topics you already know. Stop being frustrated by questions you haven't studied. 
               Our adaptive system means every minute counts toward your 75+.
             </p>
             <Link 
               to="/register" 
-              className="inline-flex items-center gap-2 bg-white text-purple-600 px-8 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-white text-teal-600 px-6 py-3 rounded-xl text-base font-bold hover:shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-0.5"
             >
               Experience Smart Learning
               <ArrowRight className="w-5 h-5" />
@@ -585,7 +578,7 @@ const Landing = () => {
       </section>
 
       {/* CPA Sections Coverage */}
-      <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900">
+      <section className="py-12 md:py-20 px-6 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -633,7 +626,7 @@ const Landing = () => {
       </section>
 
       {/* Email Capture / CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
+      <section className="py-12 md:py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoMnY0aC0yem0tNiA2di00aDJ2NGgtMnptMC02di00aDJ2NGgtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />

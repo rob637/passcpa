@@ -642,7 +642,7 @@ const LessonViewer: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className={`max-w-3xl mx-auto px-4 py-8 ${isComplete ? 'pb-28' : ''}`}>
+      <div className="max-w-3xl mx-auto px-4 py-8 pb-28 md:pb-8">
         {/* Lesson Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-2">
@@ -862,9 +862,6 @@ const LessonViewer: React.FC = () => {
           )}
         </div>
       </div>
-
-      {/* Spacer for sticky bottom bar */}
-      <div className="h-24 md:hidden" />
 
       {/* Desktop Bottom Bar - Context-aware floating bar */}
       <div className="hidden md:flex fixed bottom-6 inset-x-0 justify-center items-center z-40 px-4 pointer-events-none">

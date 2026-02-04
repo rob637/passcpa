@@ -186,13 +186,13 @@ const Achievements: React.FC = () => {
       {/* Category Filter */}
       <div className="px-4 -mt-8 mb-4">
         <div 
-          className="bg-white rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto"
+          className="bg-white rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto scrollbar-hide"
           {...tabListProps}
         >
           <button
             onClick={() => setSelectedCategory('all')}
             className={clsx(
-              'px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors',
+              'px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0',
               selectedCategory === 'all'
                 ? 'bg-primary-100 text-primary-700'
                 : 'text-slate-600 hover:bg-slate-100'
@@ -210,7 +210,7 @@ const Achievements: React.FC = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={clsx(
-                  'px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-2',
+                  'px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 flex-shrink-0',
                   selectedCategory === cat
                     ? 'bg-primary-100 text-primary-700'
                     : 'text-slate-600 hover:bg-slate-100'
@@ -218,7 +218,7 @@ const Achievements: React.FC = () => {
                 {...getTabProps(cat)}
               >
                 <Icon className="w-4 h-4" />
-                {info.name}
+                <span className="hidden sm:inline">{info.name}</span>
               </button>
             );
           })}

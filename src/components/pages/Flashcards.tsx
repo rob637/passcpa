@@ -100,6 +100,13 @@ const Flashcards: React.FC = () => {
   const typeParam = searchParams.get('type') as FlashcardType | null;
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
 
+  // Scroll to top when flashcard session starts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   // Ref for scrolling to top of card on navigation (mobile fix)
   const cardTopRef = useRef<HTMLDivElement>(null);
 
@@ -521,13 +528,13 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Card Area */}
-      <div ref={cardTopRef} className="flex-1 flex items-center justify-center p-4">
+      <div ref={cardTopRef} className="flex-1 flex items-start sm:items-center justify-center p-4 pt-2">
         <div className="w-full max-w-2xl">
           {/* Flashcard */}
           <div
             onClick={handleFlip}
             className={clsx(
-              'relative w-full aspect-[4/3] cursor-pointer perspective-1000',
+              'relative w-full min-h-[320px] sm:min-h-[400px] cursor-pointer perspective-1000',
               'transition-transform duration-500 transform-style-3d',
               isFlipped && 'rotate-y-180'
             )}

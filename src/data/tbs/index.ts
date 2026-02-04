@@ -1564,15 +1564,19 @@ const AUD_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'AUD');
 const TCP_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'TCP');
 const BAR_APPLICATION = APPLICATION_TBS.filter(t => t.section === 'BAR');
 
+// NOTE: Research TBS removed from CPA exam with CPA Evolution 2024
+// TAX_RESEARCH_TBS and ADDITIONAL_RESEARCH_TBS are excluded from exports
+// Research skills are now integrated into Document Review and scenario-based TBS
+
 export const FAR_TBS_ALL: TBS[] = [...FAR_TBS, ...FAR_TBS_2, ...FAR_GAP_FILL, ...FAR_APPLICATION];
-export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2, ...TAX_FORM_TBS, ...TAX_RESEARCH_TBS.filter(t => t.section === 'REG'), ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'REG'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'REG')];
-export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2, ...AUD_GAP_FILL, ...AUD_APPLICATION, ...TAX_RESEARCH_TBS.filter(t => t.section === 'AUD'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'AUD')];
+export const REG_TBS_ALL: TBS[] = [...REG_TBS, ...REG_TBS_2, ...TAX_FORM_TBS, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'REG')];
+export const AUD_TBS_ALL: TBS[] = [...AUD_TBS, ...AUD_TBS_2, ...AUD_GAP_FILL, ...AUD_APPLICATION];
 export const BEC_TBS_ALL: TBS[] = [...BEC_TBS, ...BEC_TBS_2];
 
 // New 2024 CPA exam sections with NATIVE TBS content
 export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATION]; // Business Analysis & Reporting
 export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL]; // Information Systems & Controls  
-export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...TAX_RESEARCH_TBS.filter(t => t.section === 'TCP'), ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...ADDITIONAL_RESEARCH_TBS.filter(t => t.section === 'TCP')]; // Tax Compliance & Planning
+export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP')]; // Tax Compliance & Planning
 
 export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 

@@ -156,7 +156,6 @@ const Lessons: React.FC = () => {
   const sectionFromUrl = searchParams.get('section');
   const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
-  const isStrategySection = currentSection === 'PREP';
   
   // Fetch lessons and content counts
   useEffect(() => {

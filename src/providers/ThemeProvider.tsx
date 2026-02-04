@@ -1,30 +1,46 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
+export type ThemeMode = 'light' | 'dark' | 'system';
+
 interface ThemeContextType {
   darkMode: boolean;
+  themeMode: ThemeMode;
   toggleDarkMode: () => void;
   setTheme: (isDark: boolean) => void;
+  setThemeMode: (mode: ThemeMode) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 /**
- * Theme Provider - Manages dark/light mode
+ * Theme Provider - Manages dark/light mode with system preference support
  * Persists preference to localStorage and respects system preference
  */
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    // Check localStorage first
+  // Theme mode: 'light', 'dark', or 'system'
+  const [themeMode, setThemeModeState] = useState<ThemeMode>(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('voraprep-dark-mode');
-      if (stored !== null) {
-        return stored === 'true';
+      const stored = localStorage.getItem('voraprep-theme-mode');
+      if (stored === 'light' || stored === 'dark' || stored === 'system') {
+        return stored;
       }
-      // Fall back to system preference
+      // Check old dark-mode key for migration
+      const oldStored = localStorage.getItem('voraprep-dark-mode');
+      if (oldStored === 'true') return 'dark';
+      if (oldStored === 'false') return 'light';
+    }
+    return 'system';
+  });
+
+  // Computed dark mode based on themeMode and system preference
+  const [systemPrefersDark, setSystemPrefersDark] = useState(() => {
+    if (typeof window !== 'undefined') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     return false;
   });
+
+  const darkMode = themeMode === 'dark' || (themeMode === 'system' && systemPrefersDark);
 
   // Apply dark class to document
   useEffect(() => {
@@ -34,20 +50,21 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     } else {
       root.classList.remove('dark');
     }
-    // Persist preference
-    localStorage.setItem('voraprep-dark-mode', String(darkMode));
   }, [darkMode]);
+
+  // Persist theme mode
+  useEffect(() => {
+    localStorage.setItem('voraprep-theme-mode', themeMode);
+    // Clean up old key
+    localStorage.removeItem('voraprep-dark-mode');
+  }, [themeMode]);
 
   // Listen for system preference changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
+    
     const handleChange = (e: MediaQueryListEvent) => {
-      // Only auto-switch if user hasn't manually set preference
-      const stored = localStorage.getItem('voraprep-dark-mode');
-      if (stored === null) {
-        setDarkMode(e.matches);
-      }
+      setSystemPrefersDark(e.matches);
     };
 
     mediaQuery.addEventListener('change', handleChange);
@@ -55,15 +72,19 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
+    setThemeModeState(darkMode ? 'light' : 'dark');
   };
 
   const setTheme = (isDark: boolean) => {
-    setDarkMode(isDark);
+    setThemeModeState(isDark ? 'dark' : 'light');
+  };
+
+  const setThemeMode = (mode: ThemeMode) => {
+    setThemeModeState(mode);
   };
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode, setTheme }}>
+    <ThemeContext.Provider value={{ darkMode, themeMode, toggleDarkMode, setTheme, setThemeMode }}>
       {children}
     </ThemeContext.Provider>
   );

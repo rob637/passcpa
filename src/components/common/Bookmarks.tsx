@@ -189,8 +189,8 @@ export const BookmarkButton = ({ itemId, itemType, itemData = {}, size = 'md' }:
         size === 'sm' && 'p-1.5',
         size === 'md' && 'p-2',
         bookmarked
-          ? 'text-primary-600 bg-primary-50 hover:bg-primary-100'
-          : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100'
+          ? 'text-primary-600 bg-primary-50 hover:bg-primary-100 dark:bg-primary-900/30 dark:hover:bg-primary-900/50'
+          : 'text-slate-600 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:bg-slate-700'
       )}
       title={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
     >
@@ -234,14 +234,14 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-xl">
-        <div className="flex items-center justify-between p-4 border-b border-slate-100">
+      <div className="relative w-full sm:max-w-md bg-white dark:bg-slate-800 rounded-t-2xl sm:rounded-2xl shadow-xl">
+        <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-2">
             <StickyNote className="w-5 h-5 text-warning-500" />
-            <h3 className="font-semibold text-slate-900">Notes</h3>
+            <h3 className="font-semibold text-slate-900 dark:text-white">Notes</h3>
           </div>
-          <button onClick={onClose} className="p-1.5 hover:bg-slate-100 rounded-lg">
-            <X className="w-5 h-5 text-slate-600" />
+          <button onClick={onClose} className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+            <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
           </button>
         </div>
 
@@ -250,14 +250,14 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Add your notes here..."
-            className="w-full h-40 p-3 border border-slate-200 rounded-xl resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full h-40 p-3 border border-slate-200 dark:border-slate-600 rounded-xl resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
           />
         </div>
 
-        <div className="flex gap-3 p-4 border-t border-slate-100">
+        <div className="flex gap-3 p-4 border-t border-slate-100 dark:border-slate-700">
           <button
             onClick={onClose}
-            className="flex-1 py-2.5 text-slate-600 font-medium hover:bg-slate-100 rounded-xl"
+            className="flex-1 py-2.5 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 rounded-xl"
           >
             Cancel
           </button>
@@ -299,8 +299,8 @@ export const NotesButton = ({ itemId, itemData = {}, size = 'md' }: NotesButtonP
           size === 'sm' && 'p-1.5',
           size === 'md' && 'p-2',
           hasNote
-            ? 'text-warning-600 bg-warning-50 hover:bg-warning-100'
-            : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100'
+            ? 'text-warning-600 bg-warning-50 hover:bg-warning-100 dark:bg-warning-900/30 dark:hover:bg-warning-900/50'
+            : 'text-slate-600 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:bg-slate-700'
         )}
         title={hasNote ? 'Edit note' : 'Add note'}
       >

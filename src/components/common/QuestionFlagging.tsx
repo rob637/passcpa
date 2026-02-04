@@ -373,8 +373,8 @@ export const QuickFlagButton: React.FC<{
       className={clsx(
         'p-2 rounded-lg transition-all',
         flagged
-          ? 'text-amber-600 bg-amber-50 hover:bg-amber-100 dark:bg-amber-900/30 dark:hover:bg-amber-900/50'
-          : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700'
+          ? 'text-amber-600 bg-amber-50 hover:bg-amber-100 dark:bg-amber-900/30 dark:hover:bg-amber-900/50 dark:text-amber-400'
+          : 'text-slate-600 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:bg-slate-700'
       )}
       aria-pressed={flagged}
       aria-label={flagged ? 'Remove flag' : 'Flag for review'}

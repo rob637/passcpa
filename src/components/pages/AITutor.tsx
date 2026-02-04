@@ -538,7 +538,7 @@ const AITutor: React.FC = () => {
   const smartPrompts = getSmartPrompts(weakAreas, currentSection);
 
   return (
-    <div className="h-[calc(100vh-8rem)] flex flex-col bg-slate-50 page-enter">
+    <div className="h-[calc(100vh-8rem)] md:h-[calc(100vh-8rem)] pb-14 md:pb-0 flex flex-col bg-slate-50 page-enter">
       {/* Header */}
       <div className="bg-white border-b border-slate-200 px-4 py-3">
         <div className="max-w-3xl mx-auto">
@@ -706,9 +706,10 @@ const AITutor: React.FC = () => {
 
       {/* Smart Prompts - Show at start */}
       {messages.length <= 1 && (
-        <div className="px-4 pb-3">
+        <div className="px-4 pb-3 flex-shrink-0">
           <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {/* Horizontal scroll on mobile, grid on desktop */}
+            <div className="flex md:grid md:grid-cols-2 gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible scrollbar-hide">
               {smartPrompts.map((prompt, index) => {
                 const Icon = prompt.icon;
                 return (
@@ -716,7 +717,7 @@ const AITutor: React.FC = () => {
                     key={index}
                     onClick={() => handleSuggestedPrompt(prompt.text)}
                     className={clsx(
-                      'flex items-start gap-3 p-3 bg-white border rounded-xl transition-all text-left',
+                      'flex items-start gap-2 p-2.5 md:p-3 bg-white border rounded-xl transition-all text-left flex-shrink-0 w-[200px] md:w-auto',
                       prompt.priority
                         ? 'border-warning-200 hover:border-warning-400 hover:bg-warning-50'
                         : 'border-slate-200 hover:border-primary-300 hover:bg-primary-50 shadow-sm'
@@ -724,13 +725,13 @@ const AITutor: React.FC = () => {
                   >
                     <div
                       className={clsx(
-                        'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0',
+                        'w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center flex-shrink-0',
                         prompt.priority ? 'bg-warning-100' : 'bg-primary-100'
                       )}
                     >
                       <Icon
                         className={clsx(
-                          'w-4 h-4',
+                          'w-3.5 h-3.5 md:w-4 md:h-4',
                           prompt.priority ? 'text-warning-600' : 'text-primary-600'
                         )}
                       />
@@ -738,13 +739,13 @@ const AITutor: React.FC = () => {
                     <div className="min-w-0">
                       <span
                         className={clsx(
-                          'text-xs font-medium',
+                          'text-[10px] md:text-xs font-medium',
                           prompt.priority ? 'text-warning-600' : 'text-primary-600'
                         )}
                       >
                         {prompt.category}
                       </span>
-                      <p className="text-sm text-slate-700 mt-0.5 line-clamp-2">{prompt.text}</p>
+                      <p className="text-xs md:text-sm text-slate-700 mt-0.5 line-clamp-2">{prompt.text}</p>
                     </div>
                   </button>
                 );
@@ -755,7 +756,7 @@ const AITutor: React.FC = () => {
       )}
 
       {/* Input Area */}
-      <div className="bg-white border-t border-slate-200 p-4">
+      <div className="bg-white border-t border-slate-200 p-3 md:p-4 flex-shrink-0">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
           <div className="flex items-end gap-3">
             <div className="flex-1 relative">

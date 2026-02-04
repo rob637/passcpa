@@ -459,30 +459,30 @@ const Lessons: React.FC = () => {
                       key={lesson.id}
                       to={isLocked ? '#' : `/lessons/${lesson.id}`}
                       className={clsx(
-                        'flex items-center gap-4 p-4 transition-colors',
+                        'flex items-center gap-3 md:gap-4 p-3 md:p-4 transition-colors',
                         isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50',
                         isNext && 'bg-primary-50 dark:bg-primary-900/20'
                       )}
                     >
-                      {/* Status Icon */}
-                      <div
-                        className={clsx(
-                          'w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0',
-                          lesson.completed && 'bg-success-100 dark:bg-success-900/30',
-                          isNext && !lesson.completed && 'bg-primary-100 dark:bg-primary-900/30',
-                          !lesson.completed && !isNext && 'bg-slate-100 dark:bg-slate-700'
-                        )}
-                      >
-                        {isLocked ? (
-                          <Lock className="w-5 h-5 text-slate-400" />
-                        ) : lesson.completed ? (
-                          <CheckCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
-                        ) : isNext ? (
-                          <PlayCircle className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                        ) : (
-                          <BookOpen className="w-5 h-5 text-slate-400" />
-                        )}
-                      </div>
+                      {/* Status Icon - hide on mobile for regular lessons to save space */}
+                      {(lesson.completed || isNext || isLocked) && (
+                        <div
+                          className={clsx(
+                            'w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center flex-shrink-0',
+                            lesson.completed && 'bg-success-100 dark:bg-success-900/30',
+                            isNext && !lesson.completed && 'bg-primary-100 dark:bg-primary-900/30',
+                            isLocked && 'bg-slate-100 dark:bg-slate-700'
+                          )}
+                        >
+                          {isLocked ? (
+                            <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-400" />
+                          ) : lesson.completed ? (
+                            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
+                          ) : (
+                            <PlayCircle className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
+                          )}
+                        </div>
+                      )}
 
                       {/* Lesson Info */}
                       <div className="flex-1 min-w-0">

@@ -166,7 +166,8 @@ body.dark {
   padding-top: var(--safe-top);
 }
 
-.safe-bottom {
+.safe-bottom,
+.pb-safe {
   padding-bottom: var(--safe-bottom);
 }
 

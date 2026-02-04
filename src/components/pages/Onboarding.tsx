@@ -209,7 +209,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
           onChange={(e) => onChange(e.target.value)}
           min={today}
           max={maxDateStr}
-          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg"
+          className="w-full max-w-full box-border px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg"
         />
       </div>
 
@@ -485,7 +485,7 @@ const Onboarding: React.FC = () => {
       {/* Content */}
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-lg">
-          <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">{renderStep()}</div>
+          <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 overflow-hidden">{renderStep()}</div>
         </div>
       </div>
 

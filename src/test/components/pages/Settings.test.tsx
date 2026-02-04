@@ -91,6 +91,12 @@ vi.mock('../../../providers/CourseProvider', () => ({
   useCourse: () => ({ courseId: 'cpa' }),
 }));
 
+// Mock ThemeProvider
+vi.mock('../../../providers/ThemeProvider', () => ({
+  useTheme: () => ({ isDark: false, themeMode: 'light', setThemeMode: vi.fn() }),
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => children,
+}));
+
 // Create mock user and profile
 const mockUser = {
   uid: 'test-user-123',

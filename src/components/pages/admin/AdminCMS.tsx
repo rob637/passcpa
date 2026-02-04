@@ -35,8 +35,15 @@ interface UserDocument {
 interface UserActivityData {
   questionHistory: Array<{
     questionId: string;
-    correct: boolean;
-    answeredAt: { seconds: number };
+    // Old fields (may exist in old data)
+    correct?: boolean;
+    answeredAt?: { seconds: number };
+    // New fields (current structure)
+    lastAnswered?: { seconds: number };
+    lastCorrect?: boolean;
+    timesAnswered?: number;
+    timesCorrect?: number;
+    masteryLevel?: string;
     section?: string;
     topic?: string;
   }>;
@@ -1838,12 +1845,12 @@ const AdminCMS: React.FC = () => {
                       <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto">
                         <div className="flex flex-wrap gap-1">
                           {userActivity.questionHistory.slice(0, 50).map((q, i) => {
-                            const isCorrect = q.lastCorrect === true || q.timesCorrect > 0;
+                            const isCorrect = q.lastCorrect === true || (q.timesCorrect ?? 0) > 0;
                             return (
                               <span 
                                 key={i} 
                                 className={`w-6 h-6 rounded text-xs flex items-center justify-center ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}
-                                title={`${q.questionId} - ${isCorrect ? 'Correct' : 'Incorrect'} (${q.timesCorrect || 0}/${q.timesAnswered || 0})`}
+                                title={`${q.questionId} - ${isCorrect ? 'Correct' : 'Incorrect'} (${q.timesCorrect ?? 0}/${q.timesAnswered ?? 0})`}
                               >
                                 {isCorrect ? '✓' : '✗'}
                               </span>

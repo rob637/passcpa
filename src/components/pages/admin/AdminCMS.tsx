@@ -53,6 +53,10 @@ interface UserActivityData {
     correctAnswers: number;
     lessonsCompleted: number;
     studyMinutes: number;
+    // Legacy field names for backwards compatibility
+    questionsAttempted?: number;
+    questionsCorrect?: number;
+    studyTimeMinutes?: number;
   }>;
   practiceSessions: Array<{
     id: string;

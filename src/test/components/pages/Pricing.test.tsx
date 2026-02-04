@@ -63,7 +63,7 @@ describe('Pricing', () => {
   describe('features display', () => {
     it('should display CPA exam features', () => {
       renderWithRouter(<Pricing />);
-      expect(screen.getByText(/All 6 CPA exam sections/)).toBeInTheDocument();
+      expect(screen.getByText(/All 7 CPA exam sections/)).toBeInTheDocument();
       expect(screen.getByText(/practice questions/i)).toBeInTheDocument();
     });
 

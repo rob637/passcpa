@@ -367,9 +367,9 @@ const AdminCMS: React.FC = () => {
 
   // Load detailed user activity data
   const loadUserActivity = useCallback(async (userDoc: UserDocument) => {
-    console.log('loadUserActivity called', { isAdmin, userId: userDoc.id });
+    logger.log('loadUserActivity called', { isAdmin, userId: userDoc.id });
     if (!isAdmin) {
-      console.log('Not admin, returning early');
+      logger.log('Not admin, returning early');
       return;
     }
     setSelectedUser(userDoc);
@@ -378,13 +378,13 @@ const AdminCMS: React.FC = () => {
     
     try {
       const userId = userDoc.id;
-      console.log('Starting to fetch activity for userId:', userId);
+      logger.log('Starting to fetch activity for userId:', userId);
       
       // Load question history (all - no orderBy to avoid index requirements)
       const questionHistoryRef = collection(db, 'users', userId, 'question_history');
-      console.log('Fetching question_history...');
+      logger.log('Fetching question_history...');
       const questionHistorySnap = await getDocs(questionHistoryRef);
-      console.log('Got question_history:', questionHistorySnap.docs.length, 'docs');
+      logger.log('Got question_history:', questionHistorySnap.docs.length, 'docs');
       const questionHistory = questionHistorySnap.docs.map(doc => ({
         questionId: doc.id,
         ...doc.data()
@@ -400,7 +400,7 @@ const AdminCMS: React.FC = () => {
       // Load daily logs (all - sort in memory)
       const dailyLogRef = collection(db, 'users', userId, 'daily_log');
       const dailyLogSnap = await getDocs(dailyLogRef);
-      console.log('Got daily_log:', dailyLogSnap.docs.length, 'docs');
+      logger.log('Got daily_log:', dailyLogSnap.docs.length, 'docs');
       const dailyLogs = dailyLogSnap.docs.map(doc => ({
         date: doc.id,
         ...doc.data()
@@ -411,7 +411,7 @@ const AdminCMS: React.FC = () => {
       // Load practice sessions (all - sort in memory)
       const sessionsRef = collection(db, 'users', userId, 'practice_sessions');
       const sessionsSnap = await getDocs(sessionsRef);
-      console.log('Got practice_sessions:', sessionsSnap.docs.length, 'docs');
+      logger.log('Got practice_sessions:', sessionsSnap.docs.length, 'docs');
       const practiceSessions = sessionsSnap.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
@@ -422,7 +422,7 @@ const AdminCMS: React.FC = () => {
       // Load recent AI conversations (all - sort in memory)
       const conversationsRef = collection(db, 'users', userId, 'conversations');
       const conversationsSnap = await getDocs(conversationsRef);
-      console.log('Got conversations:', conversationsSnap.docs.length, 'docs');
+      logger.log('Got conversations:', conversationsSnap.docs.length, 'docs');
       const recentConversations = conversationsSnap.docs.map(doc => {
         const data = doc.data();
         return {
@@ -471,7 +471,7 @@ const AdminCMS: React.FC = () => {
         }
       };
       
-      console.log('Setting user activity:', {
+      logger.log('Setting user activity:', {
         questionHistory: questionHistory.length,
         dailyLogs: dailyLogs.length,
         practiceSessions: practiceSessions.length,
@@ -483,21 +483,21 @@ const AdminCMS: React.FC = () => {
       
       addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
     } catch (error) {
-      console.error('Error loading user activity:', error);
+      logger.error('Error loading user activity:', error);
       logger.error('Error loading user activity', error);
       addLog('Error loading activity: ' + (error instanceof Error ? error.message : String(error)), 'error');
       // Still set loading to false so modal shows error state
     } finally {
-      console.log('loadUserActivity finished, isLoadingActivity set to false');
+      logger.log('loadUserActivity finished, isLoadingActivity set to false');
       setIsLoadingActivity(false);
     }
   }, [isAdmin]);
 
   // Toggle admin status for a user
   const toggleAdminStatus = async (userId: string, currentIsAdmin: boolean) => {
-    console.log('toggleAdminStatus called:', { userId, currentIsAdmin, isAdmin });
+    logger.log('toggleAdminStatus called:', { userId, currentIsAdmin, isAdmin });
     if (!isAdmin) {
-      console.log('Not admin, aborting');
+      logger.log('Not admin, aborting');
       return;
     }
     const confirmMsg = currentIsAdmin 
@@ -507,13 +507,13 @@ const AdminCMS: React.FC = () => {
     
     try {
       const userRef = doc(db, 'users', userId);
-      console.log('Updating user doc with isAdmin:', !currentIsAdmin);
+      logger.log('Updating user doc with isAdmin:', !currentIsAdmin);
       await updateDoc(userRef, { isAdmin: !currentIsAdmin });
-      console.log('Update successful');
+      logger.log('Update successful');
       addLog(`Admin status ${currentIsAdmin ? 'removed from' : 'granted to'} user ${userId}`, 'success');
       loadUsers();
     } catch (error) {
-      console.error('toggleAdminStatus error:', error);
+      logger.error('toggleAdminStatus error:', error);
       logger.error('Error toggling admin status', error);
       addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }

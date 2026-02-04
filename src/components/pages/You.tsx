@@ -323,7 +323,7 @@ const You: React.FC = () => {
           <div className="relative">
             <div className="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center overflow-hidden">
               {profile?.photoURL ? (
-                <img src={profile.photoURL} alt="" className="w-20 h-20 rounded-full object-cover" />
+                <img src={profile.photoURL} alt="Your profile photo" className="w-20 h-20 rounded-full object-cover" loading="lazy" />
               ) : (
                 <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">
                   {firstName?.charAt(0)?.toUpperCase() || 'U'}

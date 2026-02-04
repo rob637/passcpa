@@ -446,7 +446,11 @@ const Lessons: React.FC = () => {
               </div>
 
               {/* Lessons List */}
-              <div className="divide-y divide-slate-100 dark:divide-slate-700">
+              <div 
+                className="divide-y divide-slate-100 dark:divide-slate-700"
+                role="list"
+                aria-label={`Lessons in ${area.title}`}
+              >
                 {area.lessons.map((lesson, lessonIndex) => {
                   const isLocked = false; // Can implement prerequisite logic
                   const isNext =
@@ -457,8 +461,11 @@ const Lessons: React.FC = () => {
                     <Link
                       key={lesson.id}
                       to={isLocked ? '#' : `/lessons/${lesson.id}`}
+                      role="listitem"
+                      aria-label={`${lesson.title}${lesson.completed ? ', completed' : ''}${isNext ? ', recommended next' : ''}`}
+                      aria-disabled={isLocked}
                       className={clsx(
-                        'flex items-center gap-3 md:gap-4 p-3 md:p-4 transition-colors',
+                        'flex items-center gap-3 md:gap-4 p-3 md:p-4 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500',
                         isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50',
                         isNext && 'bg-primary-50 dark:bg-primary-900/20'
                       )}

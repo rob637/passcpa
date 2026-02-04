@@ -376,7 +376,7 @@ const Settings: React.FC = () => {
                     <div className="relative w-16 h-16">
                       <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center overflow-hidden">
                         {profile?.photoURL ? (
-                          <img src={profile.photoURL} alt="" className="w-16 h-16 rounded-full object-cover" />
+                          <img src={profile.photoURL} alt="Your profile photo" className="w-16 h-16 rounded-full object-cover" loading="lazy" />
                         ) : (
                           <span className="text-2xl font-bold text-primary-600">
                             {displayName?.charAt(0)?.toUpperCase() || 'U'}

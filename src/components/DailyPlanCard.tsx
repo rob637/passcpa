@@ -496,8 +496,12 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         </div>
       </div>
       
-      {/* Activities list */}
-      <div className="divide-y divide-slate-200 dark:divide-slate-700">
+      {/* Activities list - keyboard accessible */}
+      <div 
+        className="divide-y divide-slate-200 dark:divide-slate-700"
+        role="list"
+        aria-label="Today's study activities"
+      >
         {plan.activities.map((activity: DailyActivity, index: number) => {
           const isComplete = completedActivities.has(activity.id);
           const Icon = getActivityIcon(activity.type);
@@ -505,9 +509,17 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           return (
             <div
               key={activity.id}
+              role="listitem"
+              tabIndex={isComplete ? -1 : 0}
+              onKeyDown={(e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && !isComplete) {
+                  e.preventDefault();
+                  handleActivityClick(activity);
+                }
+              }}
               className={clsx(
-                'p-4 transition-colors',
-                isComplete ? 'bg-slate-50 dark:bg-slate-800/50 opacity-60' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50'
+                'p-4 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500',
+                isComplete ? 'bg-slate-50 dark:bg-slate-800/50 opacity-60' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer'
               )}
             >
               <div className="flex items-start gap-3">

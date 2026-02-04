@@ -248,10 +248,10 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
 
 const StatCard = ({ icon: Icon, value, label, trend, color = 'slate' }: StatCardProps) => {
   const colors = {
-    slate: 'bg-slate-100 text-slate-600',
-    primary: 'bg-primary-100 text-primary-600',
-    success: 'bg-success-100 text-success-600',
-    warning: 'bg-warning-100 text-warning-600',
+    slate: 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300',
+    primary: 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400',
+    success: 'bg-success-100 text-success-600 dark:bg-success-900/30 dark:text-success-400',
+    warning: 'bg-warning-100 text-warning-600 dark:bg-warning-900/30 dark:text-warning-400',
   };
 
   return (
@@ -432,35 +432,35 @@ const Dashboard = () => {
           className={clsx(
             'card mb-6 p-4 flex items-center gap-4',
             daysUntilExam <= 7
-              ? 'bg-error-50 border-error-100'
+              ? 'bg-error-50 border-error-100 dark:bg-error-900/20 dark:border-error-800'
               : daysUntilExam <= 30
-                ? 'bg-warning-50 border-warning-100'
-                : 'bg-primary-50 border-primary-100'
+                ? 'bg-warning-50 border-warning-100 dark:bg-warning-900/20 dark:border-warning-800'
+                : 'bg-primary-50 border-primary-100 dark:bg-primary-900/20 dark:border-primary-800'
           )}
         >
           <div
             className={clsx(
               'w-12 h-12 rounded-xl flex items-center justify-center',
               daysUntilExam <= 7
-                ? 'bg-error-100'
+                ? 'bg-error-100 dark:bg-error-900/30'
                 : daysUntilExam <= 30
-                  ? 'bg-warning-100'
-                  : 'bg-primary-100'
+                  ? 'bg-warning-100 dark:bg-warning-900/30'
+                  : 'bg-primary-100 dark:bg-primary-900/30'
             )}
           >
             <Calendar
               className={clsx(
                 'w-6 h-6',
                 daysUntilExam <= 7
-                  ? 'text-error-600'
+                  ? 'text-error-600 dark:text-error-400'
                   : daysUntilExam <= 30
-                    ? 'text-warning-600'
-                    : 'text-primary-600'
+                    ? 'text-warning-600 dark:text-warning-400'
+                    : 'text-primary-600 dark:text-primary-400'
               )}
             />
           </div>
           <div className="flex-1">
-            <p className="text-sm text-slate-600">{examSection?.shortName || 'CPA Exam'} in</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">{examSection?.shortName || 'CPA Exam'} in</p>
             <p
               className={clsx(
                 'text-xl font-bold',
@@ -513,8 +513,8 @@ const Dashboard = () => {
 
         {/* Streak Milestone Celebration */}
         {isStreakMilestone && currentStreak > 0 && (
-          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl p-3 mb-4 text-center">
-            <p className="text-sm font-medium text-yellow-800">
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border border-yellow-200 dark:border-yellow-800 rounded-xl p-3 mb-4 text-center">
+            <p className="text-sm font-medium text-yellow-800 dark:text-yellow-300">
               🏆 Amazing! {currentStreak}-day streak milestone reached!
             </p>
           </div>
@@ -522,8 +522,8 @@ const Dashboard = () => {
 
         {/* Next milestone hint */}
         {currentStreak > 0 && !isStreakMilestone && currentStreak >= nextStreakMilestone - 3 && (
-          <div className="bg-slate-50 rounded-xl p-3 mb-4 text-center">
-            <p className="text-xs text-slate-600">
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-3 mb-4 text-center">
+            <p className="text-xs text-slate-600 dark:text-slate-300">
               🔥 {nextStreakMilestone - currentStreak} day{nextStreakMilestone - currentStreak === 1 ? '' : 's'} until your {nextStreakMilestone}-day streak badge!
             </p>
           </div>

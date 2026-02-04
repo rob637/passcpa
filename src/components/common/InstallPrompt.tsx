@@ -85,7 +85,7 @@ const InstallPrompt = () => {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-50 animate-slide-up">
-      <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-4">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-4">
         <div className="flex items-start gap-4">
           {/* App Icon */}
           <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -93,8 +93,8 @@ const InstallPrompt = () => {
           </div>
 
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-slate-900">Install VoraPrep</h3>
-            <p className="text-sm text-slate-600 mt-0.5">
+            <h3 className="font-semibold text-slate-900 dark:text-white">Install VoraPrep</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mt-0.5">
               Add to home screen for quick access & offline study
             </p>
 
@@ -110,14 +110,14 @@ const InstallPrompt = () => {
               <button
                 type="button"
                 onClick={handleDismiss}
-                className="text-sm text-slate-600 hover:text-slate-700 py-2 px-3"
+                className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-200 py-2 px-3"
               >
                 Not now
               </button>
             </div>
           </div>
 
-          <button type="button" onClick={handleDismiss} className="text-slate-600 hover:text-slate-600 p-1" aria-label="Dismiss install prompt">
+          <button type="button" onClick={handleDismiss} className="text-slate-600 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 p-1" aria-label="Dismiss install prompt">
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>

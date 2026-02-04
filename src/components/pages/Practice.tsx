@@ -112,8 +112,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <Target className="w-8 h-8 text-primary-600" />
+        <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <Target className="w-8 h-8 text-primary-600 dark:text-primary-400" />
         </div>
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           Practice Questions
@@ -216,7 +216,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
               onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
               className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
             />
-            <div className="flex justify-between text-xs text-slate-600 mt-1">
+            <div className="flex justify-between text-xs text-slate-600 dark:text-slate-400 mt-1">
               <span>5</span>
               <span className="font-medium text-primary-600">{config.count} questions</span>
               <span>100</span>
@@ -333,7 +333,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                     )}
                   >
                     <div className="font-medium text-slate-900 dark:text-slate-100">Practice</div>
-                    <div className="text-xs text-slate-600">Immediate feedback after each question</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Immediate feedback after each question</div>
                   </button>
                   <button
                     onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'exam' }))}
@@ -345,7 +345,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                     )}
                   >
                     <div className="font-medium text-slate-900 dark:text-slate-100">Exam</div>
-                    <div className="text-xs text-slate-600">Score revealed at end only</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Score revealed at end only</div>
                   </button>
                 </div>
               </div>
@@ -409,7 +409,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                           {session.questionCount} questions
                         </span>
                       </div>
-                      <div className="text-xs text-slate-600 mt-0.5">
+                      <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                         {formatDistanceToNow(session.completedAt, { addSuffix: true })}
                       </div>
                     </div>
@@ -424,7 +424,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
               ))}
             </div>
 
-            <p className="text-xs text-slate-600 mt-4 text-center">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-4 text-center">
               The Practice Test score is the percentage of questions you answered correctly.
             </p>
           </div>
@@ -531,21 +531,21 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 <CheckCircle className="w-4 h-4 text-success-500 mr-1" />
                 <span className="text-xl font-bold text-success-600">{correctCount}</span>
               </div>
-              <p className="text-xs text-slate-600">Correct</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Correct</p>
             </div>
             <div className="p-4 text-center">
               <div className="flex items-center justify-center mb-1">
                 <XCircle className="w-4 h-4 text-error-500 mr-1" />
                 <span className="text-xl font-bold text-error-600">{incorrectCount}</span>
               </div>
-              <p className="text-xs text-slate-600">Incorrect</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Incorrect</p>
             </div>
             <div className="p-4 text-center">
               <div className="flex items-center justify-center mb-1">
                 <Clock className="w-4 h-4 text-slate-600 mr-1" />
                 <span className="text-xl font-bold text-slate-700 dark:text-slate-300">{formatTime(elapsed)}</span>
               </div>
-              <p className="text-xs text-slate-600">Time</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Time</p>
             </div>
           </div>
           
@@ -598,7 +598,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                   </div>
                   <div className="text-left">
                     <div className="font-medium text-slate-900 dark:text-slate-100">Practice Weak Areas</div>
-                    <div className="text-xs text-slate-600">15 questions on {weakTopics[0]}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">15 questions on {weakTopics[0]}</div>
                   </div>
                 </div>
                 <ArrowRight className="w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" />
@@ -614,7 +614,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                   </div>
                   <div className="text-left">
                     <div className="font-medium text-slate-900 dark:text-slate-100">Keep Practicing</div>
-                    <div className="text-xs text-slate-600">You're doing great!</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">You're doing great!</div>
                   </div>
                 </div>
                 <ArrowRight className="w-5 h-5 text-success-500 group-hover:translate-x-1 transition-transform" />

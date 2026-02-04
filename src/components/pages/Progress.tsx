@@ -1019,7 +1019,7 @@ const Progress: React.FC = () => {
             </div>
 
             {/* AI Recommendations */}
-            <div className="bg-gradient-to-br from-primary-600 to-indigo-700 p-6 rounded-2xl text-white shadow-lg">
+            <div className="bg-gradient-to-br from-primary-600 to-primary-700 p-6 rounded-2xl text-white shadow-lg">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                   <BookOpen className="w-6 h-6 text-white" />

@@ -627,7 +627,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 onClick={() => navigate('/tbs')}
                 className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
               >
-                <FileSpreadsheet className="w-5 h-5 text-indigo-500" />
+                <FileSpreadsheet className="w-5 h-5 text-teal-500" />
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Try TBS</span>
               </button>
               <button

@@ -286,7 +286,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     switch (type) {
       case 'lesson': return 'text-primary-500 bg-primary-100 dark:bg-primary-900/30';
       case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
-      case 'tbs': return 'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30';
+      case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
       default: return 'text-slate-500 bg-slate-100 dark:bg-slate-800';
     }
@@ -384,7 +384,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           </div>
         ) : dailyProgress < 100 ? (
           <div 
-            className="p-4 text-center bg-gradient-to-r from-indigo-500 to-indigo-600 cursor-pointer hover:from-indigo-600 hover:to-indigo-700 transition-all"
+            className="p-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
             onClick={() => navigate('/study')}
           >
             <Target className="w-8 h-8 text-white mx-auto mb-2" />

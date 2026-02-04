@@ -91,11 +91,11 @@ const SectionBadge = ({ section }: { section: ExamSection }) => {
     FAR: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
     AUD: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
     REG: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
-    BAR: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300',
+    BAR: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300',
     ISC: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300',
     TCP: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
     BEC: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
-    PREP: 'bg-indigo-50 text-indigo-600 border border-indigo-200 dark:bg-indigo-900/50 dark:text-indigo-300',
+    PREP: 'bg-sky-50 text-sky-600 border border-sky-200 dark:bg-sky-900/50 dark:text-sky-300',
   };
 
   // Display "Strategy" for PREP instead of the section code
@@ -267,7 +267,7 @@ const LessonMatrix: React.FC = () => {
 
       {/* Blueprint Info Banner */}
       {showBlueprintInfo && (
-        <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl border border-blue-200 dark:border-blue-800">
+        <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-950/30 dark:to-sky-950/30 rounded-xl border border-blue-200 dark:border-blue-800">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-3">
               <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />

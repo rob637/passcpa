@@ -346,40 +346,44 @@ const AdminCMS: React.FC = () => {
     try {
       const userId = userDoc.id;
       
-      // Load question history (last 100)
+      // Load question history (all - no orderBy to avoid index requirements)
       const questionHistoryRef = collection(db, 'users', userId, 'question_history');
-      const questionHistoryQuery = query(questionHistoryRef, orderBy('lastAnswered', 'desc'), limit(100));
-      const questionHistorySnap = await getDocs(questionHistoryQuery);
+      const questionHistorySnap = await getDocs(questionHistoryRef);
       const questionHistory = questionHistorySnap.docs.map(doc => ({
         questionId: doc.id,
         ...doc.data()
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       })) as any[];
+      // Sort in memory by lastAnswered or lastCorrect
+      questionHistory.sort((a, b) => {
+        const aTime = a.lastAnswered?.seconds || a.lastCorrect?.seconds || 0;
+        const bTime = b.lastAnswered?.seconds || b.lastCorrect?.seconds || 0;
+        return bTime - aTime;
+      });
       
-      // Load daily logs (last 30 days)
+      // Load daily logs (all - sort in memory)
       const dailyLogRef = collection(db, 'users', userId, 'daily_log');
-      const dailyLogQuery = query(dailyLogRef, orderBy('date', 'desc'), limit(30));
-      const dailyLogSnap = await getDocs(dailyLogQuery);
+      const dailyLogSnap = await getDocs(dailyLogRef);
       const dailyLogs = dailyLogSnap.docs.map(doc => ({
         date: doc.id,
         ...doc.data()
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       })) as any[];
+      dailyLogs.sort((a, b) => b.date.localeCompare(a.date));
       
-      // Load practice sessions (last 20)
+      // Load practice sessions (all - sort in memory)
       const sessionsRef = collection(db, 'users', userId, 'practice_sessions');
-      const sessionsQuery = query(sessionsRef, orderBy('startedAt', 'desc'), limit(20));
-      const sessionsSnap = await getDocs(sessionsQuery);
+      const sessionsSnap = await getDocs(sessionsRef);
       const practiceSessions = sessionsSnap.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       })) as any[];
+      practiceSessions.sort((a, b) => (b.startedAt?.seconds || 0) - (a.startedAt?.seconds || 0));
       
-      // Load recent AI conversations (last 10)
+      // Load recent AI conversations (all - sort in memory)
       const conversationsRef = collection(db, 'users', userId, 'conversations');
-      const conversationsQuery = query(conversationsRef, orderBy('updatedAt', 'desc'), limit(10));
-      const conversationsSnap = await getDocs(conversationsQuery);
+      const conversationsSnap = await getDocs(conversationsRef);
       const recentConversations = conversationsSnap.docs.map(doc => {
         const data = doc.data();
         return {
@@ -389,6 +393,7 @@ const AdminCMS: React.FC = () => {
           messageCount: data.messages?.length || 0
         };
       });
+      recentConversations.sort((a, b) => (b.updatedAt?.seconds || 0) - (a.updatedAt?.seconds || 0));
       
       // Calculate stats
       const totalQuestions = questionHistory.length;

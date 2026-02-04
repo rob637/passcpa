@@ -102,13 +102,9 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   }
 
   // Redirect to onboarding if not complete (unless we're already on onboarding page or skipOnboarding is true)
-  // SECURITY: If user exists but profile is null/undefined OR onboardingComplete is false, force onboarding
-  // This prevents users from bypassing onboarding by manipulating the URL
-  if (!skipOnboarding && location.pathname !== '/onboarding') {
-    const onboardingComplete = userProfile?.onboardingComplete === true;
-    if (!onboardingComplete) {
-      return <Navigate to="/onboarding" replace />;
-    }
+  // Only redirect if userProfile exists - if it's still loading/null, wait rather than redirect
+  if (!skipOnboarding && userProfile && !userProfile.onboardingComplete && location.pathname !== '/onboarding') {
+    return <Navigate to="/onboarding" replace />;
   }
 
   return children;

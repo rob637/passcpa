@@ -12,10 +12,10 @@ import { TCP_TBS } from './tcp-tbs';
 import { TBS_GAP_FILL } from './tbs-gap-fill';
 // Application-based TBS (post-2024: research skills integrated into scenarios, not standalone)
 import { APPLICATION_TBS } from './application-tbs';
-// Tax form completion and research TBS - Form 1065, 1120S, Schedule C, Form 709, IRC research
-import { TAX_FORM_TBS, TAX_RESEARCH_TBS } from './tax-form-research-tbs';
-// Additional tax form and research TBS - K-1, 4797, 706, 1040, 1099-R, home office, NIIT
-import { ADDITIONAL_TAX_FORM_TBS, ADDITIONAL_RESEARCH_TBS } from './tax-form-research-tbs-2';
+// Tax form completion TBS - Form 1065, 1120S, Schedule C, Form 709
+import { TAX_FORM_TBS } from './tax-form-research-tbs';
+// Additional tax form TBS - K-1, 4797, 706, 1040, 1099-R, home office, NIIT
+import { ADDITIONAL_TAX_FORM_TBS } from './tax-form-research-tbs-2';
 
 // ==========================================
 // FAR - FINANCIAL ACCOUNTING TBS

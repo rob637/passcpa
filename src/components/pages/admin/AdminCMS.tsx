@@ -424,15 +424,7 @@ const AdminCMS: React.FC = () => {
         }
       }
       
-      console.log('Loaded user activity:', {
-        questionHistory: questionHistory.length,
-        dailyLogs: dailyLogs.length,
-        practiceSessions: practiceSessions.length,
-        recentConversations: recentConversations.length,
-        sampleQuestion: questionHistory[0]
-      });
-      
-      setUserActivity({
+      const activityData = {
         questionHistory,
         dailyLogs,
         practiceSessions,
@@ -445,7 +437,17 @@ const AdminCMS: React.FC = () => {
           totalStudyMinutes,
           lastActiveDate
         }
+      };
+      
+      console.log('Setting user activity:', {
+        questionHistory: questionHistory.length,
+        dailyLogs: dailyLogs.length,
+        practiceSessions: practiceSessions.length,
+        recentConversations: recentConversations.length,
+        stats: activityData.stats
       });
+      
+      setUserActivity(activityData);
       
       addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
     } catch (error) {
@@ -1867,7 +1869,7 @@ const AdminCMS: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-8">No activity data available.</p>
+                <p className="text-gray-500 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
               )}
             </div>
 

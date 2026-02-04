@@ -10,6 +10,7 @@ import { StudyProvider } from './providers/StudyProvider';
 import { initWebVitals } from './services/performance';
 import { initErrorTracking } from './services/errorTracking';
 import { initSkipLinks } from './utils/accessibility';
+import { triggerUpdateBanner } from './components/common/UpdateBanner';
 
 // Initialize performance monitoring
 initWebVitals();
@@ -22,22 +23,30 @@ if (typeof window !== 'undefined') {
   window.addEventListener('DOMContentLoaded', initSkipLinks);
 }
 
+// Store the update function globally so UpdateBanner can access it
+let performUpdate: (() => void) | null = null;
+
+export const getUpdateFunction = () => performUpdate;
+
 // Register service worker for PWA
 const updateSW = registerSW({
   onNeedRefresh() {
+    // Store the update function
+    performUpdate = () => updateSW(true);
+    
     // Don't interrupt exams or practice sessions
     const isInExam = window.location.pathname.includes('/exam') || 
-                     window.location.pathname.includes('/practice');
+                     window.location.pathname.includes('/practice') ||
+                     window.location.pathname.includes('/tbs-simulator');
     
     if (isInExam) {
       // Store update pending flag - will prompt after exam
       sessionStorage.setItem('pwa-update-pending', 'true');
       logger.log('PWA update available, deferred until exam completes');
     } else {
-      // Safe to prompt user
-      if (confirm('New version available! Reload to update?')) {
-        updateSW(true);
-      }
+      // Show the update banner
+      triggerUpdateBanner();
+      logger.log('PWA update available, showing banner');
     }
   },
   onOfflineReady() {

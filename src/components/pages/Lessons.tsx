@@ -7,7 +7,6 @@ import {
   ChevronRight,
   Clock,
   Lock,
-  PlayCircle,
   Search,
   GraduationCap,
   Layout,
@@ -479,7 +478,7 @@ const Lessons: React.FC = () => {
                           ) : lesson.completed ? (
                             <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
                           ) : (
-                            <PlayCircle className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
+                            <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
                           )}
                         </div>
                       )}

@@ -1,4 +1,4 @@
-import { lazy, Suspense, ReactNode, useEffect } from 'react';
+import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { scrollToTop } from './utils/scroll';
@@ -12,6 +12,8 @@ import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider } from './components/common/Toast';
+import { UpdateBanner } from './components/common/UpdateBanner';
+import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider } from './providers/CourseProvider';
@@ -154,6 +156,17 @@ const SuspensePage = ({ children }: { children: ReactNode }) => (
 );
 
 function App() {
+  // Handle PWA updates
+  const handleUpdate = useCallback(() => {
+    const updateFn = getUpdateFunction();
+    if (updateFn) {
+      updateFn();
+    } else {
+      // Fallback: force reload
+      window.location.reload();
+    }
+  }, []);
+
   return (
     <ErrorBoundary variant="page">
       <ThemeProvider>
@@ -162,6 +175,7 @@ function App() {
             <ToastProvider>
               <ScrollToTop />
               <EnvironmentIndicator />
+              <UpdateBanner onUpdate={handleUpdate} />
               <Suspense fallback={<FullPageLoader />}>
                 <Routes>
                   {/* Public Auth Routes */}

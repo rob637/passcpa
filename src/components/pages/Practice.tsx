@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
+import { scrollToTop } from '../../utils/scroll';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   ChevronLeft,
@@ -867,6 +868,8 @@ const Practice: React.FC = () => {
       setShowExplanation(false);
       setFlagged(new Set());
       setLoading(false);
+      // Scroll to top when entering question view
+      scrollToTop();
     } catch (error) {
       logger.error('Error starting session:', error);
       setLoading(false);

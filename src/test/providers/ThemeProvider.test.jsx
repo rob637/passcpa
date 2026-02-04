@@ -113,7 +113,7 @@ describe('ThemeProvider', () => {
         result.current.toggleDarkMode();
       });
 
-      expect(window.localStorage.setItem).toHaveBeenCalledWith('voraprep-dark-mode', 'true');
+      expect(window.localStorage.setItem).toHaveBeenCalledWith('voraprep-theme-mode', 'dark');
     });
 
     it('should update document class', () => {

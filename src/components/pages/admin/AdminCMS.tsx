@@ -395,9 +395,9 @@ const AdminCMS: React.FC = () => {
       });
       recentConversations.sort((a, b) => (b.updatedAt?.seconds || 0) - (a.updatedAt?.seconds || 0));
       
-      // Calculate stats
+      // Calculate stats - use lastCorrect or timesCorrect field
       const totalQuestions = questionHistory.length;
-      const totalCorrect = questionHistory.filter(q => q.correct).length;
+      const totalCorrect = questionHistory.filter(q => q.lastCorrect === true || q.timesCorrect > 0).length;
       const overallAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
       const totalStudyMinutes = dailyLogs.reduce((sum, log) => sum + (log.studyMinutes || 0), 0);
       const lastActiveDate = dailyLogs.length > 0 ? dailyLogs[0].date : null;
@@ -416,6 +416,14 @@ const AdminCMS: React.FC = () => {
           break;
         }
       }
+      
+      console.log('Loaded user activity:', {
+        questionHistory: questionHistory.length,
+        dailyLogs: dailyLogs.length,
+        practiceSessions: practiceSessions.length,
+        recentConversations: recentConversations.length,
+        sampleQuestion: questionHistory[0]
+      });
       
       setUserActivity({
         questionHistory,
@@ -1829,15 +1837,18 @@ const AdminCMS: React.FC = () => {
                     {userActivity.questionHistory.length > 0 ? (
                       <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto">
                         <div className="flex flex-wrap gap-1">
-                          {userActivity.questionHistory.slice(0, 50).map((q, i) => (
-                            <span 
-                              key={i} 
-                              className={`w-6 h-6 rounded text-xs flex items-center justify-center ${q.correct ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}
-                              title={`${q.questionId} - ${q.correct ? 'Correct' : 'Incorrect'}`}
-                            >
-                              {q.correct ? '✓' : '✗'}
-                            </span>
-                          ))}
+                          {userActivity.questionHistory.slice(0, 50).map((q, i) => {
+                            const isCorrect = q.lastCorrect === true || q.timesCorrect > 0;
+                            return (
+                              <span 
+                                key={i} 
+                                className={`w-6 h-6 rounded text-xs flex items-center justify-center ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}
+                                title={`${q.questionId} - ${isCorrect ? 'Correct' : 'Incorrect'} (${q.timesCorrect || 0}/${q.timesAnswered || 0})`}
+                              >
+                                {isCorrect ? '✓' : '✗'}
+                              </span>
+                            );
+                          })}
                         </div>
                         <p className="text-xs text-gray-500 mt-2">
                           Showing last {Math.min(50, userActivity.questionHistory.length)} of {userActivity.questionHistory.length} questions

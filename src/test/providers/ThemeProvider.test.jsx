@@ -104,7 +104,7 @@ describe('ThemeProvider', () => {
     });
 
     it('should persist preference to localStorage', () => {
-      window.localStorage.getItem.mockReturnValue('false');
+      window.localStorage.getItem.mockReturnValue(null);
       window.matchMedia = vi.fn().mockImplementation(() => createMatchMediaMock(false));
 
       const { result } = renderHook(() => useTheme(), { wrapper });

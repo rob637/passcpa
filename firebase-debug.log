@@ -1,0 +1,31 @@
+[debug] [2026-02-04T16:44:03.109Z] ----------------------------------------------------------------------
+[debug] [2026-02-04T16:44:03.111Z] Command:       /usr/local/share/nvm/versions/node/v24.11.1/bin/node /home/codespace/nvm/current/bin/firebase deploy --only hosting -P production
+[debug] [2026-02-04T16:44:03.111Z] CLI Version:   15.4.0
+[debug] [2026-02-04T16:44:03.111Z] Platform:      linux
+[debug] [2026-02-04T16:44:03.111Z] Node Version:  v24.11.1
+[debug] [2026-02-04T16:44:03.111Z] Time:          Wed Feb 04 2026 16:44:03 GMT+0000 (Coordinated Universal Time)
+[debug] [2026-02-04T16:44:03.111Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-04T16:44:04.028Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-04T16:44:04.028Z] > authorizing via signed-in user (rob@sagecg.com)
+[debug] [2026-02-04T16:44:04.028Z] [iam] checking project voraprep-prod for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-04T16:44:04.029Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.029Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.030Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/voraprep-prod:testIamPermissions [none]
+[debug] [2026-02-04T16:44:04.030Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/voraprep-prod:testIamPermissions x-goog-quota-user=projects/voraprep-prod
+[debug] [2026-02-04T16:44:04.030Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/voraprep-prod:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-04T16:44:04.128Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/voraprep-prod:testIamPermissions 200
+[debug] [2026-02-04T16:44:04.129Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/voraprep-prod:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-04T16:44:04.129Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.129Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.129Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/voraprep-prod [none]
+[debug] [2026-02-04T16:44:04.404Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/voraprep-prod 200
+[debug] [2026-02-04T16:44:04.404Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/voraprep-prod {"projectId":"voraprep-prod","projectNumber":"776007737692","displayName":"VoraPrep Production","name":"projects/voraprep-prod","resources":{"hostingSite":"voraprep-prod"},"state":"ACTIVE","etag":"1_a1dbeed2-0d79-4ef4-8c88-677838ca3b99"}
+[info] 
+[info] === Deploying to 'voraprep-prod'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-02-04T16:44:04.407Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.408Z] Checked if tokens are valid: true, expires at: 1770224600050
+[debug] [2026-02-04T16:44:04.408Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/voraprep-prod/versions [none]
+[debug] [2026-02-04T16:44:04.408Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/voraprep-prod/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

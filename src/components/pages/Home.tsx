@@ -302,7 +302,7 @@ const Home = () => {
             <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">
               {sectionInfo?.name || activeSection}
             </span>
-            <ChevronDown className="w-4 h-4 text-slate-400" />
+            <ChevronDown className="w-4 h-4 text-slate-600" />
           </button>
 
           {/* Right side stats */}
@@ -387,7 +387,7 @@ const Home = () => {
 
       {/* More Options (collapsible feel, always visible) */}
       <div className="space-y-2">
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-1">More Ways to Study</p>
+        <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider px-1">More Ways to Study</p>
         <div className="grid grid-cols-2 gap-2">
           <Link
             to="/flashcards"

@@ -96,7 +96,7 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }
                 style={{ height: `${height}%` }}
               />
             </div>
-            <span className="text-[10px] text-slate-400 mt-1">
+            <span className="text-[10px] text-slate-600 mt-1">
               {format(day.date, 'EEE').charAt(0)}
             </span>
           </div>
@@ -447,7 +447,7 @@ const You: React.FC = () => {
               <p className="text-xs text-slate-600">Detailed stats, topic breakdown, study plan</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
 
         <Link
@@ -463,7 +463,7 @@ const You: React.FC = () => {
               <p className="text-xs text-slate-600">Badges and milestones</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
 
         <Link
@@ -479,7 +479,7 @@ const You: React.FC = () => {
               <p className="text-xs text-slate-600">Leaderboard, compare with other candidates</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
 
         <Link
@@ -495,7 +495,7 @@ const You: React.FC = () => {
               <p className="text-xs text-slate-600">Profile, notifications, study preferences</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
 
         <Link
@@ -511,7 +511,7 @@ const You: React.FC = () => {
               <p className="text-xs text-slate-600">Support, terms, privacy</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
 
         <button
@@ -528,7 +528,7 @@ const You: React.FC = () => {
       </div>
 
       {/* Version */}
-      <div className="text-center text-xs text-slate-400">
+      <div className="text-center text-xs text-slate-600">
         <p>VoraPrep v1.0</p>
         <p className="mt-1">
           Not affiliated with AICPA, NASBA, or any state board.

@@ -114,7 +114,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
           <Clock className="w-4 h-4 text-slate-600" />
           <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Study Time</span>
         </div>
-        <ChevronRight className="w-4 h-4 text-slate-400" />
+        <ChevronRight className="w-4 h-4 text-slate-600" />
       </div>
       
       <div className="flex items-center gap-4">

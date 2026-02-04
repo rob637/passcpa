@@ -11,6 +11,10 @@ import {
   Loader2,
   Camera,
   Info,
+  Sun,
+  Moon,
+  Monitor,
+  Palette,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
@@ -18,7 +22,7 @@ import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage, auth } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
-// import { useTheme } from '../../providers/ThemeProvider';
+import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import {
@@ -83,7 +87,7 @@ interface Tab {
 const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   const { courseId } = useCourse();
-  // const { } = useTheme(); // darkMode, toggleDarkMode unused in logic for now, only importing hooks
+  const { darkMode, themeMode, setThemeMode } = useTheme();
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
   const [isSaving, setIsSaving] = useState(false);
@@ -310,6 +314,7 @@ const Settings: React.FC = () => {
   const tabs: Tab[] = [
     { id: 'profile', label: 'Profile', icon: UserIcon },
     { id: 'study', label: 'Study Plan', icon: Target },
+    { id: 'appearance', label: 'Appearance', icon: Palette },
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
     { id: 'offline', label: 'Offline', icon: Wifi },
@@ -538,6 +543,135 @@ const Settings: React.FC = () => {
                           <div className="text-xs text-slate-600">{preset.name}</div>
                         </button>
                       ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Appearance Tab */}
+            {activeTab === 'appearance' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Appearance</h2>
+                  <p className="text-slate-600 dark:text-slate-300 mb-6">
+                    Choose how VoraPrep looks to you. Select a theme preference below.
+                  </p>
+                  
+                  <div className="space-y-3">
+                    <button
+                      onClick={() => setThemeMode('light')}
+                      className={clsx(
+                        'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
+                        themeMode === 'light'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                      )}
+                    >
+                      <div className={clsx(
+                        'w-12 h-12 rounded-full flex items-center justify-center',
+                        themeMode === 'light' ? 'bg-primary-100 dark:bg-primary-800' : 'bg-slate-100 dark:bg-slate-800'
+                      )}>
+                        <Sun className={clsx(
+                          'w-6 h-6',
+                          themeMode === 'light' ? 'text-primary-600' : 'text-slate-500 dark:text-slate-400'
+                        )} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={clsx(
+                          'font-semibold',
+                          themeMode === 'light' ? 'text-primary-700 dark:text-primary-300' : 'text-slate-900 dark:text-white'
+                        )}>Light</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Clean, bright interface for daytime studying
+                        </div>
+                      </div>
+                      {themeMode === 'light' && (
+                        <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </button>
+
+                    <button
+                      onClick={() => setThemeMode('dark')}
+                      className={clsx(
+                        'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
+                        themeMode === 'dark'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                      )}
+                    >
+                      <div className={clsx(
+                        'w-12 h-12 rounded-full flex items-center justify-center',
+                        themeMode === 'dark' ? 'bg-primary-100 dark:bg-primary-800' : 'bg-slate-100 dark:bg-slate-800'
+                      )}>
+                        <Moon className={clsx(
+                          'w-6 h-6',
+                          themeMode === 'dark' ? 'text-primary-600' : 'text-slate-500 dark:text-slate-400'
+                        )} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={clsx(
+                          'font-semibold',
+                          themeMode === 'dark' ? 'text-primary-700 dark:text-primary-300' : 'text-slate-900 dark:text-white'
+                        )}>Dark</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Easy on the eyes for night-time study sessions
+                        </div>
+                      </div>
+                      {themeMode === 'dark' && (
+                        <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </button>
+
+                    <button
+                      onClick={() => setThemeMode('system')}
+                      className={clsx(
+                        'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
+                        themeMode === 'system'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                      )}
+                    >
+                      <div className={clsx(
+                        'w-12 h-12 rounded-full flex items-center justify-center',
+                        themeMode === 'system' ? 'bg-primary-100 dark:bg-primary-800' : 'bg-slate-100 dark:bg-slate-800'
+                      )}>
+                        <Monitor className={clsx(
+                          'w-6 h-6',
+                          themeMode === 'system' ? 'text-primary-600' : 'text-slate-500 dark:text-slate-400'
+                        )} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={clsx(
+                          'font-semibold',
+                          themeMode === 'system' ? 'text-primary-700 dark:text-primary-300' : 'text-slate-900 dark:text-white'
+                        )}>System</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Automatically match your device settings
+                        </div>
+                      </div>
+                      {themeMode === 'system' && (
+                        <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="mt-6 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Current:</strong> {darkMode ? 'Dark mode active' : 'Light mode active'}
+                      {themeMode === 'system' && ' (following system preference)'}
                     </div>
                   </div>
                 </div>

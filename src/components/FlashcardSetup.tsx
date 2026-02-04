@@ -221,7 +221,7 @@ const FlashcardSetup: React.FC = () => {
                   )}>
                     {isSelected && <Check className="w-3 h-3 text-white" />}
                   </div>
-                  <Icon className={clsx('w-5 h-5', isSelected ? 'text-primary-600' : 'text-slate-400')} />
+                  <Icon className={clsx('w-5 h-5', isSelected ? 'text-primary-600' : 'text-slate-600')} />
                   <span className={clsx('flex-1 text-left font-medium', isSelected ? 'text-primary-700 dark:text-primary-400' : 'text-slate-700 dark:text-slate-300')}>
                     {cat.label}
                   </span>
@@ -285,7 +285,7 @@ const FlashcardSetup: React.FC = () => {
             </span>
             <div className="flex items-center gap-2">
               <span className="text-sm text-slate-600">{config.unit === 'all' ? 'All' : config.unit}</span>
-              <ChevronDown className={clsx('w-5 h-5 text-slate-400 transition-transform', showUnits && 'rotate-180')} />
+              <ChevronDown className={clsx('w-5 h-5 text-slate-600 transition-transform', showUnits && 'rotate-180')} />
             </div>
           </button>
           

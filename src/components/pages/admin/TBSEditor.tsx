@@ -107,7 +107,7 @@ const TBSEditor = () => {
                   <Grid3X3 className="w-6 h-6 text-orange-600" />
                   TBS Library
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-300">View Task-Based Simulations (local data)</p>
+                <p className="text-sm text-gray-600 dark:text-slate-300">View Task-Based Simulations (local data)</p>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ const TBSEditor = () => {
           {stats.map(({ section, count }) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
+              <div className="text-sm text-gray-600 dark:text-slate-300">{section}</div>
             </div>
           ))}
           <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-lg shadow-sm border border-orange-200 dark:border-orange-800">
@@ -157,7 +157,7 @@ const TBSEditor = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
                 <input
                   type="text"
                   placeholder="Search TBS..."
@@ -226,7 +226,7 @@ const TBSEditor = () => {
                     </div>
                     <button
                       onClick={() => setViewingTBS(tbs)}
-                      className="p-2 text-slate-400 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-900/30 rounded-lg"
+                      className="p-2 text-slate-600 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-900/30 rounded-lg"
                       title="View TBS details"
                     >
                       <Eye className="w-4 h-4" />
@@ -314,7 +314,7 @@ const TBSEditor = () => {
               )}
 
               <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-xs text-slate-400">ID: {viewingTBS.id}</p>
+                <p className="text-xs text-slate-600">ID: {viewingTBS.id}</p>
               </div>
             </div>
           </div>

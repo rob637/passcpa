@@ -193,7 +193,7 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
               <>
                 <button
                   onClick={() => removeRow(index)}
-                  className="p-1 text-slate-400 hover:text-error-500"
+                  className="p-1 text-slate-600 hover:text-error-500"
                   disabled={entries.length === 1}
                 >
                   <Minus className="w-4 h-4" />
@@ -372,7 +372,7 @@ const WrittenCommunicationInput: React.FC<WrittenCommunicationInputProps> = ({
             disabled ? 'bg-slate-50' : 'focus:ring-2 focus:ring-primary-500'
           )}
         />
-        <div className="absolute bottom-3 right-3 text-xs text-slate-400">{wordCount} words</div>
+        <div className="absolute bottom-3 right-3 text-xs text-slate-600">{wordCount} words</div>
       </div>
     </div>
   );
@@ -971,7 +971,7 @@ const TBSSimulator: React.FC = () => {
           </button>
           <div>
             <div className="font-bold">{tbs.title}</div>
-            <div className="text-xs text-slate-400 flex items-center gap-2">
+            <div className="text-xs text-slate-600 flex items-center gap-2">
               <span className="bg-primary-600 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
                 {totalTasks} {totalTasks === 1 ? 'Task' : 'Tasks'}
               </span>
@@ -1097,7 +1097,7 @@ const TBSSimulator: React.FC = () => {
                           )}
                         </span>
                         Task {index + 1}
-                        <span className="text-xs text-slate-400">
+                        <span className="text-xs text-slate-600">
                           ({TBS_LABELS[task.type] || task.type})
                         </span>
                       </button>
@@ -1204,7 +1204,7 @@ const TBSSimulator: React.FC = () => {
                           className={clsx(
                             "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === 0
-                              ? "text-slate-400 cursor-not-allowed"
+                              ? "text-slate-600 cursor-not-allowed"
                               : "text-slate-600 hover:bg-slate-200"
                           )}
                         >
@@ -1220,7 +1220,7 @@ const TBSSimulator: React.FC = () => {
                           className={clsx(
                             "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === totalTasks - 1
-                              ? "text-slate-400 cursor-not-allowed"
+                              ? "text-slate-600 cursor-not-allowed"
                               : "text-slate-600 hover:bg-slate-200"
                           )}
                         >
@@ -1312,7 +1312,7 @@ const TBSSimulator: React.FC = () => {
                 <span className="text-xs text-slate-300 font-bold uppercase">Calculator</span>
                 <button
                   onClick={() => setShowCalculator(false)}
-                  className="text-slate-400 hover:text-white"
+                  className="text-slate-600 hover:text-white"
                 >
                   <XCircle className="w-4 h-4" />
                 </button>

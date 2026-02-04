@@ -137,7 +137,7 @@ const RubricDisplay: React.FC<RubricDisplayProps> = ({ scores }) => {
             <ul className="text-sm text-slate-600 space-y-1">
               {rubric.criteria.map((criterion: string, idx: number) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-slate-400">•</span>
+                  <span className="text-slate-600">•</span>
                   {criterion}
                 </li>
               ))}
@@ -168,7 +168,7 @@ const SampleResponseViewer: React.FC<SampleResponseViewerProps> = ({ sampleRespo
           <span className="font-medium text-slate-900">View Sample Response</span>
         </div>
         <ChevronRight
-          className={clsx('w-5 h-5 text-slate-400 transition-transform', isVisible && 'rotate-90')}
+          className={clsx('w-5 h-5 text-slate-600 transition-transform', isVisible && 'rotate-90')}
         />
       </button>
       {isVisible && (
@@ -262,7 +262,7 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
                     </span>
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                <ChevronRight className="w-5 h-5 text-slate-600 flex-shrink-0" />
               </div>
             </button>
           ))}

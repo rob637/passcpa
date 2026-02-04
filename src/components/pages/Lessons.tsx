@@ -333,7 +333,7 @@ const Lessons: React.FC = () => {
         {/* Search & Filter */}
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
             <input
               type="text"
               placeholder="Search lessons..."
@@ -474,7 +474,7 @@ const Lessons: React.FC = () => {
                           )}
                         >
                           {isLocked ? (
-                            <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-400" />
+                            <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
                           ) : lesson.completed ? (
                             <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
                           ) : (
@@ -524,7 +524,7 @@ const Lessons: React.FC = () => {
                         <ChevronRight
                           className={clsx(
                             'w-5 h-5 flex-shrink-0',
-                            lesson.completed ? 'text-slate-300 dark:text-slate-600' : 'text-slate-400'
+                            lesson.completed ? 'text-slate-300 dark:text-slate-600' : 'text-slate-600'
                           )}
                         />
                       )}

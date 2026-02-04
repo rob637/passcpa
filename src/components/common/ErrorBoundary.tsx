@@ -92,26 +92,26 @@ Steps to reproduce:
       // Full page error (for route-level boundaries)
       if (variant === 'page') {
         return (
-          <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+          <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
             <div className="max-w-md w-full">
-              <div className="bg-white rounded-2xl shadow-soft p-8 text-center">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-soft p-8 text-center">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <AlertTriangle className="w-8 h-8 text-error-600" />
+                <div className="w-16 h-16 bg-error-100 dark:bg-error-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <AlertTriangle className="w-8 h-8 text-error-600 dark:text-error-400" />
                 </div>
 
                 {/* Title */}
-                <h1 className="text-2xl font-bold text-slate-900 mb-2">Something went wrong</h1>
+                <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Something went wrong</h1>
 
                 {/* Description */}
-                <p className="text-slate-600 mb-6">
+                <p className="text-slate-600 dark:text-slate-300 mb-6">
                   We're sorry, but something unexpected happened. Our team has been notified.
                 </p>
 
                 {/* Error details (dev only) */}
                 {process.env.NODE_ENV === 'development' && this.state.error && (
-                  <div className="mb-6 p-4 bg-slate-100 rounded-xl text-left overflow-auto max-h-40">
-                    <p className="text-sm font-mono text-error-600 break-words">
+                  <div className="mb-6 p-4 bg-slate-100 dark:bg-slate-900 rounded-xl text-left overflow-auto max-h-40">
+                    <p className="text-sm font-mono text-error-600 dark:text-error-400 break-words">
                       {this.state.error.toString()}
                     </p>
                   </div>
@@ -137,7 +137,7 @@ Steps to reproduce:
 
                   <button
                     onClick={this.handleReportBug}
-                    className="w-full text-sm text-slate-600 hover:text-slate-700 flex items-center justify-center gap-2 py-2"
+                    className="w-full text-sm text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-200 flex items-center justify-center gap-2 py-2"
                   >
                     <Bug className="w-4 h-4" />
                     Report this issue
@@ -151,17 +151,17 @@ Steps to reproduce:
 
       // Inline error (for component-level boundaries)
       return (
-        <div className="p-4 bg-error-50 border border-error-200 rounded-xl">
+        <div className="p-4 bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800 rounded-xl">
           <div className="flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-error-600 flex-shrink-0 mt-0.5" />
+            <AlertTriangle className="w-5 h-5 text-error-600 dark:text-error-400 flex-shrink-0 mt-0.5" />
             <div className="flex-1 min-w-0">
-              <p className="font-medium text-error-800">This section couldn't load</p>
-              <p className="text-sm text-error-600 mt-1">
+              <p className="font-medium text-error-800 dark:text-error-300">This section couldn't load</p>
+              <p className="text-sm text-error-600 dark:text-error-400 mt-1">
                 {this.props.fallbackMessage || 'Please try refreshing the page.'}
               </p>
               <button
                 onClick={this.handleReload}
-                className="mt-3 text-sm font-medium text-error-700 hover:text-error-800 flex items-center gap-1"
+                className="mt-3 text-sm font-medium text-error-700 dark:text-error-400 hover:text-error-800 dark:hover:text-error-300 flex items-center gap-1"
               >
                 <RefreshCw className="w-3 h-3" />
                 Refresh

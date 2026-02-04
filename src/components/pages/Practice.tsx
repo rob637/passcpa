@@ -219,7 +219,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
               onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
               className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
             />
-            <div className="flex justify-between text-xs text-slate-600 dark:text-slate-400 mt-1">
+            <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
               <span>5</span>
               <span className="font-medium text-primary-600">{config.count} questions</span>
               <span>100</span>
@@ -336,7 +336,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                     )}
                   >
                     <div className="font-medium text-slate-900 dark:text-slate-100">Practice</div>
-                    <div className="text-xs text-slate-600 dark:text-slate-400">Immediate feedback after each question</div>
+                    <div className="text-xs text-slate-500 dark:text-slate-400">Immediate feedback after each question</div>
                   </button>
                   <button
                     onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'exam' }))}
@@ -348,7 +348,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                     )}
                   >
                     <div className="font-medium text-slate-900 dark:text-slate-100">Exam</div>
-                    <div className="text-xs text-slate-600 dark:text-slate-400">Score revealed at end only</div>
+                    <div className="text-xs text-slate-500 dark:text-slate-400">Score revealed at end only</div>
                   </button>
                 </div>
               </div>
@@ -412,7 +412,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                           {session.questionCount} questions
                         </span>
                       </div>
-                      <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                      <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                         {formatDistanceToNow(session.completedAt, { addSuffix: true })}
                       </div>
                     </div>
@@ -1625,7 +1625,7 @@ const Practice: React.FC = () => {
               </button>
             ))}
             {questions.length > 10 && (
-              <span className="text-sm text-slate-600 dark:text-slate-600">
+              <span className="text-sm text-slate-500 dark:text-slate-400">
                 +{questions.length - 10}
               </span>
             )}

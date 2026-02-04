@@ -214,7 +214,7 @@ const MainLayout = () => {
           
           {/* Exam Strategy Section - Always Visible */}
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-600">
+            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Exam Strategy
             </span>
             <NavLink
@@ -322,7 +322,7 @@ const MainLayout = () => {
               className={({ isActive }) =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-600'
+                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'
                 )
               }
             >
@@ -337,7 +337,7 @@ const MainLayout = () => {
             aria-label="Exam Strategy"
             className={clsx(
               'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-600'
+              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'
             )}
           >
             <Compass className="w-5 h-5" aria-hidden="true" />

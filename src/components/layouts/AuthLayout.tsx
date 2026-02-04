@@ -46,7 +46,7 @@ const AuthLayout = () => {
           <Outlet />
           
           {/* Footer */}
-          <p className="text-center text-slate-600 dark:text-slate-600 text-sm mt-8">
+          <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-8">
             © {new Date().getFullYear()} VoraPrep. All rights reserved.
           </p>
         </div>

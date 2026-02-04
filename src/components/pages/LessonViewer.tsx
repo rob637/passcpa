@@ -480,7 +480,7 @@ const LessonViewer: React.FC = () => {
     return (
       <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="text-center">
-          <AlertCircle className="w-16 h-16 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <AlertCircle className="w-16 h-16 text-slate-300 dark:text-slate-500 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
             Lesson Not Found
           </h2>
@@ -651,7 +651,7 @@ const LessonViewer: React.FC = () => {
             <span>{lesson.section}</span>
             {lesson.difficulty && (
               <>
-                <span className="text-slate-300 dark:text-slate-600">•</span>
+                <span className="text-slate-300 dark:text-slate-500">•</span>
                 <span className={clsx(
                   'px-2 py-0.5 rounded text-xs font-medium',
                   lesson.difficulty === 'beginner' && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',

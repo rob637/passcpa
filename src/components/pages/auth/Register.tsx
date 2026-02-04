@@ -237,9 +237,9 @@ const Register = () => {
                 ] as const).map(({ key, label }) => (
                   <div key={key} className="flex items-center gap-1.5">
                     <Check
-                      className={`w-3.5 h-3.5 ${passwordChecks[key] ? 'text-green-500' : 'text-slate-300 dark:text-slate-600'}`}
+                      className={`w-3.5 h-3.5 ${passwordChecks[key] ? 'text-green-500' : 'text-slate-300 dark:text-slate-500'}`}
                     />
-                    <span className={passwordChecks[key] ? 'text-green-600 dark:text-green-400' : 'text-slate-600 dark:text-slate-600'}>
+                    <span className={passwordChecks[key] ? 'text-green-600 dark:text-green-400' : 'text-slate-500 dark:text-slate-400'}>
                       {label}
                     </span>
                   </div>

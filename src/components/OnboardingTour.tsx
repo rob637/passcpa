@@ -385,7 +385,7 @@ const TourOverlay: React.FC = () => {
         <div className={`flex items-center justify-between p-4 border-b ${darkMode ? 'border-slate-700' : 'border-slate-200'}`}>
           <div className="flex items-center gap-2">
             {currentStepData.icon || <Lightbulb className="w-5 h-5 text-yellow-500" />}
-            <span className={`text-sm font-medium ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+            <span className={`text-sm font-medium ${darkMode ? 'text-slate-600' : 'text-slate-600'}`}>
               Step {currentStep + 1} of {totalSteps}
             </span>
           </div>
@@ -442,7 +442,7 @@ const TourOverlay: React.FC = () => {
         <div className={`flex items-center justify-between p-4 border-t ${darkMode ? 'border-slate-700' : 'border-slate-200'}`}>
           <button
             onClick={() => endTour(false)}
-            className={`text-sm transition-colors ${darkMode ? 'text-slate-400 hover:text-slate-200' : 'text-slate-600 hover:text-slate-700'}`}
+            className={`text-sm transition-colors ${darkMode ? 'text-slate-600 hover:text-slate-200' : 'text-slate-600 hover:text-slate-700'}`}
           >
             Skip tour
           </button>
@@ -566,7 +566,7 @@ export const FirstTimePrompt: React.FC = () => {
               ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-slate-100'}`}
             aria-label="Dismiss"
           >
-            <X className="w-4 h-4 text-slate-400" />
+            <X className="w-4 h-4 text-slate-600" />
           </button>
         </div>
       </div>

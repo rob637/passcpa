@@ -661,7 +661,7 @@ const Landing = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email to get started"
                 required
-                className="flex-1 px-6 py-4 rounded-2xl text-slate-900 font-medium focus:outline-none focus:ring-4 focus:ring-white/30 placeholder:text-slate-400"
+                className="flex-1 px-6 py-4 rounded-2xl text-slate-900 font-medium focus:outline-none focus:ring-4 focus:ring-white/30 placeholder:text-slate-600"
               />
               <button
                 type="submit"
@@ -705,7 +705,7 @@ const Landing = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 px-6 bg-slate-950 text-slate-400" role="contentinfo">
+      <footer className="py-16 px-6 bg-slate-950 text-slate-600" role="contentinfo">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
@@ -715,7 +715,7 @@ const Landing = () => {
                 </div>
                 <span className="text-2xl font-bold text-white">VoraPrep</span>
               </div>
-              <p className="text-slate-400 max-w-md mb-6">
+              <p className="text-slate-600 max-w-md mb-6">
                 The AI-powered CPA exam prep platform that's 97% cheaper than traditional review courses.
                 Pass your exam without breaking the bank.
               </p>

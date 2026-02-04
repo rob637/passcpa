@@ -308,7 +308,7 @@ const LessonMatrix: React.FC = () => {
       <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
           <div className="relative lg:col-span-2">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
             <input
               type="text"
               placeholder="Search by title or topic..."
@@ -446,7 +446,7 @@ const LessonMatrix: React.FC = () => {
                             </span>
                           ))}
                           {lesson.topics.length > 3 && (
-                            <span className="text-slate-400 px-1 text-[10px]">+ {lesson.topics.length - 3} more</span>
+                            <span className="text-slate-600 px-1 text-[10px]">+ {lesson.topics.length - 3} more</span>
                           )}
                           {isObbba && <ObbbaIndicator note={transitionNote} />}
                         </div>
@@ -462,7 +462,7 @@ const LessonMatrix: React.FC = () => {
                             return (
                               <div>
                                 <div className="text-sm text-slate-700 dark:text-slate-300">{areaInfo.areaName}</div>
-                                <div className="text-[10px] text-slate-400 flex items-center gap-2 mt-0.5">
+                                <div className="text-[10px] text-slate-600 flex items-center gap-2 mt-0.5">
                                   <span>{areaInfo.weight}</span>
                                   {skillLevel && (
                                     <span className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 rounded">
@@ -473,7 +473,7 @@ const LessonMatrix: React.FC = () => {
                               </div>
                             );
                           }
-                          return <span className="text-slate-400 text-sm">—</span>;
+                          return <span className="text-slate-600 text-sm">—</span>;
                         })()}
                       </td>
                       <td className="p-4 hidden md:table-cell whitespace-nowrap">

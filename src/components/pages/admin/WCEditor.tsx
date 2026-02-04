@@ -105,10 +105,10 @@ const WCEditor = () => {
                   <FileText className="w-6 h-6 text-primary-600" />
                   Written Communication Tasks
                 </h1>
-                <p className="text-sm text-gray-500">View WC prompts and scenarios (local data)</p>
+                <p className="text-sm text-gray-600">View WC prompts and scenarios (local data)</p>
               </div>
             </div>
-            <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+            <div className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
               📦 Local TypeScript Files
             </div>
           </div>
@@ -129,7 +129,7 @@ const WCEditor = () => {
           {stats.map(({ section, count }) => (
             <div key={section} className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
               <div className="text-2xl font-bold text-gray-900">{count}</div>
-              <div className="text-sm text-gray-500">{section}</div>
+              <div className="text-sm text-gray-600">{section}</div>
             </div>
           ))}
           <div className="bg-primary-50 p-4 rounded-lg shadow-sm border border-primary-200">
@@ -224,7 +224,7 @@ const WCEditor = () => {
         {/* Search and Filter */}
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600" />
             <input
               type="text"
               value={searchQuery}
@@ -267,7 +267,7 @@ const WCEditor = () => {
                   <tr key={task.id} className="hover:bg-gray-50">
                     <td className="px-4 py-3">
                       <div className="font-medium text-gray-900">{task.topic}</div>
-                      <div className="text-sm text-gray-500 truncate max-w-md">
+                      <div className="text-sm text-gray-600 truncate max-w-md">
                         {task.scenario?.substring(0, 100)}...
                       </div>
                     </td>
@@ -307,7 +307,7 @@ const WCEditor = () => {
                 ))}
                 {filteredTasks.length === 0 && (
                   <tr>
-                    <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
+                    <td colSpan={5} className="px-4 py-8 text-center text-gray-600">
                       No WC tasks found
                     </td>
                   </tr>

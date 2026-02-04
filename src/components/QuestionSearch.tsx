@@ -206,7 +206,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
           
           {/* Search Input */}
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
             <input
               type="text"
               value={query}
@@ -218,7 +218,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
             {query && (
               <button
                 onClick={() => setQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-600"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -242,7 +242,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
             
             {/* Topic Filter */}
             <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-slate-400" />
+              <Filter className="w-4 h-4 text-slate-600" />
               <select
                 value={filterTopic}
                 onChange={(e) => setFilterTopic(e.target.value)}
@@ -370,7 +370,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
                     Search by topic name (e.g., "depreciation")
                   </li>
                   <li className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-slate-400" />
+                    <FileText className="w-4 h-4 text-slate-600" />
                     Search by keyword in question text
                   </li>
                 </ul>

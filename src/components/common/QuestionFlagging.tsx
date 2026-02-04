@@ -184,7 +184,7 @@ export const QuestionFlagging: React.FC<QuestionFlaggingProps> = ({
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+          className="p-2 text-slate-600 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
           aria-label="Flag question"
           aria-expanded={isOpen}
         >
@@ -374,7 +374,7 @@ export const QuickFlagButton: React.FC<{
         'p-2 rounded-lg transition-all',
         flagged
           ? 'text-amber-600 bg-amber-50 hover:bg-amber-100 dark:bg-amber-900/30 dark:hover:bg-amber-900/50'
-          : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700'
+          : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700'
       )}
       aria-pressed={flagged}
       aria-label={flagged ? 'Remove flag' : 'Flag for review'}

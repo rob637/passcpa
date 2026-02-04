@@ -356,10 +356,13 @@ const AdminCMS: React.FC = () => {
     
     try {
       const userId = userDoc.id;
+      console.log('Starting to fetch activity for userId:', userId);
       
       // Load question history (all - no orderBy to avoid index requirements)
       const questionHistoryRef = collection(db, 'users', userId, 'question_history');
+      console.log('Fetching question_history...');
       const questionHistorySnap = await getDocs(questionHistoryRef);
+      console.log('Got question_history:', questionHistorySnap.docs.length, 'docs');
       const questionHistory = questionHistorySnap.docs.map(doc => ({
         questionId: doc.id,
         ...doc.data()
@@ -375,6 +378,7 @@ const AdminCMS: React.FC = () => {
       // Load daily logs (all - sort in memory)
       const dailyLogRef = collection(db, 'users', userId, 'daily_log');
       const dailyLogSnap = await getDocs(dailyLogRef);
+      console.log('Got daily_log:', dailyLogSnap.docs.length, 'docs');
       const dailyLogs = dailyLogSnap.docs.map(doc => ({
         date: doc.id,
         ...doc.data()
@@ -385,6 +389,7 @@ const AdminCMS: React.FC = () => {
       // Load practice sessions (all - sort in memory)
       const sessionsRef = collection(db, 'users', userId, 'practice_sessions');
       const sessionsSnap = await getDocs(sessionsRef);
+      console.log('Got practice_sessions:', sessionsSnap.docs.length, 'docs');
       const practiceSessions = sessionsSnap.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
@@ -395,6 +400,7 @@ const AdminCMS: React.FC = () => {
       // Load recent AI conversations (all - sort in memory)
       const conversationsRef = collection(db, 'users', userId, 'conversations');
       const conversationsSnap = await getDocs(conversationsRef);
+      console.log('Got conversations:', conversationsSnap.docs.length, 'docs');
       const recentConversations = conversationsSnap.docs.map(doc => {
         const data = doc.data();
         return {
@@ -455,16 +461,23 @@ const AdminCMS: React.FC = () => {
       
       addLog(`Loaded activity for ${userDoc.email || userId}`, 'success');
     } catch (error) {
+      console.error('Error loading user activity:', error);
       logger.error('Error loading user activity', error);
       addLog('Error loading activity: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      // Still set loading to false so modal shows error state
     } finally {
+      console.log('loadUserActivity finished, isLoadingActivity set to false');
       setIsLoadingActivity(false);
     }
   }, [isAdmin]);
 
   // Toggle admin status for a user
   const toggleAdminStatus = async (userId: string, currentIsAdmin: boolean) => {
-    if (!isAdmin) return;
+    console.log('toggleAdminStatus called:', { userId, currentIsAdmin, isAdmin });
+    if (!isAdmin) {
+      console.log('Not admin, aborting');
+      return;
+    }
     const confirmMsg = currentIsAdmin 
       ? 'Remove admin privileges from this user?' 
       : 'Grant admin privileges to this user?';
@@ -472,10 +485,13 @@ const AdminCMS: React.FC = () => {
     
     try {
       const userRef = doc(db, 'users', userId);
+      console.log('Updating user doc with isAdmin:', !currentIsAdmin);
       await updateDoc(userRef, { isAdmin: !currentIsAdmin });
+      console.log('Update successful');
       addLog(`Admin status ${currentIsAdmin ? 'removed from' : 'granted to'} user ${userId}`, 'success');
       loadUsers();
     } catch (error) {
+      console.error('toggleAdminStatus error:', error);
       logger.error('Error toggling admin status', error);
       addLog('Failed to toggle admin: ' + (error instanceof Error ? error.message : String(error)), 'error');
     }
@@ -656,9 +672,9 @@ const AdminCMS: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Admin CMS</h1>
-              <p className="text-sm text-gray-500">Content Management System</p>
+              <p className="text-sm text-gray-600">Content Management System</p>
             </div>
-            <div className="text-sm text-gray-500">Logged in as: {user.email}</div>
+            <div className="text-sm text-gray-600">Logged in as: {user.email}</div>
           </div>
         </div>
       </header>
@@ -673,7 +689,7 @@ const AdminCMS: React.FC = () => {
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
                   ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
+                  : 'text-gray-600 hover:text-gray-700'
               }`}
             >
               <span className="hidden sm:inline">
@@ -753,7 +769,7 @@ const AdminCMS: React.FC = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-600">
                       {localStats.byDifficulty.easy} easy / {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
                     </div>
                   </div>
@@ -805,7 +821,7 @@ const AdminCMS: React.FC = () => {
                       ))}
                     </div>
                     {tbsStats.byType && (
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-gray-600">
                         {Object.entries(tbsStats.byType).slice(0, 4).map(([type, count]) => 
                           `${type.replace('_', ' ')}: ${count}`
                         ).join(' • ')}
@@ -854,29 +870,29 @@ const AdminCMS: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
-                <div className="text-sm text-gray-500">Total Users</div>
+                <div className="text-sm text-gray-600">Total Users</div>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <div className="text-2xl font-bold text-primary-600">{usersList.filter(u => u.isAdmin).length}</div>
-                <div className="text-sm text-gray-500">Admins</div>
+                <div className="text-sm text-gray-600">Admins</div>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <div className="text-2xl font-bold text-green-600">
                   {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
                 </div>
-                <div className="text-sm text-gray-500">Premium</div>
+                <div className="text-sm text-gray-600">Premium</div>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <div className="text-2xl font-bold text-amber-600">
                   {usersList.filter(u => u.subscription?.status === 'trialing').length}
                 </div>
-                <div className="text-sm text-gray-500">Trial</div>
+                <div className="text-sm text-gray-600">Trial</div>
               </div>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <div className="text-2xl font-bold text-gray-600">
                   {usersList.filter(u => !u.subscription?.tier || u.subscription.tier === 'free').length}
                 </div>
-                <div className="text-sm text-gray-500">Free</div>
+                <div className="text-sm text-gray-600">Free</div>
               </div>
             </div>
 
@@ -907,7 +923,7 @@ const AdminCMS: React.FC = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <p className="font-semibold text-gray-900">{lookupResult.email || 'No email'}</p>
-                      <p className="text-sm text-gray-500 font-mono">{lookupResult.id}</p>
+                      <p className="text-sm text-gray-600 font-mono">{lookupResult.id}</p>
                       <p className="text-sm text-gray-600 mt-1">
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
@@ -964,7 +980,7 @@ const AdminCMS: React.FC = () => {
                     <option value="free">Free Only</option>
                     <option value="trial">Trial Only</option>
                   </select>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-600">
                     Showing {filteredUsers.length} of {usersList.length}
                   </span>
                   <button
@@ -979,7 +995,7 @@ const AdminCMS: React.FC = () => {
               {isLoadingUsers ? (
                  <div className="text-center py-8">
                   <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                  <p className="text-gray-500">Loading users...</p>
+                  <p className="text-gray-600">Loading users...</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
@@ -997,7 +1013,7 @@ const AdminCMS: React.FC = () => {
                     <tbody className="divide-y divide-gray-100">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="p-4 text-center text-gray-500">
+                          <td colSpan={6} className="p-4 text-center text-gray-600">
                             {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
@@ -1006,7 +1022,7 @@ const AdminCMS: React.FC = () => {
                           <tr key={u.id} className="hover:bg-gray-50">
                             <td className="p-3">
                               <div className="font-medium text-sm">{u.email || '—'}</div>
-                              <div className="text-xs text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
+                              <div className="text-xs text-gray-600 font-mono">{u.id.slice(0, 12)}...</div>
                             </td>
                             <td className="p-3">
                               <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
@@ -1075,7 +1091,7 @@ const AdminCMS: React.FC = () => {
                     </tbody>
                   </table>
                   {filteredUsers.length > 100 && (
-                    <p className="text-center text-sm text-gray-500 mt-4">
+                    <p className="text-center text-sm text-gray-600 mt-4">
                       Showing first 100 of {filteredUsers.length} users. Use search to find specific users.
                     </p>
                   )}
@@ -1102,7 +1118,7 @@ const AdminCMS: React.FC = () => {
             {isLoadingAnalytics ? (
               <div className="text-center py-12">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-500">Calculating analytics...</p>
+                <p className="text-gray-600">Calculating analytics...</p>
               </div>
             ) : analytics ? (
               <>
@@ -1153,7 +1169,7 @@ const AdminCMS: React.FC = () => {
                           );
                         })}
                       {Object.entries(analytics.bySection).filter(([, count]) => count > 0).length === 0 && (
-                        <p className="text-gray-500 text-sm">No section data available</p>
+                        <p className="text-gray-600 text-sm">No section data available</p>
                       )}
                     </div>
                   </div>
@@ -1207,19 +1223,19 @@ const AdminCMS: React.FC = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center p-4 bg-gray-50 rounded-lg">
                       <div className="text-2xl font-bold text-blue-600">{analytics.activeToday}</div>
-                      <div className="text-xs text-gray-500">Active Today</div>
+                      <div className="text-xs text-gray-600">Active Today</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded-lg">
                       <div className="text-2xl font-bold text-green-600">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-500">WAU Rate</div>
+                      <div className="text-xs text-gray-600">WAU Rate</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded-lg">
                       <div className="text-2xl font-bold text-primary-600">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisMonth / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-500">MAU Rate</div>
+                      <div className="text-xs text-gray-600">MAU Rate</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded-lg">
                       <div className="text-2xl font-bold text-amber-600">
@@ -1233,13 +1249,13 @@ const AdminCMS: React.FC = () => {
                               (analytics.bySubscription.monthly || 0)) / analytics.totalUsers * 100).toFixed(1)
                           : 0}%
                       </div>
-                      <div className="text-xs text-gray-500">Conversion Rate</div>
+                      <div className="text-xs text-gray-600">Conversion Rate</div>
                     </div>
                   </div>
                 </div>
               </>
             ) : (
-              <div className="text-center py-12 text-gray-500">
+              <div className="text-center py-12 text-gray-600">
                 Click Refresh to load analytics data
               </div>
             )}
@@ -1254,7 +1270,7 @@ const AdminCMS: React.FC = () => {
                 🎛️ Feature Flags
                 <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-gray-600 mb-4">
                 These feature flags control app functionality. To change them, update <code className="bg-gray-100 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1267,7 +1283,7 @@ const AdminCMS: React.FC = () => {
                   >
                     <div>
                       <span className="font-medium text-gray-900">{flag}</span>
-                      <p className="text-xs text-gray-500 mt-0.5">
+                      <p className="text-xs text-gray-600 mt-0.5">
                         {flag === 'aiTutor' && 'Vory AI assistant'}
                         {flag === 'examSimulator' && 'Full exam simulation'}
                         {flag === 'flashcards' && 'Flashcard study mode'}
@@ -1310,7 +1326,7 @@ const AdminCMS: React.FC = () => {
                       {maintenanceMode ? 'Disable' : 'Enable'}
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-600">
                     When enabled, shows maintenance message to non-admin users.
                   </p>
                 </div>
@@ -1345,7 +1361,7 @@ const AdminCMS: React.FC = () => {
                       Clear Cache
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-600">
                     Clears local storage cache for study state and progress.
                   </p>
                 </div>
@@ -1365,7 +1381,7 @@ const AdminCMS: React.FC = () => {
                       Hard Reload
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-600">
                     Forces a complete page reload bypassing cache.
                   </p>
                 </div>
@@ -1400,7 +1416,7 @@ const AdminCMS: React.FC = () => {
                       Export CSV
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-600">
                     Download user list as CSV file.
                   </p>
                 </div>
@@ -1455,12 +1471,12 @@ const AdminCMS: React.FC = () => {
             {isLoadingErrors ? (
                <div className="text-center py-8">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-500">Loading logs...</p>
+                <p className="text-gray-600">Loading logs...</p>
               </div>
             ) : (
               <div className="space-y-4">
                  {systemErrors.length === 0 ? (
-                    <p className="text-gray-500 text-center py-8">No errors logged in the system.</p>
+                    <p className="text-gray-600 text-center py-8">No errors logged in the system.</p>
                  ) : (
                    systemErrors.map((err) => (
                      <div key={err.id} className="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
@@ -1546,7 +1562,7 @@ const AdminCMS: React.FC = () => {
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Admin Access</h4>
                 <p className="text-sm text-gray-600 mb-2">Authorized admin emails:</p>
-                <ul className="text-sm text-gray-500 list-disc list-inside">
+                <ul className="text-sm text-gray-600 list-disc list-inside">
                   {ADMIN_EMAILS.map((email) => (
                     <li key={email}>{email}</li>
                   ))}
@@ -1555,7 +1571,7 @@ const AdminCMS: React.FC = () => {
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Firebase Project</h4>
                 <p className="text-sm text-gray-600">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
-                <p className="text-sm text-gray-500">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
+                <p className="text-sm text-gray-600">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
               </div>
               
               {/* Reset Account Section */}
@@ -1779,17 +1795,17 @@ const AdminCMS: React.FC = () => {
                             {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
                               <tr key={i} className="border-t border-gray-200">
                                 <td className="p-2">{log.date}</td>
-                                <td className="p-2 text-center">{log.questionsAnswered || 0}</td>
-                                <td className="p-2 text-center text-green-600">{log.correctAnswers || 0}</td>
+                                <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
+                                <td className="p-2 text-center text-green-600">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
-                                <td className="p-2 text-center">{log.studyMinutes || 0}</td>
+                                <td className="p-2 text-center">{log.studyTimeMinutes || log.studyMinutes || 0}</td>
                               </tr>
                             ))}
                           </tbody>
                         </table>
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No daily activity recorded.</p>
+                      <p className="text-gray-600 text-sm">No daily activity recorded.</p>
                     )}
                   </div>
 
@@ -1802,7 +1818,7 @@ const AdminCMS: React.FC = () => {
                           <div key={session.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
                             <div>
                               <span className="font-medium">{session.section || 'Practice'}</span>
-                              <span className="text-gray-500 text-sm ml-2">
+                              <span className="text-gray-600 text-sm ml-2">
                                 {session.startedAt?.seconds 
                                   ? new Date(session.startedAt.seconds * 1000).toLocaleDateString()
                                   : 'Unknown date'}
@@ -1818,7 +1834,7 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No practice sessions recorded.</p>
+                      <p className="text-gray-600 text-sm">No practice sessions recorded.</p>
                     )}
                   </div>
 
@@ -1830,7 +1846,7 @@ const AdminCMS: React.FC = () => {
                         {userActivity.recentConversations.map((conv) => (
                           <div key={conv.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
                             <span className="font-medium">{conv.title}</span>
-                            <div className="text-sm text-gray-500">
+                            <div className="text-sm text-gray-600">
                               {conv.messageCount} messages • 
                               {conv.updatedAt?.seconds 
                                 ? new Date(conv.updatedAt.seconds * 1000).toLocaleDateString()
@@ -1840,7 +1856,7 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No AI conversations.</p>
+                      <p className="text-gray-600 text-sm">No AI conversations.</p>
                     )}
                   </div>
 
@@ -1863,17 +1879,17 @@ const AdminCMS: React.FC = () => {
                             );
                           })}
                         </div>
-                        <p className="text-xs text-gray-500 mt-2">
+                        <p className="text-xs text-gray-600 mt-2">
                           Showing last {Math.min(50, userActivity.questionHistory.length)} of {userActivity.questionHistory.length} questions
                         </p>
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No question history.</p>
+                      <p className="text-gray-600 text-sm">No question history.</p>
                     )}
                   </div>
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
+                <p className="text-gray-600 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
               )}
             </div>
 

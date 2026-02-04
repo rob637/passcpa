@@ -540,7 +540,7 @@ const LessonViewer: React.FC = () => {
                     alert('Link copied to clipboard!');
                   }
                 }}
-                className="p-2 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800"
                 aria-label="Share lesson"
                 type="button"
               >
@@ -621,7 +621,7 @@ const LessonViewer: React.FC = () => {
                   'p-2 rounded-lg transition-colors',
                   isPlaying
                     ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
-                    : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800'
                 )}
                 aria-label={isPlaying ? 'Stop reading' : 'Read aloud'}
                 title={isPlaying ? 'Stop reading' : 'Read lesson aloud'}
@@ -845,7 +845,7 @@ const LessonViewer: React.FC = () => {
                 >
                   <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                   <div className="text-left">
-                    <div className="text-xs text-slate-400 dark:text-slate-600">Previous</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-600">Previous</div>
                     <div className="font-medium truncate max-w-[200px]">{prevLesson.title}</div>
                   </div>
                 </Link>
@@ -880,7 +880,7 @@ const LessonViewer: React.FC = () => {
                   className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 text-right transition-colors group"
                 >
                   <div>
-                    <div className="text-xs text-slate-400 dark:text-slate-600">Next</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-600">Next</div>
                     <div className="font-medium truncate max-w-[200px]">{nextLesson.title}</div>
                   </div>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

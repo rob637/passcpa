@@ -190,7 +190,7 @@ export const BookmarkButton = ({ itemId, itemType, itemData = {}, size = 'md' }:
         size === 'md' && 'p-2',
         bookmarked
           ? 'text-primary-600 bg-primary-50 hover:bg-primary-100'
-          : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
+          : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100'
       )}
       title={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
     >
@@ -241,7 +241,7 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
             <h3 className="font-semibold text-slate-900">Notes</h3>
           </div>
           <button onClick={onClose} className="p-1.5 hover:bg-slate-100 rounded-lg">
-            <X className="w-5 h-5 text-slate-400" />
+            <X className="w-5 h-5 text-slate-600" />
           </button>
         </div>
 
@@ -300,7 +300,7 @@ export const NotesButton = ({ itemId, itemData = {}, size = 'md' }: NotesButtonP
           size === 'md' && 'p-2',
           hasNote
             ? 'text-warning-600 bg-warning-50 hover:bg-warning-100'
-            : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'
+            : 'text-slate-600 hover:text-slate-600 hover:bg-slate-100'
         )}
         title={hasNote ? 'Edit note' : 'Add note'}
       >

@@ -51,7 +51,7 @@ export const ExamDateSelector: React.FC<ExamDateSelectorProps> = ({ onDateSelect
         📅 When Are You Testing?
       </h2>
       
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+      <p className="text-sm text-gray-600 dark:text-gray-600 mb-4">
         Your exam date determines which Blueprint applies. This affects the tax law you need to study.
       </p>
 
@@ -103,7 +103,7 @@ export const ExamDateSelector: React.FC<ExamDateSelectorProps> = ({ onDateSelect
               Jul 1 - Dec 31: 2026 Blueprint
             </div>
           </div>
-          <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 text-xs text-gray-500">
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 text-xs text-gray-600">
             ↑ July 1 Transition
           </div>
         </div>
@@ -153,19 +153,19 @@ export const BlueprintComparison: React.FC<BlueprintComparisonProps> = ({
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 dark:text-gray-600 uppercase tracking-wider">
                 Topic
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 dark:text-gray-600 uppercase tracking-wider">
                 Section
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 dark:text-gray-600 uppercase tracking-wider">
                 Change
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 dark:text-gray-600 uppercase tracking-wider">
                 What Changed
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 dark:text-gray-600 uppercase tracking-wider">
                 Your Action
               </th>
             </tr>
@@ -324,7 +324,7 @@ export const StudyRecommendationsPanel: React.FC<StudyRecommendationsPanelProps>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             Study Recommendations
           </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-600 dark:text-gray-600">
             {recommendation.examDateRange}
           </p>
         </div>
@@ -410,7 +410,7 @@ export const LessonBlueprintBadge: React.FC<LessonBlueprintBadgeProps> = ({ less
       )}
       
       {note && (
-        <span className="text-xs text-gray-500 dark:text-gray-400">
+        <span className="text-xs text-gray-600 dark:text-gray-600">
           {note}
         </span>
       )}
@@ -440,7 +440,7 @@ export const BlueprintSelectorPage: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             🎯 CPA Exam Blueprint Selector
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600 dark:text-gray-600">
             Choose your exam date to see the right content for your testing window
           </p>
         </div>

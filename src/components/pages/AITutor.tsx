@@ -557,7 +557,7 @@ const AITutor: React.FC = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => navigate('/home')}
-                className="p-2 -ml-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+                className="p-2 -ml-2 text-slate-600 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
                 aria-label="Back to Home"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -573,7 +573,7 @@ const AITutor: React.FC = () => {
             <button
               type="button"
               onClick={clearChat}
-              className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+              className="p-2 text-slate-600 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
               title="New conversation"
               aria-label="Clear chat and start new conversation"
             >
@@ -669,7 +669,7 @@ const AITutor: React.FC = () => {
                 {message.role === 'assistant' && message.id !== 'greeting' && (
                   <button
                     onClick={() => copyToClipboard(message.content, message.id)}
-                    className="text-xs text-slate-400 hover:text-slate-600 flex items-center gap-1 mt-1.5 ml-1"
+                    className="text-xs text-slate-600 hover:text-slate-600 flex items-center gap-1 mt-1.5 ml-1"
                   >
                     {copiedId === message.id ? (
                       <>
@@ -800,14 +800,14 @@ const AITutor: React.FC = () => {
                 'btn-icon rounded-xl transition-all flex-shrink-0',
                 input.trim() && !isLoading
                   ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-soft'
-                  : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                  : 'bg-slate-100 text-slate-600 cursor-not-allowed'
               )}
               aria-label="Send message"
             >
               <Send className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
-          <p className="text-[10px] text-slate-400 mt-2 text-center">
+          <p className="text-[10px] text-slate-600 mt-2 text-center">
             AI responses are for educational purposes only. Verify important information with authoritative sources.
           </p>
         </form>

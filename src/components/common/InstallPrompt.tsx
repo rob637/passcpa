@@ -117,7 +117,7 @@ const InstallPrompt = () => {
             </div>
           </div>
 
-          <button type="button" onClick={handleDismiss} className="text-slate-400 hover:text-slate-600 p-1" aria-label="Dismiss install prompt">
+          <button type="button" onClick={handleDismiss} className="text-slate-600 hover:text-slate-600 p-1" aria-label="Dismiss install prompt">
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>

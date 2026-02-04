@@ -101,9 +101,9 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
           </div>
         </div>
         {expanded ? (
-          <ChevronUp className="w-5 h-5 text-slate-400" />
+          <ChevronUp className="w-5 h-5 text-slate-600" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-slate-400" />
+          <ChevronDown className="w-5 h-5 text-slate-600" />
         )}
       </button>
       
@@ -187,7 +187,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
                         'font-semibold',
                         unit.accuracy >= 75 ? 'text-success-600' :
                         unit.accuracy >= 50 ? 'text-warning-600' :
-                        unit.mcqAnswered === 0 ? 'text-slate-400' : 'text-error-600'
+                        unit.mcqAnswered === 0 ? 'text-slate-600' : 'text-error-600'
                       )}>
                         {unit.mcqAnswered > 0 ? `${unit.accuracy}%` : '—'}
                       </span>
@@ -775,13 +775,13 @@ const Progress: React.FC = () => {
                 <Target className="w-6 h-6 text-primary-400" />
                 Study Plan: {sectionInfo.name}
               </h2>
-              <p className="text-slate-400 text-sm mt-1">
+              <p className="text-slate-600 text-sm mt-1">
                 Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
               </p>
             </div>
             <div className="text-right hidden sm:block">
               <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
-              <div className="text-xs text-slate-400">Modules / Day</div>
+              <div className="text-xs text-slate-600">Modules / Day</div>
             </div>
           </div>
           
@@ -790,7 +790,7 @@ const Progress: React.FC = () => {
             <span>{style.icon}</span>
             <span className={`text-sm font-medium ${style.text}`}>{paceInfo.message}</span>
             {paceInfo.status !== 'on-track' && paceInfo.status !== 'ahead' && (
-              <span className="text-xs text-slate-400 ml-1">
+              <span className="text-xs text-slate-600 ml-1">
                 ({paceInfo.adjustedPace}/day needed)
               </span>
             )}
@@ -811,7 +811,7 @@ const Progress: React.FC = () => {
               {studyPlan.milestones.map((m, i) => (
                 <div 
                   key={i} 
-                  className="absolute flex flex-col items-center text-xs text-slate-400"
+                  className="absolute flex flex-col items-center text-xs text-slate-600"
                   style={{ 
                     left: `${m.position}%`,
                     transform: i === 0 ? 'translateX(0)' : i === studyPlan.milestones.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)'
@@ -949,7 +949,7 @@ const Progress: React.FC = () => {
                       </div>
                       <div className={clsx(
                         "text-xs font-medium",
-                        isToday ? "text-primary-600" : "text-slate-400"
+                        isToday ? "text-primary-600" : "text-slate-600"
                       )}>
                         {format(day.date, 'EEE')}
                       </div>

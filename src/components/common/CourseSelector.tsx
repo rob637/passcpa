@@ -151,7 +151,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
               </div>
             </div>
             <ChevronDown className={clsx(
-              'w-4 h-4 text-slate-400 transition-transform duration-200',
+              'w-4 h-4 text-slate-600 transition-transform duration-200',
               isOpen && 'rotate-180'
             )} />
           </>
@@ -224,7 +224,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                     </span>
                   )}
                   {isActive && !hasAccess && (
-                    <span className="flex items-center gap-1 text-slate-400">
+                    <span className="flex items-center gap-1 text-slate-600">
                       <Lock className="w-4 h-4" />
                     </span>
                   )}

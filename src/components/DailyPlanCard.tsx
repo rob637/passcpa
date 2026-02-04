@@ -422,7 +422,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                     </div>
                   ))}
                   {plan.activities.length > 4 && (
-                    <span className="text-xs text-slate-400">+{plan.activities.length - 4}</span>
+                    <span className="text-xs text-slate-600">+{plan.activities.length - 4}</span>
                   )}
                 </div>
               </div>
@@ -544,7 +544,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                   
                   <p className="text-sm text-slate-600 line-clamp-1">{activity.reason}</p>
                   
-                  <div className="flex items-center gap-3 text-xs text-slate-400 mt-1">
+                  <div className="flex items-center gap-3 text-xs text-slate-600 mt-1">
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       ~{activity.estimatedMinutes}m

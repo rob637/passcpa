@@ -735,6 +735,86 @@ const Practice: React.FC = () => {
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : undefined;
   const isAnswered = currentAnswer !== undefined;
 
+  // Session state persistence key
+  const SESSION_STORAGE_KEY = 'voraprep-practice-session';
+
+  // Save session state to sessionStorage (for returning after lesson/Vory)
+  const saveSessionState = useCallback(() => {
+    if (!inSession || questions.length === 0) return;
+    
+    const sessionState = {
+      questions,
+      currentIndex,
+      answers,
+      flagged: Array.from(flagged),
+      startTime,
+      elapsed,
+      sessionConfig,
+      savedAt: Date.now(),
+    };
+    
+    try {
+      sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionState));
+    } catch (e) {
+      logger.error('Error saving practice session:', e);
+    }
+  }, [inSession, questions, currentIndex, answers, flagged, startTime, elapsed, sessionConfig]);
+
+  // Restore session state from sessionStorage
+  const restoreSessionState = useCallback(() => {
+    try {
+      const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      if (!saved) return false;
+      
+      const sessionState = JSON.parse(saved);
+      
+      // Check if session is still valid (less than 30 minutes old)
+      const MAX_AGE = 30 * 60 * 1000; // 30 minutes
+      if (Date.now() - sessionState.savedAt > MAX_AGE) {
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        return false;
+      }
+      
+      // Restore the state
+      setQuestions(sessionState.questions);
+      setCurrentIndex(sessionState.currentIndex);
+      setAnswers(sessionState.answers);
+      setFlagged(new Set(sessionState.flagged));
+      setStartTime(sessionState.startTime);
+      setElapsed(sessionState.elapsed);
+      setSessionConfig(sessionState.sessionConfig);
+      setInSession(true);
+      
+      // Determine if we need to show explanation for current answer
+      const currentQ = sessionState.questions[sessionState.currentIndex];
+      if (currentQ && sessionState.answers[currentQ.id]) {
+        setSelectedAnswer(sessionState.answers[currentQ.id].selected);
+        setShowExplanation(true);
+      }
+      
+      // Clear the saved state
+      sessionStorage.removeItem(SESSION_STORAGE_KEY);
+      
+      logger.info('Practice session restored');
+      return true;
+    } catch (e) {
+      logger.error('Error restoring practice session:', e);
+      return false;
+    }
+  }, []);
+
+  // Try to restore session on mount
+  useEffect(() => {
+    if (!inSession && !loading && userProfile) {
+      const restored = restoreSessionState();
+      if (restored) {
+        scrollToTop();
+      }
+    }
+    // Only run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userProfile]);
+
   // Keyboard shortcuts
   useEffect(() => {
     if (!inSession) return;
@@ -1397,29 +1477,34 @@ const Practice: React.FC = () => {
               <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 <button
                   onClick={() => {
-                    // Open in new tab to preserve practice session
+                    // Save session state before navigating
+                    saveSessionState();
+                    // Navigate in same window - state will be restored on return
                     const questionText = currentQuestion?.question || '';
                     const correctAnswer = currentQuestion?.options?.[currentQuestion.correctAnswer] || '';
                     const context = encodeURIComponent(`I need help understanding this CPA question:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}`);
-                    window.open(`/ai-tutor?context=${context}`, '_blank');
+                    navigate(`/ai-tutor?context=${context}&returnTo=/practice`);
                   }}
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"
                 >
                   <Sparkles className="w-4 h-4" />
                   Ask Vory to Explain
                 </button>
-                <a
-                  href={currentQuestion.blueprintArea 
-                    ? `/lessons/${currentQuestion.blueprintArea}-001`
-                    : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}`
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    // Save session state before navigating
+                    saveSessionState();
+                    // Navigate in same window - state will be restored on return
+                    const lessonUrl = currentQuestion.blueprintArea 
+                      ? `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`
+                      : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
+                    navigate(lessonUrl);
+                  }}
                   className="btn-secondary text-sm flex items-center gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
                   Review Lessons
-                </a>
+                </button>
                 <button
                   onClick={() => setShowReportModal(true)}
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300"

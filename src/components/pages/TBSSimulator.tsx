@@ -11,6 +11,9 @@ import {
   Minus,
   RotateCcw,
   Send,
+  ChevronLeft,
+  ChevronRight,
+  X,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -977,31 +980,34 @@ const TBSSimulator: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {(tbs.hints || tbs.exhibits) && (
             <button
               onClick={() => setShowExhibits(!showExhibits)}
               className={clsx(
-                'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                'flex items-center justify-center gap-2 p-2 sm:px-3 sm:py-2 rounded-lg text-sm font-medium transition-colors',
                 showExhibits ? 'bg-primary-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
               )}
+              title={tbs.hints ? 'Hints' : 'Exhibits'}
             >
               <FileText className="w-4 h-4" />
-              {tbs.hints ? 'Hints' : 'Exhibits'}
+              <span className="hidden sm:inline">{tbs.hints ? 'Hints' : 'Exhibits'}</span>
             </button>
           )}
           <button
             onClick={() => setShowCalculator(!showCalculator)}
             className={clsx(
-              'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+              'flex items-center justify-center gap-2 p-2 sm:px-3 sm:py-2 rounded-lg text-sm font-medium transition-colors',
               showCalculator ? 'bg-primary-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
             )}
+            title="Calculator"
           >
             <Calculator className="w-4 h-4" />
-            Calculator
+            <span className="hidden sm:inline">Calculator</span>
           </button>
-          <LinkButton to="/study" className="bg-slate-700 hover:bg-slate-600 px-3 py-2 rounded text-sm text-white">
-           Quit
+          <LinkButton to="/study" className="bg-slate-700 hover:bg-slate-600 p-2 sm:px-3 sm:py-2 rounded text-sm text-white">
+            <span className="hidden sm:inline">Quit</span>
+            <X className="w-4 h-4 sm:hidden" />
           </LinkButton>
         </div>
       </div>
@@ -1056,8 +1062,8 @@ const TBSSimulator: React.FC = () => {
 
             {/* Task Tabs - Like real CPA exam */}
             {totalTasks > 1 && (
-              <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div className="flex border-b border-slate-200 overflow-x-auto">
+              <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden sticky top-0 z-10">
+                <div className="flex border-b border-slate-200 overflow-x-auto scrollbar-hide">
                   {tbs.tasks.map((task, index) => {
                     const taskScore = taskScores[task.id];
                     const hasAnswer = answers[task.id] !== undefined;
@@ -1068,7 +1074,7 @@ const TBSSimulator: React.FC = () => {
                         key={task.id}
                         onClick={() => setCurrentTaskIndex(index)}
                         className={clsx(
-                          'flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap',
+                          'flex items-center gap-2 px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0',
                           isActive
                             ? 'border-primary-600 text-primary-600 bg-primary-50'
                             : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -1187,91 +1193,100 @@ const TBSSimulator: React.FC = () => {
                 )}
 
                 {/* Navigation + Submit */}
-                <div className="bg-slate-50 px-6 py-4 border-t border-slate-200 flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={handleReset}
-                      className="flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-2"
-                    >
-                      <RotateCcw className="w-4 h-4" />
-                      Reset
-                    </button>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    {/* Task navigation */}
+                <div className="bg-slate-50 px-4 sm:px-6 py-4 border-t border-slate-200">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                    {/* Task navigation - mobile optimized */}
                     {totalTasks > 1 && (
-                      <div className="flex items-center gap-2 mr-4">
+                      <div className="flex items-center justify-between sm:justify-start gap-3 order-2 sm:order-1">
                         <button
                           onClick={() => setCurrentTaskIndex(Math.max(0, currentTaskIndex - 1))}
                           disabled={currentTaskIndex === 0}
                           className={clsx(
-                            "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                            "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === 0
                               ? "text-slate-400 cursor-not-allowed"
                               : "text-slate-600 hover:bg-slate-200"
                           )}
                         >
-                          ← Previous
+                          <ChevronLeft className="w-4 h-4" />
+                          <span className="hidden sm:inline">Previous</span>
                         </button>
-                        <span className="text-sm text-slate-500">
-                          {currentTaskIndex + 1} / {totalTasks}
+                        <span className="text-sm font-medium text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                          Task {currentTaskIndex + 1} of {totalTasks}
                         </span>
                         <button
                           onClick={() => setCurrentTaskIndex(Math.min(totalTasks - 1, currentTaskIndex + 1))}
                           disabled={currentTaskIndex === totalTasks - 1}
                           className={clsx(
-                            "px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                            "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === totalTasks - 1
                               ? "text-slate-400 cursor-not-allowed"
                               : "text-slate-600 hover:bg-slate-200"
                           )}
                         >
-                          Next →
+                          <span className="hidden sm:inline">Next</span>
+                          <ChevronRight className="w-4 h-4" />
                         </button>
                       </div>
                     )}
                     
-                    {submitted && fromDailyPlan && (
+                    {/* Reset button - show on desktop or when no tasks navigation */}
+                    <div className={clsx(
+                      "flex items-center gap-2 order-1 sm:order-2",
+                      totalTasks > 1 ? "hidden sm:flex" : "flex"
+                    )}>
                       <button
-                        onClick={() => {
-                          const params = new URLSearchParams();
-                          params.set('from', 'dailyplan');
-                          if (activityId) params.set('activityId', activityId);
-                          params.set('completed', 'true');
-                          navigate(`/home?${params.toString()}`);
-                        }}
-                        className="btn-primary flex items-center gap-2 px-6"
+                        onClick={handleReset}
+                        className="flex items-center gap-2 text-slate-500 hover:text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors text-sm"
                       >
-                        Back to Daily Plan
+                        <RotateCcw className="w-4 h-4" />
+                        <span>Reset</span>
                       </button>
-                    )}
+                    </div>
                     
-                    {/* Overall score badge when submitted */}
-                    {submitted && (
-                      <div className={clsx(
-                        "px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2",
-                        score >= 75 ? "bg-success-100 text-success-700" : "bg-error-100 text-error-700"
-                      )}>
-                        {score >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
-                        Overall: {score}%
-                      </div>
-                    )}
-                    
-                    <button
-                      onClick={handleSubmit}
-                      disabled={submitted}
-                      className={clsx(
-                        "flex items-center gap-2 px-8",
-                        submitted 
-                          ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
-                          : "btn-primary"
+                    {/* Action buttons */}
+                    <div className="flex items-center gap-3 order-3">
+                      {submitted && fromDailyPlan && (
+                        <button
+                          onClick={() => {
+                            const params = new URLSearchParams();
+                            params.set('from', 'dailyplan');
+                            if (activityId) params.set('activityId', activityId);
+                            params.set('completed', 'true');
+                            navigate(`/home?${params.toString()}`);
+                          }}
+                          className="btn-primary flex items-center gap-2 px-6"
+                        >
+                          Back to Daily Plan
+                        </button>
                       )}
-                    >
-                      {submitted ? 'Submitted' : 'Submit All'}
-                      {!submitted && <Send className="w-4 h-4" />}
-                      {submitted && <CheckCircle className="w-4 h-4" />}
-                    </button>
+                    
+                      {/* Overall score badge when submitted */}
+                      {submitted && (
+                        <div className={clsx(
+                          "px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2",
+                          score >= 75 ? "bg-success-100 text-success-700" : "bg-error-100 text-error-700"
+                        )}>
+                          {score >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                          Overall: {score}%
+                        </div>
+                      )}
+                    
+                      <button
+                        onClick={handleSubmit}
+                        disabled={submitted}
+                        className={clsx(
+                          "flex items-center gap-2 px-8",
+                          submitted 
+                            ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
+                            : "btn-primary"
+                        )}
+                      >
+                        {submitted ? 'Submitted' : 'Submit All'}
+                        {!submitted && <Send className="w-4 h-4" />}
+                        {submitted && <CheckCircle className="w-4 h-4" />}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

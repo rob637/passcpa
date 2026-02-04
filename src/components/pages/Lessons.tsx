@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   BookOpen,
   CheckCircle,
@@ -136,6 +136,7 @@ const Lessons: React.FC = () => {
   const { getLessonProgress } = useStudy();
   const { courseId } = useCourse();
   const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
+  const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
@@ -151,9 +152,11 @@ const Lessons: React.FC = () => {
       .map(b => b.itemId)
   );
 
-  // Current exam section from user profile
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  // Current exam section - use URL param if provided, otherwise use user profile
+  const sectionFromUrl = searchParams.get('section');
+  const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
+  const isStrategySection = currentSection === 'PREP';
   
   // Fetch lessons and content counts
   useEffect(() => {

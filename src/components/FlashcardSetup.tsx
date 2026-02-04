@@ -336,8 +336,8 @@ const FlashcardSetup: React.FC = () => {
           </h2>
           
           {/* Shuffle Toggle */}
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex items-center justify-between py-2">
+            <div className="flex-1">
               <div className="flex items-center gap-2">
                 <Shuffle className="w-4 h-4 text-slate-500" />
                 <span className="font-medium text-slate-700 dark:text-slate-300">Shuffle order</span>
@@ -348,21 +348,25 @@ const FlashcardSetup: React.FC = () => {
             </div>
             <button
               onClick={() => setConfig(prev => ({ ...prev, shuffle: !prev.shuffle }))}
+              role="switch"
+              aria-checked={config.shuffle}
               className={clsx(
-                'w-12 h-6 rounded-full transition-colors relative',
-                config.shuffle ? 'bg-primary-500' : 'bg-slate-300 dark:bg-slate-600'
+                'relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+                config.shuffle ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-600'
               )}
             >
-              <div className={clsx(
-                'w-5 h-5 rounded-full bg-white shadow absolute top-0.5 transition-transform',
-                config.shuffle ? 'translate-x-6' : 'translate-x-0.5'
-              )} />
+              <span
+                className={clsx(
+                  'pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
+                  config.shuffle ? 'translate-x-5' : 'translate-x-0'
+                )}
+              />
             </button>
           </div>
 
           {/* Show Both Sides Toggle */}
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex items-center justify-between py-2">
+            <div className="flex-1">
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-slate-500" />
                 <span className="font-medium text-slate-700 dark:text-slate-300">Show both sides</span>
@@ -373,15 +377,19 @@ const FlashcardSetup: React.FC = () => {
             </div>
             <button
               onClick={() => setConfig(prev => ({ ...prev, showBothSides: !prev.showBothSides }))}
+              role="switch"
+              aria-checked={config.showBothSides}
               className={clsx(
-                'w-12 h-6 rounded-full transition-colors relative',
-                config.showBothSides ? 'bg-primary-500' : 'bg-slate-300 dark:bg-slate-600'
+                'relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+                config.showBothSides ? 'bg-primary-500' : 'bg-slate-200 dark:bg-slate-600'
               )}
             >
-              <div className={clsx(
-                'w-5 h-5 rounded-full bg-white shadow absolute top-0.5 transition-transform',
-                config.showBothSides ? 'translate-x-6' : 'translate-x-0.5'
-              )} />
+              <span
+                className={clsx(
+                  'pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
+                  config.showBothSides ? 'translate-x-5' : 'translate-x-0'
+                )}
+              />
             </button>
           </div>
         </div>

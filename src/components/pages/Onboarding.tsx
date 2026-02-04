@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
-// STUDY_PLAN_TEMPLATES was unused
+import { scrollToTop } from '../../utils/scroll';
 import clsx from 'clsx';
 
 // Types
@@ -394,6 +394,7 @@ const Onboarding: React.FC = () => {
   const handleNext = async () => {
     if (currentStep < STEPS.length - 1) {
       setCurrentStep(currentStep + 1);
+      scrollToTop();
     } else {
       // Complete onboarding
       await handleComplete();
@@ -403,6 +404,7 @@ const Onboarding: React.FC = () => {
   const handleBack = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
+      scrollToTop();
     }
   };
 

@@ -710,8 +710,8 @@ const ExamSimulator: React.FC = () => {
                 )}
               </div>
 
-              {/* Prometric Theme Toggle */}
-              <div className="mb-6 p-4 bg-slate-100 rounded-xl border border-slate-200">
+              {/* Prometric Theme Toggle - Desktop Only */}
+              <div className="hidden md:block mb-6 p-4 bg-slate-100 rounded-xl border border-slate-200">
                 <label className="flex items-center justify-between cursor-pointer">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
@@ -833,10 +833,10 @@ const ExamSimulator: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-slate-500 mt-3">
+                      <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 sm:gap-4 text-xs text-slate-500 mt-3">
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {Math.round(exam.totalTime / 3600)} hours
+                          {Math.round(exam.totalTime / 3600)}h
                         </span>
                         <span className="flex items-center gap-1">
                           <FileText className="w-3 h-3" />

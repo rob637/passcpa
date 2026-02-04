@@ -309,17 +309,55 @@ const AITutor: React.FC = () => {
     ]);
   }, [memoryLoaded, messages.length, buildGreeting]);
 
+  // Generate a title from the conversation based on first user message
+  const generateConversationTitle = (messages: Message[]): string => {
+    // Find the first user message (skip greeting/system messages)
+    const firstUserMessage = messages.find(m => m.role === 'user');
+    if (!firstUserMessage) return 'New Conversation';
+    
+    let title = firstUserMessage.content;
+    
+    // Remove markdown formatting
+    title = title.replace(/\*\*/g, '').replace(/\*/g, '');
+    
+    // Clean up and truncate to a reasonable length
+    title = title.trim();
+    
+    // Truncate at sentence end if possible, otherwise at word boundary
+    const maxLength = 50;
+    if (title.length > maxLength) {
+      // Try to find a sentence end within the limit
+      const sentenceEnd = title.substring(0, maxLength).lastIndexOf('.');
+      const questionEnd = title.substring(0, maxLength).lastIndexOf('?');
+      const breakPoint = Math.max(sentenceEnd, questionEnd);
+      
+      if (breakPoint > 20) {
+        title = title.substring(0, breakPoint + 1);
+      } else {
+        // Fall back to word boundary
+        const lastSpace = title.substring(0, maxLength).lastIndexOf(' ');
+        title = title.substring(0, lastSpace > 20 ? lastSpace : maxLength) + '...';
+      }
+    }
+    
+    return title || 'New Conversation';
+  };
+
   // Save conversation to Firestore
   const saveConversation = useCallback(
     async (newMessages: Message[]) => {
       if (!user?.uid || newMessages.length <= 1) return;
 
       try {
+        // Generate title from conversation content
+        const title = generateConversationTitle(newMessages);
+        
         const convData = {
           messages: newMessages.map((m) => ({
             ...m,
             timestamp: m.timestamp instanceof Date ? m.timestamp : new Date(),
           })),
+          title,
           section: currentSection,
           mode: tutorMode,
           updatedAt: new Date(),

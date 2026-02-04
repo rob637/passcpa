@@ -781,141 +781,121 @@ const LessonViewer: React.FC = () => {
           </Link>
         </div>
 
-        {/* Navigation */}
-        <div className="flex items-center justify-between gap-4 pt-8 border-t border-slate-200 dark:border-slate-700">
-          {prevLesson ? (
-            <Link
-              to={`/lessons/${prevLesson.id}`}
-              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              <div className="text-left">
-                <div className="text-xs text-slate-400 dark:text-slate-500">Previous</div>
-                <div className="font-medium">{prevLesson.title}</div>
-              </div>
-            </Link>
-          ) : (
-            <div />
-          )}
-
-          {nextLesson ? (
-            <Link
-              to={`/lessons/${nextLesson.id}`}
-              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 text-right"
-            >
-              <div>
-                <div className="text-xs text-slate-400 dark:text-slate-500">Next</div>
-                <div className="font-medium">{nextLesson.title}</div>
-              </div>
-              <ChevronRight className="w-5 h-5" />
-            </Link>
-          ) : (
-            <div />
-          )}
-        </div>
+        {/* Spacer for fixed bottom bar */}
+        <div className="h-24 md:h-28" />
       </div>
 
-      {/* Sticky Bottom Bar for Mobile Actions - Context-aware */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 z-50 safe-bottom">
-        <div className="flex items-center gap-3">
-          {/* Exit button - always available */}
-          <button
-            onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-            className="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 font-medium shrink-0 transition-colors hover:bg-slate-200 dark:hover:bg-slate-600"
-          >
-            Exit
-          </button>
-          
-          {/* Primary CTA - context-aware */}
-          {fromDailyPlan ? (
-            // From Daily Plan: Complete & Return
-            <button
-              onClick={() => handleComplete(false)}
-              className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3.5 px-6 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
-            >
-              <CheckCircle className="w-5 h-5" />
-              <span>Complete & Return</span>
-            </button>
-          ) : (
-            // Free browsing: Complete & Continue (or just Complete if no next)
-            <>
-              <button
-                onClick={() => handleComplete(nextLesson ? true : false)}
-                className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3.5 px-6 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+      {/* Unified Bottom Navigation Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 z-50 safe-bottom">
+        <div className="max-w-4xl mx-auto px-4 py-3">
+          {/* Mobile Layout */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Previous */}
+            {prevLesson ? (
+              <Link
+                to={`/lessons/${prevLesson.id}`}
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
+                aria-label="Previous lesson"
               >
-                {isComplete && <CheckCircle className="w-5 h-5" />}
-                <span>{nextLesson ? 'Complete & Continue' : 'Complete'}</span>
-                {nextLesson && <ChevronRight className="w-5 h-5" />}
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+                className="px-3 py-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-sm font-medium shrink-0"
+              >
+                Exit
               </button>
-              
-              {/* Next lesson shortcut (skip without completing) */}
-              {nextLesson && !isComplete && (
-                <Link
-                  to={`/lessons/${nextLesson.id}`}
-                  className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
-                  aria-label="Skip to next lesson"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </Link>
-              )}
-            </>
-          )}
-        </div>
-      </div>
-
-      {/* Desktop Bottom Bar - Context-aware floating bar */}
-      <div className="hidden md:flex fixed bottom-6 inset-x-0 justify-center items-center z-40 px-4 pointer-events-none">
-        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-200 dark:border-slate-700 p-2 flex items-center gap-2 pointer-events-auto animate-in fade-in slide-in-from-bottom-4">
-          {/* Exit */}
-          <button
-            onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-            className="px-4 py-2.5 rounded-xl text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-700"
-          >
-            Exit
-          </button>
-          
-          {fromDailyPlan ? (
-            // From Daily Plan
-            <button 
-              onClick={() => handleComplete(false)} 
-              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2"
+            )}
+            
+            {/* Primary CTA */}
+            <button
+              onClick={() => handleComplete(fromDailyPlan ? false : (nextLesson ? true : false))}
+              className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
             >
-              <CheckCircle className="w-5 h-5" />
-              <span>Complete & Return to Plan</span>
+              {isComplete && <CheckCircle className="w-5 h-5" />}
+              <span className="truncate">
+                {fromDailyPlan ? 'Complete & Return' : (nextLesson ? 'Complete & Continue' : 'Complete')}
+              </span>
+              {!fromDailyPlan && nextLesson && <ChevronRight className="w-5 h-5 shrink-0" />}
             </button>
-          ) : (
-            // Free browsing
-            <>
-              {prevLesson && (
+            
+            {/* Next (skip) */}
+            {nextLesson && !fromDailyPlan ? (
+              <Link
+                to={`/lessons/${nextLesson.id}`}
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
+                aria-label="Skip to next lesson"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+            ) : !prevLesson ? (
+              <div className="w-12" /> /* Spacer for balance when no next */
+            ) : null}
+          </div>
+
+          {/* Desktop Layout - All controls in one row */}
+          <div className="hidden md:flex items-center justify-between gap-4">
+            {/* Left: Previous lesson or Exit */}
+            <div className="flex-1 flex items-center">
+              {prevLesson ? (
                 <Link
                   to={`/lessons/${prevLesson.id}`}
-                  className="p-2.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700"
-                  aria-label="Previous lesson"
+                  className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                  <div className="text-left">
+                    <div className="text-xs text-slate-400 dark:text-slate-500">Previous</div>
+                    <div className="font-medium truncate max-w-[200px]">{prevLesson.title}</div>
+                  </div>
                 </Link>
+              ) : (
+                <button
+                  onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+                  className="flex items-center gap-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Exit to Lessons
+                </button>
               )}
-              
-              <button 
-                onClick={() => handleComplete(nextLesson ? true : false)} 
-                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2"
-              >
-                {isComplete && <CheckCircle className="w-5 h-5" />}
-                <span>{nextLesson ? 'Complete & Continue' : 'Complete Lesson'}</span>
-                {nextLesson && <ChevronRight className="w-5 h-5" />}
-              </button>
-              
-              {nextLesson && !isComplete && (
+            </div>
+            
+            {/* Center: Primary Action */}
+            <button 
+              onClick={() => handleComplete(fromDailyPlan ? false : (nextLesson ? true : false))} 
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2"
+            >
+              {isComplete && <CheckCircle className="w-5 h-5" />}
+              <span>
+                {fromDailyPlan ? 'Complete & Return to Plan' : (nextLesson ? 'Complete & Continue' : 'Complete Lesson')}
+              </span>
+              {!fromDailyPlan && nextLesson && <ChevronRight className="w-5 h-5" />}
+            </button>
+            
+            {/* Right: Next lesson */}
+            <div className="flex-1 flex items-center justify-end">
+              {nextLesson ? (
                 <Link
                   to={`/lessons/${nextLesson.id}`}
-                  className="p-2.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-700"
-                  aria-label="Skip to next lesson"
+                  className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 text-right transition-colors group"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <div>
+                    <div className="text-xs text-slate-400 dark:text-slate-500">Next</div>
+                    <div className="font-medium truncate max-w-[200px]">{nextLesson.title}</div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
+              ) : (
+                <button
+                  onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+                  className="flex items-center gap-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors"
+                >
+                  Back to Lessons
+                  <ArrowLeft className="w-4 h-4 rotate-180" />
+                </button>
               )}
-            </>
-          )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

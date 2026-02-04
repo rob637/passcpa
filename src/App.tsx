@@ -17,7 +17,7 @@ import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider } from './providers/CourseProvider';
-import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
+// import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
 // ============================================
 // LAZY LOADED PAGES - Code Splitting
@@ -179,7 +179,7 @@ function App() {
           <TourProvider>
             <ToastProvider>
               <ScrollToTop />
-              <EnvironmentIndicator />
+              {/* <EnvironmentIndicator /> */}
               <UpdateBanner onUpdate={handleUpdate} />
               <Suspense fallback={<FullPageLoader />}>
                 <Routes>

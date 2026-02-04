@@ -203,6 +203,7 @@ const AITutor: React.FC = () => {
   const [weakAreas, setWeakAreas] = useState<WeakArea[]>([]);
   const [memoryLoaded, setMemoryLoaded] = useState(false);
   const [contextFromPractice, setContextFromPractice] = useState<string | null>(null);
+  const [returnTo, setReturnTo] = useState<string | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -225,10 +226,16 @@ const AITutor: React.FC = () => {
     // Check URL params (new tab / window.open)
     const params = new URLSearchParams(location.search);
     const contextParam = params.get('context');
+    const returnToParam = params.get('returnTo');
+    
+    if (returnToParam) {
+      setReturnTo(returnToParam);
+    }
+    
     if (contextParam) {
       setContextFromPractice(decodeURIComponent(contextParam));
-      // Clean URL
-      window.history.replaceState({}, document.title, '/ai-tutor');
+      // Clean URL but keep returnTo info in state
+      window.history.replaceState({ returnTo: returnToParam }, document.title, '/ai-tutor');
     }
   }, [location.state, location.search]);
 
@@ -549,16 +556,16 @@ const AITutor: React.FC = () => {
   const smartPrompts = getSmartPrompts(weakAreas, currentSection);
 
   return (
-    <div className="h-[calc(100vh-8rem)] md:h-[calc(100vh-8rem)] pb-14 md:pb-0 flex flex-col bg-slate-50 page-enter">
+    <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 page-enter">
       {/* Header */}
       <div className="bg-white border-b border-slate-200 px-4 py-3">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => navigate('/home')}
+                onClick={() => navigate(returnTo || '/home')}
                 className="p-2 -ml-2 text-slate-600 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
-                aria-label="Back to Home"
+                aria-label={returnTo ? "Back to Practice" : "Back to Home"}
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>

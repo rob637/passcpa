@@ -329,6 +329,7 @@ const LessonViewer: React.FC = () => {
   // Check if coming from daily plan
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
+  const returnTo = searchParams.get('returnTo'); // For returning to practice questions
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -501,11 +502,11 @@ const LessonViewer: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <button
-              onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+              onClick={() => navigate(returnTo || (fromDailyPlan ? '/home' : '/lessons'))}
               className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span className="hidden sm:inline">{fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
+              <span className="hidden sm:inline">{returnTo ? 'Back to Practice' : fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
             </button>
 
             <div className="flex items-center gap-2">

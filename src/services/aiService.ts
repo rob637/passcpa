@@ -18,8 +18,10 @@ const SYSTEM_PROMPTS: Record<string, string> = {
 
 IMPORTANT CONVERSATION RULES:
 1. You ONLY help with CPA exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your CPA exam tutor! I can only help with accounting, auditing, tax, and business topics. What CPA concept can I explain for you?"
-2. When you offer a practice problem and the user responds with "yes", "sure", "ok", etc., IMMEDIATELY give them the practice problem. Do NOT ask clarifying questions about what "yes" means.
-3. Pay attention to conversation context. Short responses like "yes", "no", "ok", "thanks" are almost always responses to your previous message, not new topics.
+2. When the user provides a CPA question with the correct answer, IMMEDIATELY explain why that answer is correct. Do NOT ask clarifying questions - just explain the concept clearly.
+3. When you offer a practice problem and the user responds with "yes", "sure", "ok", etc., IMMEDIATELY give them the practice problem. Do NOT ask clarifying questions about what "yes" means.
+4. Pay attention to conversation context. Short responses like "yes", "no", "ok", "thanks" are almost always responses to your previous message, not new topics.
+5. NEVER ask "what specific aspect is unclear" or "what have you studied" - just provide the explanation directly. Be helpful and proactive.
 
 Format your responses with **bold** for key terms, bullet points for lists, and clear section headers.`,
 
@@ -128,7 +130,10 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     'deduction', 'credit', 'exclusion', 'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud',
     'materiality', 'sampling', 'attestation', 'compilation', 'review', 'assertion', 'disclosure',
     'consolidation', 'subsidiary', 'goodwill', 'impairment', 'pension', 'benefit', 'aro', 'contingency',
-    'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', 'exam', 'blueprint', 'testlet', 'simulation'];
+    'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', 'exam', 'blueprint', 'testlet', 'simulation',
+    'evidence', 'reliable', 'third party', 'confirmation', 'external', 'internal', 'documentation',
+    'procedure', 'substantive', 'control', 'risk', 'assessment', 'opinion', 'unqualified', 'qualified',
+    'adverse', 'disclaimer', 'engagement', 'client', 'management', 'representation', 'question', 'correct answer'];
   
   const isOnTopic = cpaKeywords.some(keyword => lowerInput.includes(keyword)) || lowerInput.length < 15;
   
@@ -202,8 +207,14 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     return `**S Corporation Requirements** 🏛️\n\n**The "DISC" Test - Must ALL be met:**\n\n• **D**omestic corporation only\n• **I**ndividuals, estates, certain trusts as shareholders\n  - NO corporations, partnerships, or nonresident aliens!\n• **S**ingle class of stock\n  - Voting differences OK, economic differences NOT OK\n• **C**ap of 100 shareholders\n  - Family members can elect to count as 1\n\n**Key Termination Events:**\n• Exceed 100 shareholders\n• Ineligible shareholder acquires stock\n• Create second class of stock\n• Excess passive income (3 consecutive years if C corp E&P)\n\n**🎯 High-Yield Points:**\n1. Election due by March 15 (2½ months into tax year)\n2. All shareholders must consent\n3. Built-in gains tax if converted from C corp\n4. AAA (Accumulated Adjustments Account) tracks S corp earnings\n\nNeed me to explain the taxation flow-through?`;
   }
 
-  // Default
-  return `I'd be happy to help you understand **${input}**! 📚\n\n**To give you the best explanation, could you tell me:**\n1. What specific aspect is unclear?\n2. Are you working on a particular problem?\n3. What have you already studied on this topic?\n\n*The more context you give me, the better I can tailor my explanation!*${isApiError ? '\n\n*Note: Using offline mode. Some features may be limited.*' : ''}`;
+  // Default - provide a helpful response instead of asking questions
+  // Check if this looks like a question about audit evidence (common exam topic)
+  if (lowerInput.includes('evidence') || lowerInput.includes('reliable') || lowerInput.includes('third party')) {
+    return `**Audit Evidence Reliability** 📋\n\n**Hierarchy of Evidence (Most to Least Reliable):**\n\n1. **External evidence from third parties** - Most reliable\n   - Bank confirmations, vendor confirmations\n   - Documents received directly from independent parties\n\n2. **External evidence through client** - Reliable\n   - Bank statements held by client\n   - Invoices from vendors\n\n3. **Internal evidence with strong controls** - Moderately reliable\n   - Documents created and processed with good internal controls\n\n4. **Internal evidence with weak controls** - Less reliable\n   - Documents from systems with poor controls\n\n**🎯 Key Exam Points:**\n• **External > Internal** (independent sources are more reliable)\n• **Original > Copy** (original documents beat photocopies)\n• **Auditor-generated > Client-generated** (auditor's own calculations are most reliable)\n• Direct knowledge (observation) > Indirect (inquiry)\n\n**Why Third Party Documents Are Most Reliable:**\nThey're created outside the client's control, so management can't manipulate them.\n\nWant me to give you a practice question on this topic?`;
+  }
+
+  // Generic helpful response
+  return `Let me help you with that! 📚\n\nBased on your question about **${input.slice(0, 50)}${input.length > 50 ? '...' : ''}**, here's what I can explain:\n\nThis topic relates to the CPA exam. Could you specify which area you'd like to focus on?\n\n• **FAR** - Financial reporting concepts\n• **AUD** - Audit procedures and evidence\n• **REG** - Tax rules and regulations\n• **BAR/ISC/TCP** - Business disciplines\n\n${isApiError ? '*Note: Using offline mode. Some features may be limited.*' : ''}`;
 };
 
 // Call Gemini API

@@ -505,6 +505,7 @@ body.dark {
 /* Correct state */
 .mcq-option-correct {
   @apply border-success-500 bg-success-50;
+  animation: correctPulse 0.5s ease-out;
 }
 
 .mcq-option-correct .mcq-option-letter {
@@ -514,10 +515,25 @@ body.dark {
 /* Incorrect state */
 .mcq-option-incorrect {
   @apply border-error-500 bg-error-50;
+  animation: wrongShake 0.5s ease-out;
 }
 
 .mcq-option-incorrect .mcq-option-letter {
   @apply bg-error-500 text-white;
+}
+
+/* Animation keyframes for answer feedback */
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.02); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
+  50% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.1); }
+  100% { transform: scale(1); box-shadow: none; }
+}
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
 }
 
 /* Disabled state (after answer) */
@@ -740,6 +756,22 @@ body.dark {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide down animation for banners */
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

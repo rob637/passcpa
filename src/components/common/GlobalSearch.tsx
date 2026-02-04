@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import DOMPurify from 'dompurify';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -104,12 +105,14 @@ function calculateRelevanceScore(text: string, query: string): number {
 }
 
 /**
- * Highlight matching text in search results
+ * Highlight matching text in search results (XSS-safe)
  */
 function highlightMatch(text: string, query: string): string {
-  if (!query.trim()) return text;
+  if (!query.trim()) return DOMPurify.sanitize(text);
+  // First sanitize the text to prevent XSS
+  const sanitizedText = DOMPurify.sanitize(text);
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-  return text.replace(regex, '<mark class="bg-yellow-200 rounded px-0.5">$1</mark>');
+  return sanitizedText.replace(regex, '<mark class="bg-yellow-200 dark:bg-yellow-600 rounded px-0.5">$1</mark>');
 }
 
 // ============================================================================

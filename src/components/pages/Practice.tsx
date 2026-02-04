@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useSwipe } from '../../hooks/useSwipe';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { CPA_SECTIONS } from '../../config/examConfig';
@@ -1073,6 +1074,22 @@ const Practice: React.FC = () => {
     }
   }, [currentIndex, goToQuestion]);
 
+  // Swipe gestures for mobile navigation
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: () => {
+      if (isAnswered && currentIndex < questions.length - 1) {
+        nextQuestion();
+      }
+    },
+    onSwipeRight: () => {
+      if (currentIndex > 0) {
+        prevQuestion();
+      }
+    },
+    threshold: 50,
+    enabled: inSession && questions.length > 0,
+  });
+
   // Toggle flag
   const toggleFlag = useCallback(() => {
     if (!currentQuestion) return;
@@ -1362,7 +1379,11 @@ const Practice: React.FC = () => {
       </div>
 
       {/* Question Content */}
-      <div ref={questionTopRef} className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto w-full">
+      <div 
+        ref={questionTopRef} 
+        className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto w-full"
+        {...swipeHandlers}
+      >
         <div className="card mb-4">
           {/* Question Header */}
           <div className="card-header flex items-center justify-between">

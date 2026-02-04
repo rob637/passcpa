@@ -59,7 +59,7 @@ describe('aiService.ts', () => {
       it('should return default explanation for unknown topic', async () => {
         const response = await generateAIResponse('depreciation methods', 'explain');
         
-        expect(response).toContain('happy to help');
+        expect(response).toContain('Let me help you');
         expect(response).toContain('depreciation methods');
       });
     });

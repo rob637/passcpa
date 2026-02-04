@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
@@ -18,10 +18,12 @@ import {
   LucideIcon,
   Target,
   Compass,
+  RefreshCw,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
+import { usePullToRefresh } from '../../hooks/usePullToRefresh';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import { differenceInDays, format } from 'date-fns';
 import clsx from 'clsx';
@@ -374,6 +376,61 @@ const Dashboard = () => {
 
   const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
 
+  // Pull-to-refresh handler
+  const handleRefresh = useCallback(async () => {
+    // Re-fetch readiness data
+    setReadinessLoading(true);
+    try {
+      let topicsData: TopicStat[] = [];
+      if (getTopicPerformance) {
+        topicsData = await getTopicPerformance(currentSection);
+      }
+
+      let lessonsCompletedCount = 0;
+      if (getLessonProgress) {
+        const lessonProgress = await getLessonProgress();
+        lessonsCompletedCount = Object.keys(lessonProgress).length;
+      }
+
+      const allLessons = await fetchAllLessons(courseId);
+      const sectionLessons = allLessons.filter((l: { section: string }) => l.section === currentSection);
+      const totalLessonsCount = sectionLessons.length || allLessons.length;
+
+      const stats = {
+        totalQuestions: weeklyStats?.totalQuestions || 0,
+        accuracy: weeklyStats?.accuracy || 0,
+      };
+
+      if (stats.totalQuestions > 0 || lessonsCompletedCount > 0) {
+        const readinessData = calculateExamReadiness(
+          stats,
+          topicsData,
+          lessonsCompletedCount,
+          totalLessonsCount
+        );
+        setReadiness(readinessData);
+      }
+    } catch (error) {
+      logger.error('Error refreshing:', error);
+    } finally {
+      setReadinessLoading(false);
+    }
+  }, [getTopicPerformance, getLessonProgress, courseId, currentSection, weeklyStats]);
+
+  // Pull-to-refresh hook
+  const { 
+    isRefreshing, 
+    pullDistance, 
+    onTouchStart, 
+    onTouchMove, 
+    onTouchEnd,
+    indicatorStyle 
+  } = usePullToRefresh({
+    onRefresh: handleRefresh,
+    threshold: 80,
+    enabled: !!userProfile?.onboardingComplete,
+  });
+
   // Onboarding check
   if (!userProfile?.onboardingComplete) {
     return (
@@ -398,7 +455,27 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="p-4 sm:p-6 max-w-4xl mx-auto page-enter">
+    <div 
+      className="p-4 sm:p-6 max-w-4xl mx-auto page-enter relative"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Pull-to-refresh indicator */}
+      {(pullDistance > 0 || isRefreshing) && (
+        <div 
+          className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center"
+          style={indicatorStyle}
+        >
+          <div className={clsx(
+            'w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border border-slate-200 dark:border-slate-700',
+            isRefreshing && 'animate-spin'
+          )}>
+            <RefreshCw className="w-5 h-5 text-primary-600" />
+          </div>
+        </div>
+      )}
+
       {/* Greeting Section */}
       <div className="mb-4">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">

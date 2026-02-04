@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
-import { Home, BookOpen, User, Flame, Compass } from 'lucide-react';
+import { Home, BookOpen, User, Flame, Compass, WifiOff } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
@@ -78,6 +78,7 @@ const MainLayout = () => {
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
   const [scrolled, setScrolled] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
@@ -105,6 +106,20 @@ const MainLayout = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Track online/offline status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
   }, []);
 
   // Animate nav indicator
@@ -169,6 +184,18 @@ const MainLayout = () => {
       >
         Skip to main content
       </a>
+
+      {/* Offline Status Banner */}
+      {!isOnline && (
+        <div 
+          className="fixed top-0 left-0 right-0 z-[100] bg-amber-500 text-white px-4 py-2 flex items-center justify-center gap-2 text-sm font-medium shadow-lg animate-slide-down"
+          role="alert"
+          aria-live="polite"
+        >
+          <WifiOff className="w-4 h-4" aria-hidden="true" />
+          <span>You're offline. Some features may be limited.</span>
+        </div>
+      )}
 
       {/* App Shell - Max width container that centers the entire app */}
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-screen">

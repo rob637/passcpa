@@ -11,6 +11,7 @@ import {
   getAchievementsByCategory,
 } from '../../services/achievements';
 import feedback from '../../services/feedback';
+import { celebrateAchievement } from '../../utils/confetti';
 import clsx from 'clsx';
 import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
 import ShareableAchievementCard from '../ShareableAchievementCard';
@@ -109,6 +110,7 @@ const Achievements: React.FC = () => {
         // Show celebration
         setShowUnlocked(newlyUnlocked[0]);
         feedback.levelUp();
+        celebrateAchievement();
 
         // Save to Firestore
         const achievementsRef = doc(db, 'users', user.uid, 'achievements', 'earned');

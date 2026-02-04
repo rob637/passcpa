@@ -305,60 +305,63 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  // Google sign-in - use redirect on mobile to avoid COOP issues
+  // Google sign-in - try popup first, fallback to redirect if blocked
   const signInWithGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({ prompt: 'select_account' });
       
-      // Use redirect on mobile/tablet, popup on desktop
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
-      
-      if (isMobile) {
-        // Redirect flow - handled by getRedirectResult in useEffect
-        await signInWithRedirect(auth, provider);
-        // This won't return - page redirects to Google
-        return null as unknown as User;
+      // Try popup first (works on most browsers including mobile Safari)
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        
+        // Check if user profile exists, create if not
+        const userRef = doc(db, 'users', user.uid);
+        const userDoc = await getDoc(userRef);
+        
+        if (!userDoc.exists()) {
+          // Create new profile for Google user
+          const newProfile: Omit<UserProfile, 'id'> = {
+            email: user.email || '',
+            displayName: user.displayName || '',
+            photoURL: user.photoURL,
+            createdAt: serverTimestamp(),
+            onboardingComplete: false,
+            examSection: null,
+            examDate: null,
+            dailyGoal: 25,
+            studyPlanId: null,
+            settings: {
+              notifications: true,
+              darkMode: false,
+              soundEffects: true,
+            },
+          };
+          await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
+          setUserProfile({ 
+            ...newProfile,
+            id: user.uid, 
+          } as UserProfile);
+        } else {
+          // Update last login for existing user
+          await updateDoc(userRef, { lastLogin: serverTimestamp() });
+          await fetchUserProfile(user.uid);
+        }
+        
+        return user;
+      } catch (popupErr) {
+        const error = popupErr as FirebaseError;
+        // If popup was blocked or closed, try redirect as fallback
+        if (error.code === 'auth/popup-blocked' || 
+            error.code === 'auth/popup-closed-by-user' ||
+            error.code === 'auth/cancelled-popup-request') {
+          logger.log('Popup blocked/closed, falling back to redirect');
+          await signInWithRedirect(auth, provider);
+          return null as unknown as User;
+        }
+        throw popupErr;
       }
-      
-      // Desktop: use popup
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      
-      // Check if user profile exists, create if not
-      const userRef = doc(db, 'users', user.uid);
-      const userDoc = await getDoc(userRef);
-      
-      if (!userDoc.exists()) {
-        // Create new profile for Google user
-        const newProfile: Omit<UserProfile, 'id'> = {
-          email: user.email || '',
-          displayName: user.displayName || '',
-          photoURL: user.photoURL,
-          createdAt: serverTimestamp(),
-          onboardingComplete: false,
-          examSection: null,
-          examDate: null,
-          dailyGoal: 25,
-          studyPlanId: null,
-          settings: {
-            notifications: true,
-            darkMode: false,
-            soundEffects: true,
-          },
-        };
-        await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
-        setUserProfile({ 
-          ...newProfile,
-          id: user.uid, 
-        } as UserProfile);
-      } else {
-        // Update last login for existing user
-        await updateDoc(userRef, { lastLogin: serverTimestamp() });
-        await fetchUserProfile(user.uid);
-      }
-      
-      return user;
     } catch (err) {
       // Error logged by error boundary
       throw err;

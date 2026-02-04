@@ -127,7 +127,7 @@ const QuickAction = ({ to, icon: Icon, label, sublabel, color = 'primary', dataT
         <p className="font-semibold text-slate-900 dark:text-slate-100">{label}</p>
         <p className="text-sm text-slate-600 dark:text-slate-300 truncate">{sublabel}</p>
       </div>
-      <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
+      <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
     </Link>
   );
 };
@@ -202,7 +202,7 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
             fill="none"
             stroke="currentColor"
             strokeWidth="6"
-            className="text-slate-200 dark:text-slate-600"
+            className="text-slate-200 dark:text-slate-700"
           />
           <circle
             cx="32"

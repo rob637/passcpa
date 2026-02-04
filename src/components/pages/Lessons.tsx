@@ -405,9 +405,9 @@ const Lessons: React.FC = () => {
                           <span>{area.lessons.length} Lessons</span>
                           {currentSection !== 'PREP' && (
                             <>
-                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span className="text-slate-300 dark:text-slate-500">·</span>
                               <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
-                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span className="text-slate-300 dark:text-slate-500">·</span>
                               <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
                             </>
                           )}
@@ -524,7 +524,7 @@ const Lessons: React.FC = () => {
                         <ChevronRight
                           className={clsx(
                             'w-5 h-5 flex-shrink-0',
-                            lesson.completed ? 'text-slate-300 dark:text-slate-600' : 'text-slate-600'
+                            lesson.completed ? 'text-slate-300 dark:text-slate-500' : 'text-slate-400'
                           )}
                         />
                       )}
@@ -540,7 +540,7 @@ const Lessons: React.FC = () => {
       {/* Empty State for Bookmarks filter */}
       {filteredAreas.length === 0 && showBookmarkedOnly && (
         <div className="card p-8 text-center">
-          <Bookmark className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <Bookmark className="w-12 h-12 text-slate-300 dark:text-slate-500 mx-auto mb-4" />
           <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">No saved lessons</h3>
           <p className="text-slate-600 dark:text-slate-300">
             Bookmark lessons while studying to quickly find them later
@@ -557,7 +557,7 @@ const Lessons: React.FC = () => {
       {/* Empty State */}
       {filteredAreas.length === 0 && rawLessons.length > 0 && !showBookmarkedOnly && (
         <div className="card p-8 text-center">
-          <BookOpen className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <BookOpen className="w-12 h-12 text-slate-300 dark:text-slate-500 mx-auto mb-4" />
           <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">No lessons found</h3>
           <p className="text-slate-600 dark:text-slate-300">Try adjusting your search or filter criteria</p>
         </div>
@@ -566,7 +566,7 @@ const Lessons: React.FC = () => {
       {/* No lessons for section */}
       {rawLessons.length === 0 && (
         <div className="card p-8 text-center">
-          <GraduationCap className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-4" />
+          <GraduationCap className="w-12 h-12 text-slate-300 dark:text-slate-500 mx-auto mb-4" />
           <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">
             Lessons Coming Soon
           </h3>

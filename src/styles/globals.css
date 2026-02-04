@@ -43,14 +43,15 @@
   --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
 }
 
-/* Dark mode colors */
+/* Dark mode colors - Google-level contrast for mobile readability */
 .dark {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-tertiary: #334155;
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #64748b;
+  --text-primary: #f1f5f9;      /* slate-100 - main text, 15:1 ratio */
+  --text-secondary: #e2e8f0;    /* slate-200 - upgraded from slate-300 for better mobile readability */
+  --text-tertiary: #94a3b8;     /* slate-400 - upgraded from slate-500 for WCAG AA compliance */
+  --text-muted: #64748b;        /* slate-500 - only for truly decorative/disabled elements */
   --border-color: #334155;
   --border-color-light: #1e293b;
   --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -473,12 +474,19 @@ body.dark {
   transform: scale(0.99);
 }
 
-/* Option letter badge */
+/* Option letter badge - Google Material 3 size standards */
 .mcq-option-letter {
   @apply flex-shrink-0 w-8 h-8 rounded-lg
          bg-slate-100 text-slate-600
          flex items-center justify-center
          font-semibold text-sm transition-all duration-200;
+}
+
+/* Larger option letter on mobile for better visibility */
+@media (max-width: 640px) {
+  .mcq-option-letter {
+    @apply w-10 h-10 text-base;
+  }
 }
 
 .dark .mcq-option-letter {
@@ -1030,14 +1038,39 @@ body.dark {
   }
 }
 
-/* Larger tap targets on touch devices */
+/* Larger tap targets on touch devices - Google Material 3 standards */
 @media (pointer: coarse) {
   .btn {
     min-height: 52px;
   }
 
+  .btn-sm {
+    min-height: 44px;
+  }
+
+  .btn-icon {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
   .mcq-option {
     min-height: 72px;
+    padding: 16px;
+  }
+
+  /* Ensure icon buttons have adequate tap area */
+  button:has(> svg:only-child),
+  a:has(> svg:only-child) {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Card interactive elements */
+  .card-interactive {
+    min-height: 64px;
   }
 }
 

@@ -106,6 +106,20 @@ interface SystemError {
   userAgent?: string;
 }
 
+interface QuestionReport {
+  id: string;
+  questionId: string;
+  questionText?: string;
+  section?: string;
+  blueprintArea?: string;
+  type: string;
+  details?: string;
+  reportedBy: string;
+  reportedByEmail?: string;
+  status: 'pending' | 'reviewed' | 'resolved' | 'dismissed';
+  createdAt?: { seconds: number; nanoseconds: number };
+}
+
 interface LocalStats {
   total: number;
   bySection: Record<string, number>;
@@ -148,6 +162,10 @@ const AdminCMS: React.FC = () => {
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
+  
+  // Question Reports state
+  const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
+  const [isLoadingReports, setIsLoadingReports] = useState(false);
 
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -602,6 +620,62 @@ const AdminCMS: React.FC = () => {
       setIsLoadingErrors(false);
     }
   }, [isAdmin, systemErrors]);
+
+  // Load Question Reports
+  const loadQuestionReports = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingReports(true);
+    try {
+      const q = query(
+        collection(db, 'questionReports'),
+        orderBy('createdAt', 'desc'),
+        limit(50)
+      );
+      const querySnapshot = await getDocs(q);
+      const reports: QuestionReport[] = [];
+      querySnapshot.forEach((docSnap) => {
+        reports.push({ id: docSnap.id, ...docSnap.data() } as QuestionReport);
+      });
+      setQuestionReports(reports);
+      addLog(`Loaded ${reports.length} question reports`, 'info');
+    } catch (error) {
+      logger.error('Error loading question reports', error);
+      // Try without orderBy if index doesn't exist
+      if (String(error).includes('index')) {
+        addLog('Index missing for questionReports. Fetching without sort.', 'warning');
+        const qFallback = query(collection(db, 'questionReports'), limit(50));
+        const qsFallback = await getDocs(qFallback);
+        const reportsFallback: QuestionReport[] = [];
+        qsFallback.forEach((docSnap) => {
+          reportsFallback.push({ id: docSnap.id, ...docSnap.data() } as QuestionReport);
+        });
+        setQuestionReports(reportsFallback);
+      } else {
+        addLog('Error loading reports: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      }
+    } finally {
+      setIsLoadingReports(false);
+    }
+  }, [isAdmin]);
+
+  // Update report status
+  const updateReportStatus = useCallback(async (reportId: string, newStatus: 'reviewed' | 'resolved' | 'dismissed') => {
+    if (!isAdmin) return;
+    try {
+      await updateDoc(doc(db, 'questionReports', reportId), { 
+        status: newStatus,
+        reviewedAt: new Date(),
+        reviewedBy: user?.email || 'admin'
+      });
+      setQuestionReports(prev => prev.map(r => 
+        r.id === reportId ? { ...r, status: newStatus } : r
+      ));
+      addLog(`Report ${reportId} marked as ${newStatus}`, 'success');
+    } catch (error) {
+      logger.error('Error updating report status', error);
+      addLog('Failed to update report status', 'error');
+    }
+  }, [isAdmin, user?.email]);
 
   // Effect to load tab data
   useEffect(() => {
@@ -1304,6 +1378,101 @@ const AdminCMS: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Question Reports */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">📋 Question Reports</h3>
+                <div className="flex gap-2">
+                  <span className="text-sm text-gray-600">
+                    {questionReports.filter(r => r.status === 'pending').length} pending
+                  </span>
+                  <button
+                    onClick={loadQuestionReports}
+                    disabled={isLoadingReports}
+                    className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50"
+                  >
+                    {isLoadingReports ? 'Loading...' : 'Refresh'}
+                  </button>
+                </div>
+              </div>
+              
+              {questionReports.length === 0 ? (
+                <p className="text-sm text-gray-600 text-center py-8">
+                  No question reports yet. Click Refresh to load.
+                </p>
+              ) : (
+                <div className="space-y-3 max-h-[400px] overflow-y-auto">
+                  {questionReports.map((report) => (
+                    <div 
+                      key={report.id} 
+                      className={`p-4 rounded-lg border ${
+                        report.status === 'pending' ? 'bg-amber-50 border-amber-200' :
+                        report.status === 'resolved' ? 'bg-green-50 border-green-200' :
+                        report.status === 'dismissed' ? 'bg-gray-50 border-gray-200' :
+                        'bg-blue-50 border-blue-200'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                              report.type === 'incorrect_answer' ? 'bg-red-100 text-red-700' :
+                              report.type === 'unclear_question' ? 'bg-amber-100 text-amber-700' :
+                              report.type === 'typo' ? 'bg-blue-100 text-blue-700' :
+                              'bg-gray-100 text-gray-700'
+                            }`}>
+                              {report.type.replace(/_/g, ' ')}
+                            </span>
+                            <span className={`px-2 py-0.5 rounded text-xs ${
+                              report.status === 'pending' ? 'bg-amber-100 text-amber-700' :
+                              report.status === 'resolved' ? 'bg-green-100 text-green-700' :
+                              report.status === 'reviewed' ? 'bg-blue-100 text-blue-700' :
+                              'bg-gray-100 text-gray-700'
+                            }`}>
+                              {report.status}
+                            </span>
+                            <span className="text-xs text-gray-600">
+                              {report.section} • {report.blueprintArea}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-900 line-clamp-2">
+                            Q: {report.questionText || report.questionId}
+                          </p>
+                          {report.details && (
+                            <p className="text-xs text-gray-600 mt-1">
+                              Details: {report.details}
+                            </p>
+                          )}
+                          <p className="text-xs text-gray-600 mt-1">
+                            By: {report.reportedByEmail || report.reportedBy}
+                            {report.createdAt && ` • ${new Date(report.createdAt.seconds * 1000).toLocaleDateString()}`}
+                          </p>
+                        </div>
+                        {report.status === 'pending' && (
+                          <div className="flex gap-1 flex-shrink-0">
+                            <button
+                              onClick={() => updateReportStatus(report.id, 'resolved')}
+                              className="px-2 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700"
+                              title="Mark as resolved"
+                            >
+                              ✓
+                            </button>
+                            <button
+                              onClick={() => updateReportStatus(report.id, 'dismissed')}
+                              className="px-2 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700"
+                              title="Dismiss"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* System Tools */}

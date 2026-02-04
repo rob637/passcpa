@@ -1721,9 +1721,9 @@ const AdminCMS: React.FC = () => {
                       <div className="text-2xl font-bold text-amber-700">{userActivity.stats.studyStreak}</div>
                       <div className="text-sm text-amber-600">Day Streak</div>
                     </div>
-                    <div className="bg-purple-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-purple-700">{Math.round(userActivity.stats.totalStudyMinutes / 60)}h</div>
-                      <div className="text-sm text-purple-600">Study Time</div>
+                    <div className="bg-primary-50 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-primary-700">{Math.round(userActivity.stats.totalStudyMinutes / 60)}h</div>
+                      <div className="text-sm text-primary-600">Study Time</div>
                     </div>
                   </div>
 

@@ -100,7 +100,7 @@ vi.mock('../../config/examConfig', () => ({
   CPA_SECTIONS: {
     REG: { name: 'Regulation', shortName: 'REG', color: 'blue', description: 'Tax' },
     FAR: { name: 'Financial', shortName: 'FAR', color: 'green', description: 'Financial' },
-    AUD: { name: 'Auditing', shortName: 'AUD', color: 'purple', description: 'Audit' },
+    AUD: { name: 'Auditing', shortName: 'AUD', color: 'blue', description: 'Audit' },
     BAR: { name: 'Business', shortName: 'BAR', color: 'orange', description: 'Business' },
   },
   DAILY_GOAL_PRESETS: [25, 50, 75, 100],

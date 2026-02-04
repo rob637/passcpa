@@ -24,7 +24,7 @@ interface StudyMode {
   title: string;
   description: string;
   icon: LucideIcon;
-  color: 'primary' | 'success' | 'warning' | 'indigo' | 'error' | 'slate' | 'purple';
+  color: 'primary' | 'success' | 'warning' | 'error' | 'slate';
   link: string;
   recommended?: boolean;
   badge?: string;
@@ -133,7 +133,7 @@ const Study = () => {
       title: 'Written Communication',
       description: 'Practice professional memos, letters, and reports',
       icon: PenTool,
-      color: 'purple' as const,
+      color: 'primary' as const,
       link: '/written-communication',
       badge: 'BEC',
     }] : []),
@@ -142,7 +142,7 @@ const Study = () => {
       title: 'Flashcard Review',
       description: 'Smart review for long-term retention',
       icon: Brain,
-      color: 'indigo',
+      color: 'success',
       link: '/flashcards',
       badge: 'SMART',
     },
@@ -197,23 +197,11 @@ const Study = () => {
       border: 'border-error-200',
       hover: 'hover:border-error-400',
     },
-    indigo: {
-      bg: 'bg-indigo-100',
-      icon: 'text-indigo-600',
-      border: 'border-indigo-200',
-      hover: 'hover:border-indigo-400',
-    },
     slate: {
       bg: 'bg-slate-100',
       icon: 'text-slate-600',
       border: 'border-slate-200',
       hover: 'hover:border-slate-400',
-    },
-    purple: {
-      bg: 'bg-primary-100',
-      icon: 'text-primary-600',
-      border: 'border-primary-200',
-      hover: 'hover:border-primary-400',
     },
   };
 

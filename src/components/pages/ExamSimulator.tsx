@@ -793,7 +793,7 @@ const ExamSimulator: React.FC = () => {
               {availableMockExams.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-slate-400" />
+                    <FileText className="w-8 h-8 text-slate-600" />
                   </div>
                   <h3 className="text-lg font-medium text-slate-900 mb-2">
                     No Mock Exams Available
@@ -947,7 +947,7 @@ const ExamSimulator: React.FC = () => {
                   : 'Written Communication'}
             </div>
             {nextTestlet?.type === 'tbs' && (
-              <p className="text-sm text-slate-400 mt-2">
+              <p className="text-sm text-slate-600 mt-2">
                 Apply your knowledge to realistic accounting scenarios
               </p>
             )}
@@ -1143,7 +1143,7 @@ const ExamSimulator: React.FC = () => {
               >
                 {results.percentage}
               </div>
-              <div className="text-slate-400">Target: {examConfig.passingScore}</div>
+              <div className="text-slate-600">Target: {examConfig.passingScore}</div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -1545,7 +1545,7 @@ const ExamSimulator: React.FC = () => {
                 <span className="text-xs text-slate-300 font-bold uppercase">Calculator</span>
                 <button
                   onClick={() => setShowCalculator(false)}
-                  className="text-slate-400 hover:text-white"
+                  className="text-slate-600 hover:text-white"
                 >
                   <XCircle className="w-4 h-4" />
                 </button>
@@ -1582,7 +1582,7 @@ const ExamSimulator: React.FC = () => {
                         'flex items-center gap-2 px-3 py-1 rounded transition-colors text-sm font-medium',
                         currentQuestion?.id && flagged.has(currentQuestion.id)
                           ? 'bg-warning-50 text-warning-700'
-                          : 'text-slate-400 hover:bg-slate-50 hover:text-slate-600'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-600'
                       )}
                     >
                       <Flag

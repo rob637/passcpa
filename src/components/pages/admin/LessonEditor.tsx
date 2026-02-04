@@ -104,7 +104,7 @@ const LessonEditor = () => {
                   <BookOpen className="w-6 h-6 text-green-600" />
                   Lesson Library
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-300">View lessons (local data)</p>
+                <p className="text-sm text-gray-600 dark:text-slate-300">View lessons (local data)</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ const LessonEditor = () => {
           {stats && Object.entries(stats.bySection).map(([section, count]) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
+              <div className="text-sm text-gray-600 dark:text-slate-300">{section}</div>
             </div>
           ))}
           {stats && (
@@ -156,7 +156,7 @@ const LessonEditor = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
                 <input
                   type="text"
                   placeholder="Search lessons..."
@@ -215,7 +215,7 @@ const LessonEditor = () => {
                     </div>
                     <button
                       onClick={() => setViewingLesson(lesson)}
-                      className="p-2 text-slate-400 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-lg"
+                      className="p-2 text-slate-600 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-lg"
                       title="View lesson details"
                     >
                       <Eye className="w-4 h-4" />
@@ -306,7 +306,7 @@ const LessonEditor = () => {
               )}
 
               <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-xs text-slate-400">ID: {viewingLesson.id}</p>
+                <p className="text-xs text-slate-600">ID: {viewingLesson.id}</p>
               </div>
             </div>
           </div>

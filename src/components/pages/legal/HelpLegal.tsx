@@ -51,7 +51,7 @@ const HelpLegal: React.FC = () => {
                   <p className="text-xs text-slate-600">support@voraprep.com</p>
                 </div>
               </div>
-              <ExternalLink className="w-5 h-5 text-slate-400" />
+              <ExternalLink className="w-5 h-5 text-slate-600" />
             </a>
 
             <a
@@ -67,7 +67,7 @@ const HelpLegal: React.FC = () => {
                   <p className="text-xs text-slate-600">Help us improve VoraPrep</p>
                 </div>
               </div>
-              <ExternalLink className="w-5 h-5 text-slate-400" />
+              <ExternalLink className="w-5 h-5 text-slate-600" />
             </a>
           </div>
         </div>
@@ -91,7 +91,7 @@ const HelpLegal: React.FC = () => {
                   <p className="text-xs text-slate-600">Usage terms and conditions</p>
                 </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400" />
+              <ChevronRight className="w-5 h-5 text-slate-600" />
             </Link>
 
             <Link
@@ -107,7 +107,7 @@ const HelpLegal: React.FC = () => {
                   <p className="text-xs text-slate-600">How we handle your data</p>
                 </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400" />
+              <ChevronRight className="w-5 h-5 text-slate-600" />
             </Link>
           </div>
         </div>
@@ -124,7 +124,7 @@ const HelpLegal: React.FC = () => {
         </div>
 
         {/* Version */}
-        <div className="text-center text-xs text-slate-400 mt-8">
+        <div className="text-center text-xs text-slate-600 mt-8">
           <p>VoraPrep v1.0</p>
         </div>
       </main>

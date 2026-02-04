@@ -262,7 +262,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                       ) : area.status === 'weak' ? (
                         <AlertTriangle className="w-5 h-5 text-error-600" />
                       ) : (
-                        <BookOpen className="w-5 h-5 text-slate-400" />
+                        <BookOpen className="w-5 h-5 text-slate-600" />
                       )}
                     </div>
                     
@@ -289,7 +289,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                           area.status === 'strong' && 'text-success-600',
                           area.status === 'developing' && 'text-warning-600',
                           area.status === 'weak' && 'text-error-600',
-                          area.status === 'not-started' && 'text-slate-400'
+                          area.status === 'not-started' && 'text-slate-600'
                         )}>
                           {area.questionsAnswered > 0 ? `${area.accuracy}%` : '—'}
                         </div>
@@ -310,15 +310,15 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                             style={{ width: `${area.accuracy}%` }}
                           />
                         </div>
-                        <div className="text-xs text-slate-400 text-center mt-1">
+                        <div className="text-xs text-slate-600 text-center mt-1">
                           Target: 75%
                         </div>
                       </div>
                       
                       {expandedArea === area.area ? (
-                        <ChevronDown className="w-5 h-5 text-slate-400" />
+                        <ChevronDown className="w-5 h-5 text-slate-600" />
                       ) : (
-                        <ChevronRight className="w-5 h-5 text-slate-400" />
+                        <ChevronRight className="w-5 h-5 text-slate-600" />
                       )}
                     </div>
                   </button>

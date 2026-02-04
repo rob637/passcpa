@@ -216,7 +216,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
               onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
               className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
             />
-            <div className="flex justify-between text-xs text-slate-400 mt-1">
+            <div className="flex justify-between text-xs text-slate-600 mt-1">
               <span>5</span>
               <span className="font-medium text-primary-600">{config.count} questions</span>
               <span>100</span>
@@ -409,7 +409,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                           {session.questionCount} questions
                         </span>
                       </div>
-                      <div className="text-xs text-slate-400 mt-0.5">
+                      <div className="text-xs text-slate-600 mt-0.5">
                         {formatDistanceToNow(session.completedAt, { addSuffix: true })}
                       </div>
                     </div>
@@ -542,7 +542,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
             </div>
             <div className="p-4 text-center">
               <div className="flex items-center justify-center mb-1">
-                <Clock className="w-4 h-4 text-slate-400 mr-1" />
+                <Clock className="w-4 h-4 text-slate-600 mr-1" />
                 <span className="text-xl font-bold text-slate-700 dark:text-slate-300">{formatTime(elapsed)}</span>
               </div>
               <p className="text-xs text-slate-600">Time</p>
@@ -1175,7 +1175,7 @@ const Practice: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-            <AlertCircle className="w-8 h-8 text-slate-400" />
+            <AlertCircle className="w-8 h-8 text-slate-600" />
           </div>
           <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             No Questions Available
@@ -1251,7 +1251,7 @@ const Practice: React.FC = () => {
               </div>
               <button
                 onClick={() => setShowShortcuts(true)}
-                className="hidden sm:flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                className="hidden sm:flex items-center gap-1 text-sm text-slate-600 hover:text-slate-600 dark:hover:text-slate-300"
                 title="Keyboard shortcuts"
               >
                 <Keyboard className="w-4 h-4" />
@@ -1312,7 +1312,7 @@ const Practice: React.FC = () => {
                   'p-2 rounded-lg transition-colors',
                   flagged.has(currentQuestion.id)
                     ? 'bg-amber-100 text-amber-600'
-                    : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-amber-500'
+                    : 'text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-amber-500'
                 )}
               >
                 <Flag className="w-5 h-5" />
@@ -1526,7 +1526,7 @@ const Practice: React.FC = () => {
               </button>
             ))}
             {questions.length > 10 && (
-              <span className="text-sm text-slate-400 dark:text-slate-600">
+              <span className="text-sm text-slate-600 dark:text-slate-600">
                 +{questions.length - 10}
               </span>
             )}

@@ -127,7 +127,7 @@ const QuickAction = ({ to, icon: Icon, label, sublabel, color = 'primary', dataT
         <p className="font-semibold text-slate-900 dark:text-slate-100">{label}</p>
         <p className="text-sm text-slate-600 dark:text-slate-300 truncate">{sublabel}</p>
       </div>
-      <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
+      <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
     </Link>
   );
 };
@@ -170,13 +170,13 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
         'bg-slate-50 border-slate-200 dark:bg-slate-800 dark:border-slate-700'
       )}>
         <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
-          <Target className="w-8 h-8 text-slate-400" />
+          <Target className="w-8 h-8 text-slate-600" />
         </div>
         <div className="flex-1">
           <p className="text-sm font-medium text-slate-600 dark:text-slate-300">Exam Readiness</p>
           <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Start practicing to see your score</p>
         </div>
-        <ChevronRight className="w-5 h-5 text-slate-400" />
+        <ChevronRight className="w-5 h-5 text-slate-600" />
       </Link>
     );
   }
@@ -239,8 +239,8 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
 
       {/* View Details Arrow */}
       <div className="flex flex-col items-center">
-        <ChevronRight className="w-5 h-5 text-slate-400" />
-        <span className="text-xs text-slate-400 hidden sm:block">Details</span>
+        <ChevronRight className="w-5 h-5 text-slate-600" />
+        <span className="text-xs text-slate-600 hidden sm:block">Details</span>
       </div>
     </Link>
   );
@@ -422,7 +422,7 @@ const Dashboard = () => {
             <p className="font-semibold text-slate-900 dark:text-slate-100">{examSection.name}</p>
             <p className="text-sm text-slate-600 dark:text-slate-300">Tap to view study modules</p>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-400" />
+          <ChevronRight className="w-5 h-5 text-slate-600" />
         </Link>
       )}
 

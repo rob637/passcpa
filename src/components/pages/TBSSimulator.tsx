@@ -1260,6 +1260,16 @@ const TBSSimulator: React.FC = () => {
                           Back to Daily Plan
                         </button>
                       )}
+                      
+                      {/* Show "Done" button when submitted and NOT from daily plan */}
+                      {submitted && !fromDailyPlan && (
+                        <button
+                          onClick={() => navigate('/home')}
+                          className="btn-primary flex items-center gap-2 px-6"
+                        >
+                          Done
+                        </button>
+                      )}
                     
                       {/* Overall score badge when submitted */}
                       {submitted && (

@@ -1411,22 +1411,30 @@ const Practice: React.FC = () => {
               </p>
               <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                 <button
-                  onClick={askAI}
+                  onClick={() => {
+                    // Open in new tab to preserve practice session
+                    const questionText = currentQuestion?.question || '';
+                    const correctAnswer = currentQuestion?.options?.[currentQuestion.correctAnswer] || '';
+                    const context = encodeURIComponent(`I need help understanding this CPA question:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}`);
+                    window.open(`/ai-tutor?context=${context}`, '_blank');
+                  }}
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"
                 >
                   <Sparkles className="w-4 h-4" />
                   Ask Vory to Explain
                 </button>
-                <Link
-                  to={currentQuestion.blueprintArea 
+                <a
+                  href={currentQuestion.blueprintArea 
                     ? `/lessons/${currentQuestion.blueprintArea}-001`
                     : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}`
                   }
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-secondary text-sm flex items-center gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
                   Review Lessons
-                </Link>
+                </a>
                 <button
                   onClick={() => setShowReportModal(true)}
                   className="btn-secondary text-sm flex items-center gap-2 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300"

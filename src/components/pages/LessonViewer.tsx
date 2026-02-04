@@ -781,12 +781,12 @@ const LessonViewer: React.FC = () => {
           </Link>
         </div>
 
-        {/* Spacer for fixed bottom bar */}
-        <div className="h-24 md:h-28" />
+        {/* Spacer for fixed bottom bar + mobile nav */}
+        <div className="h-40 md:h-28" />
       </div>
 
-      {/* Unified Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 z-50 safe-bottom">
+      {/* Unified Bottom Navigation Bar - positioned above mobile nav, aligned with content pane on desktop */}
+      <div className="fixed bottom-14 md:bottom-0 left-0 md:left-64 right-0 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 z-40 pb-safe md:pb-0">
         <div className="max-w-4xl mx-auto px-4 py-3">
           {/* Mobile Layout */}
           <div className="md:hidden flex items-center gap-2">

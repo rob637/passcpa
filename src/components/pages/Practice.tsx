@@ -36,6 +36,8 @@ import { CPA_SECTIONS } from '../../config/examConfig';
 import { CPA_COURSE } from '../../courses/cpa/config';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
+import { db } from '../../config/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
@@ -1090,14 +1092,23 @@ const Practice: React.FC = () => {
     if (!currentQuestion || !reportType) return;
     
     try {
-      // Log the report (could be sent to Firestore in production)
-      logger.log('Question Issue Report:', {
+      // Save report to Firestore for admin review
+      const reportData = {
         questionId: currentQuestion.id,
-        section: sessionConfig?.section,
+        questionText: currentQuestion.question?.substring(0, 200), // First 200 chars for context
+        section: sessionConfig?.section || currentQuestion.section,
+        blueprintArea: currentQuestion.blueprintArea,
         type: reportType,
         details: reportDetails,
-        timestamp: new Date().toISOString()
-      });
+        reportedBy: user?.uid || 'anonymous',
+        reportedByEmail: user?.email || 'anonymous',
+        status: 'pending', // pending, reviewed, resolved, dismissed
+        createdAt: serverTimestamp(),
+      };
+      
+      await addDoc(collection(db, 'questionReports'), reportData);
+      
+      logger.log('Question Issue Report saved:', reportData);
       
       if (logActivity) {
         logActivity('question_reported', {
@@ -1117,7 +1128,7 @@ const Practice: React.FC = () => {
     } catch (error) {
       logger.error('Failed to submit report:', error);
     }
-  }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity]);
+  }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity, user?.uid, user?.email]);
 
   // End session - show results instead of going back to setup
   const endSession = () => {

@@ -835,7 +835,7 @@ const TimedQuiz: React.FC = () => {
                 'p-1.5 rounded-lg transition-colors',
                 flagged.has(currentQuestion?.id)
                   ? 'bg-warning-100 text-warning-600'
-                  : 'text-slate-400 hover:bg-slate-100'
+                  : 'text-slate-600 hover:bg-slate-100'
               )}
             >
               <Flag className="w-5 h-5" />

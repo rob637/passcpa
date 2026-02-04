@@ -254,7 +254,7 @@ const Achievements: React.FC = () => {
                   isEarned ? 'bg-success-100' : 'bg-slate-100'
                 )}
               >
-                {isEarned ? achievement.icon : <Lock className="w-5 h-5 text-slate-400" />}
+                {isEarned ? achievement.icon : <Lock className="w-5 h-5 text-slate-600" />}
               </div>
 
               {/* Content */}
@@ -278,7 +278,7 @@ const Achievements: React.FC = () => {
                   </span>
                 </div>
                 <p
-                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600' : 'text-slate-400')}
+                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600' : 'text-slate-600')}
                 >
                   {achievement.description}
                 </p>

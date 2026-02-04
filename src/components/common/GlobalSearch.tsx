@@ -394,25 +394,25 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
         <div className="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           {/* Search Input */}
           <div className="flex items-center gap-3 px-4 py-4 border-b border-slate-100 dark:border-slate-700">
-            <SearchIcon className="w-5 h-5 text-slate-400" />
+            <SearchIcon className="w-5 h-5 text-slate-600 dark:text-slate-400" />
             <input
               ref={inputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions, topics, or ask Vory..."
-              className="flex-1 text-lg outline-none placeholder:text-slate-400 bg-transparent dark:text-white"
+              className="flex-1 text-lg outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 bg-transparent dark:text-white"
               aria-label="Search"
               aria-controls="search-results"
               aria-activedescendant={results[selectedIndex]?.id}
             />
-            {loading && <Loader2 className="w-5 h-5 text-slate-400 animate-spin" aria-hidden="true" />}
+            {loading && <Loader2 className="w-5 h-5 text-slate-600 dark:text-slate-400 animate-spin" aria-hidden="true" />}
             <button 
               type="button"
               onClick={() => setShowFilters(!showFilters)}
               className={clsx(
                 "p-1.5 rounded-lg transition-colors",
-                showFilters ? "bg-primary-100 text-primary-600" : "hover:bg-slate-100 text-slate-400"
+                showFilters ? "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400" : "hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400"
               )}
               aria-label="Toggle filters"
               aria-expanded={showFilters}
@@ -425,7 +425,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg"
               aria-label="Close search"
             >
-              <X className="w-5 h-5 text-slate-400" aria-hidden="true" />
+              <X className="w-5 h-5 text-slate-600 dark:text-slate-400" aria-hidden="true" />
             </button>
           </div>
 
@@ -530,7 +530,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
                           {result.subtitle}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-400">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                         <span className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">
                           {typeInfo.label}
                         </span>
@@ -546,7 +546,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               </div>
             ) : recentSearches.length > 0 && !searchQuery ? (
               <div className="py-2">
-                <div className="px-4 py-2 text-xs font-medium text-slate-400 uppercase">
+                <div className="px-4 py-2 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">
                   Recent Searches
                 </div>
                 {recentSearches.map((recent, idx) => (
@@ -555,15 +555,15 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
                     onClick={() => setSearchQuery(recent.query)}
                     className="w-full px-4 py-2 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-700 text-left"
                   >
-                    <Clock className="w-4 h-4 text-slate-400" />
+                    <Clock className="w-4 h-4 text-slate-400 dark:text-slate-500" />
                     <span className="text-slate-600 dark:text-slate-300">{recent.query}</span>
                   </button>
                 ))}
               </div>
             ) : searchQuery.length < 2 ? (
               <div className="py-8 text-center">
-                <div className="text-slate-400 dark:text-slate-600 mb-4">Start typing to search...</div>
-                <div className="text-xs text-slate-400 space-y-1">
+                <div className="text-slate-500 dark:text-slate-400 mb-4">Start typing to search...</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1">
                   <div>Search across <strong>2,500+</strong> questions</div>
                   <div>Filter by section, type, or difficulty</div>
                 </div>

@@ -111,7 +111,7 @@ const QuestionEditor = () => {
                   <HelpCircle className="w-6 h-6 text-blue-600" />
                   Question Bank
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-300">View MCQ questions (local data)</p>
+                <p className="text-sm text-gray-600 dark:text-slate-300">View MCQ questions (local data)</p>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ const QuestionEditor = () => {
           {stats && Object.entries(stats.bySection).map(([section, count]) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
+              <div className="text-sm text-gray-600 dark:text-slate-300">{section}</div>
             </div>
           ))}
           {stats && (
@@ -163,7 +163,7 @@ const QuestionEditor = () => {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
                 <input
                   type="text"
                   placeholder="Search questions..."
@@ -268,7 +268,7 @@ const QuestionEditor = () => {
                     </div>
                     <button
                       onClick={() => setViewingQuestion(q)}
-                      className="p-2 text-slate-400 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg"
+                      className="p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg"
                       title="View question details"
                     >
                       <Eye className="w-4 h-4" />
@@ -360,7 +360,7 @@ const QuestionEditor = () => {
               )}
 
               <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-600">
                   ID: {viewingQuestion.id}
                 </p>
               </div>

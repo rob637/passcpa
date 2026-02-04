@@ -337,7 +337,7 @@ const StudyJourney: React.FC = () => {
                         : 'bg-orange-100 dark:bg-orange-900/30'
                   )}>
                     {unit.locked ? (
-                      <Lock className="w-6 h-6 text-slate-400" />
+                      <Lock className="w-6 h-6 text-slate-600" />
                     ) : unit.completed ? (
                       <Trophy className="w-6 h-6 text-success-600" />
                     ) : (
@@ -354,7 +354,7 @@ const StudyJourney: React.FC = () => {
                       <span>{unit.tbsCount} TBS</span>
                     </div>
                   </div>
-                  {!unit.locked && <ChevronRight className="w-5 h-5 text-slate-400" />}
+                  {!unit.locked && <ChevronRight className="w-5 h-5 text-slate-600" />}
                 </button>
               ) : (
                 /* Content Unit */
@@ -412,7 +412,7 @@ const StudyJourney: React.FC = () => {
                       </div>
                       {!unit.locked && (
                         <ChevronDown className={clsx(
-                          'w-5 h-5 text-slate-400 transition-transform',
+                          'w-5 h-5 text-slate-600 transition-transform',
                           isExpanded && 'rotate-180'
                         )} />
                       )}
@@ -463,7 +463,7 @@ const StudyJourney: React.FC = () => {
                               ) : isNext ? (
                                 <PlayCircle className="w-4 h-4 text-primary-600" />
                               ) : (
-                                <BookOpen className="w-4 h-4 text-slate-400" />
+                                <BookOpen className="w-4 h-4 text-slate-600" />
                               )}
                             </div>
                             <div className="flex-1 min-w-0">
@@ -473,7 +473,7 @@ const StudyJourney: React.FC = () => {
                               )}>
                                 {lesson.title}
                               </div>
-                              <div className="text-xs text-slate-400">
+                              <div className="text-xs text-slate-600">
                                 {lesson.duration || 30} min
                               </div>
                             </div>

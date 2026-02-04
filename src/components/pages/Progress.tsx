@@ -97,13 +97,13 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
               <FileText className="w-5 h-5 text-primary-600" />
               Units Report
             </h2>
-            <p className="text-sm text-slate-600">Detailed progress by blueprint area</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Detailed progress by blueprint area</p>
           </div>
         </div>
         {expanded ? (
-          <ChevronUp className="w-5 h-5 text-slate-400" />
+          <ChevronUp className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-slate-400" />
+          <ChevronDown className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         )}
       </button>
       
@@ -187,7 +187,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
                         'font-semibold',
                         unit.accuracy >= 75 ? 'text-success-600' :
                         unit.accuracy >= 50 ? 'text-warning-600' :
-                        unit.mcqAnswered === 0 ? 'text-slate-400' : 'text-error-600'
+                        unit.mcqAnswered === 0 ? 'text-slate-600' : 'text-error-600'
                       )}>
                         {unit.mcqAnswered > 0 ? `${unit.accuracy}%` : '—'}
                       </span>
@@ -379,7 +379,7 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
             fill="none"
             stroke="currentColor"
             strokeWidth="8"
-            className="text-slate-100"
+            className="text-slate-100 dark:text-slate-700"
           />
           {/* Progress circle */}
           <circle
@@ -406,7 +406,7 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
       </div>
 
       {daysUntilExam !== null && daysUntilExam > 0 && (
-        <div className="flex items-center justify-center gap-1 mt-2 text-sm text-slate-600">
+        <div className="flex items-center justify-center gap-1 mt-2 text-sm text-slate-600 dark:text-slate-400">
           <Calendar className="w-4 h-4" />
           <span>{daysUntilExam} days until exam</span>
         </div>
@@ -414,21 +414,21 @@ const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Da
 
       {/* Breakdown - 2x2 grid with 5 items */}
       <div className="grid grid-cols-2 gap-2 mt-4 text-xs">
-        <div className="bg-slate-50 rounded-lg p-2">
-          <div className="font-medium text-slate-900">{readiness.breakdown.accuracy}%</div>
-          <div className="text-slate-600">Accuracy</div>
+        <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-2">
+          <div className="font-medium text-slate-900 dark:text-slate-100">{readiness.breakdown.accuracy}%</div>
+          <div className="text-slate-600 dark:text-slate-400">Accuracy</div>
         </div>
-        <div className="bg-slate-50 rounded-lg p-2">
-          <div className="font-medium text-slate-900">{readiness.breakdown.coverage}%</div>
-          <div className="text-slate-600">Coverage</div>
+        <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-2">
+          <div className="font-medium text-slate-900 dark:text-slate-100">{readiness.breakdown.coverage}%</div>
+          <div className="text-slate-600 dark:text-slate-400">Coverage</div>
         </div>
-        <div className="bg-slate-50 rounded-lg p-2">
-          <div className="font-medium text-slate-900">{readiness.breakdown.volume}%</div>
-          <div className="text-slate-600">Volume</div>
+        <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-2">
+          <div className="font-medium text-slate-900 dark:text-slate-100">{readiness.breakdown.volume}%</div>
+          <div className="text-slate-600 dark:text-slate-400">Volume</div>
         </div>
-        <div className="bg-slate-50 rounded-lg p-2">
-          <div className="font-medium text-slate-900">{readiness.breakdown.lessons}%</div>
-          <div className="text-slate-600">Lessons</div>
+        <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-2">
+          <div className="font-medium text-slate-900 dark:text-slate-100">{readiness.breakdown.lessons}%</div>
+          <div className="text-slate-600 dark:text-slate-400">Lessons</div>
         </div>
       </div>
     </div>
@@ -775,13 +775,13 @@ const Progress: React.FC = () => {
                 <Target className="w-6 h-6 text-primary-400" />
                 Study Plan: {sectionInfo.name}
               </h2>
-              <p className="text-slate-400 text-sm mt-1">
+              <p className="text-slate-600 text-sm mt-1">
                 Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
               </p>
             </div>
             <div className="text-right hidden sm:block">
               <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
-              <div className="text-xs text-slate-400">Modules / Day</div>
+              <div className="text-xs text-slate-600">Modules / Day</div>
             </div>
           </div>
           
@@ -790,7 +790,7 @@ const Progress: React.FC = () => {
             <span>{style.icon}</span>
             <span className={`text-sm font-medium ${style.text}`}>{paceInfo.message}</span>
             {paceInfo.status !== 'on-track' && paceInfo.status !== 'ahead' && (
-              <span className="text-xs text-slate-400 ml-1">
+              <span className="text-xs text-slate-600 ml-1">
                 ({paceInfo.adjustedPace}/day needed)
               </span>
             )}
@@ -811,7 +811,7 @@ const Progress: React.FC = () => {
               {studyPlan.milestones.map((m, i) => (
                 <div 
                   key={i} 
-                  className="absolute flex flex-col items-center text-xs text-slate-400"
+                  className="absolute flex flex-col items-center text-xs text-slate-600"
                   style={{ 
                     left: `${m.position}%`,
                     transform: i === 0 ? 'translateX(0)' : i === studyPlan.milestones.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)'
@@ -836,37 +836,37 @@ const Progress: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Overview Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                <div className="flex items-center gap-2 text-slate-600 mb-2">
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 mb-2">
                   <Target className="w-4 h-4" />
                   <span className="text-sm font-medium">Accuracy</span>
                 </div>
-                <div className="text-2xl font-bold text-slate-900">{overallStats.accuracy}%</div>
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">{overallStats.accuracy}%</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                <div className="flex items-center gap-2 text-slate-600 mb-2">
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 mb-2">
                   <HelpCircle className="w-4 h-4" />
                   <span className="text-sm font-medium">Questions</span>
                 </div>
-                <div className="text-2xl font-bold text-slate-900">{overallStats.totalQuestions}</div>
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">{overallStats.totalQuestions}</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                <div className="flex items-center gap-2 text-slate-600 mb-2">
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 mb-2">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm font-medium">Study Time</span>
                 </div>
-                <div className="text-2xl font-bold text-slate-900">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">
                   {overallStats.studyMinutes >= 60 
                     ? `${Math.round(overallStats.studyMinutes / 60)}h` 
                     : `${Math.round(overallStats.studyMinutes)}m`}
                 </div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                <div className="flex items-center gap-2 text-slate-600 mb-2">
+              <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 mb-2">
                   <Flame className="w-4 h-4" />
                   <span className="text-sm font-medium">Streak</span>
                 </div>
-                <div className="text-2xl font-bold text-slate-900">{currentStreak || 0}</div>
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">{currentStreak || 0}</div>
               </div>
             </div>
 
@@ -949,7 +949,7 @@ const Progress: React.FC = () => {
                       </div>
                       <div className={clsx(
                         "text-xs font-medium",
-                        isToday ? "text-primary-600" : "text-slate-400"
+                        isToday ? "text-primary-600" : "text-slate-600"
                       )}>
                         {format(day.date, 'EEE')}
                       </div>
@@ -976,13 +976,13 @@ const Progress: React.FC = () => {
             </div>
 
             {/* Topic Performance */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <BarChart3 className="w-5 h-5 text-primary-600" />
                   {sectionInfo?.name || 'Exam'} Proficiency
                 </h2>
-                <div className="text-sm font-medium text-slate-600">
+                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
                   {topicPerformance.length}/{((EXAM_BLUEPRINTS as Record<string, any>)[currentSection]?.areas || []).reduce((acc: number, area: any) => acc + (area.groups?.reduce((g: number, grp: any) => g + (grp.topics?.length || 0), 0) || 0), 0) || 15} Topics
                 </div>
               </div>
@@ -994,8 +994,8 @@ const Progress: React.FC = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Exam Readiness */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-primary-600" />
                 Readiness Score
               </h2>

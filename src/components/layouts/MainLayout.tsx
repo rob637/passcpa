@@ -214,7 +214,7 @@ const MainLayout = () => {
           
           {/* Exam Strategy Section - Always Visible */}
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600">
+            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-600">
               Exam Strategy
             </span>
             <NavLink
@@ -252,7 +252,7 @@ const MainLayout = () => {
             </div>
           </div>
           {/* Legal Disclaimer */}
-          <p className="mt-4 text-[10px] text-slate-400 leading-tight">
+          <p className="mt-4 text-[10px] text-slate-600 leading-tight">
             Not affiliated with AICPA, NASBA, or any state board. For educational purposes only.{' '}
             <NavLink to="/terms" className="underline hover:text-slate-600">Terms</NavLink>
           </p>
@@ -322,7 +322,7 @@ const MainLayout = () => {
               className={({ isActive }) =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-600'
+                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-600'
                 )
               }
             >
@@ -337,7 +337,7 @@ const MainLayout = () => {
             aria-label="Exam Strategy"
             className={clsx(
               'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-600'
+              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-600 dark:text-slate-600'
             )}
           >
             <Compass className="w-5 h-5" aria-hidden="true" />

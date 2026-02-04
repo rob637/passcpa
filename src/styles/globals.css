@@ -24,13 +24,14 @@
   --nav-height: 64px;
   --header-height: 56px;
 
-  /* Light mode colors - Crisper, more defined */
+  /* Light mode colors - Crisper, more defined (Google-level contrast) */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-tertiary: #64748b;
+  --text-primary: #0f172a;      /* slate-900 - crisp black */
+  --text-secondary: #334155;    /* slate-700 - upgraded from 475569/slate-600 */
+  --text-tertiary: #475569;     /* slate-600 - upgraded from 64748b/slate-500 */
+  --text-muted: #64748b;        /* slate-500 - for truly optional hints */
   --border-color: #e2e8f0;
   --border-color-strong: #cbd5e1;
   --border-color-light: #f1f5f9;

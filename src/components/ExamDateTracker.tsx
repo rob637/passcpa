@@ -146,7 +146,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
               }}
               className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
             >
-              <Edit2 className="w-4 h-4 text-slate-400" />
+              <Edit2 className="w-4 h-4 text-slate-600" />
             </button>
           )}
         </div>
@@ -188,7 +188,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
         ) : examDate ? (
           <div className="mt-2">
             <div className="flex items-center gap-2 text-sm">
-              <Calendar className="w-4 h-4 text-slate-400" />
+              <Calendar className="w-4 h-4 text-slate-600" />
               <span className="text-slate-600 dark:text-slate-300">
                 {format(examDate, 'MMMM d, yyyy')}
               </span>

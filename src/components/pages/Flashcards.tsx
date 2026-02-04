@@ -583,7 +583,7 @@ const Flashcards: React.FC = () => {
                   </span>
                 </div>
               )}
-              <div className="text-center text-slate-400 text-sm mt-4">
+              <div className="text-center text-slate-600 text-sm mt-4">
                 <span className="hidden sm:inline">Press Space or </span>Tap to flip
               </div>
             </div>
@@ -672,7 +672,7 @@ const Flashcards: React.FC = () => {
 
           {/* Navigation hint */}
           {!isFlipped && (
-            <div className="mt-6 flex justify-center gap-4 text-sm text-slate-400">
+            <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600">
               <span className="hidden sm:inline">← → to navigate</span>
               <span className="hidden sm:inline">Space to flip</span>
               <span className="hidden sm:inline">1-4 to rate</span>

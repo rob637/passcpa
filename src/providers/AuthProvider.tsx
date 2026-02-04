@@ -11,6 +11,8 @@ import {
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
@@ -109,6 +111,40 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setLoading(false);
       }
     }, 10000); // 10 second timeout
+
+    // Handle redirect result (for Google sign-in on mobile)
+    getRedirectResult(auth).then(async (result) => {
+      if (result?.user) {
+        // User signed in via redirect, handle profile creation
+        const user = result.user;
+        const userRef = doc(db, 'users', user.uid);
+        const userDoc = await getDoc(userRef);
+        
+        if (!userDoc.exists()) {
+          const newProfile: Omit<UserProfile, 'id'> = {
+            email: user.email || '',
+            displayName: user.displayName || '',
+            photoURL: user.photoURL,
+            createdAt: serverTimestamp(),
+            onboardingComplete: false,
+            examSection: null,
+            examDate: null,
+            dailyGoal: 25,
+            studyPlanId: null,
+            settings: {
+              notifications: true,
+              darkMode: false,
+              soundEffects: true,
+            },
+          };
+          await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
+        } else {
+          await updateDoc(userRef, { lastLogin: serverTimestamp() });
+        }
+      }
+    }).catch((err) => {
+      logger.error('Redirect result error:', err);
+    });
 
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       authResolved = true;
@@ -269,11 +305,23 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  // Google sign-in
+  // Google sign-in - use redirect on mobile to avoid COOP issues
   const signInWithGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({ prompt: 'select_account' });
+      
+      // Use redirect on mobile/tablet, popup on desktop
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+      
+      if (isMobile) {
+        // Redirect flow - handled by getRedirectResult in useEffect
+        await signInWithRedirect(auth, provider);
+        // This won't return - page redirects to Google
+        return null as unknown as User;
+      }
+      
+      // Desktop: use popup
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       
@@ -286,6 +334,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const newProfile: Omit<UserProfile, 'id'> = {
           email: user.email || '',
           displayName: user.displayName || '',
+          photoURL: user.photoURL,
           createdAt: serverTimestamp(),
           onboardingComplete: false,
           examSection: null,

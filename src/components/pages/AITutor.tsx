@@ -212,14 +212,25 @@ const AITutor: React.FC = () => {
   const currentSection = profile?.examSection || 'REG';
   const sectionInfo = CPA_SECTIONS[currentSection as keyof typeof CPA_SECTIONS];
 
-  // Check for context passed from Practice page
+  // Check for context passed from Practice page (via state or URL params)
   useEffect(() => {
+    // Check location.state first (same-tab navigation)
     if (location.state?.context) {
       setContextFromPractice(location.state.context);
       // Clear the state so it doesn't persist on refresh
       window.history.replaceState({}, document.title);
+      return;
     }
-  }, [location.state]);
+    
+    // Check URL params (new tab / window.open)
+    const params = new URLSearchParams(location.search);
+    const contextParam = params.get('context');
+    if (contextParam) {
+      setContextFromPractice(decodeURIComponent(contextParam));
+      // Clean URL
+      window.history.replaceState({}, document.title, '/ai-tutor');
+    }
+  }, [location.state, location.search]);
 
   // Load user's weak areas and conversation history
   useEffect(() => {

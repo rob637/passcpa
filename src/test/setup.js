@@ -28,6 +28,8 @@ vi.mock('firebase/storage', () => ({
 vi.mock('firebase/auth', () => ({
   GoogleAuthProvider: vi.fn(() => ({})),
   signInWithPopup: vi.fn(),
+  signInWithRedirect: vi.fn().mockResolvedValue(undefined),
+  getRedirectResult: vi.fn().mockResolvedValue(null),
   signInWithEmailAndPassword: vi.fn(),
   createUserWithEmailAndPassword: vi.fn(),
   signOut: vi.fn(),

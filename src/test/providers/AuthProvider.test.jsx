@@ -26,6 +26,8 @@ vi.mock('firebase/auth', () => ({
     setCustomParameters: vi.fn(),
   })),
   signInWithPopup: vi.fn().mockRejectedValue(new Error('Popup blocked or cancelled')),
+  signInWithRedirect: vi.fn().mockResolvedValue(undefined),
+  getRedirectResult: vi.fn().mockResolvedValue(null),
   updateProfile: (...args) => mockUpdateProfile(...args),
 }));
 

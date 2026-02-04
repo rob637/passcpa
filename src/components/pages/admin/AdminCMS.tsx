@@ -345,7 +345,11 @@ const AdminCMS: React.FC = () => {
 
   // Load detailed user activity data
   const loadUserActivity = useCallback(async (userDoc: UserDocument) => {
-    if (!isAdmin) return;
+    console.log('loadUserActivity called', { isAdmin, userId: userDoc.id });
+    if (!isAdmin) {
+      console.log('Not admin, returning early');
+      return;
+    }
     setSelectedUser(userDoc);
     setIsLoadingActivity(true);
     setUserActivity(null);

@@ -246,7 +246,7 @@ const LessonMatrix: React.FC = () => {
       <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
         <div className="flex items-center justify-center py-12">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-          <span className="ml-3 text-slate-600 dark:text-slate-400">Loading lessons...</span>
+          <span className="ml-3 text-slate-600 dark:text-slate-300">Loading lessons...</span>
         </div>
       </div>
     );
@@ -260,7 +260,7 @@ const LessonMatrix: React.FC = () => {
           <Layout className="w-8 h-8 text-primary-600 dark:text-primary-400" />
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Study Guide</h1>
         </div>
-        <p className="text-slate-600 dark:text-slate-400">
+        <p className="text-slate-600 dark:text-slate-300">
           Browse all {allLessons.length} lessons across all CPA exam sections. Click any lesson to start learning.
         </p>
       </div>
@@ -394,18 +394,18 @@ const LessonMatrix: React.FC = () => {
           <table className="w-full text-left border-collapse" key={`${search}-${sectionFilter}-${methodFilter}-${versionFilter}-${showObbbaOnly}`}>
             <thead>
               <tr className="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider w-20">Section</th>
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Lesson / Topic</th>
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider hidden lg:table-cell">Blueprint Area</th>
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider hidden md:table-cell w-28">Version</th>
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider w-24 hidden sm:table-cell">Duration</th>
-                <th className="p-4 text-xs font-semibold text-slate-500 uppercase tracking-wider w-28">Difficulty</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">Section</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider">Lesson / Topic</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider hidden lg:table-cell">Blueprint Area</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider hidden md:table-cell w-28">Version</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-24 hidden sm:table-cell">Duration</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-28">Difficulty</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {filteredLessons.length === 0 ? (
                  <tr>
-                   <td colSpan={6} className="p-8 text-center text-slate-500">
+                   <td colSpan={6} className="p-8 text-center text-slate-600">
                      No lessons match your filters.
                    </td>
                  </tr>
@@ -439,7 +439,7 @@ const LessonMatrix: React.FC = () => {
                       </td>
                       <td className="p-4">
                         <div className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{lesson.title}</div>
-                        <div className="text-xs text-slate-500 mt-1 flex flex-wrap gap-1 items-center">
+                        <div className="text-xs text-slate-600 mt-1 flex flex-wrap gap-1 items-center">
                           {lesson.topics.slice(0, 3).map((t, i) => (
                             <span key={i} className="inline-block bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-[10px]">
                               {t}
@@ -479,7 +479,7 @@ const LessonMatrix: React.FC = () => {
                       <td className="p-4 hidden md:table-cell whitespace-nowrap">
                         <VersionBadge status={versionStatus} />
                       </td>
-                      <td className="p-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400 hidden sm:table-cell">
+                      <td className="p-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-300 hidden sm:table-cell">
                         <div className="flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5" />
                           {lesson.duration}m
@@ -495,7 +495,7 @@ const LessonMatrix: React.FC = () => {
             </tbody>
           </table>
         </div>
-        <div className="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 text-xs text-slate-500 text-center">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 text-xs text-slate-600 text-center">
           Showing {filteredLessons.length} of {allLessons.length} lessons
         </div>
       </div>

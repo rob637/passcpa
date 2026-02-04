@@ -218,7 +218,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
           ) : (
             <div className="space-y-3">
               {/* Legend */}
-              <div className="flex items-center gap-4 text-xs text-slate-500 mb-4 pb-4 border-b border-slate-200 dark:border-slate-700">
+              <div className="flex items-center gap-4 text-xs text-slate-600 mb-4 pb-4 border-b border-slate-200 dark:border-slate-700">
                 <div className="flex items-center gap-1">
                   <div className="w-3 h-3 rounded bg-success-500" />
                   <span>Strong (75%+)</span>
@@ -269,14 +269,14 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                     {/* Area Info */}
                     <div className="flex-1 text-left">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+                        <span className="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
                           {area.area}
                         </span>
                         <span className="font-medium text-slate-900 dark:text-white">
                           {area.name}
                         </span>
                       </div>
-                      <div className="text-sm text-slate-500 mt-1">
+                      <div className="text-sm text-slate-600 mt-1">
                         {area.questionsAnswered} questions answered • {area.weight}% of exam
                       </div>
                     </div>
@@ -293,7 +293,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                         )}>
                           {area.questionsAnswered > 0 ? `${area.accuracy}%` : '—'}
                         </div>
-                        <div className="text-xs text-slate-500">Accuracy</div>
+                        <div className="text-xs text-slate-600">Accuracy</div>
                       </div>
                       
                       {/* Weight Bar */}
@@ -331,25 +331,25 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                           <div className="text-lg font-bold text-slate-900 dark:text-white">
                             {area.questionsAnswered}
                           </div>
-                          <div className="text-xs text-slate-500">Total Answered</div>
+                          <div className="text-xs text-slate-600">Total Answered</div>
                         </div>
                         <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-3 text-center">
                           <div className="text-lg font-bold text-success-600">
                             {area.questionsCorrect}
                           </div>
-                          <div className="text-xs text-slate-500">Correct</div>
+                          <div className="text-xs text-slate-600">Correct</div>
                         </div>
                         <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-3 text-center">
                           <div className="text-lg font-bold text-error-600">
                             {area.questionsAnswered - area.questionsCorrect}
                           </div>
-                          <div className="text-xs text-slate-500">Incorrect</div>
+                          <div className="text-xs text-slate-600">Incorrect</div>
                         </div>
                         <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-3 text-center">
                           <div className="text-lg font-bold text-primary-600">
                             {area.weight}%
                           </div>
-                          <div className="text-xs text-slate-500">Exam Weight</div>
+                          <div className="text-xs text-slate-600">Exam Weight</div>
                         </div>
                       </div>
                       
@@ -391,7 +391,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
         {/* Footer */}
         <div className="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50">
           <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2 text-slate-500">
+            <div className="flex items-center gap-2 text-slate-600">
               <Target className="w-4 h-4" />
               <span>Target: 75% accuracy in each area for passing readiness</span>
             </div>

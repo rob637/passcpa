@@ -170,7 +170,7 @@ const FlashcardSetup: React.FC = () => {
         <div className="max-w-lg mx-auto flex items-center gap-3">
           <button
             onClick={() => navigate(-1)}
-            className="p-2 -ml-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
+            className="p-2 -ml-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
@@ -178,7 +178,7 @@ const FlashcardSetup: React.FC = () => {
             <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               Create a Flashcard Session
             </h1>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+            <p className="text-sm text-slate-600 dark:text-slate-300">
               {sectionInfo?.name || currentSection}
             </p>
           </div>
@@ -191,7 +191,7 @@ const FlashcardSetup: React.FC = () => {
           <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Categories
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
+          <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
             Filter flashcards by mastery status
           </p>
           
@@ -227,7 +227,7 @@ const FlashcardSetup: React.FC = () => {
                   </span>
                   <span className={clsx(
                     'px-2 py-0.5 rounded-full text-sm font-semibold',
-                    isSelected ? 'bg-primary-100 text-primary-700' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
+                    isSelected ? 'bg-primary-100 text-primary-700' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                   )}>
                     {loading ? '...' : cat.count}
                   </span>
@@ -259,7 +259,7 @@ const FlashcardSetup: React.FC = () => {
                     'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
                     isSelected
                       ? `border-${type.color}-500 bg-${type.color}-50 dark:bg-${type.color}-900/20 text-${type.color}-700 dark:text-${type.color}-400`
-                      : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300'
+                      : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-slate-300'
                   )}
                   style={isSelected ? { 
                     borderColor: type.color === 'blue' ? '#1a73e8' : type.color === 'amber' ? '#f59e0b' : '#10b981',
@@ -284,7 +284,7 @@ const FlashcardSetup: React.FC = () => {
               Units & Modules
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-500">{config.unit === 'all' ? 'All' : config.unit}</span>
+              <span className="text-sm text-slate-600">{config.unit === 'all' ? 'All' : config.unit}</span>
               <ChevronDown className={clsx('w-5 h-5 text-slate-400 transition-transform', showUnits && 'rotate-180')} />
             </div>
           </button>
@@ -303,7 +303,7 @@ const FlashcardSetup: React.FC = () => {
                 <span className={clsx('font-medium', config.unit === 'all' ? 'text-primary-700' : 'text-slate-700 dark:text-slate-300')}>
                   All Units
                 </span>
-                <span className="text-sm text-slate-500">{counts.all}</span>
+                <span className="text-sm text-slate-600">{counts.all}</span>
               </button>
               {blueprintAreas.map((area) => {
                 const areaCount = sectionCards.filter(c => c.blueprintArea === area).length;
@@ -321,7 +321,7 @@ const FlashcardSetup: React.FC = () => {
                     <span className={clsx('font-medium text-left', config.unit === area ? 'text-primary-700' : 'text-slate-700 dark:text-slate-300')}>
                       {area}
                     </span>
-                    <span className="text-sm text-slate-500">{areaCount}</span>
+                    <span className="text-sm text-slate-600">{areaCount}</span>
                   </button>
                 );
               })}
@@ -339,10 +339,10 @@ const FlashcardSetup: React.FC = () => {
           <div className="flex items-center justify-between py-2">
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <Shuffle className="w-4 h-4 text-slate-500" />
+                <Shuffle className="w-4 h-4 text-slate-600" />
                 <span className="font-medium text-slate-700 dark:text-slate-300">Shuffle order</span>
               </div>
-              <p className="text-xs text-slate-500 mt-1 ml-6">
+              <p className="text-xs text-slate-600 mt-1 ml-6">
                 Randomize card order for better retention
               </p>
             </div>
@@ -368,10 +368,10 @@ const FlashcardSetup: React.FC = () => {
           <div className="flex items-center justify-between py-2">
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-slate-500" />
+                <Eye className="w-4 h-4 text-slate-600" />
                 <span className="font-medium text-slate-700 dark:text-slate-300">Show both sides</span>
               </div>
-              <p className="text-xs text-slate-500 mt-1 ml-6">
+              <p className="text-xs text-slate-600 mt-1 ml-6">
                 See front and back simultaneously
               </p>
             </div>

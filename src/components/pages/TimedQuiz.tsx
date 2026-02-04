@@ -337,7 +337,7 @@ const TimedQuiz: React.FC = () => {
         <div className="max-w-lg mx-auto">
           <button
             onClick={() => navigate('/home')}
-            className="mb-4 flex items-center text-slate-500 hover:text-slate-900 transition-colors"
+            className="mb-4 flex items-center text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowRight className="w-4 h-4 mr-1 rotate-180" />
             Back to Home
@@ -549,7 +549,7 @@ const TimedQuiz: React.FC = () => {
                     'aspect-square rounded-lg flex items-center justify-center text-sm font-medium transition-all',
                     answers[q.id] !== undefined
                       ? 'bg-success-100 text-success-700'
-                      : 'bg-slate-100 text-slate-500',
+                      : 'bg-slate-100 text-slate-600',
                     flagged.has(q.id) && 'ring-2 ring-warning-400'
                   )}
                 >
@@ -617,7 +617,7 @@ const TimedQuiz: React.FC = () => {
               <div className="text-xs text-error-600">Incorrect</div>
             </div>
             <div className="bg-slate-100 rounded-xl p-4">
-              <Clock className="w-6 h-6 text-slate-500 mx-auto mb-1" />
+              <Clock className="w-6 h-6 text-slate-600 mx-auto mb-1" />
               <div className="text-2xl font-bold text-slate-700">{results.unanswered}</div>
               <div className="text-xs text-slate-600">Skipped</div>
             </div>
@@ -793,7 +793,7 @@ const TimedQuiz: React.FC = () => {
                       actualIdx === reviewIndex
                         ? 'bg-primary-500 text-white'
                         : !isAnswered
-                        ? 'bg-slate-100 text-slate-500'
+                        ? 'bg-slate-100 text-slate-600'
                         : wasCorrect
                         ? 'bg-success-100 text-success-700'
                         : 'bg-error-100 text-error-700'

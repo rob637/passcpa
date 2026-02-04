@@ -288,7 +288,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
       case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
-      default: return 'text-slate-500 bg-slate-100 dark:bg-slate-800';
+      default: return 'text-slate-600 bg-slate-100 dark:bg-slate-800';
     }
   };
 
@@ -309,7 +309,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
         <div className="flex items-center justify-center py-8">
           <Loader2 className="w-6 h-6 animate-spin text-primary-500" />
-          <span className="ml-2 text-slate-500">Creating your personalized plan...</span>
+          <span className="ml-2 text-slate-600">Creating your personalized plan...</span>
         </div>
       </div>
     );
@@ -318,7 +318,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   if (error || !plan) {
     return (
       <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
-        <div className="flex items-center justify-center py-8 text-slate-500">
+        <div className="flex items-center justify-center py-8 text-slate-600">
           <AlertCircle className="w-5 h-5 mr-2" />
           {error || 'Unable to load daily plan'}
         </div>
@@ -343,7 +343,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               <Calendar className="w-5 h-5 text-primary-500" />
               <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
             </div>
-            <span className="text-sm text-slate-500">
+            <span className="text-sm text-slate-600">
               {completedCount}/{totalActivities} done
             </span>
           </div>
@@ -406,7 +406,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         {totalActivities > 1 && (
           <div className="p-3 bg-slate-50 dark:bg-slate-900/50">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+              <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                 <span>Up next:</span>
                 <div className="flex gap-1">
                   {plan.activities.slice(1, 4).map((activity: DailyActivity, idx: number) => (
@@ -456,7 +456,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                 </span>
               )}
             </div>
-            <p className="text-slate-500 text-sm mt-1">
+            <p className="text-slate-600 text-sm mt-1">
               {plan.summary.weakAreaFocus.length > 0 
                 ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
                 : 'Personalized for your progress'}
@@ -466,7 +466,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             {compact && (
               <button
                 onClick={() => setExpanded(false)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-500"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-600"
               >
                 Collapse ↑
               </button>
@@ -476,7 +476,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               title="Regenerate plan"
             >
-              <RefreshCw className="w-5 h-5 text-slate-500" />
+              <RefreshCw className="w-5 h-5 text-slate-600" />
             </button>
           </div>
         </div>
@@ -484,7 +484,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         {/* Progress bar */}
         <div className="mt-3">
           <div className="flex items-center justify-between text-sm mb-1">
-            <span className="text-slate-500">{completedCount}/{totalActivities} activities</span>
+            <span className="text-slate-600">{completedCount}/{totalActivities} activities</span>
             <span className="font-medium text-primary-600">~{plan.estimatedMinutes} min total</span>
           </div>
           <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -518,7 +518,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                       <CheckCircle className="w-5 h-5 text-white" />
                     </div>
                   ) : (
-                    <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                    <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-sm font-medium text-slate-600 dark:text-slate-300">
                       {index + 1}
                     </div>
                   )}
@@ -535,14 +535,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                     </div>
                     <span className={clsx(
                       'font-medium',
-                      isComplete ? 'text-slate-500 line-through' : 'text-slate-900 dark:text-slate-100'
+                      isComplete ? 'text-slate-600 line-through' : 'text-slate-900 dark:text-slate-100'
                     )}>
                       {activity.title}
                     </span>
                     {getPriorityBadge(activity.priority)}
                   </div>
                   
-                  <p className="text-sm text-slate-500 line-clamp-1">{activity.reason}</p>
+                  <p className="text-sm text-slate-600 line-clamp-1">{activity.reason}</p>
                   
                   <div className="flex items-center gap-3 text-xs text-slate-400 mt-1">
                     <span className="flex items-center gap-1">
@@ -579,7 +579,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       <div className="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
         <div className="flex items-center gap-3">
           <Sparkles className="w-5 h-5 text-primary-500" />
-          <p className="text-sm text-slate-600 dark:text-slate-400">
+          <p className="text-sm text-slate-600 dark:text-slate-300">
             {completedCount === 0 
               ? "Complete activities in order for the best learning flow"
               : completedCount < totalActivities 

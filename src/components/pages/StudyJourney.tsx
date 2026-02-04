@@ -251,7 +251,7 @@ const StudyJourney: React.FC = () => {
             <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Study Journey
             </h1>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-slate-600 dark:text-slate-300">
               {sectionInfo?.name || currentSection}
             </p>
           </div>
@@ -263,11 +263,11 @@ const StudyJourney: React.FC = () => {
             <div className="flex items-center gap-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{overallProgress}%</div>
-                <div className="text-xs text-slate-500">Complete</div>
+                <div className="text-xs text-slate-600">Complete</div>
               </div>
               <div className="h-10 w-px bg-slate-200 dark:bg-slate-700" />
               <div className="flex gap-4 text-sm">
-                <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                <div className="flex items-center gap-1 text-slate-600 dark:text-slate-300">
                   <BookOpen className="w-4 h-4" />
                   {totalLessons} Lessons
                 </div>
@@ -348,7 +348,7 @@ const StudyJourney: React.FC = () => {
                     <div className="font-semibold text-slate-900 dark:text-slate-100">
                       {unit.name}
                     </div>
-                    <div className="text-sm text-slate-500 flex items-center gap-2">
+                    <div className="text-sm text-slate-600 flex items-center gap-2">
                       <span>{unit.mcqCount} MCQs</span>
                       <span>·</span>
                       <span>{unit.tbsCount} TBS</span>
@@ -396,7 +396,7 @@ const StudyJourney: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <div className="text-sm text-slate-500 flex items-center gap-2">
+                      <div className="text-sm text-slate-600 flex items-center gap-2">
                         <span>{unit.lessons.length} Lessons</span>
                         <span>·</span>
                         <span>{unit.mcqCount} MCQs</span>
@@ -469,7 +469,7 @@ const StudyJourney: React.FC = () => {
                             <div className="flex-1 min-w-0">
                               <div className={clsx(
                                 'font-medium truncate text-sm',
-                                isCompleted ? 'text-slate-500' : 'text-slate-900 dark:text-slate-100'
+                                isCompleted ? 'text-slate-600' : 'text-slate-900 dark:text-slate-100'
                               )}>
                                 {lesson.title}
                               </div>

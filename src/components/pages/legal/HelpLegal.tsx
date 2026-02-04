@@ -19,7 +19,7 @@ const HelpLegal: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <Link 
             to="/you" 
-            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700"
+            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
@@ -34,7 +34,7 @@ const HelpLegal: React.FC = () => {
       <main className="max-w-4xl mx-auto px-4 py-6">
         {/* Support Section */}
         <div className="mb-6">
-          <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">
+          <h2 className="text-sm font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-3 px-1">
             Support
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
@@ -48,7 +48,7 @@ const HelpLegal: React.FC = () => {
                 </div>
                 <div>
                   <span className="font-medium text-slate-900 dark:text-slate-100">Email Support</span>
-                  <p className="text-xs text-slate-500">support@voraprep.com</p>
+                  <p className="text-xs text-slate-600">support@voraprep.com</p>
                 </div>
               </div>
               <ExternalLink className="w-5 h-5 text-slate-400" />
@@ -64,7 +64,7 @@ const HelpLegal: React.FC = () => {
                 </div>
                 <div>
                   <span className="font-medium text-slate-900 dark:text-slate-100">Send Feedback</span>
-                  <p className="text-xs text-slate-500">Help us improve VoraPrep</p>
+                  <p className="text-xs text-slate-600">Help us improve VoraPrep</p>
                 </div>
               </div>
               <ExternalLink className="w-5 h-5 text-slate-400" />
@@ -74,7 +74,7 @@ const HelpLegal: React.FC = () => {
 
         {/* Legal Section */}
         <div className="mb-6">
-          <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 px-1">
+          <h2 className="text-sm font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-3 px-1">
             Legal
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
@@ -84,11 +84,11 @@ const HelpLegal: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-                  <FileText className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  <FileText className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                 </div>
                 <div>
                   <span className="font-medium text-slate-900 dark:text-slate-100">Terms of Service</span>
-                  <p className="text-xs text-slate-500">Usage terms and conditions</p>
+                  <p className="text-xs text-slate-600">Usage terms and conditions</p>
                 </div>
               </div>
               <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -100,11 +100,11 @@ const HelpLegal: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  <Shield className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                 </div>
                 <div>
                   <span className="font-medium text-slate-900 dark:text-slate-100">Privacy Policy</span>
-                  <p className="text-xs text-slate-500">How we handle your data</p>
+                  <p className="text-xs text-slate-600">How we handle your data</p>
                 </div>
               </div>
               <ChevronRight className="w-5 h-5 text-slate-400" />

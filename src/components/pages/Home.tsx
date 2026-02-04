@@ -169,7 +169,7 @@ const Home = () => {
                 onClick={() => setShowSectionPicker(false)}
                 className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               >
-                <X className="w-5 h-5 text-slate-500" />
+                <X className="w-5 h-5 text-slate-600" />
               </button>
             </div>
             <div className="p-4 space-y-2 overflow-y-auto">
@@ -185,7 +185,7 @@ const Home = () => {
                 return (
                   <>
                     {/* Core Sections */}
-                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Core Sections (Required)</div>
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mb-2">Core Sections (Required)</div>
                     {CORE_SECTIONS.map((sectionKey) => {
                       const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
                       const isSelected = sectionKey === activeSection;
@@ -211,7 +211,7 @@ const Home = () => {
                             <div className="font-semibold text-slate-900 dark:text-slate-100">
                               {section?.name || sectionKey}
                             </div>
-                            <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                            <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
                               {section?.description?.split('.')[0] || ''}
                             </div>
                           </div>
@@ -223,7 +223,7 @@ const Home = () => {
                     })}
                     
                     {/* Discipline Sections */}
-                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-4 mb-2">
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
                       Discipline (Choose One)
                       {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
                     </div>
@@ -255,7 +255,7 @@ const Home = () => {
                               {section?.name || sectionKey}
                               {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
                             </div>
-                            <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                            <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
                               {section?.description?.split('.')[0] || ''}
                             </div>
                           </div>
@@ -280,7 +280,7 @@ const Home = () => {
             <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {getGreeting()}, {firstName}
             </h1>
-            <p className="text-slate-500 dark:text-slate-400 text-sm italic">
+            <p className="text-slate-600 dark:text-slate-300 text-sm italic">
               "{tutorMessage}"
             </p>
           </div>
@@ -316,7 +316,7 @@ const Home = () => {
             </div>
             
             {daysUntilExam !== null && daysUntilExam > 0 && (
-              <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+              <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300 text-sm">
                 <Calendar className="w-4 h-4" />
                 <span>{daysUntilExam}d</span>
               </div>
@@ -338,7 +338,7 @@ const Home = () => {
             <div className="font-semibold text-slate-900 dark:text-slate-100">
               When is your {sectionInfo?.shortName || activeSection} exam?
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-sm text-slate-600 dark:text-slate-300">
               Set your exam date for personalized study pacing
             </div>
           </div>

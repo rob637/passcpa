@@ -202,7 +202,7 @@ const MainLayout = () => {
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
                     isActive && !strategyActive
                       ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
-                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-700'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
                   )
                 }
               >
@@ -214,7 +214,7 @@ const MainLayout = () => {
           
           {/* Exam Strategy Section - Always Visible */}
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-600">
               Exam Strategy
             </span>
             <NavLink
@@ -223,7 +223,7 @@ const MainLayout = () => {
                 'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium mt-2',
                 strategyActive
                   ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
-                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-700'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
               )}
             >
               <Compass className="w-5 h-5" />
@@ -235,7 +235,7 @@ const MainLayout = () => {
         <div className="mt-auto p-6 border-t border-slate-100">
           <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                 Daily Goal
               </span>
               <span className="text-xs font-bold text-primary-600">{dailyProgress}%</span>
@@ -322,7 +322,7 @@ const MainLayout = () => {
               className={({ isActive }) =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
+                  isActive && !strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-600'
                 )
               }
             >
@@ -337,7 +337,7 @@ const MainLayout = () => {
             aria-label="Exam Strategy"
             className={clsx(
               'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-500'
+              strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-400 dark:text-slate-600'
             )}
           >
             <Compass className="w-5 h-5" aria-hidden="true" />

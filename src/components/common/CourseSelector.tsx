@@ -146,7 +146,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
               <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                 {currentDisplay.shortName}
               </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">
+              <div className="text-xs text-slate-600 dark:text-slate-300">
                 {currentDisplay.name}
               </div>
             </div>
@@ -171,7 +171,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
           aria-label="Available courses"
         >
           <div className="p-2">
-            <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
               Select Course
             </div>
             
@@ -208,7 +208,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                     <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
                       {display.shortName}
                     </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
+                    <div className="text-xs text-slate-600 dark:text-slate-300">
                       {display.name}
                     </div>
                   </div>
@@ -236,7 +236,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
           {/* Footer for upgrade prompt */}
           {showComingSoon && (
             <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <GraduationCap className="w-3.5 h-3.5 inline mr-1" />
                 More exam preps coming soon! Get notified when CMA, EA, and CIA launch.
               </p>

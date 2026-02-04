@@ -69,7 +69,7 @@ export const FullPageLoader = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mb-4" />
-      <p className="text-slate-500 text-sm">Loading...</p>
+      <p className="text-slate-600 text-sm">Loading...</p>
     </div>
   );
 };

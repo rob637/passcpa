@@ -11,7 +11,7 @@ const AdminSeed: React.FC = () => {
       <div className="max-w-2xl mx-auto">
         <Link 
           to="/admin/cms" 
-          className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 mb-6"
+          className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Admin
@@ -26,7 +26,7 @@ const AdminSeed: React.FC = () => {
               <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                 Seeding Not Required
               </h1>
-              <p className="text-slate-500 dark:text-slate-400">Questions use local storage</p>
+              <p className="text-slate-600 dark:text-slate-300">Questions use local storage</p>
             </div>
           </div>
           

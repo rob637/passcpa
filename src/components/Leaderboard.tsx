@@ -99,7 +99,7 @@ const ActivityPulse: React.FC<{ count: number; label: string }> = ({ count, labe
     </div>
     <div>
       <div className="font-bold text-slate-900">{count.toLocaleString()}</div>
-      <div className="text-xs text-slate-500">{label}</div>
+      <div className="text-xs text-slate-600">{label}</div>
     </div>
   </div>
 );
@@ -222,25 +222,25 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             <div className="text-lg font-bold text-slate-900">
               {ranking?.questionsPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-500">Questions</div>
+            <div className="text-xs text-slate-600">Questions</div>
           </div>
           <div className="text-center p-2 bg-slate-50 rounded-lg">
             <div className="text-lg font-bold text-slate-900">
               {ranking?.minutesPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-500">Study Time</div>
+            <div className="text-xs text-slate-600">Study Time</div>
           </div>
           <div className="text-center p-2 bg-slate-50 rounded-lg">
             <div className="text-lg font-bold text-slate-900">
               {ranking?.streakPercentile || 50}%
             </div>
-            <div className="text-xs text-slate-500">Streak</div>
+            <div className="text-xs text-slate-600">Streak</div>
           </div>
         </div>
 
         {communityStats && communityStats.todayActive > 0 && (
           <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-sm">
-            <span className="text-slate-500">Studying with you today:</span>
+            <span className="text-slate-600">Studying with you today:</span>
             <span className="font-semibold text-slate-900 flex items-center gap-1">
               <Users className="w-4 h-4 text-primary-500" />
               {communityStats.todayActive.toLocaleString()} candidates
@@ -341,7 +341,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             </div>
             <div>
               <div className="font-bold text-slate-900">{communityStats?.avgQuestionsToday || 0}</div>
-              <div className="text-xs text-slate-500">Avg Questions/Day</div>
+              <div className="text-xs text-slate-600">Avg Questions/Day</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -350,7 +350,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             </div>
             <div>
               <div className="font-bold text-slate-900">{communityStats?.avgMinutesToday || 0}m</div>
-              <div className="text-xs text-slate-500">Avg Study Time</div>
+              <div className="text-xs text-slate-600">Avg Study Time</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -361,7 +361,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
               <div className="font-bold text-slate-900">
                 {communityStats?.topStreaks?.[0] || 0} days
               </div>
-              <div className="text-xs text-slate-500">Top Streak</div>
+              <div className="text-xs text-slate-600">Top Streak</div>
             </div>
           </div>
         </div>
@@ -399,7 +399,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
                 <div className="text-sm text-slate-600">
                   <span className="font-medium">{stats!.students}</span> students
                 </div>
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-slate-600">
                   {stats!.avgQuestions} avg questions
                 </div>
               </div>

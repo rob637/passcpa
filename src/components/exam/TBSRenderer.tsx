@@ -86,7 +86,7 @@ const CalculationInput: React.FC<{
         {requirement.question || requirement.text}
       </label>
       <div className="flex items-center gap-2">
-        <span className="text-slate-500">$</span>
+        <span className="text-slate-600">$</span>
         <input
           type="number"
           value={value}
@@ -372,7 +372,7 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
         <div className="space-y-6">
           {tbs.requirements?.map((req, idx) => (
             <div key={req.id} className="p-4 bg-slate-50 rounded-lg">
-              <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">
+              <div className="text-xs uppercase tracking-wide text-slate-600 mb-2">
                 Requirement {idx + 1}
               </div>
               {renderRequirement(req, idx)}
@@ -406,7 +406,7 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
 
       {/* References */}
       {tbs.references && tbs.references.length > 0 && (
-        <div className="px-6 pb-6 text-xs text-slate-500">
+        <div className="px-6 pb-6 text-xs text-slate-600">
           <strong>References:</strong> {tbs.references.join(', ')}
         </div>
       )}

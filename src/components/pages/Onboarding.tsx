@@ -155,7 +155,7 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate 
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-slate-900">{(section as CPASection).name}</h3>
-              <p className="text-sm text-slate-500 mt-0.5 truncate">{(section as CPASection).description}</p>
+              <p className="text-sm text-slate-600 mt-0.5 truncate">{(section as CPASection).description}</p>
             </div>
             {selected === key && <CheckCircle className="w-5 h-5 text-primary-600 flex-shrink-0" />}
           </div>
@@ -267,14 +267,14 @@ const DailyGoalStep: React.FC<DailyGoalStepProps> = ({ goal, onGoalChange }) => 
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-semibold text-slate-900">{preset.name}</h3>
-              <div className="flex items-center gap-2 text-sm text-slate-500 mt-1">
+              <div className="flex items-center gap-2 text-sm text-slate-600 mt-1">
                 <Clock className="w-4 h-4" />
                 <span>{preset.time}</span>
               </div>
             </div>
             <div className="text-right">
               <span className="text-2xl font-bold text-primary-600">{preset.points}</span>
-              <span className="text-sm text-slate-500 ml-1">pts/day</span>
+              <span className="text-sm text-slate-600 ml-1">pts/day</span>
             </div>
           </div>
         </button>
@@ -329,7 +329,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
               {sectionInfo.shortName}
             </div>
             <div>
-              <div className="text-sm text-slate-500">Section</div>
+              <div className="text-sm text-slate-600">Section</div>
               <div className="font-medium text-slate-900">{sectionInfo.name}</div>
             </div>
           </div>
@@ -340,7 +340,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
             <Calendar className="w-5 h-5 text-primary-600" />
           </div>
           <div>
-            <div className="text-sm text-slate-500">Exam Date</div>
+            <div className="text-sm text-slate-600">Exam Date</div>
             <div className="font-medium text-slate-900">{formattedDate}</div>
           </div>
         </div>
@@ -350,7 +350,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
             <Target className="w-5 h-5 text-success-600" />
           </div>
           <div>
-            <div className="text-sm text-slate-500">Daily Goal</div>
+            <div className="text-sm text-slate-600">Daily Goal</div>
             <div className="font-medium text-slate-900">
               {dailyGoal} points ({goalPreset?.name || 'Custom'})
             </div>
@@ -358,7 +358,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
         </div>
       </div>
 
-      <p className="text-sm text-slate-500">
+      <p className="text-sm text-slate-600">
         You can adjust these settings anytime in your profile.
       </p>
     </div>

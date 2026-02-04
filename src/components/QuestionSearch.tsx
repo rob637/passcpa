@@ -200,7 +200,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
               onClick={onClose}
               className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
             >
-              <X className="w-5 h-5 text-slate-500" />
+              <X className="w-5 h-5 text-slate-600" />
             </button>
           </div>
           
@@ -258,7 +258,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
             </div>
             
             {/* Stats */}
-            <div className="ml-auto text-sm text-slate-500">
+            <div className="ml-auto text-sm text-slate-600">
               {allQuestions.length} questions loaded
             </div>
           </div>
@@ -291,16 +291,16 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
                         ) : result.matchType === 'topic' ? (
                           <Tag className="w-5 h-5 text-primary-600" />
                         ) : (
-                          <FileText className="w-5 h-5 text-slate-500" />
+                          <FileText className="w-5 h-5 text-slate-600" />
                         )}
                       </div>
                       
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-mono px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-400">
+                          <span className="text-xs font-mono px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-slate-600 dark:text-slate-300">
                             {result.question.id}
                           </span>
-                          <span className="text-xs text-slate-500">
+                          <span className="text-xs text-slate-600">
                             {result.question.topic || result.question.topicId}
                           </span>
                           <span className={clsx(
@@ -328,7 +328,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
                 <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">
                   No questions found
                 </h3>
-                <p className="text-slate-500 text-sm max-w-sm">
+                <p className="text-slate-600 text-sm max-w-sm">
                   Try searching with a different keyword, question ID, or topic name.
                 </p>
               </div>
@@ -360,7 +360,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
                 <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">
                   Search Tips
                 </h3>
-                <ul className="space-y-2 text-sm text-slate-500">
+                <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-center gap-2">
                     <Hash className="w-4 h-4 text-primary-500" />
                     Search by Question ID (e.g., "FAR-001")
@@ -399,7 +399,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
         
         {/* Footer */}
         <div className="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50">
-          <div className="flex items-center justify-between text-sm text-slate-500">
+          <div className="flex items-center justify-between text-sm text-slate-600">
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1">
                 <span className="font-medium text-slate-700 dark:text-slate-300">{results.length}</span>

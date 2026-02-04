@@ -44,9 +44,9 @@ const WordCounter: React.FC<WordCounterProps> = ({ text, minWords = 300, maxWord
       )}
     >
       {wordCount} words
-      {isUnder && <span className="text-slate-500 ml-1">(min: {minWords})</span>}
-      {isOver && <span className="text-slate-500 ml-1">(max: {maxWords})</span>}
-      {isOptimal && <span className="text-slate-500 ml-1">✓</span>}
+      {isUnder && <span className="text-slate-600 ml-1">(min: {minWords})</span>}
+      {isOver && <span className="text-slate-600 ml-1">(max: {maxWords})</span>}
+      {isOptimal && <span className="text-slate-600 ml-1">✓</span>}
     </div>
   );
 };
@@ -114,7 +114,7 @@ const RubricDisplay: React.FC<RubricDisplayProps> = ({ scores }) => {
           <div key={key} className="bg-white rounded-lg p-3">
             <div className="flex items-center justify-between mb-2">
               <span className="font-medium text-slate-900 capitalize">{key}</span>
-              <span className="text-sm text-slate-500">{Math.round(rubric.weight * 100)}%</span>
+              <span className="text-sm text-slate-600">{Math.round(rubric.weight * 100)}%</span>
             </div>
             {scores && (
               <div className="flex items-center gap-2 mb-2">
@@ -246,7 +246,7 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
                     {(task.task || task.prompt || '').slice(0, 150)}...
                   </p>
                   <div className="flex items-center gap-4 mt-2">
-                    <span className="text-xs text-slate-500 flex items-center gap-1">
+                    <span className="text-xs text-slate-600 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {task.estimatedTime} min
                     </span>
@@ -467,7 +467,7 @@ const WrittenCommunication: React.FC = () => {
        {/* Editor UI - simplified for brevity, following the pattern of reusing components */}
        <div className="bg-white border-b px-6 py-4 flex justify-between items-center sticky top-0 z-10">
           <div>
-            <div className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-1">
+            <div className="text-sm font-bold text-slate-600 uppercase tracking-wider mb-1">
                 Written Communication
             </div>
             <div className="font-bold text-slate-900">{activeTask.topic}</div>

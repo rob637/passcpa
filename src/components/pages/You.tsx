@@ -68,7 +68,7 @@ const ReadinessRing = ({ readiness, size = 100 }: { readiness: number; size?: nu
         <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           {Math.round(readiness)}%
         </span>
-        <span className="text-xs text-slate-500">Ready</span>
+        <span className="text-xs text-slate-600">Ready</span>
       </div>
     </div>
   );
@@ -343,9 +343,9 @@ const You: React.FC = () => {
               className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 rounded-full border-2 border-slate-200 dark:border-slate-600 flex items-center justify-center shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors"
             >
               {isUploadingPhoto ? (
-                <Loader2 className="w-4 h-4 text-slate-500 animate-spin" />
+                <Loader2 className="w-4 h-4 text-slate-600 animate-spin" />
               ) : (
-                <Camera className="w-4 h-4 text-slate-500" />
+                <Camera className="w-4 h-4 text-slate-600" />
               )}
             </button>
           </div>
@@ -353,7 +353,7 @@ const You: React.FC = () => {
           {/* Name & Section */}
           <div className="flex-1">
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100">{displayName}</h1>
-            <p className="text-slate-500 dark:text-slate-400">{user?.email}</p>
+            <p className="text-slate-600 dark:text-slate-300">{user?.email}</p>
             <div className="flex items-center gap-2 mt-2">
               <span 
                 className="px-2 py-0.5 text-xs font-semibold rounded-full text-white"
@@ -362,7 +362,7 @@ const You: React.FC = () => {
                 {sectionInfo?.shortName || examSection}
               </span>
               {daysUntilExam !== null && daysUntilExam > 0 && (
-                <span className="text-xs text-slate-500 flex items-center gap-1">
+                <span className="text-xs text-slate-600 flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
                   {daysUntilExam} days left
                 </span>
@@ -379,15 +379,15 @@ const You: React.FC = () => {
               <Flame className="w-4 h-4" />
               <span className="font-bold text-lg">{currentStreak}</span>
             </div>
-            <span className="text-xs text-slate-500">Streak</span>
+            <span className="text-xs text-slate-600">Streak</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.totalQuestions}</div>
-            <span className="text-xs text-slate-500">MCQs</span>
+            <span className="text-xs text-slate-600">MCQs</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
-            <span className="text-xs text-slate-500">TBS</span>
+            <span className="text-xs text-slate-600">TBS</span>
           </div>
           
           {/* Row 2: Lessons, Accuracy, Time */}
@@ -395,11 +395,11 @@ const You: React.FC = () => {
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
               {overallStats.lessonsCompleted}/{overallStats.totalLessons}
             </div>
-            <span className="text-xs text-slate-500">Lessons</span>
+            <span className="text-xs text-slate-600">Lessons</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
-            <span className="text-xs text-slate-500">Accuracy</span>
+            <span className="text-xs text-slate-600">Accuracy</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
@@ -407,7 +407,7 @@ const You: React.FC = () => {
                 ? `${overallStats.studyMinutes}m` 
                 : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
             </div>
-            <span className="text-xs text-slate-500">Time</span>
+            <span className="text-xs text-slate-600">Time</span>
           </div>
         </div>
       </div>
@@ -416,7 +416,7 @@ const You: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Readiness */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
-          <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">Exam Ready</h3>
+          <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-3">Exam Ready</h3>
           <div className="flex justify-center">
             <ReadinessRing readiness={readinessData?.overall || 0} size={80} />
           </div>
@@ -425,7 +425,7 @@ const You: React.FC = () => {
         {/* This Week */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400">This Week</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300">This Week</h3>
             <span className="text-xs text-primary-600 font-medium">{weeklyQuestions} Q</span>
           </div>
           <WeeklyChart activity={weeklyActivity} />
@@ -444,7 +444,7 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Full Progress</span>
-              <p className="text-xs text-slate-500">Detailed stats, topic breakdown, study plan</p>
+              <p className="text-xs text-slate-600">Detailed stats, topic breakdown, study plan</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -460,7 +460,7 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Achievements</span>
-              <p className="text-xs text-slate-500">Badges and milestones</p>
+              <p className="text-xs text-slate-600">Badges and milestones</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -476,7 +476,7 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
-              <p className="text-xs text-slate-500">Leaderboard, compare with other candidates</p>
+              <p className="text-xs text-slate-600">Leaderboard, compare with other candidates</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -488,11 +488,11 @@ const You: React.FC = () => {
         >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-              <Settings className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+              <Settings className="w-5 h-5 text-slate-600 dark:text-slate-300" />
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Settings</span>
-              <p className="text-xs text-slate-500">Profile, notifications, study preferences</p>
+              <p className="text-xs text-slate-600">Profile, notifications, study preferences</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -504,11 +504,11 @@ const You: React.FC = () => {
         >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
-              <HelpCircle className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+              <HelpCircle className="w-5 h-5 text-slate-600 dark:text-slate-300" />
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Help & Legal</span>
-              <p className="text-xs text-slate-500">Support, terms, privacy</p>
+              <p className="text-xs text-slate-600">Support, terms, privacy</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />

@@ -88,7 +88,7 @@ const QuestionEditor = () => {
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
             Access Denied
           </h1>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600 dark:text-slate-300">
             You don&apos;t have permission to access the admin area.
           </p>
         </div>
@@ -111,7 +111,7 @@ const QuestionEditor = () => {
                   <HelpCircle className="w-6 h-6 text-blue-600" />
                   Question Bank
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-400">View MCQ questions (local data)</p>
+                <p className="text-sm text-gray-500 dark:text-slate-300">View MCQ questions (local data)</p>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ const QuestionEditor = () => {
           {stats && Object.entries(stats.bySection).map(([section, count]) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-400">{section}</div>
+              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
             </div>
           ))}
           {stats && (
@@ -226,16 +226,16 @@ const QuestionEditor = () => {
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">
               Sample Questions ({filteredQuestions.length} shown)
             </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400">Showing random sample from local question bank</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Showing random sample from local question bank</p>
           </div>
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
             {isLoading ? (
-              <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-12 text-center text-slate-600 dark:text-slate-300">
                 <Loader className="w-8 h-8 animate-spin mx-auto mb-2" />
                 <p>Loading questions...</p>
               </div>
             ) : filteredQuestions.length === 0 ? (
-              <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-8 text-center text-slate-600 dark:text-slate-300">
                 No questions found matching your filters.
               </div>
             ) : (
@@ -260,7 +260,7 @@ const QuestionEditor = () => {
                         >
                           {q.difficulty}
                         </span>
-                        <span className="text-sm text-slate-500 dark:text-slate-400">{q.topic}</span>
+                        <span className="text-sm text-slate-600 dark:text-slate-300">{q.topic}</span>
                       </div>
                       <p className="text-slate-900 dark:text-slate-100 line-clamp-2">
                         {q.question}
@@ -291,7 +291,7 @@ const QuestionEditor = () => {
               </h2>
               <button
                 onClick={() => setViewingQuestion(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
               >
                 ✕
               </button>
@@ -313,17 +313,17 @@ const QuestionEditor = () => {
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Topic</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Topic</h3>
                 <p className="text-slate-900 dark:text-white">{viewingQuestion.topic}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Question</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Question</h3>
                 <p className="text-slate-900 dark:text-white">{viewingQuestion.question}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">Options</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">Options</h3>
                 <div className="space-y-2">
                   {viewingQuestion.options.map((option, index) => (
                     <div
@@ -346,7 +346,7 @@ const QuestionEditor = () => {
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Explanation</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Explanation</h3>
                 <p className="text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-700 p-3 rounded-lg">
                   {viewingQuestion.explanation}
                 </p>
@@ -354,7 +354,7 @@ const QuestionEditor = () => {
 
               {viewingQuestion.reference && (
                 <div>
-                  <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Reference</h3>
+                  <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Reference</h3>
                   <p className="text-slate-600 dark:text-slate-300">{viewingQuestion.reference}</p>
                 </div>
               )}

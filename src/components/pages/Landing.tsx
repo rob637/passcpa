@@ -301,13 +301,13 @@ const Landing = () => {
           {/* No Credit Card Emphasis */}
           <div className="flex flex-col items-center gap-2 mb-8">
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
                 <span>No credit card required</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
@@ -316,7 +316,7 @@ const Landing = () => {
             </div>
             
             {/* Login Link - visible on mobile */}
-            <p className="md:hidden text-sm text-slate-500">
+            <p className="md:hidden text-sm text-slate-600">
               Already have an account?{' '}
               <Link to="/login" className="font-semibold text-blue-600 hover:text-blue-700">Sign In</Link>
             </p>
@@ -329,7 +329,7 @@ const Landing = () => {
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-1">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-slate-600 dark:text-slate-400 text-sm font-medium">{stat.label}</div>
+                <div className="text-slate-600 dark:text-slate-300 text-sm font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -385,7 +385,7 @@ const Landing = () => {
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -417,7 +417,7 @@ const Landing = () => {
               <table className="w-full">
                 <thead>
                   <tr className="bg-slate-100 dark:bg-slate-800">
-                    <th className="px-6 py-5 text-left text-slate-600 dark:text-slate-400 font-semibold">Feature</th>
+                    <th className="px-6 py-5 text-left text-slate-600 dark:text-slate-300 font-semibold">Feature</th>
                     <th className="px-6 py-5 text-center">
                       <div className="flex flex-col items-center">
                         <img 
@@ -428,9 +428,9 @@ const Landing = () => {
                         <span className="text-blue-600 dark:text-blue-400 font-bold">VoraPrep</span>
                       </div>
                     </th>
-                    <th className="px-6 py-5 text-center text-slate-500 dark:text-slate-400">Becker</th>
-                    <th className="px-6 py-5 text-center text-slate-500 dark:text-slate-400">Roger</th>
-                    <th className="px-6 py-5 text-center text-slate-500 dark:text-slate-400">Surgent</th>
+                    <th className="px-6 py-5 text-center text-slate-600 dark:text-slate-300">Becker</th>
+                    <th className="px-6 py-5 text-center text-slate-600 dark:text-slate-300">Roger</th>
+                    <th className="px-6 py-5 text-center text-slate-600 dark:text-slate-300">Surgent</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -470,7 +470,7 @@ const Landing = () => {
                               <X className="w-5 h-5 text-red-400 mx-auto" />
                             )
                           ) : (
-                            <span className="text-slate-500 dark:text-slate-400">{value}</span>
+                            <span className="text-slate-600 dark:text-slate-300">{value}</span>
                           )}
                         </td>
                       ))}
@@ -550,7 +550,7 @@ const Landing = () => {
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">
                     {item.description}
                   </p>
                 </div>
@@ -610,13 +610,13 @@ const Landing = () => {
                 <div className={`inline-block bg-gradient-to-r ${section.color} text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4`}>
                   {section.code}
                 </div>
-                <span className="ml-2 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <span className="ml-2 text-xs font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                   {section.type}
                 </span>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                   {section.name}
                 </h3>
-                <p className="text-slate-500 dark:text-slate-400">
+                <p className="text-slate-600 dark:text-slate-300">
                   {section.questions}+ practice questions
                 </p>
               </div>
@@ -749,7 +749,7 @@ const Landing = () => {
             <p className="text-sm">
               © {new Date().getFullYear()} VoraPrep. All rights reserved. Not affiliated with AICPA.
             </p>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-600">
               Made with ❤️ for CPA candidates everywhere
             </p>
           </div>

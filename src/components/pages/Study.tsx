@@ -255,19 +255,19 @@ const Study = () => {
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
               <div className="text-xl font-bold text-slate-900">{todayLog?.earnedPoints || 0}</div>
-              <div className="text-xs text-slate-500">Points Earned</div>
+              <div className="text-xs text-slate-600">Points Earned</div>
             </div>
             <div>
               <div className="text-xl font-bold text-slate-900">
                 {todayLog?.questionsAttempted || 0}
               </div>
-              <div className="text-xs text-slate-500">Questions</div>
+              <div className="text-xs text-slate-600">Questions</div>
             </div>
             <div>
               <div className="text-xl font-bold text-slate-900">
                 {Math.round(todayLog?.studyTimeMinutes || 0)}
               </div>
-              <div className="text-xs text-slate-500">Minutes</div>
+              <div className="text-xs text-slate-600">Minutes</div>
             </div>
           </div>
         </div>
@@ -315,7 +315,7 @@ const Study = () => {
                     <h3 className="font-semibold text-slate-900 group-hover:text-primary-600 transition-colors">
                       {mode.title}
                     </h3>
-                    <p className="text-sm text-slate-500 mt-1">{mode.description}</p>
+                    <p className="text-sm text-slate-600 mt-1">{mode.description}</p>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-primary-500 transition-colors" />
                 </div>
@@ -337,7 +337,7 @@ const Study = () => {
         <div className="card">
           <div className="divide-y divide-slate-100">
             {recentItems.length === 0 ? (
-              <div className="p-8 text-center text-slate-500">
+              <div className="p-8 text-center text-slate-600">
                 <BookOpen className="w-12 h-12 mx-auto mb-3 text-slate-300" />
                 <p>No recent activity yet.</p>
                 <p className="text-sm">Start a lesson or practice session to track your progress!</p>
@@ -363,7 +363,7 @@ const Study = () => {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-medium text-slate-900">{item.title}</h4>
-                    <div className="text-sm text-slate-500">{item.subtitle}</div>
+                    <div className="text-sm text-slate-600">{item.subtitle}</div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-300" />
                 </Link>

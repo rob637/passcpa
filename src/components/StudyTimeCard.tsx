@@ -111,7 +111,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
     >
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4 text-slate-500" />
+          <Clock className="w-4 h-4 text-slate-600" />
           <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Study Time</span>
         </div>
         <ChevronRight className="w-4 h-4 text-slate-400" />
@@ -125,7 +125,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
             <span className="text-lg font-bold text-slate-900 dark:text-slate-100">
               {formatTime(todayMinutes)}
             </span>
-            <span className="text-xs text-slate-500">today</span>
+            <span className="text-xs text-slate-600">today</span>
           </div>
         </div>
         
@@ -142,7 +142,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
                 className="w-2 h-2 rounded-full" 
                 style={{ backgroundColor: item.color }}
               />
-              <span className="text-xs text-slate-600 dark:text-slate-400">{item.label}</span>
+              <span className="text-xs text-slate-600 dark:text-slate-300">{item.label}</span>
               <span className="text-xs font-medium text-slate-700 dark:text-slate-300 ml-auto">
                 {item.time}m
               </span>
@@ -154,7 +154,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
       {/* Weekly total */}
       {weeklyMinutes > 0 && (
         <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm">
-          <span className="text-slate-500">This week</span>
+          <span className="text-slate-600">This week</span>
           <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
             <TrendingUp className="w-3.5 h-3.5" />
             <span className="font-medium">{formatTime(weeklyMinutes)}</span>

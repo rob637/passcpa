@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronRight,
@@ -957,24 +957,6 @@ const Practice: React.FC = () => {
       );
     }
   }, [selectedAnswer, isAnswered, currentQuestion, elapsed, recordMCQAnswer]);
-
-  // Ask AI for help
-  const askAI = useCallback(() => {
-    const questionText = currentQuestion?.question || '';
-    const correctAnswer =
-      currentQuestion?.options?.[currentQuestion.correctAnswer] ||
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (currentQuestion as any)?.choices?.[currentQuestion.correctAnswer] ||
-      '';
-    const explanation = currentQuestion?.explanation || '';
-
-    // Navigate to AI tutor with context
-    navigate('/ai-tutor', {
-      state: {
-        context: `I got this CPA exam question wrong and need help understanding it:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}\n\nExplanation: ${explanation}\n\nCan you explain this concept in more detail and give me tips for remembering it?`,
-      },
-    });
-  }, [currentQuestion, navigate]);
 
   // Navigation
   const goToQuestion = useCallback((index: number) => {

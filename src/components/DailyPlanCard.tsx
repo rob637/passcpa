@@ -392,10 +392,13 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             <p className="text-white/80 text-sm">Continue studying to hit your daily goal</p>
           </div>
         ) : (
-          <div className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600">
+          <div 
+            className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600 cursor-pointer hover:from-success-600 hover:to-success-700 transition-all"
+            onClick={() => navigate('/practice')}
+          >
             <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
             <p className="text-white font-medium">All done for today! 🎉</p>
-            <p className="text-white/80 text-sm">Come back tomorrow for your next plan</p>
+            <p className="text-white/80 text-sm">Want to keep going? Tap for extra practice →</p>
           </div>
         )}
         
@@ -581,7 +584,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               ? "Complete activities in order for the best learning flow"
               : completedCount < totalActivities 
                 ? `${totalActivities - completedCount} more to go - you're doing great!`
-                : "Amazing! Come back tomorrow for your next personalized plan"}
+                : "Amazing! Keep the momentum with extra practice below"}
           </p>
         </div>
       </div>

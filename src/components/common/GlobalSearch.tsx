@@ -435,7 +435,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               <div className="flex flex-wrap gap-4 text-sm">
                 {/* Section Filter */}
                 <div className="flex items-center gap-2">
-                  <label className="text-slate-500 dark:text-slate-400">Section:</label>
+                  <label className="text-slate-600 dark:text-slate-300">Section:</label>
                   <select
                     value={filters.section}
                     onChange={(e) => updateFilter('section', e.target.value as ExamSection | 'all')}
@@ -448,7 +448,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
 
                 {/* Type Filter */}
                 <div className="flex items-center gap-2">
-                  <label className="text-slate-500 dark:text-slate-400">Type:</label>
+                  <label className="text-slate-600 dark:text-slate-300">Type:</label>
                   <select
                     value={filters.type}
                     onChange={(e) => updateFilter('type', e.target.value as SearchFilters['type'])}
@@ -462,7 +462,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
 
                 {/* Difficulty Filter */}
                 <div className="flex items-center gap-2">
-                  <label className="text-slate-500 dark:text-slate-400">Difficulty:</label>
+                  <label className="text-slate-600 dark:text-slate-300">Difficulty:</label>
                   <select
                     value={filters.difficulty}
                     onChange={(e) => updateFilter('difficulty', e.target.value as SearchFilters['difficulty'])}
@@ -526,7 +526,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
                             __html: highlightMatch(result.title, searchQuery) 
                           }}
                         />
-                        <div className="text-sm text-slate-500 dark:text-slate-400 truncate">
+                        <div className="text-sm text-slate-600 dark:text-slate-300 truncate">
                           {result.subtitle}
                         </div>
                       </div>
@@ -541,7 +541,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
                 })}
               </div>
             ) : searchQuery.length >= 2 && !loading ? (
-              <div className="py-8 text-center text-slate-500 dark:text-slate-400">
+              <div className="py-8 text-center text-slate-600 dark:text-slate-300">
                 No results found for "{searchQuery}"
               </div>
             ) : recentSearches.length > 0 && !searchQuery ? (
@@ -562,7 +562,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               </div>
             ) : searchQuery.length < 2 ? (
               <div className="py-8 text-center">
-                <div className="text-slate-400 dark:text-slate-500 mb-4">Start typing to search...</div>
+                <div className="text-slate-400 dark:text-slate-600 mb-4">Start typing to search...</div>
                 <div className="text-xs text-slate-400 space-y-1">
                   <div>Search across <strong>2,500+</strong> questions</div>
                   <div>Filter by section, type, or difficulty</div>
@@ -572,7 +572,7 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
           </div>
 
           {/* Keyboard hints */}
-          <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
             <div className="flex items-center gap-4">
               <span>
                 <kbd className="px-1.5 py-0.5 bg-white dark:bg-slate-700 rounded border dark:border-slate-600">↑↓</kbd> navigate

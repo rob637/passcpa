@@ -263,7 +263,7 @@ const Achievements: React.FC = () => {
                   <h3
                     className={clsx(
                       'font-semibold',
-                      isEarned ? 'text-slate-900' : 'text-slate-500'
+                      isEarned ? 'text-slate-900' : 'text-slate-600'
                     )}
                   >
                     {achievement.name}
@@ -271,7 +271,7 @@ const Achievements: React.FC = () => {
                   <span
                     className={clsx(
                       'text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0',
-                      isEarned ? 'bg-success-100 text-success-700' : 'bg-slate-100 text-slate-500'
+                      isEarned ? 'bg-success-100 text-success-700' : 'bg-slate-100 text-slate-600'
                     )}
                   >
                     {achievement.points} pts
@@ -286,7 +286,7 @@ const Achievements: React.FC = () => {
                 {/* Progress bar for unearned */}
                 {progress && progress.target > 1 && (
                   <div className="mt-2">
-                    <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+                    <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
                       <span>
                         {progress.current} / {progress.target}
                       </span>

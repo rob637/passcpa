@@ -77,7 +77,7 @@ const VerifyEmail = () => {
           <Mail className="w-8 h-8 text-primary-600 dark:text-primary-400" />
         </div>
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Verify your email</h1>
-        <p className="text-slate-600 dark:text-slate-400 mt-2">
+        <p className="text-slate-600 dark:text-slate-300 mt-2">
           We sent a verification link to:
         </p>
         <p className="text-primary-600 dark:text-primary-400 font-medium mt-1">
@@ -88,7 +88,7 @@ const VerifyEmail = () => {
       {/* Instructions */}
       <div className="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 mb-6">
         <h3 className="font-medium text-slate-900 dark:text-white mb-2">Next steps:</h3>
-        <ol className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+        <ol className="text-sm text-slate-600 dark:text-slate-300 space-y-2">
           <li className="flex items-start gap-2">
             <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium flex-shrink-0 mt-0.5">1</span>
             <span>Check your email inbox (and spam folder)</span>
@@ -145,13 +145,13 @@ const VerifyEmail = () => {
 
       {/* Footer */}
       <div className="mt-6 text-center">
-        <p className="text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-sm text-slate-600 dark:text-slate-300">
           Wrong email?{' '}
           <Link to="/register" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
             Sign up again
           </Link>
         </p>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+        <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">
           Already verified?{' '}
           <Link to="/login" className="text-primary-600 dark:text-primary-400 hover:underline font-medium">
             Sign in

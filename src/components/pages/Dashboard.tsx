@@ -84,7 +84,7 @@ const ProgressRing = ({ progress = 0, size = 120, strokeWidth = 8 }: ProgressRin
             <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
               {Math.round(progress)}%
             </span>
-            <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">complete</span>
+            <span className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">complete</span>
           </>
         )}
       </div>
@@ -125,9 +125,9 @@ const QuickAction = ({ to, icon: Icon, label, sublabel, color = 'primary', dataT
       </div>
       <div className="flex-1 min-w-0">
         <p className="font-semibold text-slate-900 dark:text-slate-100">{label}</p>
-        <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{sublabel}</p>
+        <p className="text-sm text-slate-600 dark:text-slate-300 truncate">{sublabel}</p>
       </div>
-      <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
+      <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" />
     </Link>
   );
 };
@@ -173,7 +173,7 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
           <Target className="w-8 h-8 text-slate-400" />
         </div>
         <div className="flex-1">
-          <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Exam Readiness</p>
+          <p className="text-sm font-medium text-slate-600 dark:text-slate-300">Exam Readiness</p>
           <p className="text-lg font-bold text-slate-900 dark:text-slate-100">Start practicing to see your score</p>
         </div>
         <ChevronRight className="w-5 h-5 text-slate-400" />
@@ -226,12 +226,12 @@ const ReadinessWidget = ({ readiness, daysUntilExam, loading }: ReadinessWidgetP
 
       {/* Status Text */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Exam Readiness</p>
+        <p className="text-sm font-medium text-slate-600 dark:text-slate-300">Exam Readiness</p>
         <p className={clsx('text-lg font-bold', getStatusColor(readiness.status))}>
           {getStatusText(readiness.status)}
         </p>
         {daysUntilExam !== null && daysUntilExam > 0 && (
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
             {daysUntilExam} days until exam
           </p>
         )}
@@ -265,7 +265,7 @@ const StatCard = ({ icon: Icon, value, label, trend, color = 'slate' }: StatCard
         <Icon className="w-5 h-5" />
       </div>
       <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{value}</p>
-      <p className="text-sm text-slate-500 dark:text-slate-400">{label}</p>
+      <p className="text-sm text-slate-600 dark:text-slate-300">{label}</p>
       {trend !== undefined && (
         <p
           className={clsx(
@@ -385,7 +385,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">
             Welcome to VoraPrep
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Let's personalize your study experience. This takes less than a minute.
           </p>
           <Link to="/onboarding" className="btn-primary w-full">
@@ -404,7 +404,7 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           {getGreeting()}, {firstName}
         </h1>
-        <p className="text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-slate-600 dark:text-slate-300 mt-1">
           {format(new Date(), 'EEEE, MMMM d')}
         </p>
       </div>
@@ -420,7 +420,7 @@ const Dashboard = () => {
           </div>
           <div className="flex-1">
             <p className="font-semibold text-slate-900 dark:text-slate-100">{examSection.name}</p>
-            <p className="text-sm text-slate-500 dark:text-slate-400">Tap to view study modules</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Tap to view study modules</p>
           </div>
           <ChevronRight className="w-5 h-5 text-slate-400" />
         </Link>
@@ -492,7 +492,7 @@ const Dashboard = () => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">Today's Progress</h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-sm text-slate-600 dark:text-slate-300 mt-0.5">
               {dailyGoalMet 
                 ? 'Goal achieved! 🎉' 
                 : isAlmostThere 
@@ -539,31 +539,31 @@ const Dashboard = () => {
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {todayLog?.questionsAttempted || 0}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">MCQs</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">MCQs</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {todayLog?.lessonsCompleted || 0}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Lessons</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">Lessons</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {todayLog?.simulationsCompleted || 0}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">TBS</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">TBS</p>
           </div>
           <div>
             <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               {Math.round(todayLog?.studyTimeMinutes || 0)}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Minutes</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">Minutes</p>
           </div>
         </div>
         
         {/* Points breakdown - subtle hint explaining the percentage */}
         <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
-          <div className="flex items-center justify-between text-xs text-slate-500">
+          <div className="flex items-center justify-between text-xs text-slate-600">
             <span>Today's Points</span>
             <span className="font-medium">{todayLog?.earnedPoints || 0} / {todayLog?.goalPoints || 50} pts</span>
           </div>

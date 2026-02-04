@@ -64,7 +64,7 @@ const Login = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Welcome back</h1>
-        <p className="text-slate-600 dark:text-slate-400 mt-2">Sign in to continue your CPA journey</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Sign in to continue your CPA journey</p>
       </div>
 
       {/* Google Sign In - Primary Option */}
@@ -89,7 +89,7 @@ const Login = () => {
           <div className="w-full border-t border-slate-200 dark:border-slate-600" />
         </div>
         <div className="relative flex justify-center">
-          <span className="px-4 bg-white dark:bg-slate-800 text-sm text-slate-500 dark:text-slate-400">or sign in with email</span>
+          <span className="px-4 bg-white dark:bg-slate-800 text-sm text-slate-600 dark:text-slate-300">or sign in with email</span>
         </div>
       </div>
 
@@ -177,7 +177,7 @@ const Login = () => {
       </form>
 
       {/* Sign Up Link */}
-      <p className="mt-8 text-center text-slate-600 dark:text-slate-400">
+      <p className="mt-8 text-center text-slate-600 dark:text-slate-300">
         Don't have an account?{' '}
         <Link to="/register" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">
           Sign up free

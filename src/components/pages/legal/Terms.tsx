@@ -10,7 +10,7 @@ const Terms: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <Link 
             to="/help" 
-            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700"
+            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
@@ -24,7 +24,7 @@ const Terms: React.FC = () => {
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8">
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
             Last updated: January 25, 2026
           </p>
 

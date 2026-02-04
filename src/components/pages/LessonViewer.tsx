@@ -155,7 +155,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
             {listItems.map((item: any, i: number) => (
               <div key={i} className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
                 <dt className="font-semibold text-slate-900 dark:text-slate-100">{item.term}</dt>
-                <dd className="mt-1 text-slate-600 dark:text-slate-400">{item.definition}</dd>
+                <dd className="mt-1 text-slate-600 dark:text-slate-300">{item.definition}</dd>
               </div>
             ))}
           </dl>
@@ -193,7 +193,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
               {section.rows.map((row, i) => (
                 <tr key={i}>
                   {(Array.isArray(row) ? row : (row as any).values || []).map((cell: string, j: number) => (
-                    <td key={j} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-400">
+                    <td key={j} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-300">
                       {cell}
                     </td>
                   ))}
@@ -314,7 +314,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
       );
 
     default:
-      return <p className="text-slate-600 dark:text-slate-400">{String(section.content)}</p>;
+      return <p className="text-slate-600 dark:text-slate-300">{String(section.content)}</p>;
   }
 };
 
@@ -468,7 +468,7 @@ const LessonViewer: React.FC = () => {
       <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-slate-600 dark:text-slate-400">Loading lesson...</p>
+          <p className="text-slate-600 dark:text-slate-300">Loading lesson...</p>
         </div>
       </div>
     );
@@ -483,7 +483,7 @@ const LessonViewer: React.FC = () => {
           <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
             Lesson Not Found
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-4">
+          <p className="text-slate-600 dark:text-slate-300 mb-4">
             The lesson you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           <Link to="/lessons" className="btn-primary">
@@ -502,7 +502,7 @@ const LessonViewer: React.FC = () => {
           <div className="flex items-center justify-between gap-4">
             <button
               onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-              className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="hidden sm:inline">{fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
@@ -664,9 +664,9 @@ const LessonViewer: React.FC = () => {
           </div>
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">{lesson.title}</h1>
           {lesson.description && (
-            <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">{lesson.description}</p>
+            <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">{lesson.description}</p>
           )}
-          <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+          <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-300">
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
               {lesson.duration} min read
@@ -686,7 +686,7 @@ const LessonViewer: React.FC = () => {
             {lesson.topics.map((topic, i) => (
               <span
                 key={i}
-                className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full text-sm"
+                className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm"
               >
                 {topic}
               </span>
@@ -721,7 +721,7 @@ const LessonViewer: React.FC = () => {
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               Quick Check ({(lesson.content as any).quiz.length} questions)
             </h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
+            <p className="text-slate-600 dark:text-slate-300 mb-4">
               Test your understanding of this lesson before moving on.
             </p>
             <Link
@@ -749,7 +749,7 @@ const LessonViewer: React.FC = () => {
                   <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-success-600 dark:group-hover:text-success-400">
                     Practice Questions
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-600 dark:text-slate-300">
                     Test your knowledge on this topic
                   </p>
                 </div>
@@ -775,7 +775,7 @@ const LessonViewer: React.FC = () => {
                 <h4 className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   Ask Vory
                 </h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Get help understanding this topic</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300">Get help understanding this topic</p>
               </div>
             </div>
           </Link>
@@ -794,7 +794,7 @@ const LessonViewer: React.FC = () => {
             {prevLesson ? (
               <Link
                 to={`/lessons/${prevLesson.id}`}
-                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 shrink-0"
                 aria-label="Previous lesson"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -802,7 +802,7 @@ const LessonViewer: React.FC = () => {
             ) : (
               <button
                 onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-                className="px-3 py-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-sm font-medium shrink-0"
+                className="px-3 py-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium shrink-0"
               >
                 Exit
               </button>
@@ -824,7 +824,7 @@ const LessonViewer: React.FC = () => {
             {nextLesson && !fromDailyPlan ? (
               <Link
                 to={`/lessons/${nextLesson.id}`}
-                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 shrink-0"
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 shrink-0"
                 aria-label="Skip to next lesson"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -841,18 +841,18 @@ const LessonViewer: React.FC = () => {
               {prevLesson ? (
                 <Link
                   to={`/lessons/${prevLesson.id}`}
-                  className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
+                  className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
                 >
                   <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                   <div className="text-left">
-                    <div className="text-xs text-slate-400 dark:text-slate-500">Previous</div>
+                    <div className="text-xs text-slate-400 dark:text-slate-600">Previous</div>
                     <div className="font-medium truncate max-w-[200px]">{prevLesson.title}</div>
                   </div>
                 </Link>
               ) : (
                 <button
                   onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-                  className="flex items-center gap-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Exit to Lessons
@@ -877,10 +877,10 @@ const LessonViewer: React.FC = () => {
               {nextLesson ? (
                 <Link
                   to={`/lessons/${nextLesson.id}`}
-                  className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 text-right transition-colors group"
+                  className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 text-right transition-colors group"
                 >
                   <div>
-                    <div className="text-xs text-slate-400 dark:text-slate-500">Next</div>
+                    <div className="text-xs text-slate-400 dark:text-slate-600">Next</div>
                     <div className="font-medium truncate max-w-[200px]">{nextLesson.title}</div>
                   </div>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -888,7 +888,7 @@ const LessonViewer: React.FC = () => {
               ) : (
                 <button
                   onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-                  className="flex items-center gap-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 font-medium transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
                 >
                   Back to Lessons
                   <ArrowLeft className="w-4 h-4 rotate-180" />

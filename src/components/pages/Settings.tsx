@@ -400,7 +400,7 @@ const Settings: React.FC = () => {
                         <Camera className="w-4 h-4" />
                         {isUploadingPhoto ? 'Uploading...' : 'Change Photo'}
                       </button>
-                      <p className="text-xs text-slate-500 mt-1">Max 5MB, JPG/PNG</p>
+                      <p className="text-xs text-slate-600 mt-1">Max 5MB, JPG/PNG</p>
                     </div>
                   </div>
 
@@ -424,7 +424,7 @@ const Settings: React.FC = () => {
                         type="email"
                         value={user?.email || ''}
                         disabled
-                        className="w-full px-4 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-500"
+                        className="w-full px-4 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-600"
                       />
                     </div>
                   </div>
@@ -535,7 +535,7 @@ const Settings: React.FC = () => {
                           )}
                         >
                           <div className="text-lg font-bold text-primary-600">{preset.points} pts</div>
-                          <div className="text-xs text-slate-500">{preset.name}</div>
+                          <div className="text-xs text-slate-600">{preset.name}</div>
                         </button>
                       ))}
                     </div>
@@ -583,8 +583,8 @@ const Settings: React.FC = () => {
                          <span className="font-bold text-slate-900">{cacheStatus?.questions_count || 0}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                         <span className="text-slate-500">Last Updated</span>
-                         <span className="text-slate-500">
+                         <span className="text-slate-600">Last Updated</span>
+                         <span className="text-slate-600">
                            {cacheStatus?.questions_cached_at ? new Date(cacheStatus.questions_cached_at).toLocaleDateString() : 'Never'}
                          </span>
                       </div>
@@ -645,7 +645,7 @@ const Settings: React.FC = () => {
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>
                         <div className="font-medium text-slate-900">Daily Study Reminder</div>
-                        <div className="text-sm text-slate-500">Get a push notification to maintain your streak</div>
+                        <div className="text-sm text-slate-600">Get a push notification to maintain your streak</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -674,7 +674,7 @@ const Settings: React.FC = () => {
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>
                         <div className="font-medium text-slate-900">Your Timezone</div>
-                        <div className="text-sm text-slate-500">Used for notification timing</div>
+                        <div className="text-sm text-slate-600">Used for notification timing</div>
                       </div>
                       <select
                         value={timezone}
@@ -711,7 +711,7 @@ const Settings: React.FC = () => {
                     <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
                       <div>
                         <div className="font-medium text-slate-900">Weekly Progress Report</div>
-                        <div className="text-sm text-slate-500">Email summary of your study performance every Sunday</div>
+                        <div className="text-sm text-slate-600">Email summary of your study performance every Sunday</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -775,7 +775,7 @@ const Settings: React.FC = () => {
                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                          <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                             User ID
                           </div>
                           <div className="text-sm font-mono text-slate-700 truncate">
@@ -783,7 +783,7 @@ const Settings: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                          <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                             Email
                           </div>
                           <div className="text-sm text-slate-700">
@@ -791,7 +791,7 @@ const Settings: React.FC = () => {
                           </div>
                         </div>
                         <div>
-                           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                           <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                             Account Created
                            </div>
                            <div className="text-sm text-slate-700">
@@ -799,7 +799,7 @@ const Settings: React.FC = () => {
                            </div>
                         </div>
                         <div>
-                           <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                           <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
                             Last Login
                            </div>
                            <div className="text-sm text-slate-700">
@@ -825,7 +825,7 @@ const Settings: React.FC = () => {
                            </div>
                            <div>
                              <div className="font-medium text-slate-900">Google Account</div>
-                             <div className="text-sm text-slate-500">
+                             <div className="text-sm text-slate-600">
                                {user?.providerData?.some(p => p.providerId === 'google.com') 
                                  ? 'Connected' 
                                  : 'Not connected'}

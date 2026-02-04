@@ -84,7 +84,7 @@ const TBSEditor = () => {
         <div className="text-center p-8">
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Access Denied</h1>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600 dark:text-slate-300">
             You don&apos;t have permission to access the admin area.
           </p>
         </div>
@@ -107,7 +107,7 @@ const TBSEditor = () => {
                   <Grid3X3 className="w-6 h-6 text-orange-600" />
                   TBS Library
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-400">View Task-Based Simulations (local data)</p>
+                <p className="text-sm text-gray-500 dark:text-slate-300">View Task-Based Simulations (local data)</p>
               </div>
             </div>
           </div>
@@ -143,7 +143,7 @@ const TBSEditor = () => {
           {stats.map(({ section, count }) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-400">{section}</div>
+              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
             </div>
           ))}
           <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-lg shadow-sm border border-orange-200 dark:border-orange-800">
@@ -189,12 +189,12 @@ const TBSEditor = () => {
           </div>
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
             {isLoading ? (
-              <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-12 text-center text-slate-600 dark:text-slate-300">
                 <Loader className="w-8 h-8 animate-spin mx-auto mb-2" />
                 <p>Loading TBS...</p>
               </div>
             ) : filteredTBS.length === 0 ? (
-              <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-8 text-center text-slate-600 dark:text-slate-300">
                 No TBS found matching your filters.
               </div>
             ) : (
@@ -214,13 +214,13 @@ const TBSEditor = () => {
                         )}>
                           {tbs.difficulty}
                         </span>
-                        <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                        <span className="text-sm text-slate-600 dark:text-slate-300 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {tbs.estimatedTime || tbs.timeEstimate || 15} min
                         </span>
                       </div>
                       <h3 className="font-medium text-slate-900 dark:text-slate-100">{tbs.title}</h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
+                      <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 line-clamp-2">
                         {tbs.scenario?.substring(0, 150)}...
                       </p>
                     </div>
@@ -247,7 +247,7 @@ const TBSEditor = () => {
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">TBS Details</h2>
               <button
                 onClick={() => setViewingTBS(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
               >
                 ✕
               </button>
@@ -266,25 +266,25 @@ const TBSEditor = () => {
                 )}>
                   {viewingTBS.difficulty}
                 </span>
-                <span className="text-sm text-slate-500 flex items-center gap-1">
+                <span className="text-sm text-slate-600 flex items-center gap-1">
                   <Clock className="w-4 h-4" />
                   {viewingTBS.estimatedTime || viewingTBS.timeEstimate || 15} min
                 </span>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Title</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Title</h3>
                 <p className="text-xl font-semibold text-slate-900 dark:text-white">{viewingTBS.title}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Scenario</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Scenario</h3>
                 <p className="text-slate-700 dark:text-slate-300 whitespace-pre-wrap">{viewingTBS.scenario}</p>
               </div>
 
               {viewingTBS.requirements && viewingTBS.requirements.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
+                  <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                     Requirements ({viewingTBS.requirements.length})
                   </h3>
                   <ul className="space-y-2">
@@ -299,14 +299,14 @@ const TBSEditor = () => {
 
               {viewingTBS.exhibits && viewingTBS.exhibits.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
+                  <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                     Exhibits ({viewingTBS.exhibits.length})
                   </h3>
                   <div className="space-y-2">
                     {viewingTBS.exhibits.map((exhibit, idx) => (
                       <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
                         <p className="font-medium text-sm">{exhibit.title}</p>
-                        <p className="text-xs text-slate-500">Type: {exhibit.type}</p>
+                        <p className="text-xs text-slate-600">Type: {exhibit.type}</p>
                       </div>
                     ))}
                   </div>

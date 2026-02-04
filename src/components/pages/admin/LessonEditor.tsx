@@ -81,7 +81,7 @@ const LessonEditor = () => {
         <div className="text-center p-8">
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Access Denied</h1>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600 dark:text-slate-300">
             You don&apos;t have permission to access the admin area.
           </p>
         </div>
@@ -104,7 +104,7 @@ const LessonEditor = () => {
                   <BookOpen className="w-6 h-6 text-green-600" />
                   Lesson Library
                 </h1>
-                <p className="text-sm text-gray-500 dark:text-slate-400">View lessons (local data)</p>
+                <p className="text-sm text-gray-500 dark:text-slate-300">View lessons (local data)</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ const LessonEditor = () => {
           {stats && Object.entries(stats.bySection).map(([section, count]) => (
             <div key={section} className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
               <div className="text-2xl font-bold text-gray-900 dark:text-white">{count}</div>
-              <div className="text-sm text-gray-500 dark:text-slate-400">{section}</div>
+              <div className="text-sm text-gray-500 dark:text-slate-300">{section}</div>
             </div>
           ))}
           {stats && (
@@ -188,12 +188,12 @@ const LessonEditor = () => {
           </div>
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
             {isLoading ? (
-              <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-12 text-center text-slate-600 dark:text-slate-300">
                 <Loader className="w-8 h-8 animate-spin mx-auto mb-2" />
                 <p>Loading lessons...</p>
               </div>
             ) : filteredLessons.length === 0 ? (
-              <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+              <div className="p-8 text-center text-slate-600 dark:text-slate-300">
                 No lessons found matching your filters.
               </div>
             ) : (
@@ -205,13 +205,13 @@ const LessonEditor = () => {
                         <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium rounded">
                           {lesson.section}
                         </span>
-                        <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                        <span className="text-sm text-slate-600 dark:text-slate-300 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {lesson.duration || 15} min
                         </span>
                       </div>
                       <h3 className="font-medium text-slate-900 dark:text-slate-100">{lesson.title}</h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{lesson.topics?.join(', ') || 'No topics'}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">{lesson.topics?.join(', ') || 'No topics'}</p>
                     </div>
                     <button
                       onClick={() => setViewingLesson(lesson)}
@@ -226,7 +226,7 @@ const LessonEditor = () => {
             )}
           </div>
           {filteredLessons.length > 50 && (
-            <div className="p-4 text-center text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700">
+            <div className="p-4 text-center text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700">
               Showing first 50 of {filteredLessons.length} lessons
             </div>
           )}
@@ -241,7 +241,7 @@ const LessonEditor = () => {
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Lesson Details</h2>
               <button
                 onClick={() => setViewingLesson(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
               >
                 ✕
               </button>
@@ -252,39 +252,39 @@ const LessonEditor = () => {
                 <span className="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium rounded">
                   {viewingLesson.section}
                 </span>
-                <span className="text-sm text-slate-500 flex items-center gap-1">
+                <span className="text-sm text-slate-600 flex items-center gap-1">
                   <Clock className="w-4 h-4" />
                   {viewingLesson.duration || 15} min
                 </span>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Title</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Title</h3>
                 <p className="text-xl font-semibold text-slate-900 dark:text-white">{viewingLesson.title}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Topics</h3>
+                <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Topics</h3>
                 <p className="text-slate-900 dark:text-white">{viewingLesson.topics?.join(', ') || 'No topics'}</p>
               </div>
 
               {viewingLesson.description && (
                 <div>
-                  <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">Description</h3>
+                  <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-1">Description</h3>
                   <p className="text-slate-700 dark:text-slate-300">{viewingLesson.description}</p>
                 </div>
               )}
 
               {viewingLesson.content && viewingLesson.content.sections && viewingLesson.content.sections.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2">
+                  <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">
                     Content Sections ({viewingLesson.content.sections.length})
                   </h3>
                   <div className="space-y-2">
                     {viewingLesson.content.sections.slice(0, 5).map((section: LessonContentSection, idx: number) => (
                       <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-medium text-slate-500 uppercase">{section.type}</span>
+                          <span className="text-xs font-medium text-slate-600 uppercase">{section.type}</span>
                           {section.title && (
                             <span className="text-sm font-medium text-slate-900 dark:text-white">{section.title}</span>
                           )}
@@ -297,7 +297,7 @@ const LessonEditor = () => {
                       </div>
                     ))}
                     {viewingLesson.content.sections.length > 5 && (
-                      <p className="text-sm text-slate-500 text-center">
+                      <p className="text-sm text-slate-600 text-center">
                         + {viewingLesson.content.sections.length - 5} more sections
                       </p>
                     )}

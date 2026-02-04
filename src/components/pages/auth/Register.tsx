@@ -92,7 +92,7 @@ const Register = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Create your account</h1>
-        <p className="text-slate-600 dark:text-slate-400 mt-2">Start your journey to passing the CPA exam</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Start your journey to passing the CPA exam</p>
       </div>
 
       {/* Google Sign Up - Primary Option */}
@@ -117,7 +117,7 @@ const Register = () => {
           <div className="w-full border-t border-slate-200 dark:border-slate-600" />
         </div>
         <div className="relative flex justify-center">
-          <span className="px-4 bg-white dark:bg-slate-800 text-sm text-slate-500 dark:text-slate-400">or sign up with email</span>
+          <span className="px-4 bg-white dark:bg-slate-800 text-sm text-slate-600 dark:text-slate-300">or sign up with email</span>
         </div>
       </div>
 
@@ -237,9 +237,9 @@ const Register = () => {
                 ] as const).map(({ key, label }) => (
                   <div key={key} className="flex items-center gap-1.5">
                     <Check
-                      className={`w-3.5 h-3.5 ${passwordChecks[key] ? 'text-green-500' : 'text-slate-300 dark:text-slate-500'}`}
+                      className={`w-3.5 h-3.5 ${passwordChecks[key] ? 'text-green-500' : 'text-slate-300 dark:text-slate-600'}`}
                     />
-                    <span className={passwordChecks[key] ? 'text-green-600 dark:text-green-400' : 'text-slate-400 dark:text-slate-500'}>
+                    <span className={passwordChecks[key] ? 'text-green-600 dark:text-green-400' : 'text-slate-400 dark:text-slate-600'}>
                       {label}
                     </span>
                   </div>
@@ -280,7 +280,7 @@ const Register = () => {
         </div>
 
         {/* Terms */}
-        <p className="text-xs text-slate-500 dark:text-slate-400 text-center pt-2">
+        <p className="text-xs text-slate-600 dark:text-slate-300 text-center pt-2">
           By creating an account, you agree to our{' '}
           <Link to="/terms" className="text-blue-600 hover:underline dark:text-blue-400">
             Terms of Service
@@ -309,7 +309,7 @@ const Register = () => {
       </form>
 
       {/* Sign In Link */}
-      <p className="mt-8 text-center text-slate-600 dark:text-slate-400">
+      <p className="mt-8 text-center text-slate-600 dark:text-slate-300">
         Already have an account?{' '}
         <Link to="/login" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold">
           Sign in

@@ -189,7 +189,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
           <div className="mt-2">
             <div className="flex items-center gap-2 text-sm">
               <Calendar className="w-4 h-4 text-slate-400" />
-              <span className="text-slate-600 dark:text-slate-400">
+              <span className="text-slate-600 dark:text-slate-300">
                 {format(examDate, 'MMMM d, yyyy')}
               </span>
             </div>
@@ -227,7 +227,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
               e.stopPropagation();
               setEditingSection(section);
             }}
-            className="mt-3 w-full py-2 px-3 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg text-sm text-slate-500 dark:text-slate-400 hover:border-primary-400 hover:text-primary-600 transition-colors flex items-center justify-center gap-2"
+            className="mt-3 w-full py-2 px-3 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:border-primary-400 hover:text-primary-600 transition-colors flex items-center justify-center gap-2"
           >
             <Calendar className="w-4 h-4" />
             Set exam date
@@ -266,7 +266,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
       <div>
         <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-2">
           <Target className="w-4 h-4" />
-          Discipline Sections <span className="text-xs font-normal text-slate-500">(choose one)</span>
+          Discipline Sections <span className="text-xs font-normal text-slate-600">(choose one)</span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {disciplineSections.map(renderSectionCard)}

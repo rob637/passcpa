@@ -137,7 +137,7 @@ Steps to reproduce:
 
                   <button
                     onClick={this.handleReportBug}
-                    className="w-full text-sm text-slate-500 hover:text-slate-700 flex items-center justify-center gap-2 py-2"
+                    className="w-full text-sm text-slate-600 hover:text-slate-700 flex items-center justify-center gap-2 py-2"
                   >
                     <Bug className="w-4 h-4" />
                     Report this issue

@@ -567,7 +567,7 @@ const AITutor: React.FC = () => {
               </div>
               <div>
                 <h1 className="font-semibold text-slate-900">Vory</h1>
-                <p className="text-xs text-slate-500">Your AI Study Companion</p>
+                <p className="text-xs text-slate-600">Your AI Study Companion</p>
               </div>
             </div>
             <button

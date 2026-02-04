@@ -104,7 +104,7 @@ describe('ThemeProvider', () => {
     });
 
     it('should persist preference to localStorage', () => {
-      window.localStorage.getItem.mockReturnValue('false');
+      window.localStorage.getItem.mockReturnValue(null);
       window.matchMedia = vi.fn().mockImplementation(() => createMatchMediaMock(false));
 
       const { result } = renderHook(() => useTheme(), { wrapper });
@@ -113,7 +113,7 @@ describe('ThemeProvider', () => {
         result.current.toggleDarkMode();
       });
 
-      expect(window.localStorage.setItem).toHaveBeenCalledWith('voraprep-dark-mode', 'true');
+      expect(window.localStorage.setItem).toHaveBeenCalledWith('voraprep-theme-mode', 'dark');
     });
 
     it('should update document class', () => {

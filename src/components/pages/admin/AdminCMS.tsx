@@ -348,7 +348,7 @@ const AdminCMS: React.FC = () => {
       
       // Load question history (last 100)
       const questionHistoryRef = collection(db, 'users', userId, 'question_history');
-      const questionHistoryQuery = query(questionHistoryRef, orderBy('answeredAt', 'desc'), limit(100));
+      const questionHistoryQuery = query(questionHistoryRef, orderBy('lastAnswered', 'desc'), limit(100));
       const questionHistorySnap = await getDocs(questionHistoryQuery);
       const questionHistory = questionHistorySnap.docs.map(doc => ({
         questionId: doc.id,

@@ -6,8 +6,8 @@ const Pricing = () => {
   useDocumentTitle('Pricing');
 
   const features = [
-    { icon: BookOpen, text: 'All 6 CPA exam sections' },
-    { icon: Brain, text: '2,500+ practice questions' },
+    { icon: BookOpen, text: 'All 7 CPA exam sections' },
+    { icon: Brain, text: '2,900+ practice questions' },
     { icon: Sparkles, text: 'AI tutor (Vory) - unlimited' },
     { icon: Check, text: 'Task-based simulations' },
     { icon: Check, text: 'Written communication practice' },

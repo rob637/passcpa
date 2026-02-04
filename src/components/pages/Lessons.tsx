@@ -282,7 +282,7 @@ const Lessons: React.FC = () => {
         </div>
 
         {/* Stats - Becker-style content counts */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+        <div className={`grid ${currentSection === 'PREP' ? 'grid-cols-3' : 'grid-cols-2 sm:grid-cols-4'} gap-3 mb-6`}>
           <div className="card p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               <BookOpen className="w-5 h-5 text-primary-500" />
@@ -290,20 +290,24 @@ const Lessons: React.FC = () => {
             </div>
             <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Lessons</div>
           </div>
-          <div className="card p-3 text-center">
-            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
-              <FileText className="w-5 h-5" />
-              {contentCounts.mcq}
-            </div>
-            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">MCQs</div>
-          </div>
-          <div className="card p-3 text-center">
-            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
-              <ClipboardCheck className="w-5 h-5" />
-              {contentCounts.tbs}
-            </div>
-            <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TBS</div>
-          </div>
+          {currentSection !== 'PREP' && (
+            <>
+              <div className="card p-3 text-center">
+                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
+                  <FileText className="w-5 h-5" />
+                  {contentCounts.mcq}
+                </div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">MCQs</div>
+              </div>
+              <div className="card p-3 text-center">
+                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
+                  <ClipboardCheck className="w-5 h-5" />
+                  {contentCounts.tbs}
+                </div>
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TBS</div>
+              </div>
+            </>
+          )}
           <div className="card p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-success-600">
               <Trophy className="w-5 h-5" />
@@ -400,10 +404,14 @@ const Lessons: React.FC = () => {
                         {/* Content counts per area */}
                         <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                           <span>{area.lessons.length} Lessons</span>
-                          <span className="text-slate-300 dark:text-slate-600">·</span>
-                          <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
-                          <span className="text-slate-300 dark:text-slate-600">·</span>
-                          <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
+                          {currentSection !== 'PREP' && (
+                            <>
+                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
+                              <span className="text-slate-300 dark:text-slate-600">·</span>
+                              <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
+                            </>
+                          )}
                         </div>
                       </div>
                     </div>

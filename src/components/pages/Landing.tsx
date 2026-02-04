@@ -255,15 +255,15 @@ const Landing = () => {
 
         <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Beta Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
+          <div className="flex justify-center mb-5">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
               <Sparkles className="w-4 h-4" />
               🎉 FREE BETA — No Credit Card Required
               <Sparkles className="w-4 h-4" />
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold text-center mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-center mb-4 leading-tight">
             <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
               Pass Your CPA Exam
             </span>
@@ -273,7 +273,7 @@ const Landing = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-6 max-w-3xl mx-auto leading-relaxed">
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
             <span className="font-semibold text-emerald-600"> 100% Free</span> during Beta.
             <br className="hidden md:block" />
@@ -281,17 +281,17 @@ const Landing = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Link 
               to="/register" 
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl text-base font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
             >
               Start Studying Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a 
               href="#comparison" 
-              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-2xl text-lg font-bold hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center justify-center gap-2"
+              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl text-base font-bold hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Play className="w-5 h-5" />
               See How We Compare
@@ -299,7 +299,7 @@ const Landing = () => {
           </div>
 
           {/* No Credit Card Emphasis */}
-          <div className="flex flex-col items-center gap-3 mb-12">
+          <div className="flex flex-col items-center gap-2 mb-8">
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
@@ -323,13 +323,13 @@ const Landing = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent mb-1">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-slate-600 dark:text-slate-400 font-medium">{stat.label}</div>
+                <div className="text-slate-600 dark:text-slate-400 text-sm font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -339,9 +339,9 @@ const Landing = () => {
       {/* Social Proof Bar - Removed until we have real user data */}
 
       {/* Why VoraPrep Section */}
-      <section id="features" className="py-12 md:py-20 px-6 bg-white dark:bg-slate-950">
+      <section id="features" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Brain className="w-4 h-4" />
               AI-Powered Adaptive Learning
@@ -578,18 +578,18 @@ const Landing = () => {
       </section>
 
       {/* CPA Sections Coverage */}
-      <section className="py-12 md:py-20 px-6 bg-slate-50 dark:bg-slate-900">
+      <section className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Layers className="w-4 h-4" />
               Complete Coverage
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
               All 7 CPA Exam Sections
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Updated for the 2026 Blueprint with Core + Discipline sections, plus BEC for 2025 Blueprint compliance
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              6 sections for the 2026 Blueprint (Core + Discipline), plus BEC for candidates on the 2025 Blueprint
             </p>
           </div>
 
@@ -601,7 +601,7 @@ const Landing = () => {
               { code: 'BAR', name: 'Business Analysis & Reporting', questions: 393, type: 'Discipline', color: 'from-orange-500 to-amber-500' },
               { code: 'ISC', name: 'Information Systems & Controls', questions: 388, type: 'Discipline', color: 'from-red-500 to-rose-500' },
               { code: 'TCP', name: 'Tax Compliance & Planning', questions: 379, type: 'Discipline', color: 'from-cyan-500 to-teal-500' },
-              { code: 'BEC', name: 'Business Environment & Concepts', questions: 119, type: '2025 Blueprint', color: 'from-primary-500 to-primary-600' },
+              { code: 'BEC', name: 'Business Environment & Concepts', questions: 119, type: '2025 Only', color: 'from-slate-500 to-slate-600' },
             ].map((section) => (
               <div 
                 key={section.code}

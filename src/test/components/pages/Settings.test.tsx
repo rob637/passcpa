@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '../../../providers/ThemeProvider';
 
 /**
  * Comprehensive Settings Component Tests
@@ -157,7 +158,9 @@ const renderSettings = async () => {
   const Settings = (await import('../../../components/pages/Settings')).default;
   return render(
     <BrowserRouter>
-      <Settings />
+      <ThemeProvider>
+        <Settings />
+      </ThemeProvider>
     </BrowserRouter>
   );
 };

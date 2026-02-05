@@ -326,6 +326,18 @@ const LessonViewer: React.FC = () => {
   const { userProfile } = useAuth();
   const { courseId } = useCourse();
   
+  // Get section from URL or lesson ID to preserve navigation context
+  const sectionFromUrl = searchParams.get('section');
+  
+  // Helper to get back URL - preserve section for PREP (Strategy & Tips) lessons
+  const getBackUrl = (lessonSection?: string) => {
+    const section = sectionFromUrl || lessonSection || (lessonId?.startsWith('PREP-') ? 'PREP' : null);
+    if (section === 'PREP') {
+      return '/lessons?section=PREP';
+    }
+    return '/lessons';
+  };
+  
   // Check if coming from daily plan
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
@@ -340,8 +352,9 @@ const LessonViewer: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasPracticeQuestions, setHasPracticeQuestions] = useState<boolean>(false);
 
-  // Get lesson and section lessons from Firestore
-  const currentSection = (userProfile?.examSection || lesson?.section || 'FAR') as ExamSection;
+  // Use the lesson's actual section, not the user's profile section
+  // This ensures PREP lessons stay within the PREP section
+  const currentSection = (lesson?.section || userProfile?.examSection || 'FAR') as ExamSection;
   
   // Cleanup TTS when navigating away from the lesson
   useEffect(() => {
@@ -360,7 +373,9 @@ const LessonViewer: React.FC = () => {
           const fetchedLesson = await fetchLessonById(lessonId);
           setLesson(fetchedLesson || undefined);
           
-          const section = userProfile?.examSection || fetchedLesson?.section || 'FAR';
+          // Use the lesson's actual section for navigation, not the user's profile section
+          // This ensures PREP lessons navigate within PREP, not the user's exam section
+          const section = fetchedLesson?.section || userProfile?.examSection || 'FAR';
           const lessons = await fetchLessonsBySection(section as ExamSection, courseId);
           setSectionLessons(lessons);
 
@@ -487,7 +502,7 @@ const LessonViewer: React.FC = () => {
           <p className="text-slate-600 dark:text-slate-300 mb-4">
             The lesson you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
-          <Link to="/lessons" className="btn-primary">
+          <Link to={getBackUrl()} className="btn-primary">
             Back to Lessons
           </Link>
         </div>
@@ -502,7 +517,7 @@ const LessonViewer: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <button
-              onClick={() => navigate(returnTo || (fromDailyPlan ? '/home' : '/lessons'))}
+              onClick={() => navigate(returnTo || (fromDailyPlan ? '/home' : getBackUrl(lesson?.section)))}
               className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -713,9 +728,9 @@ const LessonViewer: React.FC = () => {
           </div>
         )}
 
-        {/* Quiz Section if available */}
+        {/* Quiz Section if available - not shown for PREP (Strategy & Tips) lessons */}
         {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-        {(lesson.content as any).quiz && (lesson.content as any).quiz.length > 0 && (
+        {lesson.section !== 'PREP' && (lesson.content as any).quiz && (lesson.content as any).quiz.length > 0 && (
           <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 mb-8">
             <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
               <HelpCircle className="w-5 h-5 text-primary-500" />
@@ -737,7 +752,8 @@ const LessonViewer: React.FC = () => {
 
         {/* Actions */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          {hasPracticeQuestions && (
+          {/* Hide practice questions for PREP (Strategy & Tips) lessons */}
+          {lesson.section !== 'PREP' && hasPracticeQuestions && (
             <Link
               to={`/practice?section=${lesson.section}${lesson.topics?.[lesson.topics.length - 1] ? `&subtopic=${encodeURIComponent(lesson.topics[lesson.topics.length - 1])}` : lesson.blueprintArea ? `&blueprintArea=${lesson.blueprintArea}` : ''}`}
               className="card p-4 hover:shadow-md transition-shadow group"
@@ -759,12 +775,13 @@ const LessonViewer: React.FC = () => {
           )}
 
           <Link 
-            to="/ai-tutor" 
+            to={lesson.section === 'PREP' ? '/ai-tutor?returnTo=/lessons?section=PREP' : '/ai-tutor'}
             state={{ 
               lessonTitle: lesson.title, 
               lessonId: lesson.id,
               section: lesson.section,
-              topic: lesson.topics?.[lesson.topics.length - 1] 
+              topic: lesson.topics?.[lesson.topics.length - 1],
+              returnTo: lesson.section === 'PREP' ? '/lessons?section=PREP' : undefined
             }}
             className="card p-4 hover:shadow-md transition-shadow group"
           >
@@ -852,7 +869,7 @@ const LessonViewer: React.FC = () => {
                 </Link>
               ) : (
                 <button
-                  onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+                  onClick={() => navigate(fromDailyPlan ? '/home' : getBackUrl(lesson?.section))}
                   className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -888,7 +905,7 @@ const LessonViewer: React.FC = () => {
                 </Link>
               ) : (
                 <button
-                  onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
+                  onClick={() => navigate(fromDailyPlan ? '/home' : getBackUrl(lesson?.section))}
                   className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
                 >
                   Back to Lessons

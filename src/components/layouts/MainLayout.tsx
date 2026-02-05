@@ -259,29 +259,29 @@ const MainLayout = () => {
           </div>
         </div>
 
-        <div className="mt-auto p-6 border-t border-slate-100">
-          <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+        <div className="mt-auto p-6 border-t border-slate-100 dark:border-slate-700">
+          <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">
                 Daily Goal
               </span>
-              <span className="text-xs font-bold text-primary-600">{dailyProgress}%</span>
+              <span className="text-xs font-bold text-primary-600 dark:text-primary-400">{dailyProgress}%</span>
             </div>
-            <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
               <div
                 className="h-full bg-primary-500 rounded-full transition-all duration-500"
                 style={{ width: `${dailyProgress}%` }}
               />
             </div>
-            <div className="mt-3 flex items-center gap-2 text-xs text-slate-600">
+            <div className="mt-3 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
               <Flame className="w-3.5 h-3.5 text-orange-500" />
               <span>{currentStreak} day streak!</span>
             </div>
           </div>
           {/* Legal Disclaimer */}
-          <p className="mt-4 text-[10px] text-slate-600 leading-tight">
+          <p className="mt-4 text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
             Not affiliated with AICPA, NASBA, or any state board. For educational purposes only.{' '}
-            <NavLink to="/terms" className="underline hover:text-slate-600">Terms</NavLink>
+            <NavLink to="/terms" className="underline hover:text-slate-700 dark:hover:text-slate-300">Terms</NavLink>
           </p>
         </div>
       </aside>

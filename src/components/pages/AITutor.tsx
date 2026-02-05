@@ -216,6 +216,10 @@ const AITutor: React.FC = () => {
   // Check for context passed from Practice page (via state or URL params)
   useEffect(() => {
     // Check location.state first (same-tab navigation)
+    if (location.state?.returnTo) {
+      setReturnTo(location.state.returnTo);
+    }
+    
     if (location.state?.context) {
       setContextFromPractice(location.state.context);
       // Clear the state so it doesn't persist on refresh
@@ -556,16 +560,16 @@ const AITutor: React.FC = () => {
   const smartPrompts = getSmartPrompts(weakAreas, currentSection);
 
   return (
-    <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 page-enter">
+    <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <button
                 onClick={() => navigate(returnTo || '/home')}
-                className="p-2 -ml-2 text-slate-600 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
-                aria-label={returnTo ? "Back to Practice" : "Back to Home"}
+                className="p-2 -ml-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                aria-label="Go back"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
@@ -573,14 +577,14 @@ const AITutor: React.FC = () => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-semibold text-slate-900">Vory</h1>
-                <p className="text-xs text-slate-600">Your AI Study Companion</p>
+                <h1 className="font-semibold text-slate-900 dark:text-white">Vory</h1>
+                <p className="text-xs text-slate-600 dark:text-slate-400">Your AI Study Companion</p>
               </div>
             </div>
             <button
               type="button"
               onClick={clearChat}
-              className="p-2 text-slate-600 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+              className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               title="New conversation"
               aria-label="Clear chat and start new conversation"
             >
@@ -601,11 +605,11 @@ const AITutor: React.FC = () => {
                     'flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all',
                     isActive
                       ? mode.color === 'primary'
-                        ? 'bg-primary-100 text-primary-700'
+                        ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
                         : mode.color === 'success'
-                          ? 'bg-success-100 text-success-700'
-                          : 'bg-warning-100 text-warning-700'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                          ? 'bg-success-100 dark:bg-success-900/40 text-success-700 dark:text-success-300'
+                          : 'bg-warning-100 dark:bg-warning-900/40 text-warning-700 dark:text-warning-300'
+                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
                   )}
                 >
                   <Icon className="w-4 h-4" />
@@ -676,7 +680,7 @@ const AITutor: React.FC = () => {
                 {message.role === 'assistant' && message.id !== 'greeting' && (
                   <button
                     onClick={() => copyToClipboard(message.content, message.id)}
-                    className="text-xs text-slate-600 hover:text-slate-600 flex items-center gap-1 mt-1.5 ml-1"
+                    className="text-xs text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1 mt-1.5 ml-1"
                   >
                     {copiedId === message.id ? (
                       <>
@@ -699,7 +703,7 @@ const AITutor: React.FC = () => {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-soft">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-tl-md shadow-soft">
+              <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-2xl rounded-tl-md shadow-soft">
                 <div className="flex items-center gap-1.5">
                   <div
                     className="w-2 h-2 bg-primary-400 rounded-full animate-bounce"
@@ -735,22 +739,22 @@ const AITutor: React.FC = () => {
                     key={index}
                     onClick={() => handleSuggestedPrompt(prompt.text)}
                     className={clsx(
-                      'flex items-start gap-2 p-2.5 md:p-3 bg-white border rounded-xl transition-all text-left flex-shrink-0 w-[200px] md:w-auto',
+                      'flex items-start gap-2 p-2.5 md:p-3 bg-white dark:bg-slate-800 border rounded-xl transition-all text-left flex-shrink-0 w-[200px] md:w-auto',
                       prompt.priority
-                        ? 'border-warning-200 hover:border-warning-400 hover:bg-warning-50'
-                        : 'border-slate-200 hover:border-primary-300 hover:bg-primary-50 shadow-sm'
+                        ? 'border-warning-200 dark:border-warning-800 hover:border-warning-400 hover:bg-warning-50 dark:hover:bg-warning-900/30'
+                        : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 shadow-sm'
                     )}
                   >
                     <div
                       className={clsx(
                         'w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center flex-shrink-0',
-                        prompt.priority ? 'bg-warning-100' : 'bg-primary-100'
+                        prompt.priority ? 'bg-warning-100 dark:bg-warning-900/40' : 'bg-primary-100 dark:bg-primary-900/40'
                       )}
                     >
                       <Icon
                         className={clsx(
                           'w-3.5 h-3.5 md:w-4 md:h-4',
-                          prompt.priority ? 'text-warning-600' : 'text-primary-600'
+                          prompt.priority ? 'text-warning-600 dark:text-warning-400' : 'text-primary-600 dark:text-primary-400'
                         )}
                       />
                     </div>
@@ -758,12 +762,12 @@ const AITutor: React.FC = () => {
                       <span
                         className={clsx(
                           'text-[10px] md:text-xs font-medium',
-                          prompt.priority ? 'text-warning-600' : 'text-primary-600'
+                          prompt.priority ? 'text-warning-600 dark:text-warning-400' : 'text-primary-600 dark:text-primary-400'
                         )}
                       >
                         {prompt.category}
                       </span>
-                      <p className="text-xs md:text-sm text-slate-700 mt-0.5 line-clamp-2">{prompt.text}</p>
+                      <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 mt-0.5 line-clamp-2">{prompt.text}</p>
                     </div>
                   </button>
                 );
@@ -774,7 +778,7 @@ const AITutor: React.FC = () => {
       )}
 
       {/* Input Area */}
-      <div className="bg-white border-t border-slate-200 p-3 md:p-4 flex-shrink-0">
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-3 md:p-4 flex-shrink-0">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
           <div className="flex items-end gap-3">
             <div className="flex-1 relative">
@@ -807,14 +811,14 @@ const AITutor: React.FC = () => {
                 'btn-icon rounded-xl transition-all flex-shrink-0',
                 input.trim() && !isLoading
                   ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-soft'
-                  : 'bg-slate-100 text-slate-600 cursor-not-allowed'
+                  : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 cursor-not-allowed'
               )}
               aria-label="Send message"
             >
               <Send className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
-          <p className="text-[10px] text-slate-600 mt-2 text-center">
+          <p className="text-[10px] text-slate-600 dark:text-slate-400 mt-2 text-center">
             AI responses are for educational purposes only. Verify important information with authoritative sources.
           </p>
         </form>

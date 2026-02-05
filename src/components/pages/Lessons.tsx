@@ -24,7 +24,7 @@ import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
 import { useBookmarks } from '../common/Bookmarks';
 import clsx from 'clsx';
-import { Lesson, Difficulty, ExamSection } from '../../types';
+import { Lesson, Difficulty, CPASection, ExamSection } from '../../types';
 
 interface AreaDefinition {
   id: string;
@@ -152,7 +152,7 @@ const Lessons: React.FC = () => {
 
   // Current exam section - use URL param if provided, otherwise use user profile
   const sectionFromUrl = searchParams.get('section');
-  const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as CPASection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
   // Fetch lessons and content counts

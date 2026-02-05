@@ -23,17 +23,17 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { format, differenceInDays, addDays } from 'date-fns';
 import clsx from 'clsx';
-import { ExamSection } from '../types';
+import { CPASection, ExamSection } from '../types';
 
 interface SectionExamDate {
-  section: ExamSection;
+  section: CPASection;
   examDate?: Date;
   isActive: boolean;
 }
 
 interface ExamDateTrackerProps {
   compact?: boolean; // For embedding in other pages
-  onSectionSelect?: (section: ExamSection) => void;
+  onSectionSelect?: (section: CPASection) => void;
 }
 
 const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({ 
@@ -41,7 +41,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   onSectionSelect 
 }) => {
   const { user, userProfile, refreshProfile } = useAuth();
-  const [editingSection, setEditingSection] = useState<ExamSection | null>(null);
+  const [editingSection, setEditingSection] = useState<CPASection | null>(null);
   const [dateInput, setDateInput] = useState('');
   const [saving, setSaving] = useState(false);
   
@@ -96,7 +96,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
     setSaving(false);
   };
   
-  const handleSelectSection = (section: ExamSection) => {
+  const handleSelectSection = (section: CPASection) => {
     if (onSectionSelect) {
       onSectionSelect(section);
     }

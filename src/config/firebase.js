@@ -34,10 +34,18 @@ if (missingVars.length > 0) {
   }
 }
 
+// Detect if running in Capacitor native app
+const isCapacitorNative = typeof window !== 'undefined' && 
+  (window.Capacitor?.isNativePlatform?.() || window.Capacitor?.getPlatform?.() !== 'web');
+
 // Firebase config - requires environment variables
+// Note: For native apps, use default Firebase authDomain instead of custom domain
+// Custom domains don't work well with WebView storage partitioning
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  authDomain: isCapacitorNative 
+    ? `${import.meta.env.VITE_FIREBASE_PROJECT_ID}.firebaseapp.com`
+    : import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,

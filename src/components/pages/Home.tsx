@@ -76,6 +76,16 @@ const Home = () => {
   // Use local state for section so we can update immediately
   const [activeSection, setActiveSection] = useState<string>(profile?.examSection || 'FAR');
   
+  // Lock body scroll when section picker is open
+  useEffect(() => {
+    if (showSectionPicker) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [showSectionPicker]);
+
   // Sync local state when profile loads/changes
   useEffect(() => {
     if (profile?.examSection && profile.examSection !== activeSection) {
@@ -161,9 +171,15 @@ const Home = () => {
     <div className="max-w-lg mx-auto space-y-6">
       {/* Section Picker Modal */}
       {showSectionPicker && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-md max-h-[80vh] overflow-hidden shadow-xl">
-            <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700">
+        <div 
+          className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4"
+          onClick={(e) => e.target === e.currentTarget && setShowSectionPicker(false)}
+        >
+          <div 
+            className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-md max-h-[80vh] shadow-xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 flex-shrink-0">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Change Exam Section</h2>
               <button 
                 onClick={() => setShowSectionPicker(false)}
@@ -172,7 +188,7 @@ const Home = () => {
                 <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
               </button>
             </div>
-            <div className="p-4 space-y-2 overflow-y-auto">
+            <div className="p-4 space-y-2 overflow-y-auto flex-1 overscroll-contain">
               {(() => {
                 // Determine available sections based on user's exam date
                 const BLUEPRINT_CUTOFF = new Date('2026-07-01');

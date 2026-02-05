@@ -462,7 +462,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               )}
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-              {plan.summary.weakAreaFocus.length > 0 
+              {plan.summary?.weakAreaFocus?.length > 0 
                 ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
                 : 'Personalized for your progress'}
             </p>

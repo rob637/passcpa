@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from '../../../providers/ThemeProvider';
 
 // Mock the hooks
 vi.mock('../../../hooks/useStudy', () => ({
@@ -28,15 +29,17 @@ import MainLayout from '../../../components/layouts/MainLayout';
 describe('MainLayout', () => {
   const renderMainLayout = (initialRoute = '/home') => {
     return render(
-      <MemoryRouter initialEntries={[initialRoute]}>
-        <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/home" element={<div data-testid="home-content">Home Content</div>} />
-            <Route path="/learn" element={<div data-testid="learn-content">Learn Content</div>} />
-            <Route path="/you" element={<div data-testid="you-content">You Content</div>} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <ThemeProvider>
+        <MemoryRouter initialEntries={[initialRoute]}>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/home" element={<div data-testid="home-content">Home Content</div>} />
+              <Route path="/learn" element={<div data-testid="learn-content">Learn Content</div>} />
+              <Route path="/you" element={<div data-testid="you-content">You Content</div>} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </ThemeProvider>
     );
   };
 

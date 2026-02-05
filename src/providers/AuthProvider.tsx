@@ -13,6 +13,7 @@ import {
   signInWithPopup,
   signInWithRedirect,
   getRedirectResult,
+  signInWithCredential,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
@@ -20,6 +21,7 @@ import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import type { FieldValue, Timestamp } from 'firebase/firestore';
 import { Capacitor } from '@capacitor/core';
+import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 
 // Check if running in native Capacitor app
 const isNativePlatform = Capacitor.isNativePlatform();
@@ -309,66 +311,83 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  // Google sign-in - try popup first, fallback to redirect if blocked
+  // Google sign-in - uses native on Capacitor, popup/redirect on web
   const signInWithGoogle = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: 'select_account' });
-      
-      // Try popup first (works on most browsers including mobile Safari)
-      try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
+      let user: User;
+
+      if (isNativePlatform) {
+        // Native: Use Capacitor Firebase Authentication plugin
+        // This uses Android/iOS native Google Sign-In which works properly
+        logger.log('Using native Google Sign-In');
+        const result = await FirebaseAuthentication.signInWithGoogle();
         
-        // Check if user profile exists, create if not
-        const userRef = doc(db, 'users', user.uid);
-        const userDoc = await getDoc(userRef);
-        
-        if (!userDoc.exists()) {
-          // Create new profile for Google user
-          const newProfile: Omit<UserProfile, 'id'> = {
-            email: user.email || '',
-            displayName: user.displayName || '',
-            photoURL: user.photoURL,
-            createdAt: serverTimestamp(),
-            onboardingComplete: false,
-            examSection: null,
-            examDate: null,
-            dailyGoal: 25,
-            studyPlanId: null,
-            settings: {
-              notifications: true,
-              darkMode: false,
-              soundEffects: true,
-            },
-          };
-          await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
-          setUserProfile({ 
-            ...newProfile,
-            id: user.uid, 
-          } as UserProfile);
-        } else {
-          // Update last login for existing user
-          await updateDoc(userRef, { lastLogin: serverTimestamp() });
-          await fetchUserProfile(user.uid);
+        // Get the ID token and create Firebase credential
+        const idToken = result.credential?.idToken;
+        if (!idToken) {
+          throw new Error('No ID token received from Google Sign-In');
         }
         
-        return user;
-      } catch (popupErr) {
-        const error = popupErr as FirebaseError;
-        // If popup was blocked or closed, try redirect as fallback (web only)
-        // Redirect doesn't work on native Capacitor apps due to WebView storage partitioning
-        if (!isNativePlatform && (
-            error.code === 'auth/popup-blocked' || 
-            error.code === 'auth/popup-closed-by-user' ||
-            error.code === 'auth/cancelled-popup-request')) {
-          logger.log('Popup blocked/closed, falling back to redirect');
-          await signInWithRedirect(auth, provider);
-          return null as unknown as User;
+        // Sign in to Firebase with the Google credential
+        const credential = GoogleAuthProvider.credential(idToken);
+        const firebaseResult = await signInWithCredential(auth, credential);
+        user = firebaseResult.user;
+      } else {
+        // Web: Use popup first, fallback to redirect
+        const provider = new GoogleAuthProvider();
+        provider.setCustomParameters({ prompt: 'select_account' });
+        
+        try {
+          const result = await signInWithPopup(auth, provider);
+          user = result.user;
+        } catch (popupErr) {
+          const error = popupErr as FirebaseError;
+          // If popup was blocked or closed, try redirect as fallback
+          if (error.code === 'auth/popup-blocked' || 
+              error.code === 'auth/popup-closed-by-user' ||
+              error.code === 'auth/cancelled-popup-request') {
+            logger.log('Popup blocked/closed, falling back to redirect');
+            await signInWithRedirect(auth, provider);
+            return null as unknown as User;
+          }
+          throw popupErr;
         }
-        // On native apps, just re-throw the error - user can try again
-        throw popupErr;
       }
+      
+      // Check if user profile exists, create if not
+      const userRef = doc(db, 'users', user.uid);
+      const userDoc = await getDoc(userRef);
+      
+      if (!userDoc.exists()) {
+        // Create new profile for Google user
+        const newProfile: Omit<UserProfile, 'id'> = {
+          email: user.email || '',
+          displayName: user.displayName || '',
+          photoURL: user.photoURL,
+          createdAt: serverTimestamp(),
+          onboardingComplete: false,
+          examSection: null,
+          examDate: null,
+          dailyGoal: 25,
+          studyPlanId: null,
+          settings: {
+            notifications: true,
+            darkMode: false,
+            soundEffects: true,
+          },
+        };
+        await setDoc(userRef, { ...newProfile, lastLogin: serverTimestamp() });
+        setUserProfile({ 
+          ...newProfile,
+          id: user.uid, 
+        } as UserProfile);
+      } else {
+        // Update last login for existing user
+        await updateDoc(userRef, { lastLogin: serverTimestamp() });
+        await fetchUserProfile(user.uid);
+      }
+      
+      return user;
     } catch (err) {
       // Error logged by error boundary
       throw err;

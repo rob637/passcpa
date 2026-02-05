@@ -422,8 +422,6 @@ const TimedQuiz: React.FC = () => {
 
               {/* Blueprint Area Selection */}
               <div>
-              {/* Blueprint Area Selection */}
-              <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                   <BookOpen className="w-4 h-4 inline mr-1" />
                   Blueprint Area

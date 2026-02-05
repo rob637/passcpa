@@ -1,4 +1,9 @@
 # 💡 Idea Backlog
+
+let's start with EA content - please build out incredible content - better than becker - something that would make your momma proud.  well organized - complete from the start - not so we have to keep adding patches.
+
+
+
 Step 1: Add GitHub Secrets
 Go to GitHub → Settings → Secrets and variables → Actions and add these 4 secrets:
 

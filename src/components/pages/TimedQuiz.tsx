@@ -22,7 +22,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { fetchQuestions } from '../../services/questionService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection, Difficulty } from '../../types';
+import { Question, CPASection, ExamSection, Difficulty } from '../../types';
 import { CPA_SECTIONS } from '../../config/examConfig';
 
 interface QuizModeConfig {
@@ -45,7 +45,7 @@ const QUIZ_MODES: QuizModes = {
 };
 
 // Blueprint areas for targeting specific content
-const BLUEPRINT_AREAS: Record<ExamSection, { id: string; name: string }[]> = {
+const BLUEPRINT_AREAS: Record<CPASection, { id: string; name: string }[]> = {
   FAR: [
     { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting' },
     { id: 'FAR-II', name: 'Select Financial Statement Accounts' },
@@ -329,7 +329,7 @@ const TimedQuiz: React.FC = () => {
 
   // Setup Screen
   if (quizState === 'setup') {
-    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
+    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as CPASection;
     const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
     
     return (

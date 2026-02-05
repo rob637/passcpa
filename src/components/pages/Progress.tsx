@@ -25,7 +25,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
-import { ExamSection } from '../../types';
+import { CPASection, ExamSection } from '../../types';
 import { generateStudyPlan, calculatePaceStatus, type PaceStatus } from '../../utils/studyPlanner';
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTBSHistory } from '../../services/questionHistoryService';
@@ -59,7 +59,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
   const [sortBy, setSortBy] = useState<'name' | 'progress' | 'accuracy'>('name');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
   
-  const sectionInfo = CPA_SECTIONS[section as ExamSection];
+  const sectionInfo = CPA_SECTIONS[section as CPASection];
   
   const sortedUnits = [...unitStats].sort((a, b) => {
     const multiplier = sortDir === 'asc' ? 1 : -1;
@@ -464,7 +464,7 @@ const Progress: React.FC = () => {
     : rawExamDate ? new Date(rawExamDate as Date) : new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
-  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+  const currentSection = (userProfile?.examSection || 'REG') as CPASection;
   const sectionInfo = CPA_SECTIONS[currentSection];
 
   // Load real data from Firestore

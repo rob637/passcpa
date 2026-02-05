@@ -2,12 +2,12 @@
 // Local-first approach: Questions are stored in TypeScript files for fast loading
 // and offline support. Firebase is used only for user progress tracking.
 
-import { Question, ExamSection, Difficulty } from '../types';
+import { Question, AllExamSections, ExamSection, Difficulty } from '../types';
 import logger from '../utils/logger';
 import { getSmartQuestionSelection, CurriculumFilterOptions } from './questionHistoryService';
 
 interface FetchQuestionsOptions {
-  section?: ExamSection;
+  section?: AllExamSections | string;
   topicId?: string;
   blueprintArea?: string;
   blueprintGroup?: string;
@@ -33,24 +33,42 @@ let questionCache: Record<string, Question[]> = {};
 /**
  * Load questions for a section (with caching)
  */
-async function loadSectionQuestions(section: ExamSection): Promise<Question[]> {
+async function loadSectionQuestions(section: string): Promise<Question[]> {
   if (questionCache[section]) {
     return questionCache[section];
   }
 
   try {
-    const localData = await import('../data/questions');
     let questions: Question[] = [];
 
-    switch (section) {
-      case 'FAR': questions = localData.FAR_ALL || []; break;
-      case 'AUD': questions = localData.AUD_ALL || []; break;
-      case 'REG': questions = localData.REG_ALL || []; break;
-      case 'BEC': questions = localData.BEC_ALL || []; break;
-      case 'BAR': questions = localData.BAR_ALL || []; break;
-      case 'ISC': questions = localData.ISC_ALL || []; break;
-      case 'TCP': questions = localData.TCP_ALL || []; break;
-      default: questions = [];
+    // CPA sections
+    if (['FAR', 'AUD', 'REG', 'BEC', 'BAR', 'ISC', 'TCP'].includes(section)) {
+      const localData = await import('../data/questions');
+      switch (section) {
+        case 'FAR': questions = localData.FAR_ALL || []; break;
+        case 'AUD': questions = localData.AUD_ALL || []; break;
+        case 'REG': questions = localData.REG_ALL || []; break;
+        case 'BEC': questions = localData.BEC_ALL || []; break;
+        case 'BAR': questions = localData.BAR_ALL || []; break;
+        case 'ISC': questions = localData.ISC_ALL || []; break;
+        case 'TCP': questions = localData.TCP_ALL || []; break;
+        default: questions = [];
+      }
+    }
+    // EA sections - will be populated when EA questions are added
+    else if (['SEE1', 'SEE2', 'SEE3'].includes(section)) {
+      // TODO: Import EA questions when available
+      questions = [];
+    }
+    // CMA sections
+    else if (['CMA1', 'CMA2'].includes(section)) {
+      // TODO: Import CMA questions when available
+      questions = [];
+    }
+    // CIA sections
+    else if (['CIA1', 'CIA2', 'CIA3'].includes(section)) {
+      // TODO: Import CIA questions when available
+      questions = [];
     }
 
     questionCache[section] = questions;

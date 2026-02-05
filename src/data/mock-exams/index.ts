@@ -2,7 +2,7 @@
 // Each mock exam is carefully designed to mirror actual AICPA exam structure
 // with proper blueprint coverage and difficulty distribution
 
-import { CPASection, ExamSection, Question, TBS } from '../../types';
+import { ExamSection, Question, TBS } from '../../types';
 import { getQuestionsBySection } from '../questions';
 import { getTBSBySection } from '../tbs';
 
@@ -10,7 +10,7 @@ export interface MockExamConfig {
   id: string;
   name: string;
   description: string;
-  section: CPASection;
+  section: ExamSection;
   version: '2025' | '2026' | 'both'; // Blueprint version
   testlets: MockExamTestlet[];
   totalTime: number; // in seconds
@@ -43,7 +43,7 @@ export interface BlueprintWeight {
 }
 
 // Blueprint weights from AICPA (2025/2026)
-export const BLUEPRINT_WEIGHTS: Record<CPASection, BlueprintWeight[]> = {
+export const BLUEPRINT_WEIGHTS: Record<ExamSection, BlueprintWeight[]> = {
   FAR: [
     { area: 'FAR-I', name: 'Conceptual Framework, Standards, and Regulation', weight: 25, questionCount: 17 },
     { area: 'FAR-II', name: 'Select Financial Statement Accounts', weight: 30, questionCount: 20 },
@@ -523,7 +523,7 @@ export const TCP_MOCK_EXAMS: MockExamConfig[] = [
 ];
 
 // All Mock Exams
-export const ALL_MOCK_EXAMS: Record<CPASection, MockExamConfig[]> = {
+export const ALL_MOCK_EXAMS: Record<ExamSection, MockExamConfig[]> = {
   FAR: FAR_MOCK_EXAMS,
   AUD: AUD_MOCK_EXAMS,
   REG: REG_MOCK_EXAMS,
@@ -535,7 +535,7 @@ export const ALL_MOCK_EXAMS: Record<CPASection, MockExamConfig[]> = {
 };
 
 // Helper functions
-export const getMockExamsBySection = (section: CPASection): MockExamConfig[] => {
+export const getMockExamsBySection = (section: ExamSection): MockExamConfig[] => {
   return ALL_MOCK_EXAMS[section] || [];
 };
 

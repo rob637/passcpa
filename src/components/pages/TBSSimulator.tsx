@@ -20,7 +20,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import clsx from 'clsx';
-import { CPASection, ExamSection } from '../../types';
+import { ExamSection } from '../../types';
 
 const TBS_LABELS: Record<string, string> = {
   journal: 'Journal Entry',
@@ -521,7 +521,7 @@ const TBSSimulator: React.FC = () => {
   const [taskScores, setTaskScores] = useState<Record<string, number>>({});
   const [error, setError] = useState<string | null>(null);
 
-  const currentSection = (userProfile?.examSection || 'FAR') as CPASection;
+  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const tbsId = searchParams.get('id');
   

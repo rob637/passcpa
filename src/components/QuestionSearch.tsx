@@ -24,7 +24,7 @@ import { useCourse } from '../providers/CourseProvider';
 import { fetchQuestions } from '../services/questionService';
 import { CPA_SECTIONS } from '../config/examConfig';
 import clsx from 'clsx';
-import { Question, CPASection, ExamSection } from '../types';
+import { Question, ExamSection } from '../types';
 import logger from '../utils/logger';
 
 interface QuestionSearchProps {

@@ -19,7 +19,7 @@ import { BackButton } from './navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getFlashcardsBySection } from '../data/flashcards';
-import { CPASection, ExamSection } from '../types';
+import { ExamSection } from '../types';
 import { CPA_SECTIONS } from '../config/examConfig';
 import clsx from 'clsx';
 
@@ -43,7 +43,7 @@ interface FlashcardConfig {
 const FlashcardSetup: React.FC = () => {
   const navigate = useNavigate();
   const { user, userProfile } = useAuth();
-  const currentSection = (userProfile?.examSection || 'FAR') as CPASection;
+  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   
   const [loading, setLoading] = useState(true);

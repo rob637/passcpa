@@ -471,6 +471,429 @@ export const eaPart2Lessons: Lesson[] = [
   },
 
   // ============================================================================
+  // SEE2-2: BUSINESS FINANCIAL INFORMATION - Continued (Lessons 7-12)
+  // ============================================================================
+
+  {
+    id: 'SEE2-007',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Inventory Accounting',
+    description: 'Master inventory methods and cost of goods sold calculations',
+    order: 7,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['FIFO', 'LIFO', 'COGS', 'Lower of cost or market'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Inventory accounting directly affects taxable income! The method chosen can significantly impact taxes in periods of changing prices. Understanding these methods is essential for business clients.",
+        },
+        {
+          title: 'When Inventory Required',
+          type: 'text',
+          content: "**Inventory required when:**\n• Selling merchandise\n• Manufacturing goods\n\n**Small Business Exception:**\n• Average annual gross receipts ≤ $29 million (2024)\n• Can treat inventory as non-incidental materials/supplies\n• Deduct when used or consumed\n\n**If inventory required:** Must use accrual method for purchases and sales",
+        },
+        {
+          title: 'Inventory Methods',
+          type: 'table',
+          headers: ['Method', 'Description', 'Effect in Rising Prices'],
+          rows: [
+            ['FIFO', 'First-In, First-Out', 'Lower COGS, higher income, higher tax'],
+            ['LIFO', 'Last-In, First-Out', 'Higher COGS, lower income, lower tax'],
+            ['Specific ID', 'Track each item', 'Varies by items sold'],
+            ['Average Cost', 'Weighted average of all', 'Middle ground'],
+          ],
+        },
+        {
+          title: 'LIFO Special Rules',
+          type: 'text',
+          content: "**LIFO Election:**\n• Once elected, generally cannot change without IRS approval\n• Must use for financial statements if used for tax (conformity rule)\n• May produce lower tax in rising price environment\n\n**LIFO Reserve:**\nDifference between FIFO and LIFO inventory values. Can be significant!\n\n**LIFO Recapture:**\nIf converting from C corp to S corp, must recapture LIFO reserve into income (over 4 years).",
+        },
+        {
+          title: 'Lower of Cost or Market (LCM)',
+          type: 'text',
+          content: "**Can value inventory at lower of cost or market:**\n\n**Market = Replacement Cost**\nBut limited to:\n• Ceiling: Net realizable value (selling price minus disposal costs)\n• Floor: NRV minus normal profit margin\n\n**Cannot use with LIFO!**\n\n**Used for:** Damaged, obsolete, or slow-moving inventory",
+        },
+        {
+          title: 'COGS Calculation',
+          type: 'text',
+          content: "**Cost of Goods Sold:**\n\nBeginning Inventory\n+ Purchases\n+ Direct Labor (manufacturing)\n+ Other Costs (freight-in, allocation of overhead)\n= Cost of Goods Available for Sale\n- Ending Inventory\n= **Cost of Goods Sold**\n\n**Note:** COGS is an offset to gross receipts, not a deduction.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Inventory required for businesses selling merchandise",
+            "Small business exception: ≤ $29 million average gross receipts",
+            "FIFO = lower COGS in rising prices (higher tax)",
+            "LIFO = higher COGS in rising prices (lower tax)",
+            "LIFO conformity rule: must use for financial statements",
+            "LCM can write down damaged/obsolete inventory",
+            "LIFO recapture required on C-to-S conversion",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-008',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Business Interest Expense Limitation',
+    description: 'Understand Section 163(j) business interest limitation',
+    order: 8,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Section 163(j)', 'ATI', 'Carryforward', 'Small business exception'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "TCJA limited business interest deductions! Large businesses can only deduct interest up to a percentage of income. Understanding these rules is critical for business clients with significant debt.",
+        },
+        {
+          title: 'Section 163(j) Overview',
+          type: 'text',
+          content: "**Limitation Rule:**\nBusiness interest expense deduction limited to:\n\n**30% of Adjusted Taxable Income (ATI)**\nPlus: Business interest income\nPlus: Floor plan financing interest\n\n**Excess is not lost** - carries forward indefinitely",
+        },
+        {
+          title: 'Calculating ATI',
+          type: 'text',
+          content: "**Adjusted Taxable Income (ATI):**\n\nTaxable income\n+ Business interest expense\n+ Net operating loss deduction\n+ Section 199A deduction (QBI)\n+ Depreciation, amortization, depletion (for years before 2022)\n\n**Note:** Starting 2022, depreciation, amortization, and depletion are NOT added back. This reduced ATI for many businesses!",
+        },
+        {
+          title: 'Small Business Exception',
+          type: 'text',
+          content: "**Exempt from limitation:**\n\nBusinesses with average annual gross receipts ≤ $29 million (2024) for prior 3 years.\n\n**What this means:**\n• Can deduct all business interest\n• No ATI calculation required\n• Same threshold as other small business simplifications\n\n**Test applied at entity level** (aggregation rules may apply)",
+        },
+        {
+          title: 'Excluded Businesses',
+          type: 'list',
+          content: [
+            "Real property trades or businesses (by election)",
+            "Farming businesses (by election)",
+            "Certain utilities",
+            "Small businesses (< $29 million gross receipts)",
+            "Note: Electing out requires using ADS depreciation for real property!",
+          ],
+        },
+        {
+          title: 'Carryforward Rules',
+          type: 'text',
+          content: "**Disallowed Interest:**\n• Carries forward indefinitely\n• Used when ATI allows\n• No expiration\n\n**Pass-through Entities:**\n• Limitation applied at entity level\n• Excess carryforward stays with entity\n• Only allowed interest passes to owners\n\n**Corporations:**\n• Carryforward travels with corporation",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Business interest limited to 30% of ATI",
+            "Small business exception: ≤ $29 million average gross receipts",
+            "Starting 2022, depreciation not added back to ATI",
+            "Real property and farming businesses can elect out",
+            "Electing out requires ADS depreciation",
+            "Disallowed interest carries forward indefinitely",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-009',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Section 1231, 1245, and 1250 Property',
+    description: 'Master the depreciation recapture and Section 1231 netting rules',
+    order: 9,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ['Section 1231', 'Section 1245', 'Section 1250', 'Recapture'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When businesses sell assets, the character of gain matters! Section 1231 provides capital gain treatment for gains but ordinary loss for losses - the best of both worlds. But watch for recapture!",
+        },
+        {
+          title: 'Section 1231 Property',
+          type: 'text',
+          content: "**Section 1231 Property Includes:**\n\n• Depreciable business property held > 1 year\n• Real property used in trade or business held > 1 year\n• Timber, coal, and domestic iron ore\n• Livestock held for draft, breeding, dairy, or sporting\n• Unharvested crops\n\n**NOT Section 1231:**\n• Inventory\n• Property held for sale to customers\n• Copyrights, artistic compositions (by creator)",
+        },
+        {
+          title: 'Section 1231 Netting Rules',
+          type: 'text',
+          content: "**The Best of Both Worlds:**\n\nStep 1: Net all 1231 gains and losses\n\n**If Net Gain:**\nTreated as long-term capital gain (up to 20% rate)\n\n**If Net Loss:**\nTreated as ordinary loss (fully deductible against ordinary income)\n\n**5-Year Lookback:**\nNet 1231 gain is ordinary income to extent of unrecaptured net 1231 losses from prior 5 years.",
+        },
+        {
+          title: 'Section 1245 Recapture',
+          type: 'text',
+          content: "**Applies to Personal Property:**\n\n• Machinery, equipment, vehicles\n• Office furniture\n• Other tangible personal property\n\n**Recapture Rule:**\nGain is ordinary income to extent of ALL depreciation taken.\n\n**Example:**\n• Machinery: $100,000 cost, $60,000 depreciation\n• Adjusted basis: $40,000\n• Sold for $85,000\n• Gain: $45,000\n• Section 1245 recapture: $45,000 (all ordinary)\n• If sold for $110,000: $60,000 ordinary, $10,000 Section 1231 gain",
+        },
+        {
+          title: 'Section 1250 Recapture',
+          type: 'text',
+          content: "**Applies to Real Property:**\n\n• Buildings\n• Structural components\n\n**Historical Rule:**\nRecapture excess of accelerated over straight-line depreciation as ordinary income.\n\n**Current Reality:**\nSince 1987, real property must use straight-line, so usually NO Section 1250 recapture.\n\n**Unrecaptured Section 1250 Gain:**\nThe straight-line depreciation on real property is taxed at maximum 25% rate (not 15%/20% capital gain rate).",
+        },
+        {
+          title: 'Unrecaptured Section 1250 Gain',
+          type: 'table',
+          headers: ['Component', 'Tax Rate', 'Character'],
+          rows: [
+            ['Section 1250 recapture', 'Ordinary rates', 'Ordinary income'],
+            ['Unrecaptured 1250 gain', '25% maximum', 'Capital gain'],
+            ['Remaining 1231 gain', '0%/15%/20%', 'Long-term capital gain'],
+          ],
+        },
+        {
+          title: '🧠 Memory Aid: Recapture Order',
+          type: 'callout',
+          content: "**For business asset sales:**\n\n1. **Section 1245** - All depreciation on personal property = ordinary\n2. **Section 1250** - Excess depreciation on real property = ordinary (rare now)\n3. **Unrecaptured 1250** - Straight-line depreciation on real = 25% cap gain\n4. **Section 1231** - Remaining gain = LTCG; Net loss = ordinary",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Section 1231: Net gain = capital gain; Net loss = ordinary loss",
+            "5-year lookback converts current gain to ordinary",
+            "Section 1245: Personal property, all depreciation recaptured as ordinary",
+            "Section 1250: Real property, excess depreciation recaptured (rare now)",
+            "Unrecaptured 1250 gain: 25% maximum rate",
+            "Order: 1245 recapture → 1250 recapture → Unrecaptured 1250 → 1231",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-010',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Net Operating Losses',
+    description: 'Understand NOL calculation and carryforward rules',
+    order: 10,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['NOL calculation', 'Carryforward', '80% limitation', 'Farming exception'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "NOLs let businesses offset future income with current losses! Understanding the current rules (post-TCJA, as modified) is essential for tax planning when businesses have loss years.",
+        },
+        {
+          title: 'What is an NOL?',
+          type: 'text',
+          content: "**Net Operating Loss:**\nWhen business deductions exceed business income.\n\n**For Individuals:**\nNOL = Negative taxable income after certain modifications:\n• Add back personal exemptions\n• Add back non-business deductions exceeding non-business income\n• Add back NOL deduction from other years\n• Add back capital losses exceeding capital gains\n\n**Corporations:**\nSimpler calculation - negative taxable income without DRD limitation modifications.",
+        },
+        {
+          title: 'Current NOL Rules (Post-TCJA)',
+          type: 'text',
+          content: "**For NOLs arising after 2020:**\n\n• **No carryback** (general rule)\n• **Unlimited carryforward**\n• **80% limitation**: Can only offset 80% of taxable income in carryforward year\n\n**Exception - Farming Losses:**\n• Can carry back 2 years\n• 80% limitation still applies in carryforward years\n\n**Exception - Certain Insurance Companies:**\nDifferent rules apply",
+        },
+        {
+          title: 'Using NOL Carryforwards',
+          type: 'text',
+          content: "**Ordering:**\n• Oldest NOL used first (FIFO)\n• Apply to 80% of modified taxable income\n• Remainder carries forward\n\n**Example:**\n• 2024 taxable income (before NOL): $100,000\n• NOL carryforward available: $150,000\n• Maximum NOL deduction: $80,000 (80% × $100,000)\n• Taxable income after NOL: $20,000\n• Remaining NOL carryforward: $70,000",
+        },
+        {
+          title: 'NOL for Pass-Through Entities',
+          type: 'text',
+          content: "**Partnerships and S Corporations:**\nNo entity-level NOL. Losses pass through to owners and may create NOL on their individual returns.\n\n**Limitations apply at owner level:**\n• Basis limitations\n• At-risk limitations\n• Passive activity loss rules\n• Excess business loss limitation\n\n**Only after passing all these can loss become part of individual's NOL.**",
+        },
+        {
+          title: 'Excess Business Loss Limitation',
+          type: 'text',
+          content: "**Section 461(l):**\n\nFor non-corporate taxpayers, business losses limited to:\n• Business income PLUS\n• $305,000 (single) / $610,000 (MFJ) for 2024\n\n**Excess becomes:**\nNOL carryforward (subject to 80% rule)\n\n**Applies AFTER:**\nBasis, at-risk, and passive activity rules\n\n**In effect through 2028** (unless extended)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NOLs carry forward indefinitely (no carryback for most)",
+            "80% limitation: Can only offset 80% of income",
+            "Farming losses can carry back 2 years",
+            "Oldest NOLs used first (FIFO)",
+            "Pass-through losses flow to owners and may create individual NOL",
+            "Excess business loss limitation: $305K/$610K (2024)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-011',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Loss Limitation Rules',
+    description: 'Master at-risk rules and passive activity loss limitations',
+    order: 11,
+    duration: 60,
+    difficulty: 'advanced',
+    topics: ['At-risk rules', 'Passive activity losses', 'Material participation'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Not all business losses are immediately deductible! Understanding the hierarchy of loss limitations ensures correct reporting and helps clients plan to use their losses effectively.",
+        },
+        {
+          title: 'Loss Limitation Hierarchy',
+          type: 'text',
+          content: "**Order of Application:**\n\n1. **Basis Limitation** - Can't deduct more than basis\n2. **At-Risk Limitation** - Only amounts at risk\n3. **Passive Activity Loss Rules** - Only against passive income\n4. **Excess Business Loss** - $305K/$610K cap\n\n**Each limitation applied in order!**\nLoss failing any level is suspended until that barrier clears.",
+        },
+        {
+          title: 'At-Risk Rules (Section 465)',
+          type: 'text',
+          content: "**Amount At Risk Includes:**\n• Cash contributed\n• Adjusted basis of property contributed\n• Amounts borrowed for which personally liable\n• Amounts borrowed secured by property in activity\n\n**NOT At Risk:**\n• Nonrecourse debt (with real estate exception)\n• Amounts protected against loss\n• Amounts borrowed from related parties\n\n**Losses limited to amount at risk.** Excess suspended until more at risk.",
+        },
+        {
+          title: 'Passive Activity Loss Rules',
+          type: 'text',
+          content: "**General Rule:**\nPassive losses can only offset passive income.\n\n**What is Passive Activity?**\n• Any trade or business in which taxpayer doesn't materially participate\n• Any rental activity (with exceptions)\n\n**Material Participation:**\nMust meet one of seven tests (most common: 500 hours during year)\n\n**Suspended losses:**\n• Carry forward\n• Released when activity disposed of in fully taxable transaction",
+        },
+        {
+          title: 'Material Participation Tests',
+          type: 'table',
+          headers: ['Test #', 'Requirement'],
+          rows: [
+            ['1', 'More than 500 hours during the year'],
+            ['2', 'Substantially all participation in the activity'],
+            ['3', 'More than 100 hours and at least as much as anyone else'],
+            ['4', 'Significant participation in multiple activities totaling 500+ hours'],
+            ['5', 'Material participation in any 5 of prior 10 years'],
+            ['6', 'Personal service activity - any 3 prior years'],
+            ['7', 'Regular, continuous, substantial involvement (facts & circumstances)'],
+          ],
+        },
+        {
+          title: 'Real Estate Professionals Exception',
+          type: 'text',
+          content: "**Rental activities are NOT automatically passive if:**\n\n• More than 50% of personal services in real property trades/businesses\n• More than 750 hours in real property trades/businesses\n• Materially participates in rental activities\n\n**Result:** Rental losses can offset non-passive income!\n\n**Warning:** Must meet ALL requirements. Heavily audited by IRS.",
+        },
+        {
+          title: '$25,000 Rental Loss Allowance',
+          type: 'text',
+          content: "**Active Participation Exception:**\n\nUp to $25,000 of rental losses can offset non-passive income if:\n• Actively participate (own 10%+, participate in management)\n• Not a limited partner\n\n**Phase-out:**\n• Begins at $100,000 MAGI\n• Fully phased out at $150,000\n• Reduced $1 for every $2 over $100,000\n\n**Example:**\n$125,000 MAGI = $12,500 allowance",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Loss limitations apply in order: Basis → At-Risk → PAL → EBL",
+            "At-risk: Must be personally liable or have basis in property",
+            "Passive = no material participation (500 hours is key test)",
+            "Passive losses only offset passive income",
+            "$25,000 active rental exception (phases out $100K-$150K MAGI)",
+            "Real estate professionals can treat rentals as non-passive",
+            "Suspended losses released on fully taxable disposition",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-012',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Qualified Business Income Deduction',
+    description: 'Master Section 199A pass-through deduction',
+    order: 12,
+    duration: 65,
+    difficulty: 'advanced',
+    topics: ['Section 199A', 'QBI', 'SSTB', 'W-2 wages limitation'],
+    blueprintArea: 'SEE2-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Section 199A provides up to a 20% deduction for pass-through business income! This is a major tax benefit for sole proprietors, partners, and S corporation shareholders. Know the rules!",
+        },
+        {
+          title: 'Basic Deduction',
+          type: 'text',
+          content: "**Section 199A Deduction:**\n\n**20% of Qualified Business Income (QBI)**\n\nFrom:\n• Sole proprietorships\n• Partnerships\n• S corporations\n• REITs (qualified dividends)\n• PTPs (publicly traded partnerships)\n\n**Below-the-line deduction** (reduces taxable income, not AGI)",
+        },
+        {
+          title: 'QBI Definition',
+          type: 'text',
+          content: "**Qualified Business Income:**\nNet amount of qualified items from a qualified trade or business.\n\n**Includes:**\n• Ordinary income/loss\n• Section 1231 gain/loss\n\n**Does NOT Include:**\n• Capital gains and losses\n• Dividends and interest (unless banking)\n• Guaranteed payments to partners\n• Reasonable compensation (S corp)\n• Investment income\n• Wage income",
+        },
+        {
+          title: 'Threshold Amounts (2024)',
+          type: 'table',
+          headers: ['Filing Status', 'Threshold', 'Phase-out Complete'],
+          rows: [
+            ['Single/MFS', '$191,950', '$241,950'],
+            ['MFJ', '$383,900', '$483,900'],
+            ['HOH', '$191,950', '$241,950'],
+          ],
+        },
+        {
+          title: 'Below Threshold',
+          type: 'text',
+          content: "**If taxable income ≤ threshold:**\n\n• 20% of QBI from each business\n• No W-2 wages or property limitations\n• SSTB status doesn't matter\n• No additional calculations required\n\n**Plus:** 20% of qualified REIT dividends and PTP income\n\n**Limited to:** 20% of (taxable income minus net capital gain)",
+        },
+        {
+          title: 'Above Threshold - Limitations',
+          type: 'text',
+          content: "**Two Limitations Apply:**\n\n**1. W-2 Wage/Property Limit:**\nDeduction limited to greater of:\n• 50% of W-2 wages paid by business, OR\n• 25% of W-2 wages + 2.5% of UBIA of qualified property\n\n**2. SSTB Limitation:**\nSpecified Service Trades or Businesses:\n• Deduction phases out between threshold and threshold + $50K (single) / $100K (MFJ)\n• Completely disallowed above phase-out\n\n**SSTB includes:** Health, law, accounting, consulting, financial services, performing arts, athletics, etc.",
+        },
+        {
+          title: 'SSTB List',
+          type: 'list',
+          content: [
+            "Health (doctors, dentists, nurses, physical therapists)",
+            "Law (attorneys, paralegals)",
+            "Accounting (CPAs, bookkeepers)",
+            "Actuarial science",
+            "Performing arts (musicians, actors)",
+            "Consulting (unless in manufacturing, etc.)",
+            "Athletics (players, coaches)",
+            "Financial services (investment advice, etc.)",
+            "Brokerage services",
+            "Any business where principal asset is reputation/skill of owners",
+          ],
+        },
+        {
+          title: '⚠️ SSTB Exclusions',
+          type: 'warning',
+          content: "**NOT an SSTB:**\n• Architecture\n• Engineering\n• Real estate agents/brokers\n• Insurance agents\n• Banking\n\n**Key Distinction:**\nConsulting where the product is something other than advice (e.g., manufacturing consultant who provides production plans) may not be SSTB.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "20% deduction for qualified business income from pass-throughs",
+            "Below threshold: No W-2 wages or SSTB limitations",
+            "Above threshold: W-2 wages/property limitation applies",
+            "SSTB: Deduction phases out and is disallowed above threshold",
+            "Limited to 20% of (taxable income minus net capital gains)",
+            "Reasonable compensation and guaranteed payments excluded from QBI",
+            "Expires after 2025 unless extended (TCJA sunset)",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
   // SEE2-3: PASS-THROUGH ENTITIES (Lessons 13-30)
   // ============================================================================
 
@@ -617,6 +1040,390 @@ export const eaPart2Lessons: Lesson[] = [
     },
   },
 
+  {
+    id: 'SEE2-015',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Partnership Distributions',
+    description: 'Master the rules for partnership distributions to partners',
+    order: 15,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Current distributions', 'Liquidating distributions', 'Property distributions'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnership distributions are complex! Understanding when gain is recognized and how basis is affected is crucial for advising partners on tax consequences of receiving cash or property.",
+        },
+        {
+          title: 'Current vs. Liquidating Distributions',
+          type: 'table',
+          headers: ['Feature', 'Current Distribution', 'Liquidating Distribution'],
+          rows: [
+            ['Purpose', 'Operating distribution', 'Partner exits partnership'],
+            ['Money gain', 'Yes, if cash > basis', 'Yes, if cash > basis'],
+            ['Property gain', 'Generally no', 'Generally no'],
+            ['Loss recognized', 'Never', 'Only in certain cases'],
+            ['Basis transfer', 'Carryover (limited)', 'Substituted'],
+          ],
+        },
+        {
+          title: 'Money Distributions',
+          type: 'text',
+          content: "**Cash Distributions:**\n\n• Reduce partner's basis dollar for dollar\n• If cash exceeds basis = capital gain\n• No loss on cash distribution alone\n\n**Marketable Securities:**\nGenerally treated as money (with some exceptions)\n\n**Example:**\n• Partner basis: $10,000\n• Cash distributed: $15,000\n• Result: $5,000 capital gain\n• New basis: $0",
+        },
+        {
+          title: 'Property Distributions',
+          type: 'text',
+          content: "**General Rule - No Gain or Loss:**\n\n**Partner's Basis in Property:**\n• Current distribution: Lesser of partnership's basis OR partner's remaining outside basis\n• Liquidating distribution: Equal to remaining outside basis (substituted)\n\n**Partnership's Basis:**\nGoes to partner (subject to limitations)\n\n**No gain to partner** unless cash + marketable securities > basis",
+        },
+        {
+          title: 'Hot Assets - Section 751',
+          type: 'text',
+          content: "**Section 751(b) applies when:**\nDistribution causes shift in hot assets between partners.\n\n**Hot Assets:**\n• Unrealized receivables (A/R, recapture)\n• Inventory items\n\n**Effect:**\nPortion of distribution treated as a taxable exchange between partner and partnership.\n\n**Creates ordinary income/loss**, not capital.",
+        },
+        {
+          title: 'Liquidating Distributions',
+          type: 'text',
+          content: "**Partner's Interest Terminates:**\n\n**Loss Recognition:**\nOnly if:\n• Only cash, inventory, and unrealized receivables distributed\n• Partner's basis exceeds FMV of distribution\n\n**Basis in Property:**\nSubstituted basis = partner's outside basis reduced by cash\n\n**Allocation if Multiple Properties:**\n• First to unrealized receivables and inventory (at partnership basis)\n• Remaining basis to other assets (may require allocation adjustments)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Cash > basis = capital gain",
+            "Property distributions: generally no gain to partner",
+            "Current distribution: property takes lesser of carryover or remaining basis",
+            "Liquidating distribution: substituted basis",
+            "Section 751 hot assets can create ordinary income",
+            "Loss only on liquidating distribution of cash/inventory/receivables",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-016',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Schedule K-1 Partnership Items',
+    description: 'Understand the partner\'s Schedule K-1 and separately stated items',
+    order: 16,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Form K-1', 'Separately stated items', 'Partner reporting'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The K-1 is the roadmap for partner reporting! Understanding what each item means and how it flows to the partner's return is essential for preparing both partnership and partner returns.",
+        },
+        {
+          title: 'Why Items Are Separately Stated',
+          type: 'text',
+          content: "**Character Preservation:**\nItems are separately stated if the tax treatment depends on the partner's individual circumstances.\n\n**Examples:**\n• Capital gains (may have different rates, or capital losses to offset)\n• Charitable contributions (subject to partner's AGI limitations)\n• Section 179 deduction (subject to partner's income limitation)\n• Investment interest (subject to partner's investment income)\n\n**Ordinary business income:** Items that don't require separate treatment are netted together.",
+        },
+        {
+          title: 'Key K-1 Items',
+          type: 'table',
+          headers: ['Box', 'Item', 'Partner Treatment'],
+          rows: [
+            ['Box 1', 'Ordinary business income/loss', 'Schedule E, may affect SE tax'],
+            ['Box 4', 'Guaranteed payments', 'Ordinary income, subject to SE tax'],
+            ['Box 8-9', 'Capital gains/losses', 'Schedule D'],
+            ['Box 10', 'Section 1231 gain/loss', 'Form 4797'],
+            ['Box 13', 'Charitable contributions', 'Schedule A (if itemizing)'],
+            ['Box 14', 'Self-employment earnings', 'Schedule SE'],
+            ['Box 15', 'Credits', 'Various forms'],
+            ['Box 18-20', 'Tax-exempt income, distributions, other', 'Various'],
+          ],
+        },
+        {
+          title: 'Self-Employment Income',
+          type: 'text',
+          content: "**General Partners:**\n• Ordinary income from Box 1 subject to SE tax\n• Guaranteed payments subject to SE tax\n• Unless rental or passive activity\n\n**Limited Partners:**\n• Generally NOT subject to SE tax (no material participation)\n• Guaranteed payments for services ARE subject to SE tax\n\n**Box 14 tells the story:**\nShows partner's share of self-employment earnings for Schedule SE.",
+        },
+        {
+          title: 'Basis Adjustments from K-1',
+          type: 'text',
+          content: "**Increase Basis:**\n• Ordinary income (Box 1)\n• Capital gains (Box 8-9)\n• Tax-exempt income (Box 18)\n• Increase in partner's share of liabilities\n\n**Decrease Basis:**\n• Distributions (Box 19)\n• Losses/deductions (various boxes)\n• Decrease in share of liabilities\n• Nondeductible expenses (Box 18)\n\n**Partner must track outside basis!** Not reported on K-1.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Separately stated items preserve character at partner level",
+            "Ordinary business income/loss flows to Schedule E",
+            "Guaranteed payments are always ordinary income",
+            "General partners: ordinary income usually subject to SE tax",
+            "Limited partners: generally exempt from SE tax (except guaranteed payments)",
+            "Partner must track outside basis (not shown on K-1)",
+            "Box 18-20: tax-exempt income, distributions, other items to track",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-017',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Family Partnerships',
+    description: 'Understand special rules for family partnerships',
+    order: 17,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Family partnerships', 'Capital as income factor', 'Reasonable compensation'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The IRS scrutinizes family partnerships because they can be used to shift income to lower-bracket family members. Understanding the special rules ensures legitimate family partnerships are respected.",
+        },
+        {
+          title: 'General Rules',
+          type: 'text',
+          content: "**When Family Member Recognized as Partner:**\n\n• Capital is a material income-producing factor, AND\n• Family member is actual owner of partnership interest\n\n**OR**\n\n• Family member performs services as partner\n• Provides capital or skills materially important",
+        },
+        {
+          title: 'Capital as Material Factor',
+          type: 'text',
+          content: "**Capital IS Material Factor:**\n• Manufacturing\n• Retail\n• Requiring substantial inventory\n• Requiring substantial equipment\n\n**Capital is NOT Material Factor:**\n• Service businesses (law, medicine, accounting)\n• Where income comes primarily from services\n\n**If capital isn't material:** Family member must actually perform services to be recognized as partner.",
+        },
+        {
+          title: 'Allocation Rules',
+          type: 'text',
+          content: "**Donor Must Be Reasonably Compensated:**\n\nBefore allocating income to donee:\n• Donor partner must receive reasonable compensation for services\n• Remaining income allocated based on capital\n\n**Example:**\n• Partnership income: $200,000\n• Donor's reasonable compensation for services: $80,000\n• Remaining $120,000 allocated based on capital ownership",
+        },
+        {
+          title: 'Gift of Partnership Interest',
+          type: 'text',
+          content: "**Donee's Basis:**\n• Carryover basis from donor (gift basis rules)\n• Includes share of partnership liabilities\n\n**Gift Tax Implications:**\n• FMV of interest may exceed basis\n• Valuation discounts may apply\n\n**Income Allocation:**\n• Must follow reasonable compensation rules\n• Cannot shift more income than donee's capital would generate",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Family partnerships face special scrutiny",
+            "Capital must be material income factor, or family member must perform services",
+            "Donor must receive reasonable compensation for services first",
+            "Remaining income allocated based on capital",
+            "Gift of partnership interest: donee gets carryover basis",
+            "Service businesses: harder to include non-working family members",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-018',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Sale of Partnership Interest',
+    description: 'Master the tax treatment of selling a partnership interest',
+    order: 18,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Gain/loss on sale', 'Hot assets', 'Section 754 election'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Selling a partnership interest is more complex than selling stock! Hot assets can convert capital gain to ordinary income, and the resulting basis issues affect both buyer and remaining partners.",
+        },
+        {
+          title: 'General Rule',
+          type: 'text',
+          content: "**Sale of Partnership Interest:**\n• Generally produces capital gain or loss\n• Gain = Amount realized - Outside basis\n• Long-term if held more than one year\n\n**Amount Realized Includes:**\n• Cash and property received\n• PLUS: Share of partnership liabilities transferred to buyer\n\n**Outside Basis Includes:**\n• Adjusted basis\n• PLUS: Selling partner's share of liabilities (about to be reduced)",
+        },
+        {
+          title: 'Section 751 - Hot Assets',
+          type: 'text',
+          content: "**Hot Assets Portion is ORDINARY:**\n\n**Hot Assets:**\n• Unrealized receivables\n• Inventory items (substantially appreciated)\n\n**Effect:**\nPartner must recognize ordinary income to extent gain attributable to hot assets.\n\n**Example:**\n• Total gain: $100,000\n• Portion attributable to hot assets: $30,000\n• Ordinary income: $30,000\n• Capital gain: $70,000",
+        },
+        {
+          title: 'Unrealized Receivables',
+          type: 'list',
+          content: [
+            "Accounts receivable (cash method partnership)",
+            "Section 1245 recapture potential",
+            "Section 1250 recapture potential",
+            "Rights to payment for services or goods not yet recognized",
+            "Mining property recapture",
+            "Other ordinary income property",
+          ],
+        },
+        {
+          title: 'Section 754 Election',
+          type: 'text',
+          content: "**Optional Basis Adjustment:**\n\nIf partnership makes Section 754 election:\n• Buyer gets special basis adjustment (Section 743)\n• Adjusts buyer's share of inside basis to match outside basis\n\n**Why it matters:**\nWithout 754 election, buyer's share of partnership basis may differ from what they paid.\n\n**Once made:** Election applies to all future transfers (or until revoked).\n\n**Mandatory 754:** Required if substantial built-in loss (>$250,000)",
+        },
+        {
+          title: 'Example: 754 Election Impact',
+          type: 'example',
+          content: "**Without 754 Election:**\n• Buyer pays $100,000 for 1/3 interest\n• Partnership has $150,000 in assets (inside basis)\n• Buyer's share of inside basis: $50,000\n• Mismatch: $50,000\n\n**With 754 Election:**\n• Buyer gets $50,000 step-up (Section 743(b))\n• Buyer's share of inside basis now equals what they paid\n• No gain on later sale if values stay same",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Sale of partnership interest: generally capital gain/loss",
+            "Amount realized includes buyer's assumption of liabilities",
+            "Section 751 hot assets create ordinary income",
+            "Hot assets: unrealized receivables, substantially appreciated inventory",
+            "Section 754 election adjusts buyer's inside basis",
+            "754 election is partnership-wide and continuing",
+            "Mandatory if partnership has substantial built-in loss",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-019',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Distributions and AAA',
+    description: 'Master distributions from S corporations and accumulated adjustments account',
+    order: 19,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['AAA', 'Distributions', 'Prior C corp E&P'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "S corporation distributions are generally tax-free! But if the S corp has accumulated earnings from C corp years, the analysis gets complicated. Understanding AAA is essential.",
+        },
+        {
+          title: 'Simple Case: No C Corp History',
+          type: 'text',
+          content: "**S corporations with NO accumulated E&P:**\n\nDistributions are treated as:\n1. Return of basis (tax-free) - reduces stock basis\n2. Gain (when distributions exceed basis) - capital gain\n\n**Example:**\n• Shareholder basis: $50,000\n• Distribution: $30,000\n• Result: Tax-free, new basis = $20,000",
+        },
+        {
+          title: 'Accumulated Adjustments Account (AAA)',
+          type: 'text',
+          content: "**What is AAA?**\nCorporate-level account tracking items that would affect shareholder basis.\n\n**Increases:**\n• Income items (not tax-exempt)\n• Separately stated income\n\n**Decreases:**\n• Loss/deduction items\n• Nondeductible expenses (not related to tax-exempt income)\n• Distributions\n\n**AAA can go negative** from losses (but distributions don't reduce AAA below zero).",
+        },
+        {
+          title: 'S Corporations WITH Accumulated E&P',
+          type: 'text',
+          content: "**Distribution Ordering:**\n\n1. First: From AAA (tax-free return of S corp earnings)\n2. Then: From accumulated E&P (taxable dividend)\n3. Then: From remaining AAA/basis (tax-free)\n4. Finally: Excess over basis = capital gain\n\n**Why it matters:**\nOld E&P from C corp years can create taxable dividends!\n\n**Election available:** Treat distribution as from E&P first (rare, but useful if shareholder has capital losses to offset).",
+        },
+        {
+          title: 'Comparison: AAA vs. Basis',
+          type: 'table',
+          headers: ['Feature', 'AAA', 'Shareholder Basis'],
+          rows: [
+            ['Purpose', 'Track accumulated S corp earnings', 'Track shareholder investment'],
+            ['Tax-exempt income', 'Does NOT increase', 'Increases'],
+            ['Distributions', 'Cannot go below zero from distributions', 'Can go to zero'],
+            ['Losses', 'Can go negative', 'Cannot go below zero'],
+            ['Tracked by', 'Corporation', 'Shareholder'],
+          ],
+        },
+        {
+          title: 'Other Tracked Accounts',
+          type: 'text',
+          content: "**OAA (Other Adjustments Account):**\n• Tax-exempt income\n• Related nondeductible expenses\n• Distributed only after AAA and E&P\n\n**PTI (Previously Taxed Income):**\n• Pre-1983 S corporation earnings\n• Rarely encountered now\n\n**Accumulated E&P:**\n• From prior C corporation years\n• Never increased by S corp operations",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "No E&P = simple: distributions reduce basis, then capital gain",
+            "With E&P: AAA first (tax-free), then E&P (dividend), then basis",
+            "AAA tracks S corp earnings at corporate level",
+            "AAA can go negative from losses",
+            "Distributions cannot reduce AAA below zero",
+            "Tax-exempt income increases basis but not AAA (increases OAA)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-020',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Termination',
+    description: 'Understand events that terminate S corporation election',
+    order: 20,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Termination events', 'Effective date', 'Re-election'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Losing S corporation status can be costly! Understanding termination events helps prevent inadvertent terminations and plan for controlled conversions when appropriate.",
+        },
+        {
+          title: 'Termination Events',
+          type: 'list',
+          content: [
+            "Voluntary revocation by shareholders",
+            "Excess passive investment income (3 consecutive years with C corp E&P)",
+            "Ineligible shareholder (NRA, corporation, certain trusts)",
+            "More than 100 shareholders",
+            "Creation of second class of stock",
+            "Becoming ineligible corporation type",
+          ],
+        },
+        {
+          title: 'Voluntary Revocation',
+          type: 'text',
+          content: "**How to Revoke:**\nWritten consent by shareholders holding > 50% of shares.\n\n**Effective Date:**\n• On or before 15th day of 3rd month = effective January 1\n• After = effective following year\n• Can specify future effective date\n\n**Example:**\n• Revocation filed March 10, 2024 → Effective January 1, 2024\n• Revocation filed March 20, 2024 → Effective January 1, 2025",
+        },
+        {
+          title: 'Passive Investment Income Termination',
+          type: 'text',
+          content: "**Three Consecutive Years Rule:**\n\nIf for 3+ consecutive years:\n• S corp has accumulated C corp E&P, AND\n• Passive investment income > 25% of gross receipts\n\n**Result:** S election terminates at start of year 4.\n\n**Passive Investment Income:**\n• Royalties, rents, dividends, interest\n• NOT: Gains from active business\n\n**Also:** Corporate-level tax on excess passive income if E&P exists.",
+        },
+        {
+          title: 'Inadvertent Termination Relief',
+          type: 'text',
+          content: "**IRS Can Waive Termination If:**\n\n• Termination was inadvertent\n• Steps taken to correct (within reasonable time)\n• Corporation and shareholders agree to IRS terms\n\n**Common inadvertent terminations:**\n• Stock transferred to ineligible shareholder\n• Debt instrument treated as second class of stock\n• Missing Form 2553\n\n**Apply for relief:** Private letter ruling request",
+        },
+        {
+          title: 'Re-Election After Termination',
+          type: 'text',
+          content: "**5-Year Waiting Period:**\n\nAfter termination, cannot re-elect S status for 5 years without IRS consent.\n\n**Exceptions:**\n• IRS can waive waiting period\n• Common if termination was inadvertent and quickly corrected\n• Change of control may make waiver easier\n\n**Plan ahead:** If contemplating conversion, consider timing and consequences.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Revocation requires > 50% shareholder consent",
+            "Timing of revocation affects effective date",
+            "Passive income can terminate election (3 years with E&P)",
+            "Ineligible shareholders cause immediate termination",
+            "Inadvertent termination relief available through IRS",
+            "5-year waiting period before re-election",
+          ],
+        },
+      ],
+    },
+  },
+
   // ============================================================================
   // SEE2-4: C CORPORATIONS (Lessons 31-45)
   // ============================================================================
@@ -734,6 +1541,339 @@ export const eaPart2Lessons: Lesson[] = [
             "After E&P exhausted: return of capital, then capital gain",
             "Constructive dividends can arise from disguised benefits",
             "Qualified dividends taxed at preferential rates to shareholders",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-033',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Stock Redemptions',
+    description: 'Understand when redemptions qualify for sale or exchange treatment',
+    order: 33,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Section 302', 'Attribution rules', 'Sale treatment'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Stock redemptions can be treated as a sale (capital gain) or as a dividend (ordinary income). Understanding the tests for sale treatment can save shareholders significant taxes!",
+        },
+        {
+          title: 'Redemption Basics',
+          type: 'text',
+          content: "**Stock Redemption:**\nCorporation buys back (redeems) its own stock from a shareholder.\n\n**Two Possible Treatments:**\n\n**Sale Treatment (preferred):**\n• Shareholder recognizes capital gain/loss\n• Amount realized minus basis = gain/loss\n• Basis is recovered\n\n**Dividend Treatment:**\n• Entire amount is dividend (to extent of E&P)\n• No basis recovery\n• Ordinary income (qualified dividend rates may apply)",
+        },
+        {
+          title: 'Section 302 Tests for Sale Treatment',
+          type: 'table',
+          headers: ['Test', 'Requirement'],
+          rows: [
+            ['Not essentially equivalent to dividend', 'Meaningful reduction in voting power (subjective)'],
+            ['Substantially disproportionate', '< 50% voting power AND < 80% of pre-redemption ownership'],
+            ['Complete termination', 'All shares redeemed (family attribution can be waived)'],
+            ['Partial liquidation (corporate)', 'Part of business contracted/terminated'],
+          ],
+        },
+        {
+          title: 'Attribution Rules',
+          type: 'text',
+          content: "**Constructive Ownership (Section 318):**\n\nShares owned by others are attributed to taxpayer:\n\n**Family Attribution:**\n• Spouse, children, grandchildren, parents\n• NOT siblings!\n\n**Entity Attribution:**\n• Shareholder owns 50%+ of entity → attributed proportionally from entity\n• Entity attributed ownership from 50%+ shareholders\n\n**Option Attribution:**\n• Option to acquire → treated as owner",
+        },
+        {
+          title: 'Waiver of Family Attribution',
+          type: 'text',
+          content: "**Available for Complete Terminations:**\n\nFamily attribution can be waived if:\n• All stock actually owned is redeemed\n• No interest in corporation (other than creditor) for 10 years\n• Does not acquire interest within 10 years (other than by bequest)\n• Files agreement to notify IRS if reacquisition\n\n**Result:** Can treat as complete termination even though family members still own stock.",
+        },
+        {
+          title: '⚠️ Exam Trap: Attribution Matters!',
+          type: 'warning',
+          content: "**Always check attribution:**\n\n**Example:**\n• Father owns 60%, Son owns 40%\n• Father is redeemed completely\n• Father is attributed Son's 40%\n• Without waiver: NOT complete termination!\n• Still owns 40% constructively\n\n**Solution:** Waive family attribution if available.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Sale treatment = capital gain/loss with basis recovery",
+            "Dividend treatment = ordinary income, no basis recovery",
+            "Must meet Section 302 test for sale treatment",
+            "Attribution rules affect ownership percentage analysis",
+            "Family attribution: spouse, children, grandchildren, parents",
+            "Complete termination can waive family attribution",
+            "Substantially disproportionate: < 80% of previous percentage",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-034',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Liquidations',
+    description: 'Understand the tax consequences of liquidating a corporation',
+    order: 34,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Section 331', 'Section 332', 'Section 336'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Liquidating a corporation has significant tax consequences for both the corporation and shareholders. Understanding these rules is essential for planning and executing exit strategies.",
+        },
+        {
+          title: 'General Rule: Section 331',
+          type: 'text',
+          content: "**Shareholder Treatment (Non-Corporate):**\n\n• Amounts received treated as payment for stock\n• Gain/loss = Amount received - Stock basis\n• Character: Capital gain/loss\n\n**Corporation Treatment (Section 336):**\n• Corporation recognizes gain/loss on distribution\n• As if property sold at FMV\n• Subject to depreciation recapture rules",
+        },
+        {
+          title: 'Exception: Section 332',
+          type: 'text',
+          content: "**Parent-Subsidiary Liquidations:**\n\nIf parent owns 80%+ of subsidiary:\n\n**Parent (Shareholder):**\n• NO gain or loss recognized\n• Takes carryover basis in assets\n• Inherits subsidiary's tax attributes (NOLs, E&P)\n\n**Subsidiary (Corporation):**\n• Generally NO gain or loss recognized (Section 337)\n\n**Requirements:**\n• 80% ownership (voting + value)\n• Complete liquidation\n• Complete within 3 years or single plan",
+        },
+        {
+          title: 'Shareholder Basis in Property',
+          type: 'table',
+          headers: ['Situation', 'Shareholder Basis'],
+          rows: [
+            ['Section 331 (non-parent)', 'FMV at distribution'],
+            ['Section 332 (parent)', 'Carryover from subsidiary'],
+            ['Minority shareholder in 332', 'FMV (treated as Section 331)'],
+          ],
+        },
+        {
+          title: 'Loss Limitations',
+          type: 'text',
+          content: "**Losses NOT Recognized by Liquidating Corp:**\n\n• Distributions to related persons (> 50%)\n• Property distributed acquired in Section 351/contribution within 5 years with tax avoidance purpose\n• Property subject to liability exceeding basis\n\n**Anti-Stuffing Rules:**\nPrevent contributions of loss property shortly before liquidation.",
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'text',
+          content: "**Before Liquidating:**\n\n• Distribute appreciated property: Corporate-level gain + shareholder gain\n• Built-in losses may be limited\n• Consider S election before liquidation to avoid double tax on appreciation\n• Parent-subsidiary liquidations (332) can defer gain\n• E&P and tax attributes transfer to parent in 332\n\n**Timing:** All distributions within same taxable year if possible.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Section 331: Shareholders recognize capital gain/loss on liquidation",
+            "Section 336: Corporation recognizes gain/loss on distribution",
+            "Section 332: Tax-free for 80%+ parent, carryover basis",
+            "Section 337: Subsidiary doesn't recognize gain/loss when liquidating into parent",
+            "Loss limitations apply to related party distributions",
+            "Minority shareholders always use Section 331 treatment",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-035',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Accumulated Earnings Tax',
+    description: 'Understand the penalty tax on excess corporate accumulations',
+    order: 35,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['AET', 'Reasonable needs', 'Accumulated earnings credit'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The accumulated earnings tax is a penalty tax designed to prevent C corporations from avoiding shareholder-level tax by accumulating earnings instead of distributing dividends.",
+        },
+        {
+          title: 'AET Basics',
+          type: 'text',
+          content: "**Tax Rate:** 20% (same as top dividend rate)\n\n**Applies to:**\n• C corporations (not S corps)\n• That accumulate earnings beyond reasonable business needs\n• With intent to avoid shareholder-level tax\n\n**Tax Base:**\nAccumulated taxable income = Taxable income (with adjustments) - Dividends Paid Deduction - Accumulated Earnings Credit",
+        },
+        {
+          title: 'Accumulated Earnings Credit',
+          type: 'text',
+          content: "**Minimum Credit:**\n• $250,000 (most corporations)\n• $150,000 (personal service corporations)\n\n**What it allows:**\nCorporation can accumulate up to credit amount without AET, even without specific plans.\n\n**Reasonable Needs Above Credit:**\nMust be justified by specific, definite, and feasible plans.",
+        },
+        {
+          title: 'Reasonable Business Needs',
+          type: 'list',
+          content: [
+            "Business expansion and plant acquisition",
+            "Debt retirement",
+            "Working capital needs",
+            "Acquiring another business",
+            "Self-insurance reserves",
+            "Realistic contingency needs",
+            "Investment in subsidiaries",
+            "Product liability reserves",
+          ],
+        },
+        {
+          title: 'NOT Reasonable Business Needs',
+          type: 'list',
+          content: [
+            "Loans to shareholders",
+            "Personal investments unrelated to business",
+            "Vague or indefinite plans",
+            "Already adequate working capital",
+            "Accumulations for purposes already funded",
+            "Investments in property not used in business",
+          ],
+        },
+        {
+          title: 'Avoiding AET',
+          type: 'text',
+          content: "**Best Practices:**\n\n• Document specific plans for retained earnings\n• Corporate minutes should reflect decisions\n• Pay reasonable dividends\n• Maintain records of business needs\n• Consider S election\n\n**Documentation is key!**\nIRS burden to prove tax avoidance purpose, but shifts to corporation with specific evidence.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "AET: 20% penalty on excess accumulated earnings",
+            "Minimum credit: $250,000 ($150,000 for PSCs)",
+            "Must document specific, definite, feasible plans",
+            "Loans to shareholders suggest tax avoidance",
+            "S corporations exempt from AET",
+            "Dividends paid reduce exposure",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-036',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Personal Holding Company Tax',
+    description: 'Understand the PHC penalty tax and how to avoid it',
+    order: 36,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['PHC', 'PHC income', '20% tax'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The PHC tax is another penalty tax on C corporations! It targets closely-held corporations that are primarily investment vehicles. Understanding the tests helps avoid this 20% penalty.",
+        },
+        {
+          title: 'PHC Definition',
+          type: 'text',
+          content: "**Two-Part Test:**\n\n**1. Stock Ownership Test:**\n• More than 50% of stock owned by 5 or fewer individuals\n• At any time during last half of year\n• Apply attribution rules\n\n**2. Income Test:**\n• PHC income is 60%+ of adjusted ordinary gross income\n\n**Both tests must be met** for PHC status.",
+        },
+        {
+          title: 'PHC Income',
+          type: 'list',
+          content: [
+            "Dividends, interest, royalties, annuities",
+            "Rents (if < 50% of AOGI, subject to 10% test)",
+            "Mineral, oil, gas royalties (with exceptions)",
+            "Copyright royalties (with exceptions)",
+            "Personal service contracts (named person)",
+            "Amounts from estates/trusts",
+          ],
+        },
+        {
+          title: 'Rent Exception',
+          type: 'text',
+          content: "**Rents are NOT PHC Income if:**\n\n• Rents are 50%+ of adjusted ordinary gross income, AND\n• Other PHC income (dividends, etc.) is ≤ 10% of ordinary gross income, OR\n  - Dividends paid equal or exceed other PHC income minus 10%\n\n**Why it matters:**\nReal estate corporations can often avoid PHC if primarily rental company.",
+        },
+        {
+          title: 'PHC Tax',
+          type: 'text',
+          content: "**Tax Rate:** 20%\n\n**Tax Base:**\nUndistributed PHC Income = Taxable income (adjusted) - Federal income tax - Dividends paid\n\n**How to Avoid Tax:**\n• Distribute all PHC income as dividends\n• Consent dividends (shareholder agreement without cash)\n• Deficiency dividends (after IRS determination)\n\n**Automatic if tests met** - no intent requirement unlike AET.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "PHC: 5 or fewer individuals own > 50% AND PHC income ≥ 60% of AOGI",
+            "PHC Tax: 20% on undistributed PHC income",
+            "PHC Income: Passive income (dividends, interest, royalties, etc.)",
+            "Rent exception: 50%+ rental income may avoid PHC status",
+            "Avoid by paying dividends on PHC income",
+            "No intent required (unlike AET)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-037',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Related Party Transactions',
+    description: 'Understand special rules for related party transactions',
+    order: 37,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Section 267', 'Related parties', 'Loss disallowance'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Transactions between related parties get extra scrutiny! Loss disallowance, expense deferral, and ordinary income treatment are common consequences. Know the related party rules!",
+        },
+        {
+          title: 'Who Are Related Parties?',
+          type: 'list',
+          content: [
+            "Family members (siblings, spouse, ancestors, lineal descendants)",
+            "Individual and corporation (> 50% ownership directly/indirectly)",
+            "Two corporations in same controlled group",
+            "Grantor and fiduciary of trust",
+            "Fiduciaries of two trusts with same grantor",
+            "Corporation and partnership with > 50% common ownership",
+            "Two partnerships with > 50% common ownership",
+          ],
+        },
+        {
+          title: 'Section 267(a)(1): Loss Disallowance',
+          type: 'text',
+          content: "**Losses on Sale to Related Party:**\n\nLoss is disallowed when selling property to related party.\n\n**What happens to the loss?**\nBuyer can use it to reduce gain on later sale to unrelated party.\n\n**Example:**\n• Seller's basis: $10,000\n• Sale to related party: $6,000\n• Loss disallowed: $4,000\n• Buyer's basis: $6,000 (cost)\n• Buyer later sells for $12,000\n• Buyer's gain: $2,000 ($6,000 reduced by $4,000 disallowed loss)",
+        },
+        {
+          title: 'Section 267(a)(2): Expense Deferral',
+          type: 'text',
+          content: "**Accrual-Cash Matching:**\n\nWhen accrual-method payer owes cash-method payee:\n\n• Payer cannot deduct until payee includes in income\n• Prevents timing mismatch\n\n**Example:**\n• Corp (accrual) accrues $10,000 salary to owner (cash)\n• Owner doesn't receive until next year\n• Corp cannot deduct until owner receives payment",
+        },
+        {
+          title: 'Section 1239: Ordinary Income',
+          type: 'text',
+          content: "**Gain on Depreciable Property:**\n\nSale of depreciable property to related party = ordinary income (not capital gain).\n\n**Why?**\nPrevents converting ordinary depreciation deductions to capital gain.\n\n**Example:**\n• Sell building to controlled corporation\n• Corporation will depreciate\n• Seller's gain is ordinary income",
+        },
+        {
+          title: 'Controlled Group Rules',
+          type: 'text',
+          content: "**Section 1563: Brother-Sister Controlled Group:**\n\n• 5 or fewer persons own 80%+ of each corporation\n• Same persons own > 50% of each (counting only identical ownership)\n\n**Parent-Subsidiary Controlled Group:**\n• Parent owns 80%+ of subsidiary\n\n**Effect:**\n• Share single $250,000 accumulated earnings credit\n• Share tax brackets (less relevant with flat rate)\n• Related party rules apply between members",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Related parties: family, > 50% ownership, controlled groups",
+            "Section 267(a)(1): Loss disallowed on sale to related party",
+            "Disallowed loss can offset buyer's later gain",
+            "Section 267(a)(2): Accrual deduction deferred until payee includes",
+            "Section 1239: Gain on depreciable property to related party = ordinary",
+            "Controlled groups share certain tax attributes",
           ],
         },
       ],

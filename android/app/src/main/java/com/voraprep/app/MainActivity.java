@@ -1,4 +1,4 @@
-package com.cpareview.app;
+package com.voraprep.app;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -6,7 +6,6 @@ import {
   CheckCircle,
   ChevronRight,
   Clock,
-  Lock,
   Search,
   GraduationCap,
   Layout,
@@ -465,41 +464,23 @@ const Lessons: React.FC = () => {
                       aria-label={`${lesson.title}${lesson.completed ? ', completed' : ''}${isNext ? ', recommended next' : ''}`}
                       aria-disabled={isLocked}
                       className={clsx(
-                        'flex items-center gap-3 md:gap-4 p-3 md:p-4 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500',
+                        'flex items-center gap-3 p-3 md:p-4 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500',
                         isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50',
                         isNext && 'bg-primary-50 dark:bg-primary-900/20'
                       )}
                     >
-                      {/* Status Icon */}
-                      <div
-                        className={clsx(
-                          'w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center flex-shrink-0',
-                          lesson.completed && 'bg-success-100 dark:bg-success-900/30',
-                          isNext && !lesson.completed && 'bg-primary-100 dark:bg-primary-900/30',
-                          isLocked && 'bg-slate-100 dark:bg-slate-700',
-                          !lesson.completed && !isNext && !isLocked && 'bg-slate-100 dark:bg-slate-700'
-                        )}
-                      >
-                        {isLocked ? (
-                          <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
-                        ) : lesson.completed ? (
-                          <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
-                        ) : isNext ? (
-                          <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
-                        ) : (
-                          <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-slate-400 dark:text-slate-500" />
-                        )}
-                      </div>
-
                       {/* Lesson Info */}
                       <div className="flex-1 min-w-0">
                         <h3
                           className={clsx(
-                            'font-medium truncate',
+                            'font-medium truncate flex items-center gap-1.5',
                             lesson.completed ? 'text-slate-600 dark:text-slate-300' : 'text-slate-900 dark:text-slate-100'
                           )}
                         >
-                          {lesson.title}
+                          {lesson.completed && (
+                            <CheckCircle className="w-4 h-4 text-success-600 dark:text-success-400 flex-shrink-0" />
+                          )}
+                          <span className="truncate">{lesson.title}</span>
                         </h3>
                         <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300 mt-0.5">
                           <span className="flex items-center gap-1">

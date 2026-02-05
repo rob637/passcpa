@@ -667,7 +667,7 @@ const AITutor: React.FC = () => {
                   <div
                     className={clsx(
                       message.role === 'assistant' 
-                        ? 'prose prose-sm max-w-none prose-slate dark:prose-invert' 
+                        ? 'prose prose-sm max-w-none text-slate-700 dark:text-slate-100' 
                         : 'text-white text-sm'
                     )}
                     dangerouslySetInnerHTML={{

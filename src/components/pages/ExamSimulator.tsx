@@ -564,17 +564,17 @@ const ExamSimulator: React.FC = () => {
 
   if (examState === 'intro') {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-3xl w-full">
           <button
             onClick={() => navigate('/home')}
-            className="mb-6 flex items-center text-slate-600 hover:text-slate-900 transition-colors"
+            className="mb-6 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </button>
 
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-primary-600 p-8 text-white">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
                 <FileText className="w-8 h-8 text-white" />
@@ -587,52 +587,52 @@ const ExamSimulator: React.FC = () => {
 
             <div className="p-8">
               {/* Exam Mode Selection */}
-              <h3 className="text-sm font-bold text-slate-600 uppercase tracking-wider mb-4">Select Exam Type</h3>
+              <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">Select Exam Type</h3>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <button
                   onClick={() => setExamMode('mini')}
                   className={clsx(
                     'p-4 rounded-xl border-2 text-left transition-all',
                     examMode === 'mini'
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-slate-200 hover:border-primary-200'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-200 dark:hover:border-primary-400'
                   )}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <Clock className="w-4 h-4 text-slate-600" />
-                    <span className="font-bold text-slate-900">Mini Exam</span>
+                    <Clock className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                    <span className="font-bold text-slate-900 dark:text-white">Mini Exam</span>
                   </div>
-                  <div className="text-sm text-slate-600">50 mins • 36 MCQs</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">50 mins • 36 MCQs</div>
                 </button>
                 <button
                   onClick={() => setExamMode('mini-tbs')}
                   className={clsx(
                     'p-4 rounded-xl border-2 text-left transition-all',
                     examMode === 'mini-tbs'
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-slate-200 hover:border-primary-200'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-200 dark:hover:border-primary-400'
                   )}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <ClipboardCheck className="w-4 h-4 text-slate-600" />
-                    <span className="font-bold text-slate-900">Mini + TBS</span>
+                    <ClipboardCheck className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                    <span className="font-bold text-slate-900 dark:text-white">Mini + TBS</span>
                   </div>
-                  <div className="text-sm text-slate-600">50 mins • 24 MCQs + 2 TBS</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">50 mins • 24 MCQs + 2 TBS</div>
                 </button>
                 <button
                   onClick={() => setExamMode('full')}
                   className={clsx(
                     'p-4 rounded-xl border-2 text-left transition-all',
                     examMode === 'full'
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-slate-200 hover:border-primary-200'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-200 dark:hover:border-primary-400'
                   )}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <GraduationCap className="w-4 h-4 text-slate-600" />
-                    <span className="font-bold text-slate-900">Full Exam</span>
+                    <GraduationCap className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                    <span className="font-bold text-slate-900 dark:text-white">Full Exam</span>
                   </div>
-                  <div className="text-sm text-slate-600">4 hours • Full AICPA structure</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">4 hours • Full AICPA structure</div>
                 </button>
                 <button
                   onClick={() => {
@@ -642,8 +642,8 @@ const ExamSimulator: React.FC = () => {
                   className={clsx(
                     'p-4 rounded-xl border-2 text-left transition-all relative',
                     examMode === 'curated'
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-slate-200 hover:border-primary-200'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-200 dark:hover:border-primary-400'
                   )}
                 >
                   <div className="absolute -top-2 -right-2">
@@ -653,56 +653,56 @@ const ExamSimulator: React.FC = () => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
-                    <Target className="w-4 h-4 text-slate-600" />
-                    <span className="font-bold text-slate-900">Curated Mocks</span>
+                    <Target className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                    <span className="font-bold text-slate-900 dark:text-white">Curated Mocks</span>
                   </div>
-                  <div className="text-sm text-slate-600">Blueprint-balanced exams</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">Blueprint-balanced exams</div>
                 </button>
               </div>
 
               {/* Exam Info */}
               <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3 text-slate-700">
-                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                    <Clock className="w-4 h-4 text-slate-600" />
+                <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                  <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                    <Clock className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                   </div>
                   <div>
                     <div className="font-medium">Strict Timing</div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
                       The clock continues running during breaks
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
-                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                    <AlertTriangle className="w-4 h-4 text-slate-600" />
+                <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                  <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                    <AlertTriangle className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                   </div>
                   <div>
                     <div className="font-medium">No Pause</div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
                       Simulate real exam pressure and endurance
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-slate-700">
-                  <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
-                    <BookOpen className="w-4 h-4 text-slate-600" />
+                <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                  <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
+                    <BookOpen className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                   </div>
                   <div>
                     <div className="font-medium">Testlet Structure</div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
                       Cannot return to previous testlets once submitted
                     </div>
                   </div>
                 </div>
                 {(examMode === 'mini-tbs' || examMode === 'full' || examMode === 'curated') && (
-                  <div className="flex items-center gap-3 text-slate-700">
-                    <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                  <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                    <div className="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
                       <ClipboardCheck className="w-4 h-4 text-primary-600" />
                     </div>
                     <div>
                       <div className="font-medium">Task-Based Simulations</div>
-                      <div className="text-sm text-slate-600">
+                      <div className="text-sm text-slate-600 dark:text-slate-400">
                         Includes realistic TBS like the actual CPA exam
                       </div>
                     </div>
@@ -711,15 +711,15 @@ const ExamSimulator: React.FC = () => {
               </div>
 
               {/* Prometric Theme Toggle - Desktop Only */}
-              <div className="hidden md:block mb-6 p-4 bg-slate-100 rounded-xl border border-slate-200">
+              <div className="hidden md:block mb-6 p-4 bg-slate-100 dark:bg-slate-700 rounded-xl border border-slate-200 dark:border-slate-600">
                 <label className="flex items-center justify-between cursor-pointer">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
                       <span className="text-slate-300 text-xs font-bold">WIN</span>
                     </div>
                     <div>
-                      <div className="font-medium text-slate-900">Prometric Interface Mode</div>
-                      <div className="text-sm text-slate-600">
+                      <div className="font-medium text-slate-900 dark:text-white">Prometric Interface Mode</div>
+                      <div className="text-sm text-slate-600 dark:text-slate-300">
                         Practice with the exact look of the real exam
                       </div>
                     </div>
@@ -758,20 +758,20 @@ const ExamSimulator: React.FC = () => {
   // Mock Exam Selection Screen
   if (examState === 'mock-selection') {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-4xl w-full">
           <button
             onClick={() => {
               setExamState('intro');
               setExamMode('mini');
             }}
-            className="mb-6 flex items-center text-slate-600 hover:text-slate-900 transition-colors"
+            className="mb-6 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Exam Options
           </button>
 
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-8 text-white">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
@@ -792,13 +792,13 @@ const ExamSimulator: React.FC = () => {
             <div className="p-6">
               {availableMockExams.length === 0 ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-slate-600" />
+                  <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-slate-600 dark:text-slate-300" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                  <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">
                     No Mock Exams Available
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 dark:text-slate-300">
                     Mock exams for {currentSection} are coming soon!
                   </p>
                 </div>
@@ -813,14 +813,14 @@ const ExamSimulator: React.FC = () => {
                       className={clsx(
                         'w-full p-5 rounded-xl border-2 text-left transition-all',
                         selectedMockExam?.id === exam.id
-                          ? 'border-primary-500 bg-primary-50 ring-2 ring-primary-200'
-                          : 'border-slate-200 hover:border-primary-300 hover:bg-slate-50'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 ring-2 ring-primary-200 dark:ring-primary-800'
+                          : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-400 hover:bg-slate-50 dark:hover:bg-slate-700'
                       )}
                     >
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <h3 className="font-bold text-slate-900 text-lg">{exam.name}</h3>
-                          <p className="text-sm text-slate-600">{exam.description}</p>
+                          <h3 className="font-bold text-slate-900 dark:text-white text-lg">{exam.name}</h3>
+                          <p className="text-sm text-slate-600 dark:text-slate-300">{exam.description}</p>
                         </div>
                         {exam.version !== 'both' && (
                           <span className={clsx(
@@ -833,7 +833,7 @@ const ExamSimulator: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 sm:gap-4 text-xs text-slate-600 mt-3">
+                      <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 sm:gap-4 text-xs text-slate-600 dark:text-slate-300 mt-3">
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {Math.round(exam.totalTime / 3600)}h
@@ -857,16 +857,16 @@ const ExamSimulator: React.FC = () => {
               )}
 
               {selectedMockExam && (
-                <div className="mt-6 pt-6 border-t border-slate-200">
-                  <h4 className="text-sm font-bold text-slate-600 uppercase tracking-wider mb-3">
+                <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-600">
+                  <h4 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-3">
                     Blueprint Coverage
                   </h4>
                   <div className="grid grid-cols-2 gap-2 mb-6">
                     {BLUEPRINT_WEIGHTS[currentSection]?.map((weight) => (
                       <div key={weight.area} className="flex items-center gap-2 text-sm">
                         <div className="w-2 h-2 rounded-full bg-primary-500" />
-                        <span className="text-slate-600">{weight.area}:</span>
-                        <span className="text-slate-900 font-medium">{weight.weight}%</span>
+                        <span className="text-slate-600 dark:text-slate-300">{weight.area}:</span>
+                        <span className="text-slate-900 dark:text-white font-medium">{weight.weight}%</span>
                       </div>
                     ))}
                   </div>
@@ -947,7 +947,7 @@ const ExamSimulator: React.FC = () => {
                   : 'Written Communication'}
             </div>
             {nextTestlet?.type === 'tbs' && (
-              <p className="text-sm text-slate-600 mt-2">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
                 Apply your knowledge to realistic accounting scenarios
               </p>
             )}
@@ -958,7 +958,7 @@ const ExamSimulator: React.FC = () => {
               setExamState('exam');
               setStartTime(Date.now() - (examConfig.totalTime - timeLeft) * 1000); // Adjust start time
             }}
-            className="w-full py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-100 transition-colors"
+            className="w-full py-4 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors"
           >
             Resume Exam
           </button>
@@ -1094,14 +1094,14 @@ const ExamSimulator: React.FC = () => {
 
     // Modern Results Screen
     return (
-      <div className="min-h-screen bg-slate-50 py-8 px-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8 px-4">
         <div className="max-w-3xl mx-auto">
           {/* Score Header */}
           <div className="text-center mb-8">
             <div
               className={clsx(
                 'w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl',
-                passed ? 'bg-success-500' : 'bg-white'
+                passed ? 'bg-success-500' : 'bg-white dark:bg-slate-700'
               )}
             >
               {passed ? (
@@ -1111,23 +1111,23 @@ const ExamSimulator: React.FC = () => {
               )}
             </div>
 
-            <h1 className="text-4xl font-bold text-slate-900 mb-2">
+            <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-2">
               {passed ? 'Congratulations!' : 'Practice Complete'}
             </h1>
-            <p className="text-lg text-slate-600 mb-4">
+            <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">
               {passed
                 ? 'You are showing exam-ready performance!'
                 : 'Keep practicing to improve your score.'}
             </p>
             {selectedMockExam && (
-              <p className="text-sm text-slate-600">{selectedMockExam.name}</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">{selectedMockExam.name}</p>
             )}
           </div>
 
           {/* Score Card */}
-          <div className="bg-white rounded-2xl shadow-sm p-8 mb-6">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-8 mb-6">
             <div className="text-center mb-6">
-              <div className="text-sm font-medium text-slate-600 uppercase tracking-wider mb-2">
+              <div className="text-sm font-medium text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-2">
                 Final Score
               </div>
               <div
@@ -1143,30 +1143,30 @@ const ExamSimulator: React.FC = () => {
               >
                 {results.percentage}
               </div>
-              <div className="text-slate-600">Target: {examConfig.passingScore}</div>
+              <div className="text-slate-600 dark:text-slate-300">Target: {examConfig.passingScore}</div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-slate-50 p-4 rounded-xl text-center">
+              <div className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl text-center">
                 <div className="flex items-center justify-center gap-2 mb-1">
                   <CheckCircle className="w-5 h-5 text-success-500" />
-                  <span className="font-bold text-slate-900">{results.correct}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{results.correct}</span>
                 </div>
-                <div className="text-xs text-slate-600">Correct MCQ</div>
+                <div className="text-xs text-slate-600 dark:text-slate-300">Correct MCQ</div>
               </div>
-              <div className="bg-slate-50 p-4 rounded-xl text-center">
+              <div className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl text-center">
                 <div className="flex items-center justify-center gap-2 mb-1">
                   <XCircle className="w-5 h-5 text-error-500" />
-                  <span className="font-bold text-slate-900">{results.incorrect}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{results.incorrect}</span>
                 </div>
-                <div className="text-xs text-slate-600">Incorrect MCQ</div>
+                <div className="text-xs text-slate-600 dark:text-slate-300">Incorrect MCQ</div>
               </div>
             </div>
 
             {/* TBS Score if applicable */}
             {tbsItems.length > 0 && (
-              <div className="border-t border-slate-200 pt-6 mt-6">
-                <h3 className="text-sm font-bold text-slate-600 uppercase tracking-wider mb-4">
+              <div className="border-t border-slate-200 dark:border-slate-600 pt-6 mt-6">
+                <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">
                   Score Breakdown
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -1191,10 +1191,10 @@ const ExamSimulator: React.FC = () => {
 
           {/* Blueprint Breakdown */}
           {Object.keys(blueprintScores).length > 0 && (
-            <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <BarChart3 className="w-5 h-5 text-slate-600" />
-                <h3 className="text-sm font-bold text-slate-600 uppercase tracking-wider">
+                <BarChart3 className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                   Blueprint Area Performance
                 </h3>
               </div>
@@ -1207,7 +1207,7 @@ const ExamSimulator: React.FC = () => {
                     return (
                       <div key={area}>
                         <div className="flex justify-between text-sm mb-1">
-                          <span className="text-slate-700 font-medium">{area}</span>
+                          <span className="text-slate-700 dark:text-slate-200 font-medium">{area}</span>
                           <span className={clsx(
                             'font-bold',
                             pct >= 75 ? 'text-success-600' : pct >= 50 ? 'text-warning-600' : 'text-error-600'
@@ -1215,7 +1215,7 @@ const ExamSimulator: React.FC = () => {
                             {pct}%
                           </span>
                         </div>
-                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                           <div
                             className={clsx(
                               'h-full rounded-full transition-all',
@@ -1570,10 +1570,10 @@ const ExamSimulator: React.FC = () => {
                 />
               ) : (
                 /* MCQ Rendering */
-                <div className="bg-white rounded-lg shadow-sm border border-slate-200 min-h-[400px] flex flex-col">
-                <div className="p-6 border-b border-slate-200">
+                <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 min-h-[400px] flex flex-col">
+                <div className="p-6 border-b border-slate-200 dark:border-slate-700">
                   <div className="flex justify-between items-start mb-4">
-                    <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
+                    <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
                       Question {currentIndex + 1} / {testletQuestions.length}
                     </span>
                     <button
@@ -1582,7 +1582,7 @@ const ExamSimulator: React.FC = () => {
                         'flex items-center gap-2 px-3 py-1 rounded transition-colors text-sm font-medium',
                         currentQuestion?.id && flagged.has(currentQuestion.id)
                           ? 'bg-warning-50 text-warning-700'
-                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-600'
+                          : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-slate-600 dark:hover:text-slate-200'
                       )}
                     >
                       <Flag
@@ -1594,12 +1594,12 @@ const ExamSimulator: React.FC = () => {
                       {currentQuestion?.id && flagged.has(currentQuestion.id) ? 'Flagged' : 'Flag'}
                     </button>
                   </div>
-                  <div className="text-lg text-slate-900 leading-relaxed font-serif">
+                  <div className="text-lg text-slate-900 dark:text-white leading-relaxed font-serif">
                     {currentQuestion?.question}
                   </div>
                 </div>
 
-                <div className="p-6 bg-slate-50 flex-1">
+                <div className="p-6 bg-slate-50 dark:bg-slate-900 flex-1">
                   <div className="space-y-3">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {(currentQuestion?.options || (currentQuestion as any)?.choices || []).map(
@@ -1610,8 +1610,8 @@ const ExamSimulator: React.FC = () => {
                           className={clsx(
                             'w-full p-4 rounded border text-left transition-all flex items-start gap-4 group',
                             currentQuestion?.id && answers[currentQuestion.id] === idx
-                              ? 'border-primary-600 bg-primary-50 ring-1 ring-primary-600'
-                              : 'border-slate-300 bg-white hover:border-primary-400 hover:shadow-sm'
+                              ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/30 ring-1 ring-primary-600'
+                              : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-400 dark:hover:border-primary-400 hover:shadow-sm'
                           )}
                         >
                           <span
@@ -1619,12 +1619,12 @@ const ExamSimulator: React.FC = () => {
                               'w-6 h-6 rounded-full border flex items-center justify-center text-sm font-medium flex-shrink-0 mt-0.5 transition-colors',
                               currentQuestion?.id && answers[currentQuestion.id] === idx
                                 ? 'border-primary-600 bg-primary-600 text-white'
-                                : 'border-slate-300 text-slate-600 group-hover:border-primary-400 group-hover:text-primary-600'
+                                : 'border-slate-300 dark:border-slate-500 text-slate-600 dark:text-slate-300 group-hover:border-primary-400 group-hover:text-primary-600'
                             )}
                           >
                             {String.fromCharCode(65 + idx)}
                           </span>
-                          <span className="text-slate-800 pt-0.5">{option}</span>
+                          <span className="text-slate-800 dark:text-slate-100 pt-0.5">{option}</span>
                         </button>
                       )
                     )}
@@ -1636,7 +1636,7 @@ const ExamSimulator: React.FC = () => {
           </div>
 
           {/* Navigation Bar */}
-          <div className="bg-white border-t border-slate-200 px-6 py-4 shadow-lg shrink-0 z-10">
+          <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 px-6 py-4 shadow-lg shrink-0 z-10">
             <div className="max-w-4xl mx-auto flex items-center justify-between">
               <button
                 onClick={handlePrevious}
@@ -1657,10 +1657,10 @@ const ExamSimulator: React.FC = () => {
                       className={clsx(
                         'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
                         currentIndex === i
-                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2'
+                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
                           : Object.keys(tbsAnswers[tbs.id] || {}).length > 0
                             ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
+                            : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
                         flagged.has(tbs.id) && 'ring-2 ring-warning-400 z-10'
                       )}
                     >
@@ -1676,10 +1676,10 @@ const ExamSimulator: React.FC = () => {
                       className={clsx(
                         'w-8 h-8 rounded flex items-center justify-center text-xs font-medium transition-all',
                         currentIndex === i
-                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2'
+                          ? 'bg-slate-800 text-white ring-2 ring-slate-800 ring-offset-2 dark:ring-offset-slate-800'
                           : answers[q.id] !== undefined
                             ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200',
+                            : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-500',
                         flagged.has(q.id) && 'ring-2 ring-warning-400 z-10'
                       )}
                     >

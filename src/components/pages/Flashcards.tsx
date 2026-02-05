@@ -336,10 +336,10 @@ const Flashcards: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-600">Loading flashcards...</p>
+          <p className="text-slate-600 dark:text-slate-300">Loading flashcards...</p>
         </div>
       </div>
     );
@@ -347,13 +347,13 @@ const Flashcards: React.FC = () => {
 
   if (cards.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
         <div className="text-center max-w-md">
-          <div className="w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-success-100 dark:bg-success-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10 text-success-600" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">All Caught Up!</h2>
-          <p className="text-slate-600 mb-6">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">All Caught Up!</h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
             {mode === 'review'
               ? 'No cards are due for review right now. Great job staying on top of your studies!'
               : 'No flashcards available for this selection.'}
@@ -374,13 +374,13 @@ const Flashcards: React.FC = () => {
   // Session complete
   if (currentIndex >= cards.length) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
         <div className="text-center max-w-md">
-          <div className="w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-success-100 dark:bg-success-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <Sparkles className="w-10 h-10 text-success-600" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">Session Complete!</h2>
-          <p className="text-slate-600 mb-6">You reviewed {sessionStats.reviewed} cards</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Session Complete!</h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">You reviewed {sessionStats.reviewed} cards</p>
 
           <div className="grid grid-cols-4 gap-2 mb-6">
             {RATING_BUTTONS.map((btn) => (
@@ -388,14 +388,14 @@ const Flashcards: React.FC = () => {
                 key={btn.rating}
                 className={clsx(
                   'p-3 rounded-xl text-center',
-                  btn.color === 'error' && 'bg-error-100',
-                  btn.color === 'warning' && 'bg-warning-100',
-                  btn.color === 'primary' && 'bg-primary-100',
-                  btn.color === 'success' && 'bg-success-100'
+                  btn.color === 'error' && 'bg-error-100 dark:bg-error-900/40',
+                  btn.color === 'warning' && 'bg-warning-100 dark:bg-warning-900/40',
+                  btn.color === 'primary' && 'bg-primary-100 dark:bg-primary-900/40',
+                  btn.color === 'success' && 'bg-success-100 dark:bg-success-900/40'
                 )}
               >
-                <div className="text-2xl font-bold">{sessionStats[btn.rating]}</div>
-                <div className="text-xs text-slate-600">{btn.label}</div>
+                <div className="text-2xl font-bold dark:text-white">{sessionStats[btn.rating]}</div>
+                <div className="text-xs text-slate-600 dark:text-slate-300">{btn.label}</div>
               </div>
             ))}
           </div>
@@ -430,13 +430,13 @@ const Flashcards: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
       {/* Header */}
-      <div className="bg-white border-b border-slate-100 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <button
             onClick={() => navigate('/home')}
-            className="flex items-center gap-2 text-slate-600 hover:text-slate-900"
+            className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
           >
             <ArrowLeft className="w-5 h-5" />
             <span className="hidden sm:inline">Back</span>
@@ -444,10 +444,10 @@ const Flashcards: React.FC = () => {
 
           <div className="flex items-center gap-2">
             <Brain className="w-5 h-5 text-primary-600" />
-            <span className="font-medium text-slate-900">Flashcards</span>
+            <span className="font-medium text-slate-900 dark:text-white">Flashcards</span>
           </div>
 
-          <div className="text-sm text-slate-600">
+          <div className="text-sm text-slate-600 dark:text-slate-300">
             {currentIndex + 1} / {cards.length}
           </div>
         </div>
@@ -459,8 +459,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'all'
-                ? 'bg-primary-100 text-primary-700 border border-primary-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 border border-primary-200 dark:border-primary-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <Sparkles className="w-3.5 h-3.5" />
@@ -471,8 +471,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'questions'
-                ? 'bg-primary-100 text-primary-700 border border-primary-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 border border-primary-200 dark:border-primary-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <Brain className="w-3.5 h-3.5" />
@@ -483,8 +483,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'definitions'
-                ? 'bg-blue-100 text-blue-700 border border-blue-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 border border-blue-200 dark:border-blue-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <BookOpen className="w-3.5 h-3.5" />
@@ -495,8 +495,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'formulas'
-                ? 'bg-teal-100 text-teal-700 border border-teal-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-teal-100 dark:bg-teal-900/40 text-teal-700 border border-teal-200 dark:border-teal-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <Calculator className="w-3.5 h-3.5" />
@@ -547,22 +547,22 @@ const Flashcards: React.FC = () => {
             {/* Front */}
             <div
               className={clsx(
-                'absolute inset-0 bg-white rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col backface-hidden',
+                'absolute inset-0 bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col backface-hidden',
                 isFlipped && 'invisible'
               )}
               style={{ backfaceVisibility: 'hidden' }}
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs text-primary-600 font-medium">
+                <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">
                   {currentCard.topic || 'Question'}
                 </span>
                 {currentCard.cardType && currentCard.cardType !== 'question' && (
                   <span
                     className={clsx(
                       'text-xs px-2 py-0.5 rounded-full font-medium',
-                      currentCard.cardType === 'definition' && 'bg-blue-100 text-blue-700',
-                      currentCard.cardType === 'formula' && 'bg-teal-100 text-teal-700',
-                      currentCard.cardType === 'mnemonic' && 'bg-amber-100 text-amber-700'
+                      currentCard.cardType === 'definition' && 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
+                      currentCard.cardType === 'formula' && 'bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300',
+                      currentCard.cardType === 'mnemonic' && 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300'
                     )}
                   >
                     {currentCard.cardType === 'definition' && '📖 Definition'}
@@ -572,18 +572,18 @@ const Flashcards: React.FC = () => {
                 )}
               </div>
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-lg sm:text-xl text-slate-900 text-center leading-relaxed">
+                <p className="text-lg sm:text-xl text-slate-900 dark:text-white text-center leading-relaxed">
                   {currentCard.front || currentCard.question}
                 </p>
               </div>
               {currentCard.mnemonic && (
                 <div className="mt-4 text-center">
-                  <span className="inline-block bg-amber-50 text-amber-700 px-4 py-2 rounded-lg text-lg font-bold tracking-wider">
+                  <span className="inline-block bg-amber-50 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-4 py-2 rounded-lg text-lg font-bold tracking-wider">
                     {currentCard.mnemonic}
                   </span>
                 </div>
               )}
-              <div className="text-center text-slate-600 text-sm mt-4">
+              <div className="text-center text-slate-600 dark:text-slate-300 text-sm mt-4">
                 <span className="hidden sm:inline">Press Space or </span>Tap to flip
               </div>
             </div>
@@ -591,7 +591,7 @@ const Flashcards: React.FC = () => {
             {/* Back */}
             <div
               className={clsx(
-                'absolute inset-0 bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col',
+                'absolute inset-0 bg-gradient-to-br from-primary-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col',
                 !isFlipped && 'invisible'
               )}
               style={{
@@ -599,10 +599,10 @@ const Flashcards: React.FC = () => {
                 transform: 'rotateY(180deg)',
               }}
             >
-              <div className="text-xs text-success-600 font-medium mb-3">Answer</div>
+              <div className="text-xs text-success-600 dark:text-success-400 font-medium mb-3">Answer</div>
               <div className="flex-1 flex flex-col items-center justify-center overflow-auto">
                 {/* Main answer/explanation */}
-                <p className="text-base sm:text-lg text-slate-700 leading-relaxed text-center whitespace-pre-wrap">
+                <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed text-center whitespace-pre-wrap">
                   {currentCard.cardType === 'question' 
                     ? (currentCard.back || currentCard.answer)
                     : currentCard.answer?.split('\n\n📐')[0]?.split('\n\n💡')[0]?.split('\n\n📝')[0] || currentCard.back
@@ -612,12 +612,12 @@ const Flashcards: React.FC = () => {
                 {/* Formula display (for formula cards) */}
                 {currentCard.formula && (
                   <div className="mt-4 w-full max-w-md">
-                    <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
-                      <div className="text-xs text-teal-600 font-medium mb-2 flex items-center gap-1">
+                    <div className="bg-teal-50 dark:bg-teal-900/40 border border-teal-200 dark:border-teal-700 rounded-lg p-4">
+                      <div className="text-xs text-teal-600 dark:text-teal-300 font-medium mb-2 flex items-center gap-1">
                         <Calculator className="w-3.5 h-3.5" />
                         Formula
                       </div>
-                      <p className="text-teal-900 font-mono text-sm whitespace-pre-wrap">
+                      <p className="text-teal-900 dark:text-teal-100 font-mono text-sm whitespace-pre-wrap">
                         {currentCard.formula}
                       </p>
                     </div>
@@ -627,9 +627,9 @@ const Flashcards: React.FC = () => {
                 {/* Example display (for formula cards) */}
                 {currentCard.example && (
                   <div className="mt-3 w-full max-w-md">
-                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                      <div className="text-xs text-slate-600 font-medium mb-2">📝 Example</div>
-                      <p className="text-slate-700 text-sm">
+                    <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4">
+                      <div className="text-xs text-slate-600 dark:text-slate-300 font-medium mb-2">📝 Example</div>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
                         {currentCard.example}
                       </p>
                     </div>
@@ -652,13 +652,13 @@ const Flashcards: React.FC = () => {
                       'flex flex-col items-center gap-1 py-3 px-2 rounded-xl transition-all',
                       'border-2 font-medium',
                       btn.color === 'error' &&
-                        'border-error-200 bg-error-50 text-error-700 hover:bg-error-100',
+                        'border-error-200 dark:border-error-700 bg-error-50 dark:bg-error-900/40 text-error-700 dark:text-error-300 hover:bg-error-100 dark:hover:bg-error-900/60',
                       btn.color === 'warning' &&
-                        'border-warning-200 bg-warning-50 text-warning-700 hover:bg-warning-100',
+                        'border-warning-200 dark:border-warning-700 bg-warning-50 dark:bg-warning-900/40 text-warning-700 dark:text-warning-300 hover:bg-warning-100 dark:hover:bg-warning-900/60',
                       btn.color === 'primary' &&
-                        'border-primary-200 bg-primary-50 text-primary-700 hover:bg-primary-100',
+                        'border-primary-200 dark:border-primary-700 bg-primary-50 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900/60',
                       btn.color === 'success' &&
-                        'border-success-200 bg-success-50 text-success-700 hover:bg-success-100'
+                        'border-success-200 dark:border-success-700 bg-success-50 dark:bg-success-900/40 text-success-700 dark:text-success-300 hover:bg-success-100 dark:hover:bg-success-900/60'
                     )}
                   >
                     <Icon className="w-5 h-5" />
@@ -672,7 +672,7 @@ const Flashcards: React.FC = () => {
 
           {/* Navigation hint */}
           {!isFlipped && (
-            <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600">
+            <div className="mt-6 flex justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
               <span className="hidden sm:inline">← → to navigate</span>
               <span className="hidden sm:inline">Space to flip</span>
               <span className="hidden sm:inline">1-4 to rate</span>
@@ -682,15 +682,15 @@ const Flashcards: React.FC = () => {
       </div>
 
       {/* Bottom Stats */}
-      <div className="bg-white border-t border-slate-100 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between text-sm">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5 text-slate-600">
+            <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
               <Target className="w-4 h-4" />
               <span>{sessionStats.reviewed} reviewed</span>
             </div>
             {studyStats && (
-              <div className="flex items-center gap-1.5 text-primary-600">
+              <div className="flex items-center gap-1.5 text-primary-600 dark:text-primary-400">
                 <Clock className="w-4 h-4" />
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <span>{(studyStats as any).dueToday} due</span>
@@ -702,14 +702,14 @@ const Flashcards: React.FC = () => {
             <button
               onClick={prevCard}
               disabled={currentIndex === 0}
-              className="p-2 rounded-lg hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextCard}
               disabled={currentIndex === cards.length - 1}
-              className="p-2 rounded-lg hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

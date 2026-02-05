@@ -333,22 +333,22 @@ const TimedQuiz: React.FC = () => {
     const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
     
     return (
-      <div className="min-h-screen bg-slate-50 p-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-4">
         <div className="max-w-lg mx-auto">
           <button
             onClick={() => navigate('/home')}
-            className="mb-4 flex items-center text-slate-600 hover:text-slate-900 transition-colors"
+            className="mb-4 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <ArrowRight className="w-4 h-4 mr-1 rotate-180" />
             Back to Home
           </button>
           
           <div className="text-center mb-6">
-            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="w-8 h-8 text-primary-600" />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 mb-2">Timed Quiz</h1>
-            <p className="text-slate-600">Test yourself under exam conditions</p>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Timed Quiz</h1>
+            <p className="text-slate-600 dark:text-slate-300">Test yourself under exam conditions</p>
           </div>
 
           {/* Quiz Mode Selection */}
@@ -360,8 +360,8 @@ const TimedQuiz: React.FC = () => {
                 className={clsx(
                   'w-full p-4 rounded-xl border-2 text-left transition-all',
                   mode === key
-                    ? 'border-primary-500 bg-primary-50'
-                    : 'border-slate-200 bg-white hover:border-primary-200'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                    : 'border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-200 dark:hover:border-primary-400'
                 )}
               >
                 <div className="flex items-center justify-between">
@@ -371,14 +371,14 @@ const TimedQuiz: React.FC = () => {
                     {key === 'challenge' && <Zap className="w-5 h-5 text-primary-500" />}
                     {(key === 'quick' || key === 'standard') && <Clock className="w-5 h-5 text-primary-500" />}
                     <div>
-                      <div className="font-semibold text-slate-900">{config.name}</div>
-                      <div className="text-sm text-slate-600">
+                      <div className="font-semibold text-slate-900 dark:text-white">{config.name}</div>
+                      <div className="text-sm text-slate-600 dark:text-slate-300">
                         {config.questions} questions • {config.timePerQuestion}s each
                       </div>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-medium text-primary-600">
+                    <div className="text-sm font-medium text-primary-600 dark:text-primary-400">
                       {Math.round((config.questions * config.timePerQuestion) / 60)} min
                     </div>
                   </div>
@@ -390,7 +390,7 @@ const TimedQuiz: React.FC = () => {
           {/* Advanced Options Toggle */}
           <button
             onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
-            className="w-full flex items-center justify-between p-3 text-slate-600 hover:text-slate-900 mb-4"
+            className="w-full flex items-center justify-between p-3 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white mb-4"
           >
             <span className="flex items-center gap-2">
               <Settings className="w-4 h-4" />
@@ -401,17 +401,17 @@ const TimedQuiz: React.FC = () => {
 
           {/* Advanced Options Panel */}
           {showAdvancedOptions && (
-            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-6 space-y-4">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mb-6 space-y-4">
               {/* Section Selection */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Exam Section</label>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Exam Section</label>
                 <select
                   value={selectedSection}
                   onChange={(e) => {
                     setSelectedSection(e.target.value as ExamSection | 'all');
                     setSelectedBlueprintArea('all');
                   }}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500"
                 >
                   <option value="all">Current Section ({userProfile?.examSection || 'REG'})</option>
                   {Object.entries(CPA_SECTIONS).map(([key, section]) => (
@@ -422,14 +422,16 @@ const TimedQuiz: React.FC = () => {
 
               {/* Blueprint Area Selection */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+              {/* Blueprint Area Selection */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                   <BookOpen className="w-4 h-4 inline mr-1" />
                   Blueprint Area
                 </label>
                 <select
                   value={selectedBlueprintArea}
                   onChange={(e) => setSelectedBlueprintArea(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500"
                 >
                   <option value="all">All Areas</option>
                   {blueprintAreas.map((area) => (
@@ -440,7 +442,7 @@ const TimedQuiz: React.FC = () => {
 
               {/* Difficulty Selection */}
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Difficulty</label>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Difficulty</label>
                 <div className="flex gap-2">
                   {(['all', 'easy', 'medium', 'hard'] as const).map((diff) => (
                     <button
@@ -453,7 +455,7 @@ const TimedQuiz: React.FC = () => {
                           : diff === 'medium' ? 'bg-warning-100 text-warning-700 border-2 border-warning-300'
                           : diff === 'hard' ? 'bg-error-100 text-error-700 border-2 border-error-300'
                           : 'bg-primary-100 text-primary-700 border-2 border-primary-300'
-                          : 'bg-slate-100 text-slate-600 border-2 border-transparent hover:bg-slate-200'
+                          : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200 border-2 border-transparent hover:bg-slate-200 dark:hover:bg-slate-500'
                       )}
                     >
                       {diff === 'all' ? 'All' : diff.charAt(0).toUpperCase() + diff.slice(1)}
@@ -465,7 +467,7 @@ const TimedQuiz: React.FC = () => {
               {/* Custom Question Count (only for custom mode) */}
               {mode === 'custom' && (
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Number of Questions</label>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">Number of Questions</label>
                   <input
                     type="range"
                     min="5"
@@ -474,7 +476,7 @@ const TimedQuiz: React.FC = () => {
                     onChange={(e) => setCustomQuestionCount(parseInt(e.target.value))}
                     className="w-full"
                   />
-                  <div className="text-center text-sm text-slate-600 mt-1">{customQuestionCount} questions</div>
+                  <div className="text-center text-sm text-slate-600 dark:text-slate-300 mt-1">{customQuestionCount} questions</div>
                 </div>
               )}
             </div>
@@ -505,12 +507,12 @@ const TimedQuiz: React.FC = () => {
     const flaggedCount = flagged.size;
 
     return (
-      <div className="min-h-screen bg-slate-50 p-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-4">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-sm p-6 mb-4">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-4">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-slate-900">Review Your Answers</h2>
-              <div className="flex items-center gap-2 text-lg font-mono">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Review Your Answers</h2>
+              <div className="flex items-center gap-2 text-lg font-mono dark:text-slate-200">
                 <Clock className={clsx('w-5 h-5', timeLeft < 300 && 'text-error-500')} />
                 <span className={clsx(timeLeft < 300 && 'text-error-600')}>
                   {formatTime(timeLeft)}
@@ -519,19 +521,19 @@ const TimedQuiz: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="text-center p-3 bg-success-50 rounded-xl">
+              <div className="text-center p-3 bg-success-50 dark:bg-success-900/30 rounded-xl">
                 <div className="text-2xl font-bold text-success-600">{answeredCount}</div>
-                <div className="text-sm text-success-700">Answered</div>
+                <div className="text-sm text-success-700 dark:text-success-400">Answered</div>
               </div>
-              <div className="text-center p-3 bg-warning-50 rounded-xl">
+              <div className="text-center p-3 bg-warning-50 dark:bg-warning-900/30 rounded-xl">
                 <div className="text-2xl font-bold text-warning-600">{flaggedCount}</div>
-                <div className="text-sm text-warning-700">Flagged</div>
+                <div className="text-sm text-warning-700 dark:text-warning-400">Flagged</div>
               </div>
-              <div className="text-center p-3 bg-slate-100 rounded-xl">
-                <div className="text-2xl font-bold text-slate-600">
+              <div className="text-center p-3 bg-slate-100 dark:bg-slate-700 rounded-xl">
+                <div className="text-2xl font-bold text-slate-600 dark:text-slate-200">
                   {questions.length - answeredCount}
                 </div>
-                <div className="text-sm text-slate-700">Unanswered</div>
+                <div className="text-sm text-slate-700 dark:text-slate-300">Unanswered</div>
               </div>
             </div>
 
@@ -548,8 +550,8 @@ const TimedQuiz: React.FC = () => {
                   className={clsx(
                     'aspect-square rounded-lg flex items-center justify-center text-sm font-medium transition-all',
                     answers[q.id] !== undefined
-                      ? 'bg-success-100 text-success-700'
-                      : 'bg-slate-100 text-slate-600',
+                      ? 'bg-success-100 dark:bg-success-900/40 text-success-700'
+                      : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200',
                     flagged.has(q.id) && 'ring-2 ring-warning-400'
                   )}
                 >
@@ -574,7 +576,7 @@ const TimedQuiz: React.FC = () => {
     const passed = percentage >= 75;
 
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-md w-full text-center">
           <div
             className={clsx(
@@ -589,10 +591,10 @@ const TimedQuiz: React.FC = () => {
             )}
           </div>
 
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
             {passed ? 'Great Job!' : 'Keep Practicing!'}
           </h1>
-          <p className="text-slate-600 mb-6">
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
             {passed ? "You're on track for success!" : 'Review the topics and try again.'}
           </p>
 
@@ -606,20 +608,20 @@ const TimedQuiz: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-8">
-            <div className="bg-success-50 rounded-xl p-4">
+            <div className="bg-success-50 dark:bg-success-900/30 rounded-xl p-4">
               <CheckCircle className="w-6 h-6 text-success-600 mx-auto mb-1" />
-              <div className="text-2xl font-bold text-success-700">{results.correct}</div>
-              <div className="text-xs text-success-600">Correct</div>
+              <div className="text-2xl font-bold text-success-700 dark:text-success-400">{results.correct}</div>
+              <div className="text-xs text-success-600 dark:text-success-400">Correct</div>
             </div>
-            <div className="bg-error-50 rounded-xl p-4">
+            <div className="bg-error-50 dark:bg-error-900/30 rounded-xl p-4">
               <XCircle className="w-6 h-6 text-error-600 mx-auto mb-1" />
-              <div className="text-2xl font-bold text-error-700">{results.incorrect}</div>
-              <div className="text-xs text-error-600">Incorrect</div>
+              <div className="text-2xl font-bold text-error-700 dark:text-error-400">{results.incorrect}</div>
+              <div className="text-xs text-error-600 dark:text-error-400">Incorrect</div>
             </div>
-            <div className="bg-slate-100 rounded-xl p-4">
-              <Clock className="w-6 h-6 text-slate-600 mx-auto mb-1" />
-              <div className="text-2xl font-bold text-slate-700">{results.unanswered}</div>
-              <div className="text-xs text-slate-600">Skipped</div>
+            <div className="bg-slate-100 dark:bg-slate-700 rounded-xl p-4">
+              <Clock className="w-6 h-6 text-slate-600 dark:text-slate-300 mx-auto mb-1" />
+              <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">{results.unanswered}</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Skipped</div>
             </div>
           </div>
 
@@ -638,7 +640,7 @@ const TimedQuiz: React.FC = () => {
               setReviewIndex(0);
               setQuizState('explanations');
             }}
-            className="w-full py-3 bg-slate-100 text-slate-700 rounded-xl font-medium hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors flex items-center justify-center gap-2"
           >
             <BookOpen className="w-5 h-5" />
             Review All Explanations
@@ -656,17 +658,17 @@ const TimedQuiz: React.FC = () => {
     const wasAnswered = userAnswer !== undefined;
 
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
         {/* Header */}
-        <div className="bg-white border-b border-slate-100 px-4 py-3 sticky top-0 z-10">
+        <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3 sticky top-0 z-10">
           <div className="max-w-3xl mx-auto flex items-center justify-between">
             <button
               onClick={() => setQuizState('complete')}
-              className="text-slate-600 hover:text-slate-900"
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
             >
               ← Back to Results
             </button>
-            <span className="font-medium text-slate-900">
+            <span className="font-medium text-slate-900 dark:text-white">
               Review {reviewIndex + 1} / {questions.length}
             </span>
             <div className="w-20" />
@@ -674,7 +676,7 @@ const TimedQuiz: React.FC = () => {
           
           {/* Progress bar */}
           <div className="max-w-3xl mx-auto mt-3">
-            <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
               <div
                 className="h-full bg-primary-500 transition-all"
                 style={{ width: `${((reviewIndex + 1) / questions.length) * 100}%` }}
@@ -689,7 +691,7 @@ const TimedQuiz: React.FC = () => {
             {/* Result Badge */}
             <div className={clsx(
               'inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium',
-              !wasAnswered ? 'bg-slate-100 text-slate-600'
+              !wasAnswered ? 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                 : isCorrect ? 'bg-success-100 text-success-700'
                 : 'bg-error-100 text-error-700'
             )}>
@@ -821,12 +823,12 @@ const TimedQuiz: React.FC = () => {
 
   // Active Quiz Screen
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col">
       {/* Header */}
-      <div className="bg-white border-b border-slate-100 px-4 py-3 sticky top-0 z-10">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3 sticky top-0 z-10">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-medium text-slate-900">
+            <span className="font-medium text-slate-900 dark:text-white">
               {currentIndex + 1} / {questions.length}
             </span>
             <button
@@ -835,7 +837,7 @@ const TimedQuiz: React.FC = () => {
                 'p-1.5 rounded-lg transition-colors',
                 flagged.has(currentQuestion?.id)
                   ? 'bg-warning-100 text-warning-600'
-                  : 'text-slate-600 hover:bg-slate-100'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
               )}
             >
               <Flag className="w-5 h-5" />
@@ -844,7 +846,7 @@ const TimedQuiz: React.FC = () => {
 
           <div
             className={clsx(
-              'flex items-center gap-2 font-mono text-lg',
+              'flex items-center gap-2 font-mono text-lg dark:text-slate-200',
               timeLeft < 300 && 'text-error-600'
             )}
           >
@@ -854,7 +856,7 @@ const TimedQuiz: React.FC = () => {
 
           <button
             onClick={() => setIsPaused((p) => !p)}
-            className="p-2 rounded-lg hover:bg-slate-100"
+            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 dark:text-slate-200"
           >
             {isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}
           </button>
@@ -862,7 +864,7 @@ const TimedQuiz: React.FC = () => {
 
         {/* Progress bar */}
         <div className="max-w-3xl mx-auto mt-3">
-          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
             <div
               className="h-full bg-primary-500 transition-all"
               style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
@@ -888,11 +890,11 @@ const TimedQuiz: React.FC = () => {
       {/* Question */}
       <div ref={questionTopRef} className="flex-1 p-4">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-sm p-6 mb-4">
-            <div className="text-xs text-primary-600 font-medium mb-2">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-4">
+            <div className="text-xs text-primary-600 dark:text-primary-400 font-medium mb-2">
               {currentQuestion?.topic || currentSection}
             </div>
-            <p className="text-lg text-slate-900 leading-relaxed">{currentQuestion?.question}</p>
+            <p className="text-lg text-slate-900 dark:text-white leading-relaxed">{currentQuestion?.question}</p>
           </div>
 
           {/* Options */}
@@ -903,10 +905,10 @@ const TimedQuiz: React.FC = () => {
                 key={idx}
                 onClick={() => handleSelectAnswer(idx)}
                 className={clsx(
-                  'w-full p-4 rounded-xl border-2 text-left transition-all flex items-start gap-3',
+                  'w-full p-4 rounded-xl border-2 text-left transition-all flex items-start gap-3 dark:text-slate-100',
                   selectedAnswer === idx
-                    ? 'border-primary-500 bg-primary-50'
-                    : 'border-slate-200 bg-white hover:border-primary-200'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                    : 'border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:border-primary-200 dark:hover:border-primary-400'
                 )}
               >
                 <span
@@ -914,7 +916,7 @@ const TimedQuiz: React.FC = () => {
                     'w-8 h-8 rounded-lg flex items-center justify-center font-medium flex-shrink-0',
                     selectedAnswer === idx
                       ? 'bg-primary-500 text-white'
-                      : 'bg-slate-100 text-slate-600'
+                      : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200'
                   )}
                 >
                   {String.fromCharCode(65 + idx)}
@@ -927,7 +929,7 @@ const TimedQuiz: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-white border-t border-slate-100 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <button
             onClick={handlePrevious}
@@ -939,7 +941,7 @@ const TimedQuiz: React.FC = () => {
 
           <button
             onClick={() => setQuizState('review')}
-            className="text-sm text-slate-600 hover:text-slate-900"
+            className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
           >
             Review All
           </button>

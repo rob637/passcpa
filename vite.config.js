@@ -61,7 +61,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
         skipWaiting: false, // Don't auto-activate new service worker during exam!
-        clientsClaim: false, // Let user control when to update
+        clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           // Cache questions and lessons data including TBS

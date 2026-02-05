@@ -125,7 +125,7 @@ const HelpLegal: React.FC = () => {
 
         {/* Version */}
         <div className="text-center text-xs text-slate-600 mt-8">
-          <p>VoraPrep v1.0</p>
+          <p>VoraPrep v1.1</p>
         </div>
       </main>
     </div>

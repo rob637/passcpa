@@ -169,7 +169,7 @@ const Home = () => {
                 onClick={() => setShowSectionPicker(false)}
                 className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               >
-                <X className="w-5 h-5 text-slate-600" />
+                <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
               </button>
             </div>
             <div className="p-4 space-y-2 overflow-y-auto">
@@ -302,7 +302,7 @@ const Home = () => {
             <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">
               {sectionInfo?.name || activeSection}
             </span>
-            <ChevronDown className="w-4 h-4 text-slate-600" />
+            <ChevronDown className="w-4 h-4 text-slate-600 dark:text-slate-400" />
           </button>
 
           {/* Right side stats */}

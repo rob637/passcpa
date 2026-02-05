@@ -1425,6 +1425,635 @@ export const eaPart2Lessons: Lesson[] = [
   },
 
   // ============================================================================
+  // SEE2-3: PASS-THROUGH ENTITIES - Continued (Lessons 21-30)
+  // ============================================================================
+
+  {
+    id: 'SEE2-021',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Guaranteed Payments',
+    description: 'Understand payments to partners for services and capital use',
+    order: 21,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Guaranteed payments', 'Partner services', 'Capital use'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Guaranteed payments are a unique hybrid - compensation to partners that doesn't depend on partnership profit. Understanding their treatment for both the partnership and partner is essential!",
+        },
+        {
+          title: 'What Are Guaranteed Payments?',
+          type: 'text',
+          content: "**Definition:**\nPayments to a partner for services or use of capital determined without regard to partnership income.\n\n**Key Characteristics:**\n• Fixed amount (not dependent on profits)\n• Paid for services or capital use\n• Partner is NOT treated as employee\n• Taxable in partner's tax year that includes partnership year-end\n\n**Common Examples:**\n• Monthly management fee to managing partner\n• Interest-like return on partner's capital account",
+        },
+        {
+          title: 'Tax Treatment',
+          type: 'table',
+          headers: ['Party', 'Treatment'],
+          rows: [
+            ['Partnership', 'Deduction (reduces ordinary income)'],
+            ['Partner', 'Ordinary income (reported on K-1)'],
+            ['Self-employment', 'Subject to SE tax'],
+            ['Withholding', 'None - no W-2 issued'],
+          ],
+        },
+        {
+          title: 'Partnership Calculation',
+          type: 'text',
+          content: "**Order of Operations:**\n\n1. Calculate partnership income/loss BEFORE guaranteed payments\n2. Deduct guaranteed payments\n3. Remaining income/loss allocated per agreement\n\n**Example:**\nPartnership has $100,000 income before guaranteed payments.\nPartner A receives $30,000 guaranteed payment.\n• Partnership ordinary income: $70,000 (to allocate)\n• Partner A also includes $30,000 guaranteed payment\n• Total allocated: $100,000",
+        },
+        {
+          title: '⚠️ Guaranteed Payment vs. Distribution',
+          type: 'warning',
+          content: "**Don't confuse them!**\n\n**Guaranteed Payment:**\n• Fixed, regardless of profit\n• Deductible by partnership\n• Ordinary income to recipient\n• Subject to SE tax\n\n**Distribution:**\n• Share of profits (variable)\n• Not deductible\n• Generally not taxable (return of basis)\n• Not subject to SE tax\n\n**Exam frequently tests this distinction!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Guaranteed payments: fixed amount for services/capital",
+            "Deductible by partnership, ordinary income to partner",
+            "Subject to self-employment tax",
+            "Reported on Schedule K-1",
+            "Partner is NOT an employee - no W-2",
+            "Distributions are different: not deductible, not income",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-022',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Partnership Liabilities and Basis',
+    description: 'Understand how partnership debt affects partner basis',
+    order: 22,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Recourse debt', 'Nonrecourse debt', 'Liability allocation'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnership liabilities increase partner basis! This is a major advantage of partnerships over S corps. Understanding recourse vs. nonrecourse allocation rules is essential for SEE success.",
+        },
+        {
+          title: 'Why Liabilities Matter',
+          type: 'text',
+          content: "**Liabilities increase partner basis:**\n\n• More basis = ability to deduct more losses\n• Distributions in excess of basis = capital gain\n• At-risk rules affected by liability type\n\n**Key partnership advantage:**\nUnlike S corps, partnership debt CAN increase basis.",
+        },
+        {
+          title: 'Recourse vs. Nonrecourse',
+          type: 'table',
+          headers: ['Type', 'Definition', 'Allocation'],
+          rows: [
+            ['Recourse', 'Partner bears economic risk of loss', 'To partner(s) who bear risk'],
+            ['Nonrecourse', 'No partner bears economic risk', 'Generally by profit-sharing %'],
+            ['Qualified nonrecourse', 'Real estate financing from unrelated parties', 'At-risk and allocated by profit %'],
+          ],
+        },
+        {
+          title: 'Economic Risk of Loss',
+          type: 'text',
+          content: "**Constructive Liquidation Test:**\n\nTo determine who bears economic risk:\n1. Assume all assets become worthless\n2. Partnership liquidates\n3. Who must pay creditors?\n\n**Risk bearers:**\n• Partners with personal liability (general partners)\n• Partners who guarantee debt\n• Partners with capital contributions subject to loss\n\n**Limited partners:** Usually no economic risk on general liabilities",
+        },
+        {
+          title: 'Allocation Examples',
+          type: 'text',
+          content: "**Recourse Debt Example:**\nTwo general partners, 50/50, jointly liable on $100K loan.\n• Each partner: $50,000 basis increase\n\n**Nonrecourse Debt Example:**\nPartnership borrows $200K (nonrecourse secured by equipment).\n• Allocated by profit-sharing ratios\n• 60/40 split: Partner A = $120K, Partner B = $80K\n\n**Mixed:** If partner guarantees portion, that portion is recourse to them.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Partnership liabilities increase partner basis",
+            "Recourse debt: allocated to partners bearing economic risk",
+            "Nonrecourse debt: allocated by profit-sharing percentage",
+            "Qualified nonrecourse: at-risk for real estate debt",
+            "This is a major advantage over S corporations",
+            "Guarantee of debt = economic risk = recourse to guarantor",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-023',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Partnership Special Allocations',
+    description: 'Understand substantive economic effect requirements',
+    order: 23,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Special allocations', 'Substantial economic effect', 'Capital accounts'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Partnerships have flexibility to allocate items disproportionately! But the IRS has rules to prevent tax-motivated allocations with no economic substance. Understand when special allocations work.",
+        },
+        {
+          title: 'What Are Special Allocations?',
+          type: 'text',
+          content: "**Definition:**\nAllocations of specific items (income, deduction, credit) in ratios different from general profit/loss sharing.\n\n**Examples:**\n• Depreciation allocated to high-bracket partner\n• Capital gains allocated to partner with losses\n• Rental income allocated differently than other income\n\n**Requirement:** Must have substantial economic effect!",
+        },
+        {
+          title: 'Substantial Economic Effect',
+          type: 'text',
+          content: "**Two-Part Test:**\n\n**1. Economic Effect (allocations must affect economics):**\n• Capital accounts maintained per regulations\n• Liquidating distributions follow capital accounts\n• Deficit restoration obligation OR qualified income offset\n\n**2. Substantiality (cannot be tax-motivated only):**\n• Must be reasonable possibility allocation will substantially affect dollar amounts apart from tax consequences\n• Test at time allocation becomes part of agreement",
+        },
+        {
+          title: 'Safe Harbor Rules',
+          type: 'text',
+          content: "**Primary Safe Harbor:**\n\n1. Capital accounts maintained properly\n2. On liquidation, partner receives positive capital or nothing\n3. Partner with deficit must restore it OR\n   - Qualified income offset (future income offsets deficit)\n\n**If safe harbor met:** IRS respects the allocation.\n\n**If not met:** Reallocate according to partner's interest in the partnership.",
+        },
+        {
+          title: 'Allocations That Fail',
+          type: 'text',
+          content: "**Shifting Allocations:**\nAllocations that shift tax consequences among partners with no business purpose.\n\n**Transitory Allocations:**\n• Allocation in Year 1 followed by offsetting allocation in Year 2\n• Net economic effect is zero\n• Only purpose is tax reduction\n\n**Example of failure:**\nAllocate $100K depreciation to Partner A in Year 1.\nAllocate $100K gain to Partner A in Year 5 when property sold.\nNet economic effect = zero. Fails substantiality.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Special allocations allow different ratios for different items",
+            "Must have substantial economic effect",
+            "Capital accounts must follow special rules",
+            "Liquidating distributions must follow capital accounts",
+            "Tax-only allocations will be reallocated by IRS",
+            "Shifting and transitory allocations fail substantiality",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-024',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Partnership Hot Assets',
+    description: 'Understand ordinary income treatment on partnership interest sales',
+    order: 24,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ['Hot assets', 'Section 751', 'Unrealized receivables', 'Inventory'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When a partnership interest is sold, not all gain is capital gain! Hot assets cause ordinary income recognition. This is heavily tested on SEE. Know Section 751!",
+        },
+        {
+          title: 'What Are Hot Assets?',
+          type: 'text',
+          content: "**Section 751 Assets:**\n\n**1. Unrealized Receivables:**\n• Accounts receivable (cash method)\n• Recapture (Section 1245/1250)\n• Rights to payment for services/goods\n\n**2. Inventory Items:**\n• Regular inventory\n• Property held primarily for sale\n• Property that would NOT be capital asset if sold\n\n**Why \"Hot\":**\nConvert capital gain to ordinary income!",
+        },
+        {
+          title: 'Sale of Partnership Interest',
+          type: 'text',
+          content: "**General Rule:**\nPartnership interest is capital asset → capital gain/loss on sale.\n\n**Exception - Section 751:**\nPortion of gain attributable to hot assets = ordinary income.\n\n**Calculation:**\n1. Determine FMV of selling partner's share of hot assets\n2. Compare to basis in those assets\n3. Difference = ordinary income\n4. Remaining gain/loss = capital",
+        },
+        {
+          title: 'Example Calculation',
+          type: 'example',
+          content: "**Facts:**\n• Partner A sells 25% interest for $100,000\n• A's outside basis: $60,000\n• Total gain: $40,000\n• Partnership unrealized receivables: $80,000 (FMV)\n• A's basis in receivables: $0 (cash method)\n\n**Section 751 Analysis:**\n• A's share of receivables: $20,000 (25%)\n• A's basis: $0\n• Ordinary income: $20,000\n\n• Remaining gain: $40,000 - $20,000 = $20,000\n• Character: Capital gain\n\n**Result:** $20,000 ordinary + $20,000 capital gain",
+        },
+        {
+          title: 'Section 751(b) Distributions',
+          type: 'text',
+          content: "**Disproportionate Distributions:**\n\nIf distribution shifts hot assets between partners:\n• Partner receiving more than share of hot assets → ordinary income\n• Treated as disguised sale\n\n**Example:**\nPartner receives all inventory, other partners receive cash.\nExcess inventory distributed = ordinary income to recipient.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Hot assets: unrealized receivables and inventory",
+            "Section 751 converts capital gain to ordinary income",
+            "Must calculate ordinary income portion separately",
+            "Recapture items are unrealized receivables",
+            "Disproportionate distributions also trigger 751",
+            "Remaining gain after hot assets = capital gain",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-025',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Partnership Terminations',
+    description: 'Understand when a partnership terminates for tax purposes',
+    order: 25,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Technical termination', 'Partnership continuation', 'Merger'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "A partnership terminates for tax purposes under specific circumstances. Understanding these rules helps plan ownership changes and avoid unintended consequences.",
+        },
+        {
+          title: 'When Partnership Terminates',
+          type: 'text',
+          content: "**Current Rule (post-TCJA):**\n\nA partnership terminates when:\n\n1. No part of business continues to be carried on in a partnership, OR\n\n2. Partnership merges or consolidates\n\n**What no longer causes termination:**\n• Sale or exchange of 50%+ of interests within 12 months (old rule repealed by TCJA)",
+        },
+        {
+          title: 'Termination vs. Continuation',
+          type: 'table',
+          headers: ['Event', 'Terminates?', 'Notes'],
+          rows: [
+            ['Operations cease', 'Yes', 'No more business activity'],
+            ['50%+ ownership change', 'No', 'TCJA eliminated this rule'],
+            ['1 partner remains', 'Yes', 'Need 2+ partners'],
+            ['Merger into another partnership', 'Yes', 'Terminating partnership'],
+            ['Conversion to LLC', 'Generally no', 'If same members, continues'],
+          ],
+        },
+        {
+          title: 'Merger Rules',
+          type: 'text',
+          content: "**Which Partnership Continues?**\n\n• The resulting partnership is treated as continuation of:\n  - The partnership whose partners own > 50% of resulting partnership\n\n• Other merging partnerships terminate\n\n**Example:**\nPartnership A merges into Partnership B.\nIf A's partners own 60% of B afterward, A continues, B terminates.\nIf B's partners own 60%, B continues, A terminates.",
+        },
+        {
+          title: 'Division of Partnership',
+          type: 'text',
+          content: "**When Partnership Divides:**\n\n• Resulting partnership that has continuing partner interests continues the prior partnership\n\n• New partnership treated as newly formed\n\n**Considerations:**\n• Basis and holding periods may carry over\n• May need new EIN for new partnership\n• Section 704(c) considerations",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Partnership terminates when business ceases or only 1 partner",
+            "50%+ ownership change NO longer causes termination (TCJA)",
+            "Merger: partnership with > 50% continuing partners survives",
+            "Other merging partnerships terminate",
+            "Conversion to LLC generally is not a termination",
+            "Division creates one continuing and one new partnership",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-026',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Shareholder Basis',
+    description: 'Master the calculation of S corp shareholder stock basis',
+    order: 26,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Stock basis', 'Debt basis', 'Distributions', 'Loss limitations'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "S corporation basis rules determine if losses are deductible and distributions are taxable. Unlike partnerships, S corp debt does NOT increase basis unless the shareholder lends money directly!",
+        },
+        {
+          title: 'Stock Basis Formula',
+          type: 'text',
+          content: "**Annual Calculation:**\n\nStarting Basis\n+ Income items (ordinary and separately stated)\n+ Tax-exempt income\n- Nondeductible expenses\n- Distributions\n- Losses and deductions (limited to basis)\n= Ending Basis\n\n**Order matters!**\nDistributions reduce basis before losses.",
+        },
+        {
+          title: 'Key Differences from Partnerships',
+          type: 'table',
+          headers: ['Item', 'Partnership', 'S Corporation'],
+          rows: [
+            ['Entity debt increases basis?', 'Yes (share of liabilities)', 'NO'],
+            ['What increases basis?', 'Contributions + income + liabilities', 'Contributions + income + direct loans'],
+            ['Debt basis exists?', 'No (built into outside basis)', 'Yes (separate calculation)'],
+            ['Distributions reduce basis', 'After income', 'Before losses'],
+          ],
+        },
+        {
+          title: 'Debt Basis',
+          type: 'text',
+          content: "**S Corp Debt Basis:**\n\nShareholder gets basis for debt ONLY if:\n• Shareholder personally loans money to S corp\n• NOT loans from banks guaranteed by shareholder\n• NOT loans from related parties\n\n**Debt basis used:**\n• After stock basis exhausted\n• For losses only (not distributions)\n\n**Restoration:**\nWhen income exceeds losses, debt basis restored first, then stock basis increases.",
+        },
+        {
+          title: 'Loss Limitation Ordering',
+          type: 'text',
+          content: "**Three Hurdles:**\n\n1. **Stock and Debt Basis Limitation**\n   - First against stock basis\n   - Then against debt basis\n\n2. **At-Risk Limitation**\n   - Amount shareholder can actually lose\n\n3. **Passive Activity Loss Rules**\n   - If passive, limited to passive income\n\n**Suspended losses carry forward indefinitely (until basis available or disposition).**",
+        },
+        {
+          title: '⚠️ Exam Trap: Guaranteed Loans',
+          type: 'warning',
+          content: "**Guaranteeing corporate debt does NOT create basis!**\n\n**Common mistake:**\nS corp borrows $100K from bank.\nShareholder personally guarantees the loan.\nShareholder thinks they have $100K basis.\n\n**Reality:**\nNo basis from guarantee.\nMust actually advance funds to create debt basis.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "S corp basis from: contributions + income + direct loans",
+            "Entity-level debt does NOT increase shareholder basis",
+            "Debt basis only from actual loans to corporation",
+            "Distributions reduce basis before losses",
+            "Guarantees do NOT create basis",
+            "Losses limited to stock + debt basis (then at-risk, then PAL)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-027',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Built-In Gains Tax',
+    description: 'Understand the BIG tax on C to S conversions',
+    order: 27,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ['Built-in gains', 'Recognition period', 'C to S conversion'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The BIG tax prevents C corps from converting to S status to avoid corporate-level tax on appreciated assets. Understanding this tax is critical for entity conversion planning!",
+        },
+        {
+          title: 'What is BIG Tax?',
+          type: 'text',
+          content: "**Built-In Gains Tax:**\n\nCorporate-level tax (21%) on gains that existed when:\n• C corp converted to S corp, OR\n• S corp acquired C corp assets (certain transactions)\n\n**Purpose:**\nPrevent avoidance of corporate-level tax by converting to S status before selling appreciated assets.",
+        },
+        {
+          title: 'Recognition Period',
+          type: 'text',
+          content: "**5-Year Recognition Period:**\n\nBIG tax applies to gains recognized within 5 years of S election.\n\n**After 5 years:**\nNo BIG tax - gains pass through tax-free to shareholders.\n\n**Planning opportunity:**\nWait 5 years after S election before selling highly appreciated C corp assets.",
+        },
+        {
+          title: 'Calculating BIG Tax',
+          type: 'table',
+          headers: ['Step', 'Action'],
+          rows: [
+            ['1', 'Identify built-in gain (FMV - basis at conversion)'],
+            ['2', 'Determine gain recognized during year'],
+            ['3', 'Net built-in gain = lesser of recognized or remaining built-in'],
+            ['4', 'Tax = 21% × net recognized built-in gain'],
+            ['5', 'Reduce by net operating losses carried from C corp years'],
+          ],
+        },
+        {
+          title: 'Example',
+          type: 'example',
+          content: "**Facts:**\n• C corp converts to S corp on 1/1/2024\n• Asset A: Basis $50K, FMV $200K at conversion\n• Built-in gain: $150K\n• Year 2 (within recognition period): Sell for $220K\n\n**Analysis:**\n• Recognized gain: $170K ($220K - $50K)\n• Built-in gain at conversion: $150K\n• BIG tax applies to: $150K (lesser of recognized or built-in)\n• BIG tax: $150K × 21% = $31,500\n\n**Additional $20K gain passes through tax-free at corporate level.**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "BIG tax: 21% on gains that existed at C to S conversion",
+            "Recognition period: 5 years from S election",
+            "Only applies to gains recognized within recognition period",
+            "Limited to built-in gain amount at conversion",
+            "C corp NOLs can offset BIG tax",
+            "After 5 years, no BIG tax exposure",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-028',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Passive Income Tax',
+    description: 'Understand the excess passive income tax and termination risk',
+    order: 28,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Excess passive income', 'LIFO recapture', '3-year termination'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "S corps with C corp history face a passive income tax if they hold too much investment income! Worse, 3 consecutive years can terminate the S election. Know when this applies!",
+        },
+        {
+          title: 'When Does This Apply?',
+          type: 'text',
+          content: "**Two Requirements:**\n\n1. S corp has accumulated E&P from C corp years\n   (E&P = Earnings & Profits - retained earnings from C corp)\n\n2. Passive investment income > 25% of gross receipts\n\n**If BOTH present:**\n• Corporate-level tax on excess passive income\n• 3 consecutive years = S election terminates!",
+        },
+        {
+          title: 'Passive Investment Income',
+          type: 'list',
+          content: [
+            "Royalties",
+            "Rents (unless active real estate business)",
+            "Dividends",
+            "Interest (not from trade or business)",
+            "Annuities",
+            "Gains from stocks and securities sales",
+          ],
+        },
+        {
+          title: 'Tax Calculation',
+          type: 'text',
+          content: "**Excess Net Passive Income:**\n\n(Net Passive Income) × (Passive Income - 25% of Gross Receipts) ÷ Passive Investment Income\n\n**Tax Rate:** 21%\n\n**Limitation:**\nCannot exceed taxable income for the year.\n\n**Pass-through effect:**\nAmount taxed at corporate level reduces shareholder pass-through.",
+        },
+        {
+          title: '⚠️ Three-Year Termination Rule',
+          type: 'warning',
+          content: "**If for 3 consecutive years:**\n• S corp has C corp E&P, AND\n• Passive income > 25% of gross receipts\n\n**Consequence:**\nS election terminates as of first day of 4th year.\n\n**Solution:**\n• Distribute C corp E&P (taxable dividend)\n• Increase active business income\n• Watch passive income levels carefully!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Tax applies only if S corp has C corp E&P",
+            "Passive income must exceed 25% of gross receipts",
+            "Tax rate: 21% on excess net passive income",
+            "3 consecutive years = S election terminates",
+            "Solution: distribute C corp E&P as dividend",
+            "Newly formed S corps don't have E&P (not applicable)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-029',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'S Corporation Compensation Issues',
+    description: 'Understand reasonable compensation requirements for S corp owners',
+    order: 29,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Reasonable compensation', 'Payroll tax avoidance', 'IRS scrutiny'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "S corp owners who actively work must receive reasonable compensation! The IRS aggressively challenges low or zero salaries to avoid payroll taxes. This is an audit hot spot.",
+        },
+        {
+          title: 'The Issue',
+          type: 'text',
+          content: "**Why owners underpay themselves:**\n\n• Distributions avoid payroll tax (15.3%)\n• Salary subject to payroll tax\n• Temptation: Take all income as distributions\n\n**IRS Response:**\n• Require \"reasonable compensation\"\n• Recharacterize distributions as wages\n• Assess payroll taxes + penalties + interest",
+        },
+        {
+          title: 'What is Reasonable Compensation?',
+          type: 'text',
+          content: "**Factors IRS Considers:**\n\n• Training and experience\n• Duties and responsibilities\n• Time devoted to business\n• Comparable salaries in similar businesses\n• Compensation agreements with non-shareholders\n• Use of corporate profits for personal expenses\n• Business economic history",
+        },
+        {
+          title: 'Compensation Guidelines',
+          type: 'table',
+          headers: ['Situation', 'Guidance'],
+          rows: [
+            ['Working owner', 'Must receive reasonable salary'],
+            ['Passive investor', 'May take distributions only'],
+            ['Part-time involvement', 'Proportionate salary required'],
+            ['Multiple businesses', 'Salary from each where services rendered'],
+            ['No revenue yet', 'May defer salary initially'],
+          ],
+        },
+        {
+          title: 'Consequences of Underpayment',
+          type: 'text',
+          content: "**If IRS recharacterizes distributions as wages:**\n\n• Back payroll taxes (employer + employee portions)\n• Failure to deposit penalties\n• Interest from original due dates\n• Potential accuracy-related penalties (20%)\n• Trust fund recovery penalty on responsible persons\n\n**Example:**\n$100K recharacterized × 15.3% = $15,300 payroll taxes\nPlus penalties and interest!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Active S corp owners must receive reasonable compensation",
+            "Cannot pay zero salary and take all distributions",
+            "IRS compares to what similar businesses pay",
+            "Distributions in excess of salary are fine",
+            "Recharacterization = back payroll taxes + penalties",
+            "Document compensation decisions",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-030',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Choosing Business Entity Type',
+    description: 'Compare entity types and understand the selection factors',
+    order: 30,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Entity comparison', 'Tax factors', 'Non-tax factors'],
+    blueprintArea: 'SEE2-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Choosing the right entity type is one of the most important business decisions! Tax implications, liability protection, and operational flexibility all depend on this choice.",
+        },
+        {
+          title: 'Entity Comparison Overview',
+          type: 'table',
+          headers: ['Feature', 'C Corp', 'S Corp', 'Partnership/LLC', 'Sole Prop'],
+          rows: [
+            ['Entity-level tax', 'Yes (21%)', 'No', 'No', 'No'],
+            ['SE tax on income', 'No (wages taxed)', 'No (distributions)', 'Yes (generally)', 'Yes'],
+            ['Loss pass-through', 'No', 'Yes', 'Yes', 'Yes'],
+            ['Liability protection', 'Yes', 'Yes', 'Yes (LLC)', 'No'],
+            ['Ownership restrictions', 'None', 'Yes', 'None', 'N/A'],
+            ['Fringe benefits', 'Deductible', 'Limited', 'Limited', 'Limited'],
+          ],
+        },
+        {
+          title: 'When to Choose C Corporation',
+          type: 'list',
+          content: [
+            "Planning to go public or seek venture capital",
+            "Retain significant earnings (21% rate < individual rates)",
+            "Significant fringe benefit needs (> 2% owners)",
+            "Foreign shareholders",
+            "More than 100 shareholders",
+            "Multiple classes of stock needed",
+          ],
+        },
+        {
+          title: 'When to Choose S Corporation',
+          type: 'list',
+          content: [
+            "Avoid double taxation",
+            "Pass through losses to shareholders",
+            "Reduce self-employment tax (distributions not subject)",
+            "Fewer than 100 shareholders",
+            "All shareholders are U.S. individuals or certain trusts",
+            "Single class of stock acceptable",
+          ],
+        },
+        {
+          title: 'When to Choose Partnership/LLC',
+          type: 'list',
+          content: [
+            "Maximum flexibility in allocations",
+            "Debt basis benefit important",
+            "Special allocations needed",
+            "More than 100 owners",
+            "Foreign owners",
+            "Corporate owners",
+            "Multiple classes of interests needed",
+          ],
+        },
+        {
+          title: 'QBI Deduction Consideration',
+          type: 'text',
+          content: "**Section 199A - 20% QBI Deduction:**\n\n• Available for pass-through entities (S corps, partnerships, sole props)\n• NOT available for C corporations\n• Phase-outs for specified service businesses (SSTB)\n• Income limitations apply\n\n**Can make pass-through more attractive than C corp in some cases!**\n\nEffective rate on pass-through: 37% × 80% = 29.6% vs. 21% + shareholder tax",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "C corp: Entity-level tax, best for retention or public companies",
+            "S corp: Pass-through, reduces SE tax, ownership restrictions",
+            "Partnership/LLC: Maximum flexibility, debt basis, no owner limits",
+            "QBI deduction: 20% for pass-throughs, not C corps",
+            "Consider both tax and non-tax factors",
+            "Entity choice can be changed (with tax consequences)",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
   // SEE2-4: C CORPORATIONS (Lessons 31-45)
   // ============================================================================
 
@@ -1880,6 +2509,488 @@ export const eaPart2Lessons: Lesson[] = [
     },
   },
 
+  {
+    id: 'SEE2-038',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Reorganizations Overview',
+    description: 'Understand tax-free reorganization types and requirements',
+    order: 38,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Type A', 'Type B', 'Type C', 'Type D reorganizations'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Corporate reorganizations can be structured to defer gain recognition. Understanding the alphabet soup of reorg types helps clients make tax-efficient business combination decisions!",
+        },
+        {
+          title: 'What is a Reorganization?',
+          type: 'text',
+          content: "**Tax-free reorganization allows:**\n\n• Combining or dividing corporations\n• Changing corporate structure\n• Without immediate tax recognition\n\n**Key principle:**\nContinuity - shareholders/business continues in modified form.\n\n**Types:** A, B, C, D, E, F, G (the alphabet types)",
+        },
+        {
+          title: 'Reorganization Types',
+          type: 'table',
+          headers: ['Type', 'Description', 'Key Requirements'],
+          rows: [
+            ['Type A', 'Statutory merger/consolidation', 'State law merger'],
+            ['Type B', 'Stock for stock', 'Solely voting stock, 80% control'],
+            ['Type C', 'Stock for assets', 'Substantially all assets'],
+            ['Type D', 'Transfer to controlled corp', 'Acquisitive or divisive'],
+            ['Type E', 'Recapitalization', 'Change in capital structure'],
+            ['Type F', 'Mere change in form', 'Name, state, or form change'],
+            ['Type G', 'Bankruptcy reorganization', 'Under bankruptcy code'],
+          ],
+        },
+        {
+          title: 'Common Requirements',
+          type: 'text',
+          content: "**Continuity of Interest (COI):**\n• Target shareholders must receive substantial equity stake in acquiring corp\n• Generally 40%+ value in stock\n\n**Continuity of Business Enterprise (COBE):**\n• Acquiring corp continues target's historic business OR\n• Uses significant portion of target's assets\n\n**Business Purpose:**\n• Valid business reason beyond tax avoidance",
+        },
+        {
+          title: 'Tax Consequences',
+          type: 'text',
+          content: "**If Qualifies as Reorganization:**\n\n**Shareholders:**\n• No gain/loss on exchange of stock for stock\n• Boot (cash/property) triggers gain to extent received\n• Substituted basis in new stock\n\n**Corporations:**\n• No gain/loss to acquiring corp on issuance of stock\n• Target's basis carries over to acquiring corp\n• Tax attributes (NOLs, E&P) may transfer with limitations",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Reorganizations allow tax-free corporate combinations",
+            "Type A: statutory merger under state law",
+            "Type B: stock for stock (solely voting stock)",
+            "Type C: stock for substantially all assets",
+            "Must meet COI and COBE requirements",
+            "Boot triggers gain recognition to shareholders",
+            "Tax attributes may transfer with limitations",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-039',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Tax Credits',
+    description: 'Understand major business tax credits available to corporations',
+    order: 39,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Research credit', 'Work opportunity credit', 'General business credit'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Business tax credits directly reduce tax liability dollar-for-dollar! Understanding available credits helps businesses maximize tax savings.",
+        },
+        {
+          title: 'General Business Credit',
+          type: 'text',
+          content: "**Umbrella Credit (Form 3800):**\n\nCombines multiple business credits into one:\n• Investment credit\n• Work opportunity credit\n• Research credit\n• Small employer health insurance credit\n• Disabled access credit\n• And many more!\n\n**Limitation:**\nNet income tax - greater of TMT or 25% of net regular tax over $25,000",
+        },
+        {
+          title: 'Research & Development Credit',
+          type: 'text',
+          content: "**Section 41 Credit:**\n\n**Regular Credit:**\n• 20% of qualified research expenses (QRE) over base amount\n\n**Alternative Simplified Credit:**\n• 14% of QRE over 50% of average prior 3-year QRE\n\n**Qualified Research:**\n• Technological in nature\n• Intended to develop new or improved products\n• Substantially all activities are experimentation\n• Not adaptation, surveys, or routine testing",
+        },
+        {
+          title: 'Work Opportunity Tax Credit',
+          type: 'table',
+          headers: ['Target Group', 'Maximum Credit', 'Notes'],
+          rows: [
+            ['Long-term family assistance', '$9,000', '40% of $10K 1st year + $10K 2nd year'],
+            ['Veterans', 'Up to $9,600', 'Varies by unemployment period'],
+            ['SNAP recipients', '$2,400', '40% of $6,000 first-year wages'],
+            ['Ex-felons', '$2,400', '40% of $6,000 first-year wages'],
+            ['Summer youth employees', '$1,200', '40% of $3,000 wages'],
+          ],
+        },
+        {
+          title: 'Small Employer Health Insurance Credit',
+          type: 'text',
+          content: "**Section 45R Credit:**\n\n**Maximum Credit:**\n• 50% of premiums paid (25% for tax-exempt employers)\n\n**Eligibility:**\n• Fewer than 25 FTE employees\n• Average wages < $58,000 (indexed)\n• Pays at least 50% of employee premiums\n• Purchased through SHOP Marketplace\n\n**Phase-out:** Reduced for 11-24 employees and higher wages",
+        },
+        {
+          title: 'Disabled Access Credit',
+          type: 'text',
+          content: "**Section 44 Credit:**\n\n**Amount:** 50% of eligible expenditures\n**Range:** $250 - $10,250 (max credit $5,000)\n\n**Who Qualifies:**\n• Small business (< $1M gross receipts OR < 31 employees)\n\n**Eligible Expenditures:**\n• Removing barriers for disabled\n• Providing interpreters\n• Acquiring adaptive equipment\n• Producing accessible formats",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Business credits combine on Form 3800",
+            "R&D Credit: 20% of qualified research over base",
+            "WOTC: Credits for hiring targeted groups",
+            "Small employer health credit: up to 50% of premiums",
+            "Carryback 1 year, carryforward 20 years",
+            "Credits directly reduce tax dollar-for-dollar",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-040',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Alternative Minimum Tax',
+    description: 'Understand the corporate AMT for large corporations',
+    order: 40,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ['CAMT', 'Book income', 'Applicable corporations'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Inflation Reduction Act brought back corporate AMT! Large corporations now face a minimum 15% tax on adjusted financial statement income. Know when this applies!",
+        },
+        {
+          title: 'Corporate AMT (CAMT)',
+          type: 'text',
+          content: "**Effective for tax years beginning after 12/31/2022:**\n\n**Rate:** 15% minimum tax\n\n**Base:** Adjusted Financial Statement Income (AFSI)\n\n**Applies to:** Applicable corporations meeting the average annual income test\n\n**Different from prior AMT** - this is based on book income, not taxable income adjustments.",
+        },
+        {
+          title: 'Who is an Applicable Corporation?',
+          type: 'text',
+          content: "**Average Annual Adjusted Financial Statement Income:**\n\n• > $1 billion over 3 prior tax years (general test)\n• > $100 million for U.S. members of foreign-parented groups (if foreign parent group > $1 billion)\n\n**Once you're in, hard to get out:**\nMust stay below thresholds for extended period.\n\n**Excluding:**\n• S corporations\n• RICs and REITs\n• Private equity and partnership income",
+        },
+        {
+          title: 'CAMT Calculation',
+          type: 'text',
+          content: "**Step 1:** Start with financial statement income\n\n**Step 2:** Make adjustments:\n• Adjustment for depreciation (tax vs. book)\n• Partner's distributive share of partnership income\n• Certain pension-related items\n\n**Step 3:** Apply 15% rate\n\n**Step 4:** Reduce by general business credits (up to 75%)\n\n**Step 5:** CAMT = excess of tentative minimum tax over regular tax",
+        },
+        {
+          title: 'CAMT Credit',
+          type: 'text',
+          content: "**Carryforward Credit:**\n\nIf CAMT paid exceeds regular tax in future year:\n• Credit available against regular tax\n• Carries forward indefinitely\n• Reduces regular tax to extent it exceeds CAMT\n\n**Result:**\nCAMT is essentially timing - prepayment of taxes that would eventually be due.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CAMT: 15% minimum tax on adjusted book income",
+            "Applies to corporations with > $1 billion average income",
+            "$100 million threshold for U.S. subs of foreign groups",
+            "Based on financial statement income (not taxable income)",
+            "General business credits can offset up to 75%",
+            "CAMT paid creates credit for future years",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-041',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Tax Return Filing',
+    description: 'Understand Form 1120 requirements and due dates',
+    order: 41,
+    duration: 40,
+    difficulty: 'beginner',
+    topics: ['Form 1120', 'Due dates', 'Extensions', 'Schedules'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Knowing when and how to file corporate returns is fundamental for tax practice. Miss a deadline and face penalties. Know the rules!",
+        },
+        {
+          title: 'Form 1120 Due Dates',
+          type: 'table',
+          headers: ['Calendar Year', 'Fiscal Year', 'Extension'],
+          rows: [
+            ['April 15', '15th day of 4th month after year-end', '6 months'],
+            ['With extension: October 15', '15th day of 10th month after year-end', 'File Form 7004'],
+          ],
+        },
+        {
+          title: 'Required Schedules',
+          type: 'text',
+          content: "**Common Form 1120 Schedules:**\n\n• **Schedule C:** Dividends and Special Deductions\n• **Schedule J:** Tax Computation\n• **Schedule K:** Shareholders and Ownership\n• **Schedule L:** Balance Sheet\n• **Schedule M-1:** Reconciliation of Book/Tax Income\n• **Schedule M-2:** Analysis of Unappropriated Retained Earnings\n• **Schedule M-3:** Required if total assets ≥ $10 million",
+        },
+        {
+          title: 'Estimated Tax',
+          type: 'text',
+          content: "**Quarterly Payments Required:**\n\n**Due Dates:** 15th of 4th, 6th, 9th, and 12th months\n\n**Amount:** Expected tax - credits\n\n**Safe Harbor:**\n• 100% of prior year tax (large corps: 100% current year required)\n\n**Large Corporations (> $1M taxable income in any of prior 3 years):**\n• Cannot use prior year safe harbor after first quarter\n• Must pay based on current year estimate",
+        },
+        {
+          title: 'Penalties',
+          type: 'text',
+          content: "**Failure to File:** 5% per month (max 25%)\n\n**Failure to Pay:** 0.5% per month (max 25%)\n\n**Combined maximum:** 47.5% (22.5% FTF + 25% FTP)\n\n**Estimated Tax Underpayment:**\n• No penalty if tax owed < $500\n• Or meet safe harbor\n\n**Accuracy-Related Penalty:** 20% for negligence or substantial understatement",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "C corp returns due 15th of 4th month after year-end",
+            "6-month extension available (Form 7004)",
+            "Schedule M-3 required if assets ≥ $10 million",
+            "Quarterly estimated tax payments required",
+            "Large corps limited in prior year safe harbor",
+            "Failure to file penalty: 5%/month up to 25%",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-042',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Dividends Received Deduction',
+    description: 'Understand the DRD for corporate shareholders',
+    order: 42,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['DRD percentages', 'Ownership thresholds', 'Taxable income limitation'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "When a corporation receives dividends from another corporation, triple taxation would occur without relief. The Dividends Received Deduction (DRD) mitigates this by allowing a partial or full deduction!",
+        },
+        {
+          title: 'DRD Percentages',
+          type: 'table',
+          headers: ['Ownership %', 'DRD %', 'Effective Tax Rate'],
+          rows: [
+            ['< 20%', '50%', '10.5%'],
+            ['20% - 79%', '65%', '7.35%'],
+            ['80%+', '100%', '0%'],
+          ],
+        },
+        {
+          title: 'Taxable Income Limitation',
+          type: 'text',
+          content: "**DRD is limited to percentage of taxable income:**\n\n**The limitation:**\n• 50% DRD limited to 50% of taxable income\n• 65% DRD limited to 65% of taxable income\n\n**Exception - no limitation if:**\nDRD creates or increases a net operating loss.\n\n**Example:**\nIf taking full DRD pushes company into a loss position, take full DRD without limitation.",
+        },
+        {
+          title: 'Non-Qualifying Dividends',
+          type: 'list',
+          content: [
+            "Dividends from tax-exempt corporations",
+            "Dividends on debt-financed portfolio stock",
+            "Dividends from foreign corporations (generally)",
+            "Dividends from real estate investment trusts",
+            "Dividends considered 'extraordinary'",
+            "Stock held less than 46 days",
+          ],
+        },
+        {
+          title: 'Holding Period Requirement',
+          type: 'text',
+          content: "**Must hold stock more than 45 days:**\n\nDuring 91-day period beginning 45 days before ex-dividend date.\n\n**For preferred stock with dividends attributable to > 366 days:**\n• Must hold more than 90 days\n• During 181-day period\n\n**Purpose:** Prevent dividend stripping (buy stock for dividend, sell immediately).",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "DRD prevents triple taxation of intercorporate dividends",
+            "50% DRD for < 20% ownership",
+            "65% DRD for 20-79% ownership",
+            "100% DRD for 80%+ ownership (affiliated group)",
+            "Limited to % of taxable income (unless creates NOL)",
+            "Must hold stock more than 45 days (generally)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-043',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Charitable Contributions',
+    description: 'Understand charitable deduction rules for corporations',
+    order: 43,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['10% limitation', 'Property contributions', 'Carryover'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Corporate charitable contributions are limited to 10% of taxable income! Understanding the calculation, special rules for property, and carryover provisions is essential.",
+        },
+        {
+          title: 'Basic Deduction Limit',
+          type: 'text',
+          content: "**10% of Taxable Income:**\n\n**Calculated BEFORE:**\n• Charitable contribution deduction\n• DRD (dividends received deduction)\n• NOL carryback\n• Capital loss carryback\n\n**Excess contributions:**\nCarryforward 5 years (FIFO).\n\n**No carryback for charitable contributions.**",
+        },
+        {
+          title: 'Accrual Method Election',
+          type: 'text',
+          content: "**Unique to C Corporations:**\n\nAccrual-method corporation can elect to deduct contribution in year authorized by board of directors if:\n\n• Authorized by board during tax year\n• Actually paid by 15th day of 4th month after year-end\n\n**Attach statement to return claiming election.**\n\n**Practical benefit:** Deduct in year 1, pay in year 2.",
+        },
+        {
+          title: 'Property Contributions',
+          type: 'table',
+          headers: ['Property Type', 'Deduction Amount'],
+          rows: [
+            ['Ordinary income property', 'Cost basis (generally)'],
+            ['Long-term capital gain property', 'FMV (generally)'],
+            ['Inventory to qualified charity', 'Basis + 50% of appreciation (max 2× basis)'],
+            ['Scientific equipment to universities', 'Basis + 50% of appreciation'],
+          ],
+        },
+        {
+          title: 'Enhanced Deduction for Inventory',
+          type: 'text',
+          content: "**Qualified contributions of inventory:**\n\n**Eligible property:**\n• Food inventory (all taxpayers)\n• Other inventory to certain charities serving ill, needy, infants\n\n**Deduction:**\nLesser of:\n• Basis + 50% of appreciation, OR\n• 2 × basis\n\n**Must be used for charitable purpose (not resale)**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Corporate charitable deduction limited to 10% of modified TI",
+            "Excess carries forward 5 years",
+            "Accrual corps can elect to deduct if paid by 3½ months after year-end",
+            "Ordinary income property: basis deduction",
+            "LTCG property: FMV deduction (generally)",
+            "Enhanced deduction for inventory to qualified charities",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-044',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate Capital Losses',
+    description: 'Understand capital loss treatment for corporations',
+    order: 44,
+    duration: 35,
+    difficulty: 'intermediate',
+    topics: ['Capital loss carryback', 'Carryforward', 'No offset against ordinary'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Corporate capital losses are treated very differently than individual capital losses! No offset against ordinary income, but carryback is available. Know the differences!",
+        },
+        {
+          title: 'Corporate vs. Individual Capital Losses',
+          type: 'table',
+          headers: ['Feature', 'Corporation', 'Individual'],
+          rows: [
+            ['Offset ordinary income?', 'No', 'Yes ($3,000/year)'],
+            ['Carryback', '3 years', 'None'],
+            ['Carryforward', '5 years', 'Indefinite'],
+            ['Character on carryback', 'Short-term', 'Retains character'],
+          ],
+        },
+        {
+          title: 'Carryback/Carryforward Rules',
+          type: 'text',
+          content: "**Net Capital Loss Carryback:**\n• Carry back 3 years first\n• Then forward 5 years\n• Treated as short-term capital loss in carryover year\n\n**Order:** Oldest year first (FIFO)\n\n**Cannot create or increase NOL** in carryback year - limited to capital gains in that year.\n\n**Expires after 5-year carryforward** - not indefinite like individual.",
+        },
+        {
+          title: 'Example',
+          type: 'example',
+          content: "**Year 6: Net capital loss of $50,000**\n\n**Carryback order:**\n• Year 3: Had $10,000 capital gain → Absorb $10,000\n• Year 4: Had $5,000 capital gain → Absorb $5,000\n• Year 5: Had $0 capital gain → Absorb $0\n• Remaining: $35,000 carries forward\n\n**Carryforward:**\n• Years 7-11: Use against any capital gains\n• If unused by Year 11 → Lost forever",
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'text',
+          content: "**Managing Capital Losses:**\n\n• Time capital gains to match capital loss years\n• Consider installment sales to spread gains\n• Watch 5-year expiration on carryforwards\n• Related party sales: no loss allowed (Section 267)\n• Wash sale rules apply to corporations\n\n**Cannot use capital losses against ordinary income** - this is a major planning consideration!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Corporate capital losses cannot offset ordinary income",
+            "Carryback 3 years, carryforward 5 years",
+            "All carryovers treated as short-term",
+            "Expires if not used within carryover period",
+            "Different from individuals (who get $3K ordinary offset)",
+            "Time gains to absorb loss carryovers before expiration",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-045',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Corporate NOL Rules',
+    description: 'Understand the corporate net operating loss deduction',
+    order: 45,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['NOL deduction', '80% limitation', 'Carryforward'],
+    blueprintArea: 'SEE2-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Corporate NOLs can provide valuable future tax savings! Understanding the TCJA changes (no carryback, 80% limit) is essential for corporate tax planning.",
+        },
+        {
+          title: 'Current NOL Rules (Post-TCJA)',
+          type: 'text',
+          content: "**For NOLs arising in tax years beginning after 12/31/2020:**\n\n**No carryback** (with limited exceptions)\n\n**Indefinite carryforward**\n\n**80% limitation:**\n• NOL deduction limited to 80% of taxable income\n• 20% of income always taxed\n\n**Exception:** Farming and insurance companies have special rules.",
+        },
+        {
+          title: 'NOL Calculation',
+          type: 'text',
+          content: "**Corporate NOL =**\nTaxable income if it's negative (a loss)\n\n**No adjustments needed** like individuals (no personal exemptions, etc.)\n\n**Deduction in carryforward year:**\nLesser of:\n• Available NOL carryforward, OR\n• 80% of taxable income (pre-NOL deduction)",
+        },
+        {
+          title: 'Example Calculation',
+          type: 'example',
+          content: "**Year 1:** Corporation has $500,000 NOL\n**Year 2:** Taxable income (before NOL) = $400,000\n\n**NOL Deduction Calculation:**\n• Maximum allowed: 80% × $400,000 = $320,000\n• Available NOL: $500,000\n• Deduction: $320,000 (limited to 80%)\n\n**Year 2 Result:**\n• Taxable income: $400,000 - $320,000 = $80,000\n• Tax (21%): $16,800\n\n**Remaining NOL carryforward:** $180,000",
+        },
+        {
+          title: 'Section 382 Limitations',
+          type: 'text',
+          content: "**Ownership Change Limitation:**\n\nIf > 50% ownership change in 3-year period:\n\n• Annual NOL use limited to:\n  - Value of loss corporation × long-term tax-exempt rate\n\n**Purpose:** Prevent trafficking in NOLs.\n\n**Example:**\n• Loss corp value: $1,000,000\n• Long-term rate: 5%\n• Annual limit: $50,000 NOL per year\n\n**Planning:** Structure acquisitions to avoid/minimize 382 limitations.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Post-TCJA: No carryback (generally), indefinite carryforward",
+            "80% limitation: only deduct 80% of taxable income",
+            "Always pay tax on at least 20% of income (if any)",
+            "Section 382: ownership change limits annual NOL use",
+            "Farming and insurance have special rules",
+            "Pre-2018 NOLs may have different rules (CARES Act exceptions)",
+          ],
+        },
+      ],
+    },
+  },
+
   // ============================================================================
   // SEE2-5: SPECIALIZED RETURNS (Lessons 46-55)
   // ============================================================================
@@ -2017,6 +3128,1021 @@ export const eaPart2Lessons: Lesson[] = [
             "Defined benefit: Promise a benefit, contribute what's needed",
             "Contribution deadline: SEP can be set up through return due date",
             "All reduce taxable income dollar-for-dollar",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-048',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Worker Classification',
+    description: 'Distinguish between employees and independent contractors',
+    order: 48,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Employee vs IC', 'Common law test', 'Form SS-8'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Worker misclassification is a major IRS enforcement priority! Getting it wrong means back taxes, penalties, and potential personal liability. Know the tests!",
+        },
+        {
+          title: 'Why Classification Matters',
+          type: 'text',
+          content: "**If Worker is Employee:**\n• Employer withholds income tax\n• Employer pays 7.65% FICA\n• Employee pays 7.65% FICA\n• Employer provides W-2\n\n**If Worker is Independent Contractor:**\n• No withholding\n• Worker pays full 15.3% SE tax\n• Worker receives Form 1099-NEC\n• Worker responsible for estimated taxes",
+        },
+        {
+          title: 'Common Law Test',
+          type: 'text',
+          content: "**Three Categories of Evidence:**\n\n**1. Behavioral Control:**\n• Does business direct how work is done?\n• Training provided?\n• Instructions given?\n\n**2. Financial Control:**\n• Who invests in equipment?\n• Reimbursed expenses?\n• Opportunity for profit/loss?\n\n**3. Relationship Type:**\n• Written contracts?\n• Benefits provided?\n• Permanency of relationship?",
+        },
+        {
+          title: 'Employee Indicators',
+          type: 'list',
+          content: [
+            "Business sets work hours and location",
+            "Business provides tools and equipment",
+            "Worker receives training",
+            "Work done at business's premises",
+            "Paid by hour, week, or salary (not by job)",
+            "Business provides benefits",
+            "Long-term, continuing relationship",
+            "Cannot subcontract the work",
+          ],
+        },
+        {
+          title: 'Independent Contractor Indicators',
+          type: 'list',
+          content: [
+            "Controls how, when, and where to work",
+            "Provides own tools and equipment",
+            "Can work for multiple businesses",
+            "Paid by the project/job",
+            "Has investment in own business",
+            "Can make profit or suffer loss",
+            "Invoices for services",
+            "Can hire assistants/subcontractors",
+          ],
+        },
+        {
+          title: 'Section 530 Relief',
+          type: 'text',
+          content: "**Safe Harbor for Misclassification:**\n\nEmployer may avoid employment tax if:\n• Reasonable basis for treating worker as IC\n  - IRS audit, court case, industry practice\n• Consistent treatment of similar workers\n• Filed all required 1099s\n\n**Form SS-8:** Request IRS determination of worker status (takes months).",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Three factors: behavioral, financial, relationship",
+            "Control is key - more control = more likely employee",
+            "No single factor is determinative",
+            "Section 530 provides relief if reasonable basis",
+            "Must file 1099-NEC for ICs paid $600+",
+            "Misclassification: back taxes + interest + penalties",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-049',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Tax-Exempt Organizations',
+    description: 'Understand 501(c)(3) and other exempt organizations',
+    order: 49,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['501(c)(3)', 'Exempt purposes', 'Form 990', 'UBIT'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Tax-exempt organizations must follow strict rules to maintain their status! Understanding formation, reporting, and the limits of tax exemption helps serve nonprofit clients.",
+        },
+        {
+          title: 'Types of Exempt Organizations',
+          type: 'table',
+          headers: ['Code Section', 'Type', 'Contributions Deductible?'],
+          rows: [
+            ['501(c)(3)', 'Charitable, religious, educational', 'Yes'],
+            ['501(c)(4)', 'Social welfare organizations', 'No'],
+            ['501(c)(6)', 'Business leagues, chambers', 'No'],
+            ['501(c)(7)', 'Social and recreational clubs', 'No'],
+            ['501(c)(19)', 'Veterans organizations', 'Sometimes'],
+          ],
+        },
+        {
+          title: '501(c)(3) Requirements',
+          type: 'text',
+          content: "**Exempt Purposes:**\n• Charitable\n• Religious\n• Educational\n• Scientific\n• Literary\n• Testing for public safety\n• Amateur athletic competition\n• Prevention of cruelty to children/animals\n\n**Organizational and Operational Tests:**\n• Articles must limit purposes to exempt activities\n• Must primarily engage in exempt activities\n• No private inurement to insiders",
+        },
+        {
+          title: 'Private Foundation vs. Public Charity',
+          type: 'text',
+          content: "**Public Charity:**\n• Broadly supported by public\n• Meets public support tests\n• Fewer restrictions\n\n**Private Foundation:**\n• Funded by single source (family, company)\n• Subject to excise taxes on investment income\n• Must distribute 5% of assets annually\n• Restrictions on self-dealing\n• Default classification if tests not met",
+        },
+        {
+          title: 'Form 990 Filing',
+          type: 'table',
+          headers: ['Gross Receipts', 'Total Assets', 'Form Required'],
+          rows: [
+            ['< $50,000', 'Any', 'Form 990-N (e-Postcard)'],
+            ['$50,000 - $200,000', '< $500,000', 'Form 990-EZ'],
+            ['> $200,000 OR', '> $500,000', 'Form 990 (full)'],
+            ['Private foundation', 'Any', 'Form 990-PF'],
+          ],
+        },
+        {
+          title: 'Unrelated Business Income Tax (UBIT)',
+          type: 'text',
+          content: "**Taxable if all three:**\n\n1. Trade or business\n2. Regularly carried on\n3. Not substantially related to exempt purpose\n\n**Common UBIT triggers:**\n• Advertising revenue (publications)\n• Rental of debt-financed property\n• Services beyond exempt purpose\n\n**Exclusions:**\n• Dividends, interest, royalties\n• Volunteer labor\n• Convenience of members (colleges)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "501(c)(3): tax-exempt AND tax-deductible contributions",
+            "Must meet organizational and operational tests",
+            "No private inurement to insiders",
+            "Form 990 required annually (with exceptions)",
+            "UBIT: unrelated business income is taxable",
+            "Private foundations have additional restrictions",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-050',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Fringe Benefits',
+    description: 'Understand excludable and taxable fringe benefits',
+    order: 50,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Excludable fringes', 'Working condition', 'De minimis'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Fringe benefits can be excluded from income if they meet specific requirements! Understanding the rules helps employers provide tax-efficient compensation.",
+        },
+        {
+          title: 'Major Excludable Fringe Benefits',
+          type: 'table',
+          headers: ['Benefit', 'Exclusion', 'Key Limits'],
+          rows: [
+            ['Health insurance', 'Unlimited', 'Employer-paid premiums excluded'],
+            ['Group term life', '$50,000 coverage', 'Excess taxable using Table I rates'],
+            ['Dependent care', '$5,000/year', 'FSA or employer plan'],
+            ['Educational assistance', '$5,250/year', 'Must be job-related or program'],
+            ['Qualified transportation', '$315/month (2024)', 'Parking or transit'],
+            ['Employee discounts', 'Gross profit %', 'On employer products/services'],
+          ],
+        },
+        {
+          title: 'Working Condition Fringe',
+          type: 'text',
+          content: "**Excluded if:**\nEmployee could have deducted cost as business expense if paid themselves.\n\n**Examples:**\n• Company car for business use\n• Professional subscriptions/dues\n• Business travel expenses\n• Job-related education\n\n**Must track/substantiate business use!**\nPersonal use is taxable.",
+        },
+        {
+          title: 'De Minimis Fringe',
+          type: 'text',
+          content: "**So small, accounting is impractical:**\n\n**Examples (excluded):**\n• Occasional coffee, donuts, soft drinks\n• Holiday gifts (not cash)\n• Occasional personal use of copier\n• Employee parties/picnics\n• Flowers for illness/family death\n\n**NOT excluded:**\n• Cash or cash equivalents\n• Season tickets\n• Regularly provided meals\n• Gym memberships (generally)",
+        },
+        {
+          title: 'No-Additional-Cost Service',
+          type: 'text',
+          content: "**Excluded if:**\n\n• Employer incurs no substantial additional cost\n• Service normally offered to customers\n• Employee works in line of business offering service\n\n**Examples:**\n• Free standby airline seats for airline employees\n• Free hotel rooms for hotel employees\n• Free phone service for telecom employees\n\n**Must not displace paying customers!**",
+        },
+        {
+          title: 'Transportation Benefits',
+          type: 'text',
+          content: "**2024 Monthly Limits:**\n\n• Transit passes: $315\n• Qualified parking: $315\n• Bicycle commuting: NOT currently excludable (suspended)\n\n**Can combine transit and parking (total $630/month)**\n\n**Note:** Employer deduction for parking limited - may not be fully deductible.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Health insurance: fully excludable (employer-paid)",
+            "Group term life: first $50K excluded",
+            "Working condition fringe: would be deductible if employee paid",
+            "De minimis: too small to account for",
+            "Transportation: $315/month transit and parking",
+            "Cash is almost never excludable!",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-051',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Business Use of Home',
+    description: 'Understand the home office deduction for businesses',
+    order: 51,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Regular and exclusive use', 'Principal place of business', 'Simplified method'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Home office deductions are available for self-employed but not employees (after TCJA)! Understanding the requirements helps clients maximize legitimate deductions.",
+        },
+        {
+          title: 'Who Can Claim?',
+          type: 'text',
+          content: "**Post-TCJA Rules:**\n\n**Can claim:**\n• Self-employed individuals\n• Partners in partnerships\n• Independent contractors\n\n**Cannot claim (2018-2025):**\n• W-2 employees (even if work from home required)\n\n**Exception:** Employees may deduct if reimbursed under accountable plan.",
+        },
+        {
+          title: 'Requirements',
+          type: 'text',
+          content: "**Two Tests (must meet BOTH):**\n\n**1. Regular and Exclusive Use:**\n• Used regularly (not occasionally)\n• Used exclusively for business\n• Exception: Storage of inventory/product samples\n• Exception: Day care facilities\n\n**2. Principal Place of Business OR:**\n• Place to meet clients/customers\n• Separate structure used for business",
+        },
+        {
+          title: 'Principal Place of Business Test',
+          type: 'text',
+          content: "**Most important activities:**\nWhere are the most important activities done?\n\n**Time spent:**\nHow much time spent there vs. other locations?\n\n**Administrative/Management:**\nIf used for substantial administrative/management activities and no other fixed location, qualifies.\n\n**Example:** Plumber runs business from home office (paperwork, scheduling) even though work done at customer sites.",
+        },
+        {
+          title: 'Calculation Methods',
+          type: 'table',
+          headers: ['Method', 'How It Works', 'Maximum'],
+          rows: [
+            ['Regular method', 'Actual expenses × business %', 'Limited to business income'],
+            ['Simplified method', '$5 × square feet', '$1,500 (300 sq ft max)'],
+          ],
+        },
+        {
+          title: 'Deductible Expenses (Regular Method)',
+          type: 'text',
+          content: "**Direct expenses (100%):**\n• Painting office only\n• Repairs to office\n\n**Indirect expenses (prorated):**\n• Mortgage interest/rent\n• Utilities\n• Insurance\n• Repairs to whole house\n• Depreciation (portion)\n\n**Limitation:** Cannot create a loss (carryover unused).\n\n**Depreciation recapture** when home sold (Section 1250).",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Self-employed only (employees suspended 2018-2025)",
+            "Regular AND exclusive use required",
+            "Principal place of business test",
+            "Simplified: $5/sq ft, max $1,500",
+            "Cannot create loss from home office",
+            "Depreciation claimed may be recaptured on sale",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-052',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Rental Real Estate',
+    description: 'Understand rental income reporting and deductions',
+    order: 52,
+    duration: 55,
+    difficulty: 'intermediate',
+    topics: ['Schedule E', 'Depreciation', 'Passive activity rules'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Rental real estate is a common investment with unique tax rules! Understanding depreciation, the $25K exception, and repair regulations helps clients maximize benefits.",
+        },
+        {
+          title: 'Reporting Rental Income',
+          type: 'text',
+          content: "**Schedule E (Form 1040):**\n\n**Income includes:**\n• Rent payments\n• Advance rent (taxed when received)\n• Security deposits forfeited\n• Lease cancellation payments\n• Property/services in lieu of rent\n\n**NOT income:**\n• Security deposits (if refundable)\n• Tenant improvements in lieu of rent (usually not)",
+        },
+        {
+          title: 'Common Deductions',
+          type: 'table',
+          headers: ['Deduction', 'Notes'],
+          rows: [
+            ['Mortgage interest', '100% if rental only'],
+            ['Property taxes', 'Real estate taxes'],
+            ['Depreciation', '27.5 years residential'],
+            ['Repairs', 'Deduct currently; improvements capitalize'],
+            ['Insurance', 'Landlord policy'],
+            ['Utilities (if paid)', 'Common in some situations'],
+            ['Management fees', 'Property manager'],
+          ],
+        },
+        {
+          title: 'Depreciation',
+          type: 'text',
+          content: "**Residential Rental:**\n• 27.5 years straight-line\n• Mid-month convention\n\n**Commercial Rental:**\n• 39 years straight-line\n• Mid-month convention\n\n**Land is NOT depreciable!**\nMust allocate basis between land and building.\n\n**Cost segregation:** May accelerate depreciation by separately depreciating components (5, 7, 15 year property).",
+        },
+        {
+          title: '$25,000 Allowance',
+          type: 'text',
+          content: "**Rental Real Estate Exception to PAL:**\n\nUp to $25,000 rental losses allowed against nonpassive income if:\n\n• Actively participate (10%+ ownership, management decisions)\n• AGI ≤ $100,000 (full allowance)\n• Phase-out: $100,000 - $150,000 AGI\n• Eliminated at $150,000 AGI\n\n**Active participation ≠ material participation**\nLower bar - just make management decisions.",
+        },
+        {
+          title: 'Real Estate Professional',
+          type: 'text',
+          content: "**If Qualify:**\nRental activities treated as nonpassive (no PAL limitation).\n\n**Requirements:**\n• 750+ hours in real property trades/businesses\n• More than half of personal services in real property\n• Materially participate in each rental activity (or elect to group)\n\n**Common professions:** Developers, real estate agents, property managers.\n\n**Must pass BOTH tests each year!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Report on Schedule E (not Schedule C)",
+            "Residential depreciation: 27.5 years straight-line",
+            "$25,000 rental loss allowance (active participation)",
+            "Phase-out: $100K-$150K AGI",
+            "RE professional: no PAL limitation",
+            "Repairs deductible; improvements capitalized",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-053',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Business Vehicle Expenses',
+    description: 'Understand vehicle deduction methods and substantiation',
+    order: 53,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Standard mileage', 'Actual expenses', 'Luxury auto limits'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Vehicle expenses are among the most common business deductions - and audit targets! Proper substantiation and choosing between methods can save thousands.",
+        },
+        {
+          title: 'Two Methods',
+          type: 'table',
+          headers: ['Method', 'How It Works', 'When to Use'],
+          rows: [
+            ['Standard Mileage', '67¢/mile (2024) × business miles', 'Simple, lower-cost vehicle'],
+            ['Actual Expenses', 'Track all costs × business %', 'Expensive vehicle, high expenses'],
+          ],
+        },
+        {
+          title: 'Standard Mileage Rate',
+          type: 'text',
+          content: "**2024 Rates:**\n• Business: 67 cents/mile\n• Medical/moving: 21 cents/mile\n• Charitable: 14 cents/mile\n\n**Restrictions:**\n• Must use in first year vehicle placed in service to use later\n• Cannot use for 5+ vehicles simultaneously\n• Cannot claim depreciation, Section 179, or bonus\n• Can add parking and tolls\n\n**Includes:** Gas, insurance, repairs, depreciation",
+        },
+        {
+          title: 'Actual Expense Method',
+          type: 'text',
+          content: "**Deductible Expenses:**\n• Gas and oil\n• Insurance\n• Repairs and maintenance\n• Tires\n• Registration fees\n• Lease payments\n• Depreciation (owned vehicles)\n• Interest (self-employed only)\n\n**Multiply total by business use %:**\nBusiness miles ÷ Total miles = Business %\n\n**Must keep mileage log regardless of method!**",
+        },
+        {
+          title: 'Luxury Auto Limits (2024)',
+          type: 'table',
+          headers: ['Year', 'Regular Limit', 'Bonus Eligible'],
+          rows: [
+            ['Year 1', '$12,200', '$20,200'],
+            ['Year 2', '$19,500', '$19,500'],
+            ['Year 3', '$11,700', '$11,700'],
+            ['Year 4+', '$6,960', '$6,960'],
+          ],
+        },
+        {
+          title: 'Substantiation Requirements',
+          type: 'text',
+          content: "**Must Record (contemporaneously):**\n\n• Date of trip\n• Destination\n• Business purpose\n• Mileage\n\n**For each business use!**\n\n**Best practice:** App or logbook maintained daily/weekly.\n\n**Reconstruction:** IRS may accept reasonable reconstruction, but more difficult in audit.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Two methods: standard mileage (67¢) or actual expenses",
+            "Must use standard mileage in first year for later option",
+            "Luxury limits reduce depreciation on expensive vehicles",
+            "Keep contemporaneous mileage log",
+            "Record: date, destination, purpose, miles",
+            "Audit hot spot - documentation is critical",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-054',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Business Travel and Meals',
+    description: 'Understand deductibility rules for business travel and meals',
+    order: 54,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Away from home', 'Meal deductions', 'Per diem'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Travel and meal expenses are common deductions with specific requirements! Understanding 'away from home,' meal limits, and substantiation rules is essential for business clients.",
+        },
+        {
+          title: 'Travel Expenses',
+          type: 'text',
+          content: "**Deductible when 'away from home':**\n\n**Away from home means:**\n• Travel that requires sleep or rest to meet work demands\n• Away from tax home overnight\n\n**Tax home:**\n• Where you conduct business (not where you live)\n• If multiple locations, main place of business\n\n**Deductible:** Transport, lodging, meals (50%), tips, laundry",
+        },
+        {
+          title: 'Meal Deductions',
+          type: 'table',
+          headers: ['Type of Meal', 'Deduction %', 'Notes'],
+          rows: [
+            ['Business meals', '50%', 'With business discussion'],
+            ['Employee meals (convenience)', '50%', 'De minimis exception'],
+            ['Entertainment', '0%', 'No deduction post-TCJA'],
+            ['Client entertainment', '0%', 'Even if separate meal stated'],
+          ],
+        },
+        {
+          title: 'Business Meal Requirements',
+          type: 'text',
+          content: "**Deductible at 50% if:**\n\n• Not lavish or extravagant\n• Taxpayer (or employee) present\n• Business discussion during, before, or after\n• Expenses properly substantiated\n\n**Must document:**\n• Amount\n• Date and place\n• Business purpose\n• Business relationship\n\n**Entertainment:** Meals during entertainment may be deductible if separately stated.",
+        },
+        {
+          title: 'Per Diem Method',
+          type: 'text',
+          content: "**Simplified Substantiation:**\n\nIRS allows per diem rates instead of tracking actual expenses.\n\n**Lodging + M&IE:** Federal rates by location\n**M&IE Only:** $59-$79 per day (2024, location varies)\n\n**High-Low Method:**\n• High cost localities: $319/day\n• All other: $225/day\n\n**Still must substantiate:** Time, place, business purpose.",
+        },
+        {
+          title: '⚠️ Mixed Business/Personal Travel',
+          type: 'warning',
+          content: "**Domestic Travel:**\n• If primarily business, transport fully deductible\n• Allocate lodging/meals between business and personal days\n\n**Foreign Travel:**\n• Must allocate transport if > 7 days OR > 25% personal\n• Exception: No personal control over trip planning\n\n**Personal vacation days are not deductible!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Travel deductible if away from home overnight",
+            "Meals: 50% deductible with business discussion",
+            "Entertainment: 0% (no deduction post-TCJA)",
+            "Per diem simplifies substantiation",
+            "Must document: amount, date, place, purpose, relationship",
+            "Mixed trips: allocate between business/personal",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-055',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Section 1244 Stock Loss',
+    description: 'Understand ordinary loss treatment for small business stock',
+    order: 55,
+    duration: 35,
+    difficulty: 'intermediate',
+    topics: ['Section 1244', 'Ordinary loss', 'Qualification requirements'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Section 1244 allows ordinary loss treatment (instead of capital loss) for worthless small business stock. This can save significant taxes by offsetting ordinary income!",
+        },
+        {
+          title: 'Benefit of Section 1244',
+          type: 'text',
+          content: "**Normal stock loss:** Capital loss\n• Limited to $3,000/year offset against ordinary income\n\n**Section 1244 stock loss:** Ordinary loss\n• Fully deductible against ordinary income\n• Up to $50,000 ($100,000 MFJ) per year\n• Excess treated as capital loss\n\n**Big difference in tax savings!**",
+        },
+        {
+          title: 'Qualification Requirements',
+          type: 'list',
+          content: [
+            "Stock of domestic corporation",
+            "Issued for money or property (not services or stock)",
+            "Corporation had $1 million or less paid-in capital at issuance",
+            "Corporation derived 50%+ of gross receipts from active business",
+            "Stock held by individual or partnership",
+            "Original owner (not purchased in secondary market)",
+          ],
+        },
+        {
+          title: 'Annual Loss Limits',
+          type: 'table',
+          headers: ['Filing Status', 'Max Ordinary Loss', 'Excess Treatment'],
+          rows: [
+            ['Single', '$50,000', 'Capital loss'],
+            ['MFJ', '$100,000', 'Capital loss'],
+            ['MFS', '$50,000', 'Capital loss'],
+          ],
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'text',
+          content: "**Maximize Section 1244 benefits:**\n\n• Keep capitalization under $1 million when issuing stock\n• Issue stock only for cash or property\n• Don't pay for stock with services\n• Maintain documentation of qualification\n• Original shareholders keep stock (not sell/gift)\n\n**No election required** - if requirements met, treatment is automatic.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Section 1244: ordinary loss on small business stock loss",
+            "Max: $50,000 ($100,000 MFJ) ordinary loss per year",
+            "Must be original shareholder",
+            "Corporation must meet capitalization/income tests",
+            "No election required - automatic if qualified",
+            "Excess over limit is capital loss",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-056',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Qualified Small Business Stock',
+    description: 'Understand the Section 1202 gain exclusion',
+    order: 56,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ['Section 1202', 'QSBS', 'Gain exclusion'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Section 1202 excludes up to 100% of gain on qualified small business stock held 5+ years! This can mean ZERO federal tax on millions in gains. Huge planning opportunity!",
+        },
+        {
+          title: 'Exclusion Percentage',
+          type: 'table',
+          headers: ['Stock Acquired', 'Exclusion'],
+          rows: [
+            ['After September 27, 2010', '100%'],
+            ['February 18, 2009 - September 27, 2010', '75%'],
+            ['Before February 18, 2009', '50%'],
+          ],
+        },
+        {
+          title: 'Requirements for QSBS',
+          type: 'list',
+          content: [
+            "Domestic C corporation (not S corp)",
+            "Gross assets ≤ $50 million (at issuance and immediately after)",
+            "Acquired at original issuance",
+            "Held more than 5 years",
+            "80%+ of assets used in active business",
+            "Not in excluded business (services, banking, hotels, etc.)",
+          ],
+        },
+        {
+          title: 'Excluded Businesses',
+          type: 'text',
+          content: "**Cannot be QSBS if primarily engaged in:**\n\n• Health, law, engineering, accounting, consulting\n• Athletics, financial services, brokerage\n• Any business where reputation/skill of employees is principal asset\n• Banking, insurance, leasing, investing\n• Farming\n• Hotels, motels, restaurants\n• Extractive industries",
+        },
+        {
+          title: 'Exclusion Limitations',
+          type: 'text',
+          content: "**Per Issuer, Per Year:**\n\nGreater of:\n• $10 million gain, OR\n• 10× adjusted basis of stock\n\n**Example:**\nBasis $1 million, gain $15 million.\nExclusion: Greater of $10M or $10M (10 × $1M) = $10M\nRemaining $5M taxed at capital gains rate.",
+        },
+        {
+          title: 'Planning Tips',
+          type: 'text',
+          content: "**Maximize QSBS benefits:**\n\n• Start as C corp (or convert to C early)\n• Monitor $50M asset limit\n• Document business activities (avoid excluded)\n• Hold stock 5+ years before sale\n• Issue stock to multiple shareholders (each gets $10M exclusion)\n• Consider gifting to family members before sale\n\n**Estate planning:** Transferred stock retains QSBS character.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "100% gain exclusion for QSBS acquired after 9/27/2010",
+            "Must hold 5+ years",
+            "Corporation: ≤ $50M assets, active business",
+            "Limit: Greater of $10M or 10× basis per issuer",
+            "Excludes service businesses",
+            "Massive tax savings opportunity!",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-057',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Hobby Loss Rules',
+    description: 'Distinguish between business activities and hobbies',
+    order: 57,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Profit motive', 'Section 183', 'Nine-factor test'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Hobby losses are NOT deductible! The IRS scrutinizes activities with consistent losses to determine if they're really businesses or hobbies. Know how to prove profit motive.",
+        },
+        {
+          title: 'Business vs. Hobby',
+          type: 'text',
+          content: "**Business:**\n• Activity engaged in for profit\n• Losses deductible against other income\n\n**Hobby:**\n• Activity NOT engaged for profit\n• Losses NOT deductible\n• Income still taxable (but no offsetting deductions post-TCJA)\n\n**Key:** Must have genuine profit motive.",
+        },
+        {
+          title: 'Safe Harbor: Presumption of Profit',
+          type: 'text',
+          content: "**Activity presumed for profit if:**\n\n**General Rule:**\nProfit in 3 of last 5 years (including current year)\n\n**Horse Racing/Breeding:**\nProfit in 2 of last 7 years\n\n**Effect:**\nIRS bears burden of proving NOT for profit.\n\n**Election (Section 183(e)):**\nDelay determination until after 5th year (or 7th for horses).",
+        },
+        {
+          title: 'Nine-Factor Test',
+          type: 'list',
+          content: [
+            "Manner in which activity conducted (businesslike?)",
+            "Expertise of taxpayer or advisors",
+            "Time and effort expended",
+            "Expectation that assets may appreciate",
+            "Success in similar activities",
+            "History of income or losses",
+            "Amount of occasional profits",
+            "Financial status of taxpayer",
+            "Elements of personal pleasure or recreation",
+          ],
+        },
+        {
+          title: 'Post-TCJA Treatment',
+          type: 'text',
+          content: "**If Characterized as Hobby:**\n\n**Income:** Still fully taxable as other income\n\n**Expenses:** NOT deductible!\n• Before TCJA: Limited deduction as misc. itemized deduction\n• After TCJA: No deduction at all (2018-2025)\n\n**Result:** Worst possible outcome - tax on income with no deductions.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Hobby losses not deductible (post-TCJA: no deductions at all)",
+            "Safe harbor: profit in 3 of 5 years",
+            "Nine factors determine profit motive",
+            "No single factor is determinative",
+            "Keep records to prove businesslike operation",
+            "Hobby income is still taxable!",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-058',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Like-Kind Exchanges',
+    description: 'Understand Section 1031 exchanges for real property',
+    order: 58,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Section 1031', 'Qualified intermediary', 'Boot', 'Basis rules'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Section 1031 allows complete deferral of gain on real property exchanges! This powerful tool lets investors grow wealth tax-free. After TCJA, only real property qualifies.",
+        },
+        {
+          title: 'Current Law (Post-TCJA)',
+          type: 'text',
+          content: "**Only REAL PROPERTY qualifies:**\n\n• Commercial buildings\n• Apartments/rental houses\n• Land\n• Office buildings\n• Industrial property\n\n**No longer qualifies:**\n• Personal property (equipment, vehicles)\n• Artwork, collectibles\n• Livestock\n• Inventory",
+        },
+        {
+          title: 'Requirements',
+          type: 'list',
+          content: [
+            "Both properties held for investment or business use",
+            "Properties are like-kind (real property for real property)",
+            "Must identify replacement within 45 days",
+            "Must close within 180 days (or tax return due date if earlier)",
+            "Qualified intermediary holds proceeds",
+            "Cannot receive cash or other property before exchange",
+          ],
+        },
+        {
+          title: 'Timeline',
+          type: 'text',
+          content: "**Day 0:** Close on relinquished property (sale)\n\n**Day 45:** Deadline to identify replacement properties\n• Can identify up to 3 properties (any value), OR\n• Any number if total FMV ≤ 200% of relinquished\n\n**Day 180:** Deadline to close on replacement property\n• Or tax return due date, whichever is earlier\n• Get extension if needed!",
+        },
+        {
+          title: 'Boot and Basis',
+          type: 'text',
+          content: "**Boot = Taxable:**\n• Cash received in exchange\n• Property other than real estate\n• Debt relief in excess of debt assumed\n\n**Gain recognized = Lesser of:**\n• Realized gain, or\n• Boot received\n\n**Basis in new property:**\nFMV of new property - deferred gain\n\n**Example:**\nExchange $500K property (basis $200K) for $500K property.\nDeferred gain: $300K\nNew basis: $500K - $300K = $200K (carryover)",
+        },
+        {
+          title: 'Qualified Intermediary',
+          type: 'text',
+          content: "**Why needed:**\nCannot receive cash directly.\n\n**QI holds:**\n• Sale proceeds from relinquished property\n• Transfers to seller of replacement property\n\n**QI cannot be:**\n• Related party\n• Agent (attorney, CPA, broker in last 2 years)\n\n**Must use QI before closing on sale!**\nCannot fix afterward.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Only real property qualifies (post-TCJA)",
+            "Must identify replacement within 45 days",
+            "Must close within 180 days",
+            "Boot (cash/debt relief) is taxable",
+            "Basis in new property = FMV minus deferred gain",
+            "Must use qualified intermediary",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-059',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Installment Sales',
+    description: 'Understand tax-deferred payment arrangements',
+    order: 59,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Section 453', 'Gross profit ratio', 'Related party sales'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Installment sales spread gain recognition over the payment period! This defers tax and can keep taxpayers in lower brackets. Know when this method applies.",
+        },
+        {
+          title: 'What is an Installment Sale?',
+          type: 'text',
+          content: "**Definition:**\nSale where at least one payment received after year of sale.\n\n**Default Method:**\nApplies automatically unless elected out.\n\n**Effect:**\nProportionate gain recognized as payments received.",
+        },
+        {
+          title: 'Ineligible Property',
+          type: 'list',
+          content: [
+            "Inventory (cannot use installment method)",
+            "Publicly traded stocks and securities",
+            "Dealer dispositions (ordinary course of business)",
+            "Depreciation recapture (all recognized in year 1)",
+          ],
+        },
+        {
+          title: 'Gross Profit Ratio Calculation',
+          type: 'text',
+          content: "**Gross Profit Ratio:**\nGross Profit ÷ Contract Price\n\n**Where:**\nGross Profit = Selling Price - Adjusted Basis\nContract Price = Selling Price - Existing Mortgage Assumed (if any)\n\n**Each Payment:**\nPayment × Gross Profit Ratio = Taxable Gain\n\n**Interest:** Reported separately as ordinary income.",
+        },
+        {
+          title: 'Example',
+          type: 'example',
+          content: "**Facts:**\n• Selling price: $100,000\n• Adjusted basis: $40,000\n• Down payment: $20,000\n• Balance: $80,000 over 4 years\n\n**Calculation:**\n• Gross profit: $100,000 - $40,000 = $60,000\n• Contract price: $100,000\n• Gross profit ratio: 60%\n\n**Year 1 gain:**\n$20,000 × 60% = $12,000 taxable",
+        },
+        {
+          title: 'Related Party Rules',
+          type: 'text',
+          content: "**If buyer is related party:**\n\nIf buyer resells within 2 years, seller accelerates remaining gain.\n\n**Related parties:**\n• Spouse, children, grandchildren, parents\n• Controlled corporations/partnerships\n• Trusts\n\n**Exceptions:**\n• Sale of marketable securities\n• Involuntary conversion\n• Sale after death of original seller",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "At least one payment after year of sale",
+            "Gain recognized proportionately as payments received",
+            "Gross profit ratio = Gross profit ÷ Contract price",
+            "Depreciation recapture recognized in year 1",
+            "Cannot use for inventory or publicly traded stock",
+            "Related party resale within 2 years accelerates gain",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-060',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Self-Employment Tax',
+    description: 'Understand SE tax calculation and payment',
+    order: 60,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Schedule SE', 'SE tax rate', 'Deduction for employer portion'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Self-employed individuals pay BOTH employer and employee portions of Social Security and Medicare! Understanding SE tax helps clients budget and claim proper deductions.",
+        },
+        {
+          title: 'SE Tax Rates',
+          type: 'table',
+          headers: ['Component', 'Rate', 'Wage Base (2024)'],
+          rows: [
+            ['Social Security', '12.4%', '$168,600'],
+            ['Medicare', '2.9%', 'No limit'],
+            ['Additional Medicare', '0.9%', 'Over $200K ($250K MFJ)'],
+            ['Total SE Tax', '15.3%+', 'Varies'],
+          ],
+        },
+        {
+          title: 'SE Tax Calculation',
+          type: 'text',
+          content: "**Step 1:** Calculate net self-employment income\n\n**Step 2:** Multiply by 92.35% (equivalent to employer deduction)\n\n**Step 3:** Apply rates:\n• 12.4% on first $168,600\n• 2.9% on all SE income\n• 0.9% additional Medicare on income over threshold\n\n**Deduction:**\n50% of SE tax is deductible (Schedule 1, Line 15).",
+        },
+        {
+          title: 'Example Calculation',
+          type: 'example',
+          content: "**Net SE Income:** $100,000\n\n**Step 1:** $100,000 × 92.35% = $92,350\n\n**Step 2:** SE Tax\n• Social Security: $92,350 × 12.4% = $11,451\n• Medicare: $92,350 × 2.9% = $2,678\n• Total: $14,129\n\n**Step 3:** Deduction\n• $14,129 × 50% = $7,065 (above-the-line deduction)",
+        },
+        {
+          title: 'What Income is Subject to SE Tax?',
+          type: 'text',
+          content: "**Subject to SE Tax:**\n• Schedule C net profit\n• General partner's share of partnership income\n• Director fees (non-employee)\n• Self-employment consulting income\n\n**NOT Subject to SE Tax:**\n• Limited partner distributive share (generally)\n• S corporation distributions\n• Rental income (generally)\n• Dividends/interest\n• Capital gains",
+        },
+        {
+          title: 'Additional Medicare Tax',
+          type: 'text',
+          content: "**0.9% Additional Tax:**\n\nApplies when SE income plus wages exceed:\n• Single/HOH: $200,000\n• MFJ: $250,000\n• MFS: $125,000\n\n**Not split between employer/employee** - all paid by taxpayer.\n\n**No above-the-line deduction** for additional Medicare tax.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SE tax = 15.3% (12.4% SS + 2.9% Medicare)",
+            "Calculate on 92.35% of net SE income",
+            "50% of SE tax is above-the-line deduction",
+            "SS portion limited to wage base ($168,600 in 2024)",
+            "Additional 0.9% Medicare over $200K/$250K",
+            "S corp distributions avoid SE tax (with reasonable salary)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-061',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Estimated Tax for Self-Employed',
+    description: 'Understand estimated tax requirements for business owners',
+    order: 61,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Quarterly payments', 'Safe harbors', 'Form 1040-ES'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Self-employed individuals must make quarterly estimated tax payments! No employer withholds for them. Understanding the rules prevents penalties.",
+        },
+        {
+          title: 'Who Must Pay?',
+          type: 'text',
+          content: "**Required if expecting to owe $1,000+ when filing return:**\n\n• Self-employed individuals\n• Partners (for SE tax and income tax)\n• S corporation shareholders (for distributions)\n• Investors with significant income\n\n**No requirement if:**\n• Prior year tax = $0\n• U.S. citizen/resident entire year\n• Prior year was 12-month year",
+        },
+        {
+          title: 'Due Dates',
+          type: 'table',
+          headers: ['Payment Period', 'Due Date'],
+          rows: [
+            ['Jan 1 - Mar 31', 'April 15'],
+            ['Apr 1 - May 31', 'June 15'],
+            ['Jun 1 - Aug 31', 'September 15'],
+            ['Sep 1 - Dec 31', 'January 15'],
+          ],
+        },
+        {
+          title: 'Safe Harbor Rules',
+          type: 'text',
+          content: "**No penalty if pay either:**\n\n**Option 1:** 90% of current year tax\n\n**Option 2:** 100% of prior year tax\n• If prior year AGI > $150,000 ($75,000 MFS): 110%\n\n**Most use prior year safe harbor** - it's predictable!\n\n**Requirement:** Prior year was 12 months with tax liability.",
+        },
+        {
+          title: 'Payment Options',
+          type: 'text',
+          content: "**How to Pay:**\n\n• IRS Direct Pay (free, bank account)\n• EFTPS (free, enrollment required)\n• Credit/debit card (fees apply)\n• Mail check with voucher (Form 1040-ES)\n\n**Increase Withholding:**\nIf spouse works, increase W-4 withholding to cover estimate.\n\n**Withholding treated as paid evenly through year!**",
+        },
+        {
+          title: 'Annualized Income Method',
+          type: 'text',
+          content: "**For Seasonal/Variable Income:**\n\nIf income not evenly distributed, can annualize each quarter.\n\n**Form 2210, Schedule AI** required.\n\n**Benefit:** May reduce early quarter payments.\n\n**Example:** Retail business makes 60% of income in Q4.\nCan pay lower estimates in Q1-Q3, larger in Q4.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Required if expecting to owe $1,000+",
+            "Due: April 15, June 15, September 15, January 15",
+            "Safe harbor: 100% of prior year (110% if AGI > $150K)",
+            "Form 1040-ES for mailed payments",
+            "Can increase W-4 withholding instead",
+            "Annualized method for seasonal income",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE2-062',
+    courseId: 'ea',
+    section: 'SEE2',
+    title: 'Business Tax Compliance',
+    description: 'Understand information returns and compliance requirements',
+    order: 62,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Information returns', '1099 reporting', 'Backup withholding'],
+    blueprintArea: 'SEE2-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Businesses must file information returns reporting payments to others! Miss a deadline or file incorrectly, and penalties add up fast. Know the requirements!",
+        },
+        {
+          title: 'Common Information Returns',
+          type: 'table',
+          headers: ['Form', 'Reports', 'Threshold'],
+          rows: [
+            ['1099-NEC', 'Nonemployee compensation', '$600+'],
+            ['1099-MISC', 'Rents, royalties, other', '$600+ (varies)'],
+            ['1099-INT', 'Interest payments', '$10+'],
+            ['1099-DIV', 'Dividends', '$10+'],
+            ['1099-K', 'Payment card/third party network', '$600+ (new threshold)'],
+            ['W-2', 'Wages to employees', 'Any amount'],
+          ],
+        },
+        {
+          title: '1099-NEC Requirements',
+          type: 'text',
+          content: "**File if paying:**\n• $600+ to non-employee for services\n• Attorneys (any amount for legal services)\n\n**Due Dates:**\n• To recipient: January 31\n• To IRS: January 31\n\n**Must file for:**\n• Independent contractors\n• Self-employed individuals\n• Partnerships (but not corporations generally)",
+        },
+        {
+          title: 'TIN/W-9 Requirements',
+          type: 'text',
+          content: "**Request W-9 before payment:**\n\n• Get payee's name and TIN (SSN or EIN)\n• Certify not subject to backup withholding\n\n**If payee refuses or provides incorrect TIN:**\n• Backup withholding required: 24%\n• Deduct from payments, deposit with IRS\n• Report on Form 945",
+        },
+        {
+          title: 'Penalties for Late/Incorrect Filings',
+          type: 'table',
+          headers: ['If Corrected Within', 'Penalty Per Return (2024)'],
+          rows: [
+            ['30 days', '$60'],
+            ['By August 1', '$120'],
+            ['After August 1', '$310'],
+            ['Intentional disregard', '$630 minimum'],
+          ],
+        },
+        {
+          title: 'Electronic Filing',
+          type: 'text',
+          content: "**E-filing Required if:**\n• 10 or more information returns (aggregate)\n\n**Benefits:**\n• Faster processing\n• Fewer errors\n• Extended correction period\n\n**FIRE System:** IRS online filing for 1099s\n\n**Third-party services available:** Many payroll and accounting services file automatically.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "1099-NEC due January 31 to IRS and recipients",
+            "Get W-9 before making payments",
+            "Backup withhold 24% if no TIN provided",
+            "Penalties: $60-$630 per late/incorrect return",
+            "E-file required for 10+ returns",
+            "Corporations generally exempt from 1099 (except attorneys)",
           ],
         },
       ],

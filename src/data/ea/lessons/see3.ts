@@ -393,6 +393,436 @@ export const eaPart3Lessons: Lesson[] = [
     },
   },
 
+  {
+    id: 'SEE3-006',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Circular 230 - Conflicts of Interest',
+    description: 'Understand when conflicts of interest arise and how to handle them',
+    order: 6,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Conflicts of interest', 'Waivers', 'Disclosure'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Conflicts of interest can undermine your representation and subject you to discipline! Understanding when conflicts arise and how to properly address them protects you and your clients.",
+        },
+        {
+          title: 'What is a Conflict of Interest?',
+          type: 'text',
+          content: "**A conflict exists when:**\n\n• Representation of one client will be directly adverse to another client, OR\n• There is significant risk representation will be materially limited by:\n  - Practitioner's responsibilities to another client\n  - Former client\n  - Third person\n  - Personal interest of the practitioner",
+        },
+        {
+          title: 'Representation Despite Conflict',
+          type: 'text',
+          content: "**May represent with conflict IF:**\n\n1. Practitioner reasonably believes competent and diligent representation is possible\n2. Representation is not prohibited by law\n3. Each affected client gives informed consent confirmed in writing within 30 days\n\n**All three conditions must be met!**",
+        },
+        {
+          title: 'Common Conflict Situations',
+          type: 'list',
+          content: [
+            "Representing both spouses when divorce pending",
+            "Representing partnership and individual partner",
+            "Representing buyer and seller in same transaction",
+            "Representing employer and employee in same matter",
+            "Representing multiple taxpayers on same return position",
+            "Personal financial interest in client's matter",
+          ],
+        },
+        {
+          title: '⚠️ Conflicts That Cannot Be Waived',
+          type: 'warning',
+          content: "**Some conflicts cannot be waived even with consent:**\n\n• Practitioner reasonably cannot provide competent representation\n• Representation is prohibited by law\n• Representing opposing parties in same IRS proceeding\n\n**When in doubt, decline the representation!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Conflict arises when interests of clients or practitioner diverge",
+            "Can represent with conflict if all three conditions met",
+            "Written consent required within 30 days",
+            "Some conflicts cannot be waived",
+            "When in doubt, decline or refer",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-007',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Circular 230 - Fees and Fee Restrictions',
+    description: 'Understand proper fee arrangements and prohibited contingent fees',
+    order: 7,
+    duration: 35,
+    difficulty: 'intermediate',
+    topics: ['Contingent fees', 'Unconscionable fees', 'Fee restrictions'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Fee arrangements are regulated under Circular 230. Contingent fees are generally prohibited for most IRS matters! Understanding the rules protects you from discipline.",
+        },
+        {
+          title: 'Unconscionable Fees',
+          type: 'text',
+          content: "**Prohibited: Charging unconscionable fees**\n\n**Factors considered:**\n• Time and labor required\n• Novelty and difficulty of questions\n• Skill required\n• Fee customarily charged for similar services\n• Amount involved and results obtained\n• Experience, reputation, and ability of practitioner\n• Whether fee is fixed or contingent",
+        },
+        {
+          title: 'Contingent Fees - General Rule',
+          type: 'text',
+          content: "**Contingent Fee:**\nFee based on whether a specific result is attained (e.g., percentage of refund).\n\n**Generally PROHIBITED for:**\n• Preparing original tax returns\n• Advising on matters before IRS\n\n**Why prohibited:**\n• Might encourage aggressive positions\n• Creates conflict between practitioner and client",
+        },
+        {
+          title: 'Contingent Fees - Exceptions',
+          type: 'text',
+          content: "**Contingent fees ARE permitted for:**\n\n• Examination of return or refund claim (IRS dispute)\n• Claim for credit or refund AFTER return filed\n• Any matter before IRS that is primarily a JUDICIAL matter\n• Whistleblower claims under Section 7623\n\n**Key:** Audit representation and amended returns allow contingent fees.",
+        },
+        {
+          title: 'Fee Documentation',
+          type: 'text',
+          content: "**Best Practices:**\n\n• Written engagement letter\n• Clear fee terms and billing method\n• Scope of services defined\n• Client signature acknowledging\n• Retainer terms if applicable\n\n**Protects both practitioner and client!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Unconscionable fees prohibited",
+            "Contingent fees generally prohibited for return preparation",
+            "Contingent fees allowed for audits and refund claims (after filing)",
+            "Whistleblower claims: contingent fees permitted",
+            "Written engagement letters recommended",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-008',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Preparer Penalties - Section 6694',
+    description: 'Understand preparer penalties for understated tax positions',
+    order: 8,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Section 6694(a)', 'Section 6694(b)', 'Reasonable cause'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Preparer penalties can be substantial! Understanding the standards for tax positions and defenses against penalties is critical for every tax professional.",
+        },
+        {
+          title: 'Section 6694(a): Unreasonable Positions',
+          type: 'text',
+          content: "**Penalty applies if:**\n\nPreparer takes a position that results in understatement AND:\n• Position has no substantial authority (undisclosed), OR\n• Position has no reasonable basis (disclosed)\n\n**Penalty Amount:**\nGreater of $1,000 OR 50% of preparer income from the return\n\n**Standard:** Must have substantial authority (or disclose with reasonable basis)",
+        },
+        {
+          title: 'Section 6694(b): Willful or Reckless',
+          type: 'text',
+          content: "**Penalty applies if understatement due to:**\n\n• Willful attempt to understate tax, OR\n• Reckless or intentional disregard of rules/regulations\n\n**Penalty Amount:**\nGreater of $5,000 OR 75% of preparer income from the return\n\n**Much more serious!**\nBad faith or ignoring known rules.",
+        },
+        {
+          title: 'Standards for Tax Positions',
+          type: 'table',
+          headers: ['Standard', 'Confidence Level', 'When Required'],
+          rows: [
+            ['Reasonable basis', '~20%', 'Minimum for disclosed positions'],
+            ['Substantial authority', '~40%', 'For undisclosed positions'],
+            ['More likely than not', '>50%', 'Tax shelters and some penalties'],
+            ['Should', '~70-75%', 'Written advice covered opinions'],
+          ],
+        },
+        {
+          title: 'Reasonable Cause Defense',
+          type: 'text',
+          content: "**Avoid penalty if:**\n\n• Reasonable cause for the position, AND\n• Preparer acted in good faith\n\n**Defense factors:**\n• Normal office practice\n• Taxpayer furnished necessary information\n• Reliance on professional advice\n• Reasonable interpretation of law\n• Nature of error",
+        },
+        {
+          title: '⚠️ Who is a Preparer?',
+          type: 'warning',
+          content: "**Tax Return Preparer:**\nAny person who prepares all or a substantial portion of any return or claim for refund.\n\n**Includes:**\n• Signing preparer\n• Non-signing preparers who prepare substantial portions\n• Certain advisors whose advice is used\n\n**Excludes:**\n• People who just furnish typing or clerical work\n• Employees who prepare returns for employer",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "6694(a): $1,000 or 50% for unreasonable positions",
+            "6694(b): $5,000 or 75% for willful/reckless conduct",
+            "Substantial authority needed for undisclosed positions",
+            "Disclosure + reasonable basis is alternative",
+            "Reasonable cause and good faith is defense",
+            "Both signing and non-signing preparers can be penalized",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-009',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Preparer Penalties - Section 6695',
+    description: 'Understand administrative preparer penalties and requirements',
+    order: 9,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Failure to sign', 'PTIN', 'Due diligence'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Section 6695 penalties cover administrative failures - not signing returns, failing to keep records, etc. These add up quickly and are easily avoided with proper procedures!",
+        },
+        {
+          title: 'Section 6695 Penalties (2024)',
+          type: 'table',
+          headers: ['Violation', 'Penalty', 'Max/Year'],
+          rows: [
+            ['Failure to furnish copy to taxpayer', '$60', '$30,000'],
+            ['Failure to sign return', '$60', '$30,000'],
+            ['Failure to furnish PTIN', '$60', '$30,000'],
+            ['Failure to retain copy/list', '$60', 'No max per se'],
+            ['Failure to file correct information return', '$60', '$30,000'],
+            ['Negotiating/endorsing refund check', '$600', 'Per check'],
+            ['Due diligence (EIC, CTC, AOTC, HOH)', '$635', 'Per failure'],
+          ],
+        },
+        {
+          title: 'PTIN Requirements',
+          type: 'text',
+          content: "**All paid preparers must:**\n\n• Obtain PTIN before preparing returns\n• Include PTIN on all returns prepared\n• Renew PTIN annually\n• $11 fee for initial/renewal (2024)\n\n**Failure to use valid PTIN:**\n$60 penalty per return (max $30,000/year)",
+        },
+        {
+          title: 'Signing and Copy Requirements',
+          type: 'text',
+          content: "**Signing:**\n• Signing preparer must sign in designated space\n• Can use electronic signature\n• $60 penalty for each failure\n\n**Copies:**\n• Must furnish copy to taxpayer\n• Must retain copy or list for 3 years\n• List must include taxpayer name, TIN, year, type\n\n**Cannot sign blank returns** for later completion!",
+        },
+        {
+          title: 'Due Diligence Requirements (Section 6695(g))',
+          type: 'text',
+          content: "**$635 penalty for each failure** (2024) for:\n\n• Earned Income Credit\n• Child Tax Credit / Additional CTC\n• American Opportunity Tax Credit\n• Head of Household filing status\n\n**Four requirements:**\n1. Complete Form 8867 (Due Diligence Checklist)\n2. Complete applicable worksheets\n3. Make reasonable inquiries\n4. Retain records for 3 years\n\n**Potential $2,540 penalty on one return!**",
+        },
+        {
+          title: 'Refund Check Prohibition',
+          type: 'text',
+          content: "**$600 penalty per check:**\n\nPreparers CANNOT endorse or negotiate (deposit) refund checks for clients.\n\n**Why:** Prevents preparers from taking refund as payment.\n\n**Exception:** NOT a penalty to be listed on direct deposit (bank product).\n\n**This is per check, not per year!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Most 6695 penalties: $60 each, max $30,000/year",
+            "Due diligence penalty: $635 per credit/status",
+            "Must have valid PTIN to prepare for compensation",
+            "Must sign, provide copy, retain records (3 years)",
+            "Cannot negotiate refund checks ($600 each)",
+            "All penalties can be avoided with proper procedures!",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-010',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Circular 230 - Records and Client Communications',
+    description: 'Understand record retention, client communication, and information return requirements',
+    order: 10,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Records retention', 'Client requests', 'Information returns'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Proper record keeping and communication with clients are professional obligations. Understanding what to keep, for how long, and what to return to clients avoids discipline issues!",
+        },
+        {
+          title: 'Return of Client Records',
+          type: 'text',
+          content: "**Must Return Upon Request:**\n\n• All records originally provided by client\n• Needed by client to comply with tax obligations\n\n**May Retain:**\n• Own work product until fees paid\n• Copies of returns prepared\n• Working papers (generally)\n\n**Cannot hold client's original records hostage for fees!**",
+        },
+        {
+          title: 'Practitioner Records Retention',
+          type: 'text',
+          content: "**Required to Keep for 3 Years:**\n\n• Copy of return OR list of returns prepared\n• List includes: taxpayer name, TIN, tax year, type of return\n• Due diligence documentation (Form 8867)\n• Supporting worksheets and documents\n\n**Best Practice:** Keep copies 7+ years (statute considerations).",
+        },
+        {
+          title: 'Prompt Disposition of Matters',
+          type: 'text',
+          content: "**Circular 230 requires:**\n\n• Not unreasonably delay matter pending before IRS\n• Notify client of status and progress\n• Complete agreed work in reasonable time\n\n**Client Communication:**\n• Keep clients informed\n• Return calls and correspondence reasonably\n• Provide copies of IRS correspondence",
+        },
+        {
+          title: 'Advertising Standards',
+          type: 'text',
+          content: "**Must NOT:**\n\n• Make false or misleading statements\n• Claim fee comparison unless verifiable\n• Imply endorsement by IRS\n\n**Professional Designation Use:**\n• May use EA, CPA, Attorney, etc.\n• Must only use if actually hold designation\n• AFSP participants may use specific language only",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Return client's original records upon request",
+            "Keep copies/lists for 3 years minimum",
+            "Cannot delay matters unreasonably",
+            "Keep client informed of case status",
+            "No false or misleading advertising",
+            "Can use professional designations if held",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-011',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Taxpayer Rights - Taxpayer Bill of Rights',
+    description: 'Understand the fundamental rights of taxpayers in dealing with the IRS',
+    order: 11,
+    duration: 45,
+    difficulty: 'beginner',
+    topics: ['Taxpayer Bill of Rights', 'Publication 1', 'Taxpayer Advocate'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "As an EA, you must understand taxpayer rights to effectively represent your clients! The Taxpayer Bill of Rights is foundational to all IRS interactions.",
+        },
+        {
+          title: 'The 10 Taxpayer Rights',
+          type: 'list',
+          content: [
+            "Right to Be Informed",
+            "Right to Quality Service",
+            "Right to Pay No More Than the Correct Amount",
+            "Right to Challenge IRS Position and Be Heard",
+            "Right to Appeal an IRS Decision in an Independent Forum",
+            "Right to Finality",
+            "Right to Privacy",
+            "Right to Confidentiality",
+            "Right to Retain Representation",
+            "Right to a Fair and Just Tax System",
+          ],
+        },
+        {
+          title: 'Key Rights in Practice',
+          type: 'text',
+          content: "**Right to Be Informed:**\n• Know what is needed to comply\n• Be informed of IRS decisions\n\n**Right to Challenge:**\n• Raise objections\n• Provide additional documentation\n\n**Right to Appeal:**\n• Independent review by Appeals Office\n• Right to go to court\n\n**Right to Representation:**\n• May have EA, CPA, or Attorney represent\n• Can suspend interview to consult",
+        },
+        {
+          title: 'Taxpayer Advocate Service',
+          type: 'text',
+          content: "**Independent Organization within IRS:**\n\n**Can help when:**\n• Taxpayer facing significant hardship\n• IRS systems not working properly\n• Issue not resolved through normal channels\n• Action needed to prevent irreparable harm\n\n**How to contact:**\n• Form 911 (Request for Taxpayer Advocate Service)\n• Local Taxpayer Advocate office\n• Toll-free number",
+        },
+        {
+          title: 'Publication 1 - Your Rights as a Taxpayer',
+          type: 'text',
+          content: "**Must be provided:**\n\n• At start of examination\n• With first notice of taxes owed\n• When taxpayer asks\n\n**Contains:**\n• Summary of taxpayer rights\n• Examination, appeal, and collection processes\n• Refund information\n• Taxpayer Advocate contact information",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "10 fundamental taxpayer rights codified",
+            "Right to representation at any IRS meeting",
+            "Right to appeal IRS decisions",
+            "Taxpayer Advocate helps with hardship situations",
+            "Publication 1 must be provided at examination start",
+            "Rights apply to all taxpayers at all times",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-012',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'E-file Requirements and Procedures',
+    description: 'Understand mandatory e-filing requirements for tax professionals',
+    order: 12,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Mandatory e-file', 'ERO requirements', 'E-file signatures'],
+    blueprintArea: 'SEE3-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Electronic filing is now required for most tax professionals. Understanding the rules, ERO responsibilities, and signature requirements is essential for practice!",
+        },
+        {
+          title: 'Mandatory E-file Threshold',
+          type: 'text',
+          content: "**If you file 11+ returns in a calendar year:**\n\n• Must file ALL individual returns electronically\n• Includes any returns covered by e-file program\n\n**Exceptions:**\n• Return rejected and cannot be resubmitted\n• Return not accepted by IRS e-file\n• Taxpayer opts out (Form 8948)\n\nThreshold used to be much higher - lowered significantly!",
+        },
+        {
+          title: 'Electronic Return Originator (ERO)',
+          type: 'text',
+          content: "**ERO Responsibilities:**\n\n• Accept returns for electronic filing\n• Verify taxpayer identification\n• Retain required forms and signatures\n• Submit returns timely\n• Comply with all IRS e-file rules\n\n**Must apply to IRS e-file program** before filing.",
+        },
+        {
+          title: 'Signature Requirements',
+          type: 'table',
+          headers: ['Method', 'Description', 'Requirements'],
+          rows: [
+            ['Self-select PIN', 'Taxpayer creates 5-digit PIN', 'Prior year AGI or prior year PIN'],
+            ['Practitioner PIN', 'Preparer enters PIN with consent', 'Signed Form 8879'],
+            ['Form 8878', 'E-file signature for extensions', 'Different from 8879'],
+            ['Paper signature', 'Not for e-file', 'Only if paper filing'],
+          ],
+        },
+        {
+          title: 'Form 8879 - IRS e-file Signature Authorization',
+          type: 'text',
+          content: "**Required for Practitioner PIN method:**\n\n• Taxpayer signs before transmission\n• ERO retains original or electronic copy\n• Retain for 3 years from return due date\n• Contains taxpayer consent and PIN\n\n**Cannot transmit without signed Form 8879!**",
+        },
+        {
+          title: 'ERO Retention Requirements',
+          type: 'text',
+          content: "**Must Retain 3 Years:**\n\n• Form 8879 (signature authorization)\n• Form 8878 (extension authorization)\n• Copy of return or summary\n• Any supporting documentation\n\n**Electronic or paper retention acceptable.**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Must e-file if preparing 11+ returns",
+            "ERO has specific responsibilities for e-filing",
+            "Form 8879 required for practitioner PIN method",
+            "Retain e-file documents for 3 years",
+            "Taxpayer can opt out with Form 8948",
+            "Apply for IRS e-file program before filing",
+          ],
+        },
+      ],
+    },
+  },
+
   // ============================================================================
   // SEE3-3: SPECIFIC AREAS OF REPRESENTATION (Lessons 13-25)
   // ============================================================================
@@ -715,6 +1145,219 @@ export const eaPart3Lessons: Lesson[] = [
   },
 
   {
+    id: 'SEE3-017',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'IRS Notices and Letters',
+    description: 'Understand common IRS notices and how to respond effectively',
+    order: 17,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['CP notices', 'Letter types', 'Response procedures'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "As an EA, you'll respond to IRS notices regularly! Understanding notice types, deadlines, and proper responses is fundamental to representation.",
+        },
+        {
+          title: 'Common CP Notices (Computerized)',
+          type: 'table',
+          headers: ['Notice', 'Meaning', 'Action'],
+          rows: [
+            ['CP11', 'Math error - balance due', 'Pay or dispute within 60 days'],
+            ['CP14', 'Balance due', 'Pay, set up plan, or dispute'],
+            ['CP21', 'Changes made - refund/balance', 'Review changes, respond if disagree'],
+            ['CP22', 'Changes resulted in balance due', 'Pay or dispute'],
+            ['CP49', 'Refund applied to other taxes owed', 'None if correct - informational'],
+            ['CP501-504', 'Balance due reminders (escalating)', 'Pay or arrange payment'],
+            ['CP2000', 'Income discrepancy (not an audit)', 'Respond within 30 days'],
+          ],
+        },
+        {
+          title: 'Letter Notices (LTR)',
+          type: 'text',
+          content: "**Letter notices generated by employees:**\n\n• LTR 525: General 30-day letter\n• LTR 531: 90-day letter (Notice of Deficiency)\n• LTR 1058/LT11: Final Notice - Intent to Levy\n• LTR 3172: Notice of Federal Tax Lien Filed\n• LTR 3219: Statutory Notice of Deficiency\n\n**Critical:** 90-day letters and levy notices have strict deadlines!",
+        },
+        {
+          title: 'CP2000 - Underreporter Notice',
+          type: 'text',
+          content: "**Not a formal audit, but:**\n\n• IRS matching program found discrepancy\n• Third-party info doesn't match return\n• 30 days to respond\n\n**Response Options:**\n• Agree: Sign and return, pay balance\n• Partially agree: Explain which items correct\n• Disagree: Provide documentation\n\n**Key:** Often about unreported 1099s, can be explained.",
+        },
+        {
+          title: 'Response Best Practices',
+          type: 'list',
+          content: [
+            "Respond by the deadline on notice",
+            "Use the address/fax on the notice - not general IRS address",
+            "Include notice number and taxpayer info on all correspondence",
+            "Keep copies of everything sent",
+            "Use certified mail for deadlines",
+            "Request additional time if needed (usually granted once)",
+          ],
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CP notices are computerized; LTR notices are from employees",
+            "CP2000 is matching notice, not formal audit",
+            "90-day letter (Statutory Notice) is critical deadline",
+            "Always respond by deadline shown on notice",
+            "Use certified mail for important responses",
+            "Keep copies of all correspondence",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-018',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Collection Alternatives',
+    description: 'Master payment options for taxpayers who cannot pay in full',
+    order: 18,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Installment agreements', 'OIC', 'CNC status'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Many clients cannot pay their taxes in full. Understanding collection alternatives helps you protect clients from enforced collection while resolving their liabilities!",
+        },
+        {
+          title: 'Installment Agreements Overview',
+          type: 'table',
+          headers: ['Type', 'Requirements', 'Benefits'],
+          rows: [
+            ['Guaranteed (§6159)', '<$10,000 owed, filed all returns', 'IRS must accept if requested'],
+            ['Streamlined', '<$50,000 owed, pay in 72 months', 'No financials required'],
+            ['Non-streamlined', '>$50,000 or longer term', 'Requires financial disclosure'],
+            ['Partial Pay (PPIA)', "Can't full-pay before CSED", 'Pays what can afford'],
+            ['In-Business Trust Fund Express', '<$25,000 trust fund', 'For payroll tax debts'],
+          ],
+        },
+        {
+          title: 'Streamlined Installment Agreement',
+          type: 'text',
+          content: "**Best option for most clients:**\n\n**Requirements:**\n• Owe $50,000 or less (assessed balance)\n• Can pay off in 72 months or less\n• All required returns filed\n• Current tax compliance going forward\n\n**Benefits:**\n• No financial disclosure required\n• Apply online or by phone\n• User fee (reduced for direct debit)\n\n**Key:** Pay down below $50,000 to qualify!",
+        },
+        {
+          title: 'Offer in Compromise (OIC)',
+          type: 'text',
+          content: "**Settle for less than full amount:**\n\n**Three Types:**\n1. Doubt as to Collectibility (most common)\n2. Doubt as to Liability\n3. Effective Tax Administration (hardship)\n\n**Basic Formula (DATC):**\nOffer = RCP (Reasonable Collection Potential)\nRCP = Future Income + Asset Equity\n\n**Must demonstrate inability to full-pay before CSED!**",
+        },
+        {
+          title: 'Currently Not Collectible (CNC)',
+          type: 'text',
+          content: "**When taxpayer truly cannot pay:**\n\n• All income needed for necessary expenses\n• No ability to make any payment\n• Collection suspended (not forgiven)\n• CSED continues to run\n\n**Requirements:**\n• Full financial disclosure (Form 433-A/B)\n• IRS determines inability to pay\n• Periodic review of status\n\n**Wait for CSED expiration if tax can't be resolved!**",
+        },
+        {
+          title: '⚠️ Protecting the Client During Collection',
+          type: 'warning',
+          content: "**While working on alternative:**\n\n• Get levy released if causing hardship\n• Request Collection Due Process hearing if lien/levy issued\n• Don't let statute of limitations expire on requesting relief\n• File all required returns (IRS won't work with non-filers)\n• Stay current on new liabilities\n\n**Collection doesn't stop automatically - must request!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Guaranteed IA: <$10,000, must accept",
+            "Streamlined: <$50,000, no financials, 72 months",
+            "OIC: Settle for less, must show can't full-pay",
+            "CNC: Collection suspended, CSED runs",
+            "All options require filed returns",
+            "Stay current on new taxes during agreement",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-019',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Collection Due Process and Appeals',
+    description: 'Understand taxpayer rights to challenge collection actions',
+    order: 19,
+    duration: 45,
+    difficulty: 'advanced',
+    topics: ['CDP hearings', 'Equivalent hearings', 'Appeals'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Collection Due Process (CDP) gives taxpayers the right to an independent hearing before (or after) liens and levies! This is a powerful protection you need to know.",
+        },
+        {
+          title: 'When CDP Rights Arise',
+          type: 'text',
+          content: "**Federal Tax Lien (LT11/Letter 3172):**\n• Right to CDP hearing\n• 30 days to request after notice\n\n**Levy (LTR 1058/LT11):**\n• Right to CDP hearing\n• 30 days to request after notice\n\n**First lien/levy triggers CDP rights.**\n\nSubsequent liens/levies: equivalent hearing only.",
+        },
+        {
+          title: 'CDP vs. Equivalent Hearing',
+          type: 'table',
+          headers: ['Feature', 'CDP Hearing', 'Equivalent Hearing'],
+          rows: [
+            ['Request deadline', '30 days', '1 year (after 30-day period)'],
+            ['Suspends collection', 'Yes', 'No'],
+            ['Tolls statute', 'Yes', 'No'],
+            ['Tax Court review', 'Yes', 'No'],
+            ['Form', '12153', '12153'],
+          ],
+        },
+        {
+          title: 'What Can Be Raised at CDP',
+          type: 'list',
+          content: [
+            "Appropriateness of collection action",
+            "Collection alternatives (IA, OIC, CNC)",
+            "Spousal defenses",
+            "Underlying tax liability (if no prior opportunity)",
+            "Procedural errors by IRS",
+            "Whether lien/levy meets legal requirements",
+          ],
+        },
+        {
+          title: 'CDP Process',
+          type: 'text',
+          content: "**Steps:**\n\n1. Receive CDP notice (LT11, Letter 3172, etc.)\n2. File Form 12153 within 30 days\n3. Case assigned to Settlement Officer\n4. Hearing (phone, in-person, or correspondence)\n5. Determination letter issued\n6. 30 days to petition Tax Court if disagree\n\n**Collection suspended during CDP (except for collection period)!**",
+        },
+        {
+          title: '⚠️ Critical Deadlines',
+          type: 'warning',
+          content: "**MUST file Form 12153 within 30 days for:**\n\n• Collection suspension\n• Tax Court review rights\n• Statute tolling\n\n**After 30 days:**\n• Only equivalent hearing available\n• Collection continues\n• No Tax Court review\n\n**Calendar this immediately upon receipt of CDP notice!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CDP: 30 days to request, suspends collection",
+            "Equivalent hearing: After 30 days, no suspension",
+            "Use Form 12153 for both types",
+            "Can raise collection alternatives at hearing",
+            "Underlying liability: only if no prior opportunity",
+            "Tax Court review only for timely CDP request",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE3-5: SPECIFIC AREAS - STATUTES AND TIMING (Lessons 20-25)
+  // ============================================================================
+
+  {
     id: 'SEE3-020',
     courseId: 'ea',
     section: 'SEE3',
@@ -778,6 +1421,738 @@ export const eaPart3Lessons: Lesson[] = [
             "Certain events suspend collection statute (bankruptcy, OIC, CDP)",
             "Protective claims preserve refund rights when statute running",
             "No return filed = no statute starts running on assessment",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE3-3: EXAMINATION PROCEDURES (Lessons 21-25)
+  // ============================================================================
+
+  {
+    id: 'SEE3-021',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Office and Field Examinations',
+    description: 'Master in-person audit preparation and representation strategies',
+    order: 21,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Preparation', 'IDRs', 'Representation strategies'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "In-person audits require face-time with IRS examiners. Your preparation and representation skills directly impact outcomes. Know how to prepare clients, handle document requests, and navigate the examination process.",
+        },
+        {
+          title: 'Types of Examinations',
+          type: 'table',
+          headers: ['Type', 'Location', 'Complexity', 'Issues'],
+          rows: [
+            ['Correspondence', 'By mail', 'Simple', 'Single issues, documentation'],
+            ['Office Audit', 'IRS office', 'Moderate', 'Multiple issues, interviews'],
+            ['Field Audit', 'Taxpayer location', 'Complex', 'Businesses, high-income, multiple years'],
+            ['TCMP/NRP', 'Varies', 'Comprehensive', 'Statistical sampling audits'],
+          ],
+        },
+        {
+          title: 'Pre-Audit Preparation',
+          type: 'text',
+          content: "**Before the Examination:**\n\n1. **Review the Return**\n   • Identify potential issues before IRS does\n   • Understand each item that may be questioned\n   • Locate all supporting documentation\n\n2. **Gather Documentation**\n   • Organize by issue and year\n   • Make copies - never give originals\n   • Identify gaps and address them\n\n3. **Interview the Client**\n   • Understand facts behind each item\n   • Identify potential problem areas\n   • Prepare client for possible questions",
+        },
+        {
+          title: 'Office Audit Procedures',
+          type: 'text',
+          content: "**Conducted at IRS Office:**\n\n**Initial Contact:**\n• IRS sends appointment letter\n• Lists items to be examined\n• Specifies documents to bring\n\n**At the Audit:**\n• Present only requested documents\n• Answer only questions asked\n• Don't volunteer information\n• Take notes on discussions\n• Request breaks if needed\n\n**Your Role as Representative:**\n• Attend without client (if permitted and appropriate)\n• Control information flow\n• Advocate for client's positions",
+        },
+        {
+          title: 'Field Audit Procedures',
+          type: 'text',
+          content: "**Conducted at Taxpayer's Location:**\n\n**Why Field Audit?**\n• Business examinations\n• Complex returns\n• Need to inspect books and records on-site\n• High-income individuals\n\n**Controlling the Environment:**\n• Designate conference room away from operations\n• Keep other records out of sight\n• Have records organized and ready\n• Don't let examiner wander freely\n\n**Revenue Agent vs. Revenue Officer:**\n• Revenue Agent: Conducts examinations\n• Revenue Officer: Collections (different function)",
+        },
+        {
+          title: 'Information Document Requests (IDRs)',
+          type: 'text',
+          content: "**IDR Process:**\n\n• Written request from examiner for documents\n• Specifies items needed and deadline\n• Must respond timely\n\n**Best Practices:**\n• Request clarification if unclear\n• Negotiate deadlines if needed\n• Provide ONLY what's requested\n• Document what you provide\n• Keep copies of everything submitted\n\n**Extensions:** Usually granted if requested before deadline",
+        },
+        {
+          title: '⚠️ Common Audit Mistakes',
+          type: 'warning',
+          content: "**Avoid These Errors:**\n\n• Volunteering extra information\n• Letting client speak without preparation\n• Providing documents not requested\n• Missing IDR deadlines\n• Being confrontational with examiner\n• Failing to document what was discussed\n\n**Remember:** Examiners can expand scope if they find issues you didn't expect!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Office audits at IRS; field audits at taxpayer location",
+            "Thorough preparation is critical before any examination",
+            "Provide only documents specifically requested",
+            "Respond to IDRs timely - request extensions if needed",
+            "Representative can often attend without client",
+            "Document all discussions and items provided",
+            "Don't volunteer information beyond what's asked",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-022',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Information Document Requests',
+    description: 'Master responding to IRS document requests and protecting privileges',
+    order: 22,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Responding to IDRs', 'Extensions', 'Privileges'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "IDRs are the IRS's formal method of requesting documents during an examination. How you respond affects the audit's scope, duration, and outcome. Know how to respond strategically and protect privileges.",
+        },
+        {
+          title: 'What is an IDR?',
+          type: 'text',
+          content: "**Information Document Request (Form 4564):**\n\n• Formal written request for documents\n• Lists specific items needed\n• Provides response deadline (usually 10-30 days)\n• Part of the permanent examination file\n\n**Types of Requests:**\n• Documents (bank statements, receipts, contracts)\n• Information (explanations, lists)\n• Third-party contacts (may require notice)",
+        },
+        {
+          title: 'Responding Best Practices',
+          type: 'table',
+          headers: ['Do', 'Don\'t'],
+          rows: [
+            ['Respond by deadline', 'Ignore IDRs'],
+            ['Provide only what\'s requested', 'Volunteer extra documents'],
+            ['Organize documents logically', 'Send messy, unorganized pile'],
+            ['Create transmittal letter listing items', 'Leave examiner to guess what you sent'],
+            ['Keep copies of everything', 'Give originals without copies'],
+            ['Request extension before deadline', 'Request extension after deadline'],
+          ],
+        },
+        {
+          title: 'Requesting Extensions',
+          type: 'text',
+          content: "**When You Need More Time:**\n\n1. Contact examiner BEFORE deadline\n2. Explain reason for delay\n3. Propose specific new deadline\n4. Document the agreement in writing\n\n**Reasonable Reasons:**\n• Volume of documents requested\n• Need to obtain from third parties\n• Client unavailability\n• Natural disaster or emergency\n\n**Unreasonable:** Simply not wanting to comply",
+        },
+        {
+          title: 'Privileges and Protections',
+          type: 'text',
+          content: "**Attorney-Client Privilege:**\n• For communications with attorneys seeking legal advice\n• Does NOT extend to EAs (limited exception below)\n\n**Tax Practitioner Privilege (IRC §7525):**\n• Limited privilege for federally authorized practitioners\n• Only for non-criminal tax matters\n• Does NOT apply to tax shelter advice\n• Does NOT protect work papers\n\n**Work Product Doctrine:**\n• Protects materials prepared in anticipation of litigation\n• May not apply during examination phase",
+        },
+        {
+          title: 'What Must Be Produced',
+          type: 'text',
+          content: "**IRS Has Broad Authority:**\n\n• All books and records relevant to tax liability\n• Bank statements and cancelled checks\n• Contracts and agreements\n• Correspondence related to transactions\n• Workpapers (generally not privileged)\n\n**Exceptions:**\n• Truly privileged communications\n• Items not relevant to examination\n• Items already in IRS possession",
+        },
+        {
+          title: '⚠️ Summons Power',
+          type: 'warning',
+          content: "**If You Refuse to Comply:**\n\nIRS can issue a **Summons** (IRC §7602):\n• Compels production of documents\n• Compels testimony under oath\n• Enforceable in federal court\n\n**Failure to comply with summons:**\n• Contempt of court\n• Potential criminal penalties\n\n**Better approach:** Negotiate scope, request extensions, but ultimately comply.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "IDRs are formal document requests - respond timely",
+            "Provide only what's specifically requested",
+            "Request extensions BEFORE deadline expires",
+            "Tax practitioner privilege is limited - doesn't cover work papers",
+            "Keep copies and document what you provide",
+            "IRS can issue summons if you don't comply",
+            "Transmittal letters create clear record of responses",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-023',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Examination Closing Procedures',
+    description: 'Understand how examinations conclude and client options at each stage',
+    order: 23,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['No change', 'Agreed cases', 'Unagreed cases'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "How an examination closes determines your client's next steps. Understanding the difference between agreed, unagreed, and no-change closures lets you advise clients on options and prepare for potential appeals.",
+        },
+        {
+          title: 'Three Examination Outcomes',
+          type: 'table',
+          headers: ['Outcome', 'Definition', 'Next Steps'],
+          rows: [
+            ['No Change', 'IRS accepts return as filed', 'Case closed, no further action'],
+            ['Agreed', 'Taxpayer agrees with all changes', 'Sign Form 870, pay or set up payment plan'],
+            ['Unagreed', 'Taxpayer disagrees with some/all', '30-day letter, Appeals, Tax Court'],
+          ],
+        },
+        {
+          title: 'No Change Closure',
+          type: 'text',
+          content: "**Best Outcome:**\n\n• Examiner found no adjustments\n• Return accepted as filed\n• Client receives \"No Change\" letter\n• Case is closed\n\n**Keep Records:**\n• Retain documentation used in audit\n• May be relevant if future years examined\n• Shows positions were previously accepted",
+        },
+        {
+          title: 'Agreed Cases',
+          type: 'text',
+          content: "**When Client Agrees with Adjustments:**\n\n1. **Examiner prepares Form 4549** (Income Tax Examination Changes)\n   • Shows proposed adjustments\n   • Calculates additional tax, penalties, interest\n\n2. **Client signs Form 870** (Waiver of Restrictions)\n   • Waives requirement for statutory notice (90-day letter)\n   • Allows immediate assessment\n   • Interest continues until paid\n\n3. **Assessment and Payment**\n   • Tax assessed when Form 870 processed\n   • Client has options for payment (lump sum, installment)\n\n**Note:** Signing Form 870 generally cannot be undone!",
+        },
+        {
+          title: 'Unagreed Cases',
+          type: 'text',
+          content: "**When Client Disagrees:**\n\n1. **Request Manager Conference**\n   • Meet with examiner's supervisor\n   • May resolve issues at this level\n\n2. **Receive 30-Day Letter**\n   • Preliminary notice of proposed changes\n   • Right to appeal within 30 days\n\n3. **Choose Response:**\n   • Request Appeals conference\n   • Accept changes and pay\n   • Do nothing (leads to 90-day letter)\n\n4. **If Still Unagreed: Statutory Notice (90-Day Letter)**\n   • Formal notice of deficiency\n   • 90 days to petition Tax Court",
+        },
+        {
+          title: 'Form 870 vs. Form 870-AD',
+          type: 'table',
+          headers: ['Form', 'When Used', 'Effect'],
+          rows: [
+            ['Form 870', 'Agreed at exam level', 'Waives 90-day letter, cannot be reopened except for fraud'],
+            ['Form 870-AD', 'Agreed at Appeals', 'Closing agreement, prevents refund claim, prevents IRS reopening'],
+          ],
+        },
+        {
+          title: '⚠️ When NOT to Agree',
+          type: 'warning',
+          content: "**Consider rejecting settlement if:**\n\n• Legal position is strong\n• Penalty abatement is warranted but not offered\n• Significant dollar amounts involved\n• Examiner misunderstands facts or law\n• Client willing to pursue Appeals or Tax Court\n\n**Appeals** often reaches better results than examination level!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "No change = case closed with return accepted",
+            "Agreed = sign Form 870, waive right to 90-day letter",
+            "Unagreed = receive 30-day letter with appeal rights",
+            "Manager conference may resolve issues before appeal",
+            "Form 870 generally cannot be undone once signed",
+            "Form 870-AD at Appeals is a closing agreement",
+            "Appeals often achieves better results than examination",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-024',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: '30-Day and 90-Day Letters',
+    description: 'Understand IRS preliminary and statutory notices and response options',
+    order: 24,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['30-day letter', '90-day letter', 'Response options'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The 30-day and 90-day letters are critical decision points in the examination process. Missing deadlines can eliminate options. Know what each letter means and how to respond.",
+        },
+        {
+          title: 'The 30-Day Letter',
+          type: 'text',
+          content: "**Preliminary Notice:**\n\n**What It Is:**\n• IRS proposal of changes\n• NOT a formal assessment\n• Invitation to agree or appeal\n\n**Contains:**\n• Examination report (Form 4549)\n• Explanation of changes\n• Appeal rights information (Pub 5)\n\n**Response Options (within 30 days):**\n1. Sign and agree\n2. Request Appeals conference\n3. Provide additional information\n4. Do nothing (leads to 90-day letter)",
+        },
+        {
+          title: 'Responding to 30-Day Letter',
+          type: 'table',
+          headers: ['Response', 'Result', 'When Appropriate'],
+          rows: [
+            ['Sign Form 870', 'Case closed, assessment issued', 'Agree with changes'],
+            ['Written protest to Appeals', 'Appeals conference scheduled', 'Disagree, want administrative appeal'],
+            ['Small case request', 'Informal Appeals conference', 'Tax + penalties ≤ $25,000 per period'],
+            ['Submit more information', 'May resolve issues', 'Have evidence not yet considered'],
+            ['No response', 'Receive 90-day letter', 'Want court option'],
+          ],
+        },
+        {
+          title: 'The 90-Day Letter (Statutory Notice of Deficiency)',
+          type: 'text',
+          content: "**The \"Ticket to Tax Court\":**\n\n**What It Is:**\n• Formal statutory notice required before assessment\n• Also called \"Notice of Deficiency\"\n• Certified mail to last known address\n\n**Critical Deadline:**\n• **90 days** from mailing to petition Tax Court\n• **150 days** if addressed outside the US\n• Missing deadline = lose Tax Court option!\n\n**Effect:**\n• Allows IRS to assess after 90 days\n• Freezes assessment during petition period\n• Starts prepayment forum jurisdiction",
+        },
+        {
+          title: 'Response Options to 90-Day Letter',
+          type: 'text',
+          content: "**Within 90 Days:**\n\n**Option 1: Petition Tax Court**\n• Prepay is NOT required\n• Get judicial review of proposed deficiency\n• Must file timely petition\n\n**Option 2: Agree and Pay**\n• Sign and return agreement\n• Pay or set up payment plan\n• Case closed\n\n**Option 3: Do Nothing**\n• After 90 days, IRS assesses tax\n• Collection process begins\n• Can still contest by paying and filing refund claim",
+        },
+        {
+          title: 'Calculating the 90-Day Deadline',
+          type: 'text',
+          content: "**The deadline is statutory - no extensions!**\n\n**Calculate from mailing date:**\n• Date on letter (postmark date for processing)\n• Add 90 calendar days\n• If 90th day is Saturday, Sunday, or holiday, next business day applies\n\n**Example:**\n• Letter dated January 15\n• 90 days = April 15\n• If April 15 is weekend, deadline is next Monday\n\n**The date the petition is FILED (received) matters, not mailing date (usually)!**\n\n**Electronic filing:** Available and encouraged",
+        },
+        {
+          title: '⚠️ Critical: Address Changes',
+          type: 'warning',
+          content: "**IRS sends notice to \"last known address\":**\n\n• If client moved, may not receive 90-day letter!\n• Letter sent to old address is still valid\n• 90-day clock still runs\n\n**Protect Clients:**\n• File Form 8822 (change of address) promptly\n• Consider USPS mail forwarding\n• Monitor client addresses in IRS records\n\n**Missed deadline = no Tax Court = must pay first then sue in refund forum!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "30-day letter is preliminary - invites agreement or appeal",
+            "90-day letter is statutory notice required for deficiency",
+            "90 days to petition Tax Court - NO EXTENSIONS",
+            "Missing 90-day deadline = lose prepayment forum",
+            "Sent to last known address - valid even if not received",
+            "Small case letter allows informal Appeals for ≤$25,000",
+            "Tax Court petition does NOT require prepayment",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-025',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'IRS Appeals Process',
+    description: 'Master the administrative appeals process for tax disputes',
+    order: 25,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Appeals conference', 'Protest requirements', 'Settlement strategies'],
+    blueprintArea: 'SEE3-6',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "IRS Appeals resolves most tax disputes without litigation. Appeals officers have authority to settle cases based on hazards of litigation. Knowing how Appeals works lets you achieve better outcomes for clients.",
+        },
+        {
+          title: 'What is IRS Appeals?',
+          type: 'text',
+          content: "**Independent Division of IRS:**\n\n• Separate from Examination\n• Mission is to resolve disputes fairly\n• Settlement authority based on litigation hazards\n• Informal process (not like court)\n\n**Key Concept: Hazards of Litigation**\nAppeals considers the likelihood that IRS would win in court. If IRS position is weak, they'll settle!",
+        },
+        {
+          title: 'How to Request Appeals',
+          type: 'table',
+          headers: ['Amount', 'Requirement', 'Process'],
+          rows: [
+            ['≤ $25,000 total', 'Small case request letter', 'Brief written statement'],
+            ['> $25,000', 'Formal written protest', 'Detailed statement of facts and law'],
+            ['Collection matters', 'CDP or equivalent hearing request', 'Form 12153'],
+          ],
+        },
+        {
+          title: 'Written Protest Requirements',
+          type: 'text',
+          content: "**For amounts over $25,000, include:**\n\n1. Statement requesting Appeals conference\n2. Your name, address, and contact information\n3. Copy of the letter showing proposed changes\n4. Tax periods or years involved\n5. Statement of facts (in your words, not IRS's)\n6. Discussion of applicable law\n7. Argument why you disagree\n8. Penalty of perjury statement\n\n**Submit within the time stated in IRS letter** (usually 30 days)",
+        },
+        {
+          title: 'The Appeals Conference',
+          type: 'text',
+          content: "**What to Expect:**\n\n• Informal meeting (in-person, video, or phone)\n• Present your case and arguments\n• Appeals Officer considers both sides\n• May request additional documentation\n• Has settlement authority\n\n**Preparation:**\n• Organize legal arguments by issue\n• Identify strengths and weaknesses\n• Know your \"walk away\" point\n• Prepare client for possible outcomes\n• Bring documentation to support positions",
+        },
+        {
+          title: 'Settlement Strategies',
+          type: 'text',
+          content: "**Effective Approaches:**\n\n**1. Focus on hazards of litigation**\n• Show where IRS position is legally weak\n• Cite relevant case law\n\n**2. Split the baby**\n• Propose splitting contested amounts\n• Shows reasonableness\n\n**3. Trade issues**\n• Concede weak issues\n• Fight strong issues harder\n\n**4. Penalty abatement**\n• Often available even when tax sustained\n• Reasonable cause arguments\n\n**Appeals often achieves 20-50% reductions!**",
+        },
+        {
+          title: '⚠️ Ex Parte Communication Rules',
+          type: 'warning',
+          content: "**Appeals must remain independent:**\n\n• Prohibited from certain communications with Exam\n• Cannot discuss specific facts of case with examiner\n• Can only discuss legal interpretations\n\n**Why it matters:**\n• You get fresh look at case\n• Appeals isn't bound by examiner's views\n• Different decision-maker may see it differently",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Appeals is independent from Examination",
+            "Settlement based on hazards of litigation",
+            "Small cases (≤$25K): Brief letter request",
+            "Larger cases: Formal written protest required",
+            "Focus arguments on where IRS is legally weak",
+            "Appeals often achieves significant reductions",
+            "Penalty abatement commonly available at Appeals",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE3-4: FILING REQUIREMENTS (Lessons 26-30)
+  // ============================================================================
+
+  {
+    id: 'SEE3-026',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Return Filing Requirements',
+    description: 'Master who must file and when for various return types',
+    order: 26,
+    duration: 45,
+    difficulty: 'beginner',
+    topics: ['Individual returns', 'Business returns', 'Due dates'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Knowing who must file and when is fundamental! Penalties apply for late or missing returns. As a practitioner, ensuring clients meet filing obligations is one of your core responsibilities.",
+        },
+        {
+          title: 'Individual Filing Requirements',
+          type: 'table',
+          headers: ['Filing Status', 'Under 65', '65 or Older'],
+          rows: [
+            ['Single', '$14,600', '$16,550'],
+            ['Head of Household', '$21,900', '$23,850'],
+            ['MFJ (both under 65)', '$29,200', '-'],
+            ['MFJ (one 65+)', '-', '$30,750'],
+            ['MFJ (both 65+)', '-', '$32,300'],
+            ['MFS', '$5 (any)', '$5 (any)'],
+          ],
+        },
+        {
+          title: 'Must File Regardless of Income',
+          type: 'text',
+          content: "**Special filing requirements:**\n\n• Self-employment income ≥ $400\n• Social Security/Medicare tax on tips not reported to employer\n• Advance Premium Tax Credit received\n• Health Savings Account distributions\n• Alternative minimum tax owed\n• Household employment taxes owed\n• Recapture taxes (first-time homebuyer, education)\n• Write-in taxes\n\n**Also file to claim refund or refundable credit!**",
+        },
+        {
+          title: 'Business Return Due Dates',
+          type: 'table',
+          headers: ['Entity Type', 'Form', 'Due Date (Calendar Year)', 'Extended Due Date'],
+          rows: [
+            ['Sole Proprietorship', 'Schedule C with 1040', 'April 15', 'October 15'],
+            ['Partnership', 'Form 1065', 'March 15', 'September 15'],
+            ['S Corporation', 'Form 1120-S', 'March 15', 'September 15'],
+            ['C Corporation', 'Form 1120', 'April 15', 'October 15'],
+            ['Trust/Estate', 'Form 1041', 'April 15', 'September 30'],
+          ],
+        },
+        {
+          title: 'Information Return Due Dates',
+          type: 'text',
+          content: "**Forms 1099-NEC:** Due January 31 (to IRS and recipients)\n\n**Forms 1099-MISC, 1099-INT, etc.:**\n• To recipients: January 31\n• To IRS: February 28 (paper) or March 31 (electronic)\n\n**Forms W-2:**\n• To employees: January 31\n• To SSA: January 31\n\n**E-file mandate:** Required for 10+ information returns",
+        },
+        {
+          title: 'Fiscal Year Due Dates',
+          type: 'text',
+          content: "**For non-calendar year taxpayers:**\n\n• Return due 15th day of 4th month after year end\n• Extension adds 6 months (5 months for certain entities)\n\n**Example: Fiscal year ending June 30:**\n• Original due date: October 15\n• Extended due date: April 15 (following year)\n\n**Partnerships/S Corps with fiscal years:**\n• Due 15th day of 3rd month after year end",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Individual thresholds vary by filing status and age",
+            "Must file with SE income ≥ $400 regardless of threshold",
+            "Partnerships/S Corps due March 15 (calendar year)",
+            "C Corps/Individuals due April 15 (calendar year)",
+            "1099-NEC due January 31 to both IRS and recipients",
+            "E-file required for 10+ information returns",
+            "File even below threshold if refund or credit available",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-027',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Extensions and Estimated Taxes',
+    description: 'Master extension procedures and estimated tax safe harbors',
+    order: 27,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Automatic extensions', 'Estimated tax payments', 'Safe harbors'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Extensions give clients more time to file without penalty, but payment is still due on time. Understanding estimated tax requirements prevents underpayment penalties throughout the year.",
+        },
+        {
+          title: 'Extension Forms and Periods',
+          type: 'table',
+          headers: ['Return Type', 'Extension Form', 'Extension Period'],
+          rows: [
+            ['Individual (Form 1040)', 'Form 4868', '6 months (to Oct 15)'],
+            ['Partnership (Form 1065)', 'Form 7004', '6 months (to Sep 15)'],
+            ['S Corporation (Form 1120-S)', 'Form 7004', '6 months (to Sep 15)'],
+            ['C Corporation (Form 1120)', 'Form 7004', '6 months (to Oct 15)'],
+            ['Estate/Trust (Form 1041)', 'Form 7004', '5½ months (to Sep 30)'],
+          ],
+        },
+        {
+          title: 'Extensions - Key Points',
+          type: 'text',
+          content: "**Extension Extends TIME TO FILE, NOT TIME TO PAY!**\n\n**Automatic upon filing:**\n• No reason required\n• IRS does not \"approve\"\n• Just file timely and extension is granted\n\n**Payment still due:**\n• Estimate tax and pay with extension\n• Failure to pay = penalty + interest\n• Interest runs from original due date\n\n**Auto-extension for overseas:**\n• U.S. citizens/residents abroad: 2-month auto-extension\n• Interest still accrues from original due date!",
+        },
+        {
+          title: 'Estimated Tax Requirements',
+          type: 'text',
+          content: "**Who Must Pay Estimates:**\n\n• Expected liability ≥ $1,000 after withholding and credits\n• Self-employed individuals\n• Investors with significant gains/dividends\n• Retirees without adequate withholding\n\n**Quarterly Due Dates (Calendar Year):**\n• Q1: April 15\n• Q2: June 15\n• Q3: September 15\n• Q4: January 15 (following year)",
+        },
+        {
+          title: 'Safe Harbor Rules',
+          type: 'text',
+          content: "**Avoid Penalty by Paying Either:**\n\n**Option 1: Current Year Method**\n• 90% of current year's tax liability\n\n**Option 2: Prior Year Method**\n• 100% of prior year's tax liability, OR\n• 110% if prior year AGI > $150,000 ($75,000 MFS)\n\n**Prior year safe harbor is usually easier** - you know the amount!\n\n**Requirements:**\n• Prior year was 12-month tax year\n• Prior year had a tax liability",
+        },
+        {
+          title: 'Annualized Income Method',
+          type: 'text',
+          content: "**For Uneven Income Throughout Year:**\n\nIf income varies seasonally:\n• Can annualize income each quarter\n• Pay estimates based on income earned through period\n\n**Form 2210, Schedule AI required**\n\n**Useful for:**\n• Seasonal businesses\n• Capital gains realized in one quarter\n• Bonuses received late in year\n\n**Benefit:** Lower early estimates when income is low",
+        },
+        {
+          title: '⚠️ Underpayment Penalty',
+          type: 'warning',
+          content: "**Penalty if you don't meet safe harbors:**\n\n• Interest-based penalty on underpayment\n• Calculated quarter by quarter\n• IRS or Form 2210 computes amount\n\n**No penalty if:**\n• Total tax less than $1,000\n• You paid 100% (or 110%) of prior year\n• You paid 90% of current year\n\n**Increased withholding = estimated payments!**\nWithholding is treated as paid evenly throughout the year.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Form 4868 extends filing to October 15 (individuals)",
+            "Extension is automatic - no approval needed",
+            "Payment still due by original due date",
+            "Estimate safe harbors: 90% current OR 100%/110% prior year",
+            "Quarterly estimates: April, June, September, January",
+            "Annualized income method for seasonal income variation",
+            "Increase W-4 withholding as alternative to estimates",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-028',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Electronic Filing Requirements',
+    description: 'Understand e-file mandates and preparer requirements',
+    order: 28,
+    duration: 40,
+    difficulty: 'beginner',
+    topics: ['E-file mandate', 'ERO requirements', 'Signatures'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Electronic filing is now the standard. Most preparers must e-file, and clients expect it. Know the mandates, ERO responsibilities, and signature requirements.",
+        },
+        {
+          title: 'E-File Mandates',
+          type: 'table',
+          headers: ['Preparer Type', 'E-File Required When'],
+          rows: [
+            ['Tax Return Preparers', 'File 11+ individual returns per year'],
+            ['Partnerships', '100+ partners (must e-file)'],
+            ['Corporations', 'Assets ≥ $10 million'],
+            ['Information Returns', '10+ returns (aggregate)'],
+            ['Employment Returns', 'Varies by form and filer size'],
+          ],
+        },
+        {
+          title: 'ERO Responsibilities',
+          type: 'text',
+          content: "**Electronic Return Originator (ERO):**\n\n**A preparer who e-files must:**\n• Apply to be Authorized IRS e-file Provider\n• Complete e-file application\n• Pass suitability check\n• Comply with Pub 1345 requirements\n\n**ERO Duties:**\n• Collect taxpayer signatures (Form 8879)\n• Retain signed authorization 3 years\n• Provide copy of return to taxpayer\n• Correct rejected returns promptly",
+        },
+        {
+          title: 'Form 8879: IRS e-file Signature Authorization',
+          type: 'text',
+          content: "**Required Before Transmitting Return:**\n\n• Taxpayer (and spouse) must sign\n• Authorizes ERO to enter PIN for e-signature\n• Authorizes direct deposit/debit\n• Must be signed AFTER return is complete\n\n**Cannot transmit before obtaining signature!**\n\n**Retain Form 8879 for 3 years** from due date or filing date, whichever is later.",
+        },
+        {
+          title: 'Electronic Signatures',
+          type: 'text',
+          content: "**Self-Select PIN Program:**\n• Taxpayer creates 5-digit PIN\n• Used to sign e-filed return\n• ERO enters on behalf of taxpayer (with authorization)\n\n**Practitioner PIN:**\n• Preparer enters taxpayer's prior-year AGI or PIN\n• Creates signature for current return\n\n**Remote Transactions:**\n• IRS permits electronic signatures on Form 8879\n• Specific requirements apply (email, portal, etc.)\n• Made permanent after COVID-era temporary rules",
+        },
+        {
+          title: 'Rejected Returns',
+          type: 'text',
+          content: "**If E-File Is Rejected:**\n\n1. Notify taxpayer within 24 hours\n2. Take reasonable steps to fix error\n3. Re-transmit corrected return\n\n**Common Rejection Reasons:**\n• Duplicate SSN (already filed)\n• AGI/PIN mismatch\n• Incorrect dependent SSN\n• Name/SSN mismatch with SSA records\n\n**If can't be fixed:** May file paper return with rejection code",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Preparers filing 11+ returns must e-file",
+            "Must be Authorized IRS e-file Provider",
+            "Form 8879 required before transmitting",
+            "Retain Form 8879 for 3 years",
+            "Electronic signatures now permitted on 8879",
+            "Fix and re-transmit rejected returns within 24 hours",
+            "Paper filing allowed if e-file rejected and uncorrectable",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-029',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Non-Filer Procedures',
+    description: 'Handle clients who haven\'t filed required returns',
+    order: 29,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['SFR', 'Delinquent returns', 'Compliance'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Many potential clients walk in with years of unfiled returns. Knowing how to bring them into compliance, deal with IRS notices, and challenge substitute returns is essential for building a tax practice.",
+        },
+        {
+          title: 'Substitute for Return (SFR)',
+          type: 'text',
+          content: "**What is an SFR?**\n\nIf you don't file, IRS can prepare a return FOR you:\n• Uses available information (W-2s, 1099s)\n• Files as Single or MFS (least favorable)\n• No itemized deductions\n• No exemptions/credits\n• Almost always OVERSTATES tax\n\n**The SFR is assessed, and collection begins!**",
+        },
+        {
+          title: 'SFR Process',
+          type: 'table',
+          headers: ['Step', 'IRS Action', 'Taxpayer Response'],
+          rows: [
+            ['1', 'Send CP59/CP515 (notice to file)', 'File return or respond'],
+            ['2', 'Send CP518 (second notice)', 'File return or respond'],
+            ['3', 'Prepare and process SFR', 'SFR assesses tax due'],
+            ['4', 'Issue Notice of Deficiency (90-day)', 'Petition Tax Court OR file actual return'],
+            ['5', 'Assess tax and begin collection', 'Collection Due Process rights'],
+          ],
+        },
+        {
+          title: 'Filing Delinquent Returns',
+          type: 'text',
+          content: "**To Replace an SFR:**\n\n1. Prepare accurate return for the year(s)\n2. File with IRS (by mail if e-file rejected)\n3. Include all applicable deductions and credits\n4. Show correct tax liability\n\n**IRS Processing:**\n• Reviews filed return vs. SFR\n• Adjusts assessment if return accepted\n• May audit filed return\n\n**Time limit:** Generally none to file correcting return, but refunds expire after 3 years from original due date",
+        },
+        {
+          title: 'Penalty Relief for Non-Filers',
+          type: 'text',
+          content: "**First Time Abatement:**\n• Available if prior 3 years clean\n• Covers failure-to-file and failure-to-pay\n• Request when filing delinquent returns\n\n**Reasonable Cause:**\n• Medical issues, natural disasters\n• Death in family\n• Reliance on professional\n• Document thoroughly!\n\n**File extension for future years** even if not ready to file the return",
+        },
+        {
+          title: 'Voluntary Disclosure Practice',
+          type: 'text',
+          content: "**For Serious Non-Compliance:**\n\n**Criminal Investigation Voluntary Disclosure:**\n• Pre-clearance required\n• Before IRS initiates investigation\n• May avoid criminal prosecution\n• Civil penalties still apply\n\n**Offshore Voluntary Disclosure:**\n• For unreported foreign income/accounts\n• Specific procedures apply\n• Better than getting caught!\n\n**Consult with specialists** for serious non-filer cases",
+        },
+        {
+          title: '⚠️ Practice Tips',
+          type: 'warning',
+          content: "**Working with Non-Filers:**\n\n• Get ALL prior returns filed before current year\n• IRS prioritizes compliance - show good faith\n• Request penalty abatement in writing\n• Consider Installment Agreement for amounts owed\n• Watch refund statutes - they expire!\n\n**Document everything** - these cases often have collection issues too",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SFR is IRS-prepared return - usually wrong and overstated",
+            "SFR uses single/MFS, no deductions, no credits",
+            "Can replace SFR by filing accurate return",
+            "First Time Abatement available if prior 3 years clean",
+            "Refund expires 3 years from original due date",
+            "Get all delinquent years filed for compliance",
+            "Serious cases may need criminal defense counsel",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE3-030',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Penalties and Interest',
+    description: 'Master common penalties, interest calculations, and abatement strategies',
+    order: 30,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Failure to file', 'Failure to pay', 'Accuracy penalties', 'Abatement'],
+    blueprintArea: 'SEE3-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Penalties and interest can exceed the original tax! Knowing the penalty structure, how interest compounds, and strategies for abatement helps you protect clients and manage their liabilities.",
+        },
+        {
+          title: 'Common Civil Penalties',
+          type: 'table',
+          headers: ['Penalty', 'Rate', 'Maximum', 'Statute'],
+          rows: [
+            ['Failure to File (FTF)', '5%/month of unpaid tax', '25%', 'IRC §6651(a)(1)'],
+            ['Failure to Pay (FTP)', '0.5%/month of unpaid tax', '25%', 'IRC §6651(a)(2)'],
+            ['Combined FTF + FTP', 'Net 5%/month', '25% + 25% = 47.5%', '-'],
+            ['Accuracy-Related', '20% of underpayment', 'No maximum', 'IRC §6662'],
+            ['Fraud', '75% of underpayment', 'No maximum', 'IRC §6663'],
+          ],
+        },
+        {
+          title: 'Failure to File vs. Failure to Pay',
+          type: 'text',
+          content: "**Failure to File (FTF):**\n• 5% per month (or part of month)\n• Maximum 25%\n• Minimum: lesser of $510 or 100% of tax (if 60+ days late)\n\n**Failure to Pay (FTP):**\n• 0.5% per month\n• Maximum 25%\n• Increases to 1%/month after notice demand\n• Reduces to 0.25% if on installment agreement\n\n**When Both Apply:**\nFTF reduced by FTP for same month (net 4.5%/month + 0.5%/month = 5%)",
+        },
+        {
+          title: 'Accuracy-Related Penalties',
+          type: 'text',
+          content: "**20% Penalty for:**\n\n• **Negligence:** Lack of reasonable attempt to comply\n• **Disregard:** Careless, reckless, or intentional disregard of rules\n• **Substantial Understatement:**\n  - Individuals: > $5,000 OR > 10% of correct tax\n  - Corporations: > $10 million OR > 10% of correct tax\n• **Substantial Valuation Misstatement:** Overstated value by 150%+\n\n**Defense:** Reasonable cause and good faith",
+        },
+        {
+          title: 'Interest on Underpayments',
+          type: 'text',
+          content: "**Interest Rate:**\n• Federal short-term rate + 3%\n• Compounded daily\n• Adjusted quarterly\n• Typically 7-8% (varies by economy)\n\n**Interest Cannot Be Abated!**\n• Only exceptions: IRS error causing delay\n• Even with penalty abatement, interest continues\n\n**Interest runs from:**\n• Due date of return (or extended due date for payment)\n• Assessment date for some penalties",
+        },
+        {
+          title: 'Penalty Abatement Strategies',
+          type: 'table',
+          headers: ['Strategy', 'Applies To', 'Requirements'],
+          rows: [
+            ['First Time Abatement', 'FTF, FTP', '3 prior years clean, all returns filed'],
+            ['Reasonable Cause', 'Most civil penalties', 'Ordinary business care exercised'],
+            ['Statutory Exception', 'Specific penalties', 'Meet specific exception criteria'],
+            ['Written Advice Defense', 'Various', 'Relied on erroneous IRS advice'],
+          ],
+        },
+        {
+          title: 'Requesting Abatement',
+          type: 'text',
+          content: "**First Time Abatement (FTA):**\n• Request by phone (for simple cases)\n• Write letter citing FTA administrative waiver\n• Applies to FTF and FTP for one year\n\n**Reasonable Cause:**\n• Written request explaining circumstances\n• Document ordinary business care\n• Explain what caused non-compliance\n• Show how you tried to comply\n\n**Form 843** for formal refund claim including penalty abatement",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "FTF = 5%/month (max 25%); FTP = 0.5%/month (max 25%)",
+            "Combined can reach 47.5% plus interest",
+            "Accuracy penalty = 20% for negligence or understatement",
+            "Interest cannot be abated (except IRS error)",
+            "First Time Abatement if 3 prior years clean",
+            "Reasonable cause requires showing ordinary business care",
+            "Request abatement in writing with documentation",
           ],
         },
       ],

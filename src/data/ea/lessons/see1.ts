@@ -443,8 +443,251 @@ export const eaPart1Lessons: Lesson[] = [
     },
   },
 
-  // Continue with more lessons...
-  // Due to length, I'll add a few more key lessons
+  {
+    id: 'SEE1-006',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Prior Year Data and Carryovers',
+    description: 'Master the carryover provisions that transfer tax attributes between years',
+    order: 6,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['NOL carryovers', 'Capital loss carryovers', 'Charitable carryovers'],
+    blueprintArea: 'SEE1-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Carryovers are FREE MONEY your clients may have forgotten! Prior year losses and excess deductions can offset income for many years. Failing to track and use carryovers is leaving money on the table. As an EA, you must know what carries forward and for how long.",
+        },
+        {
+          title: 'Major Carryover Types',
+          type: 'table',
+          headers: ['Carryover Type', 'Carryback Period', 'Carryforward Period', 'Key Limitation'],
+          rows: [
+            ['Net Operating Loss (NOL)', 'None (post-2017)', 'Indefinite', '80% of taxable income'],
+            ['Capital Losses', 'None', 'Indefinite', '$3,000/year against ordinary income'],
+            ['Charitable Contributions', 'None', '5 years', 'AGI limitations (60%/30%/20%)'],
+            ['Passive Activity Losses', 'None', 'Indefinite', 'Full deduction on disposition'],
+            ['Investment Interest', 'None', 'Indefinite', 'Limited to net investment income'],
+            ['Foreign Tax Credit', '1 year back', '10 years forward', 'Limitation formula'],
+          ],
+        },
+        {
+          title: 'Net Operating Loss (NOL) Carryovers',
+          type: 'text',
+          content: "**Post-2017 NOL Rules (TCJA):**\n\n• NO carryback allowed (with exceptions)\n• INDEFINITE carryforward period\n• Limited to 80% of taxable income per year\n• 20% of income always taxable\n\n**Exceptions (Full Carryback Allowed):**\n• Farming losses (2 years back)\n• Certain insurance company losses\n\n**Ordering:** Apply oldest NOL first (FIFO)\n\n**Track carefully!** Client must have records of NOL amounts and when created.",
+        },
+        {
+          title: 'Capital Loss Carryovers',
+          type: 'text',
+          content: "**Rules for Individuals:**\n\n**Annual Limit:** Capital losses can only offset:\n• ALL capital gains, PLUS\n• Up to $3,000 ($1,500 MFS) of ordinary income\n\n**Excess carries forward indefinitely**\n\n**Character is retained:** Short-term remains short-term, long-term remains long-term\n\n**Ordering for carryovers:**\n1. Use short-term carryover against net short-term gain\n2. Use long-term carryover against net long-term gain\n3. Apply net loss against $3,000 ordinary income\n\n**Death:** Capital loss carryover EXPIRES at death - cannot pass to beneficiaries!",
+        },
+        {
+          title: '⚠️ Exam Trap: Capital Loss at Death',
+          type: 'warning',
+          content: "**Capital loss carryovers do NOT transfer to surviving spouse or estate!**\n\nIf taxpayer dies with unused capital loss carryover:\n• Cannot be used on final return beyond limits\n• Cannot be transferred to surviving spouse on MFJ return\n• Cannot be inherited by beneficiaries\n\n**Planning tip:** Use losses before death if possible!",
+        },
+        {
+          title: 'Charitable Contribution Carryovers',
+          type: 'text',
+          content: "**When Carryover Occurs:**\n• Contributions exceed AGI limitation for the year\n• Excess carries forward 5 years\n\n**AGI Limitations (2024):**\n• 60% AGI: Cash to public charities\n• 30% AGI: Property to public charities, Cash to private foundations\n• 20% AGI: Property to private foundations\n\n**Ordering:**\n1. Current year contributions first (within limits)\n2. Then oldest carryover amounts\n\n**Documentation:** Keep records showing contribution year and type for each carryover.",
+        },
+        {
+          title: 'Passive Activity Loss Carryovers',
+          type: 'text',
+          content: "**Passive Losses Cannot Offset:**\n• Active income (wages, business)\n• Portfolio income (interest, dividends)\n\n**Suspended losses carry forward** until:\n• You have passive income to offset, OR\n• You dispose of the ENTIRE activity in a taxable transaction\n\n**At Disposition:**\n• ALL suspended losses become deductible\n• Includes losses from all prior years\n• Must be complete disposition to unrelated party\n\n**Real Estate Exception:**\nActive participation allows $25,000 loss against active income (phases out $100K-$150K AGI).",
+        },
+        {
+          title: 'Investment Interest Carryovers',
+          type: 'text',
+          content: "**Investment Interest Deduction Limited To:**\n• Net investment income (interest, dividends, certain gains)\n\n**Excess carries forward indefinitely**\n\n**Can elect** to treat qualified dividends and long-term capital gains as investment income (gives up preferential rates)\n\n**Tracking:** Form 4952 calculates limitation and carryover each year.",
+        },
+        {
+          title: 'Prior Year Data Review',
+          type: 'text',
+          content: "**At start of every engagement, check:**\n\n• Prior year NOL carryovers\n• Capital loss carryforward\n• Charitable contribution carryforward\n• Suspended passive losses\n• Investment interest carryover\n• General business credit carryovers\n• Alternative minimum tax credit\n• Foreign tax credit carryovers\n\n**Get prior returns!** At least 3 years, preferably more if significant carryovers exist.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NOLs carry forward indefinitely but limited to 80% of taxable income",
+            "Capital losses: $3,000 annual limit against ordinary income, rest carries forward",
+            "Capital loss carryovers expire at death - cannot be inherited",
+            "Charitable carryovers last 5 years - use current year first",
+            "Passive losses release in full when entire activity is sold",
+            "Always review prior returns for carryovers at the start of engagement",
+            "Track the year each carryover was created - affects ordering",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-007',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Deceased Taxpayer Returns',
+    description: 'Master the filing requirements and special rules for returns of deceased taxpayers',
+    order: 7,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Final return', 'Income in respect of decedent', 'Filing requirements'],
+    blueprintArea: 'SEE1-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Death doesn't end tax obligations! As an EA, you'll help grieving families navigate final returns, income in respect of a decedent, and estate matters. These rules are tricky and heavily tested on the SEE.",
+        },
+        {
+          title: 'Who Files the Final Return?',
+          type: 'text',
+          content: "**The Personal Representative:**\n• Executor named in will, OR\n• Administrator appointed by court, OR\n• Surviving spouse (for joint return), OR\n• Other person in charge of decedent's property\n\n**Signing the Return:**\n• Sign your own name\n• Add \"Filing as surviving spouse\" or \"Personal Representative\"\n• Attach Form 1310 if claiming refund (unless surviving spouse on joint return)\n\n**Court Certificate:** Attach court certificate if court-appointed representative.",
+        },
+        {
+          title: 'Final Return Basics',
+          type: 'table',
+          headers: ['Item', 'Rule', 'Details'],
+          rows: [
+            ['Filing status', 'Same rules apply', 'MFJ available if married at death'],
+            ['Due date', 'April 15 of following year', 'Same as living taxpayer'],
+            ['Period covered', 'January 1 to date of death', 'Income earned through death date'],
+            ['How to indicate', 'Write "DECEASED" after name', 'Include date of death'],
+            ['Standard deduction', 'Full amount allowed', 'Not prorated for partial year'],
+          ],
+        },
+        {
+          title: 'Filing Status After Death',
+          type: 'text',
+          content: "**Surviving Spouse Options:**\n\n**Year of Death:**\n• Can file MFJ for entire year (if married at death)\n• Combine all income (pre and post-death)\n• If MFS, only pre-death income on final return\n\n**Year After Death (and 2nd year after):**\n• Qualifying Surviving Spouse (QSS) if:\n  - Dependent child lives with you\n  - You maintained the home\n  - You didn't remarry\n\n**After 2 Years:**\n• Single or HOH (if qualifying child)",
+        },
+        {
+          title: 'Income in Respect of a Decedent (IRD)',
+          type: 'text',
+          content: "**What is IRD?**\nIncome the decedent earned but hadn't received before death.\n\n**Examples:**\n• Unpaid wages\n• Unpaid commissions\n• IRA/pension distributions\n• Installment sale payments not yet received\n• Partnership income through date of death\n• Dividends declared but not paid\n\n**IRD is Taxable to the Recipient:**\n• Estate (if paid to estate)\n• Beneficiary (if paid directly)\n• NOT on decedent's final return!",
+        },
+        {
+          title: '⚠️ Exam Trap: IRD Has NO Step-Up in Basis',
+          type: 'warning',
+          content: "**Most inherited property gets a stepped-up basis to FMV at death.**\n\n**BUT NOT IRD!**\n\nIRD items retain their character and are fully taxable to whoever receives them:\n• IRA distributions are still taxable\n• Unpaid wages are still wage income\n• Installment sale gain is still recognized\n\n**IRD Deduction:** If estate tax was paid on the IRD, recipient gets an itemized deduction (not subject to 2% floor).",
+        },
+        {
+          title: 'Medical Expenses of Decedent',
+          type: 'text',
+          content: "**Special Rule:**\n\nMedical expenses paid within ONE YEAR after death can be deducted:\n• On decedent's final return (as itemized deduction), OR\n• On estate income tax return (Form 1041), OR\n• As estate tax deduction (Form 706)\n\n**Cannot double-dip!** Must choose one.\n\n**Attach Statement:** If deducting on Form 1040, attach statement that expenses won't be claimed elsewhere.",
+        },
+        {
+          title: 'Reporting Income on Final Return',
+          type: 'text',
+          content: "**Include:**\n• All income received before death\n• Constructively received income (available even if not collected)\n• Income from assets through date of death\n\n**Do NOT Include:**\n• Income received AFTER death (that's IRD or estate income)\n• Income accrued but not paid (IRD)\n\n**Example:**\n• Paycheck received March 1 for February work: On final return\n• Paycheck earned but not paid until after death: IRD (not on final return)",
+        },
+        {
+          title: 'Deductions on Final Return',
+          type: 'text',
+          content: "**Standard Deduction:**\n• Full amount (not prorated)\n• Age 65+ additional amount if applicable\n\n**Itemized Deductions:**\n• Expenses paid before death (or within special periods)\n• Property taxes due to date of death\n• State income taxes for period through death\n\n**Personal Exemption:**\n• Eliminated under TCJA through 2025\n\n**AMT Exemption:**\n• Full exemption allowed (not prorated)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Personal representative signs and files the final return",
+            "Surviving spouse can file MFJ for year of death",
+            "Report income received through date of death only",
+            "Income in Respect of Decedent (IRD) is taxed to recipient, not decedent",
+            "IRD does NOT get stepped-up basis",
+            "Medical expenses paid within 1 year can be on final return",
+            "Standard deduction is NOT prorated - full amount allowed",
+            "Form 1310 required to claim refund (unless surviving spouse on MFJ)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-008',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Community Property Rules',
+    description: 'Understand how community property laws affect tax filing in applicable states',
+    order: 8,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Community property states', 'Income allocation', 'Separate property'],
+    blueprintArea: 'SEE1-1',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "In community property states, income splitting rules are MANDATORY for MFS filers. This can significantly affect tax liability, especially for spouses with disparate incomes. The SEE tests this because many practitioners overlook these critical rules.",
+        },
+        {
+          title: 'Community Property States',
+          type: 'text',
+          content: "**Nine Community Property States:**\n\n• **A**rizona\n• **C**alifornia\n• **I**daho\n• **L**ouisiana\n• **N**evada\n• **N**ew Mexico\n• **T**exas\n• **W**ashington\n• **W**isconsin\n\n**Also:** Alaska, South Dakota, and Tennessee allow opt-in community property.\n\n**Memory aid:** \"All Community Income Laws Need New Taxation, Whichever Works.\"\n\n**Puerto Rico** also has community property rules.",
+        },
+        {
+          title: 'Community vs. Separate Property',
+          type: 'table',
+          headers: ['Type', 'Definition', 'Examples'],
+          rows: [
+            ['Community Property', 'Property/income acquired during marriage', 'Wages, business income, property bought during marriage'],
+            ['Separate Property', 'Property owned before marriage OR gifts/inheritance to one spouse', 'Pre-marriage assets, inheritance, personal injury awards'],
+            ['Mixed Property', 'Commingled community and separate', 'Separate property with community improvements'],
+          ],
+        },
+        {
+          title: 'Income Splitting for MFS Filers',
+          type: 'text',
+          content: "**When Filing Married Filing Separately in a CP State:**\n\nEach spouse reports:\n• 50% of community income\n• 100% of their own separate income\n\n**Community Income Includes:**\n• Wages earned during marriage (both spouses' wages!)\n• Income from community property\n• Business income from community business\n\n**Separate Income Includes:**\n• Income from separate property\n• Income earned before marriage",
+        },
+        {
+          title: 'Example: MFS in Community Property State',
+          type: 'example',
+          content: "**Spouse A:** Earns $100,000 salary\n**Spouse B:** Earns $20,000 salary\n**Total Community Income:** $120,000\n\n**If Filing MFS, Each Reports:**\n• Spouse A: $60,000 (half of $120,000)\n• Spouse B: $60,000 (half of $120,000)\n\n**NOT:**\n• Spouse A: $100,000\n• Spouse B: $20,000\n\n**Result:** Income is equalized between spouses!",
+        },
+        {
+          title: '⚠️ Exam Trap: Earned Income Credit',
+          type: 'warning',
+          content: "**Community property rules can affect EIC!**\n\nEach spouse reports half the community earned income.\n\nThis could:\n• Reduce EIC if high earner's income is now shared\n• Increase EIC if low earner now has more income\n\n**But watch out:** Investment income also must be split - could push over $11,600 limit!\n\n**Some states have special EIC rules:**\nCalifornia and Washington allow non-earning spouse to treat other spouse's income as their own for EIC.",
+        },
+        {
+          title: 'Separate Property Exceptions',
+          type: 'text',
+          content: "**Property Remains Separate When:**\n\n1. **Acquired before marriage**\n2. **Received as gift** to one spouse only\n3. **Inherited** by one spouse\n4. **Personal injury awards** (in most states)\n5. **Property exchanged** for separate property\n\n**Income from Separate Property:**\n• Most states: Remains separate\n• Some states (Texas, Idaho): Becomes community income\n\n**Tracing:** Must be able to prove property remained separate.",
+        },
+        {
+          title: 'Special Rules for Registered Domestic Partners',
+          type: 'text',
+          content: "**In States Recognizing RDPs:**\n\nRegistered domestic partners in community property states:\n• Must follow community property rules for state returns\n• May have complex federal treatment (varies by state law)\n\n**California, Nevada, Washington:** RDPs must split income on state MFS returns (if state allows MFS).",
+        },
+        {
+          title: 'When Living in Different States',
+          type: 'text',
+          content: "**Domicile Determines Rules:**\n\n• Community property rules apply if DOMICILED in a CP state\n• Moving from CP to non-CP state: Property retains CP character\n• Moving from non-CP to CP state: Property retains separate character\n\n**\"Quasi-Community Property\":**\nSome states treat property that WOULD have been CP (if acquired in CP state) as CP for divorce/death purposes.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "9 community property states: AZ, CA, ID, LA, NV, NM, TX, WA, WI",
+            "When filing MFS, each spouse reports 50% of community income",
+            "Wages earned during marriage are community income",
+            "Gifts and inheritance remain separate property",
+            "Income from separate property treatment varies by state",
+            "Community property rules can affect EIC eligibility",
+            "Domicile determines which state's rules apply",
+          ],
+        },
+      ],
+    },
+  },
 
   {
     id: 'SEE1-009',
@@ -1001,6 +1244,93 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   {
+    id: 'SEE1-013',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Business Income (Schedule C)',
+    description: 'Master sole proprietorship income reporting and common business deductions',
+    order: 13,
+    duration: 60,
+    difficulty: 'intermediate',
+    topics: ['Gross income', 'COGS', 'Business expenses', 'Home office'],
+    blueprintArea: 'SEE1-2',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Schedule C is one of the most common business forms you'll prepare! Sole proprietors report business income and expenses here. Understanding what's deductible, what's not, and how to calculate net profit is foundational for every tax practitioner.",
+        },
+        {
+          title: 'Schedule C Overview',
+          type: 'text',
+          content: "**Who Files Schedule C?**\n• Sole proprietors (single-member LLCs by default)\n• Independent contractors\n• Gig workers (Uber, DoorDash, freelancers)\n• Anyone with self-employment income\n\n**Key Sections:**\n• Part I: Income (gross receipts, returns, COGS)\n• Part II: Expenses (ordinary and necessary business expenses)\n• Part III: Cost of Goods Sold (if applicable)\n• Part IV: Vehicle Information (if claiming vehicle expenses)\n• Part V: Other Expenses (with descriptions)",
+        },
+        {
+          title: 'Gross Receipts and Income',
+          type: 'text',
+          content: "**Report ALL business income:**\n\n• Cash payments\n• Checks received\n• Credit card payments\n• 1099-NEC amounts\n• 1099-K amounts (payment apps, credit cards)\n• Bartering income (at FMV)\n• Cancelled business debt\n\n**Constructive Receipt:**\nIncome is taxable when available to you, even if not deposited yet.\n\n**Returns and Allowances:**\nReduce gross receipts by refunds given to customers.",
+        },
+        {
+          title: 'Cost of Goods Sold (COGS)',
+          type: 'text',
+          content: "**For businesses that sell products:**\n\n**Formula:**\nBeginning Inventory\n+ Purchases\n+ Labor (direct manufacturing)\n+ Materials and Supplies\n+ Other costs\n= Cost of Goods Available\n- Ending Inventory\n= **COGS**\n\n**Inventory Methods:**\n• FIFO (First-In, First-Out) - most common\n• LIFO (Last-In, First-Out) - election required\n• Specific identification\n• Average cost\n\n**Service businesses** generally don't have COGS.",
+        },
+        {
+          title: 'Common Deductible Expenses',
+          type: 'table',
+          headers: ['Category', 'Examples', 'Notes'],
+          rows: [
+            ['Advertising', 'Ads, business cards, website, signage', 'Fully deductible if for business'],
+            ['Car/Truck', 'Business mileage, actual vehicle costs', '67¢/mile OR actual (2024)'],
+            ['Depreciation', 'Equipment, furniture, vehicles', 'Form 4562 required'],
+            ['Insurance', 'Liability, property, malpractice', 'NOT health insurance (goes above-the-line)'],
+            ['Interest', 'Business loans, credit cards for business', 'Must be business debt'],
+            ['Professional', 'Legal, accounting, consulting fees', 'Business-related only'],
+            ['Rent', 'Office space, equipment rental', 'NOT home office (separate calculation)'],
+            ['Supplies', 'Office supplies, materials consumed', 'Items used up in < 1 year'],
+            ['Utilities', 'Phone, internet for business', 'Business portion only'],
+          ],
+        },
+        {
+          title: 'Home Office Deduction',
+          type: 'text',
+          content: "**Two Methods:**\n\n**1. Simplified Method:**\n• $5 per square foot of home office\n• Maximum 300 square feet\n• Maximum deduction: $1,500\n• No depreciation, no carryover\n\n**2. Regular Method:**\n• Calculate business percentage of home (sq ft or room count)\n• Apply % to: mortgage interest, property taxes, insurance, utilities, depreciation\n• Can create carryforward if limited by income\n\n**Both require:**\n• Exclusive use (used ONLY for business)\n• Regular use (consistent, not occasional)\n• Principal place of business OR place to meet clients",
+        },
+        {
+          title: 'Vehicle Expense Methods',
+          type: 'text',
+          content: "**Standard Mileage Rate (2024):**\n• 67 cents per business mile\n• Add: parking fees, tolls\n• Must use in first year vehicle is placed in service to continue using\n\n**Actual Expense Method:**\n• Track all costs: gas, insurance, repairs, depreciation\n• Multiply by business use percentage\n• More record-keeping but may be higher deduction\n\n**Cannot switch freely:** If you start with standard mileage, you can switch to actual. If you start with actual using MACRS depreciation, you cannot switch to standard mileage.",
+        },
+        {
+          title: '⚠️ Exam Trap: Self-Employment Tax',
+          type: 'warning',
+          content: "**Net profit from Schedule C is subject to SE tax!**\n\n• Social Security: 12.4% (up to $168,600 in 2024)\n• Medicare: 2.9% (no limit)\n• Additional Medicare: 0.9% (over $200K/$250K MFJ)\n\n**Total: 15.3%** (up to SS limit)\n\n**Deduction:** 50% of SE tax is an above-the-line deduction (Schedule 1)\n\n**Minimum:** SE tax applies if net earnings ≥ $400",
+        },
+        {
+          title: 'Ordinary and Necessary Standard',
+          type: 'text',
+          content: "**All business expenses must be:**\n\n**Ordinary:** Common and accepted in your trade or business\n\n**Necessary:** Helpful and appropriate for your business\n\n**Personal expenses are NEVER deductible:**\n• Commuting to regular job location\n• Personal clothing (even if worn at work)\n• Personal meals (unless travel or business purpose)\n• Personal portion of home expenses\n\n**Mixed use:** Must allocate between personal and business",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Schedule C reports sole proprietorship income and expenses",
+            "Gross receipts include ALL income, including barter at FMV",
+            "COGS calculation for businesses selling products",
+            "Standard mileage: 67¢/mile (2024), or use actual expenses",
+            "Home office: simplified ($5/sq ft, max $1,500) or regular method",
+            "Expenses must be ordinary and necessary for the business",
+            "Net profit subject to 15.3% SE tax (plus deduction for half)",
+            "SE tax applies if net earnings ≥ $400",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
     id: 'SEE1-015',
     courseId: 'ea',
     section: 'SEE1',
@@ -1149,8 +1479,309 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   // ============================================================================
-  // SEE1-3: DEDUCTIONS AND ADJUSTMENTS (Lessons 23-35)
+  // SEE1-3: DEDUCTIONS AND ADJUSTMENTS (Lessons 21-30)
   // ============================================================================
+
+  {
+    id: 'SEE1-021',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Standard Deduction',
+    description: 'Master the standard deduction amounts, additional amounts, and limitations',
+    order: 21,
+    duration: 35,
+    difficulty: 'beginner',
+    topics: ['Standard deduction amounts', 'Additional amounts', 'Dependent limitation'],
+    blueprintArea: 'SEE1-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The TCJA nearly doubled standard deductions, making them the choice for most taxpayers. Know these amounts cold - they're on nearly every return you prepare and frequently tested on the SEE!",
+        },
+        {
+          title: '2024 Standard Deduction Amounts',
+          type: 'table',
+          headers: ['Filing Status', 'Standard Deduction', 'Age 65+ Addition', 'Blind Addition'],
+          rows: [
+            ['Single', '$14,600', '+$1,950', '+$1,950'],
+            ['Married Filing Jointly', '$29,200', '+$1,550 per spouse', '+$1,550 per spouse'],
+            ['Married Filing Separately', '$14,600', '+$1,550', '+$1,550'],
+            ['Head of Household', '$21,900', '+$1,950', '+$1,950'],
+            ['Qualifying Surviving Spouse', '$29,200', '+$1,550', '+$1,550'],
+          ],
+        },
+        {
+          title: 'Additional Standard Deduction',
+          type: 'text',
+          content: "**Who Qualifies:**\n\n**Age 65 or Older:**\n• Must be 65 by January 1 of the FOLLOWING year\n• Example: For 2024, must be 65 by January 1, 2025\n• If born on January 1, 1960, you ARE 65 for 2024\n\n**Blind:**\n• Cannot see better than 20/200 in better eye with correction, OR\n• Field of vision is 20 degrees or less\n\n**Both 65+ AND Blind:**\n• Get TWO additional amounts!\n• Single taxpayer 65+ and blind: $14,600 + $3,900 = $18,500",
+        },
+        {
+          title: 'Dependent\'s Limited Standard Deduction',
+          type: 'text',
+          content: "**If you CAN be claimed as someone else's dependent:**\n\nYour standard deduction is LIMITED to the GREATER of:\n\n1. **$1,300** (minimum), OR\n2. **Earned income + $450** (up to the regular standard deduction)\n\n**Example:**\nDependent child earns $5,000 in wages:\n• Standard deduction = $5,000 + $450 = $5,450\n\nDependent child earns $0:\n• Standard deduction = $1,300 (minimum)\n\nDependent child earns $15,000:\n• Standard deduction = $14,600 (capped at regular amount)",
+        },
+        {
+          title: '🧠 Memory Aid: Dependent Standard Deduction',
+          type: 'callout',
+          content: "**\"Greater of $1,300 or Earned + $450\"**\n\nRemember: The FLOOR is $1,300, and the CEILING is the regular standard deduction for their filing status.\n\nThis prevents dependents with only investment income from getting the full standard deduction.",
+        },
+        {
+          title: 'Who CANNOT Use Standard Deduction?',
+          type: 'text',
+          content: "**Must Itemize If:**\n\n1. **MFS and spouse itemizes** - both must use same method\n2. **Nonresident alien** (generally)\n3. **Dual-status alien** (for dual-status year)\n4. **Short tax year** due to change in accounting period\n5. **Estate or trust** (Form 1041 filers)\n\n**Note:** Married couples MUST coordinate - if one itemizes, both must itemize!",
+        },
+        {
+          title: '⚠️ TCJA Sunset Alert',
+          type: 'warning',
+          content: "**Standard deductions were nearly doubled by TCJA (2018-2025)**\n\n**After 2025 (unless extended):**\n• Standard deductions may revert to pre-TCJA levels (roughly half)\n• More taxpayers may benefit from itemizing again\n• Personal exemptions may return\n\n**For 2024 exam:** Use current TCJA amounts, but know change is coming!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Single: $14,600 / MFJ: $29,200 / HOH: $21,900 (2024)",
+            "Additional amounts for 65+ and/or blind",
+            "Age 65 = 65 by January 1 of FOLLOWING year",
+            "Dependent's deduction: Greater of $1,300 or earned income + $450",
+            "MFS couples must BOTH use same method",
+            "TCJA standard deductions expire after 2025",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-022',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Medical and Dental Expenses',
+    description: 'Understand what medical expenses are deductible and how to calculate the deduction',
+    order: 22,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['7.5% AGI floor', 'Qualified expenses', 'Insurance premiums'],
+    blueprintArea: 'SEE1-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Medical expenses can be substantial, but most taxpayers can't deduct them due to the 7.5% AGI floor. Know exactly what qualifies and how to maximize this deduction for clients with high medical costs or lower incomes.",
+        },
+        {
+          title: 'The 7.5% AGI Floor',
+          type: 'text',
+          content: "**Only medical expenses EXCEEDING 7.5% of AGI are deductible!**\n\n**Calculation:**\nTotal qualified medical expenses\n- (AGI × 7.5%)\n= Deductible medical expenses\n\n**Example:**\n• AGI: $80,000\n• Medical expenses: $8,000\n• Floor: $80,000 × 7.5% = $6,000\n• Deductible: $8,000 - $6,000 = **$2,000**\n\n**Reality:** Combined with high standard deduction, few taxpayers benefit.",
+        },
+        {
+          title: 'Whose Expenses Qualify?',
+          type: 'text',
+          content: "**You can deduct medical expenses paid for:**\n\n• Yourself\n• Spouse\n• Dependents (at time of service OR payment)\n• Child of divorced parents (either parent can deduct)\n• Person who WOULD be dependent except for income or joint return test\n\n**The person doesn't have to live with you** if they would otherwise qualify as your dependent.",
+        },
+        {
+          title: 'Qualified Medical Expenses',
+          type: 'table',
+          headers: ['Deductible', 'NOT Deductible'],
+          rows: [
+            ['Doctor, dentist, hospital fees', 'Cosmetic surgery (unless injury/deformity)'],
+            ['Prescription medications', 'Over-the-counter drugs (generally)'],
+            ['Insulin', 'Vitamins and supplements (unless prescribed)'],
+            ['Glasses, contacts, hearing aids', 'Teeth whitening'],
+            ['Mental health treatment', 'Gym memberships (general fitness)'],
+            ['Long-term care (within limits)', 'Weight-loss programs (general health)'],
+            ['Transportation for medical care', 'Child care while at doctor'],
+            ['Lodging for medical care ($50/night)', 'Funeral expenses'],
+            ['Health insurance premiums (after-tax)', 'Medicare Part A (if covered by SS)'],
+          ],
+        },
+        {
+          title: 'Medical Transportation',
+          type: 'text',
+          content: "**Deductible transportation to/from medical care:**\n\n**Standard Mileage Rate (2024):** 21 cents per mile\n• Plus parking fees and tolls\n\n**OR Actual Costs:**\n• Gas, oil, parking, tolls\n• Not: depreciation, insurance, general repairs\n\n**Other Transportation:**\n• Bus, taxi, Uber fares\n• Ambulance costs\n• Travel costs if medical care primary reason\n\n**Lodging:** Up to $50 per night per person (no lavish accommodations)",
+        },
+        {
+          title: 'Insurance Premium Rules',
+          type: 'text',
+          content: "**Deductible Premiums:**\n• Health insurance (if not paid pre-tax at work)\n• Medicare Part B and Part D\n• Medicare Supplement (Medigap)\n• Long-term care insurance (age-based limits)\n\n**NOT Deductible:**\n• Premiums paid with pre-tax dollars (employer plan)\n• Medicare Part A (generally paid through SS taxes)\n• Life insurance\n• Disability insurance\n\n**Self-employed:** Health insurance premiums are above-the-line deduction instead!",
+        },
+        {
+          title: '⚠️ Exam Trap: Timing of Payment',
+          type: 'warning',
+          content: "**Medical expenses are deductible in the year PAID, not incurred!**\n\n• December 2024 bill paid January 2025 = 2025 deduction\n• Credit card: Deductible when charged (not when card is paid)\n• Prepaid expenses: Generally NOT deductible until service rendered\n\n**Exception:** Expenses paid from HSA/FSA are not also deductible",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Only expenses exceeding 7.5% of AGI are deductible",
+            "Can deduct expenses for yourself, spouse, and dependents",
+            "Prescription drugs deductible; OTC generally not",
+            "Medical mileage: 21¢/mile (2024)",
+            "Insurance premiums deductible if paid after-tax",
+            "Deductible in year PAID, not year of service",
+            "Self-employed health insurance is above-the-line, not here",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-023',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'State and Local Taxes (SALT)',
+    description: 'Master the SALT deduction rules including the $10,000 cap',
+    order: 23,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['$10,000 limit', 'Income vs sales tax', 'Real property taxes'],
+    blueprintArea: 'SEE1-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The TCJA's $10,000 SALT cap was one of the most controversial changes. This limit significantly affects taxpayers in high-tax states. Understanding what counts toward the cap and planning strategies is essential.",
+        },
+        {
+          title: 'The $10,000 SALT Cap',
+          type: 'text',
+          content: "**TCJA Limitation (2018-2025):**\n\nTotal of ALL state and local taxes limited to:\n• **$10,000** for all filers (Single, HOH, MFJ)\n• **$5,000** if Married Filing Separately\n\n**This includes:**\n• State/local income taxes (OR sales taxes if elected)\n• Real property taxes\n• Personal property taxes\n\n**Foreign taxes do NOT count** toward the $10,000 limit.",
+        },
+        {
+          title: 'What Taxes Are Deductible?',
+          type: 'table',
+          headers: ['Tax Type', 'Deductible?', 'Notes'],
+          rows: [
+            ['State income tax', 'Yes', 'Subject to $10K cap'],
+            ['Local income tax', 'Yes', 'Subject to $10K cap'],
+            ['Real estate tax', 'Yes', 'Subject to $10K cap'],
+            ['Personal property tax', 'Yes', 'Must be based on value'],
+            ['Sales tax', 'Yes (if elected)', 'Instead of income tax'],
+            ['DMV registration (value portion)', 'Yes', 'Only value-based portion'],
+            ['Foreign income tax', 'Yes', 'NOT subject to $10K cap'],
+            ['Business taxes', 'No', 'Deduct on Schedule C, not here'],
+          ],
+        },
+        {
+          title: 'Income Tax vs. Sales Tax Election',
+          type: 'text',
+          content: "**You can deduct EITHER:**\n\n**State and Local Income Taxes:** Actual amounts paid (withholding + estimates + prior year payments)\n\n**OR**\n\n**State and Local Sales Taxes:**\n• Actual receipts (must keep all receipts), OR\n• IRS tables (based on income and state)\n• Plus actual tax on major purchases (cars, boats, etc.)\n\n**Can't deduct both!**\n\n**When to choose sales tax:** States with no income tax (TX, FL, WA, NV, etc.)",
+        },
+        {
+          title: 'Real Property Tax Details',
+          type: 'text',
+          content: "**Deductible real estate taxes:**\n• Taxes on your home\n• Taxes on vacation homes\n• Taxes on land you own\n\n**NOT Deductible:**\n• Special assessments for improvements (sidewalks, sewers)\n• Trash collection fees\n• Homeowner association dues\n• Transfer taxes\n\n**Rental property taxes:** Deducted on Schedule E, NOT here!",
+        },
+        {
+          title: 'Personal Property Tax',
+          type: 'text',
+          content: "**Deductible if:**\n• Charged by state or local government\n• Based on VALUE of the property (ad valorem)\n• Imposed on personal property (cars, boats)\n\n**Example: Vehicle Registration**\nMany states combine a:\n• Flat fee (NOT deductible)\n• Value-based tax (deductible)\n\n**Only the value-based portion qualifies!**\n\nRegistration statements often specify the deductible amount.",
+        },
+        {
+          title: '⚠️ Exam Trap: SALT Workarounds',
+          type: 'warning',
+          content: "**Some states enacted \"SALT cap workarounds\":**\n\nPass-through entity (PTE) taxes allow business owners to:\n• Pay state tax at entity level\n• Deduct as business expense (no $10K cap)\n• Get credit on individual return\n\n**IRS Notice 2020-75:** Approved PTE taxes as valid workaround.\n\n**This is state-specific - not every state has this option!**",
+        },
+        {
+          title: 'Planning Considerations',
+          type: 'text',
+          content: "**Strategies under the SALT cap:**\n\n• Prepaying next year's taxes may not help (if already over $10K)\n• Consider state-specific PTE elections for business owners\n• Charitable contributions as alternative (SALT alternatives)\n• Business-related taxes are NOT subject to cap\n\n**SALT cap expires after 2025** (unless extended) - may change planning!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SALT deduction capped at $10,000 ($5,000 MFS)",
+            "Includes state/local income OR sales taxes (not both)",
+            "Real property and personal property taxes included in cap",
+            "Foreign taxes NOT subject to the $10,000 cap",
+            "Personal property tax must be value-based to deduct",
+            "Business taxes deducted separately, not subject to cap",
+            "TCJA SALT cap set to expire after 2025",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-024',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Home Mortgage Interest',
+    description: 'Master the rules for deducting mortgage interest including debt limitations',
+    order: 24,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Acquisition debt limits', 'Home equity debt', 'Refinancing rules'],
+    blueprintArea: 'SEE1-3',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Home mortgage interest is one of the most valuable itemized deductions, but TCJA changed the rules significantly. Understanding acquisition debt limits, what qualifies, and how refinancing works is essential for homeowner clients.",
+        },
+        {
+          title: 'TCJA Changes: Two Sets of Rules',
+          type: 'table',
+          headers: ['Debt Originated', 'Acquisition Debt Limit', 'Home Equity Interest'],
+          rows: [
+            ['Before Dec 15, 2017', '$1,000,000', 'Deductible up to $100,000'],
+            ['Dec 15, 2017 or after', '$750,000', 'NOT deductible (unless acquisition)'],
+          ],
+        },
+        {
+          title: 'Qualified Residence Interest',
+          type: 'text',
+          content: "**Interest deductible on:**\n\n**Acquisition Indebtedness:**\n• Debt to buy, build, or substantially improve a qualified home\n• Secured by the residence\n• Limited to $750,000 ($375,000 MFS) for post-12/14/2017 debt\n• Grandfathered $1,000,000 limit for pre-12/15/2017 debt\n\n**Qualified Home:**\n• Main residence, AND\n• One other residence (vacation home)\n• Can be a house, condo, co-op, mobile home, or boat with sleeping, cooking, and toilet facilities",
+        },
+        {
+          title: 'Home Equity Interest Under TCJA',
+          type: 'text',
+          content: "**2018-2025 Rules:**\n\nHome equity loan interest is:\n• **Deductible** ONLY if used to buy, build, or substantially improve the home securing the debt\n• **NOT Deductible** if used for other purposes (car, vacation, debt consolidation)\n\n**Example:**\n• $50,000 home equity loan to add a new room: **DEDUCTIBLE**\n• $50,000 home equity loan to pay off credit cards: **NOT DEDUCTIBLE**\n\n**The key is the USE of proceeds, not the name of the loan!**",
+        },
+        {
+          title: 'Mixed-Use Debt',
+          type: 'text',
+          content: "**If debt is used for multiple purposes:**\n\n• Must allocate between acquisition and personal use\n• Only acquisition portion interest is deductible\n\n**Example:**\n$400,000 cash-out refinance:\n• $300,000 to pay off old mortgage (acquisition)\n• $100,000 used for other purposes (personal)\n\n**Result:** Only 75% of interest is deductible (300,000/400,000)",
+        },
+        {
+          title: 'Refinancing Rules',
+          type: 'text',
+          content: "**General Rule:**\nRefinanced debt treated as acquisition debt to extent of old debt's acquisition balance.\n\n**Cash-out refinancing:**\n• Only acquisition portion retains acquisition status\n• New (cash-out) portion must be used for home improvements to be deductible\n\n**Points on Refinancing:**\n• Generally must be amortized over life of loan\n• Exception: Points for home improvement portion may be currently deductible",
+        },
+        {
+          title: 'Points Deduction',
+          type: 'text',
+          content: "**Points paid to obtain a mortgage:**\n\n**Fully Deductible in Year Paid If:**\n• Loan secured by main home\n• Points are established business practice in the area\n• Points don't exceed amount generally charged\n• Computed as a percentage of principal\n• Shown on settlement statement\n• For purchase or improvement of main home\n• Cash method taxpayer\n• Funds provided at closing cover points\n\n**Otherwise:** Amortize over life of loan",
+        },
+        {
+          title: '⚠️ Exam Trap: MFS Limit',
+          type: 'warning',
+          content: "**Married Filing Separately:**\n\n• Acquisition debt limit is HALF: $375,000\n• This applies even if only one spouse has mortgage!\n\n**Impact:** MFS couples with large mortgages may lose deductions\n\n**Planning:** Consider if MFJ might be better even with other MFS benefits",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Debt limit: $750,000 post-12/14/2017 / $1M pre-12/15/2017",
+            "Only acquisition debt interest is deductible under TCJA",
+            "Home equity interest: Deductible ONLY if used to improve the home",
+            "Up to 2 qualified homes (main residence + one other)",
+            "Points on purchase: Usually fully deductible; refinance: amortize",
+            "MFS reduces limit to $375,000",
+            "TCJA rules expire after 2025 unless extended",
+          ],
+        },
+      ],
+    },
+  },
 
   {
     id: 'SEE1-025',
@@ -1451,8 +2082,375 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   // ============================================================================
-  // SEE1-4: TAX COMPUTATION (Lessons 36-40)
+  // SEE1-4: TAX COMPUTATION (Lessons 31-40)
   // ============================================================================
+
+  {
+    id: 'SEE1-031',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Tax Computation and Rates',
+    description: 'Master the tax rate structure and computation for individuals',
+    order: 31,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Tax brackets', 'Tax tables', 'Capital gains rates', 'Marginal vs effective'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Understanding how tax is computed is fundamental! Know the difference between marginal and effective rates, how ordinary and capital gains income are taxed differently, and how to use tax tables vs. rate schedules.",
+        },
+        {
+          title: '2024 Tax Brackets (Ordinary Income)',
+          type: 'table',
+          headers: ['Rate', 'Single', 'MFJ', 'HOH'],
+          rows: [
+            ['10%', '$0 - $11,600', '$0 - $23,200', '$0 - $16,550'],
+            ['12%', '$11,601 - $47,150', '$23,201 - $94,300', '$16,551 - $63,100'],
+            ['22%', '$47,151 - $100,525', '$94,301 - $201,050', '$63,101 - $100,500'],
+            ['24%', '$100,526 - $191,950', '$201,051 - $383,900', '$100,501 - $191,950'],
+            ['32%', '$191,951 - $243,725', '$383,901 - $487,450', '$191,951 - $243,700'],
+            ['35%', '$243,726 - $609,350', '$487,451 - $731,200', '$243,701 - $609,350'],
+            ['37%', 'Over $609,350', 'Over $731,200', 'Over $609,350'],
+          ],
+        },
+        {
+          title: 'Marginal vs. Effective Tax Rate',
+          type: 'text',
+          content: "**Marginal Rate:**\n• The rate on your LAST dollar of taxable income\n• The rate that applies if you earn one more dollar\n• Used for tax planning decisions\n\n**Effective Rate (Average Rate):**\n• Total tax ÷ Total taxable income\n• Your overall \"average\" tax rate\n• Usually much lower than marginal rate\n\n**Example (Single, $100,000 taxable income):**\n• Marginal rate: 22%\n• Effective rate: approximately 17%",
+        },
+        {
+          title: 'Capital Gains Tax Rates',
+          type: 'table',
+          headers: ['Rate', 'Single Taxable Income', 'MFJ Taxable Income'],
+          rows: [
+            ['0%', '$0 - $47,025', '$0 - $94,050'],
+            ['15%', '$47,026 - $518,900', '$94,051 - $583,750'],
+            ['20%', 'Over $518,900', 'Over $583,750'],
+          ],
+        },
+        {
+          title: 'How Tax Computation Works',
+          type: 'text',
+          content: "**Step-by-Step:**\n\n1. Calculate **Gross Income**\n2. Subtract **Adjustments** (above-the-line) = **AGI**\n3. Subtract **Deductions** (standard or itemized) = **Taxable Income**\n4. Apply **Tax Rates** to taxable income = **Tentative Tax**\n5. Add **Other Taxes** (SE tax, AMT, NIIT, etc.)\n6. Subtract **Credits** = **Total Tax**\n7. Subtract **Withholding/Payments** = **Amount Due/Refund**",
+        },
+        {
+          title: 'Tax Tables vs. Tax Rate Schedules',
+          type: 'text',
+          content: "**Tax Tables:**\n• Income in $50 increments\n• Used for taxable income under $100,000\n• IRS provides tables in instructions\n\n**Tax Rate Schedules:**\n• Used for taxable income $100,000+\n• Calculate tax using the rate schedule formula\n• Same result as tables but for higher incomes\n\n**Both provide same answer** - tables are just for convenience.",
+        },
+        {
+          title: '⚠️ TCJA Rate Sunset',
+          type: 'warning',
+          content: "**Current rates expire after 2025!**\n\n**If TCJA sunsets:**\n• Rates revert to pre-2018 levels\n• 10%, 15%, 25%, 28%, 33%, 35%, 39.6%\n• Different bracket thresholds\n\n**For 2024 exam:** Use current TCJA rates, but know they may change!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Seven tax brackets: 10%, 12%, 22%, 24%, 32%, 35%, 37%",
+            "Marginal rate = rate on last dollar; effective rate = total tax / income",
+            "Long-term capital gains: 0%, 15%, or 20% based on income",
+            "Tax tables for income under $100,000; rate schedules for $100,000+",
+            "Tax computation: Gross Income → AGI → Taxable Income → Tax",
+            "TCJA rates expire after 2025 unless extended",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-032',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Alternative Minimum Tax (AMT)',
+    description: 'Understand the parallel AMT system and who may be subject to it',
+    order: 32,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['AMT exemption', 'Preference items', 'AMT credit'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "While TCJA significantly reduced AMT exposure, it still affects some taxpayers, especially those exercising ISOs or with large SALT deductions. Understanding AMT is essential for high-income client planning.",
+        },
+        {
+          title: 'What is AMT?',
+          type: 'text',
+          content: "**A Parallel Tax System:**\n\nThe AMT is a separate tax calculation that:\n• Starts with taxable income\n• Adds back certain \"preference items\" and adjustments\n• Allows a different exemption\n• Applies different (flatter) tax rates\n\n**You pay the HIGHER of:**\n• Regular tax, OR\n• Tentative Minimum Tax (if higher)\n\n**The difference is AMT liability.**",
+        },
+        {
+          title: '2024 AMT Exemptions',
+          type: 'table',
+          headers: ['Filing Status', 'AMT Exemption', 'Phase-Out Begins', 'Complete Phase-Out'],
+          rows: [
+            ['Single', '$85,700', '$609,350', '$952,150'],
+            ['MFJ', '$133,300', '$1,218,700', '$1,751,900'],
+            ['MFS', '$66,650', '$609,350', '$875,950'],
+            ['HOH', '$85,700', '$609,350', '$952,150'],
+          ],
+        },
+        {
+          title: 'AMT Tax Rates',
+          type: 'text',
+          content: "**AMT uses only TWO rates:**\n\n• **26%** on AMT income up to $232,600 ($116,300 MFS)\n• **28%** on AMT income above that threshold\n\n**Capital gains in AMT:**\n• Still taxed at preferential rates (0%, 15%, 20%)\n• But can trigger AMT due to higher AMTI",
+        },
+        {
+          title: 'Common AMT Adjustments and Preferences',
+          type: 'table',
+          headers: ['Item', 'Treatment', 'Notes'],
+          rows: [
+            ['State/local taxes (SALT)', 'Add back in full', 'Big reason for AMT pre-TCJA'],
+            ['Incentive stock option spread', 'Add back', 'Major AMT trigger!'],
+            ['Miscellaneous deductions', 'Add back', 'Not allowed for AMT'],
+            ['Private activity bond interest', 'Add back', 'AMT preference item'],
+            ['Depreciation differences', 'Adjust', 'Different methods for AMT'],
+            ['Standard deduction', 'Not allowed', 'Must use exemption instead'],
+            ['Medical expense floor', '7.5% for both', 'Same as regular tax (2024)'],
+          ],
+        },
+        {
+          title: 'The ISO Problem',
+          type: 'text',
+          content: "**Incentive Stock Options and AMT:**\n\n**Regular Tax:**\n• No income recognized when ISO exercised\n• Taxed as capital gain when stock sold\n\n**AMT:**\n• The SPREAD (FMV - exercise price) is AMT income when exercised\n• Can create significant AMT liability\n• Even if stock value drops before sale!\n\n**Example:**\n• Exercise price: $10/share\n• FMV at exercise: $50/share\n• Spread: $40/share × 1,000 shares = $40,000 AMT income",
+        },
+        {
+          title: 'AMT Credit',
+          type: 'text',
+          content: "**If you pay AMT in one year:**\n\nYou may get a credit in future years when:\n• Regular tax exceeds tentative minimum tax\n• Credit reduces regular tax (not below TMT)\n\n**The AMT credit:**\n• Applies to \"deferral items\" (like ISOs, depreciation)\n• NOT to permanent items (like SALT addback)\n• Carries forward indefinitely\n\n**Form 8801 computes the credit.**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "AMT is a parallel tax system with different rules",
+            "Pay the higher of regular tax or tentative minimum tax",
+            "AMT exemption: $85,700 single / $133,300 MFJ (2024)",
+            "AMT rates: 26% and 28% (flatter than regular tax)",
+            "ISO exercise spread is a major AMT trigger",
+            "AMT credit available for deferral preference items",
+            "TCJA greatly reduced AMT exposure for most taxpayers",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-033',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Self-Employment Tax',
+    description: 'Master the calculation of self-employment tax for sole proprietors and partners',
+    order: 33,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['SE income', '15.3% rate', 'SE tax deduction', 'Net earnings calculation'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Self-employed individuals pay BOTH the employee AND employer portions of Social Security and Medicare! This 15.3% tax surprises many first-time entrepreneurs. Know how to calculate it and explain it to clients.",
+        },
+        {
+          title: 'SE Tax Components',
+          type: 'table',
+          headers: ['Component', 'Rate', 'Wage Base (2024)', 'Notes'],
+          rows: [
+            ['Social Security', '12.4%', '$168,600', 'Employee + employer portions'],
+            ['Medicare', '2.9%', 'No limit', 'Employee + employer portions'],
+            ['Total SE Tax', '15.3%', 'Up to $168,600', 'Then 2.9% only above limit'],
+          ],
+        },
+        {
+          title: 'Who Pays SE Tax?',
+          type: 'text',
+          content: "**Self-employment tax applies to:**\n\n• Sole proprietors (Schedule C income)\n• General partners in partnerships\n• Self-employed farmers (Schedule F)\n• Members of LLCs taxed as partnerships (if active)\n• Church employee income ≥ $108.28\n\n**Does NOT apply to:**\n• S corporation shareholders on wages (W-2 income)\n• Limited partners (generally - distributive share only)\n• Rental income (generally passive, not SE)\n• Dividend and interest income",
+        },
+        {
+          title: 'Net Earnings Calculation',
+          type: 'text',
+          content: "**Step 1: Net Earnings from Self-Employment**\n\nSchedule C net profit (or loss)\n× 92.35%\n= Net earnings from self-employment\n\n**Why 92.35%?**\nThis approximates the employer portion deduction that employees get. (100% - 7.65% = 92.35%)\n\n**Minimum threshold:** SE tax only applies if net earnings ≥ $400",
+        },
+        {
+          title: 'SE Tax Calculation Example',
+          type: 'example',
+          content: "**Schedule C net profit: $100,000**\n\n**Step 1:** Net earnings = $100,000 × 92.35% = $92,350\n\n**Step 2:** Social Security portion\n$92,350 × 12.4% = $11,451.40\n\n**Step 3:** Medicare portion\n$92,350 × 2.9% = $2,678.15\n\n**Step 4:** Total SE Tax\n$11,451.40 + $2,678.15 = **$14,129.55**\n\n**Step 5:** Deductible portion (above-the-line)\n$14,129.55 × 50% = **$7,064.78**",
+        },
+        {
+          title: 'The 50% Deduction',
+          type: 'text',
+          content: "**To equalize with employees:**\n\nEmployees don't pay tax on employer's share of FICA.\nSelf-employed get to DEDUCT half of SE tax.\n\n**This is an ABOVE-THE-LINE deduction!**\n• Reduces AGI\n• Available even if taking standard deduction\n• Reported on Schedule 1, Line 15\n\n**Does NOT reduce net earnings for SE tax calculation** - calculated after SE tax is computed.",
+        },
+        {
+          title: 'Combined with Wages',
+          type: 'text',
+          content: "**If you also have W-2 wages:**\n\nThe Social Security wage base ($168,600) is SHARED:\n• W-2 wages count first\n• Only remaining room counts for SE income\n\n**Example:**\n• W-2 wages: $150,000\n• Schedule C profit: $50,000\n• SE net earnings: $50,000 × 92.35% = $46,175\n• SS wage room: $168,600 - $150,000 = $18,600\n• SS portion of SE: $18,600 × 12.4% = $2,306.40\n• Medicare (all): $46,175 × 2.9% = $1,339.08",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "SE tax rate: 15.3% (12.4% SS + 2.9% Medicare)",
+            "Applies to net earnings × 92.35%",
+            "Social Security portion caps at $168,600 (2024)",
+            "SE tax only applies if net earnings ≥ $400",
+            "50% of SE tax is deductible above-the-line",
+            "W-2 wages reduce remaining SS wage base for SE income",
+            "S corp owners pay FICA only on wages, not distributions",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-034',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Net Investment Income Tax',
+    description: 'Understand the 3.8% NIIT and when it applies',
+    order: 34,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['3.8% NIIT', 'Threshold amounts', 'Net investment income'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The 3.8% Net Investment Income Tax catches high earners who might otherwise pay little or no Medicare tax on investment income. Know the thresholds and what income is included!",
+        },
+        {
+          title: 'NIIT Basics',
+          type: 'text',
+          content: "**The Tax:**\n• 3.8% surtax on investment income\n• Applies to individuals, estates, and trusts\n• Created by the Affordable Care Act (2013)\n\n**The Formula:**\n3.8% × LESSER of:\n• Net investment income, OR\n• MAGI exceeding threshold",
+        },
+        {
+          title: 'NIIT Thresholds',
+          type: 'table',
+          headers: ['Filing Status', 'Threshold', 'Notes'],
+          rows: [
+            ['Single', '$200,000', 'MAGI above this triggers NIIT'],
+            ['Head of Household', '$200,000', 'Same as single'],
+            ['MFJ', '$250,000', 'Higher threshold for married'],
+            ['MFS', '$125,000', 'Half of MFJ amount'],
+            ['QSS', '$250,000', 'Same as MFJ'],
+          ],
+        },
+        {
+          title: 'What is Net Investment Income?',
+          type: 'text',
+          content: "**INCLUDES:**\n• Interest\n• Dividends (qualified and ordinary)\n• Capital gains (including from home sale if over exclusion)\n• Rental and royalty income (if passive)\n• Passive business income\n• Annuity distributions (taxable portion)\n\n**EXCLUDES:**\n• Wages and self-employment income\n• Active business income\n• Distributions from qualified retirement plans\n• Tax-exempt bond interest\n• Self-employment income (already subject to SE tax)",
+        },
+        {
+          title: 'NIIT Calculation Example',
+          type: 'example',
+          content: "**Single taxpayer:**\n• MAGI: $280,000\n• Net investment income: $50,000\n\n**Step 1:** MAGI over threshold\n$280,000 - $200,000 = $80,000\n\n**Step 2:** Lesser amount\nLesser of $50,000 (NII) or $80,000 (excess MAGI) = $50,000\n\n**Step 3:** Calculate NIIT\n$50,000 × 3.8% = **$1,900**",
+        },
+        {
+          title: 'NIIT Planning Strategies',
+          type: 'text',
+          content: "**To reduce NIIT:**\n\n• Increase active participation in businesses (changes passive to active)\n• Use tax-exempt investments\n• Harvest capital losses to offset gains\n• Time recognition of gains/income\n• Invest in qualified opportunity zones (deferral)\n• Convert passive rental to active (real estate professional status)\n\n**NIIT applies to threshold, not total income** - some income escapes even for high earners!",
+        },
+        {
+          title: '⚠️ Exam Trap: Rental Income',
+          type: 'warning',
+          content: "**Rental income is usually subject to NIIT!**\n\nRental activities are generally passive, so rental income is usually Net Investment Income.\n\n**Exception:** Real estate professionals with:\n• 750+ hours of material participation\n• More than 50% of services in real property trades\n\n**Their rental income may be ACTIVE and escape NIIT!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "NIIT is 3.8% tax on investment income above thresholds",
+            "Thresholds: $200,000 single / $250,000 MFJ",
+            "Applies to lesser of NII or excess MAGI",
+            "Includes: interest, dividends, passive income, capital gains",
+            "Excludes: wages, SE income, retirement distributions",
+            "Rental income usually included (passive activity)",
+            "Reported on Form 8960",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-035',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Additional Medicare Tax',
+    description: 'Master the 0.9% Additional Medicare Tax on high earners',
+    order: 35,
+    duration: 35,
+    difficulty: 'intermediate',
+    topics: ['0.9% additional tax', 'Threshold amounts', 'Withholding rules'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "High earners face an extra 0.9% Medicare tax on wages and self-employment income above certain thresholds. Unlike regular Medicare tax, this has no employer match and applies only to individuals.",
+        },
+        {
+          title: 'Additional Medicare Tax Basics',
+          type: 'text',
+          content: "**The Tax:**\n• Additional 0.9% on earned income above thresholds\n• On TOP of regular 1.45% Medicare tax\n• No employer match (employee only)\n• Created by ACA (same as NIIT)\n\n**Applies to:**\n• Wages (W-2 income)\n• Self-employment income\n• Railroad retirement (RRTA) compensation",
+        },
+        {
+          title: 'Threshold Amounts',
+          type: 'table',
+          headers: ['Filing Status', 'Threshold', 'Tax Above Threshold'],
+          rows: [
+            ['Single', '$200,000', '0.9%'],
+            ['Head of Household', '$200,000', '0.9%'],
+            ['MFJ', '$250,000', '0.9%'],
+            ['MFS', '$125,000', '0.9%'],
+            ['QSS', '$200,000', '0.9%'],
+          ],
+        },
+        {
+          title: 'Employer Withholding Rules',
+          type: 'text',
+          content: "**Employers must withhold:**\n• Additional 0.9% on wages over $200,000\n• Regardless of filing status!\n• Regardless of spouse's income!\n\n**This creates problems for:**\n• MFJ couples where each earns under $200K but combined exceeds $250K\n• They may owe additional tax at filing\n\n• MFS filers with income over $125K but under $200K\n• They may owe additional tax at filing\n\n**Solution:** Request additional withholding on Form W-4",
+        },
+        {
+          title: 'Calculation Example',
+          type: 'example',
+          content: "**Married Filing Jointly:**\n• Spouse A wages: $180,000\n• Spouse B wages: $120,000\n• Total wages: $300,000\n\n**Additional Medicare Tax:**\n$300,000 - $250,000 (threshold) = $50,000\n$50,000 × 0.9% = **$450**\n\n**Withholding Problem:**\n• Neither employer withheld (each under $200K)\n• Full $450 owed at tax filing!",
+        },
+        {
+          title: 'Combined with Self-Employment',
+          type: 'text',
+          content: "**Wages and SE income are combined:**\n\n**Example:**\n• W-2 wages: $150,000\n• SE income: $100,000\n• Total: $250,000\n\n**Single taxpayer, $200,000 threshold:**\n$250,000 - $200,000 = $50,000 subject to 0.9%\n$50,000 × 0.9% = $450\n\n**Key:** Allocate to SE income first if both wages and SE exist, for Form SE calculations.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Additional 0.9% Medicare tax on earned income above thresholds",
+            "Thresholds: $200,000 single / $250,000 MFJ / $125,000 MFS",
+            "No employer match - employee only tax",
+            "Employers withhold at $200,000 regardless of filing status",
+            "Combines wages and SE income to determine if threshold exceeded",
+            "May owe additional tax at filing if withholding insufficient",
+            "Reported on Form 8959",
+          ],
+        },
+      ],
+    },
+  },
 
   {
     id: 'SEE1-036',
@@ -1571,6 +2569,153 @@ export const eaPart1Lessons: Lesson[] = [
             "ISO exercise is a major AMT trigger",
             "TCJA increased exemptions, reducing AMT impact",
             "AMT credit may be available for future years",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE1-4: WITHHOLDING AND ESTIMATED PAYMENTS (Lessons 38-40)
+  // ============================================================================
+
+  {
+    id: 'SEE1-038',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Withholding Requirements',
+    description: 'Master Form W-4 and employer withholding requirements',
+    order: 38,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Form W-4', 'Additional withholding', 'Backup withholding'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Proper withholding prevents underpayment penalties and surprise tax bills. Understanding Form W-4 options helps you advise clients on optimizing their withholding throughout the year.",
+        },
+        {
+          title: 'Form W-4 Overview',
+          type: 'text',
+          content: "**Purpose:** Employee provides information to employer for determining withholding amount.\n\n**When Required:**\n• Starting new job\n• Life changes affecting withholding (marriage, divorce, children)\n• Want to adjust withholding amount\n\n**Current Form (2020+):**\n• Removed allowances\n• Uses filing status and adjustments\n• Multiple jobs/working spouse accounting\n• Optional deduction and credit adjustments",
+        },
+        {
+          title: 'W-4 Key Sections',
+          type: 'table',
+          headers: ['Step', 'Description', 'Purpose'],
+          rows: [
+            ['Step 1', 'Personal information & filing status', 'Required for all employees'],
+            ['Step 2', 'Multiple jobs or spouse works', 'For accuracy with multiple income sources'],
+            ['Step 3', 'Claim dependents', 'Reduces withholding for dependent credits'],
+            ['Step 4a', 'Other income', 'Increases withholding for non-wage income'],
+            ['Step 4b', 'Deductions', 'Decreases withholding for itemizing'],
+            ['Step 4c', 'Extra withholding', 'Additional amount per pay period'],
+          ],
+        },
+        {
+          title: 'Multiple Jobs / Working Spouse',
+          type: 'text',
+          content: "**Step 2 Options:**\n\n**Option A:** Use IRS Tax Withholding Estimator (online)\n\n**Option B:** Multiple Jobs Worksheet\n• For two similar-paying jobs\n• Helps calculate additional withholding\n\n**Option C:** Check box (simplest)\n• For two jobs with similar pay\n• May slightly over-withhold\n\n**Privacy:** Higher earner can claim all adjustments on their W-4; lower earner claims nothing.",
+        },
+        {
+          title: 'Backup Withholding',
+          type: 'text',
+          content: "**Rate: 24%**\n\n**Applied when:**\n• Payee doesn't provide TIN\n• IRS notifies payer of incorrect TIN\n• Payee underreported interest/dividends\n\n**Applies to:**\n• Interest payments\n• Dividends\n• Nonemployee compensation (1099-NEC)\n• Other 1099 payments\n\n**NOT on wages** - those use regular withholding",
+        },
+        {
+          title: 'Exempt from Withholding',
+          type: 'text',
+          content: "**Can claim exempt if:**\n\n• Last year: Owed no tax AND got refund of all tax withheld\n• This year: Expect same situation\n\n**To claim exempt:**\n• Write \"Exempt\" on Form W-4 line (Step 4(c) area)\n• Must submit new W-4 by February 15 each year\n\n**Note:** Claiming exempt doesn't mean income isn't taxable - just that no withholding will occur!",
+        },
+        {
+          title: '⚠️ Exam Trap: W-4 Changes',
+          type: 'warning',
+          content: "**New W-4 is NOT required for:**\n• Tax law changes (employer adjusts tables)\n• New tax year (unless claiming exempt)\n\n**Old W-4s remain valid** unless employee makes changes or claims exempt.\n\n**Employer responsibilities:**\n• Cannot advise on how to complete W-4\n• Must process as submitted\n• Cannot reject as \"too many dependents\"",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Form W-4 determines wage withholding amount",
+            "No more allowances - uses filing status and adjustments",
+            "Multiple jobs require Step 2 adjustments for accuracy",
+            "Backup withholding is 24% when TIN issues exist",
+            "Can claim exempt if no tax liability expected",
+            "Exempt claims must be renewed annually by Feb 15",
+            "Old W-4s remain valid unless employee changes",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-039',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Child Tax Credit and ODC',
+    description: 'Master the CTC, ACTC, and Credit for Other Dependents',
+    order: 39,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['$2,000 CTC', 'Credit for other dependents', 'Refundable portion'],
+    blueprintArea: 'SEE1-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Child Tax Credit provides substantial benefits to families. Understanding who qualifies, the refundable vs. nonrefundable portions, and how the Credit for Other Dependents works is essential for serving families with children.",
+        },
+        {
+          title: '2024 Child Tax Credit Overview',
+          type: 'table',
+          headers: ['Credit Component', 'Maximum Amount', 'Key Requirements'],
+          rows: [
+            ['Child Tax Credit', '$2,000 per child', 'Under 17, has SSN, qualifying child'],
+            ['Additional CTC (refundable)', 'Up to $1,700', '15% of earned income over $2,500'],
+            ['Credit for Other Dependents', '$500 per dependent', 'Dependents not qualifying for CTC'],
+          ],
+        },
+        {
+          title: 'Qualifying Child Requirements for CTC',
+          type: 'text',
+          content: "**The child must:**\n\n1. Be under age **17** at end of tax year\n2. Be your **qualifying child** (relationship, residency, support tests)\n3. Have a valid **Social Security Number** (not ITIN or ATIN)\n4. Be claimed as **your dependent**\n5. Be a U.S. citizen, national, or resident alien\n6. NOT file a joint return (unless only for refund)\n\n**SSN must be issued BEFORE return due date** (including extensions)",
+        },
+        {
+          title: 'Phase-Out Rules',
+          type: 'text',
+          content: "**Phase-out thresholds:**\n\n• **MFJ:** $400,000\n• **All others:** $200,000\n\n**How it works:**\n• Credit reduced by $50 for each $1,000 (or fraction) over threshold\n• Both CTC and ODC subject to same phase-out\n\n**Example:**\nSingle with MAGI of $210,000:\n• Over threshold by $10,000\n• Reduction: 10 × $50 = $500\n• One child: $2,000 - $500 = **$1,500 CTC**",
+        },
+        {
+          title: 'Additional Child Tax Credit (ACTC)',
+          type: 'text',
+          content: "**The refundable portion:**\n\nIf CTC exceeds tax liability, ACTC provides refund.\n\n**Calculation:**\n15% × (Earned income - $2,500) = Potential ACTC\n\n**Maximum:** $1,700 per qualifying child (2024)\n\n**Example:**\n• Earned income: $30,000\n• Tax liability: $500\n• CTC: $2,000 (one child)\n• Nonrefundable portion used: $500\n• Remaining: $1,500\n• ACTC = 15% × ($30,000 - $2,500) = $4,125 → Limited to $1,500 (or max $1,700)",
+        },
+        {
+          title: 'Credit for Other Dependents (ODC)',
+          type: 'text',
+          content: "**$500 credit for dependents who don't qualify for CTC:**\n\n**Examples:**\n• Children age 17 or older\n• Children with ITIN (no SSN)\n• Parents claimed as dependents\n• Other qualifying relatives\n\n**Nonrefundable only** - can reduce tax to zero but not below\n\n**Same phase-out as CTC applies**",
+        },
+        {
+          title: '⚠️ Due Diligence Requirements',
+          type: 'warning',
+          content: "**Paid preparers must:**\n\n• Complete Form 8867 due diligence checklist\n• Keep records for 3 years\n• Ask questions if information seems incorrect\n• Know the eligibility rules\n\n**Penalty: $635 per failure (2024)**\n\nCTC/ACTC is one of the four credits requiring due diligence!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "CTC: $2,000 per qualifying child under 17 with SSN",
+            "ACTC: Refundable portion up to $1,700 per child",
+            "ODC: $500 for dependents who don't qualify for CTC",
+            "Phase-out: $200,000 (single) / $400,000 (MFJ)",
+            "Child MUST have SSN for CTC (ITIN = ODC only)",
+            "Due diligence required - $635 penalty for failures",
+            "ACTC based on 15% of earned income over $2,500",
           ],
         },
       ],
@@ -1891,16 +3036,16 @@ export const eaPart1Lessons: Lesson[] = [
     },
   },
   // ============================================================================
-  // SEE1-4: TAXATION AND ADVICE - Continued (Lessons 36-38)
+  // SEE1-2: DEDUCTIONS AND ADJUSTMENTS - Additional (Lessons 17-19)
   // ============================================================================
 
   {
-    id: 'SEE1-036',
+    id: 'SEE1-017',
     courseId: 'ea',
     section: 'SEE1',
     title: 'Kiddie Tax Rules',
     description: 'Understand taxation of unearned income for children',
-    order: 36,
+    order: 17,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Kiddie tax', 'Unearned income', 'Age rules', 'Form 8615'],
@@ -1972,12 +3117,12 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   {
-    id: 'SEE1-037',
+    id: 'SEE1-018',
     courseId: 'ea',
     section: 'SEE1',
     title: 'Estimated Tax Payments',
     description: 'Master the rules for quarterly estimated tax payments',
-    order: 37,
+    order: 18,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Safe harbor', 'Quarterly payments', 'Penalty calculation'],
@@ -2042,12 +3187,12 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   {
-    id: 'SEE1-038',
+    id: 'SEE1-019',
     courseId: 'ea',
     section: 'SEE1',
     title: 'Withholding Requirements',
     description: 'Understand income tax withholding and Form W-4',
-    order: 38,
+    order: 19,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Form W-4', 'Withholding tables', 'Backup withholding'],
@@ -2113,20 +3258,20 @@ export const eaPart1Lessons: Lesson[] = [
   },
 
   // ============================================================================
-  // SEE1-5: CREDITS - Continued (Lessons 44-46)
+  // SEE1-2: INCOME AND DEDUCTIONS - Additional (Lessons 20-21)
   // ============================================================================
 
   {
-    id: 'SEE1-044',
+    id: 'SEE1-020',
     courseId: 'ea',
     section: 'SEE1',
     title: 'Premium Tax Credit',
     description: 'Understand the credit for health insurance purchased through the Marketplace',
-    order: 44,
+    order: 20,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Marketplace insurance', 'APTC', 'Form 8962', 'Reconciliation'],
-    blueprintArea: 'SEE1-5',
+    blueprintArea: 'SEE1-2',
     content: {
       sections: [
         {

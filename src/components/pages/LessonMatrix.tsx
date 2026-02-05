@@ -308,7 +308,7 @@ const LessonMatrix: React.FC = () => {
       <div className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
           <div className="relative lg:col-span-2">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 dark:text-slate-400" />
             <input
               type="text"
               placeholder="Search by title or topic..."
@@ -394,18 +394,18 @@ const LessonMatrix: React.FC = () => {
           <table className="w-full text-left border-collapse" key={`${search}-${sectionFilter}-${methodFilter}-${versionFilter}-${showObbbaOnly}`}>
             <thead>
               <tr className="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">Section</th>
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider">Lesson / Topic</th>
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider hidden lg:table-cell">Blueprint Area</th>
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider hidden md:table-cell w-28">Version</th>
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-24 hidden sm:table-cell">Duration</th>
-                <th className="p-4 text-xs font-semibold text-slate-600 uppercase tracking-wider w-28">Difficulty</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider w-20">Section</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Lesson / Topic</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider hidden lg:table-cell">Blueprint Area</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider hidden md:table-cell w-28">Version</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider w-24 hidden sm:table-cell">Duration</th>
+                <th className="p-4 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider w-28">Difficulty</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
               {filteredLessons.length === 0 ? (
                  <tr>
-                   <td colSpan={6} className="p-8 text-center text-slate-600">
+                   <td colSpan={6} className="p-8 text-center text-slate-600 dark:text-slate-400">
                      No lessons match your filters.
                    </td>
                  </tr>
@@ -439,14 +439,14 @@ const LessonMatrix: React.FC = () => {
                       </td>
                       <td className="p-4">
                         <div className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{lesson.title}</div>
-                        <div className="text-xs text-slate-600 mt-1 flex flex-wrap gap-1 items-center">
+                        <div className="text-xs text-slate-600 dark:text-slate-400 mt-1 flex flex-wrap gap-1 items-center">
                           {lesson.topics.slice(0, 3).map((t, i) => (
-                            <span key={i} className="inline-block bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-[10px]">
+                            <span key={i} className="inline-block bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-200 px-1.5 py-0.5 rounded text-[10px]">
                               {t}
                             </span>
                           ))}
                           {lesson.topics.length > 3 && (
-                            <span className="text-slate-600 px-1 text-[10px]">+ {lesson.topics.length - 3} more</span>
+                            <span className="text-slate-600 dark:text-slate-400 px-1 text-[10px]">+ {lesson.topics.length - 3} more</span>
                           )}
                           {isObbba && <ObbbaIndicator note={transitionNote} />}
                         </div>
@@ -462,10 +462,10 @@ const LessonMatrix: React.FC = () => {
                             return (
                               <div>
                                 <div className="text-sm text-slate-700 dark:text-slate-300">{areaInfo.areaName}</div>
-                                <div className="text-[10px] text-slate-600 flex items-center gap-2 mt-0.5">
+                                <div className="text-[10px] text-slate-600 dark:text-slate-400 flex items-center gap-2 mt-0.5">
                                   <span>{areaInfo.weight}</span>
                                   {skillLevel && (
-                                    <span className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700 rounded">
+                                    <span className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-200 rounded">
                                       {skillLevel}
                                     </span>
                                   )}
@@ -473,7 +473,7 @@ const LessonMatrix: React.FC = () => {
                               </div>
                             );
                           }
-                          return <span className="text-slate-600 text-sm">—</span>;
+                          return <span className="text-slate-600 dark:text-slate-400 text-sm">—</span>;
                         })()}
                       </td>
                       <td className="p-4 hidden md:table-cell whitespace-nowrap">

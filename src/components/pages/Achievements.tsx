@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2 } from 'lucide-react';
+import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
@@ -161,11 +162,22 @@ const Achievements: React.FC = () => {
     return sum + (ACHIEVEMENTS[id as keyof typeof ACHIEVEMENTS]?.points || 0);
   }, 0);
 
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-slate-50 pb-24">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
       {/* Header */}
       <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-6 pb-16">
-        <h1 className="text-2xl font-bold mb-2">Achievements</h1>
+        <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="p-2 -ml-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Go back"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
+          <h1 className="text-2xl font-bold">Achievements</h1>
+        </div>
         <p className="text-primary-100">Track your learning milestones</p>
 
         {/* Stats */}
@@ -188,7 +200,7 @@ const Achievements: React.FC = () => {
       {/* Category Filter */}
       <div className="px-4 -mt-8 mb-4">
         <div 
-          className="bg-white rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto scrollbar-hide"
+          className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 flex gap-1 overflow-x-auto scrollbar-hide"
           {...tabListProps}
         >
           <button
@@ -196,8 +208,8 @@ const Achievements: React.FC = () => {
             className={clsx(
               'px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex-shrink-0',
               selectedCategory === 'all'
-                ? 'bg-primary-100 text-primary-700'
-                : 'text-slate-600 hover:bg-slate-100'
+                ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300'
+                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
             )}
             {...getTabProps('all')}
           >
@@ -214,8 +226,8 @@ const Achievements: React.FC = () => {
                 className={clsx(
                   'px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 flex-shrink-0',
                   selectedCategory === cat
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-slate-600 hover:bg-slate-100'
+                    ? 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                 )}
                 {...getTabProps(cat)}
               >
@@ -243,20 +255,20 @@ const Achievements: React.FC = () => {
             <div
               key={achievement.id}
               className={clsx(
-                'bg-white rounded-xl p-4 flex items-start gap-4 transition-all',
+                'bg-white dark:bg-slate-800 rounded-xl p-4 flex items-start gap-4 transition-all',
                 isEarned
-                  ? 'border-2 border-success-200 shadow-sm'
-                  : 'border border-slate-200 opacity-70'
+                  ? 'border-2 border-success-200 dark:border-success-700 shadow-sm'
+                  : 'border border-slate-200 dark:border-slate-700 opacity-70'
               )}
             >
               {/* Icon */}
               <div
                 className={clsx(
                   'w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0',
-                  isEarned ? 'bg-success-100' : 'bg-slate-100'
+                  isEarned ? 'bg-success-100 dark:bg-success-900/30' : 'bg-slate-100 dark:bg-slate-700'
                 )}
               >
-                {isEarned ? achievement.icon : <Lock className="w-5 h-5 text-slate-600" />}
+                {isEarned ? achievement.icon : <Lock className="w-5 h-5 text-slate-600 dark:text-slate-400" />}
               </div>
 
               {/* Content */}
@@ -265,7 +277,7 @@ const Achievements: React.FC = () => {
                   <h3
                     className={clsx(
                       'font-semibold',
-                      isEarned ? 'text-slate-900' : 'text-slate-600'
+                      isEarned ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
                     )}
                   >
                     {achievement.name}
@@ -273,14 +285,14 @@ const Achievements: React.FC = () => {
                   <span
                     className={clsx(
                       'text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0',
-                      isEarned ? 'bg-success-100 text-success-700' : 'bg-slate-100 text-slate-600'
+                      isEarned ? 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                     )}
                   >
                     {achievement.points} pts
                   </span>
                 </div>
                 <p
-                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600' : 'text-slate-600')}
+                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600 dark:text-slate-300' : 'text-slate-600 dark:text-slate-400')}
                 >
                   {achievement.description}
                 </p>
@@ -288,13 +300,13 @@ const Achievements: React.FC = () => {
                 {/* Progress bar for unearned */}
                 {progress && progress.target > 1 && (
                   <div className="mt-2">
-                    <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
+                    <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 mb-1">
                       <span>
                         {progress.current} / {progress.target}
                       </span>
                       <span>{Math.round((progress.current / progress.target) * 100)}%</span>
                     </div>
-                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-primary-500 rounded-full transition-all"
                         style={{
@@ -309,7 +321,7 @@ const Achievements: React.FC = () => {
                 {isEarned && (
                   <button
                     onClick={() => setShowShareCard(achievement)}
-                    className="mt-2 flex items-center gap-1.5 text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                    className="mt-2 flex items-center gap-1.5 text-xs font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
                   >
                     <Share2 className="w-3.5 h-3.5" />
                     Share achievement
@@ -334,14 +346,14 @@ const Achievements: React.FC = () => {
             onClick={() => setShowUnlocked(null)}
             aria-hidden="true"
           />
-          <div className="relative bg-white rounded-2xl p-8 text-center max-w-sm w-full animate-bounce-in">
+          <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-8 text-center max-w-sm w-full animate-bounce-in">
             <div className="w-20 h-20 bg-gradient-to-br from-warning-400 to-warning-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl shadow-lg" aria-hidden="true">
               {showUnlocked.icon}
             </div>
-            <h2 id="achievement-title" className="text-xl font-bold text-slate-900 mb-1">Achievement Unlocked!</h2>
-            <h3 className="text-lg font-semibold text-primary-600 mb-2">{showUnlocked.name}</h3>
-            <p className="text-slate-600 mb-4">{showUnlocked.description}</p>
-            <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 text-success-700 rounded-full text-sm font-medium">
+            <h2 id="achievement-title" className="text-xl font-bold text-slate-900 dark:text-white mb-1">Achievement Unlocked!</h2>
+            <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{showUnlocked.name}</h3>
+            <p className="text-slate-600 dark:text-slate-300 mb-4">{showUnlocked.description}</p>
+            <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300 rounded-full text-sm font-medium">
               +{showUnlocked.points} points
             </div>
             <div className="mt-6 flex gap-3">

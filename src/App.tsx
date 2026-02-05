@@ -17,6 +17,7 @@ import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
 import { CourseProvider } from './providers/CourseProvider';
+import { NavigationProvider } from './components/navigation';
 // import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
 // ============================================
@@ -161,6 +162,10 @@ function App() {
   const handleUpdate = useCallback(() => {
     const updateFn = getUpdateFunction();
     if (updateFn) {
+      // Mark that we're updating to prevent banner from showing immediately after reload
+      // Use localStorage for persistence (sessionStorage can be unreliable during reloads)
+      localStorage.setItem('pwa-just-updated', Date.now().toString());
+      
       // Listen for the new service worker to take control
       let reloaded = false;
       const reloadOnce = () => {
@@ -192,8 +197,9 @@ function App() {
     <ErrorBoundary variant="page">
       <ThemeProvider>
         <CourseProvider>
-          <TourProvider>
-            <ToastProvider>
+          <NavigationProvider>
+            <TourProvider>
+              <ToastProvider>
               <ScrollToTop />
               {/* <EnvironmentIndicator /> */}
               <UpdateBanner onUpdate={handleUpdate} />
@@ -550,9 +556,10 @@ function App() {
             </Suspense>
           </ToastProvider>
         </TourProvider>
-      </CourseProvider>
-    </ThemeProvider>
-  </ErrorBoundary>
+      </NavigationProvider>
+    </CourseProvider>
+  </ThemeProvider>
+</ErrorBoundary>
   );
 }
 

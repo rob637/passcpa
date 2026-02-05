@@ -184,22 +184,27 @@ exports.sendDailyReminders = onSchedule({
       .where('dailyReminderEnabled', '==', true)
       .get();
     
+    console.log(`Found ${usersSnapshot.size} users with reminders enabled`);
+    
     const notifications = [];
     
     for (const userDoc of usersSnapshot.docs) {
       const userData = userDoc.data();
       const reminderTime = userData.dailyReminderTime || '09:00';
-      const reminderHour = reminderTime.split(':')[0];
+      // Parse hour as integer to ensure consistent comparison (handles "9" vs "09")
+      const reminderHour = parseInt(reminderTime.split(':')[0], 10);
       
       // Get user's timezone (default to America/New_York for legacy users)
       const userTimezone = userData.timezone || 'America/New_York';
       
-      // Get current hour in user's timezone
-      const currentHourInUserTz = new Intl.DateTimeFormat('en-US', { 
+      // Get current hour in user's timezone as number
+      const currentHourInUserTz = parseInt(new Intl.DateTimeFormat('en-US', { 
         timeZone: userTimezone, 
         hour: '2-digit', 
         hourCycle: 'h23' 
-      }).format(now);
+      }).format(now), 10);
+      
+      console.log(`User ${userDoc.id}: reminder at ${reminderHour}:00, current hour in ${userTimezone}: ${currentHourInUserTz}, tokens: ${(userData.fcmTokens || []).length}`);
       
       // Check if this is the right hour for this user in THEIR timezone
       if (reminderHour !== currentHourInUserTz) continue;
@@ -342,6 +347,187 @@ exports.sendWeeklyReports = onSchedule({
     throw error;
   }
 });
+
+// ============================================================================
+// ONBOARDING REMINDER EMAIL
+// Runs daily at 10am - sends reminder to verified users who haven't finished onboarding
+// ============================================================================
+
+exports.sendOnboardingReminders = onSchedule({
+  schedule: 'every day 10:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 120,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for incomplete onboarding users...');
+  
+  try {
+    const now = new Date();
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    const fortyEightHoursAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+    
+    // Find users with onboardingComplete: false created 24-48 hours ago
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', false)
+      .where('createdAt', '<=', twentyFourHoursAgo)
+      .where('createdAt', '>=', fortyEightHoursAgo)
+      .get();
+    
+    console.log(`Found ${usersSnapshot.size} users with incomplete onboarding in 24-48h window`);
+    
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+      
+      try {
+        // Check Firebase Auth for email verification status
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        // Skip if email not verified (includes email signup users who never verified)
+        if (!authUser.emailVerified) {
+          console.log(`Skipping ${authUser.email}: email not verified`);
+          skippedCount++;
+          continue;
+        }
+        
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        
+        if (!userEmail) {
+          skippedCount++;
+          continue;
+        }
+        
+        // Send reminder email
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `⏰ Finish setting up your CPA study plan, ${displayName}!`,
+          html: generateOnboardingReminderEmail(displayName),
+        });
+        
+        if (error) throw new Error(error.message);
+        
+        console.log(`Sent onboarding reminder to ${userEmail}`);
+        sentCount++;
+        
+      } catch (authError) {
+        // User might have been deleted from Auth but not Firestore
+        console.error(`Error processing user ${userDoc.id}:`, authError.message);
+        errorCount++;
+      }
+    }
+    
+    console.log(`Onboarding reminders: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+    
+    // Also notify admin of incomplete signups
+    if (usersSnapshot.size > 0) {
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: ADMIN_EMAIL,
+        subject: `📊 VoraPrep: ${usersSnapshot.size} incomplete onboardings`,
+        html: `
+          <p>Daily onboarding reminder report:</p>
+          <ul>
+            <li><strong>${sentCount}</strong> reminder emails sent</li>
+            <li><strong>${skippedCount}</strong> skipped (unverified email)</li>
+            <li><strong>${errorCount}</strong> errors</li>
+          </ul>
+          <p><a href="https://voraprep.com/admin/cms">View Admin CMS</a></p>
+        `,
+      });
+    }
+    
+  } catch (error) {
+    console.error('Error sending onboarding reminders:', error);
+    throw error;
+  }
+});
+
+// Onboarding Reminder Email Template
+function generateOnboardingReminderEmail(displayName) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finish Your VoraPrep Setup</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
+        </div>
+        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Hey ${displayName}! 👋
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        You created your VoraPrep account but haven't finished setting up your personalized study plan yet!
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        It only takes <strong>30 seconds</strong> to complete setup, and then you'll have access to:
+      </p>
+      
+      <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>🎯 A personalized daily study plan based on your exam date</li>
+        <li>📚 2,900+ practice questions for all CPA sections</li>
+        <li>🤖 AI tutor for instant explanations</li>
+        <li>📊 Progress tracking to keep you on pace</li>
+      </ul>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://voraprep.com/onboarding" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Complete My Setup →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Your CPA journey is waiting for you! 🚀
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - Your AI-Powered CPA Exam Prep Partner
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
 
 // ============================================================================
 // FCM TOKEN MANAGEMENT

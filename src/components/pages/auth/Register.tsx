@@ -3,6 +3,7 @@ import logger from '../../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Loader2, Check } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { trackEvent } from '../../../services/analytics';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ const Register = () => {
     try {
       const displayName = `${formData.firstName} ${formData.lastName}`.trim();
       await signUp(formData.email, formData.password, displayName);
+      trackEvent('signup_completed', { method: 'email' });
       navigate('/verify-email');
     } catch (err: any) {
       logger.error('Registration error:', err);
@@ -74,6 +76,7 @@ const Register = () => {
     setError('');
     try {
       await signInWithGoogle();
+      trackEvent('signup_completed', { method: 'google' });
       navigate('/onboarding');
     } catch (err: any) {
       logger.error('Google sign-up error:', err);

@@ -25,22 +25,38 @@
   --header-height: 56px;
 
   /* Light mode colors - Crisper, more defined (Google-level contrast) */
-  --bg-primary: #f8fafc;
+  --bg-primary: #f1f5f9;        /* slate-100 - darker for card contrast */
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;       /* slate-200 */
   --text-primary: #0f172a;      /* slate-900 - crisp black */
   --text-secondary: #334155;    /* slate-700 - upgraded from 475569/slate-600 */
   --text-tertiary: #475569;     /* slate-600 - upgraded from 64748b/slate-500 */
   --text-muted: #64748b;        /* slate-500 - for truly optional hints */
-  --border-color: #e2e8f0;
-  --border-color-strong: #cbd5e1;
-  --border-color-light: #f1f5f9;
+  --border-color: #cbd5e1;      /* slate-300 - stronger borders for definition */
+  --border-color-strong: #94a3b8;
+  --border-color-light: #e2e8f0;
   
-  /* Enhanced shadows for depth - Google Material 3 inspired */
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --card-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-  --card-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
-  --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  /* Premium shadows - multi-layer for depth (Stripe/Linear style) */
+  --card-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.02);
+  --card-shadow-md: 
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 16px 24px rgba(0, 0, 0, 0.02);
+  --card-shadow-lg: 
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.06),
+    0 24px 48px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 16px 32px rgba(0, 0, 0, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.04);
 }
 
 /* Dark mode colors - Google-level contrast for mobile readability */
@@ -317,7 +333,7 @@ body.dark {
    ============================================ */
 
 .card {
-  @apply bg-white rounded-2xl border border-slate-200;
+  @apply bg-white rounded-2xl border border-slate-200/80;
   box-shadow: var(--card-shadow);
 }
 
@@ -1468,4 +1484,62 @@ textarea:focus:not(:focus-visible),
   border-radius: 0.25rem;
   font-family: ui-monospace, monospace;
   font-size: 0.875em;
+}
+
+/* ============================================
+   LIGHT MODE CRISPNESS ENHANCEMENTS
+   Premium "floating card" effect - match dark mode polish
+   ============================================ */
+
+/* Much stronger shadows for dramatic depth in light mode */
+:root:not(.dark) .shadow-sm {
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Elevated cards with dramatic shadow - Material 3 style */
+:root:not(.dark) .rounded-xl.shadow-sm,
+:root:not(.dark) .rounded-2xl.shadow-sm,
+:root:not(.dark) .card {
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Hover state for interactive cards */
+:root:not(.dark) .rounded-xl.shadow-sm:hover,
+:root:not(.dark) .rounded-2xl.shadow-sm:hover,
+:root:not(.dark) .card-interactive:hover {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Make secondary text darker in light mode for crisp readability (Google style) */
+:root:not(.dark) .text-slate-600 {
+  color: #334155 !important; /* slate-700 - upgrade for crispness */
+}
+
+/* Ensure slate-500 has sufficient contrast */
+:root:not(.dark) .text-slate-500 {
+  color: #475569 !important; /* slate-600 - upgrade for readability */
+}
+
+/* Slightly cooler/darker page background for card contrast */
+:root:not(.dark) .bg-slate-50,
+:root:not(.dark) body {
+  background-color: #f1f5f9 !important; /* slate-100 - more contrast with white cards */
+}
+
+/* Crisp card backgrounds - pure white for maximum pop */
+:root:not(.dark) .bg-white,
+:root:not(.dark) .card {
+  background-color: #ffffff !important;
 }

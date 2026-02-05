@@ -131,12 +131,13 @@ export const functions = getFunctions(app);
   }
 })();
 
-// Initialize Analytics (only in browser, not in SSR)
+// Initialize Analytics (only in browser, only in production)
+// Dev/staging projects may not have Analytics configured which causes console warnings
 export let analytics = null;
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && declaredEnvironment === 'production') {
   isSupported()
     .then((supported) => {
-      if (supported) {
+      if (supported && firebaseConfig.measurementId) {
         analytics = getAnalytics(app);
       }
     })

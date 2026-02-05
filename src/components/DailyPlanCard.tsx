@@ -31,6 +31,7 @@ import {
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { useCourse } from '../providers/CourseProvider';
+import { useNavigation } from './navigation';
 import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
 import { 
   getOrCreateTodaysPlan, 
@@ -72,6 +73,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const { userProfile, user } = useAuth();
   const { stats, dailyProgress, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId } = useCourse();
+  const { startDailyPlanSession } = useNavigation();
   
   const [plan, setPlan] = useState<PersistedDailyPlan | null>(null);
   const [loading, setLoading] = useState(true);
@@ -241,6 +243,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       onActivityStart(activity);
     }
     
+    // Start a daily plan session so back buttons return here
+    startDailyPlanSession(activity.id, activity.title);
+    
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
     
@@ -343,7 +348,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               <Calendar className="w-5 h-5 text-primary-500" />
               <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
             </div>
-            <span className="text-sm text-slate-600">
+            <span className="text-sm text-slate-600 dark:text-slate-400">
               {completedCount}/{totalActivities} done
             </span>
           </div>
@@ -422,7 +427,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                     </div>
                   ))}
                   {plan.activities.length > 4 && (
-                    <span className="text-xs text-slate-600">+{plan.activities.length - 4}</span>
+                    <span className="text-xs text-slate-600 dark:text-slate-400">+{plan.activities.length - 4}</span>
                   )}
                 </div>
               </div>
@@ -456,7 +461,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                 </span>
               )}
             </div>
-            <p className="text-slate-600 text-sm mt-1">
+            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
               {plan.summary.weakAreaFocus.length > 0 
                 ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
                 : 'Personalized for your progress'}
@@ -466,7 +471,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             {compact && (
               <button
                 onClick={() => setExpanded(false)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-600"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-600 dark:text-slate-400"
               >
                 Collapse ↑
               </button>
@@ -476,7 +481,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               title="Regenerate plan"
             >
-              <RefreshCw className="w-5 h-5 text-slate-600" />
+              <RefreshCw className="w-5 h-5 text-slate-600 dark:text-slate-400" />
             </button>
           </div>
         </div>
@@ -484,7 +489,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         {/* Progress bar */}
         <div className="mt-3">
           <div className="flex items-center justify-between text-sm mb-1">
-            <span className="text-slate-600">{completedCount}/{totalActivities} activities</span>
+            <span className="text-slate-600 dark:text-slate-400">{completedCount}/{totalActivities} activities</span>
             <span className="font-medium text-primary-600">~{plan.estimatedMinutes} min total</span>
           </div>
           <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -554,9 +559,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                     {getPriorityBadge(activity.priority)}
                   </div>
                   
-                  <p className="text-sm text-slate-600 line-clamp-1">{activity.reason}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-1">{activity.reason}</p>
                   
-                  <div className="flex items-center gap-3 text-xs text-slate-600 mt-1">
+                  <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-400 mt-1">
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       ~{activity.estimatedMinutes}m

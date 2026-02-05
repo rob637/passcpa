@@ -78,9 +78,13 @@ validateEnvironmentMatch();
 
 // SAFETY CHECK: Prevent Production Config on Development URLs
 // This prevents "npm run build" (prod default) from being accidentally deployed to dev
+// Note: Capacitor native apps run on localhost but should use production config
 if (typeof window !== 'undefined') {
   const hostname = window.location.hostname;
-  const isDevUrl = hostname.includes('passcpa-dev') || hostname.includes('localhost') || hostname.includes('127.0.0.1');
+  const isCapacitorNative = window.Capacitor?.isNativePlatform?.() || window.Capacitor?.getPlatform?.() !== 'web';
+  const isDevUrl = hostname.includes('passcpa-dev') || 
+    (hostname.includes('localhost') && !isCapacitorNative) || 
+    (hostname.includes('127.0.0.1') && !isCapacitorNative);
   const isProdConfig = firebaseConfig.projectId === 'voraprep-prod';
 
   if (isDevUrl && isProdConfig) {

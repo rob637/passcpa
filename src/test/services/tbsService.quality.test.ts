@@ -11,7 +11,7 @@
  * @batch 6 of 20 (25 tests)
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   fetchAllTBS,
   fetchTBSBySection,

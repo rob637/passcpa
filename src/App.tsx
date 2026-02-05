@@ -161,11 +161,12 @@ function App() {
   // Handle PWA updates
   const handleUpdate = useCallback(() => {
     const updateFn = getUpdateFunction();
+    
+    // Mark that we're updating to prevent banner from showing immediately after reload
+    // Use localStorage for persistence (sessionStorage can be unreliable during reloads)
+    localStorage.setItem('pwa-just-updated', Date.now().toString());
+    
     if (updateFn) {
-      // Mark that we're updating to prevent banner from showing immediately after reload
-      // Use localStorage for persistence (sessionStorage can be unreliable during reloads)
-      localStorage.setItem('pwa-just-updated', Date.now().toString());
-      
       // Listen for the new service worker to take control
       let reloaded = false;
       const reloadOnce = () => {
@@ -183,13 +184,15 @@ function App() {
       // Call update to trigger skipWaiting on waiting SW
       updateFn();
       
-      // Fallback: if controllerchange doesn't fire within 3s, force reload
+      // Fallback: if controllerchange doesn't fire within 1.5s, force reload
       setTimeout(() => {
         reloadOnce();
-      }, 3000);
+      }, 1500);
     } else {
-      // Fallback: force reload to bypass cache
-      window.location.reload();
+      // No update function available - just force reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     }
   }, []);
 

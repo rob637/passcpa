@@ -32,7 +32,7 @@ import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
 import clsx from 'clsx';
-import { CPASection, ExamSection, Lesson } from '../../types';
+import { ExamSection, Lesson } from '../../types';
 import logger from '../../utils/logger';
 
 // Study unit structure (like Becker's F1, F2, etc.)
@@ -49,7 +49,7 @@ interface StudyUnit {
 }
 
 // Unit definitions for each section (mapping to blueprint areas)
-const UNIT_DEFINITIONS: Record<CPASection, { id: string; name: string; blueprintPrefix: string }[]> = {
+const UNIT_DEFINITIONS: Record<ExamSection, { id: string; name: string; blueprintPrefix: string }[]> = {
   FAR: [
     { id: 'F1', name: 'Conceptual Framework', blueprintPrefix: 'FAR-I' },
     { id: 'F2', name: 'Financial Statement Accounts', blueprintPrefix: 'FAR-II' },
@@ -106,7 +106,7 @@ const StudyJourney: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [contentCounts, setContentCounts] = useState({ mcq: 0, tbs: 0 });
   
-  const currentSection = (userProfile?.examSection || 'FAR') as CPASection;
+  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const unitDefs = UNIT_DEFINITIONS[currentSection] || [];
   

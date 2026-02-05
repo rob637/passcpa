@@ -25,7 +25,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { CPA_SECTIONS, EXAM_BLUEPRINTS } from '../config/examConfig';
 import clsx from 'clsx';
-import { CPASection, ExamSection } from '../types';
+import { ExamSection } from '../types';
 
 interface BlueprintArea {
   id: string;
@@ -36,7 +36,7 @@ interface BlueprintArea {
 interface BlueprintReportProps {
   isOpen: boolean;
   onClose: () => void;
-  section?: CPASection;
+  section?: ExamSection;
 }
 
 interface AreaPerformance {
@@ -62,7 +62,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
   const [areaPerformance, setAreaPerformance] = useState<AreaPerformance[]>([]);
   const [loading, setLoading] = useState(true);
   
-  const currentSection = propSection || (userProfile?.examSection as CPASection) || 'FAR';
+  const currentSection = propSection || (userProfile?.examSection as ExamSection) || 'FAR';
   const sectionInfo = CPA_SECTIONS[currentSection];
   
   // Load performance data

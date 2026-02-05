@@ -19,10 +19,10 @@
 // - 30-month window to pass all 4 sections (updated from 18 months)
 // ============================================================================
 
-import { CPASection, ExamSection } from '../types';
+import { ExamSection } from '../types';
 
 export interface SectionConfig {
-  id: CPASection;
+  id: ExamSection;
   name: string;
   shortName: string;
   type: 'core' | 'discipline' | 'strategy' | 'legacy';
@@ -57,7 +57,7 @@ export function isBefore2026Blueprint(): boolean {
   return now < july1_2026;
 }
 
-export const CPA_SECTIONS: Record<CPASection, SectionConfig> = {
+export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
   // =========================================================================
   // STRATEGY SECTION (Universal)
   // =========================================================================
@@ -194,7 +194,7 @@ export const CPA_SECTIONS: Record<CPASection, SectionConfig> = {
   // Replaced by BAR, ISC, TCP for 2026 Blueprint (July 1, 2026+)
   // =========================================================================
   BEC: {
-    id: 'BEC',
+    id: 'BEC' as ExamSection,
     name: 'Business Environment and Concepts',
     shortName: 'BEC',
     type: 'discipline' as const,
@@ -213,16 +213,6 @@ export const CPA_SECTIONS: Record<CPASection, SectionConfig> = {
       description: 'BEC ends June 30, 2026. Replaced by BAR, ISC, and TCP disciplines.',
     },
   },
-};
-
-/** Check if a section is a CPA section */
-export const isCPASection = (section: ExamSection): section is CPASection => {
-  return section in CPA_SECTIONS;
-};
-
-/** Safely get CPA section config - returns undefined for non-CPA sections */
-export const getCPASectionConfig = (section: ExamSection): SectionConfig | undefined => {
-  return isCPASection(section) ? CPA_SECTIONS[section] : undefined;
 };
 
 export const STRATEGY_SECTIONS = ['PREP'];

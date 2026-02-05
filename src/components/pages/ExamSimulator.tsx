@@ -31,7 +31,7 @@ import { db } from '../../config/firebase';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, CPASection, ExamSection, TBS } from '../../types';
+import { Question, ExamSection, TBS } from '../../types';
 import TBSRenderer from '../exam/TBSRenderer';
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/mock-exams';
 import { getTBSBySection } from '../../data/tbs';
@@ -49,7 +49,7 @@ interface ExamConfig {
 }
 
 // Exam structure based on real CPA exam
-const EXAM_CONFIG: Record<CPASection, ExamConfig> = {
+const EXAM_CONFIG: Record<ExamSection, ExamConfig> = {
   REG: {
     testlets: [
       { type: 'mcq', questions: 36, time: 45 * 60 }, // 45 minutes
@@ -179,7 +179,7 @@ const ExamSimulator: React.FC = () => {
   const timerRef = useRef<any>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
-  const currentSection = (userProfile?.examSection || 'REG') as CPASection;
+  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
   const sectionInfo = CPA_SECTIONS[currentSection];
   const availableMockExams = getMockExamsBySection(currentSection);
   

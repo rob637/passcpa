@@ -17,38 +17,7 @@ export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate
 export type NormalizedDifficulty = 'easy' | 'medium' | 'hard';
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
-
-/**
- * Exam Sections across all courses
- * 
- * CPA Sections: FAR, AUD, REG, BAR, ISC, TCP, PREP (BEC deprecated)
- * EA Sections: SEE1 (Individuals), SEE2 (Businesses), SEE3 (Representation)
- * CMA Sections: CMA1 (Part 1), CMA2 (Part 2)
- * CIA Sections: CIA1, CIA2, CIA3
- */
-export type ExamSection = 
-  // CPA Sections
-  | 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC'
-  // EA Sections (Enrolled Agent - Special Enrollment Examination)
-  | 'SEE1' | 'SEE2' | 'SEE3'
-  // CMA Sections (Certified Management Accountant)
-  | 'CMA1' | 'CMA2'
-  // CIA Sections (Certified Internal Auditor)
-  | 'CIA1' | 'CIA2' | 'CIA3';
-
-/**
- * Course-specific section types for type-safe components
- */
-export type CPASection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC';
-export type EASection = 'SEE1' | 'SEE2' | 'SEE3';
-export type CMASection = 'CMA1' | 'CMA2';
-export type CIASection = 'CIA1' | 'CIA2' | 'CIA3';
-
-/** Array of all CPA sections for iteration */
-export const CPA_SECTIONS: CPASection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'PREP', 'BEC'];
-export const EA_SECTIONS: EASection[] = ['SEE1', 'SEE2', 'SEE3'];
-export const CMA_SECTIONS: CMASection[] = ['CMA1', 'CMA2'];
-export const CIA_SECTIONS: CIASection[] = ['CIA1', 'CIA2', 'CIA3'];
+export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC';
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';

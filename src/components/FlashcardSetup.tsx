@@ -9,13 +9,13 @@ import {
   Eye,
   ChevronDown,
   Check,
-  ArrowLeft,
   Play,
   RotateCcw,
   CheckCircle,
   AlertCircle,
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
+import { BackButton } from './navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getFlashcardsBySection } from '../data/flashcards';
@@ -168,12 +168,7 @@ const FlashcardSetup: React.FC = () => {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="p-2 -ml-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
+          <BackButton fallback="/home" />
           <div className="flex-1">
             <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               Create a Flashcard Session

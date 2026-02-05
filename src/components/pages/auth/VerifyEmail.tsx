@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, RefreshCw, CheckCircle, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { trackEvent } from '../../../services/analytics';
 import logger from '../../../utils/logger';
 
 const VerifyEmail = () => {
@@ -12,6 +13,11 @@ const VerifyEmail = () => {
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState(0);
 
+  // Track when user lands on verification page
+  useEffect(() => {
+    trackEvent('email_verification_pending', {});
+  }, []);
+
   // Poll for email verification status
   useEffect(() => {
     if (!user) {
@@ -21,6 +27,7 @@ const VerifyEmail = () => {
 
     // If already verified, redirect to onboarding
     if (user.emailVerified) {
+      trackEvent('email_verified', {});
       navigate('/onboarding');
       return;
     }
@@ -29,6 +36,7 @@ const VerifyEmail = () => {
     const interval = setInterval(async () => {
       await user.reload();
       if (user.emailVerified) {
+        trackEvent('email_verified', {});
         navigate('/onboarding');
       }
     }, 3000);

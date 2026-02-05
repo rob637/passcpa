@@ -31,6 +31,21 @@ export const getUpdateFunction = () => performUpdate;
 // Register service worker for PWA
 const updateSW = registerSW({
   onNeedRefresh() {
+    // Check if we just updated - skip banner to prevent loop
+    // Use localStorage for persistence across reloads (sessionStorage can be unreliable)
+    const justUpdated = localStorage.getItem('pwa-just-updated');
+    if (justUpdated) {
+      const updateTime = parseInt(justUpdated, 10);
+      const elapsed = Date.now() - updateTime;
+      // If update was within last 30 seconds, skip showing banner
+      if (elapsed < 30000) {
+        logger.log('PWA: Skipping update banner (just updated ' + Math.round(elapsed/1000) + 's ago)');
+        return;
+      }
+      // Clean up old flag
+      localStorage.removeItem('pwa-just-updated');
+    }
+    
     // Store the update function
     performUpdate = () => updateSW(true);
     

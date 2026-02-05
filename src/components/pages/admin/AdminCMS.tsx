@@ -192,6 +192,11 @@ const AdminCMS: React.FC = () => {
   const [userActivity, setUserActivity] = useState<UserActivityData | null>(null);
   const [isLoadingActivity, setIsLoadingActivity] = useState(false);
 
+  // Stale accounts cleanup state
+  const [staleAccounts, setStaleAccounts] = useState<UserDocument[]>([]);
+  const [isLoadingStale, setIsLoadingStale] = useState(false);
+  const [isDeletingStale, setIsDeletingStale] = useState(false);
+
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
 
@@ -221,6 +226,74 @@ const AdminCMS: React.FC = () => {
       setIsLoadingUsers(false);
     }
   }, [isAdmin]);
+
+  // Find stale accounts (incomplete onboarding, no activity in 7+ days)
+  const findStaleAccounts = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingStale(true);
+    try {
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      
+      // Query users with incomplete onboarding
+      const q = query(
+        collection(db, 'users'),
+        where('onboardingComplete', '==', false),
+        where('createdAt', '<=', sevenDaysAgo),
+        limit(100)
+      );
+      const querySnapshot = await getDocs(q);
+      const stale: UserDocument[] = [];
+      querySnapshot.forEach((doc) => {
+        stale.push({ id: doc.id, ...doc.data() } as UserDocument);
+      });
+      setStaleAccounts(stale);
+      addLog(`Found ${stale.length} stale accounts (incomplete onboarding, 7+ days old)`, stale.length > 0 ? 'warning' : 'info');
+    } catch (error) {
+      logger.error('Error finding stale accounts', error);
+      addLog('Error finding stale accounts: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsLoadingStale(false);
+    }
+  }, [isAdmin]);
+
+  // Delete stale accounts (Firestore only - doesn't delete from Auth)
+  const deleteStaleAccounts = useCallback(async () => {
+    if (!isAdmin || staleAccounts.length === 0) return;
+    
+    const confirmed = window.confirm(
+      `Are you sure you want to delete ${staleAccounts.length} stale accounts?\n\n` +
+      `This will remove their Firestore data. They can re-register if needed.\n\n` +
+      `This action cannot be undone.`
+    );
+    
+    if (!confirmed) return;
+    
+    setIsDeletingStale(true);
+    try {
+      const batch = writeBatch(db);
+      let count = 0;
+      
+      for (const account of staleAccounts) {
+        batch.delete(doc(db, 'users', account.id));
+        count++;
+        // Firebase batch limit is 500
+        if (count >= 500) break;
+      }
+      
+      await batch.commit();
+      addLog(`Deleted ${count} stale accounts from Firestore`, 'success');
+      setStaleAccounts([]);
+      
+      // Refresh users list
+      await loadUsers();
+    } catch (error) {
+      logger.error('Error deleting stale accounts', error);
+      addLog('Error deleting stale accounts: ' + (error instanceof Error ? error.message : String(error)), 'error');
+    } finally {
+      setIsDeletingStale(false);
+    }
+  }, [isAdmin, staleAccounts, loadUsers]);
 
   // Filter users when search or filter changes
   useEffect(() => {
@@ -1592,6 +1665,54 @@ const AdminCMS: React.FC = () => {
                   <p className="text-xs text-gray-600">
                     Download user list as CSV file.
                   </p>
+                </div>
+
+                {/* Stale Account Cleanup */}
+                <div className="p-4 rounded-lg border bg-red-50 border-red-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-medium text-gray-900">🧹 Stale Account Cleanup</h4>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={findStaleAccounts}
+                        disabled={isLoadingStale}
+                        className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50"
+                      >
+                        {isLoadingStale ? 'Finding...' : 'Find Stale'}
+                      </button>
+                      {staleAccounts.length > 0 && (
+                        <button
+                          onClick={deleteStaleAccounts}
+                          disabled={isDeletingStale}
+                          className="px-3 py-1 rounded text-sm font-medium bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50"
+                        >
+                          {isDeletingStale ? 'Deleting...' : `Delete ${staleAccounts.length}`}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-2">
+                    Find accounts with incomplete onboarding (7+ days old) and remove them.
+                  </p>
+                  {staleAccounts.length > 0 && (
+                    <div className="mt-3 max-h-40 overflow-y-auto">
+                      <div className="text-xs text-gray-500 mb-1">Preview ({staleAccounts.length} accounts):</div>
+                      <div className="space-y-1">
+                        {staleAccounts.slice(0, 10).map(acc => (
+                          <div key={acc.id} className="text-xs bg-white rounded px-2 py-1 flex justify-between">
+                            <span className="text-gray-700">{acc.email || acc.displayName || 'No email'}</span>
+                            <span className="text-gray-400">
+                              {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
+                            </span>
+                          </div>
+                        ))}
+                        {staleAccounts.length > 10 && (
+                          <div className="text-xs text-gray-500 italic">
+                            ...and {staleAccounts.length - 10} more
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

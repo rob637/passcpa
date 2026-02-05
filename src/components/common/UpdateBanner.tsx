@@ -21,7 +21,17 @@ export const UpdateBanner = ({ onUpdate }: UpdateBannerProps) => {
 
   // Register callback for external triggers
   useEffect(() => {
-    showUpdateBannerCallback = () => setIsVisible(true);
+    showUpdateBannerCallback = () => {
+      // Don't show if we just updated
+      const justUpdated = localStorage.getItem('pwa-just-updated');
+      if (justUpdated) {
+        const elapsed = Date.now() - parseInt(justUpdated, 10);
+        if (elapsed < 30000) {
+          return; // Skip showing banner for 30 seconds after update
+        }
+      }
+      setIsVisible(true);
+    };
     
     // Check if there's a pending update from exam/practice session
     const pendingUpdate = sessionStorage.getItem('pwa-update-pending');
@@ -37,8 +47,9 @@ export const UpdateBanner = ({ onUpdate }: UpdateBannerProps) => {
 
   const handleUpdate = useCallback(() => {
     setIsUpdating(true);
-    // Small delay to show the updating state
+    // Hide the banner while updating to prevent visual flash on reload
     setTimeout(() => {
+      setIsVisible(false);
       onUpdate();
     }, 300);
   }, [onUpdate]);

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
+import { trackEvent } from '../../services/analytics';
 import {
   ChevronRight,
   ChevronLeft,
@@ -376,6 +377,18 @@ const Onboarding: React.FC = () => {
   const [studyPlan, setStudyPlan] = useState('balanced');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Track onboarding step changes for funnel analytics
+  useEffect(() => {
+    const stepId = STEPS[currentStep]?.id;
+    if (stepId) {
+      trackEvent('onboarding_step', {
+        step_number: currentStep + 1,
+        step_id: stepId,
+        step_name: STEPS[currentStep].title,
+      });
+    }
+  }, [currentStep]);
+
   const canContinue = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
@@ -411,6 +424,14 @@ const Onboarding: React.FC = () => {
   const handleComplete = async () => {
     setIsSubmitting(true);
     try {
+      // Track onboarding completion
+      trackEvent('onboarding_completed', {
+        section: selectedSection,
+        daily_goal: dailyGoal,
+        study_plan: studyPlan,
+        days_until_exam: examDate ? Math.ceil((new Date(examDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : null,
+      });
+
       // Parse date as local date to avoid timezone shift
       const [year, month, day] = examDate.split('-').map(Number);
       const localExamDate = new Date(year, month - 1, day);

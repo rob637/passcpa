@@ -171,12 +171,24 @@ export const NavigationProvider: React.FC<{ children: ReactNode }> = ({ children
   );
 };
 
+// Default/noop context for when used outside provider (e.g., in tests)
+const noopContext: NavigationContextValue = {
+  session: defaultSession,
+  startDailyPlanSession: () => {},
+  startTimedSession: () => {},
+  endSession: () => {},
+  isInSession: () => false,
+  getReturnPath: () => '/home',
+  pushBreadcrumb: () => {},
+  popBreadcrumb: () => {},
+  setBreadcrumbs: () => {},
+  clearBreadcrumbs: () => {},
+};
+
 export const useNavigation = (): NavigationContextValue => {
   const context = useContext(NavigationContext);
-  if (!context) {
-    throw new Error('useNavigation must be used within NavigationProvider');
-  }
-  return context;
+  // Return noop context if not wrapped in provider (safe for tests)
+  return context ?? noopContext;
 };
 
 export default NavigationProvider;

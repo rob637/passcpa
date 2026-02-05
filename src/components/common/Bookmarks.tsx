@@ -216,6 +216,16 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
   const [content, setContent] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
+  // Lock body scroll when panel is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isOpen]);
+
   useEffect(() => {
     if (isOpen) {
       setContent(getNote(itemId));
@@ -232,10 +242,10 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4">
       <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full sm:max-w-md bg-white dark:bg-slate-800 rounded-t-2xl sm:rounded-2xl shadow-xl">
-        <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700">
+      <div className="relative w-full sm:max-w-md max-h-[90vh] bg-white dark:bg-slate-800 rounded-t-2xl sm:rounded-2xl shadow-xl flex flex-col">
+        <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700 flex-shrink-0">
           <div className="flex items-center gap-2">
             <StickyNote className="w-5 h-5 text-warning-500" />
             <h3 className="font-semibold text-slate-900 dark:text-white">Notes</h3>
@@ -245,7 +255,7 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
           </button>
         </div>
 
-        <div className="p-4">
+        <div className="p-4 flex-1 overflow-y-auto overscroll-contain">
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -254,7 +264,7 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
           />
         </div>
 
-        <div className="flex gap-3 p-4 border-t border-slate-100 dark:border-slate-700">
+        <div className="flex gap-3 p-4 border-t border-slate-100 dark:border-slate-700 flex-shrink-0">
           <button
             onClick={onClose}
             className="flex-1 py-2.5 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 rounded-xl"

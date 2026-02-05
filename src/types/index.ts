@@ -17,7 +17,33 @@ export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate
 export type NormalizedDifficulty = 'easy' | 'medium' | 'hard';
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
+
+/**
+ * CPA Exam Sections (original type - kept for backward compatibility)
+ * Used throughout CPA-specific components
+ */
 export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC';
+
+/**
+ * EA (Enrolled Agent) Exam Sections
+ * SEE = Special Enrollment Examination
+ */
+export type EASection = 'SEE1' | 'SEE2' | 'SEE3';
+
+/**
+ * CMA (Certified Management Accountant) Exam Sections
+ */
+export type CMASection = 'CMA1' | 'CMA2';
+
+/**
+ * CIA (Certified Internal Auditor) Exam Sections
+ */
+export type CIASection = 'CIA1' | 'CIA2' | 'CIA3';
+
+/**
+ * All exam sections across all courses (for multi-course components)
+ */
+export type AllExamSections = ExamSection | EASection | CMASection | CIASection;
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';
@@ -114,7 +140,7 @@ export interface LessonContent {
 export interface Lesson {
   id: string;
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
-  section: ExamSection;
+  section: AllExamSections;      // Updated: supports all course sections
   title: string;
   description: string;
   order: number;
@@ -132,7 +158,7 @@ export interface Lesson {
 export interface Question {
   id: string;
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
-  section: ExamSection;
+  section: AllExamSections;      // Updated: supports all course sections
   topic: string;
   subtopic: string; // Made required to match existing data
   topicId?: string; // Legacy

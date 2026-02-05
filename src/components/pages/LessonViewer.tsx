@@ -376,7 +376,7 @@ const LessonViewer: React.FC = () => {
           // Use the lesson's actual section for navigation, not the user's profile section
           // This ensures PREP lessons navigate within PREP, not the user's exam section
           const section = fetchedLesson?.section || userProfile?.examSection || 'FAR';
-          const lessons = await fetchLessonsBySection(section as ExamSection, courseId);
+          const lessons = await fetchLessonsBySection(section, courseId);
           setSectionLessons(lessons);
 
           // Check if practice questions exist for this lesson

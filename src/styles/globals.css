@@ -812,38 +812,38 @@ body.dark {
    ============================================ */
 
 .text-display {
-  @apply text-4xl font-bold tracking-tight text-slate-900;
+  @apply text-4xl font-bold tracking-tight text-slate-900 dark:text-white;
   letter-spacing: -0.02em;
 }
 
 .text-title {
-  @apply text-2xl font-bold text-slate-900;
+  @apply text-2xl font-bold text-slate-900 dark:text-white;
   letter-spacing: -0.015em;
 }
 
 .text-subtitle {
-  @apply text-lg font-semibold text-slate-800;
+  @apply text-lg font-semibold text-slate-800 dark:text-slate-100;
 }
 
 .text-body {
-  @apply text-base text-slate-600 leading-relaxed;
+  @apply text-base text-slate-600 dark:text-slate-300 leading-relaxed;
 }
 
 .text-caption {
-  @apply text-sm text-slate-500;
+  @apply text-sm text-slate-500 dark:text-slate-400;
 }
 
 .text-micro {
-  @apply text-xs text-slate-400;
+  @apply text-xs text-slate-400 dark:text-slate-500;
 }
 
 /* Prose for explanations */
 .prose {
-  @apply text-slate-700 leading-relaxed;
+  @apply text-slate-700 dark:text-slate-200 leading-relaxed;
 }
 
 .prose h3 {
-  @apply text-lg font-semibold text-slate-900 mt-6 mb-3;
+  @apply text-lg font-semibold text-slate-900 dark:text-white mt-6 mb-3;
 }
 
 .prose p {
@@ -851,7 +851,7 @@ body.dark {
 }
 
 .prose strong {
-  @apply font-semibold text-slate-900;
+  @apply font-semibold text-slate-900 dark:text-white;
 }
 
 .prose ul {
@@ -859,7 +859,7 @@ body.dark {
 }
 
 .prose code {
-  @apply bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800;
+  @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800 dark:text-slate-200;
 }
 
 /* ============================================
@@ -871,19 +871,19 @@ body.dark {
 }
 
 .callout-info {
-  @apply bg-primary-50 border border-primary-100;
+  @apply bg-primary-50 dark:bg-primary-900/30 border border-primary-100 dark:border-primary-800;
 }
 
 .callout-success {
-  @apply bg-success-50 border border-success-100;
+  @apply bg-success-50 dark:bg-success-900/30 border border-success-100 dark:border-success-800;
 }
 
 .callout-warning {
-  @apply bg-warning-50 border border-warning-100;
+  @apply bg-warning-50 dark:bg-warning-900/30 border border-warning-100 dark:border-warning-800;
 }
 
 .callout-error {
-  @apply bg-error-50 border border-error-100;
+  @apply bg-error-50 dark:bg-error-900/30 border border-error-100 dark:border-error-800;
 }
 
 /* ============================================
@@ -894,7 +894,7 @@ body.dark {
 .nav-item {
   @apply flex flex-col items-center justify-center gap-1 
          py-2 px-3 rounded-xl transition-all duration-200
-         text-slate-500;
+         text-slate-500 dark:text-slate-400;
   min-width: 64px;
 }
 
@@ -903,11 +903,11 @@ body.dark {
 }
 
 .nav-item-active {
-  @apply text-primary-600;
+  @apply text-primary-600 dark:text-primary-400;
 }
 
 .nav-item-active .nav-icon {
-  @apply text-primary-600;
+  @apply text-primary-600 dark:text-primary-400;
 }
 
 /* Active indicator pill */
@@ -926,11 +926,11 @@ body.dark {
 }
 
 .stat-value {
-  @apply text-2xl font-bold text-slate-900;
+  @apply text-2xl font-bold text-slate-900 dark:text-white;
 }
 
 .stat-label {
-  @apply text-sm text-slate-500 mt-1;
+  @apply text-sm text-slate-500 dark:text-slate-400 mt-1;
 }
 
 .stat-change {
@@ -972,7 +972,7 @@ body.dark {
 /* XP Badge */
 .xp-badge {
   @apply inline-flex items-center gap-1 px-2 py-0.5
-         bg-primary-100 text-primary-700 
+         bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 
          font-semibold text-xs rounded-full;
 }
 
@@ -985,16 +985,16 @@ body.dark {
 }
 
 .empty-state-icon {
-  @apply w-20 h-20 bg-slate-100 rounded-3xl 
+  @apply w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-3xl 
          flex items-center justify-center mb-6;
 }
 
 .empty-state-title {
-  @apply text-xl font-semibold text-slate-900 mb-2;
+  @apply text-xl font-semibold text-slate-900 dark:text-white mb-2;
 }
 
 .empty-state-description {
-  @apply text-slate-500 max-w-sm;
+  @apply text-slate-500 dark:text-slate-400 max-w-sm;
 }
 
 /* ============================================
@@ -1458,7 +1458,7 @@ textarea:focus:not(:focus-visible),
   font-size: 1rem;
   font-weight: 600;
   margin: 0.75rem 0 0.25rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 /* AI inline code */

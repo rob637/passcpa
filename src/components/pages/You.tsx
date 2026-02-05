@@ -68,7 +68,7 @@ const ReadinessRing = ({ readiness, size = 100 }: { readiness: number; size?: nu
         <span className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           {Math.round(readiness)}%
         </span>
-        <span className="text-xs text-slate-600">Ready</span>
+        <span className="text-xs text-slate-600 dark:text-slate-400">Ready</span>
       </div>
     </div>
   );
@@ -96,7 +96,7 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }
                 style={{ height: `${height}%` }}
               />
             </div>
-            <span className="text-[10px] text-slate-600 mt-1">
+            <span className="text-[10px] text-slate-600 dark:text-slate-400 mt-1">
               {format(day.date, 'EEE').charAt(0)}
             </span>
           </div>
@@ -343,9 +343,9 @@ const You: React.FC = () => {
               className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 rounded-full border-2 border-slate-200 dark:border-slate-600 flex items-center justify-center shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors"
             >
               {isUploadingPhoto ? (
-                <Loader2 className="w-4 h-4 text-slate-600 animate-spin" />
+                <Loader2 className="w-4 h-4 text-slate-600 dark:text-slate-300 animate-spin" />
               ) : (
-                <Camera className="w-4 h-4 text-slate-600" />
+                <Camera className="w-4 h-4 text-slate-600 dark:text-slate-300" />
               )}
             </button>
           </div>
@@ -362,7 +362,7 @@ const You: React.FC = () => {
                 {sectionInfo?.shortName || examSection}
               </span>
               {daysUntilExam !== null && daysUntilExam > 0 && (
-                <span className="text-xs text-slate-600 flex items-center gap-1">
+                <span className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
                   {daysUntilExam} days left
                 </span>
@@ -379,15 +379,15 @@ const You: React.FC = () => {
               <Flame className="w-4 h-4" />
               <span className="font-bold text-lg">{currentStreak}</span>
             </div>
-            <span className="text-xs text-slate-600">Streak</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Streak</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.totalQuestions}</div>
-            <span className="text-xs text-slate-600">MCQs</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">MCQs</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.tbsCompleted}</div>
-            <span className="text-xs text-slate-600">TBS</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">TBS</span>
           </div>
           
           {/* Row 2: Lessons, Accuracy, Time */}
@@ -395,11 +395,11 @@ const You: React.FC = () => {
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
               {overallStats.lessonsCompleted}/{overallStats.totalLessons}
             </div>
-            <span className="text-xs text-slate-600">Lessons</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Lessons</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{overallStats.accuracy}%</div>
-            <span className="text-xs text-slate-600">Accuracy</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Accuracy</span>
           </div>
           <div className="text-center">
             <div className="font-bold text-lg text-slate-900 dark:text-slate-100">
@@ -407,7 +407,7 @@ const You: React.FC = () => {
                 ? `${overallStats.studyMinutes}m` 
                 : `${(overallStats.studyMinutes / 60).toFixed(1)}h`}
             </div>
-            <span className="text-xs text-slate-600">Time</span>
+            <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
           </div>
         </div>
       </div>
@@ -444,10 +444,10 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Full Progress</span>
-              <p className="text-xs text-slate-600">Detailed stats, topic breakdown, study plan</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Detailed stats, topic breakdown, study plan</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
         <Link
@@ -460,10 +460,10 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Achievements</span>
-              <p className="text-xs text-slate-600">Badges and milestones</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Badges and milestones</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
         <Link
@@ -476,10 +476,10 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Community</span>
-              <p className="text-xs text-slate-600">Leaderboard, compare with other candidates</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Leaderboard, compare with other candidates</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
         <Link
@@ -492,10 +492,10 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Settings</span>
-              <p className="text-xs text-slate-600">Profile, notifications, study preferences</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Profile, notifications, study preferences</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
         <Link
@@ -508,10 +508,10 @@ const You: React.FC = () => {
             </div>
             <div>
               <span className="font-medium text-slate-900 dark:text-slate-100">Help & Legal</span>
-              <p className="text-xs text-slate-600">Support, terms, privacy</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Support, terms, privacy</p>
             </div>
           </div>
-          <ChevronRight className="w-5 h-5 text-slate-600" />
+          <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
         <button
@@ -528,8 +528,8 @@ const You: React.FC = () => {
       </div>
 
       {/* Version */}
-      <div className="text-center text-xs text-slate-600">
-        <p>VoraPrep v1.0</p>
+      <div className="text-center text-xs text-slate-600 dark:text-slate-400">
+        <p>VoraPrep v1.1</p>
         <p className="mt-1">
           Not affiliated with AICPA, NASBA, or any state board.
         </p>

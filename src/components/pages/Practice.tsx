@@ -383,7 +383,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
           <div className="card-body">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <History className="w-5 h-5 text-slate-600" />
+                <History className="w-5 h-5 text-slate-600 dark:text-slate-400" />
                 <h2 className="font-semibold text-slate-900 dark:text-slate-100">Attempts List</h2>
               </div>
             </div>
@@ -1286,7 +1286,7 @@ const Practice: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-6">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-            <AlertCircle className="w-8 h-8 text-slate-600" />
+            <AlertCircle className="w-8 h-8 text-slate-600 dark:text-slate-400" />
           </div>
           <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             No Questions Available

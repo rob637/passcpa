@@ -140,7 +140,7 @@ const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
 
   return (
     <div className="space-y-2">
-      <div className="grid grid-cols-12 gap-2 text-sm font-medium text-slate-600 px-2">
+      <div className="grid grid-cols-12 gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 px-2">
         <div className="col-span-6">Account</div>
         <div className="col-span-2 text-right">Debit</div>
         <div className="col-span-2 text-right">Credit</div>
@@ -305,12 +305,12 @@ const MultipleChoiceInput: React.FC<MultipleChoiceInputProps> = ({
             onClick={() => !disabled && onChange(index)}
             disabled={disabled}
             className={clsx(
-              'w-full p-3 rounded-lg border-2 text-left transition-all flex items-center gap-3',
-              !disabled && !isSelected && 'hover:border-primary-200',
-              isSelected && !showCorrect && 'border-primary-500 bg-primary-50',
-              showCorrect && isCorrectOption && 'border-success-500 bg-success-50',
-              showCorrect && isSelected && !isCorrectOption && 'border-error-500 bg-error-50',
-              !isSelected && !showCorrect && 'border-slate-200'
+              'w-full p-3 rounded-lg border-2 text-left transition-all flex items-center gap-3 dark:text-slate-100',
+              !disabled && !isSelected && 'hover:border-primary-200 dark:hover:border-primary-400',
+              isSelected && !showCorrect && 'border-primary-500 bg-primary-50 dark:bg-primary-900/30',
+              showCorrect && isCorrectOption && 'border-success-500 bg-success-50 dark:bg-success-900/30',
+              showCorrect && isSelected && !isCorrectOption && 'border-error-500 bg-error-50 dark:bg-error-900/30',
+              !isSelected && !showCorrect && 'border-slate-200 dark:border-slate-600 dark:bg-slate-800'
             )}
           >
             <span
@@ -319,7 +319,7 @@ const MultipleChoiceInput: React.FC<MultipleChoiceInputProps> = ({
                 isSelected && !showCorrect && 'bg-primary-500 text-white',
                 showCorrect && isCorrectOption && 'bg-success-500 text-white',
                 showCorrect && isSelected && !isCorrectOption && 'bg-error-500 text-white',
-                !isSelected && !showCorrect && 'bg-slate-100 text-slate-600'
+                !isSelected && !showCorrect && 'bg-slate-100 text-slate-600 dark:bg-slate-600 dark:text-slate-200'
               )}
             >
               {String.fromCharCode(65 + index)}
@@ -334,7 +334,7 @@ const MultipleChoiceInput: React.FC<MultipleChoiceInputProps> = ({
       })}
 
       {showCorrect && explanation && (
-        <div className="p-3 bg-slate-50 rounded-lg text-sm text-slate-700 mt-2">
+        <div className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg text-sm text-slate-700 dark:text-slate-200 mt-2">
           <strong>Explanation:</strong> {explanation}
         </div>
       )}
@@ -933,14 +933,14 @@ const TBSSimulator: React.FC = () => {
   if (!tbs) {
     if (error) {
        return (
-        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-          <div className="text-center p-8 bg-white rounded-xl shadow-lg border border-red-100 max-w-md">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+          <div className="text-center p-8 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-red-100 dark:border-red-900 max-w-md">
             <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-slate-900 mb-2">Unable to Load Simulation</h3>
-            <p className="text-slate-600 mb-6">{error}</p>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Unable to Load Simulation</h3>
+            <p className="text-slate-600 dark:text-slate-300 mb-6">{error}</p>
             <button 
               onClick={() => navigate('/practice')}
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition-colors"
+              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-lg font-medium transition-colors"
             >
               Return to Practice
             </button>
@@ -949,17 +949,17 @@ const TBSSimulator: React.FC = () => {
        );
     }
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4" />
-          <p className="text-slate-600">Loading Simulation...</p>
+          <p className="text-slate-600 dark:text-slate-300">Loading Simulation...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-900 flex flex-col">
       {/* Header */}
       <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between shadow-md z-10">
         <div className="flex items-center gap-4">
@@ -971,7 +971,7 @@ const TBSSimulator: React.FC = () => {
           </button>
           <div>
             <div className="font-bold">{tbs.title}</div>
-            <div className="text-xs text-slate-600 flex items-center gap-2">
+            <div className="text-xs text-slate-300 flex items-center gap-2">
               <span className="bg-primary-600 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">
                 {totalTasks} {totalTasks === 1 ? 'Task' : 'Tasks'}
               </span>
@@ -1018,24 +1018,24 @@ const TBSSimulator: React.FC = () => {
           <div className="max-w-5xl mx-auto space-y-6">
             
             {/* Context/Scenario */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-warning-500" />
                 Scenario
               </h2>
-              <div className="prose prose-slate max-w-none text-slate-700 whitespace-pre-line">
+              <div className="prose prose-slate max-w-none text-slate-700 dark:text-slate-200 whitespace-pre-line">
                  {tbs.description}
               </div>
             </div>
 
             {/* Hints Panel (Collapsible) */}
             {showExhibits && tbs.hints && tbs.hints.length > 0 && (
-              <div className="bg-amber-50 rounded-xl shadow-sm border border-amber-200 p-5">
-                <div className="font-bold text-amber-800 mb-3 flex items-center gap-2">
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded-xl shadow-sm border border-amber-200 dark:border-amber-700 p-5">
+                <div className="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
                   <Lightbulb className="w-5 h-5" />
                   Hints
                 </div>
-                <div className="text-sm text-amber-900 space-y-2">
+                <div className="text-sm text-amber-900 dark:text-amber-200 space-y-2">
                   {tbs.hints.map((hint, idx) => (
                     <p key={idx}>• {hint}</p>
                   ))}
@@ -1048,11 +1048,11 @@ const TBSSimulator: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {tbs.exhibits.map((exhibit: any, idx: number) => (
-                  <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                    <div className="font-bold text-slate-800 border-b pb-2 mb-3">
+                  <div key={idx} className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4">
+                    <div className="font-bold text-slate-800 dark:text-slate-100 border-b dark:border-slate-600 pb-2 mb-3">
                       {exhibit.title}
                     </div>
-                    <div className="text-sm text-slate-600 font-mono bg-slate-50 p-3 rounded border whitespace-pre-wrap">
+                    <div className="text-sm text-slate-600 dark:text-slate-300 font-mono bg-slate-50 dark:bg-slate-700 p-3 rounded border dark:border-slate-600 whitespace-pre-wrap">
                       {exhibit.content}
                     </div>
                   </div>
@@ -1062,8 +1062,8 @@ const TBSSimulator: React.FC = () => {
 
             {/* Task Tabs - Like real CPA exam */}
             {totalTasks > 1 && (
-              <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden sticky top-0 z-10">
-                <div className="flex border-b border-slate-200 overflow-x-auto scrollbar-hide">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden sticky top-0 z-10">
+                <div className="flex border-b border-slate-200 dark:border-slate-700 overflow-x-auto scrollbar-hide">
                   {tbs.tasks.map((task, index) => {
                     const taskScore = taskScores[task.id];
                     const hasAnswer = answers[task.id] !== undefined;
@@ -1076,8 +1076,8 @@ const TBSSimulator: React.FC = () => {
                         className={clsx(
                           'flex items-center gap-2 px-3 sm:px-4 py-3 text-xs sm:text-sm font-medium border-b-2 transition-colors whitespace-nowrap flex-shrink-0',
                           isActive
-                            ? 'border-primary-600 text-primary-600 bg-primary-50'
-                            : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                            ? 'border-primary-600 text-primary-600 bg-primary-50 dark:bg-primary-900/30'
+                            : 'border-transparent text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700'
                         )}
                       >
                         <span className={clsx(
@@ -1088,7 +1088,7 @@ const TBSSimulator: React.FC = () => {
                               : 'bg-error-100 text-error-700'
                             : hasAnswer
                               ? 'bg-primary-100 text-primary-700'
-                              : 'bg-slate-100 text-slate-600'
+                              : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200'
                         )}>
                           {submitted && taskScore !== undefined ? (
                             taskScore >= 75 ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />
@@ -1097,7 +1097,7 @@ const TBSSimulator: React.FC = () => {
                           )}
                         </span>
                         Task {index + 1}
-                        <span className="text-xs text-slate-600">
+                        <span className="text-xs text-slate-600 dark:text-slate-400">
                           ({TBS_LABELS[task.type] || task.type})
                         </span>
                       </button>
@@ -1109,13 +1109,13 @@ const TBSSimulator: React.FC = () => {
 
             {/* Answer Area for Current Task */}
             {currentTask && (
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-                <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <div className="bg-slate-50 dark:bg-slate-700 px-6 py-4 border-b border-slate-200 dark:border-slate-600 flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-bold text-slate-800">
+                    <h3 className="font-bold text-slate-800 dark:text-slate-100">
                       {totalTasks > 1 ? `Task ${currentTaskIndex + 1} of ${totalTasks}` : 'Your Response'}
                     </h3>
-                    <span className="text-xs bg-slate-200 text-slate-600 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full">
                       {TBS_LABELS[currentTask.type] || currentTask.type}
                     </span>
                   </div>
@@ -1132,9 +1132,9 @@ const TBSSimulator: React.FC = () => {
                 
                 {/* Question/Task */}
                 {currentTask.question && (
-                  <div className="px-6 py-4 bg-primary-50 border-b border-primary-100">
-                    <p className="text-slate-800 font-medium">
-                      <span className="text-primary-600 font-bold">Task:</span> {currentTask.question}
+                  <div className="px-6 py-4 bg-primary-50 dark:bg-primary-900/30 border-b border-primary-100 dark:border-primary-800">
+                    <p className="text-slate-800 dark:text-slate-100 font-medium">
+                      <span className="text-primary-600 dark:text-primary-400 font-bold">Task:</span> {currentTask.question}
                     </p>
                   </div>
                 )}
@@ -1204,14 +1204,14 @@ const TBSSimulator: React.FC = () => {
                           className={clsx(
                             "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === 0
-                              ? "text-slate-600 cursor-not-allowed"
-                              : "text-slate-600 hover:bg-slate-200"
+                              ? "text-slate-600 dark:text-slate-500 cursor-not-allowed"
+                              : "text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                           )}
                         >
                           <ChevronLeft className="w-4 h-4" />
                           <span className="hidden sm:inline">Previous</span>
                         </button>
-                        <span className="text-sm font-medium text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-600">
                           Task {currentTaskIndex + 1} of {totalTasks}
                         </span>
                         <button
@@ -1220,8 +1220,8 @@ const TBSSimulator: React.FC = () => {
                           className={clsx(
                             "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                             currentTaskIndex === totalTasks - 1
-                              ? "text-slate-600 cursor-not-allowed"
-                              : "text-slate-600 hover:bg-slate-200"
+                              ? "text-slate-600 dark:text-slate-500 cursor-not-allowed"
+                              : "text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                           )}
                         >
                           <span className="hidden sm:inline">Next</span>
@@ -1237,7 +1237,7 @@ const TBSSimulator: React.FC = () => {
                     )}>
                       <button
                         onClick={handleReset}
-                        className="flex items-center gap-2 text-slate-600 hover:text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors text-sm"
+                        className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-white px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm"
                       >
                         <RotateCcw className="w-4 h-4" />
                         <span>Reset</span>

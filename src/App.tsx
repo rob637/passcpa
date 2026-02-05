@@ -161,14 +161,29 @@ function App() {
   const handleUpdate = useCallback(() => {
     const updateFn = getUpdateFunction();
     if (updateFn) {
+      // Listen for the new service worker to take control
+      let reloaded = false;
+      const reloadOnce = () => {
+        if (!reloaded) {
+          reloaded = true;
+          window.location.reload();
+        }
+      };
+      
+      // When new SW takes control, reload
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.addEventListener('controllerchange', reloadOnce);
+      }
+      
+      // Call update to trigger skipWaiting on waiting SW
       updateFn();
-      // Reload the page after service worker activates
-      // The service worker will take control on reload
+      
+      // Fallback: if controllerchange doesn't fire within 3s, force reload
       setTimeout(() => {
-        window.location.reload();
-      }, 500);
+        reloadOnce();
+      }, 3000);
     } else {
-      // Fallback: force reload
+      // Fallback: force reload to bypass cache
       window.location.reload();
     }
   }, []);

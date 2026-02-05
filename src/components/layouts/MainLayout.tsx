@@ -4,6 +4,7 @@ import { Home, BookOpen, User, Flame, Compass, WifiOff } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
+import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
 import clsx from 'clsx';
 
@@ -208,7 +209,7 @@ const MainLayout = () => {
         <div className="p-6">
           <div className="flex items-center gap-3 mb-4">
             <img 
-              src="/logo.svg" 
+              src={darkMode ? "/logo-white.svg" : "/logo.svg"} 
               alt="VoraPrep" 
               className="h-10" 
             />

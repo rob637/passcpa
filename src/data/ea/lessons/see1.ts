@@ -1890,6 +1890,643 @@ export const eaPart1Lessons: Lesson[] = [
       ],
     },
   },
+  // ============================================================================
+  // SEE1-4: TAXATION AND ADVICE - Continued (Lessons 36-38)
+  // ============================================================================
+
+  {
+    id: 'SEE1-036',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Kiddie Tax Rules',
+    description: 'Understand taxation of unearned income for children',
+    order: 36,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Kiddie tax', 'Unearned income', 'Age rules', 'Form 8615'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The kiddie tax prevents parents from shifting investment income to children in lower tax brackets. Understanding when it applies and how to calculate it is essential for family tax planning.",
+        },
+        {
+          title: 'Who is Subject to Kiddie Tax?',
+          type: 'text',
+          content: "**The kiddie tax applies if:**\n\n• Child has more than $2,500 (2024) of unearned income, AND\n• Child meets age requirements:\n  - Under age 18 at year end, OR\n  - Age 18 with earned income ≤ 50% of support, OR\n  - Age 19-23 and full-time student with earned income ≤ 50% of support\n\n• At least one parent is alive at year end\n• Child doesn't file joint return with spouse",
+        },
+        {
+          title: 'How Kiddie Tax Works',
+          type: 'table',
+          headers: ['Unearned Income', 'Tax Treatment'],
+          rows: [
+            ['First $1,250', 'Tax-free (standard deduction portion)'],
+            ['$1,251 - $2,500', 'Taxed at child\'s rate'],
+            ['Over $2,500', 'Taxed at parents\' marginal rate'],
+          ],
+        },
+        {
+          title: 'What is Unearned Income?',
+          type: 'list',
+          content: [
+            "Interest and dividends",
+            "Capital gains",
+            "Rental income",
+            "Taxable Social Security benefits",
+            "Pension/annuity distributions",
+            "Income from trusts",
+            "Taxable scholarships (non-tuition portion)",
+          ],
+        },
+        {
+          title: 'Calculating the Kiddie Tax',
+          type: 'text',
+          content: "**Form 8615 Calculation:**\n\n1. Determine child's net unearned income\n2. Calculate tax on net unearned income at parent's rate\n3. Calculate tax on child's remaining taxable income at child's rate\n4. Total tax = Sum of both\n\n**Net Unearned Income =**\nUnearned income - $1,250 - Greater of ($1,250 OR itemized deductions related to unearned income)",
+        },
+        {
+          title: '⚠️ Exam Trap: Parent\'s Rate',
+          type: 'warning',
+          content: "**The kiddie tax uses the parents' MARGINAL rate:**\n\n• Add child's net unearned income to parents' taxable income\n• Calculate incremental tax at that bracket\n• This is the tax on the child's net unearned income\n\n**If parents file MFS:** Use parent with higher taxable income",
+        },
+        {
+          title: 'Form 8814 Alternative',
+          type: 'text',
+          content: "**Parents' Election to Report Child's Income:**\n\nIf child meets requirements, parents may include child's income on their return (Form 8814):\n\n• Child's only income is interest/dividends\n• Gross income < $12,500\n• No estimated tax paid under child's SSN\n• No withholding\n\n**Disadvantage:** Additional $125 tax and child loses own standard deduction",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Kiddie tax applies to children under 18 (or 19-23 if student)",
+            "First $1,250 unearned income tax-free, next $1,250 at child's rate",
+            "Unearned income over $2,500 taxed at parents' marginal rate",
+            "Use Form 8615 to calculate kiddie tax",
+            "Parents may elect to report on their return using Form 8814",
+            "Earned income is always taxed at child's own rate",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-037',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Estimated Tax Payments',
+    description: 'Master the rules for quarterly estimated tax payments',
+    order: 37,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Safe harbor', 'Quarterly payments', 'Penalty calculation'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Clients with self-employment income, investment income, or other non-wage income must make estimated tax payments. Understanding safe harbors and penalty calculation helps clients avoid unnecessary penalties.",
+        },
+        {
+          title: 'Who Must Pay Estimated Tax?',
+          type: 'text',
+          content: "**Required if:**\n\n• Expected to owe $1,000 or more when return is filed, AND\n• Withholding + credits will be less than the smaller of:\n  - 90% of current year tax, OR\n  - 100% of prior year tax (110% if prior year AGI > $150,000 MFJ)\n\n**Not required if:**\n• Owed zero tax in prior year (and was U.S. citizen/resident full year)",
+        },
+        {
+          title: 'Quarterly Due Dates',
+          type: 'table',
+          headers: ['Period', 'Due Date'],
+          rows: [
+            ['Jan 1 - Mar 31', 'April 15'],
+            ['Apr 1 - May 31', 'June 15'],
+            ['Jun 1 - Aug 31', 'September 15'],
+            ['Sep 1 - Dec 31', 'January 15 (following year)'],
+          ],
+        },
+        {
+          title: 'Safe Harbor Rules',
+          type: 'text',
+          content: "**No penalty if payments equal or exceed:**\n\n**100% Safe Harbor:**\n• Pay 100% of prior year tax liability\n• Applies if prior year AGI ≤ $150,000 ($75,000 MFS)\n\n**110% Safe Harbor:**\n• Pay 110% of prior year tax liability\n• Applies if prior year AGI > $150,000 ($75,000 MFS)\n\n**90% Current Year:**\n• Pay 90% of current year tax liability\n• Always an alternative safe harbor\n\n**Exception:** Prior year must have been 12 months and tax return filed",
+        },
+        {
+          title: '🧠 Memory Aid: Safe Harbor',
+          type: 'callout',
+          content: "**\"Pay Last Year's Tax\"**\n\n• AGI ≤ $150K: Pay 100% of last year\n• AGI > $150K: Pay 110% of last year\n\n**OR pay 90% of this year (if you can predict it)**\n\n**The 110% is the commonly tested one for high-income taxpayers!**",
+        },
+        {
+          title: 'Annualized Income Installment Method',
+          type: 'text',
+          content: "**For Uneven Income:**\n\nIf income varies significantly during the year, taxpayer can use annualized income method to reduce earlier payments.\n\n**How it works:**\n• Calculate income for each period\n• Annualize it (multiply by factor)\n• Pay tax proportionate to income in each period\n\n**Schedule AI (Form 2210)** required to claim this method and avoid/reduce penalty.",
+        },
+        {
+          title: 'Underpayment Penalty',
+          type: 'text',
+          content: "**Form 2210 Calculation:**\n\n• Penalty is essentially interest on late payments\n• Rate is federal short-term rate + 3%\n• Calculated from payment due date to earlier of:\n  - Date payment made, or\n  - Return due date (April 15)\n\n**Penalty Waiver:**\nAvailable if underpayment due to casualty, disaster, or other unusual circumstances\nRetired/disabled taxpayers age 62+ in certain situations",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Estimated tax required if owing $1,000+ and withholding insufficient",
+            "Due dates: April 15, June 15, September 15, January 15",
+            "100% safe harbor if prior AGI ≤ $150K; 110% if higher",
+            "90% of current year tax is alternative safe harbor",
+            "Annualized income method helps with uneven income",
+            "Penalty = interest at federal short-term rate + 3%",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-038',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Withholding Requirements',
+    description: 'Understand income tax withholding and Form W-4',
+    order: 38,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Form W-4', 'Withholding tables', 'Backup withholding'],
+    blueprintArea: 'SEE1-4',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Proper withholding is the first line of defense against underpayment penalties. Understanding how W-4 works helps clients adjust withholding to match their expected tax liability.",
+        },
+        {
+          title: 'Form W-4 Overview',
+          type: 'text',
+          content: "**Current W-4 (2020+):**\n\n• No more allowances/exemptions\n• Based on actual tax credits and deductions\n• Five steps (Steps 2-4 optional)\n\n**Key Elements:**\n• Filing status\n• Multiple jobs/spouse works adjustment\n• Dependents and credits\n• Other adjustments (deductions, additional income)\n• Extra withholding",
+        },
+        {
+          title: 'W-4 Steps',
+          type: 'table',
+          headers: ['Step', 'Purpose', 'Who Uses'],
+          rows: [
+            ['Step 1', 'Filing status', 'Everyone (required)'],
+            ['Step 2', 'Multiple jobs or spouse works', 'Two-earner households'],
+            ['Step 3', 'Claim dependents', 'Those with qualifying dependents'],
+            ['Step 4', 'Other adjustments', 'Itemizers, other income'],
+            ['Step 5', 'Sign and date', 'Everyone (required)'],
+          ],
+        },
+        {
+          title: 'When New W-4 Required',
+          type: 'text',
+          content: "**Employee must submit new W-4:**\n\n• Within 10 days of changes that reduce withholding allowances\n• Marriage or divorce\n• New dependents\n• Change in expected deductions\n\n**Employee may (but not required to):**\n• Submit new W-4 anytime\n• Update for life changes\n\n**Employer must:**\n• Implement new W-4 by start of first payroll period ending ≥30 days after receipt",
+        },
+        {
+          title: 'Backup Withholding',
+          type: 'text',
+          content: "**Rate: 24%**\n\n**When required:**\n• Payee didn't provide TIN (or incorrect TIN)\n• IRS notifies payer that backup withholding is required\n• Payee failed to certify not subject to backup withholding\n\n**Applies to:**\n• Interest\n• Dividends\n• Rents, royalties\n• Non-employee compensation\n• Broker transactions\n• Other reportable payments",
+        },
+        {
+          title: '⚠️ Exam Trap: Exempt from Withholding',
+          type: 'warning',
+          content: "**Employee can claim exempt from withholding if:**\n\n• Had no tax liability last year, AND\n• Expects no tax liability this year\n\n**Exempt status expires February 15 of following year!**\n\nEmployee must submit new W-4 each year to continue exemption.",
+        },
+        {
+          title: 'Other Withholding Types',
+          type: 'text',
+          content: "**Pensions and Annuities:**\n• W-4P for periodic payments\n• Can elect no withholding (with some exceptions)\n• Default withholding if no W-4P\n\n**Gambling Winnings:**\n• 24% on winnings over threshold\n• Generally $1,200 for slots/bingo, $1,500 for keno, $5,000 for other\n\n**Supplemental Wages:**\n• Flat 22% rate (or aggregate method)\n• Includes bonuses, commissions, severance",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Form W-4 determines income tax withholding amount",
+            "2020+ W-4 uses tax credits and deductions, not allowances",
+            "New W-4 required within 10 days if circumstances reduce withholding",
+            "Backup withholding is 24% for missing/incorrect TIN",
+            "Exempt status expires February 15 each year",
+            "Supplemental wages: 22% flat rate",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE1-5: CREDITS - Continued (Lessons 44-46)
+  // ============================================================================
+
+  {
+    id: 'SEE1-044',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Premium Tax Credit',
+    description: 'Understand the credit for health insurance purchased through the Marketplace',
+    order: 44,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Marketplace insurance', 'APTC', 'Form 8962', 'Reconciliation'],
+    blueprintArea: 'SEE1-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Premium Tax Credit makes health insurance affordable for millions of Americans. Understanding eligibility, advance payments, and reconciliation is essential for clients who purchase coverage through Healthcare.gov.",
+        },
+        {
+          title: 'Eligibility Requirements',
+          type: 'list',
+          content: [
+            "Purchased coverage through the Health Insurance Marketplace",
+            "Household income 100%-400% of Federal Poverty Level (no upper limit through 2025)",
+            "Cannot be claimed as dependent",
+            "Cannot file MFS (unless certain abuse/abandonment exceptions)",
+            "Not eligible for other minimum essential coverage (employer, Medicare, Medicaid)",
+          ],
+        },
+        {
+          title: 'How the Credit Works',
+          type: 'text',
+          content: "**Credit Amount:**\nPremium for second-lowest-cost Silver plan (SLCSP) minus expected contribution\n\n**Expected Contribution:**\nBased on household income as percentage of FPL, multiplied by applicable percentage\n\n**2024 Applicable Percentages:**\n• 100-150% FPL: 0% to 4% of income\n• 150-200% FPL: 4% to 6.3% of income\n• 200-250% FPL: 6.3% to 8.05% of income\n• 250-400% FPL: 8.05% to 8.5% of income\n• Over 400% FPL: 8.5% (due to ARP extension)",
+        },
+        {
+          title: 'Advance Premium Tax Credit (APTC)',
+          type: 'text',
+          content: "**Paid in Advance:**\nBased on estimated income from Marketplace application, credit is paid directly to insurer monthly.\n\n**Must Reconcile:**\nAt tax time, compare actual income to estimate:\n• If income higher → may owe back some APTC\n• If income lower → may get additional credit\n\n**Form 1095-A:**\nReceived from Marketplace showing:\n• Monthly premiums\n• Monthly SLCSP\n• Monthly APTC paid",
+        },
+        {
+          title: 'Form 8962 Reconciliation',
+          type: 'text',
+          content: "**Required if any APTC received or claiming PTC:**\n\n**Part I:** Family size, modified AGI, FPL calculation\n**Part II:** Monthly calculation (if circumstances changed)\n**Part III:** Repayment limitation (if applicable)\n\n**Repayment Caps (2024):**\nBased on income, maximum repayment limited:\n• Under 200% FPL: $375 (single) / $750 (other)\n• 200-300% FPL: $950 (single) / $1,900 (other)\n• 300-400% FPL: $1,600 (single) / $3,200 (other)\n• Over 400% FPL: Full repayment required",
+        },
+        {
+          title: '⚠️ Exam Trap: MFS and PTC',
+          type: 'warning',
+          content: "**MFS taxpayers generally CANNOT claim PTC!**\n\n**Limited Exception:**\n• Victim of domestic abuse or spousal abandonment\n• Living apart from spouse at end of year\n• Indicate on Form 8962\n\n**Key:** If client has APTC and files MFS, they may have to repay entire APTC!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "PTC available for Marketplace insurance if income 100%+ FPL",
+            "Credit = SLCSP premium minus expected contribution",
+            "APTC is paid in advance to insurer monthly",
+            "Must reconcile on Form 8962 using Form 1095-A data",
+            "Repayment caps exist for income under 400% FPL",
+            "MFS generally ineligible (limited exceptions)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-046',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Energy Credits for Individuals',
+    description: 'Master the residential clean energy and efficiency credits',
+    order: 46,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Residential clean energy credit', 'Energy efficient home credit', 'Clean vehicle credit'],
+    blueprintArea: 'SEE1-5',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "The Inflation Reduction Act significantly expanded energy credits! These credits can provide thousands of dollars for clients investing in clean energy and energy efficiency. Know the new rules!",
+        },
+        {
+          title: 'Residential Clean Energy Credit (25D)',
+          type: 'text',
+          content: "**30% credit for:**\n\n• Solar electric (photovoltaic) systems\n• Solar water heaters\n• Fuel cells\n• Small wind energy systems\n• Geothermal heat pumps\n• Battery storage (3+ kWh capacity) - new for 2023+\n\n**Must be for taxpayer's residence in U.S.**\n\n**No dollar cap on credit amount!**\n\n**Carryforward:** Unused credit carries forward indefinitely",
+        },
+        {
+          title: 'Energy Efficient Home Improvement Credit (25C)',
+          type: 'text',
+          content: "**Annual Limits (2023+):**\n\n**Overall Annual Cap: $3,200**\n\n• $1,200 for insulation, windows, doors, home energy audits\n• $2,000 for heat pumps, biomass stoves, heat pump water heaters\n\n**Specific Limits:**\n• Exterior doors: $250/door, $500 total\n• Windows: $600 max\n• Home energy audit: $150 max\n• Insulation/air sealing: $1,200 max\n\n**Must meet Energy Star requirements**",
+        },
+        {
+          title: 'Credit Comparison',
+          type: 'table',
+          headers: ['Feature', 'Residential Clean Energy (25D)', 'Home Improvement (25C)'],
+          rows: [
+            ['Credit rate', '30%', '30%'],
+            ['Annual cap', 'None', '$3,200'],
+            ['Carryforward', 'Yes', 'No'],
+            ['Property type', 'Generation systems', 'Efficiency improvements'],
+            ['Refundable', 'No', 'No'],
+          ],
+        },
+        {
+          title: 'Clean Vehicle Credit (30D)',
+          type: 'text',
+          content: "**New for 2023+:**\n\nUp to $7,500 for new qualifying EVs:\n• $3,750 for battery component requirement\n• $3,750 for critical mineral requirement\n\n**Income Limits:**\n• Single: $150,000 MAGI\n• HOH: $225,000 MAGI\n• MFJ: $300,000 MAGI\n\n**Vehicle Price Caps:**\n• SUVs, vans, pickups: $80,000\n• Other vehicles: $55,000\n\n**Transfer Option:** Can transfer credit to dealer at point of sale",
+        },
+        {
+          title: 'Used Clean Vehicle Credit (25E)',
+          type: 'text',
+          content: "**New Credit for Used EVs:**\n\n**Amount:** Lesser of $4,000 or 30% of sale price\n\n**Requirements:**\n• Model year at least 2 years before sale\n• Price ≤ $25,000\n• First transfer since 8/16/22\n• Purchased from dealer\n\n**Income Limits:**\n• Single: $75,000 MAGI\n• HOH: $112,500 MAGI\n• MFJ: $150,000 MAGI",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Residential Clean Energy Credit: 30%, no cap, carryforward allowed",
+            "Home Improvement Credit: 30%, $3,200 annual cap, no carryforward",
+            "New EV credit up to $7,500, income and price limits apply",
+            "Used EV credit up to $4,000 or 30% of price",
+            "All credits are nonrefundable",
+            "Battery storage now qualifies for clean energy credit",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // SEE1-6: SPECIALIZED RETURNS (Lessons 47-50)
+  // ============================================================================
+
+  {
+    id: 'SEE1-047',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Farm Income and Expenses',
+    description: 'Understand special tax rules for farming operations',
+    order: 47,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Schedule F', 'Crop insurance', 'Farm income averaging'],
+    blueprintArea: 'SEE1-6',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Farmers have unique tax rules and elections! Understanding Schedule F, income averaging, and special deductions helps you serve agricultural clients effectively.",
+        },
+        {
+          title: 'Schedule F Overview',
+          type: 'text',
+          content: "**Who Files Schedule F:**\n• Farmers (cultivating land, raising livestock)\n• NOT ranchers who only buy/sell livestock (Schedule C)\n• NOT agricultural laborers (Form W-2)\n\n**Accounting Method:**\n• Most farmers use cash method\n• Can use accrual if desired\n• Special rules for prepaid expenses",
+        },
+        {
+          title: 'Farm Income',
+          type: 'table',
+          headers: ['Income Type', 'Reporting', 'Notes'],
+          rows: [
+            ['Sales of livestock raised', 'Schedule F', 'Ordinary income'],
+            ['Sales of produce grown', 'Schedule F', 'Ordinary income'],
+            ['Crop insurance proceeds', 'Schedule F', 'Can elect to defer 1 year'],
+            ['Government payments', 'Schedule F', 'CRP, ARC, PLC, etc.'],
+            ['Sales of purchased livestock', 'Form 4797', 'Section 1231'],
+            ['Sales of farm equipment', 'Form 4797', 'Depreciation recapture'],
+          ],
+        },
+        {
+          title: 'Farm Income Averaging',
+          type: 'text',
+          content: "**Schedule J Election:**\n\nFarmers can elect to average current year farm income over prior 3 years.\n\n**Benefits:**\n• Smooth income fluctuations\n• Lower marginal tax rate in high-income years\n• Particularly helpful after good crop year\n\n**Requirements:**\n• Must have elected farm income\n• Complete Schedule J\n• Can use even if didn't farm in prior years\n\n**Elected Farm Income:** Any portion of current year taxable income attributable to farming",
+        },
+        {
+          title: 'Crop Insurance Deferral',
+          type: 'text',
+          content: "**Election to Defer:**\n\nIf crop insurance proceeds received because of destruction/damage to crops:\n• Can elect to include in FOLLOWING year\n• Must be cash-method farmer\n• Would have reported crop income in following year under normal practice\n\n**Applies to:**\n• Crop insurance payments\n• Disaster payments\n• Weather-related livestock sales (different deferral period)",
+        },
+        {
+          title: 'Special Farm Deductions',
+          type: 'text',
+          content: "**Unique to Farming:**\n\n• Soil and water conservation expenses (limited)\n• Fertilizer and lime (current or amortize)\n• Land clearing (capitalize)\n• Prepaid feed (limited deductions)\n\n**Depreciation:**\n• Farm buildings: 20-year MACRS\n• Agricultural structures: 10 or 15 years\n• Livestock: 3, 5, or 7 years\n• Fencing: 7 or 15 years",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Schedule F for farming income and expenses",
+            "Most farmers use cash method accounting",
+            "Farm income averaging with Schedule J (3-year lookback)",
+            "Crop insurance can be deferred to following year",
+            "Livestock raised = ordinary income; purchased = Section 1231",
+            "Special depreciation rules for farm property",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-048',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Virtual Currency Transactions',
+    description: 'Master the tax treatment of cryptocurrency and digital assets',
+    order: 48,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Crypto as property', 'Basis', 'Reporting requirements'],
+    blueprintArea: 'SEE1-6',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Cryptocurrency is everywhere! The IRS treats virtual currency as property, not currency. Understanding the tax implications of buying, selling, spending, and receiving crypto is increasingly important.",
+        },
+        {
+          title: 'Property Treatment',
+          type: 'text',
+          content: "**Virtual currency is PROPERTY for tax purposes:**\n\n• NOT currency (despite the name)\n• General property transaction rules apply\n• Every disposal is a taxable event\n• Must track basis and holding period\n\n**Examples of virtual currency:**\n• Bitcoin, Ethereum, Litecoin\n• Stablecoins\n• NFTs (non-fungible tokens)\n• Tokens received from airdrops",
+        },
+        {
+          title: 'Taxable Events',
+          type: 'table',
+          headers: ['Transaction', 'Taxable?', 'Character'],
+          rows: [
+            ['Sell crypto for USD', 'Yes', 'Capital gain/loss'],
+            ['Exchange crypto for crypto', 'Yes', 'Capital gain/loss'],
+            ['Buy goods/services with crypto', 'Yes', 'Capital gain/loss'],
+            ['Receive as payment for services', 'Yes', 'Ordinary income'],
+            ['Mining rewards', 'Yes', 'Ordinary income'],
+            ['Staking rewards', 'Yes', 'Ordinary income'],
+            ['Buy crypto with USD', 'No', 'Establishes basis'],
+            ['Transfer between own wallets', 'No', 'No gain/loss'],
+            ['Gifts of crypto', 'Generally no', 'Donee takes carryover basis'],
+          ],
+        },
+        {
+          title: 'Basis Determination',
+          type: 'text',
+          content: "**Initial Basis:**\n• Purchased: Cost in USD at time of purchase\n• Received as income: FMV when received\n• Gifted: Carryover basis (with modifications)\n• Inherited: FMV at date of death\n\n**Identifying Specific Units:**\n• FIFO (First In, First Out) is default\n• Specific identification allowed if:\n  - Can identify specific unit sold\n  - Documented before sale\n\n**This matters because different purchases have different basis!**",
+        },
+        {
+          title: 'Reporting Requirements',
+          type: 'text',
+          content: "**Form 1040 Question:**\nMust answer yes/no to virtual currency question on Form 1040.\n\n**Form 8949/Schedule D:**\n• Report sales and exchanges\n• Calculate gain/loss on each transaction\n• Short-term vs. long-term classification\n\n**Receiving as Income:**\n• Report FMV as income when received\n• Self-employment income if received for services\n• May be subject to SE tax",
+        },
+        {
+          title: '⚠️ Exam Trap: Crypto to Crypto',
+          type: 'warning',
+          content: "**Exchanging one cryptocurrency for another IS taxable!**\n\n• Like-kind exchange (Section 1031) does NOT apply\n• Must recognize gain/loss on each exchange\n• New crypto takes FMV as basis\n\n**Example:**\nTrade 1 BTC (basis $10,000) for 10 ETH (FMV $50,000)\n= $40,000 capital gain\nNew basis in ETH = $50,000",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Virtual currency is property, not currency",
+            "Every sale, exchange, or use is potentially taxable",
+            "Receiving crypto as income = ordinary income at FMV",
+            "Mining and staking rewards are ordinary income",
+            "Crypto-to-crypto trades are taxable (no like-kind exchange)",
+            "Must answer virtual currency question on Form 1040",
+            "Track basis carefully for each purchase/receipt",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-049',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Foreign Income and Exclusions',
+    description: 'Understand tax rules for U.S. citizens with foreign income',
+    order: 49,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['FEIE', 'Foreign housing exclusion', 'Tax home', 'Bona fide residence'],
+    blueprintArea: 'SEE1-6',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "U.S. citizens and residents are taxed on worldwide income! The foreign earned income exclusion (FEIE) can significantly reduce tax for those living and working abroad. Know the requirements!",
+        },
+        {
+          title: 'U.S. Worldwide Taxation',
+          type: 'text',
+          content: "**U.S. citizens and residents are taxed on worldwide income:**\n\n• Regardless of where earned\n• Regardless of where they live\n• Must report all foreign income\n• May get relief through:\n  - Foreign Earned Income Exclusion\n  - Foreign Housing Exclusion/Deduction\n  - Foreign Tax Credit\n\n**FBAR:** Report foreign accounts over $10,000 aggregate",
+        },
+        {
+          title: 'Foreign Earned Income Exclusion (FEIE)',
+          type: 'text',
+          content: "**2024 Exclusion: $126,500**\n\n**Requirements:**\n• U.S. citizen or resident alien\n• Tax home in foreign country\n• Meet either:\n  - Bona Fide Residence Test, OR\n  - Physical Presence Test\n\n**Form 2555** to claim exclusion\n\n**What Qualifies:**\n• Wages, salaries, professional fees\n• Self-employment income\n• NOT: Pensions, investments, employer-paid housing",
+        },
+        {
+          title: 'Qualification Tests',
+          type: 'table',
+          headers: ['Test', 'Requirement', 'Who Uses'],
+          rows: [
+            ['Bona Fide Residence', 'Uninterrupted period including full tax year', 'Long-term expatriates'],
+            ['Physical Presence', '330 full days in foreign country in 12-month period', 'Anyone abroad 330+ days'],
+          ],
+        },
+        {
+          title: 'Tax Home Requirement',
+          type: 'text',
+          content: "**Tax home must be in foreign country:**\n\n• Where principal place of business is located\n• Cannot maintain significant ties to U.S. home\n• Temporary work assignments may not shift tax home\n\n**Abode in U.S.:**\nIf you maintain an abode (home) in the U.S., you must establish bona fide residence abroad to qualify for FEIE.\n\n**Key:** Your tax home is where you WORK, not where your family lives.",
+        },
+        {
+          title: 'Foreign Housing Exclusion',
+          type: 'text',
+          content: "**Additional Exclusion:**\n\nHousing expenses over base amount, up to limit:\n\n**Base Amount:** 16% of FEIE ($20,240 for 2024)\n**Maximum Exclusion:** 30% of FEIE ($37,950 for 2024)\n\n**Qualifying Housing Expenses:**\n• Rent\n• Utilities (except telephone)\n• Insurance\n• Furniture rental\n• Repairs\n\n**NOT Included:** Home purchase, improvements, lavish expenses",
+        },
+        {
+          title: '⚠️ Exam Trap: FEIE vs. Foreign Tax Credit',
+          type: 'warning',
+          content: "**Cannot Double Dip!**\n\n• Cannot claim Foreign Tax Credit on income excluded under FEIE\n• Must choose which benefit to use\n• If income exceeds FEIE, can use FTC on excess\n\n**Strategy:**\n• High-tax countries: FTC may be better\n• Low/no-tax countries: FEIE often better\n• Many use both (FEIE on first $126,500, FTC on rest)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "U.S. taxes citizens/residents on worldwide income",
+            "FEIE: Up to $126,500 (2024) exclusion for foreign earned income",
+            "Must meet Bona Fide Residence OR Physical Presence test",
+            "Tax home must be in foreign country",
+            "Foreign Housing Exclusion available for housing costs over base amount",
+            "Foreign Tax Credit cannot be claimed on excluded income",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'SEE1-050',
+    courseId: 'ea',
+    section: 'SEE1',
+    title: 'Due Diligence Requirements',
+    description: 'Master preparer due diligence for refundable credits',
+    order: 50,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Form 8867', 'EIC due diligence', 'CTC/AOTC/HOH due diligence'],
+    blueprintArea: 'SEE1-6',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Due diligence isn't optional! Paid preparers face $635 penalties per credit/status if they fail to meet requirements. These penalties add up fast. This is heavily tested and affects your practice daily.",
+        },
+        {
+          title: 'Form 8867: Due Diligence Checklist',
+          type: 'text',
+          content: "**Required for returns claiming:**\n\n• Earned Income Credit (EIC)\n• Child Tax Credit (CTC) / Additional CTC\n• American Opportunity Tax Credit (AOTC)\n• Head of Household filing status\n\n**Form 8867 must be completed and retained for 3 years**\n\n**Penalty: $635 per failure (2024)**\n\n4 items on one return = potential $2,540 penalty!",
+        },
+        {
+          title: 'Four Due Diligence Requirements',
+          type: 'table',
+          headers: ['Requirement', 'What It Means'],
+          rows: [
+            ['Knowledge', 'Know the law and how to apply it'],
+            ['Document Review', 'Review documents and don\'t ignore inconsistencies'],
+            ['Reasonable Inquiry', 'Ask questions when information seems incorrect/incomplete'],
+            ['Retain Records', 'Keep Form 8867, worksheets, and supporting docs for 3 years'],
+          ],
+        },
+        {
+          title: 'Knowledge Requirement',
+          type: 'text',
+          content: "**You must know the eligibility rules for:**\n\n• EIC (earned income, investment income limit, residency, relationship)\n• CTC (qualifying child, age, support, residency)\n• AOTC (enrollment status, expenses, eligible institution)\n• HOH (unmarried, qualifying person, maintaining home)\n\n**Can't claim ignorance!**\nIf you prepare these returns, you must know the rules.",
+        },
+        {
+          title: 'Document Review',
+          type: 'text',
+          content: "**Must review information provided:**\n\n• Don't ignore red flags\n• Information must be consistent\n• Compare to prior years if available\n\n**Red Flags:**\n• Same address for unrelated individuals\n• Questionable W-2s\n• AGI inconsistent with claimed credits\n• Same child claimed by multiple taxpayers\n• Self-employment income with no expenses",
+        },
+        {
+          title: 'Reasonable Inquiry',
+          type: 'text',
+          content: "**Ask questions when:**\n\n• Information seems incorrect, inconsistent, or incomplete\n• Red flags present\n• Something doesn't add up\n\n**Document the inquiry and response!**\n\n**Cannot rely solely on client statements if:**\n• Statements are inconsistent\n• You have reason to doubt accuracy\n• Industry knowledge suggests otherwise",
+        },
+        {
+          title: '⚠️ What Gets Preparers in Trouble',
+          type: 'warning',
+          content: "**Common Due Diligence Failures:**\n\n• Not asking about absent parent\n• Accepting verbal statements without probing\n• Not verifying student enrollment for AOTC\n• Ignoring W-2/1099 inconsistencies\n• Not documenting reasonable cause for exceptions\n• Same-day preparation without adequate inquiry\n\n**IRS focuses on high-EIC ZIP codes!**",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "$635 penalty per credit/status for due diligence failure",
+            "Four items on one return = up to $2,540 penalty",
+            "Must complete Form 8867 and retain 3 years",
+            "Four requirements: Knowledge, Documents, Inquiry, Records",
+            "Cannot ignore red flags or inconsistencies",
+            "Document all inquiries and responses",
+            "Applies to EIC, CTC, AOTC, and HOH",
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 // Export section lessons

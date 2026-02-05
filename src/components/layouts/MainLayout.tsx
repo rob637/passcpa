@@ -78,6 +78,7 @@ const MainLayout = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
+  const { darkMode } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const navRef = useRef<HTMLElement>(null);

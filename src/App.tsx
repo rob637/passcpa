@@ -162,6 +162,11 @@ function App() {
     const updateFn = getUpdateFunction();
     if (updateFn) {
       updateFn();
+      // Reload the page after service worker activates
+      // The service worker will take control on reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } else {
       // Fallback: force reload
       window.location.reload();

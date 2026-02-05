@@ -470,25 +470,26 @@ const Lessons: React.FC = () => {
                         isNext && 'bg-primary-50 dark:bg-primary-900/20'
                       )}
                     >
-                      {/* Status Icon - hide on mobile for regular lessons to save space */}
-                      {(lesson.completed || isNext || isLocked) && (
-                        <div
-                          className={clsx(
-                            'w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center flex-shrink-0',
-                            lesson.completed && 'bg-success-100 dark:bg-success-900/30',
-                            isNext && !lesson.completed && 'bg-primary-100 dark:bg-primary-900/30',
-                            isLocked && 'bg-slate-100 dark:bg-slate-700'
-                          )}
-                        >
-                          {isLocked ? (
-                            <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
-                          ) : lesson.completed ? (
-                            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
-                          ) : (
-                            <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
-                          )}
-                        </div>
-                      )}
+                      {/* Status Icon */}
+                      <div
+                        className={clsx(
+                          'w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center flex-shrink-0',
+                          lesson.completed && 'bg-success-100 dark:bg-success-900/30',
+                          isNext && !lesson.completed && 'bg-primary-100 dark:bg-primary-900/30',
+                          isLocked && 'bg-slate-100 dark:bg-slate-700',
+                          !lesson.completed && !isNext && !isLocked && 'bg-slate-100 dark:bg-slate-700'
+                        )}
+                      >
+                        {isLocked ? (
+                          <Lock className="w-4 h-4 md:w-5 md:h-5 text-slate-600" />
+                        ) : lesson.completed ? (
+                          <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-success-600 dark:text-success-400" />
+                        ) : isNext ? (
+                          <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-primary-600 dark:text-primary-400" />
+                        ) : (
+                          <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-slate-400 dark:text-slate-500" />
+                        )}
+                      </div>
 
                       {/* Lesson Info */}
                       <div className="flex-1 min-w-0">

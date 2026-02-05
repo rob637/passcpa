@@ -217,8 +217,8 @@ const Study = () => {
             {sectionInfo?.shortName}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Study Session</h1>
-            <p className="text-slate-600">Choose how you want to study today</p>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Study Session</h1>
+            <p className="text-slate-600 dark:text-slate-400">Choose how you want to study today</p>
           </div>
         </div>
       </div>
@@ -227,11 +227,11 @@ const Study = () => {
       <div className="card mb-6">
         <div className="card-body">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-semibold text-slate-900">Today's Progress</h2>
+            <h2 className="font-semibold text-slate-900 dark:text-white">Today's Progress</h2>
             <span
               className={clsx(
                 'text-sm font-medium',
-                dailyGoalMet ? 'text-success-600' : 'text-slate-600'
+                dailyGoalMet ? 'text-success-600 dark:text-success-400' : 'text-slate-600 dark:text-slate-400'
               )}
             >
               {dailyGoalMet ? 'Goal Complete! 🎉' : `${dailyProgress}% of goal`}
@@ -239,7 +239,7 @@ const Study = () => {
           </div>
 
           <div className="relative mb-4">
-            <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+            <div className="h-3 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
               <div
                 className={clsx(
                   'h-full transition-all duration-500 rounded-full',
@@ -254,20 +254,20 @@ const Study = () => {
 
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-xl font-bold text-slate-900">{todayLog?.earnedPoints || 0}</div>
-              <div className="text-xs text-slate-600">Points Earned</div>
+              <div className="text-xl font-bold text-slate-900 dark:text-white">{todayLog?.earnedPoints || 0}</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Points Earned</div>
             </div>
             <div>
-              <div className="text-xl font-bold text-slate-900">
+              <div className="text-xl font-bold text-slate-900 dark:text-white">
                 {todayLog?.questionsAttempted || 0}
               </div>
-              <div className="text-xs text-slate-600">Questions</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Questions</div>
             </div>
             <div>
-              <div className="text-xl font-bold text-slate-900">
+              <div className="text-xl font-bold text-slate-900 dark:text-white">
                 {Math.round(todayLog?.studyTimeMinutes || 0)}
               </div>
-              <div className="text-xs text-slate-600">Minutes</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Minutes</div>
             </div>
           </div>
         </div>
@@ -275,7 +275,7 @@ const Study = () => {
 
       {/* Study Modes */}
       <div className="space-y-4">
-        <h2 className="font-semibold text-slate-900">Choose Study Mode</h2>
+        <h2 className="font-semibold text-slate-900 dark:text-white">Choose Study Mode</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {studyModes.map((mode) => {
@@ -312,12 +312,12 @@ const Study = () => {
                     <mode.icon className={clsx('w-6 h-6', colors.icon)} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-slate-900 group-hover:text-primary-600 transition-colors">
+                    <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                       {mode.title}
                     </h3>
-                    <p className="text-sm text-slate-600 mt-1">{mode.description}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">{mode.description}</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-primary-500 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-slate-300 dark:text-slate-500 group-hover:text-primary-500 transition-colors" />
                 </div>
               </Link>
             );
@@ -332,13 +332,13 @@ const Study = () => {
 
       {/* Recent Activity */}
       <div className="mt-8">
-        <h2 className="font-semibold text-slate-900 mb-4">Continue Where You Left Off</h2>
+        <h2 className="font-semibold text-slate-900 dark:text-white mb-4">Continue Where You Left Off</h2>
 
         <div className="card">
-          <div className="divide-y divide-slate-100">
+          <div className="divide-y divide-slate-100 dark:divide-slate-700">
             {recentItems.length === 0 ? (
-              <div className="p-8 text-center text-slate-600">
-                <BookOpen className="w-12 h-12 mx-auto mb-3 text-slate-300" />
+              <div className="p-8 text-center text-slate-600 dark:text-slate-400">
+                <BookOpen className="w-12 h-12 mx-auto mb-3 text-slate-300 dark:text-slate-600" />
                 <p>No recent activity yet.</p>
                 <p className="text-sm">Start a lesson or practice session to track your progress!</p>
               </div>
@@ -347,25 +347,25 @@ const Study = () => {
                 <Link
                   key={index}
                   to={item.link}
-                  className="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
                 >
                   <div
                     className={clsx(
                       'w-10 h-10 rounded-xl flex items-center justify-center',
-                      item.type === 'lesson' ? 'bg-primary-100' : 'bg-success-100'
+                      item.type === 'lesson' ? 'bg-primary-100 dark:bg-primary-900/30' : 'bg-success-100 dark:bg-success-900/30'
                     )}
                   >
                     {item.type === 'lesson' ? (
-                      <BookOpen className="w-5 h-5 text-primary-600" />
+                      <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400" />
                     ) : (
-                      <HelpCircle className="w-5 h-5 text-success-600" />
+                      <HelpCircle className="w-5 h-5 text-success-600 dark:text-success-400" />
                     )}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-medium text-slate-900">{item.title}</h4>
-                    <div className="text-sm text-slate-600">{item.subtitle}</div>
+                    <h4 className="font-medium text-slate-900 dark:text-white">{item.title}</h4>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">{item.subtitle}</div>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-300" />
+                  <ChevronRight className="w-5 h-5 text-slate-300 dark:text-slate-500" />
                 </Link>
               ))
             )}

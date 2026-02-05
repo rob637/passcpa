@@ -35,33 +35,33 @@ const JournalEntryRow: React.FC<{
   onCreditChange: (value: string) => void;
   disabled?: boolean;
 }> = ({ index, account, debit, credit, onAccountChange, onDebitChange, onCreditChange, disabled }) => (
-  <tr className={clsx(index % 2 === 0 ? 'bg-white' : 'bg-slate-50')}>
-    <td className="px-3 py-2 border">
+  <tr className={clsx(index % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-700')}>
+    <td className="px-3 py-2 border dark:border-slate-600">
       <input
         type="text"
         value={account}
         onChange={(e) => onAccountChange(e.target.value)}
-        className="w-full px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+        className="w-full px-2 py-1 border dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         placeholder="Account name"
         disabled={disabled}
       />
     </td>
-    <td className="px-3 py-2 border">
+    <td className="px-3 py-2 border dark:border-slate-600">
       <input
         type="number"
         value={debit}
         onChange={(e) => onDebitChange(e.target.value)}
-        className="w-full px-2 py-1 border rounded text-sm text-right focus:ring-2 focus:ring-primary-500"
+        className="w-full px-2 py-1 border dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded text-sm text-right focus:ring-2 focus:ring-primary-500"
         placeholder="0"
         disabled={disabled}
       />
     </td>
-    <td className="px-3 py-2 border">
+    <td className="px-3 py-2 border dark:border-slate-600">
       <input
         type="number"
         value={credit}
         onChange={(e) => onCreditChange(e.target.value)}
-        className="w-full px-2 py-1 border rounded text-sm text-right focus:ring-2 focus:ring-primary-500"
+        className="w-full px-2 py-1 border dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded text-sm text-right focus:ring-2 focus:ring-primary-500"
         placeholder="0"
         disabled={disabled}
       />
@@ -82,11 +82,11 @@ const CalculationInput: React.FC<{
 
   return (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-slate-700">
+      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
         {requirement.question || requirement.text}
       </label>
       <div className="flex items-center gap-2">
-        <span className="text-slate-600">$</span>
+        <span className="text-slate-600 dark:text-slate-400">$</span>
         <input
           type="number"
           value={value}
@@ -350,12 +350,12 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
 
       {/* Scenario */}
       {tbs.scenario && (
-        <div className="p-6 bg-slate-50 border-b">
+        <div className="p-6 bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700">
           <div className="flex items-start gap-3">
             <Info className="w-5 h-5 text-primary-500 mt-0.5 shrink-0" />
             <div>
-              <h3 className="font-medium text-slate-800 mb-2">Scenario</h3>
-              <div className="text-slate-700 whitespace-pre-line text-sm leading-relaxed">
+              <h3 className="font-medium text-slate-800 dark:text-white mb-2">Scenario</h3>
+              <div className="text-slate-700 dark:text-slate-300 whitespace-pre-line text-sm leading-relaxed">
                 {tbs.scenario}
               </div>
             </div>
@@ -365,14 +365,14 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
 
       {/* Requirements */}
       <div className="p-6">
-        <h3 className="font-medium text-slate-800 mb-4 flex items-center gap-2">
+        <h3 className="font-medium text-slate-800 dark:text-white mb-4 flex items-center gap-2">
           <FileText className="w-4 h-4" />
           Requirements ({tbs.requirements?.length || 0})
         </h3>
         <div className="space-y-6">
           {tbs.requirements?.map((req, idx) => (
-            <div key={req.id} className="p-4 bg-slate-50 rounded-lg">
-              <div className="text-xs uppercase tracking-wide text-slate-600 mb-2">
+            <div key={req.id} className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+              <div className="text-xs uppercase tracking-wide text-slate-600 dark:text-slate-400 mb-2">
                 Requirement {idx + 1}
               </div>
               {renderRequirement(req, idx)}
@@ -393,8 +393,8 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
             {expandedHints ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
           {expandedHints && (
-            <div className="mt-3 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <ul className="space-y-1 text-sm text-yellow-800">
+            <div className="mt-3 p-4 bg-yellow-50 dark:bg-yellow-900/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
+              <ul className="space-y-1 text-sm text-yellow-800 dark:text-yellow-300">
                 {tbs.hints.map((hint, idx) => (
                   <li key={idx}>{hint}</li>
                 ))}

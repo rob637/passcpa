@@ -334,7 +334,7 @@ const Settings: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold text-slate-900 mb-6">Settings</h1>
+      <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Settings</h1>
 
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
@@ -350,8 +350,8 @@ const Settings: React.FC = () => {
                 className={clsx(
                   'shrink-0 flex items-center gap-3 px-4 py-2 rounded-lg text-left transition-colors whitespace-nowrap',
                   activeTab === tab.id
-                    ? 'bg-primary-50 text-primary-700'
-                    : 'text-slate-600 hover:bg-slate-50'
+                    ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'
                 )}
                 {...getTabProps(tab.id)}
               >
@@ -369,16 +369,16 @@ const Settings: React.FC = () => {
             {activeTab === 'profile' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Profile Information</h2>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Profile Information</h2>
 
                   {/* Avatar */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="relative w-16 h-16">
-                      <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center overflow-hidden">
+                      <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center overflow-hidden">
                         {profile?.photoURL ? (
                           <img src={profile.photoURL} alt="Your profile photo" className="w-16 h-16 rounded-full object-cover" loading="lazy" />
                         ) : (
-                          <span className="text-2xl font-bold text-primary-600">
+                          <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
                             {displayName?.charAt(0)?.toUpperCase() || 'U'}
                           </span>
                         )}
@@ -405,31 +405,31 @@ const Settings: React.FC = () => {
                         <Camera className="w-4 h-4" />
                         {isUploadingPhoto ? 'Uploading...' : 'Change Photo'}
                       </button>
-                      <p className="text-xs text-slate-600 mt-1">Max 5MB, JPG/PNG</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Max 5MB, JPG/PNG</p>
                     </div>
                   </div>
 
                   {/* Name */}
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">
+                      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                         Display Name
                       </label>
                       <input
                         type="text"
                         value={displayName}
                         onChange={(e) => setDisplayName(e.target.value)}
-                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                      <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Email</label>
                       <input
                         type="email"
                         value={user?.email || ''}
                         disabled
-                        className="w-full px-4 py-2 border border-slate-200 rounded-lg bg-slate-50 text-slate-600"
+                        className="w-full px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
                       />
                     </div>
                   </div>
@@ -441,11 +441,11 @@ const Settings: React.FC = () => {
             {activeTab === 'study' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Study Plan Settings</h2>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Study Plan Settings</h2>
 
                   {/* Exam Section */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Current Exam Section
                     </label>
                     {(() => {
@@ -468,8 +468,8 @@ const Settings: React.FC = () => {
                               className={clsx(
                                 'p-3 rounded-xl border-2 text-left transition-all',
                                 examSection === key
-                                  ? 'border-primary-500 bg-primary-50'
-                                  : 'border-slate-200 hover:border-primary-300'
+                                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                                  : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
                               )}
                             >
                               <div
@@ -478,7 +478,7 @@ const Settings: React.FC = () => {
                               >
                                 {(section as CPASection).shortName}
                               </div>
-                              <div className="text-sm font-medium text-slate-900">
+                              <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
                                 {(section as CPASection).shortName}
                               </div>
                             </button>
@@ -511,20 +511,20 @@ const Settings: React.FC = () => {
 
                   {/* Exam Date */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Target Exam Date
                     </label>
                     <input
                       type="date"
                       value={examDate}
                       onChange={(e) => setExamDate(e.target.value)}
-                      className="w-full sm:w-auto px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full sm:w-auto px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
 
                   {/* Daily Goal */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Daily Point Goal
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -535,12 +535,12 @@ const Settings: React.FC = () => {
                           className={clsx(
                             'p-3 rounded-xl border-2 text-left transition-all',
                             dailyGoal === preset.points
-                              ? 'border-primary-500 bg-primary-50'
-                              : 'border-slate-200 hover:border-primary-300'
+                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                              : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
                           )}
                         >
-                          <div className="text-lg font-bold text-primary-600">{preset.points} pts</div>
-                          <div className="text-xs text-slate-600">{preset.name}</div>
+                          <div className="text-lg font-bold text-primary-600 dark:text-primary-400">{preset.points} pts</div>
+                          <div className="text-xs text-slate-600 dark:text-slate-400">{preset.name}</div>
                         </button>
                       ))}
                     </div>
@@ -682,15 +682,15 @@ const Settings: React.FC = () => {
             {activeTab === 'offline' && (
               <div className="card-body space-y-6">
                  <div>
-                    <h2 className="text-lg font-semibold text-slate-900 mb-4">Offline Storage</h2>
-                    <p className="text-slate-600 mb-4">
+                    <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Offline Storage</h2>
+                    <p className="text-slate-600 dark:text-slate-400 mb-4">
                       Download questions for your exam section to study without an internet connection.
                     </p>
                     
                     {/* Download Section */}
-                    <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-4">
-                      <h3 className="font-medium text-blue-900 mb-2">Download for Offline Study</h3>
-                      <p className="text-sm text-blue-700 mb-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 mb-4">
+                      <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Download for Offline Study</h3>
+                      <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
                         Download up to 500 {profile?.examSection || 'REG'} questions to practice anywhere, anytime.
                       </p>
                       <button
@@ -710,15 +710,15 @@ const Settings: React.FC = () => {
                     </div>
 
                     {/* Cache Status */}
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
-                      <h3 className="font-medium text-slate-900 mb-3">Current Cache</h3>
+                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-4">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-3">Current Cache</h3>
                       <div className="flex items-center justify-between mb-2">
-                         <span className="text-slate-600">Questions Cached</span>
-                         <span className="font-bold text-slate-900">{cacheStatus?.questions_count || 0}</span>
+                         <span className="text-slate-600 dark:text-slate-400">Questions Cached</span>
+                         <span className="font-bold text-slate-900 dark:text-white">{cacheStatus?.questions_count || 0}</span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                         <span className="text-slate-600">Last Updated</span>
-                         <span className="text-slate-600">
+                         <span className="text-slate-600 dark:text-slate-400">Last Updated</span>
+                         <span className="text-slate-600 dark:text-slate-400">
                            {cacheStatus?.questions_cached_at ? new Date(cacheStatus.questions_cached_at).toLocaleDateString() : 'Never'}
                          </span>
                       </div>
@@ -741,17 +741,17 @@ const Settings: React.FC = () => {
             {activeTab === 'notifications' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Notification Preferences</h2>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Notification Preferences</h2>
                   
                   {/* Browser Notification Permission Status */}
                   {typeof Notification !== 'undefined' && notificationPermission !== 'granted' && (
-                    <div className={`p-4 rounded-xl mb-4 ${notificationPermission === 'denied' ? 'bg-red-50 border border-red-200' : 'bg-amber-50 border border-amber-200'}`}>
+                    <div className={`p-4 rounded-xl mb-4 ${notificationPermission === 'denied' ? 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800' : 'bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800'}`}>
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className={`font-medium ${notificationPermission === 'denied' ? 'text-red-900' : 'text-amber-900'}`}>
+                          <div className={`font-medium ${notificationPermission === 'denied' ? 'text-red-900 dark:text-red-200' : 'text-amber-900 dark:text-amber-200'}`}>
                             {notificationPermission === 'denied' ? '🔕 Notifications Blocked' : '🔔 Enable Browser Notifications'}
                           </div>
-                          <div className={`text-sm ${notificationPermission === 'denied' ? 'text-red-700' : 'text-amber-700'}`}>
+                          <div className={`text-sm ${notificationPermission === 'denied' ? 'text-red-700 dark:text-red-300' : 'text-amber-700 dark:text-amber-300'}`}>
                             {notificationPermission === 'denied' 
                               ? 'You\'ve blocked notifications. Enable them in your browser settings to receive study reminders.'
                               : 'Allow notifications to receive daily study reminders in your browser.'}
@@ -770,16 +770,16 @@ const Settings: React.FC = () => {
                   )}
                   
                   {notificationPermission === 'granted' && (
-                    <div className="p-3 bg-green-50 border border-green-200 rounded-xl mb-4">
-                      <div className="text-sm text-green-700">✓ Browser notifications enabled</div>
+                    <div className="p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl mb-4">
+                      <div className="text-sm text-green-700 dark:text-green-300">✓ Browser notifications enabled</div>
                     </div>
                   )}
                   
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                    <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
                       <div>
-                        <div className="font-medium text-slate-900">Daily Study Reminder</div>
-                        <div className="text-sm text-slate-600">Get a push notification to maintain your streak</div>
+                        <div className="font-medium text-slate-900 dark:text-white">Daily Study Reminder</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Get a push notification to maintain your streak</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -788,32 +788,32 @@ const Settings: React.FC = () => {
                           onChange={(e) => setNotifications(prev => ({ ...prev, dailyReminder: e.target.checked }))}
                           className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        <div className="w-11 h-6 bg-slate-200 dark:bg-slate-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
                       </label>
                     </div>
 
                     {notifications.dailyReminder && (
-                      <div className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl ml-4">
-                        <div className="font-medium text-slate-900">Reminder Time</div>
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl ml-4">
+                        <div className="font-medium text-slate-900 dark:text-white">Reminder Time</div>
                         <input
                           type="time"
                           value={reminderTime}
                           onChange={(e) => setReminderTime(e.target.value)}
-                          className="px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                          className="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500"
                         />
                       </div>
                     )}
                     
                     {/* Timezone Selector */}
-                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                    <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
                       <div>
-                        <div className="font-medium text-slate-900">Your Timezone</div>
-                        <div className="text-sm text-slate-600">Used for notification timing</div>
+                        <div className="font-medium text-slate-900 dark:text-white">Your Timezone</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Used for notification timing</div>
                       </div>
                       <select
                         value={timezone}
                         onChange={(e) => setTimezone(e.target.value)}
-                        className="px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 bg-white text-sm max-w-[200px]"
+                        className="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 text-sm max-w-[200px]"
                       >
                         <optgroup label="North America">
                           <option value="America/New_York">Eastern (ET)</option>
@@ -842,10 +842,10 @@ const Settings: React.FC = () => {
                       </select>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                    <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
                       <div>
-                        <div className="font-medium text-slate-900">Weekly Progress Report</div>
-                        <div className="text-sm text-slate-600">Email summary of your study performance every Sunday</div>
+                        <div className="font-medium text-slate-900 dark:text-white">Weekly Progress Report</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Email summary of your study performance every Sunday</div>
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -854,7 +854,7 @@ const Settings: React.FC = () => {
                           onChange={(e) => setNotifications(prev => ({ ...prev, weeklyReport: e.target.checked }))}
                           className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                        <div className="w-11 h-6 bg-slate-200 dark:bg-slate-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
                       </label>
                     </div>
                   </div>
@@ -866,11 +866,11 @@ const Settings: React.FC = () => {
             {activeTab === 'feedback' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Feedback & Support</h2>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Feedback & Support</h2>
                   <div className="space-y-4">
-                    <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                      <h3 className="font-medium text-blue-900 mb-2">Have a suggestion?</h3>
-                      <p className="text-sm text-blue-700 mb-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800">
+                      <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Have a suggestion?</h3>
+                      <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
                         We value your input! Let us know how we can make VoraPrep better for you.
                       </p>
                       <a 
@@ -881,9 +881,9 @@ const Settings: React.FC = () => {
                       </a>
                     </div>
                     
-                    <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                      <h3 className="font-medium text-slate-900 mb-2">Report an Issue</h3>
-                      <p className="text-sm text-slate-600 mb-4">
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-2">Report an Issue</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                         Found a bug or content error? Please report it so we can fix it immediately.
                       </p>
                       <a 
@@ -902,54 +902,54 @@ const Settings: React.FC = () => {
             {activeTab === 'account' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 mb-4">Account Management</h2>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Account Management</h2>
                   
                   <div className="space-y-6">
                     {/* Account Info */}
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                             User ID
                           </div>
-                          <div className="text-sm font-mono text-slate-700 truncate">
+                          <div className="text-sm font-mono text-slate-700 dark:text-slate-300 truncate">
                             {user?.uid}
                           </div>
                         </div>
                         <div>
-                          <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                             Email
                           </div>
-                          <div className="text-sm text-slate-700">
+                          <div className="text-sm text-slate-700 dark:text-slate-300">
                             {user?.email}
                           </div>
                         </div>
                         <div>
-                           <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                           <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                             Account Created
                            </div>
-                           <div className="text-sm text-slate-700">
+                           <div className="text-sm text-slate-700 dark:text-slate-300">
                              {user?.metadata.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'Unknown'}
                            </div>
                         </div>
                         <div>
-                           <div className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                           <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                             Last Login
                            </div>
-                           <div className="text-sm text-slate-700">
+                           <div className="text-sm text-slate-700 dark:text-slate-300">
                              {user?.metadata.lastSignInTime ? new Date(user.metadata.lastSignInTime).toLocaleDateString() : 'Just now'}
                            </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="border-t border-slate-200 pt-6"></div>
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6"></div>
 
-                    <h3 className="font-medium text-slate-900 mb-3">Linked Accounts</h3>
-                    <div className="bg-slate-50 rounded-xl border border-slate-200 p-4 mb-6">
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3">Linked Accounts</h3>
+                    <div className="bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mb-6">
                       <div className="flex items-center justify-between">
                          <div className="flex items-center gap-3">
-                           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-slate-200 shrink-0">
+                           <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-600 shrink-0">
                              <svg className="w-5 h-5" viewBox="0 0 24 24">
                               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
@@ -958,8 +958,8 @@ const Settings: React.FC = () => {
                              </svg>
                            </div>
                            <div>
-                             <div className="font-medium text-slate-900">Google Account</div>
-                             <div className="text-sm text-slate-600">
+                             <div className="font-medium text-slate-900 dark:text-white">Google Account</div>
+                             <div className="text-sm text-slate-600 dark:text-slate-400">
                                {user?.providerData?.some(p => p.providerId === 'google.com') 
                                  ? 'Connected' 
                                  : 'Not connected'}
@@ -969,14 +969,14 @@ const Settings: React.FC = () => {
                          {user?.providerData?.some(p => p.providerId === 'google.com') ? (
                            <button 
                              onClick={handleUnlinkGoogle}
-                             className="text-sm text-red-600 hover:text-red-700 font-medium px-3 py-1.5 hover:bg-red-50 rounded-lg transition-colors"
+                             className="text-sm text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium px-3 py-1.5 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
                            >
                              Disconnect
                            </button>
                          ) : (
                            <button 
                              onClick={handleLinkGoogle}
-                             className="text-sm text-blue-600 hover:text-blue-700 font-medium px-3 py-1.5 hover:bg-blue-50 rounded-lg transition-colors"
+                             className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
                            >
                              Connect
                            </button>
@@ -987,7 +987,7 @@ const Settings: React.FC = () => {
                     <div className="border-t border-slate-200 pt-6"></div>
 
                     {/* Actions */}
-                    <h3 className="font-medium text-slate-900 mb-3">Security & Session</h3>
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
                       <button
                         onClick={async () => {
@@ -998,14 +998,14 @@ const Settings: React.FC = () => {
                             alert('Failed to send reset email. Please try again.');
                           }
                         }}
-                        className="w-full sm:w-auto px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium flex items-center gap-2"
+                        className="w-full sm:w-auto px-4 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors text-sm font-medium flex items-center gap-2"
                       >
                         <Shield className="w-4 h-4" />
                         Change Password
                       </button>
                       <button
                         onClick={() => signOut()}
-                        className="w-full sm:w-auto px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium flex items-center gap-2"
+                        className="w-full sm:w-auto px-4 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors text-sm font-medium flex items-center gap-2"
                       >
                         Sign Out
                       </button>
@@ -1017,7 +1017,7 @@ const Settings: React.FC = () => {
             
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
-              <div className="p-6 border-t border-slate-200 flex justify-end">
+              <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
                 <button
                   onClick={handleSave}
                   disabled={isSaving}
@@ -1033,7 +1033,7 @@ const Settings: React.FC = () => {
                   )}
                 </button>
                 {saveSuccess && (
-                    <div className="ml-4 flex items-center text-green-600 animate-fade-in">
+                    <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
                          <span className="mr-2">Saved!</span>
                          {/* Icon could go here */}
                     </div>

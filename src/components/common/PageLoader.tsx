@@ -67,9 +67,9 @@ export const SpinnerLoader = ({ size = 'md', className }: SpinnerLoaderProps) =>
  */
 export const FullPageLoader = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-900">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mb-4" />
-      <p className="text-slate-600 text-sm">Loading...</p>
+      <p className="text-slate-600 dark:text-slate-400 text-sm">Loading...</p>
     </div>
   );
 };
@@ -84,9 +84,9 @@ interface CardLoaderProps {
 export const CardLoader = ({ rows = 3 }: CardLoaderProps) => {
   return (
     <div className="animate-pulse">
-      <div className="h-5 bg-slate-200 rounded w-1/3 mb-4" />
+      <div className="h-5 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4" />
       {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="h-4 bg-slate-100 rounded w-full mb-2" />
+        <div key={i} className="h-4 bg-slate-100 dark:bg-slate-800 rounded w-full mb-2" />
       ))}
     </div>
   );

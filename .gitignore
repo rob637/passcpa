@@ -54,3 +54,7 @@ coverage/
 # Test outputs
 playwright-report/
 test-results/
+
+# Android signing
+*.keystore
+*.keystore.base64

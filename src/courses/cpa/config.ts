@@ -14,6 +14,7 @@ export const CPA_COURSE: Course = {
   description: 'Comprehensive preparation for the Uniform CPA Examination',
   passingScore: 75,
   totalTime: 240, // 4 hours per section
+  hasTBS: true, // Enabled for CPA
   
   sections: [
     {

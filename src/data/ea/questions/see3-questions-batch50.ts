@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 50 (Q491-500)
+ * Comprehensive Review Topics
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH50: Question[] = [
+  // ==========================================
+  // SEE3: Comprehensive Review
+  // ==========================================
+  {
+    id: 'see3-491',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Comprehensive Review',
+    subtopic: 'EA vs RTRP Authority',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enrolled Agents have unlimited practice rights before the IRS, while Annual Filing Season Program participants:',
+    options: [
+      'Have identical rights',
+      'Have limited representation rights (preparation, correspondence exam, certain AUR issues)',
+      'Cannot represent anyone',
+      'Have greater rights than EAs'
+    ],
+    correctAnswer: 1,
+    explanation: 'EAs have unlimited representation rights (examinations, appeals, collection). AFSP participants have limited rights: prepare returns and represent on certain IRS correspondence exams and customer service issues for returns they prepared.',
+    reference: 'Circular 230 §10.3; §10.7',
+  },
+  {
+    id: 'see3-492',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Comprehensive Review',
+    subtopic: 'Record Retention',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Tax return preparers should retain records of returns prepared:',
+    options: [
+      'Indefinitely',
+      'For at least 3 years (or longer as provided by other rules)',
+      'Only 1 year',
+      'No retention is required'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6107(b) requires preparers to retain completed copy or list (names, TINs, tax years) for 3 years after the return due date or filing date. Longer retention may be prudent for malpractice defense.',
+    reference: 'IRC §6107(b)',
+  },
+  {
+    id: 'see3-493',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Comprehensive Review',
+    subtopic: 'CAF Number',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A Centralized Authorization File (CAF) number:',
+    options: [
+      'Is the same as a PTIN',
+      'Is assigned by IRS to track practitioner authorizations and powers of attorney on file',
+      'Is only for attorneys',
+      'Expires annually'
+    ],
+    correctAnswer: 1,
+    explanation: 'The CAF number is assigned by IRS when a POA (Form 2848) or Tax Information Authorization (Form 8821) is first filed. It tracks all authorizations on file for the practitioner and expedites processing.',
+    reference: 'IRM 21.3.7; Form 2848 Instructions',
+  },
+  {
+    id: 'see3-494',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Comprehensive Review',
+    subtopic: 'Authorization Types',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 8821 differs from Form 2848 because Form 8821:',
+    options: [
+      'Grants power of attorney',
+      'Only authorizes IRS to disclose information to the designee but grants no representation rights',
+      'Is for businesses only',
+      'Never expires'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8821 is Tax Information Authorization - allows designee to receive confidential tax information but not represent the taxpayer. Form 2848 grants power of attorney with full representation rights.',
+    reference: 'Form 8821; Form 2848',
+  },
+  {
+    id: 'see3-495',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Comprehensive Review',
+    subtopic: 'Return Due Dates',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a tax return due date falls on a Saturday, Sunday, or legal holiday:',
+    options: [
+      'The return is late',
+      'The due date is extended to the next business day',
+      'Weekend filing is required',
+      'An extension must be filed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §7503, when the last day for performing any act (filing, payment) falls on Saturday, Sunday, or legal holiday, the deadline moves to the next succeeding day that is not such a day.',
+    reference: 'IRC §7503',
+  },
+  {
+    id: 'see3-496',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Comprehensive Review',
+    subtopic: 'Statute Suspension',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The collection statute of limitations is suspended (tolled) during:',
+    options: [
+      'Only weekends',
+      'Pending OIC, installment agreement request, CDP hearing, military deferment, and certain other events',
+      'Never - it always runs',
+      'Only during Tax Court case'
+    ],
+    correctAnswer: 1,
+    explanation: 'The 10-year collection statute is suspended during: pending OIC (plus 30 days), IA request, CDP period, bankruptcy automatic stay, overseas absence (6+ months continuous), military service collection holds, and taxpayer living outside U.S.',
+    reference: 'IRC §6503',
+  },
+  {
+    id: 'see3-497',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Comprehensive Review',
+    subtopic: 'Best Practices',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Best practices under Circular 230 §10.33 include:',
+    options: [
+      'Only returning client calls',
+      'Communicating clearly with clients, establishing appropriate procedures, and advising on penalties and proper disclosure',
+      'Minimizing fees',
+      'Guaranteeing results'
+    ],
+    correctAnswer: 1,
+    explanation: 'Best practices include: clear engagement terms, proper fact development, client communication on positions and penalties, firm procedures for Circular 230 compliance, and proper ethical conduct.',
+    reference: 'Circular 230 §10.33',
+  },
+  {
+    id: 'see3-498',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Comprehensive Review',
+    subtopic: 'EA Renewal',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enrolled agents must renew their enrollment:',
+    options: [
+      'Annually',
+      'Every 3 years based on the last digit of their SSN, with 72 hours of CE (16/year min)',
+      'Every 5 years',
+      'Never - enrollment is permanent'
+    ],
+    correctAnswer: 1,
+    explanation: 'EA enrollment must be renewed every 3 years. The renewal cycle is based on SSN last digit. 72 CE hours required (24/year minimum, 16 credits/year minimum), including 6 hours of ethics during the cycle.',
+    reference: 'Circular 230 §10.6',
+  },
+  {
+    id: 'see3-499',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Comprehensive Review',
+    subtopic: 'Privilege Limitations',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The federally authorized tax practitioner privilege (IRC §7525):',
+    options: [
+      'Protects tax return preparation communications',
+      'Protects advice on non-criminal tax matters before IRS and federal courts (not preparation) but not state courts or criminal cases',
+      'Is identical to attorney-client privilege in all respects',
+      'Applies to all communications with all tax preparers'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §7525 extends attorney-client-like privilege to EAs, CPAs, and certain attorneys for tax advice in non-criminal proceedings before IRS or federal courts. Doesn\'t cover: return preparation, state matters, criminal matters, or written tax shelter advice.',
+    reference: 'IRC §7525',
+  },
+  {
+    id: 'see3-500',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Comprehensive Review',
+    subtopic: 'Professional Responsibility',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The primary purpose of Circular 230 is to:',
+    options: [
+      'Generate revenue for Treasury',
+      'Establish ethical standards and rules governing practice before the IRS to protect the tax system and taxpayers',
+      'Create jobs for attorneys',
+      'Simplify tax law'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 (31 CFR Part 10) establishes standards of practice and professional responsibility for those representing taxpayers before the IRS. It protects both taxpayers and the integrity of the tax administration system.',
+    reference: 'Circular 230; 31 CFR Part 10',
+  },
+];

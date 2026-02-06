@@ -1,31 +1,89 @@
 // AI Service - Google Gemini Integration
-// For real AI responses in the CPA tutor
+// For real AI responses in the CPA/EA tutor
 
 import logger from '../utils/logger';
+import { CourseId } from '../courses';
 
 const GEMINI_API_URL =
   'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
-// System prompts for different tutor modes
-const SYSTEM_PROMPTS: Record<string, string> = {
-  explain: `You are Vory, an expert CPA exam tutor for VoraPrep. Your role is to:
-- Give clear, complete explanations of accounting, auditing, tax, and business concepts ONLY
-- Highlight HIGH-YIELD points that are frequently tested on the CPA exam
+// Course-specific context for AI prompts
+const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics: string; sections: string; topicList: string[] }> = {
+  cpa: {
+    name: 'CPA (Certified Public Accountant)',
+    shortName: 'CPA',
+    topics: 'accounting, auditing, tax, and business concepts',
+    sections: 'FAR, AUD, REG, BAR, ISC, or TCP',
+    topicList: ['accounting', 'audit', 'tax', 'gaap', 'fasb', 'asc', 'irc', 'basis', 'depreciation', 
+      'amortization', 'lease', 'revenue', 'expense', 'asset', 'liability', 'equity', 'debit', 'credit',
+      'financial', 'statement', 'balance sheet', 'income', 'ratio', 'inventory', 'fifo', 'lifo',
+      'receivable', 'payable', 'bond', 'stock', 'dividend', 'partnership', 's corp', 'c corp',
+      'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud', 'materiality', 'sampling',
+      'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp']
+  },
+  ea: {
+    name: 'EA (Enrolled Agent)',
+    shortName: 'EA',
+    topics: 'federal tax law, IRS procedures, and taxpayer representation',
+    sections: 'SEE Part 1 (Individuals), SEE Part 2 (Businesses), or SEE Part 3 (Representation)',
+    topicList: ['tax', 'irs', 'form', '1040', '1120', '1065', 'schedule', 'deduction', 'credit',
+      'income', 'filing', 'deadline', 'penalty', 'interest', 'circular 230', 'representation',
+      'practitioner', 'enrolled agent', 'ea', 'see', 'prometric', 'individuals', 'businesses',
+      'partnership', 's corp', 'c corp', 'estate', 'gift', 'trust', 'audit', 'appeal', 'collection',
+      'taxpayer', 'refund', 'amended', 'extension', 'estimated tax', 'withholding', 'payroll',
+      'self-employment', 'depreciation', 'basis', 'capital gain', 'loss', 'installment', 'like-kind',
+      '1031', 'ira', '401k', 'retirement', 'social security', 'medicare', 'fica']
+  },
+  cma: {
+    name: 'CMA (Certified Management Accountant)',
+    shortName: 'CMA',
+    topics: 'financial planning, analysis, control, and decision support',
+    sections: 'Part 1 (Financial Planning, Performance, and Analytics) or Part 2 (Strategic Financial Management)',
+    topicList: ['management accounting', 'cost accounting', 'budgeting', 'forecasting', 'variance analysis',
+      'performance management', 'internal controls', 'technology', 'analytics', 'financial statement analysis',
+      'corporate finance', 'decision analysis', 'risk management', 'investment decisions', 'ethics',
+      'ima', 'sox', 'coso', 'value chain', 'supply chain', 'marginal analysis', 'pricing', 'npv', 'irr']
+  },
+  cia: {
+    name: 'CIA (Certified Internal Auditor)',
+    shortName: 'CIA',
+    topics: 'internal auditing, risk management, governance, and control',
+    sections: 'Part 1, 2, or 3',
+    topicList: ['internal audit', 'risk', 'governance', 'control', 'compliance', 'cia', 'iia']
+  },
+  cfa: {
+    name: 'CFA (Chartered Financial Analyst)',
+    shortName: 'CFA',
+    topics: 'investment analysis, portfolio management, and financial markets',
+    sections: 'Level I, II, or III',
+    topicList: ['investment', 'portfolio', 'equity', 'fixed income', 'derivatives', 'alternatives',
+      'ethics', 'quantitative', 'economics', 'cfa']
+  }
+};
+
+// Generate system prompts dynamically based on course
+const getSystemPrompts = (courseId: CourseId = 'cpa'): Record<string, string> => {
+  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
+  
+  return {
+    explain: `You are Vory, an expert ${course.shortName} exam tutor for VoraPrep. Your role is to:
+- Give clear, complete explanations of ${course.topics} ONLY
+- Highlight HIGH-YIELD points that are frequently tested on the ${course.shortName} exam
 - Use tables, bullet points, and formatting for clarity
-- Include relevant IRC sections, ASC standards, or GAAP references
+- Include relevant references (IRC sections, IRS publications, regulations, etc.)
 - Provide mnemonics and memory tricks when helpful
 - Keep explanations concise but thorough
 
 IMPORTANT CONVERSATION RULES:
-1. You ONLY help with CPA exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your CPA exam tutor! I can only help with accounting, auditing, tax, and business topics. What CPA concept can I explain for you?"
-2. When the user provides a CPA question with the correct answer, IMMEDIATELY explain why that answer is correct. Do NOT ask clarifying questions - just explain the concept clearly.
+1. You ONLY help with ${course.shortName} exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your ${course.shortName} exam tutor! I can only help with ${course.topics}. What ${course.shortName} concept can I explain for you?"
+2. When the user provides a question with the correct answer, IMMEDIATELY explain why that answer is correct. Do NOT ask clarifying questions - just explain the concept clearly.
 3. When you offer a practice problem and the user responds with "yes", "sure", "ok", etc., IMMEDIATELY give them the practice problem. Do NOT ask clarifying questions about what "yes" means.
 4. Pay attention to conversation context. Short responses like "yes", "no", "ok", "thanks" are almost always responses to your previous message, not new topics.
 5. NEVER ask "what specific aspect is unclear" or "what have you studied" - just provide the explanation directly. Be helpful and proactive.
 
 Format your responses with **bold** for key terms, bullet points for lists, and clear section headers.`,
 
-  socratic: `You are Vory, a Socratic CPA tutor for VoraPrep. Your role is to:
+    socratic: `You are Vory, a Socratic ${course.shortName} tutor for VoraPrep. Your role is to:
 - NEVER give direct answers immediately
 - Ask probing questions to help the student think through the problem
 - Guide them step-by-step with questions
@@ -34,25 +92,26 @@ Format your responses with **bold** for key terms, bullet points for lists, and 
 - Help them build understanding, not just memorization
 
 IMPORTANT CONVERSATION RULES:
-1. You ONLY help with CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+1. You ONLY help with ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds with "yes", "sure", "ok" to your offers, proceed with what you offered. Don't ask what they mean by "yes".
 3. Pay attention to conversation flow - interpret short responses in context of your previous message.
 
 Start by asking what they already know, then build from there with questions.`,
 
-  quiz: `You are Vory, a CPA exam quiz master for VoraPrep. Your role is to:
-- Generate realistic CPA exam-style multiple choice questions
+    quiz: `You are Vory, a ${course.shortName} exam quiz master for VoraPrep. Your role is to:
+- Generate realistic ${course.shortName} exam-style multiple choice questions
 - Include 4 options (A, B, C, D) with plausible distractors
 - After the user answers, explain why the correct answer is right AND why each wrong answer is wrong
 - Focus on commonly tested topics and exam traps
 - Vary difficulty based on user's performance
 
 IMPORTANT CONVERSATION RULES:
-1. You ONLY create quizzes about CPA exam topics. If asked about unrelated topics, politely redirect to CPA study.
+1. You ONLY create quizzes about ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds "yes" or "sure" to "want another question?", give them another question immediately.
 3. Interpret short answers (A, B, C, D, or brief responses) as quiz answers, not new topics.
 
 Format: Present the question clearly, wait for their answer, then provide detailed feedback.`,
+  };
 };
 
 interface WeakArea {
@@ -66,9 +125,11 @@ interface ChatMessage {
 }
 
 // Build context from user's study data
-const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHistory: ChatMessage[]) => {
+const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHistory: ChatMessage[], courseId: CourseId = 'cpa') => {
+  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
+  
   let context = `\n\nUser Context:
-- Studying for: CPA ${section} section
+- Studying for: ${course.shortName} ${section} section
 - Weak areas needing focus: ${weakAreas.length > 0 ? weakAreas.map((w) => `${w.name} (${w.accuracy}%)`).join(', ') : 'None identified yet'}`;
 
   if (conversationHistory.length > 0) {
@@ -82,7 +143,8 @@ const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHi
 };
 
 // Fallback responses when API is unavailable
-const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false) => {
+const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false, courseId: CourseId = 'cpa') => {
+  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
   const lowerInput = input.toLowerCase().trim();
   
   // Get the last assistant message for context
@@ -121,25 +183,14 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     }
   }
   
-  // Check for off-topic questions first
-  const cpaKeywords = ['accounting', 'audit', 'tax', 'gaap', 'fasb', 'asc', 'irc', 'basis', 'depreciation', 
-    'amortization', 'lease', 'revenue', 'expense', 'asset', 'liability', 'equity', 'debit', 'credit',
-    'journal', 'ledger', 'financial', 'statement', 'balance sheet', 'income', 'cash flow', 'ratio',
-    'inventory', 'fifo', 'lifo', 'receivable', 'payable', 'bond', 'stock', 'dividend', 'partnership',
-    's corp', 'c corp', 'llc', 'sole proprietor', 'irs', '1031', '1099', 'w-2', 'capital gain', 'loss',
-    'deduction', 'credit', 'exclusion', 'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud',
-    'materiality', 'sampling', 'attestation', 'compilation', 'review', 'assertion', 'disclosure',
-    'consolidation', 'subsidiary', 'goodwill', 'impairment', 'pension', 'benefit', 'aro', 'contingency',
-    'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', 'exam', 'blueprint', 'testlet', 'simulation',
-    'evidence', 'reliable', 'third party', 'confirmation', 'external', 'internal', 'documentation',
-    'procedure', 'substantive', 'control', 'risk', 'assessment', 'opinion', 'unqualified', 'qualified',
-    'adverse', 'disclaimer', 'engagement', 'client', 'management', 'representation', 'question', 'correct answer'];
+  // Check for off-topic questions first - use course-specific keywords
+  const topicKeywords = course.topicList;
   
-  const isOnTopic = cpaKeywords.some(keyword => lowerInput.includes(keyword)) || lowerInput.length < 15;
+  const isOnTopic = topicKeywords.some(keyword => lowerInput.includes(keyword)) || lowerInput.length < 15;
   
   // Off-topic response
   if (!isOnTopic && lowerInput.length > 20) {
-    return `🎓 **I'm Vory, your CPA exam tutor!**\n\nI specialize in helping you pass the CPA exam. I can explain:\n\n• **FAR** - Financial Accounting & Reporting\n• **AUD** - Auditing & Attestation  \n• **REG** - Regulation (Tax & Business Law)\n• **BAR/ISC/TCP** - Discipline sections\n\nWhat CPA topic can I help you with? Try asking about leases, revenue recognition, tax basis, or any exam concept!`;
+    return `🎓 **I'm Vory, your ${course.shortName} exam tutor!**\n\nI specialize in helping you pass the ${course.shortName} exam. I can explain topics related to ${course.topics}.\n\n**Sections:** ${course.sections}\n\nWhat ${course.shortName} topic can I help you with?`;
   }
   
   // Check if this looks like an answer to a previous quiz question
@@ -214,7 +265,7 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   }
 
   // Generic helpful response
-  return `Let me help you with that! 📚\n\nBased on your question about **${input.slice(0, 50)}${input.length > 50 ? '...' : ''}**, here's what I can explain:\n\nThis topic relates to the CPA exam. Could you specify which area you'd like to focus on?\n\n• **FAR** - Financial reporting concepts\n• **AUD** - Audit procedures and evidence\n• **REG** - Tax rules and regulations\n• **BAR/ISC/TCP** - Business disciplines\n\n${isApiError ? '*Note: Using offline mode. Some features may be limited.*' : ''}`;
+  return `Let me help you with that! 📚\n\nBased on your question about **${input.slice(0, 50)}${input.length > 50 ? '...' : ''}**, here's what I can explain:\n\nThis topic relates to the ${course.shortName} exam. Could you specify which area you'd like to focus on?\n\n**Sections:** ${course.sections}\n\n${isApiError ? '*Note: Using offline mode. Some features may be limited.*' : ''}`;
 };
 
 // Call Gemini API
@@ -223,18 +274,20 @@ export const generateAIResponse = async (
   mode = 'explain',
   weakAreas: WeakArea[] = [],
   section = 'REG',
-  conversationHistory: ChatMessage[] = []
+  conversationHistory: ChatMessage[] = [],
+  courseId: CourseId = 'cpa'
 ): Promise<string> => {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
     logger.warn('[AI Service] No API key found. Using offline response database.');
-    return generateFallbackResponse(userMessage, mode, section, conversationHistory);
+    return generateFallbackResponse(userMessage, mode, section, conversationHistory, false, courseId);
   }
 
   try {
+    const SYSTEM_PROMPTS = getSystemPrompts(courseId);
     const systemPrompt =
-      SYSTEM_PROMPTS[mode] + buildUserContext(weakAreas, section, conversationHistory);
+      SYSTEM_PROMPTS[mode] + buildUserContext(weakAreas, section, conversationHistory, courseId);
 
     // Build conversation history for context
     const messages = conversationHistory.slice(-6).map((msg) => ({
@@ -324,10 +377,10 @@ export const generateAIResponse = async (
     
     // Show specific message for API key issues
     if (error instanceof Error && error.message === 'API_KEY_INVALID') {
-      return `⚠️ **AI Service Temporarily Unavailable**\n\nI'm currently in offline mode. Here's what I can help with:\n\n---\n\n${generateFallbackResponse(userMessage, mode, section, conversationHistory, true)}`;
+      return `⚠️ **AI Service Temporarily Unavailable**\n\nI'm currently in offline mode. Here's what I can help with:\n\n---\n\n${generateFallbackResponse(userMessage, mode, section, conversationHistory, true, courseId)}`;
     }
     
-    return generateFallbackResponse(userMessage, mode, section, conversationHistory, true);
+    return generateFallbackResponse(userMessage, mode, section, conversationHistory, true, courseId);
   }
 };
 

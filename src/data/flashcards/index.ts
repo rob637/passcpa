@@ -17,8 +17,64 @@ import { ALL_EXPANDED_DEFINITIONS } from './expanded-definitions';
 import { ALL_EXPANDED_FORMULAS } from './expanded-formulas';
 import { ALL_RULES_AND_LIMITS } from './expanded-rules';
 
-// Combined collection of all dedicated flashcards
+// EA Flashcards - Import and adapt for unified system
+import { ALL_EA_FLASHCARDS } from '../ea/flashcards';
+
+// CMA Flashcards - Import and adapt for unified system
+import { ALL_CMA_FLASHCARDS } from '../cma/flashcards';
+
+// Convert EA flashcards to main format (types are compatible)
+const EA_FLASHCARDS_ADAPTED: Flashcard[] = ALL_EA_FLASHCARDS.map(card => ({
+  id: card.id,
+  section: card.section as unknown as Flashcard['section'], // SEE1/SEE2/SEE3
+  type: (card.type === 'penalty' || card.type === 'threshold' ? 'rule' : card.type) as Flashcard['type'],
+  topic: card.topic,
+  subtopic: card.subtopic,
+  blueprintArea: card.blueprintArea,
+  front: card.front,
+  back: card.back,
+  example: card.example,
+  formula: card.formula,
+  mnemonic: card.mnemonic,
+  comparison: card.comparison,
+  difficulty: card.difficulty,
+  tags: card.tags,
+  reference: card.reference || card.irsReference,
+}));
+
+// Convert CMA flashcards to main format (types are compatible)
+const CMA_FLASHCARDS_ADAPTED: Flashcard[] = ALL_CMA_FLASHCARDS.map(card => ({
+  id: card.id,
+  section: card.section as unknown as Flashcard['section'], // CMA1/CMA2
+  type: (card.type === 'ratio' || card.type === 'calculation' ? 'formula' : card.type) as Flashcard['type'],
+  topic: card.topic,
+  subtopic: card.subtopic,
+  blueprintArea: card.blueprintArea,
+  front: card.front,
+  back: card.back,
+  example: card.example,
+  formula: card.formula,
+  mnemonic: card.mnemonic,
+  comparison: card.comparison,
+  difficulty: card.difficulty,
+  tags: card.tags,
+  reference: card.reference || card.imaReference,
+}));
+
+// Combined collection of all dedicated flashcards (CPA + EA + CMA)
 export const ALL_DEDICATED_FLASHCARDS: Flashcard[] = [
+  ...ALL_DEFINITIONS,
+  ...ALL_FORMULAS,
+  ...ALL_MNEMONICS,
+  ...ALL_EXPANDED_DEFINITIONS,
+  ...ALL_EXPANDED_FORMULAS,
+  ...ALL_RULES_AND_LIMITS,
+  ...EA_FLASHCARDS_ADAPTED,
+  ...CMA_FLASHCARDS_ADAPTED,
+];
+
+// CPA-only flashcards (for backward compatibility)
+export const CPA_FLASHCARDS: Flashcard[] = [
   ...ALL_DEFINITIONS,
   ...ALL_FORMULAS,
   ...ALL_MNEMONICS,
@@ -51,12 +107,20 @@ export const getFlashcardsByBlueprintArea = (blueprintArea: string): Flashcard[]
 export const getFlashcardStats = () => ({
   total: ALL_DEDICATED_FLASHCARDS.length,
   bySection: {
+    // CPA Sections
     FAR: getFlashcardsBySection('FAR').length,
     AUD: getFlashcardsBySection('AUD').length,
     REG: getFlashcardsBySection('REG').length,
     BAR: getFlashcardsBySection('BAR').length,
     ISC: getFlashcardsBySection('ISC').length,
     TCP: getFlashcardsBySection('TCP').length,
+    // EA Sections
+    SEE1: getFlashcardsBySection('SEE1').length,
+    SEE2: getFlashcardsBySection('SEE2').length,
+    SEE3: getFlashcardsBySection('SEE3').length,
+    // CMA Sections
+    CMA1: getFlashcardsBySection('CMA1').length,
+    CMA2: getFlashcardsBySection('CMA2').length,
   },
   byType: {
     definition: getFlashcardsByType('definition').length,
@@ -72,5 +136,15 @@ export const getFlashcardStats = () => ({
     hard: getFlashcardsByDifficulty('hard').length,
   },
 });
+
+// EA-specific helper
+export const getEAFlashcards = (): Flashcard[] => {
+  return [...getFlashcardsBySection('SEE1'), ...getFlashcardsBySection('SEE2'), ...getFlashcardsBySection('SEE3')];
+};
+
+// CMA-specific helper
+export const getCMAFlashcards = (): Flashcard[] => {
+  return [...getFlashcardsBySection('CMA1'), ...getFlashcardsBySection('CMA2')];
+};
 
 export default ALL_DEDICATED_FLASHCARDS;

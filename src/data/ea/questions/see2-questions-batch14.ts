@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 14 (Q131-140)
+ * Partnership Liquidations and Terminations
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH14: Question[] = [
+  // ==========================================
+  // SEE2-4: Partnerships - Liquidations
+  // ==========================================
+  {
+    id: 'see2-131',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Liquidations',
+    subtopic: 'Liquidating Distribution - Cash Only',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Partner F\'s basis in their partnership interest is $60,000. Upon liquidation, Partner F receives only $50,000 cash. What is the tax consequence?',
+    options: [
+      '$10,000 ordinary loss',
+      '$10,000 capital loss',
+      'No loss recognized',
+      '$10,000 capital gain'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §731(a)(2), loss is recognized on a liquidating distribution only when only cash, unrealized receivables, and/or inventory are received, and the amount is less than basis. The $10,000 loss is capital.',
+    reference: 'IRC §731(a)(2)',
+  },
+  {
+    id: 'see2-132',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Liquidations',
+    subtopic: 'Liquidating Distribution - Property',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Partner G has a $100,000 basis in their partnership interest. In complete liquidation, G receives only land with an inside basis of $60,000 and FMV of $120,000. What is G\'s basis in the land?',
+    options: [
+      '$120,000',
+      '$100,000',
+      '$60,000',
+      '$40,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §732(b), in a liquidating distribution, the distributee partner\'s basis in the property equals their outside basis ($100,000). The basis is "pushed" to the property. No gain or loss is recognized.',
+    reference: 'IRC §732(b)',
+  },
+  {
+    id: 'see2-133',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Liquidations',
+    subtopic: 'Multiple Properties',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'In a liquidating distribution, Partner H (basis $80,000) receives equipment (inside basis $30,000) and land (inside basis $40,000). How is H\'s basis allocated?',
+    options: [
+      '$40,000 to equipment, $40,000 to land',
+      '$30,000 to equipment, $50,000 to land',
+      '$34,286 to equipment, $45,714 to land (proportional)',
+      '$30,000 to equipment, $40,000 to land, $10,000 unallocated'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §732(c), when multiple properties are received and outside basis exceeds inside bases, the excess ($10,000) is allocated proportionally based on FMV. Here, each takes its inside basis plus proportional share of excess.',
+    reference: 'IRC §732(c)',
+  },
+  {
+    id: 'see2-134',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Liquidations',
+    subtopic: 'Section 736(a) Payments',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Section 736(a) payments to a retiring partner for their share of partnership income include:',
+    options: [
+      'Payments for the partner\'s share of partnership property',
+      'Guaranteed payments and share of partnership income',
+      'Payments for goodwill when specified in the agreement',
+      'All liquidating distributions'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §736(a), payments to a retiring partner that are determined by reference to partnership income, or are guaranteed payments for services, are treated as distributive shares or guaranteed payments - ordinary income to recipient.',
+    reference: 'IRC §736(a)',
+  },
+  {
+    id: 'see2-135',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Liquidations',
+    subtopic: 'Section 736(b) Payments',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Section 736(b) payments to a retiring partner represent:',
+    options: [
+      'Guaranteed payments for services',
+      'Share of current partnership income',
+      'Payments for the partner\'s interest in partnership property',
+      'Premium for goodwill in all cases'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §736(b), payments to a retiring partner for their share of partnership property are treated as distributions in exchange for the partnership interest. This generally results in capital gain treatment.',
+    reference: 'IRC §736(b)',
+  },
+  {
+    id: 'see2-136',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Terminations',
+    subtopic: 'Technical Termination',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under current law (post-TCJA), a partnership terminates for tax purposes when:',
+    options: [
+      '50% or more of partnership interests are sold within 12 months',
+      'No part of any business continues to be carried on by any partner',
+      'A majority of partners vote to terminate',
+      'The partnership fails to file Form 1065 for 2 consecutive years'
+    ],
+    correctAnswer: 1,
+    explanation: 'The TCJA repealed the technical termination rule. Now under IRC §708(b), a partnership terminates only when no part of any business, financial operation, or venture continues to be carried on by any partner.',
+    reference: 'IRC §708(b)(1)',
+  },
+  {
+    id: 'see2-137',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Terminations',
+    subtopic: 'Merger of Partnerships',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When two partnerships merge, the resulting partnership is considered a continuation of:',
+    options: [
+      'The newly formed partnership only',
+      'The partnership whose partners own more than 50% of the resulting partnership',
+      'Both predecessor partnerships',
+      'Neither partnership; a new entity is formed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §708(b)(2)(A), when two partnerships merge, the resulting partnership is a continuation of the partnership whose partners own more than 50% of the capital and profits. The other partnership terminates.',
+    reference: 'IRC §708(b)(2)(A)',
+  },
+  {
+    id: 'see2-138',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Terminations',
+    subtopic: 'Division of Partnership',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a partnership divides into two or more partnerships:',
+    options: [
+      'All resulting partnerships are considered new entities',
+      'The original partnership terminates in all cases',
+      'A resulting partnership is a continuation if its partners had more than 50% interest in the original',
+      'Each partner must recognize gain on their share of appreciated assets'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §708(b)(2)(B), when a partnership divides, any resulting partnership whose partners had more than 50% capital/profits interest in the original is a continuation of the original partnership.',
+    reference: 'IRC §708(b)(2)(B)',
+  },
+  {
+    id: 'see2-139',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Special Topics',
+    subtopic: 'Section 754 Election',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A partnership makes a Section 754 election. Partner I purchases their interest from an existing partner for $200,000. The purchased interest\'s share of inside basis is $150,000. What happens?',
+    options: [
+      'Partner I\'s basis is limited to $150,000',
+      'The partnership increases its basis in assets by $50,000 allocated to Partner I',
+      'No adjustment is made',
+      'Partner I must recognize $50,000 gain'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §743(b), when a 754 election is in effect and an interest is transferred, the partnership adjusts the basis of partnership assets with respect to the transferee. The $50,000 step-up benefits only Partner I.',
+    reference: 'IRC §743(b); IRC §754',
+  },
+  {
+    id: 'see2-140',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Special Topics',
+    subtopic: 'Mandatory Basis Adjustment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under IRC §743(d), a mandatory basis adjustment (even without a 754 election) is required when:',
+    options: [
+      'Any partner sells their interest',
+      'The partnership has a substantial built-in loss (over $250,000)',
+      'The partnership has more than 100 partners',
+      'The partnership is a limited partnership'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §743(d), if a partnership has a substantial built-in loss (partnership basis exceeds FMV by more than $250,000) at the time of transfer, a basis adjustment is mandatory regardless of whether a 754 election exists.',
+    reference: 'IRC §743(d)',
+  },
+];

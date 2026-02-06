@@ -1,6 +1,7 @@
 import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
+import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 
 // Layouts (always loaded - part of shell)
@@ -43,6 +44,15 @@ const Flashcards = lazy(() => import('./components/pages/Flashcards'));
 const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
+const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
+const EADashboard = lazy(() => import('./components/pages/EADashboard'));
+const EASection = lazy(() => import('./components/pages/EASection'));
+const EAInfo = lazy(() => import('./components/pages/EAInfo'));
+const EAStudyPlanSetup = lazy(() => import('./components/pages/EAStudyPlanSetup'));
+const CMAExamSimulator = lazy(() => import('./components/pages/CMAExamSimulator'));
+const CMADashboard = lazy(() => import('./components/pages/CMADashboard'));
+const CMAStudyPlanSetup = lazy(() => import('./components/pages/CMAStudyPlanSetup'));
+const CMASection = lazy(() => import('./components/pages/CMASection'));
 const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
 const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommunication'));
 
@@ -71,7 +81,13 @@ const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 
 // Business Pages
 const Pricing = lazy(() => import('./components/pages/Pricing'));
-const Landing = lazy(() => import('./components/pages/Landing'));
+const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
+const CPALanding = lazy(() => import('./components/pages/CPALanding'));
+const EALanding = lazy(() => import('./components/pages/EALanding'));
+const CMALanding = lazy(() => import('./components/pages/CMALanding'));
+const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
+const CIALanding = lazy(() => import('./components/pages/CIALanding'));
+const CFALanding = lazy(() => import('./components/pages/CFALanding'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -161,11 +177,12 @@ function App() {
   // Handle PWA updates
   const handleUpdate = useCallback(() => {
     const updateFn = getUpdateFunction();
+    
+    // Mark that we're updating to prevent banner from showing immediately after reload
+    // Use localStorage for persistence (sessionStorage can be unreliable during reloads)
+    localStorage.setItem('pwa-just-updated', Date.now().toString());
+    
     if (updateFn) {
-      // Mark that we're updating to prevent banner from showing immediately after reload
-      // Use localStorage for persistence (sessionStorage can be unreliable during reloads)
-      localStorage.setItem('pwa-just-updated', Date.now().toString());
-      
       // Listen for the new service worker to take control
       let reloaded = false;
       const reloadOnce = () => {
@@ -183,13 +200,15 @@ function App() {
       // Call update to trigger skipWaiting on waiting SW
       updateFn();
       
-      // Fallback: if controllerchange doesn't fire within 3s, force reload
+      // Fallback: if controllerchange doesn't fire within 1.5s, force reload
       setTimeout(() => {
         reloadOnce();
-      }, 3000);
+      }, 1500);
     } else {
-      // Fallback: force reload to bypass cache
-      window.location.reload();
+      // No update function available - just force reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     }
   }, []);
 
@@ -247,12 +266,76 @@ function App() {
                   />
                 </Route>
 
-                {/* Landing Page (public, for non-logged-in visitors) */}
+                {/* VoraPrep Main Landing (public, for non-logged-in visitors) */}
                 <Route
                   path="/"
                   element={
                     <SuspensePage>
-                      <Landing />
+                      <VoraPrep />
+                    </SuspensePage>
+                  }
+                />
+
+                {/* CPA Landing Page (public) */}
+                <Route
+                  path="/cpa"
+                  element={
+                    <SuspensePage>
+                      <CPALanding />
+                    </SuspensePage>
+                  }
+                />
+
+                {/* EA Landing Page (public) */}
+                {ENABLE_EA_COURSE && (
+                  <Route
+                    path="/ea-prep"
+                    element={
+                      <SuspensePage>
+                        <EALanding />
+                      </SuspensePage>
+                    }
+                  />
+                )}
+
+                {/* CMA Landing Page (public) */}
+                {ENABLE_CMA_COURSE && (
+                  <>
+                    <Route
+                      path="/cma-prep"
+                      element={
+                        <SuspensePage>
+                          <CMALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    <Route
+                      path="/cma/info"
+                      element={
+                        <SuspensePage>
+                          <CMAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
+                )}
+
+                {/* CIA Landing Page (public) */}
+                <Route
+                  path="/cia"
+                  element={
+                    <SuspensePage>
+                      <CIALanding />
+                    </SuspensePage>
+                  }
+                />
+
+                {/* CFA Landing Page (public) */}
+                <Route
+                  path="/cfa"
+                  element={
+                    <SuspensePage>
+                      <CFALanding />
                     </SuspensePage>
                   }
                 />
@@ -452,6 +535,88 @@ function App() {
                       </SuspensePage>
                     }
                   />
+                  {ENABLE_EA_COURSE && (
+                    <>
+                      <Route
+                        path="/ea-exam"
+                        element={
+                          <SuspensePage>
+                            <EAExamSimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea"
+                        element={
+                          <SuspensePage>
+                            <EADashboard />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea/section/:sectionId"
+                        element={
+                          <SuspensePage>
+                            <EASection />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea/info"
+                        element={
+                          <SuspensePage>
+                            <EAInfo />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea/study-plan"
+                        element={
+                          <SuspensePage>
+                            <EAStudyPlanSetup />
+                          </SuspensePage>
+                        }
+                      />
+                    </>
+                  )}
+                  {ENABLE_CMA_COURSE && (
+                    <>
+                      <Route
+                        path="/cma-exam"
+                        element={
+                          <SuspensePage>
+                            <CMAExamSimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cma"
+                        element={
+                          <SuspensePage>
+                            <CMADashboard />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cma/study-plan"
+                        element={
+                          <SuspensePage>
+                            <CMAStudyPlanSetup />
+                          </SuspensePage>
+                        }
+                      />
+                    </>
+                  )}
+                  {ENABLE_CMA_COURSE && (
+                    <Route
+                      path="/cma/section/:sectionId"
+                      element={
+                        <SuspensePage>
+                          <CMASection />
+                        </SuspensePage>
+                      }
+                    />
+                  )}
                   <Route
                     path="/tbs"
                     element={

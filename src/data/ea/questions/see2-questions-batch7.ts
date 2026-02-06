@@ -1,0 +1,215 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 7 (Q61-70)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH7: Question[] = [
+  // ==========================================
+  // SEE2-5: Partnerships (advanced)
+  // ==========================================
+  {
+    id: 'see2-061',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Taxation',
+    subtopic: 'Self-Employment Tax',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A general partner\'s distributive share of partnership ordinary income is:',
+    options: [
+      'Exempt from self-employment tax',
+      'Subject to self-employment tax',
+      'Subject to FICA tax withholding',
+      'Only taxed at capital gains rates'
+    ],
+    correctAnswer: 1,
+    explanation: 'A general partner\'s distributive share of partnership ordinary income is subject to self-employment tax. Limited partners generally are not subject to SE tax on their distributive share (except for guaranteed payments for services).',
+    reference: 'IRC §1402(a)',
+  },
+  {
+    id: 'see2-062',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Taxation',
+    subtopic: 'Special Allocations',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A partnership\'s special allocation of income or deductions is respected for tax purposes if it:',
+    options: [
+      'Is agreed to by all partners',
+      'Has substantial economic effect',
+      'Benefits the majority partner',
+      'Is reported on Schedule K-1'
+    ],
+    correctAnswer: 1,
+    explanation: 'Special allocations that differ from ownership percentages are respected if they have substantial economic effect. This means the allocation must affect the partners\' economic interests (capital accounts) and not just their tax liabilities.',
+    reference: 'IRC §704(b); Treas. Reg. §1.704-1(b)',
+  },
+  {
+    id: 'see2-063',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Liabilities',
+    subtopic: 'Recourse vs. Non-Recourse',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A partner\'s share of recourse liabilities is generally allocated based on:',
+    options: [
+      'Profit sharing ratios',
+      'Capital contribution percentages',
+      'Who bears the economic risk of loss',
+      'An equal split among all partners'
+    ],
+    correctAnswer: 2,
+    explanation: 'Recourse liabilities are allocated to partners who bear the economic risk of loss - generally the partner who would be obligated to pay the creditor if the partnership could not. Non-recourse liabilities are allocated differently, generally based on profit shares.',
+    reference: 'Treas. Reg. §1.752-2',
+  },
+  {
+    id: 'see2-064',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Transactions',
+    subtopic: 'Sale of Partnership Interest',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Gain on the sale of a partnership interest is generally:',
+    options: [
+      'Ordinary income',
+      'Capital gain, except for certain "hot assets"',
+      'Tax-free',
+      'Taxed at a flat 21% rate'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gain on sale of a partnership interest is generally capital gain. However, under §751, ordinary income treatment applies to the extent of the partner\'s share of unrealized receivables and inventory (hot assets).',
+    reference: 'IRC §741, §751',
+  },
+  {
+    id: 'see2-065',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Formation',
+    subtopic: 'Services for Interest',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a partner receives a capital interest in exchange for services:',
+    options: [
+      'No income is recognized',
+      'The FMV of the interest is taxable as ordinary income',
+      'Only the profits interest is taxable',
+      'Income is deferred until the partnership is sold'
+    ],
+    correctAnswer: 1,
+    explanation: 'When a partner receives a capital interest for services, they recognize ordinary income equal to the fair market value of the partnership interest received, less any amount paid. A profits interest is generally not taxable upon receipt.',
+    reference: 'IRC §83; Rev. Proc. 93-27',
+  },
+
+  // ==========================================
+  // SEE2-6: C Corporations (advanced)
+  // ==========================================
+  {
+    id: 'see2-066',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'Earnings and Profits',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Corporate distributions are treated as taxable dividends to the extent of:',
+    options: [
+      'The corporation\'s cash balance',
+      'Current and accumulated earnings and profits (E&P)',
+      'The shareholder\'s basis in stock',
+      'The amount declared by the board'
+    ],
+    correctAnswer: 1,
+    explanation: 'Distributions are dividends to the extent of current E&P and accumulated E&P. Distributions exceeding E&P reduce stock basis (tax-free return of capital), and any excess is capital gain.',
+    reference: 'IRC §301, §316',
+  },
+  {
+    id: 'see2-067',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Reorganizations',
+    subtopic: 'Type A Merger',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A Type A reorganization is:',
+    options: [
+      'A stock-for-stock acquisition',
+      'A statutory merger or consolidation',
+      'An asset acquisition for stock',
+      'A spin-off'
+    ],
+    correctAnswer: 1,
+    explanation: 'A Type A reorganization is a statutory merger or consolidation under state law. The transaction is generally tax-free if it meets continuity of interest and business enterprise requirements.',
+    reference: 'IRC §368(a)(1)(A)',
+  },
+  {
+    id: 'see2-068',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Complete Liquidation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'In a complete liquidation of a C corporation, the corporation:',
+    options: [
+      'Recognizes no gain or loss',
+      'Generally recognizes gain or loss as if assets were sold at FMV',
+      'Defers gain until shareholders sell the assets',
+      'Only recognizes loss, not gain'
+    ],
+    correctAnswer: 1,
+    explanation: 'In a complete liquidation, the corporation recognizes gain or loss as if it sold all assets at fair market value. Shareholders also recognize gain or loss on the exchange of stock for liquidating distributions.',
+    reference: 'IRC §336, §331',
+  },
+  {
+    id: 'see2-069',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Taxation',
+    subtopic: 'Net Operating Losses',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Corporate NOLs arising after 2020 can offset:',
+    options: [
+      '100% of taxable income',
+      '80% of taxable income',
+      '50% of taxable income',
+      'Only the same type of income that created the loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'NOLs arising after 2020 can offset only 80% of taxable income in the carryforward year. There is no carryback for most post-2020 NOLs, but they can be carried forward indefinitely.',
+    reference: 'IRC §172(a)',
+  },
+  {
+    id: 'see2-070',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Compensation',
+    subtopic: 'Section 162(m)',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under IRC §162(m), public companies cannot deduct compensation in excess of $1 million paid to:',
+    options: [
+      'Any employee',
+      'The CEO only',
+      'Covered employees including CEO, CFO, and top 3 officers',
+      'Only employees with stock options'
+    ],
+    correctAnswer: 2,
+    explanation: 'Section 162(m) limits the deduction for compensation paid to covered employees (CEO, CFO, and the three other most highly compensated officers) to $1 million each. The TCJA expanded this to include CFO and eliminated the performance-based pay exception.',
+    reference: 'IRC §162(m)',
+  },
+];

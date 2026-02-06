@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 18 (Q171-180)
+ * C Corporation Distributions and Redemptions
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH18: Question[] = [
+  // ==========================================
+  // SEE2-6: C Corporations - Distributions
+  // ==========================================
+  {
+    id: 'see2-171',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'Dividend Definition',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A distribution from a C corporation is a taxable dividend to the extent of:',
+    options: [
+      'The amount of cash distributed',
+      'The corporation\'s current and accumulated earnings and profits (E&P)',
+      'The shareholder\'s stock basis',
+      'The fair market value of property distributed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §316(a), a dividend is any distribution made out of either current E&P (as of close of year) or accumulated E&P. Distributions exceeding E&P are return of capital, then capital gain.',
+    reference: 'IRC §316(a)',
+  },
+  {
+    id: 'see2-172',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'E&P Calculation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Which of the following increases a C corporation\'s earnings and profits?',
+    options: [
+      'Federal income tax paid',
+      'Dividends paid to shareholders',
+      'Tax-exempt interest income',
+      'Capital losses in excess of capital gains'
+    ],
+    correctAnswer: 2,
+    explanation: 'Tax-exempt interest income increases E&P even though it doesn\'t increase taxable income. Federal taxes and dividends paid reduce E&P. Excess capital losses don\'t affect E&P beyond net income.',
+    reference: 'IRC §312',
+  },
+  {
+    id: 'see2-173',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'Property Distributions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A C corporation distributes property with FMV of $80,000 and basis of $30,000 to a shareholder. The corporation:',
+    options: [
+      'Recognizes no gain on the distribution',
+      'Recognizes $50,000 gain as if the property were sold at FMV',
+      'Deducts $50,000 as a dividend expense',
+      'Recognizes $30,000 gain limited to basis'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §311(b), when a corporation distributes appreciated property, it recognizes gain as if the property were sold for its FMV. The $50,000 gain ($80,000 - $30,000) is recognized.',
+    reference: 'IRC §311(b)',
+  },
+  {
+    id: 'see2-174',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'Loss Property Distribution',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A C corporation distributes property with FMV of $20,000 and basis of $50,000 to a shareholder. The corporation:',
+    options: [
+      'Recognizes a $30,000 loss',
+      'Recognizes no loss on the distribution',
+      'Can carry the loss back 3 years',
+      'Recognizes a capital loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §311(a), a corporation does not recognize loss on distributions of depreciated property to shareholders. The loss is effectively disallowed. The shareholder takes a FMV basis.',
+    reference: 'IRC §311(a)',
+  },
+  {
+    id: 'see2-175',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Exchange Treatment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A stock redemption is treated as a sale or exchange (not a dividend) if it:',
+    options: [
+      'Is pro rata to all shareholders',
+      'Is substantially disproportionate under IRC §302(b)(2)',
+      'Reduces the shareholder\'s ownership by any percentage',
+      'Is funded by borrowed money'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §302(b), a redemption receives sale treatment (capital gain/loss) if it\'s substantially disproportionate (ownership drops to less than 80% of prior percentage and below 50%), complete termination, or not essentially equivalent to dividend.',
+    reference: 'IRC §302(b)(2)',
+  },
+  {
+    id: 'see2-176',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Substantially Disproportionate',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Before a redemption, Shareholder A owns 60% of a corporation. After redemption, A owns 35%. Is this substantially disproportionate?',
+    options: [
+      'No, because A still owns more than 20%',
+      'No, because A\'s ownership must drop below 50%',
+      'Yes, because 35% is less than 80% of 60% (48%) and less than 50%',
+      'Yes, because any reduction qualifies'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §302(b)(2), substantially disproportionate requires: (1) after redemption, ownership < 80% of pre-redemption percentage (35% < 48%), AND (2) ownership < 50%. Both tests are met here.',
+    reference: 'IRC §302(b)(2)',
+  },
+  {
+    id: 'see2-177',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Attribution Rules',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under stock attribution rules for redemptions, stock owned by a shareholder\'s spouse is:',
+    options: [
+      'Never attributed to the shareholder',
+      'Attributed only if they file jointly',
+      'Attributed to the shareholder',
+      'Attributed only for complete termination redemptions'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §318(a)(1), family attribution rules treat stock owned by spouse, children, grandchildren, and parents as owned by the taxpayer. This affects whether a redemption qualifies for sale or exchange treatment.',
+    reference: 'IRC §318(a)(1)',
+  },
+  {
+    id: 'see2-178',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Complete Termination',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'For a complete termination redemption to qualify for sale treatment when family members still own stock, the redeemed shareholder must:',
+    options: [
+      'File a joint return with family members',
+      'Have no interest in the corporation (except as creditor) for 10 years',
+      'File an agreement and have no interest (except as creditor) for 10 years, with other conditions',
+      'Own stock for at least 5 years before redemption'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §302(c)(2), family attribution can be waived for complete terminations if the shareholder files an agreement, doesn\'t acquire any interest (except as creditor) for 10 years, and meets other requirements.',
+    reference: 'IRC §302(c)(2)',
+  },
+  {
+    id: 'see2-179',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Redemptions to Pay Death Taxes',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under IRC §303, a redemption to pay estate taxes and funeral expenses receives sale treatment if:',
+    options: [
+      'Any amount of the decedent\'s estate consists of the corporation\'s stock',
+      'The corporation\'s stock exceeds 35% of the adjusted gross estate',
+      'The estate has at least $5 million in assets',
+      'The redemption occurs within 6 months of death'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §303, stock of a closely held corporation can be redeemed to pay death taxes/funeral expenses with sale treatment if the stock value exceeds 35% of the decedent\'s adjusted gross estate.',
+    reference: 'IRC §303(b)(2)(A)',
+  },
+  {
+    id: 'see2-180',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Stock Redemptions',
+    subtopic: 'Effect on E&P',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a corporation redeems stock and the redemption qualifies as a sale or exchange:',
+    options: [
+      'E&P is not affected',
+      'E&P is reduced by the full amount paid',
+      'E&P is reduced by the ratable share of E&P attributable to the redeemed shares',
+      'E&P is increased by any gain recognized'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §312(n)(7), when a redemption is treated as an exchange (not a dividend), E&P is reduced by the lesser of the ratable share of E&P or the amount of the distribution.',
+    reference: 'IRC §312(n)(7)',
+  },
+];

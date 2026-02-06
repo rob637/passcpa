@@ -21,8 +21,8 @@ on:
       - 'v*'
 
 env:
-  NODE_VERSION: '20.x'
-  JAVA_VERSION: '17'
+  NODE_VERSION: '22.x'
+  JAVA_VERSION: '21'
 
 jobs:
   build-android:

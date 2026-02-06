@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 21 (Q201-210)
+ * Tax-Exempt Organizations
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH21: Question[] = [
+  // ==========================================
+  // SEE2-7: Tax-Exempt Organizations
+  // ==========================================
+  {
+    id: 'see2-201',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Section 501(c)(3)',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'To qualify for exemption under IRC §501(c)(3), an organization must be organized and operated exclusively for:',
+    options: [
+      'Any lawful purpose',
+      'Religious, charitable, scientific, educational, or certain other exempt purposes',
+      'The benefit of its members',
+      'Commercial activities that further exempt purposes'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §501(c)(3), organizations must be organized and operated exclusively for religious, charitable, scientific, testing for public safety, literary, educational, or prevention of cruelty purposes.',
+    reference: 'IRC §501(c)(3)',
+  },
+  {
+    id: 'see2-202',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Private Foundation',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A private foundation is subject to excise tax on:',
+    options: [
+      'All investment income',
+      'Net investment income at 1.39%',
+      'Gross receipts over $1 million',
+      'Distributions to individuals'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §4940, private foundations pay a 1.39% excise tax on net investment income (interest, dividends, rents, royalties, and capital gains less applicable expenses). This is reported on Form 990-PF.',
+    reference: 'IRC §4940',
+  },
+  {
+    id: 'see2-203',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Public Charity Status',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A 501(c)(3) organization avoids private foundation status if it:',
+    options: [
+      'Has annual revenues under $500,000',
+      'Receives more than one-third of support from the general public or governmental units',
+      'Was formed within the last 5 years',
+      'Has less than 10 employees'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §509(a), an organization is not a private foundation if it passes a public support test (more than 1/3 support from public/government) or is a supporting organization, church, school, hospital, or government unit.',
+    reference: 'IRC §509(a)',
+  },
+  {
+    id: 'see2-204',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'UBIT',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Unrelated business income tax (UBIT) applies when an exempt organization:',
+    options: [
+      'Receives any investment income',
+      'Conducts a trade or business regularly that is not substantially related to its exempt purpose',
+      'Pays employees more than $100,000',
+      'Has gross receipts exceeding $500,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §511-514, UBIT applies to income from a trade or business that is regularly carried on and not substantially related to the organization\'s exempt purpose. Many passive income items are excluded.',
+    reference: 'IRC §512',
+  },
+  {
+    id: 'see2-205',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'UBIT Exclusions',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following is generally excluded from unrelated business taxable income?',
+    options: [
+      'Income from advertising in the organization\'s magazine',
+      'Dividends and interest income',
+      'Income from operating a parking lot open to the public',
+      'Fees from providing services to other organizations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §512(b), passive income such as dividends, interest, royalties, and rents from real property (with exceptions) is generally excluded from UBIT, even if unrelated to exempt purposes.',
+    reference: 'IRC §512(b)',
+  },
+  {
+    id: 'see2-206',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Form 990',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A tax-exempt organization with gross receipts of $200,000 must file:',
+    options: [
+      'Form 990-N (e-Postcard)',
+      'Form 990-EZ',
+      'Form 990',
+      'No return required'
+    ],
+    correctAnswer: 2,
+    explanation: 'Form 990 is required for organizations with gross receipts ≥ $200,000 or total assets ≥ $500,000. Form 990-EZ for receipts < $200,000 and assets < $500,000. Form 990-N for receipts ≤ $50,000.',
+    reference: 'IRS Form 990 Instructions',
+  },
+  {
+    id: 'see2-207',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Private Foundation Rules',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A private foundation is generally required to distribute for charitable purposes annually at least:',
+    options: [
+      '1% of net investment assets',
+      '5% of net investment assets',
+      '10% of net investment assets',
+      '50% of annual income'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §4942, private foundations must distribute approximately 5% of the fair market value of their net investment assets annually as qualifying distributions to avoid excise tax on undistributed income.',
+    reference: 'IRC §4942',
+  },
+  {
+    id: 'see2-208',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Self-Dealing',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Self-dealing transactions between a private foundation and a disqualified person result in:',
+    options: [
+      'Loss of tax-exempt status',
+      'Excise taxes on the disqualified person and foundation managers',
+      'Ordinary income treatment of the transaction',
+      'No penalty if disclosed on Form 990-PF'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §4941, self-dealing between private foundations and disqualified persons (substantial contributors, foundation managers, their families) results in excise taxes of 10% on the disqualified person (initial) and potential foundation manager taxes.',
+    reference: 'IRC §4941',
+  },
+  {
+    id: 'see2-209',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Political Activity',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A 501(c)(3) organization that participates in a political campaign for a candidate:',
+    options: [
+      'Must report it as an unrelated business activity',
+      'May lose its tax-exempt status',
+      'Must pay UBIT on campaign expenditures',
+      'Is permitted if expenditures are under $5,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §501(c)(3), organizations are absolutely prohibited from participating in any political campaign for or against any candidate for public office. Violation can result in loss of exempt status and excise taxes.',
+    reference: 'IRC §501(c)(3); IRC §4955',
+  },
+  {
+    id: 'see2-210',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Lobbying',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A 501(c)(3) public charity may engage in lobbying activities:',
+    options: [
+      'Without any limitations',
+      'To an insubstantial extent or under a §501(h) expenditure election',
+      'Only if directly related to its exempt purpose',
+      'Never - lobbying is prohibited for all 501(c)(3) organizations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Public charities may engage in limited lobbying (an insubstantial part of activities). Under IRC §501(h), eligible organizations can elect to measure lobbying limits as dollar expenditure limits rather than the vague "substantial part" test.',
+    reference: 'IRC §501(h); IRC §4911',
+  },
+];

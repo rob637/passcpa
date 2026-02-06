@@ -95,7 +95,7 @@ describe('CourseSelector', () => {
       expect(screen.getByText('Select Course')).toBeInTheDocument();
     });
 
-    it('shows coming soon badge for inactive courses', async () => {
+    it('shows all courses as active (no coming soon badges)', async () => {
       const user = userEvent.setup();
       render(
         <MemoryRouter>
@@ -106,8 +106,8 @@ describe('CourseSelector', () => {
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
       
-      // CMA should show as coming soon
-      expect(screen.getAllByText('Soon').length).toBeGreaterThan(0);
+      // All courses are now enabled, so no "Soon" badges should appear
+      expect(screen.queryAllByText('Soon').length).toBe(0);
     });
 
     it('closes dropdown when clicking outside', async () => {

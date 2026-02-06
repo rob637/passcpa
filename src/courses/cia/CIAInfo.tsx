@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { CheckCircle, BookOpen, TrendingUp, Users, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

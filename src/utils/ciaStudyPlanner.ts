@@ -1,6 +1,5 @@
 
-import { differenceInDays, addDays, format, isBefore } from 'date-fns';
-import { CIA_COURSE } from '../courses/cia/config';
+// date-fns functions available for future use: differenceInDays, addDays, format
 
 // Types (adapted for CIA)
 export type CIASectionId = 'CIA1' | 'CIA2' | 'CIA3';

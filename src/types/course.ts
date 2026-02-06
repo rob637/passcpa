@@ -25,7 +25,7 @@ export const isValidCourseId = (id: string): id is CourseId => {
 /**
  * Question types supported across different exams
  */
-export type QuestionType = 'mcq' | 'tbs' | 'wc' | 'essay' | 'data-insights';
+export type QuestionType = 'mcq' | 'tbs' | 'wc' | 'essay' | 'data-insights' | 'case';
 
 /**
  * Blueprint area within an exam section
@@ -84,10 +84,10 @@ export interface Course {
   description: string;
   color?: string; // Brand color for the course
   sections: ExamSectionConfig[];
-  passingScore: number;
-  totalTime: number;             // minutes per section
-  pricing: CoursePricing;
-  metadata: CourseMetadata;
+  passingScore?: number;
+  totalTime?: number;             // minutes per section
+  pricing?: CoursePricing;
+  metadata?: CourseMetadata;
   
   // Feature flags for course-specific behavior
   hasTBS?: boolean; // Top-level shortcut
@@ -96,6 +96,10 @@ export interface Course {
     hasWrittenCommunication?: boolean;
     hasEssay?: boolean;
     hasDataInsights?: boolean;
+    adaptiveLearning?: boolean;
+    simulationExams?: boolean;
+    flashcards?: boolean;
+    performanceTracking?: boolean;
   };
 }
 

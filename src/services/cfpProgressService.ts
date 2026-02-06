@@ -1,5 +1,3 @@
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'; 
-import { db } from '../config/firebase'; // Assuming firebase config exists here
 import { CFP_SECTIONS } from '../courses/cfp/config';
 
 export type CFPSectionId = string;
@@ -39,7 +37,7 @@ CFP_SECTIONS.forEach(section => {
     };
 });
 
-export const getCFPProgress = async (userId: string): Promise<CFPOverallProgress> => {
+export const getCFPProgress = async (_userId: string): Promise<CFPOverallProgress> => {
   // In a real app, strict Firestore query
   // For this scaffold, return mocked/default data if not found or on error (robustness)
   return new Promise((resolve) => {

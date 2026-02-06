@@ -6,7 +6,6 @@ import {
   Sparkles,
   Check,
   TrendingUp,
-  Server,
   Shield,
   Search,
   Lock,

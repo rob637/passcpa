@@ -10,10 +10,8 @@ import { db } from '../config/firebase';
 import { 
   doc, 
   getDoc, 
-  setDoc,
-  Timestamp,
 } from 'firebase/firestore';
-import { CIASectionId, CIA_SECTION_CONFIG } from '../utils/ciaStudyPlanner';
+import { CIASectionId } from '../utils/ciaStudyPlanner';
 import logger from '../utils/logger';
 
 // Types
@@ -65,8 +63,8 @@ export interface CIAExamAttempt {
 }
 
 // Constants (CIA Passing score is usually 600/750 scaled, or roughly 75-80%)
-const CIA_PASSING_SCORE = 600; // Scaled
-const CIA_PASSING_PERCENT = 80;
+export const CIA_PASSING_SCORE = 600; // Scaled
+export const CIA_PASSING_PERCENT = 80;
 
 /**
  * Get CIA progress for a user
@@ -113,8 +111,8 @@ export async function getCIAProgress(userId: string): Promise<CIAOverallProgress
       const snapshot = await getDoc(docRef);
       
       if (snapshot.exists()) {
-        const data = snapshot.data();
-        // Merge data... logic omitted for brevity in this initial scaffold
+        // Merge snapshot data with default progress
+        // In a real implementation we would parse dates from Timestamps here
         // In a real implementation we would parse dates from Timestamps here
         logger.info('Loaded CIA progress from user profile');
       }
@@ -128,7 +126,7 @@ export async function getCIAProgress(userId: string): Promise<CIAOverallProgress
   }
 }
 
-export async function updateCIAProgress(userId: string, sectionId: CIASectionId, updates: Partial<CIASectionProgress>): Promise<void> {
+export async function updateCIAProgress(_userId: string, sectionId: CIASectionId, updates: Partial<CIASectionProgress>): Promise<void> {
     logger.info(`Updating CIA Progress for ${sectionId}`, updates);
     // Placeholder for actual update logic
 }

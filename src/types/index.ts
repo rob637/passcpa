@@ -46,9 +46,14 @@ export type CIASection = 'CIA1' | 'CIA2' | 'CIA3';
 export type CISASection = 'CISA1' | 'CISA2' | 'CISA3' | 'CISA4' | 'CISA5';
 
 /**
+ * CFP (Certified Financial Planner) Exam Sections
+ */
+export type CFPSection = 'CFP-PCR' | 'CFP-GEN' | 'CFP-RISK' | 'CFP-INV' | 'CFP-TAX' | 'CFP-RET' | 'CFP-EST' | 'CFP-PSY';
+
+/**
  * All exam sections across all courses (for multi-course components)
  */
-export type AllExamSections = ExamSection | EASection | CMASection | CIASection | CISASection;
+export type AllExamSections = ExamSection | EASection | CMASection | CIASection | CISASection | CFPSection;
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';

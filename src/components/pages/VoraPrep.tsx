@@ -19,7 +19,7 @@ import {
   Globe,
 } from 'lucide-react';
 
-// Course card data for the 5 certification programs
+// Course card data for the 6 certification programs
 interface CourseInfo {
   id: string;
   name: string;
@@ -307,7 +307,7 @@ const VoraPrep = () => {
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               <span className="font-semibold">AI-powered exam prep</span> for accounting and finance professionals.
               <br className="hidden md:block" />
-              CPA, EA, CMA, CIA, and CFA — all on one platform.
+              CPA, EA, CMA, CIA, CFP, and CISA — all on one platform.
             </p>
 
             {/* Quick stats */}
@@ -322,7 +322,7 @@ const VoraPrep = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                   <Award className="w-6 h-6 text-emerald-600" />
-                  5
+                  6
                 </div>
                 <div className="text-sm text-slate-500">Certifications</div>
               </div>
@@ -356,7 +356,7 @@ const VoraPrep = () => {
         </section>
 
         {/* Course Selection Section */}
-        <section id="courses" className="py-10 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="courses" className="py-8 md:py-12 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-3">
@@ -382,7 +382,7 @@ const VoraPrep = () => {
         </section>
 
         {/* Why VoraPrep Section */}
-        <section id="why" className="py-10 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="why" className="py-8 md:py-12 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -411,7 +411,7 @@ const VoraPrep = () => {
         </section>
 
         {/* About VoraPrep Section */}
-        <section id="about" className="py-10 md:py-16 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="about" className="py-8 md:py-12 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Built by CPAs, for Candidates
@@ -439,7 +439,7 @@ const VoraPrep = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-10 md:py-16 px-6 bg-slate-50 dark:bg-slate-900">
+        <section className="py-8 md:py-12 px-6 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Ready to Start?

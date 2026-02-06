@@ -8,7 +8,7 @@
 /**
  * Unique identifier for each course/exam
  */
-export type CourseId = 'cpa' | 'cma' | 'ea' | 'cia';
+export type CourseId = 'cpa' | 'cma' | 'ea' | 'cia' | 'cfp' | 'cisa';
 
 /**
  * The default course when none is specified (backwards compatibility)
@@ -19,7 +19,7 @@ export const DEFAULT_COURSE_ID: CourseId = 'cpa';
  * Validates if a string is a valid CourseId
  */
 export const isValidCourseId = (id: string): id is CourseId => {
-  return ['cpa', 'cma', 'ea', 'cia'].includes(id);
+  return ['cpa', 'cma', 'ea', 'cia', 'cfp', 'cisa'].includes(id);
 };
 
 /**

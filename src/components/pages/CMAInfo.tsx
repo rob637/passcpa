@@ -195,7 +195,7 @@ const CMAInfo = () => {
       {/* CTA */}
       <div className="text-center">
         <Link 
-          to="/cma" 
+          to="/cma/dashboard" 
           className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-purple-600/25 transition-all hover:-translate-y-1"
         >
           Start Your CMA Journey

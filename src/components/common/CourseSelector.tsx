@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, GraduationCap, Lock, Sparkles } from 'lucide-react';
 import { useCourse } from '../../providers/CourseProvider';
 import { isCourseActive, ACTIVE_COURSES } from '../../courses';
@@ -13,7 +14,7 @@ import { CourseId } from '../../types/course';
 import clsx from 'clsx';
 
 /** All courses that may be shown (even if not yet available) */
-const ALL_COURSES: CourseId[] = ['cpa', 'cma', 'ea', 'cia'];
+const ALL_COURSES: CourseId[] = ['cpa', 'cma', 'ea', 'cia', 'cfp', 'cisa'];
 
 /** Course display configuration */
 const COURSE_DISPLAY: Record<CourseId, { 
@@ -47,6 +48,19 @@ const COURSE_DISPLAY: Record<CourseId, {
     shortName: 'CIA', 
     color: 'bg-amber-500',
     icon: '🔍',
+  },
+  cfp: { 
+    name: 'CFP Exam', 
+    shortName: 'CFP', 
+    color: 'bg-green-500',
+    icon: '🌱',
+    comingSoon: true,
+  },
+  cisa: { 
+    name: 'CISA Exam', 
+    shortName: 'CISA', 
+    color: 'bg-cyan-500',
+    icon: '🛡️',
     comingSoon: true,
   },
 };
@@ -68,6 +82,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
   const { courseId, setCourse, userCourses } = useCourse();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   
   const currentDisplay = COURSE_DISPLAY[courseId];
   
@@ -101,6 +116,12 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
     if (isCourseActive(id) && userCourses.includes(id)) {
       setCourse(id);
       setIsOpen(false);
+
+      // Navigate to the correct dashboard based on course
+      if (id === 'cpa') navigate('/home');
+      else if (id === 'ea') navigate('/ea');
+      else if (id === 'cma') navigate('/cma');
+      else if (id === 'cia') navigate('/cia');
     }
   };
   

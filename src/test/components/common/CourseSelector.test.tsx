@@ -6,6 +6,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { CourseSelector } from '../../../components/common/CourseSelector';
+import { MemoryRouter } from 'react-router-dom';
+import React from 'react';
 
 // Mock the useCourse hook
 const mockSetCourse = vi.fn();
@@ -37,17 +39,29 @@ describe('CourseSelector', () => {
 
   describe('Rendering', () => {
     it('renders the current course badge', () => {
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       expect(screen.getByRole('button', { name: /select course/i })).toBeInTheDocument();
     });
 
     it('shows CPA as current course', () => {
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       expect(screen.getByText('CPA')).toBeInTheDocument();
     });
 
     it('renders in compact mode', () => {
-      render(<CourseSelector compact />);
+      render(
+        <MemoryRouter>
+          <CourseSelector compact />
+        </MemoryRouter>
+      );
       // In compact mode, the full name shouldn't be visible
       expect(screen.queryByText('CPA Exam')).not.toBeInTheDocument();
     });
@@ -56,7 +70,11 @@ describe('CourseSelector', () => {
   describe('Dropdown Behavior', () => {
     it('opens dropdown when clicked', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -66,7 +84,11 @@ describe('CourseSelector', () => {
 
     it('shows available courses in dropdown', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -76,7 +98,11 @@ describe('CourseSelector', () => {
 
     it('shows coming soon badge for inactive courses', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector showComingSoon />);
+      render(
+        <MemoryRouter>
+          <CourseSelector showComingSoon />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -88,10 +114,12 @@ describe('CourseSelector', () => {
     it('closes dropdown when clicking outside', async () => {
       const user = userEvent.setup();
       render(
-        <div>
-          <CourseSelector />
-          <div data-testid="outside">Outside</div>
-        </div>
+        <MemoryRouter>
+          <div>
+            <CourseSelector />
+            <div data-testid="outside">Outside</div>
+          </div>
+        </MemoryRouter>
       );
       
       const button = screen.getByRole('button', { name: /select course/i });
@@ -109,7 +137,11 @@ describe('CourseSelector', () => {
 
     it('closes dropdown on escape key', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -127,7 +159,11 @@ describe('CourseSelector', () => {
   describe('Course Selection', () => {
     it('shows check mark for selected course', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -140,7 +176,11 @@ describe('CourseSelector', () => {
 
     it('does not call setCourse for coming soon courses', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -159,7 +199,11 @@ describe('CourseSelector', () => {
 
   describe('Accessibility', () => {
     it('has proper aria attributes on trigger', () => {
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       const button = screen.getByRole('button', { name: /select course/i });
       
       expect(button).toHaveAttribute('aria-haspopup', 'listbox');
@@ -168,7 +212,11 @@ describe('CourseSelector', () => {
 
     it('updates aria-expanded when opened', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);
@@ -178,7 +226,11 @@ describe('CourseSelector', () => {
 
     it('has proper role on dropdown', async () => {
       const user = userEvent.setup();
-      render(<CourseSelector />);
+      render(
+        <MemoryRouter>
+          <CourseSelector />
+        </MemoryRouter>
+      );
       
       const button = screen.getByRole('button', { name: /select course/i });
       await user.click(button);

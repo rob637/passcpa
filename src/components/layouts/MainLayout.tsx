@@ -8,7 +8,7 @@ import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
 import { useCourse } from '../../providers/CourseProvider';
 import { CourseId } from '../../types/course';
-import { detectCourseFromPath, COURSE_HOME_PATHS } from '../../utils/courseNavigation';
+import { detectCourseFromPath } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 
 // Course-specific navigation paths (extended from shared utility)
@@ -20,19 +20,6 @@ const COURSE_NAV_PATHS: Record<CourseId, { home: string; learn: string; you: str
   cfp: { home: '/cfp/dashboard', learn: '/cfp/dashboard', you: '/you', strategy: '/cfp/dashboard' },
   cisa: { home: '/cisa/dashboard', learn: '/cisa/dashboard', you: '/you', strategy: '/cisa/dashboard' },
 };
-
-// Base nav item structure
-interface NavItem {
-  icon: typeof Home;
-  label: string;
-  tourId: string;
-}
-
-const NAV_ITEM_CONFIG: NavItem[] = [
-  { icon: Home, label: 'Home', tourId: 'home' },
-  { icon: BookOpen, label: 'Learn', tourId: 'learn' },
-  { icon: User, label: 'You', tourId: 'you' },
-];
 
 // Check if current path is active for a given nav type in a course
 const isNavActiveForCourse = (navType: 'home' | 'learn' | 'you', pathname: string, courseId: CourseId): boolean => {
@@ -111,7 +98,8 @@ const MainLayout = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
-  const { courseId: providerCourseId } = useCourse();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { courseId: _providerCourseId } = useCourse();
   
   // Detect course from URL - this takes precedence to prevent bleeding
   const currentCourseId = useMemo(() => detectCourseFromPath(location.pathname), [location.pathname]);

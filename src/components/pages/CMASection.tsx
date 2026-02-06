@@ -353,7 +353,7 @@ const CMASection: React.FC = () => {
           <p className="text-slate-600 dark:text-slate-300 mb-4">
             The requested CMA part doesn't exist.
           </p>
-          <Link to="/cma" className="btn-primary">
+          <Link to="/cma/dashboard" className="btn-primary">
             Back to CMA Dashboard
           </Link>
         </div>
@@ -383,7 +383,7 @@ const CMASection: React.FC = () => {
     <div className="p-4 sm:p-6 max-w-4xl mx-auto page-enter">
       {/* Back navigation */}
       <Link
-        to="/cma"
+        to="/cma/dashboard"
         className="inline-flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-emerald-600 mb-4"
       >
         <ChevronLeft className="w-4 h-4" />

@@ -473,6 +473,13 @@ const EADashboard: React.FC = () => {
             color="primary"
           />
           <QuickAction
+            to="/ea/forms"
+            icon={FileText}
+            label="Form Explorer"
+            sublabel="Visual guide to IRS forms"
+            color="success"
+          />
+          <QuickAction
             to="/practice?course=ea"
             icon={Play}
             label="Quick Practice"

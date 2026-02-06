@@ -141,7 +141,7 @@ const CMAStudyPlanSetup: React.FC = () => {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 p-4 md:p-8">
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 text-center">
-          <Link to="/cma" className="inline-flex items-center text-sm text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 mb-4 transition-colors">
+          <Link to="/cma/dashboard" className="inline-flex items-center text-sm text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 mb-4 transition-colors">
             <ChevronLeft className="w-4 h-4 mr-1" />
             Back to Dashboard
           </Link>

@@ -88,16 +88,29 @@ const COURSES: CourseInfo[] = [
     available: false,
   },
   {
-    id: 'cfa',
-    name: 'CFA',
-    fullName: 'Chartered Financial Analyst',
-    description: 'The premier investment analysis credential. Master portfolio management and ethics.',
+    id: 'cfp',
+    name: 'CFP',
+    fullName: 'Certified Financial Planner',
+    description: 'The standard for financial planning. Master wealth management, tax, and estate planning.',
     icon: TrendingUp,
-    color: 'rose',
-    bgGradient: 'from-rose-500 to-rose-600',
-    stats: { questions: '3,000+', passRate: '40%' },
-    features: ['Level I-III Coverage', 'Equity & Fixed Income', 'Portfolio Management', 'Ethics & Standards'],
-    path: '/cfa',
+    color: 'green',
+    bgGradient: 'from-green-500 to-green-600',
+    stats: { questions: '2,000+', passRate: '67%' },
+    features: ['8 Knowledge Domains', 'Wealth Management', 'Financial Planning', 'Fiduciary Standards'],
+    path: '/cfp',
+    available: true,
+  },
+  {
+    id: 'cisa',
+    name: 'CISA',
+    fullName: 'Cert. Info Systems Auditor',
+    description: 'The gold standard for IT audit, control, and information security.',
+    icon: Shield,
+    color: 'cyan',
+    bgGradient: 'from-cyan-500 to-cyan-600',
+    stats: { questions: '1,200+', passRate: '50%' },
+    features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
+    path: '/cisa',
     available: false,
   },
 ];
@@ -470,7 +483,8 @@ const VoraPrep = () => {
                 <li><Link to="/ea-prep" className="hover:text-white transition-colors">EA Exam Prep</Link></li>
                 <li><Link to="/cma" className="hover:text-white transition-colors text-slate-500">CMA Exam Prep (Soon)</Link></li>
                 <li><Link to="/cia" className="hover:text-white transition-colors text-slate-500">CIA Exam Prep (Soon)</Link></li>
-                <li><Link to="/cfa" className="hover:text-white transition-colors text-slate-500">CFA Exam Prep (Soon)</Link></li>
+                <li><Link to="/cfp" className="hover:text-white transition-colors text-slate-500">CFP Exam Prep (Soon)</Link></li>
+                <li><Link to="/cisa" className="hover:text-white transition-colors text-slate-500">CISA Exam Prep (Soon)</Link></li>
               </ul>
             </div>
             <div>

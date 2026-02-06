@@ -41,9 +41,14 @@ export type CMASection = 'CMA1' | 'CMA2';
 export type CIASection = 'CIA1' | 'CIA2' | 'CIA3';
 
 /**
+ * CISA (Certified Information Systems Auditor) Exam Sections
+ */
+export type CISASection = 'CISA1' | 'CISA2' | 'CISA3' | 'CISA4' | 'CISA5';
+
+/**
  * All exam sections across all courses (for multi-course components)
  */
-export type AllExamSections = ExamSection | EASection | CMASection | CIASection;
+export type AllExamSections = ExamSection | EASection | CMASection | CIASection | CISASection;
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';

@@ -84,8 +84,45 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
     }
     // CIA sections
     else if (['CIA1', 'CIA2', 'CIA3'].includes(section)) {
-      // TODO: Import CIA questions when available
-      questions = [];
+      try {
+        const ciaData = await import('../data/cia/questions');
+        switch (section) {
+          case 'CIA1': questions = ciaData.CIA1_QUESTIONS || []; break;
+          case 'CIA2': questions = ciaData.CIA2_QUESTIONS || []; break;
+          case 'CIA3': questions = ciaData.CIA3_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch (e) {
+        console.error('Failed to load CIA data', e);
+        questions = [];
+      }
+    }
+    // CISA sections
+    else if (['CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'].includes(section)) {
+      try {
+        const cisaData = await import('../data/cisa/questions');
+        switch (section) {
+          case 'CISA1': questions = cisaData.CISA1_QUESTIONS || []; break;
+          case 'CISA2': questions = cisaData.CISA2_QUESTIONS || []; break;
+          case 'CISA3': questions = cisaData.CISA3_QUESTIONS || []; break;
+          case 'CISA4': questions = cisaData.CISA4_QUESTIONS || []; break;
+          case 'CISA5': questions = cisaData.CISA5_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch (e) {
+        console.error('Failed to load CISA data', e);
+        questions = [];
+      }
+    }
+    // CFP Sections
+    else if (section.startsWith('CFP-')) {
+        try {
+            const cfpData = await import('../data/cfp/questions');
+            questions = cfpData.getCFPQuestions(section) || [];
+        } catch (err) {
+            console.error('Failed to load CFP questions', err);
+            questions = [];
+        }
     }
 
     questionCache[section] = questions;

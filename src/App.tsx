@@ -1,7 +1,7 @@
 import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE } from './config/featureFlags';
+import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 
 // Layouts (always loaded - part of shell)
@@ -44,17 +44,25 @@ const Flashcards = lazy(() => import('./components/pages/Flashcards'));
 const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
+const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
 const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
+const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
 const EADashboard = lazy(() => import('./components/pages/EADashboard'));
 const EASection = lazy(() => import('./components/pages/EASection'));
 const EAInfo = lazy(() => import('./components/pages/EAInfo'));
 const EAStudyPlanSetup = lazy(() => import('./components/pages/EAStudyPlanSetup'));
 const CMAExamSimulator = lazy(() => import('./components/pages/CMAExamSimulator'));
+const CIAExamSimulator = lazy(() => import('./components/pages/CIAExamSimulator'));
+const CISAExamSimulator = lazy(() => import('./components/pages/CISAExamSimulator'));
 const CMADashboard = lazy(() => import('./components/pages/CMADashboard'));
 const CMAStudyPlanSetup = lazy(() => import('./components/pages/CMAStudyPlanSetup'));
 const CMASection = lazy(() => import('./components/pages/CMASection'));
 const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
 const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommunication'));
+const CISADashboard = lazy(() => import('./components/pages/CISADashboard'));
+const CISASection = lazy(() => import('./components/pages/CISASection'));
+const CISAInfo = lazy(() => import('./components/pages/CISAInfo'));
+const CISAStudyPlanSetup = lazy(() => import('./components/pages/CISAStudyPlanSetup'));
 
 // Content Pages
 const Lessons = lazy(() => import('./components/pages/Lessons'));
@@ -87,7 +95,14 @@ const EALanding = lazy(() => import('./components/pages/EALanding'));
 const CMALanding = lazy(() => import('./components/pages/CMALanding'));
 const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
 const CIALanding = lazy(() => import('./components/pages/CIALanding'));
-const CFALanding = lazy(() => import('./components/pages/CFALanding'));
+const CIADashboard = lazy(() => import('./courses/cia/CIADashboard'));
+const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
+const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
+const CIASection = lazy(() => import('./courses/cia/CIASection'));
+const CFPLanding = lazy(() => import('./components/pages/CFPLanding'));
+const CFPDashboard = lazy(() => import('./courses/cfp/CFPDashboard'));
+const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
+const CISALanding = lazy(() => import('./components/pages/CISALanding'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -302,7 +317,7 @@ function App() {
                 {ENABLE_CMA_COURSE && (
                   <>
                     <Route
-                      path="/cma-prep"
+                      path="/cma"
                       element={
                         <SuspensePage>
                           <CMALanding />
@@ -329,16 +344,62 @@ function App() {
                     </SuspensePage>
                   }
                 />
-
-                {/* CFA Landing Page (public) */}
                 <Route
-                  path="/cfa"
+                  path="/cia/info"
                   element={
                     <SuspensePage>
-                      <CFALanding />
+                      <CIAInfo />
                     </SuspensePage>
                   }
                 />
+
+                {/* CFP Landing Page (public) */}
+                {ENABLE_CFP_COURSE && (
+                  <>
+                  <Route
+                    path="/cfp"
+                    element={
+                      <SuspensePage>
+                        <CFPLanding />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route 
+                    path="/cfp/dashboard" 
+                    element={
+                      <ProtectedRoute>
+                        <MainLayout>
+                          <SuspensePage>
+                            <CFPDashboard />
+                          </SuspensePage>
+                        </MainLayout>
+                      </ProtectedRoute>
+                    } 
+                  />
+                   <Route 
+                    path="/cfp/cases" 
+                    element={
+                      <ProtectedRoute>
+                        <SuspensePage>
+                          <CFPCaseStudy />
+                        </SuspensePage>
+                      </ProtectedRoute>
+                    } 
+                  />
+                  </>
+                )}
+
+                {/* CISA Landing Page (public) */}
+                {ENABLE_CISA_COURSE && (
+                  <Route
+                    path="/cisa"
+                    element={
+                      <SuspensePage>
+                        <CISALanding />
+                      </SuspensePage>
+                    }
+                  />
+                )}
 
                 {/* Legal Pages (public) */}
                 <Route
@@ -577,6 +638,14 @@ function App() {
                           </SuspensePage>
                         }
                       />
+                      <Route
+                        path="/ea/forms"
+                        element={
+                          <SuspensePage>
+                            <EAFormExplorer />
+                          </SuspensePage>
+                        }
+                      />
                     </>
                   )}
                   {ENABLE_CMA_COURSE && (
@@ -590,7 +659,7 @@ function App() {
                         }
                       />
                       <Route
-                        path="/cma"
+                        path="/cma/dashboard"
                         element={
                           <SuspensePage>
                             <CMADashboard />
@@ -605,6 +674,14 @@ function App() {
                           </SuspensePage>
                         }
                       />
+                      <Route
+                        path="/cma/essay"
+                        element={
+                          <SuspensePage>
+                            <CMAEssaySimulator />
+                          </SuspensePage>
+                        }
+                      />
                     </>
                   )}
                   {ENABLE_CMA_COURSE && (
@@ -616,6 +693,90 @@ function App() {
                         </SuspensePage>
                       }
                     />
+                  )}
+
+                  {/* CIA Routes */}
+                  {(ENABLE_CIA_COURSE || true) && (
+                    <>
+                      <Route
+                        path="/cia-exam"
+                        element={
+                          <SuspensePage>
+                            <CIAExamSimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cia/dashboard"
+                        element={
+                          <SuspensePage>
+                            <CIADashboard />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cia/study-plan"
+                        element={
+                          <SuspensePage>
+                            <CIAStudyPlanSetup />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cia/section/:sectionId"
+                        element={
+                          <SuspensePage>
+                            <CIASection />
+                          </SuspensePage>
+                        }
+                      />
+                    </>
+                  )}
+
+                  {/* CISA Routes */}
+                  {ENABLE_CISA_COURSE && (
+                    <>
+                      <Route
+                        path="/cisa-exam"
+                        element={
+                          <SuspensePage>
+                            <CISAExamSimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cisa/dashboard"
+                        element={
+                          <SuspensePage>
+                            <CISADashboard />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cisa/info"
+                        element={
+                          <SuspensePage>
+                            <CISAInfo />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cisa/study-plan"
+                        element={
+                          <SuspensePage>
+                            <CISAStudyPlanSetup />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cisa/section/:id"
+                        element={
+                          <SuspensePage>
+                            <CISASection />
+                          </SuspensePage>
+                        }
+                      />
+                    </>
                   )}
                   <Route
                     path="/tbs"

@@ -14,6 +14,7 @@ import React, {
   ReactNode,
   useMemo,
 } from 'react';
+import { useLocation } from 'react-router-dom';
 import { CourseId, Course } from '../types/course';
 import { getCourse, getDefaultCourseId, ACTIVE_COURSES } from '../courses';
 import { detectCourse, saveCoursePreference } from '../utils/courseDetection';
@@ -60,6 +61,7 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [detectionSource, setDetectionSource] = useState<string>('initializing');
+  const location = useLocation();
   
   // Initialize course from detection or prop
   const [courseId, setCourseId] = useState<CourseId>(() => {
@@ -98,6 +100,21 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
     setIsLoading(false);
   }, [initialCourseId]);
   
+  // React to URL changes (e.g. user navigates deeply or via bookmarks)
+  useEffect(() => {
+    if (!initialCourseId) {
+      const detected = detectCourse();
+      // Only confirm switching if the URL strongly implies a course (e.g. /ea/..., /cma/...)
+      // We ignore 'default' or 'user-preference' here to avoid overriding explicit navigation
+      if (['path', 'subdomain', 'domain'].includes(detected.source)) {
+         if (detected.courseId !== courseId) {
+           setCourseId(detected.courseId);
+           setDetectionSource(detected.source);
+         }
+      }
+    }
+  }, [location.pathname]);
+
   // Update user courses if prop changes
   useEffect(() => {
     if (propUserCourses) {

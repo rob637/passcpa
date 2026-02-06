@@ -21,9 +21,15 @@ export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[fea
  */
 export const ENABLE_EA_COURSE = import.meta.env.VITE_ENABLE_EA_COURSE === 'true' || import.meta.env.DEV;
 export const ENABLE_CMA_COURSE = import.meta.env.VITE_ENABLE_CMA_COURSE === 'true' || import.meta.env.DEV;
+export const ENABLE_CIA_COURSE = import.meta.env.VITE_ENABLE_CIA_COURSE === 'true' || import.meta.env.DEV;
+export const ENABLE_CFP_COURSE = import.meta.env.VITE_ENABLE_CFP_COURSE === 'true' || import.meta.env.DEV;
+export const ENABLE_CISA_COURSE = import.meta.env.VITE_ENABLE_CISA_COURSE === 'true' || import.meta.env.DEV;
 
 // Log status on startup for verification
 if (import.meta.env.DEV) {
   console.log('[FeatureFlags] EA Course Enabled:', ENABLE_EA_COURSE);
   console.log('[FeatureFlags] CMA Course Enabled:', ENABLE_CMA_COURSE);
+  console.log('[FeatureFlags] CIA Course Enabled:', ENABLE_CIA_COURSE);
+  console.log('[FeatureFlags] CFP Course Enabled:', ENABLE_CFP_COURSE);
+  console.log('[FeatureFlags] CISA Course Enabled:', ENABLE_CISA_COURSE);
 }

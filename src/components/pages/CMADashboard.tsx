@@ -459,6 +459,13 @@ const CMADashboard: React.FC = () => {
             color="emerald"
           />
           <QuickAction
+            to="/cma/essay"
+            icon={FileText}
+            label="Essay Simulator"
+            sublabel="AI-graded practice scenarios"
+            color="primary"
+          />
+          <QuickAction
             to="/practice?course=cma"
             icon={Play}
             label="Quick Practice"

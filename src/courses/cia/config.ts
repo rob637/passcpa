@@ -7,6 +7,48 @@
 
 import { Course } from '../../types/course';
 
+export type CIASectionId = 'CIA1' | 'CIA2' | 'CIA3';
+
+export const CIA_SECTIONS: CIASectionId[] = ['CIA1', 'CIA2', 'CIA3'];
+
+export const CIA_SECTION_CONFIG: Record<CIASectionId, { 
+  id: CIASectionId;
+  name: string; 
+  shortName: string; 
+  examCode: string; 
+  color: string;
+  icon: string;
+  questionsCount: number;
+}> = {
+  CIA1: {
+    id: 'CIA1',
+    name: 'Part 1: Essentials of Internal Auditing',
+    shortName: 'Essentials',
+    examCode: 'CIA-I',
+    color: '#fbbf24', // Amber-400
+    icon: 'ShieldCheck',
+    questionsCount: 125
+  },
+  CIA2: {
+    id: 'CIA2',
+    name: 'Part 2: Practice of Internal Auditing',
+    shortName: 'Practice',
+    examCode: 'CIA-II',
+    color: '#f59e0b', // Amber-500
+    icon: 'Briefcase',
+    questionsCount: 100
+  },
+  CIA3: {
+    id: 'CIA3',
+    name: 'Part 3: Business Knowledge for Internal Auditing',
+    shortName: 'Business',
+    examCode: 'CIA-III',
+    color: '#d97706', // Amber-600
+    icon: 'TrendingUp',
+    questionsCount: 100
+  }
+};
+
 export const CIA_COURSE: Course = {
   id: 'cia',
   name: 'CIA Exam Review',

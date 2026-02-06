@@ -48,6 +48,25 @@ This is where the exams diverge most significantly in *depth*.
     - Specific forms for representation (2848 vs 8821 in depth)
     - Sanction nuances
 
+## Detailed Topic Differences
+
+### Exclusively on CPA REG (Not on EA)
+* **Business Law:**
+    * **Contracts:** Formation, performance, breach, and remedies.
+    * **Agency:** Principal-agent relationship, duties, authority, and liability.
+    * **Debtor-Creditor Relationships:** Suretyship, garnishment, and bankruptcy (Chapter 7, 11, 13).
+    * **Federal Securities Regulations:** 1933 and 1934 Acts (Liability rules).
+* **Ethics:**
+    * **AICPA Code of Professional Conduct:** Independence, integrity, and objectivity rules specific to CPAs.
+    * **State Board Rules:** Continuing Professional Education (CPE) and licensure requirements.
+
+### Exclusively on EA SEE (Not on CPA REG, or very light)
+* **IRS Procedures (Deep Dive):**
+    * **Collection Process:** Detailed rules on Liens, Levies, Offers in Compromise (OIC), and Installment Agreements.
+    * **Appeals:** Specific protest requirements (Small case vs. Formal), timelines (30-day vs. 90-day letters), and Tax Court procedures.
+    * **e-Services:** Rules for Authorized IRS e-file Providers and suitability checks.
+    * **Practitioner Sanctions:** Specific nuances of censure, suspension, and disbarment under Circular 230 §10.50.
+
 ## Strategy for Dual Candidates
 
 ### Strategy A: EA First, then CPA

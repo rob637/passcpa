@@ -451,7 +451,7 @@ const Onboarding: React.FC = () => {
   const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
 
   const [currentStep, setCurrentStep] = useState(0);
-  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(userProfile?.activeCourse || '');
+  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>((userProfile?.activeCourse as CourseId) || '');
   const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);

@@ -60,7 +60,7 @@ const FlashcardSetup: React.FC = () => {
   // Get section info - handle both CPA and EA sections
   const isEA = isEASection(currentSection);
   const sectionInfo = isEA 
-    ? { name: EA_SECTION_CONFIG[currentSection as EASection].title, color: EA_SECTION_CONFIG[currentSection as EASection].color }
+    ? { name: EA_SECTION_CONFIG[currentSection as EASection].name, color: EA_SECTION_CONFIG[currentSection as EASection].color }
     : CPA_SECTIONS[currentSection as ExamSection];
   
   const [loading, setLoading] = useState(true);

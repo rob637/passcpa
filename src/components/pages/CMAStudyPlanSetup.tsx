@@ -16,10 +16,10 @@ import {
   AlertCircle,
   Sparkles,
 } from 'lucide-react';
-import { format, addDays, differenceInDays } from 'date-fns';
+import { format } from 'date-fns';
 import clsx from 'clsx';
 import { CMASectionId, CMA_SECTION_CONFIG } from '../../courses/cma';
-import { generateCMAStudyPlan, CMAStudyPlan, getStudyPlanSummary } from '../../utils/cmaStudyPlanner';
+import { generateCMAStudyPlan, CMAStudyPlan } from '../../utils/cmaStudyPlanner';
 
 // Step indicator
 interface StepIndicatorProps {
@@ -67,7 +67,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, selectedDate, on
         </div>
         <div className="flex-1">
           <h3 className="font-semibold text-slate-900 dark:text-slate-100">{config.name}</h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400">{config.questionsCount} question bank</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">{config.questionCount} question bank</p>
         </div>
       </div>
       

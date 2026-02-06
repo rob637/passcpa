@@ -51,14 +51,7 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
     sections: 'Part 1, 2, or 3',
     topicList: ['internal audit', 'risk', 'governance', 'control', 'compliance', 'cia', 'iia']
   },
-  cfa: {
-    name: 'CFA (Chartered Financial Analyst)',
-    shortName: 'CFA',
-    topics: 'investment analysis, portfolio management, and financial markets',
-    sections: 'Level I, II, or III',
-    topicList: ['investment', 'portfolio', 'equity', 'fixed income', 'derivatives', 'alternatives',
-      'ethics', 'quantitative', 'economics', 'cfa']
-  }
+  // CFA block removed
 };
 
 // Generate system prompts dynamically based on course

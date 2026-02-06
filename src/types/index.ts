@@ -250,7 +250,7 @@ export interface WCRubric {
 
 export interface WCTask {
   id: string;
-  section: ExamSection;
+  section: AllExamSections;
   type: 'written_communication';
   topic: string;
   difficulty: Difficulty;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import '../../styles/prometric.css';
 import {
   Clock,
@@ -154,6 +155,8 @@ type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
 
 const ExamSimulator: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   const { userProfile } = useAuth();
   const { completeSimulation } = useStudy();
 
@@ -567,7 +570,7 @@ const ExamSimulator: React.FC = () => {
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
         <div className="max-w-3xl w-full">
           <button
-            onClick={() => navigate('/home')}
+            onClick={() => navigate(courseHome)}
             className="mb-6 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

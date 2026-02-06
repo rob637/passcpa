@@ -85,7 +85,7 @@ const COURSES: CourseInfo[] = [
     stats: { questions: '1,800+', passRate: '40%' },
     features: ['Internal Audit Basics', 'Practice of Internal Auditing', 'Business Knowledge', 'Risk Management'],
     path: '/cia',
-    available: false,
+    available: true,
   },
   {
     id: 'cfp',
@@ -111,7 +111,7 @@ const COURSES: CourseInfo[] = [
     stats: { questions: '1,200+', passRate: '50%' },
     features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
     path: '/cisa',
-    available: false,
+    available: true,
   },
 ];
 
@@ -257,7 +257,7 @@ const VoraPrep = () => {
           <div className="hidden md:flex items-center gap-8">
             <a href="#courses" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Exams</a>
             <a href="#why" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Why VoraPrep</a>
-            <Link to="/pricing" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pricing</Link>
+            <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <Link to="/login" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
@@ -281,8 +281,8 @@ const VoraPrep = () => {
           
           {/* Floating orbs */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-40 right-1/4 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-40 right-1/4 w-64 h-64 bg-sky-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
 
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Beta Badge */}
@@ -299,7 +299,7 @@ const VoraPrep = () => {
                 Your Path to
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Professional Certification
               </span>
             </h1>
@@ -346,7 +346,7 @@ const VoraPrep = () => {
             <div className="flex justify-center">
               <a 
                 href="#courses" 
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-purple-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
               >
                 Choose Your Certification
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -356,14 +356,14 @@ const VoraPrep = () => {
         </section>
 
         {/* Course Selection Section */}
-        <section id="courses" className="py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="courses" className="py-10 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-3">
                 <Award className="w-4 h-4" />
                 Professional Certifications
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Choose Your Exam
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
@@ -382,10 +382,10 @@ const VoraPrep = () => {
         </section>
 
         {/* Why VoraPrep Section */}
-        <section id="why" className="py-16 md:py-24 px-6 bg-white dark:bg-slate-950">
+        <section id="why" className="py-10 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Why VoraPrep?
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
@@ -398,7 +398,7 @@ const VoraPrep = () => {
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
@@ -411,7 +411,7 @@ const VoraPrep = () => {
         </section>
 
         {/* About VoraPrep Section */}
-        <section className="py-16 md:py-24 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700">
+        <section id="about" className="py-10 md:py-16 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Built by CPAs, for Candidates
@@ -439,7 +439,7 @@ const VoraPrep = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900">
+        <section className="py-10 md:py-16 px-6 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Ready to Start?
@@ -481,16 +481,16 @@ const VoraPrep = () => {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link to="/cpa" className="hover:text-white transition-colors">CPA Exam Prep</Link></li>
                 <li><Link to="/ea-prep" className="hover:text-white transition-colors">EA Exam Prep</Link></li>
-                <li><Link to="/cma" className="hover:text-white transition-colors text-slate-500">CMA Exam Prep (Soon)</Link></li>
-                <li><Link to="/cia" className="hover:text-white transition-colors text-slate-500">CIA Exam Prep (Soon)</Link></li>
-                <li><Link to="/cfp" className="hover:text-white transition-colors text-slate-500">CFP Exam Prep (Soon)</Link></li>
-                <li><Link to="/cisa" className="hover:text-white transition-colors text-slate-500">CISA Exam Prep (Soon)</Link></li>
+                <li><Link to="/cma" className="hover:text-white transition-colors">CMA Exam Prep</Link></li>
+                <li><Link to="/cia" className="hover:text-white transition-colors">CIA Exam Prep</Link></li>
+                <li><Link to="/cfp" className="hover:text-white transition-colors">CFP Exam Prep</Link></li>
+                <li><Link to="/cisa" className="hover:text-white transition-colors">CISA Exam Prep</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
                 <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
               </ul>
             </div>

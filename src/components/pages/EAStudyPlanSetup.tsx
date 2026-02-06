@@ -118,9 +118,10 @@ const StudyHoursSelector: React.FC<StudyHoursSelectorProps> = ({ hours, onChange
       {options.map((h) => (
         <button
           key={h}
+          type="button"
           onClick={() => onChange(h)}
           className={clsx(
-            'card p-4 text-center transition-all',
+            'card p-4 text-center transition-all cursor-pointer',
             hours === h
               ? 'ring-2 ring-primary-500 bg-primary-50 dark:bg-primary-900/20'
               : 'hover:bg-slate-50 dark:hover:bg-slate-800'
@@ -156,9 +157,10 @@ const StudyDaysSelector: React.FC<StudyDaysSelectorProps> = ({ days, onChange })
       {options.map((opt) => (
         <button
           key={opt.value}
+          type="button"
           onClick={() => onChange(opt.value)}
           className={clsx(
-            'card p-4 w-full text-left flex items-center gap-4 transition-all',
+            'card p-4 w-full text-left flex items-center gap-4 transition-all cursor-pointer',
             days === opt.value
               ? 'ring-2 ring-primary-500 bg-primary-50 dark:bg-primary-900/20'
               : 'hover:bg-slate-50 dark:hover:bg-slate-800'

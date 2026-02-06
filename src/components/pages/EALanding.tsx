@@ -166,10 +166,10 @@ const EALanding = () => {
             <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Features</a>
             <a href="#exam" className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">The Exam</a>
             <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Compare</a>
-            <Link to="/pricing" className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Pricing</Link>
+            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">All Exams</Link>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
-            <Link to="/login" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-emerald-600 px-4 py-2 transition-colors">
+            <Link to="/login?course=ea" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-emerald-600 px-4 py-2 transition-colors">
               Sign In
             </Link>
             <Link 

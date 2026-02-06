@@ -225,10 +225,10 @@ const CPALanding = () => {
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</a>
             <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Compare</a>
-            <Link to="/pricing" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pricing</Link>
+            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">All Exams</Link>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
-            <Link to="/login" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
+            <Link to="/login?course=cpa" className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-blue-600 px-4 py-2 transition-colors">
               Sign In
             </Link>
             <Link 
@@ -729,7 +729,7 @@ const CPALanding = () => {
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-3">
                 <li><Link to="/register" className="hover:text-white transition-colors">Start Free</Link></li>
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><Link to="/" className="hover:text-white transition-colors">All Certifications</Link></li>
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#comparison" className="hover:text-white transition-colors">Compare</a></li>
               </ul>

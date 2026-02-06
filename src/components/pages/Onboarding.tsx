@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
 import { trackEvent } from '../../services/analytics';
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import {
   ChevronRight,
   ChevronLeft,
@@ -534,12 +535,9 @@ const Onboarding: React.FC = () => {
         timezone: userTimezone,
       });
       
-      // Navigate to appropriate dashboard based on course
-      if (selectedCourse === 'ea') {
-        navigate('/ea');
-      } else {
-        navigate('/home');
-      }
+      // Navigate to appropriate dashboard based on selected course
+      const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
+      navigate(courseDashboard);
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {

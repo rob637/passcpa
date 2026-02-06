@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   Clock,
   CheckCircle,
@@ -97,6 +98,8 @@ type QuizState = 'setup' | 'active' | 'review' | 'complete' | 'explanations';
 
 const TimedQuiz: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { recordMCQAnswer } = useStudy();
@@ -336,7 +339,7 @@ const TimedQuiz: React.FC = () => {
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-4">
         <div className="max-w-lg mx-auto">
           <button
-            onClick={() => navigate('/home')}
+            onClick={() => navigate(courseHome)}
             className="mb-4 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <ArrowRight className="w-4 h-4 mr-1 rotate-180" />
@@ -489,7 +492,7 @@ const TimedQuiz: React.FC = () => {
           </button>
 
           <button
-            onClick={() => navigate('/home')}
+            onClick={() => navigate(courseHome)}
             className="w-full mt-3 py-2 text-slate-600 hover:text-slate-900"
           >
             Back to Home

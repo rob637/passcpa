@@ -17,13 +17,13 @@ export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[fea
 
 /**
  * Course Availability Flags
- * Controlled via environment variables for safe deployment
+ * All courses enabled during beta - controlled via environment variables for future safe deployment
  */
-export const ENABLE_EA_COURSE = import.meta.env.VITE_ENABLE_EA_COURSE === 'true' || import.meta.env.DEV;
-export const ENABLE_CMA_COURSE = import.meta.env.VITE_ENABLE_CMA_COURSE === 'true' || import.meta.env.DEV;
-export const ENABLE_CIA_COURSE = import.meta.env.VITE_ENABLE_CIA_COURSE === 'true' || import.meta.env.DEV;
-export const ENABLE_CFP_COURSE = import.meta.env.VITE_ENABLE_CFP_COURSE === 'true' || import.meta.env.DEV;
-export const ENABLE_CISA_COURSE = import.meta.env.VITE_ENABLE_CISA_COURSE === 'true' || import.meta.env.DEV;
+export const ENABLE_EA_COURSE = true;
+export const ENABLE_CMA_COURSE = true;
+export const ENABLE_CIA_COURSE = true;
+export const ENABLE_CFP_COURSE = true;
+export const ENABLE_CISA_COURSE = true;
 
 // Log status on startup for verification
 if (import.meta.env.DEV) {

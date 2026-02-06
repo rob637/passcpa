@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import {
   BookOpen,
   CheckCircle,
@@ -23,6 +23,7 @@ import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
 import { useBookmarks } from '../common/Bookmarks';
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
 
@@ -135,6 +136,7 @@ const Lessons: React.FC = () => {
   const { courseId } = useCourse();
   const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
@@ -142,6 +144,13 @@ const Lessons: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
+
+  // Redirect non-CPA users to their dashboard - /learn is CPA-specific
+  useEffect(() => {
+    if (courseId && courseId !== 'cpa') {
+      navigate(getCourseHomePath(courseId), { replace: true });
+    }
+  }, [courseId, navigate]);
 
   // Get bookmarked lesson IDs
   const bookmarkedLessonIds = new Set(

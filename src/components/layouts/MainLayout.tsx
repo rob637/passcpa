@@ -14,11 +14,11 @@ import clsx from 'clsx';
 // Course-specific navigation paths (extended from shared utility)
 const COURSE_NAV_PATHS: Record<CourseId, { home: string; learn: string; you: string; strategy: string }> = {
   cpa: { home: '/home', learn: '/learn', you: '/you', strategy: '/lessons?section=PREP' },
-  ea: { home: '/ea', learn: '/ea', you: '/you', strategy: '/ea' },
-  cma: { home: '/cma/dashboard', learn: '/cma/dashboard', you: '/you', strategy: '/cma/dashboard' },
-  cia: { home: '/cia/dashboard', learn: '/cia/dashboard', you: '/you', strategy: '/cia/dashboard' },
-  cfp: { home: '/cfp/dashboard', learn: '/cfp/dashboard', you: '/you', strategy: '/cfp/dashboard' },
-  cisa: { home: '/cisa/dashboard', learn: '/cisa/dashboard', you: '/you', strategy: '/cisa/dashboard' },
+  ea: { home: '/ea', learn: '/ea/learn', you: '/you', strategy: '/ea' },
+  cma: { home: '/cma/dashboard', learn: '/cma/learn', you: '/you', strategy: '/cma/dashboard' },
+  cia: { home: '/cia/dashboard', learn: '/cia/learn', you: '/you', strategy: '/cia/dashboard' },
+  cfp: { home: '/cfp/dashboard', learn: '/cfp/learn', you: '/you', strategy: '/cfp/dashboard' },
+  cisa: { home: '/cisa/dashboard', learn: '/cisa/learn', you: '/you', strategy: '/cisa/dashboard' },
 };
 
 // Check if current path is active for a given nav type in a course
@@ -262,7 +262,7 @@ const MainLayout = () => {
           <div className="space-y-1">
             {navItems.map((item) => (
               <NavLink
-                key={item.path}
+                key={item.navType}
                 to={item.path}
                 className={() =>
                   clsx(
@@ -385,7 +385,7 @@ const MainLayout = () => {
 
           {navItems.map((item) => (
             <NavLink
-              key={item.path}
+              key={item.navType}
               to={item.path}
               aria-label={item.label}
               className={() =>

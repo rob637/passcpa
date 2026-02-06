@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   ArrowLeft,
   CheckCircle,
@@ -504,6 +505,8 @@ const SimpleCalculator: React.FC = () => {
 
 const TBSSimulator: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { completeSimulation } = useStudy();
@@ -1264,7 +1267,7 @@ const TBSSimulator: React.FC = () => {
                       {/* Show "Done" button when submitted and NOT from daily plan */}
                       {submitted && !fromDailyPlan && (
                         <button
-                          onClick={() => navigate('/home')}
+                          onClick={() => navigate(courseHome)}
                           className="btn-primary flex items-center gap-2 px-6"
                         >
                           Done

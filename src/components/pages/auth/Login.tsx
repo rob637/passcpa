@@ -1,12 +1,38 @@
 import { useState } from 'react';
 import logger from '../../../utils/logger';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 
+// Course-to-dashboard mapping
+const COURSE_DASHBOARDS: Record<string, string> = {
+  cpa: '/home',
+  ea: '/ea',
+  cma: '/cma',
+  cia: '/cia',
+  cfp: '/cfp',
+  cisa: '/cisa',
+};
+
+// Course display names
+const COURSE_NAMES: Record<string, string> = {
+  cpa: 'CPA',
+  ea: 'EA',
+  cma: 'CMA',
+  cia: 'CIA',
+  cfp: 'CFP',
+  cisa: 'CISA',
+};
+
 const Login = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { signIn, signInWithGoogle, loading } = useAuth();
+
+  // Get course from URL params (e.g., /login?course=ea)
+  const courseParam = searchParams.get('course')?.toLowerCase();
+  const targetDashboard = COURSE_DASHBOARDS[courseParam || ''] || '/dashboard';
+  const courseName = COURSE_NAMES[courseParam || ''] || 'exam prep';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +47,7 @@ const Login = () => {
 
     try {
       await signIn(email, password);
-      navigate('/dashboard');
+      navigate(targetDashboard);
     } catch (err: any) {
       logger.error('Login error:', err);
       if (err.code === 'auth/invalid-credential') {
@@ -46,7 +72,7 @@ const Login = () => {
       await signInWithGoogle();
       // Check if user needs onboarding (new Google user)
       // The AuthProvider handles creating profile, we just navigate
-      navigate('/dashboard');
+      navigate(targetDashboard);
     } catch (err: any) {
       logger.error('Google sign-in error:', err);
       if (err.code === 'auth/popup-closed-by-user') {
@@ -64,7 +90,7 @@ const Login = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Welcome back</h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Sign in to continue your CPA journey</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Sign in to continue your {courseName} journey</p>
       </div>
 
       {/* Google Sign In - Primary Option */}

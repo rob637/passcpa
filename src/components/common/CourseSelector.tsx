@@ -7,10 +7,11 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, Check, GraduationCap, Lock, Sparkles } from 'lucide-react';
+import { ChevronDown, Check, GraduationCap, Lock } from 'lucide-react';
 import { useCourse } from '../../providers/CourseProvider';
 import { isCourseActive, ACTIVE_COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 
 /** All courses that may be shown (even if not yet available) */
@@ -22,7 +23,6 @@ const COURSE_DISPLAY: Record<CourseId, {
   shortName: string; 
   color: string;
   icon: string;
-  comingSoon?: boolean;
 }> = {
   cpa: { 
     name: 'CPA Exam', 
@@ -35,7 +35,6 @@ const COURSE_DISPLAY: Record<CourseId, {
     shortName: 'CMA', 
     color: 'bg-emerald-500',
     icon: '📈',
-    comingSoon: true,
   },
   ea: { 
     name: 'Enrolled Agent', 
@@ -54,14 +53,12 @@ const COURSE_DISPLAY: Record<CourseId, {
     shortName: 'CFP', 
     color: 'bg-green-500',
     icon: '🌱',
-    comingSoon: true,
   },
   cisa: { 
     name: 'CISA Exam', 
     shortName: 'CISA', 
     color: 'bg-cyan-500',
     icon: '🛡️',
-    comingSoon: true,
   },
 };
 
@@ -118,10 +115,8 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
       setIsOpen(false);
 
       // Navigate to the correct dashboard based on course
-      if (id === 'cpa') navigate('/home');
-      else if (id === 'ea') navigate('/ea');
-      else if (id === 'cma') navigate('/cma');
-      else if (id === 'cia') navigate('/cia');
+      const courseDashboard = getCourseHomePath(id);
+      navigate(courseDashboard);
     }
   };
   
@@ -237,12 +232,6 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                   {isSelected && (
                     <Check className="w-4 h-4 text-primary-600" />
                   )}
-                  {!isActive && display.comingSoon && (
-                    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-medium">
-                      <Sparkles className="w-3 h-3" />
-                      Soon
-                    </span>
-                  )}
                   {isActive && !hasAccess && (
                     <span className="flex items-center gap-1 text-slate-600">
                       <Lock className="w-4 h-4" />
@@ -258,7 +247,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <GraduationCap className="w-3.5 h-3.5 inline mr-1" />
-                More exam preps coming soon! Get notified when CMA, EA, and CIA launch.
+                All exam preps included free during beta!
               </p>
             </div>
           )}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   RotateCcw,
   ChevronLeft,
@@ -73,6 +74,8 @@ interface SessionStats {
 
 const Flashcards: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchParams] = useSearchParams();
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
@@ -439,7 +442,7 @@ const Flashcards: React.FC = () => {
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <button
-            onClick={() => navigate('/home')}
+            onClick={() => navigate(courseHome)}
             className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
           >
             <ArrowLeft className="w-5 h-5" />

@@ -190,7 +190,7 @@ const FlashcardSetup: React.FC = () => {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center gap-3">
-          <BackButton fallback="/home" />
+          <BackButton />
           <div className="flex-1">
             <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               Create a Flashcard Session

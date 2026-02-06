@@ -20,9 +20,10 @@ export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[fea
  * Controlled via environment variables for safe deployment
  */
 export const ENABLE_EA_COURSE = import.meta.env.VITE_ENABLE_EA_COURSE === 'true' || import.meta.env.DEV;
-export const ENABLE_CMA_COURSE = import.meta.env.VITE_ENABLE_CMA_COURSE === 'true';
+export const ENABLE_CMA_COURSE = import.meta.env.VITE_ENABLE_CMA_COURSE === 'true' || import.meta.env.DEV;
 
 // Log status on startup for verification
 if (import.meta.env.DEV) {
   console.log('[FeatureFlags] EA Course Enabled:', ENABLE_EA_COURSE);
+  console.log('[FeatureFlags] CMA Course Enabled:', ENABLE_CMA_COURSE);
 }

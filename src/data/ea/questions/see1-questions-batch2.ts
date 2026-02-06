@@ -1,0 +1,535 @@
+/**
+ * EA SEE Part 1: Individuals - Questions Batch 2 (Q26-50)
+ * 
+ * Blueprint Areas:
+ * - SEE1-1: Preliminary Work and Taxpayer Data (15-20%)
+ * - SEE1-2: Income and Assets (20-25%)
+ * - SEE1-3: Deductions and Adjustments (20-25%)
+ * - SEE1-4: Taxation and Advice (15-20%)
+ * - SEE1-5: Credits (15-20%)
+ * - SEE1-6: Specialized Returns (10-15%)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE1_QUESTIONS_BATCH2: Question[] = [
+  // ==========================================
+  // SEE1-2: Income and Assets (continued)
+  // ==========================================
+  {
+    id: 'see1-026',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Rental Income',
+    subtopic: 'Schedule E',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'David rents a vacation home for 30 days and uses it personally for 15 days during the year. How is the rental income treated?',
+    options: [
+      'All rental income is taxable and all expenses are deductible',
+      'Rental income is reported on Schedule E with expenses limited by the rental/personal use ratio',
+      'The property is treated as a personal residence and rental income is not taxable',
+      'Rental expenses can only offset rental income (no net loss allowed)'
+    ],
+    correctAnswer: 3,
+    explanation: 'When personal use exceeds the greater of 14 days or 10% of rental days, the property is a personal residence with mixed use. Rental expenses are limited to offset rental income only (no loss), allocated based on rental days/total days. This is the "hobby loss" limitation for vacation homes.',
+    reference: 'IRC §280A; IRS Publication 527',
+  },
+  {
+    id: 'see1-027',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Social Security Benefits',
+    subtopic: 'Taxability',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'At most, what percentage of Social Security benefits may be subject to federal income tax?',
+    options: [
+      '50%',
+      '75%',
+      '85%',
+      '100%'
+    ],
+    correctAnswer: 2,
+    explanation: 'Up to 85% of Social Security benefits may be taxable, depending on the taxpayer\'s combined income (AGI + nontaxable interest + 50% of SS benefits). If combined income exceeds certain thresholds, 50% or 85% of benefits are taxable.',
+    reference: 'IRC §86; IRS Publication 915',
+  },
+  {
+    id: 'see1-028',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Capital Gains',
+    subtopic: 'Primary Residence Exclusion',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To exclude gain on the sale of a principal residence, a taxpayer must have owned and used the home as a principal residence for at least:',
+    options: [
+      '1 year out of the 3 years before the sale',
+      '2 years out of the 5 years before the sale',
+      '3 years out of the 5 years before the sale',
+      '5 consecutive years before the sale'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Section 121 exclusion ($250,000 single/$500,000 MFJ) requires owning and using the home as a principal residence for at least 2 of the 5 years before the sale. The 2 years don\'t need to be consecutive.',
+    reference: 'IRC §121; IRS Publication 523',
+  },
+  {
+    id: 'see1-029',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Business Income',
+    subtopic: 'Schedule C',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A sole proprietor reports business income and expenses on:',
+    options: [
+      'Form 1065',
+      'Form 1120',
+      'Schedule C of Form 1040',
+      'Schedule E of Form 1040'
+    ],
+    correctAnswer: 2,
+    explanation: 'Sole proprietors report their business income and expenses on Schedule C (Profit or Loss From Business) of Form 1040. Form 1065 is for partnerships, Form 1120 is for C corporations, and Schedule E is for rental/passive income.',
+    reference: 'IRS Publication 334',
+  },
+  {
+    id: 'see1-030',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Retirement Income',
+    subtopic: 'Required Minimum Distributions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the SECURE 2.0 Act, traditional IRA owners must begin taking required minimum distributions (RMDs) by April 1 following the year they reach age:',
+    options: [
+      '70½',
+      '72',
+      '73',
+      '75'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under SECURE 2.0 Act, for individuals reaching age 72 after 2022, RMDs must begin by April 1 following the year they reach age 73. Starting in 2033, the RMD age will increase to 75.',
+    reference: 'IRC §401(a)(9); SECURE 2.0 Act',
+  },
+  {
+    id: 'see1-031',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Alimony',
+    subtopic: 'Divorce Agreements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For divorce agreements executed after December 31, 2018, alimony payments are:',
+    options: [
+      'Deductible by the payer and taxable to the recipient',
+      'Not deductible by the payer and not taxable to the recipient',
+      'Deductible by the payer but not taxable to the recipient',
+      'Not deductible by the payer but taxable to the recipient'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Tax Cuts and Jobs Act eliminated the alimony deduction for divorce agreements executed after 2018. The payer cannot deduct alimony, and the recipient does not include it in income. This is the opposite of pre-2019 rules.',
+    reference: 'IRC §215, §71 (as amended by TCJA)',
+  },
+  {
+    id: 'see1-032',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Gambling Income',
+    subtopic: 'Reporting and Deductions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer had gambling winnings of $5,000 and gambling losses of $6,000. What amount can be deducted?',
+    options: [
+      '$0',
+      '$5,000',
+      '$6,000',
+      '$1,000 net loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gambling losses are deductible as an itemized deduction, but only to the extent of gambling winnings. The $5,000 in winnings is fully taxable, and the taxpayer can deduct only $5,000 of the $6,000 in losses. No net gambling loss is allowed.',
+    reference: 'IRC §165(d); IRS Publication 529',
+  },
+
+  // ==========================================
+  // SEE1-3: Deductions and Adjustments (continued)
+  // ==========================================
+  {
+    id: 'see1-033',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Itemized Deductions',
+    subtopic: 'Charitable Contributions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Cash contributions to public charities are generally limited to what percentage of AGI?',
+    options: [
+      '20%',
+      '30%',
+      '50%',
+      '60%'
+    ],
+    correctAnswer: 3,
+    explanation: 'Cash contributions to public charities are limited to 60% of AGI. Contributions of appreciated capital gain property are limited to 30% of AGI. Contributions to private foundations have lower limits. Excess contributions can be carried forward 5 years.',
+    reference: 'IRC §170; IRS Publication 526',
+  },
+  {
+    id: 'see1-034',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Itemized Deductions',
+    subtopic: 'Mortgage Interest',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For mortgages taken out after December 15, 2017, the limit on acquisition indebtedness for which mortgage interest is deductible is:',
+    options: [
+      '$500,000',
+      '$750,000',
+      '$1,000,000',
+      '$1,500,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'For mortgages taken out after December 15, 2017, the deduction for home mortgage interest is limited to debt of $750,000 ($375,000 if MFS). The pre-TCJA limit of $1,000,000 applies to mortgages from before that date.',
+    reference: 'IRC §163(h); IRS Publication 936',
+  },
+  {
+    id: 'see1-035',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Adjustments to Income',
+    subtopic: 'Self-Employment Tax Deduction',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A self-employed individual can deduct what portion of self-employment tax as an adjustment to income?',
+    options: [
+      '25%',
+      '50%',
+      '75%',
+      '100%'
+    ],
+    correctAnswer: 1,
+    explanation: 'Self-employed individuals can deduct 50% of their self-employment tax as an adjustment to income (above-the-line). This is equivalent to the employer\'s share of FICA taxes that employers pay and deduct as a business expense.',
+    reference: 'IRC §164(f); IRS Publication 334',
+  },
+  {
+    id: 'see1-036',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Adjustments to Income',
+    subtopic: 'IRA Contributions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For 2025, the maximum deductible contribution to a traditional IRA for an individual under age 50 is:',
+    options: [
+      '$6,500',
+      '$7,000',
+      '$7,500',
+      '$8,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'For 2025, the maximum IRA contribution (traditional or Roth) is $7,000 for individuals under age 50. Individuals age 50 or older can contribute an additional $1,000 catch-up contribution for a total of $8,000.',
+    reference: 'IRC §219; IRS Publication 590-A',
+  },
+  {
+    id: 'see1-037',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Itemized Deductions',
+    subtopic: 'Casualty Losses',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under current law, personal casualty and theft losses are deductible only if:',
+    options: [
+      'They exceed 10% of AGI',
+      'They are attributable to a federally declared disaster',
+      'They exceed $500 per occurrence',
+      'The taxpayer has no insurance coverage'
+    ],
+    correctAnswer: 1,
+    explanation: 'The TCJA suspended the personal casualty loss deduction for 2018-2025, except for losses attributable to a federally declared disaster. The losses are still subject to the $100 floor and 10% of AGI limitation.',
+    reference: 'IRC §165(h)(5); IRS Publication 547',
+  },
+  {
+    id: 'see1-038',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Adjustments to Income',
+    subtopic: 'Educator Expenses',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'For 2025, eligible educators can deduct up to how much in unreimbursed classroom expenses as an adjustment to income?',
+    options: [
+      '$200',
+      '$250',
+      '$300',
+      '$500'
+    ],
+    correctAnswer: 2,
+    explanation: 'Eligible educators (K-12 teachers, counselors, principals, aides with at least 900 hours of work) can deduct up to $300 in unreimbursed classroom expenses as an adjustment to income. This includes books, supplies, computer equipment, and supplementary materials.',
+    reference: 'IRC §62(a)(2)(D); IRS Publication 17',
+  },
+
+  // ==========================================
+  // SEE1-5: Credits (continued)
+  // ==========================================
+  {
+    id: 'see1-039',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Child and Dependent Care Credit',
+    subtopic: 'Qualifying Expenses',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To claim the Child and Dependent Care Credit, care must be provided for:',
+    options: [
+      'Any child under age 18',
+      'A qualifying child under age 13 or disabled dependent/spouse',
+      'Any dependent regardless of age',
+      'Only children who are full-time students'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Child and Dependent Care Credit applies to expenses for a qualifying child under age 13 or a dependent/spouse who is physically or mentally incapable of self-care. The care must allow the taxpayer to work or look for work.',
+    reference: 'IRC §21; IRS Publication 503',
+  },
+  {
+    id: 'see1-040',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Education Credits',
+    subtopic: 'Lifetime Learning Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Lifetime Learning Credit:',
+    options: [
+      'Is available only for the first 4 years of college',
+      'Has no limit on the number of years it can be claimed',
+      'Is fully refundable',
+      'Requires the student to be enrolled at least half-time'
+    ],
+    correctAnswer: 1,
+    explanation: 'Unlike the AOTC, the Lifetime Learning Credit has no limit on the number of years it can be claimed and is available for any course to acquire or improve job skills. It is 20% of up to $10,000 in expenses (max $2,000 credit). It is nonrefundable.',
+    reference: 'IRC §25A(c); IRS Publication 970',
+  },
+  {
+    id: 'see1-041',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Premium Tax Credit',
+    subtopic: 'Health Insurance Marketplace',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Premium Tax Credit is available to taxpayers who:',
+    options: [
+      'Have household income above 400% of the federal poverty level',
+      'Purchase health insurance through the Health Insurance Marketplace',
+      'Are covered by employer-sponsored health insurance',
+      'Decline all forms of health insurance'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Premium Tax Credit helps eligible individuals and families afford health insurance purchased through the Health Insurance Marketplace. Taxpayers must meet income requirements and cannot be eligible for other minimum essential coverage.',
+    reference: 'IRC §36B; IRS Publication 974',
+  },
+  {
+    id: 'see1-042',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Foreign Tax Credit',
+    subtopic: 'Form 1116',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The foreign tax credit is designed to:',
+    options: [
+      'Encourage investment in foreign countries',
+      'Prevent double taxation of foreign-source income',
+      'Penalize taxpayers with foreign bank accounts',
+      'Reduce Social Security taxes for expats'
+    ],
+    correctAnswer: 1,
+    explanation: 'The foreign tax credit prevents double taxation by allowing U.S. taxpayers to credit income taxes paid to foreign countries against their U.S. tax liability. The credit is limited to the U.S. tax attributable to foreign-source income.',
+    reference: 'IRC §901; IRS Publication 514',
+  },
+  {
+    id: 'see1-043',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Residential Energy Credits',
+    subtopic: 'Clean Energy',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Residential Clean Energy Credit for solar electric property is:',
+    options: [
+      '10% of qualified expenses',
+      '22% of qualified expenses',
+      '30% of qualified expenses',
+      '50% of qualified expenses'
+    ],
+    correctAnswer: 2,
+    explanation: 'The Residential Clean Energy Credit (formerly Residential Energy Efficient Property Credit) is 30% of qualified expenses for solar electric, solar water heating, battery storage, and other clean energy property through 2032. The rate decreases after 2032.',
+    reference: 'IRC §25D; IRS Publication 5865',
+  },
+
+  // ==========================================
+  // SEE1-4: Taxation and Advice (continued)
+  // ==========================================
+  {
+    id: 'see1-044',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Tax Computation',
+    subtopic: 'Kiddie Tax',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The kiddie tax applies to unearned income of a child who is:',
+    options: [
+      'Under age 18 only',
+      'Under age 19, or under 24 if a full-time student',
+      'Under age 21 regardless of student status',
+      'Any dependent child regardless of age'
+    ],
+    correctAnswer: 1,
+    explanation: 'The kiddie tax applies to unearned income (above a threshold amount) of children under 19, or under 24 if a full-time student. The child\'s unearned income is taxed at the parents\' marginal rate to prevent income shifting.',
+    reference: 'IRC §1(g); IRS Publication 929',
+  },
+  {
+    id: 'see1-045',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Estimated Taxes',
+    subtopic: 'Due Dates',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Estimated tax payments for individuals are due on all of the following dates EXCEPT:',
+    options: [
+      'April 15',
+      'June 15',
+      'August 15',
+      'January 15'
+    ],
+    correctAnswer: 2,
+    explanation: 'Individual estimated tax payments are due April 15, June 15, September 15, and January 15 of the following year. There is no August 15 due date. If a date falls on a weekend or holiday, the payment is due the next business day.',
+    reference: 'IRC §6654; IRS Publication 505',
+  },
+  {
+    id: 'see1-046',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Tax Planning',
+    subtopic: 'Basis',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'When property is received as a gift, the donee\'s basis for computing a gain on sale is:',
+    options: [
+      'Always fair market value at the date of gift',
+      'The donor\'s adjusted basis (carryover basis)',
+      'Zero',
+      'The amount the donee pays for the gift'
+    ],
+    correctAnswer: 1,
+    explanation: 'For computing gain, the donee\'s basis in gifted property is generally the donor\'s adjusted basis (carryover basis). For computing loss, if FMV at gift is lower than donor\'s basis, the donee uses FMV as basis. This is the "dual basis" rule.',
+    reference: 'IRC §1015; IRS Publication 551',
+  },
+  {
+    id: 'see1-047',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Tax Planning',
+    subtopic: 'Inherited Property',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Property inherited from a decedent generally receives:',
+    options: [
+      'Carryover basis from the decedent',
+      'Stepped-up (or stepped-down) basis to fair market value at death',
+      'Zero basis',
+      'Basis equal to the estate tax value only if estate tax is owed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Inherited property generally receives a stepped-up basis equal to fair market value at the date of the decedent\'s death (or alternate valuation date if elected). This eliminates any built-in gain that existed during the decedent\'s lifetime.',
+    reference: 'IRC §1014; IRS Publication 551',
+  },
+
+  // ==========================================
+  // SEE1-6: Specialized Returns (continued)
+  // ==========================================
+  {
+    id: 'see1-048',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Foreign Income',
+    subtopic: 'Foreign Earned Income Exclusion',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'For 2025, the maximum foreign earned income exclusion is approximately:',
+    options: [
+      '$100,000',
+      '$112,000',
+      '$126,500',
+      '$150,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'The foreign earned income exclusion is adjusted annually for inflation. For 2025, it is approximately $126,500. To qualify, taxpayers must have their tax home in a foreign country and meet either the bona fide residence test or physical presence test.',
+    reference: 'IRC §911; IRS Publication 54',
+  },
+  {
+    id: 'see1-049',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Foreign Accounts',
+    subtopic: 'FBAR',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A U.S. person must file an FBAR (Report of Foreign Bank and Financial Accounts) if the aggregate value of foreign financial accounts exceeds:',
+    options: [
+      '$1,000 at any time during the year',
+      '$10,000 at any time during the year',
+      '$50,000 at any time during the year',
+      '$100,000 on the last day of the year'
+    ],
+    correctAnswer: 1,
+    explanation: 'U.S. persons must file FinCEN Form 114 (FBAR) if they have a financial interest in or signature authority over foreign financial accounts with an aggregate value exceeding $10,000 at any time during the calendar year.',
+    reference: '31 USC §5314; FinCEN Form 114',
+  },
+  {
+    id: 'see1-050',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Amended Returns',
+    subtopic: 'Statute of Limitations',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Generally, a claim for refund must be filed within:',
+    options: [
+      '1 year from the date the return was due',
+      '2 years from the date the tax was paid',
+      '3 years from the date the return was filed or 2 years from the date the tax was paid, whichever is later',
+      '4 years from the original due date'
+    ],
+    correctAnswer: 2,
+    explanation: 'A claim for refund must be filed within 3 years from the date the return was filed or 2 years from the date the tax was paid, whichever is later. If no return was filed, the claim must be filed within 2 years of payment.',
+    reference: 'IRC §6511; IRS Publication 556',
+  },
+];

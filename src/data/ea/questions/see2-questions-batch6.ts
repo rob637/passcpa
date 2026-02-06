@@ -1,0 +1,215 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 6 (Q51-60)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH6: Question[] = [
+  // ==========================================
+  // SEE2-3: Business Income and Expenses
+  // ==========================================
+  {
+    id: 'see2-051',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Expenses',
+    subtopic: 'Entertainment',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under current tax law, entertainment expenses are:',
+    options: [
+      '100% deductible',
+      '50% deductible',
+      'Not deductible',
+      '80% deductible'
+    ],
+    correctAnswer: 2,
+    explanation: 'The Tax Cuts and Jobs Act eliminated the deduction for entertainment expenses. Business meals remain 50% deductible, but expenses for entertainment, amusement, or recreation are no longer deductible.',
+    reference: 'IRC §274(a)(1)',
+  },
+  {
+    id: 'see2-052',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Depreciation',
+    subtopic: 'Real Property',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Nonresidential real property is depreciated using MACRS over:',
+    options: [
+      '27.5 years',
+      '31.5 years',
+      '39 years',
+      '40 years'
+    ],
+    correctAnswer: 2,
+    explanation: 'Nonresidential real property (commercial buildings) is depreciated over 39 years using the straight-line method under MACRS. Residential rental property is depreciated over 27.5 years.',
+    reference: 'IRC §168(c)',
+  },
+  {
+    id: 'see2-053',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Expenses',
+    subtopic: 'Bad Debts',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A business using the accrual method can deduct a bad debt when:',
+    options: [
+      'An invoice is 30 days past due',
+      'The debt becomes partially uncollectible',
+      'The debt becomes wholly or partially worthless',
+      'Only when the debt is sold to a collection agency'
+    ],
+    correctAnswer: 2,
+    explanation: 'Business bad debts can be deducted when they become wholly or partially worthless. Cash basis businesses generally cannot deduct bad debts because the income was never included in income when not collected.',
+    reference: 'IRC §166',
+  },
+  {
+    id: 'see2-054',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Expenses',
+    subtopic: 'Health Insurance',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A self-employed individual can deduct 100% of health insurance premiums:',
+    options: [
+      'Only as an itemized deduction',
+      'As an adjustment to income (above-the-line)',
+      'Only if the business has a net profit',
+      'As a business expense on Schedule C'
+    ],
+    correctAnswer: 1,
+    explanation: 'Self-employed individuals can deduct 100% of health insurance premiums for themselves, spouse, and dependents as an adjustment to income, limited to net self-employment income. It is not deducted on Schedule C.',
+    reference: 'IRC §162(l)',
+  },
+  {
+    id: 'see2-055',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Depreciation',
+    subtopic: 'Mid-Quarter Convention',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The mid-quarter convention for MACRS depreciation applies when:',
+    options: [
+      'Property is placed in service in the fourth quarter',
+      'More than 40% of depreciable property is placed in service in the last quarter',
+      'The business is in its first year of operation',
+      'Total depreciation exceeds $500,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'The mid-quarter convention applies when more than 40% of the aggregate bases of property placed in service during the year is placed in service during the last quarter. This prevents year-end purchasing to maximize first-year deductions.',
+    reference: 'IRC §168(d)(3)',
+  },
+  {
+    id: 'see2-056',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Expenses',
+    subtopic: 'Interest Limitation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under IRC §163(j), business interest expense deductions are generally limited to:',
+    options: [
+      '50% of business income',
+      '30% of adjusted taxable income',
+      '$1 million per year',
+      'There is no limitation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under §163(j), business interest expense is limited to 30% of adjusted taxable income (plus business interest income and floor plan financing interest). Small businesses meeting the gross receipts test are exempt from this limitation.',
+    reference: 'IRC §163(j)',
+  },
+  {
+    id: 'see2-057',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Retirement Plans',
+    subtopic: 'SEP-IRA',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The maximum employer contribution to a SEP-IRA is:',
+    options: [
+      '10% of compensation',
+      '15% of compensation',
+      '25% of compensation',
+      '50% of compensation'
+    ],
+    correctAnswer: 2,
+    explanation: 'Employers can contribute up to 25% of an employee\'s compensation (limited to $345,000 for 2025) to a SEP-IRA. For self-employed individuals, the effective rate is about 20% of net self-employment income.',
+    reference: 'IRC §408(k)',
+  },
+  {
+    id: 'see2-058',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Retirement Plans',
+    subtopic: 'SIMPLE IRA',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For 2025, the maximum employee contribution to a SIMPLE IRA is approximately:',
+    options: [
+      '$7,000',
+      '$16,000',
+      '$16,500',
+      '$23,500'
+    ],
+    correctAnswer: 2,
+    explanation: 'For 2025, SIMPLE IRA employee contributions are limited to approximately $16,500. Employees age 50 or older can make additional catch-up contributions of $3,500.',
+    reference: 'IRC §408(p)',
+  },
+
+  // ==========================================
+  // SEE2-2: Business Financial Information
+  // ==========================================
+  {
+    id: 'see2-059',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Accounting Methods',
+    subtopic: 'Change in Method',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'To change an accounting method, a business generally must file:',
+    options: [
+      'An amended return for all prior years',
+      'Form 3115, Application for Change in Accounting Method',
+      'Form 843, Claim for Refund',
+      'No form is required'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 3115 is used to request or notify of a change in accounting method. Some changes require advance IRS consent, while others can be made automatically by filing Form 3115 with the return.',
+    reference: 'IRC §446(e); Rev. Proc. 2015-13',
+  },
+  {
+    id: 'see2-060',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Tax Years',
+    subtopic: 'Required Tax Year',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A partnership\'s required tax year is generally:',
+    options: [
+      'Any fiscal year the partners choose',
+      'The tax year of the majority interest partners, or other required year',
+      'Always the calendar year',
+      'The tax year that results in the least deferral'
+    ],
+    correctAnswer: 1,
+    explanation: 'Partnerships must use the tax year of partners owning more than 50% of profits/capital (majority interest), or if none, the tax year of all principal partners. If neither applies, the year resulting in least aggregate deferral is used.',
+    reference: 'IRC §706(b)',
+  },
+];

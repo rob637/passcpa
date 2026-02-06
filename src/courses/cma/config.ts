@@ -14,6 +14,7 @@ export const CMA_COURSE: Course = {
   description: 'Comprehensive preparation for the IMA Certified Management Accountant Examination',
   passingScore: 360, // Scaled score out of 500
   totalTime: 240, // 4 hours per part
+  hasTBS: false, // CMA has Essays, not TBS
   
   sections: [
     {
@@ -187,6 +188,74 @@ export const CMA_COURSE: Course = {
     hasEssay: true,
     hasDataInsights: false,
   },
+};
+
+/**
+ * CMA Section IDs for quick reference
+ */
+export const CMA_SECTIONS = CMA_COURSE.sections.map(s => s.id);
+
+/**
+ * CMA Section Configuration Map for UI
+ */
+export type CMASectionId = 'CMA1' | 'CMA2';
+
+export interface CMASectionConfig {
+  id: CMASectionId;
+  name: string;
+  shortName: string;
+  description: string;
+  examLength: number; // hours
+  questionCount: number;
+  color: string;
+  icon: string;
+  topics: string[];
+}
+
+export const CMA_SECTION_CONFIG: Record<CMASectionId, CMASectionConfig> = {
+  CMA1: {
+    id: 'CMA1',
+    name: 'Part 1: Financial Planning, Performance, and Analytics',
+    shortName: 'CMA1',
+    description: 'External reporting, budgeting, performance management, cost management, internal controls, and analytics',
+    examLength: 4,
+    questionCount: 100,
+    color: '#10b981', // emerald
+    icon: 'TrendingUp',
+    topics: [
+      'External Financial Reporting',
+      'Planning, Budgeting & Forecasting',
+      'Performance Management',
+      'Cost Management',
+      'Internal Controls',
+      'Technology & Analytics',
+    ],
+  },
+  CMA2: {
+    id: 'CMA2',
+    name: 'Part 2: Strategic Financial Management',
+    shortName: 'CMA2',
+    description: 'Financial analysis, corporate finance, decision analysis, risk management, investments, and ethics',
+    examLength: 4,
+    questionCount: 100,
+    color: '#6366f1', // indigo
+    icon: 'Calculator',
+    topics: [
+      'Financial Statement Analysis',
+      'Corporate Finance',
+      'Decision Analysis',
+      'Risk Management',
+      'Investment Decisions',
+      'Professional Ethics',
+    ],
+  },
+};
+
+/**
+ * Get CMA section by ID
+ */
+export const getCMASection = (sectionId: CMASectionId): CMASectionConfig | undefined => {
+  return CMA_SECTION_CONFIG[sectionId];
 };
 
 export default CMA_COURSE;

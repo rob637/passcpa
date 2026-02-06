@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 38 (Q371-380)
+ * Ethical Standards & Return Positions
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH38: Question[] = [
+  // ==========================================
+  // SEE3: Ethical Standards & Return Positions
+  // ==========================================
+  {
+    id: 'see3-371',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Realistic Possibility',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under Circular 230 §10.34, a practitioner may not sign a return position unless:',
+    options: [
+      'The client insists',
+      'There is a reasonable basis for the position (and it is disclosed if not substantial authority)',
+      'Any position is acceptable',
+      'It saves the most taxes'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 §10.34 requires a reasonable basis for positions. Positions without substantial authority must be adequately disclosed. Frivolous positions are never acceptable.',
+    reference: 'Circular 230 §10.34',
+  },
+  {
+    id: 'see3-372',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Substantial Authority',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Substantial authority for a tax position:',
+    options: [
+      'Means any written support',
+      'Is an objective standard based on analysis of relevant authorities that is less stringent than more likely than not but more than reasonable basis',
+      'Means the taxpayer wants to take the position',
+      'Is not a recognized standard'
+    ],
+    correctAnswer: 1,
+    explanation: 'Substantial authority is an objective standard based on analyzing the weight of all relevant authorities. It\'s approximately a 40% likelihood of success - between reasonable basis (20-25%) and more likely than not (>50%).',
+    reference: 'Treas. Reg. §1.6662-4(d)',
+  },
+  {
+    id: 'see3-373',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Reasonable Basis',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Reasonable basis for a tax position:',
+    options: [
+      'Means any arguable position',
+      'Is a relatively high standard - more than merely arguable or colorable',
+      'Requires court approval',
+      'Is the highest standard'
+    ],
+    correctAnswer: 1,
+    explanation: 'Reasonable basis is a relatively high standard requiring more than just an arguable position. It must be based on one or more authorities and cannot be frivolous. It\'s approximately 20-25% likelihood.',
+    reference: 'Treas. Reg. §1.6662-3(b)(3)',
+  },
+  {
+    id: 'see3-374',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Disclosure',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Adequate disclosure of a tax position is typically made on:',
+    options: [
+      'Any attachment',
+      'Form 8275 or Form 8275-R (for positions contrary to regulations)',
+      'Form 1040 cover letter',
+      'Verbal communication'
+    ],
+    correctAnswer: 1,
+    explanation: 'Adequate disclosure is typically made on Form 8275 (Disclosure Statement) or Form 8275-R (for positions contrary to regulations). Proper disclosure can avoid certain penalties.',
+    reference: 'IRC §6662(d)(2)(B)',
+  },
+  {
+    id: 'see3-375',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Frivolous Positions',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A frivolous tax position:',
+    options: [
+      'Is simply aggressive',
+      'Has no basis in law, is patently improper, or is based on clearly invalid arguments',
+      'Is any position the IRS disagrees with',
+      'Must be approved by Tax Court'
+    ],
+    correctAnswer: 1,
+    explanation: 'Frivolous positions are patently improper (e.g., claiming wages are not income, tax is voluntary). The IRS publishes a list of recognized frivolous positions. A $5,000 penalty applies.',
+    reference: 'IRC §6702',
+  },
+  {
+    id: 'see3-376',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Reliance on Client',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A practitioner may rely on client-furnished information:',
+    options: [
+      'Never',
+      'In good faith without verification, unless the information appears incorrect or inconsistent',
+      'Only if verified by third parties',
+      'Always without question'
+    ],
+    correctAnswer: 1,
+    explanation: 'Practitioners may generally rely on information provided by clients without verification unless it appears incorrect, inconsistent, or incomplete, in which case reasonable inquiries must be made.',
+    reference: 'Circular 230 §10.34(d)',
+  },
+  {
+    id: 'see3-377',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Taxpayer Penalties',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The accuracy-related penalty under IRC §6662 is:',
+    options: [
+      '10% of underpayment',
+      '20% of the underpayment attributable to negligence, substantial understatement, or other specified conduct',
+      '50% of underpayment',
+      '5% per month'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRC §6662 penalty is 20% of the portion of underpayment attributable to negligence, substantial understatement, substantial valuation misstatement, or certain other conduct.',
+    reference: 'IRC §6662(a)',
+  },
+  {
+    id: 'see3-378',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Substantial Understatement',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A substantial understatement of income tax exists when the understatement exceeds:',
+    options: [
+      '$1,000',
+      'The greater of 10% of the tax required to be shown or $5,000 (for individuals)',
+      '25% of tax',
+      'Any amount'
+    ],
+    correctAnswer: 1,
+    explanation: 'For individuals, substantial understatement is the greater of 10% of correct tax or $5,000. For corporations, it\'s the lesser of 10% of correct tax (or $10,000 if greater) or $10 million.',
+    reference: 'IRC §6662(d)(1)',
+  },
+  {
+    id: 'see3-379',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Reasonable Cause Defense',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The accuracy-related penalty may be avoided if:',
+    options: [
+      'The taxpayer disagrees with the law',
+      'There was reasonable cause and the taxpayer acted in good faith',
+      'The underpayment was small',
+      'It was the taxpayer\'s first offense'
+    ],
+    correctAnswer: 1,
+    explanation: 'No penalty under §6662 applies if the taxpayer shows reasonable cause and good faith. Factors include the complexity of the issue, taxpayer\'s knowledge, and whether they sought professional advice.',
+    reference: 'IRC §6664(c)',
+  },
+  {
+    id: 'see3-380',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Return Standards',
+    subtopic: 'Reportable Transactions',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Reportable transactions must be disclosed:',
+    options: [
+      'Never',
+      'On Form 8886 with the return and to the IRS Office of Tax Shelter Analysis',
+      'Only verbally',
+      'Only by corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Participants in reportable transactions must file Form 8886 with their return and send a copy to OTSA. Failure to disclose can result in significant penalties.',
+    reference: 'IRC §6111; Treas. Reg. §1.6011-4',
+  },
+];

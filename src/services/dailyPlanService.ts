@@ -16,6 +16,7 @@ import { fetchLessonsBySection } from './lessonService';
 import { POINT_VALUES } from '../config/examConfig';
 import type { CourseId, ExamSection } from '../types';
 import { TBSHistoryEntry } from './questionHistoryService';
+import { getCourse } from '../courses';
 import { 
   getCoveredTopics, 
   getPreviewTopics, 
@@ -315,11 +316,15 @@ export const generateDailyPlan = async (
     remainingMinutes -= ACTIVITY_DURATION.lesson_medium;
   }
   
-  // 5. MEDIUM: TBS practice (critical - 50% of exam!)
+  // 5. MEDIUM: TBS practice (critical - 50% of CPA exam!)
   // Check if they've done any TBS today based on activities
   // NEW: Also check if TBS is unlocked based on lesson progress
+  // Skip TBS entirely for courses that don't have it (EA, CMA, etc.)
+  const courseConfig = getCourse(courseId);
+  const courseHasTBS = courseConfig?.hasTBS ?? false;
+  
   const tbsNeeded = activities.filter(a => a.type === 'tbs').length === 0;
-  if (tbsNeeded && remainingMinutes >= 15) {
+  if (courseHasTBS && tbsNeeded && remainingMinutes >= 15) {
     const tbsTopics = getTBSTopicsForSection(state.section);
     let targetTBSTopic = tbsTopics[0];
     let reason = 'TBS = 50% of your exam score. Practice daily!';

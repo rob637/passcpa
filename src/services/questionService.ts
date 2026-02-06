@@ -55,15 +55,32 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
         default: questions = [];
       }
     }
-    // EA sections - will be populated when EA questions are added
+    // EA sections
     else if (['SEE1', 'SEE2', 'SEE3'].includes(section)) {
-      // TODO: Import EA questions when available
-      questions = [];
+      try {
+        const eaData = await import('../data/ea/questions');
+        switch (section) {
+          case 'SEE1': questions = eaData.SEE1_ALL || []; break;
+          case 'SEE2': questions = eaData.SEE2_ALL || []; break;
+          case 'SEE3': questions = eaData.SEE3_ALL || []; break;
+          default: questions = [];
+        }
+      } catch {
+        questions = [];
+      }
     }
     // CMA sections
     else if (['CMA1', 'CMA2'].includes(section)) {
-      // TODO: Import CMA questions when available
-      questions = [];
+      try {
+        const cmaData = await import('../data/cma/questions');
+        switch (section) {
+          case 'CMA1': questions = cmaData.CMA_PART1_QUESTIONS || []; break;
+          case 'CMA2': questions = cmaData.CMA_PART2_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch {
+        questions = [];
+      }
     }
     // CIA sections
     else if (['CIA1', 'CIA2', 'CIA3'].includes(section)) {

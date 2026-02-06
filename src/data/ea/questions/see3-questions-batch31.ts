@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 31 (Q301-310)
+ * Tax Court Procedures
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH31: Question[] = [
+  // ==========================================
+  // SEE3: Tax Court Procedures
+  // ==========================================
+  {
+    id: 'see3-301',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Jurisdiction',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The U.S. Tax Court has jurisdiction over:',
+    options: [
+      'Only criminal tax cases',
+      'Deficiency cases (income, estate, gift tax) before payment',
+      'Refund suits only',
+      'State tax disputes'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Tax Court has deficiency jurisdiction - taxpayers may challenge proposed taxes before paying. It handles income, estate, gift tax deficiencies, and certain other matters specified by statute.',
+    reference: 'IRC §7442',
+  },
+  {
+    id: 'see3-302',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Petition Filing',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A petition to Tax Court must be filed within:',
+    options: [
+      '30 days of notice',
+      '90 days of the notice of deficiency (150 days if addressed outside the US)',
+      '1 year',
+      '6 months'
+    ],
+    correctAnswer: 1,
+    explanation: 'A Tax Court petition must be filed within 90 days of the date on the statutory notice of deficiency (90-day letter). The period is 150 days if addressed to a person outside the United States.',
+    reference: 'IRC §6213(a)',
+  },
+  {
+    id: 'see3-303',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Filing Fee',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Tax Court filing fee is:',
+    options: [
+      'Free',
+      '$60',
+      '$200',
+      '$500'
+    ],
+    correctAnswer: 1,
+    explanation: 'As of 2024, the Tax Court filing fee is $60. Fee waivers may be available for taxpayers who qualify based on financial hardship.',
+    reference: 'Tax Court Rules of Practice and Procedure',
+  },
+  {
+    id: 'see3-304',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Small Tax Case',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Tax Court small tax case procedure applies when:',
+    options: [
+      'All cases',
+      'The amount in dispute is $50,000 or less per year and the taxpayer elects this procedure',
+      'Only criminal cases',
+      'Disputes over $100,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Small tax case ("S" case) procedures apply when the disputed amount (including penalties) is $50,000 or less per year and the taxpayer elects. Proceedings are simpler but no appeal is available.',
+    reference: 'IRC §7463',
+  },
+  {
+    id: 'see3-305',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'No Appeal',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A decision in a small tax case:',
+    options: [
+      'May be appealed to the Circuit Court',
+      'Is final and cannot be appealed',
+      'May be appealed to Supreme Court',
+      'Is only a recommendation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Small tax case decisions are final and cannot be appealed. They also cannot be used as precedent in other cases. This is the trade-off for simplified procedures.',
+    reference: 'IRC §7463(b)',
+  },
+  {
+    id: 'see3-306',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Pro Se',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In Tax Court, a taxpayer may:',
+    options: [
+      'Only be represented by an attorney',
+      'Represent themselves (pro se) or be represented by admitted practitioners',
+      'Never appear without a lawyer',
+      'Only use CPA representation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Taxpayers may represent themselves (pro se) in Tax Court. Alternatively, they may be represented by attorneys, CPAs, or EAs admitted to practice before the Tax Court.',
+    reference: 'Tax Court Rules',
+  },
+  {
+    id: 'see3-307',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'EA Admission',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'To practice before the Tax Court, an enrolled agent must:',
+    options: [
+      'Only be enrolled',
+      'Pass the Tax Court examination for non-attorneys and be admitted',
+      'Have 10 years experience',
+      'Be sponsored by an attorney'
+    ],
+    correctAnswer: 1,
+    explanation: 'Non-attorneys (CPAs, EAs) must pass the Tax Court non-attorney examination and be admitted to practice before the Tax Court. This is separate from IRS practice rights.',
+    reference: 'Tax Court Rules, Rule 200',
+  },
+  {
+    id: 'see3-308',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Burden of Proof',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In Tax Court, the burden of proof generally:',
+    options: [
+      'Is always on the IRS',
+      'Is on the taxpayer but may shift to IRS if taxpayer meets certain requirements',
+      'Does not apply',
+      'Is on the petitioner only in small cases'
+    ],
+    correctAnswer: 1,
+    explanation: 'The taxpayer generally bears the burden of proof. Under IRC §7491, the burden shifts to the IRS if the taxpayer produces credible evidence, maintains records, and cooperates.',
+    reference: 'IRC §7491',
+  },
+  {
+    id: 'see3-309',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Appeals from Tax Court',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Regular Tax Court decisions may be appealed to:',
+    options: [
+      'Only the Supreme Court',
+      'The U.S. Court of Appeals for the appropriate circuit',
+      'Federal District Court',
+      'The IRS Office of Appeals'
+    ],
+    correctAnswer: 1,
+    explanation: 'Regular Tax Court decisions may be appealed to the U.S. Court of Appeals for the circuit where the taxpayer resided. The appeal must be filed within 90 days.',
+    reference: 'IRC §7482',
+  },
+  {
+    id: 'see3-310',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Tax Court',
+    subtopic: 'Settlement',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Most Tax Court cases are resolved by:',
+    options: [
+      'Full trial',
+      'Settlement or stipulation before trial',
+      'Default judgment',
+      'Supreme Court review'
+    ],
+    correctAnswer: 1,
+    explanation: 'The vast majority of Tax Court cases are settled or stipulated before trial. Settlement offers certainty and avoids trial costs and risks for both parties.',
+    reference: 'Tax Court Practice',
+  },
+];

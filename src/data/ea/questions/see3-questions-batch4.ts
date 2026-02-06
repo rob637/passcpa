@@ -1,0 +1,211 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Questions Batch 4 (Q31-40)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH4: Question[] = [
+  // ==========================================
+  // SEE3-5: Penalties and Interest
+  // ==========================================
+  {
+    id: 'see3-031',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Failure to File Penalty',
+    subtopic: 'Penalty Calculation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The failure to file penalty is generally:',
+    options: [
+      '0.5% of unpaid tax per month, up to 25%',
+      '5% of unpaid tax per month, up to 25%',
+      '10% flat penalty',
+      '1% per day'
+    ],
+    correctAnswer: 1,
+    explanation: 'The failure to file penalty is 5% of the unpaid tax for each month or part of a month the return is late, up to a maximum of 25%. If both failure to file and failure to pay apply, the combined penalty is adjusted.',
+    reference: 'IRC §6651(a)(1)',
+  },
+  {
+    id: 'see3-032',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Failure to Pay Penalty',
+    subtopic: 'Penalty Calculation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The failure to pay penalty is generally:',
+    options: [
+      '5% of unpaid tax per month',
+      '0.5% of unpaid tax per month, up to 25%',
+      '10% of total tax due',
+      '1% per year'
+    ],
+    correctAnswer: 1,
+    explanation: 'The failure to pay penalty is 0.5% of the unpaid tax for each month or part of a month the tax remains unpaid, up to a maximum of 25%. This rate may increase to 1% if the IRS issues a levy notice.',
+    reference: 'IRC §6651(a)(2)',
+  },
+  {
+    id: 'see3-033',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Accuracy-Related Penalty',
+    subtopic: 'Substantial Understatement',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A substantial understatement of income tax exists for individuals when the understatement exceeds the greater of:',
+    options: [
+      '$1,000 or 5% of tax shown on return',
+      '$5,000 or 10% of tax shown on return',
+      '$10,000 or 20% of tax shown on return',
+      '$25,000 or 50% of tax shown on return'
+    ],
+    correctAnswer: 1,
+    explanation: 'For individuals, a substantial understatement exists when the understatement exceeds the greater of $5,000 or 10% of the tax required to be shown on the return. The penalty is 20% of the understatement.',
+    reference: 'IRC §6662(d)',
+  },
+  {
+    id: 'see3-034',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Accuracy-Related Penalty',
+    subtopic: 'Penalty Rate',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The accuracy-related penalty for negligence or substantial understatement is:',
+    options: [
+      '10% of the underpayment',
+      '20% of the underpayment',
+      '50% of the underpayment',
+      '75% of the underpayment'
+    ],
+    correctAnswer: 1,
+    explanation: 'The accuracy-related penalty is 20% of the portion of the underpayment attributable to negligence, substantial understatement, or other specified causes under IRC §6662.',
+    reference: 'IRC §6662(a)',
+  },
+  {
+    id: 'see3-035',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Fraud Penalty',
+    subtopic: 'Civil Fraud',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The civil fraud penalty is:',
+    options: [
+      '20% of the underpayment',
+      '50% of the underpayment',
+      '75% of the underpayment',
+      '100% of the underpayment'
+    ],
+    correctAnswer: 2,
+    explanation: 'The civil fraud penalty is 75% of the portion of the underpayment due to fraud. This penalty applies when fraud is proven by clear and convincing evidence. The fraud penalty and accuracy-related penalty cannot both apply to the same portion of an underpayment.',
+    reference: 'IRC §6663',
+  },
+  {
+    id: 'see3-036',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Interest',
+    subtopic: 'Underpayment Interest',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Interest on underpayments of tax:',
+    options: [
+      'Is charged at a flat 6% annually',
+      'Is determined quarterly at the federal short-term rate plus 3%',
+      'Is only charged if the underpayment exceeds $10,000',
+      'Can be waived by the IRS at any time'
+    ],
+    correctAnswer: 1,
+    explanation: 'Underpayment interest is charged at the federal short-term rate plus 3 percentage points, compounded daily. The rate is determined quarterly and applies from the due date until payment.',
+    reference: 'IRC §6621',
+  },
+  {
+    id: 'see3-037',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Penalty Abatement',
+    subtopic: 'Reasonable Cause',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Reasonable cause for penalty abatement may include:',
+    options: [
+      'Not knowing about the tax law',
+      'Serious illness, natural disaster, or death of immediate family member',
+      'Being too busy to file on time',
+      'Preferring to wait until you had more money'
+    ],
+    correctAnswer: 1,
+    explanation: 'Reasonable cause includes circumstances beyond the taxpayer\'s control such as fire, casualty, serious illness, death of immediate family, or reliance on erroneous IRS advice. Ignorance of the law is generally not reasonable cause.',
+    reference: 'IRM 20.1.1.3.2',
+  },
+  {
+    id: 'see3-038',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Penalty Abatement',
+    subtopic: 'First-Time Abatement',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'First-time penalty abatement (FTA) relief may be available if the taxpayer:',
+    options: [
+      'Has never filed a tax return before',
+      'Has filed timely returns and has no penalties in the prior 3 years',
+      'Earned less than $50,000',
+      'Is over 65 years old'
+    ],
+    correctAnswer: 1,
+    explanation: 'First-time abatement is an administrative waiver available to taxpayers who have filed (or filed valid extensions) and have no penalties for the 3 tax years prior to the year being penalized.',
+    reference: 'IRM 20.1.1.3.6.1',
+  },
+  {
+    id: 'see3-039',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Preparer Penalties',
+    subtopic: 'Understatement Due to Unreasonable Positions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The penalty for a preparer taking an unreasonable position on a return is:',
+    options: [
+      '$100 per return',
+      'The greater of $1,000 or 50% of income derived from the return',
+      '$5,000 per return',
+      '$10,000 per return'
+    ],
+    correctAnswer: 1,
+    explanation: 'If an understatement of tax is due to an unreasonable position, the preparer penalty is the greater of $1,000 or 50% of the income derived by the preparer with respect to the return.',
+    reference: 'IRC §6694(a)',
+  },
+  {
+    id: 'see3-040',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-5',
+    topic: 'Preparer Penalties',
+    subtopic: 'Willful/Reckless Conduct',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The penalty for a preparer\'s willful or reckless conduct is:',
+    options: [
+      '$1,000 per return',
+      '$5,000 or 50% of income derived, whichever is greater',
+      '$5,000 or 75% of income derived, whichever is greater',
+      '$10,000 flat penalty'
+    ],
+    correctAnswer: 2,
+    explanation: 'For willful or reckless conduct, the penalty is the greater of $5,000 or 75% of the income derived by the preparer with respect to the return. This is significantly higher than the unreasonable position penalty.',
+    reference: 'IRC §6694(b)',
+  },
+];

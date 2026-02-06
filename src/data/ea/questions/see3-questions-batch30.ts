@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 30 (Q291-300)
+ * Continuing Education & EA Enrollment
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH30: Question[] = [
+  // ==========================================
+  // SEE3: CE & EA Enrollment
+  // ==========================================
+  {
+    id: 'see3-291',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Continuing Education',
+    subtopic: 'EA Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enrolled Agents must complete how many hours of continuing education per enrollment cycle?',
+    options: [
+      '40 hours',
+      '72 hours (minimum 16 hours per year)',
+      '24 hours total',
+      '100 hours'
+    ],
+    correctAnswer: 1,
+    explanation: 'EAs must complete 72 hours of CE per 3-year enrollment cycle, with a minimum of 16 hours per year (including 2 hours of ethics/professional conduct per year).',
+    reference: 'Circular 230 §10.6(e)',
+  },
+  {
+    id: 'see3-292',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Continuing Education',
+    subtopic: 'Ethics Hours',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Of the required CE hours, Enrolled Agents must complete:',
+    options: [
+      '10 hours of ethics total',
+      '2 hours of ethics or professional conduct per year (6 total per cycle)',
+      '4 hours of ethics per year',
+      'No ethics requirement'
+    ],
+    correctAnswer: 1,
+    explanation: 'EAs must complete 2 hours of ethics/professional conduct CE each calendar year. This is part of the 16-hour annual minimum and 72-hour total cycle requirement.',
+    reference: 'Circular 230 §10.6(e)',
+  },
+  {
+    id: 'see3-293',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Continuing Education',
+    subtopic: 'Approved Providers',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'CE credit for enrolled practitioners must be earned from:',
+    options: [
+      'Any organization',
+      'IRS-approved continuing education providers',
+      'Only the IRS directly',
+      'State-approved providers only'
+    ],
+    correctAnswer: 1,
+    explanation: 'CE credits must be obtained from IRS-approved CE providers. The IRS maintains a directory of approved providers on its website.',
+    reference: 'Circular 230 §10.6(f)',
+  },
+  {
+    id: 'see3-294',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Continuing Education',
+    subtopic: 'Record Keeping',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'EAs must retain CE records for:',
+    options: [
+      '1 year',
+      '4 years from the date of renewal',
+      '3 years',
+      '10 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 requires enrolled practitioners to retain CE records for 4 years after renewal. The IRS may request verification of CE completion.',
+    reference: 'Circular 230 §10.6(e)',
+  },
+  {
+    id: 'see3-295',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'Enrollment Process',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'To become an Enrolled Agent by examination, an applicant must:',
+    options: [
+      'Only pay a fee',
+      'Pass all three parts of the SEE, pass a suitability check, and apply for enrollment',
+      'Have 5 years of IRS experience',
+      'Be a CPA first'
+    ],
+    correctAnswer: 1,
+    explanation: 'Candidates must pass all three parts of the Special Enrollment Examination (SEE), pass a tax compliance check and suitability/background review, obtain a PTIN, and apply using Form 23.',
+    reference: 'Circular 230 §10.4',
+  },
+  {
+    id: 'see3-296',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'Former IRS employees',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Former IRS employees may become enrolled agents:',
+    options: [
+      'Never',
+      'By demonstrating technical experience and applying within a certain timeframe (or by passing SEE)',
+      'Automatically upon leaving the IRS',
+      'Only after 10 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'Former IRS employees may qualify for enrollment without exam if they have qualifying technical experience and apply within specified timeframes. Otherwise, they must pass the SEE like other candidates.',
+    reference: 'Circular 230 §10.4(b)',
+  },
+  {
+    id: 'see3-297',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'Enrollment Card',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An enrolled agent\'s valid enrollment card shows:',
+    options: [
+      'Only the EA\'s name',
+      'Name, enrollment number, and effective dates of enrollment',
+      'Social Security number',
+      'Personal address'
+    ],
+    correctAnswer: 1,
+    explanation: 'The EA enrollment card displays the practitioner\'s name, enrollment number, and the period for which enrollment is effective. It serves as proof of enrolled status.',
+    reference: 'Circular 230 §10.4',
+  },
+  {
+    id: 'see3-298',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'Renewal',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enrolled Agent status must be renewed:',
+    options: [
+      'Annually',
+      'Every 3 years, based on the last digit of Social Security number',
+      'Every 5 years',
+      'Never - it is permanent'
+    ],
+    correctAnswer: 1,
+    explanation: 'EA enrollment must be renewed every 3 years. The renewal cycle is based on the last digit of the EA\'s Social Security number, with specific digits renewing each year.',
+    reference: 'Circular 230 §10.6',
+  },
+  {
+    id: 'see3-299',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'Inactive Status',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An enrolled practitioner who does not complete CE may:',
+    options: [
+      'Continue practicing without restriction',
+      'Be placed on inactive/retired status and cannot practice until requirements are met',
+      'Receive a permanent exemption',
+      'Transfer CE from another state'
+    ],
+    correctAnswer: 1,
+    explanation: 'Failure to complete CE requirements can result in inactive or retired status. Practitioners on inactive status cannot practice before the IRS until they complete CE requirements and renew.',
+    reference: 'Circular 230 §10.6(h)',
+  },
+  {
+    id: 'see3-300',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'EA Enrollment',
+    subtopic: 'EA Designation',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Only individuals enrolled as enrolled agents may:',
+    options: [
+      'Prepare tax returns',
+      'Use the designation "EA" or "E.A." or identify themselves as enrolled agents',
+      'Represent taxpayers in court',
+      'Sign refund checks'
+    ],
+    correctAnswer: 1,
+    explanation: 'Only individuals who are properly enrolled may use the designation "EA" or "Enrolled Agent." Misrepresenting EA status is a violation of Circular 230.',
+    reference: 'Circular 230 §10.30',
+  },
+];

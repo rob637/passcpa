@@ -10,6 +10,7 @@ import { CPA_COURSE } from './cpa';
 import { EA_COURSE } from './ea';
 import { CMA_COURSE } from './cma';
 import { CIA_COURSE } from './cia';
+import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE } from '../config/featureFlags';
 
 /**
  * All registered courses
@@ -23,9 +24,12 @@ export const COURSES: Record<CourseId, Course> = {
 
 /**
  * Courses that are currently active/available to users
- * NOTE: Only CPA is active - new courses require testing before activation
  */
-export const ACTIVE_COURSES: CourseId[] = ['cpa'];
+export const ACTIVE_COURSES: CourseId[] = [
+  'cpa',
+  ...(ENABLE_EA_COURSE ? ['ea'] : []),
+  ...(ENABLE_CMA_COURSE ? ['cma'] : []),
+] as CourseId[];
 
 /**
  * Get a course by ID

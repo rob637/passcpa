@@ -42,7 +42,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; d
   return <span>{count.toLocaleString()}{suffix}</span>;
 };
 
-const Landing = () => {
+const CPALanding = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -759,4 +759,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default CPALanding;

@@ -227,4 +227,86 @@ export const EA_COURSE: Course = {
   },
 };
 
+/**
+ * EA Section IDs for quick reference
+ */
+export const EA_SECTIONS = EA_COURSE.sections.map(s => s.id);
+
+/**
+ * EA Section Configuration Map for UI
+ */
+export type EASectionId = 'SEE1' | 'SEE2' | 'SEE3';
+
+export interface EASectionConfig {
+  id: EASectionId;
+  name: string;
+  shortName: string;
+  description: string;
+  examLength: number; // hours
+  questionCount: number;
+  color: string;
+  icon: string;
+  topics: string[];
+}
+
+export const EA_SECTION_CONFIG: Record<EASectionId, EASectionConfig> = {
+  SEE1: {
+    id: 'SEE1',
+    name: 'Part 1: Individuals',
+    shortName: 'SEE1',
+    description: 'Individual taxation including income, deductions, credits, and specialized returns',
+    examLength: 3.5,
+    questionCount: 100,
+    color: '#3b82f6', // blue
+    icon: 'User',
+    topics: [
+      'Filing requirements & status',
+      'Income and assets',
+      'Deductions and credits',
+      'Taxation and advice',
+      'Specialized returns',
+    ],
+  },
+  SEE2: {
+    id: 'SEE2',
+    name: 'Part 2: Businesses',
+    shortName: 'SEE2',
+    description: 'Business taxation including entities, financial information, and tax computations',
+    examLength: 3.5,
+    questionCount: 100,
+    color: '#22c55e', // green
+    icon: 'Building2',
+    topics: [
+      'Business entities',
+      'Business financial information',
+      'Specialized entities',
+      'Business tax computations',
+    ],
+  },
+  SEE3: {
+    id: 'SEE3',
+    name: 'Part 3: Representation',
+    shortName: 'SEE3',
+    description: 'IRS representation, practices, procedures, and ethics (Circular 230)',
+    examLength: 3.5,
+    questionCount: 100,
+    color: '#a855f7', // purple
+    icon: 'Scale',
+    topics: [
+      'Practices and procedures',
+      'Representation before IRS',
+      'Specific representation types',
+      'Filing process completion',
+      'Recordkeeping',
+    ],
+  },
+};
+
+/**
+ * Get EA section by ID
+ */
+export const getEASection = (sectionId: EASectionId): EASectionConfig | undefined => {
+  return EA_SECTION_CONFIG[sectionId];
+};
+
 export default EA_COURSE;

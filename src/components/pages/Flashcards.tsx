@@ -25,7 +25,7 @@ import { fetchQuestions } from '../../services/questionService';
 import { calculateNextReview, getDueCards, getStudyStats } from '../../services/spacedRepetition';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection } from '../../types';
+import { Question, ExamSection, AllExamSections } from '../../types';
 import {
   getFlashcardsBySection,
   Flashcard as DedicatedFlashcard,
@@ -98,7 +98,11 @@ const Flashcards: React.FC = () => {
   const mode = searchParams.get('mode') || 'review'; // review, new, all
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
-  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+  const sectionParam = searchParams.get('section');
+  // Support URL param for section (for EA) or fall back to user profile
+  const currentSection: AllExamSections = sectionParam 
+    ? (sectionParam as AllExamSections)
+    : (userProfile?.examSection || 'REG') as ExamSection;
 
   // Scroll to top when flashcard session starts
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Brain,
   BookOpen,
@@ -19,9 +19,15 @@ import { BackButton } from './navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getFlashcardsBySection } from '../data/flashcards';
-import { ExamSection } from '../types';
+import { ExamSection, EASection, AllExamSections } from '../types';
 import { CPA_SECTIONS } from '../config/examConfig';
+import { EA_SECTION_CONFIG } from '../courses/ea/config';
 import clsx from 'clsx';
+
+// Helper to check if a section is an EA section
+const isEASection = (section: string): section is EASection => {
+  return ['SEE1', 'SEE2', 'SEE3'].includes(section);
+};
 
 // Mastery status categories (like Becker)
 interface CategoryCount {
@@ -42,9 +48,20 @@ interface FlashcardConfig {
 
 const FlashcardSetup: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { user, userProfile } = useAuth();
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  
+  // Support URL param for section (for EA sections) or fall back to user profile
+  const sectionFromUrl = searchParams.get('section');
+  const currentSection: AllExamSections = sectionFromUrl 
+    ? (sectionFromUrl as AllExamSections)
+    : (userProfile?.examSection || 'FAR') as ExamSection;
+  
+  // Get section info - handle both CPA and EA sections
+  const isEA = isEASection(currentSection);
+  const sectionInfo = isEA 
+    ? { name: EA_SECTION_CONFIG[currentSection as EASection].title, color: EA_SECTION_CONFIG[currentSection as EASection].color }
+    : CPA_SECTIONS[currentSection as ExamSection];
   
   const [loading, setLoading] = useState(true);
   const [counts, setCounts] = useState<CategoryCount>({ all: 0, toReview: 0, mastered: 0, notWorked: 0 });
@@ -135,6 +152,11 @@ const FlashcardSetup: React.FC = () => {
   // Start session with config
   const startSession = () => {
     const params = new URLSearchParams();
+    
+    // Always include section for EA (so session knows which cards to use)
+    if (isEA) {
+      params.set('section', currentSection);
+    }
     
     // Mode based on categories
     if (config.categories.includes('toReview')) {

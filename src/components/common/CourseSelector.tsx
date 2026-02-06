@@ -41,7 +41,6 @@ const COURSE_DISPLAY: Record<CourseId, {
     shortName: 'EA', 
     color: 'bg-primary-500',
     icon: '🏛️',
-    comingSoon: true,
   },
   cia: { 
     name: 'CIA Exam', 

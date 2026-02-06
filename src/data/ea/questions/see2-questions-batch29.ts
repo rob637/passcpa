@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 29 (Q281-290)
+ * Entity Selection and Characteristics
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH29: Question[] = [
+  // ==========================================
+  // SEE2-1: Entity Selection
+  // ==========================================
+  {
+    id: 'see2-281',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Sole Proprietorship',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A sole proprietorship reports its business income and expenses on:',
+    options: [
+      'Form 1120',
+      'Form 1065',
+      'Schedule C of Form 1040',
+      'Form 1041'
+    ],
+    correctAnswer: 2,
+    explanation: 'A sole proprietorship is not a separate tax entity. Business income and expenses are reported on Schedule C (or Schedule F for farming) attached to the owner\'s Form 1040.',
+    reference: 'IRC §1; Form 1040 Instructions',
+  },
+  {
+    id: 'see2-282',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'LLC Taxation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A single-member LLC that has not elected corporate treatment is:',
+    options: [
+      'Taxed as a corporation',
+      'A disregarded entity taxed as a sole proprietorship',
+      'Taxed as a partnership',
+      'Tax-exempt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under check-the-box regulations, a single-member LLC is a disregarded entity by default, taxed as a sole proprietorship. It may elect to be taxed as a corporation using Form 8832.',
+    reference: 'Treas. Reg. §301.7701-3',
+  },
+  {
+    id: 'see2-283',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Multi-Member LLC',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A multi-member LLC that has not elected corporate treatment is taxed as:',
+    options: [
+      'A C corporation',
+      'An S corporation',
+      'A partnership',
+      'Each member is taxed separately'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under check-the-box rules, a multi-member LLC defaults to partnership taxation. It files Form 1065 and issues Schedule K-1s to members. It may elect corporation status via Form 8832.',
+    reference: 'Treas. Reg. §301.7701-3',
+  },
+  {
+    id: 'see2-284',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Double Taxation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Double taxation primarily affects:',
+    options: [
+      'Sole proprietorships',
+      'Partnerships',
+      'C corporations',
+      'S corporations'
+    ],
+    correctAnswer: 2,
+    explanation: 'C corporations pay tax at the entity level (21%), and shareholders pay tax again when dividends are distributed. This results in double taxation. Pass-through entities (partnerships, S corps) avoid this.',
+    reference: 'IRC §11; IRC §1(h)(11)',
+  },
+  {
+    id: 'see2-285',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Self-Employment Tax',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Which business type allows the owner to minimize self-employment tax on business income?',
+    options: [
+      'Sole proprietorship',
+      'General partnership',
+      'S corporation (with reasonable salary)',
+      'Single-member LLC'
+    ],
+    correctAnswer: 2,
+    explanation: 'S corporation shareholders who work in the business must receive reasonable salary (subject to FICA), but distributions above that are not subject to SE tax. Sole proprietors and partners pay SE tax on all net earnings.',
+    reference: 'IRC §1402; Rev. Rul. 59-221',
+  },
+  {
+    id: 'see2-286',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Limited Partnership',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In a limited partnership:',
+    options: [
+      'All partners have unlimited liability',
+      'General partners manage and have unlimited liability; limited partners have liability limited to their investment',
+      'Limited partners actively manage the business',
+      'All partners must be corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Limited partnerships have at least one general partner (unlimited liability, manages) and limited partners (liability limited to investment, cannot participate in management without risking liability).',
+    reference: 'Revised Uniform Limited Partnership Act; IRC §1402(a)(13)',
+  },
+  {
+    id: 'see2-287',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Formation Taxes',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Forming which entity type is generally tax-free?',
+    options: [
+      'C corporation (if Section 351 requirements met)',
+      'Only sole proprietorships',
+      'LLCs electing S status',
+      'All entity formations are taxable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Corporation formation can be tax-free under IRC §351 if contributors control (80%) the corporation immediately after. Partnership formation under §721 is also tax-free. Sole proprietorships have no formation event.',
+    reference: 'IRC §351; IRC §721',
+  },
+  {
+    id: 'see2-288',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Fringe Benefits',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Which entity allows owner-employees to receive tax-free group health insurance?',
+    options: [
+      'Sole proprietorship',
+      'Partnership',
+      'C corporation',
+      'S corporation'
+    ],
+    correctAnswer: 2,
+    explanation: 'C corporation shareholder-employees can receive tax-free health insurance as employees. Sole proprietors, partners, and >2% S corp shareholders must include premiums in income (though they may claim an above-the-line deduction).',
+    reference: 'IRC §106; IRC §162(l)',
+  },
+  {
+    id: 'see2-289',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Basis in Entity Interest',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'How does entity debt affect an owner\'s basis?',
+    options: [
+      'Debt never affects basis in any entity',
+      'S corporation shareholders include their share of debt in basis',
+      'Partners include their share of partnership debt in outside basis',
+      'C corporation shareholders include debt in stock basis'
+    ],
+    correctAnswer: 2,
+    explanation: 'Partners include their share of partnership liabilities in their outside basis (IRC §752). S corp shareholders do NOT get basis for corporate debt (only direct loans to the corporation). C corp shareholders never include debt in basis.',
+    reference: 'IRC §752; IRC §1366(d)',
+  },
+  {
+    id: 'see2-290',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Loss Limitations',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'For which entity are pass-through losses subject to the at-risk and passive activity rules before deduction?',
+    options: [
+      'C corporation',
+      'S corporation and partnership',
+      'Only sole proprietorships',
+      'Losses are never limited for pass-through entities'
+    ],
+    correctAnswer: 1,
+    explanation: 'Pass-through losses from S corporations and partnerships are subject to basis limitations, at-risk rules (§465), passive activity rules (§469), and excess business loss limits (§461(l)) at the owner level.',
+    reference: 'IRC §1366(d); IRC §704(d); IRC §465; IRC §469',
+  },
+];

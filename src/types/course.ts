@@ -89,6 +89,7 @@ export interface Course {
   metadata: CourseMetadata;
   
   // Feature flags for course-specific behavior
+  hasTBS?: boolean; // Top-level shortcut
   features?: {
     hasTBS?: boolean;
     hasWrittenCommunication?: boolean;

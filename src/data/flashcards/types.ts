@@ -1,13 +1,13 @@
 // Flashcard Types - Dedicated flashcard content types
 // Supports definitions, formulas, mnemonics, and comparisons
 
-import { ExamSection } from '../../types';
+import { ExamSection, AllExamSections } from '../../types';
 
 export type FlashcardType = 'definition' | 'formula' | 'mnemonic' | 'comparison' | 'concept' | 'rule';
 
 export interface Flashcard {
   id: string;
-  section: ExamSection;
+  section: AllExamSections;
   type: FlashcardType;
   topic: string;
   subtopic?: string;

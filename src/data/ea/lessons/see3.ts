@@ -2158,6 +2158,410 @@ export const eaPart3Lessons: Lesson[] = [
       ],
     },
   },
+  // ============================================================================
+  // SEE3 Expansion: Audits, Appeals, Collections, and More
+  // ============================================================================
+  
+  {
+    id: 'SEE3-031',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Audit Process: Selection and Types',
+    description: 'Understanding how returns are selected for examination and the different types of audits.',
+    order: 31,
+    duration: 35,
+    difficulty: 'medium',
+    topics: ['DIF Score', 'Correspondence Audit', 'Office Audit', 'Field Audit'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Audit Selection Methods',
+          type: 'text',
+          content: "**DIF System (Discriminant Function):** Computer scoring (higher score = higher audit probability). Uses algorithms to find anomalies.\n**UIDIF (Unreported Income DIF):** Scores based on potential for unreported income.\n**Information Matching:** 1099s/W-2s don't match return.\n**Related Examinations:** Often happens when a business partner or investor is audited.",
+        },
+        {
+          title: 'Types of Examinations',
+          type: 'table',
+          headers: ['Type', 'Description', 'Typical Issues'],
+          rows: [
+            ['Correspondence', 'Conducted by mail. 75%+ of audits.', 'Simple issues: Missing 1099, Math errors, Charity substantiation'],
+            ['Office Audit', 'At IRS office. Interview with Tax Compliance Officer.', 'Small business Sch C, Rental expenses, Moving expenses'],
+            ['Field Audit', 'At taxpayer home/business. Revenue Agent involved.', 'Complex specific issues, Inventory, Gross receipts, large corporations'],
+          ],
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Most audits are limited to specific items (Correspondence).",
+            "Field audits are the most comprehensive.",
+            "DIF score is the primary selection method.",
+            "Representation is allowed at all levels.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-032',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Audit Representation and Taxpayer Rights',
+    description: 'Rights of taxpayers during examination and role of the representative.',
+    order: 32,
+    duration: 30,
+    difficulty: 'medium',
+    topics: ['Taxpayer Bill of Rights', 'Power of Attorney', 'Summons', 'Statute of Limitations'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Taxpayer Bill of Rights (TBOR)',
+          type: 'list',
+          items: [
+             "The Right to Be Informed",
+             "The Right to Quality Service",
+             "The Right to Pay No More than the Correct Amount of Tax",
+             "The Right to Challenge the IRS's Position and Be Heard",
+             "The Right to Appeal an IRS Decision in an Independent Forum",
+             "The Right to Finality",
+             "The Right to Privacy",
+             "The Right to Confidentiality",
+             "The Right to Retain Representation",
+             "The Right to a Fair and Just Tax System"
+          ],
+        },
+        {
+          title: 'Role of Representative',
+          type: 'text',
+          content: "**Form 2848 (POA):** Required to represent.\n**Benefits:**\n• IRS contacts YOU, not the client.\n• You can sign agreements (if authorized).\n• You attend interviews (client generally not required if you are there).\n\n**Bypassing the Rep:** IRS can bypass if you are causing unreasonable delays or hindering the examination.",
+        },
+        {
+          title: 'Assessment Statute (ASED)',
+          type: 'text',
+          content: "Generally **3 years** from later of due date or filing date.\n**6 Years:** If >25% gross income omitted.\n**Unlimited:** Fraud, or no return filed.\n\n**Extension (Form 872):** IRS may ask to extend statute to finish audit. Taxpayer can refuse (IRS will likely issue Notice of Deficiency immediately) or limit scope.",
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-033',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'The Appeals Process',
+    description: 'From 30-Day Letter to Appeals Conference.',
+    order: 33,
+    duration: 40,
+    difficulty: 'hard',
+    topics: ['30-Day Letter', 'Protest', 'Small Case Request', 'Appeals Conference'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+         {
+          title: '30-Day Letter (Preliminary Notice)',
+          type: 'text',
+          content: "Issued after audit if unagreed.\n**Options:**\n1. Sign agreement (Form 870) - Give up appeal rights.\n2. Do nothing - Wait for 90-Day Letter.\n3. Request Appeals Conference (within 30 days).",
+         },
+         {
+          title: 'How to Appeal',
+          type: 'table',
+          headers: ['Amount Disputed', 'Requirement'],
+          rows: [
+            ['< $25,000', 'Small Case Request (Form 12203 or simple written request). No formal protest needed.'],
+            ['> $25,000', 'Formal Written Protest required. Must detail facts, law, and arguments.'],
+          ],
+         },
+         {
+          title: 'The Appeals Mission',
+          type: 'callout',
+          content: "To resolve tax controversies, without litigation, on a basis which is fair and impartial to both the Government and the taxpayer. Appeals Officers can settle based on 'Hazards of Litigation'.",
+         },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-034',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Going to Court: Tax Court vs Others',
+    description: 'Litigation options when administrative appeals fail.',
+    order: 34,
+    duration: 35,
+    difficulty: 'hard',
+    topics: ['90-Day Letter', 'Tax Court', 'District Court', 'Court of Federal Claims'],
+    blueprintArea: 'SEE3-3',
+    content: {
+      sections: [
+        {
+          title: 'Notice of Deficiency (90-Day Letter)',
+          type: 'text',
+          content: "**The Ticket to Tax Court.**\nIssued if 30-day letter ignored or Appeals fails.\n**Strict Deadline:** 90 days (150 if outside US) from date of letter to file petition. Cannot be extended.",
+        },
+        {
+          title: 'Comparison of Courts',
+          type: 'table',
+          headers: ['Court', 'Payment Required?', 'Jury?', 'Judges'],
+          rows: [
+             ['US Tax Court', 'NO', 'No', 'Tax Specialists (Travel nationwide)'],
+             ['US District Court', 'YES (Refund Suit)', 'Yes (Available)', 'General Federal Judges'],
+             ['Court of Federal Claims', 'YES (Refund Suit)', 'No', 'General Claims Judges (DC based)'],
+          ],
+        },
+        {
+          title: 'Small Tax Case Procedure (Tax Court)',
+          type: 'text',
+          content: "**Limit:** $50,000 or less per tax year.\n**Pros:** Simplified, less formal, faster, cheaper.\n**Cons:** Decision is FINAL. Cannot be appealed.",
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-035',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Collections: Installment Agreements',
+    description: 'Options for taxpayers who cannot pay in full immediately.',
+    order: 35,
+    duration: 40,
+    difficulty: 'medium',
+    topics: ['Form 9465', 'Guaranteed IA', 'Streamlined IA', 'Partial Pay IA'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Setting up an Agreement',
+          type: 'text',
+          content: "Form 9465 used to request. Fees apply (lower for Direct Debit).\n**Note:** Interest and Failure to Pay penalties continue to accrue (penalty rate cut in half usually).",
+        },
+        {
+           title: 'Types of Agreements',
+           type: 'table',
+           headers: ['Type', 'Balance Limit', 'Terms', 'Fin. Statement Needed?'],
+           rows: [
+             ['Guaranteed', '< $10,000', 'Pay in 3 years', 'No'],
+             ['Streamlined', '< $50,000', 'Pay in 72 months (6 yrs)', 'No'],
+             ['Non-Streamlined', '> $50,000', 'Negotiated based on ability', 'Yes (Form 433-F/A/etc)'],
+           ],
+        },
+        {
+          title: 'Partial Payment Installment Agreement (PPIA)',
+          type: 'text',
+          content: "Taxpayer pays what they can afford until CSED expires. Remainder is uncollected. Requires full financial disclosure (Form 433) and periodic review (every 2 years).",
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-036',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Collections: Offer in Compromise (OIC)',
+    description: 'Resolving tax liability for less than the full amount owed.',
+    order: 36,
+    duration: 45,
+    difficulty: 'hard',
+    topics: ['Doubt as to Liability', 'Doubt as to Collectibility', 'ETA', 'Form 656'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+           title: 'What is an OIC?',
+           type: 'callout',
+           content: "An agreement between a taxpayer and the IRS that resolves the taxpayer's tax liability. The IRS has the authority to settle, or compromise, federal tax liabilities by accepting less than full payment under certain circumstances.",
+        },
+        {
+          title: 'Three Bases for OIC',
+          type: 'text',
+          content: "1. **Doubt as to Liability:** Genuine dispute exists as to the existence or amount.\n2. **Doubt as to Collectibility:** Taxpayer's receipts + equity (RCP) < Tax Owed. (Most common).\n3. **Effective Tax Administration (ETA):** Owe it, can pay it, but would cause exceptional hardship or be unfair.",
+        },
+        {
+          title: 'The Math: Reasonable Collection Potential (RCP)',
+          type: 'text',
+          content: "**RCP = (Net Equity in Assets) + (Future Disposable Income)**\n\nIf IRS calculates RCP > Offer Amount, they will reject.\n**Disposable Income Multiplier:**\n• Cash Offer (paid in 5 months): Monthly Income x 12\n• Periodic Payment (6-24 months): Monthly Income x 24",
+        },
+        {
+          title: 'Process',
+          type: 'list',
+          items: [
+             "File Form 656 and Form 433-A (OIC).",
+             "Pay application fee and initial payment (unless Low Income Certification).",
+             "While pending: Collection paused, CSED suspended.",
+             "If rejected: Can appeal within 30 days.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-037',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Liens and Levies',
+    description: 'IRS enforcement tools and how to release them.',
+    order: 37,
+    duration: 35,
+    difficulty: 'hard',
+    topics: ['Federal Tax Lien', 'Notice of Intent to Levy', 'Bank Levy', 'Wage Garnishment'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'Federal Tax Lien',
+          type: 'text',
+          content: "**Lien:** Legal claim against property to secure payment.\n**Levy:** Actual seizure of property/funds.\n\n**Notice of Federal Tax Lien (NFTL):** Used to establish priority against other creditors. Public record. Harmful to credit.",
+        },
+        {
+           title: 'Releasing a Lien',
+           type: 'list',
+           items: [
+              "Pay in full (automatic release within 30 days).",
+              "Discharge of Property: Removing lien from specific property (e.g., to sell a house).",
+              "Subordination: Letting another creditor move ahead of IRS (e.g., to refinance).",
+              "Withdrawal: Removing the public notice (as if it never happened) - e.g., if filed in error or entered Direct Debit IA.",
+           ],
+        },
+        {
+          title: 'Levy and Seizure',
+          type: 'text',
+          content: "**Wage Garnishment:** Continuous levy until released. Exempt amount is very low (based on standard deduction).\n**Bank Levy:** One-time seizure of funds in account on that day. 21-day holding period before bank sends money (time to release).",
+        },
+        {
+           title: 'Collection Due Process (CDP)',
+           type: 'callout',
+           content: "Taxpayer must receive 'Final Notice of Intent to Levy' and right to CDP hearing 30 days before levy (except Jeopardy/State Refund).",
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-038',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Trust Fund Recovery Penalty (TFRP)',
+    description: 'Personal liability for business payroll taxes.',
+    order: 38,
+    duration: 30,
+    difficulty: 'hard',
+    topics: ['Form 2751', 'Responsible Person', 'Willfulness', '100% Penalty'],
+    blueprintArea: 'SEE3-4',
+    content: {
+      sections: [
+        {
+          title: 'What is Trust Fund Tax?',
+          type: 'text',
+          content: "Income Tax Withheld + Employee Share of FICA (SS/Med). \nDoes **NOT** include Employer match of FICA or FUTA.\n\nThis money belongs to employees; employer holds it in 'trust'.",
+        },
+        {
+          title: 'The Penalty',
+          type: 'text',
+          content: "If business fails to pay, IRS can assess 100% of the trust fund amount against ANY **Responsible Person** who **Willfully** failed to pay.",
+        },
+        {
+          title: 'Tests for Liability',
+          type: 'table',
+          headers: ['Condition', 'Meaning'],
+          rows: [
+            ['Responsible Person', 'Duty and power to direct payments. Signs checks, hires/fires, makes financial decisions. Can be officer, employee, board member, or even outside accountant if they had control.'],
+            ['Willfulness', 'Voluntary, conscious, intentional act. Paying other creditors (suppliers, rent, yourself) while knowing taxes are unpaid.'],
+          ],
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Penalty is 100% of unpaid trust fund taxes.",
+            "Can be assessed against multiple people (Joint and Several Liability).",
+            "Not dischargeable in personal bankruptcy.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-039',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Recordkeeping Requirements',
+    description: 'How long to keep records for individuals and businesses.',
+    order: 39,
+    duration: 25,
+    difficulty: 'easy',
+    topics: ['Statute of Limitations', 'Employment Tax Records', 'Asset Records'],
+    blueprintArea: 'SEE3-5',
+    content: {
+      sections: [
+        {
+          title: 'General Rules',
+          type: 'table',
+          headers: ['Period', 'Situation'],
+          rows: [
+             ['3 Years', 'General rule (from due date or filing date).'],
+             ['6 Years', 'If income underreported by > 25%.'],
+             ['7 Years', 'Claim for loss from worthless securities or bad debt.'],
+             ['Unlimited', 'Fraudulent return or no return filed.'],
+          ],
+        },
+        {
+           title: 'Specific Requirements',
+           type: 'list',
+           items: [
+             "**Employment Taxes:** Keep for 4 years after tax becomes due or is paid.",
+             "**Assets:** Keep records until period expires for the year in which you dispose of the property (basis tracking).",
+             "**EITC Due Diligence:** Keep for 3 years.",
+           ],
+        },
+        {
+          title: 'Electronic Storage',
+          type: 'text',
+          content: "Paper records can be converted to electronic storage systems. Must be: \n1. Complete and accurate\n2. Accessible/Retrievable\n3. Legible/Readable\n4. Reliable/Secure",
+        },
+      ],
+    },
+  },
+  {
+    id: 'SEE3-040',
+    courseId: 'ea',
+    section: 'SEE3',
+    title: 'Circular 230: Preparer Penalties in Depth',
+    description: 'Detailed review of civil penalties for tax return preparers.',
+    order: 40,
+    duration: 40,
+    difficulty: 'hard',
+    topics: ['Section 6694', 'Section 6695', 'Unreasonable Position', 'Willful/Reckless'],
+    blueprintArea: 'SEE3-1',
+    content: {
+       sections: [
+         {
+           title: 'Understatement of Liability (Sec 6694)',
+           type: 'table',
+           headers: ['Type', 'Penalty Amount', 'Defense'],
+           rows: [
+             ['Unreasonable Position', 'Greater of $1,000 or 50% of income', 'Reasonable Basis disclosed OR Substantial Authority (undisclosed)'],
+             ['Tax Shelter', 'Same', 'More Likely Than Not (>50%)'],
+             ['Willful/Reckless', 'Greater of $5,000 or 75% of income', 'None (if proven)'],
+           ],
+         },
+         {
+           title: 'Other Assessable Penalties (Sec 6695)',
+           type: 'list',
+           items: [
+             "**Failure to Furnish Copy:** $60/failure (Max $30,000)",
+             "**Failure to Sign Return:** $60/failure (Max $30,000)",
+             "**Failure to Furnish PTIN:** $60/failure (Max $30,000)",
+             "**Failure to Retain Copy/List:** $60/failure (Max $30,000)",
+             "**Negotiating Refund Check:** $600/check (No Max limit!)",
+             "**EITC Due Diligence Failure:** $600/failure (indexed for inflation)",
+           ],
+         },
+         {
+            title: 'Injunctions (Sec 7407)',
+            type: 'text',
+            content: "IRS can seek court injunction to stop a preparer from engaging in specific conduct or facing a **lifetime ban** from preparing returns if conduct is repeated/egregious.",
+         },
+       ],
+    },
+  }
 ];
 
 // Export section lessons

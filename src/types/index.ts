@@ -180,6 +180,7 @@ export interface Question {
   verified?: boolean;
   hr1?: boolean; // Layout helper?
   effectiveDate?: string; // For regulation changes
+  calculationType?: string; // For calculation-focused practice questions (EA)
   
   // Video explanation support (World-Class feature)
   videoExplanation?: {
@@ -271,6 +272,7 @@ export interface UserProfile {
   email: string | null;
   displayName: string | null;
   photoURL: string | null;
+  activeCourse?: CourseIdType;   // Primary course the user is studying
   examDate?: Date | { seconds: number; nanoseconds: number }; // Date or Firestore Timestamp
   examSection: ExamSection;
   createdAt: Date | { seconds: number; nanoseconds: number }; // Firestore Timestamp

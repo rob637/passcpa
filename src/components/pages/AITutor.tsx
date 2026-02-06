@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { CPA_SECTIONS } from '../../config/examConfig';
 import {
   doc,
@@ -191,6 +192,7 @@ const formatMessage = (content: string) => {
 const AITutor: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { weeklyStats } = useStudy();
+  const { courseId } = useCourse();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -428,7 +430,8 @@ const AITutor: React.FC = () => {
         newMessages.map(m => ({ 
             role: m.role, 
             content: m.content 
-        })) as any // Casting because types in aiService might differ slightly from local Message
+        })) as any, // Casting because types in aiService might differ slightly from local Message
+        courseId
       );
 
       const assistantMessage: Message = {
@@ -503,7 +506,8 @@ const AITutor: React.FC = () => {
         messages.map(m => ({ 
             role: m.role, 
             content: m.content 
-        })) as any
+        })) as any,
+        courseId
       );
 
       const finalMessages: Message[] = [

@@ -12,9 +12,16 @@ import {
   Sparkles,
   Loader2,
   CheckCircle,
+  GraduationCap,
+  Calculator,
+  FileText,
+  BarChart3,
+  Search,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { COURSES, ACTIVE_COURSES } from '../../courses';
+import { CourseId } from '../../types/course';
 import { scrollToTop } from '../../utils/scroll';
 import clsx from 'clsx';
 
@@ -26,6 +33,7 @@ interface Step {
 
 const STEPS: Step[] = [
   { id: 'welcome', title: 'Welcome' },
+  { id: 'course', title: 'Certification' },
   { id: 'exam-date', title: 'Exam Date' },
   { id: 'section', title: 'Choose Section' },
   { id: 'daily-goal', title: 'Daily Goal' },
@@ -75,12 +83,15 @@ const WelcomeStep: React.FC = () => (
     />
     <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
     <p className="text-slate-600 dark:text-slate-400 mb-6">
-      You're about to start your journey to becoming a CPA. Let's set up your personalized study
-      plan in just a few steps.
+      Let's set up your personalized study plan in just a few steps.
     </p>
     <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
       <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
       <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+        <li className="flex items-center gap-2">
+          <GraduationCap className="w-4 h-4" />
+          Which certification you're pursuing
+        </li>
         <li className="flex items-center gap-2">
           <Calendar className="w-4 h-4" />
           Your target exam date
@@ -94,6 +105,75 @@ const WelcomeStep: React.FC = () => (
           Your daily study goals
         </li>
       </ul>
+    </div>
+  </div>
+);
+
+// Course icons mapping
+const COURSE_ICONS: Record<string, React.ElementType> = {
+  cpa: Calculator,
+  ea: FileText,
+  cma: BarChart3,
+  cia: Search,
+};
+
+interface CourseStepProps {
+  selected: CourseId | '';
+  onSelect: (id: CourseId) => void;
+}
+
+const CourseStep: React.FC<CourseStepProps> = ({ selected, onSelect }) => (
+  <div>
+    <div className="text-center mb-6">
+      <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+        <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+      </div>
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white">Choose Your Certification</h2>
+      <p className="text-slate-600 dark:text-slate-400 mt-2">Which professional certification are you preparing for?</p>
+    </div>
+
+    <div className="space-y-3">
+      {ACTIVE_COURSES.map((courseId) => {
+        const course = COURSES[courseId];
+        if (!course) return null;
+        const Icon = COURSE_ICONS[courseId] || GraduationCap;
+        
+        return (
+          <button
+            key={courseId}
+            onClick={() => onSelect(courseId)}
+            className={clsx(
+              'w-full p-4 rounded-xl border-2 text-left transition-all',
+              selected === courseId
+                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'
+            )}
+          >
+            <div className="flex items-start gap-3">
+              <div 
+                className={clsx(
+                  'w-12 h-12 rounded-xl flex items-center justify-center',
+                  selected === courseId ? 'bg-primary-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
+                )}
+              >
+                <Icon className="w-6 h-6" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-slate-900 dark:text-white">{course.shortName}</span>
+                  {selected === courseId && (
+                    <CheckCircle className="w-5 h-5 text-primary-600" />
+                  )}
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{course.name}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">
+                  {course.sections.length} exam parts • {course.sections.map(s => s.shortName).join(', ')}
+                </p>
+              </div>
+            </div>
+          </button>
+        );
+      })}
     </div>
   </div>
 );
@@ -371,6 +451,7 @@ const Onboarding: React.FC = () => {
   const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
 
   const [currentStep, setCurrentStep] = useState(0);
+  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(userProfile?.activeCourse || '');
   const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);
@@ -393,6 +474,8 @@ const Onboarding: React.FC = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
         return true;
+      case 'course':
+        return !!selectedCourse;
       case 'section':
         return !!selectedSection;
       case 'exam-date':
@@ -426,6 +509,7 @@ const Onboarding: React.FC = () => {
     try {
       // Track onboarding completion
       trackEvent('onboarding_completed', {
+        course: selectedCourse,
         section: selectedSection,
         daily_goal: dailyGoal,
         study_plan: studyPlan,
@@ -440,6 +524,7 @@ const Onboarding: React.FC = () => {
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
       
       await updateUserProfile({
+        activeCourse: selectedCourse as CourseId,
         examSection: selectedSection,
         examDate: localExamDate,
         dailyGoal,
@@ -448,7 +533,13 @@ const Onboarding: React.FC = () => {
         onboardingCompletedAt: new Date(),
         timezone: userTimezone,
       });
-      navigate('/dashboard');
+      
+      // Navigate to appropriate dashboard based on course
+      if (selectedCourse === 'ea') {
+        navigate('/ea');
+      } else {
+        navigate('/home');
+      }
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {
@@ -460,6 +551,8 @@ const Onboarding: React.FC = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
         return <WelcomeStep />;
+      case 'course':
+        return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':
         return <ExamDateStep value={examDate} onChange={setExamDate} />;
       case 'section':

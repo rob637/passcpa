@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 27 (Q261-270)
+ * Preparer Penalties
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH27: Question[] = [
+  // ==========================================
+  // SEE3: Preparer Penalties
+  // ==========================================
+  {
+    id: 'see3-261',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'Definition of Preparer',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A "tax return preparer" under IRC §7701(a)(36) includes:',
+    options: [
+      'Anyone who types a return',
+      'Anyone who prepares for compensation all or a substantial portion of a return or claim for refund',
+      'Only CPAs',
+      'Only Enrolled Agents'
+    ],
+    correctAnswer: 1,
+    explanation: 'A tax return preparer is any person who prepares for compensation, or employs others to prepare for compensation, all or a substantial portion of any return or claim for refund.',
+    reference: 'IRC §7701(a)(36)',
+  },
+  {
+    id: 'see3-262',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'IRC 6694(a)',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRC §6694(a) unreasonable position penalty applies when:',
+    options: [
+      'Any error is made',
+      'A position lacks substantial authority (or disclosed reasonable basis) for non-tax shelters',
+      'The preparer intentionally understates tax',
+      'No penalty applies'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6694(a) applies to unreasonable positions without substantial authority (or disclosed reasonable basis for non-shelter items). For tax shelters/reportable transactions, the standard is "more likely than not."',
+    reference: 'IRC §6694(a)',
+  },
+  {
+    id: 'see3-263',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: '6694(a) Amount',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The penalty under IRC §6694(a) is:',
+    options: [
+      '$50 per return',
+      'Greater of $1,000 or 50% of income derived (or to be derived) from the return',
+      '$5,000 flat',
+      '10% of tax owed'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRC §6694(a) penalty is the greater of $1,000 or 50% of the income earned by the preparer from the return or claim for refund.',
+    reference: 'IRC §6694(a)',
+  },
+  {
+    id: 'see3-264',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'IRC 6694(b)',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRC §6694(b) willful or reckless conduct penalty applies when a preparer:',
+    options: [
+      'Makes any understatement',
+      'Willfully attempts to understate tax or shows reckless or intentional disregard of rules',
+      'Charges too much',
+      'Files late'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6694(b) applies when a preparer willfully attempts to understate tax liability or shows reckless or intentional disregard of rules or regulations. This is intentional misconduct.',
+    reference: 'IRC §6694(b)',
+  },
+  {
+    id: 'see3-265',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: '6694(b) Amount',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The penalty under IRC §6694(b) is:',
+    options: [
+      '$1,000',
+      'Greater of $5,000 or 75% of income derived from the return',
+      '$500',
+      '100% of tax owed'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRC §6694(b) willful/reckless penalty is the greater of $5,000 or 75% of the income earned from the return. This is more severe than the §6694(a) penalty.',
+    reference: 'IRC §6694(b)',
+  },
+  {
+    id: 'see3-266',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'IRC 6695',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRC §6695 penalties for failure to sign a return include:',
+    options: [
+      'Criminal prosecution',
+      '$60 per failure (for 2024), up to $30,000 per year',
+      '$500 per failure',
+      'No penalty'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6695(b) imposes a penalty of $60 (indexed for inflation) for each failure to sign a return, up to a maximum of $30,000 per return period (2024 amounts).',
+    reference: 'IRC §6695(b)',
+  },
+  {
+    id: 'see3-267',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'Failure to Furnish Copy',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A preparer who fails to provide a copy of the return to the taxpayer faces:',
+    options: [
+      'No penalty',
+      '$60 per failure (for 2024), up to $30,000 per year',
+      'Only a warning',
+      '$5,000 per failure'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6695(a), failing to furnish a copy of the return to the taxpayer results in a penalty of $60 per failure (indexed), maximum $30,000 per return period.',
+    reference: 'IRC §6695(a)',
+  },
+  {
+    id: 'see3-268',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'PTIN Penalty',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Failure to include a PTIN on a return results in a penalty of:',
+    options: [
+      'No penalty',
+      '$60 per failure (for 2024), up to $30,000 per year',
+      '$1,000 per failure',
+      'Loss of PTIN'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6695(c), failure to furnish the preparer\'s identifying number (PTIN) on a return results in a penalty of $60 per failure (indexed), up to $30,000 per return period.',
+    reference: 'IRC §6695(c)',
+  },
+  {
+    id: 'see3-269',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'Endorsement Prohibition',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A preparer who negotiates or endorses a client\'s refund check faces a penalty of:',
+    options: [
+      '$250',
+      '$600 per check',
+      'No penalty',
+      'Only if over $5,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6695(f), a preparer who endorses or otherwise negotiates a client\'s tax refund check is subject to a penalty of $600 per check (indexed for inflation).',
+    reference: 'IRC §6695(f)',
+  },
+  {
+    id: 'see3-270',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Preparer Penalties',
+    subtopic: 'Due Diligence 6695(g)',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRC §6695(g) due diligence penalty for EITC, CTC, AOTC, and HOH claims is:',
+    options: [
+      '$100 per return',
+      '$560 per failure (for 2024) per applicable credit/status',
+      '$1,000 per failure',
+      'No penalty applies'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6695(g) imposes a penalty of $560 (2024 indexed amount) per failure to meet due diligence requirements for each EITC, CTC/ACTC/ODC, AOTC, and HOH filing status claim.',
+    reference: 'IRC §6695(g)',
+  },
+];

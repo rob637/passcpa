@@ -10,4 +10,19 @@ export const FEATURES = {
   gamification: true, // Streaks, points
 };
 
+/**
+ * Check if a specific feature is enabled
+ */
 export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[feature];
+
+/**
+ * Course Availability Flags
+ * Controlled via environment variables for safe deployment
+ */
+export const ENABLE_EA_COURSE = import.meta.env.VITE_ENABLE_EA_COURSE === 'true' || import.meta.env.DEV;
+export const ENABLE_CMA_COURSE = import.meta.env.VITE_ENABLE_CMA_COURSE === 'true';
+
+// Log status on startup for verification
+if (import.meta.env.DEV) {
+  console.log('[FeatureFlags] EA Course Enabled:', ENABLE_EA_COURSE);
+}

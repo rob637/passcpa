@@ -15,6 +15,7 @@ import {
   Moon,
   Monitor,
   Palette,
+  GraduationCap,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
@@ -25,6 +26,7 @@ import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
+import { COURSES, ACTIVE_COURSES, type CourseId } from '../../courses';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -103,6 +105,7 @@ const Settings: React.FC = () => {
   const [examSection, setExamSection] = useState(profile?.examSection || 'REG');
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
   const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
+  const [activeCourse, setActiveCourse] = useState<CourseId>(profile?.activeCourse || 'cpa');
 
   // Sync form state when profile changes (e.g., after reset)
   useEffect(() => {
@@ -111,6 +114,7 @@ const Settings: React.FC = () => {
       setExamSection(profile.examSection || 'REG');
       setDailyGoal(profile.dailyGoal || 50);
       setExamDate(formatDateForInput(profile.examDate));
+      setActiveCourse(profile.activeCourse || 'cpa');
     }
   }, [profile]);
   
@@ -284,6 +288,7 @@ const Settings: React.FC = () => {
         examSection,
         dailyGoal,
         examDate: examDate ? new Date(examDate) : null,
+        activeCourse,
         dailyReminderEnabled: notifications.dailyReminder,
         dailyReminderTime: reminderTime || '09:00',
         weeklyReportEnabled: notifications.weeklyReport,
@@ -443,7 +448,49 @@ const Settings: React.FC = () => {
                 <div>
                   <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Study Plan Settings</h2>
 
-                  {/* Exam Section */}
+                  {/* Active Course */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      <span className="flex items-center gap-2">
+                        <GraduationCap className="w-4 h-4" />
+                        Certification Course
+                      </span>
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {ACTIVE_COURSES.map((courseKey) => {
+                        const course = COURSES[courseKey as CourseId];
+                        if (!course) return null;
+                        return (
+                          <button
+                            key={courseKey}
+                            onClick={() => setActiveCourse(courseKey as CourseId)}
+                            className={clsx(
+                              'p-3 rounded-xl border-2 text-left transition-all',
+                              activeCourse === courseKey
+                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
+                                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
+                            )}
+                          >
+                            <div
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
+                              style={{ backgroundColor: course.color }}
+                            >
+                              {course.shortName}
+                            </div>
+                            <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                              {course.name}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                      Switch between your certification prep courses
+                    </p>
+                  </div>
+
+                  {/* Exam Section - CPA only */}
+                  {activeCourse === 'cpa' && (
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Current Exam Section
@@ -508,6 +555,7 @@ const Settings: React.FC = () => {
                       </div>
                     </div>
                   </div>
+                  )}
 
                   {/* Exam Date */}
                   <div className="mb-6">

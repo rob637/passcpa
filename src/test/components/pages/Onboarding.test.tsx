@@ -134,17 +134,16 @@ describe('Onboarding Component', () => {
   });
 
   describe('Navigation', () => {
-    it('advances to exam date step when Continue is clicked', async () => {
+    it('advances to certification step when Continue is clicked', async () => {
       await renderOnboarding();
       fireEvent.click(screen.getByText(/Continue/i));
       
       await waitFor(() => {
-        // Now goes to exam date step first
-        expect(screen.getByText(/exam date/i)).toBeInTheDocument();
+        expect(screen.getByText(/Choose Your Certification/i)).toBeInTheDocument();
       });
     });
 
-    it('shows Back button on exam date step', async () => {
+    it('shows Back button on certification step', async () => {
       await renderOnboarding();
       fireEvent.click(screen.getByText(/Continue/i));
       
@@ -168,16 +167,30 @@ describe('Onboarding Component', () => {
   describe('Section Step', () => {
     const navigateToSectionStep = async () => {
       await renderOnboarding();
-      // Step 1: Welcome -> Exam Date
+      // Step 1: Welcome -> Certification
       fireEvent.click(screen.getByText(/Continue/i));
+      await waitFor(() => {
+        expect(screen.getByText(/Choose Your Certification/i)).toBeInTheDocument();
+      });
+
+      // Step 2: Select CPA -> Exam Date
+      // Click the CPA card (using the heading text)
+      fireEvent.click(screen.getByText('CPA'));
+      
+      // Click Continue to move to next step
+      let continueButtons = screen.getAllByText(/Continue/i);
+      fireEvent.click(continueButtons[continueButtons.length - 1]);
+
       await waitFor(() => {
         expect(screen.getByText(/When's Your Exam/i)).toBeInTheDocument();
       });
+
+      // Step 3: Exam Date -> Section
       // Pick an exam date - get input by type since label isn't linked
       const dateInput = document.querySelector('input[type="date"]') as HTMLInputElement;
       fireEvent.change(dateInput, { target: { value: '2027-01-15' } });
-      // Step 2: Exam Date -> Section
-      const continueButtons = screen.getAllByText(/Continue/i);
+      
+      continueButtons = screen.getAllByText(/Continue/i);
       fireEvent.click(continueButtons[continueButtons.length - 1]);
     };
 

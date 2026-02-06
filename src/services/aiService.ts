@@ -19,7 +19,7 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
       'financial', 'statement', 'balance sheet', 'income', 'ratio', 'inventory', 'fifo', 'lifo',
       'receivable', 'payable', 'bond', 'stock', 'dividend', 'partnership', 's corp', 'c corp',
       'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud', 'materiality', 'sampling',
-      'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp']
+      'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', '1031', 'like-kind', 'capital gain']
   },
   ea: {
     name: 'EA (Enrolled Agent)',
@@ -90,6 +90,13 @@ IMPORTANT CONVERSATION RULES:
 3. Pay attention to conversation flow - interpret short responses in context of your previous message.
 
 Start by asking what they already know, then build from there with questions.`,
+
+    evaluate: `You are an expert ${course.shortName} Essay Grader. Your role is to evaluate a student's written response to an exam scenario.
+- Grade the response on a scale of 0-10 based on technical accuracy, clarity, and completeness.
+- Compare their response to the standard solution concepts.
+- Provide specific feedback on what they missed.
+- Ignore minor grammar/spelling issues unless they affect meaning (this is a test of knowledge, not English).
+- Be strict but constructive. The user needs to pass a rigorous professional exam.`,
 
     quiz: `You are Vory, a ${course.shortName} exam quiz master for VoraPrep. Your role is to:
 - Generate realistic ${course.shortName} exam-style multiple choice questions

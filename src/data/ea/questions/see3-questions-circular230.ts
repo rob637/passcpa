@@ -100,5 +100,105 @@ export const SEE3_QUESTIONS_CIRCULAR230: Question[] = [
     correctAnswer: 1,
     explanation: 'Circular 230 §10.30 prohibits any form of public communication containing a false, fraudulent, coercive, misleading, or deceptive statement or claim. Guaranteeing a refund implies a result that cannot be controlled (as refunds depend on the facts and law), and is considered misleading.',
     reference: 'Circular 230, §10.30'
+  },
+  {
+    id: 'see3-c230-006',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1', 
+    topic: 'Practices and Procedures',
+    subtopic: 'Negotiation of Checks',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A client, Client E, is traveling abroad and asks Enrolled Agent Frank to deposit her IRS refund check into her bank account. Client E endorses the check effectively "Pay to the order of Frank" and sends it to him. Frank deposits it directly into her account without taking any fees from it. Has Frank violated Circular 230?',
+    options: [
+      'No, because he did not use the funds for his own benefit.',
+      'Yes, because a practitioner may not under any circumstances endorse or negotiate a check issued to a client by the government.',
+      'No, because he had the client\'s written authorization.',
+      'Yes, unless he has a specific Power of Attorney (Form 2848) authorizing this act.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 10.31 prohibits a practitioner from endorsing or otherwise negotiating any check issued to a client by the government in respect of a Federal tax liability. This prohibition applies even if the practitioner deposits the full amount into the client’s account.',
+    reference: 'Circular 230, §10.31'
+  },
+  {
+    id: 'see3-c230-007',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1', 
+    topic: 'Practices and Procedures',
+    subtopic: 'Knowledge of Client Omission',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'While reviewing a prior year tax return for a new client, Enrolled Agent Alice discovers a material error that resulted in a significant understatement of tax. Under Circular 230, what must Alice do?',
+    options: [
+      'She must immediately file an amended return for the client.',
+      'She must notify the IRS of the error.',
+      'She must advise the client of the error and the consequences of not correcting it.',
+      'She must withdraw from the engagement.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Section 10.21 requires a practitioner who knows that the client has not complied with the revenue laws (or has made an error in a filing) to advise the client promptly of the fact of such noncompliance, error, or omission, and the consequences as provided by the Code and regulations.',
+    reference: 'Circular 230, §10.21'
+  },
+  {
+    id: 'see3-c230-008',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1', 
+    topic: 'Practices and Procedures',
+    subtopic: 'Solicitation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enrolled Agent David publishes a fee schedule for his tax services in January. He wishes to increase his fees in March. Under Circular 230, how long must he wait before increasing his fees if he published them in a radio advertisement?',
+    options: [
+      'He may increase them immediately with a new ad.',
+      'He is bound by the advertised fees for at least 30 days after the last publication.',
+      'He is bound for 90 days.',
+      'He is bound until the end of the calendar year.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under Section 10.30, in the case of radio or television, the broadcast must be recorded and the practitioner must retain the recording. Costs must be honored for at least 30 days after the last date that the content is broadcast.',
+    reference: 'Circular 230, §10.30'
+  },
+  {
+    id: 'see3-c230-009',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1', 
+    topic: 'Practices and Procedures',
+    subtopic: 'Best Practices',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'Which of the following is NOT explicitly listed as a "Best Practice" for tax advisors in Circular 230 §10.33?',
+    options: [
+      'Communicating clearly with the client regarding the terms of the engagement.',
+      'Establishing the facts, determining which facts are relevant, and evaluating the reasonableness of any assumptions or representations.',
+      'Advising the client regarding the import of the conclusions reached.',
+      'Reviewing the client\'s bookkeeping for fraud before preparing the return.'
+    ],
+    correctAnswer: 3,
+    explanation: 'Section 10.33 lists best practices including communicating terms of engagement, establishing facts and evaluating assumptions/representations, relating applicable law to facts, and advising the client regarding the import of conclusions. There is no explicit requirement in §10.33 to audit or review bookkeeping for fraud, though due diligence (§10.22) is required.',
+    reference: 'Circular 230, §10.33'
+  },
+  {
+    id: 'see3-c230-010',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1', 
+    topic: 'Practices and Procedures',
+    subtopic: 'Sanctions',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Secretary of the Treasury may sanction a practitioner for incompetence or disreputable conduct. Which of the following is NOT a form of sanction available under Circular 230?',
+    options: [
+      'Censure (Public Reprimand)',
+      'Suspension',
+      'Disbarment',
+      'Imprisonment for up to 1 year'
+    ],
+    correctAnswer: 3,
+    explanation: 'Under Section 10.50, the Secretary may censure, suspend, or disbar any practitioner from practice before the Internal Revenue Service. Imprisonment is a criminal penalty that would be handled by the courts, not an administrative sanction under Circular 230.',
+    reference: 'Circular 230, §10.50'
   }
 ];

@@ -384,6 +384,14 @@ function App() {
                       </ProtectedRoute>
                     } 
                   />
+                  <Route 
+                    path="/cfp/learn" 
+                    element={
+                      <ProtectedRoute>
+                        <Navigate to="/cfp/dashboard" replace />
+                      </ProtectedRoute>
+                    } 
+                  />
                   </>
                 )}
 
@@ -644,6 +652,10 @@ function App() {
                           </SuspensePage>
                         }
                       />
+                      <Route
+                        path="/ea/learn"
+                        element={<Navigate to="/ea" replace />}
+                      />
                     </>
                   )}
                   {ENABLE_CMA_COURSE && (
@@ -679,6 +691,10 @@ function App() {
                             <CMAEssaySimulator />
                           </SuspensePage>
                         }
+                      />
+                      <Route
+                        path="/cma/learn"
+                        element={<Navigate to="/cma/dashboard" replace />}
                       />
                     </>
                   )}
@@ -728,6 +744,10 @@ function App() {
                           </SuspensePage>
                         }
                       />
+                      <Route
+                        path="/cia/learn"
+                        element={<Navigate to="/cia/dashboard" replace />}
+                      />
                     </>
                   )}
 
@@ -773,6 +793,10 @@ function App() {
                             <CISASection />
                           </SuspensePage>
                         }
+                      />
+                      <Route
+                        path="/cisa/learn"
+                        element={<Navigate to="/cisa/dashboard" replace />}
                       />
                     </>
                   )}

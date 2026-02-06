@@ -1,5 +1,5 @@
 
-import { Question } from '../../types/question';
+import { Question } from '../../types';
 import { CIA1_QUESTIONS } from './questions/cia1-questions';
 import { CIA2_QUESTIONS } from './questions/cia2-questions';
 import { CIA3_QUESTIONS } from './questions/cia3-questions';

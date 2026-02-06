@@ -7,7 +7,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { CourseSelector } from '../../../components/common/CourseSelector';
 import { MemoryRouter } from 'react-router-dom';
-import React from 'react';
 
 // Mock the useCourse hook
 const mockSetCourse = vi.fn();

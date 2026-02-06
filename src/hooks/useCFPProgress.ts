@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from './useAuth';
-import { getCFPProgress, CFPOverallProgress, CFPSectionId } from '../services/cfpProgressService';
-import logger from '../utils/logger'; // Assuming logger exists based on previous file
+import { getCFPProgress, CFPOverallProgress } from '../services/cfpProgressService';
 
 export function useCFPProgress() {
   const { user } = useAuth();

@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
-import { getCIAProgress, CIAOverallProgress, CIASectionId } from '../services/ciaProgressService'; // Fixed import path
+import { getCIAProgress, CIAOverallProgress } from '../services/ciaProgressService';
+import { CIASectionId } from '../utils/ciaStudyPlanner';
 import logger from '../utils/logger';
 
 export function useCIAProgress() {

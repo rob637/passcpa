@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar as CalendarIcon, Save } from 'lucide-react';
 import { CIASectionId, CIA_SECTION_CONFIG, generateCIAStudyPlan, CIAWeeklySchedule, DEFAULT_WEEKLY_SCHEDULE } from '../../utils/ciaStudyPlanner';
@@ -17,7 +17,7 @@ export default function CIAStudyPlanSetup() {
     CIA3: null,
   });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [weeklySchedule, setWeeklySchedule] = useState<CIAWeeklySchedule>(DEFAULT_WEEKLY_SCHEDULE);
+  const [weeklySchedule, _setWeeklySchedule] = useState<CIAWeeklySchedule>(DEFAULT_WEEKLY_SCHEDULE);
   const [loading, setLoading] = useState(false);
 
   const handleDateSelect = (section: CIASectionId, date: Date | undefined) => {

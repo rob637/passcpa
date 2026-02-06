@@ -1,5 +1,4 @@
 
-import { CIASectionId } from '../../../courses/cia/config';
 import { CIAMockExamConfig } from './config';
 import { Question } from '../../../types';
 

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { 
   BookOpen, 
   Target, 
@@ -6,11 +5,7 @@ import {
   Award, 
   ChevronRight,
   BarChart2,
-  Calendar,
   Briefcase,
-  Users,
-  Shield,
-  TrendingUp,
   FileText
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

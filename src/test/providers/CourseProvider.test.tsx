@@ -2,7 +2,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { CourseProvider, useCourse, useCourseOptional } from '../../providers/CourseProvider';
 import { MemoryRouter } from 'react-router-dom';
-import React from 'react';
 
 // Explicitly unmock the provider to ensure we are testing the real implementation
 // This guards against mock leakage from other tests (e.g. CourseSelector)

@@ -51,7 +51,24 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
     sections: 'Part 1, 2, or 3',
     topicList: ['internal audit', 'risk', 'governance', 'control', 'compliance', 'cia', 'iia']
   },
-  // CFA block removed
+  cfp: {
+    name: 'CFP (Certified Financial Planner)',
+    shortName: 'CFP',
+    topics: 'financial planning, investment management, tax planning, retirement, and estate planning',
+    sections: 'General Principles, Insurance, Investments, Tax, Retirement, Estate, or Psychology',
+    topicList: ['financial planning', 'investment', 'insurance', 'tax', 'retirement', 'estate',
+      'cfp', 'fiduciary', 'portfolio', 'risk management', 'asset allocation', 'trust',
+      'social security', 'annuity', 'bond', 'stock', 'mutual fund', 'etf', 'ira', '401k']
+  },
+  cisa: {
+    name: 'CISA (Certified Information Systems Auditor)',
+    shortName: 'CISA',
+    topics: 'information systems auditing, governance, acquisition, operations, and protection',
+    sections: 'Domain 1-5',
+    topicList: ['information systems', 'audit', 'governance', 'it management', 'acquisition',
+      'development', 'operations', 'maintenance', 'protection', 'security', 'cisa', 'isaca',
+      'risk assessment', 'business continuity', 'disaster recovery', 'access control']
+  },
 };
 
 // Generate system prompts dynamically based on course

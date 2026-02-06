@@ -6,11 +6,9 @@ import {
   Sparkles,
   Check,
   TrendingUp,
-  PieChart,
   Target,
   Users,
   Briefcase,
-  ShieldCheck
 } from 'lucide-react';
 
 const CFPLanding = () => {

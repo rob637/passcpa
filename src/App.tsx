@@ -368,11 +368,9 @@ function App() {
                     path="/cfp/dashboard" 
                     element={
                       <ProtectedRoute>
-                        <MainLayout>
-                          <SuspensePage>
-                            <CFPDashboard />
-                          </SuspensePage>
-                        </MainLayout>
+                        <SuspensePage>
+                          <CFPDashboard />
+                        </SuspensePage>
                       </ProtectedRoute>
                     } 
                   />

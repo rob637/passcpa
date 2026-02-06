@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
-  BookOpen, 
   Calculator, 
-  Users, 
   FileText,
   PieChart,
-  CheckCircle,
   HelpCircle
 } from 'lucide-react';
 

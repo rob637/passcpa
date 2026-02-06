@@ -1,20 +1,17 @@
 
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Play, 
   Clock, 
   CheckCircle, 
-  AlertCircle,
   ChevronLeft,
   ChevronRight,
-  Flag,
-  Save
 } from 'lucide-react';
 import { CIA_SECTION_CONFIG, CIASectionId } from '../../courses/cia/config';
 import { getCIAMockExamConfig, generateCIAMockExam, GeneratedCIAMockExam } from '../../data/cia/mock-exams';
 import { getAllCIAQuestions } from '../../data/cia';
-import { PageLoader } from '../../components/common/PageLoader';
+
 
 export default function CIAExamSimulator() {
   const navigate = useNavigate();
@@ -31,7 +28,7 @@ export default function CIAExamSimulator() {
     const config = getCIAMockExamConfig(examMode, selectedSection);
     // In a real app we would import questions specific to the section
     // Here we use the generic pool getter and filter
-    const allQuestions = getAllCIAQuestions().filter(q => q.domainId.startsWith(selectedSection));
+    const allQuestions = getAllCIAQuestions().filter(q => q.section.startsWith(selectedSection));
     const exam = generateCIAMockExam(config, allQuestions);
     setActiveExam(exam);
     setSetupMode(false);
@@ -68,16 +65,16 @@ export default function CIAExamSimulator() {
                 <div className="card p-6 md:p-8 min-h-[400px] flex flex-col">
                     <div className="flex-1">
                         <p className="text-lg mb-8 leading-relaxed text-slate-900 dark:text-slate-100">
-                            {currentQuestion.text}
+                            {currentQuestion.question}
                         </p>
 
                         <div className="space-y-3">
                             {currentQuestion.options.map((option, idx) => (
                                 <button
                                     key={idx}
-                                    onClick={() => setSelectedAnswer(option.id)}
+                                    onClick={() => setSelectedAnswer(String(idx))}
                                     className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                                        selectedAnswer === option.id 
+                                        selectedAnswer === String(idx) 
                                         ? 'border-amber-500 bg-amber-50 dark:bg-amber-900/20' 
                                         : 'border-slate-200 dark:border-slate-700 hover:border-amber-200'
                                     }`}
@@ -85,7 +82,7 @@ export default function CIAExamSimulator() {
                                     <span className="inline-block w-6 h-6 rounded-full border border-slate-300 mr-3 text-center text-sm leading-5">
                                         {String.fromCharCode(65 + idx)}
                                     </span>
-                                    {option.text}
+                                    {option}
                                 </button>
                             ))}
                         </div>

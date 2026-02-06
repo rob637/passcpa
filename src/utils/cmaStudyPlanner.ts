@@ -5,7 +5,7 @@
  * Generates a plan that covers both CMA parts with appropriate time allocation.
  */
 
-import { differenceInDays, addDays, format, isBefore, isAfter } from 'date-fns';
+import { differenceInDays, addDays, format, isBefore } from 'date-fns';
 import { CMASectionId, CMA_SECTION_CONFIG } from '../courses/cma';
 
 // Types

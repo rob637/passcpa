@@ -13,7 +13,6 @@ import {
   collection, 
   getDocs, 
   query, 
-  where,
   orderBy,
   limit,
   Timestamp,

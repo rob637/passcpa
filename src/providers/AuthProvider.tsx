@@ -35,6 +35,7 @@ export interface UserProfile {
   email: string;
   displayName: string;
   photoURL?: string | null; // User profile photo
+  activeCourse?: string; // Primary course the user is studying
   createdAt: Timestamp | FieldValue; // Firestore Timestamp
   onboardingComplete: boolean;
   onboardingCompletedAt?: Timestamp | Date | null;

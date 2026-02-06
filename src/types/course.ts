@@ -82,6 +82,7 @@ export interface Course {
   name: string;
   shortName: string;
   description: string;
+  color?: string; // Brand color for the course
   sections: ExamSectionConfig[];
   passingScore: number;
   totalTime: number;             // minutes per section

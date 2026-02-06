@@ -1,5 +1,5 @@
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { generateDailyPlan } from '../../services/dailyPlanService';
 
 describe('EA Daily Plan Logic', () => {
@@ -36,7 +36,7 @@ describe('EA Daily Plan Logic', () => {
       section: 'FAR', // CPA Section
     };
 
-    const plan = await generateDailyPlan(mockState as any, 'cpa');
+    await generateDailyPlan(mockState as any, 'cpa');
 
     // Verify tasks - might not always have TBS depending on logic, but let's check config assumption
     // The service logic checks `hasTBS`.

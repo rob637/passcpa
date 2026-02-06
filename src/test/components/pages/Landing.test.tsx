@@ -13,7 +13,7 @@ vi.mock('../../../config/firebase', () => ({
   db: {},
 }));
 
-import Landing from '../../../components/pages/Landing';
+import Landing from '../../../components/pages/CPALanding';
 import { addDoc } from 'firebase/firestore';
 
 const renderWithRouter = (ui: React.ReactElement) => {

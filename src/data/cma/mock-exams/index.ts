@@ -5,10 +5,13 @@
  */
 
 // Configuration exports
-export {
+export type {
   CMAMockExamConfig,
   CMABlueprintWeight,
   CMAQuestionSelectionCriteria,
+} from './config';
+
+export {
   CMA1_BLUEPRINT_WEIGHTS,
   CMA2_BLUEPRINT_WEIGHTS,
   CMA_BLUEPRINT_WEIGHTS,
@@ -23,12 +26,15 @@ export {
 } from './config';
 
 // Generator exports
-export {
+export type {
   GeneratedCMAMockExam,
   CMAMockExamResult,
   BlueprintPerformance,
   DifficultyPerformance,
   ReviewQuestion,
+} from './generator';
+
+export {
   selectQuestionsForExam,
   generateCMAMockExam,
   calculateCMAExamResult,

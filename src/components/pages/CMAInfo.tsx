@@ -1,14 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Award, 
-  Calendar, 
   Clock, 
-  Users, 
-  Briefcase, 
   CheckCircle, 
   BookOpen, 
-  GraduationCap,
   Globe,
   TrendingUp,
   DollarSign

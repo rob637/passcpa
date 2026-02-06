@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 18 (Q171-180)
+ * Power of Attorney & IRS Representation
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH18: Question[] = [
+  // ==========================================
+  // SEE3: Power of Attorney & Representation
+  // ==========================================
+  {
+    id: 'see3-171',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Form 2848',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 2848 is used to:',
+    options: [
+      'Request a refund',
+      'Grant power of attorney and authorize representation before the IRS',
+      'File an extension',
+      'Request penalty abatement'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 2848 (Power of Attorney and Declaration of Representative) authorizes individuals to represent a taxpayer before the IRS. It grants authority to receive confidential tax information and act on behalf of the taxpayer.',
+    reference: 'IRS Form 2848',
+  },
+  {
+    id: 'see3-172',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Authorization Scope',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'On Form 2848, what must be specified?',
+    options: [
+      'Only the taxpayer\'s name',
+      'The specific tax matters (type of tax, form, and years/periods)',
+      'Only the representative\'s name',
+      'The taxpayer\'s bank information'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 2848 must specify the type of tax (income, employment, etc.), the tax form number (1040, 941, etc.), and the years or periods for which authority is granted.',
+    reference: 'IRS Form 2848 Instructions',
+  },
+  {
+    id: 'see3-173',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'CAF Number',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Centralized Authorization File (CAF) number:',
+    options: [
+      'Is the taxpayer\'s Social Security number',
+      'Is a unique number assigned to tax practitioners for tracking authorizations',
+      'Is assigned to each tax return',
+      'Is the same as the PTIN'
+    ],
+    correctAnswer: 1,
+    explanation: 'The CAF number is assigned to practitioners who file Forms 2848 or 8821. It allows the IRS to track authorization relationships and automatically send copies of taxpayer correspondence to authorized representatives.',
+    reference: 'IRS CAF System',
+  },
+  {
+    id: 'see3-174',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Form 8821',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 8821 (Tax Information Authorization):',
+    options: [
+      'Grants full power of attorney',
+      'Authorizes disclosure of tax information but not representation',
+      'Is only for businesses',
+      'Revokes prior authorizations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8821 authorizes the IRS to disclose tax information to designated individuals but does not grant representation authority. It is for information access only, not advocacy.',
+    reference: 'IRS Form 8821',
+  },
+  {
+    id: 'see3-175',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Revocation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A taxpayer may revoke a power of attorney by:',
+    options: [
+      'Telling the representative verbally',
+      'Filing a written revocation statement with the IRS or submitting a new Form 2848',
+      'Ignoring the representative',
+      'Filing a tax return'
+    ],
+    correctAnswer: 1,
+    explanation: 'A taxpayer may revoke a POA by filing a written revocation with the IRS or by filing a new Form 2848 without checking the box to retain prior authorizations. Representatives may also withdraw.',
+    reference: 'IRS Form 2848 Instructions',
+  },
+  {
+    id: 'see3-176',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Representative Designation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The representative designation code "e" on Form 2848 identifies:',
+    options: [
+      'An attorney',
+      'An Enrolled Agent',
+      'A CPA',
+      'An Enrolled Actuary'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 2848 uses letter codes to identify representative designations: a = Attorney, b = CPA, c = Enrolled Agent, d = Officer (for corporate matters), e = Full-Time Employee, etc.',
+    reference: 'IRS Form 2848 Instructions',
+  },
+  {
+    id: 'see3-177',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Substitute for Return',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A representative with a valid POA may NOT:',
+    options: [
+      'Receive confidential tax information',
+      'Sign a return on behalf of the taxpayer (without specific authorization)',
+      'Attend an audit on behalf of the taxpayer',
+      'Negotiate with IRS employees'
+    ],
+    correctAnswer: 1,
+    explanation: 'A standard Form 2848 does not authorize signing returns. Specific written authorization (on the POA or separately) is required for a representative to sign returns or execute waivers.',
+    reference: 'IRS Form 2848, Line 5',
+  },
+  {
+    id: 'see3-178',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Third Party Designee',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The "Third Party Designee" checkbox on Form 1040:',
+    options: [
+      'Is the same as a full POA',
+      'Authorizes the IRS to discuss the return with the named person for one year',
+      'Permanently authorizes representation',
+      'Grants signing authority'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Third Party Designee checkbox authorizes the IRS to discuss the specific return with the named person. The authorization is limited and expires one year from the original due date.',
+    reference: 'IRS Form 1040 Instructions',
+  },
+  {
+    id: 'see3-179',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Submit Online',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 2848 may be submitted to the IRS:',
+    options: [
+      'Only by mail',
+      'By mail, fax, or online through Tax Pro Account',
+      'Only in person at a TAC',
+      'Only by the taxpayer directly'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 2848 may be submitted by mail, fax, or online. Tax professionals with Tax Pro Accounts can submit authorizations online, and taxpayers with IRS accounts can approve them digitally.',
+    reference: 'IRS Tax Pro Account',
+  },
+  {
+    id: 'see3-180',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Power of Attorney',
+    subtopic: 'Multiple Representatives',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A taxpayer may authorize:',
+    options: [
+      'Only one representative at a time',
+      'Multiple representatives on the same Form 2848',
+      'Only representatives from the same firm',
+      'A maximum of two representatives'
+    ],
+    correctAnswer: 1,
+    explanation: 'A taxpayer may authorize multiple representatives on the same Form 2848 and may also file additional Forms 2848 for other representatives without necessarily revoking prior authorizations.',
+    reference: 'IRS Form 2848 Instructions',
+  },
+];

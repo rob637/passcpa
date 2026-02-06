@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 16 (Q151-160)
+ * S Corporation Operations and Basis
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH16: Question[] = [
+  // ==========================================
+  // SEE2-5: S Corporations - Operations
+  // ==========================================
+  {
+    id: 'see2-151',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Operations',
+    subtopic: 'Shareholder Basis - Increases',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An S corporation shareholder\'s stock basis is increased by:',
+    options: [
+      'Distributions received from the corporation',
+      'Their pro rata share of the corporation\'s ordinary income',
+      'Corporation-level tax paid on built-in gains',
+      'Nondeductible expenses paid by the corporation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §1367(a)(1), an S shareholder\'s basis increases by their pro rata share of income (including separately stated items) and tax-exempt income. Distributions, losses, and nondeductible expenses decrease basis.',
+    reference: 'IRC §1367(a)(1)',
+  },
+  {
+    id: 'see2-152',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Operations',
+    subtopic: 'Shareholder Basis - Decreases',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The order of decreases to an S corporation shareholder\'s basis is:',
+    options: [
+      'Losses first, then distributions, then nondeductible expenses',
+      'Distributions first, then losses, then nondeductible expenses',
+      'Distributions first, then nondeductible expenses, then losses and deductions',
+      'Nondeductible expenses first, then distributions, then losses'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §1367(a)(2), basis is reduced first by distributions, then by nondeductible non-capital expenses, then by losses and deductions. This ordering prevents distributions from creating additional loss limitations.',
+    reference: 'IRC §1367(a)(2)',
+  },
+  {
+    id: 'see2-153',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Operations',
+    subtopic: 'Debt Basis',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'An S corporation shareholder can increase their loss deduction basis by:',
+    options: [
+      'Guaranteeing a bank loan to the corporation',
+      'Having the corporation borrow from a bank',
+      'Making a direct loan to the corporation',
+      'Pledging personal assets as collateral for corporate debt'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §1366(d)(1)(B), debt basis comes only from direct loans from the shareholder to the corporation. Guarantees, pledges, and third-party loans to the corporation do not create debt basis for the shareholder.',
+    reference: 'IRC §1366(d)(1)(B)',
+  },
+  {
+    id: 'see2-154',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Operations',
+    subtopic: 'Loss Limitations',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Shareholder A has stock basis of $10,000 and debt basis of $5,000. A\'s share of S corporation loss is $20,000. How much can A deduct?',
+    options: [
+      '$20,000',
+      '$15,000',
+      '$10,000',
+      '$5,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §1366(d), losses are limited to the shareholder\'s stock basis plus debt basis. A can deduct $15,000 ($10,000 + $5,000). The remaining $5,000 is suspended and carried forward indefinitely.',
+    reference: 'IRC §1366(d)',
+  },
+  {
+    id: 'see2-155',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Operations',
+    subtopic: 'Basis Restoration',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'An S shareholder\'s debt basis was reduced by losses in a prior year. When income flows through in the current year, the restoration order is:',
+    options: [
+      'All income restores stock basis first',
+      'Income restores debt basis first, then stock basis',
+      'Income restores stock basis first, then debt basis',
+      'Basis is never restored once reduced'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §1367, income first increases stock basis. Only after stock basis is fully restored does any remaining income increase debt basis. Debt basis must be restored before subsequent losses can reduce it again.',
+    reference: 'IRC §1367; Treas. Reg. §1.1367-2',
+  },
+  {
+    id: 'see2-156',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Distributions',
+    subtopic: 'AAA Overview',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Accumulated Adjustments Account (AAA) of an S corporation:',
+    options: [
+      'Tracks the corporation\'s retained earnings',
+      'Tracks cumulative income previously taxed to shareholders minus distributions',
+      'Cannot be distributed to shareholders',
+      'Only applies to corporations that have never been C corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'The AAA tracks the cumulative total of Subchapter S items that have passed through to shareholders (income minus losses and distributions). It represents previously taxed income that can be distributed tax-free.',
+    reference: 'IRC §1368(e)(1)',
+  },
+  {
+    id: 'see2-157',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Distributions',
+    subtopic: 'Distribution Ordering',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'An S corporation with no current or accumulated E&P distributes $50,000 to a shareholder with stock basis of $30,000. The tax treatment is:',
+    options: [
+      '$50,000 dividend',
+      '$30,000 return of capital, $20,000 capital gain',
+      '$30,000 return of capital, $20,000 ordinary income',
+      '$50,000 return of capital'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §1368(b), if no E&P exists, distributions are tax-free to the extent of stock basis (return of capital), then any excess is capital gain. Here, $30,000 reduces basis to zero, and $20,000 is capital gain.',
+    reference: 'IRC §1368(b)',
+  },
+  {
+    id: 'see2-158',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Distributions',
+    subtopic: 'Corporation with E&P',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'An S corporation that was previously a C corporation has accumulated E&P of $60,000, AAA of $40,000, and distributes $70,000. Following the default ordering rules, the distribution is:',
+    options: [
+      '$40,000 AAA (tax-free), $30,000 dividend',
+      '$70,000 dividend',
+      '$40,000 AAA (tax-free), $30,000 E&P (dividend)',
+      '$60,000 dividend, $10,000 return of capital'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §1368(c), distributions from an S corp with E&P come first from AAA (tax-free to extent of basis), then from E&P (dividend), then reduce remaining basis. Here: $40,000 from AAA + $30,000 from E&P as dividend.',
+    reference: 'IRC §1368(c)',
+  },
+  {
+    id: 'see2-159',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Taxes',
+    subtopic: 'Built-in Gains Tax',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A corporation that converts from C to S status is subject to built-in gains tax if it sells appreciated assets within:',
+    options: [
+      '10 years (or 7 years for 2009-2010, 5 years for 2011+)',
+      '3 years after conversion',
+      '5 years after conversion (permanent rule)',
+      '20 years after conversion'
+    ],
+    correctAnswer: 2,
+    explanation: 'The PATH Act made the 5-year recognition period permanent. Built-in gains tax applies when an S corporation (formerly C corp) sells assets appreciated at conversion within the 5-year recognition period.',
+    reference: 'IRC §1374(d)(7)',
+  },
+  {
+    id: 'see2-160',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'S Corporation Taxes',
+    subtopic: 'Passive Investment Income Tax',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An S corporation with accumulated C corporation E&P may be subject to excess passive investment income tax if passive income exceeds:',
+    options: [
+      '10% of gross receipts',
+      '25% of gross receipts',
+      '50% of gross receipts',
+      '60% of gross receipts'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §1375, an S corporation with E&P from C years is taxed on excess net passive income if passive investment income (rents, royalties, dividends, interest) exceeds 25% of gross receipts.',
+    reference: 'IRC §1375',
+  },
+];

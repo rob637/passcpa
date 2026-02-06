@@ -19,6 +19,10 @@ import { httpsCallable } from 'firebase/functions';
 import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
 import type { FieldValue, Timestamp } from 'firebase/firestore';
+import { Capacitor } from '@capacitor/core';
+
+// Check if running in native Capacitor app
+const isNativePlatform = Capacitor.isNativePlatform();
 
 // Firebase error type for proper catch handling
 interface FirebaseError extends Error {
@@ -352,14 +356,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         return user;
       } catch (popupErr) {
         const error = popupErr as FirebaseError;
-        // If popup was blocked or closed, try redirect as fallback
-        if (error.code === 'auth/popup-blocked' || 
+        // If popup was blocked or closed, try redirect as fallback (web only)
+        // Redirect doesn't work on native Capacitor apps due to WebView storage partitioning
+        if (!isNativePlatform && (
+            error.code === 'auth/popup-blocked' || 
             error.code === 'auth/popup-closed-by-user' ||
-            error.code === 'auth/cancelled-popup-request') {
+            error.code === 'auth/cancelled-popup-request')) {
           logger.log('Popup blocked/closed, falling back to redirect');
           await signInWithRedirect(auth, provider);
           return null as unknown as User;
         }
+        // On native apps, just re-throw the error - user can try again
         throw popupErr;
       }
     } catch (err) {

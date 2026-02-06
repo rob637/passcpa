@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 23 (Q221-230)
+ * Statutes of Limitations
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH23: Question[] = [
+  // ==========================================
+  // SEE3: Statutes of Limitations
+  // ==========================================
+  {
+    id: 'see3-221',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Assessment Period',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The general statute of limitations for IRS assessment is:',
+    options: [
+      '1 year from filing',
+      '3 years from filing or the due date, whichever is later',
+      '5 years',
+      '10 years from due date'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6501(a), taxes must generally be assessed within 3 years after the return was filed. If filed early, the period runs from the due date.',
+    reference: 'IRC §6501(a)',
+  },
+  {
+    id: 'see3-222',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Substantial Omission',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The statute of limitations is extended to 6 years when:',
+    options: [
+      'The taxpayer files late',
+      'There is a substantial omission of income (more than 25% of gross income)',
+      'Any deduction is overstated',
+      'The taxpayer requests an extension'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6501(e), the 6-year statute applies when there is an omission of gross income exceeding 25% of the gross income stated on the return.',
+    reference: 'IRC §6501(e)',
+  },
+  {
+    id: 'see3-223',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'No Statute Fraud',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'There is no statute of limitations for assessment when:',
+    options: [
+      'The return is filed late',
+      'A false or fraudulent return is filed with intent to evade tax, or no return is filed',
+      'The taxpayer is audited',
+      'An extension was filed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6501(c), there is no time limit for assessment if (1) a false/fraudulent return was filed with intent to evade, (2) willful attempt to evade tax, or (3) no return was filed.',
+    reference: 'IRC §6501(c)',
+  },
+  {
+    id: 'see3-224',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'CSED',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Collection Statute Expiration Date (CSED) is generally:',
+    options: [
+      '3 years from assessment',
+      '10 years from the date of assessment',
+      '6 years from filing',
+      '20 years from filing'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6502, the IRS has 10 years from the date of assessment to collect a tax liability. After the CSED, the liability is no longer legally enforceable.',
+    reference: 'IRC §6502(a)',
+  },
+  {
+    id: 'see3-225',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'CSED Suspension',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The CSED is suspended (tolled) when:',
+    options: [
+      'The taxpayer makes a payment',
+      'An OIC is pending, the taxpayer is outside the US, or bankruptcy is filed',
+      'The IRS delays collection',
+      'Interest stops accruing'
+    ],
+    correctAnswer: 1,
+    explanation: 'The CSED is suspended during pending OIC (plus 30 days), CDP hearing (plus 30 days), bankruptcy (plus 6 months), time taxpayer is outside US for 6+ months, and installment agreement requests.',
+    reference: 'IRC §6503',
+  },
+  {
+    id: 'see3-226',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Waiver Extension',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 872 is used to:',
+    options: [
+      'Claim a refund',
+      'Extend the statute of limitations on assessment by mutual consent',
+      'Request penalty abatement',
+      'File an appeal'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 872 (Consent to Extend Time to Assess Tax) allows the IRS and taxpayer to agree to extend the assessment statute. This may benefit both parties by allowing more time for audit resolution.',
+    reference: 'IRC §6501(c)(4)',
+  },
+  {
+    id: 'see3-227',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Restricted Consent',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 872-A differs from Form 872 in that:',
+    options: [
+      'It extends for a fixed period',
+      'It extends indefinitely until terminated by either party',
+      'It can only be signed by the IRS',
+      'It does not require taxpayer signature'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 872-A is an open-ended consent that extends the assessment period indefinitely until terminated by either party (using Form 872-T) or until other triggering events occur.',
+    reference: 'IRC §6501(c)(4)',
+  },
+  {
+    id: 'see3-228',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Refund Claim Statute',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The statute of limitations for claiming a refund is:',
+    options: [
+      '2 years from due date',
+      '3 years from filing or 2 years from payment, whichever is later',
+      '6 years',
+      '1 year from payment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6511, a refund claim must be filed within 3 years from filing the return OR 2 years from the date of payment, whichever is later.',
+    reference: 'IRC §6511(a)',
+  },
+  {
+    id: 'see3-229',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Lookback Limitation',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Regarding the lookback period for refunds:',
+    options: [
+      'All prior payments can be recovered',
+      'Refunds are limited to payments made within the lookback period',
+      'There is no limitation',
+      'Only current year payments count'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6511(b)(2), the refund is limited to payments made within the applicable lookback period. If the claim is filed more than 3 years after the return, only payments in the prior 2 years are recoverable.',
+    reference: 'IRC §6511(b)(2)',
+  },
+  {
+    id: 'see3-230',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute of Limitations',
+    subtopic: 'Criminal Statute',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The statute of limitations for criminal tax prosecution is generally:',
+    options: [
+      '3 years from filing',
+      '6 years from the commission of the offense',
+      '10 years',
+      'No limitation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6531, most criminal tax offenses have a 6-year statute of limitations from the commission of the offense (e.g., from when the false return was filed).',
+    reference: 'IRC §6531',
+  },
+];

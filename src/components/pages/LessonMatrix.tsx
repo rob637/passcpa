@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { fetchAllLessons } from '../../services/lessonService';
 import { useCourse } from '../../providers/CourseProvider';
-import type { ExamSection } from '../../types';
 import { 
   LESSON_MATRIX, 
   LessonMatrixEntry, 
@@ -86,7 +85,7 @@ const DifficultyBadge = ({ difficulty }: { difficulty: Difficulty }) => {
   );
 };
 
-const SectionBadge = ({ section }: { section: ExamSection }) => {
+const SectionBadge = ({ section }: { section: string }) => {
   const colors: Record<string, string> = {
     FAR: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
     AUD: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
@@ -96,6 +95,17 @@ const SectionBadge = ({ section }: { section: ExamSection }) => {
     TCP: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
     BEC: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
     PREP: 'bg-sky-50 text-sky-600 border border-sky-200 dark:bg-sky-900/50 dark:text-sky-300',
+    // EA Sections
+    SEE1: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300',
+    SEE2: 'bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-300',
+    SEE3: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300',
+    // CMA Sections
+    CMA1: 'bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-300',
+    CMA2: 'bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-300',
+    // CIA Sections
+    CIA1: 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300',
+    CIA2: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
+    CIA3: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-300',
   };
 
   // Display "Strategy" for PREP instead of the section code

@@ -532,6 +532,7 @@ import {
 
 // Import expanded WC tasks (comprehensive coverage)
 import { WC_EXPANDED } from './wc-expanded';
+import { CMA_ESSAYS } from '../cma/essays';
 
 // Re-export section-specific tasks
 export {
@@ -547,7 +548,7 @@ export {
 };
 
 // Combined: General PREP tasks + Section-specific tasks + Expanded
-export const ALL_WC_TASKS = [...WRITTEN_COMMUNICATIONS, ...ALL_SECTION_WC_TASKS, ...WC_EXPANDED];
+export const ALL_WC_TASKS = [...WRITTEN_COMMUNICATIONS, ...ALL_SECTION_WC_TASKS, ...WC_EXPANDED, ...CMA_ESSAYS];
 
 // Helper functions
 export const getWCByTopic = (topic: string) => {

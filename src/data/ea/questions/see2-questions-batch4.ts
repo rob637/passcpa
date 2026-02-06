@@ -1,0 +1,215 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 4 (Q31-40)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH4: Question[] = [
+  // ==========================================
+  // SEE2-6: C Corporations (continued)
+  // ==========================================
+  {
+    id: 'see2-031',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'C Corporation Taxation',
+    subtopic: 'Accumulated Earnings Tax',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The accumulated earnings tax is imposed on corporations that:',
+    options: [
+      'Have more than 100 shareholders',
+      'Accumulate earnings beyond reasonable business needs to avoid shareholder taxes',
+      'Pay dividends exceeding $1 million',
+      'Have net operating losses'
+    ],
+    correctAnswer: 1,
+    explanation: 'The accumulated earnings tax (20%) is imposed on corporations that accumulate earnings beyond the reasonable needs of the business to avoid shareholder-level taxes on dividends. The first $250,000 ($150,000 for service corporations) is generally exempt.',
+    reference: 'IRC §531-537',
+  },
+  {
+    id: 'see2-032',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'C Corporation Taxation',
+    subtopic: 'Personal Holding Company',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A personal holding company (PHC) is subject to a penalty tax of:',
+    options: [
+      '10%',
+      '15%',
+      '20%',
+      '35%'
+    ],
+    correctAnswer: 2,
+    explanation: 'A PHC is subject to a 20% penalty tax on undistributed personal holding company income. A PHC is a corporation where more than 50% of stock is owned by 5 or fewer individuals and 60%+ of income is passive (dividends, interest, rents, royalties).',
+    reference: 'IRC §541-547',
+  },
+  {
+    id: 'see2-033',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Filing',
+    subtopic: 'Due Dates',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A calendar-year C corporation\'s Form 1120 is due on:',
+    options: [
+      'March 15',
+      'April 15',
+      'April 18',
+      'September 15'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 1120 for a calendar-year C corporation is due on April 15 (the 15th day of the 4th month after the tax year ends). An automatic 6-month extension to October 15 is available by filing Form 7004.',
+    reference: 'IRC §6072',
+  },
+
+  // ==========================================
+  // SEE2-7: S Corporations
+  // ==========================================
+  {
+    id: 'see2-034',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Eligibility',
+    subtopic: 'Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An S corporation can have no more than:',
+    options: [
+      '35 shareholders',
+      '75 shareholders',
+      '100 shareholders',
+      '500 shareholders'
+    ],
+    correctAnswer: 2,
+    explanation: 'An S corporation is limited to 100 shareholders. A husband and wife (and their estates) are treated as one shareholder. Family members can elect to be treated as one shareholder as well.',
+    reference: 'IRC §1361(b)(1)(A)',
+  },
+  {
+    id: 'see2-035',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Eligibility',
+    subtopic: 'Eligible Shareholders',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which of the following may be a shareholder in an S corporation?',
+    options: [
+      'A partnership',
+      'A C corporation',
+      'A nonresident alien',
+      'An individual U.S. citizen'
+    ],
+    correctAnswer: 3,
+    explanation: 'S corporation shareholders must be individuals (U.S. citizens or residents), certain trusts, or estates. Partnerships, corporations, and nonresident aliens cannot be S corporation shareholders.',
+    reference: 'IRC §1361(b)(1)(B), (C)',
+  },
+  {
+    id: 'see2-036',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Election',
+    subtopic: 'Form 2553',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To elect S corporation status effective for the current tax year, Form 2553 must be filed:',
+    options: [
+      'By the end of the tax year',
+      'Within 30 days of forming the corporation',
+      'By the 15th day of the 3rd month of the tax year',
+      'With the first tax return'
+    ],
+    correctAnswer: 2,
+    explanation: 'Form 2553 must be filed by the 15th day of the 3rd month of the tax year for which the election is to be effective (March 15 for calendar-year corporations). Late elections may be accepted under certain relief provisions.',
+    reference: 'IRC §1362(b)',
+  },
+  {
+    id: 'see2-037',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Taxation',
+    subtopic: 'Pass-Through',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'S corporations are generally:',
+    options: [
+      'Subject to federal income tax at the entity level',
+      'Pass-through entities not subject to entity-level tax',
+      'Taxed at a 15% flat rate',
+      'Subject to self-employment tax on all income'
+    ],
+    correctAnswer: 1,
+    explanation: 'S corporations are generally pass-through entities. Income, deductions, and credits pass through to shareholders who report them on their individual returns. The S corporation itself generally does not pay federal income tax.',
+    reference: 'IRC §1363',
+  },
+  {
+    id: 'see2-038',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Compensation',
+    subtopic: 'Reasonable Compensation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An S corporation shareholder-employee must receive:',
+    options: [
+      'Only distributions, no salary',
+      'Reasonable compensation for services before taking distributions',
+      'At least minimum wage',
+      'Compensation equal to 50% of profits'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRS requires shareholder-employees to receive reasonable compensation (W-2 wages) for services performed before taking additional distributions. This prevents avoiding payroll taxes by taking all income as distributions.',
+    reference: 'IRC §3121; IRS Fact Sheet 2008-25',
+  },
+  {
+    id: 'see2-039',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Basis',
+    subtopic: 'Shareholder Basis',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Unlike partnership interests, S corporation shareholder basis does NOT include:',
+    options: [
+      'Cash contributions',
+      'Share of income',
+      'Share of entity-level debt',
+      'Basis of property contributed'
+    ],
+    correctAnswer: 2,
+    explanation: 'S corporation shareholder basis includes contributions and share of income but does NOT include the shareholder\'s share of entity-level debt. This differs from partnerships, where partner basis includes their share of partnership liabilities.',
+    reference: 'IRC §1366, §1367',
+  },
+  {
+    id: 'see2-040',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Filing',
+    subtopic: 'Form 1120-S',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A calendar-year S corporation\'s Form 1120-S is due on:',
+    options: [
+      'March 15',
+      'April 15',
+      'April 18',
+      'September 15'
+    ],
+    correctAnswer: 0,
+    explanation: 'Form 1120-S for a calendar-year S corporation is due on March 15 (the 15th day of the 3rd month after the tax year ends). This earlier deadline allows shareholders to receive Schedule K-1s before their individual return deadlines.',
+    reference: 'IRC §6072',
+  },
+];

@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 47 (Q461-470)
+ * Special Enforcement Programs & Procedures
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH47: Question[] = [
+  // ==========================================
+  // SEE3: Special Enforcement & Procedures
+  // ==========================================
+  {
+    id: 'see3-461',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'AUR Program',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Automated Underreporter (AUR) program:',
+    options: [
+      'Conducts in-person audits',
+      'Matches information returns (W-2, 1099) to filed tax returns and proposes adjustments',
+      'Only handles criminal cases',
+      'Reviews all returns manually'
+    ],
+    correctAnswer: 1,
+    explanation: 'AUR is IRS\'s automated matching program comparing third-party information returns (W-2, 1099, etc.) to filed returns. Discrepancies generate CP2000 notices proposing adjustments to income, deductions, or credits.',
+    reference: 'IRM 4.19; CP2000',
+  },
+  {
+    id: 'see3-462',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'CP2000 Response',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When responding to a CP2000 notice:',
+    options: [
+      'Payment is required immediately',
+      'The taxpayer should agree or disagree with documentation within 30 days of the notice date',
+      'The notice should be ignored',
+      'Only attorneys can respond'
+    ],
+    correctAnswer: 1,
+    explanation: 'Taxpayers have about 30 days (per notice) to respond agreeing (sign and return), partially agreeing, or disagreeing (with supporting documentation). No response results in assessment of proposed changes.',
+    reference: 'IRM 4.19.3; CP2000 Instructions',
+  },
+  {
+    id: 'see3-463',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Examination Techniques',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'IRS examiners may use which methods during audits:',
+    options: [
+      'Only review of records',
+      'Bank deposit analysis, indirect income methods, interview third parties, and net worth analysis',
+      'Only computerized matching',
+      'Criminal interrogation techniques'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRS uses direct methods (records review) and indirect methods: bank deposit analysis, net worth method, cash expenditure method, source and use of funds. Third-party contacts are permitted with notice.',
+    reference: 'IRM 4.10; IRC §7602',
+  },
+  {
+    id: 'see3-464',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Repeat Examination',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'IRS policy generally prohibits:',
+    options: [
+      'All audits',
+      'Examining the same items for 2+ prior years if those years were examined and no change resulted',
+      'Following up on audits',
+      'Using prior year information'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRS Policy Statement 4-3 prohibits reopening closed examinations that resulted in no change or small changes. Repetitive examination notices (letter 1675) should be sent if the same items are being re-examined.',
+    reference: 'IRM 4.3.2; Policy Statement 4-3',
+  },
+  {
+    id: 'see3-465',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Delegation Orders',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'IRS Delegation Orders:',
+    options: [
+      'Don\'t exist',
+      'Specify which IRS officials have authority to take various actions (approve settlements, issue summons, etc.)',
+      'Only apply to the Commissioner',
+      'Are secret'
+    ],
+    correctAnswer: 1,
+    explanation: 'Delegation Orders specify authority levels for IRS actions. For example, certain settlement amounts require approval by specific grade-level officials. Published in IRM and available publicly.',
+    reference: 'IRM 1.2.2',
+  },
+  {
+    id: 'see3-466',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Jeopardy Assessment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A jeopardy assessment may be made:',
+    options: [
+      'On all taxpayers',
+      'When delay would jeopardize collection due to flight risk, asset dissipation, or financial insolvency',
+      'Only for estimated taxes',
+      'Only after Tax Court petition'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6861, jeopardy assessments bypass normal deficiency procedures when collection is in jeopardy (taxpayer may leave U.S., hide assets, or become insolvent). Taxpayer can petition Tax Court afterward.',
+    reference: 'IRC §6861; IRC §6863',
+  },
+  {
+    id: 'see3-467',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Termination Assessment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A termination assessment under IRC §6851:',
+    options: [
+      'Closes inactive files',
+      'Immediately assesses tax for a short period when taxpayer intends to leave U.S. or conceal assets',
+      'Ends an audit',
+      'Is used for deceased taxpayers only'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6851 allows immediate assessment ending the taxpayer\'s taxable year short when the taxpayer designs to depart the U.S., remove property, or do acts tending to prejudice collection. Requires district director approval.',
+    reference: 'IRC §6851',
+  },
+  {
+    id: 'see3-468',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Transferee Liability',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Transferee liability under IRC §6901:',
+    options: [
+      'Never applies',
+      'Allows IRS to collect a taxpayer\'s liability from someone who received assets from the taxpayer',
+      'Only applies to corporations',
+      'Is purely voluntary'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6901 allows IRS to collect from transferees (e.g., heirs, gift recipients, corporate successors) who received assets from the liable taxpayer. Liability is limited to value of assets received.',
+    reference: 'IRC §6901',
+  },
+  {
+    id: 'see3-469',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Nominee/Alter Ego',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'IRS may pursue collection against nominees or alter egos when:',
+    options: [
+      'Never - only the taxpayer is liable',
+      'Assets are held in another\'s name but actually belong to the taxpayer, or an entity is the taxpayer\'s alter ego',
+      'Any shared ownership exists',
+      'Only in criminal cases'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRS can reach assets held by nominees (in name only for the taxpayer) or pierce the corporate veil for alter egos (where the entity and individual are essentially one). Badges of fraud analysis applies.',
+    reference: 'IRM 5.17.2',
+  },
+  {
+    id: 'see3-470',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Special Programs',
+    subtopic: 'Revenue Officer Authority',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An IRS Revenue Officer:',
+    options: [
+      'Can only send letters',
+      'Has authority to investigate collection matters, file liens, prepare levies, seize property, and negotiate alternatives',
+      'Only handles criminal investigations',
+      'Works exclusively on audits'
+    ],
+    correctAnswer: 1,
+    explanation: 'Revenue Officers are field collection employees with broad authority: investigate financial condition, file NFTL, issue levies, conduct seizures, and negotiate installment agreements or CNC status. Manager approval required for some actions.',
+    reference: 'IRM 5.1; IRC §6331',
+  },
+];

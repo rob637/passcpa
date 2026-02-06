@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 33 (Q321-330)
+ * IRS Examination Process
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH33: Question[] = [
+  // ==========================================
+  // SEE3: IRS Examination Process
+  // ==========================================
+  {
+    id: 'see3-321',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Selection Methods',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Returns may be selected for audit based on:',
+    options: [
+      'Random selection only',
+      'Computer scoring (DIF), document matching, related returns, or other criteria',
+      'Only if a tip is received',
+      'Every 5th return filed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Returns are selected through DIF scoring (Discriminant Function), document matching programs (e.g., W-2/1099 mismatch), related examinations, and special projects targeting specific issues.',
+    reference: 'IRM 4.1.3',
+  },
+  {
+    id: 'see3-322',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Types of Audits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A "correspondence audit" involves:',
+    options: [
+      'In-person meetings at IRS offices',
+      'Written communication via mail to verify specific items',
+      'Field visits to the taxpayer\'s home',
+      'Telephone calls only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Correspondence audits are conducted entirely by mail. The IRS requests documentation for specific items. These are typically the simplest audits for limited issues.',
+    reference: 'IRM 4.19.10',
+  },
+  {
+    id: 'see3-323',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Office Audit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An office examination:',
+    options: [
+      'Is conducted at the taxpayer\'s place of business',
+      'Is conducted at an IRS office, typically for individual returns with limited issues',
+      'Only involves correspondence',
+      'Is for businesses only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Office examinations occur at IRS offices. Taxpayers bring records to an appointment. These typically involve broader review than correspondence audits but less complex issues than field audits.',
+    reference: 'IRM 4.10.2',
+  },
+  {
+    id: 'see3-324',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Field Audit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A field examination:',
+    options: [
+      'Is always at the IRS office',
+      'Is conducted at the taxpayer\'s home, business, or representative\'s office',
+      'Only uses mail',
+      'Is for correspondence issues'
+    ],
+    correctAnswer: 1,
+    explanation: 'Field audits are the most comprehensive. Revenue agents visit the taxpayer\'s location (home, business, or representative\'s office) to examine books and records. Used for complex returns.',
+    reference: 'IRM 4.10.3',
+  },
+  {
+    id: 'see3-325',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Representation Rights',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'During an audit, a taxpayer has the right to:',
+    options: [
+      'Only appear in person without representation',
+      'Be represented by an authorized representative and have them appear without the taxpayer',
+      'Never have representation',
+      'Only bring family members'
+    ],
+    correctAnswer: 1,
+    explanation: 'Taxpayers have the right to be represented by an attorney, CPA, EA, or other authorized practitioner. With a valid POA, the representative may attend alone unless the IRS issues an administrative summons for taxpayer appearance.',
+    reference: 'IRC §7521(c)',
+  },
+  {
+    id: 'see3-326',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Recording Rights',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A taxpayer\'s right to record an audit interview:',
+    options: [
+      'Does not exist',
+      'Exists with 10 days advance notice to the IRS',
+      'Requires IRS permission',
+      'Is limited to video only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §7521(a), taxpayers may audio record in-person interviews with IRS employees, provided they give 10 calendar days advance notice. The IRS may also record with notice.',
+    reference: 'IRC §7521(a)',
+  },
+  {
+    id: 'see3-327',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Repeat Audits',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Regarding repeat audits of the same issue:',
+    options: [
+      'The IRS may audit any issue every year',
+      'If the same issue resulted in no change or minimal change in prior 2 years, audit may be discontinued',
+      'There are no limits',
+      'Only Tax Court can stop repeat audits'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under repeat audit rules, if the IRS examined the same or substantially same items in the preceding 2 years with no change or minor adjustments, the current audit may be discontinued upon request.',
+    reference: 'IRM 4.10.2.6.1',
+  },
+  {
+    id: 'see3-328',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Examination Report',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'After an audit, the IRS issues:',
+    options: [
+      'Only a verbal decision',
+      'An examination report (Form 4549 for individuals) showing proposed changes',
+      'A refund automatically',
+      'A court summons'
+    ],
+    correctAnswer: 1,
+    explanation: 'The examiner issues a report (Form 4549 for individuals, Form 4549-A for businesses) showing proposed adjustments. The taxpayer may agree, partially agree, or disagree.',
+    reference: 'IRM 4.10.8',
+  },
+  {
+    id: 'see3-329',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: 'Agreed Case',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If a taxpayer agrees with the examination findings:',
+    options: [
+      'They must appeal',
+      'They sign a consent form (Form 870 or similar) and the case is closed',
+      'The case goes to Appeals automatically',
+      'A trial is required'
+    ],
+    correctAnswer: 1,
+    explanation: 'When the taxpayer agrees, they sign Form 870 (or similar consent form) accepting the changes. The assessment is made, and the case is closed. No appeal rights remain after signing.',
+    reference: 'IRM 4.10.8.2',
+  },
+  {
+    id: 'see3-330',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Examination Process',
+    subtopic: '30-Day Letter',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A 30-day letter:',
+    options: [
+      'Is the same as a 90-day letter',
+      'Provides 30 days to request an Appeals conference before a statutory notice is issued',
+      'Is a levy notice',
+      'Comes after Tax Court petition'
+    ],
+    correctAnswer: 1,
+    explanation: 'The 30-day letter accompanies the examination report and gives the taxpayer 30 days to accept, submit additional information, or request an Appeals conference before a statutory notice of deficiency is issued.',
+    reference: 'IRM 4.10.8.12',
+  },
+];

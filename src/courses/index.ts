@@ -7,22 +7,29 @@
 
 import { Course, CourseId, DEFAULT_COURSE_ID } from '../types/course';
 import { CPA_COURSE } from './cpa';
+import { EA_COURSE } from './ea';
+import { CMA_COURSE } from './cma';
+import { CIA_COURSE } from './cia';
+import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE } from '../config/featureFlags';
 
 /**
  * All registered courses
  */
 export const COURSES: Record<CourseId, Course> = {
   cpa: CPA_COURSE,
-  // Future courses will be added here:
-  // cma: CMA_COURSE,
-  // ea: EA_COURSE,
-  // cia: CIA_COURSE,
+  ea: EA_COURSE,
+  cma: CMA_COURSE,
+  cia: CIA_COURSE,
 } as Record<CourseId, Course>;
 
 /**
  * Courses that are currently active/available to users
  */
-export const ACTIVE_COURSES: CourseId[] = ['cpa'];
+export const ACTIVE_COURSES: CourseId[] = [
+  'cpa',
+  ...(ENABLE_EA_COURSE ? ['ea'] : []),
+  ...(ENABLE_CMA_COURSE ? ['cma'] : []),
+] as CourseId[];
 
 /**
  * Get a course by ID

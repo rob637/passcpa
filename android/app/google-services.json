@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "776007737692",
+    "project_id": "voraprep-prod",
+    "storage_bucket": "voraprep-prod.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776007737692:android:2ae67b9a130d0139aea199",
+        "android_client_info": {
+          "package_name": "com.voraprep.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776007737692-kqnjcafdrnk6u8coegojqb0vnoafsp0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCreX2j2UUA94O-jYFY58x5fiiuCHcobUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776007737692-kqnjcafdrnk6u8coegojqb0vnoafsp0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

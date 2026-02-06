@@ -34,10 +34,18 @@ if (missingVars.length > 0) {
   }
 }
 
+// Detect if running in Capacitor native app
+const isCapacitorNative = typeof window !== 'undefined' && 
+  (window.Capacitor?.isNativePlatform?.() || window.Capacitor?.getPlatform?.() !== 'web');
+
 // Firebase config - requires environment variables
+// Note: For native apps, use default Firebase authDomain instead of custom domain
+// Custom domains don't work well with WebView storage partitioning
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  authDomain: isCapacitorNative 
+    ? `${import.meta.env.VITE_FIREBASE_PROJECT_ID}.firebaseapp.com`
+    : import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
@@ -78,9 +86,13 @@ validateEnvironmentMatch();
 
 // SAFETY CHECK: Prevent Production Config on Development URLs
 // This prevents "npm run build" (prod default) from being accidentally deployed to dev
+// Note: Capacitor native apps run on localhost but should use production config
 if (typeof window !== 'undefined') {
   const hostname = window.location.hostname;
-  const isDevUrl = hostname.includes('passcpa-dev') || hostname.includes('localhost') || hostname.includes('127.0.0.1');
+  const isCapacitorNative = window.Capacitor?.isNativePlatform?.() || window.Capacitor?.getPlatform?.() !== 'web';
+  const isDevUrl = hostname.includes('passcpa-dev') || 
+    (hostname.includes('localhost') && !isCapacitorNative) || 
+    (hostname.includes('127.0.0.1') && !isCapacitorNative);
   const isProdConfig = firebaseConfig.projectId === 'voraprep-prod';
 
   if (isDevUrl && isProdConfig) {

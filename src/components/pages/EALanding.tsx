@@ -17,6 +17,8 @@ import {
   Award,
   TrendingUp,
 } from 'lucide-react';
+import { Card } from '../common/Card';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) => {
@@ -38,6 +40,12 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; d
 
 const EALanding = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  useSEO({
+    title: LANDING_SEO.ea.title,
+    description: LANDING_SEO.ea.description,
+    canonicalUrl: 'https://voraprep.com/ea-prep',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -217,7 +225,7 @@ const EALanding = () => {
               Pass all 3 parts of the <span className="font-semibold text-emerald-600">Special Enrollment Examination</span> with 
               <span className="font-semibold text-emerald-600"> AI-powered prep</span>.
               <br className="hidden md:block" />
-              1,500+ questions. Adaptive learning. <span className="font-semibold text-emerald-600">100% Free</span> during Beta.
+              2,100+ questions. Adaptive learning. <span className="font-semibold text-emerald-600">100% Free</span> during Beta.
             </p>
 
             {/* CTA Buttons */}
@@ -285,21 +293,21 @@ const EALanding = () => {
               taxpayers before the IRS. It's the highest credential awarded by the IRS and is recognized across all 50 states.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+              <Card className="p-6">
                 <Users className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 dark:text-white mb-2">Unlimited Representation</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">Represent any taxpayer on any tax matter before the IRS</p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+              </Card>
+              <Card className="p-6">
                 <TrendingUp className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 dark:text-white mb-2">Growing Demand</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">Tax complexity drives demand for qualified professionals</p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+              </Card>
+              <Card className="p-6">
                 <Clock className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 dark:text-white mb-2">Faster Path</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400">No degree required — pass the exam and meet IRS standards</p>
-              </div>
+              </Card>
             </div>
           </div>
         </section>
@@ -359,14 +367,14 @@ const EALanding = () => {
               {whyVoraPrep.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-shadow">
+                  <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-${item.color}-500 to-${item.color}-600 flex items-center justify-center mb-4`}>
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-xs font-bold text-emerald-600 mb-1">{item.stat}</div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                  </div>
+                  </Card>
                 );
               })}
             </div>

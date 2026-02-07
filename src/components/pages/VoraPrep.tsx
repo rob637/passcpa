@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 import { 
   BookOpen, 
   Brain, 
@@ -43,7 +44,7 @@ const COURSES: CourseInfo[] = [
     icon: Calculator,
     color: 'blue',
     bgGradient: 'from-blue-500 to-blue-600',
-    stats: { questions: '2,900+', passRate: '50%' },
+    stats: { questions: '3,300+', passRate: '50%' },
     features: ['2025 & 2026 Blueprint', 'Core + Discipline Format', 'TBS Simulations', 'Written Communication'],
     path: '/cpa',
     available: true,
@@ -56,7 +57,7 @@ const COURSES: CourseInfo[] = [
     icon: FileText,
     color: 'emerald',
     bgGradient: 'from-emerald-500 to-emerald-600',
-    stats: { questions: '1,500+', passRate: '70%' },
+    stats: { questions: '2,100+', passRate: '70%' },
     features: ['SEE Parts 1-3', 'Tax Code Coverage', 'IRS Procedures', 'Representation Rules'],
     path: '/ea-prep',
     available: true,
@@ -69,7 +70,7 @@ const COURSES: CourseInfo[] = [
     icon: BarChart3,
     color: 'emerald',
     bgGradient: 'from-emerald-600 to-emerald-700',
-    stats: { questions: '550+', passRate: '45%' },
+    stats: { questions: '1,600+', passRate: '45%' },
     features: ['Financial Planning', 'Performance Management', 'Cost Management', 'Internal Controls'],
     path: '/cma',
     available: true,
@@ -82,7 +83,7 @@ const COURSES: CourseInfo[] = [
     icon: Search,
     color: 'amber',
     bgGradient: 'from-amber-500 to-amber-600',
-    stats: { questions: '1,800+', passRate: '40%' },
+    stats: { questions: '1,100+', passRate: '40%' },
     features: ['Internal Audit Basics', 'Practice of Internal Auditing', 'Business Knowledge', 'Risk Management'],
     path: '/cia',
     available: true,
@@ -95,7 +96,7 @@ const COURSES: CourseInfo[] = [
     icon: TrendingUp,
     color: 'green',
     bgGradient: 'from-green-500 to-green-600',
-    stats: { questions: '2,000+', passRate: '67%' },
+    stats: { questions: '2,100+', passRate: '67%' },
     features: ['8 Knowledge Domains', 'Wealth Management', 'Financial Planning', 'Fiduciary Standards'],
     path: '/cfp',
     available: true,
@@ -108,7 +109,7 @@ const COURSES: CourseInfo[] = [
     icon: Shield,
     color: 'cyan',
     bgGradient: 'from-cyan-500 to-cyan-600',
-    stats: { questions: '1,200+', passRate: '50%' },
+    stats: { questions: '1,100+', passRate: '50%' },
     features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
     path: '/cisa',
     available: true,
@@ -221,6 +222,13 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
 
 const VoraPrep = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  // SEO meta tags
+  useSEO({
+    title: LANDING_SEO.home.title,
+    description: LANDING_SEO.home.description,
+    canonicalUrl: 'https://voraprep.com',
+  });
 
   useEffect(() => {
     setIsVisible(true);

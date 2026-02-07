@@ -12,9 +12,17 @@ import {
   Zap,
   Shield,
 } from 'lucide-react';
+import { Card } from '../common/Card';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 
 const CFPLanding = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  useSEO({
+    title: LANDING_SEO.cfp.title,
+    description: LANDING_SEO.cfp.description,
+    canonicalUrl: 'https://voraprep.com/cfp',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -212,7 +220,7 @@ const CFPLanding = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-green-500" />
-                2,000+ Practice Questions
+                2,100+ Practice Questions
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-green-500" />
@@ -242,13 +250,13 @@ const CFPLanding = () => {
               {whyVoraPrep.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                  <Card key={idx} className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                  </div>
+                  </Card>
                 );
               })}
             </div>
@@ -269,7 +277,7 @@ const CFPLanding = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {cfpDomains.map((domain, idx) => (
-                <div key={idx} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-green-900/5 transition-all">
+                <Card key={idx} variant="interactive" className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <span className={`text-${domain.color}-600 font-bold text-lg`}>{domain.weight}</span>
                     <div className={`w-2 h-2 rounded-full bg-${domain.color}-500`} />
@@ -283,7 +291,7 @@ const CFPLanding = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
@@ -302,13 +310,13 @@ const CFPLanding = () => {
               {whyCFP.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                  <Card key={idx} className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                  </div>
+                  </Card>
                 );
               })}
             </div>

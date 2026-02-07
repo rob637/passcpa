@@ -13,9 +13,16 @@ import {
   Target,
   Zap,
 } from 'lucide-react';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 
 const CIALanding = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  useSEO({
+    title: LANDING_SEO.cia.title,
+    description: LANDING_SEO.cia.description,
+    canonicalUrl: 'https://voraprep.com/cia',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -196,7 +203,7 @@ const CIALanding = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-amber-500" />
-                1,800+ Practice Questions
+                1,100+ Practice Questions
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-amber-500" />
@@ -339,7 +346,7 @@ const CIALanding = () => {
             <div className="flex gap-6 text-sm text-slate-400">
               <Link to="/" className="hover:text-white transition-colors">All Certifications</Link>
               <Link to="/cpa" className="hover:text-white transition-colors">CPA Prep</Link>
-              <Link to="/ea" className="hover:text-white transition-colors">EA Prep</Link>
+              <Link to="/ea-prep" className="hover:text-white transition-colors">EA Prep</Link>
             </div>
           </div>
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500">

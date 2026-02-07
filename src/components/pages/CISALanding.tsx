@@ -12,9 +12,16 @@ import {
   Target,
   Zap,
 } from 'lucide-react';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 
 const CISALanding = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  useSEO({
+    title: LANDING_SEO.cisa.title,
+    description: LANDING_SEO.cisa.description,
+    canonicalUrl: 'https://voraprep.com/cisa',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -198,7 +205,7 @@ const CISALanding = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-cyan-500" />
-                1,200+ Practice Questions
+                1,100+ Practice Questions
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-cyan-500" />

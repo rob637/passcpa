@@ -3,6 +3,7 @@ import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../config/firebase';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 import { 
   BookOpen, 
   Brain, 
@@ -47,6 +48,13 @@ const CPALanding = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+
+  // SEO meta tags
+  useSEO({
+    title: LANDING_SEO.cpa.title,
+    description: LANDING_SEO.cpa.description,
+    canonicalUrl: 'https://voraprep.com/cpa',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -263,6 +271,14 @@ const CPALanding = () => {
             </div>
           </div>
 
+          {/* BEC Deadline Warning */}
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-lg text-sm">
+              <span className="font-semibold">⚠️ BEC Deadline:</span>
+              <span>The BEC section is available until June 30, 2026. Plan your exam schedule accordingly.</span>
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-6xl font-extrabold text-center mb-4 leading-tight">
             <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
               Pass Your CPA Exam
@@ -277,7 +293,7 @@ const CPALanding = () => {
             The <span className="font-semibold text-blue-600">AI-powered</span> CPA prep platform that's 
             <span className="font-semibold text-emerald-600"> 100% Free</span> during Beta.
             <br className="hidden md:block" />
-            2,900+ questions. <span className="font-semibold text-blue-600">True adaptive learning</span>. SM-2 spaced repetition. Zero credit card.
+            3,300+ questions. <span className="font-semibold text-blue-600">True adaptive learning</span>. SM-2 spaced repetition. Zero credit card.
           </p>
 
           {/* CTA Buttons */}

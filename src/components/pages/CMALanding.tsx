@@ -14,9 +14,17 @@ import {
   Zap,
   Shield,
 } from 'lucide-react';
+import { Card } from '../common/Card';
+import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 
 const CMALanding = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  useSEO({
+    title: LANDING_SEO.cma.title,
+    description: LANDING_SEO.cma.description,
+    canonicalUrl: 'https://voraprep.com/cma',
+  });
 
   useEffect(() => {
     setIsVisible(true);
@@ -189,7 +197,7 @@ const CMALanding = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-purple-500" />
-                550+ Practice Questions
+                1,600+ Practice Questions
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-purple-500" />
@@ -219,13 +227,13 @@ const CMALanding = () => {
               {whyVoraPrep.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                  <Card key={idx} className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                  </div>
+                  </Card>
                 );
               })}
             </div>
@@ -283,13 +291,13 @@ const CMALanding = () => {
               {whyCMA.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                  <Card key={idx} className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
-                  </div>
+                  </Card>
                 );
               })}
             </div>
@@ -332,7 +340,7 @@ const CMALanding = () => {
             <div className="flex gap-6 text-sm text-slate-400">
               <Link to="/" className="hover:text-white transition-colors">All Certifications</Link>
               <Link to="/cpa" className="hover:text-white transition-colors">CPA Prep</Link>
-              <Link to="/ea" className="hover:text-white transition-colors">EA Prep</Link>
+              <Link to="/ea-prep" className="hover:text-white transition-colors">EA Prep</Link>
             </div>
           </div>
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500">

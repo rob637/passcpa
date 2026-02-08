@@ -801,6 +801,243 @@ export const cisa4Lessons: Lesson[] = [
       ],
     },
   },
+
+  {
+    id: 'CISA4-013',
+    courseId: 'cisa',
+    section: 'CISA4',
+    title: 'Cloud Operations and SLA Management',
+    description: 'Understand cloud service operations and service level agreement management',
+    order: 13,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Cloud Operations', 'SLA Management', 'Cloud Monitoring', 'Service Governance'],
+    blueprintArea: 'CISA4-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Cloud services shift operational responsibilities but not accountability. Auditors must verify that cloud operations meet business requirements and SLAs are properly managed.",
+        },
+        {
+          title: 'Cloud Service Models',
+          type: 'table',
+          headers: ['Model', 'Provider Manages', 'Customer Manages'],
+          rows: [
+            ['IaaS', 'Infrastructure, virtualization', 'OS, middleware, applications, data'],
+            ['PaaS', 'Infrastructure through runtime', 'Applications and data'],
+            ['SaaS', 'Everything technical', 'Configuration, user access, data'],
+          ],
+        },
+        {
+          title: 'Cloud Operations Controls',
+          type: 'text',
+          content: "**Key Control Areas:**\n\n**Identity and Access**\n• Federated identity\n• Multi-factor authentication\n• Privileged access management\n• Access reviews\n\n**Data Protection**\n• Encryption at rest\n• Encryption in transit\n• Key management\n• Data loss prevention\n\n**Network Security**\n• Virtual network segmentation\n• Firewalls and security groups\n• Web application firewall (WAF)\n• DDoS protection\n\n**Monitoring and Logging**\n• Cloud-native monitoring\n• Log aggregation\n• SIEM integration\n• Alert management",
+        },
+        {
+          title: 'SLA Key Elements',
+          type: 'text',
+          content: "**Essential SLA Components:**\n\n**Availability Commitments**\n• Uptime percentage (99.9%, 99.99%)\n• Measurement method\n• Exclusions and maintenance windows\n• Credit/remedy for breach\n\n**Performance Metrics**\n• Response time\n• Throughput\n• Latency\n• Error rates\n\n**Support Levels**\n• Severity definitions\n• Response times by severity\n• Escalation procedures\n• Support hours\n\n**Security and Compliance**\n• Security certifications\n• Audit rights\n• Breach notification\n• Data handling",
+        },
+        {
+          title: 'SLA Monitoring',
+          type: 'text',
+          content: "**Monitoring Requirements:**\n\n**What to Monitor:**\n• Actual vs. committed availability\n• Performance against baselines\n• Incident response times\n• Security events\n\n**How to Verify:**\n• Independent monitoring tools\n• Provider dashboards\n• Third-party attestations (SOC reports)\n• Synthetic transactions\n\n**Governance Activities:**\n• Regular SLA review meetings\n• Trend analysis\n• Credit claims when applicable\n• Contract renewal planning",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Cloud responsibility varies by service model (IaaS, PaaS, SaaS)",
+            "Key controls: identity, data protection, network security, monitoring",
+            "SLAs must define availability, performance, support, and security",
+            "Independent monitoring verifies provider SLA compliance",
+            "Regular governance ensures SLAs continue to meet business needs",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA4-014',
+    courseId: 'cisa',
+    section: 'CISA4',
+    title: 'IT Service Continuity Management',
+    description: 'Learn comprehensive IT service continuity planning and management',
+    order: 14,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['ITSCM', 'Business Continuity', 'Recovery Strategies', 'Continuity Testing'],
+    blueprintArea: 'CISA4-B',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "IT Service Continuity Management (ITSCM) ensures IT can support business operations during and after disruptions. It's a critical component of Business Continuity Management (BCM).",
+        },
+        {
+          title: 'ITSCM Process',
+          type: 'text',
+          content: "**ITSCM Lifecycle:**\n\n**1. Initiation**\n• Define scope\n• Establish governance\n• Allocate resources\n• Identify stakeholders\n\n**2. Requirements Analysis**\n• Business Impact Analysis (BIA)\n• Risk assessment\n• Recovery objectives (RTO, RPO)\n• Critical IT services\n\n**3. Strategy Development**\n• Recovery options\n• Cost-benefit analysis\n• Resource requirements\n• Vendor strategies\n\n**4. Implementation**\n• Develop plans\n• Establish recovery sites\n• Implement solutions\n• Train staff\n\n**5. Operation**\n• Testing and exercises\n• Maintenance and updates\n• Continuous improvement\n• Audit and review",
+        },
+        {
+          title: 'Recovery Options',
+          type: 'table',
+          headers: ['Site Type', 'Description', 'Recovery Time', 'Cost'],
+          rows: [
+            ['Hot Site', 'Fully equipped, data synced', 'Hours', 'High'],
+            ['Warm Site', 'Partial equipment, recent backup', '1-3 days', 'Medium'],
+            ['Cold Site', 'Basic facility only', 'Days to weeks', 'Low'],
+            ['Mobile Site', 'Transportable facility', '1-2 days', 'Medium'],
+            ['Cloud DR', 'Virtual infrastructure', 'Minutes to hours', 'Variable'],
+          ],
+        },
+        {
+          title: 'Data Replication Strategies',
+          type: 'text',
+          content: "**Replication Methods:**\n\n**Synchronous Replication**\n• Zero data loss (RPO = 0)\n• Transactions committed at both sites\n• Distance limited (latency impact)\n• Higher cost\n\n**Asynchronous Replication**\n• Near-zero data loss\n• Some transaction lag\n• Greater distance supported\n• Lower cost\n\n**Backup Strategies**\n• Full backup (complete copy)\n• Incremental (changes since last backup)\n• Differential (changes since last full)\n• Continuous Data Protection (CDP)",
+        },
+        {
+          title: 'Continuity Testing Types',
+          type: 'text',
+          content: "**Testing Approaches:**\n\n**Plan Review**\n• Desk check of documentation\n• Identify gaps and outdated info\n• Low cost/risk\n• Limited assurance\n\n**Walkthrough/Tabletop**\n• Team reviews procedures\n• Discussion-based\n• Identifies coordination issues\n• Moderate assurance\n\n**Simulation/Drill**\n• Scenario-based exercise\n• Mobilize recovery teams\n• Practice procedures\n• Higher assurance\n\n**Full Interruption Test**\n• Actual failover to recovery site\n• Real operations at DR site\n• Highest assurance\n• Highest risk/cost",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "ITSCM aligns IT recovery with business continuity requirements",
+            "BIA drives RTO/RPO requirements for critical IT services",
+            "Site options: hot, warm, cold, mobile, cloud - balance cost with recovery time",
+            "Sync replication for zero data loss; async for cost efficiency",
+            "Regular testing validates plans - progress from walkthroughs to full tests",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA4-015',
+    courseId: 'cisa',
+    section: 'CISA4',
+    title: 'End-User Computing Controls',
+    description: 'Understand controls for spreadsheets, databases, and user-developed applications',
+    order: 15,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['End-User Computing', 'Spreadsheet Controls', 'Shadow IT', 'Data Governance'],
+    blueprintArea: 'CISA4-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "End-user computing (EUC) applications like spreadsheets often support critical business processes but lack the controls of formal systems. Uncontrolled EUC creates significant operational and financial risk.",
+        },
+        {
+          title: 'EUC Risk Areas',
+          type: 'text',
+          content: "**Key Risks:**\n\n**Data Integrity**\n• Formula errors\n• Manual data entry mistakes\n• Version confusion\n• Unauthorized changes\n\n**Availability**\n• Single points of failure\n• No disaster recovery\n• Key person dependency\n• Lack of documentation\n\n**Security**\n• Inadequate access controls\n• Sensitive data exposure\n• Lack of audit trails\n• Unencrypted storage\n\n**Compliance**\n• Regulatory requirements\n• Audit trail gaps\n• Data retention issues\n• SOX/regulatory exposure",
+        },
+        {
+          title: 'EUC Control Framework',
+          type: 'table',
+          headers: ['Control Area', 'Key Controls', 'Purpose'],
+          rows: [
+            ['Inventory', 'Registration, classification', 'Know what exists'],
+            ['Development', 'Testing, review, approval', 'Ensure accuracy'],
+            ['Change Control', 'Version control, documentation', 'Maintain integrity'],
+            ['Access', 'Protection, permissions', 'Prevent unauthorized changes'],
+            ['Backup', 'Regular backup, recovery testing', 'Ensure availability'],
+          ],
+        },
+        {
+          title: 'Spreadsheet Controls',
+          type: 'text',
+          content: "**Specific Spreadsheet Controls:**\n\n**Design Controls**\n• Separate inputs from calculations\n• Clear cell labeling\n• Formula documentation\n• Error checking formulas\n\n**Integrity Controls**\n• Cell protection\n• Data validation\n• Input range checks\n• Formula auditing\n\n**Operational Controls**\n• Version numbering\n• Change log\n• Backup copies\n• Access restrictions\n\n**Review Controls**\n• Independent formula review\n• Periodic accuracy testing\n• Comparison to source data\n• Reasonableness checks",
+        },
+        {
+          title: 'Shadow IT Management',
+          type: 'text',
+          content: "**Addressing Shadow IT:**\n\n**Discovery**\n• Network monitoring\n• Cloud access security brokers\n• User surveys\n• Expense report analysis\n\n**Risk Assessment**\n• Data sensitivity\n• Business criticality\n• Compliance implications\n• Security posture\n\n**Governance Options**\n• Sanctioned vs. unsanctioned\n• Migration to approved tools\n• Added to enterprise controls\n• Accepted with monitoring\n\n**Prevention**\n• Responsive IT services\n• Easy provisioning\n• User education\n• Clear policies",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "EUC risks: data integrity, availability, security, compliance",
+            "Maintain inventory of critical EUC applications",
+            "Spreadsheet controls: design, integrity, operational, review",
+            "Shadow IT requires discovery, assessment, and governance",
+            "Balance EUC flexibility with appropriate risk controls",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA4-016',
+    courseId: 'cisa',
+    section: 'CISA4',
+    title: 'Performance and Capacity Management',
+    description: 'Learn to audit IT performance monitoring and capacity planning processes',
+    order: 16,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Performance Management', 'Capacity Planning', 'SLA Monitoring', 'Trend Analysis'],
+    blueprintArea: 'CISA4-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Poor performance impacts user productivity and customer satisfaction. Inadequate capacity leads to outages during peak demand. Proactive management prevents costly problems.",
+        },
+        {
+          title: 'Performance Management',
+          type: 'text',
+          content: "**Performance Monitoring:**\n\n**Infrastructure Metrics**\n• CPU utilization\n• Memory usage\n• Disk I/O and latency\n• Network bandwidth/latency\n\n**Application Metrics**\n• Response time\n• Transaction throughput\n• Error rates\n• User concurrency\n\n**Business Metrics**\n• SLA achievement\n• User satisfaction\n• Business process completion\n• Revenue impact\n\n**Monitoring Tools**\n• Real-time dashboards\n• Historical trending\n• Alerting and notification\n• Root cause analysis",
+        },
+        {
+          title: 'Performance Baselines',
+          type: 'table',
+          headers: ['Baseline Type', 'Purpose', 'Refresh Frequency'],
+          rows: [
+            ['Normal Operations', 'Detect anomalies', 'Quarterly'],
+            ['Peak Periods', 'Plan for high demand', 'Annually'],
+            ['Post-Change', 'Validate changes', 'After major changes'],
+            ['Degradation Trend', 'Predict issues', 'Monthly review'],
+          ],
+        },
+        {
+          title: 'Capacity Planning Process',
+          type: 'text',
+          content: "**Capacity Management:**\n\n**1. Demand Analysis**\n• Current utilization\n• Growth trends\n• Business forecasts\n• Planned projects\n\n**2. Resource Analysis**\n• Current capacity\n• Component limits\n• Scalability options\n• Technology refresh\n\n**3. Gap Analysis**\n• Demand vs. capacity\n• Timeline to threshold\n• Risk assessment\n• Priority ranking\n\n**4. Planning**\n• Capacity additions\n• Budget requirements\n• Implementation timeline\n• Alternative strategies\n\n**5. Implementation**\n• Procurement\n• Installation\n• Testing\n• Cutover",
+        },
+        {
+          title: 'Capacity Strategies',
+          type: 'text',
+          content: "**Capacity Options:**\n\n**Lead Strategy**\n• Add capacity before need\n• Lower risk of shortage\n• Higher carrying cost\n• Good for predictable growth\n\n**Lag Strategy**\n• Add capacity after demand\n• Lower cost, higher risk\n• Reactive approach\n• May cause performance issues\n\n**Match Strategy**\n• Incremental additions\n• Balance cost and risk\n• Requires good forecasting\n• Most common approach\n\n**Cloud Elasticity**\n• On-demand scaling\n• Pay-per-use\n• Rapid provisioning\n• Ideal for variable workloads",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Monitor infrastructure, application, and business metrics",
+            "Establish and maintain performance baselines",
+            "Capacity planning: demand analysis, resource analysis, gap analysis, planning",
+            "Strategies: lead (proactive), lag (reactive), match (balanced), elastic (cloud)",
+            "Proactive capacity management prevents performance crises",
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default cisa4Lessons;

@@ -656,6 +656,251 @@ export const cisa3Lessons: Lesson[] = [
       ],
     },
   },
+
+  // ============================================================================
+  // DOMAIN 3D: ADDITIONAL TOPICS
+  // ============================================================================
+
+  {
+    id: 'CISA3-011',
+    courseId: 'cisa',
+    section: 'CISA3',
+    title: 'Application Controls',
+    description: 'Understand input, processing, and output controls for applications',
+    order: 11,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Input Controls', 'Processing Controls', 'Output Controls', 'Data Validation'],
+    blueprintArea: 'CISA3-C',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Application controls ensure data integrity at each stage of processing. Weak controls can result in invalid, incomplete, or unauthorized transactions entering systems.",
+        },
+        {
+          title: 'Input Controls',
+          type: 'text',
+          content: "**Purpose:** Ensure data entering the system is accurate, complete, and authorized.\n\n**Control Types:**\n\n**Source Document Controls**\n• Pre-numbered forms\n• Turnaround documents\n• Document cancellation\n\n**Data Entry Controls**\n• Authorization before entry\n• Batch totals\n• Input validation\n• Dual entry for critical data\n\n**Validation Checks:**\n• **Field check** - Correct data type\n• **Limit check** - Within range\n• **Reasonableness check** - Logically valid\n• **Check digit** - Numeric verification\n• **Validity check** - Matches valid values\n• **Completeness check** - Required fields present",
+        },
+        {
+          title: 'Processing Controls',
+          type: 'text',
+          content: "**Purpose:** Ensure accurate and complete data transformation.\n\n**Control Types:**\n\n**Run-to-Run Totals**\n• Compare batch totals across processing steps\n• Verify no records lost or added\n\n**Programmed Controls**\n• Sequence checking\n• Limit testing\n• Duplicate checking\n• Audit trails\n\n**File Controls**\n• Header/trailer labels\n• Version checking\n• Before/after images\n\n**Exception Handling**\n• Suspense file for rejects\n• Error correction procedures\n• Management review of exceptions",
+        },
+        {
+          title: 'Control Types Comparison',
+          type: 'table',
+          headers: ['Stage', 'Primary Risk', 'Key Controls'],
+          rows: [
+            ['Input', 'Invalid/unauthorized data', 'Validation, authorization, batch totals'],
+            ['Processing', 'Incorrect transformation', 'Run-to-run totals, exception reports'],
+            ['Output', 'Unauthorized disclosure', 'Distribution lists, balancing, destruction'],
+          ],
+        },
+        {
+          title: 'Output Controls',
+          type: 'text',
+          content: "**Purpose:** Ensure output is complete, accurate, and distributed appropriately.\n\n**Control Types:**\n\n**Completeness Controls**\n• Page numbering\n• Report totals\n• End-of-report markers\n\n**Distribution Controls**\n• Authorized distribution lists\n• Pickup confirmation\n• Secure delivery methods\n\n**Retention Controls**\n• Retention schedules\n• Secure storage\n• Proper destruction\n\n**Balancing Controls**\n• Compare output totals to input\n• Reconciliation procedures\n• Variance investigation",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Input controls prevent bad data from entering systems",
+            "Validation checks include field, limit, reasonableness, and check digit",
+            "Processing controls use run-to-run totals and exception handling",
+            "Output controls ensure proper distribution and retention",
+            "Each stage addresses different risks in the data lifecycle",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA3-012',
+    courseId: 'cisa',
+    section: 'CISA3',
+    title: 'Data Migration and Conversion',
+    description: 'Learn controls for migrating data between systems',
+    order: 12,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Data Migration', 'ETL', 'Data Quality', 'Conversion Testing'],
+    blueprintArea: 'CISA3-C',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Data migration is one of the highest-risk activities in system implementations. Data loss, corruption, or transformation errors can cripple new systems.",
+        },
+        {
+          title: 'Data Migration Planning',
+          type: 'text',
+          content: "**Key Planning Activities:**\n\n**1. Scope Definition**\n• What data to migrate\n• What to leave behind\n• What to archive\n• Data quality thresholds\n\n**2. Source Analysis**\n• Data profiling\n• Quality assessment\n• Volume estimation\n• Relationship mapping\n\n**3. Mapping Design**\n• Field-to-field mapping\n• Transformation rules\n• Default values\n• Exception handling\n\n**4. Timing and Approach**\n• Big bang vs. phased\n• Cutover windows\n• Rollback procedures\n• Parallel run period",
+        },
+        {
+          title: 'ETL Process',
+          type: 'text',
+          content: "**Extract, Transform, Load:**\n\n**Extract**\n• Pull data from source systems\n• Maintain extraction logs\n• Handle connectivity issues\n• Preserve source data\n\n**Transform**\n• Data cleansing\n• Format conversion\n• Business rule application\n• Enrichment\n\n**Load**\n• Insert into target system\n• Handle duplicates\n• Maintain referential integrity\n• Transaction management\n\n**Controls at Each Stage:**\n• Record counts\n• Hash totals\n• Exception logging\n• Audit trail",
+        },
+        {
+          title: 'Migration Approaches',
+          type: 'table',
+          headers: ['Approach', 'Description', 'Risk Level'],
+          rows: [
+            ['Big Bang', 'All data migrated at once', 'High (single point of failure)'],
+            ['Phased', 'Data migrated in segments', 'Medium (longer transition)'],
+            ['Parallel Run', 'Both systems operate together', 'Lower (but expensive)'],
+            ['Trickle', 'Continuous synchronization', 'Medium (complexity)'],
+          ],
+        },
+        {
+          title: 'Data Quality Controls',
+          type: 'text',
+          content: "**Pre-Migration Cleansing:**\n• Identify and fix data issues before migration\n• Deduplicate records\n• Standardize formats\n• Complete missing values\n\n**Migration Validation:**\n• Record count reconciliation\n• Field-level sampling\n• Business rule verification\n• User acceptance testing\n\n**Post-Migration Verification:**\n• Data integrity checks\n• Relationship validation\n• Business process testing\n• Exception resolution",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Migration planning includes scope, source analysis, mapping, and timing",
+            "ETL covers extract, transform, load with controls at each stage",
+            "Migration approaches: big bang, phased, parallel, trickle",
+            "Data quality controls apply before, during, and after migration",
+            "Always maintain rollback capability and audit trails",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA3-013',
+    courseId: 'cisa',
+    section: 'CISA3',
+    title: 'Post-Implementation Review',
+    description: 'Conduct effective post-implementation reviews and lessons learned',
+    order: 13,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['PIR', 'Benefits Realization', 'Lessons Learned', 'Project Closure'],
+    blueprintArea: 'CISA3-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Post-implementation reviews verify that projects delivered promised benefits and capture lessons for future projects. Without PIR, organizations repeat mistakes and fail to measure success.",
+        },
+        {
+          title: 'PIR Objectives',
+          type: 'text',
+          content: "**Purpose of Post-Implementation Review:**\n\n**1. Benefits Verification**\n• Were expected benefits achieved?\n• Are there unexpected benefits?\n• What benefits are still unrealized?\n\n**2. Performance Assessment**\n• Is the system performing as designed?\n• Are service levels being met?\n• Are users satisfied?\n\n**3. Process Evaluation**\n• Was the project well managed?\n• Were estimates accurate?\n• What worked well?\n\n**4. Lessons Capture**\n• What should be repeated?\n• What should be improved?\n• How to apply lessons going forward?",
+        },
+        {
+          title: 'PIR Timing',
+          type: 'text',
+          content: "**When to Conduct PIR:**\n\n**Immediate (1-3 months post go-live)**\n• Technical performance\n• Stabilization issues\n• User adoption challenges\n• Critical defects\n\n**Intermediate (6-12 months)**\n• Benefits realization progress\n• Process improvements\n• User proficiency\n• Operational metrics\n\n**Long-term (12-24 months)**\n• Full benefits realization\n• Strategic alignment\n• Total cost of ownership\n• Business value delivered\n\n**Key:** Schedule PIR timing at project initiation so resources are committed.",
+        },
+        {
+          title: 'PIR Assessment Areas',
+          type: 'table',
+          headers: ['Area', 'Questions to Answer'],
+          rows: [
+            ['Scope', 'Was scope delivered? Were changes managed?'],
+            ['Schedule', 'Was timeline met? What caused delays?'],
+            ['Budget', 'Was budget met? What caused variances?'],
+            ['Quality', 'Were quality targets met? Defect rates?'],
+            ['Benefits', 'Are benefits being realized? When full realization?'],
+            ['User Satisfaction', 'Are users adopting? What is feedback?'],
+          ],
+        },
+        {
+          title: 'Benefits Realization',
+          type: 'text',
+          content: "**Benefits Realization Management:**\n\n**Define Benefits**\n• Specific, measurable benefits\n• Baseline measurements\n• Target values\n• Owner accountable\n\n**Track Progress**\n• Regular measurement\n• Variance analysis\n• Root cause investigation\n• Course correction\n\n**Report and Learn**\n• Benefits dashboard\n• Stakeholder communication\n• Lessons for future cases\n\n**Common Pitfalls:**\n• Benefits not defined measurably\n• No baseline established\n• Benefits owner not assigned\n• No tracking mechanism",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "PIR verifies benefits, assesses performance, and captures lessons",
+            "Conduct PIR at multiple intervals: immediate, intermediate, long-term",
+            "Assessment covers scope, schedule, budget, quality, benefits, users",
+            "Benefits realization requires measurable goals, baselines, and tracking",
+            "Schedule PIR at project initiation to ensure commitment",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CISA3-014',
+    courseId: 'cisa',
+    section: 'CISA3',
+    title: 'Vendor and Third-Party Management',
+    description: 'Manage risks from vendors, contractors, and third-party providers',
+    order: 14,
+    duration: 50,
+    difficulty: 'intermediate',
+    topics: ['Vendor Selection', 'Contract Management', 'SLA', 'Third-Party Risk'],
+    blueprintArea: 'CISA3-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters',
+          type: 'callout',
+          content: "Organizations increasingly rely on third parties for development and operations. Vendor failures directly impact the organization, making third-party risk management essential.",
+        },
+        {
+          title: 'Vendor Selection Process',
+          type: 'text',
+          content: "**Selection Steps:**\n\n**1. Requirements Definition**\n• Functional requirements\n• Technical requirements\n• Security requirements\n• Compliance requirements\n\n**2. RFP/RFI Process**\n• Request for Information (preliminary)\n• Request for Proposal (detailed)\n• Structured evaluation criteria\n• Weighted scoring\n\n**3. Due Diligence**\n• Financial viability\n• References check\n• Security assessment\n• Onsite visits\n• Proof of concept\n\n**4. Contract Negotiation**\n• Terms and conditions\n• Service levels\n• Penalties and incentives\n• Exit provisions",
+        },
+        {
+          title: 'Contract Key Provisions',
+          type: 'table',
+          headers: ['Provision', 'Purpose'],
+          rows: [
+            ['SLA', 'Define performance expectations'],
+            ['Right to Audit', 'Enable oversight and verification'],
+            ['Data Ownership', 'Clarify who owns data'],
+            ['Security Requirements', 'Specify security controls'],
+            ['Termination Rights', 'Enable exit if needed'],
+            ['Liability', 'Allocate risk appropriately'],
+            ['Dispute Resolution', 'Define escalation process'],
+            ['Change Management', 'Control scope changes'],
+          ],
+        },
+        {
+          title: 'Service Level Agreements',
+          type: 'text',
+          content: "**SLA Components:**\n\n**Performance Metrics**\n• Availability (uptime percentage)\n• Response time\n• Resolution time\n• Throughput\n\n**Measurement**\n• How metrics are measured\n• Reporting frequency\n• Exclusions (maintenance windows)\n\n**Consequences**\n• Service credits for misses\n• Termination for repeated failure\n• Incentives for exceeding\n\n**Review**\n• Regular SLA review\n• Adjustment process\n• Dispute resolution\n\n**Example SLA:**\n• 99.9% availability (8.76 hours downtime/year)\n• 4-hour response for Priority 1\n• Monthly reporting",
+        },
+        {
+          title: 'Ongoing Vendor Management',
+          type: 'text',
+          content: "**Continuous Oversight:**\n\n**Performance Monitoring**\n• Track SLA compliance\n• Review service reports\n• Address issues promptly\n\n**Relationship Management**\n• Regular governance meetings\n• Escalation procedures\n• Feedback mechanisms\n\n**Risk Reassessment**\n• Annual risk assessment\n• SOC report review\n• Security assessments\n• Financial health monitoring\n\n**Exit Planning**\n• Maintain exit strategy\n• Data portability\n• Knowledge transfer\n• Transition support",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Vendor selection includes requirements, RFP, due diligence, and contracting",
+            "Key contract provisions: SLA, audit rights, data ownership, termination",
+            "SLAs define performance expectations with measurable metrics",
+            "Ongoing management includes monitoring, governance, and risk reassessment",
+            "Always maintain exit strategy and data portability",
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default cisa3Lessons;

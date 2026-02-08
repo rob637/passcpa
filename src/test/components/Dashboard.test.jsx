@@ -47,6 +47,8 @@ vi.mock('../../providers/CourseProvider', () => ({
     courseId: 'cpa',
     course: {
       id: 'cpa',
+      name: 'CPA',
+      hasTBS: true,
       sections: [
         { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
         { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
@@ -58,6 +60,11 @@ vi.mock('../../providers/CourseProvider', () => ({
 
 vi.mock('../../config/featureFlags', () => ({
   isFeatureEnabled: vi.fn(() => true),
+  ENABLE_EA_COURSE: true,
+  ENABLE_CMA_COURSE: true,
+  ENABLE_CIA_COURSE: true,
+  ENABLE_CFP_COURSE: true,
+  ENABLE_CISA_COURSE: true,
 }));
 
 const renderDashboard = () => {

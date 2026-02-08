@@ -225,14 +225,16 @@ describe('QuestionFlagging Component', () => {
       });
     });
 
-    it('shows Submitting... during submission', async () => {
+    it('shows loading state during submission', async () => {
       await renderQuestionFlagging();
       fireEvent.click(screen.getByText('Flag this question'));
       fireEvent.click(screen.getByText('Review Later'));
       
       // Don't await - check loading state
       fireEvent.click(screen.getByText('Submit Flag'));
-      expect(screen.getByText('Submitting...')).toBeInTheDocument();
+      // Button should be disabled and show loading state
+      const submitButton = screen.getByRole('button', { name: /submit flag/i });
+      expect(submitButton).toHaveAttribute('aria-busy', 'true');
     });
 
     it('saves to global flags for error reports', async () => {

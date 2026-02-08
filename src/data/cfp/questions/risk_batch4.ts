@@ -1,0 +1,494 @@
+/**
+ * CFP Risk/Insurance Questions - Batch 4
+ * Domain 3: Risk Management and Insurance Planning (12% of exam)
+ * 25 additional questions covering advanced risk topics
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
+  // RIS-1: Advanced Life Insurance
+  {
+    id: 'CFP-RIS-B4-001',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Indexed Universal Life',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Indexed Universal Life (IUL) policy cash value growth is:',
+    options: [
+      'A) Directly invested in the stock market',
+      'B) Credited based on index performance with caps and floors, without direct market investment',
+      'C) Guaranteed at a fixed rate',
+      'D) Subject to market losses'
+    ],
+    correctAnswer: 1,
+    explanation: 'IUL credits interest based on index performance (S&P 500, etc.) but doesn\'t directly invest in the index. Returns are subject to caps (maximum credited) and floors (minimum, often 0%). This provides upside potential with downside protection, but illustrations may use assumptions that are rarely achieved.'
+  },
+  {
+    id: 'CFP-RIS-B4-002',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Policy Loans',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Outstanding policy loans at death:',
+    options: [
+      'A) Must be repaid by the estate before death benefit is paid',
+      'B) Reduce the death benefit by the outstanding loan amount plus accrued interest',
+      'C) Have no effect on the death benefit',
+      'D) Are forgiven automatically'
+    ],
+    correctAnswer: 1,
+    explanation: 'Policy loans reduce the death benefit dollar-for-dollar plus accumulated interest. They don\'t require repayment during life but will reduce proceeds to beneficiaries. If loans plus interest exceed cash value, the policy may lapse, potentially creating taxable income if there\'s gain in the policy.'
+  },
+  {
+    id: 'CFP-RIS-B4-003',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Modified Endowment Contract',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A life insurance policy becomes a Modified Endowment Contract (MEC) when:',
+    options: [
+      'A) The insured reaches age 65',
+      'B) Premiums paid exceed the 7-pay test limits',
+      'C) The policy has been in force for 10 years',
+      'D) The death benefit exceeds $1 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'A policy becomes a MEC if cumulative premiums in the first 7 years exceed what would be needed to pay up the policy in 7 level payments. MECs lose favorable loan treatment—loans and withdrawals are taxed on a LIFO basis (earnings first) and may be subject to 10% penalty before age 59½.'
+  },
+  {
+    id: 'CFP-RIS-B4-004',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Section 1035 Exchange',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A 1035 exchange allows:',
+    options: [
+      'A) Tax-free exchange of any insurance product for any other',
+      'B) Tax-free exchange of life insurance for another life policy, endowment, or annuity (following specific rules)',
+      'C) Exchange of annuities for life insurance tax-free',
+      'D) Conversion of term to whole life without underwriting'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 1035 permits tax-free exchanges within the same class or to a lower class: life insurance for life/endowment/annuity, endowment for endowment/annuity, annuity for annuity. Annuity to life insurance is NOT tax-free. Long-term care riders add complexity. Surrender charges and new contestability periods apply.'
+  },
+  // RIS-2: Advanced Health Insurance
+  {
+    id: 'CFP-RIS-B4-005',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-2',
+    topic: 'Health Insurance',
+    subtopic: 'Continuation Coverage',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'COBRA continuation coverage is generally available for:',
+    options: [
+      'A) 12 months after a qualifying event',
+      'B) 18 months after job loss or reduced hours; 36 months for other qualifying events',
+      'C) Indefinitely if premiums are paid',
+      'D) 6 months as a bridge to Medicare'
+    ],
+    correctAnswer: 1,
+    explanation: 'COBRA provides 18 months for job loss/reduced hours (29 months if disabled), 36 months for divorce, death of employee, Medicare eligibility, or dependent aging out. Premiums are 100% of cost plus 2% admin fee. It provides continuity but is expensive compared to employer-subsidized coverage or marketplace plans.'
+  },
+  {
+    id: 'CFP-RIS-B4-006',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-2',
+    topic: 'Health Insurance',
+    subtopic: 'HSA Estate Planning',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When an HSA owner dies, the account:',
+    options: [
+      'A) Is forfeited to the government',
+      'B) Transfers to a spouse beneficiary as their own HSA, or becomes taxable income to non-spouse beneficiaries',
+      'C) Passes tax-free to any beneficiary',
+      'D) Must be used for the deceased\'s medical expenses only'
+    ],
+    correctAnswer: 1,
+    explanation: 'If a spouse is beneficiary, the HSA becomes theirs (same tax treatment continues). Non-spouse beneficiaries receive the FMV as taxable income in the year of death. Medical expenses of the deceased incurred before death can be paid tax-free. HSA beneficiary designations are important estate planning considerations.'
+  },
+  {
+    id: 'CFP-RIS-B4-007',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-2',
+    topic: 'Health Insurance',
+    subtopic: 'Medicare Surcharges',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Income-Related Monthly Adjustment Amount (IRMAA) for Medicare:',
+    options: [
+      'A) Reduces premiums for low-income individuals',
+      'B) Increases Part B and D premiums for higher-income beneficiaries based on MAGI from two years prior',
+      'C) Is a one-time enrollment fee',
+      'D) Applies only to Part A'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRMAA adds surcharges to Medicare Part B and D premiums for beneficiaries with MAGI exceeding thresholds (based on tax return from 2 years prior). Surcharges can be significant. Life-changing events (retirement, divorce) may warrant an appeal. Roth conversions and other income planning should consider IRMAA impact.'
+  },
+  // RIS-3: Advanced Disability
+  {
+    id: 'CFP-RIS-B4-008',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-3',
+    topic: 'Disability',
+    subtopic: 'Residual Disability',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Residual disability benefits:',
+    options: [
+      'A) Pay full benefits regardless of work status',
+      'B) Provide partial benefits proportional to income loss when the insured can work at reduced capacity',
+      'C) Only apply after total disability benefits end',
+      'D) Are available only through group policies'
+    ],
+    correctAnswer: 1,
+    explanation: 'Residual disability provisions pay partial benefits when the insured can work but earns less due to disability. Benefits are typically proportional to income loss (e.g., 40% income loss = 40% of benefit). This encourages return to work while providing financial support. It\'s a valuable rider for professionals.'
+  },
+  {
+    id: 'CFP-RIS-B4-009',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-3',
+    topic: 'Disability',
+    subtopic: 'Future Insurability',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A future purchase option (FPO) rider on disability insurance:',
+    options: [
+      'A) Allows policy cancellation without penalty',
+      'B) Permits increasing coverage at specific times without evidence of insurability',
+      'C) Reduces premiums over time',
+      'D) Extends the benefit period automatically'
+    ],
+    correctAnswer: 1,
+    explanation: 'FPO riders allow purchasing additional coverage at predetermined intervals (often birthdays or income milestones) without new underwriting. This protects insurability if health changes. It\'s valuable for young professionals expecting income growth. Premiums for additional coverage are based on attained age.'
+  },
+  {
+    id: 'CFP-RIS-B4-010',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-3',
+    topic: 'Disability',
+    subtopic: 'COLA Rider',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A Cost-of-Living Adjustment (COLA) rider on disability insurance:',
+    options: [
+      'A) Reduces benefits during periods of low inflation',
+      'B) Increases benefits during a claim to keep pace with inflation',
+      'C) Adjusts premiums annually',
+      'D) Only applies after 10 years of disability'
+    ],
+    correctAnswer: 1,
+    explanation: 'COLA riders increase disability benefits during an ongoing claim, typically tied to CPI, protecting purchasing power during long-term disabilities. This is especially important for young professionals who may be disabled for decades. COLAs usually have caps (3-6% annually) and may be simple or compound.'
+  },
+  // RIS-4: Advanced Property/Casualty
+  {
+    id: 'CFP-RIS-B4-011',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-4',
+    topic: 'Property Insurance',
+    subtopic: 'Agreed Value',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An agreed value policy for homeowners insurance:',
+    options: [
+      'A) Pays actual cash value only',
+      'B) Establishes a predetermined value that will be paid in case of total loss without coinsurance penalties',
+      'C) Covers only contents, not the structure',
+      'D) Is available only for commercial properties'
+    ],
+    correctAnswer: 1,
+    explanation: 'Agreed value policies set a predetermined value for covered property. In a total loss, this amount is paid without depreciation or coinsurance calculations. It\'s common for high-value homes, collectibles, and unique properties where replacement cost is difficult to estimate. Regular reappraisals are needed.'
+  },
+  {
+    id: 'CFP-RIS-B4-012',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-4',
+    topic: 'Liability Insurance',
+    subtopic: 'Personal Liability',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A homeowner\'s policy personal liability coverage typically:',
+    options: [
+      'A) Covers only incidents in the home',
+      'B) Provides worldwide coverage for non-auto, non-business personal liability',
+      'C) Includes professional liability',
+      'D) Has no coverage limits'
+    ],
+    correctAnswer: 1,
+    explanation: 'Homeowner\'s personal liability (Coverage E) is broad, covering bodily injury and property damage liability anywhere in the world, not just at home. Exclusions include auto accidents, business activities, and intentional acts. Standard limits ($100K-$500K) are often inadequate for affluent clients—umbrella coverage is recommended.'
+  },
+  {
+    id: 'CFP-RIS-B4-013',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-4',
+    topic: 'Auto Insurance',
+    subtopic: 'Uninsured/Underinsured',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Underinsured motorist coverage:',
+    options: [
+      'A) Pays when you are at fault',
+      'B) Pays when the at-fault driver\'s coverage is insufficient to cover your damages',
+      'C) Is required in all states',
+      'D) Only covers property damage'
+    ],
+    correctAnswer: 1,
+    explanation: 'Underinsured motorist (UIM) coverage applies when an at-fault driver\'s liability limits are less than your damages. It bridges the gap between their coverage and your loss. Stacking provisions, excess vs. offset calculations, and state requirements vary. High limits are important protection against inadequately insured drivers.'
+  },
+  // RIS-5: Advanced LTC
+  {
+    id: 'CFP-RIS-B4-014',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-5',
+    topic: 'Long-Term Care',
+    subtopic: 'Hybrid Products',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Life insurance/long-term care hybrid products appeal to consumers because:',
+    options: [
+      'A) They are always less expensive than standalone LTC',
+      'B) They provide LTC benefits if needed, or death benefits if LTC is never used, addressing "use it or lose it" concerns',
+      'C) They require no underwriting',
+      'D) They provide unlimited LTC benefits'
+    ],
+    correctAnswer: 1,
+    explanation: 'Hybrids combine life insurance (or annuities) with LTC riders. If LTC is needed, benefits are accessed (often accelerating the death benefit). If not, beneficiaries receive the death benefit. This addresses concerns about paying premiums for coverage never used. Tradeoffs include complexity and potentially higher cost per dollar of coverage.'
+  },
+  {
+    id: 'CFP-RIS-B4-015',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-5',
+    topic: 'Long-Term Care',
+    subtopic: 'Benefit Triggers',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Tax-qualified LTC policies require benefit triggers of:',
+    options: [
+      'A) Any medical condition',
+      'B) Inability to perform 2 of 6 ADLs for at least 90 days, or severe cognitive impairment',
+      'C) Hospitalization for at least 3 days',
+      'D) Doctor\'s recommendation only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Tax-qualified LTC policies trigger benefits when the insured cannot perform at least 2 of 6 Activities of Daily Living (bathing, dressing, eating, toileting, transferring, continence) expected to last 90+ days, or has severe cognitive impairment requiring substantial supervision. A licensed healthcare practitioner must certify.'
+  },
+  {
+    id: 'CFP-RIS-B4-016',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-5',
+    topic: 'Long-Term Care',
+    subtopic: 'Partnership Programs',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'State LTC Partnership programs offer:',
+    options: [
+      'A) Free long-term care coverage',
+      'B) Dollar-for-dollar asset protection for Medicaid eligibility based on LTC benefits received',
+      'C) Guaranteed insurability regardless of health',
+      'D) Tax deductions for all LTC premiums'
+    ],
+    correctAnswer: 1,
+    explanation: 'Partnership programs allow individuals who exhaust qualified LTC benefits to protect assets equal to benefits received when applying for Medicaid. Without partnership protection, nearly all assets must be spent before Medicaid eligibility. Partnership policies must meet specific requirements and are available in most states.'
+  },
+  // RIS-1: More Life Insurance
+  {
+    id: 'CFP-RIS-B4-017',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Accelerated Death Benefits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Accelerated death benefit riders:',
+    options: [
+      'A) Increase the death benefit over time',
+      'B) Allow access to a portion of the death benefit if the insured is terminally or chronically ill',
+      'C) Provide benefits only after death',
+      'D) Are available only on whole life policies'
+    ],
+    correctAnswer: 1,
+    explanation: 'Accelerated death benefit riders provide early access to death benefits for terminal illness (typically 12-24 month life expectancy), chronic illness (similar to LTC triggers), or critical illness (specific diagnoses). Benefits received reduce the ultimate death benefit. Tax treatment depends on the qualifying event and policy structure.'
+  },
+  {
+    id: 'CFP-RIS-B4-018',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Life Insurance',
+    subtopic: 'Premium Financing',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Premium financing for life insurance is most appropriate when:',
+    options: [
+      'A) The client cannot afford any premium',
+      'B) Borrowing costs are lower than the economic value of keeping assets invested, and estate planning benefits justify the costs and risks',
+      'C) The client wants term insurance',
+      'D) No collateral is available'
+    ],
+    correctAnswer: 1,
+    explanation: 'Premium financing involves borrowing premiums from third-party lenders, secured by the policy\'s cash value and other collateral. It\'s complex, involves ongoing costs and risks, and is appropriate for high-net-worth clients who can benefit from leverage in estate and insurance planning. Rising rates and exit strategies are key concerns.'
+  },
+  // RIS-2: More Health
+  {
+    id: 'CFP-RIS-B4-019',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-2',
+    topic: 'Health Insurance',
+    subtopic: 'Short-Term Medical',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Short-term medical insurance is appropriate for:',
+    options: [
+      'A) Ongoing primary coverage needs',
+      'B) Temporary gaps in coverage when ACA plans aren\'t needed or available',
+      'C) Individuals with significant pre-existing conditions',
+      'D) Those seeking comprehensive maternity coverage'
+    ],
+    correctAnswer: 1,
+    explanation: 'Short-term medical insurance provides temporary coverage (often up to 12 months, renewable in some states). It\'s less expensive but has limitations: pre-existing condition exclusions, no essential health benefits requirements, coverage caps, and doesn\'t satisfy ACA individual mandate where applicable.'
+  },
+  {
+    id: 'CFP-RIS-B4-020',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-2',
+    topic: 'Health Insurance',
+    subtopic: 'Medigap',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Medigap (Medicare Supplement) policies:',
+    options: [
+      'A) Replace Medicare coverage entirely',
+      'B) Help pay costs Medicare doesn\'t cover, such as copays, coinsurance, and deductibles',
+      'C) Are only available through employers',
+      'D) Cover long-term care services'
+    ],
+    correctAnswer: 1,
+    explanation: 'Medigap policies supplement Original Medicare by paying cost-sharing (deductibles, copayments, coinsurance) and sometimes providing additional benefits. Standardized plans (A through N) are sold by private insurers. Open enrollment at age 65 guarantees issue regardless of health. Medigap doesn\'t work with Medicare Advantage.'
+  },
+  // RIS-4: More P&C
+  {
+    id: 'CFP-RIS-B4-021',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-4',
+    topic: 'Property Insurance',
+    subtopic: 'Flood Insurance',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Flood insurance through the National Flood Insurance Program (NFIP):',
+    options: [
+      'A) Is included in standard homeowners policies',
+      'B) Must be purchased separately and has coverage limits lower than many homes\' values',
+      'C) Is only available in coastal areas',
+      'D) Covers all water damage including sewer backup'
+    ],
+    correctAnswer: 1,
+    explanation: 'NFIP flood insurance must be purchased separately—homeowners policies exclude flood. NFIP limits are $250K for structure and $100K for contents, often insufficient for higher-value homes. Private excess flood is available. A 30-day waiting period applies. Mandatory in designated flood zones with federally-backed mortgages.'
+  },
+  {
+    id: 'CFP-RIS-B4-022',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-4',
+    topic: 'Liability Insurance',
+    subtopic: 'Professional Liability',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Errors and omissions (E&O) insurance for financial advisors:',
+    options: [
+      'A) Covers intentional misconduct',
+      'B) Protects against claims arising from professional negligence, errors, or omissions in providing services',
+      'C) Is identical to general liability insurance',
+      'D) Is optional for SEC-registered advisors'
+    ],
+    correctAnswer: 1,
+    explanation: 'E&O insurance covers claims from professional mistakes—negligent advice, errors, omissions in service delivery. It excludes intentional acts and fraud. Coverage includes defense costs. Limits, deductibles, and coverage terms vary. Many registrations and affiliations require minimum E&O coverage.'
+  },
+  // Risk Management Concepts
+  {
+    id: 'CFP-RIS-B4-023',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Risk Management',
+    subtopic: 'Risk Retention',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Risk retention through higher deductibles is appropriate when:',
+    options: [
+      'A) The client has minimal liquid assets',
+      'B) The client can afford potential losses and the premium savings outweigh the increased exposure',
+      'C) Maximum coverage is always needed',
+      'D) The risk has catastrophic potential'
+    ],
+    correctAnswer: 1,
+    explanation: 'Higher deductibles reduce premiums by retaining smaller losses. This is appropriate for financially stable clients who can absorb deductible amounts and prefer lower premiums. It\'s inappropriate for catastrophic risks or when clients cannot afford deductible levels. The "premium savings vs. retention" analysis guides decisions.'
+  },
+  {
+    id: 'CFP-RIS-B4-024',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Risk Management',
+    subtopic: 'Risk Transfer',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Insurance is primarily a mechanism for:',
+    options: [
+      'A) Risk avoidance',
+      'B) Risk transfer from individuals to insurers through pooling',
+      'C) Risk elimination',
+      'D) Investment returns'
+    ],
+    correctAnswer: 1,
+    explanation: 'Insurance transfers risk from individuals to insurers who pool many exposures. The law of large numbers allows insurers to predict aggregate losses and charge premiums accordingly. Individuals exchange uncertain large losses for certain small premiums. Insurance doesn\'t eliminate risk—it transfers the financial consequences.'
+  },
+  {
+    id: 'CFP-RIS-B4-025',
+    courseId: 'cfp',
+    section: 'CFP-RIS',
+    blueprintArea: 'RIS-1',
+    topic: 'Risk Management',
+    subtopic: 'Needs Analysis',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The human life value approach to life insurance needs:',
+    options: [
+      'A) Values insurance based on funeral costs',
+      'B) Calculates the present value of future earnings the insured would have generated',
+      'C) Considers only current assets',
+      'D) Ignores future income potential'
+    ],
+    correctAnswer: 1,
+    explanation: 'Human life value estimates the present value of future earnings—what the insured would have earned over their working lifetime, discounted to today. It represents the economic loss to dependents. This often produces higher insurance amounts than needs-based approaches but may be appropriate for high earners.'
+  }
+];

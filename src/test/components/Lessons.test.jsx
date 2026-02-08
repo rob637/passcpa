@@ -35,8 +35,8 @@ vi.mock('../../providers/CourseProvider', () => ({
   }),
 }));
 
-// Mock lessons data
-vi.mock('../../data/lessons', () => ({
+// Mock lessons data - path changed to course-specific location
+vi.mock('../../data/cpa/lessons', () => ({
   getLessonById: vi.fn((id) => {
     if (id === 'FAR-I-001') {
       return {
@@ -144,7 +144,7 @@ describe('LessonViewer Component', () => {
 
   describe('Lesson Not Found', () => {
     it('should show not found message for invalid lesson', async () => {
-      const { getLessonById } = await import('../../data/lessons');
+      const { getLessonById } = await import('../../data/cpa/lessons');
       getLessonById.mockReturnValue(null);
 
       render(

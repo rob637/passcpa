@@ -11,7 +11,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-001',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Indexed Universal Life',
@@ -30,7 +30,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-002',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Policy Loans',
@@ -49,7 +49,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-003',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Modified Endowment Contract',
@@ -68,7 +68,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-004',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Section 1035 Exchange',
@@ -88,7 +88,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-005',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Continuation Coverage',
@@ -107,7 +107,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-006',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Estate Planning',
@@ -126,7 +126,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-007',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Medicare Surcharges',
@@ -146,7 +146,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-008',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability',
     subtopic: 'Residual Disability',
@@ -165,7 +165,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-009',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability',
     subtopic: 'Future Insurability',
@@ -184,7 +184,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-010',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability',
     subtopic: 'COLA Rider',
@@ -204,7 +204,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-011',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Property Insurance',
     subtopic: 'Agreed Value',
@@ -223,7 +223,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-012',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Liability Insurance',
     subtopic: 'Personal Liability',
@@ -242,7 +242,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-013',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Auto Insurance',
     subtopic: 'Uninsured/Underinsured',
@@ -262,7 +262,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-014',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-5',
     topic: 'Long-Term Care',
     subtopic: 'Hybrid Products',
@@ -281,7 +281,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-015',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-5',
     topic: 'Long-Term Care',
     subtopic: 'Benefit Triggers',
@@ -300,7 +300,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-016',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-5',
     topic: 'Long-Term Care',
     subtopic: 'Partnership Programs',
@@ -320,7 +320,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-017',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Accelerated Death Benefits',
@@ -339,7 +339,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-018',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Premium Financing',
@@ -359,7 +359,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-019',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Short-Term Medical',
@@ -378,7 +378,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-020',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Medigap',
@@ -398,7 +398,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-021',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Property Insurance',
     subtopic: 'Flood Insurance',
@@ -417,7 +417,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-022',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Liability Insurance',
     subtopic: 'Professional Liability',
@@ -437,7 +437,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-023',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Risk Management',
     subtopic: 'Risk Retention',
@@ -456,7 +456,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-024',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Risk Management',
     subtopic: 'Risk Transfer',
@@ -475,7 +475,7 @@ export const CFP_RISK_BATCH4_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B4-025',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Risk Management',
     subtopic: 'Needs Analysis',

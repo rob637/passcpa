@@ -11,7 +11,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-001',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Needs Analysis',
@@ -30,7 +30,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-002',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Term vs. Permanent',
@@ -49,7 +49,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-003',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Whole Life',
@@ -68,7 +68,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-004',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Universal Life',
@@ -87,7 +87,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-005',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Policy Loans',
@@ -107,7 +107,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-006',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Eligibility',
@@ -126,7 +126,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-007',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'HSA Benefits',
@@ -145,7 +145,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-008',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Medicare',
@@ -164,7 +164,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-009',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'COBRA',
@@ -184,7 +184,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-010',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability Insurance',
     subtopic: 'Own-Occupation Definition',
@@ -203,7 +203,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-011',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability Insurance',
     subtopic: 'Elimination Period',
@@ -222,7 +222,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-012',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     topic: 'Disability Insurance',
     subtopic: 'Taxation of Benefits',
@@ -242,7 +242,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-013',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Property Insurance',
     subtopic: 'Replacement Cost vs. ACV',
@@ -261,7 +261,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-014',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Property Insurance',
     subtopic: 'Coinsurance',
@@ -280,7 +280,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-015',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Liability Insurance',
     subtopic: 'Umbrella Policy',
@@ -299,7 +299,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-016',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Auto Insurance',
     subtopic: 'Liability Coverage',
@@ -319,7 +319,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-017',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-5',
     topic: 'Long-Term Care',
     subtopic: 'LTC Triggers',
@@ -338,7 +338,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-018',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-5',
     topic: 'Long-Term Care',
     subtopic: 'Inflation Protection',
@@ -358,7 +358,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-019',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Taxation of Proceeds',
@@ -377,7 +377,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-020',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Settlement Options',
@@ -396,7 +396,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-021',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     topic: 'Life Insurance',
     subtopic: 'Riders',
@@ -416,7 +416,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-022',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'Medigap',
@@ -435,7 +435,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-023',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-2',
     topic: 'Health Insurance',
     subtopic: 'FSA vs. HSA',
@@ -455,7 +455,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-024',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Property Insurance',
     subtopic: 'HO-3 Policy',
@@ -474,7 +474,7 @@ export const CFP_RISK_BATCH3_QUESTIONS: Question[] = [
   {
     id: 'CFP-RIS-B3-025',
     courseId: 'cfp',
-    section: 'CFP-RIS',
+    section: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     topic: 'Liability Insurance',
     subtopic: 'Professional Liability',

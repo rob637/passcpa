@@ -46,7 +46,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Variance Analysis',
     subtopic: 'Direct Materials Variances',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'ABC Company produced 1,000 units. The standard is 3 lbs per unit at $5/lb. Actual: 3,200 lbs purchased and used at $4.80/lb. What is the materials quantity (usage) variance?',
     options: [
@@ -86,7 +86,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Variance Analysis',
     subtopic: 'Direct Labor Variances',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'DEF Company produced 500 units. Standard: 2 hours per unit at $15/hour. Actual: 1,100 hours at $14.50/hour. What is the labor efficiency variance?',
     options: [
@@ -126,7 +126,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Variance Analysis',
     subtopic: 'Fixed Overhead Variances',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'The fixed overhead volume variance is caused by:',
     options: [
@@ -170,7 +170,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Responsibility Centers',
     subtopic: 'Investment Centers',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Return on Investment (ROI) is calculated as:',
     options: [
@@ -190,7 +190,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Responsibility Centers',
     subtopic: 'ROI DuPont Analysis',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Using the DuPont formula, ROI can be decomposed into:',
     options: [
@@ -230,7 +230,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Responsibility Centers',
     subtopic: 'EVA',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Economic Value Added (EVA) differs from residual income primarily because EVA:',
     options: [
@@ -274,7 +274,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Balanced Scorecard',
     subtopic: 'Customer Perspective',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Customer satisfaction scores, market share, and customer retention rate are metrics for which Balanced Scorecard perspective?',
     options: [
@@ -398,7 +398,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Measures',
     subtopic: 'Transfer Pricing',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'When there is an intermediate market for a transferred product, the optimal transfer price is generally:',
     options: [
@@ -442,7 +442,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Measures',
     subtopic: 'Quality Costs',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Inspection and testing costs are classified as:',
     options: [
@@ -522,7 +522,7 @@ export const CMA1C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Measures',
     subtopic: 'Benchmarking',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Benchmarking involves:',
     options: [

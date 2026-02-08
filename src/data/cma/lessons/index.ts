@@ -4,12 +4,12 @@
  * This file exports all CMA lessons organized by section.
  * 
  * Part 1: Financial Planning, Performance, and Analytics
- * - CMA1-A: External Financial Reporting (20%)
+ * - CMA1-A: External Financial Reporting (15%)
  * - CMA1-B: Planning, Budgeting, and Forecasting (20%)
  * - CMA1-C: Performance Management (20%)
  * - CMA1-D: Cost Management (15%)
  * - CMA1-E: Internal Controls (15%)
- * - CMA1-F: Technology and Analytics (10%)
+ * - CMA1-F: Technology and Analytics (15%)
  * 
  * Part 2: Strategic Financial Management
  * - CMA2-A: Financial Statement Analysis (20%)

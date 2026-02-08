@@ -20,9 +20,10 @@ import {
   Clock,
   ArrowLeft,
   Eye,
-  X,
 } from 'lucide-react';
 import clsx from 'clsx';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
@@ -144,12 +145,16 @@ const WCEditor = () => {
             <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold">{viewingTask.topic}</h2>
-                <button
+                <Button
+                  variant="ghost"
+                  size="icon"
                   onClick={() => setViewingTask(null)}
-                  className="p-2 hover:bg-gray-100 rounded-lg"
+                  aria-label="Close modal"
                 >
-                  <X className="w-5 h-5" />
-                </button>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                  </svg>
+                </Button>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex gap-2">
@@ -251,7 +256,7 @@ const WCEditor = () => {
             <Loader className="w-8 h-8 animate-spin text-primary-600" />
           </div>
         ) : (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <Card noPadding className="overflow-hidden">
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
@@ -294,13 +299,14 @@ const WCEditor = () => {
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-2">
-                        <button
+                        <Button
+                          variant="ghost"
+                          size="icon"
                           onClick={() => setViewingTask(task)}
-                          className="p-2 text-primary-600 hover:bg-primary-50 rounded-lg"
-                          title="View"
+                          aria-label="View"
                         >
                           <Eye className="w-4 h-4" />
-                        </button>
+                        </Button>
                       </div>
                     </td>
                   </tr>
@@ -314,7 +320,7 @@ const WCEditor = () => {
                 )}
               </tbody>
             </table>
-          </div>
+          </Card>
         )}
       </main>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { Button } from '../common/Button';
 import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   RotateCcw,
@@ -30,7 +31,7 @@ import { Question, ExamSection, AllExamSections } from '../../types';
 import {
   getFlashcardsBySection,
   Flashcard as DedicatedFlashcard,
-} from '../../data/flashcards';
+} from '../../data/cpa/flashcards';
 
 interface RatingButton {
   rating: 'again' | 'hard' | 'good' | 'easy';
@@ -366,12 +367,12 @@ const Flashcards: React.FC = () => {
               : 'No flashcards available for this selection.'}
           </p>
           <div className="flex gap-3 justify-center">
-            <button onClick={() => navigate('/practice')} className="btn-primary">
+            <Button variant="primary" onClick={() => navigate('/practice')}>
               Practice Questions
-            </button>
-            <button onClick={() => navigate('/study')} className="btn-secondary">
+            </Button>
+            <Button variant="secondary" onClick={() => navigate('/study')}>
               Back to Study
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -408,16 +409,16 @@ const Flashcards: React.FC = () => {
           </div>
 
           <div className="flex gap-3 justify-center">
-            <button
+            <Button
+              variant="secondary"
               onClick={() => {
                 setCurrentIndex(0);
                 setSessionStats({ reviewed: 0, again: 0, hard: 0, good: 0, easy: 0 });
               }}
-              className="btn-secondary"
             >
               Review Again
-            </button>
-            <button onClick={() => {
+            </Button>
+            <Button variant="primary" onClick={() => {
               if (fromDailyPlan && activityId) {
                 const params = new URLSearchParams();
                 params.set('from', 'dailyplan');
@@ -427,9 +428,9 @@ const Flashcards: React.FC = () => {
               } else {
                 navigate('/study');
               }
-            }} className="btn-primary">
+            }}>
               Done
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -441,13 +442,13 @@ const Flashcards: React.FC = () => {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
-          <button
+          <Button
+            variant="ghost"
             onClick={() => navigate(courseHome)}
-            className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            leftIcon={ArrowLeft}
           >
-            <ArrowLeft className="w-5 h-5" />
             <span className="hidden sm:inline">Back</span>
-          </button>
+          </Button>
 
           <div className="flex items-center gap-2">
             <Brain className="w-5 h-5 text-primary-600" />
@@ -706,20 +707,22 @@ const Flashcards: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={prevCard}
               disabled={currentIndex === 0}
-              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={nextCard}
               disabled={currentIndex === cards.length - 1}
-              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-5 h-5" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

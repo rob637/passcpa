@@ -37,6 +37,23 @@ vi.mock('../../config/examConfig', () => ({
   },
 }));
 
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: vi.fn(() => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+        { id: 'BAR', name: 'Business Analysis & Reporting', shortName: 'BAR' },
+        { id: 'ISC', name: 'Information Systems & Controls', shortName: 'ISC' },
+        { id: 'TCP', name: 'Tax Compliance & Planning', shortName: 'TCP' },
+      ],
+    },
+  })),
+}));
+
 import ExamDateTracker from '../../components/ExamDateTracker';
 import { useAuth } from '../../hooks/useAuth';
 import { updateDoc } from 'firebase/firestore';

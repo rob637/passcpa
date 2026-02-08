@@ -111,7 +111,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Budgeting Concepts',
     subtopic: 'Budget Types',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'A budget that is continuously updated by adding a new month as the current month ends is called a:',
     options: [
@@ -131,7 +131,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Budgeting Concepts',
     subtopic: 'Zero-Based Budgeting',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Zero-based budgeting requires that:',
     options: [
@@ -175,7 +175,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Budget Sequence',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'In the master budget process, which budget is typically prepared FIRST?',
     options: [
@@ -215,7 +215,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Direct Materials Budget',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'XYZ Company needs 5 pounds of material per unit and plans to produce 8,000 units. Beginning material inventory is 4,000 pounds, and the desired ending inventory is 6,000 pounds. How many pounds of material should be purchased?',
     options: [
@@ -235,7 +235,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Cash Budget',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Which of the following is typically NOT included in the cash budget?',
     options: [
@@ -255,7 +255,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Collections Pattern',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'DEF Company has credit sales of $100,000 in January and $120,000 in February. Collections are 60% in the month of sale and 40% in the following month. What are February cash collections from credit sales?',
     options: [
@@ -343,7 +343,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Qualitative Methods',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The Delphi method of forecasting:',
     options: [
@@ -383,7 +383,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Exponential Smoothing',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'In exponential smoothing, a higher smoothing constant (alpha) means:',
     options: [
@@ -487,7 +487,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Pro Forma Statements',
     subtopic: 'External Financing Needed',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'External financing needed (EFN) is calculated as:',
     options: [
@@ -507,7 +507,7 @@ export const CMA1B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Pro Forma Statements',
     subtopic: 'Sustainable Growth Rate',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The sustainable growth rate is the maximum growth rate a company can achieve without:',
     options: [

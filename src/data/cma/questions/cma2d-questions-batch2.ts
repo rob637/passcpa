@@ -133,7 +133,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Options Hedging',
     subtopic: 'Protective Put',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'An investor owns 1,000 shares at $50. They buy 10 put contracts (100 shares each) with strike $45 for $2 per share. What is the maximum loss and breakeven point?',
     options: [
@@ -173,7 +173,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Options Hedging',
     subtopic: 'Currency Options',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A U.S. company will receive €10 million in 90 days. Spot rate is $1.10/€. They buy put options on euros with strike $1.08/€ for $0.02/€ premium. What is the minimum dollar receipt?',
     options: [
@@ -213,7 +213,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Options Hedging',
     subtopic: 'Interest Rate Options',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A company with $100M floating-rate debt buys an interest rate cap at 5% for $500,000 premium. If rates rise to 7%, what is the net interest cost?',
     options: [
@@ -297,7 +297,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Enterprise Risk',
     subtopic: 'Economic Capital',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'A financial institution calculates economic capital of $500M at 99.9% confidence. This represents:',
     options: [
@@ -317,7 +317,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Enterprise Risk',
     subtopic: 'Stress Testing',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A stress test models a severe recession: 5% GDP decline, 10% unemployment, 30% equity market drop. The company\'s stressed net income drops from $100M to -$50M. What does this indicate?',
     options: [
@@ -395,26 +395,6 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     reference: 'Operational Loss Distribution; Fat Tails',
   },
   {
-    id: 'cma2-d-044',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-D',
-    topic: 'Operational Risk',
-    subtopic: 'Business Continuity',
-    difficulty: 'medium',
-    skillLevel: 'Evaluation',
-    question: 'A company\'s Recovery Time Objective (RTO) for its core trading system is 4 hours. This means:',
-    options: [
-      'Data backup occurs every 4 hours',
-      'The system must be restored within 4 hours of a disruption',
-      'Maximum acceptable data loss is 4 hours',
-      'System maintenance windows are 4 hours'
-    ],
-    correctAnswer: 1,
-    explanation: 'RTO defines maximum acceptable downtime before business impact becomes unacceptable. A 4-hour RTO means recovery plans must restore trading within 4 hours. This drives disaster recovery investment (hot sites, redundancy). Recovery Point Objective (RPO) measures acceptable data loss; backup frequency is a control, not an objective.',
-    reference: 'Business Continuity; RTO and RPO',
-  },
-  {
     id: 'cma2-d-045',
     courseId: 'cma',
     section: 'CMA2',
@@ -485,7 +465,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Interest Rate Risk',
     subtopic: 'Duration',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A bond portfolio has duration of 6 years and value of $50 million. If interest rates increase by 50 basis points, what is the approximate value change?',
     options: [
@@ -505,7 +485,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Interest Rate Risk',
     subtopic: 'Interest Rate Swap',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A company with $100M floating-rate debt (LIBOR + 2%) enters a pay-fixed/receive-floating swap at 5% fixed. If LIBOR is 4%, what is the net interest payment?',
     options: [
@@ -537,7 +517,7 @@ export const CMA2D_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Futures hedge locks in the purchase price. At delivery: Buy fuel at spot $3.00, but futures profit = $3.00 - $2.60 = $0.40/gallon. Net cost = $3.00 - $0.40 = $2.60/gallon. Regardless of spot price movement, the effective cost equals the futures contract price of $2.60. Total cost = 10M × $2.60 = $26M.',
     reference: 'Commodity Futures; Hedging Fuel Costs',
-  },
+  }
 ];
 
 // Helper functions

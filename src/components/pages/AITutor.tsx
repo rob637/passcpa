@@ -18,10 +18,11 @@ import {
   Zap,
   ArrowLeft
 } from 'lucide-react';
+import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import {
   doc,
   getDoc,
@@ -213,7 +214,7 @@ const AITutor: React.FC = () => {
   // Safely cast userProfile
   const profile = userProfile as UserProfile | null;
   const currentSection = profile?.examSection || 'REG';
-  const sectionInfo = CPA_SECTIONS[currentSection as keyof typeof CPA_SECTIONS];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Check for context passed from Practice page (via state or URL params)
   useEffect(() => {
@@ -431,7 +432,8 @@ const AITutor: React.FC = () => {
             role: m.role, 
             content: m.content 
         })) as any, // Casting because types in aiService might differ slightly from local Message
-        courseId
+        courseId,
+        contextFromPractice || undefined // Pass question/lesson context if available
       );
 
       const assistantMessage: Message = {
@@ -507,7 +509,8 @@ const AITutor: React.FC = () => {
             role: m.role, 
             content: m.content 
         })) as any,
-        courseId
+        courseId,
+        contextFromPractice || undefined // Pass question/lesson context if available
       );
 
       const finalMessages: Message[] = [
@@ -570,13 +573,15 @@ const AITutor: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => navigate(returnTo || '/home')}
-                className="p-2 -ml-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                className="-ml-2"
                 aria-label="Go back"
               >
                 <ArrowLeft className="w-5 h-5" />
-              </button>
+              </Button>
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
@@ -585,15 +590,14 @@ const AITutor: React.FC = () => {
                 <p className="text-xs text-slate-600 dark:text-slate-400">Your AI Study Companion</p>
               </div>
             </div>
-            <button
-              type="button"
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={clearChat}
-              className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
-              title="New conversation"
               aria-label="Clear chat and start new conversation"
             >
               <Trash2 className="w-5 h-5" aria-hidden="true" />
-            </button>
+            </Button>
           </div>
 
           {/* Mode Selector */}
@@ -808,19 +812,15 @@ const AITutor: React.FC = () => {
                 style={{ minHeight: '48px', maxHeight: '120px' }}
               />
             </div>
-            <button
+            <Button
+              variant="primary"
+              size="icon"
               type="submit"
               disabled={!input.trim() || isLoading}
-              className={clsx(
-                'btn-icon rounded-xl transition-all flex-shrink-0',
-                input.trim() && !isLoading
-                  ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-soft'
-                  : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 cursor-not-allowed'
-              )}
               aria-label="Send message"
             >
               <Send className="w-5 h-5" aria-hidden="true" />
-            </button>
+            </Button>
           </div>
           <p className="text-[10px] text-slate-600 dark:text-slate-400 mt-2 text-center">
             AI responses are for educational purposes only. Verify important information with authoritative sources.

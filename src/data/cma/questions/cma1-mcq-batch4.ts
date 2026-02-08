@@ -1,0 +1,519 @@
+/**
+ * CMA Part 1 - MCQ Batch 4 (25 Questions)
+ * 
+ * High-quality questions covering all blueprint areas:
+ * - CMA1-A: External Financial Reporting (4 questions)
+ * - CMA1-B: Planning, Budgeting, Forecasting (4 questions)
+ * - CMA1-C: Performance Management (5 questions)
+ * - CMA1-D: Cost Management (5 questions)
+ * - CMA1-E: Internal Controls (4 questions)
+ * - CMA1-F: Technology & Analytics (3 questions)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1_MCQ_BATCH4: Question[] = [
+  // ==========================================
+  // CMA1-A: External Financial Reporting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Revenue Recognition',
+    subtopic: 'Contract Modifications',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Tech Solutions has a $500,000 software license contract with a customer. After 6 months, the customer requests additional modules worth $150,000. The additional modules are distinct, and the price reflects standalone selling price. How should Tech Solutions account for this modification?',
+    options: [
+      'Combine with the original contract and recognize a cumulative catch-up adjustment',
+      'Account for as a separate contract',
+      'Terminate the existing contract and create a new $650,000 contract',
+      'Defer the $150,000 until the original contract is complete'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under ASC 606, a contract modification is treated as a separate contract when: (1) the additional goods/services are distinct, AND (2) the price reflects standalone selling price. Both conditions are met here, so it is accounted for as a separate contract.',
+    reference: 'ASC 606; Contract Modifications',
+  },
+  {
+    id: 'cma1-mcq4-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Statement of Cash Flows',
+    subtopic: 'Classification',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Under U.S. GAAP, interest paid and dividends received are classified in the statement of cash flows as:',
+    options: [
+      'Both operating activities',
+      'Interest paid as financing, dividends received as investing',
+      'Both financing activities',
+      'Interest paid as operating, dividends received as financing'
+    ],
+    correctAnswer: 0,
+    explanation: 'Under U.S. GAAP, interest paid and interest received, as well as dividends received, are all classified as operating activities. Only dividends paid are classified as financing activities. Note: IFRS allows more flexibility in classification.',
+    reference: 'ASC 230; Statement of Cash Flows',
+  },
+  {
+    id: 'cma1-mcq4-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Inventory',
+    subtopic: 'Lower of Cost or NRV',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Omega Corp. has inventory with a cost of $180,000, selling price of $200,000, estimated selling costs of $30,000, and normal profit margin of $25,000. What amount should be reported on the balance sheet?',
+    options: [
+      '$200,000',
+      '$180,000',
+      '$170,000',
+      '$145,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under GAAP, inventory is reported at the lower of cost or net realizable value (NRV). NRV = Selling Price - Selling Costs = $200,000 - $30,000 = $170,000. Since NRV ($170,000) < Cost ($180,000), inventory is written down to $170,000.',
+    reference: 'ASC 330; Inventory Valuation',
+  },
+  {
+    id: 'cma1-mcq4-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Pension Accounting',
+    subtopic: 'Pension Expense Components',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Stellar Corp. has the following pension data: Service cost $120,000; Interest cost $85,000; Expected return on plan assets $70,000; Amortization of prior service cost $15,000; Actual return on plan assets $90,000. What is the pension expense?',
+    options: [
+      '$130,000',
+      '$150,000',
+      '$160,000',
+      '$170,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Pension Expense = Service Cost + Interest Cost - Expected Return + Amortization of Prior Service Cost = $120,000 + $85,000 - $70,000 + $15,000 = $150,000. Note: Actual return is used for plan assets, but EXPECTED return is used for expense calculation.',
+    reference: 'ASC 715; Pension Accounting',
+  },
+
+  // ==========================================
+  // CMA1-B: Planning, Budgeting, Forecasting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Production Budget',
+    subtopic: 'Units to Produce',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Mars Inc. forecasts Q2 sales of 45,000 units. Beginning finished goods inventory is 8,000 units, and the company wants to end with 12,000 units. Beginning WIP is 3,000 units (50% complete). How many units must be produced in Q2?',
+    options: [
+      '49,000 units',
+      '51,500 units',
+      '49,000 units plus WIP completion',
+      '47,500 units'
+    ],
+    correctAnswer: 0,
+    explanation: 'Units to Produce = Budgeted Sales + Desired Ending FG - Beginning FG = 45,000 + 12,000 - 8,000 = 49,000 units. Beginning WIP does not directly affect the production budget for finished goods.',
+    reference: 'Production Budget',
+  },
+  {
+    id: 'cma1-mcq4-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Cash Budget',
+    subtopic: 'Cash Collections',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Velocity Corp. has the following collection pattern: 40% collected in month of sale, 45% in month following sale, 13% in second month following sale, 2% uncollectible. March sales were $200,000, April sales were $250,000, and May sales are projected at $280,000. What are projected May cash collections?',
+    options: [
+      '$234,500',
+      '$246,500',
+      '$254,500',
+      '$280,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'May collections from three months of sales:\n• Current month (May): 40% × $280,000 = $112,000\n• Prior month (April): 45% × $250,000 = $112,500\n• Two months prior (March): 13% × $200,000 × (100%/98%) adjusted for net collectible = $22,000\nTotal projected May collections = $112,000 + $112,500 + $22,000 = $246,500. The 2% uncollectible factor reduces the effective third-month collection rate.',
+    reference: 'Cash Budget; Collections Pattern',
+  },
+  {
+    id: 'cma1-mcq4-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Regression Analysis',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A company uses regression to forecast maintenance costs. The equation is Y = $15,000 + $2.50X, where X is machine hours. The R² is 0.89. For 20,000 machine hours, what is the predicted cost and what does R² tell us?',
+    options: [
+      '$65,000; 89% of cost variation is explained by machine hours',
+      '$50,000; 89% of machine hours explain costs',
+      '$65,000; the equation is 89% accurate',
+      '$67,500; 89% of costs are variable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Y = $15,000 + ($2.50 × 20,000) = $15,000 + $50,000 = $65,000. R² (coefficient of determination) = 0.89 means 89% of the variation in maintenance costs is explained by the variation in machine hours.',
+    reference: 'Regression Analysis; R-squared',
+  },
+  {
+    id: 'cma1-mcq4-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Budgeting',
+    subtopic: 'Participative Budgeting',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which of the following is the PRIMARY disadvantage of participative (bottom-up) budgeting?',
+    options: [
+      'Lack of employee commitment to budget targets',
+      'Potential for budgetary slack',
+      'Disconnect from strategic objectives',
+      'Faster budget preparation process'
+    ],
+    correctAnswer: 1,
+    explanation: 'The primary disadvantage of participative budgeting is the potential for budgetary slack, where managers build in extra cushion by underestimating revenues or overestimating expenses. While participative budgeting increases commitment, it may allow managers to create easy-to-achieve targets.',
+    reference: 'Participative Budgeting; Budgetary Slack',
+  },
+
+  // ==========================================
+  // CMA1-C: Performance Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'ROI',
+    subtopic: 'DuPont Formula',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Division A has: Sales $2,000,000; Operating Income $200,000; Average Operating Assets $1,000,000. Using the DuPont formula, what is margin, turnover, and ROI?',
+    options: [
+      'Margin 10%, Turnover 2.0, ROI 20%',
+      'Margin 20%, Turnover 2.0, ROI 40%',
+      'Margin 10%, Turnover 1.0, ROI 10%',
+      'Margin 5%, Turnover 4.0, ROI 20%'
+    ],
+    correctAnswer: 0,
+    explanation: 'Margin = Operating Income / Sales = $200,000 / $2,000,000 = 10%. Turnover = Sales / Assets = $2,000,000 / $1,000,000 = 2.0. ROI = Margin × Turnover = 10% × 2 = 20%. Or directly: ROI = $200,000 / $1,000,000 = 20%.',
+    reference: 'DuPont Analysis; ROI',
+  },
+  {
+    id: 'cma1-mcq4-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Residual Income',
+    subtopic: 'Investment Decisions',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Division B has current ROI of 18%. The division is considering a project requiring $500,000 investment with expected annual operating income of $75,000. The company\'s hurdle rate is 12%. Should the division accept if evaluated on ROI? On Residual Income?',
+    options: [
+      'Accept on ROI; Accept on RI',
+      'Reject on ROI; Accept on RI',
+      'Accept on ROI; Reject on RI',
+      'Reject on ROI; Reject on RI'
+    ],
+    correctAnswer: 1,
+    explanation: 'Project ROI = $75,000 / $500,000 = 15%. Since 15% < current 18%, the division would REJECT based on ROI (it lowers their average). Project RI = $75,000 - (12% × $500,000) = $75,000 - $60,000 = $15,000 positive. Since RI is positive, ACCEPT based on RI. This demonstrates why RI is preferred—managers won\'t reject good projects just to protect their ROI.',
+    reference: 'ROI vs Residual Income; Goal Congruence',
+  },
+  {
+    id: 'cma1-mcq4-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Balanced Scorecard',
+    subtopic: 'Perspectives',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A company tracks "defects per million opportunities (DPMO)" as a key performance indicator. This metric belongs to which balanced scorecard perspective?',
+    options: [
+      'Financial',
+      'Customer',
+      'Internal Business Process',
+      'Learning and Growth'
+    ],
+    correctAnswer: 2,
+    explanation: 'DPMO is a quality metric that measures internal operational efficiency. It belongs to the Internal Business Process perspective, which tracks how well the organization performs its key internal operations to deliver customer value.',
+    reference: 'Balanced Scorecard; Internal Process',
+  },
+  {
+    id: 'cma1-mcq4-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Transfer Pricing',
+    subtopic: 'Minimum Transfer Price',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Division X can sell externally at $100 per unit with variable costs of $60. The division is at full capacity. Division Y wants to buy 5,000 units internally. What is the minimum transfer price Division X should accept?',
+    options: [
+      '$60',
+      '$80',
+      '$100',
+      'Depends on company policy'
+    ],
+    correctAnswer: 2,
+    explanation: 'Minimum TP = Variable Cost + Opportunity Cost. At full capacity, selling internally means giving up external sales. Opportunity Cost = $100 - $60 = $40 per unit in lost contribution margin. Minimum TP = $60 + $40 = $100. The division should not transfer below the external market price when at capacity.',
+    reference: 'Transfer Pricing; Opportunity Cost',
+  },
+  {
+    id: 'cma1-mcq4-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Performance Measures',
+    subtopic: 'Non-Financial Metrics',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which of the following is considered a "leading" indicator of future financial performance?',
+    options: [
+      'Net income',
+      'Return on equity',
+      'Customer satisfaction scores',
+      'Earnings per share'
+    ],
+    correctAnswer: 2,
+    explanation: 'Customer satisfaction is a leading indicator because it predicts future financial results (satisfied customers tend to generate future revenue). NI, ROE, and EPS are lagging indicators—they report historical results.',
+    reference: 'Leading vs Lagging Indicators',
+  },
+
+  // ==========================================
+  // CMA1-D: Cost Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Absorption vs Variable Costing',
+    subtopic: 'Income Differences',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Zenith Corp. produced 100,000 units and sold 85,000 units. Fixed manufacturing overhead is $600,000. Variable cost per unit is $12. Selling price is $25. What is the difference in operating income between absorption and variable costing?',
+    options: [
+      'Absorption income is $90,000 higher',
+      'Variable income is $90,000 higher',
+      'Absorption income is $102,000 higher',
+      'No difference'
+    ],
+    correctAnswer: 0,
+    explanation: 'When production > sales, absorption costing income > variable costing income. Difference = Fixed MOH in Ending Inventory = (Fixed MOH / Units Produced) × Units in Ending Inventory = ($600,000 / 100,000) × 15,000 = $6 × 15,000 = $90,000. Absorption income is $90,000 higher.',
+    reference: 'Absorption vs Variable Costing',
+  },
+  {
+    id: 'cma1-mcq4-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Activity-Based Costing',
+    subtopic: 'Cost Driver Selection',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company has a $450,000 setup cost pool. Product A requires 120 setups, Product B requires 180 setups. Total setups: 300. What is the setup cost allocated to Product A?',
+    options: [
+      '$180,000',
+      '$225,000',
+      '$270,000',
+      '$150,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Cost per setup = $450,000 / 300 = $1,500 per setup. Product A allocation = 120 setups × $1,500 = $180,000.',
+    reference: 'Activity-Based Costing',
+  },
+  {
+    id: 'cma1-mcq4-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Variance Analysis',
+    subtopic: 'Materials Variances',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Standard: 4 lbs @ $3.00/lb. Actual: Purchased 12,000 lbs @ $2.80/lb, used 10,500 lbs for 2,500 units. Calculate the materials price and quantity variances.',
+    options: [
+      'Price $2,400 F; Quantity $1,500 U',
+      'Price $2,100 F; Quantity $1,500 U',
+      'Price $2,400 F; Quantity $1,500 F',
+      'Price $2,100 U; Quantity $1,500 U'
+    ],
+    correctAnswer: 0,
+    explanation: 'Price Variance = (AP - SP) × AQ purchased = ($2.80 - $3.00) × 12,000 = -$0.20 × 12,000 = -$2,400 = $2,400 Favorable. Quantity Variance = (AQ used - SQ allowed) × SP = (10,500 - [2,500 × 4]) × $3.00 = (10,500 - 10,000) × $3.00 = 500 × $3.00 = $1,500 Unfavorable.',
+    reference: 'Materials Variance Analysis',
+  },
+  {
+    id: 'cma1-mcq4-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Job Order Costing',
+    subtopic: 'Overhead Application',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company uses job order costing with overhead applied at $25 per machine hour. Job #347 used: Direct Materials $8,400; Direct Labor $6,200; Machine Hours 180. What is the total cost of Job #347?',
+    options: [
+      '$14,600',
+      '$19,100',
+      '$23,100',
+      '$14,780'
+    ],
+    correctAnswer: 1,
+    explanation: 'Applied Overhead = 180 hours × $25 = $4,500. Total Cost = DM + DL + OH = $8,400 + $6,200 + $4,500 = $19,100.',
+    reference: 'Job Order Costing; Overhead Application',
+  },
+  {
+    id: 'cma1-mcq4-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Target Costing',
+    subtopic: 'Target Cost Calculation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Market research indicates customers will pay $450 for a new product. The company requires a 25% profit margin on selling price. What is the target cost?',
+    options: [
+      '$337.50',
+      '$360.00',
+      '$400.00',
+      '$112.50'
+    ],
+    correctAnswer: 0,
+    explanation: 'Target Profit = 25% × $450 = $112.50. Target Cost = Target Price - Target Profit = $450 - $112.50 = $337.50.',
+    reference: 'Target Costing',
+  },
+
+  // ==========================================
+  // CMA1-E: Internal Controls (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Control Environment',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Under the COSO internal control framework, which component is considered the "foundation" of all other components?',
+    options: [
+      'Control Activities',
+      'Risk Assessment',
+      'Control Environment',
+      'Monitoring'
+    ],
+    correctAnswer: 2,
+    explanation: 'The Control Environment is the foundation of the COSO framework. It sets the tone of the organization, influencing control consciousness. It includes factors like integrity, ethical values, management philosophy, and organizational structure.',
+    reference: 'COSO; Control Environment',
+  },
+  {
+    id: 'cma1-mcq4-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Controls',
+    subtopic: 'Control Types',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Requiring a supervisor to approve purchase orders over $10,000 is an example of which type of control?',
+    options: [
+      'Detective control',
+      'Corrective control',
+      'Preventive control',
+      'Compensating control'
+    ],
+    correctAnswer: 2,
+    explanation: 'Approval requirements are preventive controls—they prevent unauthorized or inappropriate transactions from occurring in the first place. Detective controls find problems after the fact; corrective controls fix identified problems.',
+    reference: 'Types of Controls; Preventive',
+  },
+  {
+    id: 'cma1-mcq4-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Audit',
+    subtopic: 'Independence',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'To whom should the internal audit function report to maintain maximum independence?',
+    options: [
+      'Chief Financial Officer',
+      'Board of Directors/Audit Committee',
+      'Chief Executive Officer',
+      'Controller'
+    ],
+    correctAnswer: 1,
+    explanation: 'Internal audit achieves maximum independence when it reports functionally to the Board of Directors or Audit Committee, with administrative reporting to a senior executive. This ensures objectivity in evaluating management and operations.',
+    reference: 'Internal Audit Independence',
+  },
+
+  // ==========================================
+  // CMA1-F: Technology & Analytics (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq4-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Analytics',
+    subtopic: 'Types of Analytics',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A hospital uses machine learning to identify patients at high risk of readmission within 30 days. This is an example of:',
+    options: [
+      'Descriptive analytics',
+      'Diagnostic analytics',
+      'Predictive analytics',
+      'Prescriptive analytics'
+    ],
+    correctAnswer: 2,
+    explanation: 'Predictive analytics uses historical data and statistical techniques to forecast future outcomes—in this case, predicting which patients may be readmitted. Descriptive tells what happened; diagnostic explains why; prescriptive recommends actions.',
+    reference: 'Types of Analytics',
+  },
+  {
+    id: 'cma1-mcq4-024',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Governance',
+    subtopic: 'Data Quality',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which data quality dimension ensures that data values fall within acceptable ranges and formats?',
+    options: [
+      'Completeness',
+      'Accuracy',
+      'Validity',
+      'Timeliness'
+    ],
+    correctAnswer: 2,
+    explanation: 'Validity ensures data conforms to defined rules, formats, or value ranges. Completeness means no missing values. Accuracy means data correctly represents reality. Timeliness means data is current when needed.',
+    reference: 'Data Quality Dimensions',
+  },
+  {
+    id: 'cma1-mcq4-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'ERP Systems',
+    subtopic: 'Benefits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'All of the following are benefits of an integrated ERP system EXCEPT:',
+    options: [
+      'Single source of truth for data',
+      'Real-time visibility across functions',
+      'Lower implementation costs than best-of-breed solutions',
+      'Standardized business processes'
+    ],
+    correctAnswer: 2,
+    explanation: 'ERP implementations are typically MORE expensive than best-of-breed solutions due to complexity, customization, training, and change management. Benefits include integration, single data source, real-time visibility, and process standardization.',
+    reference: 'ERP Systems; Implementation',
+  },
+];

@@ -21,6 +21,20 @@ vi.mock('../../hooks/useStudy', () => ({
   }),
 }));
 
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+      ],
+    },
+  }),
+}));
+
 // Mock lessons data
 vi.mock('../../data/lessons', () => ({
   getLessonById: vi.fn((id) => {

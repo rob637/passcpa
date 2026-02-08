@@ -1,0 +1,117 @@
+[
+  {
+    "id": "SEE2-005",
+    "title": "S-Corp Basis (Stock vs. Debt)",
+    "avatar_id": "Sarah_Tax_Expert",
+    "duration_est_minutes": 10,
+    "script_full": "Welcome back. Today we are tackling the number one reason students fail Part 2 of the EA exam: S-Corp Basis. Specifically, the 'Debt Trap'. <break time='1.0s' /> Here is the scenario: Your client, Bob, guarantees a $100,000 bank loan for his struggling S-Corp. He thinks he can now deduct $100,000 of losses. The IRS says: 'Absolutely not.' Bob has zero basis. Bob is angry. <break time='1.0s' /> Unlike partnerships, S-Corporations have two distinct buckets of basis: Stock Basis and Debt Basis. Stock Basis is what you paid for the stock, plus income, minus distributions. Think of this as your 'Equity'. Debt Basis is created only when you, the shareholder, loan actual money directly to the corporation. This is the 'Economic Outlay' doctrine. If cash didn't leave your personal bank account and land in the company account, you do not have basis. A guarantee is just a promise, not an outlay. <break time='1.0s' /> Now, let's talk about the 'Ordering Rules'. The IRS forces us to adjust basis in a specific order every year. Memorize this acronym: I.D.L. First, Income items. Second, Distributions. Third, Losses. If you mess up this order, you will calculate the wrong taxability for the distribution and the wrong allowable loss.",
+    "visual_generation_prompts": [
+      {
+        "timestamp": "00:00",
+        "type": "title_card",
+        "dalle_prompt": "A professional digital signage slide for an accounting course. Title text: 'S-Corp Basis: The Debt Trap'. Subtitle: 'Stock vs Debt'. Minimalist corporate blue and white theme. High resolution, 16:9 aspect ratio."
+      },
+      {
+        "timestamp": "01:30",
+        "type": "diagram",
+        "dalle_prompt": "A clean infographic diagram comparing two buckets. Left bucket labeled 'Stock Basis' (Green), Right bucket labeled 'Debt Basis' (Yellow). Arrows pointing into buckets representing money. Educational style, flat vector art."
+      },
+      {
+        "timestamp": "04:00",
+        "type": "acronym",
+        "dalle_prompt": "A presentation slide showing the acronym 'I.D.L.' in large bold letters. 1. Income, 2. Distributions, 3. Losses. An arrow pointing downwards showing the order. Professional business style."
+      }
+    ]
+  },
+  {
+    "id": "SEE2-006",
+    "title": "Partnership Basis (Inside vs. Outside)",
+    "avatar_id": "Sarah_Tax_Expert",
+    "duration_est_minutes": 10,
+    "script_full": "In the last video, we said S-Corp shareholders don't get basis for bank loans. Well, throw that rule out the window. Welcome to Partnership taxation, where liabilities are your friend. <break time='1.0s' /> Today we define the 'Two Worlds': Inside Basis and Outside Basis. In a partnership, every partner is personally liable or economically at risk. Therefore, when the partnership takes out a $1,000,000 loan, the partners get to increase their 'Outside Basis' by their share of that loan. This is huge. It means you can deduct losses greater than your cash investment, funded entirely by bank debt. <break time='1.0s' /> We use the 'BASE' mnemonic for the running tally: Beginning Basis, Add Contributions and Income and Increase in Liabilities. Subtract Distributions, Losses, and Decrease in Liabilities. Equals Ending Basis. Pay close attention to that liability line. If the partnership pays off debt, your basis goes DOWN.",
+    "visual_generation_prompts": [
+      {
+        "timestamp": "00:00",
+        "type": "title_card",
+        "dalle_prompt": "A professional presentation title slide. Title: 'Partnership Basis'. Subtitle: 'Inside vs Outside'. Visual metaphor of a wall separating a building (Inside) and a person's wallet (Outside). Corporate style."
+      },
+      {
+        "timestamp": "02:00",
+        "type": "concept",
+        "dalle_prompt": "An educational illustration showing a bank building giving a bag of money to a partnership, and the partners growing larger. Symbolizing 'Liabilities Increase Basis'. Vector graphic style."
+      },
+      {
+        "timestamp": "05:00",
+        "type": "formula",
+        "dalle_prompt": "A math formula slide. 'BASE Formula'. B (Beginning) + A (Additions) - S (Subtractions) = E (Ending). Highlight the words 'Liabilities' in both Additions and Subtractions. Clean typography."
+      }
+    ]
+  },
+  {
+    "id": "SEE2-001",
+    "title": "Entity Classification (Check-the-Box)",
+    "avatar_id": "Sarah_Tax_Expert",
+    "duration_est_minutes": 10,
+    "script_full": "What is an LLC? To the IRS... it doesn't exist. Seriously. 'LLC' is a legal term, not a tax term. The IRS looks at an LLC and assumes it is either a person, a partnership, or a corporation based on how many owners it has. <break time='1.0s' /> If you do NOTHING, the default applies. One Owner? You are a Disregarded Entity. Two or more Owners? You are a Partnership. <break time='1.0s' /> But what if you don't like the default? You file Form 8832. This form tells the IRS: 'I know I look like a Partnership, but I want you to tax me as a C-Corporation.' Once you elect C-Corp status, you can then file Form 2553 to become an S-Corp. But remember the Exam Trap: Once you elect to change your classification, you generally cannot change it again for 60 months.",
+    "visual_generation_prompts": [
+      {
+        "timestamp": "00:00",
+        "type": "title_card",
+        "dalle_prompt": "A title slide. Title: 'Entity Classification'. Subtitle: 'The Check-the-Box Regulations'. Background image of a tax form checkbox being checked. Professional style."
+      },
+      {
+        "timestamp": "02:00",
+        "type": "flowchart",
+        "dalle_prompt": "A decision tree diagram. Top box: 'LLC'. Branch 1: '1 Owner' -> 'Disregarded'. Branch 2: '2+ Owners' -> 'Partnership'. Simple clear lines. Corporate presentation style."
+      },
+      {
+        "timestamp": "05:00",
+        "type": "document",
+        "dalle_prompt": "A graphic showing IRS Form 8832 and IRS Form 2553. Arrows indicating a process: LLC -> Form 8832 -> C-Corp -> Form 2553 -> S-Corp. Educational graphic."
+      }
+    ]
+  },
+  {
+    "id": "SEE2-012",
+    "title": "Section 1245 Recapture",
+    "avatar_id": "Sarah_Tax_Expert",
+    "duration_est_minutes": 10,
+    "script_full": "You bought a machine for $10,000. You depreciated it down to zero. You sold it for $12,000. You have a $12,000 gain. Great! Capital gains rates, right? Wrong. <break time='1.0s' /> The IRS recalls that they gave you ordinary deductions for depreciation. They want that tax back at ordinary rates. This is Section 1245 Depreciation Recapture. <break time='1.0s' /> The Rule of 1245 applies to 'Personal Property' like machinery and equipment. When you sell it, the amount of the gain that represents the depreciation you previously took is Ordinary Income. Any gain above the original purchase price is Section 1231 Capital Gain. In our example, the first $10,000 of gain is Ordinary. The remaining $2,000 is Capital Gain. Do not mix this up.",
+    "visual_generation_prompts": [
+      {
+        "timestamp": "00:00",
+        "type": "title_card",
+        "dalle_prompt": "Title slide: 'Section 1245 Recapture'. Subtitle: 'Turning Gains into Ordinary Income'. Image of an industrial machine turning into gold coins, some coins turning into lead. Conceptual art."
+      },
+      {
+        "timestamp": "02:00",
+        "type": "concept",
+        "dalle_prompt": "A split bar chart. The bottom part of the bar is labeled 'Recapture (Ordinary)', the top tip of the bar is labeled 'Sec 1231 (Capital)'. Clean financial chart style."
+      }
+    ]
+  },
+  {
+    "id": "SEE2-015",
+    "title": "Passive Activity Losses (PAL)",
+    "avatar_id": "Sarah_Tax_Expert",
+    "duration_est_minutes": 10,
+    "script_full": "Doctors and Lawyers love buying rental condos to 'lower their taxes'. It is your job to break their hearts. Standard Passive Loss rules say: You cannot use a loss from a rental property to offset your wages. <break time='1.0s' /> Income comes in three buckets: Active, Portfolio, and Passive. Passive Losses are trapped in the passive bucket. However, you can break out if you prove 'Material Participation'. <break time='1.0s' /> The big exception is the $25,000 Rental Real Estate Exception. If you 'Actively Participate' and your AGI is under $100,000, you can deduct up to $25,000. This phases out completely at $150,000. Memorize those thresholds.",
+    "visual_generation_prompts": [
+      {
+        "timestamp": "00:00",
+        "type": "title_card",
+        "dalle_prompt": "Title slide: 'Passive Activity Losses'. Subtitle: 'Material Participation & Exceptions'. Image of three distinct buckets labeled Active, Portfolio, Passive. Professional icon style."
+      },
+      {
+        "timestamp": "03:00",
+        "type": "chart",
+        "dalle_prompt": "A graphic showing a checklist for 'Material Participation'. Items: '500 Hours', 'Substantially All', '100 Hours + Most'. Green checkmarks. Modern UI style."
+      },
+      {
+        "timestamp": "06:00",
+        "type": "graph",
+        "dalle_prompt": "A graph showing the '$25,000 Exception' phasing out. The line starts high at $25k deduction, then slopes down to zero between $100k and $150k AGI. Financial graph style."
+      }
+    ]
+  }
+]

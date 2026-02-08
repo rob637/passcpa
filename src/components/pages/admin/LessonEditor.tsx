@@ -1,6 +1,6 @@
 /**
  * Lesson Editor - View-only admin interface for lessons
- * Lessons are stored in TypeScript files - edit src/data/lessons/ and redeploy
+ * Lessons are stored in TypeScript files - edit src/data/cpa/lessons/ and redeploy
  */
 
 import { useState, useEffect, useCallback } from 'react';
@@ -18,7 +18,10 @@ import {
   Eye,
   Database,
   Info,
+  X,
 } from 'lucide-react';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
@@ -120,7 +123,7 @@ const LessonEditor = () => {
             <div>
               <h3 className="font-semibold text-green-900 dark:text-green-100">Local Lesson Library</h3>
               <p className="text-sm text-green-700 dark:text-green-300 mt-1">
-                Lessons are stored in TypeScript files at <code className="bg-green-100 dark:bg-green-900 px-1 rounded">src/data/lessons/</code>.
+                Lessons are stored in TypeScript files at <code className="bg-green-100 dark:bg-green-900 px-1 rounded">src/data/cpa/lessons/</code>.
                 To add or edit lessons, modify the files and redeploy.
               </p>
             </div>
@@ -152,7 +155,7 @@ const LessonEditor = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6 shadow-sm border border-gray-100 dark:border-slate-700">
+        <Card className="p-4 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
@@ -177,10 +180,10 @@ const LessonEditor = () => {
               ))}
             </select>
           </div>
-        </div>
+        </Card>
 
         {/* Lessons List */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-slate-700">
+        <Card noPadding className="overflow-hidden">
           <div className="p-4 border-b border-slate-200 dark:border-slate-700">
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">
               Lessons ({filteredLessons.length})
@@ -213,13 +216,14 @@ const LessonEditor = () => {
                       <h3 className="font-medium text-slate-900 dark:text-slate-100">{lesson.title}</h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">{lesson.topics?.join(', ') || 'No topics'}</p>
                     </div>
-                    <button
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={() => setViewingLesson(lesson)}
-                      className="p-2 text-slate-600 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-lg"
-                      title="View lesson details"
+                      aria-label="View lesson details"
                     >
                       <Eye className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))
@@ -230,7 +234,7 @@ const LessonEditor = () => {
               Showing first 50 of {filteredLessons.length} lessons
             </div>
           )}
-        </div>
+        </Card>
       </main>
 
       {/* View Lesson Modal */}
@@ -239,12 +243,14 @@ const LessonEditor = () => {
           <div className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white dark:bg-slate-800 p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Lesson Details</h2>
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setViewingLesson(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
+                aria-label="Close modal"
               >
-                ✕
-              </button>
+                <X className="w-5 h-5" />
+              </Button>
             </div>
 
             <div className="p-6 space-y-4">

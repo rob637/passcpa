@@ -16,7 +16,7 @@ import { Lesson } from '../../../types';
 
 export const cma1ALessons: Lesson[] = [
   // ============================================================================
-  // CMA1-A: EXTERNAL FINANCIAL REPORTING DECISIONS (Lessons 1-8)
+  // CMA1-A: EXTERNAL FINANCIAL REPORTING DECISIONS (Lessons 1-13)
   // ============================================================================
   
   {
@@ -669,6 +669,364 @@ export const cma1ALessons: Lesson[] = [
             "FASB ASC is the single source of authoritative GAAP",
             "Conceptual framework used when specific guidance doesn't exist",
             "Five elements: Assets, Liabilities, Equity, Revenues, Expenses (plus Gains/Losses)",
+          ],
+        },
+      ],
+    },
+  },
+
+  // ============================================================================
+  // CMA1-A: EXTERNAL FINANCIAL REPORTING DECISIONS (Lessons 9-13)
+  // ============================================================================
+
+  {
+    id: 'CMA1-A-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    title: 'Financial Instruments and Investments',
+    description: 'Classify financial assets, apply the equity method, and navigate the fair value hierarchy',
+    order: 9,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Debt securities classification', 'Equity method', 'Unrealized gains/losses', 'Fair value hierarchy', 'Impairment testing'],
+    blueprintArea: 'CMA1-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "Companies hold billions in financial assets — from short-term bond portfolios to strategic equity stakes. As a CMA, you must know how classification drives income statement volatility and balance sheet presentation. A single reclassification can swing reported earnings by millions. The CMA exam tests this area heavily because misclassifying investments is one of the most common financial reporting errors.",
+        },
+        {
+          title: 'Classification of Debt Securities (ASC 320)',
+          type: 'table',
+          headers: ['Category', 'Intent / Ability', 'Measurement', 'Unrealized Gains/Losses'],
+          rows: [
+            ['Held-to-Maturity (HTM)', 'Positive intent AND ability to hold to maturity', 'Amortized cost', 'Not recognized (disclosed only)'],
+            ['Trading', 'Held for short-term profit', 'Fair value', 'Income statement (Net Income)'],
+            ['Available-for-Sale (AFS)', 'Neither HTM nor Trading', 'Fair value', 'Other Comprehensive Income (OCI)'],
+          ],
+        },
+        {
+          title: 'Equity Investments (ASC 321)',
+          type: 'text',
+          content: "**Equity securities with readily determinable fair values:**\n• Measured at **fair value through net income (FV-NI)**\n• ALL unrealized gains/losses flow through the income statement\n• No OCI option for equity securities (unlike debt AFS)\n\n**Equity securities WITHOUT readily determinable fair values:**\n• May elect **measurement alternative:** Cost minus impairment ± observable price changes\n• This avoids the volatility of full fair value measurement\n\n**Key Change from Old GAAP:**\nThe old \"available-for-sale\" category for equities is gone. Unrealized gains/losses on equity securities now always hit net income (except for the measurement alternative).",
+        },
+        {
+          title: '🧠 Memory Aid: Investment Classification',
+          type: 'callout',
+          content: "**\"Where do unrealized gains/losses go?\"**\n\nThink **\"TIN-OCA\":**\n\n**T**rading → **I**ncome statement (**N**et Income)\n**O**CI → Available-for-Sale debt (bypasses income statement)\n**C**ost → Held-to-Maturity (no gain/loss recognized)\n**A**ll equity securities → Net Income (under ASC 321)\n\n**Ownership Percentage Guide:**\n• **< 20%** → Fair value (ASC 321) — little influence\n• **20-50%** → Equity method (ASC 323) — significant influence\n• **> 50%** → Consolidation — control",
+        },
+        {
+          title: 'Equity Method Investments (20-50% Ownership)',
+          type: 'text',
+          content: "**When to Apply:** Investor has **significant influence** over investee (presumed at 20-50% ownership).\n\n**Initial Recognition:**\nDr. Investment in Investee    XXX\n  Cr. Cash                       XXX\n\n**Subsequent Measurement:**\n\n**Investee reports net income of $100,000 (investor owns 30%):**\nDr. Investment in Investee    30,000\n  Cr. Equity in Earnings of Investee    30,000\n\n**Investee pays dividends of $40,000:**\nDr. Cash (30% × $40,000)    12,000\n  Cr. Investment in Investee    12,000\n\n**Critical Concept:** Dividends REDUCE the investment balance — they are NOT income! Income is recognized as the investor's share of the investee's earnings.\n\n**Investment Balance = Cost + Share of Income − Share of Dividends − Amortization of Basis Differences**",
+        },
+        {
+          title: 'Fair Value Hierarchy (ASC 820)',
+          type: 'text',
+          content: "**Level 1 — Quoted Prices in Active Markets**\n• Most reliable: stock prices on NYSE, bond prices on active exchanges\n• Use unadjusted quoted prices\n\n**Level 2 — Observable Inputs (Other Than Level 1)**\n• Quoted prices in inactive markets\n• Quoted prices for similar assets/liabilities\n• Observable interest rates, yield curves\n• Example: Corporate bond priced using comparable bond yields\n\n**Level 3 — Unobservable Inputs**\n• Least reliable: entity's own assumptions\n• Used when market data is unavailable\n• Requires most extensive disclosures\n• Example: Valuing a private equity investment using DCF model\n\n**Hierarchy Rule:** Use the HIGHEST level of input available. You cannot choose Level 3 when Level 1 data exists.",
+        },
+        {
+          title: '⚠️ Exam Trap: Impairment and Reclassification',
+          type: 'warning',
+          content: "**Impairment of Debt Securities (AFS and HTM):**\n• Use the **Current Expected Credit Loss (CECL)** model under ASC 326\n• Credit-related impairment → Allowance (income statement loss)\n• Non-credit-related impairment on AFS → OCI\n\n**Impairment of Equity Method Investments:**\n• If decline is **other than temporary** → Write down to fair value\n• Loss recognized in income statement (not recoverable)\n\n**Common Exam Traps:**\n1. Trading securities are ALWAYS at fair value through NI — no impairment test needed (already marked to market)\n2. HTM securities are at amortized cost — but still tested for credit losses under CECL\n3. Selling HTM securities \"taints\" the entire portfolio — may force reclassification\n4. AFS → Trading reclassification: unrealized gain/loss already in OCI stays in OCI",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Debt securities: HTM (amortized cost), Trading (FV-NI), AFS (FV-OCI)",
+            "Equity securities generally measured at FV through net income under ASC 321",
+            "Equity method (20-50%): Investment = Cost + Share of Income − Dividends",
+            "Dividends received under equity method reduce the investment, NOT income",
+            "Fair value hierarchy: Level 1 (quoted prices) > Level 2 (observable) > Level 3 (unobservable)",
+            "CECL model applies to debt security impairment; equity method uses other-than-temporary test",
+            "Trading securities never need separate impairment testing — already at fair value",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CMA1-A-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    title: 'Business Combinations',
+    description: 'Apply the acquisition method under ASC 805 for business combinations, goodwill, and non-controlling interests',
+    order: 10,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Acquisition method', 'Goodwill calculation', 'Goodwill impairment', 'Bargain purchase', 'Non-controlling interests'],
+    blueprintArea: 'CMA1-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "Mergers and acquisitions reshape entire organizations. CMAs must understand how to measure consideration transferred, allocate the purchase price to identifiable assets and liabilities, calculate goodwill, and test it for impairment. These transactions generate some of the largest line items on the balance sheet and are a perennial CMA exam favorite.",
+        },
+        {
+          title: 'The Acquisition Method (ASC 805)',
+          type: 'text',
+          content: "**ASC 805 requires the acquisition method for ALL business combinations.**\n\n**Four Steps:**\n\n**Step 1 — Identify the Acquirer**\n• The entity that obtains control (usually > 50% voting interest)\n• In a stock-for-stock deal, the acquirer is the entity whose shareholders control the combined entity\n\n**Step 2 — Determine the Acquisition Date**\n• The date the acquirer obtains control\n• Usually the closing date of the transaction\n\n**Step 3 — Measure the Consideration Transferred**\n• Cash paid\n• Fair value of equity instruments issued\n• Fair value of any contingent consideration\n• **NOT included:** Acquisition-related costs (legal, advisory fees → expense as incurred)\n\n**Step 4 — Recognize and Measure Identifiable Assets Acquired and Liabilities Assumed**\n• Measured at **acquisition-date fair values**\n• Includes previously unrecognized intangibles (customer lists, brand names, patents)",
+        },
+        {
+          title: '🧠 Memory Aid: Goodwill Calculation',
+          type: 'callout',
+          content: "**\"Goodwill is what you OVERPAID\"**\n\n**Goodwill = Consideration Transferred − Fair Value of Net Identifiable Assets**\n\nOr equivalently:\n**Goodwill = Purchase Price − (FV of Assets − FV of Liabilities)**\n\n**Example:**\n• Purchase price: $5,000,000\n• FV of identifiable assets: $6,000,000\n• FV of liabilities assumed: $2,500,000\n• FV of net assets: $3,500,000\n• **Goodwill = $5,000,000 − $3,500,000 = $1,500,000**\n\n**Remember:** If the net assets are worth MORE than you paid → **Bargain Purchase Gain** (recognized immediately in income statement).",
+        },
+        {
+          title: 'Identifiable Intangible Assets',
+          type: 'table',
+          headers: ['Category', 'Examples', 'Criterion'],
+          rows: [
+            ['Contract-based', 'Licensing agreements, franchise rights, leases', 'Arises from contractual/legal rights'],
+            ['Customer-related', 'Customer lists, customer relationships, order backlog', 'Separable from entity'],
+            ['Technology-based', 'Patents, software, trade secrets, databases', 'Arises from contractual/legal rights'],
+            ['Marketing-related', 'Trademarks, trade names, domain names', 'Arises from contractual/legal rights'],
+            ['Artistic-related', 'Copyrights, musical works, photographs', 'Arises from contractual/legal rights'],
+          ],
+        },
+        {
+          title: 'Goodwill Impairment Testing',
+          type: 'text',
+          content: "**Goodwill is NOT amortized — it is tested for impairment at least annually.**\n\n**Reporting Unit Level:**\nGoodwill is assigned to reporting units (operating segments or components).\n\n**Optional Qualitative Assessment (Step 0):**\n• Assess whether it is **more likely than not** (>50%) that fair value of reporting unit < carrying amount\n• If not likely → No further testing needed\n• Factors: macroeconomic, industry, entity-specific, reporting unit events\n\n**Quantitative Test (if Step 0 fails or is skipped):**\n• Compare **fair value of reporting unit** to its **carrying amount** (including goodwill)\n• If carrying amount > fair value → **Impairment loss** = excess (but limited to goodwill balance)\n• Write down goodwill; loss recognized in income statement\n• **One-step test** (simplified in 2017 — no more \"Step 2\" hypothetical purchase price allocation)\n\n**Impairment losses on goodwill are NEVER reversed!**",
+        },
+        {
+          title: 'Bargain Purchase and Non-Controlling Interests',
+          type: 'text',
+          content: "**Bargain Purchase (Negative Goodwill):**\n• Occurs when FV of net assets > consideration transferred\n• Before recognizing a gain, reassess: Are all assets and liabilities properly identified and measured?\n• If confirmed → Recognize **gain in income statement** on acquisition date\n• This is rare and should raise red flags\n\n**Non-Controlling Interest (NCI):**\n• Arises when acquirer obtains < 100% of target (e.g., buys 80%)\n• NCI measured at either:\n  - **Fair value** (full goodwill method) — preferred under ASC\n  - **Proportionate share of net assets** (partial goodwill method)\n\n**Full Goodwill Example:**\n• Purchase 80% for $4,000,000\n• FV of 100% = $5,000,000\n• NCI (20%) = $1,000,000\n• Total goodwill = $5,000,000 − $3,500,000 net assets = $1,500,000\n\n**NCI is reported in equity section of consolidated balance sheet, separate from parent equity.**",
+        },
+        {
+          title: '⚠️ Exam Trap: Acquisition Costs and Contingent Consideration',
+          type: 'warning',
+          content: "**Acquisition-Related Costs:**\n• Legal fees, due diligence, advisory fees → **EXPENSE as incurred**\n• They are NOT part of the purchase price\n• Stock issuance costs → Reduce APIC (contra-equity)\n\n**Contingent Consideration (Earnouts):**\n• Measured at fair value on acquisition date\n• Classified as liability or equity\n• If liability: remeasured each period with changes in **income statement**\n• If equity: NOT remeasured\n\n**Common Exam Tricks:**\n1. Including advisory fees in goodwill calculation (WRONG — expense them)\n2. Forgetting to include contingent consideration in purchase price\n3. Using book values instead of fair values for acquired assets\n4. Amortizing goodwill (goodwill is NOT amortized under US GAAP — only tested for impairment)",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Acquisition method is required for all business combinations under ASC 805",
+            "Goodwill = Consideration transferred − FV of net identifiable assets acquired",
+            "Acquired assets and liabilities measured at acquisition-date fair values",
+            "Goodwill is not amortized — tested for impairment annually (quantitative or qualitative)",
+            "Impairment = Carrying amount of reporting unit − Fair value (capped at goodwill balance)",
+            "Acquisition-related costs are expensed, NOT capitalized into goodwill",
+            "Non-controlling interest reported in equity; measured at fair value or proportionate share",
+            "Bargain purchase gain recognized immediately in income statement after reassessment",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CMA1-A-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    title: 'Employee Benefits and Pensions',
+    description: 'Account for defined benefit pension plans, OPEB obligations, and pension cost components under ASC 715',
+    order: 11,
+    duration: 55,
+    difficulty: 'advanced',
+    topics: ['Defined benefit plans', 'Defined contribution plans', 'Net periodic pension cost', 'Funded status', 'OPEB'],
+    blueprintArea: 'CMA1-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "Pension and post-retirement benefit obligations can dwarf a company's market capitalization — just ask General Motors or Boeing. CMAs must understand how defined benefit plans create massive liabilities (or assets) on the balance sheet and how the components of pension cost ripple through the income statement and OCI. This is one of the most calculation-heavy topics on the CMA exam.",
+        },
+        {
+          title: 'Defined Contribution vs. Defined Benefit Plans',
+          type: 'table',
+          headers: ['Feature', 'Defined Contribution (e.g., 401k)', 'Defined Benefit (Traditional Pension)'],
+          rows: [
+            ['Promise to Employee', 'Specific contribution amount', 'Specific benefit at retirement'],
+            ['Investment Risk', 'Borne by EMPLOYEE', 'Borne by EMPLOYER'],
+            ['Accounting', 'Simple — expense = contribution', 'Complex — actuarial calculations required'],
+            ['Balance Sheet Impact', 'Minimal (liability only if unpaid)', 'Large asset or liability (funded status)'],
+            ['Employer Cost', 'Predictable', 'Volatile — depends on assumptions'],
+            ['Example', '401(k), 403(b) match', 'Traditional pension paying 60% of final salary'],
+          ],
+        },
+        {
+          title: 'Components of Net Periodic Pension Cost (ASC 715)',
+          type: 'text',
+          content: "**Net periodic pension cost has several components — only ONE goes to operating expense:**\n\n**In Income Statement (Operating):**\n1. **Service Cost** — PV of benefits EARNED by employees during the current period\n   • The ONLY component classified as an operating expense\n\n**In Income Statement (Non-operating / Below the Line):**\n2. **Interest Cost** — Increase in PBO due to passage of time (PBO × Discount Rate)\n3. **Expected Return on Plan Assets** — Reduces pension cost (Expected Return Rate × FV of Plan Assets at BOY)\n4. **Amortization of Prior Service Cost** — Amortized from AOCI over remaining service period\n5. **Amortization of Net Gain/Loss** — Amortized from AOCI using corridor approach\n\n**Formula:**\nNet Periodic Pension Cost = Service Cost + Interest Cost − Expected Return on Plan Assets + Amortization of Prior Service Cost + Amortization of Net Loss (or − Net Gain)",
+        },
+        {
+          title: '🧠 Memory Aid: Pension Cost Components',
+          type: 'callout',
+          content: "**\"SIR-AP\"** — The five components:\n\n**S**ervice Cost — What employees earned this year\n**I**nterest Cost — Time value on the obligation (ADD)\n**R**eturn on Plan Assets — Investment earnings (SUBTRACT expected)\n**A**mortization of Prior Service Cost — Cost of plan amendments\n**P**rior Gains/Losses Amortized — Corridor method from AOCI\n\n**Quick Signs:**\n• Service Cost → Always ADDS to expense\n• Interest Cost → Always ADDS to expense\n• Expected Return → Always REDUCES expense\n• Prior Service Cost → Usually ADDS to expense\n• Net Loss amortization → ADDS; Net Gain → REDUCES",
+        },
+        {
+          title: 'Projected Benefit Obligation (PBO) and Funded Status',
+          type: 'text',
+          content: "**Three Measures of the Obligation:**\n\n**PBO (Projected Benefit Obligation):**\n• Present value of ALL benefits earned to date\n• Uses future salary projections\n• **This is what goes on the balance sheet**\n\n**ABO (Accumulated Benefit Obligation):**\n• Like PBO but uses CURRENT salary levels\n• Disclosed in notes only\n\n**VBO (Vested Benefit Obligation):**\n• Only benefits the employee has a RIGHT to receive\n• Subset of ABO\n\n**Funded Status (Balance Sheet):**\n**Funded Status = Fair Value of Plan Assets − PBO**\n\n• If Plan Assets > PBO → **Net Asset** (noncurrent asset)\n• If PBO > Plan Assets → **Net Liability** (noncurrent liability)\n\n**PBO Rollforward:**\nBeginning PBO\n+ Service Cost\n+ Interest Cost\n+ Plan Amendments (prior service cost)\n± Actuarial Losses (Gains)\n− Benefits Paid to Retirees\n= Ending PBO",
+        },
+        {
+          title: 'Plan Assets and the Corridor Approach',
+          type: 'text',
+          content: "**Plan Assets Rollforward:**\nBeginning FV of Plan Assets\n+ Actual Return on Plan Assets\n+ Employer Contributions\n− Benefits Paid to Retirees\n= Ending FV of Plan Assets\n\n**Actual vs. Expected Return:**\n• **Expected return** reduces pension cost\n• Difference between actual and expected → **Gain or loss** recorded in OCI\n• This gain/loss accumulates in AOCI\n\n**Corridor Approach for Amortization:**\n• **Corridor = 10% × Greater of (PBO or Plan Assets) at beginning of year**\n• If accumulated net gain/loss in AOCI **exceeds** the corridor → Amortize the EXCESS\n• Amortization = Excess ÷ Average remaining service period of active employees\n\n**Example:**\nPBO = $1,000,000; Plan Assets = $800,000\nCorridor = 10% × $1,000,000 = $100,000\nNet loss in AOCI = $150,000\nExcess = $50,000\nAmortization = $50,000 ÷ 10 years = $5,000 added to pension cost",
+        },
+        {
+          title: '⚠️ Exam Trap: OPEB and Common Mistakes',
+          type: 'warning',
+          content: "**Other Post-Employment Benefits (OPEB):**\n• Includes retiree health care, life insurance, dental\n• Accounted for similarly to pensions under ASC 715\n• Key difference: Usually UNFUNDED (no plan assets) → Large liability\n• Attribution period: Full eligibility date (not retirement date)\n\n**Common Exam Traps:**\n1. **Actual vs. Expected Return:** Pension cost uses EXPECTED return; actual return goes to plan asset rollforward. The difference hits OCI.\n2. **Service Cost Only:** Service cost is the ONLY component in operating income; all others are non-operating.\n3. **Benefits Paid:** Reduces BOTH PBO and Plan Assets — net funded status unchanged.\n4. **Contributions:** Increase Plan Assets only — PBO is unaffected by employer contributions.\n5. **Discount Rate Increase:** DECREASES PBO (lower present value) → actuarial gain.",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Defined benefit plans promise specific retirement benefits; employer bears investment risk",
+            "Net periodic pension cost = Service + Interest − Expected Return + Amortizations",
+            "Only service cost is an operating expense; other components are non-operating",
+            "Funded status = FV of Plan Assets − PBO; reported as net asset or net liability",
+            "Actual vs. expected return difference goes to OCI, amortized via corridor approach",
+            "Corridor = 10% × greater of PBO or Plan Assets; amortize excess over service period",
+            "OPEB (retiree healthcare) follows similar accounting but is usually unfunded",
+            "Benefits paid reduce both PBO and plan assets — no net balance sheet impact",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CMA1-A-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    title: 'Earnings Per Share',
+    description: 'Calculate basic and diluted EPS, apply the treasury stock and if-converted methods, and test for antidilution',
+    order: 12,
+    duration: 45,
+    difficulty: 'intermediate',
+    topics: ['Basic EPS', 'Diluted EPS', 'Treasury stock method', 'If-converted method', 'Antidilution'],
+    blueprintArea: 'CMA1-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "EPS is the single most-watched metric on Wall Street. Analysts live and die by EPS beats or misses, and it's prominently displayed on the face of the income statement. CMAs must calculate both basic and diluted EPS correctly, understand the impact of stock options and convertible securities, and know when potential shares are antidilutive. EPS calculations appear on virtually every CMA exam.",
+        },
+        {
+          title: 'Basic EPS Formula',
+          type: 'text',
+          content: "**Basic EPS = (Net Income − Preferred Dividends) ÷ Weighted Average Common Shares Outstanding**\n\n**Key Details:**\n• Subtract preferred dividends to get income available to **common** shareholders\n• **Cumulative preferred:** Subtract the annual dividend WHETHER OR NOT declared\n• **Non-cumulative preferred:** Subtract only if declared\n• Use **weighted average** shares — adjusted for timing of issuances and repurchases\n\n**Example:**\nNet Income: $500,000\nPreferred Dividends (cumulative): $50,000\nCommon Shares: 100,000 all year\n\n**Basic EPS = ($500,000 − $50,000) ÷ 100,000 = $4.50**",
+        },
+        {
+          title: 'Weighted Average Shares Outstanding',
+          type: 'text',
+          content: "**Shares must be time-weighted based on months outstanding.**\n\n**Example:**\n• January 1: 100,000 shares outstanding\n• April 1: Issued 20,000 new shares\n• October 1: Repurchased 12,000 shares as treasury stock\n\n**Calculation:**\n100,000 × 3/12 = 25,000\n120,000 × 6/12 = 60,000\n108,000 × 3/12 = 27,000\n**Weighted Average = 112,000 shares**\n\n**Stock Dividends and Splits:**\n• Treated as if they occurred at the **beginning of the earliest period presented**\n• Retroactively adjust ALL prior periods\n• Example: 2-for-1 split on July 1 → All shares (even pre-split) treated as doubled for the entire year",
+        },
+        {
+          title: '🧠 Memory Aid: Diluted EPS Methods',
+          type: 'callout',
+          content: "**\"TIC\" — Which method for which security?**\n\n**T**reasury Stock Method → Stock **options and warrants**\n**I**f-**C**onverted Method → **Convertible bonds** and **convertible preferred stock**\n\n**The Big Idea:** Diluted EPS asks: \"What WOULD EPS be if all dilutive securities were converted?\"\n\n**Rule of Thumb:**\nDiluted EPS ≤ Basic EPS (always same or lower — never higher!)\nIf a security would INCREASE EPS → It's **antidilutive** → Exclude it.",
+        },
+        {
+          title: 'Treasury Stock Method (Options and Warrants)',
+          type: 'text',
+          content: "**Used for:** Stock options, warrants, and similar instruments\n\n**Assumption:** Options are exercised at the beginning of the period (or grant date if later)\n\n**Steps:**\n1. Assume all options are exercised → New shares issued\n2. Proceeds received = Number of options × Exercise price\n3. Assume proceeds used to **buy back treasury shares** at average market price\n4. **Net new shares = Shares issued − Shares repurchased**\n\n**Formulas:**\nShares Issued = Number of options\nShares Repurchased = (Options × Exercise Price) ÷ Average Market Price\nIncremental Shares = Shares Issued − Shares Repurchased\n\n**Example:**\n10,000 options with exercise price $20; Average market price $50\nShares Issued: 10,000\nShares Repurchased: (10,000 × $20) ÷ $50 = 4,000\n**Incremental Shares: 6,000**\n\n**Key:** If exercise price ≥ market price → Options are **out of the money** → Antidilutive → **EXCLUDE**",
+        },
+        {
+          title: 'If-Converted Method (Convertible Securities)',
+          type: 'text',
+          content: "**Used for:** Convertible bonds and convertible preferred stock\n\n**Convertible Bonds:**\n• **Numerator adjustment:** Add back interest expense × (1 − tax rate)\n  - Because if converted, no interest would be paid\n• **Denominator adjustment:** Add shares that would be issued upon conversion\n\n**Convertible Preferred Stock:**\n• **Numerator adjustment:** Add back preferred dividends (stop subtracting them)\n• **Denominator adjustment:** Add shares that would be issued upon conversion\n• **No tax adjustment** for preferred dividends (they're not tax-deductible)\n\n**Example — Convertible Bonds:**\nNet Income: $1,000,000 | Preferred Dividends: $0\nBasic shares: 200,000 | Tax rate: 25%\n$500,000 face value bonds, 6% interest, convertible into 15,000 shares\n\nNumerator: $1,000,000 + ($500,000 × 6% × (1 − 0.25)) = $1,000,000 + $22,500 = $1,022,500\nDenominator: 200,000 + 15,000 = 215,000\n**Diluted EPS = $1,022,500 ÷ 215,000 = $4.76**",
+        },
+        {
+          title: '⚠️ Exam Trap: The Antidilution Test',
+          type: 'warning',
+          content: "**Antidilutive securities MUST be excluded from diluted EPS!**\n\n**A security is antidilutive if including it would INCREASE EPS (or decrease a loss per share).**\n\n**Testing Order (Rank from most to least dilutive):**\n1. Calculate the **per-share effect** of each potentially dilutive security\n2. Rank from lowest to highest per-share effect\n3. Include securities one at a time; stop when the next one becomes antidilutive\n\n**Per-Share Effect of Convertible Bond:**\nInterest Savings (net of tax) ÷ Incremental Shares\n$22,500 ÷ 15,000 = $1.50 per share (compare to basic EPS)\n\n**Automatic Antidilution Situations:**\n• Stock options where exercise price ≥ market price → Always exclude\n• Any security when the company has a **net loss** → ALL potential shares are antidilutive (diluted EPS = basic EPS)\n\n**Exam Tip:** If you calculate diluted EPS > basic EPS, you made an error. Go back and check for antidilutive securities!",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Basic EPS = (Net Income − Preferred Dividends) ÷ Weighted Average Common Shares",
+            "Cumulative preferred dividends are subtracted whether or not declared",
+            "Stock splits and dividends are retroactively applied to all periods presented",
+            "Treasury stock method for options: incremental shares = issued − repurchased at avg market price",
+            "If-converted method for bonds: add back after-tax interest to numerator, add shares to denominator",
+            "If-converted for preferred: add back preferred dividends (no tax adjustment)",
+            "Antidilutive securities must be excluded — diluted EPS can never exceed basic EPS",
+            "Net loss = all potential shares are antidilutive; diluted EPS equals basic EPS",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CMA1-A-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    title: 'Contingencies and Commitments',
+    description: 'Apply ASC 450 to recognize, measure, and disclose loss and gain contingencies, and handle subsequent events',
+    order: 13,
+    duration: 40,
+    difficulty: 'intermediate',
+    topics: ['Loss contingencies', 'Gain contingencies', 'ASC 450 criteria', 'Litigation reserves', 'Subsequent events'],
+    blueprintArea: 'CMA1-A',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "Lawsuits, product warranties, environmental cleanups, government investigations — contingencies can make or break a company's financial position. CMAs must know precisely when to accrue a loss, when to only disclose, and when to stay silent. Getting this wrong leads to SEC enforcement actions and audit failures. The CMA exam frequently tests the three-tier classification system and the subtle rules around gain contingencies.",
+        },
+        {
+          title: 'ASC 450 Contingency Framework',
+          type: 'table',
+          headers: ['Likelihood', 'Definition', 'Loss Treatment', 'Gain Treatment'],
+          rows: [
+            ['Probable', 'Likely to occur (>75% in practice)', 'Accrue if estimable; disclose', 'Disclose only (NEVER accrue)'],
+            ['Reasonably Possible', 'More than remote but less than likely', 'Disclose only (no accrual)', 'Disclose only (optional)'],
+            ['Remote', 'Slight chance of occurring', 'No accrual, no disclosure (generally)', 'No action required'],
+          ],
+        },
+        {
+          title: 'Loss Contingency Recognition Rules',
+          type: 'text',
+          content: "**Accrue a loss contingency when BOTH conditions are met:**\n\n1. **Probable** — It is likely that a liability has been incurred as of the balance sheet date\n2. **Reasonably Estimable** — The amount of the loss can be reasonably estimated\n\n**What to Accrue:**\n• If a single best estimate exists → Accrue that amount\n• If a range exists with NO best estimate → Accrue the **MINIMUM** of the range\n• Disclose the nature and the range (or that a range cannot be determined)\n\n**Journal Entry:**\nDr. Loss (or Expense)                    XXX\n  Cr. Estimated Liability (or Accrued Liability)    XXX\n\n**Example — Pending Lawsuit:**\nCompany estimates a probable loss between $2M and $5M, with no best estimate.\n→ Accrue $2M (minimum) and disclose the range up to $5M in the notes.\n\n**If Probable but NOT Estimable:**\n→ No accrual, but MUST disclose the contingency in the notes.",
+        },
+        {
+          title: '🧠 Memory Aid: The Contingency Decision Tree',
+          type: 'callout',
+          content: "**\"PER\" — Three Questions in Order:**\n\n**P**robable? → If YES, go to next question; if NO, check if Reasonably Possible\n**E**stimable? → If YES, **ACCRUE** the loss; if NO, **DISCLOSE** only\n**R**ange with no best estimate? → Accrue the **MINIMUM**\n\n**For Losses:**\nProbable + Estimable = ACCRUE ✅\nProbable + Not Estimable = DISCLOSE 📝\nReasonably Possible = DISCLOSE 📝\nRemote = IGNORE (usually) 🚫\n\n**For Gains:** NEVER accrue. At most, disclose.\n\n**Think of it as CONSERVATISM in action:**\n\"Accrue losses early, recognize gains late.\"",
+        },
+        {
+          title: 'Gain Contingencies',
+          type: 'text',
+          content: "**The Asymmetric Rule (Conservatism in Practice):**\n\n**Gain contingencies are NEVER accrued.** Recognition occurs only when the gain is **realized** — meaning the contingency is resolved and the gain is certain.\n\n**Treatment:**\n• **Probable gain:** Disclose in notes (but do NOT accrue)\n• **Reasonably possible gain:** May disclose (not required)\n• **Remote gain:** No action\n\n**Why?** This reflects the conservatism principle — overstatement of assets and income is considered worse than understatement. Premature gain recognition misleads investors.\n\n**Examples of Gain Contingencies:**\n• Pending lawsuit where the company is the PLAINTIFF\n• Tax refund claims under dispute\n• Insurance recovery awaiting settlement\n\n**When the gain is REALIZED** (e.g., court awards final judgment):\nDr. Receivable (or Cash)    XXX\n  Cr. Gain on Litigation         XXX",
+        },
+        {
+          title: 'Specific Contingency Types',
+          type: 'text',
+          content: "**Litigation Reserves:**\n• Assess each case: probable → accrue; reasonably possible → disclose\n• Attorney letter responses are key audit evidence\n• May aggregate immaterial cases\n\n**Product Warranties:**\n• **Assurance-type (included in price):** Accrue estimated cost at time of sale (not a contingency — ASC 460)\n• **Extended warranties (service-type):** Separate performance obligation under ASC 606 — defer revenue\n\n**Environmental Liabilities:**\n• Superfund/CERCLA: strict, joint and several liability\n• Accrue when probable and estimable; use the minimum of the range\n• Do NOT discount unless timing is fixed and reliable\n\n**Guarantees (ASC 460):**\n• Indemnification agreements, product guarantees\n• Initial recognition at fair value of the guarantee obligation\n• Subsequently measured at higher of fair value or contingent loss amount",
+        },
+        {
+          title: '⚠️ Exam Trap: Subsequent Events and Disclosure Pitfalls',
+          type: 'warning',
+          content: "**Subsequent Events (ASC 855):**\nEvents occurring AFTER the balance sheet date but BEFORE financial statements are issued.\n\n**Type 1 — Recognized Subsequent Events:**\n• Conditions EXISTED at the balance sheet date\n• **Adjust** the financial statements\n• Example: Customer declared bankruptcy in January — AR existed at 12/31, write it down\n\n**Type 2 — Non-Recognized Subsequent Events:**\n• Conditions DID NOT EXIST at the balance sheet date\n• **Disclose** in notes only (do not adjust)\n• Example: Factory fire in February — building was fine at 12/31\n\n**Common Exam Traps:**\n1. **Range with no best estimate:** Accrue the MINIMUM — not the midpoint, not the maximum\n2. **Probable but not estimable:** disclosure required, no accrual\n3. **Gain contingencies accrued:** NEVER — this is wrong regardless of probability\n4. **Remote contingencies disclosed:** Generally NO, except for debt guarantees (always disclose guarantees)\n5. **Unasserted claims:** Accrue only if assertion is probable AND loss from the assertion is probable and estimable",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Loss contingencies: accrue when BOTH probable and reasonably estimable (ASC 450)",
+            "Range with no best estimate → accrue the minimum of the range and disclose",
+            "Gain contingencies are NEVER accrued — only disclosed when probable",
+            "Three tiers: Probable (>75%), Reasonably Possible, Remote",
+            "Subsequent events: Type 1 (adjust financials) vs. Type 2 (disclose only)",
+            "Environmental liabilities use minimum of range; generally not discounted",
+            "Guarantees recognized at fair value initially under ASC 460",
+            "Remote contingencies generally not disclosed — except for debt guarantees",
           ],
         },
       ],

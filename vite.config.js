@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
+
+// Enable bundle analyzer via ANALYZE=true environment variable
+const enableAnalyzer = process.env.ANALYZE === 'true';
 
 export default defineConfig({
   plugins: [
@@ -60,6 +64,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3 MiB - main bundle is ~2.2MB
         skipWaiting: false, // Don't auto-activate new service worker during exam!
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
@@ -120,8 +125,16 @@ export default defineConfig({
           }
         ]
       }
-    })
-  ],
+    }),
+    // Bundle analyzer - run with ANALYZE=true npm run build
+    enableAnalyzer && visualizer({
+      filename: 'dist/stats.html',
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+      template: 'treemap', // or 'sunburst', 'network'
+    }),
+  ].filter(Boolean),
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

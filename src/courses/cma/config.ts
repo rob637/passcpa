@@ -14,7 +14,7 @@ export const CMA_COURSE: Course = {
   description: 'Comprehensive preparation for the IMA Certified Management Accountant Examination',
   passingScore: 360, // Scaled score out of 500
   totalTime: 240, // 4 hours per part
-  hasTBS: false, // CMA has Essays, not TBS
+  hasTBS: false, // CMA uses Case-Based Questions (CBQs), not TBS
   
   sections: [
     {
@@ -22,9 +22,9 @@ export const CMA_COURSE: Course = {
       name: 'Part 1: Financial Planning, Performance, and Analytics',
       shortName: 'CMA1',
       weight: '100%',
-      questionCount: 100, // 100 MCQ + 2 essays
+      questionCount: 100, // 100 MCQ + 2 Case-Based Questions (CBQs)
       timeAllowed: 240,
-      questionTypes: ['mcq', 'essay'],
+      questionTypes: ['mcq', 'case'], // CBQs replacing essays in 2026
       blueprintAreas: [
         {
           id: 'CMA1-A',
@@ -97,9 +97,9 @@ export const CMA_COURSE: Course = {
       name: 'Part 2: Strategic Financial Management',
       shortName: 'CMA2',
       weight: '100%',
-      questionCount: 100, // 100 MCQ + 2 essays
+      questionCount: 100, // 100 MCQ + 2 Case-Based Questions (CBQs)
       timeAllowed: 240,
-      questionTypes: ['mcq', 'essay'],
+      questionTypes: ['mcq', 'case'], // CBQs replacing essays in 2026
       blueprintAreas: [
         {
           id: 'CMA2-A',
@@ -185,7 +185,7 @@ export const CMA_COURSE: Course = {
   features: {
     hasTBS: false,
     hasWrittenCommunication: false,
-    hasEssay: true,
+    hasEssay: true, // Essays are 25% of CMA score; transitioning to CBQs in 2026
     hasDataInsights: false,
   },
 };

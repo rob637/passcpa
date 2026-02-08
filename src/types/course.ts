@@ -35,6 +35,7 @@ export interface BlueprintArea {
   name: string;
   weight: string;
   topics: string[];
+  questionCount?: number;  // Optional: number of questions in this area
 }
 
 /**
@@ -89,6 +90,14 @@ export interface Course {
   pricing?: CoursePricing;
   metadata?: CourseMetadata;
   
+  // Pass guarantee configuration
+  passGuarantee?: {
+    enabled: boolean;
+    headline: string;
+    bulletPoints: string[];
+    termsLink: string;
+  };
+  
   // Feature flags for course-specific behavior
   hasTBS?: boolean; // Top-level shortcut
   features?: {
@@ -96,6 +105,7 @@ export interface Course {
     hasWrittenCommunication?: boolean;
     hasEssay?: boolean;
     hasDataInsights?: boolean;
+    hasCaseStudies?: boolean;
     adaptiveLearning?: boolean;
     simulationExams?: boolean;
     flashcards?: boolean;

@@ -1,7 +1,14 @@
-
 import { Question } from '../../../types';
+import { CISA1_QUESTIONS_BATCH2 } from './cisa1-questions-batch2';
+import { CISA1_QUESTIONS_BATCH3 } from './cisa1-questions-batch3';
+import { CISA1_QUESTIONS_BATCH4 } from './cisa1-questions-batch4';
+import { CISA1_QUESTIONS_BATCH5 } from './cisa1-questions-batch5';
+import { CISA1_QUESTIONS_BATCH6 } from './cisa1-questions-batch6';
+import { CISA1_QUESTIONS_BATCH7 } from './cisa1-questions-batch7';
+import { CISA1_QUESTIONS_BATCH8 } from './cisa1-questions-batch8';
+import { CISA1_QUESTIONS_ANALYTICS } from './cisa1-questions-analytics';
 
-export const CISA1_QUESTIONS: Question[] = [
+const CISA1_QUESTIONS_BATCH1: Question[] = [
   {
     id: 'CISA1-001',
     courseId: 'cisa',
@@ -36,4 +43,16 @@ export const CISA1_QUESTIONS: Question[] = [
     topic: 'Execution',
     subtopic: 'Audit Findings'
   }
+];
+
+export const CISA1_QUESTIONS: Question[] = [
+  ...CISA1_QUESTIONS_BATCH1,
+  ...CISA1_QUESTIONS_BATCH2,
+  ...CISA1_QUESTIONS_BATCH3,
+  ...CISA1_QUESTIONS_BATCH4,
+  ...CISA1_QUESTIONS_BATCH5,
+  ...CISA1_QUESTIONS_BATCH6,
+  ...CISA1_QUESTIONS_BATCH7,
+  ...CISA1_QUESTIONS_BATCH8,
+  ...CISA1_QUESTIONS_ANALYTICS,
 ];

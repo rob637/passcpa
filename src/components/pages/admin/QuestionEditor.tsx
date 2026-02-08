@@ -14,8 +14,11 @@ import {
   Database,
   Eye,
   Info,
+  X,
 } from 'lucide-react';
 import clsx from 'clsx';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
@@ -128,7 +131,7 @@ const QuestionEditor = () => {
               <h3 className="font-semibold text-blue-900 dark:text-blue-100">Local Question Bank</h3>
               <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
                 Questions are stored in TypeScript files for fast loading and offline support. 
-                To add or edit questions, modify the files in <code className="bg-blue-100 dark:bg-blue-900 px-1 rounded">src/data/questions/</code> and redeploy.
+                To add or edit questions, modify the files in <code className="bg-blue-100 dark:bg-blue-900 px-1 rounded">src/data/cpa/questions/</code> and redeploy.
               </p>
             </div>
           </div>
@@ -159,7 +162,7 @@ const QuestionEditor = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6 shadow-sm border border-gray-100 dark:border-slate-700">
+        <Card className="p-4 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
@@ -173,14 +176,15 @@ const QuestionEditor = () => {
                 />
               </div>
             </div>
-            <button
+            <Button
+              variant="secondary"
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300"
+              rightIcon={ChevronDown}
+              className={clsx(showFilters && '[&>svg:last-child]:rotate-180')}
             >
               <Filter className="w-4 h-4" />
               Filters
-              <ChevronDown className={clsx('w-4 h-4 transition-transform', showFilters && 'rotate-180')} />
-            </button>
+            </Button>
           </div>
 
           {/* Filter Options */}
@@ -218,10 +222,10 @@ const QuestionEditor = () => {
               </div>
             </div>
           )}
-        </div>
+        </Card>
 
         {/* Questions List */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-slate-700">
+        <Card noPadding className="overflow-hidden">
           <div className="p-4 border-b border-slate-200 dark:border-slate-700">
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">
               Sample Questions ({filteredQuestions.length} shown)
@@ -266,19 +270,20 @@ const QuestionEditor = () => {
                         {q.question}
                       </p>
                     </div>
-                    <button
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={() => setViewingQuestion(q)}
-                      className="p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg"
-                      title="View question details"
+                      aria-label="View question details"
                     >
                       <Eye className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))
             )}
           </div>
-        </div>
+        </Card>
       </main>
 
       {/* View Question Modal */}
@@ -289,12 +294,14 @@ const QuestionEditor = () => {
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                 Question Details
               </h2>
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setViewingQuestion(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
+                aria-label="Close modal"
               >
-                ✕
-              </button>
+                <X className="w-5 h-5" />
+              </Button>
             </div>
 
             <div className="p-6 space-y-4">

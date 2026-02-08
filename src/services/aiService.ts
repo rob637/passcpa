@@ -7,6 +7,39 @@ import { CourseId } from '../courses';
 const GEMINI_API_URL =
   'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
+/**
+ * Validates courseId and returns the course context.
+ * Logs an error and uses a safe fallback if courseId is invalid.
+ * This prevents silent CPA fallback that could confuse non-CPA students.
+ */
+const getValidatedCourseContext = (courseId: CourseId | undefined): typeof COURSE_CONTEXT[CourseId] => {
+  if (!courseId) {
+    logger.error('[AI Service] CRITICAL: No courseId provided! This is a bug. Defaulting to generic response.');
+    // Return a generic context that doesn't assume any specific exam
+    return {
+      name: 'Professional Certification Exam',
+      shortName: 'Exam',
+      topics: 'professional certification topics',
+      sections: 'your exam sections',
+      topicList: [],
+    };
+  }
+  
+  const context = COURSE_CONTEXT[courseId];
+  if (!context) {
+    logger.error(`[AI Service] CRITICAL: Unknown courseId "${courseId}"! This is a bug. Check COURSES registry.`);
+    return {
+      name: 'Professional Certification Exam',
+      shortName: courseId.toUpperCase(),
+      topics: 'professional certification topics',
+      sections: 'your exam sections',
+      topicList: [],
+    };
+  }
+  
+  return context;
+};
+
 // Course-specific context for AI prompts
 const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics: string; sections: string; topicList: string[] }> = {
   cpa: {
@@ -72,8 +105,8 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
 };
 
 // Generate system prompts dynamically based on course
-const getSystemPrompts = (courseId: CourseId = 'cpa'): Record<string, string> => {
-  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
+const getSystemPrompts = (courseId: CourseId): Record<string, string> => {
+  const course = getValidatedCourseContext(courseId);
   
   return {
     explain: `You are Vory, an expert ${course.shortName} exam tutor for VoraPrep. Your role is to:
@@ -90,6 +123,7 @@ IMPORTANT CONVERSATION RULES:
 3. When you offer a practice problem and the user responds with "yes", "sure", "ok", etc., IMMEDIATELY give them the practice problem. Do NOT ask clarifying questions about what "yes" means.
 4. Pay attention to conversation context. Short responses like "yes", "no", "ok", "thanks" are almost always responses to your previous message, not new topics.
 5. NEVER ask "what specific aspect is unclear" or "what have you studied" - just provide the explanation directly. Be helpful and proactive.
+6. Do NOT output your internal reasoning process. Only output the final response to the student.
 
 Format your responses with **bold** for key terms, bullet points for lists, and clear section headers.`,
 
@@ -105,6 +139,7 @@ IMPORTANT CONVERSATION RULES:
 1. You ONLY help with ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds with "yes", "sure", "ok" to your offers, proceed with what you offered. Don't ask what they mean by "yes".
 3. Pay attention to conversation flow - interpret short responses in context of your previous message.
+4. Do NOT output your internal reasoning process. Only output the final response to the student.
 
 Start by asking what they already know, then build from there with questions.`,
 
@@ -113,7 +148,8 @@ Start by asking what they already know, then build from there with questions.`,
 - Compare their response to the standard solution concepts.
 - Provide specific feedback on what they missed.
 - Ignore minor grammar/spelling issues unless they affect meaning (this is a test of knowledge, not English).
-- Be strict but constructive. The user needs to pass a rigorous professional exam.`,
+- Be strict but constructive. The user needs to pass a rigorous professional exam.
+- Do NOT output your internal reasoning process. Only output the final grading and feedback.`,
 
     quiz: `You are Vory, a ${course.shortName} exam quiz master for VoraPrep. Your role is to:
 - Generate realistic ${course.shortName} exam-style multiple choice questions
@@ -126,6 +162,7 @@ IMPORTANT CONVERSATION RULES:
 1. You ONLY create quizzes about ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds "yes" or "sure" to "want another question?", give them another question immediately.
 3. Interpret short answers (A, B, C, D, or brief responses) as quiz answers, not new topics.
+4. Do NOT output your internal reasoning process. Only output the final response to the student.
 
 Format: Present the question clearly, wait for their answer, then provide detailed feedback.`,
   };
@@ -142,8 +179,14 @@ interface ChatMessage {
 }
 
 // Build context from user's study data
-const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHistory: ChatMessage[], courseId: CourseId = 'cpa') => {
-  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
+const buildUserContext = (
+  weakAreas: WeakArea[], 
+  section: string, 
+  conversationHistory: ChatMessage[], 
+  courseId: CourseId,
+  contextText?: string
+) => {
+  const course = getValidatedCourseContext(courseId);
   
   let context = `\n\nUser Context:
 - Studying for: ${course.shortName} ${section} section
@@ -156,12 +199,17 @@ const buildUserContext = (weakAreas: WeakArea[], section: string, conversationHi
       .join('... ')}`;
   }
 
+  // Inject current lesson/question context if provided
+  if (contextText) {
+    context += `\n\n--- Current Content Context ---\n${contextText}\n--- End Context ---`;
+  }
+
   return context;
 };
 
 // Fallback responses when API is unavailable
-const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false, courseId: CourseId = 'cpa') => {
-  const course = COURSE_CONTEXT[courseId] || COURSE_CONTEXT.cpa;
+const generateFallbackResponse = (input: string, mode: string, _section: string, conversationHistory: ChatMessage[] = [], isApiError = false, courseId: CourseId) => {
+  const course = getValidatedCourseContext(courseId);
   const lowerInput = input.toLowerCase().trim();
   
   // Get the last assistant message for context
@@ -184,7 +232,13 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     if (isYes) {
       // Generate relevant practice based on what was discussed
       if (lastAssistantMessage.toLowerCase().includes('lease')) {
-        return `**Practice Problem: Lease Classification** 📝\n\nBeta Corp enters into a lease with these terms:\n• **Asset:** Manufacturing equipment\n• **Lease term:** 3 years\n• **Useful life:** 4 years\n• **PV of lease payments:** $72,000\n• **Fair value:** $80,000\n• **No ownership transfer**, **no purchase option**\n\n**Question:** How should Beta Corp classify this lease under ASC 842?\n\n**Work through the OWNES criteria:**\n• O - Ownership transfer? \n• W - Written purchase option?\n• N - Nearly all useful life (≥75%)?\n• E - Essentially all fair value (≥90% PV)?\n• S - Specialized asset?\n\n*Calculate and tell me: Finance lease or Operating lease?*`;
+        // Course-specific lease practice
+        if (courseId === 'cpa') {
+          return `**Practice Problem: Lease Classification** 📝\n\nBeta Corp enters into a lease with these terms:\n• **Asset:** Manufacturing equipment\n• **Lease term:** 3 years\n• **Useful life:** 4 years\n• **PV of lease payments:** $72,000\n• **Fair value:** $80,000\n• **No ownership transfer**, **no purchase option**\n\n**Question:** How should Beta Corp classify this lease under ASC 842?\n\n**Work through the OWNES criteria:**\n• O - Ownership transfer? \n• W - Written purchase option?\n• N - Nearly all useful life (≥75%)?\n• E - Essentially all fair value (≥90% PV)?\n• S - Specialized asset?\n\n*Calculate and tell me: Finance lease or Operating lease?*`;
+        } else if (courseId === 'ea') {
+          return `**Practice Problem: Lease Deductions** 📝\n\nTaylor, a self-employed consultant, leases a vehicle for business:\n• **Monthly lease payment:** $600\n• **Business use:** 70%\n• **Personal use:** 30%\n• **Lease inclusion amount (from IRS tables):** $45/year\n\n**Questions:**\n1. What is the annual deductible lease expense?\n2. How does the lease inclusion amount affect the deduction?\n3. How would the calculation change if business use dropped to 45%?\n\n*Remember: IRC §162 allows ordinary and necessary business expenses!*`;
+        }
+        return `**Practice Problem: Lease Topic** 📝\n\nI'd be happy to give you a practice problem on leases! What specific aspect would you like to practice?\n\n• Lease payments and deductions\n• Lease vs. purchase decisions\n• Capitalization requirements\n\n*Pick one and I'll create a problem for you!*`;
       }
       if (lastAssistantMessage.toLowerCase().includes('1031') || lastAssistantMessage.toLowerCase().includes('like-kind')) {
         return `**Practice Problem: §1031 Exchange** 📝\n\nTaylor owns an office building with:\n• **Adjusted basis:** $200,000\n• **Fair market value:** $350,000\n• **Mortgage:** $50,000\n\nTaylor exchanges it for:\n• **Warehouse FMV:** $320,000\n• **Assumes mortgage on warehouse:** $40,000\n• **Receives cash:** $20,000\n\n**Calculate:**\n1. Realized gain\n2. Recognized gain\n3. Basis in the new warehouse\n\n*Show your work and I'll check it!*`;
@@ -223,7 +277,7 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   // Handle quiz answers
   if (isQuizAnswer && lastAssistantMessage.includes('lease')) {
     if (lowerInput.includes('operating')) {
-      return `**Correct!** ✅ This is an **operating lease**.\n\n**Here's why:**\n\nLet's check the 5 finance lease criteria (OWNES):\n\n1. **O**wnership transfers? ❌ No\n2. **W**ritten purchase option? ❌ No\n3. **N**early all useful life (≥75%)? ❌ 4/5 years = 80%... wait, that's ≥75%! 🤔\n\nActually, let me recalculate:\n• Lease term: 4 years\n• Useful life: 5 years  \n• 4/5 = 80% ≥ 75% ✅\n\n**Hmm, this could actually be a finance lease** under the useful life test!\n\nAlso check:\n• PV of payments: $85,000\n• Fair value: $100,000\n• 85/100 = 85% ≤ 90% ❌\n\n**Key insight:** The 75% useful life test IS met (80% ≥ 75%), so this would be classified as a **finance lease**, not operating!\n\n🎯 **Exam trap:** Always check ALL criteria - one "yes" makes it a finance lease!\n\nWant another question?`;
+      return `**Incorrect.** This is actually a **finance lease**.\n\n**Here's why:**\n\nLet's check the 5 finance lease criteria (OWNES):\n\n1. **O**wnership transfers? ❌ No\n2. **W**ritten purchase option? ❌ No\n3. **N**early all useful life (≥75%)? ✅ YES - 4/5 years = 80% ≥ 75%\n4. **E**quivalent to FV (≥90%)? ❌ No - 85/100 = 85% < 90%\n5. **S**pecialized asset? ❌ No\n\n**Key insight:** The 75% useful life test IS met (80% ≥ 75%), so this is classified as a **finance lease**.\n\n🎯 **Exam trap:** Only ONE criterion needs to be met for finance lease classification!\n\nWant another question?`;
     } else if (lowerInput.includes('finance')) {
       return `**Correct!** ✅ Great job!\n\n**This is a finance lease** because:\n\n• Lease term (4 years) / Useful life (5 years) = **80%**\n• 80% ≥ 75% threshold ✅\n\nThe useful life criterion is met!\n\n**Note:** Even though the PV test wasn't met (85% < 90%), only ONE criterion needs to be satisfied for finance lease classification.\n\n🎯 **Exam tip:** Always test ALL 5 criteria systematically. The exam loves to give you scenarios where multiple criteria are close to the threshold!\n\nReady for another question?`;
     }
@@ -239,7 +293,12 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   // SOCRATIC MODE
   if (mode === 'socratic') {
     if (lowerInput.includes('lease')) {
-      return `Let's think through leases together! 🤔\n\n**Before I explain, let me ask you:**\n\nWhen determining if a lease is a finance lease vs operating lease, there are 5 criteria. Can you name any of them?\n\n*Hint: Think about what would make the lessee essentially "own" the asset by the end...*\n\nTake your time - working through this yourself will help it stick!`;
+      if (courseId === 'cpa') {
+        return `Let's think through leases together! 🤔\n\n**Before I explain, let me ask you:**\n\nWhen determining if a lease is a finance lease vs operating lease, there are 5 criteria. Can you name any of them?\n\n*Hint: Think about what would make the lessee essentially "own" the asset by the end...*\n\nTake your time - working through this yourself will help it stick!`;
+      } else if (courseId === 'ea') {
+        return `Let's think through lease deductions together! 🤔\n\n**Before I explain, let me ask you:**\n\nWhen a business owner leases a vehicle used 70% for business and 30% personal, how would you calculate the deductible amount?\n\nAlso, there's something called a "lease inclusion amount" that affects luxury vehicles. Have you heard of it?\n\n*Think about what limits the IRS places on expensive vehicle deductions...*`;
+      }
+      return `Let's explore leases together! 💡\n\nWhat specific aspect of leases are you trying to understand for the ${course.shortName} exam?`;
     }
     if (lowerInput.includes('basis') || lowerInput.includes('partnership')) {
       return `Great topic! Let's work through partnership basis step by step. 🧠\n\n**First question for you:**\n\nWhen a partner contributes cash and property to a partnership, how do you think the partner's initial basis is calculated? Is it:\n\n• A) Fair market value of everything contributed?\n• B) The partner's adjusted basis in the contributed assets?\n• C) Something else?\n\n*Think about the general rule for tax-free transfers...*`;
@@ -250,12 +309,17 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   // QUIZ MODE
   if (mode === 'quiz') {
     if (lowerInput.includes('lease')) {
-      return `**Quick Quiz: Lease Classification** 📝\n\nAlpha Corp leases equipment with these terms:\n• Lease term: 4 years\n• Equipment useful life: 5 years\n• Present value of payments: $85,000\n• Fair value of equipment: $100,000\n• No transfer of ownership\n• No purchase option\n\n**Question:** Is this a finance lease or operating lease for the lessee under ASC 842?\n\n**Bonus:** Which specific criterion(s) would apply here?\n\n*Reply with your answer and I'll tell you if you're right!*`;
+      if (courseId === 'cpa') {
+        return `**Quick Quiz: Lease Classification** 📝\n\nAlpha Corp leases equipment with these terms:\n• Lease term: 4 years\n• Equipment useful life: 5 years\n• Present value of payments: $85,000\n• Fair value of equipment: $100,000\n• No transfer of ownership\n• No purchase option\n\n**Question:** Is this a finance lease or operating lease for the lessee under ASC 842?\n\n**Bonus:** Which specific criterion(s) would apply here?\n\n*Reply with your answer and I'll tell you if you're right!*`;
+      } else if (courseId === 'ea') {
+        return `**Quick Quiz: Lease Deductions** 📝\n\nSarah, a self-employed consultant, leases a car for business:\n• Annual lease payment: $7,200\n• Fair market value of car: $55,000\n• Business use: 80%\n• Lease inclusion amount (from IRS table): $52/year\n\n**Question:** What is Sarah's deductible lease expense for the year?\n\nA) $7,200\nB) $5,760\nC) $5,708\nD) $5,718\n\n*Show your calculation if you'd like feedback on your work!*`;
+      }
+      return `I'd love to quiz you on leases! 📚\n\nWhat aspect should I focus on for the ${course.shortName} exam?`;
     }
     if (lowerInput.includes('s corp') || lowerInput.includes('s-corp')) {
       return `**Quick Quiz: S Corporation Requirements** 📝\n\nWhich of the following would DISQUALIFY a corporation from making an S election?\n\nA) Having 95 shareholders\nB) Having a shareholder who is a single-member LLC\nC) Having both voting and non-voting common stock\nD) Having a shareholder who is a nonresident alien\n\n*Take a moment to think it through, then give me your answer!*`;
     }
-    return `I'd love to quiz you! 📚\n\nTell me more specifically:\n• Which topic area? (e.g., "leases", "revenue recognition", "tax basis")\n• What difficulty? (basic concept, application, or CPA exam level)\n\nI'll give you a question that tests real understanding, not just memorization!`;
+    return `I'd love to quiz you! 📚\n\nTell me more specifically:\n• Which topic area? (e.g., "leases", "revenue recognition", "tax basis")\n• What difficulty? (basic concept, application, or ${course.shortName} exam level)\n\nI'll give you a question that tests real understanding, not just memorization!`;
   }
 
   // EXPLAIN MODE (default)
@@ -263,8 +327,15 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     return `**Capital Gains - Complete Breakdown** 📊\n\n**The Basics:**\nCapital gain = Amount Realized − Adjusted Basis\n\n**Short-term vs Long-term:**\n\n| Holding Period | Tax Rate |\n|----------------|----------|\n| ≤ 1 year (short-term) | Ordinary rates (10-37%) |\n| > 1 year (long-term) | 0%, 15%, or 20% |\n\n**2024 Long-term Rates (Single):**\n• **0%**: Taxable income up to $47,025\n• **15%**: $47,026 - $518,900\n• **20%**: Over $518,900\n\n**🎯 High-Yield Exam Points:**\n1. "More than one year" = 1 year + 1 day minimum\n2. Net capital losses limited to $3,000/year deduction\n3. Collectibles taxed at max 28% rate\n4. Unrecaptured §1250 gain taxed at max 25%\n\n**Exam Trap:** Watch for wash sales (selling at loss and rebuying within 30 days) - loss disallowed!\n\nWant me to walk through a calculation example?`;
   }
 
+  // Course-specific lease explanation
   if (lowerInput.includes('lease')) {
-    return `**Lease Classification under ASC 842** 📋\n\n**Finance Lease Criteria (OWNES):**\nA lease is a **finance lease** if ANY of these 5 are met:\n\n• **O**wnership transfers at end of lease\n• **W**ritten bargain purchase option likely to be exercised\n• **N**early all of useful life (≥75% rule of thumb)\n• **E**ssentially all of fair value (≥90% PV of payments)\n• **S**pecialized asset with no alternative use to lessor\n\n**If NONE are met → Operating Lease**\n\n**🎯 High-Yield Points:**\n1. Lessee always records ROU asset and liability (both types)\n2. Finance lease: Front-loaded expense (interest + depreciation)\n3. Operating lease: Straight-line expense\n4. Use implicit rate if known, otherwise incremental borrowing rate\n\n**Common Exam Trap:**\nThe 75% and 90% are guidelines, not bright lines. Judgment required!\n\nWould you like a practice problem to apply these rules?`;
+    if (courseId === 'cpa') {
+      return `**Lease Classification under ASC 842** 📋\n\n**Finance Lease Criteria (OWNES):**\nA lease is a **finance lease** if ANY of these 5 are met:\n\n• **O**wnership transfers at end of lease\n• **W**ritten bargain purchase option likely to be exercised\n• **N**early all of useful life (≥75% rule of thumb)\n• **E**ssentially all of fair value (≥90% PV of payments)\n• **S**pecialized asset with no alternative use to lessor\n\n**If NONE are met → Operating Lease**\n\n**🎯 High-Yield Points:**\n1. Lessee always records ROU asset and liability (both types)\n2. Finance lease: Front-loaded expense (interest + depreciation)\n3. Operating lease: Straight-line expense\n4. Use implicit rate if known, otherwise incremental borrowing rate\n\n**Common Exam Trap:**\nThe 75% and 90% are guidelines, not bright lines. Judgment required!\n\nWould you like a practice problem to apply these rules?`;
+    } else if (courseId === 'ea') {
+      return `**Lease Expenses for Tax Purposes (IRC §162)** 📋\n\n**Deducting Lease Payments:**\nLease payments on property used in a trade or business are generally deductible as ordinary and necessary business expenses.\n\n**Key Rules for Vehicle Leases:**\n\n1. **Business Use Percentage**\n   • Only the business-use portion is deductible\n   • Must maintain contemporaneous records (mileage log)\n\n2. **Lease Inclusion Amount (Luxury Auto Limitation)**\n   • If FMV exceeds threshold, must add back an "inclusion amount"\n   • Found in IRS tables (updated annually)\n   • Reduces the deduction for expensive vehicles\n\n**Calculation:**\n• Deductible amount = (Lease payment × Business %) − Inclusion amount\n\n**🎯 High-Yield SEE Points:**\n1. Self-employed: Deduct on Schedule C\n2. Employees: Generally not deductible (2018+ TCJA)\n3. Listed property rules apply (must keep records)\n4. No deduction for commuting (personal use)\n\nWant me to walk through a calculation example?`;
+    }
+    // Generic for other courses
+    return `**Lease Expenses** 📋\n\nLease treatment depends on the specific exam:\n\n• **CPA**: Lease classification under GAAP (ASC 842)\n• **EA**: Lease deductions under IRC §162\n• **CMA**: Lease analysis for financial decision-making\n\nWhat specific aspect of leases would you like me to explain?`;
   }
 
   if (lowerInput.includes('1031') || lowerInput.includes('like-kind')) {
@@ -275,10 +346,15 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     return `**S Corporation Requirements** 🏛️\n\n**The "DISC" Test - Must ALL be met:**\n\n• **D**omestic corporation only\n• **I**ndividuals, estates, certain trusts as shareholders\n  - NO corporations, partnerships, or nonresident aliens!\n• **S**ingle class of stock\n  - Voting differences OK, economic differences NOT OK\n• **C**ap of 100 shareholders\n  - Family members can elect to count as 1\n\n**Key Termination Events:**\n• Exceed 100 shareholders\n• Ineligible shareholder acquires stock\n• Create second class of stock\n• Excess passive income (3 consecutive years if C corp E&P)\n\n**🎯 High-Yield Points:**\n1. Election due by March 15 (2½ months into tax year)\n2. All shareholders must consent\n3. Built-in gains tax if converted from C corp\n4. AAA (Accumulated Adjustments Account) tracks S corp earnings\n\nNeed me to explain the taxation flow-through?`;
   }
 
-  // Default - provide a helpful response instead of asking questions
-  // Check if this looks like a question about audit evidence (common exam topic)
+  // Audit evidence - relevant for CPA (AUD) and CIA only
   if (lowerInput.includes('evidence') || lowerInput.includes('reliable') || lowerInput.includes('third party')) {
-    return `**Audit Evidence Reliability** 📋\n\n**Hierarchy of Evidence (Most to Least Reliable):**\n\n1. **External evidence from third parties** - Most reliable\n   - Bank confirmations, vendor confirmations\n   - Documents received directly from independent parties\n\n2. **External evidence through client** - Reliable\n   - Bank statements held by client\n   - Invoices from vendors\n\n3. **Internal evidence with strong controls** - Moderately reliable\n   - Documents created and processed with good internal controls\n\n4. **Internal evidence with weak controls** - Less reliable\n   - Documents from systems with poor controls\n\n**🎯 Key Exam Points:**\n• **External > Internal** (independent sources are more reliable)\n• **Original > Copy** (original documents beat photocopies)\n• **Auditor-generated > Client-generated** (auditor's own calculations are most reliable)\n• Direct knowledge (observation) > Indirect (inquiry)\n\n**Why Third Party Documents Are Most Reliable:**\nThey're created outside the client's control, so management can't manipulate them.\n\nWant me to give you a practice question on this topic?`;
+    if (courseId === 'cpa' || courseId === 'cia' || courseId === 'cisa') {
+      return `**Audit Evidence Reliability** 📋\n\n**Hierarchy of Evidence (Most to Least Reliable):**\n\n1. **External evidence from third parties** - Most reliable\n   - Bank confirmations, vendor confirmations\n   - Documents received directly from independent parties\n\n2. **External evidence through client** - Reliable\n   - Bank statements held by client\n   - Invoices from vendors\n\n3. **Internal evidence with strong controls** - Moderately reliable\n   - Documents created and processed with good internal controls\n\n4. **Internal evidence with weak controls** - Less reliable\n   - Documents from systems with poor controls\n\n**🎯 Key Exam Points:**\n• **External > Internal** (independent sources are more reliable)\n• **Original > Copy** (original documents beat photocopies)\n• **Auditor-generated > Client-generated** (auditor's own calculations are most reliable)\n• Direct knowledge (observation) > Indirect (inquiry)\n\n**Why Third Party Documents Are Most Reliable:**\nThey're created outside the client's control, so management can't manipulate them.\n\nWant me to give you a practice question on this topic?`;
+    }
+    // For tax exams, "evidence" likely means documentation for tax positions
+    if (courseId === 'ea') {
+      return `**Documentation & Evidence for Tax Positions** 📋\n\n**Substantiation Requirements (Generally):**\n\n1. **Business Expenses (IRC §274)**\n   • Amount, time, place, business purpose\n   • Contemporary records are best\n\n2. **Travel & Entertainment**\n   • Who, what, when, where, why\n   • Receipts required for expenses ≥ $75\n\n3. **Charitable Contributions**\n   • Written acknowledgment for ≥ $250\n   • Qualified appraisal for property > $5,000\n\n4. **Mileage Deductions**\n   • Log: date, destination, business purpose, miles\n\n**🎯 High-Yield SEE Points:**\n• Cohan Rule: Courts may estimate if some records exist\n• Contemporaneous records beat reconstructed records\n• Bank/credit card statements supplement but don't replace receipts\n\nNeed more detail on a specific type of documentation?`;
+    }
   }
 
   // Generic helpful response
@@ -292,8 +368,15 @@ export const generateAIResponse = async (
   weakAreas: WeakArea[] = [],
   section = 'REG',
   conversationHistory: ChatMessage[] = [],
-  courseId: CourseId = 'cpa'
+  courseId?: CourseId,
+  contextText?: string
 ): Promise<string> => {
+  // Validate courseId - warn if not provided (indicates a bug in calling code)
+  if (!courseId) {
+    logger.warn('[AI Service] generateAIResponse called without courseId! Defaulting to CPA. Please fix the calling code.');
+    courseId = 'cpa';
+  }
+  
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
@@ -304,7 +387,7 @@ export const generateAIResponse = async (
   try {
     const SYSTEM_PROMPTS = getSystemPrompts(courseId);
     const systemPrompt =
-      SYSTEM_PROMPTS[mode] + buildUserContext(weakAreas, section, conversationHistory, courseId);
+      SYSTEM_PROMPTS[mode] + buildUserContext(weakAreas, section, conversationHistory, courseId, contextText);
 
     // Build conversation history for context
     const messages = conversationHistory.slice(-6).map((msg) => ({

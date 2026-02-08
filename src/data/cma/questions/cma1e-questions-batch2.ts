@@ -32,7 +32,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: '17 Principles - Control Environment',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Under the COSO 2013 Framework, how many principles support the Control Environment component?',
     options: [
@@ -52,7 +52,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: '17 Principles - Risk Assessment',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Aztec Manufacturing recently experienced rapid growth through acquisitions. Under COSO Principle 9, which risk assessment activity is MOST critical?',
     options: [
@@ -72,7 +72,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: '17 Principles - Fraud Risk',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'COSO Principle 8 requires organizations to consider the potential for fraud when assessing risks. Which of the following represents the BEST application of this principle?',
     options: [
@@ -244,7 +244,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Service Organization Controls',
     subtopic: 'SOC 1 vs SOC 2',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A company outsources payroll processing to a service organization. Which SOC report would be MOST relevant for the company\'s external financial statement auditors?',
     options: [
@@ -352,7 +352,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Fraud Prevention',
     subtopic: 'Red Flags',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'During a vendor master file review, an internal auditor notices: (1) multiple vendors with the same address, (2) vendor addresses matching employee addresses, and (3) vendors with only P.O. Box addresses. These are red flags for which type of fraud?',
     options: [
@@ -372,7 +372,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Fraud Prevention',
     subtopic: 'Management Override',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'Which control is MOST effective at detecting management override of controls in revenue recognition?',
     options: [
@@ -396,7 +396,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Internal Audit',
     subtopic: 'Independence and Objectivity',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'To maintain organizational independence, the Chief Audit Executive (CAE) should report functionally to:',
     options: [
@@ -440,7 +440,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Control Activities',
     subtopic: 'Segregation of Duties',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'In a small company with limited staff, the bookkeeper handles cash receipts, posts to accounts receivable, and prepares the bank reconciliation. Which compensating control would be MOST effective?',
     options: [
@@ -460,7 +460,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Control Activities',
     subtopic: 'Segregation of Duties - IT',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'In an IT environment, proper segregation of duties requires separation of which functions?',
     options: [
@@ -484,7 +484,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Internal Control',
     subtopic: 'Control Deficiencies',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'Which of the following would MOST likely constitute a material weakness in internal control over financial reporting?',
     options: [
@@ -528,7 +528,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Cybersecurity',
     subtopic: 'NIST Framework',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The NIST Cybersecurity Framework core consists of five functions. Which sequence correctly represents these functions?',
     options: [
@@ -548,7 +548,7 @@ export const CMA1E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Third-Party Risk',
     subtopic: 'Vendor Risk Management',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'A company provides customer data access to a cloud service provider for analytics. Which of the following represents the MOST comprehensive approach to third-party risk management?',
     options: [

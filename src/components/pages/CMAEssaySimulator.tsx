@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import {
   ArrowLeft,
   Clock,
@@ -11,7 +13,12 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { CMA_ESSAY_TASKS } from '../../data/cma/essays';
+import { CMA_ESSAYS } from '../../data/cma/essays/index';
+// Legacy 2-essay import kept as fallback
+import { CMA_ESSAY_TASKS as LEGACY_ESSAYS } from '../../data/cma/essays';
+
+// Use the full 40-essay collection, falling back to legacy if needed
+const CMA_ESSAY_TASKS = CMA_ESSAYS.length > 0 ? CMA_ESSAYS : LEGACY_ESSAYS;
 import { WCTask } from '../../types';
 import aiService from '../../services/aiService';
 import logger from '../../utils/logger';
@@ -130,7 +137,7 @@ const CMAEssaySimulator: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {CMA_ESSAY_TASKS.map(task => (
-            <div key={task.id} className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-all">
+            <Card key={task.id} variant="interactive" className="p-6">
               <div className="flex justify-between items-start mb-4">
                  <span className={clsx(
                    "px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider",
@@ -152,14 +159,15 @@ const CMAEssaySimulator: React.FC = () => {
                   <Clock className="w-4 h-4" />
                   {task.estimatedTime} mins
                 </div>
-                <button 
+                <Button 
+                  variant="primary"
                   onClick={() => handleStartTask(task)}
-                  className="btn-primary flex items-center gap-2"
+                  rightIcon={ChevronRight}
                 >
-                  Start Practicing <ChevronRight className="w-4 h-4" />
-                </button>
+                  Start Practicing
+                </Button>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
@@ -171,13 +179,15 @@ const CMAEssaySimulator: React.FC = () => {
       {/* Header */}
       <div className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-4">
-          <button 
+          <Button 
+             variant="ghost"
+             size="icon"
              onClick={() => setViewState('select')}
-             className="p-1 hover:bg-slate-100 rounded-lg text-slate-500"
              disabled={isSubmitting}
+             className="text-slate-500"
           >
             <ArrowLeft className="w-5 h-5" />
-          </button>
+          </Button>
           <div>
             <h2 className="font-semibold text-slate-900">{currentTask?.topic}</h2>
             <p className="text-xs text-slate-500">Essay Practice Mode</p>
@@ -226,19 +236,20 @@ const CMAEssaySimulator: React.FC = () => {
                 spellCheck={false}
               />
               <div className="p-4 bg-white border-t border-slate-200 flex justify-end">
-                <button 
+                <Button 
+                  variant="primary"
                   onClick={handleSubmit} 
                   disabled={isSubmitting || response.length < 50}
-                  className="btn-primary"
+                  loading={isSubmitting}
                 >
                   {isSubmitting ? 'Grading...' : 'Submit for Grading'}
-                </button>
+                </Button>
               </div>
             </>
           ) : (
             <div className="flex-1 overflow-y-auto p-8">
                <div className="max-w-3xl mx-auto">
-                 <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-6">
+                 <Card noPadding className="overflow-hidden mb-6">
                     <div className="p-6 border-b border-slate-200 bg-indigo-50 flex items-center gap-3">
                        <Sparkles className="w-6 h-6 text-indigo-600" />
                        <h2 className="text-xl font-bold text-indigo-900">AI Grading Report</h2>
@@ -250,9 +261,9 @@ const CMAEssaySimulator: React.FC = () => {
                          __html: aiFeedback ? aiFeedback.replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>') : '' 
                        }} />
                     </div>
-                 </div>
+                 </Card>
 
-                 <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                 <Card className="p-6">
                     <h3 className="font-bold text-slate-900 mb-4">Key Points You Should Have Covered:</h3>
                     <ul className="space-y-2">
                        {currentTask?.keyPoints?.map((idx, i) => (
@@ -262,21 +273,23 @@ const CMAEssaySimulator: React.FC = () => {
                          </li>
                        ))}
                     </ul>
-                 </div>
+                 </Card>
 
                  <div className="mt-8 flex justify-center gap-4">
-                    <button 
+                    <Button 
+                      variant="secondary"
                       onClick={() => setViewState('select')}
-                      className="btn-secondary"
+                      leftIcon={ArrowLeft}
                     >
-                      <ArrowLeft className="w-4 h-4 mr-2" /> Back to List
-                    </button>
-                    <button 
+                      Back to List
+                    </Button>
+                    <Button 
+                      variant="primary"
                       onClick={() => handleStartTask(currentTask!)}
-                      className="btn-primary"
+                      leftIcon={RotateCcw}
                     >
-                      <RotateCcw className="w-4 h-4 mr-2" /> Try Again
-                    </button>
+                      Try Again
+                    </Button>
                  </div>
                </div>
             </div>

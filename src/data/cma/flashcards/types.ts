@@ -5,7 +5,7 @@
 
 import { CMASection } from '../../../types';
 
-export type CMAFlashcardType = 'definition' | 'formula' | 'mnemonic' | 'comparison' | 'concept' | 'rule' | 'ratio' | 'calculation';
+export type CMAFlashcardType = 'definition' | 'formula' | 'mnemonic' | 'comparison' | 'concept';
 
 export interface CMAFlashcard {
   id: string;

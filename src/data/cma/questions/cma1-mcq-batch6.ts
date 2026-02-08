@@ -1,0 +1,499 @@
+/**
+ * CMA Part 1 - MCQ Batch 6 (25 Questions)
+ * 
+ * Focus: Advanced and calculation-heavy topics
+ * - CMA1-A: External Financial Reporting (4)
+ * - CMA1-B: Planning, Budgeting, and Forecasting (5)
+ * - CMA1-C: Performance Management (5)
+ * - CMA1-D: Cost Management (5)
+ * - CMA1-E: Internal Controls (3)
+ * - CMA1-F: Technology and Analytics (3)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1_MCQ_BATCH6: Question[] = [
+  // ==========================================
+  // CMA1-A: External Financial Reporting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Business Combinations',
+    subtopic: 'Goodwill Impairment',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A reporting unit has a carrying value of $5,000,000 (including $800,000 goodwill) and a fair value of $4,500,000. What goodwill impairment should be recognized under current GAAP?',
+    options: [
+      '$0',
+      '$300,000',
+      '$500,000',
+      '$800,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under the simplified one-step test: Impairment = Carrying Value - Fair Value = $5,000,000 - $4,500,000 = $500,000. Impairment is limited to goodwill carrying amount ($800,000), so record $500,000.',
+    reference: 'Goodwill Impairment; ASC 350',
+  },
+  {
+    id: 'cma1-mcq6-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Stock-Based Compensation',
+    subtopic: 'Option Valuation',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Which model is commonly used to estimate the fair value of stock options at grant date?',
+    options: [
+      'Dividend discount model',
+      'Black-Scholes option-pricing model',
+      'CAPM model',
+      'Gordon growth model'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Black-Scholes model (or binomial model) is used to estimate fair value of employee stock options at grant date. It considers stock price, exercise price, time to expiration, volatility, risk-free rate, and expected dividends.',
+    reference: 'Stock Compensation; Option Pricing',
+  },
+  {
+    id: 'cma1-mcq6-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Segment Reporting',
+    subtopic: 'Quantitative Thresholds',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company has four operating segments with revenues of $50M, $30M, $15M, and $5M. Which segments MUST be reported separately (10% threshold)?',
+    options: [
+      'Only Segment 1',
+      'Segments 1 and 2',
+      'Segments 1, 2, and 3',
+      'All four segments'
+    ],
+    correctAnswer: 2,
+    explanation: 'Total revenue = $100M. 10% threshold = $10M. Segment 1 ($50M), Segment 2 ($30M), and Segment 3 ($15M) exceed $10M. Segment 4 ($5M) does not meet the threshold.',
+    reference: 'Segment Reporting; ASC 280',
+  },
+  {
+    id: 'cma1-mcq6-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Derivatives',
+    subtopic: 'Cash Flow Hedge',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Where are unrealized gains and losses from a qualifying cash flow hedge reported?',
+    options: [
+      'In net income immediately',
+      'In other comprehensive income (OCI)',
+      'As a reduction of the hedged item',
+      'Directly in retained earnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'For qualifying cash flow hedges, the effective portion of unrealized gains/losses is reported in OCI and later reclassified to earnings when the hedged transaction affects earnings.',
+    reference: 'Hedge Accounting; Cash Flow Hedge',
+  },
+
+  // ==========================================
+  // CMA1-B: Planning, Budgeting, and Forecasting (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Production Budget',
+    subtopic: 'Units to Produce',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Expected sales: 10,000 units. Beginning inventory: 1,500 units. Desired ending inventory: 2,000 units. How many units should be produced?',
+    options: [
+      '9,500 units',
+      '10,500 units',
+      '11,500 units',
+      '10,000 units'
+    ],
+    correctAnswer: 1,
+    explanation: 'Production = Sales + Desired Ending Inventory - Beginning Inventory = 10,000 + 2,000 - 1,500 = 10,500 units.',
+    reference: 'Production Budget',
+  },
+  {
+    id: 'cma1-mcq6-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Regression Analysis',
+    subtopic: 'Cost Estimation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A regression equation for overhead is Y = $50,000 + $12X, where X is machine hours. The R² is 0.85. At 5,000 machine hours, what overhead is predicted and what does R² mean?',
+    options: [
+      '$110,000; 85% of overhead variation explained by machine hours',
+      '$60,000; 85% correlation coefficient',
+      '$110,000; 15% prediction error',
+      '$62,000; 85% of data points fit the line'
+    ],
+    correctAnswer: 0,
+    explanation: 'Y = $50,000 + $12(5,000) = $50,000 + $60,000 = $110,000. R² of 0.85 means 85% of the variation in overhead is explained by the machine hours variable.',
+    reference: 'Regression Analysis; R-squared',
+  },
+  {
+    id: 'cma1-mcq6-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Zero-Based Budgeting',
+    subtopic: 'Decision Packages',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'In zero-based budgeting, decision packages are:',
+    options: [
+      'Automatic budget increases from prior year',
+      'Descriptions of activities and funding alternatives ranked by priority',
+      'IT software selection criteria',
+      'Capital project proposals only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Decision packages in ZBB describe activities, their costs, benefits, and alternative funding levels. Packages are ranked by priority for funding allocation. Nothing is automatically approved.',
+    reference: 'Zero-Based Budgeting',
+  },
+  {
+    id: 'cma1-mcq6-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Flexible Budget',
+    subtopic: 'Variance Analysis',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Static budget: 10,000 units at $250,000 total cost. Actual results: 11,000 units at $280,000 cost. If standard cost is $25/unit, what is the flexible budget variance?',
+    options: [
+      '$5,000 unfavorable',
+      '$5,000 favorable',
+      '$30,000 unfavorable',
+      '$25,000 unfavorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Flexible budget at 11,000 units = 11,000 × $25 = $275,000. Flexible Budget Variance = Actual - Flexible = $280,000 - $275,000 = $5,000 Unfavorable.',
+    reference: 'Flexible Budget Variance',
+  },
+  {
+    id: 'cma1-mcq6-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Pro Forma Statements',
+    subtopic: 'Percent of Sales',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Current sales: $10M. A/R is 15% of sales. Next year sales forecast: $12M. What is projected A/R?',
+    options: [
+      '$1.5 million',
+      '$1.8 million',
+      '$1.2 million',
+      '$2.0 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'Using percent of sales method: Projected A/R = 15% × $12M = $1.8 million. This assumes the A/R ratio remains constant with sales growth.',
+    reference: 'Pro Forma; Percent of Sales',
+  },
+
+  // ==========================================
+  // CMA1-C: Performance Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Residual Income',
+    subtopic: 'Division Analysis',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Division operating income: $450,000. Division assets: $3,000,000. Cost of capital: 12%. What is residual income?',
+    options: [
+      '$90,000',
+      '$360,000',
+      '$810,000',
+      '$-90,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'RI = Operating Income - (Assets × Cost of Capital) = $450,000 - ($3,000,000 × 12%) = $450,000 - $360,000 = $90,000 positive residual income.',
+    reference: 'Residual Income',
+  },
+  {
+    id: 'cma1-mcq6-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'KPIs',
+    subtopic: 'Leading vs Lagging',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which is an example of a LEADING indicator?',
+    options: [
+      'Net income for the quarter',
+      'Employee training hours completed',
+      'Annual revenue achieved',
+      'Dividend per share paid'
+    ],
+    correctAnswer: 1,
+    explanation: 'Leading indicators predict future performance (training hours should improve future productivity/quality). Lagging indicators measure past results (net income, revenue, dividends).',
+    reference: 'KPIs; Leading vs Lagging Indicators',
+  },
+  {
+    id: 'cma1-mcq6-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Segment Profitability',
+    subtopic: 'Contribution Analysis',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Segment revenue: $800,000. Variable costs: $480,000. Traceable fixed costs: $200,000. Allocated common costs: $150,000. What is segment margin?',
+    options: [
+      '$120,000',
+      '$-30,000',
+      '$320,000',
+      '$170,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Segment Margin = Revenue - Variable Costs - Traceable Fixed Costs = $800,000 - $480,000 - $200,000 = $120,000. Common allocated costs are not included in segment margin.',
+    reference: 'Segment Margin Analysis',
+  },
+  {
+    id: 'cma1-mcq6-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Operational Metrics',
+    subtopic: 'Capacity Utilization',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Practical capacity: 50,000 machine hours. Actual hours used: 42,500. What is capacity utilization?',
+    options: [
+      '85%',
+      '82.5%',
+      '117.6%',
+      '15%'
+    ],
+    correctAnswer: 0,
+    explanation: 'Capacity Utilization = Actual Hours / Practical Capacity = 42,500 / 50,000 = 0.85 = 85%.',
+    reference: 'Capacity Utilization',
+  },
+
+  // ==========================================
+  // CMA1-D: Cost Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Activity-Based Costing',
+    subtopic: 'Cost Pool Rates',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Setup costs: $180,000 for 600 setups. Machine costs: $500,000 for 25,000 machine hours. Product A requires 50 setups and 2,000 machine hours. What overhead is allocated to Product A?',
+    options: [
+      '$55,000',
+      '$40,000',
+      '$35,000',
+      '$75,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Setup rate = $180,000 / 600 = $300/setup. Machine rate = $500,000 / 25,000 = $20/hr. Product A: (50 × $300) + (2,000 × $20) = $15,000 + $40,000 = $55,000.',
+    reference: 'Activity-Based Costing',
+  },
+  {
+    id: 'cma1-mcq6-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Standard Costing',
+    subtopic: 'Labor Efficiency Variance',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Standard: 2 hours @ $20/hour. Actual: 2,100 hours @ $21/hour for 1,000 units. What is the labor efficiency variance?',
+    options: [
+      '$2,000 unfavorable',
+      '$2,100 unfavorable',
+      '$2,000 favorable',
+      '$100 unfavorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Standard hours allowed = 1,000 units × 2 hrs = 2,000 hrs. LEV = (Actual Hours - Standard Hours) × Standard Rate = (2,100 - 2,000) × $20 = $2,000 Unfavorable.',
+    reference: 'Labor Efficiency Variance',
+  },
+  {
+    id: 'cma1-mcq6-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'Contribution Margin',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Selling price $75. Direct materials $25. Direct labor $15. Variable overhead $10. Fixed overhead per unit $8. What is unit contribution margin?',
+    options: [
+      '$17',
+      '$25',
+      '$33',
+      '$27'
+    ],
+    correctAnswer: 1,
+    explanation: 'Contribution Margin = Selling Price - Variable Costs = $75 - ($25 + $15 + $10) = $75 - $50 = $25. Fixed costs are not deducted from contribution margin.',
+    reference: 'Contribution Margin',
+  },
+  {
+    id: 'cma1-mcq6-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Service Cost Allocation',
+    subtopic: 'Step-Down Method',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'In the step-down method of service department cost allocation:',
+    options: [
+      'All reciprocal services are recognized',
+      'Service departments are allocated in sequence, with no cost flowing back',
+      'Only direct allocation to production departments is used',
+      'Simultaneous equations determine allocation rates'
+    ],
+    correctAnswer: 1,
+    explanation: 'Step-down allocates service department costs sequentially. Once a department\'s costs are allocated, no costs are allocated back to it. This is a compromise between direct method (ignores all) and reciprocal method (full recognition).',
+    reference: 'Step-Down Allocation',
+  },
+  {
+    id: 'cma1-mcq6-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Lean Accounting',
+    subtopic: 'Value Stream Costing',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Value stream costing is used in lean manufacturing to:',
+    options: [
+      'Allocate overhead using machine hours',
+      'Track costs by product line rather than traditional cost centers',
+      'Increase inventory valuation accuracy',
+      'Improve absorption costing reports'
+    ],
+    correctAnswer: 1,
+    explanation: 'Value stream costing assigns costs to value streams (product families) rather than individual products or departments. It simplifies accounting, supports lean decision-making, and reduces wasteful detailed tracking.',
+    reference: 'Value Stream Costing; Lean',
+  },
+
+  // ==========================================
+  // CMA1-E: Internal Controls (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Information and Communication',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The Information and Communication component of COSO requires:',
+    options: [
+      'Annual financial statement audits',
+      'Relevant, quality information flows throughout the organization',
+      'Segregation of all accounting duties',
+      'Physical controls over assets'
+    ],
+    correctAnswer: 1,
+    explanation: 'Information and Communication ensures relevant, timely, quality information is identified and communicated internally and externally to enable people to carry out their responsibilities.',
+    reference: 'COSO Framework; Information & Communication',
+  },
+  {
+    id: 'cma1-mcq6-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Fraud Detection',
+    subtopic: 'Red Flags',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which is a behavioral red flag potentially indicating fraud?',
+    options: [
+      'Taking all entitled vacation days',
+      'Living visibly above one\'s means',
+      'Participating in company social events',
+      'Following established approval processes'
+    ],
+    correctAnswer: 1,
+    explanation: 'Living beyond apparent means is a common fraud red flag (pressure element). Not taking vacations, unusual hours without clear reason, and close vendor relationships are other behavioral indicators.',
+    reference: 'Fraud Red Flags; Behavioral Indicators',
+  },
+  {
+    id: 'cma1-mcq6-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'IT Controls',
+    subtopic: 'Access Controls',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Multi-factor authentication provides:',
+    options: [
+      'Faster system access',
+      'Enhanced security by requiring multiple verification methods',
+      'Lower implementation costs',
+      'Elimination of password requirements'
+    ],
+    correctAnswer: 1,
+    explanation: 'Multi-factor authentication requires two or more verification factors (something you know, have, or are). This significantly reduces unauthorized access risk compared to single-factor (password only) authentication.',
+    reference: 'Access Controls; Multi-Factor Authentication',
+  },
+
+  // ==========================================
+  // CMA1-F: Technology and Analytics (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq6-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Governance',
+    subtopic: 'Data Quality',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Data quality dimensions include accuracy, completeness, timeliness, and:',
+    options: [
+      'Profitability',
+      'Consistency',
+      'Volatility',
+      'Complexity'
+    ],
+    correctAnswer: 1,
+    explanation: 'Key data quality dimensions: Accuracy (correct), Completeness (all required), Timeliness (current), Consistency (same across systems), Uniqueness (no duplicates), and Validity (conforms to rules).',
+    reference: 'Data Quality; Data Governance',
+  },
+  {
+    id: 'cma1-mcq6-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Cloud Computing',
+    subtopic: 'Service Models',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'In Platform as a Service (PaaS), the cloud provider is responsible for:',
+    options: [
+      'Only the physical data center',
+      'Infrastructure, operating system, and middleware',
+      'All software applications',
+      'Nothing; customer manages everything'
+    ],
+    correctAnswer: 1,
+    explanation: 'PaaS: Provider manages infrastructure + OS + middleware. Customer manages applications and data. This is between IaaS (provider manages infrastructure only) and SaaS (provider manages everything).',
+    reference: 'Cloud Computing; PaaS',
+  },
+];

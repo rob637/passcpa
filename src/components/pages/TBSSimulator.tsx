@@ -18,10 +18,12 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
+import { Button } from '../common/Button';
 
 const TBS_LABELS: Record<string, string> = {
   journal: 'Journal Entry',
@@ -510,6 +512,7 @@ const TBSSimulator: React.FC = () => {
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { completeSimulation } = useStudy();
+  const { courseId } = useCourse();
 
   const [tbs, setTbs] = useState<TBSQuestion | null>(null);
   // Track answers for each task by task id
@@ -525,7 +528,7 @@ const TBSSimulator: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const tbsId = searchParams.get('id');
   
   // Daily plan awareness
@@ -941,12 +944,12 @@ const TBSSimulator: React.FC = () => {
             <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Unable to Load Simulation</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-6">{error}</p>
-            <button 
+            <Button 
+              variant="secondary"
               onClick={() => navigate('/practice')}
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-lg font-medium transition-colors"
             >
               Return to Practice
-            </button>
+            </Button>
           </div>
         </div>
        );
@@ -1238,19 +1241,20 @@ const TBSSimulator: React.FC = () => {
                       "flex items-center gap-2 order-1 sm:order-2",
                       totalTasks > 1 ? "hidden sm:flex" : "flex"
                     )}>
-                      <button
+                      <Button
+                        variant="ghost"
+                        leftIcon={RotateCcw}
                         onClick={handleReset}
-                        className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-white px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-sm"
                       >
-                        <RotateCcw className="w-4 h-4" />
-                        <span>Reset</span>
-                      </button>
+                        Reset
+                      </Button>
                     </div>
                     
                     {/* Action buttons */}
                     <div className="flex items-center gap-3 order-3">
                       {submitted && fromDailyPlan && (
-                        <button
+                        <Button
+                          variant="primary"
                           onClick={() => {
                             const params = new URLSearchParams();
                             params.set('from', 'dailyplan');
@@ -1258,20 +1262,19 @@ const TBSSimulator: React.FC = () => {
                             params.set('completed', 'true');
                             navigate(`/home?${params.toString()}`);
                           }}
-                          className="btn-primary flex items-center gap-2 px-6"
                         >
                           Back to Daily Plan
-                        </button>
+                        </Button>
                       )}
                       
                       {/* Show "Done" button when submitted and NOT from daily plan */}
                       {submitted && !fromDailyPlan && (
-                        <button
+                        <Button
+                          variant="primary"
                           onClick={() => navigate(courseHome)}
-                          className="btn-primary flex items-center gap-2 px-6"
                         >
                           Done
-                        </button>
+                        </Button>
                       )}
                     
                       {/* Overall score badge when submitted */}
@@ -1285,20 +1288,15 @@ const TBSSimulator: React.FC = () => {
                         </div>
                       )}
                     
-                      <button
+                      <Button
+                        variant="primary"
+                        rightIcon={submitted ? CheckCircle : Send}
                         onClick={handleSubmit}
                         disabled={submitted}
-                        className={clsx(
-                          "flex items-center gap-2 px-8",
-                          submitted 
-                            ? "bg-green-600 text-white rounded-lg py-2 cursor-default"
-                            : "btn-primary"
-                        )}
+                        className={submitted ? 'bg-green-600 cursor-default' : ''}
                       >
                         {submitted ? 'Submitted' : 'Submit All'}
-                        {!submitted && <Send className="w-4 h-4" />}
-                        {submitted && <CheckCircle className="w-4 h-4" />}
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>

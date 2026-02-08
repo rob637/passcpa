@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
 import { scrollToTop } from '../../utils/scroll';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import {
   ChevronLeft,
   ChevronRight,
@@ -33,9 +35,9 @@ import { useStudy } from '../../hooks/useStudy';
 import { useSwipe } from '../../hooks/useSwipe';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
-import { CPA_SECTIONS } from '../../config/examConfig';
 import { CPA_COURSE } from '../../courses/cpa/config';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
+import { getExamDate } from '../../utils/profileHelpers';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -76,6 +78,7 @@ interface SessionSetupProps {
 
 // Session Setup Component
 const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
+  const { course } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
   const [, setHistoryLoading] = useState(true);
@@ -137,8 +140,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
               onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
               className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
-              {Object.entries(CPA_SECTIONS).map(([key, s]) => (
-                <option key={key} value={key}>
+              {course?.sections.map((s: { id: string; shortName: string; name: string }) => (
+                <option key={s.id} value={s.id}>
                   {s.shortName} - {s.name}
                 </option>
               ))}
@@ -357,23 +360,18 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
           )}
 
           {/* Start Button */}
-          <button
+          <Button
             onClick={() => onStart(config)}
             disabled={loading}
-            className="w-full btn-primary py-4 text-lg flex items-center justify-center gap-2 disabled:opacity-50"
+            loading={loading}
+            leftIcon={loading ? undefined : Shuffle}
+            variant="primary"
+            size="lg"
+            fullWidth
+            className="py-4 text-lg"
           >
-            {loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Loading Questions...
-              </>
-            ) : (
-              <>
-                <Shuffle className="w-5 h-5" />
-                Start Practice
-              </>
-            )}
-          </button>
+            {loading ? 'Loading Questions...' : 'Start Practice'}
+          </Button>
         </div>
       </div>
 
@@ -463,6 +461,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
   fromDailyPlan,
 }) => {
   const navigate = useNavigate();
+  const { course } = useCourse();
   
   // Calculate results
   const answeredCount = Object.keys(answers).length;
@@ -489,7 +488,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
     <div className="min-h-[calc(100vh-4rem)] bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
       <div className="max-w-lg w-full">
         {/* Score Card */}
-        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg overflow-hidden mb-6">
+        <Card variant="elevated" noPadding className="overflow-hidden mb-6">
           {/* Header */}
           <div className={clsx(
             'p-6 text-center text-white',
@@ -561,11 +560,11 @@ const SessionResults: React.FC<SessionResultsProps> = ({
             </div>
             <span className="text-xl font-bold text-primary-600">+{pointsEarned}</span>
           </div>
-        </div>
+        </Card>
         
         {/* Weak Areas (if any) */}
         {weakTopics.length > 0 && (
-          <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6 border border-amber-200 dark:border-amber-800">
+          <Card className="mb-6 border border-amber-200 dark:border-amber-800">
             <div className="flex items-center gap-2 mb-3">
               <TrendingUp className="w-5 h-5 text-amber-500" />
               <h3 className="font-semibold text-slate-900 dark:text-slate-100">Focus Areas</h3>
@@ -583,11 +582,11 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 </span>
               ))}
             </div>
-          </div>
+          </Card>
         )}
         
         {/* Recommended Next Steps */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6">
+        <Card className="mb-6">
           <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Continue Learning</h3>
           <div className="space-y-2">
             {/* Primary CTA - changes based on performance */}
@@ -627,6 +626,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
             
             {/* Secondary options */}
             <div className="grid grid-cols-2 gap-2">
+              {course?.hasTBS && (
               <button
                 onClick={() => navigate('/tbs')}
                 className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
@@ -634,6 +634,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 <FileSpreadsheet className="w-5 h-5 text-teal-500" />
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Try TBS</span>
               </button>
+              )}
               <button
                 onClick={() => navigate('/flashcards')}
                 className="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
@@ -643,43 +644,47 @@ const SessionResults: React.FC<SessionResultsProps> = ({
               </button>
             </div>
           </div>
-        </div>
+        </Card>
         
         {/* Footer Actions */}
         <div className="flex gap-3">
           {fromDailyPlan && onBackToDailyPlan ? (
             <>
-              <button
+              <Button
                 onClick={onBackToDailyPlan}
-                className="flex-1 btn-primary flex items-center justify-center gap-2"
+                variant="primary"
+                leftIcon={CheckCircle}
+                className="flex-1"
               >
-                <CheckCircle className="w-4 h-4" />
                 Back to Daily Plan
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={onTryAgain}
-                className="flex-1 btn-secondary flex items-center justify-center gap-2"
+                variant="secondary"
+                leftIcon={RotateCcw}
+                className="flex-1"
               >
-                <RotateCcw className="w-4 h-4" />
                 New Session
-              </button>
+              </Button>
             </>
           ) : (
             <>
-              <button
+              <Button
                 onClick={onTryAgain}
-                className="flex-1 btn-secondary flex items-center justify-center gap-2"
+                variant="secondary"
+                leftIcon={RotateCcw}
+                className="flex-1"
               >
-                <RotateCcw className="w-4 h-4" />
                 New Session
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => navigate('/progress')}
-                className="flex-1 btn-primary flex items-center justify-center gap-2"
+                variant="primary"
+                leftIcon={TrendingUp}
+                className="flex-1"
               >
-                <TrendingUp className="w-4 h-4" />
                 View Progress
-              </button>
+              </Button>
             </>
           )}
         </div>
@@ -897,10 +902,8 @@ const Practice: React.FC = () => {
       let fetchedQuestions: Question[];
 
       // Determine Blueprint Version based on user's exam date
-      const rawExamDate = userProfile?.examDate;
-      const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function'
-        ? (rawExamDate as { toDate: () => Date }).toDate()
-        : rawExamDate ? new Date(rawExamDate as Date) : new Date();
+      const section = userProfile?.examSection as string || 'REG';
+      const examDate = getExamDate(userProfile, section) || new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
       const is2026 = blueprintVersion === '2026';
 
@@ -1295,12 +1298,12 @@ const Practice: React.FC = () => {
             There are no practice questions available for your selected section and criteria. 
             Try adjusting your filters or selecting a different exam section.
           </p>
-          <button
+          <Button
             onClick={endSession}
-            className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+            variant="primary"
           >
             Back to Setup
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -1481,16 +1484,15 @@ const Practice: React.FC = () => {
 
             {/* Submit Button */}
             {!isAnswered && (
-              <button
+              <Button
                 onClick={handleSubmitAnswer}
                 disabled={selectedAnswer === null}
-                className={clsx(
-                  'mt-6 w-full btn-primary py-3',
-                  selectedAnswer === null && 'opacity-50 cursor-not-allowed'
-                )}
+                variant="primary"
+                fullWidth
+                className="mt-6 py-3"
               >
                 Submit Answer
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -1506,8 +1508,21 @@ const Practice: React.FC = () => {
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                 {currentQuestion.explanation}
               </p>
+              
+              {currentQuestion.reference && (
+                <div className="mt-3 flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700">
+                  <div className="p-1 bg-slate-200 dark:bg-slate-600 rounded">
+                    <BookOpen className="w-3 h-3 text-slate-700 dark:text-slate-300" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300 mr-1">Citation:</span>
+                    <span className="font-mono text-primary-600 dark:text-primary-400">{currentQuestion.reference}</span>
+                  </div>
+                </div>
+              )}
+
               <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-                <button
+                <Button
                   onClick={() => {
                     // Save session state before navigating
                     saveSessionState();
@@ -1517,12 +1532,14 @@ const Practice: React.FC = () => {
                     const context = encodeURIComponent(`I need help understanding this CPA question:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}`);
                     navigate(`/ai-tutor?context=${context}&returnTo=/practice`);
                   }}
-                  className="btn-secondary text-sm flex items-center gap-2 hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"
+                  variant="secondary"
+                  size="sm"
+                  leftIcon={Sparkles}
+                  className="hover:bg-primary-50 hover:text-primary-700 hover:border-primary-300"
                 >
-                  <Sparkles className="w-4 h-4" />
                   Ask Vory to Explain
-                </button>
-                <button
+                </Button>
+                <Button
                   onClick={() => {
                     // Save session state before navigating
                     saveSessionState();
@@ -1532,18 +1549,21 @@ const Practice: React.FC = () => {
                       : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
                     navigate(lessonUrl);
                   }}
-                  className="btn-secondary text-sm flex items-center gap-2"
+                  variant="secondary"
+                  size="sm"
+                  leftIcon={BookOpen}
                 >
-                  <BookOpen className="w-4 h-4" />
                   Review Lessons
-                </button>
-                <button
+                </Button>
+                <Button
                   onClick={() => setShowReportModal(true)}
-                  className="btn-secondary text-sm flex items-center gap-2 hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300"
+                  variant="secondary"
+                  size="sm"
+                  leftIcon={AlertTriangle}
+                  className="hover:bg-amber-50 hover:text-amber-700 hover:border-amber-300"
                 >
-                  <AlertTriangle className="w-4 h-4" />
                   Report Issue
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -1603,23 +1623,23 @@ const Practice: React.FC = () => {
                   </kbd>
                 </div>
               </div>
-              <button onClick={() => setShowShortcuts(false)} className="w-full btn-primary mt-4">
+              <Button onClick={() => setShowShortcuts(false)} variant="primary" fullWidth className="mt-4">
                 Got it
-              </button>
+              </Button>
             </div>
           </div>
         )}
 
         {/* Navigation */}
         <div className="flex items-center justify-between gap-4">
-          <button
+          <Button
             onClick={prevQuestion}
             disabled={currentIndex === 0}
-            className="btn-secondary flex items-center gap-2"
+            variant="secondary"
+            leftIcon={ChevronLeft}
           >
-            <ChevronLeft className="w-5 h-5" />
             Previous
-          </button>
+          </Button>
 
           {/* Question Dots */}
           <div className="flex-1 flex items-center justify-center gap-1.5 overflow-x-auto py-2">
@@ -1653,21 +1673,21 @@ const Practice: React.FC = () => {
           </div>
 
           {currentIndex === questions.length - 1 ? (
-            <button
+            <Button
               onClick={endSession}
-              className="btn-primary flex items-center gap-2 bg-green-600 hover:bg-green-700"
+              variant="success"
+              rightIcon={CheckCircle}
             >
               Finish
-              <CheckCircle className="w-5 h-5" />
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
               onClick={nextQuestion}
-              className="btn-primary flex items-center gap-2"
+              variant="primary"
+              rightIcon={ChevronRight}
             >
               Next
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            </Button>
           )}
         </div>
       </div>
@@ -1745,19 +1765,21 @@ const Practice: React.FC = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <button
+                  <Button
                     onClick={() => setShowReportModal(false)}
-                    className="flex-1 btn-secondary"
+                    variant="secondary"
+                    className="flex-1"
                   >
                     Cancel
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={handleReportIssue}
                     disabled={!reportType}
-                    className="flex-1 btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    variant="primary"
+                    className="flex-1"
                   >
                     Submit Report
-                  </button>
+                  </Button>
                 </div>
               </>
             )}

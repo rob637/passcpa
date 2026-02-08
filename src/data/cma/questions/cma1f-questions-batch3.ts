@@ -1,0 +1,511 @@
+/**
+ * CMA Part 1, Section F: Technology and Analytics - Questions Batch 3 (Q51-75)
+ * Weight: 15% of Part 1 Exam
+ * 
+ * Blueprint Areas:
+ * - CMA1-F: Technology and Analytics
+ * 
+ * Topics covered:
+ * - Robotic Process Automation (RPA)
+ * - Machine Learning in Finance
+ * - Cloud Computing
+ * - Blockchain and Distributed Ledger
+ * - Predictive Analytics
+ * - Data Visualization Best Practices
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1F_QUESTIONS_BATCH3: Question[] = [
+  // ==========================================
+  // Robotic Process Automation (RPA)
+  // ==========================================
+  {
+    id: 'cma1-f-051',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'RPA',
+    subtopic: 'Definition',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Robotic Process Automation (RPA) is BEST suited for:',
+    options: [
+      'Complex decision-making requiring human judgment',
+      'High-volume, repetitive, rule-based tasks',
+      'Creating new business strategies',
+      'Managing employee performance reviews'
+    ],
+    correctAnswer: 1,
+    explanation: 'RPA excels at automating repetitive, standardized tasks with clear rules (data entry, reconciliations, report generation). It doesn\'t replace human judgment for complex decisions.',
+    reference: 'RPA Applications in Finance',
+  },
+  {
+    id: 'cma1-f-052',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'RPA',
+    subtopic: 'Benefits',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A key benefit of RPA in accounting processes is:',
+    options: [
+      'Eliminating the need for any human oversight',
+      'Reduced errors and faster processing for routine tasks',
+      'Replacing all accounting staff',
+      'Removing the need for audit trails'
+    ],
+    correctAnswer: 1,
+    explanation: 'RPA reduces human errors in routine tasks and processes transactions faster 24/7. It doesn\'t eliminate oversight needs—bots must be monitored and results reviewed.',
+    reference: 'RPA Benefits',
+  },
+  {
+    id: 'cma1-f-053',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'RPA',
+    subtopic: 'Process Selection',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which accounting process is the BEST candidate for RPA implementation?',
+    options: [
+      'Financial statement footnote drafting',
+      'Bank reconciliation with standard file formats',
+      'Negotiating vendor contracts',
+      'Investor relations communications'
+    ],
+    correctAnswer: 1,
+    explanation: 'Bank reconciliations with standard formats are ideal for RPA: structured data, clear rules, high volume, repetitive. Drafting and negotiations require human judgment.',
+    reference: 'RPA Process Selection',
+  },
+  {
+    id: 'cma1-f-054',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'RPA',
+    subtopic: 'Governance',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'RPA governance should include:',
+    options: [
+      'Allowing all employees to create bots without oversight',
+      'Change management, access controls, and exception monitoring',
+      'Eliminating all manual backup procedures',
+      'Disabling audit logging to improve speed'
+    ],
+    correctAnswer: 1,
+    explanation: 'RPA requires strong governance: controlled development/deployment (change management), role-based access, monitoring for exceptions and failures, and maintained audit trails.',
+    reference: 'RPA Governance',
+  },
+
+  // ==========================================
+  // Machine Learning in Finance
+  // ==========================================
+  {
+    id: 'cma1-f-055',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Machine Learning',
+    subtopic: 'Applications',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Machine learning is commonly used in finance for:',
+    options: [
+      'Replacing all human accountants',
+      'Fraud detection and anomaly identification',
+      'Eliminating the need for financial controls',
+      'Manual journal entry preparation'
+    ],
+    correctAnswer: 1,
+    explanation: 'ML excels at pattern recognition across large datasets, making it valuable for fraud detection, anomaly identification, credit scoring, and predictive analytics in finance.',
+    reference: 'ML Applications in Finance',
+  },
+  {
+    id: 'cma1-f-056',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Machine Learning',
+    subtopic: 'Supervised vs Unsupervised',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Supervised machine learning differs from unsupervised learning in that supervised learning:',
+    options: [
+      'Requires human oversight of every prediction',
+      'Uses labeled historical data to train models',
+      'Only works on small datasets',
+      'Cannot make predictions about new data'
+    ],
+    correctAnswer: 1,
+    explanation: 'Supervised learning uses labeled training data (known outcomes) to learn patterns. Unsupervised learning finds patterns in unlabeled data. "Supervised" refers to the labeled data, not human oversight.',
+    reference: 'Supervised vs Unsupervised Learning',
+  },
+  {
+    id: 'cma1-f-057',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Machine Learning',
+    subtopic: 'Model Explainability',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'The challenge of "black box" machine learning models relates to:',
+    options: [
+      'The color of the hardware used',
+      'Difficulty explaining how the model arrives at predictions',
+      'Models being too slow to run',
+      'Data storage limitations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Complex ML models (deep learning) can be difficult to interpret—it\'s hard to explain WHY they made specific predictions. This is a concern for audit, compliance, and regulatory purposes.',
+    reference: 'Model Explainability',
+  },
+
+  // ==========================================
+  // Cloud Computing
+  // ==========================================
+  {
+    id: 'cma1-f-059',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Cloud Computing',
+    subtopic: 'SaaS',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Using Salesforce or Microsoft 365 where the vendor manages all software is an example of:',
+    options: [
+      'Infrastructure as a Service (IaaS)',
+      'Platform as a Service (PaaS)',
+      'Software as a Service (SaaS)',
+      'On-premise deployment'
+    ],
+    correctAnswer: 2,
+    explanation: 'SaaS delivers complete applications over the internet. The vendor manages infrastructure, platform, and software. Users access via browser without installing or maintaining software.',
+    reference: 'SaaS Examples',
+  },
+  {
+    id: 'cma1-f-060',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Cloud Computing',
+    subtopic: 'Security Considerations',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The shared responsibility model for cloud security means:',
+    options: [
+      'The cloud provider handles all security',
+      'The customer handles all security',
+      'Security responsibilities are divided between provider and customer',
+      'Neither party is responsible for security'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cloud security is shared: providers secure the infrastructure; customers secure their data, access management, and application configuration. Responsibilities vary by service model (IaaS/PaaS/SaaS).',
+    reference: 'Shared Responsibility Model',
+  },
+  {
+    id: 'cma1-f-061',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Cloud Computing',
+    subtopic: 'Cost Management',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A key financial consideration when moving to cloud computing is:',
+    options: [
+      'Cloud always costs less than on-premise',
+      'Shifting from capital expenditure to operating expenditure',
+      'Cloud eliminates all IT costs',
+      'No impact on financial statements'
+    ],
+    correctAnswer: 1,
+    explanation: 'Cloud shifts from CapEx (owned assets, depreciation) to OpEx (subscription expenses). This affects budgeting, cash flow timing, and financial ratios. It\'s not always cheaper—it depends on usage.',
+    reference: 'Cloud Financial Considerations',
+  },
+
+  // ==========================================
+  // Blockchain and Distributed Ledger
+  // ==========================================
+  {
+    id: 'cma1-f-063',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Blockchain',
+    subtopic: 'Smart Contracts',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Smart contracts on blockchain:',
+    options: [
+      'Are traditional legal contracts stored digitally',
+      'Automatically execute when predetermined conditions are met',
+      'Require lawyer approval for each transaction',
+      'Cannot handle financial transactions'
+    ],
+    correctAnswer: 1,
+    explanation: 'Smart contracts are self-executing code stored on blockchain. When specified conditions are met (verified by the network), the contract automatically executes (e.g., releases payment).',
+    reference: 'Smart Contracts',
+  },
+  {
+    id: 'cma1-f-064',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Blockchain',
+    subtopic: 'Supply Chain Application',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Blockchain can improve supply chain management by:',
+    options: [
+      'Eliminating the need for suppliers',
+      'Providing transparent, tamper-proof tracking of goods',
+      'Automatically manufacturing products',
+      'Replacing all transportation systems'
+    ],
+    correctAnswer: 1,
+    explanation: 'Blockchain enables transparent, immutable tracking from origin to consumer. Each participant records their handoff, creating trustworthy provenance and reducing fraud/counterfeiting.',
+    reference: 'Blockchain in Supply Chain',
+  },
+
+  // ==========================================
+  // Predictive Analytics
+  // ==========================================
+  {
+    id: 'cma1-f-065',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Predictive Analytics',
+    subtopic: 'Purpose',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Predictive analytics differs from descriptive analytics by:',
+    options: [
+      'Only using historical data',
+      'Forecasting future outcomes based on patterns',
+      'Describing what happened in the past',
+      'Eliminating the need for human interpretation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Descriptive analytics explains what happened (reports). Predictive analytics uses patterns to forecast what might happen. Prescriptive analytics suggests actions to take.',
+    reference: 'Analytics Hierarchy',
+  },
+  {
+    id: 'cma1-f-066',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Predictive Analytics',
+    subtopic: 'Applications',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A management accountant could use predictive analytics for:',
+    options: [
+      'Generating last quarter\'s financial statements',
+      'Forecasting customer churn and cash flow',
+      'Recording historical journal entries',
+      'Preparing tax returns'
+    ],
+    correctAnswer: 1,
+    explanation: 'Predictive analytics forecasts future outcomes: customer churn prediction, cash flow forecasting, demand planning, fraud probability. Historical reporting and compliance are descriptive.',
+    reference: 'Predictive Analytics in Accounting',
+  },
+  {
+    id: 'cma1-f-067',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Predictive Analytics',
+    subtopic: 'Data Quality',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'The principle "garbage in, garbage out" emphasizes that:',
+    options: [
+      'Predictive models can correct for poor data',
+      'Data quality is essential for reliable predictions',
+      'All historical data should be discarded',
+      'Models work better with less data'
+    ],
+    correctAnswer: 1,
+    explanation: 'Predictive models are only as good as their input data. Poor data quality (errors, missing values, bias) leads to unreliable predictions regardless of model sophistication.',
+    reference: 'Data Quality Importance',
+  },
+
+  // ==========================================
+  // Data Visualization
+  // ==========================================
+  {
+    id: 'cma1-f-068',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Visualization',
+    subtopic: 'Chart Selection',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To show the composition of expenses by category as parts of a whole, the BEST chart type is:',
+    options: [
+      'Line chart',
+      'Scatter plot',
+      'Pie chart or stacked bar chart',
+      'Histogram'
+    ],
+    correctAnswer: 2,
+    explanation: 'Pie charts and stacked bars show parts of a whole (composition). Line charts show trends over time. Scatter plots show correlation. Histograms show distribution.',
+    reference: 'Chart Type Selection',
+  },
+  {
+    id: 'cma1-f-069',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Visualization',
+    subtopic: 'Dashboard Design',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An effective executive dashboard should:',
+    options: [
+      'Include every available metric',
+      'Focus on key metrics with drill-down capability',
+      'Only show positive results',
+      'Avoid any graphical elements'
+    ],
+    correctAnswer: 1,
+    explanation: 'Executive dashboards should highlight key metrics (not overwhelm with data) and allow drill-down for details. They should show both positive and negative indicators for complete visibility.',
+    reference: 'Dashboard Design Principles',
+  },
+  {
+    id: 'cma1-f-070',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Visualization',
+    subtopic: 'Misleading Visualizations',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'Which practice can create misleading visualizations?',
+    options: [
+      'Starting the Y-axis at zero',
+      'Truncating the Y-axis to exaggerate differences',
+      'Using consistent scales',
+      'Labeling all data points clearly'
+    ],
+    correctAnswer: 1,
+    explanation: 'Truncating the Y-axis (not starting at zero) exaggerates small differences, making changes appear more dramatic than they are. This is a common way charts mislead viewers.',
+    reference: 'Misleading Visualizations',
+  },
+
+  // ==========================================
+  // ERP Systems
+  // ==========================================
+  {
+    id: 'cma1-f-071',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'ERP Systems',
+    subtopic: 'Benefits',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A primary benefit of ERP systems is:',
+    options: [
+      'Each department maintains separate databases',
+      'Integration of business processes with a single data source',
+      'Elimination of all manual processes',
+      'Reduced need for employee training'
+    ],
+    correctAnswer: 1,
+    explanation: 'ERP integrates business functions (finance, HR, operations) into one system with a single database, enabling consistent data, streamlined processes, and real-time visibility across the organization.',
+    reference: 'ERP Benefits',
+  },
+  {
+    id: 'cma1-f-072',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'ERP Systems',
+    subtopic: 'Implementation Challenges',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A common challenge in ERP implementations is:',
+    options: [
+      'Systems are too simple',
+      'Resistance to change and need for business process redesign',
+      'Too few vendors to choose from',
+      'ERP systems are too inexpensive'
+    ],
+    correctAnswer: 1,
+    explanation: 'ERP implementations often require significant business process changes, leading to employee resistance. High costs, long timelines, and complexity are also common challenges.',
+    reference: 'ERP Implementation Challenges',
+  },
+
+  // ==========================================
+  // Digital Transformation
+  // ==========================================
+  {
+    id: 'cma1-f-073',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Digital Transformation',
+    subtopic: 'Finance Role',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Digital transformation in finance shifts the management accountant\'s role toward:',
+    options: [
+      'More data entry and transaction processing',
+      'Strategic analysis, insights, and business partnering',
+      'Reduced involvement in business decisions',
+      'Elimination of the finance function'
+    ],
+    correctAnswer: 1,
+    explanation: 'As automation handles routine tasks, management accountants focus more on analysis, insights, and business partnering—becoming strategic advisors rather than transaction processors.',
+    reference: 'Digital Finance Transformation',
+  },
+  {
+    id: 'cma1-f-074',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Digital Transformation',
+    subtopic: 'Skills Required',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'As finance becomes more technology-enabled, management accountants increasingly need:',
+    options: [
+      'Only traditional bookkeeping skills',
+      'Data analytics, communication, and technology skills',
+      'Fewer skills due to automation',
+      'Programming as their primary expertise'
+    ],
+    correctAnswer: 1,
+    explanation: 'Modern management accountants need hybrid skills: financial expertise PLUS data literacy, analytics capability, communication for insights delivery, and comfort with technology tools.',
+    reference: 'Future-Ready Finance Skills',
+  },
+  {
+    id: 'cma1-f-075',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Digital Transformation',
+    subtopic: 'Continuous Accounting',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Continuous accounting refers to:',
+    options: [
+      'Manual bookkeeping 24 hours a day',
+      'Spreading transaction processing and close activities throughout the period',
+      'Never closing the books',
+      'Using paper records continuously'
+    ],
+    correctAnswer: 1,
+    explanation: 'Continuous accounting distributes close tasks throughout the period (not just month-end) using automation. This reduces close time, improves accuracy, and provides near-real-time financial data.',
+    reference: 'Continuous Accounting',
+  },
+];

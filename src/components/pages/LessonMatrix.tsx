@@ -20,7 +20,7 @@ import {
   getObbbaAffectedLessons,
   getDifferingLessons,
   getLessonBlueprintVersion
-} from '../../data/lessonMatrix';
+} from '../../data/cpa/lessonMatrix';
 import { Lesson, Difficulty } from '../../types';
 import { getAccessibleClickProps } from '../../hooks/useKeyboardNavigation';
 

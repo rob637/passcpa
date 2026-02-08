@@ -26,6 +26,36 @@ export const CMA1_ESSAYS: WCTask[] = [
       'RI advantages (aligns with cost of capital)',
       'RI drawbacks (size bias)',
     ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper memo format with TO, FROM, DATE, RE fields',
+          'Organizes analysis into clear sections (ROI analysis, RI analysis, conflict, recommendation)',
+          'Presents calculations before explanations in a logical sequence',
+          'Includes a clear recommendation section with summary',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Correctly calculates project ROI as 14% ($280,000 / $2,000,000)',
+          'Correctly calculates Residual Income as $80,000 ($280,000 − $200,000)',
+          'Explains the goal congruence conflict: ROI penalizes managers for accepting projects above cost of capital but below current divisional ROI',
+          'Identifies advantages of RI (encourages value-creating investments) and drawbacks (absolute dollar bias favoring larger divisions)',
+          'Addresses all four task requirements thoroughly',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses professional tone appropriate for a memo to the CEO',
+          'Employs correct accounting and performance measurement terminology (ROI, residual income, cost of capital, goal congruence)',
+          'Writes in clear, concise sentences free of grammatical errors',
+          'Avoids unnecessary jargon while maintaining technical accuracy',
+        ],
+      },
+    },
     sampleResponse: `MEMORANDUM
 
 TO: Mark Sterling, CEO
@@ -101,6 +131,36 @@ To mitigate the size bias, we can assess RI growth or performance relative to bu
       'Spending variance vs Volume variance',
       'Variable cost efficiency',
     ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper memo format addressed to the CFO',
+          'Separates static budget limitations, flexible budget analysis, efficiency evaluation, and recommendations into distinct sections',
+          'Presents numerical analysis before conclusions in a logical flow',
+          'Includes clear headings that correspond to each task requirement',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Correctly calculates the flexible budget for variable costs at 12,000 units ($240,000)',
+          'Identifies the $10,000 unfavorable spending variance (actual $250,000 − flexible $240,000)',
+          'Separates the volume variance ($40,000) from the spending variance ($10,000)',
+          'Evaluates John\'s claim accurately: partially correct (static budget overstated variance) but not fully efficient ($10,000 unfavorable)',
+          'Recommends actionable improvements to the reporting process (flexible budgeting, variance decomposition)',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses professional tone appropriate for communication with a CFO',
+          'Employs correct budgeting terminology (static budget, flexible budget, spending variance, volume variance)',
+          'Presents calculations clearly with supporting labels and formulas',
+          'Writes in concise, grammatically correct sentences',
+        ],
+      },
+    },
     sampleResponse: `MEMORANDUM
 
 TO: CFO, Alpha Corp
@@ -169,6 +229,36 @@ This approach will provide a fair and actionable basis for performance reviews.`
       'Compensating controls for small offices',
       'Bank reconciliation independence',
     ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper memo format addressed to the Regional Manager',
+          'Organizes content into clear sections: weaknesses, risks, recommendations, and trust discussion',
+          'Presents control weaknesses before proposing solutions',
+          'Provides a practical redistribution plan that is easy to follow',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Identifies the ARC violation: one person controls Authorization, Record keeping, and Custody of assets',
+          'Explains specific fraud risks such as fictitious vendor schemes enabled by the lack of segregation',
+          'Proposes a cost-effective redistribution of duties feasible for a small office (e.g., manager signs checks, separate bank reconciliation)',
+          'Explains why trust alone is not a control, referencing the Fraud Triangle concepts of opportunity and rationalization',
+          'Addresses all four task requirements with sufficient depth',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses a professional but persuasive tone to convey urgency without being accusatory',
+          'Employs correct internal control terminology (segregation of duties, compensating controls, authorization)',
+          'Writes clearly and concisely with proper grammar',
+          'Balances technical accuracy with accessibility for a non-audit audience',
+        ],
+      },
+    },
     sampleResponse: `MEMORANDUM
 
 TO: Regional Manager
@@ -207,7 +297,7 @@ These changes add minimal time but significantly reduce the risk of asset misapp
     id: 'cma1-wc-004',
     section: 'CMA1',
     type: 'written_communication',
-    topic: 'Cost Management - Activity-Based Costing',
+    topic: 'Activity-Based Costing Concepts and Cross-Subsidization',
     difficulty: 'hard',
     estimatedTime: 40,
     blueprintArea: 'CMA1-D',
@@ -231,6 +321,36 @@ These changes add minimal time but significantly reduce the risk of asset misapp
       'Cost cross-subsidization (Low volume/complex products undercosted)',
       'Strategic pricing implications',
     ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper memo format addressed to the Production Director',
+          'Organizes content logically: current method flaws, ABC explanation, predicted impact, strategic implications',
+          'Transitions clearly from problem identification to solution and recommendation',
+          'Includes a concluding recommendation section',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Explains why volume-based allocation (DLH) distorts costs when products have different complexity levels',
+          'Describes ABC methodology and the concept of multiple cost drivers tied to activities',
+          'Predicts that Standard Widgets are over-costed and Custom Gadgets are under-costed (cross-subsidization)',
+          'Connects the costing distortion to market observations: competitors undercutting on Standard Widgets, dominance in Custom Gadgets at potentially unprofitable prices',
+          'Recommends strategic pricing adjustments based on corrected cost data',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses professional tone appropriate for a memo to the Production Director',
+          'Employs correct cost accounting terminology (activity-based costing, cost drivers, cross-subsidization, overhead allocation)',
+          'Explains technical concepts in a way accessible to a non-accountant audience',
+          'Writes clearly and concisely with proper grammar and sentence structure',
+        ],
+      },
+    },
     sampleResponse: `MEMORANDUM
 
 TO: Production Director

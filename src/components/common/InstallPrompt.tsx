@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Download, X } from 'lucide-react';
+import { Button } from './Button';
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -99,27 +100,27 @@ const InstallPrompt = () => {
             </p>
 
             <div className="flex items-center gap-2 mt-3">
-              <button
-                type="button"
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={handleInstall}
-                className="btn-primary text-sm py-2 px-4 flex items-center gap-2"
+                leftIcon={Download}
               >
-                <Download className="w-4 h-4" aria-hidden="true" />
                 Install
-              </button>
-              <button
-                type="button"
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleDismiss}
-                className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-200 py-2 px-3"
               >
                 Not now
-              </button>
+              </Button>
             </div>
           </div>
 
-          <button type="button" onClick={handleDismiss} className="text-slate-600 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 p-1" aria-label="Dismiss install prompt">
+          <Button variant="ghost" size="icon" onClick={handleDismiss} aria-label="Dismiss install prompt">
             <X className="w-5 h-5" aria-hidden="true" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

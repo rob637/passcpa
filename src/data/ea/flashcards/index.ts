@@ -11,16 +11,22 @@ import { EAFlashcard, EAFlashcardDeck, EAFlashcardType, EASection } from './type
 import { SEE1_DEFINITIONS } from './see1-definitions';
 import { SEE1_FORMULAS } from './see1-formulas';
 import { SEE1_MNEMONICS } from './see1-mnemonics';
+import { SEE1_BATCH2 } from './see1-batch2';
+import { SEE1_BATCH3 } from './see1-batch3';
 
 // SEE2 - Businesses
 import { SEE2_DEFINITIONS } from './see2-definitions';
 import { SEE2_FORMULAS } from './see2-formulas';
 import { SEE2_MNEMONICS } from './see2-mnemonics';
+import { SEE2_BATCH2 } from './see2-batch2';
+import { SEE2_BATCH3 } from './see2-batch3';
 
 // SEE3 - Representation
 import { SEE3_DEFINITIONS } from './see3-definitions';
 import { SEE3_FORMULAS } from './see3-formulas';
 import { SEE3_MNEMONICS } from './see3-mnemonics';
+import { SEE3_BATCH2 } from './see3-batch2';
+import { SEE3_BATCH3 } from './see3-batch3';
 
 import { EXPANSION_FLASHCARDS } from './expansion';
 
@@ -32,6 +38,8 @@ export const SEE1_FLASHCARDS: EAFlashcard[] = [
   ...SEE1_DEFINITIONS,
   ...SEE1_FORMULAS,
   ...SEE1_MNEMONICS,
+  ...SEE1_BATCH2,
+  ...SEE1_BATCH3,
   ...EXPANSION_FLASHCARDS.filter(c => c.section === 'SEE1'),
 ];
 
@@ -39,6 +47,8 @@ export const SEE2_FLASHCARDS: EAFlashcard[] = [
   ...SEE2_DEFINITIONS,
   ...SEE2_FORMULAS,
   ...SEE2_MNEMONICS,
+  ...SEE2_BATCH2,
+  ...SEE2_BATCH3,
   ...EXPANSION_FLASHCARDS.filter(c => c.section === 'SEE2'),
 ];
 
@@ -46,6 +56,8 @@ export const SEE3_FLASHCARDS: EAFlashcard[] = [
   ...SEE3_DEFINITIONS,
   ...SEE3_FORMULAS,
   ...SEE3_MNEMONICS,
+  ...SEE3_BATCH2,
+  ...SEE3_BATCH3,
   ...EXPANSION_FLASHCARDS.filter(c => c.section === 'SEE3'),
 ];
 

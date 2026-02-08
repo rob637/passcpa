@@ -1,7 +1,14 @@
-
 import { Question } from '../../../types';
+import { CISA3_QUESTIONS_BATCH2 } from './cisa3-questions-batch2';
+import { CISA3_QUESTIONS_BATCH3 } from './cisa3-questions-batch3';
+import { CISA3_QUESTIONS_BATCH4 } from './cisa3-questions-batch4';
+import { CISA3_QUESTIONS_BATCH5 } from './cisa3-questions-batch5';
+import { CISA3_QUESTIONS_BATCH6 } from './cisa3-questions-batch6';
+import { CISA3_QUESTIONS_BATCH7 } from './cisa3-questions-batch7';
+import { CISA3_QUESTIONS_BATCH8 } from './cisa3-questions-batch8';
+import { CISA3_QUESTIONS_BATCH9 } from './cisa2-cisa3-batch9';
 
-export const CISA3_QUESTIONS: Question[] = [
+const CISA3_QUESTIONS_BATCH1: Question[] = [
   {
     id: 'CISA3-001',
     courseId: 'cisa',
@@ -36,4 +43,16 @@ export const CISA3_QUESTIONS: Question[] = [
     topic: 'Business Application Development',
     subtopic: 'SDLC Phases'
   }
+];
+
+export const CISA3_QUESTIONS: Question[] = [
+  ...CISA3_QUESTIONS_BATCH1,
+  ...CISA3_QUESTIONS_BATCH2,
+  ...CISA3_QUESTIONS_BATCH3,
+  ...CISA3_QUESTIONS_BATCH4,
+  ...CISA3_QUESTIONS_BATCH5,
+  ...CISA3_QUESTIONS_BATCH6,
+  ...CISA3_QUESTIONS_BATCH7,
+  ...CISA3_QUESTIONS_BATCH8,
+  ...CISA3_QUESTIONS_BATCH9,
 ];

@@ -27,15 +27,16 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, TBS } from '../../types';
 import TBSRenderer from '../exam/TBSRenderer';
-import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/mock-exams';
-import { getTBSBySection } from '../../data/tbs';
+import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mockExams';
+import { getTBSBySection } from '../../data/cpa/tbs';
 
 interface TestletConfig {
   type: 'mcq' | 'tbs' | 'wc';
@@ -159,6 +160,7 @@ const ExamSimulator: React.FC = () => {
   const courseHome = getHomePathFromLocation(location.pathname);
   const { userProfile } = useAuth();
   const { completeSimulation } = useStudy();
+  const { courseId, course } = useCourse();
 
   const [examState, setExamState] = useState<ExamState>('intro');
   const [examMode, setExamMode] = useState<ExamMode>('mini');
@@ -183,13 +185,16 @@ const ExamSimulator: React.FC = () => {
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const availableMockExams = getMockExamsBySection(currentSection);
   
   // Determine exam config based on mode
+  // Use course.passingScore to avoid hardcoded CPA-specific values
+  const coursePassingScore = course?.passingScore ?? 75;
   const examConfig = useMemo(() => {
+    let config: ExamConfig;
     if (examMode === 'curated' && selectedMockExam) {
-      return {
+      config = {
         testlets: selectedMockExam.testlets.map(t => ({
           type: t.type as 'mcq' | 'tbs' | 'wc',
           questions: t.questionCount,
@@ -198,11 +203,16 @@ const ExamSimulator: React.FC = () => {
         totalTime: selectedMockExam.totalTime,
         passingScore: selectedMockExam.passingScore,
       };
+    } else if (examMode === 'mini-tbs') {
+      config = MINI_EXAM_WITH_TBS;
+    } else if (examMode === 'full') {
+      config = EXAM_CONFIG[currentSection];
+    } else {
+      config = MINI_EXAM;
     }
-    if (examMode === 'mini-tbs') return MINI_EXAM_WITH_TBS;
-    if (examMode === 'full') return EXAM_CONFIG[currentSection];
-    return MINI_EXAM;
-  }, [examMode, selectedMockExam, currentSection]);
+    // Override passing score with course-specific value
+    return { ...config, passingScore: coursePassingScore };
+  }, [examMode, selectedMockExam, currentSection, coursePassingScore]);
 
   // Load questions for exam
   const startExam = async () => {

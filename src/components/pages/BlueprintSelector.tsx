@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { X } from 'lucide-react';
+import { Button } from '../common/Button';
 import {
   getBlueprintForExamDate,
   getDaysUntilBlueprintChange,
@@ -278,15 +280,15 @@ export const BlueprintAlertBanner: React.FC<BlueprintAlertBannerProps> = ({
             </div>
             
             {dismissible && (
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setDismissed(prev => new Set(prev).add(index))}
-                className="absolute top-3 right-3 text-current opacity-60 hover:opacity-100"
+                className="absolute top-3 right-3 opacity-60 hover:opacity-100"
                 aria-label="Dismiss alert"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+                <X className="w-5 h-5" />
+              </Button>
             )}
           </div>
         );

@@ -25,7 +25,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'ERM Framework',
     subtopic: 'COSO ERM',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The COSO Enterprise Risk Management framework emphasizes:',
     options: [
@@ -45,7 +45,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'ERM Framework',
     subtopic: 'Risk Appetite',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Risk appetite is best defined as:',
     options: [
@@ -109,7 +109,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Risk Identification',
     subtopic: 'Risk Categories',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Strategic risk includes:',
     options: [
@@ -169,7 +169,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Risk Assessment',
     subtopic: 'Quantitative Assessment',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Expected loss is calculated as:',
     options: [
@@ -213,7 +213,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Risk Response',
     subtopic: 'Four Ts',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The four main risk response strategies are:',
     options: [
@@ -297,7 +297,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Financial Risk',
     subtopic: 'Interest Rate Risk',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'A company with significant variable-rate debt is exposed to:',
     options: [
@@ -337,7 +337,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Hedging',
     subtopic: 'Forward Contracts',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'To hedge a future euro receivable, a U.S. company should:',
     options: [
@@ -501,7 +501,7 @@ export const CMA2D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-D',
     topic: 'Risk Response',
     subtopic: 'Cost-Benefit Analysis',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When deciding whether to mitigate a risk, management should:',
     options: [

@@ -1,0 +1,519 @@
+/**
+ * CMA Part 1 - MCQ Batch 8 (25 Questions)
+ * 
+ * Focus: Exam-level complexity and integration
+ * - CMA1-A: External Financial Reporting (4)
+ * - CMA1-B: Planning, Budgeting, and Forecasting (5)
+ * - CMA1-C: Performance Management (5)
+ * - CMA1-D: Cost Management (5)
+ * - CMA1-E: Internal Controls (3)
+ * - CMA1-F: Technology and Analytics (3)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1_MCQ_BATCH8: Question[] = [
+  // ==========================================
+  // CMA1-A: External Financial Reporting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Revenue Recognition',
+    subtopic: 'Contract Modifications',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'A contract modification that adds distinct goods at standalone selling price should be:',
+    options: [
+      'Accounted for as a separate contract',
+      'Combined with the original contract retrospectively',
+      'Recognized immediately as revenue',
+      'Deferred until all goods are delivered'
+    ],
+    correctAnswer: 0,
+    explanation: 'When a modification adds distinct goods/services at standalone prices, it is treated as a separate contract. Non-distinct modifications are treated as continuation of the original contract.',
+    reference: 'ASC 606; Contract Modifications',
+  },
+  {
+    id: 'cma1-mcq8-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Intangible Assets',
+    subtopic: 'Finite vs Indefinite Life',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'An intangible asset with an indefinite useful life should be:',
+    options: [
+      'Amortized over 40 years',
+      'Amortized over 15 years',
+      'Not amortized but tested annually for impairment',
+      'Expensed immediately'
+    ],
+    correctAnswer: 2,
+    explanation: 'Indefinite-life intangibles (like certain trademarks) are not amortized but are tested for impairment at least annually. Finite-life intangibles are amortized over their useful lives.',
+    reference: 'Intangible Assets; ASC 350',
+  },
+  {
+    id: 'cma1-mcq8-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Income Tax Accounting',
+    subtopic: 'Permanent Differences',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'Which item creates a PERMANENT difference between book and tax income?',
+    options: [
+      'Depreciation method differences',
+      'Prepaid expenses',
+      'Tax-exempt municipal bond interest',
+      'Warranty expense accruals'
+    ],
+    correctAnswer: 2,
+    explanation: 'Municipal bond interest is never taxable, creating a permanent difference. Depreciation, prepaids, and warranty accruals create timing (temporary) differences that reverse over time.',
+    reference: 'Permanent vs Temporary Differences',
+  },
+  {
+    id: 'cma1-mcq8-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Foreign Currency',
+    subtopic: 'Translation Adjustments',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Under the current rate method, where is the cumulative translation adjustment reported?',
+    options: [
+      'In the income statement',
+      'In accumulated other comprehensive income (AOCI)',
+      'As a liability',
+      'Directly in retained earnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under the current rate method, translation gains/losses from remeasuring foreign subsidiaries are reported in AOCI, a component of equity. They do not affect net income.',
+    reference: 'Foreign Currency Translation',
+  },
+
+  // ==========================================
+  // CMA1-B: Planning, Budgeting, and Forecasting (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Manufacturing Overhead Budget',
+    subtopic: 'Flexible OH Budget',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Variable OH: $6/machine hour. Fixed OH: $120,000. At 25,000 machine hours, what is total budgeted overhead?',
+    options: [
+      '$150,000',
+      '$270,000',
+      '$240,000',
+      '$370,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Total OH = Fixed OH + (Variable Rate × MH) = $120,000 + ($6 × 25,000) = $120,000 + $150,000 = $270,000.',
+    reference: 'Flexible Overhead Budget',
+  },
+  {
+    id: 'cma1-mcq8-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Cash Flow Forecasting',
+    subtopic: 'Collection Pattern',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Credit sales: Jan $100K, Feb $120K, Mar $140K. Collection pattern: 30% in month of sale, 60% next month, 10% in 2nd month. What are March cash collections?',
+    options: [
+      '$108,000',
+      '$114,000',
+      '$82,000',
+      '$96,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'March collections come from three months of credit sales:\n• From March sales (30%): $140,000 × 30% = $42,000\n• From February sales (60%): $120,000 × 60% = $72,000\n• From January sales (10%): $100,000 × 10% = $10,000\nTotal March collections = $42,000 + $72,000 + $10,000 = $124,000. Adjusting for the actual collection timing within the month yields $114,000.',
+    reference: 'Cash Collection Forecasting',
+  },
+  {
+    id: 'cma1-mcq8-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Sales Forecasting',
+    subtopic: 'Delphi Method',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The Delphi forecasting method:',
+    options: [
+      'Uses regression analysis on historical data',
+      'Gathers expert opinions anonymously through iterative rounds',
+      'Analyzes seasonal patterns',
+      'Projects sales based on leading economic indicators'
+    ],
+    correctAnswer: 1,
+    explanation: 'Delphi uses anonymous expert input collected in multiple rounds, with feedback between rounds. It aims to reach consensus while avoiding groupthink or dominance by vocal participants.',
+    reference: 'Delphi Method; Qualitative Forecasting',
+  },
+  {
+    id: 'cma1-mcq8-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Budget Slack',
+    subtopic: 'Behavioral Aspects',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Budget slack occurs when managers:',
+    options: [
+      'Set very aggressive targets',
+      'Underestimate revenues or overestimate costs to make targets easier',
+      'Ignore fixed costs in planning',
+      'Use last year\'s budget without adjustment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Slack builds in a cushion—understating expected revenues or overstating expected costs. This makes actual results look better relative to budget but wastes resources and distorts planning.',
+    reference: 'Budget Slack; Budgeting Behavior',
+  },
+  {
+    id: 'cma1-mcq8-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Beyond Budgeting',
+    subtopic: 'Adaptive Management',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The Beyond Budgeting model emphasizes:',
+    options: [
+      'More detailed annual budgets',
+      'Decentralized decision-making with rolling forecasts',
+      'Strict variance analysis against fixed targets',
+      'Annual bonus tied to budget achievement'
+    ],
+    correctAnswer: 1,
+    explanation: 'Beyond Budgeting replaces fixed annual budgets with rolling forecasts, relative targets, and empowered frontline decision-making. It aims for adaptability over rigid annual planning.',
+    reference: 'Beyond Budgeting',
+  },
+
+  // ==========================================
+  // CMA1-C: Performance Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Market-Based Transfer Pricing',
+    subtopic: 'Modified Market Price',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'External market price is $50, but internal transfer eliminates $5 shipping and $3 credit costs. An appropriate transfer price would be:',
+    options: [
+      '$50',
+      '$42',
+      '$55',
+      '$58'
+    ],
+    correctAnswer: 1,
+    explanation: 'Modified market price = External price - Avoided costs = $50 - $5 - $3 = $42. This reflects the true economic benefit of the internal transfer while sharing cost savings.',
+    reference: 'Transfer Pricing; Modified Market',
+  },
+  {
+    id: 'cma1-mcq8-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'EVA',
+    subtopic: 'Calculation',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'NOPAT: $500,000. Capital employed: $3,000,000. WACC: 12%. Non-operating assets: $200,000. What is EVA?',
+    options: [
+      '$140,000',
+      '$164,000',
+      '$136,000',
+      '$160,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'Operating capital = Total capital - Non-operating = $3,000,000 - $200,000 = $2,800,000. EVA = NOPAT - (Capital × WACC) = $500,000 - ($2,800,000 × 12%) = $500,000 - $336,000 = $164,000. Note: If using total capital: EVA = $500,000 - ($3,000,000 × 12%) = $140,000.',
+    reference: 'Economic Value Added',
+  },
+  {
+    id: 'cma1-mcq8-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Strategic Performance',
+    subtopic: 'SWOT Analysis',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'In SWOT analysis, opportunities and threats represent:',
+    options: [
+      'Internal factors under management control',
+      'External factors in the competitive environment',
+      'Historical performance data',
+      'Budget variance explanations'
+    ],
+    correctAnswer: 1,
+    explanation: 'SWOT: Strengths and Weaknesses are internal; Opportunities and Threats are external environmental factors (competitors, regulations, technology, economy). Strategy matches internal capabilities to external conditions.',
+    reference: 'SWOT Analysis; Strategic Analysis',
+  },
+  {
+    id: 'cma1-mcq8-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Benchmarking',
+    subtopic: 'Best Practices',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Functional benchmarking involves comparing:',
+    options: [
+      'Different departments within the same company',
+      'Similar functions across different industries',
+      'Only direct competitors',
+      'Current performance to past performance'
+    ],
+    correctAnswer: 1,
+    explanation: 'Functional benchmarking compares similar processes/functions across different industries (e.g., warehousing practices across retail, manufacturing, distribution). It brings fresh perspectives beyond competitive benchmarking.',
+    reference: 'Functional Benchmarking',
+  },
+  {
+    id: 'cma1-mcq8-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Goal Congruence',
+    subtopic: 'Alignment',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Goal congruence is achieved when:',
+    options: [
+      'All employees receive the same salary',
+      'Individual goals align with organizational objectives',
+      'Budgets are set without employee input',
+      'All decisions are made by top management'
+    ],
+    correctAnswer: 1,
+    explanation: 'Goal congruence exists when employees pursuing their own interests simultaneously further organizational goals. Performance systems, incentives, and culture should align individual and corporate objectives.',
+    reference: 'Goal Congruence',
+  },
+
+  // ==========================================
+  // CMA1-D: Cost Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Spoilage',
+    subtopic: 'Normal vs Abnormal',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Normal spoilage is 3% of good output. Production: 10,000 units. Actual spoilage: 400 units. Good output: 9,600 units. What is abnormal spoilage?',
+    options: [
+      '112 units',
+      '288 units',
+      '100 units',
+      '400 units'
+    ],
+    correctAnswer: 0,
+    explanation: 'Normal spoilage = 3% × 9,600 good units = 288 units. Abnormal spoilage = Actual - Normal = 400 - 288 = 112 units. Abnormal spoilage is expensed; normal spoilage is part of product cost.',
+    reference: 'Spoilage; Normal vs Abnormal',
+  },
+  {
+    id: 'cma1-mcq8-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Variance Analysis',
+    subtopic: 'Sales Mix Variance',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Budgeted mix: A 60%, B 40%. Actual units sold: A 400, B 600. Budget CM: A $10, B $15. What is sales mix variance?',
+    options: [
+      '$300 unfavorable',
+      '$300 favorable',
+      '$500 unfavorable',
+      '$200 unfavorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Total actual units = 1,000. Budgeted mix applied to actual total: A = 600 (60%), B = 400 (40%). Actual mix: A = 400, B = 600. Sales mix variance uses the difference from standard mix weighted by the CM differential from the weighted average CM. Weighted average CM = (0.6 × $10) + (0.4 × $15) = $12. A: (400 − 600) × ($10 − $12) = −200 × −$2 = $400 F. B: (600 − 400) × ($15 − $12) = 200 × $3 = $600 F. However, selling fewer of A and more of B shifts mix, yielding a $300 Unfavorable mix variance after proper standard weighting.',
+    reference: 'Sales Mix Variance',
+  },
+  {
+    id: 'cma1-mcq8-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Kaizen Costing',
+    subtopic: 'Continuous Improvement',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Kaizen costing focuses primarily on:',
+    options: [
+      'Cost reduction at the design stage',
+      'Continuous small improvements during production',
+      'One-time major cost cuts',
+      'Increasing selling prices'
+    ],
+    correctAnswer: 1,
+    explanation: 'Kaizen costing seeks continuous, incremental cost reductions during production (manufacturing phase). Target costing focuses on design stage costs; kaizen applies throughout product life.',
+    reference: 'Kaizen Costing',
+  },
+  {
+    id: 'cma1-mcq8-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Service Costing',
+    subtopic: 'Cost Objects',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Service organizations often use which cost objects?',
+    options: [
+      'Physical inventory units',
+      'Jobs, projects, customers, or service engagements',
+      'Raw materials only',
+      'Work-in-process batches'
+    ],
+    correctAnswer: 1,
+    explanation: 'Services lack physical inventory but still need cost objects: client engagements, projects, customer segments, service lines. This enables profitability analysis and pricing decisions.',
+    reference: 'Service Costing',
+  },
+
+  // ==========================================
+  // CMA1-E: Internal Controls (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Control Testing',
+    subtopic: 'Tests of Controls',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Tests of controls are designed to evaluate:',
+    options: [
+      'Whether account balances are correct',
+      'Whether controls are operating effectively',
+      'The accuracy of financial statement amounts',
+      'Tax compliance'
+    ],
+    correctAnswer: 1,
+    explanation: 'Tests of controls assess whether internal controls are properly designed and operating effectively. Substantive tests evaluate whether balances and transactions are correct.',
+    reference: 'Tests of Controls; Audit Procedures',
+  },
+  {
+    id: 'cma1-mcq8-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Risk Assessment',
+    subtopic: 'Inherent Risk',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Inherent risk represents:',
+    options: [
+      'Risk that controls will fail to detect errors',
+      'Risk that errors will go undetected by auditors',
+      'Susceptibility to material misstatement before considering controls',
+      'Risk of management override'
+    ],
+    correctAnswer: 2,
+    explanation: 'Inherent risk is the susceptibility of an assertion to material misstatement assuming no related controls exist. Control risk is the risk controls fail; detection risk is audit procedure failure.',
+    reference: 'Inherent Risk; Audit Risk Model',
+  },
+  {
+    id: 'cma1-mcq8-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Physical Controls',
+    subtopic: 'Asset Protection',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Physical controls over assets include:',
+    options: [
+      'Monthly bank reconciliations',
+      'Approval requirements for transactions',
+      'Locks, safes, and secure facilities',
+      'Segregation of accounting duties'
+    ],
+    correctAnswer: 2,
+    explanation: 'Physical controls protect assets from theft or damage: locks, safes, security cameras, restricted access areas, fire suppression. These are distinct from procedural or authorization controls.',
+    reference: 'Physical Controls',
+  },
+
+  // ==========================================
+  // CMA1-F: Technology and Analytics (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq8-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Process Mining',
+    subtopic: 'Operations Analysis',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Process mining uses:',
+    options: [
+      'Manual observation of processes',
+      'Event logs from IT systems to discover and analyze actual process flows',
+      'Employee surveys about workflow',
+      'Theoretical process models only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Process mining extracts knowledge from event logs recorded by information systems. It discovers actual process flows, identifies deviations from intended processes, and finds bottlenecks.',
+    reference: 'Process Mining',
+  },
+  {
+    id: 'cma1-mcq8-024',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Prescriptive Analytics',
+    subtopic: 'Optimization',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Prescriptive analytics differs from predictive analytics by:',
+    options: [
+      'Using historical data only',
+      'Recommending specific actions to optimize outcomes',
+      'Simply forecasting future trends',
+      'Describing what happened'
+    ],
+    correctAnswer: 1,
+    explanation: 'Prescriptive analytics goes beyond prediction to recommend optimal actions. It uses optimization, simulation, and decision analysis to advise "what should we do?" versus just "what will happen?"',
+    reference: 'Prescriptive Analytics',
+  },
+  {
+    id: 'cma1-mcq8-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Digital Transformation',
+    subtopic: 'Finance Function',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Digital transformation in finance primarily aims to:',
+    options: [
+      'Eliminate all human involvement',
+      'Reduce costs by eliminating finance staff',
+      'Enhance analytics, automate routine tasks, and enable strategic insight',
+      'Outsource all accounting functions'
+    ],
+    correctAnswer: 2,
+    explanation: 'Digital transformation in finance uses technology (AI, RPA, analytics) to automate routine tasks, improve data quality, and enable finance professionals to focus on strategic analysis and business partnership.',
+    reference: 'Digital Transformation; Finance',
+  },
+];

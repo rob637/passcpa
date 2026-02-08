@@ -9,7 +9,7 @@ import {
   FAR_ALL,
   AUD_ALL,
   BEC_ALL,
-} from '../../data/questions';
+} from '../../data/cpa/questions';
 
 describe('Question Bank Utilities', () => {
   describe('Question Statistics', () => {

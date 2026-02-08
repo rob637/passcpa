@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 import { CheckCircle, XCircle, AlertCircle, Info, X } from 'lucide-react';
 import clsx from 'clsx';
+import { Button } from './Button';
 
 type ToastType = 'success' | 'error' | 'warning' | 'info';
 
@@ -63,14 +64,15 @@ const Toast = ({ id, message, type = 'info', onDismiss }: ToastProps) => {
     >
       <Icon className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
       <p className="text-sm font-medium flex-1">{message}</p>
-      <button
-        type="button"
+      <Button
+        variant="ghost"
+        size="icon"
         onClick={() => onDismiss(id)}
-        className="p-1 rounded-full hover:bg-white/20 transition-colors"
+        className="p-1 rounded-full hover:bg-white/20"
         aria-label="Dismiss notification"
       >
         <X className="w-4 h-4" aria-hidden="true" />
-      </button>
+      </Button>
     </div>
   );
 };

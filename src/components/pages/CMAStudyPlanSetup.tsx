@@ -6,6 +6,8 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import {
   ChevronLeft,
   ChevronRight,
@@ -187,14 +189,14 @@ const CMAStudyPlanSetup: React.FC = () => {
             </div>
 
             <div className="flex justify-end">
-              <button
+              <Button
+                variant="primary"
                 onClick={() => setStep(2)}
                 disabled={!examDates.CMA1 && !examDates.CMA2}
-                className="btn-primary flex items-center gap-2"
+                rightIcon={ChevronRight}
               >
                 Next Step
-                <ChevronRight className="w-4 h-4" />
-              </button>
+              </Button>
             </div>
           </div>
         )}
@@ -213,28 +215,26 @@ const CMAStudyPlanSetup: React.FC = () => {
                 Our AI will analyze your timeline and distribute 130+ lessons and 3,000+ questions evenly across your available days.
               </p>
               
-              <button
+              <Button
+                variant="primary"
                 onClick={handleGenerate}
                 disabled={loading}
-                className="btn-primary w-full max-w-xs h-12 text-lg shadow-lg shadow-purple-500/20"
+                loading={loading}
+                size="lg"
+                className="w-full max-w-xs shadow-lg shadow-purple-500/20"
               >
-                {loading ? (
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Generating Plan...
-                  </div>
-                ) : (
-                  'Generate My Plan'
-                )}
-              </button>
+                {loading ? 'Generating Plan...' : 'Generate My Plan'}
+              </Button>
             </div>
             
-            <button
+            <Button
+              variant="ghost"
               onClick={() => setStep(1)}
-              className="w-full text-center text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 text-sm"
+              fullWidth
+              className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 text-sm"
             >
               Back to Dates
-            </button>
+            </Button>
           </div>
         )}
 
@@ -258,7 +258,7 @@ const CMAStudyPlanSetup: React.FC = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="card p-4">
+              <Card className="p-4">
                 <div className="flex items-center gap-3 mb-2">
                   <Target className="w-5 h-5 text-purple-500" />
                   <h3 className="font-semibold text-slate-900 dark:text-slate-100">Daily Goal</h3>
@@ -267,8 +267,8 @@ const CMAStudyPlanSetup: React.FC = () => {
                   {generatedPlan.dailyGoals.questions}
                   <span className="text-sm font-normal text-slate-500 ml-1">questions</span>
                 </p>
-              </div>
-              <div className="card p-4">
+              </Card>
+              <Card className="p-4">
                 <div className="flex items-center gap-3 mb-2">
                   <BookOpen className="w-5 h-5 text-blue-500" />
                   <h3 className="font-semibold text-slate-900 dark:text-slate-100">Daily Study</h3>
@@ -277,15 +277,18 @@ const CMAStudyPlanSetup: React.FC = () => {
                   {Math.round(generatedPlan.hoursPerDay * 10) / 10}
                   <span className="text-sm font-normal text-slate-500 ml-1">hours</span>
                 </p>
-              </div>
+              </Card>
             </div>
 
-            <button
+            <Button
+              variant="success"
               onClick={handleSavePlan}
-              className="btn-primary w-full h-12 text-lg shadow-lg shadow-emerald-500/20 bg-emerald-600 hover:bg-emerald-700 focus:ring-emerald-500"
+              fullWidth
+              size="lg"
+              className="shadow-lg shadow-emerald-500/20"
             >
               Start Studying
-            </button>
+            </Button>
           </div>
         )}
       </div>

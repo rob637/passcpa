@@ -17,6 +17,7 @@ import {
   Palette,
   GraduationCap,
 } from 'lucide-react';
+import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
@@ -25,7 +26,9 @@ import { storage, auth } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
+import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { createExamDateUpdate } from '../../utils/profileHelpers';
 import { COURSES, ACTIVE_COURSES, type CourseId } from '../../courses';
 import {
   setupDailyReminder,
@@ -36,14 +39,6 @@ import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offli
 import { fetchQuestions } from '../../services/questionService';
 import { Timestamp } from 'firebase/firestore';
 import clsx from 'clsx';
-
-// Types
-interface CPASection {
-  name: string;
-  shortName: string;
-  color: string;
-  description: string;
-}
 
 interface UserProfile {
   displayName?: string;
@@ -88,7 +83,7 @@ interface Tab {
 
 const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
@@ -282,12 +277,19 @@ const Settings: React.FC = () => {
   const handleSave = async () => {
     setIsSaving(true);
     try {
+      // Create multi-course aware exam date update
+      const examDateUpdate = createExamDateUpdate(
+        userProfile,
+        examSection || userProfile?.examSection || 'FAR',
+        examDate ? new Date(examDate) : null
+      );
+      
       // Save profile settings
       await updateUserProfile({
         displayName,
         examSection,
         dailyGoal,
-        examDate: examDate ? new Date(examDate) : null,
+        ...examDateUpdate,
         activeCourse,
         dailyReminderEnabled: notifications.dailyReminder,
         dailyReminderTime: reminderTime || '09:00',
@@ -402,14 +404,15 @@ const Settings: React.FC = () => {
                         accept="image/*"
                         className="hidden"
                       />
-                      <button 
+                      <Button 
                         onClick={() => fileInputRef.current?.click()}
                         disabled={isUploadingPhoto}
-                        className="btn-secondary text-sm flex items-center gap-2"
+                        variant="secondary"
+                        size="sm"
+                        leftIcon={Camera}
                       >
-                        <Camera className="w-4 h-4" />
                         {isUploadingPhoto ? 'Uploading...' : 'Change Photo'}
-                      </button>
+                      </Button>
                       <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Max 5MB, JPG/PNG</p>
                     </div>
                   </div>
@@ -489,52 +492,63 @@ const Settings: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Exam Section - CPA only */}
-                  {activeCourse === 'cpa' && (
+                  {/* Exam Section - All Courses */}
+                  {course && (
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Current Exam Section
                     </label>
                     {(() => {
-                      // Determine available sections based on user's exam date
-                      const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                      const userExamDate = examDate ? new Date(examDate) : new Date();
-                      const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                      const availableSections = is2025Blueprint
-                        ? [...CORE_SECTIONS, 'BEC']
-                        : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+                      // For CPA: Determine available sections based on user's exam date
+                      let availableSections: string[];
+                      if (activeCourse === 'cpa') {
+                        const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+                        const userExamDate = examDate ? new Date(examDate) : new Date();
+                        const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
+                        availableSections = is2025Blueprint
+                          ? [...CORE_SECTIONS, 'BEC']
+                          : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+                      } else {
+                        // For other courses, show all sections
+                        availableSections = course.sections.map((s: { id: string }) => s.id);
+                      }
                       
                       return (
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                          {Object.entries(CPA_SECTIONS)
-                            .filter(([key]) => availableSections.includes(key))
-                            .map(([key, section]) => (
+                          {course.sections
+                            .filter((s: { id: string }) => availableSections.includes(s.id))
+                            .map((section: { id: string }) => {
+                              const displayInfo = getSectionDisplayInfo(section.id, activeCourse);
+                              if (!displayInfo) return null;
+                              return (
                             <button
-                              key={key}
-                              onClick={() => setExamSection(key)}
+                              key={section.id}
+                              onClick={() => setExamSection(section.id)}
                               className={clsx(
                                 'p-3 rounded-xl border-2 text-left transition-all',
-                                examSection === key
+                                examSection === section.id
                                   ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
                                   : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
                               )}
                             >
                               <div
                                 className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
-                                style={{ backgroundColor: (section as CPASection).color }}
+                                style={{ backgroundColor: displayInfo.color }}
                               >
-                                {(section as CPASection).shortName}
+                                {displayInfo.shortName}
                               </div>
                               <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                                {(section as CPASection).shortName}
+                                {displayInfo.shortName}
                               </div>
                             </button>
-                          ))}
+                              );
+                          })}
                         </div>
                       );
                     })()}
                     
-                    {/* Blueprint Info Note */}
+                    {/* Blueprint Info Note - CPA only */}
+                    {activeCourse === 'cpa' && (
                     <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                       <div className="flex gap-2">
                         <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
@@ -554,6 +568,7 @@ const Settings: React.FC = () => {
                         </div>
                       </div>
                     </div>
+                    )}
                   </div>
                   )}
 
@@ -774,12 +789,13 @@ const Settings: React.FC = () => {
 
                     {/* Clear Cache */}
                     {(cacheStatus?.questions_count > 0) && (
-                      <button
+                      <Button
                         onClick={handleClearCache}
-                        className="px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors"
+                        variant="danger"
+                        size="sm"
                       >
                         Clear Offline Cache
-                      </button>
+                      </Button>
                     )}
                  </div>
               </div>
@@ -806,12 +822,14 @@ const Settings: React.FC = () => {
                           </div>
                         </div>
                         {notificationPermission !== 'denied' && (
-                          <button
+                          <Button
                             onClick={requestNotificationPermission}
-                            className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 text-sm font-medium whitespace-nowrap"
+                            variant="primary"
+                            size="sm"
+                            className="bg-amber-600 hover:bg-amber-700 whitespace-nowrap"
                           >
                             Enable Now
-                          </button>
+                          </Button>
                         )}
                       </div>
                     </div>
@@ -1037,7 +1055,7 @@ const Settings: React.FC = () => {
                     {/* Actions */}
                     <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
-                      <button
+                      <Button
                         onClick={async () => {
                           try {
                             await resetPassword(user?.email || '');
@@ -1046,17 +1064,19 @@ const Settings: React.FC = () => {
                             alert('Failed to send reset email. Please try again.');
                           }
                         }}
-                        className="w-full sm:w-auto px-4 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors text-sm font-medium flex items-center gap-2"
+                        variant="secondary"
+                        leftIcon={Shield}
+                        className="w-full sm:w-auto"
                       >
-                        <Shield className="w-4 h-4" />
                         Change Password
-                      </button>
-                      <button
+                      </Button>
+                      <Button
                         onClick={() => signOut()}
-                        className="w-full sm:w-auto px-4 py-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors text-sm font-medium flex items-center gap-2"
+                        variant="secondary"
+                        className="w-full sm:w-auto"
                       >
                         Sign Out
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -1066,20 +1086,14 @@ const Settings: React.FC = () => {
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
               <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
-                <button
+                <Button
                   onClick={handleSave}
                   disabled={isSaving}
-                  className="btn-primary"
+                  loading={isSaving}
+                  variant="primary"
                 >
-                  {isSaving ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                      Saving...
-                    </>
-                  ) : (
-                    'Save Changes'
-                  )}
-                </button>
+                  {isSaving ? 'Saving...' : 'Save Changes'}
+                </Button>
                 {saveSuccess && (
                     <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
                          <span className="mr-2">Saved!</span>

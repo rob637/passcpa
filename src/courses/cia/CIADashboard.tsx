@@ -12,6 +12,8 @@ import { useNavigate } from 'react-router-dom';
 import { useCIAProgress } from '../../hooks/useCIAProgress';
 import { CIA_SECTION_CONFIG, CIASectionId } from '../../utils/ciaStudyPlanner';
 import { PageLoader } from '../../components/common/PageLoader';
+import { Button } from '../../components/common/Button';
+import { Card } from '../../components/common/Card';
 
 export default function CIADashboard() {
   const navigate = useNavigate();
@@ -38,26 +40,26 @@ export default function CIADashboard() {
           <p className="text-slate-600 dark:text-slate-400 mt-1">Certified Internal Auditor Exam Prep</p>
         </div>
         <div className="flex gap-3">
-          <button 
+          <Button 
+            variant="secondary"
             onClick={() => navigate('/cia/study-plan')}
-            className="btn btn-secondary flex items-center gap-2"
+            leftIcon={Calendar}
           >
-            <Calendar className="w-4 h-4" />
             Study Plan
-          </button>
-          <button 
+          </Button>
+          <Button 
+            variant="primary"
             onClick={() => navigate('/cia/practice/quick')}
-            className="btn btn-primary flex items-center gap-2"
+            leftIcon={Target}
           >
-            <Target className="w-4 h-4" />
             Quick Practice
-          </button>
+          </Button>
         </div>
       </div>
 
       {/* Main Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="card p-6">
+        <Card className="p-6">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Overall Readiness</div>
               <Award className="h-4 w-4 text-amber-500" />
@@ -66,34 +68,34 @@ export default function CIADashboard() {
             <div className="w-full bg-slate-200 rounded-full h-2 mt-2">
                 <div className="bg-amber-500 h-2 rounded-full" style={{ width: `${overallReadiness}%` }}></div>
             </div>
-        </div>
+        </Card>
         
-        <div className="card p-6">
+        <Card className="p-6">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Questions Bank</div>
               <BookOpen className="h-4 w-4 text-blue-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{questionsBank}</div>
             <p className="text-xs text-slate-500 mt-1">Questions answered</p>
-        </div>
+        </Card>
 
-        <div className="card p-6">
+        <Card className="p-6">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Study Streak</div>
               <Clock className="h-4 w-4 text-green-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{streak}</div>
             <p className="text-xs text-slate-500 mt-1">Current day streak</p>
-        </div>
+        </Card>
 
-        <div className="card p-6">
+        <Card className="p-6">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Average Score</div>
               <BarChart2 className="h-4 w-4 text-purple-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{accuracy}%</div>
             <p className="text-xs text-slate-500 mt-1">Across all sections</p>
-        </div>
+        </Card>
       </div>
 
       {/* Parts Sections */}
@@ -105,9 +107,11 @@ export default function CIADashboard() {
             const secAccuracy = Math.round(progress?.sections[sectionId]?.accuracy || 0);
             
             return (
-          <div 
+          <Card 
             key={sectionId} 
-            className="card card-interactive p-0 flex flex-col h-full cursor-pointer hover:scale-[1.01] transition-transform" 
+            variant="interactive"
+            noPadding
+            className="flex flex-col h-full cursor-pointer hover:scale-[1.01] transition-transform" 
             onClick={() => navigate(`/cia/section/${sectionId}`)}
           >
             <div className="p-6 border-b border-slate-100 dark:border-slate-800">
@@ -143,14 +147,16 @@ export default function CIADashboard() {
                              <div className="font-semibold text-slate-900 dark:text-slate-100">{secAccuracy}%</div>
                         </div>
                     </div>
-                    <button 
-                        className="btn btn-outline w-full mt-2" 
+                    <Button 
+                        variant="ghost"
+                        fullWidth
+                        className="mt-2" 
                         style={{ borderColor: CIA_SECTION_CONFIG[sectionId].color, color: CIA_SECTION_CONFIG[sectionId].color }}
                     >
                         Study {sectionId}
-                    </button>
+                    </Button>
             </div>
-          </div>
+          </Card>
         )})}
       </div>
     </div>

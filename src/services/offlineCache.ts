@@ -1,7 +1,7 @@
 // Offline Question Cache Service
 // Caches questions in IndexedDB for offline practice
 
-import { Question } from '../types';
+import { Question, TBS } from '../types';
 import { logger } from '../utils/logger';
 
 const DB_NAME = 'voraprep-offline';
@@ -136,7 +136,7 @@ function handleUpgrade(event: IDBVersionChangeEvent) {
 /**
  * Update metadata
  */
-async function updateMeta(key: string, value: any) {
+async function updateMeta(key: string, value: string | number | boolean) {
   const db = await openDB();
   const tx = db.transaction(META_STORE, 'readwrite');
   const store = tx.objectStore(META_STORE);
@@ -170,7 +170,7 @@ export async function cacheQuestions(questions: Question[]): Promise<number> {
 /**
  * Cache TBS for offline use
  */
-export async function cacheTBS(tbsList: any[]): Promise<number> {
+export async function cacheTBS(tbsList: TBS[]): Promise<number> {
   const db = await openDB();
   const tx = db.transaction(TBS_STORE, 'readwrite');
   const store = tx.objectStore(TBS_STORE);
@@ -248,9 +248,9 @@ export async function getCacheStatus() {
 
   return new Promise((resolve, reject) => {
     request.onsuccess = () => {
-      const result = request.result;
-      const status: Record<string, any> = {};
-      result.forEach((item: any) => {
+      const result = request.result as Array<{ key: string; value: string | number | boolean }>;
+      const status: Record<string, string | number | boolean> = {};
+      result.forEach((item) => {
         status[item.key] = item.value;
       });
       resolve(status);

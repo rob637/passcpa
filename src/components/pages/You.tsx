@@ -9,14 +9,14 @@ import {
   Trophy,
   LogOut,
   Camera,
-  Loader2,
   HelpCircle,
   Users,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getExamDate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -25,6 +25,8 @@ import { format, eachDayOfInterval, differenceInDays, startOfWeek, endOfWeek, is
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import logger from '../../utils/logger';
 
 // Readiness Ring Component
@@ -134,16 +136,15 @@ const You: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [_loading, setLoading] = useState(true);
 
-  // Get user info
-  const profile = userProfile as any;
-  const displayName = profile?.displayName || 'User';
+  // Get user info - properly typed
+  const displayName = userProfile?.displayName || 'User';
   const firstName = displayName.split(' ')[0];
-  const examSection = profile?.examSection || 'FAR';
-  const sectionInfo = CPA_SECTIONS[examSection as keyof typeof CPA_SECTIONS];
+  const examSection = userProfile?.examSection as string || 'FAR';
+  const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
-  // Calculate days until exam
-  const examDate = profile?.examDate;
-  const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
+  // Calculate days until exam - use getExamDate helper for multi-course support
+  const examDate = getExamDate(userProfile, examSection);
+  const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load data
   useEffect(() => {
@@ -317,13 +318,13 @@ const You: React.FC = () => {
   return (
     <div className="max-w-lg mx-auto space-y-6 pb-8">
       {/* Profile Header */}
-      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6">
+      <Card className="p-6">
         <div className="flex items-center gap-4">
           {/* Avatar */}
           <div className="relative">
             <div className="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center overflow-hidden">
-              {profile?.photoURL ? (
-                <img src={profile.photoURL} alt="Your profile photo" className="w-20 h-20 rounded-full object-cover" loading="lazy" />
+              {userProfile?.photoURL ? (
+                <img src={userProfile.photoURL} alt="Your profile photo" className="w-20 h-20 rounded-full object-cover" loading="lazy" />
               ) : (
                 <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">
                   {firstName?.charAt(0)?.toUpperCase() || 'U'}
@@ -337,17 +338,16 @@ const You: React.FC = () => {
               accept="image/*"
               className="hidden"
             />
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploadingPhoto}
-              className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 rounded-full border-2 border-slate-200 dark:border-slate-600 flex items-center justify-center shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors"
+              loading={isUploadingPhoto}
+              className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 shadow-sm"
             >
-              {isUploadingPhoto ? (
-                <Loader2 className="w-4 h-4 text-slate-600 dark:text-slate-300 animate-spin" />
-              ) : (
-                <Camera className="w-4 h-4 text-slate-600 dark:text-slate-300" />
-              )}
-            </button>
+              {!isUploadingPhoto && <Camera className="w-4 h-4 text-slate-600 dark:text-slate-300" />}
+            </Button>
           </div>
 
           {/* Name & Section */}
@@ -410,30 +410,30 @@ const You: React.FC = () => {
             <span className="text-xs text-slate-600 dark:text-slate-400">Time</span>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* Readiness & Weekly Activity */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Readiness */}
-        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
+        <Card className="p-4">
           <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-3">Exam Ready</h3>
           <div className="flex justify-center">
             <ReadinessRing readiness={readinessData?.overall || 0} size={80} />
           </div>
-        </div>
+        </Card>
 
         {/* This Week */}
-        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
+        <Card className="p-4">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300">This Week</h3>
             <span className="text-xs text-primary-600 font-medium">{weeklyQuestions} Q</span>
           </div>
           <WeeklyChart activity={weeklyActivity} />
-        </div>
+        </Card>
       </div>
 
       {/* Menu Items */}
-      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+      <Card noPadding>
         <Link
           to="/progress"
           className="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border-b border-slate-100 dark:border-slate-700"
@@ -514,18 +514,16 @@ const You: React.FC = () => {
           <ChevronRight className="w-5 h-5 text-slate-600 dark:text-slate-400" />
         </Link>
 
-        <button
+        <Button
+          variant="danger"
+          fullWidth
           onClick={handleSignOut}
-          className="w-full flex items-center justify-between p-4 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-left"
+          leftIcon={LogOut}
+          className="justify-start"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-              <LogOut className="w-5 h-5 text-red-600 dark:text-red-400" />
-            </div>
-            <span className="font-medium text-red-600 dark:text-red-400">Sign Out</span>
-          </div>
-        </button>
-      </div>
+          Sign Out
+        </Button>
+      </Card>
 
       {/* Version */}
       <div className="text-center text-xs text-slate-600 dark:text-slate-400">

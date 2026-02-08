@@ -20,7 +20,7 @@ async function loadLessons(): Promise<Lesson[]> {
   }
 
   try {
-    const { getAllLessons } = await import('../data/lessons');
+    const { getAllLessons } = await import('../data/cpa/lessons');
     lessonsCache = getAllLessons();
     return lessonsCache;
   } catch (error) {
@@ -65,7 +65,7 @@ export async function fetchAllLessons(courseId: CourseId = DEFAULT_COURSE_ID): P
  */
 export async function fetchLessonsBySection(section: string, courseId: CourseId = DEFAULT_COURSE_ID): Promise<Lesson[]> {
   try {
-    const { getLessonsBySection } = await import('../data/lessons');
+    const { getLessonsBySection } = await import('../data/cpa/lessons');
     const lessons = getLessonsBySection(section.toUpperCase());
     
     // Filter by courseId
@@ -85,7 +85,7 @@ export async function fetchLessonsBySection(section: string, courseId: CourseId 
  */
 export async function fetchLessonById(lessonId: string): Promise<Lesson | null> {
   try {
-    const { getLessonById } = await import('../data/lessons');
+    const { getLessonById } = await import('../data/cpa/lessons');
     return getLessonById(lessonId) || null;
   } catch (error) {
     logger.error(`Error fetching lesson ${lessonId}:`, error);
@@ -103,7 +103,7 @@ export async function getLessonStats(_courseId: CourseId = DEFAULT_COURSE_ID): P
   byDifficulty: Record<string, number>;
 }> {
   try {
-    const { getLessonStats: getStats } = await import('../data/lessons');
+    const { getLessonStats: getStats } = await import('../data/cpa/lessons');
     const stats = getStats();
     
     // If _courseId filtering needed, we'd need to filter here

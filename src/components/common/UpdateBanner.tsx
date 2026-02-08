@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { RefreshCw, X } from 'lucide-react';
+import { Button } from './Button';
 import clsx from 'clsx';
 
 interface UpdateBannerProps {
@@ -82,24 +83,25 @@ export const UpdateBanner = ({ onUpdate }: UpdateBannerProps) => {
           </div>
           
           <div className="flex items-center gap-2 flex-shrink-0">
-            <button
+            <Button
+              variant="secondary"
+              size="sm"
               onClick={handleUpdate}
               disabled={isUpdating}
-              className={clsx(
-                'px-4 py-2 bg-white text-primary-700 rounded-xl font-semibold text-sm',
-                'hover:bg-white/90 active:scale-95 transition-all',
-                'disabled:opacity-70 disabled:cursor-not-allowed'
-              )}
+              loading={isUpdating}
+              className="bg-white text-primary-700 hover:bg-white/90"
             >
-              {isUpdating ? 'Updating...' : 'Update'}
-            </button>
-            <button
+              Update
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={handleDismiss}
-              className="p-2 hover:bg-white/20 rounded-full transition-colors"
               aria-label="Dismiss update notification"
+              className="hover:bg-white/20"
             >
               <X className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

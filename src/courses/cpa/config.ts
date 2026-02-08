@@ -3,6 +3,12 @@
  * 
  * Complete definition of the CPA Exam prep course including all sections,
  * blueprint areas, pricing, and metadata.
+ * 
+ * BLUEPRINT COVERAGE:
+ * - Content covers BOTH 2025 and 2026 blueprints
+ * - Through June 30, 2026: OLD Blueprint in effect
+ * - July 1, 2026 onward: NEW Blueprint in effect
+ * - No content update needed - already prepared for both versions
  */
 
 import { Course } from '../../types/course';
@@ -28,13 +34,14 @@ export const CPA_COURSE: Course = {
       blueprintAreas: [
         { 
           id: 'FAR-I', 
-          name: 'Conceptual Framework and Financial Reporting', 
-          weight: '25-35%', 
+          name: 'Conceptual Framework, Standard-Setting, and Financial Reporting', 
+          weight: '5-15%', 
           topics: [
+            'FASB Conceptual Framework',
+            'Standard-setting process',
             'GAAP hierarchy',
             'Financial statement presentation',
-            'Fair value measurements',
-            'Revenue recognition',
+            'Fair value measurements (ASC 820)',
           ]
         },
         { 
@@ -43,33 +50,53 @@ export const CPA_COURSE: Course = {
           weight: '30-40%', 
           topics: [
             'Cash and cash equivalents',
-            'Receivables',
+            'Receivables and CECL (ASC 326)',
             'Inventory',
             'Property, plant, and equipment',
             'Investments',
-            'Intangible assets',
+            'Intangible assets and goodwill',
+            'Current and long-term liabilities',
+            'Stockholders equity',
           ]
         },
         { 
           id: 'FAR-III', 
           name: 'Select Transactions', 
-          weight: '20-30%', 
+          weight: '25-35%', 
           topics: [
-            'Business combinations',
+            'Revenue recognition (ASC 606)',
+            'Leases (ASC 842)',
+            'Income taxes (ASC 740)',
+            'Pensions and post-employment benefits',
             'Contingencies and commitments',
-            'Leases',
-            'Employee benefits',
-            'Income taxes',
+            'Earnings per share',
+            'Statement of cash flows',
+            'Accounting changes and error corrections',
+            'Business combinations (ASC 805)',
           ]
         },
         { 
           id: 'FAR-IV', 
           name: 'State and Local Governments', 
-          weight: '5-15%', 
+          weight: '10-20%', 
           topics: [
             'Government-wide financial statements',
             'Fund financial statements',
-            'Government accounting standards',
+            'Measurement focus and basis of accounting',
+            'Budgetary accounting',
+            'GASB standards',
+          ]
+        },
+        { 
+          id: 'FAR-V', 
+          name: 'Not-for-Profit Entities', 
+          weight: '5-15%', 
+          topics: [
+            'Statement of Financial Position',
+            'Statement of Activities',
+            'Net asset classifications',
+            'Contributions and pledges',
+            'Split-interest agreements',
           ]
         },
       ]
@@ -116,10 +143,12 @@ export const CPA_COURSE: Course = {
         { 
           id: 'AUD-IV', 
           name: 'Forming Conclusions and Reporting', 
-          weight: '10-20%', 
+          weight: '15-25%', 
           topics: [
-            'Audit reports',
-            'Review and compilation',
+            'Audit reports (unmodified and modified)',
+            'Emphasis of matter and other matter paragraphs',
+            'Reports on internal control',
+            'Review and compilation (SSARS)',
             'Attestation engagements',
           ]
         },
@@ -136,45 +165,69 @@ export const CPA_COURSE: Course = {
       blueprintAreas: [
         { 
           id: 'REG-I', 
-          name: 'Ethics and Responsibilities in Tax Practice', 
+          name: 'Ethics, Professional Responsibilities, and Federal Tax Procedures', 
           weight: '10-20%', 
           topics: [
-            'Circular 230',
-            'Tax return positions',
-            'Penalties',
+            'Treasury Circular 230',
+            'AICPA Statements on Standards for Tax Services',
+            'Tax preparer penalties',
+            'Taxpayer penalties',
+            'IRS audit and appeals process',
+            'Statute of limitations',
           ]
         },
         { 
           id: 'REG-II', 
-          name: 'Federal Taxation of Property Transactions', 
-          weight: '12-22%', 
+          name: 'Business Law', 
+          weight: '10-20%', 
           topics: [
-            'Basis of assets',
-            'Capital gains and losses',
-            'Section 1231 assets',
-            'Like-kind exchanges',
+            'Agency law',
+            'Contracts (formation, performance, remedies)',
+            'Debtor-creditor relationships',
+            'UCC Article 2 (sales)',
+            'UCC Article 9 (secured transactions)',
+            'Business structures (legal aspects)',
+            'Federal securities regulation',
           ]
         },
         { 
           id: 'REG-III', 
           name: 'Federal Taxation of Individuals', 
-          weight: '22-32%', 
+          weight: '15-25%', 
           topics: [
-            'Gross income',
-            'Adjustments and deductions',
+            'Gross income inclusions and exclusions',
+            'Adjustments to income',
+            'Standard and itemized deductions',
+            'Filing status and dependents',
             'Tax credits',
             'Alternative minimum tax',
+            'Self-employment tax',
           ]
         },
         { 
           id: 'REG-IV', 
           name: 'Federal Taxation of Entities', 
-          weight: '28-38%', 
+          weight: '22-32%', 
           topics: [
             'C corporations',
             'S corporations',
             'Partnerships',
             'Trusts and estates',
+            'Tax-exempt organizations',
+          ]
+        },
+        { 
+          id: 'REG-V', 
+          name: 'Federal Taxation of Property Transactions', 
+          weight: '12-22%', 
+          topics: [
+            'Basis determination',
+            'Capital gains and losses',
+            'Section 1231 assets',
+            'Depreciation recapture (1245, 1250)',
+            'Like-kind exchanges (Section 1031)',
+            'Involuntary conversions',
+            'Installment sales',
           ]
         },
       ]
@@ -270,31 +323,54 @@ export const CPA_COURSE: Course = {
       blueprintAreas: [
         { 
           id: 'TCP-I', 
-          name: 'Tax Compliance and Planning for Individuals', 
-          weight: '35-45%', 
+          name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', 
+          weight: '30-40%', 
           topics: [
-            'Individual tax returns',
-            'Tax planning strategies',
-            'Retirement planning',
+            'Comprehensive individual tax planning',
+            'Income timing strategies',
+            'Deduction planning and bunching',
+            'Retirement planning (distributions, Roth conversions)',
+            'Education planning (529s, Coverdell)',
+            'Medicare and Social Security planning',
+            'Estate and gift planning for individuals',
           ]
         },
         { 
           id: 'TCP-II', 
-          name: 'Tax Compliance and Planning for Entities', 
-          weight: '35-45%', 
+          name: 'Entity Tax Compliance', 
+          weight: '25-35%', 
           topics: [
-            'Entity selection',
-            'Business tax returns',
-            'Multi-jurisdictional taxation',
+            'Partnership tax return preparation',
+            'S corporation return preparation',
+            'C corporation return preparation',
+            'Multi-state compliance issues',
+            'Credits and incentives',
           ]
         },
         { 
           id: 'TCP-III', 
-          name: 'Tax Compliance and Planning for Special Situations', 
-          weight: '15-25%', 
+          name: 'Entity Tax Planning', 
+          weight: '20-30%', 
           topics: [
-            'Gift and estate taxes',
-            'Exempt organizations',
+            'Entity selection and formation',
+            'Compensation planning',
+            'Retirement plan selection',
+            'State tax planning',
+            'International tax basics',
+            'M&A tax considerations',
+          ]
+        },
+        { 
+          id: 'TCP-IV', 
+          name: 'Property Transactions', 
+          weight: '10-20%', 
+          topics: [
+            'Advanced property transaction planning',
+            'Installment sale planning',
+            'Like-kind exchange planning',
+            'Stock vs asset acquisitions',
+            'Section 338 elections',
+            'Corporate liquidations',
           ]
         },
       ]

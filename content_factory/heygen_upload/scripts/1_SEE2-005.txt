@@ -1,0 +1,59 @@
+Welcome back. Today we are tackling the number one reason students fail Part 2 of the EA exam: S-Corp Basis. Specifically, what I call the "Debt Trap."
+
+Let me start with a scenario that shows up on the exam constantly. Your client, Bob, is the sole shareholder of an S-Corporation. The business is struggling, so Bob personally guarantees a $100,000 bank loan to keep the company afloat. At the end of the year, the S-Corp reports a $100,000 loss on Schedule K-1. Bob thinks, "Great, I guaranteed that loan, so I have basis to deduct this loss." 
+
+The IRS says: "Absolutely not." Bob has zero debt basis from that guarantee. Bob cannot deduct a single dollar of that loss. Bob is angry. Bob is also wrong.
+
+This is the most tested concept in S-Corporation taxation, and today we are going to master it completely.
+
+Here is the fundamental rule you must memorize: Unlike partnerships, S-Corporations have two completely separate buckets of basis. The first bucket is Stock Basis. The second bucket is Debt Basis. These are not the same thing, and they follow different rules.
+
+Let's start with Stock Basis. This is what most people think of when they hear "basis." Your stock basis begins with what you paid for your shares when you acquired them. If you paid $50,000 for your S-Corp stock, your beginning stock basis is $50,000.
+
+Now, stock basis is not static. It changes every single year based on the company's activity. Here is how it adjusts: You increase stock basis for your share of the company's income items. This includes ordinary business income, separately stated income like interest and dividends, and tax-exempt income. You then decrease stock basis for distributions you receive and for your share of losses and deductions.
+
+Think of stock basis as your equity stake in the company. When the company makes money, your equity goes up. When you take money out, your equity goes down.
+
+Now here is where students get tripped up: Debt Basis. In an S-Corporation, debt basis is created only when you, the shareholder, personally loan actual money directly to the corporation. This is called the "Economic Outlay" doctrine, and it comes from the Tax Court case Maloof v. Commissioner.
+
+The rule is simple but harsh: If cash did not physically leave your personal bank account and land in the corporation's bank account, you do not have debt basis. Period.
+
+Let's apply this to Bob's situation. Bob guaranteed a bank loan. What actually happened? The bank loaned money to the corporation. Bob simply promised to pay it back if the corporation defaults. Bob's personal checking account is exactly the same as it was before. No cash left Bob's hands. Therefore, Bob has zero debt basis.
+
+Contrast this with a different scenario. What if Bob withdrew $100,000 from his personal savings account and deposited it directly into the S-Corp as a loan? Now Bob has $100,000 of debt basis, because Bob actually parted with his own money.
+
+This distinction between guarantees and direct loans is tested heavily on the EA exam. Memorize this: Guarantees never create basis in an S-Corporation. Only direct loans from shareholder to corporation create debt basis.
+
+Now let's talk about the ordering rules. This is where many students lose points even when they understand the basic concepts. The IRS requires you to adjust basis in a specific order every single year. Get this wrong, and you will calculate the wrong taxability for distributions and the wrong allowable loss.
+
+Here is the order you must follow. I use the acronym I.D.L. to remember it.
+
+First, "I" for Income. You increase your stock basis for all income items passed through from the S-Corp. This includes both ordinary income and separately stated income items like capital gains, interest income, and tax-exempt income. You do this increase FIRST, before anything else.
+
+Second, "D" for Distributions. You reduce stock basis for any distributions you received during the year. But here is the critical point: you can only reduce basis to zero, never below zero. If your basis is $10,000 and you receive a $15,000 distribution, you reduce basis by $10,000, and the remaining $5,000 is taxable as capital gain.
+
+Third, "L" for Losses. Only after you have adjusted for income and distributions do you apply losses. Losses reduce your stock basis, but again, never below zero.
+
+Why does this order matter? Let me give you an example. Say you start the year with a stock basis of $5,000. During the year, the S-Corp has $8,000 of income and $10,000 of losses. You also receive a $12,000 distribution.
+
+If you follow the correct order: First, add the income. Your basis goes from $5,000 to $13,000. Second, subtract the distribution. The $12,000 distribution reduces your basis from $13,000 to $1,000. The entire distribution is tax-free because you had sufficient basis. Third, apply the losses. You can only deduct $1,000 of the $10,000 loss because that is your remaining basis. The other $9,000 is suspended and carries forward.
+
+Now imagine a student who applies losses first. They would reduce the $5,000 basis by $5,000 of losses, leaving zero basis. Then the entire $12,000 distribution would be taxable as capital gain. That is a completely different tax result, and it is wrong.
+
+Let's talk about another exam favorite: the relationship between stock basis and debt basis. They are separate, but they interact when it comes to deducting losses.
+
+Here is the rule: You must use up all of your stock basis before you can use debt basis to deduct losses. And when you use debt basis, you are essentially reducing the amount the corporation owes you.
+
+Example: You have $10,000 of stock basis and $20,000 of debt basis. Your share of the S-Corp loss is $25,000. First, you use up all $10,000 of stock basis. That allows you to deduct $10,000 of the loss. Now stock basis is zero. Then you can use $15,000 of your debt basis to deduct the remaining $15,000 of loss. Your debt basis is now reduced to $5,000.
+
+But wait, there is more. In future years, when the S-Corp is profitable, you must restore debt basis first before you can increase stock basis. This restoration rule trips up many students.
+
+Let me give you the exam tip that will save you points. When you see an S-Corporation question involving shareholder loans or guarantees, immediately ask yourself: Did actual cash leave the shareholder's pocket and go into the corporation? If yes, there is debt basis. If no, there is no debt basis. Guarantees, pledges of personal assets, and co-signing are never enough.
+
+One more critical point: basis calculations must be done on a per-share, per-day basis when shares are bought or sold during the year. If you acquire additional shares mid-year, you need to prorate the income and losses.
+
+To summarize today's lesson: S-Corporation basis has two components: stock basis and debt basis. Stock basis comes from your investment in shares plus income minus distributions and losses. Debt basis comes only from direct loans you make to the corporation, not from loan guarantees. When deducting losses, you must first use up stock basis, then debt basis. And remember I.D.L.: adjust basis for Income first, then Distributions, then Losses.
+
+Master these rules and you will ace this portion of the exam. In the next lesson, we will look at partnership basis, which follows completely different rules. You will see how much more generous the partnership rules are when it comes to liabilities.
+
+See you in the next video.

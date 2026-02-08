@@ -48,6 +48,12 @@ import { SEE1_QUESTIONS_BATCH41 } from './see1-questions-batch41';
 import { SEE1_QUESTIONS_BATCH42 } from './see1-questions-batch42';
 import { SEE1_QUESTIONS_BATCH43 } from './see1-questions-batch43';
 import { SEE1_QUESTIONS_BATCH44 } from './see1-questions-batch44';
+import { SEE1_QUESTIONS_BATCH45 } from './see1-questions-batch45';
+import { SEE1_QUESTIONS_BATCH46 } from './see1-questions-batch46';
+import { SEE1_QUESTIONS_BATCH47 } from './see1-questions-batch47';
+import { SEE1_QUESTIONS_BATCH48 } from './see1-questions-batch48';
+import { SEE1_QUESTIONS_BATCH49 } from './see1-questions-batch49';
+import { SEE1_QUESTIONS_BATCH50 } from './see1-questions-batch50';
 
 // SEE Part 2: Businesses (500 questions in batches 1-50)
 import { SEE2_QUESTIONS_BATCH1 } from './see2-questions-batch1';
@@ -100,6 +106,12 @@ import { SEE2_QUESTIONS_BATCH47 } from './see2-questions-batch47';
 import { SEE2_QUESTIONS_BATCH48 } from './see2-questions-batch48';
 import { SEE2_QUESTIONS_BATCH49 } from './see2-questions-batch49';
 import { SEE2_QUESTIONS_BATCH50 } from './see2-questions-batch50';
+import { SEE2_QUESTIONS_BATCH51 } from './see2-questions-batch51';
+import { SEE2_QUESTIONS_BATCH52 } from './see2-questions-batch52';
+import { SEE2_QUESTIONS_BATCH53 } from './see2-questions-batch53';
+import { SEE2_QUESTIONS_BATCH54 } from './see2-questions-batch54';
+import { SEE2_QUESTIONS_BATCH55 } from './see2-questions-batch55';
+import { SEE2_QUESTIONS_BATCH56 } from './see2-questions-batch56';
 
 // SEE Part 3: Representation, Practices, and Procedures (500 questions in batches 1-50)
 import { SEE3_QUESTIONS_BATCH1 } from './see3-questions-batch1';
@@ -153,6 +165,11 @@ import { SEE3_QUESTIONS_BATCH48 } from './see3-questions-batch48';
 import { SEE3_QUESTIONS_BATCH49 } from './see3-questions-batch49';
 import { SEE3_QUESTIONS_BATCH50 } from './see3-questions-batch50';
 import { SEE3_QUESTIONS_CIRCULAR230 } from './see3-questions-circular230';
+import { SEE3_QUESTIONS_BATCH51 } from './see3-questions-batch51';
+import { SEE3_QUESTIONS_BATCH52 } from './see3-questions-batch52';
+import { SEE3_QUESTIONS_BATCH53 } from './see3-questions-batch53';
+import { SEE3_QUESTIONS_BATCH54 } from './see3-questions-batch54';
+import { SEE3_QUESTIONS_BATCH55 } from './see3-questions-batch55';
 
 // Calculation Practice Problems (50 per section)
 import { SEE1_CALCULATION_PROBLEMS } from './see1-calculation-problems';
@@ -205,6 +222,12 @@ export const SEE1_ALL = [
   ...SEE1_QUESTIONS_BATCH42,
   ...SEE1_QUESTIONS_BATCH43,
   ...SEE1_QUESTIONS_BATCH44,
+  ...SEE1_QUESTIONS_BATCH45,
+  ...SEE1_QUESTIONS_BATCH46,
+  ...SEE1_QUESTIONS_BATCH47,
+  ...SEE1_QUESTIONS_BATCH48,
+  ...SEE1_QUESTIONS_BATCH49,
+  ...SEE1_QUESTIONS_BATCH50,
   ...SEE1_CALCULATION_PROBLEMS,
 ];
 
@@ -259,6 +282,12 @@ export const SEE2_ALL = [
   ...SEE2_QUESTIONS_BATCH48,
   ...SEE2_QUESTIONS_BATCH49,
   ...SEE2_QUESTIONS_BATCH50,
+  ...SEE2_QUESTIONS_BATCH51,
+  ...SEE2_QUESTIONS_BATCH52,
+  ...SEE2_QUESTIONS_BATCH53,
+  ...SEE2_QUESTIONS_BATCH54,
+  ...SEE2_QUESTIONS_BATCH55,
+  ...SEE2_QUESTIONS_BATCH56,
   ...SEE2_CALCULATION_PROBLEMS,
 ];
 
@@ -314,6 +343,11 @@ export const SEE3_ALL = [
   ...SEE3_QUESTIONS_BATCH49,
   ...SEE3_QUESTIONS_BATCH50,
   ...SEE3_QUESTIONS_CIRCULAR230,
+  ...SEE3_QUESTIONS_BATCH51,
+  ...SEE3_QUESTIONS_BATCH52,
+  ...SEE3_QUESTIONS_BATCH53,
+  ...SEE3_QUESTIONS_BATCH54,
+  ...SEE3_QUESTIONS_BATCH55,
   ...SEE3_CALCULATION_PROBLEMS,
 ];
 
@@ -370,6 +404,8 @@ export {
   SEE1_QUESTIONS_BATCH42,
   SEE1_QUESTIONS_BATCH43,
   SEE1_QUESTIONS_BATCH44,
+  SEE1_QUESTIONS_BATCH45,
+  SEE1_QUESTIONS_BATCH46,
   SEE2_QUESTIONS_BATCH1,
   SEE2_QUESTIONS_BATCH2,
   SEE2_QUESTIONS_BATCH3,
@@ -420,6 +456,7 @@ export {
   SEE2_QUESTIONS_BATCH48,
   SEE2_QUESTIONS_BATCH49,
   SEE2_QUESTIONS_BATCH50,
+  SEE2_QUESTIONS_BATCH51,
   SEE3_QUESTIONS_BATCH1,
   SEE3_QUESTIONS_BATCH2,
   SEE3_QUESTIONS_BATCH3,
@@ -471,6 +508,7 @@ export {
   SEE3_QUESTIONS_BATCH49,
   SEE3_QUESTIONS_BATCH50,
   SEE3_QUESTIONS_CIRCULAR230,
+  SEE3_QUESTIONS_BATCH51,
   // Calculation practice problems
   SEE1_CALCULATION_PROBLEMS,
   SEE2_CALCULATION_PROBLEMS,

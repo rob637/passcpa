@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import {
@@ -20,7 +20,9 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS, EXAM_BLUEPRINTS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getExamDate } from '../../utils/profileHelpers';
+import { EXAM_BLUEPRINTS } from '../../config/examConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
@@ -30,6 +32,8 @@ import { generateStudyPlan, calculatePaceStatus, type PaceStatus } from '../../u
 import { fetchAllLessons } from '../../services/lessonService';
 import { getTBSHistory } from '../../services/questionHistoryService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
+import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
+import { BlueprintHeatMap, WeightComparisonChart, SmartRecommendations, AnalyticsSummary } from '../analytics/BlueprintAnalyticsComponents';
 import Leaderboard from '../Leaderboard';
 import { CPA_COURSE } from '../../courses/cpa/config';
 
@@ -58,8 +62,9 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
   const [expanded, setExpanded] = useState(true);
   const [sortBy, setSortBy] = useState<'name' | 'progress' | 'accuracy'>('name');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
+  const { courseId } = useCourse();
   
-  const sectionInfo = CPA_SECTIONS[section as ExamSection];
+  const sectionInfo = getSectionDisplayInfo(section, courseId);
   
   const sortedUnits = [...unitStats].sort((a, b) => {
     const multiplier = sortDir === 'asc' ? 1 : -1;
@@ -456,16 +461,12 @@ const Progress: React.FC = () => {
   });
   const [loading, setLoading] = useState(true);
 
-  // Study Plan
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const rawExamDate = userProfile?.examDate;
-  const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function'
-    ? (rawExamDate as { toDate: () => Date }).toDate()
-    : rawExamDate ? new Date(rawExamDate as Date) : new Date();
+  // Study Plan - use getExamDate helper for multi-course support
+  const examDate = getExamDate(userProfile, userProfile?.examSection as string) || new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
   const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Load real data from Firestore
   useEffect(() => {
@@ -655,6 +656,29 @@ const Progress: React.FC = () => {
     overallStats.totalTbs
   );
 
+  // Calculate blueprint analytics for advanced heat map and recommendations
+  const blueprintAnalytics = useMemo<BlueprintAnalytics>(() => {
+    // Convert topic performance to question attempts format
+    const questionHistory: QuestionAttempt[] = topicPerformance.flatMap(topic => {
+      const attempts: QuestionAttempt[] = [];
+      // Create synthetic question attempts based on topic stats
+      if (topic.questions > 0) {
+        const correctCount = Math.round(topic.accuracy * topic.questions / 100);
+        for (let i = 0; i < topic.questions; i++) {
+          attempts.push({
+            questionId: `${topic.id}-${i}`,
+            blueprintArea: topic.id?.split('-').slice(0, 2).join('-') || topic.topic,
+            topicId: topic.id,
+            correct: i < correctCount,
+          });
+        }
+      }
+      return attempts;
+    });
+    
+    return calculateBlueprintAnalytics(currentSection, questionHistory);
+  }, [currentSection, topicPerformance]);
+
   // Find weakest topic for recommendations
   const weakestTopic = topicPerformance.length > 0
     ? topicPerformance.reduce((weakest, topic) => 
@@ -773,7 +797,7 @@ const Progress: React.FC = () => {
             <div>
               <h2 className="text-xl font-bold flex items-center gap-2">
                 <Target className="w-6 h-6 text-primary-400" />
-                Study Plan: {sectionInfo.name}
+                Study Plan: {sectionInfo?.name ?? currentSection}
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
                 Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
@@ -830,6 +854,32 @@ const Progress: React.FC = () => {
       
         {/* Units Report - Becker-style detailed breakdown */}
         <UnitsReport unitStats={unitStats} section={currentSection} />
+      
+        {/* Blueprint Analytics - Advanced Mastery Analysis */}
+        {blueprintAnalytics.totalAreas > 0 && (
+          <div className="space-y-6 mb-6">
+            {/* Summary Banner */}
+            <AnalyticsSummary analytics={blueprintAnalytics} />
+            
+            {/* Heat Map */}
+            <BlueprintHeatMap analytics={blueprintAnalytics} />
+            
+            {/* Two-column layout for recommendations and weight comparison */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Smart Recommendations */}
+              <SmartRecommendations 
+                recommendations={blueprintAnalytics.recommendations}
+                onStartStudy={(areaId) => {
+                  // Navigate to practice with area filter
+                  window.location.href = `/practice?section=${currentSection}&area=${areaId}`;
+                }}
+              />
+              
+              {/* Weight Comparison */}
+              <WeightComparisonChart comparisons={blueprintAnalytics.weightComparison} />
+            </div>
+          </div>
+        )}
       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Stats Column */}

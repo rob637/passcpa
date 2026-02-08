@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import DOMPurify from 'dompurify';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
+import { Button } from './Button';
 import {
   Search as SearchIcon,
   X,
@@ -25,7 +26,7 @@ import type { Question, ExamSection } from '../../types';
 let cachedQuestions: Question[] | null = null;
 const loadQuestions = async (): Promise<Question[]> => {
   if (cachedQuestions) return cachedQuestions;
-  const { ALL_QUESTIONS } = await import('../../data/questions');
+  const { ALL_QUESTIONS } = await import('../../data/cpa/questions');
   cachedQuestions = ALL_QUESTIONS;
   return ALL_QUESTIONS;
 };
@@ -410,26 +411,25 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
               aria-activedescendant={results[selectedIndex]?.id}
             />
             {loading && <Loader2 className="w-5 h-5 text-slate-600 dark:text-slate-400 animate-spin" aria-hidden="true" />}
-            <button 
-              type="button"
+            <Button 
+              variant="ghost"
+              size="icon"
               onClick={() => setShowFilters(!showFilters)}
               className={clsx(
-                "p-1.5 rounded-lg transition-colors",
-                showFilters ? "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400" : "hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400"
+                showFilters && "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400"
               )}
               aria-label="Toggle filters"
-              aria-expanded={showFilters}
             >
               <Filter className="w-5 h-5" aria-hidden="true" />
-            </button>
-            <button 
-              type="button"
-              onClick={onClose} 
-              className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg"
+            </Button>
+            <Button 
+              variant="ghost"
+              size="icon"
+              onClick={onClose}
               aria-label="Close search"
             >
               <X className="w-5 h-5 text-slate-600 dark:text-slate-400" aria-hidden="true" />
-            </button>
+            </Button>
           </div>
 
           {/* Filters Panel */}

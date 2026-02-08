@@ -13,14 +13,14 @@ describe('LessonMatrix module', () => {
 describe('Lesson utilities', () => {
   describe('getAllLessons', () => {
     it('returns array of lessons', async () => {
-      const { getAllLessons } = await import('../../../data/lessons');
+      const { getAllLessons } = await import('../../../data/cpa/lessons');
       const lessons = getAllLessons();
       expect(Array.isArray(lessons)).toBe(true);
       expect(lessons.length).toBeGreaterThan(0);
     });
 
     it('each lesson has required properties', async () => {
-      const { getAllLessons } = await import('../../../data/lessons');
+      const { getAllLessons } = await import('../../../data/cpa/lessons');
       const lessons = getAllLessons();
       
       lessons.forEach(lesson => {
@@ -31,7 +31,7 @@ describe('Lesson utilities', () => {
     });
 
     it('lessons have valid sections', async () => {
-      const { getAllLessons } = await import('../../../data/lessons');
+      const { getAllLessons } = await import('../../../data/cpa/lessons');
       const lessons = getAllLessons();
       const validSections = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC', 'PREP'];
       
@@ -43,39 +43,39 @@ describe('Lesson utilities', () => {
 
   describe('LESSON_MATRIX', () => {
     it('exports lesson matrix data', async () => {
-      const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+      const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
       expect(Array.isArray(LESSON_MATRIX)).toBe(true);
     });
 
     it('exports getObbbaAffectedLessons', async () => {
-      const { getObbbaAffectedLessons } = await import('../../../data/lessonMatrix');
+      const { getObbbaAffectedLessons } = await import('../../../data/cpa/lessonMatrix');
       expect(typeof getObbbaAffectedLessons).toBe('function');
     });
 
     it('exports getDifferingLessons', async () => {
-      const { getDifferingLessons } = await import('../../../data/lessonMatrix');
+      const { getDifferingLessons } = await import('../../../data/cpa/lessonMatrix');
       expect(typeof getDifferingLessons).toBe('function');
     });
 
     it('exports getLessonBlueprintVersion', async () => {
-      const { getLessonBlueprintVersion } = await import('../../../data/lessonMatrix');
+      const { getLessonBlueprintVersion } = await import('../../../data/cpa/lessonMatrix');
       expect(typeof getLessonBlueprintVersion).toBe('function');
     });
 
     it('getObbbaAffectedLessons returns array', async () => {
-      const { getObbbaAffectedLessons } = await import('../../../data/lessonMatrix');
+      const { getObbbaAffectedLessons } = await import('../../../data/cpa/lessonMatrix');
       const affected = getObbbaAffectedLessons();
       expect(Array.isArray(affected)).toBe(true);
     });
 
     it('getDifferingLessons returns array', async () => {
-      const { getDifferingLessons } = await import('../../../data/lessonMatrix');
+      const { getDifferingLessons } = await import('../../../data/cpa/lessonMatrix');
       const differing = getDifferingLessons();
       expect(Array.isArray(differing)).toBe(true);
     });
 
     it('each matrix entry has lessonId', async () => {
-      const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+      const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
       LESSON_MATRIX.forEach(entry => {
         expect(entry.lessonId).toBeDefined();
         expect(typeof entry.lessonId).toBe('string');
@@ -83,7 +83,7 @@ describe('Lesson utilities', () => {
     });
 
     it('getLessonBlueprintVersion returns valid version status', async () => {
-      const { getLessonBlueprintVersion, LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+      const { getLessonBlueprintVersion, LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
       const validStatuses = ['both', '2025', '2026', 'differs'];
       
       if (LESSON_MATRIX.length > 0) {
@@ -96,13 +96,13 @@ describe('Lesson utilities', () => {
 
 describe('LessonMatrix blueprint version logic', () => {
   it('lessons have blueprint area defined', async () => {
-    const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+    const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
     const lessonsWithArea = LESSON_MATRIX.filter(entry => entry.blueprintArea);
     expect(lessonsWithArea.length).toBeGreaterThan(0);
   });
 
   it('lessons have skill levels defined', async () => {
-    const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+    const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
     const validSkillLevels = ['Remembering and Understanding', 'Application', 'Analysis', 'Evaluation'];
     LESSON_MATRIX.forEach(entry => {
       expect(validSkillLevels).toContain(entry.skillLevel);
@@ -110,13 +110,13 @@ describe('LessonMatrix blueprint version logic', () => {
   });
 
   it('lessons can have transition notes for differences', async () => {
-    const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+    const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
     const lessonsWithNotes = LESSON_MATRIX.filter(entry => entry.transitionNote);
     expect(Array.isArray(lessonsWithNotes)).toBe(true);
   });
 
   it('lessons can have study2025/study2026 for version differences', async () => {
-    const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+    const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
     const differingLessons = LESSON_MATRIX.filter(entry => entry.study2025 || entry.study2026);
     expect(Array.isArray(differingLessons)).toBe(true);
   });
@@ -124,14 +124,14 @@ describe('LessonMatrix blueprint version logic', () => {
 
 describe('OBBBA (H.R.1) affected lessons', () => {
   it('returns lessons affected by tax law changes', async () => {
-    const { getObbbaAffectedLessons } = await import('../../../data/lessonMatrix');
+    const { getObbbaAffectedLessons } = await import('../../../data/cpa/lessonMatrix');
     const affected = getObbbaAffectedLessons();
     expect(Array.isArray(affected)).toBe(true);
   });
 
   it('OBBBA affected lessons are primarily in REG section', async () => {
-    const { getObbbaAffectedLessons } = await import('../../../data/lessonMatrix');
-    const { getAllLessons } = await import('../../../data/lessons');
+    const { getObbbaAffectedLessons } = await import('../../../data/cpa/lessonMatrix');
+    const { getAllLessons } = await import('../../../data/cpa/lessons');
     
     const affectedEntries = getObbbaAffectedLessons();
     const allLessons = getAllLessons();
@@ -148,7 +148,7 @@ describe('OBBBA (H.R.1) affected lessons', () => {
   });
 
   it('OBBBA entries have optional transition notes', async () => {
-    const { LESSON_MATRIX } = await import('../../../data/lessonMatrix');
+    const { LESSON_MATRIX } = await import('../../../data/cpa/lessonMatrix');
     const obbbaEntries = LESSON_MATRIX.filter(entry => entry.obbbaAffected);
     
     obbbaEntries.forEach(entry => {
@@ -162,7 +162,7 @@ describe('OBBBA (H.R.1) affected lessons', () => {
 
 describe('Lesson delivery methods', () => {
   it('lessons have content sections', async () => {
-    const { getAllLessons } = await import('../../../data/lessons');
+    const { getAllLessons } = await import('../../../data/cpa/lessons');
     const lessons = getAllLessons();
     
     lessons.forEach(lesson => {
@@ -173,7 +173,7 @@ describe('Lesson delivery methods', () => {
   });
 
   it('content sections have valid types', async () => {
-    const { getAllLessons } = await import('../../../data/lessons');
+    const { getAllLessons } = await import('../../../data/cpa/lessons');
     const lessons = getAllLessons();
     
     lessons.forEach(lesson => {
@@ -187,7 +187,7 @@ describe('Lesson delivery methods', () => {
 
 describe('Lesson difficulty levels', () => {
   it('lessons have valid difficulty levels', async () => {
-    const { getAllLessons } = await import('../../../data/lessons');
+    const { getAllLessons } = await import('../../../data/cpa/lessons');
     const lessons = getAllLessons();
     const validDifficulties = ['beginner', 'easy', 'intermediate', 'medium', 'moderate', 'advanced', 'hard', 'tough', 'foundational'];
     
@@ -201,7 +201,7 @@ describe('Lesson difficulty levels', () => {
 
 describe('Lesson estimated time', () => {
   it('lessons have duration', async () => {
-    const { getAllLessons } = await import('../../../data/lessons');
+    const { getAllLessons } = await import('../../../data/cpa/lessons');
     const lessons = getAllLessons();
     
     lessons.forEach(lesson => {

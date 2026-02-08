@@ -50,7 +50,7 @@ async function loadWCTasks(): Promise<WCTask[]> {
   }
 
   try {
-    const { ALL_WC_TASKS } = await import('../data/written-communication');
+    const { ALL_WC_TASKS } = await import('../data/cpa/writtenCommunication');
     wcCache = ALL_WC_TASKS;
     return wcCache;
   } catch (error) {
@@ -82,7 +82,7 @@ export async function fetchAllWCTasks(): Promise<WCTask[]> {
  */
 export async function fetchWCTasksBySection(section: ExamSection): Promise<WCTask[]> {
   try {
-    const { getWCBySection } = await import('../data/written-communication');
+    const { getWCBySection } = await import('../data/cpa/writtenCommunication');
     return getWCBySection(section);
   } catch (error) {
     logger.error(`Error fetching WC tasks for section ${section}:`, error);
@@ -108,7 +108,7 @@ export async function fetchWCTaskById(taskId: string): Promise<WCTask | null> {
  */
 export async function getRandomWCTask(section?: ExamSection): Promise<WCTask | null> {
   try {
-    const { getRandomWC } = await import('../data/written-communication');
+    const { getRandomWC } = await import('../data/cpa/writtenCommunication');
     return getRandomWC(section) || null;
   } catch (error) {
     logger.error('Error getting random WC task:', error);
@@ -141,7 +141,7 @@ export function clearWCCache(): void {
  */
 export async function getWCStats(): Promise<{ section: string; count: number }[]> {
   try {
-    const { getWCStats: getStats } = await import('../data/written-communication');
+    const { getWCStats: getStats } = await import('../data/cpa/writtenCommunication');
     const stats = getStats();
     
     return Object.entries(stats.bySection).map(([section, count]) => ({

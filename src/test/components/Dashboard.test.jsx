@@ -42,6 +42,20 @@ vi.mock('../../hooks/useStudy', () => ({
   useStudy: () => mockStudyData,
 }));
 
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+      ],
+    },
+  }),
+}));
+
 vi.mock('../../config/featureFlags', () => ({
   isFeatureEnabled: vi.fn(() => true),
 }));

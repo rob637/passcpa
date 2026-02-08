@@ -38,7 +38,7 @@ vi.mock('firebase/firestore', () => ({
   }),
 }));
 
-vi.mock('../../data/flashcards', () => ({
+vi.mock('../../data/cpa/flashcards', () => ({
   getFlashcardsBySection: vi.fn(() => [
     { id: 'card1', blueprintArea: 'Area1', type: 'definition', front: 'Q1', back: 'A1' },
     { id: 'card2', blueprintArea: 'Area1', type: 'formula', front: 'Q2', back: 'A2' },
@@ -65,7 +65,7 @@ vi.mock('../../components/navigation', () => ({
 import FlashcardSetup from '../../components/FlashcardSetup';
 import { useAuth } from '../../hooks/useAuth';
 import { getDoc } from 'firebase/firestore';
-import { getFlashcardsBySection } from '../../data/flashcards';
+import { getFlashcardsBySection } from '../../data/cpa/flashcards';
 
 const renderComponent = () => {
   return render(

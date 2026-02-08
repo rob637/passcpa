@@ -26,7 +26,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Risk and Return',
     subtopic: 'Risk Types',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Systematic risk is also known as:',
     options: [
@@ -66,7 +66,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Risk and Return',
     subtopic: 'CAPM',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Using CAPM: risk-free rate is 3%, market return is 11%, and beta is 1.25. What is the required return?',
     options: [
@@ -86,7 +86,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Risk and Return',
     subtopic: 'Portfolio Diversification',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The primary benefit of portfolio diversification is:',
     options: [
@@ -150,7 +150,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Cost of Capital',
     subtopic: 'Cost of Equity',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Using the dividend growth model: stock price is $40, next year dividend is $2, and growth rate is 5%. What is the cost of equity?',
     options: [
@@ -170,7 +170,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Cost of Capital',
     subtopic: 'WACC',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A company has 40% debt (after-tax cost 5%) and 60% equity (cost 12%). What is WACC?',
     options: [
@@ -214,7 +214,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Capital Structure',
     subtopic: 'Optimal Capital Structure',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The optimal capital structure is the mix of debt and equity that:',
     options: [
@@ -254,7 +254,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Capital Structure',
     subtopic: 'Pecking Order Theory',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'According to pecking order theory, companies prefer financing sources in which order?',
     options: [
@@ -278,7 +278,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Working Capital',
     subtopic: 'Cash Management',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'A conservative working capital policy would result in:',
     options: [
@@ -318,7 +318,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Working Capital',
     subtopic: 'Trade Credit',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Credit terms of 2/10, net 30 mean:',
     options: [
@@ -422,7 +422,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Raising Capital',
     subtopic: 'Dividend Policy',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'According to the "bird in the hand" theory:',
     options: [
@@ -466,7 +466,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Valuation',
     subtopic: 'Bond Valuation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When market interest rates rise above a bond\'s coupon rate:',
     options: [
@@ -486,7 +486,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Capital Structure',
     subtopic: 'Modigliani-Miller',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Modigliani and Miller\'s Proposition I (with taxes) states that:',
     options: [
@@ -526,7 +526,7 @@ export const CMA2B_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-B',
     topic: 'Working Capital',
     subtopic: 'Short-term Financing',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Commercial paper is:',
     options: [

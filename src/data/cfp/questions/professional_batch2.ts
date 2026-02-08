@@ -1,0 +1,488 @@
+/**
+ * CFP Professional Conduct Questions - Batch 2
+ * Domain 1: Professional Conduct and Regulation (15% of exam)
+ * 25 additional questions focusing on regulatory requirements and practice standards
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_PROFESSIONAL_BATCH2_QUESTIONS: Question[] = [
+  // SEC/FINRA Regulation Questions
+  {
+    id: 'CFP-PRO-076',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'SEC Regulation',
+    subtopic: 'Investment Adviser Registration',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An investment adviser has $95 million in regulatory assets under management and operates solely in one state. Where must the adviser register?',
+    options: [
+      'A) Only with the SEC',
+      'B) Only with the state securities regulator',
+      'C) With both the SEC and the state',
+      'D) Registration is optional under $100 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'Investment advisers with less than $100 million in AUM are generally state-registered unless they meet an SEC registration exception. This adviser falls below the $100M threshold and operates in one state, so state registration applies. At $100-110M, the adviser is in the "buffer zone" and can choose. Above $110M, SEC registration is required.'
+  },
+  {
+    id: 'CFP-PRO-077',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'FINRA Regulation',
+    subtopic: 'Broker-Dealer Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A CFP® professional is dually registered as an RIA and a broker-dealer representative. When receiving trail commissions on a mutual fund sold 3 years ago, which hat is the professional wearing?',
+    options: [
+      'A) Investment adviser representative',
+      'B) Broker-dealer representative',
+      'C) Neither—passive income has no regulatory implication',
+      'D) Both simultaneously'
+    ],
+    correctAnswer: 1,
+    explanation: 'Commission-based compensation, including trailing commissions (12b-1 fees), indicates a broker-dealer function. The professional is acting as a broker-dealer representative when receiving transaction-based or trailing compensation. If the same client also pays an AUM fee for ongoing advice, the professional may wear both hats with that client.'
+  },
+  {
+    id: 'CFP-PRO-078',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'SEC Regulation',
+    subtopic: 'Form ADV',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which Form ADV part must be delivered to clients before or at the time of entering into an advisory contract?',
+    options: [
+      'A) Part 1A only',
+      'B) Part 2A (Brochure) only',
+      'C) Part 2A (Brochure) and Part 2B (Brochure Supplement)',
+      'D) All parts including Part 3 (Form CRS)'
+    ],
+    correctAnswer: 2,
+    explanation: 'SEC rules require delivery of Form ADV Part 2A (the firm brochure) and Part 2B (the brochure supplement about the specific adviser) before or at the time of entering into an advisory contract. Part 1A contains regulatory information filed with the SEC but is not required to be delivered to clients. Form CRS must also be delivered to retail investors.'
+  },
+  {
+    id: 'CFP-PRO-079',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'FINRA Regulation',
+    subtopic: 'Suitability',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'How does Regulation Best Interest (Reg BI) for broker-dealers compare to the CFP Board\'s fiduciary standard?',
+    options: [
+      'A) Reg BI and CFP fiduciary are identical standards',
+      'B) Reg BI is higher because it is a federal regulation',
+      'C) CFP fiduciary is broader—it applies "at all times" when providing Financial Advice',
+      'D) Reg BI applies to financial planning; CFP fiduciary applies only to recommendations'
+    ],
+    correctAnswer: 2,
+    explanation: 'Reg BI requires broker-dealers to act in the client\'s best interest at the time of a recommendation. The CFP Board\'s fiduciary standard is broader: it applies "at all times" when providing Financial Advice—including ongoing duties of loyalty and care. Additionally, CFP Board standards require client-first prioritization, not just disclosure-based conflict management.'
+  },
+  {
+    id: 'CFP-PRO-080',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Practice Standards',
+    subtopic: 'Scope of Engagement',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A client seeks advice only on investment allocation and explicitly declines broader financial planning. What must the CFP® professional do regarding the scope of engagement?',
+    options: [
+      'A) Insist on comprehensive planning to meet professional standards',
+      'B) Document the limited scope and proceed with investment advice only',
+      'C) Refer the client to a non-CFP® investment advisor',
+      'D) Decline the engagement as it violates fiduciary duty'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals may provide limited-scope (focused) Financial Advice if: (1) the scope is in the client\'s best interest, (2) the client agrees to the limited scope, and (3) the scope is documented in writing. The professional should explain what is excluded and document the client\'s informed consent to proceed with limited engagement.'
+  },
+  {
+    id: 'CFP-PRO-081',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Fiduciary Duty',
+    subtopic: 'Duty of Care',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional recommends a product they do not fully understand but believe is suitable based on marketing materials. Which duty is most clearly violated?',
+    options: [
+      'A) Duty of loyalty',
+      'B) Duty of care',
+      'C) Both duties equally',
+      'D) Neither duty if the recommendation is suitable'
+    ],
+    correctAnswer: 1,
+    explanation: 'The duty of care requires CFP® professionals to act with competence and diligence. Recommending a product without fully understanding it violates the duty of care—professionals must have the knowledge and competency to evaluate recommendations. Relying on marketing materials without independent analysis fails to meet "reasonable care" standards.'
+  },
+  {
+    id: 'CFP-PRO-082',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Disciplinary Process',
+    subtopic: 'Grounds for Discipline',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A CFP® professional\'s spouse files for bankruptcy. Is this a reportable matter to CFP Board?',
+    options: [
+      'A) No, only the CFP® professional\'s personal bankruptcy is reportable',
+      'B) Yes, all family financial matters must be reported',
+      'C) No, unless the CFP® professional was jointly liable on the debts',
+      'D) Yes, it creates an appearance of impropriety'
+    ],
+    correctAnswer: 2,
+    explanation: 'CFP Board requires reporting of the professional\'s own bankruptcy or compromised debts, not a spouse\'s independent bankruptcy. However, if the CFP® professional was jointly liable on the debts included in the spouse\'s bankruptcy, those compromised debts become reportable. The focus is on the professional\'s own financial conduct.'
+  },
+  {
+    id: 'CFP-PRO-083',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Code of Ethics',
+    subtopic: 'Professionalism',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'How long must a CFP® professional retain client records after the client relationship ends?',
+    options: [
+      'A) 3 years',
+      'B) 5 years',
+      'C) 7 years',
+      'D) Permanently'
+    ],
+    correctAnswer: 2,
+    explanation: 'CFP Board requires record retention for at least 7 years after the client relationship ends. This includes engagement agreements, planning documents, work products, and client communications. Note: SEC/FINRA may have different retention requirements that could also apply to dually registered professionals.'
+  },
+  {
+    id: 'CFP-PRO-084',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Conflicts of Interest',
+    subtopic: 'Referral Arrangements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional receives a $500 referral fee from an attorney for each estate planning client referred. How must this conflict be managed?',
+    options: [
+      'A) Referral fees are prohibited under CFP Board Standards',
+      'B) Disclose the fee arrangement in writing before any referral',
+      'C) Disclosure is only required if the fee exceeds $1,000',
+      'D) No disclosure needed if the attorney is competent'
+    ],
+    correctAnswer: 1,
+    explanation: 'Referral fee arrangements create a conflict of interest that must be disclosed in writing before making the referral. The client must understand that the CFP® professional has a financial incentive to refer to this particular attorney. The referral must still be in the client\'s best interest regardless of the fee arrangement.'
+  },
+  {
+    id: 'CFP-PRO-085',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'State Regulation',
+    subtopic: 'RIA Registration Exemptions',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A CFP® professional advises only on 401(k) plans for employers. Which investment adviser registration exemption might apply?',
+    options: [
+      'A) Bank exemption',
+      'B) Lawyer/accountant exemption',
+      'C) ERISA exemption for retirement plan advice',
+      'D) No exemption—retirement plan advisers must register'
+    ],
+    correctAnswer: 2,
+    explanation: 'Advisers who provide investment advice solely to ERISA plans and their participants may qualify for an exemption from state registration in some states. However, this varies by state. Additionally, such advisers may need to register with the DOL or meet ERISA fiduciary requirements. The federal Investment Advisers Act has a specific exemption for certain retirement plan advisers.'
+  },
+  {
+    id: 'CFP-PRO-086',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Client Termination',
+    subtopic: 'Termination Procedures',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional decides to terminate a client relationship. What obligations remain?',
+    options: [
+      'A) None—termination ends all obligations immediately',
+      'B) Continue current recommendations but no new advice',
+      'C) Provide reasonable notice and assist with transition',
+      'D) Refund all fees ever collected from the client'
+    ],
+    correctAnswer: 2,
+    explanation: 'When terminating a client relationship, CFP® professionals must provide reasonable notice and take steps to protect the client\'s interests during the transition. This may include providing copies of documents, assisting with transfer to a new adviser, and completing any pending work that would leave the client harmed if abandoned.'
+  },
+  {
+    id: 'CFP-PRO-087',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Fiduciary Duty',
+    subtopic: 'Prospective Clients',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'At what point does fiduciary duty attach to a prospective client?',
+    options: [
+      'A) Upon signing an engagement agreement',
+      'B) When providing Financial Advice, even before formal engagement',
+      'C) After the first fee is paid',
+      'D) Only when comprehensive planning begins'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP Board\'s fiduciary duty attaches whenever a CFP® professional provides Financial Advice—which can occur before any formal engagement. Even in a discovery meeting, if substantive investment or planning advice is given, fiduciary duty applies. The key trigger is providing Financial Advice, not the formal engagement or fee payment.'
+  },
+  {
+    id: 'CFP-PRO-088',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Practice Standards',
+    subtopic: 'Informed Consent',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional recommends a variable annuity with a 7-year surrender charge. The client indicates they may need the funds in 2 years. What should the professional do?',
+    options: [
+      'A) Proceed with the recommendation if it\'s otherwise suitable',
+      'B) Recommend a product with shorter liquidity terms',
+      'C) Do not make the recommendation—it conflicts with stated needs',
+      'D) Disclose the surrender charge and get written acknowledgment'
+    ],
+    correctAnswer: 2,
+    explanation: 'A product with a 7-year surrender charge conflicts with the client\'s stated 2-year liquidity need. Even with disclosure, recommending this product would not be in the client\'s best interest. The CFP® professional should either recommend an alternative product or help the client clarify their actual liquidity needs before proceeding.'
+  },
+  {
+    id: 'CFP-PRO-089',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'SEC Regulation',
+    subtopic: 'Custody Rules',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A RIA has discretionary authority over client accounts held at a third-party custodian. The RIA also deducts advisory fees directly. Is this considered "custody"?',
+    options: [
+      'A) No—assets are at independent custodian',
+      'B) Yes—ability to deduct fees is deemed custody',
+      'C) Only if the RIA can withdraw funds beyond fees',
+      'D) It depends on the custodian\'s written consent'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under SEC custody rules, the ability to deduct advisory fees directly from client accounts is considered a form of custody. Even with assets at an independent custodian, this fee deduction authority requires compliance with custody rules, including quarterly statements from the custodian and potentially a surprise examination.'
+  },
+  {
+    id: 'CFP-PRO-090',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Confidentiality',
+    subtopic: 'Information Sharing',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional is engaged by both spouses in a marriage. One spouse privately asks not to reveal certain financial information to the other. What should the professional do?',
+    options: [
+      'A) Keep the secret as requested by the client',
+      'B) Immediately disclose to the other spouse',
+      'C) Explain the conflict and potentially terminate if it cannot be resolved',
+      'D) Continue without changes—married couples share all information by default'
+    ],
+    correctAnswer: 2,
+    explanation: 'This creates an irreconcilable conflict when advising both spouses. The CFP® professional should explain that keeping secrets from one joint client violates disclosure duties to the other. Options include: the secretive spouse agreeing to disclose, the professional serving only one spouse, or terminating the engagement. Keeping material secrets while advising both is not permitted.'
+  },
+  {
+    id: 'CFP-PRO-091',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Competence',
+    subtopic: 'Continuing Education',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'How many continuing education hours must a CFP® professional complete each reporting period?',
+    options: [
+      'A) 20 hours annually',
+      'B) 30 hours biennially (every two years)',
+      'C) 40 hours annually',
+      'D) 50 hours biennially (every two years)'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals must complete 30 CE hours every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE and 28 hours of other CE. CE helps maintain competence in the evolving financial planning profession.'
+  },
+  {
+    id: 'CFP-PRO-092',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'FINRA Regulation',
+    subtopic: 'Variable Products',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Why might selling variable annuities require both securities and insurance licenses?',
+    options: [
+      'A) Variable annuities invest in securities (subaccounts) and are insurance contracts',
+      'B) All annuities require dual licensing',
+      'C) FINRA and state insurance boards share oversight of all insurance',
+      'D) It is a broker-dealer compliance preference, not a legal requirement'
+    ],
+    correctAnswer: 0,
+    explanation: 'Variable annuities have two components: (1) the insurance contract features (death benefit, annuitization options) regulated by state insurance laws, and (2) the securities subaccounts regulated under federal securities laws. Selling them requires: a FINRA license (Series 6 or 7), state insurance license, and typically a state securities registration.'
+  },
+  {
+    id: 'CFP-PRO-093',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Duty to Follow Instructions',
+    subtopic: 'Scope Limitations',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A client instructs the CFP® professional to recommend only "socially responsible" investments. The client\'s portfolio underperforms as a result. What is the CFP® professional\'s liability exposure?',
+    options: [
+      'A) Full liability—fiduciary duty supersedes client instructions',
+      'B) Reduced liability if instructions were documented and client gave informed consent',
+      'C) No liability—following client instructions is always sufficient',
+      'D) Liability only if SRI funds genuinely underperformed on risk-adjusted basis'
+    ],
+    correctAnswer: 1,
+    explanation: 'When clients impose legitimate constraints on recommendations (like ESG/SRI preferences), documented informed consent about potential trade-offs provides protection. The professional should explain that limiting the investment universe may affect diversification or returns, document the client\'s informed choice, and then honor those preferences. This is a valid scope limitation.'
+  },
+  {
+    id: 'CFP-PRO-094',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Supervision',
+    subtopic: 'Supervisory Responsibilities',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional supervising junior advisers learns that one gave unsuitable advice due to inexperience. Is the supervising CFP® professional responsible?',
+    options: [
+      'A) No—each CFP® professional is individually responsible',
+      'B) Yes—supervisors share responsibility for ensuring proper oversight',
+      'C) Only if the supervisor directly caused the error',
+      'D) Only the firm is responsible, not individual supervisors'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals who supervise others have a duty to establish and enforce reasonable supervisory procedures. If a supervised individual makes errors that reasonable supervision should have prevented, the supervisor may share responsibility. This includes ensuring proper training, review procedures, and competency verification for supervised activities.'
+  },
+  {
+    id: 'CFP-PRO-095',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'SEC Regulation',
+    subtopic: 'Advertisement Rules',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the SEC Marketing Rule, which of the following is PROHIBITED in investment adviser advertisements?',
+    options: [
+      'A) Showing past performance if accompanied by proper disclosures',
+      'B) Using client testimonials with appropriate disclosures',
+      'C) Making materially untrue or misleading statements',
+      'D) Comparing performance to benchmarks with methodology disclosure'
+    ],
+    correctAnswer: 2,
+    explanation: 'The SEC Marketing Rule (updated 2020, effective 2022) prohibits materially untrue or misleading statements in all advertisements. It does allow past performance (with disclosures), testimonials (with disclosures), and benchmark comparisons (with methodology). The rule modernized advertising regulations but maintained core anti-fraud principles.'
+  },
+  {
+    id: 'CFP-PRO-096',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Disclosure',
+    subtopic: 'Material Information',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'What makes a conflict of interest "material" and therefore requiring written disclosure?',
+    options: [
+      'A) Any conflict involving more than $1,000',
+      'B) A conflict that might reasonably affect client decision-making',
+      'C) Only conflicts that directly reduce client returns',
+      'D) Conflicts specifically listed in CFP Board Standards'
+    ],
+    correctAnswer: 1,
+    explanation: 'A material conflict is one that a reasonable client would consider important in deciding whether to engage the professional or follow the recommendation. Materiality is determined from the client\'s perspective, not a bright-line dollar threshold. If the information could reasonably affect the client\'s decision, it\'s material and requires written disclosure.'
+  },
+  {
+    id: 'CFP-PRO-097',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Ethical Judgment',
+    subtopic: 'Gray Areas',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A CFP® professional faces a situation not explicitly covered by the Standards of Conduct. What approach should guide the decision?',
+    options: [
+      'A) If it\'s not prohibited, it\'s permitted',
+      'B) Apply the Code of Ethics principles as interpretive guidance',
+      'C) Consult with CFP Board before taking any action',
+      'D) Defer to the employer\'s compliance department'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Code of Ethics serves as interpretive guidance for situations not explicitly addressed. When facing gray areas, the professional should consider: Would this action serve the client\'s best interest? Does it demonstrate integrity and competence? Would a reasonable professional make this choice? The Code principles provide the ethical framework for judgment calls.'
+  },
+  {
+    id: 'CFP-PRO-098',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-2',
+    topic: 'Privacy Regulation',
+    subtopic: 'Regulation S-P',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What does Regulation S-P require of financial institutions regarding customer information?',
+    options: [
+      'A) Deliver initial privacy policy within 30 days of opening account',
+      'B) Obtain affirmative consent before sharing any information',
+      'C) Provide initial and annual privacy notices, with opt-out rights for certain sharing',
+      'D) Report all data breaches to customers within 24 hours'
+    ],
+    correctAnswer: 2,
+    explanation: 'Regulation S-P (Privacy of Consumer Financial Information) requires: (1) initial privacy notice when relationships begin, (2) annual notices thereafter, (3) explanation of information-sharing practices, and (4) opt-out opportunity for certain third-party sharing. The Gramm-Leach-Bliley Act established the underlying privacy framework.'
+  },
+  {
+    id: 'CFP-PRO-099',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Business Practices',
+    subtopic: 'Fees and Compensation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional charges 1% AUM plus receives 12b-1 fees on certain fund holdings. How must compensation be disclosed?',
+    options: [
+      'A) Disclose only the AUM fee since 12b-1 fees are paid by the fund',
+      'B) Disclose all forms of compensation including 12b-1 fees',
+      'C) Choose one disclosure method—either fee-only or commission-only',
+      'D) Disclosure is not required if standard industry compensation'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals must disclose all forms of compensation, including AUM fees, commissions, 12b-1 fees, referral fees, and any other economic benefit received in connection with client engagements. Complete disclosure ensures clients understand total costs and potential conflicts. The 12b-1 fees, though paid by the fund, compensate the adviser and must be disclosed.'
+  },
+  {
+    id: 'CFP-PRO-100',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PRO-1',
+    topic: 'Financial Planning Process',
+    subtopic: 'Monitoring',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional completed a financial plan 3 years ago and has had no contact with the client since. The client\'s situation has changed significantly. What is the professional\'s obligation?',
+    options: [
+      'A) No obligation—the original plan was complete when delivered',
+      'B) Ongoing duty to monitor and trigger re-engagement',
+      'C) The obligation depends on the terms of the original engagement',
+      'D) Automatic fiduciary duty continues indefinitely'
+    ],
+    correctAnswer: 2,
+    explanation: 'The ongoing monitoring obligation depends on the scope of the original engagement agreement. If the engagement was limited to a point-in-time plan with no monitoring relationship, obligations ended at delivery. If ongoing planning was engaged, monitoring obligations apply. Clear engagement agreements define continuing responsibilities.'
+  }
+];
+
+export default CFP_PROFESSIONAL_BATCH2_QUESTIONS;

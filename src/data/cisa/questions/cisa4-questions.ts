@@ -1,7 +1,14 @@
-
 import { Question } from '../../../types';
+import { CISA4_QUESTIONS_BATCH2 } from './cisa4-questions-batch2';
+import { CISA4_QUESTIONS_BATCH3 } from './cisa4-questions-batch3';
+import { CISA4_QUESTIONS_BATCH4 } from './cisa4-questions-batch4';
+import { CISA4_QUESTIONS_BATCH5 } from './cisa4-questions-batch5';
+import { CISA4_QUESTIONS_BATCH6 } from './cisa4-questions-batch6';
+import { CISA4_QUESTIONS_BATCH7 } from './cisa4-questions-batch7';
+import { CISA4_QUESTIONS_BATCH8 } from './cisa4-questions-batch8';
+import { CISA4_QUESTIONS_BATCH9 } from './cisa4-questions-batch9';
 
-export const CISA4_QUESTIONS: Question[] = [
+const CISA4_QUESTIONS_BATCH1: Question[] = [
   {
     id: 'CISA4-001',
     courseId: 'cisa',
@@ -36,4 +43,16 @@ export const CISA4_QUESTIONS: Question[] = [
     topic: 'Disaster Recovery',
     subtopic: 'DRP Testing'
   }
+];
+
+export const CISA4_QUESTIONS: Question[] = [
+  ...CISA4_QUESTIONS_BATCH1,
+  ...CISA4_QUESTIONS_BATCH2,
+  ...CISA4_QUESTIONS_BATCH3,
+  ...CISA4_QUESTIONS_BATCH4,
+  ...CISA4_QUESTIONS_BATCH5,
+  ...CISA4_QUESTIONS_BATCH6,
+  ...CISA4_QUESTIONS_BATCH7,
+  ...CISA4_QUESTIONS_BATCH8,
+  ...CISA4_QUESTIONS_BATCH9,
 ];

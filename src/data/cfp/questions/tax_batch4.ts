@@ -1,0 +1,489 @@
+/**
+ * CFP Tax Planning Questions - Batch 4
+ * Focus on TAX-3 (Capital Gains) and TAX-4 (Charitable/Gift) - undertested areas
+ * Adding 25 questions to improve coverage
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_TAX_BATCH4_QUESTIONS: Question[] = [
+  // TAX-3: Capital Gains Taxation
+  {
+    id: 'CFP-TAX-B4-001',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Capital Gains Rates',
+    subtopic: '0%/15%/20% Brackets',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A married couple filing jointly has taxable income of $85,000 including $20,000 of long-term capital gains. What rate applies to their capital gains (2026)?',
+    options: [
+      'A) 0%',
+      'B) 15%',
+      'C) 20%',
+      'D) Blended 0%/15%'
+    ],
+    correctAnswer: 3,
+    explanation: 'The 0% capital gains bracket ends around $94,050 for MFJ in 2026. Ordinary income of $65,000 plus $20,000 gains = $85,000 total. Some gains fall in the 0% bracket (up to ~$94,050), remainder at 15%. The $20,000 stacks on top of ordinary income, creating a blended rate.'
+  },
+  {
+    id: 'CFP-TAX-B4-002',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Holding Period',
+    subtopic: 'Day Counting',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Stock purchased on March 15, 2026 is sold on March 16, 2027. Is the gain long-term or short-term?',
+    options: [
+      'A) Short-term (held exactly 1 year)',
+      'B) Long-term (held more than 1 year)',
+      'C) Depends on the type of stock',
+      'D) Treated as ordinary income'
+    ],
+    correctAnswer: 1,
+    explanation: 'The holding period begins the day after purchase (March 16, 2026). To be long-term, the asset must be held MORE than one year. Sold on March 16, 2027 = held from March 16, 2026 to March 16, 2027 = exactly 1 year and 1 day = long-term capital gain.'
+  },
+  {
+    id: 'CFP-TAX-B4-003',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Net Investment Income Tax',
+    subtopic: 'NIIT Thresholds',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A single taxpayer has MAGI of $250,000 including $60,000 of net investment income. What is the approximate NIIT liability?',
+    options: [
+      'A) $0',
+      'B) $1,900',
+      'C) $2,280',
+      'D) $3,800'
+    ],
+    correctAnswer: 1,
+    explanation: 'NIIT = 3.8% on the lesser of (1) net investment income or (2) MAGI above threshold. Single threshold is $200,000. MAGI above threshold = $250,000 - $200,000 = $50,000. NII = $60,000. Lesser amount = $50,000. NIIT = $50,000 × 3.8% = $1,900.'
+  },
+  {
+    id: 'CFP-TAX-B4-004',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Section 1202',
+    subtopic: 'QSBS Exclusion',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What percentage of gain can be excluded under Section 1202 for qualified small business stock acquired after September 27, 2010 and held more than 5 years?',
+    options: [
+      'A) 50%',
+      'B) 75%',
+      'C) 100%',
+      'D) Depends on AMT status'
+    ],
+    correctAnswer: 2,
+    explanation: 'QSBS acquired after September 27, 2010 qualifies for 100% exclusion of gain (up to $10 million or 10x basis). Earlier acquisition dates have lower exclusions (50% or 75%). The excluded gain is not subject to AMT preference for 100% exclusion stock.'
+  },
+  {
+    id: 'CFP-TAX-B4-005',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Wash Sale Rule',
+    subtopic: '30-Day Window',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An investor sells stock at a $5,000 loss on December 15. She buys the same stock on January 10. What is the tax consequence?',
+    options: [
+      'A) Loss is fully deductible in December',
+      'B) Loss is disallowed; basis increases in new shares',
+      'C) Loss is deductible; this is outside the wash sale window',
+      'D) Half the loss is deductible'
+    ],
+    correctAnswer: 1,
+    explanation: 'The wash sale rule disallows a loss if substantially identical securities are purchased within 30 days before or after the sale. December 15 + 30 days = January 14. Purchase on January 10 is within the window. Loss is disallowed but added to the basis of the new shares.'
+  },
+  {
+    id: 'CFP-TAX-B4-006',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Like-Kind Exchanges',
+    subtopic: 'Section 1031',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'After the TCJA, which assets qualify for like-kind exchange treatment under Section 1031?',
+    options: [
+      'A) All business or investment property',
+      'B) Only real property held for business or investment',
+      'C) Real property and artwork',
+      'D) Real property and vehicles'
+    ],
+    correctAnswer: 1,
+    explanation: 'After TCJA (2018+), Section 1031 applies only to real property held for productive use in trade/business or for investment. Personal property (vehicles, equipment, artwork) no longer qualifies. This was a significant limitation from prior law.'
+  },
+  {
+    id: 'CFP-TAX-B4-007',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Opportunity Zones',
+    subtopic: 'Deferral and Exclusion',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'An investor reinvests $100,000 of capital gains into a Qualified Opportunity Fund and holds for 10+ years. What tax benefit applies to appreciation in the QOF?',
+    options: [
+      'A) 15% basis step-up',
+      'B) Appreciation is fully excludable',
+      'C) Appreciation taxed at 15% rate',
+      'D) No benefit on QOF appreciation; only original gain is deferred'
+    ],
+    correctAnswer: 1,
+    explanation: 'If a QOF investment is held 10+ years, any appreciation in the QOF itself is permanently excludable from income. The original deferred gain is recognized in 2026 (or earlier sale). The 10% and 15% basis step-ups for 5-7 year holds expired after 2026 for gains already invested.'
+  },
+  {
+    id: 'CFP-TAX-B4-008',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Collectibles',
+    subtopic: '28% Rate',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What is the maximum tax rate on long-term capital gains from collectibles?',
+    options: [
+      'A) 15%',
+      'B) 20%',
+      'C) 25%',
+      'D) 28%'
+    ],
+    correctAnswer: 3,
+    explanation: 'Long-term capital gains on collectibles (art, antiques, coins, stamps, precious metals) are taxed at a maximum rate of 28%, higher than the standard 15%/20% rates. Short-term gains are taxed as ordinary income. Plus, NIIT may apply.'
+  },
+  {
+    id: 'CFP-TAX-B4-009',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Depreciation Recapture',
+    subtopic: 'Section 1250',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A rental property purchased for $400,000 (allocated $100,000 to land) is sold for $500,000 after claiming $50,000 depreciation. What is the unrecaptured Section 1250 gain?',
+    options: [
+      'A) $0',
+      'B) $50,000',
+      'C) $100,000',
+      'D) $150,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Adjusted basis = $400,000 - $50,000 depreciation = $350,000. Total gain = $500,000 - $350,000 = $150,000. Unrecaptured Section 1250 gain = accumulated depreciation = $50,000, taxed at max 25%. Remaining $100,000 is Section 1231 gain (typically long-term capital gain rates).'
+  },
+  {
+    id: 'CFP-TAX-B4-010',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Capital Loss Limitations',
+    subtopic: 'Annual Deduction',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What is the maximum capital loss deduction against ordinary income per year?',
+    options: [
+      'A) $1,500 ($3,000 if MFJ)',
+      'B) $3,000 ($1,500 if MFS)',
+      'C) Unlimited',
+      'D) $10,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Net capital losses can offset up to $3,000 of ordinary income annually ($1,500 for married filing separately). Excess losses carry forward indefinitely. Capital losses first offset capital gains (short against short, then short against long, etc.).'
+  },
+  {
+    id: 'CFP-TAX-B4-011',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Installment Sales',
+    subtopic: 'Gross Profit Percentage',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Land with a $100,000 basis is sold for $400,000. The buyer pays $80,000 down and the balance over 4 years. What portion of each $80,000 payment is taxable gain?',
+    options: [
+      'A) $20,000',
+      'B) $60,000',
+      'C) $80,000',
+      'D) $75,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gross profit = $400,000 - $100,000 = $300,000. Gross profit percentage = $300,000 / $400,000 = 75%. Each $80,000 payment × 75% = $60,000 taxable gain, $20,000 return of basis. This applies to each of the five payments ($80,000 down + 4 installments).'
+  },
+  {
+    id: 'CFP-TAX-B4-012',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Primary Residence Exclusion',
+    subtopic: 'Section 121',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A married couple sells their home of 3 years for a $600,000 gain. They used Section 121 exclusion 18 months ago. How much gain is taxable?',
+    options: [
+      'A) $0',
+      'B) $100,000',
+      'C) $500,000',
+      'D) $600,000'
+    ],
+    correctAnswer: 3,
+    explanation: 'Section 121 requires 2 out of 5 years ownership AND use, PLUS the exclusion cannot have been used in the prior 2 years. Since they used it 18 months ago (less than 2 years), no current exclusion is available. The full $600,000 gain is taxable (15%/20% LTCG rate + possible NIIT).'
+  },
+  // TAX-4: Charitable/Gift Taxation
+  {
+    id: 'CFP-TAX-B4-013',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Annual Gift Exclusion',
+    subtopic: '2026 Limit',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What is the annual gift tax exclusion per donee for 2026?',
+    options: [
+      'A) $17,000',
+      'B) $18,000',
+      'C) $19,000',
+      'D) $20,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'The annual gift exclusion is indexed for inflation in $1,000 increments. For 2024 it is $18,000. By 2026, projecting modest inflation, it is expected to be approximately $19,000 per donee per year. Gifts within this amount require no gift tax return.'
+  },
+  {
+    id: 'CFP-TAX-B4-014',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Gift Splitting',
+    subtopic: 'Married Couples',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A married couple wants to gift $70,000 to their child in 2026 without using lifetime exemption. Using gift splitting, how much of their exemption must they use?',
+    options: [
+      'A) $0',
+      'B) $32,000',
+      'C) $51,000',
+      'D) $70,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'With gift splitting, each spouse can give $19,000 (2026) to each donee using annual exclusions = $38,000 total. $70,000 - $38,000 = $32,000 uses lifetime exemption. A gift tax return (Form 709) is required to elect splitting even though no tax is due.'
+  },
+  {
+    id: 'CFP-TAX-B4-015',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Charitable Deduction Limits',
+    subtopic: 'Cash to Public Charities',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What is the maximum charitable deduction for cash contributions to public charities as a percentage of AGI?',
+    options: [
+      'A) 30%',
+      'B) 50%',
+      'C) 60%',
+      'D) 100%'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cash contributions to public charities (churches, schools, hospitals, public foundations) are deductible up to 60% of AGI. Appreciated property is limited to 30% of AGI at FMV. Private foundation limits are lower (30% cash, 20% property).'
+  },
+  {
+    id: 'CFP-TAX-B4-016',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Basis of Gifted Property',
+    subtopic: 'Carryover Basis',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A father gifts stock with a $50,000 basis and $30,000 FMV to his daughter. She later sells for $45,000. What is her gain or loss?',
+    options: [
+      'A) $15,000 gain',
+      'B) $5,000 loss',
+      'C) $0 (no gain or loss)',
+      'D) $15,000 loss'
+    ],
+    correctAnswer: 2,
+    explanation: 'When gifted property has FMV below basis, dual-basis rules apply. For gain: use donor\'s basis ($50,000). For loss: use FMV at gift ($30,000). Sale at $45,000 is below $50,000 (no gain) but above $30,000 (no loss). Result: no gain, no loss.'
+  },
+  {
+    id: 'CFP-TAX-B4-017',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Gift Tax Returns',
+    subtopic: 'Filing Requirements',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which gift requires filing Form 709?',
+    options: [
+      'A) $15,000 cash gift to a friend',
+      'B) $50,000 paid directly to grandchild\'s university for tuition',
+      'C) $25,000 gift to spouse who is a US citizen',
+      'D) $25,000 gift to a child'
+    ],
+    correctAnswer: 3,
+    explanation: 'Form 709 is required for gifts exceeding the annual exclusion ($19,000 in 2026). Direct tuition payments are excluded regardless of amount. Unlimited marital deduction applies to citizen spouses. Only the $25,000 gift to the child exceeds the exclusion and requires a return.'
+  },
+  {
+    id: 'CFP-TAX-B4-018',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Lifetime Exemption',
+    subtopic: 'Post-TCJA Sunset',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What happens to the federal gift and estate tax exemption when TCJA provisions sunset after 2025?',
+    options: [
+      'A) It remains at approximately $13 million',
+      'B) It drops to approximately $7 million (adjusted for inflation)',
+      'C) It is eliminated entirely',
+      'D) It increases to $15 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'The TCJA doubled the exemption through 2025. After sunset, it reverts to the pre-TCJA amount (approximately $5.49 million in 2017) adjusted for inflation, estimated at approximately $7 million for 2026. This creates urgency for large estate planning before 2026.'
+  },
+  {
+    id: 'CFP-TAX-B4-019',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Present Interest Requirement',
+    subtopic: 'Crummey Powers',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Why are Crummey withdrawal powers included in irrevocable life insurance trusts?',
+    options: [
+      'A) To allow the trustee to pay premiums',
+      'B) To qualify premium contributions for the annual gift exclusion',
+      'C) To avoid estate tax inclusion',
+      'D) To provide beneficiary income'
+    ],
+    correctAnswer: 1,
+    explanation: 'Annual gift exclusion requires a present interest (immediate right to use/possess). Trust contributions are future interests (no exclusion). Crummey powers give beneficiaries a temporary right to withdraw contributions, creating a present interest and qualifying for the annual exclusion.'
+  },
+  {
+    id: 'CFP-TAX-B4-020',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Charitable Substantiation',
+    subtopic: 'Qualified Appraisal',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A qualified appraisal is required for charitable donations of property exceeding what value?',
+    options: [
+      'A) $500',
+      'B) $2,500',
+      'C) $5,000',
+      'D) $10,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'Donations of property (other than cash and publicly traded securities) worth more than $5,000 require a qualified appraisal by a qualified appraiser. Publicly traded securities never require an appraisal regardless of value. Property over $500 requires Form 8283.'
+  },
+  {
+    id: 'CFP-TAX-B4-021',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Gift Tax',
+    subtopic: 'Completed Gift Requirements',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A grantor transfers property to a revocable trust for her children. Is this a completed gift for gift tax purposes?',
+    options: [
+      'A) Yes, the transfer is complete when funded',
+      'B) No, revocable transfers are not completed gifts',
+      'C) Yes, if the children are named beneficiaries',
+      'D) Only if the property exceeds the annual exclusion'
+    ],
+    correctAnswer: 1,
+    explanation: 'A completed gift requires the donor to relinquish dominion and control. Revocable trusts allow the grantor to reclaim property, so transfers are incomplete. The gift becomes complete when the trust becomes irrevocable (by amendment, death, or release of revocation power).'
+  },
+  {
+    id: 'CFP-TAX-B4-022',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Generation-Skipping Transfer Tax',
+    subtopic: 'GST Exemption',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'What is the GST tax rate, and what exemption applies?',
+    options: [
+      'A) 40% flat rate; exemption equals gift/estate exemption',
+      'B) Progressive rates up to 40%; no exemption',
+      'C) 35% flat rate; separate $5 million exemption',
+      'D) 40% flat rate; no exemption available'
+    ],
+    correctAnswer: 0,
+    explanation: 'GST tax is a flat 40% on transfers to skip persons (grandchildren or below). The GST exemption mirrors the gift/estate exemption (approximately $7 million in 2026 post-TCJA sunset). Exempt transfers multiply through generations without additional transfer tax.'
+  },
+  {
+    id: 'CFP-TAX-B4-023',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Charitable Lead Trusts',
+    subtopic: 'Income Tax Treatment',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'In a grantor charitable lead trust, who reports the trust income during the trust term?',
+    options: [
+      'A) The trust files its own return',
+      'B) The charitable beneficiary',
+      'C) The grantor',
+      'D) The remainder beneficiary'
+    ],
+    correctAnswer: 2,
+    explanation: 'In a grantor CLT, the grantor gets an upfront income tax deduction for the present value of the charitable interest. In exchange, the grantor reports all trust income during the term (even amounts paid to charity). A non-grantor CLT provides no upfront deduction but trust income is taxed to the trust.'
+  },
+  {
+    id: 'CFP-TAX-B4-024',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Charitable Deduction',
+    subtopic: 'Carryforward',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer has $200,000 AGI and donates $150,000 cash to a public charity. How much can be deducted this year, and what happens to the excess?',
+    options: [
+      'A) $150,000 this year; no carryforward',
+      'B) $100,000 this year; $50,000 lost',
+      'C) $120,000 this year; $30,000 carries forward up to 5 years',
+      'D) $60,000 this year; $90,000 carries forward up to 5 years'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cash to public charity limit = 60% × $200,000 = $120,000 current year deduction. The excess $30,000 ($150,000 - $120,000) carries forward up to 5 years, subject to the same AGI limits in future years.'
+  },
+  {
+    id: 'CFP-TAX-B4-025',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Gift of Future Interest',
+    subtopic: 'Annual Exclusion',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A grandparent contributes $19,000 to a trust for a grandchild to receive at age 30 (currently age 5). How much qualifies for the annual exclusion without Crummey powers?',
+    options: [
+      'A) $0',
+      'B) $9,500',
+      'C) $15,000',
+      'D) $19,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Without a present interest (right to immediate use/possession), no annual exclusion applies to gifts of future interests. The grandchild cannot access funds until age 30—this is a future interest. Crummey withdrawal powers or 2503(c) trust provisions would create present interest.'
+  }
+];
+
+export default CFP_TAX_BATCH4_QUESTIONS;

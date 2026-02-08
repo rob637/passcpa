@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useContext, useCallback, ReactNode } from 'react';
 import { X, ChevronLeft, ChevronRight, Check, Lightbulb, Rocket, BookOpen, BarChart3 } from 'lucide-react';
 import { useTheme } from '../providers/ThemeProvider';
+import { Button } from './common/Button';
 
 // ============================================================================
 // Types
@@ -389,14 +390,14 @@ const TourOverlay: React.FC = () => {
               Step {currentStep + 1} of {totalSteps}
             </span>
           </div>
-          <button
-            type="button"
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => endTour(false)}
-            className={`p-1 rounded-full transition-colors ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-slate-100'}`}
             aria-label="Close tour"
           >
             <X className="w-5 h-5" aria-hidden="true" />
-          </button>
+          </Button>
         </div>
 
         {/* Content */}
@@ -408,12 +409,14 @@ const TourOverlay: React.FC = () => {
           
           {/* Custom action button */}
           {currentStepData.action && (
-            <button
+            <Button
+              variant="secondary"
+              size="sm"
               onClick={currentStepData.action.onClick}
-              className="mt-3 px-3 py-1.5 text-sm rounded-lg bg-primary-100 text-primary-700 hover:bg-primary-200 transition-colors"
+              className="mt-3"
             >
               {currentStepData.action.label}
-            </button>
+            </Button>
           )}
         </div>
 
@@ -440,42 +443,35 @@ const TourOverlay: React.FC = () => {
 
         {/* Actions */}
         <div className={`flex items-center justify-between p-4 border-t ${darkMode ? 'border-slate-700' : 'border-slate-200'}`}>
-          <button
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => endTour(false)}
-            className={`text-sm transition-colors ${darkMode ? 'text-slate-600 hover:text-slate-200' : 'text-slate-600 hover:text-slate-700'}`}
           >
             Skip tour
-          </button>
+          </Button>
 
           <div className="flex gap-2">
             {!isFirstStep && (
-              <button
+              <Button
+                variant="secondary"
+                size="sm"
                 onClick={prevStep}
-                className={`flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg transition-colors
-                  ${darkMode ? 'bg-slate-700 hover:bg-slate-600' : 'bg-slate-100 hover:bg-slate-200'}`}
+                leftIcon={ChevronLeft}
               >
-                <ChevronLeft className="w-4 h-4" />
                 Back
-              </button>
+              </Button>
             )}
 
-            <button
+            <Button
+              variant="primary"
+              size="sm"
               onClick={nextStep}
-              className="flex items-center gap-1 px-4 py-1.5 text-sm rounded-lg
-                bg-primary-500 text-white hover:bg-primary-600 transition-colors font-medium"
+              leftIcon={isLastStep ? Check : undefined}
+              rightIcon={isLastStep ? undefined : ChevronRight}
             >
-              {isLastStep ? (
-                <>
-                  <Check className="w-4 h-4" />
-                  Get Started
-                </>
-              ) : (
-                <>
-                  Next
-                  <ChevronRight className="w-4 h-4" />
-                </>
-              )}
-            </button>
+              {isLastStep ? 'Get Started' : 'Next'}
+            </Button>
           </div>
         </div>
       </div>
@@ -544,30 +540,30 @@ export const FirstTimePrompt: React.FC = () => {
               Take a quick tour to discover all the features that will help you pass the CPA exam.
             </p>
             <div className="flex gap-2 mt-3">
-              <button
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={handleStartTour}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg
-                  bg-primary-500 text-white hover:bg-primary-600 transition-colors"
               >
                 Start Tour
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleDismiss}
-                className={`px-3 py-1.5 text-sm rounded-lg transition-colors
-                  ${darkMode ? 'text-slate-300 hover:bg-slate-700' : 'text-slate-600 hover:bg-slate-100'}`}
               >
                 Maybe later
-              </button>
+              </Button>
             </div>
           </div>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={handleDismiss}
-            className={`p-1 rounded-full transition-colors
-              ${darkMode ? 'hover:bg-slate-700' : 'hover:bg-slate-100'}`}
             aria-label="Dismiss"
           >
             <X className="w-4 h-4 text-slate-600" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -614,13 +610,15 @@ export const FeatureSpotlight: React.FC<FeatureSpotlightProps> = ({
     >
       {children}
       {isHighlighted && (
-        <button
+        <Button
+          variant="primary"
+          size="icon"
           onClick={() => skipToFeature(featureId)}
-          className="absolute -top-2 -right-2 w-6 h-6 bg-primary-500 text-white rounded-full text-xs flex items-center justify-center shadow-lg"
+          className="absolute -top-2 -right-2 w-6 h-6 text-xs"
           aria-label="Learn more about this feature"
         >
           ?
-        </button>
+        </Button>
       )}
     </div>
   );

@@ -102,6 +102,10 @@ const CIASection = lazy(() => import('./courses/cia/CIASection'));
 const CFPLanding = lazy(() => import('./components/pages/CFPLanding'));
 const CFPDashboard = lazy(() => import('./courses/cfp/CFPDashboard'));
 const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
+const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
+const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
+const CFPStudyPlanSetup = lazy(() => import('./components/pages/CFPStudyPlanSetup'));
+const CPAInfo = lazy(() => import('./components/pages/CPAInfo'));
 const CISALanding = lazy(() => import('./components/pages/CISALanding'));
 
 // Scroll to top on route change
@@ -155,8 +159,7 @@ const AdminRoute = ({ children }: RouteProps) => {
   }
 
   // Check admin status from Firestore user profile
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const isAdmin = (userProfile as any)?.isAdmin === true;
+  const isAdmin = userProfile?.isAdmin === true;
   
   if (!isAdmin) {
     // Non-admins silently redirected to home
@@ -300,6 +303,14 @@ function App() {
                     </SuspensePage>
                   }
                 />
+                <Route
+                  path="/cpa/info"
+                  element={
+                    <SuspensePage>
+                      <CPAInfo />
+                    </SuspensePage>
+                  }
+                />
 
                 {/* EA Landing Page (public) */}
                 {ENABLE_EA_COURSE && (
@@ -336,22 +347,26 @@ function App() {
                 )}
 
                 {/* CIA Landing Page (public) */}
-                <Route
-                  path="/cia"
-                  element={
-                    <SuspensePage>
-                      <CIALanding />
-                    </SuspensePage>
-                  }
-                />
-                <Route
-                  path="/cia/info"
-                  element={
-                    <SuspensePage>
-                      <CIAInfo />
-                    </SuspensePage>
-                  }
-                />
+                {ENABLE_CIA_COURSE && (
+                  <>
+                    <Route
+                      path="/cia"
+                      element={
+                        <SuspensePage>
+                          <CIALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    <Route
+                      path="/cia/info"
+                      element={
+                        <SuspensePage>
+                          <CIAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
+                )}
 
                 {/* CFP Landing Page (public) */}
                 {ENABLE_CFP_COURSE && (
@@ -385,12 +400,40 @@ function App() {
                     } 
                   />
                   <Route 
+                    path="/cfp/exam" 
+                    element={
+                      <ProtectedRoute>
+                        <SuspensePage>
+                          <CFPExamSimulator />
+                        </SuspensePage>
+                      </ProtectedRoute>
+                    } 
+                  />
+                  <Route 
                     path="/cfp/learn" 
                     element={
                       <ProtectedRoute>
                         <Navigate to="/cfp/dashboard" replace />
                       </ProtectedRoute>
                     } 
+                  />
+                  <Route
+                    path="/cfp/study-plan"
+                    element={
+                      <ProtectedRoute>
+                        <SuspensePage>
+                          <CFPStudyPlanSetup />
+                        </SuspensePage>
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/cfp/info"
+                    element={
+                      <SuspensePage>
+                        <CFPInfo />
+                      </SuspensePage>
+                    }
                   />
                   </>
                 )}
@@ -710,7 +753,7 @@ function App() {
                   )}
 
                   {/* CIA Routes */}
-                  {(ENABLE_CIA_COURSE || true) && (
+                  {ENABLE_CIA_COURSE && (
                     <>
                       <Route
                         path="/cia-exam"

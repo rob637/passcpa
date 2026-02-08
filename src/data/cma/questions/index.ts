@@ -23,80 +23,160 @@
 // Part 1 Questions
 import { CMA1A_QUESTIONS_BATCH1 } from './cma1a-questions-batch1';
 import { CMA1A_QUESTIONS_BATCH2 } from './cma1a-questions-batch2';
+import { CMA1A_QUESTIONS_BATCH3 } from './cma1a-questions-batch3';
 import { CMA1B_QUESTIONS_BATCH1 } from './cma1b-questions-batch1';
 import { CMA1B_QUESTIONS_BATCH2 } from './cma1b-questions-batch2';
+import { CMA1B_QUESTIONS_BATCH3 } from './cma1b-questions-batch3';
 import { CMA1C_QUESTIONS_BATCH1 } from './cma1c-questions-batch1';
 import { CMA1C_QUESTIONS_BATCH2 } from './cma1c-questions-batch2';
+import { CMA1C_QUESTIONS_BATCH3 } from './cma1c-questions-batch3';
 import { CMA1D_QUESTIONS_BATCH1 } from './cma1d-questions-batch1';
 import { CMA1D_QUESTIONS_BATCH2 } from './cma1d-questions-batch2';
+import { CMA1D_QUESTIONS_BATCH3 } from './cma1d-questions-batch3';
 import { CMA1E_QUESTIONS_BATCH1 } from './cma1e-questions-batch1';
 import { CMA1E_QUESTIONS_BATCH2 } from './cma1e-questions-batch2';
+import { CMA1E_QUESTIONS_BATCH3 } from './cma1e-questions-batch3';
 import { CMA1F_QUESTIONS_BATCH1 } from './cma1f-questions-batch1';
 import { CMA1F_QUESTIONS_BATCH2 } from './cma1f-questions-batch2';
+import { CMA1F_QUESTIONS_BATCH3 } from './cma1f-questions-batch3';
 
 // Part 2 Questions
 import { CMA2A_QUESTIONS_BATCH1 } from './cma2a-questions-batch1';
 import { CMA2A_QUESTIONS_BATCH2 } from './cma2a-questions-batch2';
+import { CMA2A_QUESTIONS_BATCH3 } from './cma2a-questions-batch3';
 import { CMA2B_QUESTIONS_BATCH1 } from './cma2b-questions-batch1';
 import { CMA2B_QUESTIONS_BATCH2 } from './cma2b-questions-batch2';
+import { CMA2B_QUESTIONS_BATCH3 } from './cma2b-questions-batch3';
 import { CMA2C_QUESTIONS_BATCH1 } from './cma2c-questions-batch1';
 import { CMA2C_QUESTIONS_BATCH2 } from './cma2c-questions-batch2';
+import { CMA2C_QUESTIONS_BATCH3 } from './cma2c-questions-batch3';
 import { CMA2D_QUESTIONS_BATCH1 } from './cma2d-questions-batch1';
 import { CMA2D_QUESTIONS_BATCH2 } from './cma2d-questions-batch2';
+import { CMA2D_QUESTIONS_BATCH3 } from './cma2d-questions-batch3';
 import { CMA2E_QUESTIONS_BATCH1 } from './cma2e-questions-batch1';
 import { CMA2E_QUESTIONS_BATCH2 } from './cma2e-questions-batch2';
+import { CMA2E_QUESTIONS_BATCH3 } from './cma2e-questions-batch3';
 import { CMA2F_QUESTIONS_BATCH1 } from './cma2f-questions-batch1';
 import { CMA2F_QUESTIONS_BATCH2 } from './cma2f-questions-batch2';
+import { CMA2F_QUESTIONS_BATCH3 } from './cma2f-questions-batch3';
+
+// Batch 4 questions (additional blueprint area coverage)
+import { CMA1A_QUESTIONS_BATCH4 } from './cma1a-questions-batch4';
+import { CMA1B_QUESTIONS_BATCH4 } from './cma1b-questions-batch4';
+import { CMA1E_QUESTIONS_BATCH4 } from './cma1e-questions-batch4';
+import { CMA1F_QUESTIONS_BATCH4 } from './cma1f-questions-batch4';
+import { CMA2A_QUESTIONS_BATCH4 } from './cma2a-questions-batch4';
+import { CMA2B_QUESTIONS_BATCH4 } from './cma2b-questions-batch4';
+import { CMA2C_QUESTIONS_BATCH4 } from './cma2c-questions-batch4';
+import { CMA2D_QUESTIONS_BATCH4 } from './cma2d-questions-batch4';
+import { CMA2E_QUESTIONS_BATCH4 } from './cma2e-questions-batch4';
+import { CMA2F_QUESTIONS_BATCH4 } from './cma2f-questions-batch4';
 
 // Calculation Problems (computational practice)
 import { CMA1_CALCULATION_PROBLEMS } from './cma1-calculation-problems';
+import { CMA1_CALCULATION_PROBLEMS_BATCH2 } from './cma1-calculation-problems-batch2';
 import { CMA2_CALCULATION_PROBLEMS } from './cma2-calculation-problems';
+import { CMA2_CALCULATION_PROBLEMS_BATCH2 } from './cma2-calculation-problems-batch2';
 import { CMA1_BULK_QUESTIONS } from './cma1-bulk-questions';
 import { CMA2_BULK_QUESTIONS } from './cma2-bulk-questions';
+
+// MCQ Batch 4 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH4 } from './cma1-mcq-batch4';
+import { CMA2_MCQ_BATCH4 } from './cma2-mcq-batch4';
+
+// MCQ Batch 5 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH5 } from './cma1-mcq-batch5';
+import { CMA2_MCQ_BATCH5 } from './cma2-mcq-batch5';
+
+// MCQ Batch 6 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH6 } from './cma1-mcq-batch6';
+import { CMA2_MCQ_BATCH6 } from './cma2-mcq-batch6';
+
+// MCQ Batch 7 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH7 } from './cma1-mcq-batch7';
+import { CMA2_MCQ_BATCH7 } from './cma2-mcq-batch7';
+
+// MCQ Batch 8 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH8 } from './cma1-mcq-batch8';
+import { CMA2_MCQ_BATCH8 } from './cma2-mcq-batch8';
 
 // Re-export individual batches
 export {
   CMA1A_QUESTIONS_BATCH1,
   CMA1A_QUESTIONS_BATCH2,
+  CMA1A_QUESTIONS_BATCH3,
   CMA1B_QUESTIONS_BATCH1,
   CMA1B_QUESTIONS_BATCH2,
+  CMA1B_QUESTIONS_BATCH3,
   CMA1C_QUESTIONS_BATCH1,
   CMA1C_QUESTIONS_BATCH2,
+  CMA1C_QUESTIONS_BATCH3,
   CMA1D_QUESTIONS_BATCH1,
   CMA1D_QUESTIONS_BATCH2,
+  CMA1D_QUESTIONS_BATCH3,
   CMA1E_QUESTIONS_BATCH1,
   CMA1E_QUESTIONS_BATCH2,
+  CMA1E_QUESTIONS_BATCH3,
   CMA1F_QUESTIONS_BATCH1,
   CMA1F_QUESTIONS_BATCH2,
+  CMA1F_QUESTIONS_BATCH3,
   CMA2A_QUESTIONS_BATCH1,
   CMA2A_QUESTIONS_BATCH2,
+  CMA2A_QUESTIONS_BATCH3,
   CMA2B_QUESTIONS_BATCH1,
   CMA2B_QUESTIONS_BATCH2,
+  CMA2B_QUESTIONS_BATCH3,
   CMA2C_QUESTIONS_BATCH1,
   CMA2C_QUESTIONS_BATCH2,
+  CMA2C_QUESTIONS_BATCH3,
   CMA2D_QUESTIONS_BATCH1,
   CMA2D_QUESTIONS_BATCH2,
+  CMA2D_QUESTIONS_BATCH3,
   CMA2E_QUESTIONS_BATCH1,
   CMA2E_QUESTIONS_BATCH2,
+  CMA2E_QUESTIONS_BATCH3,
   CMA2F_QUESTIONS_BATCH1,
   CMA2F_QUESTIONS_BATCH2,
+  CMA2F_QUESTIONS_BATCH3,
   CMA1_CALCULATION_PROBLEMS,
+  CMA1_CALCULATION_PROBLEMS_BATCH2,
   CMA2_CALCULATION_PROBLEMS,
+  CMA2_CALCULATION_PROBLEMS_BATCH2,
+  CMA1_MCQ_BATCH4,
+  CMA2_MCQ_BATCH4,
+  CMA1_MCQ_BATCH5,
+  CMA2_MCQ_BATCH5,
+  CMA1_MCQ_BATCH6,
+  CMA2_MCQ_BATCH6,
+  CMA1_MCQ_BATCH7,
+  CMA2_MCQ_BATCH7,
+  CMA1_MCQ_BATCH8,
+  CMA2_MCQ_BATCH8,
+  CMA1A_QUESTIONS_BATCH4,
+  CMA1B_QUESTIONS_BATCH4,
+  CMA1E_QUESTIONS_BATCH4,
+  CMA1F_QUESTIONS_BATCH4,
+  CMA2A_QUESTIONS_BATCH4,
+  CMA2B_QUESTIONS_BATCH4,
+  CMA2C_QUESTIONS_BATCH4,
+  CMA2D_QUESTIONS_BATCH4,
+  CMA2E_QUESTIONS_BATCH4,
+  CMA2F_QUESTIONS_BATCH4,
 };
 
 // Combined by blueprint area
-export const CMA1A_ALL = [...CMA1A_QUESTIONS_BATCH1, ...CMA1A_QUESTIONS_BATCH2];
-export const CMA1B_ALL = [...CMA1B_QUESTIONS_BATCH1, ...CMA1B_QUESTIONS_BATCH2];
-export const CMA1C_ALL = [...CMA1C_QUESTIONS_BATCH1, ...CMA1C_QUESTIONS_BATCH2];
-export const CMA1D_ALL = [...CMA1D_QUESTIONS_BATCH1, ...CMA1D_QUESTIONS_BATCH2];
-export const CMA1E_ALL = [...CMA1E_QUESTIONS_BATCH1, ...CMA1E_QUESTIONS_BATCH2];
-export const CMA1F_ALL = [...CMA1F_QUESTIONS_BATCH1, ...CMA1F_QUESTIONS_BATCH2];
-export const CMA2A_ALL = [...CMA2A_QUESTIONS_BATCH1, ...CMA2A_QUESTIONS_BATCH2];
-export const CMA2B_ALL = [...CMA2B_QUESTIONS_BATCH1, ...CMA2B_QUESTIONS_BATCH2];
-export const CMA2C_ALL = [...CMA2C_QUESTIONS_BATCH1, ...CMA2C_QUESTIONS_BATCH2];
-export const CMA2D_ALL = [...CMA2D_QUESTIONS_BATCH1, ...CMA2D_QUESTIONS_BATCH2];
-export const CMA2E_ALL = [...CMA2E_QUESTIONS_BATCH1, ...CMA2E_QUESTIONS_BATCH2];
-export const CMA2F_ALL = [...CMA2F_QUESTIONS_BATCH1, ...CMA2F_QUESTIONS_BATCH2];
+export const CMA1A_ALL = [...CMA1A_QUESTIONS_BATCH1, ...CMA1A_QUESTIONS_BATCH2, ...CMA1A_QUESTIONS_BATCH3, ...CMA1A_QUESTIONS_BATCH4];
+export const CMA1B_ALL = [...CMA1B_QUESTIONS_BATCH1, ...CMA1B_QUESTIONS_BATCH2, ...CMA1B_QUESTIONS_BATCH3, ...CMA1B_QUESTIONS_BATCH4];
+export const CMA1C_ALL = [...CMA1C_QUESTIONS_BATCH1, ...CMA1C_QUESTIONS_BATCH2, ...CMA1C_QUESTIONS_BATCH3];
+export const CMA1D_ALL = [...CMA1D_QUESTIONS_BATCH1, ...CMA1D_QUESTIONS_BATCH2, ...CMA1D_QUESTIONS_BATCH3];
+export const CMA1E_ALL = [...CMA1E_QUESTIONS_BATCH1, ...CMA1E_QUESTIONS_BATCH2, ...CMA1E_QUESTIONS_BATCH3, ...CMA1E_QUESTIONS_BATCH4];
+export const CMA1F_ALL = [...CMA1F_QUESTIONS_BATCH1, ...CMA1F_QUESTIONS_BATCH2, ...CMA1F_QUESTIONS_BATCH3, ...CMA1F_QUESTIONS_BATCH4];
+export const CMA2A_ALL = [...CMA2A_QUESTIONS_BATCH1, ...CMA2A_QUESTIONS_BATCH2, ...CMA2A_QUESTIONS_BATCH3, ...CMA2A_QUESTIONS_BATCH4];
+export const CMA2B_ALL = [...CMA2B_QUESTIONS_BATCH1, ...CMA2B_QUESTIONS_BATCH2, ...CMA2B_QUESTIONS_BATCH3, ...CMA2B_QUESTIONS_BATCH4];
+export const CMA2C_ALL = [...CMA2C_QUESTIONS_BATCH1, ...CMA2C_QUESTIONS_BATCH2, ...CMA2C_QUESTIONS_BATCH3, ...CMA2C_QUESTIONS_BATCH4];
+export const CMA2D_ALL = [...CMA2D_QUESTIONS_BATCH1, ...CMA2D_QUESTIONS_BATCH2, ...CMA2D_QUESTIONS_BATCH3, ...CMA2D_QUESTIONS_BATCH4];
+export const CMA2E_ALL = [...CMA2E_QUESTIONS_BATCH1, ...CMA2E_QUESTIONS_BATCH2, ...CMA2E_QUESTIONS_BATCH3, ...CMA2E_QUESTIONS_BATCH4];
+export const CMA2F_ALL = [...CMA2F_QUESTIONS_BATCH1, ...CMA2F_QUESTIONS_BATCH2, ...CMA2F_QUESTIONS_BATCH3, ...CMA2F_QUESTIONS_BATCH4];
 
 // Combined question arrays by part
 export const CMA_PART1_QUESTIONS = [
@@ -107,7 +187,13 @@ export const CMA_PART1_QUESTIONS = [
   ...CMA1E_ALL,
   ...CMA1F_ALL,
   ...CMA1_CALCULATION_PROBLEMS,
+  ...CMA1_CALCULATION_PROBLEMS_BATCH2,
   ...CMA1_BULK_QUESTIONS,
+  ...CMA1_MCQ_BATCH4,
+  ...CMA1_MCQ_BATCH5,
+  ...CMA1_MCQ_BATCH6,
+  ...CMA1_MCQ_BATCH7,
+  ...CMA1_MCQ_BATCH8,
 ];
 
 export const CMA_PART2_QUESTIONS = [
@@ -118,7 +204,13 @@ export const CMA_PART2_QUESTIONS = [
   ...CMA2E_ALL,
   ...CMA2F_ALL,
   ...CMA2_CALCULATION_PROBLEMS,
+  ...CMA2_CALCULATION_PROBLEMS_BATCH2,
   ...CMA2_BULK_QUESTIONS,
+  ...CMA2_MCQ_BATCH4,
+  ...CMA2_MCQ_BATCH5,
+  ...CMA2_MCQ_BATCH6,
+  ...CMA2_MCQ_BATCH7,
+  ...CMA2_MCQ_BATCH8,
 ];
 
 // All CMA questions combined

@@ -38,6 +38,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { CPA_COURSE } from '../../courses/cpa/config';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -78,12 +79,12 @@ interface SessionSetupProps {
 
 // Session Setup Component
 const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
-  const { course } = useCourse();
+  const { course, courseId } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
   const [, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
-    section: (userProfile?.examSection || 'REG') as ExamSection,
+    section: (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection,
     mode: 'study', // study, timed, exam, weak
     count: 10,
     topics: [],
@@ -902,7 +903,7 @@ const Practice: React.FC = () => {
       let fetchedQuestions: Question[];
 
       // Determine Blueprint Version based on user's exam date
-      const section = userProfile?.examSection as string || 'REG';
+      const section = userProfile?.examSection as string || getDefaultSection(courseId);
       const examDate = getExamDate(userProfile, section) || new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
       const is2026 = blueprintVersion === '2026';
@@ -911,14 +912,14 @@ const Practice: React.FC = () => {
         // Get questions from weak areas
         fetchedQuestions = await getWeakAreaQuestions(
           userProfile?.id || '',
-          (userProfile?.examSection as ExamSection) || 'REG',
+          (userProfile?.examSection as ExamSection) || getDefaultSection(courseId),
           config.count
         );
       } else {
         // Normal fetch with filters
         // Prioritize section from config, fallback to URL param, then profile, then default
         const urlSection = searchParams.get('section') as ExamSection;
-        const section = config.section || urlSection || (userProfile?.examSection as ExamSection) || 'REG';
+        const section = config.section || urlSection || (userProfile?.examSection as ExamSection) || getDefaultSection(courseId);
         
         // HR1 filter only applies to REG/TCP sections (tax law updates)
         const applyHr1Filter = is2026 && (section === 'REG' || section === 'TCP');
@@ -968,7 +969,7 @@ const Practice: React.FC = () => {
     
     // Auto-start weak areas practice
     if (mode === 'weak' && userProfile && !inSession && !loading) {
-      const section = (userProfile.examSection || 'REG') as ExamSection;
+      const section = (userProfile.examSection || getDefaultSection(courseId)) as ExamSection;
       startSession({
         section,
         mode: 'weak',
@@ -984,7 +985,7 @@ const Practice: React.FC = () => {
     // Auto-start topic-specific practice when coming from a lesson (subtopic or blueprintArea)
     if ((subtopicParam || blueprintAreaParam) && userProfile && !inSession && !loading && mode !== 'weak') {
       const urlSection = searchParams.get('section') as ExamSection;
-      const section = urlSection || (userProfile.examSection || 'REG') as ExamSection;
+      const section = urlSection || (userProfile.examSection || getDefaultSection(courseId)) as ExamSection;
       
       startSession({
         section,
@@ -1259,7 +1260,7 @@ const Practice: React.FC = () => {
         questions={questions}
         answers={answers}
         elapsed={elapsed}
-        section={userProfile?.examSection || 'REG'}
+        section={userProfile?.examSection || getDefaultSection(courseId)}
         onContinue={handleContinue}
         onTryAgain={handleTryAgain}
         onPracticeWeak={handlePracticeWeak}

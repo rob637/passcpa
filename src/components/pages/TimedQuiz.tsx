@@ -26,6 +26,7 @@ import { fetchQuestions } from '../../services/questionService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, Difficulty } from '../../types';
+import { getDefaultSection } from '../../utils/sectionUtils';
 
 interface QuizModeConfig {
   questions: number;
@@ -104,7 +105,7 @@ const TimedQuiz: React.FC = () => {
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { recordMCQAnswer } = useStudy();
-  const { course } = useCourse();
+  const { course, courseId } = useCourse();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -131,7 +132,7 @@ const TimedQuiz: React.FC = () => {
   const questionTopRef = useRef<HTMLDivElement>(null);
   const mode = searchParams.get('mode') || 'quick';
   const quizConfig = QUIZ_MODES[mode] || QUIZ_MODES.quick;
-  const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
+  const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
 
   // Load questions
   const startQuiz = async () => {
@@ -334,7 +335,7 @@ const TimedQuiz: React.FC = () => {
 
   // Setup Screen
   if (quizState === 'setup') {
-    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
+    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
     const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
     
     return (
@@ -418,7 +419,7 @@ const TimedQuiz: React.FC = () => {
                   }}
                   className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500"
                 >
-                  <option value="all">Current Section ({userProfile?.examSection || 'REG'})</option>
+                  <option value="all">Current Section ({userProfile?.examSection || getDefaultSection(courseId)})</option>
                   {course?.sections.map((s) => (
                     <option key={s.id} value={s.id}>{s.shortName} - {s.name}</option>
                   ))}

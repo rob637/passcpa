@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   BookOpen,
   CheckCircle,
@@ -18,12 +18,11 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
 import { useBookmarks } from '../common/Bookmarks';
-import { getCourseHomePath } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
 
@@ -99,6 +98,85 @@ const groupLessonsByArea = (lessons: Lesson[], completedLessons: Set<string>): G
       { id: 'tcp-property', title: 'Property Transactions', shortTitle: 'Property' },
       { id: 'tcp-estates', title: 'Gift & Estate Tax', shortTitle: 'Estate' },
     ],
+    // EA - Special Enrollment Exam
+    SEE1: [
+      { id: 'see1-preliminary', title: 'Preliminary Work and Taxpayer Data', shortTitle: 'Preliminary' },
+      { id: 'see1-income', title: 'Income and Assets', shortTitle: 'Income' },
+      { id: 'see1-deductions', title: 'Deductions and Adjustments', shortTitle: 'Deductions' },
+      { id: 'see1-taxation', title: 'Taxation and Advice', shortTitle: 'Taxation' },
+      { id: 'see1-credits', title: 'Credits', shortTitle: 'Credits' },
+      { id: 'see1-specialized', title: 'Specialized Returns', shortTitle: 'Specialized' },
+    ],
+    SEE2: [
+      { id: 'see2-entities', title: 'Business Entities', shortTitle: 'Entities' },
+      { id: 'see2-financial', title: 'Business Financial Information', shortTitle: 'Financial' },
+      { id: 'see2-income', title: 'Business Income and Expenses', shortTitle: 'Income/Exp' },
+      { id: 'see2-sole', title: 'Sole Proprietorships', shortTitle: 'Sole Prop' },
+      { id: 'see2-partnerships', title: 'Partnerships', shortTitle: 'Partnerships' },
+      { id: 'see2-ccorp', title: 'C Corporations', shortTitle: 'C Corps' },
+      { id: 'see2-scorp', title: 'S Corporations', shortTitle: 'S Corps' },
+    ],
+    SEE3: [
+      { id: 'see3-practices', title: 'Practices and Procedures', shortTitle: 'Practices' },
+      { id: 'see3-representation', title: 'Representation Before the IRS', shortTitle: 'Representation' },
+      { id: 'see3-specific', title: 'Specific Areas of Representation', shortTitle: 'Specific Areas' },
+      { id: 'see3-filing', title: 'Filing Requirements', shortTitle: 'Filing' },
+      { id: 'see3-penalties', title: 'Penalties and Interest', shortTitle: 'Penalties' },
+      { id: 'see3-collection', title: 'Collection Procedures', shortTitle: 'Collection' },
+    ],
+    // CMA - Certified Management Accountant
+    CMA1: [
+      { id: 'cma1-planning', title: 'External Financial Reporting Decisions', shortTitle: 'Ext Reporting' },
+      { id: 'cma1-performance', title: 'Planning, Budgeting and Forecasting', shortTitle: 'Planning' },
+      { id: 'cma1-cost', title: 'Performance Management', shortTitle: 'Performance' },
+      { id: 'cma1-internal', title: 'Cost Management', shortTitle: 'Cost Mgmt' },
+    ],
+    CMA2: [
+      { id: 'cma2-financial', title: 'Financial Statement Analysis', shortTitle: 'Analysis' },
+      { id: 'cma2-corporate', title: 'Corporate Finance', shortTitle: 'Corp Finance' },
+      { id: 'cma2-decision', title: 'Decision Analysis', shortTitle: 'Decisions' },
+      { id: 'cma2-risk', title: 'Risk Management', shortTitle: 'Risk' },
+    ],
+    // CIA - Certified Internal Auditor
+    CIA1: [
+      { id: 'cia1-foundations', title: 'Foundations of Internal Auditing', shortTitle: 'Foundations' },
+      { id: 'cia1-independence', title: 'Independence and Objectivity', shortTitle: 'Independence' },
+      { id: 'cia1-prof', title: 'Proficiency and Due Professional Care', shortTitle: 'Proficiency' },
+      { id: 'cia1-quality', title: 'Quality Assurance and Improvement', shortTitle: 'Quality' },
+    ],
+    CIA2: [
+      { id: 'cia2-manage', title: 'Managing the Internal Audit Activity', shortTitle: 'Managing' },
+      { id: 'cia2-planning', title: 'Planning the Engagement', shortTitle: 'Planning' },
+      { id: 'cia2-perform', title: 'Performing the Engagement', shortTitle: 'Performing' },
+      { id: 'cia2-communicate', title: 'Communicating Results', shortTitle: 'Communicating' },
+    ],
+    CIA3: [
+      { id: 'cia3-governance', title: 'Governance', shortTitle: 'Governance' },
+      { id: 'cia3-risk', title: 'Risk Management', shortTitle: 'Risk' },
+      { id: 'cia3-controls', title: 'Controls', shortTitle: 'Controls' },
+      { id: 'cia3-fraud', title: 'Business Acumen', shortTitle: 'Business' },
+    ],
+    // CISA - Certified Information Systems Auditor
+    CISA1: [
+      { id: 'cisa1-audit', title: 'Information Systems Auditing Process', shortTitle: 'Audit Process' },
+      { id: 'cisa1-methodology', title: 'Audit Methodology', shortTitle: 'Methodology' },
+    ],
+    CISA2: [
+      { id: 'cisa2-governance', title: 'IT Governance', shortTitle: 'Governance' },
+      { id: 'cisa2-management', title: 'IT Management', shortTitle: 'Management' },
+    ],
+    CISA3: [
+      { id: 'cisa3-acquisition', title: 'Information Systems Acquisition', shortTitle: 'Acquisition' },
+      { id: 'cisa3-development', title: 'IS Development and Implementation', shortTitle: 'Development' },
+    ],
+    CISA4: [
+      { id: 'cisa4-operations', title: 'Information Systems Operations', shortTitle: 'Operations' },
+      { id: 'cisa4-resilience', title: 'Business Resilience', shortTitle: 'Resilience' },
+    ],
+    CISA5: [
+      { id: 'cisa5-protection', title: 'Protection of Information Assets', shortTitle: 'Protection' },
+      { id: 'cisa5-security', title: 'Security Management', shortTitle: 'Security' },
+    ],
   };
 
   // Fall back to generic groupings for sections without specific areas
@@ -136,7 +214,6 @@ const Lessons: React.FC = () => {
   const { courseId } = useCourse();
   const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
   const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
@@ -144,13 +221,6 @@ const Lessons: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
-
-  // Redirect non-CPA users to their dashboard - /learn is CPA-specific
-  useEffect(() => {
-    if (courseId && courseId !== 'cpa') {
-      navigate(getCourseHomePath(courseId), { replace: true });
-    }
-  }, [courseId, navigate]);
 
   // Get bookmarked lesson IDs
   const bookmarkedLessonIds = new Set(
@@ -161,7 +231,7 @@ const Lessons: React.FC = () => {
 
   // Current exam section - use URL param if provided, otherwise use user profile
   const sectionFromUrl = searchParams.get('section');
-  const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (sectionFromUrl || userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
   // Fetch lessons and content counts

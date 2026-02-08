@@ -22,7 +22,7 @@ import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import {
   doc,
   getDoc,
@@ -213,7 +213,7 @@ const AITutor: React.FC = () => {
 
   // Safely cast userProfile
   const profile = userProfile as UserProfile | null;
-  const currentSection = profile?.examSection || 'REG';
+  const currentSection = profile?.examSection || getDefaultSection(courseId);
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Check for context passed from Practice page (via state or URL params)

@@ -100,6 +100,22 @@ import { CMA2_MCQ_BATCH7 } from './cma2-mcq-batch7';
 import { CMA1_MCQ_BATCH8 } from './cma1-mcq-batch8';
 import { CMA2_MCQ_BATCH8 } from './cma2-mcq-batch8';
 
+// MCQ Batch 9 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH9 } from './cma1-mcq-batch9';
+import { CMA2_MCQ_BATCH9 } from './cma2-mcq-batch9';
+
+// MCQ Batch 10 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH10 } from './cma1-mcq-batch10';
+import { CMA2_MCQ_BATCH10 } from './cma2-mcq-batch10';
+
+// MCQ Batch 11 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH11 } from './cma1-mcq-batch11';
+import { CMA2_MCQ_BATCH11 } from './cma2-mcq-batch11';
+
+// MCQ Batch 12 (mixed blueprint areas)
+import { CMA1_MCQ_BATCH12 } from './cma1-mcq-batch12';
+import { CMA2_MCQ_BATCH12 } from './cma2-mcq-batch12';
+
 // Re-export individual batches
 export {
   CMA1A_QUESTIONS_BATCH1,
@@ -152,6 +168,14 @@ export {
   CMA2_MCQ_BATCH7,
   CMA1_MCQ_BATCH8,
   CMA2_MCQ_BATCH8,
+  CMA1_MCQ_BATCH9,
+  CMA2_MCQ_BATCH9,
+  CMA1_MCQ_BATCH10,
+  CMA2_MCQ_BATCH10,
+  CMA1_MCQ_BATCH11,
+  CMA2_MCQ_BATCH11,
+  CMA1_MCQ_BATCH12,
+  CMA2_MCQ_BATCH12,
   CMA1A_QUESTIONS_BATCH4,
   CMA1B_QUESTIONS_BATCH4,
   CMA1E_QUESTIONS_BATCH4,
@@ -194,6 +218,10 @@ export const CMA_PART1_QUESTIONS = [
   ...CMA1_MCQ_BATCH6,
   ...CMA1_MCQ_BATCH7,
   ...CMA1_MCQ_BATCH8,
+  ...CMA1_MCQ_BATCH9,
+  ...CMA1_MCQ_BATCH10,
+  ...CMA1_MCQ_BATCH11,
+  ...CMA1_MCQ_BATCH12,
 ];
 
 export const CMA_PART2_QUESTIONS = [
@@ -211,6 +239,10 @@ export const CMA_PART2_QUESTIONS = [
   ...CMA2_MCQ_BATCH6,
   ...CMA2_MCQ_BATCH7,
   ...CMA2_MCQ_BATCH8,
+  ...CMA2_MCQ_BATCH9,
+  ...CMA2_MCQ_BATCH10,
+  ...CMA2_MCQ_BATCH11,
+  ...CMA2_MCQ_BATCH12,
 ];
 
 // All CMA questions combined

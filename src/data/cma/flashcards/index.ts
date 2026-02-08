@@ -12,6 +12,8 @@ import { CMA1_DEFINITIONS } from './cma1-definitions';
 import { CMA1_FORMULAS } from './cma1-formulas';
 import { CMA1_MNEMONICS } from './cma1-mnemonics';
 import { CMA1_BATCH2 } from './cma1-batch2';
+import { CMA1_BATCH3 } from './cma1-batch3';
+import { CMA1_BATCH4 } from './cma1-batch4';
 import { CMA1_COMPARISONS } from './cma1-comparisons';
 import { CMA1_ADVANCED_CONCEPTS } from './cma1-advanced-concepts';
 
@@ -20,6 +22,7 @@ import { CMA2_DEFINITIONS } from './cma2-definitions';
 import { CMA2_FORMULAS } from './cma2-formulas';
 import { CMA2_MNEMONICS } from './cma2-mnemonics';
 import { CMA2_BATCH2 } from './cma2-batch2';
+import { CMA2_BATCH3 } from './cma2-batch3';
 import { CMA2_COMPARISONS } from './cma2-comparisons';
 import { CMA2_ADVANCED_CONCEPTS } from './cma2-advanced-concepts';
 
@@ -32,6 +35,8 @@ export const CMA1_FLASHCARDS: CMAFlashcard[] = [
   ...CMA1_FORMULAS,
   ...CMA1_MNEMONICS,
   ...CMA1_BATCH2,
+  ...CMA1_BATCH3,
+  ...CMA1_BATCH4,
   ...CMA1_COMPARISONS,
   ...CMA1_ADVANCED_CONCEPTS,
 ];
@@ -41,6 +46,7 @@ export const CMA2_FLASHCARDS: CMAFlashcard[] = [
   ...CMA2_FORMULAS,
   ...CMA2_MNEMONICS,
   ...CMA2_BATCH2,
+  ...CMA2_BATCH3,
   ...CMA2_COMPARISONS,
   ...CMA2_ADVANCED_CONCEPTS,
 ];

@@ -20,7 +20,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { EXAM_BLUEPRINTS } from '../../config/examConfig';
 import { doc, getDoc } from 'firebase/firestore';
@@ -465,7 +465,7 @@ const Progress: React.FC = () => {
   const examDate = getExamDate(userProfile, userProfile?.examSection as string) || new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
-  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Load real data from Firestore

@@ -20,7 +20,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchTBSBySection, fetchTBSById } from '../../services/tbsService';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
 import { Button } from '../common/Button';
@@ -527,7 +527,7 @@ const TBSSimulator: React.FC = () => {
   const [taskScores, setTaskScores] = useState<Record<string, number>>({});
   const [error, setError] = useState<string | null>(null);
 
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const tbsId = searchParams.get('id');
   

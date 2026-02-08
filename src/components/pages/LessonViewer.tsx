@@ -22,6 +22,7 @@ import {
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonService';
 import { fetchQuestions } from '../../services/questionService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
@@ -355,7 +356,7 @@ const LessonViewer: React.FC = () => {
 
   // Use the lesson's actual section, not the user's profile section
   // This ensures PREP lessons stay within the PREP section
-  const currentSection = (lesson?.section || userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (lesson?.section || userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   
   // Cleanup TTS when navigating away from the lesson
   useEffect(() => {

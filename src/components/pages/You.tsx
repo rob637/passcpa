@@ -15,8 +15,8 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
-import { getExamDate } from '../../utils/profileHelpers';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -139,7 +139,8 @@ const You: React.FC = () => {
   // Get user info - properly typed
   const displayName = userProfile?.displayName || 'User';
   const firstName = displayName.split(' ')[0];
-  const examSection = userProfile?.examSection as string || 'FAR';
+  // Get exam section appropriate for current course (not just stored CPA section)
+  const examSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
   // Calculate days until exam - use getExamDate helper for multi-course support

@@ -27,7 +27,7 @@ import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { createExamDateUpdate } from '../../utils/profileHelpers';
 import { COURSES, ACTIVE_COURSES, type CourseId } from '../../courses';
 import {
@@ -97,7 +97,7 @@ const Settings: React.FC = () => {
 
   // Form states
   const [displayName, setDisplayName] = useState(profile?.displayName || '');
-  const [examSection, setExamSection] = useState(profile?.examSection || 'REG');
+  const [examSection, setExamSection] = useState(profile?.examSection || getDefaultSection(courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
   const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
   const [activeCourse, setActiveCourse] = useState<CourseId>(profile?.activeCourse || 'cpa');
@@ -106,7 +106,7 @@ const Settings: React.FC = () => {
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.displayName || '');
-      setExamSection(profile.examSection || 'REG');
+      setExamSection(profile.examSection || getDefaultSection(courseId));
       setDailyGoal(profile.dailyGoal || 50);
       setExamDate(formatDateForInput(profile.examDate));
       setActiveCourse(profile.activeCourse || 'cpa');
@@ -188,7 +188,7 @@ const Settings: React.FC = () => {
     setIsDownloading(true);
     try {
       // Fetch questions for user's section
-      const section = (profile?.examSection || 'REG') as any;
+      const section = (profile?.examSection || getDefaultSection(courseId)) as any;
       const questions = await fetchQuestions({ section, count: 500, courseId });
       await cacheQuestions(questions);
       const status = await getCacheStatus();
@@ -280,7 +280,7 @@ const Settings: React.FC = () => {
       // Create multi-course aware exam date update
       const examDateUpdate = createExamDateUpdate(
         userProfile,
-        examSection || userProfile?.examSection || 'FAR',
+        examSection || userProfile?.examSection || getDefaultSection(courseId),
         examDate ? new Date(examDate) : null
       );
       
@@ -754,7 +754,7 @@ const Settings: React.FC = () => {
                     <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 mb-4">
                       <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Download for Offline Study</h3>
                       <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
-                        Download up to 500 {profile?.examSection || 'REG'} questions to practice anywhere, anytime.
+                        Download up to 500 {profile?.examSection || getDefaultSection(courseId)} questions to practice anywhere, anytime.
                       </p>
                       <button
                         onClick={handleDownloadOffline}

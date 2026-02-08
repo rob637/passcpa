@@ -21,7 +21,7 @@ import { Button } from './common/Button';
 import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
 import { useCourse } from '../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
 import { getExamDate, createExamDateUpdate } from '../utils/profileHelpers';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
@@ -51,7 +51,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   const [saving, setSaving] = useState(false);
   
   // Get exam dates from user profile using multi-course helper
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   
   // Map exam dates per section for display
   // Uses examDates map if available, falls back to single examDate for active section

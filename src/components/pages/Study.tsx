@@ -14,7 +14,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
 import DailyPlanCard from '../DailyPlanCard';
@@ -36,7 +36,7 @@ const Study = () => {
   const { courseId, course } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
-  const currentSection = userProfile?.examSection || 'REG';
+  const currentSection = userProfile?.examSection || getDefaultSection(courseId);
   const sectionInfo = getSectionDisplayInfo(currentSection as string, courseId);
 
   // Build recent items from today's activities (async)

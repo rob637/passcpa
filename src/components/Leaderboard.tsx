@@ -108,7 +108,9 @@ const ActivityPulse: React.FC<{ count: number; label: string }> = ({ count, labe
 const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
   const { user } = useAuth();
   const { todayLog, currentStreak } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
+  
+  const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
   
   const [ranking, setRanking] = useState<UserRanking | null>(null);
   const [communityStats, setCommunityStats] = useState<CommunityStats | null>(null);
@@ -181,7 +183,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
           <h3 className="font-semibold text-slate-900">Join the Community</h3>
         </div>
         <p className="text-sm text-slate-600 mb-4">
-          Sign in to see how you compare to other CPA candidates and track your progress together!
+          Sign in to see how you compare to other {courseName} candidates and track your progress together!
         </p>
         <a
           href="/login"
@@ -418,8 +420,8 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
           <div>
             <h4 className="font-semibold text-slate-900 mb-1">You're Not Alone</h4>
             <p className="text-sm text-slate-600">
-              {communityStats?.todayActive || 0} other CPA candidates are studying right now.
-              Every question you answer brings you closer to passing. The CPA journey is tough,
+              {communityStats?.todayActive || 0} other {courseName} candidates are studying right now.
+              Every question you answer brings you closer to passing. The {courseName} journey is tough,
               but you're making progress every day. Keep going! 💪
             </p>
           </div>

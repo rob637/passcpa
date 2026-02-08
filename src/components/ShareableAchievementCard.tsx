@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Share2, Download, X, Linkedin, Twitter } from 'lucide-react';
 import html2canvas from 'html2canvas';
 import { Button } from './common/Button';
+import { useCourse } from '../providers/CourseProvider';
 
 interface ShareableAchievementCardProps {
   achievement: {
@@ -26,6 +27,8 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [shareError, setShareError] = useState<string | null>(null);
+  const { courseId, course } = useCourse();
+  const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
 
   const generateImage = async (): Promise<Blob | null> => {
     if (!cardRef.current) return null;
@@ -79,7 +82,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
       try {
         await navigator.share({
           title: `I unlocked "${achievement.name}" on VoraPrep!`,
-          text: `🏆 ${achievement.description} - Studying for the CPA exam with VoraPrep`,
+          text: `🏆 ${achievement.description} - Studying for the ${courseName} exam with VoraPrep`,
           files: [file],
         });
       } catch (error) {
@@ -95,7 +98,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   };
 
   const handleLinkedInShare = () => {
-    const text = `🏆 Just unlocked "${achievement.name}" while studying for the CPA exam!\n\n${achievement.description}\n\nPreparing with @VoraPrep - the smart way to pass the CPA exam.`;
+    const text = `🏆 Just unlocked "${achievement.name}" while studying for the ${courseName} exam!\n\n${achievement.description}\n\nPreparing with @VoraPrep - the smart way to pass the ${courseName} exam.`;
     const url = 'https://voraprep.com';
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${encodeURIComponent(text)}`,
@@ -105,7 +108,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   };
 
   const handleTwitterShare = () => {
-    const text = `🏆 Just unlocked "${achievement.name}" on @VoraPrep!\n\n${achievement.description}\n\n#CPAExam #Accounting`;
+    const text = `🏆 Just unlocked "${achievement.name}" on @VoraPrep!\n\n${achievement.description}\n\n#${courseName}Exam #Accounting`;
     const url = 'https://voraprep.com';
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
@@ -152,7 +155,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
                 </div>
                 <span className="font-bold text-lg">VoraPrep</span>
               </div>
-              <span className="text-xs text-white/70">CPA Exam Prep</span>
+              <span className="text-xs text-white/70">{courseName} Exam Prep</span>
             </div>
 
             {/* Achievement */}
@@ -245,7 +248,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
           </div>
 
           <p className="text-xs text-slate-600 dark:text-slate-300 text-center mt-4">
-            Share your progress and inspire others on their CPA journey!
+            Share your progress and inspire others on their {courseName} journey!
           </p>
         </div>
       </div>

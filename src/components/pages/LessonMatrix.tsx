@@ -180,7 +180,8 @@ const ObbbaIndicator = ({ note }: { note?: string }) => {
 
 const LessonMatrix: React.FC = () => {
   const navigate = useNavigate();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
+  const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
   const [search, setSearch] = useState('');
   const [sectionFilter, setSectionFilter] = useState<string>('ALL');
   const [methodFilter, setMethodFilter] = useState<string>('ALL');
@@ -271,12 +272,12 @@ const LessonMatrix: React.FC = () => {
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Study Guide</h1>
         </div>
         <p className="text-slate-600 dark:text-slate-300">
-          Browse all {allLessons.length} lessons across all CPA exam sections. Click any lesson to start learning.
+          Browse all {allLessons.length} lessons across all {courseName} exam sections. Click any lesson to start learning.
         </p>
       </div>
 
-      {/* Blueprint Info Banner */}
-      {showBlueprintInfo && (
+      {/* Blueprint Info Banner - CPA only */}
+      {showBlueprintInfo && courseId === 'cpa' && (
         <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-sky-50 dark:from-blue-950/30 dark:to-sky-950/30 rounded-xl border border-blue-200 dark:border-blue-800">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-3">

@@ -427,4 +427,52 @@ export const CFP_COURSE: Course = {
     flashcards: true,
     performanceTracking: true,
   },
+  
+  examOverview: {
+    title: 'Why Become a CFP Professional?',
+    description: 'The CERTIFIED FINANCIAL PLANNER™ certification is the standard of excellence in financial planning. CFP professionals meet rigorous education, examination, experience, and ethics requirements to help clients reach their financial goals.',
+    benefits: [
+      'Most recognized financial planning credential',
+      'Demonstrates competency and commitment to ethics',
+      'Fiduciary duty builds client trust',
+      'Higher earning potential (CFPs earn 26% more)',
+      'Growing demand as Baby Boomers retire',
+    ],
+    careerOpportunities: [
+      'Financial Planner / Advisor',
+      'Wealth Manager',
+      'Investment Advisor',
+      'Retirement Planning Specialist',
+      'Estate Planning Specialist',
+      'Tax Planning Advisor',
+      'Insurance Planning Specialist',
+    ],
+    averageSalary: '$70,000 - $200,000+ (experienced planners with AUM earn significantly more)',
+    examFormat: '1 exam (170 questions), 6 hours (two 3-hour sessions), MCQ including case studies',
+  },
+  
+  examStrategy: {
+    title: 'CFP Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Master the 8 Principal Knowledge Topics', description: 'Understand how all topics interrelate - the exam tests integrated planning, not isolated knowledge.' },
+      { title: 'Case Studies Are Key', description: '40-50% of the exam is case-based. Practice reading case facts quickly and identifying relevant information.' },
+      { title: 'Think Holistically', description: 'CFP exams test comprehensive planning. Consider tax implications, risk tolerance, and client goals together.' },
+      { title: 'Know the Code of Ethics', description: 'Ethics questions appear throughout. CFP Board\'s Code of Ethics and Standards of Conduct is heavily tested.' },
+    ],
+    studyTips: [
+      'Take a CFP Board-Registered Education Program first (required)',
+      'Practice with case-based questions extensively',
+      'Create a study schedule covering all 8 Principal Knowledge Topics',
+      'Focus on tax planning - it impacts almost every planning area',
+      'Review the CFP Board\'s exam content outline',
+    ],
+    commonMistakes: [
+      'Underestimating the breadth of topics covered',
+      'Not practicing case studies with time constraints',
+      'Ignoring psychology of financial planning topics',
+      'Memorizing without understanding integration between topics',
+      'Poor time management across the 6-hour exam',
+    ],
+    timeManagement: 'Plan 250-400 study hours. Schedule exam 3-6 months after completing education requirement.',
+  },
 };

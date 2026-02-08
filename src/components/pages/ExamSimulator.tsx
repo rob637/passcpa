@@ -35,121 +35,15 @@ import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, TBS } from '../../types';
 import TBSRenderer from '../exam/TBSRenderer';
+import { 
+  getExamConfig, 
+  getMiniExamConfig, 
+  getExamDescription,
+  ExamConfig,
+} from '../../services/examService';
+// Keep mock exam imports for blueprint weights and configurations
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mockExams';
 import { getTBSBySection } from '../../data/cpa/tbs';
-
-interface TestletConfig {
-  type: 'mcq' | 'tbs' | 'wc';
-  questions: number;
-  time: number;
-}
-
-interface ExamConfig {
-  testlets: TestletConfig[];
-  totalTime: number;
-  passingScore: number;
-}
-
-// Exam structure based on real CPA exam
-const EXAM_CONFIG: Record<ExamSection, ExamConfig> = {
-  REG: {
-    testlets: [
-      { type: 'mcq', questions: 36, time: 45 * 60 }, // 45 minutes
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 }, // Task-based simulations
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-    ],
-    totalTime: 4 * 60 * 60, // 4 hours
-    passingScore: 75,
-  },
-  AUD: {
-    testlets: [
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
-  FAR: {
-    testlets: [
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
-  BAR: {
-    testlets: [
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'mcq', questions: 33, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-      { type: 'tbs', questions: 6, time: 70 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
-  ISC: {
-    testlets: [
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
-  TCP: {
-    testlets: [
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'mcq', questions: 36, time: 45 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-      { type: 'tbs', questions: 6, time: 60 * 60 },
-    ],
-    totalTime: 4 * 60 * 60,
-    passingScore: 75,
-  },
-  PREP: {
-     testlets: [],
-     totalTime: 0,
-     passingScore: 0,
-  },
-  /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
-  BEC: {
-     testlets: [
-      { type: 'mcq', questions: 31, time: 45 * 60 },
-      { type: 'mcq', questions: 31, time: 45 * 60 },
-      { type: 'tbs', questions: 4, time: 60 * 60 },
-      { type: 'wc', questions: 3, time: 30 * 60 },
-    ],
-     totalTime: 4 * 60 * 60,
-     passingScore: 75,
-  }
-};
-
-// Mini exam for practice (shorter version)
-const MINI_EXAM: ExamConfig = {
-  testlets: [
-    { type: 'mcq', questions: 18, time: 25 * 60 },
-    { type: 'mcq', questions: 18, time: 25 * 60 },
-  ],
-  totalTime: 50 * 60, // 50 minutes
-  passingScore: 75,
-};
-
-// Mini exam with TBS for full experience
-const MINI_EXAM_WITH_TBS: ExamConfig = {
-  testlets: [
-    { type: 'mcq', questions: 12, time: 15 * 60 },
-    { type: 'mcq', questions: 12, time: 15 * 60 },
-    { type: 'tbs', questions: 2, time: 20 * 60 },
-  ],
-  totalTime: 50 * 60, // 50 minutes
-  passingScore: 75,
-};
 
 type ExamState = 'intro' | 'mock-selection' | 'exam' | 'break' | 'review' | 'complete';
 type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
@@ -204,15 +98,37 @@ const ExamSimulator: React.FC = () => {
         passingScore: selectedMockExam.passingScore,
       };
     } else if (examMode === 'mini-tbs') {
-      config = MINI_EXAM_WITH_TBS;
+      // Mini exam with TBS for courses that support TBS
+      const miniConfig = getMiniExamConfig(courseId, coursePassingScore);
+      if (course?.hasTBS) {
+        // Add TBS testlet if not already included
+        const hasTbsTestlet = miniConfig.testlets.some(t => t.type === 'tbs');
+        if (!hasTbsTestlet) {
+          config = {
+            ...miniConfig,
+            testlets: [
+              { type: 'mcq', questions: 12, time: 15 * 60 },
+              { type: 'mcq', questions: 12, time: 15 * 60 },
+              { type: 'tbs', questions: 2, time: 20 * 60 },
+            ],
+            totalTime: 50 * 60,
+          };
+        } else {
+          config = miniConfig;
+        }
+      } else {
+        // No TBS for this course, just use mini
+        config = getMiniExamConfig(courseId, coursePassingScore);
+      }
     } else if (examMode === 'full') {
-      config = EXAM_CONFIG[currentSection];
+      config = getExamConfig(courseId, currentSection);
     } else {
-      config = MINI_EXAM;
+      // Default mini exam
+      config = getMiniExamConfig(courseId, coursePassingScore);
     }
     // Override passing score with course-specific value
     return { ...config, passingScore: coursePassingScore };
-  }, [examMode, selectedMockExam, currentSection, coursePassingScore]);
+  }, [examMode, selectedMockExam, currentSection, coursePassingScore, courseId, course?.hasTBS]);
 
   // Load questions for exam
   const startExam = async () => {
@@ -549,7 +465,7 @@ const ExamSimulator: React.FC = () => {
       });
     });
 
-    // Combined scoring (MCQ ~50%, TBS ~50% per AICPA weighting)
+    // Combined scoring (MCQ ~50%, TBS ~50% per exam blueprint weighting)
     const mcqWeight = 0.5;
     const tbsWeight = 0.5;
     
@@ -601,7 +517,7 @@ const ExamSimulator: React.FC = () => {
             <div className="p-8">
               {/* Exam Mode Selection */}
               <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">Select Exam Type</h3>
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className={clsx('grid gap-4 mb-6', course?.hasTBS ? 'grid-cols-2' : 'grid-cols-2')}>
                 <button
                   onClick={() => setExamMode('mini')}
                   className={clsx(
@@ -617,6 +533,7 @@ const ExamSimulator: React.FC = () => {
                   </div>
                   <div className="text-sm text-slate-600 dark:text-slate-300">50 mins • 36 MCQs</div>
                 </button>
+                {course?.hasTBS && (
                 <button
                   onClick={() => setExamMode('mini-tbs')}
                   className={clsx(
@@ -632,6 +549,7 @@ const ExamSimulator: React.FC = () => {
                   </div>
                   <div className="text-sm text-slate-600 dark:text-slate-300">50 mins • 24 MCQs + 2 TBS</div>
                 </button>
+                )}
                 <button
                   onClick={() => setExamMode('full')}
                   className={clsx(
@@ -645,7 +563,7 @@ const ExamSimulator: React.FC = () => {
                     <GraduationCap className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                     <span className="font-bold text-slate-900 dark:text-white">Full Exam</span>
                   </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-300">4 hours • Full AICPA structure</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">{getExamDescription(courseId, currentSection)}</div>
                 </button>
                 <button
                   onClick={() => {
@@ -716,7 +634,7 @@ const ExamSimulator: React.FC = () => {
                     <div>
                       <div className="font-medium">Task-Based Simulations</div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Includes realistic TBS like the actual CPA exam
+                        Includes realistic TBS like the actual {course?.shortName || 'professional'} exam
                       </div>
                     </div>
                   </div>
@@ -749,7 +667,7 @@ const ExamSimulator: React.FC = () => {
                 </label>
                 {usePrometricTheme && (
                   <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
-                    <strong>Heads up:</strong> The Prometric interface uses a dated 1990s aesthetic that matches the real CPA exam. This helps reduce test-day anxiety by familiarizing you with the actual testing environment.
+                    <strong>Heads up:</strong> The Prometric interface uses a dated 1990s aesthetic that matches the real {course?.shortName || 'professional'} exam testing center. This helps reduce test-day anxiety by familiarizing you with the actual testing environment.
                   </div>
                 )}
               </div>
@@ -798,7 +716,7 @@ const ExamSimulator: React.FC = () => {
                 </div>
               </div>
               <p className="text-primary-100 text-sm">
-                Each mock exam is carefully designed to match the AICPA Blueprint weights and question distribution.
+                Each mock exam is carefully designed to match the {course?.metadata?.examProvider || 'official'} Blueprint weights and question distribution.
               </p>
             </div>
 

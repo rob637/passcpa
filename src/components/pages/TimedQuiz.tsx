@@ -47,55 +47,6 @@ const QUIZ_MODES: QuizModes = {
   custom: { questions: 10, timePerQuestion: 90, name: 'Custom Quiz' },
 };
 
-// Blueprint areas for targeting specific content
-const BLUEPRINT_AREAS: Record<ExamSection, { id: string; name: string }[]> = {
-  FAR: [
-    { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting' },
-    { id: 'FAR-II', name: 'Select Financial Statement Accounts' },
-    { id: 'FAR-III', name: 'Select Transactions' },
-    { id: 'FAR-IV', name: 'State and Local Governments' },
-    { id: 'FAR-V', name: 'Not-for-Profit Entities' },
-  ],
-  AUD: [
-    { id: 'AUD-I', name: 'Ethics & Professional Responsibilities' },
-    { id: 'AUD-II', name: 'Assessing Risk & Developing Response' },
-    { id: 'AUD-III', name: 'Performing Procedures & Obtaining Evidence' },
-    { id: 'AUD-IV', name: 'Forming Conclusions & Reporting' },
-    { id: 'AUD-V', name: 'Accounting & Review Services' },
-  ],
-  REG: [
-    { id: 'REG-I', name: 'Ethics, Professional Responsibilities & Tax Procedures' },
-    { id: 'REG-II', name: 'Business Law' },
-    { id: 'REG-III', name: 'Federal Taxation of Property Transactions' },
-    { id: 'REG-IV', name: 'Federal Taxation of Individuals' },
-    { id: 'REG-V', name: 'Federal Taxation of Entities' },
-  ],
-  BAR: [
-    { id: 'BAR-I', name: 'Business Analysis' },
-    { id: 'BAR-II', name: 'Technical Accounting & Reporting' },
-    { id: 'BAR-III', name: 'State & Local Government Concepts' },
-    { id: 'BAR-IV', name: 'Not-for-Profit Concepts' },
-  ],
-  ISC: [
-    { id: 'ISC-I', name: 'Information Systems & Data Management' },
-    { id: 'ISC-II', name: 'Security, Confidentiality & Privacy' },
-    { id: 'ISC-III', name: 'Technology-Enabled Finance Transformation' },
-  ],
-  TCP: [
-    { id: 'TCP-I', name: 'Tax Compliance & Planning for Individuals' },
-    { id: 'TCP-II', name: 'Entity Tax Compliance' },
-    { id: 'TCP-III', name: 'Entity Tax Planning' },
-    { id: 'TCP-IV', name: 'Property Transactions' },
-  ],
-  BEC: [
-    { id: 'BEC-I', name: 'Enterprise Risk Management' },
-    { id: 'BEC-II', name: 'Economics' },
-  ],
-  PREP: [
-    { id: 'PREP-I', name: 'CPA Exam Preparation' },
-  ],
-};
-
 type QuizState = 'setup' | 'active' | 'review' | 'complete' | 'explanations';
 
 const TimedQuiz: React.FC = () => {
@@ -336,7 +287,9 @@ const TimedQuiz: React.FC = () => {
   // Setup Screen
   if (quizState === 'setup') {
     const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
-    const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
+    // Get blueprint areas from course config dynamically
+    const sectionConfig = course.sections.find(s => s.id === effectiveSection);
+    const blueprintAreas = sectionConfig?.blueprintAreas?.map(bp => ({ id: bp.id, name: bp.name })) || [];
     
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-4">

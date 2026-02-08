@@ -188,6 +188,54 @@ export const CMA_COURSE: Course = {
     hasEssay: true, // Essays are 25% of CMA score; transitioning to CBQs in 2026
     hasDataInsights: false,
   },
+  
+  examOverview: {
+    title: 'Why Become a CMA?',
+    description: 'The Certified Management Accountant (CMA) credential from IMA demonstrates mastery in financial planning, analysis, control, decision support, and professional ethics. CMAs are strategic business partners who drive organizational success.',
+    benefits: [
+      'Higher earning potential (CMAs earn 58% more than non-certified peers)',
+      'Strategic management focus vs. compliance/audit focus',
+      'Global recognition in over 100 countries',
+      'Demonstrates both technical and leadership skills',
+      'Only 2 exam parts vs. CPA\'s 4 sections',
+    ],
+    careerOpportunities: [
+      'Financial Analyst / Senior Financial Analyst',
+      'Controller / Assistant Controller',
+      'CFO / VP of Finance',
+      'Cost Accountant',
+      'Budget Analyst',
+      'Corporate Finance Manager',
+      'Management Consultant',
+    ],
+    averageSalary: '$85,000 - $160,000+ (median $130K for CMAs)',
+    examFormat: '2 parts (Financial Planning & Analysis, Strategic Financial Management), 4 hours each, MCQ + Essay',
+  },
+  
+  examStrategy: {
+    title: 'CMA Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Master the Essay Format', description: 'Essays are 25% of each part. Practice writing structured responses that show calculation work AND explain your reasoning.' },
+      { title: 'Know Your Formulas', description: 'Variance analysis, CVP, NPV, WACC - memorize these cold. No formula sheet provided.' },
+      { title: 'Understand Decision Making', description: 'CMAs are decision-makers. Many questions test whether you can recommend the right course of action.' },
+      { title: 'Part Order Flexibility', description: 'Unlike CPA, you can take Part 2 before Part 1 if preferred. Some find Part 1 easier to start with.' },
+    ],
+    studyTips: [
+      'Create a comprehensive formula sheet and review daily',
+      'Practice essays under timed conditions (30 min for 2 essays)',
+      'Focus on ratio analysis - appears in both parts',
+      'Understand internal controls from a management perspective',
+      'Don\'t skip ethics - it\'s tested on both parts',
+    ],
+    commonMistakes: [
+      'Underestimating essay section difficulty',
+      'Not showing calculation work in essays',
+      'Memorizing formulas without understanding when to apply them',
+      'Poor time management (MCQ + Essay in 4 hours is tight)',
+      'Ignoring IMA\'s Statement of Ethical Professional Practice',
+    ],
+    timeManagement: 'Plan 150-200 hours per part. Many pass both parts within 6-12 months.',
+  },
 };
 
 /**

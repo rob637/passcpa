@@ -393,6 +393,54 @@ export const CISA_COURSE: Course = {
     hasDataInsights: false,
   },
   
+  examOverview: {
+    title: 'Why Become CISA Certified?',
+    description: 'The Certified Information Systems Auditor (CISA) from ISACA is the world\'s leading certification for IS audit professionals. CISA demonstrates your ability to assess vulnerabilities, report on compliance, and implement controls.',
+    benefits: [
+      'Most recognized IT audit certification globally',
+      'Required or preferred for many IT audit positions',
+      'Validates expertise in IS security, audit, and control',
+      'Average salary premium of 20-35%',
+      'Recognized by DoD for IAT/IAM Level III positions',
+    ],
+    careerOpportunities: [
+      'IS/IT Auditor',
+      'IT Security Manager',
+      'Compliance Manager/Officer',
+      'IT Risk Manager',
+      'Information Security Analyst',
+      'Security Consultant',
+      'IT Governance Specialist',
+    ],
+    averageSalary: '$90,000 - $150,000+ (senior roles $130K+)',
+    examFormat: '1 exam (150 questions), 4 hours, 100% MCQ',
+  },
+  
+  examStrategy: {
+    title: 'CISA Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Think Like an IS Auditor', description: 'The exam tests what an IS auditor should do FIRST, what is MOST important, and the BEST answer - not just what\'s technically correct.' },
+      { title: 'Understand ISACA\'s Mindset', description: 'ISACA emphasizes risk-based approaches. When in doubt, choose the answer that addresses risk or follows audit standards.' },
+      { title: 'Master Domain 1', description: 'Information Systems Auditing Process (21%) is foundational - understand audit planning, execution, and reporting thoroughly.' },
+      { title: 'Know the Frameworks', description: 'COBIT, ITIL, ISO 27001 - understand when each applies and key concepts from each.' },
+    ],
+    studyTips: [
+      'Use the CISA Review Manual as your primary source',
+      'Focus on ISACA\'s terminology and definitions',
+      'Practice with official ISACA questions - they test reasoning, not memorization',
+      'Review the glossary - ISACA\'s definitions may differ from industry usage',
+      'Join ISACA study groups or local chapters',
+    ],
+    commonMistakes: [
+      'Choosing technically correct answers over audit-focused answers',
+      'Not understanding "FIRST" and "MOST" qualifiers in questions',
+      'Underestimating governance and management domains',
+      'Ignoring the work experience requirement (5 years, some substitutions allowed)',
+      'Rushing through the 4-hour exam',
+    ],
+    timeManagement: 'Plan 150-200 study hours. Schedule exam after 2-4 months of dedicated study.',
+  },
+  
   passGuarantee: {
     enabled: true,
     headline: PASS_GUARANTEE_SUMMARY.headline,

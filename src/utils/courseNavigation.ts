@@ -139,6 +139,18 @@ export function getCourseTBSPath(courseId: CourseId): string {
   return COURSE_TBS_PATHS[courseId] || '/tbs';
 }
 
+// Get the lesson path for a specific course and lesson
+export function getCourseLessonPath(_courseId: CourseId, lessonId: string): string {
+  // All courses use /lessons/:lessonId since routing is shared
+  return `/lessons/${lessonId}`;
+}
+
+// Get the AI tutor path (course-aware via query string)
+export function getCourseAITutorPath(_courseId: CourseId): string {
+  // All courses share /ai-tutor but context is determined by CourseProvider
+  return '/ai-tutor';
+}
+
 // Detect course from pathname
 export function detectCourseFromPath(pathname: string): CourseId {
   if (pathname.startsWith('/ea')) return 'ea';

@@ -43,6 +43,13 @@ import {
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
 import { getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
+import { 
+  getCourseLessonPath, 
+  getCoursePracticePath, 
+  getCourseTBSPath, 
+  getCourseFlashcardPath,
+  getCourseHomePath,
+} from '../utils/courseNavigation';
 import clsx from 'clsx';
 
 // Storage key for today's completed activities (fallback for offline)
@@ -253,26 +260,26 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
     
-    // Navigate based on activity type
+    // Navigate based on activity type - using course-aware paths
     switch (activity.type) {
       case 'lesson':
-        navigate(`/lessons/${activity.params.lessonId}?${fromParam}`);
+        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}`);
         break;
       case 'mcq':
         if (activity.params.topic) {
-          navigate(`/practice?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
         } else {
-          navigate(`/practice?${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?${fromParam}`);
         }
         break;
       case 'tbs':
-        navigate(`/tbs?${fromParam}`);
+        navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        navigate(`/flashcards?${fromParam}`);
+        navigate(`${getCourseFlashcardPath(courseId)}?${fromParam}`);
         break;
       default:
-        navigate('/study');
+        navigate(getCourseHomePath(courseId));
     }
   };
 
@@ -394,7 +401,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         ) : dailyProgress < 100 ? (
           <div 
             className="p-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => navigate('/study')}
+            onClick={() => navigate(getCourseHomePath(courseId))}
           >
             <Target className="w-8 h-8 text-white mx-auto mb-2" />
             <p className="text-white font-medium">Daily plan complete! 🎯</p>
@@ -403,7 +410,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         ) : (
           <div 
             className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600 cursor-pointer hover:from-success-600 hover:to-success-700 transition-all"
-            onClick={() => navigate('/practice')}
+            onClick={() => navigate(getCoursePracticePath(courseId))}
           >
             <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
             <p className="text-white font-medium">All done for today! 🎉</p>

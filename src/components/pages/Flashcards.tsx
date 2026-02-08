@@ -26,14 +26,11 @@ import { getDefaultSection } from '../../utils/sectionUtils';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { fetchQuestions } from '../../services/questionService';
+import { getFlashcardsBySection, Flashcard as DedicatedFlashcard } from '../../services/flashcardService';
 import { calculateNextReview, getDueCards, getStudyStats } from '../../services/spacedRepetition';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, AllExamSections } from '../../types';
-import {
-  getFlashcardsBySection,
-  Flashcard as DedicatedFlashcard,
-} from '../../data/cpa/flashcards';
 
 interface RatingButton {
   rating: 'again' | 'hard' | 'good' | 'easy';
@@ -135,7 +132,7 @@ const Flashcards: React.FC = () => {
         
         // Get dedicated flashcards (definitions, formulas, mnemonics)
         if (effectiveType === 'all' || effectiveType === 'definitions' || effectiveType === 'formulas' || effectiveType === 'mnemonics') {
-          const sectionFlashcards = getFlashcardsBySection(currentSection);
+          const sectionFlashcards = await getFlashcardsBySection(currentSection, courseId);
           const dedicatedCards: Flashcard[] = sectionFlashcards
             .filter((card: DedicatedFlashcard) => {
               if (effectiveType === 'all') return true;
@@ -228,7 +225,7 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, currentSection, mode, topic, cardType, typeParam]);
+  }, [user, courseId, currentSection, mode, topic, cardType, typeParam]);
 
   // Helper function to format dedicated card backs with formula/mnemonic/example
   const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {

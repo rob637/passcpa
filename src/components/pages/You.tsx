@@ -111,7 +111,7 @@ const WeeklyChart = ({ activity }: { activity: { date: Date; questions: number }
 const You: React.FC = () => {
   const { user, userProfile, signOut } = useAuth();
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   
   // Initialize with current week's dates (Mon-Sun) for consistent chart rendering
   const getInitialWeeklyActivity = () => {
@@ -530,7 +530,7 @@ const You: React.FC = () => {
       <div className="text-center text-xs text-slate-600 dark:text-slate-400">
         <p>VoraPrep v1.1</p>
         <p className="mt-1">
-          Not affiliated with AICPA, NASBA, or any state board.
+          Not affiliated with {course?.metadata?.examProvider?.split(' (')[0] || 'any exam provider'} or any licensing board.
         </p>
       </div>
     </div>

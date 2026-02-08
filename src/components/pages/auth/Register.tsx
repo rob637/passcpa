@@ -97,7 +97,7 @@ const Register = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Create your account</h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Start your journey to passing the CPA exam</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Start your journey to passing your certification exam</p>
       </div>
 
       {/* Google Sign Up - Primary Option */}

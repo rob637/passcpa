@@ -1,0 +1,491 @@
+/**
+ * CFP Tax Questions - Batch 8
+ * Domain 5: Tax Planning (14% of exam)
+ * 25 additional questions covering advanced tax topics
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_TAX_BATCH8_QUESTIONS: Question[] = [
+  // TAX-1: Fundamentals
+  {
+    id: 'CFP-TAX-B8-001',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
+    topic: 'Tax Fundamentals',
+    subtopic: 'Tax Accounting Methods',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The cash method of accounting for tax purposes:',
+    options: [
+      'A) Recognizes income when earned and expenses when incurred',
+      'B) Recognizes income when received and expenses when paid',
+      'C) Is required for all businesses',
+      'D) Is only available to corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'Cash method reports income when actually or constructively received and expenses when paid. It\'s available to most individuals and small businesses. Accrual method (income when earned/expenses when incurred) is required for larger C corporations and businesses with inventory exceeding $25M average gross receipts.'
+  },
+  {
+    id: 'CFP-TAX-B8-002',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
+    topic: 'Tax Fundamentals',
+    subtopic: 'Hobby Loss Rules',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the hobby loss rules, an activity is presumed to be for profit if:',
+    options: [
+      'A) It always generates losses',
+      'B) It shows a profit in 3 of the last 5 tax years (2 of 7 for horse activities)',
+      'C) The taxpayer enjoys the activity',
+      'D) Expenses exceed $10,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'The 3-of-5 presumption (2-of-7 for horses) helps establish profit motive. If classified as a hobby, losses cannot offset other income (after TCJA). Nine factors are considered including time/effort, manner conducted, expertise, and history of income. The presumption can be rebutted by the IRS.'
+  },
+  {
+    id: 'CFP-TAX-B8-003',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
+    topic: 'Tax Fundamentals',
+    subtopic: 'Recovery of Capital',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The recovery of capital doctrine ensures that:',
+    options: [
+      'A) All receipts are taxable',
+      'B) Taxpayers are not taxed on the return of their own investment, only on amounts exceeding basis',
+      'C) Capital gains are always tax-free',
+      'D) Losses are never deductible'
+    ],
+    correctAnswer: 1,
+    explanation: 'Recovery of capital means you don\'t pay tax on getting your own money back. If you sell stock bought for $10,000 at $15,000, only $5,000 is taxable—the $10,000 is return of capital. This applies to annuity exclusion ratios, installment sales, and partnership distributions.'
+  },
+  // TAX-2: Income Recognition
+  {
+    id: 'CFP-TAX-B8-004',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-2',
+    topic: 'Income',
+    subtopic: 'Alimony Tax Treatment',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For divorce agreements executed after 2018:',
+    options: [
+      'A) Alimony is deductible by the payer and taxable to the recipient',
+      'B) Alimony is neither deductible by the payer nor taxable to the recipient',
+      'C) Alimony is tax-free to both parties',
+      'D) Only child support is deductible'
+    ],
+    correctAnswer: 1,
+    explanation: 'TCJA eliminated the alimony deduction for agreements executed after 12/31/2018. The payer gets no deduction; the recipient pays no tax. Pre-2019 agreements retain the old deductible/taxable treatment unless modified to specify otherwise. Child support was never deductible/taxable.'
+  },
+  {
+    id: 'CFP-TAX-B8-005',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-2',
+    topic: 'Income',
+    subtopic: 'Economic Benefit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The economic benefit doctrine results in taxation when:',
+    options: [
+      'A) Income is actually received',
+      'B) A taxpayer receives an economic benefit that is the equivalent of cash, even without actual receipt',
+      'C) The taxpayer files their return',
+      'D) Only upon sale of property'
+    ],
+    correctAnswer: 1,
+    explanation: 'Economic benefit triggers taxation when the taxpayer has a right to property or services that has ascertainable value, even without actual receipt. Examples include employer-purchased life insurance over $50,000 and certain funded deferred compensation. It prevents deferral when economic value is received.'
+  },
+  {
+    id: 'CFP-TAX-B8-006',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-2',
+    topic: 'Income',
+    subtopic: 'Imputed Interest',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'If a family loan of $200,000 is made at 0% interest, the IRS will:',
+    options: [
+      'A) Ignore the interest rate',
+      'B) Impute interest at the Applicable Federal Rate, treating it as income to the lender and potentially a gift to the borrower',
+      'C) Charge a penalty only',
+      'D) Apply ordinary income treatment to principal'
+    ],
+    correctAnswer: 1,
+    explanation: 'Below-market loans trigger imputed interest under IRC Section 7872. Interest calculated at AFR is treated as paid by borrower and received by lender (taxable interest income). For gift loans, the lender makes a deemed gift of the foregone interest. Exceptions exist for small loans under $10,000 or $100,000 without investment income offset.'
+  },
+  // TAX-3: Deductions
+  {
+    id: 'CFP-TAX-B8-007',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Deductions',
+    subtopic: 'Excess Business Loss',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The excess business loss limitation:',
+    options: [
+      'A) Was repealed by TCJA',
+      'B) Limits business losses that can offset non-business income to approximately $305,000 (single) or $610,000 (MFJ) annually',
+      'C) Only applies to corporations',
+      'D) Has no carryforward'
+    ],
+    correctAnswer: 1,
+    explanation: 'Excess business loss rules limit the net business loss deduction for non-corporate taxpayers (amounts adjusted annually for inflation). Disallowed losses become NOL carryforwards. This applies after at-risk and passive loss limitations. CARES Act suspended then reinstated the rules.'
+  },
+  {
+    id: 'CFP-TAX-B8-008',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Deductions',
+    subtopic: 'Section 1244 Stock',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Section 1244 stock allows:',
+    options: [
+      'A) Tax-free gains on sale',
+      'B) Losses on qualifying small business stock to be treated as ordinary losses up to $50,000 ($100,000 MFJ) per year',
+      'C) Unlimited loss deductions',
+      'D) Only capital gain treatment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 1244 provides significant tax benefits for investing in small businesses. Losses are ordinary (fully deductible against ordinary income) rather than capital ($3,000 annual limit). The stock must be issued for money or property to an individual, with corporate capitalization under $1 million. Gains remain capital.'
+  },
+  {
+    id: 'CFP-TAX-B8-009',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Deductions',
+    subtopic: 'Abandonment Loss',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An abandonment loss for non-depreciable business property:',
+    options: [
+      'A) Is never deductible',
+      'B) Is an ordinary loss equal to the property\'s adjusted basis',
+      'C) Must be amortized over 5 years',
+      'D) Is limited to $3,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Abandonment creates an ordinary loss (not capital) for the property\'s remaining basis. Unlike sale (which can be capital gain/loss), abandonment is ordinary because there\'s no sale or exchange. The loss is claimed in the year of permanent abandonment—intent plus overt act of abandonment must be demonstrated.'
+  },
+  // TAX-4: Tax Credits
+  {
+    id: 'CFP-TAX-B8-010',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Tax Credits',
+    subtopic: 'Residential Clean Energy Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Residential Clean Energy Credit (formerly Residential Energy Efficient Property Credit):',
+    options: [
+      'A) Is a deduction, not a credit',
+      'B) Provides a 30% credit for solar, wind, geothermal, and battery storage systems installed through 2032',
+      'C) Only applies to new construction',
+      'D) Is limited to $500'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRA enhanced the credit to 30% through 2032, then 26% in 2033, 22% in 2034. It covers solar electric, solar water heating, fuel cells, small wind, geothermal heat pumps, and battery storage (new for 2023+). No dollar limit for most technologies. The credit is nonrefundable but carries forward.'
+  },
+  {
+    id: 'CFP-TAX-B8-011',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Tax Credits',
+    subtopic: 'Foreign Tax Credit',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A taxpayer with $5,000 of foreign taxes paid and $100,000 of worldwide taxable income ($20,000 foreign, $80,000 U.S.) with a U.S. tax of $20,000 can claim a foreign tax credit of:',
+    options: [
+      'A) $5,000',
+      'B) $4,000',
+      'C) $20,000',
+      'D) $0'
+    ],
+    correctAnswer: 1,
+    explanation: 'FTC limitation = U.S. Tax × (Foreign Income ÷ Worldwide Income) = $20,000 × ($20,000 ÷ $100,000) = $4,000. Though $5,000 was paid, only $4,000 can be claimed this year. The excess $1,000 can carry back 1 year or forward 10 years. The credit prevents double taxation of foreign income.'
+  },
+  {
+    id: 'CFP-TAX-B8-012',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Tax Credits',
+    subtopic: 'Saver\'s Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Retirement Savings Contributions Credit (Saver\'s Credit) provides:',
+    options: [
+      'A) A refundable credit for all taxpayers',
+      'B) A nonrefundable credit of 10-50% of retirement contributions (up to $2,000) for low-to-moderate income taxpayers',
+      'C) Credit only for IRA contributions',
+      'D) No income limits'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Saver\'s Credit provides 50%, 20%, or 10% credit on up to $2,000 of retirement plan contributions based on AGI. Maximum credit is $1,000 ($2,000 MFJ). Phaseout varies by filing status. Must be 18+, not a full-time student or dependent. It\'s in addition to any deduction for contributions.'
+  },
+  // TAX-5: Special Topics
+  {
+    id: 'CFP-TAX-B8-013',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-5',
+    topic: 'Special Topics',
+    subtopic: 'Qualified Personal Residence Trust',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A Qualified Personal Residence Trust (QPRT):',
+    options: [
+      'A) Provides no estate planning benefits',
+      'B) Transfers a home to beneficiaries at a reduced gift tax value while the grantor retains the right to live there for a term of years',
+      'C) Is a revocable trust',
+      'D) Only works for vacation homes'
+    ],
+    correctAnswer: 1,
+    explanation: 'QPRTs freeze the home\'s value for estate tax purposes. The grantor gifts the home but retains occupancy for a term. The gift value is discounted based on term length and interest rates. If the grantor survives the term, the home passes to beneficiaries outside the estate. Early death nullifies the benefit.'
+  },
+  {
+    id: 'CFP-TAX-B8-014',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-5',
+    topic: 'Special Topics',
+    subtopic: 'Private Foundation Rules',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Private foundations are subject to:',
+    options: [
+      'A) The same rules as public charities',
+      'B) Excise taxes on investment income, minimum distribution requirements, and restrictions on self-dealing',
+      'C) No reporting requirements',
+      'D) Unlimited deduction for donors'
+    ],
+    correctAnswer: 1,
+    explanation: 'Private foundations face: 1.39% excise tax on net investment income, 5% minimum annual distributions, prohibitions on self-dealing with substantial contributors, excess business holding limits, and jeopardy investment restrictions. Donors get 30% AGI limit for cash (vs 60% for public charities). Form 990-PF filing is required.'
+  },
+  {
+    id: 'CFP-TAX-B8-015',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-5',
+    topic: 'Special Topics',
+    subtopic: 'State Residency',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For state income tax purposes, domicile is determined by:',
+    options: [
+      'A) Only where you vote',
+      'B) Multiple factors including intent to remain permanently, location of family, voter registration, driver\'s license, and time spent',
+      'C) Where you work only',
+      'D) Federal tax return address'
+    ],
+    correctAnswer: 1,
+    explanation: 'States examine intent and objective factors: where you vote, hold licenses, bank, keep valuables, have professional ties, spend time, belong to organizations, and where family resides. Domicile can only be in one place and requires intent to make it your permanent home. This becomes important when moving to low/no-tax states.'
+  },
+  // Additional Topics
+  {
+    id: 'CFP-TAX-B8-016',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
+    topic: 'Tax Fundamentals',
+    subtopic: 'Tax Benefit Rule',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The tax benefit rule requires:',
+    options: [
+      'A) Maximum deductions every year',
+      'B) Including in income the recovery of any amount previously deducted that provided a tax benefit',
+      'C) Refiling prior returns',
+      'D) Reporting all gifts received'
+    ],
+    correctAnswer: 1,
+    explanation: 'If you deducted an expense (getting a tax benefit) and later recover that amount, the recovery is taxable income. Examples: deducted bad debt later recovered, state tax refund after itemizing in prior year. If the original deduction provided no benefit (standard deduction used), recovery isn\'t taxable.'
+  },
+  {
+    id: 'CFP-TAX-B8-017',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-2',
+    topic: 'Income',
+    subtopic: 'Discharge of Indebtedness',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Cancelled debt is generally taxable income, but exceptions include:',
+    options: [
+      'A) Any personal debt cancellation',
+      'B) Bankruptcy, insolvency, qualified principal residence indebtedness (through 2025), and student loan forgiveness meeting certain criteria',
+      'C) Credit card debt only',
+      'D) Debts under $1,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Debt discharged in bankruptcy is excluded. Insolvency excludes debt forgiveness to the extent of insolvency. Qualified principal residence debt exclusion has been extended. Certain student loan forgiveness is excluded through 2025. Otherwise, Form 1099-C cancellation amounts are taxable ordinary income.'
+  },
+  {
+    id: 'CFP-TAX-B8-018',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Deductions',
+    subtopic: 'Charitable Remainder Trust',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A charitable remainder trust provides the grantor:',
+    options: [
+      'A) No current tax benefit',
+      'B) An income tax deduction for the present value of the remainder interest, plus income stream for life or term of years',
+      'C) Immediate access to principal',
+      'D) No income payments'
+    ],
+    correctAnswer: 1,
+    explanation: 'CRTs provide current deduction based on present value of future charitable gift, income stream from trust assets, and removal of assets from estate. When funded with appreciated property, capital gains are avoided at contribution. Remainder (minimum 10% of initial value) goes to charity. Income is taxed to beneficiary under tier rules.'
+  },
+  {
+    id: 'CFP-TAX-B8-019',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Tax Credits',
+    subtopic: 'Adoption Credit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The adoption tax credit:',
+    options: [
+      'A) Is unlimited',
+      'B) Provides dollar-for-dollar credit for qualified adoption expenses up to a maximum, with higher limits for special needs adoptions',
+      'C) Is refundable',
+      'D) Only applies to domestic adoptions'
+    ],
+    correctAnswer: 1,
+    explanation: 'The adoption credit covers qualified expenses (adoption fees, legal costs, court costs, travel) up to $16,810 (2024). Special needs adoptions get the full credit regardless of actual expenses. Income phaseout applies. The credit is nonrefundable but carryforward is available for 5 years.'
+  },
+  {
+    id: 'CFP-TAX-B8-020',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-5',
+    topic: 'Special Topics',
+    subtopic: 'Opportunity Zone Investment',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A Qualified Opportunity Zone investment allows:',
+    options: [
+      'A) Immediate tax deduction',
+      'B) Deferral of capital gains, with potential exclusion of appreciation if held 10+ years',
+      'C) Ordinary income treatment',
+      'D) Only real estate investments'
+    ],
+    correctAnswer: 1,
+    explanation: 'Investing capital gains in a Qualified Opportunity Fund within 180 days defers recognition until 2026 or earlier sale. Gains from the QOZ investment itself are excluded if held 10+ years. Original gain is eventually taxable but appreciation during QOZ holding period can be tax-free.'
+  },
+  {
+    id: 'CFP-TAX-B8-021',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-1',
+    topic: 'Tax Fundamentals',
+    subtopic: 'Assignment of Income',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The assignment of income doctrine prevents:',
+    options: [
+      'A) All gift-giving',
+      'B) Taxpayers from shifting income to others in lower brackets by assigning the right to receive income that was already earned',
+      'C) Business deductions',
+      'D) Capital gain treatment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Income is taxed to the person who earns it, not someone they assign it to. You can\'t give away salary you\'ve earned to a child to be taxed at their rate. The fruit (income) is taxed to the tree (earner/owner). Legitimate transfers of income-producing property are distinguished from mere assignments of income.'
+  },
+  {
+    id: 'CFP-TAX-B8-022',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-2',
+    topic: 'Income',
+    subtopic: 'Gambling Income',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For tax purposes, gambling income:',
+    options: [
+      'A) Is tax-free',
+      'B) Must be reported, with gambling losses deductible only as itemized deductions and only to the extent of winnings',
+      'C) Is always subject to withholding',
+      'D) Cannot be offset by losses'
+    ],
+    correctAnswer: 1,
+    explanation: 'All gambling winnings are taxable income. Losses are deductible only if itemizing and only up to the amount of winnings—you can\'t create a net gambling loss. Professional gamblers report on Schedule C and can deduct more expenses. W-2G is issued for certain large winnings.'
+  },
+  {
+    id: 'CFP-TAX-B8-023',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-3',
+    topic: 'Deductions',
+    subtopic: 'Net Investment Income Tax',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The 3.8% Net Investment Income Tax applies to:',
+    options: [
+      'A) All taxpayers on all income',
+      'B) The lesser of net investment income or MAGI exceeding $200,000 (single) / $250,000 (MFJ)',
+      'C) Only wages',
+      'D) Retirement income only'
+    ],
+    correctAnswer: 1,
+    explanation: 'NIIT applies 3.8% tax to investment income (interest, dividends, capital gains, rents, royalties, passive business income) for higher earners. It\'s calculated on the lesser of NII or the amount MAGI exceeds thresholds. Qualified retirement plan distributions are exempt. Active business income and municipal bond interest are excluded.'
+  },
+  {
+    id: 'CFP-TAX-B8-024',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-4',
+    topic: 'Tax Credits',
+    subtopic: 'General Business Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The General Business Credit:',
+    options: [
+      'A) Is a single credit with one calculation',
+      'B) Combines multiple business credits into one limitation, with carryback and carryforward provisions',
+      'C) Has no limitation',
+      'D) Is only for corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'The GBC combines work opportunity, research, disabled access, low-income housing, and other credits. It\'s limited to net income tax minus 25% of tax exceeding $25,000. Unused credits generally carry back 1 year and forward 20 years (varies by component). Different ordering rules apply to components.'
+  },
+  {
+    id: 'CFP-TAX-B8-025',
+    courseId: 'cfp',
+    section: 'CFP-TAX',
+    blueprintArea: 'TAX-5',
+    topic: 'Special Topics',
+    subtopic: 'Innocent Spouse Relief',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Innocent spouse relief may be available when:',
+    options: [
+      'A) Both spouses knew about unreported income',
+      'B) A spouse didn\'t know about unreported income or erroneous items on a joint return and it would be unfair to hold them liable',
+      'C) The couple is still married',
+      'D) Less than $10,000 is owed'
+    ],
+    correctAnswer: 1,
+    explanation: 'Innocent spouse relief (IRC 6015) separates one spouse from liability when the other created the tax problem unknowingly. Requirements include: joint return filed, understatement due to erroneous items of the other spouse, didn\'t know and had no reason to know, and it\'s inequitable to hold liable. Separation of liability is an alternative.'
+  }
+];

@@ -70,14 +70,33 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             </Link>
             <span className={`${colors.text} font-bold text-lg`}>{config.name}</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
+            {/* Quick Exam Switcher Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium">
+                Switch Exam
+                <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-2">
+                  <Link to="/cpa" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600' : 'text-slate-700 dark:text-slate-300'}`}>CPA - Certified Public Accountant</Link>
+                  <Link to="/ea-prep" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'ea' ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600' : 'text-slate-700 dark:text-slate-300'}`}>EA - Enrolled Agent</Link>
+                  <Link to="/cma" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'cma' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-600' : 'text-slate-700 dark:text-slate-300'}`}>CMA - Management Accountant</Link>
+                  <Link to="/cia" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'cia' ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-600' : 'text-slate-700 dark:text-slate-300'}`}>CIA - Internal Auditor</Link>
+                  <Link to="/cfp" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'cfp' ? 'bg-green-50 dark:bg-green-900/30 text-green-600' : 'text-slate-700 dark:text-slate-300'}`}>CFP - Financial Planner</Link>
+                  <Link to="/cisa" className={`block px-3 py-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-700 ${config.id === 'cisa' ? 'bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600' : 'text-slate-700 dark:text-slate-300'}`}>CISA - IS Auditor</Link>
+                  <div className="border-t border-slate-200 dark:border-slate-700 mt-2 pt-2">
+                    <Link to="/" className="block px-3 py-2 rounded-lg text-sm text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 font-medium">View All Certifications →</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
             <a href="#why-become" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Why {config.name}?</a>
             <a href="#exam" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Exam</a>
             <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Features</a>
             {config.competitors && (
               <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Compare</a>
             )}
-            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">All Exams</Link>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <Link to={config.loginPath} className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-slate-900 px-4 py-2 transition-colors">
@@ -432,12 +451,14 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-white mb-4">Other Certifications</h4>
+              <h4 className="font-semibold text-white mb-4">All Certifications</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link to="/cpa" className="hover:text-white transition-colors">CPA Exam Prep</Link></li>
-                <li><Link to="/ea-prep" className="hover:text-white transition-colors">EA Exam Prep</Link></li>
-                <li><Link to="/cma" className="hover:text-white transition-colors">CMA Exam Prep</Link></li>
-                <li><Link to="/" className="hover:text-white transition-colors">All Certifications</Link></li>
+                <li><Link to="/cpa" className={`hover:text-white transition-colors ${config.id === 'cpa' ? 'text-white font-medium' : ''}`}>CPA Exam Prep</Link></li>
+                <li><Link to="/ea-prep" className={`hover:text-white transition-colors ${config.id === 'ea' ? 'text-white font-medium' : ''}`}>EA Exam Prep</Link></li>
+                <li><Link to="/cma" className={`hover:text-white transition-colors ${config.id === 'cma' ? 'text-white font-medium' : ''}`}>CMA Exam Prep</Link></li>
+                <li><Link to="/cia" className={`hover:text-white transition-colors ${config.id === 'cia' ? 'text-white font-medium' : ''}`}>CIA Exam Prep</Link></li>
+                <li><Link to="/cfp" className={`hover:text-white transition-colors ${config.id === 'cfp' ? 'text-white font-medium' : ''}`}>CFP Exam Prep</Link></li>
+                <li><Link to="/cisa" className={`hover:text-white transition-colors ${config.id === 'cisa' ? 'text-white font-medium' : ''}`}>CISA Exam Prep</Link></li>
               </ul>
             </div>
             

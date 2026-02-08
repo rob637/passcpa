@@ -262,8 +262,24 @@ const VoraPrep = () => {
               className="h-10 hidden dark:block" 
             />
           </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#courses" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Exams</a>
+          <div className="hidden md:flex items-center gap-6">
+            {/* Exams Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                Exams
+                <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-2">
+                  <Link to="/cpa" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600">CPA - Certified Public Accountant</Link>
+                  <Link to="/ea-prep" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:text-emerald-600">EA - Enrolled Agent</Link>
+                  <Link to="/cma" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-600">CMA - Management Accountant</Link>
+                  <Link to="/cia" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-900/30 hover:text-amber-600">CIA - Internal Auditor</Link>
+                  <Link to="/cfp" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-green-50 dark:hover:bg-green-900/30 hover:text-green-600">CFP - Financial Planner</Link>
+                  <Link to="/cisa" className="block px-3 py-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-900/30 hover:text-cyan-600">CISA - IS Auditor</Link>
+                </div>
+              </div>
+            </div>
             <a href="#why" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Why VoraPrep</a>
             <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
           </div>
@@ -275,7 +291,7 @@ const VoraPrep = () => {
               to="/register" 
               className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-0.5"
             >
-              Get Started
+              Start Free
             </Link>
           </div>
         </div>

@@ -15,6 +15,8 @@ import clsx from 'clsx';
 import { CIA_SECTION_CONFIG, CIASectionId, CIA_COURSE } from './config';
 import { useCIAProgress } from '../../hooks/useCIAProgress';
 import { PageLoader } from '../../components/common/PageLoader';
+import { Button } from '../../components/common/Button';
+import { Card } from '../../components/common/Card';
 
 // Blueprint Area Card
 interface BlueprintAreaCardProps {
@@ -38,7 +40,7 @@ const BlueprintAreaCard: React.FC<BlueprintAreaCardProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="card overflow-hidden">
+    <Card noPadding className="overflow-hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="w-full p-4 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
@@ -95,20 +97,21 @@ const BlueprintAreaCard: React.FC<BlueprintAreaCardProps> = ({
                 </li>
               ))}
             </ul>
-            <button
+            <Button
+              variant="primary"
+              fullWidth
+              leftIcon={Play}
               onClick={(e) => {
                 e.stopPropagation();
                 onPractice();
               }}
-              className="btn btn-primary w-full"
             >
-              <Play className="w-4 h-4 mr-1" />
               Practice This Area
-            </button>
+            </Button>
           </div>
         </div>
       )}
-    </div>
+    </Card>
   );
 };
 
@@ -142,12 +145,14 @@ export default function CIASection() {
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
       {/* Header */}
       <div>
-        <button 
+        <Button 
+          variant="ghost"
+          size="sm"
           onClick={() => navigate('/cia/dashboard')}
-          className="text-sm text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 mb-4 flex items-center hover:underline"
+          className="text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 mb-4 hover:underline"
         >
             &larr; Back to Dashboard
-        </button>
+        </Button>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-4">
             <div 
@@ -170,13 +175,15 @@ export default function CIASection() {
               </div>
             </div>
           </div>
-          <button 
-            onClick={() => navigate('/cia/practice/quick')} // In real app, pass section ID
-            className="btn btn-primary btn-lg shadow-lg shadow-primary-500/20"
+          <Button 
+            variant="primary"
+            size="lg"
+            leftIcon={Play}
+            onClick={() => navigate('/cia/practice/quick')}
+            className="shadow-lg shadow-primary-500/20"
           >
-            <Play className="w-5 h-5 mr-2 fill-current" />
             Start Practice
-          </button>
+          </Button>
         </div>
       </div>
 

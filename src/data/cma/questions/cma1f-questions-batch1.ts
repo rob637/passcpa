@@ -1,6 +1,6 @@
 /**
  * CMA Part 1, Section F: Technology and Analytics - Questions Batch 1 (Q1-25)
- * Weight: 10% of Part 1 Exam
+ * Weight: 15% of Part 1 Exam
  * 
  * Blueprint Areas:
  * - CMA1-F: Technology and Analytics
@@ -26,7 +26,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Information Systems',
     subtopic: 'ERP Systems',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'An Enterprise Resource Planning (ERP) system is characterized by:',
     options: [
@@ -110,7 +110,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Analytics',
     subtopic: 'Types of Analytics',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Descriptive analytics answers the question:',
     options: [
@@ -150,7 +150,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Analytics',
     subtopic: 'Prescriptive Analytics',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'An analytics system that recommends optimal inventory reorder points based on demand forecasts and costs is using:',
     options: [
@@ -190,7 +190,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Analytics',
     subtopic: 'Data Mining',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Data mining is best described as:',
     options: [
@@ -214,7 +214,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Business Intelligence',
     subtopic: 'Data Warehouses',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'A data warehouse is:',
     options: [
@@ -234,7 +234,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Business Intelligence',
     subtopic: 'ETL Process',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'ETL in data management stands for:',
     options: [
@@ -254,7 +254,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Business Intelligence',
     subtopic: 'OLAP',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'OLAP (Online Analytical Processing) differs from OLTP (Online Transaction Processing) primarily because OLAP:',
     options: [
@@ -290,26 +290,6 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Machine learning algorithms learn patterns from data and improve their performance over time without being explicitly programmed for each scenario. This enables automation of predictions, classifications, and recommendations.',
     reference: 'Machine Learning; Artificial Intelligence',
-  },
-  {
-    id: 'cma1-f-014',
-    courseId: 'cma',
-    section: 'CMA1',
-    blueprintArea: 'CMA1-F',
-    topic: 'Emerging Technology',
-    subtopic: 'RPA',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Robotic Process Automation (RPA) is most suitable for:',
-    options: [
-      'Tasks requiring complex judgment and creativity',
-      'Repetitive, rule-based tasks with structured data',
-      'One-time strategic decisions',
-      'Tasks with highly variable inputs'
-    ],
-    correctAnswer: 1,
-    explanation: 'RPA automates repetitive, rule-based tasks using software robots. Ideal applications include data entry, invoice processing, reconciliations, and report generation - tasks with structured data and clear rules.',
-    reference: 'Robotic Process Automation; Automation',
   },
   {
     id: 'cma1-f-015',
@@ -382,7 +362,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Governance',
     subtopic: 'Master Data Management',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Master data management (MDM) focuses on:',
     options: [
@@ -486,7 +466,7 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Analytics Applications',
     subtopic: 'Monte Carlo Simulation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Monte Carlo simulation is a technique that:',
     options: [
@@ -518,26 +498,6 @@ export const CMA1F_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Parallel running operates both the old and new systems simultaneously, processing the same transactions in both. This allows comparison of outputs to verify the new system works correctly before retiring the old system.',
     reference: 'System Implementation; Conversion Strategies',
-  },
-  {
-    id: 'cma1-f-025',
-    courseId: 'cma',
-    section: 'CMA1',
-    blueprintArea: 'CMA1-F',
-    topic: 'Data Analytics',
-    subtopic: 'Big Data',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The "three Vs" commonly used to describe big data are:',
-    options: [
-      'Value, Velocity, Visibility',
-      'Volume, Variety, Velocity',
-      'Volume, Validity, Vision',
-      'Verification, Variety, Value'
-    ],
-    correctAnswer: 1,
-    explanation: 'Big data is characterized by the three Vs: Volume (massive amounts), Variety (structured, unstructured, semi-structured), and Velocity (speed of data generation). Some add Veracity (data quality) and Value as additional Vs.',
-    reference: 'Big Data; Analytics',
   },
 ];
 

@@ -1,0 +1,411 @@
+/**
+ * EA SEE Part 3: Representation - Questions Batch 51 (Q551-570)
+ * Comprehensive coverage of all 4 domains
+ * 
+ * Tax Year: 2024-2025
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH51: Question[] = [
+  {
+    id: 'see3-551',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Power of Attorney',
+    subtopic: 'Form 2848 Authorization Levels',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Form 2848 can authorize a representative to do all of the following EXCEPT:',
+    options: [
+      'Receive confidential tax information',
+      'Sign a tax return on behalf of the taxpayer',
+      'Represent the taxpayer before the IRS',
+      'Receive refund checks on behalf of the taxpayer'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 2848 does not authorize signing a return unless specific authorization is granted on line 5. Separate authorization (e.g., Form 2848 with specific signing authority or Form 8821) is needed for return signing.',
+    reference: 'Form 2848 Instructions'
+  },
+  {
+    id: 'see3-552',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Tax Information Authorization',
+    subtopic: 'Form 8821 vs Form 2848',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer wants their accountant to receive IRS notices but NOT represent them. Which form should be filed?',
+    options: [
+      'Form 2848',
+      'Form 8821',
+      'Form 8822',
+      'Form 56'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8821 (Tax Information Authorization) allows a designee to receive and inspect confidential tax information but does NOT grant power to represent the taxpayer before the IRS. Form 2848 grants representation rights.',
+    reference: 'Form 8821 Instructions'
+  },
+  {
+    id: 'see3-553',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Centralized Authorization File',
+    subtopic: 'CAF Number',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A CAF number is:',
+    options: [
+      'The same as an EFIN',
+      'A unique 9-digit number assigned to each authorized representative',
+      'The taxpayer\'s identification number',
+      'Only valid for one tax year'
+    ],
+    correctAnswer: 1,
+    explanation: 'The CAF (Centralized Authorization File) number is a unique 9-digit identifier assigned to practitioners who file Form 2848 or Form 8821. It helps the IRS track and manage powers of attorney.',
+    reference: 'IRM 21.3.7'
+  },
+  {
+    id: 'see3-554',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Who May Practice',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following may practice before the IRS in all matters?',
+    options: [
+      'Unenrolled return preparers',
+      'Enrolled Agents',
+      'Registered Tax Return Preparers',
+      'Annual Filing Season Program participants'
+    ],
+    correctAnswer: 1,
+    explanation: 'Enrolled Agents, CPAs, and attorneys may practice before the IRS in all matters. Unenrolled preparers have limited representation rights only for returns they prepared, and only before revenue agents and customer service reps.',
+    reference: '31 CFR §10.3'
+  },
+  {
+    id: 'see3-555',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Due Diligence Requirements',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under Circular 230, due diligence requires a practitioner to:',
+    options: [
+      'Independently verify all information provided by the client',
+      'Rely on client information in good faith unless it appears incorrect or incomplete',
+      'Decline representation if any information is missing',
+      'Perform a background check on all clients'
+    ],
+    correctAnswer: 1,
+    explanation: 'Practitioners may rely on client-provided information in good faith without verification, unless the information appears incorrect, inconsistent, or incomplete. This is the "know your client" standard without requiring investigation.',
+    reference: '31 CFR §10.22'
+  },
+  {
+    id: 'see3-556',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Conflicts of Interest',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A practitioner may represent conflicting interests only if:',
+    options: [
+      'Conflicts are never permitted under Circular 230',
+      'The IRS provides written consent',
+      'Each affected client provides informed written consent and the practitioner reasonably believes competent representation is possible',
+      'The matter involves only non-IRS issues'
+    ],
+    correctAnswer: 2,
+    explanation: 'Circular 230 permits representation despite conflicts if: (1) the practitioner reasonably believes competent and diligent representation is possible, and (2) each affected client gives informed written consent.',
+    reference: '31 CFR §10.29'
+  },
+  {
+    id: 'see3-557',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Contingent Fees',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under Circular 230, contingent fees are permitted for:',
+    options: [
+      'Preparing original tax returns',
+      'Representing a client in an IRS audit',
+      'Filing a refund claim on an already-filed return',
+      'Providing tax planning advice'
+    ],
+    correctAnswer: 2,
+    explanation: 'Contingent fees are generally prohibited for preparing original returns. They ARE permitted for: (1) representing a client in an examination, (2) filing a claim for credit or refund for taxes already paid, and (3) other IRS proceedings.',
+    reference: '31 CFR §10.27'
+  },
+  {
+    id: 'see3-558',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Sanctions',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Office of Professional Responsibility (OPR) can impose all of the following sanctions EXCEPT:',
+    options: [
+      'Censure',
+      'Suspension',
+      'Disbarment',
+      'Criminal prosecution'
+    ],
+    correctAnswer: 3,
+    explanation: 'OPR imposes administrative sanctions: reprimand/censure, suspension, or disbarment from practice before IRS. Criminal prosecution is handled by the Department of Justice, not OPR.',
+    reference: '31 CFR §10.50'
+  },
+  {
+    id: 'see3-559',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Audits',
+    subtopic: 'Correspondence vs Field Exam',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The most common type of IRS audit is:',
+    options: [
+      'Field examination at taxpayer\'s location',
+      'Office examination at IRS office',
+      'Correspondence examination through mail',
+      'TCMP audit'
+    ],
+    correctAnswer: 2,
+    explanation: 'Correspondence audits are most common, handling simple issues like matching documents, missing schedules, or verification of deductions. They involve written communication only. Field audits are most thorough but least common.',
+    reference: 'IRS Audit Procedures'
+  },
+  {
+    id: 'see3-560',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Audits',
+    subtopic: 'Examination Timeframes',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The general statute of limitations for IRS to assess additional tax is:',
+    options: [
+      '2 years from filing',
+      '3 years from filing or due date, whichever is later',
+      '5 years from filing',
+      '6 years from filing'
+    ],
+    correctAnswer: 1,
+    explanation: 'The general assessment period is 3 years from the filing date or due date, whichever is later. Extended to 6 years if >25% of gross income is omitted. No limit for fraud or failure to file.',
+    reference: 'IRC §6501'
+  },
+  {
+    id: 'see3-561',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Appeals',
+    subtopic: 'Appeals Process Rights',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'After receiving a 30-day letter, a taxpayer who disagrees can:',
+    options: [
+      'Only file a petition in Tax Court',
+      'Request an Appeals conference by filing a written protest',
+      'File an immediate lawsuit in District Court',
+      'Request a refund from the IRS'
+    ],
+    correctAnswer: 1,
+    explanation: 'The 30-day letter proposes changes and provides rights to appeal. Taxpayers can request an Appeals conference by filing a written protest within 30 days. If amount is <$25,000, a small case request letter is sufficient.',
+    reference: 'IRS Pub 5; IRM 8.6'
+  },
+  {
+    id: 'see3-562',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Collections',
+    subtopic: 'Notice of Federal Tax Lien',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Filing a Notice of Federal Tax Lien:',
+    options: [
+      'Allows the IRS to seize property immediately',
+      'Puts the public on notice of the government\'s claim against the taxpayer\'s property',
+      'Cancels the underlying tax debt',
+      'Freezes all taxpayer bank accounts'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Notice of Federal Tax Lien is a public filing to protect the government\'s interest against other creditors. It does not authorize seizure (that requires a levy). It affects credit and can attach to property.',
+    reference: 'IRC §6323'
+  },
+  {
+    id: 'see3-563',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Collections',
+    subtopic: 'Levy vs Lien',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The difference between a lien and a levy is:',
+    options: [
+      'A lien seizes property; a levy creates a claim',
+      'A levy seizes property; a lien creates a claim against property',
+      'They are the same thing',
+      'A levy is only for wages; a lien is for real property'
+    ],
+    correctAnswer: 1,
+    explanation: 'A tax lien creates a legal claim against property (does not seize). A levy actually seizes property or rights to property (bank accounts, wages, assets). The lien protects the government\'s interest; the levy enforces collection.',
+    reference: 'IRS Pub 594'
+  },
+  {
+    id: 'see3-564',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Offers in Compromise',
+    subtopic: 'OIC Grounds',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'An Offer in Compromise (OIC) can be based on all of the following EXCEPT:',
+    options: [
+      'Doubt as to liability',
+      'Doubt as to collectibility',
+      'Taxpayer hardship',
+      'Effective tax administration'
+    ],
+    correctAnswer: 2,
+    explanation: 'OIC grounds are: (1) Doubt as to Liability - dispute on correctness of assessed tax, (2) Doubt as to Collectibility - cannot pay full amount, (3) Effective Tax Administration - paying would cause economic hardship or be unfair. "Hardship" alone is not a category.',
+    reference: 'IRC §7122; Form 656'
+  },
+  {
+    id: 'see3-565',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Offers in Compromise',
+    subtopic: 'OIC Payment Options',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'For an OIC with lump sum cash payment option, what is required with Form 656?',
+    options: [
+      'Full payment amount',
+      '20% of the total offer amount',
+      '10% of the total offer amount',
+      'First installment payment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Lump sum cash offers require 20% of the offer amount submitted with Form 656. Balance is due within 5 months of acceptance. Periodic payment offers require first proposed payment with form and continued payments during consideration.',
+    reference: 'Form 656 Instructions'
+  },
+  {
+    id: 'see3-566',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Installment Agreements',
+    subtopic: 'Guaranteed IA',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The IRS must accept an installment agreement (guaranteed IA) when the tax liability is:',
+    options: [
+      'Under $10,000 and can be paid within 3 years',
+      'Under $25,000 and can be paid within 60 months',
+      'Under $50,000 only',
+      'Any amount if the taxpayer is in hardship'
+    ],
+    correctAnswer: 0,
+    explanation: 'The IRS must accept a guaranteed installment agreement if: (1) liability ≤$10,000, (2) taxpayer filed and paid all taxes for prior 5 years, (3) can pay within 3 years, and (4) agrees to file/pay timely for duration.',
+    reference: 'IRC §6159(c)'
+  },
+  {
+    id: 'see3-567',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Innocent Spouse Relief',
+    subtopic: 'Types of Relief',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which form is used to request innocent spouse relief?',
+    options: [
+      'Form 8379 (Injured Spouse Allocation)',
+      'Form 8857 (Request for Innocent Spouse Relief)',
+      'Form 2848',
+      'Form 843'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8857 is used to request innocent spouse relief under IRC §6015. Form 8379 (Injured Spouse) is different - used when one spouse\'s refund is applied to the other spouse\'s prior obligations.',
+    reference: 'Form 8857 Instructions'
+  },
+  {
+    id: 'see3-568',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Amended Returns',
+    subtopic: 'Protective Claims',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A protective claim for refund is appropriate when:',
+    options: [
+      'The taxpayer wants to protect assets from levy',
+      'Pending legislation or litigation may affect tax liability',
+      'The taxpayer plans to file bankruptcy',
+      'The IRS has denied a previous refund claim'
+    ],
+    correctAnswer: 1,
+    explanation: 'A protective claim preserves the right to a refund while waiting for resolution of pending legislation, Tax Court cases, or other contingencies. It protects against statute of limitations expiration.',
+    reference: 'Rev. Proc. 2023-11'
+  },
+  {
+    id: 'see3-569',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Penalties',
+    subtopic: 'Accuracy-Related Penalty',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The accuracy-related penalty under IRC §6662 is:',
+    options: [
+      '5% of the underpayment',
+      '20% of the underpayment',
+      '25% of the underpayment',
+      '75% of the underpayment'
+    ],
+    correctAnswer: 1,
+    explanation: 'The accuracy-related penalty is 20% of the underpayment attributable to: negligence, substantial understatement, substantial valuation misstatement, etc. It may increase to 40% for gross valuation misstatements.',
+    reference: 'IRC §6662'
+  },
+  {
+    id: 'see3-570',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Document Retention',
+    subtopic: 'Record Retention Periods',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Tax records should generally be kept for at least:',
+    options: [
+      '1 year after filing',
+      '3 years from filing date or 2 years from payment, whichever is later',
+      'Until the taxpayer reaches age 65',
+      'Permanently'
+    ],
+    correctAnswer: 1,
+    explanation: 'The general rule mirrors the refund claim period: 3 years from filing or 2 years from payment. Longer retention applies to property records (for basis), 7 years for bad debts/worthless securities, and permanently for fraud or unfiled returns.',
+    reference: 'IRS Pub 552'
+  }
+];

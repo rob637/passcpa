@@ -67,7 +67,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Liquidity Ratios',
     subtopic: 'Cash Ratio',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The cash ratio is more conservative than the quick ratio because it:',
     options: [
@@ -151,7 +151,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Efficiency Ratios',
     subtopic: 'Cash Conversion Cycle',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A company has DIO of 45 days, DSO of 30 days, and DPO of 25 days. What is the cash conversion cycle?',
     options: [
@@ -235,7 +235,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Leverage Ratios',
     subtopic: 'Fixed Charge Coverage',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'The fixed charge coverage ratio includes which of the following that the times interest earned ratio does NOT?',
     options: [
@@ -339,7 +339,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Profitability Ratios',
     subtopic: 'DuPont Analysis',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Using the DuPont formula, if a company has a net profit margin of 5%, asset turnover of 2.0, and equity multiplier of 1.5, what is the ROE?',
     options: [
@@ -356,26 +356,6 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
   // ==========================================
   // Market Value Ratios
   // ==========================================
-  {
-    id: 'cma2-a-017',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-A',
-    topic: 'Market Ratios',
-    subtopic: 'Price-Earnings Ratio',
-    difficulty: 'easy',
-    skillLevel: 'Application',
-    question: 'A company\'s stock price is $50 and EPS is $5. What is the P/E ratio?',
-    options: [
-      '5',
-      '10',
-      '0.10',
-      '250'
-    ],
-    correctAnswer: 1,
-    explanation: 'P/E Ratio = Stock Price / Earnings Per Share = $50 / $5 = 10. Investors are willing to pay $10 for every $1 of earnings.',
-    reference: 'Price-Earnings Ratio; Market Valuation',
-  },
   {
     id: 'cma2-a-018',
     courseId: 'cma',
@@ -447,7 +427,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Analysis Techniques',
     subtopic: 'Horizontal Analysis',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Horizontal analysis compares:',
     options: [
@@ -467,7 +447,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Analysis Techniques',
     subtopic: 'Vertical Analysis',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'In vertical analysis of the income statement, each line item is expressed as a percentage of:',
     options: [
@@ -507,7 +487,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Earnings Quality',
     subtopic: 'Accrual Analysis',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Earnings quality is generally considered HIGHER when:',
     options: [
@@ -527,7 +507,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-A',
     topic: 'Analysis Applications',
     subtopic: 'Credit Analysis',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'When evaluating a company\'s creditworthiness, lenders are MOST concerned with:',
     options: [
@@ -539,7 +519,7 @@ export const CMA2A_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Creditors focus on the borrower\'s ability to repay principal and interest. Key metrics include cash flow coverage ratios, debt levels, and working capital. Unlike equity investors, creditors have limited upside.',
     reference: 'Credit Analysis; Lending Decisions',
-  },
+  }
 ];
 
 // Helper functions

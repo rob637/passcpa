@@ -24,6 +24,7 @@ import {
   CommunityStats,
 } from '../services/leaderboardService';
 import { ExamSection } from '../types';
+import { Card } from './common/Card';
 import clsx from 'clsx';
 import logger from '../utils/logger';
 
@@ -159,8 +160,8 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
 
   if (loading) {
     return (
-      <div className={clsx(
-        'bg-white rounded-xl shadow-sm border border-slate-200 p-6',
+      <Card className={clsx(
+        'p-6',
         compact ? 'animate-pulse' : ''
       )}>
         <div className="flex items-center gap-3 mb-4">
@@ -168,7 +169,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
           <div className="h-5 w-32 bg-slate-200 rounded" />
         </div>
         <div className="h-24 bg-slate-100 rounded-lg" />
-      </div>
+      </Card>
     );
   }
 
@@ -195,7 +196,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
   // Compact widget for dashboard
   if (compact) {
     return (
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+      <Card className="p-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
@@ -247,7 +248,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             </span>
           </div>
         )}
-      </div>
+      </Card>
     );
   }
 
@@ -277,7 +278,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
       </div>
 
       {/* Percentile Rankings */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+      <Card className="p-6">
         <h3 className="font-semibold text-slate-900 mb-6 flex items-center gap-2">
           <Award className="w-5 h-5 text-primary-600" />
           Your Percentile Rankings
@@ -321,10 +322,10 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             )}
           </p>
         </div>
-      </div>
+      </Card>
 
       {/* Community Activity */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+      <Card className="p-6">
         <h3 className="font-semibold text-slate-900 mb-6 flex items-center gap-2">
           <Users className="w-5 h-5 text-primary-600" />
           Community Activity
@@ -365,11 +366,11 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
             </div>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* Section Breakdown */}
       {communityStats?.sectionBreakdown && Object.keys(communityStats.sectionBreakdown).length > 0 && (
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <Card className="p-6">
           <h3 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-primary-600" />
             Activity by Section
@@ -405,7 +406,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ compact = false }) => {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
       )}
 
       {/* Encouragement footer */}

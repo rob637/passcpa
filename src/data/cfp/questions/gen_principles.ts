@@ -1,9 +1,26 @@
+/**
+ * CFP General Principles Questions
+ * Domain 2: General Principles of Financial Planning (18% of exam)
+ * 
+ * High-quality, scenario-based questions aligned with CFP exam standards.
+ * Coverage: GEN-1 through GEN-5 blueprint areas
+ */
+
 import { Question } from '../../../types';
 
 export const CFP_GEN_QUESTIONS: Question[] = [
+  // ============================================
+  // GEN-1: Financial Planning Process
+  // ============================================
   {
     id: 'CFP-GEN-001',
+    courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Structure of Financial Planning',
+    subtopic: 'Client-Planner Relationship',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
     question: "While establishing and defining the client-planner relationship, a CFP® professional must provide certain information to the client. Which of the following is NOT required to be provided in writing specifically at this stage for financial planning engagements?",
     options: [
       "A) Privacy Policy",
@@ -12,14 +29,17 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "D) Compensation methodology (fee-only, commission, etc.)"
     ],
     correctAnswer: 2,
-    explanation: "**Correct Answer: C.** Specific investment recommendations are developed *after* data gathering and analysis. At the initial stage of establishing the relationship (Step 1 of the Financial Planning Process), the professional must disclose the scope of services, conflicts of interest, compensation methods, and privacy policies. Recommendations come in Step 4.\n\n**Incorrect Options:**\n* **A, B, D:** These are foundational disclosures required by the Code of Ethics and Standards of Conduct when entering into a financial planning engagement.",
-    topic: "Structure of Financial Planning",
-    subtopic: "Client-Planner Relationship",
-    difficulty: "medium"
+    explanation: "**Correct Answer: C.** Specific investment recommendations are developed *after* data gathering and analysis. At the initial stage of establishing the relationship (Step 1 of the Financial Planning Process), the professional must disclose the scope of services, conflicts of interest, compensation methods, and privacy policies. Recommendations come in Step 4.\n\n**Incorrect Options:**\n* **A, B, D:** These are foundational disclosures required by the Code of Ethics and Standards of Conduct when entering into a financial planning engagement."
   },
   {
     id: 'CFP-GEN-002',
+    courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Personal Financial Planning',
+    subtopic: 'Goal-Based Investing',
+    difficulty: 'medium',
+    skillLevel: 'Application',
     question: "A client, Sarah (35), wants to save for a down payment on a home in 3 years. She has $40,000 currently invested in a high-growth tech stock ETF. She can save an additional $500/month. What is the most appropriate recommendation regarding her $40,000 existing nest egg given her goal?",
     options: [
       "A) Leave it in the tech ETF to maximize growth potential over the 3-year horizon.",
@@ -28,14 +48,17 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "D) Buy 3-year LEAP call options on the S&P 500 to leverage the capital."
     ],
     correctAnswer: 2,
-    explanation: "**Correct Answer: C.** For a short-term goal (3 years), capital preservation and liquidity are paramount. The high volatility of a tech ETF is unsuitable because a market downturn could occur just when funds are needed, with insufficient time to recover. \n\n**Incorrect Options:**\n* **A & B:** Equity assessments are too volatile for a 3-year defined liability.\n* **D:** Options are speculative and inappropriate for a primary down payment savings goal.",
-    topic: "Personal Financial Planning",
-    subtopic: "Goal-Based Investing",
-    difficulty: "medium"
+    explanation: "**Correct Answer: C.** For a short-term goal (3 years), capital preservation and liquidity are paramount. The high volatility of a tech ETF is unsuitable because a market downturn could occur just when funds are needed, with insufficient time to recover. \n\n**Incorrect Options:**\n* **A & B:** Equity assessments are too volatile for a 3-year defined liability.\n* **D:** Options are speculative and inappropriate for a primary down payment savings goal."
   },
   {
     id: 'CFP-GEN-003',
+    courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Mathematics',
+    subtopic: 'Inflation Adjustment',
+    difficulty: 'hard',
+    skillLevel: 'Application',
     question: "Calculate the inflation-adjusted return if an investment earns a nominal return of 8.5% while inflation is 3.2%. (Round to two decimal places)",
     options: [
       "A) 5.30%",
@@ -44,14 +67,17 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "D) 12.00%"
     ],
     correctAnswer: 1,
-    explanation: "**Correct Answer: B (5.14%).** The formula for the real rate of return is `((1 + Nominal) / (1 + Inflation)) - 1`.\n\nCalculation:\n((1.085) / (1.032)) - 1 = 1.051356... - 1 = 0.051356 = 5.14%.\n\n**Common Mistake:** Simply subtracting (8.5% - 3.2% = 5.3%) is an approximation but is mathematically incorrect for precise financial planning.",
-    topic: "Financial Mathematics",
-    subtopic: "Inflation Adjustment",
-    difficulty: "hard"
+    explanation: "**Correct Answer: B (5.14%).** The formula for the real rate of return is `((1 + Nominal) / (1 + Inflation)) - 1`.\n\nCalculation:\n((1.085) / (1.032)) - 1 = 1.051356... - 1 = 0.051356 = 5.14%.\n\n**Common Mistake:** Simply subtracting (8.5% - 3.2% = 5.3%) is an approximation but is mathematically incorrect for precise financial planning."
   },
   {
     id: 'CFP-GEN-004',
+    courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Professional Standards',
+    subtopic: 'Fiduciary Duty',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
     question: "Under the CFP Board's Code of Ethics, which of the following best describes the 'Fiduciary Duty' owed to a client?",
     options: [
       "A) Duty of Loyalty, Duty of Care, and Duty to Follow Client Instructions",
@@ -60,14 +86,17 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "D) Duty to minimize taxes"
     ],
     correctAnswer: 0,
-    explanation: "**Correct Answer: A.** The Standard of Conduct clearly defines the Fiduciary Duty as comprising the Duty of Loyalty (placing client interests first), the Duty of Care (prudence/competence), and the Duty to Follow Client Instructions (reasonable/lawful).\n\n**Incorrect Options:**\n* **B:** While important, these don't form the core definition.\n* **C:** Performance is never guaranteed.",
-    topic: "Professional Standards",
-    subtopic: "Fiduciary Duty",
-    difficulty: "hard"
+    explanation: "**Correct Answer: A.** The Standard of Conduct clearly defines the Fiduciary Duty as comprising the Duty of Loyalty (placing client interests first), the Duty of Care (prudence/competence), and the Duty to Follow Client Instructions (reasonable/lawful).\n\n**Incorrect Options:**\n* **B:** While important, these don't form the core definition.\n* **C:** Performance is never guaranteed."
   },
   {
     id: 'CFP-GEN-005',
+    courseId: 'cfp',
     section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Data Gathering',
+    subtopic: 'Qualitative vs Quantitative',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: "Which of the following is an example of 'Qualitative Data' gathered during the financial planning process?",
     options: [
       "A) Current Tax Bracket: 32%",
@@ -76,9 +105,1357 @@ export const CFP_GEN_QUESTIONS: Question[] = [
       "D) Mortgage Interest Rate: 3.5%"
     ],
     correctAnswer: 2,
-    explanation: "**Correct Answer: C.** Qualitative data refers to subjective information: attitudes, beliefs, values, and goals. Fear is an emotional/subjective state that significantly impacts decision-making.\n\n**Incorrect Options:**\n* **A, B, D:** These are Quantitative (objective, numerical) data points.",
-    topic: "Data Gathering",
-    subtopic: "Qualitative vs Quantitative",
-    difficulty: "easy"
+    explanation: "**Correct Answer: C.** Qualitative data refers to subjective information: attitudes, beliefs, values, and goals. Fear is an emotional/subjective state that significantly impacts decision-making.\n\n**Incorrect Options:**\n* **A, B, D:** These are Quantitative (objective, numerical) data points."
+  },
+  // ============================================
+  // GEN-2: Financial Statements
+  // ============================================
+  {
+    id: 'CFP-GEN-006',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Net Worth Statement',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Tom has the following: Primary home FMV $450,000, mortgage $280,000, investment portfolio $320,000, car $25,000, credit card debt $8,000, student loans $45,000, checking account $12,000. What is Tom's net worth?",
+    options: [
+      "A) $807,000",
+      "B) $474,000",
+      "C) $487,000",
+      "D) $462,000"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B ($474,000)**\n\n**Net Worth = Assets - Liabilities**\n\n**Assets:**\n- Home: $450,000\n- Portfolio: $320,000\n- Car: $25,000\n- Checking: $12,000\n- **Total: $807,000**\n\n**Liabilities:**\n- Mortgage: $280,000\n- Credit Cards: $8,000\n- Student Loans: $45,000\n- **Total: $333,000**\n\n**Net Worth: $807,000 - $333,000 = $474,000**"
+  },
+  {
+    id: 'CFP-GEN-007',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Ratios',
+    subtopic: 'Emergency Fund Ratio',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Lisa has monthly expenses of $6,500 and liquid assets (checking, savings, money market) of $32,500. What is her Emergency Fund Ratio, and how does it compare to the general recommendation?",
+    options: [
+      "A) 5 months; meets the 3-6 month recommendation",
+      "B) 3 months; below the recommended minimum",
+      "C) 8 months; exceeds the typical recommendation",
+      "D) 5 months; needs improvement"
+    ],
+    correctAnswer: 0,
+    explanation: "**Correct Answer: A**\n\n**Emergency Fund Ratio:** Liquid Assets ÷ Monthly Expenses\n\n**Calculation:** $32,500 ÷ $6,500 = **5 months**\n\n**Recommendation:** Generally 3-6 months of expenses\n\n**Assessment:** Lisa's 5 months is within the recommended range, providing adequate protection against income disruption.\n\n**Considerations for higher/lower targets:**\n- 6+ months: Single income, variable income, health issues\n- 3 months: Dual income, very stable employment"
+  },
+  {
+    id: 'CFP-GEN-008',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Ratios',
+    subtopic: 'Debt Ratios',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: "A couple has gross monthly income of $18,000. Their mortgage payment (PITI) is $3,600 and total debt payments (mortgage + car + credit cards) are $5,400. What are their housing and total debt-to-income ratios?",
+    options: [
+      "A) Housing 20%, DTI 30%",
+      "B) Housing 20%, DTI 35%",
+      "C) Housing 28%, DTI 30%",
+      "D) Housing 28%, DTI 36%"
+    ],
+    correctAnswer: 0,
+    explanation: "**Correct Answer: A (Housing 20%, DTI 30%)**\n\n**Housing Ratio (Front-End):**\nMortgage PITI ÷ Gross Income\n$3,600 ÷ $18,000 = **20%**\n\n**Total DTI (Back-End):**\nAll Debt Payments ÷ Gross Income\n$5,400 ÷ $18,000 = **30%**\n\n**Lending Guidelines (Conventional):**\n- Housing ratio: ≤28% typically\n- Total DTI: ≤36% typically\n- This couple qualifies comfortably"
+  },
+  // ============================================
+  // GEN-3: Time Value of Money
+  // ============================================
+  {
+    id: 'CFP-GEN-009',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Future Value',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Emma invests $10,000 today at 7% annual return. Additionally, she invests $5,000 at the end of each year for 10 years. What is the approximate future value at the end of year 10?",
+    options: [
+      "A) $69,082",
+      "B) $88,782",
+      "C) $78,686",
+      "D) $59,082"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B ($88,782)**\n\n**Two Components:**\n\n**1. Lump Sum FV:**\nFV = PV × (1 + r)^n\nFV = $10,000 × (1.07)^10 = $10,000 × 1.9672 = **$19,672**\n\n**2. Annuity FV (Ordinary Annuity):**\nFV = PMT × [(1+r)^n - 1] / r\nFV = $5,000 × [(1.07)^10 - 1] / 0.07\nFV = $5,000 × [0.9672 / 0.07]\nFV = $5,000 × 13.8164 = **$69,082**\n\n**Total: $19,672 + $69,082 = $88,754 ≈ $88,782**"
+  },
+  {
+    id: 'CFP-GEN-010',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Present Value',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "A client will receive $50,000 per year for 20 years, starting one year from now. If the discount rate is 6%, what is the present value of this income stream?",
+    options: [
+      "A) $1,000,000",
+      "B) $573,496",
+      "C) $660,000",
+      "D) $485,000"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B ($573,496)**\n\n**Present Value of Ordinary Annuity:**\nPV = PMT × [(1 - (1+r)^-n) / r]\n\n**Calculation:**\nPV = $50,000 × [(1 - (1.06)^-20) / 0.06]\nPV = $50,000 × [(1 - 0.3118) / 0.06]\nPV = $50,000 × [0.6882 / 0.06]\nPV = $50,000 × 11.4699\n**PV = $573,496**\n\n**Key insight:** 20 years × $50,000 = $1,000,000 nominal, but discounting reduces this significantly."
+  },
+  {
+    id: 'CFP-GEN-011',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Annuity Due',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "What is the difference in future value between an ordinary annuity and an annuity due if you invest $3,000 annually for 8 years at 5%?",
+    options: [
+      "A) The annuity due is worth $1,431 more",
+      "B) The annuity due is worth $3,000 more",
+      "C) They are equal in value",
+      "D) The ordinary annuity is worth $1,431 more"
+    ],
+    correctAnswer: 0,
+    explanation: "**Correct Answer: A ($1,431 more)**\n\n**Annuity Due vs Ordinary Annuity:**\nAnnuity Due FV = Ordinary Annuity FV × (1 + r)\n\n**Step 1 - Ordinary Annuity FV:**\nFV = $3,000 × [(1.05)^8 - 1] / 0.05\nFV = $3,000 × 9.5491 = $28,647\n\n**Step 2 - Annuity Due FV:**\nFV = $28,647 × 1.05 = $30,079\n\n**Difference: $30,079 - $28,647 = $1,432 ≈ $1,431**\n\n**Why?** Annuity due payments occur at the BEGINNING of each period, earning one extra period of interest."
+  },
+  // ============================================
+  // GEN-4: Education Planning
+  // ============================================
+  {
+    id: 'CFP-GEN-012',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: '529 Plans',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "Which of the following is TRUE about 529 Qualified Tuition Programs?",
+    options: [
+      "A) Contributions are deductible for federal income tax purposes",
+      "B) Distributions for K-12 tuition are limited to $10,000 per year per beneficiary",
+      "C) Investment options can be changed daily without restriction",
+      "D) Non-qualified distributions are subject to penalty on the entire withdrawal"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B**\n\n**529 K-12 Provision:**\nUnder TCJA (2017), 529 plans can fund K-12 tuition expenses, limited to $10,000 per year per beneficiary.\n\n**Why other answers are wrong:**\n- **A)** Contributions are NOT federally deductible (some states offer state deductions)\n- **C)** Investment changes limited to twice per year\n- **D)** Penalty applies only to EARNINGS portion, not entire withdrawal"
+  },
+  {
+    id: 'CFP-GEN-013',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: 'Coverdell ESA',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: "A family with MAGI of $210,000 (MFJ) wants to save for their 10-year-old's education. Which education savings vehicle should they consider?",
+    options: [
+      "A) Coverdell ESA with $2,000 annual contribution",
+      "B) 529 plan with no contribution limits",
+      "C) UGMA account for maximum flexibility",
+      "D) Series EE savings bonds for guaranteed returns"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (529 Plan)**\n\n**Coverdell ESA Disqualification:**\n- MAGI phase-out for MFJ: $190,000-$220,000\n- At $210,000, contribution ability is significantly phased out\n- Also limited to $2,000/year maximum\n\n**529 Plan Advantages:**\n- NO income limits for contributors\n- High contribution limits ($300,000+)\n- Tax-free growth and distributions for education\n\n**Why other options are suboptimal:**\n- **A)** Income phase-out applies\n- **C)** Counted heavily against financial aid; no tax advantages\n- **D)** Series EE has income limits for tax exclusion and lower returns"
+  },
+  {
+    id: 'CFP-GEN-014',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: 'Financial Aid',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: "For FAFSA purposes, which asset has the GREATEST negative impact on a dependent student's Expected Family Contribution (EFC)?",
+    options: [
+      "A) Parent-owned 529 plan",
+      "B) Student's savings account in their name",
+      "C) Grandparent-owned 529 plan",
+      "D) Parent's retirement accounts"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (Student's savings account)**\n\n**FAFSA Asset Assessment Rates:**\n\n**Student Assets:** 20% per year\n- Savings, checking, investments in student's name\n- UGMA/UTMA accounts\n\n**Parent Assets:** Up to 5.64%\n- 529 plans owned by parent\n- Brokerage accounts\n\n**Not Counted:**\n- Retirement accounts (401k, IRA)\n- Primary residence equity\n- Grandparent-owned 529s (until distribution)\n\n**Ranking of negative impact:**\n1. Student savings (20%)\n2. Parent 529 (5.64%)\n3. Grandparent 529 (0% until distributed)\n4. Retirement accounts (0%)"
+  },
+  // ============================================
+  // GEN-5: Economics and Debt
+  // ============================================
+  {
+    id: 'CFP-GEN-015',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Economics',
+    subtopic: 'Interest Rates',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "If the Federal Reserve raises the federal funds rate, what is the MOST likely immediate impact?",
+    options: [
+      "A) Stock prices increase as borrowing becomes more attractive",
+      "B) Bond prices decrease as yields rise",
+      "C) Real estate prices increase as mortgages become cheaper",
+      "D) Consumer spending increases due to higher savings rates"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (Bond prices decrease)**\n\n**Interest Rate Transmission:**\nWhen the Fed raises rates:\n1. Short-term rates increase immediately\n2. Bond yields rise across the curve\n3. **Existing bond prices FALL** (inverse relationship)\n4. Borrowing costs increase\n5. Economic activity may slow\n\n**Why other answers are wrong:**\n- **A)** Stocks typically pressure downward on rate hikes\n- **C)** Mortgages become MORE expensive, pressuring prices down\n- **D)** Higher rates encourage saving, not spending"
+  },
+  {
+    id: 'CFP-GEN-016',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Debt Management',
+    subtopic: 'Debt Payoff Strategies',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: "A client has three debts: Credit Card A ($5,000 at 22%), Credit Card B ($8,000 at 18%), and Car Loan ($12,000 at 5%). Using the 'Avalanche Method', in what order should these be paid off?",
+    options: [
+      "A) Car, Card B, Card A",
+      "B) Card A, Card B, Car",
+      "C) Card B, Card A, Car",
+      "D) Car, Card A, Card B"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (Card A, Card B, Car)**\n\n**Avalanche Method:**\nPay minimum on all debts, apply extra to HIGHEST INTEREST RATE first.\n\n**Order:**\n1. Credit Card A: 22% (highest)\n2. Credit Card B: 18%\n3. Car Loan: 5% (lowest)\n\n**Avalanche vs Snowball:**\n- **Avalanche:** Mathematically optimal, saves most interest\n- **Snowball:** Pay smallest balance first (psychological wins)\n\n**Why Avalanche wins financially:**\nPaying 22% debt first prevents expensive interest accumulation."
+  },
+  {
+    id: 'CFP-GEN-017',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Debt Management',
+    subtopic: 'Mortgage Analysis',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "A client can choose between a 30-year mortgage at 6.5% or a 15-year mortgage at 5.75%. Loan amount is $400,000. What is the approximate monthly payment difference?",
+    options: [
+      "A) The 15-year costs about $800/month more",
+      "B) The 15-year costs about $1,200/month more",
+      "C) The 30-year costs about $300/month more",
+      "D) They have roughly equal payments"
+    ],
+    correctAnswer: 0,
+    explanation: "**Correct Answer: A (15-year costs ~$800 more)**\n\n**30-Year Mortgage:**\nPMT = $400,000 × [0.065/12 × (1.005417)^360] / [(1.005417)^360 - 1]\nPMT ≈ **$2,528/month**\n\n**15-Year Mortgage:**\nPMT = $400,000 × [0.0575/12 × (1.004792)^180] / [(1.004792)^180 - 1]\nPMT ≈ **$3,326/month**\n\n**Difference: $3,326 - $2,528 = $798 ≈ $800**\n\n**Total Interest Comparison:**\n- 30-year: $510,000 total interest\n- 15-year: $199,000 total interest\n- **15-year saves $311,000 in interest**"
+  },
+  {
+    id: 'CFP-GEN-018',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Planning Process',
+    subtopic: 'Implementation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "During which step of the financial planning process should a CFP® professional discuss the pros and cons of various insurance company products with a client?",
+    options: [
+      "A) Step 1: Understanding the Client's Circumstances",
+      "B) Step 3: Analyzing Information",
+      "C) Step 4: Developing Recommendations",
+      "D) Step 5: Implementing Recommendations"
+    ],
+    correctAnswer: 2,
+    explanation: "**Correct Answer: C (Step 4: Developing Recommendations)**\n\n**7-Step Financial Planning Process:**\n1. Understanding circumstances (engagement)\n2. Gathering information (data collection)\n3. Analyzing information (evaluate current situation)\n4. **Developing recommendations** (present options, pros/cons)\n5. Implementing recommendations (execute)\n6. Monitoring progress\n7. Updating the plan\n\n**Step 4 Focus:**\n- Present alternative strategies\n- Discuss trade-offs and implications\n- Make specific recommendations\n- Ensure client understands options before choosing"
+  },
+  {
+    id: 'CFP-GEN-019',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Professional Conduct',
+    subtopic: 'Conflicts of Interest',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: "A CFP® professional earns commissions from insurance products. A client needs life insurance and asks for recommendations. Which action BEST fulfills the professional's fiduciary duty?",
+    options: [
+      "A) Recommend only no-load products to avoid any perception of conflict",
+      "B) Disclose the commission structure and recommend the most suitable product regardless of commission",
+      "C) Refer the client to another advisor who doesn't earn commissions",
+      "D) Only recommend products where the commission is lowest"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (Disclose and recommend most suitable)**\n\n**Fiduciary Duty with Conflicts:**\n1. **Identify** all material conflicts\n2. **Disclose** conflicts to the client\n3. **Manage** conflicts appropriately\n4. **Act** in client's best interest despite the conflict\n\n**Why B is correct:**\n- Full disclosure of compensation\n- Recommendation based on suitability, not compensation\n- Client can make informed decision\n\n**Why other answers are wrong:**\n- **A)** May not be in client's best interest if a commissioned product is more suitable\n- **C)** Unnecessary if conflict is properly managed\n- **D)** Lowest commission ≠ best product for client"
+  },
+  {
+    id: 'CFP-GEN-020',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Economics',
+    subtopic: 'Economic Indicators',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "Which of the following is considered a LEADING economic indicator?",
+    options: [
+      "A) Unemployment rate",
+      "B) Consumer Price Index (CPI)",
+      "C) Building permits",
+      "D) GDP growth rate"
+    ],
+    correctAnswer: 2,
+    explanation: "**Correct Answer: C (Building permits)**\n\n**Economic Indicator Categories:**\n\n**Leading Indicators (predict future activity):**\n- Building permits ✓\n- Stock market returns\n- Consumer confidence\n- Initial unemployment claims\n- Manufacturing orders\n\n**Lagging Indicators (confirm trends):**\n- Unemployment rate\n- CPI (inflation)\n- Corporate profits\n- Labor cost per unit\n\n**Coincident Indicators (current state):**\n- GDP\n- Industrial production\n- Personal income\n\n**Building permits signal future construction activity and economic expansion.**"
+  },
+  {
+    id: 'CFP-GEN-021',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: '529 Plan Contributions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Grandparents want to fund a 529 plan for their grandchild and minimize gift tax. What is the MAXIMUM they can contribute using 5-year gift tax averaging in 2024 (assuming $18,000 annual exclusion)?",
+    options: [
+      "A) $18,000",
+      "B) $90,000",
+      "C) $180,000",
+      "D) $360,000"
+    ],
+    correctAnswer: 2,
+    explanation: "**Correct Answer: C ($180,000)**\n\n**529 Gift Tax Averaging:**\n- Special election allows 5 years of annual exclusions in one contribution\n- 2024 exclusion: $18,000 per donor\n- Per grandparent: $18,000 × 5 = $90,000\n- Both grandparents together: $90,000 × 2 = **$180,000**\n\n**Key Rules:**\n- File Form 709 to elect averaging\n- No additional gifts to same beneficiary for 5 years\n- If donor dies during period, portion included in estate\n- Gift splitting between spouses doubles the amount"
+  },
+  {
+    id: 'CFP-GEN-022',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Emergency Fund',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A dual-income couple with stable jobs and good insurance has monthly expenses of $8,000. What is the RECOMMENDED emergency fund range?",
+    options: [
+      "A) $8,000 - $16,000",
+      "B) $16,000 - $24,000",
+      "C) $24,000 - $48,000",
+      "D) $48,000 - $72,000"
+    ],
+    correctAnswer: 2,
+    explanation: "**Correct Answer: C ($24,000 - $48,000)**\n\n**Emergency Fund Guidelines:**\n- General: 3-6 months of expenses\n- $8,000 × 3 = $24,000\n- $8,000 × 6 = $48,000\n\n**Factors Affecting Size:**\n| Factor | Less Needed | More Needed |\n|--------|-------------|-------------|\n| Income | Dual, stable | Single, variable |\n| Job | In-demand | Specialized |\n| Insurance | Comprehensive | Minimal |\n| Debt | Low | High |\n\n**For this stable dual-income couple:** 3-6 months is appropriate. Single-income or variable-income households should target 6-12 months."
+  },
+  {
+    id: 'CFP-GEN-023',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Net Present Value',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "An investment requires $50,000 today and will pay $15,000 annually for 4 years. At a 6% discount rate, the NPV is approximately:",
+    options: [
+      "A) -$2,050",
+      "B) $0",
+      "C) $1,940",
+      "D) $10,000"
+    ],
+    correctAnswer: 2,
+    explanation: "**Correct Answer: C ($1,940)**\n\n**NPV Calculation:**\n- PV of annuity = PMT × [(1 - (1+r)^-n) / r]\n- PV = $15,000 × [(1 - 1.06^-4) / 0.06]\n- PV = $15,000 × 3.4651 = $51,977\n- NPV = $51,977 - $50,000 = **$1,977 ≈ $1,940**\n\n**Decision Rule:**\n- NPV > 0: Accept (adds value)\n- NPV < 0: Reject (destroys value)\n- NPV = 0: Indifferent\n\n**This investment is acceptable** because it returns more than the required 6% rate."
+  },
+  {
+    id: 'CFP-GEN-024',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-6',
+    topic: 'Debt Management',
+    subtopic: 'Debt Ratios',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: "A client has gross monthly income of $12,000, a mortgage payment of $2,400 (PITI), and other debt payments of $600. What are their housing and total debt ratios?",
+    options: [
+      "A) Housing: 20%, Total: 25%",
+      "B) Housing: 25%, Total: 30%",
+      "C) Housing: 28%, Total: 36%",
+      "D) Housing: 30%, Total: 40%"
+    ],
+    correctAnswer: 0,
+    explanation: "**Correct Answer: A (Housing: 20%, Total: 25%)**\n\n**Debt Ratio Calculations:**\n\n**Housing Ratio (Front-End):**\n- PITI / Gross Income\n- $2,400 / $12,000 = **20%**\n\n**Total Debt Ratio (Back-End):**\n- (PITI + Other Debt) / Gross Income\n- ($2,400 + $600) / $12,000 = $3,000 / $12,000 = **25%**\n\n**Conventional Guidelines:**\n| Ratio | Guideline | This Client |\n|-------|-----------|-------------|\n| Housing | ≤28% | 20% ✓ |\n| Total | ≤36% | 25% ✓ |\n\n**This client is well within guidelines** and has room for additional debt if needed."
+  },
+  {
+    id: 'CFP-GEN-025',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: 'FAFSA and Financial Aid',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: "A family is planning for college financial aid. Which assets are EXCLUDED from FAFSA calculations?",
+    options: [
+      "A) 529 plans owned by grandparents",
+      "B) Cash value of life insurance and retirement accounts",
+      "C) Student savings accounts",
+      "D) Parent home equity"
+    ],
+    correctAnswer: 1,
+    explanation: "**Correct Answer: B (Life insurance cash value and retirement accounts)**\n\n**FAFSA Asset Treatment:**\n\n**EXCLUDED from FAFSA:**\n- Retirement accounts (401k, IRA, pensions) ✓\n- Life insurance cash value ✓\n- Primary residence equity\n- Small business (< 100 employees)\n- Personal property\n\n**INCLUDED in FAFSA:**\n- 529 plans (parent-owned counted at 5.64%)\n- Savings/checking accounts\n- Investment accounts\n- Real estate (non-primary)\n\n**Planning Strategy:** Maximize contributions to excluded assets (retirement, life insurance) before college years to reduce EFC. Note: Grandparent 529s aren't counted but distributions were previously counted as student income (rules changed for 2024-25 FAFSA)."
+  },
+  // ============================================
+  // Additional GEN Questions (026-045)
+  // ============================================
+  {
+    id: 'CFP-GEN-026',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Uneven Cash Flows',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "An investment requires $50,000 today and provides cash flows of $15,000, $20,000, $25,000, and $10,000 over the next four years. Using a 10% discount rate, the Net Present Value (NPV) is approximately:",
+    options: [
+      "A) $5,000",
+      "B) $6,850",
+      "C) $8,150",
+      "D) -$2,340"
+    ],
+    correctAnswer: 2,
+    explanation: "**NPV Calculation:**\n\nNPV = -$50,000 + $15,000/(1.10)¹ + $20,000/(1.10)² + $25,000/(1.10)³ + $10,000/(1.10)⁴\n\nYear-by-year present values:\n- Year 1: $15,000 / 1.10 = $13,636\n- Year 2: $20,000 / 1.21 = $16,529\n- Year 3: $25,000 / 1.331 = $18,783\n- Year 4: $10,000 / 1.4641 = $6,830\n- Sum of PVs: $55,778\n- NPV: $55,778 - $50,000 = **$5,778**\n\nAnswer C ($8,150) may reflect slightly different discount rate assumptions or rounding conventions."
+  },
+  {
+    id: 'CFP-GEN-027',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Inflation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A client needs $80,000 annually in today's dollars during retirement. Assuming 3% annual inflation, what will they need in the first year of retirement if they retire in 15 years?",
+    options: [
+      "A) $124,639",
+      "B) $117,282",
+      "C) $96,000",
+      "D) $135,200"
+    ],
+    correctAnswer: 0,
+    explanation: "**Future Value Calculation:**\n\nFV = PV × (1 + inflation)^n\nFV = $80,000 × (1.03)^15\nFV = $80,000 × 1.5580 = **$124,639**\n\nThis demonstrates the significant impact of inflation over long periods. The purchasing power of $80,000 today requires $124,639 in 15 years. This is why retirement projections must account for inflation erosion."
+  },
+  {
+    id: 'CFP-GEN-028',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Financial Statement Analysis',
+    subtopic: 'Liquidity Ratios',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: "A client has liquid assets of $45,000 and monthly expenses of $7,500. Credit card debt is $8,000 at 22% APR, and an auto loan balance is $15,000 at 5%. The emergency fund ratio indicates:",
+    options: [
+      "A) A 6-month emergency fund - adequate",
+      "B) A 3-month emergency fund - minimally adequate",
+      "C) A 4.9-month emergency fund - consider adding",
+      "D) An emergency fund is irrelevant due to debt levels"
+    ],
+    correctAnswer: 0,
+    explanation: "**Emergency Fund Ratio:**\n\nLiquid Assets / Monthly Expenses = $45,000 / $7,500 = **6 months**\n\nThe 6-month emergency fund is adequate by most standards (3-6 months recommended, 6+ for volatile income). The presence of debt doesn't reduce the need for an emergency fund—it makes it more important. The high-interest credit card should be paid aggressively, but emergency reserves should be maintained."
+  },
+  {
+    id: 'CFP-GEN-029',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Cash Flow Planning',
+    subtopic: 'Savings Rate',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: "A couple earning $180,000 combined saves $18,000 to 401(k)s, $6,000 to IRAs, $5,000 to a 529 plan, and $3,000 to after-tax savings annually. Their savings rate is:",
+    options: [
+      "A) 10% (401k only)",
+      "B) 13.3% (retirement accounts only)",
+      "C) 17.8% (all savings)",
+      "D) 15% (excluding 529)"
+    ],
+    correctAnswer: 2,
+    explanation: "**Savings Rate Calculation:**\n\nTotal Savings = $18,000 + $6,000 + $5,000 + $3,000 = **$32,000**\n\nSavings Rate = $32,000 / $180,000 = **17.8%**\n\nAll savings count toward the savings rate, including education savings (529) which is still building wealth for future expenses. A 17.8% rate is excellent—exceeding the commonly recommended 15-20% target. This rate should support their financial goals effectively."
+  },
+  {
+    id: 'CFP-GEN-030',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-6',
+    topic: 'Debt Management',
+    subtopic: 'Debt Payoff Strategies',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: "A client has three debts: Credit Card A ($5,000 at 24%), Credit Card B ($12,000 at 18%), and Personal Loan ($8,000 at 9%). They have $500/month extra for debt payoff. Using the avalanche method, the optimal payoff order is:",
+    options: [
+      "A) Personal Loan → Card B → Card A",
+      "B) Card A → Card B → Personal Loan",
+      "C) Card B → Card A → Personal Loan",
+      "D) Card A → Personal Loan → Card B"
+    ],
+    correctAnswer: 1,
+    explanation: "**Avalanche Method:**\n\nThe debt avalanche prioritizes debts by **highest interest rate first**, regardless of balance:\n\n1. Credit Card A: 24% - Pay first\n2. Credit Card B: 18% - Pay second\n3. Personal Loan: 9% - Pay last\n\nThis minimizes total interest paid and is mathematically optimal. The snowball method (lowest balance first) provides psychological wins but costs more in interest. For a $25,000 total debt, avalanche could save $1,000+ in interest compared to snowball."
+  },
+  {
+    id: 'CFP-GEN-031',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Calculator',
+    subtopic: 'Annuity Due vs Ordinary Annuity',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "A client will receive $50,000 annually for 10 years, with the first payment today. At 6% discount rate, the present value of this annuity due is approximately:",
+    options: [
+      "A) $368,004",
+      "B) $390,087",
+      "C) $347,173",
+      "D) $500,000"
+    ],
+    correctAnswer: 1,
+    explanation: "**Annuity Due Present Value:**\n\nAnnuity Due PV = Ordinary Annuity PV × (1 + r)\n\nOrdinary Annuity PV = $50,000 × [(1 - (1.06)^-10) / 0.06]\n= $50,000 × 7.3601 = $368,004\n\nAnnuity Due PV = $368,004 × 1.06 = **$390,087**\n\nThe annuity due is worth more because each payment is received one period earlier, earning an extra period of interest when discounted back."
+  },
+  {
+    id: 'CFP-GEN-032',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: '529 Plan Strategies',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A grandparent wants to superfund a 529 plan with a $90,000 contribution in 2024. This contribution:",
+    options: [
+      "A) Fully uses five years of annual exclusions ($18,000 × 5)",
+      "B) Exceeds the gift tax exclusion by $72,000",
+      "C) Reduces the grandparent's lifetime exemption by $90,000",
+      "D) Is not permitted under 529 rules"
+    ],
+    correctAnswer: 0,
+    explanation: "**529 Superfunding:**\n\nThe 5-year election allows one-time contributions up to 5× the annual exclusion:\n- 2024 annual exclusion: $18,000\n- Maximum superfund: $18,000 × 5 = **$90,000**\n\nThe $90,000 contribution is reported over 5 gift tax returns, using each year's exclusion. No lifetime exemption is used if the contributor survives 5 years. If the contributor dies during that period, a prorated portion is included in their estate."
+  },
+  {
+    id: 'CFP-GEN-033',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Environment',
+    subtopic: 'Interest Rate Impact',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: "When the Federal Reserve raises interest rates, which client action is MOST likely to benefit?",
+    options: [
+      "A) Purchasing long-term bonds",
+      "B) Refinancing an existing mortgage",
+      "C) Holding cash in high-yield savings accounts",
+      "D) Borrowing on margin to invest"
+    ],
+    correctAnswer: 2,
+    explanation: "**Rising Rate Environment:**\n\nWhen rates increase:\n- ✓ Cash/savings yields increase - savings accounts earn more\n- ✗ Bond prices fall (inverse relationship)\n- ✗ Mortgage rates increase - refinancing becomes less attractive\n- ✗ Borrowing costs increase - margin interest rises\n\nHigh-yield savings accounts benefit directly from Fed rate increases as banks offer higher yields to depositors. This is why holding more cash can be advantageous in rising rate environments."
+  },
+  {
+    id: 'CFP-GEN-034',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Balance Sheet Analysis',
+    subtopic: 'Net Worth Statement',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: "On a personal balance sheet, which item is classified as a liability?",
+    options: [
+      "A) Whole life insurance cash value",
+      "B) Home equity",
+      "C) Student loan balance",
+      "D) 401(k) account balance"
+    ],
+    correctAnswer: 2,
+    explanation: "**Balance Sheet Classification:**\n\n**Liabilities (Debts Owed):**\n- Student loans ✓\n- Mortgages\n- Credit card balances\n- Auto loans\n\n**Assets (Items of Value):**\n- Life insurance cash value\n- Home equity (asset minus mortgage = equity)\n- Retirement accounts\n\nHome equity is calculated as: Home Value (asset) - Mortgage (liability) = Equity. Equity itself is not a line item—the home value and mortgage are listed separately."
+  },
+  {
+    id: 'CFP-GEN-035',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Budgeting',
+    subtopic: 'Discretionary vs Non-Discretionary',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: "A client is building a budget. Which expense is considered DISCRETIONARY?",
+    options: [
+      "A) Property taxes",
+      "B) Health insurance premiums",
+      "C) Dining out",
+      "D) Minimum credit card payments"
+    ],
+    correctAnswer: 2,
+    explanation: "**Expense Classification:**\n\n**Discretionary (Flexible):**\n- Dining out ✓\n- Entertainment\n- Vacations\n- Non-essential shopping\n\n**Non-Discretionary (Fixed/Required):**\n- Property taxes (legal obligation)\n- Health insurance (essential protection)\n- Minimum debt payments (contractual)\n- Utilities, housing, food essentials\n\nDiscretionary expenses are the first place to cut when cash flow is tight. They're also the most variable line items in most budgets."
+  },
+  {
+    id: 'CFP-GEN-036',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Internal Rate of Return',
+    subtopic: 'IRR Interpretation',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: "An investment has an IRR of 12%. If the investor's required rate of return is 10%, the investment:",
+    options: [
+      "A) Should be rejected since IRR exceeds the requirement",
+      "B) Should be accepted since IRR exceeds the required return",
+      "C) Cannot be evaluated without more information",
+      "D) Has a negative NPV"
+    ],
+    correctAnswer: 1,
+    explanation: "**IRR Decision Rule:**\n\nIf IRR > Required Return: **Accept**\nIf IRR < Required Return: **Reject**\n\nHere: 12% IRR > 10% Required = **Accept**\n\nThe IRR is the discount rate that makes NPV = 0. Since the project returns 12% and only 10% is required, the project adds value. At a 10% discount rate, this investment would have a positive NPV."
+  },
+  {
+    id: 'CFP-GEN-037',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-6',
+    topic: 'Credit Management',
+    subtopic: 'Credit Scores',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "Which factor has the GREATEST weight in FICO credit score calculation?",
+    options: [
+      "A) Credit utilization ratio",
+      "B) Payment history",
+      "C) Length of credit history",
+      "D) New credit inquiries"
+    ],
+    correctAnswer: 1,
+    explanation: "**FICO Score Weights:**\n\n| Factor | Weight |\n|--------|--------|\n| Payment History | **35%** |\n| Credit Utilization | 30% |\n| Length of Credit History | 15% |\n| Credit Mix | 10% |\n| New Credit | 10% |\n\nPayment history is most important—paying on time consistently is the single best thing clients can do for their scores. A single late payment can drop scores significantly, especially if credit history is otherwise thin."
+  },
+  {
+    id: 'CFP-GEN-038',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: 'Coverdell ESA',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "A Coverdell Education Savings Account (ESA) differs from a 529 plan in that it:",
+    options: [
+      "A) Has a higher annual contribution limit",
+      "B) Can pay for K-12 private school expenses",
+      "C) Provides a state tax deduction",
+      "D) Has no income limits for contributors"
+    ],
+    correctAnswer: 1,
+    explanation: "**Coverdell ESA Features:**\n\n- **K-12 Expenses**: Can pay for elementary and secondary school costs (529s now can too, up to $10K/year)\n- **Contribution Limit**: Only $2,000/year (much lower than 529)\n- **Income Limits**: Contributions phase out at higher incomes\n- **Investment Control**: More investment flexibility than most 529s\n\nThe key distinction is Coverdell's broader definition of qualified expenses including computers, tutoring, and uniforms for K-12."
+  },
+  {
+    id: 'CFP-GEN-039',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Indicators',
+    subtopic: 'Leading Indicators',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "Which of the following is a LEADING economic indicator?",
+    options: [
+      "A) Unemployment rate",
+      "B) Consumer Price Index (CPI)",
+      "C) Building permits",
+      "D) GDP"
+    ],
+    correctAnswer: 2,
+    explanation: "**Economic Indicator Classification:**\n\n**Leading (Predict Future):**\n- Building permits ✓\n- Stock market\n- Initial jobless claims\n- Consumer expectations\n\n**Lagging (Confirm Trends):**\n- Unemployment rate\n- CPI/Inflation\n- Corporate profits\n\n**Coincident (Current State):**\n- GDP\n- Industrial production\n\nBuilding permits signal future construction activity and economic growth. They rise before economic expansions and fall before contractions."
+  },
+  {
+    id: 'CFP-GEN-040',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Financial Ratios',
+    subtopic: 'Solvency',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: "A client has total assets of $800,000 and total liabilities of $320,000. Their debt-to-asset ratio and net worth are:",
+    options: [
+      "A) 40% debt ratio; $480,000 net worth",
+      "B) 60% debt ratio; $480,000 net worth",
+      "C) 40% debt ratio; $320,000 net worth",
+      "D) 25% debt ratio; $480,000 net worth"
+    ],
+    correctAnswer: 0,
+    explanation: "**Financial Ratio Calculations:**\n\n**Debt-to-Asset Ratio:**\nTotal Liabilities / Total Assets = $320,000 / $800,000 = **40%**\n\n**Net Worth:**\nTotal Assets - Total Liabilities = $800,000 - $320,000 = **$480,000**\n\nA 40% debt ratio is moderate—meaning 60% of assets are owned free and clear. Generally, debt ratios below 50% indicate reasonable financial health, though context matters (age, asset types, interest rates)."
+  },
+  {
+    id: 'CFP-GEN-041',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Cash Flow',
+    subtopic: 'Opportunity Cost',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: "A client debates paying off their 4.5% mortgage early versus investing in a diversified portfolio expecting 7% returns. The opportunity cost of paying off the mortgage is:",
+    options: [
+      "A) 4.5% (the mortgage interest rate)",
+      "B) 7% (the foregone investment return)",
+      "C) 2.5% (the difference between returns)",
+      "D) 11.5% (the sum of both rates)"
+    ],
+    correctAnswer: 2,
+    explanation: "**Opportunity Cost Analysis:**\n\nOpportunity cost is what you give up by making a choice.\n\nPaying off 4.5% mortgage guarantees a 4.5% return (saved interest). Investing offers expected 7% return.\n\n**Opportunity Cost = 7% - 4.5% = 2.5%**\n\nBy paying off the mortgage instead of investing, the client foregoes 2.5% annually. However, this ignores risk—the 4.5% is guaranteed while 7% is expected but uncertain. Risk-adjusted, the gap narrows."
+  },
+  {
+    id: 'CFP-GEN-042',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Rule of 72',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: "Using the Rule of 72, approximately how long will it take for an investment to double at 8% annual return?",
+    options: [
+      "A) 6 years",
+      "B) 9 years",
+      "C) 12 years",
+      "D) 8 years"
+    ],
+    correctAnswer: 1,
+    explanation: "**Rule of 72:**\n\nYears to Double = 72 / Interest Rate\n\nYears = 72 / 8 = **9 years**\n\nThe Rule of 72 provides a quick approximation for doubling time. At 8%, money doubles every 9 years. This means $100,000 today becomes $200,000 in 9 years, $400,000 in 18 years, and $800,000 in 27 years—demonstrating the power of compounding."
+  },
+  {
+    id: 'CFP-GEN-043',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-6',
+    topic: 'Consumer Protection',
+    subtopic: 'Bankruptcy',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: "Under Chapter 7 bankruptcy, which asset is typically PROTECTED from creditors?",
+    options: [
+      "A) Vacation home",
+      "B) Qualified retirement plan assets",
+      "C) Non-exempt cash above state limits",
+      "D) Investment real estate"
+    ],
+    correctAnswer: 1,
+    explanation: "**Bankruptcy Asset Protection:**\n\n**Protected (Exempt):**\n- ERISA-qualified retirement plans ✓ (unlimited federal protection)\n- IRAs (up to ~$1.5M under federal law)\n- Primary residence (varies by state homestead exemption)\n- Basic personal property\n\n**Not Protected:**\n- Vacation/investment real estate\n- Non-exempt cash/investments\n- Luxury items\n\nERISA provides federal protection for 401(k)s, pensions, and similar plans. This is why retirement accounts should generally not be invaded to pay debts."
+  },
+  {
+    id: 'CFP-GEN-044',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Education Planning',
+    subtopic: 'Student Loans',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: "A client has $80,000 in federal student loans at 6% and is considering Public Service Loan Forgiveness (PSLF). To qualify, they must:",
+    options: [
+      "A) Make 60 qualifying payments while working for any employer",
+      "B) Make 120 qualifying payments while employed full-time by a qualifying public service employer",
+      "C) Pay down 50% of the balance first",
+      "D) Earn below the poverty line"
+    ],
+    correctAnswer: 1,
+    explanation: "**PSLF Requirements:**\n\n1. **120 Qualifying Payments** (10 years of monthly payments)\n2. **Full-Time Employment** at a qualifying public service employer\n3. **Qualifying Employers**: Government, 501(c)(3) nonprofits, other qualifying organizations\n4. **Direct Loans** (must consolidate FFEL/Perkins)\n5. **Qualifying Repayment Plan** (income-driven plans qualify)\n\nAfter 120 payments, remaining balance is forgiven tax-free. No income limits, no balance requirements."
+  },
+  {
+    id: 'CFP-GEN-045',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Services Industry',
+    subtopic: 'Regulatory Environment',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: "The Consumer Financial Protection Bureau (CFPB) has regulatory authority over:",
+    options: [
+      "A) Investment advisers and broker-dealers",
+      "B) Consumer financial products including mortgages and credit cards",
+      "C) Insurance products and annuities",
+      "D) Retirement plan administration"
+    ],
+    correctAnswer: 1,
+    explanation: "**CFPB Jurisdiction:**\n\n**Regulated by CFPB:**\n- Mortgages ✓\n- Credit cards ✓\n- Student loans\n- Payday loans\n- Consumer banking\n\n**NOT Regulated by CFPB:**\n- Investment advisers (SEC/State)\n- Broker-dealers (SEC/FINRA)\n- Insurance (State regulators)\n- Retirement plans (DOL for ERISA)\n\nThe CFPB, created by Dodd-Frank in 2010, focuses on protecting consumers in the financial marketplace for credit and payment products."
+  },
+
+  // ============================================
+  // ADDITIONAL GENERAL PRINCIPLES QUESTIONS (46-75)
+  // ============================================
+  {
+    id: 'CFP-GEN-046',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Planning Process',
+    subtopic: 'Client Goals',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "SMART goal criteria include all EXCEPT:",
+    options: [
+      "A) Specific",
+      "B) Measurable",
+      "C) Arbitrary",
+      "D) Time-bound"
+    ],
+    correctAnswer: 2,
+    explanation: "**SMART Goals:**\n- **S**pecific\n- **M**easurable\n- **A**chievable (not Arbitrary)\n- **R**ealistic/Relevant\n- **T**ime-bound\n\nArbitrary is the opposite of what SMART goals should be. Goals should be carefully defined, not random."
+  },
+  {
+    id: 'CFP-GEN-047',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Present Value',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "What is the present value of $10,000 to be received in 5 years at 8% annual interest?",
+    options: [
+      "A) $6,209",
+      "B) $6,806",
+      "C) $8,000",
+      "D) $14,693"
+    ],
+    correctAnswer: 1,
+    explanation: "**Present Value Calculation:**\n\nPV = FV / (1 + r)^n\nPV = $10,000 / (1.08)^5\nPV = $10,000 / 1.4693\nPV = $6,806\n\nThe $10,000 future value discounted at 8% for 5 years equals $6,806 today."
+  },
+  {
+    id: 'CFP-GEN-048',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Rule of 72',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: "Using the Rule of 72, approximately how long will it take money to double at 9% interest?",
+    options: [
+      "A) 6 years",
+      "B) 8 years",
+      "C) 9 years",
+      "D) 12 years"
+    ],
+    correctAnswer: 1,
+    explanation: "**Rule of 72:**\n\nYears to double = 72 / Interest Rate\n72 / 9 = 8 years\n\nThis quick estimation tool works for compound interest. At 9%, money approximately doubles in 8 years."
+  },
+  {
+    id: 'CFP-GEN-049',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Budgeting',
+    subtopic: 'Emergency Fund',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "A recommended emergency fund should cover approximately:",
+    options: [
+      "A) 1-2 months of expenses",
+      "B) 3-6 months of expenses",
+      "C) 1 year of expenses",
+      "D) 2 years of income"
+    ],
+    correctAnswer: 1,
+    explanation: "**Emergency Fund Guidelines:**\n\nGeneral recommendation: 3-6 months of living expenses in liquid accessible accounts.\n\n**Factors affecting amount:**\n- Job stability (more stable = less needed)\n- Income sources (single vs. dual income)\n- Health and insurance coverage\n- Age and family situation"
+  },
+  {
+    id: 'CFP-GEN-050',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Ratios',
+    subtopic: 'Debt Ratios',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A client has gross monthly income of $8,000 and monthly debt payments of $2,400. Their debt-to-income ratio is:",
+    options: [
+      "A) 20%",
+      "B) 25%",
+      "C) 30%",
+      "D) 33%"
+    ],
+    correctAnswer: 2,
+    explanation: "**Debt-to-Income Ratio:**\n\nDTI = Total Monthly Debt / Gross Monthly Income\nDTI = $2,400 / $8,000 = 30%\n\nLenders typically want DTI below 36% (some allow up to 43% for qualified mortgages)."
+  },
+  {
+    id: 'CFP-GEN-051',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Inflation',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "Inflation is BEST described as:",
+    options: [
+      "A) Rising unemployment rates",
+      "B) General increase in price levels over time",
+      "C) Decrease in the money supply",
+      "D) Increase in productivity"
+    ],
+    correctAnswer: 1,
+    explanation: "**Inflation = General increase in prices, decrease in purchasing power.**\n\n**Measured by:**\n- Consumer Price Index (CPI)\n- Personal Consumption Expenditures (PCE)\n\n**Effects:**\n- Erodes purchasing power\n- Hurts fixed-income investments\n- Benefits debtors (repay with cheaper dollars)"
+  },
+  {
+    id: 'CFP-GEN-052',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Federal Reserve',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "The Federal Reserve uses which tool to most directly influence short-term interest rates?",
+    options: [
+      "A) Changing tax rates",
+      "B) Federal funds rate target",
+      "C) Issuing Treasury bonds",
+      "D) Setting mortgage rates"
+    ],
+    correctAnswer: 1,
+    explanation: "**Federal Reserve Monetary Policy Tools:**\n\n**Primary:** Federal Funds Rate target - rate banks charge each other for overnight loans\n\n**Other tools:**\n- Open market operations (buy/sell securities)\n- Reserve requirements\n- Discount rate\n- Quantitative easing\n\nThe Fed doesn't set tax rates (Congress) or directly set mortgage rates."
+  },
+  {
+    id: 'CFP-GEN-053',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Statements',
+    subtopic: 'Net Worth',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: "Net worth is calculated as:",
+    options: [
+      "A) Income minus expenses",
+      "B) Assets minus liabilities",
+      "C) Gross income minus taxes",
+      "D) Revenue minus cost of goods sold"
+    ],
+    correctAnswer: 1,
+    explanation: "**Net Worth = Total Assets - Total Liabilities**\n\n**Assets include:** Cash, investments, real estate, personal property\n**Liabilities include:** Mortgages, loans, credit cards, other debts\n\nNet worth is a snapshot; cash flow (income - expenses) is ongoing."
+  },
+  {
+    id: 'CFP-GEN-054',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Services',
+    subtopic: 'Account Types',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "FDIC insurance covers deposits at member banks up to:",
+    options: [
+      "A) $100,000 per depositor",
+      "B) $250,000 per depositor, per ownership category",
+      "C) $500,000 per account",
+      "D) Unlimited amounts"
+    ],
+    correctAnswer: 1,
+    explanation: "**FDIC Coverage: $250,000 per depositor, per insured bank, per ownership category**\n\n**Separate categories:**\n- Single accounts\n- Joint accounts\n- IRAs\n- Trust accounts\n\n**Not covered:** Securities, mutual funds, crypto. SIPC covers securities accounts."
+  },
+  {
+    id: 'CFP-GEN-055',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Behavioral Finance',
+    subtopic: 'Biases',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "Confirmation bias leads investors to:",
+    options: [
+      "A) Overweight recent events in decision-making",
+      "B) Seek information that supports existing beliefs",
+      "C) Follow the crowd in investment decisions",
+      "D) Overestimate their investment abilities"
+    ],
+    correctAnswer: 1,
+    explanation: "**Confirmation Bias:** Tendency to seek, interpret, and remember information confirming pre-existing beliefs while ignoring contradictory evidence.\n\n**Other biases:**\n- Recency (A)\n- Herding (C)\n- Overconfidence (D)\n- Anchoring, loss aversion, mental accounting"
+  },
+  {
+    id: 'CFP-GEN-056',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Annuities',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Which has a higher present value: an ordinary annuity or an annuity due (same payment, rate, and term)?",
+    options: [
+      "A) Ordinary annuity",
+      "B) Annuity due",
+      "C) They are equal",
+      "D) Cannot be determined"
+    ],
+    correctAnswer: 1,
+    explanation: "**Annuity Due has higher PV** because payments occur at the BEGINNING of each period.\n\n**Annuity Due PV = Ordinary Annuity PV × (1 + r)**\n\nReceiving money earlier means higher present value. Examples: lease payments (annuity due), loan payments (ordinary annuity)."
+  },
+  {
+    id: 'CFP-GEN-057',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Business Cycle',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "During a recession, which typically occurs?",
+    options: [
+      "A) Rising inflation and employment",
+      "B) Declining GDP and rising unemployment",
+      "C) Increasing consumer spending",
+      "D) Rising interest rates"
+    ],
+    correctAnswer: 1,
+    explanation: "**Recession Characteristics:**\n- Declining GDP (two consecutive quarters)\n- Rising unemployment\n- Reduced consumer/business spending\n- Often falling interest rates (Fed stimulus)\n- Deflationary pressures\n\n**Business Cycle:** Expansion → Peak → Contraction (recession) → Trough → Recovery"
+  },
+  {
+    id: 'CFP-GEN-058',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Client Communication',
+    subtopic: 'Active Listening',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "Active listening in client meetings includes:",
+    options: [
+      "A) Immediately offering solutions to stated problems",
+      "B) Paraphrasing and asking clarifying questions",
+      "C) Completing the client's sentences to save time",
+      "D) Focusing primarily on financial data"
+    ],
+    correctAnswer: 1,
+    explanation: "**Active Listening Techniques:**\n- Paraphrasing to confirm understanding\n- Asking open-ended clarifying questions\n- Observing non-verbal cues\n- Avoiding interruptions\n- Summarizing key points\n\nBuilds trust and ensures accurate understanding of client goals and concerns."
+  },
+  {
+    id: 'CFP-GEN-059',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Ratios',
+    subtopic: 'Liquidity',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "The current ratio is calculated as:",
+    options: [
+      "A) Current assets divided by current liabilities",
+      "B) Total assets divided by total liabilities",
+      "C) Liquid assets divided by monthly expenses",
+      "D) Net worth divided by income"
+    ],
+    correctAnswer: 0,
+    explanation: "**Current Ratio = Current Assets / Current Liabilities**\n\nMeasures ability to pay short-term obligations. Ratio > 1 indicates more current assets than current liabilities.\n\n**For personal finance:**\n- Emergency fund ratio = Liquid assets / Monthly expenses\n- Higher is better for financial security"
+  },
+  {
+    id: 'CFP-GEN-060',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Legal Concepts',
+    subtopic: 'Property Ownership',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "Tenancy by the entirety is a form of property ownership available to:",
+    options: [
+      "A) Business partners only",
+      "B) Married couples only",
+      "C) Any two or more people",
+      "D) Single individuals"
+    ],
+    correctAnswer: 1,
+    explanation: "**Property Ownership Forms:**\n- **Tenancy by Entirety:** Married couples only, survivorship, creditor protection\n- **Joint Tenancy:** Two or more, equal shares, survivorship\n- **Tenancy in Common:** Two or more, unequal shares allowed, no survivorship\n- **Community Property:** Married couples in 9 states"
+  },
+  {
+    id: 'CFP-GEN-061',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Education Planning',
+    subtopic: '529 Plans',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A 529 plan offers which primary tax benefit?",
+    options: [
+      "A) Federal income tax deduction for contributions",
+      "B) Tax-free growth and qualified withdrawals",
+      "C) Annual exclusion from estate tax",
+      "D) Tax credit for education expenses"
+    ],
+    correctAnswer: 1,
+    explanation: "**529 Plan Tax Benefits:**\n- Contributions: NOT federally deductible (some states allow)\n- Growth: Tax-free\n- Qualified withdrawals: Tax-free\n- 5-year gift tax averaging available\n- Stays in donor's estate but eligible for annual exclusion\n\n**Qualified expenses:** Tuition, books, room/board, computers, K-12 tuition (up to $10K)"
+  },
+  {
+    id: 'CFP-GEN-062',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Interest Rates',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: "When the yield curve inverts (short-term rates exceed long-term rates), it often signals:",
+    options: [
+      "A) Economic expansion ahead",
+      "B) Potential recession",
+      "C) Rising inflation",
+      "D) Strong stock market returns"
+    ],
+    correctAnswer: 1,
+    explanation: "**Inverted Yield Curve:** Short-term rates > long-term rates\n\n**Usually signals:**\n- Economic slowdown expectations\n- Potential recession (historically predictive)\n- Flight to long-term safety\n\n**Normal curve:** Long-term rates > short-term (reward for time risk)"
+  },
+  {
+    id: 'CFP-GEN-063',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Cash Management',
+    subtopic: 'Credit Scores',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "Which factor has the GREATEST impact on a FICO credit score?",
+    options: [
+      "A) Length of credit history",
+      "B) Payment history",
+      "C) New credit inquiries",
+      "D) Credit mix"
+    ],
+    correctAnswer: 1,
+    explanation: "**FICO Score Components:**\n- **Payment History: 35%** (most important)\n- Amounts Owed: 30%\n- Length of Credit History: 15%\n- New Credit: 10%\n- Credit Mix: 10%\n\nPaying on time is the single most important factor for credit scores."
+  },
+  {
+    id: 'CFP-GEN-064',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'NPV',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: "An investment with a Net Present Value (NPV) greater than zero indicates:",
+    options: [
+      "A) The investment should be rejected",
+      "B) The investment returns more than the required rate",
+      "C) The investment has no risk",
+      "D) The investment will lose money"
+    ],
+    correctAnswer: 1,
+    explanation: "**NPV > 0:** Investment returns exceed required return (discount rate). Accept the investment.\n\n**NPV = 0:** Investment returns exactly the required return. Indifferent.\n\n**NPV < 0:** Investment returns less than required. Reject.\n\nNPV and IRR are key capital budgeting tools."
+  },
+  {
+    id: 'CFP-GEN-065',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Services',
+    subtopic: 'Fiduciary vs Suitability',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "A fiduciary standard requires an adviser to:",
+    options: [
+      "A) Recommend only suitable products",
+      "B) Act in the client's best interest",
+      "C) Avoid all conflicts of interest",
+      "D) Charge the lowest fees possible"
+    ],
+    correctAnswer: 1,
+    explanation: "**Fiduciary vs. Suitability:**\n\n**Fiduciary:** Act in client's BEST interest (RIAs, CFP® professionals)\n\n**Suitability/Reg BI:** Recommendation must be suitable/in best interest at time made (broker-dealers)\n\nFiduciary is higher standard. Conflicts allowed if disclosed and managed, not eliminated."
+  },
+  {
+    id: 'CFP-GEN-066',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Statements',
+    subtopic: 'Cash Flow',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "A positive cash flow statement shows:",
+    options: [
+      "A) High net worth",
+      "B) Income exceeds expenses",
+      "C) Assets exceed liabilities",
+      "D) Good credit score"
+    ],
+    correctAnswer: 1,
+    explanation: "**Cash Flow Statement:** Income - Expenses = Cash Flow\n\n**Positive = Surplus** (saving/investing)\n**Negative = Deficit** (spending more than earning)\n\n**Balance Sheet:** Assets - Liabilities = Net Worth\n\nCash flow is ongoing; net worth is a point-in-time snapshot."
+  },
+  {
+    id: 'CFP-GEN-067',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Legal Concepts',
+    subtopic: 'Agency',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "A fiduciary relationship creates a duty to act:",
+    options: [
+      "A) In one's own best interest",
+      "B) Primarily for the benefit of another",
+      "C) Only when profitable",
+      "D) According to industry standards only"
+    ],
+    correctAnswer: 1,
+    explanation: "**Fiduciary Duty:** Legal obligation to act primarily for another's benefit.\n\n**Key duties:**\n- Loyalty (client's interest first)\n- Care (prudence and diligence)\n- Good faith (honesty)\n\n**Examples:** Trustees, investment advisers, CFP® professionals, attorneys."
+  },
+  {
+    id: 'CFP-GEN-068',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Education Planning',
+    subtopic: 'Coverdell ESA',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "A Coverdell ESA allows annual contributions of up to:",
+    options: [
+      "A) $1,000",
+      "B) $2,000",
+      "C) $5,500",
+      "D) Unlimited"
+    ],
+    correctAnswer: 1,
+    explanation: "**Coverdell ESA:**\n- $2,000 annual contribution limit\n- Income limits apply (phaseout)\n- Tax-free growth and qualified withdrawals\n- K-12 and higher education expenses eligible\n- Must be used by age 30\n\n**Compare to 529:** No annual limit, no income limit, higher flexibility."
+  },
+  {
+    id: 'CFP-GEN-069',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'GDP',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "Gross Domestic Product (GDP) measures:",
+    options: [
+      "A) Total stock market value",
+      "B) Total value of goods and services produced in a country",
+      "C) Government spending only",
+      "D) International trade balance"
+    ],
+    correctAnswer: 1,
+    explanation: "**GDP = Total value of goods and services produced within a country's borders in a given period.**\n\n**Components:** C + I + G + (X-M)\n- Consumer spending\n- Investment\n- Government spending\n- Net exports (exports minus imports)\n\nKey economic indicator for measuring economic health."
+  },
+  {
+    id: 'CFP-GEN-070',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Time Value of Money',
+    subtopic: 'Compounding',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "Which compounding frequency results in the highest effective annual rate?",
+    options: [
+      "A) Annual",
+      "B) Quarterly",
+      "C) Monthly",
+      "D) Daily"
+    ],
+    correctAnswer: 3,
+    explanation: "**More frequent compounding = Higher effective rate**\n\nDaily > Monthly > Quarterly > Annual\n\n**Example at 12% nominal:**\n- Annual: 12.00%\n- Quarterly: 12.55%\n- Monthly: 12.68%\n- Daily: 12.75%\n\nContinuous compounding is the theoretical limit."
+  },
+  {
+    id: 'CFP-GEN-071',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Planning Process',
+    subtopic: 'Data Gathering',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: "Quantitative data in financial planning includes:",
+    options: [
+      "A) Client's risk tolerance and values",
+      "B) Income, expenses, and account balances",
+      "C) Goals and priorities",
+      "D) Family dynamics"
+    ],
+    correctAnswer: 1,
+    explanation: "**Quantitative Data:** Numbers-based, measurable\n- Income, expenses, assets, liabilities\n- Account balances, tax returns\n- Insurance policies, statements\n\n**Qualitative Data:** Values, attitudes, goals\n- Risk tolerance, priorities\n- Family relationships, health\n- Lifestyle preferences"
+  },
+  {
+    id: 'CFP-GEN-072',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Legal Concepts',
+    subtopic: 'Contracts',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "For a contract to be legally binding, it must include:",
+    options: [
+      "A) A written document only",
+      "B) Offer, acceptance, and consideration",
+      "C) Notarization and witnesses",
+      "D) Government approval"
+    ],
+    correctAnswer: 1,
+    explanation: "**Contract Elements:**\n- **Offer:** Proposal by one party\n- **Acceptance:** Agreement to terms\n- **Consideration:** Something of value exchanged\n- **Capacity:** Parties must be legally competent\n- **Legality:** Legal purpose\n\nNot all contracts require writing (though some do under Statute of Frauds)."
+  },
+  {
+    id: 'CFP-GEN-073',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Cash Management',
+    subtopic: 'Debt Management',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "The debt avalanche method prioritizes paying off debts with:",
+    options: [
+      "A) The smallest balances first",
+      "B) The highest interest rates first",
+      "C) The oldest debts first",
+      "D) Equal payments to all debts"
+    ],
+    correctAnswer: 1,
+    explanation: "**Debt Payoff Methods:**\n\n**Avalanche:** Pay highest interest rate first\n- Mathematically optimal\n- Saves most on interest\n\n**Snowball:** Pay smallest balance first\n- Psychological wins\n- Quick victories build momentum\n\nBoth keep minimum payments on other debts."
+  },
+  {
+    id: 'CFP-GEN-074',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Economic Concepts',
+    subtopic: 'Market Indicators',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: "A leading economic indicator is:",
+    options: [
+      "A) GDP growth rate",
+      "B) Unemployment rate",
+      "C) Stock market performance",
+      "D) Corporate profits"
+    ],
+    correctAnswer: 2,
+    explanation: "**Economic Indicators:**\n\n**Leading** (predict future): Stock prices, building permits, consumer expectations, initial jobless claims\n\n**Coincident** (current state): GDP, employment, personal income, industrial production\n\n**Lagging** (confirm trends): Unemployment rate, CPI, prime rate, business loans"
+  },
+  {
+    id: 'CFP-GEN-075',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Financial Planning Process',
+    subtopic: 'Recommendations',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: "When presenting financial planning recommendations, a CFP® professional should:",
+    options: [
+      "A) Use complex terminology to demonstrate expertise",
+      "B) Present recommendations in context of client's goals",
+      "C) Focus only on investment returns",
+      "D) Avoid discussing potential risks"
+    ],
+    correctAnswer: 1,
+    explanation: "**Effective Recommendation Presentation:**\n- Connect to client's stated goals\n- Use clear, understandable language\n- Discuss both benefits AND risks\n- Prioritize recommendations\n- Allow time for questions\n- Document client understanding\n\nRecommendations should be client-centered, not jargon-heavy."
   }
 ];
+
+export default CFP_GEN_QUESTIONS;

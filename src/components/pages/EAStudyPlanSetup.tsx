@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { format, addDays, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import { EASectionId, EA_SECTION_CONFIG } from '../../courses/ea';
 import { generateEAStudyPlan, EAStudyPlan, getStudyPlanSummary } from '../../utils/eaStudyPlanner';
 
@@ -59,7 +61,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, date, onDateChan
   const maxDate = format(addDays(today, 365), 'yyyy-MM-dd'); // Up to 1 year
 
   return (
-    <div className="card p-4">
+    <Card className="p-4">
       <div className="flex items-start gap-3">
         <div
           className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
@@ -84,13 +86,14 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, date, onDateChan
               className="input-field flex-1"
             />
             {date && (
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => onDateChange(null)}
-                className="text-slate-400 hover:text-slate-600 p-2"
                 aria-label="Clear date"
               >
                 ×
-              </button>
+              </Button>
             )}
           </div>
           {date && (
@@ -100,7 +103,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, date, onDateChan
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
@@ -191,17 +194,17 @@ interface PlanPreviewProps {
 const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
   <div className="space-y-4">
     {/* Summary */}
-    <div className="card bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 p-4">
+    <Card className="bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 p-4">
       <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">
         Your Study Plan
       </h3>
       <p className="text-sm text-slate-600 dark:text-slate-300">
         {getStudyPlanSummary(plan)}
       </p>
-    </div>
+    </Card>
 
     {/* Daily Goals */}
-    <div className="card p-4">
+    <Card className="p-4">
       <h4 className="font-medium text-slate-900 dark:text-slate-100 mb-3">
         Daily Goals
       </h4>
@@ -231,10 +234,10 @@ const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
           </span>
         </div>
       </div>
-    </div>
+    </Card>
 
     {/* Milestones */}
-    <div className="card p-4">
+    <Card className="p-4">
       <h4 className="font-medium text-slate-900 dark:text-slate-100 mb-3">
         Key Milestones
       </h4>
@@ -258,7 +261,7 @@ const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   </div>
 );
 
@@ -421,43 +424,47 @@ const EAStudyPlanSetup: React.FC = () => {
       {/* Navigation buttons */}
       <div className="flex items-center gap-3">
         {step > 1 && step < 4 && (
-          <button
+          <Button
+            variant="secondary"
             onClick={() => setStep(step - 1)}
-            className="btn-secondary flex-1"
+            fullWidth
           >
             Back
-          </button>
+          </Button>
         )}
         
         {step < 3 && (
-          <button
+          <Button
+            variant="primary"
             onClick={() => setStep(step + 1)}
             disabled={!canProceed()}
-            className="btn-primary flex-1"
+            rightIcon={ChevronRight}
+            fullWidth
           >
             Continue
-            <ChevronRight className="w-4 h-4 ml-1" />
-          </button>
+          </Button>
         )}
 
         {step === 3 && (
-          <button
+          <Button
+            variant="primary"
             onClick={handleGeneratePlan}
-            className="btn-primary flex-1"
+            rightIcon={Sparkles}
+            fullWidth
           >
             Generate Plan
-            <Sparkles className="w-4 h-4 ml-1" />
-          </button>
+          </Button>
         )}
 
         {step === 4 && (
-          <button
+          <Button
+            variant="primary"
             onClick={handleSavePlan}
-            className="btn-primary flex-1"
+            rightIcon={ChevronRight}
+            fullWidth
           >
             Start Studying
-            <ChevronRight className="w-4 h-4 ml-1" />
-          </button>
+          </Button>
         )}
       </div>
     </div>

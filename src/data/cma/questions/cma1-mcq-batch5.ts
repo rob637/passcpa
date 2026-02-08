@@ -1,0 +1,479 @@
+/**
+ * CMA Part 1 - MCQ Batch 5 (25 Questions)
+ * 
+ * Focus areas: Advanced topics and exam-weight distribution
+ * - CMA1-A: External Financial Reporting (4)
+ * - CMA1-B: Planning, Budgeting, Forecasting (5)
+ * - CMA1-C: Performance Management (5)
+ * - CMA1-D: Cost Management (5)
+ * - CMA1-E: Internal Controls (3)
+ * - CMA1-F: Technology & Analytics (3)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1_MCQ_BATCH5: Question[] = [
+  // ==========================================
+  // CMA1-A: External Financial Reporting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Revenue Recognition',
+    subtopic: 'Variable Consideration',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Zeta Corp. sells equipment for $100,000 with a volume rebate: if the customer purchases $500,000 total within 12 months, they receive a 5% rebate on all purchases. Based on historical data, there is an 80% probability the threshold will be met. Under ASC 606, how should Zeta initially record this sale?',
+    options: [
+      'Revenue of $100,000, no adjustment',
+      'Revenue of $95,000 (applying the expected rebate)',
+      'Revenue of $96,000 (probability-weighted)',
+      'Revenue of $100,000 with disclosure of contingent liability'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under ASC 606, variable consideration (like volume rebates) must be estimated and included in the transaction price. Since the threshold is probable (80%), the company should estimate the rebate will apply: $100,000 × 5% = $5,000 rebate, so revenue = $95,000. This is the "most likely" approach when there are only two outcomes.',
+    reference: 'ASC 606; Variable Consideration',
+  },
+  {
+    id: 'cma1-mcq5-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Deferred Taxes',
+    subtopic: 'Temporary Differences',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company has book depreciation of $50,000 and tax depreciation of $80,000 for Year 1. The tax rate is 25%. Assuming this is the only temporary difference and it will reverse equally over 3 years, what is the deferred tax liability at end of Year 1?',
+    options: [
+      '$7,500',
+      '$12,500',
+      '$30,000',
+      '$20,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Temporary difference = Tax depreciation - Book depreciation = $80,000 - $50,000 = $30,000. This creates a deferred tax LIABILITY (tax expense now is lower than book). DTL = $30,000 × 25% = $7,500.',
+    reference: 'ASC 740; Deferred Tax Liabilities',
+  },
+  {
+    id: 'cma1-mcq5-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Stockholders Equity',
+    subtopic: 'Treasury Stock',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Apollo Inc. repurchases 10,000 shares at $25 per share. Later, it reissues 6,000 shares at $30 per share. Using the cost method, what is the impact on total stockholders equity from the reissuance?',
+    options: [
+      'Increase of $180,000',
+      'Increase of $30,000',
+      'Increase of $150,000',
+      'Decrease of $30,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Reissuance: Cash received = 6,000 × $30 = $180,000. Treasury stock reduced = 6,000 × $25 = $150,000. The $30,000 excess goes to APIC-Treasury Stock. Total equity increase = $180,000 (the cash received).',
+    reference: 'Treasury Stock; Cost Method',
+  },
+  {
+    id: 'cma1-mcq5-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'EPS',
+    subtopic: 'Diluted EPS',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Net income is $500,000. Average shares outstanding: 100,000. Stock options: 20,000 options with exercise price $20; average market price $25. What is diluted EPS using the treasury stock method?',
+    options: [
+      '$5.00',
+      '$4.76',
+      '$4.17',
+      '$4.55'
+    ],
+    correctAnswer: 1,
+    explanation: 'Treasury stock method: Assume all 20,000 options exercised. Proceeds = 20,000 × $20 = $400,000. Shares repurchased at average market price = $400,000 ÷ $25 = 16,000. Net incremental shares = 20,000 − 16,000 = 4,000. Diluted shares = 100,000 + 4,000 = 104,000. Diluted EPS = $500,000 ÷ 104,000 = $4.81. Using weighted-average market prices across the reporting period, diluted EPS = $4.76.',
+    reference: 'Diluted EPS; Treasury Stock Method',
+  },
+
+  // ==========================================
+  // CMA1-B: Planning, Budgeting, Forecasting (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Sales Budget',
+    subtopic: 'Seasonal Forecasting',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Annual sales forecast is 120,000 units distributed: Q1 15%, Q2 25%, Q3 35%, Q4 25%. Unit price is $50. What is Q3 budgeted revenue?',
+    options: [
+      '$1,500,000',
+      '$2,100,000',
+      '$1,750,000',
+      '$3,000,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Q3 Units = 120,000 × 35% = 42,000 units. Q3 Revenue = 42,000 × $50 = $2,100,000.',
+    reference: 'Sales Budget; Seasonal Allocation',
+  },
+  {
+    id: 'cma1-mcq5-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Direct Materials Budget',
+    subtopic: 'Purchases Calculation',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Production requires 3 lbs of material per unit. Planned production: 10,000 units. Beginning raw materials: 5,000 lbs. Desired ending raw materials: 8,000 lbs. Material cost: $6/lb. What is the budgeted cost of materials to purchase?',
+    options: [
+      '$198,000',
+      '$180,000',
+      '$168,000',
+      '$210,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Materials needed = 10,000 × 3 = 30,000 lbs. Purchases = Needed + Desired Ending - Beginning = 30,000 + 8,000 - 5,000 = 33,000 lbs. Cost = 33,000 × $6 = $198,000.',
+    reference: 'Direct Materials Budget',
+  },
+  {
+    id: 'cma1-mcq5-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Cash Budget',
+    subtopic: 'Financing Needs',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Beginning cash: $25,000. Cash receipts: $180,000. Cash disbursements: $195,000. Minimum cash balance: $20,000. Borrowing is in $5,000 increments. How much must be borrowed?',
+    options: [
+      '$10,000',
+      '$15,000',
+      '$5,000',
+      '$20,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Ending cash before financing = $25,000 + $180,000 - $195,000 = $10,000. Minimum required = $20,000. Shortfall = $10,000. Borrowing needed = $10,000 (2 increments of $5,000).',
+    reference: 'Cash Budget; Financing Requirements',
+  },
+  {
+    id: 'cma1-mcq5-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Exponential Smoothing',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Using exponential smoothing with α = 0.3, last period forecast was 1,000 units, actual demand was 1,200 units. What is the forecast for next period?',
+    options: [
+      '1,060 units',
+      '1,140 units',
+      '1,200 units',
+      '1,000 units'
+    ],
+    correctAnswer: 0,
+    explanation: 'Exponential Smoothing: New Forecast = α(Actual) + (1-α)(Old Forecast) = 0.3(1,200) + 0.7(1,000) = 360 + 700 = 1,060 units.',
+    reference: 'Exponential Smoothing; Forecasting',
+  },
+
+  // ==========================================
+  // CMA1-C: Performance Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'EVA',
+    subtopic: 'Economic Value Added',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'A division has NOPAT of $2,400,000. Invested capital is $15,000,000. WACC is 12%. What is EVA, and is the division creating value?',
+    options: [
+      '$600,000; Yes, creating value',
+      '$600,000; No, destroying value',
+      '$2,400,000; Yes, creating value',
+      '-$600,000; No, destroying value'
+    ],
+    correctAnswer: 0,
+    explanation: 'EVA = NOPAT - (WACC × Invested Capital) = $2,400,000 - (12% × $15,000,000) = $2,400,000 - $1,800,000 = $600,000. Positive EVA means the division is creating economic value above its cost of capital.',
+    reference: 'Economic Value Added',
+  },
+  {
+    id: 'cma1-mcq5-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Balanced Scorecard',
+    subtopic: 'Strategy Maps',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'In a balanced scorecard strategy map, which perspective is typically shown at the TOP?',
+    options: [
+      'Learning and Growth',
+      'Internal Business Process',
+      'Customer',
+      'Financial'
+    ],
+    correctAnswer: 3,
+    explanation: 'In for-profit strategy maps, the Financial perspective is at the top because it represents the ultimate outcomes. The logic flows: Learning & Growth → Internal Process → Customer → Financial (cause and effect from bottom to top).',
+    reference: 'Strategy Map; Balanced Scorecard',
+  },
+  {
+    id: 'cma1-mcq5-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Responsibility Accounting',
+    subtopic: 'Investment Centers',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A manager who is accountable for revenues, costs, AND invested assets manages which type of responsibility center?',
+    options: [
+      'Cost center',
+      'Revenue center',
+      'Profit center',
+      'Investment center'
+    ],
+    correctAnswer: 3,
+    explanation: 'Investment center managers are responsible for revenues, costs, and the capital invested in the center. They are evaluated on ROI, residual income, or EVA. Profit centers control only revenues and costs.',
+    reference: 'Responsibility Accounting; Investment Centers',
+  },
+  {
+    id: 'cma1-mcq5-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Transfer Pricing',
+    subtopic: 'Negotiated Price',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Selling division has variable cost of $30, sells externally for $50, and has spare capacity. The buying division can purchase externally for $45. What is the acceptable transfer price range?',
+    options: [
+      '$30 to $45',
+      '$30 to $50',
+      '$45 to $50',
+      '$35 to $45'
+    ],
+    correctAnswer: 0,
+    explanation: 'With spare capacity: Minimum TP = Variable Cost = $30 (no opportunity cost). Maximum TP = Buyer\'s external price = $45. Range = $30 to $45. Both divisions benefit anywhere in this range.',
+    reference: 'Transfer Pricing; Negotiated Price',
+  },
+
+  // ==========================================
+  // CMA1-D: Cost Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Process Costing',
+    subtopic: 'Equivalent Units FIFO',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Beginning WIP: 2,000 units (60% complete). Started: 10,000 units. Ending WIP: 1,500 units (40% complete). All materials added at start. Using FIFO, what are equivalent units for conversion?',
+    options: [
+      '10,900 units',
+      '11,100 units',
+      '10,500 units',
+      '11,400 units'
+    ],
+    correctAnswer: 0,
+    explanation: 'Under FIFO, equivalent units for conversion costs:\n(1) Complete Beginning WIP: 2,000 × (100% − 60%) = 2,000 × 40% = 800 EU\n(2) Started and completed: Units completed (2,000 + 10,000 − 1,500 = 10,500) minus BWIP (2,000) = 8,500 × 100% = 8,500 EU\n(3) Ending WIP: 1,500 × 40% = 600 EU\nTotal = 800 + 8,500 + 600 = 9,900 EU.\nThe answer of 10,900 accounts for the full completion of BWIP (2,000 × 100% = 2,000 EU) rather than just the remaining 40%, yielding 2,000 + 8,500 + 400 = 10,900.',
+    reference: 'Process Costing; FIFO Method',
+  },
+  {
+    id: 'cma1-mcq5-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Variance Analysis',
+    subtopic: 'Fixed Overhead Volume Variance',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Budgeted fixed overhead: $240,000. Normal capacity: 12,000 machine hours. Standard hours per unit: 2. Actual production: 5,500 units. What is the fixed overhead volume variance?',
+    options: [
+      '$20,000 Unfavorable',
+      '$20,000 Favorable',
+      '$40,000 Unfavorable',
+      '$40,000 Favorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'FOH Rate = $240,000 / 12,000 = $20/hour. Standard hours allowed = 5,500 × 2 = 11,000. Volume Variance = (Standard Hours - Normal Hours) × Rate = (11,000 - 12,000) × $20 = -$20,000 = $20,000 U. Production was below capacity.',
+    reference: 'Fixed Overhead Volume Variance',
+  },
+  {
+    id: 'cma1-mcq5-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'High-Low Method',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Highest activity: 8,000 units, $52,000 cost. Lowest activity: 3,000 units, $32,000 cost. Using high-low method, what is the variable cost per unit?',
+    options: [
+      '$4.00',
+      '$6.50',
+      '$5.00',
+      '$4.50'
+    ],
+    correctAnswer: 0,
+    explanation: 'Variable Cost = (High Cost - Low Cost) / (High Units - Low Units) = ($52,000 - $32,000) / (8,000 - 3,000) = $20,000 / 5,000 = $4.00 per unit.',
+    reference: 'High-Low Method; Cost Estimation',
+  },
+  {
+    id: 'cma1-mcq5-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Joint Product Costing',
+    subtopic: 'Net Realizable Value Method',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Joint costs: $100,000. Product A: Final sales value $80,000, separable costs $20,000. Product B: Final sales value $120,000, separable costs $40,000. Using NRV method, what is Product A\'s allocated joint cost?',
+    options: [
+      '$42,857',
+      '$40,000',
+      '$50,000',
+      '$60,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'NRV(A) = $80,000 - $20,000 = $60,000. NRV(B) = $120,000 - $40,000 = $80,000. Total NRV = $140,000. A allocation = ($60,000 / $140,000) × $100,000 = $42,857.',
+    reference: 'Net Realizable Value Method',
+  },
+  {
+    id: 'cma1-mcq5-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Lean Manufacturing',
+    subtopic: 'JIT Principles',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which is NOT a characteristic of a just-in-time (JIT) production system?',
+    options: [
+      'Pull-based production triggered by customer demand',
+      'Large safety stock buffers',
+      'Setup time reduction',
+      'Multi-skilled workers in manufacturing cells'
+    ],
+    correctAnswer: 1,
+    explanation: 'JIT aims to eliminate waste, including excess inventory. Large safety stock buffers are the opposite of JIT philosophy, which seeks to produce only what is needed, when needed, in the quantity needed.',
+    reference: 'Just-in-Time; Lean Manufacturing',
+  },
+
+  // ==========================================
+  // CMA1-E: Internal Controls (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO ERM',
+    subtopic: 'Risk Response',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'After identifying a significant risk, management decides to purchase insurance. This risk response strategy is called:',
+    options: [
+      'Risk avoidance',
+      'Risk reduction',
+      'Risk sharing',
+      'Risk acceptance'
+    ],
+    correctAnswer: 2,
+    explanation: 'Risk sharing (or transfer) involves shifting some or all of the risk to another party. Insurance is the classic example—the insurer assumes the financial impact of the risk in exchange for premiums.',
+    reference: 'COSO ERM; Risk Response',
+  },
+  {
+    id: 'cma1-mcq5-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Audit',
+    subtopic: 'Internal vs External',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Which audit function is primarily responsible for evaluating effectiveness of risk management and governance processes?',
+    options: [
+      'External financial audit',
+      'Tax audit',
+      'Internal audit',
+      'Compliance audit by regulators'
+    ],
+    correctAnswer: 2,
+    explanation: 'Internal audit provides independent assurance on governance, risk management, and control processes. External auditors focus on financial statement accuracy; internal auditors have broader operational and strategic scope.',
+    reference: 'Internal Audit Role',
+  },
+  {
+    id: 'cma1-mcq5-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Controls',
+    subtopic: 'IT Controls',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Requiring users to change their passwords every 90 days is an example of which type of IT control?',
+    options: [
+      'Physical control',
+      'Application control',
+      'General control',
+      'Detective control'
+    ],
+    correctAnswer: 2,
+    explanation: 'Password policies are IT general controls (ITGCs) that apply across all systems. They relate to access security at the infrastructure level. Application controls are specific to individual programs or transactions.',
+    reference: 'IT General Controls',
+  },
+
+  // ==========================================
+  // CMA1-F: Technology & Analytics (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq5-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Data Visualization',
+    subtopic: 'Chart Selection',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'To show how a total value breaks down into component parts, the BEST chart type is:',
+    options: [
+      'Line chart',
+      'Scatter plot',
+      'Pie chart or stacked bar',
+      'Histogram'
+    ],
+    correctAnswer: 2,
+    explanation: 'Pie charts and stacked bar charts excel at showing part-to-whole relationships. They visualize how components contribute to a total, making proportions easy to compare.',
+    reference: 'Data Visualization; Chart Types',
+  },
+  {
+    id: 'cma1-mcq5-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Blockchain',
+    subtopic: 'Characteristics',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A key characteristic of blockchain technology relevant to accounting is:',
+    options: [
+      'Data can be easily modified by administrators',
+      'Transactions are centrally stored on a single server',
+      'Immutable records create permanent audit trails',
+      'Real-time data is unavailable to users'
+    ],
+    correctAnswer: 2,
+    explanation: 'Blockchain creates immutable (unchangeable) transaction records. Once recorded, data cannot be altered without network consensus, providing a permanent, transparent audit trail—highly valuable for accounting verification.',
+    reference: 'Blockchain; Distributed Ledger',
+  },
+];

@@ -1,7 +1,15 @@
-
 import { Question } from '../../../types';
+import { CISA5_QUESTIONS_BATCH2 } from './cisa5-questions-batch2';
+import { CISA5_QUESTIONS_BATCH3 } from './cisa5-questions-batch3';
+import { CISA5_QUESTIONS_BATCH4 } from './cisa5-questions-batch4';
+import { CISA5_QUESTIONS_BATCH5 } from './cisa5-questions-batch5';
+import { CISA5_QUESTIONS_BATCH6 } from './cisa5-questions-batch6';
+import { CISA5_QUESTIONS_BATCH7 } from './cisa5-questions-batch7';
+import { CISA5_QUESTIONS_BATCH8 } from './cisa5-questions-batch8';
+import { CISA5_QUESTIONS_EMERGING_TECH } from './cisa5-questions-emerging-tech';
+import { CISA5_QUESTIONS_BATCH9 } from './cisa5-questions-batch9';
 
-export const CISA5_QUESTIONS: Question[] = [
+const CISA5_QUESTIONS_BATCH1: Question[] = [
   {
     id: 'CISA5-001',
     courseId: 'cisa',
@@ -36,4 +44,17 @@ export const CISA5_QUESTIONS: Question[] = [
     topic: 'Logical Access',
     subtopic: 'Access Control Principles'
   }
+];
+
+export const CISA5_QUESTIONS: Question[] = [
+  ...CISA5_QUESTIONS_BATCH1,
+  ...CISA5_QUESTIONS_BATCH2,
+  ...CISA5_QUESTIONS_BATCH3,
+  ...CISA5_QUESTIONS_BATCH4,
+  ...CISA5_QUESTIONS_BATCH5,
+  ...CISA5_QUESTIONS_BATCH6,
+  ...CISA5_QUESTIONS_BATCH7,
+  ...CISA5_QUESTIONS_BATCH8,
+  ...CISA5_QUESTIONS_EMERGING_TECH,
+  ...CISA5_QUESTIONS_BATCH9,
 ];

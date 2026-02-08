@@ -1,7 +1,7 @@
 /**
  * CMA Flashcards - Central Export and Utilities
  * 
- * Provides access to all CMA flashcard decks with helper functions
+ * Provides access to all CMA flashcard decks (210+ cards) with helper functions
  * for filtering by section, type, topic, and difficulty.
  */
 
@@ -11,11 +11,17 @@ import { CMAFlashcard, CMAFlashcardDeck, CMAFlashcardType, CMASection } from './
 import { CMA1_DEFINITIONS } from './cma1-definitions';
 import { CMA1_FORMULAS } from './cma1-formulas';
 import { CMA1_MNEMONICS } from './cma1-mnemonics';
+import { CMA1_BATCH2 } from './cma1-batch2';
+import { CMA1_COMPARISONS } from './cma1-comparisons';
+import { CMA1_ADVANCED_CONCEPTS } from './cma1-advanced-concepts';
 
 // CMA2 - Strategic Financial Management
 import { CMA2_DEFINITIONS } from './cma2-definitions';
 import { CMA2_FORMULAS } from './cma2-formulas';
 import { CMA2_MNEMONICS } from './cma2-mnemonics';
+import { CMA2_BATCH2 } from './cma2-batch2';
+import { CMA2_COMPARISONS } from './cma2-comparisons';
+import { CMA2_ADVANCED_CONCEPTS } from './cma2-advanced-concepts';
 
 // ============================================
 // Combined Flashcard Arrays by Section
@@ -25,12 +31,18 @@ export const CMA1_FLASHCARDS: CMAFlashcard[] = [
   ...CMA1_DEFINITIONS,
   ...CMA1_FORMULAS,
   ...CMA1_MNEMONICS,
+  ...CMA1_BATCH2,
+  ...CMA1_COMPARISONS,
+  ...CMA1_ADVANCED_CONCEPTS,
 ];
 
 export const CMA2_FLASHCARDS: CMAFlashcard[] = [
   ...CMA2_DEFINITIONS,
   ...CMA2_FORMULAS,
   ...CMA2_MNEMONICS,
+  ...CMA2_BATCH2,
+  ...CMA2_COMPARISONS,
+  ...CMA2_ADVANCED_CONCEPTS,
 ];
 
 // ============================================
@@ -80,6 +92,22 @@ export const CMA_FLASHCARD_DECKS: CMAFlashcardDeck[] = [
     cards: CMA1_FLASHCARDS,
     totalCards: CMA1_FLASHCARDS.length,
   },
+  {
+    id: 'cma1-comparisons',
+    name: 'CMA Part 1: Comparisons',
+    description: 'Side-by-side comparisons of commonly confused Part 1 concepts',
+    section: 'CMA1',
+    cards: CMA1_COMPARISONS,
+    totalCards: CMA1_COMPARISONS.length,
+  },
+  {
+    id: 'cma1-advanced',
+    name: 'CMA Part 1: Advanced Concepts',
+    description: 'Deep-dive formulas, mnemonics, and concepts for Part 1',
+    section: 'CMA1',
+    cards: CMA1_ADVANCED_CONCEPTS,
+    totalCards: CMA1_ADVANCED_CONCEPTS.length,
+  },
   // CMA2 Decks
   {
     id: 'cma2-definitions',
@@ -112,6 +140,22 @@ export const CMA_FLASHCARD_DECKS: CMAFlashcardDeck[] = [
     section: 'CMA2',
     cards: CMA2_FLASHCARDS,
     totalCards: CMA2_FLASHCARDS.length,
+  },
+  {
+    id: 'cma2-comparisons',
+    name: 'CMA Part 2: Comparisons',
+    description: 'Side-by-side comparisons of commonly confused Part 2 concepts',
+    section: 'CMA2',
+    cards: CMA2_COMPARISONS,
+    totalCards: CMA2_COMPARISONS.length,
+  },
+  {
+    id: 'cma2-advanced',
+    name: 'CMA Part 2: Advanced Concepts',
+    description: 'Deep-dive formulas, mnemonics, and concepts for Part 2',
+    section: 'CMA2',
+    cards: CMA2_ADVANCED_CONCEPTS,
+    totalCards: CMA2_ADVANCED_CONCEPTS.length,
   },
   // Combined Deck
   {

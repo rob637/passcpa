@@ -17,13 +17,16 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getExamDate } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
+import { Button } from '../common/Button';
 
 // Tutor messages based on context
 const getTutorMessage = (streak: number, readiness: number, timeOfDay: string): string => {
@@ -62,19 +65,19 @@ const getGreeting = (): string => {
 const Home = () => {
   const { userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [_loading, setLoading] = useState(true);
   const [showSectionPicker, setShowSectionPicker] = useState(false);
   const [changingSection, setChangingSection] = useState(false);
 
-  // Get user info
-  const profile = userProfile as any;
-  const firstName = profile?.displayName?.split(' ')[0] || 'there';
+  // Get user info - properly typed now
+  const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
   
   // Use local state for section so we can update immediately
-  const [activeSection, setActiveSection] = useState<string>(profile?.examSection || 'FAR');
+  const defaultSection = getDefaultSection(courseId);
+  const [activeSection, setActiveSection] = useState<string>(userProfile?.examSection as string || defaultSection);
   
   // Lock body scroll when section picker is open
   useEffect(() => {
@@ -88,16 +91,17 @@ const Home = () => {
 
   // Sync local state when profile loads/changes
   useEffect(() => {
-    if (profile?.examSection && profile.examSection !== activeSection) {
-      setActiveSection(profile.examSection);
+    if (userProfile?.examSection && userProfile.examSection !== activeSection) {
+      setActiveSection(userProfile.examSection as string);
     }
-  }, [profile?.examSection]);
+  }, [userProfile?.examSection]);
   
-  const sectionInfo = CPA_SECTIONS[activeSection as keyof typeof CPA_SECTIONS];
+  // Get section info - course-aware via getSectionDisplayInfo
+  const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
   
-  // Calculate days until exam
-  const examDate = profile?.examDate;
-  const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
+  // Calculate days until exam - use getExamDate helper for multi-course support
+  const examDate = getExamDate(userProfile, activeSection);
+  const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load readiness data - depends on activeSection (local state)
   useEffect(() => {
@@ -107,7 +111,7 @@ const Home = () => {
         
         // Find lessons for this section
         const lessons = await fetchAllLessons(courseId);
-        const lessonProgress = profile?.lessonProgress || {};
+        const lessonProgress = userProfile?.lessonProgress || {};
         
         // Filter lessons by section
         const sectionLessons = lessons.filter(l => l.section === activeSection);
@@ -130,7 +134,7 @@ const Home = () => {
     };
 
     loadData();
-  }, [activeSection, stats, courseId, profile?.lessonProgress]);
+  }, [activeSection, stats, courseId, userProfile?.lessonProgress]);
 
   // Handle section change - update local state immediately, then persist
   const handleSectionChange = async (newSection: string) => {
@@ -155,7 +159,7 @@ const Home = () => {
     } catch (error) {
       logger.error('Error changing section:', error);
       // Revert on error
-      setActiveSection(profile?.examSection || 'FAR');
+      setActiveSection(userProfile?.examSection || 'FAR');
     } finally {
       setChangingSection(false);
     }
@@ -181,109 +185,156 @@ const Home = () => {
           >
             <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 flex-shrink-0">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Change Exam Section</h2>
-              <button 
+              <Button 
                 onClick={() => setShowSectionPicker(false)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+                variant="ghost"
+                size="icon"
               >
                 <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-              </button>
+              </Button>
             </div>
             <div className="p-4 space-y-2 overflow-y-auto flex-1 overscroll-contain">
-              {(() => {
-                // Determine available sections based on user's exam date
-                const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                const userExamDate = examDate ? new Date(examDate) : new Date();
-                const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                const disciplineSections = is2025Blueprint
-                  ? ['BEC']
-                  : DISCIPLINE_SECTIONS_2026;
-                
-                return (
-                  <>
-                    {/* Core Sections */}
-                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mb-2">Core Sections (Required)</div>
-                    {CORE_SECTIONS.map((sectionKey) => {
-                      const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
-                      const isSelected = sectionKey === activeSection;
-                      return (
-                        <button
-                          key={sectionKey}
-                          onClick={() => handleSectionChange(sectionKey)}
-                          disabled={changingSection}
-                          className={clsx(
-                            'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
-                            isSelected
-                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                              : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
-                          )}
-                        >
-                          <div 
-                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                            style={{ backgroundColor: section?.color || '#6366f1' }}
+              {courseId === 'cpa' ? (
+                // CPA-specific section picker with Core/Discipline grouping
+                (() => {
+                  const BLUEPRINT_CUTOFF = new Date('2026-07-01');
+                  const userExamDate = examDate ? new Date(examDate) : new Date();
+                  const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
+                  const disciplineSections = is2025Blueprint
+                    ? ['BEC']
+                    : DISCIPLINE_SECTIONS_2026;
+                  
+                  return (
+                    <>
+                      {/* Core Sections */}
+                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mb-2">Core Sections (Required)</div>
+                      {CORE_SECTIONS.map((sectionKey) => {
+                        const section = getSectionDisplayInfo(sectionKey, courseId);
+                        const isSelected = sectionKey === activeSection;
+                        return (
+                          <button
+                            key={sectionKey}
+                            onClick={() => handleSectionChange(sectionKey)}
+                            disabled={changingSection}
+                            className={clsx(
+                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              isSelected
+                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                            )}
                           >
-                            {section?.shortName || sectionKey}
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-semibold text-slate-900 dark:text-slate-100">
-                              {section?.name || sectionKey}
+                            <div 
+                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              style={{ backgroundColor: section?.color || '#6366f1' }}
+                            >
+                              {section?.shortName || sectionKey}
                             </div>
-                            <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
-                              {section?.description?.split('.')[0] || ''}
+                            <div className="flex-1">
+                              <div className="font-semibold text-slate-900 dark:text-slate-100">
+                                {section?.name || sectionKey}
+                              </div>
+                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                                {section?.description?.split('.')[0] || ''}
+                              </div>
                             </div>
-                          </div>
-                          {isSelected && (
-                            <Check className="w-5 h-5 text-primary-600" />
-                          )}
-                        </button>
-                      );
-                    })}
-                    
-                    {/* Discipline Sections */}
-                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
-                      Discipline (Choose One)
-                      {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
-                    </div>
-                    {disciplineSections.map((sectionKey) => {
-                      const section = CPA_SECTIONS[sectionKey as keyof typeof CPA_SECTIONS];
-                      const isSelected = sectionKey === activeSection;
-                      const isBEC = sectionKey === 'BEC';
-                      return (
-                        <button
-                          key={sectionKey}
-                          onClick={() => handleSectionChange(sectionKey)}
-                          disabled={changingSection}
-                          className={clsx(
-                            'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
-                            isSelected
-                              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                              : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
-                            isBEC && 'border-amber-300 dark:border-amber-700'
-                          )}
-                        >
-                          <div 
-                            className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                            style={{ backgroundColor: section?.color || '#6366f1' }}
+                            {isSelected && (
+                              <Check className="w-5 h-5 text-primary-600" />
+                            )}
+                          </button>
+                        );
+                      })}
+                      
+                      {/* Discipline Sections */}
+                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
+                        Discipline (Choose One)
+                        {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
+                      </div>
+                      {disciplineSections.map((sectionKey) => {
+                        const section = getSectionDisplayInfo(sectionKey, courseId);
+                        const isSelected = sectionKey === activeSection;
+                        const isBEC = sectionKey === 'BEC';
+                        return (
+                          <button
+                            key={sectionKey}
+                            onClick={() => handleSectionChange(sectionKey)}
+                            disabled={changingSection}
+                            className={clsx(
+                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              isSelected
+                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
+                              isBEC && 'border-amber-300 dark:border-amber-700'
+                            )}
                           >
-                            {section?.shortName || sectionKey}
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                              {section?.name || sectionKey}
-                              {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
+                            <div 
+                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              style={{ backgroundColor: section?.color || '#6366f1' }}
+                            >
+                              {section?.shortName || sectionKey}
                             </div>
-                            <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
-                              {section?.description?.split('.')[0] || ''}
+                            <div className="flex-1">
+                              <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                                {section?.name || sectionKey}
+                                {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
+                              </div>
+                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                                {section?.description?.split('.')[0] || ''}
+                              </div>
                             </div>
+                            {isSelected && (
+                              <Check className="w-5 h-5 text-primary-600" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </>
+                  );
+                })()
+              ) : (
+                // Generic section picker for non-CPA courses
+                <>
+                  <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mb-2">
+                    {course?.shortName || 'Exam'} Sections
+                  </div>
+                  {course?.sections.map((courseSection) => {
+                    const section = getSectionDisplayInfo(courseSection.id, courseId);
+                    const isSelected = courseSection.id === activeSection;
+                    return (
+                      <button
+                        key={courseSection.id}
+                        onClick={() => handleSectionChange(courseSection.id)}
+                        disabled={changingSection}
+                        className={clsx(
+                          'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                          isSelected
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                        )}
+                      >
+                        <div 
+                          className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                          style={{ backgroundColor: section?.color || '#6366f1' }}
+                        >
+                          {courseSection.shortName}
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-slate-900 dark:text-slate-100">
+                            {courseSection.name}
                           </div>
-                          {isSelected && (
-                            <Check className="w-5 h-5 text-primary-600" />
+                          {courseSection.weight && (
+                            <div className="text-xs text-slate-600 dark:text-slate-300">
+                              Weight: {courseSection.weight}
+                            </div>
                           )}
-                        </button>
-                      );
-                    })}
-                  </>
-                );
-              })()}
+                        </div>
+                        {isSelected && (
+                          <Check className="w-5 h-5 text-primary-600" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -387,6 +438,7 @@ const Home = () => {
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Questions</span>
         </Link>
         
+        {course?.hasTBS && (
         <Link
           to="/tbs"
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -396,6 +448,7 @@ const Home = () => {
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
         </Link>
+        )}
       </div>
 
       {/* Study Time Card - Becker-style donut chart */}

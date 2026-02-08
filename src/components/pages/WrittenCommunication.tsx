@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Link, useSearchParams } from 'react-router-dom';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 import {
   ArrowLeft,
   Clock,
@@ -159,18 +161,17 @@ interface SampleResponseViewerProps {
 const SampleResponseViewer: React.FC<SampleResponseViewerProps> = ({ sampleResponse, isVisible, onToggle }) => {
   return (
     <div className="border border-slate-200 rounded-xl overflow-hidden">
-      <button
+      <Button
+        variant="ghost"
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 transition-colors"
+        leftIcon={BookOpen}
+        className="w-full flex items-center justify-between p-4 bg-slate-50"
       >
-        <div className="flex items-center gap-2">
-          <BookOpen className="w-5 h-5 text-primary-600" />
-          <span className="font-medium text-slate-900">View Sample Response</span>
-        </div>
+        <span className="font-medium text-slate-900">View Sample Response</span>
         <ChevronRight
           className={clsx('w-5 h-5 text-slate-600 transition-transform', isVisible && 'rotate-90')}
         />
-      </button>
+      </Button>
       {isVisible && (
         <div className="p-4 bg-white border-t border-slate-200">
           <div className="prose prose-sm max-w-none">
@@ -210,7 +211,7 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
       </div>
 
       {/* Quick Start */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
+      <Card className="mb-6">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-primary-100 flex items-center justify-center">
             <Sparkles className="w-7 h-7 text-primary-600" />
@@ -219,12 +220,11 @@ const TaskSelectionScreen: React.FC<TaskSelectionScreenProps> = ({ tasks, onSele
             <h2 className="font-semibold text-slate-900">Random Task</h2>
             <p className="text-sm text-slate-600">Get a randomly selected WC task for practice</p>
           </div>
-          <button onClick={onStartRandom} className="btn-primary">
+          <Button variant="primary" onClick={onStartRandom} rightIcon={ChevronRight}>
             Start
-            <ChevronRight className="w-5 h-5 ml-1" />
-          </button>
+          </Button>
         </div>
-      </div>
+      </Card>
 
       {/* Task List */}
       <div className="mb-6">
@@ -359,9 +359,9 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({ scores, onSelectNew, back
       </div>
 
       <div className="flex justify-between">
-         <button onClick={onSelectNew} className="btn-primary">
+         <Button variant="primary" onClick={onSelectNew}>
             Practice Another Task
-         </button>
+         </Button>
       </div>
     </div>
   );
@@ -474,14 +474,14 @@ const WrittenCommunication: React.FC = () => {
           </div>
           <div className="flex items-center gap-4">
              <ExamTimer initialMinutes={activeTask.estimatedTime} onTimeUp={handleSubmit} />
-             <button onClick={handleSubmit} className="btn-primary">Submit Response</button>
+             <Button variant="primary" onClick={handleSubmit}>Submit Response</Button>
           </div>
        </div>
 
        <div className="flex-1 max-w-5xl mx-auto w-full p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Task Description */}
           <div className="space-y-6">
-             <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+             <Card>
                 <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                     <FileText className="w-5 h-5 text-primary-600" />
                     Task Definition
@@ -489,7 +489,7 @@ const WrittenCommunication: React.FC = () => {
                 <div className="prose prose-sm text-slate-700 whitespace-pre-wrap">
                     {activeTask.task}
                 </div>
-             </div>
+             </Card>
 
              <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
                 <div className="flex gap-3">

@@ -29,6 +29,7 @@ import {
   ClipboardCheck,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import { Card } from '../common/Card';
 import clsx from 'clsx';
 import { Question, CMASection } from '../../types';
 import { 
@@ -354,7 +355,7 @@ const CMAExamSimulator: React.FC = () => {
           </div>
 
           {/* Section Selection */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-6">
+          <Card className="p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Select Exam Part
             </h2>
@@ -382,10 +383,10 @@ const CMAExamSimulator: React.FC = () => {
                 </button>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Mode Selection */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-6">
+          <Card className="p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Select Exam Mode
             </h2>
@@ -419,7 +420,7 @@ const CMAExamSimulator: React.FC = () => {
                 </button>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Start Button */}
           <div className="text-center">
@@ -472,7 +473,7 @@ const CMAExamSimulator: React.FC = () => {
 
           {/* Score Summary */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 text-center">
+            <Card className="p-6 text-center">
               <div className={clsx(
                 'text-4xl font-bold mb-2',
                 examResult.passed 
@@ -482,9 +483,9 @@ const CMAExamSimulator: React.FC = () => {
                 {scorePercentage}%
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400">Raw Score</div>
-            </div>
+            </Card>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 text-center">
+            <Card className="p-6 text-center">
               <div className={clsx(
                 'text-4xl font-bold mb-2',
                 examResult.passed 
@@ -494,25 +495,25 @@ const CMAExamSimulator: React.FC = () => {
                 {examResult.scaledScore}/500
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400">Scaled Score (pass: 360)</div>
-            </div>
+            </Card>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 text-center">
+            <Card className="p-6 text-center">
               <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 {examResult.correctAnswers}/{examResult.totalQuestions}
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400">Correct Answers</div>
-            </div>
+            </Card>
             
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 text-center">
+            <Card className="p-6 text-center">
               <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 {formatTime(examResult.timeUsed)}
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400">Time Used</div>
-            </div>
+            </Card>
           </div>
 
           {/* Blueprint Performance */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
+          <Card className="p-6 mb-8">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <BarChart3 className="w-5 h-5" />
               Performance by Blueprint Area
@@ -539,10 +540,10 @@ const CMAExamSimulator: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Difficulty Performance */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
+          <Card className="p-6 mb-8">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Target className="w-5 h-5" />
               Performance by Difficulty
@@ -562,7 +563,7 @@ const CMAExamSimulator: React.FC = () => {
                 );
               })}
             </div>
-          </div>
+          </Card>
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -665,9 +666,9 @@ const CMAExamSimulator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Question Panel */}
           <div className="lg:col-span-3">
-            <div 
+            <Card 
               ref={questionRef}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6"
+              className="p-6"
             >
               {/* Question Header */}
               <div className="flex items-start justify-between mb-4">
@@ -817,12 +818,12 @@ const CMAExamSimulator: React.FC = () => {
                   </button>
                 )}
               </div>
-            </div>
+            </Card>
           </div>
 
           {/* Question Navigator */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 sticky top-20">
+            <Card className="p-4 sticky top-20">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                 Question Navigator
               </h3>
@@ -899,7 +900,7 @@ const CMAExamSimulator: React.FC = () => {
                   Submit Exam
                 </button>
               )}
-            </div>
+            </Card>
           </div>
         </div>
       </div>

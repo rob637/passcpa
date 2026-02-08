@@ -23,9 +23,9 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Cash Budget',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
-    question: 'Monthly sales: Jan $100K, Feb $120K, Mar $150K. Collection pattern: 30% in month of sale, 60% next month, 10% in second month. What are February cash collections?',
+    question: 'Monthly sales: Dec $100K, Jan $100K, Feb $120K, Mar $150K. Collection pattern: 30% in month of sale, 60% next month, 10% in second month. What are February cash collections?',
     options: [
       '$96,000',
       '$108,000',
@@ -33,7 +33,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
       '$110,000'
     ],
     correctAnswer: 2,
-    explanation: 'February collections: From Feb sales (30% × $120K = $36K) + From Jan sales (60% × $100K = $60K) + From Dec sales (need Dec data). Assuming Dec $100K: 10% × $100K = $10K. Total = $36K + $60K + $10K = $106K.',
+    explanation: 'February collections: From Feb sales (30% × $120K = $36K) + From Jan sales (60% × $100K = $60K) + From Dec sales (10% × $100K = $10K). Total = $36K + $60K + $10K = $106K.',
     reference: 'Cash Budget; Collection Patterns',
   },
   {
@@ -43,7 +43,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Master Budget',
     subtopic: 'Production Budget',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Q1 sales forecast: 50,000 units. Beginning inventory: 8,000 units. Ending inventory policy: 20% of next quarter\'s sales (Q2 sales: 60,000). Required production for Q1?',
     options: [
@@ -63,7 +63,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Flexible Budget',
     subtopic: 'Step-Fixed Costs',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Supervision costs are $50,000 for 0-10,000 units, $75,000 for 10,001-20,000 units. Budgeted production: 15,000 units. Actual: 19,000 units. Flexible budget for supervision?',
     options: [
@@ -76,26 +76,6 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     explanation: 'Step-fixed costs depend on the activity range. At 19,000 units (in the 10,001-20,000 range), supervision cost is $75,000. The flexible budget adjusts step costs based on actual activity level.',
     reference: 'Flexible Budget; Step-Fixed Costs',
   },
-  {
-    id: 'cma1-b-029',
-    courseId: 'cma',
-    section: 'CMA1',
-    blueprintArea: 'CMA1-B',
-    topic: 'Activity-Based Budgeting',
-    subtopic: 'ABB Approach',
-    difficulty: 'medium',
-    skillLevel: 'Analysis',
-    question: 'Activity-based budgeting differs from traditional budgeting primarily by:',
-    options: [
-      'Using only variable costs',
-      'Budgeting activities and their costs rather than line items',
-      'Eliminating all overhead costs',
-      'Focusing only on direct labor'
-    ],
-    correctAnswer: 1,
-    explanation: 'ABB identifies activities required to produce budgeted output, then estimates resources and costs for those activities. This links costs to specific activities and cost drivers, providing better cost visibility than traditional line-item budgeting.',
-    reference: 'Activity-Based Budgeting; Modern Budgeting',
-  },
 
   // ==========================================
   // Advanced Forecasting
@@ -107,7 +87,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Exponential Smoothing',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Forecast for last period was 1,000 units. Actual was 1,200 units. Using exponential smoothing with α = 0.3, next period forecast is:',
     options: [
@@ -127,7 +107,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Regression Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A regression analysis yields: Y = 5,000 + 2.5X, where Y is total cost and X is units produced. R² = 0.92. If 4,000 units are produced, predicted cost is:',
     options: [
@@ -147,7 +127,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Monte Carlo Simulation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Monte Carlo simulation is most useful when:',
     options: [
@@ -447,7 +427,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Pro Forma Statements',
     subtopic: 'Projected Balance Sheet',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Pro forma A/R is calculated as:',
     options: [
@@ -531,7 +511,7 @@ export const CMA1B_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting Accuracy',
     subtopic: 'Measuring Accuracy',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Forecast was 100,000 units; actual was 95,000 units. The Mean Absolute Percentage Error (MAPE) is:',
     options: [

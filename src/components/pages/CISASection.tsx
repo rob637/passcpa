@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, Play, BookOpen, Target, CheckCircle } from 'lucide-react';
 import { CISA_SECTION_CONFIG, CISASectionId } from '../../courses/cisa';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 
 export default function CISASection() {
   const { id } = useParams<{ id: string }>();
@@ -12,19 +14,21 @@ export default function CISASection() {
     return (
       <div className="p-8 text-center">
         <p className="text-gray-500">Section not found</p>
-        <button onClick={() => navigate('/cisa/dashboard')} className="mt-4 text-indigo-600 hover:underline">Back to Dashboard</button>
+        <Button variant="ghost" onClick={() => navigate('/cisa/dashboard')} className="mt-4 text-indigo-600">Back to Dashboard</Button>
       </div>
     );
   }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <button 
+      <Button 
+        variant="ghost"
         onClick={() => navigate('/cisa/dashboard')}
-        className="inline-flex items-center gap-1 text-gray-500 hover:text-indigo-600 mb-8 transition-colors"
+        leftIcon={ChevronLeft}
+        className="mb-8 text-gray-500"
       >
-        <ChevronLeft className="w-5 h-5" /> Back to Dashboard
-      </button>
+        Back to Dashboard
+      </Button>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main */}
@@ -40,7 +44,7 @@ export default function CISASection() {
             <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">{config.description}</p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+          <Card className="border border-gray-100 dark:border-gray-700">
             <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Key Topics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {config.topics.map((topic, i) => (
@@ -50,10 +54,10 @@ export default function CISASection() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
           {/* Modules placeholder */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+          <Card className="border border-gray-100 dark:border-gray-700">
             <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Study Modules</h3>
             <div className="space-y-4">
               {[1, 2, 3, 4].map((item) => (
@@ -71,12 +75,12 @@ export default function CISASection() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </div>
 
         {/* Sidebar */}
         <div className="space-y-6">
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 sticky top-4">
+          <Card className="border border-gray-100 dark:border-gray-700 sticky top-4">
             <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Your Progress</h3>
             <div className="space-y-6">
               <div>
@@ -98,18 +102,26 @@ export default function CISASection() {
                 </div>
               </div>
               <div className="pt-6 border-t border-gray-100 dark:border-gray-700 space-y-3">
-                <button 
+                <Button 
+                  variant="primary"
+                  fullWidth
                   onClick={() => navigate('/cisa-exam')}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors"
+                  leftIcon={Play}
+                  size="sm"
                 >
-                  <Play className="w-4 h-4" /> Practice Domain
-                </button>
-                <button className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                  <Target className="w-4 h-4" /> Take Quiz
-                </button>
+                  Practice Domain
+                </Button>
+                <Button 
+                  variant="secondary"
+                  fullWidth
+                  leftIcon={Target}
+                  size="sm"
+                >
+                  Take Quiz
+                </Button>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>

@@ -1,12 +1,16 @@
 /**
  * Exam Readiness Calculator
  * 
- * Calculates a student's readiness score for the CPA exam based on:
- * - MCQ Accuracy (25%): Multiple choice question accuracy
- * - TBS Practice (15%): Task-based simulation completion
- * - Coverage (20%): Number of topics practiced
- * - Volume (20%): Total questions + TBS attempted
- * - Lessons (20%): Lesson completion progress
+ * Calculates a student's readiness score for certification exams based on:
+ * - MCQ Accuracy: Multiple choice question accuracy (weight varies by exam)
+ * - TBS Practice: Task-based simulation completion (0% for exams without TBS)
+ * - Coverage: Number of topics practiced
+ * - Volume: Total questions + TBS attempted
+ * - Lessons: Lesson completion progress
+ * 
+ * Weights are dynamically calculated based on whether the exam has TBS:
+ * - With TBS (CPA): MCQ 25%, TBS 15%, Coverage 20%, Volume 20%, Lessons 20%
+ * - Without TBS (EA): MCQ 40%, Coverage 20%, Volume 20%, Lessons 20%
  */
 
 export interface ReadinessData {
@@ -38,6 +42,11 @@ export interface StudyStats {
   totalTbs?: number;
 }
 
+export interface ReadinessOptions {
+  /** Whether this exam has TBS (task-based simulations). Defaults to true for backwards compatibility. */
+  hasTBS?: boolean;
+}
+
 /**
  * Calculate exam readiness score
  * 
@@ -47,6 +56,7 @@ export interface StudyStats {
  * @param totalLessons - Total number of lessons available
  * @param tbsCompleted - Number of TBS completed (optional)
  * @param totalTbs - Total number of TBS available (optional, defaults to 20)
+ * @param options - Course-specific options like hasTBS
  * @returns ReadinessData with overall score, breakdown, and status
  */
 export const calculateExamReadiness = (
@@ -55,32 +65,51 @@ export const calculateExamReadiness = (
   lessonsCompleted: number,
   totalLessons: number,
   tbsCompleted: number = 0,
-  totalTbs: number = 20
+  totalTbs: number = 20,
+  options: ReadinessOptions = {}
 ): ReadinessData => {
+  // Default to having TBS for backwards compatibility (CPA)
+  const hasTBS = options.hasTBS ?? true;
+  
   // Weights for different factors (total = 100%)
-  const weights = {
-    accuracy: 0.25, // MCQ accuracy
-    tbs: 0.15,      // TBS practice
-    coverage: 0.20, // Topics covered
-    volume: 0.20,   // Questions + TBS attempted
-    lessons: 0.20,  // Lesson progress
-  };
+  // If no TBS, redistribute TBS weight to MCQ accuracy
+  const weights = hasTBS 
+    ? {
+        accuracy: 0.25, // MCQ accuracy
+        tbs: 0.15,      // TBS practice
+        coverage: 0.20, // Topics covered
+        volume: 0.20,   // Questions + TBS attempted
+        lessons: 0.20,  // Lesson progress
+      }
+    : {
+        accuracy: 0.40, // MCQ accuracy (absorbs TBS weight)
+        tbs: 0.00,      // No TBS for this exam
+        coverage: 0.20, // Topics covered
+        volume: 0.20,   // Questions attempted
+        lessons: 0.20,  // Lesson progress
+      };
 
   // Calculate scores (0-100)
   // Accuracy: 80% accuracy = 100 score (scaled by 1.25)
   const accuracyScore = Math.min(100, (stats.accuracy || 0) * 1.25);
   
   // TBS: Based on TBS completed vs expected (20 TBS = 100%)
-  const tbsScore = totalTbs > 0 
-    ? Math.min(100, (tbsCompleted / totalTbs) * 100) 
-    : (tbsCompleted >= 10 ? 100 : (tbsCompleted / 10) * 100);
+  // For non-TBS exams, this will be 0 but weight is also 0 so it doesn't matter
+  const tbsScore = hasTBS
+    ? (totalTbs > 0 
+        ? Math.min(100, (tbsCompleted / totalTbs) * 100) 
+        : (tbsCompleted >= 10 ? 100 : (tbsCompleted / 10) * 100))
+    : 0;
   
   // Coverage: Based on topics practiced vs expected (15 is baseline)
   const coverageScore = Math.min(100, (topicPerformance.length / 15) * 100);
   
-  // Volume: 500 questions + 20 TBS = 100% (combined benchmark)
+  // Volume: For TBS exams: 500 questions + 20 TBS = 100%
+  // For non-TBS exams: 500 questions = 100% (no TBS component)
   const volumeTarget = 500;
-  const volumeScore = Math.min(100, ((stats.totalQuestions + tbsCompleted * 10) / volumeTarget) * 100);
+  const volumeScore = hasTBS
+    ? Math.min(100, ((stats.totalQuestions + tbsCompleted * 10) / volumeTarget) * 100)
+    : Math.min(100, (stats.totalQuestions / volumeTarget) * 100);
   
   // Lessons: Lesson completion percentage
   const lessonsScore = totalLessons > 0 ? (lessonsCompleted / totalLessons) * 100 : 0;

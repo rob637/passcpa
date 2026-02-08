@@ -21,7 +21,37 @@ export const CMA_ESSAY_TASKS: WCTask[] = [
       'Delaying maintenance creates short-term favorable variances but long-term costs/risks (Quality issues, machine failure).',
       'IMA Ethics: Competence (knowing the risk), Integrity (avoiding conflicts), Credibility (reporting fairly).',
       'Controls: Preventive maintenance schedules, non-financial performance metrics (equipment uptime), budget-to-actual variance analysis including non-financial data.'
-    ]
+    ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper memo format with TO, FROM, DATE, RE fields',
+          'Organizes response into three clear sections matching the task requirements',
+          'Presents arguments in a logical sequence building to recommendations',
+          'Includes a clear conclusion summarizing key points',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Clearly distinguishes internal audit (operational focus, risk, controls) from external audit (financial statement opinion)',
+          'Cites SOX Section 404 management assessment and auditor attestation requirements',
+          'Identifies that delaying maintenance inflates short-term variances but creates long-term asset impairment and safety risks',
+          'References IMA Ethics: Competence, Integrity, Credibility, and Confidentiality',
+          'Recommends specific preventive controls (maintenance schedules, non-financial KPIs, variance investigation thresholds)',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses professional tone appropriate for a memo to the CEO',
+          'Employs correct terminology (SOX, COSO, internal controls, variance analysis)',
+          'Writes in clear, concise sentences free of grammatical errors',
+          'Avoids unnecessary jargon while maintaining technical accuracy',
+        ],
+      },
+    },
   },
   {
     id: 'cma_essay_002',
@@ -45,6 +75,36 @@ export const CMA_ESSAY_TASKS: WCTask[] = [
       'Risk adjustment: Increasing discount rate (15%) forces the project to clear a higher hurdle, reflecting the risk.',
       'Alternatively, use Certainty Equivalent cash flows.',
       'Recommendation: Use 15% to reflect the specific project risk (CAPM principle), not the firm-wide WACC (10%), unless the project has the same risk profile as the firm.'
-    ]
+    ],
+    rubric: {
+      organization: {
+        weight: 30,
+        criteria: [
+          'Uses proper report format with clear headings for each section',
+          'Organizes analysis into three distinct sections matching the task requirements',
+          'Presents capital budgeting concepts before applying them to the specific scenario',
+          'Includes a clear recommendation with supporting rationale',
+        ],
+      },
+      development: {
+        weight: 40,
+        criteria: [
+          'Accurately contrasts NPV (considers TVM, all cash flows) with Payback Period (ignores TVM and post-cutoff flows)',
+          'Explains why NPV maximizes shareholder wealth through positive NPV acceptance rule',
+          'Distinguishes between adjusting discount rate (risk-adjusted rate) and adjusting cash flows (certainty equivalents)',
+          'Correctly applies CAPM principle: project-specific risk warrants 15% over firm-wide 10% WACC',
+          'Addresses the Board\'s concern about political risk with substantive analysis',
+        ],
+      },
+      expression: {
+        weight: 30,
+        criteria: [
+          'Uses professional tone appropriate for a board report',
+          'Employs correct finance terminology (NPV, WACC, CAPM, risk premium, certainty equivalents)',
+          'Writes in clear, concise sentences free of grammatical errors',
+          'Balances technical accuracy with accessibility for board members',
+        ],
+      },
+    },
   }
 ];

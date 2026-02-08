@@ -66,7 +66,7 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Conflict Resolution',
     subtopic: 'External Consultation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CMA may seek confidential advice from an IMA Ethics Counselor when:',
     options: [
@@ -103,26 +103,6 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
   // ==========================================
   // Fraud and Whistleblowing
   // ==========================================
-  {
-    id: 'cma2-f-030',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-F',
-    topic: 'Fraud',
-    subtopic: 'Fraud Triangle',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The three elements of the fraud triangle are:',
-    options: [
-      'Opportunity, Pressure, Rationalization',
-      'Motive, Method, Means',
-      'Intent, Action, Concealment',
-      'Theft, Deception, Cover-up'
-    ],
-    correctAnswer: 0,
-    explanation: 'The fraud triangle identifies three conditions present in fraud: Opportunity (ability to commit fraud), Pressure (motivation such as financial need), and Rationalization (justification of the act).',
-    reference: 'Fraud Triangle; Fraud Detection',
-  },
   {
     id: 'cma2-f-031',
     courseId: 'cma',
@@ -170,7 +150,7 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Whistleblowing',
     subtopic: 'Dodd-Frank',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Under the Dodd-Frank Act, whistleblowers may receive:',
     options: [
@@ -208,26 +188,6 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
   // Corporate Governance Ethics
   // ==========================================
   {
-    id: 'cma2-f-035',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-F',
-    topic: 'Corporate Governance',
-    subtopic: 'Tone at the Top',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: '"Tone at the top" in corporate governance refers to:',
-    options: [
-      'The company\'s marketing message',
-      'Leadership\'s commitment to ethical behavior',
-      'Executive compensation levels',
-      'Board meeting frequency'
-    ],
-    correctAnswer: 1,
-    explanation: 'Tone at the top reflects senior leadership\'s attitude toward ethics and controls. When leaders demonstrate integrity, ethical behavior cascades through the organization.',
-    reference: 'Tone at the Top; Ethical Culture',
-  },
-  {
     id: 'cma2-f-036',
     courseId: 'cma',
     section: 'CMA2',
@@ -246,26 +206,6 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The audit committee oversees financial reporting, internal controls, and compliance with laws and regulations. Members should be independent and financially literate.',
     reference: 'Audit Committee; Governance Structure',
-  },
-  {
-    id: 'cma2-f-037',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-F',
-    topic: 'Corporate Governance',
-    subtopic: 'Code of Conduct',
-    difficulty: 'easy',
-    skillLevel: 'Remembering and Understanding',
-    question: 'A corporate code of conduct typically:',
-    options: [
-      'Replaces all laws and regulations',
-      'Establishes expected ethical behavior for employees',
-      'Applies only to executives',
-      'Is confidential and not shared'
-    ],
-    correctAnswer: 1,
-    explanation: 'A code of conduct communicates the organization\'s values, ethical standards, and expected behaviors to all employees, providing guidance for ethical decision-making.',
-    reference: 'Code of Conduct; Ethics Programs',
   },
   {
     id: 'cma2-f-038',
@@ -291,26 +231,6 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
   // ==========================================
   // Social Responsibility and Sustainability
   // ==========================================
-  {
-    id: 'cma2-f-039',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-F',
-    topic: 'Sustainability',
-    subtopic: 'Triple Bottom Line',
-    difficulty: 'medium',
-    skillLevel: 'Remembering and Understanding',
-    question: 'The "triple bottom line" considers:',
-    options: [
-      'Revenue, costs, and profit',
-      'People, planet, and profit',
-      'Past, present, and future',
-      'Shareholders, customers, and employees'
-    ],
-    correctAnswer: 1,
-    explanation: 'Triple bottom line (TBL) expands performance measurement beyond profit to include social (people) and environmental (planet) impacts, reflecting broader stakeholder concerns.',
-    reference: 'Triple Bottom Line; Sustainability Reporting',
-  },
   {
     id: 'cma2-f-040',
     courseId: 'cma',
@@ -338,7 +258,7 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Sustainability',
     subtopic: 'Integrated Reporting',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Integrated reporting combines:',
     options: [
@@ -402,7 +322,7 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Global Ethics',
     subtopic: 'UK Bribery Act',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The UK Bribery Act differs from the FCPA by:',
     options: [
@@ -538,5 +458,5 @@ export const CMA2F_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Professional skepticism means maintaining a questioning mind, critically assessing evidence, and being alert to conditions that may indicate errors or fraud.',
     reference: 'Professional Skepticism; Critical Thinking',
-  },
+  }
 ];

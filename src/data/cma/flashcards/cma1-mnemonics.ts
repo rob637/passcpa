@@ -17,7 +17,7 @@ export const CMA1_MNEMONICS: CMAFlashcard[] = [
     subtopic: 'Revenue Recognition',
     blueprintArea: 'CMA1-A',
     front: 'Mnemonic for the 5-step revenue recognition model (ASC 606)?',
-    back: '**"I DARE You"**\n\n**I** - Identify the contract\n**D** - Determine performance obligations\n**A** - Allocate transaction price\n**R** - Recognize revenue\n**E** - (d)Etermine transaction price\n\nOr simply: **1-2-3-4-5** = Contract, Obligations, Price, Allocate, Recognize',
+    back: '**"I DARE You"**\n\n**I** - Identify the contract\n**D** - Distinguish performance obligations\n**A** - Assess the transaction price\n**R** - Repartition (allocate) price to obligations\n**E** - Earn revenue (recognize when/as satisfied)\n\nCorrect ASC 606 order: Contract → Obligations → Price → Allocate → Recognize',
     mnemonic: 'I DARE You',
     difficulty: 'easy',
     tags: ['revenue', 'ASC 606'],
@@ -116,7 +116,7 @@ export const CMA1_MNEMONICS: CMAFlashcard[] = [
     subtopic: 'Responsibility Centers',
     blueprintArea: 'CMA1-C',
     front: 'Mnemonic for the 4 Responsibility Centers?',
-    back: '**"CRIP" (in order of increasing responsibility)**\n\n**C**ost Center - Control costs only\n**R**evenue Center - Control revenues only\n**I**nvestment Center - Control revenues, costs, AND capital\n**P**rofit Center - Control revenues AND costs\n\n*(Note: Investment centers have the MOST responsibility)*',
+    back: '**"CRIP" — Remember all four centers**\n\n**C**ost Center - Control costs only\n**R**evenue Center - Control revenues only\n**I**nvestment Center - Control revenues, costs, AND invested capital\n**P**rofit Center - Control revenues AND costs\n\n**Order of increasing responsibility:** Cost → Revenue → Profit → Investment\n*(Investment centers have the MOST responsibility)*',
     mnemonic: 'CRIP',
     difficulty: 'easy',
     tags: ['responsibility centers'],
@@ -219,22 +219,7 @@ export const CMA1_MNEMONICS: CMAFlashcard[] = [
     mnemonic: 'CARE - Custody, Authorization, Recording, Execution',
     difficulty: 'easy',
     tags: ['segregation of duties'],
-  },
-  {
-    id: 'cma1-mnem-016',
-    section: 'CMA1',
-    type: 'mnemonic',
-    topic: 'Internal Controls',
-    subtopic: 'Risk Response',
-    blueprintArea: 'CMA1-E',
-    front: 'Mnemonic for Risk Response strategies?',
-    back: '**"SARA"** or **"TARA"**\n\n**S**hare (or Transfer) - Insurance, outsourcing\n**A**void - Don\'t engage in activity\n**R**educe (Mitigate) - Implement controls\n**A**ccept - Tolerate the risk\n\n*Also works as:* **MARS** or **STAR**\n\nChoose based on: Risk appetite, Cost-benefit, Strategic importance',
-    mnemonic: 'SARA - Share, Avoid, Reduce, Accept',
-    difficulty: 'easy',
-    tags: ['risk management', 'ERM'],
-  },
-
-  // ============================================
+  },  // ============================================
   // F: Technology and Analytics
   // ============================================
   {
@@ -276,4 +261,45 @@ export const CMA1_MNEMONICS: CMAFlashcard[] = [
     difficulty: 'easy',
     tags: ['regression', 'statistics'],
   },
-];
+  // ============================================
+  // Additional Mnemonics (Batch 2)
+  // ============================================
+  {
+    id: 'cma1-mnem-021',
+    section: 'CMA1',
+    type: 'mnemonic',
+    topic: 'Cost Management',
+    subtopic: 'Overhead Variances',
+    blueprintArea: 'CMA1-D',
+    front: 'Mnemonic for the 4-way overhead variance analysis?',
+    back: '**"SVES"** - Spending, Variable efficiency, fixed Efficiency (none), fixed Spending (volume)\n\n**For Variable Overhead:**\n• **S**pending Variance = Actual - (Actual hrs × Std rate)\n• **E**fficiency Variance = (Actual hrs - Std hrs) × Std rate\n\n**For Fixed Overhead:**\n• **S**pending Variance = Actual - Budgeted\n• **V**olume Variance = Budgeted - Applied\n\n**Memory:** Variables Spend Efficiently, Fixed have Volume problems',
+    mnemonic: 'SVES - Spending, Efficiency for VOH; Spending, Volume for FOH',
+    difficulty: 'hard',
+    tags: ['overhead variances', 'variance analysis'],
+  },
+  {
+    id: 'cma1-mnem-022',
+    section: 'CMA1',
+    type: 'mnemonic',
+    topic: 'Cost Management',
+    subtopic: 'Theory of Constraints',
+    blueprintArea: 'CMA1-D',
+    front: 'Mnemonic for the 5 steps in Theory of Constraints?',
+    back: '**"IESSS"** - Identify, Exploit, Subordinate, Elevate, Start again\n\n1. **I**dentify the constraint (bottleneck)\n2. **E**xploit it (maximize usage)\n3. **S**ubordinate everything else to it\n4. **E**levate the constraint (add capacity)\n5. **S**tart again (find new constraint)\n\n**Alternative:** "I Examine Slowly, Spending Eventually"\n\n**Key:** Don\'t skip to step 4 (expensive)!',
+    mnemonic: 'IESSS - Identify, Exploit, Subordinate, Elevate, Start again',
+    difficulty: 'medium',
+    tags: ['TOC', 'constraints', 'throughput'],
+  },
+  {
+    id: 'cma1-mnem-023',
+    section: 'CMA1',
+    type: 'mnemonic',
+    topic: 'Internal Controls',
+    subtopic: 'SOX Requirements',
+    blueprintArea: 'CMA1-E',
+    front: 'Mnemonic for key SOX (Sarbanes-Oxley) sections?',
+    back: '**"302, 404, 906"**\n\n**302** - CEO/CFO certify financial statements\n• Responsible for internal controls\n• Quarterly certification\n\n**404** - Management assessment of IC\n• Annual report on ICFR\n• Auditor attestation (large companies)\n\n**906** - Criminal penalties for fraud\n• Up to 20 years for knowing violation\n\n**Memory:** "3 Certify, 4 Assess, 9 Punish"',
+    mnemonic: '302-404-906: Certify, Assess, Punish',
+    difficulty: 'medium',
+    tags: ['SOX', 'internal controls', 'compliance'],
+  },];

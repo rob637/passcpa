@@ -27,7 +27,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo, getStudyUnits } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
@@ -48,51 +48,7 @@ interface StudyUnit {
   locked: boolean;
 }
 
-// Unit definitions for each section (mapping to blueprint areas)
-const UNIT_DEFINITIONS: Record<ExamSection, { id: string; name: string; blueprintPrefix: string }[]> = {
-  FAR: [
-    { id: 'F1', name: 'Conceptual Framework', blueprintPrefix: 'FAR-I' },
-    { id: 'F2', name: 'Financial Statement Accounts', blueprintPrefix: 'FAR-II' },
-    { id: 'F3', name: 'Transactions', blueprintPrefix: 'FAR-III' },
-    { id: 'F4', name: 'State & Local Government', blueprintPrefix: 'FAR-IV' },
-    { id: 'F5', name: 'Not-for-Profit Entities', blueprintPrefix: 'FAR-V' },
-  ],
-  AUD: [
-    { id: 'A1', name: 'Ethics & Professional Responsibilities', blueprintPrefix: 'AUD-I' },
-    { id: 'A2', name: 'Risk Assessment & Planning', blueprintPrefix: 'AUD-II' },
-    { id: 'A3', name: 'Performing Procedures & Evidence', blueprintPrefix: 'AUD-III' },
-    { id: 'A4', name: 'Forming Conclusions & Reporting', blueprintPrefix: 'AUD-IV' },
-  ],
-  REG: [
-    { id: 'R1', name: 'Ethics & Federal Tax Procedures', blueprintPrefix: 'REG-I' },
-    { id: 'R2', name: 'Business Law', blueprintPrefix: 'REG-II' },
-    { id: 'R3', name: 'Federal Taxation of Property', blueprintPrefix: 'REG-III' },
-    { id: 'R4', name: 'Federal Taxation of Individuals', blueprintPrefix: 'REG-IV' },
-    { id: 'R5', name: 'Federal Taxation of Entities', blueprintPrefix: 'REG-V' },
-  ],
-  BAR: [
-    { id: 'B1', name: 'Business Analysis', blueprintPrefix: 'BAR-I' },
-    { id: 'B2', name: 'Technical Accounting', blueprintPrefix: 'BAR-II' },
-    { id: 'B3', name: 'State & Local Government', blueprintPrefix: 'BAR-III' },
-    { id: 'B4', name: 'Not-for-Profit Accounting', blueprintPrefix: 'BAR-IV' },
-    { id: 'B5', name: 'Financial Management', blueprintPrefix: 'BAR-V' },
-  ],
-  ISC: [
-    { id: 'I1', name: 'IT Governance & Risk', blueprintPrefix: 'ISC-I' },
-    { id: 'I2', name: 'Security & Controls', blueprintPrefix: 'ISC-II' },
-    { id: 'I3', name: 'SOC Engagements', blueprintPrefix: 'ISC-III' },
-    { id: 'I4', name: 'Data Management', blueprintPrefix: 'ISC-IV' },
-  ],
-  TCP: [
-    { id: 'T1', name: 'Tax Compliance', blueprintPrefix: 'TCP-I' },
-    { id: 'T2', name: 'Individual Tax Planning', blueprintPrefix: 'TCP-II' },
-    { id: 'T3', name: 'Entity Tax Planning', blueprintPrefix: 'TCP-III' },
-    { id: 'T4', name: 'Property Transactions', blueprintPrefix: 'TCP-IV' },
-    { id: 'T5', name: 'Gift & Estate Tax', blueprintPrefix: 'TCP-V' },
-  ],
-  PREP: [],
-  BEC: [],
-};
+// Unit definitions are now loaded dynamically via getStudyUnits() from sectionUtils
 
 const StudyJourney: React.FC = () => {
   const navigate = useNavigate();
@@ -107,8 +63,8 @@ const StudyJourney: React.FC = () => {
   const [contentCounts, setContentCounts] = useState({ mcq: 0, tbs: 0 });
   
   const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
-  const unitDefs = UNIT_DEFINITIONS[currentSection] || [];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
+  const unitDefs = getStudyUnits(currentSection, courseId);
   
   // Load data
   useEffect(() => {
@@ -491,7 +447,7 @@ const StudyJourney: React.FC = () => {
                       {/* Practice This Unit Button */}
                       <div className="p-3 bg-slate-50 dark:bg-slate-800/50">
                         <Link
-                          to={`/practice?blueprintArea=${UNIT_DEFINITIONS[currentSection]?.[units.indexOf(unit)]?.blueprintPrefix || ''}`}
+                          to={`/practice?blueprintArea=${unitDefs.find(d => d.id === unit.id)?.blueprintPrefix || ''}`}
                           className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors"
                         >
                           <Target className="w-4 h-4" />

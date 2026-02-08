@@ -1,6 +1,7 @@
 import { Component, ReactNode, ErrorInfo } from 'react';
 import logger from '../../utils/logger';
 import { AlertTriangle, RefreshCw, Home, Bug } from 'lucide-react';
+import { Button } from './Button';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -119,29 +120,33 @@ Steps to reproduce:
 
                 {/* Actions */}
                 <div className="space-y-3">
-                  <button
+                  <Button
                     onClick={this.handleReload}
-                    className="w-full btn-primary flex items-center justify-center gap-2"
+                    variant="primary"
+                    fullWidth
+                    leftIcon={RefreshCw}
                   >
-                    <RefreshCw className="w-4 h-4" />
                     Try Again
-                  </button>
+                  </Button>
 
-                  <button
+                  <Button
                     onClick={this.handleGoHome}
-                    className="w-full btn-secondary flex items-center justify-center gap-2"
+                    variant="secondary"
+                    fullWidth
+                    leftIcon={Home}
                   >
-                    <Home className="w-4 h-4" />
                     Go to Dashboard
-                  </button>
+                  </Button>
 
-                  <button
+                  <Button
                     onClick={this.handleReportBug}
-                    className="w-full text-sm text-slate-600 dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-200 flex items-center justify-center gap-2 py-2"
+                    variant="ghost"
+                    fullWidth
+                    size="sm"
+                    leftIcon={Bug}
                   >
-                    <Bug className="w-4 h-4" />
                     Report this issue
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -159,13 +164,15 @@ Steps to reproduce:
               <p className="text-sm text-error-600 dark:text-error-400 mt-1">
                 {this.props.fallbackMessage || 'Please try refreshing the page.'}
               </p>
-              <button
+              <Button
                 onClick={this.handleReload}
-                className="mt-3 text-sm font-medium text-error-700 dark:text-error-400 hover:text-error-800 dark:hover:text-error-300 flex items-center gap-1"
+                variant="ghost"
+                size="sm"
+                leftIcon={RefreshCw}
+                className="mt-3 text-error-700 dark:text-error-400 hover:text-error-800 dark:hover:text-error-300"
               >
-                <RefreshCw className="w-3 h-3" />
                 Refresh
-              </button>
+              </Button>
             </div>
           </div>
         </div>

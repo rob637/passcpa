@@ -92,8 +92,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
       '$2,850 Unfavorable',
       '$1,500 Unfavorable'
     ],
-    correctAnswer: 0,
-    explanation: 'Standard Hours Allowed = 1,500 units × 2 hours = 3,000 hours\nLabor Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard Rate\nLEV = (2,850 - 3,000) × $20 = -150 × $20 = -$3,000\nNegative means Favorable (used fewer hours), so this is $3,000 Favorable.\nWait - recalculating: 2,850 actual vs 3,000 standard means FEWER hours used = Favorable.\nBut the answer shows Unfavorable. Let me re-read: Actual 2,850, Standard allowed 3,000.\n2,850 < 3,000, so (2,850 - 3,000) = -150 × $20 = -$3,000 = Favorable.\nThe correct answer should be B.',
+    correctAnswer: 1,
+    explanation: 'Standard Hours Allowed = 1,500 units × 2 hours = 3,000 hours\nLabor Efficiency Variance = (Actual Hours − Standard Hours Allowed) × Standard Rate\nLEV = (2,850 − 3,000) × $20 = −150 × $20 = −$3,000\nSince actual hours (2,850) are fewer than standard hours allowed (3,000), the company used fewer labor hours than expected. A negative LEV (or fewer hours used) indicates a Favorable variance of $3,000.',
     reference: 'IMA CMA LOS 1D1',
     calculationType: 'variance-analysis',
   },
@@ -104,7 +104,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Variable Overhead Spending Variance',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Actual variable overhead: $45,000. Actual hours: 9,000. Standard variable overhead rate: $4.50 per hour. What is the variable overhead spending variance?',
     options: [
@@ -125,7 +125,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Variable Overhead Efficiency Variance',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Standard hours allowed: 8,500. Actual hours: 9,000. Standard variable overhead rate: $4.50 per hour. What is the variable overhead efficiency variance?',
     options: [
@@ -146,7 +146,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Fixed Overhead Budget Variance',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Budgeted fixed overhead: $120,000. Actual fixed overhead: $125,000. What is the fixed overhead budget (spending) variance?',
     options: [
@@ -167,7 +167,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Fixed Overhead Volume Variance',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'Budgeted fixed OH: $100,000. Normal capacity: 10,000 units (20,000 DLH). Actual production: 9,000 units (standard 2 DLH each). What is the fixed overhead volume variance?',
     options: [
@@ -188,7 +188,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Total Variance Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'Standard cost per unit: DM $15, DL $24, VOH $8, FOH $12. Actual costs for 1,000 units: DM $16,200, DL $23,000, VOH $8,400, FOH $12,500. What is the total variance?',
     options: [
@@ -293,7 +293,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Variance Analysis',
     subtopic: 'Three-Way OH Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'Budgeted FOH: $80,000 at 8,000 DLH. Actual FOH: $82,000. Actual DLH: 7,800. Standard DLH allowed: 7,500. Under the 3-way analysis, what is the spending variance?',
     options: [
@@ -423,7 +423,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Budgeting',
     subtopic: 'Cash Budget',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Beginning cash: $25,000. Collections: $180,000. Disbursements: $195,000. Minimum cash balance: $20,000. How much must be borrowed?',
     options: [
@@ -507,7 +507,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Budgeting',
     subtopic: 'Pro Forma Income Statement',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Sales: $500,000. COGS: 60% of sales. S&A: $80,000. Interest: $15,000. Tax rate: 25%. What is budgeted net income?',
     options: [
@@ -528,7 +528,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-B',
     topic: 'Forecasting',
     subtopic: 'Regression Analysis',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Cost equation from regression: Y = $15,000 + $3.50X. R² = 0.92. If activity level is 8,000 units, what is the predicted cost?',
     options: [
@@ -616,7 +616,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Allocation',
     subtopic: 'Activity-Based Costing',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Activity: Machine setups. Cost pool: $60,000. Total setups: 200. Product A: 50 setups, Product B: 150 setups. What OH is allocated to Product A?',
     options: [
@@ -637,7 +637,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Allocation',
     subtopic: 'ABC vs Traditional',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'Traditional rate: $20/DLH. Product X: 1,000 DLH. ABC rates: Setup $500/setup (X uses 5), Inspection $100/unit (X has 200 units). What is the difference in allocated OH?',
     options: [
@@ -646,8 +646,8 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
       '$20,000 less under ABC',
       '$0 difference'
     ],
-    correctAnswer: 0,
-    explanation: 'Traditional: 1,000 DLH × $20 = $20,000\nABC: Setup: 5 × $500 = $2,500\n     Inspection: 200 × $100 = $20,000\n     Total ABC = $22,500\nDifference = $20,000 - $22,500 = -$2,500\nABC allocates $2,500 MORE, not less. Let me recalculate.\nActually: ABC - Traditional = $22,500 - $20,000 = $2,500 more under ABC.',
+    correctAnswer: 1,
+    explanation: 'Traditional overhead: 1,000 DLH × $20 = $20,000\nABC overhead: Setup: 5 setups × $500 = $2,500; Inspection: 200 units × $100 = $20,000\nTotal ABC = $2,500 + $20,000 = $22,500\nDifference = ABC − Traditional = $22,500 − $20,000 = $2,500 more under ABC.\nProduct X is allocated $2,500 more overhead under ABC than under the traditional system, revealing that X consumes more resources than the volume-based rate suggests.',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'abc',
   },
@@ -658,7 +658,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Process Costing',
     subtopic: 'Equivalent Units - WA',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Beginning WIP: 2,000 units (60% complete). Started: 18,000. Completed: 17,000. Ending WIP: 3,000 (40% complete). Using weighted average, what are the equivalent units for conversion?',
     options: [
@@ -700,7 +700,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Process Costing',
     subtopic: 'Cost per Equivalent Unit',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Total conversion costs: $182,000. Equivalent units (conversion): 18,200. What is the cost per equivalent unit for conversion?',
     options: [
@@ -809,7 +809,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Measurement',
     subtopic: 'EVA',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'NOPAT: $800,000. Total capital: $5,000,000. WACC: 10%. What is Economic Value Added (EVA)?',
     options: [
@@ -851,7 +851,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Measurement',
     subtopic: 'Investment Decision with RI',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'Division ROI: 18%. Required rate: 12%. New project ROI: 15%. Investment: $500,000. Should the manager accept if evaluated on RI?',
     options: [
@@ -872,7 +872,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Transfer Pricing',
     subtopic: 'Minimum Transfer Price',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Selling division: Variable cost $30, full cost $45, market price $60. Division is at full capacity. What is the minimum transfer price?',
     options: [
@@ -893,7 +893,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Transfer Pricing',
     subtopic: 'Negotiated Range',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Selling division: Variable cost $25, excess capacity. Buying division: Can buy externally for $40. What is the negotiation range for transfer price?',
     options: [
@@ -956,7 +956,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Management',
     subtopic: 'Absorption vs Variable Income',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Fixed OH: $100,000. Production: 10,000 units. Sales: 8,000 units. Under absorption costing, how much fixed OH is in ending inventory?',
     options: [
@@ -981,7 +981,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Analytics',
     subtopic: 'Learning Curve',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'First unit: 100 hours. 80% learning curve. What is the cumulative average time per unit after 4 units?',
     options: [
@@ -1023,7 +1023,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'External Reporting',
     subtopic: 'DDB Depreciation',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Asset cost: $80,000. Salvage: $8,000. Life: 4 years. Using DDB, what is Year 2 depreciation?',
     options: [
@@ -1065,7 +1065,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Management',
     subtopic: 'Joint Cost Allocation',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Joint costs: $90,000. Product A: 6,000 lbs at $8/lb. Product B: 4,000 lbs at $12/lb. Using sales value method, what cost is allocated to A?',
     options: [
@@ -1086,7 +1086,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Management',
     subtopic: 'Service Dept Allocation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Service dept S1 costs: $80,000. S1 provides 25% service to S2 and 75% to Production. Using direct method, how much is allocated to Production?',
     options: [
@@ -1096,7 +1096,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
       '$75,000'
     ],
     correctAnswer: 0,
-    explanation: 'Direct method ignores inter-service department usage.\nProduction gets 75% of total service from S1 when ignoring S2.\nBut direct method allocates ONLY to operating departments.\n75% is production\'s share: 75% / 75% = 100% of $80,000 = $80,000.\nRecalculating: With direct method, all $80,000 goes to Production (the only operating dept in this example).',
+    explanation: 'Under the direct method, inter-service department usage is ignored. S1\'s costs are allocated only to operating departments. Since Production is the only operating department receiving S1\'s services, it receives 100% of S1\'s costs. Calculation: S1 provides 75% to Production and 25% to S2, but ignoring S2: Production share = 75% ÷ 75% = 100%. Allocation to Production = $80,000 × 100% = $80,000.',
     reference: 'IMA CMA LOS 1D2',
     calculationType: 'service-allocation',
   },
@@ -1170,7 +1170,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Management',
     subtopic: 'Spoilage',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Normal spoilage: 500 units (2% of good output). Abnormal spoilage: 200 units. Cost per unit: $15. What is the abnormal spoilage cost charged to expense?',
     options: [
@@ -1212,7 +1212,7 @@ export const CMA1_CALCULATION_PROBLEMS: Question[] = [
     blueprintArea: 'CMA1-C',
     topic: 'Performance Management',
     subtopic: 'Throughput',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Selling price: $100. Totally variable cost (materials): $40. Product requires 20 minutes at bottleneck. What is throughput per minute at the constraint?',
     options: [

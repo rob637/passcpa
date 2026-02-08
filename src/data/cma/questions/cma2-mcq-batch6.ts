@@ -1,0 +1,479 @@
+/**
+ * CMA Part 2 - MCQ Batch 6 (25 Questions)
+ * 
+ * Focus: Complex analysis and decision-making
+ * - CMA2-A: Financial Statement Analysis (5)
+ * - CMA2-B: Corporate Finance (5)
+ * - CMA2-C: Decision Analysis (6)
+ * - CMA2-D: Risk Management (3)
+ * - CMA2-E: Investment Decisions (3)
+ * - CMA2-F: Professional Ethics (3)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA2_MCQ_BATCH6: Question[] = [
+  // ==========================================
+  // CMA2-A: Financial Statement Analysis (5)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-001',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-A',
+    topic: 'DuPont Analysis',
+    subtopic: 'Three-Factor Model',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Company data: Net profit margin 8%, Asset turnover 1.5, Equity multiplier 2.0. What is the Return on Equity (ROE)?',
+    options: [
+      '24%',
+      '12%',
+      '16%',
+      '11.5%'
+    ],
+    correctAnswer: 0,
+    explanation: 'DuPont: ROE = Profit Margin × Asset Turnover × Equity Multiplier = 8% × 1.5 × 2.0 = 24%.',
+    reference: 'DuPont Analysis',
+  },
+  {
+    id: 'cma2-mcq6-002',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-A',
+    topic: 'Liquidity Analysis',
+    subtopic: 'Cash Ratio',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Cash $200,000. Marketable securities $100,000. Accounts receivable $300,000. Inventory $400,000. Current liabilities $500,000. What is the cash ratio?',
+    options: [
+      '0.60',
+      '0.40',
+      '1.20',
+      '2.00'
+    ],
+    correctAnswer: 0,
+    explanation: 'Cash Ratio = (Cash + Marketable Securities) / Current Liabilities = ($200,000 + $100,000) / $500,000 = 0.60. This is the most conservative liquidity measure.',
+    reference: 'Cash Ratio; Liquidity',
+  },
+  {
+    id: 'cma2-mcq6-003',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-A',
+    topic: 'Quality of Earnings',
+    subtopic: 'Accrual Analysis',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'Net income increased 20%, but operating cash flow decreased 15%. This suggests:',
+    options: [
+      'Improving earnings quality',
+      'Potential earnings management or declining quality',
+      'Efficient working capital management',
+      'Higher capital expenditures'
+    ],
+    correctAnswer: 1,
+    explanation: 'When earnings grow but cash flow declines, there is a disconnect. This may indicate aggressive revenue recognition, capitalization of expenses, or other earnings management. High-quality earnings are supported by cash flows.',
+    reference: 'Earnings Quality; Cash Flow Analysis',
+  },
+  {
+    id: 'cma2-mcq6-004',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-A',
+    topic: 'Trend Analysis',
+    subtopic: 'Common-Size Statements',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'On a common-size income statement, which base is used to express all items?',
+    options: [
+      'Total assets',
+      'Net income',
+      'Net sales or revenue',
+      'Gross profit'
+    ],
+    correctAnswer: 2,
+    explanation: 'Common-size income statements express all line items as a percentage of net sales (revenue). This allows comparison across companies of different sizes and identification of margin trends.',
+    reference: 'Common-Size Statements',
+  },
+  {
+    id: 'cma2-mcq6-005',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-A',
+    topic: 'Coverage Ratios',
+    subtopic: 'Fixed Charge Coverage',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'EBIT $400,000. Interest expense $80,000. Lease payments $40,000 (all fixed charge). What is the fixed charge coverage ratio?',
+    options: [
+      '3.67',
+      '5.00',
+      '3.33',
+      '4.00'
+    ],
+    correctAnswer: 0,
+    explanation: 'Fixed Charge Coverage = (EBIT + Lease Payments) / (Interest + Lease Payments) = ($400,000 + $40,000) / ($80,000 + $40,000) = $440,000 / $120,000 = 3.67.',
+    reference: 'Fixed Charge Coverage',
+  },
+
+  // ==========================================
+  // CMA2-B: Corporate Finance (5)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-006',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'WACC',
+    subtopic: 'Weighted Average Cost of Capital',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Capital structure: 60% equity, 40% debt. Cost of equity: 14%. Pre-tax cost of debt: 7%. Tax rate: 30%. What is WACC?',
+    options: [
+      '10.36%',
+      '11.20%',
+      '9.56%',
+      '12.60%'
+    ],
+    correctAnswer: 0,
+    explanation: 'WACC = (E/V × Ke) + (D/V × Kd × (1-T)) = (0.60 × 14%) + (0.40 × 7% × 0.70) = 8.4% + 1.96% = 10.36%.',
+    reference: 'WACC Calculation',
+  },
+  {
+    id: 'cma2-mcq6-007',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Residual Dividend',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Optimal capital budget: $10M. Target capital structure: 40% debt, 60% equity. Net income: $8M. Under residual dividend policy, dividends paid are:',
+    options: [
+      '$2 million',
+      '$4 million',
+      '$6 million',
+      '$0'
+    ],
+    correctAnswer: 0,
+    explanation: 'Equity needed = 60% × $10M = $6M. Dividends = Net Income - Equity Needed = $8M - $6M = $2M. Residual policy pays dividends only after funding investments.',
+    reference: 'Residual Dividend Policy',
+  },
+  {
+    id: 'cma2-mcq6-010',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Valuation',
+    subtopic: 'Dividend Discount Model',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Current dividend: $2.00. Growth rate: 5%. Required return: 12%. Using Gordon Growth Model, what is the stock value?',
+    options: [
+      '$28.57',
+      '$30.00',
+      '$33.33',
+      '$16.67'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gordon Model: P = D₁ / (r - g) = D₀(1+g) / (r - g) = $2.00(1.05) / (0.12 - 0.05) = $2.10 / 0.07 = $30.00.',
+    reference: 'Gordon Growth Model; DDM',
+  },
+
+  // ==========================================
+  // CMA2-C: Decision Analysis (6)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-011',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Marginal Analysis',
+    subtopic: 'Incremental Costs',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Current output: 50,000 units. A client wants 5,000 additional units at $18 each. Variable cost: $12. Fixed costs would need $15,000 additional equipment. Accept?',
+    options: [
+      'Yes, incremental profit $15,000',
+      'No, incremental loss $15,000',
+      'Yes, incremental profit $30,000',
+      'Cannot determine'
+    ],
+    correctAnswer: 0,
+    explanation: 'Incremental Revenue = 5,000 × $18 = $90,000. Incremental Costs = (5,000 × $12) + $15,000 = $60,000 + $15,000 = $75,000. Incremental Profit = $90,000 - $75,000 = $15,000. Accept.',
+    reference: 'Incremental Analysis',
+  },
+  {
+    id: 'cma2-mcq6-012',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Product Line Decisions',
+    subtopic: 'Discontinuation Analysis',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Product line contribution margin: $200,000. Traceable fixed costs: $180,000. Allocated common costs: $50,000. Should the line be discontinued?',
+    options: [
+      'Yes, it shows a $30,000 loss',
+      'No, it contributes $20,000 to common costs',
+      'Yes, contribution margin is insufficient',
+      'Depends on qualitative factors only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Segment margin = CM - Traceable FC = $200,000 - $180,000 = $20,000 positive. This contributes to common costs. Dropping the line would reduce overall profits by $20,000 (allocated costs remain).',
+    reference: 'Product Line Decisions',
+  },
+  {
+    id: 'cma2-mcq6-013',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Pricing Strategies',
+    subtopic: 'Target Costing',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Market price: $80. Target profit margin: 20%. Current cost estimate: $70. What is the cost reduction target?',
+    options: [
+      '$6',
+      '$14',
+      '$10',
+      '$4'
+    ],
+    correctAnswer: 0,
+    explanation: 'Target Cost = Market Price - Target Profit = $80 - (20% × $80) = $80 - $16 = $64. Cost Gap = Current Cost - Target Cost = $70 - $64 = $6 reduction needed.',
+    reference: 'Target Costing',
+  },
+  {
+    id: 'cma2-mcq6-014',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Linear Programming',
+    subtopic: 'Constraints',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'In linear programming, a binding constraint is one that:',
+    options: [
+      'Has no effect on the optimal solution',
+      'Determines the maximum or minimum point of the objective function',
+      'Can be ignored in the analysis',
+      'Always involves labor hours'
+    ],
+    correctAnswer: 1,
+    explanation: 'A binding constraint is fully utilized at the optimal solution—it limits the objective function value. Non-binding constraints have slack (unused capacity) at the optimum.',
+    reference: 'Linear Programming; Constraints',
+  },
+  {
+    id: 'cma2-mcq6-015',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Risk Analysis',
+    subtopic: 'Coefficient of Variation',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Project A: Expected return 15%, standard deviation 9%. Project B: Expected return 20%, standard deviation 14%. Which has lower relative risk?',
+    options: [
+      'Project A (CV = 0.60)',
+      'Project B (CV = 0.70)',
+      'They have equal risk',
+      'Cannot compare without correlation data'
+    ],
+    correctAnswer: 0,
+    explanation: 'CV = Standard Deviation / Expected Return. Project A: 9%/15% = 0.60. Project B: 14%/20% = 0.70. Lower CV means less risk per unit of return, so Project A has lower relative risk.',
+    reference: 'Coefficient of Variation',
+  },
+  {
+    id: 'cma2-mcq6-016',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-C',
+    topic: 'Game Theory',
+    subtopic: 'Competitive Strategy',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A zero-sum game in competitive strategy means:',
+    options: [
+      'There are no winners or losers',
+      'Both parties can win through cooperation',
+      'One party\'s gain equals the other\'s loss',
+      'The total payoff is unpredictable'
+    ],
+    correctAnswer: 2,
+    explanation: 'In a zero-sum game, the total gains and losses sum to zero—one party\'s gain is exactly offset by another\'s loss. This contrasts with positive-sum games where cooperation can increase total value.',
+    reference: 'Game Theory; Zero-Sum',
+  },
+
+  // ==========================================
+  // CMA2-D: Risk Management (3)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-017',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-D',
+    topic: 'Foreign Exchange',
+    subtopic: 'Transaction Exposure',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'A US company will receive €500,000 in 90 days. Current spot rate: $1.10/€. To hedge, the company should:',
+    options: [
+      'Buy euros forward',
+      'Sell euros forward',
+      'Buy euro call options',
+      'Borrow euros now'
+    ],
+    correctAnswer: 1,
+    explanation: 'The company will receive euros and needs dollars. Selling euros forward locks in the exchange rate for converting euros to dollars in 90 days, eliminating transaction exposure.',
+    reference: 'Foreign Exchange Hedging',
+  },
+  {
+    id: 'cma2-mcq6-018',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-D',
+    topic: 'Operational Risk',
+    subtopic: 'Supply Chain',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Single-source supplier risk is best mitigated by:',
+    options: [
+      'Holding no safety stock',
+      'Developing alternative supplier relationships',
+      'Reducing product quality requirements',
+      'Extending payment terms'
+    ],
+    correctAnswer: 1,
+    explanation: 'Single-source risk—disruption at one supplier halts production. Mitigation: develop qualified backup suppliers, even if at higher cost. Safety stock also helps but doesn\'t address root cause.',
+    reference: 'Supply Chain Risk',
+  },
+  {
+    id: 'cma2-mcq6-019',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-D',
+    topic: 'Insurance',
+    subtopic: 'Risk Transfer',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Key person insurance is designed to:',
+    options: [
+      'Provide life insurance to all employees',
+      'Compensate the company for loss of a critical executive',
+      'Fund employee retirement plans',
+      'Insure against theft by employees'
+    ],
+    correctAnswer: 1,
+    explanation: 'Key person (key man) insurance compensates the company for financial losses from death or disability of crucial executives whose skills significantly impact company performance.',
+    reference: 'Key Person Insurance',
+  },
+
+  // ==========================================
+  // CMA2-E: Investment Decisions (3)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-020',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-E',
+    topic: 'NPV',
+    subtopic: 'Present Value Calculation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Project cost: $100,000. Annual cash flows: $35,000 for 4 years. Discount rate: 10%. PV factor for annuity (4 periods, 10%): 3.170. What is NPV?',
+    options: [
+      '$10,950',
+      '$40,000',
+      '$35,000',
+      '$-10,950'
+    ],
+    correctAnswer: 0,
+    explanation: 'PV of cash flows = $35,000 × 3.170 = $110,950. NPV = $110,950 - $100,000 = $10,950 positive. Accept the project.',
+    reference: 'Net Present Value',
+  },
+  {
+    id: 'cma2-mcq6-021',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-E',
+    topic: 'Profitability Index',
+    subtopic: 'Capital Rationing',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Project X: Investment $500,000, NPV $75,000. Project Y: Investment $300,000, NPV $60,000. Under capital rationing with $500,000 budget, which is preferred?',
+    options: [
+      'Project X (higher NPV)',
+      'Project Y (higher profitability index)',
+      'Both projects equally',
+      'Neither project'
+    ],
+    correctAnswer: 1,
+    explanation: 'PI = (NPV + Investment) / Investment. X: $575,000 / $500,000 = 1.15. Y: $360,000 / $300,000 = 1.20. Y has higher PI, meaning better return per dollar invested under capital constraint.',
+    reference: 'Profitability Index; Capital Rationing',
+  },
+  {
+    id: 'cma2-mcq6-022',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-E',
+    topic: 'Real Options',
+    subtopic: 'Flexibility Value',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Real options analysis recognizes that:',
+    options: [
+      'Management can only make decisions at project inception',
+      'Managerial flexibility to adapt has value not captured by DCF',
+      'All future cash flows are certain',
+      'Projects should never be abandoned once started'
+    ],
+    correctAnswer: 1,
+    explanation: 'Real options recognize that management can adapt (expand, abandon, delay, switch) as uncertainty resolves. This flexibility has value beyond what traditional DCF captures.',
+    reference: 'Real Options',
+  },
+
+  // ==========================================
+  // CMA2-F: Professional Ethics (3)
+  // ==========================================
+  {
+    id: 'cma2-mcq6-024',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-F',
+    topic: 'Professional Conduct',
+    subtopic: 'Documentation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Proper documentation of ethical concerns and actions taken is important because:',
+    options: [
+      'It creates more work for administrators',
+      'It provides evidence of due diligence and protects the professional',
+      'It is required for tax purposes',
+      'It eliminates the need for follow-up'
+    ],
+    correctAnswer: 1,
+    explanation: 'Documentation creates a record showing the professional identified issues and took appropriate action. It provides protection if questions arise later and demonstrates due diligence in following ethical obligations.',
+    reference: 'Documentation; Professional Conduct',
+  },
+  {
+    id: 'cma2-mcq6-025',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-F',
+    topic: 'Ethical Frameworks',
+    subtopic: 'Consequentialism',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A consequentialist approach to ethics focuses primarily on:',
+    options: [
+      'Following established rules regardless of outcome',
+      'The outcomes or consequences of actions',
+      'Individual rights and duties',
+      'Religious teachings'
+    ],
+    correctAnswer: 1,
+    explanation: 'Consequentialism evaluates actions based on their outcomes (consequences). Utilitarianism is a common form—the right action maximizes overall good. This contrasts with deontological ethics (duties/rules) and virtue ethics (character).',
+    reference: 'Ethical Frameworks; Consequentialism',
+  },
+];

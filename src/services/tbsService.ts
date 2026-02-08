@@ -19,7 +19,7 @@ async function loadAllTBS(): Promise<TBS[]> {
   }
 
   try {
-    const tbsData = await import('../data/tbs');
+    const tbsData = await import('../data/cpa/tbs');
     tbsCache = tbsData.ALL_TBS || [];
     return tbsCache;
   } catch (error) {
@@ -51,7 +51,7 @@ export async function fetchAllTBS(): Promise<TBS[]> {
  */
 export async function fetchTBSBySection(section: ExamSection): Promise<TBS[]> {
   try {
-    const { getTBSBySection } = await import('../data/tbs');
+    const { getTBSBySection } = await import('../data/cpa/tbs');
     return getTBSBySection(section);
   } catch (error) {
     logger.error(`Error fetching TBS for section ${section}:`, error);
@@ -64,7 +64,7 @@ export async function fetchTBSBySection(section: ExamSection): Promise<TBS[]> {
  */
 export async function fetchTBSById(tbsId: string): Promise<TBS | null> {
   try {
-    const { getTBSById } = await import('../data/tbs');
+    const { getTBSById } = await import('../data/cpa/tbs');
     return getTBSById(tbsId) || null;
   } catch (error) {
     logger.error(`Error fetching TBS ${tbsId}:`, error);
@@ -77,7 +77,7 @@ export async function fetchTBSById(tbsId: string): Promise<TBS | null> {
  */
 export async function getTBSStats(): Promise<{ section: ExamSection; count: number }[]> {
   try {
-    const { getTBSStats: getStats } = await import('../data/tbs');
+    const { getTBSStats: getStats } = await import('../data/cpa/tbs');
     const stats = getStats();
     
     return Object.entries(stats.bySection).map(([section, count]) => ({
@@ -95,7 +95,7 @@ export async function getTBSStats(): Promise<{ section: ExamSection; count: numb
  */
 export async function fetchTBSByType(type: string): Promise<TBS[]> {
   try {
-    const { getTBSByType } = await import('../data/tbs');
+    const { getTBSByType } = await import('../data/cpa/tbs');
     return getTBSByType(type as any);
   } catch (error) {
     logger.error(`Error fetching TBS by type ${type}:`, error);

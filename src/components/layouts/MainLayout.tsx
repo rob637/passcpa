@@ -1,57 +1,16 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
-import { Home, BookOpen, User, Flame, Compass, WifiOff } from 'lucide-react';
+import { Flame, Compass, WifiOff } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
 import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
 import { useCourse } from '../../providers/CourseProvider';
-import { CourseId } from '../../types/course';
+import { COURSES } from '../../courses';
 import { detectCourseFromPath } from '../../utils/courseNavigation';
+import { getNavItems, getNavConfig, isNavActive } from '../../config/navigation';
 import clsx from 'clsx';
-
-// Course-specific navigation paths (extended from shared utility)
-const COURSE_NAV_PATHS: Record<CourseId, { home: string; learn: string; you: string; strategy: string }> = {
-  cpa: { home: '/home', learn: '/learn', you: '/you', strategy: '/lessons?section=PREP' },
-  ea: { home: '/ea', learn: '/ea/learn', you: '/you', strategy: '/ea' },
-  cma: { home: '/cma/dashboard', learn: '/cma/learn', you: '/you', strategy: '/cma/dashboard' },
-  cia: { home: '/cia/dashboard', learn: '/cia/learn', you: '/you', strategy: '/cia/dashboard' },
-  cfp: { home: '/cfp/dashboard', learn: '/cfp/learn', you: '/you', strategy: '/cfp/dashboard' },
-  cisa: { home: '/cisa/dashboard', learn: '/cisa/learn', you: '/you', strategy: '/cisa/dashboard' },
-};
-
-// Check if current path is active for a given nav type in a course
-const isNavActiveForCourse = (navType: 'home' | 'learn' | 'you', pathname: string, courseId: CourseId): boolean => {
-  const paths = COURSE_NAV_PATHS[courseId];
-  const targetPath = paths[navType];
-  
-  // For CPA, check the various CPA-specific paths
-  if (courseId === 'cpa') {
-    if (navType === 'home') {
-      return ['/home', '/practice', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'].some(p => 
-        pathname === p || pathname.startsWith(p + '/')
-      );
-    }
-    if (navType === 'learn') {
-      return ['/learn', '/lessons'].some(p => pathname === p || pathname.startsWith(p + '/'));
-    }
-    if (navType === 'you') {
-      return ['/you', '/progress', '/settings', '/achievements', '/community'].some(p => 
-        pathname === p || pathname.startsWith(p + '/')
-      );
-    }
-  }
-  
-  // For other courses, match the base path
-  return pathname === targetPath || pathname.startsWith(targetPath.split('?')[0]);
-};
-
-// Check if Strategy nav is active (only for CPA)
-const isStrategyActive = (pathname: string, searchParams: URLSearchParams, courseId: CourseId): boolean => {
-  if (courseId !== 'cpa') return false;
-  return pathname === '/lessons' && searchParams.get('section') === 'PREP';
-};
 
 interface ProgressRingProps {
   progress?: number;
@@ -104,15 +63,15 @@ const MainLayout = () => {
   // Detect course from URL - this takes precedence to prevent bleeding
   const currentCourseId = useMemo(() => detectCourseFromPath(location.pathname), [location.pathname]);
   
-  // Get course-specific nav paths
-  const navPaths = useMemo(() => COURSE_NAV_PATHS[currentCourseId], [currentCourseId]);
+  // Get course config for metadata like examProvider
+  const course = COURSES[currentCourseId];
   
-  // Build nav items with course-specific paths
-  const navItems = useMemo(() => [
-    { path: navPaths.home, icon: Home, label: 'Home', tourId: 'home', navType: 'home' as const },
-    { path: navPaths.learn, icon: BookOpen, label: 'Learn', tourId: 'learn', navType: 'learn' as const },
-    { path: navPaths.you, icon: User, label: 'You', tourId: 'you', navType: 'you' as const },
-  ], [navPaths]);
+  // Get navigation config from centralized config
+  const navConfig = useMemo(() => getNavConfig(currentCourseId), [currentCourseId]);
+  
+  // Build nav items with course-specific paths (from centralized config)
+  const navItems = useMemo(() => getNavItems(currentCourseId), [currentCourseId]);
+  
   const { darkMode } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -120,11 +79,14 @@ const MainLayout = () => {
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
   
-  // Check if Strategy section is active (CPA only)
-  const strategyActive = isStrategyActive(location.pathname, searchParams, currentCourseId);
+  // Check if Strategy section is active (uses centralized config)
+  const strategyActive = useMemo(
+    () => isNavActive('strategy', location.pathname, searchParams, currentCourseId),
+    [location.pathname, searchParams, currentCourseId]
+  );
   
-  // Strategy nav path (CPA only)
-  const strategyNavPath = navPaths.strategy;
+  // Strategy nav path
+  const strategyNavPath = navConfig.paths.strategy;
 
   // Set document title based on route
   useRouteTitle();
@@ -169,12 +131,13 @@ const MainLayout = () => {
     // Find active index - check Strategy first (CPA only), then regular nav items
     let activeIndex = -1;
     
-    if (strategyActive && currentCourseId === 'cpa') {
-      // Strategy is the 4th item (index 3) for CPA
-      activeIndex = navItems.length;
+    if (strategyActive && navConfig.showStrategy) {
+      // Strategy is after the main nav items
+      activeIndex = navItems.findIndex(item => item.navType === 'strategy');
+      if (activeIndex === -1) activeIndex = navItems.length;
     } else {
       activeIndex = navItems.findIndex(
-        (item) => isNavActiveForCourse(item.navType, location.pathname, currentCourseId)
+        (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
       );
     }
 
@@ -198,11 +161,11 @@ const MainLayout = () => {
 
   // Get current page title
   const getPageTitle = () => {
-    // Check Strategy first (CPA only)
-    if (strategyActive && currentCourseId === 'cpa') return 'Exam Strategy';
+    // Check Strategy first
+    if (strategyActive && navConfig.showStrategy) return 'Exam Strategy';
     
     const current = navItems.find(
-      (item) => isNavActiveForCourse(item.navType, location.pathname, currentCourseId)
+      (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
     );
     if (current) return current.label;
     
@@ -260,14 +223,14 @@ const MainLayout = () => {
           </div>
 
           <div className="space-y-1">
-            {navItems.map((item) => (
+            {navItems.filter(item => item.navType !== 'strategy').map((item) => (
               <NavLink
                 key={item.navType}
                 to={item.path}
                 className={() =>
                   clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
-                    isNavActiveForCourse(item.navType, location.pathname, currentCourseId) && !strategyActive
+                    isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive
                       ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
                   )
@@ -279,8 +242,8 @@ const MainLayout = () => {
             ))}
           </div>
           
-          {/* Exam Strategy Section - CPA Only */}
-          {currentCourseId === 'cpa' && (
+          {/* Exam Strategy Section - Shown for courses with strategy */}
+          {navConfig.showStrategy && (
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
             <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Exam Strategy
@@ -320,9 +283,9 @@ const MainLayout = () => {
               <span>{currentStreak} day streak!</span>
             </div>
           </div>
-          {/* Legal Disclaimer */}
+          {/* Legal Disclaimer - Dynamic based on course */}
           <p className="mt-4 text-[10px] text-slate-500 dark:text-slate-400 leading-tight">
-            Not affiliated with AICPA, NASBA, or any state board. For educational purposes only.{' '}
+            Not affiliated with {course?.metadata?.examProvider || 'any certifying organization'}. For educational purposes only.{' '}
             <NavLink to="/terms" className="underline hover:text-slate-700 dark:hover:text-slate-300">Terms</NavLink>
           </p>
         </div>
@@ -383,7 +346,7 @@ const MainLayout = () => {
             aria-hidden="true"
           />
 
-          {navItems.map((item) => (
+          {navItems.filter(item => item.navType !== 'strategy').map((item) => (
             <NavLink
               key={item.navType}
               to={item.path}
@@ -391,7 +354,7 @@ const MainLayout = () => {
               className={() =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isNavActiveForCourse(item.navType, location.pathname, currentCourseId) && !strategyActive 
+                  isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive 
                     ? 'text-primary-600 dark:text-primary-400' 
                     : 'text-slate-500 dark:text-slate-400'
                 )
@@ -402,8 +365,8 @@ const MainLayout = () => {
             </NavLink>
           ))}
           
-          {/* Strategy Tab - CPA Only */}
-          {currentCourseId === 'cpa' && (
+          {/* Strategy Tab - Shown for courses with strategy */}
+          {navConfig.showStrategy && (
             <NavLink
               to={strategyNavPath}
               aria-label="Exam Strategy"

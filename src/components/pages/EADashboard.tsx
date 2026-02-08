@@ -5,7 +5,7 @@
  * Shows progress across SEE1/SEE2/SEE3, quick actions, and study resources.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
@@ -26,6 +26,7 @@ import {
   Layers,
   Calendar,
   LucideIcon,
+  BarChart3,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -33,6 +34,9 @@ import { format } from 'date-fns';
 import clsx from 'clsx';
 import { EA_SECTION_CONFIG, EASectionId } from '../../courses/ea';
 import { getEAProgress, getEAReadinessStatus, EAOverallProgress } from '../../services/eaProgressService';
+import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
+import { BlueprintHeatMap, SmartRecommendations } from '../analytics/BlueprintAnalyticsComponents';
+import { EASection } from '../../types';
 
 // Section Card Component
 interface SectionCardProps {
@@ -321,6 +325,44 @@ const EADashboard: React.FC = () => {
       )
     : 0;
 
+  // Selected section for blueprint analytics
+  const [selectedBlueprintSection, setSelectedBlueprintSection] = useState<EASection>('SEE1');
+
+  // Calculate blueprint analytics for the selected EA section
+  const blueprintAnalytics = useMemo<BlueprintAnalytics>(() => {
+    const sectionData = sectionProgress[selectedBlueprintSection];
+    const questionHistory: QuestionAttempt[] = [];
+    
+    // Create synthetic question attempts based on section stats
+    if (sectionData.questionsAttempted > 0) {
+      const correctCount = Math.round(sectionData.accuracy * sectionData.questionsAttempted / 100);
+      
+      // Distribute questions across blueprint areas for the section
+      const blueprintAreas = selectedBlueprintSection === 'SEE1' 
+        ? ['SEE1-1', 'SEE1-2', 'SEE1-3', 'SEE1-4', 'SEE1-5', 'SEE1-6']
+        : selectedBlueprintSection === 'SEE2'
+          ? ['SEE2-1', 'SEE2-2', 'SEE2-3']
+          : ['SEE3-1', 'SEE3-2', 'SEE3-3', 'SEE3-4'];
+      
+      const questionsPerArea = Math.floor(sectionData.questionsAttempted / blueprintAreas.length);
+      const correctPerArea = Math.floor(correctCount / blueprintAreas.length);
+      
+      blueprintAreas.forEach((areaId) => {
+        for (let i = 0; i < questionsPerArea; i++) {
+          questionHistory.push({
+            questionId: `${areaId}-${i}`,
+            blueprintArea: areaId,
+            topicId: `${areaId}-A-1`,
+            correct: i < correctPerArea,
+          });
+        }
+      });
+    }
+    
+    // Cast to any to allow EA sections - the calculateBlueprintAnalytics will work with any section in EXAM_BLUEPRINTS
+    return calculateBlueprintAnalytics(selectedBlueprintSection as any, questionHistory);
+  }, [selectedBlueprintSection, sectionProgress]);
+
   // Get greeting
   const getGreeting = () => {
     const hour = new Date().getHours();
@@ -535,6 +577,47 @@ const EADashboard: React.FC = () => {
           />
         </div>
       </div>
+
+      {/* Blueprint Analytics Section */}
+      {blueprintAnalytics.totalAreas > 0 && (
+        <div className="mb-6">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-primary-500" />
+              <h2 className="font-semibold text-slate-900 dark:text-slate-100">
+                Blueprint Analytics
+              </h2>
+            </div>
+            {/* Section Selector */}
+            <div className="flex gap-1">
+              {(['SEE1', 'SEE2', 'SEE3'] as EASection[]).map((section) => (
+                <button
+                  key={section}
+                  onClick={() => setSelectedBlueprintSection(section)}
+                  className={clsx(
+                    'px-3 py-1 text-sm rounded-lg font-medium transition-colors',
+                    selectedBlueprintSection === section
+                      ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
+                      : 'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700'
+                  )}
+                >
+                  {section}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="card p-4">
+            <BlueprintHeatMap analytics={blueprintAnalytics} />
+            {blueprintAnalytics.recommendations.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+                <SmartRecommendations
+                  recommendations={blueprintAnalytics.recommendations.slice(0, 3)}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* EA Exam Info Banner */}
       <div className="card bg-gradient-to-r from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 border-primary-100 dark:border-primary-800 p-4 mb-6">

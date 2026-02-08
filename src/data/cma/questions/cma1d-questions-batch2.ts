@@ -71,7 +71,7 @@ export const CMA1D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Activity-Based Costing',
     subtopic: 'Hierarchy of Activities',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A company identifies these activities: product design, machine maintenance, quality testing per batch, and direct labor per unit. Which statement correctly classifies these activities in the ABC hierarchy?',
     options: [
@@ -159,7 +159,7 @@ export const CMA1D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Kaizen Costing',
     subtopic: 'Cost Reduction Targets',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Yamamoto Industries sets a kaizen cost reduction target of 3% per quarter. The current production cost is $84 per unit. After four quarters, what should be the target production cost per unit (rounded)?',
     options: [
@@ -483,7 +483,7 @@ export const CMA1D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Supply Chain',
     subtopic: 'Total Cost of Ownership',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Supplier A: Price $25, shipping $2, quality inspection $0.50, defect rate 5%. Supplier B: Price $27, shipping $1, quality inspection $0.25, defect rate 1%. Annual volume is 50,000 units. Defective units cost $20 to replace. Which supplier has lower total cost of ownership?',
     options: [
@@ -495,26 +495,6 @@ export const CMA1D_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Supplier A: Purchase ($25 × 50,000) + Shipping ($2 × 50,000) + Inspection ($0.50 × 50,000) + Defects (50,000 × 5% × $20) = $1,250,000 + $100,000 + $25,000 + $50,000 = $1,425,000. Supplier B: ($27 × 50,000) + ($1 × 50,000) + ($0.25 × 50,000) + (50,000 × 1% × $20) = $1,350,000 + $50,000 + $12,500 + $10,000 = $1,422,500. Supplier B is cheaper by $2,500 ($1,425,000 - $1,422,500).',
     reference: 'Total Cost of Ownership; Supplier Evaluation',
-  },
-  {
-    id: 'cma1-d-048',
-    courseId: 'cma',
-    section: 'CMA1',
-    blueprintArea: 'CMA1-D',
-    topic: 'Supply Chain',
-    subtopic: 'Economic Order Quantity',
-    difficulty: 'hard',
-    skillLevel: 'Application',
-    question: 'Annual demand is 36,000 units, ordering cost is $200 per order, and carrying cost is $4 per unit per year. What is the economic order quantity (EOQ)?',
-    options: [
-      '1,897 units',
-      '2,400 units',
-      '3,000 units',
-      '1,200 units'
-    ],
-    correctAnswer: 0,
-    explanation: 'EOQ = √(2 × D × S / H) = √(2 × 36,000 × $200 / $4) = √(14,400,000 / 4) = √3,600,000 = 1,897 units. This minimizes total ordering and carrying costs.',
-    reference: 'Economic Order Quantity; Inventory Management',
   },
 
   // ==========================================
@@ -547,7 +527,7 @@ export const CMA1D_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Standard Costing',
     subtopic: 'Overhead Variance Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Budgeted fixed overhead: $180,000 at normal capacity of 12,000 direct labor hours. Standard hours allowed for actual output: 11,400 hours. Actual hours worked: 11,800 hours. Actual fixed overhead: $178,000. What is the fixed overhead volume variance?',
     options: [

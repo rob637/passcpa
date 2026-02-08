@@ -2,7 +2,12 @@
  * EA (Enrolled Agent) Course Configuration
  * 
  * Special Enrollment Examination (SEE) prep course
- * Based on IRS SEE Content Outline 2025-2026
+ * Based on IRS SEE Content Outline 2025-2026 (Revised 1-3-2025)
+ * 
+ * Official IRS Domain Structure:
+ * - SEE1: 6 domains (85 scored + 15 pretest questions)
+ * - SEE2: 3 domains (85 scored + 15 pretest questions)
+ * - SEE3: 4 domains (85 scored + 15 pretest questions)
  */
 
 import { Course } from '../../types/course';
@@ -28,57 +33,80 @@ export const EA_COURSE: Course = {
         {
           id: 'SEE1-1',
           name: 'Preliminary Work and Taxpayer Data',
-          weight: '15-25%',
+          weight: '16.5%',
+          questionCount: 14,
           topics: [
-            'Filing requirements',
-            'Filing status',
-            'Exemptions and dependents',
-            'Taxpayer identification numbers',
+            'Filing requirements and due dates',
+            'Filing status determination',
+            'Dependents and exemptions',
+            'Taxpayer identification numbers (SSN, ITIN, ATIN)',
           ]
         },
         {
           id: 'SEE1-2',
           name: 'Income and Assets',
-          weight: '25-35%',
+          weight: '20%',
+          questionCount: 17,
           topics: [
-            'Wages and salaries',
+            'Wages, salaries, and tips',
             'Interest and dividends',
             'Business income (Schedule C)',
             'Capital gains and losses',
-            'Rental income',
-            'Retirement income',
+            'Rental and royalty income',
+            'Retirement distributions',
+            'Social Security benefits',
           ]
         },
         {
           id: 'SEE1-3',
           name: 'Deductions and Credits',
-          weight: '25-35%',
+          weight: '20%',
+          questionCount: 17,
           topics: [
-            'Adjustments to income',
+            'Adjustments to income (above-the-line)',
             'Standard vs itemized deductions',
+            'Schedule A deductions',
             'Nonrefundable credits',
-            'Refundable credits',
+            'Refundable credits (EITC, CTC, etc.)',
           ]
         },
         {
           id: 'SEE1-4',
-          name: 'Taxation and Advice',
-          weight: '15-20%',
+          name: 'Taxation',
+          weight: '17.6%',
+          questionCount: 15,
           topics: [
-            'Tax computations',
-            'Alternative minimum tax',
+            'Tax computation and rates',
+            'Alternative minimum tax (AMT)',
             'Self-employment tax',
-            'Tax planning strategies',
+            'Net investment income tax',
+            'Estimated tax payments',
           ]
         },
         {
           id: 'SEE1-5',
-          name: 'Specialized Returns',
-          weight: '5-10%',
+          name: 'Advising the Individual Taxpayer',
+          weight: '12.9%',
+          questionCount: 11,
           topics: [
-            'Amended returns',
-            'Foreign income',
+            'Tax planning strategies',
+            'Retirement planning considerations',
+            'Education tax benefits',
+            'Health savings accounts',
+            'Penalty avoidance strategies',
+          ]
+        },
+        {
+          id: 'SEE1-6',
+          name: 'Specialized Returns for Individuals',
+          weight: '12.9%',
+          questionCount: 11,
+          topics: [
+            'Amended returns (Form 1040-X)',
+            'Foreign income and exclusions',
             'Expatriation',
+            'Non-resident alien returns',
+            'Estate and gift considerations',
           ]
         },
       ]
@@ -94,46 +122,47 @@ export const EA_COURSE: Course = {
       blueprintAreas: [
         {
           id: 'SEE2-1',
-          name: 'Business Entities',
-          weight: '20-30%',
+          name: 'Business Entities and Considerations',
+          weight: '35.3%',
+          questionCount: 30,
           topics: [
-            'Sole proprietorships',
-            'Partnerships',
-            'C Corporations',
-            'S Corporations',
-            'LLCs',
+            'Sole proprietorships (Schedule C)',
+            'Partnerships (Form 1065)',
+            'C Corporations (Form 1120)',
+            'S Corporations (Form 1120-S)',
+            'Limited liability companies',
+            'Entity selection and formation',
+            'Basis calculations',
           ]
         },
         {
           id: 'SEE2-2',
-          name: 'Business Financial Information',
-          weight: '25-35%',
+          name: 'Business Tax Preparation',
+          weight: '43.5%',
+          questionCount: 37,
           topics: [
-            'Accounting methods',
-            'Business income',
+            'Accounting methods and periods',
+            'Business income recognition',
             'Cost of goods sold',
-            'Business expenses',
+            'Business expenses and deductions',
+            'Depreciation and amortization',
+            'Section 179 and bonus depreciation',
+            'Business credits',
+            'Employment taxes',
+            'Estimated tax payments',
           ]
         },
         {
           id: 'SEE2-3',
-          name: 'Specialized Business Entities',
-          weight: '20-30%',
+          name: 'Specialized Returns and Taxpayers',
+          weight: '21.2%',
+          questionCount: 18,
           topics: [
-            'Farming',
-            'Trusts and estates',
-            'Tax-exempt organizations',
-          ]
-        },
-        {
-          id: 'SEE2-4',
-          name: 'Business Tax Computations',
-          weight: '15-25%',
-          topics: [
-            'Depreciation and amortization',
-            'Credits',
-            'Alternative minimum tax',
-            'Estimated taxes',
+            'Farm income and expenses',
+            'Trusts and estates (Form 1041)',
+            'Tax-exempt organizations (Form 990)',
+            'Retirement plans (SEP, SIMPLE, 401(k))',
+            'Passive activities',
           ]
         },
       ]
@@ -150,55 +179,59 @@ export const EA_COURSE: Course = {
         {
           id: 'SEE3-1',
           name: 'Practices and Procedures',
-          weight: '25-35%',
+          weight: '30.6%',
+          questionCount: 26,
           topics: [
-            'Power of attorney',
-            'Tax information authorization',
-            'Centralized Authorization File',
+            'Power of attorney (Form 2848)',
+            'Tax information authorization (Form 8821)',
+            'Centralized Authorization File (CAF)',
+            'Taxpayer advocate service',
+            'IRS notices and letters',
             'Practitioner responsibilities',
           ]
         },
         {
           id: 'SEE3-2',
           name: 'Representation Before the IRS',
-          weight: '20-30%',
+          weight: '29.4%',
+          questionCount: 25,
           topics: [
-            'Who may practice',
+            'Who may practice before IRS',
             'Circular 230 requirements',
+            'Due diligence requirements',
             'Conflicts of interest',
-            'Due diligence',
+            'Advertising and solicitation',
+            'Fees and contingent fees',
+            'Sanctions and disciplinary proceedings',
           ]
         },
         {
           id: 'SEE3-3',
-          name: 'Specific Types of Representation',
-          weight: '15-25%',
+          name: 'Specific Areas of Representation',
+          weight: '23.5%',
+          questionCount: 20,
           topics: [
             'Audits and examinations',
-            'Appeals',
-            'Collections',
+            'Appeals process',
+            'Collection procedures',
             'Offers in compromise',
+            'Installment agreements',
+            'Innocent spouse relief',
+            'Taxpayer rights',
           ]
         },
         {
           id: 'SEE3-4',
-          name: 'Completion of Filing Process',
-          weight: '15-25%',
+          name: 'Filing Process',
+          weight: '16.5%',
+          questionCount: 14,
           topics: [
-            'Amended returns',
-            'Claims for refund',
+            'Amended returns and claims for refund',
             'Statute of limitations',
             'Penalties and interest',
-          ]
-        },
-        {
-          id: 'SEE3-5',
-          name: 'Recordkeeping',
-          weight: '5-10%',
-          topics: [
-            'Document retention',
-            'Client records',
-            'Electronic records',
+            'Document retention requirements',
+            'Client records and electronic records',
+            'Preparer penalties',
           ]
         },
       ]

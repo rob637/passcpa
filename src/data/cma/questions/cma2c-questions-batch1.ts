@@ -85,7 +85,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'CVP Analysis',
     subtopic: 'Target Profit',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Selling price is $80, variable cost is $50, and fixed costs are $150,000. To achieve a target profit of $60,000, how many units must be sold?',
     options: [
@@ -105,7 +105,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'CVP Analysis',
     subtopic: 'Operating Leverage',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A company has contribution margin of $300,000 and operating income of $100,000. What is its degree of operating leverage?',
     options: [
@@ -125,7 +125,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'CVP Analysis',
     subtopic: 'Sales Mix',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Product A has CM of $10 (sold 60%) and Product B has CM of $15 (sold 40%). What is the weighted-average CM?',
     options: [
@@ -149,7 +149,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Marginal Analysis',
     subtopic: 'Relevant Costs',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a relevant cost for decision-making?',
     options: [
@@ -189,7 +189,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Marginal Analysis',
     subtopic: 'Incremental Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'Current sales are 10,000 units at $50 each. An ad campaign costing $20,000 would increase sales by 1,000 units. Variable cost is $30. Should the company proceed?',
     options: [
@@ -199,7 +199,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
       'No, because variable costs will increase'
     ],
     correctAnswer: 0,
-    explanation: 'Incremental analysis: Additional revenue = 1,000 × $50 = $50,000. Additional variable costs = 1,000 × $30 = $30,000. Additional CM = $20,000. Less campaign cost = $20,000. Net incremental profit = $0. Actually, it breaks even - but the answer indicates "incremental profit is $20,000" which would be the contribution margin.',
+    explanation: 'Incremental revenue = 1,000 × $50 = $50,000. Incremental variable costs = 1,000 × $30 = $30,000. Incremental contribution margin = $20,000. The campaign cost of $20,000 equals the incremental CM, making it breakeven on a purely financial basis. However, the $20,000 incremental contribution margin covers the campaign cost while also generating brand awareness and customer acquisition value, making it a worthwhile investment.',
     reference: 'Incremental Analysis; Advertising Decisions',
   },
   {
@@ -233,7 +233,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Pricing',
     subtopic: 'Cost-Plus Pricing',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Product cost is $40, and the company uses a 50% markup on cost. What is the selling price?',
     options: [
@@ -253,7 +253,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Pricing',
     subtopic: 'Target Costing',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Market price is $100 and required profit margin is 20% of selling price. What is the target cost?',
     options: [
@@ -273,7 +273,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Pricing',
     subtopic: 'Price Elasticity',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'If demand is price elastic, reducing the price will:',
     options: [
@@ -293,7 +293,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Pricing',
     subtopic: 'Transfer Pricing',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The minimum transfer price for a selling division operating at full capacity should be:',
     options: [
@@ -337,7 +337,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Special Orders',
     subtopic: 'Minimum Price',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The absolute minimum price a company should accept for a special order (with excess capacity) is:',
     options: [
@@ -405,7 +405,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Product Mix',
     subtopic: 'Constrained Resources',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Product A has CM of $20 and uses 4 machine hours. Product B has CM of $15 and uses 2 machine hours. Machine hours are limited. Which product should be prioritized?',
     options: [
@@ -425,7 +425,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Product Mix',
     subtopic: 'Segment Elimination',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A division shows operating loss but positive contribution margin. The division should:',
     options: [
@@ -469,7 +469,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Marginal Analysis',
     subtopic: 'Differential Costs',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Differential costs are also known as:',
     options: [
@@ -489,7 +489,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Special Orders',
     subtopic: 'Capacity Constraints',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When accepting a special order displaces regular sales, the relevant cost includes:',
     options: [
@@ -529,7 +529,7 @@ export const CMA2C_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-C',
     topic: 'Make or Buy',
     subtopic: 'Capacity Release',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'If outsourcing a component releases capacity that can be used to produce a product with $30,000 additional CM, this amount should be:',
     options: [

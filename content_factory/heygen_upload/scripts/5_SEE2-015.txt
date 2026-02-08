@@ -1,0 +1,83 @@
+Doctors, lawyers, and high-income professionals love buying rental properties to "lower their taxes." It is your job to break their hearts. The passive activity loss rules, found in Section 469which is also known as the PAL rules, often prevent exactly what they are trying to do.
+
+Today we are mastering the passive activity loss rules, one of the most important limitations in all of tax law.
+
+The basic rule is simple but brutal: Passive losses can only offset passive income. You cannot use a loss from a passive activity to offset your wages, your self-employment income, or your portfolio income like interest and dividends.
+
+Why does this rule exist? Before 1986, wealthy taxpayers were using tax shelters to generate paper losses that wiped out their ordinary income. Someone earning $500,000 as a surgeon could invest in a limited partnership that generated $500,000 in losses, reducing their tax bill to almost nothing. Congress said enough, and created Section 469.
+
+Let me define the three baskets of income. Understanding these baskets is critical for the exam.
+
+Basket one is Active Income, also called nonpassive income. This includes wages, salaries, and self-employment income from businesses in which you materially participate. This is income from activities where you are actually working.
+
+Basket two is Portfolio Income. This includes interest, dividends, royalties, and capital gains from investments. These are returns on your invested capital, not your labor.
+
+Basket three is Passive Income. This includes income from trade or business activities in which you do not materially participate, and rental activities regardless of participation. The default rule is that rental activities are passive, period.
+
+Losses stay trapped in their basket. A passive loss cannot offset active income. A passive loss cannot offset portfolio income. A passive loss can only offset passive income. If you do not have enough passive income, the excess passive loss is suspended and carried forward indefinitely until you either generate passive income or dispose of the entire activity.
+
+Now let's talk about material participation. This is the key to escaping the passive activity jail for non-rental businesses.
+
+Material participation means you are involved in the activity on a regular, continuous, and substantial basis. The regulations give us seven tests, and you only need to meet one of them.
+
+Test one: You participate more than 500 hours during the year. This is the bright-line test. If you work 500 hours, you materially participate. Period.
+
+Test two: Your participation is substantially all of the participation in the activity. If you are the only person working in the business, even if it is less than 500 hours, you may satisfy this test.
+
+Test three: You participate more than 100 hours and at least as much as any other individual. This covers situations where no one person dominates the activity.
+
+Test four: The activity is a significant participation activity, and your total participation in all significant participation activities exceeds 500 hours. A significant participation activity is one where you work more than 100 hours but do not otherwise materially participate.
+
+Test five: You materially participated in the activity for any five of the prior ten years. Once you have established a history, you keep material participation status.
+
+Test six: The activity is a personal service activity and you materially participated for any three prior years. This applies to activities in health, law, accounting, consulting, and similar fields.
+
+Test seven: Based on all facts and circumstances, you participate on a regular, continuous, and substantial basis. This is the catch-all test, but taxpayers rarely win on facts and circumstances alone.
+
+If you meet any one of these tests, the activity is not passive, and losses can offset your other income.
+
+Now here is where it gets interesting: rental activities. The default rule is that rental activities are passive regardless of whether you materially participate. You could spend 2,000 hours managing your rental property, and it is still passive.
+
+But there are important exceptions.
+
+Exception one: The rental real estate professional exception. If you meet two requirements, your rental activities are not automatically passive. Requirement A: More than half of your personal services during the year are in real property trades or businesses in which you materially participate. Requirement B: You perform more than 750 hours of services in real property businesses. If you meet both, each rental activity is tested separately for material participation. If you materially participate in the rental activity itself, it is not passive.
+
+This exception is designed for people whose primary job is real estate. Think property managers, developers, real estate agents, and similar professionals.
+
+Exception two: The $25,000 rental real estate exception. This is the one most taxpayers actually use. Even if your rental is passive, you can deduct up to $25,000 of rental losses against nonpassive income if you meet two conditions. First, you must actively participate in the rental activity. Active participation is a lower standard than material participation. You actively participate if you own at least 10% of the property and participate in management decisions like approving tenants, setting rental terms, and approving repairs.
+
+Second, your modified adjusted gross income must be $100,000 or less to get the full $25,000 deduction. The allowance phases out between $100,000 and $150,000 of modified AGI. It phases out at a rate of $1 for every $2 of income above $100,000. At $150,000 of MAGI, the allowance is completely gone.
+
+Let me give you the math. If your MAGI is $120,000, you are $20,000 over the threshold. Multiply $20,000 by 50% and you get a $10,000 reduction. Your allowance is $25,000 minus $10,000, which equals $15,000. You can deduct up to $15,000 of rental losses against your wages.
+
+If your MAGI is $130,000, you are $30,000 over. Reduction is $15,000. Allowance is $10,000.
+
+If your MAGI is $150,000 or more, zero allowance. All rental losses are suspended.
+
+Memorize those thresholds: $100,000 is where phaseout begins. $150,000 is where it ends.
+
+Let's talk about what happens when you dispose of a passive activity. This is the escape hatch. When you sell or otherwise dispose of your entire interest in a passive activity, all suspended losses from that activity are freed up. You can deduct them in full against any type of income.
+
+For example, you have a rental property with $50,000 of suspended passive losses accumulated over several years. You sell the entire property. In the year of sale, you can deduct that $50,000 against your wages, capital gains, or any other income.
+
+But the disposition must be complete. If you sell one rental property but keep others, you only free up the losses from the specific property sold. Each property is generally a separate activity.
+
+There is also a rule for related party sales. If you sell to a related party, the losses are not freed up until the related party sells to an unrelated person.
+
+Let me give you some exam tips on passive activities.
+
+First, when a question describes a limited partner, they are almost always passive. Limited partners by definition do not materially participate in management.
+
+Second, when a question mentions a taxpayer with high wages or salary who also has rental properties, check the AGI. If it is over $150,000, assume no rental loss deduction is allowed unless they qualify as a real estate professional.
+
+Third, remember that passive losses are only suspended, not lost forever. They carry forward indefinitely and are released upon disposition.
+
+Fourth, passive activity rules apply to individuals, estates, trusts, personal service corporations, and closely held C-corporations. They do not apply to S-Corps or partnerships directly, but the limitations are applied at the partner or shareholder level.
+
+One more concept: grouping of activities. Taxpayers can elect to treat multiple activities as a single activity for passive loss purposes. This is strategic because material participation is tested on the grouped activity as a whole. If you have five rental properties, you might group them together and spend 500 hours total across all of them to qualify as a real estate professional.
+
+To summarize the passive activity loss rules: Income comes in three baskets: active, portfolio, and passive. Passive losses can only offset passive income. Rental activities are passive by default, but exceptions exist. Material participation has seven tests, any one of which allows you to escape passive treatment for non-rental businesses. The $25,000 rental exception requires active participation and phases out between $100,000 and $150,000 MAGI. And complete dispositions free up all suspended passive losses.
+
+This concludes our lesson on passive activity losses. You now have the tools to handle these tricky exam questions with confidence.
+
+See you in the next video.

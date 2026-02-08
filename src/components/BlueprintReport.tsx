@@ -21,9 +21,12 @@ import {
   ChevronRight,
   Info,
 } from 'lucide-react';
+import { Button } from './common/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
-import { CPA_SECTIONS, EXAM_BLUEPRINTS } from '../config/examConfig';
+import { useCourse } from '../providers/CourseProvider';
+import { EXAM_BLUEPRINTS } from '../config/examConfig';
+import { getSectionDisplayInfo } from '../utils/sectionUtils';
 import clsx from 'clsx';
 import { ExamSection } from '../types';
 
@@ -55,6 +58,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
   section: propSection,
 }) => {
   const { userProfile } = useAuth();
+  const { courseId } = useCourse();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { getTopicPerformance } = useStudy() as any;
   
@@ -63,7 +67,7 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
   const [loading, setLoading] = useState(true);
   
   const currentSection = propSection || (userProfile?.examSection as ExamSection) || 'FAR';
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
   // Load performance data
   useEffect(() => {
@@ -176,12 +180,15 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
                 </p>
               </div>
             </div>
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={onClose}
-              className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+              aria-label="Close"
+              className="hover:bg-white/20"
             >
               <X className="w-5 h-5" />
-            </button>
+            </Button>
           </div>
           
           {/* Summary Stats */}
@@ -395,12 +402,9 @@ const BlueprintReport: React.FC<BlueprintReportProps> = ({
               <Target className="w-4 h-4" />
               <span>Target: 75% accuracy in each area for passing readiness</span>
             </div>
-            <button
-              onClick={onClose}
-              className="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-colors"
-            >
+            <Button variant="primary" onClick={onClose}>
               Close
-            </button>
+            </Button>
           </div>
         </div>
       </div>

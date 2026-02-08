@@ -70,7 +70,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Competence',
     subtopic: 'Professional Development',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Under the competence standard, a CMA must:',
     options: [
@@ -114,7 +114,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Confidentiality',
     subtopic: 'Information Protection',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A CMA may disclose confidential employer information when:',
     options: [
@@ -178,7 +178,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Integrity',
     subtopic: 'Subverting Objectives',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CFO asks a CMA to "smooth" earnings by adjusting accruals. The CMA should:',
     options: [
@@ -222,7 +222,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Credibility',
     subtopic: 'Fair Communication',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'The credibility standard requires CMAs to:',
     options: [
@@ -242,7 +242,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Credibility',
     subtopic: 'Complete Disclosure',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CMA discovers that a report omits negative information about a project the CEO favors. The CMA should:',
     options: [
@@ -266,7 +266,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Conflict Resolution',
     subtopic: 'Initial Steps',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'When facing an ethical conflict, the first step a CMA should take is to:',
     options: [
@@ -306,7 +306,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Conflict Resolution',
     subtopic: 'External Consultation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CMA may seek external confidential advice from:',
     options: [
@@ -370,7 +370,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Organizational Ethics',
     subtopic: 'Whistleblower Protection',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Whistleblower protections are designed to:',
     options: [
@@ -406,26 +406,6 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Ethical decision-making considers impact on all stakeholders (employees, shareholders, customers, community), alignment with professional and organizational standards, and long-term consequences.',
     reference: 'Ethical Decision-Making Framework',
-  },
-  {
-    id: 'cma2-f-019',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-F',
-    topic: 'Ethical Decision-Making',
-    subtopic: 'Newspaper Test',
-    difficulty: 'easy',
-    skillLevel: 'Application',
-    question: 'The "newspaper test" for ethical decisions asks:',
-    options: [
-      'Is this decision newsworthy?',
-      'Would I be comfortable if this decision was reported in the news?',
-      'Did I read this in a newspaper?',
-      'Should I issue a press release?'
-    ],
-    correctAnswer: 1,
-    explanation: 'The newspaper test is an ethical gut-check: Would you be comfortable if your decision and reasoning appeared on the front page? If not, reconsider the ethical implications.',
-    reference: 'Newspaper Test; Ethical Decision-Making',
   },
 
   // ==========================================
@@ -482,7 +462,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Integrity',
     subtopic: 'Fraud Prevention',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CMA suspects a colleague is committing fraud. Under ethical guidelines, the CMA should:',
     options: [
@@ -502,7 +482,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-F',
     topic: 'Confidentiality',
     subtopic: 'Inside Information',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A CMA learns of an upcoming merger through work. Using this to trade stocks would violate:',
     options: [
@@ -554,7 +534,7 @@ export const CMA2F_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Professional judgment must be based on applicable technical standards, relevant evidence, and consideration of stakeholder interests—not personal bias or pressure from others.',
     reference: 'Professional Judgment; Credibility',
-  },
+  }
 ];
 
 // Helper functions

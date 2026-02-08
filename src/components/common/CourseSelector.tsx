@@ -8,6 +8,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Check, GraduationCap, Lock } from 'lucide-react';
+import { Button } from './Button';
 import { useCourse } from '../../providers/CourseProvider';
 import { isCourseActive, ACTIVE_COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
@@ -133,15 +134,14 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
   return (
     <div ref={dropdownRef} className={clsx('relative', className)}>
       {/* Trigger Button */}
-      <button
+      <Button
+        variant="secondary"
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
-          'flex items-center gap-2 rounded-xl transition-all duration-200',
-          'hover:bg-slate-100 dark:hover:bg-slate-700',
-          'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+          'flex items-center gap-2 rounded-xl',
           compact 
             ? 'px-2 py-1.5' 
-            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800'
+            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
         )}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -171,7 +171,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             )} />
           </>
         )}
-      </button>
+      </Button>
       
       {/* Dropdown Menu */}
       {isOpen && (

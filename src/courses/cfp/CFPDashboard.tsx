@@ -8,6 +8,8 @@ import {
   Briefcase,
   FileText
 } from 'lucide-react';
+import { Button } from '../../components/common/Button';
+import { Card } from '../../components/common/Card';
 import { useNavigate } from 'react-router-dom';
 import { useCFPProgress } from '../../hooks/useCFPProgress';
 import { CFP_SECTIONS } from './config';
@@ -41,26 +43,27 @@ export default function CFPDashboard() {
           <p className="text-slate-600 dark:text-slate-400">Certified Financial Planner™ Exam Prep</p>
         </div>
         <div className="flex gap-3">
-          <button 
+          <Button 
+            variant="secondary"
             onClick={() => navigate('/cfp/cases')}
-            className="group btn border-2 border-slate-200 dark:border-slate-700 hover:border-green-500 hover:text-green-600 flex items-center gap-2 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200"
+            leftIcon={FileText}
           >
-            <FileText className="w-4 h-4 text-slate-500 group-hover:text-green-500 transition-colors" />
             Case Studies
-          </button>
-          <button 
+          </Button>
+          <Button 
+            variant="primary"
             onClick={() => navigate('/cfp/practice/quick')}
-            className="btn bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-600/20 flex items-center gap-2"
+            leftIcon={Target}
+            className="bg-green-600 hover:bg-green-700 shadow-lg shadow-green-600/20"
           >
-            <Target className="w-4 h-4" />
             Quick Practice
-          </button>
+          </Button>
         </div>
       </div>
 
       {/* Main Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="card p-6 border-green-100 dark:border-green-900/30 bg-gradient-to-br from-white to-green-50/30 dark:from-slate-800 dark:to-green-900/10">
+        <Card className="border-green-100 dark:border-green-900/30 bg-gradient-to-br from-white to-green-50/30 dark:from-slate-800 dark:to-green-900/10">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500 dark:text-slate-400">Overall Readiness</div>
               <Award className="h-4 w-4 text-amber-500" />
@@ -69,34 +72,34 @@ export default function CFPDashboard() {
             <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 mt-3">
                 <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full transition-all duration-1000" style={{ width: `${overallReadiness}%` }}></div>
             </div>
-        </div>
+        </Card>
         
-        <div className="card p-6 hover:shadow-md transition-shadow">
+        <Card className="hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Questions Bank</div>
               <BookOpen className="h-4 w-4 text-blue-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{questionsBank} <span className="text-sm font-normal text-slate-400">/ 2,400</span></div>
             <p className="text-xs text-slate-500 mt-1">Across 8 Domains</p>
-        </div>
+        </Card>
 
-        <div className="card p-6 hover:shadow-md transition-shadow">
+        <Card className="hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Study Streak</div>
               <Clock className="h-4 w-4 text-purple-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{streak} <span className="text-sm font-normal text-slate-400">Days</span></div>
             <p className="text-xs text-slate-500 mt-1">Keep it up!</p>
-        </div>
+        </Card>
 
-        <div className="card p-6 hover:shadow-md transition-shadow">
+        <Card className="hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between space-y-0 pb-2">
               <div className="text-sm font-medium text-slate-500">Accuracy</div>
               <BarChart2 className="h-4 w-4 text-teal-500" />
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{accuracy}%</div>
             <p className="text-xs text-slate-500 mt-1">Last 50 questions</p>
-        </div>
+        </Card>
       </div>
 
       {/* Domain Grid */}

@@ -109,7 +109,7 @@ const CMAInfo = () => {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle className="w-4 h-4" />
-                    100 MCQs + 2 Essays
+                    100 MCQs + 2 CBQs
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@ const CMAInfo = () => {
                 <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
                 <div>
                   <span className="block font-semibold text-slate-900 dark:text-slate-100">50% MCQ Correct</span>
-                  <span className="text-sm text-slate-500">Must answer at least 50% of MCQs correctly to advance to essays</span>
+                  <span className="text-sm text-slate-500">Must answer at least 50% of MCQs correctly for essays/CBQs to be scored</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">

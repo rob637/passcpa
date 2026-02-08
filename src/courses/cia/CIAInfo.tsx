@@ -1,6 +1,8 @@
 
 import { CheckCircle, BookOpen, TrendingUp, Users, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../../components/common/Button';
+import { Card } from '../../components/common/Card';
 
 export default function CIAInfo() {
   const navigate = useNavigate();
@@ -18,18 +20,20 @@ export default function CIAInfo() {
               Master the global benchmark for internal auditing. Our adaptive platform helps you pass all three parts of the CIA exam faster.
             </p>
             <div className="flex gap-4">
-              <button 
-                className="btn bg-white text-amber-700 hover:bg-amber-50 border-transparent"
+              <Button 
+                variant="secondary"
+                className="bg-white text-amber-700 hover:bg-amber-50"
                 onClick={() => navigate('/cia/dashboard')}
               >
                 Start Studying
-              </button>
-              <button 
-                className="btn btn-outline border-white text-white hover:bg-white/10"
+              </Button>
+              <Button 
+                variant="ghost"
+                className="border border-white text-white hover:bg-white/10"
                 onClick={() => document.getElementById('details')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Learn More
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -38,7 +42,7 @@ export default function CIAInfo() {
       {/* Stats Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="card p-6 shadow-lg flex items-center space-x-4">
+          <Card variant="elevated" className="p-6 flex items-center space-x-4">
               <div className="p-3 bg-amber-100 rounded-full text-amber-600">
                 <Globe className="w-8 h-8" />
               </div>
@@ -46,8 +50,8 @@ export default function CIAInfo() {
                 <p className="text-sm text-slate-500 font-medium">Global Recognition</p>
                 <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">170+ Countries</p>
               </div>
-          </div>
-          <div className="card p-6 shadow-lg flex items-center space-x-4">
+          </Card>
+          <Card variant="elevated" className="p-6 flex items-center space-x-4">
               <div className="p-3 bg-amber-100 rounded-full text-amber-600">
                 <Users className="w-8 h-8" />
               </div>
@@ -55,8 +59,8 @@ export default function CIAInfo() {
                 <p className="text-sm text-slate-500 font-medium">Certified Professionals</p>
                 <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">175,000+</p>
               </div>
-          </div>
-          <div className="card p-6 shadow-lg flex items-center space-x-4">
+          </Card>
+          <Card variant="elevated" className="p-6 flex items-center space-x-4">
               <div className="p-3 bg-amber-100 rounded-full text-amber-600">
                 <TrendingUp className="w-8 h-8" />
               </div>
@@ -64,7 +68,7 @@ export default function CIAInfo() {
                 <p className="text-sm text-slate-500 font-medium">Salary Increase</p>
                 <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">Up to 51%</p>
               </div>
-          </div>
+          </Card>
         </div>
       </div>
 
@@ -105,7 +109,7 @@ export default function CIAInfo() {
           </div>
           
           <div className="space-y-6">
-            <div className="card p-6">
+            <Card className="p-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center">
                   <span className="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mr-3 text-sm">1</span>
                   Part 1: Essentials
@@ -114,9 +118,9 @@ export default function CIAInfo() {
                 <div className="flex items-center text-sm text-slate-500">
                   <BookOpen className="w-4 h-4 mr-2" /> 125 Questions • 2.5 Hours
                 </div>
-            </div>
+            </Card>
 
-            <div className="card p-6">
+            <Card className="p-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center">
                   <span className="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mr-3 text-sm">2</span>
                   Part 2: Practice
@@ -125,9 +129,9 @@ export default function CIAInfo() {
                 <div className="flex items-center text-sm text-slate-500">
                   <BookOpen className="w-4 h-4 mr-2" /> 100 Questions • 2.0 Hours
                 </div>
-            </div>
+            </Card>
 
-            <div className="card p-6">
+            <Card className="p-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center">
                   <span className="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mr-3 text-sm">3</span>
                   Part 3: Business Knowledge
@@ -136,7 +140,7 @@ export default function CIAInfo() {
                 <div className="flex items-center text-sm text-slate-500">
                   <BookOpen className="w-4 h-4 mr-2" /> 100 Questions • 2.0 Hours
                 </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

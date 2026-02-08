@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import logger from '../../../utils/logger';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 // Course-to-dashboard mapping
 const COURSE_DASHBOARDS: Record<string, string> = {
@@ -86,7 +88,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-8">
+    <Card variant="elevated" className="border border-slate-200 dark:border-slate-700 p-8">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Welcome back</h1>
@@ -174,32 +176,29 @@ const Login = () => {
               required
               autoComplete="current-password"
             />
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-600 dark:hover:text-slate-300"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-            </button>
+            </Button>
           </div>
         </div>
 
         {/* Submit Button */}
-        <button
+        <Button
           type="submit"
-          disabled={isSubmitting || loading}
-          className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3.5 rounded-xl font-semibold shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          variant="primary"
+          fullWidth
+          loading={isSubmitting}
+          disabled={loading}
         >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Signing in...
-            </>
-          ) : (
-            'Sign In'
-          )}
-        </button>
+          {isSubmitting ? 'Signing in...' : 'Sign In'}
+        </Button>
       </form>
 
       {/* Sign Up Link */}
@@ -209,7 +208,7 @@ const Login = () => {
           Sign up free
         </Link>
       </p>
-    </div>
+    </Card>
   );
 };
 

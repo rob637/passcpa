@@ -1,0 +1,615 @@
+/**
+ * EA SEE Part 3: Representation - Questions Batch 53 (Q601-630)
+ * Advanced representation topics
+ * 
+ * Tax Year: 2024-2025
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH53: Question[] = [
+  // SEE3-1: Practices and Procedures
+  {
+    id: 'see3-601',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Assessment',
+    subtopic: 'Assessment Statute Extension',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The assessment statute is extended to 6 years when:',
+    options: [
+      'The return contains any error',
+      'Gross income is understated by more than 25%',
+      'The taxpayer files late',
+      'There is a math error on the return'
+    ],
+    correctAnswer: 1,
+    explanation: 'The statute extends to 6 years if there\'s an omission of gross income exceeding 25% of the gross income stated on the return. This applies to substantial omissions, not mere understatements of tax.',
+    reference: 'IRC §6501(e)'
+  },
+  {
+    id: 'see3-602',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Examination',
+    subtopic: 'Repetitive Audit Policy',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the IRS repetitive audit policy, a taxpayer can request discontinuance of an audit if:',
+    options: [
+      'They have been audited at least once',
+      'The same items were examined in either of the two preceding years with no change or small change',
+      'They file an extension',
+      'More than 3 years have passed since the last audit'
+    ],
+    correctAnswer: 1,
+    explanation: 'The repetitive audit policy allows taxpayers to request discontinuance if the same issues were examined in either of the two prior years and resulted in no change or a small change. The taxpayer should notify the examiner.',
+    reference: 'IRM 4.10.2.7'
+  },
+  {
+    id: 'see3-603',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Examination',
+    subtopic: 'Burden of Proof',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Under IRC §7491, the burden of proof may shift to the IRS if the taxpayer:',
+    options: [
+      'Simply files a return',
+      'Introduces credible evidence, maintains records, cooperates, and meets substantiation requirements',
+      'Pays the proposed assessment',
+      'Hires an enrolled agent'
+    ],
+    correctAnswer: 1,
+    explanation: 'Burden shifts to IRS if taxpayer: (1) introduces credible evidence, (2) complies with substantiation and record-keeping requirements, (3) cooperates with IRS requests, (4) meets net worth limits if applicable.',
+    reference: 'IRC §7491'
+  },
+  {
+    id: 'see3-604',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Penalties',
+    subtopic: 'Fraud Penalty',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The civil fraud penalty under IRC §6663 is:',
+    options: [
+      '20% of the underpayment',
+      '25% of the underpayment',
+      '50% of the underpayment',
+      '75% of the portion of underpayment due to fraud'
+    ],
+    correctAnswer: 3,
+    explanation: 'The civil fraud penalty is 75% of the portion of underpayment attributable to fraud. The IRS has the burden of proving fraud by clear and convincing evidence. This replaces the accuracy-related penalty.',
+    reference: 'IRC §6663'
+  },
+  {
+    id: 'see3-605',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Identity Theft',
+    subtopic: 'IP PIN',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'An Identity Protection PIN (IP PIN) is:',
+    options: [
+      'The taxpayer\'s Social Security Number',
+      'A 6-digit number assigned by IRS to prevent fraudulent returns',
+      'A password for accessing IRS online accounts',
+      'The same as an EFIN'
+    ],
+    correctAnswer: 1,
+    explanation: 'An IP PIN is a 6-digit number assigned to eligible taxpayers to prevent identity theft. It must be included on tax returns. New IP PINs are issued annually. Taxpayers can opt-in through IRS.gov.',
+    reference: 'IP PIN FAQs'
+  },
+  // SEE3-2: Representation
+  {
+    id: 'see3-606',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Practitioner Schedule',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A practitioner who learns their client did not file required returns for prior years must:',
+    options: [
+      'File the returns immediately',
+      'Report the client to the IRS',
+      'Advise the client of the consequences and options for correction',
+      'Withdraw from representation'
+    ],
+    correctAnswer: 2,
+    explanation: 'The practitioner must advise the client of the failure, the consequences, and the need to correct. The practitioner cannot file without client consent and cannot report the client (confidentiality). May withdraw if client refuses to comply.',
+    reference: 'Circular 230 §10.21'
+  },
+  {
+    id: 'see3-607',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Error on Prior Return',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'If a practitioner discovers an error on a previously filed return, the practitioner must:',
+    options: [
+      'Immediately file an amended return',
+      'Notify the IRS directly',
+      'Promptly advise the client of the error and its consequences',
+      'Ignore the error if not material'
+    ],
+    correctAnswer: 2,
+    explanation: 'Circular 230 §10.21 requires the practitioner to promptly notify the client of the error, omission, or noncompliance and the consequences. The practitioner cannot amend without client consent.',
+    reference: 'Circular 230 §10.21'
+  },
+  {
+    id: 'see3-608',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Written Advice',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When providing written tax advice, a practitioner must NOT:',
+    options: [
+      'Consider all relevant facts',
+      'Base the advice on reasonable factual and legal assumptions',
+      'Rely on assumptions about facts which may be favorable to the client',
+      'Consider the possibility of IRS audit'
+    ],
+    correctAnswer: 2,
+    explanation: 'Circular 230 §10.37 prohibits basing written advice on unreasonable factual assumptions or assumptions that the practitioner knows or should know are incorrect or incomplete. Must not rely on favorable assumptions without verification.',
+    reference: 'Circular 230 §10.37'
+  },
+  {
+    id: 'see3-609',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Circular 230',
+    subtopic: 'Fee Information',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A practitioner may charge:',
+    options: [
+      'A fee based solely on findings or results',
+      'Only hourly fees',
+      'Contingent fees only in limited circumstances defined by Circular 230',
+      'A percentage of the refund in all cases'
+    ],
+    correctAnswer: 2,
+    explanation: 'Circular 230 §10.27 limits contingent fees to: (1) matters before the IRS except original return preparation, (2) IRS examination or challenge, (3) judicial proceedings. Cannot charge contingent fee for original return preparation.',
+    reference: 'Circular 230 §10.27'
+  },
+  {
+    id: 'see3-610',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Practice Before IRS',
+    subtopic: 'Third-Party Designee',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'The third-party designee checkbox on Form 1040 allows the designee to:',
+    options: [
+      'Represent the taxpayer in an audit',
+      'Receive refund checks',
+      'Discuss the return with the IRS and receive account information',
+      'File amended returns'
+    ],
+    correctAnswer: 2,
+    explanation: 'The third-party designee can respond to certain IRS notices and discuss the return processing but cannot represent in audits or make changes. Authority expires when the current return is processed or after the due date of the following year\'s return.',
+    reference: 'Form 1040 Instructions'
+  },
+  // SEE3-3: Specific Areas of Representation
+  {
+    id: 'see3-611',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Innocent Spouse',
+    subtopic: 'Relief Types',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Under IRC §6015(b) (traditional innocent spouse relief), the requesting spouse must prove:',
+    options: [
+      'They filed separately from their spouse',
+      'They had no knowledge of and no reason to know of the understatement',
+      'They are now divorced',
+      'The other spouse has died'
+    ],
+    correctAnswer: 1,
+    explanation: 'Traditional innocent spouse relief under §6015(b) requires: (1) joint return, (2) understatement due to erroneous items of the other spouse, (3) requesting spouse didn\'t know and had no reason to know, (4) inequitable to hold liable.',
+    reference: 'IRC §6015(b)'
+  },
+  {
+    id: 'see3-612',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Bankruptcy',
+    subtopic: 'Automatic Stay',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a taxpayer files bankruptcy, the automatic stay:',
+    options: [
+      'Discharges all tax debts immediately',
+      'Stops most IRS collection activity but allows assessment and demand',
+      'Prevents the IRS from auditing the taxpayer',
+      'Accelerates refund processing'
+    ],
+    correctAnswer: 1,
+    explanation: 'The automatic stay stops most collection (levy, lien filing, seizure, collection lawsuits) but IRS can still assess tax, issue deficiency notices, demand payment, and conduct audits. Stay violation can result in sanctions.',
+    reference: '11 U.S.C. §362'
+  },
+  {
+    id: 'see3-613',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Trust Fund',
+    subtopic: 'TFRP Investigation',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'In a Trust Fund Recovery Penalty case, "responsible person" typically includes:',
+    options: [
+      'All employees',
+      'Officers, directors, and employees with authority over financial decisions',
+      'Only the company president',
+      'Anyone on the payroll'
+    ],
+    correctAnswer: 1,
+    explanation: 'Responsible persons include those with authority to: decide which creditors to pay, sign checks, or control company finances. Multiple persons can be responsible. Willfulness is also required (knew taxes were unpaid and chose to pay others).',
+    reference: 'IRC §6672'
+  },
+  {
+    id: 'see3-614',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Offer in Compromise',
+    subtopic: 'Application Fee',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The application fee for an Offer in Compromise is:',
+    options: [
+      '$100',
+      '$205',
+      '$500',
+      'No fee if low-income'
+    ],
+    correctAnswer: 1,
+    explanation: 'The OIC application fee is $205, plus initial payment (20% lump sum or first monthly payment). Low-income taxpayers (at or below 250% of poverty) are exempt from both the fee and initial payment. Use Form 656.',
+    reference: 'Form 656 Instructions'
+  },
+  {
+    id: 'see3-615',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'OIC',
+    subtopic: 'Doubt as to Liability',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A Doubt as to Liability OIC is appropriate when:',
+    options: [
+      'The taxpayer cannot afford to pay',
+      'There is a genuine dispute regarding the existence or amount of the correct tax',
+      'The taxpayer is experiencing economic hardship',
+      'The taxpayer wants to negotiate a lower payment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Doubt as to Liability OICs are for situations where the tax liability is in question (e.g., computational errors, different legal interpretations, evidence not considered). Requires showing why the assessment may be incorrect.',
+    reference: 'IRM 5.8.2'
+  },
+  // SEE3-4: Filing Process
+  {
+    id: 'see3-616',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Amended Returns',
+    subtopic: 'Form 1040-X',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Form 1040-X should be filed:',
+    options: [
+      'Electronically for current and up to 2 prior years',
+      'Always on paper by mail',
+      'Through the IRS Online Account only',
+      'Only with a tax professional'
+    ],
+    correctAnswer: 0,
+    explanation: 'Form 1040-X can be e-filed for the current year and up to 3 prior tax years. Previously paper-only, e-filing was expanded. Some amended returns still require paper filing (e.g., certain elections).',
+    reference: 'Form 1040-X Instructions'
+  },
+  {
+    id: 'see3-617',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Information Returns',
+    subtopic: 'Penalties',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The penalty for failure to file a correct information return (Form 1099) is:',
+    options: [
+      'A flat $100 per return',
+      '$60-$330 per return depending on when corrected, with maximums',
+      '$500 per return only if intentional',
+      'No penalty for first offense'
+    ],
+    correctAnswer: 1,
+    explanation: 'Penalties are tiered: $60 if corrected within 30 days, $130 if corrected by August 1, $330 after August 1. Intentional disregard is $660 with no maximum. Small business maximums apply. Penalty can be waived for reasonable cause.',
+    reference: 'IRC §6721'
+  },
+  {
+    id: 'see3-618',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'PTIN Requirements',
+    subtopic: 'Paid Preparer Identification',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'A Preparer Tax Identification Number (PTIN) must be:',
+    options: [
+      'Renewed every 5 years',
+      'Renewed annually',
+      'Obtained once and never renewed',
+      'Applied for when the preparer retires'
+    ],
+    correctAnswer: 1,
+    explanation: 'PTINs must be renewed annually during the renewal period. Tax return preparers must have a valid PTIN to prepare federal tax returns for compensation. The fee is currently around $36 (renewal) or $46 (new).',
+    reference: 'Reg. §1.6109-2'
+  },
+  {
+    id: 'see3-619',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'FBAR',
+    subtopic: 'Penalties',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The penalty for willful failure to file an FBAR is:',
+    options: [
+      '$10,000 per violation',
+      'The greater of $100,000 or 50% of the account balance per violation',
+      '25% of the unreported balance',
+      '$500 per account'
+    ],
+    correctAnswer: 1,
+    explanation: 'Willful FBAR violations can result in a penalty up to the greater of $100,000 or 50% of the account balance at time of violation. Non-willful violations are up to $10,000 per violation. Criminal penalties may also apply.',
+    reference: '31 U.S.C. §5321'
+  },
+  {
+    id: 'see3-620',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Promoter Penalties',
+    subtopic: 'Abusive Tax Shelters',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A penalty for promoting abusive tax shelters under IRC §6700 is:',
+    options: [
+      '$1,000 per shelter',
+      'The greater of $1,000 or 50% of gross income from the activity',
+      'Only criminal penalties apply',
+      '10% of the tax benefit claimed'
+    ],
+    correctAnswer: 1,
+    explanation: 'The §6700 penalty for promoting abusive tax shelters is the greater of $1,000 or 50% of the gross income derived from the activity. Injunctions and criminal penalties may also apply for abusive shelter promotion.',
+    reference: 'IRC §6700'
+  },
+  {
+    id: 'see3-621',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Taxpayer Advocate',
+    subtopic: 'TAS Criteria',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Taxpayer Advocate Service can help when:',
+    options: [
+      'The taxpayer wants a lower tax bill',
+      'There is a hardship or systemic problem, or IRS procedures are not working',
+      'The taxpayer wants to audit the IRS',
+      'The taxpayer needs legal representation in court'
+    ],
+    correctAnswer: 1,
+    explanation: 'TAS assists when: IRS processes are not working as intended, taxpayer is facing significant hardship (financial difficulty, health issues), or systemic issues affect multiple taxpayers. Form 911 is used to request assistance.',
+    reference: 'IRC §7803(c)'
+  },
+  {
+    id: 'see3-622',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Summons',
+    subtopic: 'IRS Summons Authority',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The IRS can issue a summons to:',
+    options: [
+      'Only the taxpayer',
+      'Any person who may have relevant documents or testimony',
+      'Only banks and financial institutions',
+      'Only after obtaining court approval'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRS can summons any person who may have information relevant to an investigation, including third parties (banks, employers, accountants). The summons must be issued during an investigation and in good faith.',
+    reference: 'IRC §7602'
+  },
+  {
+    id: 'see3-623',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'EA Enrollment',
+    subtopic: 'Continuing Education',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Enrolled agents must complete how many hours of continuing education per enrollment cycle?',
+    options: [
+      '24 hours',
+      '48 hours',
+      '72 hours, including 2 hours of ethics',
+      '120 hours'
+    ],
+    correctAnswer: 2,
+    explanation: 'EAs must complete 72 hours of CE per 3-year enrollment cycle, with a minimum of 16 hours per year and 2 hours of ethics per year. CE providers must be IRS-approved.',
+    reference: 'Circular 230 §10.6'
+  },
+  {
+    id: 'see3-624',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'EA Status',
+    subtopic: 'Renewal',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'EA enrollment must be renewed:',
+    options: [
+      'Every year',
+      'Every 3 years',
+      'Every 5 years',
+      'Every 10 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'Enrolled agent status must be renewed every 3 years by submitting Form 8554 and meeting the continuing education requirements. The renewal period is based on the last digit of the EA\'s SSN.',
+    reference: 'Circular 230 §10.6(d)'
+  },
+  {
+    id: 'see3-625',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Penalty Appeals',
+    subtopic: 'First Appeal',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The first step in appealing an IRS penalty is usually to:',
+    options: [
+      'File a lawsuit in Tax Court',
+      'Request abatement from the IRS employee who assessed the penalty',
+      'Contact the Taxpayer Advocate',
+      'File Form 911'
+    ],
+    correctAnswer: 1,
+    explanation: 'Initially, request penalty abatement from the IRS through the campus or employee who assessed it (reasonable cause request). If denied, appeals are available through the Independent Office of Appeals or judicial forums.',
+    reference: 'IRM 20.1.1.3'
+  },
+  {
+    id: 'see3-626',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Lien Release',
+    subtopic: 'NFTL Withdrawal',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'An NFTL withdrawal is different from a release in that:',
+    options: [
+      'They are the same thing',
+      'A withdrawal removes the public record while a release certifies the lien has been satisfied',
+      'A release prevents future liens',
+      'A withdrawal extinguishes the tax debt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Release happens when the tax is paid or becomes legally unenforceable (removes lien). Withdrawal removes the NFTL from public record as if it was never filed (credit helps), but the underlying lien may remain.',
+    reference: 'IRC §6323(j)'
+  },
+  {
+    id: 'see3-627',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Frivolous Returns',
+    subtopic: 'Frivolous Return Penalty',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The penalty for filing a frivolous return is:',
+    options: [
+      '$500',
+      '$1,000',
+      '$5,000',
+      '$10,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'The frivolous return penalty is $5,000 per return or submission. A frivolous return contains a position the IRS has identified as frivolous (e.g., wages aren\'t income, filing is voluntary) or is filed to delay or impede administration.',
+    reference: 'IRC §6702'
+  },
+  {
+    id: 'see3-628',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Statute Suspension',
+    subtopic: 'Criminal Investigation',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'When a case is referred to Criminal Investigation:',
+    options: [
+      'Civil collection continues normally',
+      'The assessment statute is suspended during the investigation',
+      'The taxpayer is immediately imprisoned',
+      'All penalties are waived'
+    ],
+    correctAnswer: 1,
+    explanation: 'When a case is referred to Criminal Investigation, the assessment statute is suspended during any period a JAG letter (criminal investigation letter) is outstanding. Civil collection generally pauses during active criminal investigation.',
+    reference: 'IRC §6531'
+  },
+  {
+    id: 'see3-629',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-2',
+    topic: 'Qualified Tax Professional',
+    subtopic: 'Annual Filing Season Program',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The Annual Filing Season Program (AFSP) provides:',
+    options: [
+      'Unlimited representation rights',
+      'Limited representation rights before revenue agents, customer service, and the Taxpayer Advocate',
+      'The ability to represent in Tax Court',
+      'Criminal investigation privileges'
+    ],
+    correctAnswer: 1,
+    explanation: 'AFSP participants have limited representation rights - they can represent clients before revenue agents, customer service representatives, and TAS, but only for returns they prepared. Full representation requires EA/CPA/attorney status.',
+    reference: 'Rev. Proc. 2014-42'
+  },
+  {
+    id: 'see3-630',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-4',
+    topic: 'Digital Signatures',
+    subtopic: 'Electronic Signatures',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'For e-filed returns, the taxpayer signs using:',
+    options: [
+      'A handwritten signature on paper that is mailed',
+      'An electronic signature (PIN or practitioner PIN)',
+      'No signature is required',
+      'A notarized affidavit'
+    ],
+    correctAnswer: 1,
+    explanation: 'E-filed returns are signed electronically using a Self-Select PIN, Practitioner PIN, or prior-year AGI/prior-year PIN. Form 8879 authorizes the ERO to enter the PIN for the taxpayer when they cannot enter it themselves.',
+    reference: 'Pub. 1345'
+  }
+];

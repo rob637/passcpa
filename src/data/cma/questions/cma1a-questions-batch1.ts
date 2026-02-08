@@ -1,6 +1,6 @@
 /**
  * CMA Part 1, Section A: External Financial Reporting - Questions Batch 1 (Q1-25)
- * Weight: 20% of Part 1 Exam
+ * Weight: 15% of Part 1 Exam
  * 
  * Blueprint Areas:
  * - CMA1-A: External Financial Reporting Decisions
@@ -49,7 +49,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Financial Statements',
     subtopic: 'Qualitative Characteristics',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Relevance and faithful representation are the two fundamental qualitative characteristics of useful financial information. Which of the following is an enhancing qualitative characteristic?',
     options: [
@@ -133,7 +133,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Balance Sheet',
     subtopic: 'Intangible Assets',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Which of the following intangible assets is NOT amortized under U.S. GAAP?',
     options: [
@@ -173,7 +173,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Balance Sheet',
     subtopic: 'Stockholders Equity',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Treasury stock is:',
     options: [
@@ -237,7 +237,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Income Statement',
     subtopic: 'Discontinued Operations',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A component of an entity qualifies for discontinued operations treatment when it:',
     options: [
@@ -341,7 +341,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Statement of Cash Flows',
     subtopic: 'Indirect Method Adjustments',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Under the indirect method, an increase in accounts receivable is:',
     options: [
@@ -385,7 +385,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 606, what is the FIRST step in the revenue recognition model?',
     options: [
@@ -425,7 +425,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When estimating variable consideration (such as a performance bonus), ASC 606 requires the use of:',
     options: [
@@ -533,7 +533,7 @@ export const CMA1A_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-A',
     topic: 'Footnotes',
     subtopic: 'Required Disclosures',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is typically disclosed in the notes to financial statements?',
     options: [

@@ -1,0 +1,614 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 53 (Q601-630)
+ * Advanced business taxation topics
+ * 
+ * Tax Year: 2024-2025
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH53: Question[] = [
+  // SEE2-1: Business Taxation
+  {
+    id: 'see2-601',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Partnership Distributions',
+    subtopic: 'Property Distributions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a partnership distributes appreciated property to a partner in a non-liquidating distribution:',
+    options: [
+      'The partnership recognizes gain',
+      'The partner takes a carryover basis limited to their outside basis',
+      'The partner recognizes gain immediately',
+      'The property is taxed at a capital gains rate'
+    ],
+    correctAnswer: 1,
+    explanation: 'In a non-liquidating distribution, the partnership generally doesn\'t recognize gain. The partner takes a carryover basis in the property, but limited to their predistribution outside basis (minus any cash received).',
+    reference: 'IRC §732'
+  },
+  {
+    id: 'see2-602',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'S Corporation',
+    subtopic: 'AAA Account',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The Accumulated Adjustments Account (AAA) for an S corporation:',
+    options: [
+      'Tracks accumulated earnings and profits from C corp years',
+      'Tracks S corporation income that has been taxed but not distributed',
+      'Cannot have a negative balance',
+      'Includes tax-exempt income'
+    ],
+    correctAnswer: 1,
+    explanation: 'AAA tracks the cumulative undistributed S corporation income that has already been taxed to shareholders. It can be negative (unlike stock basis). Tax-exempt income is tracked separately in OAA.',
+    reference: 'IRC §1368'
+  },
+  {
+    id: 'see2-603',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Corporate Dividends',
+    subtopic: 'Dividends Received Deduction',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A corporation owning 25% of another domestic corporation\'s stock can deduct what percentage of dividends received?',
+    options: [
+      '50%',
+      '65%',
+      '80%',
+      '100%'
+    ],
+    correctAnswer: 1,
+    explanation: 'The DRD is: 50% (ownership < 20%), 65% (ownership 20% to < 80%), 100% (ownership ≥ 80%). TCJA reduced the 70% and 80% rates to 50% and 65%. The 100% deduction requires an affiliated group.',
+    reference: 'IRC §243'
+  },
+  {
+    id: 'see2-604',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Corporate Redemptions',
+    subtopic: 'Sale vs. Dividend Treatment',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'For a stock redemption to be treated as a sale rather than a dividend, it must:',
+    options: [
+      'Be pro rata among all shareholders',
+      'Be substantially disproportionate or a complete termination',
+      'Occur within 2 years of incorporation',
+      'Distribute only cash, not property'
+    ],
+    correctAnswer: 1,
+    explanation: 'Redemptions qualify for sale treatment under §302(b) if: (1) substantially disproportionate (less than 50% voting, less than 80% of prior ownership), (2) complete termination, (3) not essentially equivalent to dividend, or (4) partial liquidation.',
+    reference: 'IRC §302'
+  },
+  {
+    id: 'see2-605',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Partnership',
+    subtopic: 'Hot Assets',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Partnership "hot assets" include which of the following?',
+    options: [
+      'Long-term capital gain property',
+      'Cash and marketable securities',
+      'Unrealized receivables and substantially appreciated inventory',
+      'Land held for investment'
+    ],
+    correctAnswer: 2,
+    explanation: 'Hot assets include unrealized receivables (including §1245/1250 recapture) and inventory items that are substantially appreciated (FMV > 120% of basis). Sale of partnership interest triggers ordinary income for share of hot assets.',
+    reference: 'IRC §751'
+  },
+  // SEE2-2: Business Tax Preparation
+  {
+    id: 'see2-606',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Research Credit',
+    subtopic: 'R&D Tax Credit',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Small businesses (gross receipts under $5 million for at least 5 years) can apply the R&D credit against:',
+    options: [
+      'Income tax only',
+      'Self-employment tax only',
+      'Payroll tax (up to $500,000)',
+      'AMT only'
+    ],
+    correctAnswer: 2,
+    explanation: 'Qualified small businesses can elect to apply up to $500,000 of the R&D credit against the employer portion of Social Security tax (up to $250,000 per year through 2026, then $500,000). This helps startups with no income tax liability.',
+    reference: 'IRC §41(h)'
+  },
+  {
+    id: 'see2-607',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Business Interest',
+    subtopic: 'Section 163(j) Limitation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under Section 163(j), business interest expense is limited to:',
+    options: [
+      '20% of adjusted taxable income',
+      '30% of adjusted taxable income plus business interest income',
+      '50% of net income',
+      'The amount of business interest income only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Business interest is limited to 30% of ATI plus business interest income and floor plan financing interest. Disallowed interest carries forward indefinitely. Small businesses (<$30M gross receipts) are exempt.',
+    reference: 'IRC §163(j)'
+  },
+  {
+    id: 'see2-608',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Domestic Production',
+    subtopic: 'FDII Deduction',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The Foreign-Derived Intangible Income (FDII) deduction for C corporations is:',
+    options: [
+      '21% of foreign-derived income',
+      '37.5% of FDII',
+      '50% of export income',
+      '10% of deemed intangible income'
+    ],
+    correctAnswer: 1,
+    explanation: 'FDII receives a 37.5% deduction (reducing the effective rate from 21% to 13.125%). After 2025, the deduction decreases to 21.875% (effective rate of 16.4%). This incentivizes keeping IP in the U.S.',
+    reference: 'IRC §250'
+  },
+  {
+    id: 'see2-609',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Amortization',
+    subtopic: 'Section 197 Intangibles',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Section 197 intangibles acquired in a business acquisition are amortized over:',
+    options: [
+      '5 years',
+      '10 years',
+      '15 years',
+      '20 years'
+    ],
+    correctAnswer: 2,
+    explanation: 'Section 197 intangibles (goodwill, going concern value, workforce, customer lists, covenants not to compete, etc.) are amortized over 15 years using straight-line. No accelerated deductions are allowed.',
+    reference: 'IRC §197'
+  },
+  {
+    id: 'see2-610',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Capitalization',
+    subtopic: 'Repair Regulations',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the repair regulations, a safe harbor election allows immediate expensing of items costing:',
+    options: [
+      '$200 or less',
+      '$500 or less',
+      '$2,500 or less (without AFS)',
+      '$10,000 or less for all taxpayers'
+    ],
+    correctAnswer: 2,
+    explanation: 'The de minimis safe harbor allows expensing items up to $2,500 per item/invoice (or $5,000 if taxpayer has applicable financial statements). Annual election required. Applies to tangible property used in trade/business.',
+    reference: 'Reg. §1.263(a)-1(f)'
+  },
+  {
+    id: 'see2-611',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Employee Benefits',
+    subtopic: 'Qualified Retirement Plans',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The employee elective deferral limit for a 401(k) plan in 2024 is:',
+    options: [
+      '$20,500',
+      '$22,500',
+      '$23,000',
+      '$23,500'
+    ],
+    correctAnswer: 2,
+    explanation: 'For 2024, the 401(k) elective deferral limit is $23,000. Participants age 50+ can add $7,500 catch-up ($30,500 total). The overall annual addition limit (including employer contributions) is $69,000.',
+    reference: 'IRC §402(g)'
+  },
+  {
+    id: 'see2-612',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'SIMPLE IRA',
+    subtopic: 'Contribution Limits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The employee contribution limit for a SIMPLE IRA in 2024 is:',
+    options: [
+      '$6,500',
+      '$15,500',
+      '$16,000',
+      '$23,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'SIMPLE IRA employee contributions are limited to $16,000 for 2024 ($19,500 including the $3,500 catch-up for 50+). Employers must match up to 3% of compensation or make a 2% nonelective contribution.',
+    reference: 'IRC §408(p)'
+  },
+  {
+    id: 'see2-613',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Record Retention',
+    subtopic: 'Employment Records',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Employment tax records should generally be kept for at least:',
+    options: [
+      '2 years',
+      '3 years',
+      '4 years',
+      '7 years'
+    ],
+    correctAnswer: 2,
+    explanation: 'Employment tax records should be kept for at least 4 years after the tax is due or paid (whichever is later). This includes Forms W-4, payroll records, and tax forms filed.',
+    reference: 'Pub. 15'
+  },
+  {
+    id: 'see2-614',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Worker Classification',
+    subtopic: 'Section 530 Relief',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Section 530 relief protects employers from employment tax liability for misclassified workers if:',
+    options: [
+      'The worker agrees to independent contractor status',
+      'The employer had a reasonable basis and filed consistent 1099s',
+      'The worker earned less than $600',
+      'The IRS approves the classification in advance'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 530 provides relief if: (1) employer had reasonable basis for classification (prior IRS audit, judicial precedent, industry practice, or other basis), (2) consistent filing of Form 1099s, and (3) consistent treatment of similar workers.',
+    reference: 'Section 530, Revenue Act of 1978'
+  },
+  {
+    id: 'see2-615',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Estimated Taxes',
+    subtopic: 'First-Year Corporation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A corporation in its first year of existence:',
+    options: [
+      'Is exempt from estimated tax payments',
+      'Must use the current year method (90% of current tax)',
+      'Can use the prior year method with $0 prior year tax',
+      'Pays a flat 25% estimated tax'
+    ],
+    correctAnswer: 1,
+    explanation: 'First-year corporations cannot use the prior year safe harbor (no prior year exists) and must pay at least 90% of current year tax liability in estimated payments to avoid penalties.',
+    reference: 'IRC §6655'
+  },
+  // SEE2-3: Specialized Business Returns
+  {
+    id: 'see2-616',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Partnership',
+    subtopic: 'Technical Termination',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Under current law (TCJA), a partnership technical termination:',
+    options: [
+      'Occurs when 50% or more interests are sold within 12 months',
+      'No longer exists - TCJA repealed technical termination rules',
+      'Triggers recognition of built-in gains',
+      'Requires revaluation of all partnership assets'
+    ],
+    correctAnswer: 1,
+    explanation: 'TCJA repealed the technical termination rules for partnerships effective for tax years beginning after 2017. Previously, a 50%+ sale of interests within 12 months caused a termination.',
+    reference: 'Former IRC §708(b)(1)(B)'
+  },
+  {
+    id: 'see2-617',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'S Corporation',
+    subtopic: 'Election Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To make an S election effective for the current year, Form 2553 must be filed by:',
+    options: [
+      'The tax return due date',
+      '2 months and 15 days after start of the tax year',
+      'The 15th day of the 3rd month of the tax year',
+      'Any time during the prior tax year'
+    ],
+    correctAnswer: 2,
+    explanation: 'Form 2553 must be filed by the 15th day of the 3rd month of the tax year for the election to be effective that year (e.g., March 15 for calendar-year corporations). Late election relief is available under Rev. Proc. 2013-30.',
+    reference: 'IRC §1362(b)'
+  },
+  {
+    id: 'see2-618',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Corporate Reorganizations',
+    subtopic: 'Type A Merger',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'In a Type A statutory merger, the target shareholders:',
+    options: [
+      'Must receive only voting stock',
+      'Can receive cash, stock, or other property with some boot recognition',
+      'Always recognize gain regardless of consideration',
+      'Cannot receive any cash'
+    ],
+    correctAnswer: 1,
+    explanation: 'Type A mergers have the most flexibility in consideration. Shareholders can receive stock, cash, or property. Boot (non-stock) triggers gain recognition to the extent received, but loss is not recognized.',
+    reference: 'IRC §368(a)(1)(A)'
+  },
+  {
+    id: 'see2-619',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Trust Taxation',
+    subtopic: 'Income Distribution Deduction',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A trust\'s income distribution deduction is limited to:',
+    options: [
+      'The trust\'s adjusted gross income',
+      'Distributable Net Income (DNI)',
+      'The amount actually distributed',
+      'The lesser of DNI or distributions'
+    ],
+    correctAnswer: 3,
+    explanation: 'The income distribution deduction is limited to the lesser of DNI or actual distributions. DNI is computed differently than taxable income (adds back tax-exempt income, capital gains are usually excluded).',
+    reference: 'IRC §661'
+  },
+  {
+    id: 'see2-620',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Estate Taxation',
+    subtopic: 'Fiduciary Return',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An estate must file Form 1041 if it has:',
+    options: [
+      'Any income regardless of amount',
+      'Gross income of $600 or more',
+      'Assets exceeding $1 million',
+      'Distributions to beneficiaries'
+    ],
+    correctAnswer: 1,
+    explanation: 'An estate must file Form 1041 if it has gross income of $600 or more OR has a beneficiary who is a nonresident alien. Estates can have a fiscal year (unlike most trusts which must use calendar year).',
+    reference: 'IRC §6012(a)(3)'
+  },
+  {
+    id: 'see2-621',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'REMIC',
+    subtopic: 'Tax Status',
+    difficulty: 'hard',
+    skillLevel: 'Remembering',
+    question: 'A Real Estate Mortgage Investment Conduit (REMIC) is:',
+    options: [
+      'Taxed as a C corporation',
+      'Taxed as an S corporation',
+      'A pass-through entity not subject to entity-level tax',
+      'Tax-exempt'
+    ],
+    correctAnswer: 2,
+    explanation: 'REMICs are pass-through entities that hold fixed pools of mortgages. They are not subject to entity-level tax; income and deductions flow through to holders of regular and residual interests.',
+    reference: 'IRC §860A'
+  },
+  {
+    id: 'see2-622',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Consolidated Returns',
+    subtopic: 'Filing Requirements',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'To file a consolidated return, the parent must own at least what percentage of subsidiary stock?',
+    options: [
+      '50%',
+      '80%',
+      '90%',
+      '100%'
+    ],
+    correctAnswer: 1,
+    explanation: 'A consolidated return requires the common parent to own at least 80% of voting power and value of subsidiary stock (§1504 affiliation). The election is generally binding for future years unless permission to discontinue is obtained.',
+    reference: 'IRC §1501'
+  },
+  {
+    id: 'see2-623',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Personal Holding Company',
+    subtopic: 'PHC Tax',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The personal holding company tax is imposed on corporations that:',
+    options: [
+      'Have more than 100 shareholders',
+      'Are 50%+ owned by 5 or fewer individuals and have 60%+ passive income',
+      'Have excessive retained earnings',
+      'Make distributions exceeding earnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'PHC tax (20% on undistributed income) applies if: (1) 5 or fewer individuals own >50% of stock, and (2) at least 60% of adjusted ordinary gross income is PHC income (passive investment income).',
+    reference: 'IRC §541'
+  },
+  {
+    id: 'see2-624',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'At-Risk Rules',
+    subtopic: 'Amount at Risk',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A taxpayer\'s at-risk amount does NOT include:',
+    options: [
+      'Cash contributions to the activity',
+      'Recourse loans for which the taxpayer is personally liable',
+      'Nonrecourse loans (except qualified real estate financing)',
+      'FMV of property contributed'
+    ],
+    correctAnswer: 2,
+    explanation: 'At-risk amount includes cash, adjusted basis of property contributed, and recourse debt. Nonrecourse debt is generally excluded except for qualified nonrecourse financing in real estate (from qualified lenders).',
+    reference: 'IRC §465'
+  },
+  {
+    id: 'see2-625',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Excess Business Loss',
+    subtopic: 'Section 461(l)',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The excess business loss limitation for non-corporate taxpayers in 2024 disallows losses exceeding:',
+    options: [
+      '$250,000 ($500,000 MFJ)',
+      '$289,000 ($578,000 MFJ)',
+      '$305,000 ($610,000 MFJ)',
+      'No limit applies'
+    ],
+    correctAnswer: 2,
+    explanation: 'Section 461(l) limits business losses to business income plus a threshold ($305,000 single/$610,000 MFJ for 2024, indexed). Disallowed losses become NOL carryforwards. This applies before the passive loss rules.',
+    reference: 'IRC §461(l)'
+  },
+  {
+    id: 'see2-626',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Opportunity Zones',
+    subtopic: 'Qualified Opportunity Fund',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Capital gains invested in a Qualified Opportunity Fund receive:',
+    options: [
+      'Immediate exclusion from income',
+      'Deferral until 2026 (or earlier sale) with potential step-up after 10 years',
+      'Permanent exclusion if held 5 years',
+      '50% exclusion regardless of holding period'
+    ],
+    correctAnswer: 1,
+    explanation: 'QOF investments defer recognition of original gain until 2026 (or earlier sale). The step-up basis provisions (10% at 5 years, 15% at 7 years) expired for new investments after 2019/2021. Gain on QOF appreciation is excluded if held 10+ years.',
+    reference: 'IRC §1400Z-2'
+  },
+  {
+    id: 'see2-627',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'International',
+    subtopic: 'Subpart F Income',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Subpart F income of a controlled foreign corporation includes:',
+    options: [
+      'All operating income of the CFC',
+      'Passive income and income from related party transactions',
+      'Only dividends paid to U.S. shareholders',
+      'Manufacturing income earned in the CFC\'s country'
+    ],
+    correctAnswer: 1,
+    explanation: 'Subpart F income includes: foreign base company income (passive income, sales income from related parties, services income from related parties), insurance income, and other specified items. Operating income from unrelated parties is generally not Subpart F.',
+    reference: 'IRC §952'
+  },
+  {
+    id: 'see2-628',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Tax Credits',
+    subtopic: 'General Business Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The general business credit is limited to:',
+    options: [
+      'Net income tax minus the greater of TMT or 25% of regular tax over $25,000',
+      '50% of taxable income',
+      '$1 million per year',
+      'The amount of payroll tax liability'
+    ],
+    correctAnswer: 0,
+    explanation: 'The GBC is limited to net income tax minus the greater of tentative minimum tax or 25% of regular tax liability exceeding $25,000. Unused credits carry back 1 year and forward 20 years.',
+    reference: 'IRC §38'
+  },
+  {
+    id: 'see2-629',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Uniform Capitalization',
+    subtopic: 'UNICAP Rules',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'UNICAP (Section 263A) requires capitalization of:',
+    options: [
+      'All business expenses',
+      'Direct costs plus allocable indirect costs for inventory or self-constructed assets',
+      'Only labor costs',
+      'Selling expenses'
+    ],
+    correctAnswer: 1,
+    explanation: 'UNICAP requires capitalizing direct costs (materials, labor) plus allocable indirect costs (rent, utilities, depreciation) into inventory or self-constructed assets. Small business exception applies if average gross receipts ≤ $30M.',
+    reference: 'IRC §263A'
+  },
+  {
+    id: 'see2-630',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Exempt Organizations',
+    subtopic: 'UBIT',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Unrelated Business Income Tax (UBIT) applies to exempt organization income from:',
+    options: [
+      'All donations and grants',
+      'Investment income (dividends, interest, capital gains)',
+      'Trade or business regularly carried on not substantially related to exempt purpose',
+      'Membership dues'
+    ],
+    correctAnswer: 2,
+    explanation: 'UBIT applies to income from a trade or business that is: (1) regularly carried on, and (2) not substantially related to the exempt purpose. Passive investment income is generally excluded (with debt-financed property exceptions).',
+    reference: 'IRC §512'
+  }
+];

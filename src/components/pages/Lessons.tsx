@@ -18,7 +18,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
@@ -162,7 +162,7 @@ const Lessons: React.FC = () => {
   // Current exam section - use URL param if provided, otherwise use user profile
   const sectionFromUrl = searchParams.get('section');
   const currentSection = (sectionFromUrl || userProfile?.examSection || 'FAR') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
   // Fetch lessons and content counts
   useEffect(() => {

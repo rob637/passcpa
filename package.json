@@ -28,7 +28,9 @@
     "seed": "node scripts/seedQuestions.js",
     "seed:force": "node scripts/seedQuestions.js --force",
     "format": "prettier --write \"src/**/*.{js,jsx,json,css}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,json,css}\""
+    "check:artifacts": "bash scripts/check-ai-artifacts.sh",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,json,css}\"",
+    "build:analyze": "ANALYZE=true vite build && echo 'Bundle stats written to dist/stats.html'"
   },
   "dependencies": {
     "@capacitor/android": "^8.0.1",
@@ -84,6 +86,7 @@
     "jsdom": "^27.4.0",
     "postcss": "^8.4.35",
     "prettier": "^3.8.1",
+    "rollup-plugin-visualizer": "^6.0.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.9.3",

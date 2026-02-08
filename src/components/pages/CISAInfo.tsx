@@ -6,6 +6,8 @@ import {
   BookOpen, 
   Play
 } from 'lucide-react';
+import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 
 export default function CISAInfo() {
   const navigate = useNavigate();
@@ -26,12 +28,15 @@ export default function CISAInfo() {
               The gold standard for IS audit, control, and security professionals. 
               Our AI-driven platform adapts to your learning style.
             </p>
-            <button 
-              className="inline-flex items-center gap-2 bg-white text-indigo-700 hover:bg-indigo-50 px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+            <Button 
+              variant="secondary"
+              size="lg"
+              leftIcon={Play}
               onClick={() => navigate('/cisa/dashboard')}
+              className="text-indigo-700"
             >
-              <Play className="h-5 w-5" /> Start Studying
-            </button>
+              Start Studying
+            </Button>
           </div>
         </div>
       </div>
@@ -62,22 +67,22 @@ export default function CISAInfo() {
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
+    <Card variant="elevated" className="p-8">
       <div className="bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 rounded-lg flex items-center justify-center mb-6">{icon}</div>
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
+    </Card>
   );
 }
 
 function DomainCard({ num, title, weight }: { num: string; title: string; weight: string }) {
   return (
-    <div className="flex items-start p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+    <Card className="flex items-start p-6">
       <div className="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900/50 w-10 h-10 rounded-full flex items-center justify-center text-indigo-700 dark:text-indigo-300 font-bold mr-4">{num}</div>
       <div>
         <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{title}</h4>
         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">{weight} of Exam</span>
       </div>
-    </div>
+    </Card>
   );
 }

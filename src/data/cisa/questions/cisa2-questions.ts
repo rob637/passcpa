@@ -1,7 +1,14 @@
-
 import { Question } from '../../../types';
+import { CISA2_QUESTIONS_BATCH2 } from './cisa2-questions-batch2';
+import { CISA2_QUESTIONS_BATCH3 } from './cisa2-questions-batch3';
+import { CISA2_QUESTIONS_BATCH4 } from './cisa2-questions-batch4';
+import { CISA2_QUESTIONS_BATCH5 } from './cisa2-questions-batch5';
+import { CISA2_QUESTIONS_BATCH6 } from './cisa2-questions-batch6';
+import { CISA2_QUESTIONS_BATCH7 } from './cisa2-questions-batch7';
+import { CISA2_QUESTIONS_BATCH8 } from './cisa2-questions-batch8';
+import { CISA2_QUESTIONS_BATCH9 } from './cisa2-cisa3-batch9';
 
-export const CISA2_QUESTIONS: Question[] = [
+const CISA2_QUESTIONS_BATCH1: Question[] = [
   {
     id: 'CISA2-001',
     courseId: 'cisa',
@@ -36,4 +43,16 @@ export const CISA2_QUESTIONS: Question[] = [
     topic: 'Risk Management',
     subtopic: 'Segregation of Duties'
   }
+];
+
+export const CISA2_QUESTIONS: Question[] = [
+  ...CISA2_QUESTIONS_BATCH1,
+  ...CISA2_QUESTIONS_BATCH2,
+  ...CISA2_QUESTIONS_BATCH3,
+  ...CISA2_QUESTIONS_BATCH4,
+  ...CISA2_QUESTIONS_BATCH5,
+  ...CISA2_QUESTIONS_BATCH6,
+  ...CISA2_QUESTIONS_BATCH7,
+  ...CISA2_QUESTIONS_BATCH8,
+  ...CISA2_QUESTIONS_BATCH9,
 ];

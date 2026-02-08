@@ -5,7 +5,7 @@ export const CMA2_ESSAYS: WCTask[] = [
     id: 'cma2-wc-001',
     section: 'CMA2',
     type: 'written_communication',
-    topic: 'Ethics - IMA Statement of Ethical Professional Practice',
+    topic: 'IMA Ethics - Resolving Pressure to Misstate Expenses',
     difficulty: 'hard',
     estimatedTime: 30,
     blueprintArea: 'CMA2-F',
@@ -48,6 +48,27 @@ In accordance with the IMA's conflict resolution guidelines:
 3. If this is not resolved, I will consult with an objective advisor (IMA Ethics Helpline) and legal counsel regarding my legal obligations.
 
 While I understand the pressure to meet earnings targets, fraudulent financial reporting risks the long-term viability of the firm and carries severe legal penalties. I cannot comply with the request to misstate the financial records.`,
+    rubric: {
+      organization: { weight: 30, criteria: [
+        'Uses proper memo format with TO/FROM/DATE/RE headers',
+        'Organizes content into clearly labeled sections (Violations, Resolution Process)',
+        'Presents logical flow from issue identification to resolution steps',
+        'Includes appropriate opening statement and firm conclusion',
+      ]},
+      development: { weight: 40, criteria: [
+        'Identifies all relevant IMA standards (Competence, Integrity, Credibility)',
+        'Explains specifically how the CFO request violates each cited standard',
+        'Outlines the IMA conflict resolution steps in correct sequential order',
+        'Connects the specific scenario facts (capitalizing repairs) to the ethical framework',
+        'Addresses potential consequences of compliance with the unethical request',
+      ]},
+      expression: { weight: 30, criteria: [
+        'Maintains professional and respectful memo tone throughout',
+        'Uses correct ethics and accounting terminology (e.g., GAAP, ASC 360)',
+        'Writes in concise, clear paragraphs without unnecessary verbosity',
+        'Demonstrates proper grammar, spelling, and punctuation',
+      ]},
+    },
   },
   {
     id: 'cma2-wc-002',
@@ -109,6 +130,27 @@ The company is already highly leveraged.
 CONCLUSION
 
 RetailCo fits the profile of a high-risk borrower. They are relying on selling through a massive inventory pile to stay solvent. Adding more debt leverage to a company with 2.5 Debt/Equity and poor liquidity is not prudent. I recommend we decline the request or require significant additional collateral and personal guarantees.`,
+    rubric: {
+      organization: { weight: 30, criteria: [
+        'Uses proper credit analysis report format with clear headers',
+        'Separates analysis into distinct liquidity, solvency, and asset quality sections',
+        'Follows logical progression from ratio analysis to credit recommendation',
+        'Provides clear recommendation with supporting rationale in conclusion',
+      ]},
+      development: { weight: 40, criteria: [
+        'Analyzes all four ratios with specific industry benchmark comparisons',
+        'Identifies inventory concentration issue from Current vs Quick ratio gap',
+        'Connects high leverage (D/E, TIE) to incremental risk of additional debt',
+        'Evaluates management claim about strategic inventory levels',
+        'Supports loan recommendation with quantitative evidence from ratios',
+      ]},
+      expression: { weight: 30, criteria: [
+        'Maintains professional credit analyst tone appropriate for loan committee',
+        'Uses correct financial ratio terminology and abbreviations',
+        'Presents quantitative data clearly with proper formatting',
+        'Demonstrates proper grammar and professional writing conventions',
+      ]},
+    },
   },
   {
     id: 'cma2-wc-003',
@@ -178,15 +220,36 @@ While financially sound, we must consider:
 RECOMMENDATION
 
 I recommend accepting the order, provided we can ensure the product is not re-imported (gray market) to compete with our regular sales channels.`,
+    rubric: {
+      organization: { weight: 30, criteria: [
+        'Uses proper memo format with TO/FROM/DATE/RE headers',
+        'Organizes into financial analysis and qualitative factors sections',
+        'Follows logical flow from cost identification to recommendation',
+        'Separates quantitative analysis from qualitative considerations',
+      ]},
+      development: { weight: 40, criteria: [
+        'Correctly distinguishes relevant (variable) from irrelevant (fixed) costs',
+        'Calculates incremental contribution margin per unit and total profit',
+        'Explains why full cost of $500 is misleading for this decision',
+        'Confirms excess capacity exists to fulfill the special order',
+        'Identifies at least two qualitative factors (brand dilution, precedent setting)',
+      ]},
+      expression: { weight: 30, criteria: [
+        'Maintains professional management accounting memo tone',
+        'Uses correct cost accounting terminology (contribution margin, relevant costs, sunk cost)',
+        'Presents numerical analysis in clear, easy-to-follow format',
+        'Demonstrates proper grammar and concise professional writing',
+      ]},
+    },
   },
   {
     id: 'cma2-wc-004',
     section: 'CMA2',
     type: 'written_communication',
-    topic: 'Capital Budgeting - NPV vs Payback',
+    topic: 'Capital Budgeting - NPV vs Payback Period Conflict',
     difficulty: 'hard',
     estimatedTime: 35,
-    blueprintArea: 'CMA2-E',
+    blueprintArea: 'CMA2-C',
     scenario: `Global Logistics is considering a warehouse automation project.
     - Initial Investment: $5,000,000
     - Useful life: 5 years
@@ -246,15 +309,36 @@ RECOMMENDATION
 I recommend APPROVING the project and granting an exception to the Payback policy.
 
 The Payback policy is designed to manage liquidity risk, but when applied rigidly to long-term infrastructure projects like this, it causes us to reject highly profitable investments. We should prioritize NPV (value creation) over Payback (liquidity speed) for strategic capital investments.`,
+    rubric: {
+      organization: { weight: 30, criteria: [
+        'Uses proper memo format addressed to Investment Committee',
+        'Separates Payback analysis, NPV analysis, and limitations into distinct sections',
+        'Follows logical progression from metric calculations to policy recommendation',
+        'Addresses the conflict between CFO and COO positions clearly',
+      ]},
+      development: { weight: 40, criteria: [
+        'Calculates cumulative cash flows and payback period correctly (3.6 years)',
+        'Identifies key Payback limitations: ignores TVM and post-payback cash flows',
+        'Explains NPV superiority for measuring shareholder value creation',
+        'Recognizes that Payback policy may reject profitable long-term investments',
+        'Recommends policy exception with clear justification',
+      ]},
+      expression: { weight: 30, criteria: [
+        'Maintains professional investment analysis tone',
+        'Uses correct capital budgeting terminology (NPV, payback, cost of capital, discount rate)',
+        'Presents calculations and cumulative cash flows clearly',
+        'Demonstrates proper grammar and persuasive professional writing',
+      ]},
+    },
   },
   {
     id: 'cma2-wc-005',
     section: 'CMA2',
     type: 'written_communication',
-    topic: 'Risk Management - Hedging Foreign Currency',
+    topic: 'Single Currency Hedge - Forward Contract Decision',
     difficulty: 'hard',
     estimatedTime: 30,
-    blueprintArea: 'CMA2-D',
+    blueprintArea: 'CMA2-C',
     scenario: `US-based Importer Inc. just signed a contract to purchase merchandise from a European supplier for €1,000,000, payable in 90 days.
     
     Current Spot Rate: $1.10 per Euro
@@ -309,5 +393,26 @@ The primary purpose of corporate hedging is not to generate profit, but to reduc
 RECOMMENDATION
 
 I recommend entering the Forward Contract. While the $1.12 rate represents a premium over today's spot rate, it eliminates the catastrophic risk of a rate spike. As an importer, our core competency is sourcing and selling goods, not speculating on foreign exchange directions. Certainty of margins is more valuable than the potential savings from speculation.`,
+    rubric: {
+      organization: { weight: 30, criteria: [
+        'Uses proper memo format addressed to CEO',
+        'Organizes into risk exposure, strategy comparison, hedging purpose, and recommendation',
+        'Presents scenarios in clear comparative format',
+        'Provides definitive recommendation with supporting rationale',
+      ]},
+      development: { weight: 40, criteria: [
+        'Explains transaction exposure (short Euro position) correctly',
+        'Calculates forward contract cost precisely ($1,120,000)',
+        'Presents worst-case unhedged scenario with specific dollar impact',
+        'Distinguishes corporate hedging purpose from currency speculation',
+        'Addresses the CEO argument about dollar strengthening with risk analysis',
+      ]},
+      expression: { weight: 30, criteria: [
+        'Maintains professional treasury communication tone',
+        'Uses correct FX and derivatives terminology (spot rate, forward rate, hedge)',
+        'Presents scenario comparisons clearly with dollar amounts',
+        'Demonstrates proper grammar and persuasive professional writing',
+      ]},
+    },
   }
 ];

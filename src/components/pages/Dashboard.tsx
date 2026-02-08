@@ -24,7 +24,8 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { usePullToRefresh } from '../../hooks/usePullToRefresh';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getExamDate } from '../../utils/profileHelpers';
 import { differenceInDays, format } from 'date-fns';
 import clsx from 'clsx';
 import { isFeatureEnabled } from '../../config/featureFlags';
@@ -287,18 +288,16 @@ const Dashboard = () => {
   const { user, userProfile } = useAuth();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { todayLog, currentStreak, dailyProgress, dailyGoalMet, weeklyStats, getTopicPerformance, getLessonProgress } = useStudy() as any;
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
 
   // Exam Readiness State
   const [readiness, setReadiness] = useState<ReadinessData | null>(null);
   const [readinessLoading, setReadinessLoading] = useState(true);
 
-  const examSection = userProfile?.examSection ? CPA_SECTIONS[userProfile.examSection as keyof typeof CPA_SECTIONS] : null;
-  const rawExamDate = userProfile?.examDate;
-  const examDate = rawExamDate && typeof (rawExamDate as { toDate?: () => Date }).toDate === 'function' 
-    ? (rawExamDate as { toDate: () => Date }).toDate() 
-    : rawExamDate;
-  const daysUntilExam = examDate ? differenceInDays(new Date(examDate as Date), new Date()) : null;
+  const examSection = userProfile?.examSection ? getSectionDisplayInfo(userProfile.examSection, courseId) : null;
+  // Use getExamDate helper for multi-course support
+  const examDate = getExamDate(userProfile, userProfile?.examSection as string);
+  const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
   const currentSection = userProfile?.examSection || 'REG';
 
   // Fetch Exam Readiness Data
@@ -665,7 +664,7 @@ const Dashboard = () => {
             sublabel="10 MCQs • ~15 min"
             color="primary"
           />
-          {isFeatureEnabled('tbs') && (
+          {isFeatureEnabled('tbs') && course?.hasTBS && (
             <QuickAction
               to="/tbs"
               icon={FileSpreadsheet}

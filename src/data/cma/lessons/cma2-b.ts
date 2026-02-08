@@ -16,7 +16,7 @@ import { Lesson } from '../../../types';
 
 export const cma2BLessons: Lesson[] = [
   // ============================================================================
-  // CMA2-B: CORPORATE FINANCE (Lessons 1-10)
+  // CMA2-B: CORPORATE FINANCE (Lessons 1-12)
   // ============================================================================
   
   {
@@ -786,6 +786,82 @@ export const cma2BLessons: Lesson[] = [
             "Payment: Cash depletes resources; Stock dilutes ownership",
             "Asset purchase: step-up basis; Stock purchase: carryover",
             "Goodwill = Price - FV of net identifiable assets (test for impairment)",
+          ],
+        },
+      ],
+    },
+  },
+
+  {
+    id: 'CMA2-B-011',
+    courseId: 'cma',
+    section: 'CMA2',
+    title: 'International Finance',
+    description: 'Manage foreign exchange risk and understand international financial concepts',
+    order: 21,
+    duration: 50,
+    difficulty: 'advanced',
+    topics: ['Foreign exchange rates', 'Forward contracts', 'Interest rate parity', 'Purchasing power parity', 'Translation exposure', 'Transaction exposure', 'Euromarkets'],
+    blueprintArea: 'CMA2-B',
+    content: {
+      sections: [
+        {
+          title: 'Why This Matters for Management Accountants',
+          type: 'callout',
+          content: "Global operations expose companies to foreign exchange risk that can wipe out operating profits overnight. CMAs must understand how exchange rates work, how to hedge currency exposure, and the parity conditions that drive international financial markets. This is an increasingly tested area on the CMA exam.",
+        },
+        {
+          title: 'Foreign Exchange Rate Quotations',
+          type: 'text',
+          content: "**Direct Quote (American Terms):**\nDomestic currency per unit of foreign currency\nExample: $1.25/€1 (it costs $1.25 to buy one euro)\n\n**Indirect Quote (European Terms):**\nForeign currency per unit of domestic currency\nExample: €0.80/$1 (one dollar buys 0.80 euros)\n\n**Key relationship:**\nDirect quote = 1 / Indirect quote\n$1.25/€ = 1 / (€0.80/$)\n\n**Cross Rates:**\nDerived from two quotes involving a common currency\nIf $1.25/€ and $1.50/£, then:\n€ per £ = $1.50 / $1.25 = €1.20/£\n\n**Currency Appreciation/Depreciation:**\n• If rate goes from $1.25/€ to $1.30/€ → Euro appreciated (costs more dollars)\n• If rate goes from $1.25/€ to $1.20/€ → Euro depreciated (costs fewer dollars)\n\n**Tip:** In a direct quote, if the number goes UP, the foreign currency got STRONGER.",
+        },
+        {
+          title: 'Spot vs. Forward Rates',
+          type: 'text',
+          content: "**Spot Rate:**\n• Exchange rate for IMMEDIATE delivery (settlement in 2 business days)\n• Reflects current supply and demand\n\n**Forward Rate:**\n• Exchange rate agreed TODAY for exchange at a FUTURE date\n• Used to lock in exchange rates and hedge risk\n• Common maturities: 30, 60, 90, 180 days, 1 year\n\n**Forward Premium/Discount:**\nForward premium (%) = [(Forward - Spot) / Spot] × (360/days) × 100\n\n**Example:**\nSpot: $1.2500/€\n90-day forward: $1.2600/€\nPremium = [($1.2600 - $1.2500) / $1.2500] × (360/90) × 100\n= (0.008) × 4 × 100 = **3.2% annualized premium**\n\n**The euro is at a forward PREMIUM** (more expensive in the future).\n\n**If forward < spot → Foreign currency is at a forward DISCOUNT**",
+        },
+        {
+          title: 'Interest Rate Parity (IRP)',
+          type: 'text',
+          content: "**The forward rate reflects the interest rate differential between two countries.**\n\n**Formula:**\nForward / Spot = (1 + Rdomestic) / (1 + Rforeign)\n\n**Where R = interest rate for the period**\n\n**Example:**\nSpot: $1.2500/€\nUS 1-year rate: 5%\nEurozone 1-year rate: 3%\n\nForward = $1.2500 × (1.05/1.03) = $1.2500 × 1.0194 = **$1.2743/€**\n\n**Interpretation:**\n• Higher US interest rates → Dollar at forward discount\n• The euro trades at a forward premium of ~1.94%\n• This premium offsets the interest rate advantage\n\n**Key Insight:**\nIRP ensures you earn the same return whether you:\n1. Invest domestically, OR\n2. Convert to foreign currency, invest abroad, and hedge with a forward\n\n**If IRP doesn't hold → Covered interest arbitrage opportunity exists!**",
+        },
+        {
+          title: 'Purchasing Power Parity (PPP)',
+          type: 'text',
+          content: "**Exchange rates adjust to equalize purchasing power across countries.**\n\n**Absolute PPP:**\nA basket of goods should cost the same in all countries when converted to a common currency.\n(Rarely holds due to trade barriers, transportation, non-traded goods)\n\n**Relative PPP (More useful):**\nExchange rate changes reflect INFLATION rate differentials.\n\n**Formula:**\n(Expected Spot₁ - Spot₀) / Spot₀ ≈ Inflation_domestic - Inflation_foreign\n\n**Example:**\nCurrent spot: $1.2500/€\nUS expected inflation: 4%\nEurozone expected inflation: 2%\n\nExpected change: 4% - 2% = 2%\nExpected future spot: $1.2500 × 1.02 = **$1.2750/€**\n\n**Interpretation:**\n• Higher US inflation → Dollar weakens (depreciates)\n• The currency of the higher-inflation country depreciates\n\n**PPP explains long-run exchange rate trends but NOT short-run movements.**",
+        },
+        {
+          title: '🧠 Memory Aid: IRP vs. PPP',
+          type: 'callout',
+          content: "**\"Interest drives FORWARDS, Prices drive SPOTS\"**\n\n**Interest Rate Parity (IRP):**\n• Links interest rates to FORWARD rates\n• Higher interest → Forward discount for that currency\n• Holds well in practice (arbitrage enforces it)\n\n**Purchasing Power Parity (PPP):**\n• Links inflation to SPOT rate changes\n• Higher inflation → Currency depreciates\n• Works in long-run, not short-run\n\n**Both say the same thing differently:**\nThe country with higher rates/inflation sees its currency weaken to offset the advantage.",
+        },
+        {
+          title: 'Transaction vs. Translation Exposure',
+          type: 'text',
+          content: "**Transaction Exposure:**\n• Risk from outstanding obligations in foreign currency\n• Affects CASH FLOW\n• Example: US company owes €1M to German supplier in 90 days\n• If euro strengthens, the dollar cost INCREASES\n\n**Hedging transaction exposure:**\n1. **Forward contract** — Lock in the exchange rate today\n2. **Money market hedge** — Borrow/invest to create offsetting position\n3. **Currency options** — Buy the right (not obligation) to exchange\n4. **Natural hedge** — Match foreign currency revenues with expenses\n\n**Translation Exposure (Accounting Exposure):**\n• Risk from converting foreign subsidiary financial statements to parent currency\n• Affects REPORTED EARNINGS, not cash flow\n• Under GAAP: Current rate method or temporal method\n\n**Current Rate Method (most common):**\n• Assets/Liabilities → Current exchange rate\n• Equity → Historical rate\n• Revenue/Expenses → Average rate\n• Translation adjustment → Other Comprehensive Income (OCI)\n\n**Economic Exposure:**\n• Long-term impact of exchange rate changes on firm value\n• Affects competitive position and future cash flows\n• Hardest to measure and hedge",
+        },
+        {
+          title: 'Euromarkets',
+          type: 'text',
+          content: "**Eurocurrency Market:**\n• Deposits of a currency held OUTSIDE its home country\n• Eurodollars = US dollars deposited outside the US (e.g., in London)\n• Euroyen = Yen deposited outside Japan\n• NOT related to the euro currency or Europe specifically!\n\n**Why Euromarkets exist:**\n• Less regulation than domestic markets\n• Competitive interest rates (higher deposit, lower lending)\n• Tax advantages in some jurisdictions\n• 24-hour global access\n\n**Eurobonds:**\n• Bonds issued in a currency different from the country of issuance\n• Example: A US company issues bonds denominated in yen in London\n• Advantages: Avoid domestic registration, access global investors\n\n**Foreign Bonds (contrast):**\n• Issued in a foreign country, in THAT country's currency\n• Yankee bonds: Foreign issuer, USD, in US market\n• Samurai bonds: Foreign issuer, yen, in Japan\n• Bulldog bonds: Foreign issuer, GBP, in UK",
+        },
+        {
+          title: '⚠️ Exam Trap: Exchange Rate Direction',
+          type: 'warning',
+          content: "**The #1 source of errors on international finance questions:**\n\n**Direct vs. Indirect quote confusion:**\n• $1.25/€ (direct) — dollar cost of euros\n• €0.80/$ (indirect) — how many euros per dollar\n\n**Who benefits from what?**\n• US EXPORTER benefits when dollar WEAKENS (foreign buyers get more for their money)\n• US IMPORTER benefits when dollar STRENGTHENS (foreign goods are cheaper)\n\n**Hedging direction:**\n• If you OWE foreign currency → BUY it forward (lock in your cost)\n• If you are OWED foreign currency → SELL it forward (lock in your revenue)\n\n**Forward premium/discount shortcut:**\n• Higher interest rate country → Currency at forward DISCOUNT\n• Lower interest rate country → Currency at forward PREMIUM\n• Remember: The forward rate OFFSETS the interest rate advantage",
+        },
+        {
+          title: 'Key Takeaways',
+          type: 'summary',
+          content: [
+            "Direct quote = domestic per foreign; Indirect = foreign per domestic",
+            "Forward rate locks in a future exchange rate — used for hedging",
+            "Interest Rate Parity: Forward rates reflect interest rate differentials",
+            "Purchasing Power Parity: Exchange rates adjust for inflation differences (long-run)",
+            "Transaction exposure affects cash flows; translation exposure affects reported earnings",
+            "Hedge transaction exposure with forwards, money market hedges, or options",
+            "Eurodollars are USD deposited outside the US — not related to the euro currency",
+            "Higher interest rate country's currency trades at a forward discount",
           ],
         },
       ],

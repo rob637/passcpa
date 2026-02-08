@@ -67,7 +67,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Behavior',
     subtopic: 'Mixed Costs',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'The high-low method is used to:',
     options: [
@@ -87,7 +87,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Cost Behavior',
     subtopic: 'High-Low Method',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A company has the following data: High month - 10,000 units, $85,000 cost; Low month - 6,000 units, $65,000 cost. What is the variable cost per unit?',
     options: [
@@ -191,7 +191,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'CVP Analysis',
     subtopic: 'Operating Leverage',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A company with high operating leverage will experience:',
     options: [
@@ -275,7 +275,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Product Costing',
     subtopic: 'FIFO vs Weighted Average',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'In process costing, the FIFO method differs from the weighted-average method primarily because FIFO:',
     options: [
@@ -299,7 +299,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Activity-Based Costing',
     subtopic: 'ABC Concepts',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Activity-based costing (ABC) assigns overhead costs based on:',
     options: [
@@ -363,7 +363,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Joint Costing',
     subtopic: 'Split-off Point',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The split-off point is best described as:',
     options: [
@@ -383,7 +383,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Joint Costing',
     subtopic: 'Sales Value at Split-off',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Under the sales value at split-off method, joint costs are allocated based on:',
     options: [
@@ -403,7 +403,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Joint Costing',
     subtopic: 'Sell or Process Further',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'In deciding whether to sell at split-off or process further, joint costs are:',
     options: [
@@ -423,7 +423,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Joint Costing',
     subtopic: 'By-Products',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'By-products differ from joint products in that by-products:',
     options: [
@@ -447,7 +447,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Supply Chain',
     subtopic: 'JIT Inventory',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Just-in-time (JIT) inventory systems aim to:',
     options: [
@@ -467,7 +467,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Supply Chain',
     subtopic: 'EOQ Model',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'The economic order quantity (EOQ) formula balances:',
     options: [
@@ -507,7 +507,7 @@ export const CMA1D_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-D',
     topic: 'Supply Chain',
     subtopic: 'Theory of Constraints',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'In the Theory of Constraints, throughput contribution is calculated as:',
     options: [

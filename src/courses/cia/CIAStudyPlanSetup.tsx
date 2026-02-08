@@ -7,6 +7,8 @@ import { useAuth } from '../../hooks/useAuth';
 import { setDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import logger from '../../utils/logger';
+import { Button } from '../../components/common/Button';
+import { Card } from '../../components/common/Card';
 
 export default function CIAStudyPlanSetup() {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ export default function CIAStudyPlanSetup() {
       <p className="text-slate-600 dark:text-slate-400 mb-8">Tell us your exam dates and weekly availability to build a personalized roadmap.</p>
 
       <div className="grid gap-8">
-        <div className="card p-6">
+        <Card>
           <div className="flex items-center gap-2 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
             <CalendarIcon className="w-5 h-5 text-amber-500" />
             <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Exam Dates</h2>
@@ -79,19 +81,21 @@ export default function CIAStudyPlanSetup() {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
 
         {/* Weekly schedule config could go here */}
         
         <div className="flex justify-end">
-          <button 
-            className="btn btn-primary btn-lg flex items-center gap-2"
+          <Button 
+            variant="primary"
+            size="lg"
             onClick={handleSavePlan} 
             disabled={loading}
+            loading={loading}
+            rightIcon={Save}
           >
             {loading ? 'Generating Plan...' : 'Create Study Plan'}
-            {!loading && <Save className="ml-2 w-4 h-4" />}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

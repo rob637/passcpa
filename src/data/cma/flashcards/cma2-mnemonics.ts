@@ -278,4 +278,32 @@ export const CMA2_MNEMONICS: CMAFlashcard[] = [
     difficulty: 'easy',
     tags: ['fraud', 'ethics'],
   },
-];
+  // ============================================
+  // Additional Mnemonics (Batch 2)
+  // ============================================
+  {
+    id: 'cma2-mnem-021',
+    section: 'CMA2',
+    type: 'mnemonic',
+    topic: 'Financial Analysis',
+    subtopic: 'Liquidity Ratios',
+    blueprintArea: 'CMA2-A',
+    front: 'Mnemonic for key liquidity and coverage ratios?',
+    back: '**"CQC - TIE"** - Current, Quick, Cash; Times Interest Earned\n\n**Current Ratio** = Current Assets / Current Liabilities\n**Quick Ratio** = (CA - Inventory) / CL\n**Cash Ratio** = Cash / CL\n\n**Times Interest Earned** = EBIT / Interest Expense\n\n**Memory:** "CQC protects liquidity, TIE protects solvency"\n\n**Rule of thumb:** Current > 2.0, Quick > 1.0, TIE > 3.0',
+    mnemonic: 'CQC-TIE - Current, Quick, Cash, Times Interest Earned',
+    difficulty: 'easy',
+    tags: ['liquidity ratios', 'financial analysis'],
+  },
+  {
+    id: 'cma2-mnem-022',
+    section: 'CMA2',
+    type: 'mnemonic',
+    topic: 'Risk Management',
+    subtopic: 'Risk Responses',
+    blueprintArea: 'CMA2-D',
+    front: 'Mnemonic for the 4 risk response strategies?',
+    back: '**"TARA"** - Transfer, Avoid, Reduce, Accept\n\n**T**ransfer - Shift risk to third party (insurance, hedging)\n**A**void - Eliminate the risk source entirely\n**R**educe (Mitigate) - Lower probability or impact\n**A**ccept - Acknowledge and monitor\n\n**Alternative:** "MATA" - Mitigate, Avoid, Transfer, Accept\n\n**Decision Factors:**\n• Risk appetite\n• Cost vs. benefit\n• Risk magnitude',
+    mnemonic: 'TARA - Transfer, Avoid, Reduce, Accept',
+    difficulty: 'easy',
+    tags: ['risk response', 'ERM'],
+  },];

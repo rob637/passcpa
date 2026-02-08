@@ -18,6 +18,7 @@ import { useAuth } from './AuthProvider';
 import { format } from 'date-fns';
 import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
+import { getStudyPlanId } from '../utils/profileHelpers';
 
 export interface StudyPlan {
   id?: string;
@@ -106,11 +107,14 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const today = format(new Date(), 'yyyy-MM-dd');
   
   // Get current section from userProfile (used for filtering)
-  const currentSection = (userProfile as any)?.examSection || 'FAR';
+  const currentSection = userProfile?.examSection as string || 'FAR';
+  const activeCourse = userProfile?.activeCourse || 'cpa';
 
   // Fetch study plan when user changes
+  // Uses getStudyPlanId for multi-course support
   useEffect(() => {
-    if (!user || (!userProfile?.studyPlanId)) {
+    const planId = getStudyPlanId(userProfile, activeCourse);
+    if (!user || !planId) {
       setStudyPlan(null);
       setLoading(false);
       return;

@@ -7,6 +7,7 @@ import {
   PieChart,
   HelpCircle
 } from 'lucide-react';
+import { Button } from '../../components/common/Button';
 
 const MOCK_CASE = {
   id: 'CS-102',
@@ -83,10 +84,9 @@ export default function CFPCaseStudy() {
           </div>
           
            <div className="flex items-center gap-3">
-             <button className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md text-sm font-medium">
-               <Calculator className="w-4 h-4" />
+             <Button variant="secondary" size="sm" leftIcon={Calculator}>
                <span className="hidden sm:inline">TVM Calc</span>
-             </button>
+             </Button>
            </div>
         </div>
       </nav>
@@ -125,12 +125,14 @@ export default function CFPCaseStudy() {
             
             {/* Mobile Switcher */}
             <div className="lg:hidden p-4 border-t border-slate-200 dark:border-slate-700">
-                <button 
+                <Button 
+                    variant="primary"
+                    fullWidth
                     onClick={() => setActiveTab('questions')}
-                    className="w-full btn btn-primary py-3"
+                    className="py-3"
                 >
                     Proceed to Questions
-                </button>
+                </Button>
             </div>
         </div>
 
@@ -186,21 +188,23 @@ export default function CFPCaseStudy() {
             </div>
 
             <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
-                <button 
+                <Button 
+                    variant="secondary"
                     onClick={() => setActiveTab('scenario')}
-                    className="lg:hidden btn btn-secondary"
+                    className="lg:hidden"
                 >
                     Back to Scenario
-                </button>
+                </Button>
                 
                 {!showResults ? (
-                     <button 
+                     <Button 
+                        variant="primary"
                         onClick={() => setShowResults(true)}
                         disabled={Object.keys(answers).length < MOCK_CASE.questions.length}
-                        className="ml-auto btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="ml-auto"
                      >
                         Submit Case Analysis
-                     </button>
+                     </Button>
                 ) : (
                     <Link to="/cfp/dashboard" className="ml-auto btn btn-secondary">
                         Return to Dashboard

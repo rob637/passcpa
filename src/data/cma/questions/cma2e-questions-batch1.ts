@@ -46,7 +46,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Capital Budgeting',
     subtopic: 'Capital Budgeting Steps',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The first step in the capital budgeting process is typically:',
     options: [
@@ -130,7 +130,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'NPV',
     subtopic: 'NPV Calculation',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A project costs $100,000 and generates $30,000 annually for 5 years. At 10% discount rate (PV factor of annuity = 3.791), the NPV is approximately:',
     options: [
@@ -194,7 +194,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'IRR',
     subtopic: 'IRR Definition',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The internal rate of return (IRR) is:',
     options: [
@@ -234,7 +234,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'IRR',
     subtopic: 'IRR Limitations',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A limitation of IRR compared to NPV is that IRR:',
     options: [
@@ -254,7 +254,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'IRR',
     subtopic: 'Modified IRR',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Modified IRR (MIRR) differs from IRR by:',
     options: [
@@ -298,7 +298,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Payback Period',
     subtopic: 'Payback Limitations',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A major weakness of the payback method is that it:',
     options: [
@@ -338,7 +338,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Profitability Index',
     subtopic: 'PI Usage',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The profitability index is most useful when:',
     options: [
@@ -358,7 +358,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Accounting Rate of Return',
     subtopic: 'ARR Calculation',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Accounting rate of return (ARR) uses:',
     options: [
@@ -402,7 +402,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Cash Flows',
     subtopic: 'Depreciation Tax Shield',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Annual depreciation is $50,000 and the tax rate is 30%. The depreciation tax shield is:',
     options: [
@@ -440,26 +440,6 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
   // Risk Analysis
   // ==========================================
   {
-    id: 'cma2-e-021',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-E',
-    topic: 'Risk Analysis',
-    subtopic: 'Sensitivity Analysis',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Sensitivity analysis in capital budgeting tests:',
-    options: [
-      'Only the best-case scenario',
-      'How NPV changes when one variable is changed while others are held constant',
-      'The average outcome of all scenarios',
-      'The correlation between projects'
-    ],
-    correctAnswer: 1,
-    explanation: 'Sensitivity analysis changes one variable at a time (e.g., sales volume, price, costs) to see its impact on NPV. It identifies which variables are most critical to project success.',
-    reference: 'Sensitivity Analysis; Risk Assessment',
-  },
-  {
     id: 'cma2-e-022',
     courseId: 'cma',
     section: 'CMA2',
@@ -486,7 +466,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Risk Analysis',
     subtopic: 'Risk-Adjusted Discount Rate',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A project riskier than the company average should be evaluated using:',
     options: [
@@ -506,7 +486,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Real Options',
     subtopic: 'Option to Expand',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Real options in capital budgeting add value by:',
     options: [
@@ -526,7 +506,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Capital Budgeting',
     subtopic: 'Post-Audit',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'A post-audit of a capital project is performed to:',
     options: [
@@ -538,7 +518,7 @@ export const CMA2E_QUESTIONS_BATCH1: Question[] = [
     correctAnswer: 1,
     explanation: 'Post-audits compare actual cash flows and returns to projections, identifying why variances occurred. They provide accountability and improve future capital budgeting estimates.',
     reference: 'Post-Audit; Capital Budgeting Control',
-  },
+  }
 ];
 
 // Helper functions

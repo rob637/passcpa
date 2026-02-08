@@ -46,7 +46,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Net Present Value',
     subtopic: 'Unequal Lives',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When comparing mutually exclusive projects with different useful lives, the preferred method is:',
     options: [
@@ -66,7 +66,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Net Present Value',
     subtopic: 'Inflation Adjustment',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'If cash flows are estimated in nominal terms, the discount rate should:',
     options: [
@@ -150,7 +150,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'MIRR',
     subtopic: 'MIRR Calculation',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'A project has Year 0 outflow of $10,000 and Year 3 inflow of $15,000 (FV of all inflows). MIRR is approximately:',
     options: [
@@ -170,7 +170,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'MIRR',
     subtopic: 'Multiple IRRs',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A project with non-conventional cash flows (outflows in later years) may have:',
     options: [
@@ -234,7 +234,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Profitability Index',
     subtopic: 'Capital Rationing',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Under capital rationing, projects should be ranked by:',
     options: [
@@ -278,7 +278,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Real Options',
     subtopic: 'Option Value',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Traditional NPV analysis may undervalue a project when:',
     options: [
@@ -318,7 +318,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Real Options',
     subtopic: 'Timing Option',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The value of waiting to invest (timing option) increases with:',
     options: [
@@ -400,33 +400,13 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
   // Capital Budgeting Risk Analysis
   // ==========================================
   {
-    id: 'cma2-e-044',
-    courseId: 'cma',
-    section: 'CMA2',
-    blueprintArea: 'CMA2-E',
-    topic: 'Risk Analysis',
-    subtopic: 'Scenario Analysis',
-    difficulty: 'medium',
-    skillLevel: 'Application',
-    question: 'Scenario analysis differs from sensitivity analysis by:',
-    options: [
-      'Using only best-case assumptions',
-      'Changing multiple variables simultaneously',
-      'Ignoring probability of outcomes',
-      'Focusing only on costs'
-    ],
-    correctAnswer: 1,
-    explanation: 'Scenario analysis develops complete scenarios (best/worst/expected) where multiple variables change together consistently, while sensitivity analysis changes one variable at a time.',
-    reference: 'Scenario Analysis; Risk Assessment',
-  },
-  {
     id: 'cma2-e-045',
     courseId: 'cma',
     section: 'CMA2',
     blueprintArea: 'CMA2-E',
     topic: 'Risk Analysis',
     subtopic: 'Monte Carlo Simulation',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Monte Carlo simulation in capital budgeting:',
     options: [
@@ -466,7 +446,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Risk Analysis',
     subtopic: 'Certainty Equivalent',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'The certainty equivalent approach adjusts for risk by:',
     options: [
@@ -510,7 +490,7 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA2-E',
     topic: 'Capital Budgeting Methods',
     subtopic: 'Project Size',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'When NPV and IRR rankings conflict for mutually exclusive projects of different sizes, the best approach is:',
     options: [
@@ -542,5 +522,5 @@ export const CMA2E_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Discounted payback calculates time to recover the initial investment using present values of cash flows, addressing simple payback\'s failure to consider time value of money.',
     reference: 'Discounted Payback Period',
-  },
+  }
 ];

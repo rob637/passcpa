@@ -33,7 +33,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Machine Learning',
     subtopic: 'ML Applications in Finance',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A financial institution uses an algorithm that analyzes historical transaction patterns to automatically flag potentially fraudulent credit card transactions in real-time. This is an example of:',
     options: [
@@ -53,7 +53,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Machine Learning',
     subtopic: 'ML Model Evaluation',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Analysis',
     question: 'When evaluating a machine learning model for credit risk assessment, the finance team notes that 95% of predictions are correct. However, the model fails to identify 40% of actual defaults. Which metric should the team prioritize to improve?',
     options: [
@@ -97,7 +97,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Predictive Analytics',
     subtopic: 'Regression Analysis',
-    difficulty: 'hard',
+    difficulty: 'medium',
     skillLevel: 'Application',
     question: 'An analyst develops a multiple regression model: Sales = 50,000 + 2.5(Advertising) + 1,200(Salespeople) - 15(Competitor Ads). If R² = 0.85, what does this indicate?',
     options: [
@@ -201,7 +201,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Visualization',
     subtopic: 'Misleading Charts',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A manager presents a bar chart showing revenue growth, but the y-axis starts at $900,000 rather than zero, making a $50,000 increase appear as a 500% visual increase. This practice is:',
     options: [
@@ -245,7 +245,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Blockchain',
     subtopic: 'Smart Contracts',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A company implements smart contracts on a blockchain for supply chain payments. When goods are received and scanned at the warehouse, payment is automatically triggered to the supplier. What is the PRIMARY benefit?',
     options: [
@@ -265,7 +265,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Blockchain',
     subtopic: 'Audit Implications',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'How does blockchain technology potentially impact financial statement auditing?',
     options: [
@@ -373,7 +373,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Governance',
     subtopic: 'Data Stewardship',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'In a data governance framework, the role of Data Steward is BEST described as:',
     options: [
@@ -393,7 +393,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Governance',
     subtopic: 'Master Data Management',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'A company has customer data in five different systems with inconsistent formats and duplicate records. Implementing Master Data Management (MDM) would:',
     options: [
@@ -417,7 +417,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Cloud Security',
     subtopic: 'Shared Responsibility Model',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'Under the cloud shared responsibility model for IaaS (Infrastructure as a Service), which security control is the CUSTOMER\'s responsibility?',
     options: [
@@ -481,7 +481,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Data Warehousing',
     subtopic: 'Data Warehouse Architecture',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'A star schema in a data warehouse consists of:',
     options: [
@@ -525,7 +525,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'Natural Language Processing',
     subtopic: 'NLP Financial Applications',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Application',
     question: 'A company uses Natural Language Processing (NLP) to analyze customer complaint emails and automatically categorize them by issue type and sentiment. This application primarily supports:',
     options: [
@@ -545,7 +545,7 @@ export const CMA1F_QUESTIONS_BATCH2: Question[] = [
     blueprintArea: 'CMA1-F',
     topic: 'API Integration',
     subtopic: 'Real-Time Data Integration',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Evaluation',
     question: 'A company integrates its ERP system with banking partners via APIs for real-time cash position visibility. Which consideration is MOST critical for this integration?',
     options: [

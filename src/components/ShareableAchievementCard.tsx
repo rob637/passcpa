@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Share2, Download, X, Linkedin, Twitter } from 'lucide-react';
 import html2canvas from 'html2canvas';
-import clsx from 'clsx';
+import { Button } from './common/Button';
 
 interface ShareableAchievementCardProps {
   achievement: {
@@ -128,13 +128,14 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
           <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
             Share Your Achievement
           </h2>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={onClose}
-            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
-          </button>
+          </Button>
         </div>
 
         {/* Shareable Card Preview */}
@@ -202,50 +203,45 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
           
           <div className="grid grid-cols-4 gap-3">
             {/* Native Share (mobile) */}
-            <button
+            <Button
+              variant="primary"
               onClick={handleNativeShare}
               disabled={isGenerating}
-              className={clsx(
-                "flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors",
-                "bg-primary-500 hover:bg-primary-600 text-white",
-                isGenerating && "opacity-50 cursor-not-allowed"
-              )}
+              loading={isGenerating}
+              className="flex flex-col items-center gap-1.5 p-3 rounded-xl"
             >
               <Share2 className="w-5 h-5" />
               <span className="text-xs font-medium">Share</span>
-            </button>
+            </Button>
 
             {/* Download */}
-            <button
+            <Button
+              variant="secondary"
               onClick={handleDownload}
               disabled={isGenerating}
-              className={clsx(
-                "flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors",
-                "bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200",
-                isGenerating && "opacity-50 cursor-not-allowed"
-              )}
+              className="flex flex-col items-center gap-1.5 p-3 rounded-xl"
             >
               <Download className="w-5 h-5" />
               <span className="text-xs font-medium">Save</span>
-            </button>
+            </Button>
 
             {/* LinkedIn */}
-            <button
+            <Button
               onClick={handleLinkedInShare}
-              className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white transition-colors"
+              className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white"
             >
               <Linkedin className="w-5 h-5" />
               <span className="text-xs font-medium">LinkedIn</span>
-            </button>
+            </Button>
 
             {/* Twitter/X */}
-            <button
+            <Button
               onClick={handleTwitterShare}
-              className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white transition-colors"
+              className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white"
             >
               <Twitter className="w-5 h-5" />
               <span className="text-xs font-medium">X</span>
-            </button>
+            </Button>
           </div>
 
           <p className="text-xs text-slate-600 dark:text-slate-300 text-center mt-4">

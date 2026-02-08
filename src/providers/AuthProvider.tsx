@@ -18,8 +18,8 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { httpsCallable } from 'firebase/functions';
 import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
-import type { FieldValue, Timestamp } from 'firebase/firestore';
 import { Capacitor } from '@capacitor/core';
+import { UserProfile } from '../types';
 
 // Check if running in native Capacitor app
 const isNativePlatform = Capacitor.isNativePlatform();
@@ -29,31 +29,8 @@ interface FirebaseError extends Error {
   code?: string;
 }
 
-export interface UserProfile {
-  id: string;
-  uid?: string; // Alias for id, some code uses this
-  email: string;
-  displayName: string;
-  photoURL?: string | null; // User profile photo
-  activeCourse?: string; // Primary course the user is studying
-  createdAt: Timestamp | FieldValue; // Firestore Timestamp
-  onboardingComplete: boolean;
-  onboardingCompletedAt?: Timestamp | Date | null;
-  examSection: string | null;
-  examDate: Timestamp | Date | null;
-  dailyGoal: number;
-  studyPlanId: string | null;
-  isAdmin?: boolean; // Admin role for CMS access
-  dailyReminderEnabled?: boolean;
-  dailyReminderTime?: string;
-  weeklyReportEnabled?: boolean;
-  timezone?: string; // IANA timezone string (e.g., "America/New_York")
-  settings: {
-    notifications: boolean;
-    darkMode: boolean;
-    soundEffects: boolean;
-  };
-}
+// Re-export UserProfile for backwards compatibility
+export type { UserProfile } from '../types';
 
 export interface AuthContextType {
   user: User | null;
@@ -130,7 +107,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             email: user.email || '',
             displayName: user.displayName || '',
             photoURL: user.photoURL,
-            createdAt: serverTimestamp(),
+            createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
             examSection: null,
             examDate: null,
@@ -211,7 +188,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       const newUserProfile: Omit<UserProfile, 'id'> = {
         email,
         displayName,
-        createdAt: serverTimestamp(),
+        createdAt: serverTimestamp() as unknown as Date,
         onboardingComplete: false,
         examSection: null,
         examDate: null,
@@ -331,7 +308,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             email: user.email || '',
             displayName: user.displayName || '',
             photoURL: user.photoURL,
-            createdAt: serverTimestamp(),
+            createdAt: serverTimestamp() as unknown as Date,
             onboardingComplete: false,
             examSection: null,
             examDate: null,

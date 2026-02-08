@@ -24,7 +24,7 @@ interface UploadResults {
  */
 export const uploadAllQuestions = async (onProgress: ProgressCallback = () => {}) => {
   // Dynamically import questions to reduce bundle size
-  const { ALL_QUESTIONS } = await import('../questions');
+  const { ALL_QUESTIONS } = await import('../cpa/questions');
   
   const results: UploadResults = {
     success: 0,

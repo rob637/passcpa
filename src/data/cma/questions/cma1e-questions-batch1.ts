@@ -47,7 +47,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Internal Control',
     subtopic: 'Limitations',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a limitation of internal control?',
     options: [
@@ -111,7 +111,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: 'Components',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The COSO Internal Control Framework consists of how many interrelated components?',
     options: [
@@ -131,7 +131,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: 'Control Environment',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The control environment is best described as:',
     options: [
@@ -211,7 +211,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'COSO Framework',
     subtopic: 'Information and Communication',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'The information and communication component ensures that:',
     options: [
@@ -275,7 +275,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Enterprise Risk Management',
     subtopic: 'Risk Appetite',
-    difficulty: 'hard',
+    difficulty: 'easy',
     skillLevel: 'Analysis',
     question: 'Risk appetite is best described as:',
     options: [
@@ -383,7 +383,7 @@ export const CMA1E_QUESTIONS_BATCH1: Question[] = [
     blueprintArea: 'CMA1-E',
     topic: 'Fraud',
     subtopic: 'Types of Fraud',
-    difficulty: 'medium',
+    difficulty: 'easy',
     skillLevel: 'Remembering and Understanding',
     question: 'Asset misappropriation fraud involves:',
     options: [

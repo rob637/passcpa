@@ -88,7 +88,6 @@ const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 
 // Business Pages
-const Pricing = lazy(() => import('./components/pages/Pricing'));
 const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
 // Unified Landing Pages (new template system)
 const CPALanding = lazy(() => import('./components/pages/landing/CPALandingNew'));
@@ -479,13 +478,10 @@ function App() {
                 />
                 
                 {/* Business Pages (public) */}
+                {/* Pricing is now per-exam - redirect to home */}
                 <Route
                   path="/pricing"
-                  element={
-                    <SuspensePage>
-                      <Pricing />
-                    </SuspensePage>
-                  }
+                  element={<Navigate to="/" replace />}
                 />
 
                 {/* Onboarding (protected but different layout) */}

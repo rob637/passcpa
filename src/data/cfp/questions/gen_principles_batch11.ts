@@ -1,0 +1,491 @@
+/**
+ * CFP General Principles Questions - Batch 11
+ * Domain 2: General Principles of Financial Planning (17% of exam)
+ * 25 additional questions
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_GEN_BATCH11_QUESTIONS: Question[] = [
+  // GEN-1: Planning Process
+  {
+    id: 'CFP-GEN-B11-001',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Planning Process',
+    subtopic: 'Developing Recommendations',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'When developing financial planning recommendations, the planner should:',
+    options: [
+      'A) Use the same recommendations for similar situations',
+      'B) Consider multiple alternatives, evaluate trade-offs, and select recommendations that align with client goals and circumstances',
+      'C) Recommend only the most profitable options',
+      'D) Avoid discussing alternatives'
+    ],
+    correctAnswer: 1,
+    explanation: 'Recommendation development: analyze multiple approaches, consider trade-offs (cost, complexity, risk), align with client\'s specific goals, values, and constraints. Not one-size-fits-all—tailor to individual. Present rationale, discuss alternatives considered. Document analysis. Allow client input. Iterative process—may refine based on client feedback.'
+  },
+  {
+    id: 'CFP-GEN-B11-002',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Planning Process',
+    subtopic: 'Implementation Coordination',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Coordinating with other professionals during implementation:',
+    options: [
+      'A) Is the client\'s sole responsibility',
+      'B) Ensures consistent advice, avoids conflicts, and leverages expertise in specialized areas like law and tax',
+      'C) Creates liability issues',
+      'D) Is not recommended'
+    ],
+    correctAnswer: 1,
+    explanation: 'Team approach: financial planner often coordinates—attorneys (estate docs, business), CPAs (tax compliance, planning), insurance specialists. Benefits: consistent advice, appropriate expertise, efficient process. Planner: may quarterback, ensure communication, follow up. Clear roles, authorized information sharing. Reduces errors, comprehensive service.'
+  },
+  {
+    id: 'CFP-GEN-B11-003',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Planning Process',
+    subtopic: 'Scope of Engagement',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A defined scope of engagement benefits both planner and client by:',
+    options: [
+      'A) Limiting all communication',
+      'B) Clarifying expectations, defining deliverables and timeframes, and establishing boundaries of the planning relationship',
+      'C) Eliminating flexibility',
+      'D) Reducing planner liability only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Scope definition: what\'s covered (and not), deliverables, timeline, fees, responsibilities. Benefits: client knows what to expect, planner knows what to deliver, prevents scope creep, reduces misunderstandings. Document in engagement letter. Can be comprehensive or limited engagement. Review and update as relationship evolves. Foundation for successful planning relationship.'
+  },
+  // GEN-2: Financial Statements
+  {
+    id: 'CFP-GEN-B11-004',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Savings Rate Calculation',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'The savings rate is calculated as:',
+    options: [
+      'A) Total income ÷ expenses',
+      'B) Total savings (including employer contributions) ÷ gross income, expressed as percentage',
+      'C) Net worth ÷ income',
+      'D) Expenses ÷ income'
+    ],
+    correctAnswer: 1,
+    explanation: 'Savings rate: (Total new savings) / (Gross income) × 100. Include: 401(k) employee + employer contributions, IRA, taxable savings, debt principal reduction (some methods). Target: 15-20%+ for retirement. Higher if starting late or early retirement goal. Key progress metric. Track consistently over time. Consider separate rates for different goals.'
+  },
+  {
+    id: 'CFP-GEN-B11-005',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Liquidity Measures',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The liquidity ratio (liquid assets ÷ monthly expenses) should generally be:',
+    options: [
+      'A) At least 1.0',
+      'B) 3-6 months of expenses for most households, higher for self-employed or variable income',
+      'C) Exactly 12 months',
+      'D) Below 1 month'
+    ],
+    correctAnswer: 1,
+    explanation: 'Liquidity ratio: liquid assets (cash, money market, easily accessible) / monthly expenses. Target: 3-6 months standard, higher for: unstable job, self-employed, variable income, single income, health issues. Lower acceptable if: very stable employment, strong family support, excellent credit access. Balance: enough security without excessive low-yield assets.'
+  },
+  {
+    id: 'CFP-GEN-B11-006',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Housing Ratios',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The front-end housing ratio (housing debt ratio) used in mortgage qualification:',
+    options: [
+      'A) Includes all debt payments',
+      'B) Is principal, interest, taxes, and insurance (PITI) divided by gross monthly income, typically limited to 28%',
+      'C) Uses net income',
+      'D) Measures 50% of income'
+    ],
+    correctAnswer: 1,
+    explanation: 'Front-end ratio: PITI / Gross monthly income. Standard limit: 28% (some programs higher). Components: mortgage principal + interest, property taxes, homeowners insurance, HOA fees, PMI if applicable. Back-end ratio: adds all debt payments (front-end + car, student loans, credit cards). Typical limit: 36-43% depending on loan type. Guidelines—exceptions exist.'
+  },
+  // GEN-3: Time Value of Money
+  {
+    id: 'CFP-GEN-B11-007',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Internal Rate of Return',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The internal rate of return (IRR) represents:',
+    options: [
+      'A) Average annual return',
+      'B) The discount rate that makes net present value of all cash flows equal to zero',
+      'C) Return on initial investment',
+      'D) Simple interest rate'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRR: rate where NPV = 0. Measures: return on invested capital considering all cash flows and timing. Calculation: iterative (calculators/software). Uses: compare investments with different cash flow patterns. Limitations: assumes reinvestment at IRR (may be unrealistic), multiple solutions possible with unconventional cash flows. Compare to opportunity cost or required return.'
+  },
+  {
+    id: 'CFP-GEN-B11-008',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Effective Annual Rate',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The effective annual rate (EAR) accounts for:',
+    options: [
+      'A) Simple interest only',
+      'B) The impact of compounding frequency on the true annual return, making rates with different compounding comparable',
+      'C) Inflation adjustments',
+      'D) Tax effects'
+    ],
+    correctAnswer: 1,
+    explanation: 'EAR: true annual rate accounting for compounding. Formula: EAR = (1 + i/n)^n - 1, where i = nominal rate, n = compounding periods. Example: 12% compounded monthly = (1 + 0.12/12)^12 - 1 = 12.68% EAR. Use: comparing accounts/loans with different compounding. APR vs. APY: APY is essentially EAR. More compounding = higher effective rate.'
+  },
+  {
+    id: 'CFP-GEN-B11-009',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Annuity Due',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An annuity due differs from an ordinary annuity in that:',
+    options: [
+      'A) It pays less total',
+      'B) Payments occur at the beginning of each period rather than the end, resulting in higher present and future values',
+      'C) It has variable payments',
+      'D) It lasts longer'
+    ],
+    correctAnswer: 1,
+    explanation: 'Annuity due: payments at period beginning. Ordinary: payments at period end. Annuity due values: multiply ordinary annuity value by (1 + r). Higher PV and FV because each payment has more time to earn/less time discounted. Examples: rent, insurance premiums (typically annuity due). Most investments assume ordinary annuity. Calculator setting: BGN vs. END mode.'
+  },
+  // GEN-4: Economics
+  {
+    id: 'CFP-GEN-B11-010',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Economics',
+    subtopic: 'Leading Economic Indicators',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Leading economic indicators include:',
+    options: [
+      'A) GDP and employment',
+      'B) Building permits, stock prices, and manufacturing new orders, which tend to change before the overall economy',
+      'C) Only unemployment rate',
+      'D) Consumer spending only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Leading indicators: change before economy. Examples: building permits, stock market, manufacturing new orders, consumer expectations, jobless claims, credit conditions. Coincident: change with economy (employment, production). Lagging: change after (unemployment rate, loan delinquencies). Conference Board publishes composite index. Use: anticipate economic turns, not perfect prediction.'
+  },
+  {
+    id: 'CFP-GEN-B11-011',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Economics',
+    subtopic: 'Interest Rate Structure',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The term structure of interest rates (yield curve) typically slopes upward because:',
+    options: [
+      'A) Longer-term bonds are always safer',
+      'B) Investors demand higher yields for longer maturities due to greater interest rate risk and liquidity preference',
+      'C) Short-term rates are controlled',
+      'D) Inflation is always expected'
+    ],
+    correctAnswer: 1,
+    explanation: 'Normal yield curve: longer maturities = higher yields. Reasons: interest rate risk (longer duration = more price sensitivity), liquidity preference (investors prefer shorter, demand premium for longer), inflation uncertainty. Inverted curve: short > long (often signals recession). Flat: similar across maturities. Shape: has predictive value for economy and rate expectations.'
+  },
+  {
+    id: 'CFP-GEN-B11-012',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Economics',
+    subtopic: 'Federal Reserve Tools',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Federal Reserve influences monetary conditions primarily through:',
+    options: [
+      'A) Direct interest rate setting',
+      'B) Open market operations, federal funds rate target, and reserve requirements',
+      'C) Fiscal policy',
+      'D) Tax policy'
+    ],
+    correctAnswer: 1,
+    explanation: 'Fed tools: Open market operations (buy/sell Treasuries—most used), fed funds rate target (sets short-term rate expectations), reserve requirements (rarely changed), discount rate, quantitative easing/tightening. Expansionary: lower rates, buy securities. Contractionary: raise rates, sell securities. Goals: price stability, maximum employment. Monetary policy—different from fiscal (government spending/taxes).'
+  },
+  // GEN-5: Planning Concepts
+  {
+    id: 'CFP-GEN-B11-013',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Planning Concepts',
+    subtopic: 'Emergency Fund Location',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Emergency funds should ideally be held in accounts that are:',
+    options: [
+      'A) Invested for maximum growth',
+      'B) Liquid, stable in value, and accessible without penalty, such as high-yield savings or money market',
+      'C) Locked up for one year',
+      'D) In retirement accounts'
+    ],
+    correctAnswer: 1,
+    explanation: 'Emergency fund characteristics: liquid (access within days), stable (no market risk), accessible (no penalty). Options: high-yield savings, money market accounts, short-term CDs with no-penalty option, I-Bonds (after 1-year holding). Not stocks (volatile), not retirement accounts (penalties/taxes). Balance: enough return to maintain purchasing power, primary goal is availability.'
+  },
+  {
+    id: 'CFP-GEN-B11-014',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Planning Concepts',
+    subtopic: 'Goal Prioritization',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'When clients cannot fund all goals, prioritization should consider:',
+    options: [
+      'A) Highest return goals first',
+      'B) Time sensitivity, flexibility, consequences of not meeting goal, and which goals provide foundation for others',
+      'C) Ignore some goals entirely',
+      'D) Only short-term goals'
+    ],
+    correctAnswer: 1,
+    explanation: 'Prioritization factors: time sensitivity (can\'t defer some), flexibility (can adjust some goals), impact of not meeting (essential vs. nice-to-have), foundational nature (emergency fund enables other goals). Framework: needs (essentials) → wants (lifestyle) → wishes (nice if possible). Client values matter—not just planner preference. Iterative—revisit as circumstances change.'
+  },
+  {
+    id: 'CFP-GEN-B11-015',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Planning Concepts',
+    subtopic: 'Financial Independence',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Financial independence is typically defined as:',
+    options: [
+      'A) Having any income',
+      'B) Having sufficient assets to cover living expenses indefinitely without requiring employment income',
+      'C) Receiving Social Security',
+      'D) Having no debt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Financial independence (FI): investment income/assets can sustain expenses indefinitely. Calculate: annual expenses × 25 (4% rule). FI ≠ retirement (may choose to work). FIRE movement: Financial Independence, Retire Early. Steps: define expenses, calculate target, determine savings needed. Allows: work optional, choices based on want vs. need. Partial FI: valuable milestone.'
+  },
+  // Additional Topics
+  {
+    id: 'CFP-GEN-B11-016',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Planning Process',
+    subtopic: 'Client Feedback',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Incorporating client feedback into the planning process:',
+    options: [
+      'A) Is optional',
+      'B) Ensures recommendations align with client preferences and increases likelihood of implementation',
+      'C) Slows down planning',
+      'D) Is only for complaints'
+    ],
+    correctAnswer: 1,
+    explanation: 'Client feedback value: confirms understanding, surfaces concerns, improves recommendations, builds buy-in. When to seek: after presenting options, during implementation planning, in ongoing monitoring. Methods: direct questions, satisfaction surveys, review meetings. Act on feedback—clients want to be heard. Iterative process leads to better outcomes. Builds relationship.'
+  },
+  {
+    id: 'CFP-GEN-B11-017',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Net Worth Trends',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Tracking net worth over time reveals:',
+    options: [
+      'A) Only current position',
+      'B) Progress toward goals, impact of savings habits, and overall financial trajectory',
+      'C) Tax obligations',
+      'D) Income changes only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Net worth tracking: snapshot → trend. Reveals: accumulation rate, debt reduction progress, investment growth, spending pattern impact. Calculate: at least annually, ideally quarterly. Components: what\'s growing/declining? Benchmarks: age-based targets, goal-based requirements. More meaningful than income alone. Motivating when heading right direction.'
+  },
+  {
+    id: 'CFP-GEN-B11-018',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Serial Payments',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Serial payments (payments growing at a constant rate each period):',
+    options: [
+      'A) Cannot be calculated',
+      'B) Require growing annuity formulas that account for both time value and growth rate',
+      'C) Are same as level payments',
+      'D) Only increase with inflation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Growing (serial) payments: increase each period at fixed rate. Example: retirement income increasing 3% for inflation. Formula: involves relationship between growth rate (g) and discount rate (r). PV = PMT / (r - g) for simple growing perpetuity. Finite: more complex. Financial calculators: may not have built-in; use spreadsheets. Common in retirement planning with inflation adjustments.'
+  },
+  {
+    id: 'CFP-GEN-B11-019',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Economics',
+    subtopic: 'Consumer Confidence',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Consumer confidence indicators measure:',
+    options: [
+      'A) Actual spending amounts',
+      'B) Consumer sentiment about current and future economic conditions, which often predicts spending behavior',
+      'C) Only business outlook',
+      'D) Government policy impact'
+    ],
+    correctAnswer: 1,
+    explanation: 'Consumer confidence: survey-based measure of household sentiment. Key surveys: Conference Board (Consumer Confidence Index), University of Michigan (Consumer Sentiment). Components: current conditions, expectations. Why it matters: consumer spending ~70% of GDP. High confidence → more spending, lower saving. Useful for: economic forecasting, retail sector analysis. Monthly data with market impact.'
+  },
+  {
+    id: 'CFP-GEN-B11-020',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Planning Concepts',
+    subtopic: 'Debt Management Strategies',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The avalanche method of debt repayment:',
+    options: [
+      'A) Pays smallest balances first',
+      'B) Prioritizes debts by interest rate, paying highest-rate debt first to minimize total interest paid',
+      'C) Makes minimum payments only',
+      'D) Uses balance transfers exclusively'
+    ],
+    correctAnswer: 1,
+    explanation: 'Avalanche method: order by interest rate (highest first). Mathematically optimal—minimizes total interest. Compare to snowball: order by balance (smallest first)—psychological wins motivate. Avalanche: better for disciplined, motivated. Snowball: better if need quick wins for motivation. Hybrid approaches exist. Both: make minimums on all, extra to target debt.'
+  },
+  {
+    id: 'CFP-GEN-B11-021',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-1',
+    topic: 'Planning Process',
+    subtopic: 'Review Frequency',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The frequency of financial plan reviews should be:',
+    options: [
+      'A) Only when client requests',
+      'B) Based on engagement terms, with additional reviews triggered by major life changes or market events',
+      'C) Exactly annual',
+      'D) Only every 5 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'Review cadence: varies by client complexity and engagement. Common: annual comprehensive review. Triggers for interim: major life events (marriage, divorce, job change, inheritance), significant market moves, tax law changes, approaching milestones. Investment-focused: may be quarterly. Comprehensive planning: often annual sufficient unless triggers. Define in engagement. Some clients need more touch points.'
+  },
+  {
+    id: 'CFP-GEN-B11-022',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-2',
+    topic: 'Financial Statements',
+    subtopic: 'Asset Allocation Review',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Personal balance sheet review should examine:',
+    options: [
+      'A) Only totals',
+      'B) Asset composition, liquidity, diversification, tax characteristics, and alignment with goals and risk tolerance',
+      'C) Only retirement accounts',
+      'D) Debt only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Balance sheet analysis: beyond totals. Asset mix: liquid vs. illiquid, investment vs. personal use. Tax: taxable, tax-deferred, tax-free. Diversification: asset class, sector, geography. Concentration: single stock, real estate heavy? Alignment: matches goals timeline and risk capacity? Debt: interest rates, tax-deductible? Regular review catches drift, maintains appropriate positioning.'
+  },
+  {
+    id: 'CFP-GEN-B11-023',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-3',
+    topic: 'Time Value of Money',
+    subtopic: 'Rule of 72',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Rule of 72 provides:',
+    options: [
+      'A) Exact doubling time',
+      'B) Quick estimate of years to double money by dividing 72 by the interest rate percentage',
+      'C) Future value calculation',
+      'D) Present value shortcut'
+    ],
+    correctAnswer: 1,
+    explanation: 'Rule of 72: Years to double = 72 / Interest rate(%). Example: at 6%, doubles in 12 years. Quick mental math—not exact but close. Variations: 70 slightly more accurate for simple interest, 72 for compound. Use in client meetings for quick illustrations. Works backward: what rate to double in X years? Rate = 72/Years. Educational tool.'
+  },
+  {
+    id: 'CFP-GEN-B11-024',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-4',
+    topic: 'Economics',
+    subtopic: 'Economic Cycles',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Economic expansion phases are typically characterized by:',
+    options: [
+      'A) Rising unemployment',
+      'B) Growing GDP, declining unemployment, increasing business investment, and often rising asset prices',
+      'C) Deflation',
+      'D) Decreasing profits'
+    ],
+    correctAnswer: 1,
+    explanation: 'Expansion characteristics: GDP growth, falling unemployment, rising corporate profits, increasing consumer spending, rising asset prices, often accompanied by moderate inflation. Duration: varies widely (recent 2009-2020 was exceptionally long). Implications for planning: good time to build reserves for next contraction, rebalancing opportunities, evaluate risk posture. Doesn\'t last forever—prepare for cycle.'
+  },
+  {
+    id: 'CFP-GEN-B11-025',
+    courseId: 'cfp',
+    section: 'CFP-GEN',
+    blueprintArea: 'GEN-5',
+    topic: 'Planning Concepts',
+    subtopic: 'Risk Management Basics',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The four basic risk management techniques are:',
+    options: [
+      'A) Only insurance and avoidance',
+      'B) Avoidance, reduction, retention (self-insurance), and transfer (insurance, contracts)',
+      'C) Only transfer methods',
+      'D) Ignore and accept'
+    ],
+    correctAnswer: 1,
+    explanation: 'Risk management techniques: Avoidance (don\'t engage in risky activity), Reduction (minimize probability or impact), Retention (self-insure, accept risk), Transfer (insurance, contracts shift risk to others). Application depends on: risk magnitude, probability, cost of each approach. Combination common: reduce risk + insure residual + retain small exposures. Foundation for all insurance planning.'
+  }
+];

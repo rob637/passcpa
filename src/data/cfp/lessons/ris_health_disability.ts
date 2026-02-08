@@ -11,7 +11,7 @@ import { CFPLesson } from '../../../types/cfp';
 export const CFP_RIS3_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L008',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     title: 'Health Insurance Fundamentals',
     order: 8,
@@ -193,7 +193,7 @@ All ACA plans must cover:
   },
   {
     id: 'CFP-RIS-L009',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     title: 'Disability Income Insurance',
     order: 9,
@@ -364,7 +364,7 @@ $$\\text{Residual Benefit} = \\frac{\\text{Prior Income} - \\text{Current Income
   },
   {
     id: 'CFP-RIS-L010',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     title: 'Long-Term Care Insurance',
     order: 10,
@@ -547,7 +547,7 @@ Protect assets from Medicaid spend-down
   },
   {
     id: 'CFP-RIS-L011',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-3',
     title: 'Medicare and Social Security Health Benefits',
     order: 11,

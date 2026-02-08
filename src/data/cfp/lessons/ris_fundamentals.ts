@@ -11,7 +11,7 @@ import { CFPLesson } from '../../../types/cfp';
 export const CFP_RIS1_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L001',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     title: 'Principles of Risk Management',
     order: 1,
@@ -175,7 +175,7 @@ Distribute risk among parties
   },
   {
     id: 'CFP-RIS-L002',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     title: 'Insurance Fundamentals',
     order: 2,
@@ -360,7 +360,7 @@ Rating agencies:
   },
   {
     id: 'CFP-RIS-L003',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-1',
     title: 'Insurance Pricing and Underwriting',
     order: 3,

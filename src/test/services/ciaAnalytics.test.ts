@@ -259,41 +259,21 @@ describe('ciaAnalytics', () => {
 
   describe('recordMockExam', () => {
     it('increments mock exams taken', () => {
-      const updated = recordMockExam(analytics, {
-        part: 'CIA1',
-        rawScore: 75,
-        timeSpent: 150,
-        date: new Date(),
-      });
+      const updated = recordMockExam(analytics, 'CIA1', 75, 75, 100);
       expect(updated.mockExamsTaken['CIA1']).toBe(1);
       expect(updated.totalMockExamsTaken).toBe(1);
     });
 
     it('records scaled score', () => {
-      const updated = recordMockExam(analytics, {
-        part: 'CIA1',
-        rawScore: 75,
-        timeSpent: 150,
-        date: new Date(),
-      });
+      const updated = recordMockExam(analytics, 'CIA1', 75, 75, 100);
       expect(updated.scaledScores['CIA1']).toHaveLength(1);
       expect(updated.scaledScores['CIA1'][0]).toBe(600);
     });
 
     it('tracks mock exam history per part', () => {
       let updated = analytics;
-      updated = recordMockExam(updated, {
-        part: 'CIA1',
-        rawScore: 70,
-        timeSpent: 150,
-        date: new Date(),
-      });
-      updated = recordMockExam(updated, {
-        part: 'CIA2',
-        rawScore: 80,
-        timeSpent: 120,
-        date: new Date(),
-      });
+      updated = recordMockExam(updated, 'CIA1', 70, 70, 100);
+      updated = recordMockExam(updated, 'CIA2', 80, 80, 100);
       expect(updated.mockExamsTaken['CIA1']).toBe(1);
       expect(updated.mockExamsTaken['CIA2']).toBe(1);
       expect(updated.totalMockExamsTaken).toBe(2);
@@ -345,21 +325,22 @@ describe('ciaAnalytics', () => {
   describe('getAnalyticsSummary', () => {
     it('returns summary with all key metrics', () => {
       const summary = getAnalyticsSummary(analytics);
-      expect(summary).toHaveProperty('totalQuestionsAttempted');
-      expect(summary).toHaveProperty('overallAccuracy');
-      expect(summary).toHaveProperty('examReadiness');
-      expect(summary).toHaveProperty('partSummaries');
+      expect(summary).toHaveProperty('overview');
+      expect(summary.overview).toHaveProperty('accuracy');
+      expect(summary.overview).toHaveProperty('questionsCompleted');
+      expect(summary).toHaveProperty('partBreakdown');
     });
 
     it('includes all 3 parts in summary', () => {
       const summary = getAnalyticsSummary(analytics);
-      expect(summary.partSummaries).toHaveLength(3);
+      expect(summary.partBreakdown).toHaveLength(3);
     });
 
     it('includes CIA-specific metrics', () => {
       const summary = getAnalyticsSummary(analytics);
-      expect(summary).toHaveProperty('ippfKnowledge');
-      expect(summary).toHaveProperty('iiaStandardsMastery');
+      expect(summary).toHaveProperty('ciaSpecific');
+      expect(summary.ciaSpecific).toHaveProperty('ippfScore');
+      expect(summary.ciaSpecific).toHaveProperty('iiaStandards');
     });
   });
 
@@ -376,14 +357,16 @@ describe('ciaAnalytics', () => {
         });
       }
       const insights = getPartInsights(updated, 'CIA1');
-      expect(insights.part).toBe('CIA1');
-      expect(insights.accuracy).toBe(50);
+      expect(insights).not.toBeNull();
+      expect(insights!.part).toBe('CIA1');
+      expect(insights!.accuracy).toBe(50);
     });
 
     it('includes recommendations', () => {
       const insights = getPartInsights(analytics, 'CIA2');
-      expect(insights.recommendations).toBeDefined();
-      expect(Array.isArray(insights.recommendations)).toBe(true);
+      expect(insights).not.toBeNull();
+      expect(insights!.recommendations).toBeDefined();
+      expect(Array.isArray(insights!.recommendations)).toBe(true);
     });
   });
 
@@ -438,7 +421,8 @@ describe('ciaAnalytics', () => {
           attemptedAt: new Date(),
         });
       }
-      updated = updatePartTrend(updated, 'CIA1');
+      // Pass recent accuracy (100% since all correct)
+      updated = updatePartTrend(updated, 'CIA1', 100);
       expect(['improving', 'stable']).toContain(updated.partMastery['CIA1'].trend);
     });
   });

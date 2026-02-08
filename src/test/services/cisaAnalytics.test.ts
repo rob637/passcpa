@@ -23,7 +23,7 @@ import {
   CISAAnalytics,
   QuestionAttempt,
   StudySession,
-} from '@/services/cisaAnalytics';
+} from '../../services/cisaAnalytics';
 
 describe('cisaAnalytics', () => {
   let analytics: CISAAnalytics;
@@ -590,14 +590,14 @@ describe('cisaAnalytics', () => {
     });
 
     it('domain weights sum to 100', () => {
-      const totalWeight = Object.values(CISA_DOMAIN_CONFIG)
-        .reduce((sum: number, d: { name: string; weight: number; topics: string[] }) => sum + d.weight, 0);
+      const totalWeight = (Object.values(CISA_DOMAIN_CONFIG) as { name: string; weight: number; topics: string[] }[])
+        .reduce((sum: number, d) => sum + d.weight, 0);
       
       expect(totalWeight).toBe(100);
     });
 
     it('all domains have topics', () => {
-      Object.values(CISA_DOMAIN_CONFIG).forEach((domain: { name: string; weight: number; topics: string[] }) => {
+      (Object.values(CISA_DOMAIN_CONFIG) as { name: string; weight: number; topics: string[] }[]).forEach((domain) => {
         expect(domain.topics.length).toBeGreaterThan(0);
       });
     });

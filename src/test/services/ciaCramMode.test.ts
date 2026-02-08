@@ -14,7 +14,6 @@ import {
   IIA_STANDARDS,
   CODE_OF_ETHICS,
   HIGH_YIELD_TOPICS,
-  CramPlan,
   CramSession,
   IPPFComponent,
   IIAStandard,
@@ -187,39 +186,39 @@ describe('ciaCramMode', () => {
   describe('generateCramPlan', () => {
     it('generates plan for user', () => {
       const examDate = new Date(Date.now() + 5 * 86400000); // 5 days from now
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       expect(plan.userId).toBe('user-123');
     });
 
     it('generates 5-day plan', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const uniqueDays = new Set(plan.sessions.map((s: CramSession) => s.day));
       expect(uniqueDays.size).toBe(5);
     });
 
     it('includes multiple sessions per day', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       expect(plan.sessions.length).toBeGreaterThan(5);
     });
 
     it('initializes with zero progress', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       expect(plan.progress.sessionsCompleted).toBe(0);
       expect(plan.progress.hoursStudied).toBe(0);
     });
 
     it('starts at day 1', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       expect(plan.currentDay).toBe(1);
     });
 
     it('includes various session types', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const types = new Set(plan.sessions.map((s: CramSession) => s.type));
       expect(types.size).toBeGreaterThan(1);
     });
@@ -228,7 +227,7 @@ describe('ciaCramMode', () => {
   describe('completeSession', () => {
     it('marks session as completed', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const sessionId = plan.sessions[0].id;
       const updated = completeSession(plan, sessionId, 85);
       const session = updated.sessions.find((s: CramSession) => s.id === sessionId);
@@ -237,7 +236,7 @@ describe('ciaCramMode', () => {
 
     it('records session score', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const sessionId = plan.sessions[0].id;
       const updated = completeSession(plan, sessionId, 85);
       const session = updated.sessions.find((s: CramSession) => s.id === sessionId);
@@ -246,7 +245,7 @@ describe('ciaCramMode', () => {
 
     it('updates progress', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const sessionId = plan.sessions[0].id;
       const updated = completeSession(plan, sessionId, 85);
       expect(updated.progress.sessionsCompleted).toBe(1);
@@ -254,7 +253,7 @@ describe('ciaCramMode', () => {
 
     it('updates hours studied', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const sessionId = plan.sessions[0].id;
       const duration = plan.sessions[0].duration;
       const updated = completeSession(plan, sessionId, 85);
@@ -265,7 +264,7 @@ describe('ciaCramMode', () => {
   describe('getDaySessions', () => {
     it('returns sessions for specified day', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const day1Sessions = getDaySessions(plan, 1);
       expect(day1Sessions.length).toBeGreaterThan(0);
       expect(day1Sessions.every((s: CramSession) => s.day === 1)).toBe(true);
@@ -273,7 +272,7 @@ describe('ciaCramMode', () => {
 
     it('returns empty array for invalid day', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const invalidDay = getDaySessions(plan, 10);
       expect(invalidDay).toHaveLength(0);
     });
@@ -282,14 +281,14 @@ describe('ciaCramMode', () => {
   describe('advanceDay', () => {
     it('increments current day', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const advanced = advanceDay(plan);
       expect(advanced.currentDay).toBe(2);
     });
 
     it('caps at day 5', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      let plan = generateCramPlan('user-123', examDate, 'CIA1');
+      let plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       for (let i = 0; i < 10; i++) {
         plan = advanceDay(plan);
       }
@@ -380,14 +379,14 @@ describe('ciaCramMode', () => {
   describe('cram plan structure', () => {
     it('day 1 focuses on foundations', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const day1 = getDaySessions(plan, 1);
       expect(day1.length).toBeGreaterThan(0);
     });
 
     it('day 5 includes review and practice', () => {
       const examDate = new Date(Date.now() + 5 * 86400000);
-      const plan = generateCramPlan('user-123', examDate, 'CIA1');
+      const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
       const day5 = getDaySessions(plan, 5);
       const hasReview = day5.some((s: CramSession) => 
         s.type === 'review' || s.type === 'practice'
@@ -400,7 +399,7 @@ describe('ciaCramMode', () => {
     describe('Part 1 - Essentials of Internal Auditing', () => {
       it('emphasizes IPPF framework', () => {
         const examDate = new Date(Date.now() + 5 * 86400000);
-        const plan = generateCramPlan('user-123', examDate, 'CIA1');
+        const plan = generateCramPlan('user-123', examDate, ['CIA1'], []);
         const ippfSessions = plan.sessions.filter((s: CramSession) =>
           s.topic.toLowerCase().includes('ippf') ||
           s.topic.toLowerCase().includes('framework') ||
@@ -413,7 +412,7 @@ describe('ciaCramMode', () => {
     describe('Part 2 - Practice of Internal Auditing', () => {
       it('includes engagement topics', () => {
         const examDate = new Date(Date.now() + 5 * 86400000);
-        const plan = generateCramPlan('user-123', examDate, 'CIA2');
+        const plan = generateCramPlan('user-123', examDate, ['CIA2'], []);
         const engagementSessions = plan.sessions.filter((s: CramSession) =>
           s.topic.toLowerCase().includes('engagement') ||
           s.topic.toLowerCase().includes('planning') ||
@@ -426,7 +425,7 @@ describe('ciaCramMode', () => {
     describe('Part 3 - Business Knowledge', () => {
       it('covers business and IT topics', () => {
         const examDate = new Date(Date.now() + 5 * 86400000);
-        const plan = generateCramPlan('user-123', examDate, 'CIA3');
+        const plan = generateCramPlan('user-123', examDate, ['CIA3'], []);
         const businessSessions = plan.sessions.filter((s: CramSession) =>
           s.topic.toLowerCase().includes('business') ||
           s.topic.toLowerCase().includes('it') ||

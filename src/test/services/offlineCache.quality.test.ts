@@ -217,17 +217,17 @@ describe('Offline Cache Service - REAL Tests', () => {
 
   describe('cacheTBS', () => {
     const sampleTBS = [
-      { id: 'tbs1', section: 'FAR', title: 'Journal Entry TBS' },
-      { id: 'tbs2', section: 'AUD', title: 'Document Review TBS' },
+      { id: 'tbs1', section: 'FAR', title: 'Journal Entry TBS', type: 'journal_entry', difficulty: 'medium' },
+      { id: 'tbs2', section: 'AUD', title: 'Document Review TBS', type: 'document_review', difficulty: 'hard' },
     ];
 
     it('should cache TBS items', async () => {
-      const count = await cacheTBS(sampleTBS);
+      const count = await cacheTBS(sampleTBS as any);
       expect(count).toBe(2);
     });
 
     it('should update TBS metadata', async () => {
-      await cacheTBS(sampleTBS);
+      await cacheTBS(sampleTBS as any);
       
       const status = await getCacheStatus() as Record<string, any>;
       expect(status.tbs_count).toBe(2);

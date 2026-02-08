@@ -318,8 +318,36 @@ const VoraPrep = () => {
               CPA, EA, CMA, CIA, CFP, and CISA — all on one platform.
             </p>
 
+            {/* QUICK COURSE PICKER - Prominent near top */}
+            <div className="mb-10">
+              <p className="text-center text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">
+                Pick your certification to get started:
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {COURSES.map((course) => {
+                  const Icon = course.icon;
+                  return (
+                    <Link
+                      key={course.id}
+                      to={course.path}
+                      className={`group flex items-center gap-2 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-${course.color}-500 hover:shadow-lg px-4 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1`}
+                    >
+                      <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${course.bgGradient} flex items-center justify-center`}>
+                        <Icon className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <div className="font-bold text-slate-900 dark:text-white">{course.name}</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">{course.stats.questions} Questions</div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Quick stats */}
-            <div className="flex flex-wrap justify-center gap-8 mb-10">
+            <div className="flex flex-wrap justify-center gap-8 mb-6">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                   <BookOpen className="w-6 h-6 text-blue-600" />
@@ -349,33 +377,18 @@ const VoraPrep = () => {
                 <div className="text-sm text-slate-500">During Beta</div>
               </div>
             </div>
-
-            {/* CTA */}
-            <div className="flex justify-center">
-              <a 
-                href="#courses" 
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
-              >
-                Choose Your Certification
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
           </div>
         </section>
 
-        {/* Course Selection Section */}
+        {/* Detailed Course Cards Section */}
         <section id="courses" className="py-8 md:py-12 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold mb-3">
-                <Award className="w-4 h-4" />
-                Professional Certifications
-              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                Choose Your Exam
+                Explore Each Certification
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                Each certification has its own dedicated prep program with tailored content, 
+                Each exam has its own dedicated prep program with tailored content, 
                 practice exams, and AI-powered study tools.
               </p>
             </div>

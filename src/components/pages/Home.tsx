@@ -19,11 +19,19 @@ import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
-import { getExamDate } from '../../utils/profileHelpers';
+import { getExamDate, getCurrentSection } from '../../utils/profileHelpers';
 import { differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
+import { 
+  getCourseLearnPath, 
+  getCoursePracticePath, 
+  getCourseFlashcardPath, 
+  getCourseQuizPath, 
+  getCourseExamPath,
+  getCourseTBSPath,
+} from '../../utils/courseNavigation';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { Button } from '../common/Button';
@@ -76,8 +84,9 @@ const Home = () => {
   const firstName = userProfile?.displayName?.split(' ')[0] || 'there';
   
   // Use local state for section so we can update immediately
-  const defaultSection = getDefaultSection(courseId);
-  const [activeSection, setActiveSection] = useState<string>(userProfile?.examSection as string || defaultSection);
+  // getCurrentSection returns course-appropriate section (not CPA 'FAR' for non-CPA courses)
+  const initialSection = getCurrentSection(userProfile, courseId, getDefaultSection);
+  const [activeSection, setActiveSection] = useState<string>(initialSection);
   
   // Lock body scroll when section picker is open
   useEffect(() => {
@@ -95,6 +104,24 @@ const Home = () => {
       setActiveSection(userProfile.examSection as string);
     }
   }, [userProfile?.examSection]);
+  
+  // Reset section when course changes (e.g., user switches from CISA to CPA)
+  useEffect(() => {
+    // Check if current section is valid for the new course
+    const validSections = course?.sections.map(s => s.id) || [];
+    const isCPA = courseId === 'cpa';
+    
+    // For CPA, also check core/discipline sections
+    if (isCPA) {
+      const cpaSections = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
+      if (!cpaSections.includes(activeSection)) {
+        setActiveSection(getDefaultSection(courseId));
+      }
+    } else if (validSections.length > 0 && !validSections.includes(activeSection)) {
+      // For other courses, reset to default if current section isn't in the course
+      setActiveSection(getDefaultSection(courseId));
+    }
+  }, [courseId, course?.sections]);
   
   // Get section info - course-aware via getSectionDisplayInfo
   const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
@@ -158,8 +185,8 @@ const Home = () => {
       }
     } catch (error) {
       logger.error('Error changing section:', error);
-      // Revert on error
-      setActiveSection(userProfile?.examSection || 'FAR');
+      // Revert on error - use course-aware section
+      setActiveSection(getCurrentSection(userProfile, courseId, getDefaultSection));
     } finally {
       setChangingSection(false);
     }
@@ -361,10 +388,10 @@ const Home = () => {
             className="flex items-center gap-2 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors"
           >
             <div 
-              className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
+              className="px-2 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
               style={{ backgroundColor: sectionInfo?.color || '#6366f1' }}
             >
-              {sectionInfo?.shortName?.charAt(0) || activeSection.charAt(0)}
+              {sectionInfo?.shortName || activeSection}
             </div>
             <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">
               {sectionInfo?.name || activeSection}
@@ -419,7 +446,7 @@ const Home = () => {
       {/* Quick Access Buttons */}
       <div className="grid grid-cols-3 gap-3">
         <Link
-          to="/learn"
+          to={getCourseLearnPath(courseId, activeSection)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
@@ -429,7 +456,7 @@ const Home = () => {
         </Link>
         
         <Link
-          to="/practice"
+          to={getCoursePracticePath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
@@ -440,7 +467,7 @@ const Home = () => {
         
         {course?.hasTBS && (
         <Link
-          to="/tbs"
+          to={getCourseTBSPath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
         >
           <div className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
@@ -459,7 +486,7 @@ const Home = () => {
         <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider px-1">More Ways to Study</p>
         <div className="grid grid-cols-2 gap-2">
           <Link
-            to="/flashcards"
+            to={getCourseFlashcardPath(courseId)}
             className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
           >
             <Brain className="w-5 h-5 text-amber-500" />
@@ -467,7 +494,7 @@ const Home = () => {
           </Link>
           
           <Link
-            to="/quiz"
+            to={getCourseQuizPath(courseId)}
             className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
           >
             <TrendingUp className="w-5 h-5 text-blue-500" />
@@ -475,7 +502,7 @@ const Home = () => {
           </Link>
 
           <Link
-            to="/exam"
+            to={getCourseExamPath(courseId)}
             className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
           >
             <Target className="w-5 h-5 text-red-500" />

@@ -7,6 +7,10 @@ import { CISA2_QUESTIONS_BATCH6 } from './cisa2-questions-batch6';
 import { CISA2_QUESTIONS_BATCH7 } from './cisa2-questions-batch7';
 import { CISA2_QUESTIONS_BATCH8 } from './cisa2-questions-batch8';
 import { CISA2_QUESTIONS_BATCH9 } from './cisa2-cisa3-batch9';
+import { CISA2_QUESTIONS_BATCH10 } from './cisa-questions-batch10';
+import { CISA2_QUESTIONS_BATCH11 } from './cisa-questions-batch11';
+import { CISA2_QUESTIONS_BATCH12 } from './cisa-questions-batch12';
+import { CISA2_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
 
 const CISA2_QUESTIONS_BATCH1: Question[] = [
   {
@@ -55,4 +59,8 @@ export const CISA2_QUESTIONS: Question[] = [
   ...CISA2_QUESTIONS_BATCH7,
   ...CISA2_QUESTIONS_BATCH8,
   ...CISA2_QUESTIONS_BATCH9,
+  ...CISA2_QUESTIONS_BATCH10,
+  ...CISA2_QUESTIONS_BATCH11,
+  ...CISA2_QUESTIONS_BATCH12,
+  ...CISA2_QUESTIONS_BATCH13,
 ];

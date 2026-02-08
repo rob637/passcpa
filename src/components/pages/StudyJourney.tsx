@@ -27,7 +27,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getStudyUnits } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getStudyUnits, getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
@@ -62,7 +62,7 @@ const StudyJourney: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [contentCounts, setContentCounts] = useState({ mcq: 0, tbs: 0 });
   
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const unitDefs = getStudyUnits(currentSection, courseId);
   

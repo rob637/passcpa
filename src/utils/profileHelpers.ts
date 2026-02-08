@@ -141,3 +141,45 @@ export function createStudyPlanUpdate(
     studyPlanId: planId,
   };
 }
+
+/**
+ * Get the current exam section for a user based on the course.
+ * Returns the stored examSection only if it belongs to the current course,
+ * otherwise returns the default section for that course.
+ * 
+ * @param profile - User profile object  
+ * @param courseId - Current course ID
+ * @param getDefaultSectionFn - Function to get default section for a course
+ * @returns Section ID appropriate for the current course
+ */
+export function getCurrentSection(
+  profile: UserProfile | null | undefined,
+  courseId: CourseIdType,
+  getDefaultSectionFn: (courseId: string) => string
+): string {
+  const storedSection = profile?.examSection as string | undefined;
+  
+  // If no stored section, return default for course
+  if (!storedSection) {
+    return getDefaultSectionFn(courseId);
+  }
+  
+  // Check if stored section belongs to current course
+  // Use section prefix patterns to determine course membership
+  const sectionCourseMapping: Record<string, RegExp> = {
+    cpa: /^(FAR|AUD|REG|BAR|ISC|TCP)$/,
+    ea: /^SEE[123]$/,
+    cma: /^CMA[12]$/,
+    cia: /^(part[123]|CIA[123])$/,
+    cisa: /^(domain[1-5]|CISA[1-5])$/,
+    cfp: /^(FPF|INV|TAX|RIS|EST|PSY|PRO|CFP-)/,
+  };
+  
+  const coursePattern = sectionCourseMapping[courseId];
+  if (coursePattern && coursePattern.test(storedSection)) {
+    return storedSection;
+  }
+  
+  // Stored section doesn't match current course, return default
+  return getDefaultSectionFn(courseId);
+}

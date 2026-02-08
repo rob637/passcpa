@@ -21,6 +21,8 @@ import {
   Lightbulb,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../providers/CourseProvider';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { fetchQuestions } from '../../services/questionService';
@@ -82,6 +84,7 @@ const Flashcards: React.FC = () => {
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
   const { user, userProfile } = useAuth();
+  const { courseId } = useCourse();
   // const { recordMCQAnswer } = useStudy(); // Unused in original code
 
   const [cards, setCards] = useState<Flashcard[]>([]);
@@ -106,7 +109,7 @@ const Flashcards: React.FC = () => {
   // Support URL param for section (for EA) or fall back to user profile
   const currentSection: AllExamSections = sectionParam 
     ? (sectionParam as AllExamSections)
-    : (userProfile?.examSection || 'REG') as ExamSection;
+    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
 
   // Scroll to top when flashcard session starts
   useEffect(() => {

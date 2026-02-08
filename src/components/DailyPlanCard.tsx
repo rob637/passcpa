@@ -41,6 +41,8 @@ import {
   PersistedDailyPlan,
 } from '../services/dailyPlanPersistence';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
+import { getCurrentSection } from '../utils/profileHelpers';
+import { getDefaultSection } from '../utils/sectionUtils';
 import clsx from 'clsx';
 
 // Storage key for today's completed activities (fallback for offline)
@@ -84,8 +86,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [expanded, setExpanded] = useState(false);
   const [hasCarryover, setHasCarryover] = useState(false);
   
-  // Track section to detect changes
-  const currentSection = userProfile?.examSection as string || 'FAR';
+  // Track section to detect changes - course-aware
+  const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const [lastLoadedSection, setLastLoadedSection] = useState<string | null>(null);
 
   // Load daily plan from Firestore (with caching and carryover)
@@ -207,7 +209,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
       // Mark the activity as complete - pass section for correct cache key
-      const section = plan?.section || userProfile?.examSection as string || 'FAR';
+      const section = plan?.section || currentSection;
       markActivityCompleted(user.uid, activityId, section).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);

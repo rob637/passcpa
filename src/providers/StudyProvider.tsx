@@ -18,7 +18,8 @@ import { useAuth } from './AuthProvider';
 import { format } from 'date-fns';
 import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
-import { getStudyPlanId } from '../utils/profileHelpers';
+import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
+import { getDefaultSection } from '../utils/sectionUtils';
 
 export interface StudyPlan {
   id?: string;
@@ -106,9 +107,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
   const today = format(new Date(), 'yyyy-MM-dd');
   
-  // Get current section from userProfile (used for filtering)
-  const currentSection = userProfile?.examSection as string || 'FAR';
+  // Get current section from userProfile - course-aware (not just CPA 'FAR')
   const activeCourse = userProfile?.activeCourse || 'cpa';
+  const currentSection = getCurrentSection(userProfile, activeCourse, getDefaultSection);
 
   // Fetch study plan when user changes
   // Uses getStudyPlanId for multi-course support

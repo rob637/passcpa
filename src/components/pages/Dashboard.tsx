@@ -24,7 +24,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { usePullToRefresh } from '../../hooks/usePullToRefresh';
-import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { differenceInDays, format } from 'date-fns';
 import clsx from 'clsx';
@@ -298,7 +298,7 @@ const Dashboard = () => {
   // Use getExamDate helper for multi-course support
   const examDate = getExamDate(userProfile, userProfile?.examSection as string);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
-  const currentSection = userProfile?.examSection || 'REG';
+  const currentSection = userProfile?.examSection || getDefaultSection(courseId);
 
   // Fetch Exam Readiness Data
   useEffect(() => {

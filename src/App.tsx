@@ -47,19 +47,16 @@ const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
 const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
 const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
 const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
-const EADashboard = lazy(() => import('./components/pages/EADashboard'));
 const EASection = lazy(() => import('./components/pages/EASection'));
 const EAInfo = lazy(() => import('./components/pages/EAInfo'));
 const EAStudyPlanSetup = lazy(() => import('./components/pages/EAStudyPlanSetup'));
 const CMAExamSimulator = lazy(() => import('./components/pages/CMAExamSimulator'));
 const CIAExamSimulator = lazy(() => import('./components/pages/CIAExamSimulator'));
 const CISAExamSimulator = lazy(() => import('./components/pages/CISAExamSimulator'));
-const CMADashboard = lazy(() => import('./components/pages/CMADashboard'));
 const CMAStudyPlanSetup = lazy(() => import('./components/pages/CMAStudyPlanSetup'));
 const CMASection = lazy(() => import('./components/pages/CMASection'));
 const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
 const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommunication'));
-const CISADashboard = lazy(() => import('./components/pages/CISADashboard'));
 const CISASection = lazy(() => import('./components/pages/CISASection'));
 const CISAInfo = lazy(() => import('./components/pages/CISAInfo'));
 const CISAStudyPlanSetup = lazy(() => import('./components/pages/CISAStudyPlanSetup'));
@@ -98,11 +95,9 @@ const CFPLanding = lazy(() => import('./components/pages/landing/CFPLandingNew')
 const CISALanding = lazy(() => import('./components/pages/landing/CISALandingNew'));
 // Info pages (keep original)
 const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
-const CIADashboard = lazy(() => import('./courses/cia/CIADashboard'));
 const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
 const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
 const CIASection = lazy(() => import('./courses/cia/CIASection'));
-const CFPDashboard = lazy(() => import('./courses/cfp/CFPDashboard'));
 const CFPSection = lazy(() => import('./courses/cfp/CFPSection'));
 const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
 const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
@@ -381,70 +376,12 @@ function App() {
                       </SuspensePage>
                     }
                   />
-                  <Route 
-                    path="/cfp/dashboard" 
-                    element={
-                      <ProtectedRoute>
-                        <SuspensePage>
-                          <CFPDashboard />
-                        </SuspensePage>
-                      </ProtectedRoute>
-                    } 
-                  />
-                   <Route 
-                    path="/cfp/cases" 
-                    element={
-                      <ProtectedRoute>
-                        <SuspensePage>
-                          <CFPCaseStudy />
-                        </SuspensePage>
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route 
-                    path="/cfp/exam" 
-                    element={
-                      <ProtectedRoute>
-                        <SuspensePage>
-                          <CFPExamSimulator />
-                        </SuspensePage>
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route 
-                    path="/cfp/learn" 
-                    element={
-                      <ProtectedRoute>
-                        <Navigate to="/cfp/dashboard" replace />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route
-                    path="/cfp/study-plan"
-                    element={
-                      <ProtectedRoute>
-                        <SuspensePage>
-                          <CFPStudyPlanSetup />
-                        </SuspensePage>
-                      </ProtectedRoute>
-                    }
-                  />
                   <Route
                     path="/cfp/info"
                     element={
                       <SuspensePage>
                         <CFPInfo />
                       </SuspensePage>
-                    }
-                  />
-                  <Route
-                    path="/cfp/domain/:sectionId"
-                    element={
-                      <ProtectedRoute>
-                        <SuspensePage>
-                          <CFPSection />
-                        </SuspensePage>
-                      </ProtectedRoute>
                     }
                   />
                   </>
@@ -668,7 +605,7 @@ function App() {
                         path="/ea"
                         element={
                           <SuspensePage>
-                            <EADashboard />
+                            <Home />
                           </SuspensePage>
                         }
                       />
@@ -706,7 +643,7 @@ function App() {
                       />
                       <Route
                         path="/ea/learn"
-                        element={<Navigate to="/ea" replace />}
+                        element={<Navigate to="/ea/section/SEE1" replace />}
                       />
                     </>
                   )}
@@ -724,7 +661,7 @@ function App() {
                         path="/cma/dashboard"
                         element={
                           <SuspensePage>
-                            <CMADashboard />
+                            <Home />
                           </SuspensePage>
                         }
                       />
@@ -746,7 +683,7 @@ function App() {
                       />
                       <Route
                         path="/cma/learn"
-                        element={<Navigate to="/cma/dashboard" replace />}
+                        element={<Navigate to="/cma/section/CMA1" replace />}
                       />
                     </>
                   )}
@@ -776,7 +713,7 @@ function App() {
                         path="/cia/dashboard"
                         element={
                           <SuspensePage>
-                            <CIADashboard />
+                            <Home />
                           </SuspensePage>
                         }
                       />
@@ -798,7 +735,57 @@ function App() {
                       />
                       <Route
                         path="/cia/learn"
-                        element={<Navigate to="/cia/dashboard" replace />}
+                        element={<Navigate to="/cia/section/CIA1" replace />}
+                      />
+                    </>
+                  )}
+
+                  {/* CFP Routes */}
+                  {ENABLE_CFP_COURSE && (
+                    <>
+                      <Route
+                        path="/cfp-exam"
+                        element={
+                          <SuspensePage>
+                            <CFPExamSimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route 
+                        path="/cfp/dashboard" 
+                        element={
+                          <SuspensePage>
+                            <Home />
+                          </SuspensePage>
+                        } 
+                      />
+                      <Route 
+                        path="/cfp/cases" 
+                        element={
+                          <SuspensePage>
+                            <CFPCaseStudy />
+                          </SuspensePage>
+                        } 
+                      />
+                      <Route
+                        path="/cfp/study-plan"
+                        element={
+                          <SuspensePage>
+                            <CFPStudyPlanSetup />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cfp/domain/:sectionId"
+                        element={
+                          <SuspensePage>
+                            <CFPSection />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route 
+                        path="/cfp/learn" 
+                        element={<Navigate to="/cfp/domain/CFP-GEN" replace />}
                       />
                     </>
                   )}
@@ -818,7 +805,7 @@ function App() {
                         path="/cisa/dashboard"
                         element={
                           <SuspensePage>
-                            <CISADashboard />
+                            <Home />
                           </SuspensePage>
                         }
                       />
@@ -848,7 +835,7 @@ function App() {
                       />
                       <Route
                         path="/cisa/learn"
-                        element={<Navigate to="/cisa/dashboard" replace />}
+                        element={<Navigate to="/cisa/section/CISA1" replace />}
                       />
                     </>
                   )}

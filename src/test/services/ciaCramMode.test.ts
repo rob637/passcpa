@@ -257,7 +257,8 @@ describe('ciaCramMode', () => {
       const sessionId = plan.sessions[0].id;
       const duration = plan.sessions[0].duration;
       const updated = completeSession(plan, sessionId, 85);
-      expect(updated.progress.hoursStudied).toBeCloseTo(duration / 60, 1);
+      // Use precision 0 because service rounds to 1 decimal place
+      expect(updated.progress.hoursStudied).toBeCloseTo(Math.round(duration / 60 * 10) / 10, 1);
     });
   });
 

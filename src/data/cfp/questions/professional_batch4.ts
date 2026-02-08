@@ -1,0 +1,494 @@
+/**
+ * CFP Professional Conduct Questions - Batch 4
+ * Domain 1: Professional Conduct and Regulation (15% of exam)
+ * 25 additional questions covering advanced professional topics
+ */
+
+import { Question } from '../../../types';
+
+export const CFP_PROFESSIONAL_BATCH4_QUESTIONS: Question[] = [
+  // PCR-1: CFP Board Code and Standards
+  {
+    id: 'CFP-PCR-B4-001',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Material Element',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under CFP Board\'s Code of Ethics, "Material" is defined as information that:',
+    options: [
+      'A) Any information the CFP® professional possesses',
+      'B) Information important enough to influence a Client\'s decision',
+      'C) Only information specifically requested by the Client',
+      'D) Information related to compensation only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Material information is defined as information important enough to influence a Client\'s decision. CFP® professionals must disclose all Material information, including conflicts of interest, compensation arrangements, and any information that could affect the Client\'s financial planning decisions.'
+  },
+  {
+    id: 'CFP-PCR-B4-002',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Disciplinary Process',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'CFP Board\'s Disciplinary and Ethics Commission (DEC) can impose all of the following sanctions EXCEPT:',
+    options: [
+      'A) Private censure',
+      'B) Public letter of admonition',
+      'C) Criminal prosecution',
+      'D) Permanent revocation of certification'
+    ],
+    correctAnswer: 2,
+    explanation: 'CFP Board is a private certification organization and has no criminal prosecution authority. It can issue private or public sanctions, suspend or revoke certification, and require continuing education or supervision. Criminal matters are referred to appropriate legal authorities.'
+  },
+  {
+    id: 'CFP-PCR-B4-003',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Grounds for Discipline',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A CFP® professional must self-report to CFP Board within 30 days if they:',
+    options: [
+      'A) Change employment',
+      'B) Are subject to a bankruptcy filing, felony conviction, or regulatory investigation',
+      'C) Receive a client complaint',
+      'D) Fail to meet sales quotas'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP Board requires self-reporting within 30 calendar days of: personal bankruptcy, civil or criminal court actions, securities or insurance regulatory sanctions, investigations by regulatory bodies, and other specified events. Failure to self-report is an independent grounds for discipline.'
+  },
+  {
+    id: 'CFP-PCR-B4-004',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Principal Knowledge Topics',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'CFP Board\'s Principal Knowledge Topics are divided into how many Principal Knowledge Domains?',
+    options: [
+      'A) 5',
+      'B) 7',
+      'C) 8',
+      'D) 10'
+    ],
+    correctAnswer: 2,
+    explanation: 'CFP Board organizes knowledge into 8 Principal Knowledge Domains: (1) Professional Conduct, (2) General Financial Planning, (3) Risk Management and Insurance, (4) Investment Planning, (5) Tax Planning, (6) Retirement Savings and Income, (7) Estate Planning, (8) Financial Planning Psychology. The exam tests all domains.'
+  },
+  // PCR-2: Fiduciary Duty
+  {
+    id: 'CFP-PCR-B4-005',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-2',
+    topic: 'Fiduciary',
+    subtopic: 'Best Interest',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a CFP® professional recommends a product with higher commission over a suitable alternative with lower commission, this:',
+    options: [
+      'A) Is acceptable if the product is suitable',
+      'B) Is permitted if the Client is informed',
+      'C) Likely violates the Duty of Loyalty\'s requirement to act in Client\'s best interest',
+      'D) Is required if the product provides better service'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under CFP Board\'s fiduciary duty, CFP® professionals must place the Client\'s interests above their own and avoid placing their interests ahead of the Client\'s. Recommending a higher-commission product when an equally suitable lower-cost alternative exists likely violates this duty, regardless of suitability.'
+  },
+  {
+    id: 'CFP-PCR-B4-006',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-2',
+    topic: 'Fiduciary',
+    subtopic: 'Duty Components',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The CFP Board\'s Duty of Care requires a CFP® professional to:',
+    options: [
+      'A) Provide the cheapest recommendation possible',
+      'B) Act with the care, skill, prudence, and diligence of a prudent professional',
+      'C) Guarantee investment performance',
+      'D) Only provide services the Client specifically requests'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Duty of Care requires acting with the care, skill, prudence, and diligence that a prudent professional would exercise. This includes conducting thorough analysis, providing competent advice, and maintaining professional knowledge. It does not require guaranteeing outcomes or minimizing costs above all else.'
+  },
+  // PCR-3: Regulatory Framework
+  {
+    id: 'CFP-PCR-B4-007',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'Broker-Dealer Supervision',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A registered representative\'s outside business activities must be:',
+    options: [
+      'A) Hidden from the broker-dealer',
+      'B) Disclosed to and approved by the supervising broker-dealer',
+      'C) Reported only if they generate income',
+      'D) Disclosed only to clients'
+    ],
+    correctAnswer: 1,
+    explanation: 'FINRA rules require registered representatives to provide prior written notice of outside business activities to their broker-dealer. The firm may approve, disapprove, or impose conditions. This allows supervision and identifies potential conflicts of interest. Failure to disclose can result in termination and sanctions.'
+  },
+  {
+    id: 'CFP-PCR-B4-008',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'State Registration',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An investment adviser representative must register in:',
+    options: [
+      'A) Only the state where their office is located',
+      'B) States where they have a place of business AND where they have clients',
+      'C) Only the state where clients reside',
+      'D) All 50 states regardless of client locations'
+    ],
+    correctAnswer: 1,
+    explanation: 'IARs must register in states where they have a place of business and typically in states where they have clients, subject to de minimis exemptions. Rules vary by state, with some allowing limited out-of-state clients without registration. SEC-registered advisers have greater state flexibility but IARs still have state requirements.'
+  },
+  {
+    id: 'CFP-PCR-B4-009',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'Form ADV',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An investment adviser must deliver Form ADV Part 2A (brochure) to clients:',
+    options: [
+      'A) Only upon written request',
+      'B) Before or at the time of entering an advisory contract, and annually thereafter for material changes',
+      'C) Within 90 days after the first meeting',
+      'D) Only when compensation structure changes'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form ADV Part 2 must be delivered to prospective clients at or before entering the advisory agreement. Material changes must be delivered within 120 days of fiscal year-end (or clients notified with offer to provide). Part 2B (brochure supplement) covers individual representatives providing advice.'
+  },
+  {
+    id: 'CFP-PCR-B4-010',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'FINRA Suitability',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'FINRA\'s Reg BI (Best Interest) for broker-dealers requires:',
+    options: [
+      'A) Only disclosure of commission structures',
+      'B) Disclosure, Care (reasonable basis, customer-specific, quantitative suitability), Conflict of Interest, and Compliance obligations',
+      'C) Acting as a fiduciary on all transactions',
+      'D) Charging the lowest fees in the industry'
+    ],
+    correctAnswer: 1,
+    explanation: 'Reg BI imposes four component obligations: Disclosure (relationship, conflicts, fees), Care (reasonable diligence, understand products, consider reasonably available alternatives), Conflict of Interest (establish policies to mitigate conflicts), and Compliance (written policies and training). It\'s enhanced suitability, not full fiduciary duty.'
+  },
+  // PCR-4: Ethical Situations
+  {
+    id: 'CFP-PCR-B4-011',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Gift and Entertainment',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional receiving lavish gifts from a product vendor:',
+    options: [
+      'A) Is acceptable if not specifically prohibited by the employer',
+      'B) Creates a conflict of interest that should be disclosed and potentially declined',
+      'C) Is required to maintain vendor relationships',
+      'D) Has no impact on professional judgment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Lavish gifts create conflicts of interest that may influence product recommendations. CFP® professionals must identify, disclose, and manage conflicts. Many firms have policies limiting acceptable gifts. Even if within firm policy, the appearance of conflict can undermine Client trust.'
+  },
+  {
+    id: 'CFP-PCR-B4-012',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Competence Boundaries',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'When a Client asks for advice on a complex tax matter beyond the CFP® professional\'s expertise:',
+    options: [
+      'A) The CFP® professional should provide their best opinion',
+      'B) Decline to provide specific advice and refer to an appropriate specialist',
+      'C) Research online and provide an answer',
+      'D) Ignore the question and move to other topics'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals must act within their competence boundaries. For matters beyond their expertise, they should acknowledge limitations, refer to appropriate specialists (CPA, attorney, etc.), and coordinate with other professionals. Providing advice outside one\'s competence violates the Duty of Care.'
+  },
+  {
+    id: 'CFP-PCR-B4-013',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Elder Financial Abuse',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'If a CFP® professional suspects a Client is a victim of elder financial abuse:',
+    options: [
+      'A) They should ignore it as it\'s not their responsibility',
+      'B) Take steps consistent with their firm\'s policies, which may include delaying disbursements and notifying authorities',
+      'C) Immediately freeze all accounts indefinitely',
+      'D) Contact the suspected abuser directly'
+    ],
+    correctAnswer: 1,
+    explanation: 'SEC rules and many states allow temporary holds on suspicious transactions involving seniors. CFP® professionals should follow firm policies, which typically include documenting concerns, potentially delaying disbursements, notifying supervisors, and contacting adult protective services when appropriate. Protection of vulnerable Clients is prioritized.'
+  },
+  // PCR-1: Documentation and Records
+  {
+    id: 'CFP-PCR-B4-014',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Record Retention',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'CFP Board requires CFP® professionals to retain client records for:',
+    options: [
+      'A) 1 year',
+      'B) 3 years after the relationship ends',
+      'C) 7 years from the date of service',
+      'D) Indefinitely'
+    ],
+    correctAnswer: 2,
+    explanation: 'CFP Board requires retention of records supporting financial planning recommendations for 7 years from the date of service. Note that SEC/FINRA and state regulations may require different periods. Records should include meeting notes, analysis, recommendations, and Client communications.'
+  },
+  {
+    id: 'CFP-PCR-B4-015',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Engagement Letters',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A Financial Planning engagement agreement should include:',
+    options: [
+      'A) Only the fee structure',
+      'B) Services, compensation, parties, duration, client responsibilities, and termination procedures',
+      'C) Only a signature line',
+      'D) Guaranteed investment returns'
+    ],
+    correctAnswer: 1,
+    explanation: 'Comprehensive engagement agreements define: scope of services, compensation method, parties and their responsibilities, duration, termination provisions, and acknowledgment of disclosures. A clear agreement protects both parties and sets expectations. Written agreements are required for Financial Planning services.'
+  },
+  // PCR-2: More Fiduciary Topics
+  {
+    id: 'CFP-PCR-B4-016',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-2',
+    topic: 'Fiduciary',
+    subtopic: 'Managing Conflicts',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The preferred method for a CFP® professional to address a conflict of interest is:',
+    options: [
+      'A) Disclose it and proceed',
+      'B) Avoid the conflict entirely when possible; if unavoidable, disclose and obtain informed consent',
+      'C) Ignore minor conflicts',
+      'D) Let the Client discover conflicts on their own'
+    ],
+    correctAnswer: 1,
+    explanation: 'The hierarchy for managing conflicts: (1) Avoid when possible, (2) If unavoidable, fully disclose and obtain the Client\'s informed consent, (3) Manage the conflict appropriately. Some conflicts cannot be managed through disclosure alone and should be avoided. Documentation of disclosure is essential.'
+  },
+  {
+    id: 'CFP-PCR-B4-017',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-2',
+    topic: 'Fiduciary',
+    subtopic: 'Informed Consent',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Informed consent requires that the Client:',
+    options: [
+      'A) Simply signs a disclosure document',
+      'B) Understands the Material facts and their significance before making a decision',
+      'C) Has an attorney review all documents',
+      'D) Waives all future claims'
+    ],
+    correctAnswer: 1,
+    explanation: 'Informed consent means the Client understands Material information and its significance, not just that they received documentation. CFP® professionals should confirm understanding, answer questions, and provide time for consideration. A signature without understanding is not informed consent.'
+  },
+  // PCR-3: More Regulatory Topics
+  {
+    id: 'CFP-PCR-B4-018',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'Custody Rule',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'An investment adviser is deemed to have custody of client assets if:',
+    options: [
+      'A) They provide investment advice only',
+      'B) They have authority to withdraw funds or securities from client accounts',
+      'C) Clients send checks to the adviser\'s office',
+      'D) All of the above potentially create custody'
+    ],
+    correctAnswer: 3,
+    explanation: 'Custody exists when an adviser holds client funds/securities, can obtain possession (power of attorney, authority to withdraw), or inadvertently receives client funds. Custody triggers significant regulatory requirements: qualified custodians, surprise examinations, and specific reporting. Advisers often structure to avoid custody.'
+  },
+  {
+    id: 'CFP-PCR-B4-019',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'Books and Records',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Investment advisers registered with the SEC must maintain most books and records for:',
+    options: [
+      'A) 3 years',
+      'B) 5 years, first 2 in the principal office',
+      'C) 7 years',
+      'D) 10 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'SEC Rule 204-2 requires most adviser records to be retained for 5 years from the end of the fiscal year of creation (some records require 5 years from last entry). Records must be maintained in an easily accessible place for the first 2 years. Partnership/organizational documents must be kept until 3 years after dissolution.'
+  },
+  {
+    id: 'CFP-PCR-B4-020',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-3',
+    topic: 'Regulations',
+    subtopic: 'Privacy Rule',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under Regulation S-P, a financial institution must:',
+    options: [
+      'A) Never share client information',
+      'B) Provide initial and annual privacy notices and opt-out rights for nonpublic personal information sharing',
+      'C) Share all information with marketing partners',
+      'D) Only protect information about large accounts'
+    ],
+    correctAnswer: 1,
+    explanation: 'Reg S-P requires clear initial and annual privacy notices describing information collection, sharing, and protection practices. Clients must have opt-out rights before nonpublic personal information is shared with nonaffiliated third parties (with exceptions for service providers and joint marketers with contracts).'
+  },
+  // PCR-4: More Ethics Scenarios
+  {
+    id: 'CFP-PCR-B4-021',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Social Media',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'When making investment-related social media posts, a CFP® professional must:',
+    options: [
+      'A) Avoid all social media',
+      'B) Comply with firm and regulatory requirements, including pre-approval and record-keeping',
+      'C) Only post anonymous content',
+      'D) Limit posts to personal opinions without disclaimers'
+    ],
+    correctAnswer: 1,
+    explanation: 'Social media posts about investments are regulated communications. Requirements include firm approval (if required), appropriate disclaimers, fair and balanced content, record retention, and avoiding testimonials without proper disclosure. Static content (firm profiles) and interactive content have different rules.'
+  },
+  {
+    id: 'CFP-PCR-B4-022',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Client Capacity',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a CFP® professional observes signs of declining cognitive capacity in a long-term Client:',
+    options: [
+      'A) Immediately close all accounts',
+      'B) Document concerns, follow firm protocols, consider trusted contacts, and potentially involve protective services',
+      'C) Ignore it as it\'s a medical issue',
+      'D) Contact family members without the Client\'s consent'
+    ],
+    correctAnswer: 1,
+    explanation: 'Addressing diminished capacity requires sensitivity: document observations, follow firm protocols, use trusted contacts if previously designated, potentially delay transactions, and contact adult protective services if abuse is suspected. Simply ignoring or immediately closing accounts would not serve the Client\'s interests.'
+  },
+  {
+    id: 'CFP-PCR-B4-023',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-4',
+    topic: 'Ethics',
+    subtopic: 'Terminating Relationships',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A CFP® professional may terminate a Client relationship when:',
+    options: [
+      'A) Only when the Client requests termination',
+      'B) The Client fails to follow through on agreed actions, the relationship becomes adversarial, or continued service would violate standards',
+      'C) The Client\'s account becomes unprofitable',
+      'D) Never—the CFP® professional has a lifelong obligation'
+    ],
+    correctAnswer: 1,
+    explanation: 'There are appropriate reasons to terminate: Client non-cooperation, irreconcilable differences, inability to serve the Client\'s best interests, or if continuing would violate ethical standards. Termination should be handled professionally with reasonable notice and assistance in transitioning to another adviser.'
+  },
+  // More CFP Board Standards
+  {
+    id: 'CFP-PCR-B4-024',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'CE Requirements',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'CFP® professionals must complete how many CE hours per reporting period?',
+    options: [
+      'A) 15 hours',
+      'B) 30 hours biennially, including 2 hours of ethics',
+      'C) 50 hours annually',
+      'D) No CE requirements once certified'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® professionals must complete 30 hours of CE every 2 years, including 2 hours of CFP Board-approved ethics CE. Other approved topics include financial planning practice, investment, insurance, estate, retirement, and tax. CE providers must be approved or qualify for blanket approval.'
+  },
+  {
+    id: 'CFP-PCR-B4-025',
+    courseId: 'cfp',
+    section: 'CFP-PCR',
+    blueprintArea: 'PCR-1',
+    topic: 'CFP Board',
+    subtopic: 'Certification Marks',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Use of the CFP® certification marks requires:',
+    options: [
+      'A) Payment of a one-time licensing fee',
+      'B) Current certification status and compliance with trademark guidelines',
+      'C) Approval from each Client before use',
+      'D) Only board membership'
+    ],
+    correctAnswer: 1,
+    explanation: 'CFP® marks can only be used by those currently certified and in good standing. Usage must comply with trademark guidelines (proper capitalization, registration symbol, not as a noun). Former certificants may not use the marks. Misuse can result in discipline and trademark infringement claims.'
+  }
+];

@@ -1,0 +1,617 @@
+/**
+ * EA SEE Part 1: Individuals - Questions Batch 48 (Q571-600)
+ * Focus: Advanced topics and edge cases
+ * 
+ * Tax Year: 2024-2025
+ */
+
+import { Question } from '../../../types';
+
+export const SEE1_QUESTIONS_BATCH48: Question[] = [
+  // SEE1-1: Preliminary Work
+  {
+    id: 'see1-571',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-1',
+    topic: 'Filing Requirements',
+    subtopic: 'Dependents with Unearned Income',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A dependent child with $2,500 in unearned income and $500 in earned income must file a return because:',
+    options: [
+      'Total income exceeds the standard deduction for dependents',
+      'Unearned income exceeds $1,300 (kiddie tax threshold)',
+      'The child must report all unearned income regardless of amount',
+      'Earned income exceeds $400'
+    ],
+    correctAnswer: 1,
+    explanation: 'A dependent must file if unearned income exceeds $1,300 (2024), earned income exceeds $14,600, or gross income exceeds the dependent standard deduction ($1,300 or earned income + $450, up to $14,600). Here, unearned income of $2,500 exceeds $1,300.',
+    reference: 'Pub. 929'
+  },
+  {
+    id: 'see1-572',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-1',
+    topic: 'Filing Status',
+    subtopic: 'Qualifying Surviving Spouse',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer whose spouse died in 2022 can file as Qualifying Surviving Spouse for:',
+    options: [
+      '2022 only',
+      '2023 and 2024',
+      '2022, 2023, and 2024',
+      '2023, 2024, and 2025'
+    ],
+    correctAnswer: 1,
+    explanation: 'Qualifying Surviving Spouse status is available for the two years following the year of death (2023 and 2024 if spouse died in 2022). Requirements include: maintaining a home for a dependent child, remaining unmarried, and having been eligible to file MFJ in the year of death.',
+    reference: 'Pub. 501'
+  },
+  {
+    id: 'see1-573',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-1',
+    topic: 'Dependents',
+    subtopic: 'Tiebreaker Rules',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'When two or more taxpayers can claim the same child as a qualifying child, the tiebreaker rules apply in which order?',
+    options: [
+      'Highest AGI → Parent → Longest residency',
+      'Parent → Longest residency → Highest AGI',
+      'Longest residency → Parent → Highest AGI',
+      'Parent → Highest AGI → Longest residency'
+    ],
+    correctAnswer: 1,
+    explanation: 'Tiebreaker rules: (1) If only one is a parent, parent wins; (2) If both are parents, parent with longer residency wins; (3) If tied, parent with highest AGI wins; (4) If neither is parent, taxpayer with highest AGI wins.',
+    reference: 'IRC §152(c)(4)'
+  },
+  {
+    id: 'see1-574',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-1',
+    topic: 'Compliance',
+    subtopic: 'Power of Attorney',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'Form 2848 (Power of Attorney) authorizes a representative to:',
+    options: [
+      'Sign the taxpayer\'s return',
+      'Receive tax refund checks',
+      'Represent the taxpayer before the IRS and receive confidential information',
+      'Access the taxpayer\'s bank accounts'
+    ],
+    correctAnswer: 2,
+    explanation: 'Form 2848 authorizes a representative to represent the taxpayer before the IRS, receive confidential tax information, and perform acts on behalf of the taxpayer. It does not authorize signing returns (unless specifically granted) or receiving refunds.',
+    reference: 'Form 2848 Instructions'
+  },
+  {
+    id: 'see1-575',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-1',
+    topic: 'Record Retention',
+    subtopic: 'Statute of Limitations',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The IRS generally has how long to assess additional tax after a return is filed?',
+    options: [
+      '2 years',
+      '3 years',
+      '5 years',
+      '7 years'
+    ],
+    correctAnswer: 1,
+    explanation: 'The general statute of limitations for IRS assessment is 3 years from the later of the due date or filing date. Exceptions: 6 years if income understated by 25%+, and unlimited for fraud or failure to file.',
+    reference: 'IRC §6501'
+  },
+  // SEE1-2: Income
+  {
+    id: 'see1-576',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Cryptocurrency',
+    subtopic: 'Virtual Currency Taxation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'When a taxpayer mines cryptocurrency and receives coins as reward:',
+    options: [
+      'No tax is due until the coins are sold',
+      'The fair market value on date received is ordinary income',
+      'It is treated as a gift with zero basis',
+      'Mining income is always tax-exempt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Mined cryptocurrency is ordinary income equal to FMV when received. If mining constitutes a trade or business, it is also subject to SE tax. The FMV becomes the basis for calculating gain/loss on future sales.',
+    reference: 'Notice 2014-21'
+  },
+  {
+    id: 'see1-577',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Social Security Benefits',
+    subtopic: 'Taxation of Benefits',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'At most, what percentage of Social Security benefits may be taxable?',
+    options: [
+      '50%',
+      '75%',
+      '85%',
+      '100%'
+    ],
+    correctAnswer: 2,
+    explanation: 'Up to 85% of Social Security benefits may be taxable depending on provisional income (AGI + tax-exempt interest + 50% of SS benefits). At lower income levels, 50% or 0% may be taxable.',
+    reference: 'IRC §86'
+  },
+  {
+    id: 'see1-578',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Retirement Distributions',
+    subtopic: 'Required Minimum Distributions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under SECURE Act 2.0, the RMD beginning age for taxpayers born in 1960 or later is:',
+    options: [
+      '70½',
+      '72',
+      '73',
+      '75'
+    ],
+    correctAnswer: 3,
+    explanation: 'SECURE 2.0 raised RMD age to 73 (born 1951-1959) and 75 (born 1960+). Original SECURE Act raised it from 70½ to 72. Failure to take RMDs results in a 25% penalty (reduced to 10% if corrected timely).',
+    reference: 'IRC §401(a)(9)'
+  },
+  {
+    id: 'see1-579',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Cancellation of Debt',
+    subtopic: 'COD Income Exclusions',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Which of the following is NOT an exclusion from cancellation of debt income?',
+    options: [
+      'Bankruptcy discharge',
+      'Insolvency immediately before discharge',
+      'Qualified principal residence indebtedness (through 2025)',
+      'Debt cancelled because the debtor negotiated a lower payoff'
+    ],
+    correctAnswer: 3,
+    explanation: 'Negotiating a lower payoff creates taxable COD income. Exclusions include: bankruptcy, insolvency (to extent of insolvency), qualified principal residence indebtedness (extended through 2025), qualified farm debt, and qualified real property business debt.',
+    reference: 'IRC §108'
+  },
+  {
+    id: 'see1-580',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-2',
+    topic: 'Gambling Income',
+    subtopic: 'Reporting Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer wins $5,000 at a casino and has $7,000 in documented gambling losses. The taxpayer:',
+    options: [
+      'Reports $5,000 income and deducts $7,000 losses (net loss of $2,000)',
+      'Reports $5,000 income and deducts $5,000 losses if itemizing',
+      'Reports net zero and carries forward $2,000 in losses',
+      'Does not need to report because losses exceed winnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gambling winnings are fully taxable as other income. Gambling losses are deductible only as itemized deductions and only to the extent of winnings. Excess losses cannot create a net loss or be carried forward.',
+    reference: 'IRC §165(d)'
+  },
+  // SEE1-3: Deductions and Credits
+  {
+    id: 'see1-581',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Home Office Deduction',
+    subtopic: 'Simplified Method',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Under the simplified home office deduction method, the deduction is calculated as:',
+    options: [
+      '$5 per square foot, up to 300 square feet',
+      '$10 per square foot, up to 300 square feet',
+      '$5 per square foot, up to 500 square feet',
+      'Actual expenses prorated by square footage'
+    ],
+    correctAnswer: 0,
+    explanation: 'The simplified method allows $5 per square foot of home used for business, up to 300 square feet (maximum $1,500 deduction). No depreciation is claimed, but mortgage interest and property taxes can be deducted separately.',
+    reference: 'Rev. Proc. 2013-13'
+  },
+  {
+    id: 'see1-582',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Charitable Contributions',
+    subtopic: 'Cash Contribution Limits',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For 2024, the maximum charitable deduction for cash contributions to public charities is limited to:',
+    options: [
+      '30% of AGI',
+      '50% of AGI',
+      '60% of AGI',
+      '100% of AGI'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cash contributions to public charities are limited to 60% of AGI (TCJA provision through 2025). Contributions of appreciated capital gain property are limited to 30% of AGI. Excess contributions carry forward 5 years.',
+    reference: 'IRC §170(b)'
+  },
+  {
+    id: 'see1-583',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Educator Expense Deduction',
+    subtopic: 'Above-the-Line Deduction',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'For 2024, an eligible educator can deduct up to how much for unreimbursed classroom expenses?',
+    options: [
+      '$250',
+      '$300',
+      '$400',
+      '$500'
+    ],
+    correctAnswer: 1,
+    explanation: 'Eligible educators can deduct up to $300 (indexed for inflation) as an above-the-line deduction for unreimbursed classroom expenses. Both spouses can claim $300 if both are eligible educators ($600 total on joint return).',
+    reference: 'IRC §62(a)(2)(D)'
+  },
+  {
+    id: 'see1-584',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Energy Credits',
+    subtopic: 'Residential Clean Energy Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For 2024-2032, the Residential Clean Energy Credit for solar panel installation is:',
+    options: [
+      '22% of qualified expenses',
+      '26% of qualified expenses',
+      '30% of qualified expenses',
+      '50% of qualified expenses'
+    ],
+    correctAnswer: 2,
+    explanation: 'The Inflation Reduction Act set the Residential Clean Energy Credit at 30% through 2032, then 26% in 2033 and 22% in 2034. It applies to solar, wind, geothermal, and battery storage installations on the taxpayer\'s residence.',
+    reference: 'IRC §25D'
+  },
+  {
+    id: 'see1-585',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-3',
+    topic: 'Earned Income Tax Credit',
+    subtopic: 'EITC Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which of the following disqualifies a taxpayer from claiming the EITC?',
+    options: [
+      'Having more than $11,600 in investment income',
+      'Being a nonresident alien',
+      'Filing as Head of Household',
+      'Having too little earned income'
+    ],
+    correctAnswer: 0,
+    explanation: 'For 2024, investment income exceeding $11,600 disqualifies a taxpayer from EITC. Other disqualifications include: MFS status, being a nonresident alien (unless married to citizen/resident), and not having valid SSN for work.',
+    reference: 'IRC §32'
+  },
+  // SEE1-4: Taxation
+  {
+    id: 'see1-586',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Capital Gains',
+    subtopic: 'Collectibles Rate',
+    difficulty: 'hard',
+    skillLevel: 'Remembering',
+    question: 'Long-term capital gains on collectibles (art, coins, etc.) are taxed at a maximum rate of:',
+    options: [
+      '15%',
+      '20%',
+      '25%',
+      '28%'
+    ],
+    correctAnswer: 3,
+    explanation: 'Collectibles are subject to a maximum 28% rate for long-term gains, regardless of the taxpayer\'s bracket. This applies to art, antiques, gems, coins, stamps, and certain metals. Short-term gains are taxed as ordinary income.',
+    reference: 'IRC §1(h)(4)'
+  },
+  {
+    id: 'see1-587',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Tax Credits',
+    subtopic: 'Refundable vs Non-Refundable',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Which of the following credits is NOT refundable?',
+    options: [
+      'Earned Income Tax Credit',
+      'Child Tax Credit (Additional CTC portion)',
+      'Child and Dependent Care Credit',
+      'American Opportunity Credit (40%)'
+    ],
+    correctAnswer: 2,
+    explanation: 'The Child and Dependent Care Credit is non-refundable and can only reduce tax to zero. The EITC is fully refundable, the ACTC provides a refundable portion of the CTC, and 40% of the AOC (up to $1,000) is refundable.',
+    reference: 'Various IRC sections'
+  },
+  {
+    id: 'see1-588',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Kiddie Tax',
+    subtopic: 'Unearned Income of Minors',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under current law, a child\'s unearned income above the threshold is taxed at:',
+    options: [
+      'The parent\'s marginal rate',
+      'The child\'s rate',
+      'The trust and estate tax rates',
+      'A flat 28%'
+    ],
+    correctAnswer: 0,
+    explanation: 'After TCJA amendments were reversed, the kiddie tax now taxes a child\'s unearned income above $2,600 (2024) at the parents\' marginal rate. Previously under TCJA, trust rates applied, which was often higher.',
+    reference: 'IRC §1(g)'
+  },
+  {
+    id: 'see1-589',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Withholding',
+    subtopic: 'Form W-4 Changes',
+    difficulty: 'easy',
+    skillLevel: 'Remembering',
+    question: 'The redesigned Form W-4 (2020 and later) eliminated:',
+    options: [
+      'The ability to claim exempt status',
+      'Withholding allowances based on personal exemptions',
+      'The requirement for employees to provide SSN',
+      'State tax withholding elections'
+    ],
+    correctAnswer: 1,
+    explanation: 'The 2020 Form W-4 eliminated withholding allowances that were based on personal exemptions (suspended under TCJA). The new form uses a more direct approach with income, deductions, and adjustments.',
+    reference: 'Form W-4 Instructions'
+  },
+  {
+    id: 'see1-590',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-4',
+    topic: 'Penalties',
+    subtopic: 'Accuracy-Related Penalty',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The accuracy-related penalty for substantial understatement of income tax is:',
+    options: [
+      '10% of underpayment',
+      '20% of underpayment',
+      '25% of underpayment',
+      '75% of underpayment'
+    ],
+    correctAnswer: 1,
+    explanation: 'The accuracy-related penalty is 20% of the underpayment attributable to negligence or substantial understatement. Substantial understatement means the greater of 10% of correct tax or $5,000 ($10,000 for corporations).',
+    reference: 'IRC §6662'
+  },
+  // SEE1-5: Advising
+  {
+    id: 'see1-591',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'IRA Strategies',
+    subtopic: 'Backdoor Roth IRA',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The "backdoor Roth" strategy involves:',
+    options: [
+      'Converting a 401(k) directly to a Roth IRA',
+      'Making nondeductible traditional IRA contributions and converting to Roth',
+      'Exceeding Roth contribution limits with after-tax dollars',
+      'Using a Roth 401(k) instead of a Roth IRA'
+    ],
+    correctAnswer: 1,
+    explanation: 'The backdoor Roth strategy allows high-income taxpayers (over Roth income limits) to contribute to a nondeductible traditional IRA and immediately convert to Roth. The pro-rata rule applies if other traditional IRA balances exist.',
+    reference: 'IRS guidance on IRA conversions'
+  },
+  {
+    id: 'see1-592',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Qualified Charitable Distribution',
+    subtopic: 'QCD Rules',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A Qualified Charitable Distribution (QCD) from an IRA:',
+    options: [
+      'Is available to any IRA owner regardless of age',
+      'Is limited to $100,000 per year and available at age 70½ or older',
+      'Creates a charitable deduction on Schedule A',
+      'Can be made from a Roth IRA only'
+    ],
+    correctAnswer: 1,
+    explanation: 'QCDs are available to IRA owners age 70½ or older, limited to $105,000 annually (2024, indexed). The distribution goes directly to charity, is excluded from income (not deducted), and can satisfy RMD.',
+    reference: 'IRC §408(d)(8)'
+  },
+  {
+    id: 'see1-593',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Tax-Loss Harvesting',
+    subtopic: 'Wash Sale Rule',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'To avoid the wash sale rule when harvesting losses, a taxpayer must not purchase substantially identical securities for:',
+    options: [
+      '30 days after the sale',
+      '30 days before and after the sale (61-day window)',
+      '60 days after the sale',
+      '90 days after the sale'
+    ],
+    correctAnswer: 1,
+    explanation: 'The wash sale rule disallows losses if substantially identical securities are purchased within 30 days before or after the sale (61-day window total). The disallowed loss is added to the basis of the replacement securities.',
+    reference: 'IRC §1091'
+  },
+  {
+    id: 'see1-594',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'State Tax Planning',
+    subtopic: 'SALT Workarounds',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The IRS-approved SALT cap workaround for pass-through entities involves:',
+    options: [
+      'Prepaying state taxes in December',
+      'Entity-level state tax election with owner credit/deduction',
+      'Claiming state taxes on Schedule C instead of Schedule A',
+      'Converting to S corporation status'
+    ],
+    correctAnswer: 1,
+    explanation: 'Many states enacted entity-level taxes (PTE taxes) that are paid by pass-through entities and deductible by the entity (not limited by SALT cap). Owners receive a credit or basis adjustment for their share of the tax.',
+    reference: 'Notice 2020-75'
+  },
+  {
+    id: 'see1-595',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-5',
+    topic: 'Installment Agreements',
+    subtopic: 'IRS Payment Plans',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A guaranteed installment agreement (no financial statement required) is available if total tax owed is:',
+    options: [
+      '$10,000 or less',
+      '$25,000 or less',
+      '$50,000 or less',
+      '$100,000 or less'
+    ],
+    correctAnswer: 0,
+    explanation: 'Guaranteed installment agreements are available if: total tax ≤ $10,000, taxpayer has filed all returns, paid all taxes for past 5 years, and agrees to pay within 3 years. Streamlined agreements cover up to $50,000.',
+    reference: 'IRC §6159'
+  },
+  // SEE1-6: Specialized Returns
+  {
+    id: 'see1-596',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Foreign Earned Income',
+    subtopic: 'FEIE Limits',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'For 2024, the maximum foreign earned income exclusion is:',
+    options: [
+      '$108,700',
+      '$112,000',
+      '$120,000',
+      '$126,500'
+    ],
+    correctAnswer: 3,
+    explanation: 'The 2024 foreign earned income exclusion is $126,500 (indexed annually). Taxpayers must also meet either the bona fide residence test or physical presence test (330 days in foreign country during 12-month period).',
+    reference: 'IRC §911; Rev. Proc. 2023-34'
+  },
+  {
+    id: 'see1-597',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'FATCA',
+    subtopic: 'Form 8938 Thresholds',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A single taxpayer living in the U.S. must file Form 8938 if foreign financial assets exceed:',
+    options: [
+      '$10,000 at any time during the year',
+      '$50,000 on last day or $75,000 at any time during year',
+      '$100,000 on last day or $150,000 at any time',
+      '$200,000 on last day'
+    ],
+    correctAnswer: 1,
+    explanation: 'U.S. residents (single/MFS) must file Form 8938 if foreign financial assets exceed $50,000 on last day of year OR $75,000 at any time. MFJ thresholds are $100,000/$150,000. Foreign residents have higher thresholds.',
+    reference: 'IRC §6038D'
+  },
+  {
+    id: 'see1-598',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Estate Tax',
+    subtopic: 'Portability Election',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'The deceased spousal unused exclusion (DSUE) portability election:',
+    options: [
+      'Is automatic upon the first spouse\'s death',
+      'Requires filing Form 706 even if no estate tax is due',
+      'Is limited to $5 million regardless of indexed amount',
+      'Only applies if the surviving spouse remarries'
+    ],
+    correctAnswer: 1,
+    explanation: 'The DSUE (portability) must be elected on a timely filed Form 706 estate tax return, even if filing is not otherwise required. This allows the surviving spouse to use the deceased spouse\'s unused exclusion amount ($13.61M for 2024).',
+    reference: 'IRC §2010(c)(5)'
+  },
+  {
+    id: 'see1-599',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Dual-Status Aliens',
+    subtopic: 'Filing Requirements',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A dual-status taxpayer (part-year resident and nonresident) must:',
+    options: [
+      'File two separate returns (1040 and 1040-NR)',
+      'File Form 1040 with "Dual-Status Return" at top and attach 1040-NR statement',
+      'File only Form 1040-NR',
+      'Choose either resident or nonresident status for entire year'
+    ],
+    correctAnswer: 1,
+    explanation: 'Dual-status taxpayers file Form 1040 (if resident at year-end) marked "Dual-Status Return" with a 1040-NR statement attached for the nonresident period. Standard deduction is not available; worldwide income is taxed only during resident period.',
+    reference: 'Pub. 519'
+  },
+  {
+    id: 'see1-600',
+    courseId: 'ea',
+    section: 'SEE1',
+    blueprintArea: 'SEE1-6',
+    topic: 'Innocent Spouse Relief',
+    subtopic: 'Relief Options',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which form is used to request innocent spouse relief?',
+    options: [
+      'Form 12509',
+      'Form 8857',
+      'Form 2848',
+      'Form 911'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8857 (Request for Innocent Spouse Relief) is used to request relief from joint liability under IRC §6015. Three types of relief are available: innocent spouse relief, separation of liability, and equitable relief.',
+    reference: 'IRC §6015'
+  }
+];

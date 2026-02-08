@@ -1,0 +1,459 @@
+/**
+ * CMA Part 1 - MCQ Batch 7 (25 Questions)
+ * 
+ * Focus: Comprehensive coverage with emphasis on calculations
+ * - CMA1-A: External Financial Reporting (4)
+ * - CMA1-B: Planning, Budgeting, and Forecasting (5)
+ * - CMA1-C: Performance Management (5)
+ * - CMA1-D: Cost Management (5)
+ * - CMA1-E: Internal Controls (3)
+ * - CMA1-F: Technology and Analytics (3)
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1_MCQ_BATCH7: Question[] = [
+  // ==========================================
+  // CMA1-A: External Financial Reporting (4)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Statement of Cash Flows',
+    subtopic: 'Indirect Method',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Net income $200,000. Depreciation $40,000. Accounts receivable increased $15,000. Accounts payable decreased $10,000. What is operating cash flow (indirect method)?',
+    options: [
+      '$215,000',
+      '$235,000',
+      '$265,000',
+      '$175,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'OCF = Net Income + Depreciation - Increase in A/R - Decrease in A/P = $200,000 + $40,000 - $15,000 - $10,000 = $215,000. A/R increase is a use; A/P decrease is a use.',
+    reference: 'Cash Flow from Operations; Indirect Method',
+  },
+  {
+    id: 'cma1-mcq7-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Long-Term Debt',
+    subtopic: 'Bond Premium/Discount',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: '$1,000,000 bonds issued at 103 (3% premium). Over 10 years, how much is amortized per year using straight-line?',
+    options: [
+      '$3,000',
+      '$30,000',
+      '$10,000',
+      '$100,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Premium = $1,000,000 × 3% = $30,000. Annual amortization = $30,000 / 10 years = $3,000/year. This reduces interest expense below the cash paid.',
+    reference: 'Bond Premium Amortization',
+  },
+  {
+    id: 'cma1-mcq7-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Contingencies',
+    subtopic: 'Loss Contingencies',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'A loss contingency should be accrued when outcome is:',
+    options: [
+      'Possible and estimable',
+      'Probable and reasonably estimable',
+      'Remote and estimable',
+      'Possible but not estimable'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under GAAP, loss contingencies are accrued (recognized) when loss is probable AND the amount can be reasonably estimated. Otherwise, disclosure may be required.',
+    reference: 'Contingencies; ASC 450',
+  },
+  {
+    id: 'cma1-mcq7-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-A',
+    topic: 'Non-Current Assets',
+    subtopic: 'Asset Impairment',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'An asset has carrying value $500,000, undiscounted cash flows $480,000, fair value $400,000. What impairment loss is recorded?',
+    options: [
+      '$20,000',
+      '$100,000',
+      '$0',
+      '$80,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Step 1: Recoverability test—undiscounted CFs ($480,000) < carrying value ($500,000), so impairment exists. Step 2: Measure as Carrying Value - Fair Value = $500,000 - $400,000 = $100,000 loss.',
+    reference: 'Asset Impairment; ASC 360',
+  },
+
+  // ==========================================
+  // CMA1-B: Planning, Budgeting, and Forecasting (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Direct Labor Budget',
+    subtopic: 'Labor Hours Calculation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Production budget: 8,000 units. Each unit requires 2.5 direct labor hours at $18/hour. What is budgeted direct labor cost?',
+    options: [
+      '$360,000',
+      '$144,000',
+      '$45,000',
+      '$288,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Labor hours = 8,000 × 2.5 = 20,000 hours. Labor cost = 20,000 × $18 = $360,000.',
+    reference: 'Direct Labor Budget',
+  },
+  {
+    id: 'cma1-mcq7-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Weighted Moving Average',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Sales for last 3 months: 100, 120, 130. Weights: 0.5 (most recent), 0.3, 0.2 (oldest). What is the weighted moving average forecast?',
+    options: [
+      '116.7',
+      '121.0',
+      '125.0',
+      '130.0'
+    ],
+    correctAnswer: 1,
+    explanation: 'WMA = (0.5 × 130) + (0.3 × 120) + (0.2 × 100) = 65 + 36 + 20 = 121.0.',
+    reference: 'Weighted Moving Average',
+  },
+  {
+    id: 'cma1-mcq7-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Capital Budget',
+    subtopic: 'Budget Components',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'The capital budget typically includes:',
+    options: [
+      'Operating expenses for the next quarter',
+      'Long-term asset acquisitions and major investments',
+      'Cash receipts from customers',
+      'Variable manufacturing overhead'
+    ],
+    correctAnswer: 1,
+    explanation: 'Capital budgets plan for long-term investments: property, plant, equipment, major projects. Operating budgets cover day-to-day revenues and expenses. Cash budgets plan liquidity.',
+    reference: 'Capital Budget',
+  },
+  {
+    id: 'cma1-mcq7-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Budgetary Control',
+    subtopic: 'Variance Investigation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Management by exception involves:',
+    options: [
+      'Investigating all variances equally',
+      'Focusing investigation on significant deviations from standards',
+      'Ignoring all variances',
+      'Setting unrealistic standards'
+    ],
+    correctAnswer: 1,
+    explanation: 'Management by exception focuses attention on significant variances that exceed materiality thresholds--either dollar amounts or percentages. Minor variances are not investigated, conserving management resources.',
+    reference: 'Management by Exception',
+  },
+
+  // ==========================================
+  // CMA1-C: Performance Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'ROI',
+    subtopic: 'DuPont ROI',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Division profit margin 15%, asset turnover 0.8. What change in asset turnover would increase ROI from 12% to 15%?',
+    options: [
+      'Increase to 1.0',
+      'Increase to 1.25',
+      'Decrease to 0.6',
+      'Stay at 0.8'
+    ],
+    correctAnswer: 0,
+    explanation: 'Current ROI = 15% × 0.8 = 12%. For ROI = 15%: Asset Turnover = 15% / 15% = 1.0. Need to increase turnover from 0.8 to 1.0.',
+    reference: 'DuPont ROI',
+  },
+  {
+    id: 'cma1-mcq7-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Balanced Scorecard',
+    subtopic: 'Cause and Effect',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'In the Balanced Scorecard, which perspective is typically considered the foundation that drives improvements in all others?',
+    options: [
+      'Financial perspective',
+      'Customer perspective',
+      'Internal process perspective',
+      'Learning and growth perspective'
+    ],
+    correctAnswer: 3,
+    explanation: 'Learning and growth (employee skills, technology, culture) drives process improvements, which improves customer outcomes, which ultimately drives financial results. It is the foundational "lead" perspective.',
+    reference: 'Balanced Scorecard; Learning & Growth',
+  },
+  {
+    id: 'cma1-mcq7-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Customer Profitability',
+    subtopic: 'ABC for Customers',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Customer A: Revenue $100,000, product cost $60,000, 200 orders (order cost $50 each), 10 complaints (complaint cost $200 each). What is customer profit?',
+    options: [
+      '$28,000',
+      '$40,000',
+      '$38,000',
+      '$30,000'
+    ],
+    correctAnswer: 0,
+    explanation: 'Customer Profit = Revenue - Product Cost - Order Cost - Complaint Cost = $100,000 - $60,000 - (200 × $50) - (10 × $200) = $100,000 - $60,000 - $10,000 - $2,000 = $28,000.',
+    reference: 'Customer Profitability Analysis',
+  },
+  {
+    id: 'cma1-mcq7-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Investment Center',
+    subtopic: 'Characteristics',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'An investment center manager is evaluated on:',
+    options: [
+      'Cost control only',
+      'Revenue generation only',
+      'Profit and the efficient use of assets',
+      'Customer satisfaction only'
+    ],
+    correctAnswer: 2,
+    explanation: 'Investment center managers control revenues, costs, AND asset investment decisions. They are evaluated on both profitability and return on invested capital (ROI or RI).',
+    reference: 'Investment Center; Responsibility Accounting',
+  },
+  {
+    id: 'cma1-mcq7-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-C',
+    topic: 'Executive Compensation',
+    subtopic: 'Incentive Design',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Deferred compensation in executive pay packages helps:',
+    options: [
+      'Immediate cash flow for executives',
+      'Align management with long-term shareholder interests',
+      'Reduce company pension costs',
+      'Simplify tax reporting'
+    ],
+    correctAnswer: 1,
+    explanation: 'Deferred compensation (stock options, restricted stock, deferred bonuses) ties executive wealth to long-term company performance, reducing short-term gaming and aligning interests with shareholders.',
+    reference: 'Executive Compensation; Alignment',
+  },
+
+  // ==========================================
+  // CMA1-D: Cost Management (5)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Job Order Costing',
+    subtopic: 'Overhead Application',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Estimated OH: $600,000. Estimated machine hours: 40,000. Job #101 used 500 machine hours, $8,000 direct materials, $3,000 direct labor. What is Job #101 total cost?',
+    options: [
+      '$18,500',
+      '$11,000',
+      '$16,000',
+      '$26,500'
+    ],
+    correctAnswer: 0,
+    explanation: 'OH rate = $600,000 / 40,000 = $15/MH. Job cost = DM + DL + OH = $8,000 + $3,000 + (500 × $15) = $8,000 + $3,000 + $7,500 = $18,500.',
+    reference: 'Job Order Costing',
+  },
+  {
+    id: 'cma1-mcq7-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Variable Costing',
+    subtopic: 'Income Reconciliation',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Absorption income: $150,000. Beginning inventory: 2,000 units. Ending inventory: 3,000 units. Fixed OH per unit: $10. What is variable costing income?',
+    options: [
+      '$160,000',
+      '$140,000',
+      '$150,000',
+      '$130,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Inventory increased by 1,000 units. Under absorption, $10,000 (1,000 × $10) fixed OH is deferred in inventory. Variable Costing Income = Absorption - Deferred FOH = $150,000 - $10,000 = $140,000.',
+    reference: 'Variable vs Absorption Costing',
+  },
+  {
+    id: 'cma1-mcq7-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Estimation',
+    subtopic: 'Learning Curve',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'First unit: 100 hours. 80% learning curve. How many hours for the 4th unit (cumulative average model)?',
+    options: [
+      '64 hours',
+      '51.2 hours',
+      '80 hours',
+      'Cannot determine'
+    ],
+    correctAnswer: 0,
+    explanation: 'Cumulative average at 2 units = 100 × 0.8 = 80 hours. At 4 units = 80 × 0.8 = 64 hours cumulative average. This is the average per unit for all 4 units combined.',
+    reference: 'Learning Curve; Cumulative Average',
+  },
+  {
+    id: 'cma1-mcq7-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Quality Costs',
+    subtopic: 'COQ Categories',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Warranty repairs are classified as:',
+    options: [
+      'Prevention costs',
+      'Appraisal costs',
+      'Internal failure costs',
+      'External failure costs'
+    ],
+    correctAnswer: 3,
+    explanation: 'External failure costs occur after customers receive defective products: warranty, repairs, returns, recalls, lawsuits. Internal failures are caught before shipment.',
+    reference: 'Cost of Quality; External Failure',
+  },
+
+  // ==========================================
+  // CMA1-E: Internal Controls (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Audit',
+    subtopic: 'Assurance vs Consulting',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Internal audit\'s consulting services differ from assurance services in that:',
+    options: [
+      'They provide greater independence',
+      'They are advisory, client-requested, and without formal audit opinions',
+      'They are more objective',
+      'They always result in published reports'
+    ],
+    correctAnswer: 1,
+    explanation: 'Consulting services are advisory in nature, requested by management, and aimed at improving operations. Assurance services involve independent, objective evaluations with formal conclusions.',
+    reference: 'Internal Audit; Consulting',
+  },
+  {
+    id: 'cma1-mcq7-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'SOX Compliance',
+    subtopic: 'Section 404',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'SOX Section 404 requires management to:',
+    options: [
+      'Eliminate all financial statement errors',
+      'Assess and report on the effectiveness of internal controls over financial reporting',
+      'Personally approve every transaction',
+      'Use only cash-basis accounting'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 404 requires management assessment of internal control effectiveness over financial reporting. For larger companies, external auditors must also attest to this assessment.',
+    reference: 'SOX 404; Internal Control Assessment',
+  },
+
+  // ==========================================
+  // CMA1-F: Technology and Analytics (3)
+  // ==========================================
+  {
+    id: 'cma1-mcq7-024',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Business Intelligence',
+    subtopic: 'Dashboard Design',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Effective executive dashboards should:',
+    options: [
+      'Include as much detailed data as possible',
+      'Display key metrics with drill-down capability for details',
+      'Be static and updated annually',
+      'Focus only on financial measures'
+    ],
+    correctAnswer: 1,
+    explanation: 'Good dashboards show high-level KPIs at a glance with the ability to drill down for details when needed. They balance summary information with accessibility to underlying data.',
+    reference: 'Dashboard Design; Business Intelligence',
+  },
+  {
+    id: 'cma1-mcq7-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-F',
+    topic: 'Cybersecurity',
+    subtopic: 'Threat Types',
+    difficulty: 'medium',
+    skillLevel: 'Remembering',
+    question: 'Phishing attacks primarily target:',
+    options: [
+      'Network hardware vulnerabilities',
+      'Human users through deceptive communications',
+      'Database encryption keys',
+      'Physical server access'
+    ],
+    correctAnswer: 1,
+    explanation: 'Phishing uses deceptive emails, websites, or messages to trick users into revealing credentials, clicking malicious links, or transferring funds. It exploits human behavior rather than technical vulnerabilities.',
+    reference: 'Phishing; Social Engineering',
+  },
+];

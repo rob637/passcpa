@@ -31,6 +31,8 @@ export interface SectionConfig {
   mcqWeight: number;
   tbsWeight: number;
   color: string;
+  bgColor?: string;
+  textColor?: string;
   icon: string;
   description: string;
   /** Which Blueprint version content was written for */
@@ -303,7 +305,36 @@ export const PASSING_SCORE = 75;
 // Structure: Area > Group > Topic > Representative Task
 // ============================================================================
 
-export const EXAM_BLUEPRINTS: Record<string, any> = {
+/** Individual topic within a blueprint group */
+export interface BlueprintTopic {
+  id: string;
+  name: string;
+  hr1?: boolean;
+  effectiveDate?: string;
+}
+
+/** Group of related topics within a blueprint area */
+export interface BlueprintGroup {
+  id: string;
+  name: string;
+  topics: BlueprintTopic[];
+}
+
+/** Blueprint area with exam weight range and topic groups */
+export interface ExamBlueprintArea {
+  id: string;
+  name: string;
+  weightRange: [number, number];
+  groups: BlueprintGroup[];
+}
+
+/** Complete exam blueprint for a section */
+export interface ExamBlueprint {
+  name: string;
+  areas: ExamBlueprintArea[];
+}
+
+export const EXAM_BLUEPRINTS: Record<string, ExamBlueprint> = {
   // =========================================================================
   // AUD - AUDITING AND ATTESTATION
   // =========================================================================
@@ -1267,6 +1298,358 @@ export const EXAM_BLUEPRINTS: Record<string, any> = {
               { id: 'TCP-IV-B-1', name: 'Estate valuation' },
               { id: 'TCP-IV-B-2', name: 'Deductions and credits' },
               { id: 'TCP-IV-B-3', name: 'Portability' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // =========================================================================
+  // EA SECTIONS - SPECIAL ENROLLMENT EXAMINATION (SEE)
+  // Based on IRS SEE Content Outline 2025-2026
+  // =========================================================================
+  SEE1: {
+    name: 'Part 1: Individuals',
+    areas: [
+      {
+        id: 'SEE1-1',
+        name: 'Preliminary Work and Taxpayer Data',
+        weightRange: [15, 18],
+        groups: [
+          {
+            id: 'SEE1-1-A',
+            name: 'Filing Requirements',
+            topics: [
+              { id: 'SEE1-1-A-1', name: 'Filing requirements and due dates' },
+              { id: 'SEE1-1-A-2', name: 'Filing status determination' },
+              { id: 'SEE1-1-A-3', name: 'Dependents and dependency tests' },
+            ],
+          },
+          {
+            id: 'SEE1-1-B',
+            name: 'Taxpayer Information',
+            topics: [
+              { id: 'SEE1-1-B-1', name: 'Taxpayer identification numbers' },
+              { id: 'SEE1-1-B-2', name: 'Estimated tax requirements' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE1-2',
+        name: 'Income and Assets',
+        weightRange: [18, 22],
+        groups: [
+          {
+            id: 'SEE1-2-A',
+            name: 'Wages and Earnings',
+            topics: [
+              { id: 'SEE1-2-A-1', name: 'Wages, salaries, and tips' },
+              { id: 'SEE1-2-A-2', name: 'Interest and dividends' },
+              { id: 'SEE1-2-A-3', name: 'Business income (Schedule C)' },
+            ],
+          },
+          {
+            id: 'SEE1-2-B',
+            name: 'Investment Income',
+            topics: [
+              { id: 'SEE1-2-B-1', name: 'Capital gains and losses' },
+              { id: 'SEE1-2-B-2', name: 'Rental and royalty income' },
+            ],
+          },
+          {
+            id: 'SEE1-2-C',
+            name: 'Retirement Income',
+            topics: [
+              { id: 'SEE1-2-C-1', name: 'Retirement distributions' },
+              { id: 'SEE1-2-C-2', name: 'Social Security benefits' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE1-3',
+        name: 'Deductions and Credits',
+        weightRange: [18, 22],
+        groups: [
+          {
+            id: 'SEE1-3-A',
+            name: 'Adjustments to Income',
+            topics: [
+              { id: 'SEE1-3-A-1', name: 'Above-the-line deductions' },
+              { id: 'SEE1-3-A-2', name: 'IRA contributions' },
+              { id: 'SEE1-3-A-3', name: 'Student loan interest' },
+            ],
+          },
+          {
+            id: 'SEE1-3-B',
+            name: 'Itemized Deductions',
+            topics: [
+              { id: 'SEE1-3-B-1', name: 'Standard vs itemized deductions' },
+              { id: 'SEE1-3-B-2', name: 'Schedule A deductions' },
+            ],
+          },
+          {
+            id: 'SEE1-3-C',
+            name: 'Tax Credits',
+            topics: [
+              { id: 'SEE1-3-C-1', name: 'Nonrefundable credits' },
+              { id: 'SEE1-3-C-2', name: 'Refundable credits (EITC, CTC)' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE1-4',
+        name: 'Taxation',
+        weightRange: [15, 20],
+        groups: [
+          {
+            id: 'SEE1-4-A',
+            name: 'Tax Computation',
+            topics: [
+              { id: 'SEE1-4-A-1', name: 'Tax computation and rates' },
+              { id: 'SEE1-4-A-2', name: 'Alternative minimum tax (AMT)' },
+            ],
+          },
+          {
+            id: 'SEE1-4-B',
+            name: 'Additional Taxes',
+            topics: [
+              { id: 'SEE1-4-B-1', name: 'Self-employment tax' },
+              { id: 'SEE1-4-B-2', name: 'Net investment income tax' },
+              { id: 'SEE1-4-B-3', name: 'Estimated tax payments' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE1-5',
+        name: 'Advising the Individual Taxpayer',
+        weightRange: [10, 15],
+        groups: [
+          {
+            id: 'SEE1-5-A',
+            name: 'Tax Planning Strategies',
+            topics: [
+              { id: 'SEE1-5-A-1', name: 'Tax planning strategies' },
+              { id: 'SEE1-5-A-2', name: 'Retirement planning considerations' },
+            ],
+          },
+          {
+            id: 'SEE1-5-B',
+            name: 'Education and Health',
+            topics: [
+              { id: 'SEE1-5-B-1', name: 'Education tax benefits' },
+              { id: 'SEE1-5-B-2', name: 'Health savings accounts' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE1-6',
+        name: 'Specialized Returns for Individuals',
+        weightRange: [10, 15],
+        groups: [
+          {
+            id: 'SEE1-6-A',
+            name: 'Amended and Special Returns',
+            topics: [
+              { id: 'SEE1-6-A-1', name: 'Amended returns (Form 1040-X)' },
+              { id: 'SEE1-6-A-2', name: 'Foreign income and exclusions' },
+              { id: 'SEE1-6-A-3', name: 'Non-resident alien returns' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  SEE2: {
+    name: 'Part 2: Businesses',
+    areas: [
+      {
+        id: 'SEE2-1',
+        name: 'Business Entities and Considerations',
+        weightRange: [32, 38],
+        groups: [
+          {
+            id: 'SEE2-1-A',
+            name: 'Entity Types',
+            topics: [
+              { id: 'SEE2-1-A-1', name: 'Sole proprietorships (Schedule C)' },
+              { id: 'SEE2-1-A-2', name: 'Partnerships (Form 1065)' },
+              { id: 'SEE2-1-A-3', name: 'C Corporations (Form 1120)' },
+              { id: 'SEE2-1-A-4', name: 'S Corporations (Form 1120-S)' },
+            ],
+          },
+          {
+            id: 'SEE2-1-B',
+            name: 'Entity Selection',
+            topics: [
+              { id: 'SEE2-1-B-1', name: 'Entity selection and formation' },
+              { id: 'SEE2-1-B-2', name: 'Basis calculations' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE2-2',
+        name: 'Business Tax Preparation',
+        weightRange: [40, 48],
+        groups: [
+          {
+            id: 'SEE2-2-A',
+            name: 'Accounting Methods',
+            topics: [
+              { id: 'SEE2-2-A-1', name: 'Accounting methods and periods' },
+              { id: 'SEE2-2-A-2', name: 'Business income recognition' },
+              { id: 'SEE2-2-A-3', name: 'Cost of goods sold' },
+            ],
+          },
+          {
+            id: 'SEE2-2-B',
+            name: 'Business Deductions',
+            topics: [
+              { id: 'SEE2-2-B-1', name: 'Business expenses and deductions' },
+              { id: 'SEE2-2-B-2', name: 'Depreciation and amortization' },
+              { id: 'SEE2-2-B-3', name: 'Section 179 and bonus depreciation' },
+            ],
+          },
+          {
+            id: 'SEE2-2-C',
+            name: 'Business Credits',
+            topics: [
+              { id: 'SEE2-2-C-1', name: 'Business credits' },
+              { id: 'SEE2-2-C-2', name: 'Employment tax credits' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE2-3',
+        name: 'Specialized Business Topics',
+        weightRange: [18, 24],
+        groups: [
+          {
+            id: 'SEE2-3-A',
+            name: 'Employment Taxes',
+            topics: [
+              { id: 'SEE2-3-A-1', name: 'Payroll taxes and requirements' },
+              { id: 'SEE2-3-A-2', name: 'Employment tax deposits' },
+              { id: 'SEE2-3-A-3', name: 'Trust fund recovery penalty' },
+            ],
+          },
+          {
+            id: 'SEE2-3-B',
+            name: 'Retirement Plans',
+            topics: [
+              { id: 'SEE2-3-B-1', name: 'Qualified retirement plans' },
+              { id: 'SEE2-3-B-2', name: 'SEP and SIMPLE plans' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  SEE3: {
+    name: 'Part 3: Representation, Practices, and Procedures',
+    areas: [
+      {
+        id: 'SEE3-1',
+        name: 'Practices and Procedures',
+        weightRange: [22, 28],
+        groups: [
+          {
+            id: 'SEE3-1-A',
+            name: 'Assessment and Collection',
+            topics: [
+              { id: 'SEE3-1-A-1', name: 'Assessment procedures' },
+              { id: 'SEE3-1-A-2', name: 'Statutes of limitations' },
+              { id: 'SEE3-1-A-3', name: 'Collection procedures' },
+            ],
+          },
+          {
+            id: 'SEE3-1-B',
+            name: 'Examination Process',
+            topics: [
+              { id: 'SEE3-1-B-1', name: 'Audit selection and types' },
+              { id: 'SEE3-1-B-2', name: 'Examination procedures' },
+              { id: 'SEE3-1-B-3', name: 'Burden of proof' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE3-2',
+        name: 'Representation',
+        weightRange: [25, 32],
+        groups: [
+          {
+            id: 'SEE3-2-A',
+            name: 'Circular 230',
+            topics: [
+              { id: 'SEE3-2-A-1', name: 'Circular 230 requirements' },
+              { id: 'SEE3-2-A-2', name: 'Practitioner duties and penalties' },
+              { id: 'SEE3-2-A-3', name: 'Written advice standards' },
+            ],
+          },
+          {
+            id: 'SEE3-2-B',
+            name: 'Practice Before IRS',
+            topics: [
+              { id: 'SEE3-2-B-1', name: 'Power of attorney (Form 2848)' },
+              { id: 'SEE3-2-B-2', name: 'Tax information authorization' },
+              { id: 'SEE3-2-B-3', name: 'Limited practice rights' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE3-3',
+        name: 'Specific Areas of Representation',
+        weightRange: [25, 32],
+        groups: [
+          {
+            id: 'SEE3-3-A',
+            name: 'Appeals and Collection Alternatives',
+            topics: [
+              { id: 'SEE3-3-A-1', name: 'Appeals procedures' },
+              { id: 'SEE3-3-A-2', name: 'Collection due process (CDP)' },
+              { id: 'SEE3-3-A-3', name: 'Offer in compromise' },
+            ],
+          },
+          {
+            id: 'SEE3-3-B',
+            name: 'Penalty and Compliance',
+            topics: [
+              { id: 'SEE3-3-B-1', name: 'Innocent spouse relief' },
+              { id: 'SEE3-3-B-2', name: 'Installment agreements' },
+              { id: 'SEE3-3-B-3', name: 'Penalty abatement' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'SEE3-4',
+        name: 'Filing Process',
+        weightRange: [15, 20],
+        groups: [
+          {
+            id: 'SEE3-4-A',
+            name: 'Preparer Requirements',
+            topics: [
+              { id: 'SEE3-4-A-1', name: 'PTIN requirements' },
+              { id: 'SEE3-4-A-2', name: 'E-file requirements' },
+              { id: 'SEE3-4-A-3', name: 'Preparer penalties and due diligence' },
+            ],
+          },
+          {
+            id: 'SEE3-4-B',
+            name: 'Information Returns',
+            topics: [
+              { id: 'SEE3-4-B-1', name: 'Information return requirements' },
+              { id: 'SEE3-4-B-2', name: 'FBAR and foreign reporting' },
             ],
           },
         ],

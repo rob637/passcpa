@@ -6,14 +6,17 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Check, GraduationCap, Lock, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ChevronDown, Check, GraduationCap, Lock } from 'lucide-react';
+import { Button } from './Button';
 import { useCourse } from '../../providers/CourseProvider';
 import { isCourseActive, ACTIVE_COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 
 /** All courses that may be shown (even if not yet available) */
-const ALL_COURSES: CourseId[] = ['cpa', 'cma', 'ea', 'cia'];
+const ALL_COURSES: CourseId[] = ['cpa', 'cma', 'ea', 'cia', 'cfp', 'cisa'];
 
 /** Course display configuration */
 const COURSE_DISPLAY: Record<CourseId, { 
@@ -21,7 +24,6 @@ const COURSE_DISPLAY: Record<CourseId, {
   shortName: string; 
   color: string;
   icon: string;
-  comingSoon?: boolean;
 }> = {
   cpa: { 
     name: 'CPA Exam', 
@@ -34,21 +36,30 @@ const COURSE_DISPLAY: Record<CourseId, {
     shortName: 'CMA', 
     color: 'bg-emerald-500',
     icon: '📈',
-    comingSoon: true,
   },
   ea: { 
     name: 'Enrolled Agent', 
     shortName: 'EA', 
     color: 'bg-primary-500',
     icon: '🏛️',
-    comingSoon: true,
   },
   cia: { 
     name: 'CIA Exam', 
     shortName: 'CIA', 
     color: 'bg-amber-500',
     icon: '🔍',
-    comingSoon: true,
+  },
+  cfp: { 
+    name: 'CFP Exam', 
+    shortName: 'CFP', 
+    color: 'bg-green-500',
+    icon: '🌱',
+  },
+  cisa: { 
+    name: 'CISA Exam', 
+    shortName: 'CISA', 
+    color: 'bg-cyan-500',
+    icon: '🛡️',
   },
 };
 
@@ -69,6 +80,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
   const { courseId, setCourse, userCourses } = useCourse();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   
   const currentDisplay = COURSE_DISPLAY[courseId];
   
@@ -102,6 +114,10 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
     if (isCourseActive(id) && userCourses.includes(id)) {
       setCourse(id);
       setIsOpen(false);
+
+      // Navigate to the correct dashboard based on course
+      const courseDashboard = getCourseHomePath(id);
+      navigate(courseDashboard);
     }
   };
   
@@ -118,15 +134,14 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
   return (
     <div ref={dropdownRef} className={clsx('relative', className)}>
       {/* Trigger Button */}
-      <button
+      <Button
+        variant="secondary"
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
-          'flex items-center gap-2 rounded-xl transition-all duration-200',
-          'hover:bg-slate-100 dark:hover:bg-slate-700',
-          'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+          'flex items-center gap-2 rounded-xl',
           compact 
             ? 'px-2 py-1.5' 
-            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800'
+            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
         )}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -156,7 +171,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             )} />
           </>
         )}
-      </button>
+      </Button>
       
       {/* Dropdown Menu */}
       {isOpen && (
@@ -217,12 +232,6 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
                   {isSelected && (
                     <Check className="w-4 h-4 text-primary-600" />
                   )}
-                  {!isActive && display.comingSoon && (
-                    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-medium">
-                      <Sparkles className="w-3 h-3" />
-                      Soon
-                    </span>
-                  )}
                   {isActive && !hasAccess && (
                     <span className="flex items-center gap-1 text-slate-600">
                       <Lock className="w-4 h-4" />
@@ -238,7 +247,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <GraduationCap className="w-3.5 h-3.5 inline mr-1" />
-                More exam preps coming soon! Get notified when CMA, EA, and CIA launch.
+                All exam preps included free during beta!
               </p>
             </div>
           )}

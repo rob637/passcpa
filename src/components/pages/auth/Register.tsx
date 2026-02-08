@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import logger from '../../../utils/logger';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Loader2, Check } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Check } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { trackEvent } from '../../../services/analytics';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -91,11 +93,11 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-8">
+    <Card variant="elevated" className="p-8">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Create your account</h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Start your journey to passing the CPA exam</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Start your journey to passing your certification exam</p>
       </div>
 
       {/* Google Sign Up - Primary Option */}
@@ -210,14 +212,17 @@ const Register = () => {
               required
               autoComplete="new-password"
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-600 dark:hover:text-slate-300"
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
-            >
-              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-            </button>
+            <div className="absolute right-3.5 top-1/2 -translate-y-1/2">
+              <Button
+                variant="ghost"
+                size="icon"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+              >
+                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </Button>
+            </div>
           </div>
 
           {/* Password Strength */}
@@ -295,20 +300,16 @@ const Register = () => {
         </p>
 
         {/* Submit Button */}
-        <button
+        <Button
+          variant="primary"
           type="submit"
           disabled={isSubmitting || loading || !passwordStrong || !passwordsMatch}
-          className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3.5 rounded-xl font-semibold shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          loading={isSubmitting}
+          fullWidth
+          size="lg"
         >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Creating account...
-            </>
-          ) : (
-            'Create Account'
-          )}
-        </button>
+          {isSubmitting ? 'Creating account...' : 'Create Account'}
+        </Button>
       </form>
 
       {/* Sign In Link */}
@@ -318,7 +319,7 @@ const Register = () => {
           Sign in
         </Link>
       </p>
-    </div>
+    </Card>
   );
 };
 

@@ -21,6 +21,22 @@ vi.mock('../../../hooks/useStudy', () => ({
   }),
 }));
 
+vi.mock('../../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA',
+      hasTBS: true,
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+      ],
+    },
+  }),
+}));
+
 const renderStudy = () => {
   return render(
     <BrowserRouter>

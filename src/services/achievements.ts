@@ -17,6 +17,14 @@ export interface Achievement {
   points: number;
 }
 
+/** Stats structure used for achievement checking */
+export interface AchievementStats {
+  streak?: number;
+  totalQuestions?: number;
+  accuracy?: number;
+  perfectSessions?: number;
+}
+
 export const ACHIEVEMENTS: Record<string, Achievement> = {
   // Streak achievements
   streak_3: {
@@ -127,7 +135,7 @@ export const ACHIEVEMENTS: Record<string, Achievement> = {
 /**
  * Check for new achievements based on stats
  */
-export const checkAchievements = (stats: any, currentAchievements: string[] = []): Achievement[] => {
+export const checkAchievements = (stats: AchievementStats, currentAchievements: string[] = []): Achievement[] => {
   const newAchievements: Achievement[] = [];
   const earnedIds = new Set(currentAchievements);
 
@@ -195,7 +203,7 @@ export const getAchievementsByCategory = (category: string) => {
   return Object.values(ACHIEVEMENTS).filter(a => a.category === category);
 };
 
-export const getAchievementProgress = (achievementId: string, stats: any) => {
+export const getAchievementProgress = (achievementId: string, stats: AchievementStats) => {
     const achievement = ACHIEVEMENTS[achievementId];
     if (!achievement) return 0;
     

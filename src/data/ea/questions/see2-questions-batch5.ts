@@ -1,0 +1,215 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 5 (Q41-50)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH5: Question[] = [
+  // ==========================================
+  // SEE2-7: S Corporations (continued)
+  // ==========================================
+  {
+    id: 'see2-041',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Termination',
+    subtopic: 'Revocation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An S election can be voluntarily revoked if shareholders holding more than:',
+    options: [
+      '25% of shares consent',
+      '50% of shares consent',
+      '67% of shares consent',
+      '100% of shares consent'
+    ],
+    correctAnswer: 1,
+    explanation: 'An S election may be revoked with the consent of shareholders holding more than 50% of the outstanding shares (both voting and nonvoting). The revocation can specify a prospective effective date.',
+    reference: 'IRC §1362(d)(1)',
+  },
+  {
+    id: 'see2-042',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Termination',
+    subtopic: 'Automatic Termination',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Which event would cause automatic termination of S corporation status?',
+    options: [
+      'Having 99 shareholders',
+      'Issuing a second class of stock',
+      'Having only one shareholder',
+      'Earning $10 million in revenue'
+    ],
+    correctAnswer: 1,
+    explanation: 'S corporation status terminates automatically if the corporation ceases to meet eligibility requirements. Issuing a second class of stock violates the one-class-of-stock requirement and causes immediate termination.',
+    reference: 'IRC §1362(d)(2)',
+  },
+  {
+    id: 'see2-043',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-7',
+    topic: 'S Corporation Distributions',
+    subtopic: 'AAA Account',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The Accumulated Adjustments Account (AAA) is used to:',
+    options: [
+      'Track tax basis of shareholders',
+      'Determine the tax-free portion of distributions from S corporations with E&P',
+      'Calculate self-employment tax',
+      'Compute the corporate tax rate'
+    ],
+    correctAnswer: 1,
+    explanation: 'The AAA tracks previously taxed S corporation income that can be distributed tax-free. It is important for S corporations that have accumulated earnings and profits from C corporation years, as it determines the ordering of distributions.',
+    reference: 'IRC §1368',
+  },
+
+  // ==========================================
+  // SEE2-8: Specialized Industries and Entities
+  // ==========================================
+  {
+    id: 'see2-044',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Farming',
+    subtopic: 'Accounting Methods',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Most farmers may use the cash method of accounting:',
+    options: [
+      'Only if gross receipts are under $1 million',
+      'Regardless of gross receipts',
+      'Only if they do not have inventory',
+      'Only for the first 5 years of operation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Farming businesses can generally use the cash method of accounting regardless of their gross receipts. This is a special exception for farmers, though C corporations engaged in farming must use accrual if gross receipts exceed $27 million.',
+    reference: 'IRC §447; IRS Publication 225',
+  },
+  {
+    id: 'see2-045',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Farming',
+    subtopic: 'Farm Income Averaging',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Farm income averaging allows farmers to:',
+    options: [
+      'Defer all farm income indefinitely',
+      'Elect to have current year farm income taxed at lower rates by averaging over prior 3 years',
+      'Exclude farm income from self-employment tax',
+      'Use accelerated depreciation only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Schedule J allows farmers to average the current year\'s farm income over the three prior years, potentially taxing it at lower marginal rates if income fluctuates significantly year to year.',
+    reference: 'IRC §1301; Schedule J',
+  },
+  {
+    id: 'see2-046',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Trusts',
+    subtopic: 'Classification',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A simple trust is one that:',
+    options: [
+      'Has only one beneficiary',
+      'Must distribute all income currently and cannot make charitable contributions',
+      'Is exempt from income tax',
+      'Has no more than $100,000 in assets'
+    ],
+    correctAnswer: 1,
+    explanation: 'A simple trust is required to distribute all income currently, makes no distributions of principal, and makes no charitable contributions. If any of these conditions are not met, the trust is a complex trust.',
+    reference: 'IRC §651-652',
+  },
+  {
+    id: 'see2-047',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Estates',
+    subtopic: 'Filing Requirements',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An estate must file Form 1041 if it has:',
+    options: [
+      'Any income',
+      'Gross income of $600 or more',
+      'Gross income of $1,000 or more',
+      'Assets exceeding $100,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'An estate must file Form 1041 if it has gross income of $600 or more for the tax year, or if any beneficiary is a nonresident alien. The estate\'s tax year can be a calendar year or fiscal year.',
+    reference: 'IRC §6012(a)(4); Form 1041 Instructions',
+  },
+  {
+    id: 'see2-048',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'Form 990',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: '501(c)(3) organizations with gross receipts of $200,000 or more must file:',
+    options: [
+      'Form 990-N (e-Postcard)',
+      'Form 990-EZ',
+      'Form 990',
+      'Form 1120'
+    ],
+    correctAnswer: 2,
+    explanation: 'Tax-exempt organizations with gross receipts of $200,000 or more, or total assets of $500,000 or more, must file Form 990. Smaller organizations may file Form 990-EZ or Form 990-N.',
+    reference: 'IRC §6033; Form 990 Instructions',
+  },
+  {
+    id: 'see2-049',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Tax-Exempt Organizations',
+    subtopic: 'UBIT',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Unrelated Business Income Tax (UBIT) applies to:',
+    options: [
+      'All income of tax-exempt organizations',
+      'Income from a trade or business regularly carried on that is not substantially related to the exempt purpose',
+      'Only investment income',
+      'Only donations exceeding $1 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'UBIT is imposed on income from a trade or business that is regularly carried on and not substantially related to the organization\'s exempt purpose. Common exemptions include investment income, volunteer-run activities, and thrift shops.',
+    reference: 'IRC §511-514',
+  },
+  {
+    id: 'see2-050',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-8',
+    topic: 'Rental Real Estate',
+    subtopic: 'Active Participation',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Under the passive activity rules, an individual who actively participates in rental real estate can deduct up to how much of rental losses against non-passive income?',
+    options: [
+      '$10,000',
+      '$15,000',
+      '$25,000',
+      '$50,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'Individuals who actively participate in rental real estate activities can deduct up to $25,000 of rental losses against non-passive income. This allowance phases out between $100,000 and $150,000 of modified AGI.',
+    reference: 'IRC §469(i)',
+  },
+];

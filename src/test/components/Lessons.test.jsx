@@ -21,8 +21,22 @@ vi.mock('../../hooks/useStudy', () => ({
   }),
 }));
 
-// Mock lessons data
-vi.mock('../../data/lessons', () => ({
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+      ],
+    },
+  }),
+}));
+
+// Mock lessons data - path changed to course-specific location
+vi.mock('../../data/cpa/lessons', () => ({
   getLessonById: vi.fn((id) => {
     if (id === 'FAR-I-001') {
       return {
@@ -130,7 +144,7 @@ describe('LessonViewer Component', () => {
 
   describe('Lesson Not Found', () => {
     it('should show not found message for invalid lesson', async () => {
-      const { getLessonById } = await import('../../data/lessons');
+      const { getLessonById } = await import('../../data/cpa/lessons');
       getLessonById.mockReturnValue(null);
 
       render(

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { 
   LESSONS, 
   getAllLessons,
-} from '../../data/lessons';
+} from '../../data/cpa/lessons';
 
 describe('Lessons Data', () => {
   describe('LESSONS object', () => {

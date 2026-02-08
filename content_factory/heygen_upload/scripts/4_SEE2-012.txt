@@ -1,0 +1,73 @@
+You buy a machine for $10,000. Over several years, you depreciate it all the way down to zero. Then you sell it for $12,000. You have a $12,000 gain. That is capital gains treatment, right? Long-term capital gains rates?
+
+Wrong. And this mistake costs students points on the EA exam every single time.
+
+Today we are diving into Section 1245 Depreciation Recapture. This is the IRS saying, "Remember all those ordinary deductions I gave you for depreciation? I want that tax benefit back, and I want it at ordinary income rates."
+
+Let me explain the logic behind recapture. When you depreciate an asset, you get an ordinary deduction that reduces your taxable income. If you are in the 32% tax bracket, every dollar of depreciation saves you 32 cents in taxes. The government gave you that benefit assuming the asset was actually declining in value.
+
+But what happens when you sell the asset for more than its depreciated value? You have proven that the asset did not decline as much as the depreciation deductions suggested. The IRS wants those tax savings back.
+
+Section 1245 is the mechanism for this recapture on personal property. Personal property in tax terms means movable property like machinery, equipment, vehicles, furniture, fixtures, and certain other tangible property. It does not mean personal-use property. It means property that is not real estate.
+
+Here is the rule: When you sell Section 1245 property at a gain, the amount of gain equal to the depreciation you previously deducted is recaptured as ordinary income. Only the gain in excess of your original purchase price is treated as Section 1231 capital gain.
+
+Let me work through our opening example step by step.
+
+You purchased a machine for $10,000. This is your original basis. Over the years, you claimed $10,000 in depreciation deductions. Your adjusted basis is now zero. You sell the machine for $12,000.
+
+Your total gain is $12,000 minus zero, which equals $12,000. How is this gain characterized?
+
+First, determine the recapture amount. This is the lesser of the gain realized or the depreciation taken. You took $10,000 of depreciation, and your gain is $12,000. The recapture amount is $10,000 because that is the depreciation amount and it is less than the total gain.
+
+That $10,000 is ordinary income. It is reported as ordinary income on your tax return and taxed at your regular marginal rate.
+
+Second, the remaining gain of $2,000, which is the amount above your original purchase price, is Section 1231 gain. If you held the property for more than one year, this is long-term capital gain, eligible for the favorable capital gains rates.
+
+So your $12,000 gain is split: $10,000 ordinary income and $2,000 capital gain.
+
+Now let me give you variations that appear on the exam.
+
+What if you sell the machine for only $8,000 instead of $12,000? Your gain is $8,000 minus zero, which equals $8,000. The recapture amount is the lesser of the gain or the depreciation. You took $10,000 of depreciation, but your gain is only $8,000. The entire $8,000 is ordinary income from recapture. There is no Section 1231 gain because you did not sell above your original cost.
+
+What if you sell the machine for $6,000, meaning only partial depreciation? You purchased for $10,000, depreciated $10,000, adjusted basis is zero, and you sell for $6,000. Your gain is $6,000. The depreciation taken was $10,000, but the gain is only $6,000. Recapture equals the lesser amount, which is $6,000. The entire gain is ordinary income.
+
+What if you sell the machine at a loss? You purchased for $10,000, depreciated $10,000, selling price is zero or at a loss. There is no recapture because there is no gain. Section 1245 only applies when there is a gain. Your loss would be a Section 1231 loss, which can offset ordinary income.
+
+Here is a formula to remember. For Section 1245 property: Ordinary income equals the lesser of gain recognized or accumulated depreciation. Section 1231 gain equals total gain minus the ordinary income portion.
+
+Now let's distinguish Section 1245 from Section 1250, which applies to real property.
+
+Section 1245 applies to personal property, like machinery, equipment, furniture, vehicles, and also certain real property that is not buildings, like land improvements.
+
+Section 1250 applies to depreciable real property, primarily buildings. The recapture rules for Section 1250 are different and generally less harsh. Under current law, most Section 1250 recapture only applies to the extent of "additional depreciation," meaning depreciation claimed in excess of straight-line. Since most real estate uses straight-line depreciation, Section 1250 recapture is often minimal.
+
+However, there is something called "unrecaptured Section 1250 gain" that is taxed at a maximum rate of 25%. This applies to the depreciation taken on real property. So while it is not full ordinary income recapture like Section 1245, it is also not eligible for the lower capital gains rates.
+
+For the EA exam, remember: Section 1245 is the harsh one. It recaptures depreciation as ordinary income dollar for dollar up to the gain. Section 1250 is generally gentler with the 25% rate on depreciation.
+
+Let me discuss which property falls under each section.
+
+Section 1245 property includes: tangible personal property such as machinery, equipment, vehicles, and office furniture. It also includes certain intangible property like patents and copyrights. Single-purpose agricultural structures and storage facilities for petroleum products are Section 1245. So are most property items subject to cost recovery under MACRS with a recovery period of 20 years or less.
+
+Section 1250 property includes: buildings and structural components. This is residential rental property and nonresidential real property.
+
+Land improvements like parking lots, sidewalks, and fences are actually Section 1245 property, not Section 1250, even though they are improvements to real estate. This is a common exam trap.
+
+Let me give you an exam scenario that combines concepts.
+
+A business sells the following assets: Equipment with a $0 adjusted basis that originally cost $50,000, sold for $60,000. A building with a $200,000 adjusted basis that originally cost $300,000, sold for $350,000.
+
+For the equipment, the gain is $60,000. Depreciation taken was $50,000. Section 1245 recapture is $50,000 ordinary income. The remaining $10,000 is Section 1231 gain.
+
+For the building, the gain is $150,000. Depreciation taken was $100,000. This is Section 1250 property. Assuming straight-line depreciation was used, there is no Section 1250 recapture to ordinary income. However, $100,000 is unrecaptured Section 1250 gain taxed at 25% maximum. The remaining $50,000 is Section 1231 gain taxed at capital gains rates.
+
+One more important concept: Section 1231 netting. After you separate out the recapture amounts, your Section 1231 gains and losses are netted together. If net Section 1231 gains exceed losses, they are long-term capital gains. If net Section 1231 losses exceed gains, they are ordinary losses. This is the best of both worlds: capital gains treatment when profitable, ordinary loss treatment when not.
+
+But beware the five-year lookback rule. If you had net Section 1231 losses in the previous five years that were treated as ordinary losses, your current-year net Section 1231 gains are recharacterized as ordinary income to the extent of those prior ordinary losses. This prevents gaming of the system.
+
+To summarize Section 1245 recapture: When you sell depreciable personal property at a gain, the gain is ordinary income to the extent of depreciation taken. Any gain above original cost is Section 1231 capital gain. Section 1250 applies to buildings and has different, generally more favorable rules. Land improvements are Section 1245, not Section 1250. And remember the Section 1231 netting rules and five-year lookback.
+
+In our next lesson, we will cover passive activity losses, another area where the IRS limits what you can deduct.
+
+See you in the next video.

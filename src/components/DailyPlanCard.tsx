@@ -28,6 +28,8 @@ import {
   Calendar,
   RotateCcw,
 } from 'lucide-react';
+import { Button } from './common/Button';
+import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { useCourse } from '../providers/CourseProvider';
@@ -39,6 +41,15 @@ import {
   PersistedDailyPlan,
 } from '../services/dailyPlanPersistence';
 import { getTBSHistory, getDueQuestions } from '../services/questionHistoryService';
+import { getCurrentSection } from '../utils/profileHelpers';
+import { getDefaultSection } from '../utils/sectionUtils';
+import { 
+  getCourseLessonPath, 
+  getCoursePracticePath, 
+  getCourseTBSPath, 
+  getCourseFlashcardPath,
+  getCourseHomePath,
+} from '../utils/courseNavigation';
 import clsx from 'clsx';
 
 // Storage key for today's completed activities (fallback for offline)
@@ -82,8 +93,8 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [expanded, setExpanded] = useState(false);
   const [hasCarryover, setHasCarryover] = useState(false);
   
-  // Track section to detect changes
-  const currentSection = (userProfile as any)?.examSection || 'FAR';
+  // Track section to detect changes - course-aware
+  const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const [lastLoadedSection, setLastLoadedSection] = useState<string | null>(null);
 
   // Load daily plan from Firestore (with caching and carryover)
@@ -115,14 +126,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       
       // Handle examDate which could be Date, Timestamp, or string
       let examDateStr: string | undefined;
-      const rawExamDate = (userProfile as any).examDate;
+      const rawExamDate = userProfile.examDate;
       if (rawExamDate) {
         if (typeof rawExamDate === 'string') {
           examDateStr = rawExamDate;
         } else if (rawExamDate instanceof Date) {
           examDateStr = rawExamDate.toISOString().split('T')[0];
-        } else if (typeof rawExamDate.toDate === 'function') {
-          examDateStr = rawExamDate.toDate().toISOString().split('T')[0];
+        } else if (typeof (rawExamDate as any).toDate === 'function') {
+          examDateStr = (rawExamDate as any).toDate().toISOString().split('T')[0];
         }
       }
       
@@ -135,7 +146,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       const studyState: UserStudyState = {
         section: section || 'FAR',
         examDate: examDateStr,
-        dailyGoal: (userProfile as any).dailyGoal || 50,
+        dailyGoal: userProfile.dailyGoal || 50,
         topicStats: topicStats.map((t: any) => ({
           topic: t.topic || t.id,
           topicId: t.topicId || t.id,
@@ -149,10 +160,10 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         lessonProgress,
         flashcardsDue: (stats as any)?.flashcardsDue || 0,
         currentStreak: (stats as any)?.currentStreak || 0,
-        todayPoints: Math.round((dailyProgress / 100) * ((userProfile as any).dailyGoal || 50)),
+        todayPoints: Math.round((dailyProgress / 100) * (userProfile.dailyGoal || 50)),
         // NEW: Enable curriculum-aware learning - only quiz on covered topics
-        enableCurriculumFilter: (userProfile as any).enableCurriculumFilter ?? true, // Default to enabled
-        enablePreviewMode: (userProfile as any).enablePreviewMode ?? false, // Optional 10% lookahead
+        enableCurriculumFilter: userProfile.enableCurriculumFilter ?? true, // Default to enabled
+        enablePreviewMode: userProfile.enablePreviewMode ?? false, // Optional 10% lookahead
       };
       
       // Use the persistence layer to get/create today's plan
@@ -205,7 +216,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // If returning from dailyplan activity AND it was marked completed
     if (from === 'dailyplan' && activityId && completed === 'true' && user?.uid) {
       // Mark the activity as complete - pass section for correct cache key
-      const section = plan?.section || (userProfile as any)?.examSection || 'FAR';
+      const section = plan?.section || currentSection;
       markActivityCompleted(user.uid, activityId, section).then(() => {
         setCompletedActivities(prev => {
           const updated = new Set(prev);
@@ -249,26 +260,26 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
     
-    // Navigate based on activity type
+    // Navigate based on activity type - using course-aware paths
     switch (activity.type) {
       case 'lesson':
-        navigate(`/lessons/${activity.params.lessonId}?${fromParam}`);
+        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}`);
         break;
       case 'mcq':
         if (activity.params.topic) {
-          navigate(`/practice?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
         } else {
-          navigate(`/practice?${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?${fromParam}`);
         }
         break;
       case 'tbs':
-        navigate(`/tbs?${fromParam}`);
+        navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        navigate(`/flashcards?${fromParam}`);
+        navigate(`${getCourseFlashcardPath(courseId)}?${fromParam}`);
         break;
       default:
-        navigate('/study');
+        navigate(getCourseHomePath(courseId));
     }
   };
 
@@ -311,23 +322,23 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
+      <Card className="p-6">
         <div className="flex items-center justify-center py-8">
           <Loader2 className="w-6 h-6 animate-spin text-primary-500" />
           <span className="ml-2 text-slate-600">Creating your personalized plan...</span>
         </div>
-      </div>
+      </Card>
     );
   }
 
   if (error || !plan) {
     return (
-      <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
+      <Card className="p-6">
         <div className="flex items-center justify-center py-8 text-slate-600">
           <AlertCircle className="w-5 h-5 mr-2" />
           {error || 'Unable to load daily plan'}
         </div>
-      </div>
+      </Card>
     );
   }
 
@@ -340,7 +351,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     const nextActivity = plan.activities.find((a: DailyActivity) => !completedActivities.has(a.id));
     
     return (
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+      <Card noPadding className="overflow-hidden">
         {/* Header */}
         <div className="p-4 border-b border-slate-200 dark:border-slate-700">
           <div className="flex items-center justify-between">
@@ -390,7 +401,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         ) : dailyProgress < 100 ? (
           <div 
             className="p-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => navigate('/study')}
+            onClick={() => navigate(getCourseHomePath(courseId))}
           >
             <Target className="w-8 h-8 text-white mx-auto mb-2" />
             <p className="text-white font-medium">Daily plan complete! 🎯</p>
@@ -399,7 +410,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         ) : (
           <div 
             className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600 cursor-pointer hover:from-success-600 hover:to-success-700 transition-all"
-            onClick={() => navigate('/practice')}
+            onClick={() => navigate(getCoursePracticePath(courseId))}
           >
             <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
             <p className="text-white font-medium">All done for today! 🎉</p>
@@ -431,22 +442,23 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                   )}
                 </div>
               </div>
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => setExpanded(true)}
-                className="text-sm text-primary-600 hover:text-primary-700 font-medium"
               >
                 View All →
-              </button>
+              </Button>
             </div>
           </div>
         )}
-      </div>
+      </Card>
     );
   }
 
   // Full/expanded view
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+    <Card noPadding className="overflow-hidden">
       {/* Header */}
       <div className="p-4 border-b border-slate-200 dark:border-slate-700">
         <div className="flex items-center justify-between">
@@ -469,20 +481,22 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           </div>
           <div className="flex items-center gap-2">
             {compact && (
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => setExpanded(false)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors text-sm text-slate-600 dark:text-slate-400"
               >
                 Collapse ↑
-              </button>
+              </Button>
             )}
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => loadPlan(true)}
-              className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
-              title="Regenerate plan"
+              aria-label="Regenerate plan"
             >
-              <RefreshCw className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-            </button>
+              <RefreshCw className="w-5 h-5" />
+            </Button>
           </div>
         </div>
         
@@ -575,12 +589,13 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                 
                 {/* Action button */}
                 {!isComplete ? (
-                  <button
+                  <Button
+                    variant="primary"
+                    size="sm"
                     onClick={() => handleActivityClick(activity)}
-                    className="px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors"
                   >
                     Start
-                  </button>
+                  </Button>
                 ) : (
                   <span className="px-3 py-1.5 bg-success-100 text-success-700 text-xs font-medium rounded-lg">
                     Done
@@ -605,7 +620,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           </p>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

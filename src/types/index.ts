@@ -6,6 +6,7 @@ import type { CourseId as CourseIdType } from './course';
 // Re-export course types for convenience
 export * from './course';
 export type { CourseId } from './course';
+export type { CourseId as CourseIdType } from './course';
 
 /**
  * Normalized Difficulty Levels
@@ -17,7 +18,43 @@ export type Difficulty = 'easy' | 'medium' | 'hard' | 'beginner' | 'intermediate
 export type NormalizedDifficulty = 'easy' | 'medium' | 'hard';
 export type MultiLevelDifficulty = 'beginner' | 'intermediate' | 'advanced';
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
+
+/**
+ * CPA Exam Sections (original type - kept for backward compatibility)
+ * Used throughout CPA-specific components
+ */
 export type ExamSection = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP' | 'PREP' | 'BEC';
+
+/**
+ * EA (Enrolled Agent) Exam Sections
+ * SEE = Special Enrollment Examination
+ */
+export type EASection = 'SEE1' | 'SEE2' | 'SEE3';
+
+/**
+ * CMA (Certified Management Accountant) Exam Sections
+ */
+export type CMASection = 'CMA1' | 'CMA2';
+
+/**
+ * CIA (Certified Internal Auditor) Exam Sections
+ */
+export type CIASection = 'CIA1' | 'CIA2' | 'CIA3';
+
+/**
+ * CISA (Certified Information Systems Auditor) Exam Sections
+ */
+export type CISASection = 'CISA1' | 'CISA2' | 'CISA3' | 'CISA4' | 'CISA5';
+
+/**
+ * CFP (Certified Financial Planner) Exam Sections
+ */
+export type CFPSection = 'CFP-PCR' | 'CFP-GEN' | 'CFP-RISK' | 'CFP-INV' | 'CFP-TAX' | 'CFP-RET' | 'CFP-EST' | 'CFP-PSY';
+
+/**
+ * All exam sections across all courses (for multi-course components)
+ */
+export type AllExamSections = ExamSection | EASection | CMASection | CIASection | CISASection | CFPSection;
 
 /** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Use ExamSection instead. */
 export type LegacyExamSection = 'BEC';
@@ -114,7 +151,7 @@ export interface LessonContent {
 export interface Lesson {
   id: string;
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
-  section: ExamSection;
+  section: AllExamSections;      // Updated: supports all course sections
   title: string;
   description: string;
   order: number;
@@ -129,10 +166,59 @@ export interface Lesson {
   skillLevel?: 'Remembering and Understanding' | 'Application' | 'Analysis' | 'Evaluation';
 }
 
+/**
+ * Answer option format for CFP-style questions
+ */
+export interface QuestionOption {
+  id: string;
+  text: string;
+}
+
+/**
+ * CFP-style question with different structure
+ */
+export interface CFPQuestion {
+  id: string;
+  courseId?: CourseIdType;
+  text: string;                  // Question text
+  options: QuestionOption[];     // {id, text}[] format
+  correctOptionId: string;       // 'A', 'B', 'C', 'D'
+  explanation: string;
+  blueprintArea?: string;
+  skillLevel?: 'Remembering and Understanding' | 'Application' | 'Analysis' | 'Evaluation' | 'Remembering';
+}
+
+/**
+ * Case Study question within a case study
+ */
+export interface CaseStudyQuestion {
+  id: string;
+  domain: string;               // Which CFP domain (RET, TAX, INV, EST, RISK, etc.)
+  question: string;
+  options: QuestionOption[];
+  correctOptionId: string;
+  explanation: string;
+}
+
+/**
+ * CFP Case Study - Multi-part scenarios testing integrated knowledge
+ */
+export interface CaseStudy {
+  id: string;
+  title: string;
+  courseId: CourseIdType;
+  difficulty: NormalizedDifficulty;
+  estimatedTime: number;        // Time in minutes
+  domains: string[];            // CFP domains covered
+  scenario: string;             // Markdown-formatted scenario
+  questions: CaseStudyQuestion[];
+  scoringGuide?: string;        // Markdown-formatted scoring guide
+}
+
 export interface Question {
   id: string;
   courseId?: CourseIdType;       // NEW: Multi-course support (defaults to 'cpa')
-  section: ExamSection;
+  section: AllExamSections;      // Updated: supports all course sections
   topic: string;
   subtopic: string; // Made required to match existing data
   topicId?: string; // Legacy
@@ -154,6 +240,7 @@ export interface Question {
   verified?: boolean;
   hr1?: boolean; // Layout helper?
   effectiveDate?: string; // For regulation changes
+  calculationType?: string; // For calculation-focused practice questions (EA)
   
   // Video explanation support (World-Class feature)
   videoExplanation?: {
@@ -223,7 +310,7 @@ export interface WCRubric {
 
 export interface WCTask {
   id: string;
-  section: ExamSection;
+  section: AllExamSections;
   type: 'written_communication';
   topic: string;
   difficulty: Difficulty;
@@ -240,22 +327,62 @@ export interface WCTask {
   blueprintTopic?: string;
 }
 
+/**
+ * User Profile - represents user data stored in Firestore
+ * Canonical definition - import from here instead of defining locally
+ */
 export interface UserProfile {
-  uid: string;
+  // Identity
+  id?: string;                   // Firestore document ID (same as uid)
+  uid?: string;                  // Firebase Auth UID (alias for id)
   email: string | null;
   displayName: string | null;
-  photoURL: string | null;
-  examDate?: Date | { seconds: number; nanoseconds: number }; // Date or Firestore Timestamp
-  examSection: ExamSection;
-  createdAt: Date | { seconds: number; nanoseconds: number }; // Firestore Timestamp
-  dailyGoal?: number;
-  isAdmin?: boolean; // Admin role for CMS access
-  studyPlanId?: string; // Reference to study plan document
+  photoURL?: string | null;
+  
+  // Course & Exam Configuration
+  activeCourse?: CourseIdType;   // Primary course the user is studying (defaults to 'cpa')
+  examSection?: AllExamSections | string | null; // Current section being studied
+  /** @deprecated Use examDates instead for multi-course support */
+  examDate?: Date | { seconds: number; nanoseconds: number } | null; // Legacy: Target exam date
+  /** Target exam dates keyed by section ID (e.g., { 'FAR': Date, 'SEE1': Date }) */
+  examDates?: Record<string, Date | { seconds: number; nanoseconds: number } | null>;
+  
+  // Study Goals
+  dailyGoal?: number;            // Daily XP/points goal
+  /** @deprecated Use studyPlans instead for multi-course support */
+  studyPlanId?: string | null;   // Legacy: Reference to study plan document
+  /** Study plan IDs keyed by course ID (e.g., { 'cpa': 'plan-123', 'ea': 'plan-456' }) */
+  studyPlans?: Record<CourseIdType, string | null>;
+  
+  // Progress tracking
+  lessonProgress?: Record<string, number>; // Lesson completion progress by lesson ID
+  
+  // Onboarding
   onboardingComplete?: boolean;
-  onboardingCompletedAt?: Date | { seconds: number; nanoseconds: number };
+  onboardingCompletedAt?: Date | { seconds: number; nanoseconds: number } | null;
+  
+  // Permissions
+  isAdmin?: boolean;             // Admin role for CMS access
+  
+  // Notifications
   dailyReminderEnabled?: boolean;
-  dailyReminderTime?: string;
+  dailyReminderTime?: string;    // e.g., "09:00"
   weeklyReportEnabled?: boolean;
-  timezone?: string; // IANA timezone string (e.g., "America/New_York")
+  
+  // Preferences
+  timezone?: string;             // IANA timezone string (e.g., "America/New_York")
+  settings?: {
+    notifications?: boolean;
+    darkMode?: boolean;
+    soundEffects?: boolean;
+  };
+  
+  // Curriculum filtering (smart study)
+  enableCurriculumFilter?: boolean; // Filter to covered topics only
+  enablePreviewMode?: boolean;      // Allow 10% lookahead for next topics
+  
+  // Timestamps (FieldValue allowed for serverTimestamp() during writes)
+  createdAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };
+  updatedAt?: Date | { seconds: number; nanoseconds: number } | { isEqual: (other: unknown) => boolean };
 }
 

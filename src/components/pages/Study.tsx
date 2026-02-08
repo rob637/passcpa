@@ -14,7 +14,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
 import DailyPlanCard from '../DailyPlanCard';
@@ -33,11 +33,11 @@ interface StudyMode {
 const Study = () => {
   const { userProfile } = useAuth();
   const { todayLog, dailyProgress, dailyGoalMet } = useStudy();
-  const { courseId: _courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
-  const currentSection = userProfile?.examSection || 'REG';
-  const sectionInfo = CPA_SECTIONS[currentSection as keyof typeof CPA_SECTIONS];
+  const currentSection = userProfile?.examSection || getDefaultSection(courseId);
+  const sectionInfo = getSectionDisplayInfo(currentSection as string, courseId);
 
   // Build recent items from today's activities (async)
   useEffect(() => {
@@ -119,14 +119,15 @@ const Study = () => {
       color: 'success',
       link: '/practice',
     },
-    {
+    // TBS - only for courses that have TBS (e.g., CPA)
+    ...(course?.hasTBS ? [{
       id: 'tbs',
       title: 'Task-Based Simulations',
       description: 'Practice real exam TBS like journal entries, reconciliations',
       icon: FileSpreadsheet,
-      color: 'warning',
+      color: 'warning' as const,
       link: '/tbs',
-    },
+    }] : []),
     // Written Communication - Required for BEC section
     ...(currentSection === 'BEC' ? [{
       id: 'wc',

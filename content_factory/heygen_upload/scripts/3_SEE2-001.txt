@@ -1,0 +1,75 @@
+What is an LLC? Here is a fact that surprises many students: To the IRS, an LLC does not exist. Seriously. The term "LLC" or Limited Liability Company is a legal term created by state law. It is not a tax term. The IRS does not have a tax form for LLCs. There is no "LLC tax return."
+
+So how does the IRS tax an LLC? Through something called the "Check-the-Box" regulations. Today we are going to master these classification rules, because they show up repeatedly on the EA exam.
+
+The Check-the-Box regulations, found in Treasury Regulation Section 301.7701, establish default classifications for business entities and allow taxpayers to elect different classifications in certain cases.
+
+Let me start with the fundamental principle: The IRS classifies business entities based on their characteristics, not their legal names. An LLC can be taxed as a sole proprietorship, a partnership, a C-Corporation, or an S-Corporation. It all depends on the structure and elections made.
+
+Here are the default rules you must memorize.
+
+First, if an entity has only ONE owner and makes no election, it is a "Disregarded Entity." This means the IRS pretends the entity does not exist for federal tax purposes. The owner reports all income and expenses on their personal return. For a single-member LLC, this usually means Schedule C for an active business or Schedule E for rental property.
+
+Second, if an entity has TWO OR MORE owners and makes no election, it is a Partnership. The entity files Form 1065, and each owner receives a Schedule K-1 showing their share of income, deductions, and credits.
+
+These are the defaults. If you do nothing, these classifications apply automatically.
+
+But what if you want a different classification? That is where the election forms come in.
+
+Form 8832 is the Entity Classification Election. This is the actual "check-the-box" form. It allows eligible entities to choose their classification.
+
+Here is what Form 8832 can do: A disregarded entity can elect to be classified as a corporation. A partnership can elect to be classified as a corporation. A corporation can elect to be classified as a partnership or disregarded entity, though this is treated as a liquidation for tax purposes with potentially significant tax consequences.
+
+Let me walk through the most common scenario. You have a two-member LLC operating a business. By default, it is a partnership. The owners decide they want to be taxed as an S-Corporation for the employment tax savings.
+
+Step one: File Form 8832 to elect classification as a corporation. Once this election is made, the LLC is treated as a C-Corporation for tax purposes.
+
+Step two: File Form 2553 to elect S-Corporation status. Form 2553 is the S-Corporation election, and it must be filed within 75 days of the beginning of the tax year you want the election to take effect, or at any time during the preceding tax year.
+
+Some practitioners take a shortcut. If you want to go directly from default partnership status to S-Corp status, you can file just Form 2553 with an explanation, and the IRS will treat it as an implicit 8832 election. But for the exam, understand that technically both elections are happening.
+
+Now here is a critical exam trap: the 60-month rule. Once an entity makes an election to change its classification under Form 8832, it generally cannot change its classification again for 60 months. Five years. This prevents taxpayers from constantly switching classifications to game the system.
+
+There are exceptions to the 60-month rule. The IRS can grant permission for an earlier change. And if more than 50% of the ownership interests are owned by persons who did not own interests when the election was made, an earlier change may be allowed.
+
+Let me discuss some specific entity types and their treatment.
+
+A single-member LLC owned by an individual is by default a disregarded entity. The member reports business income on Schedule C. But that same LLC could elect to be taxed as a C-Corporation or, with both Form 8832 and 2553, as an S-Corporation.
+
+A multi-member LLC is by default a partnership. It files Form 1065 and issues K-1s to its members. It could elect corporation treatment with Form 8832.
+
+A corporation formed under state law is automatically a corporation for tax purposes. It cannot use Form 8832 to elect partnership or disregarded entity treatment. However, it can elect S-Corporation status with Form 2553 if it meets the S-Corp eligibility requirements.
+
+What are those S-Corp requirements? Let me list them because they are frequently tested.
+
+First, the corporation must be a domestic corporation. Foreign corporations cannot be S-Corps.
+
+Second, it can have only one class of stock. You can have voting and non-voting shares, but all shares must have identical rights to distributions and liquidation proceeds.
+
+Third, it can have no more than 100 shareholders. Family members can elect to be treated as one shareholder for this count.
+
+Fourth, shareholders must be individuals, estates, certain trusts, or certain tax-exempt organizations. Partnerships and corporations cannot be S-Corp shareholders.
+
+Fifth, no shareholder can be a nonresident alien.
+
+If an S-Corporation violates any of these requirements, the election is automatically terminated, and the company becomes a C-Corporation.
+
+Let's talk about the tax implications of changing entity classification.
+
+When a partnership or disregarded entity elects to be classified as a corporation, it is treated as contributing all assets and liabilities to the corporation in exchange for stock. Generally, this is tax-free under Section 351 if the transferors control the corporation immediately after the exchange.
+
+When a corporation elects to be classified as a partnership or disregarded entity, things get much more complicated. This is treated as a complete liquidation of the corporation, which can trigger significant gain recognition. The corporation recognizes gain on the distribution of appreciated assets, and the shareholders recognize gain on the liquidation. This is why corporations rarely elect to become partnerships.
+
+Here is an exam tip: When you see a question about an LLC's tax treatment, first determine the default classification based on the number of owners. Then check if any elections have been made. The question may describe filing Form 8832 or Form 2553. Apply those elections in order.
+
+Another exam favorite involves the timing of elections. Form 8832 can be filed up to 75 days before the requested effective date and up to 12 months after the requested effective date for late election relief. Form 2553 has specific timing requirements tied to the beginning of the tax year.
+
+Let me address professional organizations. A professional corporation, like one formed by lawyers or doctors, is automatically treated as a corporation for tax purposes. It cannot check the box to be a partnership. However, if professionals form an LLC instead of a professional corporation, the normal check-the-box rules apply.
+
+One more concept: publicly traded partnerships. A partnership whose interests are traded on an established securities market is generally treated as a corporation for tax purposes, regardless of any election. There are exceptions for partnerships with 90% or more qualifying income from certain passive sources.
+
+To summarize today's key points: "LLC" is a legal term, not a tax term. The IRS classifies entities based on characteristics and elections, not names. Default classification for single-owner entities is disregarded. Default for multi-owner entities is partnership. Form 8832 allows eligible entities to elect different classifications. Form 2553 elects S-Corporation status. The 60-month rule prevents frequent classification changes. And remember the S-Corp eligibility requirements: domestic, single class of stock, 100 or fewer shareholders, eligible shareholders only, no nonresident aliens.
+
+Understanding entity classification is foundational to everything else we discuss in business taxation. In our next lesson, we will tackle depreciation recapture under Section 1245.
+
+See you in the next video.

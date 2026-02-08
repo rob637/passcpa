@@ -1,0 +1,549 @@
+/**
+ * CMA Part 1, Section D: Cost Management - Questions Batch 1 (Q1-25)
+ * Weight: 15% of Part 1 Exam
+ * 
+ * Blueprint Areas:
+ * - CMA1-D: Cost Management
+ * 
+ * Topics covered:
+ * - Cost Behavior and Classification
+ * - Cost-Volume-Profit Analysis (CVP)
+ * - Job Order and Process Costing
+ * - Activity-Based Costing (ABC)
+ * - Joint and By-Product Costing
+ * - Supply Chain Management
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1D_QUESTIONS_BATCH1: Question[] = [
+  // ==========================================
+  // Cost Behavior and Classification
+  // ==========================================
+  {
+    id: 'cma1-d-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'Variable Costs',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following is a characteristic of variable costs?',
+    options: [
+      'They remain constant in total as activity changes',
+      'They remain constant per unit as activity changes',
+      'They increase per unit as activity increases',
+      'They decrease per unit as activity decreases'
+    ],
+    correctAnswer: 1,
+    explanation: 'Variable costs remain constant per unit but change in total proportionally with activity. If you produce more units, total variable costs increase, but the cost per unit stays the same.',
+    reference: 'Cost Behavior; IMA CMA Content',
+  },
+  {
+    id: 'cma1-d-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'Fixed Costs',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Fixed costs per unit:',
+    options: [
+      'Remain constant as activity changes',
+      'Decrease as activity increases',
+      'Increase as activity increases',
+      'Are always discretionary'
+    ],
+    correctAnswer: 1,
+    explanation: 'Fixed costs are constant in total, so as activity increases, fixed costs are spread over more units, causing the fixed cost per unit to decrease. This is the concept of operating leverage.',
+    reference: 'Cost Behavior; Fixed Costs',
+  },
+  {
+    id: 'cma1-d-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'Mixed Costs',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'The high-low method is used to:',
+    options: [
+      'Calculate the break-even point',
+      'Separate mixed costs into fixed and variable components',
+      'Allocate overhead costs to products',
+      'Determine the sales mix'
+    ],
+    correctAnswer: 1,
+    explanation: 'The high-low method separates mixed (semi-variable) costs into their fixed and variable components by using the highest and lowest activity levels. Variable rate = (High cost - Low cost) / (High activity - Low activity).',
+    reference: 'High-Low Method; Cost Estimation',
+  },
+  {
+    id: 'cma1-d-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Behavior',
+    subtopic: 'High-Low Method',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company has the following data: High month - 10,000 units, $85,000 cost; Low month - 6,000 units, $65,000 cost. What is the variable cost per unit?',
+    options: [
+      '$5.00',
+      '$6.50',
+      '$8.50',
+      '$10.00'
+    ],
+    correctAnswer: 0,
+    explanation: 'Variable cost per unit = (High cost - Low cost) / (High units - Low units) = ($85,000 - $65,000) / (10,000 - 6,000) = $20,000 / 4,000 = $5.00 per unit.',
+    reference: 'High-Low Method; Cost Estimation',
+  },
+
+  // ==========================================
+  // Cost-Volume-Profit Analysis
+  // ==========================================
+  {
+    id: 'cma1-d-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'CVP Analysis',
+    subtopic: 'Contribution Margin',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Contribution margin is calculated as:',
+    options: [
+      'Sales minus cost of goods sold',
+      'Sales minus variable costs',
+      'Sales minus fixed costs',
+      'Gross profit minus operating expenses'
+    ],
+    correctAnswer: 1,
+    explanation: 'Contribution margin = Sales - Variable Costs. It represents the amount available to cover fixed costs and provide profit. This differs from gross profit which subtracts all cost of goods sold (both variable and fixed production costs).',
+    reference: 'Contribution Margin; CVP Analysis',
+  },
+  {
+    id: 'cma1-d-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'CVP Analysis',
+    subtopic: 'Break-Even Point',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A product sells for $50, has variable costs of $30, and total fixed costs are $100,000. What is the break-even point in units?',
+    options: [
+      '2,000 units',
+      '3,333 units',
+      '5,000 units',
+      '10,000 units'
+    ],
+    correctAnswer: 2,
+    explanation: 'Break-even units = Fixed Costs / Contribution Margin per Unit = $100,000 / ($50 - $30) = $100,000 / $20 = 5,000 units.',
+    reference: 'Break-Even Analysis; CVP',
+  },
+  {
+    id: 'cma1-d-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'CVP Analysis',
+    subtopic: 'Target Profit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Using the data: selling price $50, variable cost $30, fixed costs $100,000, how many units must be sold to earn a target profit of $40,000?',
+    options: [
+      '5,000 units',
+      '6,000 units',
+      '7,000 units',
+      '8,000 units'
+    ],
+    correctAnswer: 2,
+    explanation: 'Units for target profit = (Fixed Costs + Target Profit) / Contribution Margin = ($100,000 + $40,000) / $20 = $140,000 / $20 = 7,000 units.',
+    reference: 'Target Profit Analysis; CVP',
+  },
+  {
+    id: 'cma1-d-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'CVP Analysis',
+    subtopic: 'Margin of Safety',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'If a company\'s current sales are $500,000 and break-even sales are $400,000, what is the margin of safety percentage?',
+    options: [
+      '10%',
+      '20%',
+      '25%',
+      '80%'
+    ],
+    correctAnswer: 1,
+    explanation: 'Margin of Safety % = (Current Sales - Break-even Sales) / Current Sales = ($500,000 - $400,000) / $500,000 = $100,000 / $500,000 = 20%.',
+    reference: 'Margin of Safety; CVP Analysis',
+  },
+  {
+    id: 'cma1-d-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'CVP Analysis',
+    subtopic: 'Operating Leverage',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'A company with high operating leverage will experience:',
+    options: [
+      'Smaller percentage changes in profit for given sales changes',
+      'Larger percentage changes in profit for given sales changes',
+      'No change in profit when sales change',
+      'Higher variable costs relative to fixed costs'
+    ],
+    correctAnswer: 1,
+    explanation: 'High operating leverage means a high proportion of fixed costs. This creates a "leveraging" effect where a small percentage change in sales creates a larger percentage change in operating income (both positive and negative).',
+    reference: 'Operating Leverage; CVP Analysis',
+  },
+
+  // ==========================================
+  // Job Order and Process Costing
+  // ==========================================
+  {
+    id: 'cma1-d-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Product Costing',
+    subtopic: 'Job Order Costing',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Job order costing is most appropriate for:',
+    options: [
+      'Companies producing identical products in continuous production',
+      'Companies producing unique or customized products',
+      'Service companies only',
+      'Retail companies'
+    ],
+    correctAnswer: 1,
+    explanation: 'Job order costing tracks costs for each job, batch, or customer order separately. It is ideal for unique, customized products (construction, printing, consulting) where each job is distinguishable and may have different costs.',
+    reference: 'Job Order Costing; IMA CMA Content',
+  },
+  {
+    id: 'cma1-d-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Product Costing',
+    subtopic: 'Process Costing',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Process costing is most appropriate for:',
+    options: [
+      'Custom furniture manufacturing',
+      'Legal services',
+      'Oil refining',
+      'Specialized equipment manufacturing'
+    ],
+    correctAnswer: 2,
+    explanation: 'Process costing averages costs over identical units in continuous production. It suits industries like oil refining, chemical production, food processing, and any manufacturing with homogeneous products and continuous processing.',
+    reference: 'Process Costing; IMA CMA Content',
+  },
+  {
+    id: 'cma1-d-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Product Costing',
+    subtopic: 'Equivalent Units',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'In process costing, equivalent units represent:',
+    options: [
+      'The actual number of units started',
+      'The number of complete units that could have been produced with the work done',
+      'Units sold during the period',
+      'Units remaining in ending inventory'
+    ],
+    correctAnswer: 1,
+    explanation: 'Equivalent units convert partially completed units into the equivalent number of completed units. For example, 1,000 units that are 50% complete = 500 equivalent units of work completed.',
+    reference: 'Equivalent Units; Process Costing',
+  },
+  {
+    id: 'cma1-d-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Product Costing',
+    subtopic: 'FIFO vs Weighted Average',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'In process costing, the FIFO method differs from the weighted-average method primarily because FIFO:',
+    options: [
+      'Ignores beginning work in process inventory',
+      'Separates work done in the current period from work done in the prior period',
+      'Uses only ending inventory values',
+      'Is simpler to calculate'
+    ],
+    correctAnswer: 1,
+    explanation: 'FIFO separates the work and costs of beginning inventory from current period work. Weighted-average combines beginning inventory work with current period work. FIFO provides a purer measure of current period performance.',
+    reference: 'FIFO vs Weighted Average; Process Costing',
+  },
+
+  // ==========================================
+  // Activity-Based Costing
+  // ==========================================
+  {
+    id: 'cma1-d-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Activity-Based Costing',
+    subtopic: 'ABC Concepts',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Activity-based costing (ABC) assigns overhead costs based on:',
+    options: [
+      'Direct labor hours only',
+      'Machine hours only',
+      'Cost drivers that reflect actual consumption of activities',
+      'Sales revenue'
+    ],
+    correctAnswer: 2,
+    explanation: 'ABC uses multiple cost drivers (activity measures) to allocate overhead based on actual consumption patterns. This provides more accurate product costs than traditional systems using a single volume-based driver.',
+    reference: 'Activity-Based Costing; IMA CMA Content',
+  },
+  {
+    id: 'cma1-d-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Activity-Based Costing',
+    subtopic: 'Cost Hierarchy',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'In ABC, which level of the cost hierarchy includes machine setup costs?',
+    options: [
+      'Unit-level activities',
+      'Batch-level activities',
+      'Product-level activities',
+      'Facility-level activities'
+    ],
+    correctAnswer: 1,
+    explanation: 'Setup costs are batch-level activities because setups occur once per batch, regardless of the number of units in the batch. Unit-level costs vary with each unit; product-level costs relate to each product line; facility-level costs support the whole facility.',
+    reference: 'ABC Cost Hierarchy',
+  },
+  {
+    id: 'cma1-d-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Activity-Based Costing',
+    subtopic: 'ABC Benefits',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Compared to traditional costing, ABC typically reveals that:',
+    options: [
+      'All products have the same cost',
+      'High-volume products are undercosted and low-volume products are overcosted',
+      'Low-volume products are undercosted and high-volume products are overcosted',
+      'Overhead costs should be ignored'
+    ],
+    correctAnswer: 2,
+    explanation: 'Traditional volume-based costing tends to undercost low-volume, complex products and overcost high-volume, simple products. ABC reveals true consumption patterns, often increasing costs assigned to low-volume products.',
+    reference: 'ABC vs Traditional Costing',
+  },
+
+  // ==========================================
+  // Joint and By-Product Costing
+  // ==========================================
+  {
+    id: 'cma1-d-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Joint Costing',
+    subtopic: 'Split-off Point',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The split-off point is best described as:',
+    options: [
+      'The point where joint products become separately identifiable',
+      'The end of the production process',
+      'The point where products are sold',
+      'The beginning of the production process'
+    ],
+    correctAnswer: 0,
+    explanation: 'The split-off point is where joint products emerge from a common process and become separately identifiable. Costs incurred before this point are joint costs; costs after are separable costs.',
+    reference: 'Joint Product Costing; IMA CMA Content',
+  },
+  {
+    id: 'cma1-d-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Joint Costing',
+    subtopic: 'Sales Value at Split-off',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Under the sales value at split-off method, joint costs are allocated based on:',
+    options: [
+      'Physical quantities of each product',
+      'Relative sales values of products at the split-off point',
+      'Relative sales values after further processing',
+      'Variable costs of each product'
+    ],
+    correctAnswer: 1,
+    explanation: 'The sales value at split-off method allocates joint costs in proportion to each product\'s relative sales value at the split-off point. Products with higher sales value receive a larger share of joint costs.',
+    reference: 'Joint Cost Allocation Methods',
+  },
+  {
+    id: 'cma1-d-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Joint Costing',
+    subtopic: 'Sell or Process Further',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'In deciding whether to sell at split-off or process further, joint costs are:',
+    options: [
+      'Relevant and should be allocated to each product',
+      'Irrelevant because they are sunk at the decision point',
+      'Only relevant if products are sold at split-off',
+      'Only relevant if products are processed further'
+    ],
+    correctAnswer: 1,
+    explanation: 'Joint costs are sunk costs at the decision point - they have already been incurred regardless of the sell/process decision. The relevant comparison is: incremental revenue from processing further vs. incremental processing costs.',
+    reference: 'Sell or Process Further Decisions',
+  },
+  {
+    id: 'cma1-d-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Joint Costing',
+    subtopic: 'By-Products',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'By-products differ from joint products in that by-products:',
+    options: [
+      'Have significant sales value relative to main products',
+      'Have minor sales value relative to main products',
+      'Are always waste materials',
+      'Must be processed further before sale'
+    ],
+    correctAnswer: 1,
+    explanation: 'By-products have minor relative sales value compared to main joint products. Due to their minor importance, by-products typically are not allocated joint costs; their net revenue often reduces main product costs.',
+    reference: 'By-Product Accounting',
+  },
+
+  // ==========================================
+  // Supply Chain Management
+  // ==========================================
+  {
+    id: 'cma1-d-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Supply Chain',
+    subtopic: 'JIT Inventory',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Just-in-time (JIT) inventory systems aim to:',
+    options: [
+      'Maximize inventory levels for safety stock',
+      'Minimize inventory by receiving materials just when needed',
+      'Eliminate all supplier relationships',
+      'Focus only on finished goods inventory'
+    ],
+    correctAnswer: 1,
+    explanation: 'JIT systems minimize inventory carrying costs by receiving materials just when needed for production. This requires reliable suppliers, excellent quality, and efficient processes but reduces storage, insurance, and obsolescence costs.',
+    reference: 'Just-in-Time; Supply Chain Management',
+  },
+  {
+    id: 'cma1-d-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Supply Chain',
+    subtopic: 'EOQ Model',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'The economic order quantity (EOQ) formula balances:',
+    options: [
+      'Purchase price and selling price',
+      'Ordering costs and carrying costs',
+      'Variable costs and fixed costs',
+      'Direct and indirect costs'
+    ],
+    correctAnswer: 1,
+    explanation: 'EOQ minimizes total inventory costs by balancing ordering costs (decrease with larger, less frequent orders) and carrying costs (increase with larger orders). EOQ = √(2DS/H) where D=demand, S=order cost, H=holding cost.',
+    reference: 'Economic Order Quantity; Inventory Management',
+  },
+  {
+    id: 'cma1-d-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Supply Chain',
+    subtopic: 'Lean Manufacturing',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following is a key principle of lean manufacturing?',
+    options: [
+      'Maintain large safety stock',
+      'Eliminate waste in all forms',
+      'Produce in large batches for efficiency',
+      'Prioritize equipment utilization over flow'
+    ],
+    correctAnswer: 1,
+    explanation: 'Lean manufacturing focuses on eliminating waste (muda) in all forms: overproduction, waiting, transportation, over-processing, inventory, motion, and defects. Small batches and flow are preferred over large batches.',
+    reference: 'Lean Manufacturing; Waste Elimination',
+  },
+  {
+    id: 'cma1-d-024',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Supply Chain',
+    subtopic: 'Theory of Constraints',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'In the Theory of Constraints, throughput contribution is calculated as:',
+    options: [
+      'Sales minus all variable costs',
+      'Sales minus direct materials (truly variable costs)',
+      'Gross profit minus operating expenses',
+      'Net income plus depreciation'
+    ],
+    correctAnswer: 1,
+    explanation: 'In TOC, throughput contribution = Sales - Direct materials (truly variable costs). Labor and overhead are considered fixed in the short run. The focus is on maximizing throughput per unit of the constraint.',
+    reference: 'Theory of Constraints; Throughput Accounting',
+  },
+  {
+    id: 'cma1-d-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-D',
+    topic: 'Cost Concepts',
+    subtopic: 'Relevant Costs',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'In decision-making, relevant costs are:',
+    options: [
+      'All costs, including sunk costs',
+      'Future costs that differ between alternatives',
+      'Only fixed costs',
+      'Historical costs recorded in the accounting system'
+    ],
+    correctAnswer: 1,
+    explanation: 'Relevant costs are future costs that differ between alternatives. Sunk costs (already incurred) and costs that don\'t differ between options are irrelevant to the decision. Only incremental (differential) future costs matter.',
+    reference: 'Relevant Costs; Decision Analysis',
+  },
+];
+
+// Helper functions
+export const getCMA1DQuestionsBatch1 = () => CMA1D_QUESTIONS_BATCH1;
+export const getCMA1DQuestionCount = () => CMA1D_QUESTIONS_BATCH1.length;
+
+export default CMA1D_QUESTIONS_BATCH1;

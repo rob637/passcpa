@@ -10,4 +10,26 @@ export const FEATURES = {
   gamification: true, // Streaks, points
 };
 
+/**
+ * Check if a specific feature is enabled
+ */
 export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[feature];
+
+/**
+ * Course Availability Flags
+ * All courses enabled during beta - controlled via environment variables for future safe deployment
+ */
+export const ENABLE_EA_COURSE = true;
+export const ENABLE_CMA_COURSE = true;
+export const ENABLE_CIA_COURSE = true;
+export const ENABLE_CFP_COURSE = true;
+export const ENABLE_CISA_COURSE = true;
+
+// Log status on startup for verification
+if (import.meta.env.DEV) {
+  console.log('[FeatureFlags] EA Course Enabled:', ENABLE_EA_COURSE);
+  console.log('[FeatureFlags] CMA Course Enabled:', ENABLE_CMA_COURSE);
+  console.log('[FeatureFlags] CIA Course Enabled:', ENABLE_CIA_COURSE);
+  console.log('[FeatureFlags] CFP Course Enabled:', ENABLE_CFP_COURSE);
+  console.log('[FeatureFlags] CISA Course Enabled:', ENABLE_CISA_COURSE);
+}

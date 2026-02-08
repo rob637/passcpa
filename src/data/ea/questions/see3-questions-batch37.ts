@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 37 (Q361-370)
+ * Circular 230 - Duties and Restrictions
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH37: Question[] = [
+  // ==========================================
+  // SEE3: Circular 230 Duties & Restrictions
+  // ==========================================
+  {
+    id: 'see3-361',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Competence',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under Circular 230, practicing before the IRS includes:',
+    options: [
+      'Only filing tax returns',
+      'Preparing and filing documents, corresponding with IRS, and representing taxpayers',
+      'Only court appearances',
+      'Only signing checks'
+    ],
+    correctAnswer: 1,
+    explanation: 'Practice before the IRS includes preparing and filing documents, communicating with the IRS, and representing taxpayers at conferences, hearings, and meetings (Circular 230 §10.2(a)).',
+    reference: 'Circular 230 §10.2(a)',
+  },
+  {
+    id: 'see3-362',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Who May Practice',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following may represent taxpayers before all levels of the IRS?',
+    options: [
+      'Any adult',
+      'Attorneys, CPAs, and Enrolled Agents in good standing',
+      'Only attorneys',
+      'Anyone with a PTIN'
+    ],
+    correctAnswer: 1,
+    explanation: 'Attorneys, CPAs, and Enrolled Agents with valid licenses/enrollment may represent taxpayers before all levels of the IRS. Other practitioners have limited representation rights.',
+    reference: 'Circular 230 §10.3',
+  },
+  {
+    id: 'see3-363',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Limited Practice',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Annual Filing Season Program (AFSP) participants:',
+    options: [
+      'Have unlimited practice rights',
+      'Have limited representation rights before revenue agents, customer service, and the Taxpayer Advocate',
+      'Cannot represent anyone',
+      'May represent in Appeals and Collections'
+    ],
+    correctAnswer: 1,
+    explanation: 'AFSP participants have limited practice rights and may represent taxpayers whose returns they prepared only before revenue agents, customer service representatives, and TAS.',
+    reference: 'Circular 230 §10.3(f)',
+  },
+  {
+    id: 'see3-364',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Knowledge of Error',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If a practitioner learns of an error on a client\'s submitted return:',
+    options: [
+      'They must file an amended return immediately',
+      'They must promptly advise the client of the error and its consequences',
+      'They must report the client to the IRS',
+      'They have no obligation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under Circular 230 §10.21, practitioners must promptly advise clients of errors or omissions on submitted documents and the consequences. They cannot unilaterally disclose to the IRS without client consent.',
+    reference: 'Circular 230 §10.21',
+  },
+  {
+    id: 'see3-365',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Contingent Fees',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Contingent fees are:',
+    options: [
+      'Allowed for all tax work',
+      'Generally prohibited for preparing tax returns but allowed for certain matters like refund claims',
+      'Never allowed',
+      'Required by law'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 §10.27 generally prohibits contingent fees for preparing original or amended returns or refund claims. Exceptions include IRS examination or challenge of an original return, or claims subject to IRC §6694 penalties.',
+    reference: 'Circular 230 §10.27',
+  },
+  {
+    id: 'see3-366',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Fee Disclosure',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Practitioners should:',
+    options: [
+      'Hide their fees',
+      'Charge reasonable fees and communicate the basis for fees clearly to clients',
+      'Only charge flat fees',
+      'Never discuss fees'
+    ],
+    correctAnswer: 1,
+    explanation: 'While Circular 230 doesn\'t set specific fee levels, practitioners must charge reasonable fees and communicate the basis for their fees to clients. Unconscionable fees may constitute misconduct.',
+    reference: 'Circular 230 §10.27',
+  },
+  {
+    id: 'see3-367',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Best Practices',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Circular 230 "best practices" for tax advisors include:',
+    options: [
+      'Only written advice',
+      'Communicating clearly, establishing relevant facts, and advising clients of legal conclusions',
+      'Providing oral advice only',
+      'Avoiding documentation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Best practices (§10.33) include: communicating clearly, establishing facts, evaluating the reasonableness of assumptions, relating law to facts, arriving at conclusions, and advising clients of applicable limitations.',
+    reference: 'Circular 230 §10.33',
+  },
+  {
+    id: 'see3-368',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Practitioner Assistance',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A practitioner may not:',
+    options: [
+      'Represent a taxpayer',
+      'Knowingly assist a person in violating tax laws or misleading the IRS',
+      'Disagree with an examiner',
+      'File an extension request'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 §10.34 prohibits practitioners from willfully, recklessly, or through gross incompetence advising clients to take frivolous positions or assist in tax law violations.',
+    reference: 'Circular 230 §10.34',
+  },
+  {
+    id: 'see3-369',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Written Advice',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under Circular 230 §10.37, written advice must:',
+    options: [
+      'Always guarantee outcomes',
+      'Be based on reasonable factual and legal assumptions and not rely on unreasonable assumptions',
+      'Only cite IRS publications',
+      'Be approved by the IRS first'
+    ],
+    correctAnswer: 1,
+    explanation: 'Written advice requirements under §10.37 include basing advice on reasonable assumptions, considering all relevant facts, not unreasonably relying on representations, and relating law to facts.',
+    reference: 'Circular 230 §10.37',
+  },
+  {
+    id: 'see3-370',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Circular 230',
+    subtopic: 'Firm Responsibility',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Firms employing practitioners under Circular 230:',
+    options: [
+      'Have no responsibility for employee conduct',
+      'Should have adequate supervisory procedures in place to ensure compliance',
+      'Are only responsible for partners',
+      'Cannot be sanctioned'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under Circular 230 §10.36, members who have principal authority and responsibility for oversight must take reasonable steps to ensure the firm has adequate procedures for compliance.',
+    reference: 'Circular 230 §10.36',
+  },
+];

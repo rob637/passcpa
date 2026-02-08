@@ -17,8 +17,12 @@ import {
   Target,
   Edit2,
 } from 'lucide-react';
+import { Button } from './common/Button';
+import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
-import { CPA_SECTIONS } from '../config/examConfig';
+import { useCourse } from '../providers/CourseProvider';
+import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
+import { getExamDate, createExamDateUpdate } from '../utils/profileHelpers';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { format, differenceInDays, addDays } from 'date-fns';
@@ -41,28 +45,26 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   onSectionSelect 
 }) => {
   const { user, userProfile, refreshProfile } = useAuth();
+  const { courseId, course } = useCourse();
   const [editingSection, setEditingSection] = useState<ExamSection | null>(null);
   const [dateInput, setDateInput] = useState('');
   const [saving, setSaving] = useState(false);
   
-  // Get exam dates from user profile
-  // Currently we only have single examDate, but this prepares for per-section dates
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const currentExamDate = userProfile?.examDate 
-    ? (typeof (userProfile.examDate as { toDate?: () => Date }).toDate === 'function'
-        ? (userProfile.examDate as { toDate: () => Date }).toDate()
-        : new Date(userProfile.examDate as Date))
-    : null;
+  // Get exam dates from user profile using multi-course helper
+  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   
-  // For now, map the single exam date to the active section
-  // Future: Store per-section dates in userProfile.examDates: { FAR: Date, AUD: Date, ... }
-  const sectionDates: SectionExamDate[] = Object.keys(CPA_SECTIONS)
-    .filter(key => !['PREP', 'BEC'].includes(key))
-    .map(key => ({
-      section: key as ExamSection,
-      examDate: key === currentSection ? currentExamDate || undefined : undefined,
-      isActive: key === currentSection,
-    }));
+  // Map exam dates per section for display
+  // Uses examDates map if available, falls back to single examDate for active section
+  const sectionDates: SectionExamDate[] = (course?.sections || [])
+    .filter(s => !['PREP', 'BEC'].includes(s.id))
+    .map(s => {
+      const sectionExamDate = getExamDate(userProfile, s.id) || undefined;
+      return {
+        section: s.id as ExamSection,
+        examDate: sectionExamDate,
+        isActive: s.id === currentSection,
+      };
+    });
   
   // Core sections (required)
   const coreSections = sectionDates.filter(s => ['FAR', 'AUD', 'REG'].includes(s.section));
@@ -76,10 +78,10 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
     try {
       const newDate = new Date(dateInput);
       
-      // Update Firestore - for now updating the single examDate
-      // Future: Update examDates[section] = newDate
+      // Update Firestore with multi-course aware exam date
+      const examDateUpdate = createExamDateUpdate(userProfile, section, newDate);
       await updateDoc(doc(db, 'users', user.uid), {
-        examDate: newDate,
+        ...examDateUpdate,
         examSection: section, // Also set this as active section
       });
       
@@ -104,7 +106,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   
   const renderSectionCard = (sectionDate: SectionExamDate) => {
     const { section, examDate, isActive } = sectionDate;
-    const sectionInfo = CPA_SECTIONS[section];
+    const sectionInfo = getSectionDisplayInfo(section, courseId);
     const daysUntil = examDate ? differenceInDays(examDate, new Date()) : null;
     
     const isEditing = editingSection === section;
@@ -138,16 +140,19 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
             )}
           </div>
           {!compact && (
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={(e) => {
                 e.stopPropagation();
                 setEditingSection(section);
                 setDateInput(examDate ? format(examDate, 'yyyy-MM-dd') : '');
               }}
-              className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
+              aria-label="Edit exam date"
+              className="!p-1.5"
             >
-              <Edit2 className="w-4 h-4 text-slate-600" />
-            </button>
+              <Edit2 className="w-4 h-4" />
+            </Button>
           )}
         </div>
         
@@ -167,22 +172,26 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
               className="w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white"
             />
             <div className="flex gap-2 mt-2">
-              <button
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={() => handleSaveDate(section)}
                 disabled={saving || !dateInput}
-                className="flex-1 px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg disabled:opacity-50"
+                loading={saving}
+                className="flex-1"
               >
-                {saving ? 'Saving...' : 'Save'}
-              </button>
-              <button
+                Save
+              </Button>
+              <Button
+                variant="secondary"
+                size="sm"
                 onClick={() => {
                   setEditingSection(null);
                   setDateInput('');
                 }}
-                className="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium rounded-lg"
               >
                 Cancel
-              </button>
+              </Button>
             </div>
           </div>
         ) : examDate ? (
@@ -222,16 +231,18 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
             )}
           </div>
         ) : (
-          <button
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={(e) => {
               e.stopPropagation();
               setEditingSection(section);
             }}
-            className="mt-3 w-full py-2 px-3 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:border-primary-400 hover:text-primary-600 transition-colors flex items-center justify-center gap-2"
+            leftIcon={Calendar}
+            className="mt-3 w-full border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-primary-400"
           >
-            <Calendar className="w-4 h-4" />
             Set exam date
-          </button>
+          </Button>
         )}
       </div>
     );
@@ -243,9 +254,9 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
     if (!activeSection) return null;
     
     return (
-      <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700">
+      <Card className="p-4">
         {renderSectionCard(activeSection)}
-      </div>
+      </Card>
     );
   }
   

@@ -1,12 +1,40 @@
 import { useState } from 'react';
 import logger from '../../../utils/logger';
-import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
+
+// Course-to-dashboard mapping
+const COURSE_DASHBOARDS: Record<string, string> = {
+  cpa: '/home',
+  ea: '/ea',
+  cma: '/cma',
+  cia: '/cia',
+  cfp: '/cfp',
+  cisa: '/cisa',
+};
+
+// Course display names
+const COURSE_NAMES: Record<string, string> = {
+  cpa: 'CPA',
+  ea: 'EA',
+  cma: 'CMA',
+  cia: 'CIA',
+  cfp: 'CFP',
+  cisa: 'CISA',
+};
 
 const Login = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { signIn, signInWithGoogle, loading } = useAuth();
+
+  // Get course from URL params (e.g., /login?course=ea)
+  const courseParam = searchParams.get('course')?.toLowerCase();
+  const targetDashboard = COURSE_DASHBOARDS[courseParam || ''] || '/dashboard';
+  const courseName = COURSE_NAMES[courseParam || ''] || 'exam prep';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +49,7 @@ const Login = () => {
 
     try {
       await signIn(email, password);
-      navigate('/dashboard');
+      navigate(targetDashboard);
     } catch (err: any) {
       logger.error('Login error:', err);
       if (err.code === 'auth/invalid-credential') {
@@ -46,7 +74,7 @@ const Login = () => {
       await signInWithGoogle();
       // Check if user needs onboarding (new Google user)
       // The AuthProvider handles creating profile, we just navigate
-      navigate('/dashboard');
+      navigate(targetDashboard);
     } catch (err: any) {
       logger.error('Google sign-in error:', err);
       if (err.code === 'auth/popup-closed-by-user') {
@@ -60,11 +88,11 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-8">
+    <Card variant="elevated" className="border border-slate-200 dark:border-slate-700 p-8">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Welcome back</h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Sign in to continue your CPA journey</p>
+        <p className="text-slate-600 dark:text-slate-300 mt-2">Sign in to continue your {courseName} journey</p>
       </div>
 
       {/* Google Sign In - Primary Option */}
@@ -148,32 +176,29 @@ const Login = () => {
               required
               autoComplete="current-password"
             />
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-600 dark:hover:text-slate-300"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-            </button>
+            </Button>
           </div>
         </div>
 
         {/* Submit Button */}
-        <button
+        <Button
           type="submit"
-          disabled={isSubmitting || loading}
-          className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3.5 rounded-xl font-semibold shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          variant="primary"
+          fullWidth
+          loading={isSubmitting}
+          disabled={loading}
         >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Signing in...
-            </>
-          ) : (
-            'Sign In'
-          )}
-        </button>
+          {isSubmitting ? 'Signing in...' : 'Sign In'}
+        </Button>
       </form>
 
       {/* Sign Up Link */}
@@ -183,7 +208,7 @@ const Login = () => {
           Sign up free
         </Link>
       </p>
-    </div>
+    </Card>
   );
 };
 

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   BLUEPRINT_AREAS,
   LESSON_MATRIX,
-} from '../../data/lessonMatrix';
+} from '../../data/cpa/lessonMatrix';
 
 describe('Lesson Matrix Data', () => {
   describe('Blueprint Areas', () => {

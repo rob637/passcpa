@@ -1,0 +1,553 @@
+/**
+ * CMA Part 1, Section E: Internal Controls - Questions Batch 1 (Q1-25)
+ * Weight: 15% of Part 1 Exam
+ * 
+ * Blueprint Areas:
+ * - CMA1-E: Internal Controls
+ * 
+ * Topics covered:
+ * - Internal Control Concepts
+ * - COSO Framework
+ * - Internal Control Components
+ * - Enterprise Risk Management
+ * - Internal Audit function
+ * - Fraud Prevention
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1E_QUESTIONS_BATCH1: Question[] = [
+  // ==========================================
+  // Internal Control Concepts
+  // ==========================================
+  {
+    id: 'cma1-e-001',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Purpose and Definition',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Internal control is a process designed to provide reasonable assurance regarding:',
+    options: [
+      'Elimination of all business risks',
+      'Achievement of objectives in operations, reporting, and compliance',
+      'Guarantee of profitability',
+      'Prevention of all employee errors'
+    ],
+    correctAnswer: 1,
+    explanation: 'Internal control provides REASONABLE (not absolute) assurance regarding three categories of objectives: effectiveness and efficiency of operations, reliability of reporting, and compliance with laws and regulations.',
+    reference: 'COSO Internal Control Framework',
+  },
+  {
+    id: 'cma1-e-002',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Limitations',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which of the following is a limitation of internal control?',
+    options: [
+      'Internal controls are too expensive to implement',
+      'Management override of controls',
+      'Internal controls only apply to large companies',
+      'External auditors cannot evaluate internal controls'
+    ],
+    correctAnswer: 1,
+    explanation: 'Management override is a key limitation - those at the top can circumvent controls. Other limitations include collusion, human error, and cost-benefit constraints. Controls provide reasonable, not absolute, assurance.',
+    reference: 'COSO Framework; Internal Control Limitations',
+  },
+  {
+    id: 'cma1-e-003',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Preventive vs Detective',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Requiring password access to computer systems is an example of a:',
+    options: [
+      'Detective control',
+      'Corrective control',
+      'Preventive control',
+      'Compensating control'
+    ],
+    correctAnswer: 2,
+    explanation: 'Preventive controls aim to stop errors or irregularities before they occur. Password requirements prevent unauthorized access. Detective controls identify problems after they occur (e.g., bank reconciliations, audits).',
+    reference: 'Types of Controls; Internal Control',
+  },
+  {
+    id: 'cma1-e-004',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Preventive vs Detective',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A monthly bank reconciliation is an example of a:',
+    options: [
+      'Preventive control',
+      'Detective control',
+      'Directive control',
+      'Manual control only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Detective controls identify errors or irregularities after they have occurred. Bank reconciliations detect discrepancies between recorded and actual cash balances after transactions have been processed.',
+    reference: 'Types of Controls; Internal Control',
+  },
+
+  // ==========================================
+  // COSO Framework
+  // ==========================================
+  {
+    id: 'cma1-e-005',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Components',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The COSO Internal Control Framework consists of how many interrelated components?',
+    options: [
+      'Three',
+      'Four',
+      'Five',
+      'Seven'
+    ],
+    correctAnswer: 2,
+    explanation: 'COSO has five components: Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring. These components are interrelated and must all be present and functioning.',
+    reference: 'COSO Internal Control Framework',
+  },
+  {
+    id: 'cma1-e-006',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Control Environment',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The control environment is best described as:',
+    options: [
+      'Physical security measures',
+      'The set of standards, processes, and structures providing the basis for internal control',
+      'Computer system controls',
+      'External audit procedures'
+    ],
+    correctAnswer: 1,
+    explanation: 'The control environment is the foundation of internal control - it sets the tone of the organization. It includes integrity, ethical values, board oversight, organizational structure, authority assignment, and HR policies.',
+    reference: 'COSO Framework; Control Environment',
+  },
+  {
+    id: 'cma1-e-007',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Risk Assessment',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The risk assessment component of the COSO framework includes:',
+    options: [
+      'Only external risks',
+      'Identification and analysis of risks to achieving entity objectives',
+      'Only financial statement risks',
+      'Risks identified by external auditors only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Risk assessment involves identifying and analyzing both internal and external risks that could prevent the entity from achieving its objectives. It considers likelihood and impact to prioritize risks.',
+    reference: 'COSO Framework; Risk Assessment',
+  },
+  {
+    id: 'cma1-e-008',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Control Activities',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Segregation of duties is an example of which COSO component?',
+    options: [
+      'Control Environment',
+      'Risk Assessment',
+      'Control Activities',
+      'Monitoring'
+    ],
+    correctAnswer: 2,
+    explanation: 'Control activities are the policies and procedures that help ensure management directives are carried out. They include segregation of duties, authorizations, verifications, reconciliations, and physical controls.',
+    reference: 'COSO Framework; Control Activities',
+  },
+  {
+    id: 'cma1-e-009',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Monitoring',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Ongoing evaluations and separate evaluations are two types of:',
+    options: [
+      'Control activities',
+      'Risk assessments',
+      'Monitoring activities',
+      'Communication activities'
+    ],
+    correctAnswer: 2,
+    explanation: 'Monitoring activities assess whether internal control components are present and functioning. Ongoing evaluations are built into normal operations; separate evaluations are periodic assessments like internal audits.',
+    reference: 'COSO Framework; Monitoring',
+  },
+  {
+    id: 'cma1-e-010',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'COSO Framework',
+    subtopic: 'Information and Communication',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The information and communication component ensures that:',
+    options: [
+      'Only financial information is captured',
+      'Relevant information is identified, captured, and communicated to support internal control',
+      'Information is kept secret from employees',
+      'External parties receive all internal information'
+    ],
+    correctAnswer: 1,
+    explanation: 'Information and communication ensures that relevant, quality information is identified, captured, and communicated in a timely manner. This includes internal communication (up, down, across) and external communication.',
+    reference: 'COSO Framework; Information and Communication',
+  },
+
+  // ==========================================
+  // Enterprise Risk Management
+  // ==========================================
+  {
+    id: 'cma1-e-011',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Enterprise Risk Management',
+    subtopic: 'ERM Concepts',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Enterprise Risk Management (ERM) differs from traditional risk management primarily by:',
+    options: [
+      'Focusing only on insurable risks',
+      'Taking a holistic, enterprise-wide approach to all risks',
+      'Eliminating all risks',
+      'Managing only financial risks'
+    ],
+    correctAnswer: 1,
+    explanation: 'ERM takes a holistic, integrated view of risk across the entire enterprise, considering strategic, operational, reporting, and compliance risks. Traditional approaches often manage risks in silos.',
+    reference: 'COSO ERM Framework',
+  },
+  {
+    id: 'cma1-e-012',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Enterprise Risk Management',
+    subtopic: 'Risk Response',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Purchasing insurance to cover potential losses is an example of which risk response?',
+    options: [
+      'Risk avoidance',
+      'Risk reduction',
+      'Risk sharing (transfer)',
+      'Risk acceptance'
+    ],
+    correctAnswer: 2,
+    explanation: 'Insurance transfers (shares) risk with a third party. Avoidance eliminates the risk-causing activity. Reduction implements controls to lower likelihood/impact. Acceptance means taking no action and bearing the risk.',
+    reference: 'Risk Response Strategies; ERM',
+  },
+  {
+    id: 'cma1-e-013',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Enterprise Risk Management',
+    subtopic: 'Risk Appetite',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'Risk appetite is best described as:',
+    options: [
+      'The maximum risk a company has ever experienced',
+      'The amount and type of risk an organization is willing to pursue or retain',
+      'The amount of insurance purchased',
+      'The total of all possible losses'
+    ],
+    correctAnswer: 1,
+    explanation: 'Risk appetite is the broad-based amount and type of risk an organization is willing to accept in pursuit of value. It is set by the board and guides strategic decisions about how much risk to take on.',
+    reference: 'Risk Appetite; COSO ERM Framework',
+  },
+
+  // ==========================================
+  // Internal Audit
+  // ==========================================
+  {
+    id: 'cma1-e-014',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Audit',
+    subtopic: 'Role and Purpose',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The primary purpose of internal audit is to:',
+    options: [
+      'Prepare the annual financial statements',
+      'Provide independent assurance and consulting to improve operations',
+      'Replace external auditors',
+      'Approve all business transactions'
+    ],
+    correctAnswer: 1,
+    explanation: 'Internal audit provides independent, objective assurance and consulting services designed to add value and improve an organization\'s operations. It helps evaluate and improve governance, risk management, and control processes.',
+    reference: 'IIA Definition of Internal Auditing',
+  },
+  {
+    id: 'cma1-e-015',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Audit',
+    subtopic: 'Independence',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To maintain independence, internal audit should report functionally to:',
+    options: [
+      'The Chief Financial Officer',
+      'The Chief Executive Officer only',
+      'The Board or Audit Committee',
+      'The department being audited'
+    ],
+    correctAnswer: 2,
+    explanation: 'Functional reporting to the Board or Audit Committee ensures internal audit independence from management. Administrative reporting may be to the CEO, but the audit committee should approve the audit plan, budget, and evaluate the CAE.',
+    reference: 'IIA Standards; Internal Audit Independence',
+  },
+  {
+    id: 'cma1-e-016',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Audit',
+    subtopic: 'Audit Committee',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The audit committee of a public company should be composed of:',
+    options: [
+      'Senior management only',
+      'Independent directors only',
+      'External auditors',
+      'Internal auditors'
+    ],
+    correctAnswer: 1,
+    explanation: 'For public companies (per SOX and listing requirements), the audit committee must be composed entirely of independent directors. This ensures oversight of financial reporting and auditing is free from management influence.',
+    reference: 'Sarbanes-Oxley Act; Audit Committee Requirements',
+  },
+
+  // ==========================================
+  // Fraud Prevention
+  // ==========================================
+  {
+    id: 'cma1-e-017',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Fraud',
+    subtopic: 'Fraud Triangle',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The three elements of the fraud triangle are:',
+    options: [
+      'Greed, opportunity, and detection',
+      'Pressure, opportunity, and rationalization',
+      'Theft, concealment, and conversion',
+      'Intent, motive, and means'
+    ],
+    correctAnswer: 1,
+    explanation: 'The fraud triangle consists of: (1) Pressure/incentive to commit fraud, (2) Opportunity to commit and conceal fraud, and (3) Rationalization to justify the fraudulent behavior. All three are typically present in fraud.',
+    reference: 'Fraud Triangle; ACFE',
+  },
+  {
+    id: 'cma1-e-018',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Fraud',
+    subtopic: 'Types of Fraud',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Asset misappropriation fraud involves:',
+    options: [
+      'Intentional misstatement of financial statements',
+      'Theft or misuse of an organization\'s assets',
+      'Bribing government officials',
+      'Violating antitrust laws'
+    ],
+    correctAnswer: 1,
+    explanation: 'Asset misappropriation is the theft or misuse of company resources (cash, inventory, equipment). It is the most common type of occupational fraud. Financial statement fraud involves intentional misrepresentation of financial results.',
+    reference: 'ACFE Fraud Tree; Types of Fraud',
+  },
+  {
+    id: 'cma1-e-019',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Fraud',
+    subtopic: 'Prevention',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Which of the following is MOST effective in preventing fraud?',
+    options: [
+      'Aggressive prosecution of perpetrators',
+      'Strong internal controls and ethical culture',
+      'Annual external audits',
+      'Video surveillance of all employees'
+    ],
+    correctAnswer: 1,
+    explanation: 'Strong internal controls (especially segregation of duties) and a positive ethical culture (tone at the top) are most effective at preventing fraud. Controls reduce opportunity, while culture reduces rationalization.',
+    reference: 'Fraud Prevention; ACFE',
+  },
+  {
+    id: 'cma1-e-020',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Fraud',
+    subtopic: 'Detection',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'According to ACFE research, the most common way fraud is detected is through:',
+    options: [
+      'External audits',
+      'Internal audits',
+      'Tips and employee hotlines',
+      'Management review'
+    ],
+    correctAnswer: 2,
+    explanation: 'According to ACFE\'s Report to the Nations, tips consistently account for the highest percentage of fraud detection (often 40%+). Having a hotline with anti-retaliation policies significantly increases tip-based detection.',
+    reference: 'ACFE Report to the Nations',
+  },
+
+  // ==========================================
+  // Segregation of Duties
+  // ==========================================
+  {
+    id: 'cma1-e-021',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Segregation of Duties',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Proper segregation of duties requires separating which three functions?',
+    options: [
+      'Purchasing, receiving, and selling',
+      'Authorization, custody, and recordkeeping',
+      'Planning, executing, and reporting',
+      'Hiring, training, and evaluating'
+    ],
+    correctAnswer: 1,
+    explanation: 'Segregation of duties separates: (1) Authorization of transactions, (2) Custody of related assets, and (3) Recordkeeping for transactions. No single person should have all three for any transaction type.',
+    reference: 'Segregation of Duties; Internal Control',
+  },
+  {
+    id: 'cma1-e-022',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'Internal Control',
+    subtopic: 'Segregation of Duties',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The person who reconciles bank statements should NOT also:',
+    options: [
+      'Review the general ledger',
+      'Prepare and sign checks',
+      'Review account balances',
+      'Communicate with the bank about account status'
+    ],
+    correctAnswer: 1,
+    explanation: 'The person reconciling bank statements has a custodial role; they should not also prepare/sign checks (authorization/custody). This could allow them to write fraudulent checks and hide them in the reconciliation.',
+    reference: 'Segregation of Duties; Cash Controls',
+  },
+
+  // ==========================================
+  // IT Controls
+  // ==========================================
+  {
+    id: 'cma1-e-023',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'IT Controls',
+    subtopic: 'General Controls',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'IT general controls include:',
+    options: [
+      'Only input validation controls',
+      'Access security, program change, and computer operations controls',
+      'Physical inventory counts only',
+      'Customer credit checks'
+    ],
+    correctAnswer: 1,
+    explanation: 'IT general controls (ITGCs) are controls over the IT environment that support reliable processing. They include access security, program development, program changes, computer operations, and backup/recovery.',
+    reference: 'IT General Controls; COBIT',
+  },
+  {
+    id: 'cma1-e-024',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'IT Controls',
+    subtopic: 'Application Controls',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A check digit is an example of a(n):',
+    options: [
+      'Output control',
+      'Input validation control',
+      'General IT control',
+      'Physical access control'
+    ],
+    correctAnswer: 1,
+    explanation: 'Check digits are input validation controls that verify accuracy of data entry (like the last digit of a credit card number). Application controls include input, processing, and output controls for specific applications.',
+    reference: 'Application Controls; IT Controls',
+  },
+  {
+    id: 'cma1-e-025',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-E',
+    topic: 'IT Controls',
+    subtopic: 'Cybersecurity',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A firewall is best described as a:',
+    options: [
+      'Physical barrier to prevent unauthorized building access',
+      'Hardware or software that monitors and controls network traffic',
+      'Encryption algorithm for data',
+      'Backup power supply'
+    ],
+    correctAnswer: 1,
+    explanation: 'A firewall is hardware, software, or both that monitors and controls incoming/outgoing network traffic based on predetermined security rules. It creates a barrier between trusted internal networks and untrusted external networks.',
+    reference: 'Cybersecurity Controls; Network Security',
+  },
+];
+
+// Helper functions
+export const getCMA1EQuestionsBatch1 = () => CMA1E_QUESTIONS_BATCH1;
+export const getCMA1EQuestionCount = () => CMA1E_QUESTIONS_BATCH1.length;
+
+export default CMA1E_QUESTIONS_BATCH1;

@@ -1,0 +1,223 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 10 (Q91-100)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH10: Question[] = [
+  // ==========================================
+  // SEE2-1: Business Entities (advanced)
+  // ==========================================
+  {
+    id: 'see2-091',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Check-the-Box',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Form 8832 (Entity Classification Election) is used to:',
+    options: [
+      'Elect S corporation status',
+      'Change an entity\'s default tax classification (check-the-box)',
+      'Dissolve a corporation',
+      'Elect partnership taxation'
+    ],
+    correctAnswer: 1,
+    explanation: 'Form 8832 allows eligible entities to elect their federal tax classification under the check-the-box regulations. An LLC can elect to be taxed as a corporation, or a default corporation can elect to be disregarded or taxed as a partnership.',
+    reference: 'Treas. Reg. §301.7701-3',
+  },
+  {
+    id: 'see2-092',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-1',
+    topic: 'Entity Selection',
+    subtopic: 'Professional Corporations',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A professional corporation (PC) or professional association (PA):',
+    options: [
+      'Is always taxed as an S corporation',
+      'Can be formed only by licensed professionals and provides limited liability for malpractice of other owners',
+      'Is exempt from corporate income tax',
+      'Cannot provide retirement benefits to owners'
+    ],
+    correctAnswer: 1,
+    explanation: 'Professional corporations can be formed by licensed professionals (doctors, lawyers, CPAs) and provide limited liability protection. However, a professional remains personally liable for their own malpractice.',
+    reference: 'State law; IRC §542(c)(6)',
+  },
+
+  // ==========================================
+  // SEE2-6: C Corporations (final questions)
+  // ==========================================
+  {
+    id: 'see2-093',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Taxation',
+    subtopic: 'Charitable Contribution Limit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A C corporation\'s charitable contribution deduction is limited to:',
+    options: [
+      '10% of taxable income before certain adjustments',
+      '25% of taxable income',
+      '50% of taxable income',
+      'There is no limit for corporations'
+    ],
+    correctAnswer: 0,
+    explanation: 'Corporate charitable contributions are limited to 10% of taxable income computed before the contribution deduction, DRD, NOL carryback, and capital loss carryback. Excess contributions are carried forward 5 years.',
+    reference: 'IRC §170(b)(2)',
+  },
+  {
+    id: 'see2-094',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Formation',
+    subtopic: 'Boot',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'In a Section 351 exchange, if a shareholder receives cash or other property (boot) in addition to stock:',
+    options: [
+      'The entire exchange becomes taxable',
+      'The shareholder recognizes gain to the extent of the boot received',
+      'No gain is recognized until the stock is sold',
+      'The boot is always treated as a dividend'
+    ],
+    correctAnswer: 1,
+    explanation: 'In a Section 351 exchange, gain is recognized to the extent of boot (money or other property) received, but not in excess of the realized gain. Loss is never recognized in a Section 351 exchange.',
+    reference: 'IRC §351(b)',
+  },
+  {
+    id: 'see2-095',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Distributions',
+    subtopic: 'Stock Redemptions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A stock redemption is treated as a sale rather than a dividend if it:',
+    options: [
+      'Is pro-rata among all shareholders',
+      'Is substantially disproportionate or completely terminates the shareholder\'s interest',
+      'Occurs within 2 years of incorporation',
+      'Exceeds $25,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'A redemption receives sale treatment (capital gain) if it is substantially disproportionate, completely terminates the shareholder\'s interest, or is not essentially equivalent to a dividend. Attribution rules apply.',
+    reference: 'IRC §302',
+  },
+
+  // ==========================================
+  // SEE2-5: Partnerships (final questions)
+  // ==========================================
+  {
+    id: 'see2-096',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Termination',
+    subtopic: 'Technical Termination',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under current law, a partnership technical termination:',
+    options: [
+      'Occurs when 50% or more of interests are sold within 12 months',
+      'Was repealed by the TCJA; partnerships no longer terminate due to sales of interests',
+      'Occurs when the partnership earns no income for 2 consecutive years',
+      'Requires dissolution under state law'
+    ],
+    correctAnswer: 1,
+    explanation: 'The TCJA repealed the technical termination rule effective for tax years after 2017. Previously, a partnership terminated if 50% or more of interests were sold within 12 months. Now, such sales do not cause termination.',
+    reference: 'TCJA 2017; former IRC §708(b)(1)(B)',
+  },
+  {
+    id: 'see2-097',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-5',
+    topic: 'Partnership Basis',
+    subtopic: 'Inside vs. Outside Basis',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A partner\'s "outside basis" refers to:',
+    options: [
+      'The partnership\'s basis in assets held outside the U.S.',
+      'The partner\'s basis in their partnership interest',
+      'The partnership\'s basis in its assets',
+      'The FMV of the partnership interest'
+    ],
+    correctAnswer: 1,
+    explanation: 'Outside basis is the partner\'s tax basis in their partnership interest. Inside basis refers to the partnership\'s basis in its assets. These may differ due to contributions, distributions, or Section 754 elections.',
+    reference: 'IRC §705, §722, §723',
+  },
+
+  // ==========================================
+  // SEE2-3: Business Income and Expenses (final)
+  // ==========================================
+  {
+    id: 'see2-098',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Small Employer Health Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Small Business Health Care Tax Credit is available to employers with:',
+    options: [
+      'Up to 500 employees',
+      'Fewer than 25 full-time equivalent employees and average wages below threshold',
+      'Any number of employees if they offer health insurance',
+      'Only self-employed individuals'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Small Business Health Care Tax Credit is for small employers with fewer than 25 FTE employees earning less than $59,000 average wages (2024, indexed). Maximum credit is 50% of premiums (35% for tax-exempt employers).',
+    reference: 'IRC §45R',
+  },
+  {
+    id: 'see2-099',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Depreciation',
+    subtopic: 'Recapture Section 1245',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Section 1245 recapture applies to:',
+    options: [
+      'Real property only',
+      'Personal property where gain is taxed as ordinary income to the extent of depreciation taken',
+      'All capital gains',
+      'Goodwill and intangibles only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 1245 requires recapture of depreciation on personal property as ordinary income when the property is sold. Any gain in excess of depreciation recapture is Section 1231 gain (potentially capital gain).',
+    reference: 'IRC §1245',
+  },
+  {
+    id: 'see2-100',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Expenses',
+    subtopic: 'Related Party Transactions',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under Section 267, losses on sales between related parties are:',
+    options: [
+      'Fully deductible',
+      'Disallowed entirely',
+      'Deductible at 50%',
+      'Deferred until the property is sold to an unrelated party'
+    ],
+    correctAnswer: 1,
+    explanation: 'Losses on sales between related parties (as defined in Section 267) are disallowed. However, the related buyer may reduce their gain on a subsequent sale to an unrelated party by the previously disallowed loss.',
+    reference: 'IRC §267',
+  },
+];

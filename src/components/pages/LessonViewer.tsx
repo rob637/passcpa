@@ -22,9 +22,11 @@ import {
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import { fetchLessonById, fetchLessonsBySection } from '../../services/lessonService';
 import { fetchQuestions } from '../../services/questionService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
+import { Button } from '../common/Button';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection, Lesson } from '../../types';
 
@@ -354,7 +356,7 @@ const LessonViewer: React.FC = () => {
 
   // Use the lesson's actual section, not the user's profile section
   // This ensures PREP lessons stay within the PREP section
-  const currentSection = (lesson?.section || userProfile?.examSection || 'FAR') as ExamSection;
+  const currentSection = (lesson?.section || userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
   
   // Cleanup TTS when navigating away from the lesson
   useEffect(() => {
@@ -376,7 +378,7 @@ const LessonViewer: React.FC = () => {
           // Use the lesson's actual section for navigation, not the user's profile section
           // This ensures PREP lessons navigate within PREP, not the user's exam section
           const section = fetchedLesson?.section || userProfile?.examSection || 'FAR';
-          const lessons = await fetchLessonsBySection(section as ExamSection, courseId);
+          const lessons = await fetchLessonsBySection(section, courseId);
           setSectionLessons(lessons);
 
           // Check if practice questions exist for this lesson
@@ -516,13 +518,14 @@ const LessonViewer: React.FC = () => {
       <div className="sticky top-0 z-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
-            <button
+            <Button
+              variant="ghost"
               onClick={() => navigate(returnTo || (fromDailyPlan ? '/home' : getBackUrl(lesson?.section)))}
-              className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+              leftIcon={ArrowLeft}
+              className="text-slate-600 dark:text-slate-300"
             >
-              <ArrowLeft className="w-5 h-5" />
               <span className="hidden sm:inline">{returnTo ? 'Back to Practice' : fromDailyPlan ? 'Back to Daily Plan' : 'Back to Lessons'}</span>
-            </button>
+            </Button>
 
             <div className="flex items-center gap-2">
               <BookmarkButton 
@@ -542,7 +545,9 @@ const LessonViewer: React.FC = () => {
                 }}
                 size="md"
               />
-              <button 
+              <Button 
+                variant="ghost"
+                size="icon"
                 onClick={() => {
                   if (navigator.share && lesson) {
                     navigator.share({
@@ -556,14 +561,13 @@ const LessonViewer: React.FC = () => {
                     alert('Link copied to clipboard!');
                   }
                 }}
-                className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
                 aria-label="Share lesson"
-                type="button"
               >
                 <Share2 className="w-5 h-5" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => {
                   if ('speechSynthesis' in window && lesson) {
                     if (isPlaying) {
@@ -634,16 +638,13 @@ const LessonViewer: React.FC = () => {
                   }
                 }}
                 className={clsx(
-                  'p-2 rounded-lg transition-colors',
-                  isPlaying
-                    ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
-                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  isPlaying && 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
                 )}
                 aria-label={isPlaying ? 'Stop reading' : 'Read aloud'}
                 title={isPlaying ? 'Stop reading' : 'Read lesson aloud'}
               >
                 {isPlaying ? <Pause className="w-5 h-5" aria-hidden="true" /> : <Volume2 className="w-5 h-5" aria-hidden="true" />}
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -818,25 +819,28 @@ const LessonViewer: React.FC = () => {
                 <ChevronLeft className="w-5 h-5" />
               </Link>
             ) : (
-              <button
+              <Button
+                variant="secondary"
                 onClick={() => navigate(fromDailyPlan ? '/home' : '/lessons')}
-                className="px-3 py-3 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium shrink-0"
+                className="shrink-0"
               >
                 Exit
-              </button>
+              </Button>
             )}
             
             {/* Primary CTA */}
-            <button
+            <Button
+              variant="primary"
+              fullWidth
               onClick={() => handleComplete(fromDailyPlan ? false : (nextLesson ? true : false))}
-              className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+              leftIcon={isComplete ? CheckCircle : undefined}
+              rightIcon={!fromDailyPlan && nextLesson ? ChevronRight : undefined}
+              className="shadow-lg shadow-primary-600/20"
             >
-              {isComplete && <CheckCircle className="w-5 h-5" />}
               <span className="truncate">
                 {fromDailyPlan ? 'Complete & Return' : (nextLesson ? 'Complete & Continue' : 'Complete')}
               </span>
-              {!fromDailyPlan && nextLesson && <ChevronRight className="w-5 h-5 shrink-0" />}
-            </button>
+            </Button>
             
             {/* Next (skip) */}
             {nextLesson && !fromDailyPlan ? (
@@ -868,27 +872,26 @@ const LessonViewer: React.FC = () => {
                   </div>
                 </Link>
               ) : (
-                <button
+                <Button
+                  variant="ghost"
                   onClick={() => navigate(fromDailyPlan ? '/home' : getBackUrl(lesson?.section))}
-                  className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
+                  leftIcon={ArrowLeft}
                 >
-                  <ArrowLeft className="w-4 h-4" />
                   Exit to Lessons
-                </button>
+                </Button>
               )}
             </div>
             
             {/* Center: Primary Action */}
-            <button 
-              onClick={() => handleComplete(fromDailyPlan ? false : (nextLesson ? true : false))} 
-              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg shadow-primary-600/20 transition-all active:scale-95 flex items-center gap-2"
+            <Button
+              variant="primary"
+              onClick={() => handleComplete(fromDailyPlan ? false : (nextLesson ? true : false))}
+              leftIcon={isComplete ? CheckCircle : undefined}
+              rightIcon={!fromDailyPlan && nextLesson ? ChevronRight : undefined}
+              className="shadow-lg shadow-primary-600/20"
             >
-              {isComplete && <CheckCircle className="w-5 h-5" />}
-              <span>
-                {fromDailyPlan ? 'Complete & Return to Plan' : (nextLesson ? 'Complete & Continue' : 'Complete Lesson')}
-              </span>
-              {!fromDailyPlan && nextLesson && <ChevronRight className="w-5 h-5" />}
-            </button>
+              {fromDailyPlan ? 'Complete & Return to Plan' : (nextLesson ? 'Complete & Continue' : 'Complete Lesson')}
+            </Button>
             
             {/* Right: Next lesson */}
             <div className="flex-1 flex items-center justify-end">
@@ -904,13 +907,14 @@ const LessonViewer: React.FC = () => {
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               ) : (
-                <button
+                <Button
+                  variant="ghost"
                   onClick={() => navigate(fromDailyPlan ? '/home' : getBackUrl(lesson?.section))}
-                  className="flex items-center gap-2 text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 font-medium transition-colors"
+                  rightIcon={ArrowLeft}
+                  className="[&>svg:last-child]:rotate-180"
                 >
                   Back to Lessons
-                  <ArrowLeft className="w-4 h-4 rotate-180" />
-                </button>
+                </Button>
               )}
             </div>
           </div>

@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 19 (Q181-190)
+ * C Corporation Liquidations
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH19: Question[] = [
+  // ==========================================
+  // SEE2-6: C Corporations - Liquidations
+  // ==========================================
+  {
+    id: 'see2-181',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'General Rule - Corporation',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a C corporation distributes property in complete liquidation, the corporation:',
+    options: [
+      'Recognizes no gain or loss',
+      'Recognizes gain as if property were sold at FMV, but no loss',
+      'Recognizes both gain and loss as if property were sold at FMV',
+      'Recognizes loss only, deferred gain'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §336(a), a liquidating corporation recognizes gain or loss as if it sold its property to the distributee at fair market value. Unlike nonliquidating distributions, loss is recognized.',
+    reference: 'IRC §336(a)',
+  },
+  {
+    id: 'see2-182',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'General Rule - Shareholder',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A shareholder has a basis of $50,000 in their stock and receives $80,000 in a complete liquidation. The tax consequence is:',
+    options: [
+      '$30,000 ordinary income',
+      '$30,000 capital gain',
+      '$80,000 capital gain',
+      'No gain until property is sold'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §331, a shareholder treats amounts received in complete liquidation as full payment in exchange for stock. The $30,000 gain ($80,000 - $50,000 basis) is capital gain (long-term if stock held > 1 year).',
+    reference: 'IRC §331(a)',
+  },
+  {
+    id: 'see2-183',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Shareholder Basis in Property',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A shareholder\'s basis in property received in a complete liquidation is:',
+    options: [
+      'The corporation\'s basis in the property',
+      'The fair market value of the property at distribution',
+      'The shareholder\'s basis in the stock surrendered',
+      'Zero until the property is sold'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §334(a), a shareholder receiving property in a complete liquidation takes a basis equal to the fair market value of the property at the time of distribution.',
+    reference: 'IRC §334(a)',
+  },
+  {
+    id: 'see2-184',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Section 332 - Subsidiary',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'For a tax-free liquidation of a subsidiary under IRC §332, the parent corporation must own:',
+    options: [
+      'More than 50% of the subsidiary\'s stock',
+      'At least 80% of voting power and 80% of value of all stock',
+      '100% of the subsidiary\'s stock',
+      'At least two-thirds of all outstanding shares'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §332(b), the parent must own at least 80% of total combined voting power AND at least 80% of total value of all outstanding stock (excluding nonvoting, nonparticipating preferred).',
+    reference: 'IRC §332(b)(1)',
+  },
+  {
+    id: 'see2-185',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Section 332 - Parent Treatment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In a Section 332 liquidation of a subsidiary, the parent corporation:',
+    options: [
+      'Recognizes gain to the extent FMV exceeds basis',
+      'Recognizes no gain or loss on the liquidation',
+      'Recognizes loss but not gain',
+      'Takes a FMV basis in assets received'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §332(a), a parent receiving property in a complete liquidation of an 80%-owned subsidiary recognizes no gain or loss. Under IRC §334(b), the parent takes a carryover basis in assets.',
+    reference: 'IRC §332(a); IRC §334(b)(1)',
+  },
+  {
+    id: 'see2-186',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Section 332 - Subsidiary Treatment',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In a Section 332 liquidation, the subsidiary corporation:',
+    options: [
+      'Recognizes all gains and losses on distributed assets',
+      'Recognizes no gain or loss on distribution to the 80% parent',
+      'Recognizes gain but not loss',
+      'Files a final return showing capital gain'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §337(a), a subsidiary recognizes no gain or loss on distributions to an 80% distributee in a Section 332 liquidation. However, gain may be recognized on distributions to minority shareholders.',
+    reference: 'IRC §337(a)',
+  },
+  {
+    id: 'see2-187',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Loss Limitation - Related Party',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'In a general liquidation (non-§332), a corporation distributes property with built-in loss to a related party. The loss is:',
+    options: [
+      'Fully recognized by the corporation',
+      'Recognized only to the extent of built-in gain in other property',
+      'Disallowed under IRC §336(d)',
+      'Deferred until the related party sells the property'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §336(d)(1), no loss is recognized on liquidating distributions to related parties (>50% shareholders). The loss is permanently disallowed.',
+    reference: 'IRC §336(d)(1)',
+  },
+  {
+    id: 'see2-188',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Loss Limitation - Anti-Stuffing',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If property is contributed to a corporation and the corporation liquidates within 2 years, built-in loss on that property:',
+    options: [
+      'Is recognized in full',
+      'May be disallowed under anti-stuffing rules if tax avoidance is present',
+      'Is doubled for tax purposes',
+      'Converts to capital loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §336(d)(2), built-in loss on property contributed within 2 years of liquidation may be disallowed if the contribution was part of a plan with a principal purpose of tax avoidance (anti-stuffing rule).',
+    reference: 'IRC §336(d)(2)',
+  },
+  {
+    id: 'see2-189',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Installment Obligations',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a corporation distributes an installment obligation in a complete liquidation:',
+    options: [
+      'The corporation recognizes the full remaining gain immediately',
+      'The shareholder continues the installment method in certain situations',
+      'The obligation becomes worthless',
+      'The installment method is always terminated'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §453(h), shareholders receiving installment obligations in liquidation of a qualifying corporation can continue the installment method, reporting gain as payments are received.',
+    reference: 'IRC §453(h)',
+  },
+  {
+    id: 'see2-190',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-6',
+    topic: 'Corporate Liquidations',
+    subtopic: 'Tax Attributes',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a subsidiary liquidates into its parent under Section 332:',
+    options: [
+      'All tax attributes of the subsidiary are lost',
+      'The parent succeeds to the subsidiary\'s tax attributes',
+      'Only NOL carryovers transfer',
+      'Tax attributes transfer to shareholders proportionally'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §381, when a subsidiary liquidates under Section 332, the parent corporation succeeds to many of the subsidiary\'s tax attributes, including NOL carryovers, capital loss carryovers, accounting methods, etc.',
+    reference: 'IRC §381',
+  },
+];

@@ -1,13 +1,94 @@
 import { useState, useEffect, useCallback } from 'react';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
-import { Navigate, Link } from 'react-router-dom';
+import { Card } from '../../common/Card';
+import { Button } from '../../common/Button';
+import { Navigate } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
+import { CourseId } from '../../../types/course';
+import { COURSES, getActiveCourses } from '../../../courses';
 
-// Dynamic imports for large question data to reduce bundle size
-const loadQuestionData = () => import('../../../data/questions');
+// Dynamic imports for course-specific question data
+const loadCourseQuestionData = async (courseId: CourseId) => {
+  switch (courseId) {
+    case 'cpa': return import('../../../data/cpa/questions');
+    case 'ea': return import('../../../data/ea/questions');
+    case 'cma': return import('../../../data/cma/questions');
+    case 'cia': return import('../../../data/cia/questions');
+    case 'cisa': return import('../../../data/cisa/questions');
+    case 'cfp': return import('../../../data/cfp/questions');
+    default: return null;
+  }
+};
+
+// Dynamic imports for flashcard data per course
+const loadCourseFlashcardData = async (courseId: CourseId): Promise<number> => {
+  try {
+    switch (courseId) {
+      case 'cpa': {
+        const m = await import('../../../data/cpa/flashcards');
+        return (m.CPA_FLASHCARDS?.length || 0) + (m.ALL_DEDICATED_FLASHCARDS?.length || 0);
+      }
+      case 'ea': {
+        const m = await import('../../../data/ea/flashcards');
+        return m.ALL_EA_FLASHCARDS?.length || 0;
+      }
+      case 'cma': {
+        const m = await import('../../../data/cma/flashcards');
+        return m.ALL_CMA_FLASHCARDS?.length || 0;
+      }
+      case 'cia': {
+        const m = await import('../../../data/cia/flashcards');
+        return m.ALL_CIA_FLASHCARDS?.length || 0;
+      }
+      case 'cisa': {
+        const m = await import('../../../data/cisa/flashcards');
+        return m.allCisaFlashcards?.length || 0;
+      }
+      case 'cfp': {
+        const m = await import('../../../data/cfp/flashcards');
+        return m.CFP_FLASHCARDS?.length || 0;
+      }
+      default: return 0;
+    }
+  } catch {
+    return 0;
+  }
+};
+
+// Dynamic imports for lesson data per course
+const loadCourseLessonData = async (courseId: CourseId): Promise<number> => {
+  try {
+    switch (courseId) {
+      case 'cpa': {
+        const m = await import('../../../data/cpa/lessons');
+        return m.getLessonStats?.()?.total || m.getAllLessons?.()?.length || 0;
+      }
+      case 'cma': {
+        const m = await import('../../../data/cma/lessons');
+        return m.getCMALessonCount?.()?.total || m.cmaLessons?.length || 0;
+      }
+      default: return 0; // Other courses may not have lesson indexes yet
+    }
+  } catch {
+    return 0;
+  }
+};
+
+// Course icon mapping
+const getCourseIcon = (courseId: CourseId): string => {
+  const icons: Record<CourseId, string> = {
+    cpa: '📊',
+    ea: '📋',
+    cma: '💼',
+    cia: '🔍',
+    cisa: '🔒',
+    cfp: '💰',
+  };
+  return icons[courseId] || '📚';
+};
 
 // ============================================================================
 // Types
@@ -88,6 +169,7 @@ interface AnalyticsData {
   activeThisWeek: number;
   activeThisMonth: number;
   newUsersThisWeek: number;
+  byCourse: Record<string, number>;
   bySection: Record<string, number>;
   bySubscription: Record<string, number>;
 }
@@ -110,6 +192,7 @@ interface QuestionReport {
   id: string;
   questionId: string;
   questionText?: string;
+  courseId?: string;
   section?: string;
   blueprintArea?: string;
   type: string;
@@ -131,6 +214,17 @@ interface LocalStats {
   topics: number;
 }
 
+interface CourseContentStats {
+  courseId: CourseId;
+  courseName: string;
+  questions: number;
+  lessons: number;
+  simulations: number;
+  flashcards: number;
+  essays?: number;
+  bySection?: Record<string, number>;
+}
+
 // ============================================================================
 // Constants
 // ============================================================================
@@ -149,6 +243,13 @@ const ADMIN_EMAILS: string[] = [
 const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
   const [activeTab, setActiveTab] = useState<TabType>('content');
+  
+  // Course selection state (TODO: add course filter dropdown later)
+  // const [selectedCourse, setSelectedCourse] = useState<CourseId | 'all'>('all');
+  const [allCourseStats, setAllCourseStats] = useState<CourseContentStats[]>([]);
+  const [isLoadingCourseStats, setIsLoadingCourseStats] = useState(false);
+  
+  // Legacy single-course stats (kept for backwards compat, will remove later)
   const [localStats, setLocalStats] = useState<LocalStats | null>(null);
   const [lessonStats, setLessonStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
   const [tbsStats, setTbsStats] = useState<{ total: number; bySection: Record<string, number>; byType?: Record<string, number> } | null>(null);
@@ -159,6 +260,7 @@ const AdminCMS: React.FC = () => {
   const [filteredUsers, setFilteredUsers] = useState<UserDocument[]>([]);
   const [userSearch, setUserSearch] = useState('');
   const [userFilter, setUserFilter] = useState<'all' | 'admin' | 'premium' | 'free' | 'trial'>('all');
+  const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
   const [systemErrors, setSystemErrors] = useState<SystemError[]>([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
@@ -166,6 +268,22 @@ const AdminCMS: React.FC = () => {
   // Question Reports state
   const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
   const [isLoadingReports, setIsLoadingReports] = useState(false);
+
+  // User Engagement state
+  const [engagementStats, setEngagementStats] = useState<{
+    mostActive: Array<{ email: string; questionsAnswered: number; lastActive: string }>;
+    inactive: Array<{ email: string; daysSinceActive: number; joinedAt: string }>;
+    averageQuestionsPerUser: number;
+    usersWithActivity: number;
+  } | null>(null);
+  const [isLoadingEngagement, setIsLoadingEngagement] = useState(false);
+
+  // Question Quality state
+  const [qualityMetrics, setQualityMetrics] = useState<{
+    mostReported: Array<{ questionId: string; reportCount: number; types: string[] }>;
+    reportsByType: Record<string, number>;
+    pendingCount: number;
+  } | null>(null);
 
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -309,7 +427,7 @@ const AdminCMS: React.FC = () => {
       );
     }
     
-    // Apply filter
+    // Apply subscription filter
     if (userFilter === 'admin') {
       result = result.filter(u => u.isAdmin);
     } else if (userFilter === 'premium') {
@@ -322,8 +440,16 @@ const AdminCMS: React.FC = () => {
       result = result.filter(u => u.subscription?.status === 'trialing');
     }
     
+    // Apply course filter
+    if (userCourseFilter !== 'all') {
+      result = result.filter(u => {
+        const userCourse = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        return userCourse === userCourseFilter;
+      });
+    }
+    
     setFilteredUsers(result);
-  }, [usersList, userSearch, userFilter]);
+  }, [usersList, userSearch, userFilter, userCourseFilter]);
 
   // Load Analytics
   const loadAnalytics = useCallback(async () => {
@@ -354,15 +480,31 @@ const AdminCMS: React.FC = () => {
       let activeThisWeek = 0;
       let activeThisMonth = 0;
       let newUsersThisWeek = 0;
-      const bySection: Record<string, number> = { AUD: 0, BEC: 0, FAR: 0, REG: 0, TCP: 0, ISC: 0, BAR: 0 };
+      
+      // Track by course and section dynamically
+      const byCourse: Record<string, number> = {};
+      const bySection: Record<string, number> = {};
       const bySubscription: Record<string, number> = { free: 0, monthly: 0, quarterly: 0, annual: 0, lifetime: 0 };
+
+      // Initialize course counts
+      getActiveCourses().forEach(course => {
+        byCourse[course.id] = 0;
+      });
 
       users.forEach(u => {
         const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
         
-        // Count by section
-        if (u.examSection && bySection.hasOwnProperty(u.examSection)) {
-          bySection[u.examSection]++;
+        // Count by course (new courseId field or default to 'cpa')
+        const courseId = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        if (byCourse[courseId] !== undefined) {
+          byCourse[courseId]++;
+        } else {
+          byCourse[courseId] = 1;
+        }
+        
+        // Count by section dynamically
+        if (u.examSection) {
+          bySection[u.examSection] = (bySection[u.examSection] || 0) + 1;
         }
         
         // Count by subscription
@@ -396,6 +538,7 @@ const AdminCMS: React.FC = () => {
         activeThisWeek,
         activeThisMonth,
         newUsersThisWeek,
+        byCourse,
         bySection,
         bySubscription,
       });
@@ -750,6 +893,121 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin, user?.email]);
 
+  // Load user engagement stats
+  const loadEngagementStats = useCallback(async () => {
+    if (!isAdmin || usersList.length === 0) return;
+    setIsLoadingEngagement(true);
+    try {
+      const now = new Date();
+      const usersWithQuestionHistory: Array<{ email: string; questionsAnswered: number; lastActive: string }> = [];
+      const inactiveUsers: Array<{ email: string; daysSinceActive: number; joinedAt: string }> = [];
+      
+      // For each user, check activity from their questionHistory subcollection
+      for (const user of usersList.slice(0, 50)) { // Limit to first 50 for performance
+        try {
+          const historyRef = collection(db, 'users', user.id, 'questionHistory');
+          const historySnap = await getDocs(query(historyRef, limit(100)));
+          const questionsAnswered = historySnap.size;
+          
+          if (questionsAnswered > 0) {
+            // Find most recent activity
+            let lastActive = user.createdAt ? new Date(user.createdAt.seconds * 1000) : new Date(0);
+            historySnap.forEach(docSnap => {
+              const data = docSnap.data();
+              if (data.answeredAt?.seconds) {
+                const answered = new Date(data.answeredAt.seconds * 1000);
+                if (answered > lastActive) lastActive = answered;
+              }
+            });
+            usersWithQuestionHistory.push({
+              email: user.email || user.id.slice(0, 8),
+              questionsAnswered,
+              lastActive: lastActive.toLocaleDateString()
+            });
+          } else {
+            // User has no activity
+            const joinedDate = user.createdAt ? new Date(user.createdAt.seconds * 1000) : now;
+            const daysSinceActive = Math.floor((now.getTime() - joinedDate.getTime()) / (1000 * 60 * 60 * 24));
+            if (daysSinceActive > 7) { // Inactive if no activity and joined > 7 days ago
+              inactiveUsers.push({
+                email: user.email || user.id.slice(0, 8),
+                daysSinceActive,
+                joinedAt: joinedDate.toLocaleDateString()
+              });
+            }
+          }
+        } catch {
+          // Skip users with access issues
+        }
+      }
+      
+      // Sort and limit
+      usersWithQuestionHistory.sort((a, b) => b.questionsAnswered - a.questionsAnswered);
+      inactiveUsers.sort((a, b) => b.daysSinceActive - a.daysSinceActive);
+      
+      const totalQuestions = usersWithQuestionHistory.reduce((sum, u) => sum + u.questionsAnswered, 0);
+      
+      setEngagementStats({
+        mostActive: usersWithQuestionHistory.slice(0, 10),
+        inactive: inactiveUsers.slice(0, 10),
+        averageQuestionsPerUser: usersWithQuestionHistory.length > 0 
+          ? Math.round(totalQuestions / usersWithQuestionHistory.length) 
+          : 0,
+        usersWithActivity: usersWithQuestionHistory.length
+      });
+      addLog('Loaded engagement stats', 'success');
+    } catch (error) {
+      logger.error('Error loading engagement stats', error);
+      addLog('Error loading engagement stats', 'error');
+    } finally {
+      setIsLoadingEngagement(false);
+    }
+  }, [isAdmin, usersList]);
+
+  // Load question quality metrics from reports
+  const loadQualityMetrics = useCallback(() => {
+    if (questionReports.length === 0) {
+      setQualityMetrics(null);
+      return;
+    }
+    
+    // Aggregate reports by questionId
+    const byQuestion: Record<string, { count: number; types: Set<string> }> = {};
+    const byType: Record<string, number> = {};
+    let pendingCount = 0;
+    
+    questionReports.forEach(report => {
+      // By question
+      if (!byQuestion[report.questionId]) {
+        byQuestion[report.questionId] = { count: 0, types: new Set() };
+      }
+      byQuestion[report.questionId].count++;
+      byQuestion[report.questionId].types.add(report.type);
+      
+      // By type
+      byType[report.type] = (byType[report.type] || 0) + 1;
+      
+      // Pending count
+      if (report.status === 'pending') pendingCount++;
+    });
+    
+    // Convert to sorted array
+    const mostReported = Object.entries(byQuestion)
+      .map(([questionId, data]) => ({
+        questionId,
+        reportCount: data.count,
+        types: Array.from(data.types)
+      }))
+      .sort((a, b) => b.reportCount - a.reportCount)
+      .slice(0, 10);
+    
+    setQualityMetrics({
+      mostReported,
+      reportsByType: byType,
+      pendingCount
+    });
+  }, [questionReports]);
+
   // Effect to load tab data
   useEffect(() => {
     if (activeTab === 'users') {
@@ -761,34 +1019,89 @@ const AdminCMS: React.FC = () => {
     }
   }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics]);
 
-  // Load question stats dynamically
+  // Auto-compute quality metrics when reports change
   useEffect(() => {
-    const loadData = async () => {
+    loadQualityMetrics();
+  }, [questionReports, loadQualityMetrics]);
+
+  // Load question stats for all courses
+  useEffect(() => {
+    const loadAllCourseStats = async () => {
+      setIsLoadingCourseStats(true);
+      const enabledCourses = getActiveCourses();
+      const stats: CourseContentStats[] = [];
+      
+      for (const course of enabledCourses) {
+        try {
+          const questionModule = await loadCourseQuestionData(course.id);
+          const flashcardCount = await loadCourseFlashcardData(course.id);
+          const lessonCount = await loadCourseLessonData(course.id);
+          
+          // Type-safe check for getQuestionStats function
+          const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
+          if (getStatsFn) {
+            const qStats = getStatsFn();
+            stats.push({
+              courseId: course.id,
+              courseName: course.name,
+              questions: qStats.total || 0,
+              lessons: lessonCount,
+              simulations: 0,
+              flashcards: flashcardCount,
+              bySection: qStats.bySection || {},
+            });
+          } else {
+            // Fallback for courses without getQuestionStats - count ALL_QUESTIONS
+            const allQuestions = (questionModule as { ALL_QUESTIONS?: unknown[] })?.ALL_QUESTIONS;
+            stats.push({
+              courseId: course.id,
+              courseName: course.name,
+              questions: allQuestions?.length || 0,
+              lessons: lessonCount,
+              simulations: 0,
+              flashcards: flashcardCount,
+            });
+          }
+        } catch (error) {
+          logger.error(`Error loading stats for ${course.id}:`, error);
+          stats.push({
+            courseId: course.id,
+            courseName: course.name,
+            questions: 0,
+            lessons: 0,
+            simulations: 0,
+            flashcards: 0,
+          });
+        }
+      }
+      
+      setAllCourseStats(stats);
+      setIsLoadingCourseStats(false);
+      
+      // Also load CPA-specific stats for backward compatibility
       try {
-        // Load Questions
-        const questionModule = await loadQuestionData();
-        const { getQuestionStats } = questionModule;
-        setLocalStats(getQuestionStats());
+        const questionModule = await loadCourseQuestionData('cpa');
+        const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
+        if (getStatsFn) {
+          setLocalStats(getStatsFn());
+        }
         
-        // Load Lessons
-        const lessonModule = await import('../../../data/lessons');
+        const lessonModule = await import('../../../data/cpa/lessons');
         const lessonData = lessonModule.getLessonStats();
         setLessonStats({ total: lessonData.total, bySection: lessonData.bySection });
         
-        // Load TBS
-        const tbsModule = await import('../../../data/tbs');
+        const tbsModule = await import('../../../data/cpa/tbs');
         const tbsData = tbsModule.getTBSStats();
         setTbsStats({ total: tbsData.total, bySection: tbsData.bySection, byType: tbsData.byType });
         
-        // Load WC
-        const wcModule = await import('../../../data/written-communication');
+        const wcModule = await import('../../../data/cpa/writtenCommunication');
         const wcData = wcModule.getWCStats();
         setWcStats({ total: wcData.total, bySection: wcData.bySection });
       } catch (error) {
-        logger.error('Error loading content stats:', error);
+        logger.error('Error loading CPA content stats:', error);
       }
     };
-    loadData();
+    loadAllCourseStats();
   }, []);
 
   // ============================================================================
@@ -868,150 +1181,155 @@ const AdminCMS: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 py-6">
         {activeTab === 'content' && (
           <div className="space-y-6">
-            {/* Quick Links to Editors */}
+            {/* Aggregate Totals Header */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 shadow-lg text-white">
-              <h3 className="text-lg font-semibold mb-3">Content Editors</h3>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  to="/admin/questions"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                >
-                  <span>❓</span> View Questions
-                </Link>
-                <Link
-                  to="/admin/lessons"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-green-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                >
-                  <span>📚</span> View Lessons
-                </Link>
-                <Link
-                  to="/admin/tbs"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                >
-                  <span>📊</span> View TBS
-                </Link>
-                <Link
-                  to="/admin/wc"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                >
-                  <span>✍️</span> View WC
-                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">BEC</span>
-                </Link>
+              <h3 className="text-lg font-semibold mb-3">Content Overview</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold">
+                    {allCourseStats.reduce((sum, c) => sum + c.questions, 0).toLocaleString()}
+                  </div>
+                  <div className="text-primary-200 text-sm">Total Questions</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold">
+                    {allCourseStats.reduce((sum, c) => sum + c.lessons, 0).toLocaleString()}
+                  </div>
+                  <div className="text-primary-200 text-sm">Total Lessons</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold">
+                    {allCourseStats.reduce((sum, c) => sum + c.flashcards, 0).toLocaleString()}
+                  </div>
+                  <div className="text-primary-200 text-sm">Total Flashcards</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold">
+                    {getActiveCourses().length}
+                  </div>
+                  <div className="text-primary-200 text-sm">Active Courses</div>
+                </div>
               </div>
             </div>
 
-            {/* Content Stats Grid - All 4 types */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Questions */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="text-xl">❓</span> Questions (MCQ)
-                </h3>
-                {localStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-blue-600">
-                      {localStats.total.toLocaleString()}
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      {Object.entries(localStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
+            {/* All Courses Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {isLoadingCourseStats ? (
+                <>
+                  {[1, 2, 3, 4, 5, 6].map(i => (
+                    <Card key={i} className="p-6 animate-pulse">
+                      <div className="h-6 bg-gray-200 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 rounded w-full"></div>
+                    </Card>
+                  ))}
+                </>
+              ) : (
+                allCourseStats.map(course => {
+                  const colorClass = course.courseId === 'cpa' ? 'text-blue-600' :
+                                     course.courseId === 'ea' ? 'text-green-600' :
+                                     course.courseId === 'cma' ? 'text-purple-600' :
+                                     course.courseId === 'cia' ? 'text-orange-600' :
+                                     course.courseId === 'cisa' ? 'text-teal-600' :
+                                     'text-amber-600';
+                  return (
+                    <Card key={course.courseId} className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">{getCourseIcon(course.courseId)}</span>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {course.courseName}
+                        </h3>
+                      </div>
+                      <div className={`text-3xl font-bold ${colorClass} mb-3`}>
+                        {course.questions.toLocaleString()}
+                        <span className="text-sm font-normal text-gray-500 ml-2">questions</span>
+                      </div>
+                      {/* Content metrics row */}
+                      <div className="flex gap-4 text-sm text-gray-600 mb-3">
+                        {course.lessons > 0 && (
+                          <span>📚 {course.lessons} lessons</span>
+                        )}
+                        {course.flashcards > 0 && (
+                          <span>🎴 {course.flashcards} flashcards</span>
+                        )}
+                      </div>
+                      {course.bySection && Object.keys(course.bySection).length > 0 && (
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          {Object.entries(course.bySection).slice(0, 6).map(([section, count]) => (
+                            <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                              <span className="font-medium truncate">{section}</span>
+                              <span className="text-gray-600">{count}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
+                      {course.questions === 0 && (
+                        <div className="text-sm text-amber-600 mt-2">
+                          ⚠️ No questions loaded
+                        </div>
+                      )}
+                    </Card>
+                  );
+                })
+              )}
+            </div>
+
+            {/* CPA Detailed Stats (backward compatibility) */}
+            {localStats && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">CPA Detailed Stats</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Questions */}
+                  <Card className="p-6">
+                    <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span>❓</span> Questions (MCQ)
+                    </h4>
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                      {localStats.total.toLocaleString()}
                     </div>
                     <div className="text-xs text-gray-600">
                       {localStats.byDifficulty.easy} easy / {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
                     </div>
-                  </div>
-                ) : (
-                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
-                )}
-              </div>
+                  </Card>
 
-              {/* Lessons */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="text-xl">📚</span> Lessons
-                </h3>
-                {lessonStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-green-600">
-                      {lessonStats.total.toLocaleString()}
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      {Object.entries(lessonStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
-                )}
-              </div>
-
-              {/* TBS */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="text-xl">📊</span> Task-Based Simulations
-                </h3>
-                {tbsStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-orange-600">
-                      {tbsStats.total.toLocaleString()}
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      {Object.entries(tbsStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {tbsStats.byType && (
-                      <div className="text-xs text-gray-600">
-                        {Object.entries(tbsStats.byType).slice(0, 4).map(([type, count]) => 
-                          `${type.replace('_', ' ')}: ${count}`
-                        ).join(' • ')}
+                  {/* Lessons */}
+                  {lessonStats && (
+                    <Card className="p-6">
+                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <span>📚</span> Lessons
+                      </h4>
+                      <div className="text-3xl font-bold text-green-600">
+                        {lessonStats.total.toLocaleString()}
                       </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
-                )}
-              </div>
+                    </Card>
+                  )}
 
-              {/* Written Communication */}
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="text-xl">✍️</span> Written Communication
-                  <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">BEC only</span>
-                </h3>
-                {wcStats ? (
-                  <div className="space-y-3">
-                    <div className="text-3xl font-bold text-primary-600">
-                      {wcStats.total.toLocaleString()}
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      {Object.entries(wcStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
-                          <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-xs text-amber-600">
-                      ⚠️ BEC ends June 30, 2026 - WC not tested in other sections
-                    </div>
-                  </div>
-                ) : (
-                  <div className="animate-pulse h-20 bg-gray-100 rounded"></div>
-                )}
+                  {/* TBS */}
+                  {tbsStats && (
+                    <Card className="p-6">
+                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <span>📊</span> Task-Based Simulations
+                      </h4>
+                      <div className="text-3xl font-bold text-orange-600">
+                        {tbsStats.total.toLocaleString()}
+                      </div>
+                    </Card>
+                  )}
+
+                  {/* Written Communication */}
+                  {wcStats && (
+                    <Card className="p-6">
+                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <span>✍️</span> Written Communication
+                      </h4>
+                      <div className="text-3xl font-bold text-primary-600">
+                        {wcStats.total.toLocaleString()}
+                      </div>
+                    </Card>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 
@@ -1019,32 +1337,32 @@ const AdminCMS: React.FC = () => {
           <div className="space-y-6">
             {/* User Stats Summary */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
                 <div className="text-sm text-gray-600">Total Users</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              </Card>
+              <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-primary-600">{usersList.filter(u => u.isAdmin).length}</div>
                 <div className="text-sm text-gray-600">Admins</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              </Card>
+              <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-green-600">
                   {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
                 </div>
                 <div className="text-sm text-gray-600">Premium</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              </Card>
+              <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-amber-600">
                   {usersList.filter(u => u.subscription?.status === 'trialing').length}
                 </div>
                 <div className="text-sm text-gray-600">Trial</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              </Card>
+              <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-gray-600">
                   {usersList.filter(u => !u.subscription?.tier || u.subscription.tier === 'free').length}
                 </div>
                 <div className="text-sm text-gray-600">Free</div>
-              </div>
+              </Card>
             </div>
 
             {/* User Lookup Tool */}
@@ -1107,7 +1425,7 @@ const AdminCMS: React.FC = () => {
             </div>
 
             {/* User Management Table */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <Card className="p-6">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">User Management</h3>
                 <div className="flex flex-wrap gap-3 items-center">
@@ -1130,6 +1448,19 @@ const AdminCMS: React.FC = () => {
                     <option value="premium">Premium Only</option>
                     <option value="free">Free Only</option>
                     <option value="trial">Trial Only</option>
+                  </select>
+                  {/* Course Filter */}
+                  <select
+                    value={userCourseFilter}
+                    onChange={(e) => setUserCourseFilter(e.target.value as CourseId | 'all')}
+                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="all">All Courses</option>
+                    {getActiveCourses().map(course => (
+                      <option key={course.id} value={course.id}>
+                        {course.shortName || course.name}
+                      </option>
+                    ))}
                   </select>
                   <span className="text-sm text-gray-600">
                     Showing {filteredUsers.length} of {usersList.length}
@@ -1154,6 +1485,7 @@ const AdminCMS: React.FC = () => {
                     <thead>
                       <tr className="bg-gray-50 border-b border-gray-200">
                         <th className="p-3 font-medium text-gray-600">Email</th>
+                        <th className="p-3 font-medium text-gray-600">Course</th>
                         <th className="p-3 font-medium text-gray-600">Section</th>
                         <th className="p-3 font-medium text-gray-600">Subscription</th>
                         <th className="p-3 font-medium text-gray-600">Role</th>
@@ -1164,7 +1496,7 @@ const AdminCMS: React.FC = () => {
                     <tbody className="divide-y divide-gray-100">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="p-4 text-center text-gray-600">
+                          <td colSpan={7} className="p-4 text-center text-gray-600">
                             {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
@@ -1174,6 +1506,18 @@ const AdminCMS: React.FC = () => {
                             <td className="p-3">
                               <div className="font-medium text-sm">{u.email || '—'}</div>
                               <div className="text-xs text-gray-600 font-mono">{u.id.slice(0, 12)}...</div>
+                            </td>
+                            <td className="p-3">
+                              <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                ((u as typeof u & { courseId?: string }).courseId || 'cpa') === 'cpa' ? 'bg-blue-50 text-blue-700' :
+                                ((u as typeof u & { courseId?: string }).courseId) === 'ea' ? 'bg-green-50 text-green-700' :
+                                ((u as typeof u & { courseId?: string }).courseId) === 'cma' ? 'bg-purple-50 text-purple-700' :
+                                ((u as typeof u & { courseId?: string }).courseId) === 'cia' ? 'bg-orange-50 text-orange-700' :
+                                ((u as typeof u & { courseId?: string }).courseId) === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                'bg-amber-50 text-amber-700'
+                              }`}>
+                                {((u as typeof u & { courseId?: string }).courseId || 'cpa').toUpperCase()}
+                              </span>
                             </td>
                             <td className="p-3">
                               <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
@@ -1248,7 +1592,7 @@ const AdminCMS: React.FC = () => {
                   )}
                 </div>
               )}
-            </div>
+            </Card>
           </div>
         )}
 
@@ -1295,38 +1639,48 @@ const AdminCMS: React.FC = () => {
 
                 {/* Charts Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Users by Section */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <h4 className="font-semibold text-gray-900 mb-4">Users by Exam Section</h4>
+                  {/* Users by Course */}
+                  <Card className="p-6">
+                    <h4 className="font-semibold text-gray-900 mb-4">Users by Course</h4>
                     <div className="space-y-3">
-                      {Object.entries(analytics.bySection)
+                      {Object.entries(analytics.byCourse || {})
                         .filter(([, count]) => count > 0)
                         .sort((a, b) => b[1] - a[1])
-                        .map(([section, count]) => {
+                        .map(([courseId, count]) => {
                           const percentage = analytics.totalUsers > 0 ? (count / analytics.totalUsers * 100) : 0;
+                          const courseConfig = COURSES[courseId as CourseId];
+                          const colorClass = courseId === 'cpa' ? 'bg-blue-600' :
+                                             courseId === 'ea' ? 'bg-green-600' :
+                                             courseId === 'cma' ? 'bg-purple-600' :
+                                             courseId === 'cia' ? 'bg-orange-600' :
+                                             courseId === 'cisa' ? 'bg-teal-600' :
+                                             'bg-amber-600';
                           return (
-                            <div key={section}>
+                            <div key={courseId}>
                               <div className="flex justify-between text-sm mb-1">
-                                <span className="font-medium">{section}</span>
+                                <span className="font-medium flex items-center gap-1.5">
+                                  <span>{getCourseIcon(courseId as CourseId)}</span>
+                                  {courseConfig?.name || courseId.toUpperCase()}
+                                </span>
                                 <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
                               <div className="w-full bg-gray-200 rounded-full h-2">
                                 <div 
-                                  className="bg-blue-600 h-2 rounded-full transition-all duration-500" 
+                                  className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
                                 />
                               </div>
                             </div>
                           );
                         })}
-                      {Object.entries(analytics.bySection).filter(([, count]) => count > 0).length === 0 && (
-                        <p className="text-gray-600 text-sm">No section data available</p>
+                      {Object.entries(analytics.byCourse || {}).filter(([, count]) => count > 0).length === 0 && (
+                        <p className="text-gray-600 text-sm">No course data yet - users will have courseId tracked</p>
                       )}
                     </div>
-                  </div>
+                  </Card>
 
                   {/* Users by Subscription */}
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <Card className="p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">Users by Subscription</h4>
                     <div className="space-y-3">
                       {[
@@ -1365,11 +1719,11 @@ const AdminCMS: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
 
                 {/* Quick Stats */}
-                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <Card className="p-6">
                   <h4 className="font-semibold text-gray-900 mb-4">Quick Stats</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center p-4 bg-gray-50 rounded-lg">
@@ -1403,6 +1757,147 @@ const AdminCMS: React.FC = () => {
                       <div className="text-xs text-gray-600">Conversion Rate</div>
                     </div>
                   </div>
+                </Card>
+
+                {/* User Engagement Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Most Active Users */}
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900">🏆 Most Active Users</h4>
+                      <button
+                        onClick={loadEngagementStats}
+                        disabled={isLoadingEngagement || usersList.length === 0}
+                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                      >
+                        {isLoadingEngagement ? 'Loading...' : 'Load'}
+                      </button>
+                    </div>
+                    {engagementStats ? (
+                      <div className="space-y-2">
+                        <div className="text-sm text-gray-600 mb-3">
+                          {engagementStats.usersWithActivity} users with activity • Avg {engagementStats.averageQuestionsPerUser} questions/user
+                        </div>
+                        {engagementStats.mostActive.length > 0 ? (
+                          engagementStats.mostActive.map((user, i) => (
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                              <span className="font-medium truncate flex-1">{user.email}</span>
+                              <span className="text-green-600 font-semibold ml-2">{user.questionsAnswered} Q</span>
+                              <span className="text-gray-500 text-xs ml-2">{user.lastActive}</span>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-gray-500 text-sm">No activity data found</p>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">
+                        {usersList.length === 0 ? 'Load users first (Users tab)' : 'Click Load to fetch engagement data'}
+                      </p>
+                    )}
+                  </Card>
+
+                  {/* Inactive Users */}
+                  <Card className="p-6">
+                    <h4 className="font-semibold text-gray-900 mb-4">😴 Inactive Users</h4>
+                    {engagementStats ? (
+                      <div className="space-y-2">
+                        {engagementStats.inactive.length > 0 ? (
+                          engagementStats.inactive.map((user, i) => (
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                              <span className="font-medium truncate flex-1">{user.email}</span>
+                              <span className="text-amber-600 font-semibold ml-2">{user.daysSinceActive}d</span>
+                              <span className="text-gray-500 text-xs ml-2">joined {user.joinedAt}</span>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-green-600 text-sm">🎉 No inactive users! Everyone is engaged.</p>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">Load engagement data to see inactive users</p>
+                    )}
+                  </Card>
+                </div>
+
+                {/* Question Quality Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Most Reported Questions */}
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900">⚠️ Most Reported Questions</h4>
+                      <button
+                        onClick={loadQuestionReports}
+                        disabled={isLoadingReports}
+                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                      >
+                        {isLoadingReports ? 'Loading...' : 'Refresh'}
+                      </button>
+                    </div>
+                    {qualityMetrics ? (
+                      <div className="space-y-2">
+                        <div className="text-sm text-amber-600 mb-3">
+                          {qualityMetrics.pendingCount} pending reports to review
+                        </div>
+                        {qualityMetrics.mostReported.length > 0 ? (
+                          qualityMetrics.mostReported.slice(0, 5).map((q, i) => (
+                            <div key={i} className="p-2 bg-gray-50 rounded text-sm">
+                              <div className="flex justify-between items-center">
+                                <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 20)}...</span>
+                                <span className="text-red-600 font-semibold ml-2">{q.reportCount}x</span>
+                              </div>
+                              <div className="flex gap-1 mt-1">
+                                {q.types.map(type => (
+                                  <span key={type} className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">
+                                    {type.replace(/_/g, ' ')}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <p className="text-green-600 text-sm">🎉 No reported questions!</p>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">Load reports to see quality metrics</p>
+                    )}
+                  </Card>
+
+                  {/* Reports by Type */}
+                  <Card className="p-6">
+                    <h4 className="font-semibold text-gray-900 mb-4">📊 Reports by Type</h4>
+                    {qualityMetrics && Object.keys(qualityMetrics.reportsByType).length > 0 ? (
+                      <div className="space-y-3">
+                        {Object.entries(qualityMetrics.reportsByType)
+                          .sort((a, b) => b[1] - a[1])
+                          .map(([type, count]) => {
+                            const total = Object.values(qualityMetrics.reportsByType).reduce((a, b) => a + b, 0);
+                            const percentage = (count / total) * 100;
+                            const colorClass = type === 'incorrect_answer' ? 'bg-red-500' :
+                                               type === 'unclear_question' ? 'bg-amber-500' :
+                                               type === 'typo' ? 'bg-blue-500' :
+                                               'bg-gray-500';
+                            return (
+                              <div key={type}>
+                                <div className="flex justify-between text-sm mb-1">
+                                  <span className="font-medium">{type.replace(/_/g, ' ')}</span>
+                                  <span className="text-gray-600">{count}</span>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                  <div 
+                                    className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
+                                    style={{ width: `${percentage}%` }}
+                                  />
+                                </div>
+                              </div>
+                            );
+                          })}
+                      </div>
+                    ) : (
+                      <p className="text-gray-500 text-sm">No report data available</p>
+                    )}
+                  </Card>
                 </div>
               </>
             ) : (
@@ -1416,7 +1911,7 @@ const AdminCMS: React.FC = () => {
         {activeTab === 'tools' && (
           <div className="space-y-6">
             {/* Feature Flags */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
                 🎛️ Feature Flags
                 <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
@@ -1451,23 +1946,25 @@ const AdminCMS: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
 
             {/* Question Reports */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <Card className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">📋 Question Reports</h3>
                 <div className="flex gap-2">
                   <span className="text-sm text-gray-600">
                     {questionReports.filter(r => r.status === 'pending').length} pending
                   </span>
-                  <button
+                  <Button
                     onClick={loadQuestionReports}
                     disabled={isLoadingReports}
-                    className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50"
+                    variant="primary"
+                    size="sm"
+                    loading={isLoadingReports}
                   >
-                    {isLoadingReports ? 'Loading...' : 'Refresh'}
-                  </button>
+                    Refresh
+                  </Button>
                 </div>
               </div>
               
@@ -1507,6 +2004,7 @@ const AdminCMS: React.FC = () => {
                               {report.status}
                             </span>
                             <span className="text-xs text-gray-600">
+                              {report.courseId && <span className="font-medium">{report.courseId.toUpperCase()} • </span>}
                               {report.section} • {report.blueprintArea}
                             </span>
                           </div>
@@ -1546,10 +2044,10 @@ const AdminCMS: React.FC = () => {
                   ))}
                 </div>
               )}
-            </div>
+            </Card>
 
             {/* System Tools */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">🛠️ System Tools</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Maintenance Mode Toggle */}
@@ -1581,7 +2079,7 @@ const AdminCMS: React.FC = () => {
                 <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">Clear Local Cache</h4>
-                    <button
+                    <Button
                       onClick={() => {
                         const keysCleared: string[] = [];
                         ['voraprep_study_state', 'voraprep_progress', 'ai_api_failures'].forEach(key => {
@@ -1602,10 +2100,11 @@ const AdminCMS: React.FC = () => {
                         alert(`Cleared ${keysCleared.length} cache entries. Page will reload.`);
                         window.location.reload();
                       }}
-                      className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                      variant="primary"
+                      size="sm"
                     >
                       Clear Cache
-                    </button>
+                    </Button>
                   </div>
                   <p className="text-xs text-gray-600">
                     Clears local storage cache for study state and progress.
@@ -1672,21 +2171,25 @@ const AdminCMS: React.FC = () => {
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">🧹 Stale Account Cleanup</h4>
                     <div className="flex gap-2">
-                      <button
+                      <Button
                         onClick={findStaleAccounts}
                         disabled={isLoadingStale}
-                        className="px-3 py-1 rounded text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50"
+                        variant="primary"
+                        size="sm"
+                        loading={isLoadingStale}
                       >
-                        {isLoadingStale ? 'Finding...' : 'Find Stale'}
-                      </button>
+                        Find Stale
+                      </Button>
                       {staleAccounts.length > 0 && (
-                        <button
+                        <Button
                           onClick={deleteStaleAccounts}
                           disabled={isDeletingStale}
-                          className="px-3 py-1 rounded text-sm font-medium bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50"
+                          variant="danger"
+                          size="sm"
+                          loading={isDeletingStale}
                         >
-                          {isDeletingStale ? 'Deleting...' : `Delete ${staleAccounts.length}`}
-                        </button>
+                          Delete {staleAccounts.length}
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -1715,7 +2218,7 @@ const AdminCMS: React.FC = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </Card>
 
             {/* Beta Mode Status */}
             <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
@@ -1739,7 +2242,7 @@ const AdminCMS: React.FC = () => {
         )}
 
         {activeTab === 'logs' && (
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
               <span>System Error Logs</span>
               <div className="flex items-center gap-2">
@@ -1802,11 +2305,11 @@ const AdminCMS: React.FC = () => {
                  )}
               </div>
             )}
-          </div>
+          </Card>
         )}
 
         {activeTab === 'settings' && (
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Admin Settings</h3>
             <div className="space-y-4">
               {/* AI Service Status */}
@@ -1884,7 +2387,7 @@ const AdminCMS: React.FC = () => {
                   <li>Onboarding status (will show onboarding again)</li>
                 </ul>
                 <div className="flex gap-3">
-                  <button
+                  <Button
                     onClick={async () => {
                       if (!user) return;
                       const confirmed = window.confirm(
@@ -1977,10 +2480,10 @@ const AdminCMS: React.FC = () => {
                         addLog('❌ Reset failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
                       }
                     }}
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
+                    variant="danger"
                   >
                     🔄 Reset My Account
-                  </button>
+                  </Button>
                   <button
                     onClick={async () => {
                       if (!user) return;
@@ -2005,7 +2508,7 @@ const AdminCMS: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Card>
         )}
       </main>
 

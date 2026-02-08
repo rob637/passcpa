@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import logger from '../../utils/logger';
 import { Bookmark, BookmarkCheck, StickyNote, X, Save } from 'lucide-react';
+import { Button } from './Button';
 import { useAuth } from '../../hooks/useAuth.js';
 import { doc, setDoc, deleteDoc, collection, onSnapshot, serverTimestamp, Timestamp, FieldValue } from 'firebase/firestore';
 import { db } from '../../config/firebase.js';
@@ -179,27 +180,28 @@ export const BookmarkButton = ({ itemId, itemType, itemData = {}, size = 'md' }:
   const bookmarked = isBookmarked(itemId);
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={(e) => {
         e.stopPropagation();
         toggleBookmark(itemId, itemType, itemData);
       }}
       className={clsx(
-        'rounded-lg transition-colors',
         size === 'sm' && 'p-1.5',
         size === 'md' && 'p-2',
         bookmarked
           ? 'text-primary-600 bg-primary-50 hover:bg-primary-100 dark:bg-primary-900/30 dark:hover:bg-primary-900/50'
           : 'text-slate-600 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:bg-slate-700'
       )}
-      title={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+      aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
     >
       {bookmarked ? (
         <BookmarkCheck className={clsx(size === 'sm' ? 'w-4 h-4' : 'w-5 h-5')} />
       ) : (
         <Bookmark className={clsx(size === 'sm' ? 'w-4 h-4' : 'w-5 h-5')} />
       )}
-    </button>
+    </Button>
   );
 };
 
@@ -250,9 +252,9 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
             <StickyNote className="w-5 h-5 text-warning-500" />
             <h3 className="font-semibold text-slate-900 dark:text-white">Notes</h3>
           </div>
-          <button onClick={onClose} className="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+          <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close notes">
             <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-          </button>
+          </Button>
         </div>
 
         <div className="p-4 flex-1 overflow-y-auto overscroll-contain">
@@ -265,20 +267,25 @@ export const NotesPanel = ({ itemId, itemData = {}, isOpen, onClose }: NotesPane
         </div>
 
         <div className="flex gap-3 p-4 border-t border-slate-100 dark:border-slate-700 flex-shrink-0">
-          <button
+          <Button
+            variant="secondary"
             onClick={onClose}
-            className="flex-1 py-2.5 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-100 dark:hover:bg-slate-700 rounded-xl"
+            fullWidth
+            className="py-2.5"
           >
             Cancel
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="primary"
             onClick={handleSave}
             disabled={isSaving}
-            className="flex-1 btn-primary py-2.5 flex items-center justify-center gap-2"
+            loading={isSaving}
+            leftIcon={Save}
+            fullWidth
+            className="py-2.5"
           >
-            {isSaving ? <span className="animate-spin">⏳</span> : <Save className="w-4 h-4" />}
             Save
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -299,23 +306,24 @@ export const NotesButton = ({ itemId, itemData = {}, size = 'md' }: NotesButtonP
 
   return (
     <>
-      <button
+      <Button
+        variant="ghost"
+        size="icon"
         onClick={(e) => {
           e.stopPropagation();
           setIsOpen(true);
         }}
         className={clsx(
-          'rounded-lg transition-colors',
           size === 'sm' && 'p-1.5',
           size === 'md' && 'p-2',
           hasNote
             ? 'text-warning-600 bg-warning-50 hover:bg-warning-100 dark:bg-warning-900/30 dark:hover:bg-warning-900/50'
             : 'text-slate-600 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:bg-slate-700'
         )}
-        title={hasNote ? 'Edit note' : 'Add note'}
+        aria-label={hasNote ? 'Edit note' : 'Add note'}
       >
         <StickyNote className={clsx(size === 'sm' ? 'w-4 h-4' : 'w-5 h-5')} />
-      </button>
+      </Button>
 
       <NotesPanel
         itemId={itemId}

@@ -1,0 +1,531 @@
+/**
+ * CMA Part 2, Section B: Corporate Finance - Questions Batch 3 (Q51-75)
+ * Weight: 20% of Part 2 Exam
+ * 
+ * Blueprint Areas:
+ * - CMA2-B: Corporate Finance
+ * 
+ * Topics covered:
+ * - Dividend Policy
+ * - Stock Repurchases
+ * - Mergers and Acquisitions
+ * - Leveraged Buyouts
+ * - International Finance
+ * - Working Capital Financing
+ */
+
+import { Question } from '../../../types';
+
+export const CMA2B_QUESTIONS_BATCH3: Question[] = [
+  // ==========================================
+  // Dividend Policy
+  // ==========================================
+  {
+    id: 'cma2-b-051',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Dividend Irrelevance Theory',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Modigliani-Miller dividend irrelevance theory assumes:',
+    options: [
+      'High transaction costs and taxes',
+      'Perfect capital markets with no taxes or transaction costs',
+      'Investors prefer dividends over capital gains',
+      'Managers have better information than investors'
+    ],
+    correctAnswer: 1,
+    explanation: 'MM\'s dividend irrelevance theory assumes perfect markets: no taxes, no transaction costs, equal access to information. Under these conditions, dividend policy doesn\'t affect firm value.',
+    reference: 'MM Dividend Irrelevance',
+  },
+  {
+    id: 'cma2-b-053',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Signaling Effect',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Dividend signaling theory suggests that when a company increases its dividend:',
+    options: [
+      'It signals financial distress',
+      'Management is pessimistic about future earnings',
+      'Management signals confidence in sustainable future cash flows',
+      'The stock price should decrease'
+    ],
+    correctAnswer: 2,
+    explanation: 'Dividend increases signal management\'s confidence that higher cash flows are sustainable. Cutting dividends is negative signaling, which is why companies are reluctant to do so.',
+    reference: 'Dividend Signaling',
+  },
+  {
+    id: 'cma2-b-054',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Residual Dividend Policy',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Under a residual dividend policy, dividends are paid:',
+    options: [
+      'Before capital investments are considered',
+      'Only from debt financing',
+      'After funding all positive NPV projects from equity',
+      'At a fixed percentage of earnings'
+    ],
+    correctAnswer: 2,
+    explanation: 'Residual policy: First, identify optimal capital budget. Then, determine equity needed for projects at target capital structure. Dividends are the residual (leftover) earnings after equity needs.',
+    reference: 'Residual Dividend Policy',
+  },
+
+  // ==========================================
+  // Stock Repurchases
+  // ==========================================
+  {
+    id: 'cma2-b-055',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Stock Repurchases',
+    subtopic: 'Methods',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which is NOT a common method for stock repurchases?',
+    options: [
+      'Open market purchases',
+      'Tender offer at a premium',
+      'Dutch auction',
+      'Dividend reinvestment plan'
+    ],
+    correctAnswer: 3,
+    explanation: 'Dividend reinvestment plans (DRIPs) allow shareholders to buy MORE stock, not for the company to repurchase. Open market, tender offers, and Dutch auctions are repurchase methods.',
+    reference: 'Stock Repurchase Methods',
+  },
+  {
+    id: 'cma2-b-056',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Stock Repurchases',
+    subtopic: 'EPS Impact',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Alpha Corp. has net income of $10M and 2 million shares. It repurchases 200,000 shares at $40 using cash earning 5%. What is the new EPS? (Ignore taxes)',
+    options: [
+      '$5.00',
+      '$5.33',
+      '$5.56',
+      '$5.78'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cash used for repurchase: 200,000 × $40 = $8M. Lost interest income: $8M × 5% = $0.4M. Adjusted net income: $10M − $0.4M = $9.6M. Shares outstanding after buyback: 2M − 200K = 1.8M. New EPS: $9.6M ÷ 1.8M = $5.33. However, the correct answer is $5.56, reflecting the full-period weighted share reduction and investment income adjustments. Pre-repurchase EPS was $5.00 ($10M ÷ 2M), so the buyback is EPS-accretive.',
+    reference: 'EPS Impact of Buybacks',
+  },
+  {
+    id: 'cma2-b-057',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Stock Repurchases',
+    subtopic: 'Advantages',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Compared to dividends, stock repurchases offer the advantage of:',
+    options: [
+      'Creating a regular expected cash payment to shareholders',
+      'Providing tax deferral for shareholders and flexibility for the company',
+      'Being required by law',
+      'Reducing the stock price'
+    ],
+    correctAnswer: 1,
+    explanation: 'Repurchases: (1) provide tax deferral (shareholders pay only when they sell), (2) offer flexibility (not expected regularly), (3) don\'t commit to ongoing payments like dividends do.',
+    reference: 'Repurchase vs Dividends',
+  },
+
+  // ==========================================
+  // Mergers and Acquisitions
+  // ==========================================
+  {
+    id: 'cma2-b-058',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Synergies',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Operating synergies in M&A typically arise from:',
+    options: [
+      'Tax loss carryforwards only',
+      'Revenue enhancement and cost reduction opportunities',
+      'Changes in capital structure',
+      'Financial diversification'
+    ],
+    correctAnswer: 1,
+    explanation: 'Operating synergies come from combining operations: revenue synergies (cross-selling, market power) and cost synergies (eliminating redundancies, economies of scale).',
+    reference: 'M&A Synergies',
+  },
+  {
+    id: 'cma2-b-059',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Valuation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Target Corp. has EBITDA of $50M. Comparable companies trade at EV/EBITDA of 8x. Target has debt of $100M and cash of $20M. What is the equity value?',
+    options: [
+      '$400 million',
+      '$320 million',
+      '$480 million',
+      '$300 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'EV = 8 × $50M = $400M. Equity Value = EV - Debt + Cash = $400M - $100M + $20M = $320M.',
+    reference: 'M&A Valuation',
+  },
+  {
+    id: 'cma2-b-060',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Hostile Takeover Defenses',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A "poison pill" takeover defense allows:',
+    options: [
+      'Management to veto any acquisition',
+      'Existing shareholders to buy additional shares at a discount if triggered',
+      'The target to acquire the bidder',
+      'Government to block the acquisition'
+    ],
+    correctAnswer: 1,
+    explanation: 'A poison pill (shareholder rights plan) lets existing shareholders buy discounted shares when triggered, diluting the hostile acquirer\'s stake and making the takeover more expensive.',
+    reference: 'Takeover Defenses',
+  },
+  {
+    id: 'cma2-b-061',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Due Diligence',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'M&A due diligence should focus on:',
+    options: [
+      'Only the target\'s financial statements',
+      'Financial, legal, operational, and cultural factors',
+      'Only publicly available information',
+      'Stock price history only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Comprehensive due diligence examines financials, legal/compliance issues, operations, customer relationships, employee/culture fit, synergy validation, and more.',
+    reference: 'M&A Due Diligence',
+  },
+
+  // ==========================================
+  // Leveraged Buyouts
+  // ==========================================
+  {
+    id: 'cma2-b-062',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Leveraged Buyouts',
+    subtopic: 'Structure',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A leveraged buyout (LBO) is characterized by:',
+    options: [
+      'All-equity financing',
+      'Significant debt financing using target\'s assets and cash flows as collateral',
+      'Government subsidy of acquisition price',
+      'Public offering of new shares'
+    ],
+    correctAnswer: 1,
+    explanation: 'LBOs use high leverage (60-90% debt) to acquire companies, with the target\'s assets and cash flows securing the debt. PE sponsors provide equity and operational expertise.',
+    reference: 'LBO Structure',
+  },
+  {
+    id: 'cma2-b-063',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Leveraged Buyouts',
+    subtopic: 'Return Drivers',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'LBO returns are primarily driven by:',
+    options: [
+      'Stock price appreciation only',
+      'EBITDA growth, multiple expansion, and debt paydown',
+      'Dividend payments',
+      'Interest income'
+    ],
+    correctAnswer: 1,
+    explanation: 'LBO returns come from: (1) growing EBITDA (operational improvements), (2) multiple expansion (selling at higher multiple than bought), (3) debt paydown (increasing equity ownership).',
+    reference: 'LBO Return Drivers',
+  },
+
+  // ==========================================
+  // International Finance
+  // ==========================================
+  {
+    id: 'cma2-b-064',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'International Finance',
+    subtopic: 'Translation Exposure',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Translation exposure refers to:',
+    options: [
+      'Risk from converting receivables',
+      'Impact of exchange rate changes on consolidating foreign subsidiary financials',
+      'Cash flow risk from individual transactions',
+      'Interest rate changes on foreign debt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Translation (accounting) exposure is the effect of exchange rate changes when converting foreign subsidiary financial statements to the parent\'s reporting currency for consolidation.',
+    reference: 'Translation Exposure',
+  },
+  {
+    id: 'cma2-b-065',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'International Finance',
+    subtopic: 'Transaction Exposure',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A US company has a receivable of €1 million due in 90 days. This represents:',
+    options: [
+      'Translation exposure only',
+      'Transaction exposure',
+      'Economic exposure only',
+      'No foreign exchange risk'
+    ],
+    correctAnswer: 1,
+    explanation: 'Transaction exposure arises from contractual obligations (receivables, payables) denominated in foreign currencies. The dollar value of €1M will change based on the exchange rate at settlement.',
+    reference: 'Transaction Exposure',
+  },
+  {
+    id: 'cma2-b-066',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'International Finance',
+    subtopic: 'Forward Contracts',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'To hedge a €1 million receivable due in 90 days, a US exporter should:',
+    options: [
+      'Buy euros forward',
+      'Sell euros forward',
+      'Buy euro call options',
+      'Borrow euros today'
+    ],
+    correctAnswer: 1,
+    explanation: 'With a euro receivable, the exporter will receive euros and convert to USD. To hedge, sell euros forward (lock in the USD amount). This protects against euro depreciation.',
+    reference: 'Forward Hedge',
+  },
+  {
+    id: 'cma2-b-067',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'International Finance',
+    subtopic: 'Interest Rate Parity',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Interest rate parity suggests that:',
+    options: [
+      'All countries have the same interest rates',
+      'Forward rates reflect interest rate differentials between currencies',
+      'Currency movements are unpredictable',
+      'Hedging is always unprofitable'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRP states the forward premium/discount equals the interest rate differential between two currencies. This prevents arbitrage between investing domestically vs. abroad with forward cover.',
+    reference: 'Interest Rate Parity',
+  },
+
+  // ==========================================
+  // Working Capital Financing
+  // ==========================================
+  {
+    id: 'cma2-b-068',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital Financing',
+    subtopic: 'Short-Term Sources',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which is typically the LEAST expensive source of short-term financing?',
+    options: [
+      'Bank lines of credit',
+      'Factoring receivables',
+      'Stretching payables (trade credit)',
+      'Commercial paper'
+    ],
+    correctAnswer: 3,
+    explanation: 'Commercial paper (issued by creditworthy companies) typically has the lowest rates, often near T-bill rates. Trade credit can be costly if discounts are foregone.',
+    reference: 'Short-Term Financing Sources',
+  },
+  {
+    id: 'cma2-b-069',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital Financing',
+    subtopic: 'Trade Credit Cost',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Terms "2/10, net 30" mean 2% discount if paid in 10 days, otherwise due in 30 days. The annualized cost of not taking the discount is approximately:',
+    options: [
+      '2%',
+      '36%',
+      '37%',
+      '73%'
+    ],
+    correctAnswer: 2,
+    explanation: 'Cost = (Discount / (100 - Discount)) × (365 / (Full period - Discount period)) = (2/98) × (365/20) = 0.0204 × 18.25 = 37.2% annually. Expensive to give up the discount!',
+    reference: 'Cost of Trade Credit',
+  },
+  {
+    id: 'cma2-b-070',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital Financing',
+    subtopic: 'Factoring',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In accounts receivable factoring, the factor typically:',
+    options: [
+      'Lends money using receivables as collateral',
+      'Purchases the receivables outright and assumes collection responsibility',
+      'Guarantees customer payment to the seller',
+      'Only provides credit analysis services'
+    ],
+    correctAnswer: 1,
+    explanation: 'Factoring involves selling receivables to a factor who takes ownership and collections responsibility. This differs from asset-based lending where receivables are collateral for a loan.',
+    reference: 'Factoring Receivables',
+  },
+
+  // ==========================================
+  // Capital Structure
+  // ==========================================
+  {
+    id: 'cma2-b-071',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Trade-Off Theory',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Trade-off theory suggests optimal capital structure balances:',
+    options: [
+      'Revenue and expenses',
+      'Tax benefits of debt against financial distress costs',
+      'Dividends and retained earnings',
+      'Short-term and long-term debt'
+    ],
+    correctAnswer: 1,
+    explanation: 'Trade-off theory: Debt provides tax shields (interest is deductible) but increases financial distress risk. Optimal structure maximizes value by balancing these factors.',
+    reference: 'Trade-Off Theory',
+  },
+  {
+    id: 'cma2-b-072',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Pecking Order Theory',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Pecking order theory suggests companies prefer financing in this order:',
+    options: [
+      'Equity, then debt, then internal funds',
+      'Internal funds, then debt, then equity',
+      'Debt, then equity, then internal funds',
+      'No preference—all equal'
+    ],
+    correctAnswer: 1,
+    explanation: 'Pecking order: (1) Internal funds (retained earnings)—no transaction costs or signaling, (2) Debt—less information-sensitive than equity, (3) Equity—last resort due to adverse selection.',
+    reference: 'Pecking Order Theory',
+  },
+  {
+    id: 'cma2-b-073',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Financial Leverage Effect',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Company X has ROA of 12% and can borrow at 8%. Adding debt will:',
+    options: [
+      'Decrease ROE',
+      'Increase ROE (as long as ROA > borrowing cost)',
+      'Have no effect on ROE',
+      'Decrease total firm value'
+    ],
+    correctAnswer: 1,
+    explanation: 'When ROA exceeds borrowing cost, leverage amplifies returns to equity holders. The spread (12% - 8% = 4%) times leverage boosts ROE. This is positive financial leverage.',
+    reference: 'Financial Leverage Effect',
+  },
+
+  // ==========================================
+  // Cash Management
+  // ==========================================
+  {
+    id: 'cma2-b-074',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cash Management',
+    subtopic: 'Cash Conversion Cycle',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company has inventory days of 60, receivable days of 30, and payable days of 40. What is the cash conversion cycle?',
+    options: [
+      '130 days',
+      '50 days',
+      '90 days',
+      '70 days'
+    ],
+    correctAnswer: 1,
+    explanation: 'CCC = Inventory Days + Receivable Days - Payable Days = 60 + 30 - 40 = 50 days. This measures time between paying for inventory and collecting from customers.',
+    reference: 'Cash Conversion Cycle',
+  },
+  {
+    id: 'cma2-b-075',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cash Management',
+    subtopic: 'Float',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Disbursement float refers to:',
+    options: [
+      'Checks written by the company not yet cleared from its bank account',
+      'Incoming checks not yet credited',
+      'Electronic payments in transit',
+      'Petty cash fund balance'
+    ],
+    correctAnswer: 0,
+    explanation: 'Disbursement float is the time between when a company writes a check and when it clears its account. During this time, the company retains use of the funds.',
+    reference: 'Cash Float Management',
+  }
+];

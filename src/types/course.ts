@@ -8,7 +8,7 @@
 /**
  * Unique identifier for each course/exam
  */
-export type CourseId = 'cpa' | 'cma' | 'ea' | 'cia';
+export type CourseId = 'cpa' | 'cma' | 'ea' | 'cia' | 'cfp' | 'cisa';
 
 /**
  * The default course when none is specified (backwards compatibility)
@@ -19,13 +19,13 @@ export const DEFAULT_COURSE_ID: CourseId = 'cpa';
  * Validates if a string is a valid CourseId
  */
 export const isValidCourseId = (id: string): id is CourseId => {
-  return ['cpa', 'cma', 'ea', 'cia'].includes(id);
+  return ['cpa', 'cma', 'ea', 'cia', 'cfp', 'cisa'].includes(id);
 };
 
 /**
  * Question types supported across different exams
  */
-export type QuestionType = 'mcq' | 'tbs' | 'wc' | 'essay' | 'data-insights';
+export type QuestionType = 'mcq' | 'tbs' | 'wc' | 'essay' | 'data-insights' | 'case';
 
 /**
  * Blueprint area within an exam section
@@ -35,6 +35,7 @@ export interface BlueprintArea {
   name: string;
   weight: string;
   topics: string[];
+  questionCount?: number;  // Optional: number of questions in this area
 }
 
 /**
@@ -82,18 +83,52 @@ export interface Course {
   name: string;
   shortName: string;
   description: string;
+  color?: string; // Brand color for the course
   sections: ExamSectionConfig[];
-  passingScore: number;
-  totalTime: number;             // minutes per section
-  pricing: CoursePricing;
-  metadata: CourseMetadata;
+  passingScore?: number;
+  totalTime?: number;             // minutes per section
+  pricing?: CoursePricing;
+  metadata?: CourseMetadata;
+  
+  // Pass guarantee configuration
+  passGuarantee?: {
+    enabled: boolean;
+    headline: string;
+    bulletPoints: string[];
+    termsLink: string;
+  };
   
   // Feature flags for course-specific behavior
+  hasTBS?: boolean; // Top-level shortcut
   features?: {
     hasTBS?: boolean;
     hasWrittenCommunication?: boolean;
     hasEssay?: boolean;
     hasDataInsights?: boolean;
+    hasCaseStudies?: boolean;
+    adaptiveLearning?: boolean;
+    simulationExams?: boolean;
+    flashcards?: boolean;
+    performanceTracking?: boolean;
+  };
+  
+  // Exam Overview - Why get this certification?
+  examOverview?: {
+    title: string;
+    description: string;
+    benefits: string[];
+    careerOpportunities: string[];
+    averageSalary?: string;
+    examFormat: string;
+  };
+  
+  // Exam Strategy - Tips for passing
+  examStrategy?: {
+    title: string;
+    keyStrategies: { title: string; description: string }[];
+    studyTips: string[];
+    commonMistakes: string[];
+    timeManagement?: string;
   };
 }
 

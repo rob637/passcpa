@@ -14,9 +14,11 @@ import React, {
   ReactNode,
   useMemo,
 } from 'react';
+import { useLocation } from 'react-router-dom';
 import { CourseId, Course } from '../types/course';
 import { getCourse, getDefaultCourseId, ACTIVE_COURSES } from '../courses';
 import { detectCourse, saveCoursePreference } from '../utils/courseDetection';
+import { clearQuestionCache } from '../services/questionService';
 
 export interface CourseContextType {
   /** Current course ID */
@@ -60,6 +62,7 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [detectionSource, setDetectionSource] = useState<string>('initializing');
+  const location = useLocation();
   
   // Initialize course from detection or prop
   const [courseId, setCourseId] = useState<CourseId>(() => {
@@ -98,6 +101,23 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
     setIsLoading(false);
   }, [initialCourseId]);
   
+  // React to URL changes (e.g. user navigates deeply or via bookmarks)
+  useEffect(() => {
+    if (!initialCourseId) {
+      const detected = detectCourse();
+      // Only confirm switching if the URL strongly implies a course (e.g. /ea/..., /cma/...)
+      // We ignore 'default' or 'user-preference' here to avoid overriding explicit navigation
+      if (['path', 'subdomain', 'domain'].includes(detected.source)) {
+         if (detected.courseId !== courseId) {
+           // Clear question cache to prevent memory leaks when switching courses via URL
+           clearQuestionCache();
+           setCourseId(detected.courseId);
+           setDetectionSource(detected.source);
+         }
+      }
+    }
+  }, [location.pathname, courseId]);
+
   // Update user courses if prop changes
   useEffect(() => {
     if (propUserCourses) {
@@ -107,12 +127,19 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
   
   /**
    * Change the active course
+   * Clears question cache to prevent memory leaks on mobile devices
    */
   const setCourse = useCallback((id: CourseId) => {
+    if (id !== courseId) {
+      // Clear question cache to prevent memory leaks when switching courses
+      // Each course's questions can be 1-3MB, so keeping all courses cached
+      // would consume excessive memory on mobile devices
+      clearQuestionCache();
+    }
     setCourseId(id);
     saveCoursePreference(id);
     setDetectionSource('user-preference');
-  }, []);
+  }, [courseId]);
   
   const contextValue = useMemo<CourseContextType>(() => ({
     courseId,

@@ -1,129 +1,123 @@
+/**
+ * CISASection.tsx
+ * 
+ * CISA Domain/Section page using unified SectionTemplate.
+ * Displays blueprint areas with expandable topics for each CISA domain.
+ */
+
+import { useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, Play, BookOpen, Target, CheckCircle } from 'lucide-react';
-import { CISA_SECTION_CONFIG, CISASectionId } from '../../courses/cisa';
-import { Button } from '../common/Button';
-import { Card } from '../common/Card';
+import { useCISAProgress } from '../../hooks/useCISAProgress';
+import { CISA_COURSE, CISA_SECTION_CONFIG, CISASectionId } from '../../courses/cisa';
+import { 
+  SectionTemplate, 
+  type BlueprintArea,
+  type SectionStats,
+} from './templates';
 
 export default function CISASection() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { progress, loading } = useCISAProgress();
+  
   const sectionId = id as CISASectionId;
-  const config = CISA_SECTION_CONFIG[sectionId];
-
-  if (!config) {
+  const legacyConfig = CISA_SECTION_CONFIG[sectionId];
+  const courseSection = useMemo(() => 
+    CISA_COURSE.sections.find(s => s.id === sectionId),
+    [sectionId]
+  );
+  
+  // Handle not found
+  if (!legacyConfig && !loading) {
     return (
       <div className="p-8 text-center">
-        <p className="text-gray-500">Section not found</p>
-        <Button variant="ghost" onClick={() => navigate('/cisa/dashboard')} className="mt-4 text-indigo-600">Back to Dashboard</Button>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+          Domain Not Found
+        </h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-4">
+          The requested CISA domain doesn't exist.
+        </p>
+        <button 
+          onClick={() => navigate('/cisa/dashboard')}
+          className="btn-primary"
+        >
+          Back to CISA Dashboard
+        </button>
       </div>
     );
   }
+  
+  // Transform blueprint areas from course config
+  const blueprintAreas: BlueprintArea[] = useMemo(() => {
+    if (!courseSection?.blueprintAreas) {
+      // Fallback to legacy topics if blueprintAreas not defined
+      if (legacyConfig?.topics) {
+        return [{
+          id: `${sectionId}-topics`,
+          name: 'Key Topics',
+          weight: legacyConfig.weight + '%',
+          topics: legacyConfig.topics,
+          progress: 0,
+          accuracy: 0,
+        }];
+      }
+      return [];
+    }
+    
+    return courseSection.blueprintAreas.map(area => ({
+      id: area.id,
+      name: area.name,
+      weight: area.weight,
+      topics: area.topics || [],
+      progress: 0, // TODO: Get from progress service per area
+      accuracy: 0,
+    }));
+  }, [courseSection, legacyConfig, sectionId]);
+  
+  // Calculate stats
+  const domainProgress = progress?.domainProgress?.[sectionId] || 0;
+  const domainAccuracy = progress?.domainAccuracy?.[sectionId] || 0;
+  const stats: SectionStats = useMemo(() => ({
+    examLength: courseSection?.timeAllowed ? Math.round(courseSection.timeAllowed / 60) : undefined,
+    questionCount: legacyConfig?.questionCount || courseSection?.questionCount,
+    totalProgress: domainProgress,
+    avgAccuracy: Math.round(domainAccuracy),
+  }), [courseSection, legacyConfig, domainProgress, domainAccuracy]);
+  
+  // Determine color
+  const sectionColor = useMemo(() => {
+    // Parse color from legacy config (e.g., 'bg-indigo-500' -> '#6366f1')
+    const colorMap: Record<string, string> = {
+      'bg-indigo-500': '#6366f1',
+      'bg-blue-500': '#3b82f6',
+      'bg-cyan-500': '#06b6d4',
+      'bg-teal-500': '#14b8a6',
+      'bg-emerald-500': '#10b981',
+    };
+    return colorMap[legacyConfig?.color || ''] || '#6366f1';
+  }, [legacyConfig]);
+  
+  // Handle area practice
+  const handleAreaPractice = useCallback((areaId: string) => {
+    navigate(`/practice?course=cisa&section=${sectionId}&area=${areaId}`);
+  }, [navigate, sectionId]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <Button 
-        variant="ghost"
-        onClick={() => navigate('/cisa/dashboard')}
-        leftIcon={ChevronLeft}
-        className="mb-8 text-gray-500"
-      >
-        Back to Dashboard
-      </Button>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main */}
-        <div className="lg:col-span-2 space-y-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300">
-                {config.shortTitle}
-              </span>
-              <span className="text-gray-500 text-sm">{config.weight}% of Exam</span>
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{config.title}</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">{config.description}</p>
-          </div>
-
-          <Card className="border border-gray-100 dark:border-gray-700">
-            <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Key Topics</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {config.topics.map((topic, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-700/50">
-                  <CheckCircle className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
-                  <span className="text-gray-700 dark:text-gray-200">{topic}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-
-          {/* Modules placeholder */}
-          <Card className="border border-gray-100 dark:border-gray-700">
-            <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Study Modules</h3>
-            <div className="space-y-4">
-              {[1, 2, 3, 4].map((item) => (
-                <div key={item} className="flex items-center justify-between p-4 border border-gray-100 dark:border-gray-700 rounded-lg hover:border-indigo-200 transition-colors cursor-pointer group">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors">
-                      <BookOpen className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900 dark:text-white group-hover:text-indigo-600">Module {item}: Concepts & Application</p>
-                      <p className="text-sm text-gray-500">20 mins · 5 practice questions</p>
-                    </div>
-                  </div>
-                  <Play className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-                </div>
-              ))}
-            </div>
-          </Card>
-        </div>
-
-        {/* Sidebar */}
-        <div className="space-y-6">
-          <Card className="border border-gray-100 dark:border-gray-700 sticky top-4">
-            <h3 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Your Progress</h3>
-            <div className="space-y-6">
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600 dark:text-gray-400">Completion</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">35%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '35%' }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600 dark:text-gray-400">Mastery Score</span>
-                  <span className="font-semibold text-green-600">60%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <div className="bg-green-500 h-2 rounded-full" style={{ width: '60%' }}></div>
-                </div>
-              </div>
-              <div className="pt-6 border-t border-gray-100 dark:border-gray-700 space-y-3">
-                <Button 
-                  variant="primary"
-                  fullWidth
-                  onClick={() => navigate('/cisa-exam')}
-                  leftIcon={Play}
-                  size="sm"
-                >
-                  Practice Domain
-                </Button>
-                <Button 
-                  variant="secondary"
-                  fullWidth
-                  leftIcon={Target}
-                  size="sm"
-                >
-                  Take Quiz
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </div>
-    </div>
+    <SectionTemplate
+      examCode="cisa"
+      examDisplayCode="CISA"
+      sectionId={sectionId}
+      sectionName={legacyConfig?.title || courseSection?.name || 'Loading...'}
+      shortName={legacyConfig?.shortTitle || courseSection?.shortName || ''}
+      description={legacyConfig?.description || `Master the key concepts in ${legacyConfig?.shortTitle || 'this domain'} for the CISA exam.`}
+      color={sectionColor}
+      stats={stats}
+      blueprintAreas={blueprintAreas}
+      backPath="/cisa/dashboard"
+      backLabel="Back to CISA Dashboard"
+      onAreaPractice={handleAreaPractice}
+      studyTip={`ISACA emphasizes practical application. Focus on understanding how ${legacyConfig?.shortTitle || 'this domain'} concepts apply in real-world audit scenarios.`}
+      loading={loading}
+    />
   );
 }

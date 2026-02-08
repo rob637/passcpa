@@ -103,6 +103,7 @@ const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
 const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
 const CIASection = lazy(() => import('./courses/cia/CIASection'));
 const CFPDashboard = lazy(() => import('./courses/cfp/CFPDashboard'));
+const CFPSection = lazy(() => import('./courses/cfp/CFPSection'));
 const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
 const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
 const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
@@ -434,6 +435,16 @@ function App() {
                       <SuspensePage>
                         <CFPInfo />
                       </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/cfp/domain/:sectionId"
+                    element={
+                      <ProtectedRoute>
+                        <SuspensePage>
+                          <CFPSection />
+                        </SuspensePage>
+                      </ProtectedRoute>
                     }
                   />
                   </>

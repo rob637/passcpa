@@ -90,23 +90,25 @@ const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 // Business Pages
 const Pricing = lazy(() => import('./components/pages/Pricing'));
 const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
-const CPALanding = lazy(() => import('./components/pages/CPALanding'));
-const EALanding = lazy(() => import('./components/pages/EALanding'));
-const CMALanding = lazy(() => import('./components/pages/CMALanding'));
+// Unified Landing Pages (new template system)
+const CPALanding = lazy(() => import('./components/pages/landing/CPALandingNew'));
+const EALanding = lazy(() => import('./components/pages/landing/EALandingNew'));
+const CMALanding = lazy(() => import('./components/pages/landing/CMALandingNew'));
+const CIALanding = lazy(() => import('./components/pages/landing/CIALandingNew'));
+const CFPLanding = lazy(() => import('./components/pages/landing/CFPLandingNew'));
+const CISALanding = lazy(() => import('./components/pages/landing/CISALandingNew'));
+// Info pages (keep original)
 const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
-const CIALanding = lazy(() => import('./components/pages/CIALanding'));
 const CIADashboard = lazy(() => import('./courses/cia/CIADashboard'));
 const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
 const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
 const CIASection = lazy(() => import('./courses/cia/CIASection'));
-const CFPLanding = lazy(() => import('./components/pages/CFPLanding'));
 const CFPDashboard = lazy(() => import('./courses/cfp/CFPDashboard'));
 const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
 const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
 const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
 const CFPStudyPlanSetup = lazy(() => import('./components/pages/CFPStudyPlanSetup'));
 const CPAInfo = lazy(() => import('./components/pages/CPAInfo'));
-const CISALanding = lazy(() => import('./components/pages/CISALanding'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {

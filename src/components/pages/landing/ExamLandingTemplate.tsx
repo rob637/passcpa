@@ -1,0 +1,463 @@
+/**
+ * Unified Exam Landing Page Template
+ * All 6 exam landing pages use this template with exam-specific data
+ * 
+ * Uniform Structure:
+ * 1. Hero + Beta Badge + CTA
+ * 2. Why Become a [Certification]?
+ * 3. Exam Overview (Parts/Domains)
+ * 4. Why VoraPrep (shared features)
+ * 5. Competitor Comparison (if available)
+ * 6. Final CTA
+ * 7. Footer
+ */
+
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  CheckCircle,
+  ArrowRight,
+  Sparkles,
+  Check,
+  BookOpen,
+  X,
+} from 'lucide-react';
+import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
+
+interface ExamLandingTemplateProps {
+  config: ExamLandingConfig;
+}
+
+const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // Color utility - maps color name to Tailwind classes
+  const getColorClasses = (color: string) => {
+    const colorMap: Record<string, { bg: string; text: string; light: string; ring: string; gradient: string }> = {
+      blue: { bg: 'bg-blue-600', text: 'text-blue-600', light: 'bg-blue-50', ring: 'ring-blue-500', gradient: 'from-blue-600 to-blue-700' },
+      emerald: { bg: 'bg-emerald-600', text: 'text-emerald-600', light: 'bg-emerald-50', ring: 'ring-emerald-500', gradient: 'from-emerald-600 to-teal-600' },
+      purple: { bg: 'bg-purple-600', text: 'text-purple-600', light: 'bg-purple-50', ring: 'ring-purple-500', gradient: 'from-purple-600 to-indigo-600' },
+      amber: { bg: 'bg-amber-500', text: 'text-amber-600', light: 'bg-amber-50', ring: 'ring-amber-500', gradient: 'from-amber-500 to-orange-600' },
+      green: { bg: 'bg-green-500', text: 'text-green-600', light: 'bg-green-50', ring: 'ring-green-500', gradient: 'from-green-500 to-emerald-600' },
+      cyan: { bg: 'bg-cyan-500', text: 'text-cyan-600', light: 'bg-cyan-50', ring: 'ring-cyan-500', gradient: 'from-cyan-500 to-blue-600' },
+    };
+    return colorMap[color] || colorMap.blue;
+  };
+
+  const colors = getColorClasses(config.primaryColor);
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-slate-950 overflow-hidden">
+      {/* Skip Link for Accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
+
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+        <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <Link to="/">
+              <img src="/logo.svg" alt="VoraPrep" className="h-10 dark:hidden" />
+              <img src="/logo-white.svg" alt="VoraPrep" className="h-10 hidden dark:block" />
+            </Link>
+            <span className={`${colors.text} font-bold text-lg`}>{config.name}</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#why-become" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Why {config.name}?</a>
+            <a href="#exam" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Exam</a>
+            <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Features</a>
+            {config.competitors && (
+              <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Compare</a>
+            )}
+            <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">All Exams</Link>
+          </div>
+          <div className="flex items-center gap-2 md:gap-3">
+            <Link to={config.loginPath} className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-slate-900 px-4 py-2 transition-colors">
+              Sign In
+            </Link>
+            <Link 
+              to={config.registerPath}
+              className={`bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-2 md:px-5 md:py-2.5 rounded-xl font-semibold text-sm md:text-base hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5`}
+            >
+              Start Free
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <main id="main-content">
+        {/* ================================================================
+            HERO SECTION
+            ================================================================ */}
+        <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 px-6 overflow-hidden">
+          {/* Background */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${colors.light} via-slate-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950`} />
+          
+          {/* Floating orbs */}
+          <div className={`absolute top-20 left-10 w-72 h-72 ${colors.bg}/20 rounded-full blur-3xl animate-pulse`} />
+          <div className={`absolute bottom-20 right-10 w-96 h-96 ${colors.bg}/10 rounded-full blur-3xl animate-pulse`} style={{ animationDelay: '1s' }} />
+
+          <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Beta Badge */}
+            <div className="flex justify-center mb-5">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
+                <Sparkles className="w-4 h-4" />
+                FREE BETA — Full Access, No Credit Card
+                <Sparkles className="w-4 h-4" />
+              </div>
+            </div>
+
+            {/* Notices */}
+            {config.notices?.map((notice, idx) => (
+              <div key={idx} className="flex justify-center mb-4">
+                <div className={`inline-flex items-center gap-2 ${notice.type === 'warning' ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200' : 'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-200'} border px-4 py-2 rounded-lg text-sm`}>
+                  <span className="font-semibold">{notice.type === 'warning' ? '⚠️' : 'ℹ️'}</span>
+                  <span>{notice.text}</span>
+                </div>
+              </div>
+            ))}
+
+            {/* Headline */}
+            <h1 className="text-4xl md:text-6xl font-extrabold text-center mb-4 leading-tight">
+              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+                Become a
+              </span>
+              <br />
+              <span className={`bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} bg-clip-text text-transparent`}>
+                {config.fullName}
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
+              {config.description}
+              <br className="hidden md:block" />
+              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — 100% free during beta.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+              <Link 
+                to={config.registerPath}
+                className={`group bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-6 py-3 rounded-xl text-base font-bold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2`}
+              >
+                Start Studying Free
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                to="/"
+                className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl text-base font-bold hover:border-slate-400 dark:hover:border-slate-500 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                View All Certifications
+              </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
+                <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-emerald-600" />
+                </div>
+                <span>No credit card required</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm">
+                <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-emerald-600" />
+                </div>
+                <span>Full access during beta</span>
+              </div>
+            </div>
+
+            {/* Quick stats */}
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+              <div className="flex items-center gap-2">
+                <Check className={`w-4 h-4 ${colors.text}`} />
+                {config.questionCount} Practice Questions
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className={`w-4 h-4 ${colors.text}`} />
+                AI-Powered Adaptive Learning
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className={`w-4 h-4 ${colors.text}`} />
+                All {config.name} {config.examParts.length > 3 ? 'Sections' : 'Parts'} Covered
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            WHY BECOME A [CERTIFICATION] SECTION
+            ================================================================ */}
+        <section id="why-become" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                Why Become a {config.name}?
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                The {config.fullName} credential opens doors to career advancement and higher earnings.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {config.whyBecome.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} flex items-center justify-center mb-4`}>
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            EXAM OVERVIEW SECTION
+            ================================================================ */}
+        <section id="exam" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                The {config.name} Exam
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300">
+                {config.examParts.length} {config.examParts.length > 3 ? 'sections' : 'parts'} covering all areas of the {config.fullName} exam.
+              </p>
+            </div>
+
+            <div className={`grid gap-6 ${config.examParts.length <= 3 ? 'md:grid-cols-3 max-w-4xl mx-auto' : config.examParts.length <= 6 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
+              {config.examParts.map((part, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow"
+                >
+                  <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
+                    {part.part}
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{part.title}</h3>
+                  {(part.questions || part.time) && (
+                    <div className="flex gap-3 text-sm text-slate-500 dark:text-slate-400 mb-4">
+                      {part.questions && <span>{part.questions}</span>}
+                      {part.questions && part.time && <span>•</span>}
+                      {part.time && <span>{part.time}</span>}
+                    </div>
+                  )}
+                  <ul className="space-y-2">
+                    {part.topics.slice(0, 4).map((topic, tidx) => (
+                      <li key={tidx} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                        <CheckCircle className={`w-4 h-4 ${colors.text} flex-shrink-0`} />
+                        {topic}
+                      </li>
+                    ))}
+                    {part.topics.length > 4 && (
+                      <li className="text-sm text-slate-500 dark:text-slate-400 pl-6">
+                        +{part.topics.length - 4} more topics
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            WHY VORAPREP SECTION (shared across all exams)
+            ================================================================ */}
+        <section id="features" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                Why Study with VoraPrep?
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Modern AI-powered learning designed for {config.name} exam success.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {SHARED_WHY_VORAPREP.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} flex items-center justify-center`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className={`${colors.text} font-bold text-sm`}>{item.stat}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            COMPETITOR COMPARISON SECTION (if available)
+            ================================================================ */}
+        {config.competitors && (
+          <section id="comparison" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                  How We Compare
+                </h2>
+                <p className="text-slate-600 dark:text-slate-300">
+                  See how VoraPrep stacks up against other {config.name} prep courses
+                </p>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm">
+                  <thead>
+                    <tr className="bg-slate-100 dark:bg-slate-700">
+                      <th className="text-left p-4 font-semibold text-slate-900 dark:text-white">Feature</th>
+                      <th className={`p-4 font-semibold ${colors.text}`}>VoraPrep</th>
+                      {config.competitors.names.map((name, idx) => (
+                        <th key={idx} className="p-4 font-semibold text-slate-600 dark:text-slate-400">{name}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {config.competitors.data.map((row, idx) => (
+                      <tr key={idx} className={`border-b border-slate-200 dark:border-slate-700 ${row.highlight ? `${colors.light}/50 dark:bg-slate-800/50` : ''}`}>
+                        <td className="p-4 text-slate-700 dark:text-slate-300 font-medium">{row.feature}</td>
+                        <td className="p-4 text-center">
+                          {typeof row.voraprep === 'boolean' ? (
+                            row.voraprep ? <CheckCircle className={`w-5 h-5 ${colors.text} mx-auto`} /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                          ) : (
+                            <span className={`font-semibold ${colors.text}`}>{row.voraprep}</span>
+                          )}
+                        </td>
+                        <td className="p-4 text-center text-slate-600 dark:text-slate-400">
+                          {typeof row.competitor1 === 'boolean' ? (
+                            row.competitor1 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                          ) : row.competitor1}
+                        </td>
+                        <td className="p-4 text-center text-slate-600 dark:text-slate-400">
+                          {typeof row.competitor2 === 'boolean' ? (
+                            row.competitor2 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                          ) : row.competitor2}
+                        </td>
+                        <td className="p-4 text-center text-slate-600 dark:text-slate-400">
+                          {typeof row.competitor3 === 'boolean' ? (
+                            row.competitor3 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                          ) : row.competitor3}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ================================================================
+            FINAL CTA SECTION
+            ================================================================ */}
+        <section className={`py-12 md:py-20 px-6 bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo}`}>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Become a {config.name}?
+            </h2>
+            <p className="text-white/90 text-lg mb-8">
+              Join thousands of candidates using VoraPrep. 100% free during beta!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to={config.registerPath}
+                className="group bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+              >
+                Start Free Today
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                to="/"
+                className="border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-white/10 transition-all duration-300"
+              >
+                View All Certifications
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* ================================================================
+          FOOTER
+          ================================================================ */}
+      <footer className="bg-slate-900 dark:bg-slate-950 py-12 px-6 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className={`w-8 h-8 bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} rounded-lg flex items-center justify-center`}>
+                  <BookOpen className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-xl font-bold text-white">VoraPrep</span>
+              </div>
+              <p className="text-slate-400 text-sm mb-4">
+                AI-powered exam prep for accounting and finance professionals.
+              </p>
+              <p className="text-slate-500 text-xs">
+                {config.disclaimer}
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-white mb-4">{config.name} Prep</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {config.examParts.slice(0, 4).map((part, idx) => (
+                  <li key={idx}>
+                    <a href="#exam" className="hover:text-white transition-colors">{part.part}: {part.title.substring(0, 30)}{part.title.length > 30 ? '...' : ''}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-white mb-4">Other Certifications</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link to="/cpa" className="hover:text-white transition-colors">CPA Exam Prep</Link></li>
+                <li><Link to="/ea-prep" className="hover:text-white transition-colors">EA Exam Prep</Link></li>
+                <li><Link to="/cma" className="hover:text-white transition-colors">CMA Exam Prep</Link></li>
+                <li><Link to="/" className="hover:text-white transition-colors">All Certifications</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-white mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><a href="mailto:support@voraprep.com" className="hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+            © {new Date().getFullYear()} VoraPrep. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ExamLandingTemplate;

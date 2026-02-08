@@ -406,40 +406,49 @@ describe('ciaAdaptiveEngine', () => {
 
   describe('getRecommendedPart', () => {
     it('returns a valid CIA part', () => {
-      const recommended = getRecommendedPart({ CIA1: 70, CIA2: 70, CIA3: 70 });
+      const partAccuracy = { CIA1: 70, CIA2: 70, CIA3: 70 };
+      const partAttempts = { CIA1: 50, CIA2: 50, CIA3: 50 };
+      const recommended = getRecommendedPart(partAccuracy, partAttempts);
       expect(['CIA1', 'CIA2', 'CIA3']).toContain(recommended);
     });
 
     it('recommends weakest part', () => {
-      const mastery = {
+      const partAccuracy = {
         CIA1: 90,
         CIA2: 50,
         CIA3: 70,
       };
-      const recommended = getRecommendedPart(mastery);
+      const partAttempts = { CIA1: 50, CIA2: 50, CIA3: 50 };
+      const recommended = getRecommendedPart(partAccuracy, partAttempts);
       // Should recommend CIA2 (lowest mastery)
       expect(recommended).toBe('CIA2');
     });
   });
 
   describe('getStudyTimeRecommendation', () => {
-    it('returns recommendation object', () => {
-      const rec = getStudyTimeRecommendation({ CIA1: 70, CIA2: 70, CIA3: 70 });
-      expect(rec).toHaveProperty('totalMinutes');
-      expect(rec).toHaveProperty('partBreakdown');
+    it('returns study time allocation per part', () => {
+      const partAccuracy = { CIA1: 70, CIA2: 70, CIA3: 70 };
+      const rec = getStudyTimeRecommendation(partAccuracy, 180);
+      expect(rec).toHaveProperty('CIA1');
+      expect(rec).toHaveProperty('CIA2');
+      expect(rec).toHaveProperty('CIA3');
     });
 
     it('includes all 3 parts in breakdown', () => {
-      const rec = getStudyTimeRecommendation({ CIA1: 70, CIA2: 70, CIA3: 70 });
-      expect(rec.partBreakdown).toHaveProperty('CIA1');
-      expect(rec.partBreakdown).toHaveProperty('CIA2');
-      expect(rec.partBreakdown).toHaveProperty('CIA3');
+      const partAccuracy = { CIA1: 70, CIA2: 70, CIA3: 70 };
+      const rec = getStudyTimeRecommendation(partAccuracy, 180);
+      expect(rec.CIA1).toBeDefined();
+      expect(rec.CIA2).toBeDefined();
+      expect(rec.CIA3).toBeDefined();
     });
 
-    it('suggests reasonable study time', () => {
-      const rec = getStudyTimeRecommendation({ CIA1: 70, CIA2: 70, CIA3: 70 });
-      expect(rec.totalMinutes).toBeGreaterThan(0);
-      expect(rec.totalMinutes).toBeLessThan(600); // Max 10 hours
+    it('allocates reasonable study time', () => {
+      const partAccuracy = { CIA1: 70, CIA2: 70, CIA3: 70 };
+      const totalMinutes = 180;
+      const rec = getStudyTimeRecommendation(partAccuracy, totalMinutes);
+      const sum = rec.CIA1 + rec.CIA2 + rec.CIA3;
+      expect(sum).toBeGreaterThan(0);
+      expect(sum).toBeLessThanOrEqual(totalMinutes + 1); // Allow for rounding
     });
   });
 

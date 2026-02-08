@@ -13,7 +13,6 @@ import {
   estimateSessionsToTarget,
   generateScoreReport,
   PerformanceData,
-  ScorePrediction,
 } from '../../services/ciaScorePredictor';
 
 describe('ciaScorePredictor', () => {

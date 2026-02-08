@@ -26,7 +26,9 @@ import { INSURANCE_BATCH2 } from './insurance_batch2';
 import { CFP_RISK_BATCH2_QUESTIONS } from './risk_batch2';
 import { CFP_PROFESSIONAL_QUESTIONS } from './professional';
 import { CFP_PROFESSIONAL_BATCH2_QUESTIONS } from './professional_batch2';
+import { CFP_PROFESSIONAL_BATCH3_QUESTIONS } from './professional_batch3';
 import { CFP_PSYCHOLOGY_QUESTIONS } from './psychology';
+import { CFP_PSYCHOLOGY_BATCH2_QUESTIONS } from './psychology_batch2';
 import { CFP_TAX_BATCH4_QUESTIONS } from './tax_batch4';
 import { CFP_INVESTMENTS_BATCH4_QUESTIONS } from './investments_batch4';
 
@@ -47,7 +49,9 @@ type AnyQuestion = any; // Allow mixed question formats from different batches
 export const CFP_QUESTIONS_ALL: AnyQuestion[] = [
   ...CFP_PROFESSIONAL_QUESTIONS,
   ...CFP_PROFESSIONAL_BATCH2_QUESTIONS,
+  ...CFP_PROFESSIONAL_BATCH3_QUESTIONS,
   ...CFP_PSYCHOLOGY_QUESTIONS,
+  ...CFP_PSYCHOLOGY_BATCH2_QUESTIONS,
   ...CFP_GEN_QUESTIONS,
   ...CFP_GEN_BATCH2_QUESTIONS,
   ...GEN_PRINCIPLES_BATCH3,
@@ -74,7 +78,7 @@ export const CFP_QUESTIONS_ALL: AnyQuestion[] = [
 export const getCFPQuestions = (sectionId: string): AnyQuestion[] => {
   switch (sectionId) {
     case 'CFP-PCR':
-      return [...CFP_PROFESSIONAL_QUESTIONS, ...CFP_PROFESSIONAL_BATCH2_QUESTIONS];
+      return [...CFP_PROFESSIONAL_QUESTIONS, ...CFP_PROFESSIONAL_BATCH2_QUESTIONS, ...CFP_PROFESSIONAL_BATCH3_QUESTIONS];
     case 'CFP-GEN':
       return [...CFP_GEN_QUESTIONS, ...CFP_GEN_BATCH2_QUESTIONS, ...GEN_PRINCIPLES_BATCH3];
     case 'CFP-INV':
@@ -89,7 +93,7 @@ export const getCFPQuestions = (sectionId: string): AnyQuestion[] => {
     case 'CFP-RISK':
       return [...CFP_INSURANCE_QUESTIONS, ...INSURANCE_BATCH2, ...CFP_RISK_BATCH2_QUESTIONS] as AnyQuestion[];
     case 'CFP-PSY':
-      return CFP_PSYCHOLOGY_QUESTIONS;
+      return [...CFP_PSYCHOLOGY_QUESTIONS, ...CFP_PSYCHOLOGY_BATCH2_QUESTIONS];
     default:
       return [];
   }
@@ -111,14 +115,14 @@ export const getCFPQuestionsByDifficulty = (difficulty: 'easy' | 'medium' | 'har
 export const CFP_QUESTION_STATS = {
   total: CFP_QUESTIONS_ALL.length,
   byDomain: {
-    'CFP-PRO': CFP_PROFESSIONAL_QUESTIONS.length + CFP_PROFESSIONAL_BATCH2_QUESTIONS.length,
+    'CFP-PRO': CFP_PROFESSIONAL_QUESTIONS.length + CFP_PROFESSIONAL_BATCH2_QUESTIONS.length + CFP_PROFESSIONAL_BATCH3_QUESTIONS.length,
     'CFP-GEN': CFP_GEN_QUESTIONS.length + CFP_GEN_BATCH2_QUESTIONS.length + GEN_PRINCIPLES_BATCH3.length,
     'CFP-INV': CFP_INV_QUESTIONS.length + CFP_INV_BATCH2_QUESTIONS.length + INVESTMENTS_BATCH3.length + CFP_INVESTMENTS_BATCH4_QUESTIONS.length,
     'CFP-RET': CFP_RET_QUESTIONS.length + CFP_RET_BATCH2_QUESTIONS.length + RETIREMENT_BATCH3.length,
     'CFP-TAX': CFP_TAX_QUESTIONS.length + CFP_TAX_BATCH2_QUESTIONS.length + TAX_BATCH3.length + CFP_TAX_BATCH4_QUESTIONS.length,
     'CFP-EST': CFP_ESTATE_QUESTIONS.length + ESTATE_BATCH2.length + CFP_ESTATE_BATCH3_QUESTIONS.length,
     'CFP-RIS': CFP_INSURANCE_QUESTIONS.length + INSURANCE_BATCH2.length + CFP_RISK_BATCH2_QUESTIONS.length,
-    'CFP-PSY': CFP_PSYCHOLOGY_QUESTIONS.length,
+    'CFP-PSY': CFP_PSYCHOLOGY_QUESTIONS.length + CFP_PSYCHOLOGY_BATCH2_QUESTIONS.length,
   },
   byDifficulty: {
     easy: CFP_QUESTIONS_ALL.filter(q => 'difficulty' in q && q.difficulty === 'easy').length,

@@ -11,7 +11,7 @@ import { CFPLesson } from '../../../types/cfp';
 export const CFP_RIS4_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-RIS-L011',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     title: 'Homeowners Insurance',
     order: 11,
@@ -216,7 +216,7 @@ Insured pays $25,000 penalty for underinsurance
   },
   {
     id: 'CFP-RIS-L012',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     title: 'Auto Insurance',
     order: 12,
@@ -394,7 +394,7 @@ Often inadequate (e.g., 25/50/25)
   },
   {
     id: 'CFP-RIS-L013',
-    domain: 'CFP-RIS',
+    domain: 'CFP-RISK',
     blueprintArea: 'RIS-4',
     title: 'Umbrella Liability and Other Coverage',
     order: 13,

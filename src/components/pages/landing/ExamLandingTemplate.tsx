@@ -19,7 +19,6 @@ import {
   ArrowRight,
   Sparkles,
   Check,
-  BookOpen,
   X,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
@@ -61,7 +60,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
         <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
             <Link to="/">
@@ -97,6 +96,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             {config.competitors && (
               <a href="#comparison" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Compare</a>
             )}
+            <a href="#pricing" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Pricing</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <Link to={config.loginPath} className="hidden md:block text-slate-600 dark:text-slate-300 hover:text-slate-900 px-4 py-2 transition-colors">
@@ -389,6 +389,78 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         )}
 
         {/* ================================================================
+            PRICING SECTION
+            ================================================================ */}
+        <section id="pricing" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                {config.name} Exam Prep Pricing
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400">
+                Premium exam prep at a fraction of traditional costs
+              </p>
+            </div>
+            
+            {/* Free Beta Card */}
+            <div className={`relative bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} rounded-2xl p-8 md:p-10 text-white shadow-xl`}>
+              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
+                Limited Time
+              </div>
+              
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">Free During Beta</h3>
+                  <p className="text-white/90 text-lg mb-4">
+                    Full access to all {config.name} content — no credit card required
+                  </p>
+                  <ul className="space-y-2 text-white/90">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      All {config.examParts.length} exam sections with 1,000+ questions
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      Expert-written lessons with clear explanations
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      AI tutor for personalized help 24/7
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      Founding member pricing locked in forever
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="text-center md:text-right">
+                  <div className="mb-4">
+                    <span className="text-5xl md:text-6xl font-bold">$0</span>
+                    <span className="text-white/80 text-lg">/month</span>
+                  </div>
+                  <Link 
+                    to={config.registerPath}
+                    className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    Start Free Today
+                  </Link>
+                  <p className="text-white/70 text-sm mt-3">No credit card required</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <p className="text-white/80 text-sm">
+                  <strong>When we launch paid plans:</strong> {config.name} prep will be priced competitively — 
+                  significantly less than traditional review courses. Beta users automatically become founding members 
+                  with exclusive lifetime discounts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
             FINAL CTA SECTION
             ================================================================ */}
         <section className={`py-12 md:py-20 px-6 bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo}`}>
@@ -425,14 +497,10 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className={`w-8 h-8 bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} rounded-lg flex items-center justify-center`}>
-                  <BookOpen className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white">VoraPrep</span>
-              </div>
-              <p className="text-slate-400 text-sm mb-4">
-                AI-powered exam prep for accounting and finance professionals.
+              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 mb-4" />
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                Expert-crafted exam prep for accounting and finance professionals. 
+                Built by practitioners, powered by AI.
               </p>
               <p className="text-slate-500 text-xs">
                 {config.disclaimer}
@@ -440,18 +508,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-white mb-4">{config.name} Prep</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                {config.examParts.slice(0, 4).map((part, idx) => (
-                  <li key={idx}>
-                    <a href="#exam" className="hover:text-white transition-colors">{part.part}: {part.title.substring(0, 30)}{part.title.length > 30 ? '...' : ''}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-white mb-4">All Certifications</h4>
+              <h4 className="font-semibold text-white mb-4">Certifications</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><Link to="/cpa" className={`hover:text-white transition-colors ${config.id === 'cpa' ? 'text-white font-medium' : ''}`}>CPA Exam Prep</Link></li>
                 <li><Link to="/ea-prep" className={`hover:text-white transition-colors ${config.id === 'ea' ? 'text-white font-medium' : ''}`}>EA Exam Prep</Link></li>
@@ -459,6 +516,15 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <li><Link to="/cia" className={`hover:text-white transition-colors ${config.id === 'cia' ? 'text-white font-medium' : ''}`}>CIA Exam Prep</Link></li>
                 <li><Link to="/cfp" className={`hover:text-white transition-colors ${config.id === 'cfp' ? 'text-white font-medium' : ''}`}>CFP Exam Prep</Link></li>
                 <li><Link to="/cisa" className={`hover:text-white transition-colors ${config.id === 'cisa' ? 'text-white font-medium' : ''}`}>CISA Exam Prep</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
               </ul>
             </div>
             

@@ -16,11 +16,13 @@ export { CFP_GEN5_LESSONS } from './gen_economic_debt';
 export { CFP_INV1_LESSONS } from './inv_theory';
 export { CFP_INV2_LESSONS } from './inv_vehicles';
 export { CFP_INV3_LESSONS } from './inv_portfolio';
+export { CFP_INV4_LESSONS } from './inv_advanced';
 
 // Domain 5: Tax Planning (14%)
 export { CFP_TAX1_LESSONS } from './tax_fundamentals';
 export { CFP_TAX2_LESSONS } from './tax_strategies';
 export { TAX_ADVANCED_LESSONS } from './tax_advanced';
+export { CFP_TAX4_LESSONS } from './tax_planning';
 
 // Domain 6: Retirement Savings and Income Planning (19%)
 export { CFP_RET1_LESSONS } from './ret_needs_analysis';
@@ -28,11 +30,13 @@ export { CFP_RET2_LESSONS } from './ret_employer_plans';
 export { CFP_RET3_LESSONS } from './ret_individual_plans';
 export { CFP_RET4_LESSONS } from './ret_executive_plans';
 export { CFP_RET5_LESSONS } from './ret_special_topics';
+export { CFP_RET6_LESSONS } from './ret_advanced';
 
 // Domain 7: Estate Planning (12%)
 export { CFP_EST1_LESSONS } from './est_documents';
 export { CFP_EST2_LESSONS } from './est_taxation';
 export { CFP_EST3_LESSONS } from './est_transfers';
+export { CFP_EST4_LESSONS } from './est_advanced';
 
 // Domain 3: Risk Management and Insurance Planning (12%)
 export { CFP_RIS1_LESSONS } from './ris_fundamentals';
@@ -47,6 +51,7 @@ export { PRO_FIDUCIARY_LESSONS } from './pro_fiduciary';
 
 // Domain 8: Psychology of Financial Planning (7%)
 export { CFP_PSY_LESSONS } from './psy_behavioral_finance';
+export { CFP_PSY2_LESSONS } from './psy_client_counseling';
 
 // Import all for combined array
 import { CFP_GEN1_LESSONS } from './gen_planning_process';
@@ -57,17 +62,21 @@ import { CFP_GEN5_LESSONS } from './gen_economic_debt';
 import { CFP_INV1_LESSONS } from './inv_theory';
 import { CFP_INV2_LESSONS } from './inv_vehicles';
 import { CFP_INV3_LESSONS } from './inv_portfolio';
+import { CFP_INV4_LESSONS } from './inv_advanced';
 import { CFP_TAX1_LESSONS } from './tax_fundamentals';
 import { CFP_TAX2_LESSONS } from './tax_strategies';
 import { TAX_ADVANCED_LESSONS } from './tax_advanced';
+import { CFP_TAX4_LESSONS } from './tax_planning';
 import { CFP_RET1_LESSONS } from './ret_needs_analysis';
 import { CFP_RET2_LESSONS } from './ret_employer_plans';
 import { CFP_RET3_LESSONS } from './ret_individual_plans';
 import { CFP_RET4_LESSONS } from './ret_executive_plans';
 import { CFP_RET5_LESSONS } from './ret_special_topics';
+import { CFP_RET6_LESSONS } from './ret_advanced';
 import { CFP_EST1_LESSONS } from './est_documents';
 import { CFP_EST2_LESSONS } from './est_taxation';
 import { CFP_EST3_LESSONS } from './est_transfers';
+import { CFP_EST4_LESSONS } from './est_advanced';
 import { CFP_RIS1_LESSONS } from './ris_fundamentals';
 import { CFP_RIS2_LESSONS } from './ris_life_insurance';
 import { CFP_RIS3_LESSONS } from './ris_health_disability';
@@ -76,6 +85,7 @@ import { CFP_PRO1_LESSONS } from './pro_standards';
 import { CFP_PRO2_LESSONS } from './pro_regulations';
 import { PRO_FIDUCIARY_LESSONS } from './pro_fiduciary';
 import { CFP_PSY_LESSONS } from './psy_behavioral_finance';
+import { CFP_PSY2_LESSONS } from './psy_client_counseling';
 
 import { CFPLesson } from '../../../types/cfp';
 
@@ -91,27 +101,31 @@ export const ALL_CFP_LESSONS: CFPLesson[] = [
   ...CFP_GEN4_LESSONS,
   ...CFP_GEN5_LESSONS,
   
-  // Domain 4: Investments (12 lessons)
+  // Domain 4: Investments (18 lessons)
   ...CFP_INV1_LESSONS,
   ...CFP_INV2_LESSONS,
   ...CFP_INV3_LESSONS,
+  ...CFP_INV4_LESSONS,
   
-  // Domain 5: Tax Planning (12 lessons)
+  // Domain 5: Tax Planning (18 lessons)
   ...CFP_TAX1_LESSONS,
   ...CFP_TAX2_LESSONS,
   ...TAX_ADVANCED_LESSONS,
+  ...CFP_TAX4_LESSONS,
   
-  // Domain 6: Retirement (20 lessons)
+  // Domain 6: Retirement (25 lessons)
   ...CFP_RET1_LESSONS,
   ...CFP_RET2_LESSONS,
   ...CFP_RET3_LESSONS,
   ...CFP_RET4_LESSONS,
   ...CFP_RET5_LESSONS,
+  ...CFP_RET6_LESSONS,
   
-  // Domain 7: Estate Planning (12 lessons)
+  // Domain 7: Estate Planning (16 lessons)
   ...CFP_EST1_LESSONS,
   ...CFP_EST2_LESSONS,
   ...CFP_EST3_LESSONS,
+  ...CFP_EST4_LESSONS,
   
   // Domain 3: Risk Management and Insurance (13 lessons)
   ...CFP_RIS1_LESSONS,
@@ -124,8 +138,9 @@ export const ALL_CFP_LESSONS: CFPLesson[] = [
   ...CFP_PRO2_LESSONS,
   ...PRO_FIDUCIARY_LESSONS,
   
-  // Domain 8: Psychology of Financial Planning (5 lessons)
+  // Domain 8: Psychology of Financial Planning (10 lessons)
   ...CFP_PSY_LESSONS,
+  ...CFP_PSY2_LESSONS,
 ];
 
 /**
@@ -189,7 +204,7 @@ export const CFP_DOMAIN_STATS = {
                  CFP_EST3_LESSONS.length,
     areas: ['EST-1', 'EST-2', 'EST-3']
   },
-  'CFP-RIS': {
+  'CFP-RISK': {
     name: 'Risk Management and Insurance Planning',
     examWeight: 12,
     lessonCount: CFP_RIS1_LESSONS.length + CFP_RIS2_LESSONS.length + 

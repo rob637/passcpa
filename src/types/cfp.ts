@@ -104,7 +104,10 @@ export interface CFPLesson {
   content: string;
   
   /** Key points students should remember */
-  keyTakeaways: string[];
+  keyTakeaways?: string[];
+  
+  /** Key terminology definitions for this lesson */
+  keyTerms?: { term: string; definition: string }[];
   
   /** Important formulas covered in this lesson */
   keyFormulas?: CFPFormulaInput[];
@@ -117,6 +120,9 @@ export interface CFPLesson {
   
   /** IDs of related lessons for cross-referencing */
   relatedLessons?: string[];
+  
+  /** IDs of related questions for this lesson */
+  relatedQuestionIds?: string[];
   
   /** Video explanation URL if available */
   videoUrl?: string;

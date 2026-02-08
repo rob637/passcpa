@@ -37,6 +37,23 @@ vi.mock('../../config/examConfig', () => ({
   },
 }));
 
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: vi.fn(() => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      sections: [
+        { id: 'FAR', name: 'Financial Accounting & Reporting', shortName: 'FAR' },
+        { id: 'AUD', name: 'Auditing & Attestation', shortName: 'AUD' },
+        { id: 'REG', name: 'Regulation', shortName: 'REG' },
+        { id: 'BAR', name: 'Business Analysis & Reporting', shortName: 'BAR' },
+        { id: 'ISC', name: 'Information Systems & Controls', shortName: 'ISC' },
+        { id: 'TCP', name: 'Tax Compliance & Planning', shortName: 'TCP' },
+      ],
+    },
+  })),
+}));
+
 import ExamDateTracker from '../../components/ExamDateTracker';
 import { useAuth } from '../../hooks/useAuth';
 import { updateDoc } from 'firebase/firestore';
@@ -94,7 +111,9 @@ describe('ExamDateTracker', () => {
       render(<ExamDateTracker />);
 
       // Days until June 15 from Jan 15 = 151 days left
-      expect(screen.getByText(/151 days left/i)).toBeInTheDocument();
+      // Use getAllByText as the date may appear multiple times
+      const daysLeftElements = screen.getAllByText(/151 days left/i);
+      expect(daysLeftElements.length).toBeGreaterThan(0);
     });
 
     it('should show set date prompt for sections without dates', () => {
@@ -249,7 +268,8 @@ describe('ExamDateTracker', () => {
       render(<ExamDateTracker />);
 
       // When date is in the past (daysUntil <= 0), shows "Exam day!"
-      expect(screen.getByText(/Exam day!/i)).toBeInTheDocument();
+      const examDayElements = screen.getAllByText(/Exam day!/i);
+      expect(examDayElements.length).toBeGreaterThan(0);
     });
 
     it('should handle exam date today', () => {
@@ -267,7 +287,8 @@ describe('ExamDateTracker', () => {
       render(<ExamDateTracker />);
 
       // Should show "Exam day!" when daysUntil <= 0
-      expect(screen.getByText(/Exam day!/i)).toBeInTheDocument();
+      const examDayElements = screen.getAllByText(/Exam day!/i);
+      expect(examDayElements.length).toBeGreaterThan(0);
     });
 
     it('should handle Firestore timestamp format', () => {
@@ -286,8 +307,9 @@ describe('ExamDateTracker', () => {
 
       render(<ExamDateTracker />);
 
-      // Should correctly parse the timestamp
-      expect(screen.getByText(/151 days left/i)).toBeInTheDocument();
+      // Should correctly parse the timestamp - use getAllByText as it may appear multiple times
+      const daysLeftElements = screen.getAllByText(/151 days left/i);
+      expect(daysLeftElements.length).toBeGreaterThan(0);
     });
   });
 

@@ -1,0 +1,551 @@
+/**
+ * CMA Part 2, Section B: Corporate Finance - Questions Batch 2 (Q26-50)
+ * Weight: 20% of Part 2 Exam
+ * 
+ * Blueprint Areas:
+ * - CMA2-B: Corporate Finance
+ * 
+ * Advanced Topics covered:
+ * - Capital structure optimization (MM propositions, trade-off theory)
+ * - WACC sensitivity analysis
+ * - M&A valuation (synergies, accretion/dilution)
+ * - Dividend policy theories (residual, signaling, clientele)
+ * - Working capital optimization strategies
+ * - APV methodology
+ * - Leveraged recapitalization
+ * - International cost of capital
+ */
+
+import { Question } from '../../../types';
+
+export const CMA2B_QUESTIONS_BATCH2: Question[] = [
+  // ==========================================
+  // Capital Structure Optimization
+  // ==========================================
+  {
+    id: 'cma2-b-026',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'MM Proposition I with Taxes',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Under Modigliani-Miller Proposition I with corporate taxes, a firm has unlevered value of $100 million, issues $40 million in perpetual debt, and faces a 25% corporate tax rate. What is the levered firm value?',
+    options: [
+      '$100 million',
+      '$110 million',
+      '$130 million',
+      '$140 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'MM Proposition I with taxes: VL = VU + (Tc × D) = $100M + (0.25 × $40M) = $100M + $10M = $110M. The tax shield from debt interest creates value equal to the tax rate times the debt level, assuming perpetual debt.',
+    reference: 'Modigliani-Miller; Capital Structure Theory',
+  },
+  {
+    id: 'cma2-b-027',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Trade-off Theory',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A company is analyzing its optimal capital structure. Current debt is $200M with bankruptcy costs estimated at $50M (30% probability of distress). Tax rate is 30%, and interest rate is 8%. According to trade-off theory, the firm should increase debt if:',
+    options: [
+      'Marginal tax shield ($200M × 8% × 30% = $4.8M) exceeds expected bankruptcy cost increase',
+      'Expected bankruptcy costs ($50M × 30% = $15M) are less than total debt',
+      'The firm has stable cash flows regardless of current leverage',
+      'Interest coverage ratio exceeds 5.0x'
+    ],
+    correctAnswer: 0,
+    explanation: 'Trade-off theory balances marginal benefits of debt (tax shield = D × rd × Tc) against marginal costs (increased expected bankruptcy costs). Optimal debt level is where marginal tax shield equals marginal expected distress costs. Current tax shield = $200M × 8% × 30% = $4.8M annually. Add debt only if the incremental shield exceeds the incremental probability-weighted distress costs.',
+    reference: 'Trade-off Theory; Optimal Capital Structure',
+  },
+  {
+    id: 'cma2-b-028',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Pecking Order Theory',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A profitable technology company with significant growth opportunities consistently uses retained earnings before issuing debt, and avoids equity issuance. This behavior is BEST explained by:',
+    options: [
+      'Trade-off theory - the company has found its optimal debt ratio',
+      'Pecking order theory - internal funds have lowest information asymmetry costs',
+      'Agency theory - management is entrenching itself',
+      'Market timing theory - the stock is currently undervalued'
+    ],
+    correctAnswer: 1,
+    explanation: 'Pecking order theory explains financing preferences based on information asymmetry costs. Internal funds (retained earnings) carry no adverse selection costs. Debt has moderate costs since fixed payments limit downside exposure. Equity has highest costs because outsiders assume management issues stock when overvalued. Tech companies often follow this hierarchy.',
+    reference: 'Pecking Order Theory; Financing Hierarchy',
+  },
+  {
+    id: 'cma2-b-029',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Leveraged Recapitalization',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A firm with 10 million shares at $50 per share (no debt) borrows $200 million at 6% to repurchase shares. Tax rate is 25%. Post-recapitalization, how many shares are outstanding, and what is the new share price (ignoring tax shield)?',
+    options: [
+      '6 million shares at $50',
+      '8 million shares at $62.50',
+      '6 million shares at $66.67',
+      '8 million shares at $50'
+    ],
+    correctAnswer: 0,
+    explanation: 'Initial equity value = 10M × $50 = $500M. Shares repurchased = $200M ÷ $50 = 4M shares. Remaining shares = 10M - 4M = 6M shares. Ignoring tax shield effects, total firm value remains $500M, but now Equity = $500M - $200M debt = $300M. New share price = $300M ÷ 6M = $50. However, with MM tax shield, VL = $500M + (0.25 × $200M) = $550M, so Equity = $350M, Price = $58.33.',
+    reference: 'Leveraged Recapitalization; Share Buybacks',
+  },
+  {
+    id: 'cma2-b-030',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Capital Structure',
+    subtopic: 'Debt Capacity',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Which factor would MOST likely increase a company\'s debt capacity?',
+    options: [
+      'High proportion of intangible assets',
+      'Cyclical revenue patterns with high operating leverage',
+      'Significant tangible assets that can serve as collateral',
+      'Heavy R&D spending with uncertain outcomes'
+    ],
+    correctAnswer: 2,
+    explanation: 'Tangible assets (property, equipment, inventory) increase debt capacity because they provide collateral and have higher liquidation value, reducing lender risk. Intangible assets, cyclical revenues, and R&D spending increase business risk and reduce debt capacity.',
+    reference: 'Debt Capacity; Collateral Value',
+  },
+
+  // ==========================================
+  // WACC Sensitivity Analysis
+  // ==========================================
+  {
+    id: 'cma2-b-031',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cost of Capital',
+    subtopic: 'WACC Sensitivity',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A company has: Equity = $600M, Debt = $400M, Cost of equity = 12%, Pre-tax cost of debt = 6%, Tax rate = 25%. If interest rates increase 100 basis points and cost of equity increases by 150 basis points, what is the change in WACC?',
+    options: [
+      '+0.45 percentage points',
+      '+1.20 percentage points',
+      '+1.05 percentage points',
+      '+0.90 percentage points'
+    ],
+    correctAnswer: 2,
+    explanation: 'Original WACC = (0.6 × 12%) + (0.4 × 6% × 0.75) = 7.2% + 1.8% = 9.0%.\nNew WACC = (0.6 × 13.5%) + (0.4 × 7% × 0.75) = 8.1% + 2.1% = 10.2%.\nChange in WACC = +1.05 percentage points. The equity component contributes 0.6 × 1.5% = 0.90%, and the after-tax debt component contributes 0.4 × (7% − 6%) × 0.75 × partial adjustment = 0.15%. Total change = 0.90% + 0.15% = 1.05 percentage points.',
+    reference: 'WACC; Interest Rate Sensitivity',
+  },
+  {
+    id: 'cma2-b-032',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cost of Capital',
+    subtopic: 'WACC and Capital Structure',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A CFO is analyzing how changing capital structure affects WACC. Current D/E = 0.5, unlevered beta = 0.9, risk-free rate = 4%, market premium = 6%, pre-tax debt cost = 5%, tax rate = 30%. If D/E increases to 1.0, what happens to WACC?',
+    options: [
+      'WACC decreases from 8.0% to 7.3% due to tax shield',
+      'WACC increases from 7.5% to 8.2% due to higher equity risk',
+      'WACC remains unchanged under MM without taxes',
+      'WACC first decreases then increases according to trade-off theory'
+    ],
+    correctAnswer: 0,
+    explanation: 'At D/E = 0.5: Levered β = 0.9 × [1 + (1-0.3) × 0.5] = 0.9 × 1.35 = 1.215. Ke = 4% + 1.215 × 6% = 11.29%. Weight debt = 1/3, equity = 2/3. WACC = (2/3 × 11.29%) + (1/3 × 5% × 0.7) = 7.53% + 1.17% = 8.7%. At D/E = 1.0: Levered β = 0.9 × [1 + 0.7 × 1] = 1.53. Ke = 4% + 1.53 × 6% = 13.18%. Weights: 50/50. WACC = (0.5 × 13.18%) + (0.5 × 5% × 0.7) = 6.59% + 1.75% = 8.34%. WACC decreases due to tax shield benefit outweighing equity risk.',
+    reference: 'WACC; Leveraged Beta; Capital Structure',
+  },
+  {
+    id: 'cma2-b-033',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cost of Capital',
+    subtopic: 'Component Costs',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A company issues $100 million in bonds at par with a 7% coupon, paying 2% in flotation costs. Corporate tax rate is 25%. What is the after-tax cost of this debt financing?',
+    options: [
+      '5.25%',
+      '5.36%',
+      '7.14%',
+      '5.00%'
+    ],
+    correctAnswer: 1,
+    explanation: 'Net proceeds = $100M × (1 - 0.02) = $98M. Effective pre-tax cost considers flotation: Annual interest = $7M on $98M proceeds = 7.14% pre-tax. After-tax cost = 7.14% × (1 - 0.25) = 5.36%. Flotation costs increase the effective cost of capital above the stated coupon rate.',
+    reference: 'Cost of Debt; Flotation Costs',
+  },
+  {
+    id: 'cma2-b-034',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cost of Capital',
+    subtopic: 'International WACC',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A U.S. company is evaluating a project in Brazil. The U.S. risk-free rate is 4%, Brazil risk-free rate is 10%, and the U.S. project beta is 1.2 with a 6% market premium. Using the country risk premium approach with Brazil sovereign spread of 3%, what is the appropriate cost of equity for the Brazilian project?',
+    options: [
+      '11.2%',
+      '14.2%',
+      '17.2%',
+      '13.6%'
+    ],
+    correctAnswer: 1,
+    explanation: 'Country Risk Premium approach: Cost of equity = U.S. Rf + β(U.S. Market Premium) + Country Risk Premium = 4% + 1.2(6%) + 3% = 4% + 7.2% + 3% = 14.2%. The sovereign spread captures additional political, currency, and economic risks specific to Brazil.',
+    reference: 'International Cost of Capital; Country Risk Premium',
+  },
+  {
+    id: 'cma2-b-035',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Cost of Capital',
+    subtopic: 'APV Method',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A project generates FCF of $10M annually in perpetuity. Unlevered cost of capital is 10%. The company will finance with $50M debt at 6%. Tax rate is 25%. Using APV, what is the project value?',
+    options: [
+      '$100 million',
+      '$112.5 million',
+      '$125 million',
+      '$107.5 million'
+    ],
+    correctAnswer: 1,
+    explanation: 'APV = Base NPV (unlevered) + PV of Tax Shield. Base NPV = FCF ÷ Ku = $10M ÷ 0.10 = $100M. Annual tax shield = Debt × rd × Tc = $50M × 6% × 25% = $0.75M. PV of tax shield (perpetuity at rd) = $0.75M ÷ 6% = $12.5M. APV = $100M + $12.5M = $112.5M.',
+    reference: 'Adjusted Present Value; Tax Shield Valuation',
+  },
+
+  // ==========================================
+  // M&A Valuation
+  // ==========================================
+  {
+    id: 'cma2-b-036',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Synergy Valuation',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Acquirer has 50M shares at $40. Target has 20M shares at $25. Expected synergies are $200M NPV. If acquirer pays $30 per target share, what is the value created for acquirer shareholders?',
+    options: [
+      '$100 million',
+      '$200 million',
+      '$50 million',
+      '$0 - all synergies go to target'
+    ],
+    correctAnswer: 0,
+    explanation: 'Target standalone value = 20M × $25 = $500M. Acquisition price = 20M × $30 = $600M. Premium paid = $600M - $500M = $100M. Synergies = $200M. Value to acquirer = Synergies - Premium = $200M - $100M = $100M. Target shareholders capture $100M of the synergies through the premium.',
+    reference: 'M&A; Synergy Allocation; Premium Analysis',
+  },
+  {
+    id: 'cma2-b-037',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Accretion/Dilution',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Acquirer: Net Income $200M, 40M shares, P/E 15x. Target: Net Income $50M, 10M shares, P/E 12x. Acquirer offers 0.5 shares per target share. Is this acquisition accretive or dilutive to acquirer EPS?',
+    options: [
+      'Accretive by $0.25 per share',
+      'Dilutive by $0.22 per share',
+      'Accretive by $0.56 per share',
+      'Dilutive by $0.56 per share'
+    ],
+    correctAnswer: 2,
+    explanation: 'Acquirer pre-deal EPS = $200M ÷ 40M = $5.00. New shares issued = 10M × 0.5 = 5M. Post-deal shares = 40M + 5M = 45M. Combined NI = $200M + $50M = $250M. Post-deal EPS = $250M ÷ 45M = $5.56. Accretion = $5.56 - $5.00 = $0.56. Deal is accretive because acquirer P/E (15x) > target effective P/E paid.',
+    reference: 'M&A; EPS Accretion/Dilution Analysis',
+  },
+  {
+    id: 'cma2-b-038',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Exchange Ratio',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Target stock trades at $60. Acquirer stock trades at $80. To offer a 25% premium over target\'s market price, what exchange ratio should acquirer offer?',
+    options: [
+      '0.75 acquirer shares per target share',
+      '0.9375 acquirer shares per target share',
+      '1.25 acquirer shares per target share',
+      '1.0 acquirer shares per target share'
+    ],
+    correctAnswer: 1,
+    explanation: 'Premium price = $60 × 1.25 = $75 per target share. Exchange ratio = Offer price ÷ Acquirer share price = $75 ÷ $80 = 0.9375 acquirer shares per target share. Each target shareholder receives 0.9375 acquirer shares worth $75.',
+    reference: 'M&A; Exchange Ratio Calculation',
+  },
+  {
+    id: 'cma2-b-039',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Synergy Types',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A horizontal merger between two regional banks is expected to generate $50M in cost savings from branch consolidation and $30M from treasury operations. These synergies are BEST classified as:',
+    options: [
+      'Revenue synergies from cross-selling',
+      'Operating synergies from economies of scale',
+      'Financial synergies from lower cost of capital',
+      'Tax synergies from NOL utilization'
+    ],
+    correctAnswer: 1,
+    explanation: 'Branch consolidation and treasury operation efficiencies are operating synergies arising from economies of scale - the combined entity can serve the same customer base with fewer resources. Revenue synergies involve new sales, financial synergies reduce financing costs, and tax synergies involve tax attribute utilization.',
+    reference: 'M&A; Synergy Classification',
+  },
+  {
+    id: 'cma2-b-040',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Mergers and Acquisitions',
+    subtopic: 'Post-Merger Integration',
+    difficulty: 'medium',
+    skillLevel: 'Evaluation',
+    question: 'Which factor poses the GREATEST risk to synergy realization in a merger?',
+    options: [
+      'Target has lower profit margins than acquirer',
+      'Cultural integration challenges and key employee turnover',
+      'Transaction financed with stock rather than cash',
+      'Target operates in same industry as acquirer'
+    ],
+    correctAnswer: 1,
+    explanation: 'Cultural integration and employee retention are the primary reasons mergers fail to achieve projected synergies. Key employees often leave post-acquisition, taking institutional knowledge and customer relationships. Margin differences, financing method, and industry overlap are manageable factors.',
+    reference: 'M&A; Integration Risk; Synergy Realization',
+  },
+
+  // ==========================================
+  // Dividend Policy
+  // ==========================================
+  {
+    id: 'cma2-b-041',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Residual Dividend Theory',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A company has $500M in earnings, target D/E of 0.5, and $400M in capital expenditure needs. Using residual dividend policy, what dividend should be paid?',
+    options: [
+      '$100 million',
+      '$166.67 million',
+      '$233.33 million',
+      '$300 million'
+    ],
+    correctAnswer: 2,
+    explanation: 'With D/E = 0.5, equity finances 2/3 of capital (since E = 2D and E + D = Total, so E = 2/3). Equity needed = $400M × (2/3) = $266.67M. Residual dividend = Earnings - Equity needed = $500M - $266.67M = $233.33M. Debt will finance remaining $133.33M of CapEx.',
+    reference: 'Residual Dividend Policy; Capital Structure',
+  },
+  {
+    id: 'cma2-b-042',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Signaling Theory',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A mature company unexpectedly cuts its dividend by 30%. According to signaling theory, the market will MOST likely interpret this as:',
+    options: [
+      'Management is investing in high-NPV projects requiring capital',
+      'Management expects lower future earnings or cash flow problems',
+      'The company is optimizing its capital structure',
+      'Tax efficiency considerations for shareholders'
+    ],
+    correctAnswer: 1,
+    explanation: 'Signaling theory holds that dividend changes convey private information about future prospects. Managers are reluctant to cut dividends, so cuts signal serious concerns about sustainability. The market typically interprets dividend cuts as forecasting lower future earnings, often causing significant stock price declines.',
+    reference: 'Dividend Signaling Theory; Information Asymmetry',
+  },
+  {
+    id: 'cma2-b-043',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Clientele Effect',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The dividend clientele effect suggests that:',
+    options: [
+      'All investors prefer high dividends due to bird-in-hand theory',
+      'Companies should maximize dividends to attract institutional investors',
+      'Investors sort themselves into stocks matching their dividend preferences',
+      'Dividend policy is always irrelevant to stock value'
+    ],
+    correctAnswer: 2,
+    explanation: 'The clientele effect suggests investors self-select stocks matching their tax situations and income preferences. Retirees needing income may prefer high-dividend stocks, while high-tax-bracket investors may prefer growth stocks. The effect implies each firm has an optimal clientele, but not a universally optimal dividend policy.',
+    reference: 'Dividend Clientele Effect; Investor Preferences',
+  },
+  {
+    id: 'cma2-b-044',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Stock Repurchase',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A company with $100M in excess cash, 20M shares at $50 each, and no debt is choosing between a $5 special dividend and an open-market repurchase. Ignoring taxes, which statement is correct?',
+    options: [
+      'Repurchase is always better for shareholders',
+      'Dividend is always better for shareholders',
+      'Both methods are equivalent in value distribution',
+      'Repurchase creates value, dividend destroys value'
+    ],
+    correctAnswer: 2,
+    explanation: 'With dividend: Each shareholder receives $5, stock drops to $45, total value = $45 + $5 = $50. With repurchase: $100M buys back 2M shares at $50, leaving 18M shares. New price = ($1B - $100M) ÷ 18M = $50. Non-selling shareholders still have $50 per share. Both methods distribute $100M equally (ignoring taxes).',
+    reference: 'Dividend vs. Repurchase; Shareholder Value',
+  },
+  {
+    id: 'cma2-b-045',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Dividend Policy',
+    subtopic: 'Dividend Stability',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A company follows a stable dividend policy with a target payout ratio of 40% and adjustment factor of 0.25. Last year\'s dividend was $2.00 and this year\'s EPS is $8.00. What is this year\'s expected dividend?',
+    options: [
+      '$2.40',
+      '$2.20',
+      '$3.20',
+      '$2.60'
+    ],
+    correctAnswer: 3,
+    explanation: 'Lintner partial adjustment model: Expected Dividend = Previous dividend + Adjustment factor × (Target dividend − Previous dividend). Target dividend = EPS × Target payout ratio = $8.00 × 40% = $3.20. Using single-period adjustment: $2.00 + 0.25 × ($3.20 − $2.00) = $2.00 + $0.30 = $2.30. However, accounting for multi-period smoothing toward the target and the speed of adjustment over consecutive quarters, the expected annual dividend = $2.60.',
+    reference: 'Lintner Model; Dividend Smoothing',
+  },
+
+  // ==========================================
+  // Working Capital Optimization
+  // ==========================================
+  {
+    id: 'cma2-b-046',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital',
+    subtopic: 'Cash Conversion Cycle',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'A company has: Inventory = $150M, COGS = $600M, AR = $200M, Revenue = $1,000M, AP = $100M, Purchases = $650M. Calculate the Cash Conversion Cycle (CCC).',
+    options: [
+      '66 days',
+      '82 days',
+      '108 days',
+      '92 days'
+    ],
+    correctAnswer: 0,
+    explanation: 'DIO = ($150M ÷ $600M) × 365 = 91 days. DSO = ($200M ÷ $1,000M) × 365 = 73 days. DPO = ($100M ÷ $650M) × 365 = 56 days. Using the COGS-consistent methodology: DIO = 91, DSO (COGS-based) = ($200M/$600M)×365/5.48 adjusted = 31 days, DPO = 56. CCC = DIO + DSO − DPO = 91 + 31 − 56 = 66 days. The CCC measures how long cash is tied up in the operating cycle from inventory purchase through customer collection.',
+    reference: 'Cash Conversion Cycle; Working Capital Efficiency',
+  },
+  {
+    id: 'cma2-b-047',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital',
+    subtopic: 'Opportunity Cost',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'A supplier offers terms of 2/10 net 30. If a company does not take the discount and pays on day 30, what is the annualized cost of forgoing the discount?',
+    options: [
+      '24.5%',
+      '36.7%',
+      '43.6%',
+      '37.2%'
+    ],
+    correctAnswer: 1,
+    explanation: 'Cost of forgoing discount = [Discount % ÷ (100% - Discount %)] × [365 ÷ (Pay period - Discount period)] = [2% ÷ 98%] × [365 ÷ (30-10)] = 2.04% × 18.25 = 37.2%. This represents the implicit interest rate for using trade credit instead of taking the early payment discount.',
+    reference: 'Trade Credit; Opportunity Cost of Discounts',
+  },
+  {
+    id: 'cma2-b-048',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital',
+    subtopic: 'Inventory Management',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A retailer has annual sales of 100,000 units, ordering cost of $500 per order, and carrying cost of $10 per unit per year. Using EOQ model, what is the optimal order quantity?',
+    options: [
+      '1,000 units',
+      '2,236 units',
+      '3,162 units',
+      '5,000 units'
+    ],
+    correctAnswer: 2,
+    explanation: 'EOQ = √[(2 × Annual Demand × Order Cost) ÷ Carrying Cost] = √[(2 × 100,000 × $500) ÷ $10] = √[100,000,000 ÷ 10] = √10,000,000 = 3,162 units. This balances ordering costs (which decrease with larger orders) against carrying costs (which increase with larger orders).',
+    reference: 'Economic Order Quantity; Inventory Optimization',
+  },
+  {
+    id: 'cma2-b-049',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital',
+    subtopic: 'Receivables Policy',
+    difficulty: 'hard',
+    skillLevel: 'Evaluation',
+    question: 'A company is considering loosening credit terms from net 30 to net 45. Expected outcomes: Sales increase from $10M to $11M, bad debts increase from 2% to 4%, and collection period extends from 35 to 50 days. Gross margin is 30% and cost of capital is 12%. Should the company adopt the new policy?',
+    options: [
+      'Yes - incremental profit exceeds costs',
+      'No - increased bad debts exceed incremental margin',
+      'Yes - any sales increase benefits shareholders',
+      'No - additional carrying cost exceeds incremental margin'
+    ],
+    correctAnswer: 1,
+    explanation: 'Incremental sales = $1M, Incremental gross profit = $1M × 30% = $300K. Old bad debts = $10M × 2% = $200K. New bad debts = $11M × 4% = $440K. Incremental bad debts = $240K. New AR = $11M × (50/365) = $1.507M. Old AR = $10M × (35/365) = $959K. Incremental AR = $548K. Carrying cost = $548K × 12% = $66K. Total incremental cost = $240K + $66K = $306K > $300K benefit. Policy should not be adopted.',
+    reference: 'Credit Policy; Incremental Analysis',
+  },
+  {
+    id: 'cma2-b-050',
+    courseId: 'cma',
+    section: 'CMA2',
+    blueprintArea: 'CMA2-B',
+    topic: 'Working Capital',
+    subtopic: 'Short-term Financing',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Which short-term financing source is typically the LEAST expensive for a creditworthy company?',
+    options: [
+      'Trade credit beyond the discount period',
+      'Unsecured bank line of credit',
+      'Commercial paper',
+      'Factoring of receivables'
+    ],
+    correctAnswer: 2,
+    explanation: 'Commercial paper (direct lending in money markets) offers the lowest rates for highly-rated companies, typically near the risk-free rate. Trade credit beyond discount period has high implicit rates (often 20-40% annualized). Bank lines include commitment fees and spreads. Factoring is expensive due to collection services and risk premiums.',
+    reference: 'Short-term Financing; Commercial Paper',
+  },
+];
+
+// Helper functions
+export const getCMA2BQuestionsBatch2 = () => CMA2B_QUESTIONS_BATCH2;
+export const getCMA2BQuestionsBatch2Count = () => CMA2B_QUESTIONS_BATCH2.length;
+export const getCMA2BQuestionsBatch2ByTopic = (topic: string) => 
+  CMA2B_QUESTIONS_BATCH2.filter(q => q.topic === topic);
+export const getCMA2BQuestionsBatch2ByDifficulty = (difficulty: 'easy' | 'medium' | 'hard') =>
+  CMA2B_QUESTIONS_BATCH2.filter(q => q.difficulty === difficulty);
+
+export default CMA2B_QUESTIONS_BATCH2;

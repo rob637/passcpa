@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 39 (Q381-390)
+ * Taxpayer Penalties & Information Returns
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH39: Question[] = [
+  // ==========================================
+  // SEE3: Taxpayer Penalties & Info Returns
+  // ==========================================
+  {
+    id: 'see3-381',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Taxpayer Penalties',
+    subtopic: 'Negligence',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Negligence for tax penalty purposes means:',
+    options: [
+      'Any error on a return',
+      'Failure to make a reasonable attempt to comply with the tax law or exercise ordinary and reasonable care',
+      'Mathematical mistakes only',
+      'Late filing'
+    ],
+    correctAnswer: 1,
+    explanation: 'Negligence is any failure to make a reasonable attempt to comply with the tax law or the failure to exercise ordinary and reasonable care in preparing a return (Treas. Reg. §1.6662-3(b)(1)).',
+    reference: 'IRC §6662(c); Treas. Reg. §1.6662-3(b)',
+  },
+  {
+    id: 'see3-382',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Taxpayer Penalties',
+    subtopic: 'Disregard of Rules',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Disregard of rules or regulations includes:',
+    options: [
+      'Following regulations incorrectly',
+      'Careless, reckless, or intentional disregard of IRS rules and regulations',
+      'Any understatement',
+      'Using tax software'
+    ],
+    correctAnswer: 1,
+    explanation: 'Disregard includes any careless, reckless, or intentional disregard of IRS rules and regulations. "Intentional" is strongest (knew of rule and chose to ignore it).',
+    reference: 'Treas. Reg. §1.6662-3(b)(2)',
+  },
+  {
+    id: 'see3-383',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Taxpayer Penalties',
+    subtopic: 'Valuation Penalties',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The substantial valuation misstatement penalty applies when:',
+    options: [
+      'Any valuation is used',
+      'Property value is 150% or more of the correct value (or adjusted basis is 200% or more)',
+      'Property is sold below fair market value',
+      'No appraisal is obtained'
+    ],
+    correctAnswer: 1,
+    explanation: 'A substantial valuation misstatement exists when stated value is 150%+ of correct value (or basis is 50% or less of correct amount). Gross valuation misstatement (200%/400%) doubles penalty to 40%.',
+    reference: 'IRC §6662(e)',
+  },
+  {
+    id: 'see3-384',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Taxpayer Penalties',
+    subtopic: 'Frivolous Return Penalty',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The penalty for filing a frivolous tax return is:',
+    options: [
+      '$500',
+      '$5,000',
+      '20% of any understatement',
+      'No penalty'
+    ],
+    correctAnswer: 1,
+    explanation: 'The frivolous return penalty under IRC §6702 is $5,000 for individuals ($5,000 per failure). This applies to returns that don\'t contain enough info to determine liability or are based on frivolous positions.',
+    reference: 'IRC §6702',
+  },
+  {
+    id: 'see3-385',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Form 1099 Penalties',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Failure to file correct information returns (like Form 1099) results in penalties:',
+    options: [
+      'Only if intentional',
+      'Per return, with amounts varying based on how quickly corrections are made',
+      'A flat $1,000',
+      'Only for businesses'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6721 penalties are per return: $60 if corrected within 30 days, $120 if corrected by August 1, $310 after that. Higher penalties for intentional disregard. Annual caps apply.',
+    reference: 'IRC §6721',
+  },
+  {
+    id: 'see3-386',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Payee Statement Penalty',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Failure to furnish correct payee statements (like W-2 copies to employees):',
+    options: [
+      'Has no penalty',
+      'Results in penalties under IRC §6722 similar to information return penalties',
+      'Only affects employers',
+      'Is a criminal offense only'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6722 imposes penalties for failure to furnish correct payee statements. The penalty structure mirrors §6721 (tiered based on correction timing). Both penalties may apply to the same failure.',
+    reference: 'IRC §6722',
+  },
+  {
+    id: 'see3-387',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Backup Withholding',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Backup withholding at 24% applies when:',
+    options: [
+      'Always on all payments',
+      'A payee fails to furnish a correct TIN or is subject to IRS notification for underreporting',
+      'Only to employees',
+      'Only on interest'
+    ],
+    correctAnswer: 1,
+    explanation: 'Backup withholding (24%) is required when the payee fails to furnish a TIN, provides an incorrect TIN, or is subject to backup withholding due to underreporting notification from IRS.',
+    reference: 'IRC §3406',
+  },
+  {
+    id: 'see3-388',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Form W-4',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A false Form W-4 submitted to claim exemption from withholding:',
+    options: [
+      'Has no penalty',
+      'May result in a $500 civil penalty plus potential criminal penalties',
+      'Only affects the employer',
+      'Is automatically corrected'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6682 imposes a $500 penalty for false withholding exemption certificates (W-4). Criminal penalties under IRC §7205 (up to $1,000 fine and/or 1 year) may also apply.',
+    reference: 'IRC §6682; IRC §7205',
+  },
+  {
+    id: 'see3-389',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Trust Fund Recovery',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Trust Fund Recovery Penalty (TFRP) applies to:',
+    options: [
+      'Any unpaid taxes',
+      'Responsible persons who willfully fail to collect or pay withheld taxes',
+      'Only corporations',
+      'Late-filed returns only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6672, the TFRP (100% penalty equal to unpaid withheld taxes) applies to any responsible person who willfully fails to collect, truthfully account for, or pay over taxes held in trust.',
+    reference: 'IRC §6672',
+  },
+  {
+    id: 'see3-390',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-1',
+    topic: 'Information Returns',
+    subtopic: 'Responsible Person',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A "responsible person" for trust fund penalty purposes:',
+    options: [
+      'Is only the business owner',
+      'Is anyone with duty and authority to ensure taxes are withheld and paid',
+      'Can only be one person',
+      'Is determined by job title alone'
+    ],
+    correctAnswer: 1,
+    explanation: 'A responsible person is anyone with duty and authority to see that taxes are withheld and paid. This may include officers, directors, employees, or others with financial control. Multiple people may be responsible.',
+    reference: 'IRC §6672',
+  },
+];

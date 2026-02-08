@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { Button } from '../common/Button';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import {
   RotateCcw,
   ChevronLeft,
@@ -19,17 +21,16 @@ import {
   Lightbulb,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../providers/CourseProvider';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { fetchQuestions } from '../../services/questionService';
+import { getFlashcardsBySection, Flashcard as DedicatedFlashcard } from '../../services/flashcardService';
 import { calculateNextReview, getDueCards, getStudyStats } from '../../services/spacedRepetition';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
-import { Question, ExamSection } from '../../types';
-import {
-  getFlashcardsBySection,
-  Flashcard as DedicatedFlashcard,
-} from '../../data/flashcards';
+import { Question, ExamSection, AllExamSections } from '../../types';
 
 interface RatingButton {
   rating: 'again' | 'hard' | 'good' | 'easy';
@@ -73,11 +74,14 @@ interface SessionStats {
 
 const Flashcards: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchParams] = useSearchParams();
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
   const activityId = searchParams.get('activityId');
   const { user, userProfile } = useAuth();
+  const { courseId } = useCourse();
   // const { recordMCQAnswer } = useStudy(); // Unused in original code
 
   const [cards, setCards] = useState<Flashcard[]>([]);
@@ -98,7 +102,11 @@ const Flashcards: React.FC = () => {
   const mode = searchParams.get('mode') || 'review'; // review, new, all
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
-  const currentSection = (userProfile?.examSection || 'REG') as ExamSection;
+  const sectionParam = searchParams.get('section');
+  // Support URL param for section (for EA) or fall back to user profile
+  const currentSection: AllExamSections = sectionParam 
+    ? (sectionParam as AllExamSections)
+    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
 
   // Scroll to top when flashcard session starts
   useEffect(() => {
@@ -124,7 +132,7 @@ const Flashcards: React.FC = () => {
         
         // Get dedicated flashcards (definitions, formulas, mnemonics)
         if (effectiveType === 'all' || effectiveType === 'definitions' || effectiveType === 'formulas' || effectiveType === 'mnemonics') {
-          const sectionFlashcards = getFlashcardsBySection(currentSection);
+          const sectionFlashcards = await getFlashcardsBySection(currentSection, courseId);
           const dedicatedCards: Flashcard[] = sectionFlashcards
             .filter((card: DedicatedFlashcard) => {
               if (effectiveType === 'all') return true;
@@ -217,7 +225,7 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, currentSection, mode, topic, cardType, typeParam]);
+  }, [user, courseId, currentSection, mode, topic, cardType, typeParam]);
 
   // Helper function to format dedicated card backs with formula/mnemonic/example
   const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {
@@ -359,12 +367,12 @@ const Flashcards: React.FC = () => {
               : 'No flashcards available for this selection.'}
           </p>
           <div className="flex gap-3 justify-center">
-            <button onClick={() => navigate('/practice')} className="btn-primary">
+            <Button variant="primary" onClick={() => navigate('/practice')}>
               Practice Questions
-            </button>
-            <button onClick={() => navigate('/study')} className="btn-secondary">
+            </Button>
+            <Button variant="secondary" onClick={() => navigate('/study')}>
               Back to Study
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -401,16 +409,16 @@ const Flashcards: React.FC = () => {
           </div>
 
           <div className="flex gap-3 justify-center">
-            <button
+            <Button
+              variant="secondary"
               onClick={() => {
                 setCurrentIndex(0);
                 setSessionStats({ reviewed: 0, again: 0, hard: 0, good: 0, easy: 0 });
               }}
-              className="btn-secondary"
             >
               Review Again
-            </button>
-            <button onClick={() => {
+            </Button>
+            <Button variant="primary" onClick={() => {
               if (fromDailyPlan && activityId) {
                 const params = new URLSearchParams();
                 params.set('from', 'dailyplan');
@@ -420,9 +428,9 @@ const Flashcards: React.FC = () => {
               } else {
                 navigate('/study');
               }
-            }} className="btn-primary">
+            }}>
               Done
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -434,13 +442,13 @@ const Flashcards: React.FC = () => {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
-          <button
-            onClick={() => navigate('/home')}
-            className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+          <Button
+            variant="ghost"
+            onClick={() => navigate(courseHome)}
+            leftIcon={ArrowLeft}
           >
-            <ArrowLeft className="w-5 h-5" />
             <span className="hidden sm:inline">Back</span>
-          </button>
+          </Button>
 
           <div className="flex items-center gap-2">
             <Brain className="w-5 h-5 text-primary-600" />
@@ -699,20 +707,22 @@ const Flashcards: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={prevCard}
               disabled={currentIndex === 0}
-              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={nextCard}
               disabled={currentIndex === cards.length - 1}
-              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-5 h-5" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

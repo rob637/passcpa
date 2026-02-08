@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 35 (Q341-350)
+ * Installment Sales for Business
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH35: Question[] = [
+  // ==========================================
+  // SEE2-2: Installment Sales
+  // ==========================================
+  {
+    id: 'see2-341',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Section 453 Basics',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The installment method under IRC §453 allows:',
+    options: [
+      'Immediate recognition of all gain',
+      'Deferral of gain recognition until payments are received',
+      'Complete exclusion of gain',
+      'Capital loss carry-forward'
+    ],
+    correctAnswer: 1,
+    explanation: 'The installment method under §453 allows taxpayers to defer gain recognition, reporting a proportionate amount of gain as each payment is received rather than all gain in the year of sale.',
+    reference: 'IRC §453(a)',
+  },
+  {
+    id: 'see2-342',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Ineligible Property',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Which sale does NOT qualify for installment sale treatment?',
+    options: [
+      'Sale of real property used in business',
+      'Sale of dealer inventory',
+      'Sale of capital assets',
+      'Sale of farm equipment'
+    ],
+    correctAnswer: 1,
+    explanation: 'Dealer dispositions (inventory sales) do not qualify for installment treatment. Also ineligible: publicly traded property and property resulting in a loss.',
+    reference: 'IRC §453(b)(2)',
+  },
+  {
+    id: 'see2-343',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Gross Profit Percentage',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A taxpayer sells property for $500,000 with a basis of $300,000 and selling expenses of $20,000. The gross profit percentage is:',
+    options: [
+      '36%',
+      '40%',
+      '60%',
+      '64%'
+    ],
+    correctAnswer: 0,
+    explanation: 'Gross profit = Selling price - Selling expenses - Basis = $500,000 - $20,000 - $300,000 = $180,000. Gross profit % = $180,000 / $500,000 = 36%.',
+    reference: 'IRC §453(c); Treas. Reg. §15A.453-1(b)',
+  },
+  {
+    id: 'see2-344',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Payment Received',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'If a taxpayer receives $100,000 in Year 1 on an installment sale with a 40% gross profit percentage, the gain recognized in Year 1 is:',
+    options: [
+      '$100,000',
+      '$40,000',
+      '$60,000',
+      'Zero'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gain recognized = Payment × Gross profit percentage = $100,000 × 40% = $40,000. The remaining $60,000 represents return of basis.',
+    reference: 'IRC §453(c)',
+  },
+  {
+    id: 'see2-345',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Interest Charge',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'For installment sales exceeding $5 million, an interest charge applies to:',
+    options: [
+      'All installment payments',
+      'Deferred tax liability on sales exceeding the $5 million threshold',
+      'The entire sales price',
+      'Only interest received from buyer'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §453A, taxpayers with installment obligations over $5 million face an interest charge on the deferred tax liability. This discourages large installment sales for tax deferral.',
+    reference: 'IRC §453A',
+  },
+  {
+    id: 'see2-346',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Pledge Rule',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If an installment obligation is pledged as security for a loan:',
+    options: [
+      'No tax consequence occurs',
+      'The net loan proceeds are treated as a payment received',
+      'The obligation becomes worthless',
+      'Interest deductions are lost'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under §453A(d), if an installment obligation is pledged as security, net loan proceeds are treated as a payment, accelerating gain recognition to the extent of the loan.',
+    reference: 'IRC §453A(d)',
+  },
+  {
+    id: 'see2-347',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Related Party Sales',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If a taxpayer makes an installment sale to a related party who resells within 2 years:',
+    options: [
+      'No additional tax applies',
+      'The original seller must recognize all remaining gain when the related party resells',
+      'The related party pays all the tax',
+      'The installment method continues without change'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under §453(e), if a related party resells within 2 years, the original seller treats the amount realized by the related party as a payment, accelerating gain recognition. Exceptions exist for involuntary conversions and death.',
+    reference: 'IRC §453(e)',
+  },
+  {
+    id: 'see2-348',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Electing Out',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A taxpayer may elect OUT of installment sale treatment:',
+    options: [
+      'Only with IRS permission',
+      'By reporting entirety of gain in year of sale',
+      'Never - installment treatment is mandatory',
+      'Only if the sale results in a loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'Taxpayers may elect out of installment treatment by reporting the entire gain in the year of sale on their tax return. The election must be made by the return due date (with extensions).',
+    reference: 'IRC §453(d)',
+  },
+  {
+    id: 'see2-349',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Depreciation Recapture',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When selling depreciable property on installments, depreciation recapture (§1245/§1250 gain) is:',
+    options: [
+      'Spread over the installment payments',
+      'Recognized in full in the year of sale',
+      'Excluded from income',
+      'Converted to capital gain'
+    ],
+    correctAnswer: 1,
+    explanation: 'Depreciation recapture under §1245 or §1250 must be recognized in full in the year of sale regardless of installment treatment. Only gain in excess of recapture qualifies for installment treatment.',
+    reference: 'IRC §453(i)',
+  },
+  {
+    id: 'see2-350',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-2',
+    topic: 'Installment Sales',
+    subtopic: 'Disposition of Obligation',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If an installment obligation is sold or otherwise disposed of:',
+    options: [
+      'No gain is recognized',
+      'Gain or loss is recognized based on difference between amount realized and basis in the obligation',
+      'The original sale is reversed',
+      'Only losses are recognized'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under §453B, if an installment obligation is sold, the seller recognizes gain or loss equal to the amount realized minus the basis in the obligation (face value minus deferred profit).',
+    reference: 'IRC §453B',
+  },
+];

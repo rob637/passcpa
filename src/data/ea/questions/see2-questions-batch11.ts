@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 11 (Q101-110)
+ * Partnership Formation and Contributions
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH11: Question[] = [
+  // ==========================================
+  // SEE2-4: Partnerships - Formation
+  // ==========================================
+  {
+    id: 'see2-101',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Property Contributions',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Partner A contributes property with a fair market value of $50,000 and an adjusted basis of $30,000 to a new partnership for a 50% interest. What is Partner A\'s basis in the partnership interest?',
+    options: [
+      '$50,000',
+      '$30,000',
+      '$25,000',
+      '$40,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §722, a partner\'s basis in a partnership interest received for a property contribution equals the adjusted basis of the property contributed. Partner A\'s basis is $30,000 (carryover basis).',
+    reference: 'IRC §722',
+  },
+  {
+    id: 'see2-102',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Built-in Gain/Loss',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Partner B contributes land with a FMV of $100,000 and basis of $40,000 to a partnership. If the partnership later sells the land for $120,000, how is the $80,000 gain allocated?',
+    options: [
+      '$80,000 entirely to Partner B',
+      '$60,000 to Partner B, $20,000 shared by all partners',
+      'Shared equally among all partners',
+      '$40,000 to Partner B, $40,000 shared by all partners'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §704(c), the $60,000 built-in gain ($100,000 FMV - $40,000 basis) at contribution must be allocated to Partner B. The $20,000 post-contribution appreciation is allocated per the partnership agreement.',
+    reference: 'IRC §704(c)',
+  },
+  {
+    id: 'see2-103',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Services for Interest',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A partner receives a 20% capital interest in a partnership worth $50,000 in exchange for services rendered. The tax consequence is:',
+    options: [
+      'No income recognized until the interest is sold',
+      'Ordinary income of $50,000 in the year received',
+      'Capital gain of $50,000',
+      'The amount is excluded from income as compensation'
+    ],
+    correctAnswer: 1,
+    explanation: 'When a partner receives a capital interest for services, the fair market value of the interest is ordinary income under IRC §83. The partner has a basis equal to the amount included in income.',
+    reference: 'IRC §83; Treas. Reg. §1.721-1(b)(1)',
+  },
+  {
+    id: 'see2-104',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Liability Contribution',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Partner C contributes property with a FMV of $100,000, basis of $70,000, subject to a $40,000 recourse liability (assumed by partnership). If Partner C has a 30% partnership interest, what is the basis in the partnership interest?',
+    options: [
+      '$70,000',
+      '$42,000',
+      '$58,000',
+      '$30,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Basis starts at $70,000 (property basis). Decrease by liability relief of $40,000 (treated as distribution). Increase by share of partnership liabilities ($40,000 × 30% = $12,000). Result: $70,000 - $40,000 + $12,000 = $42,000.',
+    reference: 'IRC §752',
+  },
+  {
+    id: 'see2-105',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Investment Company',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The tax-free contribution rules of Section 721 do NOT apply when:',
+    options: [
+      'The partnership is a limited partnership',
+      'The contribution would result in the formation of an investment company',
+      'One partner contributes more than 80% of the total capital',
+      'The property contributed has a built-in loss'
+    ],
+    correctAnswer: 1,
+    explanation: 'Section 721 does not apply to contributions that result in diversification of interests and creation of an investment company. This prevents tax-free pooling of appreciated investments.',
+    reference: 'IRC §721(b)',
+  },
+  {
+    id: 'see2-106',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Partnership Basis in Assets',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'When a partner contributes property to a partnership, the partnership\'s basis in the property is:',
+    options: [
+      'The fair market value of the property',
+      'The partner\'s adjusted basis (carryover basis)',
+      'The lower of FMV or adjusted basis',
+      'Zero until the property is sold'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §723, the partnership\'s basis in contributed property equals the contributing partner\'s adjusted basis in the property immediately before contribution (carryover basis).',
+    reference: 'IRC §723',
+  },
+  {
+    id: 'see2-107',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Holding Period',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A partner\'s holding period for a partnership interest acquired by contribution of a capital asset:',
+    options: [
+      'Begins on the date of contribution',
+      'Includes the holding period of the contributed property',
+      'Is always long-term',
+      'Is determined by the partnership agreement'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §1223(1), when a partner receives a partnership interest in exchange for a capital asset or Section 1231 asset, the holding period includes the time the contributed property was held.',
+    reference: 'IRC §1223(1)',
+  },
+  {
+    id: 'see2-108',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Organization Costs',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A partnership incurs $7,000 in organizational expenses. How should these be treated for tax purposes?',
+    options: [
+      'Deduct the full $7,000 in the first year',
+      'Deduct $5,000 in the first year, amortize $2,000 over 180 months',
+      'Capitalize and amortize the entire amount over 180 months',
+      'No deduction allowed; must be capitalized indefinitely'
+    ],
+    correctAnswer: 1,
+    explanation: 'Partnerships may elect under IRC §709 to deduct up to $5,000 of organizational expenses in the first year (reduced if total exceeds $50,000), with the remainder amortized over 180 months.',
+    reference: 'IRC §709(b)',
+  },
+  {
+    id: 'see2-109',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Syndication Costs',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Partnership syndication costs (costs of issuing and marketing partnership interests) are:',
+    options: [
+      'Deductible in the first year of operations',
+      'Amortizable over 180 months like organizational costs',
+      'Capitalized and never amortizable or deductible',
+      'Deductible when the partnership terminates'
+    ],
+    correctAnswer: 2,
+    explanation: 'Unlike organizational costs, syndication costs must be capitalized and cannot be amortized or deducted. They include brokerage fees, registration fees, and costs of printing prospectuses for selling partnership interests.',
+    reference: 'IRC §709(a)',
+  },
+  {
+    id: 'see2-110',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-4',
+    topic: 'Partnership Formation',
+    subtopic: 'Contribution vs. Sale',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'A partner contributes property and simultaneously receives a guaranteed payment. The IRS may treat this as:',
+    options: [
+      'A tax-free contribution under Section 721',
+      'A disguised sale under Section 707(a)(2)(B)',
+      'A loan from the partnership',
+      'A distribution of partnership earnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'When a partner contributes property and receives cash or other consideration, the IRS may recharacterize this as a disguised sale under IRC §707(a)(2)(B), making the transaction taxable.',
+    reference: 'IRC §707(a)(2)(B)',
+  },
+];

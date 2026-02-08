@@ -1,0 +1,211 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Questions Batch 5 (Q41-50)
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH5: Question[] = [
+  // ==========================================
+  // SEE3-6: Appeals
+  // ==========================================
+  {
+    id: 'see3-041',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Appeals Process',
+    subtopic: 'IRS Appeals Office',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRS Independent Office of Appeals is:',
+    options: [
+      'Part of the federal court system',
+      'An independent organization within the IRS that resolves disputes without litigation',
+      'A division of the Tax Court',
+      'Only available for cases over $100,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'The IRS Independent Office of Appeals is a separate, independent organization within the IRS. Its mission is to resolve tax controversies fairly without litigation, considering the hazards of litigation.',
+    reference: 'IRC §7803(e)',
+  },
+  {
+    id: 'see3-042',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Appeals Process',
+    subtopic: 'Requesting Appeals',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To request an Appeals conference after receiving a 30-day letter, a taxpayer must:',
+    options: [
+      'Do nothing; they are automatically scheduled',
+      'File a written protest or small case request',
+      'Pay the tax first',
+      'Hire an attorney'
+    ],
+    correctAnswer: 1,
+    explanation: 'Taxpayers must file a written request for Appeals. For amounts under $25,000, a small case request using Form 12203 is sufficient. For larger amounts, a formal written protest is required.',
+    reference: 'IRS Publication 5',
+  },
+  {
+    id: 'see3-043',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Appeals Process',
+    subtopic: 'Written Protest',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A formal written protest must include all of the following EXCEPT:',
+    options: [
+      'A statement that the taxpayer wants to appeal the findings',
+      'The taxpayer\'s name, address, and SSN/EIN',
+      'A list of all assets owned by the taxpayer',
+      'A statement of facts supporting the taxpayer\'s position'
+    ],
+    correctAnswer: 2,
+    explanation: 'A written protest must include taxpayer information, a statement requesting appeal, relevant tax periods, disputed items, facts, applicable law, and a declaration under penalties of perjury. Asset lists are not required.',
+    reference: 'IRS Publication 5',
+  },
+  {
+    id: 'see3-044',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Appeals Process',
+    subtopic: 'Fast Track Settlement',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Fast Track Settlement (FTS) is designed to:',
+    options: [
+      'Allow immediate payment of tax',
+      'Use Appeals mediators to resolve issues while still in examination',
+      'File returns more quickly',
+      'Get refunds within 24 hours'
+    ],
+    correctAnswer: 1,
+    explanation: 'Fast Track Settlement brings Appeals officers to work with examination to try to resolve disputes before the case is closed. This can resolve issues more quickly than the traditional appeals process.',
+    reference: 'IRS Publication 5',
+  },
+  {
+    id: 'see3-045',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Tax Court',
+    subtopic: 'Filing Petition',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'To petition the U.S. Tax Court:',
+    options: [
+      'The taxpayer must pay the tax first',
+      'The taxpayer must file within 90 days of receiving a notice of deficiency',
+      'The case must involve more than $50,000',
+      'The taxpayer must be represented by an attorney'
+    ],
+    correctAnswer: 1,
+    explanation: 'A petition to Tax Court must generally be filed within 90 days of the notice of deficiency (150 days if addressed outside the U.S.). The taxpayer does not need to pay the tax first.',
+    reference: 'IRC §6213',
+  },
+  {
+    id: 'see3-046',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Tax Court',
+    subtopic: 'Small Tax Case',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Tax Court small case procedure (S case) is available when the disputed amount is:',
+    options: [
+      '$10,000 or less per year',
+      '$50,000 or less per year',
+      '$100,000 or less per year',
+      'Any amount'
+    ],
+    correctAnswer: 1,
+    explanation: 'The small case procedure is available when the total amount in dispute for any one year is $50,000 or less. These cases have simplified procedures, but the decision cannot be appealed.',
+    reference: 'IRC §7463',
+  },
+  {
+    id: 'see3-047',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Other Courts',
+    subtopic: 'Federal Courts',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'To file a refund suit in U.S. District Court or the Court of Federal Claims:',
+    options: [
+      'The taxpayer must file within 90 days of the notice of deficiency',
+      'The taxpayer must pay the tax and file a claim for refund first',
+      'No prerequisites are required',
+      'The taxpayer must be in bankruptcy'
+    ],
+    correctAnswer: 1,
+    explanation: 'To sue in District Court or the Court of Federal Claims, the taxpayer must first pay the tax in full and file a refund claim. If denied or not acted upon, the taxpayer may then sue for refund.',
+    reference: 'IRC §7422',
+  },
+  {
+    id: 'see3-048',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'CDP Hearings',
+    subtopic: 'Collection Due Process',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'A Collection Due Process (CDP) hearing must be requested within:',
+    options: [
+      '10 days of the CDP notice',
+      '30 days of the CDP notice',
+      '90 days of the CDP notice',
+      '1 year of the CDP notice'
+    ],
+    correctAnswer: 1,
+    explanation: 'A CDP hearing must be requested within 30 days of the date of the CDP notice. If requested timely, the taxpayer has the right to appeal to Tax Court if they disagree with the determination.',
+    reference: 'IRC §6330',
+  },
+  {
+    id: 'see3-049',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'CDP Hearings',
+    subtopic: 'Issues Raised',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'At a CDP hearing, the taxpayer may raise:',
+    options: [
+      'Only issues related to the specific tax being collected',
+      'Collection alternatives such as installment agreements or offers in compromise',
+      'Constitutional challenges to the income tax',
+      'Frivolous tax arguments'
+    ],
+    correctAnswer: 1,
+    explanation: 'At CDP hearings, taxpayers can raise spousal defenses, collection alternatives (installment agreements, offers in compromise), and challenges to the appropriateness of collection actions.',
+    reference: 'IRC §6330(c)',
+  },
+  {
+    id: 'see3-050',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-6',
+    topic: 'Taxpayer Advocate',
+    subtopic: 'TAS Assistance',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'The Taxpayer Advocate Service (TAS) may assist a taxpayer who:',
+    options: [
+      'Wants faster refund processing without cause',
+      'Is experiencing economic harm or systemic problems with the IRS',
+      'Wants to reduce their tax liability',
+      'Needs help preparing their return'
+    ],
+    correctAnswer: 1,
+    explanation: 'TAS helps taxpayers experiencing economic harm, seeking help with an IRS problem that cannot be resolved through normal channels, or facing systemic issues. TAS does not prepare returns or reduce tax liability.',
+    reference: 'IRC §7803(c)',
+  },
+];

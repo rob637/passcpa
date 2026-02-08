@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import logger from '../../../utils/logger';
 import { Link } from 'react-router-dom';
-import { Mail, AlertCircle, Loader2, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Mail, AlertCircle, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 const ForgotPassword = () => {
   const { resetPassword } = useAuth();
@@ -40,7 +42,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="w-full max-w-md mx-auto px-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8">
+      <Card variant="elevated" className="p-8">
         {/* Logo & Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
@@ -62,17 +64,20 @@ const ForgotPassword = () => {
               a password reset link shortly.
             </p>
             <div className="space-y-3">
-              <button
+              <Button
+                variant="secondary"
+                fullWidth
                 onClick={() => {
                   setSuccess(false);
                   setEmail('');
                 }}
-                className="w-full btn-secondary"
               >
                 Try another email
-              </button>
-              <Link to="/login" className="block w-full btn-primary text-center">
-                Back to Sign In
+              </Button>
+              <Link to="/login" className="block">
+                <Button variant="primary" fullWidth>
+                  Back to Sign In
+                </Button>
               </Link>
             </div>
           </div>
@@ -110,20 +115,14 @@ const ForgotPassword = () => {
               </div>
 
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-primary py-3 flex items-center justify-center gap-2"
+                variant="primary"
+                fullWidth
+                loading={isSubmitting}
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  'Send Reset Link'
-                )}
-              </button>
+                {isSubmitting ? 'Sending...' : 'Send Reset Link'}
+              </Button>
             </form>
 
             {/* Back to Login */}
@@ -136,7 +135,7 @@ const ForgotPassword = () => {
             </Link>
           </>
         )}
-      </div>
+      </Card>
     </div>
   );
 };

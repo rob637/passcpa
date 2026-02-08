@@ -1,0 +1,75 @@
+In the last video, we talked about S-Corporation basis and how shareholder loan guarantees do NOT create basis. Well, throw that rule completely out the window. Welcome to Partnership taxation, where liabilities are your best friend.
+
+Today we are going to master one of the most important distinctions in all of tax law: Inside Basis versus Outside Basis. Get this wrong on the exam, and you will miss multiple questions. Get it right, and you will breeze through partnership problems.
+
+Let me start with why partnerships are so different from S-Corps when it comes to debt. In a partnership, partners are personally liable for partnership debts. This is especially true in a general partnership, where every partner can be held responsible for the entire debt of the partnership. Because of this personal liability, the tax code allows partners to include their share of partnership liabilities in their basis.
+
+This is a massive advantage. It means you can potentially deduct losses that exceed your actual cash investment, because your basis includes debt you are responsible for but have not personally paid.
+
+Let me define our two key terms. "Outside Basis" is your personal basis in your partnership interest. Think of it as your ticket into and out of the partnership. Outside basis determines how much loss you can deduct, the tax treatment of distributions you receive, and your gain or loss when you sell your partnership interest.
+
+"Inside Basis" is the partnership's basis in its assets. This is the basis the partnership uses to calculate depreciation, determine gain or loss on asset sales, and allocate deductions. Inside basis belongs to the partnership as an entity, not to you personally.
+
+Here is a simple way to remember it: Outside basis is YOUR basis. Inside basis is the PARTNERSHIP's basis.
+
+Now let's talk about how outside basis works. I use the BASE mnemonic to remember the calculation. B-A-S-E.
+
+B is for Beginning Basis. This is your outside basis at the start of the year. If you are a new partner, this is typically what you contributed to get your partnership interest.
+
+A is for Additions. You add several things to your basis: your share of partnership income, including ordinary income and separately stated items like capital gains. You add any additional contributions you make during the year. And critically, you add your share of any increase in partnership liabilities.
+
+S is for Subtractions. You subtract: your share of partnership losses and deductions, any distributions you receive from the partnership, and your share of any decrease in partnership liabilities.
+
+E is for Ending Basis. This is your outside basis at year end, which becomes next year's beginning basis.
+
+Let me give you a concrete example. You contribute $30,000 cash to become a 50% partner in a new partnership. Your beginning outside basis is $30,000. During the year, the partnership borrows $100,000 from a bank. Your 50% share of that liability is $50,000, which increases your basis to $80,000.
+
+Now the partnership has a terrible year and loses $70,000. Your 50% share of the loss is $35,000. Can you deduct it? Absolutely. Your basis is $80,000, which is more than enough to absorb the $35,000 loss. After the loss, your basis is $45,000.
+
+Compare this to an S-Corp. If you contributed $30,000 to an S-Corp that then borrowed $100,000 from a bank, your basis would still be only $30,000. You could only deduct $30,000 of the loss, and the remaining $5,000 would be suspended.
+
+This is why many tax advisors prefer partnership taxation for businesses that expect early losses. The liability basis rules are much more favorable.
+
+Now let's discuss the different types of partnership liabilities and how they affect basis. This is heavily tested on the exam.
+
+Liabilities fall into two categories: recourse and nonrecourse.
+
+Recourse liabilities are debts where at least one partner bears personal liability beyond their investment in the partnership. The partner who would bear the economic risk of loss if the partnership could not pay gets to include that liability in their basis.
+
+For example, if Partner A personally guarantees a partnership loan, Partner A gets to add that entire liability to their outside basis, even if they are only a 30% partner. The economic risk of loss determines who gets the basis, not the profit-sharing ratio.
+
+Nonrecourse liabilities are debts where no partner is personally liable. Typically these are loans secured only by partnership property. If the partnership defaults, the lender can seize the property but cannot go after the partners personally.
+
+Nonrecourse liabilities are generally allocated among partners based on their profit-sharing ratios. So a 50% partner would get 50% of nonrecourse liabilities added to their basis.
+
+There is also a special category called "qualified nonrecourse financing." This applies to real estate activities and is allocated like nonrecourse debt but gets special treatment under the at-risk rules, which we will cover in another video.
+
+Now here is an exam trap: what happens when partnership liabilities decrease? If the partnership pays off debt, your basis goes DOWN by your share of that debt reduction. And if the decrease brings your basis below zero, you have a problem.
+
+Remember, basis can never go below zero. If a liability decrease would push your basis negative, you have a deemed distribution. That deemed distribution is taxable as a capital gain to the extent it exceeds your remaining basis.
+
+Example: Your outside basis is $20,000, which includes $15,000 from your share of partnership debt. The partnership refinances and pays off that debt. Your share of the liability decrease is $15,000. Your basis goes from $20,000 down to $5,000. No problem there.
+
+But what if your basis was only $10,000 and your share of the paid-off debt was $15,000? Your basis would go to negative $5,000, which is not allowed. Instead, we treat it as a $5,000 deemed distribution in excess of basis. That $5,000 is taxable as capital gain.
+
+This trips up many students because they are not expecting a tax bill when no actual cash was distributed.
+
+Let's talk about contributions to a partnership. When you contribute property to a partnership, your basis in the partnership interest equals your basis in the property contributed. This is a carryover basis concept.
+
+If you contribute land with a basis of $40,000 and a fair market value of $100,000, your outside basis is $40,000, not $100,000. The partnership takes a carryover basis too. This is inside basis. The partnership's basis in that land is also $40,000.
+
+But wait, what if there is a liability attached to the property? Say the land has a $30,000 mortgage. When you contribute the land, the partnership assumes the mortgage. You are relieved of $30,000 of debt. That debt relief is treated like a distribution to you, reducing your basis.
+
+So your calculation is: $40,000 carryover basis, minus $30,000 debt relief, equals $10,000 starting outside basis. Then, you add back your share of the liability assumed by the partnership based on your ownership percentage. If you are a 50% partner, you add back $15,000, making your basis $25,000.
+
+These multi-step calculations involving contributed property with liabilities are exam favorites. Practice them until they become automatic.
+
+Let me give you a key exam tip on inside versus outside basis. When a question asks about a partner's ability to deduct losses, they want outside basis. When a question asks about depreciation calculations or gain on sale of partnership property, they likely want inside basis.
+
+Also remember that built-in gains and losses from contributed property stay with the contributing partner for allocation purposes. If you contribute property with $60,000 of built-in gain and the partnership later sells it, that $60,000 gain is specially allocated to you, not split among all partners.
+
+To summarize: Outside basis is your personal basis in the partnership interest. Inside basis is the partnership's basis in its assets. Use the BASE formula to calculate outside basis. Partners can include their share of partnership liabilities in basis, which is a huge advantage over S-Corps. Recourse liabilities are allocated based on economic risk of loss. Nonrecourse liabilities are allocated based on profit-sharing ratios. And always watch for liability decreases that can trigger deemed distributions.
+
+In our next lesson, we will step back and look at entity classification, specifically the check-the-box rules that determine whether your business is taxed as a partnership, corporation, or disregarded entity in the first place.
+
+See you in the next video.

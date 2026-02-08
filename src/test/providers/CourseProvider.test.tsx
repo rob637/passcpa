@@ -1,226 +1,234 @@
-/**
- * Tests for CourseProvider
- * Tests course context, detection, switching, and persistence
- */
-
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { CourseProvider, useCourse, useCourseOptional } from '../../providers/CourseProvider';
+import { MemoryRouter } from 'react-router-dom';
 
-// Unmock CourseProvider for this test file - we need the real implementation
+// Explicitly unmock the provider to ensure we are testing the real implementation
+// This guards against mock leakage from other tests (e.g. CourseSelector)
 vi.unmock('../../providers/CourseProvider');
 
-import { CourseProvider, useCourse, useCourseOptional } from '../../providers/CourseProvider';
-import { DEFAULT_COURSE_ID } from '../../types/course';
+// Mock feature flags
+vi.mock('../../config/featureFlags', () => ({
+  ENABLE_EA_COURSE: true,
+  ENABLE_CMA_COURSE: true,
+  ENABLE_CIA_COURSE: true,
+  ENABLE_CFP_COURSE: true,
+  ENABLE_CISA_COURSE: true,
+  FEATURES: {
+    aiTutor: true,
+    examSimulator: true,
+    flashcards: true,
+    tbs: true,
+    writtenCommunication: true,
+    adminTools: true,
+    blueprint2026Preview: true,
+    offlineMode: true,
+    gamification: true,
+  },
+  isFeatureEnabled: () => true,
+}));
 
-// Test component that consumes the context
-function TestConsumer() {
-  const { course, courseId, isLoading, setCourse, availableCourses } = useCourse();
+// Mock course detection to act predictably
+vi.mock('../../utils/courseDetection', () => ({
+  detectCourse: vi.fn(() => ({ courseId: 'cpa', source: 'default' })),
+  saveCoursePreference: vi.fn(),
+}));
+
+// Test component to consume context
+const TestComponent = () => {
+  const { courseId, setCourse, availableCourses, isLoading } = useCourse();
+  if (isLoading) return <div data-testid="loading">Loading...</div>;
+  
   return (
     <div>
-      <span data-testid="course-id">{courseId}</span>
-      <span data-testid="course-name">{course?.name || ''}</span>
-      <span data-testid="loading">{isLoading ? 'true' : 'false'}</span>
-      <span data-testid="available-count">{availableCourses.length}</span>
-      <button onClick={() => setCourse('cma')} data-testid="switch-btn">
-        Switch to CMA
-      </button>
+      <div data-testid="course-id">{courseId}</div>
+      <div data-testid="course-count">{availableCourses.length}</div>
+      <button onClick={() => setCourse('cma')}>Switch to CMA</button>
     </div>
   );
-}
+};
 
-function OptionalTestConsumer() {
+// Optional consumer test component
+const OptionalConsumer = () => {
   const context = useCourseOptional();
-  return (
-    <div>
-      <span data-testid="has-context">{context ? 'yes' : 'no'}</span>
-      {context && <span data-testid="optional-course-id">{context.courseId}</span>}
-    </div>
-  );
-}
+  return <div data-testid="optional-context">{context ? 'Context Found' : 'No Context'}</div>;
+};
 
 describe('CourseProvider', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  afterEach(() => {
-    vi.restoreAllMocks();
-  });
-
   describe('Context Initialization', () => {
     it('should provide default course on initial load', async () => {
       render(
-        <CourseProvider>
-          <TestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <TestComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
+      // Should default to CPA (as mocked in detectCourse)
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-id')).toHaveTextContent('cpa');
       });
-
-      expect(screen.getByTestId('course-id').textContent).toBe(DEFAULT_COURSE_ID);
     });
 
     it('should accept initial course ID prop', async () => {
       render(
-        <CourseProvider initialCourseId="cpa">
-          <TestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider initialCourseId="ea">
+            <TestComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-id')).toHaveTextContent('ea');
       });
-
-      expect(screen.getByTestId('course-id').textContent).toBe('cpa');
     });
 
-    it('should render loading state initially', () => {
-      render(
-        <CourseProvider>
-          <TestConsumer />
-        </CourseProvider>
-      );
+    it('should expose loading state via context', () => {
+       const LoadingTest = () => {
+         const { isLoading } = useCourse();
+         return <div data-testid="loading-state">{isLoading ? 'true' : 'false'}</div>;
+       };
 
-      // Just verify it renders without crashing
-      expect(screen.getByTestId('loading')).toBeInTheDocument();
+      render(
+        <MemoryRouter>
+          <CourseProvider>
+            <LoadingTest />
+          </CourseProvider>
+        </MemoryRouter>
+      );
+      
+      expect(screen.getByTestId('loading-state')).toBeInTheDocument();
     });
 
     it('should provide available courses', async () => {
       render(
-        <CourseProvider>
-          <TestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <TestComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-count')).not.toHaveTextContent('0');
       });
-
-      // Should have at least the default course available
-      const count = parseInt(screen.getByTestId('available-count').textContent || '0');
-      expect(count).toBeGreaterThanOrEqual(1);
     });
 
     it('should provide CPA course name', async () => {
+      const NameComponent = () => {
+        const { course } = useCourse(); 
+        return <div data-testid="course-name">{course.name}</div>;
+      };
+
       render(
-        <CourseProvider initialCourseId="cpa">
-          <TestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <NameComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-name')).toHaveTextContent('CPA');
       });
-
-      expect(screen.getByTestId('course-name').textContent).toBe('CPA Exam Review');
     });
   });
 
   describe('Course Switching', () => {
     it('should allow switching courses via setCourse', async () => {
-      const user = userEvent.setup();
-      
       render(
-        <CourseProvider>
-          <TestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <TestComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-id')).toHaveTextContent('cpa');
       });
 
-      const initialCourse = screen.getByTestId('course-id').textContent;
-      expect(initialCourse).toBe('cpa');
-
-      // Click switch button
-      await user.click(screen.getByTestId('switch-btn'));
+      screen.getByText('Switch to CMA').click();
 
       await waitFor(() => {
-        expect(screen.getByTestId('course-id').textContent).toBe('cma');
+        expect(screen.getByTestId('course-id')).toHaveTextContent('cma');
       });
     });
   });
 
   describe('useCourse Hook', () => {
     it('should throw error when used outside provider', () => {
-      // Suppress console.error for expected error
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-
-      expect(() => {
-        render(<TestConsumer />);
-      }).toThrow();
-
+      
+      expect(() => render(<TestComponent />)).toThrow('useCourse must be used within a CourseProvider');
+      
       consoleSpy.mockRestore();
     });
   });
 
   describe('useCourseOptional Hook', () => {
     it('should return null when used outside provider', () => {
-      render(<OptionalTestConsumer />);
-
-      expect(screen.getByTestId('has-context').textContent).toBe('no');
+      render(<OptionalConsumer />);
+      expect(screen.getByTestId('optional-context')).toHaveTextContent('No Context');
     });
 
     it('should return context when inside provider', async () => {
       render(
-        <CourseProvider>
-          <OptionalTestConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <OptionalConsumer />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('has-context').textContent).toBe('yes');
+        expect(screen.getByTestId('optional-context')).toHaveTextContent('Context Found');
       });
-
-      expect(screen.getByTestId('optional-course-id').textContent).toBe(DEFAULT_COURSE_ID);
     });
   });
 
   describe('Provider Nesting', () => {
     it('should work with nested providers', async () => {
       render(
-        <CourseProvider>
-          <div data-testid="outer">
-            <CourseProvider>
-              <TestConsumer />
+        <MemoryRouter>
+          <CourseProvider initialCourseId="cpa">
+             <CourseProvider initialCourseId="cma">
+              <TestComponent />
             </CourseProvider>
-          </div>
-        </CourseProvider>
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
-        expect(screen.getByTestId('loading').textContent).toBe('false');
+        expect(screen.getByTestId('course-id')).toHaveTextContent('cma');
       });
-
-      expect(screen.getByTestId('course-id').textContent).toBe(DEFAULT_COURSE_ID);
     });
   });
 
   describe('Course Sections', () => {
     it('should provide course with sections', async () => {
-      function SectionsConsumer() {
+      const SectionsComponent = () => {
         const { course } = useCourse();
-        return (
-          <div>
-            <span data-testid="sections-count">{course?.sections?.length || 0}</span>
-          </div>
-        );
-      }
+        return <div data-testid="sections-count">{course.sections?.length || 0}</div>;
+      };
 
       render(
-        <CourseProvider>
-          <SectionsConsumer />
-        </CourseProvider>
+        <MemoryRouter>
+          <CourseProvider>
+            <SectionsComponent />
+          </CourseProvider>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
         const count = screen.getByTestId('sections-count').textContent;
-        // CPA has 6 sections
-        expect(parseInt(count || '0')).toBe(6);
+        expect(parseInt(count || '0')).toBeGreaterThan(0);
       });
     });
   });

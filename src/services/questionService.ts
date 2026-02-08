@@ -2,12 +2,34 @@
 // Local-first approach: Questions are stored in TypeScript files for fast loading
 // and offline support. Firebase is used only for user progress tracking.
 
-import { Question, ExamSection, Difficulty } from '../types';
+import { Question, AllExamSections, ExamSection, Difficulty } from '../types';
 import logger from '../utils/logger';
 import { getSmartQuestionSelection, CurriculumFilterOptions } from './questionHistoryService';
+import { COURSES } from '../courses';
+import { CourseId } from '../types/course';
+
+/**
+ * Get all section IDs for a given course
+ */
+function getSectionsForCourse(courseId: CourseId): string[] {
+  const course = COURSES[courseId];
+  if (!course) return [];
+  return course.sections.map(s => s.id);
+}
+
+/**
+ * Get all section IDs across all courses
+ */
+function getAllSections(): string[] {
+  const allSections: string[] = [];
+  for (const courseId of Object.keys(COURSES) as CourseId[]) {
+    allSections.push(...getSectionsForCourse(courseId));
+  }
+  return allSections;
+}
 
 interface FetchQuestionsOptions {
-  section?: ExamSection;
+  section?: AllExamSections | string;
   topicId?: string;
   blueprintArea?: string;
   blueprintGroup?: string;
@@ -28,32 +50,121 @@ interface FetchQuestionsOptions {
 }
 
 // Cache for loaded questions to avoid re-importing
+// Uses LRU eviction to prevent memory leaks on mobile devices
 let questionCache: Record<string, Question[]> = {};
+let cacheAccessOrder: string[] = []; // Track access order for LRU eviction
+const MAX_CACHED_SECTIONS = 8; // Limit cache to ~8 sections (~3-4MB max)
 
 /**
- * Load questions for a section (with caching)
+ * Load questions for a section (with LRU caching)
+ * Evicts oldest sections when cache exceeds MAX_CACHED_SECTIONS
  */
-async function loadSectionQuestions(section: ExamSection): Promise<Question[]> {
+async function loadSectionQuestions(section: string): Promise<Question[]> {
   if (questionCache[section]) {
+    // Move to end of access order (most recently used)
+    cacheAccessOrder = cacheAccessOrder.filter(s => s !== section);
+    cacheAccessOrder.push(section);
     return questionCache[section];
   }
 
   try {
-    const localData = await import('../data/questions');
     let questions: Question[] = [];
 
-    switch (section) {
-      case 'FAR': questions = localData.FAR_ALL || []; break;
-      case 'AUD': questions = localData.AUD_ALL || []; break;
-      case 'REG': questions = localData.REG_ALL || []; break;
-      case 'BEC': questions = localData.BEC_ALL || []; break;
-      case 'BAR': questions = localData.BAR_ALL || []; break;
-      case 'ISC': questions = localData.ISC_ALL || []; break;
-      case 'TCP': questions = localData.TCP_ALL || []; break;
-      default: questions = [];
+    // CPA sections
+    if (['FAR', 'AUD', 'REG', 'BEC', 'BAR', 'ISC', 'TCP'].includes(section)) {
+      const localData = await import('../data/cpa/questions');
+      switch (section) {
+        case 'FAR': questions = localData.FAR_ALL || []; break;
+        case 'AUD': questions = localData.AUD_ALL || []; break;
+        case 'REG': questions = localData.REG_ALL || []; break;
+        case 'BEC': questions = localData.BEC_ALL || []; break;
+        case 'BAR': questions = localData.BAR_ALL || []; break;
+        case 'ISC': questions = localData.ISC_ALL || []; break;
+        case 'TCP': questions = localData.TCP_ALL || []; break;
+        default: questions = [];
+      }
+    }
+    // EA sections
+    else if (['SEE1', 'SEE2', 'SEE3'].includes(section)) {
+      try {
+        const eaData = await import('../data/ea/questions');
+        switch (section) {
+          case 'SEE1': questions = eaData.SEE1_ALL || []; break;
+          case 'SEE2': questions = eaData.SEE2_ALL || []; break;
+          case 'SEE3': questions = eaData.SEE3_ALL || []; break;
+          default: questions = [];
+        }
+      } catch {
+        questions = [];
+      }
+    }
+    // CMA sections
+    else if (['CMA1', 'CMA2'].includes(section)) {
+      try {
+        const cmaData = await import('../data/cma/questions');
+        switch (section) {
+          case 'CMA1': questions = cmaData.CMA_PART1_QUESTIONS || []; break;
+          case 'CMA2': questions = cmaData.CMA_PART2_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch {
+        questions = [];
+      }
+    }
+    // CIA sections
+    else if (['CIA1', 'CIA2', 'CIA3'].includes(section)) {
+      try {
+        const ciaData = await import('../data/cia/questions');
+        switch (section) {
+          case 'CIA1': questions = ciaData.CIA1_QUESTIONS || []; break;
+          case 'CIA2': questions = ciaData.CIA2_QUESTIONS || []; break;
+          case 'CIA3': questions = ciaData.CIA3_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch (e) {
+        console.error('Failed to load CIA data', e);
+        questions = [];
+      }
+    }
+    // CISA sections
+    else if (['CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'].includes(section)) {
+      try {
+        const cisaData = await import('../data/cisa/questions');
+        switch (section) {
+          case 'CISA1': questions = cisaData.CISA1_QUESTIONS || []; break;
+          case 'CISA2': questions = cisaData.CISA2_QUESTIONS || []; break;
+          case 'CISA3': questions = cisaData.CISA3_QUESTIONS || []; break;
+          case 'CISA4': questions = cisaData.CISA4_QUESTIONS || []; break;
+          case 'CISA5': questions = cisaData.CISA5_QUESTIONS || []; break;
+          default: questions = [];
+        }
+      } catch (e) {
+        console.error('Failed to load CISA data', e);
+        questions = [];
+      }
+    }
+    // CFP Sections
+    else if (section.startsWith('CFP-')) {
+        try {
+            const cfpData = await import('../data/cfp/questions');
+            // CFP uses mixed question formats - cast to Question[] for compatibility
+            questions = (cfpData.getCFPQuestions(section) || []) as Question[];
+        } catch (err) {
+            console.error('Failed to load CFP questions', err);
+            questions = [];
+        }
+    }
+
+    // LRU eviction: remove oldest sections if cache is full
+    while (cacheAccessOrder.length >= MAX_CACHED_SECTIONS) {
+      const oldest = cacheAccessOrder.shift();
+      if (oldest) {
+        delete questionCache[oldest];
+      }
     }
 
     questionCache[section] = questions;
+    cacheAccessOrder.push(section);
     return questions;
   } catch (err) {
     logger.error(`Failed to load questions for ${section}:`, err);
@@ -86,6 +197,7 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     excludeIds = [],
     userId,
     useSmartSelection = false,
+    courseId,
     examDate,
     curriculumOptions, // NEW: Curriculum filtering options
   } = options;
@@ -96,8 +208,10 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
     if (section) {
       candidates = await loadSectionQuestions(section);
     } else {
-      // Load all sections if no specific section requested
-      const sections: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
+      // Load all sections for the requested course, or all courses if no courseId
+      const sections = courseId 
+        ? getSectionsForCourse(courseId as CourseId)
+        : getAllSections();
       for (const s of sections) {
         const sectionQuestions = await loadSectionQuestions(s);
         candidates.push(...sectionQuestions);
@@ -192,10 +306,10 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
  */
 export async function getQuestionById(questionId: string): Promise<Question | null> {
   try {
-    // Search through all sections
-    const sections: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
+    // Search through all sections across all courses
+    const allSections = getAllSections();
     
-    for (const section of sections) {
+    for (const section of allSections) {
       const questions = await loadSectionQuestions(section);
       const found = questions.find(q => q.id === questionId);
       if (found) return found;
@@ -254,10 +368,10 @@ export async function getQuestionCount(section?: ExamSection): Promise<number> {
       return questions.length;
     }
     
-    // Count all sections
-    const sections: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
+    // Count all sections across all courses
+    const allSections = getAllSections();
     let total = 0;
-    for (const s of sections) {
+    for (const s of allSections) {
       const questions = await loadSectionQuestions(s);
       total += questions.length;
     }
@@ -273,13 +387,13 @@ export async function getQuestionCount(section?: ExamSection): Promise<number> {
  */
 export async function getQuestionStats(): Promise<{ total: number; bySection: Record<string, number> }> {
   try {
-    const sections: ExamSection[] = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP'];
+    const allSections = getAllSections();
     const stats: { total: number; bySection: Record<string, number> } = {
       total: 0,
       bySection: {},
     };
     
-    for (const section of sections) {
+    for (const section of allSections) {
       const questions = await loadSectionQuestions(section);
       stats.bySection[section] = questions.length;
       stats.total += questions.length;
@@ -294,9 +408,34 @@ export async function getQuestionStats(): Promise<{ total: number; bySection: Re
 
 /**
  * Clear the question cache (useful for testing or forcing reload)
+ * Also resets the LRU access order tracking
  */
 export function clearQuestionCache(): void {
   questionCache = {};
+  cacheAccessOrder = [];
+}
+
+/**
+ * Get cache statistics for debugging/monitoring
+ * Useful for verifying memory management on mobile devices
+ */
+export function getQuestionCacheStats(): {
+  sectionsCount: number;
+  sections: string[];
+  totalQuestions: number;
+  maxSections: number;
+} {
+  const sections = Object.keys(questionCache);
+  const totalQuestions = sections.reduce(
+    (sum, section) => sum + (questionCache[section]?.length || 0),
+    0
+  );
+  return {
+    sectionsCount: sections.length,
+    sections: [...cacheAccessOrder], // Return in LRU order
+    totalQuestions,
+    maxSections: MAX_CACHED_SECTIONS,
+  };
 }
 
 /**

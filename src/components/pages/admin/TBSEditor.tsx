@@ -1,6 +1,6 @@
 /**
  * TBS Editor - View-only admin interface for Task-Based Simulations
- * TBS are stored in TypeScript files - edit src/data/tbs/ and redeploy
+ * TBS are stored in TypeScript files - edit src/data/cpa/tbs/ and redeploy
  */
 
 import { useState, useEffect, useCallback } from 'react';
@@ -18,8 +18,11 @@ import {
   Eye,
   Database,
   Info,
+  X,
 } from 'lucide-react';
 import clsx from 'clsx';
+import { Button } from '../../common/Button';
+import { Card } from '../../common/Card';
 
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
@@ -123,7 +126,7 @@ const TBSEditor = () => {
             <div>
               <h3 className="font-semibold text-orange-900 dark:text-orange-100">Local TBS Library</h3>
               <p className="text-sm text-orange-700 dark:text-orange-300 mt-1">
-                TBS are stored in TypeScript files at <code className="bg-orange-100 dark:bg-orange-900 px-1 rounded">src/data/tbs/</code>.
+                TBS are stored in TypeScript files at <code className="bg-orange-100 dark:bg-orange-900 px-1 rounded">src/data/cpa/tbs/</code>.
                 To add or edit TBS, modify the files and redeploy.
               </p>
             </div>
@@ -153,7 +156,7 @@ const TBSEditor = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-4 mb-6 shadow-sm border border-gray-100 dark:border-slate-700">
+        <Card className="p-4 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[200px]">
               <div className="relative">
@@ -178,10 +181,10 @@ const TBSEditor = () => {
               ))}
             </select>
           </div>
-        </div>
+        </Card>
 
         {/* TBS List */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-slate-700">
+        <Card noPadding className="overflow-hidden">
           <div className="p-4 border-b border-slate-200 dark:border-slate-700">
             <h2 className="font-semibold text-slate-900 dark:text-slate-100">
               Task-Based Simulations ({filteredTBS.length})
@@ -224,19 +227,20 @@ const TBSEditor = () => {
                         {tbs.scenario?.substring(0, 150)}...
                       </p>
                     </div>
-                    <button
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       onClick={() => setViewingTBS(tbs)}
-                      className="p-2 text-slate-600 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-orange-900/30 rounded-lg"
-                      title="View TBS details"
+                      aria-label="View TBS details"
                     >
                       <Eye className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))
             )}
           </div>
-        </div>
+        </Card>
       </main>
 
       {/* View TBS Modal */}
@@ -245,12 +249,14 @@ const TBSEditor = () => {
           <div className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white dark:bg-slate-800 p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
               <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">TBS Details</h2>
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setViewingTBS(null)}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-600"
+                aria-label="Close modal"
               >
-                ✕
-              </button>
+                <X className="w-5 h-5" />
+              </Button>
             </div>
 
             <div className="p-6 space-y-4">

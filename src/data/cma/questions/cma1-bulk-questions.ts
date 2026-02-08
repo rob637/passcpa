@@ -1,0 +1,151 @@
+import { Question } from '../../../types';
+
+export const CMA1_BULK_QUESTIONS: Question[] = [
+  // --- A. External Financial Reporting Decisions ---
+  {
+    id: 'cma1-bulk-a-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'Which of the following financial statements provides information about a company\'s financial position at a specific point in time?',
+    options: [
+      'Income Statement',
+      'Statement of Cash Flows',
+      'Balance Sheet',
+      'Statement of Shareholders\' Equity',
+    ],
+    correctAnswer: 2,
+    explanation: 'The Balance Sheet reports assets, liabilities, and equity at a specific date (point in time), whereas other statements cover a period of time.',
+    topic: 'Financial Reporting',
+    difficulty: 'easy',
+    blueprintArea: 'CMA1-A',
+  },
+  {
+    id: 'cma1-bulk-a-002',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'According to US GAAP, how should Research and Development (R&D) costs generally be treated?',
+    options: [
+      'Capitalized as an intangible asset',
+      'Expensed as incurred',
+      'Expensed only if unsuccessful',
+      'Amortized over 5 years',
+    ],
+    correctAnswer: 1,
+    explanation: 'Unless specifically recoverable (like software development after feasibility), R&D costs must be expensed as incurred due to the uncertainty of future benefits.',
+    topic: 'Financial Reporting',
+    difficulty: 'medium',
+    blueprintArea: 'CMA1-A',
+  },
+
+  // --- B. Planning, Budgeting, and Forecasting ---
+  {
+    id: 'cma1-bulk-b-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'Which budgeting approach involves adding a new month to the end of the budget as the current month expires?',
+    options: [
+      'Zero-based budgeting',
+      'Rolling (Continuous) budgeting',
+      'Incremental budgeting',
+      'Activity-based budgeting',
+    ],
+    correctAnswer: 1,
+    explanation: 'A rolling or continuous budget is one that is always available for a specified future period by adding a month, quarter, or year to the period as the current one expires.',
+    topic: 'Budgeting',
+    difficulty: 'easy',
+    blueprintArea: 'CMA1-B',
+  },
+  {
+    id: 'cma1-bulk-b-002',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'When using regression analysis to forecast costs, the "R-squared" value represents:',
+    options: [
+      'The slope of the regression line',
+      'The fixed cost component',
+      'The percentage of variation in the dependent variable explained by the independent variable',
+      'The standard error of the estimate',
+    ],
+    correctAnswer: 2,
+    explanation: 'R-squared (coefficient of determination) measures the goodness of fit. A value closer to 1.0 means the independent variable (e.g., machine hours) explains most of the change in the dependent variable (e.g., electricity cost).',
+    topic: 'Forecasting',
+    difficulty: 'medium',
+    blueprintArea: 'CMA1-B',
+  },
+
+  // --- C. Performance Management ---
+  {
+    id: 'cma1-bulk-c-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'A responsibility center where the manager is held accountable for both revenues and costs is called a:',
+    options: [
+      'Cost Center',
+      'Revenue Center',
+      'Profit Center',
+      'Investment Center',
+    ],
+    correctAnswer: 2,
+    explanation: 'A Profit Center manager is responsible for both inputs (costs) and outputs (revenues), but not the capital investment.',
+    topic: 'Performance Management',
+    difficulty: 'easy',
+    blueprintArea: 'CMA1-C',
+  },
+
+  // --- D. Cost Management ---
+  {
+    id: 'cma1-bulk-d-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'In Activity-Based Costing (ABC), a "cost driver" is:',
+    options: [
+      'The total amount of overhead to be allocated',
+      'A factor that causes a change in the cost of an activity',
+      'The grouping of similar costs',
+      'The direct labor hours used in production',
+    ],
+    correctAnswer: 1,
+    explanation: 'A cost driver is an event or activity that causes the cost to be incurred (e.g., number of setups changes the total setup cost).',
+    topic: 'Cost Management',
+    difficulty: 'easy',
+    blueprintArea: 'CMA1-D',
+  },
+
+  // --- E. Internal Controls ---
+  {
+    id: 'cma1-bulk-e-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'Which of the following is NOT a component of the COSO Internal Control Framework?',
+    options: [
+      'Risk Assessment',
+      'Strategic Planning',
+      'Control Environment',
+      'Monitoring Activities',
+    ],
+    correctAnswer: 1,
+    explanation: 'Strategic Planning is not one of the 5 COSO Internal Control components (CRIME). The components are Control environment, Risk assessment, Information/communication, Monitoring, and Existing control activities.',
+    topic: 'Internal Controls',
+    difficulty: 'medium',
+    blueprintArea: 'CMA1-E',
+  },
+
+  // --- F. Technology and Analytics ---
+  {
+    id: 'cma1-bulk-f-001',
+    section: 'CMA1',
+    subtopic: 'General',
+    question: 'Which type of data analytics answers the question "What is likely to happen in the future?"',
+    options: [
+      'Descriptive Analytics',
+      'Diagnostic Analytics',
+      'Predictive Analytics',
+      'Prescriptive Analytics',
+    ],
+    correctAnswer: 2,
+    explanation: 'Predictive analytics uses statistical models and forecasting techniques to understand the future. Descriptive looks at past; Diagnostic asks why; Prescriptive suggests actions.',
+    topic: 'Technology',
+    difficulty: 'easy',
+    blueprintArea: 'CMA1-F',
+  },
+];

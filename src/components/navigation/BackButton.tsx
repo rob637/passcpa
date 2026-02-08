@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigation } from './NavigationProvider';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
 import clsx from 'clsx';
 
 export interface BackButtonProps {
@@ -21,8 +22,11 @@ export interface BackButtonProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-// Fallback destinations based on current path patterns
+// Fallback destinations based on current path patterns (course-aware)
 const getFallbackDestination = (pathname: string): { path: string; label: string } => {
+  // Get course-aware home path
+  const coursehomePath = getHomePathFromLocation(pathname);
+  
   // Admin pages
   if (pathname.startsWith('/admin')) {
     if (pathname.includes('/edit') || pathname.includes('/new')) {
@@ -36,17 +40,17 @@ const getFallbackDestination = (pathname: string): { path: string; label: string
     return { path: '/lessons', label: 'Lessons' };
   }
   
-  // Study activities → Home
+  // Study activities → Course Home
   if (pathname.startsWith('/practice') || 
       pathname.startsWith('/flashcards') || 
       pathname.startsWith('/tbs') ||
       pathname.startsWith('/quiz')) {
-    return { path: '/home', label: 'Home' };
+    return { path: coursehomePath, label: 'Home' };
   }
   
-  // AI Tutor → Home (or session origin)
+  // AI Tutor → Course Home (or session origin)
   if (pathname.startsWith('/tutor') || pathname.startsWith('/ask-vory')) {
-    return { path: '/home', label: 'Home' };
+    return { path: coursehomePath, label: 'Home' };
   }
   
   // Settings sub-pages → Settings
@@ -54,20 +58,20 @@ const getFallbackDestination = (pathname: string): { path: string; label: string
     return { path: '/settings', label: 'Settings' };
   }
   
-  // Social pages → Home
+  // Social pages → Course Home
   if (pathname.startsWith('/community') || 
       pathname.startsWith('/achievements') || 
       pathname.startsWith('/leaderboard')) {
-    return { path: '/home', label: 'Home' };
+    return { path: coursehomePath, label: 'Home' };
   }
   
-  // Progress → Home
+  // Progress → Course Home
   if (pathname.startsWith('/progress')) {
-    return { path: '/home', label: 'Home' };
+    return { path: coursehomePath, label: 'Home' };
   }
   
-  // Default
-  return { path: '/home', label: 'Home' };
+  // Default - Course Home
+  return { path: coursehomePath, label: 'Home' };
 };
 
 export const BackButton: React.FC<BackButtonProps> = ({
@@ -90,10 +94,11 @@ export const BackButton: React.FC<BackButtonProps> = ({
       return { path: to, label: label || 'Back' };
     }
     
-    // Daily plan session - always return to home/plan
+    // Daily plan session - always return to course-specific home
     if (session.mode === 'daily-plan') {
+      const courseHome = getHomePathFromLocation(location.pathname);
       return { 
-        path: '/home', 
+        path: courseHome, 
         label: label || 'Daily Plan' 
       };
     }

@@ -19,10 +19,11 @@ import {
   Hash,
   Filter,
 } from 'lucide-react';
+import { Button } from './common/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useCourse } from '../providers/CourseProvider';
 import { fetchQuestions } from '../services/questionService';
-import { CPA_SECTIONS } from '../config/examConfig';
+import { getSectionDisplayInfo } from '../utils/sectionUtils';
 import clsx from 'clsx';
 import { Question, ExamSection } from '../types';
 import logger from '../utils/logger';
@@ -47,7 +48,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
 }) => {
   const navigate = useNavigate();
   const { userProfile } = useAuth();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   
   const [query, setQuery] = useState('');
   const [section, setSection] = useState<ExamSection>(
@@ -177,7 +178,7 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
   
   if (!isOpen) return null;
   
-  const sectionInfo = CPA_SECTIONS[section];
+  const sectionInfo = getSectionDisplayInfo(section, courseId);
   
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">
@@ -196,12 +197,13 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
               <Search className="w-6 h-6 text-primary-600" />
               Question Search
             </h2>
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={onClose}
-              className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
             >
-              <X className="w-5 h-5 text-slate-600" />
-            </button>
+              <X className="w-5 h-5" />
+            </Button>
           </div>
           
           {/* Search Input */}
@@ -216,12 +218,14 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
               autoFocus
             />
             {query && (
-              <button
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-600"
+                className="absolute right-4 top-1/2 -translate-y-1/2"
               >
                 <X className="w-4 h-4" />
-              </button>
+              </Button>
             )}
           </div>
           
@@ -233,9 +237,9 @@ const QuestionSearch: React.FC<QuestionSearchProps> = ({
               onChange={(e) => setSection(e.target.value as ExamSection)}
               className="px-3 py-2 bg-slate-100 dark:bg-slate-700 border-0 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300"
             >
-              {Object.entries(CPA_SECTIONS).map(([key, s]) => (
-                <option key={key} value={key}>
-                  {(s as { shortName: string }).shortName}
+              {course?.sections.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.shortName}
                 </option>
               ))}
             </select>

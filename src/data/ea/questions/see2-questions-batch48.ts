@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 48 (Q471-480)
+ * Business Tax Credits - Additional Credits
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH48: Question[] = [
+  // ==========================================
+  // SEE2-3: Additional Business Credits
+  // ==========================================
+  {
+    id: 'see2-471',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'General Business Credit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The General Business Credit (Form 3800) is:',
+    options: [
+      'A single tax credit',
+      'A combination of multiple business credits claimed together',
+      'Only available to corporations',
+      'A refundable credit'
+    ],
+    correctAnswer: 1,
+    explanation: 'The General Business Credit combines numerous business credits (research, work opportunity, disabled access, etc.) into one limitation calculation on Form 3800.',
+    reference: 'IRC §38',
+  },
+  {
+    id: 'see2-472',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Credit Limitation',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The General Business Credit is generally limited to:',
+    options: [
+      'Any amount of credit generated',
+      'Net income tax minus the greater of tentative minimum tax or 25% of regular tax liability over $25,000',
+      '$100,000 per year',
+      '50% of tax liability'
+    ],
+    correctAnswer: 1,
+    explanation: 'The credit is limited to net income tax minus the greater of: (1) tentative minimum tax, or (2) 25% of regular tax liability exceeding $25,000. Excess credits carry back 1 year and forward 20 years.',
+    reference: 'IRC §38(c)',
+  },
+  {
+    id: 'see2-473',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Small Employer Health Insurance Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The small employer health insurance credit is available to employers with:',
+    options: [
+      'Any number of employees',
+      'Fewer than 25 full-time equivalent employees with average wages under $56,000',
+      'Fewer than 100 employees',
+      'Only corporations'
+    ],
+    correctAnswer: 1,
+    explanation: 'The credit is for small employers with <25 FTEs, average annual wages below the threshold (~$56,000 for 2024), and who pay at least 50% of employee-only health insurance premiums.',
+    reference: 'IRC §45R',
+  },
+  {
+    id: 'see2-474',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Paid Family Leave Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The employer credit for paid family and medical leave requires:',
+    options: [
+      'Paying employees at least 50% of normal wages during leave',
+      'A written policy providing at least 2 weeks of paid leave at 50%+ of wages to qualifying employees',
+      'All employees receive 12 weeks leave',
+      'Only full-time employees'
+    ],
+    correctAnswer: 1,
+    explanation: 'Employers with a written policy providing at least 2 weeks of paid family/medical leave to qualifying employees (at 50%+ of wages) may claim a credit of 12.5% to 25% of wages paid during leave.',
+    reference: 'IRC §45S',
+  },
+  {
+    id: 'see2-475',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Empowerment Zone Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Empowerment Zone Employment Credit provides a credit for:',
+    options: [
+      'Any wages paid',
+      'Qualified zone wages paid to employees who live and work in designated empowerment zones',
+      'Startup costs only',
+      'Non-wage compensation'
+    ],
+    correctAnswer: 1,
+    explanation: 'The Empowerment Zone Employment Credit provides 20% of qualified zone wages (up to $15,000 per employee) for employees who both live and work in a designated empowerment zone.',
+    reference: 'IRC §1396',
+  },
+  {
+    id: 'see2-476',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Energy Credits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Investment Tax Credit (ITC) for energy property provides credits for:',
+    options: [
+      'Any business equipment',
+      'Qualifying energy property such as solar, fuel cells, and other clean energy systems',
+      'Utility bills only',
+      'Vehicle purchases'
+    ],
+    correctAnswer: 1,
+    explanation: 'The ITC provides a credit for investment in qualifying energy property including solar, fuel cells, geothermal, small wind, and other clean energy technologies at varying percentages.',
+    reference: 'IRC §48',
+  },
+  {
+    id: 'see2-477',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Credit Carryover',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Unused General Business Credits may be:',
+    options: [
+      'Carried back 1 year and forward 20 years',
+      'Carried forward 5 years only',
+      'Lost if not used currently',
+      'Refunded'
+    ],
+    correctAnswer: 0,
+    explanation: 'Unused General Business Credits are first carried back 1 year, then forward up to 20 years. Credits are used on a FIFO basis, with oldest credits applied first.',
+    reference: 'IRC §39',
+  },
+  {
+    id: 'see2-478',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Rehabilitation Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The rehabilitation tax credit for certified historic structures is:',
+    options: [
+      '10% of qualified expenditures',
+      '20% of qualified rehabilitation expenditures claimed over 5 years',
+      '30% of all building costs',
+      '25% of labor costs only'
+    ],
+    correctAnswer: 1,
+    explanation: 'The rehabilitation credit for certified historic structures is 20% of qualified rehabilitation expenditures, claimed ratably over 5 years (4% per year). The 10% credit for pre-1936 buildings was eliminated.',
+    reference: 'IRC §47',
+  },
+  {
+    id: 'see2-479',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'New Markets Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The New Markets Tax Credit encourages investment in:',
+    options: [
+      'Foreign markets',
+      'Low-income communities through qualified community development entities',
+      'High-technology businesses',
+      'Real estate only'
+    ],
+    correctAnswer: 1,
+    explanation: 'The NMTC provides a 39% credit (claimed over 7 years) for qualified equity investments in Community Development Entities serving low-income communities.',
+    reference: 'IRC §45D',
+  },
+  {
+    id: 'see2-480',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Credit Pass-Through',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Business credits generated by S corporations and partnerships:',
+    options: [
+      'Are used at the entity level',
+      'Pass through to shareholders/partners who claim them on their returns',
+      'Are refunded to the entity',
+      'Must be carried forward at entity level'
+    ],
+    correctAnswer: 1,
+    explanation: 'Business credits of pass-through entities (S corps, partnerships) flow through to owners on Schedule K-1. Each owner claims their share subject to individual limitations.',
+    reference: 'IRC §38; IRC §1366; IRC §702',
+  },
+];

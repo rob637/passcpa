@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 3: Representation, Practices, and Procedures - Batch 25 (Q241-250)
+ * IRS Levies and Seizures
+ */
+
+import { Question } from '../../../types';
+
+export const SEE3_QUESTIONS_BATCH25: Question[] = [
+  // ==========================================
+  // SEE3: IRS Levies and Seizures
+  // ==========================================
+  {
+    id: 'see3-241',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Levy Authority',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Under IRC §6331, the IRS may levy:',
+    options: [
+      'Only bank accounts',
+      'All property or rights to property belonging to the taxpayer',
+      'Only wages',
+      'Only real estate'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6331 authorizes the IRS to levy on all property and rights to property (except exemptions) belonging to a person who neglects or refuses to pay within 10 days of notice and demand.',
+    reference: 'IRC §6331(a)',
+  },
+  {
+    id: 'see3-242',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Notice Requirement',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Before levying, the IRS must provide:',
+    options: [
+      'No notice',
+      'Notice of intent to levy and CDP hearing rights at least 30 days before levy',
+      '10 days notice only',
+      'Written consent from the taxpayer'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6330 requires the IRS to provide a Final Notice of Intent to Levy (Letter 1058 or LT11) and CDP hearing rights at least 30 days before levy action.',
+    reference: 'IRC §6330(a)',
+  },
+  {
+    id: 'see3-243',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Exempt Property',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Property exempt from IRS levy includes:',
+    options: [
+      'All personal property',
+      'Necessary clothing, school books, unemployment benefits, and certain tools of trade',
+      'Any property the taxpayer designates',
+      'Business inventory only'
+    ],
+    correctAnswer: 1,
+    explanation: 'IRC §6334 exempts: apparel, schoolbooks, fuel/provisions (up to limits), tools of trade ($12,620 for 2024), unemployment benefits, undelivered mail, workers\' comp, certain service-connected disability pay, and minimum exempt wages.',
+    reference: 'IRC §6334',
+  },
+  {
+    id: 'see3-244',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Bank Levy',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A bank levy:',
+    options: [
+      'Freezes the account permanently',
+      'Captures funds in the account on the date of levy; bank holds for 21 days before remitting',
+      'Applies to future deposits',
+      'Requires court approval'
+    ],
+    correctAnswer: 1,
+    explanation: 'A bank levy captures funds present on the levy date. The bank must hold the funds for 21 days before sending to the IRS, giving the taxpayer time to resolve issues or claim exemptions.',
+    reference: 'IRC §6332(c)',
+  },
+  {
+    id: 'see3-245',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Wage Levy',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A wage levy:',
+    options: [
+      'Takes only one paycheck',
+      'Is continuous and attaches to future wages until released',
+      'Requires employee consent',
+      'Cannot exceed 25% of wages'
+    ],
+    correctAnswer: 1,
+    explanation: 'Unlike most levies, a wage/salary levy is continuous. It attaches to each paycheck until the levy is released by the IRS (liability paid, agreement reached, or levy released).',
+    reference: 'IRC §6331(e)',
+  },
+  {
+    id: 'see3-246',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Levy Release',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The IRS must release a levy when:',
+    options: [
+      'The taxpayer asks nicely',
+      'The liability is satisfied, releasing the levy will facilitate collection, or an installment agreement is in place',
+      'One year has passed',
+      'Only by court order'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6343(a), the IRS must release a levy if: (1) liability is satisfied, (2) release will facilitate collection, (3) IA is in place, (4) economic hardship, or (5) fair market value exceeds liability and release allows collection of more than with levy.',
+    reference: 'IRC §6343(a)',
+  },
+  {
+    id: 'see3-247',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Economic Hardship',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Economic hardship for levy release purposes exists when:',
+    options: [
+      'The taxpayer doesn\'t want to pay',
+      'The levy would prevent the taxpayer from meeting basic living expenses',
+      'The taxpayer has high debt',
+      'Income exceeds expenses'
+    ],
+    correctAnswer: 1,
+    explanation: 'Economic hardship means the levy is preventing the taxpayer from meeting necessary living expenses (housing, food, transportation, medical). The IRS may release levies creating hardship.',
+    reference: 'Treas. Reg. §301.6343-1(b)(4)',
+  },
+  {
+    id: 'see3-248',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Property Seizure',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Before seizing a principal residence, the IRS must:',
+    options: [
+      'Simply issue a levy',
+      'Obtain written approval from a federal judge or magistrate',
+      'Only provide 30 days notice',
+      'Get consent from the homeowner'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6334(a)(13)(B), seizure of a principal residence requires a federal court order. The IRS must demonstrate that the tax is owed, all administrative remedies are exhausted, and no reasonable alternative exists.',
+    reference: 'IRC §6334(e)(1)',
+  },
+  {
+    id: 'see3-249',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Wrongful Levy',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'If property is wrongfully levied (belongs to someone other than the taxpayer):',
+    options: [
+      'Nothing can be done',
+      'The property owner may file an administrative claim or civil suit',
+      'Only the taxpayer may object',
+      'The sale proceeds go to the owner automatically'
+    ],
+    correctAnswer: 1,
+    explanation: 'Third parties whose property is wrongfully levied may file an administrative claim with the IRS or bring a civil action under IRC §7426 for wrongful levy.',
+    reference: 'IRC §6343(b), §7426',
+  },
+  {
+    id: 'see3-250',
+    courseId: 'ea',
+    section: 'SEE3',
+    blueprintArea: 'SEE3-3',
+    topic: 'Levies',
+    subtopic: 'Sale of Seized Property',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Seized property sold by the IRS:',
+    options: [
+      'Must sell immediately',
+      'Must give at least 10 days public notice of sale',
+      'Is sold only through online auction',
+      'Returns excess proceeds to the IRS general fund'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §6335, the IRS must give at least 10 days public notice before selling seized property. The minimum bid is the forced sale value. Excess proceeds go to the taxpayer or other lienholders.',
+    reference: 'IRC §6335',
+  },
+];

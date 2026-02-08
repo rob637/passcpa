@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import logger from '../../utils/logger';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
+import { getCourseHomePath } from '../../utils/courseNavigation';
+import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
   ChevronRight,
   ChevronLeft,
@@ -10,11 +13,18 @@ import {
   Clock,
   BookOpen,
   Sparkles,
-  Loader2,
   CheckCircle,
+  GraduationCap,
+  Calculator,
+  FileText,
+  BarChart3,
+  Search,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
-import { CPA_SECTIONS, DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { COURSES, ACTIVE_COURSES } from '../../courses';
+import { CourseId } from '../../types/course';
 import { scrollToTop } from '../../utils/scroll';
 import clsx from 'clsx';
 
@@ -26,24 +36,19 @@ interface Step {
 
 const STEPS: Step[] = [
   { id: 'welcome', title: 'Welcome' },
+  { id: 'course', title: 'Certification' },
   { id: 'exam-date', title: 'Exam Date' },
   { id: 'section', title: 'Choose Section' },
   { id: 'daily-goal', title: 'Daily Goal' },
   { id: 'complete', title: 'All Set!' },
 ];
 
-interface CPASection {
-  name: string;
-  shortName: string;
-  color: string;
-  description: string;
-}
-
 // Sub-component props
 interface SectionStepProps {
   selected: string;
   onSelect: (id: string) => void;
   examDate: string;
+  courseId: string;
 }
 
 interface ExamDateStepProps {
@@ -62,6 +67,7 @@ interface CompleteStepProps {
   section: string;
   examDate: string;
   dailyGoal: number;
+  courseId: string;
 }
 
 
@@ -75,12 +81,15 @@ const WelcomeStep: React.FC = () => (
     />
     <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
     <p className="text-slate-600 dark:text-slate-400 mb-6">
-      You're about to start your journey to becoming a CPA. Let's set up your personalized study
-      plan in just a few steps.
+      Let's set up your personalized study plan in just a few steps.
     </p>
     <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
       <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
       <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+        <li className="flex items-center gap-2">
+          <GraduationCap className="w-4 h-4" />
+          Which certification you're pursuing
+        </li>
         <li className="flex items-center gap-2">
           <Calendar className="w-4 h-4" />
           Your target exam date
@@ -98,18 +107,93 @@ const WelcomeStep: React.FC = () => (
   </div>
 );
 
-const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate }) => {
-  // Determine which blueprint applies based on exam date
+// Course icons mapping
+const COURSE_ICONS: Record<string, React.ElementType> = {
+  cpa: Calculator,
+  ea: FileText,
+  cma: BarChart3,
+  cia: Search,
+};
+
+interface CourseStepProps {
+  selected: CourseId | '';
+  onSelect: (id: CourseId) => void;
+}
+
+const CourseStep: React.FC<CourseStepProps> = ({ selected, onSelect }) => (
+  <div>
+    <div className="text-center mb-6">
+      <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+        <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+      </div>
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white">Choose Your Certification</h2>
+      <p className="text-slate-600 dark:text-slate-400 mt-2">Which professional certification are you preparing for?</p>
+    </div>
+
+    <div className="space-y-3">
+      {ACTIVE_COURSES.map((courseId) => {
+        const course = COURSES[courseId];
+        if (!course) return null;
+        const Icon = COURSE_ICONS[courseId] || GraduationCap;
+        
+        return (
+          <button
+            key={courseId}
+            onClick={() => onSelect(courseId)}
+            className={clsx(
+              'w-full p-4 rounded-xl border-2 text-left transition-all',
+              selected === courseId
+                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'
+            )}
+          >
+            <div className="flex items-start gap-3">
+              <div 
+                className={clsx(
+                  'w-12 h-12 rounded-xl flex items-center justify-center',
+                  selected === courseId ? 'bg-primary-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
+                )}
+              >
+                <Icon className="w-6 h-6" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-slate-900 dark:text-white">{course.shortName}</span>
+                  {selected === courseId && (
+                    <CheckCircle className="w-5 h-5 text-primary-600" />
+                  )}
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{course.name}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">
+                  {course.sections.length} exam parts • {course.sections.map(s => s.shortName).join(', ')}
+                </p>
+              </div>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  </div>
+);
+
+const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate, courseId }) => {
+  const course = COURSES[courseId as keyof typeof COURSES];
+  const isCPA = courseId === 'cpa';
+  
+  // CPA-specific blueprint logic
   const BLUEPRINT_CUTOFF = new Date('2026-07-01');
   const examDateObj = examDate ? new Date(examDate) : new Date();
   const is2025Blueprint = examDateObj < BLUEPRINT_CUTOFF;
   
-  // Filter sections based on blueprint
-  // 2025 Blueprint (before July 1, 2026): AUD, FAR, REG + BEC
-  // 2026 Blueprint (on/after July 1, 2026): AUD, FAR, REG + BAR, ISC, TCP
-  const availableSections = is2025Blueprint
-    ? [...CORE_SECTIONS, 'BEC']
-    : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+  // For CPA, filter sections based on blueprint
+  // For other courses, show all sections
+  let sections = course?.sections || [];
+  if (isCPA) {
+    const availableSectionIds = is2025Blueprint
+      ? [...CORE_SECTIONS, 'BEC']
+      : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+    sections = sections.filter(s => availableSectionIds.includes(s.id));
+  }
 
   return (
   <div>
@@ -118,50 +202,55 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate 
         <BookOpen className="w-6 h-6 text-primary-600 dark:text-primary-400" />
       </div>
       <h2 className="text-xl font-bold text-slate-900 dark:text-white">Choose Your Section</h2>
-      <p className="text-slate-600 dark:text-slate-400 mt-2">Which CPA exam section are you studying for?</p>
+      <p className="text-slate-600 dark:text-slate-400 mt-2">Which {course?.shortName || 'exam'} section are you studying for?</p>
     </div>
 
-    {/* Blueprint indicator */}
-    <div className={clsx(
-      'mb-4 px-4 py-2 rounded-lg text-sm text-center',
-      is2025Blueprint ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300' : 'bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
-    )}>
-      {is2025Blueprint ? (
-        <>📋 <strong>2025 Blueprint</strong> (exam before July 1, 2026)</>
-      ) : (
-        <>📋 <strong>2026 Blueprint</strong> (exam on/after July 1, 2026)</>
-      )}
-    </div>
+    {/* Blueprint indicator - CPA only */}
+    {isCPA && (
+      <div className={clsx(
+        'mb-4 px-4 py-2 rounded-lg text-sm text-center',
+        is2025Blueprint ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300' : 'bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
+      )}>
+        {is2025Blueprint ? (
+          <>📋 <strong>2025 Blueprint</strong> (exam before July 1, 2026)</>
+        ) : (
+          <>📋 <strong>2026 Blueprint</strong> (exam on/after July 1, 2026)</>
+        )}
+      </div>
+    )}
 
     <div className="space-y-3">
-      {Object.entries(CPA_SECTIONS)
-        .filter(([key]) => availableSections.includes(key))
-        .map(([key, section]) => (
-        <button
-          key={key}
-          onClick={() => onSelect(key)}
-          className={clsx(
-            'w-full p-4 rounded-xl border-2 text-left transition-all',
-            selected === key
-              ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-              : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'
-          )}
-        >
-          <div className="flex items-start gap-3">
-            <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-              style={{ backgroundColor: (section as CPASection).color }}
-            >
-              {(section as CPASection).shortName}
+      {sections.map((section) => {
+        const sectionDisplay = getSectionDisplayInfo(section.id, courseId);
+        return (
+          <button
+            key={section.id}
+            onClick={() => onSelect(section.id)}
+            className={clsx(
+              'w-full p-4 rounded-xl border-2 text-left transition-all',
+              selected === section.id
+                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'
+            )}
+          >
+            <div className="flex items-start gap-3">
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                style={{ backgroundColor: sectionDisplay?.color || '#6366f1' }}
+              >
+                {section.shortName}
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-slate-900 dark:text-white">{section.name}</h3>
+                {section.weight && (
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">Weight: {section.weight}</p>
+                )}
+              </div>
+              {selected === section.id && <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
             </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-slate-900 dark:text-white">{(section as CPASection).name}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5 truncate">{(section as CPASection).description}</p>
-            </div>
-            {selected === key && <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0" />}
-          </div>
-        </button>
-      ))}
+          </button>
+        );
+      })}
     </div>
 
     {/* Note about changing sections */}
@@ -293,8 +382,8 @@ const DailyGoalStep: React.FC<DailyGoalStepProps> = ({ goal, onGoalChange }) => 
   </div>
 );
 
-const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoal }) => {
-  const sectionInfo = section ? CPA_SECTIONS[section as keyof typeof CPA_SECTIONS] as CPASection : null;
+const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoal, courseId }) => {
+  const sectionInfo = section ? getSectionDisplayInfo(section, courseId) : null;
   
   // Parse date string as local date (not UTC) to avoid timezone shift
   const formattedDate = examDate
@@ -371,6 +460,7 @@ const Onboarding: React.FC = () => {
   const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
 
   const [currentStep, setCurrentStep] = useState(0);
+  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>((userProfile?.activeCourse as CourseId) || '');
   const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);
@@ -393,6 +483,8 @@ const Onboarding: React.FC = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
         return true;
+      case 'course':
+        return !!selectedCourse;
       case 'section':
         return !!selectedSection;
       case 'exam-date':
@@ -426,6 +518,7 @@ const Onboarding: React.FC = () => {
     try {
       // Track onboarding completion
       trackEvent('onboarding_completed', {
+        course: selectedCourse,
         section: selectedSection,
         daily_goal: dailyGoal,
         study_plan: studyPlan,
@@ -439,16 +532,24 @@ const Onboarding: React.FC = () => {
       // Auto-detect user's timezone
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
       
+      // Create multi-course aware profile updates
+      const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate);
+      const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
+      
       await updateUserProfile({
+        activeCourse: selectedCourse as CourseId,
         examSection: selectedSection,
-        examDate: localExamDate,
+        ...examDateUpdate,
         dailyGoal,
-        studyPlanId: studyPlan,
+        ...studyPlanUpdate,
         onboardingComplete: true,
         onboardingCompletedAt: new Date(),
         timezone: userTimezone,
       });
-      navigate('/dashboard');
+      
+      // Navigate to appropriate dashboard based on selected course
+      const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
+      navigate(courseDashboard);
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {
@@ -460,10 +561,12 @@ const Onboarding: React.FC = () => {
     switch (STEPS[currentStep].id) {
       case 'welcome':
         return <WelcomeStep />;
+      case 'course':
+        return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':
         return <ExamDateStep value={examDate} onChange={setExamDate} />;
       case 'section':
-        return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} />;
+        return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} courseId={selectedCourse} />;
       case 'daily-goal':
         return (
           <DailyGoalStep
@@ -474,7 +577,7 @@ const Onboarding: React.FC = () => {
           />
         );
       case 'complete':
-        return <CompleteStep section={selectedSection} examDate={examDate} dailyGoal={dailyGoal} />;
+        return <CompleteStep section={selectedSection} examDate={examDate} dailyGoal={dailyGoal} courseId={selectedCourse} />;
       default:
         return null;
     }
@@ -513,47 +616,34 @@ const Onboarding: React.FC = () => {
       {/* Navigation */}
       <div className="p-4">
         <div className="max-w-lg mx-auto flex items-center justify-between gap-4">
-          <button
+          <Button
+            variant="ghost"
             onClick={handleBack}
             disabled={currentStep === 0}
+            leftIcon={ChevronLeft}
             className={clsx(
-              'flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-colors',
-              currentStep === 0
-                ? 'opacity-0 pointer-events-none'
-                : 'bg-white/10 text-white hover:bg-white/20'
+              'px-6 py-3 text-white hover:bg-white/20',
+              currentStep === 0 && 'opacity-0 pointer-events-none'
             )}
           >
-            <ChevronLeft className="w-5 h-5" />
             Back
-          </button>
+          </Button>
 
-          <button
+          <Button
+            variant="primary"
             onClick={handleNext}
             disabled={!canContinue() || isSubmitting}
+            loading={isSubmitting}
+            rightIcon={currentStep === STEPS.length - 1 ? Sparkles : ChevronRight}
             className={clsx(
-              'flex items-center gap-2 px-8 py-3 rounded-xl font-medium transition-colors',
+              'px-8 py-3 shadow-lg',
               canContinue() && !isSubmitting
-                ? 'bg-white text-primary-600 hover:bg-white/90 shadow-lg'
-                : 'bg-white/30 text-white cursor-not-allowed'
+                ? 'bg-white text-primary-600 hover:bg-white/90'
+                : 'bg-white/30 text-white'
             )}
           >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Saving...
-              </>
-            ) : currentStep === STEPS.length - 1 ? (
-              <>
-                Let's Go!
-                <Sparkles className="w-5 h-5" />
-              </>
-            ) : (
-              <>
-                Continue
-                <ChevronRight className="w-5 h-5" />
-              </>
-            )}
-          </button>
+            {isSubmitting ? 'Saving...' : currentStep === STEPS.length - 1 ? "Let's Go!" : 'Continue'}
+          </Button>
         </div>
       </div>
     </div>

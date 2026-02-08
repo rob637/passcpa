@@ -7,6 +7,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { announce } from '../../utils/accessibility';
+import { Button } from './Button';
 import clsx from 'clsx';
 
 export type FlagType = 
@@ -295,22 +296,24 @@ export const QuestionFlagging: React.FC<QuestionFlaggingProps> = ({
                   )}
 
                   <div className="flex gap-2">
-                    <button
+                    <Button
+                      variant="primary"
                       onClick={handleSubmit}
                       disabled={isSubmitting}
-                      className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors disabled:opacity-50"
+                      loading={isSubmitting}
+                      fullWidth
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit Flag'}
-                    </button>
-                    <button
+                      Submit Flag
+                    </Button>
+                    <Button
+                      variant="ghost"
                       onClick={() => {
                         setSelectedType(null);
                         setComment('');
                       }}
-                      className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg font-medium transition-colors"
                     >
                       Cancel
-                    </button>
+                    </Button>
                   </div>
                 </div>
               )}

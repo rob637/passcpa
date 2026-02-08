@@ -1,0 +1,212 @@
+/**
+ * EA SEE Part 2: Businesses - Questions Batch 25 (Q241-250)
+ * Business Credits
+ */
+
+import { Question } from '../../../types';
+
+export const SEE2_QUESTIONS_BATCH25: Question[] = [
+  // ==========================================
+  // SEE2-3: Business Credits
+  // ==========================================
+  {
+    id: 'see2-241',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'General Business Credit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The general business credit is limited to:',
+    options: [
+      'Net income tax minus the greater of tentative minimum tax or 25% of net regular tax above $25,000',
+      '50% of taxable income',
+      'The amount of payroll taxes paid',
+      'There is no limitation on business credits'
+    ],
+    correctAnswer: 0,
+    explanation: 'Under IRC §38(c), the general business credit is limited to net income tax minus the greater of the tentative minimum tax or 25% of net regular tax liability above $25,000.',
+    reference: 'IRC §38(c)',
+  },
+  {
+    id: 'see2-242',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Research Credit',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The research and development credit under IRC §41 is calculated as:',
+    options: [
+      '25% of all research expenses',
+      '20% of qualified research expenses exceeding a base amount, or alternative simplified method',
+      '10% of all research wages',
+      '50% of new research expenses'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §41, the regular credit is 20% of qualified research expenses exceeding a base amount. The alternative simplified credit (ASC) is 14% of expenses exceeding 50% of the average for the prior 3 years.',
+    reference: 'IRC §41',
+  },
+  {
+    id: 'see2-243',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Small Business R&D Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'A qualified small business may elect to apply up to $500,000 of research credit against:',
+    options: [
+      'Income tax only',
+      'Payroll tax liability (FICA employer share)',
+      'State income taxes',
+      'Estimated tax payments only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §41(h), qualified small businesses (under $5M gross receipts, no gross receipts for 5 prior years for startups) can elect to offset up to $500,000 of R&D credit against employer FICA taxes.',
+    reference: 'IRC §41(h)',
+  },
+  {
+    id: 'see2-244',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Work Opportunity Credit',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The Work Opportunity Tax Credit is available for hiring:',
+    options: [
+      'Any new employee hired after being unemployed',
+      'Individuals from targeted groups such as veterans, TANF recipients, and ex-felons',
+      'Only employees under age 25',
+      'Employees with college degrees'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §51, the WOTC is available for hiring individuals from targeted groups including qualified veterans, TANF recipients, SNAP recipients, designated community residents, vocational rehabilitation referrals, ex-felons, and SSI recipients.',
+    reference: 'IRC §51',
+  },
+  {
+    id: 'see2-245',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Disabled Access Credit',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'An eligible small business that incurs $15,000 in access expenditures for disabled individuals can claim a credit of:',
+    options: [
+      '$15,000',
+      '$7,500',
+      '$5,000',
+      '$2,500'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC §44, the disabled access credit is 50% of eligible access expenditures between $250 and $10,250, for a maximum credit of $5,000. Here: 50% × ($10,250 - $250) = $5,000 maximum.',
+    reference: 'IRC §44',
+  },
+  {
+    id: 'see2-246',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Small Employer Health Credit',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The small employer health insurance credit under IRC §45R requires:',
+    options: [
+      'More than 50 FTE employees',
+      'Fewer than 25 FTE employees (10 for full credit) and average wages below threshold',
+      'Any size employer offering a high-deductible health plan',
+      'Coverage through private insurance only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §45R, the credit is for employers with fewer than 25 FTEs with average wages below ~$59,000 (indexed). Maximum credit (50% of premiums, 35% for tax-exempts) requires ≤10 FTEs and lower wages. Coverage must be through SHOP.',
+    reference: 'IRC §45R',
+  },
+  {
+    id: 'see2-247',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Employer Payroll Credits',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The credit for employer-provided childcare facilities under IRC §45F provides:',
+    options: [
+      '100% of construction costs',
+      '25% of qualified childcare facility expenditures plus 10% of resource and referral costs',
+      '50% of all childcare-related expenses',
+      '15% of employee wages for childcare'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §45F, the credit is 25% of qualified childcare facility expenditures plus 10% of qualified childcare resource and referral expenditures, up to $150,000 maximum credit annually.',
+    reference: 'IRC §45F',
+  },
+  {
+    id: 'see2-248',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Credit Carryback/Forward',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Unused general business credits can be carried:',
+    options: [
+      'Forward 10 years only',
+      'Back 1 year and forward 20 years',
+      'Forward 5 years only',
+      'Neither forward nor back'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §39, unused general business credits can be carried back 1 year and forward 20 years. FIFO ordering generally applies, using oldest credits first.',
+    reference: 'IRC §39',
+  },
+  {
+    id: 'see2-249',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Low-Income Housing Credit',
+    difficulty: 'hard',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The low-income housing credit under IRC §42:',
+    options: [
+      'Is a one-time credit claimed when the building is placed in service',
+      'Is claimed annually over a 10-year period',
+      'Only applies to government-owned housing',
+      'Provides a 50% credit for construction costs'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §42, the LIHTC is claimed annually over a 10-year credit period. The credit amount is based on qualified basis and applicable percentage, allocating the credit evenly over 10 years.',
+    reference: 'IRC §42',
+  },
+  {
+    id: 'see2-250',
+    courseId: 'ea',
+    section: 'SEE2',
+    blueprintArea: 'SEE2-3',
+    topic: 'Business Credits',
+    subtopic: 'Rehabilitation Credit',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'The rehabilitation credit for certified historic structures is:',
+    options: [
+      '10% claimed in the year expenditures are incurred',
+      '20% claimed ratably over 5 years',
+      '25% claimed when the building is sold',
+      '30% claimed in the first year only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under IRC §47 as modified by TCJA, the 20% credit for certified historic structures must be claimed ratably over a 5-year period beginning when the building is placed in service.',
+    reference: 'IRC §47',
+  },
+];

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Brain,
   BookOpen,
@@ -15,13 +15,22 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
+import { useCourse } from '../providers/CourseProvider';
 import { BackButton } from './navigation';
+import { Button } from './common/Button';
+import { Card } from './common/Card';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { getFlashcardsBySection } from '../data/flashcards';
-import { ExamSection } from '../types';
-import { CPA_SECTIONS } from '../config/examConfig';
+import { getFlashcardsBySection } from '../data/cpa/flashcards';
+import { ExamSection, EASection, AllExamSections } from '../types';
+import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
+import { EA_SECTION_CONFIG } from '../courses/ea/config';
 import clsx from 'clsx';
+
+// Helper to check if a section is an EA section
+const isEASection = (section: string): section is EASection => {
+  return ['SEE1', 'SEE2', 'SEE3'].includes(section);
+};
 
 // Mastery status categories (like Becker)
 interface CategoryCount {
@@ -42,9 +51,21 @@ interface FlashcardConfig {
 
 const FlashcardSetup: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { user, userProfile } = useAuth();
-  const currentSection = (userProfile?.examSection || 'FAR') as ExamSection;
-  const sectionInfo = CPA_SECTIONS[currentSection];
+  const { courseId } = useCourse();
+  
+  // Support URL param for section (for EA sections) or fall back to user profile
+  const sectionFromUrl = searchParams.get('section');
+  const currentSection: AllExamSections = sectionFromUrl 
+    ? (sectionFromUrl as AllExamSections)
+    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  
+  // Get section info - handle both CPA and EA sections
+  const isEA = isEASection(currentSection);
+  const sectionInfo = isEA 
+    ? { name: EA_SECTION_CONFIG[currentSection as EASection].name, color: EA_SECTION_CONFIG[currentSection as EASection].color }
+    : getSectionDisplayInfo(currentSection, courseId);
   
   const [loading, setLoading] = useState(true);
   const [counts, setCounts] = useState<CategoryCount>({ all: 0, toReview: 0, mastered: 0, notWorked: 0 });
@@ -136,6 +157,11 @@ const FlashcardSetup: React.FC = () => {
   const startSession = () => {
     const params = new URLSearchParams();
     
+    // Always include section for EA (so session knows which cards to use)
+    if (isEA) {
+      params.set('section', currentSection);
+    }
+    
     // Mode based on categories
     if (config.categories.includes('toReview')) {
       params.set('mode', 'review');
@@ -168,7 +194,7 @@ const FlashcardSetup: React.FC = () => {
       {/* Header */}
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center gap-3">
-          <BackButton fallback="/home" />
+          <BackButton />
           <div className="flex-1">
             <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               Create a Flashcard Session
@@ -182,7 +208,7 @@ const FlashcardSetup: React.FC = () => {
 
       <div className="max-w-lg mx-auto p-4 space-y-6">
         {/* Categories Section - Like Becker */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+        <Card noPadding className="p-4">
           <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Categories
           </h2>
@@ -230,10 +256,10 @@ const FlashcardSetup: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </Card>
 
         {/* Card Types */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+        <Card noPadding className="p-4">
           <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Card Types
           </h2>
@@ -267,10 +293,10 @@ const FlashcardSetup: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </Card>
 
         {/* Units & Modules (collapsible) */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+        <Card noPadding>
           <button
             onClick={() => setShowUnits(!showUnits)}
             className="w-full flex items-center justify-between p-4"
@@ -322,10 +348,10 @@ const FlashcardSetup: React.FC = () => {
               })}
             </div>
           )}
-        </div>
+        </Card>
 
         {/* Flashcard Mode Options */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 space-y-4">
+        <Card noPadding className="p-4 space-y-4">
           <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
             Flashcard mode
           </h2>
@@ -387,17 +413,20 @@ const FlashcardSetup: React.FC = () => {
               />
             </button>
           </div>
-        </div>
+        </Card>
 
         {/* Start Button */}
-        <button
+        <Button
+          variant="primary"
+          size="lg"
+          fullWidth
           onClick={startSession}
           disabled={loading}
-          className="w-full py-4 bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-lg shadow-amber-400/30 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+          leftIcon={Play}
+          className="bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-lg shadow-amber-400/30"
         >
-          <Play className="w-5 h-5" />
           Start session
-        </button>
+        </Button>
       </div>
     </div>
   );

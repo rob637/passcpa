@@ -44,7 +44,7 @@ describe('Bookmarks System', () => {
 
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
-      expect(button).toHaveAttribute('title', 'Add bookmark');
+      expect(button).toHaveAttribute('aria-label', 'Add bookmark');
     });
 
     it('should have correct size classes for sm size', () => {
@@ -101,7 +101,7 @@ describe('Bookmarks System', () => {
 
       const button = screen.getByRole('button');
       expect(button).toBeInTheDocument();
-      expect(button).toHaveAttribute('title', 'Add note');
+      expect(button).toHaveAttribute('aria-label', 'Add note');
     });
 
     it('should open notes panel when clicked', async () => {

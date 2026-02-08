@@ -12,6 +12,7 @@ import {
   ChevronUp,
   HelpCircle,
   Info,
+  BookOpen,
 } from 'lucide-react';
 import { TBS, TBSRequirement, TBS_TYPES } from '../../types';
 import clsx from 'clsx';
@@ -405,9 +406,17 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
       )}
 
       {/* References */}
-      {tbs.references && tbs.references.length > 0 && (
-        <div className="px-6 pb-6 text-xs text-slate-600">
-          <strong>References:</strong> {tbs.references.join(', ')}
+      {isReview && tbs.references && tbs.references.length > 0 && (
+        <div className="px-6 pb-6">
+          <div className="flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700">
+            <div className="p-1 bg-slate-200 dark:bg-slate-700 rounded">
+              <BookOpen className="w-3 h-3 text-slate-700 dark:text-slate-300" />
+            </div>
+            <div>
+              <span className="font-semibold text-slate-700 dark:text-slate-300 mr-1">Citations:</span>
+              <span className="font-mono text-primary-600 dark:text-primary-400">{tbs.references.join(', ')}</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

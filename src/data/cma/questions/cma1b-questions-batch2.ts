@@ -1,0 +1,533 @@
+/**
+ * CMA Part 1, Section B: Planning, Budgeting, and Forecasting - Questions Batch 2 (Q26-50)
+ * Weight: 20% of Part 1 Exam
+ * 
+ * This batch focuses on:
+ * - Advanced budgeting scenarios and calculations
+ * - Complex variance interactions
+ * - Strategic planning frameworks
+ * - Simulation and Monte Carlo methods
+ * - Rolling forecasts and agile planning
+ */
+
+import { Question } from '../../../types';
+
+export const CMA1B_QUESTIONS_BATCH2: Question[] = [
+  // ==========================================
+  // Advanced Budgeting
+  // ==========================================
+  {
+    id: 'cma1-b-026',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Master Budget',
+    subtopic: 'Cash Budget',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Monthly sales: Dec $100K, Jan $100K, Feb $120K, Mar $150K. Collection pattern: 30% in month of sale, 60% next month, 10% in second month. What are February cash collections?',
+    options: [
+      '$96,000',
+      '$108,000',
+      '$106,000',
+      '$110,000'
+    ],
+    correctAnswer: 2,
+    explanation: 'February collections: From Feb sales (30% × $120K = $36K) + From Jan sales (60% × $100K = $60K) + From Dec sales (10% × $100K = $10K). Total = $36K + $60K + $10K = $106K.',
+    reference: 'Cash Budget; Collection Patterns',
+  },
+  {
+    id: 'cma1-b-027',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Master Budget',
+    subtopic: 'Production Budget',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Q1 sales forecast: 50,000 units. Beginning inventory: 8,000 units. Ending inventory policy: 20% of next quarter\'s sales (Q2 sales: 60,000). Required production for Q1?',
+    options: [
+      '50,000 units',
+      '54,000 units',
+      '58,000 units',
+      '62,000 units'
+    ],
+    correctAnswer: 1,
+    explanation: 'Production = Sales + Desired ending inventory - Beginning inventory = 50,000 + (20% × 60,000) - 8,000 = 50,000 + 12,000 - 8,000 = 54,000 units.',
+    reference: 'Production Budget; Inventory Policy',
+  },
+  {
+    id: 'cma1-b-028',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Flexible Budget',
+    subtopic: 'Step-Fixed Costs',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Supervision costs are $50,000 for 0-10,000 units, $75,000 for 10,001-20,000 units. Budgeted production: 15,000 units. Actual: 19,000 units. Flexible budget for supervision?',
+    options: [
+      '$50,000',
+      '$75,000',
+      '$70,000',
+      '$95,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Step-fixed costs depend on the activity range. At 19,000 units (in the 10,001-20,000 range), supervision cost is $75,000. The flexible budget adjusts step costs based on actual activity level.',
+    reference: 'Flexible Budget; Step-Fixed Costs',
+  },
+
+  // ==========================================
+  // Advanced Forecasting
+  // ==========================================
+  {
+    id: 'cma1-b-030',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Exponential Smoothing',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Forecast for last period was 1,000 units. Actual was 1,200 units. Using exponential smoothing with α = 0.3, next period forecast is:',
+    options: [
+      '1,000 units',
+      '1,060 units',
+      '1,140 units',
+      '1,200 units'
+    ],
+    correctAnswer: 1,
+    explanation: 'Exponential smoothing: New forecast = α(Actual) + (1-α)(Old forecast) = 0.3(1,200) + 0.7(1,000) = 360 + 700 = 1,060 units.',
+    reference: 'Exponential Smoothing; Time Series Forecasting',
+  },
+  {
+    id: 'cma1-b-031',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Regression Analysis',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'A regression analysis yields: Y = 5,000 + 2.5X, where Y is total cost and X is units produced. R² = 0.92. If 4,000 units are produced, predicted cost is:',
+    options: [
+      '$10,000',
+      '$15,000',
+      '$17,500',
+      '$20,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'Y = 5,000 + 2.5(4,000) = 5,000 + 10,000 = $15,000. The $5,000 is fixed cost; $2.5 is variable cost per unit. R² = 0.92 indicates 92% of cost variation is explained by production volume.',
+    reference: 'Regression Analysis; Cost Estimation',
+  },
+  {
+    id: 'cma1-b-032',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting',
+    subtopic: 'Monte Carlo Simulation',
+    difficulty: 'easy',
+    skillLevel: 'Analysis',
+    question: 'Monte Carlo simulation is most useful when:',
+    options: [
+      'Historical data perfectly predicts the future',
+      'There is significant uncertainty and multiple probability distributions',
+      'Only one outcome is possible',
+      'Linear regression provides perfect fit'
+    ],
+    correctAnswer: 1,
+    explanation: 'Monte Carlo randomly samples from probability distributions of uncertain variables to simulate thousands of scenarios. It\'s valuable when multiple uncertainties interact, providing probability distributions of outcomes rather than single-point estimates.',
+    reference: 'Monte Carlo Simulation; Probabilistic Forecasting',
+  },
+  {
+    id: 'cma1-b-033',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Rolling Forecast',
+    subtopic: 'Continuous Planning',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A key advantage of rolling forecasts over traditional annual budgets is:',
+    options: [
+      'They are less work to prepare',
+      'They maintain a consistent look-ahead period and adapt to changes',
+      'They eliminate the need for any budgeting',
+      'They never need to be revised'
+    ],
+    correctAnswer: 1,
+    explanation: 'Rolling forecasts continuously extend the planning horizon (e.g., always 12-18 months ahead) and are updated regularly (monthly/quarterly). This keeps forecasts current and relevant versus annual budgets that become stale.',
+    reference: 'Rolling Forecasts; Continuous Planning',
+  },
+
+  // ==========================================
+  // Strategic Planning
+  // ==========================================
+  {
+    id: 'cma1-b-034',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Strategic Planning',
+    subtopic: 'Porter\'s Five Forces',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'In Porter\'s Five Forces analysis, "bargaining power of suppliers" is high when:',
+    options: [
+      'Many substitute suppliers exist',
+      'Supplier products are commoditized',
+      'Few suppliers dominate, and switching costs are high',
+      'The buyer is a major customer of the supplier'
+    ],
+    correctAnswer: 2,
+    explanation: 'Supplier power is high when: few suppliers exist, products are unique/differentiated, switching costs are high, threat of forward integration, and buyer is not an important customer. High supplier power reduces industry profitability.',
+    reference: 'Porter\'s Five Forces; Competitive Analysis',
+  },
+  {
+    id: 'cma1-b-035',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Strategic Planning',
+    subtopic: 'SWOT Analysis',
+    difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
+    question: 'In SWOT analysis, "Threats" refers to:',
+    options: [
+      'Internal weaknesses of the organization',
+      'External factors that could negatively impact the organization',
+      'Internal strengths that create competitive advantage',
+      'External opportunities for growth'
+    ],
+    correctAnswer: 1,
+    explanation: 'SWOT: Strengths and Weaknesses are internal factors; Opportunities and Threats are external. Threats are external conditions (competitors, regulations, economic factors) that could harm the organization.',
+    reference: 'SWOT Analysis; Strategic Planning',
+  },
+  {
+    id: 'cma1-b-036',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Strategic Planning',
+    subtopic: 'Scenario Planning',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Scenario planning is most valuable when:',
+    options: [
+      'The future is highly predictable',
+      'A single forecast is sufficient',
+      'Significant uncertainty exists and multiple futures are plausible',
+      'Historical trends will continue unchanged'
+    ],
+    correctAnswer: 2,
+    explanation: 'Scenario planning develops multiple plausible future scenarios to prepare for uncertainty. It\'s most valuable in volatile, uncertain environments where single-point forecasts are unreliable.',
+    reference: 'Scenario Planning; Strategic Planning',
+  },
+
+  // ==========================================
+  // Budgeting Behavior
+  // ==========================================
+  {
+    id: 'cma1-b-037',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Budgeting Behavior',
+    subtopic: 'Budgetary Slack',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'A manager intentionally underestimates revenue and overestimates expenses in the budget. This is called:',
+    options: [
+      'Conservative budgeting',
+      'Participative budgeting',
+      'Budgetary slack',
+      'Zero-based budgeting'
+    ],
+    correctAnswer: 2,
+    explanation: 'Budgetary slack is the intentional understatement of revenues or overstatement of expenses to make targets easier to achieve. It\'s a dysfunctional behavior that can be reduced through stretch targets, verification, and incentive alignment.',
+    reference: 'Budgetary Slack; Behavioral Issues',
+  },
+  {
+    id: 'cma1-b-038',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Budgeting Behavior',
+    subtopic: 'Participative Budgeting',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Participative budgeting improves motivation and accuracy primarily because:',
+    options: [
+      'Top management makes all decisions',
+      'Managers who will be held accountable help create the budget',
+      'It uses only historical data',
+      'It eliminates all budget variances'
+    ],
+    correctAnswer: 1,
+    explanation: 'Participative budgeting involves operational managers in budget creation. This improves commitment (they "own" the budget), accuracy (they have local knowledge), and motivation (goals are seen as fair and achievable).',
+    reference: 'Participative Budgeting; Goal Congruence',
+  },
+
+  // ==========================================
+  // Advanced Variance Analysis
+  // ==========================================
+  {
+    id: 'cma1-b-039',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Variance Analysis',
+    subtopic: 'Sales Mix Variance',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Budgeted: Product A 60% of sales (CM $20), Product B 40% (CM $30). Actual: 2,000 total units split 50% each. Budgeted CM = $24/unit. Sales mix variance is:',
+    options: [
+      '$2,000 favorable',
+      '$2,000 unfavorable',
+      '$1,000 favorable',
+      '$1,000 unfavorable'
+    ],
+    correctAnswer: 2,
+    explanation: 'Actual mix: 1,000A (CM $20,000) + 1,000B (CM $30,000) = $50,000. Budgeted mix at actual units: 1,200A + 800B = $24,000 + $24,000 = $48,000. Mix variance = $50,000 - $48,000 = $2,000 F (more high-CM product).',
+    reference: 'Sales Mix Variance; Multi-Product Analysis',
+  },
+  {
+    id: 'cma1-b-040',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Variance Analysis',
+    subtopic: 'Market Share Variance',
+    difficulty: 'hard',
+    skillLevel: 'Analysis',
+    question: 'Budgeted market share: 10%. Actual market share: 12%. Total market: 500,000 units. Contribution margin: $5/unit. Market share variance is:',
+    options: [
+      '$50,000 favorable',
+      '$50,000 unfavorable',
+      '$25,000 favorable',
+      '$100,000 favorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Market share variance = (Actual share - Budgeted share) × Actual market × CM = (12% - 10%) × 500,000 × $5 = 2% × 500,000 × $5 = 10,000 units × $5 = $50,000 favorable.',
+    reference: 'Market Share Variance; Sales Analysis',
+  },
+  {
+    id: 'cma1-b-041',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Variance Analysis',
+    subtopic: 'Three-Way OH Variance',
+    difficulty: 'hard',
+    skillLevel: 'Application',
+    question: 'Variable OH: Budgeted $3/hr, 10,000 standard hrs. Actual: $3.20/hr, 9,500 actual hrs, 9,200 standard hrs allowed. The spending variance is:',
+    options: [
+      '$1,900 unfavorable',
+      '$900 unfavorable',
+      '$1,000 unfavorable',
+      '$600 unfavorable'
+    ],
+    correctAnswer: 0,
+    explanation: 'Variable OH spending variance = (Actual rate - Standard rate) × Actual hours = ($3.20 - $3.00) × 9,500 = $0.20 × 9,500 = $1,900 unfavorable.',
+    reference: 'Variable Overhead Variances; Cost Control',
+  },
+
+  // ==========================================
+  // Capital Budgeting Integration
+  // ==========================================
+  {
+    id: 'cma1-b-042',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Capital Budget',
+    subtopic: 'Integration with Operating Budget',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'The capital budget affects operating budgets through:',
+    options: [
+      'Changes in sales only',
+      'Depreciation, maintenance costs, and financing costs',
+      'Direct materials only',
+      'Marketing expenses only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Capital investments flow to operating budgets through: depreciation expense (allocated over useful life), maintenance and operating costs of new assets, interest expense on financing, and potential changes in production capacity.',
+    reference: 'Capital Budget Integration; Master Budget',
+  },
+  {
+    id: 'cma1-b-043',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Planning Cycle',
+    subtopic: 'Budget Calendar',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'The typical order of budget preparation is:',
+    options: [
+      'Cash budget → Sales budget → Production budget',
+      'Sales budget → Production budget → Direct materials/labor → Cash budget',
+      'Production budget → Sales budget → Cash budget',
+      'Cash budget → All other budgets simultaneously'
+    ],
+    correctAnswer: 1,
+    explanation: 'Budget preparation starts with sales forecast, then production (to meet sales), then direct materials, direct labor, and manufacturing overhead. These feed into the budgeted income statement, and the cash budget is typically prepared last.',
+    reference: 'Budget Preparation Sequence; Master Budget',
+  },
+
+  // ==========================================
+  // Advanced Planning Concepts
+  // ==========================================
+  {
+    id: 'cma1-b-044',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Beyond Budgeting',
+    subtopic: 'Principles',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'The "Beyond Budgeting" movement advocates:',
+    options: [
+      'More detailed traditional budgets',
+      'Replacing fixed budgets with adaptive processes and relative targets',
+      'Eliminating all financial planning',
+      'Using only cash accounting'
+    ],
+    correctAnswer: 1,
+    explanation: 'Beyond Budgeting critiques fixed annual budgets as gaming prone and inflexible. It advocates adaptive management with rolling forecasts, relative targets (vs. peers/prior periods), and decentralized decision-making.',
+    reference: 'Beyond Budgeting; Adaptive Management',
+  },
+  {
+    id: 'cma1-b-045',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Driver-Based Planning',
+    subtopic: 'Key Drivers',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Driver-based planning focuses on:',
+    options: [
+      'Detailed line-item budgeting',
+      'Identifying and forecasting key operational drivers that impact financial results',
+      'Using only historical data',
+      'Short-term cash management'
+    ],
+    correctAnswer: 1,
+    explanation: 'Driver-based planning links financial outcomes to operational drivers (e.g., customer count, average order size, conversion rate). This creates more meaningful models and enables sensitivity analysis on key assumptions.',
+    reference: 'Driver-Based Planning; FP&A Best Practices',
+  },
+  {
+    id: 'cma1-b-046',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Pro Forma Statements',
+    subtopic: 'Projected Balance Sheet',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Pro forma A/R is calculated as:',
+    options: [
+      'Budgeted credit sales ÷ 365 × Collection period',
+      'Budgeted credit sales × Collection period ÷ 365',
+      'Prior year A/R + Credit sales - Cash collections',
+      'Both A and B are correct methods'
+    ],
+    correctAnswer: 3,
+    explanation: 'Pro forma A/R can be calculated using: (1) Average collection period approach: Credit sales × (DSO/365), or equivalently Credit sales ÷ 365 × DSO; or (2) T-account approach: Begin A/R + Credit sales - Collections. Both methods should yield similar results.',
+    reference: 'Pro Forma Statements; Financial Forecasting',
+  },
+  {
+    id: 'cma1-b-047',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Sensitivity Analysis',
+    subtopic: 'What-If Scenarios',
+    difficulty: 'medium',
+    skillLevel: 'Application',
+    question: 'Budget shows profit of $500,000. Sensitivity analysis indicates a 10% decrease in sales volume reduces profit by $200,000. This means:',
+    options: [
+      'Fixed costs are very low',
+      'Operating leverage is high; profit is sensitive to volume changes',
+      'Variable costs are negligible',
+      'The budget is unreliable'
+    ],
+    correctAnswer: 1,
+    explanation: 'A 10% volume decrease causing 40% profit decrease ($200K/$500K) indicates high operating leverage—significant fixed costs relative to variable costs. This sensitivity information helps management understand risk.',
+    reference: 'Sensitivity Analysis; Operating Leverage',
+  },
+
+  // ==========================================
+  // Performance Metrics
+  // ==========================================
+  {
+    id: 'cma1-b-048',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Planning',
+    subtopic: 'Leading vs Lagging',
+    difficulty: 'medium',
+    skillLevel: 'Remembering and Understanding',
+    question: 'Customer satisfaction scores and employee training hours are examples of:',
+    options: [
+      'Lagging indicators',
+      'Leading (predictive) indicators',
+      'Financial indicators',
+      'Efficiency indicators'
+    ],
+    correctAnswer: 1,
+    explanation: 'Leading indicators predict future performance: customer satisfaction predicts retention; training predicts productivity. Lagging indicators (like revenue, profit) report past results. Effective planning tracks both.',
+    reference: 'Leading vs Lagging Indicators; KPIs',
+  },
+  {
+    id: 'cma1-b-049',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Planning Integration',
+    subtopic: 'Strategic Alignment',
+    difficulty: 'medium',
+    skillLevel: 'Analysis',
+    question: 'Operational budgets should:',
+    options: [
+      'Be prepared independently of strategic plans',
+      'Support and operationalize the strategic plan',
+      'Focus only on short-term cost cutting',
+      'Ignore market conditions'
+    ],
+    correctAnswer: 1,
+    explanation: 'Budgets are the quantified expression of strategic plans. They translate strategy into specific financial targets and resource allocations. Strategic-budget alignment ensures operational activities support long-term goals.',
+    reference: 'Strategic Alignment; Budget Purpose',
+  },
+  {
+    id: 'cma1-b-050',
+    courseId: 'cma',
+    section: 'CMA1',
+    blueprintArea: 'CMA1-B',
+    topic: 'Forecasting Accuracy',
+    subtopic: 'Measuring Accuracy',
+    difficulty: 'easy',
+    skillLevel: 'Application',
+    question: 'Forecast was 100,000 units; actual was 95,000 units. The Mean Absolute Percentage Error (MAPE) is:',
+    options: [
+      '5%',
+      '5.26%',
+      '-5%',
+      '4.76%'
+    ],
+    correctAnswer: 1,
+    explanation: 'MAPE = |Actual - Forecast| / Actual × 100 = |95,000 - 100,000| / 95,000 × 100 = 5,000 / 95,000 × 100 = 5.26%. MAPE measures forecast accuracy as a percentage of actual.',
+    reference: 'Forecast Accuracy; MAPE',
+  },
+];
+
+// Helper functions
+export const getCMA1BQuestionsBatch2 = () => CMA1B_QUESTIONS_BATCH2;
+export const getCMA1BQuestionCount2 = () => CMA1B_QUESTIONS_BATCH2.length;
+
+export default CMA1B_QUESTIONS_BATCH2;

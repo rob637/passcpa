@@ -16,6 +16,7 @@ import { celebrateAchievement } from '../../utils/confetti';
 import clsx from 'clsx';
 import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
 import ShareableAchievementCard from '../ShareableAchievementCard';
+import { Button } from '../common/Button';
 
 // Types
 interface CategoryInfo {
@@ -169,13 +170,15 @@ const Achievements: React.FC = () => {
       {/* Header */}
       <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-6 pb-16">
         <div className="flex items-center gap-3 mb-4">
-          <button
+          <Button
             onClick={() => navigate(-1)}
-            className="p-2 -ml-2 rounded-lg hover:bg-white/10 transition-colors"
+            variant="ghost"
+            size="icon"
+            className="-ml-2 hover:bg-white/10"
             aria-label="Go back"
           >
             <ArrowLeft className="w-5 h-5" />
-          </button>
+          </Button>
           <h1 className="text-2xl font-bold">Achievements</h1>
         </div>
         <p className="text-primary-100">Track your learning milestones</p>
@@ -247,7 +250,7 @@ const Achievements: React.FC = () => {
             !isEarned && userStats && (currentStreak !== undefined)
               ? getAchievementProgress(achievement.id, { 
                   ...userStats, 
-                  currentStreak 
+                  streak: currentStreak 
                 })
               : null;
 
@@ -357,23 +360,25 @@ const Achievements: React.FC = () => {
               +{showUnlocked.points} points
             </div>
             <div className="mt-6 flex gap-3">
-              <button 
+              <Button 
                 onClick={() => {
                   setShowShareCard(showUnlocked);
                   setShowUnlocked(null);
                 }} 
-                className="flex-1 btn-secondary py-3 flex items-center justify-center gap-2"
+                variant="secondary"
+                leftIcon={Share2}
+                className="flex-1 py-3"
               >
-                <Share2 className="w-4 h-4" />
                 Share
-              </button>
-              <button 
+              </Button>
+              <Button 
                 onClick={() => setShowUnlocked(null)} 
-                className="flex-1 btn-primary py-3"
+                variant="primary"
+                className="flex-1 py-3"
                 autoFocus
               >
                 Awesome!
-              </button>
+              </Button>
             </div>
           </div>
         </div>

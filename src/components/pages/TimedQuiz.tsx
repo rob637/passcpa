@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { getHomePathFromLocation } from '../../utils/courseNavigation';
+import { Button } from '../common/Button';
 import {
   Clock,
   CheckCircle,
@@ -19,11 +21,12 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
+import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions } from '../../services/questionService';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, Difficulty } from '../../types';
-import { CPA_SECTIONS } from '../../config/examConfig';
+import { getDefaultSection } from '../../utils/sectionUtils';
 
 interface QuizModeConfig {
   questions: number;
@@ -44,62 +47,16 @@ const QUIZ_MODES: QuizModes = {
   custom: { questions: 10, timePerQuestion: 90, name: 'Custom Quiz' },
 };
 
-// Blueprint areas for targeting specific content
-const BLUEPRINT_AREAS: Record<ExamSection, { id: string; name: string }[]> = {
-  FAR: [
-    { id: 'FAR-I', name: 'Conceptual Framework & Financial Reporting' },
-    { id: 'FAR-II', name: 'Select Financial Statement Accounts' },
-    { id: 'FAR-III', name: 'Select Transactions' },
-    { id: 'FAR-IV', name: 'State and Local Governments' },
-    { id: 'FAR-V', name: 'Not-for-Profit Entities' },
-  ],
-  AUD: [
-    { id: 'AUD-I', name: 'Ethics & Professional Responsibilities' },
-    { id: 'AUD-II', name: 'Assessing Risk & Developing Response' },
-    { id: 'AUD-III', name: 'Performing Procedures & Obtaining Evidence' },
-    { id: 'AUD-IV', name: 'Forming Conclusions & Reporting' },
-    { id: 'AUD-V', name: 'Accounting & Review Services' },
-  ],
-  REG: [
-    { id: 'REG-I', name: 'Ethics, Professional Responsibilities & Tax Procedures' },
-    { id: 'REG-II', name: 'Business Law' },
-    { id: 'REG-III', name: 'Federal Taxation of Property Transactions' },
-    { id: 'REG-IV', name: 'Federal Taxation of Individuals' },
-    { id: 'REG-V', name: 'Federal Taxation of Entities' },
-  ],
-  BAR: [
-    { id: 'BAR-I', name: 'Business Analysis' },
-    { id: 'BAR-II', name: 'Technical Accounting & Reporting' },
-    { id: 'BAR-III', name: 'State & Local Government Concepts' },
-    { id: 'BAR-IV', name: 'Not-for-Profit Concepts' },
-  ],
-  ISC: [
-    { id: 'ISC-I', name: 'Information Systems & Data Management' },
-    { id: 'ISC-II', name: 'Security, Confidentiality & Privacy' },
-    { id: 'ISC-III', name: 'Technology-Enabled Finance Transformation' },
-  ],
-  TCP: [
-    { id: 'TCP-I', name: 'Tax Compliance & Planning for Individuals' },
-    { id: 'TCP-II', name: 'Entity Tax Compliance' },
-    { id: 'TCP-III', name: 'Entity Tax Planning' },
-    { id: 'TCP-IV', name: 'Property Transactions' },
-  ],
-  BEC: [
-    { id: 'BEC-I', name: 'Enterprise Risk Management' },
-    { id: 'BEC-II', name: 'Economics' },
-  ],
-  PREP: [
-    { id: 'PREP-I', name: 'CPA Exam Preparation' },
-  ],
-};
-
 type QuizState = 'setup' | 'active' | 'review' | 'complete' | 'explanations';
 
 const TimedQuiz: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const courseHome = getHomePathFromLocation(location.pathname);
   const [searchParams] = useSearchParams();
   const { userProfile } = useAuth();
   const { recordMCQAnswer } = useStudy();
+  const { course, courseId } = useCourse();
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -126,7 +83,7 @@ const TimedQuiz: React.FC = () => {
   const questionTopRef = useRef<HTMLDivElement>(null);
   const mode = searchParams.get('mode') || 'quick';
   const quizConfig = QUIZ_MODES[mode] || QUIZ_MODES.quick;
-  const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
+  const currentSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
 
   // Load questions
   const startQuiz = async () => {
@@ -329,19 +286,22 @@ const TimedQuiz: React.FC = () => {
 
   // Setup Screen
   if (quizState === 'setup') {
-    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || 'REG') as ExamSection;
-    const blueprintAreas = BLUEPRINT_AREAS[effectiveSection] || [];
+    const effectiveSection = selectedSection !== 'all' ? selectedSection : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+    // Get blueprint areas from course config dynamically
+    const sectionConfig = course.sections.find(s => s.id === effectiveSection);
+    const blueprintAreas = sectionConfig?.blueprintAreas?.map(bp => ({ id: bp.id, name: bp.name })) || [];
     
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-4">
         <div className="max-w-lg mx-auto">
-          <button
-            onClick={() => navigate('/home')}
-            className="mb-4 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+          <Button
+            variant="ghost"
+            onClick={() => navigate(courseHome)}
+            className="mb-4 flex items-center text-slate-600 dark:text-slate-300"
           >
             <ArrowRight className="w-4 h-4 mr-1 rotate-180" />
             Back to Home
-          </button>
+          </Button>
           
           <div className="text-center mb-6">
             <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -388,16 +348,15 @@ const TimedQuiz: React.FC = () => {
           </div>
 
           {/* Advanced Options Toggle */}
-          <button
+          <Button
+            variant="ghost"
             onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
-            className="w-full flex items-center justify-between p-3 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white mb-4"
+            leftIcon={Settings}
+            className="w-full flex items-center justify-between p-3 text-slate-600 dark:text-slate-300 mb-4"
           >
-            <span className="flex items-center gap-2">
-              <Settings className="w-4 h-4" />
-              <span className="text-sm font-medium">Quiz Options</span>
-            </span>
+            <span className="text-sm font-medium">Quiz Options</span>
             <ChevronDown className={clsx('w-4 h-4 transition-transform', showAdvancedOptions && 'rotate-180')} />
-          </button>
+          </Button>
 
           {/* Advanced Options Panel */}
           {showAdvancedOptions && (
@@ -413,9 +372,9 @@ const TimedQuiz: React.FC = () => {
                   }}
                   className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500"
                 >
-                  <option value="all">Current Section ({userProfile?.examSection || 'REG'})</option>
-                  {Object.entries(CPA_SECTIONS).map(([key, section]) => (
-                    <option key={key} value={key}>{section.shortName} - {section.name}</option>
+                  <option value="all">Current Section ({userProfile?.examSection || getDefaultSection(courseId)})</option>
+                  {course?.sections.map((s) => (
+                    <option key={s.id} value={s.id}>{s.shortName} - {s.name}</option>
                   ))}
                 </select>
               </div>
@@ -480,20 +439,24 @@ const TimedQuiz: React.FC = () => {
             </div>
           )}
 
-          <button
+          <Button
+            variant="primary"
+            size="lg"
+            fullWidth
             onClick={startQuiz}
-            disabled={loading}
-            className="btn-primary w-full py-3 text-lg"
+            loading={loading}
           >
-            {loading ? 'Loading...' : 'Start Quiz'}
-          </button>
+            Start Quiz
+          </Button>
 
-          <button
-            onClick={() => navigate('/home')}
-            className="w-full mt-3 py-2 text-slate-600 hover:text-slate-900"
+          <Button
+            variant="ghost"
+            fullWidth
+            onClick={() => navigate(courseHome)}
+            className="mt-3"
           >
             Back to Home
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -558,9 +521,9 @@ const TimedQuiz: React.FC = () => {
               ))}
             </div>
 
-            <button onClick={handleSubmit} className="btn-primary w-full py-3 text-lg">
+            <Button variant="primary" size="lg" fullWidth onClick={handleSubmit}>
               Submit Quiz
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -624,25 +587,27 @@ const TimedQuiz: React.FC = () => {
           </div>
 
           <div className="flex gap-3 mb-4">
-            <button onClick={() => setQuizState('setup')} className="btn-secondary flex-1">
+            <Button variant="secondary" onClick={() => setQuizState('setup')} className="flex-1">
               Try Again
-            </button>
-            <button onClick={() => navigate('/progress')} className="btn-primary flex-1">
+            </Button>
+            <Button variant="primary" onClick={() => navigate('/progress')} className="flex-1">
               View Progress
-            </button>
+            </Button>
           </div>
           
           {/* Review Explanations Button */}
-          <button
+          <Button
+            variant="ghost"
+            fullWidth
+            leftIcon={BookOpen}
             onClick={() => {
               setReviewIndex(0);
               setQuizState('explanations');
             }}
-            className="w-full py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors flex items-center justify-center gap-2"
+            className="py-3 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl"
           >
-            <BookOpen className="w-5 h-5" />
             Review All Explanations
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -770,13 +735,13 @@ const TimedQuiz: React.FC = () => {
         {/* Navigation Footer */}
         <div className="bg-white border-t border-slate-100 px-4 py-3">
           <div className="max-w-3xl mx-auto flex items-center justify-between">
-            <button
+            <Button
+              variant="secondary"
               onClick={() => setReviewIndex(i => Math.max(0, i - 1))}
               disabled={reviewIndex === 0}
-              className="btn-secondary disabled:opacity-30"
             >
               Previous
-            </button>
+            </Button>
 
             <div className="flex gap-1">
               {questions.slice(Math.max(0, reviewIndex - 3), reviewIndex + 4).map((q, idx) => {
@@ -805,14 +770,14 @@ const TimedQuiz: React.FC = () => {
               })}
             </div>
 
-            <button
+            <Button
+              variant="primary"
               onClick={() => setReviewIndex(i => Math.min(questions.length - 1, i + 1))}
               disabled={reviewIndex === questions.length - 1}
-              className="btn-primary disabled:opacity-30 flex items-center gap-2"
+              rightIcon={ArrowRight}
             >
               Next
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -829,17 +794,18 @@ const TimedQuiz: React.FC = () => {
             <span className="font-medium text-slate-900 dark:text-white">
               {currentIndex + 1} / {questions.length}
             </span>
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={toggleFlag}
               className={clsx(
-                'p-1.5 rounded-lg transition-colors',
                 flagged.has(currentQuestion?.id)
                   ? 'bg-warning-100 text-warning-600'
-                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
+                  : 'text-slate-600 dark:text-slate-300'
               )}
             >
               <Flag className="w-5 h-5" />
-            </button>
+            </Button>
           </div>
 
           <div
@@ -852,12 +818,14 @@ const TimedQuiz: React.FC = () => {
             {formatTime(timeLeft)}
           </div>
 
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsPaused((p) => !p)}
-            className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 dark:text-slate-200"
+            className="dark:text-slate-200"
           >
             {isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}
-          </button>
+          </Button>
         </div>
 
         {/* Progress bar */}
@@ -878,9 +846,9 @@ const TimedQuiz: React.FC = () => {
             <Pause className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <h2 className="text-2xl font-bold mb-2">Quiz Paused</h2>
             <p className="text-slate-300 mb-6">Timer stopped. Click resume to continue.</p>
-            <button onClick={() => setIsPaused(false)} className="btn-primary">
+            <Button variant="primary" onClick={() => setIsPaused(false)}>
               Resume Quiz
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -929,25 +897,25 @@ const TimedQuiz: React.FC = () => {
       {/* Footer */}
       <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <button
+          <Button
+            variant="secondary"
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="btn-secondary disabled:opacity-30"
           >
             Previous
-          </button>
+          </Button>
 
-          <button
+          <Button
+            variant="ghost"
             onClick={() => setQuizState('review')}
-            className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            className="text-sm text-slate-600 dark:text-slate-300"
           >
             Review All
-          </button>
+          </Button>
 
-          <button onClick={handleNext} className="btn-primary flex items-center gap-2">
+          <Button variant="primary" onClick={handleNext} rightIcon={ArrowRight}>
             {currentIndex === questions.length - 1 ? 'Review' : 'Next'}
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

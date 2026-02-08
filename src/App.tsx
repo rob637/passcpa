@@ -643,7 +643,7 @@ function App() {
                       />
                       <Route
                         path="/ea/learn"
-                        element={<Navigate to="/ea/section/SEE1" replace />}
+                        element={<Navigate to="/learn" replace />}
                       />
                     </>
                   )}
@@ -683,7 +683,7 @@ function App() {
                       />
                       <Route
                         path="/cma/learn"
-                        element={<Navigate to="/cma/section/CMA1" replace />}
+                        element={<Navigate to="/learn" replace />}
                       />
                     </>
                   )}
@@ -735,7 +735,7 @@ function App() {
                       />
                       <Route
                         path="/cia/learn"
-                        element={<Navigate to="/cia/section/CIA1" replace />}
+                        element={<Navigate to="/learn" replace />}
                       />
                     </>
                   )}
@@ -785,7 +785,7 @@ function App() {
                       />
                       <Route 
                         path="/cfp/learn" 
-                        element={<Navigate to="/cfp/domain/CFP-GEN" replace />}
+                        element={<Navigate to="/learn" replace />}
                       />
                     </>
                   )}
@@ -835,7 +835,7 @@ function App() {
                       />
                       <Route
                         path="/cisa/learn"
-                        element={<Navigate to="/cisa/section/CISA1" replace />}
+                        element={<Navigate to="/learn" replace />}
                       />
                     </>
                   )}

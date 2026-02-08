@@ -35,7 +35,6 @@ import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getSt
 import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
 import { BlueprintHeatMap, WeightComparisonChart, SmartRecommendations, AnalyticsSummary } from '../analytics/BlueprintAnalyticsComponents';
 import Leaderboard from '../Leaderboard';
-import { CPA_COURSE } from '../../courses/cpa/config';
 
 interface WeeklyActivity {
   date: Date;
@@ -444,7 +443,7 @@ const Progress: React.FC = () => {
   const { user, userProfile } = useAuth();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy() as any;
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const [timeRange, setTimeRange] = useState('week');
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
@@ -574,7 +573,7 @@ const Progress: React.FC = () => {
         const tbsCompletedCount = tbsHistory.length;
 
         // Calculate unit stats for Units Report (Becker-style)
-        const sectionConfig = CPA_COURSE.sections.find(s => s.id === currentSection);
+        const sectionConfig = course.sections.find(s => s.id === currentSection);
         const blueprintAreas = sectionConfig?.blueprintAreas || [];
         
         // Get lesson progress for mapping

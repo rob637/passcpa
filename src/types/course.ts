@@ -111,6 +111,25 @@ export interface Course {
     flashcards?: boolean;
     performanceTracking?: boolean;
   };
+  
+  // Exam Overview - Why get this certification?
+  examOverview?: {
+    title: string;
+    description: string;
+    benefits: string[];
+    careerOpportunities: string[];
+    averageSalary?: string;
+    examFormat: string;
+  };
+  
+  // Exam Strategy - Tips for passing
+  examStrategy?: {
+    title: string;
+    keyStrategies: { title: string; description: string }[];
+    studyTips: string[];
+    commonMistakes: string[];
+    timeManagement?: string;
+  };
 }
 
 /**

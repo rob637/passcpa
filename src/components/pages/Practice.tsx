@@ -35,7 +35,6 @@ import { useStudy } from '../../hooks/useStudy';
 import { useSwipe } from '../../hooks/useSwipe';
 import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
-import { CPA_COURSE } from '../../courses/cpa/config';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
 import { getDefaultSection } from '../../utils/sectionUtils';
@@ -94,8 +93,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
     scoringMode: 'practice',
   });
 
-  // Blueprint areas for current section
-  const sectionConfig = CPA_COURSE.sections.find(s => s.id === config.section);
+  // Blueprint areas for current section (from active course context)
+  const sectionConfig = course.sections.find(s => s.id === config.section);
   const blueprintAreas = sectionConfig?.blueprintAreas?.map(bp => ({ id: bp.id, name: bp.name })) || [];
 
   // Load practice history
@@ -699,7 +698,7 @@ const Practice: React.FC = () => {
   const [searchParams] = useSearchParams();
   const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   
   // Check if coming from daily plan
   const fromDailyPlan = searchParams.get('from') === 'dailyplan';
@@ -921,8 +920,8 @@ const Practice: React.FC = () => {
         const urlSection = searchParams.get('section') as ExamSection;
         const section = config.section || urlSection || (userProfile?.examSection as ExamSection) || getDefaultSection(courseId);
         
-        // HR1 filter only applies to REG/TCP sections (tax law updates)
-        const applyHr1Filter = is2026 && (section === 'REG' || section === 'TCP');
+        // HR1 filter only applies to CPA REG/TCP sections (tax law updates)
+        const applyHr1Filter = is2026 && courseId === 'cpa' && (section === 'REG' || section === 'TCP');
         
         // Use smart selection for study mode (spaced repetition + fresh questions)
         const shouldUseSmartSelection = config.mode === 'study' && !!userProfile?.id;
@@ -1530,7 +1529,7 @@ const Practice: React.FC = () => {
                     // Navigate in same window - state will be restored on return
                     const questionText = currentQuestion?.question || '';
                     const correctAnswer = currentQuestion?.options?.[currentQuestion.correctAnswer] || '';
-                    const context = encodeURIComponent(`I need help understanding this CPA question:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}`);
+                    const context = encodeURIComponent(`I need help understanding this ${course.shortName} question:\n\nQuestion: ${questionText}\n\nCorrect Answer: ${correctAnswer}`);
                     navigate(`/ai-tutor?context=${context}&returnTo=/practice`);
                   }}
                   variant="secondary"
@@ -1547,7 +1546,7 @@ const Practice: React.FC = () => {
                     // Navigate in same window - state will be restored on return
                     const lessonUrl = currentQuestion.blueprintArea 
                       ? `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`
-                      : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || 'far'}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
+                      : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || getDefaultSection(courseId).toLowerCase()}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
                     navigate(lessonUrl);
                   }}
                   variant="secondary"

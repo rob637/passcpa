@@ -5,6 +5,7 @@ import {
   BookOpen,
   CheckCircle,
   ChevronRight,
+  ChevronDown,
   Clock,
   Search,
   GraduationCap,
@@ -14,6 +15,12 @@ import {
   Trophy,
   Bookmark,
   StickyNote,
+  Target,
+  Compass,
+  DollarSign,
+  Briefcase,
+  Lightbulb,
+  AlertTriangle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -25,15 +32,12 @@ import { getTBSCount } from '../../services/tbsService';
 import { useBookmarks } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
+import { BlueprintArea } from '../../types/course';
 
 interface AreaDefinition {
   id: string;
   title: string;
   shortTitle: string;
-}
-
-interface AreaMap {
-  [key: string]: AreaDefinition[];
 }
 
 interface DisplayLesson {
@@ -50,143 +54,44 @@ interface GroupedArea extends AreaDefinition {
   tbsCount?: number;
 }
 
-// Group lessons by topic area for display
-const groupLessonsByArea = (lessons: Lesson[], completedLessons: Set<string>): GroupedArea[] => {
-  // Create area groupings based on lesson topics
-  const areaMap: AreaMap = {
-    PREP: [
-      { id: 'prep-intro', title: 'Understanding the 2026 CPA Exam', shortTitle: 'Intro' },
-      { id: 'prep-mcq', title: 'MCQ Strategy', shortTitle: 'MCQ' },
-      { id: 'prep-tbs', title: 'TBS Strategy', shortTitle: 'TBS' },
-      { id: 'prep-wc', title: 'Written Communication (TCP/BAR)', shortTitle: 'Writing' },
-      { id: 'prep-planning', title: 'Study Planning', shortTitle: 'Planning' },
-      { id: 'prep-day', title: 'Test Day & Mental Game', shortTitle: 'Test Day' },
-    ],
-    FAR: [
-      { id: 'far-conceptual', title: 'Conceptual Framework & Standard Setting', shortTitle: 'Conceptual' },
-      { id: 'far-accounts', title: 'Financial Statement Accounts', shortTitle: 'Accounts' },
-      { id: 'far-transactions', title: 'Transactions', shortTitle: 'Transactions' },
-      { id: 'far-govt', title: 'State & Local Government', shortTitle: 'Govt' },
-      { id: 'far-nfp', title: 'Not-for-Profit Entities', shortTitle: 'NFP' },
-    ],
-    AUD: [
-      { id: 'aud-ethics', title: 'Ethics & Professional Responsibilities', shortTitle: 'Ethics' },
-      { id: 'aud-risk', title: 'Risk Assessment & Planning', shortTitle: 'Risk' },
-      { id: 'aud-evidence', title: 'Performing Procedures & Evidence', shortTitle: 'Evidence' },
-      { id: 'aud-reporting', title: 'Forming Conclusions & Reporting', shortTitle: 'Reporting' },
-    ],
-    REG: [
-      { id: 'reg-ethics', title: 'Ethics & Federal Tax Procedures', shortTitle: 'Procedures' },
-      { id: 'reg-law', title: 'Business Law', shortTitle: 'Business Law' },
-      { id: 'reg-individual', title: 'Federal Taxation of Individuals', shortTitle: 'Individual' },
-      { id: 'reg-entity', title: 'Federal Taxation of Entities', shortTitle: 'Entities' },
-    ],
-    BAR: [
-      { id: 'bar-combinations', title: 'Business Combinations & Consolidations', shortTitle: 'Combinations' },
-      { id: 'bar-tech', title: 'Technical Accounting', shortTitle: 'Technical' },
-      { id: 'bar-govt', title: 'State & Local Government (Advanced)', shortTitle: 'Adv Govt' },
-      { id: 'bar-analysis', title: 'Financial Analysis & Planning', shortTitle: 'Analysis' },
-    ],
-    ISC: [
-      { id: 'isc-systems', title: 'Information Systems & Data Management', shortTitle: 'Systems' },
-      { id: 'isc-security', title: 'Security, Confidentiality & Privacy', shortTitle: 'Security' },
-      { id: 'isc-soc', title: 'SOC Engagements', shortTitle: 'SOC' },
-    ],
-    TCP: [
-      { id: 'tcp-individual', title: 'Individual Tax Planning', shortTitle: 'Individual' },
-      { id: 'tcp-entity', title: 'Entity Tax Planning', shortTitle: 'Entity' },
-      { id: 'tcp-property', title: 'Property Transactions', shortTitle: 'Property' },
-      { id: 'tcp-estates', title: 'Gift & Estate Tax', shortTitle: 'Estate' },
-    ],
-    // EA - Special Enrollment Exam
-    SEE1: [
-      { id: 'see1-preliminary', title: 'Preliminary Work and Taxpayer Data', shortTitle: 'Preliminary' },
-      { id: 'see1-income', title: 'Income and Assets', shortTitle: 'Income' },
-      { id: 'see1-deductions', title: 'Deductions and Adjustments', shortTitle: 'Deductions' },
-      { id: 'see1-taxation', title: 'Taxation and Advice', shortTitle: 'Taxation' },
-      { id: 'see1-credits', title: 'Credits', shortTitle: 'Credits' },
-      { id: 'see1-specialized', title: 'Specialized Returns', shortTitle: 'Specialized' },
-    ],
-    SEE2: [
-      { id: 'see2-entities', title: 'Business Entities', shortTitle: 'Entities' },
-      { id: 'see2-financial', title: 'Business Financial Information', shortTitle: 'Financial' },
-      { id: 'see2-income', title: 'Business Income and Expenses', shortTitle: 'Income/Exp' },
-      { id: 'see2-sole', title: 'Sole Proprietorships', shortTitle: 'Sole Prop' },
-      { id: 'see2-partnerships', title: 'Partnerships', shortTitle: 'Partnerships' },
-      { id: 'see2-ccorp', title: 'C Corporations', shortTitle: 'C Corps' },
-      { id: 'see2-scorp', title: 'S Corporations', shortTitle: 'S Corps' },
-    ],
-    SEE3: [
-      { id: 'see3-practices', title: 'Practices and Procedures', shortTitle: 'Practices' },
-      { id: 'see3-representation', title: 'Representation Before the IRS', shortTitle: 'Representation' },
-      { id: 'see3-specific', title: 'Specific Areas of Representation', shortTitle: 'Specific Areas' },
-      { id: 'see3-filing', title: 'Filing Requirements', shortTitle: 'Filing' },
-      { id: 'see3-penalties', title: 'Penalties and Interest', shortTitle: 'Penalties' },
-      { id: 'see3-collection', title: 'Collection Procedures', shortTitle: 'Collection' },
-    ],
-    // CMA - Certified Management Accountant
-    CMA1: [
-      { id: 'cma1-planning', title: 'External Financial Reporting Decisions', shortTitle: 'Ext Reporting' },
-      { id: 'cma1-performance', title: 'Planning, Budgeting and Forecasting', shortTitle: 'Planning' },
-      { id: 'cma1-cost', title: 'Performance Management', shortTitle: 'Performance' },
-      { id: 'cma1-internal', title: 'Cost Management', shortTitle: 'Cost Mgmt' },
-    ],
-    CMA2: [
-      { id: 'cma2-financial', title: 'Financial Statement Analysis', shortTitle: 'Analysis' },
-      { id: 'cma2-corporate', title: 'Corporate Finance', shortTitle: 'Corp Finance' },
-      { id: 'cma2-decision', title: 'Decision Analysis', shortTitle: 'Decisions' },
-      { id: 'cma2-risk', title: 'Risk Management', shortTitle: 'Risk' },
-    ],
-    // CIA - Certified Internal Auditor
-    CIA1: [
-      { id: 'cia1-foundations', title: 'Foundations of Internal Auditing', shortTitle: 'Foundations' },
-      { id: 'cia1-independence', title: 'Independence and Objectivity', shortTitle: 'Independence' },
-      { id: 'cia1-prof', title: 'Proficiency and Due Professional Care', shortTitle: 'Proficiency' },
-      { id: 'cia1-quality', title: 'Quality Assurance and Improvement', shortTitle: 'Quality' },
-    ],
-    CIA2: [
-      { id: 'cia2-manage', title: 'Managing the Internal Audit Activity', shortTitle: 'Managing' },
-      { id: 'cia2-planning', title: 'Planning the Engagement', shortTitle: 'Planning' },
-      { id: 'cia2-perform', title: 'Performing the Engagement', shortTitle: 'Performing' },
-      { id: 'cia2-communicate', title: 'Communicating Results', shortTitle: 'Communicating' },
-    ],
-    CIA3: [
-      { id: 'cia3-governance', title: 'Governance', shortTitle: 'Governance' },
-      { id: 'cia3-risk', title: 'Risk Management', shortTitle: 'Risk' },
-      { id: 'cia3-controls', title: 'Controls', shortTitle: 'Controls' },
-      { id: 'cia3-fraud', title: 'Business Acumen', shortTitle: 'Business' },
-    ],
-    // CISA - Certified Information Systems Auditor
-    CISA1: [
-      { id: 'cisa1-audit', title: 'Information Systems Auditing Process', shortTitle: 'Audit Process' },
-      { id: 'cisa1-methodology', title: 'Audit Methodology', shortTitle: 'Methodology' },
-    ],
-    CISA2: [
-      { id: 'cisa2-governance', title: 'IT Governance', shortTitle: 'Governance' },
-      { id: 'cisa2-management', title: 'IT Management', shortTitle: 'Management' },
-    ],
-    CISA3: [
-      { id: 'cisa3-acquisition', title: 'Information Systems Acquisition', shortTitle: 'Acquisition' },
-      { id: 'cisa3-development', title: 'IS Development and Implementation', shortTitle: 'Development' },
-    ],
-    CISA4: [
-      { id: 'cisa4-operations', title: 'Information Systems Operations', shortTitle: 'Operations' },
-      { id: 'cisa4-resilience', title: 'Business Resilience', shortTitle: 'Resilience' },
-    ],
-    CISA5: [
-      { id: 'cisa5-protection', title: 'Protection of Information Assets', shortTitle: 'Protection' },
-      { id: 'cisa5-security', title: 'Security Management', shortTitle: 'Security' },
-    ],
-  };
+/**
+ * Convert blueprint areas to area definitions for display
+ */
+const blueprintToAreaDefinition = (blueprintAreas: BlueprintArea[]): AreaDefinition[] => {
+  return blueprintAreas.map(bp => ({
+    id: bp.id,
+    title: bp.name,
+    // Create short title from first meaningful word(s) of name
+    shortTitle: bp.name
+      .replace(/^(Part \d+:|Section \d+:)\s*/i, '')  // Remove "Part X:" prefixes
+      .split(/[,&]/)[0]  // Take first part if comma/ampersand separated
+      .trim()
+      .split(' ')
+      .slice(0, 2)  // Take first 2 words
+      .join(' ')
+      .substring(0, 15),  // Max 15 chars
+  }));
+};
 
-  // Fall back to generic groupings for sections without specific areas
+/**
+ * Group lessons by topic area for display
+ * Uses blueprintAreas from course config - no hardcoded exam-specific data
+ */
+const groupLessonsByArea = (
+  lessons: Lesson[], 
+  completedLessons: Set<string>,
+  blueprintAreas?: BlueprintArea[]
+): GroupedArea[] => {
+  // Default fallback if no blueprint areas defined
   const defaultAreas: AreaDefinition[] = [
     { id: 'area-1', title: 'Core Concepts', shortTitle: 'Core' },
     { id: 'area-2', title: 'Advanced Topics', shortTitle: 'Advanced' },
   ];
 
-  const section = (lessons[0]?.section?.toUpperCase() || 'FAR') as string;
-  const areas = areaMap[section] || defaultAreas;
+  // Convert blueprint areas to display format, or use defaults
+  const areas = blueprintAreas && blueprintAreas.length > 0
+    ? blueprintToAreaDefinition(blueprintAreas)
+    : defaultAreas;
 
   // Distribute lessons across areas based on order
   const lessonsPerArea = Math.ceil(lessons.length / areas.length);
@@ -211,7 +116,7 @@ const groupLessonsByArea = (lessons: Lesson[], completedLessons: Set<string>): G
 const Lessons: React.FC = () => {
   const { userProfile } = useAuth();
   const { getLessonProgress } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const { isBookmarked, getAllBookmarks, getNote } = useBookmarks();
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
@@ -221,6 +126,8 @@ const Lessons: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
+  const [showExamOverview, setShowExamOverview] = useState(false);
+  const [showExamStrategy, setShowExamStrategy] = useState(false);
 
   // Get bookmarked lesson IDs
   const bookmarkedLessonIds = new Set(
@@ -282,8 +189,12 @@ const Lessons: React.FC = () => {
     fetchProgress();
   }, [getLessonProgress, currentSection]);
 
+  // Get blueprint areas from current section config
+  const currentSectionConfig = course.sections.find(s => s.id === currentSection);
+  const blueprintAreas = currentSectionConfig?.blueprintAreas;
+
   // Group lessons into areas with completion status
-  const lessonAreas = groupLessonsByArea(rawLessons, completedLessons);
+  const lessonAreas = groupLessonsByArea(rawLessons, completedLessons, blueprintAreas);
 
   // Filter lessons based on search and bookmarks
   const filteredAreas = lessonAreas
@@ -407,6 +318,178 @@ const Lessons: React.FC = () => {
             />
           </div>
         </div>
+
+        {/* Exam Overview & Strategy Sections */}
+        {(course.examOverview || course.examStrategy) && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            {/* Exam Overview */}
+            {course.examOverview && (
+              <div className="card overflow-hidden">
+                <button
+                  onClick={() => setShowExamOverview(!showExamOverview)}
+                  className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                      <Compass className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">Exam Overview</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">Why get certified</p>
+                    </div>
+                  </div>
+                  <ChevronDown className={clsx(
+                    'w-5 h-5 text-slate-400 transition-transform',
+                    showExamOverview && 'rotate-180'
+                  )} />
+                </button>
+                {showExamOverview && (
+                  <div className="px-4 pb-4 space-y-4 border-t border-slate-100 dark:border-slate-700 pt-4">
+                    <p className="text-slate-700 dark:text-slate-200">{course.examOverview.description}</p>
+                    
+                    {course.examOverview.benefits && course.examOverview.benefits.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
+                          <CheckCircle className="w-4 h-4 text-success-600" />
+                          Key Benefits
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {course.examOverview.benefits.map((benefit, i) => (
+                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
+                              <span className="text-success-500 mt-0.5">•</span>
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {course.examOverview.careerOpportunities && course.examOverview.careerOpportunities.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
+                          <Briefcase className="w-4 h-4 text-primary-600" />
+                          Career Opportunities
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {course.examOverview.careerOpportunities.map((career, i) => (
+                            <span key={i} className="px-2 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                              {career}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {course.examOverview.averageSalary && (
+                      <div className="flex items-center gap-2 p-3 rounded-lg bg-success-50 dark:bg-success-900/20">
+                        <DollarSign className="w-5 h-5 text-success-600" />
+                        <div>
+                          <span className="text-sm font-medium text-success-700 dark:text-success-400">Average Salary: </span>
+                          <span className="text-sm text-success-600 dark:text-success-300">{course.examOverview.averageSalary}</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {course.examOverview.examFormat && (
+                      <div className="text-sm text-slate-600 dark:text-slate-300">
+                        <span className="font-medium text-slate-900 dark:text-slate-100">Exam Format: </span>
+                        {course.examOverview.examFormat}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {/* Exam Strategy */}
+            {course.examStrategy && (
+              <div className="card overflow-hidden">
+                <button
+                  onClick={() => setShowExamStrategy(!showExamStrategy)}
+                  className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                      <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">Exam Strategy</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">Tips to pass</p>
+                    </div>
+                  </div>
+                  <ChevronDown className={clsx(
+                    'w-5 h-5 text-slate-400 transition-transform',
+                    showExamStrategy && 'rotate-180'
+                  )} />
+                </button>
+                {showExamStrategy && (
+                  <div className="px-4 pb-4 space-y-4 border-t border-slate-100 dark:border-slate-700 pt-4">
+                    {course.examStrategy.keyStrategies && course.examStrategy.keyStrategies.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
+                          <Target className="w-4 h-4 text-amber-600" />
+                          Key Strategies
+                        </h4>
+                        <div className="space-y-2">
+                          {course.examStrategy.keyStrategies.map((strategy, i) => (
+                            <div key={i} className="p-2 rounded-lg bg-slate-50 dark:bg-slate-700/50">
+                              <p className="text-sm font-medium text-slate-900 dark:text-slate-100">{strategy.title}</p>
+                              <p className="text-xs text-slate-600 dark:text-slate-400">{strategy.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {course.examStrategy.studyTips && course.examStrategy.studyTips.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
+                          <Lightbulb className="w-4 h-4 text-primary-600" />
+                          Study Tips
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {course.examStrategy.studyTips.map((tip, i) => (
+                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
+                              <span className="text-primary-500 mt-0.5">•</span>
+                              {tip}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {course.examStrategy.commonMistakes && course.examStrategy.commonMistakes.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
+                          <AlertTriangle className="w-4 h-4 text-red-600" />
+                          Common Mistakes
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {course.examStrategy.commonMistakes.map((mistake, i) => (
+                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
+                              <span className="text-red-500 mt-0.5">•</span>
+                              {mistake}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    
+                    {course.examStrategy.timeManagement && (
+                      <div className="flex items-center gap-2 p-3 rounded-lg bg-primary-50 dark:bg-primary-900/20">
+                        <Clock className="w-5 h-5 text-primary-600" />
+                        <div>
+                          <span className="text-sm font-medium text-primary-700 dark:text-primary-400">Time Investment: </span>
+                          <span className="text-sm text-primary-600 dark:text-primary-300">{course.examStrategy.timeManagement}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Search & Filter */}
         <div className="flex flex-col sm:flex-row gap-3">

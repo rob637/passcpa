@@ -99,26 +99,23 @@ const Home = () => {
   }, [showSectionPicker]);
 
   // Sync local state when profile loads/changes
+  // Use getCurrentSection to ensure section is valid for current course
   useEffect(() => {
-    if (userProfile?.examSection && userProfile.examSection !== activeSection) {
-      setActiveSection(userProfile.examSection as string);
+    if (userProfile?.examSection) {
+      const validSection = getCurrentSection(userProfile, courseId, getDefaultSection);
+      if (validSection !== activeSection) {
+        setActiveSection(validSection);
+      }
     }
-  }, [userProfile?.examSection]);
+  }, [userProfile?.examSection, courseId]);
   
   // Reset section when course changes (e.g., user switches from CISA to CPA)
   useEffect(() => {
-    // Check if current section is valid for the new course
+    // Check if current section is valid for the new course using course config
     const validSections = course?.sections.map(s => s.id) || [];
-    const isCPA = courseId === 'cpa';
     
-    // For CPA, also check core/discipline sections
-    if (isCPA) {
-      const cpaSections = ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
-      if (!cpaSections.includes(activeSection)) {
-        setActiveSection(getDefaultSection(courseId));
-      }
-    } else if (validSections.length > 0 && !validSections.includes(activeSection)) {
-      // For other courses, reset to default if current section isn't in the course
+    if (validSections.length > 0 && !validSections.includes(activeSection)) {
+      // Reset to default if current section isn't valid for this course
       setActiveSection(getDefaultSection(courseId));
     }
   }, [courseId, course?.sections]);

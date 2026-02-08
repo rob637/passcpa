@@ -97,30 +97,31 @@ const TUTOR_MODES: Record<string, TutorMode> = {
   },
 };
 
-// Smart prompts based on user's weak areas
-const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string = 'REG'): SmartPrompt[] => {
+// Smart prompts based on user's weak areas and course
+const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string, _courseId: string = 'cpa', shortName: string = 'CPA'): SmartPrompt[] => {
+  // Generate course-specific base prompts
   const basePrompts: SmartPrompt[] = [
     {
       icon: HelpCircle,
-      text: "What's the difference between a finance lease and an operating lease?",
+      text: `What are the most important concepts in ${section}?`,
       category: 'Concept',
-      topics: ['far-leases'],
+      topics: [],
     },
     {
       icon: Lightbulb,
-      text: 'Give me a mnemonic for remembering the S-Corp requirements',
+      text: `Give me a mnemonic for remembering key ${shortName} topics`,
       category: 'Memory Tip',
-      topics: ['reg-business-tax'],
+      topics: [],
     },
     {
       icon: Target,
-      text: 'Walk me through calculating adjusted basis in a partnership',
+      text: `Walk me through a complex calculation for ${section}`,
       category: 'Step-by-Step',
-      topics: ['reg-business-tax'],
+      topics: [],
     },
     {
       icon: TrendingUp,
-      text: 'What are the most tested topics on the ' + section + ' exam?',
+      text: `What are the most tested topics on the ${section} ${shortName} exam?`,
       category: 'High-Yield',
       topics: [],
     },
@@ -193,7 +194,7 @@ const formatMessage = (content: string) => {
 const AITutor: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { weeklyStats } = useStudy();
-  const { courseId } = useCourse();
+  const { courseId, course } = useCourse();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -297,7 +298,7 @@ const AITutor: React.FC = () => {
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion for **${sectionInfo?.shortName || 'the CPA exam'}**. 🎓\n\n`;
+    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion for **${sectionInfo?.shortName || course.shortName}**. 🎓\n\n`;
 
     // Add context about weak areas
     if (weakAreas.length > 0) {
@@ -564,7 +565,7 @@ const AITutor: React.FC = () => {
     ]);
   };
 
-  const smartPrompts = getSmartPrompts(weakAreas, currentSection);
+  const smartPrompts = getSmartPrompts(weakAreas, currentSection, courseId, course?.shortName || 'CPA');
 
   return (
     <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
@@ -805,7 +806,7 @@ const AITutor: React.FC = () => {
                     ? "Describe what you're trying to understand..."
                     : tutorMode === 'quiz'
                       ? 'Tell me a topic to quiz you on...'
-                      : 'Ask anything about the CPA exam...'
+                      : `Ask anything about the ${course.shortName} exam...`
                 }
                 className="input resize-none"
                 rows={1}

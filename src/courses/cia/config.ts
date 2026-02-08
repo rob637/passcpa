@@ -250,6 +250,54 @@ export const CIA_COURSE: Course = {
     hasEssay: false,
     hasDataInsights: false,
   },
+  
+  examOverview: {
+    title: 'Why Become a CIA?',
+    description: 'The Certified Internal Auditor (CIA) designation from The IIA is the only globally recognized certification for internal auditors. CIAs are the gold standard in internal audit, demonstrating competency in risk assessment, governance, and controls.',
+    benefits: [
+      'Only globally recognized internal audit certification',
+      'Demonstrates commitment to professional excellence',
+      'Increases career advancement opportunities',
+      'Higher salary potential (CIAs earn 20-50% more)',
+      'Membership in elite professional community',
+    ],
+    careerOpportunities: [
+      'Internal Audit Manager / Director',
+      'Chief Audit Executive (CAE)',
+      'Risk Management Specialist',
+      'Compliance Officer',
+      'IT Auditor',
+      'Forensic Auditor',
+      'Corporate Governance Consultant',
+    ],
+    averageSalary: '$80,000 - $180,000+ (CAEs earn $150K+)',
+    examFormat: '3 parts (Essentials, Practice, Business Knowledge), 2-2.5 hours each, 100% MCQ',
+  },
+  
+  examStrategy: {
+    title: 'CIA Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Master the IPPF', description: 'The International Professional Practices Framework is the foundation of Parts 1 and 2. Know the Standards, Implementation Guidance, and Code of Ethics.' },
+      { title: 'Think Like an Internal Auditor', description: 'Apply professional skepticism. Questions often test what an internal auditor SHOULD do, not what\'s easiest.' },
+      { title: 'Part 3 is Different', description: 'Part 3 covers business knowledge (finance, IT, operations) - study it differently than Parts 1 & 2.' },
+      { title: 'Understand Not Memorize', description: 'The exam tests application of concepts, not rote memorization. Practice applying standards to scenarios.' },
+    ],
+    studyTips: [
+      'Read the IIA\'s International Standards and Code of Ethics multiple times',
+      'Practice scenario-based questions - that\'s how the exam tests',
+      'Don\'t neglect Part 3 business topics (IT security, financial management)',
+      'Take each part separately - schedule exams 2-3 months apart',
+      'Use the IIA\'s CIA Learning System as primary study material',
+    ],
+    commonMistakes: [
+      'Underestimating Part 3 (business knowledge is broad)',
+      'Not understanding when to use different types of audit engagements',
+      'Confusing assurance vs. consulting engagements',
+      'Skipping the code of ethics section',
+      'Rushing through questions without reading all options',
+    ],
+    timeManagement: 'Plan 100-150 hours per part. Most pass all 3 parts within 12-18 months.',
+  },
 };
 
 export default CIA_COURSE;

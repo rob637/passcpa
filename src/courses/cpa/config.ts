@@ -398,6 +398,53 @@ export const CPA_COURSE: Course = {
     hasEssay: false,
     hasDataInsights: false,
   },
+  
+  examOverview: {
+    title: 'Why Become a CPA?',
+    description: 'The Certified Public Accountant (CPA) credential is the gold standard in accounting. CPAs are trusted financial advisors who handle everything from audits and taxes to financial planning and business consulting.',
+    benefits: [
+      'Highest earning potential in accounting',
+      'Required for signing audit reports',
+      'Recognized in all 50 U.S. states',
+      'Gateway to partner-track positions',
+      'Enhanced credibility with clients and employers',
+    ],
+    careerOpportunities: [
+      'Public Accounting (Big 4, regional, local firms)',
+      'Corporate Finance & Controllership',
+      'Tax Planning & Compliance',
+      'Forensic Accounting',
+      'Government & Non-profit',
+      'CFO/Executive Leadership',
+    ],
+    averageSalary: '$75,000 - $150,000+ (varies by experience and location)',
+    examFormat: '4 sections (AUD, FAR, REG + 1 Discipline), 4 hours each, 50% MCQ / 50% TBS',
+  },
+  
+  examStrategy: {
+    title: 'CPA Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Master the Testlets', description: 'The CPA exam uses adaptive MCQ testlets. Perform well on the first testlet to unlock harder (higher-scoring) questions.' },
+      { title: 'Time Management', description: 'Allocate ~1.5 min per MCQ and ~15-20 min per TBS. Flag and move on if stuck.' },
+      { title: "Don't Overthink MCQs", description: 'Your first instinct is often correct. Read carefully but avoid second-guessing.' },
+      { title: 'TBS = Application', description: 'Task-Based Simulations test real-world application. Practice with authoritative literature.' },
+    ],
+    studyTips: [
+      'Study in the order: FAR → AUD → REG → Discipline (or FAR → REG → AUD → Discipline)',
+      'Use spaced repetition for retention',
+      'Take at least 3 full practice exams per section',
+      'Review incorrect answers thoroughly - understand WHY',
+      'Study 15-25 hours per week for 4-6 weeks per section',
+    ],
+    commonMistakes: [
+      'Underestimating FAR (it has the most content)',
+      'Neglecting government/NFP accounting in FAR',
+      'Not practicing TBS enough',
+      'Cramming instead of consistent study',
+      'Ignoring the Authoritative Literature in TBS',
+    ],
+    timeManagement: 'Most successful candidates study 300-400 hours total across all sections.',
+  },
 };
 
 /**

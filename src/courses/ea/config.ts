@@ -258,6 +258,53 @@ export const EA_COURSE: Course = {
     hasEssay: false,
     hasDataInsights: false,
   },
+  
+  examOverview: {
+    title: 'Why Become an Enrolled Agent?',
+    description: 'Enrolled Agents (EAs) are federally-authorized tax practitioners who can represent taxpayers before the IRS. The EA credential is the highest credential the IRS awards and is recognized across all 50 states.',
+    benefits: [
+      'Unlimited representation rights before the IRS',
+      'Federal credential recognized nationwide',
+      'No degree requirement - pass the exam and background check',
+      'Specialization in tax (unlike CPA generalist path)',
+      'Growing demand due to tax complexity',
+    ],
+    careerOpportunities: [
+      'Tax Preparation (seasonal or year-round)',
+      'IRS Representation & Tax Resolution',
+      'Tax Planning & Advisory',
+      'Self-employed Tax Practice',
+      'CPA/Law Firm Tax Department',
+      'Corporate Tax Compliance',
+    ],
+    averageSalary: '$50,000 - $100,000+ (self-employed EAs can earn significantly more)',
+    examFormat: '3 parts (Individuals, Businesses, Representation), 3.5 hours each, 100% MCQ',
+  },
+  
+  examStrategy: {
+    title: 'EA Exam Success Strategies',
+    keyStrategies: [
+      { title: 'Know the Forms', description: 'The EA exam is heavily form-based. Understand which lines on Form 1040, 1120, 1065, etc. are affected by different scenarios.' },
+      { title: 'Part Order Matters', description: 'Most candidates start with Part 1 (Individuals) since it builds the foundation for Parts 2 and 3.' },
+      { title: 'Focus on Current Tax Law', description: 'The exam tests tax law as of the December 31 prior to your testing window.' },
+      { title: 'Practice Calculations', description: 'You\'ll need to calculate basis, depreciation, and various credits without a formula sheet.' },
+    ],
+    studyTips: [
+      'Study Part 1 → Part 2 → Part 3 (builds logically)',
+      'Use IRS publications as supplemental reference',
+      'Master basis calculations - they appear everywhere',
+      'Create a formula sheet for depreciation methods',
+      'Practice under timed conditions (3.5 hours is long!)',
+    ],
+    commonMistakes: [
+      'Underestimating Part 2 (Businesses) complexity',
+      'Not knowing Circular 230 for Part 3',
+      'Confusing similar-sounding concepts (e.g., child tax credit vs. additional child tax credit)',
+      'Rushing through calculations',
+      'Not reading questions carefully (many have "EXCEPT" or "NOT")',
+    ],
+    timeManagement: 'Plan 2-3 weeks of study per part. ~100-150 total study hours.',
+  },
 };
 
 /**

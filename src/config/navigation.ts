@@ -67,13 +67,13 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
   ea: {
     paths: {
       home: '/ea',
-      learn: '/ea/section/SEE1',
+      learn: '/learn',
       you: '/you',
       strategy: '/ea',
     },
     activePaths: {
       home: ['/ea'],
-      learn: ['/ea/section', '/ea/lessons', '/lessons'],
+      learn: ['/learn', '/lessons'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: [],
     },
@@ -82,13 +82,13 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
   cma: {
     paths: {
       home: '/cma/dashboard',
-      learn: '/cma/section/CMA1',
+      learn: '/learn',
       you: '/you',
       strategy: '/cma/dashboard',
     },
     activePaths: {
       home: ['/cma/dashboard', '/cma/practice', '/cma/essay-simulator'],
-      learn: ['/cma/section', '/cma/lessons', '/lessons'],
+      learn: ['/learn', '/lessons'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: [],
     },
@@ -97,13 +97,13 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
   cia: {
     paths: {
       home: '/cia/dashboard',
-      learn: '/cia/section/CIA1',
+      learn: '/learn',
       you: '/you',
       strategy: '/cia/dashboard',
     },
     activePaths: {
       home: ['/cia/dashboard', '/cia/practice'],
-      learn: ['/cia/section', '/cia/lessons', '/lessons'],
+      learn: ['/learn', '/lessons'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: [],
     },
@@ -112,13 +112,13 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
   cfp: {
     paths: {
       home: '/cfp/dashboard',
-      learn: '/cfp/domain/CFP-GEN',
+      learn: '/learn',
       you: '/you',
       strategy: '/cfp/dashboard',
     },
     activePaths: {
       home: ['/cfp/dashboard', '/cfp/practice', '/cfp/case-study'],
-      learn: ['/cfp/domain', '/cfp/lessons', '/lessons'],
+      learn: ['/learn', '/lessons'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: [],
     },
@@ -127,13 +127,13 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
   cisa: {
     paths: {
       home: '/cisa/dashboard',
-      learn: '/cisa/section/CISA1',
+      learn: '/learn',
       you: '/you',
       strategy: '/cisa/dashboard',
     },
     activePaths: {
       home: ['/cisa/dashboard', '/cisa/practice'],
-      learn: ['/cisa/section', '/cisa/lessons', '/lessons'],
+      learn: ['/learn', '/lessons'],
       you: ['/you', '/progress', '/settings', '/achievements'],
       strategy: [],
     },

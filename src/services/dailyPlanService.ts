@@ -25,7 +25,7 @@ import {
 
 export interface DailyActivity {
   id: string;
-  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review';
+  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review' | 'essay' | 'case_study';
   title: string;
   description: string;
   estimatedMinutes: number;
@@ -35,6 +35,8 @@ export interface DailyActivity {
   params: {
     lessonId?: string;
     tbsId?: string;
+    essayId?: string;
+    caseStudyId?: string;
     section?: string;
     topic?: string;
     topics?: string[];
@@ -58,6 +60,8 @@ export interface DailyPlan {
     mcqCount: number;
     tbsCount: number;
     flashcardCount: number;
+    essayCount: number;
+    caseStudyCount: number;
     weakAreaFocus: string[];
   };
   generatedAt: string;
@@ -101,6 +105,8 @@ const ACTIVITY_DURATION = {
   mcq_20: 25,
   tbs: 20,
   flashcards: 10,
+  essay: 30,      // CMA essays are 30 mins each
+  case_study: 25, // CFP case studies
 };
 
 /**
@@ -428,6 +434,56 @@ export const generateDailyPlan = async (
     // This prevents showing "Start" buttons on activities users can't access.
   }
   
+  // 5b. CMA ESSAY PRACTICE - CMA Part 1 & 2 each have 2 essay questions (25% of score)
+  if (courseId === 'cma' && remainingMinutes >= 20) {
+    const essayTopics = getEssayTopicsForSection(state.section);
+    if (essayTopics.length > 0) {
+      const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+      const targetTopic = essayTopics[dayOfYear % essayTopics.length];
+      
+      activities.push({
+        id: `essay-${today}`,
+        type: 'essay',
+        title: 'Essay Practice',
+        description: `Topic: ${targetTopic}`,
+        estimatedMinutes: ACTIVITY_DURATION.essay,
+        points: POINT_VALUES.tbs_basic, // Similar value to TBS
+        priority: 'medium',
+        reason: 'Essays are 25% of your CMA score - practice writing clear, structured responses',
+        params: {
+          section: state.section,
+          topic: targetTopic,
+        },
+      });
+      remainingMinutes -= ACTIVITY_DURATION.essay;
+    }
+  }
+  
+  // 5c. CFP CASE STUDY PRACTICE - CFP exam includes case-based item sets
+  if (courseId === 'cfp' && remainingMinutes >= 20) {
+    const caseStudyDomains = getCFPCaseStudyDomains(state.section);
+    if (caseStudyDomains.length > 0) {
+      const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+      const targetDomain = caseStudyDomains[dayOfYear % caseStudyDomains.length];
+      
+      activities.push({
+        id: `case-study-${today}`,
+        type: 'case_study',
+        title: 'Case Study Practice',
+        description: `Domain: ${targetDomain}`,
+        estimatedMinutes: ACTIVITY_DURATION.case_study,
+        points: POINT_VALUES.tbs_basic,
+        priority: 'medium',
+        reason: 'CFP exam tests application through multi-question case scenarios',
+        params: {
+          section: state.section,
+          topic: targetDomain,
+        },
+      });
+      remainingMinutes -= ACTIVITY_DURATION.case_study;
+    }
+  }
+  
   // 6. LOW: General practice if time remains
   if (remainingMinutes >= 10) {
     activities.push({
@@ -458,6 +514,8 @@ export const generateDailyPlan = async (
     mcqCount: activities.filter(a => a.type === 'mcq').reduce((sum, a) => sum + (a.params.questionCount || 0), 0),
     tbsCount: activities.filter(a => a.type === 'tbs').length,
     flashcardCount: activities.filter(a => a.type === 'flashcards').length,
+    essayCount: activities.filter(a => a.type === 'essay').length,
+    caseStudyCount: activities.filter(a => a.type === 'case_study').length,
     weakAreaFocus: [...new Set(weakAreaFocus)],
   };
   
@@ -511,6 +569,53 @@ const getTBSTopicsForSection = (section: string): string[] => {
   };
   
   return tbsTopics[section] || tbsTopics.FAR;
+};
+
+/**
+ * Get Essay topics for CMA sections
+ * CMA Part 1 & 2 each have 2 essay questions worth 25% of the score
+ */
+const getEssayTopicsForSection = (section: string): string[] => {
+  const essayTopics: Record<string, string[]> = {
+    CMA1: [
+      'Budget Variance Analysis',
+      'Cost-Volume-Profit Analysis',
+      'Transfer Pricing Decisions',
+      'Capital Budgeting Analysis',
+      'Performance Measurement',
+      'Financial Statement Analysis',
+    ],
+    CMA2: [
+      'Ethical Dilemma Resolution',
+      'Investment Decision Analysis',
+      'Risk Management Strategy',
+      'Working Capital Management',
+      'Corporate Governance',
+      'Strategic Planning',
+    ],
+  };
+  
+  return essayTopics[section] || essayTopics.CMA1;
+};
+
+/**
+ * Get CFP Case Study domains
+ * CFP exam uses case-based item sets across all 8 domains
+ */
+const getCFPCaseStudyDomains = (section: string): string[] => {
+  const caseStudyDomains: Record<string, string[]> = {
+    'CFP-GEN': ['Comprehensive Financial Plan', 'Client Data Analysis', 'Goal Prioritization'],
+    'CFP-PCR': ['Fiduciary Duty Scenarios', 'Ethics Case Studies', 'Client Disclosure'],
+    'CFP-RISK': ['Insurance Needs Analysis', 'Risk Assessment Case', 'Disability Planning'],
+    'CFP-INV': ['Portfolio Construction', 'Asset Allocation Case', 'Investment Selection'],
+    'CFP-TAX': ['Tax Planning Strategies', 'Multi-Year Tax Case', 'Entity Selection'],
+    'CFP-RET': ['Retirement Needs Analysis', 'Social Security Optimization', 'Distribution Strategy'],
+    'CFP-EST': ['Estate Plan Review', 'Trust Selection Case', 'Gift Tax Planning'],
+    'CFP-PSY': ['Client Communication', 'Behavioral Coaching', 'Family Dynamics'],
+  };
+  
+  // Return topics for the specific domain, or general topics if not found
+  return caseStudyDomains[section] || caseStudyDomains['CFP-GEN'];
 };
 
 /**

@@ -215,7 +215,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             WHY BECOME A [CERTIFICATION] SECTION
             ================================================================ */}
-        <section id="why-become" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="why-become" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -246,7 +246,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             EXAM OVERVIEW SECTION
             ================================================================ */}
-        <section id="exam" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section id="exam" className="scroll-mt-20 py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -296,7 +296,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             WHY VORAPREP SECTION (shared across all exams)
             ================================================================ */}
-        <section id="features" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="features" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
@@ -331,7 +331,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             COMPETITOR COMPARISON SECTION (if available)
             ================================================================ */}
         {config.competitors && (
-          <section id="comparison" className="py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+          <section id="comparison" className="scroll-mt-20 py-12 md:py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -391,7 +391,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             PRICING SECTION
             ================================================================ */}
-        <section id="pricing" className="py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+        <section id="pricing" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">

@@ -15,7 +15,6 @@ import {
   Moon,
   Monitor,
   Palette,
-  GraduationCap,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
@@ -29,7 +28,7 @@ import { useTheme } from '../../providers/ThemeProvider';
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { createExamDateUpdate } from '../../utils/profileHelpers';
-import { COURSES, ACTIVE_COURSES, type CourseId } from '../../courses';
+import { COURSES, type CourseId } from '../../courses';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -100,7 +99,6 @@ const Settings: React.FC = () => {
   const [examSection, setExamSection] = useState(profile?.examSection || getDefaultSection(courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
   const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
-  const [activeCourse, setActiveCourse] = useState<CourseId>(profile?.activeCourse || 'cpa');
 
   // Sync form state when profile changes (e.g., after reset)
   useEffect(() => {
@@ -109,7 +107,6 @@ const Settings: React.FC = () => {
       setExamSection(profile.examSection || getDefaultSection(courseId));
       setDailyGoal(profile.dailyGoal || 50);
       setExamDate(formatDateForInput(profile.examDate));
-      setActiveCourse(profile.activeCourse || 'cpa');
     }
   }, [profile]);
   
@@ -290,7 +287,6 @@ const Settings: React.FC = () => {
         examSection,
         dailyGoal,
         ...examDateUpdate,
-        activeCourse,
         dailyReminderEnabled: notifications.dailyReminder,
         dailyReminderTime: reminderTime || '09:00',
         weeklyReportEnabled: notifications.weeklyReport,
@@ -449,47 +445,17 @@ const Settings: React.FC = () => {
             {activeTab === 'study' && (
               <div className="card-body space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Study Plan Settings</h2>
-
-                  {/* Active Course */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      <span className="flex items-center gap-2">
-                        <GraduationCap className="w-4 h-4" />
-                        Certification Course
-                      </span>
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                      {ACTIVE_COURSES.map((courseKey) => {
-                        const course = COURSES[courseKey as CourseId];
-                        if (!course) return null;
-                        return (
-                          <button
-                            key={courseKey}
-                            onClick={() => setActiveCourse(courseKey as CourseId)}
-                            className={clsx(
-                              'p-3 rounded-xl border-2 text-left transition-all',
-                              activeCourse === courseKey
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                                : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500'
-                            )}
-                          >
-                            <div
-                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs mb-2"
-                              style={{ backgroundColor: course.color }}
-                            >
-                              {course.shortName}
-                            </div>
-                            <div className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                              {course.name}
-                            </div>
-                          </button>
-                        );
-                      })}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                      style={{ backgroundColor: course?.color || '#3b82f6' }}
+                    >
+                      {course?.shortName || 'CPA'}
                     </div>
-                    <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                      Switch between your certification prep courses
-                    </p>
+                    <div>
+                      <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{course?.name || 'CPA Exam Review'} Settings</h2>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Use the course selector in the sidebar to switch exams</p>
+                    </div>
                   </div>
 
                   {/* Exam Section - All Courses */}
@@ -501,7 +467,7 @@ const Settings: React.FC = () => {
                     {(() => {
                       // For CPA: Determine available sections based on user's exam date
                       let availableSections: string[];
-                      if (activeCourse === 'cpa') {
+                      if (courseId === 'cpa') {
                         const BLUEPRINT_CUTOFF = new Date('2026-07-01');
                         const userExamDate = examDate ? new Date(examDate) : new Date();
                         const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
@@ -509,8 +475,10 @@ const Settings: React.FC = () => {
                           ? [...CORE_SECTIONS, 'BEC']
                           : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
                       } else {
-                        // For other courses, show all sections
-                        availableSections = course.sections.map((s: { id: string }) => s.id);
+                        // For other courses, show all sections except PREP (strategy sections)
+                        availableSections = course.sections
+                          .filter((s: { id: string }) => s.id !== 'PREP')
+                          .map((s: { id: string }) => s.id);
                       }
                       
                       return (
@@ -518,7 +486,7 @@ const Settings: React.FC = () => {
                           {course.sections
                             .filter((s: { id: string }) => availableSections.includes(s.id))
                             .map((section: { id: string }) => {
-                              const displayInfo = getSectionDisplayInfo(section.id, activeCourse);
+                              const displayInfo = getSectionDisplayInfo(section.id, courseId);
                               if (!displayInfo) return null;
                               return (
                             <button
@@ -548,7 +516,7 @@ const Settings: React.FC = () => {
                     })()}
                     
                     {/* Blueprint Info Note - CPA only */}
-                    {activeCourse === 'cpa' && (
+                    {courseId === 'cpa' && (
                     <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                       <div className="flex gap-2">
                         <Info className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />

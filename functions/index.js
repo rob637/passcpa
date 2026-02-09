@@ -16,6 +16,52 @@ admin.initializeApp();
 const db = admin.firestore();
 const messaging = admin.messaging();
 
+// ============================================================================
+// COURSE-SPECIFIC CONFIGURATION
+// Used to customize email content based on user's exam type
+// ============================================================================
+const COURSE_CONFIG = {
+  cpa: {
+    name: 'CPA Exam',
+    tagline: 'Your AI-Powered CPA Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.',
+  },
+  ea: {
+    name: 'EA Exam',
+    tagline: 'Your AI-Powered EA Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with the IRS or Treasury Department.',
+  },
+  cma: {
+    name: 'CMA Exam',
+    tagline: 'Your AI-Powered CMA Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with the Institute of Management Accountants (IMA).',
+  },
+  cia: {
+    name: 'CIA Exam',
+    tagline: 'Your AI-Powered CIA Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with The Institute of Internal Auditors (IIA).',
+  },
+  cisa: {
+    name: 'CISA Exam',
+    tagline: 'Your AI-Powered CISA Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with ISACA.',
+  },
+  cfp: {
+    name: 'CFP Exam',
+    tagline: 'Your AI-Powered CFP Exam Prep Partner',
+    disclaimer: 'VoraPrep is not affiliated with the CFP Board.',
+  },
+};
+
+/**
+ * Get course configuration for email content
+ * @param {string} courseId - Course ID (cpa, ea, cma, etc.)
+ * @returns {Object} Course-specific configuration for emails
+ */
+function getCourseConfig(courseId) {
+  return COURSE_CONFIG[courseId] || COURSE_CONFIG.cpa;
+}
+
 // Email configuration using Resend (3,000 free emails/month)
 // Set via: firebase functions:secrets:set RESEND_API_KEY
 // Get API key from: https://resend.com/api-keys
@@ -149,7 +195,7 @@ function getPasswordResetEmailHTML(email, resetLink) {
         This email was sent to ${email}
       </p>
       <p style="margin: 15px 0 0 0;">
-        <strong>VoraPrep</strong> - Your AI-Powered CPA Exam Prep Partner
+        <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
       </p>
       <p style="margin: 15px 0 0 0;">
         <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
@@ -322,6 +368,9 @@ exports.sendWeeklyReports = onSchedule({
       // Aggregate last 7 days of activity
       const weeklyStats = await getWeeklyStats(userDoc.id, weekAgo);
       
+      // Get course-specific content
+      const courseConfig = getCourseConfig(userData.currentCourse);
+      
       // Generate email content
       const emailContent = generateWeeklyReportEmail(userData, weeklyStats);
       
@@ -329,7 +378,7 @@ exports.sendWeeklyReports = onSchedule({
         const { error } = await resend.emails.send({
           from: FROM_EMAIL,
           to: userEmail,
-          subject: `📊 Your Weekly CPA Study Report - ${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
+          subject: `📊 Your Weekly ${courseConfig.name} Study Report - ${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
           html: emailContent,
         });
         
@@ -407,12 +456,15 @@ exports.sendOnboardingReminders = onSchedule({
           continue;
         }
         
+        // Get course-specific content
+        const courseConfig = getCourseConfig(userData.currentCourse);
+        
         // Send reminder email
         const { error } = await resend.emails.send({
           from: FROM_EMAIL,
           to: userEmail,
-          subject: `⏰ Finish setting up your CPA study plan, ${displayName}!`,
-          html: generateOnboardingReminderEmail(displayName),
+          subject: `⏰ Finish setting up your ${courseConfig.name.replace(' Exam', '')} study plan, ${displayName}!`,
+          html: generateOnboardingReminderEmail(displayName, courseConfig),
         });
         
         if (error) throw new Error(error.message);
@@ -454,7 +506,8 @@ exports.sendOnboardingReminders = onSchedule({
 });
 
 // Onboarding Reminder Email Template
-function generateOnboardingReminderEmail(displayName) {
+function generateOnboardingReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
   return `
 <!DOCTYPE html>
 <html>
@@ -494,7 +547,7 @@ function generateOnboardingReminderEmail(displayName) {
       
       <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
         <li>🎯 A personalized daily study plan based on your exam date</li>
-        <li>📚 2,900+ practice questions for all CPA sections</li>
+        <li>📚 Thousands of practice questions for your ${examName} exam</li>
         <li>🤖 AI tutor for instant explanations</li>
         <li>📊 Progress tracking to keep you on pace</li>
       </ul>
@@ -507,7 +560,7 @@ function generateOnboardingReminderEmail(displayName) {
       </div>
       
       <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
-        Your CPA journey is waiting for you! 🚀
+        Your ${examName} journey is waiting for you! 🚀
       </p>
       
     </div>
@@ -515,7 +568,7 @@ function generateOnboardingReminderEmail(displayName) {
     <!-- Footer -->
     <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
       <p style="margin: 0;">
-        VoraPrep - Your AI-Powered CPA Exam Prep Partner
+        VoraPrep - ${courseConfig.tagline}
       </p>
       <p style="font-size: 11px; margin-top: 10px;">
         <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
@@ -567,7 +620,8 @@ exports.sendWelcomeEmail = onDocumentCreated({
   
   const userData = event.data.data();
   const userEmail = userData.email;
-  const displayName = userData.displayName || 'CPA Candidate';
+  const courseConfig = getCourseConfig(userData.currentCourse);
+  const displayName = userData.displayName || 'Exam Candidate';
   
   if (!userEmail) {
     console.log('No email found for new user');
@@ -579,7 +633,7 @@ exports.sendWelcomeEmail = onDocumentCreated({
       from: FROM_EMAIL,
       to: userEmail,
       subject: `Welcome to VoraPrep, ${displayName}! 🎉`,
-      html: generateWelcomeEmail(displayName),
+      html: generateWelcomeEmail(displayName, courseConfig),
     });
     
     if (error) throw new Error(error.message);
@@ -647,11 +701,11 @@ function getContextualReminder(now) {
   const messages = {
     morning: [
       { title: '🌅 Good morning!', body: 'Start your day with 10 questions to build momentum.' },
-      { title: '☀️ Rise and shine!', body: 'Your CPA journey continues. Ready for a quick study session?' },
+      { title: '☀️ Rise and shine!', body: 'Your exam journey continues. Ready for a quick study session?' },
       { title: '🎯 Morning motivation', body: "Consistent daily practice beats cramming. Let's go!" },
     ],
     afternoon: [
-      { title: '💪 Afternoon check-in', body: 'Take a break from work with some CPA practice.' },
+      { title: '💪 Afternoon check-in', body: 'Take a break with some exam practice.' },
       { title: '📝 Quick quiz?', body: '5 minutes now saves 50 minutes later.' },
       { title: '⚡ Power through', body: 'Energy dip? Wake up your brain with a quick simulation.' },
     ],
@@ -726,8 +780,9 @@ async function getWeeklyStats(userId, startDate) {
 }
 
 function generateWeeklyReportEmail(userData, stats) {
-  const displayName = userData.displayName || 'CPA Candidate';
-  const section = userData.examSection || 'CPA';
+  const courseConfig = getCourseConfig(userData.currentCourse);
+  const displayName = userData.displayName || 'Exam Candidate';
+  const section = userData.examSection || courseConfig.name.replace(' Exam', '');
   
   // Find weakest and strongest topics
   const topics = Object.entries(stats.topicBreakdown)
@@ -815,12 +870,12 @@ function generateWeeklyReportEmail(userData, stats) {
   
   <!-- Footer -->
   <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 30px; text-align: center; color: #94a3b8; font-size: 12px;">
-    <p>VoraPrep - Your AI-Powered CPA Exam Prep Partner</p>
+    <p>VoraPrep - ${courseConfig.tagline}</p>
     <p>
       <a href="https://voraprep.com/settings" style="color: #64748b;">Manage email preferences</a>
     </p>
     <p style="margin-top: 15px; font-size: 11px;">
-      VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.
+      ${courseConfig.disclaimer}
     </p>
   </div>
   
@@ -833,7 +888,8 @@ function generateWeeklyReportEmail(userData, stats) {
 // WELCOME EMAIL TEMPLATE
 // ============================================================================
 
-function generateWelcomeEmail(displayName) {
+function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
   return `
 <!DOCTYPE html>
 <html>
@@ -857,7 +913,7 @@ function generateWelcomeEmail(displayName) {
     </h1>
     
     <p style="color: #64748b; font-size: 18px; text-align: center; margin-bottom: 30px;">
-      You're one step closer to passing your CPA exam.
+      You're one step closer to passing the ${examName} exam.
     </p>
     
     <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
@@ -921,10 +977,10 @@ function generateWelcomeEmail(displayName) {
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
     <p>Questions? Reply to this email or visit our <a href="https://voraprep.com/pricing" style="color: #64748b;">FAQ</a></p>
     <p style="margin-top: 15px;">
-      VoraPrep - Your AI-Powered CPA Exam Prep Partner
+      VoraPrep - ${courseConfig.tagline}
     </p>
     <p style="font-size: 11px; margin-top: 10px;">
-      VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.
+      ${courseConfig.disclaimer}
     </p>
   </div>
   
@@ -962,7 +1018,7 @@ function generateWaitlistEmail(email) {
         You're on the list!
       </h1>
       <p style="color: #64748b; font-size: 16px;">
-        Thanks for joining the VoraPrep beta. We're excited to help you pass your CPA exam!
+        Thanks for joining the VoraPrep beta. We're excited to help you pass your exam!
       </p>
     </div>
     
@@ -981,7 +1037,7 @@ function generateWaitlistEmail(email) {
     <div style="margin: 20px 0;">
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
-        <span style="color: #334155;">2,900+ practice questions across all CPA sections</span>
+        <span style="color: #334155;">Thousands of practice questions for CPA, EA, CMA, and more</span>
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
@@ -989,11 +1045,11 @@ function generateWaitlistEmail(email) {
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
-        <span style="color: #334155;">950+ lessons covering FAR, AUD, REG, BAR, ISC, TCP</span>
+        <span style="color: #334155;">Comprehensive lessons covering all exam sections</span>
       </div>
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
-        <span style="color: #334155;">Realistic exam simulator with TBS practice</span>
+        <span style="color: #334155;">Realistic exam simulator with simulation practice</span>
       </div>
       <div style="padding: 12px 0;">
         <span style="color: #10b981; margin-right: 10px;">✓</span>
@@ -1016,10 +1072,10 @@ function generateWaitlistEmail(email) {
       You received this email because ${email} was signed up at voraprep.com
     </p>
     <p style="margin-top: 15px;">
-      VoraPrep - Your AI-Powered CPA Exam Prep Partner
+      VoraPrep - Your AI-Powered Exam Prep Partner
     </p>
     <p style="font-size: 11px; margin-top: 10px;">
-      VoraPrep is not affiliated with AICPA, NASBA, or any state board of accountancy.
+      VoraPrep is an independent educational platform. All trademarks belong to their respective owners.
     </p>
   </div>
   

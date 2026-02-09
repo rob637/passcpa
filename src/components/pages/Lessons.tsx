@@ -9,23 +9,16 @@ import {
   Clock,
   Search,
   GraduationCap,
-  Layout,
   FileText,
   ClipboardCheck,
   Trophy,
   Bookmark,
   StickyNote,
-  Target,
-  Compass,
-  DollarSign,
-  Briefcase,
-  Lightbulb,
-  AlertTriangle,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection, isValidSection } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
 import { getQuestionStats } from '../../services/questionService';
 import { getTBSCount } from '../../services/tbsService';
@@ -126,8 +119,6 @@ const Lessons: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
-  const [showExamOverview, setShowExamOverview] = useState(false);
-  const [showExamStrategy, setShowExamStrategy] = useState(false);
 
   // Get bookmarked lesson IDs
   const bookmarkedLessonIds = new Set(
@@ -136,9 +127,12 @@ const Lessons: React.FC = () => {
       .map(b => b.itemId)
   );
 
-  // Current exam section - use URL param if provided, otherwise use user profile
+  // Current exam section - use URL param if provided, otherwise use user profile (if valid for this course)
   const sectionFromUrl = searchParams.get('section');
-  const currentSection = (sectionFromUrl || userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  const profileSection = userProfile?.examSection;
+  // Only use profile section if it's valid for the current course
+  const validProfileSection = profileSection && isValidSection(profileSection, courseId) ? profileSection : null;
+  const currentSection = (sectionFromUrl || validProfileSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
   // Fetch lessons and content counts
@@ -243,34 +237,25 @@ const Lessons: React.FC = () => {
     <div className="px-2 py-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
-              style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
-            >
-              {sectionInfo?.shortName || currentSection}
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                Lessons
-              </h1>
-              <p className="text-slate-600 dark:text-slate-300">
-                {sectionInfo?.name || currentSection}
-              </p>
-            </div>
-          </div>
-          <Link 
-            to="/lessons/matrix" 
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium text-slate-700 dark:text-slate-200"
+        <div className="flex items-center gap-3 mb-4">
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+            style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
           >
-            <Layout className="w-4 h-4" />
-            <span className="hidden sm:inline">Study Guide</span>
-          </Link>
+            {sectionInfo?.shortName || currentSection}
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              Lessons
+            </h1>
+            <p className="text-slate-600 dark:text-slate-300">
+              {sectionInfo?.name || currentSection}
+            </p>
+          </div>
         </div>
 
-        {/* Stats - Becker-style content counts */}
-        <div className={`grid ${currentSection === 'PREP' ? 'grid-cols-3' : 'grid-cols-2 sm:grid-cols-4'} gap-3 mb-6`}>
+        {/* Stats - Course-aware content counts */}
+        <div className={`grid ${course.hasTBS ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'} gap-3 mb-6`}>
           <div className="card p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
               <BookOpen className="w-5 h-5 text-primary-500" />
@@ -278,23 +263,22 @@ const Lessons: React.FC = () => {
             </div>
             <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Lessons</div>
           </div>
-          {currentSection !== 'PREP' && (
-            <>
-              <div className="card p-3 text-center">
-                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
-                  <FileText className="w-5 h-5" />
-                  {contentCounts.mcq}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">MCQs</div>
+          <div className="card p-3 text-center">
+            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
+              <FileText className="w-5 h-5" />
+              {contentCounts.mcq}
+            </div>
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">MCQs</div>
+          </div>
+          {/* TBS - Only for CPA */}
+          {course.hasTBS && (
+            <div className="card p-3 text-center">
+              <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
+                <ClipboardCheck className="w-5 h-5" />
+                {contentCounts.tbs}
               </div>
-              <div className="card p-3 text-center">
-                <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
-                  <ClipboardCheck className="w-5 h-5" />
-                  {contentCounts.tbs}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">TBS</div>
-              </div>
-            </>
+              <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">TBS</div>
+            </div>
           )}
           <div className="card p-3 text-center">
             <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-success-600">
@@ -318,178 +302,6 @@ const Lessons: React.FC = () => {
             />
           </div>
         </div>
-
-        {/* Exam Overview & Strategy Sections */}
-        {(course.examOverview || course.examStrategy) && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            {/* Exam Overview */}
-            {course.examOverview && (
-              <div className="card overflow-hidden">
-                <button
-                  onClick={() => setShowExamOverview(!showExamOverview)}
-                  className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
-                      <Compass className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">Exam Overview</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-300">Why get certified</p>
-                    </div>
-                  </div>
-                  <ChevronDown className={clsx(
-                    'w-5 h-5 text-slate-400 transition-transform',
-                    showExamOverview && 'rotate-180'
-                  )} />
-                </button>
-                {showExamOverview && (
-                  <div className="px-4 pb-4 space-y-4 border-t border-slate-100 dark:border-slate-700 pt-4">
-                    <p className="text-slate-700 dark:text-slate-200">{course.examOverview.description}</p>
-                    
-                    {course.examOverview.benefits && course.examOverview.benefits.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
-                          <CheckCircle className="w-4 h-4 text-success-600" />
-                          Key Benefits
-                        </h4>
-                        <ul className="space-y-1.5">
-                          {course.examOverview.benefits.map((benefit, i) => (
-                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
-                              <span className="text-success-500 mt-0.5">•</span>
-                              {benefit}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {course.examOverview.careerOpportunities && course.examOverview.careerOpportunities.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
-                          <Briefcase className="w-4 h-4 text-primary-600" />
-                          Career Opportunities
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {course.examOverview.careerOpportunities.map((career, i) => (
-                            <span key={i} className="px-2 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
-                              {career}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {course.examOverview.averageSalary && (
-                      <div className="flex items-center gap-2 p-3 rounded-lg bg-success-50 dark:bg-success-900/20">
-                        <DollarSign className="w-5 h-5 text-success-600" />
-                        <div>
-                          <span className="text-sm font-medium text-success-700 dark:text-success-400">Average Salary: </span>
-                          <span className="text-sm text-success-600 dark:text-success-300">{course.examOverview.averageSalary}</span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {course.examOverview.examFormat && (
-                      <div className="text-sm text-slate-600 dark:text-slate-300">
-                        <span className="font-medium text-slate-900 dark:text-slate-100">Exam Format: </span>
-                        {course.examOverview.examFormat}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-            
-            {/* Exam Strategy */}
-            {course.examStrategy && (
-              <div className="card overflow-hidden">
-                <button
-                  onClick={() => setShowExamStrategy(!showExamStrategy)}
-                  className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-                      <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">Exam Strategy</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-300">Tips to pass</p>
-                    </div>
-                  </div>
-                  <ChevronDown className={clsx(
-                    'w-5 h-5 text-slate-400 transition-transform',
-                    showExamStrategy && 'rotate-180'
-                  )} />
-                </button>
-                {showExamStrategy && (
-                  <div className="px-4 pb-4 space-y-4 border-t border-slate-100 dark:border-slate-700 pt-4">
-                    {course.examStrategy.keyStrategies && course.examStrategy.keyStrategies.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
-                          <Target className="w-4 h-4 text-amber-600" />
-                          Key Strategies
-                        </h4>
-                        <div className="space-y-2">
-                          {course.examStrategy.keyStrategies.map((strategy, i) => (
-                            <div key={i} className="p-2 rounded-lg bg-slate-50 dark:bg-slate-700/50">
-                              <p className="text-sm font-medium text-slate-900 dark:text-slate-100">{strategy.title}</p>
-                              <p className="text-xs text-slate-600 dark:text-slate-400">{strategy.description}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {course.examStrategy.studyTips && course.examStrategy.studyTips.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
-                          <Lightbulb className="w-4 h-4 text-primary-600" />
-                          Study Tips
-                        </h4>
-                        <ul className="space-y-1.5">
-                          {course.examStrategy.studyTips.map((tip, i) => (
-                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
-                              <span className="text-primary-500 mt-0.5">•</span>
-                              {tip}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {course.examStrategy.commonMistakes && course.examStrategy.commonMistakes.length > 0 && (
-                      <div>
-                        <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-1.5">
-                          <AlertTriangle className="w-4 h-4 text-red-600" />
-                          Common Mistakes
-                        </h4>
-                        <ul className="space-y-1.5">
-                          {course.examStrategy.commonMistakes.map((mistake, i) => (
-                            <li key={i} className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
-                              <span className="text-red-500 mt-0.5">•</span>
-                              {mistake}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    {course.examStrategy.timeManagement && (
-                      <div className="flex items-center gap-2 p-3 rounded-lg bg-primary-50 dark:bg-primary-900/20">
-                        <Clock className="w-5 h-5 text-primary-600" />
-                        <div>
-                          <span className="text-sm font-medium text-primary-700 dark:text-primary-400">Time Investment: </span>
-                          <span className="text-sm text-primary-600 dark:text-primary-300">{course.examStrategy.timeManagement}</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
 
         {/* Search & Filter */}
         <div className="flex flex-col sm:flex-row gap-3">
@@ -564,10 +376,10 @@ const Lessons: React.FC = () => {
                         {/* Content counts per area */}
                         <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300 mt-0.5">
                           <span>{area.lessons.length} Lessons</span>
-                          {currentSection !== 'PREP' && (
+                          <span className="text-slate-300 dark:text-slate-500">·</span>
+                          <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
+                          {course.hasTBS && (
                             <>
-                              <span className="text-slate-300 dark:text-slate-500">·</span>
-                              <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
                               <span className="text-slate-300 dark:text-slate-500">·</span>
                               <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
                             </>

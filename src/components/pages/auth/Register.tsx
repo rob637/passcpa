@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logger from '../../../utils/logger';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Check } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { trackEvent } from '../../../services/analytics';
@@ -9,7 +9,16 @@ import { Card } from '../../common/Card';
 
 const Register = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { signUp, signInWithGoogle, loading } = useAuth();
+
+  // Store course from URL param for onboarding pre-selection
+  useEffect(() => {
+    const course = searchParams.get('course');
+    if (course) {
+      localStorage.setItem('pendingCourse', course);
+    }
+  }, [searchParams]);
 
   const [formData, setFormData] = useState({
     firstName: '',

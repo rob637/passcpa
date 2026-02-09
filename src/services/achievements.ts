@@ -94,7 +94,7 @@ export const ACHIEVEMENTS: Record<string, Achievement> = {
   },
   questions_5000: {
     id: 'questions_5000',
-    name: 'CPA Candidate',
+    name: 'Exam Candidate',
     description: 'Answer 5,000 questions',
     icon: '🎓',
     category: 'questions',
@@ -225,11 +225,42 @@ export const getAchievementProgress = (achievementId: string, stats: Achievement
 };
 
 
+/**
+ * Course-specific achievement name overrides
+ * Some achievements should display the course name (e.g., "EA Candidate" instead of "CPA Candidate")
+ */
+const COURSE_SPECIFIC_NAMES: Record<string, Record<string, string>> = {
+  questions_5000: {
+    cpa: 'CPA Candidate',
+    ea: 'EA Candidate',
+    cma: 'CMA Candidate',
+    cia: 'CIA Candidate',
+    cisa: 'CISA Candidate',
+    cfp: 'CFP Candidate',
+  },
+};
+
+/**
+ * Get the display name for an achievement, optionally customized for a specific course
+ */
+export const getAchievementDisplayName = (achievementId: string, courseId?: string): string => {
+  const achievement = ACHIEVEMENTS[achievementId];
+  if (!achievement) return '';
+  
+  // Check if there's a course-specific name
+  if (courseId && COURSE_SPECIFIC_NAMES[achievementId]?.[courseId]) {
+    return COURSE_SPECIFIC_NAMES[achievementId][courseId];
+  }
+  
+  return achievement.name;
+};
+
 export default {
   ACHIEVEMENTS,
   checkAchievements,
   calculateLevel,
   getUnlockedAchievements,
   getAchievementsByCategory,
-  getAchievementProgress
+  getAchievementProgress,
+  getAchievementDisplayName
 };

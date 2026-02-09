@@ -11,7 +11,7 @@ import { CFPLesson } from '../../../types/cfp';
 export const CFP_PRO1_LESSONS: CFPLesson[] = [
   {
     id: 'CFP-PRO-L001',
-    domain: 'CFP-PRO',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'CFP Board Code of Ethics and Standards of Conduct',
     order: 1,
@@ -161,7 +161,7 @@ All "A" duties, PLUS:
   },
   {
     id: 'CFP-PRO-L002',
-    domain: 'CFP-PRO',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Conflicts of Interest and Duty of Loyalty',
     order: 2,
@@ -333,7 +333,7 @@ When making recommendations, consider:
   },
   {
     id: 'CFP-PRO-L003',
-    domain: 'CFP-PRO',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'The Financial Planning Process',
     order: 3,
@@ -522,7 +522,7 @@ Options:
   },
   {
     id: 'CFP-PRO-L004',
-    domain: 'CFP-PRO',
+    domain: 'CFP-PCR',
     blueprintArea: 'PRO-1',
     title: 'Practice Standards and Professional Responsibility',
     order: 4,

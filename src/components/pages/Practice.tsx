@@ -37,7 +37,7 @@ import { useCourse } from '../../providers/CourseProvider';
 import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionService';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
-import { getDefaultSection } from '../../utils/sectionUtils';
+import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getPracticeSessions, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -83,7 +83,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
   const [, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
-    section: (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection,
+    section: getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection,
     mode: 'study', // study, timed, exam, weak
     count: 10,
     topics: [],
@@ -116,31 +116,43 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
     loadHistory();
   }, [userId]);
 
+  // Derive mode from toggles for backwards compatibility
+  const derivedMode = config.mode === 'weak' ? 'weak' : (config.mode === 'timed' ? 'timed' : 'study');
+  
+  const handleStart = () => {
+    // Map simplified UI to existing config structure
+    const finalConfig: SessionConfig = {
+      ...config,
+      mode: derivedMode,
+      // If weak areas toggle is on, filter to incorrect/unanswered
+      questionStatus: config.mode === 'weak' ? 'incorrect' : config.questionStatus,
+    };
+    onStart(finalConfig);
+  };
+
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <Target className="w-8 h-8 text-primary-600 dark:text-primary-400" />
-        </div>
+    <div className="p-4 sm:p-6 lg:p-8 max-w-md mx-auto">
+      <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-          Practice Questions
+          Practice
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">Configure your practice session</p>
       </div>
 
       <div className="card">
-        <div className="card-body space-y-6">
-          {/* Section Select */}
+        <div className="card-body space-y-5">
+          {/* Section Select - Compact */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Exam Section
+              Section
             </label>
             <select
               value={config.section}
               onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
               className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
-              {course?.sections.map((s: { id: string; shortName: string; name: string }) => (
+              {course?.sections
+                .filter((s: { id: string }) => s.id !== 'PREP')
+                .map((s: { id: string; shortName: string; name: string }) => (
                 <option key={s.id} value={s.id}>
                   {s.shortName} - {s.name}
                 </option>
@@ -148,61 +160,18 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             </select>
           </div>
 
-          {/* Practice Mode - Now 2x2 Grid like Becker */}
+          {/* Question Count - Simplified to 3 options */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Practice Mode
+              Questions
             </label>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { id: 'study', name: 'Study', desc: 'Learn at your pace', icon: BookOpen },
-                { id: 'timed', name: 'Timed', desc: '90 sec per question', icon: Clock },
-                { id: 'exam', name: 'Exam Sim', desc: 'Full exam conditions', icon: Target },
-                { id: 'weak', name: 'Weak Areas', desc: 'Focus on struggles', icon: Sparkles },
-              ].map((mode) => {
-                const Icon = mode.icon;
-                return (
-                  <button
-                    key={mode.id}
-                    onClick={() => setConfig((prev) => ({ ...prev, mode: mode.id as SessionConfig['mode'] }))}
-                    className={clsx(
-                      'p-4 rounded-xl border-2 text-left transition-all focus:ring-2 focus:ring-primary-500/50',
-                      config.mode === mode.id
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                    aria-pressed={config.mode === mode.id}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={clsx(
-                        'w-10 h-10 rounded-lg flex items-center justify-center',
-                        config.mode === mode.id ? 'bg-primary-500 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600'
-                      )}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-slate-900 dark:text-slate-100">{mode.name}</div>
-                        <div className="text-xs text-slate-600 dark:text-slate-300">{mode.desc}</div>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Question Count - Now with slider + presets */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Number of Questions
-            </label>
-            <div className="flex items-center gap-3 mb-2">
-              {[5, 10, 20, 30, 50].map((count) => (
+            <div className="flex items-center gap-3">
+              {[10, 25, 50].map((count) => (
                 <button
                   key={count}
                   onClick={() => setConfig((prev) => ({ ...prev, count }))}
                   className={clsx(
-                    'flex-1 py-2 rounded-lg border-2 font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
+                    'flex-1 py-3 rounded-xl border-2 font-semibold text-lg transition-all focus:ring-2 focus:ring-primary-500/50',
                     config.count === count
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
                       : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
@@ -214,63 +183,58 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </button>
               ))}
             </div>
-            <input
-              type="range"
-              min="5"
-              max="100"
-              step="5"
-              value={config.count}
-              onChange={(e) => setConfig((prev) => ({ ...prev, count: parseInt(e.target.value) }))}
-              className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
-            />
-            <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
-              <span>5</span>
-              <span className="font-medium text-primary-600">{config.count} questions</span>
-              <span>100</span>
-            </div>
           </div>
 
-          {/* Question Status Filter - Like Becker */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Question Status
+          {/* Simple Toggles */}
+          <div className="space-y-3">
+            {/* Timed Toggle */}
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <input
+                type="checkbox"
+                checked={config.mode === 'timed'}
+                onChange={(e) => setConfig((prev) => ({ 
+                  ...prev, 
+                  mode: e.target.checked ? 'timed' : 'study' 
+                }))}
+                className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+              />
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-slate-500" />
+                <div>
+                  <div className="font-medium text-slate-900 dark:text-slate-100">Timed</div>
+                  <div className="text-xs text-slate-500">90 seconds per question</div>
+                </div>
+              </div>
             </label>
-            <div className="flex flex-wrap gap-2">
-              {[
-                { id: 'all', name: 'All Questions', icon: Shuffle },
-                { id: 'unanswered', name: 'Unanswered', icon: Target },
-                { id: 'incorrect', name: 'Incorrect', icon: XCircle },
-                { id: 'correct', name: 'Correct', icon: CheckCircle },
-                { id: 'flagged', name: 'Flagged', icon: Flag },
-              ].map((status) => {
-                const Icon = status.icon;
-                return (
-                  <button
-                    key={status.id}
-                    onClick={() => setConfig((prev) => ({ ...prev, questionStatus: status.id as QuestionStatus }))}
-                    className={clsx(
-                      'flex items-center gap-2 px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all',
-                      config.questionStatus === status.id
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                        : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
-                    )}
-                    aria-pressed={config.questionStatus === status.id}
-                  >
-                    <Icon className="w-4 h-4" />
-                    {status.name}
-                  </button>
-                );
-              })}
-            </div>
+
+            {/* Weak Areas Toggle */}
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+              <input
+                type="checkbox"
+                checked={config.questionStatus === 'incorrect' || config.questionStatus === 'unanswered'}
+                onChange={(e) => setConfig((prev) => ({ 
+                  ...prev, 
+                  questionStatus: e.target.checked ? 'incorrect' : 'all'
+                }))}
+                className="w-5 h-5 rounded border-slate-300 text-primary-600 focus:ring-primary-500"
+              />
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-slate-500" />
+                <div>
+                  <div className="font-medium text-slate-900 dark:text-slate-100">Focus on weak areas</div>
+                  <div className="text-xs text-slate-500">Questions you've missed</div>
+                </div>
+              </div>
+            </label>
           </div>
 
-          {/* Advanced Options Toggle */}
+          {/* More Options Toggle */}
           <button
             onClick={() => setShowAdvanced(!showAdvanced)}
             className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 font-medium"
           >
             {showAdvanced ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-            Advanced Options
+            More options
           </button>
 
           {/* Advanced Options Panel */}
@@ -284,7 +248,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 <select
                   value={config.blueprintArea}
                   onChange={(e) => setConfig((prev) => ({ ...prev, blueprintArea: e.target.value }))}
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
                 >
                   <option value="all">All Areas</option>
                   {blueprintAreas.map((area) => (
@@ -295,73 +259,46 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </select>
               </div>
 
+              {/* Question Status */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Question Status
+                </label>
+                <select
+                  value={config.questionStatus}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, questionStatus: e.target.value as QuestionStatus }))}
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                >
+                  <option value="all">All Questions</option>
+                  <option value="unanswered">Unanswered</option>
+                  <option value="incorrect">Incorrect</option>
+                  <option value="correct">Correct</option>
+                  <option value="flagged">Flagged</option>
+                </select>
+              </div>
+
               {/* Difficulty */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  Difficulty Level
+                  Difficulty
                 </label>
-                <div className="flex items-center gap-3">
-                  {[
-                    { id: 'all', name: 'All Levels' },
-                    { id: 'easy', name: 'Easy' },
-                    { id: 'medium', name: 'Medium' },
-                    { id: 'hard', name: 'Hard' },
-                  ].map((diff) => (
-                    <button
-                      key={diff.id}
-                      onClick={() => setConfig((prev) => ({ ...prev, difficulty: diff.id as Difficulty | 'all' }))}
-                      className={clsx(
-                        'flex-1 py-2 rounded-lg border-2 text-sm font-medium transition-all focus:ring-2 focus:ring-primary-500/50',
-                        config.difficulty === diff.id
-                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400'
-                          : 'border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-primary-300'
-                      )}
-                      aria-pressed={config.difficulty === diff.id}
-                    >
-                      {diff.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Scoring Mode */}
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  Scoring Mode
-                </label>
-                <div className="grid grid-cols-2 gap-3">
-                  <button
-                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'practice' }))}
-                    className={clsx(
-                      'p-3 rounded-xl border-2 text-left transition-all',
-                      config.scoringMode === 'practice'
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                  >
-                    <div className="font-medium text-slate-900 dark:text-slate-100">Practice</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">Immediate feedback after each question</div>
-                  </button>
-                  <button
-                    onClick={() => setConfig((prev) => ({ ...prev, scoringMode: 'exam' }))}
-                    className={clsx(
-                      'p-3 rounded-xl border-2 text-left transition-all',
-                      config.scoringMode === 'exam'
-                        ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30'
-                        : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                    )}
-                  >
-                    <div className="font-medium text-slate-900 dark:text-slate-100">Exam</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400">Score revealed at end only</div>
-                  </button>
-                </div>
+                <select
+                  value={config.difficulty}
+                  onChange={(e) => setConfig((prev) => ({ ...prev, difficulty: e.target.value as Difficulty | 'all' }))}
+                  className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm"
+                >
+                  <option value="all">All Levels</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
               </div>
             </div>
           )}
 
           {/* Start Button */}
           <Button
-            onClick={() => onStart(config)}
+            onClick={handleStart}
             disabled={loading}
             loading={loading}
             leftIcon={loading ? undefined : Shuffle}
@@ -370,7 +307,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
             fullWidth
             className="py-4 text-lg"
           >
-            {loading ? 'Loading Questions...' : 'Start Practice'}
+            {loading ? 'Loading...' : 'Start Practice'}
           </Button>
         </div>
       </div>

@@ -162,7 +162,7 @@ const MainLayout = () => {
   // Get current page title
   const getPageTitle = () => {
     // Check Strategy first
-    if (strategyActive && navConfig.showStrategy) return 'Exam Strategy';
+    if (strategyActive && navConfig.showStrategy) return 'Exam Guide';
     
     const current = navItems.find(
       (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
@@ -242,11 +242,11 @@ const MainLayout = () => {
             ))}
           </div>
           
-          {/* Exam Strategy Section - Shown for courses with strategy */}
+          {/* Exam Guide Section - Shown for all courses */}
           {navConfig.showStrategy && (
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
             <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Exam Strategy
+              Exam Guide
             </span>
             <NavLink
               to={strategyNavPath}
@@ -258,7 +258,7 @@ const MainLayout = () => {
               )}
             >
               <Compass className="w-5 h-5" />
-              Strategy & Tips
+              Exam Guide
             </NavLink>
           </div>
           )}
@@ -365,18 +365,18 @@ const MainLayout = () => {
             </NavLink>
           ))}
           
-          {/* Strategy Tab - Shown for courses with strategy */}
+          {/* Exam Guide Tab - Shown for all courses */}
           {navConfig.showStrategy && (
             <NavLink
               to={strategyNavPath}
-              aria-label="Exam Strategy"
+              aria-label="Exam Guide"
               className={clsx(
                 'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
                 strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'
               )}
             >
               <Compass className="w-5 h-5" aria-hidden="true" />
-              <span className="text-[10px] font-medium">Strategy</span>
+              <span className="text-[10px] font-medium">Guide</span>
             </NavLink>
           )}
         </div>

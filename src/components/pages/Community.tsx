@@ -1,13 +1,17 @@
 import React from 'react';
 import { PageHeader } from '../navigation';
 import Leaderboard from '../Leaderboard';
+import { useCourse } from '../../hooks/useCourse';
 
 const Community: React.FC = () => {
+  const { course } = useCourse();
+  const examName = course?.shortName || 'exam';
+  
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       <PageHeader 
         title="Community" 
-        subtitle="See how you compare with other CPA candidates"
+        subtitle={`See how you compare with other ${examName} candidates`}
       />
 
       {/* Content */}

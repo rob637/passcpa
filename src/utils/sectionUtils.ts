@@ -103,6 +103,21 @@ export function isValidSection(sectionId: string, courseId: string = 'cpa'): boo
 }
 
 /**
+ * Get current section for a course, validating profile section against course
+ * Use this when you want a valid section for the current course, falling back to default
+ */
+export function getCurrentSectionForCourse(
+  profileSection: string | undefined | null,
+  courseId: string
+): string {
+  // Only use profile section if it's valid for the current course
+  if (profileSection && isValidSection(profileSection, courseId)) {
+    return profileSection;
+  }
+  return getDefaultSection(courseId);
+}
+
+/**
  * Get the first/default section for a course
  */
 export function getDefaultSection(courseId: string = 'cpa'): string {

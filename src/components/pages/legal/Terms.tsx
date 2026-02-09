@@ -1,8 +1,84 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, FileText } from 'lucide-react';
+import { useCourse } from '../../../hooks/useCourse';
+import { CourseId } from '../../../types/course';
+
+/** Course-specific disclaimer content */
+const COURSE_DISCLAIMERS: Record<CourseId, {
+  importantNotice: string;
+  trademarkDisclaimer: string;
+}> = {
+  cpa: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by the American Institute of Certified Public Accountants (AICPA), 
+      the National Association of State Boards of Accountancy (NASBA), Prometric, or any state 
+      board of accountancy. "CPA" and "Certified Public Accountant" are professional designations 
+      granted by state boards of accountancy, not by VoraPrep. All trademarks belong to their 
+      respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. CPA®, Certified Public Accountant®, and 
+      Uniform CPA Examination® are trademarks of the American Institute of Certified 
+      Public Accountants (AICPA) and/or the National Association of State Boards of 
+      Accountancy (NASBA). Becker®, Wiley®, Gleim®, Roger CPA Review®, and Surgent® are 
+      trademarks of their respective owners. VoraPrep has no affiliation with these 
+      organizations or companies.`,
+  },
+  ea: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by the Internal Revenue Service (IRS), Prometric, or any 
+      government agency. "Enrolled Agent" and "EA" are professional designations granted by 
+      the IRS, not by VoraPrep. The Special Enrollment Examination (SEE) is administered by 
+      Prometric on behalf of the IRS. All trademarks belong to their respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. Enrolled Agent® and the EA designation 
+      are administered by the Internal Revenue Service (IRS). The Special Enrollment Examination (SEE) 
+      is a trademark of the IRS and administered by Prometric®. Gleim®, PassKey®, and Fast Forward Academy® 
+      are trademarks of their respective owners. VoraPrep has no affiliation with these 
+      organizations or companies.`,
+  },
+  cma: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by the Institute of Management Accountants (IMA) or Prometric. 
+      "CMA" and "Certified Management Accountant" are professional designations granted by 
+      the IMA, not by VoraPrep. All trademarks belong to their respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. CMA® and Certified Management Accountant® 
+      are trademarks of the Institute of Management Accountants (IMA). Gleim®, Wiley®, Hock®, and 
+      Becker® are trademarks of their respective owners. VoraPrep has no affiliation with these 
+      organizations or companies.`,
+  },
+  cia: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by The Institute of Internal Auditors (IIA) or Pearson VUE. 
+      "CIA" and "Certified Internal Auditor" are professional designations granted by 
+      The IIA, not by VoraPrep. All trademarks belong to their respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. CIA® and Certified Internal Auditor® 
+      are trademarks of The Institute of Internal Auditors (IIA). Gleim® and other review course names 
+      are trademarks of their respective owners. VoraPrep has no affiliation with these 
+      organizations or companies.`,
+  },
+  cisa: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by ISACA or any certification body. "CISA" and "Certified Information 
+      Systems Auditor" are professional designations granted by ISACA, not by VoraPrep. 
+      All trademarks belong to their respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. CISA® and Certified Information Systems Auditor® 
+      are trademarks of ISACA®. Other review course names are trademarks of their respective owners. 
+      VoraPrep has no affiliation with these organizations or companies.`,
+  },
+  cfp: {
+    importantNotice: `VoraPrep is an independent educational resource and is not affiliated with, 
+      endorsed by, or sponsored by the Certified Financial Planner Board of Standards (CFP Board). 
+      "CFP" and "Certified Financial Planner" are professional designations granted by the CFP Board, 
+      not by VoraPrep. All trademarks belong to their respective owners.`,
+    trademarkDisclaimer: `VoraPrep™ is a trademark of VoraPrep LLC. CFP®, CERTIFIED FINANCIAL PLANNER™, and 
+      CFP® certification are trademarks of the Certified Financial Planner Board of Standards, Inc. 
+      Kaplan®, Dalton®, and other review course names are trademarks of their respective owners. 
+      VoraPrep has no affiliation with these organizations or companies.`,
+  },
+};
 
 const Terms: React.FC = () => {
+  const { courseId } = useCourse();
+  const disclaimers = COURSE_DISCLAIMERS[courseId] || COURSE_DISCLAIMERS.cpa;
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
@@ -33,12 +109,7 @@ const Terms: React.FC = () => {
             <div className="not-prose mb-8 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-700">
               <h3 className="text-amber-800 dark:text-amber-200 font-semibold mb-2">Important Notice</h3>
               <p className="text-sm text-amber-700 dark:text-amber-300">
-                VoraPrep is an <strong>independent educational resource</strong> and is not affiliated with, 
-                endorsed by, or sponsored by the American Institute of Certified Public Accountants (AICPA), 
-                the National Association of State Boards of Accountancy (NASBA), Prometric, or any state 
-                board of accountancy. "CPA" and "Certified Public Accountant" are professional designations 
-                granted by state boards of accountancy, not by VoraPrep. All trademarks belong to their 
-                respective owners.
+                {disclaimers.importantNotice}
               </p>
             </div>
 
@@ -212,12 +283,7 @@ const Terms: React.FC = () => {
             {/* Final Disclaimer */}
             <div className="not-prose mt-8 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg">
               <p className="text-xs text-slate-600 dark:text-slate-300">
-                VoraPrep™ is a trademark of VoraPrep LLC. CPA®, Certified Public Accountant®, and 
-                Uniform CPA Examination® are trademarks of the American Institute of Certified 
-                Public Accountants (AICPA) and/or the National Association of State Boards of 
-                Accountancy (NASBA). Becker®, Wiley®, Gleim®, Roger CPA Review®, and Surgent® are 
-                trademarks of their respective owners. VoraPrep has no affiliation with these 
-                organizations or companies.
+                {disclaimers.trademarkDisclaimer}
               </p>
             </div>
           </div>

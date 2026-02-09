@@ -66,6 +66,7 @@ const Lessons = lazy(() => import('./components/pages/Lessons'));
 const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
 const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
 const StudyJourney = lazy(() => import('./components/pages/StudyJourney'));
+const ExamGuide = lazy(() => import('./components/pages/ExamGuide'));
 const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
 const Community = lazy(() => import('./components/pages/Community'));
@@ -860,6 +861,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Lessons />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/exam-guide"
+                    element={
+                      <SuspensePage>
+                        <ExamGuide />
                       </SuspensePage>
                     }
                   />

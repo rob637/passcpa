@@ -58,11 +58,17 @@ const MainLayout = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { courseId: _providerCourseId } = useCourse();
+  const { courseId: providerCourseId } = useCourse();
   
-  // Detect course from URL - this takes precedence to prevent bleeding
-  const currentCourseId = useMemo(() => detectCourseFromPath(location.pathname), [location.pathname]);
+  // For course-specific URLs (e.g., /cfp/home), use path detection.
+  // For shared routes (e.g., /settings), use the CourseProvider's courseId.
+  const currentCourseId = useMemo(() => {
+    const pathCourse = detectCourseFromPath(location.pathname);
+    // If path doesn't start with a course prefix (returns 'cpa' as default),
+    // check if we're actually on a shared route and should use provider's course
+    const isExplicitCourseRoute = /^\/(cpa|ea|cma|cia|cfp|cisa)(\/|$)/.test(location.pathname);
+    return isExplicitCourseRoute ? pathCourse : providerCourseId;
+  }, [location.pathname, providerCourseId]);
   
   // Get course config for metadata like examProvider
   const course = COURSES[currentCourseId];

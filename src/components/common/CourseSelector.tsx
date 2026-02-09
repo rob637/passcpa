@@ -66,6 +66,8 @@ const COURSE_DISPLAY: Record<CourseId, {
 interface CourseSelectorProps {
   /** Compact mode for mobile/narrow spaces */
   compact?: boolean;
+  /** Mobile header variant - shows badge + short name */
+  mobileHeader?: boolean;
   /** Show "coming soon" courses */
   showComingSoon?: boolean;
   /** Additional CSS classes */
@@ -74,6 +76,7 @@ interface CourseSelectorProps {
 
 export const CourseSelector: React.FC<CourseSelectorProps> = ({
   compact = false,
+  mobileHeader = false,
   showComingSoon = true,
   className,
 }) => {
@@ -139,9 +142,9 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
           'flex items-center gap-2 rounded-xl',
-          compact 
-            ? 'px-2 py-1.5' 
-            : 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
+          compact && !mobileHeader && 'px-2 py-1.5',
+          mobileHeader && 'px-2.5 py-1.5 bg-slate-100 dark:bg-slate-700 border-0',
+          !compact && !mobileHeader && 'w-full px-3 py-2.5 border border-slate-200 dark:border-slate-600'
         )}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -150,12 +153,26 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
         <span className={clsx(
           'flex items-center justify-center rounded-lg text-white text-sm font-bold',
           currentDisplay.color,
-          compact ? 'w-6 h-6' : 'w-8 h-8'
+          mobileHeader ? 'w-7 h-7' : compact ? 'w-6 h-6' : 'w-8 h-8'
         )}>
           {currentDisplay.icon}
         </span>
         
-        {!compact && (
+        {/* Mobile header: show short name + small chevron */}
+        {mobileHeader && (
+          <>
+            <span className="font-bold text-base text-slate-900 dark:text-slate-100">
+              {currentDisplay.shortName}
+            </span>
+            <ChevronDown className={clsx(
+              'w-4 h-4 text-slate-500 transition-transform duration-200',
+              isOpen && 'rotate-180'
+            )} />
+          </>
+        )}
+        
+        {/* Full desktop: show name + description */}
+        {!compact && !mobileHeader && (
           <>
             <div className="flex-1 text-left">
               <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">

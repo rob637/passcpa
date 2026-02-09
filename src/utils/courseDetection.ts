@@ -67,7 +67,7 @@ export const detectCourse = (): CourseDetectionResult => {
   }
   
   // 2. Check subdomain-based routing (e.g., cpa.voraprep.com)
-  const subdomainMatch = hostname.match(/^(cpa|cma|ea|cia)\.voraprep\.com$/);
+  const subdomainMatch = hostname.match(/^(cpa|cma|ea|cia|cisa|cfp)\.voraprep\.com$/);
   if (subdomainMatch && isValidCourseId(subdomainMatch[1])) {
     return { 
       courseId: subdomainMatch[1] as CourseId, 
@@ -76,7 +76,7 @@ export const detectCourse = (): CourseDetectionResult => {
   }
   
   // 3. Check path-based routing (e.g., /cpa/lessons)
-  const pathMatch = pathname.match(/^\/(cpa|cma|ea|cia)(?:\/|$)/);
+  const pathMatch = pathname.match(/^\/(cpa|cma|ea|cia|cisa|cfp)(?:\/|$)/);
   if (pathMatch && isValidCourseId(pathMatch[1])) {
     return { 
       courseId: pathMatch[1] as CourseId, 

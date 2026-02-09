@@ -34,14 +34,33 @@ interface Step {
   title: string;
 }
 
-const STEPS: Step[] = [
-  { id: 'welcome', title: 'Welcome' },
-  { id: 'course', title: 'Certification' },
-  { id: 'exam-date', title: 'Exam Date' },
-  { id: 'section', title: 'Choose Section' },
-  { id: 'daily-goal', title: 'Daily Goal' },
-  { id: 'complete', title: 'All Set!' },
-];
+// Single-exam courses: these exams test all domains in one sitting
+// Users don't pick a section - they study for the whole exam
+const SINGLE_EXAM_COURSES: CourseId[] = ['cfp', 'cisa'];
+
+const isSingleExamCourse = (courseId: string): boolean => 
+  SINGLE_EXAM_COURSES.includes(courseId as CourseId);
+
+// Get steps based on course type
+const getStepsForCourse = (courseId: string): Step[] => {
+  const baseSteps: Step[] = [
+    { id: 'welcome', title: 'Welcome' },
+    { id: 'course', title: 'Certification' },
+    { id: 'exam-date', title: 'Exam Date' },
+  ];
+  
+  // Single-exam courses skip section selection
+  if (!isSingleExamCourse(courseId)) {
+    baseSteps.push({ id: 'section', title: 'Choose Section' });
+  }
+  
+  baseSteps.push(
+    { id: 'daily-goal', title: 'Daily Goal' },
+    { id: 'complete', title: 'All Set!' }
+  );
+  
+  return baseSteps;
+};
 
 // Sub-component props
 interface SectionStepProps {
@@ -459,28 +478,53 @@ const Onboarding: React.FC = () => {
   const navigate = useNavigate();
   const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
 
+  // Check for pending course from registration flow (stored in localStorage)
+  const getPendingCourse = (): CourseId | '' => {
+    const pending = localStorage.getItem('pendingCourse');
+    if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
+      return pending as CourseId;
+    }
+    return (userProfile?.activeCourse as CourseId) || '';
+  };
+
   const [currentStep, setCurrentStep] = useState(0);
-  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>((userProfile?.activeCourse as CourseId) || '');
+  const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());
   const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);
   const [studyPlan, setStudyPlan] = useState('balanced');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Dynamic steps based on course type (single-exam courses skip section selection)
+  const steps = getStepsForCourse(selectedCourse);
+
+  // Auto-set section for single-exam courses (they study the whole exam)
+  useEffect(() => {
+    if (selectedCourse && isSingleExamCourse(selectedCourse)) {
+      // For single-exam courses, set section to the course ID (uppercase)
+      setSelectedSection(selectedCourse.toUpperCase());
+    }
+  }, [selectedCourse]);
+
+  // Clear pending course from localStorage on mount
+  useEffect(() => {
+    localStorage.removeItem('pendingCourse');
+  }, []);
+
   // Track onboarding step changes for funnel analytics
   useEffect(() => {
-    const stepId = STEPS[currentStep]?.id;
+    const stepId = steps[currentStep]?.id;
     if (stepId) {
       trackEvent('onboarding_step', {
         step_number: currentStep + 1,
         step_id: stepId,
-        step_name: STEPS[currentStep].title,
+        step_name: steps[currentStep].title,
       });
     }
-  }, [currentStep]);
+  }, [currentStep, steps]);
 
   const canContinue = () => {
-    switch (STEPS[currentStep].id) {
+    switch (steps[currentStep].id) {
       case 'welcome':
         return true;
       case 'course':
@@ -497,7 +541,7 @@ const Onboarding: React.FC = () => {
   };
 
   const handleNext = async () => {
-    if (currentStep < STEPS.length - 1) {
+    if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
       scrollToTop();
     } else {
@@ -558,7 +602,7 @@ const Onboarding: React.FC = () => {
   };
 
   const renderStep = () => {
-    switch (STEPS[currentStep].id) {
+    switch (steps[currentStep].id) {
       case 'welcome':
         return <WelcomeStep />;
       case 'course':
@@ -589,7 +633,7 @@ const Onboarding: React.FC = () => {
       <div className="p-4">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-2">
-            {STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <div key={step.id} className="flex-1">
                 <div
                   className={clsx(
@@ -601,7 +645,7 @@ const Onboarding: React.FC = () => {
             ))}
           </div>
           <p className="text-white/70 text-sm mt-2 text-center">
-            Step {currentStep + 1} of {STEPS.length}
+            Step {currentStep + 1} of {steps.length}
           </p>
         </div>
       </div>
@@ -634,7 +678,7 @@ const Onboarding: React.FC = () => {
             onClick={handleNext}
             disabled={!canContinue() || isSubmitting}
             loading={isSubmitting}
-            rightIcon={currentStep === STEPS.length - 1 ? Sparkles : ChevronRight}
+            rightIcon={currentStep === steps.length - 1 ? Sparkles : ChevronRight}
             className={clsx(
               'px-8 py-3 shadow-lg',
               canContinue() && !isSubmitting
@@ -642,7 +686,7 @@ const Onboarding: React.FC = () => {
                 : 'bg-white/30 text-white'
             )}
           >
-            {isSubmitting ? 'Saving...' : currentStep === STEPS.length - 1 ? "Let's Go!" : 'Continue'}
+            {isSubmitting ? 'Saving...' : currentStep === steps.length - 1 ? "Let's Go!" : 'Continue'}
           </Button>
         </div>
       </div>

@@ -340,12 +340,13 @@ const You: React.FC = () => {
               className="hidden"
             />
             <Button
-              variant="ghost"
-              size="icon"
+              variant="secondary"
+              size="sm"
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploadingPhoto}
               loading={isUploadingPhoto}
-              className="absolute -bottom-1 -right-1 w-8 h-8 bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 shadow-sm"
+              className="absolute -bottom-1 -right-1 !w-8 !h-8 !min-w-0 !min-h-0 !p-0 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 flex items-center justify-center"
+              aria-label="Upload profile photo"
             >
               {!isUploadingPhoto && <Camera className="w-4 h-4 text-slate-600 dark:text-slate-300" />}
             </Button>

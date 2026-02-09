@@ -10,6 +10,7 @@ import {
   checkAchievements,
   getAchievementProgress,
   getAchievementsByCategory,
+  getAchievementDisplayName,
 } from '../../services/achievements';
 import feedback from '../../services/feedback';
 import { celebrateAchievement } from '../../utils/confetti';
@@ -17,6 +18,7 @@ import clsx from 'clsx';
 import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigation';
 import ShareableAchievementCard from '../ShareableAchievementCard';
 import { Button } from '../common/Button';
+import { useCourse } from '../../hooks/useCourse';
 
 // Types
 interface CategoryInfo {
@@ -58,6 +60,7 @@ interface Achievement {
 const Achievements: React.FC = () => {
   const { user, userProfile } = useAuth();
   const { currentStreak, todayLog } = useStudy();
+  const { courseId } = useCourse();
   const [earnedAchievements, setEarnedAchievements] = useState<string[]>([]);
   const [userStats, setUserStats] = useState<UserStats | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -283,7 +286,7 @@ const Achievements: React.FC = () => {
                       isEarned ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
                     )}
                   >
-                    {achievement.name}
+                    {getAchievementDisplayName(achievement.id, courseId)}
                   </h3>
                   <span
                     className={clsx(
@@ -354,7 +357,7 @@ const Achievements: React.FC = () => {
               {showUnlocked.icon}
             </div>
             <h2 id="achievement-title" className="text-xl font-bold text-slate-900 dark:text-white mb-1">Achievement Unlocked!</h2>
-            <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{showUnlocked.name}</h3>
+            <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{getAchievementDisplayName(showUnlocked.id, courseId)}</h3>
             <p className="text-slate-600 dark:text-slate-300 mb-4">{showUnlocked.description}</p>
             <div className="inline-flex items-center gap-1 px-3 py-1 bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300 rounded-full text-sm font-medium">
               +{showUnlocked.points} points

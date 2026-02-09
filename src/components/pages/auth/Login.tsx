@@ -5,6 +5,10 @@ import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
+import type { CourseId } from '../../../types/course';
+
+// Valid course IDs
+const VALID_COURSES: CourseId[] = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
 
 // Course-to-dashboard mapping
 const COURSE_DASHBOARDS: Record<string, string> = {
@@ -29,10 +33,11 @@ const COURSE_NAMES: Record<string, string> = {
 const Login = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { signIn, signInWithGoogle, loading } = useAuth();
+  const { signIn, signInWithGoogle, updateUserProfile, loading } = useAuth();
 
   // Get course from URL params (e.g., /login?course=ea)
   const courseParam = searchParams.get('course')?.toLowerCase();
+  const isValidCourse = courseParam && VALID_COURSES.includes(courseParam as CourseId);
   const targetDashboard = COURSE_DASHBOARDS[courseParam || ''] || '/dashboard';
   const courseName = COURSE_NAMES[courseParam || ''] || 'exam prep';
 
@@ -49,6 +54,10 @@ const Login = () => {
 
     try {
       await signIn(email, password);
+      // Switch to the requested course if specified
+      if (isValidCourse) {
+        await updateUserProfile({ activeCourse: courseParam as CourseId });
+      }
       navigate(targetDashboard);
     } catch (err: any) {
       logger.error('Login error:', err);
@@ -72,7 +81,10 @@ const Login = () => {
     setError('');
     try {
       await signInWithGoogle();
-      // Check if user needs onboarding (new Google user)
+      // Switch to the requested course if specified
+      if (isValidCourse) {
+        await updateUserProfile({ activeCourse: courseParam as CourseId });
+      }
       // The AuthProvider handles creating profile, we just navigate
       navigate(targetDashboard);
     } catch (err: any) {

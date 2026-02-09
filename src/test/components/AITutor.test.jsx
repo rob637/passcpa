@@ -214,10 +214,10 @@ describe('AITutor', () => {
       renderAITutor();
 
       await waitFor(() => {
-        // Should mention REG somewhere (in greeting or prompts)
-        const regText = screen.queryByText(/REG/i);
-        // If not REG specifically, at least the page should load with Vory
+        // The page should load with Vory header and AI tutor interface
         expect(screen.getByText(/Vory/i)).toBeInTheDocument();
+        // Should find at least one element referencing REG section
+        expect(screen.getAllByText(/REG/i).length).toBeGreaterThan(0);
       });
     });
   });

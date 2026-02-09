@@ -160,7 +160,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   lessonCount: '950+',
   passRate: '50%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cpa',
   loginPath: '/login?course=cpa',
   
   notices: [
@@ -224,7 +224,7 @@ export const EA_CONFIG: ExamLandingConfig = {
   lessonCount: '400+',
   passRate: '70%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=ea',
   loginPath: '/login?course=ea',
   
   examParts: [
@@ -276,7 +276,7 @@ export const CMA_CONFIG: ExamLandingConfig = {
   lessonCount: '300+',
   passRate: '45%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cma',
   loginPath: '/login?course=cma',
   
   examParts: [
@@ -326,7 +326,7 @@ export const CIA_CONFIG: ExamLandingConfig = {
   lessonCount: '250+',
   passRate: '40%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cia',
   loginPath: '/login?course=cia',
   
   examParts: [
@@ -376,7 +376,7 @@ export const CFP_CONFIG: ExamLandingConfig = {
   lessonCount: '350+',
   passRate: '67%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cfp',
   loginPath: '/login?course=cfp',
   
   examParts: [
@@ -432,7 +432,7 @@ export const CISA_CONFIG: ExamLandingConfig = {
   lessonCount: '200+',
   passRate: '50%',
   
-  registerPath: '/register',
+  registerPath: '/register?course=cisa',
   loginPath: '/login?course=cisa',
   
   examParts: [

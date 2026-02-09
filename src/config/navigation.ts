@@ -6,7 +6,7 @@
  * without needing to know about specific courses.
  */
 
-import { Home, BookOpen, User, Compass, LucideIcon } from 'lucide-react';
+import { Home, BookOpen, User, Compass, Target, LucideIcon } from 'lucide-react';
 import { CourseId } from '../types/course';
 
 export interface NavItem {
@@ -19,7 +19,7 @@ export interface NavItem {
   /** Onboarding tour ID */
   tourId: string;
   /** Navigation type for active state detection */
-  navType: 'home' | 'learn' | 'you' | 'strategy';
+  navType: 'home' | 'learn' | 'practice' | 'you' | 'strategy';
 }
 
 export interface CourseNavConfig {
@@ -27,6 +27,7 @@ export interface CourseNavConfig {
   paths: {
     home: string;
     learn: string;
+    practice: string;
     you: string;
     strategy: string;
   };
@@ -34,6 +35,7 @@ export interface CourseNavConfig {
   activePaths: {
     home: string[];
     learn: string[];
+    practice: string[];
     you: string[];
     strategy: string[];
   };
@@ -52,92 +54,103 @@ export const COURSE_NAV_CONFIG: Record<CourseId, CourseNavConfig> = {
     paths: {
       home: '/home',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/lessons?section=PREP',
+      strategy: '/exam-guide',
     },
     activePaths: {
-      home: ['/home', '/practice', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'],
+      home: ['/home', '/flashcards', '/quiz', '/exam', '/tbs', '/written-communication', '/ai-tutor', '/tutor'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice'],
       you: ['/you', '/progress', '/settings', '/achievements', '/community'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
     showStrategy: true,
-    strategyIsQueryParam: { path: '/lessons', param: 'section', value: 'PREP' },
   },
   ea: {
     paths: {
       home: '/ea',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/ea',
+      strategy: '/exam-guide',
     },
     activePaths: {
       home: ['/ea'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
-    showStrategy: false,
+    showStrategy: true,
   },
   cma: {
     paths: {
       home: '/cma/dashboard',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/cma/dashboard',
+      strategy: '/exam-guide',
     },
     activePaths: {
-      home: ['/cma/dashboard', '/cma/practice', '/cma/essay-simulator'],
+      home: ['/cma/dashboard', '/cma/essay-simulator'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice', '/cma/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
-    showStrategy: false,
+    showStrategy: true,
   },
   cia: {
     paths: {
       home: '/cia/dashboard',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/cia/dashboard',
+      strategy: '/exam-guide',
     },
     activePaths: {
-      home: ['/cia/dashboard', '/cia/practice'],
+      home: ['/cia/dashboard'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice', '/cia/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
-    showStrategy: false,
+    showStrategy: true,
   },
   cfp: {
     paths: {
       home: '/cfp/dashboard',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/cfp/dashboard',
+      strategy: '/exam-guide',
     },
     activePaths: {
-      home: ['/cfp/dashboard', '/cfp/practice', '/cfp/case-study'],
+      home: ['/cfp/dashboard', '/cfp/case-study'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice', '/cfp/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
-    showStrategy: false,
+    showStrategy: true,
   },
   cisa: {
     paths: {
       home: '/cisa/dashboard',
       learn: '/learn',
+      practice: '/practice',
       you: '/you',
-      strategy: '/cisa/dashboard',
+      strategy: '/exam-guide',
     },
     activePaths: {
-      home: ['/cisa/dashboard', '/cisa/practice'],
+      home: ['/cisa/dashboard'],
       learn: ['/learn', '/lessons'],
+      practice: ['/practice', '/cisa/practice'],
       you: ['/you', '/progress', '/settings', '/achievements'],
-      strategy: [],
+      strategy: ['/exam-guide'],
     },
-    showStrategy: false,
+    showStrategy: true,
   },
 };
 
@@ -150,6 +163,7 @@ export function getNavItems(courseId: CourseId): NavItem[] {
   const items: NavItem[] = [
     { path: config.paths.home, icon: Home, label: 'Home', tourId: 'home', navType: 'home' },
     { path: config.paths.learn, icon: BookOpen, label: 'Learn', tourId: 'learn', navType: 'learn' },
+    { path: config.paths.practice, icon: Target, label: 'Practice', tourId: 'practice', navType: 'practice' },
     { path: config.paths.you, icon: User, label: 'You', tourId: 'you', navType: 'you' },
   ];
   
@@ -157,7 +171,7 @@ export function getNavItems(courseId: CourseId): NavItem[] {
     items.push({
       path: config.paths.strategy,
       icon: Compass,
-      label: 'Strategy',
+      label: 'Exam Guide',
       tourId: 'strategy',
       navType: 'strategy',
     });
@@ -170,7 +184,7 @@ export function getNavItems(courseId: CourseId): NavItem[] {
  * Check if a navigation item is active for the current path.
  */
 export function isNavActive(
-  navType: 'home' | 'learn' | 'you' | 'strategy',
+  navType: 'home' | 'learn' | 'practice' | 'you' | 'strategy',
   pathname: string,
   searchParams: URLSearchParams,
   courseId: CourseId

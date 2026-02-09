@@ -151,7 +151,7 @@ describe('ExamSimulator', () => {
 
     it('should display Full Exam structure info', async () => {
       renderExamSimulator();
-      expect(screen.getByText(/Full AICPA structure/i)).toBeInTheDocument();
+      expect(screen.getByText(/Full CPA exam/i)).toBeInTheDocument();
     });
 
     it('should display Mini Exam question count', async () => {

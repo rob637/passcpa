@@ -718,7 +718,7 @@ const Settings: React.FC = () => {
                     <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 mb-4">
                       <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Download for Offline Study</h3>
                       <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
-                        Download up to 500 {profile?.examSection || getDefaultSection(courseId)} questions to practice anywhere, anytime.
+                        Download up to 500 {getSectionDisplayInfo(profile?.examSection || getDefaultSection(courseId), courseId)?.shortName || course?.shortName} questions to practice anywhere, anytime.
                       </p>
                       <button
                         onClick={handleDownloadOffline}

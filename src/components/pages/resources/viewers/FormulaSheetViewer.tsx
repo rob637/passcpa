@@ -19,7 +19,8 @@ interface Formula {
   notes?: string;
   example?: string;
   tips?: string[];
-  variables?: { symbol: string; meaning: string }[];
+  // Support both array format and Record format for variables
+  variables?: { symbol: string; meaning: string }[] | Record<string, string>;
 }
 
 interface FormulaCategory {
@@ -29,8 +30,20 @@ interface FormulaCategory {
   section?: string;
   blueprintArea?: string;
   weight?: string;
+  part?: string; // For CIA
   formulas: Formula[];
 }
+
+// Helper to normalize variables to array format
+const normalizeVariables = (variables?: { symbol: string; meaning: string }[] | Record<string, string>): { symbol: string; meaning: string }[] | undefined => {
+  if (!variables) return undefined;
+  
+  // Already an array
+  if (Array.isArray(variables)) return variables;
+  
+  // Convert Record to array
+  return Object.entries(variables).map(([symbol, meaning]) => ({ symbol, meaning }));
+};
 
 // Helper to get category title from various naming conventions
 const getCategoryTitle = (cat: FormulaCategory): string => {
@@ -56,7 +69,9 @@ export const FormulaSheetViewer: React.FC<FormulaSheetViewerProps> = ({ courseId
       try {
         // Map item IDs to formula sheet exports
         // IDs come from resourceConfig
-        const formulaMap: Record<string, () => Promise<FormulaCategory[]>> = {
+        // Using 'any' type since different courses have slightly different structures
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const formulaMap: Record<string, () => Promise<any[]>> = {
           // CPA
           'cpa-fs-all': () => import(`../../../../data/cpa/study-materials/cpa-formula-sheet`).then(m => m.CPA_FORMULA_SHEET),
           // EA
@@ -181,7 +196,8 @@ const FormulaTable: React.FC<FormulaTableProps> = ({ category, expandedFormula, 
         {category.formulas.map((formula, idx) => {
           const formulaId = `${title}-${idx}`;
           const isExpanded = expandedFormula === formulaId;
-          const hasDetails = formula.notes || formula.example;
+          const normalizedVars = normalizeVariables(formula.variables);
+          const hasDetails = formula.notes || formula.example || normalizedVars;
           
           return (
             <div key={idx} className="bg-white dark:bg-slate-800">
@@ -207,6 +223,18 @@ const FormulaTable: React.FC<FormulaTableProps> = ({ category, expandedFormula, 
                 
                 {isExpanded && hasDetails && (
                   <div className="mt-3 pl-4 border-l-2 border-primary-300 dark:border-primary-600 space-y-2">
+                    {normalizedVars && normalizedVars.length > 0 && (
+                      <div className="text-sm">
+                        <strong className="text-slate-700 dark:text-slate-300">Variables:</strong>
+                        <ul className="mt-1 space-y-1 ml-4">
+                          {normalizedVars.map((v, i) => (
+                            <li key={i} className="text-slate-600 dark:text-slate-400">
+                              <code className="text-primary-600 dark:text-primary-400">{v.symbol}</code> = {v.meaning}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     {formula.notes && (
                       <p className="text-sm text-slate-600 dark:text-slate-400">
                         <strong className="text-slate-700 dark:text-slate-300">Note:</strong> {formula.notes}

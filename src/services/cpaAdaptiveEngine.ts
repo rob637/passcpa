@@ -320,6 +320,7 @@ export function recordAnswer(
   history.lastResult = isCorrect;
   
   // SM-2 algorithm for spaced repetition
+  // TODO: Extract to shared spacedRepetition.ts - duplicated in all *AdaptiveEngine.ts files
   if (isCorrect) {
     if (history.attempts === 1) {
       history.interval = 1;

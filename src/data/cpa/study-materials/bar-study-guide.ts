@@ -6,7 +6,7 @@
  * Note: BAR replaced BEC starting January 2024
  */
 
-import { CPAStudyGuide, BlueprintArea, StudyWeek } from './far-study-guide';
+import { CPAStudyGuide } from './far-study-guide';
 
 export const BAR_STUDY_GUIDE: CPAStudyGuide = {
   id: 'bar-study-guide',

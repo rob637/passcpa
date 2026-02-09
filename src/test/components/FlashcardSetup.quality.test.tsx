@@ -1,6 +1,6 @@
 /**
  * Quality tests for FlashcardSetup component
- * Tests flashcard session configuration
+ * Tests flashcard session configuration (simplified form)
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
@@ -23,6 +23,13 @@ vi.mock('../../hooks/useAuth', () => ({
     userProfile: {
       examSection: 'FAR',
     },
+  })),
+}));
+
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: vi.fn(() => ({
+    courseId: 'cpa',
+    course: { id: 'cpa', name: 'CPA' },
   })),
 }));
 
@@ -58,12 +65,9 @@ vi.mock('../../config/examConfig', () => ({
   },
 }));
 
-vi.mock('../../components/navigation', () => ({
-  BackButton: () => <button>Back</button>,
-}));
-
 import FlashcardSetup from '../../components/FlashcardSetup';
 import { useAuth } from '../../hooks/useAuth';
+import { useCourse } from '../../providers/CourseProvider';
 import { getDoc } from 'firebase/firestore';
 import { getFlashcardsBySection } from '../../data/cpa/flashcards';
 
@@ -85,6 +89,11 @@ describe('FlashcardSetup', () => {
         examSection: 'FAR',
       },
     });
+    
+    (useCourse as ReturnType<typeof vi.fn>).mockReturnValue({
+      courseId: 'cpa',
+      course: { id: 'cpa', name: 'CPA' },
+    });
   });
 
   afterEach(() => {
@@ -96,7 +105,7 @@ describe('FlashcardSetup', () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText(/Create a Flashcard Session/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /Flashcards/i })).toBeInTheDocument();
       });
     });
 
@@ -108,157 +117,109 @@ describe('FlashcardSetup', () => {
       });
     });
 
-    it('should display categories section', async () => {
+    it('should display count buttons (10, 25, 50)', async () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText('Categories')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /10 cards/i })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /25 cards/i })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /50 cards/i })).toBeInTheDocument();
       });
     });
 
-    it('should show back button', async () => {
+    it('should show available cards count', async () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText('Back')).toBeInTheDocument();
-      });
-    });
-  });
-
-  describe('category selection', () => {
-    it('should show All category option', async () => {
-      renderComponent();
-
-      await waitFor(() => {
-        // "All" text appears both in category and Units section
-        const allTexts = screen.getAllByText('All');
-        expect(allTexts.length).toBeGreaterThanOrEqual(1);
-      });
-    });
-
-    it('should show To Review category option', async () => {
-      renderComponent();
-
-      await waitFor(() => {
-        expect(screen.getByText('To Review')).toBeInTheDocument();
-      });
-    });
-
-    it('should show Mastered category option', async () => {
-      renderComponent();
-
-      await waitFor(() => {
-        expect(screen.getByText('Mastered')).toBeInTheDocument();
-      });
-    });
-
-    it('should show Not Worked category option', async () => {
-      renderComponent();
-
-      await waitFor(() => {
-        expect(screen.getByText('Not Worked')).toBeInTheDocument();
-      });
-    });
-
-    it('should show category counts after loading', async () => {
-      renderComponent();
-
-      // Wait for loading to finish (counts become numbers)
-      await waitFor(() => {
-        expect(screen.queryByText('...')).not.toBeInTheDocument();
-      });
-
-      // Check that counts are displayed (All and Not Worked should be 4)
-      await waitFor(() => {
-        // Use getAllByText since there are multiple 4s (All=4, Not Worked=4)
-        expect(screen.getAllByText('4').length).toBeGreaterThan(0);
+        expect(screen.getByText(/cards available/i)).toBeInTheDocument();
       });
     });
   });
 
-  describe('card type selection', () => {
-    it('should show Definitions card type', async () => {
+  describe('simple options', () => {
+    it('should show Shuffle toggle', async () => {
       renderComponent();
 
       await waitFor(() => {
+        expect(screen.getByText('Shuffle')).toBeInTheDocument();
+      });
+    });
+
+    it('should show Focus on weak areas toggle', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(screen.getByText('Focus on weak areas')).toBeInTheDocument();
+      });
+    });
+
+    it('should show More options button', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(screen.getByText('More options')).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe('advanced options', () => {
+    it('should show card types when More options is clicked', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(screen.getByText('More options')).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByText('More options'));
+
+      await waitFor(() => {
+        expect(screen.getByText('Card Types')).toBeInTheDocument();
         expect(screen.getByText('Definitions')).toBeInTheDocument();
-      });
-    });
-
-    it('should show Formulas card type', async () => {
-      renderComponent();
-
-      await waitFor(() => {
         expect(screen.getByText('Formulas')).toBeInTheDocument();
-      });
-    });
-
-    it('should show Mnemonics card type', async () => {
-      renderComponent();
-
-      await waitFor(() => {
         expect(screen.getByText('Mnemonics')).toBeInTheDocument();
-      });
-    });
-
-    it('should show Questions card type', async () => {
-      renderComponent();
-
-      await waitFor(() => {
         expect(screen.getByText('Questions')).toBeInTheDocument();
       });
     });
-  });
 
-  describe('unit filter', () => {
-    it('should show Units & Modules section', async () => {
+    it('should show Filter by Mastery dropdown when More options is clicked', async () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText('Units & Modules')).toBeInTheDocument();
+        expect(screen.getByText('More options')).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByText('More options'));
+
+      await waitFor(() => {
+        expect(screen.getByText('Filter by Mastery')).toBeInTheDocument();
       });
     });
 
-    it('should show blueprint areas when expanded', async () => {
-      renderComponent();
-
-      // Click Units & Modules to expand
-      await waitFor(() => {
-        const unitButton = screen.getByText('Units & Modules');
-        fireEvent.click(unitButton);
-      });
-
-      // Blueprint areas from mock data should appear
-      await waitFor(() => {
-        expect(screen.getByText('All Units')).toBeInTheDocument();
-        expect(screen.getByText('Area1')).toBeInTheDocument();
-        expect(screen.getByText('Area2')).toBeInTheDocument();
-      });
-    });
-  });
-
-  describe('session options', () => {
-    it('should have shuffle order toggle', async () => {
+    it('should show Unit dropdown when More options is clicked', async () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText('Shuffle order')).toBeInTheDocument();
+        expect(screen.getByText('More options')).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByText('More options'));
+
+      await waitFor(() => {
+        expect(screen.getByText('Unit')).toBeInTheDocument();
       });
     });
 
-    it('should have show both sides toggle', async () => {
+    it('should show Show both sides toggle when More options is clicked', async () => {
       renderComponent();
+
+      await waitFor(() => {
+        expect(screen.getByText('More options')).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByText('More options'));
 
       await waitFor(() => {
         expect(screen.getByText('Show both sides')).toBeInTheDocument();
-      });
-    });
-
-    it('should have Flashcard mode section', async () => {
-      renderComponent();
-
-      await waitFor(() => {
-        expect(screen.getByText('Flashcard mode')).toBeInTheDocument();
       });
     });
   });
@@ -293,15 +254,15 @@ describe('FlashcardSetup', () => {
   });
 
   describe('loading state', () => {
-    it('should show loading indicators during fetch', () => {
+    it('should show loading indicator during fetch', () => {
       (getDoc as ReturnType<typeof vi.fn>).mockImplementation(
         () => new Promise(() => {})
       );
 
       renderComponent();
 
-      // Should show "..." for counts during loading
-      expect(screen.getAllByText('...').length).toBeGreaterThan(0);
+      // During loading, the "cards available" text shows "..."
+      expect(screen.getByText(/\.\.\. cards available/i)).toBeInTheDocument();
     });
   });
 
@@ -313,7 +274,7 @@ describe('FlashcardSetup', () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText(/Create a Flashcard Session/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /Flashcards/i })).toBeInTheDocument();
       });
 
       consoleSpy.mockRestore();
@@ -330,7 +291,7 @@ describe('FlashcardSetup', () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.getByText(/Create a Flashcard Session/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /Flashcards/i })).toBeInTheDocument();
       });
     });
 
@@ -348,25 +309,29 @@ describe('FlashcardSetup', () => {
     });
   });
 
-  describe('mastery levels', () => {
-    it('should calculate mastery counts from SRS data', async () => {
-      (getDoc as ReturnType<typeof vi.fn>).mockResolvedValue({
-        exists: () => true,
-        data: () => ({
-          card1: { masteryLevel: 'mastered', nextReview: new Date() },
-          card2: { masteryLevel: 'mastered', nextReview: new Date() },
-          card3: { masteryLevel: 'learning', nextReview: new Date() },
-        }),
-      });
-
+  describe('count button selection', () => {
+    it('should default to 25 cards selected', async () => {
       renderComponent();
 
       await waitFor(() => {
-        expect(screen.queryByText('...')).not.toBeInTheDocument();
+        const button25 = screen.getByRole('button', { name: /25 cards/i });
+        expect(button25).toHaveAttribute('aria-pressed', 'true');
+      });
+    });
+
+    it('should allow selecting different count', async () => {
+      renderComponent();
+
+      await waitFor(() => {
+        expect(screen.getByRole('button', { name: /10 cards/i })).toBeInTheDocument();
       });
 
-      // Mastered count should be 2
-      expect(screen.getByText('2')).toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: /10 cards/i }));
+
+      await waitFor(() => {
+        const button10 = screen.getByRole('button', { name: /10 cards/i });
+        expect(button10).toHaveAttribute('aria-pressed', 'true');
+      });
     });
   });
 

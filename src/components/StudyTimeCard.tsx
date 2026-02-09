@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, TrendingUp, ChevronRight } from 'lucide-react';
 import { useStudy } from '../hooks/useStudy';
+import { useCourse } from '../providers/CourseProvider';
 
 // Donut chart colors matching Becker's style
 const ACTIVITY_COLORS = {
@@ -71,6 +72,10 @@ const DonutChart: React.FC<{
 
 const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
   const { weeklyStats, todayLog } = useStudy();
+  const { courseId } = useCourse();
+  
+  // TBS is only for CPA exam
+  const hasTBS = courseId === 'cpa';
   
   // Calculate time breakdown from todayLog activities or estimate from stats
   // In a real implementation, you'd track time per activity type
@@ -79,17 +84,21 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
   const weeklyMinutes = weeklyStats?.totalMinutes || 0;
   
   // Estimate breakdown (in real app, track this explicitly)
-  const lessonsTime = Math.round(todayMinutes * 0.3);
-  const mcqsTime = Math.round(todayMinutes * 0.4);
-  const tbsTime = Math.round(todayMinutes * 0.2);
-  const flashcardsTime = Math.round(todayMinutes * 0.1);
+  // Adjust percentages based on whether TBS is available
+  const lessonsTime = Math.round(todayMinutes * (hasTBS ? 0.3 : 0.35));
+  const mcqsTime = Math.round(todayMinutes * (hasTBS ? 0.4 : 0.5));
+  const tbsTime = hasTBS ? Math.round(todayMinutes * 0.2) : 0;
+  const flashcardsTime = Math.round(todayMinutes * (hasTBS ? 0.1 : 0.15));
   
-  const segments = [
+  // Build segments dynamically based on course
+  const allSegments = [
     { value: lessonsTime, color: ACTIVITY_COLORS.lessons, label: 'Lessons' },
     { value: mcqsTime, color: ACTIVITY_COLORS.mcqs, label: 'MCQs' },
-    { value: tbsTime, color: ACTIVITY_COLORS.tbs, label: 'TBS' },
+    ...(hasTBS ? [{ value: tbsTime, color: ACTIVITY_COLORS.tbs, label: 'TBS' }] : []),
     { value: flashcardsTime, color: ACTIVITY_COLORS.flashcards, label: 'Flashcards' },
-  ].filter(s => s.value > 0);
+  ];
+  
+  const segments = allSegments.filter(s => s.value > 0);
   
   // If no activity today, show placeholder
   if (todayMinutes === 0 && weeklyMinutes === 0) {
@@ -134,7 +143,7 @@ const StudyTimeCard: React.FC<StudyTimeDonutProps> = ({ className }) => {
           {[
             { label: 'Lessons', color: ACTIVITY_COLORS.lessons, time: lessonsTime },
             { label: 'MCQs', color: ACTIVITY_COLORS.mcqs, time: mcqsTime },
-            { label: 'TBS', color: ACTIVITY_COLORS.tbs, time: tbsTime },
+            ...(hasTBS ? [{ label: 'TBS', color: ACTIVITY_COLORS.tbs, time: tbsTime }] : []),
             { label: 'Flashcards', color: ACTIVITY_COLORS.flashcards, time: flashcardsTime },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-1.5">

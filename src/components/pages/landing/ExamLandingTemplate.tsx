@@ -20,6 +20,7 @@ import {
   Sparkles,
   Check,
   X,
+  Menu,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
 
@@ -29,10 +30,16 @@ interface ExamLandingTemplateProps {
 
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [config.id]);
 
   // Color utility - maps color name to Tailwind classes
   const getColorClasses = (color: string) => {
@@ -61,13 +68,13 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800" aria-label="Main navigation">
-        <div className="px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
-          <div className="flex items-center gap-3">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
-              <img src="/logo.svg" alt="VoraPrep" className="h-10 dark:hidden" />
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-10 hidden dark:block" />
+              <img src="/logo.svg" alt="VoraPrep" className="h-8 sm:h-10 dark:hidden" />
+              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 sm:h-10 hidden dark:block" />
             </Link>
-            <span className={`${colors.text} font-bold text-lg`}>{config.name}</span>
+            <span className={`hidden sm:inline ${colors.text} font-bold text-lg`}>{config.name}</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
             {/* Quick Exam Switcher Dropdown */}
@@ -108,8 +115,82 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             >
               Start Free
             </Link>
+            {/* Mobile hamburger menu button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-xl animate-fade-in">
+            <div className="px-4 py-4 space-y-1">
+              <a 
+                href="#why-become" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Why {config.name}?
+              </a>
+              <a 
+                href="#exam" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Exam Overview
+              </a>
+              <a 
+                href="#features" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Features
+              </a>
+              {config.competitors && (
+                <a 
+                  href="#comparison" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+                >
+                  Compare
+                </a>
+              )}
+              <a 
+                href="#pricing" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium"
+              >
+                Pricing
+              </a>
+              
+              <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-2">
+                <p className="px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Other Certifications</p>
+                <Link to="/cpa" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cpa' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CPA Exam Prep</Link>
+                <Link to="/ea-prep" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'ea' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>EA Exam Prep</Link>
+                <Link to="/cma" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cma' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CMA Exam Prep</Link>
+                <Link to="/cia" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cia' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CIA Exam Prep</Link>
+                <Link to="/cfp" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cfp' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CFP Exam Prep</Link>
+                <Link to="/cisa" onClick={() => setMobileMenuOpen(false)} className={`block px-4 py-2 rounded-lg text-sm ${config.id === 'cisa' ? colors.text + ' font-semibold' : 'text-slate-600 dark:text-slate-400'}`}>CISA Exam Prep</Link>
+              </div>
+
+              <div className="border-t border-slate-200 dark:border-slate-700 my-2 pt-3 px-4">
+                <Link 
+                  to={config.loginPath}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-center py-3 text-slate-700 dark:text-slate-300 font-medium"
+                >
+                  Sign In
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <main id="main-content">

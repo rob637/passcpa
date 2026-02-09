@@ -114,18 +114,58 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
             const m = await import(`../../../../data/cfp/flashcards/mnemonics`);
             return (m.CFP_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('Trust'));
           },
-          // CISA
-          'cisa-mn-risk': async () => {
+          // CISA - filter by domain and topic keywords, or return all from domain
+          'cisa-mn-cobit': async () => {
             const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
-            return (m.CISA_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('Risk'));
-          },
-          'cisa-mn-controls': async () => {
-            const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
-            return (m.CISA_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('Control'));
+            // Return COBIT-related from D2 or all D2 if no match
+            const cobitFiltered = (m.CISA2_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.mnemonic?.includes('COBIT') || c.front?.includes('COBIT') || (c.tags && c.tags.includes('COBIT'))
+            );
+            return cobitFiltered.length > 0 ? cobitFiltered : (m.CISA2_MNEMONICS || []);
           },
           'cisa-mn-sdlc': async () => {
             const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
-            return (m.CISA_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('SDLC'));
+            // Return SDLC-related from D3 or all D3 if no match
+            const sdlcFiltered = (m.CISA3_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.mnemonic?.includes('SDLC') || c.front?.includes('SDLC') || (c.tags && c.tags.includes('SDLC'))
+            );
+            return sdlcFiltered.length > 0 ? sdlcFiltered : (m.CISA3_MNEMONICS || []);
+          },
+          'cisa-mn-bcp': async () => {
+            const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
+            // Return BCP/DRP-related from D4 or all D4
+            const bcpFiltered = (m.CISA4_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.mnemonic?.includes('BCP') || c.mnemonic?.includes('DRP') || c.mnemonic?.includes('RTO') || 
+              c.front?.includes('BCP') || c.front?.includes('DRP') || c.front?.includes('Recovery') || 
+              (c.tags && (c.tags.includes('BCP') || c.tags.includes('DRP') || c.tags.includes('disaster recovery')))
+            );
+            return bcpFiltered.length > 0 ? bcpFiltered : (m.CISA4_MNEMONICS || []);
+          },
+          'cisa-mn-crypto': async () => {
+            const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
+            // Return cryptography-related from D5 or all D5
+            const cryptoFiltered = (m.CISA5_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.mnemonic?.toLowerCase().includes('crypt') || c.mnemonic?.toLowerCase().includes('sym') || c.mnemonic?.toLowerCase().includes('hash') ||
+              c.front?.toLowerCase().includes('crypt') || c.front?.toLowerCase().includes('encrypt') || c.front?.toLowerCase().includes('hash') ||
+              (c.tags && c.tags.some((t: string) => t.toLowerCase().includes('crypt') || t.toLowerCase().includes('encrypt') || t.toLowerCase().includes('hash')))
+            );
+            return cryptoFiltered.length > 0 ? cryptoFiltered : (m.CISA5_MNEMONICS || []);
+          },
+          'cisa-mn-risk': async () => {
+            const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
+            // Return risk-related from D2 or all D2
+            const riskFiltered = (m.CISA2_MNEMONICS || []).filter((c: MnemonicCard) => 
+              (c.tags && c.tags.includes('risk')) || c.front?.toLowerCase().includes('risk')
+            );
+            return riskFiltered.length > 0 ? riskFiltered : (m.CISA2_MNEMONICS || []);
+          },
+          'cisa-mn-controls': async () => {
+            const m = await import(`../../../../data/cisa/flashcards/mnemonics`);
+            // Return control-related from D1 or all D1
+            const controlFiltered = (m.CISA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+              (c.tags && c.tags.includes('control')) || c.front?.toLowerCase().includes('control')
+            );
+            return controlFiltered.length > 0 ? controlFiltered : (m.CISA1_MNEMONICS || []);
           },
         };
         

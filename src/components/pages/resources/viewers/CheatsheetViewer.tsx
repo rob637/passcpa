@@ -158,8 +158,13 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
       return row.split('|').slice(1, -1).map(cell => cell.trim());
     };
     
+    // Check if a row is a separator (contains only |, -, :, and spaces)
+    const isSeparatorRow = (row: string): boolean => {
+      return /^[|\s:-]+$/.test(row) && row.includes('-');
+    };
+    
     // Check if second row is a separator (---|---|---)
-    const hasSeparator = rows.length > 1 && rows[1].match(/^\|[\s:-]+\|$/);
+    const hasSeparator = rows.length > 1 && isSeparatorRow(rows[1]);
     const headerRow = parseCells(rows[0]);
     const dataStartIndex = hasSeparator ? 2 : 1;
     const dataRows = rows.slice(dataStartIndex).map(parseCells);

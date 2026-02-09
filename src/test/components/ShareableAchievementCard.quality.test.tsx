@@ -20,6 +20,32 @@ const mockRevokeObjectURL = vi.fn();
 global.URL.createObjectURL = mockCreateObjectURL;
 global.URL.revokeObjectURL = mockRevokeObjectURL;
 
+// Mock CourseProvider
+vi.mock('../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA',
+    },
+  }),
+}));
+
+// Mock getAchievementDisplayName to return the achievement name
+// Note: The actual component uses achievement.id to look up display name
+// For tests with custom achievements, we need the name to be returned
+vi.mock('../../services/achievements', () => ({
+  getAchievementDisplayName: (id: string, _courseId: string) => {
+    // Return proper display names for test achievements
+    // These should match what the tests expect
+    const names: Record<string, string> = {
+      'test-achievement': 'First Steps',
+      'custom-achievement': 'Custom Achievement',
+    };
+    return names[id] || id;
+  },
+}));
+
 import ShareableAchievementCard from '../../components/ShareableAchievementCard';
 import html2canvas from 'html2canvas';
 
@@ -470,13 +496,15 @@ describe('ShareableAchievementCard', () => {
     it('should display custom achievement name', () => {
       const customAchievement = {
         ...mockAchievement,
-        name: 'Master Accountant',
+        id: 'custom-achievement', // Different ID to test mock returns different name
+        name: 'Custom Achievement',
         description: 'Complete all FAR questions',
       };
 
       renderComponent({ achievement: customAchievement });
 
-      expect(screen.getByText('Master Accountant')).toBeInTheDocument();
+      // Component uses getAchievementDisplayName which returns based on ID
+      expect(screen.getByText('Custom Achievement')).toBeInTheDocument();
     });
 
     it('should display custom achievement points', () => {

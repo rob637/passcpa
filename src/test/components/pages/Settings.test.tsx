@@ -247,7 +247,8 @@ describe('Settings Component', () => {
     it('switches to Study Plan tab when clicked', async () => {
       await renderSettings();
       fireEvent.click(screen.getByText('Study Plan'));
-      expect(screen.getByText('Study Plan Settings')).toBeInTheDocument();
+      // The heading shows "{course.name} Settings" which is "CPA Settings" based on mock
+      expect(screen.getByText('CPA Settings')).toBeInTheDocument();
     });
 
     it('displays exam section options', async () => {

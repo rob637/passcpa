@@ -8,7 +8,9 @@ import {
   REG_ALL,
   FAR_ALL,
   AUD_ALL,
-  BEC_ALL,
+  BAR_ALL,
+  ISC_ALL,
+  TCP_ALL,
 } from '../../data/cpa/questions';
 
 describe('Question Bank Utilities', () => {
@@ -21,10 +23,14 @@ describe('Question Bank Utilities', () => {
     it('should have questions for all CPA sections', () => {
       const stats = getQuestionStats();
 
+      // Core sections
       expect(stats.bySection.REG).toBeGreaterThan(100);
       expect(stats.bySection.FAR).toBeGreaterThan(100);
       expect(stats.bySection.AUD).toBeGreaterThan(80);
-      expect(stats.bySection.BEC).toBeGreaterThan(80);
+      // 2026 Discipline sections (replaced BEC)
+      expect(stats.bySection.BAR).toBeGreaterThan(50);
+      expect(stats.bySection.ISC).toBeGreaterThan(50);
+      expect(stats.bySection.TCP).toBeGreaterThan(50);
     });
 
     it('should have questions for all difficulty levels', () => {
@@ -60,10 +66,22 @@ describe('Question Bank Utilities', () => {
       expect(questions.every((q) => q.section === 'AUD')).toBe(true);
     });
 
-    it('should return BEC questions', () => {
-      const questions = getQuestionsBySection('BEC');
-      expect(questions.length).toBe(BEC_ALL.length);
-      expect(questions.every((q) => q.section === 'BEC')).toBe(true);
+    it('should return BAR questions', () => {
+      const questions = getQuestionsBySection('BAR');
+      expect(questions.length).toBe(BAR_ALL.length);
+      expect(questions.every((q) => q.section === 'BAR')).toBe(true);
+    });
+
+    it('should return ISC questions', () => {
+      const questions = getQuestionsBySection('ISC');
+      expect(questions.length).toBe(ISC_ALL.length);
+      expect(questions.every((q) => q.section === 'ISC')).toBe(true);
+    });
+
+    it('should return TCP questions', () => {
+      const questions = getQuestionsBySection('TCP');
+      expect(questions.length).toBe(TCP_ALL.length);
+      expect(questions.every((q) => q.section === 'TCP')).toBe(true);
     });
 
     it('should return empty array for invalid section', () => {

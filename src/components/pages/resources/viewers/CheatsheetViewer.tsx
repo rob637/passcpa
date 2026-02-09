@@ -53,13 +53,14 @@ const getCheatsheetPath = (courseId: string, itemId: string): string | null => {
     'cia-cs-p2': 'cia2-cheatsheet.md',
     'cia-cs-p3': 'cia3-cheatsheet.md',
     // CFP
-    'cfp-cs-gpp': 'cfp-fundamentals-cheatsheet.md',
-    'cfp-cs-ris': 'cfp-insurance-cheatsheet.md',
+    'cfp-cs-gpp': 'cfp-general-cheatsheet.md',
+    'cfp-cs-ris': 'cfp-risk-cheatsheet.md',
     'cfp-cs-inv': 'cfp-investment-cheatsheet.md',
     'cfp-cs-tax': 'cfp-tax-cheatsheet.md',
     'cfp-cs-ret': 'cfp-retirement-cheatsheet.md',
     'cfp-cs-est': 'cfp-estate-cheatsheet.md',
     'cfp-cs-psy': 'cfp-psychology-cheatsheet.md',
+    'cfp-cs-eth': 'cfp-professional-cheatsheet.md',
     // CISA
     'cisa-cs-d1': 'cisa1-cheatsheet.md',
     'cisa-cs-d2': 'cisa2-cheatsheet.md',

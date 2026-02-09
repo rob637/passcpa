@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Flame, WifiOff } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
-import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
+import { useRouteTitle } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
 import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
@@ -138,19 +138,6 @@ const MainLayout = () => {
     }
   }, [location.pathname, navItems, currentCourseId, searchParams]);
 
-
-  // Get current page title
-  const getPageTitle = () => {
-    const current = navItems.find(
-      (item) => isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
-    );
-    if (current) return current.label;
-    
-    // Fallback using ROUTE_TITLES
-    const path = location.pathname;
-    return ROUTE_TITLES[path] || 'VoraPrep';
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Skip Navigation Link - Accessibility */}
@@ -247,7 +234,7 @@ const MainLayout = () => {
         </div>
       </aside>
 
-      {/* Mobile Top Bar */}
+      {/* Mobile Top Bar - Google-style minimal header showing exam context */}
       <header
         className={clsx(
           'md:hidden fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 z-40 transition-shadow duration-200 safe-top',
@@ -255,20 +242,20 @@ const MainLayout = () => {
         )}
         role="banner"
       >
-        <div className="flex items-center justify-between px-4 h-16">
+        <div className="flex items-center justify-between px-4 h-14">
+          {/* Left: Exam name with tap-to-switch */}
+          <CourseSelector mobileHeader showComingSoon={false} />
+          
+          {/* Right: Streak + Progress (compact) */}
           <div className="flex items-center gap-2">
-            <CourseSelector compact showComingSoon={false} />
-            <div className="font-bold text-lg text-slate-900 dark:text-slate-100">{getPageTitle()}</div>
-          </div>
-          <div className="flex items-center gap-3">
             <div 
-              className="flex items-center gap-1.5 px-2 py-1 bg-orange-50 dark:bg-orange-900/30 rounded-lg border border-orange-100 dark:border-orange-800"
+              className="flex items-center gap-1 px-1.5 py-0.5 bg-orange-50 dark:bg-orange-900/30 rounded-md"
               aria-label={`${currentStreak} day streak`}
             >
-              <Flame className="w-4 h-4 text-orange-500" aria-hidden="true" />
-              <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{currentStreak}</span>
+              <Flame className="w-3.5 h-3.5 text-orange-500" aria-hidden="true" />
+              <span className="text-xs font-bold text-orange-700 dark:text-orange-400">{currentStreak}</span>
             </div>
-            <ProgressRing progress={dailyProgress} size={32} />
+            <ProgressRing progress={dailyProgress} size={28} />
           </div>
         </div>
       </header>

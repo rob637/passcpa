@@ -357,8 +357,29 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     }
   }
 
-  // Generic helpful response
-  return `Let me help you with that! 📚\n\nBased on your question about **${input.slice(0, 50)}${input.length > 50 ? '...' : ''}**, here's what I can explain:\n\nThis topic relates to the ${course.shortName} exam. Could you specify which area you'd like to focus on?\n\n**Sections:** ${course.sections}\n\n${isApiError ? '*Note: Using offline mode. Some features may be limited.*' : ''}`;
+  // Insurance and risk management topics (CFP, CPA)
+  if (lowerInput.includes('insurance') || lowerInput.includes('risk') || lowerInput.includes('coverage') || lowerInput.includes('policy') || lowerInput.includes('premium')) {
+    if (courseId === 'cfp') {
+      return `**Insurance & Risk Management Fundamentals** 📋\n\n**Key Insurance Concepts for CFP:**\n\n**Types of Insurance:**\n• **Life Insurance**: Term, Whole Life, Universal, Variable\n• **Health Insurance**: Individual, Group, HSA/FSA eligibility\n• **Disability Insurance**: Own-occupation vs Any-occupation\n• **Long-Term Care**: Benefit triggers, elimination periods\n• **Property & Casualty**: Homeowners, Auto, Umbrella\n\n**Risk Management Process:**\n1. Identify risks\n2. Evaluate/analyze risks\n3. Select appropriate techniques (avoid, reduce, retain, transfer)\n4. Implement the plan\n5. Monitor and review\n\n**🎯 High-Yield CFP Points:**\n• Human Life Value vs Needs Analysis for life insurance\n• Coordination of benefits rules\n• Subrogation and indemnity principles\n• Policy exclusions and limitations\n\nWhat specific aspect of insurance would you like me to explain further?`;
+    }
+    return `**Insurance & Risk Management** 📋\n\nInsurance is a key topic! I can help explain:\n\n• **Types of policies** and their features\n• **Coverage analysis** and gaps\n• **Premium calculations** and factors\n• **Risk transfer** vs retention strategies\n\nWhat specific insurance concept are you working on?`;
+  }
+
+  // Control/network/security topics (CISA, CFP)
+  if (lowerInput.includes('control') || lowerInput.includes('internal') || lowerInput.includes('network') || lowerInput.includes('security')) {
+    if (courseId === 'cisa') {
+      return `**Internal Controls & Security** 📋\n\n**Types of Controls:**\n• **Preventive**: Stop issues before they occur (access controls, segregation of duties)\n• **Detective**: Identify issues that occurred (logs, reconciliations, audits)\n• **Corrective**: Fix issues after detection (incident response, patches)\n\n**Network Security Controls:**\n• Firewalls, IDS/IPS\n• Encryption (at rest, in transit)\n• Access control lists (ACLs)\n• Network segmentation\n• VPNs and secure protocols\n\n**🎯 Key Exam Points:**\n• Defense in depth principle\n• Least privilege access\n• Separation of duties\n• Audit trails and logging\n\nWhat specific control or security concept would you like me to elaborate on?`;
+    }
+    return `**Controls & Security Concepts** 📋\n\nThis is an important topic! Let me help with:\n\n• **Internal Controls**: Preventive, detective, and corrective measures\n• **Security Principles**: Confidentiality, integrity, availability\n• **Risk Assessment**: Identifying and mitigating threats\n\nCould you give me more details about what you're specifically trying to understand?`;
+  }
+
+  // Generic helpful response - actually try to be helpful instead of asking for section
+  const questionSummary = input.slice(0, 100);
+  if (isApiError) {
+    return `📚 **I'm currently in offline mode**, but I can still help!\n\nRegarding your question about "${questionSummary}${input.length > 100 ? '...' : ''}":\n\nWhile I don't have a specific pre-built answer for this topic, here are some study tips:\n\n1. **Break it down**: What are the key terms in your question?\n2. **Check your course materials**: Review the relevant lesson or chapter\n3. **Practice problems**: Work through examples to reinforce understanding\n\nOnce I'm back online, I'll be able to give you a detailed, personalized explanation!\n\n*Note: Using offline mode. Some features may be limited.*`;
+  }
+  
+  return `📚 **Great question about "${questionSummary}${input.length > 100 ? '...' : ''}"!**\n\nI want to give you the best answer possible. To help me focus my response:\n\n1. **Are you asking about a specific concept** you encountered in a question?\n2. **Need a calculation explained** step by step?\n3. **Looking for exam tips** on this topic?\n\nTell me a bit more and I'll give you a detailed, exam-focused explanation!`;
 };
 
 // Call Gemini API

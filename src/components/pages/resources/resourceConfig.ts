@@ -49,6 +49,26 @@ export interface CourseResourceConfig {
     duration: string;
     sections: number;
   };
+  /** Why take this exam - career value proposition */
+  examValue?: {
+    title: string;
+    subtitle: string;
+    benefits: {
+      icon: 'salary' | 'career' | 'credibility' | 'network' | 'knowledge' | 'global';
+      title: string;
+      description: string;
+    }[];
+    stats?: {
+      label: string;
+      value: string;
+      source?: string;
+    }[];
+  };
+  /** Exam tips for success */
+  examTips?: {
+    title: string;
+    tips: string[];
+  };
 }
 
 // ============================================================================
@@ -75,6 +95,34 @@ const CPA_RESOURCES: CourseResourceConfig = {
     format: '4 sections: FAR, AUD, REG, plus 1 Discipline (BAR, ISC, or TCP)',
     duration: '4 hours per section',
     sections: 4,
+  },
+  examValue: {
+    title: 'Why Become a CPA?',
+    subtitle: 'The CPA credential opens doors to the highest-paying and most respected careers in accounting',
+    benefits: [
+      { icon: 'salary', title: 'Higher Earning Potential', description: 'CPAs earn 10-15% more than non-certified accountants on average' },
+      { icon: 'career', title: 'Career Advancement', description: 'Required for signing audit reports, partnership tracks, and C-suite roles' },
+      { icon: 'credibility', title: 'Professional Credibility', description: 'Gold standard credential recognized across all industries' },
+      { icon: 'network', title: 'Professional Network', description: 'Access to AICPA resources, conferences, and peer community' },
+    ],
+    stats: [
+      { label: 'Avg. Salary Premium', value: '+$15,000/yr', source: 'AICPA' },
+      { label: 'Job Growth', value: '6%', source: 'BLS 2023-33' },
+      { label: 'Active CPAs', value: '665,000+', source: 'NASBA' },
+    ],
+  },
+  examTips: {
+    title: 'CPA Exam Success Tips',
+    tips: [
+      'Start with FAR - it\'s the foundation for other sections',
+      'Schedule exams close together to retain knowledge',
+      'Use the Authoritative Literature during the exam (FAR, AUD, REG)',
+      'For TBS questions, break down the data systematically',
+      'Time management: ~1.5 min per MCQ, 15-20 min per TBS',
+      'Flag difficult questions and come back - don\'t get stuck',
+      'Practice with exam-format simulations (not just MCQs)',
+      'Review AICPA sample tests to understand the interface',
+    ],
   },
   categories: [
     {
@@ -149,6 +197,33 @@ const EA_RESOURCES: CourseResourceConfig = {
     format: '3 parts: Individuals, Businesses, Representation',
     duration: '3.5 hours per part',
     sections: 3,
+  },
+  examValue: {
+    title: 'Why Become an Enrolled Agent?',
+    subtitle: 'EAs are federally-authorized tax practitioners with unlimited practice rights before the IRS',
+    benefits: [
+      { icon: 'credibility', title: 'Federal Authorization', description: 'Only credential granted by the federal government for tax representation' },
+      { icon: 'career', title: 'Unlimited Practice Rights', description: 'Represent any taxpayer on any tax matter before any IRS office' },
+      { icon: 'salary', title: 'Growing Demand', description: 'Tax complexity drives consistent demand for qualified EAs' },
+      { icon: 'knowledge', title: 'Tax Expertise', description: 'Demonstrate mastery of individual and business taxation' },
+    ],
+    stats: [
+      { label: 'Active EAs', value: '~60,000', source: 'IRS' },
+      { label: 'Median Income', value: '$57,000+', source: 'PayScale' },
+      { label: 'Job Outlook', value: 'Strong', source: 'BLS' },
+    ],
+  },
+  examTips: {
+    title: 'EA Exam Success Tips',
+    tips: [
+      'Take SEE1 (Individuals) first - it builds the foundation',
+      'Know the current year tax law - the exam updates annually',
+      'Memorize key limits: contribution limits, income thresholds, phase-outs',
+      'Circular 230 is heavily tested in Part 3 - know it cold',
+      'Practice with IRS publications as reference',
+      'Time management: all 100 questions in 3.5 hours',
+      'Focus on the most tested topics per Prometric feedback',
+    ],
   },
   categories: [
     {
@@ -228,6 +303,31 @@ const EA_RESOURCES: CourseResourceConfig = {
 
 const CMA_RESOURCES: CourseResourceConfig = {
   courseId: 'cma',
+  examValue: {
+    title: 'Why Become a CMA?',
+    subtitle: 'Certified Management Accountants are strategic partners driving organizational performance.',
+    benefits: [
+      { icon: 'salary', title: 'Higher Earnings', description: 'CMAs earn 62% more than non-certified peers in total compensation' },
+      { icon: 'career', title: 'Strategic Roles', description: 'Qualify for CFO, Controller, and FP&A leadership positions' },
+      { icon: 'global', title: 'Global Recognition', description: 'Recognized in 100+ countries for management accounting expertise' },
+      { icon: 'knowledge', title: 'Business Acumen', description: 'Master decision analysis, strategy, and financial management' },
+    ],
+    stats: [
+      { value: '62%', label: 'Higher Compensation' },
+      { value: '100+', label: 'Countries Recognition' },
+      { value: '85K+', label: 'CMAs Worldwide' },
+    ],
+  },
+  examTips: {
+    title: 'CMA Exam Tips',
+    tips: [
+      'Master essay writing - Part 1 & 2 both include written essays worth 25% of the score.',
+      'Focus on calculations first - practice variance analysis, IRR/NPV, and WACC calculations daily.',
+      'Understand the "why" behind formulas - the CMA tests conceptual application, not just memorization.',
+      'Time management is critical - allocate 3 hours for MCQs and 1 hour for essays.',
+      'Review ethics thoroughly - professional ethics questions appear across both parts.',
+    ],
+  },
   examOverview: {
     title: 'CMA Exam Overview',
     description: 'The CMA exam tests competency in management accounting and financial strategy.',
@@ -297,6 +397,31 @@ const CMA_RESOURCES: CourseResourceConfig = {
 
 const CIA_RESOURCES: CourseResourceConfig = {
   courseId: 'cia',
+  examValue: {
+    title: 'Why Become a CIA?',
+    subtitle: 'The only globally recognized internal audit certification, trusted worldwide.',
+    benefits: [
+      { icon: 'credibility', title: 'Gold Standard', description: 'The CIA is the only globally accepted internal audit certification' },
+      { icon: 'salary', title: 'Premium Earnings', description: 'CIAs earn significantly more than non-certified internal auditors' },
+      { icon: 'career', title: 'CAE Pathway', description: 'Required credential for Chief Audit Executive and director roles' },
+      { icon: 'global', title: 'Worldwide Demand', description: 'Regulatory requirements drive demand for CIAs across industries' },
+    ],
+    stats: [
+      { value: '195', label: 'Countries Recognition' },
+      { value: '200K+', label: 'CIAs Worldwide' },
+      { value: '40%', label: 'Salary Premium' },
+    ],
+  },
+  examTips: {
+    title: 'CIA Exam Tips',
+    tips: [
+      'Know the IIA Standards cold - they are the foundation of every part of the exam.',
+      'Think like an internal auditor - questions test judgment, not just knowledge.',
+      'Part 3 is sneaky - it covers IT, business, and finance knowledge with depth.',
+      'Practice situational questions - real-world scenarios are common.',
+      'Review the IPPF regularly - the International Professional Practices Framework is essential.',
+    ],
+  },
   examOverview: {
     title: 'CIA Exam Overview',
     description: 'The CIA exam tests competency in internal auditing for IIA certification.',
@@ -375,6 +500,34 @@ const CFP_RESOURCES: CourseResourceConfig = {
     duration: '6 hours (2 sessions)',
     sections: 7,
   },
+  examValue: {
+    title: 'Why Become a CFP®?',
+    subtitle: 'The CFP® certification is the gold standard for financial planners, demonstrating competence and ethics',
+    benefits: [
+      { icon: 'salary', title: 'Premium Compensation', description: 'CFP® professionals earn 26% more than non-certified planners on average' },
+      { icon: 'credibility', title: 'Client Trust', description: '87% of consumers say CFP® certification is important when choosing an advisor' },
+      { icon: 'career', title: 'Competitive Edge', description: 'Stand out in a crowded field - only ~90,000 CFP® professionals in the US' },
+      { icon: 'knowledge', title: 'Comprehensive Expertise', description: 'Master all aspects of financial planning: investments, tax, retirement, estate' },
+    ],
+    stats: [
+      { label: 'Income Premium', value: '+26%', source: 'CFP Board' },
+      { label: 'Consumer Trust', value: '87%', source: 'CFP Board Survey' },
+      { label: 'Active CFP® Pros', value: '~96,000', source: 'CFP Board 2024' },
+    ],
+  },
+  examTips: {
+    title: 'CFP® Exam Success Tips',
+    tips: [
+      'Use process of elimination on difficult questions',
+      'Read case study facts carefully - all information provided is usually relevant',
+      'Watch for qualifiers: "always," "never," "must," "may"',
+      'Manage time: ~2 minutes per question, flag and move on',
+      'First pass: Answer what you know confidently',
+      'Second pass: Work through flagged questions',
+      'Don\'t change answers unless you have a good reason',
+      'Trust your preparation - you\'ve put in the work',
+    ],
+  },
   categories: [
     {
       type: 'cheatsheet',
@@ -441,6 +594,31 @@ const CFP_RESOURCES: CourseResourceConfig = {
 
 const CISA_RESOURCES: CourseResourceConfig = {
   courseId: 'cisa',
+  examValue: {
+    title: 'Why Become a CISA?',
+    subtitle: 'The premier credential for IT audit, control, and security professionals.',
+    benefits: [
+      { icon: 'salary', title: 'Top Earnings', description: 'CISA ranks among the highest-paying IT certifications globally' },
+      { icon: 'credibility', title: 'Industry Standard', description: 'DoD Directive 8570 approved; required for many government roles' },
+      { icon: 'career', title: 'High Demand', description: 'Cybersecurity and IT audit skills are in critical shortage worldwide' },
+      { icon: 'network', title: 'ISACA Network', description: 'Join 165,000+ ISACA-certified professionals and 200+ chapters' },
+    ],
+    stats: [
+      { value: '150K+', label: 'CISAs Worldwide' },
+      { value: '#1', label: 'IT Audit Credential' },
+      { value: '50%', label: 'Salary Premium' },
+    ],
+  },
+  examTips: {
+    title: 'CISA Exam Tips',
+    tips: [
+      'Think like an IS auditor - always prioritize risk-based decision making.',
+      'Domain 5 is heavily weighted - Protection of Information Assets is 27% of the exam.',
+      'Know your acronyms - RTO, RPO, MTPD, BIA, and SDLC phases are tested frequently.',
+      'Focus on governance frameworks - COBIT, ITIL, and ISO standards appear throughout.',
+      'Practice with the ISACA mindset - choose answers that are most audit-focused.',
+    ],
+  },
   examOverview: {
     title: 'CISA Exam Overview',
     description: 'The CISA exam tests competency in IS auditing from ISACA.',

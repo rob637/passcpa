@@ -670,6 +670,8 @@ const Practice: React.FC = () => {
   const [reportType, setReportType] = useState<string>('');
   const [reportDetails, setReportDetails] = useState('');
   const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportSubmitting, setReportSubmitting] = useState(false);
+  const [reportError, setReportError] = useState<string | null>(null);
   
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
@@ -1050,6 +1052,9 @@ const Practice: React.FC = () => {
   const handleReportIssue = useCallback(async () => {
     if (!currentQuestion || !reportType) return;
     
+    setReportSubmitting(true);
+    setReportError(null);
+    
     try {
       // Save report to Firestore for admin review
       const reportData = {
@@ -1086,6 +1091,9 @@ const Practice: React.FC = () => {
       }, 2000);
     } catch (error) {
       logger.error('Failed to submit report:', error);
+      setReportError('Failed to submit report. Please try again.');
+    } finally {
+      setReportSubmitting(false);
     }
   }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity, user?.uid, user?.email]);
 
@@ -1483,9 +1491,16 @@ const Practice: React.FC = () => {
                     // Save session state before navigating
                     saveSessionState();
                     // Navigate in same window - state will be restored on return
-                    const lessonUrl = currentQuestion.blueprintArea 
-                      ? `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`
-                      : `/lessons/matrix?section=${currentQuestion.section?.toLowerCase() || getDefaultSection(courseId).toLowerCase()}&topic=${encodeURIComponent(currentQuestion.topic || '')}&returnTo=/practice`;
+                    // CPA lessons follow ${blueprintArea}-001 format, other courses use different formats
+                    // So we use direct link for CPA with blueprintArea, and lesson matrix for other cases
+                    let lessonUrl: string;
+                    if (courseId === 'cpa' && currentQuestion.blueprintArea) {
+                      lessonUrl = `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`;
+                    } else {
+                      // For non-CPA courses or missing blueprintArea, go to lesson matrix
+                      const section = currentQuestion.section?.toLowerCase() || getDefaultSection(courseId).toLowerCase();
+                      lessonUrl = `/lessons/matrix?section=${section}&returnTo=/practice`;
+                    }
                     navigate(lessonUrl);
                   }}
                   variant="secondary"
@@ -1703,21 +1718,32 @@ const Practice: React.FC = () => {
                   />
                 </div>
 
+                {reportError && (
+                  <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-lg text-sm">
+                    {reportError}
+                  </div>
+                )}
+
                 <div className="flex gap-3">
                   <Button
-                    onClick={() => setShowReportModal(false)}
+                    onClick={() => {
+                      setShowReportModal(false);
+                      setReportError(null);
+                    }}
                     variant="secondary"
                     className="flex-1"
+                    disabled={reportSubmitting}
                   >
                     Cancel
                   </Button>
                   <Button
                     onClick={handleReportIssue}
-                    disabled={!reportType}
+                    disabled={!reportType || reportSubmitting}
+                    loading={reportSubmitting}
                     variant="primary"
                     className="flex-1"
                   >
-                    Submit Report
+                    {reportSubmitting ? 'Submitting...' : 'Submit Report'}
                   </Button>
                 </div>
               </>

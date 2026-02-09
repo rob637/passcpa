@@ -149,6 +149,61 @@ export const CheatsheetViewer: React.FC<CheatsheetViewerProps> = ({ courseId, it
 
 // Simple markdown renderer component
 const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
+  // Render a markdown table
+  const renderTable = (rows: string[], tableKey: number): JSX.Element => {
+    if (rows.length === 0) return <></>;
+    
+    // Parse cells from a row
+    const parseCells = (row: string): string[] => {
+      return row.split('|').slice(1, -1).map(cell => cell.trim());
+    };
+    
+    // Check if second row is a separator (---|---|---)
+    const hasSeparator = rows.length > 1 && rows[1].match(/^\|[\s:-]+\|$/);
+    const headerRow = parseCells(rows[0]);
+    const dataStartIndex = hasSeparator ? 2 : 1;
+    const dataRows = rows.slice(dataStartIndex).map(parseCells);
+    
+    // Format inline content (bold, code, etc.)
+    const formatCell = (text: string): string => {
+      return text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/`(.+?)`/g, '<code class="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-xs">$1</code>');
+    };
+    
+    return (
+      <div key={tableKey} className="overflow-x-auto my-4">
+        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+          <thead className="bg-slate-50 dark:bg-slate-800">
+            <tr>
+              {headerRow.map((cell, i) => (
+                <th
+                  key={i}
+                  className="px-4 py-3 text-left text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider"
+                  dangerouslySetInnerHTML={{ __html: formatCell(cell) }}
+                />
+              ))}
+            </tr>
+          </thead>
+          <tbody className="bg-white dark:bg-slate-900 divide-y divide-slate-100 dark:divide-slate-800">
+            {dataRows.map((row, rowIdx) => (
+              <tr key={rowIdx} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                {row.map((cell, cellIdx) => (
+                  <td
+                    key={cellIdx}
+                    className="px-4 py-3 text-sm text-slate-700 dark:text-slate-300"
+                    dangerouslySetInnerHTML={{ __html: formatCell(cell) }}
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
   // Convert markdown to HTML (simplified version)
   const renderMarkdown = (md: string) => {
     // Split into lines for processing
@@ -158,6 +213,7 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
     let listType: 'ul' | 'ol' | null = null;
     let inCodeBlock = false;
     let codeBlockContent: string[] = [];
+    let tableRows: string[] | null = null;
     let key = 0;
 
     const flushList = () => {
@@ -213,6 +269,21 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
       if (inCodeBlock) {
         codeBlockContent.push(line);
         continue;
+      }
+
+      // Table detection - lines starting and ending with |
+      if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
+        flushList();
+        // Collect table rows
+        if (!tableRows) {
+          tableRows = [];
+        }
+        tableRows.push(line.trim());
+        continue;
+      } else if (tableRows && tableRows.length > 0) {
+        // End of table, render it
+        elements.push(renderTable(tableRows, key++));
+        tableRows = null;
       }
 
       // Headers
@@ -300,6 +371,11 @@ const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
 
     flushList();
     flushCodeBlock();
+    
+    // Flush any remaining table
+    if (tableRows && tableRows.length > 0) {
+      elements.push(renderTable(tableRows, key++));
+    }
 
     return elements;
   };

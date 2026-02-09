@@ -11,7 +11,6 @@ import {
   Brain,
   TrendingUp,
   Check,
-  X,
   Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -33,7 +32,6 @@ import {
 } from '../../utils/courseNavigation';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
-import { Button } from '../common/Button';
 import { BottomSheet } from '../common/BottomSheet';
 
 // Tutor messages based on context

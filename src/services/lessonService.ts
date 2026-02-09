@@ -60,12 +60,30 @@ async function loadLessonsForCourse(courseId: CourseId): Promise<Lesson[]> {
       }
       case 'cfp': {
         const { ALL_CFP_LESSONS } = await import('../data/cfp/lessons');
-        // CFP lessons use 'domain' instead of 'section', map them
-        lessons = ALL_CFP_LESSONS.map(cfpLesson => ({
-          ...cfpLesson,
-          section: (cfpLesson as { domain?: string }).domain || 'CFP-GEN',
-          courseId: 'cfp' as CourseId,
-        })) as unknown as Lesson[];
+        // CFP lessons use 'domain' instead of 'section', and content is markdown string
+        // Transform to match Lesson interface
+        lessons = ALL_CFP_LESSONS.map(cfpLesson => {
+          const lesson = cfpLesson as { domain?: string; content?: string; objectives?: string[]; keyTakeaways?: string[]; keyTerms?: { term: string; definition: string }[]; keyFormulas?: unknown[]; mnemonics?: unknown[]; practiceProblems?: unknown[] };
+          return {
+            ...cfpLesson,
+            section: lesson.domain || 'CFP-GEN',
+            courseId: 'cfp' as CourseId,
+            description: lesson.objectives?.slice(0, 2).join('. ') || '',
+            difficulty: 'intermediate' as const,
+            topics: lesson.objectives?.slice(0, 3) || [],
+            // Transform markdown content string to content object with markdown field
+            content: {
+              sections: [],
+              markdown: typeof lesson.content === 'string' ? lesson.content : undefined,
+              // Preserve additional content like keyTakeaways, keyTerms, etc.
+              keyTakeaways: lesson.keyTakeaways,
+              keyTerms: lesson.keyTerms,
+              keyFormulas: lesson.keyFormulas,
+              mnemonics: lesson.mnemonics,
+              practiceProblems: lesson.practiceProblems,
+            },
+          };
+        }) as unknown as Lesson[];
         break;
       }
       default:

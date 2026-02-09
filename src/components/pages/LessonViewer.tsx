@@ -320,6 +320,211 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
   }
 };
 
+// Markdown Content Renderer - for CFP and other courses using markdown format
+interface MarkdownContentProps {
+  markdown: string;
+}
+
+const MarkdownContent: React.FC<MarkdownContentProps> = ({ markdown }) => {
+  // Parse markdown and render as React elements
+  const lines = markdown.split('\n');
+  const elements: JSX.Element[] = [];
+  let key = 0;
+  let currentList: string[] = [];
+  let listType: 'ul' | 'ol' | null = null;
+  let tableRows: string[] | null = null;
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      if (listType === 'ul') {
+        elements.push(
+          <ul key={key++} className="list-disc pl-6 space-y-2 my-4">
+            {currentList.map((item, i) => (
+              <li key={i} className="text-slate-700 dark:text-slate-300" 
+                dangerouslySetInnerHTML={{ 
+                  __html: DOMPurify.sanitize(
+                    item
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                      .replace(/`([^`]+)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1 rounded text-sm">$1</code>')
+                  )
+                }}
+              />
+            ))}
+          </ul>
+        );
+      } else {
+        elements.push(
+          <ol key={key++} className="list-decimal pl-6 space-y-2 my-4">
+            {currentList.map((item, i) => (
+              <li key={i} className="text-slate-700 dark:text-slate-300"
+                dangerouslySetInnerHTML={{ 
+                  __html: DOMPurify.sanitize(
+                    item
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                      .replace(/`([^`]+)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1 rounded text-sm">$1</code>')
+                  )
+                }}
+              />
+            ))}
+          </ol>
+        );
+      }
+      currentList = [];
+      listType = null;
+    }
+  };
+
+  const renderTable = (rows: string[]): JSX.Element => {
+    // Parse table: first row is headers, second is separator, rest are data
+    const dataRows = rows.filter((_, i) => i !== 1); // Skip separator row
+    const headers = dataRows[0]?.split('|').filter(c => c.trim()).map(c => c.trim()) || [];
+    const bodyRows = dataRows.slice(1).map(row => 
+      row.split('|').filter(c => c.trim()).map(c => c.trim())
+    );
+
+    return (
+      <div className="overflow-x-auto my-4">
+        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg">
+          <thead className="bg-slate-50 dark:bg-slate-800">
+            <tr>
+              {headers.map((h, i) => (
+                <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+            {bodyRows.map((row, i) => (
+              <tr key={i} className={i % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800/50'}>
+                {row.map((cell, j) => (
+                  <td key={j} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-300"
+                    dangerouslySetInnerHTML={{ 
+                      __html: DOMPurify.sanitize(
+                        cell
+                          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                      )
+                    }}
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
+  const parseInlineMarkdown = (text: string): string => {
+    return DOMPurify.sanitize(
+      text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code class="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
+    );
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    
+    // Table detection
+    if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
+      flushList();
+      if (!tableRows) tableRows = [];
+      tableRows.push(line.trim());
+      continue;
+    } else if (tableRows && tableRows.length > 0) {
+      elements.push(<React.Fragment key={key++}>{renderTable(tableRows)}</React.Fragment>);
+      tableRows = null;
+    }
+
+    // Headers
+    if (line.startsWith('# ')) {
+      flushList();
+      elements.push(
+        <h1 key={key++} className="text-2xl font-bold text-slate-900 dark:text-slate-100 mt-8 mb-4">
+          {line.slice(2)}
+        </h1>
+      );
+    } else if (line.startsWith('## ')) {
+      flushList();
+      elements.push(
+        <h2 key={key++} className="text-xl font-semibold text-slate-900 dark:text-slate-100 mt-6 mb-3 pb-2 border-b border-slate-200 dark:border-slate-700">
+          {line.slice(3)}
+        </h2>
+      );
+    } else if (line.startsWith('### ')) {
+      flushList();
+      elements.push(
+        <h3 key={key++} className="text-lg font-semibold text-slate-800 dark:text-slate-200 mt-5 mb-2">
+          {line.slice(4)}
+        </h3>
+      );
+    } else if (line.startsWith('#### ')) {
+      flushList();
+      elements.push(
+        <h4 key={key++} className="text-base font-semibold text-slate-700 dark:text-slate-300 mt-4 mb-2">
+          {line.slice(5)}
+        </h4>
+      );
+    }
+    // Bullet lists
+    else if (line.match(/^[-*•]\s+/)) {
+      if (listType !== 'ul') {
+        flushList();
+        listType = 'ul';
+      }
+      currentList.push(line.replace(/^[-*•]\s+/, ''));
+    }
+    // Numbered lists
+    else if (line.match(/^\d+\.\s+/)) {
+      if (listType !== 'ol') {
+        flushList();
+        listType = 'ol';
+      }
+      currentList.push(line.replace(/^\d+\.\s+/, ''));
+    }
+    // Horizontal rule
+    else if (line.match(/^---+$/)) {
+      flushList();
+      elements.push(<hr key={key++} className="my-6 border-slate-200 dark:border-slate-700" />);
+    }
+    // Blockquote (also handle callouts)
+    else if (line.startsWith('> ')) {
+      flushList();
+      elements.push(
+        <blockquote key={key++} className="border-l-4 border-primary-500 pl-4 py-2 my-4 bg-primary-50 dark:bg-primary-900/20 italic text-slate-700 dark:text-slate-300">
+          <span dangerouslySetInnerHTML={{ __html: parseInlineMarkdown(line.slice(2)) }} />
+        </blockquote>
+      );
+    }
+    // Empty line
+    else if (line.trim() === '') {
+      flushList();
+    }
+    // Regular paragraph
+    else if (line.trim()) {
+      flushList();
+      elements.push(
+        <p key={key++} className="text-slate-700 dark:text-slate-300 my-3 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: parseInlineMarkdown(line) }}
+        />
+      );
+    }
+  }
+
+  // Flush any remaining content
+  flushList();
+  if (tableRows && tableRows.length > 0) {
+    elements.push(<React.Fragment key={key++}>{renderTable(tableRows)}</React.Fragment>);
+  }
+
+  return <div className="prose prose-slate dark:prose-invert max-w-none">{elements}</div>;
+};
+
 const LessonViewer: React.FC = () => {
   const { lessonId } = useParams<{ lessonId: string }>();
   const navigate = useNavigate();
@@ -711,8 +916,15 @@ const LessonViewer: React.FC = () => {
           </div>
         )}
 
-        {/* Lesson Content Sections */}
-        {lesson.content?.sections && (
+        {/* Lesson Content - Markdown format (CFP, CIA, etc.) */}
+        {(lesson.content as any)?.markdown && (
+          <div className="mb-12">
+            <MarkdownContent markdown={(lesson.content as any).markdown} />
+          </div>
+        )}
+
+        {/* Lesson Content Sections - structured format (CPA, etc.) */}
+        {lesson.content?.sections && lesson.content.sections.length > 0 && (
           <div className="space-y-8 mb-12">
             {lesson.content.sections.map((section, index) => (
               <div key={index}>

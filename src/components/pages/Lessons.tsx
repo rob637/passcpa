@@ -53,15 +53,15 @@ const blueprintToAreaDefinition = (blueprintAreas: BlueprintArea[]): AreaDefinit
   return blueprintAreas.map(bp => ({
     id: bp.id,
     title: bp.name,
-    // Create short title from first meaningful word(s) of name
+    // Create short title from first meaningful words of name
     shortTitle: bp.name
       .replace(/^(Part \d+:|Section \d+:)\s*/i, '')  // Remove "Part X:" prefixes
       .split(/[,&]/)[0]  // Take first part if comma/ampersand separated
       .trim()
       .split(' ')
-      .slice(0, 2)  // Take first 2 words
+      .slice(0, 5)  // Take first 5 words
       .join(' ')
-      .substring(0, 15),  // Max 15 chars
+      .substring(0, 30),  // Max 30 chars
   }));
 };
 
@@ -119,8 +119,8 @@ const Lessons: React.FC = () => {
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
   const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
 
-  // Get bookmarked lesson IDs
-  const bookmarkedLessonIds = new Set(
+  // Get bookmarked lesson IDs (all bookmarks, for matching)
+  const allBookmarkedLessonIds = new Set(
     getAllBookmarks()
       .filter(b => b.itemType === 'lesson')
       .map(b => b.itemId)
@@ -188,6 +188,12 @@ const Lessons: React.FC = () => {
 
   // Group lessons into areas with completion status
   const lessonAreas = groupLessonsByArea(rawLessons, completedLessons, blueprintAreas);
+
+  // Get lesson IDs in current section for bookmark filtering
+  const currentSectionLessonIds = new Set(rawLessons.map(l => l.id));
+  const bookmarkedLessonIds = new Set(
+    [...allBookmarkedLessonIds].filter(id => currentSectionLessonIds.has(id))
+  );
 
   // Filter lessons based on search and bookmarks
   const filteredAreas = lessonAreas

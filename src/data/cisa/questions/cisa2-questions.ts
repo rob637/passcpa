@@ -11,6 +11,7 @@ import { CISA2_QUESTIONS_BATCH10 } from './cisa-questions-batch10';
 import { CISA2_QUESTIONS_BATCH11 } from './cisa-questions-batch11';
 import { CISA2_QUESTIONS_BATCH12 } from './cisa-questions-batch12';
 import { CISA2_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
+import { COBIT_2019_QUESTIONS } from './cisa-cobit-privacy-batch15';
 
 const CISA2_QUESTIONS_BATCH1: Question[] = [
   {
@@ -63,4 +64,5 @@ export const CISA2_QUESTIONS: Question[] = [
   ...CISA2_QUESTIONS_BATCH11,
   ...CISA2_QUESTIONS_BATCH12,
   ...CISA2_QUESTIONS_BATCH13,
+  ...COBIT_2019_QUESTIONS, // COBIT 2019 deep dive (Batch 15)
 ];

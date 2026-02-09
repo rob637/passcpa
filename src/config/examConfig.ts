@@ -192,8 +192,9 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
   
   // =========================================================================
   // BEC - BUSINESS ENVIRONMENT AND CONCEPTS
-  // 2025 Blueprint - testable through June 30, 2026
-  // Replaced by BAR, ISC, TCP for 2026 Blueprint (July 1, 2026+)
+  // RETIRED December 15, 2023 - No longer testable
+  // Legacy configuration retained for historical reference only
+  // Content migrated to BAR (managerial accounting), AUD (governance), ISC (IT)
   // =========================================================================
   BEC: {
     id: 'BEC' as ExamSection,
@@ -204,26 +205,24 @@ export const CPA_SECTIONS: Record<ExamSection, SectionConfig> = {
     questionTypes: { mcq: 62, tbs: 4 },
     mcqWeight: 50,
     tbsWeight: 50,
-    color: '#6366f1', // indigo - active section
+    color: '#9ca3af', // gray - retired section
     icon: 'Briefcase',
-    description: '2025 Blueprint discipline covering corporate governance, economics, financial management, IT, operations, and written communication. Valid through June 30, 2026.',
+    description: 'RETIRED December 15, 2023. Was part of the legacy CPA Exam before CPA Evolution. Content migrated to BAR, ISC, and AUD.',
     blueprintVersion: '2025',
-    blueprintSensitive: true,
-    careerFit: ['Business Advisory', 'Consulting', 'Management'],
-    pendingUpdate: {
-      effectiveDate: '2026-07-01',
-      description: 'BEC ends June 30, 2026. Replaced by BAR, ISC, and TCP disciplines.',
-    },
+    blueprintSensitive: false,
+    careerFit: [],
+    /** @deprecated BEC was retired December 15, 2023. Use BAR, ISC, or TCP. */
+    retired: true,
+    retiredDate: '2023-12-15',
   },
 };
 
 export const STRATEGY_SECTIONS = ['PREP'];
 export const CORE_SECTIONS = ['AUD', 'FAR', 'REG'];
-export const DISCIPLINE_SECTIONS_2026 = ['BAR', 'ISC', 'TCP'];
-/** BEC is valid through June 30, 2026. After that only BAR/ISC/TCP */
-export const DISCIPLINE_SECTIONS = isBefore2026Blueprint() 
-  ? ['BEC', ...DISCIPLINE_SECTIONS_2026] 
-  : DISCIPLINE_SECTIONS_2026;
+/** BEC was retired December 15, 2023 - only BAR/ISC/TCP available since January 2024 */
+export const DISCIPLINE_SECTIONS = ['BAR', 'ISC', 'TCP'] as const;
+/** @deprecated Alias for DISCIPLINE_SECTIONS - BEC no longer available */
+export const DISCIPLINE_SECTIONS_2026 = DISCIPLINE_SECTIONS;
 /** All actual exam sections (excludes strategy sections like PREP) */
 export const EXAM_SECTIONS = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS];
 

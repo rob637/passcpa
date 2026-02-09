@@ -943,12 +943,12 @@ export const cisa5Lessons: Lesson[] = [
   // ============================================================================
 
   {
-    id: 'CISA5-013',
+    id: 'CISA5-017',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'AI and Machine Learning Security',
     description: 'Security considerations for artificial intelligence and machine learning systems',
-    order: 13,
+    order: 17,
     duration: 55,
     difficulty: 'advanced',
     topics: ['AI Security', 'ML Security', 'Model Governance', 'AI Ethics', 'Adversarial Attacks'],
@@ -1008,12 +1008,12 @@ export const cisa5Lessons: Lesson[] = [
   },
 
   {
-    id: 'CISA5-014',
+    id: 'CISA5-018',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Advanced Cloud Security',
     description: 'Deep dive into cloud security architecture, controls, and audit considerations',
-    order: 14,
+    order: 18,
     duration: 55,
     difficulty: 'advanced',
     topics: ['Cloud Security', 'CSPM', 'Container Security', 'Serverless', 'Multi-Cloud'],
@@ -1073,12 +1073,12 @@ export const cisa5Lessons: Lesson[] = [
   },
 
   {
-    id: 'CISA5-015',
+    id: 'CISA5-019',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'IoT and OT Security',
     description: 'Security for Internet of Things and Operational Technology environments',
-    order: 15,
+    order: 19,
     duration: 50,
     difficulty: 'advanced',
     topics: ['IoT Security', 'OT Security', 'ICS', 'SCADA', 'IT/OT Convergence'],
@@ -1138,12 +1138,12 @@ export const cisa5Lessons: Lesson[] = [
   },
 
   {
-    id: 'CISA5-016',
+    id: 'CISA5-020',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'API Security',
     description: 'Security for Application Programming Interfaces and web services',
-    order: 16,
+    order: 20,
     duration: 45,
     difficulty: 'advanced',
     topics: ['API Security', 'OAuth', 'API Gateway', 'OWASP API Top 10', 'Rate Limiting'],

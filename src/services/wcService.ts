@@ -1,13 +1,19 @@
 /**
- * Written Communication Service - Local-first approach
- * WC tasks are stored in TypeScript files for fast loading and offline support.
- * Firebase is used only for user progress tracking, not WC content.
+ * Written Communication Service - DEPRECATED
+ * 
+ * Written Communication (WC) was removed from the CPA Exam when BEC was retired
+ * on December 15, 2023. The CPA Evolution exam introduced Task-Based Simulations (TBS)
+ * as the sole simulation type across all sections.
+ * 
+ * This service is retained as a stub for backward compatibility but returns empty results.
+ * 
+ * @deprecated Written Communication is no longer part of the CPA Exam (retired Dec 2023)
  */
 
 import { WCTask, WCRubric, ExamSection } from '../types';
 import logger from '../utils/logger';
 
-// WC Rubric is small and doesn't change - keep it here as config
+// Legacy rubric - retained for reference only
 export const WC_RUBRIC: WCRubric = {
   organization: {
     weight: 0.25,
@@ -38,126 +44,64 @@ export const WC_RUBRIC: WCRubric = {
   },
 };
 
-// Cache for WC tasks (in-memory)
-let wcCache: WCTask[] | null = null;
-
 /**
- * Load all WC tasks from local data (with caching)
- */
-async function loadWCTasks(): Promise<WCTask[]> {
-  if (wcCache) {
-    return wcCache;
-  }
-
-  try {
-    const { ALL_WC_TASKS } = await import('../data/cpa/writtenCommunication');
-    wcCache = ALL_WC_TASKS;
-    return wcCache;
-  } catch (error) {
-    logger.error('Failed to load WC tasks:', error);
-    return [];
-  }
-}
-
-/**
- * Fetch all WC tasks from local data
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
 export async function fetchAllWCTasks(): Promise<WCTask[]> {
-  try {
-    const allTasks = await loadWCTasks();
-    
-    // Sort by section and topic
-    return [...allTasks].sort((a, b) => {
-      if (a.section !== b.section) return a.section.localeCompare(b.section);
-      return a.topic.localeCompare(b.topic);
-    });
-  } catch (error) {
-    logger.error('Error fetching WC tasks:', error);
-    return [];
-  }
+  logger.warn('fetchAllWCTasks called - WC was retired with BEC on December 15, 2023');
+  return [];
 }
 
 /**
- * Fetch WC tasks by section
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
-export async function fetchWCTasksBySection(section: ExamSection): Promise<WCTask[]> {
-  try {
-    const { getWCBySection } = await import('../data/cpa/writtenCommunication');
-    return getWCBySection(section);
-  } catch (error) {
-    logger.error(`Error fetching WC tasks for section ${section}:`, error);
-    return [];
-  }
+export async function fetchWCTasksBySection(_section: ExamSection): Promise<WCTask[]> {
+  logger.warn('fetchWCTasksBySection called - WC was retired with BEC on December 15, 2023');
+  return [];
 }
 
 /**
- * Fetch a single WC task by ID
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
-export async function fetchWCTaskById(taskId: string): Promise<WCTask | null> {
-  try {
-    const allTasks = await loadWCTasks();
-    return allTasks.find(t => t.id === taskId) || null;
-  } catch (error) {
-    logger.error(`Error fetching WC task ${taskId}:`, error);
-    return null;
-  }
+export async function fetchWCTaskById(_taskId: string): Promise<WCTask | null> {
+  logger.warn('fetchWCTaskById called - WC was retired with BEC on December 15, 2023');
+  return null;
 }
 
 /**
- * Get a random WC task (optionally filtered by section)
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
-export async function getRandomWCTask(section?: ExamSection): Promise<WCTask | null> {
-  try {
-    const { getRandomWC } = await import('../data/cpa/writtenCommunication');
-    return getRandomWC(section) || null;
-  } catch (error) {
-    logger.error('Error getting random WC task:', error);
-    return null;
-  }
+export async function getRandomWCTask(_section?: ExamSection): Promise<WCTask | null> {
+  logger.warn('getRandomWCTask called - WC was retired with BEC on December 15, 2023');
+  return null;
 }
 
 /**
- * Search WC tasks by topic
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
-export async function searchWCTasks(searchTerm: string): Promise<WCTask[]> {
-  const all = await loadWCTasks();
-  const term = searchTerm.toLowerCase();
-  
-  return all.filter(task =>
-    task.topic.toLowerCase().includes(term) ||
-    task.scenario?.toLowerCase().includes(term)
-  );
+export async function searchWCTasks(_searchTerm: string): Promise<WCTask[]> {
+  logger.warn('searchWCTasks called - WC was retired with BEC on December 15, 2023');
+  return [];
 }
 
 /**
- * Clear the WC cache
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
 export function clearWCCache(): void {
-  wcCache = null;
+  // No-op - no cache to clear
 }
 
 /**
- * Get WC stats by section
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
 export async function getWCStats(): Promise<{ section: string; count: number }[]> {
-  try {
-    const { getWCStats: getStats } = await import('../data/cpa/writtenCommunication');
-    const stats = getStats();
-    
-    return Object.entries(stats.bySection).map(([section, count]) => ({
-      section,
-      count: count as number,
-    }));
-  } catch (error) {
-    logger.error('Error getting WC stats:', error);
-    return [];
-  }
+  logger.warn('getWCStats called - WC was retired with BEC on December 15, 2023');
+  return [];
 }
 
 /**
- * Get total WC task count
+ * @deprecated WC was removed from the CPA Exam December 15, 2023
  */
 export async function getWCTotalCount(): Promise<number> {
-  const tasks = await loadWCTasks();
-  return tasks.length;
+  return 0;
 }

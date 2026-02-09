@@ -106,6 +106,7 @@ export interface EAAnalytics {
 
 // ============================================================================
 // Part Configuration (IRS SEE Content Outline 2025-2026)
+// IMPORTANT: Keep in sync with src/courses/ea/config.ts
 // ============================================================================
 
 export const EA_PART_CONFIG: Record<EASectionId, { name: string; domains: { id: string; name: string; weight: number }[] }> = {
@@ -117,22 +118,22 @@ export const EA_PART_CONFIG: Record<EASectionId, { name: string; domains: { id: 
       { id: 'SEE1-3', name: 'Deductions and Credits', weight: 20.0 },
       { id: 'SEE1-4', name: 'Taxation', weight: 17.6 },
       { id: 'SEE1-5', name: 'Advising the Individual Taxpayer', weight: 12.9 },
-      { id: 'SEE1-6', name: 'Specialized Returns', weight: 12.9 },
+      { id: 'SEE1-6', name: 'Specialized Returns for Individuals', weight: 12.9 },
     ],
   },
   SEE2: {
     name: 'Businesses',
     domains: [
-      { id: 'SEE2-1', name: 'Business Entities', weight: 28.2 },
-      { id: 'SEE2-2', name: 'Business Financial Information', weight: 38.8 },
-      { id: 'SEE2-3', name: 'Specialized Returns for Businesses', weight: 32.9 },
+      { id: 'SEE2-1', name: 'Business Entities and Considerations', weight: 35.3 },
+      { id: 'SEE2-2', name: 'Business Tax Preparation', weight: 43.5 },
+      { id: 'SEE2-3', name: 'Specialized Returns and Taxpayers', weight: 21.2 },
     ],
   },
   SEE3: {
     name: 'Representation',
     domains: [
-      { id: 'SEE3-1', name: 'Practices and Procedures', weight: 25.9 },
-      { id: 'SEE3-2', name: 'Representation Before IRS (Circular 230)', weight: 17.6 },
+      { id: 'SEE3-1', name: 'Practices and Procedures', weight: 30.6 },
+      { id: 'SEE3-2', name: 'Representation Before the IRS', weight: 29.4 },
       { id: 'SEE3-3', name: 'Specific Areas of Representation', weight: 23.5 },
       { id: 'SEE3-4', name: 'Filing Process', weight: 16.5 },
     ],

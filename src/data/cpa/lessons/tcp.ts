@@ -4820,7 +4820,7 @@ export const tcpLessons: Lesson[] = [
     }
   },
   {
-    id: 'TCP-II-010',
+    id: 'TCP-II-110',
     section: 'TCP',
     title: "Check-the-Box Entity Classification",
     description: "Master elective entity classification rules for tax purposes",
@@ -5005,7 +5005,7 @@ export const tcpLessons: Lesson[] = [
     }
   },
   {
-    id: 'TCP-II-011',
+    id: 'TCP-II-111',
     section: 'TCP',
     title: "International Tax Basics for Tax Planning",
     description: "Understand fundamental international tax concepts for planning",
@@ -6044,7 +6044,7 @@ export const tcpLessons: Lesson[] = [
     }
   },
   {
-    id: 'TCP-I-010',
+    id: 'TCP-I-110',
     section: 'TCP',
     title: "Tax Credits: Business and Individual",
     description: "Understand major tax credits and their application",

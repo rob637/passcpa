@@ -31,10 +31,34 @@
 export const QUESTION_COUNTS = {
   cpa: 3197,
   ea: 2190,
-  cma: 1954,
-  cia: 1500,
-  cfp: 2190,
-  cisa: 1499,
+  cma: 2025,
+  cia: 1524,
+  cfp: 2521,
+  cisa: 1523,
+} as const;
+
+// ==========================================
+// FLASHCARD COUNTS
+// ==========================================
+export const FLASHCARD_COUNTS = {
+  cpa: 613,
+  ea: 466,
+  cma: 506,
+  cia: 535,
+  cfp: 531,
+  cisa: 506,
+} as const;
+
+// ==========================================
+// LESSON COUNTS
+// ==========================================
+export const LESSON_COUNTS = {
+  cpa: 463,
+  ea: 152,
+  cma: 114,
+  cia: 140,
+  cfp: 138,
+  cisa: 109,
 } as const;
 
 // ==========================================
@@ -69,4 +93,29 @@ export function getTotalQuestions(): number {
  */
 export function getFormattedTotal(): string {
   return formatCount(getTotalQuestions());
+}
+
+/**
+ * Get total flashcards across all courses
+ */
+export function getTotalFlashcards(): number {
+  return Object.values(FLASHCARD_COUNTS).reduce((sum, count) => sum + count, 0);
+}
+
+/**
+ * Get total lessons across all courses
+ */
+export function getTotalLessons(): number {
+  return Object.values(LESSON_COUNTS).reduce((sum, count) => sum + count, 0);
+}
+
+/**
+ * Get all content totals
+ */
+export function getContentTotals() {
+  return {
+    questions: getTotalQuestions(),
+    flashcards: getTotalFlashcards(),
+    lessons: getTotalLessons(),
+  };
 }

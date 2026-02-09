@@ -1094,9 +1094,8 @@ const AdminCMS: React.FC = () => {
         const tbsData = tbsModule.getTBSStats();
         setTbsStats({ total: tbsData.total, bySection: tbsData.bySection, byType: tbsData.byType });
         
-        const wcModule = await import('../../../data/cpa/writtenCommunication');
-        const wcData = wcModule.getWCStats();
-        setWcStats({ total: wcData.total, bySection: wcData.bySection });
+        // WC was retired with BEC on December 15, 2023
+        setWcStats({ total: 0, bySection: {} });
       } catch (error) {
         logger.error('Error loading CPA content stats:', error);
       }

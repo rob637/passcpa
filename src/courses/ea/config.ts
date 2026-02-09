@@ -238,12 +238,6 @@ export const EA_COURSE: Course = {
     },
   ],
   
-  pricing: {
-    monthly: 29,
-    annual: 249,
-    lifetime: 499,
-  },
-  
   metadata: {
     examProvider: 'Prometric (IRS)',
     websiteUrl: 'https://www.prometric.com/irs',

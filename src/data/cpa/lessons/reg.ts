@@ -5811,7 +5811,7 @@ export const regLessons: Lesson[] = [
     }
   },
   {
-    id: 'REG-II-015',
+    id: 'REG-II-115',
     section: 'REG',
     title: "Professional Responsibility: Circular 230",
     description: "Understand IRS rules governing tax practitioners",

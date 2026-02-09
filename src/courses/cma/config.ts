@@ -168,12 +168,6 @@ export const CMA_COURSE: Course = {
     },
   ],
   
-  pricing: {
-    monthly: 39,
-    annual: 349,
-    lifetime: 599,
-  },
-  
   metadata: {
     examProvider: 'Prometric (IMA)',
     websiteUrl: 'https://www.imanet.org/cma-certification',
@@ -185,8 +179,40 @@ export const CMA_COURSE: Course = {
   features: {
     hasTBS: false,
     hasWrittenCommunication: false,
-    hasEssay: true, // Essays are 25% of CMA score; transitioning to CBQs in 2026
+    hasEssay: false, // Essays retired Sept 2026, replaced by CBQs
+    hasCBQ: true, // Case-Based Questions mandatory from Sept 2026
     hasDataInsights: false,
+  },
+  
+  /**
+   * CBQ Transition Timeline (IMA's Case-Based Question implementation)
+   * 
+   * Jan-Feb 2026: Legacy format (100 MCQ + 2 essays per part)
+   * May-June 2026: Transition window (candidates choose essays OR CBQs at registration)
+   * Sept-Oct 2026+: CBQ mandatory, essays officially retired
+   * 
+   * CBQ Question Types:
+   * - Numerical Entry: Calculate and type a value (NPV, variance, ratio)
+   * - Drag-and-Drop: Arrange items or match concepts
+   * - Multiple Select: Select all correct options
+   * - List Selection (dropdown): Choose from dropdown options
+   * 
+   * CBQ Structure:
+   * - Each CBQ has a business scenario with data/exhibits
+   * - 3-5 related questions in various formats
+   * - ~15-20 minutes per CBQ
+   * - 2 CBQs per part (25% of total score)
+   */
+  cbqTransition: {
+    effectiveDate: '2026-09-01',
+    transitionWindow: {
+      start: '2026-05-01',
+      end: '2026-08-31',
+      format: 'choice', // Candidate can choose essay or CBQ
+    },
+    legacyEndDate: '2026-08-31', // Last date for legacy essay format
+    cbqMandatoryDate: '2026-09-01',
+    questionTypes: ['numerical_entry', 'drag_and_drop', 'multiple_select', 'dropdown'] as const,
   },
   
   examOverview: {
@@ -209,29 +235,29 @@ export const CMA_COURSE: Course = {
       'Management Consultant',
     ],
     averageSalary: '$85,000 - $160,000+ (median $130K for CMAs)',
-    examFormat: '2 parts (Financial Planning & Analysis, Strategic Financial Management), 4 hours each, MCQ + Essay',
+    examFormat: '2 parts (Financial Planning & Analysis, Strategic Financial Management), 4 hours each, 100 MCQ + 2 CBQs per part',
   },
   
   examStrategy: {
     title: 'CMA Exam Success Strategies',
     keyStrategies: [
-      { title: 'Master the Essay Format', description: 'Essays are 25% of each part. Practice writing structured responses that show calculation work AND explain your reasoning.' },
-      { title: 'Know Your Formulas', description: 'Variance analysis, CVP, NPV, WACC - memorize these cold. No formula sheet provided.' },
+      { title: 'Master the CBQ Format', description: 'CBQs are 25% of each part. Practice reading scenarios quickly, extracting data, and answering numerical, multiple-select, and drag-and-drop questions efficiently.' },
+      { title: 'Know Your Formulas', description: 'Variance analysis, CVP, NPV, WACC - memorize these cold. No formula sheet provided. CBQ numerical entry requires precise calculations.' },
       { title: 'Understand Decision Making', description: 'CMAs are decision-makers. Many questions test whether you can recommend the right course of action.' },
       { title: 'Part Order Flexibility', description: 'Unlike CPA, you can take Part 2 before Part 1 if preferred. Some find Part 1 easier to start with.' },
     ],
     studyTips: [
       'Create a comprehensive formula sheet and review daily',
-      'Practice essays under timed conditions (30 min for 2 essays)',
+      'Practice CBQ-style scenarios with numerical entry and multi-select questions',
       'Focus on ratio analysis - appears in both parts',
       'Understand internal controls from a management perspective',
       'Don\'t skip ethics - it\'s tested on both parts',
     ],
     commonMistakes: [
-      'Underestimating essay section difficulty',
-      'Not showing calculation work in essays',
+      'Not practicing CBQ question formats before the exam',
+      'Rushing through CBQ scenarios without extracting all relevant data',
       'Memorizing formulas without understanding when to apply them',
-      'Poor time management (MCQ + Essay in 4 hours is tight)',
+      'Poor time management (MCQ + CBQ in 4 hours is tight)',
       'Ignoring IMA\'s Statement of Ethical Professional Practice',
     ],
     timeManagement: 'Plan 150-200 hours per part. Many pass both parts within 6-12 months.',

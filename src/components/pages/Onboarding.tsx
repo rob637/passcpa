@@ -209,7 +209,7 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
   let sections = course?.sections || [];
   if (isCPA) {
     const availableSectionIds = is2025Blueprint
-      ? [...CORE_SECTIONS, 'BEC']
+      ? [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026]
       : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
     sections = sections.filter(s => availableSectionIds.includes(s.id));
   }
@@ -306,7 +306,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
       {/* Why we're asking */}
       <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-4 mb-6">
         <p className="text-sm text-blue-800 dark:text-blue-300">
-          <strong>Why does this matter?</strong> The CPA exam changes on July 1, 2026. Before that date, you can take <strong>BEC</strong>. After that date, BEC is replaced by <strong>BAR, ISC, and TCP</strong> disciplines.
+          <strong>Why does this matter?</strong> The CPA exam blueprint changes on July 1, 2026. After that date, REG and TCP sections will include updated tax law provisions (OBBBA). Our content adapts automatically.
         </p>
       </div>
 
@@ -331,7 +331,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
           {is2025Blueprint ? (
             <div className="text-amber-800 dark:text-amber-300">
               <strong>✓ 2025 Blueprint</strong>
-              <p className="mt-1 text-xs">Sections available: AUD, FAR, REG, or BEC</p>
+              <p className="mt-1 text-xs">Current tax law. Choose a discipline: BAR, ISC, or TCP</p>
             </div>
           ) : (
             <div className="text-green-800 dark:text-green-300">

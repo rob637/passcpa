@@ -468,12 +468,9 @@ const Settings: React.FC = () => {
                       // For CPA: Determine available sections based on user's exam date
                       let availableSections: string[];
                       if (courseId === 'cpa') {
-                        const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                        const userExamDate = examDate ? new Date(examDate) : new Date();
-                        const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                        availableSections = is2025Blueprint
-                          ? [...CORE_SECTIONS, 'BEC']
-                          : [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
+                        // BEC was retired December 15, 2023 - only BAR/ISC/TCP available
+                        // Blueprint date only affects TAX LAW content (OBBBA), not section availability
+                        availableSections = [...CORE_SECTIONS, ...DISCIPLINE_SECTIONS_2026];
                       } else {
                         // For other courses, show all sections except PREP (strategy sections)
                         availableSections = course.sections
@@ -523,9 +520,9 @@ const Settings: React.FC = () => {
                         <div className="text-sm text-blue-800 dark:text-blue-200">
                           {isBefore2026Blueprint() ? (
                             <>
-                              <strong>2025 vs 2026 Blueprint:</strong> BEC is available through June 30, 2026. 
-                              Starting July 1, 2026, choose BAR, ISC, or TCP as your discipline section. 
-                              REG and TCP will also have significant tax law updates (OBBBA) after July 1.
+                              <strong>2025 vs 2026 Blueprint:</strong> Choose one discipline section (BAR, ISC, or TCP).
+                              Starting July 1, 2026, REG and TCP will have significant tax law updates (OBBBA).
+                              Content will adapt automatically based on your target exam date.
                             </>
                           ) : (
                             <>

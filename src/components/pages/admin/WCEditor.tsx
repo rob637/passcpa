@@ -28,7 +28,8 @@ import { Card } from '../../common/Card';
 // Admin email whitelist
 const ADMIN_EMAILS = ['admin@voraprep.com', 'rob@sagecg.com', 'rob@voraprep.com'];
 
-const EXAM_SECTIONS: ExamSection[] = ['AUD', 'FAR', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'];
+// WC was retired with BEC on December 15, 2023 - this editor is legacy only
+const EXAM_SECTIONS: ExamSection[] = ['AUD', 'FAR', 'REG', 'BAR', 'ISC', 'TCP'];
 
 const WCEditor = () => {
   const { user, userProfile } = useAuth();

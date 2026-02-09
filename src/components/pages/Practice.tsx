@@ -131,7 +131,8 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
   };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-md mx-auto">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-md mx-auto">
       <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           Practice
@@ -369,6 +370,7 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

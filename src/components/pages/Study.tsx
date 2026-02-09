@@ -128,16 +128,8 @@ const Study = () => {
       color: 'warning' as const,
       link: '/tbs',
     }] : []),
-    // Written Communication - Required for BEC section
-    ...(currentSection === 'BEC' ? [{
-      id: 'wc',
-      title: 'Written Communication',
-      description: 'Practice professional memos, letters, and reports',
-      icon: PenTool,
-      color: 'primary' as const,
-      link: '/written-communication',
-      badge: 'BEC',
-    }] : []),
+    // Written Communication was retired with BEC on December 15, 2023
+    // WC is no longer part of the CPA Exam
     {
       id: 'flashcards',
       title: 'Flashcard Review',

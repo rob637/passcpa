@@ -1,6 +1,7 @@
 // Question Bank Index
 // Consolidates all section questions for easy import
-// Updated for 2024+ CPA Evolution: Added BAR, ISC, TCP disciplines
+// 2024+ CPA Evolution: Core (FAR, AUD, REG) + Disciplines (BAR, ISC, TCP)
+// BEC was retired December 15, 2023 - content migrated to relevant sections
 
 import { REG_QUESTIONS } from './reg-questions';
 import { FAR_QUESTIONS } from './far-questions';
@@ -11,16 +12,11 @@ import { BAR_QUESTIONS } from './bar-questions';
 import { ISC_QUESTIONS } from './isc-questions';
 import { TCP_QUESTIONS } from './tcp-questions';
 
-/** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution. Retained for legacy support. */
-import { BEC_QUESTIONS } from './bec-questions';
-
 // Extended question banks
 import { REG_QUESTIONS_EXTENDED } from './reg-questions-extended';
 import { ExamSection, Difficulty, normalizeDifficulty } from '../../../types';
 import { FAR_QUESTIONS_EXTENDED } from './far-questions-extended';
 import { AUD_QUESTIONS_EXTENDED } from './aud-questions-extended';
-/** @deprecated Legacy BEC content */
-import { BEC_QUESTIONS_EXTENDED } from './bec-questions-extended';
 
 // Extended banks for new disciplines (2024+ CPA Evolution)
 import { TCP_QUESTIONS_EXTENDED } from './tcp-questions-extended';
@@ -31,8 +27,6 @@ import { BAR_QUESTIONS_EXTENDED } from './bar-questions-extended';
 import { REG_QUESTIONS_EXTRA } from './reg-questions-extra';
 import { FAR_QUESTIONS_EXTRA } from './far-questions-extra';
 import { AUD_QUESTIONS_EXTRA } from './aud-questions-extra';
-/** @deprecated Legacy BEC content */
-import { BEC_QUESTIONS_EXTRA } from './bec-questions-extra';
 
 // Additional question banks (World-Class expansion)
 import { REG_QUESTIONS_ADDITIONAL } from './reg-questions-additional';
@@ -108,9 +102,6 @@ export const BAR_ALL = [...BAR_QUESTIONS, ...BAR_QUESTIONS_EXTENDED, ...BAR_QUES
 export const ISC_ALL = [...ISC_QUESTIONS, ...ISC_QUESTIONS_EXTENDED, ...ISC_QUESTIONS_ADDITIONAL, ...ISC_QUESTIONS_EXPANDED_2, ...ISC_QUESTIONS_COMPREHENSIVE, ...ISC_QUESTIONS_MASTERY, ...ISC_QUESTIONS_ELITE, ...ISC_V_GAP_QUESTIONS, ...ISC_QUESTIONS_WORLD_CLASS, ...ALL_EASY_QUESTIONS.filter(q => q.section === 'ISC')];
 export const TCP_ALL = [...TCP_QUESTIONS, ...TCP_QUESTIONS_EXTENDED, ...TCP_QUESTIONS_ADDITIONAL, ...TCP_QUESTIONS_EXPANDED_2, ...TCP_QUESTIONS_COMPREHENSIVE, ...TCP_QUESTIONS_MASTERY, ...TCP_QUESTIONS_ELITE, ...TCP_QUESTIONS_WORLD_CLASS, ...ALL_EASY_QUESTIONS.filter(q => q.section === 'TCP')];
 
-/** @deprecated BEC was replaced by BAR/ISC/TCP in 2024 CPA Evolution */
-export const BEC_ALL = [...BEC_QUESTIONS, ...BEC_QUESTIONS_EXTENDED, ...BEC_QUESTIONS_EXTRA];
-
 // Combined question bank (Core + Disciplines)
 export const ALL_QUESTIONS = [
   ...REG_ALL, 
@@ -121,11 +112,8 @@ export const ALL_QUESTIONS = [
   ...TCP_ALL
 ];
 
-/** @deprecated Includes legacy BEC - use ALL_QUESTIONS for current exam */
-export const ALL_QUESTIONS_WITH_LEGACY = [...ALL_QUESTIONS, ...BEC_ALL];
-
 // Export by section (original only for backward compatibility)
-export { REG_QUESTIONS, FAR_QUESTIONS, AUD_QUESTIONS, BEC_QUESTIONS };
+export { REG_QUESTIONS, FAR_QUESTIONS, AUD_QUESTIONS };
 
 // Export new disciplines
 export { BAR_QUESTIONS, ISC_QUESTIONS, TCP_QUESTIONS };
@@ -135,11 +123,10 @@ export {
   REG_QUESTIONS_EXTENDED,
   FAR_QUESTIONS_EXTENDED,
   AUD_QUESTIONS_EXTENDED,
-  BEC_QUESTIONS_EXTENDED,
 };
 
 // Export extra (Sprint 5)
-export { REG_QUESTIONS_EXTRA, FAR_QUESTIONS_EXTRA, AUD_QUESTIONS_EXTRA, BEC_QUESTIONS_EXTRA };
+export { REG_QUESTIONS_EXTRA, FAR_QUESTIONS_EXTRA, AUD_QUESTIONS_EXTRA };
 
 // Get questions by section (uses full question banks)
 export const getQuestionsBySection = (section: ExamSection) => {
@@ -156,18 +143,10 @@ export const getQuestionsBySection = (section: ExamSection) => {
       return ISC_ALL;
     case 'TCP':
       return TCP_ALL;
-    case 'BEC':
-      // @deprecated - Legacy support, BEC replaced by BAR/ISC/TCP in 2024
-      return BEC_ALL;
     default:
       return [];
   }
 };
-
-/**
- * @deprecated Use getQuestionsBySection instead. BEC was replaced by BAR/ISC/TCP.
- */
-export const getLegacyBECQuestions = () => BEC_ALL;
 
 // Get questions by topic
 export const getQuestionsByTopic = (topicId: string) => {
@@ -200,8 +179,6 @@ export const getQuestionStats = () => {
       BAR: BAR_ALL.length,
       ISC: ISC_ALL.length,
       TCP: TCP_ALL.length,
-      // Legacy (deprecated)
-      BEC: BEC_ALL.length,
     },
     byDifficulty: {
       easy: ALL_QUESTIONS.filter((q) => normalizeDifficulty(q.difficulty) === 'easy').length,

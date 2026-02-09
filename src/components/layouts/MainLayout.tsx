@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
-import { Flame, Compass, WifiOff } from 'lucide-react';
+import { Flame, WifiOff } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle, ROUTE_TITLES } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
@@ -9,7 +9,7 @@ import { CourseSelector } from '../common/CourseSelector';
 import { useCourse } from '../../providers/CourseProvider';
 import { COURSES } from '../../courses';
 import { detectCourseFromPath } from '../../utils/courseNavigation';
-import { getNavItems, getNavConfig, isNavActive } from '../../config/navigation';
+import { getNavItems, isNavActive } from '../../config/navigation';
 import clsx from 'clsx';
 
 interface ProgressRingProps {
@@ -66,9 +66,6 @@ const MainLayout = () => {
   // Get course config for metadata like examProvider
   const course = COURSES[currentCourseId];
   
-  // Get navigation config from centralized config
-  const navConfig = useMemo(() => getNavConfig(currentCourseId), [currentCourseId]);
-  
   // Build nav items with course-specific paths (from centralized config)
   const navItems = useMemo(() => getNavItems(currentCourseId), [currentCourseId]);
   
@@ -78,15 +75,6 @@ const MainLayout = () => {
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
-  
-  // Check if Strategy section is active (uses centralized config)
-  const strategyActive = useMemo(
-    () => isNavActive('strategy', location.pathname, searchParams, currentCourseId),
-    [location.pathname, searchParams, currentCourseId]
-  );
-  
-  // Strategy nav path
-  const strategyNavPath = navConfig.paths.strategy;
 
   // Set document title based on route
   useRouteTitle();
@@ -128,18 +116,10 @@ const MainLayout = () => {
   useEffect(() => {
     if (!navRef.current || !indicatorRef.current) return;
 
-    // Find active index - check Strategy first (CPA only), then regular nav items
-    let activeIndex = -1;
-    
-    if (strategyActive && navConfig.showStrategy) {
-      // Strategy is after the main nav items
-      activeIndex = navItems.findIndex(item => item.navType === 'strategy');
-      if (activeIndex === -1) activeIndex = navItems.length;
-    } else {
-      activeIndex = navItems.findIndex(
-        (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
-      );
-    }
+    // Find active index
+    const activeIndex = navItems.findIndex(
+      (item) => isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
+    );
 
     if (activeIndex >= 0) {
       const navElements = navRef.current.querySelectorAll('.nav-link');
@@ -156,16 +136,13 @@ const MainLayout = () => {
         indicatorRef.current.style.opacity = '1';
       }
     }
-  }, [location.pathname, strategyActive, navItems, currentCourseId]);
+  }, [location.pathname, navItems, currentCourseId, searchParams]);
 
 
   // Get current page title
   const getPageTitle = () => {
-    // Check Strategy first
-    if (strategyActive && navConfig.showStrategy) return 'Exam Guide';
-    
     const current = navItems.find(
-      (item) => item.navType !== 'strategy' && isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
+      (item) => isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
     );
     if (current) return current.label;
     
@@ -223,14 +200,14 @@ const MainLayout = () => {
           </div>
 
           <div className="space-y-1">
-            {navItems.filter(item => item.navType !== 'strategy').map((item) => (
+            {navItems.map((item) => (
               <NavLink
                 key={item.navType}
                 to={item.path}
                 className={() =>
                   clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium',
-                    isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive
+                    isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                       ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
                   )
@@ -241,27 +218,6 @@ const MainLayout = () => {
               </NavLink>
             ))}
           </div>
-          
-          {/* Exam Guide Section - Shown for all courses */}
-          {navConfig.showStrategy && (
-          <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <span className="px-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Exam Guide
-            </span>
-            <NavLink
-              to={strategyNavPath}
-              className={clsx(
-                'flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-medium mt-2',
-                strategyActive
-                  ? 'bg-primary-50 text-primary-700 shadow-sm dark:bg-primary-900/20 dark:text-primary-400'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:bg-slate-700'
-              )}
-            >
-              <Compass className="w-5 h-5" />
-              Exam Guide
-            </NavLink>
-          </div>
-          )}
         </div>
 
         <div className="mt-auto p-6 border-t border-slate-100 dark:border-slate-700">
@@ -346,7 +302,7 @@ const MainLayout = () => {
             aria-hidden="true"
           />
 
-          {navItems.filter(item => item.navType !== 'strategy').map((item) => (
+          {navItems.map((item) => (
             <NavLink
               key={item.navType}
               to={item.path}
@@ -354,7 +310,7 @@ const MainLayout = () => {
               className={() =>
                 clsx(
                   'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                  isNavActive(item.navType, location.pathname, searchParams, currentCourseId) && !strategyActive 
+                  isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                     ? 'text-primary-600 dark:text-primary-400' 
                     : 'text-slate-500 dark:text-slate-400'
                 )
@@ -364,21 +320,6 @@ const MainLayout = () => {
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}
-          
-          {/* Exam Guide Tab - Shown for all courses */}
-          {navConfig.showStrategy && (
-            <NavLink
-              to={strategyNavPath}
-              aria-label="Exam Guide"
-              className={clsx(
-                'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
-                strategyActive ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'
-              )}
-            >
-              <Compass className="w-5 h-5" aria-hidden="true" />
-              <span className="text-[10px] font-medium">Guide</span>
-            </NavLink>
-          )}
         </div>
       </nav>
     </div>

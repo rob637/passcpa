@@ -204,7 +204,7 @@ export const CISA_COURSE: Course = {
     {
       id: 'CISA1',
       name: 'Domain 1: Information Systems Auditing Process',
-      shortName: 'Auditing',
+      shortName: 'Audit',
       weight: '18%',
       questionCount: 27,
       timeAllowed: 43, // Proportional to weight
@@ -238,7 +238,7 @@ export const CISA_COURSE: Course = {
     {
       id: 'CISA2',
       name: 'Domain 2: Governance and Management of IT',
-      shortName: 'Governance',
+      shortName: 'Gov',
       weight: '18%',
       questionCount: 27,
       timeAllowed: 43,
@@ -271,7 +271,7 @@ export const CISA_COURSE: Course = {
     {
       id: 'CISA3',
       name: 'Domain 3: IS Acquisition, Development & Implementation',
-      shortName: 'Development',
+      shortName: 'Dev',
       weight: '12%',
       questionCount: 18,
       timeAllowed: 29,
@@ -304,7 +304,7 @@ export const CISA_COURSE: Course = {
     {
       id: 'CISA4',
       name: 'Domain 4: IS Operations and Business Resilience',
-      shortName: 'Operations',
+      shortName: 'Ops',
       weight: '26%',
       questionCount: 39,
       timeAllowed: 62,
@@ -339,7 +339,7 @@ export const CISA_COURSE: Course = {
     {
       id: 'CISA5',
       name: 'Domain 5: Protection of Information Assets',
-      shortName: 'InfoSec',
+      shortName: 'Sec',
       weight: '26%',
       questionCount: 39,
       timeAllowed: 62,

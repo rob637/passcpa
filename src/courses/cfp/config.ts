@@ -46,7 +46,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-GEN',
     name: 'General Principles of Financial Planning',
-    shortName: 'General',
+    shortName: 'Gen',
     weight: '15%',
     questionCount: 26, // ~15% of 170 questions
     timeAllowed: 45,
@@ -144,7 +144,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-INV',
     name: 'Investment Planning',
-    shortName: 'Invest',
+    shortName: 'Inv',
     weight: '17%',
     questionCount: 29,
     timeAllowed: 51,
@@ -256,7 +256,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-RET',
     name: 'Retirement and Income Planning',
-    shortName: 'Retire',
+    shortName: 'Ret',
     weight: '18%',
     questionCount: 31,
     timeAllowed: 54,
@@ -307,7 +307,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-EST',
     name: 'Estate Planning',
-    shortName: 'Estate',
+    shortName: 'Est',
     weight: '10%',
     questionCount: 17,
     timeAllowed: 30,
@@ -357,7 +357,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-PSY',
     name: 'Psychology of Financial Planning',
-    shortName: 'Psych',
+    shortName: 'Psy',
     weight: '7%',
     questionCount: 12,
     timeAllowed: 21,

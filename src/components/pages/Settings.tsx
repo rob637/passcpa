@@ -26,7 +26,7 @@ import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { createExamDateUpdate } from '../../utils/profileHelpers';
 import {
   setupDailyReminder,
@@ -95,19 +95,21 @@ const Settings: React.FC = () => {
 
   // Form states
   const [displayName, setDisplayName] = useState(profile?.displayName || '');
-  const [examSection, setExamSection] = useState(profile?.examSection || getDefaultSection(courseId));
+  // Use getCurrentSectionForCourse to validate profile section is valid for current course
+  const [examSection, setExamSection] = useState(getCurrentSectionForCourse(profile?.examSection, courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
   const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
 
-  // Sync form state when profile changes (e.g., after reset)
+  // Sync form state when profile changes (e.g., after reset) or courseId changes
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.displayName || '');
-      setExamSection(profile.examSection || getDefaultSection(courseId));
+      // Validate profile section is valid for current course
+      setExamSection(getCurrentSectionForCourse(profile.examSection, courseId));
       setDailyGoal(profile.dailyGoal || 50);
       setExamDate(formatDateForInput(profile.examDate));
     }
-  }, [profile]);
+  }, [profile, courseId]);
   
   const [notifications, setNotifications] = useState({
     dailyReminder: true,

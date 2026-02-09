@@ -71,6 +71,11 @@ const AITutor = lazy(() => import('./components/pages/AITutor'));
 const Achievements = lazy(() => import('./components/pages/Achievements'));
 const Community = lazy(() => import('./components/pages/Community'));
 
+// Resources Pages
+const ResourcesHub = lazy(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
+const ResourceList = lazy(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
+const ResourceViewer = lazy(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
+
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
@@ -869,6 +874,30 @@ function App() {
                     element={
                       <SuspensePage>
                         <ExamGuide />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources"
+                    element={
+                      <SuspensePage>
+                        <ResourcesHub />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/:type"
+                    element={
+                      <SuspensePage>
+                        <ResourceList />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/:type/:itemId"
+                    element={
+                      <SuspensePage>
+                        <ResourceViewer />
                       </SuspensePage>
                     }
                   />

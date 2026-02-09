@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Flame, WifiOff } from 'lucide-react';
+import { PageTransition } from '../common/PageTransition';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
 import { usePageTracking } from '../../hooks/usePageTracking';
@@ -269,7 +270,9 @@ const MainLayout = () => {
         aria-label="Main content"
         className="flex-1 min-w-0 p-4 pb-24 md:p-8 md:pb-8 pt-20 md:pt-8 focus:outline-none"
       >
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       </div>{/* End App Shell */}
 

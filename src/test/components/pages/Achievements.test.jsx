@@ -41,9 +41,20 @@ vi.mock('../../../hooks/useStudy', () => ({
   }),
 }));
 
+vi.mock('../../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: {
+      id: 'cpa',
+      name: 'CPA',
+      shortName: 'CPA',
+    },
+  }),
+}));
+
 vi.mock('../../../services/achievements', () => ({
-  ACHIEVEMENTS: [
-    {
+  ACHIEVEMENTS: {
+    first_question: {
       id: 'first_question',
       name: 'First Steps',
       description: 'Answer your first question',
@@ -52,7 +63,7 @@ vi.mock('../../../services/achievements', () => ({
       requirement: { type: 'questions', count: 1 },
       points: 10,
     },
-    {
+    streak_3: {
       id: 'streak_3',
       name: '3-Day Streak',
       description: 'Maintain a 3-day study streak',
@@ -61,14 +72,44 @@ vi.mock('../../../services/achievements', () => ({
       requirement: { type: 'streak', days: 3 },
       points: 25,
     },
-  ],
+  },
   checkAchievements: vi.fn().mockReturnValue([]),
-  getAchievementProgress: vi.fn((achievement, stats) => ({
+  getAchievementProgress: vi.fn((achievementId, stats) => ({
     current: 1,
-    target: achievement.requirement?.count || 1,
+    target: 1,
     percentage: 100,
   })),
-  getAchievementsByCategory: vi.fn(() => []),
+  getAchievementDisplayName: vi.fn((id, courseId) => {
+    const names = {
+      'first_question': 'First Steps',
+      'streak_3': '3-Day Streak',
+    };
+    return names[id] || id;
+  }),
+  getAchievementsByCategory: vi.fn((category) => {
+    const all = [
+      {
+        id: 'first_question',
+        name: 'First Steps',
+        description: 'Answer your first question',
+        icon: '🎯',
+        category: 'milestone',
+        requirement: { type: 'questions', count: 1 },
+        points: 10,
+      },
+      {
+        id: 'streak_3',
+        name: '3-Day Streak',
+        description: 'Maintain a 3-day study streak',
+        icon: '🔥',
+        category: 'streak',
+        requirement: { type: 'streak', days: 3 },
+        points: 25,
+      },
+    ];
+    if (category === 'all') return all;
+    return all.filter(a => a.category === category);
+  }),
 }));
 
 vi.mock('../../../services/feedback', () => ({

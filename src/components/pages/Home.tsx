@@ -34,6 +34,7 @@ import {
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { Button } from '../common/Button';
+import { BottomSheet } from '../common/BottomSheet';
 
 // Tutor messages based on context
 const getTutorMessage = (streak: number, readiness: number, timeOfDay: string): string => {
@@ -197,27 +198,14 @@ const Home = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="max-w-lg mx-auto space-y-6">
-      {/* Section Picker Modal */}
-      {showSectionPicker && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4"
-          onClick={(e) => e.target === e.currentTarget && setShowSectionPicker(false)}
-        >
-          <div 
-            className="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-md max-h-[80vh] shadow-xl flex flex-col"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700 flex-shrink-0">
-              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Change Exam Section</h2>
-              <Button 
-                onClick={() => setShowSectionPicker(false)}
-                variant="ghost"
-                size="icon"
-              >
-                <X className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-              </Button>
-            </div>
-            <div className="p-4 space-y-2 overflow-y-auto flex-1 overscroll-contain">
+      {/* Section Picker Bottom Sheet */}
+      <BottomSheet
+        isOpen={showSectionPicker}
+        onClose={() => setShowSectionPicker(false)}
+        title="Change Exam Section"
+        maxHeight={80}
+      >
+        <div className="py-2 space-y-2">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
                 // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
@@ -235,7 +223,7 @@ const Home = () => {
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                                 : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
@@ -275,7 +263,7 @@ const Home = () => {
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                                 : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
@@ -319,7 +307,7 @@ const Home = () => {
                         onClick={() => handleSectionChange(courseSection.id)}
                         disabled={changingSection}
                         className={clsx(
-                          'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
+                          'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                           isSelected
                             ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                             : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
@@ -349,10 +337,8 @@ const Home = () => {
                   })}
                 </>
               )}
-            </div>
-          </div>
         </div>
-      )}
+      </BottomSheet>
 
       {/* Header: Greeting + Stats Row */}
       <div className="space-y-3">

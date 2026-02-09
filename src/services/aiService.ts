@@ -81,8 +81,13 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
     name: 'CIA (Certified Internal Auditor)',
     shortName: 'CIA',
     topics: 'internal auditing, risk management, governance, and control',
-    sections: 'Part 1, 2, or 3',
-    topicList: ['internal audit', 'risk', 'governance', 'control', 'compliance', 'cia', 'iia']
+    sections: 'Part 1 (Essentials of Internal Auditing), Part 2 (Practice of Internal Auditing), or Part 3 (Business Knowledge)',
+    topicList: ['internal audit', 'risk', 'governance', 'control', 'compliance', 'cia', 'iia',
+      'audit charter', 'independence', 'objectivity', 'assurance', 'consulting', 'fraud',
+      'engagement planning', 'audit evidence', 'analytical procedures', 'sampling', 'work papers',
+      'audit findings', 'recommendations', 'coso', 'three lines', 'quality assurance', 'ippf',
+      'standards', 'ethics', 'chief audit executive', 'audit committee', 'enterprise risk',
+      'control framework', 'it audit', 'communication', 'strategic management', 'operations']
   },
   cfp: {
     name: 'CFP (Certified Financial Planner)',
@@ -97,10 +102,14 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
     name: 'CISA (Certified Information Systems Auditor)',
     shortName: 'CISA',
     topics: 'information systems auditing, governance, acquisition, operations, and protection',
-    sections: 'Domain 1-5',
+    sections: 'Auditing Process, IT Governance, Systems Acquisition/Development, IT Operations, or Information Security',
     topicList: ['information systems', 'audit', 'governance', 'it management', 'acquisition',
       'development', 'operations', 'maintenance', 'protection', 'security', 'cisa', 'isaca',
-      'risk assessment', 'business continuity', 'disaster recovery', 'access control']
+      'risk assessment', 'business continuity', 'disaster recovery', 'access control',
+      'cobit', 'itil', 'sdlc', 'change management', 'incident response', 'encryption',
+      'network security', 'application controls', 'sampling', 'caats', 'audit evidence',
+      'audit planning', 'audit report', 'it strategy', 'data governance', 'cloud computing',
+      'virtualization', 'database', 'business process', 'vendor management', 'compliance']
   },
 };
 
@@ -217,6 +226,24 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
   
   // Check if user is responding to a yes/no question from Vory
   const isYesNoResponse = /^(yes|yeah|yep|sure|ok|okay|please|no|nope|nah)\.?!?$/i.test(lowerInput);
+  
+  // Check if Vory offered to help with a specific lesson topic (from lesson context greeting)
+  const lessonTopicMatch = lastAssistantMessage.match(/I see you're studying \*\*(.+?)\*\*/);
+  const voryOfferedTopicHelp = lastAssistantMessage.includes('understand this topic better') || 
+    lastAssistantMessage.includes('Would you like a **summary**');
+  
+  // Handle "yes" responses to lesson context offer
+  if (isYesNoResponse && voryOfferedTopicHelp && lessonTopicMatch) {
+    const isYes = /^(yes|yeah|yep|sure|ok|okay|please)\.?!?$/i.test(lowerInput);
+    const topicName = lessonTopicMatch[1];
+    
+    if (isYes) {
+      return `Let me help you with that! 📚\n\n**${topicName}**\n\nI'd love to explain this topic for you! Since I'm currently in offline mode, please ask me a specific question about ${topicName} and I'll do my best to help.\n\n**Try asking:**\n• "What is ${topicName}?"\n• "Give me the key points about ${topicName}"\n• "What do I need to know about ${topicName} for the exam?"\n\nWhat would you like to know?`;
+    } else {
+      return `No problem! 👍\n\nFeel free to ask me anything about the **${course.shortName} exam** when you're ready. I can explain concepts, quiz you, or help you work through problems.\n\nWhat would you like to explore?`;
+    }
+  }
+  
   const voryAskedForPractice = lastAssistantMessage.toLowerCase().includes('would you like a practice problem') ||
     lastAssistantMessage.toLowerCase().includes('want another question') ||
     lastAssistantMessage.toLowerCase().includes('ready for another') ||

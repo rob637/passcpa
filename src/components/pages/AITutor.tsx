@@ -223,10 +223,19 @@ const AITutor: React.FC = () => {
       setReturnTo(location.state.returnTo);
     }
     
+    // Check for context from Practice page
     if (location.state?.context) {
       setContextFromPractice(location.state.context);
       // Clear the state so it doesn't persist on refresh
       window.history.replaceState({}, document.title);
+      return;
+    }
+    
+    // Check for lesson context (from LessonViewer navigation)
+    if (location.state?.lessonTitle) {
+      const lessonContext = `The student is studying: ${location.state.lessonTitle}. They want help understanding this topic. Provide a clear, focused explanation of this topic.`;
+      setContextFromPractice(lessonContext);
+      // Don't clear state yet - let buildGreeting use it first
       return;
     }
     

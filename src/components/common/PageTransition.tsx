@@ -17,7 +17,7 @@ const pageVariants = {
     y: 0,
     transition: {
       duration: 0.2,
-      ease: [0.2, 0, 0, 1], // Google's standard easing
+      ease: [0.2, 0, 0, 1] as const, // Google's standard easing
     },
   },
   exit: {
@@ -25,7 +25,7 @@ const pageVariants = {
     y: -4,
     transition: {
       duration: 0.15,
-      ease: [0.4, 0, 1, 1],
+      ease: [0.4, 0, 1, 1] as const,
     },
   },
 };
@@ -95,7 +95,7 @@ export const slideUpVariants = {
     opacity: 0,
     transition: {
       duration: 0.2,
-      ease: [0.4, 0, 1, 1],
+      ease: [0.4, 0, 1, 1] as const,
     },
   },
 };

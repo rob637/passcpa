@@ -13,15 +13,21 @@
  */
 
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
-  BookOpen,
   Target,
   GraduationCap,
   Clock,
   FileText,
   Compass,
+  DollarSign,
+  Briefcase,
+  Award,
+  Users,
+  Brain,
+  Globe,
+  Lightbulb,
 } from 'lucide-react';
 import { useCourse } from '../../../providers/CourseProvider';
 import { getResourceConfig, ResourceCategory, ResourceType } from './resourceConfig';
@@ -92,6 +98,16 @@ const ResourcesHub: React.FC = () => {
   // Filter out empty categories
   const nonEmptyCategories = resourceConfig.categories.filter(c => c.items.length > 0);
 
+  // Icon mapping for benefits
+  const benefitIcons = {
+    salary: DollarSign,
+    career: Briefcase,
+    credibility: Award,
+    network: Users,
+    knowledge: Brain,
+    global: Globe,
+  };
+
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
       {/* Header */}
@@ -110,7 +126,51 @@ const ResourcesHub: React.FC = () => {
         </p>
       </div>
 
-      {/* Exam Overview Card (optional) */}
+      {/* Why Take This Exam Section */}
+      {resourceConfig.examValue && (
+        <div className="card mb-8 bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 border-primary-200 dark:border-primary-700">
+          <div className="card-body">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+              {resourceConfig.examValue.title}
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
+              {resourceConfig.examValue.subtitle}
+            </p>
+            
+            {/* Benefits Grid */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              {resourceConfig.examValue.benefits.map((benefit, idx) => {
+                const Icon = benefitIcons[benefit.icon] || Award;
+                return (
+                  <div key={idx} className="flex items-start gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl">
+                    <div className="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-sm">{benefit.title}</h4>
+                      <p className="text-xs text-slate-600 dark:text-slate-400">{benefit.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            
+            {/* Stats */}
+            {resourceConfig.examValue.stats && (
+              <div className="flex flex-wrap gap-4 justify-center pt-4 border-t border-primary-200 dark:border-primary-700">
+                {resourceConfig.examValue.stats.map((stat, idx) => (
+                  <div key={idx} className="text-center px-4">
+                    <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">{stat.value}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Exam Overview Card */}
       {resourceConfig.examOverview && (
         <div className="card mb-8">
           <div className="card-header">
@@ -165,6 +225,32 @@ const ResourcesHub: React.FC = () => {
         </div>
       )}
 
+      {/* Exam Tips Section */}
+      {resourceConfig.examTips && (
+        <div className="card mb-8 border-amber-200 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-900/10">
+          <div className="card-body">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                <Lightbulb className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+              </div>
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                {resourceConfig.examTips.title}
+              </h2>
+            </div>
+            <ol className="space-y-2">
+              {resourceConfig.examTips.tips.map((tip, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200 text-xs font-bold flex items-center justify-center">
+                    {idx + 1}
+                  </span>
+                  <span className="text-sm text-slate-700 dark:text-slate-300">{tip}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      )}
+
       {/* Resource Categories Grid */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
@@ -178,41 +264,6 @@ const ResourcesHub: React.FC = () => {
               onClick={() => handleCategoryClick(category.type)}
             />
           ))}
-        </div>
-      </div>
-
-      {/* Quick Actions */}
-      <div className="card bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/20 border-primary-200 dark:border-primary-700">
-        <div className="card-body">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
-            Ready to Study?
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <Link
-              to="/learn"
-              className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500 transition-colors group"
-            >
-              <BookOpen className="w-6 h-6 text-primary-600" />
-              <div>
-                <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600">
-                  Start Learning
-                </span>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Begin with lessons</p>
-              </div>
-            </Link>
-            <Link
-              to="/practice"
-              className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-500 transition-colors group"
-            >
-              <Target className="w-6 h-6 text-amber-600" />
-              <div>
-                <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-600">
-                  Practice Questions
-                </span>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Test your knowledge</p>
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

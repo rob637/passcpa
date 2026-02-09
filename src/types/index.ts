@@ -146,6 +146,7 @@ export interface LessonContentSection {
 
 export interface LessonContent {
   sections: LessonContentSection[];
+  markdown?: string; // Alternative: raw markdown content (used by CFP, CIA, etc.)
 }
 
 export interface Lesson {

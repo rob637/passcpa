@@ -77,7 +77,7 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
         case 'FAR': questions = localData.FAR_ALL || []; break;
         case 'AUD': questions = localData.AUD_ALL || []; break;
         case 'REG': questions = localData.REG_ALL || []; break;
-        case 'BEC': questions = localData.BEC_ALL || []; break;
+        case 'BEC': questions = []; break; // BEC retired December 2023
         case 'BAR': questions = localData.BAR_ALL || []; break;
         case 'ISC': questions = localData.ISC_ALL || []; break;
         case 'TCP': questions = localData.TCP_ALL || []; break;

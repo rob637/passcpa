@@ -5,7 +5,6 @@
  * This wrapper provides EA-specific configuration.
  */
 
-import React from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -106,7 +105,7 @@ function getQuestionPool(section: EASection): ExamQuestion[] {
 // ============================================
 
 function generateExam(
-  section: EASection,
+  _section: EASection,
   mode: ExamMode,
   questionPool: ExamQuestion[]
 ): GeneratedExam {

@@ -8,7 +8,6 @@ import {
   GraduationCap,
   Sparkles,
   FileSpreadsheet,
-  PenTool,
   LucideIcon,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';

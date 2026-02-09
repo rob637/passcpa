@@ -5,7 +5,6 @@
  * This wrapper provides CFP-specific configuration with domain multi-select.
  */
 
-import React from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -125,7 +124,7 @@ function getQuestionPool(domain: CFPDomain): ExamQuestion[] {
 // ============================================
 
 function generateExam(
-  domain: CFPDomain,
+  _domain: CFPDomain,
   mode: ExamMode,
   questionPool: ExamQuestion[]
 ): GeneratedExam {

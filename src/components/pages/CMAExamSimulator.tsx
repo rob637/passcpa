@@ -5,7 +5,6 @@
  * This wrapper provides CMA-specific configuration.
  */
 
-import React from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -103,7 +102,7 @@ function getQuestionPool(section: CMASection): ExamQuestion[] {
 // ============================================
 
 function generateExam(
-  section: CMASection,
+  _section: CMASection,
   mode: ExamMode,
   questionPool: ExamQuestion[]
 ): GeneratedExam {

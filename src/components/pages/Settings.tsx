@@ -28,7 +28,6 @@ import { useTheme } from '../../providers/ThemeProvider';
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { createExamDateUpdate } from '../../utils/profileHelpers';
-import { COURSES, type CourseId } from '../../courses';
 import {
   setupDailyReminder,
   getDailyReminderSettings,

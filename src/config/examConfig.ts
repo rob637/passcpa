@@ -44,6 +44,10 @@ export interface SectionConfig {
     effectiveDate: string;
     description: string;
   };
+  /** @deprecated Section is retired and no longer available */
+  retired?: boolean;
+  /** @deprecated Date section was retired (ISO format) */
+  retiredDate?: string;
 }
 
 /** Determines which Blueprint applies based on exam date */

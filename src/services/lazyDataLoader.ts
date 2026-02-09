@@ -110,7 +110,7 @@ export async function loadCourseLessons(courseId: CourseId): Promise<Lesson[]> {
       }
       case 'cfp': {
         const module = await import('../data/cfp/lessons');
-        lessons = (module as { ALL_CFP_LESSONS?: Lesson[] }).ALL_CFP_LESSONS || [];
+        lessons = ((module as unknown) as { ALL_CFP_LESSONS?: Lesson[] }).ALL_CFP_LESSONS || [];
         break;
       }
     }

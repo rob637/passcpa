@@ -5,7 +5,6 @@
  * This wrapper provides CISA-specific configuration with domain multi-select.
  */
 
-import React from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -13,7 +12,7 @@ import {
   ExamQuestion,
   GeneratedExam,
 } from './templates/ExamSimulatorTemplate';
-import { CISASectionId, CISA_SECTION_CONFIG } from '../../courses/cisa';
+import { CISASectionId } from '../../courses/cisa';
 import { CISA_QUESTIONS } from '../../data/cisa/questions';
 
 // ============================================
@@ -101,7 +100,7 @@ function getQuestionPool(section: CISASectionId): ExamQuestion[] {
 // ============================================
 
 function generateExam(
-  section: CISASectionId,
+  _section: CISASectionId,
   mode: ExamMode,
   questionPool: ExamQuestion[]
 ): GeneratedExam {

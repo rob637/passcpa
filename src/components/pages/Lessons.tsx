@@ -5,7 +5,6 @@ import {
   BookOpen,
   CheckCircle,
   ChevronRight,
-  ChevronDown,
   Clock,
   Search,
   GraduationCap,

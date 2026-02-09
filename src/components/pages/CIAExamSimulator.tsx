@@ -5,7 +5,6 @@
  * This wrapper provides CIA-specific configuration.
  */
 
-import React from 'react';
 import { 
   ExamSimulatorTemplate, 
   ExamSimulatorConfig,
@@ -120,7 +119,7 @@ function getQuestionPool(section: CIASectionId): ExamQuestion[] {
 // ============================================
 
 function generateExam(
-  section: CIASectionId,
+  _section: CIASectionId,
   mode: ExamMode,
   questionPool: ExamQuestion[]
 ): GeneratedExam {

@@ -95,7 +95,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-RISK',
     name: 'Risk Management and Insurance Planning',
-    shortName: 'Insurance',
+    shortName: 'Risk',
     weight: '11%',
     questionCount: 19,
     timeAllowed: 33,
@@ -144,7 +144,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-INV',
     name: 'Investment Planning',
-    shortName: 'Investments',
+    shortName: 'Invest',
     weight: '17%',
     questionCount: 29,
     timeAllowed: 51,
@@ -256,7 +256,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-RET',
     name: 'Retirement and Income Planning',
-    shortName: 'Retirement',
+    shortName: 'Retire',
     weight: '18%',
     questionCount: 31,
     timeAllowed: 54,
@@ -357,7 +357,7 @@ export const CFP_SECTIONS: ExamSectionConfig[] = [
   {
     id: 'CFP-PSY',
     name: 'Psychology of Financial Planning',
-    shortName: 'Psychology',
+    shortName: 'Psych',
     weight: '7%',
     questionCount: 12,
     timeAllowed: 21,

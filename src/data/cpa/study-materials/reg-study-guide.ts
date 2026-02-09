@@ -5,7 +5,7 @@
  * Based on 2024-2026 AICPA Blueprint
  */
 
-import { CPAStudyGuide, BlueprintArea, StudyWeek } from './far-study-guide';
+import { CPAStudyGuide } from './far-study-guide';
 
 export const REG_STUDY_GUIDE: CPAStudyGuide = {
   id: 'reg-study-guide',

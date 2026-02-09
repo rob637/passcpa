@@ -5,7 +5,7 @@
  * Based on IRS Special Enrollment Examination Part 2
  */
 
-import { EAStudyGuide, EADomain, StudyWeek } from './see1-study-guide';
+import { EAStudyGuide } from './see1-study-guide';
 
 export const SEE2_STUDY_GUIDE: EAStudyGuide = {
   id: 'see2-study-guide',

@@ -17,7 +17,7 @@ import { UpdateBanner } from './components/common/UpdateBanner';
 import { getUpdateFunction } from './main';
 import { ThemeProvider } from './providers/ThemeProvider';
 import { TourProvider } from './components/OnboardingTour';
-import { CourseProvider } from './providers/CourseProvider';
+import { CourseProvider, useCourse } from './providers/CourseProvider';
 import { NavigationProvider } from './components/navigation';
 // import { EnvironmentIndicator } from './components/common/EnvironmentIndicator';
 
@@ -129,6 +129,7 @@ interface RouteProps {
 
 const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   const { user, userProfile, loading } = useAuth();
+  const { courseId } = useCourse();
   const location = useLocation();
 
   if (loading) {
@@ -139,10 +140,20 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Redirect to onboarding if not complete (unless we're already on onboarding page or skipOnboarding is true)
-  // Only redirect if userProfile exists - if it's still loading/null, wait rather than redirect
-  if (!skipOnboarding && userProfile && !userProfile.onboardingComplete && location.pathname !== '/onboarding') {
-    return <Navigate to="/onboarding" replace />;
+  // Redirect to onboarding if not complete for the current course
+  // Check per-course onboarding status (with fallback to legacy global flag for existing users)
+  if (!skipOnboarding && userProfile && location.pathname !== '/onboarding') {
+    const activeCourse = courseId; // Use courseId from CourseProvider
+    const courseOnboarded = userProfile.onboardingCompleted?.[activeCourse];
+    const legacyOnboarded = userProfile.onboardingComplete; // Legacy global flag
+    
+    // If course-specific onboarding is not done, redirect
+    // Use legacy flag only if onboardingCompleted map doesn't exist yet (for migration)
+    const isOnboarded = courseOnboarded ?? (legacyOnboarded && !userProfile.onboardingCompleted);
+    
+    if (!isOnboarded) {
+      return <Navigate to="/onboarding" replace />;
+    }
   }
 
   return children;

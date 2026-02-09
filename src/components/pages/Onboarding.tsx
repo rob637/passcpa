@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
 import { getCourseHomePath } from '../../utils/courseNavigation';
+import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
   ChevronRight,
@@ -41,13 +42,18 @@ const SINGLE_EXAM_COURSES: CourseId[] = ['cfp', 'cisa'];
 const isSingleExamCourse = (courseId: string): boolean => 
   SINGLE_EXAM_COURSES.includes(courseId as CourseId);
 
-// Get steps based on course type
-const getStepsForCourse = (courseId: string): Step[] => {
+// Get steps based on course type and whether switching (skips course selection when switching)
+const getStepsForCourse = (courseId: string, isCourseSwitching: boolean = false): Step[] => {
   const baseSteps: Step[] = [
     { id: 'welcome', title: 'Welcome' },
-    { id: 'course', title: 'Certification' },
-    { id: 'exam-date', title: 'Exam Date' },
   ];
+  
+  // Skip course selection when switching to a new course (they already chose it)
+  if (!isCourseSwitching) {
+    baseSteps.push({ id: 'course', title: 'Certification' });
+  }
+  
+  baseSteps.push({ id: 'exam-date', title: 'Exam Date' });
   
   // Single-exam courses skip section selection
   if (!isSingleExamCourse(courseId)) {
@@ -91,40 +97,84 @@ interface CompleteStepProps {
 
 
 // Step Components
-const WelcomeStep: React.FC = () => (
-  <div className="text-center">
-    <img 
-      src="/logo-icon.svg" 
-      alt="VoraPrep" 
-      className="w-20 h-20 mx-auto mb-6"
-    />
-    <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
-    <p className="text-slate-600 dark:text-slate-400 mb-6">
-      Let's set up your personalized study plan in just a few steps.
-    </p>
-    <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
-      <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
-      <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
-        <li className="flex items-center gap-2">
-          <GraduationCap className="w-4 h-4" />
-          Which certification you're pursuing
-        </li>
-        <li className="flex items-center gap-2">
-          <Calendar className="w-4 h-4" />
-          Your target exam date
-        </li>
-        <li className="flex items-center gap-2">
-          <BookOpen className="w-4 h-4" />
-          Which exam section you're preparing for
-        </li>
-        <li className="flex items-center gap-2">
-          <Target className="w-4 h-4" />
-          Your daily study goals
-        </li>
-      </ul>
+interface WelcomeStepProps {
+  courseId?: CourseId | '';
+  isCourseSwitching: boolean;
+}
+
+const WelcomeStep: React.FC<WelcomeStepProps> = ({ courseId, isCourseSwitching }) => {
+  const course = courseId ? COURSES[courseId] : null;
+  
+  if (isCourseSwitching && course) {
+    // Course-specific welcome when switching exams
+    return (
+      <div className="text-center">
+        <div className="w-20 h-20 mx-auto mb-6 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+          <GraduationCap className="w-10 h-10 text-primary-600 dark:text-primary-400" />
+        </div>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+          Welcome to {course.shortName} Prep! 🎉
+        </h1>
+        <p className="text-slate-600 dark:text-slate-400 mb-6">
+          Let's set up your {course.shortName} study plan in just a few steps.
+        </p>
+        <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
+          <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">About {course.shortName}:</h3>
+          <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+            <li className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4" />
+              {course.sections.length} exam {course.sections.length === 1 ? 'part' : 'parts'}: {course.sections.map(s => s.shortName).join(', ')}
+            </li>
+            <li className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              Set your target exam date
+            </li>
+            <li className="flex items-center gap-2">
+              <Target className="w-4 h-4" />
+              Configure your daily study goals
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  
+  // Default welcome for new users
+  return (
+    <div className="text-center">
+      <img 
+        src="/logo-icon.svg" 
+        alt="VoraPrep" 
+        className="w-20 h-20 mx-auto mb-6"
+      />
+      <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>
+      <p className="text-slate-600 dark:text-slate-400 mb-6">
+        Let's set up your personalized study plan in just a few steps.
+      </p>
+      <div className="bg-primary-50 dark:bg-primary-900/30 rounded-xl p-4 text-left">
+        <h3 className="font-semibold text-primary-900 dark:text-primary-300 mb-2">What we'll cover:</h3>
+        <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-400">
+          <li className="flex items-center gap-2">
+            <GraduationCap className="w-4 h-4" />
+            Which certification you're pursuing
+          </li>
+          <li className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            Your target exam date
+          </li>
+          <li className="flex items-center gap-2">
+            <BookOpen className="w-4 h-4" />
+            Which exam section you're preparing for
+          </li>
+          <li className="flex items-center gap-2">
+            <Target className="w-4 h-4" />
+            Your daily study goals
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // Course icons mapping
 const COURSE_ICONS: Record<string, React.ElementType> = {
@@ -476,27 +526,40 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
 
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
-  const { userProfile, updateUserProfile } = useAuth(); // removed user as it was only used for userProfile check
+  const { userProfile, updateUserProfile } = useAuth();
+  const { courseId: currentCourseId } = useCourse();
+
+  // Detect if this is a course switch (user already completed onboarding for at least one course)
+  // In this case, we pre-select the course and skip the course selection step
+  const isCourseSwitching = Boolean(
+    userProfile?.onboardingCompleted && 
+    Object.values(userProfile.onboardingCompleted).some(v => v === true)
+  ) || Boolean(userProfile?.onboardingComplete);
 
   // Check for pending course from registration flow (stored in localStorage)
+  // Priority: 1) localStorage pendingCourse, 2) CourseProvider courseId, 3) userProfile.activeCourse
   const getPendingCourse = (): CourseId | '' => {
     const pending = localStorage.getItem('pendingCourse');
     if (pending && ACTIVE_COURSES.includes(pending as CourseId)) {
       return pending as CourseId;
+    }
+    // Use the current course from CourseProvider (this handles course switching)
+    if (currentCourseId) {
+      return currentCourseId;
     }
     return (userProfile?.activeCourse as CourseId) || '';
   };
 
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());
-  const [selectedSection, setSelectedSection] = useState(userProfile?.examSection || '');
+  const [selectedSection, setSelectedSection] = useState('');
   const [examDate, setExamDate] = useState('');
   const [dailyGoal, setDailyGoal] = useState(50);
   const [studyPlan, setStudyPlan] = useState('balanced');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Dynamic steps based on course type (single-exam courses skip section selection)
-  const steps = getStepsForCourse(selectedCourse);
+  // Dynamic steps based on course type and whether switching
+  const steps = getStepsForCourse(selectedCourse, isCourseSwitching);
 
   // Auto-set section for single-exam courses (they study the whole exam)
   useEffect(() => {
@@ -580,13 +643,21 @@ const Onboarding: React.FC = () => {
       const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate);
       const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
       
+      // Create per-course onboarding status update
+      const existingOnboarding = userProfile?.onboardingCompleted || {};
+      const onboardingUpdate = {
+        ...existingOnboarding,
+        [selectedCourse]: true,
+      };
+      
       await updateUserProfile({
         activeCourse: selectedCourse as CourseId,
         examSection: selectedSection,
         ...examDateUpdate,
         dailyGoal,
         ...studyPlanUpdate,
-        onboardingComplete: true,
+        onboardingComplete: true, // Keep legacy flag for compatibility
+        onboardingCompleted: onboardingUpdate, // New per-course tracking
         onboardingCompletedAt: new Date(),
         timezone: userTimezone,
       });
@@ -604,7 +675,7 @@ const Onboarding: React.FC = () => {
   const renderStep = () => {
     switch (steps[currentStep].id) {
       case 'welcome':
-        return <WelcomeStep />;
+        return <WelcomeStep courseId={selectedCourse} isCourseSwitching={isCourseSwitching} />;
       case 'course':
         return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':

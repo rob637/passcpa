@@ -444,8 +444,11 @@ export interface UserProfile {
   lessonProgress?: Record<string, number>; // Lesson completion progress by lesson ID
   
   // Onboarding
+  /** @deprecated Use onboardingCompleted instead for multi-course support */
   onboardingComplete?: boolean;
   onboardingCompletedAt?: Date | { seconds: number; nanoseconds: number } | null;
+  /** Onboarding completion status keyed by course ID (e.g., { 'cpa': true, 'ea': false }) */
+  onboardingCompleted?: Partial<Record<CourseIdType, boolean>>;
   
   // Permissions
   isAdmin?: boolean;             // Admin role for CMS access

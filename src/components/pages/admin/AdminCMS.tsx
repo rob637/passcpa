@@ -4,7 +4,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
@@ -2438,6 +2438,7 @@ const AdminCMS: React.FC = () => {
                         const userRef = doc(db, 'users', userId);
                         batch.update(userRef, {
                           onboardingComplete: false,
+                          onboardingCompleted: {}, // Reset per-course onboarding
                           examSection: null,
                           currentStreak: 0,
                           longestStreak: 0,
@@ -2486,13 +2487,28 @@ const AdminCMS: React.FC = () => {
                   <button
                     onClick={async () => {
                       if (!user) return;
-                      const confirmed = window.confirm('Reset onboarding only? You\'ll see the onboarding flow again without losing progress.');
+                      
+                      // Get current course from localStorage or default to 'cpa'
+                      const currentCourse = localStorage.getItem('voraprep_course') || 'cpa';
+                      
+                      const confirmed = window.confirm(`Reset onboarding for ${currentCourse.toUpperCase()} only? You'll see the onboarding flow again for this exam without losing progress.`);
                       if (!confirmed) return;
                       
                       try {
                         const userRef = doc(db, 'users', user.uid);
-                        await updateDoc(userRef, { onboardingComplete: false });
-                        addLog('✅ Onboarding reset! Redirecting...', 'success');
+                        const userDoc = await getDoc(userRef);
+                        const userData = userDoc.data();
+                        
+                        // Update per-course onboarding status
+                        const existingOnboarding = userData?.onboardingCompleted || {};
+                        const updatedOnboarding = { ...existingOnboarding, [currentCourse]: false };
+                        
+                        await updateDoc(userRef, { 
+                          onboardingCompleted: updatedOnboarding,
+                          // Keep legacy flag in sync for backwards compatibility
+                          onboardingComplete: Object.values(updatedOnboarding).some(v => v === true)
+                        });
+                        addLog(`✅ Onboarding reset for ${currentCourse.toUpperCase()}! Redirecting...`, 'success');
                         setTimeout(() => {
                           window.location.href = '/onboarding';
                         }, 1000);
@@ -2502,7 +2518,7 @@ const AdminCMS: React.FC = () => {
                     }}
                     className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
                   >
-                    🎯 Reset Onboarding Only
+                    🎯 Reset Current Exam Onboarding
                   </button>
                 </div>
               </div>

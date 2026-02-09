@@ -346,8 +346,8 @@ const LessonMatrix: React.FC = () => {
                   <option key={s} value={s}>{s}</option>
                 ))}
               </optgroup>
-              <optgroup label="Legacy (2025 Blueprint)">
-                <option value="BEC">BEC</option>
+              <optgroup label="Retired (Dec 2023)">
+                <option value="BEC">BEC (Legacy)</option>
               </optgroup>
               <optgroup label="Study Resources">
                 <option value="PREP">Exam Strategy</option>

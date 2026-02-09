@@ -8570,7 +8570,7 @@ export const farLessons: Lesson[] = [
     }
   },
   {
-    id: 'FAR-III-020',
+    id: 'FAR-III-120',
     section: 'FAR',
     title: "Bonds Payable: Premium and Discount",
     description: "Master bond issuance and effective interest method",
@@ -8639,7 +8639,7 @@ export const farLessons: Lesson[] = [
     }
   },
   {
-    id: 'FAR-III-021',
+    id: 'FAR-III-121',
     section: 'FAR',
     title: "Deferred Revenue and Contract Liabilities",
     description: "Understand performance obligations and timing",

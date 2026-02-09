@@ -52,7 +52,7 @@
 ### ✅ Competitive Moats (Keep Investing)
 
 1. **Blueprint 2025→2026 Transition Logic** - NO competitor does this
-2. **BEC Content** - Still valid until June 30, 2026 (2025 Blueprint)
+2. **Legacy BEC Content** - Retained for historical reference (BEC retired December 15, 2023)
 3. **AI Tutor with Socratic/Quiz/Explain modes** - Gemini 2.0 Flash
 4. **97% cheaper than Becker** - $49/mo vs $2,499 one-time
 5. **Rich mnemonics & memory aids** - Not just plain text

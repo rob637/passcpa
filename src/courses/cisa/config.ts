@@ -372,12 +372,6 @@ export const CISA_COURSE: Course = {
     },
   ],
   
-  pricing: {
-    monthly: 39,
-    annual: 349,
-    lifetime: 599,
-  },
-  
   metadata: {
     examProvider: 'PSI (ISACA)',
     websiteUrl: 'https://www.isaca.org/credentialing/cisa',

@@ -66,6 +66,7 @@ export interface ExamLandingConfig {
   // Stats (shown in hero)
   questionCount: string;
   lessonCount?: string;
+  flashcardCount?: string;
   passRate?: string;
   
   // URLs
@@ -158,6 +159,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   
   questionCount: '3,300+',
   lessonCount: '950+',
+  flashcardCount: '600+',
   passRate: '50%',
   
   registerPath: '/register?course=cpa',
@@ -165,8 +167,8 @@ export const CPA_CONFIG: ExamLandingConfig = {
   
   notices: [
     {
-      type: 'warning',
-      text: 'BEC Deadline: The BEC section is available until June 30, 2026. Plan your exam schedule accordingly.',
+      type: 'info',
+      text: '2026 Blueprint: Starting July 1, 2026, REG and TCP sections will include OBBBA tax law provisions. Our content adapts to your target exam date.',
     },
   ],
   
@@ -222,6 +224,7 @@ export const EA_CONFIG: ExamLandingConfig = {
   
   questionCount: '2,100+',
   lessonCount: '400+',
+  flashcardCount: '450+',
   passRate: '70%',
   
   registerPath: '/register?course=ea',
@@ -274,6 +277,7 @@ export const CMA_CONFIG: ExamLandingConfig = {
   
   questionCount: '1,600+',
   lessonCount: '300+',
+  flashcardCount: '500+',
   passRate: '45%',
   
   registerPath: '/register?course=cma',
@@ -324,6 +328,7 @@ export const CIA_CONFIG: ExamLandingConfig = {
   
   questionCount: '1,100+',
   lessonCount: '250+',
+  flashcardCount: '500+',
   passRate: '40%',
   
   registerPath: '/register?course=cia',
@@ -374,6 +379,7 @@ export const CFP_CONFIG: ExamLandingConfig = {
   
   questionCount: '2,100+',
   lessonCount: '350+',
+  flashcardCount: '500+',
   passRate: '67%',
   
   registerPath: '/register?course=cfp',
@@ -430,6 +436,7 @@ export const CISA_CONFIG: ExamLandingConfig = {
   
   questionCount: '1,100+',
   lessonCount: '200+',
+  flashcardCount: '500+',
   passRate: '50%',
   
   registerPath: '/register?course=cisa',

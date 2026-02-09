@@ -12,6 +12,7 @@ import { CISA5_QUESTIONS_BATCH10 } from './cisa-questions-batch10';
 import { CISA5_QUESTIONS_BATCH11 } from './cisa-questions-batch11';
 import { CISA5_QUESTIONS_BATCH12 } from './cisa-questions-batch12';
 import { CISA5_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
+import { PRIVACY_REGULATION_QUESTIONS } from './cisa-cobit-privacy-batch15';
 
 const CISA5_QUESTIONS_BATCH1: Question[] = [
   {
@@ -65,4 +66,5 @@ export const CISA5_QUESTIONS: Question[] = [
   ...CISA5_QUESTIONS_BATCH11,
   ...CISA5_QUESTIONS_BATCH12,
   ...CISA5_QUESTIONS_BATCH13,
+  ...PRIVACY_REGULATION_QUESTIONS, // GDPR, CCPA, cross-border transfers (Batch 15)
 ];

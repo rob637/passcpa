@@ -14,9 +14,14 @@ import {
   GraduationCap,
   FileText,
   Layout,
+  BookMarked,
+  Calculator,
+  Brain,
+  ScrollText,
 } from 'lucide-react';
 import { useCourse } from '../../providers/CourseProvider';
 import { getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { getStudyResources } from '../../utils/studyResources';
 
 /**
  * ExamGuide - Consolidated page for exam information
@@ -218,6 +223,141 @@ const ExamGuide: React.FC = () => {
             </div>
           </section>
         )}
+
+        {/* Study Resources */}
+        {(() => {
+          const resources = getStudyResources(courseId);
+          const hasResources = resources.cheatsheets.length > 0 || 
+            resources.studyGuides.length > 0 || 
+            resources.formulaSheets.length > 0 || 
+            resources.mnemonics.length > 0 ||
+            resources.references.length > 0;
+          
+          if (!hasResources) return null;
+          
+          return (
+            <section className="card">
+              <div className="card-header">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                    <BookMarked className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                      Study Resources
+                    </h2>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Quick reference materials and memory aids
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="card-body">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {/* Cheatsheets */}
+                  {resources.cheatsheets.length > 0 && (
+                    <Link
+                      to="/learn"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-600 hover:border-emerald-300 dark:hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                        <ScrollText className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                          Cheatsheets
+                        </span>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {resources.cheatsheets.length} quick reference {resources.cheatsheets.length === 1 ? 'guide' : 'guides'}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                  
+                  {/* Study Guides */}
+                  {resources.studyGuides.length > 0 && (
+                    <Link
+                      to="/learn"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                        <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                          Study Guides
+                        </span>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {resources.studyGuides.length} comprehensive {resources.studyGuides.length === 1 ? 'guide' : 'guides'}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                  
+                  {/* Formula Sheets */}
+                  {resources.formulaSheets.length > 0 && (
+                    <Link
+                      to="/learn"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-600 hover:border-purple-300 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                        <Calculator className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                          Formula Sheets
+                        </span>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {resources.formulaSheets.length} formula {resources.formulaSheets.length === 1 ? 'reference' : 'references'}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                  
+                  {/* Mnemonics */}
+                  {resources.mnemonics.length > 0 && (
+                    <Link
+                      to="/flashcards"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-600 hover:border-amber-300 dark:hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-400">
+                          Mnemonics
+                        </span>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {resources.mnemonics.length} memory {resources.mnemonics.length === 1 ? 'aid' : 'aids'}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                  
+                  {/* Quick References */}
+                  {resources.references.length > 0 && (
+                    <Link
+                      to="/learn"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-600 hover:border-cyan-300 dark:hover:border-cyan-500 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+                        <FileText className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                          Quick References
+                        </span>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {resources.references.length} reference {resources.references.length === 1 ? 'table' : 'tables'}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
         {/* Curriculum Overview / Table of Contents */}
         <section className="card">

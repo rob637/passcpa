@@ -1,12 +1,13 @@
 /**
  * CIA Study Materials Index
  * 
- * Comprehensive study guides for all three CIA exam parts
+ * Comprehensive study guides and formula sheet for all three CIA exam parts
  */
 
 export { CIA1_STUDY_GUIDE, default as CIA1StudyGuide } from './cia1-study-guide';
 export { CIA2_STUDY_GUIDE, default as CIA2StudyGuide } from './cia2-study-guide';
 export { CIA3_STUDY_GUIDE, default as CIA3StudyGuide } from './cia3-study-guide';
+export { CIA_FORMULA_SHEET, CIA_QUICK_REFERENCE, type CIAFormula, type CIAFormulaCategory } from './cia-formula-sheet';
 
 export type { 
   CIAStudyGuide, 

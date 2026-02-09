@@ -402,12 +402,6 @@ export const CFP_COURSE: Course = {
   passingScore: 0, // Pass/Fail only - CFP Board uses a criterion-referenced passing standard
   totalTime: 300, // 5 hours (300 minutes) for 170 questions
   
-  pricing: {
-    monthly: 39,
-    annual: 349,
-    lifetime: 599,
-  },
-  
   metadata: {
     examProvider: 'Pearson VUE (CFP Board)',
     websiteUrl: 'https://www.cfp.net/get-certified/certification-process/cfp-exam',

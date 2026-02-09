@@ -79,9 +79,11 @@ describe('examConfig', () => {
       expect(CPA_SECTIONS.TCP.type).toBe('discipline');
     });
 
-    it('should have BEC as discipline section (2025 Blueprint)', () => {
+    it('should have BEC marked as retired (December 15, 2023)', () => {
       expect(CPA_SECTIONS.BEC).toBeDefined();
       expect(CPA_SECTIONS.BEC.type).toBe('discipline');
+      expect(CPA_SECTIONS.BEC.retired).toBe(true);
+      expect(CPA_SECTIONS.BEC.retiredDate).toBe('2023-12-15');
     });
 
     it('should have correct exam lengths', () => {

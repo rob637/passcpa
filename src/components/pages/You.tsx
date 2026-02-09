@@ -317,7 +317,8 @@ const You: React.FC = () => {
   const weeklyQuestions = weeklyActivity.reduce((sum, d) => sum + d.questions, 0);
 
   return (
-    <div className="max-w-lg mx-auto space-y-6 pb-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-lg mx-auto space-y-6 pb-8">
       {/* Profile Header */}
       <Card className="p-6">
         <div className="flex items-center gap-4">
@@ -533,6 +534,7 @@ const You: React.FC = () => {
         <p className="mt-1">
           Not affiliated with {course?.metadata?.examProvider?.split(' (')[0] || 'any exam provider'} or any licensing board.
         </p>
+      </div>
       </div>
     </div>
   );

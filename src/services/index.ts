@@ -8,3 +8,5 @@ export * from './errorTracking';
 export * from './offlineCache';
 export * from './aiService';
 export * from './analytics';
+export * from './cpaAdaptiveEngine';
+export * from './cpaScorePredictor';

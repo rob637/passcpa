@@ -104,6 +104,7 @@ export interface Course {
     hasTBS?: boolean;
     hasWrittenCommunication?: boolean;
     hasEssay?: boolean;
+    hasCBQ?: boolean;
     hasDataInsights?: boolean;
     hasCaseStudies?: boolean;
     adaptiveLearning?: boolean;
@@ -129,6 +130,19 @@ export interface Course {
     studyTips: string[];
     commonMistakes: string[];
     timeManagement?: string;
+  };
+  
+  // CBQ Transition (CMA-specific transition from essay to CBQ format)
+  cbqTransition?: {
+    effectiveDate: string;
+    transitionWindow: {
+      start: string;
+      end: string;
+      format: string;
+    };
+    legacyEndDate: string;
+    cbqMandatoryDate: string;
+    questionTypes: readonly string[];
   };
 }
 

@@ -22,7 +22,7 @@ import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getDefaultSection } from '../../utils/sectionUtils';
 import {
   doc,
   getDoc,
@@ -98,12 +98,12 @@ const TUTOR_MODES: Record<string, TutorMode> = {
 };
 
 // Smart prompts based on user's weak areas and course
-const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string, _courseId: string = 'cpa', shortName: string = 'CPA'): SmartPrompt[] => {
-  // Generate course-specific base prompts
+const getSmartPrompts = (weakAreas: WeakArea[] = [], _section: string, _courseId: string = 'cpa', shortName: string = 'CPA'): SmartPrompt[] => {
+  // Generate course-specific base prompts (exam-level, not section-level)
   const basePrompts: SmartPrompt[] = [
     {
       icon: HelpCircle,
-      text: `What are the most important concepts in ${section}?`,
+      text: `What are the most important concepts for the ${shortName} exam?`,
       category: 'Concept',
       topics: [],
     },
@@ -115,13 +115,13 @@ const getSmartPrompts = (weakAreas: WeakArea[] = [], section: string, _courseId:
     },
     {
       icon: Target,
-      text: `Walk me through a complex calculation for ${section}`,
+      text: `Walk me through a complex ${shortName} calculation`,
       category: 'Step-by-Step',
       topics: [],
     },
     {
       icon: TrendingUp,
-      text: `What are the most tested topics on the ${section} ${shortName} exam?`,
+      text: `What are the most tested topics on the ${shortName} exam?`,
       category: 'High-Yield',
       topics: [],
     },
@@ -215,7 +215,6 @@ const AITutor: React.FC = () => {
   // Safely cast userProfile
   const profile = userProfile as UserProfile | null;
   const currentSection = profile?.examSection || getDefaultSection(courseId);
-  const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Check for context passed from Practice page (via state or URL params)
   useEffect(() => {
@@ -298,7 +297,7 @@ const AITutor: React.FC = () => {
     const hour = new Date().getHours();
     const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion for **${sectionInfo?.shortName || course.shortName}**. 🎓\n\n`;
+    let message = `${greeting}, ${firstName}! I'm **Vory**, your AI study companion and **${course.shortName} expert**. 🎓\n\n`;
 
     // Add context about weak areas
     if (weakAreas.length > 0) {
@@ -318,7 +317,7 @@ const AITutor: React.FC = () => {
     message += `**Choose how you'd like to learn:**\n• **Explain** - I'll give you clear, complete explanations\n• **Guide Me** - I'll ask questions to help you think through problems (Socratic method)\n• **Quiz Me** - I'll test your knowledge with questions\n\nWhat would you like to explore?`;
 
     return message;
-  }, [userProfile, sectionInfo?.shortName, weakAreas, weeklyStats, location.state]);
+  }, [userProfile, course.shortName, weakAreas, weeklyStats, location.state]);
 
   // Show greeting after memory loads
   useEffect(() => {

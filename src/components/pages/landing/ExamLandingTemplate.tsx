@@ -200,13 +200,21 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <Check className={`w-4 h-4 ${colors.text}`} />
                 {config.questionCount} Practice Questions
               </div>
+              {config.lessonCount && (
+                <div className="flex items-center gap-2">
+                  <Check className={`w-4 h-4 ${colors.text}`} />
+                  {config.lessonCount} Lessons
+                </div>
+              )}
+              {config.flashcardCount && (
+                <div className="flex items-center gap-2">
+                  <Check className={`w-4 h-4 ${colors.text}`} />
+                  {config.flashcardCount} Flashcards
+                </div>
+              )}
               <div className="flex items-center gap-2">
                 <Check className={`w-4 h-4 ${colors.text}`} />
-                AI-Powered Adaptive Learning
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className={`w-4 h-4 ${colors.text}`} />
-                All {config.name} {config.examParts.length > 3 ? 'Sections' : 'Parts'} Covered
+                AI-Powered Learning
               </div>
             </div>
           </div>

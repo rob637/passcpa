@@ -22,6 +22,7 @@ import { CIA3_FLASHCARDS_BATCH3 } from './cia3-flashcards-batch3';
 import { CIA3_FLASHCARDS_BATCH4 } from './cia3-flashcards-batch4';
 import { CIA3_FLASHCARDS_BATCH5 } from './cia3-flashcards-batch5';
 import { CIA3_FLASHCARDS_BATCH6 } from './cia3-flashcards-batch6';
+import { CIA_MNEMONICS } from './mnemonics';
 
 export interface CIAFlashcard {
   id: string;
@@ -783,6 +784,7 @@ export const ALL_CIA_FLASHCARDS = [
   ...CIA3_FLASHCARDS_BATCH4,
   ...CIA3_FLASHCARDS_BATCH5,
   ...CIA3_FLASHCARDS_BATCH6,
+  ...CIA_MNEMONICS,
 ];
 
 export const getCIAFlashcardsBySection = (section: 'CIA1' | 'CIA2' | 'CIA3'): CIAFlashcard[] => {

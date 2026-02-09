@@ -11,12 +11,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   // ===========================================================================
   
   {
-    id: 'CISA1-010',
+    id: 'CISA1-021',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Computer-Assisted Audit Techniques (CAATs)',
     description: 'Master the use of technology tools to enhance audit efficiency and effectiveness',
-    order: 10,
+    order: 21,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['CAATs', 'Data Analytics', 'Audit Software', 'Generalized Audit Software'],
@@ -91,12 +91,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA1-011',
+    id: 'CISA1-022',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Audit Evidence Collection and Evaluation',
     description: 'Understand how to gather sufficient, reliable evidence to support audit conclusions',
-    order: 11,
+    order: 22,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Evidence Types', 'Evidence Reliability', 'Documentation', 'Working Papers'],
@@ -161,12 +161,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA1-012',
+    id: 'CISA1-023',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Audit Sampling Methodologies',
     description: 'Learn statistical and non-statistical sampling techniques for IS audits',
-    order: 12,
+    order: 23,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Statistical Sampling', 'Non-Statistical Sampling', 'Sample Size', 'Error Evaluation'],
@@ -232,12 +232,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA1-013',
+    id: 'CISA1-024',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Audit Reporting and Communication',
     description: 'Master the art of communicating audit findings effectively to stakeholders',
-    order: 13,
+    order: 24,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Audit Reports', 'Findings', 'Recommendations', 'Management Response'],
@@ -301,12 +301,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA1-014',
+    id: 'CISA1-025',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Internal Control Frameworks',
     description: 'Understand COSO, COBIT, and other frameworks used to evaluate IT controls',
-    order: 14,
+    order: 25,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['COSO', 'COBIT', 'NIST', 'ISO 27001', 'Control Objectives'],
@@ -381,12 +381,12 @@ export const cisa1LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA1-015',
+    id: 'CISA1-026',
     courseId: 'cisa',
     section: 'CISA1',
     title: 'Follow-Up and Issue Tracking',
     description: 'Learn how to track remediation progress and verify management corrective actions',
-    order: 15,
+    order: 26,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Issue Tracking', 'Remediation', 'Verification', 'Escalation'],

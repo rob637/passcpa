@@ -11,12 +11,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   // ===========================================================================
   
   {
-    id: 'CISA2-010',
+    id: 'CISA2-016',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'IT Governance Fundamentals',
     description: 'Understand IT governance principles, structures, and the board\'s role in IT oversight',
-    order: 10,
+    order: 16,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['IT Governance', 'COBIT', 'Board Oversight', 'Governance Structures'],
@@ -82,12 +82,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA2-011',
+    id: 'CISA2-017',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'IT Strategy and Planning',
     description: 'Learn how IT strategy is developed and aligned with business objectives',
-    order: 11,
+    order: 17,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['IT Strategy', 'Strategic Planning', 'Business Alignment', 'IT Roadmap'],
@@ -153,12 +153,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA2-012',
+    id: 'CISA2-018',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'IT Policies, Standards, and Procedures',
     description: 'Understand the policy hierarchy and how to audit IT policy frameworks',
-    order: 12,
+    order: 18,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['IT Policy', 'Standards', 'Procedures', 'Guidelines', 'Compliance'],
@@ -223,12 +223,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA2-013',
+    id: 'CISA2-019',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'Enterprise Architecture',
     description: 'Learn enterprise architecture frameworks and their role in IT governance',
-    order: 13,
+    order: 19,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Enterprise Architecture', 'TOGAF', 'Architecture Domains', 'EA Governance'],
@@ -292,12 +292,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA2-014',
+    id: 'CISA2-020',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'IT Human Resource Management',
     description: 'Understand IT staffing, skills management, and personnel security',
-    order: 14,
+    order: 20,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['IT Staffing', 'Skills', 'Succession Planning', 'Personnel Security'],
@@ -362,12 +362,12 @@ export const cisa2LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA2-015',
+    id: 'CISA2-021',
     courseId: 'cisa',
     section: 'CISA2',
     title: 'IT Investment and Portfolio Management',
     description: 'Learn how organizations evaluate, prioritize, and manage IT investments',
-    order: 15,
+    order: 21,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['IT Investment', 'Portfolio Management', 'Business Case', 'Benefits Realization'],

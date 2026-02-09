@@ -18,6 +18,7 @@ import { cisa4FlashcardsBatch3 } from './cisa4-flashcards-batch3';
 import { cisa5Flashcards } from './cisa5-flashcards';
 import { cisa5FlashcardsBatch2 } from './cisa5-flashcards-batch2';
 import { cisa5FlashcardsBatch3 } from './cisa5-flashcards-batch3';
+import { CISA_MNEMONICS } from './mnemonics';
 
 // Export individual domain flashcards (including batch 2 and 3)
 export { cisa1Flashcards } from './cisa1-flashcards';
@@ -35,6 +36,7 @@ export { cisa4FlashcardsBatch3 } from './cisa4-flashcards-batch3';
 export { cisa5Flashcards } from './cisa5-flashcards';
 export { cisa5FlashcardsBatch2 } from './cisa5-flashcards-batch2';
 export { cisa5FlashcardsBatch3 } from './cisa5-flashcards-batch3';
+export { CISA_MNEMONICS } from './mnemonics';
 
 // Combined export of all CISA flashcards
 export const allCisaFlashcards = [
@@ -53,6 +55,7 @@ export const allCisaFlashcards = [
   ...cisa5Flashcards,
   ...cisa5FlashcardsBatch2,
   ...cisa5FlashcardsBatch3,
+  ...CISA_MNEMONICS,
 ];
 
 export default allCisaFlashcards;

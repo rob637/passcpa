@@ -11,12 +11,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   // ===========================================================================
   
   {
-    id: 'CISA5-010',
+    id: 'CISA5-021',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Identity and Access Management Fundamentals',
     description: 'Master the principles of identity management, authentication, and authorization',
-    order: 10,
+    order: 21,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['IAM', 'Authentication', 'Authorization', 'Access Control Models'],
@@ -81,12 +81,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA5-011',
+    id: 'CISA5-022',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Cryptography Fundamentals',
     description: 'Understand encryption, hashing, and cryptographic key management',
-    order: 11,
+    order: 22,
     duration: 55,
     difficulty: 'intermediate',
     topics: ['Encryption', 'Symmetric', 'Asymmetric', 'Hashing', 'PKI'],
@@ -152,12 +152,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA5-012',
+    id: 'CISA5-023',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Network Security Controls',
     description: 'Learn network protection technologies and their audit considerations',
-    order: 12,
+    order: 23,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Firewalls', 'IDS/IPS', 'VPN', 'Network Segmentation', 'Zero Trust'],
@@ -226,12 +226,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA5-013',
+    id: 'CISA5-024',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Data Protection and Privacy',
     description: 'Understand data classification, protection controls, and privacy requirements',
-    order: 13,
+    order: 24,
     duration: 50,
     difficulty: 'intermediate',
     topics: ['Data Classification', 'DLP', 'Encryption', 'Privacy', 'Data Lifecycle'],
@@ -306,12 +306,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA5-014',
+    id: 'CISA5-025',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Vulnerability Management',
     description: 'Learn to audit vulnerability identification, assessment, and remediation processes',
-    order: 14,
+    order: 25,
     duration: 45,
     difficulty: 'intermediate',
     topics: ['Vulnerability Scanning', 'Patch Management', 'Remediation', 'Risk Ranking'],
@@ -381,12 +381,12 @@ export const cisa5LessonsBatch2: Lesson[] = [
   },
 
   {
-    id: 'CISA5-015',
+    id: 'CISA5-026',
     courseId: 'cisa',
     section: 'CISA5',
     title: 'Security Awareness and Training',
     description: 'Understand the human element of security and effective awareness programs',
-    order: 15,
+    order: 26,
     duration: 40,
     difficulty: 'intermediate',
     topics: ['Security Awareness', 'Phishing Simulation', 'Training', 'Culture'],

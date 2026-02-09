@@ -195,7 +195,8 @@ const Home = () => {
   );
 
   return (
-    <div className="max-w-lg mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-lg mx-auto space-y-6">
       {/* Section Picker Modal */}
       {showSectionPicker && (
         <div 
@@ -219,14 +220,8 @@ const Home = () => {
             <div className="p-4 space-y-2 overflow-y-auto flex-1 overscroll-contain">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
-                (() => {
-                  const BLUEPRINT_CUTOFF = new Date('2026-07-01');
-                  const userExamDate = examDate ? new Date(examDate) : new Date();
-                  const is2025Blueprint = userExamDate < BLUEPRINT_CUTOFF;
-                  const disciplineSections = is2025Blueprint
-                    ? ['BEC']
-                    : DISCIPLINE_SECTIONS_2026;
-                  
+                // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
+                (() => {                  
                   return (
                     <>
                       {/* Core Sections */}
@@ -267,15 +262,13 @@ const Home = () => {
                         );
                       })}
                       
-                      {/* Discipline Sections */}
+                      {/* Discipline Sections - BAR, ISC, TCP only (BEC retired Dec 2023) */}
                       <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
                         Discipline (Choose One)
-                        {is2025Blueprint && <span className="text-amber-600 ml-1">• 2025 Blueprint</span>}
                       </div>
-                      {disciplineSections.map((sectionKey) => {
+                      {DISCIPLINE_SECTIONS_2026.map((sectionKey) => {
                         const section = getSectionDisplayInfo(sectionKey, courseId);
                         const isSelected = sectionKey === activeSection;
-                        const isBEC = sectionKey === 'BEC';
                         return (
                           <button
                             key={sectionKey}
@@ -285,8 +278,7 @@ const Home = () => {
                               'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600',
-                              isBEC && 'border-amber-300 dark:border-amber-700'
+                                : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                             )}
                           >
                             <div 
@@ -298,7 +290,6 @@ const Home = () => {
                             <div className="flex-1">
                               <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                                 {section?.name || sectionKey}
-                                {isBEC && <span className="text-xs px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">2025</span>}
                               </div>
                               <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
                                 {section?.description?.split('.')[0] || ''}
@@ -514,6 +505,7 @@ const Home = () => {
 
       {/* Study Time Card - At bottom since less actionable */}
       <StudyTimeCard />
+      </div>
     </div>
   );
 };

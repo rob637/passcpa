@@ -164,9 +164,9 @@ export function getNavItems(courseId: CourseId): NavItem[] {
     { path: config.paths.home, icon: Home, label: 'Home', tourId: 'home', navType: 'home' },
     { path: config.paths.learn, icon: BookOpen, label: 'Learn', tourId: 'learn', navType: 'learn' },
     { path: config.paths.practice, icon: Target, label: 'Practice', tourId: 'practice', navType: 'practice' },
-    { path: config.paths.you, icon: User, label: 'You', tourId: 'you', navType: 'you' },
   ];
   
+  // Insert Resources between Practice and You
   if (config.showStrategy) {
     items.push({
       path: config.paths.strategy,
@@ -176,6 +176,9 @@ export function getNavItems(courseId: CourseId): NavItem[] {
       navType: 'strategy',
     });
   }
+  
+  // Add "You" at the end
+  items.push({ path: config.paths.you, icon: User, label: 'You', tourId: 'you', navType: 'you' });
   
   return items;
 }

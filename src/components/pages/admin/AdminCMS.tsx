@@ -388,6 +388,15 @@ const AdminCMS: React.FC = () => {
   const [isLoadingStale, setIsLoadingStale] = useState(false);
   const [isDeletingStale, setIsDeletingStale] = useState(false);
 
+  // Beta user transition state
+  const [betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
+  const [betaTransitionResults, setBetaTransitionResults] = useState<{
+    toUpdate: { id: string; email?: string; currentTrialEnd?: string }[];
+    skipped: { id: string; email?: string; reason: string }[];
+    updated: number;
+    errors: number;
+  } | null>(null);
+
   // Check admin access
   const isAdmin = user && (userProfile?.isAdmin || ADMIN_EMAILS.includes(user?.email || ''));
 
@@ -485,6 +494,102 @@ const AdminCMS: React.FC = () => {
       setIsDeletingStale(false);
     }
   }, [isAdmin, staleAccounts, loadUsers]);
+
+  // Beta user transition - set trial end to March 1, 2026
+  const BETA_TRIAL_END = new Date('2026-03-01T23:59:59Z');
+  const BETA_TRIAL_START = new Date('2026-02-15T00:00:00Z');
+
+  const previewBetaTransition = useCallback(async () => {
+    setBetaTransitionStatus('preview');
+    setBetaTransitionResults(null);
+    
+    try {
+      const subscriptionsRef = collection(db, 'subscriptions');
+      const snapshot = await getDocs(subscriptionsRef);
+      
+      const toUpdate: { id: string; email?: string; currentTrialEnd?: string }[] = [];
+      const skipped: { id: string; email?: string; reason: string }[] = [];
+      
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const isPaidActive = 
+          data.tier !== 'free' && 
+          (data.status === 'active' || data.stripeSubscriptionId);
+        
+        if (isPaidActive) {
+          skipped.push({
+            id: docSnap.id,
+            email: data.email,
+            reason: `Paid subscriber (tier: ${data.tier}, status: ${data.status})`
+          });
+        } else {
+          toUpdate.push({
+            id: docSnap.id,
+            email: data.email,
+            currentTrialEnd: data.trialEnd?.toDate?.()?.toISOString() || 'none'
+          });
+        }
+      });
+      
+      setBetaTransitionResults({ toUpdate, skipped, updated: 0, errors: 0 });
+      addLog(`Preview complete: ${toUpdate.length} to update, ${skipped.length} skipped`, 'info');
+    } catch (error) {
+      logger.error('Error previewing beta transition:', error);
+      addLog('Error previewing: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setBetaTransitionStatus('idle');
+    }
+  }, []);
+
+  const executeBetaTransition = useCallback(async () => {
+    if (!betaTransitionResults || betaTransitionResults.toUpdate.length === 0) return;
+    
+    const confirmed = window.confirm(
+      `⚠️ PRODUCTION DATA MODIFICATION\n\n` +
+      `This will update ${betaTransitionResults.toUpdate.length} subscriptions:\n` +
+      `• Set trialEnd to March 1, 2026\n` +
+      `• Mark as isBetaUser: true\n` +
+      `• Mark as isFounder: true (50% off eligible)\n\n` +
+      `${betaTransitionResults.skipped.length} paid subscribers will be skipped.\n\n` +
+      `This cannot be easily undone. Continue?`
+    );
+    
+    if (!confirmed) return;
+    
+    setBetaTransitionStatus('executing');
+    let updated = 0;
+    let errors = 0;
+    
+    try {
+      const { Timestamp } = await import('firebase/firestore');
+      
+      for (const sub of betaTransitionResults.toUpdate) {
+        try {
+          const subRef = doc(db, 'subscriptions', sub.id);
+          await updateDoc(subRef, {
+            tier: 'free',
+            status: 'trialing',
+            trialEnd: Timestamp.fromDate(BETA_TRIAL_END),
+            trialStartDate: Timestamp.fromDate(BETA_TRIAL_START),
+            isBetaUser: true,
+            isFounder: true,
+            updatedAt: Timestamp.now(),
+          });
+          updated++;
+        } catch (err) {
+          logger.error(`Error updating ${sub.id}:`, err);
+          errors++;
+        }
+      }
+      
+      setBetaTransitionResults(prev => prev ? { ...prev, updated, errors } : null);
+      setBetaTransitionStatus('done');
+      addLog(`Beta transition complete: ${updated} updated, ${errors} errors`, updated > 0 ? 'success' : 'warning');
+    } catch (error) {
+      logger.error('Error executing beta transition:', error);
+      addLog('Error executing: ' + (error instanceof Error ? error.message : String(error)), 'error');
+      setBetaTransitionStatus('idle');
+    }
+  }, [betaTransitionResults]);
 
   // Filter users when search or filter changes
   useEffect(() => {
@@ -2812,6 +2917,92 @@ const AdminCMS: React.FC = () => {
                   )}
                 </div>
               </div>
+            </Card>
+
+            {/* Beta User Trial Transition */}
+            <Card className="p-6 border-2 border-amber-300 bg-amber-50">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                🎫 Beta User Trial Transition
+                <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded">ONE-TIME</span>
+              </h3>
+              <p className="text-sm text-gray-700 mb-4">
+                Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
+                Paid subscribers will be skipped. Users will be marked as Founders (50% off eligible).
+              </p>
+              
+              <div className="flex gap-3 mb-4">
+                <Button
+                  onClick={previewBetaTransition}
+                  disabled={betaTransitionStatus === 'executing'}
+                  variant="primary"
+                  size="sm"
+                  loading={betaTransitionStatus === 'preview' && !betaTransitionResults}
+                >
+                  Preview Changes
+                </Button>
+                {betaTransitionResults && betaTransitionResults.toUpdate.length > 0 && betaTransitionStatus !== 'done' && (
+                  <Button
+                    onClick={executeBetaTransition}
+                    disabled={betaTransitionStatus === 'executing'}
+                    variant="danger"
+                    size="sm"
+                    loading={betaTransitionStatus === 'executing'}
+                  >
+                    Execute Transition ({betaTransitionResults.toUpdate.length} users)
+                  </Button>
+                )}
+              </div>
+
+              {betaTransitionResults && (
+                <div className="space-y-3">
+                  {betaTransitionStatus === 'done' && (
+                    <div className="p-3 bg-green-100 border border-green-300 rounded-lg">
+                      <div className="font-semibold text-green-800">✅ Transition Complete!</div>
+                      <div className="text-sm text-green-700">
+                        Updated: {betaTransitionResults.updated} | Errors: {betaTransitionResults.errors} | Skipped: {betaTransitionResults.skipped.length}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-sm font-medium text-gray-700 mb-2">
+                        ✅ Will Update ({betaTransitionResults.toUpdate.length})
+                      </div>
+                      <div className="max-h-40 overflow-y-auto bg-white rounded border p-2 text-xs space-y-1">
+                        {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
+                          <div key={u.id} className="flex justify-between">
+                            <span className="text-gray-700 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
+                          </div>
+                        ))}
+                        {betaTransitionResults.toUpdate.length > 15 && (
+                          <div className="text-gray-500 italic">...and {betaTransitionResults.toUpdate.length - 15} more</div>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-700 mb-2">
+                        ⏭️ Will Skip ({betaTransitionResults.skipped.length})
+                      </div>
+                      <div className="max-h-40 overflow-y-auto bg-white rounded border p-2 text-xs space-y-1">
+                        {betaTransitionResults.skipped.slice(0, 15).map(u => (
+                          <div key={u.id} className="flex justify-between">
+                            <span className="text-gray-700 truncate">{u.email || u.id}</span>
+                            <span className="text-amber-600">{u.reason}</span>
+                          </div>
+                        ))}
+                        {betaTransitionResults.skipped.length > 15 && (
+                          <div className="text-gray-500 italic">...and {betaTransitionResults.skipped.length - 15} more</div>
+                        )}
+                        {betaTransitionResults.skipped.length === 0 && (
+                          <div className="text-gray-400">No paid subscribers found</div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </Card>
 
             {/* Launch Status */}

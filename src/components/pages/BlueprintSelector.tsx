@@ -69,7 +69,7 @@ export const ExamDateSelector: React.FC<ExamDateSelectorProps> = ({ onDateSelect
             onChange={handleDateChange}
             min={minDate}
             max={maxDate}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white dark:[color-scheme:dark]"
           />
         </div>
 

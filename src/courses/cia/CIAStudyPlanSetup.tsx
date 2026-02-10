@@ -74,7 +74,7 @@ export default function CIAStudyPlanSetup() {
                   <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Target Exam Date</label>
                   <input 
                     type="date"
-                    className="input max-w-xs"
+                    className="input max-w-xs dark:[color-scheme:dark]"
                     onChange={(e) => handleDateSelect(sectionId, e.target.value ? new Date(e.target.value) : undefined)}
                   />
                 </div>

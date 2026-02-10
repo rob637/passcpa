@@ -81,7 +81,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, selectedDate, on
         value={selectedDate}
         min={minDate}
         onChange={(e) => onChange(e.target.value)}
-        className="input-field w-full"
+        className="input w-full"
       />
       {selectedDate && (
         <div className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-1">

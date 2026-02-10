@@ -124,9 +124,9 @@ describe('TimedQuiz Component', () => {
       expect(screen.getByText(/36 questions/)).toBeInTheDocument();
     });
 
-    it('shows Start Quiz button', async () => {
+    it('shows Start button', async () => {
       await renderTimedQuiz();
-      expect(screen.getByText('Start Quiz')).toBeInTheDocument();
+      expect(screen.getByText('Start')).toBeInTheDocument();
     });
 
     it('shows Back to Home button', async () => {
@@ -172,10 +172,10 @@ describe('TimedQuiz Component', () => {
     });
   });
 
-  describe('Start Quiz Button', () => {
-    it('Start Quiz button is clickable', async () => {
+  describe('Start Button', () => {
+    it('Start button is clickable', async () => {
       await renderTimedQuiz();
-      const startButton = screen.getByText('Start Quiz');
+      const startButton = screen.getByText('Start');
       expect(startButton).not.toBeDisabled();
     });
   });

@@ -155,7 +155,7 @@ const CPA_RESOURCES: CourseResourceConfig = {
     tips: [
       'Start with FAR - it\'s the foundation for other sections',
       'Schedule exams close together to retain knowledge',
-      'Use the Authoritative Literature during the exam (FAR, AUD, REG)',
+      'Use the Authoritative Literature tab during TBS (available in all sections)',
       'For TBS questions, break down the data systematically',
       'Time management: ~1.5 min per MCQ, 15-20 min per TBS',
       'Flag difficult questions and come back - don\'t get stuck',
@@ -897,7 +897,7 @@ const CFP_RESOURCES: CourseResourceConfig = {
       colorDark: 'cyan-900/30',
       items: [
         { id: 'cfp-ref-limits', type: 'reference', title: '2026 Contribution Limits', description: 'IRA, 401(k), HSA, FSA annual limits' },
-        { id: 'cfp-ref-ss', type: 'reference', title: 'Social Security Reference', description: 'FRA, cola, taxation, spousal benefits' },
+        { id: 'cfp-ref-ss', type: 'reference', title: 'Social Security Reference', description: 'FRA, COLA, taxation, spousal benefits' },
         { id: 'cfp-ref-testing', type: 'reference', title: 'CFP Exam Info', description: 'Testing windows, passing rates, retake policy' },
         { id: 'cfp-ref-calculator', type: 'reference', title: 'Calculator Guide', description: 'HP 10bII+ and TI BA II Plus key functions' },
       ],

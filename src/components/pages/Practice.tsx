@@ -1490,17 +1490,12 @@ const Practice: React.FC = () => {
                   onClick={() => {
                     // Save session state before navigating
                     saveSessionState();
-                    // Navigate in same window - state will be restored on return
-                    // CPA lessons follow ${blueprintArea}-001 format, other courses use different formats
-                    // So we use direct link for CPA with blueprintArea, and lesson matrix for other cases
-                    let lessonUrl: string;
-                    if (courseId === 'cpa' && currentQuestion.blueprintArea) {
-                      lessonUrl = `/lessons/${currentQuestion.blueprintArea}-001?returnTo=/practice`;
-                    } else {
-                      // For non-CPA courses or missing blueprintArea, go to lesson matrix
-                      const section = currentQuestion.section?.toLowerCase() || getDefaultSection(courseId).toLowerCase();
-                      lessonUrl = `/lessons/matrix?section=${section}&returnTo=/practice`;
-                    }
+                    // Navigate to lesson matrix filtered by section and blueprint area
+                    // This gives users context to find the most relevant lesson
+                    const section = currentQuestion.section?.toUpperCase() || getDefaultSection(courseId).toUpperCase();
+                    const blueprintArea = currentQuestion.blueprintArea || '';
+                    // Navigate to lesson matrix with filters for better discovery
+                    const lessonUrl = `/lessons/matrix?section=${section}&blueprintArea=${blueprintArea}&returnTo=/practice`;
                     navigate(lessonUrl);
                   }}
                   variant="secondary"

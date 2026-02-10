@@ -506,7 +506,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                   <ul className="space-y-2 text-white/90">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-white" />
-                      All {config.examParts.length} exam sections with 1,000+ questions
+                      All {config.examParts.length} exam sections with {config.questionCount} questions
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-white" />

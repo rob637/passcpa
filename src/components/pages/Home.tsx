@@ -203,9 +203,9 @@ const Home = () => {
         isOpen={showSectionPicker}
         onClose={() => setShowSectionPicker(false)}
         title="Change Exam Section"
-        maxHeight={80}
+        maxHeight={65}
       >
-        <div className="py-2 space-y-2">
+        <div className="py-1 space-y-1">
               {courseId === 'cpa' ? (
                 // CPA-specific section picker with Core/Discipline grouping
                 // Note: BEC was retired December 15, 2023, only BAR/ISC/TCP available
@@ -223,35 +223,35 @@ const Home = () => {
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
+                              'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                                 : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                             )}
                           >
                             <div 
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                               style={{ backgroundColor: section?.color || '#6366f1' }}
                             >
                               {section?.shortName || sectionKey}
                             </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-slate-900 dark:text-slate-100">
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                                 {section?.name || sectionKey}
                               </div>
-                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
                                 {section?.description?.split('.')[0] || ''}
                               </div>
                             </div>
                             {isSelected && (
-                              <Check className="w-5 h-5 text-primary-600" />
+                              <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                             )}
                           </button>
                         );
                       })}
                       
                       {/* Discipline Sections - BAR, ISC, TCP only (BEC retired Dec 2023) */}
-                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-4 mb-2">
+                      <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-3 mb-2">
                         Discipline (Choose One)
                       </div>
                       {DISCIPLINE_SECTIONS_2026.map((sectionKey) => {
@@ -263,28 +263,28 @@ const Home = () => {
                             onClick={() => handleSectionChange(sectionKey)}
                             disabled={changingSection}
                             className={clsx(
-                              'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
+                              'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                               isSelected
                                 ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                                 : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                             )}
                           >
                             <div 
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                               style={{ backgroundColor: section?.color || '#6366f1' }}
                             >
                               {section?.shortName || sectionKey}
                             </div>
-                            <div className="flex-1">
-                              <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                                 {section?.name || sectionKey}
                               </div>
-                              <div className="text-xs text-slate-600 dark:text-slate-300 line-clamp-1">
+                              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
                                 {section?.description?.split('.')[0] || ''}
                               </div>
                             </div>
                             {isSelected && (
-                              <Check className="w-5 h-5 text-primary-600" />
+                              <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                             )}
                           </button>
                         );
@@ -307,30 +307,30 @@ const Home = () => {
                         onClick={() => handleSectionChange(courseSection.id)}
                         disabled={changingSection}
                         className={clsx(
-                          'w-full flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
+                          'w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.98]',
                           isSelected
                             ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                             : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
                         )}
                       >
                         <div 
-                          className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs"
                           style={{ backgroundColor: section?.color || '#6366f1' }}
                         >
                           {courseSection.shortName}
                         </div>
-                        <div className="flex-1">
-                          <div className="font-semibold text-slate-900 dark:text-slate-100">
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-sm text-slate-900 dark:text-slate-100">
                             {courseSection.name}
                           </div>
                           {courseSection.weight && (
-                            <div className="text-xs text-slate-600 dark:text-slate-300">
+                            <div className="text-xs text-slate-500 dark:text-slate-400">
                               Weight: {courseSection.weight}
                             </div>
                           )}
                         </div>
                         {isSelected && (
-                          <Check className="w-5 h-5 text-primary-600" />
+                          <Check className="w-5 h-5 text-primary-600 flex-shrink-0" />
                         )}
                       </button>
                     );

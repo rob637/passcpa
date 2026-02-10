@@ -11,6 +11,35 @@ vi.mock('../../../hooks/useStudy', () => ({
   }),
 }));
 
+// Mock AuthProvider (used by useSubscription)
+vi.mock('../../../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: { uid: 'test-user' },
+    userProfile: null,
+  }),
+}));
+
+// Mock useSubscription (used by TrialBanner in SubscriptionGate)
+vi.mock('../../../services/subscription', () => ({
+  useSubscription: () => ({
+    subscription: null,
+    isPremium: false,
+    isTrialing: false,
+    trialDaysRemaining: 0,
+    trialExpired: false,
+    loading: false,
+    limits: { questionsPerDay: Infinity },
+  }),
+}));
+
+// Mock CourseProvider (used by TrialBanner)
+vi.mock('../../../providers/CourseProvider', () => ({
+  useCourse: () => ({
+    courseId: 'cpa',
+    course: { id: 'cpa', name: 'CPA' },
+  }),
+}));
+
 vi.mock('../../../hooks/useDocumentTitle', () => ({
   useRouteTitle: vi.fn(),
   ROUTE_TITLES: {

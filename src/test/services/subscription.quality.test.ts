@@ -13,12 +13,12 @@ import { SUBSCRIPTION_PLANS, IS_BETA_PERIOD, type SubscriptionTier } from '../..
 
 describe('Subscription Plans - Beta Period', () => {
   // Document current state
-  it('confirms we are in beta period', () => {
+  it('confirms we are NOT in beta period (beta has ended)', () => {
     // This test will fail when beta ends, reminding us to update tests
-    expect(IS_BETA_PERIOD).toBe(true);
+    expect(IS_BETA_PERIOD).toBe(false);
   });
 
-  describe('Free tier during beta (all features unlocked)', () => {
+  describe('Free tier now has trial limits (beta ended)', () => {
     const freeLimits = SUBSCRIPTION_PLANS.free.limits;
 
     it('has unlimited questions during beta', () => {
@@ -129,8 +129,9 @@ describe('Pricing Structure', () => {
     expect(annual).toBeLessThan(monthlyFor12);
   });
 
-  it('lifetime tier exists and is one-time payment', () => {
-    expect(SUBSCRIPTION_PLANS.lifetime.price).toBeGreaterThan(0);
+  it('lifetime tier is legacy plan (no longer offered)', () => {
+    // Lifetime tier is a legacy plan - price is 0, no longer offered for purchase
+    expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(0);
     expect(SUBSCRIPTION_PLANS.lifetime.interval).toBe('once');
   });
 });
@@ -148,9 +149,9 @@ describe('Plan Features Array', () => {
     expect(annualFeatures).toMatch(/save|%/i);
   });
 
-  it('lifetime plan mentions one-time or forever', () => {
+  it('lifetime plan mentions legacy status', () => {
     const lifetimeFeatures = SUBSCRIPTION_PLANS.lifetime.features.join(' ').toLowerCase();
-    expect(lifetimeFeatures).toMatch(/forever|one-time|lifetime/i);
+    expect(lifetimeFeatures).toMatch(/legacy|no longer/i);
   });
 
   it('beta free tier mentions all features unlocked', () => {

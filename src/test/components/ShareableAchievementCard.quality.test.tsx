@@ -31,6 +31,27 @@ vi.mock('../../providers/CourseProvider', () => ({
   }),
 }));
 
+// Mock useAuth from hooks
+vi.mock('../../hooks/useAuth', () => ({
+  useAuth: () => ({
+    user: { uid: 'test-user-123' },
+    userProfile: null,
+  }),
+}));
+
+// Mock AuthProvider (used by useSubscription if it's called indirectly)
+vi.mock('../../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: { uid: 'test-user-123' },
+    userProfile: null,
+  }),
+}));
+
+// Mock referral service
+vi.mock('../../services/referral', () => ({
+  getReferralStats: vi.fn(() => Promise.resolve({ code: 'TEST123' })),
+}));
+
 // Mock getAchievementDisplayName to return the achievement name
 // Note: The actual component uses achievement.id to look up display name
 // For tests with custom achievements, we need the name to be returned

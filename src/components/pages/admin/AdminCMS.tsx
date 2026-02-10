@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { format } from 'date-fns';
 import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
@@ -3153,9 +3154,11 @@ const AdminCMS: React.FC = () => {
                         const batch = writeBatch(db);
                         const userId = user.uid;
                         
-                        // Collections that store course-specific data
-                        const collectionsToFilter = [
-                          'daily_log',
+                        // Get course sections to identify course-specific activities
+                        const courseSections = COURSES[currentCourse as CourseId]?.sections?.map(s => s.id) || [];
+                        
+                        // Collections that store course-specific data (with courseId field)
+                        const collectionsWithCourseId = [
                           'lessons',
                           'progress',
                           'questionHistory', 
@@ -3167,12 +3170,14 @@ const AdminCMS: React.FC = () => {
                           'examResults',
                           'flashcardProgress',
                           'questionAttempts',
+                          'study_plans',
+                          'studyState',
                         ];
                         
                         let totalDeleted = 0;
                         
                         // Delete docs where courseId matches current course
-                        for (const collName of collectionsToFilter) {
+                        for (const collName of collectionsWithCourseId) {
                           try {
                             const subColRef = collection(db, 'users', userId, collName);
                             const subDocs = await getDocs(subColRef);
@@ -3190,6 +3195,31 @@ const AdminCMS: React.FC = () => {
                           }
                         }
                         
+                        // Handle daily_log specially - filter by activity section OR delete all
+                        // daily_log docs don't have courseId but activities inside have section
+                        try {
+                          const dailyLogRef = collection(db, 'users', userId, 'daily_log');
+                          const dailyLogDocs = await getDocs(dailyLogRef);
+                          dailyLogDocs.forEach((docSnap) => {
+                            const data = docSnap.data();
+                            const activities = data.activities || [];
+                            // Check if ANY activity belongs to this course's sections
+                            const hasCourseActivity = activities.some((a: { section?: string }) => 
+                              a.section && courseSections.some(s => 
+                                a.section?.toLowerCase() === s.toLowerCase() ||
+                                a.section?.toLowerCase().includes(currentCourse)
+                              )
+                            );
+                            // Delete if it has activities from this course OR it's from today (fresh start)
+                            if (hasCourseActivity || data.date === format(new Date(), 'yyyy-MM-dd')) {
+                              batch.delete(docSnap.ref);
+                              totalDeleted++;
+                            }
+                          });
+                        } catch (e) {
+                          // Collection might not exist
+                        }
+                        
                         // Reset onboarding for this course only
                         const userRef = doc(db, 'users', userId);
                         const userDoc = await getDoc(userRef);
@@ -3203,9 +3233,24 @@ const AdminCMS: React.FC = () => {
                         await batch.commit();
                         addLog(`✅ Reset ${totalDeleted} records for ${currentCourse.toUpperCase()}! Redirecting...`, 'success');
                         
-                        // Clear local storage for this course
+                        // Clear local storage for this course - comprehensive cleanup
                         localStorage.removeItem(`voraprep_study_state_${currentCourse}`);
                         localStorage.removeItem(`dailyplan_completed_${currentCourse}`);
+                        localStorage.removeItem(`${currentCourse}-cram-mode`);
+                        
+                        // Clear daily plan cache entries (match pattern: daily_plan_{userId}_{date}_{section})
+                        const keysToRemove: string[] = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                          const key = localStorage.key(i);
+                          if (key && (
+                            key.startsWith(`daily_plan_${userId}`) ||
+                            key.includes(`_${currentCourse}_`) ||
+                            key.endsWith(`_${currentCourse}`)
+                          )) {
+                            keysToRemove.push(key);
+                          }
+                        }
+                        keysToRemove.forEach(key => localStorage.removeItem(key));
                         
                         setTimeout(() => {
                           window.location.href = '/onboarding';

@@ -354,7 +354,7 @@ const TimedQuiz: React.FC = () => {
             leftIcon={Settings}
             className="w-full flex items-center justify-between p-3 text-slate-600 dark:text-slate-300 mb-4"
           >
-            <span className="text-sm font-medium">Quiz Options</span>
+            <span className="text-sm font-medium">Options</span>
             <ChevronDown className={clsx('w-4 h-4 transition-transform', showAdvancedOptions && 'rotate-180')} />
           </Button>
 
@@ -446,7 +446,7 @@ const TimedQuiz: React.FC = () => {
             onClick={startQuiz}
             loading={loading}
           >
-            Start Quiz
+            Start
           </Button>
 
           <Button

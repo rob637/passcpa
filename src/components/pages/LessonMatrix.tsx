@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import logger from '../../utils/logger';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { 
   Search, 
   Layout, 
@@ -180,10 +180,16 @@ const ObbbaIndicator = ({ note }: { note?: string }) => {
 
 const LessonMatrix: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { courseId, course } = useCourse();
   const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
-  const [search, setSearch] = useState('');
-  const [sectionFilter, setSectionFilter] = useState<string>('ALL');
+  
+  // Read initial values from URL params (for deep linking from Practice)
+  const initialSection = searchParams.get('section')?.toUpperCase() || 'ALL';
+  const initialSearch = searchParams.get('blueprintArea') || '';
+  
+  const [search, setSearch] = useState(initialSearch);
+  const [sectionFilter, setSectionFilter] = useState<string>(initialSection);
   const [methodFilter, setMethodFilter] = useState<string>('ALL');
   const [versionFilter, setVersionFilter] = useState<string>('ALL');
   const [showObbbaOnly, setShowObbbaOnly] = useState(false);

@@ -169,7 +169,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
               value={dateInput}
               onChange={(e) => setDateInput(e.target.value)}
               min={format(addDays(new Date(), 1), 'yyyy-MM-dd')}
-              className="w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white"
+              className="w-full px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white dark:[color-scheme:dark]"
             />
             <div className="flex gap-2 mt-2">
               <Button

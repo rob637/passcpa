@@ -10,7 +10,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-001',
     section: 'FAR',
-    blueprintArea: 'FAR-II',
+    blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
@@ -30,7 +30,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-002',
     section: 'FAR',
-    blueprintArea: 'FAR-II',
+    blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Performance Obligations',
@@ -51,7 +51,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-003',
     section: 'FAR',
-    blueprintArea: 'FAR-II',
+    blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
@@ -67,7 +67,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-004',
     section: 'FAR',
-    blueprintArea: 'FAR-II',
+    blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Over Time Recognition',
@@ -87,7 +87,7 @@ export const FAR_QUESTIONS_EXTENDED: Question[] = [
   {
     id: 'far-ext-rev-005',
     section: 'FAR',
-    blueprintArea: 'FAR-II',
+    blueprintArea: 'FAR-III',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Modifications',

@@ -265,7 +265,7 @@ const CFPStudyPlanSetup: React.FC = () => {
                 min={minDate}
                 max={maxDate}
                 onChange={(e) => setExamDate(e.target.value ? new Date(e.target.value) : null)}
-                className="input-field w-full text-lg"
+                className="input w-full text-lg"
               />
             </div>
 

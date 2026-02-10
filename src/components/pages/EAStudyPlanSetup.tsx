@@ -87,7 +87,7 @@ const ExamDateCard: React.FC<ExamDateCardProps> = ({ sectionId, date, onDateChan
               min={minDate}
               max={maxDate}
               onChange={(e) => onDateChange(e.target.value ? new Date(e.target.value) : null)}
-              className="input-field flex-1"
+              className="input flex-1"
             />
             {date && (
               <Button

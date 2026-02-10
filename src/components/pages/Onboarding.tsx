@@ -79,6 +79,7 @@ interface SectionStepProps {
 interface ExamDateStepProps {
   value: string;
   onChange: (val: string) => void;
+  courseId: string;
 }
 
 interface DailyGoalStepProps {
@@ -332,16 +333,61 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
   );
 };
 
-const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
+const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId }) => {
   const today = new Date().toISOString().split('T')[0];
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
   const maxDateStr = maxDate.toISOString().split('T')[0];
   
-  // Determine blueprint based on selected date
+  // Get course info
+  const course = COURSES[courseId as CourseId];
+  const examName = course?.shortName || courseId?.toUpperCase() || 'exam';
+  
+  // CPA-specific: Determine blueprint based on selected date
   const BLUEPRINT_CUTOFF = new Date('2026-07-01');
   const selectedDate = value ? new Date(value) : null;
   const is2025Blueprint = selectedDate && selectedDate < BLUEPRINT_CUTOFF;
+  const isCPA = courseId === 'cpa';
+  
+  // Get exam-specific info message
+  const getExamInfoMessage = () => {
+    switch (courseId) {
+      case 'cpa':
+        return 'The CPA exam blueprint changes on July 1, 2026. After that date, REG and TCP sections will include updated tax law provisions (OBBBA). Our content adapts automatically.';
+      case 'ea':
+        return 'The EA exam (SEE) is offered year-round at Prometric test centers. Each of the three parts can be taken in any order. Testing typically opens in May for the next year\'s content.';
+      case 'cma':
+        return 'The CMA exam has three testing windows: January-February, May-June, and September-October. Plan your study schedule around your target window.';
+      case 'cia':
+        return 'The CIA exam is offered year-round at Pearson VUE test centers. You can take the three parts in any order and must complete all parts within 3 years.';
+      case 'cfp':
+        return 'The CFP exam is offered three times per year: March, July, and November. The exam is a single 6-hour test covering all 8 principal knowledge domains.';
+      case 'cisa':
+        return 'The CISA exam is offered year-round at PSI testing centers worldwide. It\'s a single 4-hour exam covering all 5 domains.';
+      default:
+        return `Set your target exam date to help us create an optimal study plan for your ${examName} preparation.`;
+    }
+  };
+  
+  // Get exam-specific tip
+  const getExamTip = () => {
+    switch (courseId) {
+      case 'cpa':
+        return 'Most candidates need 6-8 weeks per section to prepare.';
+      case 'ea':
+        return 'Most candidates need 4-6 weeks per part to prepare.';
+      case 'cma':
+        return 'Most candidates need 150-200 study hours per part.';
+      case 'cia':
+        return 'Plan for 100-150 study hours per part.';
+      case 'cfp':
+        return 'Most candidates need 250-300 total study hours.';
+      case 'cisa':
+        return 'Most candidates need 100-150 total study hours.';
+      default:
+        return 'Set a realistic target to stay on track.';
+    }
+  };
 
   return (
     <div>
@@ -349,14 +395,14 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
         <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
           <Calendar className="w-6 h-6 text-primary-600 dark:text-primary-400" />
         </div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white">When's Your Exam?</h2>
-        <p className="text-slate-600 dark:text-slate-400 mt-2">This determines which exam sections are available to you</p>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white">When's Your {examName} Exam?</h2>
+        <p className="text-slate-600 dark:text-slate-400 mt-2">This helps us create an optimal study plan for you</p>
       </div>
 
-      {/* Why we're asking */}
+      {/* Why we're asking - exam-specific */}
       <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-xl p-4 mb-6">
         <p className="text-sm text-blue-800 dark:text-blue-300">
-          <strong>Why does this matter?</strong> The CPA exam blueprint changes on July 1, 2026. After that date, REG and TCP sections will include updated tax law provisions (OBBBA). Our content adapts automatically.
+          <strong>Why does this matter?</strong> {getExamInfoMessage()}
         </p>
       </div>
 
@@ -368,12 +414,12 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
           onChange={(e) => onChange(e.target.value)}
           min={today}
           max={maxDateStr}
-          className="w-full max-w-full box-border px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg"
+          className="w-full max-w-full box-border px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg dark:[color-scheme:dark]"
         />
       </div>
 
-      {/* Blueprint indicator */}
-      {selectedDate && (
+      {/* Blueprint indicator - CPA only */}
+      {isCPA && selectedDate && (
         <div className={clsx(
           'mb-4 px-4 py-3 rounded-xl text-sm',
           is2025Blueprint ? 'bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800' : 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800'
@@ -394,7 +440,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange }) => {
 
       <div className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl p-4">
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          <strong>Tip:</strong> Most candidates need 6-8 weeks to prepare. You can change this later in Settings.
+          <strong>Tip:</strong> {getExamTip()} You can change this later in Settings.
         </p>
       </div>
     </div>
@@ -679,7 +725,7 @@ const Onboarding: React.FC = () => {
       case 'course':
         return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':
-        return <ExamDateStep value={examDate} onChange={setExamDate} />;
+        return <ExamDateStep value={examDate} onChange={setExamDate} courseId={selectedCourse} />;
       case 'section':
         return <SectionStep selected={selectedSection} onSelect={setSelectedSection} examDate={examDate} courseId={selectedCourse} />;
       case 'daily-goal':

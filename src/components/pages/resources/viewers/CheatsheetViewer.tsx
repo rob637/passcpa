@@ -19,8 +19,14 @@ const cheatsheetModules = import.meta.glob('/src/data/**/cheatsheets/*.md', {
   import: 'default',
 });
 
+// Pre-load reference markdown files
+const referenceModules = import.meta.glob('/src/data/**/references/*.md', { 
+  query: '?raw',
+  import: 'default',
+});
+
 // Map item IDs to their markdown file paths
-const getCheatsheetPath = (courseId: string, itemId: string): string | null => {
+const getCheatsheetPath = (courseId: string, itemId: string): { path: string; isReference: boolean } | null => {
   const folderMap: Record<string, string> = {
     'cpa-2025': 'cpa',
     'ea-2025': 'ea',
@@ -32,8 +38,8 @@ const getCheatsheetPath = (courseId: string, itemId: string): string | null => {
   
   const folder = folderMap[courseId] || courseId.split('-')[0];
   
-  // Map resourceConfig itemIds to filenames
-  const filenameMap: Record<string, string> = {
+  // Map resourceConfig itemIds to filenames for cheatsheets
+  const cheatsheetFilenameMap: Record<string, string> = {
     // CPA
     'cpa-cs-far': 'far-cheatsheet.md',
     'cpa-cs-aud': 'aud-cheatsheet.md',
@@ -69,10 +75,50 @@ const getCheatsheetPath = (courseId: string, itemId: string): string | null => {
     'cisa-cs-d5': 'cisa5-cheatsheet.md',
   };
   
-  const filename = filenameMap[itemId];
-  if (!filename) return null;
+  // Map resourceConfig itemIds to filenames for references
+  const referenceFilenameMap: Record<string, string> = {
+    // CPA Quick References
+    'cpa-ref-scoring': 'cpa-ref-scoring.md',
+    'cpa-ref-timeline': 'cpa-ref-timeline.md',
+    'cpa-ref-nts': 'cpa-ref-nts.md',
+    'cpa-ref-ethics': 'cpa-ref-ethics.md',
+    // EA Quick References
+    'ea-ref-forms': 'ea-ref-forms.md',
+    'ea-ref-penalties': 'ea-ref-penalties.md',
+    'ea-ref-deadlines': 'ea-ref-deadlines.md',
+    // CMA Quick References
+    'cma-ref-testing': 'cma-ref-testing.md',
+    'cma-ref-essay': 'cma-ref-essay.md',
+    'cma-ref-calculator': 'cma-ref-calculator.md',
+    // CIA Quick References
+    'cia-ref-ippf': 'cia-ref-ippf.md',
+    'cia-ref-standards': 'cia-ref-standards.md',
+    'cia-ref-testing': 'cia-ref-testing.md',
+    // CFP Quick References
+    'cfp-ref-limits': 'cfp-ref-limits.md',
+    'cfp-ref-ss': 'cfp-ref-ss.md',
+    'cfp-ref-testing': 'cfp-ref-testing.md',
+    'cfp-ref-calculator': 'cfp-ref-calculator.md',
+    // CISA Quick References
+    'cisa-ref-domains': 'cisa-ref-domains.md',
+    'cisa-ref-acronyms': 'cisa-ref-acronyms.md',
+    'cisa-ref-testing': 'cisa-ref-testing.md',
+    'cisa-ref-frameworks': 'cisa-ref-frameworks.md',
+  };
   
-  return `/src/data/${folder}/cheatsheets/${filename}`;
+  // Check cheatsheets first
+  const cheatsheetFilename = cheatsheetFilenameMap[itemId];
+  if (cheatsheetFilename) {
+    return { path: `/src/data/${folder}/cheatsheets/${cheatsheetFilename}`, isReference: false };
+  }
+  
+  // Check references
+  const referenceFilename = referenceFilenameMap[itemId];
+  if (referenceFilename) {
+    return { path: `/src/data/${folder}/references/${referenceFilename}`, isReference: true };
+  }
+  
+  return null;
 };
 
 export const CheatsheetViewer: React.FC<CheatsheetViewerProps> = ({ courseId, item }) => {
@@ -86,19 +132,24 @@ export const CheatsheetViewer: React.FC<CheatsheetViewerProps> = ({ courseId, it
       setError(null);
       
       try {
-        const path = getCheatsheetPath(courseId, item.id);
+        const pathInfo = getCheatsheetPath(courseId, item.id);
         
-        if (!path) {
-          setError(`Cheatsheet mapping not found for: ${item.id}`);
+        if (!pathInfo) {
+          setError(`Content mapping not found for: ${item.id}`);
           return;
         }
         
-        const loader = cheatsheetModules[path];
+        // Choose the appropriate modules based on type
+        const modules = pathInfo.isReference ? referenceModules : cheatsheetModules;
+        const loader = modules[pathInfo.path];
         
         if (!loader) {
           // List available paths for debugging
-          console.warn('Available cheatsheet paths:', Object.keys(cheatsheetModules));
-          setError(`Cheatsheet file not found: ${path}`);
+          const availablePaths = pathInfo.isReference 
+            ? Object.keys(referenceModules) 
+            : Object.keys(cheatsheetModules);
+          console.warn('Available paths:', availablePaths);
+          setError(`Content file not found: ${pathInfo.path}`);
           return;
         }
         

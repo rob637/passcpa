@@ -12,8 +12,17 @@ export interface CFPStudyGuide {
   lastUpdated: string;
   examFormat: ExamFormat;
   domains: CFPDomain[];
+  studyPlan: StudyWeek[];
   examTips: string[];
   testTakingStrategies: string[];
+}
+
+export interface StudyWeek {
+  week: number;
+  focus: string;
+  hours: number;
+  topics: string[];
+  activities: string[];
 }
 
 export interface ExamFormat {
@@ -710,6 +719,93 @@ export const CFP_COMPREHENSIVE_GUIDE: CFPStudyGuide = {
         'Money scripts and their implications',
         'Recognize when to refer to therapist/counselor',
       ],
+    },
+  ],
+
+  studyPlan: [
+    {
+      week: 1,
+      focus: 'General Principles & Financial Planning Process',
+      hours: 20,
+      topics: ['CFP Board Standards', 'Fiduciary duty', '7-step process', 'Ethics'],
+      activities: ['Read CFP Standards of Conduct', 'Practice 50 ethics MCQs'],
+    },
+    {
+      week: 2,
+      focus: 'Risk Management & Insurance Fundamentals',
+      hours: 25,
+      topics: ['Life insurance', 'Health insurance', 'Property & casualty', 'Disability'],
+      activities: ['Insurance needs analysis', 'Policy comparison practice'],
+    },
+    {
+      week: 3,
+      focus: 'Risk Management Deep Dive',
+      hours: 25,
+      topics: ['Long-term care', 'Business insurance', 'Liability coverage', 'Medicare'],
+      activities: ['Complete risk domain', 'Practice 100 MCQs'],
+    },
+    {
+      week: 4,
+      focus: 'Investment Planning Fundamentals',
+      hours: 25,
+      topics: ['Asset classes', 'Modern Portfolio Theory', 'CAPM', 'Alpha/Beta'],
+      activities: ['Master risk-return calculations', 'Portfolio construction'],
+    },
+    {
+      week: 5,
+      focus: 'Investment Strategies & Analysis',
+      hours: 25,
+      topics: ['Security analysis', 'Asset allocation', 'Rebalancing', 'Behavioral finance'],
+      activities: ['Investment policy statement practice', '100 investment MCQs'],
+    },
+    {
+      week: 6,
+      focus: 'Tax Planning',
+      hours: 25,
+      topics: ['Individual taxation', 'Capital gains', 'AMT', 'Tax-efficient strategies'],
+      activities: ['Tax calculation practice', 'Master basis rules'],
+    },
+    {
+      week: 7,
+      focus: 'Tax Planning & Entity Selection',
+      hours: 25,
+      topics: ['Business entities', 'Pass-through taxation', 'Estate/gift tax basics'],
+      activities: ['Complete tax domain', 'Practice 100 tax MCQs'],
+    },
+    {
+      week: 8,
+      focus: 'Retirement Planning Fundamentals',
+      hours: 25,
+      topics: ['Qualified plans', '401(k)', 'IRAs', 'Roth conversions', 'RMDs'],
+      activities: ['Retirement plan comparison', 'Contribution limit rules'],
+    },
+    {
+      week: 9,
+      focus: 'Retirement Distribution & Social Security',
+      hours: 25,
+      topics: ['Distribution strategies', 'Social Security optimization', 'Medicare planning'],
+      activities: ['Retirement income sequencing', 'SS break-even analysis'],
+    },
+    {
+      week: 10,
+      focus: 'Estate Planning',
+      hours: 25,
+      topics: ['Wills & trusts', 'Gift strategies', 'Charitable planning', 'Generation-skipping'],
+      activities: ['Trust selection practice', 'Estate tax calculations'],
+    },
+    {
+      week: 11,
+      focus: 'Psychology & Case Studies',
+      hours: 20,
+      topics: ['Behavioral biases', 'Client communication', 'Life transitions', 'Item sets'],
+      activities: ['Case study practice', 'Money script identification'],
+    },
+    {
+      week: 12,
+      focus: 'Final Review & Practice Exams',
+      hours: 30,
+      topics: ['All domains', 'Weak areas', 'Full-length practice exams'],
+      activities: ['2 complete practice exams', 'Review missed questions', 'Time management drills'],
     },
   ],
 

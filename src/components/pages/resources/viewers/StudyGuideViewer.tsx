@@ -45,7 +45,8 @@ interface StudyGuideData {
 
 interface BlueprintArea {
   id: string;
-  title: string;
+  title?: string;
+  name?: string; // CFP uses 'name' instead of 'title'
   weight: string;
   overview: string;
   keyTopics: TopicDetail[];
@@ -244,7 +245,7 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
                     )}
                     <div className="text-left">
                       <h3 className="font-semibold text-slate-900 dark:text-slate-100">
-                        {area.title}
+                        {area.title || area.name}
                       </h3>
                       <p className="text-sm text-slate-500 dark:text-slate-400">
                         {area.weight} of exam

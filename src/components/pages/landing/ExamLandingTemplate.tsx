@@ -239,7 +239,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               {config.description}
               <br className="hidden md:block" />
-              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — 100% free during beta.
+              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — start your free trial today.
             </p>
 
             {/* CTA Buttons */}
@@ -480,90 +480,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         {/* ================================================================
             PRICING SECTION
             ================================================================ */}
-        <section id="pricing" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                {config.name} Exam Prep Pricing
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
-                Premium exam prep at a fraction of traditional costs
-              </p>
-            </div>
-            
-            {/* Free Beta Card */}
-            <div className={`relative bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} rounded-2xl p-8 md:p-10 text-white shadow-xl`}>
-              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                Limited Time
-              </div>
-              
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">Free During Beta</h3>
-                  <p className="text-white/90 text-lg mb-4">
-                    Full access to all {config.name} content — no credit card required
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-white/90">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>{config.questionCount} practice questions</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>{config.lessonCount} expert lessons</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>{config.flashcardCount} flashcards</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>AI tutor available 24/7</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>Real-time adaptive engine</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>SM-2 spaced repetition</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>Offline mode (PWA)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
-                      <span>Founding member pricing forever</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-center md:text-right flex-shrink-0">
-                  <div className="mb-4">
-                    <span className="text-5xl md:text-6xl font-bold">$0</span>
-                    <span className="text-white/80 text-lg">/month</span>
-                  </div>
-                  <Link 
-                    to={config.registerPath}
-                    className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-bold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                  >
-                    Start Free Today
-                  </Link>
-                  <p className="text-white/70 text-sm mt-3">No credit card required</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <p className="text-white/80 text-sm">
-                  <strong>When we launch paid plans:</strong> {config.name} prep will be priced competitively — 
-                  significantly less than traditional review courses. Beta users automatically become founding members 
-                  with exclusive lifetime discounts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PricingSection config={config} colors={colors} />
 
         {/* ================================================================
             FINAL CTA SECTION
@@ -574,7 +491,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               Ready to Become a {config.name}?
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              Join thousands of candidates using VoraPrep. 100% free during beta!
+              Join thousands of candidates using VoraPrep. Start your 14-day free trial!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
@@ -649,6 +566,222 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         </div>
       </footer>
     </div>
+  );
+};
+
+// ============================================================================
+// PRICING SECTION COMPONENT
+// ============================================================================
+
+interface PricingSectionProps {
+  config: ExamLandingConfig;
+  colors: { bg: string; text: string; light: string; ring: string; gradient: string };
+}
+
+const PricingSection = ({ config, colors }: PricingSectionProps) => {
+  const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  
+  // Founder pricing is active until May 31, 2026
+  const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+  const isFounderWindow = new Date() < FOUNDER_DEADLINE;
+  
+  // Calculate days remaining
+  const daysRemaining = Math.max(0, Math.ceil((FOUNDER_DEADLINE.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)));
+  
+  const pricing = config.pricing;
+  const currentPrice = billingInterval === 'annual' 
+    ? (isFounderWindow ? pricing.founderAnnual : pricing.annual)
+    : (isFounderWindow ? pricing.founderMonthly : pricing.monthly);
+  const regularPrice = billingInterval === 'annual' ? pricing.annual : pricing.monthly;
+  const savings = billingInterval === 'annual' ? Math.round((1 - pricing.founderAnnual / pricing.annual) * 100) : 0;
+
+  const features = [
+    `${config.questionCount} practice questions`,
+    `${config.lessonCount || '100+'} expert lessons`,
+    config.flashcardCount ? `${config.flashcardCount} flashcards` : null,
+    'Vory AI tutor - unlimited',
+    'Real-time adaptive engine',
+    'SM-2 spaced repetition',
+    'Task-based simulations',
+    'Full exam simulations',
+    'Progress analytics',
+    'Offline mode (PWA)',
+    'Pass guarantee*',
+  ].filter(Boolean);
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    // Navigate to register with checkout params - actual checkout happens after auth
+    window.location.href = `/register?course=${config.id}&redirect=checkout&interval=${billingInterval}`;
+  };
+
+  return (
+    <section id="pricing" className="scroll-mt-20 py-16 md:py-24 px-6 bg-slate-50 dark:bg-slate-900">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            {config.name} Exam Prep Pricing
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Premium exam prep at a fraction of traditional costs. 14-day free trial included.
+          </p>
+        </div>
+
+        {/* Founder Banner */}
+        {isFounderWindow && (
+          <div className="mb-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-4 md:p-6 text-white text-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+              <span className="text-2xl">🏆</span>
+              <div>
+                <span className="font-bold text-lg">Founding Member Pricing</span>
+                <span className="mx-2">•</span>
+                <span>50% off locked forever when you subscribe by May 31</span>
+              </div>
+              <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold">
+                {daysRemaining} days left
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Billing Toggle */}
+        <div className="flex justify-center mb-10">
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-1.5 inline-flex shadow-lg border border-slate-200 dark:border-slate-700">
+            <button
+              onClick={() => setBillingInterval('annual')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                billingInterval === 'annual'
+                  ? `bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white shadow-md`
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              Annual
+              {isFounderWindow && <span className="ml-2 text-xs opacity-80">(Best Value)</span>}
+            </button>
+            <button
+              onClick={() => setBillingInterval('monthly')}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                billingInterval === 'monthly'
+                  ? `bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white shadow-md`
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
+            >
+              Monthly
+            </button>
+          </div>
+        </div>
+
+        {/* Pricing Card */}
+        <div className="max-w-lg mx-auto">
+          <div className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+            {/* Popular Badge */}
+            {billingInterval === 'annual' && (
+              <div className={`absolute top-0 right-0 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl`}>
+                MOST POPULAR
+              </div>
+            )}
+
+            {/* Price Header */}
+            <div className={`bg-gradient-to-br ${config.gradientFrom} ${config.gradientTo} p-8 text-center text-white`}>
+              <h3 className="text-xl font-bold mb-2">{config.name} Full Access</h3>
+              
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                {isFounderWindow && regularPrice !== currentPrice && (
+                  <span className="text-2xl text-white/60 line-through">${regularPrice}</span>
+                )}
+                <span className="text-5xl md:text-6xl font-bold">${currentPrice}</span>
+                <span className="text-white/80">/{billingInterval === 'annual' ? 'year' : 'month'}</span>
+              </div>
+              
+              {billingInterval === 'annual' && (
+                <p className="text-white/80 text-sm">
+                  Just ${(currentPrice / 12).toFixed(0)}/month • Save {savings}%
+                </p>
+              )}
+              
+              {isFounderWindow && (
+                <div className="mt-3 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm">
+                  <span>🏆</span>
+                  <span>Founder pricing locked forever</span>
+                </div>
+              )}
+            </div>
+
+            {/* Features */}
+            <div className="p-8">
+              <p className="text-center text-slate-600 dark:text-slate-400 mb-6">
+                Everything you need to pass the {config.name} exam
+              </p>
+              
+              <div className="space-y-3 mb-8">
+                {features.map((feature, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle className={`w-5 h-5 ${colors.text} flex-shrink-0`} />
+                    <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <button
+                onClick={handleCheckout}
+                disabled={isCheckingOut}
+                className={`w-full bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+              >
+                {isCheckingOut ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  <>
+                    Start 14-Day Free Trial
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
+              </button>
+              
+              <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-4">
+                No charge until trial ends • Cancel anytime
+              </p>
+            </div>
+
+            {/* Pass Guarantee */}
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 border-t border-emerald-100 dark:border-emerald-900/30">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div>
+                  <p className="font-semibold text-emerald-900 dark:text-emerald-300">Pass Guarantee</p>
+                  <p className="text-sm text-emerald-700 dark:text-emerald-400">
+                    *If you don't pass, we extend your subscription for free until you do. Study as long as you need.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Compare to competitors */}
+        <div className="mt-12 text-center">
+          <p className="text-slate-600 dark:text-slate-400 mb-4">
+            Compare to traditional review courses:
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            {config.competitors?.data.slice(0, 1).map((row, i) => (
+              <div key={i} className="flex items-center gap-6 bg-white dark:bg-slate-800 px-6 py-3 rounded-xl shadow border border-slate-200 dark:border-slate-700">
+                <span className="text-slate-500">{config.competitors?.names[0]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor1}</span></span>
+                <span className="text-slate-500">{config.competitors?.names[1]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor2}</span></span>
+                <span className="text-slate-500">{config.competitors?.names[2]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor3}</span></span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

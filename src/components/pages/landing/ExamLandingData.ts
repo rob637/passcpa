@@ -89,6 +89,14 @@ export interface ExamLandingConfig {
     text: string;
   }>;
   
+  // Pricing (used on landing page)
+  pricing: {
+    annual: number;           // Regular annual price
+    monthly: number;          // Regular monthly price
+    founderAnnual: number;    // Founder annual price (50% off)
+    founderMonthly: number;   // Founder monthly price (50% off)
+  };
+  
   // Footer links specific to this exam
   examSpecificLinks?: Array<{
     label: string;
@@ -106,9 +114,9 @@ export interface ExamLandingConfig {
 export const SHARED_WHY_VORAPREP = [
   {
     icon: DollarSign,
-    title: '100% Free (Beta)',
-    description: 'Full access to all features during our public beta. No credit card required.',
-    stat: '$0/yr',
+    title: 'Affordable Pricing',
+    description: 'Founder pricing: 50% off for our first users. Quality prep at a fraction of what others charge.',
+    stat: 'Save 50%',
   },
   {
     icon: Brain,
@@ -164,6 +172,13 @@ export const CPA_CONFIG: ExamLandingConfig = {
   
   registerPath: '/register?course=cpa',
   loginPath: '/login?course=cpa',
+  
+  pricing: {
+    annual: 199,
+    monthly: 29,
+    founderAnnual: 99,
+    founderMonthly: 14,
+  },
   
   notices: [
     {
@@ -230,6 +245,13 @@ export const EA_CONFIG: ExamLandingConfig = {
   registerPath: '/register?course=ea',
   loginPath: '/login?course=ea',
   
+  pricing: {
+    annual: 59,
+    monthly: 9,
+    founderAnnual: 29,
+    founderMonthly: 5,
+  },
+  
   examParts: [
     { part: 'Part 1', title: 'Individuals', topics: ['Filing Requirements', 'Income & Deductions', 'Credits & Adjustments', 'Tax Calculations'], questions: '700+', time: '3.5 hours' },
     { part: 'Part 2', title: 'Businesses', topics: ['Business Entities', 'Business Income', 'Deductions & Credits', 'Specialized Returns'], questions: '700+', time: '3.5 hours' },
@@ -286,6 +308,13 @@ export const CMA_CONFIG: ExamLandingConfig = {
   
   registerPath: '/register?course=cma',
   loginPath: '/login?course=cma',
+  
+  pricing: {
+    annual: 99,
+    monthly: 14,
+    founderAnnual: 49,
+    founderMonthly: 7,
+  },
   
   examParts: [
     { part: 'Part 1', title: 'Financial Planning, Performance & Analytics', topics: ['External Financial Reporting', 'Planning & Budgeting', 'Performance Management', 'Cost Management', 'Internal Controls', 'Technology & Analytics'], questions: '100 MCQs + 2 Essays', time: '4 hours' },
@@ -344,6 +373,13 @@ export const CIA_CONFIG: ExamLandingConfig = {
   registerPath: '/register?course=cia',
   loginPath: '/login?course=cia',
   
+  pricing: {
+    annual: 99,
+    monthly: 14,
+    founderAnnual: 49,
+    founderMonthly: 7,
+  },
+  
   examParts: [
     { part: 'Part 1', title: 'Essentials of Internal Auditing', topics: ['Foundations of Internal Auditing', 'Independence & Objectivity', 'Proficiency & Due Care', 'Quality Assurance'], questions: '125 MCQs', time: '2.5 hours' },
     { part: 'Part 2', title: 'Practice of Internal Auditing', topics: ['Managing the Audit Function', 'Planning Engagements', 'Performing Engagements', 'Communicating Results'], questions: '100 MCQs', time: '2 hours' },
@@ -400,6 +436,13 @@ export const CFP_CONFIG: ExamLandingConfig = {
   
   registerPath: '/register?course=cfp',
   loginPath: '/login?course=cfp',
+  
+  pricing: {
+    annual: 149,
+    monthly: 19,
+    founderAnnual: 74,
+    founderMonthly: 10,
+  },
   
   examParts: [
     { part: 'Domain 1', title: 'Professional Conduct & Regulation', topics: ['CFP Board Standards', 'Fiduciary Duty', 'Practice Standards'], questions: '7% of exam', time: '' },
@@ -463,6 +506,13 @@ export const CISA_CONFIG: ExamLandingConfig = {
   
   registerPath: '/register?course=cisa',
   loginPath: '/login?course=cisa',
+  
+  pricing: {
+    annual: 79,
+    monthly: 12,
+    founderAnnual: 39,
+    founderMonthly: 6,
+  },
   
   examParts: [
     { part: 'Domain 1', title: 'Information Systems Auditing Process', topics: ['Audit Standards', 'Risk-Based Auditing', 'Audit Planning', 'Evidence Collection'], questions: '18% of exam', time: '' },

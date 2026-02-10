@@ -3,11 +3,12 @@
  * - Daily study reminder push notifications (FCM)
  * - Weekly progress report emails (Resend)
  * - Custom branded password reset emails
+ * - Stripe subscription management
  */
 
 const { onSchedule } = require('firebase-functions/v2/scheduler');
 const { onDocumentUpdated, onDocumentCreated } = require('firebase-functions/v2/firestore');
-const { onCall, HttpsError } = require('firebase-functions/v2/https');
+const { onCall, onRequest, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
 const { Resend } = require('resend');
 
@@ -15,6 +16,65 @@ const { Resend } = require('resend');
 admin.initializeApp();
 const db = admin.firestore();
 const messaging = admin.messaging();
+
+// ============================================================================
+// STRIPE CONFIGURATION
+// ============================================================================
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
+
+let stripe = null;
+if (STRIPE_SECRET_KEY) {
+  const Stripe = require('stripe');
+  stripe = new Stripe(STRIPE_SECRET_KEY, {
+    apiVersion: '2024-12-18.acacia',
+  });
+}
+
+// Founder pricing window - users who subscribe before this date get 50% off
+const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+
+// Price lookup keys - maps our internal keys to what we'll use in checkout
+// The lookup keys should match what you set in Stripe dashboard
+const PRICE_LOOKUP_KEYS = {
+  cpa: {
+    annual: 'cpa_annual',
+    monthly: 'cpa_monthly',
+    founder_annual: 'cpa_founder_annual',
+    founder_monthly: 'cpa_founder_monthly',
+  },
+  ea: {
+    annual: 'ea_annual',
+    monthly: 'ea_monthly',
+    founder_annual: 'ea_founder_annual',
+    founder_monthly: 'ea_founder_monthly',
+  },
+  cma: {
+    annual: 'cma_annual',
+    monthly: 'cma_monthly',
+    founder_annual: 'cma_founder_annual',
+    founder_monthly: 'cma_founder_monthly',
+  },
+  cia: {
+    annual: 'cia_annual',
+    monthly: 'cia_monthly',
+    founder_annual: 'cia_founder_annual',
+    founder_monthly: 'cia_founder_monthly',
+  },
+  cfp: {
+    annual: 'cfp_annual',
+    monthly: 'cfp_monthly',
+    founder_annual: 'cfp_founder_annual',
+    founder_monthly: 'cfp_founder_monthly',
+  },
+  cisa: {
+    annual: 'cisa_annual',
+    monthly: 'cisa_monthly',
+    founder_annual: 'cisa_founder_annual',
+    founder_monthly: 'cisa_founder_monthly',
+  },
+};
 
 // ============================================================================
 // COURSE-SPECIFIC CONFIGURATION
@@ -583,6 +643,179 @@ function generateOnboardingReminderEmail(displayName, courseConfig = getCourseCo
 }
 
 // ============================================================================
+// TRIAL EXPIRATION CHECK
+// Runs daily at 3am - updates subscription status for expired trials
+// ============================================================================
+
+exports.checkTrialExpirations = onSchedule({
+  schedule: 'every day 03:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 120,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  console.log('Checking for expired trials...');
+  
+  try {
+    const now = admin.firestore.Timestamp.now();
+    
+    // Find subscriptions where trial has ended and status is still 'trialing'
+    const expiredTrialsSnapshot = await db.collection('subscriptions')
+      .where('status', '==', 'trialing')
+      .where('trialEnd', '<=', now)
+      .get();
+    
+    console.log(`Found ${expiredTrialsSnapshot.size} expired trials`);
+    
+    let updatedCount = 0;
+    let emailsSent = 0;
+    
+    for (const subDoc of expiredTrialsSnapshot.docs) {
+      const userId = subDoc.id;
+      const subData = subDoc.data();
+      
+      try {
+        // Update subscription status to 'past_due' (trial expired, needs payment)
+        await db.collection('subscriptions').doc(userId).update({
+          status: 'past_due',
+          updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        
+        updatedCount++;
+        console.log(`Updated subscription status for user ${userId}`);
+        
+        // Send trial expired email if resend is configured
+        if (resend) {
+          // Get user info
+          const userDoc = await db.collection('users').doc(userId).get();
+          const userData = userDoc.exists ? userDoc.data() : {};
+          
+          try {
+            const authUser = await admin.auth().getUser(userId);
+            const userEmail = authUser.email;
+            const displayName = userData?.displayName || authUser.displayName || 'there';
+            const courseConfig = getCourseConfig(userData?.currentCourse);
+            
+            if (userEmail) {
+              const { error } = await resend.emails.send({
+                from: FROM_EMAIL,
+                to: userEmail,
+                subject: `Your VoraPrep trial has ended - upgrade to continue studying`,
+                html: generateTrialExpiredEmail(displayName, courseConfig),
+              });
+              
+              if (error) {
+                console.error(`Error sending trial expired email to ${userEmail}:`, error);
+              } else {
+                console.log(`Sent trial expired email to ${userEmail}`);
+                emailsSent++;
+              }
+            }
+          } catch (authError) {
+            console.error(`Could not get auth user ${userId}:`, authError.message);
+          }
+        }
+        
+      } catch (updateError) {
+        console.error(`Error updating trial for user ${userId}:`, updateError);
+      }
+    }
+    
+    console.log(`Trial expiration check complete: ${updatedCount} updated, ${emailsSent} emails sent`);
+    
+  } catch (error) {
+    console.error('Error checking trial expirations:', error);
+    throw error;
+  }
+});
+
+// Trial Expired Email Template
+function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your VoraPrep Trial Has Ended</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+          <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
+        </div>
+        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Your free trial has ended, ${displayName}
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        We hope you enjoyed exploring VoraPrep! Your 14-day trial has expired, but don't worry - you can pick up right where you left off.
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        Upgrade now to continue your ${examName} exam prep with:
+      </p>
+      
+      <ul style="color: #475569; font-size: 16px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>✅ Unlimited practice questions</li>
+        <li>✅ AI tutor for instant explanations</li>
+        <li>✅ Personalized study analytics</li>
+        <li>✅ Full access to all content</li>
+      </ul>
+      
+      <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 20px; margin-bottom: 25px;">
+        <p style="color: #92400e; font-size: 14px; margin: 0; font-weight: 600;">
+          🎉 Founder Pricing Available!
+        </p>
+        <p style="color: #92400e; font-size: 14px; margin: 8px 0 0 0;">
+          Lock in 50% off for life if you subscribe before May 31, 2026.
+        </p>
+      </div>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://voraprep.com/${courseConfig.slug || 'cpa'}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Upgrade Now →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Questions? Just reply to this email!
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="https://voraprep.com/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
 // FCM TOKEN MANAGEMENT
 // Log/track FCM token changes
 // ============================================================================
@@ -917,9 +1150,9 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
     </p>
     
     <div style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0;">
-      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">🎁 Beta Bonus</div>
+      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">� Welcome Aboard</div>
       <div style="font-size: 16px; opacity: 0.95;">
-        As a beta user, you have <strong>100% FREE access</strong> to all features:
+        You now have access to <strong>all premium features</strong>:
       </div>
       <ul style="margin: 15px 0 0 0; padding-left: 20px;">
         <li>2,500+ practice questions</li>
@@ -975,7 +1208,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
   
   <!-- Footer -->
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
-    <p>Questions? Reply to this email or visit our <a href="https://voraprep.com/pricing" style="color: #64748b;">FAQ</a></p>
+    <p>Questions? Reply to this email or visit our <a href="https://voraprep.com" style="color: #64748b;">website</a></p>
     <p style="margin-top: 15px;">
       VoraPrep - ${courseConfig.tagline}
     </p>
@@ -1018,14 +1251,14 @@ function generateWaitlistEmail(email) {
         You're on the list!
       </h1>
       <p style="color: #64748b; font-size: 16px;">
-        Thanks for joining the VoraPrep beta. We're excited to help you pass your exam!
+        Thanks for joining VoraPrep. We're excited to help you pass your exam!
       </p>
     </div>
     
     <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center;">
-      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">🚀 Why Wait?</div>
+      <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">🚀 Start Your Free Trial</div>
       <div style="font-size: 16px; opacity: 0.95; margin-bottom: 15px;">
-        Our beta is <strong>100% FREE</strong> with all features unlocked!
+        Get <strong>14 days free</strong> with full access to all features!
       </div>
       <a href="https://voraprep.com/register" style="display: inline-block; background: white; color: #059669; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
         Create Your Free Account →
@@ -1079,6 +1312,530 @@ function generateWaitlistEmail(email) {
     </p>
   </div>
   
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// STRIPE: CREATE CHECKOUT SESSION
+// Called from frontend to start subscription checkout
+// ============================================================================
+
+exports.createCheckoutSession = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: ['STRIPE_SECRET_KEY'],
+}, async (request) => {
+  // Validate user is authenticated
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in to subscribe.');
+  }
+
+  const { courseId, interval } = request.data; // courseId: 'cpa', interval: 'annual' or 'monthly'
+  const userId = request.auth.uid;
+  const userEmail = request.auth.token.email;
+
+  if (!courseId || !interval) {
+    throw new HttpsError('invalid-argument', 'Missing courseId or interval');
+  }
+
+  if (!stripe) {
+    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  }
+
+  const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
+  const validIntervals = ['annual', 'monthly'];
+
+  if (!validCourses.includes(courseId)) {
+    throw new HttpsError('invalid-argument', 'Invalid course');
+  }
+  if (!validIntervals.includes(interval)) {
+    throw new HttpsError('invalid-argument', 'Invalid interval');
+  }
+
+  try {
+    // Determine if user qualifies for founder pricing
+    const isFounderWindow = new Date() < FOUNDER_DEADLINE;
+    const priceType = isFounderWindow ? `founder_${interval}` : interval;
+    const lookupKey = PRICE_LOOKUP_KEYS[courseId][priceType];
+
+    // Look up the price by lookup_key
+    const prices = await stripe.prices.list({
+      lookup_keys: [lookupKey],
+      active: true,
+      limit: 1,
+    });
+
+    if (prices.data.length === 0) {
+      console.error(`Price not found for lookup_key: ${lookupKey}`);
+      throw new HttpsError('not-found', 'Price not found. Please contact support.');
+    }
+
+    const priceId = prices.data[0].id;
+
+    // Check if user already has a Stripe customer ID
+    const userDoc = await db.collection('users').doc(userId).get();
+    let stripeCustomerId = userDoc.data()?.stripeCustomerId;
+
+    // Create customer if needed
+    if (!stripeCustomerId) {
+      const customer = await stripe.customers.create({
+        email: userEmail,
+        metadata: {
+          firebaseUserId: userId,
+        },
+      });
+      stripeCustomerId = customer.id;
+      
+      // Save customer ID to user profile
+      await db.collection('users').doc(userId).update({
+        stripeCustomerId: stripeCustomerId,
+      });
+    }
+
+    // Create checkout session
+    const session = await stripe.checkout.sessions.create({
+      customer: stripeCustomerId,
+      payment_method_types: ['card'],
+      mode: 'subscription',
+      line_items: [
+        {
+          price: priceId,
+          quantity: 1,
+        },
+      ],
+      success_url: 'https://voraprep.com/checkout-success?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: 'https://voraprep.com/pricing',
+      subscription_data: {
+        metadata: {
+          firebaseUserId: userId,
+          courseId: courseId,
+          isFounder: isFounderWindow.toString(),
+        },
+      },
+      metadata: {
+        firebaseUserId: userId,
+        courseId: courseId,
+      },
+    });
+
+    console.log(`Checkout session created for user ${userId}, course ${courseId}, price ${lookupKey}`);
+    
+    return { 
+      sessionId: session.id,
+      url: session.url,
+    };
+  } catch (error) {
+    console.error('Checkout session error:', error);
+    throw new HttpsError('internal', 'Failed to create checkout session');
+  }
+});
+
+// ============================================================================
+// STRIPE: WEBHOOK HANDLER
+// Receives events from Stripe (payment success, subscription changes, etc.)
+// ============================================================================
+
+exports.stripeWebhook = onRequest({
+  cors: false, // Stripe sends POST directly, no CORS needed
+  invoker: 'public', // Allow Stripe to call without authentication
+  secrets: ['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET'],
+}, async (req, res) => {
+  if (req.method !== 'POST') {
+    res.status(405).send('Method not allowed');
+    return;
+  }
+
+  if (!stripe) {
+    res.status(500).send('Stripe not configured');
+    return;
+  }
+
+  const sig = req.headers['stripe-signature'];
+  let event;
+
+  try {
+    // Verify webhook signature
+    event = stripe.webhooks.constructEvent(
+      req.rawBody,
+      sig,
+      STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err.message);
+    res.status(400).send(`Webhook Error: ${err.message}`);
+    return;
+  }
+
+  console.log(`Stripe webhook received: ${event.type}`);
+
+  try {
+    switch (event.type) {
+      case 'checkout.session.completed': {
+        const session = event.data.object;
+        await handleCheckoutComplete(session);
+        break;
+      }
+      
+      case 'customer.subscription.created':
+      case 'customer.subscription.updated': {
+        const subscription = event.data.object;
+        await handleSubscriptionUpdate(subscription);
+        break;
+      }
+      
+      case 'customer.subscription.deleted': {
+        const subscription = event.data.object;
+        await handleSubscriptionCanceled(subscription);
+        break;
+      }
+      
+      case 'invoice.payment_failed': {
+        const invoice = event.data.object;
+        await handlePaymentFailed(invoice);
+        break;
+      }
+      
+      default:
+        console.log(`Unhandled event type: ${event.type}`);
+    }
+
+    res.status(200).json({ received: true });
+  } catch (error) {
+    console.error('Webhook handler error:', error);
+    res.status(500).send('Webhook handler failed');
+  }
+});
+
+// Handle successful checkout
+async function handleCheckoutComplete(session) {
+  const userId = session.metadata?.firebaseUserId;
+  const courseId = session.metadata?.courseId;
+  
+  if (!userId) {
+    console.error('No firebaseUserId in checkout session metadata');
+    return;
+  }
+
+  console.log(`Checkout complete for user ${userId}, course ${courseId}`);
+
+  // Send welcome email
+  if (resend) {
+    const userDoc = await db.collection('users').doc(userId).get();
+    const userEmail = userDoc.data()?.email;
+    const userName = userDoc.data()?.displayName || 'there';
+    const isFounder = session.subscription_data?.metadata?.isFounder === 'true';
+
+    if (userEmail) {
+      try {
+        await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: isFounder 
+            ? '🎉 Welcome, Founding Member!' 
+            : '🎉 Welcome to VoraPrep!',
+          html: getWelcomeSubscriberEmailHTML(userName, courseId, isFounder),
+        });
+      } catch (emailError) {
+        console.error('Error sending welcome email:', emailError);
+      }
+    }
+  }
+}
+
+// Handle subscription updates (new, renewed, plan changed)
+async function handleSubscriptionUpdate(subscription) {
+  const userId = subscription.metadata?.firebaseUserId;
+  const courseId = subscription.metadata?.courseId;
+  
+  if (!userId) {
+    // Try to find user by customer ID
+    const customerId = subscription.customer;
+    const usersSnapshot = await db.collection('users')
+      .where('stripeCustomerId', '==', customerId)
+      .limit(1)
+      .get();
+    
+    if (usersSnapshot.empty) {
+      console.error('No user found for subscription:', subscription.id);
+      return;
+    }
+    
+    const userDoc = usersSnapshot.docs[0];
+    await updateUserSubscription(userDoc.id, subscription, courseId);
+  } else {
+    await updateUserSubscription(userId, subscription, courseId);
+  }
+}
+
+// Update user's subscription in Firestore
+async function updateUserSubscription(userId, subscription, courseId) {
+  const status = subscription.status; // 'active', 'past_due', 'canceled', 'trialing'
+  const isFounder = subscription.metadata?.isFounder === 'true';
+  
+  const subscriptionData = {
+    stripeSubscriptionId: subscription.id,
+    stripeCustomerId: subscription.customer,
+    status: status,
+    courseId: courseId || subscription.metadata?.courseId,
+    isFounder: isFounder,
+    currentPeriodStart: new Date(subscription.current_period_start * 1000),
+    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+    cancelAtPeriodEnd: subscription.cancel_at_period_end,
+    priceId: subscription.items.data[0]?.price.id,
+    interval: subscription.items.data[0]?.price.recurring?.interval,
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+  };
+
+  // Store in subscriptions collection
+  await db.collection('subscriptions').doc(userId).set(subscriptionData, { merge: true });
+
+  // Also update the tier in the subscription doc
+  if (status === 'active' || status === 'trialing') {
+    await db.collection('subscriptions').doc(userId).update({
+      tier: subscriptionData.interval === 'year' ? 'annual' : 'monthly',
+    });
+  }
+
+  console.log(`Updated subscription for user ${userId}: ${status}`);
+}
+
+// Handle subscription canceled
+async function handleSubscriptionCanceled(subscription) {
+  const customerId = subscription.customer;
+  
+  // Find user by customer ID
+  const usersSnapshot = await db.collection('users')
+    .where('stripeCustomerId', '==', customerId)
+    .limit(1)
+    .get();
+  
+  if (usersSnapshot.empty) {
+    console.error('No user found for canceled subscription:', subscription.id);
+    return;
+  }
+  
+  const userId = usersSnapshot.docs[0].id;
+  
+  await db.collection('subscriptions').doc(userId).update({
+    status: 'canceled',
+    tier: 'free',
+    canceledAt: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  console.log(`Subscription canceled for user ${userId}`);
+}
+
+// Handle payment failure
+async function handlePaymentFailed(invoice) {
+  const customerId = invoice.customer;
+  
+  // Find user by customer ID
+  const usersSnapshot = await db.collection('users')
+    .where('stripeCustomerId', '==', customerId)
+    .limit(1)
+    .get();
+  
+  if (usersSnapshot.empty) {
+    console.error('No user found for failed payment:', invoice.id);
+    return;
+  }
+  
+  const userDoc = usersSnapshot.docs[0];
+  const userId = userDoc.id;
+  const userEmail = userDoc.data()?.email;
+
+  // Update subscription status
+  await db.collection('subscriptions').doc(userId).update({
+    status: 'past_due',
+    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+  });
+
+  // Send payment failed email
+  if (resend && userEmail) {
+    try {
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: userEmail,
+        subject: '⚠️ Payment Failed - Action Required',
+        html: getPaymentFailedEmailHTML(userDoc.data()?.displayName || 'there'),
+      });
+    } catch (emailError) {
+      console.error('Error sending payment failed email:', emailError);
+    }
+  }
+
+  console.log(`Payment failed for user ${userId}`);
+}
+
+// ============================================================================
+// STRIPE: CUSTOMER PORTAL SESSION
+// Allows users to manage their subscription (cancel, update payment, etc.)
+// ============================================================================
+
+exports.createCustomerPortalSession = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  secrets: ['STRIPE_SECRET_KEY'],
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+
+  if (!stripe) {
+    throw new HttpsError('failed-precondition', 'Stripe not configured');
+  }
+
+  const userId = request.auth.uid;
+
+  try {
+    const userDoc = await db.collection('users').doc(userId).get();
+    const stripeCustomerId = userDoc.data()?.stripeCustomerId;
+
+    if (!stripeCustomerId) {
+      throw new HttpsError('not-found', 'No subscription found');
+    }
+
+    const session = await stripe.billingPortal.sessions.create({
+      customer: stripeCustomerId,
+      return_url: 'https://voraprep.com/settings',
+    });
+
+    return { url: session.url };
+  } catch (error) {
+    console.error('Customer portal error:', error);
+    throw new HttpsError('internal', 'Failed to create portal session');
+  }
+});
+
+// ============================================================================
+// EMAIL TEMPLATES FOR SUBSCRIPTION
+// ============================================================================
+
+function getWelcomeSubscriberEmailHTML(name, courseId, isFounder) {
+  const courseConfig = getCourseConfig(courseId);
+  const founderBadge = isFounder 
+    ? '<div style="display: inline-block; background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #78350f; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;">🏆 FOUNDING MEMBER</div>'
+    : '';
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
+        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
+      </div>
+    </div>
+    
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      ${founderBadge}
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Welcome to VoraPrep${isFounder ? ', Founding Member!' : '!'}
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+        Hi ${name}! 🎉
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+        Your ${courseConfig.name} subscription is now active. You have full access to everything:
+      </p>
+      
+      <ul style="color: #475569; font-size: 16px; line-height: 2;">
+        <li>All practice questions</li>
+        <li>Vory AI tutor - unlimited</li>
+        <li>Task-based simulations</li>
+        <li>Full exam simulator</li>
+        <li>Spaced repetition learning</li>
+      </ul>
+
+      ${isFounder ? `
+      <div style="background: #fef3c7; border: 1px solid #fcd34d; padding: 15px; border-radius: 10px; margin: 20px 0;">
+        <strong style="color: #92400e;">🔒 Founder Pricing Locked</strong>
+        <p style="color: #78350f; margin: 5px 0 0 0; font-size: 14px;">
+          You'll keep your 50% discount forever, as long as your subscription stays active.
+        </p>
+      </div>
+      ` : ''}
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://voraprep.com/dashboard" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+          Start Studying
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; text-align: center;">
+        Let's get you to 75+! 🎯
+      </p>
+    </div>
+    
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px;">
+      <p>VoraPrep - ${courseConfig.tagline}</p>
+    </div>
+  </div>
+</body>
+</html>
+  `;
+}
+
+function getPaymentFailedEmailHTML(name) {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 10px;"></div>
+        <span style="font-size: 24px; font-weight: 700; color: #0f172a;">VoraPrep</span>
+      </div>
+    </div>
+    
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      <h1 style="color: #dc2626; font-size: 24px; margin: 0 0 15px 0;">
+        ⚠️ Payment Failed
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+        Hi ${name},
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+        We weren't able to process your latest payment. Your access may be limited until this is resolved.
+      </p>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+        Please update your payment method to continue studying without interruption.
+      </p>
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://voraprep.com/settings" style="display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600;">
+          Update Payment Method
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px;">
+        If you have any questions, reply to this email and we'll help you out.
+      </p>
+    </div>
+    
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px;">
+      <p>VoraPrep - Your AI-Powered Exam Prep Partner</p>
+    </div>
+  </div>
 </body>
 </html>
   `;

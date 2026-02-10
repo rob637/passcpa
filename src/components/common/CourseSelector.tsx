@@ -264,7 +264,7 @@ export const CourseSelector: React.FC<CourseSelectorProps> = ({
             <div className="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <GraduationCap className="w-3.5 h-3.5 inline mr-1" />
-                All exam preps included free during beta!
+                Study multiple certifications with one subscription!
               </p>
             </div>
           )}

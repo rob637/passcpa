@@ -6,6 +6,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { trackEvent } from '../../../services/analytics';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
+import { captureReferralFromUrl } from '../../../services/referral';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -13,10 +14,22 @@ const Register = () => {
   const { signUp, signInWithGoogle, loading } = useAuth();
 
   // Store course from URL param for onboarding pre-selection
+  // Also store checkout redirect params if coming from pricing page
+  // Capture referral code if present in URL
   useEffect(() => {
     const course = searchParams.get('course');
+    const redirect = searchParams.get('redirect');
+    const interval = searchParams.get('interval');
+    
+    // Capture referral code from ?ref=CODE
+    captureReferralFromUrl();
+    
     if (course) {
       localStorage.setItem('pendingCourse', course);
+    }
+    // Store checkout params for post-onboarding redirect
+    if (redirect === 'checkout' && course && interval) {
+      localStorage.setItem('pendingCheckout', JSON.stringify({ course, interval }));
     }
   }, [searchParams]);
 

@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { Outlet, NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { Flame, WifiOff } from 'lucide-react';
 import { PageTransition } from '../common/PageTransition';
+import { TrialBanner } from '../common/SubscriptionGate';
+import { PWAInstallPrompt, PWAInstallBanner } from '../common/PWAInstallPrompt';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
 import * as feedback from '../../services/feedback';
@@ -147,7 +149,7 @@ const MainLayout = () => {
   }, [location.pathname, navItems, currentCourseId, searchParams]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+    <div className="min-h-app bg-slate-50 dark:bg-slate-900">
       {/* Skip Navigation Link - Accessibility */}
       <a
         href="#main-content"
@@ -172,8 +174,14 @@ const MainLayout = () => {
         </div>
       )}
 
+      {/* Trial Status Banner - Shows when trial ending soon or expired */}
+      <TrialBanner />
+
+      {/* PWA Install Banner - Compact top banner for install prompt */}
+      <PWAInstallBanner />
+
       {/* App Shell - Max width container that centers the entire app */}
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-screen">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row safe-top safe-bottom min-h-app">
         {/* Desktop Sidebar */}
         <aside 
           className="hidden md:flex flex-col w-64 flex-shrink-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-screen sticky top-0 z-40"
@@ -320,6 +328,9 @@ const MainLayout = () => {
           ))}
         </div>
       </nav>
+
+      {/* PWA Install Prompt Modal - Bottom sheet for install flow */}
+      <PWAInstallPrompt />
     </div>
   );
 };

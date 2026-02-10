@@ -91,6 +91,11 @@ const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
 
+// Checkout Pages
+const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
+const CheckoutCancel = lazy(() => import('./components/pages/CheckoutCancel'));
+const StartCheckout = lazy(() => import('./components/pages/StartCheckout'));
+
 // Business Pages
 const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
 // Unified Landing Pages (new template system)
@@ -448,6 +453,34 @@ function App() {
                 <Route
                   path="/pricing"
                   element={<Navigate to="/" replace />}
+                />
+                
+                {/* Checkout flow pages */}
+                <Route
+                  path="/checkout-success"
+                  element={
+                    <SuspensePage>
+                      <CheckoutSuccess />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/checkout-cancel"
+                  element={
+                    <SuspensePage>
+                      <CheckoutCancel />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/start-checkout"
+                  element={
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <StartCheckout />
+                      </SuspensePage>
+                    </ProtectedRoute>
+                  }
                 />
 
                 {/* Onboarding (protected but different layout) */}

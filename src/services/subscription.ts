@@ -39,12 +39,14 @@ export interface PlanLimits {
 export interface UserSubscription {
   tier: SubscriptionTier;
   status: SubscriptionStatus;
+  courseId?: string; // Which exam/course this subscription is for
   stripeCustomerId?: string;
   stripeSubscriptionId?: string;
   currentPeriodStart?: Date;
   currentPeriodEnd?: Date;
   cancelAtPeriodEnd?: boolean;
   trialEnd?: Date;
+  isFounderPricing?: boolean; // Locked in founder pricing
   createdAt: Date;
   updatedAt: Date;
 }
@@ -54,36 +56,45 @@ export interface UserSubscription {
 // ============================================================================
 
 // ==========================================================================
-// PRICING STRATEGY: Option C "Hybrid Launch"
-// Phase 1 (Now-Q2 2026): 100% free, all features unlocked (Beta)
-// Phase 2 (Q3 2026): Free w/ limits + $99/yr Pro + $199 Lifetime
-// Phase 3 (Q1 2027+): Tighter limits + $149/yr Pro + $349 Lifetime
+// PRICING STRATEGY: Per-Exam Subscriptions with Founder Pricing
+// Feb 19, 2026 Launch: 14-day free trial → Paid subscription
+// Founder pricing (50% off) locked for users who subscribe by May 31, 2026
 // ==========================================================================
 
-// Current Phase: BETA (all features free)
-const IS_BETA = true; // Set to false when launching paid tiers
+// Launch Date: Feb 19, 2026 - No longer beta, paid subscriptions active
+const IS_BETA = false;
+
+// Founder pricing deadline - May 31, 2026
+const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+
+// Check if founder pricing is active
+export const isFounderPricingActive = (): boolean => new Date() < FOUNDER_DEADLINE;
+
+// Per-exam pricing (annual amounts)
+export const EXAM_PRICING = {
+  cpa: { annual: 199, monthly: 29, founderAnnual: 99, founderMonthly: 14 },
+  ea: { annual: 59, monthly: 9, founderAnnual: 29, founderMonthly: 5 },
+  cma: { annual: 99, monthly: 14, founderAnnual: 49, founderMonthly: 7 },
+  cia: { annual: 99, monthly: 14, founderAnnual: 49, founderMonthly: 7 },
+  cfp: { annual: 149, monthly: 19, founderAnnual: 74, founderMonthly: 10 },
+  cisa: { annual: 79, monthly: 12, founderAnnual: 39, founderMonthly: 6 },
+} as const;
 
 export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   free: {
     tier: 'free',
-    name: 'Free',
+    name: 'Free Trial',
     price: 0,
     interval: null,
-    features: IS_BETA ? [
-      '✨ BETA: All features unlocked!',
-      'Unlimited questions',
-      'All 6 exam sections',
-      'Vory AI companion included',
+    features: [
+      '14-day full access trial',
+      'All practice questions',
+      'Vory AI tutor included',
       'TBS simulations',
       'Progress tracking',
-    ] : [
-      '50 questions per day',
-      'All 6 exam sections',
-      '5 Vory messages/day',
-      '1 TBS simulation/day',
-      'Progress tracking',
     ],
-    limits: IS_BETA ? {
+    limits: {
+      // Trial users get full access for 14 days
       questionsPerDay: Infinity,
       aiTutorMessages: Infinity,
       examSections: 'unlimited',
@@ -91,28 +102,20 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
       offlineMode: true,
       progressAnalytics: true,
       studyPlans: true,
-    } : {
-      questionsPerDay: 50,
-      aiTutorMessages: 5,
-      examSections: 'unlimited', // All sections free!
-      tbsAccess: true, // 1/day enforced in UI
-      offlineMode: false,
-      progressAnalytics: false,
-      studyPlans: false,
     },
   },
   monthly: {
     tier: 'monthly',
-    name: 'Pro Monthly',
-    price: 12.99,
+    name: 'Monthly',
+    price: 29, // CPA base price, varies by exam
     interval: 'month',
     features: [
       'Unlimited questions',
-      'Unlimited Vory access',
+      'Unlimited Vory AI access',
       'Unlimited TBS practice',
       'Offline mode',
       'Advanced analytics',
-      'Personalized study plans',
+      'Cancel anytime',
     ],
     limits: {
       questionsPerDay: Infinity,
@@ -126,12 +129,12 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   },
   quarterly: {
     tier: 'quarterly',
-    name: 'Pro Quarterly',
-    price: 29.99,
+    name: 'Quarterly',
+    price: 69,
     interval: 'quarter',
     features: [
-      'Everything in Pro Monthly',
-      'Save 23%',
+      'Everything in Monthly',
+      'Save ~20%',
       'Priority support',
     ],
     limits: {
@@ -146,12 +149,12 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   },
   annual: {
     tier: 'annual',
-    name: 'Pro Annual',
-    price: 99,
+    name: 'Annual',
+    price: 199, // CPA base price, varies by exam
     interval: 'year',
     features: [
-      'Everything in Pro Monthly',
-      'Save 36% ($8.25/mo)',
+      'Everything in Monthly',
+      'Best value - Save 42%',
       'Priority support',
       'Pass guarantee',
     ],
@@ -168,14 +171,10 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   lifetime: {
     tier: 'lifetime',
     name: 'Lifetime Access',
-    price: 399,
+    price: 0, // No longer offered
     interval: 'once',
     features: [
-      'Lifetime CPA access',
-      'One-time payment',
-      'All future updates',
-      'Blueprint changes included',
-      'Founding Member badge',
+      'Legacy plan - no longer available',
     ],
     limits: {
       questionsPerDay: Infinity,
@@ -222,23 +221,55 @@ class SubscriptionService {
   }
 
   /**
-   * Create default free subscription for new users
+   * Create default free subscription with 14-day trial for new users
    */
-  async createFreeSubscription(userId: string): Promise<UserSubscription> {
+  async createFreeSubscription(userId: string, courseId?: string): Promise<UserSubscription> {
+    const now = new Date();
+    const trialEnd = new Date(now);
+    trialEnd.setDate(trialEnd.getDate() + 14); // 14-day trial
+
     const subscription: UserSubscription = {
       tier: 'free',
-      status: 'active',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      status: 'trialing',
+      trialEnd,
+      createdAt: now,
+      updatedAt: now,
+      courseId, // Track which exam they're studying for
     };
 
     await setDoc(doc(db, 'subscriptions', userId), {
       ...subscription,
+      trialEnd,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
 
     return subscription;
+  }
+
+  /**
+   * Check if user is in active trial period
+   */
+  async isInTrial(userId: string): Promise<boolean> {
+    const subscription = await this.getUserSubscription(userId);
+    if (!subscription) return false;
+    
+    if (subscription.status !== 'trialing') return false;
+    if (!subscription.trialEnd) return false;
+    
+    return new Date() < subscription.trialEnd;
+  }
+
+  /**
+   * Get days remaining in trial
+   */
+  async getTrialDaysRemaining(userId: string): Promise<number> {
+    const subscription = await this.getUserSubscription(userId);
+    if (!subscription?.trialEnd) return 0;
+    
+    const now = new Date();
+    const diff = subscription.trialEnd.getTime() - now.getTime();
+    return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
   }
 
   /**
@@ -383,17 +414,38 @@ class SubscriptionService {
   }
 
   /**
-   * Map Stripe price ID to subscription tier
+   * Map Stripe price ID or lookup key to subscription tier
+   * Lookup keys follow pattern: {exam}_{interval}_{type}
+   * e.g., cpa_annual_founder, ea_monthly_regular
    */
   private getTierFromPriceId(priceId: string): SubscriptionTier {
-    // These would be set up in environment/config
-    const priceMap: Record<string, SubscriptionTier> = {
-      'price_monthly_xxx': 'monthly',
-      'price_quarterly_xxx': 'quarterly',
-      'price_annual_xxx': 'annual',
-      'price_lifetime_xxx': 'lifetime',
-    };
-    return priceMap[priceId] || 'free';
+    // Check for interval in price ID or lookup key
+    const lowerPrice = priceId.toLowerCase();
+    
+    if (lowerPrice.includes('annual') || lowerPrice.includes('yearly')) {
+      return 'annual';
+    }
+    if (lowerPrice.includes('quarterly')) {
+      return 'quarterly';
+    }
+    if (lowerPrice.includes('monthly')) {
+      return 'monthly';
+    }
+    if (lowerPrice.includes('lifetime')) {
+      return 'lifetime';
+    }
+    
+    return 'free';
+  }
+
+  /**
+   * Extract course ID from Stripe price lookup key
+   * e.g., "cpa_annual_founder" -> "cpa"
+   */
+  getCourseFromPriceKey(lookupKey: string): string {
+    const parts = lookupKey.toLowerCase().split('_');
+    const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
+    return validCourses.find(c => parts.includes(c)) || 'cpa';
   }
 }
 
@@ -413,6 +465,9 @@ export function useSubscription() {
   const [limits, setLimits] = useState<PlanLimits>(SUBSCRIPTION_PLANS.free.limits);
   const [loading, setLoading] = useState(true);
   const [isPremium, setIsPremium] = useState(false);
+  const [isTrialing, setIsTrialing] = useState(false);
+  const [trialDaysRemaining, setTrialDaysRemaining] = useState(0);
+  const [trialExpired, setTrialExpired] = useState(false);
 
   useEffect(() => {
     async function fetchSubscription() {
@@ -420,6 +475,9 @@ export function useSubscription() {
         setSubscription(null);
         setLimits(SUBSCRIPTION_PLANS.free.limits);
         setIsPremium(false);
+        setIsTrialing(false);
+        setTrialDaysRemaining(0);
+        setTrialExpired(false);
         setLoading(false);
         return;
       }
@@ -428,14 +486,39 @@ export function useSubscription() {
       try {
         let sub = await subscriptionService.getUserSubscription(user.uid);
         
-        // Create free subscription if none exists
+        // Create free subscription with trial if none exists
         if (!sub) {
           sub = await subscriptionService.createFreeSubscription(user.uid);
         }
         
         setSubscription(sub);
-        setLimits(SUBSCRIPTION_PLANS[sub.tier].limits);
-        setIsPremium(sub.tier !== 'free' && sub.status === 'active');
+        
+        // Calculate trial status
+        const now = new Date();
+        const inTrial = sub.status === 'trialing' && sub.trialEnd && now < sub.trialEnd;
+        const expired = sub.status === 'trialing' && sub.trialEnd && now >= sub.trialEnd;
+        
+        let daysRemaining = 0;
+        if (sub.trialEnd && inTrial) {
+          const diff = sub.trialEnd.getTime() - now.getTime();
+          daysRemaining = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+        }
+        
+        setIsTrialing(inTrial || false);
+        setTrialExpired(expired || false);
+        setTrialDaysRemaining(daysRemaining);
+        
+        // User has access if paid OR in active trial
+        const hasPaidAccess = sub.tier !== 'free' && sub.status === 'active';
+        setIsPremium(hasPaidAccess);
+        
+        // During trial, give full access
+        if (inTrial || hasPaidAccess) {
+          setLimits(SUBSCRIPTION_PLANS[sub.tier === 'free' ? 'annual' : sub.tier].limits);
+        } else {
+          // Trial expired and not paid - restricted access
+          setLimits(SUBSCRIPTION_PLANS.free.limits);
+        }
       } catch (error) {
         logger.error('Error loading subscription:', error);
         setLimits(SUBSCRIPTION_PLANS.free.limits);
@@ -447,10 +530,17 @@ export function useSubscription() {
     fetchSubscription();
   }, [user]);
 
+  // User has full access if premium OR in active trial
+  const hasFullAccess = isPremium || isTrialing;
+
   return {
     subscription,
     limits,
     isPremium,
+    isTrialing,
+    trialDaysRemaining,
+    trialExpired,
+    hasFullAccess,
     loading,
     plan: subscription ? SUBSCRIPTION_PLANS[subscription.tier] : SUBSCRIPTION_PLANS.free,
     checkFeature: (feature: keyof PlanLimits) => {

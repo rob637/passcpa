@@ -16,6 +16,7 @@ import {
   ChevronUp,
   FileText,
 } from 'lucide-react';
+import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
@@ -655,13 +656,10 @@ const Progress: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
-      {/* Header */}
-      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
-          <p className="text-slate-600 dark:text-slate-300">Track your journey to {course.shortName} success</p>
-        </div>
-      </div>
+      <PageHeader 
+        title="My Progress"
+        subtitle={`Track your journey to ${course.shortName} success`}
+      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         

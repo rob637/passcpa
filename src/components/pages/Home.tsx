@@ -31,6 +31,7 @@ import {
   getCourseExamPath,
   getCourseTBSPath,
   getCourseEssayPath,
+  getCourseCBQPath,
 } from '../../utils/courseNavigation';
 import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
@@ -451,7 +452,9 @@ const Home = () => {
         )}
         
         {/* CMA Essay/CBQ button - Essays are 25% of CMA exam */}
+        {/* Note: Essays available until Aug 2026, CBQs mandatory from Sept 2026 */}
         {courseId === 'cma' && (
+        <>
         <Link
           to={getCourseEssayPath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -461,6 +464,17 @@ const Home = () => {
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
         </Link>
+        <Link
+          to={getCourseCBQPath(courseId)}
+          className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all hover:shadow-md relative"
+        >
+          <span className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full">NEW</span>
+          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+            <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          </div>
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">CBQ</span>
+        </Link>
+        </>
         )}
       </div>
 

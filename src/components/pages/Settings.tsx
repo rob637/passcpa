@@ -17,6 +17,7 @@ import {
   Palette,
 } from 'lucide-react';
 import { Button } from '../common/Button';
+import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
@@ -337,10 +338,14 @@ const Settings: React.FC = () => {
   );
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Settings</h1>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-20">
+      <PageHeader 
+        title="Settings"
+        subtitle="Manage your account and preferences"
+      />
 
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
         <div className="md:w-56 flex-shrink-0">
           <nav 
@@ -1073,6 +1078,7 @@ const Settings: React.FC = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

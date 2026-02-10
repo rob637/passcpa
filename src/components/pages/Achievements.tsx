@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2, ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Trophy, Lock, Flame, Target, Zap, Clock, Star, Gift, LucideIcon, Share2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
@@ -19,6 +18,7 @@ import { useTabKeyboard, useModalKeyboard } from '../../hooks/useKeyboardNavigat
 import ShareableAchievementCard from '../ShareableAchievementCard';
 import { Button } from '../common/Button';
 import { useCourse } from '../../hooks/useCourse';
+import { BackButton } from '../navigation';
 
 // Types
 interface CategoryInfo {
@@ -166,22 +166,15 @@ const Achievements: React.FC = () => {
     return sum + (ACHIEVEMENTS[id as keyof typeof ACHIEVEMENTS]?.points || 0);
   }, 0);
 
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
       {/* Header */}
       <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-6 pb-16">
         <div className="flex items-center gap-3 mb-4">
-          <Button
-            onClick={() => navigate(-1)}
-            variant="ghost"
-            size="icon"
-            className="-ml-2 hover:bg-white/10"
-            aria-label="Go back"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </Button>
+          <BackButton 
+            className="text-white hover:bg-white/10" 
+            iconOnlyMobile
+          />
           <h1 className="text-2xl font-bold">Achievements</h1>
         </div>
         <p className="text-primary-100">Track your learning milestones</p>

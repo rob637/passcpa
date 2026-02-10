@@ -88,18 +88,24 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
             const m = await import(`../../../../data/cma/flashcards/cma2-mnemonics`);
             return m.CMA2_MNEMONICS || [];
           },
-          // CIA - consolidated
+          // CIA - consolidated (check both topic and subtopic)
           'cia-mn-3lines': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('Three Lines'));
+            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.topic?.includes('Three Lines') || c.subtopic?.includes('Three Lines')
+            );
           },
           'cia-mn-qaip': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA2_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('QAIP'));
+            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.topic?.includes('QAIP') || c.subtopic?.includes('QAIP')
+            );
           },
           'cia-mn-fraud': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA3_MNEMONICS || []).filter((c: MnemonicCard) => c.topic?.includes('Fraud'));
+            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+              c.topic?.includes('Fraud') || c.subtopic?.includes('Fraud')
+            );
           },
           // CFP
           'cfp-mn-secure': async () => {

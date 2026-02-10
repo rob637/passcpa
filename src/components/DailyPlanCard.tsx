@@ -284,6 +284,10 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         // CMA Essay Simulator
         navigate(`/cma/essay?${fromParam}`);
         break;
+      case 'cbq':
+        // CMA CBQ (Case-Based Questions) Simulator - Sept 2026+
+        navigate(`/cma/cbq?${fromParam}`);
+        break;
       case 'case_study':
         // CFP Case Study - navigate to practice with case study mode
         navigate(`/practice?mode=case_study&section=${activity.params.section || ''}&${fromParam}`);
@@ -304,6 +308,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'tbs': return FileSpreadsheet;
       case 'flashcards': return Brain;
       case 'essay': return PenTool;
+      case 'cbq': return FileSpreadsheet;
       case 'case_study': return Briefcase;
       default: return Sparkles;
     }
@@ -317,6 +322,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
       case 'essay': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';
+      case 'cbq': return 'text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30';
       case 'case_study': return 'text-indigo-500 bg-indigo-100 dark:bg-indigo-900/30';
       default: return 'text-slate-600 bg-slate-100 dark:bg-slate-800';
     }

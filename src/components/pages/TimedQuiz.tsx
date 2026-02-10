@@ -668,11 +668,11 @@ const TimedQuiz: React.FC = () => {
             </div>
 
             {/* Question */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <div className="text-xs text-primary-600 font-medium mb-2">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
+              <div className="text-xs text-primary-600 dark:text-primary-400 font-medium mb-2">
                 {reviewQuestion?.topic || reviewQuestion?.blueprintArea || currentSection}
               </div>
-              <p className="text-lg text-slate-900 leading-relaxed">{reviewQuestion?.question}</p>
+              <p className="text-lg text-slate-900 dark:text-white leading-relaxed">{reviewQuestion?.question}</p>
             </div>
 
             {/* Options with correct/incorrect highlighting */}
@@ -688,10 +688,10 @@ const TimedQuiz: React.FC = () => {
                     className={clsx(
                       'w-full p-4 rounded-xl border-2 flex items-start gap-3',
                       isCorrectAnswer
-                        ? 'border-success-500 bg-success-50'
+                        ? 'border-success-500 bg-success-50 dark:bg-success-900/30'
                         : isUserAnswer && !isCorrectAnswer
-                        ? 'border-error-500 bg-error-50'
-                        : 'border-slate-200 bg-white'
+                        ? 'border-error-500 bg-error-50 dark:bg-error-900/30'
+                        : 'border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800'
                     )}
                   >
                     <span
@@ -701,7 +701,7 @@ const TimedQuiz: React.FC = () => {
                           ? 'bg-success-500 text-white'
                           : isUserAnswer
                           ? 'bg-error-500 text-white'
-                          : 'bg-slate-100 text-slate-600'
+                          : 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200'
                       )}
                     >
                       {isCorrectAnswer ? <CheckCircle className="w-5 h-5" /> : 
@@ -710,7 +710,7 @@ const TimedQuiz: React.FC = () => {
                     </span>
                     <span className={clsx(
                       'pt-1',
-                      isCorrectAnswer ? 'text-success-700 font-medium' : 'text-slate-700'
+                      isCorrectAnswer ? 'text-success-700 dark:text-success-400 font-medium' : 'text-slate-700 dark:text-slate-200'
                     )}>
                       {option}
                     </span>
@@ -758,10 +758,10 @@ const TimedQuiz: React.FC = () => {
                       actualIdx === reviewIndex
                         ? 'bg-primary-500 text-white'
                         : !isAnswered
-                        ? 'bg-slate-100 text-slate-600'
+                        ? 'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-200'
                         : wasCorrect
-                        ? 'bg-success-100 text-success-700'
-                        : 'bg-error-100 text-error-700'
+                        ? 'bg-success-100 dark:bg-success-900/40 text-success-700 dark:text-success-400'
+                        : 'bg-error-100 dark:bg-error-900/40 text-error-700 dark:text-error-400'
                     )}
                   >
                     {actualIdx + 1}
@@ -887,7 +887,7 @@ const TimedQuiz: React.FC = () => {
                 >
                   {String.fromCharCode(65 + idx)}
                 </span>
-                <span className="text-slate-700 pt-1">{option}</span>
+                <span className="text-slate-700 dark:text-slate-200 pt-1">{option}</span>
               </button>
             ))}
           </div>

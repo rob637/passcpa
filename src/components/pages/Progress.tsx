@@ -9,7 +9,6 @@ import {
   CheckCircle,
   BookOpen,
   HelpCircle,
-  BarChart3,
   Calendar,
   Sparkles,
   Play,
@@ -20,7 +19,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection, getBlueprintAreas } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -256,7 +255,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
   );
 };
 
-// Blueprint areas are now sourced from course config via getBlueprintAreas()
+// Blueprint areas are sourced from course config via BlueprintHeatMap component
 // This enables the Progress page to work for all 6 exams automatically
 
 // Exam Readiness Gauge

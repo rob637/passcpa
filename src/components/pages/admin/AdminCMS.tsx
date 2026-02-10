@@ -301,6 +301,9 @@ const AdminCMS: React.FC = () => {
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [isLoadingErrors, setIsLoadingErrors] = useState(false);
   
+  // Reset exam selector state
+  const [resetExamSelection, setResetExamSelection] = useState<string>('cpa');
+  
   // Question Reports state
   const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
   const [isLoadingReports, setIsLoadingReports] = useState(false);
@@ -2972,7 +2975,27 @@ const AdminCMS: React.FC = () => {
                   <li>Bookmarks & flagged questions</li>
                   <li>Onboarding status (will show onboarding again)</li>
                 </ul>
-                <div className="flex gap-3">
+                
+                {/* Course selector for per-exam reset */}
+                <div className="mb-4 p-3 bg-white rounded border border-red-200">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Exam to reset (for per-exam options):
+                  </label>
+                  <select 
+                    value={resetExamSelection}
+                    onChange={(e) => setResetExamSelection(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-lg bg-white text-gray-900"
+                  >
+                    <option value="cpa">CPA</option>
+                    <option value="ea">EA (Enrolled Agent)</option>
+                    <option value="cma">CMA</option>
+                    <option value="cia">CIA</option>
+                    <option value="cfp">CFP</option>
+                    <option value="cisa">CISA</option>
+                  </select>
+                </div>
+                
+                <div className="flex flex-wrap gap-3">
                   <Button
                     onClick={async () => {
                       if (!user) return;
@@ -3075,8 +3098,8 @@ const AdminCMS: React.FC = () => {
                     onClick={async () => {
                       if (!user) return;
                       
-                      // Get current course from localStorage or default to 'cpa'
-                      const currentCourse = localStorage.getItem('voraprep_course') || 'cpa';
+                      // Use the selected exam from dropdown
+                      const currentCourse = resetExamSelection;
                       
                       const confirmed = window.confirm(`Reset onboarding for ${currentCourse.toUpperCase()} only? You'll see the onboarding flow again for this exam without losing progress.`);
                       if (!confirmed) return;
@@ -3105,13 +3128,14 @@ const AdminCMS: React.FC = () => {
                     }}
                     className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
                   >
-                    🎯 Reset Current Exam Onboarding
+                    🎯 Reset {resetExamSelection.toUpperCase()} Onboarding
                   </button>
                   <button
                     onClick={async () => {
                       if (!user) return;
                       
-                      const currentCourse = localStorage.getItem('voraprep_course') || 'cpa';
+                      // Use the selected exam from dropdown
+                      const currentCourse = resetExamSelection;
                       
                       const confirmed = window.confirm(
                         `⚠️ Reset ALL progress for ${currentCourse.toUpperCase()} only?\n\n` +
@@ -3192,7 +3216,7 @@ const AdminCMS: React.FC = () => {
                     }}
                     className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
                   >
-                    🗑️ Reset Current Exam Progress
+                    🗑️ Reset {resetExamSelection.toUpperCase()} Progress
                   </button>
                 </div>
               </div>

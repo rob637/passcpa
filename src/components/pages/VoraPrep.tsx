@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
 import { getFormattedCount, getFormattedTotal, LESSON_COUNTS, FLASHCARD_COUNTS } from '../../utils/courseStats';
+import { EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
 import { 
   BookOpen, 
   Brain, 
@@ -31,7 +32,8 @@ interface CourseInfo {
   color: string;
   bgGradient: string;
   stats: { questions: string; lessons: number; flashcards: number };
-  pricing: string;
+  founderPrice: number;
+  regularPrice: number;
   features: string[];
   path: string;
   available: boolean;
@@ -47,7 +49,8 @@ const COURSES: CourseInfo[] = [
     color: 'blue',
     bgGradient: 'from-blue-500 to-blue-600',
     stats: { questions: getFormattedCount('cpa'), lessons: LESSON_COUNTS.cpa, flashcards: FLASHCARD_COUNTS.cpa },
-    pricing: 'From $29/mo',
+    founderPrice: EXAM_PRICING.cpa.founderMonthly,
+    regularPrice: EXAM_PRICING.cpa.monthly,
     features: ['2025 & 2026 Blueprint', 'Core + Discipline Format', 'TBS Simulations', 'Written Communication'],
     path: '/cpa',
     available: true,
@@ -61,7 +64,8 @@ const COURSES: CourseInfo[] = [
     color: 'emerald',
     bgGradient: 'from-emerald-500 to-emerald-600',
     stats: { questions: getFormattedCount('ea'), lessons: LESSON_COUNTS.ea, flashcards: FLASHCARD_COUNTS.ea },
-    pricing: 'From $12/mo',
+    founderPrice: EXAM_PRICING.ea.founderMonthly,
+    regularPrice: EXAM_PRICING.ea.monthly,
     features: ['SEE Parts 1-3', 'Tax Code Coverage', 'IRS Procedures', 'Representation Rules'],
     path: '/ea-prep',
     available: true,
@@ -75,7 +79,8 @@ const COURSES: CourseInfo[] = [
     color: 'emerald',
     bgGradient: 'from-emerald-600 to-emerald-700',
     stats: { questions: getFormattedCount('cma'), lessons: LESSON_COUNTS.cma, flashcards: FLASHCARD_COUNTS.cma },
-    pricing: 'From $12/mo',
+    founderPrice: EXAM_PRICING.cma.founderMonthly,
+    regularPrice: EXAM_PRICING.cma.monthly,
     features: ['Financial Planning', 'Performance Management', 'Cost Management', 'Internal Controls'],
     path: '/cma',
     available: true,
@@ -89,7 +94,8 @@ const COURSES: CourseInfo[] = [
     color: 'amber',
     bgGradient: 'from-amber-500 to-amber-600',
     stats: { questions: getFormattedCount('cia'), lessons: LESSON_COUNTS.cia, flashcards: FLASHCARD_COUNTS.cia },
-    pricing: 'From $12/mo',
+    founderPrice: EXAM_PRICING.cia.founderMonthly,
+    regularPrice: EXAM_PRICING.cia.monthly,
     features: ['Internal Audit Basics', 'Practice of Internal Auditing', 'Business Knowledge', 'Risk Management'],
     path: '/cia',
     available: true,
@@ -103,7 +109,8 @@ const COURSES: CourseInfo[] = [
     color: 'green',
     bgGradient: 'from-green-500 to-green-600',
     stats: { questions: getFormattedCount('cfp'), lessons: LESSON_COUNTS.cfp, flashcards: FLASHCARD_COUNTS.cfp },
-    pricing: 'From $12/mo',
+    founderPrice: EXAM_PRICING.cfp.founderMonthly,
+    regularPrice: EXAM_PRICING.cfp.monthly,
     features: ['8 Knowledge Domains', 'Wealth Management', 'Financial Planning', 'Fiduciary Standards'],
     path: '/cfp',
     available: true,
@@ -117,7 +124,8 @@ const COURSES: CourseInfo[] = [
     color: 'cyan',
     bgGradient: 'from-cyan-500 to-cyan-600',
     stats: { questions: getFormattedCount('cisa'), lessons: LESSON_COUNTS.cisa, flashcards: FLASHCARD_COUNTS.cisa },
-    pricing: 'From $12/mo',
+    founderPrice: EXAM_PRICING.cisa.founderMonthly,
+    regularPrice: EXAM_PRICING.cisa.monthly,
     features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
     path: '/cisa',
     available: true,
@@ -198,8 +206,16 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
           </div>
         </div>
         {/* Pricing */}
-        <div className={`text-sm font-semibold text-${course.color}-600 dark:text-${course.color}-400 mb-4`}>
-          {course.pricing}
+        <div className={`text-sm mb-4`}>
+          {isFounderPricingActive() ? (
+            <div className="flex items-center gap-2">
+              <span className={`font-bold text-${course.color}-600 dark:text-${course.color}-400`}>${course.founderPrice}/mo</span>
+              <span className="text-slate-400 line-through text-xs">${course.regularPrice}</span>
+              <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-1.5 py-0.5 rounded font-medium">Founders</span>
+            </div>
+          ) : (
+            <span className={`font-semibold text-${course.color}-600 dark:text-${course.color}-400`}>From ${course.regularPrice}/mo</span>
+          )}
         </div>
         
         {/* Features */}

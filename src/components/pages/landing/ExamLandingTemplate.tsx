@@ -475,6 +475,9 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                   </tbody>
                 </table>
               </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
+                *Founders pricing available through May 3, 2026. Lock in 50% off forever.
+              </p>
             </div>
           </section>
         )}

@@ -79,7 +79,7 @@ export interface ExamLandingConfig {
   
   // Competitor comparison (optional - some exams may not have this yet)
   competitors?: {
-    names: [string, string, string];
+    names: string[];  // 2 or 3 competitors
     data: CompetitorRow[];
   };
   
@@ -206,7 +206,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Annual Price', voraprep: 'From $29/mo', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Annual Price', voraprep: '$14/mo*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -268,7 +268,7 @@ export const EA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
+      { feature: 'Price', voraprep: '$5/mo*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -331,7 +331,7 @@ export const CMA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
-      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$7/mo*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -396,7 +396,7 @@ export const CIA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
+      { feature: 'Price', voraprep: '$7/mo*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -465,7 +465,7 @@ export const CFP_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
-      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: '$10/mo*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -532,7 +532,7 @@ export const CISA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['ISACA', 'Hemang Doshi'],
     data: [
-      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$795', competitor2: '$299', highlight: true },
+      { feature: 'Price', voraprep: '$6/mo*', competitor1: '$795', competitor2: '$299', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },

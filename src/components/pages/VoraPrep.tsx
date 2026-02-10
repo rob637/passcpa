@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSEO, LANDING_SEO } from '../../hooks/useSEO';
-import { getFormattedCount, getFormattedTotal } from '../../utils/courseStats';
+import { getFormattedCount, getFormattedTotal, LESSON_COUNTS, FLASHCARD_COUNTS } from '../../utils/courseStats';
 import { 
   BookOpen, 
   Brain, 
@@ -30,7 +30,8 @@ interface CourseInfo {
   icon: React.ElementType;
   color: string;
   bgGradient: string;
-  stats: { questions: string; passRate?: string };
+  stats: { questions: string; lessons: number; flashcards: number };
+  pricing: string;
   features: string[];
   path: string;
   available: boolean;
@@ -45,7 +46,8 @@ const COURSES: CourseInfo[] = [
     icon: Calculator,
     color: 'blue',
     bgGradient: 'from-blue-500 to-blue-600',
-    stats: { questions: getFormattedCount('cpa'), passRate: '50%' },
+    stats: { questions: getFormattedCount('cpa'), lessons: LESSON_COUNTS.cpa, flashcards: FLASHCARD_COUNTS.cpa },
+    pricing: 'From $29/mo',
     features: ['2025 & 2026 Blueprint', 'Core + Discipline Format', 'TBS Simulations', 'Written Communication'],
     path: '/cpa',
     available: true,
@@ -58,7 +60,8 @@ const COURSES: CourseInfo[] = [
     icon: FileText,
     color: 'emerald',
     bgGradient: 'from-emerald-500 to-emerald-600',
-    stats: { questions: getFormattedCount('ea'), passRate: '70%' },
+    stats: { questions: getFormattedCount('ea'), lessons: LESSON_COUNTS.ea, flashcards: FLASHCARD_COUNTS.ea },
+    pricing: 'From $12/mo',
     features: ['SEE Parts 1-3', 'Tax Code Coverage', 'IRS Procedures', 'Representation Rules'],
     path: '/ea-prep',
     available: true,
@@ -71,7 +74,8 @@ const COURSES: CourseInfo[] = [
     icon: BarChart3,
     color: 'emerald',
     bgGradient: 'from-emerald-600 to-emerald-700',
-    stats: { questions: getFormattedCount('cma'), passRate: '45%' },
+    stats: { questions: getFormattedCount('cma'), lessons: LESSON_COUNTS.cma, flashcards: FLASHCARD_COUNTS.cma },
+    pricing: 'From $12/mo',
     features: ['Financial Planning', 'Performance Management', 'Cost Management', 'Internal Controls'],
     path: '/cma',
     available: true,
@@ -84,7 +88,8 @@ const COURSES: CourseInfo[] = [
     icon: Search,
     color: 'amber',
     bgGradient: 'from-amber-500 to-amber-600',
-    stats: { questions: getFormattedCount('cia'), passRate: '40%' },
+    stats: { questions: getFormattedCount('cia'), lessons: LESSON_COUNTS.cia, flashcards: FLASHCARD_COUNTS.cia },
+    pricing: 'From $12/mo',
     features: ['Internal Audit Basics', 'Practice of Internal Auditing', 'Business Knowledge', 'Risk Management'],
     path: '/cia',
     available: true,
@@ -97,7 +102,8 @@ const COURSES: CourseInfo[] = [
     icon: TrendingUp,
     color: 'green',
     bgGradient: 'from-green-500 to-green-600',
-    stats: { questions: getFormattedCount('cfp'), passRate: '67%' },
+    stats: { questions: getFormattedCount('cfp'), lessons: LESSON_COUNTS.cfp, flashcards: FLASHCARD_COUNTS.cfp },
+    pricing: 'From $12/mo',
     features: ['8 Knowledge Domains', 'Wealth Management', 'Financial Planning', 'Fiduciary Standards'],
     path: '/cfp',
     available: true,
@@ -110,7 +116,8 @@ const COURSES: CourseInfo[] = [
     icon: Shield,
     color: 'cyan',
     bgGradient: 'from-cyan-500 to-cyan-600',
-    stats: { questions: getFormattedCount('cisa'), passRate: '50%' },
+    stats: { questions: getFormattedCount('cisa'), lessons: LESSON_COUNTS.cisa, flashcards: FLASHCARD_COUNTS.cisa },
+    pricing: 'From $12/mo',
     features: ['IT Audit Process', 'Governance & Mgmt', 'System Acquisition', 'Asset Protection'],
     path: '/cisa',
     available: true,
@@ -176,17 +183,23 @@ const CourseCard = ({ course }: { course: CourseInfo }) => {
         </p>
         
         {/* Stats */}
-        <div className="flex gap-4 mb-4">
+        <div className="flex gap-4 mb-2">
           <div>
             <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.questions}</div>
             <div className="text-xs text-slate-500">Questions</div>
           </div>
-          {course.stats.passRate && (
-            <div>
-              <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.passRate}</div>
-              <div className="text-xs text-slate-500">Nat'l Pass Rate</div>
-            </div>
-          )}
+          <div>
+            <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.lessons}</div>
+            <div className="text-xs text-slate-500">Lessons</div>
+          </div>
+          <div>
+            <div className="text-lg font-bold text-slate-900 dark:text-white">{course.stats.flashcards}</div>
+            <div className="text-xs text-slate-500">Flashcards</div>
+          </div>
+        </div>
+        {/* Pricing */}
+        <div className={`text-sm font-semibold text-${course.color}-600 dark:text-${course.color}-400 mb-4`}>
+          {course.pricing}
         </div>
         
         {/* Features */}

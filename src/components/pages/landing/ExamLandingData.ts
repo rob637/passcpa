@@ -46,7 +46,7 @@ export interface CompetitorRow {
   voraprep: boolean | string;
   competitor1: boolean | string;
   competitor2: boolean | string;
-  competitor3: boolean | string;
+  competitor3?: boolean | string;
   highlight?: boolean;
 }
 
@@ -206,7 +206,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
-      { feature: 'Annual Price', voraprep: 'Free (Beta)', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Annual Price', voraprep: 'From $29/mo', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
       { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Learning Engine', voraprep: 'Real-time AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -268,7 +268,7 @@ export const EA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
+      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -331,7 +331,7 @@ export const CMA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -396,7 +396,7 @@ export const CIA_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
+      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -465,7 +465,7 @@ export const CFP_CONFIG: ExamLandingConfig = {
   competitors: {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
+      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
       { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -530,21 +530,21 @@ export const CISA_CONFIG: ExamLandingConfig = {
   ],
   
   competitors: {
-    names: ['ISACA', 'Hemang Doshi', 'Self-Study'],
+    names: ['ISACA', 'Hemang Doshi'],
     data: [
-      { feature: 'Price', voraprep: 'Free (Beta)', competitor1: '$795', competitor2: '$299', competitor3: '$0', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', competitor3: 'Varies', highlight: true },
-      { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: 'Varies' },
-      { feature: 'Practice Questions', voraprep: '1,500+', competitor1: '1,000', competitor2: '500+', competitor3: 'Varies' },
-      { feature: 'Flashcards', voraprep: '530+', competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Expert Lessons', voraprep: '100+', competitor1: true, competitor2: true, competitor3: false },
-      { feature: 'Structured Learning Path', voraprep: true, competitor1: true, competitor2: true, competitor3: false },
-      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
-      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Price', voraprep: 'From $12/mo', competitor1: '$795', competitor2: '$299', highlight: true },
+      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Real-time Adaptive Engine', voraprep: true, competitor1: 'Limited', competitor2: false, highlight: true },
+      { feature: 'SM-2 Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
+      { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },
+      { feature: 'Practice Questions', voraprep: '1,500+', competitor1: '1,000', competitor2: '500+' },
+      { feature: 'Flashcards', voraprep: '530+', competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Expert Lessons', voraprep: '100+', competitor1: true, competitor2: true },
+      { feature: 'Structured Learning Path', voraprep: true, competitor1: true, competitor2: true },
+      { feature: 'Progress Analytics', voraprep: true, competitor1: 'Basic', competitor2: false, highlight: true },
+      { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, highlight: true },
     ],
   },
   

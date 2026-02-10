@@ -30,12 +30,13 @@ export function PassedCelebration({ section, userName, onClose }: PassedCelebrat
   const { courseId, course } = useCourse();
   const { user } = useAuth();
   const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
+  const courseShortName = course?.shortName || courseId?.toUpperCase() || 'CPA';
   
-  // For single-exam courses (CISA, CFP), use the course name instead of domain IDs
-  // CPA/CMA have meaningful section names (AUD, FAR, Part 1, etc.)
-  const singleExamCourses = ['cisa', 'cfp'];
+  // For single-exam courses (CISA, CFP, CIA), use the short name instead of domain IDs
+  // CPA/CMA/EA have meaningful section names (AUD, FAR, Part 1, EA Part 1, etc.)
+  const singleExamCourses = ['cisa', 'cfp', 'cia'];
   const isSingleExamCourse = singleExamCourses.includes(courseId || '');
-  const displaySection = isSingleExamCourse ? courseName : (section || courseName);
+  const displaySection = isSingleExamCourse ? courseShortName : (section || courseShortName);
 
   // Load user's referral code for share links
   useEffect(() => {

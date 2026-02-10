@@ -120,17 +120,17 @@ const CMAEssaySimulator: React.FC = () => {
     return (
       <div className="p-6 max-w-5xl mx-auto">
         <div className="mb-8">
-          <Link to="/cma/dashboard" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-4">
+          <Link to="/cma/dashboard" className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 mb-4">
             <ArrowLeft className="w-4 h-4" />
             Back to CMA Dashboard
           </Link>
           <div className="flex items-center gap-3">
-             <div className="p-3 bg-indigo-100 rounded-xl">
-               <FileText className="w-8 h-8 text-indigo-700" />
+             <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl">
+               <FileText className="w-8 h-8 text-indigo-700 dark:text-indigo-400" />
              </div>
              <div>
-                <h1 className="text-2xl font-bold text-slate-900">CMA Essay Simulator</h1>
-                <p className="text-slate-600">AI-Graded Essay Practice for Part 1 & 2</p>
+                <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">CMA Essay Simulator</h1>
+                <p className="text-slate-600 dark:text-slate-400">AI-Graded Essay Practice for Part 1 & 2</p>
              </div>
           </div>
         </div>
@@ -141,21 +141,25 @@ const CMAEssaySimulator: React.FC = () => {
               <div className="flex justify-between items-start mb-4">
                  <span className={clsx(
                    "px-2 py-1 rounded-md text-xs font-semibold uppercase tracking-wider",
-                   task.section === 'CMA1' ? "bg-blue-100 text-blue-700" : "bg-purple-100 text-purple-700"
+                   task.section === 'CMA1' 
+                     ? "bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300" 
+                     : "bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300"
                  )}>
                    {task.section === 'CMA1' ? 'Part 1' : 'Part 2'}
                  </span>
                  <span className={clsx("text-xs px-2 py-1 rounded-full", 
-                   task.difficulty === 'hard' ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"
+                   task.difficulty === 'hard' 
+                     ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300" 
+                     : "bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300"
                  )}>
                    {task.difficulty}
                  </span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{task.topic}</h3>
-              <p className="text-sm text-slate-600 mb-4 line-clamp-3">{task.scenario}</p>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">{task.topic}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">{task.scenario}</p>
               
               <div className="flex items-center justify-between mt-auto">
-                <div className="flex items-center gap-1 text-slate-500 text-sm">
+                <div className="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm">
                   <Clock className="w-4 h-4" />
                   {task.estimatedTime} mins
                 </div>
@@ -175,29 +179,31 @@ const CMAEssaySimulator: React.FC = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-64px)] flex flex-col bg-slate-50">
+    <div className="h-[calc(100vh-64px)] flex flex-col bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between shrink-0">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-6 py-3 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-4">
           <Button 
              variant="ghost"
              size="icon"
              onClick={() => setViewState('select')}
              disabled={isSubmitting}
-             className="text-slate-500"
+             className="text-slate-500 dark:text-slate-400"
           >
             <ArrowLeft className="w-5 h-5" />
           </Button>
           <div>
-            <h2 className="font-semibold text-slate-900">{currentTask?.topic}</h2>
-            <p className="text-xs text-slate-500">Essay Practice Mode</p>
+            <h2 className="font-semibold text-slate-900 dark:text-slate-100">{currentTask?.topic}</h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Essay Practice Mode</p>
           </div>
         </div>
         
         {viewState === 'writing' && (
            <div className={clsx(
              "font-mono text-xl font-medium px-4 py-1 rounded-lg border",
-             timeLeft < 300 ? "bg-red-50 border-red-200 text-red-700" : "bg-slate-100 border-slate-200 text-slate-700"
+             timeLeft < 300 
+               ? "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800 text-red-700 dark:text-red-400" 
+               : "bg-slate-100 dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300"
            )}>
              {formatTime(timeLeft)}
            </div>
@@ -206,36 +212,36 @@ const CMAEssaySimulator: React.FC = () => {
 
       <div className="flex-1 overflow-hidden flex flex-col md:flex-row">
         {/* Left: Scenario */}
-        <div className="md:w-1/3 flex flex-col border-r border-slate-200 bg-white">
-           <div className="p-4 bg-slate-50 border-b border-slate-200 font-medium text-slate-700 flex items-center gap-2">
+        <div className="md:w-1/3 flex flex-col border-r border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+           <div className="p-4 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
              <BookOpen className="w-4 h-4" /> Scenario
            </div>
-           <div className="flex-1 overflow-y-auto p-6 prose prose-sm max-w-none">
-             <p className="whitespace-pre-wrap">{currentTask?.scenario}</p>
-             <hr className="my-4" />
-             <h4 className="font-bold text-slate-900">Task Requirements:</h4>
-             <p className="whitespace-pre-wrap">{currentTask?.task || currentTask?.prompt}</p>
+           <div className="flex-1 overflow-y-auto p-6 prose prose-sm dark:prose-invert max-w-none">
+             <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300">{currentTask?.scenario}</p>
+             <hr className="my-4 border-slate-200 dark:border-slate-600" />
+             <h4 className="font-bold text-slate-900 dark:text-slate-100">Task Requirements:</h4>
+             <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300">{currentTask?.task || currentTask?.prompt}</p>
            </div>
         </div>
 
         {/* Right: Work Area or Results */}
-        <div className="md:w-2/3 flex flex-col bg-slate-50">
+        <div className="md:w-2/3 flex flex-col bg-slate-50 dark:bg-slate-900">
           {viewState === 'writing' ? (
             <>
-              <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-white">
-                 <span className="font-medium text-slate-700 flex items-center gap-2">
+              <div className="p-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center bg-white dark:bg-slate-800">
+                 <span className="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
                    <FileText className="w-4 h-4" /> Your Response
                  </span>
                  <WordCounter text={response} />
               </div>
               <textarea
-                className="flex-1 w-full p-6 resize-none focus:outline-none font-serif text-lg leading-relaxed bg-white"
+                className="flex-1 w-full p-6 resize-none focus:outline-none font-serif text-lg leading-relaxed bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
                 placeholder="Type your response here..."
                 value={response}
                 onChange={(e) => setResponse(e.target.value)}
                 spellCheck={false}
               />
-              <div className="p-4 bg-white border-t border-slate-200 flex justify-end">
+              <div className="p-4 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 flex justify-end">
                 <Button 
                   variant="primary"
                   onClick={handleSubmit} 
@@ -250,11 +256,11 @@ const CMAEssaySimulator: React.FC = () => {
             <div className="flex-1 overflow-y-auto p-8">
                <div className="max-w-3xl mx-auto">
                  <Card noPadding className="overflow-hidden mb-6">
-                    <div className="p-6 border-b border-slate-200 bg-indigo-50 flex items-center gap-3">
-                       <Sparkles className="w-6 h-6 text-indigo-600" />
-                       <h2 className="text-xl font-bold text-indigo-900">AI Grading Report</h2>
+                    <div className="p-6 border-b border-slate-200 dark:border-slate-700 bg-indigo-50 dark:bg-indigo-900/30 flex items-center gap-3">
+                       <Sparkles className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                       <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-200">AI Grading Report</h2>
                     </div>
-                    <div className="p-6 prose prose-slate max-w-none">
+                    <div className="p-6 prose prose-slate dark:prose-invert max-w-none">
                        {/* Render AI Feedback - It might be markdown */}
                        <div dangerouslySetInnerHTML={{ 
                          // Simple protection since this comes from our internal AI service, though in prod use a sanitizer
@@ -264,10 +270,10 @@ const CMAEssaySimulator: React.FC = () => {
                  </Card>
 
                  <Card className="p-6">
-                    <h3 className="font-bold text-slate-900 mb-4">Key Points You Should Have Covered:</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-4">Key Points You Should Have Covered:</h3>
                     <ul className="space-y-2">
                        {currentTask?.keyPoints?.map((idx, i) => (
-                         <li key={i} className="flex gap-3 text-slate-700 text-sm">
+                         <li key={i} className="flex gap-3 text-slate-700 dark:text-slate-300 text-sm">
                             <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
                             {idx}
                          </li>

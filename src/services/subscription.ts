@@ -116,6 +116,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
       'Offline mode',
       'Advanced analytics',
       'Cancel anytime',
+      'Pass Guarantee (after 3 months)',
     ],
     limits: {
       questionsPerDay: Infinity,
@@ -136,6 +137,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
       'Everything in Monthly',
       'Save ~20%',
       'Priority support',
+      'Pass Guarantee included',
     ],
     limits: {
       questionsPerDay: Infinity,
@@ -156,7 +158,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
       'Everything in Monthly',
       'Best value - Save 42%',
       'Priority support',
-      'Pass guarantee',
+      'Pass Guarantee included',
     ],
     limits: {
       questionsPerDay: Infinity,

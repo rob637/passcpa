@@ -90,6 +90,7 @@ const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
 const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
 const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
+const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'));
 
 // Checkout Pages
 const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
@@ -444,6 +445,22 @@ function App() {
                   element={
                     <SuspensePage>
                       <Privacy />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/pass-guarantee"
+                  element={
+                    <SuspensePage>
+                      <PassGuarantee />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/terms/pass-guarantee"
+                  element={
+                    <SuspensePage>
+                      <PassGuarantee />
                     </SuspensePage>
                   }
                 />

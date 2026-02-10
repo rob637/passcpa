@@ -476,7 +476,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founders pricing available through May 3, 2026. Lock in 50% off forever.
+                *Founders pricing available through May 31, 2026. Lock in 50% off forever.
               </p>
             </div>
           </section>
@@ -762,7 +762,8 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
                 <div>
                   <p className="font-semibold text-emerald-900 dark:text-emerald-300">Pass Guarantee</p>
                   <p className="text-sm text-emerald-700 dark:text-emerald-400">
-                    *If you don't pass, we extend your subscription for free until you do. Study as long as you need.
+                    *If you don't pass after meeting study requirements, we extend your subscription free.{' '}
+                    <a href="/pass-guarantee" className="underline hover:text-emerald-600">See terms</a>.
                   </p>
                 </div>
               </div>

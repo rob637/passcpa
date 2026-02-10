@@ -76,28 +76,30 @@
 >
 > If you don't pass, we'll extend your subscription at no cost until you do.
 
-**Requirements to claim:**
+**Requirements to claim (MUST complete ALL before exam):**
 
-| Requirement | Rationale |
-|-------------|-----------|
-| Complete 80%+ of lessons for that section/part | Proves engagement |
-| Answer 80%+ of practice questions | Can't just skim |
-| Take at least 2 full mock exams | Simulated exam experience |
-| Achieve 70%+ average on practice questions | Shows genuine effort |
-| Exam taken within subscription period | Prevents "save for later" |
-| Submit score report within 30 days | Proof of attempt |
+| Requirement | Threshold | Rationale |
+|-------------|-----------|-----------|
+| Minimum paid subscription | 3+ consecutive months | Prevents sign-up-fail-extend gaming |
+| Complete lessons | 80%+ of lessons read | Proves engagement |
+| Answer practice questions | 80%+ of questions attempted | Can't just skim |
+| Average practice score | 70%+ on practice questions | Shows genuine effort |
+| Mock exams | Complete all available mocks | Simulated exam experience |
+| Final mock score | 75%+ on final mock | Demonstrates readiness |
+| Review flashcards | 80%+ of flashcards reviewed | Comprehensive prep |
+| Submit score report | Within 30 days of exam | Proof of attempt |
 
 **Extension terms:**
-- 6-month extension per claim
-- Up to 2 extensions per section/part (12 months total free)
+- 3-month extension per claim
+- Up to 2 extensions per section/part (6 months total free per section)
 - After that, re-subscribe at 50% off
 
 **Why this works:**
 - Costs us almost nothing (marginal hosting cost is pennies)
 - Keeps them in our ecosystem (they don't switch to competitor)
 - Eventually they pass → testimonial
-- Filters out abuse (must actually engage with content)
-- Low admin burden (update date in database)
+- Filters out abuse (must actually engage with content for 3+ months)
+- Low admin burden (verify score report, update date in database)
 
 ---
 

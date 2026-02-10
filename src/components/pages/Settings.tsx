@@ -15,7 +15,11 @@ import {
   Moon,
   Monitor,
   Palette,
+  RefreshCw,
+  CheckCircle,
+  Smartphone,
 } from 'lucide-react';
+import { triggerUpdateBanner } from '../common/UpdateBanner';
 import { Button } from '../common/Button';
 import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
@@ -89,6 +93,8 @@ const Settings: React.FC = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
+  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
+  const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Cast profile
@@ -324,6 +330,7 @@ const Settings: React.FC = () => {
     { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
     { id: 'offline', label: 'Offline', icon: Wifi },
     { id: 'account', label: 'Account', icon: Shield },
+    { id: 'about', label: 'About', icon: Info },
   ];
 
   // Keyboard navigation for tabs
@@ -1054,6 +1061,118 @@ const Settings: React.FC = () => {
               </div>
             )}
             
+            {/* About Tab */}
+            {activeTab === 'about' && (
+              <div className="card-body space-y-6">
+                <div>
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">About VoraPrep</h2>
+                  
+                  <div className="space-y-6">
+                    {/* App Info */}
+                    <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+                          <Smartphone className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white">VoraPrep</h3>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">AI-Powered Exam Prep</p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
+                            Version
+                          </div>
+                          <div className="text-sm font-mono text-slate-700 dark:text-slate-300">
+                            v{__APP_VERSION__}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
+                            Platform
+                          </div>
+                          <div className="text-sm text-slate-700 dark:text-slate-300">
+                            {/iPhone|iPad|iPod/.test(navigator.userAgent) ? 'iOS' : /Android/.test(navigator.userAgent) ? 'Android' : 'Web'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Updates Section */}
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-3">Updates</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        VoraPrep automatically checks for updates. You can also manually check below.
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <Button
+                          onClick={async () => {
+                            setIsCheckingUpdate(true);
+                            setUpdateCheckResult(null);
+                            try {
+                              // Force service worker update check
+                              const registration = await navigator.serviceWorker?.getRegistration();
+                              if (registration) {
+                                await registration.update();
+                                // Wait a moment for the update check to complete
+                                await new Promise(resolve => setTimeout(resolve, 1500));
+                                // Check if there's a waiting worker (new version available)
+                                if (registration.waiting) {
+                                  setUpdateCheckResult('available');
+                                  triggerUpdateBanner();
+                                } else {
+                                  setUpdateCheckResult('none');
+                                }
+                              } else {
+                                setUpdateCheckResult('none');
+                              }
+                            } catch (err) {
+                              logger.error('Update check failed:', err);
+                              setUpdateCheckResult('none');
+                            } finally {
+                              setIsCheckingUpdate(false);
+                            }
+                          }}
+                          variant="secondary"
+                          leftIcon={RefreshCw}
+                          disabled={isCheckingUpdate}
+                          className="w-full sm:w-auto"
+                        >
+                          {isCheckingUpdate ? 'Checking...' : 'Check for Updates'}
+                        </Button>
+                        {updateCheckResult === 'none' && (
+                          <div className="flex items-center gap-2 text-green-600 dark:text-green-400 text-sm">
+                            <CheckCircle className="w-4 h-4" />
+                            <span>You're up to date!</span>
+                          </div>
+                        )}
+                        {updateCheckResult === 'available' && (
+                          <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400 text-sm">
+                            <RefreshCw className="w-4 h-4" />
+                            <span>Update available - see banner above</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Legal Links */}
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-3">Legal</h3>
+                      <div className="flex flex-wrap gap-4">
+                        <a href="/terms" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">Terms of Service</a>
+                        <a href="/privacy" className="text-sm text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a>
+                      </div>
+                      <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
+                        VoraPrep is not affiliated with AICPA, NASBA, IMA, IIA, ISACA, CFP Board, or any certifying organization. 
+                        All exam names are trademarks of their respective owners.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
               <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">

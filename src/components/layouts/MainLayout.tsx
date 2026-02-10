@@ -4,6 +4,7 @@ import { Flame, WifiOff } from 'lucide-react';
 import { PageTransition } from '../common/PageTransition';
 import { useStudy } from '../../hooks/useStudy';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
+import * as feedback from '../../services/feedback';
 import { usePageTracking } from '../../hooks/usePageTracking';
 import { useTheme } from '../../providers/ThemeProvider';
 import { CourseSelector } from '../common/CourseSelector';
@@ -303,9 +304,10 @@ const MainLayout = () => {
               key={item.navType}
               to={item.path}
               aria-label={item.label}
+              onClick={() => feedback.tap()}
               className={() =>
                 clsx(
-                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5',
+                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5 transition-transform active:scale-95',
                   isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                     ? 'text-primary-600 dark:text-primary-400' 
                     : 'text-slate-500 dark:text-slate-400'

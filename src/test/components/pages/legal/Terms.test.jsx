@@ -23,8 +23,8 @@ describe('Terms Page', () => {
   it('should render back link', () => {
     renderWithRouter(<Terms />);
     
-    // Has a link back to help page
-    const backLink = document.querySelector('a[href="/help"]');
+    // Has a back link to home page
+    const backLink = document.querySelector('a[href="/"]');
     expect(backLink).toBeInTheDocument();
   });
 

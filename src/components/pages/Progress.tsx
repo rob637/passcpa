@@ -34,6 +34,20 @@ import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getSt
 import { calculateBlueprintAnalytics, BlueprintAnalytics, QuestionAttempt } from '../../utils/blueprintAnalytics';
 import { BlueprintHeatMap, WeightComparisonChart, SmartRecommendations, AnalyticsSummary } from '../analytics/BlueprintAnalyticsComponents';
 import Leaderboard from '../Leaderboard';
+import type { CourseId } from '../../types';
+
+// Get the exam governing body name for each course
+const getExamBody = (courseId: CourseId): string => {
+  const examBodies: Record<CourseId, string> = {
+    cpa: 'AICPA',
+    ea: 'IRS',
+    cma: 'IMA',
+    cia: 'IIA',
+    cisa: 'ISACA',
+    cfp: 'CFP Board',
+  };
+  return examBodies[courseId] || 'Exam';
+};
 
 interface WeeklyActivity {
   date: Date;
@@ -244,87 +258,6 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
 
 // Blueprint areas are now sourced from course config via getBlueprintAreas()
 // This enables the Progress page to work for all 6 exams automatically
-
-// Topic Heat Map Component - Now organized by Blueprint Areas
-const TopicHeatMap: React.FC<{ topics: TopicStat[], section: string, courseId: string }> = ({ topics, section, courseId }) => {
-  const blueprintAreas = getBlueprintAreas(section, courseId);
-  
-  const getHeatColor = (accuracy: number | undefined) => {
-    if (accuracy === undefined) return 'bg-slate-200 dark:bg-slate-700'; // Not attempted
-    if (accuracy >= 75) return 'bg-success-500';
-    if (accuracy >= 50) return 'bg-warning-500';
-    return 'bg-error-500';
-  };
-
-  // Group topics by blueprint area
-  const getAreaStats = (areaId: string) => {
-    const areaTopics = topics.filter(t => 
-      t.id?.startsWith(areaId) || t.topic?.includes(areaId)
-    );
-    if (areaTopics.length === 0) return { accuracy: undefined, questions: 0 };
-    
-    const totalQuestions = areaTopics.reduce((sum, t) => sum + t.questions, 0);
-    const weightedAccuracy = areaTopics.reduce((sum, t) => sum + (t.accuracy * t.questions), 0);
-    return {
-      accuracy: totalQuestions > 0 ? Math.round(weightedAccuracy / totalQuestions) : undefined,
-      questions: totalQuestions
-    };
-  };
-
-  return (
-    <div className="space-y-3">
-      {/* Blueprint area cards */}
-      <div className="space-y-2">
-        {blueprintAreas.map((area) => {
-          const stats = getAreaStats(area.id);
-          return (
-            <div 
-              key={area.id}
-              className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              <div 
-                className={clsx(
-                  'w-10 h-10 rounded-md flex items-center justify-center text-white text-xs font-bold shrink-0',
-                  getHeatColor(stats.accuracy)
-                )}
-              >
-                {stats.accuracy !== undefined ? `${stats.accuracy}%` : '—'}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                  {area.id}: {area.shortName}
-                </div>
-                <div className="text-xs text-slate-600 truncate">
-                  {stats.questions > 0 ? `${stats.questions} questions` : 'Not attempted'}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Legend */}
-      <div className="flex items-center justify-center gap-4 text-xs text-slate-600 pt-2 border-t border-slate-100 dark:border-slate-700">
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-slate-200 dark:bg-slate-700" />
-          <span>Not tried</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-error-500" />
-          <span>&lt;50%</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-warning-500" />
-          <span>50-75%</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-sm bg-success-500" />
-          <span>&gt;75%</span>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 // Exam Readiness Gauge
 const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Date | undefined }> = ({ readiness, examDate }) => {
@@ -685,7 +618,7 @@ const Progress: React.FC = () => {
         <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
-            <p className="text-slate-600 dark:text-slate-300">Track your journey to CPA success</p>
+            <p className="text-slate-600 dark:text-slate-300">Track your journey to {course.shortName} success</p>
           </div>
         </div>
         
@@ -694,7 +627,7 @@ const Progress: React.FC = () => {
             <Sparkles className="w-10 h-10 text-blue-600 dark:text-blue-400" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-            Start Your CPA Journey
+            Start Your {course.shortName} Journey
           </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Complete your first practice session or lesson to see your progress here. 
@@ -727,7 +660,7 @@ const Progress: React.FC = () => {
       <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Progress</h1>
-          <p className="text-slate-600 dark:text-slate-300">Track your journey to CPA success</p>
+          <p className="text-slate-600 dark:text-slate-300">Track your journey to {course.shortName} success</p>
         </div>
       </div>
 
@@ -835,7 +768,10 @@ const Progress: React.FC = () => {
               />
               
               {/* Weight Comparison */}
-              <WeightComparisonChart comparisons={blueprintAnalytics.weightComparison} />
+              <WeightComparisonChart 
+                comparisons={blueprintAnalytics.weightComparison} 
+                examBody={getExamBody(courseId)}
+              />
             </div>
           </div>
         )}
@@ -982,21 +918,6 @@ const Progress: React.FC = () => {
                   <span>&lt;50%</span>
                 </div>
               </div>
-            </div>
-
-            {/* Topic Performance */}
-            <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-primary-600" />
-                  {sectionInfo?.name || 'Exam'} Proficiency
-                </h2>
-                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
-                  {topicPerformance.length}/{getBlueprintAreas(currentSection, courseId).length || 5} Areas
-                </div>
-              </div>
-              
-              <TopicHeatMap topics={topicPerformance} section={currentSection} courseId={courseId} />
             </div>
           </div>
 

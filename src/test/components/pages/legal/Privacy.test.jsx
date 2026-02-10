@@ -23,8 +23,8 @@ describe('Privacy Page', () => {
   it('should render back link', () => {
     renderWithRouter(<Privacy />);
     
-    // Has a link back to help page
-    const backLink = document.querySelector('a[href="/help"]');
+    // Has a back link to home page
+    const backLink = document.querySelector('a[href="/"]');
     expect(backLink).toBeInTheDocument();
   });
 

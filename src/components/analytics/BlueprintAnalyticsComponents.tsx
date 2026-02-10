@@ -235,10 +235,12 @@ export const BlueprintHeatMap: React.FC<BlueprintHeatMapProps> = ({
 
 interface WeightComparisonChartProps {
   comparisons: WeightComparison[];
+  examBody?: string; // e.g., "AICPA", "IRS", "IMA", "IIA", "ISACA", "CFP Board"
 }
 
 export const WeightComparisonChart: React.FC<WeightComparisonChartProps> = ({
   comparisons,
+  examBody = 'Exam',
 }) => {
   const [expanded, setExpanded] = useState(true);
 
@@ -260,7 +262,7 @@ export const WeightComparisonChart: React.FC<WeightComparisonChartProps> = ({
               Study vs. Exam Weight
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Compare your time allocation to AICPA blueprint weights
+              Compare your time allocation to {examBody} blueprint weights
             </p>
           </div>
         </div>
@@ -281,7 +283,7 @@ export const WeightComparisonChart: React.FC<WeightComparisonChartProps> = ({
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded bg-slate-300 dark:bg-slate-600 border-2 border-dashed border-slate-400" />
-              <span className="text-xs text-slate-600 dark:text-slate-400">AICPA Weight</span>
+              <span className="text-xs text-slate-600 dark:text-slate-400">{examBody} Weight</span>
             </div>
           </div>
 
@@ -311,7 +313,7 @@ export const WeightComparisonChart: React.FC<WeightComparisonChartProps> = ({
                   </div>
                   
                   <div className="relative h-6">
-                    {/* AICPA Target (dashed outline) */}
+                    {/* Exam Target (dashed outline) */}
                     <div 
                       className="absolute top-0 h-full border-2 border-dashed border-slate-300 dark:border-slate-500 rounded bg-transparent"
                       style={{ width: `${examWidth}%` }}

@@ -3374,9 +3374,22 @@ const AdminCMS: React.FC = () => {
                             const subDocs = await getDocs(subColRef);
                             subDocs.forEach((docSnap) => {
                               const data = docSnap.data();
-                              // Delete if courseId matches OR if no courseId (legacy data for current course)
-                              if (data.courseId === currentCourse || 
-                                  (data.courseId === undefined && currentCourse === 'cpa')) {
+                              const docId = docSnap.id.toLowerCase();
+                              const section = (data.section || '').toLowerCase();
+                              
+                              // Check if this doc belongs to the current course:
+                              // 1. Explicit courseId match
+                              // 2. Section matches course sections (e.g., CISA1, CISA2)
+                              // 3. Doc ID starts with course prefix (e.g., cisa1-a-1)
+                              // 4. Legacy CPA data (no courseId, currentCourse is 'cpa')
+                              const belongsToCourse = 
+                                data.courseId === currentCourse ||
+                                courseSections.some(s => section === s.toLowerCase()) ||
+                                docId.startsWith(currentCourse.toLowerCase()) ||
+                                (data.courseId === undefined && currentCourse === 'cpa' && 
+                                  !['ea', 'cma', 'cia', 'cfp', 'cisa'].some(c => docId.startsWith(c)));
+                              
+                              if (belongsToCourse) {
                                 batch.delete(docSnap.ref);
                                 totalDeleted++;
                               }

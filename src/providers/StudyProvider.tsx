@@ -416,6 +416,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               type: 'lesson',
               lessonId,
               section,
+              courseId: activeCourse,
               timeSpent,
               timestamp: new Date().toISOString()
             }]
@@ -430,6 +431,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
                 type: 'lesson',
                 lessonId,
                 section,
+                courseId: activeCourse,
                 timeSpent,
                 timestamp: new Date().toISOString()
               })
@@ -441,6 +443,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           completedAt: serverTimestamp(),
           status: 'completed',
           section,
+          courseId: activeCourse,
           timeSpent,
         }, { merge: true });
         

@@ -18,8 +18,9 @@ import { Button } from './common/Button';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { getFlashcardsBySection } from '../data/cpa/flashcards';
-import { ExamSection, EASection, AllExamSections } from '../types';
+import { EASection, AllExamSections } from '../types';
 import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
+import { getCurrentSection } from '../utils/profileHelpers';
 import { EA_SECTION_CONFIG } from '../courses/ea/config';
 import clsx from 'clsx';
 
@@ -56,7 +57,7 @@ const FlashcardSetup: React.FC = () => {
   const sectionFromUrl = searchParams.get('section');
   const currentSection: AllExamSections = sectionFromUrl 
     ? (sectionFromUrl as AllExamSections)
-    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+    : getCurrentSection(userProfile, courseId, getDefaultSection) as AllExamSections;
   
   // Get section info - handle both CPA and EA sections
   const isEA = isEASection(currentSection);

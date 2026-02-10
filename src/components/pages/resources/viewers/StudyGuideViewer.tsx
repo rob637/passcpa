@@ -102,6 +102,12 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
           'cia-sg-p1': () => import(`../../../../data/cia/study-materials/cia1-study-guide`).then(m => m.CIA1_STUDY_GUIDE),
           'cia-sg-p2': () => import(`../../../../data/cia/study-materials/cia2-study-guide`).then(m => m.CIA2_STUDY_GUIDE),
           'cia-sg-p3': () => import(`../../../../data/cia/study-materials/cia3-study-guide`).then(m => m.CIA3_STUDY_GUIDE),
+          // CISA - 5 domain study guides
+          'cisa-sg-d1': () => import(`../../../../data/cisa/study-materials/cisa1-study-guide`).then(m => m.CISA1_STUDY_GUIDE),
+          'cisa-sg-d2': () => import(`../../../../data/cisa/study-materials/cisa2-study-guide`).then(m => m.CISA2_STUDY_GUIDE),
+          'cisa-sg-d3': () => import(`../../../../data/cisa/study-materials/cisa3-study-guide`).then(m => m.CISA3_STUDY_GUIDE),
+          'cisa-sg-d4': () => import(`../../../../data/cisa/study-materials/cisa4-study-guide`).then(m => m.CISA4_STUDY_GUIDE),
+          'cisa-sg-d5': () => import(`../../../../data/cisa/study-materials/cisa5-study-guide`).then(m => m.CISA5_STUDY_GUIDE),
           // CFP - single comprehensive guide
           'cfp-sg-comprehensive': () => import(`../../../../data/cfp/study-materials/cfp-study-guide`).then(m => m.CFP_COMPREHENSIVE_GUIDE),
           'cfp-sg-all': () => import(`../../../../data/cfp/study-materials/cfp-study-guide`).then(m => m.CFP_COMPREHENSIVE_GUIDE),

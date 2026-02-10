@@ -23,7 +23,8 @@ import {
   StudyGuideViewer, 
   FormulaSheetViewer, 
   MnemonicViewer, 
-  CheatsheetViewer 
+  CheatsheetViewer,
+  BlueprintViewer 
 } from './viewers';
 
 const ResourceViewer: React.FC = () => {
@@ -60,6 +61,8 @@ const ResourceViewer: React.FC = () => {
         return <MnemonicViewer courseId={courseId} item={item} />;
       case 'reference':
         return <CheatsheetViewer courseId={courseId} item={item} />;
+      case 'blueprint':
+        return <BlueprintViewer courseId={courseId} item={item} />;
       default:
         return (
           <div className="text-center py-8">

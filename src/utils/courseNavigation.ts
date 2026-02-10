@@ -84,6 +84,16 @@ export const COURSE_TBS_PATHS: Record<CourseId, string> = {
   cisa: '/tbs',
 };
 
+// Course-specific Essay/CBQ paths
+export const COURSE_ESSAY_PATHS: Record<CourseId, string> = {
+  cpa: '/wc', // Written Communications
+  ea: '/ea', // EA doesn't have essays
+  cma: '/cma/essay', // CMA Essay/CBQ Simulator
+  cia: '/cia', // CIA doesn't have essays
+  cfp: '/cfp', // CFP doesn't have essays
+  cisa: '/cisa', // CISA doesn't have essays
+};
+
 // Get the home path for a specific course
 export function getCourseHomePath(courseId: CourseId): string {
   return COURSE_HOME_PATHS[courseId] || '/home';
@@ -137,6 +147,11 @@ export function getCourseExamPath(courseId: CourseId): string {
 // Get the TBS path for a specific course
 export function getCourseTBSPath(courseId: CourseId): string {
   return COURSE_TBS_PATHS[courseId] || '/tbs';
+}
+
+// Get the Essay/CBQ path for a specific course
+export function getCourseEssayPath(courseId: CourseId): string {
+  return COURSE_ESSAY_PATHS[courseId] || '/';  
 }
 
 // Get the lesson path for a specific course and lesson

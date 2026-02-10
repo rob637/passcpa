@@ -204,7 +204,7 @@ const Home = () => {
         isOpen={showSectionPicker}
         onClose={() => setShowSectionPicker(false)}
         title="Change Exam Section"
-        maxHeight={65}
+        maxHeight={75}
       >
         <div className="py-1 space-y-1">
               {courseId === 'cpa' ? (

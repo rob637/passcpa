@@ -37,9 +37,11 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
   swipeToClose = true,
 }) => {
   const sheetRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const startY = useRef<number>(0);
   const currentY = useRef<number>(0);
   const isDragging = useRef<boolean>(false);
+  const canSwipeClose = useRef<boolean>(false);
 
   // Lock body scroll when open
   useEffect(() => {
@@ -76,6 +78,11 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     if (!swipeToClose) return;
     startY.current = e.touches[0].clientY;
     isDragging.current = true;
+    
+    // Only allow swipe-to-close if content is scrolled to top
+    // This prevents the sheet from being dismissed when user is scrolling content
+    const content = contentRef.current;
+    canSwipeClose.current = !content || content.scrollTop <= 0;
   }, [swipeToClose]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
@@ -84,8 +91,8 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     currentY.current = e.touches[0].clientY;
     const deltaY = currentY.current - startY.current;
     
-    // Only allow dragging down
-    if (deltaY > 0) {
+    // Only allow dragging down if content is at top (can close) and swiping down
+    if (deltaY > 0 && canSwipeClose.current) {
       sheetRef.current.style.transform = `translateY(${deltaY}px)`;
     }
   }, []);
@@ -96,13 +103,15 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     const deltaY = currentY.current - startY.current;
     isDragging.current = false;
     
-    // Close if dragged more than 100px or 25% of sheet height
-    if (deltaY > 100 || deltaY > sheetRef.current.offsetHeight * 0.25) {
+    // Close if dragged more than 100px or 25% of sheet height (and swipe was allowed)
+    if (canSwipeClose.current && (deltaY > 100 || deltaY > sheetRef.current.offsetHeight * 0.25)) {
       onClose();
     } else {
       // Snap back
       sheetRef.current.style.transform = '';
     }
+    
+    canSwipeClose.current = false;
   }, [onClose]);
 
   if (!isOpen) return null;
@@ -170,6 +179,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         
         {/* Content */}
         <div 
+          ref={contentRef}
           className="overflow-y-auto overscroll-contain px-4 pb-6"
           style={{ maxHeight: `calc(${maxHeight}vh - ${title ? '80px' : '40px'})` }}
         >

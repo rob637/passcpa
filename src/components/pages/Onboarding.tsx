@@ -408,14 +408,17 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId }
 
       <div className="mb-6">
         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Target Exam Date</label>
-        <input
-          type="date"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          min={today}
-          max={maxDateStr}
-          className="w-full max-w-full box-border px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-lg dark:[color-scheme:dark]"
-        />
+        <div className="relative">
+          <input
+            type="date"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            min={today}
+            max={maxDateStr}
+            className="w-full pl-12 pr-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors text-base dark:[color-scheme:dark]"
+          />
+          <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+        </div>
       </div>
 
       {/* Blueprint indicator - CPA only */}
@@ -768,9 +771,9 @@ const Onboarding: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 flex items-center justify-center p-4">
-        <div className="w-full max-w-lg">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 sm:p-8 overflow-hidden">{renderStep()}</div>
+      <div className="flex-1 overflow-y-auto p-4">
+        <div className="w-full max-w-lg mx-auto">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 sm:p-8">{renderStep()}</div>
         </div>
       </div>
 
@@ -797,9 +800,9 @@ const Onboarding: React.FC = () => {
             loading={isSubmitting}
             rightIcon={currentStep === steps.length - 1 ? Sparkles : ChevronRight}
             className={clsx(
-              'px-8 py-3 shadow-lg',
+              'px-8 py-3 shadow-lg transition-all duration-200',
               canContinue() && !isSubmitting
-                ? 'bg-white text-primary-600 hover:bg-white/90'
+                ? 'bg-white text-primary-600 hover:bg-primary-50 hover:shadow-xl hover:scale-[1.02]'
                 : 'bg-white/30 text-white'
             )}
           >

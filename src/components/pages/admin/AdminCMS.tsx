@@ -3107,6 +3107,93 @@ const AdminCMS: React.FC = () => {
                   >
                     🎯 Reset Current Exam Onboarding
                   </button>
+                  <button
+                    onClick={async () => {
+                      if (!user) return;
+                      
+                      const currentCourse = localStorage.getItem('voraprep_course') || 'cpa';
+                      
+                      const confirmed = window.confirm(
+                        `⚠️ Reset ALL progress for ${currentCourse.toUpperCase()} only?\n\n` +
+                        `This will delete:\n` +
+                        `• Question history & performance for ${currentCourse.toUpperCase()}\n` +
+                        `• Completed lessons for ${currentCourse.toUpperCase()}\n` +
+                        `• Achievements & streaks for ${currentCourse.toUpperCase()}\n` +
+                        `• Bookmarks & flagged questions for ${currentCourse.toUpperCase()}\n\n` +
+                        `Other exams will NOT be affected.`
+                      );
+                      if (!confirmed) return;
+                      
+                      try {
+                        addLog(`Starting progress reset for ${currentCourse.toUpperCase()}...`, 'info');
+                        const batch = writeBatch(db);
+                        const userId = user.uid;
+                        
+                        // Collections that store course-specific data
+                        const collectionsToFilter = [
+                          'daily_log',
+                          'lessons',
+                          'progress',
+                          'questionHistory', 
+                          'lessonProgress',
+                          'achievements',
+                          'bookmarks',
+                          'flaggedQuestions',
+                          'studySessions',
+                          'examResults',
+                          'flashcardProgress',
+                          'questionAttempts',
+                        ];
+                        
+                        let totalDeleted = 0;
+                        
+                        // Delete docs where courseId matches current course
+                        for (const collName of collectionsToFilter) {
+                          try {
+                            const subColRef = collection(db, 'users', userId, collName);
+                            const subDocs = await getDocs(subColRef);
+                            subDocs.forEach((docSnap) => {
+                              const data = docSnap.data();
+                              // Delete if courseId matches OR if no courseId (legacy data for current course)
+                              if (data.courseId === currentCourse || 
+                                  (data.courseId === undefined && currentCourse === 'cpa')) {
+                                batch.delete(docSnap.ref);
+                                totalDeleted++;
+                              }
+                            });
+                          } catch (e) {
+                            // Collection might not exist
+                          }
+                        }
+                        
+                        // Reset onboarding for this course only
+                        const userRef = doc(db, 'users', userId);
+                        const userDoc = await getDoc(userRef);
+                        const userData = userDoc.data();
+                        const existingOnboarding = userData?.onboardingCompleted || {};
+                        
+                        batch.update(userRef, {
+                          onboardingCompleted: { ...existingOnboarding, [currentCourse]: false },
+                        });
+                        
+                        await batch.commit();
+                        addLog(`✅ Reset ${totalDeleted} records for ${currentCourse.toUpperCase()}! Redirecting...`, 'success');
+                        
+                        // Clear local storage for this course
+                        localStorage.removeItem(`voraprep_study_state_${currentCourse}`);
+                        localStorage.removeItem(`dailyplan_completed_${currentCourse}`);
+                        
+                        setTimeout(() => {
+                          window.location.href = '/onboarding';
+                        }, 1500);
+                      } catch (error) {
+                        addLog('❌ Failed: ' + (error instanceof Error ? error.message : String(error)), 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                  >
+                    🗑️ Reset Current Exam Progress
+                  </button>
                 </div>
               </div>
             </div>

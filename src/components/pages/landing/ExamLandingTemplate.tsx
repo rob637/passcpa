@@ -503,27 +503,43 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                   <p className="text-white/90 text-lg mb-4">
                     Full access to all {config.name} content — no credit card required
                   </p>
-                  <ul className="space-y-2 text-white/90">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      All {config.examParts.length} exam sections with {config.questionCount} questions
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      Expert-written lessons with clear explanations
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      AI tutor for personalized help 24/7
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                      Founding member pricing locked in forever
-                    </li>
-                  </ul>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-white/90">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>{config.questionCount} practice questions</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>{config.lessonCount} expert lessons</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>{config.flashcardCount} flashcards</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>AI tutor available 24/7</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>Real-time adaptive engine</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>SM-2 spaced repetition</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>Offline mode (PWA)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                      <span>Founding member pricing forever</span>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="text-center md:text-right">
+                <div className="text-center md:text-right flex-shrink-0">
                   <div className="mb-4">
                     <span className="text-5xl md:text-6xl font-bold">$0</span>
                     <span className="text-white/80 text-lg">/month</span>

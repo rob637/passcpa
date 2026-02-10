@@ -326,7 +326,7 @@ const SectionStep: React.FC<SectionStepProps> = ({ selected, onSelect, examDate,
     {/* Note about changing sections */}
     <div className="mt-4 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl p-3">
       <p className="text-xs text-slate-600 dark:text-slate-400 text-center">
-        📝 Studying for multiple sections? You can switch your active section anytime in <strong>Settings</strong>.
+        📝 Studying for multiple sections? Switch anytime from the <strong>Home</strong> screen or in <strong>Settings</strong>.
       </p>
     </div>
   </div>
@@ -564,7 +564,7 @@ const CompleteStep: React.FC<CompleteStepProps> = ({ section, examDate, dailyGoa
       </div>
 
       <p className="text-sm text-slate-600 dark:text-slate-400">
-        You can adjust these settings anytime in your profile.
+        You can adjust these settings anytime from Home or Settings.
       </p>
     </div>
   );

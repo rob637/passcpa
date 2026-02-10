@@ -23,6 +23,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { getDefaultSection } from '../../utils/sectionUtils';
+import { getCurrentSection } from '../../utils/profileHelpers';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { fetchQuestions } from '../../services/questionService';
@@ -106,7 +107,7 @@ const Flashcards: React.FC = () => {
   // Support URL param for section (for EA) or fall back to user profile
   const currentSection: AllExamSections = sectionParam 
     ? (sectionParam as AllExamSections)
-    : (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+    : getCurrentSection(userProfile, courseId, getDefaultSection) as AllExamSections;
 
   // Scroll to top when flashcard session starts
   useEffect(() => {

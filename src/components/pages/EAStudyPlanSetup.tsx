@@ -22,6 +22,10 @@ import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import { EASectionId, EA_SECTION_CONFIG } from '../../courses/ea';
 import { generateEAStudyPlan, EAStudyPlan, getStudyPlanSummary } from '../../utils/eaStudyPlanner';
+import { useAuth } from '../../hooks/useAuth';
+import { setDoc, doc } from 'firebase/firestore';
+import { db } from '../../config/firebase';
+import logger from '../../utils/logger';
 
 // Step indicator
 interface StepIndicatorProps {
@@ -267,6 +271,7 @@ const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
 
 const EAStudyPlanSetup: React.FC = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [step, setStep] = useState(1);
   const totalSteps = 4;
 
@@ -300,10 +305,25 @@ const EAStudyPlanSetup: React.FC = () => {
     setStep(4);
   };
 
-  const handleSavePlan = () => {
-    // TODO: Save plan to Firebase
-    // For now, just navigate to dashboard
-    navigate('/ea');
+  const handleSavePlan = async () => {
+    if (!user || !generatedPlan) {
+      navigate('/ea');
+      return;
+    }
+    
+    try {
+      // Save the generated plan to Firestore
+      await setDoc(doc(db, 'users', user.uid, 'settings', 'eaStudyPlan'), {
+        ...generatedPlan,
+        savedAt: new Date().toISOString(),
+      });
+      
+      logger.info('EA Study plan saved', { planId: generatedPlan.id });
+      navigate('/ea');
+    } catch (error) {
+      logger.error('Failed to save EA study plan', error);
+      navigate('/ea');
+    }
   };
 
   const canProceed = () => {

@@ -28,6 +28,7 @@ import {
   Brain,
   Globe,
   Lightbulb,
+  Map,
 } from 'lucide-react';
 import { useCourse } from '../../../providers/CourseProvider';
 import { getResourceConfig, ResourceCategory, ResourceType } from './resourceConfig';
@@ -249,6 +250,44 @@ const ResourcesHub: React.FC = () => {
             </ol>
           </div>
         </div>
+      )}
+
+      {/* Strategy & Tips Card */}
+      {resourceConfig.strategyContent && (
+        <button
+          onClick={() => navigate('/resources/strategy')}
+          className="w-full card mb-8 border-indigo-200 dark:border-indigo-700 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 hover:shadow-lg hover:scale-[1.01] transition-all duration-200 text-left group"
+        >
+          <div className="card-body">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center flex-shrink-0">
+                <Map className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                    Strategy & Tips
+                  </h2>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  Exam structure, time management, question strategies, and test day preparation
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="px-2 py-0.5 rounded-full text-xs bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300">
+                    Exam Format
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-xs bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">
+                    Time Management
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-xs bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-violet-300">
+                    Study Plan
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </button>
       )}
 
       {/* Resource Categories Grid */}

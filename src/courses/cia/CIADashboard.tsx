@@ -9,6 +9,7 @@ import { useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useCIAProgress } from '../../hooks/useCIAProgress';
+import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { CIA_SECTION_CONFIG, CIASectionId, CIA_SECTIONS } from './config';
 import { 
   DashboardTemplate, 
@@ -21,6 +22,7 @@ export default function CIADashboard() {
   const navigate = useNavigate();
   const { userProfile } = useAuth();
   const { progress, loading } = useCIAProgress();
+  const { daysToExam } = useStudyPlan('cia');
   
   // Get config for CIA
   const config = getDashboardConfig('cia');
@@ -34,8 +36,8 @@ export default function CIADashboard() {
     questionsAnswered: progress?.overall.totalQuestionsAttempted || 0,
     studyStreak: progress?.overall.streakDays || 0,
     accuracy: Math.round(progress?.overall.overallAccuracy || 0),
-    daysToExam: null, // TODO: Get from user profile
-  }), [progress]);
+    daysToExam,
+  }), [progress, daysToExam]);
   
   // Transform sections into template format
   const sections: ExamSection[] = useMemo(() => 

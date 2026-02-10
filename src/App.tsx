@@ -74,6 +74,7 @@ const Community = lazy(() => import('./components/pages/Community'));
 const ResourcesHub = lazy(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
 const ResourceList = lazy(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
 const ResourceViewer = lazy(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
+const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
 
 // Onboarding & Admin
 const Onboarding = lazy(() => import('./components/pages/Onboarding'));
@@ -884,6 +885,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <ResourcesHub />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/resources/strategy"
+                    element={
+                      <SuspensePage>
+                        <StrategyPage />
                       </SuspensePage>
                     }
                   />

@@ -168,7 +168,7 @@ const CPA_RESOURCES: CourseResourceConfig = {
       sections: [
         { name: 'Financial Accounting & Reporting', code: 'FAR', duration: '4 hours', questionTypes: [{ type: 'MCQ', count: '50', weight: '50%' }, { type: 'TBS', count: '7', weight: '50%' }], passingScore: '75' },
         { name: 'Auditing & Attestation', code: 'AUD', duration: '4 hours', questionTypes: [{ type: 'MCQ', count: '78', weight: '50%' }, { type: 'TBS', count: '7', weight: '50%' }], passingScore: '75' },
-        { name: 'Taxation & Regulation', code: 'REG', duration: '4 hours', questionTypes: [{ type: 'MCQ', count: '72', weight: '50%' }, { type: 'TBS', count: '8', weight: '40%' }, { type: 'WC', count: '1', weight: '10%' }], passingScore: '75' },
+        { name: 'Taxation & Regulation', code: 'REG', duration: '4 hours', questionTypes: [{ type: 'MCQ', count: '72', weight: '50%' }, { type: 'TBS', count: '8', weight: '50%' }], passingScore: '75' },
         { name: 'Discipline (BAR/ISC/TCP)', code: 'DSC', duration: '4 hours', questionTypes: [{ type: 'MCQ', count: '50-82', weight: '50-60%' }, { type: 'TBS', count: '6', weight: '40-50%' }], passingScore: '75' },
       ],
       totalTime: '16 hours (4 sections x 4 hours)',

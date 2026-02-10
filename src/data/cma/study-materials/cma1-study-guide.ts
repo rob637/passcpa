@@ -52,9 +52,9 @@ export interface StudyGuide {
 export interface StudyPlanWeek {
   week: number;
   focus: string;
-  dailyHours: number;
+  hours: number; // Total weekly hours
   topics: string[];
-  milestones: string[];
+  activities: string[];
 }
 
 export const CMA1_STUDY_GUIDE: StudyGuide = {
@@ -1136,58 +1136,58 @@ Integrated software managing all business processes through shared database.
     {
       week: 1,
       focus: 'External Financial Reporting (A)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['Financial statements', 'Revenue recognition', 'Inventory'],
-      milestones: ['Complete ASC 606 study', 'Practice 50 MCQs'],
+      activities: ['Complete ASC 606 study', 'Practice 50 MCQs'],
     },
     {
       week: 2,
       focus: 'External Reporting (A) & Budgeting (B)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['Leases', 'Assets', 'Strategic planning', 'Budget process'],
-      milestones: ['Master lease accounting', 'Complete budget sequence'],
+      activities: ['Master lease accounting', 'Complete budget sequence'],
     },
     {
       week: 3,
       focus: 'Budgeting & Forecasting (B)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['Cash budget', 'Pro forma statements', 'Forecasting methods'],
-      milestones: ['Complete cash budget practice', 'Master regression'],
+      activities: ['Complete cash budget practice', 'Master regression'],
     },
     {
       week: 4,
       focus: 'Performance Management (C)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['Variance analysis', 'Responsibility accounting', 'ROI/RI/EVA'],
-      milestones: ['Memorize variance formulas', 'Practice 100 MCQs'],
+      activities: ['Memorize variance formulas', 'Practice 100 MCQs'],
     },
     {
       week: 5,
       focus: 'Performance (C) & Cost Management (D)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['Balanced Scorecard', 'Cost behavior', 'Costing systems'],
-      milestones: ['Master BSC perspectives', 'Complete EU calculations'],
+      activities: ['Master BSC perspectives', 'Complete EU calculations'],
     },
     {
       week: 6,
       focus: 'Cost Management (D)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['ABC costing', 'Relevant costs', 'Decision analysis'],
-      milestones: ['Complete ABC practice', 'Master special decisions'],
+      activities: ['Complete ABC practice', 'Master special decisions'],
     },
     {
       week: 7,
       focus: 'Internal Controls (E) & Technology (F)',
-      dailyHours: 3,
+      hours: 20,
       topics: ['COSO frameworks', 'ERM', 'ERP', 'Analytics'],
-      milestones: ['Memorize COSO components', 'Understand analytics types'],
+      activities: ['Memorize COSO components', 'Understand analytics types'],
     },
     {
       week: 8,
       focus: 'Final Review',
-      dailyHours: 4,
+      hours: 25,
       topics: ['All areas', 'Weak spots', 'Full practice exams'],
-      milestones: ['Score 75%+ on practice exams', 'Review missed questions'],
+      activities: ['Score 75%+ on practice exams', 'Review missed questions'],
     },
   ],
 

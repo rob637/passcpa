@@ -134,6 +134,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         )}
         style={{ 
           maxHeight: `${maxHeight}vh`,
+          height: 'auto', // Auto-size to content instead of filling maxHeight
           willChange: 'transform',
         }}
         onTouchStart={handleTouchStart}
@@ -169,7 +170,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         
         {/* Content */}
         <div 
-          className="overflow-y-auto overscroll-contain px-4 pb-safe"
+          className="overflow-y-auto overscroll-contain px-4 pb-6"
           style={{ maxHeight: `calc(${maxHeight}vh - ${title ? '80px' : '40px'})` }}
         >
           {children}

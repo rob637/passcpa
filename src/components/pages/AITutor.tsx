@@ -578,10 +578,10 @@ const AITutor: React.FC = () => {
   return (
     <div className="h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0 flex flex-col bg-slate-50 dark:bg-slate-900 page-enter">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3">
+      <div className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-3 py-2 md:px-4 md:py-3 flex-shrink-0">
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between mb-2 md:mb-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <Button
                 variant="ghost"
                 size="icon"
@@ -591,12 +591,12 @@ const AITutor: React.FC = () => {
               >
                 <ArrowLeft className="w-5 h-5" />
               </Button>
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
-                <Sparkles className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft">
+                <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-semibold text-slate-900 dark:text-white">Vory</h1>
-                <p className="text-xs text-slate-600 dark:text-slate-400">Your AI Study Companion</p>
+                <h1 className="font-semibold text-sm md:text-base text-slate-900 dark:text-white">Vory</h1>
+                <p className="text-[10px] md:text-xs text-slate-600 dark:text-slate-400">AI Study Companion</p>
               </div>
             </div>
             <Button
@@ -609,8 +609,8 @@ const AITutor: React.FC = () => {
             </Button>
           </div>
 
-          {/* Mode Selector */}
-          <div className="flex gap-2">
+          {/* Mode Selector - more compact on mobile */}
+          <div className="flex gap-1 md:gap-2">
             {Object.values(TUTOR_MODES).map((mode) => {
               const Icon = mode.icon;
               const isActive = tutorMode === mode.id;
@@ -619,7 +619,7 @@ const AITutor: React.FC = () => {
                   key={mode.id}
                   onClick={() => setTutorMode(mode.id)}
                   className={clsx(
-                    'flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all',
+                    'flex-1 flex items-center justify-center gap-1 md:gap-2 px-2 md:px-3 py-1.5 md:py-2 rounded-lg md:rounded-xl text-xs md:text-sm font-medium transition-all',
                     isActive
                       ? mode.color === 'primary'
                         ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300'
@@ -629,7 +629,7 @@ const AITutor: React.FC = () => {
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
                   )}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   <span className="hidden sm:inline">{mode.label}</span>
                 </button>
               );
@@ -794,10 +794,10 @@ const AITutor: React.FC = () => {
         </div>
       )}
 
-      {/* Input Area */}
-      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-3 md:p-4 flex-shrink-0">
+      {/* Input Area - anchored at bottom */}
+      <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-2 md:p-4 flex-shrink-0">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
-          <div className="flex items-end gap-3">
+          <div className="flex items-end gap-2 md:gap-3">
             <div className="flex-1 relative">
               <textarea
                 ref={inputRef}
@@ -816,9 +816,9 @@ const AITutor: React.FC = () => {
                       ? 'Tell me a topic to quiz you on...'
                       : `Ask anything about the ${course.shortName} exam...`
                 }
-                className="input resize-none"
+                className="input resize-none text-sm md:text-base"
                 rows={1}
-                style={{ minHeight: '48px', maxHeight: '120px' }}
+                style={{ minHeight: '44px', maxHeight: '100px' }}
               />
             </div>
             <Button
@@ -831,7 +831,7 @@ const AITutor: React.FC = () => {
               <Send className="w-5 h-5" aria-hidden="true" />
             </Button>
           </div>
-          <p className="text-[10px] text-slate-600 dark:text-slate-400 mt-2 text-center">
+          <p className="text-[9px] md:text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 text-center">
             AI responses are for educational purposes only. Verify important information with authoritative sources.
           </p>
         </form>

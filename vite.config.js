@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
+import { readFileSync } from 'fs';
+
+// Read version from package.json
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 // Enable bundle analyzer via ANALYZE=true environment variable
 const enableAnalyzer = process.env.ANALYZE === 'true';
@@ -135,6 +139,9 @@ export default defineConfig({
       template: 'treemap', // or 'sunburst', 'network'
     }),
   ].filter(Boolean),
+  define: {
+    __APP_VERSION__: JSON.stringify(packageJson.version),
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -1,32 +1,28 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Share2, Download, X, Linkedin, Twitter } from 'lucide-react';
-import html2canvas from 'html2canvas';
-import { Button } from './common/Button';
-import { useCourse } from '../providers/CourseProvider';
-import { useAuth } from '../hooks/useAuth';
-import { getAchievementDisplayName } from '../services/achievements';
-import { getReferralStats } from '../services/referral';
+/**
+ * PassedCelebration - "I Passed!" shareable celebration modal
+ * 
+ * Clean, celebratory modal when a user reports passing their exam.
+ * Includes shareable card with referral link for word-of-mouth growth.
+ */
 
-interface ShareableAchievementCardProps {
-  achievement: {
-    id: string;
-    name: string;
-    description: string;
-    icon: string | React.ReactNode;
-    points: number;
-    category: string;
-  };
+import { useRef, useState, useEffect } from 'react';
+import { Share2, Download, X, Linkedin, Twitter, Loader2, PartyPopper } from 'lucide-react';
+import html2canvas from 'html2canvas';
+import { Button } from './Button';
+import { useCourse } from '../../providers/CourseProvider';
+import { useAuth } from '../../hooks/useAuth';
+import { getReferralStats } from '../../services/referral';
+
+interface PassedCelebrationProps {
+  /** Which exam section/part was passed (optional, for multi-section exams) */
+  section?: string;
+  /** User's display name */
   userName?: string;
-  streak?: number;
+  /** Close handler */
   onClose: () => void;
 }
 
-const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
-  achievement,
-  userName,
-  streak,
-  onClose,
-}) => {
+export function PassedCelebration({ section, userName, onClose }: PassedCelebrationProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [shareError, setShareError] = useState<string | null>(null);
@@ -34,7 +30,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   const { courseId, course } = useCourse();
   const { user } = useAuth();
   const courseName = course?.name || courseId?.toUpperCase() || 'CPA';
-  const displayName = getAchievementDisplayName(achievement.id, courseId);
+  const displaySection = section || courseName;
 
   // Load user's referral code for share links
   useEffect(() => {
@@ -65,7 +61,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
     try {
       const canvas = await html2canvas(cardRef.current, {
         backgroundColor: null,
-        scale: 2, // Higher quality
+        scale: 2,
         useCORS: true,
         logging: false,
       });
@@ -91,7 +87,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `voraprep-achievement-${achievement.id}.png`;
+    a.download = `voraprep-i-passed-${displaySection.toLowerCase()}.png`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -102,30 +98,28 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
     const blob = await generateImage();
     if (!blob) return;
 
-    const file = new File([blob], `voraprep-achievement-${achievement.id}.png`, { type: 'image/png' });
+    const file = new File([blob], `voraprep-i-passed-${displaySection.toLowerCase()}.png`, { type: 'image/png' });
     const shareUrl = getShareUrl();
     
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       try {
         await navigator.share({
-          title: `I unlocked "${displayName}" on VoraPrep!`,
-          text: `🏆 ${achievement.description} - Studying for the ${courseName} exam with VoraPrep\n\n${shareUrl}`,
+          title: `I Passed the ${displaySection} Exam!`,
+          text: `🎉 I just passed the ${displaySection} exam! Studied with VoraPrep - seriously the best prep tool out there.\n\n${shareUrl}`,
           files: [file],
         });
       } catch (error) {
-        // User cancelled or share failed
         if ((error as Error).name !== 'AbortError') {
           setShareError('Share failed. Try downloading instead.');
         }
       }
     } else {
-      // Fallback to download
       handleDownload();
     }
   };
 
   const handleLinkedInShare = () => {
-    const text = `🏆 Just unlocked "${displayName}" while studying for the ${courseName} exam!\n\n${achievement.description}\n\nPreparing with @VoraPrep - the smart way to pass the ${courseName} exam.`;
+    const text = `🎉 I PASSED the ${displaySection} exam!\n\nBig thank you to VoraPrep for helping me prepare. If you're studying for your ${courseName}, definitely check them out!`;
     const url = getShareUrl();
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${encodeURIComponent(text)}`,
@@ -135,7 +129,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
   };
 
   const handleTwitterShare = () => {
-    const text = `🏆 Just unlocked "${displayName}" on @VoraPrep!\n\n${achievement.description}\n\n#${courseName}Exam #Accounting`;
+    const text = `🎉 I PASSED the ${displaySection} exam!\n\nStudied with @VoraPrep and crushed it. Highly recommend for anyone prepping for their ${courseName}!`;
     const url = getShareUrl();
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
@@ -155,8 +149,9 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
       <div className="relative bg-white dark:bg-slate-800 rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            Share Your Achievement
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <PartyPopper className="w-5 h-5 text-amber-500" />
+            Congratulations!
           </h2>
           <Button
             variant="ghost"
@@ -172,7 +167,7 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
         <div className="p-6">
           <div
             ref={cardRef}
-            className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-2xl p-6 text-white shadow-lg"
+            className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 rounded-2xl p-6 text-white shadow-lg"
           >
             {/* VoraPrep Logo/Branding */}
             <div className="flex items-center justify-between mb-6">
@@ -185,40 +180,25 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
               <span className="text-xs text-white/70">{courseName} Exam Prep</span>
             </div>
 
-            {/* Achievement */}
+            {/* Celebration */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-4xl shadow-lg">
-                {achievement.icon}
+              <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-5xl shadow-lg">
+                🎉
               </div>
               
               <div className="bg-white/10 rounded-xl px-4 py-1 inline-block mb-3">
-                <span className="text-xs font-medium text-white/90">Achievement Unlocked!</span>
+                <span className="text-xs font-medium text-white/90">Official Pass!</span>
               </div>
               
-              <h3 className="text-xl font-bold mb-2">{displayName}</h3>
-              <p className="text-sm text-white/80 mb-4">{achievement.description}</p>
-              
-              {/* Stats Row */}
-              <div className="flex items-center justify-center gap-4 text-sm">
-                <div className="bg-white/10 rounded-lg px-3 py-1.5">
-                  <span className="text-white/70">+</span>
-                  <span className="font-bold">{achievement.points}</span>
-                  <span className="text-white/70 ml-1">pts</span>
-                </div>
-                {streak && streak > 0 && (
-                  <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center gap-1">
-                    <span className="text-orange-400">🔥</span>
-                    <span className="font-bold">{streak}</span>
-                    <span className="text-white/70">day streak</span>
-                  </div>
-                )}
-              </div>
+              <h3 className="text-2xl font-bold mb-2">I Passed!</h3>
+              <p className="text-lg text-white/90 mb-1">{displaySection} Exam</p>
+              <p className="text-sm text-white/70">Hard work pays off!</p>
             </div>
 
             {/* Footer */}
             <div className="mt-6 pt-4 border-t border-white/10 text-center">
               {userName && (
-                <p className="text-sm text-white/60 mb-1">Earned by {userName}</p>
+                <p className="text-sm text-white/60 mb-1">{userName}</p>
               )}
               <p className="text-xs text-white/40">voraprep.com</p>
             </div>
@@ -237,10 +217,13 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
               variant="primary"
               onClick={handleNativeShare}
               disabled={isGenerating}
-              loading={isGenerating}
               className="flex flex-col items-center gap-1.5 p-3 rounded-xl"
             >
-              <Share2 className="w-5 h-5" />
+              {isGenerating ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Share2 className="w-5 h-5" />
+              )}
               <span className="text-xs font-medium">Share</span>
             </Button>
 
@@ -275,12 +258,12 @@ const ShareableAchievementCard: React.FC<ShareableAchievementCardProps> = ({
           </div>
 
           <p className="text-xs text-slate-600 dark:text-slate-300 text-center mt-4">
-            Share your progress and inspire others on their {courseName} journey!
+            Share your success and inspire others on their {courseName} journey!
           </p>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default ShareableAchievementCard;
+export default PassedCelebration;

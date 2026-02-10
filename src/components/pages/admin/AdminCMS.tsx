@@ -3,23 +3,53 @@ import logger from '../../../utils/logger';
 import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { FEATURES } from '../../../config/featureFlags';
 import { CourseId } from '../../../types/course';
 import { COURSES, getActiveCourses } from '../../../courses';
+import { EXAM_PRICING, isFounderPricingActive } from '../../../services/subscription';
 
 // Dynamic imports for course-specific question data
-const loadCourseQuestionData = async (courseId: CourseId) => {
-  switch (courseId) {
-    case 'cpa': return import('../../../data/cpa/questions');
-    case 'ea': return import('../../../data/ea/questions');
-    case 'cma': return import('../../../data/cma/questions');
-    case 'cia': return import('../../../data/cia/questions');
-    case 'cisa': return import('../../../data/cisa/questions');
-    case 'cfp': return import('../../../data/cfp/questions');
-    default: return null;
+// Returns { questions: array, stats: { total, bySection, byDifficulty, topics } }
+const loadCourseQuestionData = async (courseId: CourseId): Promise<{
+  questions: unknown[];
+  stats?: { total: number; bySection?: Record<string, number>; byDifficulty?: { easy: number; medium: number; hard: number }; topics?: number };
+} | null> => {
+  try {
+    switch (courseId) {
+      case 'cpa': {
+        const m = await import('../../../data/cpa/questions');
+        const stats = m.getQuestionStats?.();
+        return { questions: m.ALL_QUESTIONS || [], stats };
+      }
+      case 'ea': {
+        const m = await import('../../../data/ea/questions');
+        return { questions: m.EA_ALL_QUESTIONS || [], stats: { total: m.EA_ALL_QUESTIONS?.length || 0 } };
+      }
+      case 'cma': {
+        const m = await import('../../../data/cma/questions');
+        const stats = m.getQuestionStats?.();
+        return { questions: m.CMA_ALL_QUESTIONS || [], stats };
+      }
+      case 'cia': {
+        const m = await import('../../../data/cia/questions');
+        const questions = [...(m.ALL_CIA1_QUESTIONS || []), ...(m.ALL_CIA2_QUESTIONS || []), ...(m.ALL_CIA3_QUESTIONS || [])];
+        return { questions, stats: { total: questions.length } };
+      }
+      case 'cisa': {
+        const m = await import('../../../data/cisa/questions');
+        return { questions: m.CISA_QUESTIONS || [], stats: { total: m.CISA_QUESTIONS?.length || 0 } };
+      }
+      case 'cfp': {
+        const m = await import('../../../data/cfp/questions');
+        return { questions: m.CFP_QUESTIONS_ALL || [], stats: m.CFP_QUESTION_STATS };
+      }
+      default: return null;
+    }
+  } catch {
+    return null;
   }
 };
 
@@ -66,11 +96,27 @@ const loadCourseLessonData = async (courseId: CourseId): Promise<number> => {
         const m = await import('../../../data/cpa/lessons');
         return m.getLessonStats?.()?.total || m.getAllLessons?.()?.length || 0;
       }
+      case 'ea': {
+        const m = await import('../../../data/ea/index');
+        return m.getEALessonCount?.()?.total || m.allEALessons?.length || 0;
+      }
       case 'cma': {
         const m = await import('../../../data/cma/lessons');
         return m.getCMALessonCount?.()?.total || m.cmaLessons?.length || 0;
       }
-      default: return 0; // Other courses may not have lesson indexes yet
+      case 'cia': {
+        const m = await import('../../../data/cia/lessons');
+        return m.getCIALessonCount?.() || m.ALL_CIA_LESSONS?.length || 0;
+      }
+      case 'cisa': {
+        const m = await import('../../../data/cisa/lessons');
+        return m.allCisaLessons?.length || 0;
+      }
+      case 'cfp': {
+        const m = await import('../../../data/cfp/lessons');
+        return m.ALL_CFP_LESSONS?.length || 0;
+      }
+      default: return 0;
     }
   } catch {
     return 0;
@@ -104,12 +150,16 @@ interface UserDocument {
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
+  courseId?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
   lastLogin?: string; // If you track this
+  onboardingComplete?: boolean;
+  onboardingCompleted?: Record<string, boolean>; // Per-course onboarding status
   subscription?: {
     tier?: string;
     status?: string;
     currentPeriodEnd?: { seconds: number };
     trialEnd?: { seconds: number };
+    isFounderPricing?: boolean; // Locked in founder 50% off rate
   };
 }
 
@@ -203,17 +253,6 @@ interface QuestionReport {
   createdAt?: { seconds: number; nanoseconds: number };
 }
 
-interface LocalStats {
-  total: number;
-  bySection: Record<string, number>;
-  byDifficulty: {
-    easy: number;
-    medium: number;
-    hard: number;
-  };
-  topics: number;
-}
-
 interface CourseContentStats {
   courseId: CourseId;
   courseName: string;
@@ -249,11 +288,8 @@ const AdminCMS: React.FC = () => {
   const [allCourseStats, setAllCourseStats] = useState<CourseContentStats[]>([]);
   const [isLoadingCourseStats, setIsLoadingCourseStats] = useState(false);
   
-  // Legacy single-course stats (kept for backwards compat, will remove later)
-  const [localStats, setLocalStats] = useState<LocalStats | null>(null);
-  const [lessonStats, setLessonStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
+  // Course-specific TBS stats (only CPA has TBS currently)
   const [tbsStats, setTbsStats] = useState<{ total: number; bySection: Record<string, number>; byType?: Record<string, number> } | null>(null);
-  const [wcStats, setWcStats] = useState<{ total: number; bySection: Record<string, number> } | null>(null);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
@@ -284,6 +320,39 @@ const AdminCMS: React.FC = () => {
     reportsByType: Record<string, number>;
     pendingCount: number;
   } | null>(null);
+
+  // Content Quality Audit state
+  const [contentAudit, setContentAudit] = useState<{
+    questionsWithoutExplanation: Array<{ id: string; section: string; topic?: string }>;
+    questionsWithoutBlueprint: Array<{ id: string; section: string }>;
+    totalScanned: number;
+  } | null>(null);
+  const [isLoadingAudit, setIsLoadingAudit] = useState(false);
+
+  // Revenue Dashboard state
+  const [revenueMetrics, setRevenueMetrics] = useState<{
+    monthlyMRR: number;
+    annualMRR: number;
+    totalMRR: number;
+    arrProjection: number; // Annual run rate
+    subscriberCount: number;
+    byPlan: { monthly: number; annual: number };
+    byCourse: Record<string, { count: number; revenue: number }>;
+    founderCount: number;
+    churnRisk: number; // trials ending soon
+  } | null>(null);
+
+  // Announcement History state
+  const [announcementHistory, setAnnouncementHistory] = useState<Array<{
+    id: string;
+    title: string;
+    body: string;
+    audience: string;
+    createdAt: { seconds: number };
+    createdBy: string;
+    active: boolean;
+  }>>([]);
+  const [isLoadingAnnouncements, setIsLoadingAnnouncements] = useState(false);
 
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -443,7 +512,7 @@ const AdminCMS: React.FC = () => {
     // Apply course filter
     if (userCourseFilter !== 'all') {
       result = result.filter(u => {
-        const userCourse = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        const userCourse = u.courseId || 'cpa';
         return userCourse === userCourseFilter;
       });
     }
@@ -495,7 +564,7 @@ const AdminCMS: React.FC = () => {
         const createdAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
         
         // Count by course (new courseId field or default to 'cpa')
-        const courseId = (u as typeof u & { courseId?: string }).courseId || 'cpa';
+        const courseId = u.courseId || 'cpa';
         if (byCourse[courseId] !== undefined) {
           byCourse[courseId]++;
         } else {
@@ -1008,6 +1077,146 @@ const AdminCMS: React.FC = () => {
     });
   }, [questionReports]);
 
+  // Load Content Quality Audit - find questions missing explanations/blueprints
+  const loadContentAudit = useCallback(async () => {
+    setIsLoadingAudit(true);
+    try {
+      const withoutExplanation: Array<{ id: string; section: string; topic?: string }> = [];
+      const withoutBlueprint: Array<{ id: string; section: string }> = [];
+      let totalScanned = 0;
+
+      // Scan all courses' questions
+      for (const courseId of getActiveCourses().map(c => c.id)) {
+        const data = await loadCourseQuestionData(courseId);
+        if (!data?.questions) continue;
+
+        for (const q of data.questions as Array<{ id?: string; question_id?: string; explanation?: string; detailed_explanation?: string; blueprintArea?: string; section?: string; topic?: string }>) {
+          totalScanned++;
+          const qId = q.id || q.question_id || 'unknown';
+          const section = q.section || courseId.toUpperCase();
+          
+          // Check for missing explanation
+          if (!q.explanation && !q.detailed_explanation) {
+            withoutExplanation.push({ id: qId, section, topic: q.topic });
+            if (withoutExplanation.length >= 50) continue; // Limit to prevent huge lists
+          }
+          
+          // Check for missing blueprint (CPA specific)
+          if (courseId === 'cpa' && !q.blueprintArea) {
+            withoutBlueprint.push({ id: qId, section });
+            if (withoutBlueprint.length >= 50) continue;
+          }
+        }
+      }
+
+      setContentAudit({
+        questionsWithoutExplanation: withoutExplanation.slice(0, 50),
+        questionsWithoutBlueprint: withoutBlueprint.slice(0, 50),
+        totalScanned
+      });
+      addLog(`Audit complete: scanned ${totalScanned} questions`, 'success');
+    } catch (error) {
+      logger.error('Error loading content audit', error);
+      addLog('Error loading content audit', 'error');
+    } finally {
+      setIsLoadingAudit(false);
+    }
+  }, []);
+
+  // Compute Revenue Metrics from user subscription data using actual per-course pricing
+  const computeRevenueMetrics = useCallback(() => {
+    if (usersList.length === 0) return;
+
+    // Per-course pricing from subscription.ts:
+    // CPA: $199/yr or $29/mo (founder: $99/yr, $14/mo)
+    // CFP: $149/yr or $19/mo (founder: $74/yr, $10/mo)
+    // CMA: $99/yr or $14/mo (founder: $49/yr, $7/mo)
+    // CIA: $99/yr or $14/mo (founder: $49/yr, $7/mo)
+    // CISA: $79/yr or $12/mo (founder: $39/yr, $6/mo)
+    // EA: $59/yr or $9/mo (founder: $29/yr, $5/mo)
+    // Note: NO lifetime plans offered
+
+    let monthlyMRR = 0;
+    let annualMRR = 0;
+    let monthly = 0;
+    let annual = 0;
+    let founderCount = 0;
+    let churnRisk = 0;
+    const now = Date.now() / 1000;
+    const byCourse: Record<string, { count: number; revenue: number }> = {};
+
+    usersList.forEach(u => {
+      const tier = u.subscription?.tier;
+      const status = u.subscription?.status;
+      const courseId = (u.courseId || 'cpa') as keyof typeof EXAM_PRICING;
+      const isFounder = u.subscription?.isFounderPricing;
+      
+      if (status === 'active' || status === 'trialing') {
+        const pricing = EXAM_PRICING[courseId] || EXAM_PRICING.cpa;
+        
+        // Track by course
+        if (!byCourse[courseId]) byCourse[courseId] = { count: 0, revenue: 0 };
+        byCourse[courseId].count++;
+        
+        if (tier === 'monthly') {
+          monthly++;
+          const price = isFounder ? pricing.founderMonthly : pricing.monthly;
+          monthlyMRR += price;
+          byCourse[courseId].revenue += price;
+        } else if (tier === 'annual') {
+          annual++;
+          const annualPrice = isFounder ? pricing.founderAnnual : pricing.annual;
+          annualMRR += annualPrice / 12; // Amortized monthly
+          byCourse[courseId].revenue += annualPrice / 12;
+        }
+        
+        if (isFounder) founderCount++;
+        
+        // Check for trial ending in 3 days
+        const trialEnd = u.subscription?.trialEnd?.seconds;
+        if (status === 'trialing' && trialEnd && trialEnd - now < 3 * 24 * 60 * 60) {
+          churnRisk++;
+        }
+      }
+    });
+
+    const totalMRR = monthlyMRR + annualMRR;
+
+    setRevenueMetrics({
+      monthlyMRR,
+      annualMRR,
+      totalMRR,
+      arrProjection: totalMRR * 12,
+      subscriberCount: monthly + annual,
+      byPlan: { monthly, annual },
+      byCourse,
+      founderCount,
+      churnRisk
+    });
+  }, [usersList]);
+
+  // Load Announcement History
+  const loadAnnouncementHistory = useCallback(async () => {
+    setIsLoadingAnnouncements(true);
+    try {
+      const q = query(
+        collection(db, 'announcements'),
+        orderBy('createdAt', 'desc'),
+        limit(20)
+      );
+      const snapshot = await getDocs(q);
+      const announcements: typeof announcementHistory = [];
+      snapshot.forEach(doc => {
+        announcements.push({ id: doc.id, ...doc.data() } as typeof announcementHistory[0]);
+      });
+      setAnnouncementHistory(announcements);
+    } catch (error) {
+      logger.error('Error loading announcements', error);
+    } finally {
+      setIsLoadingAnnouncements(false);
+    }
+  }, []);
+
   // Effect to load tab data
   useEffect(() => {
     if (activeTab === 'users') {
@@ -1016,8 +1225,17 @@ const AdminCMS: React.FC = () => {
       loadSystemErrors();
     } else if (activeTab === 'analytics') {
       loadAnalytics();
+    } else if (activeTab === 'tools') {
+      loadAnnouncementHistory();
     }
-  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics]);
+  }, [activeTab, loadUsers, loadSystemErrors, loadAnalytics, loadAnnouncementHistory]);
+
+  // Compute revenue metrics when users list changes
+  useEffect(() => {
+    if (usersList.length > 0) {
+      computeRevenueMetrics();
+    }
+  }, [usersList, computeRevenueMetrics]);
 
   // Auto-compute quality metrics when reports change
   useEffect(() => {
@@ -1033,35 +1251,19 @@ const AdminCMS: React.FC = () => {
       
       for (const course of enabledCourses) {
         try {
-          const questionModule = await loadCourseQuestionData(course.id);
+          const questionData = await loadCourseQuestionData(course.id);
           const flashcardCount = await loadCourseFlashcardData(course.id);
           const lessonCount = await loadCourseLessonData(course.id);
           
-          // Type-safe check for getQuestionStats function
-          const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
-          if (getStatsFn) {
-            const qStats = getStatsFn();
-            stats.push({
-              courseId: course.id,
-              courseName: course.name,
-              questions: qStats.total || 0,
-              lessons: lessonCount,
-              simulations: 0,
-              flashcards: flashcardCount,
-              bySection: qStats.bySection || {},
-            });
-          } else {
-            // Fallback for courses without getQuestionStats - count ALL_QUESTIONS
-            const allQuestions = (questionModule as { ALL_QUESTIONS?: unknown[] })?.ALL_QUESTIONS;
-            stats.push({
-              courseId: course.id,
-              courseName: course.name,
-              questions: allQuestions?.length || 0,
-              lessons: lessonCount,
-              simulations: 0,
-              flashcards: flashcardCount,
-            });
-          }
+          stats.push({
+            courseId: course.id,
+            courseName: course.name,
+            questions: questionData?.stats?.total || questionData?.questions?.length || 0,
+            lessons: lessonCount,
+            simulations: 0,
+            flashcards: flashcardCount,
+            bySection: questionData?.stats?.bySection || {},
+          });
         } catch (error) {
           logger.error(`Error loading stats for ${course.id}:`, error);
           stats.push({
@@ -1078,26 +1280,13 @@ const AdminCMS: React.FC = () => {
       setAllCourseStats(stats);
       setIsLoadingCourseStats(false);
       
-      // Also load CPA-specific stats for backward compatibility
+      // Load TBS stats for CPA (only course with TBS currently)
       try {
-        const questionModule = await loadCourseQuestionData('cpa');
-        const getStatsFn = (questionModule as { getQuestionStats?: () => LocalStats })?.getQuestionStats;
-        if (getStatsFn) {
-          setLocalStats(getStatsFn());
-        }
-        
-        const lessonModule = await import('../../../data/cpa/lessons');
-        const lessonData = lessonModule.getLessonStats();
-        setLessonStats({ total: lessonData.total, bySection: lessonData.bySection });
-        
         const tbsModule = await import('../../../data/cpa/tbs');
         const tbsData = tbsModule.getTBSStats();
         setTbsStats({ total: tbsData.total, bySection: tbsData.bySection, byType: tbsData.byType });
-        
-        // WC was retired with BEC on December 15, 2023
-        setWcStats({ total: 0, bySection: {} });
       } catch (error) {
-        logger.error('Error loading CPA content stats:', error);
+        logger.error('Error loading TBS stats:', error);
       }
     };
     loadAllCourseStats();
@@ -1180,6 +1369,36 @@ const AdminCMS: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 py-6">
         {activeTab === 'content' && (
           <div className="space-y-6">
+            {/* Quick Links to Editors */}
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/admin/questions"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              >
+                ❓ Question Editor
+              </Link>
+              <Link
+                to="/admin/lessons"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+              >
+                📚 Lesson Editor
+              </Link>
+              <Link
+                to="/admin/tbs"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium"
+              >
+                📊 TBS Editor
+              </Link>
+              <a
+                href="https://console.firebase.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors text-sm font-medium"
+              >
+                🔥 Firebase Console ↗
+              </a>
+            </div>
+
             {/* Aggregate Totals Header */}
             <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 shadow-lg text-white">
               <h3 className="text-lg font-semibold mb-3">Content Overview</h3>
@@ -1273,62 +1492,122 @@ const AdminCMS: React.FC = () => {
               )}
             </div>
 
-            {/* CPA Detailed Stats (backward compatibility) */}
-            {localStats && (
+            {/* CPA Task-Based Simulations (TBS) Stats */}
+            {tbsStats && tbsStats.total > 0 && (
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">CPA Detailed Stats</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Questions */}
-                  <Card className="p-6">
-                    <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                      <span>❓</span> Questions (MCQ)
-                    </h4>
-                    <div className="text-3xl font-bold text-blue-600 mb-2">
-                      {localStats.total.toLocaleString()}
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">📊 CPA Task-Based Simulations</h3>
+                <Card className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-3xl font-bold text-orange-600">
+                      {tbsStats.total.toLocaleString()}
                     </div>
-                    <div className="text-xs text-gray-600">
-                      {localStats.byDifficulty.easy} easy / {localStats.byDifficulty.medium} medium / {localStats.byDifficulty.hard} hard
+                    <span className="text-gray-500">Total TBS</span>
+                  </div>
+                  {tbsStats.bySection && Object.keys(tbsStats.bySection).length > 0 && (
+                    <div className="grid grid-cols-3 md:grid-cols-6 gap-3 text-sm">
+                      {Object.entries(tbsStats.bySection).map(([section, count]) => (
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                          <span className="font-medium">{section}</span>
+                          <span className="text-gray-600">{count}</span>
+                        </div>
+                      ))}
                     </div>
-                  </Card>
-
-                  {/* Lessons */}
-                  {lessonStats && (
-                    <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>📚</span> Lessons
-                      </h4>
-                      <div className="text-3xl font-bold text-green-600">
-                        {lessonStats.total.toLocaleString()}
-                      </div>
-                    </Card>
                   )}
-
-                  {/* TBS */}
-                  {tbsStats && (
-                    <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>📊</span> Task-Based Simulations
-                      </h4>
-                      <div className="text-3xl font-bold text-orange-600">
-                        {tbsStats.total.toLocaleString()}
-                      </div>
-                    </Card>
-                  )}
-
-                  {/* Written Communication */}
-                  {wcStats && (
-                    <Card className="p-6">
-                      <h4 className="text-md font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <span>✍️</span> Written Communication
-                      </h4>
-                      <div className="text-3xl font-bold text-primary-600">
-                        {wcStats.total.toLocaleString()}
-                      </div>
-                    </Card>
-                  )}
-                </div>
+                </Card>
               </div>
             )}
+
+            {/* Content Quality Audit */}
+            <div className="mt-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">🔍 Content Quality Audit</h3>
+                <button
+                  onClick={loadContentAudit}
+                  disabled={isLoadingAudit}
+                  className="text-sm px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                >
+                  {isLoadingAudit ? 'Scanning...' : 'Run Audit'}
+                </button>
+              </div>
+              
+              {contentAudit && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900">❌ Missing Explanations</h4>
+                      <span className={`px-2 py-1 rounded text-sm font-medium ${
+                        contentAudit.questionsWithoutExplanation.length === 0 
+                          ? 'bg-green-100 text-green-700' 
+                          : 'bg-red-100 text-red-700'
+                      }`}>
+                        {contentAudit.questionsWithoutExplanation.length}
+                        {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
+                      </span>
+                    </div>
+                    {contentAudit.questionsWithoutExplanation.length === 0 ? (
+                      <p className="text-green-600 text-sm">✅ All questions have explanations!</p>
+                    ) : (
+                      <div className="space-y-2 max-h-64 overflow-y-auto">
+                        {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
+                          <div key={i} className="p-2 bg-red-50 rounded text-sm flex justify-between items-center">
+                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                            <span className="text-gray-500 ml-2">{q.section}</span>
+                          </div>
+                        ))}
+                        {contentAudit.questionsWithoutExplanation.length > 15 && (
+                          <p className="text-gray-500 text-xs text-center">
+                            + {contentAudit.questionsWithoutExplanation.length - 15} more
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </Card>
+
+                  <Card className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="font-semibold text-gray-900">🏷️ Missing Blueprint Tags (CPA)</h4>
+                      <span className={`px-2 py-1 rounded text-sm font-medium ${
+                        contentAudit.questionsWithoutBlueprint.length === 0 
+                          ? 'bg-green-100 text-green-700' 
+                          : 'bg-amber-100 text-amber-700'
+                      }`}>
+                        {contentAudit.questionsWithoutBlueprint.length}
+                        {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
+                      </span>
+                    </div>
+                    {contentAudit.questionsWithoutBlueprint.length === 0 ? (
+                      <p className="text-green-600 text-sm">✅ All CPA questions have blueprint tags!</p>
+                    ) : (
+                      <div className="space-y-2 max-h-64 overflow-y-auto">
+                        {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
+                          <div key={i} className="p-2 bg-amber-50 rounded text-sm flex justify-between items-center">
+                            <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
+                            <span className="text-gray-500 ml-2">{q.section}</span>
+                          </div>
+                        ))}
+                        {contentAudit.questionsWithoutBlueprint.length > 15 && (
+                          <p className="text-gray-500 text-xs text-center">
+                            + {contentAudit.questionsWithoutBlueprint.length - 15} more
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </Card>
+                </div>
+              )}
+
+              {contentAudit && (
+                <p className="text-sm text-gray-500 mt-4">
+                  Scanned {contentAudit.totalScanned.toLocaleString()} questions across all courses
+                </p>
+              )}
+
+              {!contentAudit && !isLoadingAudit && (
+                <Card className="p-6 text-center text-gray-500">
+                  Click "Run Audit" to scan all questions for missing explanations and blueprint tags
+                </Card>
+              )}
+            </div>
           </div>
         )}
 
@@ -1364,6 +1643,30 @@ const AdminCMS: React.FC = () => {
               </Card>
             </div>
 
+            {/* Users by Course Breakdown */}
+            {usersList.length > 0 && (
+              <Card className="p-4">
+                <h4 className="text-sm font-semibold text-gray-700 mb-3">Users by Course</h4>
+                <div className="flex flex-wrap gap-3">
+                  {getActiveCourses().map(course => {
+                    const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
+                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 text-blue-700' :
+                                       course.id === 'ea' ? 'bg-green-100 text-green-700' :
+                                       course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
+                                       course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
+                                       course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
+                                       'bg-amber-100 text-amber-700';
+                    return (
+                      <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
+                        <span className="font-bold">{count}</span>
+                        <span className="text-sm ml-1">{course.shortName || course.id.toUpperCase()}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Card>
+            )}
+
             {/* User Lookup Tool */}
             <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
@@ -1393,6 +1696,7 @@ const AdminCMS: React.FC = () => {
                       <p className="font-semibold text-gray-900">{lookupResult.email || 'No email'}</p>
                       <p className="text-sm text-gray-600 font-mono">{lookupResult.id}</p>
                       <p className="text-sm text-gray-600 mt-1">
+                        Course: {(lookupResult.courseId || 'cpa').toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
                         Status: {lookupResult.subscription?.status || 'N/A'}
@@ -1508,14 +1812,14 @@ const AdminCMS: React.FC = () => {
                             </td>
                             <td className="p-3">
                               <span className={`px-2 py-1 rounded text-xs font-medium ${
-                                ((u as typeof u & { courseId?: string }).courseId || 'cpa') === 'cpa' ? 'bg-blue-50 text-blue-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'ea' ? 'bg-green-50 text-green-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cma' ? 'bg-purple-50 text-purple-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cia' ? 'bg-orange-50 text-orange-700' :
-                                ((u as typeof u & { courseId?: string }).courseId) === 'cisa' ? 'bg-teal-50 text-teal-700' :
+                                (u.courseId || 'cpa') === 'cpa' ? 'bg-blue-50 text-blue-700' :
+                                u.courseId === 'ea' ? 'bg-green-50 text-green-700' :
+                                u.courseId === 'cma' ? 'bg-purple-50 text-purple-700' :
+                                u.courseId === 'cia' ? 'bg-orange-50 text-orange-700' :
+                                u.courseId === 'cisa' ? 'bg-teal-50 text-teal-700' :
                                 'bg-amber-50 text-amber-700'
                               }`}>
-                                {((u as typeof u & { courseId?: string }).courseId || 'cpa').toUpperCase()}
+                                {(u.courseId || 'cpa').toUpperCase()}
                               </span>
                             </td>
                             <td className="p-3">
@@ -1635,6 +1939,108 @@ const AdminCMS: React.FC = () => {
                     <div className="text-amber-100 text-sm mt-1">Active This Month</div>
                   </div>
                 </div>
+
+                {/* Revenue Dashboard */}
+                {revenueMetrics && (
+                  <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      💰 Revenue Dashboard
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">
+                        {revenueMetrics.subscriberCount} subscribers
+                      </span>
+                      {isFounderPricingActive() && (
+                        <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                          Founder pricing active
+                        </span>
+                      )}
+                    </h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-green-600">
+                          ${revenueMetrics.totalMRR.toFixed(0)}
+                        </div>
+                        <div className="text-xs text-gray-600">Monthly Recurring Revenue</div>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-blue-600">
+                          ${revenueMetrics.arrProjection.toFixed(0)}
+                        </div>
+                        <div className="text-xs text-gray-600">Annual Run Rate (ARR)</div>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="text-2xl font-bold text-purple-600">
+                          {revenueMetrics.founderCount}
+                        </div>
+                        <div className="text-xs text-gray-600">Founder Members (50% off)</div>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600' : 'text-green-600'}`}>
+                          {revenueMetrics.churnRisk}
+                        </div>
+                        <div className="text-xs text-gray-600">Trials Ending (3 days)</div>
+                      </div>
+                    </div>
+                    
+                    {/* Revenue by Plan Type */}
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-gray-700">Monthly Plans</span>
+                          <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          ${revenueMetrics.monthlyMRR.toFixed(0)}/mo MRR
+                        </div>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-gray-700">Annual Plans</span>
+                          <span className="text-lg font-bold text-green-600">{revenueMetrics.byPlan.annual}</span>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          ${revenueMetrics.annualMRR.toFixed(0)}/mo MRR (amortized)
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Revenue by Course */}
+                    {Object.keys(revenueMetrics.byCourse).length > 0 && (
+                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                        <h5 className="text-sm font-medium text-gray-700 mb-3">Revenue by Course</h5>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                          {Object.entries(revenueMetrics.byCourse)
+                            .sort((a, b) => b[1].revenue - a[1].revenue)
+                            .map(([courseId, data]) => {
+                              const pricing = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING];
+                              return (
+                                <div key={courseId} className="p-2 bg-gray-50 rounded text-sm">
+                                  <div className="flex justify-between items-center">
+                                    <span className="font-medium">{courseId.toUpperCase()}</span>
+                                    <span className="text-green-600 font-semibold">
+                                      ${data.revenue.toFixed(0)}/mo
+                                    </span>
+                                  </div>
+                                  <div className="text-xs text-gray-500 mt-1">
+                                    {data.count} subs • ${pricing?.annual}/yr or ${pricing?.monthly}/mo
+                                  </div>
+                                </div>
+                              );
+                            })}
+                        </div>
+                      </div>
+                    )}
+
+                    <p className="text-xs text-gray-500 mt-3">
+                      Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
+                      Founder pricing (50% off) available through May 31, 2026. No lifetime plans offered.
+                    </p>
+                  </Card>
+                )}
+                {!revenueMetrics && usersList.length === 0 && (
+                  <Card className="p-6 text-center text-gray-500 border-dashed">
+                    Load users (Users tab) to calculate revenue metrics
+                  </Card>
+                )}
 
                 {/* Charts Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1909,6 +2315,190 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'tools' && (
           <div className="space-y-6">
+            {/* Broadcast Announcement */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                📢 Send Announcement
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Message Title</label>
+                  <input
+                    type="text"
+                    id="announcement-title"
+                    placeholder="e.g., New Feature: AI Study Plans"
+                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Message Body</label>
+                  <textarea
+                    id="announcement-body"
+                    rows={3}
+                    placeholder="We've just launched AI-powered study plans..."
+                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                  />
+                </div>
+                <div className="flex items-center gap-4">
+                  <select
+                    id="announcement-audience"
+                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                  >
+                    <option value="all">All Users</option>
+                    {getActiveCourses().map(course => (
+                      <option key={course.id} value={course.id}>{course.name} Users</option>
+                    ))}
+                    <option value="premium">Premium Users Only</option>
+                  </select>
+                  <button
+                    onClick={async () => {
+                      const title = (document.getElementById('announcement-title') as HTMLInputElement)?.value;
+                      const body = (document.getElementById('announcement-body') as HTMLTextAreaElement)?.value;
+                      const audience = (document.getElementById('announcement-audience') as HTMLSelectElement)?.value;
+                      
+                      if (!title || !body) {
+                        alert('Please enter both title and message body');
+                        return;
+                      }
+                      
+                      if (!window.confirm(`Send announcement to ${audience === 'all' ? 'ALL users' : audience + ' users'}?\n\nTitle: ${title}\nMessage: ${body}`)) {
+                        return;
+                      }
+                      
+                      try {
+                        // Store announcement in Firestore for users to see on next login
+                        const { addDoc, collection, serverTimestamp } = await import('firebase/firestore');
+                        await addDoc(collection(db, 'announcements'), {
+                          title,
+                          body,
+                          audience,
+                          createdAt: serverTimestamp(),
+                          createdBy: user?.email,
+                          active: true,
+                        });
+                        addLog(`Announcement created for ${audience} users`, 'success');
+                        alert('Announcement saved! Users will see it on their next session.');
+                        (document.getElementById('announcement-title') as HTMLInputElement).value = '';
+                        (document.getElementById('announcement-body') as HTMLTextAreaElement).value = '';
+                      } catch (error) {
+                        logger.error('Error creating announcement:', error);
+                        addLog('Failed to create announcement', 'error');
+                      }
+                    }}
+                    className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                  >
+                    Send Announcement
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500">
+                  Announcements are stored in Firestore and shown to users on their next session. For push notifications, use Firebase Cloud Messaging directly.
+                </p>
+              </div>
+            </Card>
+
+            {/* System Health */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">🩺 System Health</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="p-4 bg-green-50 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700">✓</div>
+                  <div className="text-sm text-green-600">Firebase</div>
+                </div>
+                <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50' : 'bg-red-50'}`}>
+                  <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700' : 'text-red-700'}`}>
+                    {import.meta.env.VITE_GEMINI_API_KEY ? '✓' : '✗'}
+                  </div>
+                  <div className={`text-sm ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600' : 'text-red-600'}`}>Gemini AI</div>
+                </div>
+                <div className="p-4 bg-green-50 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700">✓</div>
+                  <div className="text-sm text-green-600">Auth</div>
+                </div>
+                <div className={`p-4 rounded-lg text-center ${systemErrors.length === 0 ? 'bg-green-50' : 'bg-amber-50'}`}>
+                  <div className={`text-2xl font-bold ${systemErrors.length === 0 ? 'text-green-700' : 'text-amber-700'}`}>
+                    {systemErrors.length}
+                  </div>
+                  <div className={`text-sm ${systemErrors.length === 0 ? 'text-green-600' : 'text-amber-600'}`}>Errors</div>
+                </div>
+              </div>
+              <div className="mt-4 p-3 bg-gray-50 rounded-lg text-sm text-gray-600">
+                <div className="grid grid-cols-2 gap-2">
+                  <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'development'}</div>
+                  <div><strong>Project:</strong> {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</div>
+                  <div><strong>Build:</strong> {import.meta.env.VITE_BUILD_TIME || 'Local'}</div>
+                  <div><strong>Version:</strong> {import.meta.env.VITE_APP_VERSION || '1.0.0'}</div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Announcement History */}
+            <Card className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">📜 Announcement History</h3>
+                <button
+                  onClick={loadAnnouncementHistory}
+                  disabled={isLoadingAnnouncements}
+                  className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                >
+                  {isLoadingAnnouncements ? 'Loading...' : 'Refresh'}
+                </button>
+              </div>
+              
+              {announcementHistory.length > 0 ? (
+                <div className="space-y-3 max-h-80 overflow-y-auto">
+                  {announcementHistory.map(ann => (
+                    <div 
+                      key={ann.id} 
+                      className={`p-4 rounded-lg border ${ann.active ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900">{ann.title}</h4>
+                          <p className="text-sm text-gray-600 mt-1">{ann.body}</p>
+                        </div>
+                        <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
+                          ann.active ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
+                        }`}>
+                          {ann.active ? 'Active' : 'Inactive'}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <span>📤 {ann.audience === 'all' ? 'All Users' : ann.audience}</span>
+                        <span>👤 {ann.createdBy || 'Unknown'}</span>
+                        <span>📅 {ann.createdAt?.seconds 
+                          ? new Date(ann.createdAt.seconds * 1000).toLocaleDateString() 
+                          : 'Unknown date'}</span>
+                      </div>
+                      <div className="mt-2 flex gap-2">
+                        <button
+                          onClick={async () => {
+                            try {
+                              await updateDoc(doc(db, 'announcements', ann.id), { active: !ann.active });
+                              loadAnnouncementHistory();
+                              addLog(`Announcement ${ann.active ? 'deactivated' : 'activated'}`, 'success');
+                            } catch (error) {
+                              logger.error('Error toggling announcement:', error);
+                            }
+                          }}
+                          className={`text-xs px-2 py-1 rounded ${
+                            ann.active 
+                              ? 'bg-red-50 text-red-600 hover:bg-red-100' 
+                              : 'bg-green-50 text-green-600 hover:bg-green-100'
+                          }`}
+                        >
+                          {ann.active ? 'Deactivate' : 'Reactivate'}
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500 text-sm text-center py-6">
+                  {isLoadingAnnouncements ? 'Loading announcements...' : 'No announcements sent yet'}
+                </p>
+              )}
+            </Card>
+
             {/* Feature Flags */}
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -1933,7 +2523,8 @@ const AdminCMS: React.FC = () => {
                         {flag === 'examSimulator' && 'Full exam simulation'}
                         {flag === 'flashcards' && 'Flashcard study mode'}
                         {flag === 'tbs' && 'Task-Based Simulations'}
-                        {flag === 'writtenCommunication' && 'Written Communication (BEC only)'}
+                        {flag === 'writtenCommunication' && 'Written Communication (Legacy - retired Dec 2023)'}
+                        {flag === 'offlineMode' && 'Progressive Web App offline support'}
                         {flag === 'studyPlan' && 'AI-generated study plans'}
                       </p>
                     </div>
@@ -2141,9 +2732,9 @@ const AdminCMS: React.FC = () => {
                           return;
                         }
                         const csv = [
-                          'Email,UID,Section,Subscription,IsAdmin,CreatedAt',
+                          'Email,UID,Course,Section,Subscription,IsAdmin,CreatedAt',
                           ...usersList.map(u => 
-                            `"${u.email || ''}","${u.id}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
+                            `"${u.email || ''}","${u.id}","${u.courseId || 'cpa'}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
                           )
                         ].join('\n');
                         const blob = new Blob([csv], { type: 'text/csv' });
@@ -2219,21 +2810,17 @@ const AdminCMS: React.FC = () => {
               </div>
             </Card>
 
-            {/* Beta Mode Status */}
+            {/* Launch Status */}
             <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                🚀 Beta Mode Status
+                🚀 Launch Status
               </h3>
               <div className="flex items-center gap-4">
-                <div className={`px-4 py-2 rounded-lg font-medium ${
-                  true /* IS_BETA from subscription.ts */
-                    ? 'bg-green-100 text-green-700 border border-green-200' 
-                    : 'bg-gray-100 text-gray-700 border border-gray-200'
-                }`}>
-                  Beta Mode: <strong>ACTIVE</strong>
+                <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">
+                  Status: <strong>LIVE</strong>
                 </div>
                 <p className="text-sm text-gray-600">
-                  All premium features are currently free during beta. Change <code className="bg-white px-1 rounded">IS_BETA</code> in subscription.ts to disable.
+                  Paid subscriptions are active. Founder pricing (50% off) available until May 31, 2026.
                 </p>
               </div>
             </div>
@@ -2538,6 +3125,7 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
+                    <span className="bg-white/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
                     <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
                     <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}

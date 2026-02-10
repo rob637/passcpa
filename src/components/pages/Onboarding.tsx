@@ -711,6 +711,21 @@ const Onboarding: React.FC = () => {
         timezone: userTimezone,
       });
       
+      // Check for pending checkout (user came from pricing page)
+      const pendingCheckoutStr = localStorage.getItem('pendingCheckout');
+      if (pendingCheckoutStr) {
+        try {
+          const pendingCheckout = JSON.parse(pendingCheckoutStr);
+          localStorage.removeItem('pendingCheckout');
+          // Navigate to start checkout page
+          navigate(`/start-checkout?course=${pendingCheckout.course}&interval=${pendingCheckout.interval}`);
+          return;
+        } catch {
+          // Invalid JSON, continue to dashboard
+          localStorage.removeItem('pendingCheckout');
+        }
+      }
+      
       // Navigate to appropriate dashboard based on selected course
       const courseDashboard = getCourseHomePath(selectedCourse as CourseId);
       navigate(courseDashboard);

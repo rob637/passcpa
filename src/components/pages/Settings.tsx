@@ -18,6 +18,10 @@ import {
   RefreshCw,
   CheckCircle,
   Smartphone,
+  Users,
+  Award,
+  CreditCard,
+  ExternalLink,
 } from 'lucide-react';
 import { triggerUpdateBanner } from '../common/UpdateBanner';
 import { Button } from '../common/Button';
@@ -26,7 +30,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage, auth } from '../../config/firebase';
+import { storage, auth, functions } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
@@ -40,6 +44,10 @@ import {
 } from '../../services/pushNotifications';
 import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offlineCache';
 import { fetchQuestions } from '../../services/questionService';
+import { useSubscription } from '../../services/subscription';
+import { httpsCallable } from 'firebase/functions';
+import { InviteFriends } from '../common/InviteFriends';
+import { PassedCelebration } from '../common/PassedCelebration';
 import { Timestamp } from 'firebase/firestore';
 import clsx from 'clsx';
 
@@ -88,6 +96,7 @@ const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
+  const { subscription, isPremium, isTrialing, trialDaysRemaining, trialExpired } = useSubscription();
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
   const [isSaving, setIsSaving] = useState(false);
@@ -95,6 +104,7 @@ const Settings: React.FC = () => {
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
   const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
+  const [isManagingSubscription, setIsManagingSubscription] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Cast profile
@@ -124,6 +134,9 @@ const Settings: React.FC = () => {
     streakReminder: true,
     newContent: false,
   });
+  
+  // I Passed celebration modal
+  const [showPassedCelebration, setShowPassedCelebration] = useState(false);
 
   // New states for enhanced settings
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>('default');
@@ -322,9 +335,29 @@ const Settings: React.FC = () => {
     }
   };
 
+  const handleManageSubscription = async () => {
+    if (!user) return;
+    setIsManagingSubscription(true);
+    try {
+      const createPortalSession = httpsCallable<{ returnUrl: string }, { url: string }>(
+        functions,
+        'createCustomerPortalSession'
+      );
+      const result = await createPortalSession({
+        returnUrl: window.location.href
+      });
+      window.location.href = result.data.url;
+    } catch (error) {
+      logger.error('Error opening subscription portal:', error);
+      alert('Unable to open subscription management. Please try again.');
+      setIsManagingSubscription(false);
+    }
+  };
+
   const tabs: Tab[] = [
     { id: 'profile', label: 'Profile', icon: UserIcon },
     { id: 'study', label: 'Study Plan', icon: Target },
+    { id: 'invite', label: 'Invite Friends', icon: Users },
     { id: 'appearance', label: 'Appearance', icon: Palette },
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'feedback', label: 'Feedback & Support', icon: MessageSquare },
@@ -586,7 +619,33 @@ const Settings: React.FC = () => {
                       ))}
                     </div>
                   </div>
+
+                  {/* I Passed Celebration */}
+                  <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-700">
+                    <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                      Passed Your Exam?
+                    </h3>
+                    <button
+                      onClick={() => setShowPassedCelebration(true)}
+                      className="flex items-center gap-3 w-full p-4 rounded-xl border-2 border-emerald-200 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/20 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all text-left"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
+                        <Award className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-emerald-700 dark:text-emerald-400">I Passed!</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Celebrate and share your success</div>
+                      </div>
+                    </button>
+                  </div>
                 </div>
+              </div>
+            )}
+
+            {/* Invite Friends Tab */}
+            {activeTab === 'invite' && (
+              <div className="card-body">
+                <InviteFriends />
               </div>
             )}
 
@@ -1030,6 +1089,56 @@ const Settings: React.FC = () => {
 
                     <div className="border-t border-slate-200 pt-6"></div>
 
+                    {/* Subscription Management */}
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                      <CreditCard className="w-5 h-5" />
+                      Subscription
+                    </h3>
+                    <div className="bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 mb-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-medium text-slate-900 dark:text-white">
+                            {isPremium ? 'Premium Plan' : isTrialing ? 'Free Trial' : trialExpired ? 'Trial Expired' : 'Free Plan'}
+                          </div>
+                          <div className="text-sm text-slate-600 dark:text-slate-400">
+                            {isTrialing && trialDaysRemaining !== null && (
+                              <span>{trialDaysRemaining} day{trialDaysRemaining !== 1 ? 's' : ''} remaining</span>
+                            )}
+                            {isPremium && subscription?.currentPeriodEnd && (
+                              <span>Renews {new Date(subscription.currentPeriodEnd).toLocaleDateString()}</span>
+                            )}
+                            {trialExpired && (
+                              <span className="text-amber-600 dark:text-amber-400">Upgrade to continue learning</span>
+                            )}
+                            {!isPremium && !isTrialing && !trialExpired && (
+                              <span>Start a free trial to unlock all content</span>
+                            )}
+                          </div>
+                        </div>
+                        {(isPremium || subscription?.stripeCustomerId) && (
+                          <button
+                            onClick={handleManageSubscription}
+                            disabled={isManagingSubscription}
+                            className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
+                          >
+                            {isManagingSubscription ? (
+                              <>
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                Opening...
+                              </>
+                            ) : (
+                              <>
+                                Manage
+                                <ExternalLink className="w-4 h-4" />
+                              </>
+                            )}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="border-t border-slate-200 pt-6"></div>
+
                     {/* Actions */}
                     <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
@@ -1197,6 +1306,15 @@ const Settings: React.FC = () => {
         </div>
       </div>
     </div>
+
+    {/* I Passed Celebration Modal */}
+    {showPassedCelebration && (
+      <PassedCelebration
+        section={examSection}
+        userName={displayName || user?.displayName || undefined}
+        onClose={() => setShowPassedCelebration(false)}
+      />
+    )}
   </div>
   );
 };

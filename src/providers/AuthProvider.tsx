@@ -18,6 +18,7 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { httpsCallable } from 'firebase/functions';
 import { auth, db, functions } from '../config/firebase.js';
 import { initializeNotifications } from '../services/pushNotifications';
+import { getPendingReferral, applyReferralCode } from '../services/referral';
 import { Capacitor } from '@capacitor/core';
 import { UserProfile } from '../types';
 
@@ -202,6 +203,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       };
 
       await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+
+      // Apply any pending referral code
+      const pendingReferral = getPendingReferral();
+      if (pendingReferral) {
+        await applyReferralCode(result.user.uid, pendingReferral);
+        logger.info('Applied referral code:', pendingReferral);
+      }
 
       return result.user;
     } catch (err) {

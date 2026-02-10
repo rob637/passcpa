@@ -36,6 +36,8 @@ interface StudyGuideData {
     duration?: string;
   };
   blueprintAreas?: BlueprintArea[];
+  sections?: BlueprintArea[]; // CMA uses 'sections'
+  domains?: BlueprintArea[]; // EA/CIA/CFP use 'domains'
   studyPlan?: StudyWeek[];
   examTips?: string[];
   commonMistakes?: string[];
@@ -62,8 +64,10 @@ interface StudyWeek {
   week: number;
   focus: string;
   topics: string[];
-  hours: number;
-  activities: string[];
+  hours?: number;
+  dailyHours?: number;
+  activities?: string[];
+  milestones?: string[];
 }
 
 export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, item }) => {
@@ -159,6 +163,16 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
     );
   }
 
+  // Normalize data - handle different field names across exams
+  const blueprintAreas = guide.blueprintAreas || guide.sections || guide.domains || [];
+  
+  // Helper to get hours from either format
+  const getWeeklyHours = (week: StudyWeek): number | null => {
+    if (week.hours !== undefined) return week.hours;
+    if (week.dailyHours !== undefined) return week.dailyHours * 7; // Convert daily to weekly
+    return null;
+  };
+
   return (
     <div className="space-y-8">
       {/* Exam Format Overview */}
@@ -205,15 +219,15 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
         </div>
       )}
 
-      {/* Blueprint Areas */}
-      {guide.blueprintAreas && guide.blueprintAreas.length > 0 && (
+      {/* Blueprint Areas / Sections / Domains */}
+      {blueprintAreas.length > 0 && (
         <div>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-primary-500" />
             Blueprint Areas
           </h2>
           <div className="space-y-3">
-            {guide.blueprintAreas.map((area) => (
+            {blueprintAreas.map((area) => (
               <div
                 key={area.id}
                 className="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden"
@@ -307,29 +321,32 @@ export const StudyGuideViewer: React.FC<StudyGuideViewerProps> = ({ courseId, it
             <table className="w-full">
               <thead>
                 <tr className="text-left border-b border-slate-200 dark:border-slate-700">
-                  <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400">Week</th>
+                  <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Week</th>
                   <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400">Focus</th>
-                  <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400">Hours</th>
+                  <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Hours</th>
                   <th className="py-3 px-4 text-sm font-medium text-slate-500 dark:text-slate-400">Topics</th>
                 </tr>
               </thead>
               <tbody>
-                {guide.studyPlan.map((week) => (
+                {guide.studyPlan.map((week) => {
+                  const weeklyHours = getWeeklyHours(week);
+                  return (
                   <tr key={week.week} className="border-b border-slate-100 dark:border-slate-800">
-                    <td className="py-3 px-4 font-medium text-slate-900 dark:text-slate-100">
+                    <td className="py-3 px-4 font-medium text-slate-900 dark:text-slate-100 whitespace-nowrap">
                       Week {week.week}
                     </td>
                     <td className="py-3 px-4 text-slate-700 dark:text-slate-300">
                       {week.focus}
                     </td>
-                    <td className="py-3 px-4 text-slate-500 dark:text-slate-400">
-                      {week.hours}h
+                    <td className="py-3 px-4 text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                      {weeklyHours !== null ? `${weeklyHours}h` : '—'}
                     </td>
                     <td className="py-3 px-4 text-sm text-slate-600 dark:text-slate-400">
                       {week.topics.join(', ')}
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>

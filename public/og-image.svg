@@ -51,10 +51,10 @@
   <!-- Top accent line -->
   <rect x="0" y="0" width="1200" height="4" fill="url(#blueGlow)"/>
   
-  <!-- FREE BETA Badge (top right) -->
+  <!-- Free Trial Badge (top right) -->
   <g filter="url(#shadow)">
-    <rect x="980" y="30" width="180" height="50" rx="25" fill="url(#greenGlow)"/>
-    <text x="1070" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">FREE BETA</text>
+    <rect x="930" y="30" width="230" height="50" rx="25" fill="url(#greenGlow)"/>
+    <text x="1045" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">14-DAY FREE TRIAL</text>
   </g>
   
   <!-- Logo Mark -->

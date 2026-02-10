@@ -463,11 +463,13 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                             row.competitor2 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
                           ) : row.competitor2}
                         </td>
-                        <td className="p-4 text-center text-slate-600 dark:text-slate-400">
-                          {typeof row.competitor3 === 'boolean' ? (
-                            row.competitor3 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
-                          ) : row.competitor3}
-                        </td>
+                        {row.competitor3 !== undefined && (
+                          <td className="p-4 text-center text-slate-600 dark:text-slate-400">
+                            {typeof row.competitor3 === 'boolean' ? (
+                              row.competitor3 ? <CheckCircle className="w-5 h-5 text-slate-400 mx-auto" /> : <X className="w-5 h-5 text-slate-400 mx-auto" />
+                            ) : row.competitor3}
+                          </td>
+                        )}
                       </tr>
                     ))}
                   </tbody>
@@ -775,7 +777,9 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
               <div key={i} className="flex items-center gap-6 bg-white dark:bg-slate-800 px-6 py-3 rounded-xl shadow border border-slate-200 dark:border-slate-700">
                 <span className="text-slate-500">{config.competitors?.names[0]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor1}</span></span>
                 <span className="text-slate-500">{config.competitors?.names[1]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor2}</span></span>
-                <span className="text-slate-500">{config.competitors?.names[2]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor3}</span></span>
+                {config.competitors?.names[2] && row.competitor3 && (
+                  <span className="text-slate-500">{config.competitors?.names[2]}: <span className="text-slate-900 dark:text-white font-semibold">{row.competitor3}</span></span>
+                )}
               </div>
             ))}
           </div>

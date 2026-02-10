@@ -206,11 +206,11 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
           <div className={`absolute bottom-20 right-10 w-96 h-96 ${colors.bg}/10 rounded-full blur-3xl animate-pulse`} style={{ animationDelay: '1s' }} />
 
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* Beta Badge */}
+            {/* Trial Badge */}
             <div className="flex justify-center mb-5">
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
                 <Sparkles className="w-4 h-4" />
-                FREE BETA — Full Access, No Credit Card
+                14-Day Free Trial — Full Access, No Credit Card
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
@@ -271,7 +271,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
                   <Check className="w-3 h-3 text-emerald-600" />
                 </div>
-                <span>Full access during beta</span>
+                <span>14-day free trial</span>
               </div>
             </div>
 

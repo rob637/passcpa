@@ -11,41 +11,41 @@
 import { describe, it, expect } from 'vitest';
 import { SUBSCRIPTION_PLANS, IS_BETA_PERIOD, type SubscriptionTier } from '../../services/subscription';
 
-describe('Subscription Plans - Beta Period', () => {
+describe('Subscription Plans - Launch State', () => {
   // Document current state
   it('confirms we are NOT in beta period (beta has ended)', () => {
     // This test will fail when beta ends, reminding us to update tests
     expect(IS_BETA_PERIOD).toBe(false);
   });
 
-  describe('Free tier now has trial limits (beta ended)', () => {
+  describe('Free tier (14-day trial with full access)', () => {
     const freeLimits = SUBSCRIPTION_PLANS.free.limits;
 
-    it('has unlimited questions during beta', () => {
+    it('has unlimited questions during trial', () => {
       expect(freeLimits.questionsPerDay).toBe(Infinity);
     });
 
-    it('has unlimited AI tutor messages during beta', () => {
+    it('has unlimited AI tutor messages during trial', () => {
       expect(freeLimits.aiTutorMessages).toBe(Infinity);
     });
 
-    it('includes TBS access during beta', () => {
+    it('includes TBS access during trial', () => {
       expect(freeLimits.tbsAccess).toBe(true);
     });
 
-    it('includes offline mode during beta', () => {
+    it('includes offline mode during trial', () => {
       expect(freeLimits.offlineMode).toBe(true);
     });
 
-    it('includes progress analytics during beta', () => {
+    it('includes progress analytics during trial', () => {
       expect(freeLimits.progressAnalytics).toBe(true);
     });
 
-    it('includes study plans during beta', () => {
+    it('includes study plans during trial', () => {
       expect(freeLimits.studyPlans).toBe(true);
     });
 
-    it('has unlimited exam sections during beta', () => {
+    it('has unlimited exam sections during trial', () => {
       expect(freeLimits.examSections).toBe('unlimited');
     });
   });

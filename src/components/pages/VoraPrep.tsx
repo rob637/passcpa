@@ -299,11 +299,11 @@ const VoraPrep = () => {
           <div className="absolute top-40 right-1/4 w-64 h-64 bg-sky-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
 
           <div className={`max-w-7xl mx-auto relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* Beta Badge */}
+            {/* Trial Badge */}
             <div className="flex justify-center mb-6">
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-emerald-500/25">
                 <Sparkles className="w-4 h-4" />
-                FREE BETA — Full Access, No Credit Card
+                14-Day Free Trial — Full Access, No Credit Card
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
@@ -378,9 +378,9 @@ const VoraPrep = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                   <Globe className="w-6 h-6 text-amber-600" />
-                  $0
+                  Free
                 </div>
-                <div className="text-sm text-slate-500">During Beta</div>
+                <div className="text-sm text-slate-500">14-Day Trial</div>
               </div>
             </div>
           </div>

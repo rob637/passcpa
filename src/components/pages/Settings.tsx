@@ -49,6 +49,7 @@ import { httpsCallable } from 'firebase/functions';
 import { InviteFriends } from '../common/InviteFriends';
 import { PassedCelebration } from '../common/PassedCelebration';
 import { Timestamp } from 'firebase/firestore';
+import { clearTodaysPlan } from '../../services/dailyPlanPersistence';
 import clsx from 'clsx';
 
 interface UserProfile {
@@ -324,6 +325,11 @@ const Settings: React.FC = () => {
         
         // Update weekly report preference
         await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
+        
+        // Clear daily plan cache to force regeneration with new exam date/daily goal
+        // This ensures the plan recalculates intensity based on the new exam date
+        await clearTodaysPlan(user.uid, examSection);
+        logger.log('Daily plan cache cleared - will regenerate with updated settings');
       }
       
       setSaveSuccess(true);

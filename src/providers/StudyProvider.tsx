@@ -20,6 +20,8 @@ import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
 import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
+import { COURSES } from '../courses';
+import { CourseId } from '../types/course';
 
 export interface StudyPlan {
   id?: string;
@@ -209,23 +211,42 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const thisWeekQuery = query(dailyLogCollection, where('date', 'in', thisWeekDates));
         const thisWeekSnapshot = await getDocs(thisWeekQuery);
 
+        // Get sections that belong to the current course for filtering
+        const courseSections = COURSES[activeCourse as CourseId]?.sections?.map(s => s.id) || [];
+        
+        // Course-filtered counts (all sections in this course)
         let totalQuestions = 0;
         let totalCorrect = 0;
         let totalMinutes = 0;
-        // Section-filtered counts
+        // Section-filtered counts (current section only)
         let sectionQuestions = 0;
         let sectionCorrect = 0;
 
         thisWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
-          totalQuestions += data.questionsAttempted || 0;
-          totalCorrect += data.questionsCorrect || 0;
-          totalMinutes += data.studyTimeMinutes || 0;
           
-          // Count section-specific questions from activities
+          // Count course-specific stats from activities
           if (data.activities && Array.isArray(data.activities)) {
-            data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
-              if (activity.type === 'mcq' && activity.section === currentSection) {
+            data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean; timeSpentSeconds?: number; timeSpent?: number }) => {
+              const activitySection = activity.section || 'unknown';
+              const belongsToCourse = courseSections.includes(activitySection);
+              
+              if (belongsToCourse) {
+                // Add time: MCQs use timeSpentSeconds, lessons/sims use timeSpent (minutes)
+                if (activity.type === 'mcq' && activity.timeSpentSeconds) {
+                  totalMinutes += Math.max(0.1, Math.round((activity.timeSpentSeconds / 60) * 10) / 10);
+                } else if ((activity.type === 'lesson' || activity.type === 'simulation') && activity.timeSpent) {
+                  totalMinutes += activity.timeSpent;
+                }
+                
+                if (activity.type === 'mcq') {
+                  totalQuestions++;
+                  if (activity.isCorrect) totalCorrect++;
+                }
+              }
+              
+              // Section-specific stats (current section within course)
+              if (activity.type === 'mcq' && activitySection === currentSection) {
                 sectionQuestions++;
                 if (activity.isCorrect) sectionCorrect++;
               }
@@ -242,8 +263,16 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
         lastWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
-          lastWeekQuestions += data.questionsAttempted || 0;
-          lastWeekCorrect += data.questionsCorrect || 0;
+          // Filter last week by course sections too for accurate trends
+          if (data.activities && Array.isArray(data.activities)) {
+            data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
+              const activitySection = activity.section || 'unknown';
+              if (courseSections.includes(activitySection) && activity.type === 'mcq') {
+                lastWeekQuestions++;
+                if (activity.isCorrect) lastWeekCorrect++;
+              }
+            });
+          }
         });
 
         const accuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
@@ -289,7 +318,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     };
 
     fetchWeeklyData();
-  }, [user, todayLog, currentSection, statsVersion]); // Re-run when section changes or stats forced refresh
+  }, [user, todayLog, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
   
   // Function to force refresh stats (called when section changes)
   const refreshStats = async () => {

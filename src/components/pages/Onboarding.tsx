@@ -817,8 +817,8 @@ const Onboarding: React.FC = () => {
             className={clsx(
               'px-8 py-3 shadow-lg transition-all duration-200',
               canContinue() && !isSubmitting
-                ? 'bg-white text-primary-600 hover:bg-primary-50 hover:shadow-xl hover:scale-[1.02]'
-                : 'bg-white/30 text-white'
+                ? 'bg-white !text-blue-600 hover:bg-blue-50 hover:shadow-xl hover:scale-[1.02] font-semibold'
+                : 'bg-white/30 text-white/70'
             )}
           >
             {isSubmitting ? 'Saving...' : currentStep === steps.length - 1 ? "Let's Go!" : 'Continue'}

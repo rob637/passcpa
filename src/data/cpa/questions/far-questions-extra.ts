@@ -2230,7 +2230,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
       'An operating activity'
     ],
     correctAnswer: 2,
-    explanation: 'Noncash investing and financing activities (debt converted to equity, assets acquired via capital lease, stock dividends) are disclosed in a separate schedule or notes, not in the cash flow statement.',
+    explanation: 'Noncash investing and financing activities (debt converted to equity, assets acquired via finance lease, stock dividends) are disclosed in a separate schedule or notes, not in the cash flow statement.',
     reference: 'ASC 230-10-50',
   },
   {
@@ -3299,7 +3299,7 @@ export const FAR_QUESTIONS_EXTRA: Question[] = [
       'Disclosed in a separate schedule or narrative, not in the statement of cash flows'
     ],
     correctAnswer: 3,
-    explanation: 'Noncash transactions (debt conversion to equity, assets acquired via capital lease, stock dividends): disclose separately. Do not include in cash flow statement. Required supplemental disclosure.',
+    explanation: 'Noncash transactions (debt conversion to equity, assets acquired via finance lease, stock dividends): disclose separately. Do not include in cash flow statement. Required supplemental disclosure.',
     reference: 'ASC 230-10-50',
     blueprintArea: 'FAR-II',
     skillLevel: 'Remembering and Understanding',

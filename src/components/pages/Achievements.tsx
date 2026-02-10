@@ -11,6 +11,7 @@ import {
   getAchievementsByCategory,
   getAchievementDisplayName,
 } from '../../services/achievements';
+import { getReferralStats } from '../../services/referral';
 import feedback from '../../services/feedback';
 import { celebrateAchievement } from '../../utils/confetti';
 import clsx from 'clsx';
@@ -35,6 +36,7 @@ const CATEGORY_INFO: Record<string, CategoryInfo> = {
   time: { name: 'Time', icon: Clock, color: 'slate' },
   milestone: { name: 'Milestones', icon: Gift, color: 'error' },
   feature: { name: 'Features', icon: Trophy, color: 'primary' },
+  referral: { name: 'Referrals', icon: Share2, color: 'success' },
 };
 
 interface UserStats {
@@ -83,13 +85,24 @@ const Achievements: React.FC = () => {
     const loadStats = async () => {
       const progressRef = doc(db, 'users', user.uid, 'progress', 'stats');
       const snap = await getDoc(progressRef);
+      
+      // Also load referral stats
+      let referralCount = 0;
+      try {
+        const referralData = await getReferralStats(user.uid);
+        referralCount = referralData.referralCount || 0;
+      } catch {
+        // Referral stats not available
+      }
+      
       if (snap.exists()) {
-        setUserStats(snap.data() as UserStats);
+        setUserStats({ ...snap.data() as UserStats, referralCount });
       } else {
         setUserStats({
           totalQuestions: 0,
           totalCorrect: 0,
           accuracy: 0,
+          referralCount,
         });
       }
     };
@@ -291,7 +304,7 @@ const Achievements: React.FC = () => {
                   </span>
                 </div>
                 <p
-                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-600 dark:text-slate-300' : 'text-slate-600 dark:text-slate-400')}
+                  className={clsx('text-sm mt-0.5', isEarned ? 'text-slate-700 dark:text-slate-200' : 'text-slate-700 dark:text-slate-300')}
                 >
                   {achievement.description}
                 </p>

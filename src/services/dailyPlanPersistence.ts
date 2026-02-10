@@ -129,6 +129,41 @@ export const fetchTodaysPlan = async (userId: string, section?: string): Promise
 };
 
 /**
+ * Clear today's plan cache (localStorage and optionally Firestore)
+ * Call this when exam date or daily goal changes to force regeneration
+ * @param userId - User ID
+ * @param section - Optional section to clear (if not provided, clears all sections)
+ */
+export const clearTodaysPlan = async (userId: string, section?: string): Promise<void> => {
+  if (!userId) return;
+  
+  const today = getTodayDate();
+  
+  // Clear localStorage cache
+  try {
+    if (section) {
+      // Clear specific section cache
+      const cacheKey = `daily_plan_${userId}_${today}_${section}`;
+      localStorage.removeItem(cacheKey);
+      logger.log(`Cleared daily plan cache for section ${section}`);
+    } else {
+      // Clear all section caches for today
+      const keysToRemove: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith(`daily_plan_${userId}_${today}`)) {
+          keysToRemove.push(key);
+        }
+      }
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+      logger.log(`Cleared ${keysToRemove.length} daily plan cache(s)`);
+    }
+  } catch (e) {
+    logger.error('Error clearing localStorage cache:', e);
+  }
+};
+
+/**
  * Get incomplete activities from recent previous days (up to 3 days back)
  * This handles cases where user misses a day or two (e.g. skips weekend)
  */
@@ -381,4 +416,5 @@ export default {
   getPreviousIncomplete,
   getPlanHistory,
   getCompletionRate,
+  clearTodaysPlan,
 };

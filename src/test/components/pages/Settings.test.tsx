@@ -148,6 +148,17 @@ vi.mock('../../../hooks/useAuth', () => ({
   }),
 }));
 
+// Mock AuthProvider (used by useSubscription)
+vi.mock('../../../providers/AuthProvider', () => ({
+  useAuth: () => ({
+    user: mockUser,
+    userProfile: mockUserProfile,
+    updateUserProfile: mockUpdateUserProfile,
+    resetPassword: mockResetPassword,
+    signOut: mockSignOut,
+  }),
+}));
+
 // Mock exam config
 vi.mock('../../../config/examConfig', () => ({
   CPA_SECTIONS: {

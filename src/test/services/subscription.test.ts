@@ -57,10 +57,10 @@ describe('subscription service', () => {
 
     it('should have correct pricing for each tier', () => {
       expect(SUBSCRIPTION_PLANS.free.price).toBe(0);
-      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(12.99);
-      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(29.99);
-      expect(SUBSCRIPTION_PLANS.annual.price).toBe(99);
-      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(399);
+      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(29);
+      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(69);
+      expect(SUBSCRIPTION_PLANS.annual.price).toBe(199);
+      expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(0); // Legacy plan - no longer offered
     });
 
     it('should have correct intervals for each tier', () => {
@@ -194,7 +194,7 @@ describe('subscription service', () => {
       const subscription = await subscriptionService.createFreeSubscription('new-user');
 
       expect(subscription.tier).toBe('free');
-      expect(subscription.status).toBe('active');
+      expect(subscription.status).toBe('trialing'); // Free users start with a trial
       expect(mockSetDoc).toHaveBeenCalled();
     });
   });

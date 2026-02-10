@@ -128,7 +128,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
       <div
         ref={sheetRef}
         className={clsx(
-          'relative w-full bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl',
+          'relative w-full max-w-lg mx-auto bg-white dark:bg-slate-800 rounded-t-3xl shadow-2xl',
           'transform transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]',
           'animate-slide-up'
         )}

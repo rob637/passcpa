@@ -45,6 +45,7 @@ const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
 const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
+const CMACBQSimulator = lazy(() => import('./components/pages/CMACBQSimulator'));
 const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
 const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
 const EASection = lazy(() => import('./components/pages/EASection'));
@@ -695,6 +696,14 @@ function App() {
                         element={
                           <SuspensePage>
                             <CMAEssaySimulator />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/cma/cbq"
+                        element={
+                          <SuspensePage>
+                            <CMACBQSimulator />
                           </SuspensePage>
                         }
                       />

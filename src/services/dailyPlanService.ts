@@ -25,7 +25,7 @@ import {
 
 export interface DailyActivity {
   id: string;
-  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review' | 'essay' | 'case_study';
+  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review' | 'essay' | 'cbq' | 'case_study';
   title: string;
   description: string;
   estimatedMinutes: number;
@@ -36,6 +36,7 @@ export interface DailyActivity {
     lessonId?: string;
     tbsId?: string;
     essayId?: string;
+    cbqId?: string;
     caseStudyId?: string;
     section?: string;
     topic?: string;
@@ -61,6 +62,7 @@ export interface DailyPlan {
     tbsCount: number;
     flashcardCount: number;
     essayCount: number;
+    cbqCount: number;
     caseStudyCount: number;
     weakAreaFocus: string[];
   };
@@ -106,6 +108,7 @@ const ACTIVITY_DURATION = {
   tbs: 20,
   flashcards: 10,
   essay: 30,      // CMA essays are 30 mins each
+  cbq: 20,        // CMA CBQs are 15-20 mins each (effective Sept 2026)
   case_study: 25, // CFP case studies
 };
 
@@ -435,6 +438,8 @@ export const generateDailyPlan = async (
   }
   
   // 5b. CMA ESSAY PRACTICE - CMA Part 1 & 2 each have 2 essay questions (25% of score)
+  // NOTE: Essays are available until Aug 2026. Starting Sept 2026, CBQs replace essays.
+  // During May-Aug 2026 transition window, we show both essay and CBQ practice.
   if (courseId === 'cma' && remainingMinutes >= 20) {
     const essayTopics = getEssayTopicsForSection(state.section);
     if (essayTopics.length > 0) {
@@ -456,6 +461,57 @@ export const generateDailyPlan = async (
         },
       });
       remainingMinutes -= ACTIVITY_DURATION.essay;
+    }
+  }
+  
+  // 5b-2. CMA CBQ PRACTICE - Case-Based Questions replace essays starting Sept 2026
+  // CBQs include numerical entry, drag-and-drop, multiple select, and dropdown questions
+  if (courseId === 'cma' && remainingMinutes >= 15) {
+    const now = new Date();
+    const cbqTransitionStart = new Date('2026-05-01');
+    const cbqMandatoryDate = new Date('2026-09-01');
+    
+    // Show CBQ practice if:
+    // 1. We're in the transition window (May-Aug 2026) - user can choose format
+    // 2. Or after Sept 2026 when CBQ is mandatory
+    // For now, always show CBQ practice to help users prepare
+    const shouldShowCBQ = true; // Always show to prepare users for the transition
+    
+    if (shouldShowCBQ) {
+      const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+      const cbqTopics = getCBQTopicsForSection(state.section);
+      
+      if (cbqTopics.length > 0) {
+        const targetTopic = cbqTopics[dayOfYear % cbqTopics.length];
+        
+        // Determine priority based on timeline
+        let priority: 'critical' | 'high' | 'medium' = 'medium';
+        let reason = 'CBQs replace essays starting Sept 2026 - start practicing the new format';
+        
+        if (now >= cbqMandatoryDate) {
+          priority = 'high';
+          reason = 'CBQs are now the mandatory format - master numerical entry, drag-and-drop, and multi-select questions';
+        } else if (now >= cbqTransitionStart) {
+          priority = 'high';
+          reason = 'You can choose CBQ format for your exam - practice before making your choice';
+        }
+        
+        activities.push({
+          id: `cbq-${today}`,
+          type: 'cbq',
+          title: 'CBQ Practice',
+          description: `Topic: ${targetTopic}`,
+          estimatedMinutes: ACTIVITY_DURATION.cbq,
+          points: POINT_VALUES.tbs_basic,
+          priority,
+          reason,
+          params: {
+            section: state.section,
+            topic: targetTopic,
+          },
+        });
+        remainingMinutes -= ACTIVITY_DURATION.cbq;
+      }
     }
   }
   
@@ -570,6 +626,7 @@ export const generateDailyPlan = async (
     tbsCount: activities.filter(a => a.type === 'tbs').length,
     flashcardCount: activities.filter(a => a.type === 'flashcards').length,
     essayCount: activities.filter(a => a.type === 'essay').length,
+    cbqCount: activities.filter(a => a.type === 'cbq').length,
     caseStudyCount: activities.filter(a => a.type === 'case_study').length,
     weakAreaFocus: [...new Set(weakAreaFocus)],
   };
@@ -652,6 +709,34 @@ const getEssayTopicsForSection = (section: string): string[] => {
   };
   
   return essayTopics[section] || essayTopics.CMA1;
+};
+
+/**
+ * Get CBQ (Case-Based Question) topics for CMA sections
+ * CBQs replace essays starting Sept 2026 (25% of score)
+ * Question types: numerical_entry, drag_and_drop, multiple_select, dropdown
+ */
+const getCBQTopicsForSection = (section: string): string[] => {
+  const cbqTopics: Record<string, string[]> = {
+    CMA1: [
+      'Manufacturing Variance Analysis',
+      'Flexible Budgeting',
+      'Cost Allocation Decisions',
+      'Internal Control Assessment',
+      'Cost-Volume-Profit Scenarios',
+      'Operating Budget Preparation',
+    ],
+    CMA2: [
+      'Capital Investment Analysis',
+      'Financial Ratio Assessment',
+      'Ethical Decision Making',
+      'Risk Mitigation Strategies',
+      'Working Capital Optimization',
+      'Performance Metrics Evaluation',
+    ],
+  };
+  
+  return cbqTopics[section] || cbqTopics.CMA1;
 };
 
 /**

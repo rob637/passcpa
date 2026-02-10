@@ -18,6 +18,7 @@ interface MnemonicCard {
   section?: string;
   type?: string;
   topic?: string;
+  subtopic?: string;
   blueprintArea?: string;
   front: string;
   mnemonic?: string;

@@ -202,7 +202,8 @@ export function getReferralShareText(code: string, courseId?: string): {
   
   return {
     title: 'Study with me on VoraPrep!',
-    text: `I'm using VoraPrep to study for the ${examName} exam. It's an AI-powered study platform that's way more affordable than Becker. Use my link to get an extended 30-day free trial!`,
+    // Include URL in text so email clients always show it
+    text: `I'm using VoraPrep to study for the ${examName} exam. It's an AI-powered study platform that's way more affordable than Becker. Use my link to get an extended 30-day free trial!\n\n${url}`,
     url,
   };
 }
@@ -229,9 +230,9 @@ export async function shareReferralLink(
     }
   }
   
-  // Fallback to clipboard
+  // Fallback to clipboard (text already includes URL)
   try {
-    await navigator.clipboard.writeText(`${text}\n\n${url}`);
+    await navigator.clipboard.writeText(text);
     return { method: 'clipboard', success: true };
   } catch {
     return { method: 'clipboard', success: false };

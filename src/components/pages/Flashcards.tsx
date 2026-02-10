@@ -217,6 +217,8 @@ const Flashcards: React.FC = () => {
         filteredCards.sort(() => Math.random() - 0.5);
 
         setCards(filteredCards);
+        setCurrentIndex(0); // Reset to first card when cards change
+        setIsFlipped(false); // Reset flip state
         setStudyStats(getStudyStats(cardsWithSRS));
       } catch (error) {
         logger.error('Error loading flashcards:', error);
@@ -516,8 +518,8 @@ const Flashcards: React.FC = () => {
             className={clsx(
               'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
               cardType === 'mnemonics'
-                ? 'bg-amber-100 text-amber-700 border border-amber-200'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
             )}
           >
             <Lightbulb className="w-3.5 h-3.5" />

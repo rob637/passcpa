@@ -501,6 +501,61 @@ export const generateDailyPlan = async (
         mode: 'study',
       },
     });
+    remainingMinutes -= ACTIVITY_DURATION.mcq_10;
+  }
+  
+  // 7. FILL REMAINING TIME for intensive/full-time students
+  // If significant time remains (30+ minutes), add more activities
+  let fillRound = 1;
+  while (remainingMinutes >= 25) {
+    // Add additional lesson if available
+    const nextLesson = lessons.find(l => {
+      const progress = state.lessonProgress[l.id] || 0;
+      return progress === 0 && !activities.some(a => a.id === `lesson-${l.id}`);
+    });
+    
+    if (nextLesson && remainingMinutes >= 25) {
+      activities.push({
+        id: `lesson-${nextLesson.id}`,
+        type: 'lesson',
+        title: `Learn: ${nextLesson.title}`,
+        description: 'Keep building knowledge',
+        estimatedMinutes: nextLesson.duration || ACTIVITY_DURATION.lesson_medium,
+        points: POINT_VALUES.lesson_medium,
+        priority: 'low',
+        reason: 'Extra lesson to accelerate your progress',
+        params: {
+          lessonId: nextLesson.id,
+          section: state.section,
+        },
+      });
+      remainingMinutes -= ACTIVITY_DURATION.lesson_medium;
+      continue;
+    }
+    
+    // Add more practice questions
+    if (remainingMinutes >= 15) {
+      activities.push({
+        id: `practice-extra-${fillRound}-${today}`,
+        type: 'mcq',
+        title: 'Extra Practice',
+        description: 'Additional questions for mastery',
+        estimatedMinutes: ACTIVITY_DURATION.mcq_15,
+        points: 15 * MCQ_AVG_POINTS,
+        priority: 'low',
+        reason: 'More practice builds confidence and retention',
+        params: {
+          section: state.section,
+          questionCount: 15,
+          mode: 'study',
+        },
+      });
+      remainingMinutes -= ACTIVITY_DURATION.mcq_15;
+      fillRound++;
+      continue;
+    }
+    
+    break; // Safety break
   }
   
   // Sort by priority
@@ -550,8 +605,9 @@ const calculateIntensity = (examDate?: string): number => {
  * Get target study minutes based on daily goal and intensity
  */
 const getTargetMinutes = (dailyGoal: number, intensity: number): number => {
-  // Roughly 1 point = 1 minute of study
-  const baseMinutes = dailyGoal * 1.5;
+  // Scale minutes based on daily goal to match preset descriptions:
+  // Light (25 pts) = ~45 mins, Moderate (50 pts) = ~2 hrs, Intensive (80 pts) = ~3 hrs, Full-Time (150 pts) = ~5 hrs
+  const baseMinutes = dailyGoal * 2;
   return Math.round(baseMinutes * intensity);
 };
 

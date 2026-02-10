@@ -23,7 +23,7 @@
 
 | Exam | MCQ | TBS/Sims | Essays/WC | Case Studies | Notes |
 |------|:---:|:--------:|:---------:|:------------:|-------|
-| **CPA** | ✅ | ✅ | ✅ | ❌ | 50% MCQ / 50% TBS; WC in REG, BAR, TCP |
+| **CPA** | ✅ | ✅ | ❌ | ❌ | 50% MCQ / 50% TBS (WC retired with BEC Dec 2023) |
 | **EA** | ✅ | ❌ | ❌ | ❌ | 100% MCQ (100 per part, 85 scored) |
 | **CMA** | ✅ | ❌ | ✅ → CBQ | ✅ CBQs | 75% MCQ + 25% Essays/CBQs |
 | **CFP** | ✅ | ❌ | ❌ | ✅* | 170 MCQs incl. case vignettes (MCQ format) |
@@ -49,10 +49,10 @@
 |---------|------|------|------|------|--------|
 | AUD | Core | 78 | 7 | 4 hrs | MCQ + TBS |
 | FAR | Core | 50 | 7 | 4 hrs | MCQ + TBS |
-| REG | Core | 72 | 8 | 4 hrs | MCQ + TBS + WC |
-| BAR | Discipline | varies | varies | 4 hrs | MCQ + TBS + WC |
-| ISC | Discipline | varies | varies | 4 hrs | MCQ + TBS (60% MCQ / 40% TBS) |
-| TCP | Discipline | varies | varies | 4 hrs | MCQ + TBS + WC |
+| REG | Core | 72 | 8 | 4 hrs | MCQ + TBS |
+| BAR | Discipline | 50 | 7 | 4 hrs | MCQ + TBS |
+| ISC | Discipline | 82 | 6 | 4 hrs | MCQ + TBS (60% MCQ / 40% TBS) |
+| TCP | Discipline | 68 | 7 | 4 hrs | MCQ + TBS |
 
 **Exam Structure:**
 - **Total Time:** 16 hours (4 hours per section)
@@ -63,7 +63,8 @@
 **Question Types:**
 - **MCQ:** Multiple choice questions in 2 testlets
 - **TBS:** Task-based simulations (research, calculations, document review, exhibits)
-- **Written Communication:** Business memo/letter format in REG, BAR, TCP sections
+
+> ⚠️ **Note:** Written Communication (WC) was retired with BEC on December 15, 2023. All current CPA Evolution sections are MCQ + TBS only.
 
 **Scoring:** Scale 0-99, Pass: 75  
 **Testing Window:** Year-round (continuous)  
@@ -248,7 +249,7 @@
 |---------|:---:|:--:|:---:|:---:|:---:|:----:|
 | MCQ Practice | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | TBS Simulations | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Written Communication | ✅ (REG/BAR/TCP) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Written Communication | ❌ (retired Dec 2023) | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Essay/CBQ Practice | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | Case Study Vignettes | ❌ | ❌ | ✅ CBQs | ✅ (MCQ-based) | ❌ | ❌ |
 | Exam Simulator | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -269,9 +270,9 @@
 When developing content for each exam:
 
 ### CPA
-- Build MCQ, TBS, and WC content
+- Build MCQ and TBS content
 - TBS should include: journal entries, reconciliations, document review, research, calculations
-- WC should be professional business communication (memos, emails)
+- **Note:** Written Communication (WC) was retired with BEC on December 15, 2023
 - **Note:** OLD blueprint through 6/30/26, NEW blueprint 7/1/26 - plan content updates
 
 ### EA

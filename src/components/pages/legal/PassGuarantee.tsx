@@ -8,10 +8,11 @@ import {
   PASS_GUARANTEE_EXTENSION_TERMS,
   EXAM_PASSING_SCORES
 } from '../../../config/passGuarantee';
-import { useCourse } from '../../../hooks/useCourse';
+import { useCourseOptional } from '../../../hooks/useCourse';
 
 const PassGuarantee: React.FC = () => {
-  const { courseId } = useCourse();
+  const courseContext = useCourseOptional();
+  const courseId = courseContext?.courseId || 'cpa';
   const passingScore = EXAM_PASSING_SCORES[courseId];
 
   return (

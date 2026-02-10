@@ -2,7 +2,7 @@
 // Gamification to keep users engaged
 
 export interface AchievementRequirement {
-  type: 'streak' | 'questions' | 'accuracy' | 'perfect';
+  type: 'streak' | 'questions' | 'accuracy' | 'perfect' | 'referral';
   value: number;
   minQuestions?: number;
 }
@@ -12,7 +12,7 @@ export interface Achievement {
   name: string;
   description: string;
   icon: string;
-  category: 'streak' | 'questions' | 'accuracy' | 'mastery';
+  category: 'streak' | 'questions' | 'accuracy' | 'mastery' | 'referral';
   requirement: AchievementRequirement;
   points: number;
 }
@@ -23,6 +23,7 @@ export interface AchievementStats {
   totalQuestions?: number;
   accuracy?: number;
   perfectSessions?: number;
+  referralCount?: number;
 }
 
 export const ACHIEVEMENTS: Record<string, Achievement> = {
@@ -130,6 +131,26 @@ export const ACHIEVEMENTS: Record<string, Achievement> = {
     requirement: { type: 'perfect', value: 1, minQuestions: 10 },
     points: 150,
   },
+
+  // Referral achievements
+  referral_5: {
+    id: 'referral_5',
+    name: 'Connector',
+    description: 'Invite 5 friends to VoraPrep',
+    icon: '🤝',
+    category: 'referral',
+    requirement: { type: 'referral', value: 5 },
+    points: 250,
+  },
+  referral_20: {
+    id: 'referral_20',
+    name: 'Ambassador',
+    description: 'Invite 20 friends to VoraPrep',
+    icon: '🌟',
+    category: 'referral',
+    requirement: { type: 'referral', value: 20 },
+    points: 1000,
+  },
 };
 
 /**
@@ -162,6 +183,9 @@ export const checkAchievements = (stats: AchievementStats, currentAchievements: 
         break;
       case 'perfect':
         if ((stats.perfectSessions || 0) >= value) earned = true;
+        break;
+      case 'referral':
+        if ((stats.referralCount || 0) >= value) earned = true;
         break;
     }
 
@@ -215,6 +239,7 @@ export const getAchievementProgress = (achievementId: string, stats: Achievement
       case 'questions': current = stats.totalQuestions || 0; break;
       case 'accuracy': current = stats.accuracy || 0; break; // simplistic
       case 'perfect': current = stats.perfectSessions || 0; break;
+      case 'referral': current = stats.referralCount || 0; break;
     }
     
     return {

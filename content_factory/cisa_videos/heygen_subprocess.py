@@ -22,7 +22,8 @@ def create_video(script_file: str, background_file: str, avatar_id: str, title: 
     
     heygen = None
     try:
-        heygen = HeyGenAutomation()
+        # Use headless=False so browser is visible for debugging
+        heygen = HeyGenAutomation(headless=False)
         heygen.start()
         video_id = heygen.create_video(
             script_file=script_file,

@@ -101,7 +101,7 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("title", "TITLE field - click INSIDE the 'Untitled Video' text box"),
+        ("generate_title", "TITLE in generate dialog - click on 'Untitled Video' text in the popup after clicking Generate"),
         ("first_upload", "BACKGROUND - click on the first uploaded background image"),
     ]
     
@@ -242,19 +242,10 @@ def create_video(title, script_text, avatar_name, background_name=None):
     logger.info(f"Avatar: {avatar_name}")
     logger.info(f"{'='*60}")
     
-    # Step 1: Set title
-    logger.info("[STEP 1] Setting title...")
     coords = load_coords()
-    x, y = coords.get("title", COORDS.get("title"))
-    pyautogui.tripleClick(x, y)  # Triple-click to select all title text
-    time.sleep(0.3)
-    paste_text(title)
-    time.sleep(0.3)
-    pyautogui.press('enter')
-    time.sleep(0.5)
     
-    # Step 2: Paste script
-    logger.info("[STEP 2] Pasting script...")
+    # Step 1: Paste script
+    logger.info("[STEP 1] Pasting script...")
     x, y = coords.get("script", COORDS.get("script"))
     pyautogui.tripleClick(x, y)  # Triple-click to select all in script area
     time.sleep(0.3)
@@ -263,8 +254,8 @@ def create_video(title, script_text, avatar_name, background_name=None):
     paste_text(script_text)
     time.sleep(1)
     
-    # Step 3: Select avatar
-    logger.info(f"[STEP 3] Selecting avatar: {avatar_name}...")
+    # Step 2: Select avatar
+    logger.info(f"[STEP 2] Selecting avatar: {avatar_name}...")
     click("avatar_preview")
     time.sleep(0.5)
     click("change_avatar")
@@ -284,16 +275,16 @@ def create_video(title, script_text, avatar_name, background_name=None):
     click("outfit_thumbnail", double=True)  # Double-click outfit
     time.sleep(2)
     
-    # Step 4: Set Motion Engine to Avatar III
-    logger.info("[STEP 4] Setting Motion Engine to Avatar III...")
+    # Step 3: Set Motion Engine to Avatar III
+    logger.info("[STEP 3] Setting Motion Engine to Avatar III...")
     click("motion_engine")
     time.sleep(0.5)
     click("avatar_iii")
     time.sleep(0.5)
     
-    # Step 5: Set background
+    # Step 4: Set background
     if background_name:
-        logger.info(f"[STEP 5] Setting background: {background_name}...")
+        logger.info(f"[STEP 4] Setting background: {background_name}...")
         click("customize_bg")
         time.sleep(1.5)  # Wait for panel to open
         click("uploads_tab")
@@ -303,8 +294,8 @@ def create_video(title, script_text, avatar_name, background_name=None):
         click("first_upload", double=True)  # Then double-click to apply
         time.sleep(1.5)
     
-    # Step 6: Set layout to Portrait 9:16
-    logger.info("[STEP 6] Setting layout to Portrait 9:16...")
+    # Step 5: Set layout to Portrait 9:16
+    logger.info("[STEP 5] Setting layout to Portrait 9:16...")
     click("layouts_button")
     time.sleep(1)
     click("portrait_9_16")
@@ -312,10 +303,18 @@ def create_video(title, script_text, avatar_name, background_name=None):
     pyautogui.press('escape')  # Close panel
     time.sleep(0.5)
     
-    # Step 7: Click Generate
-    logger.info("[STEP 7] Clicking Generate...")
+    # Step 6: Click Generate
+    logger.info("[STEP 6] Clicking Generate...")
     click("generate_button")
     time.sleep(2)  # Wait for dialog
+    
+    # Step 7: Set title in generate dialog
+    logger.info("[STEP 7] Setting title in dialog...")
+    x, y = coords.get("generate_title", COORDS.get("title"))
+    pyautogui.tripleClick(x, y)  # Triple-click to select "Untitled Video"
+    time.sleep(0.3)
+    paste_text(title)
+    time.sleep(0.5)
     
     # Step 8: Click Submit
     logger.info("[STEP 8] Clicking Submit...")

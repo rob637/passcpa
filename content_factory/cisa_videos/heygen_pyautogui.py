@@ -102,6 +102,7 @@ def calibrate_quick():
     
     coords_to_find = [
         ("motion_engine", "MOTION ENGINE dropdown - click on the dropdown that shows Avatar III/IV"),
+        ("avatar_iii", "AVATAR III option - click on 'Avatar III' in the dropdown menu"),
     ]
     
     for key, description in coords_to_find:

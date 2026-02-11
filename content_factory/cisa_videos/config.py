@@ -30,17 +30,16 @@ AVATARS = [
 
 # =============================================================================
 # BACKGROUND SETTINGS
-# Using HeyGen's built-in professional studio backgrounds
-# These look more credible than custom solid colors
+# Custom business/office backgrounds uploaded to HeyGen
 # =============================================================================
-USE_DEFAULT_STUDIO_BACKGROUND = True  # Let HeyGen use its default studio setting
+USE_DEFAULT_STUDIO_BACKGROUND = False  # Use our custom backgrounds
 
-# Legacy custom backgrounds (not currently used)
+# Our 4 professional office backgrounds (blurred business settings)
 BACKGROUNDS = [
-    "background_blue_gradient.png",
-    "background_teal_solid.png",
-    "background_dark_professional.png",
-    "background_light_modern.png",
+    "bg_office_1.png",
+    "bg_office_2.png",
+    "bg_office_3.png",
+    "bg_office_4.png",
 ]
 
 # Brand colors (for future use)
@@ -88,7 +87,8 @@ def get_background_path(filename):
 
 # Video settings
 VIDEO_SETTINGS = {
-    "max_duration_minutes": 3,
+    "target_duration_minutes": 8,  # Target 8-minute videos
+    "max_duration_minutes": 10,
     "background_size": "1920x1080",
     "voice_speed": 1.0,
 }
@@ -124,7 +124,7 @@ CISA_DOMAINS = {
 
 # Script template for video generation
 SCRIPT_PROMPT_TEMPLATE = """
-You are creating a 2-3 minute educational video script for CISA exam preparation.
+You are creating an 8-minute educational video script for CISA exam preparation.
 
 Topic: {topic}
 Domain: {domain_name}
@@ -133,20 +133,42 @@ Subtopic: {subtopic}
 Based on these challenging exam questions:
 {sample_questions}
 
-Create a video script that:
-1. Opens with a hook that grabs attention (exam failure rate, common mistake)
-2. Explains the core concept clearly
-3. Highlights 2-3 exam traps/tricks the IRS/ISACA likes to use
-4. Provides a memorable mnemonic or memory technique
-5. Ends with the key takeaway
+Create a comprehensive video script that:
 
-Format the script for a talking-head video:
-- Use natural, conversational language
-- Include <break time='1.0s' /> for pauses
-- Keep it under 400 words (about 2.5 minutes spoken)
-- Write for someone who has studied but needs reinforcement
+1. HOOK (30 sec): Open with a compelling hook - exam failure rate, real-world consequence, or common mistake that costs people points
 
-Return ONLY the script text, no metadata.
+2. CONCEPT FOUNDATION (2 min): Explain the core concept clearly
+   - Define key terms
+   - Explain WHY this matters for auditors
+   - Connect to real-world IT audit scenarios
+
+3. EXAM TRAPS (2 min): Detail 3-4 specific ways ISACA tricks candidates
+   - "Watch out for questions that..."
+   - "Don't confuse X with Y..."
+   - "The answer that LOOKS right but isn't..."
+
+4. DEEP DIVE EXAMPLES (2 min): Walk through 1-2 specific scenarios
+   - "Let's say you're auditing a company that..."
+   - Show how to apply the concept step-by-step
+
+5. MEMORY TECHNIQUES (1 min): Provide memorable ways to retain this
+   - Mnemonic acronym
+   - Visual association
+   - "Think of it like..."
+
+6. KEY TAKEAWAYS (30 sec): Summarize the 3 things they MUST remember
+   - "If you remember nothing else..."
+   - End with confidence builder
+
+Format for talking-head video:
+- Natural, conversational tone (like explaining to a colleague)
+- Include <break time='1.0s' /> for dramatic pauses and emphasis
+- Include <break time='0.5s' /> between sections
+- Target 1100-1300 words (about 8 minutes spoken at 150 wpm)
+- Vary sentence length for natural rhythm
+- Use "you" and "we" to engage the viewer
+
+Return ONLY the script text, no headings or metadata.
 """
 
 # Background image prompt template

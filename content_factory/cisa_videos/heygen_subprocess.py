@@ -6,7 +6,7 @@ Runs HeyGen automation in a subprocess to avoid asyncio conflicts with Python 3.
 This script is called by the orchestrator to perform HeyGen operations.
 
 Usage:
-    python heygen_subprocess.py create <script_file> <background_file> <avatar_id> <title>
+    python heygen_subprocess.py create <script_file> <background_file> <avatar_id> <title> [avatar_look]
     python heygen_subprocess.py status <video_id>
     python heygen_subprocess.py download <video_id> <output_file>
 """
@@ -16,7 +16,7 @@ import argparse
 import traceback
 
 
-def create_video(script_file: str, background_file: str, avatar_id: str, title: str) -> dict:
+def create_video(script_file: str, background_file: str, avatar_id: str, title: str, avatar_look: str = None) -> dict:
     """Create a video in HeyGen."""
     from heygen_automation import HeyGenAutomation
     
@@ -28,7 +28,8 @@ def create_video(script_file: str, background_file: str, avatar_id: str, title: 
             script_file=script_file,
             background_file=background_file,
             avatar_id=avatar_id,
-            title=title
+            title=title,
+            avatar_look=avatar_look
         )
         if video_id:
             return {"success": True, "video_id": video_id}
@@ -100,6 +101,7 @@ def main():
     create_parser.add_argument("background_file", help="Path to background image")
     create_parser.add_argument("avatar_id", help="Avatar ID")
     create_parser.add_argument("title", help="Video title")
+    create_parser.add_argument("avatar_look", nargs="?", default="", help="Avatar look/outfit name")
     
     # Status command
     status_parser = subparsers.add_parser("status", help="Check video status")
@@ -113,7 +115,8 @@ def main():
     args = parser.parse_args()
     
     if args.command == "create":
-        result = create_video(args.script_file, args.background_file, args.avatar_id, args.title)
+        avatar_look = args.avatar_look if args.avatar_look else None
+        result = create_video(args.script_file, args.background_file, args.avatar_id, args.title, avatar_look)
     elif args.command == "status":
         result = check_status(args.video_id)
     elif args.command == "download":

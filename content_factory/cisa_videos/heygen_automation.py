@@ -194,7 +194,7 @@ class HeyGenAutomation:
         logger.info("[OK] Logged into HeyGen")
         time.sleep(2)
     
-    def create_video(self, script_file: str, background_file: str, title: str, avatar_id: str = None) -> Optional[str]:
+    def create_video(self, script_file: str, background_file: str, title: str, avatar_id: str = None, avatar_look: str = None) -> Optional[str]:
         """
         Create a video in HeyGen.
         
@@ -203,12 +203,14 @@ class HeyGenAutomation:
             background_file: Path to background PNG
             title: Video title
             avatar_id: HeyGen avatar ID (e.g., "Freja", "Bruce")
+            avatar_look: Specific outfit/look name (e.g., "Jin Vest Front")
         
         Returns: video_id if successful, None if failed
         """
         # Use provided avatar_id or fall back to first avatar in pool
         avatar_to_use = avatar_id or AVATARS[0]['id']
-        logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use})")
+        look_to_use = avatar_look  # Specific look/outfit to select
+        logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use}, Look: {look_to_use})")
         
         try:
             # Navigate to home
@@ -232,39 +234,68 @@ class HeyGenAutomation:
             time.sleep(5)  # Wait for editor to load
             
             # =========================================================
-            # SET LANDSCAPE MODE (16:9) - button is near the title bar
+            # SET LANDSCAPE MODE (16:9) - multiple possible locations
             # =========================================================
             try:
-                # Look for landscape/16:9 button near title
-                landscape_selectors = [
-                    'button[aria-label*="Landscape"]',
-                    'button[aria-label*="16:9"]',
-                    '[data-testid="landscape"]',
-                    'button:has-text("16:9")',
-                    # The layout icon button near title
-                    'button[class*="aspect"]',
-                ]
-                for selector in landscape_selectors:
-                    landscape_btn = self.page.locator(selector).first
-                    if landscape_btn and landscape_btn.is_visible():
-                        landscape_btn.click()
-                        logger.info("[OK] Clicked landscape/16:9 button")
-                        time.sleep(1)
-                        break
+                # Method 1: Look for Layouts button in right sidebar, then select 16:9
+                layouts_btn = self.page.locator('text="Layouts"').first
+                if layouts_btn and layouts_btn.is_visible():
+                    layouts_btn.click()
+                    logger.info("[OK] Clicked Layouts button")
+                    time.sleep(1)
+                    
+                    # Look for 16:9 option in the layouts panel
+                    ratio_selectors = [
+                        'text="16:9"',
+                        '[aria-label*="16:9"]',
+                        '[aria-label*="Landscape"]',
+                        'button:has-text("16:9")',
+                        '[data-ratio="16:9"]',
+                    ]
+                    for selector in ratio_selectors:
+                        ratio_btn = self.page.locator(selector).first
+                        if ratio_btn and ratio_btn.is_visible():
+                            ratio_btn.click()
+                            logger.info("[OK] Set 16:9 landscape via Layouts")
+                            time.sleep(1)
+                            break
+                    # Close layouts panel
+                    close_btn = self.page.locator('button[aria-label*="Close"], [class*="close"]').first
+                    if close_btn and close_btn.is_visible():
+                        close_btn.click()
+                        time.sleep(0.5)
                 else:
-                    # Try clicking by position - landscape button is typically in header area
-                    # Look for any button with landscape icon near top
-                    header_buttons = self.page.locator('header button, [class*="header"] button').all()
-                    for btn in header_buttons[:5]:
-                        try:
-                            btn_text = btn.inner_text().lower()
-                            if '16' in btn_text or 'landscape' in btn_text:
-                                btn.click()
-                                logger.info("[OK] Clicked landscape via header scan")
-                                time.sleep(1)
-                                break
-                        except:
-                            pass
+                    # Method 2: Look for aspect ratio buttons in toolbar
+                    landscape_selectors = [
+                        'button[aria-label*="Landscape"]',
+                        'button[aria-label*="16:9"]',
+                        '[data-testid="landscape"]',
+                        'button:has-text("16:9")',
+                        'button[class*="aspect"]',
+                        # Icon buttons in toolbar - one might be aspect ratio
+                        '[class*="toolbar"] button svg',
+                    ]
+                    for selector in landscape_selectors:
+                        landscape_btn = self.page.locator(selector).first
+                        if landscape_btn and landscape_btn.is_visible():
+                            landscape_btn.click()
+                            logger.info("[OK] Clicked landscape/16:9 button")
+                            time.sleep(1)
+                            break
+                    else:
+                        # Try looking at header icons near title
+                        header_buttons = self.page.locator('header button, [class*="header"] button, [class*="toolbar"] button').all()
+                        for btn in header_buttons[:8]:
+                            try:
+                                btn_text = btn.inner_text().lower() if btn.inner_text() else ""
+                                btn_label = btn.get_attribute('aria-label') or ""
+                                if '16' in btn_text or 'landscape' in btn_text.lower() or 'ratio' in btn_label.lower():
+                                    btn.click()
+                                    logger.info("[OK] Clicked landscape via header scan")
+                                    time.sleep(1)
+                                    break
+                            except:
+                                pass
             except Exception as e:
                 logger.warning(f"[WARN] Could not set landscape mode: {e}")
             
@@ -303,7 +334,39 @@ class HeyGenAutomation:
                 if avatar_option:
                     avatar_option.click()
                     time.sleep(2)
-                    logger.info(f"[OK] Selected avatar: {avatar_to_use}")
+                    logger.info(f"[OK] Clicked avatar: {avatar_to_use}")
+                    
+                    # Now select the specific outfit/look
+                    if look_to_use:
+                        time.sleep(1)
+                        # Try clicking on the specific look by name
+                        look_selectors = [
+                            f'[aria-label*="{look_to_use}"]',
+                            f'img[alt*="{look_to_use}"]',
+                            f'text="{look_to_use}"',
+                            f'div[title*="{look_to_use}"]',
+                        ]
+                        look_found = False
+                        for selector in look_selectors:
+                            try:
+                                look_btn = self.page.locator(selector).first
+                                if look_btn and look_btn.is_visible():
+                                    look_btn.click()
+                                    logger.info(f"[OK] Selected look: {look_to_use}")
+                                    look_found = True
+                                    time.sleep(1)
+                                    break
+                            except:
+                                pass
+                        
+                        if not look_found:
+                            # Try clicking on outfit cards by image index (first outfit after avatar click)
+                            outfit_cards = self.page.locator('[class*="avatar"] img, [class*="look"] img, [class*="card"] img').all()
+                            if len(outfit_cards) > 0:
+                                # Click the first outfit card (usually the one shown in preview)
+                                outfit_cards[0].click()
+                                logger.info(f"[OK] Clicked first outfit card")
+                                time.sleep(1)
                     
                     # Debug screenshot after avatar selection
                     debug_avatar = Path(__file__).parent / "output" / f"debug_after_avatar_{int(time.time())}.png"

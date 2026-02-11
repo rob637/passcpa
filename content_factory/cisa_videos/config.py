@@ -19,13 +19,13 @@ HEYGEN_PASSWORD = os.getenv("HEYGEN_PASSWORD")
 
 # =============================================================================
 # AVATAR POOL - 4 presenters (2 female, 2 male)
-# HeyGen Avatar IDs with friendly display names
+# HeyGen Avatar IDs with friendly display names and specific outfit/look
 # =============================================================================
 AVATARS = [
-    {"id": "Freja", "name": "Sarah", "gender": "female"},
-    {"id": "Jin", "name": "Maya", "gender": "female"},
-    {"id": "Bruce", "name": "David", "gender": "male"},
-    {"id": "Esmond", "name": "Marcus", "gender": "male"},
+    {"id": "Freja", "name": "Sarah", "gender": "female", "look": "Freja Front"},
+    {"id": "Jin", "name": "Maya", "gender": "female", "look": "Jin Vest Front"},
+    {"id": "Bruce", "name": "David", "gender": "male", "look": "Bruce Front"},
+    {"id": "Esmond", "name": "Marcus", "gender": "male", "look": "Esmond Front"},
 ]
 
 # =============================================================================

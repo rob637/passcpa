@@ -25,6 +25,7 @@ import time
 import logging
 import argparse
 import signal
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from enum import Enum
@@ -261,20 +262,35 @@ class CISAVideoPipeline:
             self.handle_task_error(task, f"Presenter assignment failed: {e}")
     
     def stage_heygen_create(self, task: VideoTask):
-        """Stage 4: Create video in HeyGen via browser automation."""
+        """Stage 4: Create video in HeyGen via subprocess (avoids asyncio conflicts)."""
         self.logger.info(f"[HEYGEN] Creating video for: {task.topic} (Presenter: {task.avatar_name})")
         
         try:
-            from heygen_automation import HeyGenAutomation
+            # Run HeyGen in subprocess to avoid Python 3.14 asyncio conflicts
+            script_dir = Path(__file__).parent
+            result = subprocess.run(
+                [
+                    sys.executable, str(script_dir / "heygen_subprocess.py"),
+                    "create",
+                    task.script_file,
+                    task.background_file,
+                    task.avatar_id,
+                    task.topic
+                ],
+                capture_output=True,
+                text=True,
+                cwd=str(script_dir),
+                timeout=300  # 5 minute timeout
+            )
             
-            with HeyGenAutomation() as heygen:
-                video_id = heygen.create_video(
-                    script_file=task.script_file,
-                    background_file=task.background_file,
-                    avatar_id=task.avatar_id,
-                    title=task.topic
-                )
+            if result.returncode != 0:
+                raise Exception(f"Subprocess failed: {result.stderr}")
             
+            data = json.loads(result.stdout)
+            if not data.get("success"):
+                raise Exception(data.get("error", "Unknown error"))
+            
+            video_id = data.get("video_id")
             if video_id:
                 self.state.update_task(
                     task.id,
@@ -289,57 +305,92 @@ class CISAVideoPipeline:
             self.handle_task_error(task, f"HeyGen creation failed: {e}")
     
     def stage_heygen_poll(self, task: VideoTask):
-        """Stage 5: Poll HeyGen for video completion."""
+        """Stage 5: Poll HeyGen for video completion via subprocess."""
         self.logger.info(f"[POLL] Checking HeyGen status for: {task.heygen_video_id}")
         
         try:
-            from heygen_automation import HeyGenAutomation
+            script_dir = Path(__file__).parent
+            result = subprocess.run(
+                [
+                    sys.executable, str(script_dir / "heygen_subprocess.py"),
+                    "status",
+                    task.heygen_video_id
+                ],
+                capture_output=True,
+                text=True,
+                cwd=str(script_dir),
+                timeout=120
+            )
             
-            with HeyGenAutomation() as heygen:
-                status, download_url = heygen.check_video_status(task.heygen_video_id)
+            if result.returncode != 0:
+                raise Exception(f"Subprocess failed: {result.stderr}")
             
-                if status == "completed" and download_url:
-                    self.state.update_task(
-                        task.id,
-                        stage=Stage.DOWNLOADING.value,
-                    )
-                    self.logger.info(f"[OK] Video ready for download")
-                elif status == "failed":
-                    raise Exception("HeyGen video generation failed")
-                else:
-                    # Still processing, will check again next cycle
-                    self.logger.info(f"[WAIT] Still processing...")
+            data = json.loads(result.stdout)
+            if not data.get("success"):
+                raise Exception(data.get("error", "Unknown error"))
+            
+            status = data.get("status")
+            download_url = data.get("download_url")
+            
+            if status == "completed" and download_url:
+                self.state.update_task(
+                    task.id,
+                    stage=Stage.DOWNLOADING.value,
+                )
+                self.logger.info(f"[OK] Video ready for download")
+            elif status == "failed":
+                raise Exception("HeyGen video generation failed")
+            else:
+                # Still processing, will check again next cycle
+                self.logger.info(f"[WAIT] Still processing...")
                 
         except Exception as e:
             self.handle_task_error(task, f"HeyGen poll failed: {e}")
     
     def stage_download_video(self, task: VideoTask):
-        """Stage 6: Download completed video from HeyGen."""
-        self.logger.info(f"📥 Downloading video for: {task.topic}")
+        """Stage 6: Download completed video from HeyGen via subprocess."""
+        self.logger.info(f"[DOWNLOAD] Downloading video for: {task.topic}")
         
         try:
-            from heygen_automation import HeyGenAutomation
             from config import VIDEOS_DIR
             
-            with HeyGenAutomation() as heygen:
-                safe_name = task.topic.replace(' ', '_').replace('/', '-')[:50]
-                video_file = Path(VIDEOS_DIR) / f"{task.id}_{safe_name}.mp4"
-                
-                heygen.download_video(task.heygen_video_id, video_file)
+            safe_name = task.topic.replace(' ', '_').replace('/', '-')[:50]
+            video_file = Path(VIDEOS_DIR) / f"{task.id}_{safe_name}.mp4"
             
-                self.state.update_task(
-                    task.id,
-                    stage=Stage.UPLOADING.value,
-                    video_file=str(video_file)
-                )
-                self.logger.info(f"[OK] Video downloaded: {video_file.name}")
+            script_dir = Path(__file__).parent
+            result = subprocess.run(
+                [
+                    sys.executable, str(script_dir / "heygen_subprocess.py"),
+                    "download",
+                    task.heygen_video_id,
+                    str(video_file)
+                ],
+                capture_output=True,
+                text=True,
+                cwd=str(script_dir),
+                timeout=600  # 10 minutes for download
+            )
+            
+            if result.returncode != 0:
+                raise Exception(f"Subprocess failed: {result.stderr}")
+            
+            data = json.loads(result.stdout)
+            if not data.get("success"):
+                raise Exception(data.get("error", "Unknown error"))
+            
+            self.state.update_task(
+                task.id,
+                stage=Stage.UPLOADING.value,
+                video_file=str(video_file)
+            )
+            self.logger.info(f"[OK] Video downloaded: {video_file.name}")
                 
         except Exception as e:
             self.handle_task_error(task, f"Download failed: {e}")
     
     def stage_upload_storage(self, task: VideoTask):
         """Stage 7: Upload video to Firebase Storage."""
-        self.logger.info(f"☁️ Uploading to storage: {task.topic}")
+        self.logger.info(f"[UPLOAD] Uploading to storage: {task.topic}")
         
         try:
             # For now, just mark as completed

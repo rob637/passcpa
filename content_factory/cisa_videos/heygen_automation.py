@@ -13,18 +13,27 @@ Features:
 - Downloads finished videos
 """
 import os
+import sys
 import time
 import json
 import logging
+import asyncio
+import concurrent.futures
 from pathlib import Path
 from typing import Optional, Tuple
 
-try:
-    from playwright.sync_api import sync_playwright, Page, Browser
-    PLAYWRIGHT_AVAILABLE = True
-except ImportError:
-    PLAYWRIGHT_AVAILABLE = False
-    print("[WARN] Playwright not installed. Run: pip install playwright && playwright install chromium")
+# Playwright sync API doesn't work inside asyncio loops (Python 3.14+)
+# So we need to check and run in a thread if necessary
+def _get_playwright():
+    """Import playwright, handling async context issues."""
+    try:
+        from playwright.sync_api import sync_playwright, Page, Browser
+        return sync_playwright, Page, Browser, True
+    except ImportError:
+        print("[WARN] Playwright not installed. Run: pip install playwright && playwright install chromium")
+        return None, None, None, False
+
+sync_playwright, Page, Browser, PLAYWRIGHT_AVAILABLE = _get_playwright()
 
 from config import HEYGEN_EMAIL, HEYGEN_PASSWORD, AVATARS, get_random_combo
 
@@ -49,11 +58,27 @@ class HeyGenAutomation:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.stop()
     
+    def _is_in_async_loop(self) -> bool:
+        """Check if we're running inside an asyncio event loop."""
+        try:
+            asyncio.get_running_loop()
+            return True
+        except RuntimeError:
+            return False
+    
     def start(self):
         """Start browser and login."""
         if not PLAYWRIGHT_AVAILABLE:
             raise RuntimeError("Playwright not installed")
         
+        # Playwright sync API doesn't work inside async loops
+        # Run in a separate thread to avoid conflicts
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(self._start_browser)
+            future.result()  # Wait for completion
+    
+    def _start_browser(self):
+        """Actually start the browser (runs in thread if needed)."""
         self.playwright = sync_playwright().start()
         
         # Use persistent context to maintain login

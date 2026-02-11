@@ -261,58 +261,26 @@ class HeyGenAutomationV2:
                 self.screenshot("02_script_pasted")
             
             # =========================================================
-            # STEP 3: Set video title (click on "Untitled Video" text at top)
+            # STEP 3: Set video title (single click on "Untitled Video")
             # =========================================================
             logger.info("[STEP 3] Setting video title...")
             title_set = False
             
-            # The title "Untitled Video" is clickable text in the header bar
-            # Click it to turn it into an editable input field
             try:
-                # First try to find and click the title area
-                title_selectors = [
-                    'text="Untitled Video"',
-                    '[class*="title"]:has-text("Untitled")',
-                    'span:has-text("Untitled Video")',
-                ]
-                
-                for selector in title_selectors:
-                    try:
-                        title_elem = self.page.locator(selector).first
-                        if title_elem and title_elem.is_visible(timeout=2000):
-                            # Click to focus, then click again to edit
-                            title_elem.click()
-                            time.sleep(0.3)
-                            title_elem.click()  # Second click to enter edit mode
-                            time.sleep(0.3)
-                            
-                            # Try triple-click to select all text
-                            title_elem.click(click_count=3)
-                            time.sleep(0.2)
-                            
-                            # Type the new title
-                            self.page.keyboard.type(title)
-                            self.page.keyboard.press("Enter")
-                            logger.info(f"[OK] Title set: {title}")
-                            title_set = True
-                            break
-                    except:
-                        continue
-                
-                if not title_set:
-                    # Fallback: find any input field that might have appeared
-                    title_input = self.page.locator('input[value="Untitled Video"], input:focus').first
-                    if title_input and title_input.is_visible():
-                        title_input.fill(title)
-                        title_input.press("Enter")
-                        logger.info(f"[OK] Title set via input: {title}")
-                        title_set = True
-                        
+                # Single click on "Untitled Video" text to make it editable
+                title_elem = self.page.locator('text="Untitled Video"').first
+                if title_elem and title_elem.is_visible(timeout=3000):
+                    title_elem.click()
+                    time.sleep(0.3)
+                    # Now type the new title (it should replace the selected text)
+                    self.page.keyboard.type(title)
+                    self.page.keyboard.press("Enter")
+                    logger.info(f"[OK] Title set: {title}")
+                    title_set = True
+                else:
+                    logger.warning("[WARN] Could not find Untitled Video text")
             except Exception as e:
                 logger.warning(f"[WARN] Title error: {e}")
-            
-            if not title_set:
-                logger.warning("[WARN] Could not set title - set manually")
             
             time.sleep(0.5)
             
@@ -439,37 +407,38 @@ class HeyGenAutomationV2:
             if not look_found:
                 logger.warning("[WARN] Could not select avatar look - try manually")
             
-            # Close the avatar panel by pressing Escape
-            self.page.keyboard.press("Escape")
-            time.sleep(1)
-            
             self.screenshot("06_avatar_selected")
             
             # =========================================================
-            # STEP 5: Check Motion Engine (skip if not visible - likely already set)
+            # STEP 5: Set Motion Engine to Avatar IV (Premium)
             # =========================================================
-            logger.info("[STEP 5] Checking Motion Engine...")
+            logger.info("[STEP 5] Setting Motion Engine...")
             
+            # After selecting avatar outfit, the right panel shows Motion Engine dropdown
+            # Click on it to expand and select Avatar IV
             try:
-                # Check if Avatar III or IV is visible (already selected)
-                avatar_engine = self.page.locator('text="Avatar III", text="Avatar IV"').first
-                if avatar_engine and avatar_engine.is_visible(timeout=3000):
-                    logger.info("[OK] Motion Engine already set")
-                else:
-                    # Try to click the Motion Engine dropdown if visible
-                    motion_dropdown = self.page.locator('text="Motion Engine"').first
-                    if motion_dropdown and motion_dropdown.is_visible(timeout=3000):
-                        motion_dropdown.click()
-                        time.sleep(0.5)
-                        self.wait_and_click(
-                            ['text="Avatar IV"', 'text="Avatar III"'],
-                            "Select Motion Engine"
-                        )
-                        time.sleep(0.5)
-                    else:
-                        logger.info("[SKIP] Motion Engine not visible - may need manual check")
+                # Click the Motion Engine dropdown (shows "Avatar III" or "Avatar IV")
+                motion_clicked = self.wait_and_click(
+                    [
+                        'text="Avatar III"',  # Current selection
+                        'text="Avatar IV"',
+                        '[class*="motion"] button',
+                        '[class*="Motion"] [role="button"]',
+                    ],
+                    "Click Motion Engine dropdown"
+                )
+                
+                if motion_clicked:
+                    time.sleep(0.5)
+                    # Select Avatar IV (Premium)
+                    self.wait_and_click(
+                        ['text="Avatar IV"'],
+                        "Select Avatar IV"
+                    )
+                    time.sleep(0.5)
+                    logger.info("[OK] Motion Engine set to Avatar IV")
             except Exception as e:
-                logger.info(f"[SKIP] Motion Engine check skipped: {e}")
+                logger.warning(f"[WARN] Motion Engine: {e}")
             
             # =========================================================
             # STEP 6: Customize background → Uploads → Select

@@ -75,6 +75,9 @@ COORDS = {
     
     # Portrait 9:16 option
     "portrait_9_16": (1100, 200),
+    
+    # Generate button (top right, green button)
+    "generate_button": (1380, 62),
 }
 
 
@@ -103,6 +106,7 @@ def calibrate():
         ("first_upload", "where the first uploaded image appears"),
         ("layouts_button", "'Layouts' icon in right sidebar"),
         ("portrait_9_16", "Portrait 9:16 layout option"),
+        ("generate_button", "the green 'Generate' button (top right)"),
     ]
     
     results = {}
@@ -247,12 +251,12 @@ def create_video(title, script_text, avatar_name, background_name=None):
     pyautogui.press('escape')  # Close panel
     time.sleep(0.5)
     
-    # Save with Ctrl+S
-    logger.info("[DONE] Saving draft...")
-    pyautogui.hotkey('ctrl', 's')
-    time.sleep(1)
+    # Step 7: Click Generate
+    logger.info("[STEP 7] Clicking Generate...")
+    click("generate_button")
+    time.sleep(3)  # Wait for generation to start
     
-    logger.info(f"[SUCCESS] Created: {title}")
+    logger.info(f"[SUCCESS] Generated: {title}")
     return True
 
 

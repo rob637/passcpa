@@ -211,22 +211,30 @@ class HeyGenAutomation:
         logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use})")
         
         try:
-            # Navigate to home, then click create - /create/new gives 404
+            # Navigate to home
             self.page.goto(f"{self.BASE_URL}/home", timeout=60000)
             time.sleep(3)
             
-            # Look for "Create video" or "New video" button on home page
+            # Click "Create" button to open dropdown
             create_btn = self.page.wait_for_selector(
-                'button:has-text("Create"), button:has-text("New"), a:has-text("Create video")',
+                'button:has-text("Create")',
                 timeout=15000
             )
             create_btn.click()
+            time.sleep(1)
+            
+            # Click "Create in AI studio" from the dropdown menu
+            ai_studio_btn = self.page.wait_for_selector(
+                'text="Create in AI studio"',
+                timeout=10000
+            )
+            ai_studio_btn.click()
             time.sleep(5)  # Wait for editor to load
             
             # Debug screenshot - see what page we're on
-            debug_path = Path(__file__).parent / "output" / f"debug_after_create_click_{int(time.time())}.png"
+            debug_path = Path(__file__).parent / "output" / f"debug_after_ai_studio_{int(time.time())}.png"
             self.page.screenshot(path=str(debug_path))
-            logger.info(f"[DEBUG] After create click: {debug_path}")
+            logger.info(f"[DEBUG] After AI studio click: {debug_path}")
             
             # Read script
             with open(script_file, 'r', encoding='utf-8') as f:

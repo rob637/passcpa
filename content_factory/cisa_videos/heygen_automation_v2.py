@@ -187,55 +187,119 @@ class HeyGenAutomationV2:
             self._dismiss_popups()
             
             # =========================================================
-            # STEP 2: Paste script in "Paste script here" field
+            # STEP 2: Paste script in the script input area
             # =========================================================
             logger.info("[STEP 2] Pasting script...")
-            script_area = self.page.locator('text="Paste script here"').first
-            if script_area:
-                script_area.click()
-                time.sleep(0.5)
+            script_pasted = False
             
-            # Find and fill the script textarea
-            textarea_selectors = [
+            # Try various selectors for the script input area
+            # The placeholder is: "Type your script or use '/' for commands"
+            script_selectors = [
+                '[placeholder*="Type your script"]',
+                '[placeholder*="commands"]',
                 '[placeholder*="script"]',
-                'textarea',
+                'textarea[placeholder*="Type"]',
                 '[contenteditable="true"]',
-                '.script-input',
-                '[class*="script"] textarea',
+                'div[data-placeholder]',
+                '.ProseMirror',  # Common rich text editor class
+                '[class*="editor"]',
+                'textarea',
             ]
-            for selector in textarea_selectors:
+            
+            for selector in script_selectors:
                 try:
-                    textarea = self.page.locator(selector).first
-                    if textarea and textarea.is_visible():
-                        textarea.click()
-                        textarea.fill(script_text)
-                        logger.info("[OK] Script pasted")
+                    elem = self.page.locator(selector).first
+                    if elem and elem.is_visible(timeout=2000):
+                        elem.click()
+                        time.sleep(0.3)
+                        # For contenteditable, use type() instead of fill()
+                        if 'contenteditable' in selector.lower() or 'prosemirror' in selector.lower():
+                            elem.press_sequentially(script_text[:100])  # Type first part
+                            self.page.keyboard.type(script_text[100:])  # Type rest
+                        else:
+                            elem.fill(script_text)
+                        logger.info(f"[OK] Script pasted via: {selector}")
+                        script_pasted = True
+                        break
+                except Exception as e:
+                    continue
+            
+            # Fallback: try clicking text that might activate the script area
+            if not script_pasted:
+                click_texts = [
+                    'text="Paste script here"',
+                    'text="Enter script"',
+                    'text="Type or paste"',
+                    'text="Upload audio"',  # Nearby area
+                    'text="Script Writer"',  # Feature name
+                ]
+                for text_selector in click_texts:
+                    try:
+                        text_elem = self.page.locator(text_selector).first
+                        if text_elem and text_elem.is_visible(timeout=1000):
+                            text_elem.click()
+                            time.sleep(0.5)
+                            # Now try to find and fill textarea
+                            textarea = self.page.locator('textarea').first
+                            if textarea and textarea.is_visible():
+                                textarea.fill(script_text)
+                                logger.info(f"[OK] Script pasted after clicking: {text_selector}")
+                                script_pasted = True
+                                break
+                    except:
+                        continue
+            
+            if not script_pasted:
+                logger.warning("[WARN] Could not paste script - please paste manually")
+                self.screenshot("02_script_paste_failed")
+            else:
+                time.sleep(1)
+                self.screenshot("02_script_pasted")
+            
+            # =========================================================
+            # STEP 3: Set video title (top left - click on "Untitled Video" text)
+            # =========================================================
+            logger.info("[STEP 3] Setting video title...")
+            title_set = False
+            
+            # First, try clicking the "Untitled Video" text to make it editable
+            untitled_selectors = [
+                'text="Untitled Video"',
+                '[class*="title"]:has-text("Untitled")',
+                'span:has-text("Untitled Video")',
+                'div:has-text("Untitled Video")',
+            ]
+            for selector in untitled_selectors:
+                try:
+                    elem = self.page.locator(selector).first
+                    if elem and elem.is_visible(timeout=2000):
+                        elem.click()
+                        time.sleep(0.3)
                         break
                 except:
                     continue
-            time.sleep(1)
-            self.screenshot("02_script_pasted")
             
-            # =========================================================
-            # STEP 3: Set video title (top left)
-            # =========================================================
-            logger.info("[STEP 3] Setting video title...")
-            title_selectors = [
-                'input[value="Untitled Video"]',
-                'input[value="Video Title"]',
+            # Now find the input that appeared and type the title
+            title_input_selectors = [
+                'input:focus',
+                'input[type="text"]',
                 '[class*="title"] input',
-                'input[type="text"]:near(:text("Untitled"))',
+                'input',
             ]
-            for selector in title_selectors:
+            for selector in title_input_selectors:
                 try:
                     title_input = self.page.locator(selector).first
                     if title_input and title_input.is_visible():
-                        title_input.triple_click()  # Select all
                         title_input.fill(title)
+                        title_input.press("Enter")
                         logger.info(f"[OK] Title set: {title}")
+                        title_set = True
                         break
                 except:
                     continue
+            
+            if not title_set:
+                logger.warning("[WARN] Could not set title")
             time.sleep(0.5)
             
             # =========================================================
@@ -293,26 +357,25 @@ class HeyGenAutomationV2:
             self.screenshot("06_avatar_selected")
             
             # =========================================================
-            # STEP 5: Verify Motion Engine is Avatar III
+            # STEP 5: Verify Motion Engine is Avatar IV (latest)
             # =========================================================
             logger.info("[STEP 5] Checking Motion Engine...")
-            motion_dropdown = self.page.locator('text="Motion Engine"').first
-            if motion_dropdown:
-                # Check if Avatar III is already selected
-                avatar_iii = self.page.locator('text="Avatar III"').first
-                if not (avatar_iii and avatar_iii.is_visible()):
-                    # Click dropdown and select Avatar III
-                    self.wait_and_click(
-                        ['[class*="motion"] select', '[class*="motion"] button'],
-                        "Click Motion Engine dropdown"
-                    )
+            
+            # Check if Avatar IV is visible (already selected)
+            avatar_iv = self.page.locator('text="Avatar IV"').first
+            if avatar_iv and avatar_iv.is_visible():
+                logger.info("[OK] Avatar IV already selected")
+            else:
+                # Click the Motion Engine dropdown and select Avatar IV
+                motion_dropdown = self.page.locator('text="Motion Engine"').first
+                if motion_dropdown:
+                    motion_dropdown.click()
                     time.sleep(0.5)
                     self.wait_and_click(
-                        ['text="Avatar III"', 'option:has-text("Avatar III")'],
-                        "Select Avatar III"
+                        ['text="Avatar IV"', 'text="Avatar III"'],  # IV preferred, III fallback
+                        "Select Motion Engine"
                     )
-                else:
-                    logger.info("[OK] Avatar III already selected")
+                    time.sleep(0.5)
             
             # =========================================================
             # STEP 6: Customize background → Uploads → Select
@@ -368,34 +431,45 @@ class HeyGenAutomationV2:
                 self.screenshot("09_background_selected")
             
             # =========================================================
-            # STEP 7: Layouts → Avatar Only (landscape)
+            # STEP 7: Layouts → Original (landscape full-body)
             # =========================================================
-            logger.info("[STEP 7] Setting layout to Avatar Only (landscape)...")
+            logger.info("[STEP 7] Setting layout...")
             
-            # Click Layouts in right sidebar
-            self.wait_and_click(
-                [
-                    'text="Layouts"',
-                    '[aria-label="Layouts"]',
-                    'button:has-text("Layouts")',
-                    '[class*="sidebar"] text="Layouts"',
-                ],
-                "Click Layouts"
-            )
-            time.sleep(1)
-            self.screenshot("10_layouts_panel")
-            
-            # Click "Avatar Only" (top-left option in layouts panel)
-            self.wait_and_click(
-                ['text="Avatar Only"', 'img[alt*="Avatar Only"]', '[aria-label*="Avatar Only"]'],
-                "Select Avatar Only layout"
-            )
-            time.sleep(1)
-            self.screenshot("11_layout_selected")
-            
-            # Close layouts panel
-            self.page.keyboard.press("Escape")
-            time.sleep(0.5)
+            # Check if "Original" layout is already selected in right panel
+            original_btn = self.page.locator('button:has-text("Original")').first
+            if original_btn and original_btn.is_visible():
+                # Check if it's already selected (highlighted)
+                logger.info("[OK] Original layout already visible (likely selected)")
+            else:
+                # Click Layouts in right sidebar to open layout options
+                self.wait_and_click(
+                    [
+                        'text="Layouts"',
+                        '[aria-label="Layouts"]',
+                        'button:has-text("Layouts")',
+                        '[class*="sidebar"] text="Layouts"',
+                    ],
+                    "Click Layouts"
+                )
+                time.sleep(1)
+                self.screenshot("10_layouts_panel")
+                
+                # Try to select Avatar Only or Original
+                self.wait_and_click(
+                    [
+                        'text="Avatar Only"',
+                        'text="Original"',
+                        'img[alt*="Avatar Only"]',
+                        '[aria-label*="Avatar Only"]',
+                    ],
+                    "Select layout"
+                )
+                time.sleep(1)
+                self.screenshot("11_layout_selected")
+                
+                # Close layouts panel
+                self.page.keyboard.press("Escape")
+                time.sleep(0.5)
             
             # =========================================================
             # STEP 8: Save draft or Generate

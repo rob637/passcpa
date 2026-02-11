@@ -197,7 +197,7 @@ class CISAVideoPipeline:
                 created_at=datetime.now().isoformat()
             )
             self.state.tasks.append(task)
-            self.logger.info(f"     {i}. {topic} → {avatar['name']} + {background_filename}")
+            self.logger.info(f"     {i}. {topic} -> {avatar['name']} + {background_filename}")
         
         self.state.save()
         self.logger.info(f"[OK] Loaded {len(self.state.tasks)} pre-generated scripts")

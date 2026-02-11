@@ -160,6 +160,9 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     const isOnboarded = courseOnboarded ?? (legacyOnboarded && !userProfile.onboardingCompleted);
     
     if (!isOnboarded) {
+      // Preserve the course context by storing it before redirect
+      // This allows Onboarding to pick up the correct course
+      localStorage.setItem('pendingCourse', activeCourse);
       return <Navigate to="/onboarding" replace />;
     }
   }

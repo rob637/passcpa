@@ -192,18 +192,31 @@ class HeyGenAutomationV2:
             logger.info("[STEP 2] Pasting script...")
             script_pasted = False
             
-            # Try various selectors for the script input area
-            # The placeholder is: "Type your script or use '/' for commands"
+            # First, click on "Write a script for this scene" to activate the input
+            write_script_selectors = [
+                'text="Write a script for this scene"',
+                'text="Write a script"',
+                '[placeholder*="Write a script"]',
+                '.script-panel',
+            ]
+            for selector in write_script_selectors:
+                try:
+                    elem = self.page.locator(selector).first
+                    if elem and elem.is_visible(timeout=2000):
+                        elem.click()
+                        time.sleep(0.5)
+                        logger.info(f"[OK] Clicked: {selector}")
+                        break
+                except:
+                    continue
+            
+            # Now find the active input/textarea and paste
             script_selectors = [
+                'textarea:visible',
+                '[contenteditable="true"]:visible',
                 '[placeholder*="Type your script"]',
-                '[placeholder*="commands"]',
                 '[placeholder*="script"]',
-                'textarea[placeholder*="Type"]',
-                '[contenteditable="true"]',
-                'div[data-placeholder]',
-                '.ProseMirror',  # Common rich text editor class
-                '[class*="editor"]',
-                'textarea',
+                '.ProseMirror',
             ]
             
             for selector in script_selectors:
@@ -211,13 +224,12 @@ class HeyGenAutomationV2:
                     elem = self.page.locator(selector).first
                     if elem and elem.is_visible(timeout=2000):
                         elem.click()
-                        time.sleep(0.3)
-                        # For contenteditable, use type() instead of fill()
-                        if 'contenteditable' in selector.lower() or 'prosemirror' in selector.lower():
-                            elem.press_sequentially(script_text[:100])  # Type first part
-                            self.page.keyboard.type(script_text[100:])  # Type rest
-                        else:
-                            elem.fill(script_text)
+                        time.sleep(0.2)
+                        # Clear any existing content
+                        elem.press("Control+a")
+                        time.sleep(0.1)
+                        # Type the script
+                        elem.fill(script_text)
                         logger.info(f"[OK] Script pasted via: {selector}")
                         script_pasted = True
                         break
@@ -303,19 +315,19 @@ class HeyGenAutomationV2:
             time.sleep(0.5)
             
             # =========================================================
-            # STEP 4: Replace Avatar → Public Avatars → Search → Select
+            # STEP 4: Click "Change avatar" button in toolbar
             # =========================================================
             logger.info(f"[STEP 4] Selecting avatar: {avatar_name}...")
             
-            # Hover over avatar area then click Replace avatar
-            avatar_area = self.page.locator('[class*="avatar"]').first
-            if avatar_area:
-                avatar_area.hover()
-                time.sleep(0.5)
-            
+            # Click "Change avatar" button at top of video area
             self.wait_and_click(
-                ['text="Replace avatar"', 'button:has-text("Replace")'],
-                "Click Replace avatar"
+                [
+                    'text="Change avatar"',
+                    'button:has-text("Change avatar")',
+                    'text="Replace avatar"',
+                    'button:has-text("Replace")',
+                ],
+                "Click Change avatar button"
             )
             time.sleep(1.5)
             self.screenshot("03_avatar_panel")

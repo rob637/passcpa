@@ -193,46 +193,29 @@ class HeyGenAutomationV2:
             
             title_set = False
             
-            # Try multiple selectors for the title
-            title_selectors = [
-                'text="Untitled Video"',
-                'text="Untitled"',
-                '[class*="title"] input',
-                '[class*="title"][contenteditable="true"]',
-                'input[value="Untitled Video"]',
-                'span:has-text("Untitled")',
-            ]
-            
-            for selector in title_selectors:
-                try:
-                    elem = self.page.locator(selector).first
-                    if elem and elem.is_visible(timeout=1500):
-                        elem.click()
-                        time.sleep(0.3)
-                        self.page.keyboard.press("Control+a")
-                        time.sleep(0.1)
-                        self.page.keyboard.type(title)
+            # Click on the title to make it editable, then use fill()
+            try:
+                title_elem = self.page.locator('text="Untitled Video"').first
+                if title_elem and title_elem.is_visible(timeout=3000):
+                    # Click to activate
+                    title_elem.click()
+                    time.sleep(0.5)
+                    
+                    # Now look for the input that should appear
+                    title_input = self.page.locator('input:focus, [contenteditable="true"]:focus').first
+                    if title_input and title_input.is_visible(timeout=1000):
+                        title_input.fill(title)
                         self.page.keyboard.press("Enter")
-                        logger.info(f"[OK] Title set via: {selector}")
+                        logger.info(f"[OK] Title set via input: {title}")
                         title_set = True
-                        break
-                except:
-                    continue
-            
-            # Fallback: click by coordinates (upper left area where title is shown)
-            if not title_set:
-                try:
-                    # Title is approximately at x=115, y=108 based on screenshots
-                    self.page.mouse.click(115, 108)
-                    time.sleep(0.3)
-                    self.page.keyboard.press("Control+a")
-                    time.sleep(0.1)
-                    self.page.keyboard.type(title)
-                    self.page.keyboard.press("Enter")
-                    logger.info(f"[OK] Title set via coordinates")
-                    title_set = True
-                except Exception as e:
-                    logger.warning(f"[WARN] Title by coordinates failed: {e}")
+                    else:
+                        # Just type it
+                        self.page.keyboard.type(title, delay=10)
+                        self.page.keyboard.press("Enter")
+                        logger.info(f"[OK] Title typed: {title}")
+                        title_set = True
+            except Exception as e:
+                logger.warning(f"[WARN] Title error: {e}")
             
             if not title_set:
                 logger.warning("[WARN] Could not set title")
@@ -246,66 +229,31 @@ class HeyGenAutomationV2:
             logger.info("[STEP 3] Pasting script...")
             script_pasted = False
             
-            # The script area is in the left panel under "Script" header
-            # First find and click the script area to focus it
-            
-            # Try clicking directly on the placeholder text
-            placeholder_selectors = [
-                'text="Type your script or use"',
-                'text="Type your script"',
-                'text="Write a script for this scene"',
-                '[placeholder*="Type your script"]',
-                '[placeholder*="Write a script"]',
-            ]
-            
-            for selector in placeholder_selectors:
-                try:
-                    elem = self.page.locator(selector).first
-                    if elem and elem.is_visible(timeout=2000):
-                        elem.click()
-                        time.sleep(0.3)
-                        logger.info(f"[OK] Clicked placeholder: {selector}")
-                        break
-                except:
-                    continue
-            
-            # Now type/paste the script using keyboard
-            # This is more reliable than fill() for rich text editors
-            time.sleep(0.5)
-            self.page.keyboard.press("Control+a")  # Select all
-            time.sleep(0.1)
-            
-            # Use clipboard to paste (more reliable for long text)
+            # Click the script area and use fill() directly
             try:
-                # Type the script - for rich text editors this is more reliable
-                self.page.keyboard.type(script_text, delay=1)  # Small delay per char
-                logger.info("[OK] Script typed via keyboard")
-                script_pasted = True
+                # Find the script editor (ProseMirror or contenteditable)
+                script_editor = self.page.locator('.ProseMirror, [contenteditable="true"]').first
+                if script_editor and script_editor.is_visible(timeout=3000):
+                    script_editor.click()
+                    time.sleep(0.3)
+                    script_editor.fill(script_text)
+                    logger.info("[OK] Script filled via editor")
+                    script_pasted = True
             except Exception as e:
-                logger.warning(f"[WARN] keyboard.type failed: {e}")
+                logger.warning(f"[WARN] Script fill failed: {e}")
             
-            # Fallback: try fill() on various input elements
+            # Fallback: click placeholder and type
             if not script_pasted:
-                script_input_selectors = [
-                    '.ProseMirror',
-                    '[contenteditable="true"]',
-                    'textarea',
-                    '[class*="script"] [contenteditable]',
-                    '[class*="editor"]',
-                ]
-                
-                for selector in script_input_selectors:
-                    try:
-                        elem = self.page.locator(selector).first
-                        if elem and elem.is_visible(timeout=1000):
-                            elem.click()
-                            time.sleep(0.2)
-                            elem.fill(script_text)
-                            logger.info(f"[OK] Script filled via: {selector}")
-                            script_pasted = True
-                            break
-                    except:
-                        continue
+                try:
+                    placeholder = self.page.locator('text="Type your script"').first
+                    if placeholder and placeholder.is_visible(timeout=2000):
+                        placeholder.click()
+                        time.sleep(0.3)
+                        self.page.keyboard.type(script_text, delay=1)
+                        logger.info("[OK] Script typed via keyboard")
+                        script_pasted = True
+                except Exception as e:
+                    logger.warning(f"[WARN] Script type failed: {e}")
             
             if not script_pasted:
                 logger.warning("[WARN] Could not paste script - please paste manually")

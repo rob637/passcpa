@@ -187,26 +187,55 @@ class HeyGenAutomationV2:
             self._dismiss_popups()
             
             # =========================================================
-            # STEP 2: Set video title (single click on "Untitled Video")
+            # STEP 2: Set video title (click on title area in upper left)
             # =========================================================
             logger.info("[STEP 2] Setting video title...")
             
-            try:
-                # Single click on "Untitled Video" text to make it editable
-                title_elem = self.page.locator('text="Untitled Video"').first
-                if title_elem and title_elem.is_visible(timeout=3000):
-                    title_elem.click()
+            title_set = False
+            
+            # Try multiple selectors for the title
+            title_selectors = [
+                'text="Untitled Video"',
+                'text="Untitled"',
+                '[class*="title"] input',
+                '[class*="title"][contenteditable="true"]',
+                'input[value="Untitled Video"]',
+                'span:has-text("Untitled")',
+            ]
+            
+            for selector in title_selectors:
+                try:
+                    elem = self.page.locator(selector).first
+                    if elem and elem.is_visible(timeout=1500):
+                        elem.click()
+                        time.sleep(0.3)
+                        self.page.keyboard.press("Control+a")
+                        time.sleep(0.1)
+                        self.page.keyboard.type(title)
+                        self.page.keyboard.press("Enter")
+                        logger.info(f"[OK] Title set via: {selector}")
+                        title_set = True
+                        break
+                except:
+                    continue
+            
+            # Fallback: click by coordinates (upper left area where title is shown)
+            if not title_set:
+                try:
+                    # Title is approximately at x=115, y=108 based on screenshots
+                    self.page.mouse.click(115, 108)
                     time.sleep(0.3)
-                    # Select all existing text and replace
                     self.page.keyboard.press("Control+a")
                     time.sleep(0.1)
                     self.page.keyboard.type(title)
                     self.page.keyboard.press("Enter")
-                    logger.info(f"[OK] Title set: {title}")
-                else:
-                    logger.warning("[WARN] Could not find Untitled Video text")
-            except Exception as e:
-                logger.warning(f"[WARN] Title error: {e}")
+                    logger.info(f"[OK] Title set via coordinates")
+                    title_set = True
+                except Exception as e:
+                    logger.warning(f"[WARN] Title by coordinates failed: {e}")
+            
+            if not title_set:
+                logger.warning("[WARN] Could not set title")
             
             time.sleep(0.5)
             self.screenshot("02_title_set")

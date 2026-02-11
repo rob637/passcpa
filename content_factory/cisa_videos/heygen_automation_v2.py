@@ -543,90 +543,13 @@ class HeyGenAutomationV2:
                     logger.warning("[WARN] Could not find Customize button - skipping background")
             
             # =========================================================
-            # STEP 7: Click Layouts icon in right sidebar → Select portrait (9:16)
+            # STEP 7: Layout check (skip if portrait is default)
             # =========================================================
-            logger.info("[STEP 7] Setting layout to portrait (9:16)...")
+            # Note: Portrait (9:16) may be the default in HeyGen AI Studio
+            # Skip layout changes unless we detect landscape
+            logger.info("[STEP 7] Layout check - assuming portrait is default, skipping...")
             
-            # First close any open panels
-            self.page.keyboard.press("Escape")
-            time.sleep(0.3)
-            
-            # The Layouts icon is in the vertical icon bar on the far right
-            # It looks like a grid/layout icon
-            layouts_icon_clicked = self.wait_and_click(
-                [
-                    '[aria-label="Layouts"]',
-                    'button[aria-label="Layouts"]',
-                    '[title="Layouts"]',
-                    # The icon is in a vertical sidebar
-                    '[class*="sidebar"] button:has-text("Layouts")',
-                    '[class*="toolbar"] [aria-label*="layout" i]',
-                ],
-                "Click Layouts icon"
-            )
-            
-            if not layouts_icon_clicked:
-                # Try clicking by icon position - Layouts is typically near bottom of right sidebar
-                try:
-                    sidebar_icons = self.page.locator('[class*="sidebar"] button, [class*="toolbar"] button').all()
-                    # Layouts icon is usually around position 6-8 in the icon list
-                    for i, icon in enumerate(sidebar_icons):
-                        if icon.is_visible():
-                            icon_text = icon.text_content() or ""
-                            if "layout" in icon_text.lower():
-                                icon.click()
-                                logger.info(f"[OK] Clicked Layouts via icon text search")
-                                layouts_icon_clicked = True
-                                break
-                except:
-                    pass
-            
-            time.sleep(1)
-            self.screenshot("10_layouts_panel")
-            
-            # Now select portrait/9:16 aspect ratio
-            # The layouts panel shows different video sizes/templates
-            layout_selectors = [
-                'text="9:16"',
-                'text="Portrait"',
-                'text="TikTok"',
-                'text="Reels"',
-                'text="Shorts"',
-                'img[alt*="9:16"]',
-                'img[alt*="portrait" i]',
-                '[class*="ratio"][class*="9"]',
-            ]
-            
-            layout_clicked = False
-            for selector in layout_selectors:
-                try:
-                    layout_elem = self.page.locator(selector).first
-                    if layout_elem and layout_elem.is_visible(timeout=2000):
-                        layout_elem.click()
-                        logger.info(f"[OK] Selected portrait layout via: {selector}")
-                        layout_clicked = True
-                        break
-                except:
-                    continue
-            
-            # Fallback: try clicking specific position for portrait layout
-            # Portrait options are typically on the right side of layout grid
-            if not layout_clicked:
-                try:
-                    # Find all layout images and try to click a portrait one
-                    layout_images = self.page.locator('[class*="layout"] img, [class*="Layout"] img').all()
-                    if len(layout_images) >= 2:
-                        # Portrait is often 2nd or 3rd option
-                        layout_images[1].click()  # Try second option
-                        logger.info("[OK] Clicked second layout image (portrait fallback)")
-                        layout_clicked = True
-                except:
-                    pass
-            
-            time.sleep(1)
-            self.screenshot("11_layout_selected")
-            
-            # Close layouts panel
+            # Close any open panels
             self.page.keyboard.press("Escape")
             time.sleep(0.5)
             

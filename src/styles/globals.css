@@ -185,12 +185,12 @@ body.dark {
    ============================================ */
 
 .safe-top {
-  padding-top: var(--safe-top);
+  padding-top: max(1rem, var(--safe-top));
 }
 
 .safe-bottom,
 .pb-safe {
-  padding-bottom: var(--safe-bottom);
+  padding-bottom: max(1.5rem, var(--safe-bottom));
 }
 
 /* Full height utility using dynamic viewport height */

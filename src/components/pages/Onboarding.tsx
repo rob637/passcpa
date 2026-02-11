@@ -763,9 +763,9 @@ const Onboarding: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-600 to-primary-800 flex flex-col">
+    <div className="h-[100dvh] bg-gradient-to-br from-primary-600 to-primary-800 flex flex-col">
       {/* Progress Indicator */}
-      <div className="p-4">
+      <div className="p-4 safe-top">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-2">
             {steps.map((step, index) => (
@@ -793,7 +793,7 @@ const Onboarding: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <div className="p-4">
+      <div className="p-4 safe-bottom">
         <div className="max-w-lg mx-auto flex items-center justify-between gap-4">
           <Button
             variant="ghost"

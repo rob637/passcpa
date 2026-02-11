@@ -72,14 +72,22 @@ def main():
     
     print("-" * 60)
     print(f"\nReady to create {len(video_data)} drafts.")
-    input("Press Enter to start (make sure you're logged into HeyGen)...")
     
-    # Start automation
+    # Start automation - browser opens first so you can log in
     automation = HeyGenAutomationV2(headless=args.headless)
     
     try:
         automation.start()
-        automation.ensure_logged_in()
+        
+        # Navigate to HeyGen so user can log in
+        automation.page.goto("https://app.heygen.com/home")
+        
+        print("\n" + "=" * 60)
+        print("Browser opened and navigated to HeyGen!")
+        print("Please log in if prompted.")
+        print("=" * 60)
+        input("\nPress Enter when you're logged in and on the HeyGen home page...")
+        
         automation.create_batch_drafts(video_data)
         
         print("\n" + "=" * 60)

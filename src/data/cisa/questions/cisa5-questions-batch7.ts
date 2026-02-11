@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-158',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data loss prevention (DLP) in cloud environments requires:',
     options: [
       'Only on-premise tools',
@@ -113,7 +113,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-160',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API security testing should include:',
     options: [
       'Only functional testing',
@@ -164,7 +164,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-163',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security orchestration, automation, and response (SOAR) enables:',
     options: [
       'Only manual workflows',
@@ -215,7 +215,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-166',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Supply chain security frameworks like SLSA focus on:',
     options: [
       'Only vendor contracts',
@@ -232,7 +232,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-167',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Workload identity management in cloud addresses:',
     options: [
       'Only human identities',
@@ -317,7 +317,7 @@ export const CISA5_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA5-172',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Continuous control monitoring (CCM) automates:',
     options: [
       'Only annual testing',

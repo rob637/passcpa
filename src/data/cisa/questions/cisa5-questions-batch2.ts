@@ -62,7 +62,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-006',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The principle of least privilege means:',
     options: [
       'Users have no access to systems',
@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-007',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Mandatory access control (MAC) is characterized by:',
     options: [
       'User-controlled permissions',
@@ -130,7 +130,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-010',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Single sign-on (SSO) provides:',
     options: [
       'Stronger authentication',
@@ -181,7 +181,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-013',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Encryption protects data by:',
     options: [
       'Deleting sensitive data',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-014',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Symmetric encryption uses:',
     options: [
       'Different keys for encryption and decryption',
@@ -283,7 +283,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-019',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An intrusion detection system (IDS) is designed to:',
     options: [
       'Block all network traffic',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-020',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An intrusion prevention system (IPS) differs from an IDS in that it:',
     options: [
       'Only monitors traffic',
@@ -351,7 +351,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-023',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Malware protection should include:',
     options: [
       'Only antivirus software',
@@ -402,7 +402,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-026',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security awareness training should be:',
     options: [
       'Provided only to IT staff',
@@ -436,7 +436,7 @@ export const CISA5_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA5-028',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Physical security controls include:',
     options: [
       'Only guards',

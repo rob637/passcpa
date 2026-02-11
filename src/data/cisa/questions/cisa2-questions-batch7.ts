@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA2-160',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Shared services governance requires:',
     options: [
       'No SLAs',
@@ -113,7 +113,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA2-161',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Centers of excellence (CoE) provide:',
     options: [
       'Only cost savings',
@@ -164,7 +164,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA2-164',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Workforce transformation for digital initiatives requires:',
     options: [
       'Technology only',
@@ -215,7 +215,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA2-167',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Control effectiveness metrics track:',
     options: [
       'Only existence',
@@ -249,7 +249,7 @@ export const CISA2_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA2-169',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Governance reporting to the board should be:',
     options: [
       'Highly technical',

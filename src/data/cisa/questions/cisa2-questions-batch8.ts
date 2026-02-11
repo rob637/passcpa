@@ -113,7 +113,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-180',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The IT balanced scorecard includes perspectives EXCEPT:',
     options: [
       'Customer satisfaction',
@@ -147,7 +147,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-182',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An organization\'s IT risk register should be:',
     options: [
       'Reviewed annually by external auditors only',
@@ -215,7 +215,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-186',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An enterprise architecture should PRIMARILY:',
     options: [
       'Document all current systems',
@@ -283,7 +283,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-190',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IS auditor reviewing IT project management should be MOST concerned if:',
     options: [
       'Project managers report to a PMO',
@@ -317,7 +317,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-192',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The purpose of an IT policy exception process is to:',
     options: [
       'Avoid following policies',
@@ -419,7 +419,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-198',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY purpose of IT policies is to:',
     options: [
       'Provide technical procedures',
@@ -453,7 +453,7 @@ export const CISA2_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA2-200',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT value delivery is BEST demonstrated through:',
     options: [
       'Large IT budget allocations',

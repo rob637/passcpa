@@ -21,7 +21,7 @@ import { Button } from './common/Button';
 import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
 import { useCourse } from '../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../utils/sectionUtils';
 import { getExamDate, createExamDateUpdate } from '../utils/profileHelpers';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
@@ -51,7 +51,8 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   const [saving, setSaving] = useState(false);
   
   // Get exam dates from user profile using multi-course helper
-  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   
   // Map exam dates per section for display
   // Uses examDates map if available, falls back to single examDate for active section
@@ -79,7 +80,8 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
       const newDate = new Date(dateInput);
       
       // Update Firestore with multi-course aware exam date
-      const examDateUpdate = createExamDateUpdate(userProfile, section, newDate);
+      // Pass courseId so single-exam courses (CFP, CISA) use course ID as key
+      const examDateUpdate = createExamDateUpdate(userProfile, section, newDate, courseId);
       await updateDoc(doc(db, 'users', user.uid), {
         ...examDateUpdate,
         examSection: section, // Also set this as active section

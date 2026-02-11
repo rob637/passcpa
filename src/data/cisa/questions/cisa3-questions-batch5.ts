@@ -79,7 +79,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-097',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Schema changes in production require:',
     options: [
       'No approval',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-098',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API versioning ensures:',
     options: [
       'Breaking all integrations',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-101',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Design patterns provide:',
     options: [
       'Unique solutions',
@@ -198,7 +198,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-104',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Event-driven architecture uses:',
     options: [
       'Direct calls only',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-106',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Bounded contexts in DDD:',
     options: [
       'Span entire organizations',
@@ -317,7 +317,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-112',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Chaos testing validates:',
     options: [
       'Normal operation',
@@ -334,7 +334,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-113',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Performance testing types include:',
     options: [
       'Only load testing',
@@ -385,7 +385,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-116',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Container orchestration platforms provide:',
     options: [
       'Only container runtime',
@@ -436,7 +436,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-119',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Citizen development programs should include:',
     options: [
       'No oversight',
@@ -470,7 +470,7 @@ export const CISA3_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA3-121',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'MLOps addresses:',
     options: [
       'Only model training',

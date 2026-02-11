@@ -104,6 +104,8 @@ const Flashcards: React.FC = () => {
   const topic = searchParams.get('topic');
   const typeParam = searchParams.get('type') as FlashcardType | null;
   const sectionParam = searchParams.get('section');
+  const countParam = searchParams.get('count'); // Number of cards for daily plan sessions
+  const sessionCardLimit = countParam ? parseInt(countParam, 10) : null;
   // Support URL param for section (for EA) or fall back to user profile
   const currentSection: AllExamSections = sectionParam 
     ? (sectionParam as AllExamSections)
@@ -215,6 +217,11 @@ const Flashcards: React.FC = () => {
 
         // Shuffle for variety
         filteredCards.sort(() => Math.random() - 0.5);
+        
+        // Apply session card limit (for daily plan sessions)
+        if (sessionCardLimit && sessionCardLimit > 0) {
+          filteredCards = filteredCards.slice(0, sessionCardLimit);
+        }
 
         setCards(filteredCards);
         setCurrentIndex(0); // Reset to first card when cards change
@@ -228,7 +235,7 @@ const Flashcards: React.FC = () => {
     };
 
     loadCards();
-  }, [user, courseId, currentSection, mode, topic, cardType, typeParam]);
+  }, [user, courseId, currentSection, mode, topic, cardType, typeParam, sessionCardLimit]);
 
   // Helper function to format dedicated card backs with formula/mnemonic/example
   const formatDedicatedCardBack = (card: DedicatedFlashcard): string => {
@@ -337,12 +344,16 @@ const Flashcards: React.FC = () => {
       [rating]: prev[rating] + 1,
     }));
 
-    // Move to next card
-    if (currentIndex < cards.length - 1) {
-      setTimeout(() => {
+    // Move to next card (or to completion screen if this was the last card)
+    setTimeout(() => {
+      if (currentIndex < cards.length - 1) {
         nextCard();
-      }, 300);
-    }
+      } else {
+        // This was the last card - advance past end to trigger completion screen
+        setCurrentIndex(cards.length);
+        setIsFlipped(false);
+      }
+    }, 300);
   };
 
   if (loading) {
@@ -432,7 +443,7 @@ const Flashcards: React.FC = () => {
                 navigate('/study');
               }
             }}>
-              Done
+              {fromDailyPlan ? 'Back to Daily Plan' : 'Done'}
             </Button>
           </div>
         </div>

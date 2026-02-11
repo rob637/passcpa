@@ -27,27 +27,119 @@ const loadCourseQuestionData = async (courseId: CourseId): Promise<{
       }
       case 'ea': {
         const m = await import('../../../data/ea/questions');
-        return { questions: m.EA_ALL_QUESTIONS || [], stats: { total: m.EA_ALL_QUESTIONS?.length || 0 } };
+        const questions = m.EA_ALL_QUESTIONS || [];
+        const bySection: Record<string, number> = {
+          'SEE1': m.SEE1_ALL?.length || 0,
+          'SEE2': m.SEE2_ALL?.length || 0,
+          'SEE3': m.SEE3_ALL?.length || 0,
+        };
+        return { questions, stats: { total: questions.length, bySection } };
       }
       case 'cma': {
         const m = await import('../../../data/cma/questions');
         const stats = m.getQuestionStats?.();
-        return { questions: m.CMA_ALL_QUESTIONS || [], stats };
+        // Flatten to bySection for display (Part 1 and Part 2)
+        const bySection: Record<string, number> = {
+          'Part 1': stats?.part1?.total || 0,
+          'Part 2': stats?.part2?.total || 0,
+        };
+        return { questions: m.CMA_ALL_QUESTIONS || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
       }
       case 'cia': {
         const m = await import('../../../data/cia/questions');
-        const questions = [...(m.ALL_CIA1_QUESTIONS || []), ...(m.ALL_CIA2_QUESTIONS || []), ...(m.ALL_CIA3_QUESTIONS || [])];
-        return { questions, stats: { total: questions.length } };
+        const cia1 = m.ALL_CIA1_QUESTIONS || [];
+        const cia2 = m.ALL_CIA2_QUESTIONS || [];
+        const cia3 = m.ALL_CIA3_QUESTIONS || [];
+        const questions = [...cia1, ...cia2, ...cia3];
+        const bySection: Record<string, number> = {
+          'Part 1': cia1.length,
+          'Part 2': cia2.length,
+          'Part 3': cia3.length,
+        };
+        return { questions, stats: { total: questions.length, bySection } };
       }
       case 'cisa': {
         const m = await import('../../../data/cisa/questions');
-        return { questions: m.CISA_QUESTIONS || [], stats: { total: m.CISA_QUESTIONS?.length || 0 } };
+        const questions = m.CISA_QUESTIONS || [];
+        // Count by section field in questions
+        const bySection: Record<string, number> = {};
+        questions.forEach((q: { section?: string }) => {
+          const section = q.section || 'Unknown';
+          bySection[section] = (bySection[section] || 0) + 1;
+        });
+        return { questions, stats: { total: questions.length, bySection } };
       }
       case 'cfp': {
         const m = await import('../../../data/cfp/questions');
-        return { questions: m.CFP_QUESTIONS_ALL || [], stats: m.CFP_QUESTION_STATS };
+        const stats = m.CFP_QUESTION_STATS;
+        // Convert byDomain to bySection for consistent display
+        const bySection: Record<string, number> = {};
+        if (stats?.byDomain) {
+          Object.entries(stats.byDomain).forEach(([domain, count]) => {
+            // Convert CFP-PRO to PRO, etc. for cleaner display
+            const shortName = domain.replace('CFP-', '');
+            bySection[shortName] = count as number;
+          });
+        }
+        return { questions: m.CFP_QUESTIONS_ALL || [], stats: { total: stats?.total || 0, bySection, byDifficulty: stats?.byDifficulty } };
       }
       default: return null;
+    }
+  } catch {
+    return null;
+  }
+};
+
+// Dynamic imports for course-specific unique content
+// Returns counts for essays, CBQs, case studies, item sets, simulations, etc.
+const loadCourseUniqueContent = async (courseId: CourseId): Promise<{
+  essays?: number;
+  essaysBySection?: Record<string, number>;
+  cbqs?: number;
+  cbqsBySection?: Record<string, number>;
+  simulations?: number;
+  simulationsBySection?: Record<string, number>;
+  caseStudies?: number;
+  itemSets?: number;
+} | null> => {
+  try {
+    switch (courseId) {
+      case 'cma': {
+        const essaysModule = await import('../../../data/cma/essays/index');
+        const cbqModule = await import('../../../data/cma/cbq/index');
+        const simModule = await import('../../../data/cma/practice-simulations/index');
+        const essays = essaysModule.CMA_ESSAYS || [];
+        const cbqs = cbqModule.ALL_CMA_CBQS || [];
+        const cma1Sims = simModule.CMA1_PRACTICE_SIMULATIONS || [];
+        const cma2Sims = simModule.CMA2_PRACTICE_SIMULATIONS || [];
+        return {
+          essays: essays.length,
+          essaysBySection: {
+            'Part 1': essaysModule.CMA1_ALL_ESSAYS?.length || 0,
+            'Part 2': essaysModule.CMA2_ALL_ESSAYS?.length || 0,
+          },
+          cbqs: cbqs.length,
+          cbqsBySection: {
+            'Part 1': cbqs.filter((c: { section: string }) => c.section === 'CMA1').length,
+            'Part 2': cbqs.filter((c: { section: string }) => c.section === 'CMA2').length,
+          },
+          simulations: cma1Sims.length + cma2Sims.length,
+          simulationsBySection: {
+            'Part 1': cma1Sims.length,
+            'Part 2': cma2Sims.length,
+          },
+        };
+      }
+      case 'cfp': {
+        const caseModule = await import('../../../data/cfp/caseStudies/index');
+        const itemSetModule = await import('../../../data/cfp/itemSets/index');
+        return {
+          caseStudies: caseModule.CFP_CASE_STUDIES?.length || 0,
+          itemSets: itemSetModule.CFP_ITEM_SETS?.length || 0,
+        };
+      }
+      default:
+        return null;
     }
   } catch {
     return null;
@@ -291,6 +383,20 @@ const AdminCMS: React.FC = () => {
   
   // Course-specific TBS stats (only CPA has TBS currently)
   const [tbsStats, setTbsStats] = useState<{ total: number; bySection: Record<string, number>; byType?: Record<string, number> } | null>(null);
+
+  // Course-specific unique content stats
+  const [cmaUniqueContent, setCmaUniqueContent] = useState<{
+    essays: number;
+    essaysBySection: Record<string, number>;
+    cbqs: number;
+    cbqsBySection: Record<string, number>;
+    simulations: number;
+    simulationsBySection: Record<string, number>;
+  } | null>(null);
+  const [cfpUniqueContent, setCfpUniqueContent] = useState<{
+    caseStudies: number;
+    itemSets: number;
+  } | null>(null);
 
   // New State for Users and Errors
   const [usersList, setUsersList] = useState<UserDocument[]>([]);
@@ -1397,6 +1503,36 @@ const AdminCMS: React.FC = () => {
       } catch (error) {
         logger.error('Error loading TBS stats:', error);
       }
+
+      // Load unique content stats for CMA
+      try {
+        const cmaContent = await loadCourseUniqueContent('cma');
+        if (cmaContent) {
+          setCmaUniqueContent({
+            essays: cmaContent.essays || 0,
+            essaysBySection: cmaContent.essaysBySection || {},
+            cbqs: cmaContent.cbqs || 0,
+            cbqsBySection: cmaContent.cbqsBySection || {},
+            simulations: cmaContent.simulations || 0,
+            simulationsBySection: cmaContent.simulationsBySection || {},
+          });
+        }
+      } catch (error) {
+        logger.error('Error loading CMA unique content:', error);
+      }
+
+      // Load unique content stats for CFP
+      try {
+        const cfpContent = await loadCourseUniqueContent('cfp');
+        if (cfpContent) {
+          setCfpUniqueContent({
+            caseStudies: cfpContent.caseStudies || 0,
+            itemSets: cfpContent.itemSets || 0,
+          });
+        }
+      } catch (error) {
+        logger.error('Error loading CFP unique content:', error);
+      }
     };
     loadAllCourseStats();
   }, []);
@@ -1623,6 +1759,119 @@ const AdminCMS: React.FC = () => {
                     </div>
                   )}
                 </Card>
+              </div>
+            )}
+
+            {/* CMA Unique Content: Essays, CBQs, Practice Simulations */}
+            {cmaUniqueContent && (cmaUniqueContent.essays > 0 || cmaUniqueContent.cbqs > 0 || cmaUniqueContent.simulations > 0) && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">💼 CMA Unique Content</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Essays */}
+                  {cmaUniqueContent.essays > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">✍️</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Essay Scenarios</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-purple-600 mb-3">
+                        {cmaUniqueContent.essays}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">essays</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.essaysBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  )}
+                  {/* CBQs */}
+                  {cmaUniqueContent.cbqs > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📋</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Case-Based Questions</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-3">
+                        {cmaUniqueContent.cbqs}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">CBQs</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.cbqsBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  )}
+                  {/* Practice Simulations */}
+                  {cmaUniqueContent.simulations > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">🧮</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Practice Simulations</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-cyan-600 mb-3">
+                        {cmaUniqueContent.simulations}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">simulations</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {Object.entries(cmaUniqueContent.simulationsBySection).map(([section, count]) => (
+                          <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
+                            <span className="font-medium">{section}</span>
+                            <span className="text-gray-600 dark:text-gray-400">{count}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* CFP Unique Content: Case Studies, Item Sets */}
+            {cfpUniqueContent && (cfpUniqueContent.caseStudies > 0 || cfpUniqueContent.itemSets > 0) && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">💰 CFP Unique Content</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Case Studies */}
+                  {cfpUniqueContent.caseStudies > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📑</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Case Studies</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-amber-600">
+                        {cfpUniqueContent.caseStudies}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">comprehensive scenarios</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                        Multi-part scenarios testing integrated planning skills
+                      </p>
+                    </Card>
+                  )}
+                  {/* Item Sets */}
+                  {cfpUniqueContent.itemSets > 0 && (
+                    <Card className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xl">📊</span>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Item Sets</h4>
+                      </div>
+                      <div className="text-3xl font-bold text-emerald-600">
+                        {cfpUniqueContent.itemSets}
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">item sets</span>
+                      </div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                        Related question clusters for deeper topic coverage
+                      </p>
+                    </Card>
+                  )}
+                </div>
               </div>
             )}
 
@@ -3442,8 +3691,30 @@ const AdminCMS: React.FC = () => {
                         const userData = userDoc.data();
                         const existingOnboarding = userData?.onboardingCompleted || {};
                         
+                        // Also clear lessonProgress entries for this course
+                        // Lesson IDs are prefixed with course name (e.g., 'cisa-lesson-1', 'cpa-far-lesson-1')
+                        // and section IDs start with course prefix (e.g., 'CISA1', 'FAR')
+                        const existingLessonProgress = userData?.lessonProgress || {};
+                        const coursePrefix = currentCourse.toLowerCase();
+                        const courseConfig = COURSES[currentCourse as CourseId];
+                        const sectionPrefixes = (courseConfig?.sections || []).map(s => s.id.toLowerCase());
+                        
+                        // Filter out lesson progress entries for this course
+                        const filteredLessonProgress: Record<string, number> = {};
+                        Object.entries(existingLessonProgress).forEach(([lessonId, progress]) => {
+                          const lessonIdLower = lessonId.toLowerCase();
+                          // Keep it only if it doesn't belong to the current course
+                          const belongsToCourse = 
+                            lessonIdLower.startsWith(coursePrefix) ||
+                            sectionPrefixes.some(prefix => lessonIdLower.startsWith(prefix));
+                          if (!belongsToCourse) {
+                            filteredLessonProgress[lessonId] = progress as number;
+                          }
+                        });
+                        
                         batch.update(userRef, {
                           onboardingCompleted: { ...existingOnboarding, [currentCourse]: false },
+                          lessonProgress: filteredLessonProgress,
                         });
                         
                         await batch.commit();

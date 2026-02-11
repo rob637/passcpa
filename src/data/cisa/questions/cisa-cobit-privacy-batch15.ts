@@ -139,7 +139,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     id: 'CISA2-COBIT-008',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The MEA domain in COBIT 2019 includes objectives for:',
     options: [
       'Managing enterprise architecture and innovation',
@@ -173,7 +173,7 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     id: 'CISA2-COBIT-010',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An organization wants to use COBIT 2019 to improve its IT governance. Which design factor should it consider FIRST?',
     options: [
       'Threat Landscape',
@@ -298,7 +298,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     id: 'CISA5-PRIV-005',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A Data Protection Impact Assessment (DPIA) is MANDATORY under GDPR when:',
     options: [
       'Any personal data processing occurs',
@@ -383,7 +383,7 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     id: 'CISA5-PRIV-010',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The GDPR data breach notification requirement to supervisory authorities:',
     options: [
       'Applies to all data breaches without exception',

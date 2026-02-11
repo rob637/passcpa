@@ -79,7 +79,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-067',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Extreme Programming (XP) emphasizes:',
     options: [
       'Extensive documentation',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-068',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Kanban methodology focuses on:',
     options: [
       'Fixed sprints',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-071',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API-first development:',
     options: [
       'Ignores APIs',
@@ -198,7 +198,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-074',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Technical specifications should include:',
     options: [
       'Only business requirements',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-076',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Interface design should prioritize:',
     options: [
       'Developer convenience',
@@ -300,7 +300,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-080',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Threat modeling identifies:',
     options: [
       'Only external threats',
@@ -334,7 +334,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-082',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Attack surface reduction involves:',
     options: [
       'Adding more features',
@@ -385,7 +385,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-085',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Secrets management ensures:',
     options: [
       'All developers know passwords',
@@ -436,7 +436,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-088',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Pipeline security (DevSecOps) includes:',
     options: [
       'Only deployment controls',
@@ -453,7 +453,7 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA3-089',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Rollback procedures should be:',
     options: [
       'Developed after problems occur',

@@ -79,7 +79,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-127',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT performance measurement framework should include:',
     options: [
       'Only financial metrics',
@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-128',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Technology refresh planning should consider:',
     options: [
       'Only age of equipment',
@@ -147,7 +147,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-131',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT demand management helps:',
     options: [
       'Deny all requests',
@@ -198,7 +198,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-134',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Exception management processes should:',
     options: [
       'Automatically approve all requests',
@@ -232,7 +232,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-136',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cloud exit strategy should address:',
     options: [
       'Only cost',
@@ -300,7 +300,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-140',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Software escrow arrangements protect against:',
     options: [
       'All vendor risks',
@@ -334,7 +334,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-142',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT risk tolerance levels should be:',
     options: [
       'Set by IT only',
@@ -385,7 +385,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-145',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT disaster recovery capabilities should be:',
     options: [
       'Only documented',
@@ -436,7 +436,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-148',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data stewards are responsible for:',
     options: [
       'Only technical management',
@@ -453,7 +453,7 @@ export const CISA2_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA2-149',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Ethics in IT decision-making should consider:',
     options: [
       'Only legal requirements',

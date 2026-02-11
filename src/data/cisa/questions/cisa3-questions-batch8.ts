@@ -130,7 +130,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-182',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY purpose of code reviews is to:',
     options: [
       'Evaluate developer performance',
@@ -164,7 +164,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-184',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Regression testing is performed to ensure:',
     options: [
       'New functionality works correctly',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-188',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A project charter should define:',
     options: [
       'Detailed technical specifications',
@@ -300,7 +300,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-192',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Emergency changes should be:',
     options: [
       'Exempt from change management',
@@ -334,7 +334,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-194',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Project scope creep refers to:',
     options: [
       'Completing the project early',
@@ -419,7 +419,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-200',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Software licensing compliance is important to:',
     options: [
       'Reduce training requirements',
@@ -453,7 +453,7 @@ export const CISA3_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA3-202',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Release management should ensure:',
     options: [
       'All releases happen immediately',

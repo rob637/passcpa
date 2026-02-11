@@ -79,7 +79,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-037',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Prototyping is useful when:',
     options: [
       'Requirements are completely defined',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-038',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Spiral model combines elements of:',
     options: [
       'Only waterfall',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-041',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Code refactoring involves:',
     options: [
       'Adding new features',
@@ -198,7 +198,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-044',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Penetration testing should be performed:',
     options: [
       'Only during development',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-046',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cross-site scripting (XSS) attacks can be prevented by:',
     options: [
       'Using firewalls only',
@@ -300,7 +300,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-050',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Infrastructure as Code (IaC) provides:',
     options: [
       'Only cost savings',
@@ -334,7 +334,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-052',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Canary releases involve:',
     options: [
       'Full deployment to all users',
@@ -385,7 +385,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-055',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Containerization using Docker provides:',
     options: [
       'Hardware virtualization',
@@ -436,7 +436,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-058',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Code coverage metrics indicate:',
     options: [
       'How fast code runs',
@@ -453,7 +453,7 @@ export const CISA3_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA3-059',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'End-to-end testing validates:',
     options: [
       'Individual functions',

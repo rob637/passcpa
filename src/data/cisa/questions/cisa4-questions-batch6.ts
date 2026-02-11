@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-127',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Scenario-based resilience testing should include:',
     options: [
       'Only known risks',
@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-128',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Communication plans during incidents should address:',
     options: [
       'Only IT staff',
@@ -147,7 +147,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-131',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Incident classification criteria should include:',
     options: [
       'Only technical impact',
@@ -215,7 +215,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-136',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Post-implementation review of changes should assess:',
     options: [
       'Only success',
@@ -232,7 +232,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-137',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Batch job scheduling controls should include:',
     options: [
       'Only start times',
@@ -317,7 +317,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-142',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network operations center (NOC) responsibilities include:',
     options: [
       'Only monitoring',
@@ -334,7 +334,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-143',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Event correlation reduces:',
     options: [
       'All events',
@@ -385,7 +385,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-146',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Time synchronization (NTP) is important for:',
     options: [
       'Only scheduling',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-149',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Print management controls should address:',
     options: [
       'Only paper usage',
@@ -470,7 +470,7 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA4-151',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'UPS systems provide:',
     options: [
       'Permanent power',

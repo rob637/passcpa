@@ -103,7 +103,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-006',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cloud Security Posture Management (CSPM) tools primarily help organizations:',
     options: [
       'Encrypt all cloud data',
@@ -137,7 +137,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-008',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Kubernetes Network Policies are used to:',
     options: [
       'Manage user authentication',
@@ -192,7 +192,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-011',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'In OT/ICS environments, the PRIMARY security priority differs from IT because:',
     options: [
       'OT has lower budgets',
@@ -260,7 +260,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-015',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A key security concern with industrial protocols like Modbus is:',
     options: [
       'They are too complex to implement',
@@ -298,7 +298,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-017',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API rate limiting is essential to prevent:',
     options: [
       'SQL injection',
@@ -404,7 +404,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-023',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'DevSecOps integrates security into:',
     options: [
       'Post-deployment monitoring only',
@@ -438,7 +438,7 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     id: 'CISA5-ET-025',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The shared responsibility model in cloud computing means:',
     options: [
       'The cloud provider handles all security',

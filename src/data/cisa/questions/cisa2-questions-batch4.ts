@@ -79,7 +79,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-067',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Centralized IT governance provides:',
     options: [
       'Maximum flexibility',
@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-068',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Federated IT governance combines:',
     options: [
       'Only central control',
@@ -147,7 +147,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-071',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Chargeback and showback for IT services:',
     options: [
       'Only increase IT costs',
@@ -198,7 +198,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-074',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Technology roadmaps should:',
     options: [
       'Focus only on current systems',
@@ -232,7 +232,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-076',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT sourcing strategy should consider:',
     options: [
       'Only cost savings',
@@ -300,7 +300,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-080',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data governance establishes:',
     options: [
       'Only database administration',
@@ -334,7 +334,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-082',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Master data management ensures:',
     options: [
       'Maximum data redundancy',
@@ -385,7 +385,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-085',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'GRC (Governance, Risk, Compliance) integration provides:',
     options: [
       'Separate silos',
@@ -436,7 +436,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-088',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT process improvement initiatives should be:',
     options: [
       'One-time projects',
@@ -453,7 +453,7 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA2-089',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Stakeholder management in IT governance requires:',
     options: [
       'Only executive engagement',

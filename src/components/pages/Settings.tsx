@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
@@ -36,7 +37,7 @@ import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
 import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
-import { createExamDateUpdate } from '../../utils/profileHelpers';
+import { createExamDateUpdate, getExamDate } from '../../utils/profileHelpers';
 import {
   setupDailyReminder,
   getDailyReminderSettings,
@@ -62,7 +63,7 @@ interface UserProfile {
 }
 
 // Helper to convert various date formats to YYYY-MM-DD string
-const formatDateForInput = (date: Timestamp | Date | string | undefined): string => {
+const formatDateForInput = (date: Timestamp | Date | string | null | undefined): string => {
   if (!date) return '';
   
   try {
@@ -98,6 +99,7 @@ const Settings: React.FC = () => {
   const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
   const { subscription, isPremium, isTrialing, trialDaysRemaining, trialExpired } = useSubscription();
+  const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
   const [activeTab, setActiveTab] = useState('profile');
   const [isSaving, setIsSaving] = useState(false);
@@ -116,16 +118,20 @@ const Settings: React.FC = () => {
   // Use getCurrentSectionForCourse to validate profile section is valid for current course
   const [examSection, setExamSection] = useState(getCurrentSectionForCourse(profile?.examSection, courseId));
   const [dailyGoal, setDailyGoal] = useState(profile?.dailyGoal || 50);
-  const [examDate, setExamDate] = useState(formatDateForInput(profile?.examDate));
+  // Use getExamDate for multi-course support (handles single-exam courses like CISA/CFP)
+  // Cast to any since our local UserProfile type is compatible with what getExamDate needs
+  const [examDate, setExamDate] = useState(formatDateForInput(getExamDate(profile as any, examSection, courseId)));
 
   // Sync form state when profile changes (e.g., after reset) or courseId changes
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.displayName || '');
       // Validate profile section is valid for current course
-      setExamSection(getCurrentSectionForCourse(profile.examSection, courseId));
+      const validSection = getCurrentSectionForCourse(profile.examSection, courseId);
+      setExamSection(validSection);
       setDailyGoal(profile.dailyGoal || 50);
-      setExamDate(formatDateForInput(profile.examDate));
+      // Use getExamDate helper for multi-course exam date lookup
+      setExamDate(formatDateForInput(getExamDate(profile as any, validSection, courseId)));
     }
   }, [profile, courseId]);
   
@@ -297,10 +303,12 @@ const Settings: React.FC = () => {
     setIsSaving(true);
     try {
       // Create multi-course aware exam date update
+      // Pass courseId so single-exam courses (CFP, CISA) use course ID as key
       const examDateUpdate = createExamDateUpdate(
         userProfile,
         examSection || userProfile?.examSection || getDefaultSection(courseId),
-        examDate ? new Date(examDate) : null
+        examDate ? new Date(examDate) : null,
+        courseId
       );
       
       // Save profile settings
@@ -1109,42 +1117,59 @@ const Settings: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-medium text-slate-900 dark:text-white">
-                            {isPremium ? 'Premium Plan' : isTrialing ? 'Free Trial' : trialExpired ? 'Trial Expired' : 'Free Plan'}
+                            {isPremium ? 'Premium Plan' : isTrialing ? '14-Day Free Trial' : trialExpired ? 'Trial Expired' : 'Free Plan'}
                           </div>
                           <div className="text-sm text-slate-600 dark:text-slate-400">
-                            {isTrialing && trialDaysRemaining !== null && (
-                              <span>{trialDaysRemaining} day{trialDaysRemaining !== 1 ? 's' : ''} remaining in trial</span>
+                            {isTrialing && subscription?.trialEnd && (
+                              <span>
+                                {trialDaysRemaining} day{trialDaysRemaining !== 1 ? 's' : ''} remaining 
+                                <span className="text-slate-500 dark:text-slate-500">
+                                  {' '}(ends {new Date(subscription.trialEnd).toLocaleDateString()})
+                                </span>
+                              </span>
                             )}
                             {isPremium && subscription?.currentPeriodEnd && (
                               <span>Renews {new Date(subscription.currentPeriodEnd).toLocaleDateString()}</span>
                             )}
                             {trialExpired && (
-                              <span className="text-amber-600 dark:text-amber-400">Trial ended - upgrade to continue</span>
+                              <span className="text-amber-600 dark:text-amber-400">Trial ended - upgrade to continue learning</span>
                             )}
                             {!isPremium && !isTrialing && !trialExpired && (
                               <span>Upgrade to Premium for full access</span>
                             )}
                           </div>
                         </div>
-                        {(isPremium || subscription?.stripeCustomerId) && (
-                          <button
-                            onClick={handleManageSubscription}
-                            disabled={isManagingSubscription}
-                            className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
-                          >
-                            {isManagingSubscription ? (
-                              <>
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                                Opening...
-                              </>
-                            ) : (
-                              <>
-                                Manage
-                                <ExternalLink className="w-4 h-4" />
-                              </>
-                            )}
-                          </button>
-                        )}
+                        <div className="flex items-center gap-2">
+                          {/* Show Upgrade button for non-premium users */}
+                          {!isPremium && (
+                            <button
+                              onClick={() => navigate(`/${courseId}#pricing`)}
+                              className="flex items-center gap-2 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-colors"
+                            >
+                              Upgrade Now
+                            </button>
+                          )}
+                          {/* Show Manage button for premium users with Stripe */}
+                          {(isPremium || subscription?.stripeCustomerId) && (
+                            <button
+                              onClick={handleManageSubscription}
+                              disabled={isManagingSubscription}
+                              className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
+                            >
+                              {isManagingSubscription ? (
+                                <>
+                                  <Loader2 className="w-4 h-4 animate-spin" />
+                                  Opening...
+                                </>
+                              ) : (
+                                <>
+                                  Manage
+                                  <ExternalLink className="w-4 h-4" />
+                                </>
+                              )}
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
 

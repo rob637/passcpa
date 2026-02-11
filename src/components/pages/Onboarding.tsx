@@ -696,7 +696,8 @@ const Onboarding: React.FC = () => {
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/New_York';
       
       // Create multi-course aware profile updates
-      const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate);
+      // Pass selectedCourse so single-exam courses (CFP, CISA) use course ID as key
+      const examDateUpdate = createExamDateUpdate(userProfile, selectedSection, localExamDate, selectedCourse as CourseId);
       const studyPlanUpdate = createStudyPlanUpdate(userProfile, selectedCourse as CourseId, studyPlan);
       
       // Create per-course onboarding status update

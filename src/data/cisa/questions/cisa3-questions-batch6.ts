@@ -79,7 +79,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-127',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'User story format typically includes:',
     options: [
       'Technical specifications only',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-128',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Definition of Done (DoD) ensures:',
     options: [
       'Code compilation only',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-131',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Trunk-based development emphasizes:',
     options: [
       'Long-lived branches',
@@ -198,7 +198,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-134',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Output encoding prevents:',
     options: [
       'Performance issues',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-136',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Error handling should avoid:',
     options: [
       'Logging errors',
@@ -300,7 +300,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-140',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'License compliance scanning ensures:',
     options: [
       'Only security',
@@ -334,7 +334,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-142',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Container image scanning should check for:',
     options: [
       'Only size',
@@ -385,7 +385,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-145',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Smoke testing verifies:',
     options: [
       'All functionality',
@@ -419,7 +419,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-148',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Test environment management should ensure:',
     options: [
       'Identical to production always',
@@ -436,7 +436,7 @@ export const CISA3_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA3-149',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Go/No-Go decisions before deployment should consider:',
     options: [
       'Only schedule',

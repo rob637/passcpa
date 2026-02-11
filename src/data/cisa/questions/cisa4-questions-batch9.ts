@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-215',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Job scheduling software is used to:',
     options: [
       'Hire IT personnel',
@@ -130,7 +130,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-217',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The difference between incremental and differential backups is:',
     options: [
       'Incremental backs up all data each time',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-221',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Capacity management ensures that:',
     options: [
       'Building space is adequate',
@@ -266,7 +266,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-225',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Console security in data centers is important because:',
     options: [
       'Consoles are expensive',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-227',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Media sanitization ensures:',
     options: [
       'Media is physically clean',
@@ -402,7 +402,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-233',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Storage Area Network (SAN) provides:',
     options: [
       'User email',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-235',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Change management documentation should be retained to:',
     options: [
       'Reduce storage costs',
@@ -504,7 +504,7 @@ export const CISA4_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA4-239',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'End-of-life (EOL) planning for IT assets includes:',
     options: [
       'Ignoring older systems',

@@ -62,7 +62,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-006',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IT balanced scorecard typically includes perspectives from:',
     options: [
       'Only financial metrics',
@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-008',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'COBIT is BEST described as a:',
     options: [
       'Technical security standard',
@@ -147,7 +147,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-011',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY purpose of segregation of duties in IT is to:',
     options: [
       'Improve operational efficiency',
@@ -198,7 +198,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-014',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY benefit of an IT service catalog is:',
     options: [
       'Reducing IT costs',
@@ -215,7 +215,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-015',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service level agreements (SLAs) should include:',
     options: [
       'Technical architecture specifications',
@@ -300,7 +300,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-020',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT project governance should ensure that:',
     options: [
       'All projects use the same methodology',
@@ -317,7 +317,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-021',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A project management office (PMO) is PRIMARILY responsible for:',
     options: [
       'Executing all IT projects',
@@ -368,7 +368,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-024',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Business impact analysis (BIA) is PRIMARILY used to:',
     options: [
       'Identify IT vulnerabilities',
@@ -419,7 +419,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-027',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A hot site is characterized by:',
     options: [
       'Empty space with power and connectivity',
@@ -453,7 +453,7 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA2-029',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Change management controls should ensure that:',
     options: [
       'All changes are implemented immediately',

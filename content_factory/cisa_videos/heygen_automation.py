@@ -24,7 +24,7 @@ try:
     PLAYWRIGHT_AVAILABLE = True
 except ImportError:
     PLAYWRIGHT_AVAILABLE = False
-    print("⚠️ Playwright not installed. Run: pip install playwright && playwright install chromium")
+    print("[WARN] Playwright not installed. Run: pip install playwright && playwright install chromium")
 
 from config import HEYGEN_EMAIL, HEYGEN_PASSWORD, AVATARS, get_random_combo
 
@@ -106,16 +106,26 @@ class HeyGenAutomation:
     
     def _login(self):
         """Login to HeyGen - supports Google OAuth with manual intervention."""
-        logger.info("🔐 Login required for HeyGen...")
+        logger.info("[LOGIN] Login required for HeyGen...")
         
         self.page.goto(f"{self.BASE_URL}/login", timeout=60000)
         time.sleep(2)
         
         # Check if Google login is preferred (no password set)
         if not HEYGEN_PASSWORD:
+            # If running headless, can't do manual login - fail fast with clear message
+            if self.headless:
+                raise RuntimeError(
+                    "No HeyGen session found and running in headless mode.\n"
+                    "You need to run test_login.py ONCE first to create a session:\n\n"
+                    "    python test_login.py\n\n"
+                    "Complete the Google login in the browser window that opens.\n"
+                    "After that, the pipeline can run in headless mode."
+                )
+            
             logger.info("")
             logger.info("=" * 60)
-            logger.info("👋 MANUAL LOGIN REQUIRED (one-time only)")
+            logger.info("MANUAL LOGIN REQUIRED (one-time only)")
             logger.info("=" * 60)
             logger.info("")
             logger.info("A browser window should have opened.")
@@ -134,12 +144,12 @@ class HeyGenAutomation:
                 # Check if we're now on the dashboard
                 current_url = self.page.url
                 if "/home" in current_url or "/create" in current_url or "/videos" in current_url:
-                    logger.info("✅ Login detected! Continuing automation...")
+                    logger.info("[OK] Login detected! Continuing automation...")
                     time.sleep(2)
                     return
                 
                 if waited % 30 == 0:
-                    logger.info(f"⏳ Waiting for login... ({waited}s / {max_wait}s)")
+                    logger.info(f"[WAIT] Waiting for login... ({waited}s / {max_wait}s)")
             
             raise TimeoutError("Login timeout - please try again")
         
@@ -162,7 +172,7 @@ class HeyGenAutomation:
         
         # Wait for redirect to dashboard
         self.page.wait_for_url(f"{self.BASE_URL}/home**", timeout=60000)
-        logger.info("✅ Logged into HeyGen")
+        logger.info("[OK] Logged into HeyGen")
         time.sleep(2)
     
     def create_video(self, script_file: str, background_file: str, title: str, avatar_id: str = None) -> Optional[str]:
@@ -179,7 +189,7 @@ class HeyGenAutomation:
         """
         # Use provided avatar_id or fall back to first avatar in pool
         avatar_to_use = avatar_id or AVATARS[0]['id']
-        logger.info(f"🎬 Creating video: {title} (Avatar: {avatar_to_use})")
+        logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use})")
         
         try:
             # Navigate to create video page
@@ -238,20 +248,20 @@ class HeyGenAutomation:
             video_id = self._extract_video_id()
             
             if video_id:
-                logger.info(f"✅ Video queued with ID: {video_id}")
+                logger.info(f"[OK] Video queued with ID: {video_id}")
                 return video_id
             else:
                 # Generate a timestamp-based ID as fallback
                 video_id = f"heygen_{int(time.time())}"
-                logger.warning(f"⚠️ Could not extract video ID, using: {video_id}")
+                logger.warning(f"[WARN] Could not extract video ID, using: {video_id}")
                 return video_id
                 
         except Exception as e:
-            logger.error(f"❌ Failed to create video: {e}")
+            logger.error(f"[ERROR] Failed to create video: {e}")
             # Take screenshot for debugging
             screenshot_path = Path(__file__).parent / "output" / f"error_{int(time.time())}.png"
             self.page.screenshot(path=str(screenshot_path))
-            logger.info(f"📸 Screenshot saved: {screenshot_path}")
+            logger.info(f"[DEBUG] Screenshot saved: {screenshot_path}")
             return None
     
     def _extract_video_id(self) -> Optional[str]:
@@ -280,7 +290,7 @@ class HeyGenAutomation:
         Returns: (status, download_url)
         status: 'processing', 'completed', 'failed'
         """
-        logger.info(f"⏳ Checking status for: {video_id}")
+        logger.info(f"[POLL] Checking status for: {video_id}")
         
         try:
             # Navigate to video page
@@ -316,12 +326,12 @@ class HeyGenAutomation:
             return ('processing', None)
             
         except Exception as e:
-            logger.error(f"❌ Status check failed: {e}")
+            logger.error(f"[ERROR] Status check failed: {e}")
             return ('processing', None)
     
     def download_video(self, video_id: str, output_path: Path) -> bool:
         """Download a completed video."""
-        logger.info(f"📥 Downloading video: {video_id}")
+        logger.info(f"[DOWNLOAD] Downloading video: {video_id}")
         
         try:
             self.page.goto(f"{self.BASE_URL}/video/{video_id}", timeout=60000)
@@ -340,11 +350,11 @@ class HeyGenAutomation:
             download = download_info.value
             download.save_as(str(output_path))
             
-            logger.info(f"✅ Video saved: {output_path}")
+            logger.info(f"[OK] Video saved: {output_path}")
             return True
             
         except Exception as e:
-            logger.error(f"❌ Download failed: {e}")
+            logger.error(f"[ERROR] Download failed: {e}")
             return False
     
     def get_video_list(self) -> list:
@@ -369,7 +379,7 @@ class HeyGenAutomation:
             return videos
             
         except Exception as e:
-            logger.error(f"❌ Failed to get video list: {e}")
+            logger.error(f"[ERROR] Failed to get video list: {e}")
             return []
 
 
@@ -377,16 +387,16 @@ class HeyGenAutomation:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
-    print("🧪 Testing HeyGen Automation...")
+    print("Testing HeyGen Automation...")
     print("   This will open a browser window for testing.")
     print()
     
     with HeyGenAutomation(headless=False) as heygen:
-        print("✅ Browser started and logged in")
+        print("[OK] Browser started and logged in")
         
         # List existing videos
         videos = heygen.get_video_list()
-        print(f"\n📹 Found {len(videos)} existing videos:")
+        print(f"\nFound {len(videos)} existing videos:")
         for v in videos[:5]:
             print(f"   - {v['id']}: {v['title']}")
         

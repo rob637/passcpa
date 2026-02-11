@@ -62,7 +62,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-006',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Problem management differs from incident management in that it:',
     options: [
       'Focuses on quick restoration of service',
@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-007',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Incident management primarily aims to:',
     options: [
       'Identify root causes',
@@ -130,7 +130,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-010',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The purpose of a help desk is to:',
     options: [
       'Develop applications',
@@ -181,7 +181,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-013',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Backup testing should verify that:',
     options: [
       'Backups complete on schedule',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-014',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data retention policies should be based on:',
     options: [
       'Available storage capacity',
@@ -266,7 +266,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-018',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network monitoring tools are used to:',
     options: [
       'Develop applications',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-020',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'End-of-life hardware should be:',
     options: [
       'Disposed of immediately',
@@ -351,7 +351,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-023',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Crisis communication plans should include:',
     options: [
       'Technical recovery procedures',
@@ -402,7 +402,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-026',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A cold site provides:',
     options: [
       'Fully operational systems',
@@ -419,7 +419,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-027',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'A warm site provides:',
     options: [
       'No infrastructure',
@@ -504,7 +504,7 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA4-032',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Lessons learned from DR tests should be:',
     options: [
       'Kept confidential',

@@ -57,6 +57,7 @@ class VideoTask:
     background_file: Optional[str] = None
     avatar_id: Optional[str] = None
     avatar_name: Optional[str] = None
+    avatar_look: Optional[str] = None  # Specific outfit/look name
     heygen_video_id: Optional[str] = None
     video_file: Optional[str] = None
     storage_url: Optional[str] = None
@@ -192,6 +193,7 @@ class CISAVideoPipeline:
                 background_file=str(bg_file),
                 avatar_id=avatar['id'],
                 avatar_name=avatar['name'],
+                avatar_look=avatar.get('look'),
                 created_at=datetime.now().isoformat()
             )
             self.state.tasks.append(task)
@@ -294,9 +296,10 @@ class CISAVideoPipeline:
                 stage=Stage.HEYGEN_QUEUED.value,
                 background_file=str(bg_file),
                 avatar_id=avatar['id'],
-                avatar_name=avatar['name']
+                avatar_name=avatar['name'],
+                avatar_look=avatar.get('look')
             )
-            self.logger.info(f"[OK] Assigned presenter: {avatar['name']} ({avatar['id']})")
+            self.logger.info(f"[OK] Assigned presenter: {avatar['name']} ({avatar['id']}) - Look: {avatar.get('look')}")
             self.logger.info(f"     Background: {background_filename}")
                 
         except Exception as e:
@@ -316,7 +319,8 @@ class CISAVideoPipeline:
                     task.script_file,
                     task.background_file,
                     task.avatar_id,
-                    task.topic
+                    task.topic,
+                    task.avatar_look or ""
                 ],
                 capture_output=True,
                 text=True,

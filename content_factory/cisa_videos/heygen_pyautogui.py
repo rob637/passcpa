@@ -93,9 +93,8 @@ def calibrate():
     print("\nI'll guide you through finding the coordinates.")
     print("For each element:")
     print("  1. Read what to find")
-    print("  2. Press ENTER to start 3-second countdown")  
-    print("  3. Quickly move your mouse to that element")
-    print("  4. Hold still - position captured after 3 seconds")
+    print("  2. Move your mouse to that element")
+    print("  3. Hold still - position captured after 3 seconds")
     print("\nPress Ctrl+C to exit at any time.\n")
     
     coords_to_find = [
@@ -121,9 +120,10 @@ def calibrate():
     results = {}
     
     for key, description in coords_to_find:
-        input(f"\nNext: {description}\nPress ENTER, then move mouse there within 3 seconds...")
+        print(f"\nNext: {description}")
+        print("Move your mouse there now...")
         
-        # Countdown
+        # Countdown - automatically starts
         for i in range(3, 0, -1):
             print(f"  {i}...", end=" ", flush=True)
             time.sleep(1)
@@ -205,17 +205,22 @@ def create_video(title, script_text, avatar_name, background_name=None):
     
     # Step 1: Set title
     logger.info("[STEP 1] Setting title...")
-    click("title")
-    pyautogui.hotkey('ctrl', 'a')  # Select all
-    time.sleep(0.2)
+    coords = load_coords()
+    x, y = coords.get("title", COORDS.get("title"))
+    pyautogui.tripleClick(x, y)  # Triple-click to select all title text
+    time.sleep(0.3)
     paste_text(title)
+    time.sleep(0.3)
     pyautogui.press('enter')
     time.sleep(0.5)
     
     # Step 2: Paste script
     logger.info("[STEP 2] Pasting script...")
-    click("script")
+    x, y = coords.get("script", COORDS.get("script"))
+    pyautogui.tripleClick(x, y)  # Triple-click to select all in script area
     time.sleep(0.3)
+    pyautogui.hotkey('ctrl', 'a')  # Also Ctrl+A to be sure
+    time.sleep(0.2)
     paste_text(script_text)
     time.sleep(1)
     
@@ -251,11 +256,13 @@ def create_video(title, script_text, avatar_name, background_name=None):
     if background_name:
         logger.info(f"[STEP 5] Setting background: {background_name}...")
         click("customize_bg")
-        time.sleep(1)
+        time.sleep(1.5)  # Wait for panel to open
         click("uploads_tab")
-        time.sleep(1)
-        click("first_upload", double=True)  # Double-click background
-        time.sleep(1)
+        time.sleep(1.5)  # Wait for uploads to load
+        click("first_upload")  # Single click first to select
+        time.sleep(0.5)
+        click("first_upload", double=True)  # Then double-click to apply
+        time.sleep(1.5)
     
     # Step 6: Set layout to Portrait 9:16
     logger.info("[STEP 6] Setting layout to Portrait 9:16...")

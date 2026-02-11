@@ -111,10 +111,10 @@ def calibrate_quick():
     
     coords_to_find = [
         ("motion_engine", "MOTION ENGINE - click the dropdown that says 'Avatar III' or 'Avatar IV' (right sidebar)"),
-        ("bg_row1_col1", "BACKGROUND Row 1 Col 1 - DARK NAVY (top-left in uploads grid)"),
-        ("bg_row1_col2", "BACKGROUND Row 1 Col 2 - GRAY GRADIENT (top-middle)"),
-        ("bg_row1_col3", "BACKGROUND Row 1 Col 3 - TEAL (top-right)"),
-        ("bg_row2_col1", "BACKGROUND Row 2 Col 1 - BLUE/CORPORATE (second row, left)"),
+        ("bg_row1_col1", "BG TOP-LEFT: DARK NAVY background (1st row, 1st column)"),
+        ("bg_row1_col2", "BG TOP-MIDDLE: GRAY background (1st row, 2nd column)"),  
+        ("bg_row1_col3", "BG TOP-RIGHT: TEAL background (1st row, 3rd column)"),
+        ("bg_row2_col1", "BG 2ND ROW LEFT: BLUE GRADIENT background (2nd row, 1st column)"),
     ]
     
     for key, description in coords_to_find:

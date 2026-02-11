@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { scrollToTop } from '../../utils/scroll';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
 import {
@@ -70,6 +70,8 @@ interface AnswerState {
 
 interface SessionSetupProps {
   onStart: (config: SessionConfig) => void;
+  onResume?: () => void;
+  hasSavedSession?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   userProfile: any;
   loading: boolean;
@@ -77,7 +79,7 @@ interface SessionSetupProps {
 }
 
 // Session Setup Component
-const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loading, userId }) => {
+const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSavedSession, userProfile, loading, userId }) => {
   const { course, courseId } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
@@ -295,6 +297,20 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, userProfile, loadi
                 </select>
               </div>
             </div>
+          )}
+
+          {/* Resume Session Button - shows if there's a saved session */}
+          {hasSavedSession && onResume && (
+            <Button
+              onClick={onResume}
+              leftIcon={RotateCcw}
+              variant="outline"
+              size="lg"
+              fullWidth
+              className="py-4 text-lg border-primary-500 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/30"
+            >
+              Resume Session
+            </Button>
           )}
 
           {/* Start Button */}
@@ -634,6 +650,7 @@ const SessionResults: React.FC<SessionResultsProps> = ({
 
 const Practice: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
   const { user, userProfile } = useAuth();
   const { recordMCQAnswer, logActivity } = useStudy();
@@ -752,7 +769,28 @@ const Practice: React.FC = () => {
     }
   }, []);
 
-  // Try to restore session on mount
+  // Check if there's a valid saved session (without consuming it)
+  const hasSavedSession = useMemo(() => {
+    try {
+      const saved = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      if (!saved) return false;
+      const sessionState = JSON.parse(saved);
+      const MAX_AGE = 30 * 60 * 1000; // 30 minutes
+      return Date.now() - sessionState.savedAt <= MAX_AGE;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  // Handler for manual resume from UI
+  const handleManualResume = useCallback(() => {
+    const restored = restoreSessionState();
+    if (restored) {
+      scrollToTop();
+    }
+  }, [restoreSessionState]);
+
+  // Try to restore session on mount or navigation
   useEffect(() => {
     if (!inSession && !loading && userProfile) {
       const restored = restoreSessionState();
@@ -760,9 +798,9 @@ const Practice: React.FC = () => {
         scrollToTop();
       }
     }
-    // Only run once on mount
+    // Run on mount and whenever we navigate back to this page (location.key changes)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userProfile]);
+  }, [userProfile, location.key]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -1091,7 +1129,8 @@ const Practice: React.FC = () => {
       }, 2000);
     } catch (error) {
       logger.error('Failed to submit report:', error);
-      setReportError('Failed to submit report. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setReportError(`Failed to submit report: ${errorMessage}`);
     } finally {
       setReportSubmitting(false);
     }
@@ -1218,7 +1257,16 @@ const Practice: React.FC = () => {
 
   // Session configuration screen
   if (!inSession) {
-    return <SessionSetup onStart={startSession} userProfile={userProfile} loading={loading} userId={user?.uid} />;
+    return (
+      <SessionSetup 
+        onStart={startSession} 
+        onResume={handleManualResume}
+        hasSavedSession={hasSavedSession}
+        userProfile={userProfile} 
+        loading={loading} 
+        userId={user?.uid} 
+      />
+    );
   }
 
   // Loading state

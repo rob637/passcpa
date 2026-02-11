@@ -113,6 +113,10 @@ const You: React.FC = () => {
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
   
+  // Single-exam courses should aggregate ALL domains/sections (one exam = one set of stats)
+  const singleExamCourses = ['cisa', 'cfp', 'cia'];
+  const isSingleExamCourse = singleExamCourses.includes(courseId || '');
+  
   // Initialize with current week's dates (Mon-Sun) for consistent chart rendering
   const getInitialWeeklyActivity = () => {
     const start = startOfWeek(new Date(), { weekStartsOn: 1 });
@@ -177,19 +181,31 @@ const You: React.FC = () => {
             }
 
             const dateKey = format(date, 'yyyy-MM-dd');
-            const logRef = doc(db, 'users', user.uid, 'daily_log', dateKey);
+            // Use course-specific daily log ID
+            const dailyLogId = `${courseId}_${dateKey}`;
+            const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
             const logSnap = await getDoc(logRef);
 
             if (logSnap.exists()) {
               const data = logSnap.data();
               
-              // Filter activities by current section for section-specific stats
+              // Filter activities by section(s) for stats
+              // For single-exam courses (CISA, CFP, CIA), include ALL sections for aggregate stats
               const activities = data.activities || [];
               const sectionActivities = activities.filter(
-                (a: { section?: string; type?: string }) => 
-                  a.section === examSection || 
-                  // Include legacy activities without section (before this update)
-                  (!a.section && a.type === 'mcq')
+                (a: { section?: string; type?: string; courseId?: string }) => {
+                  // For single-exam courses, match by courseId or section prefix
+                  if (isSingleExamCourse) {
+                    return a.courseId === courseId || 
+                           (a.section && a.section.toUpperCase().startsWith(courseId?.toUpperCase() || '')) ||
+                           // Include legacy activities without section
+                           (!a.section && a.type === 'mcq');
+                  }
+                  // For multi-exam courses (CPA, CMA, EA), filter by exact section
+                  return a.section === examSection || 
+                         // Include legacy activities without section (before this update)
+                         (!a.section && a.type === 'mcq');
+                }
               );
               
               // Count section-specific MCQs
@@ -228,25 +244,40 @@ const You: React.FC = () => {
         
         setWeeklyActivity(dailyData);
 
-        // Get topic performance (section-filtered)
+        // Get topic performance (section-filtered, or all sections for single-exam courses)
         let topicsData: { id: string; topic: string; accuracy: number; questions: number }[] = [];
         if (getTopicPerformance) {
-          topicsData = await getTopicPerformance(examSection);
+          // For single-exam courses, pass undefined to get all sections
+          topicsData = await getTopicPerformance(isSingleExamCourse ? undefined : examSection);
         }
         setTopicPerformance(topicsData);
 
-        // Get lesson progress for section
+        // Get lesson progress for section (or all sections for single-exam courses)
         let lessonsCompletedCount = 0;
         if (getLessonProgress) {
           const lessonProgress = await getLessonProgress();
           lessonsCompletedCount = Object.values(lessonProgress).filter(
-            (lesson: any) => lesson.section === examSection && lesson.progress >= 100
+            (lesson: any) => {
+              // Check completion: either status === 'completed' OR progress >= 100
+              const isCompleted = lesson.status === 'completed' || lesson.progress >= 100;
+              if (!isCompleted) return false;
+              
+              // For single-exam courses, count all sections (they're all for one exam)
+              if (isSingleExamCourse) {
+                return lesson.courseId === courseId || 
+                       (lesson.section && lesson.section.toUpperCase().startsWith(courseId?.toUpperCase() || ''));
+              }
+              // For multi-exam courses, filter by specific section
+              return lesson.section === examSection;
+            }
           ).length;
         }
 
-        // Get total lessons for section
+        // Get total lessons for section (or all sections for single-exam courses)
         const allLessons = await fetchAllLessons(courseId);
-        const sectionLessons = allLessons.filter(l => l.section === examSection);
+        const sectionLessons = isSingleExamCourse 
+          ? allLessons // All lessons count for single-exam courses
+          : allLessons.filter(l => l.section === examSection);
         const totalLessonsCount = sectionLessons.length;
 
         setOverallStats({

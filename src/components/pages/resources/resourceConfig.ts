@@ -958,13 +958,13 @@ const CISA_RESOURCES: CourseResourceConfig = {
   strategyContent: {
     examStructure: {
       sections: [
-        { name: 'IS Audit Process', code: 'Domain 1', duration: 'n/a', questionTypes: [{ type: 'MCQ', count: '~26', weight: '17%' }], passingScore: 'Combined 450/800' },
-        { name: 'IT Governance & Management', code: 'Domain 2', duration: 'n/a', questionTypes: [{ type: 'MCQ', count: '~26', weight: '17%' }], passingScore: 'Combined' },
-        { name: 'IS Acquisition & Development', code: 'Domain 3', duration: 'n/a', questionTypes: [{ type: 'MCQ', count: '~18', weight: '12%' }], passingScore: 'Combined' },
-        { name: 'IS Operations & Resilience', code: 'Domain 4', duration: 'n/a', questionTypes: [{ type: 'MCQ', count: '~41', weight: '27%' }], passingScore: 'Combined' },
-        { name: 'Protection of Information Assets', code: 'Domain 5', duration: 'n/a', questionTypes: [{ type: 'MCQ', count: '~41', weight: '27%' }], passingScore: 'Combined' },
+        { name: 'IS Audit Process', code: 'Domain 1', duration: '~41 min', questionTypes: [{ type: 'MCQ', count: '~26', weight: '17%' }], passingScore: 'Combined 450/800' },
+        { name: 'IT Governance & Management', code: 'Domain 2', duration: '~41 min', questionTypes: [{ type: 'MCQ', count: '~26', weight: '17%' }], passingScore: 'Combined' },
+        { name: 'IS Acquisition & Development', code: 'Domain 3', duration: '~29 min', questionTypes: [{ type: 'MCQ', count: '~18', weight: '12%' }], passingScore: 'Combined' },
+        { name: 'IS Operations & Resilience', code: 'Domain 4', duration: '~65 min', questionTypes: [{ type: 'MCQ', count: '~41', weight: '27%' }], passingScore: 'Combined' },
+        { name: 'Protection of Information Assets', code: 'Domain 5', duration: '~65 min', questionTypes: [{ type: 'MCQ', count: '~41', weight: '27%' }], passingScore: 'Combined' },
       ],
-      totalTime: '4 hours (150 questions)',
+      totalTime: '4 hours (150 questions, time pooled across domains)',
       testingWindow: 'Year-round at PSI testing centers',
       retakePolicy: 'Must wait 30 days between attempts',
     },

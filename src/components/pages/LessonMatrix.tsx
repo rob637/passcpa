@@ -8,7 +8,8 @@ import {
   AlertTriangle,
   Calendar,
   AlertCircle,
-  Sparkles
+  Sparkles,
+  ArrowLeft
 } from 'lucide-react';
 import { fetchAllLessons } from '../../services/lessonService';
 import { useCourse } from '../../providers/CourseProvider';
@@ -187,6 +188,7 @@ const LessonMatrix: React.FC = () => {
   // Read initial values from URL params (for deep linking from Practice)
   const initialSection = searchParams.get('section')?.toUpperCase() || 'ALL';
   const initialSearch = searchParams.get('blueprintArea') || '';
+  const returnTo = searchParams.get('returnTo'); // For returning to practice
   
   const [search, setSearch] = useState(initialSearch);
   const [sectionFilter, setSectionFilter] = useState<string>(initialSection);
@@ -271,6 +273,17 @@ const LessonMatrix: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
+      {/* Back to Practice Button - when coming from practice session */}
+      {returnTo && (
+        <button
+          onClick={() => navigate(returnTo)}
+          className="mb-4 inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 rounded-lg transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Practice
+        </button>
+      )}
+
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
@@ -448,7 +461,7 @@ const LessonMatrix: React.FC = () => {
                     <tr 
                       key={lesson.id} 
                       className="hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors cursor-pointer group focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
-                      {...getAccessibleClickProps(() => navigate(`/lessons/${lesson.id}`))}
+                      {...getAccessibleClickProps(() => navigate(returnTo ? `/lessons/${lesson.id}?returnTo=${encodeURIComponent(returnTo)}` : `/lessons/${lesson.id}`))}
                       aria-label={`Open lesson: ${lesson.title}`}
                     >
                       <td className="p-4 whitespace-nowrap">

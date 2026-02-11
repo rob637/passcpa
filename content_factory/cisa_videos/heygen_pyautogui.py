@@ -86,13 +86,17 @@ COORDS = {
 
 
 def calibrate():
-    """Interactive calibration to find coordinates."""
+    """Interactive calibration to find coordinates using countdown timer."""
     print("\n" + "="*60)
     print("CALIBRATION MODE")
     print("="*60)
     print("\nI'll guide you through finding the coordinates.")
-    print("Move your mouse to each location and press ENTER.")
-    print("Press Ctrl+C to exit at any time.\n")
+    print("For each element:")
+    print("  1. Read what to find")
+    print("  2. Press ENTER to start 3-second countdown")  
+    print("  3. Quickly move your mouse to that element")
+    print("  4. Hold still - position captured after 3 seconds")
+    print("\nPress Ctrl+C to exit at any time.\n")
     
     coords_to_find = [
         ("title", "the 'Untitled Video' title text (upper left)"),
@@ -117,24 +121,30 @@ def calibrate():
     results = {}
     
     for key, description in coords_to_find:
-        input(f"\nMove mouse to: {description}\nThen press ENTER...")
+        input(f"\nNext: {description}\nPress ENTER, then move mouse there within 3 seconds...")
+        
+        # Countdown
+        for i in range(3, 0, -1):
+            print(f"  {i}...", end=" ", flush=True)
+            time.sleep(1)
+        
         x, y = pyautogui.position()
         results[key] = (x, y)
-        print(f"  → Saved: {key} = ({x}, {y})")
+        print(f"\n  ✓ Saved: {key} = ({x}, {y})")
     
     print("\n" + "="*60)
     print("CALIBRATION COMPLETE!")
     print("="*60)
-    print("\nCopy this into the COORDS dict in heygen_pyautogui.py:\n")
-    print("COORDS = {")
-    for key, (x, y) in results.items():
-        print(f'    "{key}": ({x}, {y}),')
-    print("}")
+    print("\nCoordinates saved to coords.json")
     
     # Save to file
     with open("coords.json", "w") as f:
         json.dump(results, f, indent=2)
-    print("\nAlso saved to coords.json")
+    
+    # Print for reference
+    print("\nYour coordinates:")
+    for key, (x, y) in results.items():
+        print(f"  {key}: ({x}, {y})")
     
     return results
 

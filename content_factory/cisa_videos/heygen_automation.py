@@ -236,6 +236,29 @@ class HeyGenAutomation:
             self.page.screenshot(path=str(debug_path))
             logger.info(f"[DEBUG] After AI studio click: {debug_path}")
             
+            # Select the specified avatar
+            # The avatar panel is on the right side - click on the avatar name to open selection
+            try:
+                # Look for the Avatar section and click to open avatar picker
+                avatar_section = self.page.locator('text="Avatar"').first
+                if avatar_section:
+                    avatar_section.click()
+                    time.sleep(1)
+                    
+                    # Now search/select the specific avatar
+                    # Try to find the avatar by name in the picker
+                    avatar_option = self.page.locator(f'text="{avatar_to_use}"').first
+                    if avatar_option:
+                        avatar_option.click()
+                        time.sleep(1)
+                        logger.info(f"[OK] Selected avatar: {avatar_to_use}")
+                    else:
+                        logger.warning(f"[WARN] Avatar '{avatar_to_use}' not found, using default")
+            except Exception as e:
+                logger.warning(f"[WARN] Could not select avatar: {e}")
+            
+            time.sleep(1)
+            
             # Read script
             with open(script_file, 'r', encoding='utf-8') as f:
                 script_text = f.read()

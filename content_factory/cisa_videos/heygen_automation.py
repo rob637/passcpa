@@ -240,57 +240,60 @@ class HeyGenAutomation:
             with open(script_file, 'r', encoding='utf-8') as f:
                 script_text = f.read()
             
-            # The script input area - try multiple approaches
-            # Based on screenshot: "Type your script or use '/' for commands"
-            script_area = None
+            # HeyGen uses a rich text editor for scripts
+            # We need to click in the editable area and type
             
-            # Try 1: Click on the placeholder text directly
+            # First, find the Script section in the left panel
+            # Look for the editable area with the placeholder
+            script_entered = False
+            
+            # Method 1: Click on placeholder text "Type your script"
             try:
-                placeholder = self.page.wait_for_selector(
-                    'text="Type your script"',
-                    timeout=5000
-                )
-                placeholder.click()
-                time.sleep(0.5)
-                script_area = True  # We clicked it, now just type
-                logger.info("[OK] Found script area via placeholder text")
-            except:
-                pass
-            
-            # Try 2: Look for contenteditable or textarea
-            if not script_area:
-                try:
-                    script_area = self.page.wait_for_selector(
-                        '[contenteditable="true"], textarea, [placeholder*="script"]',
-                        timeout=5000
-                    )
-                    script_area.click()
+                # The placeholder contains this text
+                placeholder = self.page.locator('text="Type your script"').first
+                if placeholder:
+                    placeholder.click()
                     time.sleep(0.5)
-                    logger.info("[OK] Found script area via selector")
-                except:
-                    pass
+                    # Now type the script
+                    self.page.keyboard.type(script_text[:2000], delay=10)
+                    script_entered = True
+                    logger.info("[OK] Entered script via placeholder click")
+            except Exception as e:
+                logger.warning(f"Method 1 failed: {e}")
             
-            # Try 3: Click on the Script panel header area directly
-            if not script_area:
-                # The Script section is in the left panel - click near it
-                script_header = self.page.query_selector('text="Script"')
-                if script_header:
-                    # Click below the Script header where the input would be
-                    box = script_header.bounding_box()
-                    if box:
-                        self.page.mouse.click(box['x'] + 100, box['y'] + 50)
+            # Method 2: Look for the contenteditable div in the Script section
+            if not script_entered:
+                try:
+                    # Find contenteditable within the left panel
+                    editor = self.page.locator('[contenteditable="true"]').first
+                    if editor:
+                        editor.click()
                         time.sleep(0.5)
-                        script_area = True
-                        logger.info("[OK] Clicked below Script header")
+                        # Select all and replace
+                        self.page.keyboard.press("Control+a")
+                        time.sleep(0.2)
+                        self.page.keyboard.type(script_text[:2000], delay=10)
+                        script_entered = True
+                        logger.info("[OK] Entered script via contenteditable")
+                except Exception as e:
+                    logger.warning(f"Method 2 failed: {e}")
             
-            if not script_area:
-                raise Exception("Could not find script input area")
+            # Method 3: Click in the script panel area by coordinates
+            if not script_entered:
+                try:
+                    # The script panel is on the left side, roughly at x=200, y=200
+                    self.page.mouse.click(250, 200)
+                    time.sleep(0.5)
+                    self.page.keyboard.type(script_text[:2000], delay=10)
+                    script_entered = True
+                    logger.info("[OK] Entered script via coordinate click")
+                except Exception as e:
+                    logger.warning(f"Method 3 failed: {e}")
             
-            # Clear any existing content and type new script
-            self.page.keyboard.press("Control+a")
-            time.sleep(0.2)
-            self.page.keyboard.type(script_text[:3000], delay=5)  # Limit length, type slowly
-            time.sleep(2)
+            if not script_entered:
+                logger.error("[ERROR] Could not enter script - all methods failed")
+            
+            time.sleep(1)
             
             # Debug screenshot - see if script was entered
             debug_path2 = Path(__file__).parent / "output" / f"debug_after_script_{int(time.time())}.png"

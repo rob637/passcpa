@@ -85,6 +85,45 @@ COORDS = {
 }
 
 
+def calibrate_quick():
+    """Quick recalibration for just title and script (5-second countdown)."""
+    print("\n" + "="*60)
+    print("QUICK RECALIBRATION: Title & Script only")
+    print("="*60)
+    print("\nYou have 5 seconds per element. Move mouse and hold still.\n")
+    
+    # Load existing coords
+    coords_file = Path("coords.json")
+    if coords_file.exists():
+        with open(coords_file) as f:
+            results = json.load(f)
+    else:
+        results = {}
+    
+    coords_to_find = [
+        ("title", "TITLE field - click INSIDE the 'Untitled Video' text box"),
+        ("script", "SCRIPT area - click INSIDE the text area where you type the script"),
+    ]
+    
+    for key, description in coords_to_find:
+        print(f"\n>>> {description}")
+        print("Move mouse there now! 5 seconds...")
+        
+        for i in range(5, 0, -1):
+            print(f"  {i}...", end=" ", flush=True)
+            time.sleep(1)
+        
+        x, y = pyautogui.position()
+        results[key] = [x, y]
+        print(f"\n  ✓ Saved: {key} = ({x}, {y})")
+    
+    with open("coords.json", "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print("\n✓ Updated coords.json with new title & script positions")
+    return results
+
+
 def calibrate():
     """Interactive calibration to find coordinates using countdown timer."""
     print("\n" + "="*60)
@@ -384,6 +423,8 @@ if __name__ == "__main__":
     
     if "--calibrate" in sys.argv:
         calibrate()
+    elif "--remap" in sys.argv:
+        calibrate_quick()
     elif "--test" in sys.argv:
         test_single()
     else:

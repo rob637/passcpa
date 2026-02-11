@@ -1,0 +1,37 @@
+Hey everyone, and welcome! Did you know that fraud-related questions are a major stumbling block on the SEE-sah exam? ... It’s not just about identifying fraud, it's about what you do when you find it. Mess this up, and you’re not just losing points on the exam, you're potentially failing to protect the organization you're auditing. ... Today, we're tackling the critical first steps in fraud response.
+
+Okay, let's build a strong foundation here. ... What exactly is fraud in the context of information systems auditing? Simply put, it's any intentional act designed to deceive or misappropriate assets, involving information systems. This could be anything from unauthorized access to data manipulation to outright theft using technology. ... Key terms to remember are: fraud risk, fraud prevention, fraud detection, and fraud response. We're focusing on that last one: response.
+
+Why does this matter for IS auditors? Well, you are the gatekeepers of information integrity and security. You're not just checking boxes; you're safeguarding the organization's assets and reputation. ... Think about a real-world scenario: you're auditing a financial institution and discover anomalies in transaction logs suggesting potential embezzlement. ... Your response is crucial. A misstep could jeopardize the investigation, alert the perpetrators, and cause irreparable damage. The SEE-sah exam tests your ability to navigate these situations ethically and effectively.
+
+Now, let’s talk about the exam traps. eye-SAH-kah loves to test your understanding of the correct sequence of actions. ...
+
+First, watch out for questions that emphasize immediate investigation as the first step. While investigation is important, it's NOT your initial action. ... Remember, you're an auditor, not a detective. Your primary role is to report, not investigate.
+
+Second, don't confuse reporting with confronting. The correct answer will almost never involve directly confronting the suspected perpetrator. That's the role of management and law enforcement. ... Confrontation can compromise the investigation and potentially put you at risk.
+
+Third, the answer that looks right but isn't, often involves "immediately notifying senior management." While notifying management is essential, it's not the very first thing you do. ... There's a crucial step before notification.
+
+Fourth, be wary of answers that suggest immediately implementing new controls. While strengthening controls is a good long-term strategy, it’s not the immediate response to discovering fraud. ... Your first action should be more cautious and focused on ensuring the integrity of the evidence.
+
+Let's dive into a specific example. ... Let's say you're auditing a retail company's e-commerce platform and you find evidence of suspicious transactions originating from a single IP address, repeatedly purchasing high-value items with different stolen credit cards. ... The transactions are being shipped to a single drop address. What's your first move?
+
+Here's the step-by-step approach, according to SEE-sah best practices:
+
+1. Acknowledge: Recognize that you have potentially uncovered a fraudulent activity. Don't ignore it, hoping it will disappear.
+
+2. Document: Carefully document all the evidence you've found: the IP address, the transaction logs, the shipping address, and any other relevant data. ... Ensure the documentation is secure and tamper-proof. This is critical for any future investigation.
+
+3. Notify: Immediately notify the appropriate authority. Who is this? The audit committee or a designated senior manager. This is the key. ... They are responsible for initiating a formal investigation. This is usually the correct answer.
+
+4. Secure: Secure the evidence and the system. While you aren't investigating, you need to ensure that the evidence isn't tampered with and that the fraudulent activity is contained as much as possible without alerting the perpetrator.
+
+Now, how can we remember this under exam pressure? ... Think of the acronym DAN-S: Document, Acknowledge, Notify, Secure. DAN-S is your fraud response dance! ... Visualize yourself doing a little jig, remembering each step. It’s silly, but it works! Or, think of it like a doctor: you diagnose (acknowledge), record (document), refer (notify), and stabilize (secure).
+
+Okay, let's wrap this up. ... If you remember nothing else, remember these three things:
+
+1. Document, Document, Document: Impeccable documentation is paramount.
+2. Notify the Audit Committee or Designated Senior Manager: This is your primary responsibility as an IS auditor in this situation.
+3. DAN-S: Use the memory technique to recall the correct sequence.
+
+You've got this! ... Understanding the correct fraud response is crucial, not only for passing the SEE-sah exam but also for protecting your organization in the real world. Now go out there and ace that exam!

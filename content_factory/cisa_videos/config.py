@@ -34,12 +34,12 @@ AVATARS = [
 # =============================================================================
 USE_DEFAULT_STUDIO_BACKGROUND = False  # Use our custom backgrounds
 
-# Our 4 professional office backgrounds (blurred business settings)
+# Our 4 professional gradient backgrounds (landscape 1920x1080)
 BACKGROUNDS = [
-    "bg_office_1.png",
-    "bg_office_2.png",
-    "bg_office_3.png",
-    "bg_office_4.png",
+    "bg_corporate_blue.png",   # Deep blue to navy - corporate, trustworthy
+    "bg_modern_teal.png",      # Teal gradient - modern, tech
+    "bg_slate_gray.png",       # Slate gray - neutral, professional
+    "bg_executive_dark.png",   # Navy to charcoal - executive
 ]
 
 # Brand colors (for future use)

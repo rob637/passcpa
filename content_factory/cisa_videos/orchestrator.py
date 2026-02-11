@@ -288,7 +288,10 @@ class CISAVideoPipeline:
             
             data = json.loads(result.stdout)
             if not data.get("success"):
-                raise Exception(data.get("error", "Unknown error"))
+                error_msg = data.get("error", "Unknown error")
+                if data.get("traceback"):
+                    self.logger.debug(f"Traceback:\n{data.get('traceback')}")
+                raise Exception(error_msg)
             
             video_id = data.get("video_id")
             if video_id:

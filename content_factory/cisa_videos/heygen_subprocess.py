@@ -13,47 +13,81 @@ Usage:
 import sys
 import json
 import argparse
+import traceback
 
 
 def create_video(script_file: str, background_file: str, avatar_id: str, title: str) -> dict:
     """Create a video in HeyGen."""
     from heygen_automation import HeyGenAutomation
     
+    heygen = None
     try:
-        with HeyGenAutomation() as heygen:
-            video_id = heygen.create_video(
-                script_file=script_file,
-                background_file=background_file,
-                avatar_id=avatar_id,
-                title=title
-            )
-        return {"success": True, "video_id": video_id}
+        heygen = HeyGenAutomation()
+        heygen.start()
+        video_id = heygen.create_video(
+            script_file=script_file,
+            background_file=background_file,
+            avatar_id=avatar_id,
+            title=title
+        )
+        if video_id:
+            return {"success": True, "video_id": video_id}
+        else:
+            # Check for error screenshot
+            import os
+            from pathlib import Path
+            output_dir = Path(__file__).parent / "output"
+            screenshots = sorted(output_dir.glob("error_*.png"), reverse=True)
+            hint = f"Check {screenshots[0]}" if screenshots else "No screenshot captured"
+            return {"success": False, "error": f"create_video returned None. {hint}"}
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        return {"success": False, "error": str(e), "traceback": traceback.format_exc()}
+    finally:
+        if heygen:
+            try:
+                heygen.stop()
+            except:
+                pass
 
 
 def check_status(video_id: str) -> dict:
     """Check video status in HeyGen."""
     from heygen_automation import HeyGenAutomation
     
+    heygen = None
     try:
-        with HeyGenAutomation() as heygen:
-            status, download_url = heygen.check_video_status(video_id)
+        heygen = HeyGenAutomation()
+        heygen.start()
+        status, download_url = heygen.check_video_status(video_id)
         return {"success": True, "status": status, "download_url": download_url}
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        return {"success": False, "error": str(e), "traceback": traceback.format_exc()}
+    finally:
+        if heygen:
+            try:
+                heygen.stop()
+            except:
+                pass
 
 
 def download_video(video_id: str, output_file: str) -> dict:
     """Download completed video."""
     from heygen_automation import HeyGenAutomation
     
+    heygen = None
     try:
-        with HeyGenAutomation() as heygen:
-            heygen.download_video(video_id, output_file)
+        heygen = HeyGenAutomation()
+        heygen.start()
+        heygen.download_video(video_id, output_file)
         return {"success": True, "file": output_file}
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        return {"success": False, "error": str(e), "traceback": traceback.format_exc()}
+    finally:
+        if heygen:
+            try:
+                heygen.stop()
+            except:
+                pass
 
 
 def main():

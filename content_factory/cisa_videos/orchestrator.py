@@ -242,12 +242,9 @@ class CISAVideoPipeline:
             avatar = combo['avatar']
             background_filename = combo['background']
             
-            # Get full path to static background
+            # Background: using HeyGen's default studio (not our custom backgrounds)
+            # The background_file is kept for compatibility but not uploaded to HeyGen
             bg_file = get_background_path(background_filename)
-            
-            # Verify background exists
-            if not Path(bg_file).exists():
-                raise Exception(f"Background not found: {bg_file}. Run create_backgrounds.py first.")
             
             self.state.update_task(
                 task.id,
@@ -256,7 +253,8 @@ class CISAVideoPipeline:
                 avatar_id=avatar['id'],
                 avatar_name=avatar['name']
             )
-            self.logger.info(f"[OK] Assigned: {avatar['name']} ({avatar['id']}) with {background_filename}")
+            self.logger.info(f"[OK] Assigned presenter: {avatar['name']} ({avatar['id']})")
+            self.logger.info(f"     (Using HeyGen's default studio background)")
                 
         except Exception as e:
             self.handle_task_error(task, f"Presenter assignment failed: {e}")

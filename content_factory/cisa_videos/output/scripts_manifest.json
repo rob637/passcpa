@@ -1,0 +1,83 @@
+[
+  {
+    "id": "CISA-VIDEO-001",
+    "topic": "Outsourcing",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/01_Outsourcing.txt",
+    "script_preview": "Hey everyone, and welcome! Are you ready to tackle the CISA exam? <break time='0.5s' /> Because today, we're diving into a topic that trips up way too many people: outsourcing. <break time='1.0s' /> D...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-002",
+    "topic": "Risk-Based Audit Planning",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/02_Risk-Based_Audit_Planning.txt",
+    "script_preview": "Hey everyone, welcome back to the channel! You know, the CISA exam isn\u2019t a walk in the park. <break time='1.0s' /> A lot of really smart people stumble, especially when it comes to risk-based audit pl...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-003",
+    "topic": "Third-Party Audits",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/03_Third-Party_Audits.txt",
+    "script_preview": "Hey everyone, and welcome! Did you know that third-party audits are consistently a stumbling block for CISA candidates? <break time='1.0s' /> Many get tripped up on the nuances of cloud auditing and o...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-005",
+    "topic": "Fraud",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/05_Fraud.txt",
+    "script_preview": "Hey everyone, and welcome! Did you know that fraud-related questions are a major stumbling block on the CISA exam? <break time='1.0s' /> It\u2019s not just about identifying fraud, it's about *what you do*...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-006",
+    "topic": "IT General Controls",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/06_IT_General_Controls.txt",
+    "script_preview": "Hey everyone, welcome back to the channel! Did you know that a surprisingly large number of people fail the CISA exam, and it\u2019s often because they stumble on seemingly simple concepts like IT General ...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-007",
+    "topic": "Cloud Audit",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/07_Cloud_Audit.txt",
+    "script_preview": "Hey everyone, welcome back to the channel! You know, the CISA exam can be brutal. <break time='1.0s' /> A lot of people struggle, and often it's not because they don't know the material, but because t...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-008",
+    "topic": "Audit Materiality",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/08_Audit_Materiality.txt",
+    "script_preview": "Hey everyone, and welcome! Did you know that \"materiality\" is one of the biggest stumbling blocks for CISA candidates? <break time='1.0s' /> It\u2019s often underestimated, but mastering materiality judgme...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-009",
+    "topic": "Estimation",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/09_Estimation.txt",
+    "script_preview": "Hey everyone, and welcome! <break time='0.5s' /> I'm here to help you conquer the CISA exam. Did you know that a significant number of people fail the Information Systems Auditing Process domain? <bre...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-010",
+    "topic": "System Modeling",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/10_System_Modeling.txt",
+    "script_preview": "Hey everyone, welcome back to the channel! <break time='1.0s' /> Feeling a little shaky about Data Flow Diagrams? You're not alone. DFDs are a surprisingly common stumbling block on the CISA exam, and...",
+    "difficulty_score": 3.0
+  }
+]

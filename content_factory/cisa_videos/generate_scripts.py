@@ -60,10 +60,10 @@ def generate_script(topic_data):
                 "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {
                     "temperature": 0.7,
-                    "maxOutputTokens": 1000
+                    "maxOutputTokens": 2500  # ~1200 words for 8-min videos
                 }
             },
-            timeout=60
+            timeout=90  # Longer timeout for comprehensive scripts
         )
         response.raise_for_status()
         

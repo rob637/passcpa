@@ -231,6 +231,43 @@ class HeyGenAutomation:
             ai_studio_btn.click()
             time.sleep(5)  # Wait for editor to load
             
+            # =========================================================
+            # SET LANDSCAPE MODE (16:9) - button is near the title bar
+            # =========================================================
+            try:
+                # Look for landscape/16:9 button near title
+                landscape_selectors = [
+                    'button[aria-label*="Landscape"]',
+                    'button[aria-label*="16:9"]',
+                    '[data-testid="landscape"]',
+                    'button:has-text("16:9")',
+                    # The layout icon button near title
+                    'button[class*="aspect"]',
+                ]
+                for selector in landscape_selectors:
+                    landscape_btn = self.page.locator(selector).first
+                    if landscape_btn and landscape_btn.is_visible():
+                        landscape_btn.click()
+                        logger.info("[OK] Clicked landscape/16:9 button")
+                        time.sleep(1)
+                        break
+                else:
+                    # Try clicking by position - landscape button is typically in header area
+                    # Look for any button with landscape icon near top
+                    header_buttons = self.page.locator('header button, [class*="header"] button').all()
+                    for btn in header_buttons[:5]:
+                        try:
+                            btn_text = btn.inner_text().lower()
+                            if '16' in btn_text or 'landscape' in btn_text:
+                                btn.click()
+                                logger.info("[OK] Clicked landscape via header scan")
+                                time.sleep(1)
+                                break
+                        except:
+                            pass
+            except Exception as e:
+                logger.warning(f"[WARN] Could not set landscape mode: {e}")
+            
             # Debug screenshot - see what page we're on
             debug_path = Path(__file__).parent / "output" / f"debug_after_ai_studio_{int(time.time())}.png"
             self.page.screenshot(path=str(debug_path))
@@ -278,6 +315,73 @@ class HeyGenAutomation:
                 logger.warning(f"[WARN] Could not select avatar: {e}")
             
             time.sleep(1)
+            
+            # =========================================================
+            # SET BACKGROUND - Upload our custom office background
+            # =========================================================
+            try:
+                # In the right panel, find "Avatar Background" section
+                # Click "Customize" to open the background picker
+                customize_btn = self.page.locator('text="Customize"').first
+                if customize_btn and customize_btn.is_visible():
+                    customize_btn.click()
+                    logger.info("[OK] Clicked Customize background")
+                    time.sleep(2)
+                    
+                    # Look for "Upload" tab/button in the background picker
+                    upload_selectors = [
+                        'text="Upload"',
+                        'button:has-text("Upload")',
+                        '[data-testid="upload-tab"]',
+                        'text="My uploads"',
+                        'text="Custom"',
+                    ]
+                    for selector in upload_selectors:
+                        upload_tab = self.page.locator(selector).first
+                        if upload_tab and upload_tab.is_visible():
+                            upload_tab.click()
+                            logger.info("[OK] Clicked Upload tab")
+                            time.sleep(1)
+                            break
+                    
+                    # Now upload the background file
+                    # Look for file input or upload button
+                    if background_file and os.path.exists(background_file):
+                        # Find the file input element
+                        file_input = self.page.locator('input[type="file"]').first
+                        if file_input:
+                            file_input.set_input_files(background_file)
+                            logger.info(f"[OK] Uploaded background: {background_file}")
+                            time.sleep(3)  # Wait for upload
+                        else:
+                            # Try clicking an upload area/button that triggers file dialog
+                            upload_area = self.page.locator('[class*="upload"], [class*="dropzone"], button:has-text("Upload")').first
+                            if upload_area:
+                                # Use file chooser
+                                with self.page.expect_file_chooser() as fc_info:
+                                    upload_area.click()
+                                file_chooser = fc_info.value
+                                file_chooser.set_files(background_file)
+                                logger.info(f"[OK] Uploaded background via file chooser: {background_file}")
+                                time.sleep(3)
+                    else:
+                        logger.warning(f"[WARN] Background file not found: {background_file}")
+                        # Fall back to first available or recently uploaded
+                        first_bg = self.page.locator('[class*="thumbnail"] img, [class*="background-item"] img').first
+                        if first_bg and first_bg.is_visible():
+                            first_bg.click()
+                            logger.info("[OK] Selected first available background")
+                            time.sleep(1)
+                    
+                    # Close the picker if there's a confirm/apply button
+                    apply_btn = self.page.locator('button:has-text("Apply"), button:has-text("Done"), button:has-text("Select"), button:has-text("Use")').first
+                    if apply_btn and apply_btn.is_visible():
+                        apply_btn.click()
+                        time.sleep(1)
+                else:
+                    logger.warning("[WARN] Customize button not found")
+            except Exception as e:
+                logger.warning(f"[WARN] Could not set background: {e}")
             
             # Read script
             with open(script_file, 'r', encoding='utf-8') as f:

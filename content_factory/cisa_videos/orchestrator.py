@@ -242,8 +242,7 @@ class CISAVideoPipeline:
             avatar = combo['avatar']
             background_filename = combo['background']
             
-            # Background: using HeyGen's default studio (not our custom backgrounds)
-            # The background_file is kept for compatibility but not uploaded to HeyGen
+            # Use our custom office backgrounds
             bg_file = get_background_path(background_filename)
             
             self.state.update_task(
@@ -254,7 +253,7 @@ class CISAVideoPipeline:
                 avatar_name=avatar['name']
             )
             self.logger.info(f"[OK] Assigned presenter: {avatar['name']} ({avatar['id']})")
-            self.logger.info(f"     (Using HeyGen's default studio background)")
+            self.logger.info(f"     Background: {background_filename}")
                 
         except Exception as e:
             self.handle_task_error(task, f"Presenter assignment failed: {e}")

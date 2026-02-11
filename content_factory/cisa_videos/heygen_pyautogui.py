@@ -217,7 +217,11 @@ def load_coords():
 def click(name, double=False):
     """Click at a named coordinate."""
     coords = load_coords()
-    x, y = coords.get(name, COORDS.get(name))
+    coord = coords.get(name) or COORDS.get(name)
+    if coord is None:
+        logger.error(f"  ERROR: No coordinates found for '{name}'! Check coords.json or run --remap")
+        return
+    x, y = coord
     logger.info(f"{'Double-' if double else ''}Clicking {name} at ({x}, {y})")
     if double:
         pyautogui.doubleClick(x, y)

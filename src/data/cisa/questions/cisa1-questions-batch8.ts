@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-178',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Which sampling method is MOST appropriate when the IS auditor wants to ensure representation of all significant transaction types?',
     options: [
       'Random sampling',
@@ -130,7 +130,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-180',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IS auditor discovers that IT personnel have been asked to perform self-assessments of controls they operate. This situation represents:',
     options: [
       'An efficient use of resources',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-184',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When documenting audit workpapers, which of the following is MOST important?',
     options: [
       'Using standardized templates for all audits',
@@ -266,7 +266,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-188',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Before relying on work performed by another auditor, an IS auditor should:',
     options: [
       'Assume the work is accurate if from a reputable firm',
@@ -300,7 +300,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-190',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The IS auditor is planning an audit of a cloud-based application. Which of the following is MOST important to include in the audit scope?',
     options: [
       'Physical security of the cloud provider\'s data center',
@@ -402,7 +402,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-196',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit planning should be risk-based primarily to ensure:',
     options: [
       'Compliance with audit standards',
@@ -436,7 +436,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-198',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The BEST way for an IS auditor to verify management assertions about automated controls is to:',
     options: [
       'Obtain written representations from management',
@@ -504,7 +504,7 @@ export const CISA1_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA1-202',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IS auditor notes that a control is described differently in the policy and procedure documents. The auditor should FIRST:',
     options: [
       'Report an inconsistency finding',

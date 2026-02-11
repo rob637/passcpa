@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-157',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Immutable logging ensures:',
     options: [
       'Log deletion capability',
@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-158',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Geo-redundancy planning considers:',
     options: [
       'Only cost savings',
@@ -147,7 +147,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-161',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT asset disposition (ITAD) must ensure:',
     options: [
       'Only cost recovery',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-164',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Event correlation in SIEM helps identify:',
     options: [
       'Only single events',
@@ -232,7 +232,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-166',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Chaos testing in production should:',
     options: [
       'Never be done',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-170',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Post-incident reviews should focus on:',
     options: [
       'Blame assignment',
@@ -334,7 +334,7 @@ export const CISA4_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA4-172',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Capacity planning for cloud resources should consider:',
     options: [
       'Only current usage',

@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-178',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Change management should ensure all changes are:',
     options: [
       'Approved by developers only',
@@ -130,7 +130,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-180',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Problem management differs from incident management in that problem management:',
     options: [
       'Focuses on immediate service restoration',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-184',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The purpose of a business impact analysis (BIA) is to:',
     options: [
       'Select disaster recovery technology',
@@ -266,7 +266,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-188',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'SLA monitoring should include:',
     options: [
       'Only annual reviews',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-190',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The 3-2-1 backup rule recommends:',
     options: [
       'Three copies on two media with one offsite',
@@ -402,7 +402,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-196',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The purpose of configuration item (CI) records is to:',
     options: [
       'Track software licenses only',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-198',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Operations runbooks should include:',
     options: [
       'Only emergency procedures',
@@ -504,7 +504,7 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA4-202',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Incident lessons learned should:',
     options: [
       'Be kept confidential from all staff',

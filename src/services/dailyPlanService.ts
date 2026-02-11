@@ -42,6 +42,7 @@ export interface DailyActivity {
     topic?: string;
     topics?: string[];
     questionCount?: number;
+    cardCount?: number; // For flashcard sessions
     difficulty?: string;
     mode?: string;
     timeLimit?: number; // For timed quiz
@@ -274,18 +275,20 @@ export const generateDailyPlan = async (
   // 3. MEDIUM: Flashcard review if cards are due (priority review)
   // Note: We also add general flashcard practice in section 5d
   if (state.flashcardsDue > 5 && remainingMinutes >= 10) {
+    const flashcardCount = Math.min(state.flashcardsDue, 20); // Cap at 20 cards per session
     activities.push({
       id: `flashcards-due-${today}`,
       type: 'flashcards',
       title: 'Urgent Flashcard Review',
       description: `${state.flashcardsDue} cards need review today`,
       estimatedMinutes: ACTIVITY_DURATION.flashcards,
-      points: Math.min(state.flashcardsDue, 20) * POINT_VALUES.flashcard_review,
+      points: flashcardCount * POINT_VALUES.flashcard_review,
       priority: 'high', // Elevated to high when many cards due
       reason: 'Spaced repetition - review these before you forget them',
       params: {
         section: state.section,
         mode: 'review',
+        cardCount: flashcardCount,
       },
     });
     remainingMinutes -= ACTIVITY_DURATION.flashcards;
@@ -559,6 +562,7 @@ export const generateDailyPlan = async (
   if (!flashcardActivityExists && remainingMinutes >= 10) {
     const flashcardsDueCount = state.flashcardsDue || 0;
     const isReview = flashcardsDueCount > 0;
+    const cardCount = isReview ? Math.min(flashcardsDueCount, 20) : 15; // 20 review or 15 new
     
     activities.push({
       id: `flashcards-${today}`,
@@ -578,6 +582,7 @@ export const generateDailyPlan = async (
       params: {
         section: state.section,
         mode: isReview ? 'review' : 'learn',
+        cardCount,
       },
     });
     remainingMinutes -= isReview ? ACTIVITY_DURATION.flashcards : ACTIVITY_DURATION.flashcards_new;

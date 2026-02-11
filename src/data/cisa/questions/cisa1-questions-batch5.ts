@@ -79,7 +79,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-098',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An audit finding consists of:',
     options: [
       'Only the condition',
@@ -113,7 +113,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-100',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When management disagrees with audit findings:',
     options: [
       'Remove the finding',
@@ -164,7 +164,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-103',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit report distribution should be:',
     options: [
       'Unlimited',
@@ -215,7 +215,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-106',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Management accepting risk rather than remediating:',
     options: [
       'Is never acceptable',
@@ -232,7 +232,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-107',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Quality assurance review of audit work:',
     options: [
       'Is optional',
@@ -317,7 +317,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-112',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit dashboards provide:',
     options: [
       'Only historical data',
@@ -334,7 +334,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-113',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Integrated auditing combines:',
     options: [
       'Only IT and financial audit',
@@ -385,7 +385,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-116',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Agile audit methodologies:',
     options: [
       'Avoid planning',
@@ -436,7 +436,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-119',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Stakeholder expectations management requires:',
     options: [
       'Promising all deliverables',
@@ -470,7 +470,7 @@ export const CISA1_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA1-121',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The audit charter should be reviewed:',
     options: [
       'Never',

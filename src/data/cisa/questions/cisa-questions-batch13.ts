@@ -83,7 +83,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA1-B13-005',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Stratification in sampling divides:',
     options: [
       'All items equally',
@@ -117,7 +117,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA1-B13-007',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Parallel simulation involves:',
     options: [
       'Copying the entire production system',
@@ -185,7 +185,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA1-B13-011',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Exit meetings provide opportunity to:',
     options: [
       'Hide findings',
@@ -253,7 +253,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA1-B13-015',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Professional skepticism requires auditors to:',
     options: [
       'Trust all information',
@@ -292,7 +292,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA2-B13-017',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT architecture provides:',
     options: [
       'Only hardware specifications',
@@ -394,7 +394,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA2-B13-023',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT portfolio management:',
     options: [
       'Only tracks new projects',
@@ -428,7 +428,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA2-B13-025',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Multi-sourcing strategies require:',
     options: [
       'Only one vendor',
@@ -496,7 +496,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA2-B13-029',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Balanced scorecard for IT measures:',
     options: [
       'Only financial metrics',
@@ -552,7 +552,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA3-B13-032',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API versioning helps:',
     options: [
       'Eliminate all changes',
@@ -586,7 +586,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA3-B13-034',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Canary releases:',
     options: [
       'Deploy to all users immediately',
@@ -688,7 +688,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA3-B13-040',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Chaos engineering:',
     options: [
       'Creates system disorder',
@@ -722,7 +722,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA3-B13-042',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Secrets management in CI/CD:',
     options: [
       'Stores secrets in code',
@@ -790,7 +790,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA3-B13-046',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Technical documentation should be:',
     options: [
       'Created only at project end',
@@ -846,7 +846,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA4-B13-049',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Configuration baseline captures:',
     options: [
       'Only hardware',
@@ -880,7 +880,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA4-B13-051',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Knowledge management in IT operations:',
     options: [
       'Only stores documents',
@@ -982,7 +982,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA4-B13-057',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Crisis communication plans should:',
     options: [
       'Only address media',
@@ -1016,7 +1016,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA4-B13-059',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data replication methods include:',
     options: [
       'Only backup tape',
@@ -1084,7 +1084,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA4-B13-063',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Patch management prioritization should consider:',
     options: [
       'Only vendor release date',
@@ -1140,7 +1140,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA5-B13-066',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Privileged access management (PAM) controls:',
     options: [
       'Only user accounts',
@@ -1174,7 +1174,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA5-B13-068',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security information and event management (SIEM) provides:',
     options: [
       'Only log storage',
@@ -1276,7 +1276,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA5-B13-074',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Man-in-the-middle attacks intercept:',
     options: [
       'Only email',
@@ -1310,7 +1310,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA5-B13-076',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security awareness training should:',
     options: [
       'Occur once at hire',
@@ -1378,7 +1378,7 @@ const ALL_BATCH13: Question[] = [
     id: 'CISA5-B13-080',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Privacy impact assessments (PIA) evaluate:',
     options: [
       'Only compliance',

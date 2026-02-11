@@ -1,0 +1,24 @@
+Hey everyone, welcome back to the channel! Are you prepping for the CISA exam? <break time='1.0s' /> Let’s talk about a topic that trips up a lot of people: Risk-Based Audit Planning.
+
+I see so many people fail because they don’t truly understand how fundamental this concept is. <break time='1.0s' /> You can know all the controls in the world, but if you're not auditing the *right* things, you’re wasting your time.
+
+So, what *is* Risk-Based Audit Planning? Simply put, it's prioritizing your audit efforts based on the areas that pose the greatest risk to the organization. <break time='1.0s' /> It’s about focusing your limited resources where they'll have the biggest impact. You identify, assess, and prioritize risks to determine the scope, nature, and timing of your audit.
+
+Now, let’s talk about some common exam traps. ISACA *loves* to throw these at you:
+
+First, they'll try to get you to choose the *easiest* audit, not the *most important* one. Remember, efficiency is good, but effectiveness is paramount. <break time='1.0s' /> Choose the option that addresses the highest-impact risk, even if it's more complex.
+
+Second, be wary of answers that focus solely on compliance. Compliance is important, but it's not the *only* driver of risk. <break time='1.0s' /> Look for answers that consider operational, financial, and strategic risks as well. A risk-based approach looks at the *whole* picture.
+
+Third, they might present a scenario where management has already decided the audit scope. Your job as an auditor is to independently assess risk and challenge management's decisions if necessary. <break time='1.0s' /> Don't blindly accept their pre-defined scope if it doesn't align with your risk assessment.
+
+Okay, let’s use a mnemonic to help you remember the key steps: **I-A-P-S**.
+
+*   **I**dentify risks
+*   **A**ssess risks (likelihood and impact)
+*   **P**rioritize risks
+*   **S**cope the audit based on prioritized risks
+
+Think of it as "I Assess, Prioritize, Scope!"
+
+So, the key takeaway here is this: Risk-Based Audit Planning is all about focusing on the *most important* areas. Don't get distracted by easy audits, compliance-only approaches, or management's pre-defined scope. <break time='1.0s' /> Remember **I-A-P-S** and you'll be well on your way to acing those risk-based questions on the CISA exam. Good luck, and I’ll see you in the next video!

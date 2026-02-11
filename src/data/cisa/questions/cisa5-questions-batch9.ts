@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-215',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Digital certificates are used to:',
     options: [
       'Encrypt all network traffic automatically',
@@ -130,7 +130,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-217',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security awareness training should be:',
     options: [
       'Optional for senior executives',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-221',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data classification should be performed by:',
     options: [
       'IT department only',
@@ -266,7 +266,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-225',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data Loss Prevention (DLP) monitors:',
     options: [
       'Network performance only',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-227',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Biometric authentication provides:',
     options: [
       'Something you know',
@@ -402,7 +402,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-233',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network access control (NAC) ensures:',
     options: [
       'Faster network speeds',
@@ -436,7 +436,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-235',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security exception management should include:',
     options: [
       'Automatic approval',
@@ -504,7 +504,7 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA5-239',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Tokenization differs from encryption in that:',
     options: [
       'They are identical',

@@ -82,7 +82,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     id: 'CISA1-DA-005',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Embedded audit modules are BEST suited for:',
     options: [
       'One-time audit testing',
@@ -120,7 +120,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     id: 'CISA1-DA-007',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Benford\'s Law analysis is MOST useful for detecting:',
     options: [
       'Missing transactions',
@@ -171,7 +171,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     id: 'CISA1-DA-010',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Which analytics maturity level answers "What will happen?"',
     options: [
       'Descriptive',
@@ -239,7 +239,7 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     id: 'CISA1-DA-014',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Three-way matching analytics compares:',
     options: [
       'Budget, actual, and variance',

@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-097',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Vulnerability remediation should be prioritized by:',
     options: [
       'Discovery date only',
@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-098',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Patch management processes should include:',
     options: [
       'Immediate production deployment',
@@ -147,7 +147,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-101',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Red team exercises simulate:',
     options: [
       'Compliance audits',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-104',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security Information and Event Management (SIEM):',
     options: [
       'Replaces all other security tools',
@@ -232,7 +232,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-106',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'User and Entity Behavior Analytics (UEBA):',
     options: [
       'Replaces access control',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-110',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Memory forensics can recover:',
     options: [
       'Only files',
@@ -334,7 +334,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-112',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Indicators of Compromise (IOCs):',
     options: [
       'Only identify known threats',
@@ -385,7 +385,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-116',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Privacy Impact Assessments (PIAs):',
     options: [
       'Are optional',
@@ -419,7 +419,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-119',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Visitor management controls should:',
     options: [
       'Allow unrestricted access',
@@ -453,7 +453,7 @@ export const CISA5_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA5-121',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Environmental controls for data centers include:',
     options: [
       'Only cooling',

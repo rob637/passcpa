@@ -62,7 +62,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-066',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IS auditor should obtain authorization to perform the audit through:',
     options: [
       'Verbal agreement',
@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-068',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Automated controls are generally preferred because they:',
     options: [
       'Are always more effective',
@@ -147,7 +147,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-071',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Judgmental sampling is most appropriate when:',
     options: [
       'Statistical conclusions are required',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-074',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When using CAATs, data integrity should be verified by:',
     options: [
       'Trusting the source system',
@@ -215,7 +215,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-075',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Embedded audit modules are:',
     options: [
       'External tools',
@@ -300,7 +300,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-080',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network security auditing should include review of:',
     options: [
       'Only firewall rules',
@@ -317,7 +317,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-081',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When auditing business continuity plans, the auditor should verify:',
     options: [
       'Only documentation existence',
@@ -368,7 +368,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-084',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Privacy audits should assess:',
     options: [
       'Only technical controls',
@@ -419,7 +419,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-087',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Management response to audit findings should include:',
     options: [
       'Only acknowledgment',
@@ -453,7 +453,7 @@ export const CISA1_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA1-089',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit report distribution should be based on:',
     options: [
       'Auditor preference',

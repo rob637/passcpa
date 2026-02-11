@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-098',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Runbook automation:',
     options: [
       'Eliminates all operators',
@@ -113,7 +113,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-100',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT asset management lifecycle includes:',
     options: [
       'Only acquisition',
@@ -164,7 +164,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-103',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service catalog provides:',
     options: [
       'Only technical specifications',
@@ -215,7 +215,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-106',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Known error database (KEDB) contains:',
     options: [
       'All incidents',
@@ -232,7 +232,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-107',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Change Advisory Board (CAB) membership should include:',
     options: [
       'Only IT management',
@@ -317,7 +317,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-112',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Deployment pipelines:',
     options: [
       'Are only for code',
@@ -334,7 +334,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-113',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Environment parity means:',
     options: [
       'Different environments',
@@ -385,7 +385,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-116',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data archiving differs from backup by:',
     options: [
       'Being faster',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-119',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network segmentation in operations helps:',
     options: [
       'Only security',
@@ -470,7 +470,7 @@ export const CISA4_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA4-121',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cloud operations require:',
     options: [
       'No monitoring',

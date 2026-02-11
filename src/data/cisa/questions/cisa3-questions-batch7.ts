@@ -79,7 +79,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-157',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Event-driven architecture testing should verify:',
     options: [
       'Only latency',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-158',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Contract testing in microservices:',
     options: [
       'Tests legal contracts',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-161',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service mesh implementation provides:',
     options: [
       'Only networking',
@@ -198,7 +198,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-164',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Observability implementation goes beyond monitoring by providing:',
     options: [
       'Same as monitoring',
@@ -232,7 +232,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-166',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'GraphQL API development considerations include:',
     options: [
       'Only query types',
@@ -317,7 +317,7 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA3-172',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Software bill of materials (SBOM) provides:',
     options: [
       'Cost information',

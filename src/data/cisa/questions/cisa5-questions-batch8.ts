@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-178',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data loss prevention (DLP) controls should:',
     options: [
       'Focus only on external threats',
@@ -130,7 +130,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-180',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Mobile device management (MDM) should include:',
     options: [
       'Only device tracking',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-184',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The purpose of a web application firewall (WAF) is to:',
     options: [
       'Replace network firewalls',
@@ -266,7 +266,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-188',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'End-to-end encryption ensures:',
     options: [
       'Data is only encrypted at rest',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-190',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security patches should be:',
     options: [
       'Applied immediately without testing',
@@ -419,7 +419,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-198',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Biometric authentication is based on:',
     options: [
       'Something you know',
@@ -453,7 +453,7 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     id: 'CISA5-200',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An intrusion prevention system (IPS) differs from an IDS in that IPS:',
     options: [
       'Only logs attacks',

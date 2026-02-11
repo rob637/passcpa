@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-067',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'API security should include:',
     options: [
       'No authentication',
@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-068',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'OAuth 2.0 provides:',
     options: [
       'Integration',
@@ -147,7 +147,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-071',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Privileged Access Workstations (PAWs):',
     options: [
       'Allow all activities',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-074',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Phishing simulations:',
     options: [
       'Punish users',
@@ -232,7 +232,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-076',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network segmentation reduces risk by:',
     options: [
       'Increasing connectivity',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-080',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Email security gateways should provide:',
     options: [
       'Only spam filtering',
@@ -334,7 +334,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-082',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Secure file transfer should use:',
     options: [
       'FTP only',
@@ -385,7 +385,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-085',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Tokenization:',
     options: [
       'Encrypts data symmetrically',
@@ -436,7 +436,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-088',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security Operations Center (SOC) primary function is:',
     options: [
       'Development',
@@ -453,7 +453,7 @@ export const CISA5_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA5-089',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Threat intelligence feeds provide:',
     options: [
       'Only historical data',

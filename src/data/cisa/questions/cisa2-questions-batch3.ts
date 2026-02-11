@@ -79,7 +79,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-037',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT policies provide:',
     options: [
       'Detailed procedures',
@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-038',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT standards differ from guidelines in that standards:',
     options: [
       'Are optional',
@@ -147,7 +147,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-041',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The Chief Information Officer (CIO) is primarily responsible for:',
     options: [
       'Technical support only',
@@ -198,7 +198,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-044',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Key risk indicators (KRIs) provide:',
     options: [
       'Retrospective analysis only',
@@ -232,7 +232,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-046',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT service level management ensures:',
     options: [
       'Minimum service delivery',
@@ -300,7 +300,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-050',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Right-to-audit clauses in contracts allow:',
     options: [
       'Vendors to audit customers',
@@ -334,7 +334,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-052',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Mandatory vacation policies help:',
     options: [
       'Reduce payroll costs',
@@ -385,7 +385,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-055',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Project risk management should:',
     options: [
       'Occur only at project start',
@@ -436,7 +436,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-058',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Compliance management in IT should:',
     options: [
       'Focus only on one regulation',
@@ -453,7 +453,7 @@ export const CISA2_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA2-059',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT asset lifecycle management covers:',
     options: [
       'Only procurement',

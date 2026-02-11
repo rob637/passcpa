@@ -13,7 +13,7 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { fetchLessonById } from '../../services/lessonService';
 import clsx from 'clsx';
 import DailyPlanCard from '../DailyPlanCard';
@@ -35,7 +35,8 @@ const Study = () => {
   const { courseId, course } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
-  const currentSection = userProfile?.examSection || getDefaultSection(courseId);
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId);
   const sectionInfo = getSectionDisplayInfo(currentSection as string, courseId);
 
   // Build recent items from today's activities (async)

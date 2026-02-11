@@ -1,0 +1,224 @@
+2026-02-11 12:04:06,866 [INFO] ============================================================
+2026-02-11 12:04:06,866 [INFO] ============================================================
+2026-02-11 12:04:06,866 [INFO] 🚀 CISA Video Pipeline Started
+2026-02-11 12:04:06,866 [INFO] 🚀 CISA Video Pipeline Started
+2026-02-11 12:04:06,866 [INFO]    Batch size: 2
+2026-02-11 12:04:06,866 [INFO]    Batch size: 2
+2026-02-11 12:04:06,866 [INFO]    State file: /workspaces/passcpa/content_factory/cisa_videos/output/pipeline_state.json
+2026-02-11 12:04:06,866 [INFO]    State file: /workspaces/passcpa/content_factory/cisa_videos/output/pipeline_state.json
+2026-02-11 12:04:06,866 [INFO]    Log file: /workspaces/passcpa/content_factory/cisa_videos/output/pipeline.log
+2026-02-11 12:04:06,866 [INFO]    Log file: /workspaces/passcpa/content_factory/cisa_videos/output/pipeline.log
+2026-02-11 12:04:06,867 [INFO] ============================================================
+2026-02-11 12:04:06,867 [INFO] ============================================================
+2026-02-11 12:04:06,867 [INFO] 🔍 Stage 1: Analyzing CISA topics...
+2026-02-11 12:04:06,867 [INFO] 🔍 Stage 1: Analyzing CISA topics...
+2026-02-11 12:04:06,908 [INFO] ✅ Created 2 video tasks
+============================================================
+🔍 CISA Topic Analysis
+============================================================
+  📄 cisa1-questions-batch5.ts: 29 questions
+  📄 cisa5-questions-emerging-tech.ts: 25 questions
+  📄 cisa5-questions-batch3.ts: 30 questions
+  📄 cisa3-questions-batch5.ts: 29 questions
+  📄 cisa5-questions-batch5.ts: 27 questions
+  📄 cisa2-questions-batch5.ts: 29 questions
+  📄 cisa2-questions-batch7.ts: 18 questions
+  📄 cisa2-questions-batch6.ts: 30 questions
+  📄 cisa2-questions-batch3.ts: 30 questions
+  📄 cisa5-questions-batch7.ts: 19 questions
+  📄 cisa3-questions-batch6.ts: 28 questions
+  📄 cisa1-questions-batch2.ts: 30 questions
+  📄 cisa1-questions-batch3.ts: 30 questions
+  📄 cisa1-questions-batch7.ts: 20 questions
+  📄 cisa2-cisa3-batch9.ts: 30 questions
+  📄 cisa4-questions-batch5.ts: 29 questions
+  📄 cisa4-questions.ts: 2 questions
+  📄 cisa2-questions-batch4.ts: 30 questions
+  📄 cisa5-questions-batch2.ts: 30 questions
+  📄 cisa-questions-batch11.ts: 100 questions
+  📄 cisa4-questions-batch2.ts: 30 questions
+  📄 cisa2-questions.ts: 2 questions
+  📄 cisa1-questions-batch6.ts: 29 questions
+  📄 cisa5-questions.ts: 2 questions
+  📄 cisa3-questions-batch3.ts: 30 questions
+  📄 cisa3-questions-batch4.ts: 29 questions
+  📄 cisa-questions-batch13.ts: 81 questions
+  📄 cisa4-questions-batch3.ts: 30 questions
+  📄 cisa3-questions-batch7.ts: 19 questions
+  📄 cisa1-questions-analytics.ts: 15 questions
+  📄 cisa4-questions-batch7.ts: 20 questions
+  📄 cisa5-questions-batch6.ts: 29 questions
+  📄 cisa5-questions-batch9.ts: 31 questions
+  📄 cisa5-questions-batch8.ts: 28 questions
+  📄 cisa4-questions-batch8.ts: 30 questions
+  📄 cisa3-questions.ts: 2 questions
+  📄 cisa5-questions-batch4.ts: 29 questions
+  📄 cisa-cobit-privacy-batch15.ts: 24 questions
+  📄 cisa1-questions.ts: 2 questions
+  📄 cisa4-questions-batch4.ts: 30 questions
+  📄 cisa-questions-batch12.ts: 100 questions
+  📄 cisa4-questions-batch6.ts: 29 questions
+  📄 cisa3-questions-batch2.ts: 30 questions
+  📄 cisa3-questions-batch8.ts: 27 questions
+  📄 cisa4-questions-batch9.ts: 31 questions
+  📄 cisa1-questions-batch8.ts: 30 questions
+  📄 cisa2-questions-batch8.ts: 29 questions
+  📄 cisa2-questions-batch2.ts: 30 questions
+  📄 cisa1-questions-batch4.ts: 30 questions
+  📄 cisa-questions-batch10.ts: 100 questions
+
+📊 Total questions analyzed: 1523
+
+🔥 TOP 20 HARDEST CISA TOPICS (for video creation)
+------------------------------------------------------------
+ 1. Outsourcing
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 2. Risk-Based Audit Planning
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 3. Third-Party Audits
+    Score: 3.00 | Hard: 2 | Med: 0 | Total: 2
+ 4. Physical Security Audit
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 5. Fraud
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 6. IT General Controls
+    Score: 3.00 | Hard: 2 | Med: 0 | Total: 2
+ 7. Cloud Audit
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 8. Audit Materiality
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+ 9. Estimation
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+10. System Modeling
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+11. Development Quality
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+12. Mobile Development
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+13. Data Architecture
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+14. Infrastructure
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+15. Security Principles
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+16. Email Security
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+17. Third-Party Security
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+18. Cyber Resilience
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+19. Business Application Development
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+20. Security Controls
+    Score: 3.00 | Hard: 1 | Med: 0 | Total: 1
+
+✅ Analysis saved to: /workspaces/passcpa/content_factory/cisa_videos/output/topics_analysis.json
+2026-02-11 12:04:06,908 [INFO] ✅ Created 2 video tasks
+2026-02-11 12:04:06,908 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:06,908 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:06,908 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 2, "background_generating": 0, "heygen_queued": 0, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:06,908 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 2, "background_generating": 0, "heygen_queued": 0, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:06,908 [INFO] 📝 Generating script for: Outsourcing
+2026-02-11 12:04:06,908 [INFO] 📝 Generating script for: Outsourcing
+2026-02-11 12:04:12,164 [INFO] ✅ Script saved: CISA-VIDEO-001_Outsourcing.txt
+2026-02-11 12:04:12,164 [INFO] ✅ Script saved: CISA-VIDEO-001_Outsourcing.txt
+2026-02-11 12:04:12,165 [INFO] 🎭 Assigning presenter for: Outsourcing
+2026-02-11 12:04:12,165 [INFO] 🎭 Assigning presenter for: Outsourcing
+2026-02-11 12:04:12,165 [INFO] ✅ Assigned: David (Bruce) with background_teal_solid.png
+2026-02-11 12:04:12,165 [INFO] ✅ Assigned: David (Bruce) with background_teal_solid.png
+2026-02-11 12:04:12,165 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:12,165 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:12,210 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:12,210 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:12,210 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:12,210 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:12,210 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:12,210 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:12,211 [INFO] 🔄 Will retry (attempt 2/3)
+2026-02-11 12:04:12,211 [INFO] 🔄 Will retry (attempt 2/3)
+2026-02-11 12:04:12,211 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:12,211 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:12,211 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 1, "background_generating": 0, "heygen_queued": 1, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:12,211 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 1, "background_generating": 0, "heygen_queued": 1, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:12,211 [INFO] 📝 Generating script for: Risk-Based Audit Planning
+2026-02-11 12:04:12,211 [INFO] 📝 Generating script for: Risk-Based Audit Planning
+2026-02-11 12:04:17,387 [INFO] ✅ Script saved: CISA-VIDEO-002_Risk-Based_Audit_Planning.txt
+2026-02-11 12:04:17,387 [INFO] ✅ Script saved: CISA-VIDEO-002_Risk-Based_Audit_Planning.txt
+2026-02-11 12:04:17,387 [INFO] 🎭 Assigning presenter for: Risk-Based Audit Planning
+2026-02-11 12:04:17,387 [INFO] 🎭 Assigning presenter for: Risk-Based Audit Planning
+2026-02-11 12:04:17,387 [INFO] ✅ Assigned: Maya (Jin) with background_light_modern.png
+2026-02-11 12:04:17,387 [INFO] ✅ Assigned: Maya (Jin) with background_light_modern.png
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:17,388 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,388 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,388 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,388 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,388 [INFO] 🔄 Will retry (attempt 3/3)
+2026-02-11 12:04:17,388 [INFO] 🔄 Will retry (attempt 3/3)
+2026-02-11 12:04:17,388 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,388 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,388 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,388 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating HeyGen video for: Outsourcing (Presenter: David)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:17,388 [INFO] 🎬 Creating video: Outsourcing (Avatar: Bruce)
+2026-02-11 12:04:17,388 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,388 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,388 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,388 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,389 [INFO] 🔄 Will retry (attempt 4/3)
+2026-02-11 12:04:17,389 [INFO] 🔄 Will retry (attempt 4/3)
+2026-02-11 12:04:17,389 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,389 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,389 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,389 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,389 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,389 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,389 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,389 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,389 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,389 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,389 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,389 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,389 [INFO] 🔄 Will retry (attempt 2/3)
+2026-02-11 12:04:17,389 [INFO] 🔄 Will retry (attempt 2/3)
+2026-02-11 12:04:17,390 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,390 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,390 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,390 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,390 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,390 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,390 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,390 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,390 [INFO] 🔄 Will retry (attempt 3/3)
+2026-02-11 12:04:17,390 [INFO] 🔄 Will retry (attempt 3/3)
+2026-02-11 12:04:17,390 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,390 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,390 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,390 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating HeyGen video for: Risk-Based Audit Planning (Presenter: Maya)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,390 [INFO] 🎬 Creating video: Risk-Based Audit Planning (Avatar: Jin)
+2026-02-11 12:04:17,390 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,390 [ERROR] ❌ Failed to create video: 'NoneType' object has no attribute 'goto'
+2026-02-11 12:04:17,390 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,390 [ERROR] ❌ HeyGen creation failed: 'NoneType' object has no attribute 'screenshot'
+2026-02-11 12:04:17,391 [INFO] 🔄 Will retry (attempt 4/3)
+2026-02-11 12:04:17,391 [INFO] 🔄 Will retry (attempt 4/3)
+2026-02-11 12:04:17,391 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,391 [INFO] 📊 Progress: 0/2 completed, 0 failed
+2026-02-11 12:04:17,391 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,391 [INFO]    Stages: {"pending": 0, "analyzing": 0, "script_generating": 0, "background_generating": 0, "heygen_queued": 2, "heygen_processing": 0, "downloading": 0, "uploading": 0, "completed": 0, "failed": 0}
+2026-02-11 12:04:17,391 [INFO] 💤 Waiting 60s for HeyGen processing...
+2026-02-11 12:04:17,391 [INFO] 💤 Waiting 60s for HeyGen processing...
+2026-02-11 12:04:41,759 [INFO] 🛑 Shutdown signal received, completing current task...
+2026-02-11 12:04:41,759 [INFO] 🛑 Shutdown signal received, completing current task...

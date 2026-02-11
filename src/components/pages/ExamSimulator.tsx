@@ -30,7 +30,7 @@ import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { Question, ExamSection, TBS } from '../../types';
@@ -78,7 +78,8 @@ const ExamSimulator: React.FC = () => {
   const timerRef = useRef<any>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
-  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   const availableMockExams = getMockExamsBySection(currentSection);
   

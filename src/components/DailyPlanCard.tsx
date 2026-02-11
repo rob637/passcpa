@@ -278,7 +278,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
         break;
       case 'flashcards':
-        navigate(`${getCourseFlashcardPath(courseId)}?${fromParam}`);
+        // Pass cardCount if specified, and mode from params
+        const flashcardParams = new URLSearchParams();
+        flashcardParams.set('from', 'dailyplan');
+        flashcardParams.set('activityId', activity.id);
+        if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
+        if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
+        if (activity.params?.section) flashcardParams.set('section', activity.params.section);
+        navigate(`${getCourseFlashcardPath(courseId)}?${flashcardParams.toString()}`);
         break;
       case 'essay':
         // CMA Essay Simulator

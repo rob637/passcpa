@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-037',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Wireless security best practices include:',
     options: [
       'Using WEP encryption',
@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-038',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network access control (NAC) ensures:',
     options: [
       'No devices can connect',
@@ -147,7 +147,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-041',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Bring your own device (BYOD) introduces risks including:',
     options: [
       'No security concerns',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-044',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Phishing attacks primarily rely on:',
     options: [
       'Technical exploits',
@@ -232,7 +232,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-046',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Business email compromise (BEC) attacks target:',
     options: [
       'Network infrastructure',
@@ -300,7 +300,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-050',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Red team exercises:',
     options: [
       'Test backup procedures',
@@ -334,7 +334,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-052',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Chain of custody in incident response ensures:',
     options: [
       'Evidence is destroyed',
@@ -385,7 +385,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-055',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'GDPR requires organizations to:',
     options: [
       'Only protect EU citizens',
@@ -436,7 +436,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-058',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data minimization principle requires:',
     options: [
       'Collecting all available data',
@@ -453,7 +453,7 @@ export const CISA5_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA5-059',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security control effectiveness should be:',
     options: [
       'Assumed',

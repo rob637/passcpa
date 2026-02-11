@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-037',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cloud-based disaster recovery offers:',
     options: [
       'Guaranteed uptime',
@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-038',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Database journaling supports recovery by:',
     options: [
       'Encrypting all data',
@@ -147,7 +147,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-041',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'RAID levels provide:',
     options: [
       'Only backup',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-044',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Event logging should capture:',
     options: [
       'Only errors',
@@ -232,7 +232,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-046',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network operations center (NOC) is responsible for:',
     options: [
       'Only help desk functions',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-050',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Baseline configurations provide:',
     options: [
       'Maximum flexibility',
@@ -334,7 +334,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-052',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Print server controls should address:',
     options: [
       'Only paper usage',
@@ -385,7 +385,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-055',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Hardware security modules (HSMs) provide:',
     options: [
       'Only physical security',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-058',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Crisis management differs from incident management in that it:',
     options: [
       'Handles routine incidents',
@@ -453,7 +453,7 @@ export const CISA4_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA4-059',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Emergency response procedures should be:',
     options: [
       'Complex and detailed',

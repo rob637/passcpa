@@ -393,7 +393,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Exam Date Prompt - Show when no exam date set */}
+      {/* Exam Date Prompt - Show when no exam date set for this course */}
       {!examDate && (
         <Link
           to="/settings"
@@ -404,7 +404,7 @@ const Home = () => {
           </div>
           <div className="flex-1">
             <div className="font-semibold text-slate-900 dark:text-slate-100">
-              When is your {sectionInfo?.shortName || activeSection} exam?
+              When is your {course?.shortName || courseId?.toUpperCase() || 'exam'} exam?
             </div>
             <div className="text-sm text-slate-600 dark:text-slate-300">
               Set your exam date for personalized study pacing

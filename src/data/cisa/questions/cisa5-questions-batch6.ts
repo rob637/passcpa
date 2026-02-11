@@ -79,7 +79,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-127',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Emergency access procedures should include:',
     options: [
       'Unlimited access',
@@ -96,7 +96,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-128',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service accounts should have:',
     options: [
       'Interactive login enabled',
@@ -147,7 +147,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-131',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'False acceptance rate (FAR) in biometrics:',
     options: [
       'Should be high',
@@ -198,7 +198,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-134',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Step-up authentication requires:',
     options: [
       'Lower authentication for all access',
@@ -232,7 +232,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-136',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Encryption at rest protects:',
     options: [
       'Network traffic',
@@ -283,7 +283,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-140',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Intrusion Detection Systems (IDS) detect:',
     options: [
       'All attacks',
@@ -317,7 +317,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-142',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Web Application Firewalls (WAF) protect against:',
     options: [
       'Network attacks only',
@@ -368,7 +368,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-145',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Network Access Control (NAC) verifies:',
     options: [
       'Only identity',
@@ -419,7 +419,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-148',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security metrics should be:',
     options: [
       'As numerous as possible',
@@ -436,7 +436,7 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA5-149',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security control framework mapping:',
     options: [
       'Is unnecessary',

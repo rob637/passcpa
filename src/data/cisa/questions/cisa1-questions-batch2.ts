@@ -62,7 +62,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-006',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'An IS auditor discovers that a critical control is not operating effectively. The FIRST action should be to:',
     options: [
       'Report to the audit committee',
@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-008',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY purpose of documenting audit work is to:',
     options: [
       'Comply with professional standards',
@@ -147,7 +147,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-011',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Computer-assisted audit techniques (CAATs) are MOST valuable for:',
     options: [
       'Replacing the need for manual testing',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-014',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The PRIMARY purpose of an audit program is to:',
     options: [
       'Document the audit methodology',
@@ -232,7 +232,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-016',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Which of the following is the BEST indicator of an effective IS audit function?',
     options: [
       'Number of audits completed per year',
@@ -300,7 +300,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-020',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The ISACA Code of Professional Ethics requires IS auditors to:',
     options: [
       'Report all findings to regulatory authorities',
@@ -334,7 +334,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-022',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Which of the following provides the BEST evidence that a control is operating effectively?',
     options: [
       'Management assertion',
@@ -385,7 +385,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-025',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The maturity of an IT process is BEST assessed using:',
     options: [
       'Compliance testing',
@@ -436,7 +436,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-028',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Which document should an IS auditor review FIRST when beginning an audit?',
     options: [
       'System documentation',
@@ -453,7 +453,7 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA1-029',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The difference between inherent risk and residual risk is:',
     options: [
       'The cost of implementing controls',

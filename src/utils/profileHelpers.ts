@@ -7,20 +7,31 @@
 
 import { UserProfile, CourseIdType } from '../types';
 
-// Single-exam courses store dates by course ID (uppercase), not section
-const SINGLE_EXAM_COURSES = ['cfp', 'cisa'];
+// All courses now store dates by course ID (uppercase) for simplicity
+// This provides one exam date per course instead of per-section
+const ALL_COURSE_IDS = ['cpa', 'ea', 'cma', 'cfp', 'cisa'];
+
+// Legacy section-specific keys that may have been used to store exam dates
+// Maps course -> array of possible legacy keys to check (for migration)
+const LEGACY_SECTION_KEYS: Record<string, string[]> = {
+  cpa: ['FAR', 'AUD', 'REG', 'BAR', 'ISC', 'TCP', 'BEC'],
+  ea: ['SEE1', 'SEE2', 'SEE3'],
+  cma: ['CMA1', 'CMA2'],
+  cisa: ['Audit', 'Gov', 'Dev', 'Ops', 'Sec', 'CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'],
+  cfp: ['Ethics', 'Gen', 'Risk', 'Inv', 'Tax', 'Ret', 'Est', 'Psy', 'CFP-PCR', 'CFP-GEN', 'CFP-RISK', 'CFP-INV', 'CFP-TAX', 'CFP-RET', 'CFP-EST', 'CFP-PSY'],
+};
 
 /**
- * Get the exam date for a specific section/course.
+ * Get the exam date for a course.
  * 
- * Lookup order:
- * 1. Section-specific: examDates[sectionId] (e.g., 'FAR', 'SEE1')
- * 2. Course-specific: examDates[COURSE] (e.g., 'CFP', 'CISA') - for single-exam courses
+ * Lookup order (simplified to one date per course):
+ * 1. Course-specific: examDates[COURSE] (e.g., 'CPA', 'EA', 'CFP')
+ * 2. Legacy section fallback: examDates[sectionId] for migration
  * 3. Legacy fallback: examDate (only if examDates has no entries at all)
  * 
  * @param profile - User profile object
- * @param sectionId - Exam section ID (e.g., 'FAR', 'SEE1', 'CFP-PCR')
- * @param courseId - Optional course ID for single-exam course lookup
+ * @param sectionId - Optional section ID for legacy fallback lookup
+ * @param courseId - Course ID (e.g., 'cpa', 'ea')
  * @returns Date object or null
  */
 export function getExamDate(
@@ -30,27 +41,38 @@ export function getExamDate(
 ): Date | null {
   if (!profile) return null;
 
-  // 1. Try section-specific lookup first
+  // 1. Try course-level lookup first (the new standard)
+  if (courseId) {
+    const courseKey = courseId.toUpperCase();
+    if (profile.examDates?.[courseKey]) {
+      return normalizeDate(profile.examDates[courseKey]);
+    }
+  }
+
+  // 2. Legacy section-specific fallback (for users with old data)
   if (sectionId && profile.examDates?.[sectionId]) {
     const dateValue = profile.examDates[sectionId];
     if (dateValue) {
       return normalizeDate(dateValue);
     }
   }
-
-  // 2. For single-exam courses, also try course ID (uppercase)
-  // These courses save dates by 'CFP', 'CISA' etc.
-  if (courseId && SINGLE_EXAM_COURSES.includes(courseId.toLowerCase())) {
-    const courseKey = courseId.toUpperCase();
-    if (profile.examDates?.[courseKey]) {
-      return normalizeDate(profile.examDates[courseKey]);
+  
+  // 2b. Check legacy section keys for this course (for migration)
+  if (courseId) {
+    const legacyKeys = LEGACY_SECTION_KEYS[courseId.toLowerCase()];
+    if (legacyKeys) {
+      for (const key of legacyKeys) {
+        if (profile.examDates?.[key]) {
+          return normalizeDate(profile.examDates[key]);
+        }
+      }
     }
   }
   
   // 3. Auto-detect course from section prefix (e.g., 'CFP-PCR' → 'CFP')
-  if (sectionId) {
+  if (sectionId && !courseId) {
     const sectionPrefix = sectionId.split('-')[0]?.toUpperCase();
-    if (sectionPrefix && SINGLE_EXAM_COURSES.includes(sectionPrefix.toLowerCase())) {
+    if (sectionPrefix && ALL_COURSE_IDS.includes(sectionPrefix.toLowerCase())) {
       if (profile.examDates?.[sectionPrefix]) {
         return normalizeDate(profile.examDates[sectionPrefix]);
       }
@@ -116,25 +138,34 @@ function normalizeDate(
 }
 
 /**
- * Create an update object for setting an exam date for a specific section.
- * This preserves existing dates for other sections.
+ * Create an update object for setting an exam date for a course.
+ * Uses course ID (uppercase) as the key for all courses.
+ * 
+ * This simplified approach stores one exam date per course instead of
+ * per-section, matching how most users study (one exam at a time).
  * 
  * @param currentProfile - Current user profile
- * @param sectionId - Section to update
+ * @param _sectionId - Deprecated: kept for backwards compatibility but ignored
  * @param newDate - New date value (or null to clear)
+ * @param courseId - Course ID - uses this as the storage key
  * @returns Partial profile update object
  */
 export function createExamDateUpdate(
   currentProfile: UserProfile | null | undefined,
-  sectionId: string,
-  newDate: Date | string | null
+  _sectionId: string,
+  newDate: Date | string | null,
+  courseId?: CourseIdType | null
 ): Partial<UserProfile> {
   const examDates = { ...(currentProfile?.examDates || {}) };
   
+  // Always use course ID (uppercase) as the key for all courses
+  // This provides one exam date per course, not per-section
+  const dateKey = courseId ? courseId.toUpperCase() : _sectionId;
+  
   if (newDate === null) {
-    delete examDates[sectionId];
+    delete examDates[dateKey];
   } else {
-    examDates[sectionId] = typeof newDate === 'string' ? new Date(newDate) : newDate;
+    examDates[dateKey] = typeof newDate === 'string' ? new Date(newDate) : newDate;
   }
   
   return {

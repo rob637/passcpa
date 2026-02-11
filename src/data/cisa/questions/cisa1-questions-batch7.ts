@@ -79,7 +79,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-157',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When the auditor uses the work of others:',
     options: [
       'No review is needed',
@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-158',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Post-audit surveys help:',
     options: [
       'Only satisfy management',
@@ -147,7 +147,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-161',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Coordination between internal and external audit:',
     options: [
       'Is prohibited',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-164',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit standardization benefits include:',
     options: [
       'Reduced flexibility',
@@ -232,7 +232,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-166',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit report executive summary should include:',
     options: [
       'All technical details',
@@ -300,7 +300,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-170',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Status reporting during audits should communicate:',
     options: [
       'Only positive news',
@@ -334,7 +334,7 @@ export const CISA1_QUESTIONS_BATCH7: Question[] = [
     id: 'CISA1-172',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Surprise audit techniques are appropriate when:',
     options: [
       'Management requests',

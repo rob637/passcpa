@@ -79,7 +79,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-097',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Enterprise architecture (EA) provides:',
     options: [
       'Only technical diagrams',
@@ -96,7 +96,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-098',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT policies should be:',
     options: [
       'Technical and detailed',
@@ -164,7 +164,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-103',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT budget variance analysis helps:',
     options: [
       'Only track spending',
@@ -215,7 +215,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-106',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Key Risk Indicators (KRIs) provide:',
     options: [
       'Only historical data',
@@ -232,7 +232,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-107',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Risk heat maps visually display:',
     options: [
       'Only probability',
@@ -317,7 +317,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-112',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Vendor management program scope should include:',
     options: [
       'Only large vendors',
@@ -334,7 +334,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-113',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Vendor performance metrics should be:',
     options: [
       'Qualitative only',
@@ -385,7 +385,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-116',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Right to audit clauses enable:',
     options: [
       'Automatic audit',
@@ -436,7 +436,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-119',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT compliance management requires:',
     options: [
       'Annual review only',
@@ -470,7 +470,7 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     id: 'CISA2-121',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT governance maturity assessment:',
     options: [
       'Is one-time only',

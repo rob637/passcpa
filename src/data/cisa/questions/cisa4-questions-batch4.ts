@@ -79,7 +79,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-067',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Geographic redundancy protects against:',
     options: [
       'Only server failures',
@@ -96,7 +96,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-068',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Active-active configurations:',
     options: [
       'Have one active site',
@@ -147,7 +147,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-071',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Distributed tracing enables:',
     options: [
       'Code review',
@@ -198,7 +198,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-074',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service Level Objectives (SLOs) define:',
     options: [
       'Only availability',
@@ -232,7 +232,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-076',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Mean time to detect (MTTD) measures:',
     options: [
       'Time to fix issues',
@@ -300,7 +300,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-080',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Infrastructure monitoring should include:',
     options: [
       'Only CPU usage',
@@ -334,7 +334,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-082',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Real user monitoring (RUM) captures:',
     options: [
       'Simulated transactions',
@@ -385,7 +385,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-085',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Power Usage Effectiveness (PUE) measures:',
     options: [
       'Server performance',
@@ -436,7 +436,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-088',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Parallel DR tests:',
     options: [
       'Disrupt production',
@@ -453,7 +453,7 @@ export const CISA4_QUESTIONS_BATCH4: Question[] = [
     id: 'CISA4-089',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Full interruption DR tests:',
     options: [
       'Have no risk',

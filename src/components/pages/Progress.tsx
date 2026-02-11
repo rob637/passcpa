@@ -20,7 +20,7 @@ import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
-import { getSectionDisplayInfo, getDefaultSection } from '../../utils/sectionUtils';
+import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -357,7 +357,9 @@ const Progress: React.FC = () => {
   const examDate = getExamDate(userProfile, userProfile?.examSection as string, courseId) || new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
-  const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;
+  // Use getCurrentSectionForCourse to ensure section is valid for this course
+  // This handles cases where user switches courses but profile still has old section
+  const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
 
   // Load real data from Firestore

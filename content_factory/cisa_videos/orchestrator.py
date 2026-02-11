@@ -157,7 +157,7 @@ class CISAVideoPipeline:
     
     def shutdown(self, signum, frame):
         """Graceful shutdown handler."""
-        self.logger.info("🛑 Shutdown signal received, completing current task...")
+        self.logger.info("[STOP] Shutdown signal received, completing current task...")
         self.running = False
     
     def log_progress(self):
@@ -167,7 +167,7 @@ class CISAVideoPipeline:
         completed = stats.get(Stage.COMPLETED.value, 0)
         failed = stats.get(Stage.FAILED.value, 0)
         
-        self.logger.info(f"📊 Progress: {completed}/{total} completed, {failed} failed")
+        self.logger.info(f"[PROGRESS] {completed}/{total} completed, {failed} failed")
         self.logger.info(f"   Stages: {json.dumps(stats)}")
     
     # ==================== STAGE HANDLERS ====================
@@ -175,10 +175,10 @@ class CISAVideoPipeline:
     def stage_analyze_topics(self):
         """Stage 1: Analyze CISA questions and create tasks."""
         if self.state.tasks:
-            self.logger.info("⏭️ Tasks already exist, skipping analysis")
+            self.logger.info("[SKIP] Tasks already exist, skipping analysis")
             return
         
-        self.logger.info("🔍 Stage 1: Analyzing CISA topics...")
+        self.logger.info("[ANALYZE] Stage 1: Analyzing CISA topics...")
         
         try:
             from analyze_topics import analyze_topics
@@ -194,15 +194,15 @@ class CISAVideoPipeline:
                 )
                 self.state.add_task(task)
             
-            self.logger.info(f"✅ Created {len(self.state.tasks)} video tasks")
+            self.logger.info(f"[OK] Created {len(self.state.tasks)} video tasks")
             
         except Exception as e:
-            self.logger.error(f"❌ Analysis failed: {e}")
+            self.logger.error(f"[ERROR] Analysis failed: {e}")
             traceback.print_exc()
     
     def stage_generate_script(self, task: VideoTask):
         """Stage 2: Generate script for a topic."""
-        self.logger.info(f"📝 Generating script for: {task.topic}")
+        self.logger.info(f"[SCRIPT] Generating script for: {task.topic}")
         
         try:
             from generate_scripts import generate_script
@@ -222,7 +222,7 @@ class CISAVideoPipeline:
                     stage=Stage.BACKGROUND_GENERATING.value,
                     script_file=str(script_file)
                 )
-                self.logger.info(f"✅ Script saved: {script_file.name}")
+                self.logger.info(f"[OK] Script saved: {script_file.name}")
             else:
                 raise Exception("Empty script returned")
                 
@@ -231,7 +231,7 @@ class CISAVideoPipeline:
     
     def stage_assign_presenter(self, task: VideoTask):
         """Stage 3: Assign random presenter (avatar) and background."""
-        self.logger.info(f"🎭 Assigning presenter for: {task.topic}")
+        self.logger.info(f"[ASSIGN] Assigning presenter for: {task.topic}")
         
         try:
             from config import get_random_combo, get_background_path
@@ -255,25 +255,25 @@ class CISAVideoPipeline:
                 avatar_id=avatar['id'],
                 avatar_name=avatar['name']
             )
-            self.logger.info(f"✅ Assigned: {avatar['name']} ({avatar['id']}) with {background_filename}")
+            self.logger.info(f"[OK] Assigned: {avatar['name']} ({avatar['id']}) with {background_filename}")
                 
         except Exception as e:
             self.handle_task_error(task, f"Presenter assignment failed: {e}")
     
     def stage_heygen_create(self, task: VideoTask):
         """Stage 4: Create video in HeyGen via browser automation."""
-        self.logger.info(f"🎬 Creating HeyGen video for: {task.topic} (Presenter: {task.avatar_name})")
+        self.logger.info(f"[HEYGEN] Creating video for: {task.topic} (Presenter: {task.avatar_name})")
         
         try:
             from heygen_automation import HeyGenAutomation
             
-            heygen = HeyGenAutomation()
-            video_id = heygen.create_video(
-                script_file=task.script_file,
-                background_file=task.background_file,
-                avatar_id=task.avatar_id,
-                title=task.topic
-            )
+            with HeyGenAutomation() as heygen:
+                video_id = heygen.create_video(
+                    script_file=task.script_file,
+                    background_file=task.background_file,
+                    avatar_id=task.avatar_id,
+                    title=task.topic
+                )
             
             if video_id:
                 self.state.update_task(
@@ -281,7 +281,7 @@ class CISAVideoPipeline:
                     stage=Stage.HEYGEN_PROCESSING.value,
                     heygen_video_id=video_id
                 )
-                self.logger.info(f"✅ HeyGen video queued: {video_id}")
+                self.logger.info(f"[OK] HeyGen video queued: {video_id}")
             else:
                 raise Exception("Failed to create HeyGen video")
                 
@@ -290,25 +290,25 @@ class CISAVideoPipeline:
     
     def stage_heygen_poll(self, task: VideoTask):
         """Stage 5: Poll HeyGen for video completion."""
-        self.logger.info(f"⏳ Checking HeyGen status for: {task.heygen_video_id}")
+        self.logger.info(f"[POLL] Checking HeyGen status for: {task.heygen_video_id}")
         
         try:
             from heygen_automation import HeyGenAutomation
             
-            heygen = HeyGenAutomation()
-            status, download_url = heygen.check_video_status(task.heygen_video_id)
+            with HeyGenAutomation() as heygen:
+                status, download_url = heygen.check_video_status(task.heygen_video_id)
             
-            if status == "completed" and download_url:
-                self.state.update_task(
-                    task.id,
-                    stage=Stage.DOWNLOADING.value,
-                )
-                self.logger.info(f"✅ Video ready for download")
-            elif status == "failed":
-                raise Exception("HeyGen video generation failed")
-            else:
-                # Still processing, will check again next cycle
-                self.logger.info(f"⏳ Still processing...")
+                if status == "completed" and download_url:
+                    self.state.update_task(
+                        task.id,
+                        stage=Stage.DOWNLOADING.value,
+                    )
+                    self.logger.info(f"[OK] Video ready for download")
+                elif status == "failed":
+                    raise Exception("HeyGen video generation failed")
+                else:
+                    # Still processing, will check again next cycle
+                    self.logger.info(f"[WAIT] Still processing...")
                 
         except Exception as e:
             self.handle_task_error(task, f"HeyGen poll failed: {e}")
@@ -321,18 +321,18 @@ class CISAVideoPipeline:
             from heygen_automation import HeyGenAutomation
             from config import VIDEOS_DIR
             
-            heygen = HeyGenAutomation()
-            safe_name = task.topic.replace(' ', '_').replace('/', '-')[:50]
-            video_file = Path(VIDEOS_DIR) / f"{task.id}_{safe_name}.mp4"
+            with HeyGenAutomation() as heygen:
+                safe_name = task.topic.replace(' ', '_').replace('/', '-')[:50]
+                video_file = Path(VIDEOS_DIR) / f"{task.id}_{safe_name}.mp4"
+                
+                heygen.download_video(task.heygen_video_id, video_file)
             
-            heygen.download_video(task.heygen_video_id, video_file)
-            
-            self.state.update_task(
-                task.id,
-                stage=Stage.UPLOADING.value,
-                video_file=str(video_file)
-            )
-            self.logger.info(f"✅ Video downloaded: {video_file.name}")
+                self.state.update_task(
+                    task.id,
+                    stage=Stage.UPLOADING.value,
+                    video_file=str(video_file)
+                )
+                self.logger.info(f"[OK] Video downloaded: {video_file.name}")
                 
         except Exception as e:
             self.handle_task_error(task, f"Download failed: {e}")
@@ -349,14 +349,14 @@ class CISAVideoPipeline:
                 stage=Stage.COMPLETED.value,
                 storage_url=f"local://{task.video_file}"
             )
-            self.logger.info(f"✅ Video completed: {task.id}")
+            self.logger.info(f"[OK] Video completed: {task.id}")
                 
         except Exception as e:
             self.handle_task_error(task, f"Upload failed: {e}")
     
     def handle_task_error(self, task: VideoTask, error: str):
         """Handle task failure with retry logic."""
-        self.logger.error(f"❌ {error}")
+        self.logger.error(f"[ERROR] {error}")
         
         if task.retry_count < self.MAX_RETRIES:
             self.state.update_task(
@@ -364,21 +364,21 @@ class CISAVideoPipeline:
                 retry_count=task.retry_count + 1,
                 error=error
             )
-            self.logger.info(f"🔄 Will retry (attempt {task.retry_count + 1}/{self.MAX_RETRIES})")
+            self.logger.info(f"[RETRY] Will retry (attempt {task.retry_count + 1}/{self.MAX_RETRIES})")
         else:
             self.state.update_task(
                 task.id,
                 stage=Stage.FAILED.value,
                 error=error
             )
-            self.logger.error(f"💀 Task permanently failed after {self.MAX_RETRIES} retries")
+            self.logger.error(f"[FAILED] Task permanently failed after {self.MAX_RETRIES} retries")
     
     # ==================== MAIN LOOP ====================
     
     def run(self):
         """Main pipeline loop - runs until all tasks complete or shutdown."""
         self.logger.info("=" * 60)
-        self.logger.info("🚀 CISA Video Pipeline Started")
+        self.logger.info("CISA Video Pipeline Started")
         self.logger.info(f"   Batch size: {self.batch_size}")
         self.logger.info(f"   State file: {self.state_file}")
         self.logger.info(f"   Log file: {self.log_file}")
@@ -397,7 +397,7 @@ class CISAVideoPipeline:
                          if k not in [Stage.COMPLETED.value, Stage.FAILED.value])
             
             if pending == 0:
-                self.logger.info("🎉 All tasks completed!")
+                self.logger.info("[DONE] All tasks completed!")
                 break
             
             # Process each stage
@@ -441,10 +441,10 @@ class CISAVideoPipeline:
             
             # If nothing to process, wait before next cycle
             if not processed_any:
-                self.logger.info(f"💤 Waiting {self.POLL_INTERVAL}s for HeyGen processing...")
+                self.logger.info(f"[WAIT] Waiting {self.POLL_INTERVAL}s for HeyGen processing...")
                 time.sleep(self.POLL_INTERVAL)
         
-        self.logger.info("🏁 Pipeline finished")
+        self.logger.info("[END] Pipeline finished")
         self.log_progress()
     
     def status(self):
@@ -453,14 +453,14 @@ class CISAVideoPipeline:
         total = len(self.state.tasks)
         
         print("\n" + "=" * 60)
-        print("📊 CISA Video Pipeline Status")
+        print("CISA Video Pipeline Status")
         print("=" * 60)
         print(f"Total tasks: {total}")
         print()
         
         for stage in Stage:
             count = stats.get(stage.value, 0)
-            bar = "█" * count + "░" * (total - count) if total > 0 else ""
+            bar = "#" * count + "." * (total - count) if total > 0 else ""
             print(f"  {stage.value:20} {count:3} {bar[:20]}")
         
         print()
@@ -468,7 +468,7 @@ class CISAVideoPipeline:
         # Show recent errors
         errors = [t for t in self.state.tasks if t.error]
         if errors:
-            print("⚠️ Recent errors:")
+            print("Recent errors:")
             for t in errors[:5]:
                 print(f"  - {t.id}: {t.error[:50]}...")
         

@@ -83,7 +83,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA1-B12-005',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Inquiry as an audit procedure should be:',
     options: [
       'Used alone for conclusions',
@@ -117,7 +117,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA1-B12-007',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Tolerable error rate in sampling defines:',
     options: [
       'Maximum errors expected',
@@ -185,7 +185,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA1-B12-011',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Data validation for CAATs should ensure:',
     options: [
       'Speed of processing',
@@ -253,7 +253,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA1-B12-015',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit finding severity should consider:',
     options: [
       'Only ease of fixing',
@@ -287,7 +287,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA1-B12-017',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit report distribution should be:',
     options: [
       'As wide as possible',
@@ -394,7 +394,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA2-B12-023',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT performance measurement requires:',
     options: [
       'No baseline data',
@@ -428,7 +428,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA2-B12-025',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Risk heat maps display:',
     options: [
       'Only high risks',
@@ -496,7 +496,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA2-B12-029',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT standards ensure:',
     options: [
       'Flexibility in all choices',
@@ -564,7 +564,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA2-B12-033',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'SOC 2 reports cover:',
     options: [
       'Only financial controls',
@@ -598,7 +598,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA2-B12-035',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Problem escalation procedures ensure:',
     options: [
       'All problems are ignored',
@@ -705,7 +705,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA3-B12-041',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Use case diagrams document:',
     options: [
       'Database structures',
@@ -739,7 +739,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA3-B12-043',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Prototyping is useful when:',
     options: [
       'Requirements are perfectly clear',
@@ -807,7 +807,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA3-B12-047',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Continuous deployment differs from continuous delivery because:',
     options: [
       'They are identical',
@@ -875,7 +875,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA3-B12-051',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Test management includes:',
     options: [
       'Only test execution',
@@ -909,7 +909,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA3-B12-053',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Training for new systems should:',
     options: [
       'Only use documentation',
@@ -1016,7 +1016,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA4-B12-059',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Service catalog provides:',
     options: [
       'Only pricing',
@@ -1050,7 +1050,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA4-B12-061',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Availability management ensures:',
     options: [
       'Only uptime tracking',
@@ -1118,7 +1118,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA4-B12-065',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Database mirroring provides:',
     options: [
       'Only data backup',
@@ -1186,7 +1186,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA4-B12-069',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Vital records management for BC ensures:',
     options: [
       'All records are kept forever',
@@ -1220,7 +1220,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA4-B12-071',
     courseId: 'cisa',
     section: 'CISA4',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Automatic failover compared to manual:',
     options: [
       'Is always preferred',
@@ -1327,7 +1327,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-077',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security risk assessment should identify:',
     options: [
       'Only high risks',
@@ -1361,7 +1361,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-079',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Discretionary access control (DAC) allows:',
     options: [
       'Only system administrators to grant access',
@@ -1429,7 +1429,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-083',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'DMZ (demilitarized zone) placement isolates:',
     options: [
       'All internal systems',
@@ -1497,7 +1497,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-087',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Perfect forward secrecy ensures:',
     options: [
       'Keys never expire',
@@ -1531,7 +1531,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-089',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Security baselines define:',
     options: [
       'Maximum security',
@@ -1633,7 +1633,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-095',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Eradication phase of incident response:',
     options: [
       'Comes before containment',
@@ -1667,7 +1667,7 @@ const ALL_BATCH12: Question[] = [
     id: 'CISA5-B12-097',
     courseId: 'cisa',
     section: 'CISA5',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Visitor management controls include:',
     options: [
       'Open access policies',

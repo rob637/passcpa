@@ -62,7 +62,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-006',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'The Agile development methodology is characterized by:',
     options: [
       'Extensive upfront documentation',
@@ -96,7 +96,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-008',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Configuration management ensures that:',
     options: [
       'Software is developed faster',
@@ -147,7 +147,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-011',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Unit testing verifies:',
     options: [
       'Integration between system components',
@@ -181,7 +181,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-013',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'User acceptance testing (UAT) should be performed by:',
     options: [
       'Developers',
@@ -215,7 +215,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-015',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Stress testing evaluates:',
     options: [
       'Normal operating conditions',
@@ -283,7 +283,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-019',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Post-implementation review should assess:',
     options: [
       'Only technical performance',
@@ -300,7 +300,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-020',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When evaluating packaged software, the MOST important criterion is:',
     options: [
       'Lowest cost',
@@ -351,7 +351,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-023',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Rapid application development (RAD) emphasizes:',
     options: [
       'Extensive documentation',
@@ -402,7 +402,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-026',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Object-oriented programming provides benefits including:',
     options: [
       'Faster compilation',
@@ -436,7 +436,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-028',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Application programming interfaces (APIs) require:',
     options: [
       'No security controls',
@@ -504,7 +504,7 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     id: 'CISA3-032',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'System documentation should be updated:',
     options: [
       'Only during initial development',

@@ -95,7 +95,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA2-215',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Risk appetite is defined by:',
     options: [
       'IT management alone',
@@ -129,7 +129,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA2-217',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT investment portfolio management ensures:',
     options: [
       'All projects use same technology',
@@ -197,7 +197,7 @@ export const CISA2_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA2-221',
     courseId: 'cisa',
     section: 'CISA2',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'IT resource management includes managing:',
     options: [
       'Hardware only',
@@ -285,7 +285,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA3-211',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Code review is MOST effective when performed:',
     options: [
       'Only after production deployment',
@@ -319,7 +319,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA3-213',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'User acceptance testing (UAT) should be performed by:',
     options: [
       'Developers',
@@ -421,7 +421,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA3-219',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Post-implementation review should assess:',
     options: [
       'Project budget only',
@@ -455,7 +455,7 @@ export const CISA3_QUESTIONS_BATCH9: Question[] = [
     id: 'CISA3-221',
     courseId: 'cisa',
     section: 'CISA3',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Secure Software Development Framework (SSDF) provides:',
     options: [
       'Programming language specification',

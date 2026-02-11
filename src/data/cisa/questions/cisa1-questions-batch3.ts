@@ -79,7 +79,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-037',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Continuous auditing provides:',
     options: [
       'Less frequent audits',
@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-038',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Integrated test facility (ITF) involves:',
     options: [
       'Testing in a separate environment',
@@ -147,7 +147,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-041',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When planning an audit of a service organization, an IS auditor should:',
     options: [
       'Ignore the service organization',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-044',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Type II SOC reports differ from Type I in that they:',
     options: [
       'Are shorter',
@@ -232,7 +232,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-046',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Application controls are designed to ensure:',
     options: [
       'IT infrastructure reliability',
@@ -300,7 +300,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-050',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Limit checks verify that:',
     options: [
       'All fields are completed',
@@ -317,7 +317,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-051',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Check digits detect errors in:',
     options: [
       'Amounts',
@@ -368,7 +368,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-054',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Materiality in IS auditing considers:',
     options: [
       'Only financial amounts',
@@ -419,7 +419,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-057',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Detection risk is the risk that:',
     options: [
       'Controls will fail',
@@ -453,7 +453,7 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     id: 'CISA1-059',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Professional skepticism requires an auditor to:',
     options: [
       'Trust all management statements',

@@ -79,7 +79,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-127',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When evaluating third-party audit reports:',
     options: [
       'Accept all findings',
@@ -96,7 +96,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-128',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Bridge letters from service organizations:',
     options: [
       'Replace SOC reports',
@@ -147,7 +147,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-131',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When auditing IT governance:',
     options: [
       'Focus only on technology',
@@ -198,7 +198,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-134',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'When management proposes to accept a risk:',
     options: [
       'Auditor must reject',
@@ -232,7 +232,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-137',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Presenting audit results to the audit committee:',
     options: [
       'Should include all technical details',
@@ -317,7 +317,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-142',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit resource allocation should prioritize:',
     options: [
       'Equal time for all areas',
@@ -334,7 +334,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-143',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Cross-referencing in audit workpapers:',
     options: [
       'Is optional',
@@ -385,7 +385,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-146',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Audit issue aging reports help:',
     options: [
       'Only track dates',
@@ -436,7 +436,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-149',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Walkthroughs as an audit technique:',
     options: [
       'Replace all testing',
@@ -470,7 +470,7 @@ export const CISA1_QUESTIONS_BATCH6: Question[] = [
     id: 'CISA1-151',
     courseId: 'cisa',
     section: 'CISA1',
-    difficulty: 'medium',
+    difficulty: 'easy',
     question: 'Professional skepticism requires auditors to:',
     options: [
       'Trust all management representations',

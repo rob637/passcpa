@@ -1,0 +1,9 @@
+Capacity planning… fail to understand it and you’re almost guaranteed to drop points on the SEE-suh exam. Let’s fix that.
+
+Capacity planning is proactively determining the resources needed to meet future demands... ensuring systems can handle anticipated workloads without performance degradation. Why do auditors care? Because inadequate capacity leads to system outages, data loss, and regulatory non-compliance. We're talking about potential financial and reputational damage. Auditors assess capacity planning to ensure business continuity and data integrity. If systems can’t scale, the business can’t either.
+
+Now, here's the exam trap. eye-SAH-kah loves to present scenarios where performance monitoring is confused with capacity planning. The trap is… they’ll offer options that only describe reactive performance monitoring – like identifying bottlenecks after they occur. The correct answer is always the one that emphasizes proactive prediction and planning before issues arise. Think forecasting, trend analysis, and modeling future needs, not just reacting to current problems. Remember the word "proactive".
+
+For example, when auditing a cloud migration, don't just check if the current server load is okay. Evaluate if the projected growth in data storage and processing power will exceed the allocated cloud resources in the next six months. Are they thinking ahead? That's the key.
+
+The one takeaway? Capacity planning isn't just about reacting to problems; it’s about anticipating future resource needs. Master this, and you'll be one step closer to passing the SEE-suh!

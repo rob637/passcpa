@@ -1,0 +1,9 @@
+Alright SEE-suh candidates… Backups and recovery – fail this, and your audit is sunk! This is make-or-break for business resilience, so let’s nail it.
+
+What are backups and why do auditors care? A backup is a duplicate copy of data… used to restore systems after a failure. As auditors, we care because incomplete or untested backups… directly threaten business continuity. No backups, no business. It's that simple. We need to verify they exist, are comprehensive, and actually work.
+
+Now, here’s the exam trap eye-SAH-kah loves to spring. They’ll present scenarios… where you have to differentiate between incremental and differential backups. The trap is… they’ll bury the lede. Both backup only changed data… but incremental backups only back up data changed since the last backup of any kind. Differential backups back up data changed since the last full backup. The correct answer is… the one that acknowledges the impact of previous incremental backups on restoration time. Remember, incremental means you need the full backup… and all the incrementals since then.
+
+For example, when auditing a disaster recovery plan… you discover incremental backups are being used… but the recovery process only tests restoring from the full backup. Huge red flag! You need to verify the process includes restoring all subsequent incremental backups… in the correct order… to ensure data integrity. Your recommendation? Comprehensive testing of the entire restore process.
+
+So, the ONE thing you MUST remember? Incremental backups depend on all previous incremental backups for a successful restore. Master this concept… and you’ll ace the exam!

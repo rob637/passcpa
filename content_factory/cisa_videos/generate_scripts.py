@@ -143,4 +143,8 @@ def generate_scripts_for_topics(topics_file=None, max_topics=10):
     return generated
 
 if __name__ == "__main__":
-    generate_scripts_for_topics(max_topics=10)
+    import argparse
+    parser = argparse.ArgumentParser(description='Generate CISA video scripts')
+    parser.add_argument('--count', type=int, default=10, help='Number of topics to generate')
+    args = parser.parse_args()
+    generate_scripts_for_topics(max_topics=args.count)

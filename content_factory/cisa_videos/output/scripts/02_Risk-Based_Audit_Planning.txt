@@ -1,9 +1,0 @@
-Risk-based audit planning… it’s not just a section in the CISA exam; it’s the foundation for efficient and effective audits. Miss this, and you’re leaving crucial vulnerabilities exposed.
-
-Risk-based audit planning is all about focusing audit efforts where they matter most… It’s identifying and prioritizing audit areas based on the likelihood and impact of potential risks to the organization. Why do auditors care? Because limited resources mean we can’t audit everything, everywhere, all at once. We need to target the biggest threats to the business.
-
-The number one trap ISACA sets is focusing solely on what’s easiest to audit, or what’s always been audited before. The trap is… prioritizing convenience over substance. The correct answer is… the area representing the GREATEST potential impact to the organization’s objectives if a control fails. Think material misstatement, regulatory non-compliance, or significant reputational damage. It's not about ease; it’s about impact.
-
-For example, when auditing a financial institution, a weak authentication process for wire transfers poses a far greater risk than an outdated coffee machine policy. Even if the coffee machine policy is easier to audit, the wire transfer system requires immediate attention based on the potential financial loss and regulatory penalties.
-
-So, remember this: when developing a risk-based audit plan, prioritize the area with the GREATEST potential impact to the organization. Get that right, and you’re one step closer to CISA success.

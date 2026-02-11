@@ -1,0 +1,9 @@
+Hey future CISAs! Nail the audit planning process, and you're one step closer to passing. Trust me, ISACA *loves* testing this.
+
+What's an audit charter? ... Think of it as the auditor's constitution. It formally defines the audit's purpose, scope, responsibilities, and authority. ... Why do we care? ... Because without a clear charter, you're auditing blind. ... It's the foundation for a legally and ethically sound audit. ... No charter, no credible audit.
+
+Here's the trap. ... ISACA will try to trick you into thinking the audit charter is *only* about management's expectations. ... The trap is focusing on the *wants* of management, rather than the *needs* for good governance and risk management. ... The correct answer always includes the auditor's independence and the scope of *their* authority. ... Remember, it's a *two-way* agreement, not just a top-down directive.
+
+Let’s say you're auditing a new cloud migration project. ... The charter must clearly define your access rights to cloud infrastructure logs, your ability to interview relevant personnel, and the independence you have to report findings, *even* if they're unfavorable to the project team. ... Without it, you're powerless.
+
+Your key takeaway? ... The audit charter establishes the *auditor's* power and independence. ... Master that, and you've mastered a critical part of the CISA exam. Now go get 'em!

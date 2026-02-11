@@ -1,0 +1,9 @@
+Hey CISA candidates! ... BCP vs. DRP can be a HUGE stumbling block on the exam. Master this, and you'll confidently answer several questions.
+
+So, what's the core difference? ... A Business Continuity Plan, or BCP, focuses on maintaining essential business functions *during* a disruption. ... Think of it as keeping the lights on, even with a power outage. ... A Disaster Recovery Plan, or DRP, on the other hand, focuses on restoring IT infrastructure *after* a disruption. ... It’s about getting the power back on in the first place. ... As auditors, we care because we need to ensure both plans are robust and regularly tested to protect the organization's critical assets and reputation.
+
+Now, here's the trap ISACA loves to set: ... They'll present scenarios that blur the lines between ongoing operations and recovery. ... The trap is… they’ll ask which plan addresses day-to-day operations *recovery*. ... The correct answer is BCP. ... DRP is about the *initial* recovery of IT systems *after* a significant event, while BCP helps keep those essential operations running in a degraded state *during* the event and handles the day-to-day workaround solutions. ... Don't let the "recovery" wording in "Disaster Recovery" fool you.
+
+For example, when auditing a financial institution, the BCP would cover how to process critical transactions if their main data center is unavailable. ... The DRP would cover the steps to rebuild that data center and restore IT systems to their pre-disaster state. ... Different timelines, different focuses.
+
+The key takeaway? ... BCP equals *business continuity*, keeping the business running. ... DRP equals *disaster recovery*, restoring IT infrastructure. ... Nail that difference, and you'll ace those CISA questions. ... Good luck!

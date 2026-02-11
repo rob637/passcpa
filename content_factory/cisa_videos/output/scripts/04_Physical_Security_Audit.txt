@@ -1,9 +1,0 @@
-Physical security breaches can cripple a data center and instantly invalidate all your other security controls… making it a critical area for CISA candidates.
-
-A physical security audit of a data center is a systematic assessment of the physical controls designed to protect its assets… including hardware, software, data, and personnel… from unauthorized access, damage, or disruption. Auditors care because weaknesses here can lead to data breaches, service outages, and huge financial losses… regardless of how strong your firewalls are.
-
-The trap is… ISACA loves to offer multiple seemingly valid physical security measures… but only *one* directly addresses the *greatest* risk. The correct answer is… typically the control that prevents *unauthorized physical access* in the first place. Think layers of security… and which layer, if compromised, defeats all others. For example, focusing on advanced fire suppression systems when the front door is unlocked is missing the point.
-
-For example, when auditing a data center… you might see biometric scanners, security guards, and CCTV… all good. But… if the emergency exit doors are easily bypassed without triggering an alarm… that's a major vulnerability. That bypassed door negates all the other controls. A properly functioning and monitored alarm system on emergency exits is paramount.
-
-Remember this: Prioritize controls that prevent initial unauthorized physical access. Master this and you're one step closer to acing the CISA!

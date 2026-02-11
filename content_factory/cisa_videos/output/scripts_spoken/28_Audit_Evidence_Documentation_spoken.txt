@@ -1,0 +1,9 @@
+Audit workpaper documentation... Get this wrong, and you're GONE on the SEE-suh exam.
+
+Audit workpapers are the bedrock of any IS audit. Think of them as the complete record of your audit... documenting the procedures performed, evidence obtained, and conclusions reached. Auditors care deeply about thorough documentation because it provides support for the audit opinion, allows for review and replication, and ensures accountability. Without solid workpapers, your audit is just... your word.
+
+eye-SAH-kah loves to trip you up on the scope of what must be documented. The trap is focusing solely on findings. Sure, findings are crucial... but the correct answer is always the broadest option: all significant matters, including the planning, scope, procedures, evidence, and conclusions. Don't just document the problems; document everything relevant to the audit. Always choose the most comprehensive answer.
+
+For example, when auditing a cloud security configuration, don’t just note the misconfigured firewall rule. Document the original security baseline, the tool you used to identify the misconfiguration, screenshots of the rule before and after remediation, and who authorized the change. That complete picture is what distinguishes a strong auditor.
+
+Remember this: comprehensive workpaper documentation is your shield against challenge. Master it, and you'll conquer the SEE-suh exam.

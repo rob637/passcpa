@@ -1,9 +1,0 @@
-Hey CISA candidates… Mastering Function Points can be the difference between passing and failing the exam!
-
-Function Point Analysis… it’s a standardized method for estimating the size and complexity of software applications… based on the functionality delivered to the user. As auditors, we care because it provides an objective measure… for validating project estimates… assessing development productivity… and ultimately… ensuring IT investments deliver value.
-
-Now, here’s the trap… ISACA loves to test whether you understand that Function Points are user-centric… not technology-centric. The trap is… questions that focus on lines of code… or technical infrastructure details… instead of user inputs, outputs, inquiries, files, and interfaces. The correct answer will ALWAYS emphasize the user's perspective and the functionality *they* receive. Remember that!
-
-For example, when auditing a new payroll system implementation… you're reviewing the project budget and timeline. The project manager justifies the delay by pointing to unforeseen database complexities. You need to assess if this is a valid reason. Function Point Analysis helps you determine if the *functionality delivered to the payroll users* – like employee self-service, report generation, and tax filing – aligns with the project's initial scope and budget. If the function point count remains the same… but the technical effort skyrocketed… that's a red flag demanding further investigation.
-
-The ONE thing to remember: Function Points are all about measuring functionality *from the user's point of view*. Get that… and you’re one step closer to CISA success!

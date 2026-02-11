@@ -1,9 +1,0 @@
-I-T General Controls... get these right, and you're one HUGE step closer to passing the SEE-suh exam. Trust me.
-
-I-T General Controls, or ITGCs, are the foundation of any secure I-T environment. They're the basic controls that apply to all systems, applications, and I-T infrastructure... think security management, access controls, change management, and backup and recovery. Why do auditors care? Because without strong ITGCs, all application controls are essentially useless. Weak ITGCs undermine everything! We need to be sure they're in place and effective to rely on the data and processes within those applications.
-
-The biggest trap eye-SAH-kah sets is focusing on application controls first. They'll give you a scenario and ask what an auditor should do. The trap is… jumping straight to application-specific controls without verifying ITGCs are solid. The correct answer is ALWAYS to evaluate ITGCs first. You can't trust the application controls if the underlying ITGCs are broken. Think of it like building a house. You don't start with the paint color before you lay the foundation, right? Same principle.
-
-For example, when auditing a new payroll system, don't immediately focus on how it calculates taxes. First, verify that user access to the system is properly controlled, that changes to the application code are properly tested and approved, and that backups are performed regularly. If those ITGCs are weak, the tax calculations are irrelevant because the whole system is vulnerable.
-
-The one thing you MUST remember: I-T General Controls ALWAYS come first. Get this, and you’ve got this!

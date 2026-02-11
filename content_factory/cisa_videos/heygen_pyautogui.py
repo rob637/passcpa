@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 HeyGen Automation using PyAutoGUI for reliable clicking/typing.
-Playwright handles navigation, pyautogui handles UI interactions.
+Uses webbrowser to open Chrome, pyautogui handles UI interactions.
 
 Usage:
     python heygen_pyautogui.py --calibrate   # Run calibration to get coordinates
@@ -14,9 +14,10 @@ import pyperclip
 import time
 import json
 import os
+import subprocess
+import webbrowser
 import logging
 from pathlib import Path
-from playwright.sync_api import sync_playwright
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -260,6 +261,14 @@ def create_video(title, script_text, avatar_name, background_name=None):
     return True
 
 
+def open_heygen_editor():
+    """Open HeyGen AI Studio in default browser."""
+    # Open the create page directly - this should open AI Studio
+    url = "https://app.heygen.com/create-v4/draft"
+    webbrowser.open(url)
+    logger.info(f"Opened: {url}")
+
+
 def run_batch(limit=None):
     """Run batch creation of videos."""
     
@@ -277,57 +286,39 @@ def run_batch(limit=None):
     
     logger.info(f"Creating {len(videos)} videos...")
     
-    # Open browser with Playwright using persistent profile
-    # This saves login cookies between sessions
-    user_data_dir = Path.home() / ".heygen_automation"
+    # Open browser to HeyGen
+    open_heygen_editor()
     
-    with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(
-            user_data_dir=str(user_data_dir),
-            headless=False,
-            channel="chrome",  # Use installed Chrome, not Playwright's Chromium
-            viewport={'width': 1920, 'height': 1080},
-            args=['--start-maximized']
+    input("\n>>> Log in to HeyGen and wait for editor to load, then press ENTER...")
+    
+    for i, video in enumerate(videos):
+        logger.info(f"\n[{i+1}/{len(videos)}] Processing...")
+        
+        # Load script
+        script_file = Path(f"output/scripts_spoken/{video['script']}")
+        if not script_file.exists():
+            logger.error(f"Script not found: {script_file}")
+            continue
+        
+        script_text = script_file.read_text()
+        
+        # Create the video using pyautogui
+        create_video(
+            title=video['topic'],
+            script_text=script_text,
+            avatar_name=video['avatar_id'],
+            background_name=video.get('background')
         )
-        page = context.pages[0] if context.pages else context.new_page()
         
-        # Navigate to HeyGen
-        page.goto("https://app.heygen.com/home")
-        
-        input("\n>>> Log in to HeyGen (if needed), then press ENTER to continue...")
-        
-        for i, video in enumerate(videos):
-            logger.info(f"\n[{i+1}/{len(videos)}] Processing...")
-            
-            # Navigate to create new video
-            page.goto("https://app.heygen.com/home")
-            time.sleep(2)
-            
-            # Click Create → Create in AI Studio
-            page.click('button:has-text("Create")')
+        # Wait a bit, then open new editor for next video
+        if i < len(videos) - 1:
+            time.sleep(3)
+            # Open new tab with new editor
+            pyautogui.hotkey('ctrl', 't')  # New tab
             time.sleep(0.5)
-            page.click('text="Create in AI studio"')
+            pyautogui.typewrite('https://app.heygen.com/create-v4/draft', interval=0.02)
+            pyautogui.press('enter')
             time.sleep(5)  # Wait for editor to load
-            
-            # Load script
-            script_file = Path(f"output/scripts_spoken/{video['script']}")
-            if not script_file.exists():
-                logger.error(f"Script not found: {script_file}")
-                continue
-            
-            script_text = script_file.read_text()
-            
-            # Create the video using pyautogui
-            create_video(
-                title=video['topic'],
-                script_text=script_text,
-                avatar_name=video['avatar_id'],
-                background_name=video.get('background')
-            )
-            
-            time.sleep(2)  # Pause between videos
-        
-        context.close()
     
     logger.info("\n" + "="*60)
     logger.info("BATCH COMPLETE!")
@@ -346,35 +337,20 @@ def test_single():
     script_file = Path(f"output/scripts_spoken/{video['script']}")
     script_text = script_file.read_text()
     
-    with sync_playwright() as p:
-        user_data_dir = Path.home() / ".heygen_automation"
-        context = p.chromium.launch_persistent_context(
-            user_data_dir=str(user_data_dir),
-            headless=False,
-            channel="chrome",  # Use installed Chrome, not Playwright's Chromium
-            viewport={'width': 1920, 'height': 1080},
-            args=['--start-maximized']
-        )
-        page = context.pages[0] if context.pages else context.new_page()
-        
-        page.goto("https://app.heygen.com/home")
-        input("\n>>> Log in to HeyGen (if needed), then press ENTER...")
-        
-        # Create video
-        page.click('button:has-text("Create")')
-        time.sleep(0.5)
-        page.click('text="Create in AI studio"')
-        time.sleep(5)
-        
-        create_video(
-            title=video['topic'],
-            script_text=script_text,
-            avatar_name=video['avatar_id'],
-            background_name=video.get('background')
-        )
-        
-        input("\n>>> Check the result, then press ENTER to close...")
-        context.close()
+    # Open HeyGen in browser
+    open_heygen_editor()
+    
+    input("\n>>> Log in to HeyGen and wait for editor to load, then press ENTER...")
+    
+    # Create video
+    create_video(
+        title=video['topic'],
+        script_text=script_text,
+        avatar_name=video['avatar_id'],
+        background_name=video.get('background')
+    )
+    
+    logger.info("\n>>> Done! Check the result.")
 
 
 if __name__ == "__main__":

@@ -234,68 +234,71 @@ class HeyGenAutomation:
             time.sleep(5)  # Wait for editor to load
             
             # =========================================================
-            # SET LANDSCAPE MODE (16:9) - multiple possible locations
+            # SET LANDSCAPE MODE (16:9) - Click Layouts in right sidebar
             # =========================================================
             try:
-                # Method 1: Look for Layouts button in right sidebar, then select 16:9
-                layouts_btn = self.page.locator('text="Layouts"').first
-                if layouts_btn and layouts_btn.is_visible():
-                    layouts_btn.click()
-                    logger.info("[OK] Clicked Layouts button")
-                    time.sleep(1)
-                    
-                    # Look for 16:9 option in the layouts panel
+                # The Layouts button is in the right sidebar panel
+                # Try multiple selectors for the Layouts button
+                layouts_selectors = [
+                    'text="Layouts"',
+                    '[aria-label="Layouts"]',
+                    'button:has-text("Layouts")',
+                    '[data-testid="layouts"]',
+                    # It might be an icon button
+                    'svg[class*="layout"]',
+                ]
+                
+                layouts_clicked = False
+                for selector in layouts_selectors:
+                    try:
+                        layouts_btn = self.page.locator(selector).first
+                        if layouts_btn and layouts_btn.is_visible():
+                            layouts_btn.click()
+                            logger.info(f"[OK] Clicked Layouts button via: {selector}")
+                            layouts_clicked = True
+                            time.sleep(1.5)
+                            break
+                    except:
+                        continue
+                
+                if layouts_clicked:
+                    # Now look for 16:9 aspect ratio option
+                    # It might be an image/icon showing the ratio, or text
                     ratio_selectors = [
                         'text="16:9"',
                         '[aria-label*="16:9"]',
                         '[aria-label*="Landscape"]',
+                        '[aria-label*="landscape"]',
                         'button:has-text("16:9")',
                         '[data-ratio="16:9"]',
+                        # Look for thumbnail/preview showing landscape
+                        'img[alt*="16:9"]',
+                        'img[alt*="landscape"]',
+                        '[class*="ratio"] img',
+                        '[class*="aspect"] button',
                     ]
+                    
                     for selector in ratio_selectors:
-                        ratio_btn = self.page.locator(selector).first
-                        if ratio_btn and ratio_btn.is_visible():
-                            ratio_btn.click()
-                            logger.info("[OK] Set 16:9 landscape via Layouts")
-                            time.sleep(1)
-                            break
-                    # Close layouts panel
-                    close_btn = self.page.locator('button[aria-label*="Close"], [class*="close"]').first
-                    if close_btn and close_btn.is_visible():
-                        close_btn.click()
-                        time.sleep(0.5)
-                else:
-                    # Method 2: Look for aspect ratio buttons in toolbar
-                    landscape_selectors = [
-                        'button[aria-label*="Landscape"]',
-                        'button[aria-label*="16:9"]',
-                        '[data-testid="landscape"]',
-                        'button:has-text("16:9")',
-                        'button[class*="aspect"]',
-                        # Icon buttons in toolbar - one might be aspect ratio
-                        '[class*="toolbar"] button svg',
-                    ]
-                    for selector in landscape_selectors:
-                        landscape_btn = self.page.locator(selector).first
-                        if landscape_btn and landscape_btn.is_visible():
-                            landscape_btn.click()
-                            logger.info("[OK] Clicked landscape/16:9 button")
-                            time.sleep(1)
-                            break
+                        try:
+                            ratio_btn = self.page.locator(selector).first
+                            if ratio_btn and ratio_btn.is_visible():
+                                ratio_btn.click()
+                                logger.info(f"[OK] Set 16:9 landscape via: {selector}")
+                                time.sleep(1)
+                                break
+                        except:
+                            continue
                     else:
-                        # Try looking at header icons near title
-                        header_buttons = self.page.locator('header button, [class*="header"] button, [class*="toolbar"] button').all()
-                        for btn in header_buttons[:8]:
-                            try:
-                                btn_text = btn.inner_text().lower() if btn.inner_text() else ""
-                                btn_label = btn.get_attribute('aria-label') or ""
-                                if '16' in btn_text or 'landscape' in btn_text.lower() or 'ratio' in btn_label.lower():
-                                    btn.click()
-                                    logger.info("[OK] Clicked landscape via header scan")
-                                    time.sleep(1)
-                                    break
-                            except:
-                                pass
+                        # If no explicit 16:9 button found, try clicking the first landscape-shaped option
+                        # Landscape icons are wider than tall
+                        logger.warning("[WARN] Could not find 16:9 button - check Layouts panel manually")
+                    
+                    # Click somewhere else to close the layouts panel
+                    self.page.keyboard.press("Escape")
+                    time.sleep(0.5)
+                else:
+                    logger.warning("[WARN] Could not find Layouts button in sidebar")
+                    
             except Exception as e:
                 logger.warning(f"[WARN] Could not set landscape mode: {e}")
             
@@ -380,69 +383,83 @@ class HeyGenAutomation:
             time.sleep(1)
             
             # =========================================================
-            # SET BACKGROUND - Upload our custom office background
+            # SET BACKGROUND - Select from Uploads tab
             # =========================================================
             try:
-                # In the right panel, find "Avatar Background" section
-                # Click "Customize" to open the background picker
-                customize_btn = self.page.locator('text="Customize"').first
-                if customize_btn and customize_btn.is_visible():
-                    customize_btn.click()
-                    logger.info("[OK] Clicked Customize background")
-                    time.sleep(2)
-                    
-                    # Look for "Upload" tab/button in the background picker
-                    upload_selectors = [
-                        'text="Upload"',
-                        'button:has-text("Upload")',
-                        '[data-testid="upload-tab"]',
-                        'text="My uploads"',
-                        'text="Custom"',
+                # The background picker should already be visible from avatar selection
+                # Or we need to click on the avatar/background area to open it
+                
+                # First check if we're already in background picker (look for Stock/Uploads tabs)
+                uploads_tab = self.page.locator('text="Uploads"').first
+                if not (uploads_tab and uploads_tab.is_visible()):
+                    # Try to open background picker
+                    bg_openers = [
+                        'text="Customize"',
+                        'text="Replace Avatar Background"', 
+                        '[aria-label*="background"]',
+                        'text="Background"',
                     ]
-                    for selector in upload_selectors:
-                        upload_tab = self.page.locator(selector).first
-                        if upload_tab and upload_tab.is_visible():
-                            upload_tab.click()
-                            logger.info("[OK] Clicked Upload tab")
-                            time.sleep(1)
-                            break
+                    for selector in bg_openers:
+                        try:
+                            opener = self.page.locator(selector).first
+                            if opener and opener.is_visible():
+                                opener.click()
+                                logger.info(f"[OK] Opened background picker via: {selector}")
+                                time.sleep(1.5)
+                                break
+                        except:
+                            continue
+                
+                # Now click the "Uploads" tab (not "Stock")
+                uploads_tab = self.page.locator('text="Uploads"').first
+                if uploads_tab and uploads_tab.is_visible():
+                    uploads_tab.click()
+                    logger.info("[OK] Clicked Uploads tab")
+                    time.sleep(1.5)
                     
-                    # Now upload the background file
-                    # Look for file input or upload button
-                    if background_file and os.path.exists(background_file):
-                        # Find the file input element
-                        file_input = self.page.locator('input[type="file"]').first
-                        if file_input:
-                            file_input.set_input_files(background_file)
-                            logger.info(f"[OK] Uploaded background: {background_file}")
-                            time.sleep(3)  # Wait for upload
-                        else:
-                            # Try clicking an upload area/button that triggers file dialog
-                            upload_area = self.page.locator('[class*="upload"], [class*="dropzone"], button:has-text("Upload")').first
-                            if upload_area:
-                                # Use file chooser
-                                with self.page.expect_file_chooser() as fc_info:
-                                    upload_area.click()
-                                file_chooser = fc_info.value
-                                file_chooser.set_files(background_file)
-                                logger.info(f"[OK] Uploaded background via file chooser: {background_file}")
-                                time.sleep(3)
-                    else:
-                        logger.warning(f"[WARN] Background file not found: {background_file}")
-                        # Fall back to first available or recently uploaded
-                        first_bg = self.page.locator('[class*="thumbnail"] img, [class*="background-item"] img').first
-                        if first_bg and first_bg.is_visible():
-                            first_bg.click()
-                            logger.info("[OK] Selected first available background")
-                            time.sleep(1)
+                    # Now select the background by filename
+                    # Our backgrounds are named bg_office_1.png, bg_office_2.png, etc.
+                    bg_filename = os.path.basename(background_file) if background_file else "bg_office"
+                    bg_name = bg_filename.replace(".png", "").replace("_", " ")
                     
-                    # Close the picker if there's a confirm/apply button
-                    apply_btn = self.page.locator('button:has-text("Apply"), button:has-text("Done"), button:has-text("Select"), button:has-text("Use")').first
-                    if apply_btn and apply_btn.is_visible():
-                        apply_btn.click()
-                        time.sleep(1)
+                    # Try to find and click the uploaded background
+                    bg_selectors = [
+                        f'img[alt*="{bg_filename}"]',
+                        f'img[alt*="bg_office"]',
+                        f'[title*="{bg_filename}"]',
+                        f'text="{bg_filename}"',
+                        # Just click the first uploaded image
+                        '[class*="thumbnail"] img',
+                        '[class*="upload"] img',
+                    ]
+                    
+                    bg_selected = False
+                    for selector in bg_selectors:
+                        try:
+                            bg_img = self.page.locator(selector).first
+                            if bg_img and bg_img.is_visible():
+                                bg_img.click()
+                                logger.info(f"[OK] Selected background via: {selector}")
+                                bg_selected = True
+                                time.sleep(1)
+                                break
+                        except:
+                            continue
+                    
+                    if not bg_selected:
+                        # If no specific match, just click the first thumbnail in uploads
+                        first_thumb = self.page.locator('img').nth(0)  # First image in panel
+                        if first_thumb and first_thumb.is_visible():
+                            first_thumb.click()
+                            logger.info("[OK] Clicked first available uploaded background")
+                            time.sleep(1)
                 else:
-                    logger.warning("[WARN] Customize button not found")
+                    logger.warning("[WARN] Could not find Uploads tab")
+                    
+                # Close background picker by pressing Escape or clicking outside
+                self.page.keyboard.press("Escape")
+                time.sleep(0.5)
+                
             except Exception as e:
                 logger.warning(f"[WARN] Could not set background: {e}")
             

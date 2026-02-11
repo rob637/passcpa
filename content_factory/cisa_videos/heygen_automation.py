@@ -314,32 +314,26 @@ class HeyGenAutomation:
             self.page.screenshot(path=str(debug_path3))
             logger.info(f"[DEBUG] After Generate click: {debug_path3}")
             
-            # Check if a dropdown appeared - look for "Generate video" or similar option
-            dropdown_option = self.page.query_selector('text="Generate video"')
-            if dropdown_option:
-                dropdown_option.click()
-                logger.info("[OK] Clicked 'Generate video' from dropdown")
-                time.sleep(1)
+            # The Generate button opens a "Generate Video" modal with Submit button
+            # Wait for modal to appear and click Submit
+            time.sleep(1)
             
-            # Check for confirmation modal - might say "Generate" again or "Confirm"
-            confirm_btn = self.page.query_selector(
-                'button:has-text("Generate"):not([disabled]), button:has-text("Confirm"), button:has-text("Submit")'
+            # Look for the Submit button in the modal
+            submit_btn = self.page.wait_for_selector(
+                'button:has-text("Submit")',
+                timeout=10000
             )
-            if confirm_btn:
-                # Make sure it's not the same button we already clicked (check visibility of modal)
-                modal = self.page.query_selector('[role="dialog"], .modal, [class*="modal"]')
-                if modal:
-                    confirm_btn.click()
-                    logger.info("[OK] Clicked confirmation in modal")
-                    time.sleep(2)
+            submit_btn.click()
+            logger.info("[OK] Clicked Submit button in Generate Video modal")
+            time.sleep(3)
             
-            # Wait for video to be queued - may show a modal or redirect
-            time.sleep(5)
-            
-            # Screenshot after all clicks
-            debug_path4 = Path(__file__).parent / "output" / f"debug_after_confirm_{int(time.time())}.png"
+            # Screenshot after submit
+            debug_path4 = Path(__file__).parent / "output" / f"debug_after_submit_{int(time.time())}.png"
             self.page.screenshot(path=str(debug_path4))
-            logger.info(f"[DEBUG] After confirmation: {debug_path4}")
+            logger.info(f"[DEBUG] After Submit: {debug_path4}")
+            
+            # Wait for video to be queued - page may redirect or show success message
+            time.sleep(5)
             
             # Try to extract video ID from URL or page
             video_id = self._extract_video_id()

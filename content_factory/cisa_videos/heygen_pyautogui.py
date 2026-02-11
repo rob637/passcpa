@@ -304,7 +304,7 @@ def run_batch(limit=None):
             time.sleep(5)  # Wait for editor to load
             
             # Load script
-            script_file = Path(f"output/scripts_spoken/{video['script_file']}")
+            script_file = Path(f"output/scripts_spoken/{video['script']}")
             if not script_file.exists():
                 logger.error(f"Script not found: {script_file}")
                 continue
@@ -313,9 +313,9 @@ def run_batch(limit=None):
             
             # Create the video using pyautogui
             create_video(
-                title=video['title'],
+                title=video['topic'],
                 script_text=script_text,
-                avatar_name=video['avatar'],
+                avatar_name=video['avatar_id'],
                 background_name=video.get('background')
             )
             
@@ -337,7 +337,7 @@ def test_single():
         videos = json.load(f)
     
     video = videos[0]
-    script_file = Path(f"output/scripts_spoken/{video['script_file']}")
+    script_file = Path(f"output/scripts_spoken/{video['script']}")
     script_text = script_file.read_text()
     
     with sync_playwright() as p:
@@ -355,9 +355,9 @@ def test_single():
         time.sleep(5)
         
         create_video(
-            title=video['title'],
+            title=video['topic'],
             script_text=script_text,
-            avatar_name=video['avatar'],
+            avatar_name=video['avatar_id'],
             background_name=video.get('background')
         )
         

@@ -125,7 +125,7 @@ const Home = () => {
   const sectionInfo = getSectionDisplayInfo(activeSection, courseId);
   
   // Calculate days until exam - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, activeSection);
+  const examDate = getExamDate(userProfile, activeSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load readiness data - depends on activeSection (local state)

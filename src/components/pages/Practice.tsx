@@ -882,7 +882,7 @@ const Practice: React.FC = () => {
 
       // Determine Blueprint Version based on user's exam date
       const section = userProfile?.examSection as string || getDefaultSection(courseId);
-      const examDate = getExamDate(userProfile, section) || new Date();
+      const examDate = getExamDate(userProfile, section, courseId) || new Date();
       const blueprintVersion = getBlueprintForExamDate(examDate);
       const is2026 = blueprintVersion === '2026';
 

@@ -86,11 +86,11 @@ COORDS = {
 
 
 def calibrate_quick():
-    """Quick recalibration for just title and background (5-second countdown)."""
+    """Quick recalibration for specific elements (5-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Title & Background only")
+    print("QUICK RECALIBRATION: Motion Engine")
     print("="*60)
-    print("\nYou have 5 seconds per element. Move mouse and hold still.\n")
+    print("\nYou have 5 seconds. Move mouse and hold still.\n")
     
     # Load existing coords
     coords_file = Path("coords.json")
@@ -101,8 +101,7 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("generate_title", "TITLE in generate dialog - click on 'Untitled Video' text in the popup after clicking Generate"),
-        ("first_upload", "BACKGROUND - click on the first uploaded background image"),
+        ("motion_engine", "MOTION ENGINE dropdown - click on the dropdown that shows Avatar III/IV"),
     ]
     
     for key, description in coords_to_find:

@@ -156,6 +156,50 @@ class CISAVideoPipeline:
         )
         self.logger = logging.getLogger('pipeline')
     
+    def load_existing_scripts(self, limit: int = 10):
+        """Load pre-generated scripts as tasks (skip topic analysis)."""
+        from config import SCRIPTS_DIR, get_random_combo, get_background_path
+        
+        scripts_dir = Path(SCRIPTS_DIR)
+        
+        # Find numbered scripts (01_Topic.txt, 02_Topic.txt, etc.)
+        script_files = sorted(scripts_dir.glob("[0-9][0-9]_*.txt"))[:limit]
+        
+        if not script_files:
+            self.logger.warning("[WARN] No pre-generated scripts found in output/scripts/")
+            self.logger.warning("       Run 'python generate_scripts.py --count 10' first")
+            return
+        
+        # Clear existing tasks and create new ones from scripts
+        self.state.tasks = []
+        
+        for i, script_file in enumerate(script_files, 1):
+            # Extract topic from filename: "01_Outsourcing.txt" -> "Outsourcing"
+            filename = script_file.stem  # "01_Outsourcing"
+            topic = filename[3:].replace('_', ' ')  # "Outsourcing"
+            
+            # Assign random avatar + background
+            combo = get_random_combo()
+            avatar = combo['avatar']
+            background_filename = combo['background']
+            bg_file = get_background_path(background_filename)
+            
+            task = VideoTask(
+                id=f"CISA-VIDEO-{i:03d}",
+                topic=topic,
+                stage=Stage.HEYGEN_QUEUED.value,  # Ready for HeyGen
+                script_file=str(script_file),
+                background_file=str(bg_file),
+                avatar_id=avatar['id'],
+                avatar_name=avatar['name'],
+                created_at=datetime.now().isoformat()
+            )
+            self.state.tasks.append(task)
+            self.logger.info(f"     {i}. {topic} → {avatar['name']} + {background_filename}")
+        
+        self.state.save()
+        self.logger.info(f"[OK] Loaded {len(self.state.tasks)} pre-generated scripts")
+
     def shutdown(self, signum, frame):
         """Graceful shutdown handler."""
         self.logger.info("[STOP] Shutdown signal received, completing current task...")
@@ -531,6 +575,7 @@ def main():
     parser.add_argument('--batch-size', type=int, default=10, help='Number of videos to generate')
     parser.add_argument('--status', action='store_true', help='Show pipeline status and exit')
     parser.add_argument('--output-dir', type=str, default=None, help='Output directory')
+    parser.add_argument('--use-scripts', action='store_true', help='Use pre-generated scripts from output/scripts/')
     
     args = parser.parse_args()
     
@@ -540,6 +585,10 @@ def main():
         output_dir=output_dir,
         batch_size=args.batch_size
     )
+    
+    # If using pre-generated scripts, load them as tasks
+    if args.use_scripts:
+        pipeline.load_existing_scripts(args.batch_size)
     
     if args.status:
         pipeline.status()

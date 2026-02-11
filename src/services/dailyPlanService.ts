@@ -128,6 +128,11 @@ export const generateDailyPlan = async (
   let remainingMinutes = targetMinutes;
   void (state.dailyGoal - state.todayPoints); // Track remaining for future use
   
+  // Calculate max activities based on intensity and daily goal
+  // Light intensity (0.6) = 3-4 activities max, Normal (1.0) = 5-6, Intense (1.4) = 7-8
+  const baseMaxActivities = Math.ceil(state.dailyGoal / 15); // ~3-4 for 50 goal, ~10 for 150
+  const maxActivities = Math.max(3, Math.min(10, Math.round(baseMaxActivities * intensity)));
+  
   // Track what we're adding for summary
   const weakAreaFocus: string[] = [];
   
@@ -561,16 +566,16 @@ export const generateDailyPlan = async (
   }
   
   // 7. FILL REMAINING TIME for intensive/full-time students
-  // If significant time remains (30+ minutes), add more activities
+  // Only add more if we haven't hit max activities AND have significant time remaining
   let fillRound = 1;
-  while (remainingMinutes >= 25) {
+  while (remainingMinutes >= 25 && activities.length < maxActivities) {
     // Add additional lesson if available
     const nextLesson = lessons.find(l => {
       const progress = state.lessonProgress[l.id] || 0;
       return progress === 0 && !activities.some(a => a.id === `lesson-${l.id}`);
     });
     
-    if (nextLesson && remainingMinutes >= 25) {
+    if (nextLesson && remainingMinutes >= 25 && activities.length < maxActivities) {
       activities.push({
         id: `lesson-${nextLesson.id}`,
         type: 'lesson',
@@ -590,7 +595,7 @@ export const generateDailyPlan = async (
     }
     
     // Add more practice questions
-    if (remainingMinutes >= 15) {
+    if (remainingMinutes >= 15 && activities.length < maxActivities) {
       activities.push({
         id: `practice-extra-${fillRound}-${today}`,
         type: 'mcq',
@@ -618,16 +623,19 @@ export const generateDailyPlan = async (
   const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
   activities.sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
   
+  // Enforce max activities cap (keep highest priority ones)
+  const cappedActivities = activities.slice(0, maxActivities);
+  
   // Calculate summary
   const summary = {
-    totalActivities: activities.length,
-    lessonCount: activities.filter(a => a.type === 'lesson').length,
-    mcqCount: activities.filter(a => a.type === 'mcq').reduce((sum, a) => sum + (a.params.questionCount || 0), 0),
-    tbsCount: activities.filter(a => a.type === 'tbs').length,
-    flashcardCount: activities.filter(a => a.type === 'flashcards').length,
-    essayCount: activities.filter(a => a.type === 'essay').length,
-    cbqCount: activities.filter(a => a.type === 'cbq').length,
-    caseStudyCount: activities.filter(a => a.type === 'case_study').length,
+    totalActivities: cappedActivities.length,
+    lessonCount: cappedActivities.filter(a => a.type === 'lesson').length,
+    mcqCount: cappedActivities.filter(a => a.type === 'mcq').reduce((sum, a) => sum + (a.params.questionCount || 0), 0),
+    tbsCount: cappedActivities.filter(a => a.type === 'tbs').length,
+    flashcardCount: cappedActivities.filter(a => a.type === 'flashcards').length,
+    essayCount: cappedActivities.filter(a => a.type === 'essay').length,
+    cbqCount: cappedActivities.filter(a => a.type === 'cbq').length,
+    caseStudyCount: cappedActivities.filter(a => a.type === 'case_study').length,
     weakAreaFocus: [...new Set(weakAreaFocus)],
   };
   
@@ -635,8 +643,8 @@ export const generateDailyPlan = async (
     date: today,
     section: state.section,
     targetPoints: state.dailyGoal,
-    estimatedMinutes: activities.reduce((sum, a) => sum + a.estimatedMinutes, 0),
-    activities,
+    estimatedMinutes: cappedActivities.reduce((sum, a) => sum + a.estimatedMinutes, 0),
+    activities: cappedActivities,
     summary,
     generatedAt: new Date().toISOString(),
   };
@@ -644,6 +652,16 @@ export const generateDailyPlan = async (
 
 /**
  * Calculate study intensity based on exam date proximity
+ * 
+ * Key insight: Study intensity should follow a gentle ramp-up curve:
+ * - Very far (6+ months): Light load (0.6x) - build habits, avoid burnout
+ * - Far (3-6 months): Moderate-light (0.75x) - steady progress
+ * - Medium (1-3 months): Normal (1.0x) - consistent daily work
+ * - Close (2-4 weeks): Elevated (1.2x) - focused push
+ * - Final week: Intense (1.4x) - maximum effort
+ * 
+ * This prevents overwhelming users early in their journey while ensuring
+ * adequate preparation as the exam approaches.
  */
 const calculateIntensity = (examDate?: string): number => {
   if (!examDate) return 1.0; // Default intensity
@@ -652,10 +670,18 @@ const calculateIntensity = (examDate?: string): number => {
     (new Date(examDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
   );
   
-  if (daysUntilExam <= 7) return 1.5;   // Final week - intense
-  if (daysUntilExam <= 14) return 1.3;  // Two weeks out
-  if (daysUntilExam <= 30) return 1.2;  // One month out
-  return 1.0;
+  // Final week push
+  if (daysUntilExam <= 7) return 1.4;
+  // Two weeks out
+  if (daysUntilExam <= 14) return 1.25;
+  // One month out
+  if (daysUntilExam <= 30) return 1.1;
+  // 1-3 months - normal pace
+  if (daysUntilExam <= 90) return 1.0;
+  // 3-6 months - moderate-light
+  if (daysUntilExam <= 180) return 0.75;
+  // 6+ months - light start (prevent burnout, build habits)
+  return 0.6;
 };
 
 /**

@@ -1,4 +1,4 @@
-Hey everyone, welcome back to the channel! Did you know that a surprisingly large number of people fail the SEE-sah exam, and it’s often because they stumble on seemingly simple concepts like I-T General Controls, or ITGCs? ... It's frustrating to lose points on something that, with a little focused understanding, you could easily nail. Today, we're diving deep into ITGCs, specifically focusing on the Control Environment and the overall purpose of these controls, to help you ace those tricky questions.
+Hey everyone, welcome back to the channel! Did you know that a surprisingly large number of people fail the SEE-suh exam, and it’s often because they stumble on seemingly simple concepts like I-T General Controls, or ITGCs? ... It's frustrating to lose points on something that, with a little focused understanding, you could easily nail. Today, we're diving deep into ITGCs, specifically focusing on the Control Environment and the overall purpose of these controls, to help you ace those tricky questions.
 
 ...
 
@@ -62,4 +62,4 @@ So, if you remember nothing else, remember these three things: ...
 
 ...
 
-You've got this! By understanding ITGCs and how eye-SAH-kah tests your knowledge of them, you'll be well on your way to acing the SEE-sah exam. Now go out there and conquer those controls!
+You've got this! By understanding ITGCs and how eye-SAH-kah tests your knowledge of them, you'll be well on your way to acing the SEE-suh exam. Now go out there and conquer those controls!

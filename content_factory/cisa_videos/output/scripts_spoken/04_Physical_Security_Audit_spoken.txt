@@ -1,4 +1,4 @@
-Hey everyone, welcome! Did you know that physical security lapses are a surprisingly common reason why companies fail their I-T audits? ... I'm talking everything from unlocked server rooms to inadequate visitor logs. ... And that oversight can cost you points on the SEE-sah exam, too. In this video, we're tackling physical security audits, a crucial part of the Information Systems Auditing Process. Let’s dive in!
+Hey everyone, welcome! Did you know that physical security lapses are a surprisingly common reason why companies fail their I-T audits? ... I'm talking everything from unlocked server rooms to inadequate visitor logs. ... And that oversight can cost you points on the SEE-suh exam, too. In this video, we're tackling physical security audits, a crucial part of the Information Systems Auditing Process. Let’s dive in!
 
 ...
 
@@ -46,4 +46,4 @@ Okay, let’s make this stick. How can we remember all this? Think "PEDALS" – 
 
 ...
 
-So, if you remember nothing else from this video, remember these three things: First, physical security is the foundation of all other security controls. Second, eye-SAH-kah will try to trick you by focusing solely on technical controls or by presenting answers that sound good but aren't the best option. And third, PEDALS – Perimeter, Environmental, Disaster Recovery, Access Controls, Logs, and Surveillance – use that checklist to stay on track. ... You've got this! Now go out there and ace that SEE-sah exam!
+So, if you remember nothing else from this video, remember these three things: First, physical security is the foundation of all other security controls. Second, eye-SAH-kah will try to trick you by focusing solely on technical controls or by presenting answers that sound good but aren't the best option. And third, PEDALS – Perimeter, Environmental, Disaster Recovery, Access Controls, Logs, and Surveillance – use that checklist to stay on track. ... You've got this! Now go out there and ace that SEE-suh exam!

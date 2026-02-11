@@ -1,4 +1,4 @@
-Hey everyone, and welcome! Are you prepping for the SEE-sah exam? ... I know it can be daunting. One of the areas that often trips people up, even experienced auditors, is system modeling. We’re going to break it down today, so you don’t fall into those same traps.
+Hey everyone, and welcome! Are you prepping for the SEE-suh exam? ... I know it can be daunting. One of the areas that often trips people up, even experienced auditors, is system modeling. We’re going to break it down today, so you don’t fall into those same traps.
 
 ...
 
@@ -10,7 +10,7 @@ Why does this matter for auditors? ... Well, as auditors, we need to understand 
 
 ...
 
-Now, let’s talk about the exam traps. ... First, watch out for questions that focus exclusively on the technical aspects of a modeling notation. The SEE-sah exam is about auditing, not systems development. You don't need to be a UML expert. Focus on how the model aids in the audit process.
+Now, let’s talk about the exam traps. ... First, watch out for questions that focus exclusively on the technical aspects of a modeling notation. The SEE-suh exam is about auditing, not systems development. You don't need to be a UML expert. Focus on how the model aids in the audit process.
 
 ...
 
@@ -57,4 +57,4 @@ Alright, let's wrap up with the key takeaways. ... If you remember nothing else:
 
 ...
 
-You've got this! By understanding system modeling and avoiding these common exam traps, you'll be well on your way to SEE-sah success. Good luck!
+You've got this! By understanding system modeling and avoiding these common exam traps, you'll be well on your way to SEE-suh success. Good luck!

@@ -155,10 +155,10 @@ Create a CONCISE, high-impact video script that:
 Format for talking-head video:
 - Direct and punchy - no fluff
 - Conversational but efficient
-- Use "..." for brief pauses
+- Use complete sentences with natural punctuation (no ellipses)
 - Target 350-450 words (2-3 minutes at 150 wpm)
 - Every sentence must add value
-- DO NOT use any special markup tags like <break> or SSML
+- DO NOT use ellipses (...) or special markup tags like <break> or SSML
 
 Return ONLY the script text, no headings or metadata.
 """

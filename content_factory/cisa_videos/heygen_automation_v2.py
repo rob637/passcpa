@@ -317,12 +317,24 @@ class HeyGenAutomationV2:
             time.sleep(0.5)
             
             # =========================================================
-            # STEP 4: Click "Change avatar" button in toolbar
+            # STEP 4: Click on avatar in main video, then click "Change avatar"
             # =========================================================
             logger.info(f"[STEP 4] Selecting avatar: {avatar_name}...")
             
-            # Click "Change avatar" button at top of video area
-            self.wait_and_click(
+            # First, click on the avatar in the main video area to select it
+            # This shows the floating toolbar with "Change avatar" button
+            try:
+                # Click on the video/avatar area in center of screen
+                video_area = self.page.locator('[class*="preview"], [class*="video"], [class*="canvas"]').first
+                if video_area and video_area.is_visible():
+                    video_area.click()
+                    time.sleep(0.5)
+                    logger.info("[OK] Clicked video area")
+            except:
+                pass
+            
+            # Now click "Change avatar" in the floating toolbar
+            avatar_button_clicked = self.wait_and_click(
                 [
                     'text="Change avatar"',
                     'button:has-text("Change avatar")',
@@ -331,6 +343,14 @@ class HeyGenAutomationV2:
                 ],
                 "Click Change avatar button"
             )
+            
+            if not avatar_button_clicked:
+                # Try clicking directly on "Avatar" label in the right sidebar
+                self.wait_and_click(
+                    ['text="Avatar"', '[class*="avatar"]'],
+                    "Click Avatar in sidebar"
+                )
+            
             time.sleep(1.5)
             self.screenshot("03_avatar_panel")
             
@@ -523,31 +543,58 @@ class HeyGenAutomationV2:
                     logger.warning("[WARN] Could not find Customize button - skipping background")
             
             # =========================================================
-            # STEP 7: Click Layouts sidebar → Select portrait (9:16 for mobile)
+            # STEP 7: Click Layouts icon in right sidebar → Select portrait (9:16)
             # =========================================================
             logger.info("[STEP 7] Setting layout to portrait (9:16)...")
             
-            # Click Layouts in right sidebar to open layout options
-            self.wait_and_click(
+            # First close any open panels
+            self.page.keyboard.press("Escape")
+            time.sleep(0.3)
+            
+            # The Layouts icon is in the vertical icon bar on the far right
+            # It looks like a grid/layout icon
+            layouts_icon_clicked = self.wait_and_click(
                 [
                     '[aria-label="Layouts"]',
-                    'text="Layouts"',
-                    'button[title="Layouts"]',
+                    'button[aria-label="Layouts"]',
+                    '[title="Layouts"]',
+                    # The icon is in a vertical sidebar
+                    '[class*="sidebar"] button:has-text("Layouts")',
+                    '[class*="toolbar"] [aria-label*="layout" i]',
                 ],
-                "Click Layouts sidebar"
+                "Click Layouts icon"
             )
+            
+            if not layouts_icon_clicked:
+                # Try clicking by icon position - Layouts is typically near bottom of right sidebar
+                try:
+                    sidebar_icons = self.page.locator('[class*="sidebar"] button, [class*="toolbar"] button').all()
+                    # Layouts icon is usually around position 6-8 in the icon list
+                    for i, icon in enumerate(sidebar_icons):
+                        if icon.is_visible():
+                            icon_text = icon.text_content() or ""
+                            if "layout" in icon_text.lower():
+                                icon.click()
+                                logger.info(f"[OK] Clicked Layouts via icon text search")
+                                layouts_icon_clicked = True
+                                break
+                except:
+                    pass
+            
             time.sleep(1)
             self.screenshot("10_layouts_panel")
             
-            # Select portrait/vertical layout (9:16 for mobile viewing)
-            # In the layouts panel, look for portrait options
+            # Now select portrait/9:16 aspect ratio
+            # The layouts panel shows different video sizes/templates
             layout_selectors = [
-                'img[alt*="portrait"]',
-                'img[alt*="9:16"]',
-                'img[alt*="vertical"]',
                 'text="9:16"',
                 'text="Portrait"',
-                '[class*="layout"][class*="portrait"]',
+                'text="TikTok"',
+                'text="Reels"',
+                'text="Shorts"',
+                'img[alt*="9:16"]',
+                'img[alt*="portrait" i]',
+                '[class*="ratio"][class*="9"]',
             ]
             
             layout_clicked = False

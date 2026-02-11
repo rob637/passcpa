@@ -277,18 +277,23 @@ def run_batch(limit=None):
     
     logger.info(f"Creating {len(videos)} videos...")
     
-    # Open browser with Playwright
+    # Open browser with Playwright using persistent profile
+    # This saves login cookies between sessions
+    user_data_dir = Path.home() / ".heygen_automation"
+    
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context(
-            viewport={'width': 1920, 'height': 1080}
+        context = p.chromium.launch_persistent_context(
+            user_data_dir=str(user_data_dir),
+            headless=False,
+            viewport={'width': 1920, 'height': 1080},
+            args=['--start-maximized']
         )
-        page = context.new_page()
+        page = context.pages[0] if context.pages else context.new_page()
         
         # Navigate to HeyGen
         page.goto("https://app.heygen.com/home")
         
-        input("\n>>> Log in to HeyGen, then press ENTER to continue...")
+        input("\n>>> Log in to HeyGen (if needed), then press ENTER to continue...")
         
         for i, video in enumerate(videos):
             logger.info(f"\n[{i+1}/{len(videos)}] Processing...")
@@ -321,7 +326,7 @@ def run_batch(limit=None):
             
             time.sleep(2)  # Pause between videos
         
-        browser.close()
+        context.close()
     
     logger.info("\n" + "="*60)
     logger.info("BATCH COMPLETE!")
@@ -341,12 +346,17 @@ def test_single():
     script_text = script_file.read_text()
     
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context(viewport={'width': 1920, 'height': 1080})
-        page = context.new_page()
+        user_data_dir = Path.home() / ".heygen_automation"
+        context = p.chromium.launch_persistent_context(
+            user_data_dir=str(user_data_dir),
+            headless=False,
+            viewport={'width': 1920, 'height': 1080},
+            args=['--start-maximized']
+        )
+        page = context.pages[0] if context.pages else context.new_page()
         
         page.goto("https://app.heygen.com/home")
-        input("\n>>> Log in to HeyGen, then press ENTER...")
+        input("\n>>> Log in to HeyGen (if needed), then press ENTER...")
         
         # Create video
         page.click('button:has-text("Create")')
@@ -362,7 +372,7 @@ def test_single():
         )
         
         input("\n>>> Check the result, then press ENTER to close...")
-        browser.close()
+        context.close()
 
 
 if __name__ == "__main__":

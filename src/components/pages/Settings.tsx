@@ -863,6 +863,11 @@ const Settings: React.FC = () => {
                               ? 'You\'ve blocked notifications. Enable them in your browser settings to receive study reminders.'
                               : 'Allow notifications to receive daily study reminders in your browser.'}
                           </div>
+                          {notificationPermission === 'denied' && (
+                            <div className="mt-2 text-xs text-red-600 dark:text-red-400">
+                              <strong>To fix:</strong> Click the lock/tune icon in your browser's address bar → Site settings → Notifications → Allow. Then refresh this page.
+                            </div>
+                          )}
                         </div>
                         {notificationPermission !== 'denied' && (
                           <Button
@@ -1108,16 +1113,16 @@ const Settings: React.FC = () => {
                           </div>
                           <div className="text-sm text-slate-600 dark:text-slate-400">
                             {isTrialing && trialDaysRemaining !== null && (
-                              <span>{trialDaysRemaining} day{trialDaysRemaining !== 1 ? 's' : ''} remaining</span>
+                              <span>{trialDaysRemaining} day{trialDaysRemaining !== 1 ? 's' : ''} remaining in trial</span>
                             )}
                             {isPremium && subscription?.currentPeriodEnd && (
                               <span>Renews {new Date(subscription.currentPeriodEnd).toLocaleDateString()}</span>
                             )}
                             {trialExpired && (
-                              <span className="text-amber-600 dark:text-amber-400">Upgrade to continue learning</span>
+                              <span className="text-amber-600 dark:text-amber-400">Trial ended - upgrade to continue</span>
                             )}
                             {!isPremium && !isTrialing && !trialExpired && (
-                              <span>Start a free trial to unlock all content</span>
+                              <span>Upgrade to Premium for full access</span>
                             )}
                           </div>
                         </div>

@@ -111,6 +111,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   
   // Get current section from userProfile - course-aware (not just CPA 'FAR')
   const activeCourse = userProfile?.activeCourse || 'cpa';
+  
+  // Course-specific daily log ID to keep progress separate per course
+  const dailyLogId = `${activeCourse}_${today}`;
   const currentSection = getCurrentSection(userProfile, activeCourse, getDefaultSection);
 
   // Fetch study plan when user changes
@@ -142,22 +145,23 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     return () => unsubscribe();
   }, [user, userProfile]);
 
-  // Fetch/create today's daily log
+  // Fetch/create today's daily log (course-specific)
   useEffect(() => {
     if (!user) {
       setTodayLog(null);
       return;
     }
 
-    const dailyLogRef = doc(db, 'users', user.uid, 'daily_log', today);
+    const dailyLogRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
 
     const unsubscribe = onSnapshot(dailyLogRef, async (snapshot) => {
       if (snapshot.exists()) {
         setTodayLog({ id: snapshot.id, ...snapshot.data() } as DailyLog);
       } else {
-        // Create today's log if it doesn't exist
+        // Create today's log if it doesn't exist (course-specific)
         const newLog = {
           date: today,
+          courseId: activeCourse,
           goalPoints: userProfile?.dailyGoal || 50,
           earnedPoints: 0,
           activities: [],
@@ -176,7 +180,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     });
 
     return () => unsubscribe();
-  }, [user, today, userProfile?.dailyGoal]);
+  }, [user, dailyLogId, userProfile?.dailyGoal]);
 
   // Fetch weekly stats and calculate streak - now section-aware
   useEffect(() => {
@@ -225,6 +229,8 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         thisWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
           
+          // Skip if this log is for a different course (for backwards compatibility)
+          if (data.courseId && data.courseId !== activeCourse) return;
           // Count course-specific stats from activities
           if (data.activities && Array.isArray(data.activities)) {
             data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean; timeSpentSeconds?: number; timeSpent?: number }) => {
@@ -263,6 +269,10 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
         lastWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
+          
+          // Skip if this log is for a different course
+          if (data.courseId && data.courseId !== activeCourse) return;
+          
           // Filter last week by course sections too for accurate trends
           if (data.activities && Array.isArray(data.activities)) {
             data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
@@ -294,14 +304,15 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // Set section-filtered stats
         setStats({ totalQuestions: sectionQuestions, accuracy: sectionAccuracy });
 
-        // Calculate streak (consecutive days with earnedPoints > 0)
+        // Calculate streak (consecutive days with earnedPoints > 0, course-specific)
         let streak = 0;
         for (let i = 0; i < 30; i++) { // Check up to 30 days back
           const checkDate = new Date();
           checkDate.setDate(checkDate.getDate() - i);
           const dateStr = format(checkDate, 'yyyy-MM-dd');
+          const courseLogId = `${activeCourse}_${dateStr}`;
           
-          const logRef = doc(db, 'users', user.uid, 'daily_log', dateStr);
+          const logRef = doc(db, 'users', user.uid, 'daily_log', courseLogId);
           const logSnap = await getDoc(logRef);
           
           if (logSnap.exists() && (logSnap.data().earnedPoints || 0) > 0) {
@@ -333,7 +344,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const points = isCorrect ? (difficulty === 'hard' ? 3 : difficulty === 'medium' ? 2 : 1) : 0;
         // Convert seconds to minutes (round to 1 decimal place, minimum 0.1 min per question)
         const timeSpentMinutes = Math.max(0.1, Math.round((timeSpentSeconds / 60) * 10) / 10);
-        const logRef = doc(db, 'users', user.uid, 'daily_log', today);
+        const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
         
         // Use setDoc with merge to handle case where doc doesn't exist yet
         await setDoc(logRef, {
@@ -369,7 +380,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       if (!user) return;
       try {
         const earnedPoints = Math.round((score / 100) * 50); // Max 50 points per sim
-        const logRef = doc(db, 'users', user.uid, 'daily_log', today);
+        const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
         await updateDoc(logRef, {
             earnedPoints: increment(earnedPoints),
             simulationsCompleted: increment(1),
@@ -395,7 +406,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       if (!user) return;
       try {
         const earnedPoints = 10; // Fixed points per lesson
-        const logRef = doc(db, 'users', user.uid, 'daily_log', today);
+        const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
         const lessonRef = doc(db, 'users', user.uid, 'lessons', lessonId);
         
         // Check if daily log exists, create if not

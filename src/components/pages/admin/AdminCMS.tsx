@@ -1411,11 +1411,11 @@ const AdminCMS: React.FC = () => {
 
   if (!isAdmin) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-slate-900">
         <div className="text-center">
           <div className="text-6xl mb-4">🔒</div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h1>
-          <p className="text-gray-600">You don&apos;t have permission to access the admin area.</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Access Denied</h1>
+          <p className="text-gray-600 dark:text-gray-400">You don&apos;t have permission to access the admin area.</p>
         </div>
       </div>
     );
@@ -1426,31 +1426,31 @@ const AdminCMS: React.FC = () => {
   // ============================================================================
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Admin CMS</h1>
-              <p className="text-sm text-gray-600">Content Management System</p>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin CMS</h1>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Content Management System</p>
             </div>
-            <div className="text-sm text-gray-600">Logged in as: {user.email}</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Logged in as: {user.email}</div>
           </div>
         </div>
       </header>
 
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex gap-1 sm:gap-2 border-b border-gray-200 overflow-x-auto scrollbar-hide pb-px -mb-px">
+        <div className="flex gap-1 sm:gap-2 border-b border-gray-200 dark:border-slate-700 overflow-x-auto scrollbar-hide pb-px -mb-px">
           {(['content', 'users', 'analytics', 'tools', 'logs', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-600 hover:text-gray-700'
+                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
               }`}
             >
               <span className="hidden sm:inline">
@@ -1545,9 +1545,9 @@ const AdminCMS: React.FC = () => {
                 <>
                   {[1, 2, 3, 4, 5, 6].map(i => (
                     <Card key={i} className="p-6 animate-pulse">
-                      <div className="h-6 bg-gray-200 rounded w-1/2 mb-4"></div>
-                      <div className="h-10 bg-gray-200 rounded w-1/3 mb-3"></div>
-                      <div className="h-4 bg-gray-100 rounded w-full"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 dark:bg-slate-700 rounded w-full"></div>
                     </Card>
                   ))}
                 </>
@@ -1563,16 +1563,16 @@ const AdminCMS: React.FC = () => {
                     <Card key={course.courseId} className="p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-xl">{getCourseIcon(course.courseId)}</span>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {course.courseName}
                         </h3>
                       </div>
                       <div className={`text-3xl font-bold ${colorClass} mb-3`}>
                         {course.questions.toLocaleString()}
-                        <span className="text-sm font-normal text-gray-500 ml-2">questions</span>
+                        <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">questions</span>
                       </div>
                       {/* Content metrics row */}
-                      <div className="flex gap-4 text-sm text-gray-600 mb-3">
+                      <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
                         {course.lessons > 0 && (
                           <span>📚 {course.lessons} lessons</span>
                         )}
@@ -1583,9 +1583,9 @@ const AdminCMS: React.FC = () => {
                       {course.bySection && Object.keys(course.bySection).length > 0 && (
                         <div className="grid grid-cols-2 gap-2 text-sm">
                           {Object.entries(course.bySection).slice(0, 6).map(([section, count]) => (
-                            <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                            <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
                               <span className="font-medium truncate">{section}</span>
-                              <span className="text-gray-600">{count}</span>
+                              <span className="text-gray-600 dark:text-gray-400">{count}</span>
                             </div>
                           ))}
                         </div>
@@ -1604,20 +1604,20 @@ const AdminCMS: React.FC = () => {
             {/* CPA Task-Based Simulations (TBS) Stats */}
             {tbsStats && tbsStats.total > 0 && (
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">📊 CPA Task-Based Simulations</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📊 CPA Task-Based Simulations</h3>
                 <Card className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="text-3xl font-bold text-orange-600">
                       {tbsStats.total.toLocaleString()}
                     </div>
-                    <span className="text-gray-500">Total TBS</span>
+                    <span className="text-gray-500 dark:text-gray-400">Total TBS</span>
                   </div>
                   {tbsStats.bySection && Object.keys(tbsStats.bySection).length > 0 && (
                     <div className="grid grid-cols-3 md:grid-cols-6 gap-3 text-sm">
                       {Object.entries(tbsStats.bySection).map(([section, count]) => (
-                        <div key={section} className="flex justify-between p-2 bg-gray-50 rounded">
+                        <div key={section} className="flex justify-between p-2 bg-gray-50 dark:bg-slate-900 rounded">
                           <span className="font-medium">{section}</span>
-                          <span className="text-gray-600">{count}</span>
+                          <span className="text-gray-600 dark:text-gray-400">{count}</span>
                         </div>
                       ))}
                     </div>
@@ -1629,7 +1629,7 @@ const AdminCMS: React.FC = () => {
             {/* Content Quality Audit */}
             <div className="mt-8">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">🔍 Content Quality Audit</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">🔍 Content Quality Audit</h3>
                 <button
                   onClick={loadContentAudit}
                   disabled={isLoadingAudit}
@@ -1643,7 +1643,7 @@ const AdminCMS: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">❌ Missing Explanations</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutExplanation.length === 0 
                           ? 'bg-green-100 text-green-700' 
@@ -1660,11 +1660,11 @@ const AdminCMS: React.FC = () => {
                         {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
                           <div key={i} className="p-2 bg-red-50 rounded text-sm flex justify-between items-center">
                             <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 ml-2">{q.section}</span>
+                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
                           </div>
                         ))}
                         {contentAudit.questionsWithoutExplanation.length > 15 && (
-                          <p className="text-gray-500 text-xs text-center">
+                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
                             + {contentAudit.questionsWithoutExplanation.length - 15} more
                           </p>
                         )}
@@ -1674,7 +1674,7 @@ const AdminCMS: React.FC = () => {
 
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">🏷️ Missing Blueprint Tags (CPA)</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutBlueprint.length === 0 
                           ? 'bg-green-100 text-green-700' 
@@ -1691,11 +1691,11 @@ const AdminCMS: React.FC = () => {
                         {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
                           <div key={i} className="p-2 bg-amber-50 rounded text-sm flex justify-between items-center">
                             <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
-                            <span className="text-gray-500 ml-2">{q.section}</span>
+                            <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
                           </div>
                         ))}
                         {contentAudit.questionsWithoutBlueprint.length > 15 && (
-                          <p className="text-gray-500 text-xs text-center">
+                          <p className="text-gray-500 dark:text-gray-400 text-xs text-center">
                             + {contentAudit.questionsWithoutBlueprint.length - 15} more
                           </p>
                         )}
@@ -1706,13 +1706,13 @@ const AdminCMS: React.FC = () => {
               )}
 
               {contentAudit && (
-                <p className="text-sm text-gray-500 mt-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
                   Scanned {contentAudit.totalScanned.toLocaleString()} questions across all courses
                 </p>
               )}
 
               {!contentAudit && !isLoadingAudit && (
-                <Card className="p-6 text-center text-gray-500">
+                <Card className="p-6 text-center text-gray-500 dark:text-gray-400">
                   Click "Run Audit" to scan all questions for missing explanations and blueprint tags
                 </Card>
               )}
@@ -1726,36 +1726,36 @@ const AdminCMS: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
-                <div className="text-sm text-gray-600">Total Users</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Total Users</div>
               </Card>
               <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-primary-600">{usersList.filter(u => u.isAdmin).length}</div>
-                <div className="text-sm text-gray-600">Admins</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Admins</div>
               </Card>
               <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-green-600">
                   {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
                 </div>
-                <div className="text-sm text-gray-600">Premium</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Premium</div>
               </Card>
               <Card className="p-4 text-center">
                 <div className="text-2xl font-bold text-amber-600">
                   {usersList.filter(u => u.subscription?.status === 'trialing').length}
                 </div>
-                <div className="text-sm text-gray-600">Trial</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Trial</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-gray-600">
+                <div className="text-2xl font-bold text-gray-600 dark:text-gray-400">
                   {usersList.filter(u => !u.subscription?.tier || u.subscription.tier === 'free').length}
                 </div>
-                <div className="text-sm text-gray-600">Free</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Free</div>
               </Card>
             </div>
 
             {/* Users by Course Breakdown */}
             {usersList.length > 0 && (
               <Card className="p-4">
-                <h4 className="text-sm font-semibold text-gray-700 mb-3">Users by Course</h4>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Users by Course</h4>
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
                     const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
@@ -1778,7 +1778,7 @@ const AdminCMS: React.FC = () => {
 
             {/* User Lookup Tool */}
             <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 🔍 User Lookup
               </h3>
               <div className="flex gap-3">
@@ -1787,7 +1787,7 @@ const AdminCMS: React.FC = () => {
                   value={lookupQuery}
                   onChange={(e) => setLookupQuery(e.target.value)}
                   placeholder="Enter email or user ID..."
-                  className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   onKeyDown={(e) => e.key === 'Enter' && lookupUser()}
                 />
                 <button
@@ -1799,12 +1799,12 @@ const AdminCMS: React.FC = () => {
                 </button>
               </div>
               {lookupResult && (
-                <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
+                <div className="mt-4 p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700">
                   <div className="flex justify-between items-start">
                     <div>
-                      <p className="font-semibold text-gray-900">{lookupResult.email || 'No email'}</p>
-                      <p className="text-sm text-gray-600 font-mono">{lookupResult.id}</p>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <p className="font-semibold text-gray-900 dark:text-white">{lookupResult.email || 'No email'}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">{lookupResult.id}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                         Course: {(lookupResult.courseId || 'cpa').toUpperCase()} • 
                         Section: {lookupResult.examSection || 'Not set'} • 
                         Tier: {lookupResult.subscription?.tier || 'free'} • 
@@ -1839,7 +1839,7 @@ const AdminCMS: React.FC = () => {
             {/* User Management Table */}
             <Card className="p-6">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">User Management</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">User Management</h3>
                 <div className="flex flex-wrap gap-3 items-center">
                   {/* Search */}
                   <input
@@ -1847,13 +1847,13 @@ const AdminCMS: React.FC = () => {
                     value={userSearch}
                     onChange={(e) => setUserSearch(e.target.value)}
                     placeholder="Search users..."
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   {/* Filter */}
                   <select
                     value={userFilter}
                     onChange={(e) => setUserFilter(e.target.value as typeof userFilter)}
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Users</option>
                     <option value="admin">Admins Only</option>
@@ -1865,7 +1865,7 @@ const AdminCMS: React.FC = () => {
                   <select
                     value={userCourseFilter}
                     onChange={(e) => setUserCourseFilter(e.target.value as CourseId | 'all')}
-                    className="px-3 py-1.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Courses</option>
                     {getActiveCourses().map(course => (
@@ -1874,7 +1874,7 @@ const AdminCMS: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     Showing {filteredUsers.length} of {usersList.length}
                   </span>
                   <button
@@ -1889,35 +1889,35 @@ const AdminCMS: React.FC = () => {
               {isLoadingUsers ? (
                  <div className="text-center py-8">
                   <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                  <p className="text-gray-600">Loading users...</p>
+                  <p className="text-gray-600 dark:text-gray-400">Loading users...</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
                     <thead>
-                      <tr className="bg-gray-50 border-b border-gray-200">
-                        <th className="p-3 font-medium text-gray-600">Email</th>
-                        <th className="p-3 font-medium text-gray-600">Course</th>
-                        <th className="p-3 font-medium text-gray-600">Section</th>
-                        <th className="p-3 font-medium text-gray-600">Subscription</th>
-                        <th className="p-3 font-medium text-gray-600">Role</th>
-                        <th className="p-3 font-medium text-gray-600">Joined</th>
-                        <th className="p-3 font-medium text-gray-600">Actions</th>
+                      <tr className="bg-gray-50 dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Email</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Course</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Section</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Subscription</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Role</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Joined</th>
+                        <th className="p-3 font-medium text-gray-600 dark:text-gray-400">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-gray-100 dark:divide-slate-700">
                       {filteredUsers.length === 0 ? (
                         <tr>
-                          <td colSpan={7} className="p-4 text-center text-gray-600">
+                          <td colSpan={7} className="p-4 text-center text-gray-600 dark:text-gray-400">
                             {userSearch || userFilter !== 'all' ? 'No users match your criteria.' : 'No users found.'}
                           </td>
                         </tr>
                       ) : (
                         filteredUsers.slice(0, 100).map((u) => (
-                          <tr key={u.id} className="hover:bg-gray-50">
+                          <tr key={u.id} className="hover:bg-gray-50 dark:hover:bg-slate-700 dark:bg-slate-900">
                             <td className="p-3">
                               <div className="font-medium text-sm">{u.email || '—'}</div>
-                              <div className="text-xs text-gray-600 font-mono">{u.id.slice(0, 12)}...</div>
+                              <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{u.id.slice(0, 12)}...</div>
                             </td>
                             <td className="p-3">
                               <span className={`px-2 py-1 rounded text-xs font-medium ${
@@ -1962,7 +1962,7 @@ const AdminCMS: React.FC = () => {
                                 {u.isAdmin ? 'Admin' : 'User'}
                               </span>
                             </td>
-                             <td className="p-3 text-sm text-gray-600">
+                             <td className="p-3 text-sm text-gray-600 dark:text-gray-400">
                               {u.createdAt && typeof u.createdAt === 'object' && 'seconds' in u.createdAt
                                 ? new Date((u.createdAt as { seconds: number }).seconds * 1000).toLocaleDateString()
                                 : '—'}
@@ -1998,7 +1998,7 @@ const AdminCMS: React.FC = () => {
                     </tbody>
                   </table>
                   {filteredUsers.length > 100 && (
-                    <p className="text-center text-sm text-gray-600 mt-4">
+                    <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
                       Showing first 100 of {filteredUsers.length} users. Use search to find specific users.
                     </p>
                   )}
@@ -2012,7 +2012,7 @@ const AdminCMS: React.FC = () => {
           <div className="space-y-6">
             {/* Analytics Header */}
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-gray-900">📊 Analytics Dashboard</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📊 Analytics Dashboard</h3>
               <button
                 onClick={loadAnalytics}
                 disabled={isLoadingAnalytics}
@@ -2025,7 +2025,7 @@ const AdminCMS: React.FC = () => {
             {isLoadingAnalytics ? (
               <div className="text-center py-12">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-600">Calculating analytics...</p>
+                <p className="text-gray-600 dark:text-gray-400">Calculating analytics...</p>
               </div>
             ) : analytics ? (
               <>
@@ -2052,7 +2052,7 @@ const AdminCMS: React.FC = () => {
                 {/* Revenue Dashboard */}
                 {revenueMetrics && (
                   <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                       💰 Revenue Dashboard
                       <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">
                         {revenueMetrics.subscriberCount} subscribers
@@ -2064,49 +2064,49 @@ const AdminCMS: React.FC = () => {
                       )}
                     </h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="text-2xl font-bold text-green-600">
                           ${revenueMetrics.totalMRR.toFixed(0)}
                         </div>
-                        <div className="text-xs text-gray-600">Monthly Recurring Revenue</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Monthly Recurring Revenue</div>
                       </div>
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="text-2xl font-bold text-blue-600">
                           ${revenueMetrics.arrProjection.toFixed(0)}
                         </div>
-                        <div className="text-xs text-gray-600">Annual Run Rate (ARR)</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Annual Run Rate (ARR)</div>
                       </div>
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="text-2xl font-bold text-purple-600">
                           {revenueMetrics.founderCount}
                         </div>
-                        <div className="text-xs text-gray-600">Founder Members (50% off)</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (50% off)</div>
                       </div>
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600' : 'text-green-600'}`}>
                           {revenueMetrics.churnRisk}
                         </div>
-                        <div className="text-xs text-gray-600">Trials Ending (3 days)</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Trials Ending (3 days)</div>
                       </div>
                     </div>
                     
                     {/* Revenue by Plan Type */}
                     <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700">Monthly Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly Plans</span>
                           <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           ${revenueMetrics.monthlyMRR.toFixed(0)}/mo MRR
                         </div>
                       </div>
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700">Annual Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Annual Plans</span>
                           <span className="text-lg font-bold text-green-600">{revenueMetrics.byPlan.annual}</span>
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500 dark:text-gray-400">
                           ${revenueMetrics.annualMRR.toFixed(0)}/mo MRR (amortized)
                         </div>
                       </div>
@@ -2114,22 +2114,22 @@ const AdminCMS: React.FC = () => {
 
                     {/* Revenue by Course */}
                     {Object.keys(revenueMetrics.byCourse).length > 0 && (
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
-                        <h5 className="text-sm font-medium text-gray-700 mb-3">Revenue by Course</h5>
+                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
+                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Revenue by Course</h5>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           {Object.entries(revenueMetrics.byCourse)
                             .sort((a, b) => b[1].revenue - a[1].revenue)
                             .map(([courseId, data]) => {
                               const pricing = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING];
                               return (
-                                <div key={courseId} className="p-2 bg-gray-50 rounded text-sm">
+                                <div key={courseId} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                                   <div className="flex justify-between items-center">
                                     <span className="font-medium">{courseId.toUpperCase()}</span>
                                     <span className="text-green-600 font-semibold">
                                       ${data.revenue.toFixed(0)}/mo
                                     </span>
                                   </div>
-                                  <div className="text-xs text-gray-500 mt-1">
+                                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                                     {data.count} subs • ${pricing?.annual}/yr or ${pricing?.monthly}/mo
                                   </div>
                                 </div>
@@ -2139,14 +2139,14 @@ const AdminCMS: React.FC = () => {
                       </div>
                     )}
 
-                    <p className="text-xs text-gray-500 mt-3">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
                       Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
                       Founder pricing (50% off) available through May 31, 2026. No lifetime plans offered.
                     </p>
                   </Card>
                 )}
                 {!revenueMetrics && usersList.length === 0 && (
-                  <Card className="p-6 text-center text-gray-500 border-dashed">
+                  <Card className="p-6 text-center text-gray-500 dark:text-gray-400 border-dashed">
                     Load users (Users tab) to calculate revenue metrics
                   </Card>
                 )}
@@ -2155,7 +2155,7 @@ const AdminCMS: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Users by Course */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">Users by Course</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Course</h4>
                     <div className="space-y-3">
                       {Object.entries(analytics.byCourse || {})
                         .filter(([, count]) => count > 0)
@@ -2176,9 +2176,9 @@ const AdminCMS: React.FC = () => {
                                   <span>{getCourseIcon(courseId as CourseId)}</span>
                                   {courseConfig?.name || courseId.toUpperCase()}
                                 </span>
-                                <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                                <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2">
+                              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                 <div 
                                   className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
@@ -2188,14 +2188,14 @@ const AdminCMS: React.FC = () => {
                           );
                         })}
                       {Object.entries(analytics.byCourse || {}).filter(([, count]) => count > 0).length === 0 && (
-                        <p className="text-gray-600 text-sm">No course data yet - users will have courseId tracked</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">No course data yet - users will have courseId tracked</p>
                       )}
                     </div>
                   </Card>
 
                   {/* Users by Subscription */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">Users by Subscription</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Subscription</h4>
                     <div className="space-y-3">
                       {[
                         { key: 'lifetime', label: 'Lifetime', color: 'bg-gradient-to-r from-amber-400 to-yellow-500' },
@@ -2210,9 +2210,9 @@ const AdminCMS: React.FC = () => {
                           <div key={key}>
                             <div className="flex justify-between text-sm mb-1">
                               <span className="font-medium">{label}</span>
-                              <span className="text-gray-600">{count} ({percentage.toFixed(1)}%)</span>
+                              <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                             </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                               <div 
                                 className={`${color} h-2 rounded-full transition-all duration-500`} 
                                 style={{ width: `${percentage}%` }}
@@ -2224,7 +2224,7 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700">Premium Users</span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">Premium Users</span>
                         <span className="font-bold text-green-600">
                           {(analytics.bySubscription.lifetime || 0) + 
                            (analytics.bySubscription.annual || 0) + 
@@ -2238,25 +2238,25 @@ const AdminCMS: React.FC = () => {
 
                 {/* Quick Stats */}
                 <Card className="p-6">
-                  <h4 className="font-semibold text-gray-900 mb-4">Quick Stats</h4>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Stats</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                       <div className="text-2xl font-bold text-blue-600">{analytics.activeToday}</div>
-                      <div className="text-xs text-gray-600">Active Today</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Active Today</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                       <div className="text-2xl font-bold text-green-600">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">WAU Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">WAU Rate</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                       <div className="text-2xl font-bold text-primary-600">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisMonth / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">MAU Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">MAU Rate</div>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
                       <div className="text-2xl font-bold text-amber-600">
                         {((analytics.bySubscription.lifetime || 0) + 
                           (analytics.bySubscription.annual || 0) + 
@@ -2268,7 +2268,7 @@ const AdminCMS: React.FC = () => {
                               (analytics.bySubscription.monthly || 0)) / analytics.totalUsers * 100).toFixed(1)
                           : 0}%
                       </div>
-                      <div className="text-xs text-gray-600">Conversion Rate</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Conversion Rate</div>
                     </div>
                   </div>
                 </Card>
@@ -2278,7 +2278,7 @@ const AdminCMS: React.FC = () => {
                   {/* Most Active Users */}
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">🏆 Most Active Users</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">🏆 Most Active Users</h4>
                       <button
                         onClick={loadEngagementStats}
                         disabled={isLoadingEngagement || usersList.length === 0}
@@ -2289,23 +2289,23 @@ const AdminCMS: React.FC = () => {
                     </div>
                     {engagementStats ? (
                       <div className="space-y-2">
-                        <div className="text-sm text-gray-600 mb-3">
+                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                           {engagementStats.usersWithActivity} users with activity • Avg {engagementStats.averageQuestionsPerUser} questions/user
                         </div>
                         {engagementStats.mostActive.length > 0 ? (
                           engagementStats.mostActive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
                               <span className="text-green-600 font-semibold ml-2">{user.questionsAnswered} Q</span>
-                              <span className="text-gray-500 text-xs ml-2">{user.lastActive}</span>
+                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">{user.lastActive}</span>
                             </div>
                           ))
                         ) : (
-                          <p className="text-gray-500 text-sm">No activity data found</p>
+                          <p className="text-gray-500 dark:text-gray-400 text-sm">No activity data found</p>
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
                         {usersList.length === 0 ? 'Load users first (Users tab)' : 'Click Load to fetch engagement data'}
                       </p>
                     )}
@@ -2313,15 +2313,15 @@ const AdminCMS: React.FC = () => {
 
                   {/* Inactive Users */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">😴 Inactive Users</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">😴 Inactive Users</h4>
                     {engagementStats ? (
                       <div className="space-y-2">
                         {engagementStats.inactive.length > 0 ? (
                           engagementStats.inactive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
                               <span className="text-amber-600 font-semibold ml-2">{user.daysSinceActive}d</span>
-                              <span className="text-gray-500 text-xs ml-2">joined {user.joinedAt}</span>
+                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">joined {user.joinedAt}</span>
                             </div>
                           ))
                         ) : (
@@ -2329,7 +2329,7 @@ const AdminCMS: React.FC = () => {
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">Load engagement data to see inactive users</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load engagement data to see inactive users</p>
                     )}
                   </Card>
                 </div>
@@ -2339,7 +2339,7 @@ const AdminCMS: React.FC = () => {
                   {/* Most Reported Questions */}
                   <Card className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900">⚠️ Most Reported Questions</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">⚠️ Most Reported Questions</h4>
                       <button
                         onClick={loadQuestionReports}
                         disabled={isLoadingReports}
@@ -2355,7 +2355,7 @@ const AdminCMS: React.FC = () => {
                         </div>
                         {qualityMetrics.mostReported.length > 0 ? (
                           qualityMetrics.mostReported.slice(0, 5).map((q, i) => (
-                            <div key={i} className="p-2 bg-gray-50 rounded text-sm">
+                            <div key={i} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <div className="flex justify-between items-center">
                                 <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 20)}...</span>
                                 <span className="text-red-600 font-semibold ml-2">{q.reportCount}x</span>
@@ -2374,13 +2374,13 @@ const AdminCMS: React.FC = () => {
                         )}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">Load reports to see quality metrics</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load reports to see quality metrics</p>
                     )}
                   </Card>
 
                   {/* Reports by Type */}
                   <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 mb-4">📊 Reports by Type</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">📊 Reports by Type</h4>
                     {qualityMetrics && Object.keys(qualityMetrics.reportsByType).length > 0 ? (
                       <div className="space-y-3">
                         {Object.entries(qualityMetrics.reportsByType)
@@ -2396,9 +2396,9 @@ const AdminCMS: React.FC = () => {
                               <div key={type}>
                                 <div className="flex justify-between text-sm mb-1">
                                   <span className="font-medium">{type.replace(/_/g, ' ')}</span>
-                                  <span className="text-gray-600">{count}</span>
+                                  <span className="text-gray-600 dark:text-gray-400">{count}</span>
                                 </div>
-                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
                                   <div 
                                     className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                     style={{ width: `${percentage}%` }}
@@ -2409,13 +2409,13 @@ const AdminCMS: React.FC = () => {
                           })}
                       </div>
                     ) : (
-                      <p className="text-gray-500 text-sm">No report data available</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">No report data available</p>
                     )}
                   </Card>
                 </div>
               </>
             ) : (
-              <div className="text-center py-12 text-gray-600">
+              <div className="text-center py-12 text-gray-600 dark:text-gray-400">
                 Click Refresh to load analytics data
               </div>
             )}
@@ -2426,32 +2426,32 @@ const AdminCMS: React.FC = () => {
           <div className="space-y-6">
             {/* Broadcast Announcement */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 📢 Send Announcement
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Message Title</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Title</label>
                   <input
                     type="text"
                     id="announcement-title"
                     placeholder="e.g., New Feature: AI Study Plans"
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Message Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Body</label>
                   <textarea
                     id="announcement-body"
                     rows={3}
                     placeholder="We've just launched AI-powered study plans..."
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
                   />
                 </div>
                 <div className="flex items-center gap-4">
                   <select
                     id="announcement-audience"
-                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="all">All Users</option>
                     {getActiveCourses().map(course => (
@@ -2499,7 +2499,7 @@ const AdminCMS: React.FC = () => {
                     Send Announcement
                   </button>
                 </div>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Announcements are stored in Firestore and shown to users on their next session. For push notifications, use Firebase Cloud Messaging directly.
                 </p>
               </div>
@@ -2507,7 +2507,7 @@ const AdminCMS: React.FC = () => {
 
             {/* System Health */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">🩺 System Health</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🩺 System Health</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="p-4 bg-green-50 rounded-lg text-center">
                   <div className="text-2xl font-bold text-green-700">✓</div>
@@ -2530,7 +2530,7 @@ const AdminCMS: React.FC = () => {
                   <div className={`text-sm ${systemErrors.length === 0 ? 'text-green-600' : 'text-amber-600'}`}>Errors</div>
                 </div>
               </div>
-              <div className="mt-4 p-3 bg-gray-50 rounded-lg text-sm text-gray-600">
+              <div className="mt-4 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
                 <div className="grid grid-cols-2 gap-2">
                   <div><strong>Environment:</strong> {import.meta.env.VITE_ENVIRONMENT || 'development'}</div>
                   <div><strong>Project:</strong> {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</div>
@@ -2543,7 +2543,7 @@ const AdminCMS: React.FC = () => {
             {/* Announcement History */}
             <Card className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">📜 Announcement History</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📜 Announcement History</h3>
                 <button
                   onClick={loadAnnouncementHistory}
                   disabled={isLoadingAnnouncements}
@@ -2562,8 +2562,8 @@ const AdminCMS: React.FC = () => {
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900">{ann.title}</h4>
-                          <p className="text-sm text-gray-600 mt-1">{ann.body}</p>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{ann.title}</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
                         </div>
                         <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
                           ann.active ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
@@ -2571,7 +2571,7 @@ const AdminCMS: React.FC = () => {
                           {ann.active ? 'Active' : 'Inactive'}
                         </span>
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                      <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                         <span>📤 {ann.audience === 'all' ? 'All Users' : ann.audience}</span>
                         <span>👤 {ann.createdBy || 'Unknown'}</span>
                         <span>📅 {ann.createdAt?.seconds 
@@ -2602,7 +2602,7 @@ const AdminCMS: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-sm text-center py-6">
+                <p className="text-gray-500 dark:text-gray-400 text-sm text-center py-6">
                   {isLoadingAnnouncements ? 'Loading announcements...' : 'No announcements sent yet'}
                 </p>
               )}
@@ -2610,12 +2610,12 @@ const AdminCMS: React.FC = () => {
 
             {/* Feature Flags */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎛️ Feature Flags
                 <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 px-1 rounded">featureFlags.ts</code> and redeploy.
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(featureFlags).map(([flag, enabled]) => (
@@ -2626,8 +2626,8 @@ const AdminCMS: React.FC = () => {
                     }`}
                   >
                     <div>
-                      <span className="font-medium text-gray-900">{flag}</span>
-                      <p className="text-xs text-gray-600 mt-0.5">
+                      <span className="font-medium text-gray-900 dark:text-white">{flag}</span>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
                         {flag === 'aiTutor' && 'Vory AI assistant'}
                         {flag === 'examSimulator' && 'Full exam simulation'}
                         {flag === 'flashcards' && 'Flashcard study mode'}
@@ -2650,9 +2650,9 @@ const AdminCMS: React.FC = () => {
             {/* Question Reports */}
             <Card className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">📋 Question Reports</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📋 Question Reports</h3>
                 <div className="flex gap-2">
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     {questionReports.filter(r => r.status === 'pending').length} pending
                   </span>
                   <Button
@@ -2668,7 +2668,7 @@ const AdminCMS: React.FC = () => {
               </div>
               
               {questionReports.length === 0 ? (
-                <p className="text-sm text-gray-600 text-center py-8">
+                <p className="text-sm text-gray-600 dark:text-gray-400 text-center py-8">
                   No question reports yet. Click Refresh to load.
                 </p>
               ) : (
@@ -2702,20 +2702,20 @@ const AdminCMS: React.FC = () => {
                             }`}>
                               {report.status}
                             </span>
-                            <span className="text-xs text-gray-600">
+                            <span className="text-xs text-gray-600 dark:text-gray-400">
                               {report.courseId && <span className="font-medium">{report.courseId.toUpperCase()} • </span>}
                               {report.section} • {report.blueprintArea}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-900 line-clamp-2">
+                          <p className="text-sm text-gray-900 dark:text-white line-clamp-2">
                             Q: {report.questionText || report.questionId}
                           </p>
                           {report.details && (
-                            <p className="text-xs text-gray-600 mt-1">
+                            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                               Details: {report.details}
                             </p>
                           )}
-                          <p className="text-xs text-gray-600 mt-1">
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                             By: {report.reportedByEmail || report.reportedBy}
                             {report.createdAt && ` • ${new Date(report.createdAt.seconds * 1000).toLocaleDateString()}`}
                           </p>
@@ -2747,12 +2747,12 @@ const AdminCMS: React.FC = () => {
 
             {/* System Tools */}
             <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">🛠️ System Tools</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🛠️ System Tools</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Maintenance Mode Toggle */}
                 <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Maintenance Mode</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Maintenance Mode</h4>
                     <button
                       onClick={() => {
                         const newState = !maintenanceMode;
@@ -2769,15 +2769,15 @@ const AdminCMS: React.FC = () => {
                       {maintenanceMode ? 'Disable' : 'Enable'}
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     When enabled, shows maintenance message to non-admin users.
                   </p>
                 </div>
 
                 {/* Cache Refresh */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Clear Local Cache</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Clear Local Cache</h4>
                     <Button
                       onClick={() => {
                         const keysCleared: string[] = [];
@@ -2805,15 +2805,15 @@ const AdminCMS: React.FC = () => {
                       Clear Cache
                     </Button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Clears local storage cache for study state and progress.
                   </p>
                 </div>
 
                 {/* Force Reload */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Force Hard Reload</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Force Hard Reload</h4>
                     <button
                       onClick={() => {
                         if (window.confirm('This will fully reload the app. Continue?')) {
@@ -2825,15 +2825,15 @@ const AdminCMS: React.FC = () => {
                       Hard Reload
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Forces a complete page reload bypassing cache.
                   </p>
                 </div>
 
                 {/* Export Users */}
-                <div className="p-4 rounded-lg border bg-gray-50 border-gray-200">
+                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">Export User List</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Export User List</h4>
                     <button
                       onClick={() => {
                         if (usersList.length === 0) {
@@ -2860,7 +2860,7 @@ const AdminCMS: React.FC = () => {
                       Export CSV
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
                     Download user list as CSV file.
                   </p>
                 </div>
@@ -2868,7 +2868,7 @@ const AdminCMS: React.FC = () => {
                 {/* Stale Account Cleanup */}
                 <div className="p-4 rounded-lg border bg-red-50 border-red-200">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900">🧹 Stale Account Cleanup</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">🧹 Stale Account Cleanup</h4>
                     <div className="flex gap-2">
                       <Button
                         onClick={findStaleAccounts}
@@ -2892,23 +2892,23 @@ const AdminCMS: React.FC = () => {
                       )}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-600 mb-2">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
                     Find accounts with incomplete onboarding (7+ days old) and remove them.
                   </p>
                   {staleAccounts.length > 0 && (
                     <div className="mt-3 max-h-40 overflow-y-auto">
-                      <div className="text-xs text-gray-500 mb-1">Preview ({staleAccounts.length} accounts):</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Preview ({staleAccounts.length} accounts):</div>
                       <div className="space-y-1">
                         {staleAccounts.slice(0, 10).map(acc => (
-                          <div key={acc.id} className="text-xs bg-white rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700">{acc.email || acc.displayName || 'No email'}</span>
+                          <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
+                            <span className="text-gray-700 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
                             <span className="text-gray-400">
                               {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
                             </span>
                           </div>
                         ))}
                         {staleAccounts.length > 10 && (
-                          <div className="text-xs text-gray-500 italic">
+                          <div className="text-xs text-gray-500 dark:text-gray-400 italic">
                             ...and {staleAccounts.length - 10} more
                           </div>
                         )}
@@ -2921,11 +2921,11 @@ const AdminCMS: React.FC = () => {
 
             {/* Beta User Trial Transition */}
             <Card className="p-6 border-2 border-amber-300 bg-amber-50">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎫 Beta User Trial Transition
                 <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded">ONE-TIME</span>
               </h3>
-              <p className="text-sm text-gray-700 mb-4">
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
                 Paid subscribers will be skipped. Users will be marked as Founders (50% off eligible).
               </p>
@@ -2966,34 +2966,34 @@ const AdminCMS: React.FC = () => {
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-sm font-medium text-gray-700 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ✅ Will Update ({betaTransitionResults.toUpdate.length})
                       </div>
-                      <div className="max-h-40 overflow-y-auto bg-white rounded border p-2 text-xs space-y-1">
+                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
                           </div>
                         ))}
                         {betaTransitionResults.toUpdate.length > 15 && (
-                          <div className="text-gray-500 italic">...and {betaTransitionResults.toUpdate.length - 15} more</div>
+                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.toUpdate.length - 15} more</div>
                         )}
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-gray-700 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         ⏭️ Will Skip ({betaTransitionResults.skipped.length})
                       </div>
-                      <div className="max-h-40 overflow-y-auto bg-white rounded border p-2 text-xs space-y-1">
+                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.skipped.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-amber-600">{u.reason}</span>
                           </div>
                         ))}
                         {betaTransitionResults.skipped.length > 15 && (
-                          <div className="text-gray-500 italic">...and {betaTransitionResults.skipped.length - 15} more</div>
+                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.skipped.length - 15} more</div>
                         )}
                         {betaTransitionResults.skipped.length === 0 && (
                           <div className="text-gray-400">No paid subscribers found</div>
@@ -3007,14 +3007,14 @@ const AdminCMS: React.FC = () => {
 
             {/* Launch Status */}
             <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 🚀 Launch Status
               </h3>
               <div className="flex items-center gap-4">
                 <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">
                   Status: <strong>LIVE</strong>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Paid subscriptions are active. Founder pricing (50% off) available until May 31, 2026.
                 </p>
               </div>
@@ -3024,7 +3024,7 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'logs' && (
           <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex justify-between items-center">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
               <span>System Error Logs</span>
               <div className="flex items-center gap-2">
                 {systemErrors.length > 0 && (
@@ -3049,12 +3049,12 @@ const AdminCMS: React.FC = () => {
             {isLoadingErrors ? (
                <div className="text-center py-8">
                 <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-600">Loading logs...</p>
+                <p className="text-gray-600 dark:text-gray-400">Loading logs...</p>
               </div>
             ) : (
               <div className="space-y-4">
                  {systemErrors.length === 0 ? (
-                    <p className="text-gray-600 text-center py-8">No errors logged in the system.</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-center py-8">No errors logged in the system.</p>
                  ) : (
                    systemErrors.map((err) => (
                      <div key={err.id} className="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
@@ -3067,9 +3067,9 @@ const AdminCMS: React.FC = () => {
                           </span>
                           <span className="text-xs text-red-400 font-mono">{err.id}</span>
                         </div>
-                        <p className="font-medium text-gray-900 mb-2">{err.message}</p>
+                        <p className="font-medium text-gray-900 dark:text-white mb-2">{err.message}</p>
                         {err.context && (
-                          <div className="text-sm text-gray-600 mb-2">
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                             <strong>Context:</strong> {typeof err.context === 'object' ? JSON.stringify(err.context) : err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
                           </div>
                         )}
@@ -3091,7 +3091,7 @@ const AdminCMS: React.FC = () => {
 
         {activeTab === 'settings' && (
           <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Admin Settings</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Admin Settings</h3>
             <div className="space-y-4">
               {/* AI Service Status */}
               <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
@@ -3137,19 +3137,19 @@ const AdminCMS: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-900 mb-2">Admin Access</h4>
-                <p className="text-sm text-gray-600 mb-2">Authorized admin emails:</p>
-                <ul className="text-sm text-gray-600 list-disc list-inside">
+              <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2">Admin Access</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Authorized admin emails:</p>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
                   {ADMIN_EMAILS.map((email) => (
                     <li key={email}>{email}</li>
                   ))}
                 </ul>
               </div>
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-900 mb-2">Firebase Project</h4>
-                <p className="text-sm text-gray-600">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
-                <p className="text-sm text-gray-600">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
+              <div className="p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2">Firebase Project</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Project: {import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Unknown'}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Environment: {import.meta.env.VITE_ENVIRONMENT || 'development'}</p>
               </div>
               
               {/* Reset Account Section */}
@@ -3169,14 +3169,14 @@ const AdminCMS: React.FC = () => {
                 </ul>
                 
                 {/* Course selector for per-exam reset */}
-                <div className="mb-4 p-3 bg-white rounded border border-red-200">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Exam to reset (for per-exam options):
                   </label>
                   <select 
                     value={resetExamSelection}
                     onChange={(e) => setResetExamSelection(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-lg bg-white text-gray-900"
+                    className="w-full p-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
                   >
                     <option value="cpa">CPA</option>
                     <option value="ea">EA (Enrolled Agent)</option>
@@ -3399,23 +3399,35 @@ const AdminCMS: React.FC = () => {
                           }
                         }
                         
-                        // Handle daily_log specially - filter by activity section OR delete all
-                        // daily_log docs don't have courseId but activities inside have section
+                        // Handle daily_log specially - filter by course-prefixed doc ID, activity section, or today's date
+                        // New format: daily_log docs use IDs like "cfp_2026-02-11" (courseId_date)
+                        // Legacy format: daily_log docs use IDs like "2026-02-11" with activities containing section
                         try {
                           const dailyLogRef = collection(db, 'users', userId, 'daily_log');
                           const dailyLogDocs = await getDocs(dailyLogRef);
                           dailyLogDocs.forEach((docSnap) => {
+                            const docId = docSnap.id;
                             const data = docSnap.data();
                             const activities = data.activities || [];
-                            // Check if ANY activity belongs to this course's sections
+                            
+                            // Check if doc ID starts with course prefix (new format: cfp_2026-02-11)
+                            const isCourseSpecificDoc = docId.startsWith(`${currentCourse}_`);
+                            
+                            // Check if ANY activity belongs to this course's sections (legacy format)
                             const hasCourseActivity = activities.some((a: { section?: string }) => 
                               a.section && courseSections.some(s => 
                                 a.section?.toLowerCase() === s.toLowerCase() ||
                                 a.section?.toLowerCase().includes(currentCourse)
                               )
                             );
-                            // Delete if it has activities from this course OR it's from today (fresh start)
-                            if (hasCourseActivity || data.date === format(new Date(), 'yyyy-MM-dd')) {
+                            
+                            // Delete if:
+                            // 1. Doc ID matches course prefix (new format)
+                            // 2. Has activities from this course (legacy format)
+                            // 3. It's today's legacy doc (fresh start for backwards compat)
+                            const isTodayLegacyDoc = docId === format(new Date(), 'yyyy-MM-dd');
+                            
+                            if (isCourseSpecificDoc || hasCourseActivity || isTodayLegacyDoc) {
                               batch.delete(docSnap.ref);
                               totalDeleted++;
                             }
@@ -3477,7 +3489,7 @@ const AdminCMS: React.FC = () => {
       {/* User Activity Detail Modal */}
       {selectedUser && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-blue-600 to-primary-600 text-white p-6">
               <div className="flex justify-between items-start">
@@ -3485,9 +3497,9 @@ const AdminCMS: React.FC = () => {
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
                   <div className="flex gap-3 mt-2 text-sm">
-                    <span className="bg-white/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
-                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
-                    <span className="bg-white/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{(selectedUser.courseId || 'cpa').toUpperCase()}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.examSection || 'No section'}</span>
+                    <span className="bg-white dark:bg-slate-800/20 px-2 py-1 rounded">{selectedUser.subscription?.tier || 'free'}</span>
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded">Admin</span>}
                   </div>
                 </div>
@@ -3505,7 +3517,7 @@ const AdminCMS: React.FC = () => {
               {isLoadingActivity ? (
                 <div className="flex items-center justify-center py-12">
                   <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full" />
-                  <span className="ml-3 text-gray-600">Loading activity data...</span>
+                  <span className="ml-3 text-gray-600 dark:text-gray-400">Loading activity data...</span>
                 </div>
               ) : userActivity ? (
                 <div className="space-y-6">
@@ -3531,18 +3543,18 @@ const AdminCMS: React.FC = () => {
 
                   {/* Last Active */}
                   {userActivity.stats.lastActiveDate && (
-                    <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-slate-900 rounded-lg p-3">
                       <strong>Last Active:</strong> {userActivity.stats.lastActiveDate}
                     </div>
                   )}
 
                   {/* Recent Daily Activity */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">📅 Recent Daily Activity</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📅 Recent Daily Activity</h4>
                     {userActivity.dailyLogs.length > 0 ? (
-                      <div className="bg-gray-50 rounded-lg overflow-hidden">
+                      <div className="bg-gray-50 dark:bg-slate-900 rounded-lg overflow-hidden">
                         <table className="w-full text-sm">
-                          <thead className="bg-gray-100">
+                          <thead className="bg-gray-100 dark:bg-slate-700">
                             <tr>
                               <th className="p-2 text-left">Date</th>
                               <th className="p-2 text-center">Questions</th>
@@ -3553,7 +3565,7 @@ const AdminCMS: React.FC = () => {
                           </thead>
                           <tbody>
                             {userActivity.dailyLogs.slice(0, 10).map((log, i) => (
-                              <tr key={i} className="border-t border-gray-200">
+                              <tr key={i} className="border-t border-gray-200 dark:border-slate-700">
                                 <td className="p-2">{log.date}</td>
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
                                 <td className="p-2 text-center text-green-600">{log.questionsCorrect || log.correctAnswers || 0}</td>
@@ -3565,20 +3577,20 @@ const AdminCMS: React.FC = () => {
                         </table>
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No daily activity recorded.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No daily activity recorded.</p>
                     )}
                   </div>
 
                   {/* Practice Sessions */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">📝 Recent Practice Sessions</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">📝 Recent Practice Sessions</h4>
                     {userActivity.practiceSessions.length > 0 ? (
                       <div className="space-y-2">
                         {userActivity.practiceSessions.slice(0, 5).map((session) => (
-                          <div key={session.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                          <div key={session.id} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 flex justify-between items-center">
                             <div>
                               <span className="font-medium">{session.section || 'Practice'}</span>
-                              <span className="text-gray-600 text-sm ml-2">
+                              <span className="text-gray-600 dark:text-gray-400 text-sm ml-2">
                                 {session.startedAt?.seconds 
                                   ? new Date(session.startedAt.seconds * 1000).toLocaleDateString()
                                   : 'Unknown date'}
@@ -3594,19 +3606,19 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No practice sessions recorded.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No practice sessions recorded.</p>
                     )}
                   </div>
 
                   {/* AI Conversations */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">🤖 Vory Conversations</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">🤖 Vory Conversations</h4>
                     {userActivity.recentConversations.length > 0 ? (
                       <div className="space-y-2">
                         {userActivity.recentConversations.map((conv) => (
-                          <div key={conv.id} className="bg-gray-50 rounded-lg p-3 flex justify-between items-center">
+                          <div key={conv.id} className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 flex justify-between items-center">
                             <span className="font-medium">{conv.title}</span>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-gray-600 dark:text-gray-400">
                               {conv.messageCount} messages • 
                               {conv.updatedAt?.seconds 
                                 ? new Date(conv.updatedAt.seconds * 1000).toLocaleDateString()
@@ -3616,15 +3628,15 @@ const AdminCMS: React.FC = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No AI conversations.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No AI conversations.</p>
                     )}
                   </div>
 
                   {/* Recent Question History */}
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">❓ Recent Questions ({userActivity.questionHistory.length})</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">❓ Recent Questions ({userActivity.questionHistory.length})</h4>
                     {userActivity.questionHistory.length > 0 ? (
-                      <div className="bg-gray-50 rounded-lg p-3 max-h-48 overflow-y-auto">
+                      <div className="bg-gray-50 dark:bg-slate-900 rounded-lg p-3 max-h-48 overflow-y-auto">
                         <div className="flex flex-wrap gap-1">
                           {userActivity.questionHistory.slice(0, 50).map((q, i) => {
                             const isCorrect = q.lastCorrect === true || (q.timesCorrect ?? 0) > 0;
@@ -3639,17 +3651,17 @@ const AdminCMS: React.FC = () => {
                             );
                           })}
                         </div>
-                        <p className="text-xs text-gray-600 mt-2">
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
                           Showing last {Math.min(50, userActivity.questionHistory.length)} of {userActivity.questionHistory.length} questions
                         </p>
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm">No question history.</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">No question history.</p>
                     )}
                   </div>
                 </div>
               ) : (
-                <p className="text-gray-600 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
+                <p className="text-gray-600 dark:text-gray-400 text-center py-8">No activity data available. (userActivity: {userActivity ? 'exists' : 'null'}, isLoading: {isLoadingActivity ? 'true' : 'false'})</p>
               )}
             </div>
 
@@ -3657,7 +3669,7 @@ const AdminCMS: React.FC = () => {
             <div className="border-t p-4 flex justify-end gap-3">
               <button
                 onClick={() => { setSelectedUser(null); setUserActivity(null); }}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600"
               >
                 Close
               </button>

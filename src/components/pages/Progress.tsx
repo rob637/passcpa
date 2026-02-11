@@ -381,7 +381,9 @@ const Progress: React.FC = () => {
         const dailyData = await Promise.all(
           days.map(async (date) => {
             const dateKey = format(date, 'yyyy-MM-dd');
-            const logRef = doc(db, 'users', user.uid, 'daily_log', dateKey);
+            // Use course-specific daily log ID
+            const dailyLogId = `${courseId}_${dateKey}`;
+            const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
             const logSnap = await getDoc(logRef);
 
             if (logSnap.exists()) {

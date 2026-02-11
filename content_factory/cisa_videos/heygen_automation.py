@@ -211,9 +211,22 @@ class HeyGenAutomation:
         logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use})")
         
         try:
-            # Navigate to create video page - HeyGen opens directly to the editor
-            self.page.goto(f"{self.BASE_URL}/create/new", timeout=60000)
-            time.sleep(5)  # Wait for editor to fully load
+            # Navigate to home, then click create - /create/new gives 404
+            self.page.goto(f"{self.BASE_URL}/home", timeout=60000)
+            time.sleep(3)
+            
+            # Look for "Create video" or "New video" button on home page
+            create_btn = self.page.wait_for_selector(
+                'button:has-text("Create"), button:has-text("New"), a:has-text("Create video")',
+                timeout=15000
+            )
+            create_btn.click()
+            time.sleep(5)  # Wait for editor to load
+            
+            # Debug screenshot - see what page we're on
+            debug_path = Path(__file__).parent / "output" / f"debug_after_create_click_{int(time.time())}.png"
+            self.page.screenshot(path=str(debug_path))
+            logger.info(f"[DEBUG] After create click: {debug_path}")
             
             # Read script
             with open(script_file, 'r', encoding='utf-8') as f:
@@ -235,6 +248,11 @@ class HeyGenAutomation:
             time.sleep(0.2)
             self.page.keyboard.type(script_text[:3000], delay=5)  # Limit length, type slowly
             time.sleep(2)
+            
+            # Debug screenshot - see if script was entered
+            debug_path2 = Path(__file__).parent / "output" / f"debug_after_script_{int(time.time())}.png"
+            self.page.screenshot(path=str(debug_path2))
+            logger.info(f"[DEBUG] After script entry: {debug_path2}")
             
             logger.info(f"[OK] Script entered ({len(script_text)} chars)")
             

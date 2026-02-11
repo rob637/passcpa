@@ -69,6 +69,12 @@ COORDS = {
     
     # First uploaded background
     "first_upload": (1080, 250),
+    
+    # Layout button (right sidebar, "Layouts" icon)
+    "layouts_button": (1269, 480),
+    
+    # Portrait 9:16 option
+    "portrait_9_16": (1100, 200),
 }
 
 
@@ -95,6 +101,8 @@ def calibrate():
         ("customize_bg", "'Customize' button under Avatar Background"),
         ("uploads_tab", "'Uploads' tab in background panel"),
         ("first_upload", "where the first uploaded image appears"),
+        ("layouts_button", "'Layouts' icon in right sidebar"),
+        ("portrait_9_16", "Portrait 9:16 layout option"),
     ]
     
     results = {}
@@ -229,6 +237,15 @@ def create_video(title, script_text, avatar_name, background_name=None):
         time.sleep(1)
         click("first_upload", double=True)  # Double-click background
         time.sleep(1)
+    
+    # Step 6: Set layout to Portrait 9:16
+    logger.info("[STEP 6] Setting layout to Portrait 9:16...")
+    click("layouts_button")
+    time.sleep(1)
+    click("portrait_9_16")
+    time.sleep(1)
+    pyautogui.press('escape')  # Close panel
+    time.sleep(0.5)
     
     # Save with Ctrl+S
     logger.info("[DONE] Saving draft...")

@@ -350,69 +350,96 @@ class HeyGenAutomationV2:
             
             self.screenshot("05_avatar_looks")
             
-            # Double-click on the first outfit/look to select it
-            # The looks panel shows multiple outfit images - we need to double-click one
+            # Double-click on one of Freja's outfit/look images to select it
+            # The looks panel shows multiple outfit images in a grid - we need to double-click one
             look_found = False
+            
+            # Wait a moment for looks to load
+            time.sleep(1)
+            
+            # The looks panel header shows avatar name (e.g., "Freja")
+            # Below it is "Replace avatar" button
+            # Below that are the outfit images in a grid
+            
+            # Try to find images in the avatar looks panel
+            # The panel is on the right side after clicking avatar name
             look_selectors = [
-                'img[src*="avatar"]',  # Avatar look images
-                '[class*="look"] img',
-                '[class*="outfit"] img', 
-                '[class*="avatar-item"] img',
-                'img[class*="cursor"]',  # Clickable images
+                f'img[alt*="{avatar_name}"]',  # Images with avatar name in alt
+                f'img[title*="{avatar_name}"]',
+                'img[src*="heygen"]',  # HeyGen CDN images
+                'img[src*="cdn"]',
+                'img[src*="photo"]',
+                'img[src*="instant"]',
+                'img[src*="avatar"]',
             ]
             
-            # Try each selector to find look images
             for selector in look_selectors:
                 try:
                     looks = self.page.locator(selector).all()
-                    if len(looks) >= 2:  # Should have multiple looks
-                        # Double-click the first look (top-left, usually "Front")
-                        looks[0].dblclick()
-                        logger.info(f"[OK] Double-clicked first look via: {selector}")
+                    # Filter to only visible images
+                    visible_looks = [l for l in looks if l.is_visible()]
+                    if len(visible_looks) >= 2:  # Multiple looks available
+                        # Double-click the first visible look
+                        visible_looks[0].dblclick()
+                        logger.info(f"[OK] Double-clicked look via: {selector} (found {len(visible_looks)})")
                         look_found = True
-                        time.sleep(1.5)
+                        time.sleep(2)  # Wait for avatar to apply
                         break
-                except:
+                except Exception as e:
                     continue
             
-            # Fallback: try clicking any visible image in the panel area
+            # Fallback: use coordinates - in the looks panel, first image is near top-right
             if not look_found:
                 try:
-                    # The looks are in the right panel after clicking avatar name
-                    panel_images = self.page.locator('[class*="panel"] img, [class*="sidebar"] img').all()
-                    if panel_images:
-                        panel_images[0].dblclick()
-                        logger.info("[OK] Double-clicked first panel image")
-                        look_found = True
-                        time.sleep(1.5)
-                except:
-                    pass
+                    # Find "Replace avatar" button and click below it where looks should be
+                    replace_btn = self.page.locator('text="Replace avatar"').first
+                    if replace_btn and replace_btn.is_visible():
+                        # Get bounding box and click 50px below it (where first look should be)
+                        box = replace_btn.bounding_box()
+                        if box:
+                            click_x = box['x'] + 50
+                            click_y = box['y'] + 100  # Below the button
+                            self.page.mouse.dblclick(click_x, click_y)
+                            logger.info(f"[OK] Double-clicked at coordinates ({click_x}, {click_y})")
+                            look_found = True
+                            time.sleep(2)
+                except Exception as e:
+                    logger.warning(f"[WARN] Coordinate click failed: {e}")
             
             if not look_found:
                 logger.warning("[WARN] Could not select avatar look - try manually")
             
+            # Close the avatar panel by pressing Escape
+            self.page.keyboard.press("Escape")
+            time.sleep(1)
+            
             self.screenshot("06_avatar_selected")
             
             # =========================================================
-            # STEP 5: Verify Motion Engine is Avatar IV (latest)
+            # STEP 5: Check Motion Engine (skip if not visible - likely already set)
             # =========================================================
             logger.info("[STEP 5] Checking Motion Engine...")
             
-            # Check if Avatar IV is visible (already selected)
-            avatar_iv = self.page.locator('text="Avatar IV"').first
-            if avatar_iv and avatar_iv.is_visible():
-                logger.info("[OK] Avatar IV already selected")
-            else:
-                # Click the Motion Engine dropdown and select Avatar IV
-                motion_dropdown = self.page.locator('text="Motion Engine"').first
-                if motion_dropdown:
-                    motion_dropdown.click()
-                    time.sleep(0.5)
-                    self.wait_and_click(
-                        ['text="Avatar IV"', 'text="Avatar III"'],  # IV preferred, III fallback
-                        "Select Motion Engine"
-                    )
-                    time.sleep(0.5)
+            try:
+                # Check if Avatar III or IV is visible (already selected)
+                avatar_engine = self.page.locator('text="Avatar III", text="Avatar IV"').first
+                if avatar_engine and avatar_engine.is_visible(timeout=3000):
+                    logger.info("[OK] Motion Engine already set")
+                else:
+                    # Try to click the Motion Engine dropdown if visible
+                    motion_dropdown = self.page.locator('text="Motion Engine"').first
+                    if motion_dropdown and motion_dropdown.is_visible(timeout=3000):
+                        motion_dropdown.click()
+                        time.sleep(0.5)
+                        self.wait_and_click(
+                            ['text="Avatar IV"', 'text="Avatar III"'],
+                            "Select Motion Engine"
+                        )
+                        time.sleep(0.5)
+                    else:
+                        logger.info("[SKIP] Motion Engine not visible - may need manual check")
+            except Exception as e:
+                logger.info(f"[SKIP] Motion Engine check skipped: {e}")
             
             # =========================================================
             # STEP 6: Customize background → Uploads → Select

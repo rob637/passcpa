@@ -213,24 +213,10 @@ class HeyGenAutomation:
         logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use}, Look: {look_to_use})")
         
         try:
-            # Navigate to home
-            self.page.goto(f"{self.BASE_URL}/home", timeout=60000)
-            time.sleep(3)
-            
-            # Click "Create" button to open dropdown
-            create_btn = self.page.wait_for_selector(
-                'button:has-text("Create")',
-                timeout=15000
-            )
-            create_btn.click()
-            time.sleep(1)
-            
-            # Click "Create in AI studio" from the dropdown menu
-            ai_studio_btn = self.page.wait_for_selector(
-                'text="Create in AI studio"',
-                timeout=10000
-            )
-            ai_studio_btn.click()
+            # Navigate directly to Avatar Studio (NOT Video Agent!)
+            # Video Agent auto-generates everything - we need Avatar Studio for control
+            logger.info("[NAV] Going to Avatar Studio...")
+            self.page.goto(f"{self.BASE_URL}/create-v3/avatars", timeout=60000)
             time.sleep(5)  # Wait for editor to load
             
             # =========================================================

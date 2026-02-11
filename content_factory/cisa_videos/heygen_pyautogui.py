@@ -65,8 +65,17 @@ COORDS = {
     # Uploads tab (in background panel)
     "uploads_tab": (1100, 180),
     
-    # First uploaded background
-    "first_upload": (1080, 250),
+    # First uploaded background (row 1, col 1 - dark navy)
+    "bg_row1_col1": (1147, 383),
+    
+    # Row 1, Col 2 - gray gradient
+    "bg_row1_col2": (1232, 383),
+    
+    # Row 1, Col 3 - teal
+    "bg_row1_col3": (1317, 383),
+    
+    # Row 2, Col 1 - corporate blue
+    "bg_row2_col1": (1147, 468),
     
     # Layout button (right sidebar, "Layouts" icon)
     "layouts_button": (1269, 480),
@@ -101,8 +110,11 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("motion_engine", "MOTION ENGINE dropdown - click on the dropdown that shows Avatar III/IV"),
-        ("avatar_iii", "AVATAR III option - click on 'Avatar III' in the dropdown menu"),
+        ("motion_engine", "MOTION ENGINE - click the dropdown that says 'Avatar III' or 'Avatar IV' (right sidebar)"),
+        ("bg_row1_col1", "BACKGROUND Row 1 Col 1 - DARK NAVY (top-left in uploads grid)"),
+        ("bg_row1_col2", "BACKGROUND Row 1 Col 2 - GRAY GRADIENT (top-middle)"),
+        ("bg_row1_col3", "BACKGROUND Row 1 Col 3 - TEAL (top-right)"),
+        ("bg_row2_col1", "BACKGROUND Row 2 Col 1 - BLUE/CORPORATE (second row, left)"),
     ]
     
     for key, description in coords_to_find:
@@ -148,7 +160,10 @@ def calibrate():
         ("avatar_iii", "'Avatar III' option in the dropdown"),
         ("customize_bg", "'Customize' button under Avatar Background"),
         ("uploads_tab", "'Uploads' tab in background panel"),
-        ("first_upload", "where the first uploaded background image appears"),
+        ("bg_row1_col1", "BACKGROUND Row 1 Col 1 - DARK NAVY (top-left)"),
+        ("bg_row1_col2", "BACKGROUND Row 1 Col 2 - GRAY (top-middle)"),
+        ("bg_row1_col3", "BACKGROUND Row 1 Col 3 - TEAL (top-right)"),
+        ("bg_row2_col1", "BACKGROUND Row 2 Col 1 - BLUE (second row, left)"),
         ("layouts_button", "'Layouts' icon in right sidebar"),
         ("portrait_9_16", "Portrait 9:16 layout option"),
         ("generate_button", "the green 'Generate' button (top right)"),
@@ -232,12 +247,14 @@ def paste_text(text):
     time.sleep(0.5)
 
 
-# Background name to upload position (0-indexed)
-BACKGROUND_POSITIONS = {
-    "bg_corporate_blue.png": 0,
-    "bg_modern_teal.png": 1,
-    "bg_slate_gray.png": 2,
-    "bg_executive_dark.png": 3,
+# Background name to coordinate key (based on 3-column grid in Uploads)
+# Row 1: executive_dark, slate_gray, modern_teal
+# Row 2: corporate_blue, ...
+BACKGROUND_COORDS = {
+    "bg_executive_dark.png": "bg_row1_col1",   # Dark navy (top-left)
+    "bg_slate_gray.png": "bg_row1_col2",        # Gray gradient (top-middle)
+    "bg_modern_teal.png": "bg_row1_col3",       # Teal (top-right)
+    "bg_corporate_blue.png": "bg_row2_col1",    # Blue gradient (row 2, left)
 }
 
 
@@ -282,25 +299,27 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     click("avatar_result")  # Click avatar name to expand outfits
     time.sleep(1.5)
     
-    # Search for specific outfit if provided
-    if avatar_look:
-        logger.info(f"  Searching for outfit: {avatar_look}")
-        # Clear the search and type the outfit name
-        click("avatar_search")
-        time.sleep(0.3)
-        pyautogui.hotkey('ctrl', 'a')
-        time.sleep(0.1)
-        paste_text(avatar_look)
-        time.sleep(1.5)
-    
-    click("outfit_thumbnail", double=True)  # Double-click first matching outfit
+    # Double-click first outfit  
+    click("outfit_thumbnail", double=True)
     time.sleep(2)
     
     # Step 3: Set Motion Engine to Avatar III
     logger.info("[STEP 3] Setting Motion Engine to Avatar III...")
-    click("motion_engine")
-    time.sleep(1)  # Longer wait for dropdown to open
-    click("avatar_iii")
+    coords = load_coords()
+    # Try clicking motion engine multiple ways
+    x, y = coords.get("motion_engine", COORDS.get("motion_engine"))
+    logger.info(f"  Clicking motion_engine at ({x}, {y})")
+    pyautogui.click(x, y)
+    time.sleep(0.5)
+    pyautogui.click(x, y)  # Click again to ensure
+    time.sleep(1)
+    
+    # Try keyboard navigation: Arrow down to find Avatar III, then Enter
+    pyautogui.press('down')
+    time.sleep(0.2)
+    pyautogui.press('down')
+    time.sleep(0.2)
+    pyautogui.press('enter')
     time.sleep(1)
     
     # Step 4: Set background
@@ -311,21 +330,12 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
         click("uploads_tab")
         time.sleep(1.5)  # Wait for uploads to load
         
-        # Get background position and use arrow keys to navigate
-        bg_pos = BACKGROUND_POSITIONS.get(background_name, 0)
-        logger.info(f"  Selecting background at position {bg_pos}")
+        # Get background coordinate key
+        bg_coord_key = BACKGROUND_COORDS.get(background_name, "bg_row1_col1")
+        logger.info(f"  Selecting background using coord: {bg_coord_key}")
         
-        # Click first upload to focus
-        click("first_upload")
-        time.sleep(0.3)
-        
-        # Use arrow keys to navigate to correct background
-        for _ in range(bg_pos):
-            pyautogui.press('right')
-            time.sleep(0.2)
-        
-        # Double-click to apply (or press enter)
-        pyautogui.press('enter')
+        # Double-click the specific background
+        click(bg_coord_key, double=True)
         time.sleep(1.5)
     
     # Step 5: Set layout to Portrait 9:16

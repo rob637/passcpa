@@ -48,38 +48,23 @@ def main():
         )
         page = browser.pages[0] if browser.pages else browser.new_page()
         
-        print("\n[STEP 1] Navigate to HeyGen...")
-        page.goto("https://app.heygen.com/home", timeout=60000)
-        time.sleep(3)
-        screenshot(page, "01_home")
+        print("\n[STEP 1] Navigate to Avatar Studio (NOT Video Agent)...")
+        page.goto("https://app.heygen.com/create-v3/avatars", timeout=60000)
+        time.sleep(5)
+        screenshot(page, "01_avatar_studio")
         
         # Check if logged in
         if "/login" in page.url or "/signin" in page.url:
             print("[!] Not logged in. Please log in manually in the browser window.")
             print("    Press ENTER when done...")
             input()
+            # Re-navigate after login
+            page.goto("https://app.heygen.com/create-v3/avatars", timeout=60000)
+            time.sleep(5)
+            screenshot(page, "01b_after_login")
         
-        print("\n[STEP 2] Click Create button...")
-        try:
-            create_btn = page.wait_for_selector('button:has-text("Create")', timeout=10000)
-            create_btn.click()
-            time.sleep(1)
-            screenshot(page, "02_create_menu")
-        except Exception as e:
-            print(f"[ERROR] {e}")
-            screenshot(page, "02_error")
-        
-        print("\n[STEP 3] Click 'Create in AI studio'...")
-        try:
-            ai_studio = page.wait_for_selector('text="Create in AI studio"', timeout=10000)
-            ai_studio.click()
-            time.sleep(5)  # Wait for editor to load
-            screenshot(page, "03_ai_studio")
-        except Exception as e:
-            print(f"[ERROR] {e}")
-            screenshot(page, "03_error")
-        
-        print("\n[STEP 4] Click Layouts to set aspect ratio...")
+        # Avatar Studio is loaded - now set layout
+        print("\n[STEP 2] Click Layouts to set aspect ratio...")
         print("    Looking for Layouts button in right sidebar...")
         try:
             # Try multiple selectors
@@ -123,7 +108,7 @@ def main():
             print(f"[ERROR] {e}")
             screenshot(page, "04_error")
         
-        print(f"\n[STEP 5] Select avatar: {AVATAR_ID}...")
+        print(f"\n[STEP 3] Select avatar: {AVATAR_ID}...")
         try:
             # Click on Avatar area or Replace button
             print("    Looking for Avatar panel or Replace button...")
@@ -186,7 +171,7 @@ def main():
             print(f"[ERROR] {e}")
             screenshot(page, "05_error")
         
-        print(f"\n[STEP 6] Set background...")
+        print(f"\n[STEP 4] Set background...")
         try:
             # Need to open background picker
             # Usually there's a "Customize" or background area to click
@@ -229,7 +214,7 @@ def main():
             print(f"[ERROR] {e}")
             screenshot(page, "06_error")
         
-        print("\n[STEP 7] Enter script text...")
+        print("\n[STEP 5] Enter script text...")
         try:
             # Find script input area
             script_input = page.locator('[contenteditable="true"]').first

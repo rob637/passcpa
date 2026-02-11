@@ -345,53 +345,57 @@ class HeyGenAutomationV2:
             if avatar_card:
                 avatar_card.click()
                 logger.info(f"[OK] Clicked avatar: {avatar_name}")
-                time.sleep(1.5)
+                time.sleep(2)
             
             self.screenshot("05_avatar_looks")
             
-            # Double-click on an outfit image in the right panel
-            # The panel shows outfit thumbnails below "Replace avatar" button
-            time.sleep(1)  # Wait for looks to load
+            # NEW APPROACH: Use JavaScript to find and double-click outfit images
+            # The outfit thumbnails are in the right sidebar panel
+            time.sleep(1)
             
-            try:
-                # Look for images specifically in the right panel area
-                # These are the outfit thumbnails under the avatar name
-                outfit_selectors = [
-                    '[class*="look"] img',
-                    '[class*="outfit"] img', 
-                    '[class*="avatar"] [class*="card"] img',
-                    '[class*="thumbnail"] img',
-                    'img[src*="instant"]',
-                    'img[src*="avatar"]',
-                ]
+            # Try clicking "Replace avatar" button first - this is the reliable way
+            replace_btn = self.page.locator('button:has-text("Replace avatar")').first
+            if replace_btn and replace_btn.is_visible(timeout=3000):
+                replace_btn.click()
+                logger.info("[OK] Clicked Replace avatar button")
+                time.sleep(2)
+            else:
+                # Fallback: Use JavaScript to find and click an outfit image
+                # Find images in the right panel (not the main preview)
+                result = self.page.evaluate('''() => {
+                    // Get all images on the page
+                    const allImages = Array.from(document.querySelectorAll('img'));
+                    
+                    // Filter to small thumbnails (outfit images are ~80-150px wide)
+                    const thumbnails = allImages.filter(img => {
+                        const rect = img.getBoundingClientRect();
+                        return rect.width > 50 && rect.width < 200 && 
+                               rect.height > 50 && rect.height < 200 &&
+                               rect.x > window.innerWidth / 2;  // Right side of screen
+                    });
+                    
+                    if (thumbnails.length > 0) {
+                        // Double-click the first thumbnail
+                        const img = thumbnails[0];
+                        const rect = img.getBoundingClientRect();
+                        const event = new MouseEvent('dblclick', {
+                            bubbles: true,
+                            cancelable: true,
+                            view: window,
+                            clientX: rect.x + rect.width / 2,
+                            clientY: rect.y + rect.height / 2
+                        });
+                        img.dispatchEvent(event);
+                        return {success: true, count: thumbnails.length};
+                    }
+                    return {success: false, count: 0};
+                }''')
                 
-                outfit_clicked = False
-                for selector in outfit_selectors:
-                    try:
-                        imgs = self.page.locator(selector).all()
-                        for img in imgs:
-                            if img.is_visible():
-                                img.dblclick()
-                                logger.info(f"[OK] Double-clicked outfit via: {selector}")
-                                outfit_clicked = True
-                                time.sleep(2)  # Wait for avatar to apply
-                                break
-                    except:
-                        continue
-                    if outfit_clicked:
-                        break
-                
-                if not outfit_clicked:
-                    # Fallback: click "Replace avatar" button which applies the first look
-                    replace_btn = self.page.locator('text="Replace avatar"').first
-                    if replace_btn and replace_btn.is_visible():
-                        replace_btn.click()
-                        logger.info("[OK] Clicked Replace avatar button")
-                        time.sleep(2)
-                    else:
-                        logger.warning("[WARN] Could not select avatar outfit")
-            except Exception as e:
-                logger.warning(f"[WARN] Avatar selection: {e}")
+                if result and result.get('success'):
+                    logger.info(f"[OK] Double-clicked outfit via JavaScript (found {result.get('count')} thumbnails)")
+                    time.sleep(2)
+                else:
+                    logger.warning("[WARN] Could not find outfit thumbnails")
             
             self.screenshot("06_avatar_selected")
             

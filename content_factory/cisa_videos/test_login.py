@@ -64,4 +64,4 @@ print()
 print("Browser will close in 10 seconds...")
 time.sleep(10)
 
-automation.close()
+automation.stop()

@@ -109,18 +109,32 @@ class HeyGenAutomation:
         """Check if we're already logged in."""
         try:
             self.page.goto(f"{self.BASE_URL}/home", timeout=30000)
-            time.sleep(2)
+            time.sleep(3)  # Give page more time to load/redirect
             
-            # Check for login page indicators vs dashboard
-            if "/login" in self.page.url or "/signin" in self.page.url:
+            current_url = self.page.url
+            logger.info(f"[CHECK] Current URL: {current_url}")
+            
+            # Check for login page indicators
+            if "/login" in current_url or "/signin" in current_url or "/sign-in" in current_url:
+                logger.info("[CHECK] Detected login page - not logged in")
                 return False
             
-            # Look for dashboard elements
+            # If we're on any heygen app page (not login), we're logged in
+            if "app.heygen.com" in current_url and "/login" not in current_url:
+                logger.info("[CHECK] On HeyGen app page - logged in")
+                return True
+            
+            # Fallback: Look for dashboard elements
             if self.page.query_selector('[data-testid="create-video-button"]'):
                 return True
             
             # Check for avatar selection or project list
             if self.page.query_selector('.project-list') or self.page.query_selector('.avatar-list'):
+                return True
+            
+            # If still on heygen.com but not login, probably logged in
+            if "heygen.com" in current_url:
+                logger.info("[CHECK] On HeyGen domain, assuming logged in")
                 return True
             
             return False

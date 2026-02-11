@@ -261,49 +261,59 @@ class HeyGenAutomationV2:
                 self.screenshot("02_script_pasted")
             
             # =========================================================
-            # STEP 3: Set video title (top left - click on "Untitled Video" text)
+            # STEP 3: Set video title (click on "Untitled Video" text at top)
             # =========================================================
             logger.info("[STEP 3] Setting video title...")
             title_set = False
             
-            # First, try clicking the "Untitled Video" text to make it editable
-            untitled_selectors = [
-                'text="Untitled Video"',
-                '[class*="title"]:has-text("Untitled")',
-                'span:has-text("Untitled Video")',
-                'div:has-text("Untitled Video")',
-            ]
-            for selector in untitled_selectors:
-                try:
-                    elem = self.page.locator(selector).first
-                    if elem and elem.is_visible(timeout=2000):
-                        elem.click()
-                        time.sleep(0.3)
-                        break
-                except:
-                    continue
-            
-            # Now find the input that appeared and type the title
-            title_input_selectors = [
-                'input:focus',
-                'input[type="text"]',
-                '[class*="title"] input',
-                'input',
-            ]
-            for selector in title_input_selectors:
-                try:
-                    title_input = self.page.locator(selector).first
+            # The title "Untitled Video" is clickable text in the header bar
+            # Click it to turn it into an editable input field
+            try:
+                # First try to find and click the title area
+                title_selectors = [
+                    'text="Untitled Video"',
+                    '[class*="title"]:has-text("Untitled")',
+                    'span:has-text("Untitled Video")',
+                ]
+                
+                for selector in title_selectors:
+                    try:
+                        title_elem = self.page.locator(selector).first
+                        if title_elem and title_elem.is_visible(timeout=2000):
+                            # Click to focus, then click again to edit
+                            title_elem.click()
+                            time.sleep(0.3)
+                            title_elem.click()  # Second click to enter edit mode
+                            time.sleep(0.3)
+                            
+                            # Try triple-click to select all text
+                            title_elem.click(click_count=3)
+                            time.sleep(0.2)
+                            
+                            # Type the new title
+                            self.page.keyboard.type(title)
+                            self.page.keyboard.press("Enter")
+                            logger.info(f"[OK] Title set: {title}")
+                            title_set = True
+                            break
+                    except:
+                        continue
+                
+                if not title_set:
+                    # Fallback: find any input field that might have appeared
+                    title_input = self.page.locator('input[value="Untitled Video"], input:focus').first
                     if title_input and title_input.is_visible():
                         title_input.fill(title)
                         title_input.press("Enter")
-                        logger.info(f"[OK] Title set: {title}")
+                        logger.info(f"[OK] Title set via input: {title}")
                         title_set = True
-                        break
-                except:
-                    continue
+                        
+            except Exception as e:
+                logger.warning(f"[WARN] Title error: {e}")
             
             if not title_set:
-                logger.warning("[WARN] Could not set title")
+                logger.warning("[WARN] Could not set title - set manually")
+            
             time.sleep(0.5)
             
             # =========================================================
@@ -447,93 +457,131 @@ class HeyGenAutomationV2:
             if background_name:
                 logger.info(f"[STEP 6] Setting background: {background_name}...")
                 
-                # Click Customize button under Avatar Background
-                self.wait_and_click(
-                    ['text="Customize"', 'button:has-text("Customize")'],
-                    "Click Customize background"
-                )
-                time.sleep(1)
-                self.screenshot("07_background_panel")
-                
-                # Click Uploads tab
-                self.wait_and_click(
-                    ['text="Uploads"', '[role="tab"]:has-text("Uploads")'],
-                    "Click Uploads tab"
-                )
-                time.sleep(1)
-                self.screenshot("08_uploads_tab")
-                
-                # Click on the background image (search by partial filename)
-                # Background images might have alt text or title containing the name
-                bg_selectors = [
-                    f'img[alt*="{background_name}"]',
-                    f'img[title*="{background_name}"]',
-                    f'[class*="thumbnail"]:has-text("{background_name}")',
-                ]
-                
-                bg_found = False
-                for selector in bg_selectors:
-                    try:
-                        bg_img = self.page.locator(selector).first
-                        if bg_img and bg_img.is_visible():
-                            bg_img.click()
-                            logger.info(f"[OK] Selected background: {background_name}")
-                            bg_found = True
-                            break
-                    except:
-                        continue
-                
-                if not bg_found:
-                    # Try clicking the first gradient-looking image in uploads
-                    upload_images = self.page.locator('[class*="upload"] img, [class*="thumbnail"] img').all()
-                    if upload_images:
-                        # Click first one as fallback
-                        upload_images[0].click()
-                        logger.info("[OK] Clicked first upload image")
-                
-                time.sleep(1)
-                self.screenshot("09_background_selected")
-            
-            # =========================================================
-            # STEP 7: Layouts → Original (landscape full-body)
-            # =========================================================
-            logger.info("[STEP 7] Setting layout...")
-            
-            # Check if "Original" layout is already selected in right panel
-            original_btn = self.page.locator('button:has-text("Original")').first
-            if original_btn and original_btn.is_visible():
-                # Check if it's already selected (highlighted)
-                logger.info("[OK] Original layout already visible (likely selected)")
-            else:
-                # Click Layouts in right sidebar to open layout options
-                self.wait_and_click(
-                    [
-                        'text="Layouts"',
-                        '[aria-label="Layouts"]',
-                        'button:has-text("Layouts")',
-                        '[class*="sidebar"] text="Layouts"',
-                    ],
-                    "Click Layouts"
-                )
-                time.sleep(1)
-                self.screenshot("10_layouts_panel")
-                
-                # Try to select Avatar Only or Original
-                self.wait_and_click(
-                    [
-                        'text="Avatar Only"',
-                        'text="Original"',
-                        'img[alt*="Avatar Only"]',
-                        '[aria-label*="Avatar Only"]',
-                    ],
-                    "Select layout"
-                )
-                time.sleep(1)
-                self.screenshot("11_layout_selected")
-                
-                # Close layouts panel
+                # First, close any open dropdowns by pressing Escape
                 self.page.keyboard.press("Escape")
                 time.sleep(0.5)
+                
+                # Scroll the right panel down to find "Avatar Background" section
+                # The Customize button is under "Avatar Background" heading
+                try:
+                    sidebar = self.page.locator('[class*="sidebar"], [class*="panel"]').first
+                    if sidebar:
+                        sidebar.evaluate("e => e.scrollTop = 300")  # Scroll down
+                        time.sleep(0.3)
+                except:
+                    pass
+                
+                # Click Customize button under Avatar Background
+                customize_clicked = self.wait_and_click(
+                    ['text="Customize"', 'button:has-text("Customize")', '[class*="customize"]'],
+                    "Click Customize background"
+                )
+                
+                if customize_clicked:
+                    time.sleep(1)
+                    self.screenshot("07_background_panel")
+                    
+                    # Click Uploads tab
+                    self.wait_and_click(
+                        ['text="Uploads"', '[role="tab"]:has-text("Uploads")', 'button:has-text("Uploads")'],
+                        "Click Uploads tab"
+                    )
+                    time.sleep(1)
+                    self.screenshot("08_uploads_tab")
+                    
+                    # Click on any visible image in the uploads area (our background should be there)
+                    bg_found = False
+                    
+                    # Look for uploaded images
+                    upload_selectors = [
+                        'img[src*="upload"]',
+                        'img[src*="heygen"]',
+                        'img[src*="cdn"]',
+                        '[class*="upload"] img',
+                        '[class*="thumbnail"] img',
+                    ]
+                    
+                    for selector in upload_selectors:
+                        try:
+                            imgs = self.page.locator(selector).all()
+                            visible_imgs = [img for img in imgs if img.is_visible()]
+                            if visible_imgs:
+                                # Click the first uploaded image
+                                visible_imgs[0].click()
+                                logger.info(f"[OK] Clicked uploaded background via: {selector}")
+                                bg_found = True
+                                break
+                        except:
+                            continue
+                    
+                    if not bg_found:
+                        logger.warning("[WARN] Could not find uploaded background")
+                    
+                    time.sleep(1)
+                    self.screenshot("09_background_selected")
+                else:
+                    logger.warning("[WARN] Could not find Customize button - skipping background")
+            
+            # =========================================================
+            # STEP 7: Click Layouts sidebar → Select portrait (9:16 for mobile)
+            # =========================================================
+            logger.info("[STEP 7] Setting layout to portrait (9:16)...")
+            
+            # Click Layouts in right sidebar to open layout options
+            self.wait_and_click(
+                [
+                    '[aria-label="Layouts"]',
+                    'text="Layouts"',
+                    'button[title="Layouts"]',
+                ],
+                "Click Layouts sidebar"
+            )
+            time.sleep(1)
+            self.screenshot("10_layouts_panel")
+            
+            # Select portrait/vertical layout (9:16 for mobile viewing)
+            # In the layouts panel, look for portrait options
+            layout_selectors = [
+                'img[alt*="portrait"]',
+                'img[alt*="9:16"]',
+                'img[alt*="vertical"]',
+                'text="9:16"',
+                'text="Portrait"',
+                '[class*="layout"][class*="portrait"]',
+            ]
+            
+            layout_clicked = False
+            for selector in layout_selectors:
+                try:
+                    layout_elem = self.page.locator(selector).first
+                    if layout_elem and layout_elem.is_visible(timeout=2000):
+                        layout_elem.click()
+                        logger.info(f"[OK] Selected portrait layout via: {selector}")
+                        layout_clicked = True
+                        break
+                except:
+                    continue
+            
+            # Fallback: try clicking specific position for portrait layout
+            # Portrait options are typically on the right side of layout grid
+            if not layout_clicked:
+                try:
+                    # Find all layout images and try to click a portrait one
+                    layout_images = self.page.locator('[class*="layout"] img, [class*="Layout"] img').all()
+                    if len(layout_images) >= 2:
+                        # Portrait is often 2nd or 3rd option
+                        layout_images[1].click()  # Try second option
+                        logger.info("[OK] Clicked second layout image (portrait fallback)")
+                        layout_clicked = True
+                except:
+                    pass
+            
+            time.sleep(1)
+            self.screenshot("11_layout_selected")
+            
+            # Close layouts panel
+            self.page.keyboard.press("Escape")
+            time.sleep(0.5)
             
             # =========================================================
             # STEP 8: Save draft or Generate

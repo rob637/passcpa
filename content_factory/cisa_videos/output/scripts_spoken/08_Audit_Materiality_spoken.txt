@@ -1,4 +1,4 @@
-Hey everyone, and welcome! Did you know that "materiality" is one of the biggest stumbling blocks for SEE-sah candidates? ... It’s often underestimated, but mastering materiality judgment can be the difference between passing and failing. We're talking about a concept that directly impacts the accuracy and reliability of audit reports, so let's dive in and make sure you're ready to tackle it!
+Hey everyone, and welcome! Did you know that "materiality" is one of the biggest stumbling blocks for SEE-suh candidates? ... It’s often underestimated, but mastering materiality judgment can be the difference between passing and failing. We're talking about a concept that directly impacts the accuracy and reliability of audit reports, so let's dive in and make sure you're ready to tackle it!
 
 Okay, let's break down what materiality really means. ... In the context of IS auditing, materiality is the magnitude of an omission or misstatement in the information being audited that, in light of surrounding circumstances, makes it probable that the judgment of a reasonable person relying on the information would be changed or influenced by the omission or misstatement. ...
 
@@ -30,4 +30,4 @@ One, materiality is both quantitative and qualitative. Don't just focus on the n
 Two, materiality is about impact, not just risk.
 Three, the auditor is ultimately responsible for the materiality judgment, not solely management. ...
 
-You've got this! By understanding materiality, you're one step closer to acing the SEE-sah exam and becoming a confident and effective IS auditor. Keep practicing, and you'll be ready for anything eye-SAH-kah throws your way. Good luck!
+You've got this! By understanding materiality, you're one step closer to acing the SEE-suh exam and becoming a confident and effective IS auditor. Keep practicing, and you'll be ready for anything eye-SAH-kah throws your way. Good luck!

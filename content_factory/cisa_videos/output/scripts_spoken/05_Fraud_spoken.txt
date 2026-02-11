@@ -1,8 +1,8 @@
-Hey everyone, and welcome! Did you know that fraud-related questions are a major stumbling block on the SEE-sah exam? ... It’s not just about identifying fraud, it's about what you do when you find it. Mess this up, and you’re not just losing points on the exam, you're potentially failing to protect the organization you're auditing. ... Today, we're tackling the critical first steps in fraud response.
+Hey everyone, and welcome! Did you know that fraud-related questions are a major stumbling block on the SEE-suh exam? ... It’s not just about identifying fraud, it's about what you do when you find it. Mess this up, and you’re not just losing points on the exam, you're potentially failing to protect the organization you're auditing. ... Today, we're tackling the critical first steps in fraud response.
 
 Okay, let's build a strong foundation here. ... What exactly is fraud in the context of information systems auditing? Simply put, it's any intentional act designed to deceive or misappropriate assets, involving information systems. This could be anything from unauthorized access to data manipulation to outright theft using technology. ... Key terms to remember are: fraud risk, fraud prevention, fraud detection, and fraud response. We're focusing on that last one: response.
 
-Why does this matter for IS auditors? Well, you are the gatekeepers of information integrity and security. You're not just checking boxes; you're safeguarding the organization's assets and reputation. ... Think about a real-world scenario: you're auditing a financial institution and discover anomalies in transaction logs suggesting potential embezzlement. ... Your response is crucial. A misstep could jeopardize the investigation, alert the perpetrators, and cause irreparable damage. The SEE-sah exam tests your ability to navigate these situations ethically and effectively.
+Why does this matter for IS auditors? Well, you are the gatekeepers of information integrity and security. You're not just checking boxes; you're safeguarding the organization's assets and reputation. ... Think about a real-world scenario: you're auditing a financial institution and discover anomalies in transaction logs suggesting potential embezzlement. ... Your response is crucial. A misstep could jeopardize the investigation, alert the perpetrators, and cause irreparable damage. The SEE-suh exam tests your ability to navigate these situations ethically and effectively.
 
 Now, let’s talk about the exam traps. eye-SAH-kah loves to test your understanding of the correct sequence of actions. ...
 
@@ -16,7 +16,7 @@ Fourth, be wary of answers that suggest immediately implementing new controls. W
 
 Let's dive into a specific example. ... Let's say you're auditing a retail company's e-commerce platform and you find evidence of suspicious transactions originating from a single IP address, repeatedly purchasing high-value items with different stolen credit cards. ... The transactions are being shipped to a single drop address. What's your first move?
 
-Here's the step-by-step approach, according to SEE-sah best practices:
+Here's the step-by-step approach, according to SEE-suh best practices:
 
 1. Acknowledge: Recognize that you have potentially uncovered a fraudulent activity. Don't ignore it, hoping it will disappear.
 
@@ -34,4 +34,4 @@ Okay, let's wrap this up. ... If you remember nothing else, remember these three
 2. Notify the Audit Committee or Designated Senior Manager: This is your primary responsibility as an IS auditor in this situation.
 3. DAN-S: Use the memory technique to recall the correct sequence.
 
-You've got this! ... Understanding the correct fraud response is crucial, not only for passing the SEE-sah exam but also for protecting your organization in the real world. Now go out there and ace that exam!
+You've got this! ... Understanding the correct fraud response is crucial, not only for passing the SEE-suh exam but also for protecting your organization in the real world. Now go out there and ace that exam!

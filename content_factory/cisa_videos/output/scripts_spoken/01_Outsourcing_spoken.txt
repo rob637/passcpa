@@ -1,4 +1,4 @@
-Hey everyone, and welcome! Are you ready to tackle the SEE-sah exam? ... Because today, we're diving into a topic that trips up way too many people: outsourcing. ... Did you know that outsourcing-related questions are consistently among the lowest-scoring areas on the exam? We're talking about a significant chunk of potential points that are slipping away! ... And the consequences of getting it wrong in the real world? Think data breaches, compliance violations, and major financial losses.
+Hey everyone, and welcome! Are you ready to tackle the SEE-suh exam? ... Because today, we're diving into a topic that trips up way too many people: outsourcing. ... Did you know that outsourcing-related questions are consistently among the lowest-scoring areas on the exam? We're talking about a significant chunk of potential points that are slipping away! ... And the consequences of getting it wrong in the real world? Think data breaches, compliance violations, and major financial losses.
 
 So, let's make sure that doesn't happen to you. ...
 
@@ -10,7 +10,7 @@ Why does outsourcing matter for auditors? ... Because it introduces inherent ris
 
 Okay, now for the exam traps. This is where eye-SAH-kah loves to play mind games. ...
 
-First, watch out for questions that focus solely on cost savings as the primary driver for outsourcing. ... While cost is certainly a factor, it should never be the most important consideration. ... Security, compliance, and business continuity are often far more critical. The SEE-sah exam is looking for you to understand the bigger picture.
+First, watch out for questions that focus solely on cost savings as the primary driver for outsourcing. ... While cost is certainly a factor, it should never be the most important consideration. ... Security, compliance, and business continuity are often far more critical. The SEE-suh exam is looking for you to understand the bigger picture.
 
 Second, don't confuse due diligence with ongoing monitoring. ... Due diligence is the initial investigation you do before selecting a service provider. It includes things like reviewing their certifications, checking their security posture, and assessing their financial stability. ... Ongoing monitoring, on the other hand, is what you do after you've engaged the service provider. This involves tracking performance against the S-L-A, conducting regular audits, and monitoring for security incidents. ... They are both vital, but they serve different purposes.
 
@@ -42,4 +42,4 @@ Second: The organization outsourcing the work retains ultimate responsibility fo
 
 Third: A holistic approach is needed, considering not only technical controls, but also management and administrative controls. ...
 
-You've got this! Outsourcing can seem complex, but by understanding these key concepts and avoiding the common exam traps, you'll be well on your way to acing those SEE-sah questions. Now go out there and conquer that exam! ...
+You've got this! Outsourcing can seem complex, but by understanding these key concepts and avoiding the common exam traps, you'll be well on your way to acing those SEE-suh questions. Now go out there and conquer that exam! ...

@@ -1449,8 +1449,8 @@ const AdminCMS: React.FC = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap flex-shrink-0 ${
                 activeTab === tab
-                  ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+                  ? 'text-blue-600 dark:text-blue-400 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-300'
               }`}
             >
               <span className="hidden sm:inline">
@@ -1545,20 +1545,20 @@ const AdminCMS: React.FC = () => {
                 <>
                   {[1, 2, 3, 4, 5, 6].map(i => (
                     <Card key={i} className="p-6 animate-pulse">
-                      <div className="h-6 bg-gray-200 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
-                      <div className="h-10 bg-gray-200 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
-                      <div className="h-4 bg-gray-100 dark:bg-slate-700 rounded w-full"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/2 mb-4"></div>
+                      <div className="h-10 bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded w-1/3 mb-3"></div>
+                      <div className="h-4 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 rounded w-full"></div>
                     </Card>
                   ))}
                 </>
               ) : (
                 allCourseStats.map(course => {
-                  const colorClass = course.courseId === 'cpa' ? 'text-blue-600' :
-                                     course.courseId === 'ea' ? 'text-green-600' :
+                  const colorClass = course.courseId === 'cpa' ? 'text-blue-600 dark:text-blue-400' :
+                                     course.courseId === 'ea' ? 'text-green-600 dark:text-green-400' :
                                      course.courseId === 'cma' ? 'text-purple-600' :
                                      course.courseId === 'cia' ? 'text-orange-600' :
                                      course.courseId === 'cisa' ? 'text-teal-600' :
-                                     'text-amber-600';
+                                     'text-amber-600 dark:text-amber-400';
                   return (
                     <Card key={course.courseId} className="p-6">
                       <div className="flex items-center gap-2 mb-3">
@@ -1591,7 +1591,7 @@ const AdminCMS: React.FC = () => {
                         </div>
                       )}
                       {course.questions === 0 && (
-                        <div className="text-sm text-amber-600 mt-2">
+                        <div className="text-sm text-amber-600 dark:text-amber-400 mt-2">
                           ⚠️ No questions loaded
                         </div>
                       )}
@@ -1646,19 +1646,19 @@ const AdminCMS: React.FC = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutExplanation.length === 0 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-red-100 text-red-700'
+                          ? 'bg-green-100 text-green-700 dark:text-green-300' 
+                          : 'bg-red-100 text-red-700 dark:text-red-300'
                       }`}>
                         {contentAudit.questionsWithoutExplanation.length}
                         {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
                       </span>
                     </div>
                     {contentAudit.questionsWithoutExplanation.length === 0 ? (
-                      <p className="text-green-600 text-sm">✅ All questions have explanations!</p>
+                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All questions have explanations!</p>
                     ) : (
                       <div className="space-y-2 max-h-64 overflow-y-auto">
                         {contentAudit.questionsWithoutExplanation.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-red-50 rounded text-sm flex justify-between items-center">
+                          <div key={i} className="p-2 bg-red-50 dark:bg-red-900/30 rounded text-sm flex justify-between items-center">
                             <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
                             <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
                           </div>
@@ -1677,19 +1677,19 @@ const AdminCMS: React.FC = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutBlueprint.length === 0 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-amber-100 text-amber-700'
+                          ? 'bg-green-100 text-green-700 dark:text-green-300' 
+                          : 'bg-amber-100 text-amber-700 dark:text-amber-300'
                       }`}>
                         {contentAudit.questionsWithoutBlueprint.length}
                         {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
                       </span>
                     </div>
                     {contentAudit.questionsWithoutBlueprint.length === 0 ? (
-                      <p className="text-green-600 text-sm">✅ All CPA questions have blueprint tags!</p>
+                      <p className="text-green-600 dark:text-green-400 text-sm">✅ All CPA questions have blueprint tags!</p>
                     ) : (
                       <div className="space-y-2 max-h-64 overflow-y-auto">
                         {contentAudit.questionsWithoutBlueprint.slice(0, 15).map((q, i) => (
-                          <div key={i} className="p-2 bg-amber-50 rounded text-sm flex justify-between items-center">
+                          <div key={i} className="p-2 bg-amber-50 dark:bg-amber-900/30 rounded text-sm flex justify-between items-center">
                             <span className="font-mono text-xs truncate flex-1">{q.id.slice(0, 24)}...</span>
                             <span className="text-gray-500 dark:text-gray-400 ml-2">{q.section}</span>
                           </div>
@@ -1725,7 +1725,7 @@ const AdminCMS: React.FC = () => {
             {/* User Stats Summary */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-blue-600">{usersList.length}</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{usersList.length}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Total Users</div>
               </Card>
               <Card className="p-4 text-center">
@@ -1733,13 +1733,13 @@ const AdminCMS: React.FC = () => {
                 <div className="text-sm text-gray-600 dark:text-gray-400">Admins</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                   {usersList.filter(u => u.subscription?.tier && ['monthly', 'quarterly', 'annual', 'lifetime'].includes(u.subscription.tier)).length}
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Premium</div>
               </Card>
               <Card className="p-4 text-center">
-                <div className="text-2xl font-bold text-amber-600">
+                <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
                   {usersList.filter(u => u.subscription?.status === 'trialing').length}
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Trial</div>
@@ -1755,16 +1755,16 @@ const AdminCMS: React.FC = () => {
             {/* Users by Course Breakdown */}
             {usersList.length > 0 && (
               <Card className="p-4">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Users by Course</h4>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Users by Course</h4>
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
                     const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
-                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 text-blue-700' :
-                                       course.id === 'ea' ? 'bg-green-100 text-green-700' :
+                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                                       course.id === 'ea' ? 'bg-green-100 text-green-700 dark:text-green-300' :
                                        course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
                                        course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
                                        course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
-                                       'bg-amber-100 text-amber-700';
+                                       'bg-amber-100 text-amber-700 dark:text-amber-300';
                     return (
                       <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
                         <span className="font-bold">{count}</span>
@@ -1777,7 +1777,7 @@ const AdminCMS: React.FC = () => {
             )}
 
             {/* User Lookup Tool */}
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
+            <div className="bg-gradient-to-r from-primary-900/20 to-blue-900/20 dark:from-primary-900/30 dark:to-blue-900/30 rounded-xl p-6 shadow-sm border border-primary-600 dark:border-primary-700">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 🔍 User Lookup
               </h3>
@@ -1787,7 +1787,7 @@ const AdminCMS: React.FC = () => {
                   value={lookupQuery}
                   onChange={(e) => setLookupQuery(e.target.value)}
                   placeholder="Enter email or user ID..."
-                  className="flex-1 px-4 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400 focus:border-transparent"
                   onKeyDown={(e) => e.key === 'Enter' && lookupUser()}
                 />
                 <button
@@ -1814,19 +1814,19 @@ const AdminCMS: React.FC = () => {
                     <div className="flex gap-2">
                       <button
                         onClick={() => loadUserActivity(lookupResult)}
-                        className="px-3 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200"
+                        className="px-3 py-1 text-xs rounded bg-blue-100 text-blue-700 dark:text-blue-300 hover:bg-blue-200"
                       >
                         View Activity
                       </button>
                       <button
                         onClick={() => toggleAdminStatus(lookupResult.id, !!lookupResult.isAdmin)}
-                        className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 text-gray-700'} hover:opacity-80`}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.isAdmin ? 'bg-primary-100 text-primary-700' : 'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'} hover:opacity-80`}
                       >
                         {lookupResult.isAdmin ? 'Remove Admin' : 'Make Admin'}
                       </button>
                       <button
                         onClick={() => setSubscriptionTier(lookupResult.id, lookupResult.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
-                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'} hover:opacity-80`}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-amber-100 text-amber-700 dark:text-amber-300'} hover:opacity-80`}
                       >
                         {lookupResult.subscription?.tier === 'lifetime' ? 'Revoke Premium' : 'Grant Lifetime'}
                       </button>
@@ -1847,13 +1847,13 @@ const AdminCMS: React.FC = () => {
                     value={userSearch}
                     onChange={(e) => setUserSearch(e.target.value)}
                     placeholder="Search users..."
-                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   {/* Filter */}
                   <select
                     value={userFilter}
                     onChange={(e) => setUserFilter(e.target.value as typeof userFilter)}
-                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Users</option>
                     <option value="admin">Admins Only</option>
@@ -1865,7 +1865,7 @@ const AdminCMS: React.FC = () => {
                   <select
                     value={userCourseFilter}
                     onChange={(e) => setUserCourseFilter(e.target.value as CourseId | 'all')}
-                    className="px-3 py-1.5 border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-1.5 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="all">All Courses</option>
                     {getActiveCourses().map(course => (
@@ -1879,7 +1879,7 @@ const AdminCMS: React.FC = () => {
                   </span>
                   <button
                     onClick={loadUsers}
-                    className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors"
+                    className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors"
                   >
                     Refresh
                   </button>
@@ -1921,18 +1921,18 @@ const AdminCMS: React.FC = () => {
                             </td>
                             <td className="p-3">
                               <span className={`px-2 py-1 rounded text-xs font-medium ${
-                                (u.courseId || 'cpa') === 'cpa' ? 'bg-blue-50 text-blue-700' :
-                                u.courseId === 'ea' ? 'bg-green-50 text-green-700' :
+                                (u.courseId || 'cpa') === 'cpa' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                u.courseId === 'ea' ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
                                 u.courseId === 'cma' ? 'bg-purple-50 text-purple-700' :
                                 u.courseId === 'cia' ? 'bg-orange-50 text-orange-700' :
                                 u.courseId === 'cisa' ? 'bg-teal-50 text-teal-700' :
-                                'bg-amber-50 text-amber-700'
+                                'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
                               }`}>
                                 {(u.courseId || 'cpa').toUpperCase()}
                               </span>
                             </td>
                             <td className="p-3">
-                              <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
+                              <span className="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-medium">
                                 {u.examSection || 'N/A'}
                               </span>
                             </td>
@@ -1940,11 +1940,11 @@ const AdminCMS: React.FC = () => {
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.subscription?.tier === 'lifetime' ? 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800' :
-                                  u.subscription?.tier === 'annual' ? 'bg-green-100 text-green-700' :
-                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 text-blue-700' :
+                                  u.subscription?.tier === 'annual' ? 'bg-green-100 text-green-700 dark:text-green-300' :
+                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
                                   u.subscription?.tier === 'monthly' ? 'bg-primary-100 text-primary-700' :
-                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 text-amber-700' :
-                                  'bg-gray-100 text-gray-600'
+                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
+                                  'bg-gray-100 dark:bg-slate-700 text-gray-600'
                                 }`}
                               >
                                 {u.subscription?.tier || 'free'}
@@ -1956,7 +1956,7 @@ const AdminCMS: React.FC = () => {
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.isAdmin
                                     ? 'bg-primary-100 text-primary-700'
-                                    : 'bg-gray-100 text-gray-600'
+                                    : 'bg-gray-100 dark:bg-slate-700 text-gray-600'
                                 }`}
                               >
                                 {u.isAdmin ? 'Admin' : 'User'}
@@ -1971,7 +1971,7 @@ const AdminCMS: React.FC = () => {
                               <div className="flex gap-1">
                                 <button
                                   onClick={() => loadUserActivity(u)}
-                                  className="px-2 py-1 text-xs bg-blue-50 text-blue-600 rounded hover:bg-blue-100"
+                                  className="px-2 py-1 text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100"
                                   title="View activity"
                                 >
                                   👁️
@@ -1985,7 +1985,7 @@ const AdminCMS: React.FC = () => {
                                 </button>
                                 <button
                                   onClick={() => setSubscriptionTier(u.id, u.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
-                                  className="px-2 py-1 text-xs bg-amber-50 text-amber-600 rounded hover:bg-amber-100"
+                                  className="px-2 py-1 text-xs bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded hover:bg-amber-100"
                                   title={u.subscription?.tier === 'lifetime' ? 'Revoke premium' : 'Grant lifetime'}
                                 >
                                   {u.subscription?.tier === 'lifetime' ? '⬇️' : '⬆️'}
@@ -2016,7 +2016,7 @@ const AdminCMS: React.FC = () => {
               <button
                 onClick={loadAnalytics}
                 disabled={isLoadingAnalytics}
-                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
               >
                 {isLoadingAnalytics ? 'Loading...' : 'Refresh'}
               </button>
@@ -2051,27 +2051,27 @@ const AdminCMS: React.FC = () => {
 
                 {/* Revenue Dashboard */}
                 {revenueMetrics && (
-                  <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+                  <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:border-green-800">
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                       💰 Revenue Dashboard
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">
+                      <span className="text-xs bg-green-100 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
                         {revenueMetrics.subscriberCount} subscribers
                       </span>
                       {isFounderPricingActive() && (
-                        <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                        <span className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
                           Founder pricing active
                         </span>
                       )}
                     </h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-green-600">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                           ${revenueMetrics.totalMRR.toFixed(0)}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Monthly Recurring Revenue</div>
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-blue-600">
+                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                           ${revenueMetrics.arrProjection.toFixed(0)}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Annual Run Rate (ARR)</div>
@@ -2083,7 +2083,7 @@ const AdminCMS: React.FC = () => {
                         <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (50% off)</div>
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600' : 'text-green-600'}`}>
+                        <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
                           {revenueMetrics.churnRisk}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Trials Ending (3 days)</div>
@@ -2094,7 +2094,7 @@ const AdminCMS: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly Plans</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Monthly Plans</span>
                           <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -2103,8 +2103,8 @@ const AdminCMS: React.FC = () => {
                       </div>
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Annual Plans</span>
-                          <span className="text-lg font-bold text-green-600">{revenueMetrics.byPlan.annual}</span>
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Annual Plans</span>
+                          <span className="text-lg font-bold text-green-600 dark:text-green-400">{revenueMetrics.byPlan.annual}</span>
                         </div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
                           ${revenueMetrics.annualMRR.toFixed(0)}/mo MRR (amortized)
@@ -2115,7 +2115,7 @@ const AdminCMS: React.FC = () => {
                     {/* Revenue by Course */}
                     {Object.keys(revenueMetrics.byCourse).length > 0 && (
                       <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Revenue by Course</h5>
+                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-3">Revenue by Course</h5>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           {Object.entries(revenueMetrics.byCourse)
                             .sort((a, b) => b[1].revenue - a[1].revenue)
@@ -2125,7 +2125,7 @@ const AdminCMS: React.FC = () => {
                                 <div key={courseId} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                                   <div className="flex justify-between items-center">
                                     <span className="font-medium">{courseId.toUpperCase()}</span>
-                                    <span className="text-green-600 font-semibold">
+                                    <span className="text-green-600 dark:text-green-400 font-semibold">
                                       ${data.revenue.toFixed(0)}/mo
                                     </span>
                                   </div>
@@ -2178,7 +2178,7 @@ const AdminCMS: React.FC = () => {
                                 </span>
                                 <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                              <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                                 <div 
                                   className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                   style={{ width: `${Math.min(percentage * 2, 100)}%` }}
@@ -2212,7 +2212,7 @@ const AdminCMS: React.FC = () => {
                               <span className="font-medium">{label}</span>
                               <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                             </div>
-                            <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                            <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                               <div 
                                 className={`${color} h-2 rounded-full transition-all duration-500`} 
                                 style={{ width: `${percentage}%` }}
@@ -2224,8 +2224,8 @@ const AdminCMS: React.FC = () => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700 dark:text-gray-300">Premium Users</span>
-                        <span className="font-bold text-green-600">
+                        <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300">Premium Users</span>
+                        <span className="font-bold text-green-600 dark:text-green-400">
                           {(analytics.bySubscription.lifetime || 0) + 
                            (analytics.bySubscription.annual || 0) + 
                            (analytics.bySubscription.quarterly || 0) + 
@@ -2241,11 +2241,11 @@ const AdminCMS: React.FC = () => {
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Stats</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">{analytics.activeToday}</div>
+                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{analytics.activeToday}</div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">Active Today</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">
+                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                         {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
                       </div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">WAU Rate</div>
@@ -2257,7 +2257,7 @@ const AdminCMS: React.FC = () => {
                       <div className="text-xs text-gray-600 dark:text-gray-400">MAU Rate</div>
                     </div>
                     <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-amber-600">
+                      <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
                         {((analytics.bySubscription.lifetime || 0) + 
                           (analytics.bySubscription.annual || 0) + 
                           (analytics.bySubscription.quarterly || 0) + 
@@ -2282,7 +2282,7 @@ const AdminCMS: React.FC = () => {
                       <button
                         onClick={loadEngagementStats}
                         disabled={isLoadingEngagement || usersList.length === 0}
-                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
                       >
                         {isLoadingEngagement ? 'Loading...' : 'Load'}
                       </button>
@@ -2296,7 +2296,7 @@ const AdminCMS: React.FC = () => {
                           engagementStats.mostActive.map((user, i) => (
                             <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-green-600 font-semibold ml-2">{user.questionsAnswered} Q</span>
+                              <span className="text-green-600 dark:text-green-400 font-semibold ml-2">{user.questionsAnswered} Q</span>
                               <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">{user.lastActive}</span>
                             </div>
                           ))
@@ -2320,12 +2320,12 @@ const AdminCMS: React.FC = () => {
                           engagementStats.inactive.map((user, i) => (
                             <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-amber-600 font-semibold ml-2">{user.daysSinceActive}d</span>
+                              <span className="text-amber-600 dark:text-amber-400 font-semibold ml-2">{user.daysSinceActive}d</span>
                               <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">joined {user.joinedAt}</span>
                             </div>
                           ))
                         ) : (
-                          <p className="text-green-600 text-sm">🎉 No inactive users! Everyone is engaged.</p>
+                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No inactive users! Everyone is engaged.</p>
                         )}
                       </div>
                     ) : (
@@ -2343,14 +2343,14 @@ const AdminCMS: React.FC = () => {
                       <button
                         onClick={loadQuestionReports}
                         disabled={isLoadingReports}
-                        className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
                       >
                         {isLoadingReports ? 'Loading...' : 'Refresh'}
                       </button>
                     </div>
                     {qualityMetrics ? (
                       <div className="space-y-2">
-                        <div className="text-sm text-amber-600 mb-3">
+                        <div className="text-sm text-amber-600 dark:text-amber-400 mb-3">
                           {qualityMetrics.pendingCount} pending reports to review
                         </div>
                         {qualityMetrics.mostReported.length > 0 ? (
@@ -2358,11 +2358,11 @@ const AdminCMS: React.FC = () => {
                             <div key={i} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
                               <div className="flex justify-between items-center">
                                 <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 20)}...</span>
-                                <span className="text-red-600 font-semibold ml-2">{q.reportCount}x</span>
+                                <span className="text-red-600 dark:text-red-400 font-semibold ml-2">{q.reportCount}x</span>
                               </div>
                               <div className="flex gap-1 mt-1">
                                 {q.types.map(type => (
-                                  <span key={type} className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded">
+                                  <span key={type} className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
                                     {type.replace(/_/g, ' ')}
                                   </span>
                                 ))}
@@ -2370,7 +2370,7 @@ const AdminCMS: React.FC = () => {
                             </div>
                           ))
                         ) : (
-                          <p className="text-green-600 text-sm">🎉 No reported questions!</p>
+                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No reported questions!</p>
                         )}
                       </div>
                     ) : (
@@ -2398,7 +2398,7 @@ const AdminCMS: React.FC = () => {
                                   <span className="font-medium">{type.replace(/_/g, ' ')}</span>
                                   <span className="text-gray-600 dark:text-gray-400">{count}</span>
                                 </div>
-                                <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div className="w-full bg-gray-200 dark:bg-slate-600 dark:bg-slate-600 rounded-full h-2">
                                   <div 
                                     className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
                                     style={{ width: `${percentage}%` }}
@@ -2431,27 +2431,27 @@ const AdminCMS: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Title</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Title</label>
                   <input
                     type="text"
                     id="announcement-title"
                     placeholder="e.g., New Feature: AI Study Plans"
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-1">Message Body</label>
                   <textarea
                     id="announcement-body"
                     rows={3}
                     placeholder="We've just launched AI-powered study plans..."
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
                   />
                 </div>
                 <div className="flex items-center gap-4">
                   <select
                     id="announcement-audience"
-                    className="px-3 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500"
+                    className="px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
                   >
                     <option value="all">All Users</option>
                     {getActiveCourses().map(course => (
@@ -2509,25 +2509,25 @@ const AdminCMS: React.FC = () => {
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🩺 System Health</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="p-4 bg-green-50 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-green-700">✓</div>
-                  <div className="text-sm text-green-600">Firebase</div>
+                <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
+                  <div className="text-sm text-green-600 dark:text-green-400">Firebase</div>
                 </div>
                 <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50' : 'bg-red-50'}`}>
-                  <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700' : 'text-red-700'}`}>
+                  <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
                     {import.meta.env.VITE_GEMINI_API_KEY ? '✓' : '✗'}
                   </div>
-                  <div className={`text-sm ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600' : 'text-red-600'}`}>Gemini AI</div>
+                  <div className={`text-sm ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>Gemini AI</div>
                 </div>
-                <div className="p-4 bg-green-50 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-green-700">✓</div>
-                  <div className="text-sm text-green-600">Auth</div>
+                <div className="p-4 bg-green-50 dark:bg-green-900/30 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
+                  <div className="text-sm text-green-600 dark:text-green-400">Auth</div>
                 </div>
                 <div className={`p-4 rounded-lg text-center ${systemErrors.length === 0 ? 'bg-green-50' : 'bg-amber-50'}`}>
-                  <div className={`text-2xl font-bold ${systemErrors.length === 0 ? 'text-green-700' : 'text-amber-700'}`}>
+                  <div className={`text-2xl font-bold ${systemErrors.length === 0 ? 'text-green-700 dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
                     {systemErrors.length}
                   </div>
-                  <div className={`text-sm ${systemErrors.length === 0 ? 'text-green-600' : 'text-amber-600'}`}>Errors</div>
+                  <div className={`text-sm ${systemErrors.length === 0 ? 'text-green-600 dark:text-green-400' : 'text-amber-600 dark:text-amber-400'}`}>Errors</div>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
@@ -2547,7 +2547,7 @@ const AdminCMS: React.FC = () => {
                 <button
                   onClick={loadAnnouncementHistory}
                   disabled={isLoadingAnnouncements}
-                  className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
                 >
                   {isLoadingAnnouncements ? 'Loading...' : 'Refresh'}
                 </button>
@@ -2558,7 +2558,7 @@ const AdminCMS: React.FC = () => {
                   {announcementHistory.map(ann => (
                     <div 
                       key={ann.id} 
-                      className={`p-4 rounded-lg border ${ann.active ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}
+                      className={`p-4 rounded-lg border ${ann.active ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex-1">
@@ -2566,7 +2566,7 @@ const AdminCMS: React.FC = () => {
                           <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
                         </div>
                         <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
-                          ann.active ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
+                          ann.active ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-600 text-gray-600'
                         }`}>
                           {ann.active ? 'Active' : 'Inactive'}
                         </span>
@@ -2591,8 +2591,8 @@ const AdminCMS: React.FC = () => {
                           }}
                           className={`text-xs px-2 py-1 rounded ${
                             ann.active 
-                              ? 'bg-red-50 text-red-600 hover:bg-red-100' 
-                              : 'bg-green-50 text-green-600 hover:bg-green-100'
+                              ? 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-100' 
+                              : 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 hover:bg-green-100'
                           }`}
                         >
                           {ann.active ? 'Deactivate' : 'Reactivate'}
@@ -2612,17 +2612,17 @@ const AdminCMS: React.FC = () => {
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎛️ Feature Flags
-                <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Read-only Preview</span>
+                <span className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
+                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(featureFlags).map(([flag, enabled]) => (
                   <div 
                     key={flag} 
                     className={`flex items-center justify-between p-4 rounded-lg border ${
-                      enabled ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'
+                      enabled ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'
                     }`}
                   >
                     <div>
@@ -2638,7 +2638,7 @@ const AdminCMS: React.FC = () => {
                       </p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      enabled ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'
+                      enabled ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-600 text-gray-600'
                     }`}>
                       {enabled ? 'ON' : 'OFF'}
                     </span>
@@ -2677,28 +2677,28 @@ const AdminCMS: React.FC = () => {
                     <div 
                       key={report.id} 
                       className={`p-4 rounded-lg border ${
-                        report.status === 'pending' ? 'bg-amber-50 border-amber-200' :
-                        report.status === 'resolved' ? 'bg-green-50 border-green-200' :
-                        report.status === 'dismissed' ? 'bg-gray-50 border-gray-200' :
-                        'bg-blue-50 border-blue-200'
+                        report.status === 'pending' ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800' :
+                        report.status === 'resolved' ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' :
+                        report.status === 'dismissed' ? 'bg-gray-50 dark:bg-slate-800 border-gray-200' :
+                        'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                              report.type === 'incorrect_answer' ? 'bg-red-100 text-red-700' :
-                              report.type === 'unclear_question' ? 'bg-amber-100 text-amber-700' :
-                              report.type === 'typo' ? 'bg-blue-100 text-blue-700' :
-                              'bg-gray-100 text-gray-700'
+                              report.type === 'incorrect_answer' ? 'bg-red-100 text-red-700 dark:text-red-300' :
+                              report.type === 'unclear_question' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
+                              report.type === 'typo' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.type.replace(/_/g, ' ')}
                             </span>
                             <span className={`px-2 py-0.5 rounded text-xs ${
-                              report.status === 'pending' ? 'bg-amber-100 text-amber-700' :
-                              report.status === 'resolved' ? 'bg-green-100 text-green-700' :
-                              report.status === 'reviewed' ? 'bg-blue-100 text-blue-700' :
-                              'bg-gray-100 text-gray-700'
+                              report.status === 'pending' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
+                              report.status === 'resolved' ? 'bg-green-100 text-green-700 dark:text-green-300' :
+                              report.status === 'reviewed' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.status}
                             </span>
@@ -2750,7 +2750,7 @@ const AdminCMS: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🛠️ System Tools</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Maintenance Mode Toggle */}
-                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-200'}`}>
+                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}>
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900 dark:text-white">Maintenance Mode</h4>
                     <button
@@ -2763,7 +2763,7 @@ const AdminCMS: React.FC = () => {
                       className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
                         maintenanceMode 
                           ? 'bg-red-600 text-white hover:bg-red-700' 
-                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                          : 'bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 hover:bg-gray-300'
                       }`}
                     >
                       {maintenanceMode ? 'Disable' : 'Enable'}
@@ -2866,7 +2866,7 @@ const AdminCMS: React.FC = () => {
                 </div>
 
                 {/* Stale Account Cleanup */}
-                <div className="p-4 rounded-lg border bg-red-50 border-red-200">
+                <div className="p-4 rounded-lg border bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800">
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900 dark:text-white">🧹 Stale Account Cleanup</h4>
                     <div className="flex gap-2">
@@ -2901,7 +2901,7 @@ const AdminCMS: React.FC = () => {
                       <div className="space-y-1">
                         {staleAccounts.slice(0, 10).map(acc => (
                           <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
                             <span className="text-gray-400">
                               {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
                             </span>
@@ -2923,9 +2923,9 @@ const AdminCMS: React.FC = () => {
             <Card className="p-6 border-2 border-amber-300 bg-amber-50">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎫 Beta User Trial Transition
-                <span className="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded">ONE-TIME</span>
+                <span className="text-xs bg-red-100 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
               </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
                 Paid subscribers will be skipped. Users will be marked as Founders (50% off eligible).
               </p>
@@ -2958,7 +2958,7 @@ const AdminCMS: React.FC = () => {
                   {betaTransitionStatus === 'done' && (
                     <div className="p-3 bg-green-100 border border-green-300 rounded-lg">
                       <div className="font-semibold text-green-800">✅ Transition Complete!</div>
-                      <div className="text-sm text-green-700">
+                      <div className="text-sm text-green-700 dark:text-green-300">
                         Updated: {betaTransitionResults.updated} | Errors: {betaTransitionResults.errors} | Skipped: {betaTransitionResults.skipped.length}
                       </div>
                     </div>
@@ -2966,13 +2966,13 @@ const AdminCMS: React.FC = () => {
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
                         ✅ Will Update ({betaTransitionResults.toUpdate.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
                             <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
                           </div>
                         ))}
@@ -2982,14 +2982,14 @@ const AdminCMS: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
                         ⏭️ Will Skip ({betaTransitionResults.skipped.length})
                       </div>
                       <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
                         {betaTransitionResults.skipped.slice(0, 15).map(u => (
                           <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
-                            <span className="text-amber-600">{u.reason}</span>
+                            <span className="text-gray-700 dark:text-gray-300 dark:text-gray-300 truncate">{u.email || u.id}</span>
+                            <span className="text-amber-600 dark:text-amber-400">{u.reason}</span>
                           </div>
                         ))}
                         {betaTransitionResults.skipped.length > 15 && (
@@ -3006,12 +3006,12 @@ const AdminCMS: React.FC = () => {
             </Card>
 
             {/* Launch Status */}
-            <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 shadow-sm border border-primary-100">
+            <div className="bg-gradient-to-r from-primary-900/20 to-blue-900/20 dark:from-primary-900/30 dark:to-blue-900/30 rounded-xl p-6 shadow-sm border border-primary-600 dark:border-primary-700">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 🚀 Launch Status
               </h3>
               <div className="flex items-center gap-4">
-                <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">
+                <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
                   Status: <strong>LIVE</strong>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -3031,7 +3031,7 @@ const AdminCMS: React.FC = () => {
                   <button
                     onClick={clearSystemErrors}
                     disabled={isLoadingErrors}
-                    className="text-sm px-3 py-1 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
+                    className="text-sm px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
                   >
                     Clear All ({systemErrors.length})
                   </button>
@@ -3039,7 +3039,7 @@ const AdminCMS: React.FC = () => {
                 <button
                   onClick={loadSystemErrors}
                   disabled={isLoadingErrors}
-                  className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
+                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
                 >
                   Refresh
                 </button>
@@ -3057,9 +3057,9 @@ const AdminCMS: React.FC = () => {
                     <p className="text-gray-600 dark:text-gray-400 text-center py-8">No errors logged in the system.</p>
                  ) : (
                    systemErrors.map((err) => (
-                     <div key={err.id} className="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
+                     <div key={err.id} className="border-l-4 border-red-500 bg-red-50 dark:bg-red-900/30 p-4 rounded-r-lg">
                         <div className="flex justify-between items-start mb-1">
-                          <span className="font-bold text-red-700 text-sm">
+                          <span className="font-bold text-red-700 dark:text-red-300 text-sm">
                             {/* Handle Timestamp or string */}
                             {err.timestamp && typeof err.timestamp === 'object' && 'seconds' in err.timestamp
                               ? new Date((err.timestamp as any).seconds * 1000).toLocaleString()
@@ -3075,7 +3075,7 @@ const AdminCMS: React.FC = () => {
                         )}
                         {err.stack && (
                           <details className="mt-2">
-                            <summary className="text-xs text-red-600 cursor-pointer hover:underline">View Stack Trace</summary>
+                            <summary className="text-xs text-red-600 dark:text-red-400 cursor-pointer hover:underline">View Stack Trace</summary>
                             <pre className="mt-2 p-2 bg-gray-900 text-red-200 text-xs rounded overflow-x-auto whitespace-pre-wrap">
                               {err.stack}
                             </pre>
@@ -3094,12 +3094,12 @@ const AdminCMS: React.FC = () => {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Admin Settings</h3>
             <div className="space-y-4">
               {/* AI Service Status */}
-              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h4 className="font-medium text-blue-900 mb-2">🤖 AI Service Status (Vory)</h4>
+              <div className="p-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">🤖 AI Service Status (Vory)</h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-blue-700">Gemini API Key:</span>
-                    <span className={`text-sm font-medium ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600' : 'text-red-600'}`}>
+                    <span className="text-sm text-blue-700 dark:text-blue-300">Gemini API Key:</span>
+                    <span className={`text-sm font-medium ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                       {import.meta.env.VITE_GEMINI_API_KEY ? '✓ Configured' : '✗ Not Set'}
                     </span>
                   </div>
@@ -3111,7 +3111,7 @@ const AdminCMS: React.FC = () => {
                         return (
                           <div className="mt-2 p-2 bg-red-100 border border-red-300 rounded">
                             <p className="text-sm font-medium text-red-800">⚠️ Recent API Failures ({failures.length})</p>
-                            <p className="text-xs text-red-600 mt-1">
+                            <p className="text-xs text-red-600 dark:text-red-400 mt-1">
                               Last: {new Date(lastFailure.timestamp).toLocaleString()} - {lastFailure.message}
                             </p>
                             <button
@@ -3119,19 +3119,19 @@ const AdminCMS: React.FC = () => {
                                 localStorage.removeItem('ai_api_failures');
                                 window.location.reload();
                               }}
-                              className="mt-2 text-xs text-red-700 underline hover:no-underline"
+                              className="mt-2 text-xs text-red-700 dark:text-red-300 underline hover:no-underline"
                             >
                               Clear failures
                             </button>
                           </div>
                         );
                       }
-                      return <p className="text-sm text-green-600">✓ No recent failures</p>;
+                      return <p className="text-sm text-green-600 dark:text-green-400">✓ No recent failures</p>;
                     } catch {
                       return null;
                     }
                   })()}
-                  <p className="text-xs text-blue-600 mt-2">
+                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
                     To update the API key, add VITE_GEMINI_API_KEY to GitHub Secrets and redeploy.
                   </p>
                 </div>
@@ -3153,12 +3153,12 @@ const AdminCMS: React.FC = () => {
               </div>
               
               {/* Reset Account Section */}
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <h4 className="font-medium text-red-900 mb-2">🔄 Reset My Account (Testing)</h4>
-                <p className="text-sm text-red-700 mb-4">
+              <div className="p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg">
+                <h4 className="font-medium text-red-900 dark:text-red-100 mb-2">🔄 Reset My Account (Testing)</h4>
+                <p className="text-sm text-red-700 dark:text-red-300 mb-4">
                   Reset your account to test the app from the beginning. This will delete:
                 </p>
-                <ul className="text-sm text-red-600 list-disc list-inside mb-4">
+                <ul className="text-sm text-red-600 dark:text-red-400 list-disc list-inside mb-4">
                   <li>All progress data</li>
                   <li>Question history & performance</li>
                   <li>Completed lessons</li>
@@ -3169,8 +3169,8 @@ const AdminCMS: React.FC = () => {
                 </ul>
                 
                 {/* Course selector for per-exam reset */}
-                <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <div className="mb-4 p-3 bg-white dark:bg-slate-800 rounded border border-red-200 dark:border-red-800">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-2">
                     Exam to reset (for per-exam options):
                   </label>
                   <select 
@@ -3523,17 +3523,17 @@ const AdminCMS: React.FC = () => {
                 <div className="space-y-6">
                   {/* Stats Summary */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-blue-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-blue-700">{userActivity.stats.totalQuestions}</div>
-                      <div className="text-sm text-blue-600">Questions Answered</div>
+                    <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{userActivity.stats.totalQuestions}</div>
+                      <div className="text-sm text-blue-600 dark:text-blue-400">Questions Answered</div>
                     </div>
-                    <div className="bg-green-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-green-700">{userActivity.stats.overallAccuracy}%</div>
-                      <div className="text-sm text-green-600">Accuracy</div>
+                    <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-green-700 dark:text-green-300">{userActivity.stats.overallAccuracy}%</div>
+                      <div className="text-sm text-green-600 dark:text-green-400">Accuracy</div>
                     </div>
-                    <div className="bg-amber-50 rounded-xl p-4 text-center">
-                      <div className="text-2xl font-bold text-amber-700">{userActivity.stats.studyStreak}</div>
-                      <div className="text-sm text-amber-600">Day Streak</div>
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-xl p-4 text-center">
+                      <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">{userActivity.stats.studyStreak}</div>
+                      <div className="text-sm text-amber-600 dark:text-amber-400">Day Streak</div>
                     </div>
                     <div className="bg-primary-50 rounded-xl p-4 text-center">
                       <div className="text-2xl font-bold text-primary-700">{Math.round(userActivity.stats.totalStudyMinutes / 60)}h</div>
@@ -3554,7 +3554,7 @@ const AdminCMS: React.FC = () => {
                     {userActivity.dailyLogs.length > 0 ? (
                       <div className="bg-gray-50 dark:bg-slate-900 rounded-lg overflow-hidden">
                         <table className="w-full text-sm">
-                          <thead className="bg-gray-100 dark:bg-slate-700">
+                          <thead className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700">
                             <tr>
                               <th className="p-2 text-left">Date</th>
                               <th className="p-2 text-center">Questions</th>
@@ -3568,7 +3568,7 @@ const AdminCMS: React.FC = () => {
                               <tr key={i} className="border-t border-gray-200 dark:border-slate-700">
                                 <td className="p-2">{log.date}</td>
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
-                                <td className="p-2 text-center text-green-600">{log.questionsCorrect || log.correctAnswers || 0}</td>
+                                <td className="p-2 text-center text-green-600 dark:text-green-400">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
                                 <td className="p-2 text-center">{log.studyTimeMinutes || log.studyMinutes || 0}</td>
                               </tr>
@@ -3598,7 +3598,7 @@ const AdminCMS: React.FC = () => {
                             </div>
                             <div className="flex gap-4 text-sm">
                               <span>{session.questionsAnswered || 0} Q</span>
-                              <span className={session.accuracy >= 75 ? 'text-green-600' : session.accuracy >= 50 ? 'text-amber-600' : 'text-red-600'}>
+                              <span className={session.accuracy >= 75 ? 'text-green-600 dark:text-green-400' : session.accuracy >= 50 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'}>
                                 {session.accuracy || 0}%
                               </span>
                             </div>
@@ -3669,7 +3669,7 @@ const AdminCMS: React.FC = () => {
             <div className="border-t p-4 flex justify-end gap-3">
               <button
                 onClick={() => { setSelectedUser(null); setUserActivity(null); }}
-                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600"
+                className="px-4 py-2 bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 text-gray-700 dark:text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:bg-slate-600 dark:bg-slate-600"
               >
                 Close
               </button>

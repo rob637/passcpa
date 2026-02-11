@@ -32,9 +32,6 @@ pyautogui.FAILSAFE = True  # Move mouse to corner to abort
 # Run with --calibrate to set these
 # ============================================================
 COORDS = {
-    # Title field in upper left
-    "title": (225, 62),
-    
     # Script text area (left panel)
     "script": (300, 400),
     
@@ -79,6 +76,9 @@ COORDS = {
     
     # Generate button (top right, green button)
     "generate_button": (1380, 62),
+    
+    # Title field in generate dialog (shows "Untitled Video")
+    "generate_title": (700, 300),
     
     # Submit button (in generate dialog)
     "submit_button": (1380, 500),
@@ -137,8 +137,7 @@ def calibrate():
     print("\nPress Ctrl+C to exit at any time.\n")
     
     coords_to_find = [
-        ("title", "the 'Untitled Video' title text (upper left)"),
-        ("script", "the script text area (left panel)"),
+        ("script", "the SCRIPT text area (left panel) - click INSIDE the text box"),
         ("avatar_preview", "the avatar in the video preview (center)"),
         ("change_avatar", "'Change avatar' button (after clicking avatar)"),
         ("public_avatars", "'Public Avatars' tab"),
@@ -149,10 +148,11 @@ def calibrate():
         ("avatar_iii", "'Avatar III' option in the dropdown"),
         ("customize_bg", "'Customize' button under Avatar Background"),
         ("uploads_tab", "'Uploads' tab in background panel"),
-        ("first_upload", "where the first uploaded image appears"),
+        ("first_upload", "where the first uploaded background image appears"),
         ("layouts_button", "'Layouts' icon in right sidebar"),
         ("portrait_9_16", "Portrait 9:16 layout option"),
         ("generate_button", "the green 'Generate' button (top right)"),
+        ("generate_title", "TITLE field in generate dialog - click on 'Untitled Video' text"),
         ("submit_button", "the 'Submit' button in the generate dialog"),
     ]
     
@@ -310,7 +310,7 @@ def create_video(title, script_text, avatar_name, background_name=None):
     
     # Step 7: Set title in generate dialog
     logger.info("[STEP 7] Setting title in dialog...")
-    x, y = coords.get("generate_title", COORDS.get("title"))
+    x, y = coords.get("generate_title", COORDS.get("generate_title"))
     pyautogui.tripleClick(x, y)  # Triple-click to select "Untitled Video"
     time.sleep(0.3)
     paste_text(title)

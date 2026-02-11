@@ -148,7 +148,7 @@ const You: React.FC = () => {
   const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
   // Calculate days until exam - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, examSection);
+  const examDate = getExamDate(userProfile, examSection, courseId);
   const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Load data

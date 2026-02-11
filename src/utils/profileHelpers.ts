@@ -7,21 +7,30 @@
 
 import { UserProfile, CourseIdType } from '../types';
 
+// Single-exam courses store dates by course ID (uppercase), not section
+const SINGLE_EXAM_COURSES = ['cfp', 'cisa'];
+
 /**
- * Get the exam date for a specific section.
- * Falls back to legacy examDate if examDates is not set.
+ * Get the exam date for a specific section/course.
+ * 
+ * Lookup order:
+ * 1. Section-specific: examDates[sectionId] (e.g., 'FAR', 'SEE1')
+ * 2. Course-specific: examDates[COURSE] (e.g., 'CFP', 'CISA') - for single-exam courses
+ * 3. Legacy fallback: examDate (only if examDates has no entries at all)
  * 
  * @param profile - User profile object
- * @param sectionId - Exam section ID (e.g., 'FAR', 'SEE1')
+ * @param sectionId - Exam section ID (e.g., 'FAR', 'SEE1', 'CFP-PCR')
+ * @param courseId - Optional course ID for single-exam course lookup
  * @returns Date object or null
  */
 export function getExamDate(
   profile: UserProfile | null | undefined,
-  sectionId?: string | null
+  sectionId?: string | null,
+  courseId?: CourseIdType | null
 ): Date | null {
   if (!profile) return null;
 
-  // Try new multi-section examDates first
+  // 1. Try section-specific lookup first
   if (sectionId && profile.examDates?.[sectionId]) {
     const dateValue = profile.examDates[sectionId];
     if (dateValue) {
@@ -29,9 +38,31 @@ export function getExamDate(
     }
   }
 
-  // Fall back to legacy examDate
-  if (profile.examDate) {
-    return normalizeDate(profile.examDate);
+  // 2. For single-exam courses, also try course ID (uppercase)
+  // These courses save dates by 'CFP', 'CISA' etc.
+  if (courseId && SINGLE_EXAM_COURSES.includes(courseId.toLowerCase())) {
+    const courseKey = courseId.toUpperCase();
+    if (profile.examDates?.[courseKey]) {
+      return normalizeDate(profile.examDates[courseKey]);
+    }
+  }
+  
+  // 3. Auto-detect course from section prefix (e.g., 'CFP-PCR' → 'CFP')
+  if (sectionId) {
+    const sectionPrefix = sectionId.split('-')[0]?.toUpperCase();
+    if (sectionPrefix && SINGLE_EXAM_COURSES.includes(sectionPrefix.toLowerCase())) {
+      if (profile.examDates?.[sectionPrefix]) {
+        return normalizeDate(profile.examDates[sectionPrefix]);
+      }
+    }
+  }
+
+  // 4. Legacy fallback - ONLY if examDates has no entries
+  // This prevents cross-contamination between courses
+  if (!profile.examDates || Object.keys(profile.examDates).length === 0) {
+    if (profile.examDate) {
+      return normalizeDate(profile.examDate);
+    }
   }
 
   return null;

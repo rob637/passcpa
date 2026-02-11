@@ -58,7 +58,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
   const sectionDates: SectionExamDate[] = (course?.sections || [])
     .filter(s => !['PREP', 'BEC'].includes(s.id))
     .map(s => {
-      const sectionExamDate = getExamDate(userProfile, s.id) || undefined;
+      const sectionExamDate = getExamDate(userProfile, s.id, courseId) || undefined;
       return {
         section: s.id as ExamSection,
         examDate: sectionExamDate,

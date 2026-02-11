@@ -354,7 +354,7 @@ const Progress: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   // Study Plan - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, userProfile?.examSection as string) || new Date();
+  const examDate = getExamDate(userProfile, userProfile?.examSection as string, courseId) || new Date();
   const studyPlan = userProfile?.examSection ? generateStudyPlan(userProfile.examSection, examDate) : null;
 
   const currentSection = (userProfile?.examSection || getDefaultSection(courseId)) as ExamSection;

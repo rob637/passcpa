@@ -232,14 +232,24 @@ def paste_text(text):
     time.sleep(0.5)
 
 
-def create_video(title, script_text, avatar_name, background_name=None):
+# Background name to upload position (0-indexed)
+BACKGROUND_POSITIONS = {
+    "bg_corporate_blue.png": 0,
+    "bg_modern_teal.png": 1,
+    "bg_slate_gray.png": 2,
+    "bg_executive_dark.png": 3,
+}
+
+
+def create_video(title, script_text, avatar_name, avatar_look=None, background_name=None):
     """
     Create a single video in HeyGen AI Studio.
     Assumes the browser is already on the HeyGen editor page.
     """
     logger.info(f"\n{'='*60}")
     logger.info(f"Creating: {title}")
-    logger.info(f"Avatar: {avatar_name}")
+    logger.info(f"Avatar: {avatar_name} ({avatar_look})")
+    logger.info(f"Background: {background_name}")
     logger.info(f"{'='*60}")
     
     coords = load_coords()
@@ -269,18 +279,29 @@ def create_video(title, script_text, avatar_name, background_name=None):
     paste_text(avatar_name)
     time.sleep(1.5)  # Wait for search results
     
-    click("avatar_result")  # Click avatar name
-    time.sleep(1)
+    click("avatar_result")  # Click avatar name to expand outfits
+    time.sleep(1.5)
     
-    click("outfit_thumbnail", double=True)  # Double-click outfit
+    # Search for specific outfit if provided
+    if avatar_look:
+        logger.info(f"  Searching for outfit: {avatar_look}")
+        # Clear the search and type the outfit name
+        click("avatar_search")
+        time.sleep(0.3)
+        pyautogui.hotkey('ctrl', 'a')
+        time.sleep(0.1)
+        paste_text(avatar_look)
+        time.sleep(1.5)
+    
+    click("outfit_thumbnail", double=True)  # Double-click first matching outfit
     time.sleep(2)
     
     # Step 3: Set Motion Engine to Avatar III
     logger.info("[STEP 3] Setting Motion Engine to Avatar III...")
     click("motion_engine")
-    time.sleep(0.5)
+    time.sleep(1)  # Longer wait for dropdown to open
     click("avatar_iii")
-    time.sleep(0.5)
+    time.sleep(1)
     
     # Step 4: Set background
     if background_name:
@@ -289,9 +310,22 @@ def create_video(title, script_text, avatar_name, background_name=None):
         time.sleep(1.5)  # Wait for panel to open
         click("uploads_tab")
         time.sleep(1.5)  # Wait for uploads to load
-        click("first_upload")  # Single click first to select
-        time.sleep(0.5)
-        click("first_upload", double=True)  # Then double-click to apply
+        
+        # Get background position and use arrow keys to navigate
+        bg_pos = BACKGROUND_POSITIONS.get(background_name, 0)
+        logger.info(f"  Selecting background at position {bg_pos}")
+        
+        # Click first upload to focus
+        click("first_upload")
+        time.sleep(0.3)
+        
+        # Use arrow keys to navigate to correct background
+        for _ in range(bg_pos):
+            pyautogui.press('right')
+            time.sleep(0.2)
+        
+        # Double-click to apply (or press enter)
+        pyautogui.press('enter')
         time.sleep(1.5)
     
     # Step 5: Set layout to Portrait 9:16
@@ -371,6 +405,7 @@ def run_batch(limit=None):
             title=video['topic'],
             script_text=script_text,
             avatar_name=video['avatar_id'],
+            avatar_look=video.get('avatar_look'),
             background_name=video.get('background')
         )
         
@@ -411,6 +446,7 @@ def test_single():
         title=video['topic'],
         script_text=script_text,
         avatar_name=video['avatar_id'],
+        avatar_look=video.get('avatar_look'),
         background_name=video.get('background')
     )
     

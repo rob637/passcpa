@@ -1646,8 +1646,8 @@ const AdminCMS: React.FC = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white">❌ Missing Explanations</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutExplanation.length === 0 
-                          ? 'bg-green-100 text-green-700 dark:text-green-300' 
-                          : 'bg-red-100 text-red-700 dark:text-red-300'
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
                       }`}>
                         {contentAudit.questionsWithoutExplanation.length}
                         {contentAudit.questionsWithoutExplanation.length >= 50 && '+'}
@@ -1677,8 +1677,8 @@ const AdminCMS: React.FC = () => {
                       <h4 className="font-semibold text-gray-900 dark:text-white">🏷️ Missing Blueprint Tags (CPA)</h4>
                       <span className={`px-2 py-1 rounded text-sm font-medium ${
                         contentAudit.questionsWithoutBlueprint.length === 0 
-                          ? 'bg-green-100 text-green-700 dark:text-green-300' 
-                          : 'bg-amber-100 text-amber-700 dark:text-amber-300'
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                          : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
                       }`}>
                         {contentAudit.questionsWithoutBlueprint.length}
                         {contentAudit.questionsWithoutBlueprint.length >= 50 && '+'}
@@ -1759,12 +1759,12 @@ const AdminCMS: React.FC = () => {
                 <div className="flex flex-wrap gap-3">
                   {getActiveCourses().map(course => {
                     const count = usersList.filter(u => (u.courseId || 'cpa') === course.id).length;
-                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
-                                       course.id === 'ea' ? 'bg-green-100 text-green-700 dark:text-green-300' :
+                    const colorClass = course.id === 'cpa' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                                       course.id === 'ea' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
                                        course.id === 'cma' ? 'bg-purple-100 text-purple-700' :
                                        course.id === 'cia' ? 'bg-orange-100 text-orange-700' :
                                        course.id === 'cisa' ? 'bg-teal-100 text-teal-700' :
-                                       'bg-amber-100 text-amber-700 dark:text-amber-300';
+                                       'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300';
                     return (
                       <div key={course.id} className={`px-3 py-2 rounded-lg ${colorClass}`}>
                         <span className="font-bold">{count}</span>
@@ -1814,7 +1814,7 @@ const AdminCMS: React.FC = () => {
                     <div className="flex gap-2">
                       <button
                         onClick={() => loadUserActivity(lookupResult)}
-                        className="px-3 py-1 text-xs rounded bg-blue-100 text-blue-700 dark:text-blue-300 hover:bg-blue-200"
+                        className="px-3 py-1 text-xs rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200"
                       >
                         View Activity
                       </button>
@@ -1826,7 +1826,7 @@ const AdminCMS: React.FC = () => {
                       </button>
                       <button
                         onClick={() => setSubscriptionTier(lookupResult.id, lookupResult.subscription?.tier === 'lifetime' ? 'free' : 'lifetime')}
-                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-amber-100 text-amber-700 dark:text-amber-300'} hover:opacity-80`}
+                        className={`px-3 py-1 text-xs rounded ${lookupResult.subscription?.tier === 'lifetime' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'} hover:opacity-80`}
                       >
                         {lookupResult.subscription?.tier === 'lifetime' ? 'Revoke Premium' : 'Grant Lifetime'}
                       </button>
@@ -1940,10 +1940,10 @@ const AdminCMS: React.FC = () => {
                               <span
                                 className={`px-2 py-1 rounded text-xs font-semibold ${
                                   u.subscription?.tier === 'lifetime' ? 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800' :
-                                  u.subscription?.tier === 'annual' ? 'bg-green-100 text-green-700 dark:text-green-300' :
-                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                                  u.subscription?.tier === 'annual' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                  u.subscription?.tier === 'quarterly' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                                   u.subscription?.tier === 'monthly' ? 'bg-primary-100 text-primary-700' :
-                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
+                                  u.subscription?.status === 'trialing' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
                                   'bg-gray-100 dark:bg-slate-700 text-gray-600'
                                 }`}
                               >
@@ -2054,11 +2054,11 @@ const AdminCMS: React.FC = () => {
                   <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:border-green-800">
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                       💰 Revenue Dashboard
-                      <span className="text-xs bg-green-100 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
+                      <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
                         {revenueMetrics.subscriberCount} subscribers
                       </span>
                       {isFounderPricingActive() && (
-                        <span className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
+                        <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
                           Founder pricing active
                         </span>
                       )}
@@ -2362,7 +2362,7 @@ const AdminCMS: React.FC = () => {
                               </div>
                               <div className="flex gap-1 mt-1">
                                 {q.types.map(type => (
-                                  <span key={type} className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
+                                  <span key={type} className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
                                     {type.replace(/_/g, ' ')}
                                   </span>
                                 ))}
@@ -2513,7 +2513,7 @@ const AdminCMS: React.FC = () => {
                   <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
                   <div className="text-sm text-green-600 dark:text-green-400">Firebase</div>
                 </div>
-                <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50' : 'bg-red-50'}`}>
+                <div className={`p-4 rounded-lg text-center ${import.meta.env.VITE_GEMINI_API_KEY ? 'bg-green-50 dark:bg-green-900/30' : 'bg-red-50 dark:bg-red-900/30'}`}>
                   <div className={`text-2xl font-bold ${import.meta.env.VITE_GEMINI_API_KEY ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
                     {import.meta.env.VITE_GEMINI_API_KEY ? '✓' : '✗'}
                   </div>
@@ -2523,7 +2523,7 @@ const AdminCMS: React.FC = () => {
                   <div className="text-2xl font-bold text-green-700 dark:text-green-300">✓</div>
                   <div className="text-sm text-green-600 dark:text-green-400">Auth</div>
                 </div>
-                <div className={`p-4 rounded-lg text-center ${systemErrors.length === 0 ? 'bg-green-50' : 'bg-amber-50'}`}>
+                <div className={`p-4 rounded-lg text-center ${systemErrors.length === 0 ? 'bg-green-50 dark:bg-green-900/30' : 'bg-amber-50 dark:bg-amber-900/30'}`}>
                   <div className={`text-2xl font-bold ${systemErrors.length === 0 ? 'text-green-700 dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
                     {systemErrors.length}
                   </div>
@@ -2566,7 +2566,7 @@ const AdminCMS: React.FC = () => {
                           <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
                         </div>
                         <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
-                          ann.active ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-600 text-gray-600'
+                          ann.active ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
                         }`}>
                           {ann.active ? 'Active' : 'Inactive'}
                         </span>
@@ -2612,7 +2612,7 @@ const AdminCMS: React.FC = () => {
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎛️ Feature Flags
-                <span className="text-xs bg-amber-100 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
+                <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                 These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
@@ -2638,7 +2638,7 @@ const AdminCMS: React.FC = () => {
                       </p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      enabled ? 'bg-green-100 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-600 text-gray-600'
+                      enabled ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
                     }`}>
                       {enabled ? 'ON' : 'OFF'}
                     </span>
@@ -2687,17 +2687,17 @@ const AdminCMS: React.FC = () => {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                              report.type === 'incorrect_answer' ? 'bg-red-100 text-red-700 dark:text-red-300' :
-                              report.type === 'unclear_question' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
-                              report.type === 'typo' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                              report.type === 'incorrect_answer' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' :
+                              report.type === 'unclear_question' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                              report.type === 'typo' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                               'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.type.replace(/_/g, ' ')}
                             </span>
                             <span className={`px-2 py-0.5 rounded text-xs ${
-                              report.status === 'pending' ? 'bg-amber-100 text-amber-700 dark:text-amber-300' :
-                              report.status === 'resolved' ? 'bg-green-100 text-green-700 dark:text-green-300' :
-                              report.status === 'reviewed' ? 'bg-blue-100 text-blue-700 dark:text-blue-300' :
+                              report.status === 'pending' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
+                              report.status === 'resolved' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                              report.status === 'reviewed' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
                               'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
                             }`}>
                               {report.status}
@@ -2923,7 +2923,7 @@ const AdminCMS: React.FC = () => {
             <Card className="p-6 border-2 border-amber-300 bg-amber-50">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 🎫 Beta User Trial Transition
-                <span className="text-xs bg-red-100 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
+                <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 dark:text-gray-300 mb-4">
                 Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).

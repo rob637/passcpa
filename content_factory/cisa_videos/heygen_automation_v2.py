@@ -192,72 +192,64 @@ class HeyGenAutomationV2:
             logger.info("[STEP 2] Pasting script...")
             script_pasted = False
             
-            # First, click on "Write a script for this scene" to activate the input
-            write_script_selectors = [
+            # The script area is in the left panel under "Script" header
+            # First find and click the script area to focus it
+            
+            # Try clicking directly on the placeholder text
+            placeholder_selectors = [
+                'text="Type your script or use"',
+                'text="Type your script"',
                 'text="Write a script for this scene"',
-                'text="Write a script"',
+                '[placeholder*="Type your script"]',
                 '[placeholder*="Write a script"]',
-                '.script-panel',
             ]
-            for selector in write_script_selectors:
+            
+            for selector in placeholder_selectors:
                 try:
                     elem = self.page.locator(selector).first
                     if elem and elem.is_visible(timeout=2000):
                         elem.click()
-                        time.sleep(0.5)
-                        logger.info(f"[OK] Clicked: {selector}")
+                        time.sleep(0.3)
+                        logger.info(f"[OK] Clicked placeholder: {selector}")
                         break
                 except:
                     continue
             
-            # Now find the active input/textarea and paste
-            script_selectors = [
-                'textarea:visible',
-                '[contenteditable="true"]:visible',
-                '[placeholder*="Type your script"]',
-                '[placeholder*="script"]',
-                '.ProseMirror',
-            ]
+            # Now type/paste the script using keyboard
+            # This is more reliable than fill() for rich text editors
+            time.sleep(0.5)
+            self.page.keyboard.press("Control+a")  # Select all
+            time.sleep(0.1)
             
-            for selector in script_selectors:
-                try:
-                    elem = self.page.locator(selector).first
-                    if elem and elem.is_visible(timeout=2000):
-                        elem.click()
-                        time.sleep(0.2)
-                        # Clear any existing content
-                        elem.press("Control+a")
-                        time.sleep(0.1)
-                        # Type the script
-                        elem.fill(script_text)
-                        logger.info(f"[OK] Script pasted via: {selector}")
-                        script_pasted = True
-                        break
-                except Exception as e:
-                    continue
+            # Use clipboard to paste (more reliable for long text)
+            try:
+                # Type the script - for rich text editors this is more reliable
+                self.page.keyboard.type(script_text, delay=1)  # Small delay per char
+                logger.info("[OK] Script typed via keyboard")
+                script_pasted = True
+            except Exception as e:
+                logger.warning(f"[WARN] keyboard.type failed: {e}")
             
-            # Fallback: try clicking text that might activate the script area
+            # Fallback: try fill() on various input elements
             if not script_pasted:
-                click_texts = [
-                    'text="Paste script here"',
-                    'text="Enter script"',
-                    'text="Type or paste"',
-                    'text="Upload audio"',  # Nearby area
-                    'text="Script Writer"',  # Feature name
+                script_input_selectors = [
+                    '.ProseMirror',
+                    '[contenteditable="true"]',
+                    'textarea',
+                    '[class*="script"] [contenteditable]',
+                    '[class*="editor"]',
                 ]
-                for text_selector in click_texts:
+                
+                for selector in script_input_selectors:
                     try:
-                        text_elem = self.page.locator(text_selector).first
-                        if text_elem and text_elem.is_visible(timeout=1000):
-                            text_elem.click()
-                            time.sleep(0.5)
-                            # Now try to find and fill textarea
-                            textarea = self.page.locator('textarea').first
-                            if textarea and textarea.is_visible():
-                                textarea.fill(script_text)
-                                logger.info(f"[OK] Script pasted after clicking: {text_selector}")
-                                script_pasted = True
-                                break
+                        elem = self.page.locator(selector).first
+                        if elem and elem.is_visible(timeout=1000):
+                            elem.click()
+                            time.sleep(0.2)
+                            elem.fill(script_text)
+                            logger.info(f"[OK] Script filled via: {selector}")
+                            script_pasted = True
+                            break
                     except:
                         continue
             
@@ -358,13 +350,46 @@ class HeyGenAutomationV2:
             
             self.screenshot("05_avatar_looks")
             
-            # Double-click on the outfit/look (first one visible)
-            # The looks are shown as images after clicking avatar name
-            look_images = self.page.locator('[class*="look"] img, [class*="avatar"] img').all()
-            if look_images:
-                look_images[0].dblclick()
-                logger.info("[OK] Selected first look (double-click)")
-                time.sleep(1.5)
+            # Double-click on the first outfit/look to select it
+            # The looks panel shows multiple outfit images - we need to double-click one
+            look_found = False
+            look_selectors = [
+                'img[src*="avatar"]',  # Avatar look images
+                '[class*="look"] img',
+                '[class*="outfit"] img', 
+                '[class*="avatar-item"] img',
+                'img[class*="cursor"]',  # Clickable images
+            ]
+            
+            # Try each selector to find look images
+            for selector in look_selectors:
+                try:
+                    looks = self.page.locator(selector).all()
+                    if len(looks) >= 2:  # Should have multiple looks
+                        # Double-click the first look (top-left, usually "Front")
+                        looks[0].dblclick()
+                        logger.info(f"[OK] Double-clicked first look via: {selector}")
+                        look_found = True
+                        time.sleep(1.5)
+                        break
+                except:
+                    continue
+            
+            # Fallback: try clicking any visible image in the panel area
+            if not look_found:
+                try:
+                    # The looks are in the right panel after clicking avatar name
+                    panel_images = self.page.locator('[class*="panel"] img, [class*="sidebar"] img').all()
+                    if panel_images:
+                        panel_images[0].dblclick()
+                        logger.info("[OK] Double-clicked first panel image")
+                        look_found = True
+                        time.sleep(1.5)
+                except:
+                    pass
+            
+            if not look_found:
+                logger.warning("[WARN] Could not select avatar look - try manually")
             
             self.screenshot("06_avatar_selected")
             

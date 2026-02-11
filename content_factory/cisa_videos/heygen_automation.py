@@ -240,16 +240,51 @@ class HeyGenAutomation:
             with open(script_file, 'r', encoding='utf-8') as f:
                 script_text = f.read()
             
-            # The script input area - look for the placeholder text we see in screenshot
-            # It's a contenteditable div, not a textarea
-            script_area = self.page.wait_for_selector(
-                '[placeholder*="script"], [placeholder*="Type your script"], .script-input, [contenteditable="true"]',
-                timeout=15000
-            )
+            # The script input area - try multiple approaches
+            # Based on screenshot: "Type your script or use '/' for commands"
+            script_area = None
             
-            # Click to focus and type script
-            script_area.click()
-            time.sleep(0.5)
+            # Try 1: Click on the placeholder text directly
+            try:
+                placeholder = self.page.wait_for_selector(
+                    'text="Type your script"',
+                    timeout=5000
+                )
+                placeholder.click()
+                time.sleep(0.5)
+                script_area = True  # We clicked it, now just type
+                logger.info("[OK] Found script area via placeholder text")
+            except:
+                pass
+            
+            # Try 2: Look for contenteditable or textarea
+            if not script_area:
+                try:
+                    script_area = self.page.wait_for_selector(
+                        '[contenteditable="true"], textarea, [placeholder*="script"]',
+                        timeout=5000
+                    )
+                    script_area.click()
+                    time.sleep(0.5)
+                    logger.info("[OK] Found script area via selector")
+                except:
+                    pass
+            
+            # Try 3: Click on the Script panel header area directly
+            if not script_area:
+                # The Script section is in the left panel - click near it
+                script_header = self.page.query_selector('text="Script"')
+                if script_header:
+                    # Click below the Script header where the input would be
+                    box = script_header.bounding_box()
+                    if box:
+                        self.page.mouse.click(box['x'] + 100, box['y'] + 50)
+                        time.sleep(0.5)
+                        script_area = True
+                        logger.info("[OK] Clicked below Script header")
+            
+            if not script_area:
+                raise Exception("Could not find script input area")
             
             # Clear any existing content and type new script
             self.page.keyboard.press("Control+a")
@@ -264,19 +299,58 @@ class HeyGenAutomation:
             
             logger.info(f"[OK] Script entered ({len(script_text)} chars)")
             
-            # Click Generate button (green button in top right)
+            # Click Generate button - it may be a dropdown button with arrow
+            # First try to find and click the main Generate button
             generate_btn = self.page.wait_for_selector(
-                'button:has-text("Generate"), button:has-text("Submit"), [class*="generate"]',
+                'button:has-text("Generate")',
                 timeout=10000
             )
             generate_btn.click()
             logger.info("[OK] Clicked Generate button")
+            time.sleep(1)
+            
+            # Screenshot to see if dropdown appeared
+            debug_path3 = Path(__file__).parent / "output" / f"debug_after_generate_click_{int(time.time())}.png"
+            self.page.screenshot(path=str(debug_path3))
+            logger.info(f"[DEBUG] After Generate click: {debug_path3}")
+            
+            # Check if a dropdown appeared - look for "Generate video" or similar option
+            dropdown_option = self.page.query_selector('text="Generate video"')
+            if dropdown_option:
+                dropdown_option.click()
+                logger.info("[OK] Clicked 'Generate video' from dropdown")
+                time.sleep(1)
+            
+            # Check for confirmation modal - might say "Generate" again or "Confirm"
+            confirm_btn = self.page.query_selector(
+                'button:has-text("Generate"):not([disabled]), button:has-text("Confirm"), button:has-text("Submit")'
+            )
+            if confirm_btn:
+                # Make sure it's not the same button we already clicked (check visibility of modal)
+                modal = self.page.query_selector('[role="dialog"], .modal, [class*="modal"]')
+                if modal:
+                    confirm_btn.click()
+                    logger.info("[OK] Clicked confirmation in modal")
+                    time.sleep(2)
             
             # Wait for video to be queued - may show a modal or redirect
-            time.sleep(8)
+            time.sleep(5)
+            
+            # Screenshot after all clicks
+            debug_path4 = Path(__file__).parent / "output" / f"debug_after_confirm_{int(time.time())}.png"
+            self.page.screenshot(path=str(debug_path4))
+            logger.info(f"[DEBUG] After confirmation: {debug_path4}")
             
             # Try to extract video ID from URL or page
             video_id = self._extract_video_id()
+            
+            # Also look for success message that contains video ID
+            if not video_id:
+                success_msg = self.page.query_selector('text=/video.*queued|generating|submitted/i')
+                if success_msg:
+                    logger.info("[OK] Video generation started (success message found)")
+                    # Use timestamp as fallback ID
+                    video_id = f"heygen_{int(time.time())}"
             
             if video_id:
                 logger.info(f"[OK] Video queued with ID: {video_id}")

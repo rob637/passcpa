@@ -85,6 +85,39 @@ class HeyGenAutomationV2:
                 continue
         logger.warning(f"[WARN] Could not {description}")
         return False
+    
+    def _dismiss_popups(self):
+        """Dismiss any popup modals that appear (e.g., 'Introducing Brand Systems')."""
+        popup_close_selectors = [
+            'button[aria-label="Close"]',
+            'button[aria-label="close"]',
+            '[class*="modal"] button:has-text("×")',
+            '[class*="modal"] button:has-text("X")',
+            '[class*="Modal"] svg[class*="close"]',
+            '[role="dialog"] button:first-child',
+            'button:near(:text("Introducing"))',
+        ]
+        
+        for selector in popup_close_selectors:
+            try:
+                close_btn = self.page.locator(selector).first
+                if close_btn and close_btn.is_visible(timeout=1000):
+                    close_btn.click()
+                    logger.info(f"[OK] Dismissed popup via: {selector}")
+                    time.sleep(0.5)
+                    return True
+            except:
+                continue
+        
+        # Try pressing Escape as fallback
+        try:
+            self.page.keyboard.press("Escape")
+            logger.info("[OK] Dismissed popup via Escape key")
+            time.sleep(0.5)
+        except:
+            pass
+        
+        return False
         
     def ensure_logged_in(self):
         """Check login status and wait for manual login if needed."""
@@ -149,6 +182,9 @@ class HeyGenAutomationV2:
             )
             time.sleep(5)  # Wait for editor to load
             self.screenshot("01_editor_loaded")
+            
+            # Dismiss any popup modals (e.g., "Introducing Brand Systems")
+            self._dismiss_popups()
             
             # =========================================================
             # STEP 2: Paste script in "Paste script here" field

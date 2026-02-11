@@ -87,6 +87,7 @@ const Terms: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-4">
           <button 
             onClick={() => navigate(-1)} 
+            aria-label="Back"
             className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             <ArrowLeft className="w-5 h-5" />

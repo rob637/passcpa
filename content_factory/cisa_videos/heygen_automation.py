@@ -211,57 +211,43 @@ class HeyGenAutomation:
         logger.info(f"[CREATE] Creating video: {title} (Avatar: {avatar_to_use})")
         
         try:
-            # Navigate to create video page
-            self.page.goto(f"{self.BASE_URL}/create", timeout=60000)
-            time.sleep(3)
+            # Navigate to create video page - HeyGen opens directly to the editor
+            self.page.goto(f"{self.BASE_URL}/create/new", timeout=60000)
+            time.sleep(5)  # Wait for editor to fully load
             
             # Read script
             with open(script_file, 'r', encoding='utf-8') as f:
                 script_text = f.read()
             
-            # Click "Create Video" or similar button
-            create_btn = self.page.wait_for_selector(
-                'button:has-text("Create"), [data-testid="create-video-button"]',
-                timeout=10000
+            # The script input area - look for the placeholder text we see in screenshot
+            # It's a contenteditable div, not a textarea
+            script_area = self.page.wait_for_selector(
+                '[placeholder*="script"], [placeholder*="Type your script"], .script-input, [contenteditable="true"]',
+                timeout=15000
             )
-            create_btn.click()
+            
+            # Click to focus and type script
+            script_area.click()
+            time.sleep(0.5)
+            
+            # Clear any existing content and type new script
+            self.page.keyboard.press("Control+a")
+            time.sleep(0.2)
+            self.page.keyboard.type(script_text[:3000], delay=5)  # Limit length, type slowly
             time.sleep(2)
             
-            # Select avatar (click on avatar selection)
-            # This varies by HeyGen UI version - adjust selectors as needed
-            avatar_selector = self.page.query_selector(f'[data-avatar-id="{avatar_to_use}"], .avatar-item')
-            if avatar_selector:
-                avatar_selector.click()
-                time.sleep(1)
+            logger.info(f"[OK] Script entered ({len(script_text)} chars)")
             
-            # Upload background image
-            file_input = self.page.query_selector('input[type="file"]')
-            if file_input and background_file:
-                file_input.set_input_files(background_file)
-                time.sleep(2)
-            
-            # Enter script text
-            script_input = self.page.wait_for_selector(
-                'textarea[placeholder*="script"], .script-editor textarea, [data-testid="script-input"]',
-                timeout=10000
-            )
-            script_input.fill(script_text)
-            time.sleep(1)
-            
-            # Set video title if field exists
-            title_input = self.page.query_selector('input[placeholder*="title"], [data-testid="video-title"]')
-            if title_input:
-                title_input.fill(title[:50])
-            
-            # Click Generate/Submit button
+            # Click Generate button (green button in top right)
             generate_btn = self.page.wait_for_selector(
-                'button:has-text("Generate"), button:has-text("Submit"), [data-testid="generate-button"]',
+                'button:has-text("Generate"), button:has-text("Submit"), [class*="generate"]',
                 timeout=10000
             )
             generate_btn.click()
+            logger.info("[OK] Clicked Generate button")
             
-            # Wait for video to be queued and get video ID from URL or response
-            time.sleep(5)
+            # Wait for video to be queued - may show a modal or redirect
+            time.sleep(8)
             
             # Try to extract video ID from URL or page
             video_id = self._extract_video_id()

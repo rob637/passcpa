@@ -1,4 +1,4 @@
-Data classification.get this right, and you’re one step closer to SEE-suh certification. It's a critical concept that eye-SAH-kah loves to test.
+Data classification.get this right, and you’re one step closer to sisa certification. It's a critical concept that eye-SAH-kah loves to test.
 
 Data classification is the process of categorizing data based on its sensitivity and impact if disclosed, altered, or destroyed. Auditors care because proper classification dictates the security controls required to protect information assets. Without it, we can't assess if controls are adequate and cost-effective. We need classification to determine if the right safeguards are in place.
 

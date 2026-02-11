@@ -86,9 +86,9 @@ COORDS = {
 
 
 def calibrate_quick():
-    """Quick recalibration for just title and script (5-second countdown)."""
+    """Quick recalibration for just title and background (5-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Title & Script only")
+    print("QUICK RECALIBRATION: Title & Background only")
     print("="*60)
     print("\nYou have 5 seconds per element. Move mouse and hold still.\n")
     
@@ -102,7 +102,7 @@ def calibrate_quick():
     
     coords_to_find = [
         ("title", "TITLE field - click INSIDE the 'Untitled Video' text box"),
-        ("script", "SCRIPT area - click INSIDE the text area where you type the script"),
+        ("first_upload", "BACKGROUND - click on the first uploaded background image"),
     ]
     
     for key, description in coords_to_find:

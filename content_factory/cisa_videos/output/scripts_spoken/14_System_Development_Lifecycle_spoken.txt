@@ -1,4 +1,4 @@
-Hey SEE-suh candidates! Understanding the System Development Lifecycle… it's not just theory. It's CRITICAL for passing the exam, and specifically for Information Systems Acquisition, Development, and Implementation.
+Hey sisa candidates! Understanding the System Development Lifecycle… it's not just theory. It's CRITICAL for passing the exam, and specifically for Information Systems Acquisition, Development, and Implementation.
 
 So, what is the S-D-L-C? It's a structured, phased approach to building or modifying information systems… from initial planning to eventual retirement. As auditors, we care deeply because the S-D-L-C dictates how controls are built into systems. A poorly managed S-D-L-C leads to vulnerabilities, compliance issues, and ultimately… financial losses for the organization. Think of it as the blueprint for building secure and reliable I-T systems. Without a solid blueprint, the building crumbles.
 
@@ -8,4 +8,4 @@ And user acceptance testing? It's not development. It's not implementation. User
 
 For example, when auditing a new accounting system implementation, you need to verify that security requirements were defined in the planning phase, threat modeling was conducted during design, and user acceptance testing included security-related scenarios. Did they test for unauthorized access or data breaches before the system went live? That's the question you need to answer.
 
-Your takeaway? Security must be built into the S-D-L-C from the start… not as an afterthought. Master this, and you're one step closer to passing the SEE-suh!
+Your takeaway? Security must be built into the S-D-L-C from the start… not as an afterthought. Master this, and you're one step closer to passing the sisa!

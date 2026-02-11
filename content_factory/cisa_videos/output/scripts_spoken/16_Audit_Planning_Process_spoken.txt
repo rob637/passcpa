@@ -6,4 +6,4 @@ Here's the trap. eye-SAH-kah will try to trick you into thinking the audit chart
 
 Let’s say you're auditing a new cloud migration project. The charter must clearly define your access rights to cloud infrastructure logs, your ability to interview relevant personnel, and the independence you have to report findings, even if they're unfavorable to the project team. Without it, you're powerless.
 
-Your key takeaway? The audit charter establishes the auditor's power and independence. Master that, and you've mastered a critical part of the SEE-suh exam. Now go get 'em!
+Your key takeaway? The audit charter establishes the auditor's power and independence. Master that, and you've mastered a critical part of the sisa exam. Now go get 'em!

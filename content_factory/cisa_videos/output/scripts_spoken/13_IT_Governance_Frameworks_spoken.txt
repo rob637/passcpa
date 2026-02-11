@@ -1,4 +1,4 @@
-Alright, future CISAs, let's nail I-T Governance Frameworks! Specifically, CO-bit and Governance Structure. This is a crucial area, and understanding it can be the difference between passing and failing the SEE-suh exam.
+Alright, future CISAs, let's nail I-T Governance Frameworks! Specifically, CO-bit and Governance Structure. This is a crucial area, and understanding it can be the difference between passing and failing the sisa exam.
 
 So, what is CO-bit? Simply put, CO-bit is a comprehensive framework. used for the governance and management of enterprise I-T. It provides a structured approach. aligning I-T with business goals. Now, why does this matter to auditors? Well, auditors use CO-bit. to assess the effectiveness of I-T controls. and to ensure I-T is supporting the organization's objectives. We're talking about risk management, resource optimization, and value delivery. all through the lens of I-T. It's the auditor's roadmap. for evaluating I-T governance.
 

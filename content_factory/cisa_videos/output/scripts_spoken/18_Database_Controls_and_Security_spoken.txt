@@ -1,4 +1,4 @@
-Database controls… and security. Nail this, and you’ll be closer to passing SEE-suh. Seriously.
+Database controls… and security. Nail this, and you’ll be closer to passing sisa. Seriously.
 
 So, what’s the core concept? We're talking database integrity, specifically referential integrity, and D-B-A controls. Referential integrity… ensures that relationships between tables in a database remain consistent. Think parent-child relationships. If a customer is deleted… all their associated orders should also be handled appropriately, either deleted or reassigned. Auditors care because a lack of referential integrity leads to data corruption… inaccurate reporting… and poor business decisions. It's about data reliability.
 
@@ -6,4 +6,4 @@ Now, the exam trap. eye-SAH-kah loves to test you on D-B-A access. The trap is�
 
 For example, when auditing… review the D-B-A's access rights matrix. Verify that they only have the necessary privileges to perform their duties… and that access to sensitive data is restricted and audited. Check for segregation of duties between development, testing, and production environments. Ensure change management controls are in place for D-B-A activities.
 
-The one thing to remember? Referential integrity maintains data relationships… and DBAs shouldn't have carte blanche access to sensitive data. Master this… and you’re ready to conquer the database security section of the SEE-suh exam. You got this.
+The one thing to remember? Referential integrity maintains data relationships… and DBAs shouldn't have carte blanche access to sensitive data. Master this… and you’re ready to conquer the database security section of the sisa exam. You got this.

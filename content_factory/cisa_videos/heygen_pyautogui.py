@@ -285,6 +285,7 @@ def run_batch(limit=None):
         context = p.chromium.launch_persistent_context(
             user_data_dir=str(user_data_dir),
             headless=False,
+            channel="chrome",  # Use installed Chrome, not Playwright's Chromium
             viewport={'width': 1920, 'height': 1080},
             args=['--start-maximized']
         )
@@ -350,6 +351,7 @@ def test_single():
         context = p.chromium.launch_persistent_context(
             user_data_dir=str(user_data_dir),
             headless=False,
+            channel="chrome",  # Use installed Chrome, not Playwright's Chromium
             viewport={'width': 1920, 'height': 1080},
             args=['--start-maximized']
         )

@@ -5,7 +5,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/01_Outsourcing.txt",
-    "script_preview": "Hey everyone, and welcome! Are you ready to tackle the CISA exam? <break time='0.5s' /> Because today, we're diving into a topic that trips up way too many people: outsourcing. <break time='1.0s' /> D...",
+    "script_preview": "Outsourcing... it's a guaranteed topic on the CISA exam, and misunderstanding it can cost you valuable points.\n\nOutsourcing is when an organization contracts with an external provider to perform speci...",
     "difficulty_score": 3.0
   },
   {
@@ -14,7 +14,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/02_Risk-Based_Audit_Planning.txt",
-    "script_preview": "Hey everyone, welcome back to the channel! You know, the CISA exam isn\u2019t a walk in the park. <break time='1.0s' /> A lot of really smart people stumble, especially when it comes to risk-based audit pl...",
+    "script_preview": "Risk-based audit planning\u2026 it\u2019s not just a section in the CISA exam; it\u2019s the foundation for efficient and effective audits. Miss this, and you\u2019re leaving crucial vulnerabilities exposed.\n\nRisk-based ...",
     "difficulty_score": 3.0
   },
   {
@@ -23,7 +23,16 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/03_Third-Party_Audits.txt",
-    "script_preview": "Hey everyone, and welcome! Did you know that third-party audits are consistently a stumbling block for CISA candidates? <break time='1.0s' /> Many get tripped up on the nuances of cloud auditing and o...",
+    "script_preview": "Hey CISA candidates\u2026 Cloud audits and outsourcing\u2026 get these wrong, and you risk failing. So let\u2019s nail it.\n\nWhat are third-party audits? Simply put, they\u2019re independent assessments of a service provi...",
+    "difficulty_score": 3.0
+  },
+  {
+    "id": "CISA-VIDEO-004",
+    "topic": "Physical Security Audit",
+    "domain": "CISA1",
+    "domain_name": "Information Systems Auditing Process",
+    "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/04_Physical_Security_Audit.txt",
+    "script_preview": "Physical security breaches can cripple a data center and instantly invalidate all your other security controls\u2026 making it a critical area for CISA candidates.\n\nA physical security audit of a data cent...",
     "difficulty_score": 3.0
   },
   {
@@ -32,7 +41,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/05_Fraud.txt",
-    "script_preview": "Hey everyone, and welcome! Did you know that fraud-related questions are a major stumbling block on the CISA exam? <break time='1.0s' /> It\u2019s not just about identifying fraud, it's about *what you do*...",
+    "script_preview": "Fraud response...knowing this could be the difference between passing and failing the CISA exam.\n\nFraud response, in the context of an IS audit, is the process an IS auditor undertakes when they suspe...",
     "difficulty_score": 3.0
   },
   {
@@ -41,7 +50,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/06_IT_General_Controls.txt",
-    "script_preview": "Hey everyone, welcome back to the channel! Did you know that a surprisingly large number of people fail the CISA exam, and it\u2019s often because they stumble on seemingly simple concepts like IT General ...",
+    "script_preview": "IT General Controls... get these right, and you're one HUGE step closer to passing the CISA exam. Trust me.\n\nIT General Controls, or ITGCs, are the foundation of any secure IT environment. They're the...",
     "difficulty_score": 3.0
   },
   {
@@ -50,7 +59,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/07_Cloud_Audit.txt",
-    "script_preview": "Hey everyone, welcome back to the channel! You know, the CISA exam can be brutal. <break time='1.0s' /> A lot of people struggle, and often it's not because they don't know the material, but because t...",
+    "script_preview": "Cloud audit\u2026 this is a MUST-KNOW area for the CISA exam, and understanding the cloud approach can be the difference between passing and failing. Let's get you ready.\n\nCloud auditing is examining and a...",
     "difficulty_score": 3.0
   },
   {
@@ -59,7 +68,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/08_Audit_Materiality.txt",
-    "script_preview": "Hey everyone, and welcome! Did you know that \"materiality\" is one of the biggest stumbling blocks for CISA candidates? <break time='1.0s' /> It\u2019s often underestimated, but mastering materiality judgme...",
+    "script_preview": "Audit Materiality... get this wrong, and kiss your CISA goodbye. It\u2019s a critical judgment call that ISACA loves to test.\n\nMateriality\u2026 simply put, it\u2019s the magnitude of an omission or misstatement in ...",
     "difficulty_score": 3.0
   },
   {
@@ -68,7 +77,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/09_Estimation.txt",
-    "script_preview": "Hey everyone, and welcome! <break time='0.5s' /> I'm here to help you conquer the CISA exam. Did you know that a significant number of people fail the Information Systems Auditing Process domain? <bre...",
+    "script_preview": "Hey CISA candidates\u2026 Mastering Function Points can be the difference between passing and failing the exam!\n\nFunction Point Analysis\u2026 it\u2019s a standardized method for estimating the size and complexity o...",
     "difficulty_score": 3.0
   },
   {
@@ -77,7 +86,7 @@
     "domain": "CISA1",
     "domain_name": "Information Systems Auditing Process",
     "script_file": "/workspaces/passcpa/content_factory/cisa_videos/output/scripts/10_System_Modeling.txt",
-    "script_preview": "Hey everyone, welcome back to the channel! <break time='1.0s' /> Feeling a little shaky about Data Flow Diagrams? You're not alone. DFDs are a surprisingly common stumbling block on the CISA exam, and...",
+    "script_preview": "Data Flow Diagrams... mastering them is crucial to passing the CISA exam because ISACA loves testing your understanding of how information flows through a system. Get this wrong, and you risk losing v...",
     "difficulty_score": 3.0
   }
 ]

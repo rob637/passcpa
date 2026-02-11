@@ -125,7 +125,7 @@ CISA_DOMAINS = {
 
 # Script template for video generation
 SCRIPT_PROMPT_TEMPLATE = """
-You are creating an 8-minute educational video script for CISA exam preparation.
+You are creating a focused 2-3 minute educational video script for CISA exam preparation.
 
 Topic: {topic}
 Domain: {domain_name}
@@ -134,40 +134,30 @@ Subtopic: {subtopic}
 Based on these challenging exam questions:
 {sample_questions}
 
-Create a comprehensive video script that:
+Create a CONCISE, high-impact video script that:
 
-1. HOOK (30 sec): Open with a compelling hook - exam failure rate, real-world consequence, or common mistake that costs people points
+1. HOOK (15 sec): One compelling statement - why this topic matters for the exam
 
-2. CONCEPT FOUNDATION (2 min): Explain the core concept clearly
-   - Define key terms
-   - Explain WHY this matters for auditors
-   - Connect to real-world IT audit scenarios
+2. CORE CONCEPT (45 sec): The essential definition and why auditors care
+   - One clear definition
+   - One real-world audit connection
 
-3. EXAM TRAPS (2 min): Detail 3-4 specific ways ISACA tricks candidates
-   - "Watch out for questions that..."
-   - "Don't confuse X with Y..."
-   - "The answer that LOOKS right but isn't..."
+3. EXAM TRAP (45 sec): The #1 way ISACA tricks candidates on this topic
+   - "The trap is..."
+   - "The correct answer is..."
 
-4. DEEP DIVE EXAMPLES (2 min): Walk through 1-2 specific scenarios
-   - "Let's say you're auditing a company that..."
-   - Show how to apply the concept step-by-step
+4. QUICK EXAMPLE (30 sec): One brief scenario showing application
+   - "For example, when auditing..."
 
-5. MEMORY TECHNIQUES (1 min): Provide memorable ways to retain this
-   - Mnemonic acronym
-   - Visual association
-   - "Think of it like..."
-
-6. KEY TAKEAWAYS (30 sec): Summarize the 3 things they MUST remember
-   - "If you remember nothing else..."
-   - End with confidence builder
+5. TAKEAWAY (15 sec): The ONE thing they must remember
+   - End with confidence
 
 Format for talking-head video:
-- Natural, conversational tone (like explaining to a colleague)
-- Use "..." for pauses between thoughts
-- Use natural punctuation for rhythm (periods, commas, dashes)
-- Target 1100-1300 words (about 8 minutes spoken at 150 wpm)
-- Vary sentence length for natural rhythm
-- Use "you" and "we" to engage the viewer
+- Direct and punchy - no fluff
+- Conversational but efficient
+- Use "..." for brief pauses
+- Target 350-450 words (2-3 minutes at 150 wpm)
+- Every sentence must add value
 - DO NOT use any special markup tags like <break> or SSML
 
 Return ONLY the script text, no headings or metadata.

@@ -162,11 +162,12 @@ Create a comprehensive video script that:
 
 Format for talking-head video:
 - Natural, conversational tone (like explaining to a colleague)
-- Include <break time='1.0s' /> for dramatic pauses and emphasis
-- Include <break time='0.5s' /> between sections
+- Use "..." for pauses between thoughts
+- Use natural punctuation for rhythm (periods, commas, dashes)
 - Target 1100-1300 words (about 8 minutes spoken at 150 wpm)
 - Vary sentence length for natural rhythm
 - Use "you" and "we" to engage the viewer
+- DO NOT use any special markup tags like <break> or SSML
 
 Return ONLY the script text, no headings or metadata.
 """

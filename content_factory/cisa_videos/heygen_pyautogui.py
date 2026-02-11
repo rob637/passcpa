@@ -79,6 +79,9 @@ COORDS = {
     
     # Generate button (top right, green button)
     "generate_button": (1380, 62),
+    
+    # Submit button (in generate dialog)
+    "submit_button": (1380, 500),
 }
 
 
@@ -108,6 +111,7 @@ def calibrate():
         ("layouts_button", "'Layouts' icon in right sidebar"),
         ("portrait_9_16", "Portrait 9:16 layout option"),
         ("generate_button", "the green 'Generate' button (top right)"),
+        ("submit_button", "the 'Submit' button in the generate dialog"),
     ]
     
     results = {}
@@ -255,6 +259,11 @@ def create_video(title, script_text, avatar_name, background_name=None):
     # Step 7: Click Generate
     logger.info("[STEP 7] Clicking Generate...")
     click("generate_button")
+    time.sleep(2)  # Wait for dialog
+    
+    # Step 8: Click Submit
+    logger.info("[STEP 8] Clicking Submit...")
+    click("submit_button")
     time.sleep(3)  # Wait for generation to start
     
     logger.info(f"[SUCCESS] Generated: {title}")

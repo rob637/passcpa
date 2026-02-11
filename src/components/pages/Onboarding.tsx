@@ -585,7 +585,7 @@ const Onboarding: React.FC = () => {
     Object.values(userProfile.onboardingCompleted).some(v => v === true)
   ) || Boolean(userProfile?.onboardingComplete);
 
-  // Check for pending course from registration flow (stored in localStorage)
+  // Check for pending course from registration flow or course-specific launch page
   // Priority: 1) localStorage pendingCourse, 2) CourseProvider courseId, 3) userProfile.activeCourse
   const getPendingCourse = (): CourseId | '' => {
     const pending = localStorage.getItem('pendingCourse');
@@ -598,6 +598,10 @@ const Onboarding: React.FC = () => {
     }
     return (userProfile?.activeCourse as CourseId) || '';
   };
+  
+  // Check if course was pre-selected (from launch page or registration)
+  // This should skip the course selection step
+  const hadPendingCourse = Boolean(localStorage.getItem('pendingCourse'));
 
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCourse, setSelectedCourse] = useState<CourseId | ''>(getPendingCourse());
@@ -606,9 +610,12 @@ const Onboarding: React.FC = () => {
   const [dailyGoal, setDailyGoal] = useState(50);
   const [studyPlan, setStudyPlan] = useState('balanced');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Track if course was pre-determined (skip course selection step)
+  const [skipCourseStep] = useState(isCourseSwitching || hadPendingCourse);
 
-  // Dynamic steps based on course type and whether switching
-  const steps = getStepsForCourse(selectedCourse, isCourseSwitching);
+  // Dynamic steps based on course type and whether course was pre-selected
+  const steps = getStepsForCourse(selectedCourse, skipCourseStep);
 
   // Auto-set section for single-exam courses (they study the whole exam)
   useEffect(() => {
@@ -739,7 +746,7 @@ const Onboarding: React.FC = () => {
   const renderStep = () => {
     switch (steps[currentStep].id) {
       case 'welcome':
-        return <WelcomeStep courseId={selectedCourse} isCourseSwitching={isCourseSwitching} />;
+        return <WelcomeStep courseId={selectedCourse} isCourseSwitching={skipCourseStep} />;
       case 'course':
         return <CourseStep selected={selectedCourse} onSelect={setSelectedCourse} />;
       case 'exam-date':

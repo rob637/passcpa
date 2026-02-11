@@ -293,6 +293,23 @@ class HeyGenAutomation:
                         # Landscape icons are wider than tall
                         logger.warning("[WARN] Could not find 16:9 button - check Layouts panel manually")
                     
+                    # Select "Avatar Only" layout to prevent head cropping
+                    avatar_only_selectors = [
+                        'text="Avatar Only"',
+                        '[aria-label*="Avatar Only"]',
+                        'img[alt*="Avatar Only"]',
+                    ]
+                    for selector in avatar_only_selectors:
+                        try:
+                            layout_btn = self.page.locator(selector).first
+                            if layout_btn and layout_btn.is_visible():
+                                layout_btn.click()
+                                logger.info("[OK] Selected 'Avatar Only' layout")
+                                time.sleep(1)
+                                break
+                        except:
+                            continue
+                    
                     # Click somewhere else to close the layouts panel
                     self.page.keyboard.press("Escape")
                     time.sleep(0.5)

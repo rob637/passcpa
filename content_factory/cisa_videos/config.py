@@ -73,12 +73,13 @@ FIREBASE_STORAGE_BUCKET = os.getenv("VITE_FIREBASE_STORAGE_BUCKET")
 BASE_DIR = os.path.dirname(__file__)
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 SCRIPTS_DIR = os.path.join(OUTPUT_DIR, "scripts")
+SCRIPTS_SPOKEN_DIR = os.path.join(OUTPUT_DIR, "scripts_spoken")  # Pronunciation-fixed for TTS
 VIDEOS_DIR = os.path.join(OUTPUT_DIR, "videos")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 BACKGROUNDS_ASSETS_DIR = os.path.join(ASSETS_DIR, "backgrounds")
 
 # Create directories
-for d in [OUTPUT_DIR, SCRIPTS_DIR, VIDEOS_DIR, ASSETS_DIR, BACKGROUNDS_ASSETS_DIR]:
+for d in [OUTPUT_DIR, SCRIPTS_DIR, SCRIPTS_SPOKEN_DIR, VIDEOS_DIR, ASSETS_DIR, BACKGROUNDS_ASSETS_DIR]:
     os.makedirs(d, exist_ok=True)
 
 def get_background_path(filename):

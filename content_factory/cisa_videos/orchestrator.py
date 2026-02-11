@@ -159,25 +159,26 @@ class CISAVideoPipeline:
     
     def load_existing_scripts(self, limit: int = 10):
         """Load pre-generated scripts as tasks (skip topic analysis)."""
-        from config import SCRIPTS_DIR, get_random_combo, get_background_path
+        from config import SCRIPTS_SPOKEN_DIR, get_random_combo, get_background_path
         
-        scripts_dir = Path(SCRIPTS_DIR)
+        scripts_dir = Path(SCRIPTS_SPOKEN_DIR)
         
-        # Find numbered scripts (01_Topic.txt, 02_Topic.txt, etc.)
-        script_files = sorted(scripts_dir.glob("[0-9][0-9]_*.txt"))[:limit]
+        # Find pronunciation-fixed scripts (01_Topic_spoken.txt, etc.)
+        script_files = sorted(scripts_dir.glob("[0-9][0-9]_*_spoken.txt"))[:limit]
         
         if not script_files:
-            self.logger.warning("[WARN] No pre-generated scripts found in output/scripts/")
-            self.logger.warning("       Run 'python generate_scripts.py --count 10' first")
+            self.logger.warning("[WARN] No scripts found in output/scripts_spoken/")
+            self.logger.warning("       Run script generation first")
             return
         
         # Clear existing tasks and create new ones from scripts
         self.state.tasks = []
         
         for i, script_file in enumerate(script_files, 1):
-            # Extract topic from filename: "01_Outsourcing.txt" -> "Outsourcing"
-            filename = script_file.stem  # "01_Outsourcing"
-            topic = filename[3:].replace('_', ' ')  # "Outsourcing"
+            # Extract topic from filename: "01_Outsourcing_spoken.txt" -> "Outsourcing"
+            filename = script_file.stem  # "01_Outsourcing_spoken"
+            # Remove "01_" prefix and "_spoken" suffix
+            topic = filename[3:].replace('_spoken', '').replace('_', ' ')
             
             # Assign random avatar + background
             combo = get_random_combo()

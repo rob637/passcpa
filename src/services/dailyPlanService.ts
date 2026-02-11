@@ -25,7 +25,7 @@ import {
 
 export interface DailyActivity {
   id: string;
-  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review' | 'essay' | 'cbq' | 'case_study';
+  type: 'lesson' | 'mcq' | 'tbs' | 'flashcards' | 'review' | 'essay' | 'cbq' | 'case_study' | 'timed_quiz' | 'mock_exam';
   title: string;
   description: string;
   estimatedMinutes: number;
@@ -44,6 +44,8 @@ export interface DailyActivity {
     questionCount?: number;
     difficulty?: string;
     mode?: string;
+    timeLimit?: number; // For timed quiz
+    examType?: 'mini' | 'full'; // For mock exam
   };
   completed?: boolean;
   completedAt?: string;
@@ -64,6 +66,8 @@ export interface DailyPlan {
     essayCount: number;
     cbqCount: number;
     caseStudyCount: number;
+    timedQuizCount: number;
+    mockExamCount: number;
     weakAreaFocus: string[];
   };
   generatedAt: string;
@@ -107,9 +111,12 @@ const ACTIVITY_DURATION = {
   mcq_20: 25,
   tbs: 20,
   flashcards: 10,
-  essay: 30,      // CMA essays are 30 mins each
-  cbq: 20,        // CMA CBQs are 15-20 mins each (effective Sept 2026)
-  case_study: 25, // CFP case studies
+  flashcards_new: 15,    // Learning new flashcards
+  essay: 30,             // CMA essays are 30 mins each
+  cbq: 20,               // CMA CBQs are 15-20 mins each (effective Sept 2026)
+  case_study: 25,        // CFP case studies
+  timed_quiz: 15,        // 10-15 question timed quiz
+  mock_exam_mini: 30,    // Mini mock (20-25 questions)
 };
 
 /**
@@ -264,17 +271,18 @@ export const generateDailyPlan = async (
       remainingMinutes -= ACTIVITY_DURATION.mcq_15;
   }
 
-  // 3. MEDIUM: Flashcard review if cards are due
-  if (state.flashcardsDue > 0 && remainingMinutes >= 10) {
+  // 3. MEDIUM: Flashcard review if cards are due (priority review)
+  // Note: We also add general flashcard practice in section 5d
+  if (state.flashcardsDue > 5 && remainingMinutes >= 10) {
     activities.push({
-      id: `flashcards-${today}`,
+      id: `flashcards-due-${today}`,
       type: 'flashcards',
-      title: 'Spaced Review',
-      description: `${state.flashcardsDue} cards due for review`,
+      title: 'Urgent Flashcard Review',
+      description: `${state.flashcardsDue} cards need review today`,
       estimatedMinutes: ACTIVITY_DURATION.flashcards,
       points: Math.min(state.flashcardsDue, 20) * POINT_VALUES.flashcard_review,
-      priority: 'medium',
-      reason: 'Spaced repetition - review before you forget',
+      priority: 'high', // Elevated to high when many cards due
+      reason: 'Spaced repetition - review these before you forget them',
       params: {
         section: state.section,
         mode: 'review',
@@ -545,6 +553,98 @@ export const generateDailyPlan = async (
     }
   }
   
+  // 5d. FLASHCARD PRACTICE - Always include flashcards for variety
+  // Add flashcards even if none are "due" - build the habit
+  const flashcardActivityExists = activities.some(a => a.type === 'flashcards');
+  if (!flashcardActivityExists && remainingMinutes >= 10) {
+    const flashcardsDueCount = state.flashcardsDue || 0;
+    const isReview = flashcardsDueCount > 0;
+    
+    activities.push({
+      id: `flashcards-${today}`,
+      type: 'flashcards',
+      title: isReview ? 'Flashcard Review' : 'Learn Flashcards',
+      description: isReview 
+        ? `${flashcardsDueCount} cards due for review`
+        : 'Build retention with spaced repetition',
+      estimatedMinutes: isReview ? ACTIVITY_DURATION.flashcards : ACTIVITY_DURATION.flashcards_new,
+      points: isReview 
+        ? Math.min(flashcardsDueCount, 20) * POINT_VALUES.flashcard_review
+        : 10 * POINT_VALUES.flashcard_review,
+      priority: isReview ? 'medium' : 'low',
+      reason: isReview 
+        ? 'Spaced repetition - review before you forget'
+        : 'Flashcards boost long-term retention for key concepts',
+      params: {
+        section: state.section,
+        mode: isReview ? 'review' : 'learn',
+      },
+    });
+    remainingMinutes -= isReview ? ACTIVITY_DURATION.flashcards : ACTIVITY_DURATION.flashcards_new;
+  }
+  
+  // 5e. TIMED QUIZ - Test under pressure periodically
+  // Add a timed quiz once every few days based on day of week
+  const dayOfWeek = new Date().getDay(); // 0-6
+  const shouldIncludeTimedQuiz = dayOfWeek === 2 || dayOfWeek === 5; // Tuesday & Friday
+  
+  if (shouldIncludeTimedQuiz && remainingMinutes >= 15) {
+    activities.push({
+      id: `timed-quiz-${today}`,
+      type: 'timed_quiz',
+      title: 'Timed Quiz',
+      description: '10 questions in 12 minutes - test under pressure',
+      estimatedMinutes: ACTIVITY_DURATION.timed_quiz,
+      points: 10 * MCQ_AVG_POINTS + 5, // Bonus for timed mode
+      priority: 'medium',
+      reason: 'Practice time management for exam conditions',
+      params: {
+        section: state.section,
+        questionCount: 10,
+        timeLimit: 12, // 12 minutes
+        mode: 'timed',
+      },
+    });
+    remainingMinutes -= ACTIVITY_DURATION.timed_quiz;
+  }
+  
+  // 5f. MOCK EXAM - Recommend periodically, more frequently as exam approaches
+  // Calculate days until exam for mock exam frequency
+  const daysUntilExam = state.examDate 
+    ? Math.ceil((new Date(state.examDate).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+    : null;
+  
+  // Mock exam frequency: 
+  // - 7+ days out: Once a week (Saturday)
+  // - 2-7 days out: Every other day
+  // - Final 2 days: Not recommended (rest and review)
+  const shouldRecommendMock = daysUntilExam !== null && daysUntilExam > 2 && (
+    (daysUntilExam > 7 && dayOfWeek === 6) || // Saturday for those 7+ days out
+    (daysUntilExam <= 7 && daysUntilExam > 2 && dayOfWeek % 2 === 0) // Every other day in final week
+  );
+  
+  if (shouldRecommendMock && remainingMinutes >= 30) {
+    activities.push({
+      id: `mock-exam-mini-${today}`,
+      type: 'mock_exam',
+      title: 'Mini Mock Exam',
+      description: '25 questions simulating exam conditions',
+      estimatedMinutes: ACTIVITY_DURATION.mock_exam_mini,
+      points: 25 * MCQ_AVG_POINTS + 20, // Good bonus for completing mock
+      priority: daysUntilExam <= 14 ? 'high' : 'medium',
+      reason: daysUntilExam <= 7 
+        ? `${daysUntilExam} days until exam - simulate test conditions`
+        : 'Practice full exam simulation to build confidence',
+      params: {
+        section: state.section,
+        questionCount: 25,
+        examType: 'mini',
+        mode: 'exam',
+      },
+    });
+    remainingMinutes -= ACTIVITY_DURATION.mock_exam_mini;
+  }
+  
   // 6. LOW: General practice if time remains
   if (remainingMinutes >= 10) {
     activities.push({
@@ -636,6 +736,8 @@ export const generateDailyPlan = async (
     essayCount: cappedActivities.filter(a => a.type === 'essay').length,
     cbqCount: cappedActivities.filter(a => a.type === 'cbq').length,
     caseStudyCount: cappedActivities.filter(a => a.type === 'case_study').length,
+    timedQuizCount: cappedActivities.filter(a => a.type === 'timed_quiz').length,
+    mockExamCount: cappedActivities.filter(a => a.type === 'mock_exam').length,
     weakAreaFocus: [...new Set(weakAreaFocus)],
   };
   

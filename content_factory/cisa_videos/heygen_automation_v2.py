@@ -197,6 +197,9 @@ class HeyGenAutomationV2:
                 if title_elem and title_elem.is_visible(timeout=3000):
                     title_elem.click()
                     time.sleep(0.3)
+                    # Select all existing text and replace
+                    self.page.keyboard.press("Control+a")
+                    time.sleep(0.1)
                     self.page.keyboard.type(title)
                     self.page.keyboard.press("Enter")
                     logger.info(f"[OK] Title set: {title}")
@@ -206,6 +209,7 @@ class HeyGenAutomationV2:
                 logger.warning(f"[WARN] Title error: {e}")
             
             time.sleep(0.5)
+            self.screenshot("02_title_set")
             
             # =========================================================
             # STEP 3: Paste script in the script input area
@@ -345,22 +349,47 @@ class HeyGenAutomationV2:
             
             self.screenshot("05_avatar_looks")
             
-            # SIMPLE: Just double-click on the first visible avatar image (outfit)
-            # No retries, no fallbacks - one attempt
+            # Double-click on an outfit image in the right panel
+            # The panel shows outfit thumbnails below "Replace avatar" button
             time.sleep(1)  # Wait for looks to load
             
             try:
-                # Find all visible images - the avatar outfit images
-                imgs = self.page.locator('img').all()
-                visible_imgs = [img for img in imgs if img.is_visible()]
+                # Look for images specifically in the right panel area
+                # These are the outfit thumbnails under the avatar name
+                outfit_selectors = [
+                    '[class*="look"] img',
+                    '[class*="outfit"] img', 
+                    '[class*="avatar"] [class*="card"] img',
+                    '[class*="thumbnail"] img',
+                    'img[src*="instant"]',
+                    'img[src*="avatar"]',
+                ]
                 
-                # Double-click the first visible outfit image
-                if visible_imgs:
-                    visible_imgs[0].dblclick()
-                    logger.info(f"[OK] Double-clicked avatar outfit")
-                    time.sleep(1)  # Brief wait for avatar to apply
-                else:
-                    logger.warning("[WARN] No avatar images visible")
+                outfit_clicked = False
+                for selector in outfit_selectors:
+                    try:
+                        imgs = self.page.locator(selector).all()
+                        for img in imgs:
+                            if img.is_visible():
+                                img.dblclick()
+                                logger.info(f"[OK] Double-clicked outfit via: {selector}")
+                                outfit_clicked = True
+                                time.sleep(2)  # Wait for avatar to apply
+                                break
+                    except:
+                        continue
+                    if outfit_clicked:
+                        break
+                
+                if not outfit_clicked:
+                    # Fallback: click "Replace avatar" button which applies the first look
+                    replace_btn = self.page.locator('text="Replace avatar"').first
+                    if replace_btn and replace_btn.is_visible():
+                        replace_btn.click()
+                        logger.info("[OK] Clicked Replace avatar button")
+                        time.sleep(2)
+                    else:
+                        logger.warning("[WARN] Could not select avatar outfit")
             except Exception as e:
                 logger.warning(f"[WARN] Avatar selection: {e}")
             

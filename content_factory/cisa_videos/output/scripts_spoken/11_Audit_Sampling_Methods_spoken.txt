@@ -1,6 +1,6 @@
-Statistical sampling... can be the difference between passing and failing the SEE-suh exam. Knowing it cold is key.
+Statistical sampling. can be the difference between passing and failing the SEE-suh exam. Knowing it cold is key.
 
-Statistical sampling is using mathematical techniques to select a subset of data… the sample… to evaluate the characteristics of the entire population. Auditors care because… it provides an objective, defensible way to assess control effectiveness… or identify errors… without reviewing every single transaction or record. It's about efficiency and reliability... giving us confidence in our findings.
+Statistical sampling is using mathematical techniques to select a subset of data… the sample… to evaluate the characteristics of the entire population. Auditors care because… it provides an objective, defensible way to assess control effectiveness… or identify errors… without reviewing every single transaction or record. It's about efficiency and reliability. giving us confidence in our findings.
 
 The trap is… eye-SAH-kah loves to test your understanding of when statistical sampling is appropriate versus other methods. They'll give you scenarios where statistical sampling seems like the obvious choice… but a judgmental sampling approach would be better. The correct answer is… statistical sampling is best when you need to project results to the entire population… and quantify the risk of being wrong. If you need highly specific… targeted insights… judgmental sampling might be more effective.
 

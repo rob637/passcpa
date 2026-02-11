@@ -1,9 +1,0 @@
-Cloud audit… this is a MUST-KNOW area for the CISA exam, and understanding the cloud approach can be the difference between passing and failing. Let's get you ready.
-
-Cloud auditing is examining and assessing the controls and processes of a cloud service provider… or a cloud consumer... depending on the audit scope. As auditors, we care because cloud environments introduce unique risks related to data security, compliance, and vendor management. We need to ensure organizations are adequately managing those risks in the cloud.
-
-The trap is... ISACA loves to test your understanding of shared responsibility. They'll present scenarios where the cloud provider handles *some* security aspects... but the *client* remains responsible for others. The correct answer is... always going to reflect a clear understanding of this shared responsibility model. Pay close attention to who owns what in the scenario. It's critical.
-
-For example, when auditing a company using AWS for data storage, you can't just assume AWS handles all data encryption. You need to verify if the *company*… the client… has implemented their own encryption methods *on top* of AWS's baseline security measures. Are they managing the keys properly? Are they compliant with industry regulations? That's the kind of detail ISACA expects you to consider.
-
-So, the one thing you MUST remember: Cloud auditing isn't about absolving the client of responsibility. It's about verifying the *client’s* controls are adequate, in *addition* to the provider's. Nail this, and you'll nail the cloud questions on the exam. You got this!

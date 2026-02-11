@@ -1,9 +1,0 @@
-Outsourcing... it's a guaranteed topic on the SEE-suh exam, and misunderstanding it can cost you valuable points.
-
-Outsourcing is when an organization contracts with an external provider to perform specific I-T functions or processes... like data storage or application development. Auditors care because outsourcing doesn't remove responsibility. The organization remains accountable for security, compliance, and overall performance, even when a third party is involved. We need to verify those controls are in place... and effective.
-
-The trap is... focusing solely on cost savings or technical expertise when evaluating outsourcing decisions. eye-SAH-kah loves to present options that highlight these benefits. The correct answer is... always the one that emphasizes maintaining control and oversight. Think about risk management and governance first. Cost and expertise are secondary considerations. Remember, you’re auditing the organization’s responsibility, not the vendor's ability to deliver cheap or cutting-edge tech.
-
-For example, when auditing a company that outsourced its cloud infrastructure, don’t just check the Service Level Agreement. Dig deeper. Verify the organization has implemented procedures to monitor the vendor's security practices, that they conduct regular audits of the vendor's environment, and that they have a plan for data recovery in case of a vendor outage. Focus on the organization’s controls surrounding the outsourcing relationship.
-
-The one thing to remember? Outsourcing doesn't eliminate responsibility. Always prioritize control and oversight! You got this.

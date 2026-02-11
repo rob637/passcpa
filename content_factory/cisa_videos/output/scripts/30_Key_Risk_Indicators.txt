@@ -1,0 +1,11 @@
+Okay, here's the script:
+
+Hey CISA candidates… understanding Key Risk Indicators, or KRIs, is crucial… because ISACA *loves* to test your ability to differentiate them from Key Performance Indicators. Master this, and you'll grab easy points.
+
+So, what are KRIs? They're metrics… that signal an *increased* probability of a risk event occurring. Think of them as early warning signs. As IS auditors, we care because KRIs allow us to proactively identify… and mitigate… potential problems before they impact the organization. We use them to assess the effectiveness of controls... and to determine if additional audit procedures are needed. This helps us provide assurance that risk management processes are working… *before* a major incident.
+
+Now, here's the trap… ISACA will try to trick you by presenting scenarios… where KRIs are confused with KPIs. The trap is… focusing solely on performance *outcomes* rather than *leading indicators* of risk. A KPI might be… "99.9% system uptime." That's great performance! But a KRI might be… "A 20% increase in failed login attempts in the last week." The correct answer is… always the one that points to an *increased likelihood* of a *negative* event. KRIs are forward-looking… KPIs are often backward-looking.
+
+For example, when auditing a company's data security… a *low* number of customer complaints about data breaches… could be a KPI indicating good performance. But… a *high* number of unpatched vulnerabilities… identified during regular scans… that's a KRI… signaling increased risk of a data breach. We need to focus on that KRI… and investigate the patching process.
+
+Your takeaway? Remember… KRIs are about *risk*, not just *performance*. Focus on identifying those leading indicators… and you'll ace those KRI questions on the CISA exam! You got this!

@@ -1,0 +1,9 @@
+Access control models…nailing this topic is crucial for passing the SEE-suh exam. Trust me on this.
+
+So, what are access control models? Simply put, they're the frameworks that dictate who can access what resources. Think of them as the rulebooks governing your organization's digital kingdom. Now, from an auditor's perspective, these models are vital for ensuring confidentiality, integrity, and availability. We need to verify that the right people have the right access…and that unauthorized access is prevented. Because a weak access control model? It's a compliance nightmare waiting to happen.
+
+The number one way eye-SAH-kah tries to trip you up? By blurring the lines between Mandatory Access Control, or M-A-C, and Discretionary Access Control, or D-A-C. The trap is…they’ll describe a scenario where access is based on sensitivity labels, then ask which model is in use. You might be tempted to say D-A-C, because individuals seem to have some control. But the correct answer is M-A-C. Remember, M-A-C uses labels…and those labels are centrally managed by the system, not by individual users. D-A-C, on the other hand, allows data owners to grant access at their discretion. Big difference.
+
+For example, when auditing a government agency, you might find that classified documents are governed by a M-A-C model. Access is based strictly on security clearances and data sensitivity levels, not on individual preferences. This ensures that only authorized personnel can view sensitive information, regardless of their personal opinions. Conversely, in a small business, shared folders might be managed using D-A-C, where the folder owner decides who gets access.
+
+Your key takeaway? M-A-C uses labels, D-A-C grants discretion, and R-back… Role Based Access Control…assigns permissions based on job function. Master this, and you're well on your way to acing the SEE-suh exam!

@@ -1,0 +1,9 @@
+Change management... is a SEE-suh exam killer if you don't nail it. Let's make sure you do.
+
+Change management... is about minimizing risk when modifying I-T systems. It's a formal process... ensuring changes are properly authorized, tested, and implemented... with minimal disruption. Think of it as... controlled chaos. Auditors care because... poor change management leads to outages, security breaches, and non-compliance. If a company can't prove they're managing changes effectively... that's a major finding. We're looking for documented processes... segregation of duties... and post-implementation reviews.
+
+The trap is... eye-SAH-kah loves to present several plausible options... all related to change management. They might ask about the PRIMARY purpose... and offer choices like 'improving efficiency' or 'reducing costs.' While those are benefits... the PRIMARY purpose is always... risk mitigation. Emergency changes are another favorite. They'll try to trick you into thinking emergency changes bypass ALL controls. The correct answer is... emergency changes should still be documented and reviewed... even if some steps are expedited. Authorization is still key... even if it's after the fact.
+
+For example, when auditing a recent system upgrade... you find no record of user acceptance testing. The change was implemented... but users immediately reported issues. This is a red flag... indicating a breakdown in the change management process... specifically, the testing phase. This lack of testing... directly increased business risk.
+
+The ONE thing to remember... change management is about risk. Prioritize risk mitigation... and you'll ace those questions. Go get that SEE-suh!

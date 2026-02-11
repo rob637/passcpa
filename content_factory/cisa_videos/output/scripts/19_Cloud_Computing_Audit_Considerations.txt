@@ -1,0 +1,13 @@
+Cloud auditing… can be a nightmare on the CISA exam. But nail this, and you’ll be golden.
+
+So, what *is* cloud computing? It’s on-demand access to computing resources – servers, storage, databases – over the internet. Think of it like renting, instead of buying, your IT infrastructure. As an auditor, you care because traditional, on-premise security controls often *don't* translate directly to the cloud. You need to understand who’s responsible for *what*.
+
+That brings us to the shared responsibility model. It's critical. The cloud provider handles the security *of* the cloud, like the physical infrastructure. You, the customer, are responsible for security *in* the cloud. This includes your data, applications, identity management, and operating systems, depending on the cloud service model.
+
+Now, here’s the ISACA trap. They love to blur the lines between IaaS, PaaS, and SaaS. For example, a common question asks: "In IaaS, the customer is responsible for…" The trap answer is often something vague like "overall security." The *correct* answer is more specific: "managing the operating system." IaaS gives you the *most* control, so you're responsible for more. Remember: IaaS = You manage the OS. PaaS = you manage the applications. SaaS = the provider manages almost everything.
+
+Cloud audit challenges also come up frequently. They'll ask about things like data residency, vendor lock-in, and regulatory compliance. The trick is to remember the cloud provider may be located in a different jurisdiction with different laws. The trap is focusing only on *your* organization's compliance requirements.
+
+For example, when auditing a SaaS application like Salesforce, you need to verify *their* security certifications, like SOC 2, and confirm that their data privacy policies align with regulations like GDPR if you’re processing EU citizen data. You also need to audit your *own* configuration of Salesforce.
+
+The one thing you *must* remember? Shared responsibility. Understand *who* is responsible for *what* in each cloud model. Nail that, and you’re one step closer to passing the CISA exam. You got this!

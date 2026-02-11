@@ -1,0 +1,9 @@
+Hey CISA candidates, ready to tackle the IT Steering Committee? Nail this, and you’ll boost your exam score.
+
+What is the IT Steering Committee? It’s a high-level group responsible for aligning IT strategy with business objectives... ensuring IT investments deliver value. Auditors care deeply, because a well-functioning committee means stronger IT governance and risk management. Think about it...a weak committee equals weak controls and potential audit findings.
+
+Now, here’s the exam trap. ISACA loves to present options focusing solely on technical expertise when defining committee composition. The trap is thinking it’s all about CIOs and tech leads. The correct answer is... a diverse group including business stakeholders, senior management, and *then* IT representatives. Remember, it’s about business alignment FIRST. ISACA also likes to blur lines on responsibilities... making it seem like the committee *implements* IT projects. No! They *oversee* and *prioritize*.
+
+For example, when auditing a new ERP system implementation, check if the IT Steering Committee approved the project charter, reviewed progress reports, and ensured business units were actively involved. This demonstrates effective oversight, not just IT pushing a project.
+
+Your one takeaway? The IT Steering Committee is about business-driven IT governance... not just technical management. Master that, and you've got this!

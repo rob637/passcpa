@@ -1,9 +1,0 @@
-Data Flow Diagrams... mastering them is crucial to passing the CISA exam because ISACA loves testing your understanding of how information flows through a system. Get this wrong, and you risk losing valuable points!
-
-So, what exactly *is* a Data Flow Diagram? Think of it as a visual map... a blueprint showing how data moves through a system. It highlights the processes, data stores, external entities, and the data flowing *between* them. As auditors, we care because DFDs help us understand system boundaries, identify potential control weaknesses, and trace data for compliance... ensuring integrity and security.
-
-Now, here's the ISACA trap: They often present DFDs with *incorrect* levels of detail or misleading symbols. The trap is... they’ll show a diagram focusing on *physical* components like servers or specific software. That's wrong! DFDs are all about the *logical* flow of data, not the hardware or software doing the work. The correct answer is always the option describing the *data movement* and *transformations*, irrespective of the technical implementation. Remember, focus on the "what" and "why," not the "how."
-
-For example, when auditing a purchase order system... a correct DFD shows how the PO data flows from the customer, through order processing, to the warehouse and finally to accounting. It doesn't detail the specific database servers used at each step. We look for missing data flows... inadequate validation points… or unsecured data stores revealed by the DFD to identify control gaps.
-
-The key takeaway? DFDs are about *logical* data flow, not physical implementation. Understand the symbols and focus on the data's journey... and you'll ace those CISA questions!

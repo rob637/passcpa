@@ -23,7 +23,7 @@ HEYGEN_PASSWORD = os.getenv("HEYGEN_PASSWORD")
 # =============================================================================
 AVATARS = [
     {"id": "Freja", "name": "Sarah", "gender": "female", "look": "Freja Front"},
-    {"id": "Tahlia", "name": "Emma", "gender": "female", "look": "Tahlia Front"},
+    {"id": "Zosia", "name": "Emma", "gender": "female", "look": "Zosia Front"},
     {"id": "Bruce", "name": "David", "gender": "male", "look": "Bruce Front"},
     {"id": "Esmond", "name": "Marcus", "gender": "male", "look": "Esmond Front"},
 ]

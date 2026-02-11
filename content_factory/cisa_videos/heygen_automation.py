@@ -237,23 +237,43 @@ class HeyGenAutomation:
             logger.info(f"[DEBUG] After AI studio click: {debug_path}")
             
             # Select the specified avatar
-            # The avatar panel is on the right side - click on the avatar name to open selection
+            # Flow: Click "Replace avatar" -> Click "Public Avatars" tab -> Search for avatar -> Click it
             try:
-                # Look for the Avatar section and click to open avatar picker
-                avatar_section = self.page.locator('text="Avatar"').first
-                if avatar_section:
-                    avatar_section.click()
+                # Click "Replace avatar" button or the avatar section to open picker
+                replace_btn = self.page.locator('text="Replace avatar"').first
+                if replace_btn:
+                    replace_btn.click()
+                else:
+                    # Try clicking on avatar name (e.g., "Annie")
+                    self.page.locator('[class*="avatar"]').first.click()
+                time.sleep(1)
+                
+                # Click "Public Avatars" tab
+                public_tab = self.page.locator('text="Public Avatars"').first
+                if public_tab:
+                    public_tab.click()
                     time.sleep(1)
+                
+                # Use the search box to find our avatar
+                search_box = self.page.locator('input[placeholder*="Search"]').first
+                if search_box:
+                    search_box.click()
+                    search_box.fill(avatar_to_use)
+                    time.sleep(2)  # Wait for search results
+                
+                # Click on the avatar in search results
+                avatar_option = self.page.locator(f'text="{avatar_to_use}"').first
+                if avatar_option:
+                    avatar_option.click()
+                    time.sleep(2)
+                    logger.info(f"[OK] Selected avatar: {avatar_to_use}")
                     
-                    # Now search/select the specific avatar
-                    # Try to find the avatar by name in the picker
-                    avatar_option = self.page.locator(f'text="{avatar_to_use}"').first
-                    if avatar_option:
-                        avatar_option.click()
-                        time.sleep(1)
-                        logger.info(f"[OK] Selected avatar: {avatar_to_use}")
-                    else:
-                        logger.warning(f"[WARN] Avatar '{avatar_to_use}' not found, using default")
+                    # Debug screenshot after avatar selection
+                    debug_avatar = Path(__file__).parent / "output" / f"debug_after_avatar_{int(time.time())}.png"
+                    self.page.screenshot(path=str(debug_avatar))
+                else:
+                    logger.warning(f"[WARN] Avatar '{avatar_to_use}' not found in search")
+                    
             except Exception as e:
                 logger.warning(f"[WARN] Could not select avatar: {e}")
             
@@ -358,28 +378,41 @@ class HeyGenAutomation:
             self.page.screenshot(path=str(debug_path4))
             logger.info(f"[DEBUG] After Submit: {debug_path4}")
             
-            # Wait for video to be queued - page may redirect or show success message
+            # Wait for video to be queued
             time.sleep(5)
             
-            # Try to extract video ID from URL or page
-            video_id = self._extract_video_id()
+            # Navigate to projects page to find the new video ID
+            self.page.goto(f"{self.BASE_URL}/projects", timeout=60000)
+            time.sleep(3)
             
-            # Also look for success message that contains video ID
+            # The most recent video should be first - look for video cards
+            # The video ID is usually in the URL when you click on a video
+            video_id = None
+            
+            # Try to get the first video card's link/ID
+            try:
+                # Look for video card links that contain video ID
+                first_video = self.page.locator('a[href*="/video/"]').first
+                if first_video:
+                    href = first_video.get_attribute('href')
+                    if href and '/video/' in href:
+                        # Extract ID from URL like /video/ABCD1234
+                        video_id = href.split('/video/')[-1].split('?')[0].split('/')[0]
+                        logger.info(f"[OK] Found video ID from projects: {video_id}")
+            except Exception as e:
+                logger.warning(f"Could not extract video ID from projects: {e}")
+            
+            # Fallback: Try the original extraction method
             if not video_id:
-                success_msg = self.page.query_selector('text=/video.*queued|generating|submitted/i')
-                if success_msg:
-                    logger.info("[OK] Video generation started (success message found)")
-                    # Use timestamp as fallback ID
-                    video_id = f"heygen_{int(time.time())}"
+                video_id = self._extract_video_id()
             
-            if video_id:
-                logger.info(f"[OK] Video queued with ID: {video_id}")
-                return video_id
-            else:
-                # Generate a timestamp-based ID as fallback
+            # Final fallback: use timestamp
+            if not video_id:
                 video_id = f"heygen_{int(time.time())}"
                 logger.warning(f"[WARN] Could not extract video ID, using: {video_id}")
-                return video_id
+            
+            logger.info(f"[OK] Video queued with ID: {video_id}")
+            return video_id
                 
         except Exception as e:
             logger.error(f"[ERROR] Failed to create video: {e}")

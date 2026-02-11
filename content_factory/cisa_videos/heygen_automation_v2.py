@@ -187,9 +187,30 @@ class HeyGenAutomationV2:
             self._dismiss_popups()
             
             # =========================================================
-            # STEP 2: Paste script in the script input area
+            # STEP 2: Set video title (single click on "Untitled Video")
             # =========================================================
-            logger.info("[STEP 2] Pasting script...")
+            logger.info("[STEP 2] Setting video title...")
+            
+            try:
+                # Single click on "Untitled Video" text to make it editable
+                title_elem = self.page.locator('text="Untitled Video"').first
+                if title_elem and title_elem.is_visible(timeout=3000):
+                    title_elem.click()
+                    time.sleep(0.3)
+                    self.page.keyboard.type(title)
+                    self.page.keyboard.press("Enter")
+                    logger.info(f"[OK] Title set: {title}")
+                else:
+                    logger.warning("[WARN] Could not find Untitled Video text")
+            except Exception as e:
+                logger.warning(f"[WARN] Title error: {e}")
+            
+            time.sleep(0.5)
+            
+            # =========================================================
+            # STEP 3: Paste script in the script input area
+            # =========================================================
+            logger.info("[STEP 3] Pasting script...")
             script_pasted = False
             
             # The script area is in the left panel under "Script" header
@@ -255,34 +276,10 @@ class HeyGenAutomationV2:
             
             if not script_pasted:
                 logger.warning("[WARN] Could not paste script - please paste manually")
-                self.screenshot("02_script_paste_failed")
+                self.screenshot("03_script_paste_failed")
             else:
                 time.sleep(1)
-                self.screenshot("02_script_pasted")
-            
-            # =========================================================
-            # STEP 3: Set video title (single click on "Untitled Video")
-            # =========================================================
-            logger.info("[STEP 3] Setting video title...")
-            title_set = False
-            
-            try:
-                # Single click on "Untitled Video" text to make it editable
-                title_elem = self.page.locator('text="Untitled Video"').first
-                if title_elem and title_elem.is_visible(timeout=3000):
-                    title_elem.click()
-                    time.sleep(0.3)
-                    # Now type the new title (it should replace the selected text)
-                    self.page.keyboard.type(title)
-                    self.page.keyboard.press("Enter")
-                    logger.info(f"[OK] Title set: {title}")
-                    title_set = True
-                else:
-                    logger.warning("[WARN] Could not find Untitled Video text")
-            except Exception as e:
-                logger.warning(f"[WARN] Title error: {e}")
-            
-            time.sleep(0.5)
+                self.screenshot("03_script_pasted")
             
             # =========================================================
             # STEP 4: Click on avatar in main video, then click "Change avatar"
@@ -348,95 +345,51 @@ class HeyGenAutomationV2:
             
             self.screenshot("05_avatar_looks")
             
-            # Double-click on one of Freja's outfit/look images to select it
-            # The looks panel shows multiple outfit images in a grid - we need to double-click one
-            look_found = False
+            # SIMPLE: Just double-click on the first visible avatar image (outfit)
+            # No retries, no fallbacks - one attempt
+            time.sleep(1)  # Wait for looks to load
             
-            # Wait a moment for looks to load
-            time.sleep(1)
-            
-            # The looks panel header shows avatar name (e.g., "Freja")
-            # Below it is "Replace avatar" button
-            # Below that are the outfit images in a grid
-            
-            # Try to find images in the avatar looks panel
-            # The panel is on the right side after clicking avatar name
-            look_selectors = [
-                f'img[alt*="{avatar_name}"]',  # Images with avatar name in alt
-                f'img[title*="{avatar_name}"]',
-                'img[src*="heygen"]',  # HeyGen CDN images
-                'img[src*="cdn"]',
-                'img[src*="photo"]',
-                'img[src*="instant"]',
-                'img[src*="avatar"]',
-            ]
-            
-            for selector in look_selectors:
-                try:
-                    looks = self.page.locator(selector).all()
-                    # Filter to only visible images
-                    visible_looks = [l for l in looks if l.is_visible()]
-                    if len(visible_looks) >= 2:  # Multiple looks available
-                        # Double-click the first visible look
-                        visible_looks[0].dblclick()
-                        logger.info(f"[OK] Double-clicked look via: {selector} (found {len(visible_looks)})")
-                        look_found = True
-                        time.sleep(2)  # Wait for avatar to apply
-                        break
-                except Exception as e:
-                    continue
-            
-            # Fallback: use coordinates - in the looks panel, first image is near top-right
-            if not look_found:
-                try:
-                    # Find "Replace avatar" button and click below it where looks should be
-                    replace_btn = self.page.locator('text="Replace avatar"').first
-                    if replace_btn and replace_btn.is_visible():
-                        # Get bounding box and click 50px below it (where first look should be)
-                        box = replace_btn.bounding_box()
-                        if box:
-                            click_x = box['x'] + 50
-                            click_y = box['y'] + 100  # Below the button
-                            self.page.mouse.dblclick(click_x, click_y)
-                            logger.info(f"[OK] Double-clicked at coordinates ({click_x}, {click_y})")
-                            look_found = True
-                            time.sleep(2)
-                except Exception as e:
-                    logger.warning(f"[WARN] Coordinate click failed: {e}")
-            
-            if not look_found:
-                logger.warning("[WARN] Could not select avatar look - try manually")
+            try:
+                # Find all visible images - the avatar outfit images
+                imgs = self.page.locator('img').all()
+                visible_imgs = [img for img in imgs if img.is_visible()]
+                
+                # Double-click the first visible outfit image
+                if visible_imgs:
+                    visible_imgs[0].dblclick()
+                    logger.info(f"[OK] Double-clicked avatar outfit")
+                    time.sleep(1)  # Brief wait for avatar to apply
+                else:
+                    logger.warning("[WARN] No avatar images visible")
+            except Exception as e:
+                logger.warning(f"[WARN] Avatar selection: {e}")
             
             self.screenshot("06_avatar_selected")
             
             # =========================================================
-            # STEP 5: Set Motion Engine to Avatar IV (Premium)
+            # STEP 5: Set Motion Engine to Avatar III
             # =========================================================
-            logger.info("[STEP 5] Setting Motion Engine...")
+            logger.info("[STEP 5] Setting Motion Engine to Avatar III...")
             
-            # After selecting avatar outfit, the right panel shows Motion Engine dropdown
-            # Click on it to expand and select Avatar IV
             try:
-                # Click the Motion Engine dropdown (shows "Avatar III" or "Avatar IV")
+                # Click whatever Motion Engine is currently shown to open dropdown
                 motion_clicked = self.wait_and_click(
                     [
-                        'text="Avatar III"',  # Current selection
-                        'text="Avatar IV"',
-                        '[class*="motion"] button',
-                        '[class*="Motion"] [role="button"]',
+                        'text="Avatar IV"',  # If IV is showing
+                        'text="Avatar III"', # If III is showing  
                     ],
                     "Click Motion Engine dropdown"
                 )
                 
                 if motion_clicked:
                     time.sleep(0.5)
-                    # Select Avatar IV (Premium)
+                    # Select Avatar III
                     self.wait_and_click(
-                        ['text="Avatar IV"'],
-                        "Select Avatar IV"
+                        ['text="Avatar III"'],
+                        "Select Avatar III"
                     )
                     time.sleep(0.5)
-                    logger.info("[OK] Motion Engine set to Avatar IV")
+                    logger.info("[OK] Motion Engine set to Avatar III")
             except Exception as e:
                 logger.warning(f"[WARN] Motion Engine: {e}")
             
@@ -478,33 +431,17 @@ class HeyGenAutomationV2:
                     time.sleep(1)
                     self.screenshot("08_uploads_tab")
                     
-                    # Click on any visible image in the uploads area (our background should be there)
-                    bg_found = False
-                    
-                    # Look for uploaded images
-                    upload_selectors = [
-                        'img[src*="upload"]',
-                        'img[src*="heygen"]',
-                        'img[src*="cdn"]',
-                        '[class*="upload"] img',
-                        '[class*="thumbnail"] img',
-                    ]
-                    
-                    for selector in upload_selectors:
-                        try:
-                            imgs = self.page.locator(selector).all()
-                            visible_imgs = [img for img in imgs if img.is_visible()]
-                            if visible_imgs:
-                                # Click the first uploaded image
-                                visible_imgs[0].click()
-                                logger.info(f"[OK] Clicked uploaded background via: {selector}")
-                                bg_found = True
-                                break
-                        except:
-                            continue
-                    
-                    if not bg_found:
-                        logger.warning("[WARN] Could not find uploaded background")
+                    # DOUBLE-CLICK on uploaded background image
+                    try:
+                        imgs = self.page.locator('img').all()
+                        visible_imgs = [img for img in imgs if img.is_visible()]
+                        if visible_imgs:
+                            visible_imgs[0].dblclick()
+                            logger.info("[OK] Double-clicked background image")
+                        else:
+                            logger.warning("[WARN] No background images visible")
+                    except Exception as e:
+                        logger.warning(f"[WARN] Background: {e}")
                     
                     time.sleep(1)
                     self.screenshot("09_background_selected")

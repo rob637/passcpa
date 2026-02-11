@@ -29,9 +29,13 @@ AVATARS = [
 ]
 
 # =============================================================================
-# BACKGROUND POOL - 4 simple branded backgrounds
-# These are static files, created once
+# BACKGROUND SETTINGS
+# Using HeyGen's built-in professional studio backgrounds
+# These look more credible than custom solid colors
 # =============================================================================
+USE_DEFAULT_STUDIO_BACKGROUND = True  # Let HeyGen use its default studio setting
+
+# Legacy custom backgrounds (not currently used)
 BACKGROUNDS = [
     "background_blue_gradient.png",
     "background_teal_solid.png",
@@ -39,7 +43,7 @@ BACKGROUNDS = [
     "background_light_modern.png",
 ]
 
-# Brand colors
+# Brand colors (for future use)
 BRAND_COLORS = {
     "primary_blue": "#1e40af",
     "primary_teal": "#0d9488",

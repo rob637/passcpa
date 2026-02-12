@@ -1,9 +1,0 @@
-Business Impact Analysis... Nail this, and you'll nail the exam. Seriously.
-
-So, what's a B-I-A? It's a process... to identify and evaluate the potential effects of disruptions to an organization's critical business functions. Think of it as a financial autopsy... before the business even gets sick. Auditors care because... a solid B-I-A is the foundation for disaster recovery, business continuity, and overall resilience. We need to verify it's thorough and accurate... to protect the organization's assets.
-
-Now, here's the trap... eye-SAH-kah loves to mix up when R-T-O and R-P-O are determined. The trap is... assuming they're only identified after an incident. Nope! The correct answer is... R-T-O and R-P-O are determined during the B-I-A process. This is where we analyze business needs... and decide how quickly we need to recover and how much data loss we can tolerate. The B-I-A identifies the impact... and determines the R-T-O and R-P-O before disaster strikes.
-
-For example, when auditing a hospital... the B-I-A would identify that patient records are critical. The R-T-O might be minutes... meaning records must be available almost immediately after an outage. The R-P-O might be near zero... meaning minimal data loss is acceptable. This drives the recovery strategy... and the resources needed.
-
-The single most important thing to remember? B-I-A identifies impact... and determines R-T-O and R-P-O... before an incident. Get that straight... and you're one step closer to passing the sissa.

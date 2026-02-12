@@ -1,9 +1,0 @@
-Software licensing compliance... it's not just about avoiding fines; it's a critical control auditors MUST understand for the sissa exam.
-
-So, what is software licensing compliance? ... It's ensuring an organization's software usage aligns with the terms and conditions stipulated by the software vendor... Auditors care because non-compliance exposes the organization to legal repercussions, financial penalties, and security vulnerabilities... Think pirated software lacking crucial security patches.
-
-Now, here's the exam trap... eye-SAH-kah loves to present scenarios where you must differentiate between different license types... They'll give you options like perpetual, subscription, or concurrent... and then ask you to identify the BEST audit procedure to verify compliance. The trap is focusing solely on the number of installations... The correct answer is ALWAYS the one that considers USAGE... not just installation... you need to analyze actual active users against the license agreement terms.
-
-For example, when auditing a company using a concurrent license for its engineering software... don't just count the installs on employee laptops... Analyze the logs to see how many engineers are using the software SIMULTANEOUSLY at peak times... and compare that to the number of concurrent licenses purchased... Are they consistently exceeding the permitted limit? That's a compliance breach.
-
-The key takeaway? Software license audits aren't just about counting copies... they're about verifying USAGE aligns with the license agreement... Master this, and you're one step closer to passing the sissa!

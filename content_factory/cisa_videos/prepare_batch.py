@@ -13,6 +13,8 @@ import os
 import csv
 import json
 import re
+import sys
+import glob
 from pathlib import Path
 
 # Avatar rotation config - matches OUTFIT_COORDS in heygen_pyautogui.py
@@ -40,6 +42,7 @@ CSV_FILES = [
     "phase3_batch1.csv",
     "phase3_batch2.csv",
     "phase3_batch3.csv",
+    "phase4_gaps.csv",  # Gap coverage videos
 ]
 
 SCRIPT_DIR = Path(__file__).parent
@@ -56,13 +59,28 @@ def sanitize_filename(title):
 
 
 def main():
+    fresh_start = "--fresh" in sys.argv
+    
     # Ensure directories exist
     OUTPUT_DIR.mkdir(exist_ok=True)
     SCRIPTS_DIR.mkdir(exist_ok=True)
     
-    # Load existing video matrix to append to it
     matrix_file = OUTPUT_DIR / "video_matrix.json"
-    if matrix_file.exists():
+    
+    if fresh_start:
+        # Clear existing scripts and start fresh
+        print("=" * 60)
+        print("FRESH START - Clearing existing videos and scripts")
+        print("=" * 60)
+        for old_script in SCRIPTS_DIR.glob("*.txt"):
+            old_script.unlink()
+        video_matrix = []
+        video_num = 1
+        avatar_idx = 0
+        look_idx = 0
+        bg_idx = 0
+    elif matrix_file.exists():
+        # Load existing to append
         with open(matrix_file, "r") as f:
             video_matrix = json.load(f)
         video_num = len(video_matrix) + 1
@@ -90,11 +108,12 @@ def main():
         with open(csv_path, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                video_id = row.get("ID", f"VIDEO-{video_num:03d}")
-                title = row.get("Title", "Untitled")
-                script = row.get("Script", "")
-                duration = row.get("Duration", "10")
-                video_type = row.get("Type", "concept")
+                # Support both column name formats
+                video_id = row.get("ID") or row.get("video_id") or f"VIDEO-{video_num:03d}"
+                title = row.get("Title") or row.get("topic") or "Untitled"
+                script = row.get("Script") or row.get("script") or ""
+                duration = row.get("Duration") or row.get("duration") or "10"
+                video_type = row.get("Type") or row.get("type") or "concept"
                 
                 # Get current avatar and look
                 avatar = AVATAR_ROTATION[avatar_idx]

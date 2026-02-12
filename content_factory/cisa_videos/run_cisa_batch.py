@@ -3,28 +3,37 @@
 CISA Video Generation Runner
 Processes all CISA video CSV files through HeyGen automation.
 
+Uses the established avatar/background pool from config.py:
+- 4 Avatars: Freja (Sarah), Zosia (Emma), Jinwoo (James), Esmond (Marcus)
+- 4 Backgrounds: Corporate blue, modern teal, slate gray, executive dark
+
 Usage:
     python run_cisa_batch.py [--phase PHASE] [--batch BATCH] [--all] [--status]
 
 Examples:
-    python run_cisa_batch.py --all                 # Run all phases
-    python run_cisa_batch.py --phase 1             # Run Phase 1 only
-    python run_cisa_batch.py --phase 2 --batch 1   # Run Phase 2 Batch 1 only
-    python run_cisa_batch.py --status              # Check status of all batches
+    python run_cisa_batch.py --status                 # Check what's ready
+    python run_cisa_batch.py --dry-run --all          # Preview without running
+    python run_cisa_batch.py --all                    # Generate everything
+    python run_cisa_batch.py --phase 1                # Run Phase 1 only
 """
 
 import os
 import sys
 import csv
 import time
+import json
+import random
 import argparse
-import subprocess
 from pathlib import Path
 from datetime import datetime
 
+# Add parent to path for config import
+sys.path.insert(0, str(Path(__file__).parent))
+
+from config import AVATARS, BACKGROUNDS, get_random_combo
+
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-HEYGEN_SCRIPT = SCRIPT_DIR / "heygen_automation_v2.py"
 OUTPUT_DIR = SCRIPT_DIR / "output"
 LOG_DIR = SCRIPT_DIR / "logs"
 STATUS_FILE = SCRIPT_DIR / "batch_status.json"
@@ -84,7 +93,6 @@ def estimate_duration():
     """Estimate total production time."""
     total_videos, _ = count_videos()
     # HeyGen takes ~3-5 minutes per video for generation
-    # Plus ~1 minute for upload/processing overhead
     minutes_per_video = 5
     total_minutes = total_videos * minutes_per_video
     hours = total_minutes // 60
@@ -120,51 +128,91 @@ def get_batch_files(phase=None, batch=None):
     return files
 
 
-def run_batch(csv_file, dry_run=False):
+def prepare_video_for_heygen(row):
+    """
+    Convert a CSV row to HeyGen-ready dict with random avatar/background.
+    
+    Input CSV: ID, Title, Avatar (ignored), Voice (ignored), Duration, Type, Script
+    Output: Dict with script_text, title, avatar_id, avatar_look, background_name
+    """
+    # Get random combo from our pool
+    combo = get_random_combo()
+    avatar = combo["avatar"]
+    background = combo["background"]
+    
+    return {
+        "id": row.get("ID", ""),
+        "title": row.get("Title", ""),
+        "script_text": row.get("Script", ""),
+        "avatar_id": avatar["id"],       # e.g., "Freja"
+        "avatar_name": avatar["name"],   # e.g., "Sarah"
+        "avatar_look": avatar["look"],   # e.g., "Freja Front"
+        "background_name": background,    # e.g., "bg_corporate_blue.png"
+        "duration": row.get("Duration", "10"),
+        "type": row.get("Type", "concept"),
+    }
+
+
+def run_single_video(video_data, automation, dry_run=False):
+    """Run HeyGen automation for a single video."""
+    if dry_run:
+        print(f"    [DRY] {video_data['id']}: {video_data['title']}")
+        print(f"          Avatar: {video_data['avatar_name']} ({video_data['avatar_look']})")
+        print(f"          Background: {video_data['background_name']}")
+        return True
+    
+    try:
+        success = automation.create_video_draft(
+            script_text=video_data["script_text"],
+            title=f"{video_data['id']} - {video_data['title']}",
+            avatar_name=video_data["avatar_id"],
+            background_name=video_data["background_name"],
+            save_draft=False  # Generate immediately
+        )
+        return success
+    except Exception as e:
+        print(f"    [ERROR] {video_data['id']}: {e}")
+        return False
+
+
+def run_batch(csv_file, dry_run=False, automation=None):
     """Run HeyGen automation for a single CSV file."""
     csv_path = SCRIPT_DIR / csv_file
     if not csv_path.exists():
         print(f"  [SKIP] {csv_file} - File not found")
-        return False
+        return False, 0, 0
     
     videos = load_csv(csv_path)
     print(f"  [INFO] {csv_file} - {len(videos)} videos")
     
     if dry_run:
-        return True
+        print(f"  [DRY RUN] Would process:")
+        for row in videos:
+            video_data = prepare_video_for_heygen(row)
+            run_single_video(video_data, None, dry_run=True)
+        return True, len(videos), 0
     
-    # Create log file for this batch
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = LOG_DIR / f"{csv_file.replace('.csv', '')}_{timestamp}.log"
+    # Process each video
+    successful = 0
+    failed = 0
     
-    # Run HeyGen automation
-    cmd = [
-        sys.executable,
-        str(HEYGEN_SCRIPT),
-        "--csv", str(csv_path),
-        "--output", str(OUTPUT_DIR),
-    ]
-    
-    print(f"  [RUN] Starting batch: {csv_file}")
-    try:
-        with open(log_file, "w") as log:
-            result = subprocess.run(
-                cmd,
-                stdout=log,
-                stderr=subprocess.STDOUT,
-                cwd=SCRIPT_DIR.parent,
-            )
+    for i, row in enumerate(videos, 1):
+        video_data = prepare_video_for_heygen(row)
+        print(f"  [{i}/{len(videos)}] {video_data['id']}: {video_data['title']}")
+        print(f"           Avatar: {video_data['avatar_name']} | BG: {video_data['background_name']}")
         
-        if result.returncode == 0:
-            print(f"  [OK] Completed: {csv_file}")
-            return True
+        success = run_single_video(video_data, automation, dry_run=False)
+        
+        if success:
+            successful += 1
         else:
-            print(f"  [ERROR] Failed: {csv_file} (see {log_file})")
-            return False
-            
-    except Exception as e:
-        print(f"  [ERROR] Exception running {csv_file}: {e}")
-        return False
+            failed += 1
+        
+        # Brief pause between videos
+        if i < len(videos):
+            time.sleep(5)
+    
+    return True, successful, failed
 
 
 def show_status():
@@ -177,6 +225,16 @@ def show_status():
     
     print(f"\nTotal Videos: {total}")
     print(f"Estimated Duration: {estimate_duration()}")
+    print()
+    
+    print("Avatar Pool:")
+    for avatar in AVATARS:
+        print(f"  - {avatar['name']} ({avatar['id']}) - {avatar['look']}")
+    print()
+    
+    print("Background Pool:")
+    for bg in BACKGROUNDS:
+        print(f"  - {bg}")
     print()
     
     for phase, files in CSV_FILES.items():
@@ -240,25 +298,50 @@ def main():
         print(f"Output directory: {OUTPUT_DIR}")
         print()
     
-    # Process each batch
-    successful = 0
-    failed = 0
+    # Initialize automation if not dry run
+    automation = None
+    if not args.dry_run:
+        try:
+            from heygen_automation_v2 import HeyGenAutomationV2
+            automation = HeyGenAutomationV2(headless=False)
+            automation.start()
+            automation.ensure_logged_in()
+            print("[OK] HeyGen automation started\n")
+        except Exception as e:
+            print(f"[ERROR] Failed to start HeyGen automation: {e}")
+            sys.exit(1)
     
-    for csv_file in files:
-        success = run_batch(csv_file, dry_run=args.dry_run)
-        if success:
-            successful += 1
-        else:
-            failed += 1
-        
-        # Brief pause between batches
-        if not args.dry_run and csv_file != files[-1]:
-            print("  [PAUSE] Waiting 30 seconds before next batch...")
-            time.sleep(30)
+    # Process each batch
+    total_success = 0
+    total_failed = 0
+    
+    try:
+        for csv_file in files:
+            print(f"\n{'='*50}")
+            print(f"Processing: {csv_file}")
+            print(f"{'='*50}")
+            
+            success, batch_success, batch_failed = run_batch(
+                csv_file, 
+                dry_run=args.dry_run,
+                automation=automation
+            )
+            
+            total_success += batch_success
+            total_failed += batch_failed
+            
+            # Pause between batches
+            if not args.dry_run and csv_file != files[-1]:
+                print("  [PAUSE] Waiting 30 seconds before next batch...")
+                time.sleep(30)
+    
+    finally:
+        if automation:
+            automation.stop()
     
     print()
     print("=" * 60)
-    print(f"Complete: {successful} batches succeeded, {failed} failed")
+    print(f"Complete: {total_success} videos succeeded, {total_failed} failed")
     print(f"Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
 

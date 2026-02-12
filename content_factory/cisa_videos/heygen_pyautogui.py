@@ -95,12 +95,13 @@ COORDS = {
 
 
 def calibrate_quick():
-    """Quick recalibration for specific elements (8-second countdown)."""
+    """Quick recalibration for outfit positions (8-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Generate & Submit")
+    print("QUICK RECALIBRATION: Outfit Positions")
     print("="*60)
     print("\nYou have 8 seconds per element. Watch the live cursor position.")
-    print("The script will AUTO-CLICK between steps.\n")
+    print("\nPREP: Search for an avatar and click its name to show outfits.")
+    print("Then start mapping outfit positions in the grid.\n")
     
     # Load existing coords
     coords_file = Path("coords.json")
@@ -110,55 +111,38 @@ def calibrate_quick():
     else:
         results = {}
     
-    # Step 1: Generate button (top right, green button)
-    print("\n" + "-"*40)
-    print("STEP 1: GENERATE BUTTON")
-    print("-"*40)
-    print("Look at TOP RIGHT corner of the page")
-    print("Find the green 'Generate' button with checkmark")
-    print("\nMove mouse there NOW! 8 seconds...")
-    for i in range(8, 0, -1):
-        x, y = pyautogui.position()
-        print(f"  {i}... (cursor at {x}, {y})", flush=True)
-        time.sleep(1)
-    x, y = pyautogui.position()
-    results["generate_button"] = [x, y]
-    print(f"  ✓ Saved: generate_button = ({x}, {y})")
+    # Outfit grid positions (same positions work for all avatars)
+    outfit_items = [
+        ("outfit_row1_col1", "FIRST outfit (top-left, usually 'Front')"),
+        ("outfit_row1_col2", "SECOND outfit (top-middle)"),
+        ("outfit_row1_col3", "THIRD outfit (top-right)"),
+        ("outfit_row2_col1", "FOURTH outfit (2nd row left)"),
+        ("outfit_row2_col2", "FIFTH outfit (2nd row middle)"),
+    ]
     
-    # Auto-click to open the generate dialog
-    print("\n>>> Auto-clicking Generate to open dialog...")
-    pyautogui.click(x, y)
-    time.sleep(3)  # Wait for dialog to open
-    
-    # Step 2: Title field in generate dialog
-    print("\n" + "-"*40)
-    print("STEP 2: TITLE FIELD")
-    print("-"*40)
-    print("A dialog should be open")
-    print("Find the text field showing 'Untitled Video'")
-    print("\nMove mouse there NOW! 8 seconds...")
-    for i in range(8, 0, -1):
+    for i, (key, desc) in enumerate(outfit_items, 1):
+        print(f"\n" + "-"*40)
+        print(f"STEP {i}: {desc}")
+        print("-"*40)
+        print(f"Point at the {desc}")
+        print("(Skip if avatar doesn't have this many outfits)")
+        print(f"\nMove mouse there NOW! 8 seconds...")
+        for j in range(8, 0, -1):
+            x, y = pyautogui.position()
+            print(f"  {j}... (cursor at {x}, {y})", flush=True)
+            time.sleep(1)
         x, y = pyautogui.position()
-        print(f"  {i}... (cursor at {x}, {y})", flush=True)
-        time.sleep(1)
-    x, y = pyautogui.position()
-    results["generate_title"] = [x, y]
-    print(f"  ✓ Saved: generate_title = ({x}, {y})")
+        results[key] = [x, y]
+        print(f"  ✓ Saved: {key} = ({x}, {y})")
     
-    # Step 3: Submit button
-    print("\n" + "-"*40)
-    print("STEP 3: SUBMIT BUTTON")
-    print("-"*40)
-    print("In the same dialog, find the Submit/Generate button")
-    print("(Usually blue button at bottom of dialog)")
-    print("\nMove mouse there NOW! 8 seconds...")
-    for i in range(8, 0, -1):
-        x, y = pyautogui.position()
-        print(f"  {i}... (cursor at {x}, {y})", flush=True)
-        time.sleep(1)
-    x, y = pyautogui.position()
-    results["submit_button"] = [x, y]
-    print(f"  ✓ Saved: submit_button = ({x}, {y})")
+    with open("coords.json", "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print("\n✓ Updated coords.json with outfit positions")
+    print("\nNow update OUTFIT_COORDS in the script to map avatar_look names:")
+    print("  'Freja Front': 'outfit_row1_col1',")
+    print("  'Freja White Blazer': 'outfit_row1_col2',")
+    return results
     
     with open("coords.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -302,6 +286,21 @@ BACKGROUND_COORDS = {
     "bg_corporate_blue.png": "bg_row2_col1",    # Blue gradient (row 2, left)
 }
 
+# Outfit (avatar_look) to coordinate key
+# Format: "Avatar Name - Look Name" -> coordinate key
+# Outfits appear in a grid after clicking the avatar name
+OUTFIT_COORDS = {
+    # Freja outfits
+    "Freja Front": "outfit_row1_col1",
+    "Freja White Blazer": "outfit_row1_col2",
+    # Bruce outfits  
+    "Bruce Front": "outfit_row1_col1",
+    # Zosia outfits
+    "Zosia Front": "outfit_row1_col1",
+    # Esmond outfits
+    "Esmond Front": "outfit_row1_col1",
+}
+
 
 def create_video(title, script_text, avatar_name, avatar_look=None, background_name=None):
     """
@@ -348,8 +347,10 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     click("avatar_result")  # Click avatar name to expand outfits
     time.sleep(1.5)
     
-    # Double-click first outfit  
-    click("outfit_thumbnail", double=True)
+    # Select specific outfit based on avatar_look
+    outfit_coord_key = OUTFIT_COORDS.get(avatar_look, "outfit_row1_col1")
+    logger.info(f"  Selecting outfit: {avatar_look} -> {outfit_coord_key}")
+    click(outfit_coord_key, double=True)
     time.sleep(2)
     
     # Step 3: Set Motion Engine to Avatar III

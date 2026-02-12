@@ -110,12 +110,7 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("customize_bg", "CUSTOMIZE button - click 'Customize' under Avatar Background section"),
-        ("uploads_tab", "UPLOADS tab - click the 'Uploads' tab in the background panel"),
-        ("bg_row1_col1", "BG TOP-LEFT: DARK NAVY background (1st row, 1st column)"),
-        ("bg_row1_col2", "BG TOP-MIDDLE: GRAY background (1st row, 2nd column)"),  
-        ("bg_row1_col3", "BG TOP-RIGHT: TEAL background (1st row, 3rd column)"),
-        ("bg_row2_col1", "BG 2ND ROW LEFT: BLUE GRADIENT background (2nd row, 1st column)"),
+        ("change_avatar", "CHANGE AVATAR button - click 'Change avatar' or 'Replace avatar' button after clicking the avatar"),
     ]
     
     for key, description in coords_to_find:

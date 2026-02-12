@@ -215,6 +215,10 @@ def load_coords():
     return COORDS
 
 
+# Set to True to show mouse movement before clicking
+DEBUG_CLICKS = True
+
+
 def click(name, double=False):
     """Click at a named coordinate."""
     coords = load_coords()
@@ -224,6 +228,12 @@ def click(name, double=False):
         return
     x, y = coord
     logger.info(f"{'Double-' if double else ''}Clicking {name} at ({x}, {y})")
+    
+    if DEBUG_CLICKS:
+        # Move mouse to position first so user can see where it will click
+        pyautogui.moveTo(x, y, duration=0.3)
+        time.sleep(0.5)  # Pause so user can see the position
+    
     if double:
         pyautogui.doubleClick(x, y)
     else:
@@ -279,6 +289,10 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     # Step 1: Paste script
     logger.info("[STEP 1] Pasting script...")
     x, y = coords.get("script", COORDS.get("script"))
+    logger.info(f"  Script field coords: ({x}, {y})")
+    if DEBUG_CLICKS:
+        pyautogui.moveTo(x, y, duration=0.3)
+        time.sleep(0.5)
     pyautogui.tripleClick(x, y)  # Triple-click to select all in script area
     time.sleep(0.3)
     pyautogui.hotkey('ctrl', 'a')  # Also Ctrl+A to be sure
@@ -315,12 +329,18 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     # Click the motion engine dropdown
     x, y = coords.get("motion_engine", COORDS.get("motion_engine"))
     logger.info(f"  Motion engine coords: ({x}, {y})")
+    if DEBUG_CLICKS:
+        pyautogui.moveTo(x, y, duration=0.3)
+        time.sleep(0.5)
     pyautogui.click(x, y)
     time.sleep(1)
     
     # Click Avatar III option directly
     x3, y3 = coords.get("avatar_iii", COORDS.get("avatar_iii"))
     logger.info(f"  Clicking avatar_iii at ({x3}, {y3})")
+    if DEBUG_CLICKS:
+        pyautogui.moveTo(x3, y3, duration=0.3)
+        time.sleep(0.5)
     pyautogui.click(x3, y3)
     time.sleep(1)
     
@@ -365,6 +385,10 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     # Step 7: Set title in generate dialog
     logger.info("[STEP 7] Setting title in dialog...")
     x, y = coords.get("generate_title", COORDS.get("generate_title"))
+    logger.info(f"  Title field coords: ({x}, {y})")
+    if DEBUG_CLICKS:
+        pyautogui.moveTo(x, y, duration=0.3)
+        time.sleep(0.5)
     pyautogui.tripleClick(x, y)  # Triple-click to select "Untitled Video"
     time.sleep(0.3)
     paste_text(title)

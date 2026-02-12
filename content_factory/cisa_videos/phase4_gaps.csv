@@ -1,0 +1,259 @@
+video_id,topic,script
+CISA-D5-CO-05,Data Classification and Handling,"Welcome to Pass CISA <break time='0.5s' /> This video covers Data Classification and Handling <break time='0.3s' /> a foundational security concept you'll definitely see on exam day.
+
+<break time='1.0s' />
+
+Data classification assigns sensitivity levels to information <break time='0.3s' /> determining who can access it and how it must be protected.
+
+<break time='1.0s' />
+
+Most organizations use a tiered classification scheme. Common levels include <break time='0.3s' /> Public <break time='0.3s' /> Internal <break time='0.3s' /> Confidential <break time='0.3s' /> and Restricted or Secret.
+
+<break time='0.8s' />
+
+Public data can be freely shared <break time='0.3s' /> like marketing materials. Internal data is for employees only <break time='0.3s' /> like policies and procedures. Confidential data requires specific authorization <break time='0.3s' /> like customer records. Restricted data has the highest protection <break time='0.3s' /> like trade secrets or personal health information.
+
+<break time='1.0s' />
+
+Key exam concept <break time='0.3s' /> Data owners are responsible for classification decisions. They understand the business value and determine the appropriate level. Data custodians implement the technical controls to protect data at each level.
+
+<break time='0.8s' />
+
+Handling procedures must align with classification <break time='0.3s' /> This includes storage requirements <break time='0.3s' /> encryption standards <break time='0.3s' /> transmission methods <break time='0.3s' /> and disposal procedures. Higher classifications require stronger controls throughout the data lifecycle.
+
+<break time='1.0s' />
+
+Remember for the exam <break time='0.3s' /> Classification should be based on the highest sensitivity of any data element in a document <break time='0.3s' /> even if most content is public. And always consider regulatory requirements <break time='0.3s' /> some data types have legally mandated handling procedures.
+
+<break time='0.8s' />
+
+That's data classification and handling <break time='0.3s' /> Know your classification levels <break time='0.3s' /> understand owner versus custodian roles <break time='0.3s' /> and match handling procedures to sensitivity. Good luck on exam day!"
+CISA-D1-CO-05,Segregation of Duties in IT,"Welcome to Pass CISA <break time='0.5s' /> Today we're covering Segregation of Duties in IT <break time='0.3s' /> a critical control concept that appears frequently on the CISA exam.
+
+<break time='1.0s' />
+
+Segregation of Duties <break time='0.3s' /> or SoD <break time='0.3s' /> prevents any single person from having complete control over a critical process. The goal is to ensure that fraud or errors require collusion between multiple people <break time='0.3s' /> making them harder to commit and easier to detect.
+
+<break time='1.0s' />
+
+In IT environments <break time='0.3s' /> key segregation includes separating development from production access <break time='0.3s' /> separating custody of assets from record keeping <break time='0.3s' /> and separating authorization from execution.
+
+<break time='0.8s' />
+
+Classic IT segregation examples include <break time='0.3s' /> Programmers should not have access to production systems <break time='0.3s' /> Database administrators should not have access to source code <break time='0.3s' /> Security administrators should not perform system development <break time='0.3s' /> And operators should not modify programs.
+
+<break time='1.0s' />
+
+In small IT shops where perfect segregation isn't possible <break time='0.3s' /> compensating controls become essential. These include detailed logging and monitoring <break time='0.3s' /> independent review of logs <break time='0.3s' /> supervisory oversight <break time='0.3s' /> and periodic reconciliations.
+
+<break time='0.8s' />
+
+For the exam <break time='0.3s' /> remember that the auditor's role is to identify segregation weaknesses and recommend compensating controls when segregation isn't feasible. Also know that role-based access control supports SoD by limiting users to functions required for their job.
+
+<break time='0.8s' />
+
+That's segregation of duties in IT <break time='0.3s' /> Separate critical functions <break time='0.3s' /> use compensating controls when needed <break time='0.3s' /> and always think collusion prevention. Good luck on exam day!"
+CISA-D2-CO-03,IT Steering Committee and Governance,"Welcome to Pass CISA <break time='0.5s' /> This video covers the IT Steering Committee <break time='0.3s' /> a key governance structure you need to understand for the exam.
+
+<break time='1.0s' />
+
+The IT Steering Committee is a senior management group responsible for ensuring IT strategies align with business objectives. It bridges the gap between business leadership and IT leadership.
+
+<break time='1.0s' />
+
+Key responsibilities include <break time='0.3s' /> Prioritizing IT projects and investments <break time='0.3s' /> Reviewing IT performance and value delivery <break time='0.3s' /> Resolving conflicts between IT and business units <break time='0.3s' /> Approving IT policies and standards <break time='0.3s' /> And monitoring IT risk at an enterprise level.
+
+<break time='0.8s' />
+
+Composition typically includes the CIO <break time='0.3s' /> CFO <break time='0.3s' /> business unit leaders <break time='0.3s' /> and sometimes external advisors. The mix should represent both IT and business perspectives.
+
+<break time='1.0s' />
+
+For auditors <break time='0.3s' /> evaluate whether the steering committee meets regularly <break time='0.3s' /> has documented terms of reference <break time='0.3s' /> includes appropriate membership <break time='0.3s' /> maintains meeting minutes <break time='0.3s' /> and follows up on action items.
+
+<break time='0.8s' />
+
+Common exam scenarios involve identifying governance weaknesses <break time='0.3s' /> For example <break time='0.3s' /> an IT department making major investment decisions without business input <break time='0.3s' /> or a steering committee that hasn't met in six months.
+
+<break time='0.8s' />
+
+Remember <break time='0.3s' /> The steering committee ensures business-IT alignment at a strategic level <break time='0.3s' /> It's not involved in day-to-day operations <break time='0.3s' /> but it sets direction and monitors performance.
+
+<break time='0.8s' />
+
+That's the IT Steering Committee <break time='0.3s' /> strategic governance <break time='0.3s' /> business-IT alignment <break time='0.3s' /> and oversight of IT investments. Good luck on exam day!"
+CISA-D2-CO-04,Key Risk Indicators and Metrics,"Welcome to Pass CISA <break time='0.5s' /> This video covers Key Risk Indicators <break time='0.3s' /> also known as KRIs <break time='0.3s' /> essential metrics for IT risk monitoring.
+
+<break time='1.0s' />
+
+Key Risk Indicators are metrics that provide early warning signals about increasing risk exposure. They help management identify emerging risks before they become significant issues.
+
+<break time='1.0s' />
+
+KRIs differ from Key Performance Indicators or KPIs <break time='0.3s' /> KPIs measure how well objectives are being achieved <break time='0.3s' /> KRIs measure the likelihood of not achieving those objectives. Both are important <break time='0.3s' /> but KRIs focus specifically on risk.
+
+<break time='0.8s' />
+
+Examples of IT KRIs include <break time='0.3s' /> Number of unpatched critical vulnerabilities <break time='0.3s' /> Percentage of systems without current backups <break time='0.3s' /> Number of unauthorized access attempts <break time='0.3s' /> Staff turnover rate in key IT positions <break time='0.3s' /> And number of overdue audit findings.
+
+<break time='1.0s' />
+
+Effective KRIs have certain characteristics <break time='0.3s' /> They're measurable and quantifiable <break time='0.3s' /> They have defined thresholds that trigger action <break time='0.3s' /> They're predictive rather than reactive <break time='0.3s' /> And they align with the organization's risk appetite.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> evaluate whether KRIs are defined for significant risks <break time='0.3s' /> whether thresholds are appropriate <break time='0.3s' /> whether KRIs are monitored regularly <break time='0.3s' /> and whether threshold breaches trigger management action.
+
+<break time='0.8s' />
+
+That's Key Risk Indicators <break time='0.3s' /> early warning metrics <break time='0.3s' /> threshold-based monitoring <break time='0.3s' /> and proactive risk management. Good luck on exam day!"
+CISA-D5-CO-06,Database Security and Controls,"Welcome to Pass CISA <break time='0.5s' /> This video covers Database Security and Controls <break time='0.3s' /> protecting the critical data stores that organizations depend on.
+
+<break time='1.0s' />
+
+Databases contain an organization's most valuable information <break time='0.3s' /> customer data <break time='0.3s' /> financial records <break time='0.3s' /> intellectual property. Protecting them requires layered security controls.
+
+<break time='1.0s' />
+
+Key database security controls include <break time='0.3s' /> Access controls that restrict who can view and modify data <break time='0.3s' /> Encryption of sensitive data at rest and in transit <break time='0.3s' /> Audit logging of all database activities <break time='0.3s' /> Input validation to prevent injection attacks <break time='0.3s' /> And regular backups with tested recovery procedures.
+
+<break time='0.8s' />
+
+Database administrator or DBA access requires special attention <break time='0.3s' /> DBAs typically have elevated privileges and can bypass application controls. Compensating controls include activity logging <break time='0.3s' /> separation of duties <break time='0.3s' /> and independent review of DBA actions.
+
+<break time='1.0s' />
+
+SQL injection is a critical threat to database security <break time='0.3s' /> Attackers insert malicious code through application inputs to manipulate queries. Prevention requires parameterized queries <break time='0.3s' /> input validation <break time='0.3s' /> and least privilege database accounts.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> verify that sensitive data is encrypted <break time='0.3s' /> access is granted based on least privilege <break time='0.3s' /> audit logs capture privileged activities <break time='0.3s' /> and applications use secure coding practices.
+
+<break time='0.8s' />
+
+That's database security <break time='0.3s' /> access controls <break time='0.3s' /> encryption <break time='0.3s' /> logging <break time='0.3s' /> and injection prevention. Good luck on exam day!"
+CISA-D4-CO-05,Cloud Computing Audit Considerations,"Welcome to Pass CISA <break time='0.5s' /> This video covers Cloud Computing Audit Considerations <break time='0.3s' /> essential knowledge as organizations increasingly move to the cloud.
+
+<break time='1.0s' />
+
+Cloud computing shifts IT resources to third-party providers <break time='0.3s' /> This changes the risk landscape and requires new audit approaches. Auditors must understand shared responsibility models and cloud-specific risks.
+
+<break time='1.0s' />
+
+The three main service models are <break time='0.3s' /> Infrastructure as a Service or IaaS <break time='0.3s' /> where the provider manages hardware <break time='0.3s' /> Platform as a Service or PaaS <break time='0.3s' /> where the provider also manages operating systems <break time='0.3s' /> And Software as a Service or SaaS <break time='0.3s' /> where the provider manages everything except user data and access.
+
+<break time='0.8s' />
+
+Key cloud audit considerations include <break time='0.3s' /> Data location and sovereignty <break time='0.3s' /> where is data stored and what laws apply <break time='0.3s' /> Vendor lock-in risk <break time='0.3s' /> can you move to another provider <break time='0.3s' /> Shared infrastructure <break time='0.3s' /> is there adequate isolation between tenants <break time='0.3s' /> And right to audit <break time='0.3s' /> can you or a third party examine provider controls.
+
+<break time='1.0s' />
+
+SOC reports are critical for cloud assurance <break time='0.3s' /> SOC 2 Type 2 reports provide independent verification of provider controls. Review these reports for the services you use <break time='0.3s' /> checking coverage period <break time='0.3s' /> scope <break time='0.3s' /> and any exceptions noted.
+
+<break time='0.8s' />
+
+Remember <break time='0.3s' /> outsourcing to the cloud doesn't outsource accountability. The organization remains responsible for data protection and regulatory compliance.
+
+<break time='0.8s' />
+
+That's cloud computing audit <break time='0.3s' /> service models <break time='0.3s' /> shared responsibility <break time='0.3s' /> and third-party assurance. Good luck on exam day!"
+CISA-D5-CO-07,Penetration Testing vs Vulnerability Assessment,"Welcome to Pass CISA <break time='0.5s' /> This video clarifies the difference between Penetration Testing and Vulnerability Assessment <break time='0.3s' /> two security testing approaches that are frequently confused on the exam.
+
+<break time='1.0s' />
+
+Vulnerability assessment identifies potential weaknesses in systems <break time='0.3s' /> It uses automated scanning tools to find known vulnerabilities <break time='0.3s' /> missing patches <break time='0.3s' /> and misconfigurations. It's typically non-intrusive and doesn't attempt to exploit findings.
+
+<break time='1.0s' />
+
+Penetration testing goes further <break time='0.3s' /> It actively attempts to exploit vulnerabilities to determine actual risk. Pen testers simulate real attackers <break time='0.3s' /> chaining together vulnerabilities to see how far they can get. It's intrusive and requires careful scoping and authorization.
+
+<break time='0.8s' />
+
+Key differences to remember <break time='0.3s' /> Vulnerability assessment is broad and automated <break time='0.3s' /> penetration testing is targeted and manual <break time='0.3s' /> Vulnerability assessment identifies potential issues <break time='0.3s' /> penetration testing proves exploitability <break time='0.3s' /> Vulnerability assessment is lower risk <break time='0.3s' /> penetration testing can disrupt systems.
+
+<break time='1.0s' />
+
+Penetration testing types include <break time='0.3s' /> Black box where testers have no prior knowledge <break time='0.3s' /> White box where testers have full system documentation <break time='0.3s' /> And gray box which falls in between.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> verify that testing is authorized in writing <break time='0.3s' /> scope is clearly defined <break time='0.3s' /> testers are qualified <break time='0.3s' /> and findings lead to remediation.
+
+<break time='0.8s' />
+
+That's vulnerability assessment versus penetration testing <break time='0.3s' /> scanning versus exploitation <break time='0.3s' /> automated versus manual. Good luck on exam day!"
+CISA-D5-CO-08,Regulatory Compliance SOX HIPAA GDPR,"Welcome to Pass CISA <break time='0.5s' /> This video covers key regulatory frameworks <break time='0.3s' /> SOX <break time='0.3s' /> HIPAA <break time='0.3s' /> and GDPR <break time='0.3s' /> that you need to recognize on the CISA exam.
+
+<break time='1.0s' />
+
+Sarbanes-Oxley or SOX <break time='0.3s' /> applies to publicly traded US companies. Section 404 requires management to assess internal controls over financial reporting <break time='0.3s' /> and for larger companies <break time='0.3s' /> auditors must attest to that assessment. IT controls supporting financial systems are in scope.
+
+<break time='1.0s' />
+
+HIPAA <break time='0.3s' /> the Health Insurance Portability and Accountability Act <break time='0.3s' /> protects patient health information in the US. The Security Rule requires administrative <break time='0.3s' /> physical <break time='0.3s' /> and technical safeguards for electronic health information. Key requirements include access controls <break time='0.3s' /> audit logs <break time='0.3s' /> encryption <break time='0.3s' /> and risk analysis.
+
+<break time='0.8s' />
+
+GDPR <break time='0.3s' /> the General Data Protection Regulation <break time='0.3s' /> protects personal data of EU residents. Key principles include lawful basis for processing <break time='0.3s' /> data minimization <break time='0.3s' /> purpose limitation <break time='0.3s' /> and the right to be forgotten. Fines can reach four percent of global revenue.
+
+<break time='1.0s' />
+
+For auditors <break time='0.3s' /> identify which regulations apply to the organization <break time='0.3s' /> verify that compliance requirements are understood <break time='0.3s' /> assess whether controls meet regulatory standards <break time='0.3s' /> and review evidence of ongoing compliance monitoring.
+
+<break time='0.8s' />
+
+That's SOX <break time='0.3s' /> HIPAA <break time='0.3s' /> and GDPR <break time='0.3s' /> financial controls <break time='0.3s' /> health data protection <break time='0.3s' /> and privacy rights. Good luck on exam day!"
+CISA-D4-CO-06,Backup Strategies and Recovery,"Welcome to Pass CISA <break time='0.5s' /> This video covers Backup Strategies and Recovery <break time='0.3s' /> fundamental controls for data protection and business continuity.
+
+<break time='1.0s' />
+
+Backup strategies determine what data is copied <break time='0.3s' /> how often <break time='0.3s' /> and where it's stored. The right strategy balances recovery needs against storage costs and backup windows.
+
+<break time='1.0s' />
+
+The three main backup types are <break time='0.3s' /> Full backups that copy all data <break time='0.3s' /> Incremental backups that copy only changes since the last backup <break time='0.3s' /> And differential backups that copy all changes since the last full backup.
+
+<break time='0.8s' />
+
+Full backups are simplest to restore but take the longest to create <break time='0.3s' /> Incremental backups are fastest but require all incrementals for recovery <break time='0.3s' /> Differential backups balance speed and simplicity.
+
+<break time='1.0s' />
+
+Key backup considerations include <break time='0.3s' /> Off-site storage to protect against facility disasters <break time='0.3s' /> Encryption of backup media <break time='0.3s' /> Retention periods aligned with business and regulatory needs <break time='0.3s' /> And regular testing of restore procedures.
+
+<break time='0.8s' />
+
+The three two one rule is a best practice <break time='0.3s' /> Keep three copies of data <break time='0.3s' /> on two different media types <break time='0.3s' /> with one copy off-site.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> verify that backup procedures are documented <break time='0.3s' /> that backups complete successfully <break time='0.3s' /> that restores are tested regularly <break time='0.3s' /> and that recovery time objectives can be met.
+
+<break time='0.8s' />
+
+That's backup strategies <break time='0.3s' /> full versus incremental versus differential <break time='0.3s' /> off-site storage <break time='0.3s' /> and tested recovery. Good luck on exam day!"
+CISA-D3-CO-05,Software Licensing Compliance,"Welcome to Pass CISA <break time='0.5s' /> This video covers Software Licensing Compliance <break time='0.3s' /> an often overlooked but important audit area.
+
+<break time='1.0s' />
+
+Software licensing compliance ensures organizations only use software they're legally entitled to use. Non-compliance creates legal <break time='0.3s' /> financial <break time='0.3s' /> and security risks.
+
+<break time='1.0s' />
+
+Common license types include <break time='0.3s' /> Per-user licenses for individual users <break time='0.3s' /> Per-device licenses for specific machines <break time='0.3s' /> Concurrent licenses for a maximum number of simultaneous users <break time='0.3s' /> Site licenses for unlimited use at a location <break time='0.3s' /> And enterprise licenses covering the whole organization.
+
+<break time='0.8s' />
+
+Compliance risks include <break time='0.3s' /> Using more copies than licensed <break time='0.3s' /> Using software beyond license scope <break time='0.3s' /> Failing to track license expirations <break time='0.3s' /> And using unlicensed or pirated software.
+
+<break time='1.0s' />
+
+Software Asset Management or SAM programs help maintain compliance <break time='0.3s' /> SAM includes maintaining a software inventory <break time='0.3s' /> tracking licenses and entitlements <break time='0.3s' /> reconciling usage against licenses <break time='0.3s' /> and managing software requests and approvals.
+
+<break time='0.8s' />
+
+For auditors <break time='0.3s' /> verify that a software inventory exists <break time='0.3s' /> that license documentation is maintained <break time='0.3s' /> that periodic reconciliations occur <break time='0.3s' /> and that unlicensed software is removed or licensed.
+
+<break time='0.8s' />
+
+That's software licensing compliance <break time='0.3s' /> license types <break time='0.3s' /> compliance risks <break time='0.3s' /> and software asset management. Good luck on exam day!"

@@ -1,9 +1,0 @@
-Encryption and P-K-I... it's a sissa exam must-know. Understand it, and you'll conquer questions from data protection to access control. Get it wrong, and you're leaving points on the table.
-
-So, what's the core? Encryption transforms readable data... into unreadable ciphertext. Think of it as a digital lock. Symmetric encryption uses ONE secret key... for both locking and unlocking. Asymmetric uses TWO... a public key for locking and a private key for unlocking. Auditors care because... strong encryption proves data confidentiality. We need to verify its implementation. Is it being used? Is it configured correctly? Are the keys properly managed? This demonstrates effective controls.
-
-Now... the exam trap. The trap is... confusing symmetric and asymmetric use cases. eye-SAH-kah loves to ask about speed versus security. Symmetric is FAST but less secure... because the key must be shared. Asymmetric is SLOWER but more secure... because the private key is never shared. The correct answer is... always the one that matches the appropriate use case. Think large data transfers needing speed - symmetric. Securing a key exchange - asymmetric.
-
-For example, when auditing a cloud provider... you need to assess their encryption methods. Are they using symmetric encryption for data at rest within the database? Are they using asymmetric encryption to protect the symmetric keys themselves? Validate that the keys are rotated regularly... and stored securely, perhaps using a hardware security module. This demonstrates a robust security posture.
-
-Remember this: Symmetric encryption is fast, single-key. Asymmetric is secure, two-key. Master that... and you'll nail those sissa questions. You got this!

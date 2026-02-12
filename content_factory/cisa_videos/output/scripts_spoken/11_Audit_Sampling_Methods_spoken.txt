@@ -1,9 +1,0 @@
-Statistical sampling. can be the difference between passing and failing the sissa exam. Knowing it cold is key.
-
-Statistical sampling is using mathematical techniques to select a subset of data... the sample... to evaluate the characteristics of the entire population. Auditors care because... it provides an objective, defensible way to assess control effectiveness... or identify errors... without reviewing every single transaction or record. It's about efficiency and reliability. giving us confidence in our findings.
-
-The trap is... eye-SAH-kah loves to test your understanding of when statistical sampling is appropriate versus other methods. They'll give you scenarios where statistical sampling seems like the obvious choice... but a judgmental sampling approach would be better. The correct answer is... statistical sampling is best when you need to project results to the entire population... and quantify the risk of being wrong. If you need highly specific... targeted insights... judgmental sampling might be more effective.
-
-For example, when auditing a large database of user access privileges... and you need to determine the percentage of users with inappropriate access... statistical sampling is ideal. You select a random sample... analyze it... and project the error rate to the entire user population with a known confidence level. This provides a robust... objective assessment of access control effectiveness.
-
-Remember this: Statistical sampling gives you objective... quantifiable results you can defend. Master that... and you're one step closer to sissa certification.

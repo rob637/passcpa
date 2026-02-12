@@ -521,6 +521,14 @@ def test_single(count=1):
     with open("output/video_matrix.json") as f:
         videos = json.load(f)
     
+    # Show what will be created
+    logger.info("\n" + "="*60)
+    logger.info("VIDEOS TO CREATE:")
+    logger.info("="*60)
+    for i, v in enumerate(videos[:count]):
+        logger.info(f"  #{v['num']:2}: {v['avatar_id']:8} | {v['avatar_look']:14} | {v['background']}")
+    logger.info("="*60)
+    
     # Open HeyGen in browser
     open_heygen_editor()
     
@@ -530,7 +538,9 @@ def test_single(count=1):
         script_file = Path(f"output/scripts_spoken/{video['script']}")
         script_text = script_file.read_text()
         
-        logger.info(f"\n>>> Creating video {i+1}/{count}...")
+        logger.info(f"\n>>> VIDEO {video['num']}/{count}: {video['topic']}")
+        logger.info(f"    Avatar: {video['avatar_id']} ({video.get('avatar_look')})")
+        logger.info(f"    Background: {video.get('background')}")
         
         # Create video
         create_video(

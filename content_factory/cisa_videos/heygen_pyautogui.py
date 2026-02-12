@@ -97,7 +97,7 @@ COORDS = {
 def calibrate_quick():
     """Quick recalibration for specific elements (8-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Layout Elements")
+    print("QUICK RECALIBRATION: Generate & Submit")
     print("="*60)
     print("\nYou have 8 seconds per element. Watch the live cursor position.")
     print("The script will AUTO-CLICK between steps.\n")
@@ -110,40 +110,55 @@ def calibrate_quick():
     else:
         results = {}
     
-    # Step 1: Layouts button (in right sidebar)
+    # Step 1: Generate button (top right, green button)
     print("\n" + "-"*40)
-    print("STEP 1: LAYOUTS BUTTON")
+    print("STEP 1: GENERATE BUTTON")
     print("-"*40)
-    print("Look at the FAR RIGHT sidebar icons")
-    print("Find the 'Layouts' icon (looks like rectangles/grid)")
+    print("Look at TOP RIGHT corner of the page")
+    print("Find the green 'Generate' button with checkmark")
     print("\nMove mouse there NOW! 8 seconds...")
     for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
     x, y = pyautogui.position()
-    results["layouts_button"] = [x, y]
-    print(f"  ✓ Saved: layouts_button = ({x}, {y})")
+    results["generate_button"] = [x, y]
+    print(f"  ✓ Saved: generate_button = ({x}, {y})")
     
-    # Auto-click to open the layouts panel
-    print("\n>>> Auto-clicking Layouts to open panel...")
+    # Auto-click to open the generate dialog
+    print("\n>>> Auto-clicking Generate to open dialog...")
     pyautogui.click(x, y)
-    time.sleep(2)  # Wait for panel to open
+    time.sleep(3)  # Wait for dialog to open
     
-    # Step 2: Portrait 9:16 option
+    # Step 2: Title field in generate dialog
     print("\n" + "-"*40)
-    print("STEP 2: PORTRAIT 9:16")
+    print("STEP 2: TITLE FIELD")
     print("-"*40)
-    print("Panel should show layout options")
-    print("Find and point at 'Portrait 9:16' (tall rectangle)")
+    print("A dialog should be open")
+    print("Find the text field showing 'Untitled Video'")
     print("\nMove mouse there NOW! 8 seconds...")
     for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
     x, y = pyautogui.position()
-    results["portrait_9_16"] = [x, y]
-    print(f"  ✓ Saved: portrait_9_16 = ({x}, {y})")
+    results["generate_title"] = [x, y]
+    print(f"  ✓ Saved: generate_title = ({x}, {y})")
+    
+    # Step 3: Submit button
+    print("\n" + "-"*40)
+    print("STEP 3: SUBMIT BUTTON")
+    print("-"*40)
+    print("In the same dialog, find the Submit/Generate button")
+    print("(Usually blue button at bottom of dialog)")
+    print("\nMove mouse there NOW! 8 seconds...")
+    for i in range(8, 0, -1):
+        x, y = pyautogui.position()
+        print(f"  {i}... (cursor at {x}, {y})", flush=True)
+        time.sleep(1)
+    x, y = pyautogui.position()
+    results["submit_button"] = [x, y]
+    print(f"  ✓ Saved: submit_button = ({x}, {y})")
     
     with open("coords.json", "w") as f:
         json.dump(results, f, indent=2)

@@ -60,13 +60,13 @@ export const CMA1_HARD_BATCH2: Question[] = [
     skillLevel: 'Application',
     question: 'Beginning WIP: 2,000 units (60% complete for conversion). Started: 18,000 units. Completed: 16,000 units. Ending WIP: 4,000 units (40% complete for conversion). Under FIFO, what are the equivalent units for conversion?',
     options: [
-      '15,400 units',
+      '16,400 units',
       '17,600 units',
       '16,000 units',
       '16,800 units'
     ],
     correctAnswer: 0,
-    explanation: 'FIFO equivalent units for conversion: To complete beginning WIP = 2,000 × (1 - 60%) = 800. Started and completed = 16,000 - 2,000 = 14,000 × 100% = 14,000. Ending WIP = 4,000 × 40% = 1,600. Total FIFO EU = 800 + 14,000 + 1,600 = 16,400. Hmm, let me recheck: 800 + 14,000 + 1,600 = 16,400. Under weighted average: 16,000 + 1,600 = 17,600. The FIFO figure excludes prior-period work. 15,400 would be if ending was 25% complete (4,000 × 0.15 = 600). With 40% ending: 16,400.',
+    explanation: 'FIFO equivalent units for conversion: To complete beginning WIP = 2,000 × (1 - 60%) = 800 units. Started and completed = 16,000 - 2,000 = 14,000 units. Ending WIP = 4,000 × 40% = 1,600 units. Total FIFO equivalent units = 800 + 14,000 + 1,600 = 16,400 units. FIFO excludes prior-period work already in beginning WIP, unlike weighted average which would give 16,000 + 1,600 = 17,600 units.',
     reference: 'Process Costing — FIFO Method',
   },
   {

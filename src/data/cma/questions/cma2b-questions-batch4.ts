@@ -37,8 +37,8 @@ export const CMA2B_QUESTIONS_BATCH4: Question[] = [
       '11.6%',
       '10.4%',
     ],
-    correctAnswer: 0,
-    explanation: 'WACC = (Weight of Equity × Cost of Equity) + (Weight of Debt × After-tax Cost of Debt) = (0.60 × 14%) + (0.40 × 8% × (1 - 0.25)) = 8.4% + 2.4% = 10.0% - Wait, let me recalculate: 0.40 × 8% × 0.75 = 2.4%. WACC = 8.4% + 2.4% = 10.8%. The correct answer is 10.8%.',
+    correctAnswer: 1,
+    explanation: 'WACC = (Weight of Equity × Cost of Equity) + (Weight of Debt × After-tax Cost of Debt) = (0.60 × 14%) + (0.40 × 8% × (1 - 0.25)) = 8.4% + 2.4% = 10.8%. The after-tax cost of debt is lower than the before-tax rate because interest expense is tax-deductible, creating a tax shield of 8% × 25% = 2%.',
     reference: 'Weighted Average Cost of Capital',
   },
   {

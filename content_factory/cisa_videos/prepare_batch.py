@@ -60,11 +60,24 @@ def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
     SCRIPTS_DIR.mkdir(exist_ok=True)
     
-    video_matrix = []
-    video_num = 1
-    avatar_idx = 0
-    look_idx = 0
-    bg_idx = 0
+    # Load existing video matrix to append to it
+    matrix_file = OUTPUT_DIR / "video_matrix.json"
+    if matrix_file.exists():
+        with open(matrix_file, "r") as f:
+            video_matrix = json.load(f)
+        video_num = len(video_matrix) + 1
+        print(f"Found {len(video_matrix)} existing videos, starting at #{video_num}")
+        
+        # Start avatar rotation from where we left off
+        avatar_idx = (len(video_matrix)) % len(AVATAR_ROTATION)
+        look_idx = (len(video_matrix)) // len(AVATAR_ROTATION)
+        bg_idx = (len(video_matrix) // 4) % len(BACKGROUNDS)
+    else:
+        video_matrix = []
+        video_num = 1
+        avatar_idx = 0
+        look_idx = 0
+        bg_idx = 0
     
     for csv_file in CSV_FILES:
         csv_path = SCRIPT_DIR / csv_file

@@ -1,7 +1,7 @@
 import { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
+import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
 import { scrollToTop } from './utils/scroll';
 
 // Layouts (always loaded - part of shell)
@@ -327,22 +327,26 @@ function App() {
                 />
 
                 {/* CPA Landing Page (public) */}
-                <Route
-                  path="/cpa"
-                  element={
-                    <SuspensePage>
-                      <CPALanding />
-                    </SuspensePage>
-                  }
-                />
-                <Route
-                  path="/cpa/info"
-                  element={
-                    <SuspensePage>
-                      <CPAInfo />
-                    </SuspensePage>
-                  }
-                />
+                {ENABLE_CPA_COURSE && (
+                  <>
+                    <Route
+                      path="/cpa"
+                      element={
+                        <SuspensePage>
+                          <CPALanding />
+                        </SuspensePage>
+                      }
+                    />
+                    <Route
+                      path="/cpa/info"
+                      element={
+                        <SuspensePage>
+                          <CPAInfo />
+                        </SuspensePage>
+                      }
+                    />
+                  </>
+                )}
 
                 {/* EA Landing Page (public) */}
                 {ENABLE_EA_COURSE && (

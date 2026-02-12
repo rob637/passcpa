@@ -19,6 +19,7 @@ export const isFeatureEnabled = (feature: keyof typeof FEATURES) => FEATURES[fea
  * Course Availability Flags
  * All courses enabled during beta - controlled via environment variables for future safe deployment
  */
+export const ENABLE_CPA_COURSE = true;
 export const ENABLE_EA_COURSE = true;
 export const ENABLE_CMA_COURSE = true;
 export const ENABLE_CIA_COURSE = true;
@@ -27,6 +28,7 @@ export const ENABLE_CISA_COURSE = true;
 
 // Log status on startup for verification
 if (import.meta.env.DEV) {
+  console.log('[FeatureFlags] CPA Course Enabled:', ENABLE_CPA_COURSE);
   console.log('[FeatureFlags] EA Course Enabled:', ENABLE_EA_COURSE);
   console.log('[FeatureFlags] CMA Course Enabled:', ENABLE_CMA_COURSE);
   console.log('[FeatureFlags] CIA Course Enabled:', ENABLE_CIA_COURSE);

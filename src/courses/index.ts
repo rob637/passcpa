@@ -12,7 +12,7 @@ import { CMA_COURSE } from './cma';
 import { CIA_COURSE } from './cia';
 import { CISA_COURSE } from './cisa';
 import { CFP_COURSE } from './cfp';
-import { ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CISA_COURSE, ENABLE_CFP_COURSE } from '../config/featureFlags';
+import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CISA_COURSE, ENABLE_CFP_COURSE } from '../config/featureFlags';
 
 /**
  * All registered courses
@@ -30,7 +30,7 @@ export const COURSES: Record<CourseId, Course> = {
  * Courses that are currently active/available to users
  */
 export const ACTIVE_COURSES: CourseId[] = [
-  'cpa',
+  ...(ENABLE_CPA_COURSE ? ['cpa'] : []),
   ...(ENABLE_EA_COURSE ? ['ea'] : []),
   ...(ENABLE_CMA_COURSE ? ['cma'] : []),
   ...(ENABLE_CIA_COURSE ? ['cia'] : []),

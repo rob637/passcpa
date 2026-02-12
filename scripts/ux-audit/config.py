@@ -9,15 +9,31 @@ Environment variables (set in .env or export):
 """
 
 import os
+import glob
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
+def _find_chromium() -> str | None:
+    """Auto-detect Playwright's Chromium binary."""
+    patterns = [
+        os.path.expanduser("~/.cache/ms-playwright/chromium-*/chrome-linux*/chrome"),
+        "/usr/bin/chromium-browser",
+        "/usr/bin/chromium",
+        "/usr/bin/google-chrome",
+    ]
+    for pattern in patterns:
+        matches = glob.glob(pattern)
+        if matches:
+            return matches[0]
+    return None
 
 # ============================================================================
 # App Configuration
 # ============================================================================
 
-APP_URL = os.getenv("VORAPREP_URL", "http://localhost:5173")
+APP_URL = os.getenv("VORAPREP_URL", "http://localhost:5174")
 TEST_EMAIL = os.getenv("VORAPREP_EMAIL", "test@voraprep.com")
 TEST_PASSWORD = os.getenv("VORAPREP_PASSWORD", "testpassword123")
 
@@ -99,6 +115,7 @@ MAX_ACTIONS_PER_STEP = 5
 HEADLESS = os.getenv("AUDIT_HEADLESS", "true").lower() == "true"
 VIEWPORT_WIDTH = 1440
 VIEWPORT_HEIGHT = 900
+CHROME_PATH = os.getenv("CHROME_PATH") or _find_chromium()
 
 # Report output directory
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "reports")

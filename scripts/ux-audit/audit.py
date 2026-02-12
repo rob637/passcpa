@@ -34,10 +34,11 @@ from datetime import datetime
 from pathlib import Path
 
 from browser_use import Agent, BrowserSession
-from langchain_anthropic import ChatAnthropic
+from browser_use.llm.anthropic.chat import ChatAnthropic
 
+import config
 from config import (
-    APP_URL,
+    CHROME_PATH,
     COURSES,
     HEADLESS,
     LLM_MODEL,
@@ -70,7 +71,7 @@ def build_system_prompt(course_id: str | None) -> str:
     """Build the system prompt for the agent."""
     lines = [
         "You are a senior UX auditor evaluating VoraPrep, a professional exam prep web application.",
-        f"The app is running at: {APP_URL}",
+        f"The app is running at: {config.APP_URL}",
         "",
         "## General Guidelines",
         "- Be thorough and systematic in your evaluation",
@@ -79,6 +80,8 @@ def build_system_prompt(course_id: str | None) -> str:
         "- Compare against best practices from leading edtech platforms (Coursera, Khan Academy, UWorld)",
         "- Rate issues by severity: Critical > High > Medium > Low > Cosmetic",
         "- Focus on real user impact, not pedantic standards violations",
+        "- IMPORTANT: When your audit is complete, return your FULL report using the done action.",
+        "  Do NOT use write_file to save reports. Put ALL findings in the done action text.",
         "",
     ]
 
@@ -88,8 +91,8 @@ def build_system_prompt(course_id: str | None) -> str:
             [
                 f"## Current Course: {course['name']}",
                 f"Sections: {', '.join(course['sections'])}",
-                f"Landing page: {APP_URL}{course['landing']}",
-                f"Exam route: {APP_URL}{course['exam_route']}",
+                f"Landing page: {config.APP_URL}{course['landing']}",
+                f"Exam route: {config.APP_URL}{course['exam_route']}",
                 "",
             ]
         )
@@ -183,10 +186,15 @@ async def run_audit(
     llm = ChatAnthropic(model=LLM_MODEL)
 
     # Set up browser session
-    browser_session = BrowserSession(
-        headless=use_headless,
-        viewport={"width": VIEWPORT_WIDTH, "height": VIEWPORT_HEIGHT},
-    )
+    browser_kwargs = {
+        "headless": use_headless,
+        "viewport": {"width": VIEWPORT_WIDTH, "height": VIEWPORT_HEIGHT},
+        "disable_security": True,
+    }
+    if CHROME_PATH:
+        browser_kwargs["executable_path"] = CHROME_PATH
+        print(f"  Using browser: {CHROME_PATH}")
+    browser_session = BrowserSession(**browser_kwargs)
 
     try:
         # Create and run the agent
@@ -231,7 +239,7 @@ async def run_audit(
         }
 
     finally:
-        await browser_session.close()
+        await browser_session.stop()
 
 
 def _format_report(task: AuditTask, course_id: str | None, result) -> str:
@@ -246,7 +254,7 @@ def _format_report(task: AuditTask, course_id: str | None, result) -> str:
 | **Date** | {ts} |
 | **Course** | {course_name} |
 | **Task** | {task['id']} |
-| **App URL** | {APP_URL} |
+| **App URL** | {config.APP_URL} |
 | **LLM** | {LLM_MODEL} |
 
 ---
@@ -262,6 +270,26 @@ def _format_report(task: AuditTask, course_id: str | None, result) -> str:
         contents = result.extracted_content()
         if contents:
             final_text = "\n\n".join(c for c in contents if c)
+
+    # Fallback: check if the agent wrote a report to its data directory
+    if not final_text or len(final_text) < 200:
+        import glob as _glob
+
+        agent_dirs = sorted(
+            _glob.glob("/tmp/browser_use_agent_*/browseruse_agent_data/*.md"),
+            key=os.path.getmtime,
+            reverse=True,
+        )
+        for md_path in agent_dirs:
+            try:
+                with open(md_path) as f:
+                    content = f.read()
+                if len(content) > len(final_text):
+                    final_text = content
+                    print(f"  (recovered report from agent data: {md_path})")
+                break
+            except OSError:
+                continue
 
     if not final_text:
         final_text = str(result)
@@ -404,14 +432,13 @@ Examples:
     )
     parser.add_argument(
         "--url",
-        help=f"Override app URL (default: {APP_URL})",
+        help=f"Override app URL (default: {config.APP_URL})",
     )
 
     args = parser.parse_args()
 
     # Override URL if provided
     if args.url:
-        import config
         config.APP_URL = args.url
 
     # List tasks

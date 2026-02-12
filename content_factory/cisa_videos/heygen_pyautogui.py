@@ -344,6 +344,10 @@ def create_video(title, script_text, avatar_name, avatar_look=None, background_n
     pyautogui.click(x3, y3)
     time.sleep(1)
     
+    # Close any panel that might be open before background selection
+    pyautogui.press('escape')
+    time.sleep(0.5)
+    
     # Step 4: Set background
     if background_name:
         logger.info(f"[STEP 4] Setting background: {background_name}...")

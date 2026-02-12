@@ -1,0 +1,532 @@
+// FAR Depth Questions - Batch 4
+// Focus: remaining gaps across all FAR blueprint areas
+// Difficulty: balanced easy/medium/hard
+
+import { Question } from '../../../types';
+
+export const FAR_QUESTIONS_DEPTH_4: Question[] = [
+  // FAR-VII: GOVT — GASB SUBSCRIPTION-BASED IT
+  {
+    id: 'far-d4-001',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 96 — Subscription-Based IT Arrangements',
+    difficulty: 'medium',
+    question: 'Under GASB 96, a government that enters into a subscription-based information technology arrangement (SBITA) recognizes:',
+    options: [
+      'Only a periodic subscription expense',
+      'A right-to-use subscription asset (intangible) and a corresponding subscription liability — similar to the lease model under GASB 87',
+      'A capital asset at the full contract value',
+      'Only a footnote disclosure',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 96 (SBITAs — effective for periods beginning after June 15, 2022): Modeled on GASB 87 (Leases). A SBITA provides a government the right to use another party\'s IT software (alone or with IT hardware). Government subscriber recognizes: (1) Subscription liability = PV of subscription payments, (2) Intangible right-to-use subscription asset = subscription liability + payments made before or at commencement + capitalizable implementation costs. Amortize the asset over the shorter of the subscription term or useful life. Short-term exception: SBITAs with maximum possible term of 12 months or less. Implementation costs: capitalize outlays in preliminary project stage — no; application development — yes; post-implementation — no (similar to ASC 350-40 for internal-use software).',
+    reference: 'GASB 96',
+  },
+
+  // FAR-V: NFP — GRANTS WITH CONDITIONS
+  {
+    id: 'far-d4-002',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Conditional Grants — ASU 2018-08',
+    difficulty: 'medium',
+    question: 'Under ASU 2018-08, a government grant to a not-for-profit is recognized as revenue when:',
+    options: [
+      'The grant agreement is signed',
+      'The conditions (barriers) are substantially met — if the grant has both a barrier to entitlement and a right of return/release, it is conditional and revenue is deferred until conditions are met',
+      'Cash is deposited into the NFP\'s bank account',
+      'The fiscal year begins',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASU 2018-08 (ASC 958-605): Clarified donor-imposed conditions vs. restrictions. Conditional contribution: has BOTH (1) a barrier to entitlement (measurable performance requirement, limited discretion on use, or stipulation related to the purpose of the agreement) and (2) a right of return to the contributor (or right of release from the obligation). Until conditions met: not recognized as revenue (recorded as a refundable advance/liability). When conditions are met: recognized as revenue (with donor restrictions if a purpose/time restriction exists, or without restrictions if none). Unconditional with restrictions: recognized immediately as revenue with donor restrictions. Examples of barriers: cost reimbursement grants (barrier = incurring eligible costs), matching requirements.',
+    reference: 'ASU 2018-08; ASC 958-605',
+  },
+
+  // FAR-I: DISAGGREGATION OF REVENUE
+  {
+    id: 'far-d4-003',
+    section: 'FAR',
+    blueprintArea: 'FAR-I',
+    topicId: 'far-revenue-disclosure',
+    topic: 'Financial Reporting',
+    subtopic: 'ASC 606 — Revenue Disaggregation Disclosure',
+    difficulty: 'easy',
+    question: 'Under ASC 606, entities must disclose revenue disaggregated into categories that depict:',
+    options: [
+      'Only total revenue for the period',
+      'How the nature, amount, timing, and uncertainty of revenue and cash flows are affected by economic factors — typically by geography, product line, timing of transfer, customer type, or contract type',
+      'Only the largest customer\'s revenue',
+      'Revenue by employee',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 606-10-50 (Revenue Disclosures): Disaggregation: present revenue in categories showing how economic factors affect the nature, amount, timing, and uncertainty of revenue. Common categories: type of good/service, geography, market/customer type, contract type, timing (point in time vs. over time), sales channel. Also required: contract balances (receivables, contract assets, contract liabilities) and how they changed. Performance obligations: nature, significant payment terms, timing. Transaction price allocated to unsatisfied/partially satisfied performance obligations (remaining backlog). Practical expedient: not required to disclose remaining performance obligations if original expected duration ≤ 1 year.',
+    reference: 'ASC 606-10-50',
+  },
+
+  // FAR-IV: GOVT — REPORTING ENTITY DEFINITION
+  {
+    id: 'far-d4-004',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'The Financial Reporting Entity',
+    difficulty: 'easy',
+    question: 'A primary government is defined as:',
+    options: [
+      'Any government entity receiving federal funds',
+      'A state government, general purpose local government (city, county, town), or special purpose government that has a separately elected governing body, is legally separate, and is fiscally independent',
+      'Only state governments',
+      'The federal government',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 14/61 — Primary government: must meet all three criteria: (1) Has a separately elected governing body (elected by the public), (2) Is legally separate (can sue/be sued, own property, contract in its own name), (3) Is fiscally independent — sets its own budget, levies its own taxes/fees, issues its own debt without substantive approval by another government. The financial reporting entity = primary government + its component units. Special-purpose governments engaging in only business-type activities (e.g., utilities, transit authorities) may be primary governments if they meet the criteria. School districts: can be primary governments if fiscally independent (vary by state).',
+    reference: 'GASB 14; GASB 61',
+  },
+
+  // FAR-II: INVESTMENTS — DEBT SECURITIES
+  {
+    id: 'far-d4-005',
+    section: 'FAR',
+    blueprintArea: 'FAR-II',
+    topicId: 'far-investments',
+    topic: 'Select Financial Statement Accounts',
+    subtopic: 'Classification of Debt Securities',
+    difficulty: 'easy',
+    question: 'Under ASC 320, debt securities classified as "held-to-maturity" are reported at:',
+    options: [
+      'Fair value with changes in net income',
+      'Amortized cost — because the entity has the positive intent and ability to hold the security until maturity',
+      'Lower of cost or market',
+      'Par value',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 320 (Investments — Debt Securities): Three categories: (1) Held-to-maturity (HTM): amortized cost. Positive intent AND ability to hold until maturity. Subject to CECL impairment model (ASC 326). (2) Available-for-sale (AFS): fair value, with unrealized gains/losses in OCI (AOCI). Impairment: use the allowance model — credit losses through a contra account. Non-credit deterioration in OCI. (3) Trading: fair value, with unrealized gains/losses in net income. Transfers between categories: rare and have specific consequences (e.g., transfer out of HTM taints the entire category). Note: equity securities (non-debt) are generally at fair value through net income under ASU 2016-01 (no AFS category for equities).',
+    reference: 'ASC 320-10-25',
+  },
+
+  // FAR-III: NONMONETARY EXCHANGES
+  {
+    id: 'far-d4-006',
+    section: 'FAR',
+    blueprintArea: 'FAR-III',
+    topicId: 'far-nonmonetary',
+    topic: 'Select Transactions',
+    subtopic: 'ASC 845 — Nonmonetary Exchanges',
+    difficulty: 'medium',
+    question: 'Under ASC 845, a nonmonetary exchange has commercial substance if:',
+    options: [
+      'Both parties are commercial entities',
+      'The entity\'s future cash flows are expected to change significantly as a result of the exchange — in timing, amount, or risk — and the exchange is recorded at fair value',
+      'Cash (boot) is involved',
+      'The assets exchanged are identical',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 845 (Nonmonetary Transactions): Commercial substance: exists when the configuration (timing, amount, risk) of future cash flows from the asset received differs significantly from the asset given up. Commercial substance present: record at fair value of asset given up (or received if more clearly determinable). Recognize gain/loss. NO commercial substance (e.g., swapping similar productive assets): record at carrying amount of asset given up. No gain recognized (losses are still recognized if FV < carrying amount). Boot (cash involved): if commercial substance, FV. If no commercial substance and boot received: recognize proportional gain (boot / (boot + FV of asset received) × gain). If boot represents > 25% of FV: treat as a monetary transaction.',
+    reference: 'ASC 845-10-30',
+  },
+
+  // FAR-VII: GOVT — CONDUIT DEBT
+  {
+    id: 'far-d4-007',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 91 — Conduit Debt Obligations',
+    difficulty: 'hard',
+    question: 'Under GASB 91, a government issuer of conduit debt (debt issued on behalf of a third party):',
+    options: [
+      'Always records the debt as its own liability',
+      'Does NOT recognize conduit debt as a liability (the third-party obligor is responsible for repayment) — unless the issuer makes a voluntary commitment creating an additional obligation or the issuer has made a payment on the debt with no related reimbursement',
+      'Records it as revenue',
+      'Reports it as a component unit',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 91 (Conduit Debt Obligations): Conduit debt: issued by a government (the issuer) on behalf of a third party (obligor) — the obligor is responsible for repayment (e.g., industrial revenue bonds). The issuer: does NOT recognize the debt as a liability (not a direct obligation). Does NOT recognize a receivable. Disclosure: aggregate outstanding principal of conduit debt and general description. Exception — if the issuer makes a voluntary additional commitment (guarantee, moral obligation): recognize a liability when it is more likely than not that the issuer will make a payment AND the amount can be reasonably estimated. If the issuer has already made a payment and does not expect reimbursement: recognize the expenditure/expense.',
+    reference: 'GASB 91',
+  },
+
+  // FAR-V: GOVT — PERMANENT FUND
+  {
+    id: 'far-d4-008',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-govt',
+    topic: 'Governmental Accounting',
+    subtopic: 'Permanent Fund',
+    difficulty: 'easy',
+    question: 'A permanent fund in governmental accounting is used to:',
+    options: [
+      'Record all permanent employees\' salaries',
+      'Report resources that are legally restricted so that only earnings (not principal) may be used to support government programs for the benefit of the government or its citizenry',
+      'Record capital assets',
+      'Track long-term debt payments',
+    ],
+    correctAnswer: 1,
+    explanation: 'Permanent fund: one of the five governmental fund types. Purpose: report resources where the principal must remain intact (like an endowment) and only the earnings can be spent for the benefit of the government or its citizens. Key distinction from private-purpose trust fund (fiduciary): permanent fund benefits the GOVERNMENT or its citizenry broadly. Private-purpose trust benefits external (non-government) parties. Example: a gift to a city where the principal is invested and interest income is used to maintain a public park. Modified accrual basis (governmental fund). Investment earnings: recognized as revenue when measurable and available. Fund balance: principal portion = nonspendable (GASB 54).',
+    reference: 'GASB 34; GASB 54',
+  },
+
+  // FAR-I: DISCLOSURE — RISKS & UNCERTAINTIES
+  {
+    id: 'far-d4-009',
+    section: 'FAR',
+    blueprintArea: 'FAR-I',
+    topicId: 'far-disclosures',
+    topic: 'Financial Reporting',
+    subtopic: 'ASC 275 — Risks and Uncertainties',
+    difficulty: 'easy',
+    question: 'ASC 275 requires disclosure of:',
+    options: [
+      'Only lawsuits',
+      'The nature of the entity\'s operations, use of estimates in preparing financial statements, certain significant estimates, and current vulnerability due to concentrations',
+      'Only revenue recognition policies',
+      'Employee headcount',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 275 (Risks and Uncertainties): Required disclosures: (1) Nature of operations: principal products/services, markets, relative importance of each, basis of revenue recognition. (2) Use of estimates: note that the preparation of financial statements in conformity with GAAP requires the use of estimates. (3) Certain significant estimates: if it is reasonably possible that an estimate will change materially in the near term — disclose the nature of the uncertainty. (4) Concentrations: if the entity is vulnerable due to concentrations in revenue, suppliers, labor (unions), geographic area, etc. — disclose when it is reasonably possible that a near-term severe impact could occur. "Near term" = within one year of the financial statement date.',
+    reference: 'ASC 275-10-50',
+  },
+
+  // FAR-II: RECEIVABLE FACTORING
+  {
+    id: 'far-d4-010',
+    section: 'FAR',
+    blueprintArea: 'FAR-II',
+    topicId: 'far-receivables',
+    topic: 'Select Financial Statement Accounts',
+    subtopic: 'Factoring/Transfer of Receivables',
+    difficulty: 'medium',
+    question: 'Under ASC 860, a transfer of receivables (factoring) is accounted for as a sale when:',
+    options: [
+      'Any receivable is sold to a factor',
+      'Three conditions are met: (1) transferred assets are isolated from the transferor, (2) the transferee can pledge or exchange the assets, and (3) the transferor does not maintain effective control — if all met, derecognize the receivables and recognize a gain/loss',
+      'Cash is immediately received',
+      'The factor is a bank',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 860 (Transfers and Servicing): Sale treatment requires ALL three conditions: (1) Isolation: transferred assets are beyond the reach of the transferor and its creditors (even in bankruptcy). (2) Transferee\'s rights: the transferee has the right to pledge or exchange the assets freely. (3) No effective control retained: the transferor does not maintain effective control through an agreement to repurchase, ability to unilaterally cause the holder to return, etc. If sale criteria are NOT met: treat as a secured borrowing (keep receivable on books, record a liability for cash received). Factoring: with recourse (transferor bears credit risk) often fails sale criteria → secured borrowing. Without recourse (transferor has no further obligation) more likely qualifies as sale.',
+    reference: 'ASC 860-10-40',
+  },
+
+  // FAR-III: RESEARCH & DEVELOPMENT
+  {
+    id: 'far-d4-011',
+    section: 'FAR',
+    blueprintArea: 'FAR-III',
+    topicId: 'far-rd',
+    topic: 'Select Transactions',
+    subtopic: 'ASC 730 — Research and Development Costs',
+    difficulty: 'easy',
+    question: 'Under ASC 730, research and development (R&D) costs are generally:',
+    options: [
+      'Capitalized as an intangible asset',
+      'Expensed as incurred — R&D costs include materials, equipment (with no alternative future use), personnel, contract services, and allocated overhead',
+      'Deferred until the product is commercialized',
+      'Included in inventory cost',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 730 (Research and Development): R&D costs: expensed as incurred. Research: planned search for new knowledge. Development: translating research findings into a plan for a new product/process. Includes: materials consumed, equipment with no alternative future use (if alternative future use exists: capitalize and depreciate), salaries of R&D personnel, contractor fees, allocated indirect costs (except general & administrative). Exceptions (NOT expensed): (1) R&D acquired in a business combination: capitalize as intangible asset at FV (then expense if no alternative future use), (2) Software development: internal-use software (ASC 350-40) — capitalize after preliminary project stage; software to be sold (ASC 985-20) — capitalize after technological feasibility. Computer software costs follow their own standards, not ASC 730.',
+    reference: 'ASC 730-10-25',
+  },
+
+  // FAR-IV: GOVT — GENERAL FUND
+  {
+    id: 'far-d4-012',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'The General Fund',
+    difficulty: 'easy',
+    question: 'The General Fund of a governmental entity:',
+    options: [
+      'Is optional',
+      'Is the chief operating fund — it accounts for all financial resources NOT required to be reported in another fund, and every government has exactly one General Fund which is always a major fund',
+      'Only accounts for special grants',
+      'Reports proprietary activities',
+    ],
+    correctAnswer: 1,
+    explanation: 'General Fund: accounts for all financial resources except those required to be reported in a different fund. Every government has one (and only one) General Fund. It is ALWAYS a major fund (reported separately in fund financial statements regardless of size). Revenue sources: property taxes, sales taxes, income taxes, fees, fines, intergovernmental revenues. Modified accrual basis / current financial resources measurement focus. Most governmental transactions flow through the General Fund unless a specialized fund is required. Budget vs. actual comparison: required as RSI for the General Fund (if legally adopted annual budget exists). Residual fund balance is classified as "unassigned" (the only fund that can have positive unassigned fund balance under GASB 54).',
+    reference: 'GASB 34; GASB 54',
+  },
+
+  // FAR-V: NFP — COLLECTIONS
+  {
+    id: 'far-d4-013',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Works of Art and Historical Treasures',
+    difficulty: 'medium',
+    question: 'Under ASC 958, an NFP that receives a donated collection item (art, historical artifact) may:',
+    options: [
+      'Always capitalize it as an asset',
+      'Choose NOT to capitalize the item if the collection meets three conditions: (1) held for public exhibition/education/research, (2) protected and preserved, and (3) proceeds from any sales are used to acquire other collection items — if NOT capitalized, neither revenue nor expense is recognized',
+      'Expense it immediately in all cases',
+      'Record it at insurance value',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 958-360 (Collections): An NFP has a policy choice: capitalize OR do not capitalize collection items. If policy is to capitalize: record at fair value (donated) or cost (purchased) as an asset. Donation is contribution revenue. If policy is to NOT capitalize (requires all three criteria): (1) Held for public exhibition, education, or research in furtherance of public service (not financial gain), (2) Protected, kept unencumbered, cared for, and preserved, (3) Subject to a policy requiring proceeds from sales to be used to acquire other collection items. If not capitalizing: do not recognize revenue or asset upon donation. Purchases of collection items are reported as a decrease in the appropriate net asset class. Retroactive capitalization NOT required if policy changes to capitalize.',
+    reference: 'ASC 958-360-25',
+  },
+
+  // FAR-VII: GOVT — GASB 101 COMPENSATED ABSENCES
+  {
+    id: 'far-d4-014',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 101 — Compensated Absences',
+    difficulty: 'medium',
+    question: 'Under GASB 101, a government recognizes a liability for compensated absences (vacation, sick leave) when:',
+    options: [
+      'Only at employee termination',
+      'The leave has been earned (through past employment service) and is attributable to services already rendered — measured using the employee\'s pay rate as of the financial statement date with only certain types of additional accruals',
+      'The employee requests payment',
+      'The leave is approved by a supervisor',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 101 (Compensated Absences — effective periods beginning after Dec 15, 2023): Unified model replacing previous guidance (GASB 16). Recognition: a liability is recognized for leave that has not been used if (1) the leave was earned (attributable to past services), (2) the leave is accumulated or vested (carries forward or is payable at termination), (3) payment is more likely than not. Measurement: use the employee\'s pay rate as of the financial reporting date. Include: salary-related payments directly and incrementally associated with the compensated absences (employer\'s share of Social Security, Medicare — only if calculated on the basis of the absence payment). NOT included: health insurance, pension contributions. In governmental fund statements: recognized as expenditure only when normally expected to be liquidated with expendable available resources.',
+    reference: 'GASB 101',
+  },
+
+  // FAR-I: NONCONTROLLING INTERESTS
+  {
+    id: 'far-d4-015',
+    section: 'FAR',
+    blueprintArea: 'FAR-I',
+    topicId: 'far-nci',
+    topic: 'Financial Reporting',
+    subtopic: 'ASC 810 — Noncontrolling Interest Presentation',
+    difficulty: 'easy',
+    question: 'On consolidated financial statements, noncontrolling interest (NCI) is reported as:',
+    options: [
+      'A liability',
+      'A separate component of stockholders\' equity (not mezzanine equity) — and NCI\'s share of net income is presented on the face of the income statement',
+      'An asset',
+      'An off-balance-sheet item',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 810-10-45: NCI (minority interest) presentation: (1) Balance sheet: reported in equity, separately from the parent\'s equity. Labeled as "noncontrolling interest" or "minority interest." NOT a liability or mezzanine. (2) Income statement: total consolidated net income is reported, then attributed to: parent shareholders and NCI shareholders. (3) Statement of equity: NCI is shown separately. Changes in ownership that do NOT result in loss of control: accounted for as equity transactions (no gain/loss). Changes that DO result in loss of control: deconsolidate, recognize gain/loss, measure any retained investment at FV. NCI is initially measured at either: (1) Fair value (full goodwill method), or (2) proportionate share of identifiable net assets (partial goodwill).',
+    reference: 'ASC 810-10-45',
+  },
+
+  // FAR-II: WARRANTY OBLIGATIONS
+  {
+    id: 'far-d4-016',
+    section: 'FAR',
+    blueprintArea: 'FAR-II',
+    topicId: 'far-warranties',
+    topic: 'Select Financial Statement Accounts',
+    subtopic: 'Warranties — Assurance vs. Service-Type',
+    difficulty: 'medium',
+    question: 'Under ASC 606, the distinction between an assurance-type warranty and a service-type warranty determines:',
+    options: [
+      'The length of the warranty period',
+      'Whether the warranty is a separate performance obligation — assurance-type warranties are NOT separate performance obligations (accrued as an expense per ASC 460), while service-type warranties ARE separate performance obligations with revenue deferred',
+      'The cost to the manufacturer',
+      'Whether the warranty can be extended',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 606 + ASC 460: Assurance-type warranty: promises that the product meets agreed-upon specifications at the time of sale. NOT a separate performance obligation. Accounted for under ASC 460: accrue warranty expense and liability at the time of sale (based on estimated costs). Service-type warranty: provides a service beyond assurance (e.g., extended warranty, coverage beyond statutory requirements, optional separately priced warranty). IS a separate performance obligation → allocate transaction price, defer revenue, recognize over the warranty period. Indicators of service-type: customer can purchase separately, covers defects arising after delivery, covers items beyond manufacturer\'s control. If warranty includes both: allocate between the two types.',
+    reference: 'ASC 606-10-55-30; ASC 460',
+  },
+
+  // FAR-III: TROUBLED DEBT — DEBTOR
+  {
+    id: 'far-d4-017',
+    section: 'FAR',
+    blueprintArea: 'FAR-III',
+    topicId: 'far-debt-modifications',
+    topic: 'Select Transactions',
+    subtopic: 'Debt Extinguishment',
+    difficulty: 'medium',
+    question: 'When a debtor extinguishes debt before maturity by paying cash, the difference between the cash paid and the carrying amount of the debt is:',
+    options: [
+      'Always deferred and amortized',
+      'Recognized as a gain or loss on extinguishment of debt — reported in income from continuing operations (no longer reported as an extraordinary item)',
+      'Ignored',
+      'Recorded in OCI',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 470-50 (Debt — Modifications and Extinguishments): When debt is extinguished: carrying amount (face + unamortized premium − unamortized discount − unamortized debt issuance costs) is compared to the reacquisition price (cash paid, FV of new debt issued, or FV of equity issued). Gain/loss = carrying amount − reacquisition price. Reported in income from continuing operations (ASU 2015-01 eliminated extraordinary item reporting). In-substance defeasance: irrevocably placing assets in trust to service the debt. Only qualifies as extinguishment if legally released from being the primary obligor. If not legally released: not extinguished — keep the debt and asset on the balance sheet.',
+    reference: 'ASC 470-50-40',
+  },
+
+  // FAR-IV: GOVT — SPECIAL ASSESSMENTS
+  {
+    id: 'far-d4-018',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Special Assessment Debt',
+    difficulty: 'hard',
+    question: 'When a government issues special assessment debt (bonds where property owners pay special charges to fund improvements that benefit their properties):',
+    options: [
+      'The debt is always reported on the government\'s balance sheet',
+      'If the government is obligated in some manner, the debt is reported as a general long-term liability — if the government has NO obligation whatsoever, the debt is NOT reported as a government liability (only disclosed in notes)',
+      'The property owners record the liability',
+      'It is recorded as a grant',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB Codification §S40 (Special Assessments): Special assessment projects: improvements benefiting specific properties (sidewalks, sewer lines, street lighting). Property owners pay special assessments to repay the debt. Debt reporting depends on the government\'s obligation: (1) Government is obligated in some manner (explicitly or implicitly, even as backup): report as a general long-term liability (government-wide statements only). (2) Government is NOT obligated in any manner: do NOT report the debt. Only disclose in the notes. Construction phase: use a Capital Projects Fund. Debt service phase: may use a Debt Service Fund (if government is obligated) or an Agency/Custodial Fund (if merely collecting on behalf of property owners). Special assessment revenues are recognized in governmental funds when levied (if available).',
+    reference: 'GASB Codification §S40',
+  },
+
+  // FAR-II: INTANGIBLE ASSETS — SOFTWARE
+  {
+    id: 'far-d4-019',
+    section: 'FAR',
+    blueprintArea: 'FAR-II',
+    topicId: 'far-software',
+    topic: 'Select Financial Statement Accounts',
+    subtopic: 'Internal-Use Software — ASC 350-40',
+    difficulty: 'medium',
+    question: 'Under ASC 350-40, costs of internal-use software are capitalized during:',
+    options: [
+      'All phases of development',
+      'The application development stage — costs in the preliminary project stage (conceptual formulation, vendor evaluation) and post-implementation/operation stage (training, maintenance) are expensed as incurred',
+      'Only after the software is in use',
+      'Only if purchased from a third party',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 350-40 (Internal-Use Software): Three stages: (1) Preliminary project stage: determining feasibility, evaluating alternatives, selecting vendors → expense. (2) Application development stage: coding, testing, data conversion, installation → capitalize (external and internal costs, including payroll of employees devoted to the project). Upgrades/enhancements that add functionality: capitalize. (3) Post-implementation/operation stage: training, maintenance, ongoing support → expense. Capitalized costs: amortize on a straight-line basis over the estimated useful life (begins when the software is ready for its intended use). Cloud computing (hosting arrangements — ASU 2018-15): implementation costs follow the same capitalization rules; if a hosting arrangement is NOT a license (i.e., it is a service contract): capitalize implementation costs as a prepaid asset (not intangible asset) and amortize over the service term.',
+    reference: 'ASC 350-40; ASU 2018-15',
+  },
+
+  // FAR-VI: TROUBLED DEBT — CREDITOR SIDE
+  {
+    id: 'far-d4-020',
+    section: 'FAR',
+    blueprintArea: 'FAR-VI',
+    topicId: 'far-loan-impairment',
+    topic: 'Transactions',
+    subtopic: 'Individually Assessed Loan Impairment',
+    difficulty: 'hard',
+    question: 'Under ASC 326, when a creditor individually assesses a financial asset for expected credit losses, the allowance is based on:',
+    options: [
+      'Simply writing off the entire loan',
+      'One of three methods: (1) Present value of expected future cash flows discounted at the loan\'s effective interest rate, (2) Observable market price of the loan, or (3) Fair value of the collateral (if collateral-dependent) — the difference from the amortized cost basis is the allowance',
+      'Only the loan\'s original face amount',
+      'The borrower\'s total net worth',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 326-20 (CECL — individually assessed): When a financial asset does not share similar risk characteristics with other assets: evaluate individually. Methods to estimate expected credit losses: (1) DCF method: PV of expected cash flows at the loan\'s original effective interest rate. Difference from amortized cost = allowance. (2) Observable market price: if available (unusual for loans). (3) Fair value of collateral: for collateral-dependent assets (when foreclosure is probable or the borrower is expected to default and repayment is expected substantially through collateral). Practical expedient: if operating under the FV of collateral method: allowance = amortized cost − FV of collateral (less estimated selling costs if planning to sell). Write-off: when determined that the financial asset (or portion) is uncollectible.',
+    reference: 'ASC 326-20-35',
+  },
+
+  // FAR-I: DISCONTINUED OPERATIONS
+  {
+    id: 'far-d4-021',
+    section: 'FAR',
+    blueprintArea: 'FAR-I',
+    topicId: 'far-discontinued',
+    topic: 'Financial Reporting',
+    subtopic: 'ASC 205-20 — Discontinued Operations',
+    difficulty: 'medium',
+    question: 'Under ASC 205-20 (ASU 2014-08), a disposal qualifies as a discontinued operation when the component:',
+    options: [
+      'Is any asset group sold',
+      'Has been disposed of or is classified as held for sale AND represents a strategic shift that has (or will have) a major effect on the entity\'s operations and financial results — such as a major line of business or geographical area',
+      'Results in any loss on sale',
+      'Is less than 10% of revenue',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASU 2014-08 (ASC 205-20): Raised the threshold from the previous guidance. A discontinued operation: (1) Component has been disposed of or is held for sale, AND (2) Represents a strategic shift with a major effect on operations and financial results. Examples of strategic shift: disposal of a major line of business, major geographical area, major equity method investment, or other major parts of an entity. Presentation: results of discontinued operations are reported separately (net of tax) below income from continuing operations on the income statement. Assets and liabilities of held-for-sale components: reported separately on the balance sheet. Disclosures: major classes of assets/liabilities, revenue, pretax income/loss, and gain/loss on disposal.',
+    reference: 'ASU 2014-08; ASC 205-20',
+  },
+
+  // FAR-V: GOVT — FUND ACCOUNTING ENTRIES
+  {
+    id: 'far-d4-022',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-govt',
+    topic: 'Governmental Accounting',
+    subtopic: 'Property Tax Revenue Recognition',
+    difficulty: 'medium',
+    question: 'A city levies property taxes of $5,000,000. It estimates 3% will be uncollectible. Of the collectible amount, 95% is expected to be collected within 60 days of year-end. The property tax revenue recognized for the year is:',
+    options: [
+      '$5,000,000',
+      '$4,607,500 — the taxes levied ($5M), reduced by the estimated uncollectible amount ($150K), then limited to the amount that is "available" (collectible within 60 days: 95% of collectible amount)',
+      '$4,850,000',
+      '$4,750,000',
+    ],
+    correctAnswer: 1,
+    explanation: 'Property tax revenue calculation (modified accrual): (1) Total levy: $5,000,000. (2) Less estimated uncollectible: $5M × 3% = $150,000. Collectible amount = $4,850,000. (3) Available test (modified accrual): collectible within 60 days of year-end = $4,850,000 × 95% = $4,607,500 = revenue recognized. The remaining $4,850,000 - $4,607,500 = $242,500 collected after 60 days: recognized as deferred inflows of resources (not revenue this period). Journal entries: Dr. Property Tax Receivable $5,000,000; Cr. Allowance for Uncollectible Taxes $150,000; Cr. Revenue $4,607,500; Cr. Deferred Inflows of Resources $242,500. When the "unavailable" taxes are collected next year within the availability period: recognize as revenue.',
+    reference: 'GASB Codification §P70',
+  },
+
+  // FAR-III: SOFTWARE TO BE SOLD
+  {
+    id: 'far-d4-023',
+    section: 'FAR',
+    blueprintArea: 'FAR-III',
+    topicId: 'far-software-sold',
+    topic: 'Select Transactions',
+    subtopic: 'ASC 985-20 — Software to Be Sold',
+    difficulty: 'hard',
+    question: 'Under ASC 985-20, costs of developing computer software to be sold, leased, or marketed are capitalized beginning when:',
+    options: [
+      'The project is initiated',
+      'Technological feasibility has been established — all research, planning, and coding costs before that point are expensed as R&D; after that point, production costs are capitalized until the product is available for general release',
+      'Revenue from the software begins',
+      'The software is fully tested',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 985-20: Software to be sold, leased, or marketed: (1) Before technological feasibility: expense as R&D (ASC 730). Technological feasibility = completion of detailed program design OR working model (if no detailed design). (2) After technological feasibility: capitalize coding, testing, and production costs. (3) After "available for general release to customers": stop capitalizing — amortize. Amortization: greater of (a) ratio of current revenue/total expected revenue × capitalized cost, or (b) straight-line over remaining estimated useful life. Each period: test for net realizable value (NRV). If carrying amount > NRV: write down (permanent reduction). Maintenance/customer support costs: expense as incurred.',
+    reference: 'ASC 985-20-25',
+  },
+
+  // FAR-VII: GOVT — POLLUTION REMEDIATION
+  {
+    id: 'far-d4-024',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 49 — Pollution Remediation',
+    difficulty: 'hard',
+    question: 'Under GASB 49, a government recognizes a liability for pollution remediation when one of five obligating events occurs. An example of an obligating event is:',
+    options: [
+      'Any property purchase',
+      'The government is compelled to take action — such as being identified by a regulatory agency (EPA) as a responsible party or being named in a lawsuit for remediation costs',
+      'A neighboring property owner files a complaint',
+      'The government conducts routine testing',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 49 (Pollution Remediation Obligations): Five obligating events (any one triggers recognition): (1) Imminent endangerment to public health or welfare and the government is responsible. (2) Government violates a pollution prevention-related permit or license. (3) Government is identified by a regulator (e.g., EPA) as a responsible party. (4) Government is named in a lawsuit or asserts claim against another party. (5) Government commences or legally obligates itself to begin remediation. Measurement: estimated current value of expected outlays using the expected cash flow technique (probability-weighted scenarios). Discounts to present value NOT required but permitted if timing is fixed. Government-wide statements: expense/liability. Governmental funds: expenditure when normally expected to be liquidated with expendable, available financial resources. Potential recoveries (insurance): reduce the liability only if realization is probable.',
+    reference: 'GASB 49',
+  },
+
+  // FAR-I: COMPREHENSIVE ANNUAL FINANCIAL REPORT
+  {
+    id: 'far-d4-025',
+    section: 'FAR',
+    blueprintArea: 'FAR-I',
+    topicId: 'far-framework',
+    topic: 'Financial Reporting',
+    subtopic: 'GAAP vs. IFRS — Key Differences',
+    difficulty: 'medium',
+    question: 'One significant difference between U.S. GAAP and IFRS is that IFRS:',
+    options: [
+      'Requires LIFO inventory method',
+      'Prohibits the use of the LIFO inventory method — while U.S. GAAP permits LIFO, FIFO, and weighted-average',
+      'Does not require a Statement of Cash Flows',
+      'Uses the same lease classification as U.S. GAAP',
+    ],
+    correctAnswer: 1,
+    explanation: 'Key U.S. GAAP vs. IFRS differences: (1) Inventory: IFRS prohibits LIFO; GAAP allows LIFO, FIFO, weighted-average. IFRS uses lower of cost or NRV (can reverse write-downs); GAAP lower of cost or NRV for non-LIFO (no reversal for LIFO/retail). (2) PP&E: IFRS allows revaluation model (upward to FV); GAAP does not (always cost model). (3) Development costs: IFRS capitalizes if 6 criteria met (IAS 38); GAAP expenses all R&D. (4) Impairment: IFRS allows reversal of impairment losses (except goodwill); GAAP does not for assets held for use. (5) Extraordinary items: IFRS prohibits; GAAP eliminated (ASU 2015-01). (6) Component depreciation: IFRS requires; GAAP permits but rarely used. (7) IFRS is principles-based (less prescriptive); GAAP is more rules-based.',
+    reference: 'IAS 2; ASC 330; IFRS comparison',
+  },
+];

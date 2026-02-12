@@ -67,6 +67,7 @@ const createQuickActions = (courseId: CourseId): DashboardQuickAction[] => {
       description: 'Key terms',
       path: `${basePath}/flashcards`,
       color: '#8b5cf6', // purple
+      isFree: true, // Flashcards are free during trial
     },
   ];
 };

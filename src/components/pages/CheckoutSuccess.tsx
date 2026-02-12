@@ -4,13 +4,17 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Sparkles, BookOpen, Trophy } from 'lucide-react';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { isFounderPricingActive } from '../../services/subscription';
 
 const CheckoutSuccess = () => {
   useDocumentTitle('Welcome to VoraPrep!');
   const [confetti, setConfetti] = useState(true);
+  const [searchParams] = useSearchParams();
+  // Show founder badge if the checkout happened during the founder window
+  const isFounder = searchParams.get('founder') === 'true' || isFounderPricingActive();
 
   useEffect(() => {
     // Hide confetti after animation
@@ -97,7 +101,8 @@ const CheckoutSuccess = () => {
             </Link>
           </div>
 
-          {/* Founder Badge */}
+          {/* Founder Badge — only shown for founder-window subscribers */}
+          {isFounder && (
           <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 px-4 py-2 rounded-full">
               <Trophy className="w-5 h-5 text-amber-600 dark:text-amber-400" />
@@ -106,6 +111,7 @@ const CheckoutSuccess = () => {
               </span>
             </div>
           </div>
+          )}
         </div>
 
         {/* Support Note */}

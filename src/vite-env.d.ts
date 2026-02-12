@@ -2,6 +2,20 @@
 
 declare const __APP_VERSION__: string;
 
+interface ImportMetaEnv {
+  // Course availability flags (all default to 'true' when unset)
+  readonly VITE_ENABLE_CPA_COURSE?: string;
+  readonly VITE_ENABLE_EA_COURSE?: string;
+  readonly VITE_ENABLE_CMA_COURSE?: string;
+  readonly VITE_ENABLE_CIA_COURSE?: string;
+  readonly VITE_ENABLE_CFP_COURSE?: string;
+  readonly VITE_ENABLE_CISA_COURSE?: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+
 interface Window {
   gtag: (command: string, ...args: any[]) => void;
   dataLayer: any[];

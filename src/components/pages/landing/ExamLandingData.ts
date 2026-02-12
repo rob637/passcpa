@@ -103,6 +103,16 @@ export interface ExamLandingConfig {
     href: string;
   }>;
   
+  // Demo question for landing page (interactive preview)
+  demoQuestion?: {
+    question: string;
+    options: string[];
+    correctAnswer: number;
+    explanation: string;
+    section: string;
+    topic: string;
+  };
+  
   // Disclaimer text
   disclaimer: string;
 }
@@ -217,6 +227,16 @@ export const CPA_CONFIG: ExamLandingConfig = {
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'No Credit Card to Start', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
     ],
+  },
+  
+  // Demo question shown on landing page for interactive preview
+  demoQuestion: {
+    question: 'On December 15, Year 1, Holt Co. signed a legally binding contract to purchase a building for $750,000. The contract required that the closing take place on February 15, Year 2. Which amount, if any, should Holt report as a liability from this contract in its Year 1 financial statements?',
+    options: ['$0', '$75,000', '$375,000', '$750,000'],
+    correctAnswer: 0,
+    explanation: 'Until the closing occurs, no liability exists. A commitment to purchase an asset in the future is disclosed in the notes to financial statements but is not recorded as a liability. The contract creates an executory contract, where both parties have performance obligations remaining.',
+    section: 'FAR',
+    topic: 'Contingencies & Commitments',
   },
   
   disclaimer: 'Not affiliated with AICPA or NASBA.',

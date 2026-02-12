@@ -22,7 +22,11 @@ const messaging = admin.messaging();
 // ============================================================================
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
-const STRIPE_PUBLISHABLE_KEY = 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
+// Publishable key is not secret but varies per environment (test vs live)
+const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_51SzK1cQ9jgQM2iI4Iy1B5iRE5mi17YHRIS1R24vJRX9Cyrvc8W1Q0fjpJMFAfI1DSO3OziMXWFjQ8umbQZhxvFK300AKFvcEJb';
+
+// Base URL for redirects — defaults to production, override via env for dev/staging
+const APP_BASE_URL = process.env.APP_BASE_URL || 'https://voraprep.com';
 
 let stripe = null;
 if (STRIPE_SECRET_KEY) {
@@ -1405,8 +1409,8 @@ exports.createCheckoutSession = onCall({
           quantity: 1,
         },
       ],
-      success_url: 'https://voraprep.com/checkout-success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'https://voraprep.com/pricing',
+      success_url: `${APP_BASE_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${APP_BASE_URL}/pricing`,
       subscription_data: {
         metadata: {
           firebaseUserId: userId,
@@ -1700,7 +1704,7 @@ exports.createCustomerPortalSession = onCall({
 
     const session = await stripe.billingPortal.sessions.create({
       customer: stripeCustomerId,
-      return_url: 'https://voraprep.com/settings',
+      return_url: `${APP_BASE_URL}/settings`,
     });
 
     return { url: session.url };

@@ -1,0 +1,538 @@
+// ISC Depth Questions - Batch 3
+// Focus: More ISC-V (SOC), ISC-IV (Data Analytics advanced), ISC-II (Threat Landscape),
+// ISC-III (IT Audit methodology), ISC-I (ERP/Database depth)
+
+import { Question } from '../../../types';
+
+export const ISC_QUESTIONS_DEPTH_3: Question[] = [
+  // ==========================================
+  // ISC-V: SOC & ASSURANCE DEPTH
+  // ==========================================
+  {
+    id: 'isc-d3-001',
+    section: 'ISC',
+    blueprintArea: 'ISC-V',
+    topicId: 'isc-soc',
+    topic: 'SOC Reporting',
+    subtopic: 'User Entity Responsibilities',
+    difficulty: 'hard',
+    question: 'When a user entity auditor plans to use a SOC 1 Type II report, AU-C 402 requires the auditor to evaluate all of the following EXCEPT:',
+    options: [
+      'Whether the report covers the appropriate period',
+      'Whether the service organization\'s auditor is independent and qualified',
+      'Whether the user entity has outsourced to the least expensive service organization',
+      'Whether the complementary user entity controls are implemented',
+    ],
+    correctAnswer: 2,
+    explanation: 'Under AU-C 402, the user entity auditor must evaluate: (1) report period — covers the relevant financial reporting period, (2) service auditor qualifications — independence and competence, (3) tests performed and results — adequacy of testing, (4) complementary user entity controls — whether the user entity has implemented required CUECs, (5) relevance — controls tested are relevant to the user entity\'s ICFR. Cost comparison is not an audit consideration.',
+    reference: 'AU-C 402.12-18',
+  },
+  {
+    id: 'isc-d3-002',
+    section: 'ISC',
+    blueprintArea: 'ISC-V',
+    topicId: 'isc-soc',
+    topic: 'SOC Reporting',
+    subtopic: 'Modified Opinions',
+    difficulty: 'hard',
+    question: 'A service auditor would issue a qualified opinion on a SOC 2 report when:',
+    options: [
+      'All controls are operating effectively',
+      'One or more controls are not suitably designed or did not operate effectively, but the deficiency is not pervasive',
+      'The service organization refuses to allow any testing',
+      'The scope was limited to one Trust Services Criterion',
+    ],
+    correctAnswer: 1,
+    explanation: 'Opinion modifications in SOC reports: (1) Qualified — deficiencies exist but are not pervasive; specific controls did not meet criteria, (2) Adverse — deficiencies are so pervasive that controls overall did not meet criteria, (3) Disclaimer — scope limitation prevents forming an opinion. Limiting scope to specific Trust Services Criteria (e.g., Security only) does not require modification — it\'s a management choice. Exceptions noted in individual test results do not automatically modify the opinion.',
+    reference: 'AT-C 205.68-72',
+  },
+
+  // ==========================================
+  // ISC-II: THREAT LANDSCAPE & ATTACK VECTORS
+  // ==========================================
+  {
+    id: 'isc-d3-003',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-threats',
+    topic: 'Cybersecurity Threats',
+    subtopic: 'Social Engineering',
+    difficulty: 'easy',
+    question: 'Phishing attacks are a type of:',
+    options: [
+      'Network infrastructure failure',
+      'Social engineering that uses deceptive communications to trick individuals into revealing sensitive information',
+      'Hardware malfunction',
+      'Database corruption',
+    ],
+    correctAnswer: 1,
+    explanation: 'Social engineering exploits human psychology: (1) Phishing — deceptive emails/messages impersonating legitimate entities, (2) Spear phishing — targeted at specific individuals, (3) Whaling — targeting senior executives, (4) Vishing — voice-based phishing, (5) Smishing — SMS-based phishing, (6) Pretexting — fabricated scenarios to extract information. Security awareness training is the primary preventive control, complemented by email filtering, MFA, and reporting mechanisms.',
+    reference: 'NIST SP 800-61; CIS Controls v8',
+  },
+  {
+    id: 'isc-d3-004',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-threats',
+    topic: 'Cybersecurity Threats',
+    subtopic: 'Ransomware',
+    difficulty: 'medium',
+    question: 'The MOST effective control to mitigate the impact of a ransomware attack is:',
+    options: [
+      'Paying the ransom immediately',
+      'Maintaining tested, offline backups with a documented recovery plan',
+      'Using a single antivirus product',
+      'Allowing all employees to install software freely',
+    ],
+    correctAnswer: 1,
+    explanation: 'Ransomware mitigation requires defense in depth: (1) Prevention — email filtering, endpoint protection, patch management, user training, (2) Detection — behavioral analysis, SIEM monitoring, (3) Response — tested offline/immutable backups (3-2-1 rule: 3 copies, 2 media types, 1 offsite), incident response plan, network segmentation to limit spread. Paying ransom is not recommended — does not guarantee recovery, may violate OFAC sanctions, and incentivizes future attacks.',
+    reference: 'CISA Ransomware Guide; NIST CSF',
+  },
+  {
+    id: 'isc-d3-005',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-threats',
+    topic: 'Cybersecurity Threats',
+    subtopic: 'Insider Threats',
+    difficulty: 'medium',
+    question: 'Which control is MOST effective at detecting insider threats?',
+    options: [
+      'Perimeter firewalls',
+      'User behavior analytics (UBA) that identifies anomalous patterns in user activity',
+      'Physical security guards',
+      'Mandatory vacation policies alone',
+    ],
+    correctAnswer: 1,
+    explanation: 'Insider threat detection combines: (1) User Behavior Analytics (UBA/UEBA) — baseline normal behavior and alert on anomalies (unusual access times, data volumes, system access patterns), (2) Data Loss Prevention (DLP) — monitors data movement, (3) access logging and review, (4) mandatory vacations — allows others to identify irregularities (detective, not comprehensive), (5) separation of duties, (6) exit procedures for departing employees. Perimeter firewalls are ineffective against insiders already inside the network.',
+    reference: 'CERT Insider Threat Center; NIST SP 800-53 AU-6',
+  },
+  {
+    id: 'isc-d3-006',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-threats',
+    topic: 'Cybersecurity Threats',
+    subtopic: 'SQL Injection',
+    difficulty: 'medium',
+    question: 'An SQL injection attack targets:',
+    options: [
+      'Network firewalls',
+      'Web applications that pass unsanitized user input directly to a database query',
+      'Physical servers in a data center',
+      'Email servers exclusively',
+    ],
+    correctAnswer: 1,
+    explanation: 'SQL injection inserts malicious SQL code through application input fields, potentially: reading sensitive data, modifying/deleting records, executing administrative operations, or accessing the OS. Prevention: (1) parameterized queries/prepared statements (most effective), (2) input validation and sanitization, (3) web application firewalls (WAF), (4) least privilege database accounts, (5) stored procedures. SQL injection remains a top OWASP vulnerability and a key concern for financial applications.',
+    reference: 'OWASP Top 10; CWE-89',
+  },
+
+  // ==========================================
+  // ISC-III: IT AUDIT METHODOLOGY
+  // ==========================================
+  {
+    id: 'isc-d3-007',
+    section: 'ISC',
+    blueprintArea: 'ISC-III',
+    topicId: 'isc-audit',
+    topic: 'IT Audit',
+    subtopic: 'ITGC vs Application Controls',
+    difficulty: 'easy',
+    question: 'IT General Controls (ITGCs) differ from application controls in that ITGCs:',
+    options: [
+      'Apply only to financial systems',
+      'Apply across the IT environment and support the effective functioning of application controls',
+      'Are less important than application controls',
+      'Are only tested during financial statement audits',
+    ],
+    correctAnswer: 1,
+    explanation: 'ITGCs are pervasive controls over the IT environment: (1) access to programs and data, (2) program changes, (3) computer operations, (4) program development. They support the reliability of application controls (input/processing/output). If ITGCs are deficient (e.g., developers have production access), application controls cannot be relied upon even if they appear effective. Application controls are specific to individual systems and processes.',
+    reference: 'AS 2201 (PCAOB); AU-C 315',
+  },
+  {
+    id: 'isc-d3-008',
+    section: 'ISC',
+    blueprintArea: 'ISC-III',
+    topicId: 'isc-audit',
+    topic: 'IT Audit',
+    subtopic: 'Testing ITGCs',
+    difficulty: 'medium',
+    question: 'When testing IT general controls over access to programs and data, an auditor typically tests:',
+    options: [
+      'Only physical access to the server room',
+      'User provisioning, access reviews, password policies, privileged access management, and termination procedures',
+      'Application output reports only',
+      'The speed of the network connection',
+    ],
+    correctAnswer: 1,
+    explanation: 'Access control ITGC testing includes: (1) user provisioning — proper authorization for new access, (2) access modifications — approval for role changes, (3) termination — timely removal of access for departed employees, (4) periodic access reviews — management recertification of user access, (5) authentication — password policies, MFA deployment, (6) privileged access — administrative account management, (7) service accounts — proper controls over non-human accounts. Access violations and segregation of duty conflicts are also evaluated.',
+    reference: 'PCAOB AS 2201.B15-B18',
+  },
+
+  // ==========================================
+  // ISC-IV: ADVANCED DATA ANALYTICS
+  // ==========================================
+  {
+    id: 'isc-d3-009',
+    section: 'ISC',
+    blueprintArea: 'ISC-IV',
+    topicId: 'isc-data-analytics',
+    topic: 'Data Analytics',
+    subtopic: 'Predictive Analytics',
+    difficulty: 'hard',
+    question: 'In audit data analytics, predictive analytics is MOST appropriately used for:',
+    options: [
+      'Replacing all substantive audit procedures',
+      'Developing expectations for account balances and identifying transactions with higher risk of material misstatement',
+      'Automatically issuing the audit opinion',
+      'Complying with tax filing requirements',
+    ],
+    correctAnswer: 1,
+    explanation: 'Predictive analytics in auditing: (1) expectation setting — building models to predict account balances based on historical trends and operating data, (2) anomaly detection — identifying transactions that deviate significantly from predictions, (3) risk stratification — directing audit effort to higher-risk areas, (4) fraud detection — identifying patterns associated with fraudulent activity. Professional judgment remains essential — analytics supplements but does not replace the auditor\'s responsibility to evaluate results.',
+    reference: 'AU-C 520; AICPA Audit Data Analytics Guide',
+  },
+  {
+    id: 'isc-d3-010',
+    section: 'ISC',
+    blueprintArea: 'ISC-IV',
+    topicId: 'isc-data-analytics',
+    topic: 'Data Analytics',
+    subtopic: 'Data Mining',
+    difficulty: 'medium',
+    question: 'The primary purpose of data mining in accounting and auditing is to:',
+    options: [
+      'Store large volumes of data',
+      'Discover patterns, anomalies, and relationships in large data sets that may indicate errors, fraud, or business opportunities',
+      'Create backup copies of financial data',
+      'Format data for regulatory filings',
+    ],
+    correctAnswer: 1,
+    explanation: 'Data mining techniques in accounting/auditing: (1) classification — categorizing transactions (e.g., high/low fraud risk), (2) clustering — grouping similar transactions to identify outliers, (3) association — finding relationships between variables (e.g., certain vendors and irregular payments), (4) regression — modeling relationships for prediction, (5) anomaly detection — identifying unexpected patterns. Applications include: fraud detection, credit risk assessment, customer segmentation, and audit evidence analysis.',
+    reference: 'AICPA Audit Analytics Guide',
+  },
+
+  // ==========================================
+  // ISC-I: SYSTEMS & INFRASTRUCTURE
+  // ==========================================
+  {
+    id: 'isc-d3-011',
+    section: 'ISC',
+    blueprintArea: 'ISC-I',
+    topicId: 'isc-systems',
+    topic: 'Systems Architecture',
+    subtopic: 'Client-Server vs Cloud',
+    difficulty: 'easy',
+    question: 'In a Software as a Service (SaaS) model, the software is:',
+    options: [
+      'Installed and maintained on each user\'s local computer',
+      'Hosted by the provider and accessed by users over the internet, typically via a web browser',
+      'Distributed as an open-source download',
+      'Only available through a VPN connection',
+    ],
+    correctAnswer: 1,
+    explanation: 'SaaS characteristics: (1) provider hosts and maintains all infrastructure, platform, and application, (2) users access via web browser or thin client, (3) subscription-based pricing, (4) automatic updates and patches, (5) minimal user-side IT resources required. SaaS examples: Salesforce, Microsoft 365, QuickBooks Online. Audit considerations: reliance on SOC reports, data security/privacy, data portability, and vendor lock-in risk.',
+    reference: 'NIST SP 800-145',
+  },
+  {
+    id: 'isc-d3-012',
+    section: 'ISC',
+    blueprintArea: 'ISC-I',
+    topicId: 'isc-systems',
+    topic: 'Network Architecture',
+    subtopic: 'Network Segmentation',
+    difficulty: 'medium',
+    question: 'Network segmentation (using VLANs and subnets) provides security benefits because:',
+    options: [
+      'It increases internet speed',
+      'It isolates sensitive systems, limits lateral movement of attackers, and enables granular access controls',
+      'It eliminates the need for firewalls',
+      'It makes all systems accessible to all users',
+    ],
+    correctAnswer: 1,
+    explanation: 'Network segmentation: (1) limits blast radius — a breach in one segment does not automatically compromise others, (2) enables micro-segmentation — zero trust controls between segments, (3) isolates sensitive data — PCI cardholder data, PHI, financial systems, (4) simplifies compliance — reduces scope of compliance audits (e.g., PCI-DSS CDE), (5) improves monitoring — traffic between segments traverses control points. VLANs, subnets, and software-defined networking (SDN) are common implementation methods.',
+    reference: 'NIST SP 800-41; PCI-DSS Requirement 1',
+  },
+
+  // ==========================================
+  // ISC-VI: EMERGING TECH DEPTH
+  // ==========================================
+  {
+    id: 'isc-d3-013',
+    section: 'ISC',
+    blueprintArea: 'ISC-VI',
+    topicId: 'isc-emerging-tech',
+    topic: 'Emerging Technologies',
+    subtopic: 'Quantum Computing',
+    difficulty: 'hard',
+    question: 'The primary cybersecurity concern related to quantum computing is:',
+    options: [
+      'Quantum computers are too expensive to purchase',
+      'Sufficiently powerful quantum computers could break current public-key cryptographic algorithms (RSA, ECC)',
+      'Quantum computing will eliminate the internet',
+      'Quantum computers cannot process financial data',
+    ],
+    correctAnswer: 1,
+    explanation: 'Quantum computers using Shor\'s algorithm could theoretically break RSA, ECC, and other public-key algorithms that protect financial transactions, digital signatures, and TLS communications. Post-quantum cryptography (PQC) standards (NIST FIPS 203/204/205) are being developed. "Harvest now, decrypt later" attacks are already a concern — adversaries may capture encrypted data today to decrypt with future quantum capabilities. Organizations should inventory cryptographic assets and plan migration.',
+    reference: 'NIST Post-Quantum Cryptography; FIPS 203-205',
+  },
+  {
+    id: 'isc-d3-014',
+    section: 'ISC',
+    blueprintArea: 'ISC-VI',
+    topicId: 'isc-emerging-tech',
+    topic: 'Emerging Technologies',
+    subtopic: 'IoT Security',
+    difficulty: 'medium',
+    question: 'Internet of Things (IoT) devices present unique security challenges because they:',
+    options: [
+      'Are always more secure than traditional computers',
+      'Often have limited processing power for security, use default credentials, and lack regular patching',
+      'Cannot connect to networks',
+      'Are only used in consumer settings, not businesses',
+    ],
+    correctAnswer: 1,
+    explanation: 'IoT security challenges: (1) resource constraints — limited CPU/memory for encryption and security software, (2) default credentials — many devices ship with unchanged admin/admin passwords, (3) patch management — difficult to update firmware, many devices go unpatched, (4) visibility — IT teams may not know all IoT devices on the network, (5) data privacy — sensors may collect sensitive information, (6) attack surface — each device is a potential entry point. Controls include: network segmentation, device inventory, firmware updates, and strong authentication.',
+    reference: 'NIST SP 800-183; NISTIR 8228',
+  },
+
+  // ==========================================
+  // ISC-II: COMPLIANCE FRAMEWORKS
+  // ==========================================
+  {
+    id: 'isc-d3-015',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-compliance',
+    topic: 'Compliance Frameworks',
+    subtopic: 'NIST Cybersecurity Framework',
+    difficulty: 'easy',
+    question: 'The five core functions of the NIST Cybersecurity Framework (CSF) are:',
+    options: [
+      'Plan, Do, Check, Act, Review',
+      'Identify, Protect, Detect, Respond, Recover',
+      'Prevent, Investigate, Remediate, Report, Close',
+      'Assess, Implement, Test, Monitor, Report',
+    ],
+    correctAnswer: 1,
+    explanation: 'NIST CSF core functions: (1) Identify — asset management, risk assessment, governance, (2) Protect — access control, training, data security, maintenance, (3) Detect — anomaly detection, continuous monitoring, (4) Respond — response planning, communications, analysis, mitigation, (5) Recover — recovery planning, improvements, communications. CSF 2.0 (2024) adds a sixth function: Govern. The framework is voluntary and widely adopted as a cybersecurity benchmark.',
+    reference: 'NIST CSF v1.1; CSF 2.0',
+  },
+  {
+    id: 'isc-d3-016',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-compliance',
+    topic: 'Compliance Frameworks',
+    subtopic: 'PCI-DSS',
+    difficulty: 'medium',
+    question: 'The Payment Card Industry Data Security Standard (PCI-DSS) requires organizations that process payment card data to:',
+    options: [
+      'Encrypt all data on their website regardless of type',
+      'Implement controls across 12 requirement categories including network security, access control, and regular testing',
+      'Store CVV codes for future customer convenience',
+      'Use a single shared password for all POS terminals',
+    ],
+    correctAnswer: 1,
+    explanation: 'PCI-DSS v4.0 has 12 requirements: (1) install/maintain network security controls, (2) apply secure configurations, (3) protect stored account data, (4) encrypt cardholder data in transit, (5) protect from malicious software, (6) develop secure systems, (7) restrict access by business need, (8) identify users and authenticate access, (9) restrict physical access, (10) log and monitor access, (11) test security regularly, (12) support information security with policies. CVVs must never be stored after authorization.',
+    reference: 'PCI-DSS v4.0',
+  },
+
+  // ==========================================
+  // ISC-III: PHYSICAL & ENVIRONMENTAL
+  // ==========================================
+  {
+    id: 'isc-d3-017',
+    section: 'ISC',
+    blueprintArea: 'ISC-III',
+    topicId: 'isc-physical',
+    topic: 'Physical Security',
+    subtopic: 'Data Center Controls',
+    difficulty: 'easy',
+    question: 'Which of the following is a physical environmental control for a data center?',
+    options: [
+      'Firewall rules',
+      'Temperature and humidity monitoring with automated alerts',
+      'Password complexity requirements',
+      'Data encryption at rest',
+    ],
+    correctAnswer: 1,
+    explanation: 'Physical environmental controls include: (1) temperature/humidity monitoring — servers require controlled environments (64-80°F, 40-55% humidity), (2) fire suppression — clean agent (FM-200) or inert gas systems, (3) water detection — raised floors with sensors, (4) uninterruptible power supplies (UPS) and generators, (5) physical access — biometrics, badge readers, mantraps, (6) video surveillance — CCTV with retention, (7) visitor logs. These complement logical controls (firewalls, encryption).',
+    reference: 'NIST SP 800-53 PE Family',
+  },
+
+  // ==========================================
+  // ISC-I: DATA MANAGEMENT
+  // ==========================================
+  {
+    id: 'isc-d3-018',
+    section: 'ISC',
+    blueprintArea: 'ISC-I',
+    topicId: 'isc-data-management',
+    topic: 'Data Management',
+    subtopic: 'ETL Processes',
+    difficulty: 'medium',
+    question: 'In the context of data warehousing, ETL stands for:',
+    options: [
+      'Encrypt, Transfer, Log',
+      'Extract, Transform, Load',
+      'Evaluate, Test, Launch',
+      'Enter, Tabulate, Link',
+    ],
+    correctAnswer: 1,
+    explanation: 'ETL is the process for populating data warehouses: (1) Extract — pull data from source systems (ERP, CRM, operational databases), (2) Transform — clean, standardize, deduplicate, and restructure data for the target schema, (3) Load — insert transformed data into the data warehouse. Audit considerations: data integrity during transformation, completeness of extraction, reconciliation between source and target, and access controls over the ETL process. Modern alternatives include ELT (load raw data first, then transform).',
+    reference: 'ISACA COBIT 2019 DSS06',
+  },
+  {
+    id: 'isc-d3-019',
+    section: 'ISC',
+    blueprintArea: 'ISC-I',
+    topicId: 'isc-data-management',
+    topic: 'Data Management',
+    subtopic: 'Backup Strategies',
+    difficulty: 'easy',
+    question: 'Which backup strategy copies only the data that has changed since the last full backup?',
+    options: [
+      'Full backup',
+      'Differential backup',
+      'Mirror backup',
+      'Archive backup',
+    ],
+    correctAnswer: 1,
+    explanation: 'Backup types: (1) Full — copies all data (complete but time-consuming), (2) Differential — copies data changed since the last full backup (grows larger each day, requires last full + last differential to restore), (3) Incremental — copies data changed since the last backup of any type (smallest, but requires full + all incrementals to restore), (4) Mirror/Snapshot — real-time copy. The 3-2-1 rule recommends: 3 copies, 2 different media, 1 offsite. Add immutable/air-gapped backups for ransomware protection.',
+    reference: 'NIST SP 800-34',
+  },
+
+  // ==========================================
+  // ISC-IV: GOVERNANCE & FRAMEWORKS
+  // ==========================================
+  {
+    id: 'isc-d3-020',
+    section: 'ISC',
+    blueprintArea: 'ISC-IV',
+    topicId: 'isc-governance',
+    topic: 'IT Governance',
+    subtopic: 'COSO and IT',
+    difficulty: 'medium',
+    question: 'How does the COSO Internal Control Framework relate to IT controls?',
+    options: [
+      'COSO has no relevance to IT controls',
+      'Principle 11 of COSO 2013 specifically addresses controls over technology, requiring that management selects and develops general IT controls to support the achievement of objectives',
+      'COSO only applies to manufacturing companies',
+      'COSO replaced all IT-specific frameworks',
+    ],
+    correctAnswer: 1,
+    explanation: 'COSO 2013 Principle 11 (Control Activities component): "The organization selects and develops general control activities over technology to support the achievement of objectives." This links COSO to IT general controls (access, change management, operations, development). The Information and Communication component also requires relevant, quality information from IT systems. COSO and COBIT work together — COSO provides the internal control framework; COBIT provides detailed IT governance and management guidance.',
+    reference: 'COSO 2013 Framework, Principle 11',
+  },
+
+  // ==========================================
+  // ISC-II: IDENTITY & ACCESS MANAGEMENT
+  // ==========================================
+  {
+    id: 'isc-d3-021',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-security',
+    topic: 'Access Control',
+    subtopic: 'Role-Based Access Control',
+    difficulty: 'easy',
+    question: 'Role-based access control (RBAC) assigns permissions based on:',
+    options: [
+      'Each individual user\'s personal preferences',
+      'The user\'s job function or organizational role',
+      'The time of day the user logs in',
+      'The user\'s physical location only',
+    ],
+    correctAnswer: 1,
+    explanation: 'RBAC assigns permissions to roles (e.g., "Accounts Payable Clerk," "IT Administrator"), and users are assigned to roles. Benefits: (1) simplified administration — manage permissions at the role level, (2) enforcement of segregation of duties — prevent conflicting roles, (3) consistent access — all users in the same role have the same access, (4) easier auditing — review roles rather than individual access. Alternatives include attribute-based access control (ABAC) which considers multiple attributes (role, location, time, device).',
+    reference: 'NIST SP 800-53 AC-2; RBAC Standard',
+  },
+  {
+    id: 'isc-d3-022',
+    section: 'ISC',
+    blueprintArea: 'ISC-II',
+    topicId: 'isc-security',
+    topic: 'Access Control',
+    subtopic: 'Single Sign-On',
+    difficulty: 'medium',
+    question: 'Single sign-on (SSO) presents which security trade-off?',
+    options: [
+      'SSO provides no security benefits',
+      'Improved user experience and reduced password fatigue, but a compromised SSO credential provides access to all connected systems',
+      'SSO makes each application more secure independently',
+      'SSO eliminates the need for any authentication',
+    ],
+    correctAnswer: 1,
+    explanation: 'SSO trade-offs: Benefits — (1) reduced password fatigue → fewer weak/reused passwords, (2) centralized access management and deprovisioning, (3) improved productivity. Risks — (1) single point of failure — compromised SSO credential gives access to all federated applications, (2) SSO provider outage blocks all access. Mitigations: (1) strong MFA on the SSO provider, (2) session timeouts, (3) adaptive/risk-based authentication, (4) monitoring for anomalous SSO activity.',
+    reference: 'NIST SP 800-63C; OWASP SSO Guidance',
+  },
+
+  // ==========================================
+  // ISC-V: ATTESTATION STANDARDS
+  // ==========================================
+  {
+    id: 'isc-d3-023',
+    section: 'ISC',
+    blueprintArea: 'ISC-V',
+    topicId: 'isc-attestation',
+    topic: 'Attestation',
+    subtopic: 'SSAE 18',
+    difficulty: 'hard',
+    question: 'SSAE 18 (Statements on Standards for Attestation Engagements No. 18) superseded SSAE 16 primarily to:',
+    options: [
+      'Eliminate SOC reporting',
+      'Require service organizations to identify subservice organizations and update standards for monitoring subservice organizations and complementary user entity controls',
+      'Reduce the cost of SOC examinations',
+      'Allow service organizations to issue their own SOC reports',
+    ],
+    correctAnswer: 1,
+    explanation: 'SSAE 18 (effective May 1, 2017) updates included: (1) AT-C 320 replaces AT 801 — clarifies service organization\'s responsibility for monitoring subservice organizations, (2) enhanced guidance on complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), (3) clarified risk assessment procedures, (4) updated terminology aligned with other attestation standards. The fundamental SOC reporting framework remained intact.',
+    reference: 'SSAE 18; AT-C 105, 205, 320',
+  },
+
+  // ==========================================
+  // ISC-IV: DATA LIFECYCLE
+  // ==========================================
+  {
+    id: 'isc-d3-024',
+    section: 'ISC',
+    blueprintArea: 'ISC-IV',
+    topicId: 'isc-data-lifecycle',
+    topic: 'Data Governance',
+    subtopic: 'Data Retention',
+    difficulty: 'medium',
+    question: 'A data retention policy should specify:',
+    options: [
+      'That all data should be kept forever to be safe',
+      'The minimum and maximum retention periods, storage requirements, and secure disposal methods for each data classification',
+      'Only the maximum retention period',
+      'That employees can decide individually how long to keep data',
+    ],
+    correctAnswer: 1,
+    explanation: 'Data retention policies should define: (1) retention periods — based on regulatory requirements (SOX: 7 years for financial records, IRS: 3-7 years, HIPAA: 6 years), business needs, and legal holds, (2) storage requirements — security, availability, media type, (3) disposal methods — secure deletion (NIST SP 800-88), physical destruction, certificate of destruction, (4) data classification alignment — different retention for public vs. confidential, (5) archival procedures, (6) responsibilities and enforcement. Over-retention creates risk and cost.',
+    reference: 'NIST SP 800-88 Rev. 1; SOX §802',
+  },
+
+  // ==========================================
+  // ISC-VI: AI GOVERNANCE
+  // ==========================================
+  {
+    id: 'isc-d3-025',
+    section: 'ISC',
+    blueprintArea: 'ISC-VI',
+    topicId: 'isc-ai',
+    topic: 'AI Governance',
+    subtopic: 'AI Risk Framework',
+    difficulty: 'hard',
+    question: 'The NIST AI Risk Management Framework (AI RMF) organizes AI risk management activities into four core functions:',
+    options: [
+      'Build, Test, Deploy, Monitor',
+      'Govern, Map, Measure, Manage',
+      'Identify, Classify, Mitigate, Report',
+      'Plan, Do, Check, Act',
+    ],
+    correctAnswer: 1,
+    explanation: 'NIST AI RMF 1.0 core functions: (1) Govern — establish policies, processes, and accountability structures for AI risk management, (2) Map — contextualize AI system risks (intended use, stakeholders, potential harms), (3) Measure — analyze and assess AI risks using quantitative and qualitative methods, (4) Manage — prioritize, respond to, and monitor AI risks. The framework emphasizes trustworthiness characteristics: valid/reliable, safe, secure/resilient, accountable/transparent, explainable/interpretable, privacy-enhanced, fair.',
+    reference: 'NIST AI 100-1 (AI RMF 1.0)',
+  },
+];

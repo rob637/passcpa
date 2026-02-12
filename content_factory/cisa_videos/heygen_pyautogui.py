@@ -178,8 +178,8 @@ def calibrate():
         print(f"\nNext: {description}")
         print("Move your mouse there now...")
         
-        # Countdown - automatically starts
-        for i in range(3, 0, -1):
+        # Countdown - automatically starts (5 seconds)
+        for i in range(5, 0, -1):
             print(f"  {i}...", end=" ", flush=True)
             time.sleep(1)
         

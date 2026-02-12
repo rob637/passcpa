@@ -110,7 +110,6 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("motion_engine", "MOTION ENGINE - click the dropdown that says 'Avatar III' or 'Avatar IV' (right sidebar)"),
         ("bg_row1_col1", "BG TOP-LEFT: DARK NAVY background (1st row, 1st column)"),
         ("bg_row1_col2", "BG TOP-MIDDLE: GRAY background (1st row, 2nd column)"),  
         ("bg_row1_col3", "BG TOP-RIGHT: TEAL background (1st row, 3rd column)"),

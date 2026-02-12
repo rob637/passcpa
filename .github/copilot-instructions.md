@@ -373,6 +373,50 @@ python heygen_pyautogui.py --calibrate         # Recalibrate screen coordinates
 
 ---
 
+## Question Data Standards
+
+All question files must follow these conventions for consistency across the 6 exams (CPA, EA, CMA, CIA, CISA, CFP).
+
+### Required Fields (Every Question)
+```typescript
+{
+  id: string,           // Lowercase, section-prefixed: 'far-001', 'see1-001', 'cisa1-001'
+  courseId: CourseId,   // 'cpa' | 'ea' | 'cma' | 'cia' | 'cisa' | 'cfp'
+  section: string,      // Uppercase section code: 'FAR', 'SEE1', 'CISA1'
+  blueprintArea: string,// Area/domain code: 'FAR-I', 'SEE1-A', 'CISA1'
+  topic: string,        // Human-readable topic name
+  difficulty: Difficulty,  // 'easy' | 'medium' | 'hard'
+  skillLevel: string,   // Bloom's taxonomy: 'Remembering' | 'Application' | 'Analysis'
+  question: string,     // The question text
+  options: string[],    // 4 answer options (A-D)
+  correctAnswer: number,// 0-indexed correct option
+  explanation: string,  // Why the answer is correct
+}
+```
+
+### ID Format
+- **Pattern:** `{section}-{batch-or-descriptor}-{number}` all lowercase
+- **Examples:** `far-001`, `see1-batch5-015`, `cisa1-093`, `cfp-gen-001`
+- **Never:** Uppercase IDs (`CIA1-001`), mixed case (`Far-001`)
+
+### File Naming Convention
+- **Target pattern:** `{section}-questions-batch{n}.ts`
+- **Examples:** `far-questions-batch1.ts`, `see1-questions-batch5.ts`, `cisa3-questions-batch2.ts`
+- **Section subdirectories allowed:** `src/data/cpa/questions/far/batch1.ts`
+
+### Export Naming
+- **Pattern:** `{SECTION}_QUESTIONS_BATCH{N}` (uppercase)
+- **Examples:** `FAR_QUESTIONS_BATCH1`, `SEE1_QUESTIONS_BATCH5`, `CISA3_QUESTIONS_BATCH2`
+
+### Adding New Questions
+1. Use section-specific files — don't mix sections in one file
+2. Include all required fields
+3. Use lowercase IDs
+4. Run `npm run build` to validate TypeScript
+5. Run question validation: `node scripts/validate-questions.cjs`
+
+---
+
 ## Deployment
 
 ```bash

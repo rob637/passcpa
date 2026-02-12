@@ -8,11 +8,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Circular 230 — Practitioner Standards',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under Circular 230, a tax practitioner must NOT:',
     options: [
       'Advertise services',
@@ -27,11 +29,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gambling Winnings',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Gambling winnings are reported as:',
     options: [
       'Tax-exempt income',
@@ -46,11 +50,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corp — Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If a C corporation converts to an S corporation, the built-in gains (BIG) tax under §1374:',
     options: [
       'Never applies',
@@ -65,11 +71,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges — Boot Received',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a §1031 like-kind exchange, if the taxpayer receives "boot" (cash or non-like-kind property), then:',
     options: [
       'The entire gain is recognized',
@@ -84,11 +92,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Substantial Authority Standard',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "substantial authority" standard for a tax position means:',
     options: [
       'A 10% chance of success',
@@ -103,11 +113,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Child Tax Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Child Tax Credit (CTC) for 2025 is:',
     options: [
       '$3,600 per child',
@@ -122,11 +134,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Hot Assets §751',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a partner sells a partnership interest, §751 "hot assets" cause:',
     options: [
       'All gain to be capital',
@@ -141,11 +155,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Qualified Small Business Stock — §1202',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §1202, gain from the sale of qualified small business stock (QSBS) held for more than 5 years:',
     options: [
       'Is taxed at 28%',
@@ -160,11 +176,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'IRS Appeals Process',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'After receiving a 30-day letter from the IRS proposing changes to a return, the taxpayer may:',
     options: [
       'Only pay the full amount',
@@ -179,11 +197,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Coverdell Education Savings Account',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A Coverdell Education Savings Account (ESA) allows:',
     options: [
       'Unlimited annual contributions',
@@ -198,11 +218,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corp — Dividends Received Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The dividends received deduction (DRD) for a C corporation that owns less than 20% of the distributing corporation is:',
     options: [
       '100% of dividends received',
@@ -217,11 +239,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Holding Period Tacking',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When property is received in a §1031 like-kind exchange, the holding period of the new property:',
     options: [
       'Starts from the date of the exchange',
@@ -236,11 +260,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Preparer Penalties — §6694',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tax return preparer who takes an unreasonable position on a return faces a penalty under §6694(a) of:',
     options: [
       '$100 per return',
@@ -255,11 +281,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Casualty and Theft Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under post-TCJA rules (2018-2025), personal casualty and theft losses are deductible only if:',
     options: [
       'Any loss over $100 is deductible',
@@ -274,11 +302,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership Formation — §721',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under §721, when a partner contributes property to a partnership in exchange for a partnership interest:',
     options: [
       'Gain or loss is recognized by the partner',
@@ -293,11 +323,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Deferred Compensation — §409A',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §409A, nonqualified deferred compensation plans must meet strict requirements regarding:',
     options: [
       'Only vesting schedules',
@@ -312,11 +344,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Statute of Limitations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The general statute of limitations for the IRS to assess additional tax is:',
     options: [
       '1 year from filing',
@@ -331,11 +365,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alimony — Pre vs. Post 2019',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For divorce agreements executed after December 31, 2018:',
     options: [
       'Alimony is deductible by the payor',
@@ -350,11 +386,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Corporation — §351 Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §351, a transfer of property to a corporation is tax-free if:',
     options: [
       'Any property is transferred for stock',
@@ -369,11 +407,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Basis of Gifted vs. Inherited Property',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The basis of property received as a gift is generally:',
     options: [
       'Fair market value at the date of the gift',
@@ -388,11 +428,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Taxpayer Bill of Rights',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Taxpayer Bill of Rights guarantees taxpayers the right to:',
     options: [
       'Never be audited',
@@ -407,11 +449,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Saver\'s Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Retirement Savings Contributions Credit (Saver\'s Credit) is:',
     options: [
       'A deduction for retirement contributions',
@@ -426,11 +470,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corp — Shareholder Allocation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'S corporation income and deductions are allocated to shareholders:',
     options: [
       'Based on the partnership agreement',
@@ -445,11 +491,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Vacation Home Rules — §280A',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a taxpayer rents out a vacation home for 15 days or more AND uses it personally for more than the greater of 14 days or 10% of rental days, the property is classified as:',
     options: [
       'A primary residence',
@@ -464,11 +512,13 @@ export const TCP_QUESTIONS_DEPTH_6: Question[] = [
   {
     id: 'tcp-d6-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Primary Sources of Tax Law',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The highest authority in the hierarchy of tax law is:',
     options: [
       'IRS Revenue Rulings',

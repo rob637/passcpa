@@ -8,6 +8,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-001',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 Due Diligence',
@@ -28,6 +29,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-002',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Parol Evidence Rule',
@@ -48,6 +50,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-003',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ucc',
     topic: 'UCC Article 2',
     subtopic: 'Battle of the Forms',
@@ -68,6 +71,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-004',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Section 121 Exclusion',
@@ -88,6 +92,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-005',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Wash Sale Rule',
@@ -108,6 +113,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-006',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-basis',
     topic: 'Property Basis',
     subtopic: 'Related Party Basis',
@@ -128,6 +134,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-007',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
@@ -148,6 +155,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-008',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company',
@@ -168,6 +176,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-009',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Post-Termination Period',
@@ -188,6 +197,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-010',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Inside vs Outside Basis',
@@ -208,6 +218,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-011',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Penalty Abatement',
@@ -228,6 +239,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-012',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-employment',
     topic: 'Employment Tax',
     subtopic: 'Worker Classification Tests',
@@ -248,6 +260,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-013',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Net Section 1231 Gain',
@@ -268,6 +281,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-014',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-secured',
     topic: 'Secured Transactions',
     subtopic: 'Attachment',
@@ -288,6 +302,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-015',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-bankruptcy',
     topic: 'Bankruptcy',
     subtopic: 'Chapter 11 Reorganization',
@@ -308,6 +323,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-016',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Apparent Authority',
@@ -328,6 +344,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-017',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Estimated Tax Penalties',
@@ -348,6 +365,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-018',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alimony Pre-2019',
@@ -368,6 +386,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-019',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Contingent Fees',
@@ -388,6 +407,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-020',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Appeals Process',
@@ -408,6 +428,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-021',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 336(e)',
@@ -428,6 +449,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-022',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-international',
     topic: 'International Taxation',
     subtopic: 'Form 5471',
@@ -448,6 +470,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-023',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'QSBS Exclusion',
@@ -468,6 +491,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-024',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Self-Employment Tax',
@@ -488,6 +512,7 @@ export const REG_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'reg-mast-025',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'HSA Contributions',

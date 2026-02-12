@@ -8,6 +8,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Economic Value Added',
@@ -28,6 +29,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Quality of Earnings Analysis',
@@ -48,6 +50,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Precedent Transactions',
@@ -68,6 +71,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Capital Budgeting Under Uncertainty',
@@ -88,6 +92,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Kaizen Costing',
@@ -108,6 +113,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance',
     topic: 'Variance Analysis',
     subtopic: 'Sales Mix Variance',
@@ -128,6 +134,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-007',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-decisions',
     topic: 'Decision Analysis',
     subtopic: 'Make or Buy Analysis',
@@ -148,6 +155,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-008',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Combination',
@@ -168,6 +176,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-009',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Lease Term Determination',
@@ -188,6 +197,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-010',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Tax Planning Strategies',
@@ -208,6 +218,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-011',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-combinations',
     topic: 'Business Combinations',
     subtopic: 'Step Acquisition',
@@ -228,6 +239,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-012',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'NCI Presentation',
@@ -248,6 +260,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-013',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Cash Flow Hedge Ineffectiveness',
@@ -268,6 +281,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-014',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-forex',
     topic: 'Foreign Currency',
     subtopic: 'Intercompany Transactions',
@@ -288,6 +302,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-015',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Profitability Ratios',
@@ -308,6 +323,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-016',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Zero-Based Budgeting',
@@ -328,6 +344,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-017',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard',
@@ -348,6 +365,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-018',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Operating Leverage',
@@ -368,6 +386,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-019',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-segment',
     topic: 'Segment Reporting',
     subtopic: 'CODM',
@@ -388,6 +407,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-020',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Analysis',
@@ -408,6 +428,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-021',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-accounting',
     topic: 'Accounting Standards',
     subtopic: 'Going Concern Assessment',
@@ -428,6 +449,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-022',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'DuPont Analysis',
@@ -448,6 +470,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-023',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
@@ -468,6 +491,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-024',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Terminal Value',
@@ -488,6 +512,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-025',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-decisions',
     topic: 'Decision Analysis',
     subtopic: 'Capital Rationing',
@@ -508,6 +533,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-026',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-accounting',
     topic: 'Stock Compensation',
     subtopic: 'Modification Accounting',
@@ -528,6 +554,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-027',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Beta and Systematic Risk',
@@ -548,6 +575,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-028',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Attribution of Net Income',
@@ -568,6 +596,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-029',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Indefinite Reversal',
@@ -588,6 +617,7 @@ export const BAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'bar-elite-030',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Credit Analysis Ratios',

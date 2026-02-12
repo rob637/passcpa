@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH4: Question[] = [
   {
-    id: 'CISA2-063',
+    id: 'cisa2-063',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise governance of IT ensures:',
     options: [
       'IT operates independently',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Enterprise IT Governance'
   },
   {
-    id: 'CISA2-064',
+    id: 'cisa2-064',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The board of directors role in IT governance includes:',
     options: [
       'Day-to-day IT operations',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Board Role'
   },
   {
-    id: 'CISA2-065',
+    id: 'cisa2-065',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT value is demonstrated through:',
     options: [
       'Technology upgrades',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-066',
+    id: 'cisa2-066',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT operating model defines:',
     options: [
       'Only technology standards',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Operating Model'
   },
   {
-    id: 'CISA2-067',
+    id: 'cisa2-067',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Centralized IT governance provides:',
     options: [
       'Maximum flexibility',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Centralization'
   },
   {
-    id: 'CISA2-068',
+    id: 'cisa2-068',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Federated IT governance combines:',
     options: [
       'Only central control',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Federated Model'
   },
   {
-    id: 'CISA2-069',
+    id: 'cisa2-069',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Shadow IT refers to:',
     options: [
       'Backup systems',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Shadow IT'
   },
   {
-    id: 'CISA2-070',
+    id: 'cisa2-070',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT spending transparency is important for:',
     options: [
       'Reducing IT staff',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Spending Transparency'
   },
   {
-    id: 'CISA2-071',
+    id: 'cisa2-071',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Chargeback and showback for IT services:',
     options: [
       'Only increase IT costs',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Cost Allocation'
   },
   {
-    id: 'CISA2-072',
+    id: 'cisa2-072',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT technical debt management should:',
     options: [
       'Ignore legacy issues',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Technical Debt'
   },
   {
-    id: 'CISA2-073',
+    id: 'cisa2-073',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT architecture governance ensures:',
     options: [
       'Maximum flexibility',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Architecture Governance'
   },
   {
-    id: 'CISA2-074',
+    id: 'cisa2-074',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Technology roadmaps should:',
     options: [
       'Focus only on current systems',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Technology Roadmap'
   },
   {
-    id: 'CISA2-075',
+    id: 'cisa2-075',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Emerging technology assessment should consider:',
     options: [
       'Only technology capabilities',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Emerging Technology'
   },
   {
-    id: 'CISA2-076',
+    id: 'cisa2-076',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT sourcing strategy should consider:',
     options: [
       'Only cost savings',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Sourcing Strategy'
   },
   {
-    id: 'CISA2-077',
+    id: 'cisa2-077',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Multi-vendor strategies provide:',
     options: [
       'Simpler management',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Multi-Vendor'
   },
   {
-    id: 'CISA2-078',
+    id: 'cisa2-078',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vendor exit strategies should be developed:',
     options: [
       'When terminating contracts',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Exit Planning'
   },
   {
-    id: 'CISA2-079',
+    id: 'cisa2-079',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cloud service agreements should address:',
     options: [
       'Only pricing',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Cloud Contracts'
   },
   {
-    id: 'CISA2-080',
+    id: 'cisa2-080',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data governance establishes:',
     options: [
       'Only database administration',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Data Governance Framework'
   },
   {
-    id: 'CISA2-081',
+    id: 'cisa2-081',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data stewardship involves:',
     options: [
       'Only database administration',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Data Stewardship'
   },
   {
-    id: 'CISA2-082',
+    id: 'cisa2-082',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Master data management ensures:',
     options: [
       'Maximum data redundancy',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'MDM'
   },
   {
-    id: 'CISA2-083',
+    id: 'cisa2-083',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT compliance monitoring should:',
     options: [
       'Occur only during audits',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Compliance Monitoring'
   },
   {
-    id: 'CISA2-084',
+    id: 'cisa2-084',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regulatory change management should:',
     options: [
       'Ignore pending regulations',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Regulatory Change'
   },
   {
-    id: 'CISA2-085',
+    id: 'cisa2-085',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'GRC (Governance, Risk, Compliance) integration provides:',
     options: [
       'Separate silos',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'GRC'
   },
   {
-    id: 'CISA2-086',
+    id: 'cisa2-086',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT performance dashboards should provide:',
     options: [
       'Only technical metrics',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Dashboards'
   },
   {
-    id: 'CISA2-087',
+    id: 'cisa2-087',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Maturity models help organizations:',
     options: [
       'Skip improvement steps',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Maturity Models'
   },
   {
-    id: 'CISA2-088',
+    id: 'cisa2-088',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT process improvement initiatives should be:',
     options: [
       'One-time projects',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Process Improvement'
   },
   {
-    id: 'CISA2-089',
+    id: 'cisa2-089',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Stakeholder management in IT governance requires:',
     options: [
       'Only executive engagement',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Stakeholder Management'
   },
   {
-    id: 'CISA2-090',
+    id: 'cisa2-090',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Digital transformation governance should address:',
     options: [
       'Only technology implementation',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Digital Transformation'
   },
   {
-    id: 'CISA2-091',
+    id: 'cisa2-091',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Innovation governance should balance:',
     options: [
       'Only risk avoidance',
@@ -501,10 +559,12 @@ export const CISA2_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Innovation'
   },
   {
-    id: 'CISA2-092',
+    id: 'cisa2-092',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT ethical considerations include:',
     options: [
       'Only regulatory compliance',

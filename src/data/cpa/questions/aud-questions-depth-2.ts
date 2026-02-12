@@ -9,11 +9,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Qualified Opinion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A qualified opinion is expressed when the auditor concludes that:',
     options: [
       'The financial statements are fairly stated in all respects',
@@ -28,11 +30,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Adverse vs. Disclaimer',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The key difference between an adverse opinion and a disclaimer of opinion is:',
     options: [
       'They are the same thing',
@@ -49,11 +53,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Comfort Letters',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A comfort letter (AU-C §920) is issued by the auditor to:',
     options: [
       'The entity\'s customers',
@@ -70,11 +76,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-independence',
     topic: 'Professional Responsibilities',
     subtopic: 'Prohibited Non-Audit Services (SOX)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SOX §201, which of the following services is PROHIBITED for the auditor of a public company?',
     options: [
       'Tax compliance services (generally allowed)',
@@ -89,11 +97,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-independence',
     topic: 'Professional Responsibilities',
     subtopic: 'Audit Committee Pre-Approval',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under SOX, all audit and permissible non-audit services provided by the external auditor to a public company must be:',
     options: [
       'Approved by the CEO',
@@ -110,11 +120,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-independence',
     topic: 'Professional Responsibilities',
     subtopic: 'Audit Partner Rotation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under SOX, the lead audit partner and the concurring review partner for a public company audit must rotate off after:',
     options: [
       '3 years',
@@ -131,11 +143,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Comparative Financial Statements — Updated Opinion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If a continuing auditor issued a qualified opinion on last year\'s financial statements but the issue has been resolved this year, the auditor should:',
     options: [
       'Keep the qualified opinion on the prior year',
@@ -152,11 +166,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-interim',
     topic: 'Accounting and Review Services',
     subtopic: 'Review of Interim Financial Information (Public)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'AU-C §930 (Review of Interim Financial Information) for public entities requires the auditor to perform:',
     options: [
       'The same procedures as an annual audit',
@@ -173,11 +189,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Material Weakness — Government Audit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a Yellow Book financial statement audit, the auditor must report a material weakness in internal control:',
     options: [
       'Only if the entity requests it',
@@ -194,11 +212,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-qm',
     topic: 'Professional Responsibilities',
     subtopic: 'Engagement Quality Review',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An engagement quality review (formerly "concurring review") requires the reviewer to:',
     options: [
       'Re-perform the entire audit',
@@ -215,11 +235,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Written Representations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Written representations (management representation letter) from management are:',
     options: [
       'Optional for the auditor to obtain',
@@ -236,11 +258,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-personal',
     topic: 'Accounting and Review Services',
     subtopic: 'Personal Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Personal financial statements under GAAP are presented using:',
     options: [
       'Historical cost for all items',
@@ -257,11 +281,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Performance Audits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A performance audit under GAGAS (Yellow Book) evaluates:',
     options: [
       'Only the financial statements',
@@ -278,11 +304,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Special Purpose Frameworks (OCBOA)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Financial statements prepared using a special purpose framework (formerly OCBOA) include those prepared on the:',
     options: [
       'Only GAAP basis',
@@ -299,11 +327,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-qm',
     topic: 'Professional Responsibilities',
     subtopic: 'Peer Review',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'AICPA peer review programs require member firms that perform audit, review, compilation, or attestation services to:',
     options: [
       'Only submit their financial statements for review',
@@ -320,11 +350,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-icfr',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Integrated Audit — ICFR Opinion',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In an integrated audit of a public company (PCAOB AS 2201), the auditor issues:',
     options: [
       'Only a report on the financial statements',
@@ -341,11 +373,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-attest',
     topic: 'Accounting and Review Services',
     subtopic: 'Compliance Attestation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a compliance attestation engagement (AT-C §315), the practitioner may perform:',
     options: [
       'Only an audit',
@@ -362,11 +396,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'Single Audit — Reporting Package',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The single audit reporting package that must be submitted to the Federal Audit Clearinghouse includes:',
     options: [
       'Only the auditor\'s report',
@@ -383,11 +419,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-communication',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Communication with Those Charged with Governance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under AU-C §260, the auditor must communicate to those charged with governance:',
     options: [
       'Only the audit fee',
@@ -404,11 +442,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Acts Discreditable',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the AICPA Code, which is considered an act discreditable to the profession?',
     options: [
       'Disagreeing with a client on an accounting issue',
@@ -425,11 +465,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Subsequently Discovered Facts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If after the report release date the auditor discovers facts that existed at the date of the report and may have caused the opinion to be modified, the auditor should:',
     options: [
       'Do nothing — the engagement is complete',
@@ -446,11 +488,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-attest',
     topic: 'Accounting and Review Services',
     subtopic: 'Pro Forma Financial Information',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When examining or reviewing pro forma financial information under AT-C §310, the practitioner must:',
     options: [
       'Only verify the math',
@@ -467,11 +511,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-govt',
     topic: 'Government Auditing',
     subtopic: 'CPE Requirements (Yellow Book)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under Government Auditing Standards, auditors performing GAGAS engagements must complete:',
     options: [
       'No continuing education',
@@ -488,11 +534,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Forming Conclusions and Reporting',
     subtopic: 'Critical Audit Matters (PCAOB)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under PCAOB AS 3101, Critical Audit Matters (CAMs) are:',
     options: [
       'Matters that caused the auditor to modify the opinion',
@@ -509,11 +557,13 @@ export const AUD_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'aud-d2-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VII',
     topicId: 'aud-consulting',
     topic: 'Professional Responsibilities',
     subtopic: 'AICPA Consulting Standards',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Statements on Standards for Consulting Services (SSCS) apply when a CPA provides:',
     options: [
       'Only audit services',

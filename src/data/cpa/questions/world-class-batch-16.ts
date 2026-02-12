@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'far-wc-099',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-debt',
     topic: 'Debt',
     subtopic: 'Troubled Debt Restructuring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a troubled debt restructuring where a creditor modifies terms, the new effective interest rate is:',
     options: [
       'The rate that equates future cash flows to the recorded investment',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'far-wc-100',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Reconciliation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Segment disclosures must include a reconciliation of total segment revenues to:',
     options: [
       'Gross revenues',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'far-wc-101',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Investment Returns',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Investment income earned by a not-for-profit organization with no donor restrictions is reported as:',
     options: [
       'An increase in net assets with donor restrictions',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'far-wc-102',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-disclosure',
     topic: 'Financial Disclosures',
     subtopic: 'Fair Value Disclosure',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Fair value disclosure is required for all financial instruments except:',
     options: [
       'Long-term debt',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'aud-wc-099',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Documentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The auditor documents internal control understanding primarily to:',
     options: [
       'Satisfy peer review requirements',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'aud-wc-100',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Attorney Letters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An attorney\'s refusal to respond to the audit inquiry letter is:',
     options: [
       'Acceptable if the client agrees',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'aud-wc-101',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Group Audits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When making reference to a component auditor in the group audit report, the group auditor:',
     options: [
       'Takes full responsibility for the component audit',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'aud-wc-102',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-review',
     topic: 'Review Engagements',
     subtopic: 'Review Report',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A review report concludes that the financial statements:',
     options: [
       'Present fairly in all material respects',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'reg-wc-099',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Casualty Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For tax years after 2017, personal casualty and theft losses are deductible only if:',
     options: [
       'They exceed 10% of AGI',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'reg-wc-100',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 351',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a tax-free Section 351 transfer, the transferor\'s basis in stock received equals:',
     options: [
       'Fair market value of assets transferred',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'reg-wc-101',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Bankruptcy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Chapter 7 bankruptcy, which claim has the highest priority?',
     options: [
       'General unsecured creditors',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'reg-wc-102',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Holding Period',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Property received in a like-kind exchange has a holding period that:',
     options: [
       'Starts on the date of the exchange',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'bar-wc-112',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Profitability Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Return on Assets (ROA) is calculated as:',
     options: [
       'Net income / Average total assets',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'bar-wc-113',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In sensitivity analysis, the "base case" represents:',
     options: [
       'The worst possible outcome',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'bar-wc-114',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Subsequent Events',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An unrecognized subsequent event (Type II) that is material should be:',
     options: [
       'Recorded as an adjusting entry',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'bar-wc-115',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Spoilage',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Normal spoilage in manufacturing is:',
     options: [
       'Expensed as a period cost',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'bar-wc-116',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Z-Score',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Altman Z-Score below 1.81 indicates:',
     options: [
       'Strong financial health',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'isc-wc-099',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Intrusion Detection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A signature-based intrusion detection system identifies threats by:',
     options: [
       'Detecting deviations from normal behavior',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'isc-wc-100',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Microservices',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A microservices architecture is characterized by:',
     options: [
       'A single monolithic application',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'isc-wc-101',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Data Integrity',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Hash totals are used to verify:',
     options: [
       'User authentication',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'isc-wc-102',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Privacy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The GDPR right to erasure is also known as:',
     options: [
       'Right to portability',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'tcp-wc-099',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'SALT Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The TCJA limitation on state and local tax (SALT) deductions is:',
     options: [
       '$5,000 for all filers',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'tcp-wc-100',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner\'s outside basis is affected by the partner\'s share of:',
     options: [
       'Only the partner\'s direct contributions',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'tcp-wc-101',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Opportunity Zones',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Qualified Opportunity Zone investments provide:',
     options: [
       'Immediate deduction of the investment',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_16: Question[] = [
   {
     id: 'tcp-wc-102',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Penalty Abatement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'First-time penalty abatement (FTA) generally requires the taxpayer to have:',
     options: [
       'A good reason for the failure',

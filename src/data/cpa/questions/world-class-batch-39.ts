@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'far-wc-191',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Stock Dividends vs Stock Splits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A large stock dividend (greater than 20-25%) is accounted for by:',
     options: [
       'Fair value transfer',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'far-wc-192',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring Without Recourse',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When receivables are factored without recourse:',
     options: [
       'Seller retains risk',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'far-wc-193',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-variable',
     topic: 'Variable Interest Entities',
     subtopic: 'Primary Beneficiary',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The primary beneficiary of a VIE is the entity that:',
     options: [
       'Has largest investment',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'far-wc-194',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nonprofit',
     topic: 'Non-Profit Accounting',
     subtopic: 'Contributed Services',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contributed services should be recognized as revenue when they:',
     options: [
       'Always recognized',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'aud-wc-191',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-group',
     topic: 'Group Audits',
     subtopic: 'Component Auditors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The group engagement partner\'s responsibilities regarding component auditors include:',
     options: [
       'No oversight required',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'aud-wc-192',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Financial Statement Fraud Indicators',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Fraud risk factors related to attitudes/rationalization include:',
     options: [
       'Only financial pressure',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'aud-wc-193',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Direction of Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To test for completeness of liabilities, the auditor should:',
     options: [
       'Vouch from accounting records',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'aud-wc-194',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'Root Cause Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Root cause analysis of audit deficiencies helps the firm:',
     options: [
       'Only assign blame',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'reg-wc-191',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-s-corp',
     topic: 'S Corporation',
     subtopic: 'Shareholder Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s stock basis is increased by:',
     options: [
       'Distributions',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'reg-wc-192',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Loss Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Suspended passive activity losses are:',
     options: [
       'Lost permanently',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'reg-wc-193',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-professional',
     topic: 'Professional Responsibility',
     subtopic: 'CPA Liability to Third Parties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Restatement approach, CPAs may be liable to:',
     options: [
       'Only clients',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'reg-wc-194',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-depreciation',
     topic: 'Cost Recovery',
     subtopic: 'Alternative Depreciation System',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Alternative Depreciation System (ADS) is required for:',
     options: [
       'All tangible property',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'bar-wc-227',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Piotroski F-Score',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Piotroski F-Score is used to:',
     options: [
       'Predict bankruptcy',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'bar-wc-228',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Option Pricing Applications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Real options analysis applies option pricing theory to:',
     options: [
       'Stock options only',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'bar-wc-229',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Restructuring Costs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Exit or disposal costs under ASC 420 are recognized when:',
     options: [
       'Plan is announced',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'bar-wc-230',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Life Cycle Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Life cycle costing considers:',
     options: [
       'Only production costs',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'bar-wc-231',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Core vs Non-Core Earnings',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Separating core from non-core earnings helps analysts:',
     options: [
       'Only calculate taxes',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'isc-wc-191',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Agile Governance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Governance in Agile environments requires:',
     options: [
       'Traditional waterfall oversight',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'isc-wc-192',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero trust security architecture is based on:',
     options: [
       'Perimeter defense only',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'isc-wc-193',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Service Mesh',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A service mesh in microservices architecture provides:',
     options: [
       'Only load balancing',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'isc-wc-194',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'DevSecOps Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Auditing DevSecOps practices should assess:',
     options: [
       'Only deployment speed',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'tcp-wc-191',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Qualified Opportunity Zone',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Capital gains invested in a Qualified Opportunity Zone Fund may receive:',
     options: [
       'Full immediate exclusion',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'tcp-wc-192',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Kiddie Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The kiddie tax applies to:',
     options: [
       'All child income',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'tcp-wc-193',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Spousal Lifetime Access Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Spousal Lifetime Access Trust (SLAT) allows:',
     options: [
       'Full estate inclusion',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_39: Question[] = [
   {
     id: 'tcp-wc-194',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'CDP Hearing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Collection Due Process (CDP) hearing provides:',
     options: [
       'Only payment extension',

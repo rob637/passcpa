@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'far-wc-167',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-asc606',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Costs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Incremental costs of obtaining a contract (e.g., sales commissions) are:',
     options: [
       'Always expensed immediately',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'far-wc-168',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Valuation Approaches',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The income approach to fair value measurement uses:',
     options: [
       'Comparable market transactions',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'far-wc-169',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-related-party',
     topic: 'Related Parties',
     subtopic: 'Disclosure Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Related party transaction disclosures must include:',
     options: [
       'Only the names of related parties',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'far-wc-170',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Donated Services',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Donated services are recognized as revenue when they:',
     options: [
       'Are always recognized',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'aud-wc-167',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-independence',
     topic: 'Independence',
     subtopic: 'Covered Members',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under AICPA rules, covered members whose independence must be maintained include:',
     options: [
       'Only the engagement partner',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'aud-wc-168',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Litigation Confirmation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The attorney letter addresses:',
     options: [
       'Only paid legal fees',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'aud-wc-169',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-review',
     topic: 'Review Engagements',
     subtopic: 'Review Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A review engagement primarily consists of:',
     options: [
       'Comprehensive testing like an audit',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'aud-wc-170',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-materiality',
     topic: 'Materiality',
     subtopic: 'Performance Materiality',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Performance materiality is set at:',
     options: [
       'Same as overall materiality',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'reg-wc-167',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Schedule K-1 Items',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Separately stated items on Schedule K-1 include:',
     options: [
       'Only ordinary income',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'reg-wc-168',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contribution Limit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Corporate charitable contribution deductions are limited to:',
     options: [
       '50% of taxable income',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'reg-wc-169',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Impossibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Performance of a contract may be excused by impossibility when:',
     options: [
       'Performance becomes more expensive',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'reg-wc-170',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 197 Intangibles',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 197 intangibles are amortized over:',
     options: [
       '5 years',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'bar-wc-197',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'EV/EBITDA Multiple',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise Value / EBITDA is preferred over P/E because:',
     options: [
       'It ignores profitability',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'bar-wc-198',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Stock Dividends',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Small stock dividends (under 20-25%) are recorded at:',
     options: [
       'Par value only',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'bar-wc-199',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Asset Turnover',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Total asset turnover ratio measures:',
     options: [
       'Profitability',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'bar-wc-200',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Break-Even Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The break-even point in units equals:',
     options: [
       'Fixed costs / price',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'bar-wc-201',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Share-Based Payment Modification',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A modification of share-based compensation that increases fair value:',
     options: [
       'Is ignored',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'isc-wc-167',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'WAF',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Web Application Firewall (WAF) protects against:',
     options: [
       'Only network-level attacks',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'isc-wc-168',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Vendor Risk Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vendor risk management should include:',
     options: [
       'Only contract signing',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'isc-wc-169',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'API Gateway',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An API gateway provides:',
     options: [
       'Only data storage',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'isc-wc-170',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'DR Plan Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Disaster recovery plan testing methods include:',
     options: [
       'Only reading the plan',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'tcp-wc-167',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Gift Splitting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Gift splitting between spouses allows:',
     options: [
       'No tax benefit',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'tcp-wc-168',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Thin Capitalization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 163(j) limits business interest deductions to:',
     options: [
       '100% of interest expense',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'tcp-wc-169',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'GRAT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Grantor Retained Annuity Trust (GRAT) transfers wealth when:',
     options: [
       'Assets lose value',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_33: Question[] = [
   {
     id: 'tcp-wc-170',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Innocent spouse relief under Section 6015 may be available when:',
     options: [
       'All joint filers automatically',

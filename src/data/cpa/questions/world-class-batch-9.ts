@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'far-wc-071',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-concepts',
     topic: 'Conceptual Framework',
     subtopic: 'Measurement Bases',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GAAP, which measurement attribute is used for trading securities?',
     options: [
       'Historical cost',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'far-wc-072',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-current-liabilities',
     topic: 'Current Liabilities',
     subtopic: 'Compensated Absences',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An employer must accrue a liability for compensated absences (vacation pay) when all of the following conditions are met EXCEPT:',
     options: [
       'Services have already been rendered',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'far-wc-073',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Fund Accounting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A city\'s electric utility is accounted for in which type of fund?',
     options: [
       'General Fund',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'far-wc-074',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Hedge Effectiveness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a cash flow hedge to qualify for special accounting, the hedging relationship must be:',
     options: [
       'Perfectly effective at offsetting cash flow changes',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'aud-wc-071',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-evaluation',
     topic: 'Evaluating Results',
     subtopic: 'Subsequent Events',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Type II subsequent event that provides evidence of conditions arising after year-end should be:',
     options: [
       'Used to adjust the financial statements',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'aud-wc-072',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Management Representations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of obtaining written management representations is to:',
     options: [
       'Replace substantive testing procedures',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'aud-wc-073',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Key Audit Matters',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Key audit matters (KAMs) in an auditor\'s report for a public company are:',
     options: [
       'Exceptions that resulted in a qualified opinion',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'aud-wc-074',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Fraud Risk Factors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following represents a fraud risk factor related to opportunity?',
     options: [
       'Management compensation heavily tied to aggressive targets',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'reg-wc-071',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer actively participates in a rental real estate activity. They have $30,000 of rental losses and AGI of $120,000 (before the rental loss). How much of the rental loss can be deducted?',
     options: [
       '$0',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'reg-wc-072',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An agency relationship requires which of the following?',
     options: [
       'A written contract',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'reg-wc-073',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Circular 230',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner who discovers an error on a previously filed return must:',
     options: [
       'File an amended return without client authorization',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'reg-wc-074',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Liquidating Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner receives a liquidating distribution of $50,000 cash when their outside basis is $35,000. What is the tax consequence?',
     options: [
       'No gain or loss recognized',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'bar-wc-077',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Internal Rate of Return',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A project requires a $100,000 investment and returns $130,000 in one year. What is the IRR?',
     options: [
       '13%',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'bar-wc-078',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Fair Value Hierarchy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Level 2 inputs in the fair value hierarchy include:',
     options: [
       'Quoted prices in active markets for identical assets',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'bar-wc-079',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Activity-Based Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In activity-based costing, the cost driver for setup costs would most likely be:',
     options: [
       'Direct labor hours',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'bar-wc-080',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'DuPont Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using DuPont analysis, which combination of factors determines ROE?',
     options: [
       'Profit margin × Total revenue × Debt ratio',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'bar-wc-081',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Hedging',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A U.S. company expecting to receive euros in 90 days can hedge currency risk by:',
     options: [
       'Buying euro call options',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'isc-wc-071',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Database Normalization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third normal form (3NF) requires eliminating:',
     options: [
       'Repeating groups',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'isc-wc-072',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Network Security',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A demilitarized zone (DMZ) in network architecture is BEST described as:',
     options: [
       'An encrypted tunnel for remote access',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'isc-wc-073',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'General Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT general controls (ITGCs) apply to:',
     options: [
       'Only specific transactions',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'isc-wc-074',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-analytics',
     topic: 'Data Analytics',
     subtopic: 'Audit Data Analytics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Benford\'s Law analysis in auditing is used to:',
     options: [
       'Test the accuracy of mathematical calculations',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'tcp-wc-071',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Form 1120-S',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'S corporation Form 1120-S is due:',
     options: [
       'March 15 (or 15th day of 3rd month after year-end)',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'tcp-wc-072',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Entity Selection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A key tax advantage of operating as an S corporation versus a partnership is:',
     options: [
       'Avoiding self-employment tax on all income',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'tcp-wc-073',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Individual estimated tax payments are due on all of the following dates EXCEPT:',
     options: [
       'April 15',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_9: Question[] = [
   {
     id: 'tcp-wc-074',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Power of Attorney',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 2848, Power of Attorney, authorizes a representative to:',
     options: [
       'Sign the taxpayer\'s return',

@@ -12,10 +12,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-ind-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2025, a taxpayer\'s spouse died in 2024. The taxpayer has a dependent child living at home. What is the most advantageous filing status?',
     options: [
       'Single',
@@ -32,10 +34,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-ind-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income Inclusions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is included in gross income?',
     options: [
       'Life insurance proceeds paid by reason of death',
@@ -52,10 +56,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-ind-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Above-the-Line Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-employed individuals may deduct 100% of health insurance premiums as:',
     options: [
       'An itemized deduction',
@@ -72,10 +78,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-ind-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For 2025, a taxpayer paid $15,000 in state income taxes and $8,000 in property taxes. What is the maximum deductible amount?',
     options: [
       '$10,000',
@@ -92,10 +100,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ind-005',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Long-term capital gains receive preferential tax rates. An asset must be held for MORE than:',
     options: [
       '6 months',
@@ -112,10 +122,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ind-006',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Traditional vs Roth IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key difference between Traditional and Roth IRAs is that Roth IRA:',
     options: [
       'Contributions are tax-deductible',
@@ -137,10 +149,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'Entity Selection',
     subtopic: 'Entity Comparison',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which entity type provides limited liability AND avoids double taxation at the entity level?',
     options: [
       'C Corporation',
@@ -157,10 +171,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'S Corporations',
     subtopic: 'S Corp Eligibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To qualify for S corporation status, a corporation must meet all requirements EXCEPT:',
     options: [
       'Have only one class of stock',
@@ -177,10 +193,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'S Corporations',
     subtopic: 'Shareholder Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s basis is increased by:',
     options: [
       'Distributions received',
@@ -197,10 +215,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corp',
     topic: 'C Corporations',
     subtopic: 'Dividends Received Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation owns 25% of another domestic C corporation\'s stock and receives $100,000 in dividends. What is the dividends received deduction?',
     options: [
       '$50,000',
@@ -222,10 +242,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-prop-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Basis of Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'What is the basis of property received as a gift when the FMV at gift date is GREATER than donor\'s basis?',
     options: [
       'FMV at date of gift',
@@ -242,10 +264,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-prop-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §1031, like-kind exchange treatment applies to exchanges of:',
     options: [
       'Inventory held for sale',
@@ -262,10 +286,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-prop-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231 Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Net Section 1231 gains are treated as:',
     options: [
       'Ordinary income',
@@ -282,10 +308,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-prop-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When §1245 property is sold at a gain, depreciation recapture requires:',
     options: [
       'All gain to be treated as capital gain',
@@ -307,10 +335,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-pship-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A partner contributes property with a basis of $30,000 and FMV of $50,000 to a partnership for a 25% interest. What is the partner\'s basis in the partnership interest?',
     options: [
       '$30,000',
@@ -327,10 +357,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-pship-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Partner Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Unlike S corporation shareholders, partners include their share of partnership liabilities in their basis because:',
     options: [
       'Partnerships have unlimited liability',
@@ -347,10 +379,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-pship-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner with a $40,000 basis receives a current (non-liquidating) distribution of $25,000 cash and property with a $20,000 basis. What is the partner\'s remaining basis?',
     options: [
       '$0',
@@ -372,10 +406,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-corp-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ccorp',
     topic: 'C Corporation Taxation',
     subtopic: 'Corporate Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §351, no gain or loss is recognized on transfer of property to a corporation if transferors:',
     options: [
       'Receive only stock in exchange',
@@ -392,10 +428,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-corp-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ccorp',
     topic: 'C Corporation Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax applies to C corporations that:',
     options: [
       'Accumulate earnings beyond reasonable business needs to avoid shareholder tax',
@@ -412,10 +450,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-base-corp-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-in Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains tax applies to S corporations that:',
     options: [
       'Were always S corporations since formation',
@@ -437,10 +477,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-plan-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Timing Strategies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A cash-basis taxpayer expecting higher income next year should generally:',
     options: [
       'Accelerate income and defer deductions',
@@ -457,10 +499,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-plan-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'QBI Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Section 199A Qualified Business Income (QBI) deduction is available to:',
     options: [
       'All business entities',
@@ -485,10 +529,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Annual Exclusion',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In 2026, the annual gift tax exclusion is $19,000 per donee. A married couple with 3 children wants to gift the maximum tax-free amount. What is the total they can gift using only the annual exclusion?',
     options: [
       '$57,000',
@@ -505,10 +551,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Unified Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current law (post-H.R. 1), a decedent\'s estate can pass approximately how much to non-spouse heirs tax-free using the unified credit?',
     options: [
       '$1 million',
@@ -525,10 +573,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Step-Up in Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Father purchased stock for $50,000. At his death, it was worth $200,000. His daughter inherits the stock. What is her basis for income tax purposes?',
     options: [
       '$50,000 (carryover basis)',
@@ -545,10 +595,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'GSTT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Generation-Skipping Transfer Tax (GSTT) applies to transfers to:',
     options: [
       'Any family member',
@@ -567,10 +619,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Entity Selection',
     subtopic: 'Tax Rate Comparison',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A business owner comparing C corp vs. S corp taxation should consider that C corporations:',
     options: [
       'Have a flat 21% federal rate, but dividends to shareholders are taxed again',
@@ -587,10 +641,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'S Corporation',
     subtopic: 'Eligibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following would disqualify a corporation from S corporation status?',
     options: [
       'Having 90 shareholders',
@@ -607,10 +663,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Partnership',
     subtopic: 'Guaranteed Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner receives a guaranteed payment of $100,000 for services. How is this treated for tax purposes?',
     options: [
       'Not deductible by the partnership, tax-free to the partner',
@@ -627,10 +685,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Partnership',
     subtopic: 'Basis Adjustments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner\'s outside basis is increased by:',
     options: [
       'Partnership losses',
@@ -653,10 +713,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-prac-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Estimated Taxes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To avoid the underpayment penalty, individual taxpayers must generally pay the lesser of:',
     options: [
       '80% of current year tax or 100% of prior year tax',
@@ -673,10 +735,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-prac-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for IRS assessment of additional tax is:',
     options: [
       '3 years from filing or due date, whichever is later',
@@ -693,10 +757,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-prac-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Preparer Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A tax preparer who takes an unreasonable position on a return faces a penalty of:',
     options: [
       '$50 per return',
@@ -713,10 +779,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-prac-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Planning',
     subtopic: 'Excess Business Loss',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The excess business loss limitation under IRC §461(l) limits noncorporate taxpayers\' business losses to:',
     options: [
       '$500,000 for all taxpayers',
@@ -739,10 +807,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-b4-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Generation-Skipping Transfer Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The generation-skipping transfer (GST) tax applies when property is transferred to:',
     options: [
       'A spouse',
@@ -759,10 +829,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-b4-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Portability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Portability of the estate tax exemption allows:',
     options: [
       'Children to inherit the parent\'s exemption',
@@ -779,10 +851,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-b4-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Valuation Discounts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A minority discount in estate valuation recognizes that:',
     options: [
       'All estate assets are valued at fair market value',
@@ -799,10 +873,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-est-b4-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Gift Tax',
     subtopic: 'Split Gifts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gift splitting between spouses allows:',
     options: [
       'Each spouse to give the annual exclusion to the same person',
@@ -821,10 +897,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-b4-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'C Corporation Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax:',
     options: [
       'Applies to all corporate earnings',
@@ -841,10 +919,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-b4-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'C Corporation Taxation',
     subtopic: 'PHC Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A personal holding company (PHC) is subject to a penalty tax if:',
     options: [
       'More than 50% is owned by 5 or fewer individuals AND 60%+ of income is PHC income',
@@ -861,10 +941,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-b4-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A special allocation of partnership income or loss must have:',
     options: [
       'Approval from the IRS',
@@ -881,10 +963,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-b4-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'Partnership Taxation',
     subtopic: 'Family Partnerships',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a family partnership, income may be reallocated by the IRS if:',
     options: [
       'The partnership has net losses',
@@ -901,10 +985,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ent-b4-005',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'S Corporation Taxation',
     subtopic: 'QSSS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Qualified Subchapter S Subsidiary (QSSS) is:',
     options: [
       'Any corporation owned by an S corp',
@@ -923,10 +1009,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ind-b4-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Planning',
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "kiddie tax" applies to unearned income of:',
     options: [
       'Children under 19 (or under 24 if full-time students) with unearned income above threshold',
@@ -943,10 +1031,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ind-b4-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Planning',
     subtopic: 'Passive Activity Losses',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A real estate professional can deduct rental real estate losses against other income if:',
     options: [
       'They own any rental property',
@@ -963,10 +1053,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ind-b4-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Planning',
     subtopic: 'At-Risk Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer\'s at-risk amount does NOT include:',
     options: [
       'Cash contributed to the activity',
@@ -985,10 +1077,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-b4-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'QBI Deduction Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For specified service trades or businesses (SSTBs), the §199A QBI deduction is completely phased out when taxable income exceeds:',
     options: [
       '$182,100 single / $364,200 MFJ',
@@ -1005,10 +1099,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-b4-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'Compensation Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The $1 million deduction limit on executive compensation under §162(m) applies to:',
     options: [
       'Covered employees of publicly traded companies',
@@ -1025,10 +1121,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-bus-b4-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'Research Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The research and development credit is calculated as a percentage of:',
     options: [
       'All R&D expenditures',
@@ -1047,10 +1145,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-cred-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The foreign tax credit limitation is calculated separately for:',
     options: [
       'Each foreign country',
@@ -1067,10 +1167,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-cred-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Work Opportunity Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Work Opportunity Tax Credit is available for hiring individuals from:',
     options: [
       'Any unemployed person',
@@ -1087,10 +1189,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-cred-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Disabled Access Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The disabled access credit is available to:',
     options: [
       'Eligible small businesses with $1 million or less in revenue or 30 or fewer employees',
@@ -1109,10 +1213,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-intl-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FDII',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Foreign-Derived Intangible Income (FDII) provides a deduction resulting in an effective tax rate of:',
     options: [
       '21%',
@@ -1129,10 +1235,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-intl-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'BEAT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Base Erosion and Anti-Abuse Tax (BEAT) applies to corporations with:',
     options: [
       'Any foreign income',
@@ -1155,10 +1263,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ret-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: '401(k) Plans',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 2025 elective deferral limit for 401(k) plans is:',
     options: [
       '$23,500',
@@ -1175,10 +1285,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ret-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Required Minimum Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SECURE Act 2.0, the required beginning date for RMDs is the year the account owner turns:',
     options: [
       '73',
@@ -1195,10 +1307,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ret-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth IRA',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Roth IRA distribution is qualified (tax-free) if the account has been open at least 5 years AND:',
     options: [
       'The owner is 59½, disabled, or uses up to $10,000 for first home',
@@ -1215,10 +1329,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-ret-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'SEP IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The maximum employer contribution to a SEP IRA is:',
     options: [
       '10% of compensation',
@@ -1237,10 +1353,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-comp-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation',
     subtopic: 'Nonqualified Deferred Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §409A, nonqualified deferred compensation must be:',
     options: [
       'Funded in a trust immediately',
@@ -1257,10 +1375,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-comp-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation',
     subtopic: 'Stock Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For incentive stock options (ISOs), the employee recognizes income:',
     options: [
       'When options are granted',
@@ -1277,10 +1397,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-comp-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation',
     subtopic: 'Fringe Benefits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which fringe benefit is generally excludable from employee income?',
     options: [
       'Personal use of company car',
@@ -1299,10 +1421,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-trust-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-trusts',
     topic: 'Trust Taxation',
     subtopic: 'Simple vs Complex Trusts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A simple trust is one that:',
     options: [
       'Has less than $100,000 in assets',
@@ -1319,10 +1443,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-trust-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-trusts',
     topic: 'Trust Taxation',
     subtopic: 'Grantor Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A grantor trust is disregarded for income tax purposes because:',
     options: [
       'The trust has minimal assets',
@@ -1339,10 +1465,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-trust-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-trusts',
     topic: 'Trust Taxation',
     subtopic: 'Trust Tax Rates',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Trusts and estates reach the highest marginal tax rate (37%) at taxable income of approximately:',
     options: [
       '$100,000',
@@ -1361,10 +1489,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-succ-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-succession',
     topic: 'Business Succession',
     subtopic: 'Section 303 Redemption',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A §303 redemption allows:',
     options: [
       'Tax-free liquidation of any corporation',
@@ -1381,10 +1511,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-succ-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-succession',
     topic: 'Business Succession',
     subtopic: 'Section 6166',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IRC §6166 allows deferral of estate tax when:',
     options: [
       'The estate includes any business assets',
@@ -1401,10 +1533,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-succ-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-succession',
     topic: 'Business Succession',
     subtopic: 'Buy-Sell Agreements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A cross-purchase buy-sell agreement funded with life insurance:',
     options: [
       'Has each shareholder own policies on the other shareholders',
@@ -1423,10 +1557,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-salt-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-salt',
     topic: 'State and Local Tax',
     subtopic: 'Nexus',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under South Dakota v. Wayfair, states can require sales tax collection from remote sellers with:',
     options: [
       'Any amount of sales into the state',
@@ -1443,10 +1579,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-salt-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-salt',
     topic: 'State and Local Tax',
     subtopic: 'PTE Elections',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pass-through entity (PTE) tax elections allow:',
     options: [
       'Avoiding all state income taxes',
@@ -1463,10 +1601,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-081',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Bunching Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The bunching strategy for itemized deductions involves:',
     options: [
       'Spreading deductions evenly each year',
@@ -1483,10 +1623,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-082',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Qualified Opportunity Zones',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Investing capital gains in a Qualified Opportunity Zone Fund provides:',
     options: [
       'Immediate exclusion of all gain',
@@ -1503,10 +1645,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-083',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The kiddie tax applies to unearned income above $2,500 (2024) for children:',
     options: [
       'Under age 14 only',
@@ -1523,10 +1667,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-084',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Check-the-Box Elections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A domestic LLC with two members is classified by default as:',
     options: [
       'Partnership',
@@ -1543,10 +1689,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-085',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Entity Comparison',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Compared to a C corporation, an S corporation advantage is:',
     options: [
       'Unlimited shareholders',
@@ -1563,10 +1711,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-086',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation shareholder-employee can reduce self-employment tax by:',
     options: [
       'Not paying any salary',
@@ -1583,10 +1733,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-087',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Defined Benefit Plans',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The maximum annual benefit from a defined benefit plan in 2024 is:',
     options: [
       '$275,000',
@@ -1603,10 +1755,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-088',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Required Minimum Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SECURE 2.0, RMDs must begin by April 1 following the year the account owner turns:',
     options: [
       '73',
@@ -1623,10 +1777,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-089',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Backdoor Roth IRA',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The backdoor Roth IRA strategy involves:',
     options: [
       'Direct Roth contributions regardless of income',
@@ -1643,10 +1799,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-090',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Net Unrealized Appreciation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Net unrealized appreciation (NUA) treatment allows:',
     options: [
       'Employer stock gains to be taxed at LTCG rates upon later sale',
@@ -1663,10 +1821,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-091',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Nonqualified Deferred Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §409A, nonqualified deferred compensation must:',
     options: [
       'Be funded in a rabbi trust',
@@ -1683,10 +1843,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-092',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Incentive Stock Options',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To receive favorable ISO tax treatment, the stock must be held for at least:',
     options: [
       '6 months after grant',
@@ -1703,10 +1865,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-093',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Section 83(b) Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A §83(b) election must be filed within:',
     options: [
       '30 days of grant',
@@ -1723,10 +1887,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-094',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'GILTI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Global Intangible Low-Taxed Income (GILTI) requires US shareholders to:',
     options: [
       'Defer all foreign income indefinitely',
@@ -1743,10 +1909,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-095',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The foreign tax credit limitation is calculated as:',
     options: [
       'US tax × (Foreign source income ÷ Worldwide income)',
@@ -1763,10 +1931,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-096',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Treaty Benefits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax treaties primarily serve to:',
     options: [
       'Eliminate all foreign taxes',
@@ -1783,10 +1953,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-097',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Grantor Retained Annuity Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A GRAT transfers wealth most effectively when:',
     options: [
       'Assets appreciate faster than the §7520 rate',
@@ -1803,10 +1975,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-098',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Intentionally Defective Grantor Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Intentionally Defective Grantor Trust (IDGT) provides the advantage that:',
     options: [
       'Grantor pays income tax on trust earnings, allowing tax-free growth for beneficiaries',
@@ -1823,10 +1997,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-099',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Family Limited Partnership',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Valuation discounts for family limited partnership interests may include:',
     options: [
       'Premium for family ownership',
@@ -1843,10 +2019,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-100',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Return Positions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner may not sign a return if a position:',
     options: [
       'Has any degree of uncertainty',
@@ -1863,10 +2041,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-101',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Tax Shelters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A listed transaction requires:',
     options: [
       'No special disclosure',
@@ -1883,10 +2063,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-102',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Health Savings Accounts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'HSA contributions provide which tax benefit?',
     options: [
       'Nondeductible but grow tax-free',
@@ -1903,10 +2085,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-103',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Qualified Small Business Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1202 QSBS exclusion requires holding the stock for at least:',
     options: [
       '1 year',
@@ -1923,10 +2107,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-104',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Substantially Equal Periodic Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 72(t) exception allows early IRA withdrawals without penalty if:',
     options: [
       'Withdrawn for any purpose before age 59½',
@@ -1943,10 +2129,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-105',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Charitable Lead Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable lead annuity trust (CLAT) benefits the donor by:',
     options: [
       'Passing appreciation above the §7520 rate to family gift/estate tax free',
@@ -1963,10 +2151,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-106',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Donor-Advised Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A donor-advised fund allows the donor to:',
     options: [
       'Claim deduction when grants are made to charities',
@@ -1983,10 +2173,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-107',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Qualified Charitable Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A QCD from an IRA allows individuals age 70½+ to:',
     options: [
       'Deduct charitable contributions above AGI limits',
@@ -2003,10 +2195,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-108',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Income Shifting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective income shifting strategies include all EXCEPT:',
     options: [
       'Assigning earned income to children',
@@ -2023,10 +2217,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-109',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: '529 Plans',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: '529 plan benefits include:',
     options: [
       'Tax-free growth and tax-free withdrawals for qualified education expenses',
@@ -2043,10 +2239,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-110',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Partnership vs S Corp',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partnership may be preferred over an S corporation when:',
     options: [
       'Special allocations of income and losses are needed',
@@ -2063,10 +2261,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-111',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Series LLC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Series LLC structure provides:',
     options: [
       'Unlimited liability for all members',
@@ -2083,10 +2283,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-112',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Professional Corporations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A professional corporation (PC) differs from regular corporations in that:',
     options: [
       'It has unlimited liability for all debts',
@@ -2103,10 +2305,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-113',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Solo 401(k)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Solo 401(k) allows self-employed individuals to contribute:',
     options: [
       'Only employee deferrals',
@@ -2123,10 +2327,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-114',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Cash Balance Plans',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A cash balance plan is a type of:',
     options: [
       'Defined benefit plan with individual account balances',
@@ -2143,10 +2349,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-115',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'SIMPLE IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SIMPLE IRA is available to employers with:',
     options: [
       '100 or fewer employees who earned $5,000+ in prior year',
@@ -2163,10 +2371,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-116',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Restricted Stock Units',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'RSUs are taxed:',
     options: [
       'At grant',
@@ -2183,10 +2393,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-117',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Employee Stock Purchase Plans',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A qualifying ESPP provides:',
     options: [
       'Immediate taxation on discount',
@@ -2203,10 +2415,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-118',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Golden Parachute Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 280G disallows deductions for excess parachute payments, which are payments that:',
     options: [
       'Exceed $100,000 total',
@@ -2223,10 +2437,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-119',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Subpart F Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Subpart F income includes:',
     options: [
       'All foreign income',
@@ -2243,10 +2459,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-120',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'BEAT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Base Erosion and Anti-Abuse Tax (BEAT) applies to:',
     options: [
       'All corporations',
@@ -2263,10 +2481,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-121',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FDII Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The FDII (Foreign-Derived Intangible Income) deduction:',
     options: [
       'Taxes foreign income at higher rates',
@@ -2283,10 +2503,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-122',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Portability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Portability of the estate tax exemption allows:',
     options: [
       'Automatic transfer of unused exemption to children',
@@ -2303,10 +2525,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-123',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Annual Exclusion Gifts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The 2024 annual gift tax exclusion is:',
     options: [
       '$15,000 per donee',
@@ -2323,10 +2547,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-124',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Crummey Powers',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Crummey powers in an irrevocable trust provide:',
     options: [
       'Immediate distribution to beneficiaries',
@@ -2343,10 +2569,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-125',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Spousal Lifetime Access Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SLAT (Spousal Lifetime Access Trust) allows:',
     options: [
       'One spouse to gift to trust for other spouse\'s benefit while removing assets from estate',
@@ -2363,10 +2591,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-126',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Written Tax Advice',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Circular 230, written tax advice must:',
     options: [
       'Always provide a guarantee of outcome',
@@ -2383,10 +2613,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-127',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Best Practices',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Circular 230 best practices include:',
     options: [
       'Communicating clearly with client, establishing facts, advising on penalties and compliance',
@@ -2403,10 +2635,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-128',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'AMT Planning',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Strategies to minimize AMT include all EXCEPT:',
     options: [
       'Accelerating ordinary income into AMT years',
@@ -2423,10 +2657,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-129',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Conversion Considerations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Converting a C corporation to an S corporation results in:',
     options: [
       'Immediate recognition of all built-in gains',
@@ -2443,10 +2679,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-130',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth Conversion Strategies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Roth conversion is most beneficial when:',
     options: [
       'Current tax rate is higher than expected retirement rate',
@@ -2463,10 +2701,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-131',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Health Savings Accounts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'HSA contributions are:',
     options: [
       'Only employer deductible',
@@ -2483,10 +2723,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-132',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-employed individuals must generally pay estimated taxes if they expect to owe:',
     options: [
       'Any amount',
@@ -2503,10 +2745,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-133',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'LLC Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'By default, a multi-member LLC is taxed as:',
     options: [
       'A corporation',
@@ -2523,10 +2767,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-134',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'S Corp Reasonable Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder-employee must receive:',
     options: [
       'Any amount they choose',
@@ -2543,10 +2789,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-135',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'SEP IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SEP IRA contribution limits for 2024 are:',
     options: [
       '$6,500',
@@ -2563,10 +2811,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-136',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Defined Benefit Plans',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Defined benefit plans are advantageous for:',
     options: [
       'Young business owners',
@@ -2583,10 +2833,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-137',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Deferred Compensation Risks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The primary risk to employees in nonqualified deferred compensation is:',
     options: [
       'Immediate taxation',
@@ -2603,10 +2855,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-138',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Phantom Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Phantom stock provides:',
     options: [
       'Actual equity ownership',
@@ -2623,10 +2877,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-139',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Transfer Pricing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Transfer pricing rules require related party transactions to be priced:',
     options: [
       'At arm\'s length (as if between unrelated parties)',
@@ -2643,10 +2899,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-140',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'PFIC Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Passive Foreign Investment Company (PFIC) is a foreign corporation where:',
     options: [
       '75%+ of income is passive OR 50%+ of assets produce passive income',
@@ -2663,10 +2921,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-141',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Family Limited Partnerships',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Family limited partnerships can provide:',
     options: [
       'Only asset protection',
@@ -2683,10 +2943,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-142',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Special Use Valuation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 2032A special use valuation allows qualifying farm/business real estate to be valued at:',
     options: [
       'Fair market value only',
@@ -2703,10 +2965,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-143',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Installment Payment of Estate Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 6166 allows estate tax deferral when:',
     options: [
       'Closely held business exceeds 35% of adjusted gross estate',
@@ -2723,10 +2987,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-144',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Tax Return Preparer Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The penalty for understatement due to unreasonable position is:',
     options: [
       '$50 per return',
@@ -2743,10 +3009,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-145',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'AICPA Statements on Standards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SSTS, a CPA may rely on client-provided information:',
     options: [
       'Unless the information appears incorrect, incomplete, or inconsistent',
@@ -2763,10 +3031,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-146',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The 3.8% net investment income tax applies to:',
     options: [
       'Individuals with MAGI over threshold ($200K/$250K) on lesser of NII or excess MAGI',
@@ -2783,10 +3053,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-147',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Additional Medicare Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 0.9% additional Medicare tax applies to:',
     options: [
       'All wages',
@@ -2803,10 +3075,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-148',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Qualified Small Business Stock',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1202 QSBS exclusion allows:',
     options: [
       '100% exclusion of gain (up to $10M or 10x basis) on stock held 5+ years',
@@ -2823,10 +3097,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-149',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Inherited IRAs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under SECURE Act rules, most non-spouse beneficiaries must:',
     options: [
       'Take lifetime distributions',
@@ -2843,10 +3119,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-150',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Employee Benefits Overview',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax-advantaged employee benefits include:',
     options: [
       'Health insurance, retirement plans, FSAs, HSAs, and educational assistance',
@@ -2863,10 +3141,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-151',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FBAR Requirements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'FBAR filing is required when:',
     options: [
       'Aggregate value of foreign financial accounts exceeds $10,000 at any time during the year',
@@ -2883,10 +3163,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-152',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual-planning',
     topic: 'Individual Tax Planning',
     subtopic: 'Passive Loss Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §469, passive activity losses can generally offset:',
     options: [
       'Only passive activity income (with limited exceptions)',
@@ -2903,10 +3185,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-153',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Corporate Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The corporate AMT under the Inflation Reduction Act applies to:',
     options: [
       'Corporations with average annual adjusted financial statement income exceeding $1 billion',
@@ -2923,10 +3207,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-154',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate-gift',
     topic: 'Estate and Gift Planning',
     subtopic: 'Gift Splitting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gift splitting allows:',
     options: [
       'Spouses to treat gifts as made half by each, doubling annual exclusion',
@@ -2943,10 +3229,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-155',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'IRS Practice Sanctions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sanctions for Circular 230 violations can include:',
     options: [
       'Censure, suspension, disbarment, and monetary penalties',
@@ -2964,10 +3252,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-156',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Roth conversion strategy considerations include:',
     options: [
       'Always convert entire balance immediately',
@@ -2984,10 +3274,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-157',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-investments',
     topic: 'Investment Tax Planning',
     subtopic: 'Tax Loss Harvesting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax loss harvesting involves:',
     options: [
       'Selling winners to realize gains',
@@ -3004,10 +3296,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-158',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-charitable',
     topic: 'Charitable Planning',
     subtopic: 'Charitable Remainder Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Charitable Remainder Trust (CRT) provides:',
     options: [
       'Immediate full deduction',
@@ -3024,10 +3318,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-159',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-investments',
     topic: 'Investment Tax Planning',
     subtopic: 'Qualified Opportunity Zones',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Qualified Opportunity Zone investments provide:',
     options: [
       'Immediate tax deduction',
@@ -3044,10 +3340,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-160',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'Section 199A QBI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 199A qualified business income deduction is limited by:',
     options: [
       'No limitations apply',
@@ -3064,10 +3362,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-161',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'Interest Expense Limitation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 163(j) limits business interest deduction to:',
     options: [
       '30% of adjusted taxable income plus business interest income',
@@ -3084,10 +3384,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-162',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-business',
     topic: 'Business Tax Planning',
     subtopic: 'Bonus Depreciation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Bonus depreciation under Section 168(k):',
     options: [
       'Allows immediate expensing of qualified property, phasing down from 100%',
@@ -3104,10 +3406,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-163',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Research and Development Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The R&D tax credit under Section 41:',
     options: [
       'Only benefits large corporations',
@@ -3124,10 +3428,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-164',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Incentive Stock Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Incentive Stock Options (ISOs) differ from NQSOs because:',
     options: [
       'Exercise is always taxable',
@@ -3144,10 +3450,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-165',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Section 409A',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 409A governs:',
     options: [
       'Nonqualified deferred compensation arrangements',
@@ -3164,10 +3472,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-166',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Section 83(b) Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Section 83(b) election allows an employee to:',
     options: [
       'Recognize income at grant date on restricted property rather than at vesting',
@@ -3184,10 +3494,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-167',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'Entity Planning',
     subtopic: 'LLC vs Partnership Taxation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An LLC with multiple members is taxed:',
     options: [
       'Always as a corporation',
@@ -3204,10 +3516,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-168',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-entity',
     topic: 'Entity Planning',
     subtopic: 'Check-the-Box Elections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Check-the-box regulations allow eligible entities to:',
     options: [
       'Choose any tax classification regardless of state law',
@@ -3224,10 +3538,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-169',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'Irrevocable Life Insurance Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Irrevocable Life Insurance Trust (ILIT) helps:',
     options: [
       'Reduce income taxes only',
@@ -3244,10 +3560,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-170',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'GRATs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Grantor Retained Annuity Trust (GRAT) is designed to:',
     options: [
       'Generate income tax deductions',
@@ -3264,10 +3582,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-171',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate Planning',
     subtopic: 'IDGTs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Intentionally Defective Grantor Trust (IDGT):',
     options: [
       'Is a grantor trust for income tax but completed gift for transfer tax purposes',
@@ -3284,10 +3604,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-172',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Tax',
     subtopic: 'GILTI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Global Intangible Low-Taxed Income (GILTI) is:',
     options: [
       'Optional income inclusion',
@@ -3304,10 +3626,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-173',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Tax',
     subtopic: 'FDII Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Foreign-Derived Intangible Income (FDII) deduction:',
     options: [
       'Applies to all foreign income',
@@ -3324,10 +3648,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-174',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Tax',
     subtopic: 'Treaty Benefits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax treaties may provide:',
     options: [
       'No benefits for US persons',
@@ -3344,10 +3670,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-175',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'SSTS Positions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Statements on Standards for Tax Services require:',
     options: [
       'Always taking most aggressive position',
@@ -3364,10 +3692,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-176',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Client Errors',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Upon discovering a material error in a prior year return, the CPA should:',
     options: [
       'Ignore if not caught by IRS',
@@ -3384,10 +3714,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-177',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Accuracy Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under Section 6662 is:',
     options: [
       '10% of underpayment',
@@ -3404,10 +3736,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-178',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Collection Due Process',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Collection Due Process (CDP) hearings provide taxpayers:',
     options: [
       'Automatic debt forgiveness',
@@ -3424,10 +3758,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-179',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-practice',
     topic: 'Tax Practice',
     subtopic: 'Penalty Abatement',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'First-time penalty abatement is available when:',
     options: [
       'Any time a penalty is assessed',
@@ -3444,10 +3780,12 @@ export const TCP_QUESTIONS: Question[] = [
   {
     id: 'tcp-180',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'NUA Strategy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Net Unrealized Appreciation (NUA) strategy involves:',
     options: [
       'Rolling all employer stock to IRA',

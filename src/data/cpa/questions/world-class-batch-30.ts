@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'far-wc-155',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Software Development',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Costs of internally developed software for sale are capitalized when:',
     options: [
       'Research begins',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'far-wc-156',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the equity method, the investor\'s share of investee losses:',
     options: [
       'Is never recognized',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'far-wc-157',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-interim',
     topic: 'Interim Reporting',
     subtopic: 'Integral Approach',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 270, interim periods are viewed primarily as:',
     options: [
       'Discrete periods independent of annual',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'far-wc-158',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expense Presentation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'NFP entities must present expenses classified by function and:',
     options: [
       'Only by function',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'aud-wc-155',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Tolerable Deviation Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The tolerable rate of deviation (TRD) in control testing represents:',
     options: [
       'Expected error rate',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'aud-wc-156',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Control Activities',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control activities include:',
     options: [
       'Only tone at the top',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'aud-wc-157',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-ssars',
     topic: 'SSARS Engagements',
     subtopic: 'Preparation vs Compilation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A preparation engagement differs from a compilation in that:',
     options: [
       'A report is required for preparation',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'aud-wc-158',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Accounts Payable Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Accounts payable audit procedures focus on:',
     options: [
       'Primarily overstatement',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'reg-wc-155',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Loss Carryovers',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current law, corporate NOLs may be carried forward:',
     options: [
       '2 years back, 20 years forward',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'reg-wc-156',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Individuals avoid the underpayment penalty by paying:',
     options: [
       'Any amount quarterly',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'reg-wc-157',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-property',
     topic: 'Real Property',
     subtopic: 'Recording Statutes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under a race-notice recording statute, a subsequent purchaser prevails if:',
     options: [
       'They simply record first',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'reg-wc-158',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Boot in Like-Kind Exchange',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a like-kind exchange, boot received is:',
     options: [
       'Never taxable',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'bar-wc-182',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Vertical Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Common-size (vertical) analysis expresses financial statement items as:',
     options: [
       'Dollar changes from prior year',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'bar-wc-183',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Precedent Transaction Premiums',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Precedent transaction analysis typically implies:',
     options: [
       'Lower valuations than trading multiples',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'bar-wc-184',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Disclosures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Segment disclosures must include:',
     options: [
       'Only revenue',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'bar-wc-185',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Working Capital Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Aggressive working capital policies:',
     options: [
       'Maximize current assets',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'bar-wc-186',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'ROIC',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Return on Invested Capital (ROIC) measures:',
     options: [
       'Only equity returns',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'isc-wc-155',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'ISO 27001',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ISO 27001 is a standard for:',
     options: [
       'Quality management',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'isc-wc-156',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Least Privilege',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The principle of least privilege means:',
     options: [
       'Administrators have unlimited access',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'isc-wc-157',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Microservices',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Microservices architecture structures applications as:',
     options: [
       'One monolithic codebase',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'isc-wc-158',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Audit Trail',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An audit trail provides:',
     options: [
       'Only error messages',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'tcp-wc-155',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Reasonable Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'S corporation shareholder-employee reasonable compensation issues arise because:',
     options: [
       'There are no tax implications',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'tcp-wc-156',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Education Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The American Opportunity Tax Credit (AOTC):',
     options: [
       'Is available for any education',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'tcp-wc-157',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Lead Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable lead trust (CLT):',
     options: [
       'Pays income to charity with remainder to individual beneficiaries, opposite of CRT',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_30: Question[] = [
   {
     id: 'tcp-wc-158',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Appeals Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'After receiving a 30-day letter, the taxpayer may:',
     options: [
       'Only go to court',

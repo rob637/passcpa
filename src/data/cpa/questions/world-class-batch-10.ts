@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'far-wc-075',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Research and Development',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GAAP, which of the following costs should be capitalized as part of internally developed software for internal use?',
     options: [
       'Preliminary project stage costs',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'far-wc-076',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign',
     topic: 'Foreign Currency',
     subtopic: 'Translation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When translating foreign subsidiary financial statements with the local currency as the functional currency, which rate is used for common stock?',
     options: [
       'Current rate at balance sheet date',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'far-wc-077',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A not-for-profit must present expenses by both natural classification and functional classification. Functional classifications include:',
     options: [
       'Salaries, rent, and utilities',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'far-wc-078',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Variable Consideration',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company sells products with a right of return. At what amount should revenue be recognized?',
     options: [
       'Full sales price with no adjustment',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'aud-wc-075',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Sampling',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In attribute sampling, as the acceptable risk of overreliance decreases:',
     options: [
       'Sample size decreases',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'aud-wc-076',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis of Matter',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An emphasis-of-matter paragraph in an auditor\'s report is used to:',
     options: [
       'Express a qualified opinion',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'aud-wc-077',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-attest',
     topic: 'Attestation Engagements',
     subtopic: 'SOC Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 2 Type 2 report covers:',
     options: [
       'Controls relevant to financial reporting only',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'aud-wc-078',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Independence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following services most likely impairs independence?',
     options: [
       'Preparing tax returns for an audit client',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'reg-wc-075',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is an adjustment for calculating Alternative Minimum Taxable Income (AMTI)?',
     options: [
       'Charitable contributions',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'reg-wc-076',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax applies when a corporation:',
     options: [
       'Has retained earnings exceeding $250,000',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'reg-wc-077',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the statute of frauds, which contract MUST be in writing to be enforceable?',
     options: [
       'A contract for $400 of goods',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'reg-wc-078',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer sells property for $100,000 (basis $60,000). They receive $20,000 in year 1 and $80,000 in year 2. Year 1 gain recognized under installment method is:',
     options: [
       '$8,000',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'bar-wc-082',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Process Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using the weighted-average method in process costing, beginning work in process costs are:',
     options: [
       'Excluded from the calculation entirely',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'bar-wc-083',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Quality of Earnings',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A high quality of earnings is indicated when:',
     options: [
       'Net income significantly exceeds operating cash flow',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'bar-wc-084',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Discounted Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When calculating terminal value using the perpetuity growth model, which rate should the growth rate NOT exceed?',
     options: [
       'Historical revenue growth rate',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'bar-wc-085',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Business Combinations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a business combination, contingent consideration is initially measured at:',
     options: [
       'Zero until contingency is resolved',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'bar-wc-086',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The minimum transfer price from the selling division\'s perspective should be:',
     options: [
       'Market price',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'isc-wc-075',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Frameworks',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'COBIT is primarily used for:',
     options: [
       'Software development methodologies',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'isc-wc-076',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Authentication',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Single sign-on (SSO) improves security by:',
     options: [
       'Requiring users to remember multiple passwords',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'isc-wc-077',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Cloud Computing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In Infrastructure as a Service (IaaS), the customer is responsible for:',
     options: [
       'Physical data center security',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'isc-wc-078',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-analytics',
     topic: 'Data Analytics',
     subtopic: 'Visualization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A heat map is most appropriate for showing:',
     options: [
       'Trends over time',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'tcp-wc-075',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Kiddie Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The kiddie tax applies to unearned income of a child who is:',
     options: [
       'Any age with unearned income over $1,000',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'tcp-wc-076',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC Section 704(b), a special allocation of partnership income must have:',
     options: [
       'Equal sharing among all partners',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'tcp-wc-077',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A charitable remainder trust provides:',
     options: [
       'Immediate donation of entire interest to charity',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_10: Question[] = [
   {
     id: 'tcp-wc-078',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Audits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During an IRS audit, the burden of proof is generally on:',
     options: [
       'The IRS to prove the return is incorrect',

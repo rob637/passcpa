@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'far-wc-055',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-contingencies',
     topic: 'Contingencies',
     subtopic: 'Loss Contingencies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'West Corp. is defendant in a lawsuit. Legal counsel advises that an unfavorable outcome is probable and the loss will be between $500,000 and $800,000, with no amount more likely than another. How much should West accrue?',
     options: [
       '$0',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'far-wc-056',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Impairment Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Spruce Corp. has a patent with a carrying amount of $1,000,000. Undiscounted expected cash flows are $900,000. Fair value is $700,000. What impairment loss should be recognized?',
     options: [
       '$0',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'far-wc-057',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Birch Inc. acquires all of Aspen Corp. for $5,000,000 cash. Aspen\'s identifiable net assets have fair values totaling $4,200,000. Acquisition-related costs are $150,000. What amount of goodwill should Birch recognize?',
     options: [
       '$650,000',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'far-wc-058',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-governmental',
     topic: 'Governmental Accounting',
     subtopic: 'Capital Assets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In governmental accounting, how are infrastructure assets such as roads and bridges reported in government-wide financial statements?',
     options: [
       'Not capitalized; expensed when constructed',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'aud-wc-055',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Substantive Procedures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor performs a search for unrecorded liabilities. Which procedure is MOST effective for this purpose?',
     options: [
       'Confirming accounts payable balances with vendors',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'aud-wc-056',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-materiality',
     topic: 'Materiality',
     subtopic: 'Performance Materiality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Performance materiality is set by the auditor to:',
     options: [
       'Determine the amounts for adjusting journal entries',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'aud-wc-057',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-review',
     topic: 'Review Engagements',
     subtopic: 'Review Reports',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The conclusion in a review report for a nonissuer provides:',
     options: [
       'Reasonable assurance that financial statements are free from material misstatement',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'aud-wc-058',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Fraud Risk Factors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following represents an incentive/pressure that increases fraud risk related to fraudulent financial reporting?',
     options: [
       'High employee turnover in the accounting department',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'reg-wc-055',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Parker had AGI of $100,000 and paid the following: state income taxes $8,000, real estate taxes $7,000, mortgage interest on main home $15,000, and charitable contributions $5,000. What are Parker\'s total itemized deductions?',
     options: [
       '$35,000',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'reg-wc-056',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'X Corp. owns 60% of Y Corp. stock and receives $100,000 in dividends from Y Corp. X Corp. has taxable income of $500,000 before the dividends received deduction. What is the DRD?',
     options: [
       '$50,000',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'reg-wc-057',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Negotiable Instruments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is required for an instrument to be negotiable under UCC Article 3?',
     options: [
       'A signature by the payee',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'reg-wc-058',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Taylor sells 100 shares of XYZ stock for a $5,000 loss on December 10. On December 30, Taylor purchases 100 shares of XYZ for $8,000. What is Taylor\'s basis in the newly purchased shares?',
     options: [
       '$8,000',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'bar-wc-057',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Efficiency Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has cost of goods sold of $720,000 and average inventory of $90,000. What is the inventory turnover ratio?',
     options: [
       '6 times',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'bar-wc-058',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'NPV Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A project requires a $100,000 initial investment and generates cash flows of $35,000 per year for 4 years. The discount rate is 10%. PV factors: Year 1-4 sum = 3.170. What is the NPV?',
     options: [
       '$10,950',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'bar-wc-059',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 810, which entity must consolidate a variable interest entity (VIE)?',
     options: [
       'The entity with the largest economic interest',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'bar-wc-060',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Earnings Quality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following would indicate LOWER earnings quality?',
     options: [
       'Consistent relationship between revenue and accounts receivable',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'bar-wc-061',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-budgeting',
     topic: 'Budgeting and Forecasting',
     subtopic: 'Flexible Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A flexible budget adjusts for:',
     options: [
       'Changes in selling prices',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'isc-wc-055',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Physical Security',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A mantrap (or airlock) in physical security refers to:',
     options: [
       'An alarm system that detects unauthorized movement',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'isc-wc-056',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-continuity',
     topic: 'Business Continuity',
     subtopic: 'BCP Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tabletop exercise for business continuity planning involves:',
     options: [
       'Fully simulating a disaster with system failover',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'isc-wc-057',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'SOC Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 1 report is primarily intended to address:',
     options: [
       'Security, availability, processing integrity, confidentiality, and privacy',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'isc-wc-058',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a typical data classification scheme, which classification level requires the HIGHEST level of protection?',
     options: [
       'Public',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'tcp-wc-055',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Rivera has net self-employment income of $150,000. What is the self-employment tax for Social Security and Medicare (before any deduction)?',
     options: [
       '$22,950',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'tcp-wc-056',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Smith contributes cash of $50,000 and property (basis $30,000, FMV $40,000) to a partnership for a 40% interest. What is Smith\'s initial basis in the partnership interest?',
     options: [
       '$90,000',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'tcp-wc-057',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Remainder Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A donor establishes a charitable remainder unitrust (CRUT) with appreciated stock. Which of the following statements is correct?',
     options: [
       'The donor recognizes capital gain immediately on the transfer',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_5: Question[] = [
   {
     id: 'tcp-wc-058',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A 17-year-old dependent has $15,000 of unearned income (dividends and interest) and no earned income. How is this income taxed under the kiddie tax rules?',
     options: [
       'All at the child\'s tax rate',

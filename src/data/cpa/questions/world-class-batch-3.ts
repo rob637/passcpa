@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'far-wc-047',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-bonds',
     topic: 'Bonds Payable',
     subtopic: 'Effective Interest Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'On January 1, Year 1, Elm Corp. issued $1,000,000 of 8% bonds at 103. The bonds mature in 5 years and pay interest semiannually. Using the effective interest method, what is the carrying amount of the bonds at December 31, Year 1, if the market rate at issuance was 7%?',
     options: [
       '$1,030,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'far-wc-048',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-equity',
     topic: 'Stockholders Equity',
     subtopic: 'Stock Dividends',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Oak Corp. has 100,000 shares of $5 par common stock outstanding with a market value of $25 per share. Oak declares a 15% stock dividend. How should Oak record the stock dividend?',
     options: [
       'Debit Retained Earnings $375,000; Credit Common Stock $75,000, Credit APIC $300,000',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'far-wc-049',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Diluted EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pine Co. has net income of $500,000 and 100,000 weighted average common shares outstanding. Pine has 10,000 stock options with an exercise price of $20 when the average market price is $40. What is diluted EPS?',
     options: [
       '$5.00',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'far-wc-050',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-governmental',
     topic: 'Governmental Accounting',
     subtopic: 'Fund Balance Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city receives a state grant with the stipulation that funds must be used for road repairs. How should this grant be classified in the governmental fund balance?',
     options: [
       'Nonspendable',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'aud-wc-047',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-sampling',
     topic: 'Audit Sampling',
     subtopic: 'Sample Size Determination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using statistical sampling for tests of controls, which factor would cause the auditor to INCREASE the sample size?',
     options: [
       'Decrease in the tolerable rate of deviation',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'aud-wc-048',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Emphasis-of-Matter Paragraphs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following situations requires an emphasis-of-matter paragraph in the auditor\'s report?',
     options: [
       'The auditor decides to make reference to consistency',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'aud-wc-049',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Understanding the Entity',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During the planning phase, an auditor obtains an understanding of the client\'s internal control. The primary purpose of this understanding is to:',
     options: [
       'Determine whether to issue a qualified opinion',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'aud-wc-050',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-it',
     topic: 'IT Considerations',
     subtopic: 'General IT Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor discovers that programmers have administrative access to production systems without compensating controls. This weakness most directly affects:',
     options: [
       'Application controls only',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'reg-wc-047',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Martinez sells stock held for 18 months for $50,000. The original cost was $30,000. Martinez is in the 32% ordinary income bracket. What is the tax on this gain?',
     options: [
       '$6,400',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'reg-wc-048',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ABC Corp. has taxable income of $500,000 before charitable contributions and a $60,000 contribution carryforward. In the current year, ABC makes $40,000 in charitable contributions. What is the current year charitable deduction and carryforward?',
     options: [
       '$50,000 deduction; $50,000 carryforward',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'reg-wc-049',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1245 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Equipment with an original cost of $100,000 and accumulated depreciation of $60,000 is sold for $85,000. How much Section 1245 ordinary income must be recognized?',
     options: [
       '$45,000',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'reg-wc-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An agent enters into a contract on behalf of a disclosed principal within the scope of authority. If the third party later sues for breach, who is liable?',
     options: [
       'Only the agent',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'bar-wc-047',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Cash Flow Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company reports net income of $200,000, depreciation of $30,000, an increase in accounts receivable of $15,000, and a decrease in accounts payable of $10,000. What is cash flow from operations?',
     options: [
       '$205,000',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'bar-wc-048',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Comparable Company Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Company A has EBITDA of $50 million. Comparable companies trade at EV/EBITDA multiples of 8x, 9x, and 10x. Company A has $80 million debt and $20 million cash. Using the median multiple, what is the implied equity value?',
     options: [
       '$450 million',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'bar-wc-049',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 280, which of the following is NOT a quantitative threshold requiring separate segment disclosure?',
     options: [
       'Segment revenue is 10% or more of combined revenue',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'bar-wc-050',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-ratios',
     topic: 'Financial Statement Analysis',
     subtopic: 'Profitability Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has gross profit of $400,000, operating expenses of $150,000, and net sales of $1,000,000. What is the operating profit margin?',
     options: [
       '40%',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'bar-wc-051',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-prospective',
     topic: 'Prospective Financial Information',
     subtopic: 'Financial Projections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following statements about financial projections versus financial forecasts is correct?',
     options: [
       'Projections are based on expected conditions while forecasts assume hypothetical scenarios',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'isc-wc-047',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Risk Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In IT risk management, accepting a risk means:',
     options: [
       'Implementing controls to reduce the risk to an acceptable level',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'isc-wc-048',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Encryption',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company needs to digitally sign documents to ensure authenticity and non-repudiation. Which encryption approach should be used?',
     options: [
       'Encrypt the document with the recipient\'s public key',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'isc-wc-049',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-continuity',
     topic: 'Business Continuity',
     subtopic: 'Disaster Recovery Sites',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A hot site disaster recovery facility provides:',
     options: [
       'Empty space with power and connectivity for later equipment installation',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'isc-wc-050',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Governance',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The individual responsible for ensuring data quality, establishing data standards, and resolving data issues within a specific domain is typically called a:',
     options: [
       'Database Administrator',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'tcp-wc-047',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Taylor expects to owe $20,000 in tax for the current year. Last year\'s tax liability was $15,000 (AGI was under $150,000). To avoid an estimated tax underpayment penalty, Taylor must pay at least:',
     options: [
       '$18,000 (90% of current year)',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'tcp-wc-048',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'S Corporation Eligibility',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following would disqualify a corporation from S corporation status?',
     options: [
       'Having 90 shareholders, all of whom are individuals',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'tcp-wc-049',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Retirement Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An individual age 55 with earned income of $200,000 wants to maximize retirement contributions. What is the maximum combined 401(k) contribution (employee + catch-up) for 2024?',
     options: [
       '$23,000',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_3: Question[] = [
   {
     id: 'tcp-wc-050',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Individual Tax Compliance',
     subtopic: 'Education Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer pays $6,000 in qualified tuition for a dependent child\'s first year of college. What is the maximum American Opportunity Tax Credit available?',
     options: [
       '$1,500',

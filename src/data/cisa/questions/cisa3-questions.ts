@@ -14,10 +14,12 @@ import { CISA3_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
 
 const CISA3_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA3-001',
+    id: 'cisa3-001',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A feasibility study for a new application system should primarily focus on:',
     options: [
       'Determining the programming language to be used',
@@ -31,10 +33,12 @@ const CISA3_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Feasibility Study'
   },
   {
-    id: 'CISA3-002',
+    id: 'cisa3-002',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In which phase of the SDLC should security controls be initially defined?',
     options: [
       'Testing',

@@ -10,11 +10,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To qualify for Head of Household status, all of the following are required EXCEPT:',
     options: [
       'Being unmarried or considered unmarried at year end',
@@ -30,11 +32,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is excluded from gross income?',
     options: [
       'Gambling winnings',
@@ -50,11 +54,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The standard deduction for 2024 for a single taxpayer is:',
     options: [
       '$12,950',
@@ -70,11 +76,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Credits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Child Tax Credit for 2024 is:',
     options: [
       '$1,000 per child, fully refundable',
@@ -90,11 +98,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       'Long-term capital gains are taxed at preferential rates. The holding period for long-term treatment is:',
     options: ['6 months', '12 months', 'More than 12 months', '18 months'],
@@ -106,11 +116,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-ind-055',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'AMT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which is an adjustment for individual AMT purposes?',
     options: [
       'Charitable contributions',
@@ -130,11 +142,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Property received as a gift takes what basis?',
     options: [
       "Donor's adjusted basis (carryover basis) for gain purposes",
@@ -150,11 +164,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Property inherited from a decedent receives:',
     options: [
       'Carryover basis from the decedent',
@@ -170,11 +186,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §1031, like-kind exchange treatment applies to:',
     options: [
       'Any business property exchange',
@@ -190,11 +208,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a like-kind exchange, boot received:',
     options: [
       'Is never taxable',
@@ -210,11 +230,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Net §1231 gains are treated as:',
     options: [
       'Ordinary income',
@@ -230,11 +252,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-prop-055',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: '§1245 depreciation recapture applies to:',
     options: [
       'All depreciable property',
@@ -254,11 +278,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For §351 nonrecognition treatment, transferors must receive:',
     options: [
       'Any stock',
@@ -274,11 +300,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Corporate distributions are taxable dividends to the extent of:',
     options: [
       'Current and accumulated E&P',
@@ -294,11 +322,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question:
       "A corporation owning 25% of another corporation's stock may deduct what percentage of dividends received?",
     options: ['50%',
@@ -313,11 +343,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Stock Redemptions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For exchange treatment under §302, a stock redemption must:',
     options: [
       'Be for all shareholders equally',
@@ -333,11 +365,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-corp-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Liquidations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a complete liquidation, the liquidating corporation:',
     options: [
       'Never recognizes gain or loss',
@@ -357,11 +391,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A partner contributing property to a partnership in exchange for an interest:',
     options: [
       'Always recognizes gain',
@@ -377,11 +413,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "A partner's outside basis in their partnership interest is increased by:",
     options: [
       'Partnership losses allocated',
@@ -397,11 +435,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A current (non-liquidating) distribution of cash:',
     options: [
       'Is always taxable',
@@ -417,11 +457,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Guaranteed payments to partners are:',
     options: [
       'Treated as distributions',
@@ -437,11 +479,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-part-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a special allocation to be respected for tax purposes, it must:',
     options: [
       'Be approved by IRS',
@@ -461,11 +505,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Eligibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation may have a maximum of:',
     options: ['75 shareholders', '100 shareholders', '500 shareholders', 'Unlimited shareholders'],
     correctAnswer: 1,
@@ -476,11 +522,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: "An S corporation shareholder's basis is increased by:",
     options: [
       'Corporate-level debt',
@@ -496,11 +544,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'S corporation distributions to shareholders are:',
     options: [
       'Always taxable as dividends',
@@ -516,11 +566,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-scorp-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-scorp',
     topic: 'S Corporation',
     subtopic: 'Built-in Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains tax applies when:',
     options: [
       'Any S corp sells assets',
@@ -540,11 +592,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-050',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Contract Formation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A valid contract requires all of the following EXCEPT:',
     options: ['Offer and acceptance',
       'A written document',
@@ -558,11 +612,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-051',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Statute of Frauds, which contract must be in writing?',
     options: [
       'A contract for sale of goods for $600',
@@ -578,11 +634,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-052',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A principal is liable for the torts of an agent when:',
     options: [
       'The tort is intentional',
@@ -598,11 +656,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-053',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency Authority',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Apparent authority arises from:',
     options: [
       'Express grant by principal',
@@ -618,11 +678,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-054',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To perfect a security interest in goods, a creditor must:',
     options: [
       'Have a written security agreement only',
@@ -638,11 +700,13 @@ export const REG_QUESTIONS_EXTRA: Question[] = [
   {
     id: 'reg-law-055',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-debtor',
     topic: 'Business Law',
     subtopic: 'Bankruptcy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In Chapter 7 bankruptcy, which debt is NOT dischargeable?',
     options: [
       'Credit card debt',

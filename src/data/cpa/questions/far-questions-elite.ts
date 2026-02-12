@@ -8,6 +8,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-001',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Costs',
@@ -28,6 +29,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-002',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Significant Financing',
@@ -48,6 +50,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-003',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Variable Lease Payments',
@@ -68,6 +71,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-004',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-financial-instruments',
     topic: 'Financial Instruments',
     subtopic: 'Equity Method Impairment',
@@ -88,6 +92,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-005',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Variable Interest Entities',
@@ -108,6 +113,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-006',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-pensions',
     topic: 'Pension Accounting',
     subtopic: 'Corridor Approach',
@@ -128,6 +134,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-007',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual Basis',
@@ -148,6 +155,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-008',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Deferred Inflows/Outflows',
@@ -168,6 +176,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-009',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nonprofit',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Conditional Contributions',
@@ -188,6 +197,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-010',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-financial-instruments',
     topic: 'Financial Instruments',
     subtopic: 'CECL Model',
@@ -208,6 +218,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-011',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-stock-comp',
     topic: 'Stock Compensation',
     subtopic: 'Performance Conditions',
@@ -228,6 +239,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-012',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-debt',
     topic: 'Debt Accounting',
     subtopic: 'Debt Modification vs. Extinguishment',
@@ -248,6 +260,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-013',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-forex',
     topic: 'Foreign Currency',
     subtopic: 'Functional Currency Determination',
@@ -268,6 +281,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-014',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
@@ -288,6 +302,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-015',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Contingently Issuable Shares',
@@ -308,6 +323,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-016',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-business-combo',
     topic: 'Business Combinations',
     subtopic: 'Measurement Period',
@@ -328,6 +344,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-017',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-impairment',
     topic: 'Asset Impairment',
     subtopic: 'Indefinite-Lived Intangibles',
@@ -348,6 +365,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-018',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Net Position Categories',
@@ -368,6 +386,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-019',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nonprofit',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Functional Expenses',
@@ -388,6 +407,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-020',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-cash-flow',
     topic: 'Statement of Cash Flows',
     subtopic: 'Restricted Cash',
@@ -408,6 +428,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-021',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Type I vs Type II',
@@ -428,6 +449,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-022',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-income-tax',
     topic: 'Income Taxes',
     subtopic: 'Uncertain Tax Positions',
@@ -448,6 +470,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-023',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'LIFO Reserve',
@@ -468,6 +491,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-024',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Sale-Leaseback',
@@ -488,6 +512,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-025',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-derivatives',
     topic: 'Derivatives',
     subtopic: 'Net Investment Hedge',
@@ -508,6 +533,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-026',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Intercompany Profit Elimination',
@@ -528,6 +554,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-027',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Level 3 Inputs',
@@ -548,6 +575,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-028',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Major Fund Determination',
@@ -568,6 +596,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-029',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nonprofit',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Board-Designated Net Assets',
@@ -588,6 +617,7 @@ export const FAR_QUESTIONS_ELITE: Question[] = [
   {
     id: 'far-elite-030',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-debt',
     topic: 'Debt Accounting',
     subtopic: 'Convertible Debt',

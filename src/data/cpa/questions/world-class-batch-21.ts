@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'far-wc-119',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Finance vs Operating',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 842, a lease is classified as a finance lease for the lessee if:',
     options: [
       'The lease term is less than 12 months',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'far-wc-120',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-income-statement',
     topic: 'Income Statement',
     subtopic: 'Discontinued Operations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Discontinued operations reporting requires the disposed component to represent:',
     options: [
       'Any asset group',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'far-wc-121',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-business-combinations',
     topic: 'Business Combinations',
     subtopic: 'Acquisition Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the acquisition method, identifiable assets acquired are measured at:',
     options: [
       'Historical cost to the acquiree',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'far-wc-122',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Net Position',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In government-wide statements, net position is classified into:',
     options: [
       'Restricted and unrestricted only',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'aud-wc-119',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-engagement',
     topic: 'Engagement Acceptance',
     subtopic: 'Preconditions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before accepting an audit engagement, the auditor must determine that:',
     options: [
       'The audit fee is profitable',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'aud-wc-120',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Written Representations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The management representation letter is dated as of:',
     options: [
       'The balance sheet date',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'aud-wc-121',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Comparative Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a predecessor auditor\'s report is not reissued on prior period statements:',
     options: [
       'The successor cannot refer to the predecessor',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'aud-wc-122',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Test of Controls',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Tests of controls are required when the auditor:',
     options: [
       'Plans to rely on operating effectiveness of controls to reduce substantive testing',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'reg-wc-119',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The kiddie tax applies to children under age 19 (or 24 if full-time students) whose:',
     options: [
       'Total income exceeds $1,250',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'reg-wc-120',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Corporate Liquidations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a complete liquidation of a subsidiary (Section 332), the parent corporation:',
     options: [
       'Recognizes gain or loss on the distribution',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'reg-wc-121',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Product Liability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Strict product liability applies to:',
     options: [
       'Only intentional misconduct by manufacturers',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'reg-wc-122',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A loss on sale of property to a related party is:',
     options: [
       'Fully deductible',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'bar-wc-137',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Cost of Equity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The CAPM formula for cost of equity is:',
     options: [
       'Risk-free rate + Market risk premium',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'bar-wc-138',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Segment Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Operating segments are determined based on:',
     options: [
       'Legal entity structure',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'bar-wc-139',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Flexible Budgets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A flexible budget adjusts:',
     options: [
       'All costs for inflation',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'bar-wc-140',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Inventory Turnover',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Inventory turnover is calculated as:',
     options: [
       'Net sales / Average inventory',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'bar-wc-141',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Discounted Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow to firm (FCFF) equals:',
     options: [
       'Net income only',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'isc-wc-119',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'PKI',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In public key infrastructure, a certificate authority (CA) is responsible for:',
     options: [
       'Creating private keys for all users',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'isc-wc-120',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Data Lake',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data lake differs from a data warehouse primarily because it:',
     options: [
       'Only stores structured data',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'isc-wc-121',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'BCP vs DRP',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Business continuity planning differs from disaster recovery in that BCP:',
     options: [
       'Focuses only on IT systems',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'isc-wc-122',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Embedded Audit Modules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Embedded audit modules are:',
     options: [
       'External audit software installed temporarily',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'tcp-wc-119',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Alimony',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For divorce agreements executed after 2018, alimony payments are:',
     options: [
       'Deductible by the payer and taxable to the recipient',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'tcp-wc-120',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Consolidated Returns',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To file a consolidated tax return, the parent corporation must own:',
     options: [
       'More than 50% of subsidiary stock',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'tcp-wc-121',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Installment Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The installment method cannot be used for:',
     options: [
       'Real property sales',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_21: Question[] = [
   {
     id: 'tcp-wc-122',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Innocent spouse relief under IRC Section 6015 requires demonstrating:',
     options: [
       'Only that the taxpayer filed jointly',

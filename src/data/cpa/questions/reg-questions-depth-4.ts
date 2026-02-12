@@ -11,11 +11,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'PTIN Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A paid tax return preparer must:',
     options: [
       'Only have a high school diploma',
@@ -30,11 +32,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Due Diligence — §6695(g)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Paid preparers must exercise due diligence when claiming which credits, with a $560 per-failure penalty (per occurrence) for non-compliance?',
     options: [
       'Only the child tax credit',
@@ -49,11 +53,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'IRS Notice of Deficiency (90-Day Letter)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'After receiving a Statutory Notice of Deficiency (90-day letter), a taxpayer has:',
     options: [
       '30 days to respond or the tax is automatically assessed',
@@ -70,11 +76,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-securities',
     topic: 'Business Law',
     subtopic: 'Securities Act of 1933',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Securities Act of 1933 primarily requires:',
     options: [
       'Ongoing reporting by public companies',
@@ -89,11 +97,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-securities',
     topic: 'Business Law',
     subtopic: 'Securities Act — Exemptions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Regulation D, Rule 506(b), a private placement:',
     options: [
       'Can be sold to unlimited investors with general solicitation',
@@ -110,11 +120,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-employment',
     topic: 'Business Law',
     subtopic: 'Employee vs Independent Contractor',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The most important factor in distinguishing an employee from an independent contractor for tax purposes is:',
     options: [
       'Whether the worker has a business card',
@@ -131,11 +143,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Consolidated Return Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An affiliated group of corporations can elect to file a consolidated federal income tax return if the common parent owns:',
     options: [
       'At least 50% of voting stock of each member',
@@ -150,11 +164,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A personal holding company (PHC) is a C corporation that meets both the stock ownership test AND the income test. The income test requires that more than ____% of adjusted ordinary gross income is PHC income:',
     options: [
       '30%',
@@ -171,11 +187,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales — §267',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §267, losses on sales between related parties are:',
     options: [
       'Fully deductible',
@@ -190,11 +208,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'At-Risk Rules — §465',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the at-risk rules (IRC §465), a taxpayer\'s deductible loss from a business activity is limited to:',
     options: [
       'Total revenue from the activity',
@@ -211,11 +231,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-credits',
     topic: 'Tax Credits',
     subtopic: 'American Opportunity Tax Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The American Opportunity Tax Credit (AOTC) provides a maximum credit per eligible student of:',
     options: [
       '$1,000',
@@ -230,11 +252,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Health Savings Account',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An HSA (Health Savings Account) provides a triple tax benefit because:',
     options: [
       'Contributions are taxable, growth is taxable, and withdrawals are tax-free',
@@ -251,11 +275,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Home Office Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the simplified method for the home office deduction, the deduction is:',
     options: [
       'Unlimited based on actual expenses',
@@ -272,11 +298,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Filing Deadlines',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For calendar-year individual taxpayers, the original due date for Form 1040 is:',
     options: [
       'March 15',
@@ -293,11 +321,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Check-the-Box Regulations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the "check-the-box" entity classification regulations (Reg. §301.7701), a domestic LLC with two or more members is classified by default as:',
     options: [
       'A C corporation',
@@ -314,11 +344,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-insurance',
     topic: 'Business Law',
     subtopic: 'Insurance — Insurable Interest',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For a life insurance policy to be valid, the policyholder must have an insurable interest in the insured:',
     options: [
       'At the time of any claim',
@@ -335,11 +367,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis of Inherited Property',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The basis of property received from a decedent is generally:',
     options: [
       'The decedent\'s adjusted basis (carryover basis)',
@@ -354,11 +388,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis of Gifted Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The basis of property received as a gift when the FMV at the date of gift is LESS than the donor\'s adjusted basis (dual basis rule) is:',
     options: [
       'Always the donor\'s basis',
@@ -375,11 +411,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Mandatory E-File Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A tax return preparer who prepares and files more than a specified number of individual returns is required to:',
     options: [
       'File all returns on paper',
@@ -396,11 +434,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-liability',
     topic: 'Business Law',
     subtopic: 'CPA Liability — Common Law',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under common law, a CPA can be held liable to a third party (not the client) for negligence under the Restatement approach if:',
     options: [
       'Any person who reads the financial statements can sue',
@@ -417,11 +457,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Student Loan Interest Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The student loan interest deduction allows a taxpayer to deduct up to:',
     options: [
       '$1,000 of interest paid',
@@ -436,11 +478,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alimony Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the TCJA, for divorce agreements executed after December 31, 2018, alimony payments are:',
     options: [
       'Deductible by the payor and taxable to the recipient',
@@ -457,11 +501,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-trust',
     topic: 'Entity Taxation',
     subtopic: 'Grantor Trust Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A trust is treated as a grantor trust (§671-679), meaning all income is taxed to the grantor, when:',
     options: [
       'The trust has more than 3 beneficiaries',
@@ -478,11 +524,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Gains Tax Rates',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2024, the maximum tax rate on net long-term capital gains for most capital assets held more than one year is:',
     options: [
       '10%',
@@ -497,11 +545,13 @@ export const REG_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'reg-d4-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Whistleblower Awards',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §7623, a whistleblower who provides information to the IRS about a taxpayer who owes more than $2 million may receive:',
     options: [
       'A flat $1,000 reward',

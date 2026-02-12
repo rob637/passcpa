@@ -8,6 +8,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-adv-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Grouping',
@@ -28,6 +29,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-adv-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
@@ -48,6 +50,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-adv-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
@@ -68,6 +71,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Earnings Stripping',
@@ -88,6 +92,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-005',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Affiliated Groups',
@@ -108,6 +113,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-006',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation',
     subtopic: 'Qualified Subchapter S Subsidiary',
@@ -128,6 +134,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-007',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation',
     subtopic: 'Built-In Gains Tax',
@@ -148,6 +155,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-008',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Substantial Economic Effect',
@@ -168,6 +176,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-009',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
@@ -188,6 +197,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-010',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales Limitations',
@@ -208,6 +218,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-011',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Opportunity Zones',
@@ -228,6 +239,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-012',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Subpart F Income',
@@ -248,6 +260,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-013',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'GILTI',
@@ -268,6 +281,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-014',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
@@ -288,6 +302,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-015',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate & Gift Tax',
     subtopic: 'Generation-Skipping Tax',
@@ -308,6 +323,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-016',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate & Gift Tax',
     subtopic: 'Special Use Valuation',
@@ -328,6 +344,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-017',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Corporate Alternative Minimum Tax',
@@ -348,6 +365,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-018',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-qbi',
     topic: 'Qualified Business Income',
     subtopic: 'SSTB Limitations',
@@ -368,6 +386,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-019',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'State Tax Workarounds',
@@ -388,6 +407,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-020',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth Conversions',
@@ -408,6 +428,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-021',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'R&D Credit',
@@ -428,6 +449,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-022',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Energy Credits',
@@ -448,6 +470,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-023',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'BEAT',
@@ -468,6 +491,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-024',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
@@ -488,6 +512,7 @@ export const TCP_QUESTIONS_COMPREHENSIVE: Question[] = [
   {
     id: 'tcp-comp-025',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations',

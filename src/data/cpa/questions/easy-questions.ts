@@ -8,12 +8,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     blueprintGroup: 'FAR-I-A',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Financial Statement Elements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an asset?',
     options: [
       'Accounts payable',
@@ -29,12 +31,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     blueprintGroup: 'FAR-I-A',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The balance sheet reports:',
     options: [
       'Revenue and expenses for a period',
@@ -50,12 +54,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     blueprintGroup: 'FAR-II-A',
     topicId: 'far-cash',
     topic: 'Cash and Receivables',
     subtopic: 'Cash',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is NOT typically included in cash on the balance sheet?',
     options: [
       'Currency and coins',
@@ -71,12 +77,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     blueprintGroup: 'FAR-III-A',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Five-Step Model',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 606, revenue is recognized when:',
     options: [
       'Cash is received',
@@ -92,12 +100,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     blueprintGroup: 'FAR-II-B',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Cost Flow',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which inventory method results in the highest cost of goods sold during periods of rising prices?',
     options: [
       'FIFO',
@@ -113,12 +123,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     blueprintGroup: 'FAR-II-C',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Depreciation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Straight-line depreciation expense is calculated as:',
     options: [
       '(Cost - Salvage Value) × Useful Life',
@@ -134,12 +146,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     blueprintGroup: 'FAR-IV-A',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Current vs. Long-term',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A liability is classified as current if it is expected to be settled within:',
     options: [
       '30 days',
@@ -155,12 +169,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     blueprintGroup: 'FAR-V-A',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Treasury Stock',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Treasury stock is:',
     options: [
       'Stock that has never been issued',
@@ -176,12 +192,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     blueprintGroup: 'FAR-VI-A',
     topicId: 'far-scf',
     topic: 'Statement of Cash Flows',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Interest paid is typically classified in which section of the statement of cash flows under U.S. GAAP?',
     options: [
       'Operating activities',
@@ -197,12 +215,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'far-easy-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     blueprintGroup: 'FAR-VI-A',
     topicId: 'far-scf',
     topic: 'Statement of Cash Flows',
     subtopic: 'Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an investing activity?',
     options: [
       'Issuing common stock',
@@ -220,12 +240,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     blueprintGroup: 'AUD-I-A',
     topicId: 'aud-ethics',
     topic: 'Ethics and Independence',
     subtopic: 'Independence',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An auditor who owns stock in an audit client violates:',
     options: [
       'Competence standards',
@@ -241,12 +263,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     blueprintGroup: 'AUD-II-A',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Materiality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Materiality is based on:',
     options: [
       'A fixed percentage set by GAAS',
@@ -262,12 +286,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     blueprintGroup: 'AUD-III-A',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Audit Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit risk is the risk that the auditor:',
     options: [
       'Charges too high a fee',
@@ -283,12 +309,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     blueprintGroup: 'AUD-IV-A',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Confirmation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A bank confirmation is used primarily to verify:',
     options: [
       'Inventory quantities',
@@ -304,12 +332,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     blueprintGroup: 'AUD-IV-B',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Evidence Quality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which source of audit evidence is generally most reliable?',
     options: [
       'Management representations',
@@ -325,12 +355,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     blueprintGroup: 'AUD-V-A',
     topicId: 'aud-sampling',
     topic: 'Sampling',
     subtopic: 'Sampling Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Sampling risk is the risk that:',
     options: [
       'The sample is too expensive to select',
@@ -346,12 +378,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     blueprintGroup: 'AUD-III-B',
     topicId: 'aud-ic',
     topic: 'Internal Control',
     subtopic: 'Control Environment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The control environment includes:',
     options: [
       'Specific reconciliation procedures',
@@ -367,12 +401,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     blueprintGroup: 'AUD-IV-C',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Types of Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Observation as an audit procedure involves:',
     options: [
       'Reading client documents',
@@ -388,12 +424,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     blueprintGroup: 'AUD-II-B',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Engagement Letters',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An engagement letter is required for:',
     options: [
       'Only new clients',
@@ -409,12 +447,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'aud-easy-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     blueprintGroup: 'AUD-V-B',
     topicId: 'aud-analytics',
     topic: 'Analytical Procedures',
     subtopic: 'Purpose',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Analytical procedures are required during which phase(s) of an audit?',
     options: [
       'Planning only',
@@ -432,12 +472,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     blueprintGroup: 'REG-I-A',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Circular 230',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Circular 230 governs:',
     options: [
       'SEC registration requirements',
@@ -453,12 +495,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-A',
     topicId: 'reg-blaw',
     topic: 'Business Law',
     subtopic: 'Contracts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A valid contract requires all of the following EXCEPT:',
     options: [
       'Offer',
@@ -474,12 +518,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-A',
     topicId: 'reg-indiv',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which filing status typically results in the lowest tax rates?',
     options: [
       'Single',
@@ -495,12 +541,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-B',
     topicId: 'reg-indiv',
     topic: 'Individual Taxation',
     subtopic: 'Standard Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer uses the standard deduction when:',
     options: [
       'They have no income',
@@ -516,12 +564,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-C',
     topicId: 'reg-indiv',
     topic: 'Individual Taxation',
     subtopic: 'AGI',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Adjusted Gross Income (AGI) is calculated as:',
     options: [
       'Total income minus itemized deductions',
@@ -537,12 +587,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     blueprintGroup: 'REG-IV-A',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corporation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'C corporations are subject to:',
     options: [
       'Pass-through taxation only',
@@ -558,12 +610,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     blueprintGroup: 'REG-IV-B',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corporation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An S corporation:',
     options: [
       'Pays corporate income tax',
@@ -579,12 +633,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     blueprintGroup: 'REG-IV-C',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnerships',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A partnership files which federal tax form?',
     options: [
       'Form 1040',
@@ -600,12 +656,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     blueprintGroup: 'REG-II-B',
     topicId: 'reg-blaw',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In an agency relationship, the principal is:',
     options: [
       'The person acting on behalf of another',
@@ -621,12 +679,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'reg-easy-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     blueprintGroup: 'REG-III-D',
     topicId: 'reg-indiv',
     topic: 'Individual Taxation',
     subtopic: 'Capital Gains',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Long-term capital gains are gains on assets held for:',
     options: [
       'Less than 6 months',
@@ -644,12 +704,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     blueprintGroup: 'BAR-I-A',
     topicId: 'bar-fsa',
     topic: 'Financial Statement Analysis',
     subtopic: 'Ratios',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The current ratio is calculated as:',
     options: [
       'Total assets ÷ Total liabilities',
@@ -665,12 +727,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     blueprintGroup: 'BAR-I-A',
     topicId: 'bar-fsa',
     topic: 'Financial Statement Analysis',
     subtopic: 'Profitability',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Return on Equity (ROE) measures:',
     options: [
       'Profit relative to sales',
@@ -686,12 +750,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     blueprintGroup: 'BAR-II-A',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Cost Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Direct labor is classified as:',
     options: [
       'Period cost',
@@ -707,12 +773,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     blueprintGroup: 'BAR-II-B',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Cost Behavior',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A fixed cost:',
     options: [
       'Changes in total as activity changes',
@@ -728,12 +796,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     blueprintGroup: 'BAR-II-C',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Contribution Margin',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Contribution margin equals:',
     options: [
       'Sales minus all costs',
@@ -749,12 +819,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     blueprintGroup: 'BAR-III-A',
     topicId: 'bar-tech',
     topic: 'Technology',
     subtopic: 'Data Analytics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a benefit of data analytics in accounting?',
     options: [
       'Eliminates the need for professional judgment',
@@ -770,12 +842,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     blueprintGroup: 'BAR-III-B',
     topicId: 'bar-tech',
     topic: 'Technology',
     subtopic: 'IT Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A password is an example of which type of IT control?',
     options: [
       'Output control',
@@ -791,12 +865,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     blueprintGroup: 'BAR-I-B',
     topicId: 'bar-fsa',
     topic: 'Financial Statement Analysis',
     subtopic: 'Trend Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Horizontal analysis compares financial data:',
     options: [
       'Between different companies in the same industry',
@@ -812,12 +888,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     blueprintGroup: 'BAR-II-D',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Overhead Application',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Applied overhead is calculated using:',
     options: [
       'Actual overhead costs incurred',
@@ -833,12 +911,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'bar-easy-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     blueprintGroup: 'BAR-I-C',
     topicId: 'bar-fsa',
     topic: 'Financial Statement Analysis',
     subtopic: 'Leverage',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The debt-to-equity ratio measures:',
     options: [
       'Profitability',
@@ -856,12 +936,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     blueprintGroup: 'ISC-I-A',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Fundamentals',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT governance ensures that:',
     options: [
       'All employees know how to program',
@@ -877,12 +959,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     blueprintGroup: 'ISC-II-A',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'CIA Triad',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The CIA triad in information security stands for:',
     options: [
       'Central Intelligence Agency standards',
@@ -898,12 +982,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     blueprintGroup: 'ISC-II-B',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Authentication',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Multi-factor authentication combines:',
     options: [
       'Two different passwords',
@@ -919,12 +1005,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     blueprintGroup: 'ISC-III-A',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Control Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A backup is an example of which type of control?',
     options: [
       'Preventive control',
@@ -940,12 +1028,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     blueprintGroup: 'ISC-II-C',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Encryption',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Encryption is used to:',
     options: [
       'Speed up data processing',
@@ -961,12 +1051,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     blueprintGroup: 'ISC-IV-A',
     topicId: 'isc-sdlc',
     topic: 'Systems Development',
     subtopic: 'SDLC Phases',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Systems Development Life Cycle (SDLC) typically begins with:',
     options: [
       'Coding',
@@ -982,12 +1074,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     blueprintGroup: 'ISC-III-B',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Segregation of Duties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Segregation of duties in IT means:',
     options: [
       'All employees share the same password',
@@ -1003,12 +1097,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     blueprintGroup: 'ISC-II-D',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Threats',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Phishing is a type of:',
     options: [
       'Hardware failure',
@@ -1024,12 +1120,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     blueprintGroup: 'ISC-V-A',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Database Concepts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A relational database organizes data in:',
     options: [
       'Hierarchical trees',
@@ -1045,12 +1143,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'isc-easy-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     blueprintGroup: 'ISC-III-C',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Business Continuity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A disaster recovery plan ensures:',
     options: [
       'Disasters never occur',
@@ -1068,12 +1168,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     blueprintGroup: 'TCP-I-A',
     topicId: 'tcp-intro',
     topic: 'Tax Compliance',
     subtopic: 'Tax Planning Overview',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The difference between tax avoidance and tax evasion is:',
     options: [
       'They are the same thing',
@@ -1089,12 +1191,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     blueprintGroup: 'TCP-II-A',
     topicId: 'tcp-indiv',
     topic: 'Individual Tax Planning',
     subtopic: 'Tax Credits vs Deductions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A $1,000 tax credit reduces:',
     options: [
       'Gross income by $1,000',
@@ -1110,12 +1214,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     blueprintGroup: 'TCP-II-B',
     topicId: 'tcp-indiv',
     topic: 'Individual Tax Planning',
     subtopic: 'Retirement Planning',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Traditional IRA contributions are:',
     options: [
       'Never tax deductible',
@@ -1131,12 +1237,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     blueprintGroup: 'TCP-II-C',
     topicId: 'tcp-indiv',
     topic: 'Individual Tax Planning',
     subtopic: 'Roth IRA',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Qualified distributions from a Roth IRA are:',
     options: [
       'Taxed as ordinary income',
@@ -1152,12 +1260,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     blueprintGroup: 'TCP-III-A',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Planning',
     subtopic: 'Entity Selection',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which entity type avoids double taxation?',
     options: [
       'C corporation',
@@ -1173,12 +1283,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     blueprintGroup: 'TCP-III-B',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Planning',
     subtopic: 'S Corp Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An S corporation is limited to:',
     options: [
       '5 shareholders',
@@ -1194,12 +1306,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     blueprintGroup: 'TCP-IV-A',
     topicId: 'tcp-prop',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The tax basis of purchased property is generally:',
     options: [
       'Fair market value at purchase',
@@ -1215,12 +1329,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     blueprintGroup: 'TCP-IV-B',
     topicId: 'tcp-prop',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Section 1031 like-kind exchanges now apply only to:',
     options: [
       'All property types',
@@ -1236,12 +1352,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     blueprintGroup: 'TCP-V-A',
     topicId: 'tcp-gift',
     topic: 'Gift and Estate',
     subtopic: 'Annual Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The annual gift tax exclusion allows gifts up to:',
     options: [
       '$1,000 per recipient',
@@ -1257,12 +1375,14 @@ export const EASY_QUESTIONS: Question[] = [
   {
     id: 'tcp-easy-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     blueprintGroup: 'TCP-II-D',
     topicId: 'tcp-indiv',
     topic: 'Individual Tax Planning',
     subtopic: 'Estimated Taxes',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Estimated tax payments are due:',
     options: [
       'Once a year on April 15',

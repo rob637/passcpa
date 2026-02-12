@@ -9,11 +9,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Reporting',
     subtopic: 'Balance Sheet Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'On a classified balance sheet, which of the following is classified as a current asset?',
     options: [
       'Land held for future expansion',
@@ -28,11 +30,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Reporting',
     subtopic: 'Statement of Cash Flows — Operating Activities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the indirect method for the Statement of Cash Flows, depreciation expense is:',
     options: [
       'Subtracted from net income',
@@ -49,11 +53,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-inventory',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Inventory Valuation — Lower of Cost or NRV',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 330, inventory is reported at:',
     options: [
       'Always at historical cost',
@@ -70,11 +76,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-ppe',
     topic: 'Select Transactions',
     subtopic: 'Capitalization of Costs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The cost of a purchased building should include:',
     options: [
       'Only the purchase price',
@@ -91,11 +99,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-financial-statements',
     topic: 'Financial Reporting',
     subtopic: 'Other Comprehensive Income',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is reported in other comprehensive income (OCI) rather than net income?',
     options: [
       'Depreciation expense',
@@ -112,11 +122,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-receivables',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Allowance for Credit Losses — CECL',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the current expected credit loss (CECL) model (ASC 326), the allowance for credit losses is based on:',
     options: [
       'Only losses that have already occurred (incurred loss model)',
@@ -133,11 +145,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-intangibles',
     topic: 'Select Transactions',
     subtopic: 'Goodwill Impairment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the current GAAP guidance (ASU 2017-04), the goodwill impairment test:',
     options: [
       'Uses a two-step process comparing implied fair value',
@@ -154,11 +168,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-accounting-changes',
     topic: 'Financial Reporting',
     subtopic: 'ASC 250 — Change in Accounting Principle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A voluntary change in accounting principle (e.g., switching from FIFO to weighted-average for inventory) is accounted for by:',
     options: [
       'Prospective application only',
@@ -175,11 +191,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Equity Method Investment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When an investor holds 20-50% ownership and has significant influence, the investment is accounted for using:',
     options: [
       'Fair value through net income',
@@ -196,11 +214,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-aro',
     topic: 'Select Transactions',
     subtopic: 'ASC 410 — Asset Retirement Obligations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An asset retirement obligation (ARO) under ASC 410 is initially measured at:',
     options: [
       'The undiscounted total of estimated costs',
@@ -217,11 +237,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-fair-value',
     topic: 'Financial Reporting',
     subtopic: 'ASC 820 — Fair Value Hierarchy',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The fair value hierarchy under ASC 820 gives the highest priority to:',
     options: [
       'Management estimates',
@@ -238,11 +260,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-debt',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Debt Issuance Costs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under current GAAP (ASU 2015-03), debt issuance costs are presented on the balance sheet as:',
     options: [
       'An asset (deferred charge)',
@@ -259,11 +283,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-combinations',
     topic: 'Select Transactions',
     subtopic: 'ASC 805 — Acquisition Method',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 805, a business combination is accounted for using the acquisition method. The acquirer measures identifiable assets acquired and liabilities assumed at:',
     options: [
       'Book value of the acquiree',
@@ -280,11 +306,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-interim',
     topic: 'Financial Reporting',
     subtopic: 'ASC 270 — Interim Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 270, interim financial statements should be viewed as:',
     options: [
       'Independent reporting periods',
@@ -301,11 +329,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-equity',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Treasury Stock — Cost Method',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When a company repurchases its own shares and accounts for them using the cost method, treasury stock is:',
     options: [
       'Recorded at par value',
@@ -322,11 +352,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-debt-restructure',
     topic: 'Select Transactions',
     subtopic: 'ASC 310/470 — Loan Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASU 2022-02 (which eliminated the TDR designation), when a creditor modifies a loan to a borrower experiencing financial difficulty:',
     options: [
       'The creditor always recognizes a loss immediately',
@@ -343,11 +375,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-going-concern',
     topic: 'Financial Reporting',
     subtopic: 'ASC 205-40 — Going Concern',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 205-40, management must evaluate whether substantial doubt exists about the entity\'s ability to continue as a going concern within:',
     options: [
       'Six months after the financial statement date',
@@ -364,11 +398,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-intangibles',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Finite-Life Intangible Assets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A patent with a 15-year legal life and an estimated useful life of 10 years should be amortized over:',
     options: [
       '15 years (legal life)',
@@ -385,11 +421,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-derivatives',
     topic: 'Select Transactions',
     subtopic: 'ASC 815 — Hedge Accounting Basics',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a derivative designated as a cash flow hedge under ASC 815, the effective portion of the gain or loss is reported in:',
     options: [
       'Net income immediately',
@@ -406,11 +444,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-subsequent',
     topic: 'Financial Reporting',
     subtopic: 'ASC 855 — Subsequent Events',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A subsequent event that provides additional evidence about conditions that existed at the balance sheet date (a "recognized" event or Type I event) requires:',
     options: [
       'Disclosure only',
@@ -427,11 +467,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-cash',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Cash Equivalents Definition',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under GAAP, a "cash equivalent" is a short-term, highly liquid investment that:',
     options: [
       'Has a maturity of one year or less',
@@ -448,11 +490,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-impairment',
     topic: 'Select Transactions',
     subtopic: 'ASC 360 — Long-Lived Asset Impairment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 360, the two-step test for impairment of a long-lived asset (held for use) is:',
     options: [
       'Compare fair value to book value directly',
@@ -469,11 +513,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-related-party',
     topic: 'Financial Reporting',
     subtopic: 'ASC 850 — Related Party Disclosures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'ASC 850 requires disclosure of material related-party transactions. Related parties include:',
     options: [
       'Only the company\'s bank',
@@ -490,11 +536,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-liabilities',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Compensated Absences',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 710, a liability for compensated absences (e.g., vacation pay) is accrued when all four conditions are met. Which of the following is one of those conditions?',
     options: [
       'The employee has been terminated',
@@ -511,11 +559,13 @@ export const FAR_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'far-d3-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-convertible',
     topic: 'Select Transactions',
     subtopic: 'ASC 470-20 — Convertible Debt (ASU 2020-06)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASU 2020-06, most convertible debt instruments are accounted for as:',
     options: [
       'Bifurcated into a debt component and an equity component (cash conversion model)',

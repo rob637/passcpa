@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA5_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA5-173',
+    id: 'cisa5-173',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST effective control against social engineering attacks is:',
     options: [
       'Strong firewall rules',
@@ -25,10 +27,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Social Engineering'
   },
   {
-    id: 'CISA5-174',
+    id: 'cisa5-174',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Multi-factor authentication requires:',
     options: [
       'Two passwords',
@@ -42,10 +46,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Multi-Factor Authentication'
   },
   {
-    id: 'CISA5-175',
+    id: 'cisa5-175',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing encryption key management, the IS auditor should be MOST concerned if:',
     options: [
       'Keys are stored in a hardware security module',
@@ -59,10 +65,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Key Management'
   },
   {
-    id: 'CISA5-176',
+    id: 'cisa5-176',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The purpose of a security information and event management (SIEM) system is to:',
     options: [
       'Prevent all security incidents',
@@ -76,10 +84,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'SIEM'
   },
   {
-    id: 'CISA5-177',
+    id: 'cisa5-177',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero trust architecture is based on the principle of:',
     options: [
       'Trusting all internal network traffic',
@@ -93,10 +103,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Zero Trust'
   },
   {
-    id: 'CISA5-178',
+    id: 'cisa5-178',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data loss prevention (DLP) controls should:',
     options: [
       'Focus only on external threats',
@@ -110,10 +122,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Loss Prevention'
   },
   {
-    id: 'CISA5-179',
+    id: 'cisa5-179',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY purpose of network segmentation is to:',
     options: [
       'Improve network speed',
@@ -127,10 +141,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Network Segmentation'
   },
   {
-    id: 'CISA5-180',
+    id: 'cisa5-180',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mobile device management (MDM) should include:',
     options: [
       'Only device tracking',
@@ -144,10 +160,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Mobile Device Management'
   },
   {
-    id: 'CISA5-181',
+    id: 'cisa5-181',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing cloud security, the IS auditor should verify that:',
     options: [
       'The cloud provider handles all security',
@@ -161,10 +179,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Shared Responsibility'
   },
   {
-    id: 'CISA5-182',
+    id: 'cisa5-182',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Vulnerability scanning should be performed:',
     options: [
       'Only after a security incident',
@@ -178,10 +198,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Scanning Frequency'
   },
   {
-    id: 'CISA5-183',
+    id: 'cisa5-183',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Penetration testing differs from vulnerability scanning in that penetration testing:',
     options: [
       'Is fully automated',
@@ -195,10 +217,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Penetration Testing'
   },
   {
-    id: 'CISA5-184',
+    id: 'cisa5-184',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a web application firewall (WAF) is to:',
     options: [
       'Replace network firewalls',
@@ -212,10 +236,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Web Application Firewall'
   },
   {
-    id: 'CISA5-185',
+    id: 'cisa5-185',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating privileged access management, the IS auditor should verify:',
     options: [
       'All users have admin access for convenience',
@@ -229,10 +255,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Privileged Access Management'
   },
   {
-    id: 'CISA5-186',
+    id: 'cisa5-186',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data classification should be based on:',
     options: [
       'Storage location',
@@ -246,10 +274,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Classification'
   },
   {
-    id: 'CISA5-187',
+    id: 'cisa5-187',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST significant risk with IoT devices in an enterprise environment is:',
     options: [
       'High power consumption',
@@ -263,10 +293,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'IoT Security'
   },
   {
-    id: 'CISA5-188',
+    id: 'cisa5-188',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'End-to-end encryption ensures:',
     options: [
       'Data is only encrypted at rest',
@@ -280,10 +312,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'End-to-End Encryption'
   },
   {
-    id: 'CISA5-189',
+    id: 'cisa5-189',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that database activity monitoring is not implemented. This is MOST concerning for:',
     options: [
       'Performance optimization',
@@ -297,10 +331,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Database Monitoring'
   },
   {
-    id: 'CISA5-190',
+    id: 'cisa5-190',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security patches should be:',
     options: [
       'Applied immediately without testing',
@@ -314,10 +350,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Patch Management'
   },
   {
-    id: 'CISA5-191',
+    id: 'cisa5-191',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating email security, the IS auditor should verify implementation of:',
     options: [
       'Largest mailbox sizes',
@@ -331,10 +369,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Email Authentication'
   },
   {
-    id: 'CISA5-193',
+    id: 'cisa5-193',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A security operations center (SOC) should have:',
     options: [
       '24/7 staffing only during business hours',
@@ -348,10 +388,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Security Operations Center'
   },
   {
-    id: 'CISA5-194',
+    id: 'cisa5-194',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Identity and access management (IAM) should ensure:',
     options: [
       'All users have the same access',
@@ -365,10 +407,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Identity Management'
   },
   {
-    id: 'CISA5-195',
+    id: 'cisa5-195',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating third-party risk management for security, the IS auditor should verify:',
     options: [
       'Vendors are selected based on lowest cost',
@@ -382,10 +426,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Vendor Security'
   },
   {
-    id: 'CISA5-196',
+    id: 'cisa5-196',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure data destruction should ensure:',
     options: [
       'Data is deleted from primary storage',
@@ -399,10 +445,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Destruction'
   },
   {
-    id: 'CISA5-197',
+    id: 'cisa5-197',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence should be:',
     options: [
       'Collected but not acted upon',
@@ -416,10 +464,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Threat Intelligence'
   },
   {
-    id: 'CISA5-198',
+    id: 'cisa5-198',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Biometric authentication is based on:',
     options: [
       'Something you know',
@@ -433,10 +483,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Biometric Authentication'
   },
   {
-    id: 'CISA5-199',
+    id: 'cisa5-199',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing data privacy controls, the IS auditor should verify:',
     options: [
       'All personal data is public',
@@ -450,10 +502,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Privacy Controls'
   },
   {
-    id: 'CISA5-200',
+    id: 'cisa5-200',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An intrusion prevention system (IPS) differs from an IDS in that IPS:',
     options: [
       'Only logs attacks',
@@ -467,10 +521,12 @@ export const CISA5_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Intrusion Prevention'
   },
   {
-    id: 'CISA5-202',
+    id: 'cisa5-202',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Physical access controls should include:',
     options: [
       'Open access during business hours',

@@ -10,11 +10,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-circular-230',
     topic: 'Circular 230',
     subtopic: 'Due Diligence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Circular 230, a practitioner who signs a tax return as preparer must exercise due diligence. Which standard applies to positions taken on the return?',
     options: [
       'Reasonable basis standard',
@@ -29,11 +31,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-penalties',
     topic: 'Preparer Penalties',
     subtopic: 'Understatement Penalty',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A tax return preparer is subject to a penalty for an understatement of tax liability due to an unreasonable position if the position:',
     options: [
       'Has any support in the tax law',
@@ -48,11 +52,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Statute of Limitations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The general statute of limitations for the IRS to assess additional tax is:',
     options: [
       'One year from filing date',
@@ -67,11 +73,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Taxpayer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The substantial understatement penalty under IRC §6662 is:',
     options: [
       '10% of the underpayment',
@@ -86,11 +94,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-circular-230',
     topic: 'Circular 230',
     subtopic: 'Sanctions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Circular 230, the Office of Professional Responsibility (OPR) may impose which sanction on a practitioner who violates Circular 230?',
     options: [
       'Criminal prosecution',
@@ -108,11 +118,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-contracts',
     topic: 'Contracts',
     subtopic: 'Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the Statute of Frauds, which contract must be in writing to be enforceable?',
     options: [
       'An oral contract for services to be completed in two weeks',
@@ -127,11 +139,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-contracts',
     topic: 'Contracts',
     subtopic: 'Consideration',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following constitutes valid consideration for a contract?',
     options: [
       'Past consideration for services already performed',
@@ -146,11 +160,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-agency',
     topic: 'Agency',
     subtopic: 'Agent Authority',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A principal will be bound by an agent\'s actions when the agent acts with apparent authority. Apparent authority exists when:',
     options: [
       'The agent secretly believes they have authority',
@@ -165,11 +181,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-entities',
     topic: 'Business Entities',
     subtopic: 'LLC',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which characteristic distinguishes a limited liability company (LLC) from a general partnership?',
     options: [
       'LLCs cannot have more than 100 members',
@@ -184,11 +202,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-entities',
     topic: 'Business Entities',
     subtopic: 'Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A director of a corporation will likely be protected by the business judgment rule when:',
     options: [
       'The director acted with a conflict of interest',
@@ -203,11 +223,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-secured',
     topic: 'Secured Transactions',
     subtopic: 'Perfection',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under UCC Article 9, a security interest in inventory is typically perfected by:',
     options: [
       'Possession of the inventory by the secured party',
@@ -222,11 +244,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-debtor',
     topic: 'Debtor-Creditor',
     subtopic: 'Bankruptcy',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Chapter 7 bankruptcy, which debt is generally NOT dischargeable?',
     options: [
       'Credit card debt',
@@ -244,11 +268,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property-basis',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer receives property as a gift with a fair market value of $50,000 and the donor\'s adjusted basis of $30,000. No gift tax was paid. What is the donee\'s basis for computing gain if the property is sold?',
     options: [
       '$50,000',
@@ -263,11 +289,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property-basis',
     topic: 'Property Transactions',
     subtopic: 'Inherited Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Property inherited from a decedent who died in 2024 has a basis to the heir of:',
     options: [
       'Zero',
@@ -282,11 +310,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-depreciation',
     topic: 'Depreciation',
     subtopic: 'Section 179',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For 2024, the maximum Section 179 expense deduction for qualifying property is:',
     options: [
       '$500,000',
@@ -301,11 +331,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-like-kind',
     topic: 'Like-Kind Exchanges',
     subtopic: 'Section 1031',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Section 1031 like-kind exchange, boot received by the taxpayer is:',
     options: [
       'Always tax-free',
@@ -320,11 +352,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-capital-gains',
     topic: 'Capital Gains',
     subtopic: 'Section 1231',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1231 provides that net gains from the sale of business property held over one year are:',
     options: [
       'Treated as ordinary income',
@@ -339,11 +373,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-depreciation',
     topic: 'Depreciation Recapture',
     subtopic: 'Section 1245',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Section 1245 depreciation recapture, upon the sale of machinery at a gain:',
     options: [
       'All gain is treated as capital gain',
@@ -361,11 +397,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-individual-income',
     topic: 'Gross Income',
     subtopic: 'Inclusions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is included in a taxpayer\'s gross income?',
     options: [
       'Life insurance proceeds paid by reason of death',
@@ -380,11 +418,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-deductions',
     topic: 'Deductions',
     subtopic: 'Itemized Deductions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2024, the state and local tax (SALT) deduction for individuals is limited to:',
     options: [
       '$5,000',
@@ -399,11 +439,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-deductions',
     topic: 'Deductions',
     subtopic: 'QBI Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Section 199A qualified business income (QBI) deduction for pass-through entities is generally:',
     options: [
       '10% of QBI',
@@ -418,11 +460,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-individual-income',
     topic: 'Filing Status',
     subtopic: 'Head of Household',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To qualify as Head of Household, a taxpayer must:',
     options: [
       'Be married at year-end',
@@ -437,11 +481,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-credits',
     topic: 'Tax Credits',
     subtopic: 'Child Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2024, the maximum Child Tax Credit per qualifying child under age 17 is:',
     options: [
       '$1,000',
@@ -456,11 +502,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-amt',
     topic: 'AMT',
     subtopic: 'Preferences',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following is a preference item that increases alternative minimum taxable income (AMTI)?',
     options: [
       'Capital gains',
@@ -475,11 +523,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-retirement',
     topic: 'Retirement',
     subtopic: 'Traditional IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The maximum contribution to a traditional IRA for a taxpayer under age 50 in 2024 is:',
     options: [
       '$6,500',
@@ -497,11 +547,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-026',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-c-corp',
     topic: 'C Corporations',
     subtopic: 'Formation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §351, no gain or loss is recognized when property is transferred to a corporation solely in exchange for stock if:',
     options: [
       'The transferor owns any amount of stock after the exchange',
@@ -516,11 +568,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-027',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-c-corp',
     topic: 'C Corporations',
     subtopic: 'Corporate Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The federal corporate income tax rate for C corporations is:',
     options: [
       '15%',
@@ -535,11 +589,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-028',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-c-corp',
     topic: 'C Corporations',
     subtopic: 'E&P',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Corporate distributions are characterized as dividends to the extent of:',
     options: [
       'Retained earnings under GAAP',
@@ -554,11 +610,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-029',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-s-corp',
     topic: 'S Corporations',
     subtopic: 'Eligibility',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following would disqualify a corporation from S corporation status?',
     options: [
       'Having 75 shareholders',
@@ -573,11 +631,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-030',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-s-corp',
     topic: 'S Corporations',
     subtopic: 'Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s stock basis is increased by:',
     options: [
       'Distributions from the corporation',
@@ -592,11 +652,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-031',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-partnership',
     topic: 'Partnerships',
     subtopic: 'Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Generally, when a partner contributes property to a partnership in exchange for a partnership interest:',
     options: [
       'The partner recognizes gain to the extent of appreciation',
@@ -611,11 +673,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-032',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-partnership',
     topic: 'Partnerships',
     subtopic: 'Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner generally recognizes gain on a current distribution from a partnership when:',
     options: [
       'The distribution includes property with built-in gain',
@@ -631,11 +695,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-033',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-self-employment',
     topic: 'Self-Employment',
     subtopic: 'SE Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The self-employment tax rate for 2024 consists of:',
     options: [
       '6.2% Social Security and 1.45% Medicare',
@@ -650,11 +716,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-034',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-capital-gains',
     topic: 'Capital Gains',
     subtopic: 'Netting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Short-term capital losses are first applied against:',
     options: [
       'Ordinary income up to $3,000',
@@ -669,11 +737,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-035',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-contracts',
     topic: 'Contracts',
     subtopic: 'Discharge',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following will NOT discharge a party\'s contractual obligations?',
     options: [
       'Mutual agreement to rescind',
@@ -688,11 +758,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-036',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-c-corp',
     topic: 'C Corporations',
     subtopic: 'Charitable Contributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
       '50% of taxable income',
@@ -707,11 +779,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-037',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-c-corp',
     topic: 'C Corporations',
     subtopic: 'DRD',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation that owns 25% of another domestic corporation is entitled to a dividends received deduction (DRD) of:',
     options: [
       '50%',
@@ -726,11 +800,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-038',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-deductions',
     topic: 'Deductions',
     subtopic: 'Medical Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2024, medical expenses are deductible to the extent they exceed:',
     options: [
       '2% of AGI',
@@ -745,11 +821,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-039',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Negligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The negligence penalty under IRC §6662 applies when the taxpayer:',
     options: [
       'Makes an honest mistake on a tax return',
@@ -764,11 +842,13 @@ export const REG_QUESTIONS_WORLD_CLASS: Question[] = [
   {
     id: 'reg-wc-040',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-partnership',
     topic: 'Partnerships',
     subtopic: 'Partner Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner\'s outside basis includes their share of:',
     options: [
       'Only recourse partnership debt for which they are personally liable',

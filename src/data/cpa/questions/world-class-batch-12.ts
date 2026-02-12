@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'far-wc-083',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-liabilities',
     topic: 'Liabilities',
     subtopic: 'Contingencies',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A lawsuit against the company is probable to result in a loss. The range of possible loss is $100,000 to $300,000, with no amount in the range more likely. What amount should be accrued?',
     options: [
       '$0',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'far-wc-084',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Treasury Stock',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company reissues treasury stock for more than its cost. Under the cost method, the excess is credited to:',
     options: [
       'Retained earnings',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'far-wc-085',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Donor Restrictions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A donor gives $50,000 to a university restricted for scholarships. When scholarships are awarded, the university should:',
     options: [
       'Report release from restriction and expenses in net assets without donor restrictions',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'far-wc-086',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-leases',
     topic: 'Leases',
     subtopic: 'Sale-Leaseback',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company sells a building for $500,000 (carrying value $400,000) and immediately leases it back. The sale qualifies as a sale under ASC 606. The present value of lease payments is $200,000. What gain is recognized at sale?',
     options: [
       '$100,000',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'aud-wc-083',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Related Parties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing related party transactions, the auditor is primarily concerned with:',
     options: [
       'Ensuring transactions are eliminated in consolidation',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'aud-wc-084',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-evaluation',
     topic: 'Evaluating Results',
     subtopic: 'Adjusting Entries',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The auditor proposes an adjusting entry that management refuses to record. The auditor should:',
     options: [
       'Automatically issue a qualified opinion',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'aud-wc-085',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-ssars',
     topic: 'SSARS Engagements',
     subtopic: 'Compilation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a compilation engagement, the accountant:',
     options: [
       'Expresses limited assurance on the financial statements',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'aud-wc-086',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Confidentiality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Disclosure of confidential client information is permitted without client consent when:',
     options: [
       'A potential employer requests a reference',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'reg-wc-083',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Section 1031 exchange, a taxpayer exchanges property (basis $100,000, FMV $150,000) for like-kind property worth $130,000 plus $20,000 cash. What is the recognized gain?',
     options: [
       '$0',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'reg-wc-084',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A partner receives guaranteed payments of $50,000 and a distributive share of partnership income of $30,000. What amount is subject to self-employment tax?',
     options: [
       '$30,000',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'reg-wc-085',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Negotiable Instruments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To be a holder in due course of a negotiable instrument, a person must take the instrument:',
     options: [
       'With knowledge of any claims against it',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'reg-wc-086',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Tax Return Positions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A CPA may recommend a tax return position if there is at least a:',
     options: [
       '10% likelihood of success',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'bar-wc-092',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'CAPM',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using CAPM, if the risk-free rate is 3%, market return is 10%, and beta is 1.5, what is the required return?',
     options: [
       '10.5%',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'bar-wc-093',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Discontinued Operations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Discontinued operations treatment under ASC 205-20 requires the component to represent:',
     options: [
       'Any sold or held-for-sale asset group',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'bar-wc-094',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Job Order Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In job order costing, overhead is applied to jobs using:',
     options: [
       'Actual overhead costs as incurred',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'bar-wc-095',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Segment Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 280, an operating segment must be reported separately if its revenue, profit/loss, or assets are at least:',
     options: [
       '5% of the combined totals',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'bar-wc-096',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Value at Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A 1-day 95% Value at Risk (VaR) of $1 million means:',
     options: [
       'Expected loss is $1 million per day',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'isc-wc-083',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Zero Trust',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The core principle of Zero Trust architecture is:',
     options: [
       'Trust users inside the network perimeter',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'isc-wc-084',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Blockchain',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key characteristic of blockchain technology is:',
     options: [
       'Centralized control by a single authority',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'isc-wc-085',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Penetration Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a penetration test, "black box" testing means the tester has:',
     options: [
       'Full knowledge of system architecture',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'isc-wc-086',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Service Level Agreements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A service level agreement (SLA) typically defines:',
     options: [
       'Software development methodologies',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'tcp-wc-083',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The foreign tax credit limitation is calculated as:',
     options: [
       'Total foreign taxes paid',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'tcp-wc-084',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Form 990',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Form 990 is required to be filed by:',
     options: [
       'All corporations',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'tcp-wc-085',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'R&D Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The research and development tax credit under IRC Section 41 is available for:',
     options: [
       'Any business research expenditures',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_12: Question[] = [
   {
     id: 'tcp-wc-086',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Offer in Compromise',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An offer in compromise based on doubt as to collectibility requires demonstrating:',
     options: [
       'The tax was incorrectly assessed',

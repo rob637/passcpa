@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH8: Question[] = [
   {
-    id: 'CISA4-173',
+    id: 'cisa4-173',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST important factor when determining RTO for a critical business process is:',
     options: [
       'Technology recovery capability',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'RTO Determination'
   },
   {
-    id: 'CISA4-174',
+    id: 'cisa4-174',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Hot site is characterized by:',
     options: [
       'Empty facility with power and cooling',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Recovery Sites'
   },
   {
-    id: 'CISA4-175',
+    id: 'cisa4-175',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers that DR tests are performed annually. The auditor should be MOST concerned if:',
     options: [
       'Tests are scheduled in advance',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'DR Testing'
   },
   {
-    id: 'CISA4-176',
+    id: 'cisa4-176',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Incident response procedures should include:',
     options: [
       'Only technical team contacts',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Incident Response Process'
   },
   {
-    id: 'CISA4-177',
+    id: 'cisa4-177',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating backup procedures, the IS auditor should be MOST concerned if:',
     options: [
       'Backups are encrypted',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Backup Verification'
   },
   {
-    id: 'CISA4-178',
+    id: 'cisa4-178',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Change management should ensure all changes are:',
     options: [
       'Approved by developers only',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Change Control'
   },
   {
-    id: 'CISA4-179',
+    id: 'cisa4-179',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization uses a third party for IT operations. The PRIMARY control to ensure data protection is:',
     options: [
       'Vendor reputation',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Contractual Controls'
   },
   {
-    id: 'CISA4-180',
+    id: 'cisa4-180',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Problem management differs from incident management in that problem management:',
     options: [
       'Focuses on immediate service restoration',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Problem Management'
   },
   {
-    id: 'CISA4-181',
+    id: 'cisa4-181',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The GREATEST risk with database replication for disaster recovery is:',
     options: [
       'Network bandwidth requirements',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Data Replication Risks'
   },
   {
-    id: 'CISA4-182',
+    id: 'cisa4-182',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Capacity management should ensure:',
     options: [
       'Maximum utilization at all times',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Capacity Management'
   },
   {
-    id: 'CISA4-183',
+    id: 'cisa4-183',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing network operations, the IS auditor should be MOST concerned if:',
     options: [
       'Network diagrams are maintained',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Monitoring'
   },
   {
-    id: 'CISA4-184',
+    id: 'cisa4-184',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a business impact analysis (BIA) is to:',
     options: [
       'Select disaster recovery technology',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'BIA Purpose'
   },
   {
-    id: 'CISA4-185',
+    id: 'cisa4-185',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization relies heavily on one cloud provider. The PRIMARY risk is:',
     options: [
       'Reduced costs',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Vendor Concentration'
   },
   {
-    id: 'CISA4-186',
+    id: 'cisa4-186',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Scheduled maintenance windows should be:',
     options: [
       'Avoided entirely',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Maintenance Planning'
   },
   {
-    id: 'CISA4-187',
+    id: 'cisa4-187',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The IS auditor discovers that the organization has no plan to recover from ransomware. This indicates:',
     options: [
       'Adequate reliance on prevention controls',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Ransomware Planning'
   },
   {
-    id: 'CISA4-188',
+    id: 'cisa4-188',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'SLA monitoring should include:',
     options: [
       'Only annual reviews',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'SLA Monitoring'
   },
   {
-    id: 'CISA4-189',
+    id: 'cisa4-189',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating job scheduling, the IS auditor should verify that:',
     options: [
       'Jobs are scheduled manually',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Job Scheduling'
   },
   {
-    id: 'CISA4-190',
+    id: 'cisa4-190',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The 3-2-1 backup rule recommends:',
     options: [
       'Three copies on two media with one offsite',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Backup Strategy'
   },
   {
-    id: 'CISA4-191',
+    id: 'cisa4-191',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor notes that the BCP was last reviewed two years ago. The MAIN concern is:',
     options: [
       'Reduced staff training',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'BCP Maintenance'
   },
   {
-    id: 'CISA4-192',
+    id: 'cisa4-192',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'End-of-life (EOL) software should be:',
     options: [
       'Continued without concern',
@@ -348,10 +388,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'End-of-Life Management'
   },
   {
-    id: 'CISA4-193',
+    id: 'cisa4-193',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Crisis communication during an incident should:',
     options: [
       'Be delayed until full resolution',
@@ -365,10 +407,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Crisis Communication'
   },
   {
-    id: 'CISA4-194',
+    id: 'cisa4-194',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Help desk performance should be measured by:',
     options: [
       'Number of tickets created',
@@ -382,10 +426,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Help Desk Metrics'
   },
   {
-    id: 'CISA4-195',
+    id: 'cisa4-195',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When assessing data center physical security, the IS auditor should be MOST concerned if:',
     options: [
       'Visitors are logged and escorted',
@@ -399,10 +445,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Access Control'
   },
   {
-    id: 'CISA4-196',
+    id: 'cisa4-196',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of configuration item (CI) records is to:',
     options: [
       'Track software licenses only',
@@ -416,10 +464,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'CMDB'
   },
   {
-    id: 'CISA4-197',
+    id: 'cisa4-197',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An organization has RPO of 4 hours. This means:',
     options: [
       'Systems must be recovered within 4 hours',
@@ -433,10 +483,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'RPO'
   },
   {
-    id: 'CISA4-198',
+    id: 'cisa4-198',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Operations runbooks should include:',
     options: [
       'Only emergency procedures',
@@ -450,10 +502,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Runbooks'
   },
   {
-    id: 'CISA4-199',
+    id: 'cisa4-199',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When cloud services are used for disaster recovery, the IS auditor should verify:',
     options: [
       'Cloud costs are minimized',
@@ -467,10 +521,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Cloud DR'
   },
   {
-    id: 'CISA4-200',
+    id: 'cisa4-200',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Batch processing controls should include:',
     options: [
       'Real-time validation only',
@@ -484,10 +540,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Batch Controls'
   },
   {
-    id: 'CISA4-201',
+    id: 'cisa4-201',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Environmental controls for data centers should include:',
     options: [
       'Windows for natural lighting',
@@ -501,10 +559,12 @@ export const CISA4_QUESTIONS_BATCH8: Question[] = [
     subtopic: 'Environmental Controls'
   },
   {
-    id: 'CISA4-202',
+    id: 'cisa4-202',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Incident lessons learned should:',
     options: [
       'Be kept confidential from all staff',

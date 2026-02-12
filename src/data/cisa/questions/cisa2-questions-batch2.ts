@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH2: Question[] = [
   {
-    id: 'CISA2-003',
+    id: 'cisa2-003',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of an IT steering committee is to:',
     options: [
       'Approve all IT purchases',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Steering Committee'
   },
   {
-    id: 'CISA2-004',
+    id: 'cisa2-004',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing IT strategic planning, an IS auditor should be MOST concerned if:',
     options: [
       'The plan covers a three-year horizon',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Business Alignment'
   },
   {
-    id: 'CISA2-005',
+    id: 'cisa2-005',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following BEST describes the role of enterprise architecture?',
     options: [
       'Managing IT infrastructure',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Definition'
   },
   {
-    id: 'CISA2-006',
+    id: 'cisa2-006',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IT balanced scorecard typically includes perspectives from:',
     options: [
       'Only financial metrics',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Balanced Scorecard'
   },
   {
-    id: 'CISA2-007',
+    id: 'cisa2-007',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The GREATEST risk associated with lack of IT governance is:',
     options: [
       'Increased IT costs',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Governance Risks'
   },
   {
-    id: 'CISA2-008',
+    id: 'cisa2-008',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'COBIT is BEST described as a:',
     options: [
       'Technical security standard',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'COBIT'
   },
   {
-    id: 'CISA2-009',
+    id: 'cisa2-009',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is the BEST indicator of effective IT resource management?',
     options: [
       'IT budget is fully spent each year',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Optimization'
   },
   {
-    id: 'CISA2-010',
+    id: 'cisa2-010',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing IT policies, an IS auditor should be MOST concerned if:',
     options: [
       'Policies reference standards and procedures',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Enforcement'
   },
   {
-    id: 'CISA2-011',
+    id: 'cisa2-011',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of segregation of duties in IT is to:',
     options: [
       'Improve operational efficiency',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Segregation of Duties'
   },
   {
-    id: 'CISA2-012',
+    id: 'cisa2-012',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which risk management approach involves accepting the consequences of a risk?',
     options: [
       'Risk mitigation',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Risk Response'
   },
   {
-    id: 'CISA2-013',
+    id: 'cisa2-013',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IT risk register should be reviewed:',
     options: [
       'Only when new projects are initiated',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Risk Register'
   },
   {
-    id: 'CISA2-014',
+    id: 'cisa2-014',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY benefit of an IT service catalog is:',
     options: [
       'Reducing IT costs',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Service Catalog'
   },
   {
-    id: 'CISA2-015',
+    id: 'cisa2-015',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Service level agreements (SLAs) should include:',
     options: [
       'Technical architecture specifications',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'SLA'
   },
   {
-    id: 'CISA2-016',
+    id: 'cisa2-016',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing vendor management practices, an IS auditor should be MOST concerned if:',
     options: [
       'Vendor contracts are renewed annually',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Vendor Assessment'
   },
   {
-    id: 'CISA2-017',
+    id: 'cisa2-017',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of IT human resource management is to:',
     options: [
       'Minimize IT salary expenses',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Resource Planning'
   },
   {
-    id: 'CISA2-018',
+    id: 'cisa2-018',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is MOST important when onboarding IT personnel?',
     options: [
       'Providing company merchandise',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Onboarding'
   },
   {
-    id: 'CISA2-019',
+    id: 'cisa2-019',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The GREATEST risk when a key IT person leaves without notice is:',
     options: [
       'Loss of institutional knowledge and continuity',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Key Person Risk'
   },
   {
-    id: 'CISA2-020',
+    id: 'cisa2-020',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT project governance should ensure that:',
     options: [
       'All projects use the same methodology',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-021',
+    id: 'cisa2-021',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A project management office (PMO) is PRIMARILY responsible for:',
     options: [
       'Executing all IT projects',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'PMO'
   },
   {
-    id: 'CISA2-022',
+    id: 'cisa2-022',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing a business case for an IT project, an IS auditor should be MOST concerned if:',
     options: [
       'Benefits are documented in business terms',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Business Case'
   },
   {
-    id: 'CISA2-023',
+    id: 'cisa2-023',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Quality management in IT should focus on:',
     options: [
       'Eliminating all defects',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Customer Focus'
   },
   {
-    id: 'CISA2-024',
+    id: 'cisa2-024',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Business impact analysis (BIA) is PRIMARILY used to:',
     options: [
       'Identify IT vulnerabilities',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'BIA'
   },
   {
-    id: 'CISA2-025',
+    id: 'cisa2-025',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Recovery time objective (RTO) represents:',
     options: [
       'The maximum data loss acceptable',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'RTO/RPO'
   },
   {
-    id: 'CISA2-026',
+    id: 'cisa2-026',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Recovery point objective (RPO) represents:',
     options: [
       'The maximum acceptable data loss measured in time',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'RTO/RPO'
   },
   {
-    id: 'CISA2-027',
+    id: 'cisa2-027',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A hot site is characterized by:',
     options: [
       'Empty space with power and connectivity',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Recovery Sites'
   },
   {
-    id: 'CISA2-028',
+    id: 'cisa2-028',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY purpose of disaster recovery testing is to:',
     options: [
       'Satisfy regulatory requirements',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'DR Testing'
   },
   {
-    id: 'CISA2-029',
+    id: 'cisa2-029',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Change management controls should ensure that:',
     options: [
       'All changes are implemented immediately',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Controls'
   },
   {
-    id: 'CISA2-030',
+    id: 'cisa2-030',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of a change advisory board (CAB) is to:',
     options: [
       'Implement all changes',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'CAB'
   },
   {
-    id: 'CISA2-031',
+    id: 'cisa2-031',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An emergency change that bypasses normal approval processes should:',
     options: [
       'Never be allowed under any circumstances',
@@ -501,10 +559,12 @@ export const CISA2_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Emergency Changes'
   },
   {
-    id: 'CISA2-032',
+    id: 'cisa2-032',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT performance metrics should be:',
     options: [
       'Kept confidential within IT',

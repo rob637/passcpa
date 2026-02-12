@@ -14,10 +14,12 @@ import { CISA1_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
 
 const CISA1_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA1-001',
+    id: 'cisa1-001',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following describes the key objective of an IS audit strategy?',
     options: [
       'To provide sufficient evidence to support the audit opinion',
@@ -31,10 +33,12 @@ const CISA1_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Audit Strategy'
   },
   {
-    id: 'CISA1-002',
+    id: 'cisa1-002',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an IS auditor identifies a significant control weakness, the FIRST step should be to:',
     options: [
       'Report the finding to the audit committee immediately',

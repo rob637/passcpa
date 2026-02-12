@@ -98,42 +98,28 @@ Depreciation Tax Shield = $80,000 × 25% = $20,000`,
 - Tax on gain (80,000 - 100,000 = -$20,000 loss): Tax savings = $20,000 × 25% = +$5,000
 - Net Initial Outlay: -$450,000 + $80,000 + $5,000 = -$365,000
 
-Annual Cash Flows (Years 1-5):
-- Operating cash flow: $82,500
-- Depreciation tax shield: $20,000
-- Total annual: $102,500
+**Initial Investment (Time 0):**
+- Old equipment sale proceeds: $80,000
+- Book value: $100,000
+- Loss on sale: $20,000 × 25% tax rate = $5,000 tax benefit
+- Net from old equipment: $85,000
+- New equipment cost: -$450,000
+- Net initial investment: -$365,000
+
+**Annual Cash Flows (Years 1-5):**
+- Operating benefit × (1-t) = $110,000 × 0.75 = $82,500
+- Depreciation tax shield = $80,000 × 25% = $20,000
+- Total annual cash flow: $102,500
 - PV of annuity: $102,500 × 3.791 = $388,578
 
-Terminal Cash Flow (Year 5):
-- Salvage value: $50,000 (already in depreciation calculation)
-- After-tax: $50,000 × (1 - 0.25) = $37,500
-- PV: $37,500 × 0.621 = $23,288
+**Terminal Cash Flow (Year 5):**
+- Salvage value: $50,000 (equals book value, no gain/loss)
+- PV of salvage: $50,000 × 0.621 = $31,050
 
-Wait - salvage was part of depreciable base. Terminal value after-tax:
-If fully depreciated to $50,000 salvage, selling at $50,000 = no gain/loss
-PV of salvage: $50,000 × 0.621 = $31,050
+**NPV Calculation:**
+NPV = -$365,000 + $388,578 + $31,050 = **$54,628**
 
-NPV = -$365,000 + $388,578 + $31,050 = $54,628
-
-Let me recalculate more carefully:
-- Old equip sale proc: $80,000
-- Book value: $100,000
-- Loss on sale: $20,000 × 25% = $5,000 tax benefit
-- Net from old: $85,000
-- New equipment: -$450,000
-- Net initial: -$365,000
-
-Annual operating benefit × (1-t) = $110,000 × 0.75 = $82,500
-Depreciation = $80,000, tax shield = $20,000
-Annual total = $102,500
-PV = $102,500 × 3.791 = $388,578
-
-Salvage at end: $50,000 (no tax since equals book)
-PV = $50,000 × 0.621 = $31,050
-
-NPV = -365,000 + 388,578 + 31,050 = $54,628
-
-Using simplified: approximately $19,895 to $55,000 depending on depreciation treatment.`,
+The positive NPV indicates the equipment replacement creates shareholder value.`,
         points: 5,
       },
       {

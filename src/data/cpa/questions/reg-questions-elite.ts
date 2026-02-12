@@ -8,6 +8,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-001',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
@@ -28,6 +29,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-002',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Cancellation of Debt',
@@ -48,6 +50,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-003',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sale Interest',
@@ -68,6 +71,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-004',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Built-In Gains Tax',
@@ -88,6 +92,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-005',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Circular 230 - Competence',
@@ -108,6 +113,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-006',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-contracts',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
@@ -128,6 +134,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-007',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax',
@@ -148,6 +155,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-008',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Sales',
@@ -168,6 +176,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-009',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
@@ -188,6 +197,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-010',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Principal Liability for Agent Torts',
@@ -208,6 +218,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-011',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Basis of Inherited Property',
@@ -228,6 +239,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-012',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Corporate Formation',
@@ -248,6 +260,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-013',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedure',
     topic: 'Tax Procedures',
     subtopic: 'Innocent Spouse Relief',
@@ -268,6 +281,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-014',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ucc',
     topic: 'Business Law',
     subtopic: 'UCC Article 9',
@@ -288,6 +302,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-015',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sale Rule',
@@ -308,6 +323,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-016',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'AICPA Contingent Fees',
@@ -328,6 +344,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-017',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Partner Guaranteed Payments',
@@ -348,6 +365,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-018',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedure',
     topic: 'Tax Procedures',
     subtopic: 'Collection Due Process',
@@ -368,6 +386,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-019',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'NOL Utilization',
@@ -388,6 +407,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-020',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-bankruptcy',
     topic: 'Business Law',
     subtopic: 'Chapter 7 Priority Claims',
@@ -408,6 +428,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-021',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Loss Special Allowance',
@@ -428,6 +449,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-022',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Personal Holding Company Tax',
@@ -448,6 +470,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-023',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedure',
     topic: 'Tax Procedures',
     subtopic: 'Offer in Compromise',
@@ -468,6 +491,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-024',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversion',
@@ -488,6 +512,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-025',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Tax Return Positions',
@@ -508,6 +533,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-026',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
@@ -528,6 +554,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-027',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-ucc',
     topic: 'Business Law',
     subtopic: 'Holder in Due Course',
@@ -548,6 +575,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-028',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-procedure',
     topic: 'Tax Procedures',
     subtopic: 'Accuracy-Related Penalty',
@@ -568,6 +596,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-029',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Termination of Partnership',
@@ -588,6 +617,7 @@ export const REG_QUESTIONS_ELITE: Question[] = [
   {
     id: 'reg-elite-030',
     section: 'REG',
+    courseId: 'cpa',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'NIIT',

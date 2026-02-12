@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA3_QUESTIONS_BATCH7: Question[] = [
   {
-    id: 'CISA3-153',
+    id: 'cisa3-153',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'MLOps (Machine Learning Operations) practices ensure:',
     options: [
       'Only model training',
@@ -25,10 +27,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'MLOps'
   },
   {
-    id: 'CISA3-154',
+    id: 'cisa3-154',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Model bias testing should occur:',
     options: [
       'Only after deployment',
@@ -42,10 +46,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'AI Fairness'
   },
   {
-    id: 'CISA3-155',
+    id: 'cisa3-155',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Feature engineering governance ensures:',
     options: [
       'Only performance',
@@ -59,10 +65,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Feature Engineering'
   },
   {
-    id: 'CISA3-156',
+    id: 'cisa3-156',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data lineage in development environments tracks:',
     options: [
       'Only storage location',
@@ -76,10 +84,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Data Lineage'
   },
   {
-    id: 'CISA3-157',
+    id: 'cisa3-157',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Event-driven architecture testing should verify:',
     options: [
       'Only latency',
@@ -93,10 +103,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Event-Driven Architecture'
   },
   {
-    id: 'CISA3-158',
+    id: 'cisa3-158',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Contract testing in microservices:',
     options: [
       'Tests legal contracts',
@@ -110,10 +122,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Contract Testing'
   },
   {
-    id: 'CISA3-159',
+    id: 'cisa3-159',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Chaos engineering practices involve:',
     options: [
       'Random destruction',
@@ -127,10 +141,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Chaos Engineering'
   },
   {
-    id: 'CISA3-160',
+    id: 'cisa3-160',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database schema migration automation should include:',
     options: [
       'Manual scripts only',
@@ -144,10 +160,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Schema Migration'
   },
   {
-    id: 'CISA3-161',
+    id: 'cisa3-161',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Service mesh implementation provides:',
     options: [
       'Only networking',
@@ -161,10 +179,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Service Mesh'
   },
   {
-    id: 'CISA3-162',
+    id: 'cisa3-162',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero-trust architecture in development requires:',
     options: [
       'No security controls',
@@ -178,10 +198,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Zero Trust'
   },
   {
-    id: 'CISA3-163',
+    id: 'cisa3-163',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database performance tuning during development should address:',
     options: [
       'Only storage',
@@ -195,10 +217,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Performance Tuning'
   },
   {
-    id: 'CISA3-164',
+    id: 'cisa3-164',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Observability implementation goes beyond monitoring by providing:',
     options: [
       'Same as monitoring',
@@ -212,10 +236,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Observability'
   },
   {
-    id: 'CISA3-165',
+    id: 'cisa3-165',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data mesh architecture decentralizes:',
     options: [
       'Security only',
@@ -229,10 +255,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Data Mesh'
   },
   {
-    id: 'CISA3-166',
+    id: 'cisa3-166',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'GraphQL API development considerations include:',
     options: [
       'Only query types',
@@ -246,10 +274,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'GraphQL'
   },
   {
-    id: 'CISA3-168',
+    id: 'cisa3-168',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Federated identity in application development requires:',
     options: [
       'Local authentication only',
@@ -263,10 +293,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Federated Identity'
   },
   {
-    id: 'CISA3-169',
+    id: 'cisa3-169',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Progressive delivery strategies include:',
     options: [
       'Big bang only',
@@ -280,10 +312,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Progressive Delivery'
   },
   {
-    id: 'CISA3-170',
+    id: 'cisa3-170',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'API gateway security functions include:',
     options: [
       'Routing only',
@@ -297,10 +331,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'API Gateway'
   },
   {
-    id: 'CISA3-171',
+    id: 'cisa3-171',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Immutable infrastructure principles require:',
     options: [
       'In-place updates',
@@ -314,10 +350,12 @@ export const CISA3_QUESTIONS_BATCH7: Question[] = [
     subtopic: 'Immutable Infrastructure'
   },
   {
-    id: 'CISA3-172',
+    id: 'cisa3-172',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Software bill of materials (SBOM) provides:',
     options: [
       'Cost information',

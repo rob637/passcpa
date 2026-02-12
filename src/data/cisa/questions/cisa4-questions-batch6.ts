@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH6: Question[] = [
   {
-    id: 'CISA4-123',
+    id: 'cisa4-123',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Operational resilience focuses on:',
     options: [
       'Only IT recovery',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Operational Resilience'
   },
   {
-    id: 'CISA4-124',
+    id: 'cisa4-124',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Impact tolerances define:',
     options: [
       'Recovery costs',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Impact Tolerance'
   },
   {
-    id: 'CISA4-125',
+    id: 'cisa4-125',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Business process mapping for resilience identifies:',
     options: [
       'Only IT systems',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Process Mapping'
   },
   {
-    id: 'CISA4-126',
+    id: 'cisa4-126',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Third-party resilience requires:',
     options: [
       'Only SLAs',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Third-Party Resilience'
   },
   {
-    id: 'CISA4-127',
+    id: 'cisa4-127',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Scenario-based resilience testing should include:',
     options: [
       'Only known risks',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Scenario Testing'
   },
   {
-    id: 'CISA4-128',
+    id: 'cisa4-128',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Communication plans during incidents should address:',
     options: [
       'Only IT staff',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Crisis Communication'
   },
   {
-    id: 'CISA4-129',
+    id: 'cisa4-129',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Major incident management differs from normal incidents by:',
     options: [
       'Having same processes',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Major Incidents'
   },
   {
-    id: 'CISA4-130',
+    id: 'cisa4-130',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'War rooms during major incidents provide:',
     options: [
       'Only physical space',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'War Room'
   },
   {
-    id: 'CISA4-131',
+    id: 'cisa4-131',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Incident classification criteria should include:',
     options: [
       'Only technical impact',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Classification'
   },
   {
-    id: 'CISA4-132',
+    id: 'cisa4-132',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Service availability is calculated as:',
     options: [
       'Uptime only',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Availability Calculation'
   },
   {
-    id: 'CISA4-133',
+    id: 'cisa4-133',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Planned maintenance windows should:',
     options: [
       'Be random',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Maintenance Windows'
   },
   {
-    id: 'CISA4-135',
+    id: 'cisa4-135',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Standard changes require:',
     options: [
       'Full CAB approval each time',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Standard Changes'
   },
   {
-    id: 'CISA4-136',
+    id: 'cisa4-136',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Post-implementation review of changes should assess:',
     options: [
       'Only success',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'PIR'
   },
   {
-    id: 'CISA4-137',
+    id: 'cisa4-137',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Batch job scheduling controls should include:',
     options: [
       'Only start times',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Job Scheduling'
   },
   {
-    id: 'CISA4-138',
+    id: 'cisa4-138',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Database administration controls should include:',
     options: [
       'Only backups',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Database Administration'
   },
   {
-    id: 'CISA4-139',
+    id: 'cisa4-139',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Backup verification should include:',
     options: [
       'Only completion status',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Backup Verification'
   },
   {
-    id: 'CISA4-140',
+    id: 'cisa4-140',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Off-site backup storage should:',
     options: [
       'Be next door',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Off-Site Storage'
   },
   {
-    id: 'CISA4-141',
+    id: 'cisa4-141',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Immutable backups protect against:',
     options: [
       'Only accidental deletion',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Immutable Backup'
   },
   {
-    id: 'CISA4-142',
+    id: 'cisa4-142',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network operations center (NOC) responsibilities include:',
     options: [
       'Only monitoring',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'NOC'
   },
   {
-    id: 'CISA4-143',
+    id: 'cisa4-143',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Event correlation reduces:',
     options: [
       'All events',
@@ -348,10 +388,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Event Correlation'
   },
   {
-    id: 'CISA4-144',
+    id: 'cisa4-144',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Alert thresholds should be:',
     options: [
       'Set once and never changed',
@@ -365,10 +407,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Alert Thresholds'
   },
   {
-    id: 'CISA4-145',
+    id: 'cisa4-145',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Log retention periods should consider:',
     options: [
       'Only storage costs',
@@ -382,10 +426,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Log Retention'
   },
   {
-    id: 'CISA4-146',
+    id: 'cisa4-146',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Time synchronization (NTP) is important for:',
     options: [
       'Only scheduling',
@@ -399,10 +445,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Time Synchronization'
   },
   {
-    id: 'CISA4-147',
+    id: 'cisa4-147',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'End-of-life (EOL) systems should be:',
     options: [
       'Continued indefinitely',
@@ -416,10 +464,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'EOL Management'
   },
   {
-    id: 'CISA4-148',
+    id: 'cisa4-148',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Capacity trending analysis helps:',
     options: [
       'Only current status',
@@ -433,10 +483,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Capacity Trending'
   },
   {
-    id: 'CISA4-149',
+    id: 'cisa4-149',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Print management controls should address:',
     options: [
       'Only paper usage',
@@ -450,10 +502,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Print Management'
   },
   {
-    id: 'CISA4-150',
+    id: 'cisa4-150',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data center site selection considers:',
     options: [
       'Only cost',
@@ -467,10 +521,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Site Selection'
   },
   {
-    id: 'CISA4-151',
+    id: 'cisa4-151',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'UPS systems provide:',
     options: [
       'Permanent power',
@@ -484,10 +540,12 @@ export const CISA4_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'UPS'
   },
   {
-    id: 'CISA4-152',
+    id: 'cisa4-152',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Generator testing should include:',
     options: [
       'Only visual inspection',

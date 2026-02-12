@@ -17,10 +17,12 @@ import { Question } from '../../../types';
  */
 export const COBIT_2019_QUESTIONS: Question[] = [
   {
-    id: 'CISA2-COBIT-001',
+    id: 'cisa2-cobit-001',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In COBIT 2019, which domain includes the governance objective "Ensured Governance Framework Setting and Maintenance" (EDM01)?',
     options: [
       'Align, Plan and Organize (APO)',
@@ -34,10 +36,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 Domains'
   },
   {
-    id: 'CISA2-COBIT-002',
+    id: 'cisa2-cobit-002',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'COBIT 2019\'s principle of "Separating Governance from Management" means:',
     options: [
       'IT and business should operate independently',
@@ -51,10 +55,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 Principles'
   },
   {
-    id: 'CISA2-COBIT-003',
+    id: 'cisa2-cobit-003',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The COBIT 2019 management objective APO12 (Managed Risk) is part of which domain?',
     options: [
       'Build, Acquire and Implement',
@@ -68,10 +74,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 APO Domain'
   },
   {
-    id: 'CISA2-COBIT-004',
+    id: 'cisa2-cobit-004',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A COBIT 2019 design factor that considers whether an organization\'s risk profile is low, normal, or high is called:',
     options: [
       'Enterprise Strategy',
@@ -85,10 +93,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 Design Factors'
   },
   {
-    id: 'CISA2-COBIT-005',
+    id: 'cisa2-cobit-005',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The COBIT 2019 governance objective EDM03 focuses on:',
     options: [
       'Ensured Governance Framework Setting and Maintenance',
@@ -102,10 +112,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 EDM Objectives'
   },
   {
-    id: 'CISA2-COBIT-006',
+    id: 'cisa2-cobit-006',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which COBIT 2019 domain contains objectives related to change management and release management?',
     options: [
       'Align, Plan and Organize (APO)',
@@ -119,10 +131,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 BAI Domain'
   },
   {
-    id: 'CISA2-COBIT-007',
+    id: 'cisa2-cobit-007',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In COBIT 2019, the management objective DSS05 addresses:',
     options: [
       'Managed Operations',
@@ -136,10 +150,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 DSS Domain'
   },
   {
-    id: 'CISA2-COBIT-008',
+    id: 'cisa2-cobit-008',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The MEA domain in COBIT 2019 includes objectives for:',
     options: [
       'Managing enterprise architecture and innovation',
@@ -153,10 +169,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 MEA Domain'
   },
   {
-    id: 'CISA2-COBIT-009',
+    id: 'cisa2-cobit-009',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'COBIT 2019\'s "Governance and Management Objectives" replaces which concept from COBIT 5?',
     options: [
       'Control Objectives',
@@ -170,10 +188,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT Evolution'
   },
   {
-    id: 'CISA2-COBIT-010',
+    id: 'cisa2-cobit-010',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An organization wants to use COBIT 2019 to improve its IT governance. Which design factor should it consider FIRST?',
     options: [
       'Threat Landscape',
@@ -187,10 +207,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 Implementation'
   },
   {
-    id: 'CISA2-COBIT-011',
+    id: 'cisa2-cobit-011',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The COBIT 2019 Performance Management System uses a capability level scale from:',
     options: [
       '1 to 5',
@@ -204,10 +226,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
     subtopic: 'COBIT 2019 Maturity'
   },
   {
-    id: 'CISA2-COBIT-012',
+    id: 'cisa2-cobit-012',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'COBIT 2019 introduces seven governance system components. Which is NOT one of these components?',
     options: [
       'Processes',
@@ -227,10 +251,12 @@ export const COBIT_2019_QUESTIONS: Question[] = [
  */
 export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
   {
-    id: 'CISA5-PRIV-001',
+    id: 'cisa5-priv-001',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GDPR, the legal basis for processing that requires explicit consent is:',
     options: [
       'Processing necessary for contract performance',
@@ -244,10 +270,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'GDPR Legal Basis'
   },
   {
-    id: 'CISA5-PRIV-002',
+    id: 'cisa5-priv-002',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The GDPR "right to be forgotten" (right to erasure) does NOT apply when:',
     options: [
       'The individual withdraws consent',
@@ -261,10 +289,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'GDPR Data Subject Rights'
   },
   {
-    id: 'CISA5-PRIV-003',
+    id: 'cisa5-priv-003',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the California Consumer Privacy Act (CCPA), consumers have the right to:',
     options: [
       'Delete their data without any exceptions',
@@ -278,10 +308,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'CCPA Rights'
   },
   {
-    id: 'CISA5-PRIV-004',
+    id: 'cisa5-priv-004',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For cross-border data transfers from the EU, which mechanism provides the MOST flexibility for transferring personal data to countries without adequacy decisions?',
     options: [
       'EU-US Privacy Shield',
@@ -295,10 +327,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'Cross-Border Data Transfers'
   },
   {
-    id: 'CISA5-PRIV-005',
+    id: 'cisa5-priv-005',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A Data Protection Impact Assessment (DPIA) is MANDATORY under GDPR when:',
     options: [
       'Any personal data processing occurs',
@@ -312,10 +346,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'Privacy Impact Assessment'
   },
   {
-    id: 'CISA5-PRIV-006',
+    id: 'cisa5-priv-006',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GDPR, a data processor:',
     options: [
       'Determines the purposes and means of processing',
@@ -329,10 +365,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'GDPR Controller vs Processor'
   },
   {
-    id: 'CISA5-PRIV-007',
+    id: 'cisa5-priv-007',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The EU-U.S. Data Privacy Framework (DPF) that replaced Privacy Shield requires U.S. organizations to:',
     options: [
       'Obtain EU supervisory authority approval for each transfer',
@@ -346,10 +384,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'International Data Transfers'
   },
   {
-    id: 'CISA5-PRIV-008',
+    id: 'cisa5-priv-008',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which principle requires organizations to only collect personal data necessary for the specified purpose?',
     options: [
       'Purpose limitation',
@@ -363,10 +403,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'GDPR Principles'
   },
   {
-    id: 'CISA5-PRIV-009',
+    id: 'cisa5-priv-009',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Binding Corporate Rules (BCRs) for international data transfers:',
     options: [
       'Are only valid for transfers to countries with adequacy decisions',
@@ -380,10 +422,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'Cross-Border Data Transfers'
   },
   {
-    id: 'CISA5-PRIV-010',
+    id: 'cisa5-priv-010',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The GDPR data breach notification requirement to supervisory authorities:',
     options: [
       'Applies to all data breaches without exception',
@@ -397,10 +441,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'GDPR Breach Notification'
   },
   {
-    id: 'CISA5-PRIV-011',
+    id: 'cisa5-priv-011',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Virginia Consumer Data Protection Act (VCDPA), compared to CCPA, a key difference is:',
     options: [
       'VCDPA applies to non-profits while CCPA does not',
@@ -414,10 +460,12 @@ export const PRIVACY_REGULATION_QUESTIONS: Question[] = [
     subtopic: 'US State Privacy Laws'
   },
   {
-    id: 'CISA5-PRIV-012',
+    id: 'cisa5-priv-012',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privacy by Design requires that:',
     options: [
       'Privacy features are added after system deployment based on complaints',

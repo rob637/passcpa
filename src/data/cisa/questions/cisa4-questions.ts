@@ -14,10 +14,12 @@ import { CISA4_QUESTIONS_BATCH13 } from './cisa-questions-batch13';
 
 const CISA4_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA4-001',
+    id: 'cisa4-001',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of a Service Level Agreement (SLA) is to:',
     options: [
       'Define the technical specifications of the hardware',
@@ -31,10 +33,12 @@ const CISA4_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Service Level Management'
   },
   {
-    id: 'CISA4-002',
+    id: 'cisa4-002',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is the most effective method for testing a disaster recovery plan (DRP) without disrupting operations?',
     options: [
       'Full interruption test',

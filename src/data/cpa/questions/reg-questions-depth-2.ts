@@ -12,11 +12,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Preparer Penalties — §6694',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The penalty for a tax return preparer who takes an unreasonable position on a return is:',
     options: [
       '$500 per return',
@@ -31,11 +33,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Tax Practitioner Privilege',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The federally authorized tax practitioner privilege (IRC §7525) applies to:',
     options: [
       'All communications between any tax preparer and their clients',
@@ -50,11 +54,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §6015, innocent spouse relief allows a spouse to avoid liability for tax deficiencies attributable to the other spouse if:',
     options: [
       'They filed separate returns',
@@ -73,11 +79,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-commercial',
     topic: 'Business Law',
     subtopic: 'Negotiable Instruments — Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under UCC Article 3, for an instrument to be negotiable, it must be all of the following EXCEPT:',
     options: [
       'In writing and signed by the maker or drawer',
@@ -92,11 +100,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-commercial',
     topic: 'Business Law',
     subtopic: 'Holder in Due Course',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A holder in due course (HDC) of a negotiable instrument takes the instrument free from:',
     options: [
       'All defenses, including real (universal) defenses',
@@ -111,11 +121,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-surety',
     topic: 'Business Law',
     subtopic: 'Suretyship — Rights of Surety',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A surety who pays the creditor on behalf of the principal debtor has the right of:',
     options: [
       'Usury — charging the debtor interest above legal limits',
@@ -134,11 +146,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Eligibility Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An S corporation is limited to which maximum number of shareholders?',
     options: [
       '50',
@@ -153,11 +167,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains (BIG) tax applies to S corporations that:',
     options: [
       'Have always been S corporations',
@@ -172,11 +188,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation shareholder\'s stock basis is increased by:',
     options: [
       'Distributions received from the corporation',
@@ -195,11 +213,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231 Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Section 1231 property includes all of the following EXCEPT:',
     options: [
       'Real property used in a trade or business held more than one year',
@@ -214,11 +234,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1245 Recapture',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Section 1245 depreciation recapture requires that gain on the sale of depreciable personal property be:',
     options: [
       'Taxed entirely at capital gains rates',
@@ -233,11 +255,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1250 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For real property placed in service after 1986, §1250 depreciation recapture generally:',
     options: [
       'Recaptures all depreciation as ordinary income',
@@ -256,11 +280,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Partner Basis Calculation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A partner\'s basis in a partnership interest is affected by the partner\'s share of partnership liabilities. Under §752, an increase in a partner\'s share of partnership liabilities:',
     options: [
       'Decreases the partner\'s basis',
@@ -275,11 +301,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets — §751',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a partner sells their partnership interest, §751 "hot assets" cause:',
     options: [
       'The entire gain to be treated as capital gain',
@@ -298,11 +326,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-credits',
     topic: 'Tax Credits',
     subtopic: 'Child Tax Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2024, the Child Tax Credit under §24 provides a maximum credit of:',
     options: [
       '$1,000 per qualifying child',
@@ -317,11 +347,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-credits',
     topic: 'Tax Credits',
     subtopic: 'Earned Income Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Earned Income Tax Credit (EITC) is unique because it:',
     options: [
       'Is only available to taxpayers with income over $100,000',
@@ -340,11 +372,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Offer in Compromise',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An Offer in Compromise (OIC) allows a taxpayer to settle a tax debt for less than the full amount owed based on:',
     options: [
       'Only hardship situations',
@@ -359,11 +393,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Taxpayer Bill of Rights',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Taxpayer Bill of Rights includes which of the following fundamental rights?',
     options: [
       'The right to pay no taxes',
@@ -382,11 +418,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency — Types of Authority',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Express authority of an agent is created by:',
     options: [
       'The agent\'s actions implying authority',
@@ -401,11 +439,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-agency',
     topic: 'Business Law',
     subtopic: 'Agency — Principal Liability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the doctrine of respondeat superior, an employer/principal is liable for the torts of an agent/employee when:',
     options: [
       'The agent is an independent contractor',
@@ -424,11 +464,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'State and Local Tax Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the Tax Cuts and Jobs Act (TCJA), the deduction for state and local taxes (SALT) is limited to:',
     options: [
       'No limit',
@@ -443,11 +485,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The maximum charitable deduction for cash contributions to public charities is generally limited to what percentage of AGI?',
     options: [
       '20% of AGI',
@@ -466,11 +510,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A C corporation that owns 30% of another domestic corporation is entitled to a dividends received deduction (DRD) of:',
     options: [
       '50% of dividends received',
@@ -489,11 +535,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 121 Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under IRC §121, a taxpayer can exclude up to how much gain from the sale of a principal residence?',
     options: [
       '$125,000 for all taxpayers',
@@ -508,11 +556,13 @@ export const REG_QUESTIONS_DEPTH_2: Question[] = [
   {
     id: 'reg-d2-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sale Rule',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the wash sale rule (IRC §1091), a loss on the sale of securities is disallowed if the taxpayer purchases substantially identical securities within:',
     options: [
       '60 days before or after the sale',

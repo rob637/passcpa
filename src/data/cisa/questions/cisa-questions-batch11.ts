@@ -12,10 +12,12 @@ const ALL_BATCH11: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CISA1-B11-001',
+    id: 'cisa1-b11-001',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IS auditor should be organizationally independent to ensure:',
     options: [
       'Maximum audit coverage',
@@ -29,10 +31,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Independence'
   },
   {
-    id: 'CISA1-B11-002',
+    id: 'cisa1-b11-002',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Control self-assessment (CSA) primarily relies on:',
     options: [
       'External auditors',
@@ -46,10 +50,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'CSA'
   },
   {
-    id: 'CISA1-B11-003',
+    id: 'cisa1-b11-003',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Substantive testing is designed to:',
     options: [
       'Test control effectiveness',
@@ -63,10 +69,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Test Types'
   },
   {
-    id: 'CISA1-B11-004',
+    id: 'cisa1-b11-004',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Compliance testing verifies:',
     options: [
       'Accuracy of financial data',
@@ -80,10 +88,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Test Types'
   },
   {
-    id: 'CISA1-B11-005',
+    id: 'cisa1-b11-005',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Variable sampling is used to:',
     options: [
       'Test control compliance',
@@ -97,10 +107,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Sampling Methods'
   },
   {
-    id: 'CISA1-B11-006',
+    id: 'cisa1-b11-006',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Stratified sampling divides the population into:',
     options: [
       'Random groups',
@@ -114,10 +126,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Sampling Methods'
   },
   {
-    id: 'CISA1-B11-007',
+    id: 'cisa1-b11-007',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit charter should define:',
     options: [
       'Specific test procedures',
@@ -131,10 +145,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Audit Charter'
   },
   {
-    id: 'CISA1-B11-008',
+    id: 'cisa1-b11-008',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing prior audit reports, an IS auditor should PRIMARILY focus on:',
     options: [
       'Formatting consistency',
@@ -148,10 +164,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Prior Audits'
   },
   {
-    id: 'CISA1-B11-009',
+    id: 'cisa1-b11-009',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Interview techniques should include:',
     options: [
       'Only closed-ended questions',
@@ -165,10 +183,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Interview Techniques'
   },
   {
-    id: 'CISA1-B11-010',
+    id: 'cisa1-b11-010',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Embedded audit modules (EAMs):',
     options: [
       'Are installed after systems go live',
@@ -182,10 +202,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Embedded Audit Modules'
   },
   {
-    id: 'CISA1-B11-011',
+    id: 'cisa1-b11-011',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Parallel simulation involves:',
     options: [
       'Running two audits simultaneously',
@@ -199,10 +221,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Parallel Simulation'
   },
   {
-    id: 'CISA1-B11-012',
+    id: 'cisa1-b11-012',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit trail analysis examines:',
     options: [
       'Physical pathways',
@@ -216,10 +240,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Log Analysis'
   },
   {
-    id: 'CISA1-B11-013',
+    id: 'cisa1-b11-013',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Draft audit reports should be reviewed with:',
     options: [
       'Media representatives',
@@ -233,10 +259,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Draft Review'
   },
   {
-    id: 'CISA1-B11-014',
+    id: 'cisa1-b11-014',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk ratings in audit findings should reflect:',
     options: [
       'Auditor opinion only',
@@ -250,10 +278,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Rating'
   },
   {
-    id: 'CISA1-B11-015',
+    id: 'cisa1-b11-015',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Exit conferences serve to:',
     options: [
       'Formally end the auditor relationship',
@@ -267,10 +297,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Exit Conference'
   },
   {
-    id: 'CISA1-B11-016',
+    id: 'cisa1-b11-016',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Confidentiality requirements for audit information mean:',
     options: [
       'Information can be shared freely',
@@ -284,10 +316,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Confidentiality'
   },
   {
-    id: 'CISA1-B11-017',
+    id: 'cisa1-b11-017',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Continuing professional education (CPE) ensures:',
     options: [
       'Higher salaries',
@@ -301,10 +335,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Professional Development'
   },
   {
-    id: 'CISA1-B11-018',
+    id: 'cisa1-b11-018',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risk assessment in audit planning considers:',
     options: [
       'Only financial exposure',
@@ -318,10 +354,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Assessment'
   },
   {
-    id: 'CISA1-B11-019',
+    id: 'cisa1-b11-019',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit scope should be:',
     options: [
       'As broad as possible',
@@ -335,10 +373,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Scope Definition'
   },
   {
-    id: 'CISA1-B11-020',
+    id: 'cisa1-b11-020',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When scope limitations are imposed, the auditor should:',
     options: [
       'Accept without question',
@@ -357,10 +397,12 @@ const ALL_BATCH11: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CISA2-B11-021',
+    id: 'cisa2-b11-021',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT strategic planning should:',
     options: [
       'Be performed solely by IT',
@@ -374,10 +416,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Strategic Planning'
   },
   {
-    id: 'CISA2-B11-022',
+    id: 'cisa2-b11-022',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key performance indicators (KPIs) should be:',
     options: [
       'As many as possible',
@@ -391,10 +435,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Performance Measurement'
   },
   {
-    id: 'CISA2-B11-023',
+    id: 'cisa2-b11-023',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT risk assessment should be:',
     options: [
       'Performed once and filed',
@@ -408,10 +454,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Assessment Process'
   },
   {
-    id: 'CISA2-B11-024',
+    id: 'cisa2-b11-024',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Residual risk is:',
     options: [
       'The initial risk before controls',
@@ -425,10 +473,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Concepts'
   },
   {
-    id: 'CISA2-B11-025',
+    id: 'cisa2-b11-025',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Risk treatment options include:',
     options: [
       'Only accept or avoid',
@@ -442,10 +492,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Treatment'
   },
   {
-    id: 'CISA2-B11-026',
+    id: 'cisa2-b11-026',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT policies differ from procedures because:',
     options: [
       'They are the same',
@@ -459,10 +511,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Policies and Procedures'
   },
   {
-    id: 'CISA2-B11-027',
+    id: 'cisa2-b11-027',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Succession planning for IT ensures:',
     options: [
       'Everyone has a backup',
@@ -476,10 +530,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Human Resources'
   },
   {
-    id: 'CISA2-B11-028',
+    id: 'cisa2-b11-028',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Outsourcing governance should ensure:',
     options: [
       'Vendor independence from oversight',
@@ -493,10 +549,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Outsourcing Governance'
   },
   {
-    id: 'CISA2-B11-029',
+    id: 'cisa2-b11-029',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Right to audit clauses in contracts:',
     options: [
       'Are not necessary',
@@ -510,10 +568,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Contract Terms'
   },
   {
-    id: 'CISA2-B11-030',
+    id: 'cisa2-b11-030',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data ownership responsibilities include:',
     options: [
       'IT decisions only',
@@ -527,10 +587,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Data Governance'
   },
   {
-    id: 'CISA2-B11-031',
+    id: 'cisa2-b11-031',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT investment management ensures:',
     options: [
       'All projects are approved',
@@ -544,10 +606,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Investment Management'
   },
   {
-    id: 'CISA2-B11-032',
+    id: 'cisa2-b11-032',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Portfolio management for IT enables:',
     options: [
       'Only project tracking',
@@ -561,10 +625,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Portfolio Management'
   },
   {
-    id: 'CISA2-B11-033',
+    id: 'cisa2-b11-033',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Regulatory compliance programs should:',
     options: [
       'Only address fines after they occur',
@@ -578,10 +644,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Compliance'
   },
   {
-    id: 'CISA2-B11-034',
+    id: 'cisa2-b11-034',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Change advisory board (CAB) reviews:',
     options: [
       'Only emergency changes',
@@ -595,10 +663,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Change Management'
   },
   {
-    id: 'CISA2-B11-035',
+    id: 'cisa2-b11-035',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Emergency changes require:',
     options: [
       'No documentation',
@@ -612,10 +682,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Change Management'
   },
   {
-    id: 'CISA2-B11-036',
+    id: 'cisa2-b11-036',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT asset management should maintain:',
     options: [
       'Only hardware lists',
@@ -634,10 +706,12 @@ const ALL_BATCH11: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CISA3-B11-037',
+    id: 'cisa3-b11-037',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Business case development should include:',
     options: [
       'Only cost estimates',
@@ -651,10 +725,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Business Case'
   },
   {
-    id: 'CISA3-B11-038',
+    id: 'cisa3-b11-038',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Project risk management includes:',
     options: [
       'Only risk identification',
@@ -668,10 +744,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Risk Management'
   },
   {
-    id: 'CISA3-B11-039',
+    id: 'cisa3-b11-039',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Earned value management measures:',
     options: [
       'Only cost',
@@ -685,10 +763,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Project Monitoring'
   },
   {
-    id: 'CISA3-B11-040',
+    id: 'cisa3-b11-040',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Functional requirements describe:',
     options: [
       'System performance levels',
@@ -702,10 +782,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Requirements'
   },
   {
-    id: 'CISA3-B11-041',
+    id: 'cisa3-b11-041',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Non-functional requirements include:',
     options: [
       'Business processes',
@@ -719,10 +801,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Requirements'
   },
   {
-    id: 'CISA3-B11-042',
+    id: 'cisa3-b11-042',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Design reviews should verify:',
     options: [
       'Only documentation format',
@@ -736,10 +820,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Design Review'
   },
   {
-    id: 'CISA3-B11-043',
+    id: 'cisa3-b11-043',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Unit testing focuses on:',
     options: [
       'Entire system integration',
@@ -753,10 +839,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Unit Testing'
   },
   {
-    id: 'CISA3-B11-044',
+    id: 'cisa3-b11-044',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'System testing verifies:',
     options: [
       'Individual units',
@@ -770,10 +858,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'System Testing'
   },
   {
-    id: 'CISA3-B11-045',
+    id: 'cisa3-b11-045',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Load testing determines:',
     options: [
       'Functional correctness',
@@ -787,10 +877,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Performance Testing'
   },
   {
-    id: 'CISA3-B11-046',
+    id: 'cisa3-b11-046',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Stress testing goes beyond load testing by:',
     options: [
       'Using fewer users',
@@ -804,10 +896,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Performance Testing'
   },
   {
-    id: 'CISA3-B11-047',
+    id: 'cisa3-b11-047',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Configuration management during development ensures:',
     options: [
       'Faster coding',
@@ -821,10 +915,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Configuration Management'
   },
   {
-    id: 'CISA3-B11-048',
+    id: 'cisa3-b11-048',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Secure coding practices include:',
     options: [
       'Speed over security',
@@ -838,10 +934,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Secure Coding'
   },
   {
-    id: 'CISA3-B11-049',
+    id: 'cisa3-b11-049',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'DAST (dynamic application security testing) tests:',
     options: [
       'Source code statically',
@@ -855,10 +953,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Security Testing'
   },
   {
-    id: 'CISA3-B11-050',
+    id: 'cisa3-b11-050',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IAST (interactive application security testing) combines:',
     options: [
       'Only manual testing',
@@ -872,10 +972,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Security Testing'
   },
   {
-    id: 'CISA3-B11-051',
+    id: 'cisa3-b11-051',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cutover planning for system go-live should address:',
     options: [
       'Only training schedules',
@@ -889,10 +991,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Cutover Planning'
   },
   {
-    id: 'CISA3-B11-052',
+    id: 'cisa3-b11-052',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pilot implementation:',
     options: [
       'Deploys to all users at once',
@@ -906,10 +1010,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Implementation Strategies'
   },
   {
-    id: 'CISA3-B11-053',
+    id: 'cisa3-b11-053',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'System documentation should include:',
     options: [
       'Only source code',
@@ -923,10 +1029,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Documentation'
   },
   {
-    id: 'CISA3-B11-054',
+    id: 'cisa3-b11-054',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Maintenance types include:',
     options: [
       'Only bug fixes',
@@ -945,10 +1053,12 @@ const ALL_BATCH11: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CISA4-B11-055',
+    id: 'cisa4-b11-055',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT service desk is responsible for:',
     options: [
       'Only hardware repair',
@@ -962,10 +1072,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Service Desk'
   },
   {
-    id: 'CISA4-B11-056',
+    id: 'cisa4-b11-056',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Priority for incident resolution should be based on:',
     options: [
       'First-come first-served',
@@ -979,10 +1091,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Incident Management'
   },
   {
-    id: 'CISA4-B11-057',
+    id: 'cisa4-b11-057',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Known error database (KEDB) contains:',
     options: [
       'Only unresolved issues',
@@ -996,10 +1110,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Problem Management'
   },
   {
-    id: 'CISA4-B11-058',
+    id: 'cisa4-b11-058',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Configuration management database (CMDB):',
     options: [
       'Only tracks software',
@@ -1013,10 +1129,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Configuration Management'
   },
   {
-    id: 'CISA4-B11-059',
+    id: 'cisa4-b11-059',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Batch processing controls should ensure:',
     options: [
       'Only speed',
@@ -1030,10 +1148,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Batch Processing'
   },
   {
-    id: 'CISA4-B11-060',
+    id: 'cisa4-b11-060',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Output controls verify:',
     options: [
       'Input accuracy',
@@ -1047,10 +1167,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Application Controls'
   },
   {
-    id: 'CISA4-B11-061',
+    id: 'cisa4-b11-061',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network monitoring should detect:',
     options: [
       'Only outages',
@@ -1064,10 +1186,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Network Management'
   },
   {
-    id: 'CISA4-B11-062',
+    id: 'cisa4-b11-062',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Mean time between failures (MTBF) measures:',
     options: [
       'Repair time',
@@ -1081,10 +1205,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Availability Metrics'
   },
   {
-    id: 'CISA4-B11-063',
+    id: 'cisa4-b11-063',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Mean time to repair (MTTR) measures:',
     options: [
       'Time between failures',
@@ -1098,10 +1224,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Availability Metrics'
   },
   {
-    id: 'CISA4-B11-064',
+    id: 'cisa4-b11-064',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Maximum tolerable downtime (MTD) differs from RTO because:',
     options: [
       'They are the same',
@@ -1115,10 +1243,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Recovery Metrics'
   },
   {
-    id: 'CISA4-B11-065',
+    id: 'cisa4-b11-065',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Work recovery time (WRT) addresses:',
     options: [
       'System restoration only',
@@ -1132,10 +1262,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Recovery Metrics'
   },
   {
-    id: 'CISA4-B11-066',
+    id: 'cisa4-b11-066',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Mobile site recovery refers to:',
     options: [
       'Recovery for mobile devices',
@@ -1149,10 +1281,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Recovery Sites'
   },
   {
-    id: 'CISA4-B11-067',
+    id: 'cisa4-b11-067',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Reciprocal agreements for DR:',
     options: [
       'Are always reliable',
@@ -1166,10 +1300,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Recovery Agreements'
   },
   {
-    id: 'CISA4-B11-068',
+    id: 'cisa4-b11-068',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DR testing lessons learned should:',
     options: [
       'Be documented but ignored',
@@ -1183,10 +1319,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'DR Testing'
   },
   {
-    id: 'CISA4-B11-069',
+    id: 'cisa4-b11-069',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data replication strategies range from:',
     options: [
       'Only synchronous',
@@ -1200,10 +1338,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Data Replication'
   },
   {
-    id: 'CISA4-B11-070',
+    id: 'cisa4-b11-070',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Geographic diversity in DR:',
     options: [
       'Is unnecessary with proper backups',
@@ -1217,10 +1357,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Site Selection'
   },
   {
-    id: 'CISA4-B11-071',
+    id: 'cisa4-b11-071',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Pandemic planning differs from traditional DR because:',
     options: [
       'They are identical',
@@ -1234,10 +1376,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Pandemic Planning'
   },
   {
-    id: 'CISA4-B11-072',
+    id: 'cisa4-b11-072',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Command center activation procedures should:',
     options: [
       'Wait for management approval',
@@ -1251,10 +1395,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Emergency Response'
   },
   {
-    id: 'CISA4-B11-073',
+    id: 'cisa4-b11-073',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Testing recovery of individual applications is called:',
     options: [
       'Full interruption test',
@@ -1268,10 +1414,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'DR Testing Types'
   },
   {
-    id: 'CISA4-B11-074',
+    id: 'cisa4-b11-074',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Backup power transfer switches:',
     options: [
       'Are optional',
@@ -1290,10 +1438,12 @@ const ALL_BATCH11: Question[] = [
   // ===========================================================================
   
   {
-    id: 'CISA5-B11-075',
+    id: 'cisa5-b11-075',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Defense in depth strategy uses:',
     options: [
       'One strong control',
@@ -1307,10 +1457,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Defense in Depth'
   },
   {
-    id: 'CISA5-B11-076',
+    id: 'cisa5-b11-076',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security controls are classified as:',
     options: [
       'Only technical controls',
@@ -1324,10 +1476,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Control Classification'
   },
   {
-    id: 'CISA5-B11-077',
+    id: 'cisa5-b11-077',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Compensating controls are used when:',
     options: [
       'Primary controls are sufficient',
@@ -1341,10 +1495,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Compensating Controls'
   },
   {
-    id: 'CISA5-B11-078',
+    id: 'cisa5-b11-078',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Attribute-based access control (ABAC):',
     options: [
       'Only uses roles',
@@ -1358,10 +1514,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Access Control Models'
   },
   {
-    id: 'CISA5-B11-079',
+    id: 'cisa5-b11-079',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Access recertification ensures:',
     options: [
       'More access is granted over time',
@@ -1375,10 +1533,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Access Review'
   },
   {
-    id: 'CISA5-B11-080',
+    id: 'cisa5-b11-080',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privilege creep occurs when:',
     options: [
       'Users lose access over time',
@@ -1392,10 +1552,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Access Management'
   },
   {
-    id: 'CISA5-B11-081',
+    id: 'cisa5-b11-081',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'VPN provides:',
     options: [
       'Only faster connections',
@@ -1409,10 +1571,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'VPN'
   },
   {
-    id: 'CISA5-B11-082',
+    id: 'cisa5-b11-082',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'NAC (network access control) provides:',
     options: [
       'Only authentication',
@@ -1426,10 +1590,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'NAC'
   },
   {
-    id: 'CISA5-B11-083',
+    id: 'cisa5-b11-083',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Symmetric encryption uses:',
     options: [
       'Different keys for encryption and decryption',
@@ -1443,10 +1609,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Symmetric Encryption'
   },
   {
-    id: 'CISA5-B11-084',
+    id: 'cisa5-b11-084',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Asymmetric encryption uses:',
     options: [
       'One shared key',
@@ -1460,10 +1628,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Asymmetric Encryption'
   },
   {
-    id: 'CISA5-B11-085',
+    id: 'cisa5-b11-085',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Hashing provides:',
     options: [
       'Encryption',
@@ -1477,10 +1647,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Hashing'
   },
   {
-    id: 'CISA5-B11-086',
+    id: 'cisa5-b11-086',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Key management includes:',
     options: [
       'Only key creation',
@@ -1494,10 +1666,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Key Management'
   },
   {
-    id: 'CISA5-B11-087',
+    id: 'cisa5-b11-087',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security event logs should be:',
     options: [
       'Deleted immediately',
@@ -1511,10 +1685,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Log Management'
   },
   {
-    id: 'CISA5-B11-088',
+    id: 'cisa5-b11-088',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence provides:',
     options: [
       'Only historical data',
@@ -1528,10 +1704,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Threat Intelligence'
   },
   {
-    id: 'CISA5-B11-089',
+    id: 'cisa5-b11-089',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Patch management should prioritize based on:',
     options: [
       'Vendor release order',
@@ -1545,10 +1723,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Patch Management'
   },
   {
-    id: 'CISA5-B11-090',
+    id: 'cisa5-b11-090',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security orchestration, automation, and response (SOAR):',
     options: [
       'Replaces all security staff',
@@ -1562,10 +1742,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'SOAR'
   },
   {
-    id: 'CISA5-B11-091',
+    id: 'cisa5-b11-091',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Endpoint protection platforms (EPP) provide:',
     options: [
       'Only antivirus',
@@ -1579,10 +1761,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'EPP'
   },
   {
-    id: 'CISA5-B11-092',
+    id: 'cisa5-b11-092',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'EDR (endpoint detection and response) differs from EPP because:',
     options: [
       'They are identical',
@@ -1596,10 +1780,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'EDR'
   },
   {
-    id: 'CISA5-B11-093',
+    id: 'cisa5-b11-093',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Vishing attacks use:',
     options: [
       'Only email',
@@ -1613,10 +1799,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Social Engineering'
   },
   {
-    id: 'CISA5-B11-094',
+    id: 'cisa5-b11-094',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Business email compromise (BEC) typically involves:',
     options: [
       'Mass phishing',
@@ -1630,10 +1818,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'BEC'
   },
   {
-    id: 'CISA5-B11-095',
+    id: 'cisa5-b11-095',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Incident classification helps:',
     options: [
       'Avoid documentation',
@@ -1647,10 +1837,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Incident Classification'
   },
   {
-    id: 'CISA5-B11-096',
+    id: 'cisa5-b11-096',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Evidence volatility order in forensics prioritizes:',
     options: [
       'Hardest to collect first',
@@ -1664,10 +1856,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Digital Forensics'
   },
   {
-    id: 'CISA5-B11-097',
+    id: 'cisa5-b11-097',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Mantrap/airlock physical access controls:',
     options: [
       'Only control vehicles',
@@ -1681,10 +1875,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Physical Access Control'
   },
   {
-    id: 'CISA5-B11-098',
+    id: 'cisa5-b11-098',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privacy by design requires:',
     options: [
       'Adding privacy after development',
@@ -1698,10 +1894,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Privacy by Design'
   },
   {
-    id: 'CISA5-B11-099',
+    id: 'cisa5-b11-099',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data subject rights under privacy regulations include:',
     options: [
       'Only access rights',
@@ -1715,10 +1913,12 @@ const ALL_BATCH11: Question[] = [
     subtopic: 'Data Subject Rights'
   },
   {
-    id: 'CISA5-B11-100',
+    id: 'cisa5-b11-100',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cloud security responsibilities are:',
     options: [
       'Entirely the cloud provider\'s',

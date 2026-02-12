@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA3_QUESTIONS_BATCH4: Question[] = [
   {
-    id: 'CISA3-063',
+    id: 'cisa3-063',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Requirements prioritization should be based on:',
     options: [
       'User preferences only',
@@ -25,10 +27,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Prioritization'
   },
   {
-    id: 'CISA3-064',
+    id: 'cisa3-064',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Requirement volatility indicates:',
     options: [
       'Stable requirements',
@@ -42,10 +46,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Volatility'
   },
   {
-    id: 'CISA3-065',
+    id: 'cisa3-065',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Non-functional requirements include:',
     options: [
       'Business logic',
@@ -59,10 +65,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Non-Functional'
   },
   {
-    id: 'CISA3-066',
+    id: 'cisa3-066',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The V-model extends waterfall by:',
     options: [
       'Eliminating testing',
@@ -76,10 +84,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'V-Model'
   },
   {
-    id: 'CISA3-067',
+    id: 'cisa3-067',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Extreme Programming (XP) emphasizes:',
     options: [
       'Extensive documentation',
@@ -93,10 +103,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'XP'
   },
   {
-    id: 'CISA3-068',
+    id: 'cisa3-068',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Kanban methodology focuses on:',
     options: [
       'Fixed sprints',
@@ -110,10 +122,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Kanban'
   },
   {
-    id: 'CISA3-069',
+    id: 'cisa3-069',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Scaled Agile Framework (SAFe) addresses:',
     options: [
       'Small team projects',
@@ -127,10 +141,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'SAFe'
   },
   {
-    id: 'CISA3-070',
+    id: 'cisa3-070',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Behavior-Driven Development (BDD) uses:',
     options: [
       'Only technical specifications',
@@ -144,10 +160,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'BDD'
   },
   {
-    id: 'CISA3-071',
+    id: 'cisa3-071',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'API-first development:',
     options: [
       'Ignores APIs',
@@ -161,10 +179,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'API-First'
   },
   {
-    id: 'CISA3-072',
+    id: 'cisa3-072',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Event-driven architecture provides:',
     options: [
       'Tight coupling',
@@ -178,10 +198,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Event-Driven'
   },
   {
-    id: 'CISA3-073',
+    id: 'cisa3-073',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Serverless computing:',
     options: [
       'Requires server management',
@@ -195,10 +217,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Serverless'
   },
   {
-    id: 'CISA3-074',
+    id: 'cisa3-074',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Technical specifications should include:',
     options: [
       'Only business requirements',
@@ -212,10 +236,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Technical Specifications'
   },
   {
-    id: 'CISA3-075',
+    id: 'cisa3-075',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Design patterns help by:',
     options: [
       'Eliminating all design',
@@ -229,10 +255,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Design Patterns'
   },
   {
-    id: 'CISA3-076',
+    id: 'cisa3-076',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Interface design should prioritize:',
     options: [
       'Developer convenience',
@@ -246,10 +274,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'UI Design'
   },
   {
-    id: 'CISA3-077',
+    id: 'cisa3-077',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Accessibility standards (WCAG) ensure:',
     options: [
       'Faster loading',
@@ -263,10 +293,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Accessibility'
   },
   {
-    id: 'CISA3-078',
+    id: 'cisa3-078',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security architecture should be:',
     options: [
       'Added after development',
@@ -280,10 +312,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Security Architecture'
   },
   {
-    id: 'CISA3-079',
+    id: 'cisa3-079',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure Software Development Lifecycle (SSDLC) integrates:',
     options: [
       'Only final testing',
@@ -297,10 +331,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'SSDLC'
   },
   {
-    id: 'CISA3-080',
+    id: 'cisa3-080',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Threat modeling identifies:',
     options: [
       'Only external threats',
@@ -314,10 +350,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Threat Modeling'
   },
   {
-    id: 'CISA3-081',
+    id: 'cisa3-081',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'STRIDE is a threat modeling approach for:',
     options: [
       'Performance analysis',
@@ -331,10 +369,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'STRIDE'
   },
   {
-    id: 'CISA3-082',
+    id: 'cisa3-082',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Attack surface reduction involves:',
     options: [
       'Adding more features',
@@ -348,10 +388,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Attack Surface'
   },
   {
-    id: 'CISA3-083',
+    id: 'cisa3-083',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure defaults mean:',
     options: [
       'Everything is enabled',
@@ -365,10 +407,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Secure Defaults'
   },
   {
-    id: 'CISA3-084',
+    id: 'cisa3-084',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sensitive data handling in development should:',
     options: [
       'Use production data freely',
@@ -382,10 +426,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Data Masking'
   },
   {
-    id: 'CISA3-085',
+    id: 'cisa3-085',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Secrets management ensures:',
     options: [
       'All developers know passwords',
@@ -399,10 +445,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Secrets Management'
   },
   {
-    id: 'CISA3-086',
+    id: 'cisa3-086',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Software Bill of Materials (SBOM) provides:',
     options: [
       'Only cost information',
@@ -416,10 +464,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'SBOM'
   },
   {
-    id: 'CISA3-087',
+    id: 'cisa3-087',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'GitOps methodology:',
     options: [
       'Avoids version control',
@@ -433,10 +483,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'GitOps'
   },
   {
-    id: 'CISA3-088',
+    id: 'cisa3-088',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Pipeline security (DevSecOps) includes:',
     options: [
       'Only deployment controls',
@@ -450,10 +502,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'DevSecOps'
   },
   {
-    id: 'CISA3-089',
+    id: 'cisa3-089',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Rollback procedures should be:',
     options: [
       'Developed after problems occur',
@@ -467,10 +521,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Rollback'
   },
   {
-    id: 'CISA3-091',
+    id: 'cisa3-091',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Change freeze periods:',
     options: [
       'Allow all changes',
@@ -484,10 +540,12 @@ export const CISA3_QUESTIONS_BATCH4: Question[] = [
     subtopic: 'Change Freeze'
   },
   {
-    id: 'CISA3-092',
+    id: 'cisa3-092',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Production readiness reviews verify:',
     options: [
       'Only code completion',

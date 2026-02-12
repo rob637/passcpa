@@ -11,11 +11,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Statute of Limitations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'What is the general statute of limitations for the IRS to assess additional income tax after a return is filed?',
     options: [
       '2 years from the filing date',
@@ -30,11 +32,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Penalties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The failure-to-file penalty is generally what percentage of the unpaid tax for each month or partial month the return is late, up to a maximum of 25%?',
     options: [
       '0.5% per month',
@@ -49,11 +53,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'IRS Collections',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is the correct order of priority for IRS collection actions?',
     options: [
       'Levy, lien, seizure, offset',
@@ -68,11 +74,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Amended Returns',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A taxpayer discovers an error on a previously filed individual income tax return. Which form should be used to file an amended return?',
     options: [
       'Form 1040-X',
@@ -87,11 +95,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Offer in Compromise',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under which of the following bases may the IRS accept an offer in compromise?',
     options: [
       'Doubt as to liability or doubt as to collectibility only',
@@ -106,11 +116,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'IRS Appeals',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'After receiving a 30-day letter from the IRS proposing additional tax, a taxpayer has which of the following options?',
     options: [
       'File a petition with the Tax Court immediately',
@@ -125,11 +137,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Taxpayer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under IRC §6662 applies at what rate to the underpayment of tax attributable to negligence or a substantial understatement?',
     options: [
       '10% of the underpayment',
@@ -144,11 +158,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Innocent Spouse Relief',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To qualify for innocent spouse relief under IRC §6015(b), a requesting spouse must demonstrate all of the following EXCEPT:',
     options: [
       'A joint return was filed with an understatement of tax attributable to erroneous items of the other spouse',
@@ -167,11 +183,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Circular 230',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Treasury Circular 230 governs the practice of which professionals before the IRS?',
     options: [
       'Only CPAs',
@@ -186,11 +204,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner must exercise due diligence in all of the following EXCEPT:',
     options: [
       'Preparing tax returns and other documents',
@@ -205,11 +225,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Return Positions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Circular 230, a practitioner may not sign a tax return unless the practitioner has determined that:',
     options: [
       'The position will more likely than not be sustained on its merits',
@@ -224,11 +246,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Client Conflicts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner who has a conflict of interest in representing a client before the IRS:',
     options: [
       'Must immediately withdraw from the engagement',
@@ -243,11 +267,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice Ethics',
     subtopic: 'Practitioner Sanctions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a potential sanction under Circular 230 for practitioner misconduct?',
     options: [
       'Criminal imprisonment',
@@ -266,11 +292,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-entity-selection',
     topic: 'Entity Selection',
     subtopic: 'Check-the-Box',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the check-the-box regulations, a domestic eligible entity with two or more members is classified as what by default?',
     options: [
       'A corporation',
@@ -285,11 +313,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Eligibility Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following would disqualify a corporation from making an S election?',
     options: [
       'Having 95 shareholders',
@@ -304,11 +334,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-c-corp',
     topic: 'C Corporation Taxation',
     subtopic: 'Dividends Received Deduction',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A C corporation owns 25% of the stock of another domestic corporation and received $100,000 in dividends. What is the dividends received deduction?',
     options: [
       '$50,000',
@@ -327,11 +359,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-formation',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When a partner contributes appreciated property to a partnership in exchange for a partnership interest, what is the general tax consequence to the partner?',
     options: [
       'Gain is recognized equal to the appreciation',
@@ -346,11 +380,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-formation',
     topic: 'Corporate Taxation',
     subtopic: 'Section 351 Formation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Three individuals form a corporation. A contributes property (basis $30,000, FMV $100,000) for 40% stock, B contributes property (basis $60,000, FMV $90,000) for 35% stock, and C contributes services for 25% stock. What is the tax consequence to A?',
     options: [
       'No gain recognized — §351 applies',
@@ -369,11 +405,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Year-End Strategies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A cash-basis taxpayer expecting higher income next year should consider which year-end tax planning strategy?',
     options: [
       'Accelerate income into the current year and defer deductions',
@@ -388,11 +426,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate-planning',
     topic: 'Estate Planning',
     subtopic: 'Annual Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the annual gift tax exclusion amount per donee is:',
     options: [
       '$15,000',
@@ -407,11 +447,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate-planning',
     topic: 'Estate Planning',
     subtopic: 'Stepped-Up Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Property inherited from a decedent generally receives a basis equal to:',
     options: [
       'The decedent\'s adjusted basis (carryover basis)',
@@ -430,11 +472,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual-compliance',
     topic: 'Individual Taxation',
     subtopic: 'Filing Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following taxpayers is generally required to file a federal income tax return for 2025?',
     options: [
       'A single individual under 65 with gross income of $10,000',
@@ -449,11 +493,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Required Minimum Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under SECURE 2.0 Act provisions, what is the required beginning date for required minimum distributions (RMDs) for an individual who turns 73 in 2025?',
     options: [
       'December 31 of the year they turn 73',
@@ -468,11 +514,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth IRA Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer converts $200,000 from a traditional IRA to a Roth IRA. The traditional IRA consists of $150,000 in deductible contributions and earnings, and $50,000 in nondeductible contributions. What amount is included in the taxpayer\'s gross income?',
     options: [
       '$200,000',
@@ -487,11 +535,13 @@ export const TCP_QUESTIONS_DEPTH_1: Question[] = [
   {
     id: 'tcp-d1-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-niit',
     topic: 'Net Investment Income Tax',
     subtopic: 'NIIT Calculation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 3.8% Net Investment Income Tax (NIIT) applies to the lesser of net investment income or the excess of modified AGI over the threshold amount. For a married couple filing jointly, the MAGI threshold is:',
     options: [
       '$200,000',

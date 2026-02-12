@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'far-wc-171',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Intercompany Elimination',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In consolidation, intercompany profit in ending inventory is eliminated by:',
     options: [
       'Ignoring intercompany sales',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'far-wc-172',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-contingencies',
     topic: 'Contingencies',
     subtopic: 'Probable and Estimable',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A loss contingency is accrued when it is:',
     options: [
       'Possible and estimable',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'far-wc-173',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Recognized vs Non-Recognized',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A subsequent event providing evidence about conditions existing at the balance sheet date:',
     options: [
       'Is disclosed only',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'far-wc-174',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Capital Projects Fund',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A capital projects fund is used to account for:',
     options: [
       'Operating activities',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'aud-wc-171',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-documentation',
     topic: 'Documentation',
     subtopic: 'Assembly Deadline',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Audit documentation should be assembled in final audit file within:',
     options: [
       '30 days of report release',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'aud-wc-172',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Deficiency Evaluation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A material weakness in internal control exists when:',
     options: [
       'Any deficiency is identified',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'aud-wc-173',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-attestation',
     topic: 'Attestation',
     subtopic: 'Prospective Financial Information',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An examination of a financial forecast provides:',
     options: [
       'No assurance',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'aud-wc-174',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Revenue Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Revenue testing typically focuses on:',
     options: [
       'Understatement risk',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'reg-wc-171',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-c-corp',
     topic: 'C Corporation',
     subtopic: 'Section 351 Boot',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Section 351 exchange, boot received results in:',
     options: [
       'No gain recognition',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'reg-wc-172',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The foreign tax credit limitation is calculated as:',
     options: [
       'Foreign taxes paid without limit',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'reg-wc-173',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-corporations',
     topic: 'Corporate Law',
     subtopic: 'Piercing Corporate Veil',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Courts may pierce the corporate veil when:',
     options: [
       'The corporation is profitable',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'reg-wc-174',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture 1250',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1250 recapture for real property generally:',
     options: [
       'Recaptures all depreciation as ordinary income',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'bar-wc-202',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Accounts Receivable Turnover',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Days sales outstanding (DSO) is calculated as:',
     options: [
       'Sales / receivables',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'bar-wc-203',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Football Field Chart',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A "football field" valuation chart displays:',
     options: [
       'Only one valuation method',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'bar-wc-204',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Revenue Barter Transactions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Revenue from barter transactions should be measured at:',
     options: [
       'List price of goods exchanged',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'bar-wc-205',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Target costing starts with:',
     options: [
       'Production costs',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'bar-wc-206',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Earnings Persistence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Persistent earnings indicate:',
     options: [
       'One-time gains',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'isc-wc-171',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Portfolio Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT portfolio management involves:',
     options: [
       'Only asset inventory',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'isc-wc-172',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Awareness',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Effective security awareness programs should include:',
     options: [
       'Only annual emails',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'isc-wc-173',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Containerization',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Container technology (e.g., Docker) differs from virtual machines in that:',
     options: [
       'Containers require hypervisor',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'isc-wc-174',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Backup Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Regular backup testing should verify:',
     options: [
       'Only that backups complete',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'tcp-wc-171',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Passive Activity Material Participation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Material participation in an activity for individual partners/S corp shareholders requires meeting tests such as:',
     options: [
       'Any involvement',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'tcp-wc-172',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Retirement Distribution Taxation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Distributions from traditional IRAs are taxed as:',
     options: [
       'Capital gains',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'tcp-wc-173',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Net Unrealized Appreciation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Net Unrealized Appreciation (NUA) strategy allows:',
     options: [
       'Tax-free distributions',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_34: Question[] = [
   {
     id: 'tcp-wc-174',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Private Letter Rulings',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A private letter ruling (PLR):',
     options: [
       'Is binding on all taxpayers',

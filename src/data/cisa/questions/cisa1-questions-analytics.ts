@@ -11,10 +11,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
   // CAATS QUESTIONS
   // ============================================================================
   {
-    id: 'CISA1-DA-001',
+    id: 'cisa1-da-001',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY advantage of using generalized audit software (GAS) is:',
     options: [
       'Reduced audit costs',
@@ -28,10 +30,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'GAS'
   },
   {
-    id: 'CISA1-DA-002',
+    id: 'cisa1-da-002',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor wants to verify that application controls are functioning correctly. Which CAAT would BEST accomplish this?',
     options: [
       'Generalized audit software',
@@ -45,10 +49,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Test Data'
   },
   {
-    id: 'CISA1-DA-003',
+    id: 'cisa1-da-003',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Integrated Test Facility (ITF) is BEST described as:',
     options: [
       'A separate test environment',
@@ -62,10 +68,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'ITF'
   },
   {
-    id: 'CISA1-DA-004',
+    id: 'cisa1-da-004',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Parallel simulation involves:',
     options: [
       'Running two applications simultaneously',
@@ -79,10 +87,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Parallel Simulation'
   },
   {
-    id: 'CISA1-DA-005',
+    id: 'cisa1-da-005',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Embedded audit modules are BEST suited for:',
     options: [
       'One-time audit testing',
@@ -96,10 +106,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Embedded Modules'
   },
   {
-    id: 'CISA1-DA-006',
+    id: 'cisa1-da-006',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The GREATEST risk of using an Integrated Test Facility is:',
     options: [
       'High implementation cost',
@@ -117,10 +129,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
   // DATA ANALYTICS QUESTIONS
   // ============================================================================
   {
-    id: 'CISA1-DA-007',
+    id: 'cisa1-da-007',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Benford\'s Law analysis is MOST useful for detecting:',
     options: [
       'Missing transactions',
@@ -134,10 +148,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Benford\'s Law'
   },
   {
-    id: 'CISA1-DA-008',
+    id: 'cisa1-da-008',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gap analysis in audit data analytics is used to identify:',
     options: [
       'Control weaknesses',
@@ -151,10 +167,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Gap Analysis'
   },
   {
-    id: 'CISA1-DA-009',
+    id: 'cisa1-da-009',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY difference between continuous auditing and continuous monitoring is:',
     options: [
       'Continuous auditing is always real-time',
@@ -168,10 +186,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Continuous Auditing'
   },
   {
-    id: 'CISA1-DA-010',
+    id: 'cisa1-da-010',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which analytics maturity level answers "What will happen?"',
     options: [
       'Descriptive',
@@ -185,10 +205,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Analytics Maturity'
   },
   {
-    id: 'CISA1-DA-011',
+    id: 'cisa1-da-011',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When implementing audit data analytics, the FIRST step should be:',
     options: [
       'Selecting analytics tools',
@@ -202,10 +224,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Analytics Implementation'
   },
   {
-    id: 'CISA1-DA-012',
+    id: 'cisa1-da-012',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Stratification analysis in auditing helps to:',
     options: [
       'Encrypt sensitive data',
@@ -219,10 +243,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Stratification'
   },
   {
-    id: 'CISA1-DA-013',
+    id: 'cisa1-da-013',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor using data analytics notices that 15% of vendor payments have round dollar amounts. This finding MOST likely indicates:',
     options: [
       'Normal business practice',
@@ -236,10 +262,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Fraud Indicators'
   },
   {
-    id: 'CISA1-DA-014',
+    id: 'cisa1-da-014',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Three-way matching analytics compares:',
     options: [
       'Budget, actual, and variance',
@@ -253,10 +281,12 @@ export const CISA1_QUESTIONS_ANALYTICS: Question[] = [
     subtopic: 'Matching Analytics'
   },
   {
-    id: 'CISA1-DA-015',
+    id: 'cisa1-da-015',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data visualization in auditing is MOST valuable for:',
     options: [
       'Replacing statistical analysis',

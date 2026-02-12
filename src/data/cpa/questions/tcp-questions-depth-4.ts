@@ -10,11 +10,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Unified Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the basic exclusion amount (unified credit equivalent) for estate and gift tax purposes is approximately:',
     options: [
       '$5.49 million',
@@ -29,11 +31,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-gift',
     topic: 'Estate and Gift Tax',
     subtopic: 'Annual Gift Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the annual gift tax exclusion is:',
     options: [
       '$15,000 per donee',
@@ -48,11 +52,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Portability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'To elect portability of the deceased spouse\'s unused exclusion amount (DSUE), the executor of the first spouse\'s estate must:',
     options: [
       'File a portability election form with the state court',
@@ -67,11 +73,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Generation-Skipping Transfer Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The generation-skipping transfer (GST) tax applies to transfers that skip a generation. Which of the following is a "direct skip"?',
     options: [
       'A transfer to a trust for the benefit of the transferor\'s children',
@@ -86,11 +94,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Valuation Discounts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer gifts a 30% limited partnership interest in a family limited partnership holding appreciated real estate. For gift tax valuation purposes, the interest is most likely to receive:',
     options: [
       'A premium over pro-rata net asset value',
@@ -109,11 +119,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Eligibility Requirements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following would disqualify a corporation from S corporation status?',
     options: [
       'Having 80 shareholders',
@@ -128,11 +140,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Shareholder Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation shareholder\'s stock basis is increased by which of the following?',
     options: [
       'Nondeductible expenses paid by the S corporation',
@@ -147,11 +161,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation with assets having $500,000 of built-in gain elects S corporation status. If the S corporation sells those assets within the recognition period, the built-in gains tax is imposed at:',
     options: [
       'The individual shareholder\'s marginal rate',
@@ -166,11 +182,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-s-corp',
     topic: 'S Corporation Taxation',
     subtopic: 'Reasonable Compensation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A single-member S corporation has net income of $200,000. The shareholder-employee takes $50,000 in salary and $150,000 as distributions. The IRS would most likely challenge this arrangement because:',
     options: [
       'S corporations cannot pay distributions',
@@ -189,11 +207,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Due Diligence',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Treasury Circular 230 §10.22, a practitioner must exercise due diligence in:',
     options: [
       'Preparing and filing tax returns only',
@@ -208,11 +228,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Circular 230 — Sanctions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Sanctions for violating Circular 230 may include all of the following EXCEPT:',
     options: [
       'Private reprimand (censure)',
@@ -227,11 +249,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Tax Return Positions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under IRC §6694(a), a paid tax return preparer is subject to penalty for an undisclosed position unless:',
     options: [
       'The position has a greater than 10% chance of being sustained',
@@ -250,11 +274,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-penalties',
     topic: 'Tax Practice',
     subtopic: 'Statute of Limitations',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The general statute of limitations for the IRS to assess additional tax is:',
     options: [
       '2 years from the date the return was filed',
@@ -269,11 +295,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-penalties',
     topic: 'Tax Practice',
     subtopic: 'Accuracy-Related Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The accuracy-related penalty under IRC §6662 is imposed at what rate on the underpayment of tax?',
     options: [
       '10%',
@@ -288,11 +316,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-penalties',
     topic: 'Tax Practice',
     subtopic: 'Fraud Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The civil fraud penalty under IRC §6663 is what percentage of the portion of the underpayment attributable to fraud?',
     options: [
       '20%',
@@ -311,11 +341,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a §1031 like-kind exchange of real property, "boot" (non-like-kind property received) is taxable. If a taxpayer exchanges a building (basis $200,000, FMV $300,000) for a replacement building (FMV $250,000) plus $50,000 cash, the recognized gain is:',
     options: [
       '$0',
@@ -330,11 +362,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An individual sells real estate (basis $100,000) for $400,000 and receives $100,000 down plus three annual payments of $100,000. The gross profit percentage for installment sale reporting is:',
     options: [
       '25%',
@@ -349,11 +383,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 121 Exclusion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under §121, a single taxpayer who has owned and used a home as a principal residence for at least 2 of the last 5 years may exclude up to how much gain on the sale?',
     options: [
       '$125,000',
@@ -368,11 +404,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sale Rule',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the wash sale rule, a loss on the sale of stock is disallowed if substantially identical stock is purchased within:',
     options: [
       '30 days after the sale only',
@@ -391,11 +429,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets — §751',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a partner sells a partnership interest, §751 requires the selling partner to recognize ordinary income to the extent the gain is attributable to:',
     options: [
       'Goodwill and going-concern value',
@@ -410,11 +450,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Guaranteed payments to a partner are treated as:',
     options: [
       'Distributions that reduce the partner\'s capital account',
@@ -433,11 +475,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Child Tax Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the maximum child tax credit per qualifying child under age 17 is:',
     options: [
       '$1,000',
@@ -452,11 +496,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Earned Income Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is NOT a requirement for claiming the earned income tax credit (EITC)?',
     options: [
       'The taxpayer must have earned income',
@@ -471,11 +517,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Education Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The American Opportunity Tax Credit (AOTC) provides a maximum credit of $2,500 per eligible student. How much of this credit is refundable?',
     options: [
       'None — the full credit is nonrefundable',
@@ -490,11 +538,13 @@ export const TCP_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'tcp-d4-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-VI',
     topicId: 'tcp-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Taxpayer Penalties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The penalty for failure to file a tax return under §6651(a)(1) is:',
     options: [
       '0.5% per month of the tax due, up to 25%',

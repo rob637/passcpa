@@ -8,6 +8,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Home Office Deduction',
@@ -28,6 +29,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Rental Real Estate',
@@ -48,6 +50,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Cryptocurrency Taxation',
@@ -68,6 +71,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
@@ -88,6 +92,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-005',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Stock Redemptions',
@@ -108,6 +113,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-006',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation',
     subtopic: 'Reasonable Compensation',
@@ -128,6 +134,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-007',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation',
     subtopic: 'Loss Limitations Ordering',
@@ -148,6 +155,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-008',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
@@ -168,6 +176,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-009',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Nonrecourse Debt Allocation',
@@ -188,6 +197,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-010',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 179 Limitations',
@@ -208,6 +218,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-011',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange Boot',
@@ -228,6 +239,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-012',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FDII Deduction',
@@ -248,6 +260,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-013',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Treaty Benefits',
@@ -268,6 +281,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-014',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'NUA Treatment',
@@ -288,6 +302,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-015',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate & Gift Tax',
     subtopic: 'Portability',
@@ -308,6 +323,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-016',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate & Gift Tax',
     subtopic: 'Valuation Discounts',
@@ -328,6 +344,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-017',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Section 338 Election',
@@ -348,6 +365,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-018',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-qbi',
     topic: 'Qualified Business Income',
     subtopic: 'Aggregation Rules',
@@ -368,6 +386,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-019',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Charitable Remainder Trust',
@@ -388,6 +407,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-020',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Required Minimum Distributions',
@@ -408,6 +428,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-021',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-credits',
     topic: 'Tax Credits',
     subtopic: 'Employee Retention Credit',
@@ -428,6 +449,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-022',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'PFIC Taxation',
@@ -448,6 +470,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-023',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
@@ -468,6 +491,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-024',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Carried Interest',
@@ -488,6 +512,7 @@ export const TCP_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'tcp-mast-025',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-procedures',
     topic: 'Tax Procedures',
     subtopic: 'Voluntary Disclosure',

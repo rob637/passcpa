@@ -9,11 +9,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 96 — Subscription-Based IT Arrangements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GASB 96, a government that enters into a subscription-based information technology arrangement (SBITA) recognizes:',
     options: [
       'Only a periodic subscription expense',
@@ -30,11 +32,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Conditional Grants — ASU 2018-08',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASU 2018-08, a government grant to a not-for-profit is recognized as revenue when:',
     options: [
       'The grant agreement is signed',
@@ -51,11 +55,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-revenue-disclosure',
     topic: 'Financial Reporting',
     subtopic: 'ASC 606 — Revenue Disaggregation Disclosure',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 606, entities must disclose revenue disaggregated into categories that depict:',
     options: [
       'Only total revenue for the period',
@@ -72,11 +78,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'The Financial Reporting Entity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A primary government is defined as:',
     options: [
       'Any government entity receiving federal funds',
@@ -93,11 +101,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Classification of Debt Securities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 320, debt securities classified as "held-to-maturity" are reported at:',
     options: [
       'Fair value with changes in net income',
@@ -114,11 +124,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-nonmonetary',
     topic: 'Select Transactions',
     subtopic: 'ASC 845 — Nonmonetary Exchanges',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 845, a nonmonetary exchange has commercial substance if:',
     options: [
       'Both parties are commercial entities',
@@ -135,11 +147,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 91 — Conduit Debt Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 91, a government issuer of conduit debt (debt issued on behalf of a third party):',
     options: [
       'Always records the debt as its own liability',
@@ -156,11 +170,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Permanent Fund',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A permanent fund in governmental accounting is used to:',
     options: [
       'Record all permanent employees\' salaries',
@@ -177,11 +193,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-disclosures',
     topic: 'Financial Reporting',
     subtopic: 'ASC 275 — Risks and Uncertainties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'ASC 275 requires disclosure of:',
     options: [
       'Only lawsuits',
@@ -198,11 +216,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-receivables',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Factoring/Transfer of Receivables',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 860, a transfer of receivables (factoring) is accounted for as a sale when:',
     options: [
       'Any receivable is sold to a factor',
@@ -219,11 +239,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-rd',
     topic: 'Select Transactions',
     subtopic: 'ASC 730 — Research and Development Costs',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 730, research and development (R&D) costs are generally:',
     options: [
       'Capitalized as an intangible asset',
@@ -240,11 +262,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'The General Fund',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The General Fund of a governmental entity:',
     options: [
       'Is optional',
@@ -261,11 +285,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit Accounting',
     subtopic: 'Works of Art and Historical Treasures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 958, an NFP that receives a donated collection item (art, historical artifact) may:',
     options: [
       'Always capitalize it as an asset',
@@ -282,11 +308,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 101 — Compensated Absences',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under GASB 101, a government recognizes a liability for compensated absences (vacation, sick leave) when:',
     options: [
       'Only at employee termination',
@@ -303,11 +331,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-nci',
     topic: 'Financial Reporting',
     subtopic: 'ASC 810 — Noncontrolling Interest Presentation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'On consolidated financial statements, noncontrolling interest (NCI) is reported as:',
     options: [
       'A liability',
@@ -324,11 +354,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-warranties',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Warranties — Assurance vs. Service-Type',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 606, the distinction between an assurance-type warranty and a service-type warranty determines:',
     options: [
       'The length of the warranty period',
@@ -345,11 +377,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-debt-modifications',
     topic: 'Select Transactions',
     subtopic: 'Debt Extinguishment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a debtor extinguishes debt before maturity by paying cash, the difference between the cash paid and the carrying amount of the debt is:',
     options: [
       'Always deferred and amortized',
@@ -366,11 +400,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt-concepts',
     topic: 'Government Concepts',
     subtopic: 'Special Assessment Debt',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a government issues special assessment debt (bonds where property owners pay special charges to fund improvements that benefit their properties):',
     options: [
       'The debt is always reported on the government\'s balance sheet',
@@ -387,11 +423,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-software',
     topic: 'Select Financial Statement Accounts',
     subtopic: 'Internal-Use Software — ASC 350-40',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 350-40, costs of internal-use software are capitalized during:',
     options: [
       'All phases of development',
@@ -408,11 +446,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VI',
     topicId: 'far-loan-impairment',
     topic: 'Transactions',
     subtopic: 'Individually Assessed Loan Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 326, when a creditor individually assesses a financial asset for expected credit losses, the allowance is based on:',
     options: [
       'Simply writing off the entire loan',
@@ -429,11 +469,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-discontinued',
     topic: 'Financial Reporting',
     subtopic: 'ASC 205-20 — Discontinued Operations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 205-20 (ASU 2014-08), a disposal qualifies as a discontinued operation when the component:',
     options: [
       'Is any asset group sold',
@@ -450,11 +492,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-govt',
     topic: 'Governmental Accounting',
     subtopic: 'Property Tax Revenue Recognition',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city levies property taxes of $5,000,000. It estimates 3% will be uncollectible. Of the collectible amount, 95% is expected to be collected within 60 days of year-end. The property tax revenue recognized for the year is:',
     options: [
       '$5,000,000',
@@ -471,11 +515,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-software-sold',
     topic: 'Select Transactions',
     subtopic: 'ASC 985-20 — Software to Be Sold',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 985-20, costs of developing computer software to be sold, leased, or marketed are capitalized beginning when:',
     options: [
       'The project is initiated',
@@ -492,11 +538,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     topicId: 'far-govt-reporting',
     topic: 'State and Local Government',
     subtopic: 'GASB 49 — Pollution Remediation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under GASB 49, a government recognizes a liability for pollution remediation when one of five obligating events occurs. An example of an obligating event is:',
     options: [
       'Any property purchase',
@@ -513,11 +561,13 @@ export const FAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'far-d4-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Financial Reporting',
     subtopic: 'GAAP vs. IFRS — Key Differences',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'One significant difference between U.S. GAAP and IFRS is that IFRS:',
     options: [
       'Requires LIFO inventory method',

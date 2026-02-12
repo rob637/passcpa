@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA5_QUESTIONS_BATCH6: Question[] = [
   {
-    id: 'CISA5-123',
+    id: 'cisa5-123',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Identity and Access Management (IAM) lifecycle includes:',
     options: [
       'Only account creation',
@@ -25,10 +27,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'IAM Lifecycle'
   },
   {
-    id: 'CISA5-124',
+    id: 'cisa5-124',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Access certification reviews should:',
     options: [
       'Be IT-owned',
@@ -42,10 +46,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Certification'
   },
   {
-    id: 'CISA5-125',
+    id: 'cisa5-125',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Birthright access refers to:',
     options: [
       'Inherited permissions',
@@ -59,10 +65,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Birthright Access'
   },
   {
-    id: 'CISA5-126',
+    id: 'cisa5-126',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Access request approval workflow should require:',
     options: [
       'IT approval only',
@@ -76,10 +84,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Approval Workflow'
   },
   {
-    id: 'CISA5-127',
+    id: 'cisa5-127',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Emergency access procedures should include:',
     options: [
       'Unlimited access',
@@ -93,10 +103,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Emergency Access'
   },
   {
-    id: 'CISA5-128',
+    id: 'cisa5-128',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Service accounts should have:',
     options: [
       'Interactive login enabled',
@@ -110,10 +122,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Service Accounts'
   },
   {
-    id: 'CISA5-129',
+    id: 'cisa5-129',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged access management (PAM) solutions provide:',
     options: [
       'Only password storage',
@@ -127,10 +141,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'PAM'
   },
   {
-    id: 'CISA5-130',
+    id: 'cisa5-130',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Biometric authentication advantages include:',
     options: [
       'Cannot be bypassed',
@@ -144,10 +160,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Biometrics'
   },
   {
-    id: 'CISA5-131',
+    id: 'cisa5-131',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'False acceptance rate (FAR) in biometrics:',
     options: [
       'Should be high',
@@ -161,10 +179,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'FAR'
   },
   {
-    id: 'CISA5-132',
+    id: 'cisa5-132',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'FIDO2/WebAuthn authentication:',
     options: [
       'Uses passwords',
@@ -178,10 +198,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'FIDO2'
   },
   {
-    id: 'CISA5-133',
+    id: 'cisa5-133',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Context-aware authentication considers:',
     options: [
       'Only password',
@@ -195,10 +217,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Contextual'
   },
   {
-    id: 'CISA5-134',
+    id: 'cisa5-134',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Step-up authentication requires:',
     options: [
       'Lower authentication for all access',
@@ -212,10 +236,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Step-Up'
   },
   {
-    id: 'CISA5-135',
+    id: 'cisa5-135',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Encryption key hierarchy typically includes:',
     options: [
       'Single key for all data',
@@ -229,10 +255,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Key Hierarchy'
   },
   {
-    id: 'CISA5-136',
+    id: 'cisa5-136',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Encryption at rest protects:',
     options: [
       'Network traffic',
@@ -246,10 +274,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Encryption at Rest'
   },
   {
-    id: 'CISA5-137',
+    id: 'cisa5-137',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Transport Layer Security (TLS) provides:',
     options: [
       'Only encryption',
@@ -263,10 +293,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'TLS'
   },
   {
-    id: 'CISA5-139',
+    id: 'cisa5-139',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Firewall rule review should verify:',
     options: [
       'Only syntax',
@@ -280,10 +312,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Firewall Review'
   },
   {
-    id: 'CISA5-140',
+    id: 'cisa5-140',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Intrusion Detection Systems (IDS) detect:',
     options: [
       'All attacks',
@@ -297,10 +331,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'IDS'
   },
   {
-    id: 'CISA5-141',
+    id: 'cisa5-141',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Next-generation firewalls (NGFW) add:',
     options: [
       'Only speed',
@@ -314,10 +350,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'NGFW'
   },
   {
-    id: 'CISA5-142',
+    id: 'cisa5-142',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Web Application Firewalls (WAF) protect against:',
     options: [
       'Network attacks only',
@@ -331,10 +369,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'WAF'
   },
   {
-    id: 'CISA5-143',
+    id: 'cisa5-143',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'VPN split tunneling:',
     options: [
       'Increases security',
@@ -348,10 +388,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'VPN'
   },
   {
-    id: 'CISA5-144',
+    id: 'cisa5-144',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DNS security extensions (DNSSEC):',
     options: [
       'Encrypt DNS queries',
@@ -365,10 +407,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'DNSSEC'
   },
   {
-    id: 'CISA5-145',
+    id: 'cisa5-145',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network Access Control (NAC) verifies:',
     options: [
       'Only identity',
@@ -382,10 +426,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'NAC'
   },
   {
-    id: 'CISA5-146',
+    id: 'cisa5-146',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Wireless security requires:',
     options: [
       'Only passwords',
@@ -399,10 +445,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Wireless'
   },
   {
-    id: 'CISA5-147',
+    id: 'cisa5-147',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Supply chain security for software should verify:',
     options: [
       'Only vendor reputation',
@@ -416,10 +464,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Supply Chain'
   },
   {
-    id: 'CISA5-148',
+    id: 'cisa5-148',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security metrics should be:',
     options: [
       'As numerous as possible',
@@ -433,10 +483,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Metrics'
   },
   {
-    id: 'CISA5-149',
+    id: 'cisa5-149',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security control framework mapping:',
     options: [
       'Is unnecessary',
@@ -450,10 +502,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Framework Mapping'
   },
   {
-    id: 'CISA5-150',
+    id: 'cisa5-150',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security by obscurity:',
     options: [
       'Is sufficient for protection',
@@ -467,10 +521,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Security by Obscurity'
   },
   {
-    id: 'CISA5-151',
+    id: 'cisa5-151',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Insider threat programs should include:',
     options: [
       'Only monitoring',
@@ -484,10 +540,12 @@ export const CISA5_QUESTIONS_BATCH6: Question[] = [
     subtopic: 'Insider Threat'
   },
   {
-    id: 'CISA5-152',
+    id: 'cisa5-152',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Security culture development requires:',
     options: [
       'Policies only',

@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA1_QUESTIONS_BATCH3: Question[] = [
   {
-    id: 'CISA1-033',
+    id: 'cisa1-033',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an IS auditor discovers fraud during an audit, the FIRST action should be to:',
     options: [
       'Confront the suspected individual',
@@ -25,10 +27,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Fraud Response'
   },
   {
-    id: 'CISA1-034',
+    id: 'cisa1-034',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of an audit trail is to:',
     options: [
       'Improve system performance',
@@ -42,10 +46,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Purpose'
   },
   {
-    id: 'CISA1-035',
+    id: 'cisa1-035',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which type of audit opinion indicates material departures from standards?',
     options: [
       'Unqualified opinion',
@@ -59,10 +65,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Audit Opinions'
   },
   {
-    id: 'CISA1-036',
+    id: 'cisa1-036',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An adverse audit opinion is issued when:',
     options: [
       'Minor issues exist',
@@ -76,10 +84,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Adverse Opinion'
   },
   {
-    id: 'CISA1-037',
+    id: 'cisa1-037',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Continuous auditing provides:',
     options: [
       'Less frequent audits',
@@ -93,10 +103,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Continuous Auditing'
   },
   {
-    id: 'CISA1-038',
+    id: 'cisa1-038',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Integrated test facility (ITF) involves:',
     options: [
       'Testing in a separate environment',
@@ -110,10 +122,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'ITF'
   },
   {
-    id: 'CISA1-039',
+    id: 'cisa1-039',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parallel simulation involves:',
     options: [
       'Running two systems simultaneously',
@@ -127,10 +141,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Parallel Simulation'
   },
   {
-    id: 'CISA1-040',
+    id: 'cisa1-040',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Snapshot technique captures:',
     options: [
       'Only error transactions',
@@ -144,10 +160,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Snapshot'
   },
   {
-    id: 'CISA1-041',
+    id: 'cisa1-041',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When planning an audit of a service organization, an IS auditor should:',
     options: [
       'Ignore the service organization',
@@ -161,10 +179,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SOC Reports'
   },
   {
-    id: 'CISA1-042',
+    id: 'cisa1-042',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SOC 1 reports focus on:',
     options: [
       'Security and availability',
@@ -178,10 +198,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SOC 1'
   },
   {
-    id: 'CISA1-043',
+    id: 'cisa1-043',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'SOC 2 reports address:',
     options: [
       'Financial statement controls only',
@@ -195,10 +217,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SOC 2'
   },
   {
-    id: 'CISA1-044',
+    id: 'cisa1-044',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Type II SOC reports differ from Type I in that they:',
     options: [
       'Are shorter',
@@ -212,10 +236,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'SOC Report Types'
   },
   {
-    id: 'CISA1-045',
+    id: 'cisa1-045',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT general controls, an IS auditor should focus on:',
     options: [
       'Individual transaction controls',
@@ -229,10 +255,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'IT General Controls'
   },
   {
-    id: 'CISA1-046',
+    id: 'cisa1-046',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Application controls are designed to ensure:',
     options: [
       'IT infrastructure reliability',
@@ -246,10 +274,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Application Controls'
   },
   {
-    id: 'CISA1-047',
+    id: 'cisa1-047',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Input controls verify:',
     options: [
       'Output accuracy',
@@ -263,10 +293,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Input Controls'
   },
   {
-    id: 'CISA1-048',
+    id: 'cisa1-048',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Processing controls ensure:',
     options: [
       'Input accuracy',
@@ -280,10 +312,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Processing Controls'
   },
   {
-    id: 'CISA1-049',
+    id: 'cisa1-049',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hash totals are used to:',
     options: [
       'Encrypt data',
@@ -297,10 +331,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Hash Totals'
   },
   {
-    id: 'CISA1-050',
+    id: 'cisa1-050',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Limit checks verify that:',
     options: [
       'All fields are completed',
@@ -314,10 +350,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Validation Controls'
   },
   {
-    id: 'CISA1-051',
+    id: 'cisa1-051',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Check digits detect errors in:',
     options: [
       'Amounts',
@@ -331,10 +369,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Check Digits'
   },
   {
-    id: 'CISA1-052',
+    id: 'cisa1-052',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST reliable audit evidence is obtained from:',
     options: [
       'Inquiry of auditee personnel',
@@ -348,10 +388,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Evidence Reliability'
   },
   {
-    id: 'CISA1-053',
+    id: 'cisa1-053',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit working papers should be:',
     options: [
       'Discarded after the audit',
@@ -365,10 +407,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Working Papers'
   },
   {
-    id: 'CISA1-054',
+    id: 'cisa1-054',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Materiality in IS auditing considers:',
     options: [
       'Only financial amounts',
@@ -382,10 +426,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Materiality'
   },
   {
-    id: 'CISA1-055',
+    id: 'cisa1-055',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Inherent risk represents the risk that:',
     options: [
       'Controls will fail',
@@ -399,10 +445,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Inherent Risk'
   },
   {
-    id: 'CISA1-056',
+    id: 'cisa1-056',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Control risk represents the risk that:',
     options: [
       'Controls will prevent errors',
@@ -416,10 +464,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Control Risk'
   },
   {
-    id: 'CISA1-057',
+    id: 'cisa1-057',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Detection risk is the risk that:',
     options: [
       'Controls will fail',
@@ -433,10 +483,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Detection Risk'
   },
   {
-    id: 'CISA1-058',
+    id: 'cisa1-058',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor\'s competence is demonstrated through:',
     options: [
       'Length of employment',
@@ -450,10 +502,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Competence'
   },
   {
-    id: 'CISA1-059',
+    id: 'cisa1-059',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Professional skepticism requires an auditor to:',
     options: [
       'Trust all management statements',
@@ -467,10 +521,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Skepticism'
   },
   {
-    id: 'CISA1-060',
+    id: 'cisa1-060',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Quality assurance for the audit function should include:',
     options: [
       'Only supervisory review',
@@ -484,10 +540,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Quality Assurance'
   },
   {
-    id: 'CISA1-061',
+    id: 'cisa1-061',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY reason for documenting audit procedures is to:',
     options: [
       'Satisfy regulatory requirements',
@@ -501,10 +559,12 @@ export const CISA1_QUESTIONS_BATCH3: Question[] = [
     subtopic: 'Purpose'
   },
   {
-    id: 'CISA1-062',
+    id: 'cisa1-062',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit follow-up ensures that:',
     options: [
       'Audits are completed on time',

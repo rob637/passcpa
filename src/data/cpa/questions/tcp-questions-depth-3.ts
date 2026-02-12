@@ -10,11 +10,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Foreign Tax Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A U.S. citizen working abroad earns $180,000 in foreign wages and pays $36,000 in foreign income taxes. For 2025, the maximum foreign earned income exclusion is approximately $130,000. If the taxpayer elects the exclusion, the foreign tax credit is computed on:',
     options: [
       'The full $36,000 of foreign taxes paid',
@@ -29,11 +31,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FBAR Reporting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A U.S. person must file an FBAR (FinCEN Report 114) if the aggregate value of all foreign financial accounts exceeded what threshold at any time during the calendar year?',
     options: [
       '$5,000',
@@ -48,11 +52,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'FATCA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under FATCA (Form 8938), a single taxpayer living in the U.S. must report specified foreign financial assets if the total value exceeds:',
     options: [
       '$10,000 at any time during the year',
@@ -67,11 +73,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-international',
     topic: 'International Taxation',
     subtopic: 'Controlled Foreign Corporations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under IRC §951A, a U.S. shareholder of a controlled foreign corporation (CFC) must include in gross income their global intangible low-taxed income (GILTI). GILTI is computed as:',
     options: [
       'All foreign income of the CFC',
@@ -90,11 +98,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-qbi',
     topic: 'Qualified Business Income',
     subtopic: 'Section 199A Basics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The qualified business income (QBI) deduction under Section 199A allows eligible taxpayers to deduct up to what percentage of qualified business income?',
     options: [
       '10%',
@@ -109,11 +119,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-qbi',
     topic: 'Qualified Business Income',
     subtopic: 'SSTB Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A CPA firm (specified service trade or business) has QBI of $500,000. The sole owner\'s taxable income before the QBI deduction is $450,000 (filing jointly). What is the QBI deduction?',
     options: [
       '$100,000 (20% of QBI)',
@@ -128,11 +140,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-qbi',
     topic: 'Qualified Business Income',
     subtopic: 'W-2/Capital Limitation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For taxpayers above the taxable income threshold, the QBI deduction for a non-SSTB is limited to the greater of:',
     options: [
       '50% of W-2 wages, or 25% of W-2 wages plus 2.5% of the unadjusted basis of qualified property',
@@ -151,11 +165,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: '401(k) Contribution Limits',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the maximum elective deferral to a 401(k) plan for an employee under age 50 is:',
     options: [
       '$20,500',
@@ -170,11 +186,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Roth IRA Eligibility',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, the MAGI phase-out range for Roth IRA contributions for married filing jointly is:',
     options: [
       '$150,000 - $160,000',
@@ -189,11 +207,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'SEP IRA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A self-employed individual has net self-employment income of $200,000 (after the self-employment tax deduction). What is the maximum SEP-IRA contribution?',
     options: [
       '$23,500',
@@ -208,11 +228,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-retirement',
     topic: 'Retirement Planning',
     subtopic: 'Early Distribution Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following distributions from a traditional IRA before age 59½ is exempt from the 10% early distribution penalty?',
     options: [
       'Distribution to purchase a new car',
@@ -231,11 +253,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Stock Options — ISO',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An employee exercises an incentive stock option (ISO) and holds the stock. At exercise, the stock FMV is $50 and the option price is $20. For regular tax purposes, what is the tax consequence at exercise?',
     options: [
       '$30 per share ordinary income',
@@ -250,11 +274,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Stock Options — NQSO',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An employee exercises a nonqualified stock option (NQSO) when the stock FMV is $80 and the exercise price is $30. What are the tax consequences at exercise?',
     options: [
       'No tax consequence until the stock is sold',
@@ -269,11 +295,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-compensation',
     topic: 'Compensation Planning',
     subtopic: 'Section 83(b) Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An employee receives restricted stock with a FMV of $100,000 subject to a 3-year vesting requirement. The employee files a §83(b) election within 30 days. What is the immediate tax consequence?',
     options: [
       'No tax until the stock vests in 3 years',
@@ -292,11 +320,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-c-corp',
     topic: 'C Corporation Taxation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax under IRC §531 is imposed at what rate on accumulated taxable income beyond reasonable business needs?',
     options: [
       '15%',
@@ -311,11 +341,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-c-corp',
     topic: 'C Corporation Taxation',
     subtopic: 'Personal Holding Company',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A corporation is classified as a personal holding company (PHC) if it meets both the stock ownership test and the income test. The income test requires that what percentage of adjusted ordinary gross income consists of PHC income?',
     options: [
       'More than 50%',
@@ -334,11 +366,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For a special allocation of partnership income or loss to be respected for tax purposes, it must:',
     options: [
       'Be agreed upon by all partners in writing',
@@ -353,11 +387,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-partnerships',
     topic: 'Partnership Taxation',
     subtopic: 'Section 754 Election',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a partnership makes a §754 election and a partner purchases an interest from an existing partner, what adjustment is made?',
     options: [
       'The partnership\'s inside basis in all assets is stepped up to FMV',
@@ -376,11 +412,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Forums for Tax Disputes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In which forum can a taxpayer challenge a tax deficiency WITHOUT first paying the disputed tax?',
     options: [
       'U.S. District Court',
@@ -395,11 +433,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-V',
     topicId: 'tcp-practice-procedures',
     topic: 'Tax Practice',
     subtopic: 'Audit Selection',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IRS uses which scoring system to identify individual returns with the highest likelihood of significant tax changes?',
     options: [
       'Discriminant Information Function (DIF) score',
@@ -418,11 +458,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-trusts',
     topic: 'Trust Taxation',
     subtopic: 'Simple vs Complex Trusts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A simple trust is required to:',
     options: [
       'Distribute all income currently, cannot make charitable contributions, and cannot distribute corpus',
@@ -437,11 +479,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-trusts',
     topic: 'Trust Taxation',
     subtopic: 'Compressed Tax Brackets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, trusts and estates reach the highest marginal tax rate (37%) at approximately what taxable income level?',
     options: [
       '$15,200',
@@ -460,11 +504,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-se-tax',
     topic: 'Individual Taxation',
     subtopic: 'Self-Employment Tax',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Self-employment tax for 2025 consists of:',
     options: [
       '15.3% on all net self-employment income with no cap',
@@ -479,11 +525,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-amt',
     topic: 'Individual Tax Planning',
     subtopic: 'Alternative Minimum Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The AMT exemption amount for a married filing jointly taxpayer for 2025 is approximately:',
     options: [
       '$85,700',
@@ -498,11 +546,13 @@ export const TCP_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'tcp-d3-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1250 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer sells a commercial building for $800,000. The original cost was $600,000, accumulated straight-line depreciation is $150,000, and the adjusted basis is $450,000. What is the maximum tax rate on the gain attributable to the depreciation?',
     options: [
       '0% — depreciation recapture does not apply to real property',

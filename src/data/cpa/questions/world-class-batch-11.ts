@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'far-wc-079',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An investor owns 30% of an investee acquired for $300,000. The investee reports net income of $100,000 and pays dividends of $40,000. What is the carrying value of the investment at year-end?',
     options: [
       '$300,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'far-wc-080',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Diluted EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Basic EPS is $2.00. Convertible bonds would add $15,000 to income (after-tax) and 10,000 shares if converted. What is diluted EPS if 100,000 shares are outstanding?',
     options: [
       '$1.95',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'far-wc-081',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under modified accrual accounting, revenues are recognized when they are:',
     options: [
       'Earned',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'far-wc-082',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-concepts',
     topic: 'Conceptual Framework',
     subtopic: 'Going Concern',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Management\'s evaluation of going concern should cover at least:',
     options: [
       '6 months from the balance sheet date',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'aud-wc-079',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Material Weakness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A material weakness in ICFR is a deficiency, or combination of deficiencies, such that:',
     options: [
       'There is a possibility that a misstatement could occur',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'aud-wc-080',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'External Confirmations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When the auditor receives no response to a positive confirmation request, the auditor should:',
     options: [
       'Accept the lack of response as agreement with the balance',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'aud-wc-081',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An adverse opinion is expressed when:',
     options: [
       'The auditor was unable to obtain sufficient appropriate evidence',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'aud-wc-082',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'Engagement Quality Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An engagement quality review is required for:',
     options: [
       'All audit engagements',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'reg-wc-079',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the hobby loss rules, an activity is presumed to be engaged in for profit if it produces:',
     options: [
       'Any amount of gross income',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'reg-wc-080',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation elects S status. Which built-in gains are subject to corporate-level tax?',
     options: [
       'All gains recognized by the S corporation',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'reg-wc-081',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Securities Regulation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Rule 10b-5, liability for securities fraud requires:',
     options: [
       'Strict liability for any misstatement',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'reg-wc-082',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1250',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1250 unrecaptured gain on real property is taxed at a maximum rate of:',
     options: [
       '15%',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'bar-wc-087',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Days inventory outstanding is 60, days sales outstanding is 45, and days payable outstanding is 30. What is the cash conversion cycle?',
     options: [
       '75 days',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'bar-wc-088',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Comparable Company Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In comparable company valuation, the most appropriate multiple for a capital-intensive company is:',
     options: [
       'P/E ratio',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'bar-wc-089',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Stock Compensation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'On January 1, Year 1, a company grants 10,000 stock options (fair value $5 each) with a 3-year vesting period. What is Year 1 compensation expense?',
     options: [
       '$50,000',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'bar-wc-090',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Standard Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The labor rate variance is computed as:',
     options: [
       '(Actual hours - Standard hours) × Standard rate',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'bar-wc-091',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Bankruptcy Prediction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Altman Z-Score model uses which of the following as a component?',
     options: [
       'Operating cash flow to total debt',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'isc-wc-079',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Disaster Recovery',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A hot site provides:',
     options: [
       'Empty space requiring equipment installation',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'isc-wc-080',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Risk Assessment',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Inherent risk in IT risk assessment refers to:',
     options: [
       'Risk after controls are applied',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'isc-wc-081',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'API Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'OAuth 2.0 is primarily used for:',
     options: [
       'Encrypting data at rest',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'isc-wc-082',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Quality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data integrity refers to:',
     options: [
       'Keeping data confidential',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'tcp-wc-079',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Education Credits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The American Opportunity Credit can be claimed for:',
     options: [
       'Any level of post-secondary education',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'tcp-wc-080',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Self-Employment Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Self-employment tax consists of:',
     options: [
       'Only Social Security tax at 6.2%',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'tcp-wc-081',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Installment Agreements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IRS streamlined installment agreement is available when the taxpayer:',
     options: [
       'Owes any amount regardless of compliance history',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_11: Question[] = [
   {
     id: 'tcp-wc-082',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Appeals',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A taxpayer must generally request an Appeals conference within:',
     options: [
       '30 days of the examination report',

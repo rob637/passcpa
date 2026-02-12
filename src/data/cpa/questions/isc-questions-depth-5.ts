@@ -8,11 +8,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'COBIT Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'COBIT (Control Objectives for Information and Related Technology) is primarily designed to:',
     options: [
       'Replace all other IT frameworks',
@@ -27,11 +29,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Public Key Infrastructure (PKI)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Public Key Infrastructure (PKI), a digital certificate issued by a Certificate Authority (CA) binds:',
     options: [
       'A user\'s password to their account',
@@ -46,11 +50,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data classification is the process of:',
     options: [
       'Deleting unnecessary data',
@@ -65,11 +71,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'Business Impact Analysis (BIA)',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Business Impact Analysis (BIA) is used to:',
     options: [
       'Test backup systems only',
@@ -84,11 +92,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Network Segmentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network segmentation as a security control involves:',
     options: [
       'Connecting all systems to one network for simplicity',
@@ -103,11 +113,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Database Normalization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database normalization reduces data redundancy by:',
     options: [
       'Combining all data into a single table',
@@ -122,11 +134,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'IT General Controls (ITGCs)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT General Controls (ITGCs) in the context of a financial statement audit include:',
     options: [
       'Only password policies',
@@ -141,11 +155,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Incident Response Plan',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IT incident response plan should include which phases?',
     options: [
       'Only detection and recovery',
@@ -160,11 +176,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'ETL Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In data warehousing, the ETL process stands for:',
     options: [
       'Evaluate, Test, Launch',
@@ -179,11 +197,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC 2 Type II',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A SOC 2 Type II report differs from a SOC 2 Type I report because it:',
     options: [
       'Covers only financial reporting controls',
@@ -198,11 +218,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Blockchain Fundamentals',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A key characteristic of blockchain technology in an accounting context is:',
     options: [
       'Data can be easily modified or deleted',
@@ -217,11 +239,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'Risk Assessment Methodologies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A quantitative risk assessment calculates risk using:',
     options: [
       'Subjective ratings of high/medium/low',
@@ -236,11 +260,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Ransomware',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Ransomware is a type of malware that:',
     options: [
       'Monitors keyboard input',
@@ -255,11 +281,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Governance Framework',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data governance in an organization establishes:',
     options: [
       'Only the IT department\'s responsibilities for data',
@@ -274,11 +302,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'Complementary User Entity Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Complementary User Entity Controls (CUECs) in a SOC report are:',
     options: [
       'Controls performed by the service auditor',
@@ -293,11 +323,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Robotic Process Automation (RPA)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Robotic Process Automation (RPA) in accounting refers to:',
     options: [
       'Physical robots performing accounting tasks',
@@ -312,11 +344,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'Segregation of Duties in IT',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Proper segregation of duties in IT requires that:',
     options: [
       'One person handles all IT functions',
@@ -331,11 +365,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Zero Trust Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Zero Trust Architecture is a security model based on the principle of:',
     options: [
       'Trusting all internal network traffic',
@@ -350,11 +386,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'Data Retention Policies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A data retention policy specifies:',
     options: [
       'That all data should be kept forever',
@@ -369,11 +407,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-soc',
     topic: 'SOC Reports',
     subtopic: 'SOC 1 vs SOC 2',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The primary difference between SOC 1 and SOC 2 reports is:',
     options: [
       'SOC 1 is more detailed than SOC 2',
@@ -388,11 +428,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Cloud Computing Models',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The three primary cloud service models are:',
     options: [
       'Public, Private, and Hybrid',
@@ -407,11 +449,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance and Risk',
     subtopic: 'ITIL Service Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ITIL (Information Technology Infrastructure Library) is a framework focused on:',
     options: [
       'Software development only',
@@ -426,11 +470,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Information Security',
     subtopic: 'Vulnerability Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An effective vulnerability management program includes:',
     options: [
       'Only annual penetration testing',
@@ -445,11 +491,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-data',
     topic: 'Data Management',
     subtopic: 'XBRL in Financial Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'XBRL (eXtensible Business Reporting Language) is used in financial reporting to:',
     options: [
       'Create financial statements in PDF format only',
@@ -464,11 +512,13 @@ export const ISC_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'isc-d5-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'AI and Machine Learning in Auditing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Artificial Intelligence (AI) and Machine Learning (ML) are being used in auditing to:',
     options: [
       'Replace auditors entirely',

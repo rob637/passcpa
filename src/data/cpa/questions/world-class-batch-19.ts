@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'far-wc-111',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 606, a contract modification adding distinct goods at standalone selling price is accounted for as:',
     options: [
       'A continuation of the existing contract',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'far-wc-112',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-stockholders-equity',
     topic: 'Stockholders Equity',
     subtopic: 'Stock Splits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A 2-for-1 stock split results in:',
     options: [
       'Double the number of shares with par value halved per share',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'far-wc-113',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Expense Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Not-for-profits must report expenses by:',
     options: [
       'Natural classification only',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'far-wc-114',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Fiduciary Funds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Pension trust funds are classified as:',
     options: [
       'Governmental funds',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'aud-wc-111',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-independence',
     topic: 'Independence',
     subtopic: 'Direct Financial Interest',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Independence is impaired if a covered member has:',
     options: [
       'An immaterial indirect financial interest',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'aud-wc-112',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Recalculation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Recalculation as an audit procedure involves:',
     options: [
       'Observing client staff performing tasks',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'aud-wc-113',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Disclaimers',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A disclaimer of opinion is appropriate when:',
     options: [
       'There is a material departure from GAAP',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'aud-wc-114',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'Material Weakness',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A material weakness in internal control is:',
     options: [
       'A minor deficiency unlikely to affect financial reporting',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'reg-wc-111',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'AMT',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The alternative minimum tax requires which adjustment?',
     options: [
       'Adding back standard deduction and state income taxes',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'reg-wc-112',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Guaranteed Payments',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Guaranteed payments to partners are:',
     options: [
       'Capital gains to the partner',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'reg-wc-113',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Negotiable Instruments',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For an instrument to be negotiable, it must:',
     options: [
       'Be signed by the payee',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'reg-wc-114',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sales',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The wash sale rule disallows loss deduction when substantially identical securities are purchased within:',
     options: [
       '60 days before or after the sale',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'bar-wc-127',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Capital Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The payback period method ignores:',
     options: [
       'Initial investment',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'bar-wc-128',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Revenue Disaggregation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ASC 606 requires revenue to be disaggregated to:',
     options: [
       'Show only total revenue',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'bar-wc-129',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Target costing begins with:',
     options: [
       'Actual production costs',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'bar-wc-130',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Working Capital',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Working capital is calculated as:',
     options: [
       'Total assets minus total liabilities',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'bar-wc-131',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Comparable Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In comparable company analysis, the most commonly used multiples include:',
     options: [
       'Only book value multiples',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'isc-wc-111',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Encryption',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'AES-256 encryption is an example of:',
     options: [
       'Asymmetric encryption',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'isc-wc-112',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Data Warehouse',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data warehouse is characterized by:',
     options: [
       'Real-time transaction processing',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'isc-wc-113',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Change Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Change management controls ensure that:',
     options: [
       'All changes are prevented',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'isc-wc-114',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'SOC Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 2 Type 2 report covers:',
     options: [
       'Financial statement control design only',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'tcp-wc-111',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Retirement Distributions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Required minimum distributions from traditional IRAs must begin by April 1 of the year after the owner reaches:',
     options: [
       'Age 59½',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'tcp-wc-112',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'S Corp Shareholder Basis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s basis is increased by:',
     options: [
       'Tax-exempt income and allocable share of income',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'tcp-wc-113',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Estate Planning',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The annual gift tax exclusion for 2024 is:',
     options: [
       '$15,000 per donee',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_19: Question[] = [
   {
     id: 'tcp-wc-114',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Appeals',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer must generally file an appeal protest with the IRS Appeals Office within:',
     options: [
       '30 days from the date of the preliminary notice',

@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA2_QUESTIONS_BATCH5: Question[] = [
   {
-    id: 'CISA2-093',
+    id: 'cisa2-093',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT governance frameworks (COBIT) primarily help:',
     options: [
       'Replace management',
@@ -25,10 +27,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Frameworks'
   },
   {
-    id: 'CISA2-094',
+    id: 'cisa2-094',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The distinction between governance and management is:',
     options: [
       'They are identical',
@@ -42,10 +46,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Governance vs Management'
   },
   {
-    id: 'CISA2-095',
+    id: 'cisa2-095',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT investment portfolio management ensures:',
     options: [
       'All projects are approved',
@@ -59,10 +65,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Portfolio Management'
   },
   {
-    id: 'CISA2-096',
+    id: 'cisa2-096',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT value delivery is measured by:',
     options: [
       'Only cost',
@@ -76,10 +84,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Value Delivery'
   },
   {
-    id: 'CISA2-097',
+    id: 'cisa2-097',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Enterprise architecture (EA) provides:',
     options: [
       'Only technical diagrams',
@@ -93,10 +103,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Enterprise Architecture'
   },
   {
-    id: 'CISA2-098',
+    id: 'cisa2-098',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT policies should be:',
     options: [
       'Technical and detailed',
@@ -110,10 +122,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'IT Policies'
   },
   {
-    id: 'CISA2-099',
+    id: 'cisa2-099',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Technology obsolescence risk is addressed by:',
     options: [
       'Ignoring aging systems',
@@ -127,10 +141,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Obsolescence'
   },
   {
-    id: 'CISA2-101',
+    id: 'cisa2-101',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Managing shadow IT requires:',
     options: [
       'Ignoring it',
@@ -144,10 +160,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Shadow IT Management'
   },
   {
-    id: 'CISA2-102',
+    id: 'cisa2-102',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT steering committee effectiveness depends on:',
     options: [
       'IT-only membership',
@@ -161,10 +179,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Steering Committee'
   },
   {
-    id: 'CISA2-103',
+    id: 'cisa2-103',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT budget variance analysis helps:',
     options: [
       'Only track spending',
@@ -178,10 +198,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Budget Management'
   },
   {
-    id: 'CISA2-104',
+    id: 'cisa2-104',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Total cost of ownership (TCO) includes:',
     options: [
       'Only acquisition cost',
@@ -195,10 +217,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'TCO'
   },
   {
-    id: 'CISA2-105',
+    id: 'cisa2-105',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT risk appetite is:',
     options: [
       'Always zero',
@@ -212,10 +236,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Risk Appetite'
   },
   {
-    id: 'CISA2-106',
+    id: 'cisa2-106',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Key Risk Indicators (KRIs) provide:',
     options: [
       'Only historical data',
@@ -229,10 +255,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'KRI'
   },
   {
-    id: 'CISA2-107',
+    id: 'cisa2-107',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Risk heat maps visually display:',
     options: [
       'Only probability',
@@ -246,10 +274,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Risk Visualization'
   },
   {
-    id: 'CISA2-108',
+    id: 'cisa2-108',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Emerging technology risk assessment should occur:',
     options: [
       'After adoption',
@@ -263,10 +293,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Emerging Technology'
   },
   {
-    id: 'CISA2-109',
+    id: 'cisa2-109',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT human resource management includes:',
     options: [
       'Only hiring',
@@ -280,10 +312,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'HR Management'
   },
   {
-    id: 'CISA2-110',
+    id: 'cisa2-110',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Key person dependency risk is mitigated by:',
     options: [
       'Higher salaries only',
@@ -297,10 +331,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Key Person Risk'
   },
   {
-    id: 'CISA2-111',
+    id: 'cisa2-111',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IT skills gap analysis identifies:',
     options: [
       'Only current capabilities',
@@ -314,10 +350,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Skills Gap'
   },
   {
-    id: 'CISA2-112',
+    id: 'cisa2-112',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Vendor management program scope should include:',
     options: [
       'Only large vendors',
@@ -331,10 +369,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Vendor Program'
   },
   {
-    id: 'CISA2-113',
+    id: 'cisa2-113',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Vendor performance metrics should be:',
     options: [
       'Qualitative only',
@@ -348,10 +388,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Performance Metrics'
   },
   {
-    id: 'CISA2-114',
+    id: 'cisa2-114',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Fourth-party risk refers to:',
     options: [
       'Internal departments',
@@ -365,10 +407,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Fourth-Party Risk'
   },
   {
-    id: 'CISA2-115',
+    id: 'cisa2-115',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Contract terms for IT services should address:',
     options: [
       'Only price',
@@ -382,10 +426,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Contract Terms'
   },
   {
-    id: 'CISA2-116',
+    id: 'cisa2-116',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Right to audit clauses enable:',
     options: [
       'Automatic audit',
@@ -399,10 +445,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Audit Rights'
   },
   {
-    id: 'CISA2-117',
+    id: 'cisa2-117',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cloud shared responsibility model defines:',
     options: [
       'All responsibility with cloud provider',
@@ -416,10 +464,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Shared Responsibility'
   },
   {
-    id: 'CISA2-118',
+    id: 'cisa2-118',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data residency requirements affect:',
     options: [
       'Only backup',
@@ -433,10 +483,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Data Residency'
   },
   {
-    id: 'CISA2-119',
+    id: 'cisa2-119',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT compliance management requires:',
     options: [
       'Annual review only',
@@ -450,10 +502,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Compliance Management'
   },
   {
-    id: 'CISA2-120',
+    id: 'cisa2-120',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regulatory change management ensures:',
     options: [
       'Regulations are ignored',
@@ -467,10 +521,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Regulatory Change'
   },
   {
-    id: 'CISA2-121',
+    id: 'cisa2-121',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT governance maturity assessment:',
     options: [
       'Is one-time only',
@@ -484,10 +540,12 @@ export const CISA2_QUESTIONS_BATCH5: Question[] = [
     subtopic: 'Maturity Assessment'
   },
   {
-    id: 'CISA2-122',
+    id: 'cisa2-122',
     courseId: 'cisa',
     section: 'CISA2',
+    blueprintArea: 'CISA2-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IT metrics and reporting should align with:',
     options: [
       'Technical details only',

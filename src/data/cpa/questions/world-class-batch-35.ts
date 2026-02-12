@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'far-wc-175',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Bill-and-Hold Arrangements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Revenue recognition for bill-and-hold arrangements requires:',
     options: [
       'Immediate recognition regardless of criteria',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'far-wc-176',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-earnings',
     topic: 'Earnings Per Share',
     subtopic: 'Diluted EPS',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For diluted EPS, the treasury stock method assumes:',
     options: [
       'All options exercised regardless of price',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'far-wc-177',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-changes',
     topic: 'Accounting Changes',
     subtopic: 'Change in Estimate',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A change in depreciation method is treated as:',
     options: [
       'Prior period adjustment',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'far-wc-178',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nonprofit',
     topic: 'Non-Profit Accounting',
     subtopic: 'Donor Restriction Release',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Net assets with donor restrictions are released when:',
     options: [
       'The donation is received',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'aud-wc-175',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reports',
     topic: 'Reporting',
     subtopic: 'PCAOB Reporting Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under PCAOB reporting standards, auditors must discuss:',
     options: [
       'Only opinion paragraph',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'aud-wc-176',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-tech',
     topic: 'Audit Technology',
     subtopic: 'Data Analytics in Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using data analytics in auditing, the auditor should:',
     options: [
       'Rely solely on analytics',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'aud-wc-177',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-confirmation',
     topic: 'Confirmation',
     subtopic: 'Negative vs Positive',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Negative confirmation requests are appropriate when:',
     options: [
       'Control risk is high',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'aud-wc-178',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-engagement',
     topic: 'Engagement Quality',
     subtopic: 'EQ Reviewer',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An engagement quality reviewer evaluates:',
     options: [
       'All workpapers in detail',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'reg-wc-175',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-s-corp',
     topic: 'S Corporation',
     subtopic: 'Built-In Gains Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The S corporation built-in gains tax applies when:',
     options: [
       'Any sale occurs',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'reg-wc-176',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Benefits Taxation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Up to what percentage of Social Security benefits may be taxable?',
     options: [
       '100%',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'reg-wc-177',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-contracts',
     topic: 'Contract Law',
     subtopic: 'Anticipatory Repudiation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Anticipatory repudiation occurs when:',
     options: [
       'Performance is late',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'reg-wc-178',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 179 Recapture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 179 expense is recaptured as ordinary income if:',
     options: [
       'Asset is fully used',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'bar-wc-207',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Operating Leverage',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High operating leverage indicates:',
     options: [
       'Mostly variable costs',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'bar-wc-208',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'LBO Analysis',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a leveraged buyout (LBO) model, returns are driven by:',
     options: [
       'Asset sales only',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'bar-wc-209',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Business Combinations - Measurement Period',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The measurement period for adjusting provisional amounts in a business combination is:',
     options: [
       '6 months',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'bar-wc-210',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Kaizen Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Kaizen costing focuses on:',
     options: [
       'Design phase cost reduction',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'bar-wc-211',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Z-Score Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Altman\'s Z-score model predicts:',
     options: [
       'Stock price appreciation',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'isc-wc-175',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Data Governance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data governance programs typically include:',
     options: [
       'Only data backup',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'isc-wc-176',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Operations Center',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Security Operations Center (SOC) is responsible for:',
     options: [
       'Only firewall management',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'isc-wc-177',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Database Normalization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Third normal form (3NF) requires:',
     options: [
       'Only unique primary keys',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'isc-wc-178',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Network Segmentation Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'During network segmentation audit, the auditor verifies:',
     options: [
       'Only IP addresses',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'tcp-wc-175',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Section 754 Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Section 754 election allows a partnership to:',
     options: [
       'Avoid all taxes',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'tcp-wc-176',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Installment Sale Default',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If a buyer defaults on an installment sale, the seller:',
     options: [
       'Ignores the default',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'tcp-wc-177',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Lead Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable lead trust (CLT) provides:',
     options: [
       'Income to charity first, then remainder to non-charitable beneficiaries',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_35: Question[] = [
   {
     id: 'tcp-wc-178',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Fast Track Settlement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'IRS Fast Track Settlement:',
     options: [
       'Only for large cases',

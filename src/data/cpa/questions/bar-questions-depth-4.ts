@@ -12,11 +12,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Sustainability Reporting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The triple bottom line framework measures organizational performance across:',
     options: [
       'Revenue, expenses, and profit',
@@ -31,11 +33,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Rolling Forecasts',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A rolling forecast differs from a static annual budget in that:',
     options: [
       'It is prepared only once every five years',
@@ -54,11 +58,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Pricing Strategies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cost-plus pricing sets the selling price by:',
     options: [
       'Matching the lowest competitor\'s price',
@@ -73,11 +79,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Product Lifecycle Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Life-cycle costing considers costs across the entire product lifecycle, including:',
     options: [
       'Only manufacturing costs during production',
@@ -96,11 +104,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Just-in-Time Manufacturing',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Just-in-Time (JIT) manufacturing aims to:',
     options: [
       'Maximize inventory buffers for safety',
@@ -115,11 +125,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Backflush Costing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Backflush costing simplifies accounting in JIT environments by:',
     options: [
       'Tracking every cost at each production stage',
@@ -134,11 +146,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Lean Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Lean accounting differs from traditional cost accounting by:',
     options: [
       'Using more complex allocation methods',
@@ -157,11 +171,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-compensation',
     topic: 'Stock-Based Compensation',
     subtopic: 'Stock Options — Basic',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 718, stock options granted to employees must be measured at:',
     options: [
       'Intrinsic value only (stock price minus exercise price)',
@@ -176,11 +192,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-leases',
     topic: 'Leases',
     subtopic: 'ASC 842 Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 842, a lease is classified as a finance lease if it meets any one of the five criteria. Which criterion relates to the economic life of the asset?',
     options: [
       'Lease term is for a major part (≥75%) of the remaining economic life of the underlying asset',
@@ -199,11 +217,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Other Comprehensive Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is included in other comprehensive income (OCI) under US GAAP?',
     options: [
       'Depreciation expense',
@@ -218,11 +238,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Earnings Quality',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High-quality earnings are characterized by all of the following EXCEPT:',
     options: [
       'Cash flows from operations that are close to net income (high accrual quality)',
@@ -241,11 +263,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Revenue Recognition — 5-Step Model',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 606, the five-step revenue recognition model begins with:',
     options: [
       'Measuring the transaction price',
@@ -260,11 +284,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Revenue Recognition — Over Time',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Revenue is recognized over time (not at a point in time) when:',
     options: [
       'The customer receives and consumes the benefits simultaneously, the entity\'s performance creates or enhances an asset controlled by the customer, or the entity\'s performance creates an asset with no alternative use and the entity has an enforceable right to payment for performance completed to date',
@@ -283,11 +309,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Balanced Scorecard — Internal Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal business process perspective of the balanced scorecard typically includes metrics such as:',
     options: [
       'Revenue growth and ROI',
@@ -306,11 +334,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-decision',
     topic: 'Decision Analysis',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Sensitivity analysis in capital budgeting involves:',
     options: [
       'Running the NPV calculation only once with the best estimates',
@@ -329,11 +359,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Learning Curve',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under an 80% learning curve, when cumulative production doubles, the cumulative average time per unit:',
     options: [
       'Increases by 80%',
@@ -348,11 +380,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Service Department Cost Allocation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The step-down (sequential) method of allocating service department costs:',
     options: [
       'Ignores all services between service departments',
@@ -371,11 +405,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-foreign',
     topic: 'Foreign Currency',
     subtopic: 'Translation vs Remeasurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 830, when a foreign subsidiary\'s functional currency is its local currency, financial statements are translated to the reporting currency using:',
     options: [
       'The temporal method with gains/losses in net income',
@@ -394,11 +430,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Change in Accounting Principle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A voluntary change in accounting principle (e.g., from FIFO to weighted-average inventory) is generally accounted for by:',
     options: [
       'Prospective application only',
@@ -417,11 +455,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Times Interest Earned',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The times interest earned ratio is calculated as:',
     options: [
       'Net income / Interest expense',
@@ -436,11 +476,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-021',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-financial',
     topic: 'Financial Reporting',
     subtopic: 'Asset Turnover',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Total asset turnover ratio measures:',
     options: [
       'How quickly inventory is sold',
@@ -459,11 +501,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-022',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-VI',
     topicId: 'bar-ethics',
     topic: 'Professional Ethics',
     subtopic: 'IMA Standards of Ethical Conduct',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The IMA (Institute of Management Accountants) Statement of Ethical Professional Practice includes which four overarching standards?',
     options: [
       'Independence, integrity, objectivity, and due care',
@@ -482,11 +526,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-023',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-V',
     topicId: 'bar-performance',
     topic: 'Performance Measurement',
     subtopic: 'Sales Mix and Quantity Variances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A sales mix variance measures the impact on contribution margin (or revenue) from:',
     options: [
       'Changes in the total quantity of units sold',
@@ -501,11 +547,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-024',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Weighted Average Process Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the weighted-average method of process costing, the cost per equivalent unit includes:',
     options: [
       'Only costs added during the current period',
@@ -520,11 +568,13 @@ export const BAR_QUESTIONS_DEPTH_4: Question[] = [
   {
     id: 'bar-d4-025',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Impairment of Long-Lived Assets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 360, impairment of a long-lived asset (held for use) exists when:',
     options: [
       'Fair value is less than book value by any amount',

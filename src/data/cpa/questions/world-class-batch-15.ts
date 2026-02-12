@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'far-wc-095',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'Factoring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company factors receivables of $100,000 without recourse. The factor charges 3% fee and withholds 10% as a reserve. What is the loss on factoring?',
     options: [
       '$3,000',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'far-wc-096',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-stockholders-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Stock Splits',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has 100,000 shares of $10 par common stock outstanding and declares a 2-for-1 stock split effected as a stock dividend. After the split:',
     options: [
       '200,000 shares at $10 par',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'far-wc-097',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Infrastructure Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the modified approach for infrastructure assets, a government may:',
     options: [
       'Expense all maintenance costs and not depreciate',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'far-wc-098',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-concepts',
     topic: 'Conceptual Framework',
     subtopic: 'Materiality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The concept of materiality relates to:',
     options: [
       'Physical substance of assets',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'aud-wc-095',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal-control',
     topic: 'Internal Control',
     subtopic: 'COSO Components',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which COSO internal control component addresses policies and actions to mitigate risks?',
     options: [
       'Risk assessment',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'aud-wc-096',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Cutoff Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When testing revenue cutoff, the auditor is primarily concerned with transactions recorded:',
     options: [
       'At the beginning of the year',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'aud-wc-097',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-attest',
     topic: 'Attestation Engagements',
     subtopic: 'Prospective Financial Statements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A financial forecast differs from a financial projection in that a forecast:',
     options: [
       'Is prepared only by management',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'aud-wc-098',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality',
     topic: 'Quality Control',
     subtopic: 'SQMS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The System of Quality Management Standards (SQMS) requires firms to:',
     options: [
       'Use only senior auditors on engagements',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'reg-wc-095',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'NOL Carryforward',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For NOLs arising in tax years after 2020, the carryforward is:',
     options: [
       'Limited to 2 years back, 20 years forward',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'reg-wc-096',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distribution of Property',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a partnership distributes property (not cash) with a basis of $30,000 and FMV of $50,000 to a partner in a current distribution, the partner\'s basis in the property is:',
     options: [
       '$50,000',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'reg-wc-097',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Limited Liability Company',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Members of an LLC generally have liability limited to:',
     options: [
       'Their personal assets',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'reg-wc-098',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Preparer Penalties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The penalty for understatement of liability due to an unreasonable position under IRC Section 6694(a) is:',
     options: [
       '$1,000',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'bar-wc-107',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Residual Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Residual income is calculated as:',
     options: [
       'Net income minus dividends paid',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'bar-wc-108',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Subsequent Measurement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'After initial recognition, an asset measured using the revaluation model (IFRS) that increases in value:',
     options: [
       'Records gain in profit or loss',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'bar-wc-109',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Overhead Allocation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If applied overhead exceeds actual overhead, overhead is:',
     options: [
       'Underapplied',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'bar-wc-110',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Free Cash Flow',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow to the firm (FCFF) is calculated as:',
     options: [
       'Operating cash flow minus dividends',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'bar-wc-111',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'Interest Rate Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Duration measures:',
     options: [
       'Time until a bond matures',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'isc-wc-095',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Security Awareness',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security awareness training should be provided:',
     options: [
       'Only to IT staff',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'isc-wc-096',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Software as a Service',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a SaaS model, the customer is primarily responsible for:',
     options: [
       'Server maintenance',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'isc-wc-097',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Computer Assisted Audit Techniques',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Using an embedded audit module (EAM) allows the auditor to:',
     options: [
       'Replace all manual testing',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'isc-wc-098',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-analytics',
     topic: 'Data Analytics',
     subtopic: 'Regression Analysis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'R-squared in regression analysis measures:',
     options: [
       'The slope of the regression line',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'tcp-wc-095',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Household Employees',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An employer must withhold and pay Social Security and Medicare taxes for a household employee when wages exceed:',
     options: [
       '$600 per year',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'tcp-wc-096',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'LIFO Conformity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The LIFO conformity rule requires:',
     options: [
       'All subsidiaries use LIFO',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'tcp-wc-097',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Grantor Trusts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A grantor trust is one where the grantor:',
     options: [
       'Has no retained interests',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_15: Question[] = [
   {
     id: 'tcp-wc-098',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Collection Due Process',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Collection Due Process (CDP) gives taxpayers the right to:',
     options: [
       'Delay collection indefinitely',

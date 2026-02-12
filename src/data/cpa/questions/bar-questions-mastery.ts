@@ -8,6 +8,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-001',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Free Cash Flow',
@@ -28,6 +29,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-002',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analysis',
     topic: 'Financial Analysis',
     subtopic: 'Sustainable Growth Rate',
@@ -48,6 +50,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-003',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-valuation',
     topic: 'Business Valuation',
     subtopic: 'Comparable Company Analysis',
@@ -68,6 +71,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-004',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-adjustments',
     topic: 'Financial Statement Quality',
     subtopic: 'Earnings Quality Indicators',
@@ -88,6 +92,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-005',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Assets vs Receivables',
@@ -108,6 +113,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-006',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Output Methods',
@@ -128,6 +134,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-007',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Lease Modification - Partial Termination',
@@ -148,6 +155,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-008',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-leases',
     topic: 'Lease Accounting',
     subtopic: 'Embedded Leases',
@@ -168,6 +176,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-009',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Change in Tax Rate',
@@ -188,6 +197,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-010',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-taxes',
     topic: 'Income Taxes',
     subtopic: 'Intraperiod Allocation',
@@ -208,6 +218,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-011',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-combinations',
     topic: 'Business Combinations',
     subtopic: 'Reverse Acquisition',
@@ -228,6 +239,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-012',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-combinations',
     topic: 'Business Combinations',
     subtopic: 'Bargain Purchase',
@@ -248,6 +260,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-013',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Push-Down Accounting',
@@ -268,6 +281,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-014',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-consolidation',
     topic: 'Consolidation',
     subtopic: 'Deconsolidation',
@@ -288,6 +302,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-015',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Joint Cost Allocation',
@@ -308,6 +323,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-016',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Target Costing',
@@ -328,6 +344,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-017',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-variance',
     topic: 'Variance Analysis',
     subtopic: 'Fixed Overhead Variances',
@@ -348,6 +365,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-018',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-budgeting',
     topic: 'Budgeting',
     subtopic: 'Flexible Budget',
@@ -368,6 +386,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-019',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-risk',
     topic: 'Risk Management',
     subtopic: 'WACC Calculation',
@@ -388,6 +407,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-020',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-forex',
     topic: 'Foreign Currency',
     subtopic: 'Highly Inflationary Economies',
@@ -408,6 +428,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-021',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-derivatives',
     topic: 'Derivatives',
     subtopic: 'Fair Value Hedge Accounting',
@@ -428,6 +449,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-022',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-analytics',
     topic: 'Data Analytics',
     subtopic: 'Benford\'s Law',
@@ -448,6 +470,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-023',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-segment',
     topic: 'Segment Reporting',
     subtopic: 'Aggregation Criteria',
@@ -468,6 +491,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-024',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-accounting',
     topic: 'Stock Compensation',
     subtopic: 'Market Conditions',
@@ -488,6 +512,7 @@ export const BAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'bar-mast-025',
     section: 'BAR',
+    courseId: 'cpa',
     topicId: 'bar-accounting',
     topic: 'Equity Method',
     subtopic: 'Impairment',

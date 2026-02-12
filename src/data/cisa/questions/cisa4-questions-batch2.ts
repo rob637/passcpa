@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA4_QUESTIONS_BATCH2: Question[] = [
   {
-    id: 'CISA4-003',
+    id: 'cisa4-003',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of IT operations management is to:',
     options: [
       'Develop new applications',
@@ -25,10 +27,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Operations Management'
   },
   {
-    id: 'CISA4-004',
+    id: 'cisa4-004',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Job scheduling controls are important to ensure:',
     options: [
       'Staff are properly trained',
@@ -42,10 +46,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Job Scheduling'
   },
   {
-    id: 'CISA4-005',
+    id: 'cisa4-005',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing data center operations, an IS auditor should be MOST concerned if:',
     options: [
       'Operators follow documented procedures',
@@ -59,10 +65,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Access Control'
   },
   {
-    id: 'CISA4-006',
+    id: 'cisa4-006',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Problem management differs from incident management in that it:',
     options: [
       'Focuses on quick restoration of service',
@@ -76,10 +84,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Problem Management'
   },
   {
-    id: 'CISA4-007',
+    id: 'cisa4-007',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Incident management primarily aims to:',
     options: [
       'Identify root causes',
@@ -93,10 +103,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Incident Management'
   },
   {
-    id: 'CISA4-008',
+    id: 'cisa4-008',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of capacity management is to:',
     options: [
       'Reduce costs',
@@ -110,10 +122,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Capacity Management'
   },
   {
-    id: 'CISA4-009',
+    id: 'cisa4-009',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Monitoring of system resources is important because it:',
     options: [
       'Replaces the need for backups',
@@ -127,10 +141,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Monitoring'
   },
   {
-    id: 'CISA4-010',
+    id: 'cisa4-010',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The purpose of a help desk is to:',
     options: [
       'Develop applications',
@@ -144,10 +160,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Service Desk'
   },
   {
-    id: 'CISA4-011',
+    id: 'cisa4-011',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Backup types that only copy data changed since the last full backup are called:',
     options: [
       'Full backups',
@@ -161,10 +179,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Backup Types'
   },
   {
-    id: 'CISA4-012',
+    id: 'cisa4-012',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST important factor when storing backup media offsite is:',
     options: [
       'Cost of the storage facility',
@@ -178,10 +198,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Offsite Storage'
   },
   {
-    id: 'CISA4-013',
+    id: 'cisa4-013',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Backup testing should verify that:',
     options: [
       'Backups complete on schedule',
@@ -195,10 +217,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Backup Testing'
   },
   {
-    id: 'CISA4-014',
+    id: 'cisa4-014',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data retention policies should be based on:',
     options: [
       'Available storage capacity',
@@ -212,10 +236,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Data Retention'
   },
   {
-    id: 'CISA4-015',
+    id: 'cisa4-015',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Environmental controls in a data center include:',
     options: [
       'Only fire suppression',
@@ -229,10 +255,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Environmental Controls'
   },
   {
-    id: 'CISA4-016',
+    id: 'cisa4-016',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An uninterruptible power supply (UPS) provides:',
     options: [
       'Long-term backup power',
@@ -246,10 +274,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Power Management'
   },
   {
-    id: 'CISA4-017',
+    id: 'cisa4-017',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Physical access to the data center should be:',
     options: [
       'Open to all IT staff',
@@ -263,10 +293,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Physical Security'
   },
   {
-    id: 'CISA4-018',
+    id: 'cisa4-018',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network monitoring tools are used to:',
     options: [
       'Develop applications',
@@ -280,10 +312,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Monitoring'
   },
   {
-    id: 'CISA4-019',
+    id: 'cisa4-019',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing IT asset management, an IS auditor should be MOST concerned if:',
     options: [
       'Assets are tagged with identifiers',
@@ -297,10 +331,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Asset Management'
   },
   {
-    id: 'CISA4-020',
+    id: 'cisa4-020',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'End-of-life hardware should be:',
     options: [
       'Disposed of immediately',
@@ -314,10 +350,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Asset Disposal'
   },
   {
-    id: 'CISA4-021',
+    id: 'cisa4-021',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A business continuity plan should be:',
     options: [
       'Developed by IT only',
@@ -331,10 +369,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'BCP Scope'
   },
   {
-    id: 'CISA4-022',
+    id: 'cisa4-022',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The FIRST step in business continuity planning is:',
     options: [
       'Developing recovery procedures',
@@ -348,10 +388,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'BIA'
   },
   {
-    id: 'CISA4-023',
+    id: 'cisa4-023',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Crisis communication plans should include:',
     options: [
       'Technical recovery procedures',
@@ -365,10 +407,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Crisis Communication'
   },
   {
-    id: 'CISA4-024',
+    id: 'cisa4-024',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tabletop disaster recovery exercise:',
     options: [
       'Fully tests all recovery capabilities',
@@ -382,10 +426,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'DR Testing'
   },
   {
-    id: 'CISA4-025',
+    id: 'cisa4-025',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY objective of disaster recovery planning is to:',
     options: [
       'Prevent all disasters',
@@ -399,10 +445,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'DR Objectives'
   },
   {
-    id: 'CISA4-026',
+    id: 'cisa4-026',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A cold site provides:',
     options: [
       'Fully operational systems',
@@ -416,10 +464,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Recovery Sites'
   },
   {
-    id: 'CISA4-027',
+    id: 'cisa4-027',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A warm site provides:',
     options: [
       'No infrastructure',
@@ -433,10 +483,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Recovery Sites'
   },
   {
-    id: 'CISA4-028',
+    id: 'cisa4-028',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Data replication provides protection by:',
     options: [
       'Encrypting data',
@@ -450,10 +502,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Data Replication'
   },
   {
-    id: 'CISA4-029',
+    id: 'cisa4-029',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Virtualization in disaster recovery provides benefits including:',
     options: [
       'Elimination of hardware requirements',
@@ -467,10 +521,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Virtualization'
   },
   {
-    id: 'CISA4-030',
+    id: 'cisa4-030',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cloud computing disaster recovery advantages include:',
     options: [
       'Elimination of all costs',
@@ -484,10 +540,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Cloud DR'
   },
   {
-    id: 'CISA4-031',
+    id: 'cisa4-031',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing business continuity plans, an IS auditor should be MOST concerned if:',
     options: [
       'Plans are tested annually',
@@ -501,10 +559,12 @@ export const CISA4_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'BCP Review'
   },
   {
-    id: 'CISA4-032',
+    id: 'cisa4-032',
     courseId: 'cisa',
     section: 'CISA4',
+    blueprintArea: 'CISA4-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Lessons learned from DR tests should be:',
     options: [
       'Kept confidential',

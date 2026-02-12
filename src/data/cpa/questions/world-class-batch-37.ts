@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'far-wc-183',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-bonds',
     topic: 'Bonds',
     subtopic: 'Fair Value Option',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the fair value option is elected for a financial liability:',
     options: [
       'No changes recognized',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'far-wc-184',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-statements',
     topic: 'Financial Statements',
     subtopic: 'Comprehensive Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Components of other comprehensive income include:',
     options: [
       'Net income only',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'far-wc-185',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-eps',
     topic: 'Earnings Per Share',
     subtopic: 'Contingently Issuable Shares',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contingently issuable shares are included in diluted EPS when:',
     options: [
       'Never',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'far-wc-186',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-nonprofit',
     topic: 'Non-Profit Accounting',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Non-profit organizations must report expenses by:',
     options: [
       'Only natural classification',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'aud-wc-183',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-letters',
     topic: 'Reporting',
     subtopic: 'Comfort Letters',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A comfort letter is addressed to:',
     options: [
       'General public',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'aud-wc-184',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-technology',
     topic: 'Audit Technology',
     subtopic: 'Continuous Auditing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Continuous auditing involves:',
     options: [
       'Annual procedures only',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'aud-wc-185',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-inventory',
     topic: 'Inventory Audit',
     subtopic: 'Physical Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'If unable to observe physical inventory at count date, the auditor should:',
     options: [
       'Waive the procedure',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'aud-wc-186',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Inherent Risk Factors',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Inherent risk factors at the assertion level include:',
     options: [
       'Control environment only',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'reg-wc-183',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-c-corp',
     topic: 'C Corporation',
     subtopic: 'Accumulated Earnings Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax is imposed when:',
     options: [
       'Any earnings are retained',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'reg-wc-184',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-payroll',
     topic: 'Payroll Taxes',
     subtopic: 'FICA Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The employee portion of FICA tax consists of:',
     options: [
       'Only Medicare',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'reg-wc-185',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-secured',
     topic: 'Secured Transactions',
     subtopic: 'Perfection by Control',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Perfection by control is used for:',
     options: [
       'Only real estate',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'reg-wc-186',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-gift',
     topic: 'Gift Tax',
     subtopic: 'Present Interest Requirement',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The annual gift tax exclusion requires:',
     options: [
       'Any gift',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'bar-wc-217',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Free Cash Flow Calculation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Free cash flow to the firm (FCFF) is calculated as:',
     options: [
       'Net income only',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'bar-wc-218',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Control Premium',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A control premium in valuation reflects:',
     options: [
       'Discount for minority',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'bar-wc-219',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Asset Retirement Obligations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An asset retirement obligation is initially measured at:',
     options: [
       'Undiscounted future cost',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'bar-wc-220',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Theory of Constraints',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The theory of constraints (TOC) focuses on:',
     options: [
       'All cost reduction',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'bar-wc-221',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Accrual Quality',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High accrual quality indicates:',
     options: [
       'Large discretionary accruals',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'isc-wc-183',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Enterprise Architecture',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Enterprise architecture frameworks (like TOGAF) provide:',
     options: [
       'Only technical standards',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'isc-wc-184',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Threat Intelligence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat intelligence programs provide:',
     options: [
       'Only virus signatures',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'isc-wc-185',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Serverless Computing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Serverless computing (FaaS) is characterized by:',
     options: [
       'Managing physical servers',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'isc-wc-186',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Cloud Security Audit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Cloud security audits should assess:',
     options: [
       'Only provider certifications',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'tcp-wc-183',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'LLC Taxation Options',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A multi-member LLC may elect to be taxed as:',
     options: [
       'Only as partnership',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'tcp-wc-184',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Estimated Tax Safe Harbor',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Individual taxpayers avoid estimated tax penalty if they pay:',
     options: [
       'Any amount',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'tcp-wc-185',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Family Limited Partnership',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Family limited partnerships (FLPs) are used in estate planning to:',
     options: [
       'Avoid all taxes',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_37: Question[] = [
   {
     id: 'tcp-wc-186',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Offer in Compromise',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Offer in Compromise (OIC) allows taxpayers to:',
     options: [
       'Only extend payment',

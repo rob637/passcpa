@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'far-wc-179',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Held-to-Maturity',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Held-to-maturity debt securities are reported at:',
     options: [
       'Fair value through OCI',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'far-wc-180',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-expenses',
     topic: 'Expenses',
     subtopic: 'Research and Development',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Costs of developing computer software for internal use:',
     options: [
       'Always expensed',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'far-wc-181',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Quantitative Thresholds',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An operating segment is reportable if it meets which quantitative threshold?',
     options: [
       '5% of combined revenue',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'far-wc-182',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'At year-end, outstanding encumbrances that will be honored in the subsequent year are:',
     options: [
       'Reported as expenditures',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'aud-wc-179',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reports',
     topic: 'Reporting',
     subtopic: 'Dual Dating',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Dual dating on an audit report is used when:',
     options: [
       'Two auditors sign',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'aud-wc-180',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-internal',
     topic: 'Internal Control',
     subtopic: 'Service Organization Reports',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A SOC 1 Type 2 report covers:',
     options: [
       'Design of controls only',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'aud-wc-181',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-estimates',
     topic: 'Accounting Estimates',
     subtopic: 'Auditor Responsibilities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing accounting estimates, the auditor must:',
     options: [
       'Accept management\'s estimates',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'aud-wc-182',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-planning',
     topic: 'Audit Planning',
     subtopic: 'Audit Strategy',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The overall audit strategy establishes:',
     options: [
       'Specific procedures only',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'reg-wc-179',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Substantial Economic Effect',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Partnership special allocations must have substantial economic effect, which requires:',
     options: [
       'Only a written agreement',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'reg-wc-180',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Hobby Loss Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the hobby loss rules, deductions for a hobby are:',
     options: [
       'Fully deductible',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'reg-wc-181',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-agency',
     topic: 'Agency Law',
     subtopic: 'Actual vs Apparent Authority',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Apparent authority exists when:',
     options: [
       'Principal explicitly grants authority',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'reg-wc-182',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-estate',
     topic: 'Estate Tax',
     subtopic: 'Unified Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The unified credit against estate tax:',
     options: [
       'Applies only to gifts',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'bar-wc-212',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'DuPont Analysis Extended',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The extended (5-factor) DuPont model decomposes ROE into:',
     options: [
       'Only profit margin and turnover',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'bar-wc-213',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Sum of Parts Valuation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sum-of-the-parts (SOTP) valuation is appropriate when:',
     options: [
       'Company has single segment',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'bar-wc-214',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Stock Compensation Forfeitures',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under current GAAP, stock-based compensation forfeitures may be:',
     options: [
       'Only estimated at grant',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'bar-wc-215',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Transfer Pricing Methods',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Internal transfer pricing between divisions may use:',
     options: [
       'Only market price',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'bar-wc-216',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Working Capital Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle measures:',
     options: [
       'Only accounts receivable collection',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'isc-wc-179',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'ITIL Framework',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'ITIL (IT Infrastructure Library) is a framework for:',
     options: [
       'Software development only',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'isc-wc-180',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Privileged Access Management',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Privileged Access Management (PAM) solutions provide:',
     options: [
       'Only password storage',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'isc-wc-181',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Message Queues',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Message queue systems (like RabbitMQ, Kafka) provide:',
     options: [
       'Only email services',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'isc-wc-182',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Application Controls Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Testing application controls typically includes:',
     options: [
       'Only code review',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'tcp-wc-179',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Tax Benefit Rule',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The tax benefit rule requires:',
     options: [
       'No action on recovered amounts',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'tcp-wc-180',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Section 121 Ownership Test',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For Section 121 home sale exclusion, the taxpayer must have:',
     options: [
       'Only lived in the home',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'tcp-wc-181',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Grantor Trust Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A trust is a grantor trust for income tax purposes when:',
     options: [
       'It has any beneficiaries',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_36: Question[] = [
   {
     id: 'tcp-wc-182',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'IRS Statute of Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The general statute of limitations for IRS assessment is:',
     options: [
       '2 years from filing',

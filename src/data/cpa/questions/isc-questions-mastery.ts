@@ -8,6 +8,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-001',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Data Warehouse Architecture',
@@ -28,6 +29,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-002',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'API Security',
@@ -48,6 +50,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-003',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-sdlc',
     topic: 'Systems Development',
     subtopic: 'Agile Scrum',
@@ -68,6 +71,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-004',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-sdlc',
     topic: 'Systems Development',
     subtopic: 'Version Control',
@@ -88,6 +92,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-005',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cybersecurity',
     subtopic: 'Endpoint Detection and Response',
@@ -108,6 +113,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-006',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cybersecurity',
     subtopic: 'Social Engineering',
@@ -128,6 +134,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-007',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Cryptography',
     subtopic: 'Key Management',
@@ -148,6 +155,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-008',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Network Security',
     subtopic: 'DDoS Mitigation',
@@ -168,6 +176,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-009',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT Controls',
     subtopic: 'Automated Controls',
@@ -188,6 +197,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-010',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-controls',
     topic: 'IT General Controls',
     subtopic: 'Privileged Access',
@@ -208,6 +218,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-011',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'CCPA Rights',
@@ -228,6 +239,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-012',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-privacy',
     topic: 'Data Privacy',
     subtopic: 'Privacy Impact Assessment',
@@ -248,6 +260,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-013',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Complementary User Entity Controls',
@@ -268,6 +281,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-014',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'SOC for Cybersecurity',
@@ -288,6 +302,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-015',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'Quantum Computing Impact',
@@ -308,6 +323,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-016',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Emerging Technologies',
     subtopic: 'IoT Security',
@@ -328,6 +344,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-017',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-emerging',
     topic: 'Cloud Computing',
     subtopic: 'Multi-Cloud Strategy',
@@ -348,6 +365,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-018',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcp',
     topic: 'Business Continuity',
     subtopic: 'BIA Components',
@@ -368,6 +386,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-019',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-bcp',
     topic: 'Disaster Recovery',
     subtopic: 'DR Testing',
@@ -388,6 +407,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-020',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-frameworks',
     topic: 'Control Frameworks',
     subtopic: 'ISO 27001',
@@ -408,6 +428,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-021',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Data Analytics in Audit',
@@ -428,6 +449,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-022',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Security Operations',
     subtopic: 'Security Metrics',
@@ -448,6 +470,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-023',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-security',
     topic: 'Incident Response',
     subtopic: 'Evidence Preservation',
@@ -468,6 +491,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-024',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-data',
     topic: 'Data Governance',
     subtopic: 'Data Classification',
@@ -488,6 +512,7 @@ export const ISC_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'isc-mast-025',
     section: 'ISC',
+    courseId: 'cpa',
     topicId: 'isc-automation',
     topic: 'Process Automation',
     subtopic: 'Intelligent Automation',

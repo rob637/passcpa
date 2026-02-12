@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'far-wc-131',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the equity method, an investor adjusts its investment for:',
     options: [
       'Fair value changes only',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'far-wc-132',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-accounting-changes',
     topic: 'Accounting Changes',
     subtopic: 'Change in Principle',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A change in accounting principle is generally accounted for by:',
     options: [
       'Prospective application only',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'far-wc-133',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Contributed services are recognized by a not-for-profit when they:',
     options: [
       'Are performed by any volunteer',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'far-wc-134',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'CAFR Components',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Annual Comprehensive Financial Report (ACFR) of a government includes:',
     options: [
       'Basic financial statements only',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'aud-wc-131',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-professional-standards',
     topic: 'Professional Standards',
     subtopic: 'PCAOB vs AICPA',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For audits of public companies, the authoritative auditing standards are set by:',
     options: [
       'The AICPA only',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'aud-wc-132',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-substantive',
     topic: 'Substantive Procedures',
     subtopic: 'Cutoff Testing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cutoff testing verifies that:',
     options: [
       'All accounts are reconciled',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'aud-wc-133',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Restricted Use',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor\'s report is required to indicate restricted use when:',
     options: [
       'The client prefers limited distribution',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'aud-wc-134',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-communication',
     topic: 'Communication',
     subtopic: 'Predecessor Auditor',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before accepting an engagement, the successor auditor must:',
     options: [
       'Issue a new audit report immediately',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'reg-wc-131',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Benefits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Social Security benefits may be taxable up to:',
     options: [
       '50% of benefits',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'reg-wc-132',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Nonrecourse Debt',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Qualified nonrecourse financing in a partnership generally is allocated to partners:',
     options: [
       'Equally regardless of ownership',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'reg-wc-133',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Intellectual Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A patent grants exclusive rights for:',
     options: [
       'As long as the invention is used',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'reg-wc-134',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1250',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Section 1250 recapture for real property requires:',
     options: [
       'Recapturing all depreciation as ordinary income',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'bar-wc-152',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Accrual Quality',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'High accruals relative to cash flow typically indicate:',
     options: [
       'Strong earnings quality',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'bar-wc-153',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Control Premium',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A control premium in M&A transactions reflects:',
     options: [
       'The discount for minority ownership',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'bar-wc-154',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Restructuring Charges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To recognize a restructuring liability, the entity must have:',
     options: [
       'Just begun considering restructuring',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'bar-wc-155',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Life-Cycle Costing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Life-cycle costing considers:',
     options: [
       'Production costs only',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'bar-wc-156',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Altman Z-Score Components',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Altman Z-Score model uses which ratios?',
     options: [
       'Current ratio and debt ratio only',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'isc-wc-131',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'RPO and RTO',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Recovery Point Objective (RPO) defines:',
     options: [
       'How quickly systems must be restored',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'isc-wc-132',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Ransomware',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The best defense against ransomware attacks includes:',
     options: [
       'Paying the ransom promptly',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'isc-wc-133',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'SaaS vs IaaS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In a Software-as-a-Service (SaaS) model, the customer manages:',
     options: [
       'The entire technology stack',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'isc-wc-134',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Parallel Simulation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parallel simulation is an audit technique that:',
     options: [
       'Reviews program source code line by line',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'tcp-wc-131',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Estimated Tax Penalty',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The underpayment of estimated tax penalty can be avoided by:',
     options: [
       'Filing for an extension',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'tcp-wc-132',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Tax-Free Reorganizations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A Type A reorganization is:',
     options: [
       'A stock-for-stock exchange',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'tcp-wc-133',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Charitable Remainder Trust',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A charitable remainder trust provides:',
     options: [
       'Immediate charitable deduction equal to full contribution',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_24: Question[] = [
   {
     id: 'tcp-wc-134',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Due Diligence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Due diligence requirements for paid preparers apply to:',
     options: [
       'All line items on the return',

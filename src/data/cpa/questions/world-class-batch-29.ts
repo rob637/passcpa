@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'far-wc-151',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-pensions',
     topic: 'Pensions',
     subtopic: 'Pension Asset/Liability',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The funded status of a defined benefit pension plan is:',
     options: [
       'The annual pension expense',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'far-wc-152',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'CECL Model',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The current expected credit loss (CECL) model requires:',
     options: [
       'Recording losses only when probable',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'far-wc-153',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-statement-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Operating Classification',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under US GAAP, interest paid is classified as:',
     options: [
       'Financing activity',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'far-wc-154',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-government',
     topic: 'Government Accounting',
     subtopic: 'Basis Differences',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Government-wide financial statements use the economic resources measurement focus and:',
     options: [
       'Cash basis',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'aud-wc-151',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-quality-control',
     topic: 'Quality Control',
     subtopic: 'Engagement Quality Review',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An engagement quality control review is required for:',
     options: [
       'All engagements',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'aud-wc-152',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'External Confirmation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A positive confirmation requests the recipient to:',
     options: [
       'Respond only if they disagree',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'aud-wc-153',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When substantial doubt exists about going concern with adequate disclosure:',
     options: [
       'Issue adverse opinion',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'aud-wc-154',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'IT Risks',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Risks arising from IT include:',
     options: [
       'Only hardware failures',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'reg-wc-151',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Passive Activity Real Estate Exception',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The $25,000 rental real estate exception to passive activity losses requires:',
     options: [
       'No special requirements',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'reg-wc-152',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Hot Assets',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Hot assets in partnership interest sales include:',
     options: [
       'Only capital assets',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'reg-wc-153',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-negotiable',
     topic: 'Commercial Paper',
     subtopic: 'HDC Requirements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'To be a holder in due course, one must:',
     options: [
       'Simply possess the instrument',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'reg-wc-154',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sale Rule',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The wash sale rule disallows a loss when substantially identical securities are purchased:',
     options: [
       'Within 60 days before or after',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'bar-wc-177',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Restructuring Charges',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Restructuring liabilities under GAAP are recognized when:',
     options: [
       'Management decides to restructure',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'bar-wc-178',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Operating Leverage',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'High operating leverage means:',
     options: [
       'Low fixed costs',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'bar-wc-179',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Sum-of-Parts',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sum-of-the-parts (SOTP) valuation is used when:',
     options: [
       'A company has single business',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'bar-wc-180',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Joint Cost Allocation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The net realizable value method allocates joint costs based on:',
     options: [
       'Physical units produced',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'bar-wc-181',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Cloud Computing Arrangements',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Implementation costs for cloud computing hosting arrangements are:',
     options: [
       'Always expensed immediately',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'isc-wc-151',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'SIEM Systems',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SIEM (Security Information and Event Management) systems:',
     options: [
       'Only provide antivirus protection',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'isc-wc-152',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Service Level Agreements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Service Level Agreements (SLAs) should define:',
     options: [
       'Only pricing',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'isc-wc-153',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'ETL Processing',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'ETL (Extract, Transform, Load) processes:',
     options: [
       'Only extract data',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'isc-wc-154',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Change Management Testing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When testing change management controls, auditors should verify:',
     options: [
       'Only that changes were made',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'tcp-wc-151',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'SALT Limitation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The TCJA SALT limitation (state and local tax deduction):',
     options: [
       'Has no limit',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'tcp-wc-152',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Special allocations in partnerships must have:',
     options: [
       'No requirements',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'tcp-wc-153',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Installment Agreements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'IRS installment agreements allow taxpayers to:',
     options: [
       'Avoid paying tax',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_29: Question[] = [
   {
     id: 'tcp-wc-154',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Circular 230 Due Diligence',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Circular 230, due diligence requires practitioners to:',
     options: [
       'Accept all client representations',

@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'far-wc-059',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Contract Modifications',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Maple Co. has a contract to deliver 100 units for $10,000 ($100/unit). After delivering 40 units, the contract is modified to add 30 more units at $85 each (standalone price is $100). How should Maple account for the modification?',
     options: [
       'As a prospective adjustment to the original contract',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'far-wc-060',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-debt',
     topic: 'Debt',
     subtopic: 'Troubled Debt Restructuring',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A debtor owes $500,000 on a note. The creditor agrees to accept land with a carrying value of $350,000 and FMV of $400,000 in full settlement. What gain does the debtor recognize?',
     options: [
       '$50,000 gain on asset transfer only',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'far-wc-061',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-governmental',
     topic: 'Governmental Accounting',
     subtopic: 'Fiduciary Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A city collects property taxes on behalf of the county and school district. These collections should be reported in which fund?',
     options: [
       'General fund',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'far-wc-062',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A not-for-profit must present expenses by function and nature. Which expenses must be allocated across program and supporting services?',
     options: [
       'Only salaries and wages',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'aud-wc-059',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Inventory Observation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An auditor is unable to observe the client\'s physical inventory count, which is material. Alternative procedures provide sufficient evidence about quantities. What type of opinion is appropriate?',
     options: [
       'Unmodified opinion',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'aud-wc-060',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Group Audits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a group audit, the group engagement partner decides to assume responsibility for the work of a component auditor. The group auditor\'s report should:',
     options: [
       'Reference the component auditor and divide responsibility',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'aud-wc-061',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Confidentiality',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following situations would NOT permit an auditor to disclose confidential client information without the client\'s consent?',
     options: [
       'In response to a valid subpoena',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'aud-wc-062',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'COSO Framework',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the COSO Internal Control Framework, which component addresses the entity\'s commitment to integrity and ethical values?',
     options: [
       'Risk Assessment',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'reg-wc-059',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Chen, a single taxpayer with MAGI of $280,000, has net investment income of $50,000. What is Chen\'s Net Investment Income Tax?',
     options: [
       '$0',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'reg-wc-060',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Corporate Formations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Three individuals form a corporation. A contributes property (basis $30,000, FMV $50,000) for 40% stock. B contributes services for 30% stock. C contributes cash of $30,000 for 30% stock. Does Section 351 apply?',
     options: [
       'Yes, to all three transferors',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'reg-wc-061',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under UCC Article 9, a security interest is perfected when:',
     options: [
       'The debtor signs the security agreement',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'reg-wc-062',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-basis',
     topic: 'Property Transactions',
     subtopic: 'Inherited Property Basis',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A decedent dies owning stock with a basis of $20,000 and FMV of $75,000 at date of death. The executor does not elect the alternate valuation date. What basis does the beneficiary receive?',
     options: [
       '$20,000 (carryover basis)',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'bar-wc-062',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Times Interest Earned',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A company has EBIT of $500,000 and interest expense of $100,000. What is the times interest earned ratio?',
     options: [
       '4.0 times',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'bar-wc-063',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Residual Income',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A division has operating income of $500,000, average operating assets of $2,000,000, and a required return of 18%. What is the residual income?',
     options: [
       '$140,000',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'bar-wc-064',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Discontinued Operations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under ASC 205-20, a component disposal qualifies as discontinued operations if it represents:',
     options: [
       'Any sale of a business segment',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'bar-wc-065',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company has ROE of 15% and a dividend payout ratio of 40%. What is the sustainable growth rate?',
     options: [
       '6%',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'bar-wc-066',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-forecasting',
     topic: 'Budgeting and Forecasting',
     subtopic: 'Cash Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sales for March are $100,000, April $120,000, May $150,000. Collections are 60% in month of sale, 30% in the following month, and 10% in the second following month. What are May cash collections?',
     options: [
       '$90,000',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'isc-wc-059',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Network Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A firewall operating at the application layer (Layer 7) can:',
     options: [
       'Only filter traffic based on IP addresses',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'isc-wc-060',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Policies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An acceptable use policy (AUP) primarily addresses:',
     options: [
       'System backup procedures',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'isc-wc-061',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Computer-Assisted Audit Techniques',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An auditor uses generalized audit software (GAS) to recalculate depreciation for all fixed assets and compare to client records. This is an example of:',
     options: [
       'Test data approach',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'isc-wc-062',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-continuity',
     topic: 'Business Continuity',
     subtopic: 'Contingency Planning',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Maximum Tolerable Downtime (MTD) is used to determine:',
     options: [
       'The frequency of data backups',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'tcp-wc-059',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'IRA Distributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Jordan, age 45, takes a $50,000 distribution from a traditional IRA. Jordan has no exceptions to the early withdrawal penalty. What is the total tax on this distribution if Jordan is in the 24% bracket?',
     options: [
       '$12,000',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'tcp-wc-060',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'C Corporation Estimated Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation expects tax liability of $1,000,000 for the current year. Last year\'s tax was $800,000. To avoid estimated tax penalty, the corporation must pay estimated taxes of at least:',
     options: [
       '$800,000 (100% of prior year)',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'tcp-wc-061',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'AMT Credit',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A corporation paid Alternative Minimum Tax in prior years due to timing differences. In the current year, regular tax exceeds tentative minimum tax by $40,000. The corporation has a minimum tax credit carryforward of $60,000. How much credit can be used?',
     options: [
       '$0',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_6: Question[] = [
   {
     id: 'tcp-wc-062',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Casualty Losses',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer\'s personal residence is damaged in a federally declared disaster. The loss before insurance is $40,000, insurance reimbursement is $25,000, and AGI is $100,000. What is the deductible casualty loss?',
     options: [
       '$4,900',

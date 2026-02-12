@@ -33,7 +33,10 @@ export const CFP_INV_QUESTIONS: Question[] = [
   },
   {
     id: 'CFP-INV-002',
+    courseId: 'cfp',
     section: 'CFP-INV',
+    courseId: 'cfp',
+    blueprintArea: 'INV-1',
     question: "Which of the following risks cannot be diversified away?",
     options: [
       "A) Business Risk",
@@ -46,10 +49,14 @@ export const CFP_INV_QUESTIONS: Question[] = [
     topic: "Risk Management",
     subtopic: "Systematic Risk",
     difficulty: "easy"
+    skillLevel: 'Remembering and Understanding',
   },
   {
     id: 'CFP-INV-003',
+    courseId: 'cfp',
     section: 'CFP-INV',
+    courseId: 'cfp',
+    blueprintArea: 'INV-1',
     question: "A bond has a duration of 7 years. If interest rates rise by 1%, what is the expected approximate change in the bond's price?",
     options: [
       "A) Increase by 1%",
@@ -62,6 +69,7 @@ export const CFP_INV_QUESTIONS: Question[] = [
     topic: "Bond Analysis",
     subtopic: "Duration",
     difficulty: "medium"
+    skillLevel: 'Application',
   },
   {
     id: 'CFP-INV-004',

@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'far-wc-091',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-pensions',
     topic: 'Pensions',
     subtopic: 'Pension Expense Components',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which component of pension expense represents the increase in PBO due to employee service in the current period?',
     options: [
       'Interest cost',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'far-wc-092',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-income-taxes',
     topic: 'Income Taxes',
     subtopic: 'Valuation Allowance',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A valuation allowance for deferred tax assets should be established when it is:',
     options: [
       'Possible that benefits won\'t be realized',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'far-wc-093',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Contributed services should be recognized as revenue by a not-for-profit when they:',
     options: [
       'Are provided by volunteers',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'far-wc-094',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Principal vs Agent',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An entity is acting as an agent rather than principal when it:',
     options: [
       'Has inventory risk before the goods are transferred',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'aud-wc-091',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Analytical Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'During the completion phase of an audit, analytical procedures are:',
     options: [
       'Optional if substantive testing was extensive',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'aud-wc-092',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-evaluation',
     topic: 'Evaluating Results',
     subtopic: 'Going Concern',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'If substantial doubt about going concern is alleviated by management\'s plans, the auditor should:',
     options: [
       'Issue an unmodified opinion with no additional communication',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'aud-wc-093',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-V',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other Information',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When reading other information in a document containing audited financial statements, the auditor should:',
     options: [
       'Express an opinion on the other information',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'aud-wc-094',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Responsibilities',
     subtopic: 'Objectivity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Objectivity requires the auditor to:',
     options: [
       'Have no financial interest in any public company',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'reg-wc-091',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Benefits',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The maximum amount of Social Security benefits that can be included in gross income is:',
     options: [
       '50%',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'reg-wc-092',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contributions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
       '10% of taxable income computed without the deduction',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'reg-wc-093',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Employment Law',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the Fair Labor Standards Act, nonexempt employees must be paid overtime at:',
     options: [
       'Regular rate for all hours',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'reg-wc-094',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Involuntary Conversions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under Section 1033, gain from involuntary conversion of business property can be deferred if replacement property is acquired within:',
     options: [
       '1 year after the close of the first tax year in which gain is realized',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'bar-wc-102',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Common-Size Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a common-size income statement, all items are expressed as a percentage of:',
     options: [
       'Total assets',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'bar-wc-103',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'Economic Value Added',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Economic Value Added (EVA) is calculated as:',
     options: [
       'Net income minus dividends',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'bar-wc-104',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Variable Interest Entities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An entity must consolidate a variable interest entity (VIE) when it is the:',
     options: [
       'Largest equity holder',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'bar-wc-105',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Throughput Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the theory of constraints, throughput is defined as:',
     options: [
       'Total units produced',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'bar-wc-106',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Sustainable Growth Rate',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The sustainable growth rate formula (without external financing) is:',
     options: [
       'ROA × Asset turnover',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'isc-wc-091',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Identity Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Role-based access control (RBAC) assigns permissions based on:',
     options: [
       'Individual user requests',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'isc-wc-092',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Virtualization',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A hypervisor in virtualization technology:',
     options: [
       'Provides antivirus protection',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'isc-wc-093',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Segregation of Duties',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In IT, the most critical segregation is between:',
     options: [
       'Help desk and network support',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'isc-wc-094',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'IT Strategy',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT governance ensures:',
     options: [
       'Maximum spending on technology',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'tcp-wc-091',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Gambling Income',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Gambling losses are deductible:',
     options: [
       'As an above-the-line deduction',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'tcp-wc-092',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Personal Holding Company',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A corporation is a personal holding company if more than 50% of stock is owned by 5 or fewer individuals AND at least what percentage of income is PHC income?',
     options: [
       '50%',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'tcp-wc-093',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Gift Splitting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A married couple can elect gift splitting, which means:',
     options: [
       'Each spouse can give half the annual exclusion',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_14: Question[] = [
   {
     id: 'tcp-wc-094',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Statute of Limitations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The IRS statute of limitations for assessing additional tax is generally:',
     options: [
       '2 years from filing',

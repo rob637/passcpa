@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA5_QUESTIONS_BATCH9: Question[] = [
   {
-    id: 'CISA5-210',
+    id: 'cisa5-210',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The MOST effective control against insider threats is:',
     options: [
       'Strong perimeter firewalls',
@@ -25,10 +27,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Insider Threats'
   },
   {
-    id: 'CISA5-211',
+    id: 'cisa5-211',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Defense in depth strategy means:',
     options: [
       'Having one very strong security control',
@@ -42,10 +46,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Architecture'
   },
   {
-    id: 'CISA5-212',
+    id: 'cisa5-212',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Network segmentation PRIMARILY reduces risk by:',
     options: [
       'Increasing network speed',
@@ -59,10 +65,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Segmentation'
   },
   {
-    id: 'CISA5-213',
+    id: 'cisa5-213',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Role-based access control (RBAC) assigns permissions based on:',
     options: [
       'Individual user preferences',
@@ -76,10 +84,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'RBAC'
   },
   {
-    id: 'CISA5-214',
+    id: 'cisa5-214',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing encryption controls, the auditor should be MOST concerned about:',
     options: [
       'Algorithm choice documentation',
@@ -93,10 +103,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Key Management'
   },
   {
-    id: 'CISA5-215',
+    id: 'cisa5-215',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Digital certificates are used to:',
     options: [
       'Encrypt all network traffic automatically',
@@ -110,10 +122,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'PKI'
   },
   {
-    id: 'CISA5-216',
+    id: 'cisa5-216',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Perfect forward secrecy in TLS ensures:',
     options: [
       'Connections are never broken',
@@ -127,10 +141,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'TLS Security'
   },
   {
-    id: 'CISA5-217',
+    id: 'cisa5-217',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security awareness training should be:',
     options: [
       'Optional for senior executives',
@@ -144,10 +160,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Awareness'
   },
   {
-    id: 'CISA5-218',
+    id: 'cisa5-218',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Phishing simulation exercises are valuable because they:',
     options: [
       'Punish employees who click',
@@ -161,10 +179,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Phishing Defense'
   },
   {
-    id: 'CISA5-219',
+    id: 'cisa5-219',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Web Application Firewalls (WAF) protect against:',
     options: [
       'All network attacks',
@@ -178,10 +198,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'WAF'
   },
   {
-    id: 'CISA5-220',
+    id: 'cisa5-220',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Endpoint Detection and Response (EDR) differs from traditional antivirus by:',
     options: [
       'Using signature-only detection',
@@ -195,10 +217,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'EDR'
   },
   {
-    id: 'CISA5-221',
+    id: 'cisa5-221',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data classification should be performed by:',
     options: [
       'IT department only',
@@ -212,10 +236,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Data Classification'
   },
   {
-    id: 'CISA5-222',
+    id: 'cisa5-222',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security event correlation in SIEM helps by:',
     options: [
       'Reducing log storage',
@@ -229,10 +255,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'SIEM'
   },
   {
-    id: 'CISA5-223',
+    id: 'cisa5-223',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Privileged Access Management (PAM) controls:',
     options: [
       'Standard user accounts',
@@ -246,10 +274,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'PAM'
   },
   {
-    id: 'CISA5-224',
+    id: 'cisa5-224',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Vulnerability assessment differs from penetration testing in that:',
     options: [
       'They are identical',
@@ -263,10 +293,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Testing'
   },
   {
-    id: 'CISA5-225',
+    id: 'cisa5-225',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data Loss Prevention (DLP) monitors:',
     options: [
       'Network performance only',
@@ -280,10 +312,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'DLP'
   },
   {
-    id: 'CISA5-226',
+    id: 'cisa5-226',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security metrics should be:',
     options: [
       'As technical as possible',
@@ -297,10 +331,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Metrics'
   },
   {
-    id: 'CISA5-227',
+    id: 'cisa5-227',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Biometric authentication provides:',
     options: [
       'Something you know',
@@ -314,10 +350,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Biometrics'
   },
   {
-    id: 'CISA5-228',
+    id: 'cisa5-228',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Supply chain security for software should include:',
     options: [
       'Only using well-known vendors',
@@ -331,10 +369,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Supply Chain Security'
   },
   {
-    id: 'CISA5-229',
+    id: 'cisa5-229',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Privacy by Design means:',
     options: [
       'Adding privacy settings after development',
@@ -348,10 +388,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Privacy by Design'
   },
   {
-    id: 'CISA5-230',
+    id: 'cisa5-230',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'GDPR data breach notification requires:',
     options: [
       'Annual notification only',
@@ -365,10 +407,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'GDPR'
   },
   {
-    id: 'CISA5-231',
+    id: 'cisa5-231',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure coding practices include:',
     options: [
       'Minimal documentation',
@@ -382,10 +426,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Secure Coding'
   },
   {
-    id: 'CISA5-232',
+    id: 'cisa5-232',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security architecture review should occur:',
     options: [
       'Only after implementation',
@@ -399,10 +445,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Security Architecture'
   },
   {
-    id: 'CISA5-233',
+    id: 'cisa5-233',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Network access control (NAC) ensures:',
     options: [
       'Faster network speeds',
@@ -416,10 +464,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'NAC'
   },
   {
-    id: 'CISA5-234',
+    id: 'cisa5-234',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Threat hunting is:',
     options: [
       'Automated malware scanning',
@@ -433,10 +483,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Threat Hunting'
   },
   {
-    id: 'CISA5-235',
+    id: 'cisa5-235',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Security exception management should include:',
     options: [
       'Automatic approval',
@@ -450,10 +502,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Exception Management'
   },
   {
-    id: 'CISA5-236',
+    id: 'cisa5-236',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Third-party security assessments should be based on:',
     options: [
       'Vendor reputation only',
@@ -467,10 +521,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Third-Party Risk'
   },
   {
-    id: 'CISA5-237',
+    id: 'cisa5-237',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Secure configuration management includes:',
     options: [
       'Default vendor configurations',
@@ -484,10 +540,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Configuration Management'
   },
   {
-    id: 'CISA5-238',
+    id: 'cisa5-238',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Red team exercises simulate:',
     options: [
       'IT help desk operations',
@@ -501,10 +559,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Red Team'
   },
   {
-    id: 'CISA5-239',
+    id: 'cisa5-239',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Tokenization differs from encryption in that:',
     options: [
       'They are identical',
@@ -518,10 +578,12 @@ export const CISA5_QUESTIONS_BATCH9: Question[] = [
     subtopic: 'Tokenization'
   },
   {
-    id: 'CISA5-240',
+    id: 'cisa5-240',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Security Operations Center (SOC) maturity can be measured by:',
     options: [
       'Building size only',

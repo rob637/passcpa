@@ -8,12 +8,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a governmental fund type?',
     options: [
       'Enterprise fund',
@@ -29,12 +31,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Measurement Focus',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Governmental funds use which measurement focus and basis of accounting?',
     options: [
       'Economic resources and accrual basis',
@@ -50,12 +54,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Revenue Recognition',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under modified accrual accounting, property tax revenue should be recognized when:',
     options: [
       'The tax levy is approved',
@@ -71,12 +77,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fund Balance',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which fund balance classification represents the most constrained resources?',
     options: [
       'Committed',
@@ -92,12 +100,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Budgetary Accounting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a government approves its annual budget, the journal entry to record estimated revenues would include a:',
     options: [
       'Credit to Estimated Revenues',
@@ -113,12 +123,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Encumbrances',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An encumbrance represents:',
     options: [
       'An actual expenditure',
@@ -134,12 +146,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-B',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Enterprise Funds',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An enterprise fund should be used when:',
     options: [
       'The government wants to match costs with user charges',
@@ -155,12 +169,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-B',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Internal Service Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following is the most appropriate use of an internal service fund?',
     options: [
       'Accounting for a public swimming pool',
@@ -176,12 +192,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Capital Assets',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In government-wide financial statements, infrastructure assets such as roads and bridges are:',
     options: [
       'Not capitalized because they are not enterprise activities',
@@ -197,12 +215,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-C',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Financial Statements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The government-wide Statement of Net Position is most similar to which commercial financial statement?',
     options: [
       'Income statement',
@@ -218,12 +238,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-C',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Net Position',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the Statement of Net Position, net position is reported in which three categories?',
     options: [
       'Unrestricted, temporarily restricted, permanently restricted',
@@ -239,12 +261,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Derived Tax Revenue',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sales taxes collected by retailers in December but not remitted to the government until January should be recognized as revenue in which period?',
     options: [
       'January, when received',
@@ -260,12 +284,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Grants',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A government receives a $1,000,000 federal grant to be used over three years for a specific program. In Year 1, the government spends $400,000 on eligible expenditures. The grant should be recognized as revenue in Year 1 of:',
     options: [
       '$1,000,000 (full amount when received)',
@@ -281,12 +307,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-C',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'MD&A',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Management\'s Discussion and Analysis (MD&A) in governmental financial reports is:',
     options: [
       'An optional disclosure',
@@ -302,12 +330,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-B',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Pension Trust Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A pension trust fund is classified as which type of fund?',
     options: [
       'Governmental fund',
@@ -323,12 +353,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-D',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'GASB vs FASB',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which standard-setting body establishes accounting standards for state and local governments?',
     options: [
       'FASB',
@@ -344,12 +376,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Debt Service Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A debt service fund is used primarily to account for:',
     options: [
       'Accumulation of resources for capital projects',
@@ -365,12 +399,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Capital Projects Funds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A capital projects fund would typically account for which of the following?',
     options: [
       'Routine road maintenance',
@@ -386,12 +422,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-C',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Reconciliation',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A city reports $5,000,000 in fund balance on its governmental funds balance sheet. The same city reports $8,000,000 in net position on the government-wide Statement of Net Position for governmental activities. Which of the following would explain part of this difference?',
     options: [
       'Accounts payable reported only in government-wide statements',
@@ -407,12 +445,14 @@ export const FAR_QUESTIONS_GOVT: Question[] = [
   {
     id: 'far-govt-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-VII',
     blueprintGroup: 'FAR-VII-A',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Expenditure Recognition',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under modified accrual accounting, when should a government recognize an expenditure for inventory purchased for the fire department?',
     options: [
       'When the inventory is ordered',

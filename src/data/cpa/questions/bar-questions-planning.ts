@@ -8,12 +8,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-001',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Budgeting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Net Present Value (NPV) method requires which of the following?',
     options: [
       'Payback period calculation',
@@ -29,12 +31,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-002',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Budgeting',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project has an initial investment of $100,000 and generates cash flows of $30,000 per year for 5 years. If the discount rate is 10%, which statement is true?',
     options: [
       'The payback period is 3.33 years',
@@ -50,12 +54,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-003',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'IRR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Internal Rate of Return (IRR) is defined as:',
     options: [
       'The average annual return on investment',
@@ -71,12 +77,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-004',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Payback Period',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The payback period method has which significant limitation?',
     options: [
       'It is too complex to calculate',
@@ -92,12 +100,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-005',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Profitability Index',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A project has a present value of cash inflows of $150,000 and requires an initial investment of $120,000. What is the profitability index?',
     options: [
       '0.80',
@@ -114,12 +124,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-006',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-B',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Working Capital',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Working capital is calculated as:',
     options: [
       'Total assets minus total liabilities',
@@ -135,12 +147,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-007',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-B',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle equals:',
     options: [
       'Days inventory outstanding + days sales outstanding + days payables outstanding',
@@ -156,12 +170,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-008',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-B',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Cash Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company can reduce its cash conversion cycle by:',
     options: [
       'Increasing inventory levels',
@@ -178,12 +194,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-009',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-C',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Budgeting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A flexible budget differs from a static budget because it:',
     options: [
       'Is prepared only at year-end',
@@ -199,12 +217,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-010',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-C',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Master Budget',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In preparing a master budget, which budget is typically prepared first?',
     options: [
       'Production budget',
@@ -221,12 +241,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-011',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-D',
     topicId: 'bar-planning',
     topic: 'Risk Management',
     subtopic: 'Hedging',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A company expecting to receive euros in 90 days should hedge currency risk by:',
     options: [
       'Buying a euro call option',
@@ -242,12 +264,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-012',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-D',
     topicId: 'bar-planning',
     topic: 'Risk Management',
     subtopic: 'Interest Rate Risk',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company with floating-rate debt is concerned about rising interest rates. To hedge this risk, it could enter into an interest rate swap to:',
     options: [
       'Pay floating, receive fixed',
@@ -263,12 +287,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-013',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-D',
     topicId: 'bar-planning',
     topic: 'Risk Management',
     subtopic: 'Commodity Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An airline concerned about rising fuel prices would hedge by:',
     options: [
       'Selling fuel futures',
@@ -284,12 +310,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-014',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-E',
     topicId: 'bar-planning',
     topic: 'Risk Management',
     subtopic: 'Enterprise Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Enterprise Risk Management (ERM) differs from traditional risk management because ERM:',
     options: [
       'Focuses only on financial risks',
@@ -305,12 +333,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-015',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Capital Budgeting',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating mutually exclusive projects with different lives, the best approach is to use:',
     options: [
       'Simple payback period comparison',
@@ -327,12 +357,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-016',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-C',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Pro Forma Statements',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The percentage-of-sales method for forecasting assumes that:',
     options: [
       'All assets will be sold at year end',
@@ -348,12 +380,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-017',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-C',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'External Financing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A company has $1,000,000 in sales and expects 20% growth. Its profit margin is 5%, dividend payout is 40%, and assets equal 60% of sales. The Additional Funds Needed (AFN) would be approximately:',
     options: [
       '$84,000',
@@ -369,12 +403,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-018',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-B',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Inventory Management',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Economic Order Quantity (EOQ) model minimizes:',
     options: [
       'Total inventory on hand',
@@ -390,12 +426,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-019',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-D',
     topicId: 'bar-planning',
     topic: 'Risk Management',
     subtopic: 'Risk Metrics',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Value at Risk (VaR) measures:',
     options: [
       'The expected return of a portfolio',
@@ -411,12 +449,14 @@ export const BAR_QUESTIONS_PLANNING: Question[] = [
   {
     id: 'bar-plan-020',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     blueprintGroup: 'BAR-IV-A',
     topicId: 'bar-planning',
     topic: 'Financial Planning',
     subtopic: 'Sensitivity Analysis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Sensitivity analysis in capital budgeting is used to:',
     options: [
       'Calculate the exact NPV',

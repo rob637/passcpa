@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA3_QUESTIONS_BATCH2: Question[] = [
   {
-    id: 'CISA3-003',
+    id: 'cisa3-003',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of a feasibility study for a new IT project is to:',
     options: [
       'Develop detailed technical specifications',
@@ -25,10 +27,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Feasibility Study'
   },
   {
-    id: 'CISA3-004',
+    id: 'cisa3-004',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When reviewing system requirements, an IS auditor should be MOST concerned if:',
     options: [
       'Requirements are documented in a standard format',
@@ -42,10 +46,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Traceability'
   },
   {
-    id: 'CISA3-005',
+    id: 'cisa3-005',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The software development life cycle (SDLC) phase where detailed design specifications are created is:',
     options: [
       'Requirements analysis',
@@ -59,10 +65,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Design Phase'
   },
   {
-    id: 'CISA3-006',
+    id: 'cisa3-006',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Agile development methodology is characterized by:',
     options: [
       'Extensive upfront documentation',
@@ -76,10 +84,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Agile'
   },
   {
-    id: 'CISA3-007',
+    id: 'cisa3-007',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The waterfall development model is MOST appropriate when:',
     options: [
       'Requirements are likely to change frequently',
@@ -93,10 +103,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Waterfall'
   },
   {
-    id: 'CISA3-008',
+    id: 'cisa3-008',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Configuration management ensures that:',
     options: [
       'Software is developed faster',
@@ -110,10 +122,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Configuration Management'
   },
   {
-    id: 'CISA3-009',
+    id: 'cisa3-009',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Source code version control is important because it:',
     options: [
       'Speeds up compilation',
@@ -127,10 +141,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Version Control'
   },
   {
-    id: 'CISA3-010',
+    id: 'cisa3-010',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Code review is MOST effective for detecting:',
     options: [
       'Performance issues under load',
@@ -144,10 +160,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Code Review'
   },
   {
-    id: 'CISA3-011',
+    id: 'cisa3-011',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Unit testing verifies:',
     options: [
       'Integration between system components',
@@ -161,10 +179,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Unit Testing'
   },
   {
-    id: 'CISA3-012',
+    id: 'cisa3-012',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Integration testing focuses on:',
     options: [
       'Individual module functionality',
@@ -178,10 +198,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Integration Testing'
   },
   {
-    id: 'CISA3-013',
+    id: 'cisa3-013',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'User acceptance testing (UAT) should be performed by:',
     options: [
       'Developers',
@@ -195,10 +217,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'UAT'
   },
   {
-    id: 'CISA3-014',
+    id: 'cisa3-014',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Regression testing is performed to ensure that:',
     options: [
       'New features work correctly',
@@ -212,10 +236,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Regression Testing'
   },
   {
-    id: 'CISA3-015',
+    id: 'cisa3-015',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Stress testing evaluates:',
     options: [
       'Normal operating conditions',
@@ -229,10 +255,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Stress Testing'
   },
   {
-    id: 'CISA3-016',
+    id: 'cisa3-016',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of a pilot implementation is to:',
     options: [
       'Train all users at once',
@@ -246,10 +274,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Pilot'
   },
   {
-    id: 'CISA3-017',
+    id: 'cisa3-017',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parallel implementation involves:',
     options: [
       'Implementing the new system immediately',
@@ -263,10 +293,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Parallel'
   },
   {
-    id: 'CISA3-018',
+    id: 'cisa3-018',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Data conversion during system implementation should:',
     options: [
       'Be performed without validation',
@@ -280,10 +312,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Data Conversion'
   },
   {
-    id: 'CISA3-019',
+    id: 'cisa3-019',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Post-implementation review should assess:',
     options: [
       'Only technical performance',
@@ -297,10 +331,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Post-Implementation Review'
   },
   {
-    id: 'CISA3-020',
+    id: 'cisa3-020',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When evaluating packaged software, the MOST important criterion is:',
     options: [
       'Lowest cost',
@@ -314,10 +350,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Selection Criteria'
   },
   {
-    id: 'CISA3-021',
+    id: 'cisa3-021',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A request for proposal (RFP) should include:',
     options: [
       'Only technical requirements',
@@ -331,10 +369,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'RFP'
   },
   {
-    id: 'CISA3-022',
+    id: 'cisa3-022',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Software escrow agreements protect the organization by:',
     options: [
       'Reducing license costs',
@@ -348,10 +388,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Escrow'
   },
   {
-    id: 'CISA3-023',
+    id: 'cisa3-023',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Rapid application development (RAD) emphasizes:',
     options: [
       'Extensive documentation',
@@ -365,10 +407,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'RAD'
   },
   {
-    id: 'CISA3-024',
+    id: 'cisa3-024',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'DevOps practices primarily aim to:',
     options: [
       'Eliminate testing requirements',
@@ -382,10 +426,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'DevOps'
   },
   {
-    id: 'CISA3-025',
+    id: 'cisa3-025',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous integration (CI) involves:',
     options: [
       'Deploying directly to production',
@@ -399,10 +445,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'CI/CD'
   },
   {
-    id: 'CISA3-026',
+    id: 'cisa3-026',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Object-oriented programming provides benefits including:',
     options: [
       'Faster compilation',
@@ -416,10 +464,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'OOP'
   },
   {
-    id: 'CISA3-027',
+    id: 'cisa3-027',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Input validation controls should be implemented:',
     options: [
       'Only on the server side',
@@ -433,10 +483,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Input Validation'
   },
   {
-    id: 'CISA3-028',
+    id: 'cisa3-028',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Application programming interfaces (APIs) require:',
     options: [
       'No security controls',
@@ -450,10 +502,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'API Security'
   },
   {
-    id: 'CISA3-029',
+    id: 'cisa3-029',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Database normalization reduces:',
     options: [
       'Query performance',
@@ -467,10 +521,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Normalization'
   },
   {
-    id: 'CISA3-030',
+    id: 'cisa3-030',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY control for preventing SQL injection attacks is:',
     options: [
       'Encryption of database',
@@ -484,10 +540,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'SQL Injection'
   },
   {
-    id: 'CISA3-031',
+    id: 'cisa3-031',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Web application firewalls (WAFs) protect against:',
     options: [
       'Physical intrusion',
@@ -501,10 +559,12 @@ export const CISA3_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'WAF'
   },
   {
-    id: 'CISA3-032',
+    id: 'cisa3-032',
     courseId: 'cisa',
     section: 'CISA3',
+    blueprintArea: 'CISA3-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'System documentation should be updated:',
     options: [
       'Only during initial development',

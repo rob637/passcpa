@@ -8,6 +8,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-001',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Partner Rotation',
@@ -28,6 +29,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-002',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-planning',
     topic: 'Engagement Planning',
     subtopic: 'Materiality Revision',
@@ -48,6 +50,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-003',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Spectrum of Risk',
@@ -68,6 +71,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-004',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Management Representations',
@@ -88,6 +92,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-005',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Recalculation',
@@ -108,6 +113,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-006',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Entity-Level Controls',
@@ -128,6 +134,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-007',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-controls',
     topic: 'Internal Control',
     subtopic: 'Compensating Controls',
@@ -148,6 +155,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-008',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Critical Audit Matters',
@@ -168,6 +176,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-009',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Adverse Opinion',
@@ -188,6 +197,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-010',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Audit Reports',
     subtopic: 'Other Information',
@@ -208,6 +218,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-011',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-estimates',
     topic: 'Auditing Estimates',
     subtopic: 'Retrospective Review',
@@ -228,6 +239,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-012',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-sampling',
     topic: 'Sampling',
     subtopic: 'Nonprobabilistic Sampling',
@@ -248,6 +260,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-013',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-it',
     topic: 'IT Considerations',
     subtopic: 'SOC Report Utilization',
@@ -268,6 +281,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-014',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-quality',
     topic: 'Quality Management',
     subtopic: 'SQMS 1',
@@ -288,6 +302,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-015',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Special Reports',
     subtopic: 'Special Purpose Frameworks',
@@ -308,6 +323,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-016',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-communications',
     topic: 'Communications',
     subtopic: 'Required Communications Timing',
@@ -328,6 +344,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-017',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-assertions',
     topic: 'Accounts Payable',
     subtopic: 'Completeness Testing',
@@ -348,6 +365,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-018',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-fraud',
     topic: 'Fraud',
     subtopic: 'Revenue Recognition Presumption',
@@ -368,6 +386,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-019',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-documentation',
     topic: 'Documentation',
     subtopic: 'Assembly Deadline',
@@ -388,6 +407,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-020',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-related',
     topic: 'Related Parties',
     subtopic: 'Identification',
@@ -408,6 +428,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-021',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-subsequent',
     topic: 'Subsequent Events',
     subtopic: 'Discovery After Report',
@@ -428,6 +449,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-022',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-special',
     topic: 'Preparation Engagements',
     subtopic: 'Requirements',
@@ -448,6 +470,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-023',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-attestation',
     topic: 'Attestation',
     subtopic: 'Examination vs Agreed-Upon',
@@ -468,6 +491,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-024',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-ethics',
     topic: 'Professional Ethics',
     subtopic: 'Gifts and Entertainment',
@@ -488,6 +512,7 @@ export const AUD_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'aud-mast-025',
     section: 'AUD',
+    courseId: 'cpa',
     topicId: 'aud-reports',
     topic: 'Reports on Controls',
     subtopic: 'ICFR Opinion',

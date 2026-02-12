@@ -11,11 +11,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-001',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'User Entity Responsibilities',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a user entity auditor plans to use a SOC 1 Type II report, AU-C 402 requires the auditor to evaluate all of the following EXCEPT:',
     options: [
       'Whether the report covers the appropriate period',
@@ -30,11 +32,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-002',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-soc',
     topic: 'SOC Reporting',
     subtopic: 'Modified Opinions',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A service auditor would issue a qualified opinion on a SOC 2 report when:',
     options: [
       'All controls are operating effectively',
@@ -53,11 +57,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-003',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Cybersecurity Threats',
     subtopic: 'Social Engineering',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Phishing attacks are a type of:',
     options: [
       'Network infrastructure failure',
@@ -72,11 +78,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-004',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Cybersecurity Threats',
     subtopic: 'Ransomware',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The MOST effective control to mitigate the impact of a ransomware attack is:',
     options: [
       'Paying the ransom immediately',
@@ -91,11 +99,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-005',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Cybersecurity Threats',
     subtopic: 'Insider Threats',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which control is MOST effective at detecting insider threats?',
     options: [
       'Perimeter firewalls',
@@ -110,11 +120,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-006',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-threats',
     topic: 'Cybersecurity Threats',
     subtopic: 'SQL Injection',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An SQL injection attack targets:',
     options: [
       'Network firewalls',
@@ -133,11 +145,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-007',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'ITGC vs Application Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'IT General Controls (ITGCs) differ from application controls in that ITGCs:',
     options: [
       'Apply only to financial systems',
@@ -152,11 +166,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-008',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'Testing ITGCs',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When testing IT general controls over access to programs and data, an auditor typically tests:',
     options: [
       'Only physical access to the server room',
@@ -175,11 +191,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-009',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Predictive Analytics',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In audit data analytics, predictive analytics is MOST appropriately used for:',
     options: [
       'Replacing all substantive audit procedures',
@@ -194,11 +212,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-010',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-analytics',
     topic: 'Data Analytics',
     subtopic: 'Data Mining',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The primary purpose of data mining in accounting and auditing is to:',
     options: [
       'Store large volumes of data',
@@ -217,11 +237,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-011',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Systems Architecture',
     subtopic: 'Client-Server vs Cloud',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In a Software as a Service (SaaS) model, the software is:',
     options: [
       'Installed and maintained on each user\'s local computer',
@@ -236,11 +258,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-012',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-systems',
     topic: 'Network Architecture',
     subtopic: 'Network Segmentation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Network segmentation (using VLANs and subnets) provides security benefits because:',
     options: [
       'It increases internet speed',
@@ -259,11 +283,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-013',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'Quantum Computing',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The primary cybersecurity concern related to quantum computing is:',
     options: [
       'Quantum computers are too expensive to purchase',
@@ -278,11 +304,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-014',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-emerging-tech',
     topic: 'Emerging Technologies',
     subtopic: 'IoT Security',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internet of Things (IoT) devices present unique security challenges because they:',
     options: [
       'Are always more secure than traditional computers',
@@ -301,11 +329,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-015',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-compliance',
     topic: 'Compliance Frameworks',
     subtopic: 'NIST Cybersecurity Framework',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The five core functions of the NIST Cybersecurity Framework (CSF) are:',
     options: [
       'Plan, Do, Check, Act, Review',
@@ -320,11 +350,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-016',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-compliance',
     topic: 'Compliance Frameworks',
     subtopic: 'PCI-DSS',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Payment Card Industry Data Security Standard (PCI-DSS) requires organizations that process payment card data to:',
     options: [
       'Encrypt all data on their website regardless of type',
@@ -343,11 +375,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-017',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-physical',
     topic: 'Physical Security',
     subtopic: 'Data Center Controls',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a physical environmental control for a data center?',
     options: [
       'Firewall rules',
@@ -366,11 +400,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-018',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'ETL Processes',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In the context of data warehousing, ETL stands for:',
     options: [
       'Encrypt, Transfer, Log',
@@ -385,11 +421,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-019',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-data-management',
     topic: 'Data Management',
     subtopic: 'Backup Strategies',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which backup strategy copies only the data that has changed since the last full backup?',
     options: [
       'Full backup',
@@ -408,11 +446,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-020',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'COSO and IT',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'How does the COSO Internal Control Framework relate to IT controls?',
     options: [
       'COSO has no relevance to IT controls',
@@ -431,11 +471,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-021',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Access Control',
     subtopic: 'Role-Based Access Control',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Role-based access control (RBAC) assigns permissions based on:',
     options: [
       'Each individual user\'s personal preferences',
@@ -450,11 +492,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-022',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Access Control',
     subtopic: 'Single Sign-On',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Single sign-on (SSO) presents which security trade-off?',
     options: [
       'SSO provides no security benefits',
@@ -473,11 +517,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-023',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-V',
     topicId: 'isc-attestation',
     topic: 'Attestation',
     subtopic: 'SSAE 18',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'SSAE 18 (Statements on Standards for Attestation Engagements No. 18) superseded SSAE 16 primarily to:',
     options: [
       'Eliminate SOC reporting',
@@ -496,11 +542,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-024',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-data-lifecycle',
     topic: 'Data Governance',
     subtopic: 'Data Retention',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A data retention policy should specify:',
     options: [
       'That all data should be kept forever to be safe',
@@ -519,11 +567,13 @@ export const ISC_QUESTIONS_DEPTH_3: Question[] = [
   {
     id: 'isc-d3-025',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-VI',
     topicId: 'isc-ai',
     topic: 'AI Governance',
     subtopic: 'AI Risk Framework',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The NIST AI Risk Management Framework (AI RMF) organizes AI risk management activities into four core functions:',
     options: [
       'Build, Test, Deploy, Monitor',

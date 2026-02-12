@@ -8,11 +8,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Alternative Minimum Tax (AMT)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For individual taxpayers, the AMT exemption amount for 2025 (MFJ) is approximately $137,000. Which of the following is a common AMT preference or adjustment item?',
     options: [
       'Charitable contributions',
@@ -27,11 +29,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Accumulated Earnings Tax — §531',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The accumulated earnings tax (AET) under §531 is imposed on C corporations that:',
     options: [
       'Have earnings over $1 million',
@@ -46,11 +50,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales — §453',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the installment method (§453), a seller reports gain:',
     options: [
       'Entirely in the year of sale',
@@ -65,11 +71,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Health Savings Account (HSA)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Contributions to a Health Savings Account (HSA) for 2025 are limited to:',
     options: [
       '$2,000 individual / $5,000 family',
@@ -84,11 +92,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Trust Classification — Simple vs. Complex',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A "simple trust" under Subchapter J is one that:',
     options: [
       'Has no beneficiaries',
@@ -103,11 +113,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Passive Activity Loss Rules — Material Participation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §469, a taxpayer materially participates in an activity if the taxpayer satisfies one of 7 tests. Which is the MOST commonly used test?',
     options: [
       'The taxpayer invests at least $100,000',
@@ -122,11 +134,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'IRA Distribution Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the SECURE Act, the required minimum distribution (RMD) age for individuals turning 73 in 2025 is:',
     options: [
       '70½',
@@ -141,11 +155,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Varying Interests Rule',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When a partner\'s interest in a partnership changes during the year (e.g., a new partner is admitted), the partnership allocates income using:',
     options: [
       'Only year-end percentages',
@@ -160,11 +176,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture — §1250',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §1250, gain on the sale of depreciable real property (placed in service after 1986) is subject to unrecaptured §1250 gain taxed at:',
     options: [
       'Ordinary income rates',
@@ -179,11 +197,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Earned Income Credit (EIC)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Earned Income Credit (EIC) is:',
     options: [
       'A nonrefundable credit for high-income taxpayers',
@@ -198,11 +218,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corp — Personal Holding Company Tax',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The personal holding company (PHC) tax under §541 applies when:',
     options: [
       'A corporation has any passive income',
@@ -217,11 +239,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'At-Risk Rules — §465',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under the at-risk rules (§465), a taxpayer can deduct losses from an activity only to the extent of:',
     options: [
       'Total investment regardless of liability type',
@@ -236,11 +260,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Excess Business Loss Limitation — §461(l)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §461(l), noncorporate taxpayers cannot deduct excess business losses exceeding:',
     options: [
       '$100,000 annually',
@@ -255,11 +281,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Estate Tax — Unified Credit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'For 2025, the federal estate tax exemption (basic exclusion amount) is approximately:',
     options: [
       '$3.5 million',
@@ -274,11 +302,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Net Section 1231 Gain/Loss',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Net §1231 gains are treated as:',
     options: [
       'Ordinary income',
@@ -293,11 +323,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Qualified Education Expenses — §529',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Distributions from a §529 plan are tax-free when used for:',
     options: [
       'Only college tuition',
@@ -312,11 +344,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corp — Reasonable Compensation',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An S corporation shareholder-employee must receive reasonable compensation because:',
     options: [
       'It is an optional best practice',
@@ -331,11 +365,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Related Party Transactions — §267',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §267, losses on sales between related parties are:',
     options: [
       'Fully deductible',
@@ -350,11 +386,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Foreign Earned Income Exclusion — §911',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §911, a U.S. citizen living abroad may exclude from gross income foreign earned income up to:',
     options: [
       '$50,000',
@@ -369,11 +407,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corp — Earnings and Profits (E&P)',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A C corporation\'s current earnings and profits (E&P) are important because they determine:',
     options: [
       'The corporation\'s tax liability',
@@ -388,11 +428,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Wash Sale Rule — §1091',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the wash sale rule, a loss on the sale of stock or securities is disallowed if:',
     options: [
       'The stock is sold at a loss more than once in a year',
@@ -407,11 +449,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Premium Tax Credit — §36B',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Premium Tax Credit (PTC) under §36B is available to individuals who:',
     options: [
       'Have any type of health insurance',
@@ -426,11 +470,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Tax-Exempt Organizations — §501(c)(3)',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To maintain §501(c)(3) tax-exempt status, an organization must NOT:',
     options: [
       'Accept donations',
@@ -445,11 +491,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Charitable Contribution of Appreciated Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a taxpayer donates long-term capital gain property to a public charity, the deduction is generally:',
     options: [
       'Limited to the property\'s adjusted basis',
@@ -464,11 +512,13 @@ export const TCP_QUESTIONS_DEPTH_7: Question[] = [
   {
     id: 'tcp-d7-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-ethics',
     topic: 'Tax Research and Ethics',
     subtopic: 'Circular 230 — Written Tax Advice',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under Circular 230, a practitioner providing written tax advice must:',
     options: [
       'Only provide advice verbally to avoid documentation',

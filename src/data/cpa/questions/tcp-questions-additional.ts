@@ -11,6 +11,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-001',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Filing Status',
@@ -31,6 +32,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-002',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Gross Income',
@@ -51,6 +53,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-003',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Capital Gains',
@@ -71,6 +74,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-004',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Itemized Deductions',
@@ -91,6 +95,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-005',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Retirement Distributions',
@@ -115,6 +120,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-006',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Formation',
@@ -135,6 +141,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-007',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Accumulated Earnings Tax',
@@ -155,6 +162,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-008',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Dividends Received Deduction',
@@ -175,6 +183,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-009',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Net Operating Losses',
@@ -195,6 +204,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-010',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Charitable Contributions',
@@ -219,6 +229,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-011',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Eligibility',
@@ -239,6 +250,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-012',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Basis',
@@ -259,6 +271,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-013',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-scorp',
     topic: 'S Corporation Taxation',
     subtopic: 'Built-In Gains Tax',
@@ -283,6 +296,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-014',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Formation',
@@ -303,6 +317,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-015',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Basis',
@@ -323,6 +338,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-016',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Distributions',
@@ -343,6 +359,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-017',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-partnership',
     topic: 'Partnership Taxation',
     subtopic: 'Special Allocations',
@@ -367,6 +384,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-018',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchanges',
@@ -387,6 +405,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-019',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
@@ -407,6 +426,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-020',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
@@ -427,6 +447,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-021',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation Recapture',
@@ -451,6 +472,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-022',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Entity Selection',
@@ -471,6 +493,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-023',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'AMT',
@@ -491,6 +514,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-024',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Net Investment Income Tax',
@@ -511,6 +535,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-025',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Estimated Taxes',
@@ -535,6 +560,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-026',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice',
     subtopic: 'Circular 230',
@@ -555,6 +581,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-027',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-ethics',
     topic: 'Tax Practice',
     subtopic: 'Penalties',
@@ -575,6 +602,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-028',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-research',
     topic: 'Tax Research',
     subtopic: 'Primary Sources',
@@ -599,6 +627,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-029',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Credits',
@@ -619,6 +648,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-030',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-individual',
     topic: 'Individual Income Tax',
     subtopic: 'Education Credits',
@@ -639,6 +669,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-031',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Liquidations',
@@ -659,6 +690,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-032',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-corporate',
     topic: 'Corporate Taxation',
     subtopic: 'Reorganizations',
@@ -679,6 +711,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-033',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Gift Tax',
@@ -699,6 +732,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-034',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-estate',
     topic: 'Estate and Gift Tax',
     subtopic: 'Estate Tax',
@@ -719,6 +753,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-035',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Tax',
     subtopic: 'GILTI',
@@ -739,6 +774,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-036',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-international',
     topic: 'International Tax',
     subtopic: 'Foreign Tax Credit',
@@ -759,6 +795,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-037',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-depreciation',
     topic: 'Depreciation',
     subtopic: 'Section 179',
@@ -779,6 +816,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-038',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-depreciation',
     topic: 'Depreciation',
     subtopic: 'Bonus Depreciation',
@@ -799,6 +837,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-039',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-passive',
     topic: 'Passive Activities',
     subtopic: 'Material Participation',
@@ -819,6 +858,7 @@ export const TCP_QUESTIONS_ADDITIONAL: Question[] = [
   {
     id: 'tcp-add-040',
     section: 'TCP',
+    courseId: 'cpa',
     topicId: 'tcp-passive',
     topic: 'Passive Activities',
     subtopic: 'Real Estate Professional',

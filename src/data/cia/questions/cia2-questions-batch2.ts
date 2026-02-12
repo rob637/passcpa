@@ -17,10 +17,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-071',
+    id: 'cia2-071',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When developing the risk-based audit plan, the CAE should consider all of the following EXCEPT:',
     options: [
       'The organization\'s strategic objectives',
@@ -31,13 +33,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'The risk-based audit plan should be based on organizational objectives, risk assessment, management expectations, and regulatory requirements—not personal staff preferences.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Risk-Based Planning'
+    subtopic: 'Risk-Based Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-072',
+    id: 'cia2-072',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The audit universe represents:',
     options: [
       'Only high-risk audit areas',
@@ -48,13 +53,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The audit universe encompasses all possible auditable entities (departments, processes, systems, locations) from which the CAE selects engagements based on risk.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Audit Universe'
+    subtopic: 'Audit Universe',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-073',
+    id: 'cia2-073',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE should submit the annual audit plan to the board for:',
     options: [
       'Information only',
@@ -65,13 +73,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2020 requires the CAE to communicate the audit plan and resource requirements to senior management and the board for review and approval.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Audit Plan Approval'
+    subtopic: 'Audit Plan Approval',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-074',
+    id: 'cia2-074',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Policies and procedures in the internal audit activity provide:',
     options: [
       'Optional guidance for experienced auditors only',
@@ -82,13 +93,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2040 requires the CAE to establish policies and procedures to guide the internal audit activity, providing consistent framework for quality work.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Policies and Procedures'
+    subtopic: 'Policies and Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-075',
+    id: 'cia2-075',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When coordinating with external auditors, the CAE should consider:',
     options: [
       'Competing for audit areas',
@@ -99,13 +113,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Coordination with external auditors includes consideration of coverage, access to each other\'s programs and working papers, and avoiding duplication while ensuring adequate coverage.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'External Coordination'
+    subtopic: 'External Coordination',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-076',
+    id: 'cia2-076',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The CAE reports to the board periodically on all of the following EXCEPT:',
     options: [
       'Audit plan status and changes',
@@ -116,13 +133,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 2,
     explanation: 'Daily operational decisions are administrative matters. The CAE reports to the board on significant matters including plan status, risk exposures, control issues, and resource needs.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Reporting to the Board'
+    subtopic: 'Reporting to the Board',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-077',
+    id: 'cia2-077',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk factors used to prioritize the audit plan typically include:',
     options: [
       'Only financial statement impact',
@@ -133,13 +153,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Multiple risk factors inform audit planning including potential impact, likelihood, time since last audit, control environment quality, management concerns, and regulatory requirements.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Risk Prioritization'
+    subtopic: 'Risk Prioritization',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-078',
+    id: 'cia2-078',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Resource management for the internal audit activity includes ensuring resources are:',
     options: [
       'Minimized to reduce costs',
@@ -150,13 +173,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2030 requires the CAE to ensure resources (people, technology, budget) are appropriate to the work, sufficient in quantity, and effectively deployed per the plan.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Resource Management'
+    subtopic: 'Resource Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-079',
+    id: 'cia2-079',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Knowledge management in internal audit refers to:',
     options: [
       'Only storing audit reports',
@@ -167,13 +193,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Knowledge management involves systematically capturing, organizing, and sharing expertise, lessons learned, and audit knowledge to improve efficiency and effectiveness.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Knowledge Management'
+    subtopic: 'Knowledge Management',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-080',
+    id: 'cia2-080',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using external service providers for audit work, the CAE must:',
     options: [
       'Transfer all responsibility to the provider',
@@ -184,7 +213,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2070 requires the CAE to retain responsibility for quality when external providers perform work. The CAE must ensure providers are competent and supervised appropriately.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'External Service Providers'
+    subtopic: 'External Service Providers',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -192,10 +222,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-081',
+    id: 'cia2-081',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Preliminary engagement planning includes:',
     options: [
       'Only drafting the final report',
@@ -206,13 +238,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Preliminary planning involves understanding the engagement area, gathering relevant information, assessing risks, and determining scope before detailed fieldwork begins.',
     topic: 'Planning the Engagement',
-    subtopic: 'Preliminary Planning'
+    subtopic: 'Preliminary Planning',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-082',
+    id: 'cia2-082',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Engagement objectives should be developed for each engagement and must include:',
     options: [
       'Only financial aspects',
@@ -223,13 +258,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2210 requires engagement objectives to address risks, controls, and governance of the area under review, including criteria for evaluating performance.',
     topic: 'Planning the Engagement',
-    subtopic: 'Engagement Objectives'
+    subtopic: 'Engagement Objectives',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-083',
+    id: 'cia2-083',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When assessing the significance of control weaknesses, an internal auditor should consider:',
     options: [
       'Only dollar impact',
@@ -240,13 +278,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Significance assessment considers potential impact on objectives, likelihood of harm materializing, existence of compensating controls, and whether issues are systematic or isolated.',
     topic: 'Planning the Engagement',
-    subtopic: 'Risk Assessment'
+    subtopic: 'Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-084',
+    id: 'cia2-084',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The engagement scope defines:',
     options: [
       'Only the budget for the engagement',
@@ -257,13 +298,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The engagement scope identifies what will be covered, including activities, systems, records, and time periods under review, as well as the nature and extent of testing.',
     topic: 'Planning the Engagement',
-    subtopic: 'Engagement Scope'
+    subtopic: 'Engagement Scope',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-085',
+    id: 'cia2-085',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An engagement work program should:',
     options: [
       'Be developed after fieldwork is complete',
@@ -274,13 +318,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2240 requires a work program documenting procedures to achieve engagement objectives. It guides the work and should be approved before work begins.',
     topic: 'Planning the Engagement',
-    subtopic: 'Work Program'
+    subtopic: 'Work Program',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-086',
+    id: 'cia2-086',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Resource allocation for an engagement considers:',
     options: [
       'Only seniority of staff',
@@ -291,13 +338,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2230 requires internal auditors to determine appropriate resources considering the nature and complexity of the engagement and available competencies.',
     topic: 'Planning the Engagement',
-    subtopic: 'Resource Allocation'
+    subtopic: 'Resource Allocation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-087',
+    id: 'cia2-087',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A process walk-through during planning serves to:',
     options: [
       'Replace detailed testing',
@@ -308,13 +358,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Walk-throughs during planning help auditors understand how a process works, identify key controls, potential risks, and areas requiring attention during testing.',
     topic: 'Planning the Engagement',
-    subtopic: 'Understanding the Process'
+    subtopic: 'Understanding the Process',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-088',
+    id: 'cia2-088',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When establishing engagement objectives for an assurance engagement, the auditor must consider:',
     options: [
       'Only what management wants audited',
@@ -325,13 +378,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2210.A1 requires considering probability of significant errors, fraud, noncompliance, and exposures when developing objectives for assurance engagements.',
     topic: 'Planning the Engagement',
-    subtopic: 'Engagement Objectives'
+    subtopic: 'Engagement Objectives',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-089',
+    id: 'cia2-089',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An engagement communication (announcement) typically includes:',
     options: [
       'Final audit conclusions',
@@ -342,13 +398,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The engagement communication notifies the auditee of the upcoming engagement, including objectives, scope, timing, and requests for information or resources needed.',
     topic: 'Planning the Engagement',
-    subtopic: 'Engagement Communication'
+    subtopic: 'Engagement Communication',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-090',
+    id: 'cia2-090',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Adequate criteria against which to evaluate operations are:',
     options: [
       'Not needed for internal audits',
@@ -359,7 +418,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2210.A3 requires internal auditors to identify adequate criteria against which to evaluate operations. Reliable criteria are essential for objective assessment.',
     topic: 'Planning the Engagement',
-    subtopic: 'Evaluation Criteria'
+    subtopic: 'Evaluation Criteria',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -367,10 +427,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-091',
+    id: 'cia2-091',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Information used in an audit engagement should be:',
     options: [
       'Any information available',
@@ -381,13 +443,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2310 requires internal auditors to identify, analyze, evaluate, and document sufficient, reliable, relevant, and useful information to achieve engagement objectives.',
     topic: 'Performing the Engagement',
-    subtopic: 'Identifying Information'
+    subtopic: 'Identifying Information',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-092',
+    id: 'cia2-092',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Sufficient information is characterized by being:',
     options: [
       'Any electronic information',
@@ -398,13 +463,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Sufficient information is factual, adequate, and convincing enough that a prudent person would reach the same conclusions as the auditor. It must support findings.',
     topic: 'Performing the Engagement',
-    subtopic: 'Information Quality'
+    subtopic: 'Information Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-093',
+    id: 'cia2-093',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Reliable information is:',
     options: [
       'Information from any source',
@@ -415,13 +483,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Reliable information is dependable and can be obtained through proper use of engagement techniques. Source credibility, independence, and verification affect reliability.',
     topic: 'Performing the Engagement',
-    subtopic: 'Information Quality'
+    subtopic: 'Information Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-094',
+    id: 'cia2-094',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Relevant information:',
     options: [
       'May or may not relate to engagement objectives',
@@ -432,13 +503,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Relevant information has a logical relationship to the engagement objectives. It directly supports the observations, conclusions, and recommendations being made.',
     topic: 'Performing the Engagement',
-    subtopic: 'Information Quality'
+    subtopic: 'Information Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-095',
+    id: 'cia2-095',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Useful information:',
     options: [
       'Is complex and technical',
@@ -449,13 +523,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Useful information helps the organization meet its goals. It provides value to decision-makers and contributes to organizational improvement.',
     topic: 'Performing the Engagement',
-    subtopic: 'Information Quality'
+    subtopic: 'Information Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-096',
+    id: 'cia2-096',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Analytical procedures in internal auditing are used to:',
     options: [
       'Replace all substantive testing',
@@ -466,13 +543,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Analytical procedures evaluate information by analyzing relationships among data (ratios, trends, comparisons) to identify unusual patterns or unexpected results requiring further investigation.',
     topic: 'Performing the Engagement',
-    subtopic: 'Analytical Procedures'
+    subtopic: 'Analytical Procedures',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-097',
+    id: 'cia2-097',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Observation as an audit technique provides evidence of:',
     options: [
       'Historical transactions only',
@@ -483,13 +563,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Observation provides direct evidence of how activities, processes, or conditions exist at a specific point in time. It confirms practices but only represents that moment.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Techniques'
+    subtopic: 'Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-098',
+    id: 'cia2-098',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Inquiry involves:',
     options: [
       'Only written questionnaires',
@@ -500,13 +583,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Inquiry involves seeking information through questions of knowledgeable persons, whether through formal interviews, discussions, or questionnaires.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Techniques'
+    subtopic: 'Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-099',
+    id: 'cia2-099',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Inspection of records and documents provides evidence about:',
     options: [
       'Only physical assets',
@@ -517,13 +603,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Inspection of records and documents provides evidence about the existence, completeness, accuracy, and validity of recorded information and transactions.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Techniques'
+    subtopic: 'Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-100',
+    id: 'cia2-100',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Confirmation involves:',
     options: [
       'Internal reviews only',
@@ -534,13 +623,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Confirmation obtains direct written responses from third parties (banks, customers, vendors) corroborating information in the organization\'s records.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Techniques'
+    subtopic: 'Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-101',
+    id: 'cia2-101',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Statistical sampling allows the auditor to:',
     options: [
       'Examine every item',
@@ -551,13 +643,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Statistical sampling uses probability theory to select samples and project sample results to the population, providing mathematically measurable confidence levels.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-102',
+    id: 'cia2-102',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Attributes sampling is most appropriate when:',
     options: [
       'Testing dollar amounts',
@@ -568,14 +663,17 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Attributes sampling estimates the rate of occurrence of a characteristic (like control compliance) in a population. It answers yes/no questions about control operation.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA2-104',
+    id: 'cia2-104',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Sampling risk is:',
     options: [
       'The risk that audit procedures are not applied correctly',
@@ -586,13 +684,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Sampling risk is the risk that conclusions from testing a sample may differ from conclusions that would be reached if the entire population were tested.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling Risk'
+    subtopic: 'Sampling Risk',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-105',
+    id: 'cia2-105',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Judgmental (non-statistical) sampling:',
     options: [
       'Provides the same statistical conclusions as statistical sampling',
@@ -603,13 +704,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Judgmental sampling relies on the auditor\'s professional judgment to select sample items. Results cannot be statistically projected but can still provide useful evidence.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-106',
+    id: 'cia2-106',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Generalized audit software (GAS) allows auditors to:',
     options: [
       'Only prepare reports',
@@ -620,13 +724,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'GAS (e.g., ACL, IDEA) reads data from various formats, performs calculations, identifies exceptions, stratifies populations, and performs analyses that would be time-consuming manually.',
     topic: 'Performing the Engagement',
-    subtopic: 'Computer-Assisted Audit Techniques'
+    subtopic: 'Computer-Assisted Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-107',
+    id: 'cia2-107',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Test data techniques involve:',
     options: [
       'Only using live production data',
@@ -637,13 +744,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Test data involves creating fictitious transactions processed through the client\'s system to verify that controls function as designed (e.g., rejection of invalid data).',
     topic: 'Performing the Engagement',
-    subtopic: 'Computer-Assisted Audit Techniques'
+    subtopic: 'Computer-Assisted Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-108',
+    id: 'cia2-108',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous auditing involves:',
     options: [
       'Annual audits only',
@@ -654,13 +764,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Continuous auditing uses automated tools to perform audit tests on transactions and controls on an ongoing or near real-time basis, enabling timely detection of issues.',
     topic: 'Performing the Engagement',
-    subtopic: 'Continuous Auditing'
+    subtopic: 'Continuous Auditing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-109',
+    id: 'cia2-109',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Data analytics in internal auditing helps:',
     options: [
       'Eliminate the need for auditors',
@@ -671,13 +784,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Data analytics enables auditors to analyze entire populations, identify patterns and anomalies, and focus testing on higher-risk items or unusual transactions.',
     topic: 'Performing the Engagement',
-    subtopic: 'Data Analytics'
+    subtopic: 'Data Analytics',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-110',
+    id: 'cia2-110',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When evaluating control design, the auditor assesses whether:',
     options: [
       'Controls are operating throughout the period',
@@ -688,13 +804,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Design effectiveness evaluates whether controls, if operating as designed, would effectively prevent or detect errors and irregularities that could affect objectives.',
     topic: 'Performing the Engagement',
-    subtopic: 'Control Evaluation'
+    subtopic: 'Control Evaluation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-111',
+    id: 'cia2-111',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating operating effectiveness, the auditor tests whether:',
     options: [
       'Controls are documented',
@@ -705,13 +824,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Operating effectiveness tests whether controls actually operated as designed consistently throughout the audit period, not just whether they were designed correctly.',
     topic: 'Performing the Engagement',
-    subtopic: 'Control Testing'
+    subtopic: 'Control Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-112',
+    id: 'cia2-112',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A root cause analysis seeks to identify:',
     options: [
       'Only the symptoms of a problem',
@@ -722,13 +844,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Root cause analysis goes beyond symptoms to identify the fundamental underlying reasons why a problem occurred, enabling more effective corrective action.',
     topic: 'Performing the Engagement',
-    subtopic: 'Analysis'
+    subtopic: 'Analysis',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-113',
+    id: 'cia2-113',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Engagement supervision ensures:',
     options: [
       'Staff are monitored constantly',
@@ -739,13 +864,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2340 requires supervision to ensure engagement objectives are achieved, quality is assured, and staff receive appropriate instruction and development.',
     topic: 'Performing the Engagement',
-    subtopic: 'Supervision'
+    subtopic: 'Supervision',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-114',
+    id: 'cia2-114',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Working papers serve to:',
     options: [
       'Only satisfy regulatory requirements',
@@ -756,13 +884,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2330 requires documentation of information sufficient to support conclusions and engagement results. Working papers are the record of work performed.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation'
+    subtopic: 'Documentation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-115',
+    id: 'cia2-115',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Working paper retention policies should consider:',
     options: [
       'Only storage costs',
@@ -773,13 +904,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Retention policies balance legal requirements, regulations, organizational needs, and potential future use of documentation including litigation support and recurring engagements.',
     topic: 'Performing the Engagement',
-    subtopic: 'Record Retention'
+    subtopic: 'Record Retention',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-116',
+    id: 'cia2-116',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Cross-referencing in working papers:',
     options: [
       'Is optional',
@@ -790,13 +924,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Cross-referencing creates links between related working papers, supporting documents, and the audit report, maintaining a clear audit trail for review.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation'
+    subtopic: 'Documentation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-117',
+    id: 'cia2-117',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Interview techniques that are most effective include:',
     options: [
       'Only closed-ended questions',
@@ -807,13 +944,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Open-ended questions encourage interviewees to provide detailed, narrative responses, yielding more information than closed-ended questions that limit responses.',
     topic: 'Performing the Engagement',
-    subtopic: 'Interview Techniques'
+    subtopic: 'Interview Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-118',
+    id: 'cia2-118',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Corroborating evidence from multiple sources:',
     options: [
       'Is unnecessary if one source is reliable',
@@ -824,13 +964,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Evidence from multiple independent sources that supports the same conclusion is more reliable and persuasive than evidence from a single source.',
     topic: 'Performing the Engagement',
-    subtopic: 'Evidence'
+    subtopic: 'Evidence',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-119',
+    id: 'cia2-119',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an internal auditor discovers potential fraud during an engagement, they should:',
     options: [
       'Complete a full fraud investigation independently',
@@ -841,13 +984,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'When fraud is suspected, auditors should extend procedures as appropriate, notify management and/or the CAE, and consider whether fraud investigation specialists are needed.',
     topic: 'Performing the Engagement',
-    subtopic: 'Fraud'
+    subtopic: 'Fraud',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-120',
+    id: 'cia2-120',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The concept of materiality in internal auditing relates to:',
     options: [
       'Only dollar amounts',
@@ -858,7 +1004,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Materiality considers whether information is significant enough to affect decisions or achievement of objectives. It includes quantitative and qualitative factors.',
     topic: 'Performing the Engagement',
-    subtopic: 'Materiality'
+    subtopic: 'Materiality',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -866,10 +1013,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-121',
+    id: 'cia2-121',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Engagement communications should include:',
     options: [
       'Only positive observations',
@@ -880,13 +1029,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2410 requires communications to include objectives, scope, applicable conclusions, recommendations, and action plans. They provide a complete picture of the engagement.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Content'
+    subtopic: 'Communication Content',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-122',
+    id: 'cia2-122',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Criteria for engagement communications include being:',
     options: [
       'Only verbal',
@@ -897,13 +1049,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2420 requires communications to be accurate, objective, clear, concise, constructive, complete, and timely. These criteria ensure effectiveness.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-123',
+    id: 'cia2-123',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An engagement observation should include:',
     options: [
       'Only the condition found',
@@ -914,13 +1069,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'A complete observation includes: condition (what was found), criteria (what should be), cause (why it occurred), consequence (impact), and recommended corrective action.',
     topic: 'Communicating Results',
-    subtopic: 'Observation Structure'
+    subtopic: 'Observation Structure',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-124',
+    id: 'cia2-124',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The purpose of an exit conference is to:',
     options: [
       'Finalize the audit report without discussion',
@@ -931,13 +1089,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Exit conferences allow auditors to discuss draft findings and recommendations with management, clarify issues, obtain management\'s perspective, and agree on action plans.',
     topic: 'Communicating Results',
-    subtopic: 'Exit Conference'
+    subtopic: 'Exit Conference',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-125',
+    id: 'cia2-125',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Management responses to audit findings:',
     options: [
       'Are optional in the report',
@@ -948,13 +1109,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2410.A1 indicates communications should include management\'s response describing action taken or to be taken, along with timeframes for implementation.',
     topic: 'Communicating Results',
-    subtopic: 'Management Response'
+    subtopic: 'Management Response',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-126',
+    id: 'cia2-126',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'If an engagement observes satisfactory performance, the audit report should:',
     options: [
       'Not be issued',
@@ -965,13 +1129,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Satisfactory performance should be communicated. Reports acknowledging strengths and achievements, along with any improvement opportunities, provide balanced perspective.',
     topic: 'Communicating Results',
-    subtopic: 'Reporting Positive Results'
+    subtopic: 'Reporting Positive Results',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-127',
+    id: 'cia2-127',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When management disputes significant audit findings, the auditor should:',
     options: [
       'Remove the findings from the report',
@@ -982,13 +1149,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'When disagreement occurs on significant issues, the report may include both the auditor\'s conclusion and management\'s position. The CAE determines appropriate handling.',
     topic: 'Communicating Results',
-    subtopic: 'Disagreement'
+    subtopic: 'Disagreement',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-128',
+    id: 'cia2-128',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The CAE must disseminate results to appropriate parties who:',
     options: [
       'Request all reports',
@@ -999,13 +1169,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2440 requires disseminating results to those who can ensure proper consideration and corrective action, typically those responsible for the area.',
     topic: 'Communicating Results',
-    subtopic: 'Dissemination'
+    subtopic: 'Dissemination',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-129',
+    id: 'cia2-129',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Before releasing engagement results to external parties, the CAE should:',
     options: [
       'Do nothing special',
@@ -1016,13 +1189,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2440.A2 requires the CAE to assess potential risk, consult with senior management/legal counsel, and control dissemination when releasing to external parties.',
     topic: 'Communicating Results',
-    subtopic: 'External Dissemination'
+    subtopic: 'External Dissemination',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-130',
+    id: 'cia2-130',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The CAE should establish monitoring processes to:',
     options: [
       'Only track audit department metrics',
@@ -1033,13 +1209,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2500 requires the CAE to establish and maintain a system to monitor disposition of results and ensure management actions are effectively implemented or that management accepts the risk of not taking action.',
     topic: 'Monitoring Progress',
-    subtopic: 'Follow-Up'
+    subtopic: 'Follow-Up',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-131',
+    id: 'cia2-131',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When management decides not to act on audit recommendations, the CAE should:',
     options: [
       'Accept management\'s decision without further action',
@@ -1050,13 +1229,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2600 requires the CAE to discuss with senior management when they believe an unacceptable level of risk has been accepted. If unresolved, the CAE must report to the board.',
     topic: 'Monitoring Progress',
-    subtopic: 'Risk Acceptance'
+    subtopic: 'Risk Acceptance',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-132',
+    id: 'cia2-132',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Effective audit recommendations should be:',
     options: [
       'Vague to allow management flexibility',
@@ -1067,13 +1249,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Good recommendations are specific enough to be understood and implemented, actionable, address root causes rather than symptoms, and consider cost-effectiveness.',
     topic: 'Communicating Results',
-    subtopic: 'Recommendations'
+    subtopic: 'Recommendations',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-133',
+    id: 'cia2-133',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An overall opinion in the CAE\'s annual report includes:',
     options: [
       'Only financial statement findings',
@@ -1084,13 +1269,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2450 requires the CAE to provide an annual opinion on the adequacy and effectiveness of the organization\'s governance, risk management, and control processes.',
     topic: 'Communicating Results',
-    subtopic: 'Annual Opinion'
+    subtopic: 'Annual Opinion',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-134',
+    id: 'cia2-134',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Interim communications during an engagement:',
     options: [
       'Are not permitted',
@@ -1101,13 +1289,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2410.A3 allows interim communications for significant issues requiring immediate management attention, such as serious control weaknesses or fraud indicators.',
     topic: 'Communicating Results',
-    subtopic: 'Interim Reporting'
+    subtopic: 'Interim Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-135',
+    id: 'cia2-135',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When an audit report contains an error, the CAE should:',
     options: [
       'Ignore minor errors',
@@ -1118,7 +1309,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Standard 2421 requires the CAE to communicate corrected information to all parties who received the original communication if errors or omissions are discovered.',
     topic: 'Communicating Results',
-    subtopic: 'Report Errors'
+    subtopic: 'Report Errors',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1126,10 +1318,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-136',
+    id: 'cia2-136',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal audit activity adds value when it:',
     options: [
       'Finds as many errors as possible',
@@ -1140,13 +1334,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Value is added through objective, relevant assurance and insight that helps the organization achieve objectives and improve operations, not by volume of findings or audits.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Value of Internal Audit'
+    subtopic: 'Value of Internal Audit',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-137',
+    id: 'cia2-137',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When the audit plan needs significant revision during the year, the CAE should:',
     options: [
       'Complete the original plan regardless',
@@ -1157,13 +1354,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Significant changes to the approved audit plan should be communicated to senior management and the board, explaining the reasons and impact on overall coverage.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Plan Modifications'
+    subtopic: 'Plan Modifications',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-138',
+    id: 'cia2-138',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Benchmarking internal audit performance against similar organizations helps:',
     options: [
       'Only justify budget increases',
@@ -1174,13 +1374,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Benchmarking provides external perspective on internal audit performance, identifies best practices and improvement opportunities, and supports resource discussions.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Performance Measurement'
+    subtopic: 'Performance Measurement',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-139',
+    id: 'cia2-139',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Key performance indicators (KPIs) for internal audit might include:',
     options: [
       'Only budget compliance',
@@ -1191,13 +1394,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'KPIs measure various aspects of performance including plan completion, timeliness, stakeholder satisfaction, recommendation acceptance, and implementation rates.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Performance Measurement'
+    subtopic: 'Performance Measurement',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-140',
+    id: 'cia2-140',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit committee (board) interaction with internal audit should include:',
     options: [
       'Only annual report presentation',
@@ -1208,7 +1414,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Effective interaction includes regular meetings, private sessions without management, and open access to the CAE, supporting independence and proper oversight.',
     topic: 'Managing the Internal Audit Activity',
-    subtopic: 'Board Interaction'
+    subtopic: 'Board Interaction',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1216,10 +1423,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-141',
+    id: 'cia2-141',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Risk assessment at the engagement level considers:',
     options: [
       'Only organization-wide strategic risks',
@@ -1230,13 +1439,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Engagement-level risk assessment identifies risks specific to the audited area, including risks to its objectives, operations, and controls.',
     topic: 'Planning the Engagement',
-    subtopic: 'Engagement Risk Assessment'
+    subtopic: 'Engagement Risk Assessment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-142',
+    id: 'cia2-142',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Control environment evaluation during planning assesses:',
     options: [
       'Only specific control procedures',
@@ -1247,13 +1459,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'The control environment encompasses management\'s attitudes, integrity, ethics, and commitment to competence. It sets the tone for control consciousness.',
     topic: 'Planning the Engagement',
-    subtopic: 'Control Environment'
+    subtopic: 'Control Environment',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-143',
+    id: 'cia2-143',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Consulting engagement planning differs from assurance planning in that:',
     options: [
       'No planning is required for consulting',
@@ -1264,13 +1479,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'In consulting engagements, objectives and scope are agreed upon with the engagement client. The nature is advisory with scope defined jointly rather than unilaterally by internal audit.',
     topic: 'Planning the Engagement',
-    subtopic: 'Consulting Engagements'
+    subtopic: 'Consulting Engagements',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-144',
+    id: 'cia2-144',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Preliminary survey activities include:',
     options: [
       'Only reviewing prior audit reports',
@@ -1281,13 +1499,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Preliminary survey involves gathering background information through document review, discussions, walkthroughs, and analytical review to understand the area.',
     topic: 'Planning the Engagement',
-    subtopic: 'Preliminary Survey'
+    subtopic: 'Preliminary Survey',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-145',
+    id: 'cia2-145',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit program flexibility allows:',
     options: [
       'Ignoring the approved program',
@@ -1298,7 +1519,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'While audit programs provide structure, auditors must be able to modify procedures when circumstances change or new information suggests different approaches are needed.',
     topic: 'Planning the Engagement',
-    subtopic: 'Work Program'
+    subtopic: 'Work Program',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1306,10 +1528,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-146',
+    id: 'cia2-146',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Reperformance as an audit technique involves:',
     options: [
       'Observing client procedures',
@@ -1320,13 +1544,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Reperformance involves the auditor independently redoing a calculation, process, or control that was originally performed by client staff to verify accuracy.',
     topic: 'Performing the Engagement',
-    subtopic: 'Audit Techniques'
+    subtopic: 'Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-147',
+    id: 'cia2-147',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using work of other auditors or experts, internal auditors must:',
     options: [
       'Accept all work without review',
@@ -1337,13 +1564,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'When relying on others\' work, auditors must evaluate whether that work is adequate for their purposes, considering competence, objectivity, scope, and findings.',
     topic: 'Performing the Engagement',
-    subtopic: 'Using Other Work'
+    subtopic: 'Using Other Work',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-148',
+    id: 'cia2-148',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Stratified sampling involves:',
     options: [
       'Random selection from the entire population',
@@ -1354,13 +1584,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Stratified sampling divides the population into homogeneous subgroups (strata), then samples from each stratum, often with different intensities based on risk.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-149',
+    id: 'cia2-149',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Monetary unit sampling (MUS) is most useful for:',
     options: [
       'Testing compliance with policies',
@@ -1371,13 +1604,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'MUS (probability proportional to size) is effective for detecting overstatement in monetary populations, as larger dollar items have higher probability of selection.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-150',
+    id: 'cia2-150',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The tolerable error rate in sampling represents:',
     options: [
       'The expected error rate',
@@ -1388,13 +1624,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Tolerable error (deviation) rate is the maximum rate of errors or deviations from a prescribed control procedure that the auditor will accept and still conclude the control is operating effectively.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-151',
+    id: 'cia2-151',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Expected error rate affects sample size in that:',
     options: [
       'Higher expected errors require smaller samples',
@@ -1405,13 +1644,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'As expected error rate increases, larger sample sizes are needed to achieve the desired confidence level in the sampling conclusions.',
     topic: 'Performing the Engagement',
-    subtopic: 'Sampling'
+    subtopic: 'Sampling',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-152',
+    id: 'cia2-152',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Flowcharting is useful in internal audit for:',
     options: [
       'Only IT system documentation',
@@ -1422,13 +1664,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Flowcharts visually document processes, decision points, and control activities, making it easier to understand process flows and identify control gaps or inefficiencies.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation Techniques'
+    subtopic: 'Documentation Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-153',
+    id: 'cia2-153',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Process narratives describe:',
     options: [
       'Only financial transactions',
@@ -1439,13 +1684,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Narratives provide detailed written descriptions of how a process flows, including inputs, activities, controls, outputs, and responsibilities.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation Techniques'
+    subtopic: 'Documentation Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-154',
+    id: 'cia2-154',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Internal control questionnaires (ICQs) help auditors:',
     options: [
       'Replace all other testing',
@@ -1456,13 +1704,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'ICQs provide a structured approach to assessing whether expected controls are in place. They typically use yes/no questions where "no" answers indicate potential weaknesses.',
     topic: 'Performing the Engagement',
-    subtopic: 'Documentation Techniques'
+    subtopic: 'Documentation Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-155',
+    id: 'cia2-155',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When testing automated controls, auditors should:',
     options: [
       'Test only once regardless of changes',
@@ -1473,13 +1724,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'While automated controls may function consistently, auditors must consider whether changes occurred and whether general IT controls (change management) support control integrity.',
     topic: 'Performing the Engagement',
-    subtopic: 'IT Control Testing'
+    subtopic: 'IT Control Testing',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-156',
+    id: 'cia2-156',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Audit evidence from external sources is generally:',
     options: [
       'Less reliable than internal sources',
@@ -1490,13 +1744,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'External evidence from independent sources (confirmations, third-party reports) is generally more reliable than internally-generated evidence due to independence.',
     topic: 'Performing the Engagement',
-    subtopic: 'Evidence Reliability'
+    subtopic: 'Evidence Reliability',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-157',
+    id: 'cia2-157',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Documentary evidence is more reliable when:',
     options: [
       'Obtained orally',
@@ -1507,13 +1764,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Original documents are more reliable than copies because copies could be altered. Direct examination of originals provides better assurance.',
     topic: 'Performing the Engagement',
-    subtopic: 'Evidence Reliability'
+    subtopic: 'Evidence Reliability',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-158',
+    id: 'cia2-158',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Integrated Test Facility (ITF) technique involves:',
     options: [
       'Only manual testing of controls',
@@ -1524,13 +1784,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'ITF creates a fictitious department, vendor, or entity within the production system to process test transactions alongside real ones, testing controls in a live environment.',
     topic: 'Performing the Engagement',
-    subtopic: 'Computer-Assisted Audit Techniques'
+    subtopic: 'Computer-Assisted Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-159',
+    id: 'cia2-159',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Parallel simulation involves:',
     options: [
       'Only observing system operations',
@@ -1541,13 +1804,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Parallel simulation reprocesses actual client data through independent auditor-controlled programs, comparing results to the client\'s processing to identify discrepancies.',
     topic: 'Performing the Engagement',
-    subtopic: 'Computer-Assisted Audit Techniques'
+    subtopic: 'Computer-Assisted Audit Techniques',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-160',
+    id: 'cia2-160',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When evaluating the reliability of electronic evidence, auditors should consider:',
     options: [
       'Only file size',
@@ -1558,7 +1824,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Electronic evidence reliability depends on the source credibility, access and change controls, data integrity provisions, and audit trail capabilities.',
     topic: 'Performing the Engagement',
-    subtopic: 'Electronic Evidence'
+    subtopic: 'Electronic Evidence',
+  reference: 'IIA Standards'
   },
 
   // ============================================================================
@@ -1566,10 +1833,12 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
   // ============================================================================
   
   {
-    id: 'CIA2-161',
+    id: 'cia2-161',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Clear communication means that reports should:',
     options: [
       'Use technical jargon freely',
@@ -1580,13 +1849,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Clear communications are logical, easy to follow, and free from unnecessary technical language or ambiguity, ensuring the message is understood.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-162',
+    id: 'cia2-162',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Constructive communication focuses on:',
     options: [
       'Only criticizing deficiencies',
@@ -1597,13 +1869,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Constructive communications help the auditee and organization improve. They include practical recommendations and consider the recipient\'s perspective.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-163',
+    id: 'cia2-163',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Complete communication includes:',
     options: [
       'Only major findings',
@@ -1614,13 +1889,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Complete communications include all material and relevant information needed for users to understand findings, draw proper conclusions, and take appropriate action.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-164',
+    id: 'cia2-164',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Timely communication means issuing reports:',
     options: [
       'Only after all issues are resolved',
@@ -1631,13 +1909,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Timely communications are issued without unnecessary delay so that information can be acted upon promptly, while still ensuring appropriate quality.',
     topic: 'Communicating Results',
-    subtopic: 'Communication Quality'
+    subtopic: 'Communication Quality',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-165',
+    id: 'cia2-165',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Report distribution should be:',
     options: [
       'To all employees',
@@ -1648,14 +1929,17 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Distribution should be to those who need the information to understand findings, make decisions, or take corrective action, while protecting confidential information.',
     topic: 'Communicating Results',
-    subtopic: 'Report Distribution'
+    subtopic: 'Report Distribution',
+  reference: 'IIA Standards'
   },
   
   {
-    id: 'CIA2-167',
+    id: 'cia2-167',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Following up on corrective actions helps ensure that:',
     options: [
       'Auditors can criticize management',
@@ -1666,13 +1950,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Follow-up verifies that management\'s corrective actions are implemented effectively and address root causes to prevent recurrence of the issues.',
     topic: 'Monitoring Progress',
-    subtopic: 'Follow-Up'
+    subtopic: 'Follow-Up',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-168',
+    id: 'cia2-168',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Status reporting on audit findings typically includes:',
     options: [
       'Only closed findings',
@@ -1683,13 +1970,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Status reporting tracks all open findings, progress on remediation, expected completion dates, and highlights items that are overdue for resolution.',
     topic: 'Monitoring Progress',
-    subtopic: 'Status Reporting'
+    subtopic: 'Status Reporting',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-169',
+    id: 'cia2-169',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Escalation procedures for unresolved findings should:',
     options: [
       'Not exist in a collaborative environment',
@@ -1700,13 +1990,16 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Escalation procedures provide clear guidance on elevating issues based on significance, time overdue, and risk level, ensuring appropriate management attention.',
     topic: 'Monitoring Progress',
-    subtopic: 'Escalation'
+    subtopic: 'Escalation',
+  reference: 'IIA Standards'
   },
   {
-    id: 'CIA2-170',
+    id: 'cia2-170',
     courseId: 'cia',
     section: 'CIA2',
+    blueprintArea: 'CIA2-I',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Validating that corrective actions are effective requires:',
     options: [
       'Only management assertion',
@@ -1717,7 +2010,8 @@ export const CIA2_QUESTIONS_BATCH2: Question[] = [
     correctAnswer: 1,
     explanation: 'Validation goes beyond accepting management\'s claim to actually testing or verifying that remediation addressed the root cause and controls are now operating effectively.',
     topic: 'Monitoring Progress',
-    subtopic: 'Validation'
+    subtopic: 'Validation',
+  reference: 'IIA Standards'
   },
 ];
 

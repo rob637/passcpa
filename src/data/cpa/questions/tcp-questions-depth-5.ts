@@ -8,11 +8,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-001',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Standard Deduction vs. Itemized',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'For 2025, a single taxpayer under age 65 who does not itemize deductions claims a standard deduction of:',
     options: [
       '$12,950',
@@ -27,11 +29,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-002',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Kiddie Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The "kiddie tax" applies to a child\'s unearned income when:',
     options: [
       'The child earns any wages',
@@ -46,11 +50,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-003',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corporation — Charitable Contribution Limit',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A C corporation\'s charitable contribution deduction is limited to:',
     options: [
       '50% of taxable income',
@@ -65,11 +71,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-004',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: '§1033 — Involuntary Conversions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under §1033, when property is involuntarily converted (e.g., destroyed by fire, condemned), gain recognition may be deferred if:',
     options: [
       'The taxpayer reinvests in any asset',
@@ -84,11 +92,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-005',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Social Security Benefits — Taxability',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Social Security benefits may be included in gross income up to a maximum of:',
     options: [
       '50% of benefits received',
@@ -103,11 +113,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-006',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Guaranteed Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Guaranteed payments to a partner are:',
     options: [
       'Distributions of partnership profits',
@@ -122,11 +134,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-007',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Depreciation — MACRS Recovery Periods',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under MACRS, the recovery period for residential rental property is:',
     options: [
       '15 years',
@@ -141,11 +155,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-008',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Above-the-Line Deductions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is an "above-the-line" deduction (deduction FOR AGI)?',
     options: [
       'Mortgage interest',
@@ -160,11 +176,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-009',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corporation — Basis Ordering Rules',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An S corporation shareholder\'s basis is adjusted in the following order:',
     options: [
       'Distributions first, then income',
@@ -179,11 +197,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-010',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Net Investment Income Tax',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The 3.8% net investment income tax (NIIT) under §1411 applies to:',
     options: [
       'All taxpayers regardless of income',
@@ -198,11 +218,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-011',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Estimated Tax Payments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To avoid an estimated tax penalty, individual taxpayers must generally pay (through withholding and estimated payments) at least:',
     options: [
       '80% of the current year\'s tax',
@@ -217,11 +239,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-012',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — §754 Election',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A §754 election allows a partnership to:',
     options: [
       'Convert to an S corporation',
@@ -236,11 +260,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-013',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Qualified Opportunity Zones',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the Qualified Opportunity Zone (QOZ) program, a taxpayer who invests capital gains into a Qualified Opportunity Fund within 180 days:',
     options: [
       'Permanently excludes all gain',
@@ -255,11 +281,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-014',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Medical Expense Deduction',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The medical expense deduction on Schedule A is available for unreimbursed medical expenses that exceed:',
     options: [
       '2% of AGI',
@@ -274,11 +302,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-015',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corporation — NOL Rules',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Under current law (post-TCJA), a C corporation\'s net operating loss (NOL):',
     options: [
       'Can be carried back 2 years and forward 20 years with no limitation',
@@ -293,11 +323,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-016',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Passive Activity — Rental Real Estate Exception',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer who actively participates in rental real estate may deduct up to how much in rental losses against nonpassive income?',
     options: [
       'No rental losses can ever offset nonpassive income',
@@ -312,11 +344,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-017',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Adoption Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The adoption tax credit under §23 is:',
     options: [
       'A deduction from gross income',
@@ -331,11 +365,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-018',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Trust Taxation — DNI and Distribution Deduction',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A trust or estate\'s distributable net income (DNI) serves as:',
     options: [
       'The minimum amount the trust must distribute',
@@ -350,11 +386,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-019',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Hobby Loss Rules',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under the hobby loss rules of §183, if an activity is NOT engaged in for profit:',
     options: [
       'All expenses are fully deductible',
@@ -369,11 +407,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-020',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Dependent Care Credit',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The child and dependent care credit (§21) is:',
     options: [
       'A deduction from gross income',
@@ -388,11 +428,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-021',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Tax-Exempt Organizations — UBIT',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A tax-exempt organization is subject to unrelated business income tax (UBIT) when:',
     options: [
       'It receives any investment income',
@@ -407,11 +449,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-022',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Charitable Contribution of Appreciated Property',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When an individual donates long-term capital gain property (held > 1 year) to a public charity at FMV:',
     options: [
       'The deduction is limited to the property\'s basis',
@@ -426,11 +470,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-023',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Taxation',
     subtopic: 'Roth IRA Conversions',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When a taxpayer converts a traditional IRA to a Roth IRA:',
     options: [
       'No tax consequences arise',
@@ -445,11 +491,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-024',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership — Substantial Economic Effect',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under §704(b), partnership allocations of income, gain, loss, and deductions must have "substantial economic effect." If they do not, then:',
     options: [
       'The partnership is dissolved',
@@ -464,11 +512,13 @@ export const TCP_QUESTIONS_DEPTH_5: Question[] = [
   {
     id: 'tcp-d5-025',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-property',
     topic: 'Property Transactions',
     subtopic: 'Worthless Securities',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'When a security (stock or bond) becomes completely worthless, the taxpayer:',
     options: [
       'Cannot claim any deduction',

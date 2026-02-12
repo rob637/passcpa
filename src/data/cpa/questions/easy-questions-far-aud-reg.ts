@@ -12,11 +12,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-001',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Basic Concepts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The accounting equation is:',
     options: [
       'Assets = Liabilities',
@@ -31,11 +33,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-002',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Elements',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is a liability?',
     options: [
       'Accounts receivable',
@@ -50,11 +54,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-003',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Accrual Accounting',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under accrual accounting, revenue is recognized when:',
     options: [
       'Cash is received',
@@ -69,11 +75,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-004',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Cash',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cash equivalents are investments with original maturities of:',
     options: [
       'One year or less',
@@ -88,11 +96,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-005',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Inventory',
     subtopic: 'Cost Flow',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under FIFO, which inventory is assumed to be sold first?',
     options: [
       'The newest inventory purchased',
@@ -107,11 +117,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-006',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Inventory',
     subtopic: 'Valuation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Inventory should be reported at the lower of:',
     options: [
       'Cost or market',
@@ -126,11 +138,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-007',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Receivables',
     subtopic: 'Allowance Method',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The allowance for doubtful accounts is a:',
     options: [
       'Liability account',
@@ -145,11 +159,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-008',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Fixed Assets',
     subtopic: 'Capitalization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which cost is capitalized as part of equipment cost?',
     options: [
       'Annual maintenance',
@@ -164,11 +180,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-009',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Fixed Assets',
     subtopic: 'Depreciation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Straight-line depreciation allocates:',
     options: [
       'More expense in early years',
@@ -183,11 +201,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-010',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Revenue Recognition',
     subtopic: 'Five Steps',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The first step in ASC 606 revenue recognition is to:',
     options: [
       'Recognize revenue',
@@ -202,11 +222,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-011',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Leases',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under ASC 842, a lessee recognizes which asset for most leases?',
     options: [
       'No asset',
@@ -221,11 +243,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-012',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Income Taxes',
     subtopic: 'Deferred Taxes',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A deferred tax liability arises from:',
     options: [
       'A permanent difference',
@@ -240,11 +264,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-013',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Statement of Cash Flows',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cash received from customers is classified as:',
     options: [
       'Investing activity',
@@ -259,11 +285,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-014',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Statement of Cash Flows',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Purchase of equipment is classified as:',
     options: [
       'Operating activity',
@@ -278,11 +306,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-015',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Statement of Cash Flows',
     subtopic: 'Classification',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Dividends paid to stockholders is classified as:',
     options: [
       'Operating activity',
@@ -297,11 +327,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-016',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Fund Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The General Fund is used to account for:',
     options: [
       'Only capital projects',
@@ -316,11 +348,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-017',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-IV',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Measurement Focus',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Governmental funds focus on:',
     options: [
       'Economic resources and accrual basis',
@@ -335,11 +369,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-018',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Net Assets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Not-for-profit entities classify net assets as:',
     options: [
       'Equity and retained earnings',
@@ -354,11 +390,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-019',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An unconditional promise to give (pledge) is recognized as:',
     options: [
       'Contribution revenue when received',
@@ -373,11 +411,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-020',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Equity',
     subtopic: 'Stock Splits',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A 2-for-1 stock split:',
     options: [
       'Doubles retained earnings',
@@ -392,11 +432,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-021',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Equity',
     subtopic: 'Treasury Stock',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Treasury stock is:',
     options: [
       'Stock authorized but never issued',
@@ -411,11 +453,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-022',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Contingencies',
     subtopic: 'Recognition',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A loss contingency is accrued when loss is:',
     options: [
       'Possible',
@@ -430,11 +474,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-023',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-framework',
     topic: 'Financial Statements',
     subtopic: 'Balance Sheet',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Current assets are expected to be converted to cash within:',
     options: [
       'Six months',
@@ -449,11 +495,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-024',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-accounts',
     topic: 'Intangibles',
     subtopic: 'Amortization',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Goodwill is:',
     options: [
       'Amortized over 40 years',
@@ -468,11 +516,13 @@ export const FAR_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'far-easy-sp-025',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-transactions',
     topic: 'Accounting Changes',
     subtopic: 'Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A change in accounting principle requires:',
     options: [
       'Prospective application only',
@@ -494,11 +544,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-001',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Independence',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Independence in appearance means:',
     options: [
       'Actually being unbiased',
@@ -513,11 +565,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-002',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Integrity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The integrity principle requires:',
     options: [
       'Never making mistakes',
@@ -532,11 +586,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-003',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Ethics',
     subtopic: 'Objectivity',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Objectivity requires the auditor to:',
     options: [
       'Always agree with management',
@@ -551,11 +607,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-004',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Planning',
     subtopic: 'Materiality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Materiality is evaluated based on:',
     options: [
       'A fixed percentage for all audits',
@@ -570,11 +628,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-005',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Planning',
     subtopic: 'Audit Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit risk is the risk that the auditor:',
     options: [
       'Charges incorrect fees',
@@ -589,11 +649,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-006',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Internal Control',
     subtopic: 'Components',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The five components of internal control include all EXCEPT:',
     options: [
       'Control environment',
@@ -608,11 +670,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-007',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Internal Control',
     subtopic: 'Control Environment',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The control environment is set primarily by:',
     options: [
       'External auditors',
@@ -627,11 +691,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-008',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Characteristics',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit evidence must be sufficient and:',
     options: [
       'Cheap',
@@ -646,11 +712,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-009',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Confirmation involves:',
     options: [
       'Agreeing two documents are identical',
@@ -665,11 +733,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-010',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'Procedures',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Physical inspection provides evidence primarily about:',
     options: [
       'Valuation',
@@ -684,11 +754,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-011',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Sampling',
     subtopic: 'Concepts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Sampling risk is the risk that:',
     options: [
       'All items are tested',
@@ -703,11 +775,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-012',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Unmodified Opinion',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An unmodified auditor opinion indicates:',
     options: [
       'F/S are guaranteed accurate',
@@ -722,11 +796,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-013',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Modified Opinions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A qualified opinion contains:',
     options: [
       'No exceptions',
@@ -741,11 +817,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-014',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Audit Reports',
     subtopic: 'Going Concern',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'If substantial doubt about going concern exists, the auditor:',
     options: [
       'Always issues adverse opinion',
@@ -760,11 +838,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-015',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Other Engagements',
     subtopic: 'Review',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A review engagement provides:',
     options: [
       'Reasonable assurance',
@@ -779,11 +859,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-016',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Other Engagements',
     subtopic: 'Compilation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A compilation engagement provides:',
     options: [
       'Reasonable assurance',
@@ -798,11 +880,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-017',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Conduct',
     subtopic: 'Confidentiality',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Client information may be disclosed without consent when:',
     options: [
       'Client has unpaid bills',
@@ -817,11 +901,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-018',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Fraud',
     subtopic: 'Responsibility',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The auditor is responsible for obtaining reasonable assurance that F/S are free from:',
     options: [
       'All misstatements',
@@ -836,11 +922,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-019',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Documentation',
     subtopic: 'Workpapers',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Audit documentation (workpapers) should be:',
     options: [
       'Discarded after the audit',
@@ -855,11 +943,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-020',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Subsequent Events',
     subtopic: 'Types',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Events occurring after year-end but before the audit report that require adjustment are:',
     options: [
       'Type II subsequent events',
@@ -874,11 +964,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-021',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-I',
     topicId: 'aud-ethics',
     topic: 'Professional Conduct',
     subtopic: 'Due Care',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Due professional care requires:',
     options: [
       'Perfection in all work',
@@ -893,11 +985,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-022',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-planning',
     topic: 'Risk Assessment',
     subtopic: 'Inherent Risk',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Inherent risk is the susceptibility of an assertion to material misstatement:',
     options: [
       'Before considering internal controls',
@@ -912,11 +1006,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-023',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Analytical Procedures',
     subtopic: 'Use',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Analytical procedures are REQUIRED during which phases of the audit?',
     options: [
       'Planning only',
@@ -931,11 +1027,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-024',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-reporting',
     topic: 'Management Letter',
     subtopic: 'Purpose',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A management letter communicates:',
     options: [
       'The audit opinion',
@@ -950,11 +1048,13 @@ export const AUD_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'aud-easy-sp-025',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Written Representations',
     subtopic: 'Purpose',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Management representations are:',
     options: [
       'Optional',
@@ -976,11 +1076,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-001',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Circular 230',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Circular 230 governs practice before:',
     options: [
       'State courts',
@@ -995,11 +1097,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-002',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Due Diligence',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A tax preparer must exercise due diligence when:',
     options: [
       'Only for large refunds',
@@ -1014,11 +1118,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-003',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Contracts',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A valid contract requires:',
     options: [
       'Only a written document',
@@ -1033,11 +1139,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-004',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Agency',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An agent owes which duty to the principal?',
     options: [
       'Duty to compete',
@@ -1052,11 +1160,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-005',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Secured Transactions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A security interest is perfected by:',
     options: [
       'Oral agreement only',
@@ -1071,11 +1181,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-006',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To file as Head of Household, a taxpayer must:',
     options: [
       'Be married',
@@ -1090,11 +1202,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-007',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Gross Income',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which is included in gross income?',
     options: [
       'Child support received',
@@ -1109,11 +1223,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-008',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Adjustments',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Adjustments to income (above-the-line deductions) include:',
     options: [
       'Mortgage interest',
@@ -1128,11 +1244,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-009',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Itemized Deductions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which is an itemized deduction?',
     options: [
       'Student loan interest',
@@ -1147,11 +1265,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-010',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Tax Credits',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A tax credit:',
     options: [
       'Reduces taxable income',
@@ -1166,11 +1286,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-011',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'C Corporation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A C corporation:',
     options: [
       'Is a pass-through entity',
@@ -1185,11 +1307,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-012',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'S Corporation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An S corporation:',
     options: [
       'Pays corporate income tax',
@@ -1204,11 +1328,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-013',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A partnership files:',
     options: [
       'Form 1120',
@@ -1223,11 +1349,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-014',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Partnership Basis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A partners initial basis in a partnership includes:',
     options: [
       'Only cash contributed',
@@ -1242,11 +1370,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-015',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The basis of inherited property is generally:',
     options: [
       'Decedent\'s basis (carryover)',
@@ -1261,11 +1391,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-016',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Basis',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The basis of gifted property with a built-in gain is:',
     options: [
       'Fair market value',
@@ -1280,11 +1412,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-017',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Assets',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Capital assets include:',
     options: [
       'Inventory',
@@ -1299,11 +1433,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-018',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Capital Losses',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Capital losses in excess of capital gains are deductible up to:',
     options: [
       'Unlimited',
@@ -1318,11 +1454,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-019',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Section 1231',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Section 1231 assets include:',
     options: [
       'Inventory',
@@ -1337,11 +1475,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-020',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-ethics',
     topic: 'Ethics',
     subtopic: 'Penalties',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The penalty for failure to file a return on time is:',
     options: [
       '0.5% per month',
@@ -1356,11 +1496,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-021',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Dependents',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A qualifying child must be under age:',
     options: [
       '18',
@@ -1375,11 +1517,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-022',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Corporate Formation',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Under IRC 351, no gain is recognized when:',
     options: [
       'Any property is transferred to a corporation',
@@ -1394,11 +1538,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-023',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The Statute of Frauds requires a written contract for:',
     options: [
       'All contracts',
@@ -1413,11 +1559,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-024',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-V',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Like-Kind Exchange',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'To qualify for Section 1031 tax deferral, property must be:',
     options: [
       'Exchanged for identical property',
@@ -1432,11 +1580,13 @@ export const REG_EASY_QUESTIONS_SPRINT: Question[] = [
   {
     id: 'reg-easy-sp-025',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-entity',
     topic: 'Entity Taxation',
     subtopic: 'Distributions',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Dividends from a C corporation are taxed to shareholders as:',
     options: [
       'Ordinary income',

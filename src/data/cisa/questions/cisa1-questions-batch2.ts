@@ -8,10 +8,12 @@ import { Question } from '../../../types';
 
 export const CISA1_QUESTIONS_BATCH2: Question[] = [
   {
-    id: 'CISA1-003',
+    id: 'cisa1-003',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following BEST describes the purpose of an IS audit charter?',
     options: [
       'To define the audit schedule for the year',
@@ -25,10 +27,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Audit Charter'
   },
   {
-    id: 'CISA1-004',
+    id: 'cisa1-004',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When developing a risk-based audit plan, which factor should receive the HIGHEST priority?',
     options: [
       'Management requests',
@@ -42,10 +46,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Risk Assessment'
   },
   {
-    id: 'CISA1-005',
+    id: 'cisa1-005',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which type of audit evidence is considered MOST reliable?',
     options: [
       'Oral representations from management',
@@ -59,10 +65,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Evidence Reliability'
   },
   {
-    id: 'CISA1-006',
+    id: 'cisa1-006',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'An IS auditor discovers that a critical control is not operating effectively. The FIRST action should be to:',
     options: [
       'Report to the audit committee',
@@ -76,10 +84,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Control Evaluation'
   },
   {
-    id: 'CISA1-007',
+    id: 'cisa1-007',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which sampling method is MOST appropriate when testing for compliance with a control that should operate 100% of the time?',
     options: [
       'Variable sampling',
@@ -93,10 +103,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Sampling Methods'
   },
   {
-    id: 'CISA1-008',
+    id: 'cisa1-008',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of documenting audit work is to:',
     options: [
       'Comply with professional standards',
@@ -110,10 +122,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Working Papers'
   },
   {
-    id: 'CISA1-009',
+    id: 'cisa1-009',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an IS auditor identifies a material weakness, notification to the audit committee should occur:',
     options: [
       'After the final report is issued',
@@ -127,10 +141,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Communication'
   },
   {
-    id: 'CISA1-010',
+    id: 'cisa1-010',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Which of the following BEST ensures auditor independence?',
     options: [
       'Rotating audit staff annually',
@@ -144,10 +160,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Independence'
   },
   {
-    id: 'CISA1-011',
+    id: 'cisa1-011',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Computer-assisted audit techniques (CAATs) are MOST valuable for:',
     options: [
       'Replacing the need for manual testing',
@@ -161,10 +179,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'CAATs'
   },
   {
-    id: 'CISA1-012',
+    id: 'cisa1-012',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When using generalized audit software (GAS), the GREATEST risk is:',
     options: [
       'Incomplete data extraction',
@@ -178,10 +198,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Data Analytics'
   },
   {
-    id: 'CISA1-013',
+    id: 'cisa1-013',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An IS auditor reviewing a previous audit\'s working papers should PRIMARILY be concerned with:',
     options: [
       'The format and organization of documentation',
@@ -195,10 +217,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Prior Audit Review'
   },
   {
-    id: 'CISA1-014',
+    id: 'cisa1-014',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The PRIMARY purpose of an audit program is to:',
     options: [
       'Document the audit methodology',
@@ -212,10 +236,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Audit Program'
   },
   {
-    id: 'CISA1-015',
+    id: 'cisa1-015',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an auditee disagrees with an audit finding, the IS auditor should FIRST:',
     options: [
       'Escalate to the audit committee',
@@ -229,10 +255,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Disagreements'
   },
   {
-    id: 'CISA1-016',
+    id: 'cisa1-016',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following is the BEST indicator of an effective IS audit function?',
     options: [
       'Number of audits completed per year',
@@ -246,10 +274,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Performance Metrics'
   },
   {
-    id: 'CISA1-017',
+    id: 'cisa1-017',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Continuous auditing is BEST described as:',
     options: [
       'Auditing without interruption throughout the year',
@@ -263,10 +293,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Definition'
   },
   {
-    id: 'CISA1-018',
+    id: 'cisa1-018',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which control is MOST important to verify when auditing an organization\'s use of cloud services?',
     options: [
       'Physical security at the cloud provider',
@@ -280,10 +312,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Cloud Auditing'
   },
   {
-    id: 'CISA1-019',
+    id: 'cisa1-019',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'When performing a compliance audit, the auditor\'s PRIMARY focus should be on:',
     options: [
       'Operational efficiency',
@@ -297,10 +331,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Compliance Audit'
   },
   {
-    id: 'CISA1-020',
+    id: 'cisa1-020',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The ISACA Code of Professional Ethics requires IS auditors to:',
     options: [
       'Report all findings to regulatory authorities',
@@ -314,10 +350,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'ISACA Code'
   },
   {
-    id: 'CISA1-021',
+    id: 'cisa1-021',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor discovers potential fraud during an audit. The FIRST action should be to:',
     options: [
       'Confront the suspected employee',
@@ -331,10 +369,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Fraud Response'
   },
   {
-    id: 'CISA1-022',
+    id: 'cisa1-022',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which of the following provides the BEST evidence that a control is operating effectively?',
     options: [
       'Management assertion',
@@ -348,10 +388,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Operating Effectiveness'
   },
   {
-    id: 'CISA1-023',
+    id: 'cisa1-023',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY reason for using statistical sampling in an IS audit is to:',
     options: [
       'Reduce audit time and cost',
@@ -365,10 +407,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Statistical Sampling'
   },
   {
-    id: 'CISA1-024',
+    id: 'cisa1-024',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing a data center, which observation would be of GREATEST concern?',
     options: [
       'Raised floor height is below recommended standards',
@@ -382,10 +426,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Data Center'
   },
   {
-    id: 'CISA1-025',
+    id: 'cisa1-025',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The maturity of an IT process is BEST assessed using:',
     options: [
       'Compliance testing',
@@ -399,10 +445,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Capability Models'
   },
   {
-    id: 'CISA1-026',
+    id: 'cisa1-026',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An audit trail is PRIMARILY used to:',
     options: [
       'Prevent unauthorized access',
@@ -416,10 +464,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Purpose'
   },
   {
-    id: 'CISA1-027',
+    id: 'cisa1-027',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When evaluating IT governance, an IS auditor should PRIMARILY assess:',
     options: [
       'Technical specifications of systems',
@@ -433,10 +483,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Assessment'
   },
   {
-    id: 'CISA1-028',
+    id: 'cisa1-028',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Which document should an IS auditor review FIRST when beginning an audit?',
     options: [
       'System documentation',
@@ -450,10 +502,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Initial Review'
   },
   {
-    id: 'CISA1-029',
+    id: 'cisa1-029',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The difference between inherent risk and residual risk is:',
     options: [
       'The cost of implementing controls',
@@ -467,10 +521,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Risk Types'
   },
   {
-    id: 'CISA1-030',
+    id: 'cisa1-030',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When an organization outsources IT operations, audit responsibility for those operations:',
     options: [
       'Transfers completely to the service provider',
@@ -484,10 +540,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'Outsourcing'
   },
   {
-    id: 'CISA1-031',
+    id: 'cisa1-031',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A SOC 2 Type II report differs from a Type I report primarily because it:',
     options: [
       'Covers a broader scope of controls',
@@ -501,10 +559,12 @@ export const CISA1_QUESTIONS_BATCH2: Question[] = [
     subtopic: 'SOC Reports'
   },
   {
-    id: 'CISA1-032',
+    id: 'cisa1-032',
     courseId: 'cisa',
     section: 'CISA1',
+    blueprintArea: 'CISA1-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY objective of follow-up procedures after an audit is to:',
     options: [
       'Verify that management has taken corrective action',

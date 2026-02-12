@@ -31,6 +31,7 @@ import {
 import clsx from 'clsx';
 import feedback from '../../../services/feedback';
 import logger from '../../../utils/logger';
+import { getShuffledIndices } from '../../../utils/questionShuffle';
 
 // ============================================
 // Types
@@ -263,6 +264,9 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   // Results state
   const [examResult, setExamResult] = useState<ExamResult | null>(null);
 
+  // Session ID for deterministic shuffling
+  const [sessionId] = useState(() => `exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
+
   // Refs
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -271,6 +275,19 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     if (!exam || currentIndex >= exam.questions.length) return null;
     return exam.questions[currentIndex];
   }, [exam, currentIndex]);
+
+  // Shuffled options for current question - deterministic per session
+  const shuffledCurrentQuestion = useMemo(() => {
+    if (!currentQuestion) return null;
+    const seed = `${currentQuestion.id}-${sessionId}`;
+    const shuffledIndices = getShuffledIndices(currentQuestion.options.length, seed);
+    const shuffledOptions = shuffledIndices.map(i => currentQuestion.options[i]);
+    // reverseMap: shuffledIndex -> originalIndex
+    const reverseMap = shuffledIndices;
+    // Find where the original correct answer ended up
+    const shuffledCorrectAnswer = shuffledIndices.indexOf(currentQuestion.correctAnswer);
+    return { shuffledOptions, reverseMap, shuffledCorrectAnswer };
+  }, [currentQuestion, sessionId]);
 
   const answeredCount = useMemo(() => {
     if (!exam) return 0;
@@ -340,8 +357,11 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     feedback.click();
   }, [selectedSection, selectedSections, selectedMode, questionPool, generateExam, allowMultiSectionSelect]);
 
-  const handleSelectAnswer = useCallback((answerIndex: number) => {
-    if (!exam || !currentQuestion) return;
+  const handleSelectAnswer = useCallback((shuffledAnswerIndex: number) => {
+    if (!exam || !currentQuestion || !shuffledCurrentQuestion) return;
+    
+    // Translate shuffled index back to original index for storage
+    const originalAnswerIndex = shuffledCurrentQuestion.reverseMap[shuffledAnswerIndex];
     
     setExam(prev => {
       if (!prev) return prev;
@@ -349,13 +369,13 @@ export function ExamSimulatorTemplate<SectionId extends string>({
         ...prev,
         answers: {
           ...prev.answers,
-          [currentQuestion.id]: answerIndex,
+          [currentQuestion.id]: originalAnswerIndex,
         },
       };
     });
     
     feedback.tap();
-  }, [exam, currentQuestion]);
+  }, [exam, currentQuestion, shuffledCurrentQuestion]);
 
   const handleToggleFlag = useCallback(() => {
     if (!exam || !currentQuestion) return;
@@ -788,9 +808,11 @@ export function ExamSimulatorTemplate<SectionId extends string>({
             
             {/* Answer Options */}
             <div className="space-y-3">
-              {currentQuestion.options.map((option, idx) => {
+              {shuffledCurrentQuestion?.shuffledOptions.map((option, idx) => {
+                // currentAnswer stores original index, reverseMap[idx] gives original index for this shuffled position
+                const originalIdx = shuffledCurrentQuestion.reverseMap[idx];
                 const isSelected = currentAnswer !== undefined && 
-                  (typeof currentAnswer === 'number' ? currentAnswer === idx : parseInt(currentAnswer, 10) === idx);
+                  (typeof currentAnswer === 'number' ? currentAnswer === originalIdx : parseInt(currentAnswer, 10) === originalIdx);
                 
                 return (
                   <button

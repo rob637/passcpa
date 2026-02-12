@@ -16,10 +16,12 @@ import { PRIVACY_REGULATION_QUESTIONS } from './cisa-cobit-privacy-batch15';
 
 const CISA5_QUESTIONS_BATCH1: Question[] = [
   {
-    id: 'CISA5-001',
+    id: 'cisa5-001',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which of the following creates a digital signature?',
     options: [
       'Encrypting the message digest with the sender\'s private key',
@@ -33,10 +35,12 @@ const CISA5_QUESTIONS_BATCH1: Question[] = [
     subtopic: 'Cryptography'
   },
   {
-    id: 'CISA5-002',
+    id: 'cisa5-002',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The principle of "least privilege" is best described as:',
     options: [
       'Granting users access to all data but logging their actions',

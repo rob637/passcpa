@@ -8,11 +8,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'far-wc-115',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-I',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Level 3 Inputs',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Level 3 fair value inputs are:',
     options: [
       'Quoted prices in active markets',
@@ -27,11 +29,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'far-wc-116',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-II',
     topicId: 'far-bonds',
     topic: 'Bonds',
     subtopic: 'Impairment',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the CECL model, the allowance for credit losses on debt securities is:',
     options: [
       'Based only on realized losses',
@@ -46,11 +50,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'far-wc-117',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-III',
     topicId: 'far-foreign-currency',
     topic: 'Foreign Currency',
     subtopic: 'Functional Currency',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'A foreign subsidiary\'s functional currency is determined by:',
     options: [
       'Parent company preference',
@@ -65,11 +71,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'far-wc-118',
     section: 'FAR',
+    courseId: 'cpa',
     blueprintArea: 'FAR-V',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Promises to Give',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Unconditional promises to give with payments due in future periods are recorded at:',
     options: [
       'Face value',
@@ -86,11 +94,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'aud-wc-115',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-III',
     topicId: 'aud-evidence',
     topic: 'Audit Evidence',
     subtopic: 'External Confirmations',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The most persuasive audit evidence is typically:',
     options: [
       'Client-prepared documents reviewed internally',
@@ -105,11 +115,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'aud-wc-116',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-IV',
     topicId: 'aud-procedures',
     topic: 'Audit Procedures',
     subtopic: 'Analytical Procedures',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Analytical procedures are required during which phases of the audit?',
     options: [
       'Planning only',
@@ -124,11 +136,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'aud-wc-117',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-II',
     topicId: 'aud-risk',
     topic: 'Risk Assessment',
     subtopic: 'Detection Risk',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Detection risk is the risk that:',
     options: [
       'Material misstatement exists in financial statements',
@@ -143,11 +157,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'aud-wc-118',
     section: 'AUD',
+    courseId: 'cpa',
     blueprintArea: 'AUD-VI',
     topicId: 'aud-other',
     topic: 'Other Services',
     subtopic: 'Prospective Financial Information',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An examination of a financial forecast results in:',
     options: [
       'An opinion on whether the forecast is presented in accordance with AICPA guidelines',
@@ -164,11 +180,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'reg-wc-115',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-II',
     topicId: 'reg-individual',
     topic: 'Individual Taxation',
     subtopic: 'Filing Status',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A taxpayer whose spouse died during the tax year can file:',
     options: [
       'Only single status',
@@ -183,11 +201,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'reg-wc-116',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-III',
     topicId: 'reg-s-corp',
     topic: 'S Corporation',
     subtopic: 'Built-in Gains',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The built-in gains tax applies when an S corporation:',
     options: [
       'Was always an S corporation',
@@ -202,11 +222,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'reg-wc-117',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-I',
     topicId: 'reg-business-law',
     topic: 'Business Law',
     subtopic: 'Statute of Frauds',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The Statute of Frauds requires a writing for:',
     options: [
       'All contracts',
@@ -221,11 +243,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'reg-wc-118',
     section: 'REG',
+    courseId: 'cpa',
     blueprintArea: 'REG-IV',
     topicId: 'reg-property',
     topic: 'Property Transactions',
     subtopic: 'Installment Sales',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under the installment method, gross profit is recognized as:',
     options: [
       'Entirely in year of sale',
@@ -242,11 +266,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'bar-wc-132',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Cash Conversion Cycle',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The cash conversion cycle equals:',
     options: [
       'Inventory days + Receivables days only',
@@ -261,11 +287,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'bar-wc-133',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-II',
     topicId: 'bar-valuation',
     topic: 'Valuation',
     subtopic: 'IRR',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The internal rate of return (IRR) is the discount rate that:',
     options: [
       'Maximizes total cash flows',
@@ -280,11 +308,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'bar-wc-134',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-III',
     topicId: 'bar-technical',
     topic: 'Technical Accounting',
     subtopic: 'Convertible Debt',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Under ASC 470-20, traditional convertible debt is initially recorded:',
     options: [
       'At fair value with equity component separated',
@@ -299,11 +329,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'bar-wc-135',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-IV',
     topicId: 'bar-cost',
     topic: 'Cost Accounting',
     subtopic: 'Contribution Margin',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Contribution margin per unit equals:',
     options: [
       'Sales price minus all costs',
@@ -318,11 +350,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'bar-wc-136',
     section: 'BAR',
+    courseId: 'cpa',
     blueprintArea: 'BAR-I',
     topicId: 'bar-analysis',
     topic: 'Financial Statement Analysis',
     subtopic: 'Leverage Ratios',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The debt-to-equity ratio is calculated as:',
     options: [
       'Total liabilities divided by total assets',
@@ -339,11 +373,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'isc-wc-115',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-I',
     topicId: 'isc-governance',
     topic: 'IT Governance',
     subtopic: 'Segregation of Duties',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In IT, the functions that should be segregated include:',
     options: [
       'Programming and computer operations',
@@ -358,11 +394,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'isc-wc-116',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-II',
     topicId: 'isc-security',
     topic: 'Security Controls',
     subtopic: 'Social Engineering',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Phishing is an example of:',
     options: [
       'Symmetric encryption',
@@ -377,11 +415,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'isc-wc-117',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-III',
     topicId: 'isc-systems',
     topic: 'Information Systems',
     subtopic: 'Backup Strategies',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An incremental backup copies:',
     options: [
       'All data every time',
@@ -396,11 +436,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'isc-wc-118',
     section: 'ISC',
+    courseId: 'cpa',
     blueprintArea: 'ISC-IV',
     topicId: 'isc-audit',
     topic: 'IT Audit',
     subtopic: 'General vs Application Controls',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'General IT controls differ from application controls in that they:',
     options: [
       'Apply only to specific transactions',
@@ -417,11 +459,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'tcp-wc-115',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-I',
     topicId: 'tcp-individual',
     topic: 'Individual Tax Compliance',
     subtopic: 'Capital Loss Carryover',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Individual capital losses in excess of the annual limit are:',
     options: [
       'Lost forever',
@@ -436,11 +480,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'tcp-wc-116',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-II',
     topicId: 'tcp-entity',
     topic: 'Entity Tax Compliance',
     subtopic: 'Partnership Allocations',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For partnership allocations to be respected for tax purposes, they must have:',
     options: [
       'Equal percentage to all partners',
@@ -455,11 +501,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'tcp-wc-117',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-III',
     topicId: 'tcp-planning',
     topic: 'Tax Planning',
     subtopic: 'Tax Deferral',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Tax deferral strategies provide value primarily because of:',
     options: [
       'Permanent exclusion of income',
@@ -474,11 +522,13 @@ export const WORLD_CLASS_BATCH_20: Question[] = [
   {
     id: 'tcp-wc-118',
     section: 'TCP',
+    courseId: 'cpa',
     blueprintArea: 'TCP-IV',
     topicId: 'tcp-representation',
     topic: 'Tax Representation',
     subtopic: 'Offer in Compromise',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An Offer in Compromise allows settlement of tax liability based on:',
     options: [
       'Taxpayer\'s preferences only',

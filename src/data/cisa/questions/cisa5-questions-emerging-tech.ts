@@ -11,10 +11,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
   // AI/ML SECURITY QUESTIONS
   // ============================================================================
   {
-    id: 'CISA5-ET-001',
+    id: 'cisa5-et-001',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'An IS auditor reviewing an AI-based fraud detection system should be MOST concerned if:',
     options: [
       'The model is retrained quarterly with new data',
@@ -28,10 +30,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'AI Governance'
   },
   {
-    id: 'CISA5-ET-002',
+    id: 'cisa5-et-002',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Which attack involves manipulating inputs to cause an AI model to misclassify data?',
     options: [
       'Data poisoning',
@@ -45,10 +49,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Adversarial Attacks'
   },
   {
-    id: 'CISA5-ET-003',
+    id: 'cisa5-et-003',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Prompt injection attacks against large language models (LLMs) primarily target:',
     options: [
       'Network infrastructure',
@@ -62,10 +68,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'LLM Security'
   },
   {
-    id: 'CISA5-ET-004',
+    id: 'cisa5-et-004',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'The PRIMARY purpose of AI model monitoring is to:',
     options: [
       'Increase prediction speed',
@@ -79,10 +87,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Model Monitoring'
   },
   {
-    id: 'CISA5-ET-005',
+    id: 'cisa5-et-005',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing AI systems, explainability is MOST important for:',
     options: [
       'Internal batch processing systems',
@@ -100,10 +110,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
   // ADVANCED CLOUD SECURITY QUESTIONS
   // ============================================================================
   {
-    id: 'CISA5-ET-006',
+    id: 'cisa5-et-006',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Cloud Security Posture Management (CSPM) tools primarily help organizations:',
     options: [
       'Encrypt all cloud data',
@@ -117,10 +129,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'CSPM'
   },
   {
-    id: 'CISA5-ET-007',
+    id: 'cisa5-et-007',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In container security, the MOST critical layer to secure is:',
     options: [
       'The container registry',
@@ -134,10 +148,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Container Security'
   },
   {
-    id: 'CISA5-ET-008',
+    id: 'cisa5-et-008',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'Kubernetes Network Policies are used to:',
     options: [
       'Manage user authentication',
@@ -151,10 +167,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Kubernetes Security'
   },
   {
-    id: 'CISA5-ET-009',
+    id: 'cisa5-et-009',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The PRIMARY security challenge with serverless computing is:',
     options: [
       'Managing server patches',
@@ -168,10 +186,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Serverless Security'
   },
   {
-    id: 'CISA5-ET-010',
+    id: 'cisa5-et-010',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'In multi-cloud environments, the GREATEST security challenge is:',
     options: [
       'Lower costs',
@@ -189,10 +209,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
   // IoT/OT SECURITY QUESTIONS
   // ============================================================================
   {
-    id: 'CISA5-ET-011',
+    id: 'cisa5-et-011',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'In OT/ICS environments, the PRIMARY security priority differs from IT because:',
     options: [
       'OT has lower budgets',
@@ -206,10 +228,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'IT/OT Differences'
   },
   {
-    id: 'CISA5-ET-012',
+    id: 'cisa5-et-012',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'The Purdue Model is used in industrial environments to:',
     options: [
       'Classify data sensitivity levels',
@@ -223,10 +247,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'ICS Architecture'
   },
   {
-    id: 'CISA5-ET-013',
+    id: 'cisa5-et-013',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'Shadow IoT devices pose a significant risk because they:',
     options: [
       'Are too expensive',
@@ -240,10 +266,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Shadow IoT'
   },
   {
-    id: 'CISA5-ET-014',
+    id: 'cisa5-et-014',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing ICS/SCADA systems, the IS auditor should understand that patching is challenging because:',
     options: [
       'Vendors do not release patches',
@@ -257,10 +285,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'ICS Patching'
   },
   {
-    id: 'CISA5-ET-015',
+    id: 'cisa5-et-015',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'A key security concern with industrial protocols like Modbus is:',
     options: [
       'They are too complex to implement',
@@ -278,10 +308,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
   // API SECURITY QUESTIONS
   // ============================================================================
   {
-    id: 'CISA5-ET-016',
+    id: 'cisa5-et-016',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'According to OWASP API Security Top 10, the most critical API vulnerability is:',
     options: [
       'SQL Injection',
@@ -295,10 +327,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'OWASP API Top 10'
   },
   {
-    id: 'CISA5-ET-017',
+    id: 'cisa5-et-017',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'API rate limiting is essential to prevent:',
     options: [
       'SQL injection',
@@ -312,10 +346,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Rate Limiting'
   },
   {
-    id: 'CISA5-ET-018',
+    id: 'cisa5-et-018',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'For service-to-service API authentication, the MOST secure approach is:',
     options: [
       'Shared API keys',
@@ -329,10 +365,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'API Authentication'
   },
   {
-    id: 'CISA5-ET-019',
+    id: 'cisa5-et-019',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'An API gateway provides centralized:',
     options: [
       'Database management',
@@ -346,10 +384,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'API Gateway'
   },
   {
-    id: 'CISA5-ET-020',
+    id: 'cisa5-et-020',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'When auditing API security, the IS auditor should verify that authorization is checked at:',
     options: [
       'The network perimeter only',
@@ -367,10 +407,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
   // ZERO TRUST AND MODERN ARCHITECTURE QUESTIONS
   // ============================================================================
   {
-    id: 'CISA5-ET-021',
+    id: 'cisa5-et-021',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'medium',
+    skillLevel: 'Application',
     question: 'A Software Bill of Materials (SBOM) helps organizations:',
     options: [
       'Speed up software development',
@@ -384,10 +426,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Supply Chain Security'
   },
   {
-    id: 'CISA5-ET-022',
+    id: 'cisa5-et-022',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'In a Zero Trust architecture, access decisions are based on:',
     options: [
       'Network location only',
@@ -401,10 +445,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'Zero Trust'
   },
   {
-    id: 'CISA5-ET-023',
+    id: 'cisa5-et-023',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'DevSecOps integrates security into:',
     options: [
       'Post-deployment monitoring only',
@@ -418,10 +464,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'DevSecOps'
   },
   {
-    id: 'CISA5-ET-024',
+    id: 'cisa5-et-024',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'hard',
+    skillLevel: 'Analysis',
     question: 'Infrastructure as Code (IaC) security scanning helps prevent:',
     options: [
       'All malware',
@@ -435,10 +483,12 @@ export const CISA5_QUESTIONS_EMERGING_TECH: Question[] = [
     subtopic: 'IaC Security'
   },
   {
-    id: 'CISA5-ET-025',
+    id: 'cisa5-et-025',
     courseId: 'cisa',
     section: 'CISA5',
+    blueprintArea: 'CISA5-1',
     difficulty: 'easy',
+    skillLevel: 'Remembering and Understanding',
     question: 'The shared responsibility model in cloud computing means:',
     options: [
       'The cloud provider handles all security',

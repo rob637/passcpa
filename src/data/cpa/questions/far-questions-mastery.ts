@@ -8,6 +8,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-001',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-framework',
     topic: 'Conceptual Framework',
     subtopic: 'Recognition Criteria',
@@ -28,6 +29,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-002',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-presentation',
     topic: 'Financial Statements',
     subtopic: 'Discontinued Operations',
@@ -48,6 +50,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-003',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-receivables',
     topic: 'Receivables',
     subtopic: 'CECL Model',
@@ -68,6 +71,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-004',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-inventory',
     topic: 'Inventory',
     subtopic: 'Retail Method',
@@ -88,6 +92,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-005',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-ppe',
     topic: 'Fixed Assets',
     subtopic: 'Impairment Test',
@@ -108,6 +113,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-006',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-intangibles',
     topic: 'Intangible Assets',
     subtopic: 'Indefinite-Lived Intangibles',
@@ -128,6 +134,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-007',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-liabilities',
     topic: 'Contingencies',
     subtopic: 'Gain Contingencies',
@@ -148,6 +155,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-008',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-bonds',
     topic: 'Debt',
     subtopic: 'Debt Modification vs Extinguishment',
@@ -168,6 +176,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-009',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stockholders\' Equity',
     subtopic: 'Treasury Stock',
@@ -188,6 +197,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-010',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-equity',
     topic: 'Stock Compensation',
     subtopic: 'Performance Conditions',
@@ -208,6 +218,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-011',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Modified Accrual',
@@ -228,6 +239,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-012',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-govt',
     topic: 'Government Accounting',
     subtopic: 'Derived Tax Revenue',
@@ -248,6 +260,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-013',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Functional Expenses',
@@ -268,6 +281,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-014',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-nfp',
     topic: 'Not-for-Profit',
     subtopic: 'Contributed Services',
@@ -288,6 +302,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-015',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-consolidation',
     topic: 'Consolidation',
     subtopic: 'Noncontrolling Interest',
@@ -308,6 +323,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-016',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Significant Financing',
@@ -328,6 +344,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-017',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-revenue',
     topic: 'Revenue Recognition',
     subtopic: 'Warranties',
@@ -348,6 +365,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-018',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-pension',
     topic: 'Pensions',
     subtopic: 'Plan Amendments',
@@ -368,6 +386,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-019',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-leases',
     topic: 'Lease Accounting',
     subtopic: 'Sale-Leaseback',
@@ -388,6 +407,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-020',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-forex',
     topic: 'Foreign Currency',
     subtopic: 'Functional Currency',
@@ -408,6 +428,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-021',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-errors',
     topic: 'Error Correction',
     subtopic: 'Immaterial Prior Period Errors',
@@ -428,6 +449,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-022',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-fair-value',
     topic: 'Fair Value',
     subtopic: 'Market Participant Assumptions',
@@ -448,6 +470,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-023',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-segment',
     topic: 'Segment Reporting',
     subtopic: 'Chief Operating Decision Maker',
@@ -468,6 +491,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-024',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-cash-flows',
     topic: 'Statement of Cash Flows',
     subtopic: 'Classification Issues',
@@ -488,6 +512,7 @@ export const FAR_QUESTIONS_MASTERY: Question[] = [
   {
     id: 'far-mast-025',
     section: 'FAR',
+    courseId: 'cpa',
     topicId: 'far-investments',
     topic: 'Investments',
     subtopic: 'Equity Method Discontinuation',

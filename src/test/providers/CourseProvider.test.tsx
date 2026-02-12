@@ -9,6 +9,7 @@ vi.unmock('../../providers/CourseProvider');
 
 // Mock feature flags
 vi.mock('../../config/featureFlags', () => ({
+  ENABLE_CPA_COURSE: true,
   ENABLE_EA_COURSE: true,
   ENABLE_CMA_COURSE: true,
   ENABLE_CIA_COURSE: true,

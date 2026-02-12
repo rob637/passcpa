@@ -1,4 +1,4 @@
-Problem vs. Incident Management - Nail it, or risk failing the sisa. This is a GUARANTEED exam topic.
+Problem vs. Incident Management - Nail it, or risk failing the SIS-uh. This is a GUARANTEED exam topic.
 
 Incident management... it’s about restoring service FAST. Getting users back online, fixing the immediate break. Problem management... that’s about finding the ROOT cause, preventing future incidents. Think of it this way: incident management puts out fires... problem management stops them from starting in the first place. Auditors care because effective problem management reduces risk, improves efficiency, and ultimately saves the organization money. Weak problem management? Expect audit findings.
 

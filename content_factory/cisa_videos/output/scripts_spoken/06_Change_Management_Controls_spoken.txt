@@ -1,4 +1,4 @@
-Change management. is a sisa exam killer if you don't nail it. Let's make sure you do.
+Change management. is a SIS-uh exam killer if you don't nail it. Let's make sure you do.
 
 Change management. is about minimizing risk when modifying I-T systems. It's a formal process. ensuring changes are properly authorized, tested, and implemented. with minimal disruption. Think of it as. controlled chaos. Auditors care because. poor change management leads to outages, security breaches, and non-compliance. If a company can't prove they're managing changes effectively. that's a major finding. We're looking for documented processes. segregation of duties. and post-implementation reviews.
 
@@ -6,4 +6,4 @@ The trap is. eye-SAH-kah loves to present several plausible options. all related
 
 For example, when auditing a recent system upgrade. you find no record of user acceptance testing. The change was implemented. but users immediately reported issues. This is a red flag. indicating a breakdown in the change management process. specifically, the testing phase. This lack of testing. directly increased business risk.
 
-The ONE thing to remember. change management is about risk. Prioritize risk mitigation. and you'll ace those questions. Go get that sisa!
+The ONE thing to remember. change management is about risk. Prioritize risk mitigation. and you'll ace those questions. Go get that SIS-uh!

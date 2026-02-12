@@ -1,4 +1,4 @@
-Segregation of Duties. it's not just good practice; it's a sisa exam staple, and knowing it can be the difference between passing and failing.
+Segregation of Duties. it's not just good practice; it's a SIS-uh exam staple, and knowing it can be the difference between passing and failing.
 
 Segregation of Duties, or S-O-D, is the principle of assigning different people the separate tasks of authorizing transactions, recording transactions, and maintaining custody of assets. Auditors care because inadequate S-O-D creates opportunities for fraud and errors to go undetected. It's a cornerstone of internal controls, and you'll see it everywhere in the audit process.
 
@@ -6,4 +6,4 @@ Now, here's the exam trap. eye-SAH-kah loves to trick you with questions that of
 
 For example, when auditing a payroll system, don't just look for separate payroll processors and approvers. Dig deeper. Does the approver also have the ability to modify employee records? If so, the S-O-D is weak, even with separate individuals involved. They could create a fictitious employee, process their own fraudulent payments, and then approve them.
 
-The key takeaway? Segregation of Duties is about preventing ANY single person from having too much control over a critical process. Master this concept, and you'll be well on your way to sisa success.
+The key takeaway? Segregation of Duties is about preventing ANY single person from having too much control over a critical process. Master this concept, and you'll be well on your way to SIS-uh success.

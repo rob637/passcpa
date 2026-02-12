@@ -18,14 +18,36 @@ HEYGEN_EMAIL = os.getenv("HEYGEN_EMAIL")
 HEYGEN_PASSWORD = os.getenv("HEYGEN_PASSWORD")
 
 # =============================================================================
-# AVATAR POOL - 4 presenters (2 female, 2 male)
-# HeyGen Avatar IDs with friendly display names and specific outfit/look
+# AVATAR POOL - 4 presenters (2 female, 2 male) with multiple outfits each
+# HeyGen Avatar IDs with friendly display names and multiple outfits
 # =============================================================================
+AVATAR_CONFIGS = {
+    "Freja": {
+        "name": "Sarah",
+        "gender": "female",
+        "looks": ["Freja Look 1", "Freja Look 2", "Freja Look 3", "Freja Look 4", "Freja Look 5"]
+    },
+    "Zosia": {
+        "name": "Emma",
+        "gender": "female",
+        "looks": ["Zosia Look 1", "Zosia Look 2", "Zosia Look 3", "Zosia Look 4", "Zosia Look 5"]
+    },
+    "Jinwoo": {
+        "name": "James",
+        "gender": "male",
+        "looks": ["Jinwoo Look 1", "Jinwoo Look 2", "Jinwoo Look 3", "Jinwoo Look 4", "Jinwoo Look 5"]
+    },
+    "Esmond": {
+        "name": "Marcus",
+        "gender": "male",
+        "looks": ["Esmond Look 1", "Esmond Look 2", "Esmond Look 3", "Esmond Look 4"]
+    },
+}
+
+# Flat list for simple iteration (backwards compatible)
 AVATARS = [
-    {"id": "Freja", "name": "Sarah", "gender": "female", "look": "Freja Front"},
-    {"id": "Zosia", "name": "Emma", "gender": "female", "look": "Zosia Front"},
-    {"id": "Jinwoo", "name": "James", "gender": "male", "look": "Jinwoo Look 1"},
-    {"id": "Esmond", "name": "Marcus", "gender": "male", "look": "Esmond Look 1"},
+    {"id": avatar_id, "name": config["name"], "gender": config["gender"], "look": config["looks"][0]}
+    for avatar_id, config in AVATAR_CONFIGS.items()
 ]
 
 # =============================================================================
@@ -52,15 +74,23 @@ BRAND_COLORS = {
 }
 
 def get_random_presenter():
-    """Get a random avatar from the pool."""
-    return random.choice(AVATARS)
+    """Get a random avatar with a random outfit from the pool."""
+    avatar_id = random.choice(list(AVATAR_CONFIGS.keys()))
+    config = AVATAR_CONFIGS[avatar_id]
+    look = random.choice(config["looks"])
+    return {
+        "id": avatar_id,
+        "name": config["name"],
+        "gender": config["gender"],
+        "look": look
+    }
 
 def get_random_background():
     """Get a random background from the pool."""
     return random.choice(BACKGROUNDS)
 
 def get_random_combo():
-    """Get a random avatar + background combination."""
+    """Get a random avatar + random outfit + random background combination."""
     return {
         "avatar": get_random_presenter(),
         "background": get_random_background()

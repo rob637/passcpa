@@ -142,6 +142,7 @@ class HeyGenAutomationV2:
         script_text: str,
         title: str,
         avatar_name: str,
+        avatar_look: str = None,
         background_name: str = None,
         save_draft: bool = True
     ) -> bool:
@@ -151,14 +152,23 @@ class HeyGenAutomationV2:
         Args:
             script_text: The script content to paste
             title: Video title
-            avatar_name: Avatar to search for (e.g., "Bruce", "Freja", "Zosia")
+            avatar_name: Avatar to search for (e.g., "Freja", "Zosia", "Jinwoo", "Esmond")
+            avatar_look: Specific outfit e.g., "Freja Look 3" (extracts "3" to pick 3rd outfit)
             background_name: Background filename in Uploads (e.g., "bg_corporate_blue")
             save_draft: If True, save as draft. If False, click Generate.
             
         Returns: True if successful
         """
+        # Parse outfit index from avatar_look (e.g., "Freja Look 3" -> 2 (0-indexed))
+        outfit_index = 0
+        if avatar_look:
+            import re
+            match = re.search(r'Look\s*(\d+)', avatar_look)
+            if match:
+                outfit_index = int(match.group(1)) - 1  # Convert to 0-indexed
+        
         logger.info(f"[CREATE] Starting: {title}")
-        logger.info(f"         Avatar: {avatar_name}, Background: {background_name}")
+        logger.info(f"         Avatar: {avatar_name}, Look: {avatar_look} (index {outfit_index}), Background: {background_name}")
         
         try:
             # =========================================================
@@ -326,8 +336,8 @@ class HeyGenAutomationV2:
             
             self.screenshot("05_avatar_looks")
             
-            # NEW APPROACH: Use JavaScript to find and double-click outfit images
-            # The outfit thumbnails are in the right sidebar panel
+            # Select the correct outfit based on outfit_index
+            # Outfits appear in a grid, we need to click the right one
             time.sleep(1)
             
             # Try clicking "Replace avatar" button first - this is the reliable way
@@ -337,42 +347,52 @@ class HeyGenAutomationV2:
                 logger.info("[OK] Clicked Replace avatar button")
                 time.sleep(2)
             else:
-                # Fallback: Use JavaScript to find and click an outfit image
-                # Find images in the right panel (not the main preview)
-                result = self.page.evaluate('''() => {
+                # Use JavaScript to find and click the correct outfit thumbnail
+                # outfit_index determines which outfit to click (0-4)
+                result = self.page.evaluate(f'''() => {{
                     // Get all images on the page
                     const allImages = Array.from(document.querySelectorAll('img'));
                     
                     // Filter to small thumbnails (outfit images are ~80-150px wide)
-                    const thumbnails = allImages.filter(img => {
+                    const thumbnails = allImages.filter(img => {{
                         const rect = img.getBoundingClientRect();
                         return rect.width > 50 && rect.width < 200 && 
                                rect.height > 50 && rect.height < 200 &&
                                rect.x > window.innerWidth / 2;  // Right side of screen
-                    });
+                    }});
                     
-                    if (thumbnails.length > 0) {
-                        // Double-click the first thumbnail
-                        const img = thumbnails[0];
+                    // Sort by position (top-left to bottom-right)
+                    thumbnails.sort((a, b) => {{
+                        const rectA = a.getBoundingClientRect();
+                        const rectB = b.getBoundingClientRect();
+                        // Sort by row first (y), then by column (x)
+                        if (Math.abs(rectA.y - rectB.y) > 30) return rectA.y - rectB.y;
+                        return rectA.x - rectB.x;
+                    }});
+                    
+                    const targetIndex = {outfit_index};
+                    if (thumbnails.length > targetIndex) {{
+                        // Double-click the target thumbnail
+                        const img = thumbnails[targetIndex];
                         const rect = img.getBoundingClientRect();
-                        const event = new MouseEvent('dblclick', {
+                        const event = new MouseEvent('dblclick', {{
                             bubbles: true,
                             cancelable: true,
                             view: window,
                             clientX: rect.x + rect.width / 2,
                             clientY: rect.y + rect.height / 2
-                        });
+                        }});
                         img.dispatchEvent(event);
-                        return {success: true, count: thumbnails.length};
-                    }
-                    return {success: false, count: 0};
-                }''')
+                        return {{success: true, count: thumbnails.length, selected: targetIndex}};
+                    }}
+                    return {{success: false, count: thumbnails.length, selected: -1}};
+                }}''')
                 
                 if result and result.get('success'):
-                    logger.info(f"[OK] Double-clicked outfit via JavaScript (found {result.get('count')} thumbnails)")
+                    logger.info(f"[OK] Selected outfit {result.get('selected')+1} of {result.get('count')} via JavaScript")
                     time.sleep(2)
                 else:
-                    logger.warning("[WARN] Could not find outfit thumbnails")
+                    logger.warning(f"[WARN] Could not select outfit {outfit_index+1}, found {result.get('count', 0)} thumbnails")
             
             self.screenshot("06_avatar_selected")
             

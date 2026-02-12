@@ -166,6 +166,7 @@ def run_single_video(video_data, automation, dry_run=False):
             script_text=video_data["script_text"],
             title=f"{video_data['id']} - {video_data['title']}",
             avatar_name=video_data["avatar_id"],
+            avatar_look=video_data["avatar_look"],
             background_name=video_data["background_name"],
             save_draft=False  # Generate immediately
         )

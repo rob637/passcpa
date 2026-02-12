@@ -110,7 +110,8 @@ def calibrate_quick():
         results = {}
     
     coords_to_find = [
-        ("change_avatar", "CHANGE AVATAR button - click 'Change avatar' or 'Replace avatar' button after clicking the avatar"),
+        ("motion_engine", "MOTION ENGINE dropdown - scroll down in avatar panel, click the dropdown that says 'Avatar III' or 'Avatar IV'"),
+        ("avatar_iii", "AVATAR III option - click 'Avatar III' in the dropdown menu"),
     ]
     
     for key, description in coords_to_find:

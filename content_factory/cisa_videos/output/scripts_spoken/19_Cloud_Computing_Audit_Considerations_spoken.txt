@@ -1,4 +1,4 @@
-Cloud auditing... can be a nightmare on the sisa exam. But nail this, and you’ll be golden.
+Cloud auditing... can be a nightmare on the SIS-uh exam. But nail this, and you’ll be golden.
 
 So, what is cloud computing? It’s on-demand access to computing resources - servers, storage, databases - over the internet. Think of it like renting, instead of buying, your I-T infrastructure. As an auditor, you care because traditional, on-premise security controls often don't translate directly to the cloud. You need to understand who’s responsible for what.
 
@@ -10,4 +10,4 @@ Cloud audit challenges also come up frequently. They'll ask about things like da
 
 For example, when auditing a S-as-a-Service application like Salesforce, you need to verify their security certifications, like sock 2, and confirm that their data privacy policies align with regulations like G-D-P-R if you’re processing EU citizen data. You also need to audit your own configuration of Salesforce.
 
-The one thing you must remember? Shared responsibility. Understand who is responsible for what in each cloud model. Nail that, and you’re one step closer to passing the sisa exam. You got this!
+The one thing you must remember? Shared responsibility. Understand who is responsible for what in each cloud model. Nail that, and you’re one step closer to passing the SIS-uh exam. You got this!

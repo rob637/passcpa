@@ -1,4 +1,4 @@
-Risk assessment methodology. this is CRITICAL for passing the sisa exam. You'll see multiple questions on it. Let's nail it down.
+Risk assessment methodology. this is CRITICAL for passing the SIS-uh exam. You'll see multiple questions on it. Let's nail it down.
 
 Risk assessment is the process of identifying, analyzing, and evaluating risks to an organization's information assets. It's about finding vulnerabilities and figuring out how bad things could get. Auditors care because it forms the foundation of our audit plan. We use risk assessments to focus our efforts on the areas that pose the greatest threat to the organization. Knowing the risk profile lets us design audit procedures to provide reasonable assurance.
 
@@ -6,4 +6,4 @@ Now, here's the number one way eye-SAH-kah tries to trick you. The trap is prese
 
 For example, when auditing a new cloud-based system, the risk identification phase involves brainstorming potential threats like data breaches, service outages, and vendor lock-in. Only after identifying these risks can you analyze their likelihood and impact, and then evaluate their overall severity. This informs your audit scope: perhaps focusing more on data security controls if that's identified as a high risk.
 
-So remember this: Risk Identification ALWAYS comes first. Get that right, and you're one step closer to acing the sisa exam.
+So remember this: Risk Identification ALWAYS comes first. Get that right, and you're one step closer to acing the SIS-uh exam.

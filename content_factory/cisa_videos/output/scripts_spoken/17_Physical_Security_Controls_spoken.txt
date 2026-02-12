@@ -1,4 +1,4 @@
-Physical security controls. fail to audit them, and you fail the sisa exam.
+Physical security controls. fail to audit them, and you fail the SIS-uh exam.
 
 Let's focus on two key areas: physical access and environmental controls. Physical security refers to measures designed to prevent unauthorized access to physical assets. like servers, data centers, or even office spaces. Auditors care deeply about this because weak physical security can negate even the strongest digital defenses. Think of it this way: a hacker might struggle to bypass a firewall, but if they can simply walk into the server room. game over.
 
@@ -6,4 +6,4 @@ Now, here's the trap eye-SAH-kah sets. They love to present multiple seemingly c
 
 For example, when auditing a data center, don't just check if the temperature is within acceptable limits. Investigate the monitoring systems, alarm thresholds, and backup power solutions. ensuring a comprehensive environmental control strategy is in place. Verify that mantrap doors are functioning correctly, and that security personnel are properly trained on their use.
 
-The key takeaway? Always choose the most comprehensive answer that reflects the overarching security objective. not just isolated features. Nail this, and you're one step closer to sisa success.
+The key takeaway? Always choose the most comprehensive answer that reflects the overarching security objective. not just isolated features. Nail this, and you're one step closer to SIS-uh success.

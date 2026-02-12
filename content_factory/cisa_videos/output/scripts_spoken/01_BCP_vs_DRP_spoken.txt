@@ -1,4 +1,4 @@
-Hey sisa candidates! B-C-P vs. D-R-P can be a HUGE stumbling block on the exam. Master this, and you'll confidently answer several questions.
+Hey SIS-uh candidates! B-C-P vs. D-R-P can be a HUGE stumbling block on the exam. Master this, and you'll confidently answer several questions.
 
 So, what's the core difference? A Business Continuity Plan, or B-C-P, focuses on maintaining essential business functions during a disruption. Think of it as keeping the lights on, even with a power outage. A Disaster Recovery Plan, or D-R-P, on the other hand, focuses on restoring I-T infrastructure after a disruption. It’s about getting the power back on in the first place. As auditors, we care because we need to ensure both plans are robust and regularly tested to protect the organization's critical assets and reputation.
 
@@ -6,4 +6,4 @@ Now, here's the trap eye-SAH-kah loves to set: They'll present scenarios that bl
 
 For example, when auditing a financial institution, the B-C-P would cover how to process critical transactions if their main data center is unavailable. The D-R-P would cover the steps to rebuild that data center and restore I-T systems to their pre-disaster state. Different timelines, different focuses.
 
-The key takeaway? B-C-P equals business continuity, keeping the business running. D-R-P equals disaster recovery, restoring I-T infrastructure. Nail that difference, and you'll ace those sisa questions. Good luck!
+The key takeaway? B-C-P equals business continuity, keeping the business running. D-R-P equals disaster recovery, restoring I-T infrastructure. Nail that difference, and you'll ace those SIS-uh questions. Good luck!

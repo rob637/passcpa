@@ -11,6 +11,7 @@ import AuthLayout from './components/layouts/AuthLayout';
 // Common Components (always loaded)
 import ErrorBoundary from './components/common/ErrorBoundary';
 import { PageLoader, FullPageLoader } from './components/common/PageLoader';
+import { SubscriptionGate } from './components/common/SubscriptionGate';
 // import InstallPrompt from './components/common/InstallPrompt'; // Assuming this might be migrated or kept as JSX for now, but referenced as needed
 import { ToastProvider } from './components/common/Toast';
 import { UpdateBanner } from './components/common/UpdateBanner';
@@ -213,6 +214,13 @@ const SuspensePage = ({ children }: { children: ReactNode }) => (
   <Suspense fallback={<PageLoader />}>
     <ErrorBoundary variant="page">{children}</ErrorBoundary>
   </Suspense>
+);
+
+// Premium content wrapper - requires subscription or active trial
+const PremiumPage = ({ children }: { children: ReactNode }) => (
+  <SuspensePage>
+    <SubscriptionGate>{children}</SubscriptionGate>
+  </SuspensePage>
 );
 
 function App() {
@@ -597,9 +605,9 @@ function App() {
                   <Route
                     path="/learn"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Lessons />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
@@ -625,41 +633,41 @@ function App() {
                   <Route
                     path="/practice"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Practice />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/flashcards"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <FlashcardSetup />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/flashcards/session"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Flashcards />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/quiz"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <TimedQuiz />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/exam"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <ExamSimulator />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   {ENABLE_EA_COURSE && (
@@ -667,9 +675,9 @@ function App() {
                       <Route
                         path="/ea-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <EAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -723,9 +731,9 @@ function App() {
                       <Route
                         path="/cma-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CMAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -747,17 +755,17 @@ function App() {
                       <Route
                         path="/cma/essay"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CMAEssaySimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
                         path="/cma/cbq"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CMACBQSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -783,9 +791,9 @@ function App() {
                       <Route
                         path="/cia-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CIAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -825,9 +833,9 @@ function App() {
                       <Route
                         path="/cfp-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CFPExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route 
@@ -841,9 +849,9 @@ function App() {
                       <Route 
                         path="/cfp/cases" 
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CFPCaseStudy />
-                          </SuspensePage>
+                          </PremiumPage>
                         } 
                       />
                       <Route
@@ -875,9 +883,9 @@ function App() {
                       <Route
                         path="/cisa-exam"
                         element={
-                          <SuspensePage>
+                          <PremiumPage>
                             <CISAExamSimulator />
-                          </SuspensePage>
+                          </PremiumPage>
                         }
                       />
                       <Route
@@ -921,25 +929,25 @@ function App() {
                   <Route
                     path="/tbs"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <TBSSimulator />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/written-communication"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <WrittenCommunication />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <Lessons />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
@@ -977,25 +985,25 @@ function App() {
                   <Route
                     path="/journey"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <StudyJourney />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons/matrix"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <LessonMatrix />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/lessons/:lessonId"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <LessonViewer />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
@@ -1025,17 +1033,17 @@ function App() {
                   <Route
                     path="/tutor"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <AITutor />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route
                     path="/ai-tutor"
                     element={
-                      <SuspensePage>
+                      <PremiumPage>
                         <AITutor />
-                      </SuspensePage>
+                      </PremiumPage>
                     }
                   />
                   <Route

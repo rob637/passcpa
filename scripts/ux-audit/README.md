@@ -16,22 +16,36 @@ pip install -r requirements.txt
 
 # Install Playwright browsers
 playwright install chromium
-
-# Set environment variables
-cp .env.example .env
-# Edit .env with your API keys
 ```
+
+## Web Dashboard (Recommended)
+
+The easiest way to use the tool — a full web UI for configuring and running audits.
+
+```bash
+cd scripts/ux-audit
+python server.py
+# Open http://localhost:8642
+```
+
+The dashboard lets you:
+- **Paste your API key** in Settings (no `.env` file needed)
+- **Pick courses and tasks** with a visual grid
+- **Run audits** and watch live progress logs
+- **Browse reports** with a built-in viewer
 
 ### Required Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `ANTHROPIC_API_KEY` | Claude API key (required) |
+| `ANTHROPIC_API_KEY` | Claude API key (set via UI or `.env`) |
 | `VORAPREP_URL` | App URL (default: `http://localhost:5173`) |
 | `VORAPREP_EMAIL` | Test user email |
 | `VORAPREP_PASSWORD` | Test user password |
 
 ## Usage
+
+### CLI (Advanced)
 
 ```bash
 # List all available audit tasks
@@ -99,6 +113,8 @@ Each report includes:
 
 ```
 scripts/ux-audit/
+├── server.py         # Web dashboard (FastAPI, port 8642)
+├── static/index.html # Dashboard frontend (single-page app)
 ├── audit.py          # Main agent runner (CLI entry point)
 ├── config.py         # URLs, credentials, browser settings
 ├── tasks.py          # Task prompt definitions (13 audit types)

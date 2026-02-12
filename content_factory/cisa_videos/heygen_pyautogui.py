@@ -513,33 +513,41 @@ def run_batch(limit=None):
     logger.info("="*60)
 
 
-def test_single():
-    """Test with a single video."""
-    logger.info("Testing with one video...")
+def test_single(count=1):
+    """Test with specified number of videos."""
+    logger.info(f"Testing with {count} video(s)...")
     
-    # Load first video from matrix
+    # Load videos from matrix
     with open("output/video_matrix.json") as f:
         videos = json.load(f)
-    
-    video = videos[0]
-    script_file = Path(f"output/scripts_spoken/{video['script']}")
-    script_text = script_file.read_text()
     
     # Open HeyGen in browser
     open_heygen_editor()
     
     input("\n>>> Log in to HeyGen and wait for editor to load, then press ENTER...")
     
-    # Create video
-    create_video(
-        title=video['topic'],
-        script_text=script_text,
-        avatar_name=video['avatar_id'],
-        avatar_look=video.get('avatar_look'),
-        background_name=video.get('background')
-    )
+    for i, video in enumerate(videos[:count]):
+        script_file = Path(f"output/scripts_spoken/{video['script']}")
+        script_text = script_file.read_text()
+        
+        logger.info(f"\n>>> Creating video {i+1}/{count}...")
+        
+        # Create video
+        create_video(
+            title=video['topic'],
+            script_text=script_text,
+            avatar_name=video['avatar_id'],
+            avatar_look=video.get('avatar_look'),
+            background_name=video.get('background')
+        )
+        
+        if i < count - 1:
+            # Open new draft for next video
+            logger.info("Opening new draft for next video...")
+            open_heygen_editor()
+            time.sleep(5)  # Wait for page to load
     
-    logger.info("\n>>> Done! Check the result.")
+    logger.info(f"\n>>> Done! Created {count} video(s).")
 
 
 if __name__ == "__main__":
@@ -549,8 +557,12 @@ if __name__ == "__main__":
         calibrate()
     elif "--remap" in sys.argv:
         calibrate_quick()
-    elif "--test" in sys.argv:
-        test_single()
+    elif "--test" in sys.argv or any(arg.startswith("--test=") for arg in sys.argv):
+        count = 1
+        for arg in sys.argv:
+            if arg.startswith("--test="):
+                count = int(arg.split("=")[1])
+        test_single(count)
     else:
         limit = None
         for arg in sys.argv[1:]:

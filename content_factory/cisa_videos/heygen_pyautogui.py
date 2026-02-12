@@ -97,9 +97,9 @@ COORDS = {
 def calibrate_quick():
     """Quick recalibration for specific elements (5-second countdown)."""
     print("\n" + "="*60)
-    print("QUICK RECALIBRATION: Motion Engine")
+    print("QUICK RECALIBRATION: Background Elements")
     print("="*60)
-    print("\nYou have 5 seconds. Move mouse and hold still.\n")
+    print("\nYou have 5 seconds per element. Watch the live cursor position.\n")
     
     # Load existing coords
     coords_file = Path("coords.json")
@@ -109,27 +109,68 @@ def calibrate_quick():
     else:
         results = {}
     
-    coords_to_find = [
-        ("customize_bg", "CUSTOMIZE button - click 'Customize' under Avatar Background section"),
-        ("uploads_tab", "UPLOADS tab - click the 'Uploads' tab in the background panel"),
-        ("bg_row1_col1", "BG TOP-LEFT: DARK NAVY background (1st row, 1st column)"),
-        ("bg_row1_col2", "BG TOP-MIDDLE: GRAY background (1st row, 2nd column)"),  
-        ("bg_row1_col3", "BG TOP-RIGHT: TEAL background (1st row, 3rd column)"),
-        ("bg_row2_col1", "BG 2ND ROW LEFT: BLUE GRADIENT background (2nd row, 1st column)"),
+    # Step 1: Customize button
+    print("\n" + "-"*40)
+    print("STEP 1: CUSTOMIZE BUTTON")
+    print("-"*40)
+    print("Look at the RIGHT panel. Scroll down to 'Avatar Background' section.")
+    print("You should see: [Customize] [Remove] [Color]")
+    print("Point at 'Customize' (has a paint brush icon)")
+    input("Press ENTER when ready...")
+    
+    print("Move mouse to CUSTOMIZE button now! 5 seconds...")
+    for i in range(5, 0, -1):
+        x, y = pyautogui.position()
+        print(f"  {i}... (cursor at {x}, {y})", flush=True)
+        time.sleep(1)
+    x, y = pyautogui.position()
+    results["customize_bg"] = [x, y]
+    print(f"  ✓ Saved: customize_bg = ({x}, {y})")
+    
+    # Now click to open the panel
+    print("\n>>> Now CLICK 'Customize' to open the background panel...")
+    input("Press ENTER after clicking Customize and the panel is open...")
+    
+    # Step 2: Uploads tab
+    print("\n" + "-"*40)
+    print("STEP 2: UPLOADS TAB")
+    print("-"*40)
+    print("A popup should be open with tabs: [All] [AI Generated] [Uploads]")
+    print("Point at the 'Uploads' tab")
+    
+    print("Move mouse to UPLOADS tab now! 5 seconds...")
+    for i in range(5, 0, -1):
+        x, y = pyautogui.position()
+        print(f"  {i}... (cursor at {x}, {y})", flush=True)
+        time.sleep(1)
+    x, y = pyautogui.position()
+    results["uploads_tab"] = [x, y]
+    print(f"  ✓ Saved: uploads_tab = ({x}, {y})")
+    
+    # Now click Uploads tab
+    print("\n>>> Now CLICK 'Uploads' tab to show your uploaded backgrounds...")
+    input("Press ENTER after clicking Uploads and you see your 4 backgrounds...")
+    
+    # Step 3-6: Background grid
+    bg_items = [
+        ("bg_row1_col1", "TOP-LEFT background (DARK NAVY)"),
+        ("bg_row1_col2", "TOP-MIDDLE background (GRAY)"),  
+        ("bg_row1_col3", "TOP-RIGHT background (TEAL)"),
+        ("bg_row2_col1", "2ND ROW LEFT background (BLUE GRADIENT)"),
     ]
     
-    for key, description in coords_to_find:
-        print(f"\n>>> {description}")
-        print("Move mouse there now! 5 seconds...")
+    for i, (key, desc) in enumerate(bg_items, 3):
+        print(f"\n" + "-"*40)
+        print(f"STEP {i}: {desc}")
+        print("-"*40)
+        print(f"Point at the {desc} thumbnail")
         
-        for i in range(5, 0, -1):
+        print(f"Move mouse to {desc} now! 5 seconds...")
+        for j in range(5, 0, -1):
             x, y = pyautogui.position()
-            print(f"  {i}... (cursor at {x}, {y})", flush=True)
+            print(f"  {j}... (cursor at {x}, {y})", flush=True)
             time.sleep(1)
-        
         x, y = pyautogui.position()
-        if x < 0:
-            print(f"  WARNING: X is negative ({x})! Mouse is on LEFT monitor. Try again.")
         results[key] = [x, y]
         print(f"  ✓ Saved: {key} = ({x}, {y})")
     

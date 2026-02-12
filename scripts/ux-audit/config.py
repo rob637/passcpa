@@ -38,7 +38,7 @@ TEST_EMAIL = os.getenv("VORAPREP_EMAIL", "test@voraprep.com")
 TEST_PASSWORD = os.getenv("VORAPREP_PASSWORD", "testpassword123")
 
 # Claude model to use for the audit agent
-LLM_MODEL = os.getenv("AUDIT_LLM_MODEL", "claude-sonnet-4-20250514")
+LLM_MODEL = os.getenv("AUDIT_LLM_MODEL", "claude-opus-4-20250514")
 
 # ============================================================================
 # Course Configuration

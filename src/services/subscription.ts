@@ -66,10 +66,17 @@ export interface UserSubscription {
 const IS_BETA = false;
 
 // Founder pricing deadline - August 31, 2026
-const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
+// Single source of truth — imported by useCheckout.ts, ExamLandingTemplate.tsx, etc.
+export const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Check if founder pricing is active
 export const isFounderPricingActive = (): boolean => new Date() < FOUNDER_DEADLINE;
+
+// Days remaining in founder pricing window
+export const founderDaysRemaining = (): number => {
+  const diff = FOUNDER_DEADLINE.getTime() - Date.now();
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+};
 
 // Per-exam pricing — 3 price bands
 // Band 1 (CPA): $49/mo, $449/yr — Founder: $249/yr (~$21/mo)
@@ -255,6 +262,43 @@ class SubscriptionService {
   }
 
   /**
+   * Grant or renew trial for existing user who hasn't had one
+   * This handles users created before the trial system was added
+   */
+  async grantTrialIfEligible(userId: string): Promise<UserSubscription | null> {
+    const subscription = await this.getUserSubscription(userId);
+    if (!subscription) return null;
+    
+    // Don't grant trial if user:
+    // - Has an active PAID subscription (tier is not 'free')
+    // - Already has/had a trial (trialEnd is set, regardless of expiry)
+    if (subscription.tier !== 'free') return subscription;
+    if (subscription.trialEnd) return subscription;
+    
+    // User is on free tier with no trial history - grant them a trial
+    
+    // User is eligible for trial - grant it
+    const now = new Date();
+    const trialEnd = new Date(now);
+    trialEnd.setDate(trialEnd.getDate() + 14); // 14-day trial
+    
+    const updatedSubscription: UserSubscription = {
+      ...subscription,
+      status: 'trialing',
+      trialEnd,
+      updatedAt: now,
+    };
+    
+    await setDoc(doc(db, 'subscriptions', userId), {
+      ...updatedSubscription,
+      trialEnd,
+      updatedAt: serverTimestamp(),
+    }, { merge: true });
+    
+    return updatedSubscription;
+  }
+
+  /**
    * Check if user is in active trial period
    */
   async isInTrial(userId: string): Promise<boolean> {
@@ -379,12 +423,13 @@ class SubscriptionService {
 
   /**
    * End trial and revert to free (called by Cloud Function on trial expiry)
+   * Note: We keep trialEnd to track that user had a trial (prevents re-granting)
    */
   async endTrial(userId: string): Promise<void> {
     await updateDoc(doc(db, 'subscriptions', userId), {
       tier: 'free',
-      status: 'active',
-      trialEnd: null,
+      status: 'expired', // Changed from 'active' - trial expired, not active subscription
+      // Keep trialEnd so we know user already had a trial
       updatedAt: serverTimestamp(),
     });
   }
@@ -498,6 +543,13 @@ export function useSubscription() {
         // Create free subscription with trial if none exists
         if (!sub) {
           sub = await subscriptionService.createFreeSubscription(user.uid);
+        } else {
+          // Grant trial to existing users who haven't had one yet
+          // (handles users created before the trial system was added)
+          const upgraded = await subscriptionService.grantTrialIfEligible(user.uid);
+          if (upgraded) {
+            sub = upgraded;
+          }
         }
         
         setSubscription(sub);

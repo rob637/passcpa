@@ -185,6 +185,10 @@ async def run_audit(
     # Set up LLM
     llm = ChatAnthropic(model=LLM_MODEL)
 
+    # Determine timeout based on model (Opus needs more time)
+    is_opus = "opus" in LLM_MODEL.lower()
+    llm_timeout = 300 if is_opus else 90  # seconds
+
     # Set up browser session
     browser_kwargs = {
         "headless": use_headless,
@@ -204,9 +208,10 @@ async def run_audit(
             browser_session=browser_session,
             max_actions_per_step=MAX_ACTIONS_PER_STEP,
             override_system_message=system_prompt,
+            llm_timeout=llm_timeout,
         )
 
-        print(f"Starting agent (max {MAX_STEPS} steps)...")
+        print(f"Starting agent (max {MAX_STEPS} steps, LLM timeout {llm_timeout}s)...")
         result = await agent.run(max_steps=MAX_STEPS)
 
         # Extract the final output

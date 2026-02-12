@@ -1,0 +1,530 @@
+// FAR Depth Questions - Batch 2
+// Focus: FAR-IV (Govt Concepts), FAR-VII (Govt Financial Reporting), FAR-V (NFP)
+// Difficulty: heavily easy/medium to rebalance
+
+import { Question } from '../../../types';
+
+export const FAR_QUESTIONS_DEPTH_2: Question[] = [
+  // FAR-IV: GOVT CONCEPTS — MEASUREMENT FOCUS
+  {
+    id: 'far-d2-001',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Measurement Focus — Current Financial Resources',
+    difficulty: 'easy',
+    question: 'Governmental funds use the current financial resources measurement focus. This means the financial statements report:',
+    options: [
+      'All economic resources including capital assets and long-term debt',
+      'Only current financial resources — assets that are expected to be converted to cash and liabilities that will be paid with current financial resources (no capital assets or long-term debt)',
+      'Only cash',
+      'Fair value of all government property',
+    ],
+    correctAnswer: 1,
+    explanation: 'Current financial resources measurement focus (governmental funds): The balance sheet reports only resources that are available for spending: cash, receivables, short-term investments, and current liabilities payable from those resources. Capital assets and long-term liabilities do NOT appear on governmental fund financial statements. Instead: capital asset purchases are recorded as expenditures, bond proceeds are recorded as "other financing sources," and debt principal payments are recorded as expenditures. These items DO appear on the government-wide financial statements (full accrual). The reconciliation schedule bridges fund balance sheet to government-wide Statement of Net Position.',
+    reference: 'GASB Codification §1300',
+  },
+  {
+    id: 'far-d2-002',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Fund Balance Classifications',
+    difficulty: 'easy',
+    question: 'Under GASB 54, the hierarchy of fund balance classifications from most to least constrained is:',
+    options: [
+      'Reserved, designated, undesignated',
+      'Nonspendable, restricted, committed, assigned, unassigned',
+      'Current, restricted, unrestricted',
+      'Operating, investing, financing',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 54 fund balance classifications: (1) Nonspendable — not in spendable form (inventory, prepaid) or legally/contractually required to remain intact (endowment corpus). (2) Restricted — constraints imposed by external parties (creditors, grantors, laws). (3) Committed — constraints imposed by the government\'s highest decision-making authority (council resolution) — requires formal action to set AND remove. (4) Assigned — intended use designated by authorized body/official — less formal than committed. (5) Unassigned — residual amount in General Fund only (other governmental funds cannot have positive unassigned fund balance). When spending from restricted AND unrestricted: restricted first. When spending unrestricted: committed → assigned → unassigned.',
+    reference: 'GASB 54',
+  },
+
+  // FAR-VII: GOVT — FIDUCIARY FUNDS
+  {
+    id: 'far-d2-003',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'Fiduciary Funds — GASB 84',
+    difficulty: 'medium',
+    question: 'Under GASB 84, a custodial fund (replacing the former agency fund) is used when:',
+    options: [
+      'The government operates a business',
+      'The government has a fiduciary activity that is not required to be reported in a pension/OPEB trust, investment trust, or private-purpose trust fund — such as collecting taxes for other governments',
+      'The government has restricted grant money',
+      'Money is held in the General Fund',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 84 (Fiduciary Activities): Four types: (1) Pension/OPEB trust funds — hold assets for employee benefit plans, (2) Investment trust funds — hold external investment pool assets, (3) Private-purpose trust funds — hold assets where principal AND income benefit external parties (e.g., escheat property), (4) Custodial funds — all other fiduciary activities (replaced agency funds; now recognize revenues/expenses instead of just assets/liabilities). Custodial fund example: county collecting property taxes for cities and school districts. Fiduciary activities are EXCLUDED from government-wide financial statements. Fiduciary fund financial statements: Statement of Fiduciary Net Position, Statement of Changes in Fiduciary Net Position.',
+    reference: 'GASB 84',
+  },
+
+  // FAR-V: NFP — CONTRIBUTION OF SERVICES
+  {
+    id: 'far-d2-004',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Contributed Services Recognition',
+    difficulty: 'medium',
+    question: 'An NFP recognizes contributed services (volunteer time) as revenue and expense when:',
+    options: [
+      'All volunteer services are recognized',
+      'The services either (1) create or enhance a non-financial asset, OR (2) require specialized skills, are provided by persons possessing those skills, and would typically need to be purchased if not donated',
+      'The volunteers work more than 40 hours',
+      'The board authorizes recognition',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 958-605-25-16: Contributed services criteria: (1) Create or enhance non-financial assets (e.g., volunteers build a house for Habitat for Humanity) — recognized regardless of skill level. (2) Require specialized skills provided by individuals possessing those skills AND would typically need to be purchased if not donated — examples: CPA performing audit, attorney providing legal services, doctor at a free clinic. NOT recognized: general volunteering (ushering, answering phones, fundraising events) because these don\'t meet either criterion. Measured at fair value of the services. Recognized as both revenue (contribution) and expense (program/support services) simultaneously.',
+    reference: 'ASC 958-605-25-16',
+  },
+
+  // FAR-IV: GOVT — DERIVED VS. IMPOSED REVENUES
+  {
+    id: 'far-d2-005',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Revenue Classification — GASB 33',
+    difficulty: 'hard',
+    question: 'Under GASB 33, nonexchange revenue transactions are classified into four categories. Property taxes are classified as:',
+    options: [
+      'Derived tax revenues',
+      'Imposed nonexchange revenues — the government imposes the tax on property owners based on assessed value, recognized in the period for which the taxes are levied (if available)',
+      'Government-mandated nonexchange transactions',
+      'Voluntary nonexchange transactions',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 33 (Nonexchange Transactions) — Four categories: (1) Derived tax revenues — taxes on exchange transactions (income tax, sales tax) — recognized when the underlying exchange occurs (or when resources are received, whichever is first). (2) Imposed nonexchange revenues — taxes/fees imposed on non-exchange activities (property taxes, fines, forfeitures) — property taxes recognized in the fiscal year for which levied (enforceable legal claim). (3) Government-mandated nonexchange transactions — a higher-level government requires a lower-level government to do something and provides funding (federal education mandates) — recognized when eligibility requirements are met. (4) Voluntary nonexchange transactions — grants, donations, entitlements — recognized when eligibility requirements met and (for governmental funds) available.',
+    reference: 'GASB 33',
+  },
+
+  // FAR-VII: GOVT — STATEMENT OF CASH FLOWS
+  {
+    id: 'far-d2-006',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'Cash Flow Statement — Proprietary Funds',
+    difficulty: 'medium',
+    question: 'The Statement of Cash Flows for proprietary funds (GASB) has four categories. The categories are:',
+    options: [
+      'Operating, investing, and financing (three categories, same as commercial)',
+      'Operating, noncapital financing, capital and related financing, and investing — and the DIRECT method is REQUIRED',
+      'Operating and non-operating only',
+      'Revenue, expenditure, debt service, and intergovernmental',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB (proprietary fund cash flows): FOUR categories: (1) Operating — cash from daily operations (receipts from customers, payments to suppliers/employees), (2) Noncapital financing — borrowings/repayments not related to capital assets, operating grants, interfund transfers, taxes collected for operations, (3) Capital and related financing — acquisition/disposal of capital assets, capital grants, proceeds/repayments of capital debt, (4) Investing — purchase/sale of investments, interest/dividend income. Key differences from FASB (ASC 230): GASB requires DIRECT method (FASB allows indirect). GASB splits financing into capital vs. noncapital. GASB interest paid → capital/noncapital financing; FASB interest paid → operating.',
+    reference: 'GASB 34; GASB 9 as amended',
+  },
+
+  // FAR-V: NFP — HEALTH CARE ENTITIES
+  {
+    id: 'far-d2-007',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'NFP Health Care — Net Patient Revenue',
+    difficulty: 'medium',
+    question: 'An NFP hospital reports net patient service revenue as:',
+    options: [
+      'Gross charges minus charity care (deducted from revenue)',
+      'Gross charges minus contractual adjustments and provision for bad debts — charity care is NOT included in revenue (not reported as either revenue or a deduction)',
+      'Only insurance payments received',
+      'Government grants for patient care',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASU 2011-07 / ASC 954: NFP health care revenue: Gross patient service revenue − contractual adjustments (discounts from insurers) − provision for bad debts = net patient service revenue. Charity care: patients who qualify for free/reduced care under the entity\'s charity care policy. Charity care is NOT recognized as revenue at all. It is NOT a deduction from revenue. Instead: disclosed in the notes (description of policy, level of charity care provided — quantified by charges forgone, estimated costs, or other measure). Bad debts: from patients who are expected to pay but cannot (different from charity care — which is a policy decision). ASU 2014-09 (ASC 606) impact: implicit price concessions may replace the bad debt allowance approach.',
+    reference: 'ASC 954-605; ASU 2011-07',
+  },
+
+  // FAR-IV: GOVT — COMPONENT UNITS
+  {
+    id: 'far-d2-008',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Component Units — GASB 14/39/61',
+    difficulty: 'hard',
+    question: 'A legally separate entity is a component unit of a primary government if:',
+    options: [
+      'It shares the same geographic area',
+      'The primary government is financially accountable for it — meaning the government appoints a voting majority of the governing board AND either imposes its will or there is a financial benefit/burden relationship',
+      'It receives any grant from the government',
+      'It is a private company contracting with the government',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 14/39/61 — Component units: Legally separate entities included in the primary government\'s financial reporting entity. Financial accountability test: (1) Appointment of voting majority of governing board, AND (2a) Ability to impose its will: can remove board members, approve/modify budgets, override decisions, OR (2b) Financial benefit/burden relationship: legally entitled to resources, obligated for debts, or similar. Also includes entities where exclusion would be misleading (GASB 39 — certain affiliated organizations like university foundations). Blended component units: reported as if part of the primary government (criteria: board substantially the same, provides services entirely to the primary government, or the primary government is the sole corporate member). Discrete component units: reported in separate column(s) on government-wide statements.',
+    reference: 'GASB 14; GASB 39; GASB 61',
+  },
+
+  // FAR-VII: GOVT — INFRASTRUCTURE & MODIFIED APPROACH
+  {
+    id: 'far-d2-009',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'Infrastructure — Modified Approach',
+    difficulty: 'hard',
+    question: 'A government using the modified approach for eligible infrastructure assets:',
+    options: [
+      'Does not report the assets at all',
+      'Does not depreciate the infrastructure assets — instead, it expenses preservation/maintenance costs and must maintain the assets at or above a condition level established by the government, with documented condition assessments at least every three years',
+      'Depreciates them over 100 years',
+      'Reports them at estimated replacement cost',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 34 — Modified approach for infrastructure: An alternative to depreciation for eligible infrastructure that is part of a network or subsystem. Requirements: (1) Government must maintain an asset management system with an up-to-date inventory and perform condition assessments at least every three years using a measurement scale. (2) Government must have documentation that the assets are being preserved at or above the condition level established. If requirements are met: no depreciation is recognized. Preservation/maintenance costs are expensed as incurred. Additions and improvements ARE capitalized. If the government fails to meet the requirements: must switch back to depreciation. Required supplementary information (RSI): assessed condition for the past three assessments, estimated vs. actual amounts for maintenance/preservation for the past five years.',
+    reference: 'GASB 34, ¶23-26',
+  },
+
+  // FAR-V: GOVT — SPECIAL REVENUE FUNDS
+  {
+    id: 'far-d2-010',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-govt',
+    topic: 'Governmental Accounting',
+    subtopic: 'Special Revenue Funds',
+    difficulty: 'easy',
+    question: 'A special revenue fund is used to:',
+    options: [
+      'Account for business-type activities',
+      'Account for the proceeds of specific revenue sources that are restricted or committed to expenditure for specified purposes other than debt service or capital projects',
+      'Record bond proceeds',
+      'Track pension assets',
+    ],
+    correctAnswer: 1,
+    explanation: 'Special revenue funds: One of the five governmental fund types. Purpose: account for resources legally restricted or committed to specific purposes (other than debt service or capital projects). Examples: motor fuel tax fund (gas taxes restricted for road maintenance), federal grant funds, hotel/motel tax fund (tourism). Key points: must have a substantial portion of inflows from restricted or committed revenue sources. If the restriction/commitment ceases, the fund should be closed and resources moved to the General Fund or another appropriate fund. Uses the same modified accrual/current financial resources measurement as all governmental funds. A legally adopted budget triggers the budget vs. actual comparison requirement (RSI).',
+    reference: 'GASB 54; GASB 34',
+  },
+
+  // FAR-VI: BONDS — EFFECTIVE INTEREST
+  {
+    id: 'far-d2-011',
+    section: 'FAR',
+    blueprintArea: 'FAR-VI',
+    topicId: 'far-bonds',
+    topic: 'Transactions',
+    subtopic: 'Bonds: Premium and Discount Amortization',
+    difficulty: 'easy',
+    question: 'A bond is issued at a premium when:',
+    options: [
+      'The bond is sold below face value',
+      'The stated (coupon) rate exceeds the market (effective) rate — investors pay MORE than face value because the coupon payments are above market',
+      'The bond has no market',
+      'The bond is a zero-coupon bond',
+    ],
+    correctAnswer: 1,
+    explanation: 'Bond pricing: Stated rate > market rate → premium (issue price > face value). Stated rate < market rate → discount (issue price < face value). Stated rate = market rate → issued at par. Premium: investors pay extra for above-market coupons. As premium amortizes: carrying value decreases toward face value, interest expense < cash interest paid. Discount: investors demand a discount for below-market coupons. As discount amortizes: carrying value increases toward face value, interest expense > cash interest paid. Effective interest method (preferred under GAAP): Interest expense = carrying amount × market rate. Amortization = Cash interest (face × stated rate) - Interest expense.',
+    reference: 'ASC 835-30',
+  },
+
+  // FAR-IV: GOVT — REPORTING MODEL
+  {
+    id: 'far-d2-012',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Basic Financial Statements',
+    difficulty: 'easy',
+    question: 'The minimum required components of a government\'s basic financial statements include:',
+    options: [
+      'Only a balance sheet',
+      'Government-wide financial statements (Statement of Net Position AND Statement of Activities), fund financial statements, and notes to the financial statements',
+      'Income statement and balance sheet',
+      'Only fund financial statements',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 34 — Minimum requirements for basic financial statements: (1) Management\'s Discussion and Analysis (MD&A) — RSI presented before the basic financial statements. (2) Government-wide financial statements: Statement of Net Position, Statement of Activities. (3) Fund financial statements: Governmental funds (Balance Sheet; Statement of Revenues, Expenditures, and Changes in Fund Balances + reconciliation to government-wide). Proprietary funds (Statement of Net Position; Statement of Revenues, Expenses, and Changes in Net Position; Statement of Cash Flows). Fiduciary funds (Statement of Fiduciary Net Position; Statement of Changes in Fiduciary Net Position). (4) Notes to the financial statements. Also: RSI includes budget vs. actual comparisons and pension/OPEB schedules.',
+    reference: 'GASB 34',
+  },
+
+  // FAR-VII: GOVT — OPEB
+  {
+    id: 'far-d2-013',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 75 — OPEB Liability',
+    difficulty: 'hard',
+    question: 'Under GASB 75, a government employer participating in a defined benefit OPEB plan reports:',
+    options: [
+      'Only the annual OPEB contribution as an expenditure',
+      'A net OPEB liability (or asset) on the government-wide Statement of Net Position — calculated similarly to pensions as total OPEB liability minus plan fiduciary net position',
+      'No OPEB liability',
+      'OPEB costs only in the notes',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 75 (OPEB — Other Post-Employment Benefits): Mirrors GASB 68 (pensions). Net OPEB liability = Total OPEB liability - Plan fiduciary net position (plan assets). Reported on the government-wide Statement of Net Position. OPEB expense includes: service cost, interest on TOL, changes in benefit terms, differences between expected/actual experience, changes in assumptions, projected vs. actual investment earnings. Deferred outflows/inflows related to OPEB reported separately. Common OPEB benefits: retiree health insurance, dental/vision, life insurance. Discount rate: if plan assets are projected to be sufficient → long-term expected rate of return. If not → municipal bond rate (20-year AA/higher). In governmental fund statements: expenditure recognized for the amount due and payable (contribution amount).',
+    reference: 'GASB 75',
+  },
+
+  // FAR-V: NFP — SPLIT-INTEREST AGREEMENTS
+  {
+    id: 'far-d2-014',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Split-Interest Agreements',
+    difficulty: 'hard',
+    question: 'A charitable remainder trust (a split-interest agreement) where the NFP is the remainderman is recorded by the NFP at inception as:',
+    options: [
+      'Revenue equal to the full fair value of assets donated',
+      'Contribution revenue equal to the present value of the estimated future distributions (the remainder interest), with a liability for the annuity/unitrust payments to the income beneficiary',
+      'No entry until the trust terminates',
+      'A receivable only',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 958-30 (Split-Interest Agreements): Charitable remainder trust: donor transfers assets to a trust, income beneficiary receives payments for a period (life or term), NFP receives the remainder. At inception: NFP records assets at FV, liability for the PV of estimated payments to the income beneficiary, and contribution revenue for the difference (remainder interest). If revocable: no recognition until irrevocable. Types: Charitable remainder annuity trust (CRAT) — fixed annuity amount. Charitable remainder unitrust (CRUT) — percentage of trust value (recalculated annually). Charitable lead trust — opposite: NFP receives income first, remainder goes to donor/family. NFP records contribution revenue for PV of lead interest.',
+    reference: 'ASC 958-30',
+  },
+
+  // FAR-IV: GOVT — NET POSITION CATEGORIES
+  {
+    id: 'far-d2-015',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'Net Position Components',
+    difficulty: 'easy',
+    question: 'On the government-wide Statement of Net Position, net position is reported in three categories:',
+    options: [
+      'Fund balance, retained earnings, and equity',
+      'Net investment in capital assets, restricted, and unrestricted',
+      'Current, long-term, and permanent',
+      'Committed, assigned, and unassigned',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 34 — Net position categories (government-wide and proprietary funds): (1) Net investment in capital assets — capital assets minus accumulated depreciation minus related outstanding debt (plus unspent debt proceeds). Represents the equity in capital assets. (2) Restricted — resources with externally imposed constraints (by creditors, grantors, laws, regulations, constitutional provisions) that limit their use. (3) Unrestricted — all other net position. May include amounts designated by management but not externally restricted. Note: the fund balance classifications (GASB 54) are different — those apply only to governmental fund financial statements. Net position categories ≠ fund balance classifications.',
+    reference: 'GASB 34; GASB 63',
+  },
+
+  // FAR-VII: GOVT — RECONCILIATION
+  {
+    id: 'far-d2-016',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'Fund-to-Government-Wide Reconciliation',
+    difficulty: 'medium',
+    question: 'A reconciliation between the governmental fund financial statements and governance-wide statements is required. A typical reconciling item is:',
+    options: [
+      'Cash receipts',
+      'Capital outlays reported as expenditures in the funds but capitalized as assets in the government-wide statements',
+      'Operating expenses',
+      'Depreciation in fund financial statements',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 34 reconciliation (fund → government-wide): Key adjustments: (1) Capital outlays: expenditure in funds → capital assets on government-wide. (2) Depreciation: not in funds → expense on government-wide. (3) Bond proceeds: other financing source in funds → long-term liability on government-wide. (4) Debt principal payments: expenditure in funds → reduce liability on government-wide. (5) Accrued interest: recognized on government-wide but not in funds (not "due and payable"). (6) Internal service fund activities: consolidated with governmental activities on government-wide (proprietary fund type but usually serves governmental activities). (7) Deferred outflows/inflows: pension-related items on government-wide. The reconciliation can be presented at the bottom of fund statements or on a separate schedule.',
+    reference: 'GASB 34, ¶77',
+  },
+
+  // FAR-V: GOVT — DEBT SERVICE FUND
+  {
+    id: 'far-d2-017',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-govt',
+    topic: 'Governmental Accounting',
+    subtopic: 'Debt Service Fund',
+    difficulty: 'easy',
+    question: 'A debt service fund is used to:',
+    options: [
+      'Acquire capital assets',
+      'Account for the accumulation of resources for, and the payment of, general long-term debt principal and interest',
+      'Operate government businesses',
+      'Hold pension assets',
+    ],
+    correctAnswer: 1,
+    explanation: 'Debt service fund: One of the five governmental fund types. Purpose: accumulate resources and make principal and interest payments on general long-term debt (bonds). Revenue sources: property tax levies dedicated to debt service, transfers from the General Fund. Modified accrual basis: Principal and interest are recognized as expenditures when DUE (the maturity date) — not when accrued. This is an exception to the general rule that expenditures are recognized when incurred. Bond proceeds are NOT recorded in the debt service fund — they go to the Capital Projects Fund (or other fund using the proceeds). The related long-term debt liability does NOT appear in the debt service fund (it appears only in the government-wide statements).',
+    reference: 'GASB Codification §D20',
+  },
+
+  // FAR-VI: PENSIONS — EMPLOYER
+  {
+    id: 'far-d2-018',
+    section: 'FAR',
+    blueprintArea: 'FAR-VI',
+    topicId: 'far-pensions',
+    topic: 'Transactions',
+    subtopic: 'ASC 715 — Defined Benefit Pension',
+    difficulty: 'medium',
+    question: 'Under ASC 715, a company with a defined benefit pension plan reports on the balance sheet:',
+    options: [
+      'No pension-related amounts',
+      'The funded status — either a net pension asset (plan assets > PBO) or a net pension liability (PBO > plan assets) — with unrecognized amounts in AOCI',
+      'Only pension expense',
+      'Only the annual contribution',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 715 (Compensation — Retirement Benefits): Balance sheet: funded status = Fair value of plan assets - Projected Benefit Obligation (PBO). If assets > PBO: net pension asset (noncurrent). If PBO > assets: net pension liability (current/noncurrent split based on expected payments next year). AOCI components: (1) Net actuarial loss/gain (10% corridor — excess amortized over average remaining service period), (2) Prior service cost (plan amendments — amortized over future service period). Pension expense components (SIRAPE): Service cost, Interest cost (PBO × discount rate), Return on plan assets (expected), Amortization of prior service cost, Expected gain/loss amortization. Only service cost is an operating expense; all others are non-operating (ASU 2017-07).',
+    reference: 'ASC 715-30',
+  },
+
+  // FAR-V: NFP — PRIVATE COLLEGES
+  {
+    id: 'far-d2-019',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-nfp',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Private College/University Revenue',
+    difficulty: 'medium',
+    question: 'A private (NFP) university reports tuition revenue on its Statement of Activities as:',
+    options: [
+      'Gross tuition only',
+      'Gross tuition revenue less tuition discounts and scholarships (institutional financial aid) — scholarships provided from the university\'s own resources are reported as a reduction of revenue, not an expense',
+      'Only net cash collected',
+      'Federal student aid only',
+    ],
+    correctAnswer: 1,
+    explanation: 'NFP colleges/universities: Tuition and fees (gross) less scholarship/financial aid discounts = net tuition revenue. Unfunded (institutional) scholarships: reduce revenue (not reported as expense). Funded scholarships (from restricted grants/endowments): the grant/endowment income is revenue; the scholarship is an expense (since the restriction is met by providing the scholarship). Room/board, auxiliary services: reported separately. Contributions: same rules as other NFPs (ASC 958). Government grants with conditions: recognized when conditions are substantially met. Financial statements: Statement of Financial Position, Statement of Activities, Statement of Cash Flows, Statement of Functional Expenses. FASB standards apply (not GASB) — GASB applies to PUBLIC colleges/universities.',
+    reference: 'ASC 958; ASU 2016-14',
+  },
+
+  // FAR-VII: GOVT — TAX ABATEMENTS
+  {
+    id: 'far-d2-020',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 77 — Tax Abatement Disclosures',
+    difficulty: 'medium',
+    question: 'Under GASB 77, a government that enters into a tax abatement agreement must:',
+    options: [
+      'Record a liability for the foregone revenue',
+      'Disclose the key terms of significant tax abatement programs and the amounts of taxes abated during the period — including agreements entered into by OTHER governments that affect the reporting government',
+      'Report the abated taxes as revenue and expense',
+      'No disclosure is required',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 77 (Tax Abatements): Defines a tax abatement as: a reduction in tax revenues resulting from an agreement between a government and an individual/entity where the entity promises to take a specific action that contributes to economic development (or otherwise benefits the government or its citizens). Required disclosures: (1) Brief description of the program, (2) Authority for entering into agreements, (3) Eligibility criteria, (4) Mechanism (how taxes are reduced), (5) Provisions for recapturing abated taxes, (6) Amount of taxes abated during the period. Must also disclose abatements from OTHER governments\' agreements that reduce the reporting government\'s tax revenues. Disclosure only — no new recognition or measurement requirements.',
+    reference: 'GASB 77',
+  },
+
+  // FAR-IV: GOVT — ACCOUNTING & REPORTING HIERARCHY
+  {
+    id: 'far-d2-021',
+    section: 'FAR',
+    blueprintArea: 'FAR-IV',
+    topicId: 'far-govt-concepts',
+    topic: 'Government Concepts',
+    subtopic: 'GASB Hierarchy — GASB 76',
+    difficulty: 'easy',
+    question: 'The hierarchy of GAAP for state and local governments (GASB 76) places which source as the highest authority?',
+    options: [
+      'AICPA guidance',
+      'GASB Statements, GASB Interpretations, and GASB Implementation Guides — these are the category A authoritative pronouncements',
+      'Textbooks and articles',
+      'Federal government standards',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 76 (GAAP Hierarchy): Two categories: Category A (most authoritative): GASB Statements, GASB Interpretations, and GASB Implementation Guides. Category B: GASB Technical Bulletins and AICPA guidance specifically cleared by GASB. If a transaction is not addressed in Categories A or B: consider other accounting literature — GASB Concepts Statements, FASB/IASB standards, AICPA guidance, industry practices, textbooks. Note: GASB is the standard-setter for state and local governments. FASB sets standards for commercial and NFP entities. Federal government uses FASAB standards.',
+    reference: 'GASB 76',
+  },
+
+  // FAR-VI: EPS
+  {
+    id: 'far-d2-022',
+    section: 'FAR',
+    blueprintArea: 'FAR-VI',
+    topicId: 'far-eps',
+    topic: 'Transactions',
+    subtopic: 'Earnings Per Share — Basic',
+    difficulty: 'easy',
+    question: 'Basic earnings per share (EPS) is calculated as:',
+    options: [
+      'Net income divided by total shares issued',
+      '(Net income − preferred dividends) ÷ weighted-average number of common shares outstanding during the period',
+      'Total revenue divided by shares outstanding',
+      'Net income divided by par value per share',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 260 (Earnings Per Share): Basic EPS = (Net income − preferred dividends) ÷ Weighted-average common shares outstanding. Preferred dividends: deduct declared dividends for noncumulative preferred, deduct the annual preference amount for cumulative preferred (whether or not declared). Weighted-average shares: shares are weighted by the fraction of the period they were outstanding. Stock dividends and stock splits are adjusted retroactively (as if they occurred at the beginning of the earliest period presented). Treasury stock: reduces shares outstanding when reacquired. Diluted EPS: adds potentially dilutive securities (stock options via treasury stock method, convertibles via if-converted method). Only PUBLIC entities are required to report EPS.',
+    reference: 'ASC 260-10-45',
+  },
+
+  // FAR-V: GOVT — CAPITAL PROJECTS FUND
+  {
+    id: 'far-d2-023',
+    section: 'FAR',
+    blueprintArea: 'FAR-V',
+    topicId: 'far-govt',
+    topic: 'Governmental Accounting',
+    subtopic: 'Capital Projects Fund',
+    difficulty: 'easy',
+    question: 'A capital projects fund is used to:',
+    options: [
+      'Record depreciation on government buildings',
+      'Account for resources used for the acquisition or construction of major capital facilities — financed by bond proceeds, grants, or transfers (not enterprise fund activities)',
+      'Pay interest on bonds',
+      'Record employee pensions',
+    ],
+    correctAnswer: 1,
+    explanation: 'Capital projects fund: one of the five governmental fund types. Purpose: account for resources used for acquisition/construction of major capital assets (buildings, roads, bridges) — except those financed by proprietary/fiduciary funds. Revenue sources: bond proceeds (other financing sources), intergovernmental grants (capital grants), transfers from other funds. Modified accrual basis: capital outlay is recorded as an expenditure (NOT as an asset). The capital asset itself appears only on the government-wide statements. Bond proceeds: recorded as "other financing sources" (not revenue). Residual resources after project completion: typically transferred to debt service fund or General Fund. Temporary fund — may be closed after the project is complete.',
+    reference: 'GASB Codification §1300',
+  },
+
+  // FAR-VI: SEGMENT REPORTING
+  {
+    id: 'far-d2-024',
+    section: 'FAR',
+    blueprintArea: 'FAR-VI',
+    topicId: 'far-segment',
+    topic: 'Transactions',
+    subtopic: 'ASC 280 — Operating Segments',
+    difficulty: 'medium',
+    question: 'Under ASC 280, a reportable operating segment must meet at least one quantitative threshold. Which is one of those thresholds?',
+    options: [
+      'The segment must have at least 100 employees',
+      'The segment\'s revenue (including intersegment sales) is 10% or more of the combined revenue of all operating segments',
+      'The segment must be profitable',
+      'The segment must have international operations',
+    ],
+    correctAnswer: 1,
+    explanation: 'ASC 280 (Segment Reporting — public entities only): Operating segment: engages in business activities with revenue/expenses, whose results are regularly reviewed by the chief operating decision maker (CODM), and has discrete financial information. Quantitative thresholds (10% tests — any ONE): (1) Revenue ≥ 10% of combined revenue (internal + external), (2) Absolute profit or loss ≥ 10% of the greater of combined profit or combined loss, (3) Assets ≥ 10% of combined assets. 75% test: reportable segments must cover ≥ 75% of total external revenue. If not, add more segments. Reconciliation: segment totals must reconcile to consolidated totals (revenue, profit/loss, assets). Disclosures: products/services, geographic areas, major customers (≥ 10% of revenue).',
+    reference: 'ASC 280-10-50',
+  },
+
+  // FAR-VII: GOVT — RISK MANAGEMENT
+  {
+    id: 'far-d2-025',
+    section: 'FAR',
+    blueprintArea: 'FAR-VII',
+    topicId: 'far-govt-reporting',
+    topic: 'State and Local Government',
+    subtopic: 'GASB 10 — Risk Management Activities',
+    difficulty: 'medium',
+    question: 'When a government uses an internal service fund for self-insurance (risk management), unpaid claims liabilities are:',
+    options: [
+      'Not recorded until paid',
+      'Accrued when it is probable a loss has been incurred and the amount is reasonably estimable — including an estimate of incurred but not reported (IBNR) claims',
+      'Recognized only when judgment is entered',
+      'Reported in the General Fund',
+    ],
+    correctAnswer: 1,
+    explanation: 'GASB 10 (Risk Management): Self-insurance through internal service fund: claims liabilities recognized when probable and estimable (similar to ASC 450 for commercial entities). Must include: reported claims, IBNR (incurred but not reported) claims, incremental claims adjustment expenses. Measured at: estimated ultimate cost of settling the claims (using actuarial methods). Discounting: permitted to present value (if the expected amount and timing of payments are fixed or reliably determinable). Excess liabilities: if internal service fund resources are insufficient, the residual liability is reported in the governmental activities column (government-wide statements). Internal service funds: primarily serve internal customers — allocated back to governmental activities in the government-wide statements.',
+    reference: 'GASB 10; GASB 30',
+  },
+];

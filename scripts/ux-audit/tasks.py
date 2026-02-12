@@ -530,6 +530,104 @@ You are a UX auditor testing accessibility across VoraPrep for the {course_name}
 )
 
 # ============================================================================
+# Real User Study Session
+# ============================================================================
+
+STUDY_SESSION_AUDIT = AuditTask(
+    id="study-session",
+    name="Complete Study Session Audit",
+    description="Simulate a real user's complete study session - daily plan, lessons, questions, flashcards, TBS.",
+    requires_auth=True,
+    estimated_steps=60,
+    prompt="""
+You are a UX auditor simulating a REAL study session as an actual {course_name} candidate would.
+Your goal is to use the app for 15-20 minutes as if you were studying for the exam.
+
+## Study Session Flow (Follow This Order)
+
+### Phase 1: Login & Check Daily Plan (2-3 min)
+1. Log in with the provided credentials
+2. Look at the dashboard - what's your daily goal?
+3. Check if there's a "Daily Plan" or recommended activities
+4. Note: Does the app guide you on what to do today?
+
+### Phase 2: Complete a Lesson (5-7 min)
+1. Navigate to Lessons/Learn section
+2. Pick a topic (preferably one recommended or at the top)
+3. Actually READ the lesson content:
+   - Is it well-organized?
+   - Are there examples?
+   - Is it too long or just right?
+4. Complete the lesson (mark as done if possible)
+5. Note: How long does a typical lesson take?
+
+### Phase 3: Practice Questions (5-7 min)
+1. Navigate to Practice/Questions section
+2. Start a practice session with 5-10 questions
+3. Answer EACH question thoughtfully:
+   - Read the question fully
+   - Select an answer
+   - Review the explanation
+   - If wrong, understand why
+4. Complete the mini-session
+5. Note: Are explanations helpful? Is pacing good?
+
+### Phase 4: Flashcard Review (3-5 min)
+1. Navigate to Flashcards section
+2. Go through 10-15 flashcards:
+   - Read the front
+   - Try to recall the answer
+   - Reveal the back
+   - Rate difficulty if prompted
+3. Note: Is the spaced repetition working? Easy to use?
+
+### Phase 5: Try a TBS/Simulation (if available) (3-5 min)
+1. Navigate to TBS or Simulations section
+2. Attempt at least one task-based simulation
+3. Interact with the simulation interface
+4. Submit and review feedback
+5. Note: Is it realistic? Helpful for exam prep?
+
+### Phase 6: Check Progress (2 min)
+1. Go to dashboard or analytics
+2. Check if your session was tracked:
+   - Did streak update?
+   - Did daily goal progress?
+   - Are stats accurate?
+3. Note: Is feedback motivating?
+
+## What to Evaluate
+
+### Content Quality
+- Are lessons informative and exam-relevant?
+- Are questions challenging but fair?
+- Are explanations thorough?
+
+### User Flow
+- Is navigation intuitive between activities?
+- Does the app guide you through studying?
+- Are there annoying friction points?
+
+### Engagement & Motivation
+- Do you want to keep going?
+- Is gamification (streaks, points) motivating?
+- Does it feel like productive study time?
+
+### Technical Performance
+- Are there loading delays?
+- Any bugs or errors?
+- Does everything save properly?
+
+## Critical Questions to Answer
+1. Would you recommend this to a friend preparing for the {course_name} exam?
+2. What would make you want to study for longer?
+3. What frustrated you most?
+4. What delighted you most?
+"""
+    + REPORT_FORMAT,
+)
+
+# ============================================================================
 # Landing & Marketing Tasks
 # ============================================================================
 
@@ -588,6 +686,7 @@ ALL_TASKS: dict[str, AuditTask] = {
     "responsive": RESPONSIVE_AUDIT,
     "accessibility": ACCESSIBILITY_AUDIT,
     "landing": LANDING_PAGE_AUDIT,
+    "study-session": STUDY_SESSION_AUDIT,
 }
 
 # Tasks that can run without authentication
@@ -605,6 +704,7 @@ COURSE_TASKS = {
     "responsive",
     "accessibility",
     "landing",
+    "study-session",
 }
 
 # Minimal audit: fast smoke test across critical paths

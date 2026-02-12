@@ -23,6 +23,8 @@ import {
   Menu,
 } from 'lucide-react';
 import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
+import { isFounderPricingActive, founderDaysRemaining } from '../../../services/subscription';
+import { DemoQuestion } from '../../common/DemoQuestion';
 
 interface ExamLandingTemplateProps {
   config: ExamLandingConfig;
@@ -348,9 +350,10 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
 
             <div className={`grid gap-6 ${config.examParts.length <= 3 ? 'md:grid-cols-3 max-w-4xl mx-auto' : config.examParts.length <= 6 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
               {config.examParts.map((part, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow"
+                <Link 
+                  key={idx}
+                  to={`${config.registerPath}?section=${part.part}`}
+                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 transition-all cursor-pointer group"
                 >
                   <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${config.gradientFrom} ${config.gradientTo} text-white px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
                     {part.part}
@@ -376,11 +379,43 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                       </li>
                     )}
                   </ul>
-                </div>
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Start studying {part.part}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
+
+        {/* ================================================================
+            DEMO QUESTION SECTION (interactive preview)
+            ================================================================ */}
+        {config.demoQuestion && (
+          <section id="try-it" className="scroll-mt-20 py-12 md:py-16 px-6 bg-white dark:bg-slate-950">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                  Try a Sample Question
+                </h2>
+                <p className="text-slate-600 dark:text-slate-300">
+                  Experience our question interface — no signup required.
+                </p>
+              </div>
+              <DemoQuestion
+                question={config.demoQuestion.question}
+                options={config.demoQuestion.options}
+                correctAnswer={config.demoQuestion.correctAnswer}
+                explanation={config.demoQuestion.explanation}
+                section={config.demoQuestion.section}
+                topic={config.demoQuestion.topic}
+                registerPath={config.registerPath}
+                primaryColor={config.primaryColor}
+              />
+            </div>
+          </section>
+        )}
 
         {/* ================================================================
             WHY VORAPREP SECTION (shared across all exams)
@@ -587,12 +622,9 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   const [billingInterval, setBillingInterval] = useState<'annual' | 'monthly'>('annual');
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   
-  // Founder pricing is active until August 31, 2026
-  const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
-  const isFounderWindow = new Date() < FOUNDER_DEADLINE;
-  
-  // Calculate days remaining
-  const daysRemaining = Math.max(0, Math.ceil((FOUNDER_DEADLINE.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)));
+  // Founder pricing — single source of truth in subscription.ts
+  const isFounderWindow = isFounderPricingActive();
+  const daysRemaining = founderDaysRemaining();
   
   const pricing = config.pricing;
   const currentPrice = billingInterval === 'annual' 

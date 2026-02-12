@@ -99,7 +99,8 @@ def calibrate_quick():
     print("\n" + "="*60)
     print("QUICK RECALIBRATION: Background Elements")
     print("="*60)
-    print("\nYou have 5 seconds per element. Watch the live cursor position.\n")
+    print("\nYou have 8 seconds per element. Watch the live cursor position.")
+    print("The script will AUTO-CLICK between steps to open panels.\n")
     
     # Load existing coords
     coords_file = Path("coords.json")
@@ -113,13 +114,10 @@ def calibrate_quick():
     print("\n" + "-"*40)
     print("STEP 1: CUSTOMIZE BUTTON")
     print("-"*40)
-    print("Look at the RIGHT panel. Scroll down to 'Avatar Background' section.")
-    print("You should see: [Customize] [Remove] [Color]")
-    print("Point at 'Customize' (has a paint brush icon)")
-    input("Press ENTER when ready...")
-    
-    print("Move mouse to CUSTOMIZE button now! 5 seconds...")
-    for i in range(5, 0, -1):
+    print("Look at RIGHT panel > 'Avatar Background' section")
+    print("Point at 'Customize' (paint brush icon)")
+    print("\nMove mouse there NOW! 8 seconds...")
+    for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
@@ -127,19 +125,19 @@ def calibrate_quick():
     results["customize_bg"] = [x, y]
     print(f"  ✓ Saved: customize_bg = ({x}, {y})")
     
-    # Now click to open the panel
-    print("\n>>> Now CLICK 'Customize' to open the background panel...")
-    input("Press ENTER after clicking Customize and the panel is open...")
+    # Auto-click to open the panel
+    print("\n>>> Auto-clicking Customize to open panel...")
+    pyautogui.click(x, y)
+    time.sleep(2)  # Wait for panel to open
     
     # Step 2: Uploads tab
     print("\n" + "-"*40)
     print("STEP 2: UPLOADS TAB")
     print("-"*40)
-    print("A popup should be open with tabs: [All] [AI Generated] [Uploads]")
-    print("Point at the 'Uploads' tab")
-    
-    print("Move mouse to UPLOADS tab now! 5 seconds...")
-    for i in range(5, 0, -1):
+    print("Panel should be open with tabs: [All] [AI Generated] [Uploads]")
+    print("Point at 'Uploads' tab")
+    print("\nMove mouse there NOW! 8 seconds...")
+    for i in range(8, 0, -1):
         x, y = pyautogui.position()
         print(f"  {i}... (cursor at {x}, {y})", flush=True)
         time.sleep(1)
@@ -147,16 +145,17 @@ def calibrate_quick():
     results["uploads_tab"] = [x, y]
     print(f"  ✓ Saved: uploads_tab = ({x}, {y})")
     
-    # Now click Uploads tab
-    print("\n>>> Now CLICK 'Uploads' tab to show your uploaded backgrounds...")
-    input("Press ENTER after clicking Uploads and you see your 4 backgrounds...")
+    # Auto-click Uploads tab
+    print("\n>>> Auto-clicking Uploads tab...")
+    pyautogui.click(x, y)
+    time.sleep(2)  # Wait for uploads to load
     
     # Step 3-6: Background grid
     bg_items = [
-        ("bg_row1_col1", "TOP-LEFT background (DARK NAVY)"),
-        ("bg_row1_col2", "TOP-MIDDLE background (GRAY)"),  
-        ("bg_row1_col3", "TOP-RIGHT background (TEAL)"),
-        ("bg_row2_col1", "2ND ROW LEFT background (BLUE GRADIENT)"),
+        ("bg_row1_col1", "TOP-LEFT (DARK NAVY)"),
+        ("bg_row1_col2", "TOP-MIDDLE (GRAY)"),  
+        ("bg_row1_col3", "TOP-RIGHT (TEAL)"),
+        ("bg_row2_col1", "2ND ROW LEFT (BLUE GRADIENT)"),
     ]
     
     for i, (key, desc) in enumerate(bg_items, 3):
@@ -164,9 +163,8 @@ def calibrate_quick():
         print(f"STEP {i}: {desc}")
         print("-"*40)
         print(f"Point at the {desc} thumbnail")
-        
-        print(f"Move mouse to {desc} now! 5 seconds...")
-        for j in range(5, 0, -1):
+        print(f"\nMove mouse there NOW! 8 seconds...")
+        for j in range(8, 0, -1):
             x, y = pyautogui.position()
             print(f"  {j}... (cursor at {x}, {y})", flush=True)
             time.sleep(1)

@@ -27,7 +27,7 @@ export function SubscriptionGate({
   message,
   inline = false,
 }: SubscriptionGateProps) {
-  const { hasFullAccess, trialDaysRemaining, trialExpired, loading } = useSubscription();
+  const { hasFullAccess, trialDaysRemaining, trialExpired, loading, subscribedCourseId, isPremium } = useSubscription();
   const { courseId, course } = useCourse();
 
   // Show loading state
@@ -41,6 +41,10 @@ export function SubscriptionGate({
   if (hasFullAccess) {
     return <>{children}</>;
   }
+
+  // Check if user is subscribed to a DIFFERENT course
+  const subscribedToOtherCourse = isPremium && subscribedCourseId && subscribedCourseId !== courseId;
+  const subscribedCourseName = subscribedCourseId?.toUpperCase() || '';
 
   // Trial expired or not subscribed - show gate
   const courseName = course?.name || 'CPA';
@@ -66,10 +70,13 @@ export function SubscriptionGate({
           <div className="text-center p-6 max-w-md">
             <Lock className="w-8 h-8 text-primary-600 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-              {trialExpired ? 'Your trial has ended' : 'Premium Feature'}
+              {subscribedToOtherCourse ? `${courseName} Subscription Required` : trialExpired ? 'Your trial has ended' : 'Premium Feature'}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              {message || `Subscribe to continue studying for the ${courseName} exam.`}
+              {message || (subscribedToOtherCourse
+                ? `You're subscribed to ${subscribedCourseName}. Each exam requires its own subscription.`
+                : `Subscribe to continue studying for the ${courseName} exam.`
+              )}
             </p>
             <Link
               to={upgradeUrl}
@@ -111,17 +118,21 @@ export function SubscriptionGate({
         </div>
         
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-          {trialExpired 
-            ? 'Your Free Trial Has Ended'
-            : 'Subscribe to Continue'
+          {subscribedToOtherCourse
+            ? `${courseName} Subscription Required`
+            : trialExpired 
+              ? 'Your Free Trial Has Ended'
+              : 'Subscribe to Continue'
           }
         </h2>
         
         <p className="text-gray-600 dark:text-gray-400 mb-6">
           {message || (
-            trialExpired
-              ? `Your 14-day free trial of VoraPrep ${courseName} has ended. Subscribe now to continue your exam preparation.`
-              : `Access to this feature requires an active subscription.`
+            subscribedToOtherCourse
+              ? `You're subscribed to VoraPrep ${subscribedCourseName}, but this is ${courseName} content. Each exam requires its own subscription.`
+              : trialExpired
+                ? `Your 14-day free trial of VoraPrep ${courseName} has ended. Subscribe now to continue your exam preparation.`
+                : `Access to this feature requires an active subscription.`
           )}
         </p>
 
@@ -172,12 +183,34 @@ export function SubscriptionGate({
  * TrialBanner - Shows trial status banner (for dashboard header)
  */
 export function TrialBanner() {
-  const { isTrialing, trialDaysRemaining, trialExpired, isPremium, loading } = useSubscription();
+  const { isTrialing, trialDaysRemaining, trialExpired, isPremium, hasFullAccess, subscribedCourseId, loading } = useSubscription();
   const { courseId } = useCourse();
   
-  if (loading || isPremium) return null;
+  // Hide if user has full access to current course
+  if (loading || hasFullAccess) return null;
   
   const upgradeUrl = `/${courseId}?scroll=pricing`;
+
+  // User is subscribed to a different course
+  const subscribedToOtherCourse = isPremium && subscribedCourseId && subscribedCourseId !== courseId;
+  if (subscribedToOtherCourse) {
+    return (
+      <div className="bg-blue-600 text-white py-2 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Lock className="w-4 h-4" />
+            <span className="font-medium">You&apos;re subscribed to {subscribedCourseId.toUpperCase()}. Subscribe separately for {courseId.toUpperCase()} access.</span>
+          </div>
+          <Link 
+            to={upgradeUrl}
+            className="text-sm bg-white text-blue-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
+          >
+            Get {courseId.toUpperCase()}
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (trialExpired) {
     return (

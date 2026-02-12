@@ -58,27 +58,35 @@ export interface UserSubscription {
 // ==========================================================================
 // PRICING STRATEGY: Per-Exam Subscriptions with Founder Pricing
 // Feb 19, 2026 Launch: 14-day free trial → Paid subscription
-// Founder pricing (50% off) locked for users who subscribe by May 31, 2026
+// Founder pricing (~40-44% off) locked for 2 years for users who subscribe by Aug 31, 2026
+// 300 seats per exam at founder rates
 // ==========================================================================
 
 // Launch Date: Feb 19, 2026 - No longer beta, paid subscriptions active
 const IS_BETA = false;
 
-// Founder pricing deadline - May 31, 2026
-const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+// Founder pricing deadline - August 31, 2026
+const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Check if founder pricing is active
 export const isFounderPricingActive = (): boolean => new Date() < FOUNDER_DEADLINE;
 
-// Per-exam pricing (annual amounts)
+// Per-exam pricing — 3 price bands
+// Band 1 (CPA): $49/mo, $449/yr — Founder: $249/yr (~$21/mo)
+// Band 2 (CMA, CFP, CISA): $39/mo, $349/yr — Founder: $199/yr (~$17/mo)
+// Band 3 (EA, CIA): $29/mo, $249/yr — Founder: $149/yr (~$12/mo)
+// Founder: 300 seats per exam, 2-year rate lock, window closes Aug 31, 2026
 export const EXAM_PRICING = {
-  cpa: { annual: 199, monthly: 29, founderAnnual: 99, founderMonthly: 14 },
-  ea: { annual: 59, monthly: 9, founderAnnual: 29, founderMonthly: 5 },
-  cma: { annual: 99, monthly: 14, founderAnnual: 49, founderMonthly: 7 },
-  cia: { annual: 99, monthly: 14, founderAnnual: 49, founderMonthly: 7 },
-  cfp: { annual: 149, monthly: 19, founderAnnual: 74, founderMonthly: 10 },
-  cisa: { annual: 79, monthly: 12, founderAnnual: 39, founderMonthly: 6 },
+  cpa: { annual: 449, monthly: 49, founderAnnual: 249, founderMonthly: 21 },
+  ea: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cma: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+  cia: { annual: 249, monthly: 29, founderAnnual: 149, founderMonthly: 12 },
+  cfp: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
+  cisa: { annual: 349, monthly: 39, founderAnnual: 199, founderMonthly: 17 },
 } as const;
+
+// Founder seat limits per exam
+export const FOUNDER_SEATS_PER_EXAM = 300;
 
 export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   free: {
@@ -107,7 +115,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   monthly: {
     tier: 'monthly',
     name: 'Monthly',
-    price: 29, // CPA base price, varies by exam
+    price: 49, // CPA base price, varies by exam — see EXAM_PRICING
     interval: 'month',
     features: [
       'Unlimited questions',
@@ -131,13 +139,10 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   quarterly: {
     tier: 'quarterly',
     name: 'Quarterly',
-    price: 69,
+    price: 0, // Legacy plan - no longer offered
     interval: 'quarter',
     features: [
-      'Everything in Monthly',
-      'Save ~20%',
-      'Priority support',
-      'Pass Guarantee included',
+      'Legacy plan - no longer available',
     ],
     limits: {
       questionsPerDay: Infinity,
@@ -152,11 +157,11 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionTier, SubscriptionPlan> = {
   annual: {
     tier: 'annual',
     name: 'Annual',
-    price: 199, // CPA base price, varies by exam
+    price: 449, // CPA base price, varies by exam — see EXAM_PRICING
     interval: 'year',
     features: [
       'Everything in Monthly',
-      'Best value - Save 42%',
+      'Best value — Save over 20%',
       'Priority support',
       'Pass Guarantee included',
     ],

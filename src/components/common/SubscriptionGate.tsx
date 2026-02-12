@@ -89,7 +89,7 @@ export function SubscriptionGate({
             </Link>
             {isFounder && displayPrice < originalPrice && (
               <p className="text-sm text-green-600 dark:text-green-400 mt-2">
-                Founder pricing: Save ${originalPrice - displayPrice}/yr forever!
+                Founder pricing: Save ${originalPrice - displayPrice}/yr for 2 years!
               </p>
             )}
           </div>
@@ -129,10 +129,10 @@ export function SubscriptionGate({
           <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg p-4 mb-6 border border-amber-200 dark:border-amber-800">
             <div className="flex items-center justify-center gap-2 text-amber-800 dark:text-amber-300 mb-2">
               <Sparkles className="w-5 h-5" />
-              <span className="font-semibold">Founder Pricing - 50% Off Forever</span>
+              <span className="font-semibold">Founding Member Pricing</span>
             </div>
             <p className="text-sm text-amber-700 dark:text-amber-400">
-              Lock in half-price forever by subscribing before May 31, 2026
+              Lock in your founder rate through August 2028. Subscribe before August 31, 2026.
             </p>
           </div>
         )}
@@ -215,7 +215,7 @@ export function TrialBanner() {
             to={upgradeUrl}
             className="text-sm bg-white text-amber-600 px-3 py-1 rounded-full font-medium hover:bg-gray-100 transition-colors"
           >
-            Subscribe for 50% Off
+            Subscribe at Founder Rate
           </Link>
         </div>
       </div>

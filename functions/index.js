@@ -32,8 +32,8 @@ if (STRIPE_SECRET_KEY) {
   });
 }
 
-// Founder pricing window - users who subscribe before this date get 50% off
-const FOUNDER_DEADLINE = new Date('2026-05-31T23:59:59Z');
+// Founder pricing window - users who subscribe before this date get founder rates (~40-44% off, locked 2 years)
+const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Price lookup keys - maps our internal keys to what we'll use in checkout
 // The lookup keys should match what you set in Stripe dashboard
@@ -781,7 +781,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
           🎉 Founder Pricing Available!
         </p>
         <p style="color: #92400e; font-size: 14px; margin: 8px 0 0 0;">
-          Lock in 50% off for life if you subscribe before May 31, 2026.
+          Lock in your founder rate (save over 40%) by subscribing before August 31, 2026.
         </p>
       </div>
       

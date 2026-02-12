@@ -57,9 +57,9 @@ describe('subscription service', () => {
 
     it('should have correct pricing for each tier', () => {
       expect(SUBSCRIPTION_PLANS.free.price).toBe(0);
-      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(29);
-      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(69);
-      expect(SUBSCRIPTION_PLANS.annual.price).toBe(199);
+      expect(SUBSCRIPTION_PLANS.monthly.price).toBe(49);
+      expect(SUBSCRIPTION_PLANS.quarterly.price).toBe(0); // Legacy plan - no longer offered
+      expect(SUBSCRIPTION_PLANS.annual.price).toBe(449);
       expect(SUBSCRIPTION_PLANS.lifetime.price).toBe(0); // Legacy plan - no longer offered
     });
 

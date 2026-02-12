@@ -480,7 +480,7 @@ const VoraPrep = () => {
             <div className="flex flex-wrap justify-center gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                 <div className="text-2xl font-bold text-white">Affordable</div>
-                <div className="text-sm text-white/80">50% Off Launch Pricing</div>
+                <div className="text-sm text-white/80">Founder Rates Available</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
                 <div className="text-2xl font-bold text-white">AI-First</div>

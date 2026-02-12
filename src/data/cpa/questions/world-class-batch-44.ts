@@ -1,0 +1,485 @@
+import { Question } from '../../../types';
+
+export const WORLD_CLASS_BATCH_44: Question[] = [
+  // FAR - Not-for-Profit Accounting (Dark Nook)
+  {
+    id: 'far-wc-211',
+    section: 'FAR',
+    blueprintArea: 'Not-for-Profit Entities',
+    topicId: 'nfp-accounting',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Split-Interest Agreements',
+    difficulty: 'hard',
+    question: 'A donor establishes a charitable remainder annuity trust (CRAT) naming a not-for-profit as the remainder beneficiary. The trust assets have a fair value of $1,000,000, and actuarial calculations determine the NPO\'s remainder interest at $650,000. The annuity payments to the income beneficiary begin immediately. How should the NPO record this arrangement?',
+    options: [
+      'Contribution revenue of $1,000,000 with donor restriction',
+      'Contribution revenue of $650,000 without donor restriction',
+      'Contribution revenue of $650,000 with donor restriction',
+      'No entry until the trust terminates and assets are received'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under ASC 958-30, when a NFP is the irrevocable remainder beneficiary of a split-interest agreement, it recognizes its beneficial interest at fair value (the present value of expected future cash flows, $650,000). The contribution is recorded with donor restrictions since it\'s not available for current use. When the trust terminates, the restriction is released.',
+    reference: 'ASC 958-30, Split-Interest Agreements'
+  },
+  {
+    id: 'far-wc-212',
+    section: 'FAR',
+    blueprintArea: 'Not-for-Profit Entities',
+    topicId: 'nfp-accounting',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Functional Expense Allocation',
+    difficulty: 'hard',
+    question: 'A not-for-profit incurs $500,000 in total occupancy costs. Building space is used as follows: 60% for program services, 25% for general administration, and 15% for fundraising. Which allocation method is appropriate under GAAP?',
+    options: [
+      'Allocate 100% to program services to maximize the program service ratio',
+      'Allocate based on the square footage percentages: $300,000 program, $125,000 G&A, $75,000 fundraising',
+      'Report as a single line item without allocation since occupancy costs are joint',
+      'Allocate 100% to management and general as administrative overhead'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under ASC 958-720, expenses that benefit multiple functional categories must be allocated using a reasonable and systematic allocation methodology. Square footage is an appropriate basis for allocating occupancy costs. The allocation produces $300,000 (60%) to program, $125,000 (25%) to G&A, and $75,000 (15%) to fundraising. Disclosure of allocation methods is required.',
+    reference: 'ASC 958-720-45, Functional Expense Reporting'
+  },
+  {
+    id: 'far-wc-213',
+    section: 'FAR',
+    blueprintArea: 'Not-for-Profit Entities',
+    topicId: 'nfp-accounting',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Contributed Services',
+    difficulty: 'medium',
+    question: 'An attorney donates 50 hours of legal services (normally billed at $400/hour) to help a not-for-profit with contract negotiations. The NPO would have purchased these services if not donated. How should this be recorded?',
+    options: [
+      'No journal entry; volunteer services are not recorded',
+      'Contribution revenue of $20,000 and legal expense of $20,000',
+      'Contribution revenue of $20,000 only',
+      'Footnote disclosure only'
+    ],
+    correctAnswer: 1,
+    explanation: 'Contributed services are recognized if they: (1) create or enhance nonfinancial assets, OR (2) require specialized skills, are provided by someone with those skills, and would typically be purchased if not donated. Legal services require specialized skills and would have been purchased, so record contribution revenue ($20,000 = 50 × $400) and the corresponding legal expense.',
+    reference: 'ASC 958-605-25, Contributions Received - Services'
+  },
+  {
+    id: 'far-wc-214',
+    section: 'FAR',
+    blueprintArea: 'Not-for-Profit Entities',
+    topicId: 'nfp-accounting',
+    topic: 'Not-for-Profit Accounting',
+    subtopic: 'Endowment Spending Policies',
+    difficulty: 'hard',
+    question: 'A university\'s endowment fund has a beginning balance of $50,000,000. The board-approved spending policy allows expenditure of 5% of a 12-quarter moving average. Investment returns for the year were -8% ($4,000,000 loss). Under UPMIFA, can the university spend from this endowment?',
+    options: [
+      'No, spending is prohibited when returns are negative',
+      'No, spending is prohibited when fair value falls below the original gift amount (historic dollar value)',
+      'Yes, but only if spending is prudent considering relevant factors',
+      'Yes, spending must follow the 5% policy regardless of performance'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under UPMIFA (adopted in most states), the historic dollar value threshold has been replaced with a prudence standard. The board may appropriate for expenditure as they determine prudent, considering factors including the duration and preservation of the endowment, economic conditions, effects of inflation, expected returns, and other resources available. A 5% spending rate may still be appropriate if prudent.',
+    reference: 'Uniform Prudent Management of Institutional Funds Act (UPMIFA)'
+  },
+  // AUD - Service Organizations (Dark Nook)
+  {
+    id: 'aud-wc-211',
+    section: 'AUD',
+    blueprintArea: 'Risk Assessment Procedures',
+    topicId: 'service-organizations',
+    topic: 'Service Organization Reports',
+    subtopic: 'Type 1 vs Type 2 Reports',
+    difficulty: 'hard',
+    question: 'A user auditor is auditing a company that uses a third-party payroll processor. The auditor obtains a SOC 1 Type 1 report dated September 30 covering payroll processing controls. The fiscal year-end is December 31. Which statement is correct?',
+    options: [
+      'The Type 1 report provides sufficient evidence about operating effectiveness throughout the year',
+      'The auditor must perform additional procedures to address the gap between September 30 and December 31',
+      'The Type 1 report is inadequate; only a Type 2 report with testing of operating effectiveness is useful',
+      'No additional procedures are needed since the report covers payroll processing controls'
+    ],
+    correctAnswer: 2,
+    explanation: 'A Type 1 report provides only a description of controls and an opinion on their design at a point in time—it does NOT include testing of operating effectiveness. For reliance on controls at a service organization, the user auditor typically needs a Type 2 report that includes tests of controls over a period. A Type 1 report alone is generally insufficient for reliance on operating effectiveness.',
+    reference: 'AU-C Section 402, Audit Considerations Relating to an Entity Using a Service Organization'
+  },
+  {
+    id: 'aud-wc-212',
+    section: 'AUD',
+    blueprintArea: 'Risk Assessment Procedures',
+    topicId: 'service-organizations',
+    topic: 'Service Organization Reports',
+    subtopic: 'Complementary User Entity Controls',
+    difficulty: 'hard',
+    question: 'A SOC 1 Type 2 report on a cloud-based accounting system includes "complementary user entity controls" (CUECs) that must be in place for the service organization\'s controls to operate effectively. The user entity has NOT implemented several of these CUECs. What is the user auditor\'s responsibility?',
+    options: [
+      'Disclaim an opinion due to scope limitation',
+      'Evaluate the risk implications and perform alternative procedures as necessary',
+      'Accept the SOC report as sufficient since it shows the service organization controls are effective',
+      'Engage a specialist to evaluate the service organization directly'
+    ],
+    correctAnswer: 1,
+    explanation: 'CUECs are controls that the service organization assumes are implemented by the user entity. If these are not in place, the user auditor cannot rely on the service organization\'s controls being fully effective. The auditor must evaluate the implications for risk assessment and either confirm that alternative controls exist at the user entity or perform additional substantive procedures.',
+    reference: 'AU-C Section 402, Audit Considerations Relating to an Entity Using a Service Organization'
+  },
+  {
+    id: 'aud-wc-213',
+    section: 'AUD',
+    blueprintArea: 'Risk Assessment Procedures',
+    topicId: 'service-organizations',
+    topic: 'Service Organization Reports',
+    subtopic: 'Subservice Organizations',
+    difficulty: 'medium',
+    question: 'A SOC 1 report for a payroll service organization uses the "carve-out" method for a subservice organization that provides data hosting. What does this mean for the user auditor?',
+    options: [
+      'The subservice organization\'s controls are included in the scope and tested',
+      'The subservice organization\'s controls are excluded, and additional evidence may be needed',
+      'The service organization takes full responsibility for the subservice organization\'s controls',
+      'The user entity has no responsibility regarding the subservice organization'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under the carve-out method, the subservice organization\'s controls are excluded from the service organization\'s SOC report. This means the user auditor may need to obtain a separate SOC report for the subservice organization or perform alternative procedures to evaluate controls over data hosting. The inclusive method would include the subservice organization\'s controls.',
+    reference: 'AU-C Section 402, Audit Considerations Relating to an Entity Using a Service Organization'
+  },
+  {
+    id: 'aud-wc-214',
+    section: 'AUD',
+    blueprintArea: 'Risk Assessment Procedures',
+    topicId: 'service-organizations',
+    topic: 'Service Organization Reports',
+    subtopic: 'SOC 2 vs SOC 1',
+    difficulty: 'medium',
+    question: 'A company outsources its customer relationship management (CRM) system to a cloud provider. The company wants assurance over data security and system availability. Which SOC report is most appropriate?',
+    options: [
+      'SOC 1 Type 2, as it covers all IT controls',
+      'SOC 2 Type 2 with Security and Availability criteria',
+      'SOC 3 SysTrust report for public distribution',
+      'SSAE 18 Bridge Letter'
+    ],
+    correctAnswer: 1,
+    explanation: 'SOC 2 reports address the Trust Services Criteria (Security, Availability, Processing Integrity, Confidentiality, Privacy). For concerns about data security and system availability—rather than controls relevant to financial reporting—a SOC 2 report with Security and Availability criteria is most appropriate. SOC 1 reports focus on controls relevant to user entities\' financial reporting.',
+    reference: 'AICPA SOC 2 Reporting on Trust Services Criteria'
+  },
+  // REG - Tax Procedure and Ethics (Dark Nook)
+  {
+    id: 'reg-wc-211',
+    section: 'REG',
+    blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
+    topicId: 'tax-procedure',
+    topic: 'Tax Procedure',
+    subtopic: 'IRS Collections - Innocent Spouse Relief',
+    difficulty: 'hard',
+    question: 'A taxpayer filed joint returns with her now-ex-spouse who understated income by $50,000 from an unreported side business. The taxpayer had no knowledge of or benefit from this income. She is seeking innocent spouse relief. Which requirement is NOT necessary for relief under IRC Section 6015(b)?',
+    options: [
+      'The understatement is attributable to erroneous items of the other spouse',
+      'The requesting spouse must prove she did not know and had no reason to know of the understatement',
+      'The requesting spouse must have filed for divorce within one year of discovering the understatement',
+      'It must be inequitable to hold the requesting spouse liable'
+    ],
+    correctAnswer: 2,
+    explanation: 'There is no requirement that the requesting spouse file for divorce within any timeframe. The requirements for innocent spouse relief under Section 6015(b) are: (1) joint return filed, (2) understatement attributable to other spouse\'s erroneous items, (3) requesting spouse did not know and had no reason to know of the understatement, and (4) inequitable to hold the requesting spouse liable. The request must be filed within 2 years of collection action.',
+    reference: 'IRC Section 6015(b), Relief from Joint and Several Liability'
+  },
+  {
+    id: 'reg-wc-212',
+    section: 'REG',
+    blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
+    topicId: 'tax-procedure',
+    topic: 'Tax Procedure',
+    subtopic: 'Offer in Compromise',
+    difficulty: 'hard',
+    question: 'A taxpayer owes $100,000 in back taxes. She has assets with quick sale value of $30,000 and can pay $500 monthly from remaining income over 24 months. What is the minimum offer amount the IRS would likely accept under the "doubt as to collectibility" basis?',
+    options: [
+      '$12,000 (24 × $500)',
+      '$30,000 (assets only)',
+      '$42,000 (assets + 24 months of payments)',
+      '$60,000 (using 60-month multiplier for lump sum)'
+    ],
+    correctAnswer: 2,
+    explanation: 'For a short-term periodic payment offer (paid within 24 months), the IRS calculates reasonable collection potential (RCP) as: net realizable equity in assets ($30,000) + future income (monthly remaining income × number of months, $500 × 24 = $12,000) = $42,000. This represents the minimum amount the IRS would typically accept under doubt as to collectibility.',
+    reference: 'IRM 5.8.4, Processability - Offer in Compromise'
+  },
+  {
+    id: 'reg-wc-213',
+    section: 'REG',
+    blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
+    topicId: 'tax-procedure',
+    topic: 'Tax Procedure',
+    subtopic: 'Statute of Limitations',
+    difficulty: 'medium',
+    question: 'A taxpayer filed a 2022 return on March 15, 2023, reporting $50,000 of income. The IRS later discovers the taxpayer omitted $40,000 of gross income. What is the statute of limitations for assessment?',
+    options: [
+      '3 years from March 15, 2023',
+      '3 years from April 15, 2023',
+      '6 years from April 15, 2023',
+      '6 years from March 15, 2023'
+    ],
+    correctAnswer: 2,
+    explanation: 'Normally, the statute of limitations is 3 years from the filing date or due date, whichever is later. However, when the taxpayer omits more than 25% of gross income stated on the return ($40,000 omitted ÷ $50,000 reported = 80%), the statute extends to 6 years. Since the return was filed before the due date, the 6-year period runs from April 15, 2023 (the due date).',
+    reference: 'IRC Section 6501(e), Substantial Omission of Items'
+  },
+  {
+    id: 'reg-wc-214',
+    section: 'REG',
+    blueprintArea: 'Ethics, Professional Responsibilities, and Federal Tax Procedures',
+    topicId: 'circular-230',
+    topic: 'Circular 230',
+    subtopic: 'Written Advice Standards',
+    difficulty: 'medium',
+    question: 'Under Treasury Circular 230, which of the following is a practitioner prohibited from doing when providing written tax advice?',
+    options: [
+      'Relying on representations of the client without verification',
+      'Taking into account the possibility that a tax return will not be audited',
+      'Considering all relevant facts that the practitioner knows or reasonably should know',
+      'Charging a contingent fee for preparing an amended return claiming a refund'
+    ],
+    correctAnswer: 1,
+    explanation: 'Circular 230 Section 10.37 requires that practitioners not take into account the possibility that a tax return will not be audited or that an issue will not be raised on audit. All written advice must be based on the assumption that positions will be examined. Reasonable reliance on client representations is permitted, and considering known relevant facts is required.',
+    reference: 'Treasury Circular 230, Section 10.37'
+  },
+  // BAR - Derivatives and Hedging (Dark Nook)
+  {
+    id: 'bar-wc-252',
+    section: 'BAR',
+    blueprintArea: 'Financial Statement Analysis',
+    topicId: 'derivatives-hedging',
+    topic: 'Derivatives and Hedging',
+    subtopic: 'Fair Value Hedges',
+    difficulty: 'hard',
+    question: 'A company has a $10,000,000 fixed-rate bond payable with a carrying value of $10,000,000. It enters into an interest rate swap to convert to floating rate, designating it as a fair value hedge. At year-end, interest rates have decreased, causing the swap\'s fair value to be negative $300,000. How is this recorded?',
+    options: [
+      'Swap liability $300,000, loss in OCI $300,000',
+      'Swap liability $300,000, bond payable increase $300,000, no net income effect',
+      'Swap liability $300,000, loss in earnings $300,000',
+      'Swap liability $300,000, bond payable decrease $300,000'
+    ],
+    correctAnswer: 1,
+    explanation: 'In a fair value hedge, both the derivative and the hedged item are adjusted to fair value with changes in earnings. The swap shows a $300,000 loss (liability increases). The bond\'s fair value increased by $300,000 due to lower rates (gain). Net effect: Swap liability +$300,000, Bond payable +$300,000 (fair value adjustment). Both changes flow through earnings but offset, resulting in no net income effect.',
+    reference: 'ASC 815-25, Fair Value Hedges'
+  },
+  {
+    id: 'bar-wc-253',
+    section: 'BAR',
+    blueprintArea: 'Financial Statement Analysis',
+    topicId: 'derivatives-hedging',
+    topic: 'Derivatives and Hedging',
+    subtopic: 'Cash Flow Hedges',
+    difficulty: 'hard',
+    question: 'A U.S. company expects to purchase inventory from a European supplier for €5,000,000 in 6 months. It enters into a forward contract to buy euros and designates it as a cash flow hedge. At year-end (before settlement), the forward contract has a fair value gain of $200,000. Where is this gain reported?',
+    options: [
+      'Current earnings as foreign exchange gain',
+      'Other comprehensive income',
+      'Deferred and added to inventory cost when purchased',
+      'Other comprehensive income, then reclassified to earnings when inventory is sold'
+    ],
+    correctAnswer: 3,
+    explanation: 'For cash flow hedges, the effective portion of the gain/loss on the derivative is recorded in OCI. When the forecasted transaction affects earnings (here, when the inventory is sold, not purchased), the amount in AOCI is reclassified to earnings. The gain stays in OCI until the inventory purchased flows through cost of goods sold.',
+    reference: 'ASC 815-30, Cash Flow Hedges'
+  },
+  {
+    id: 'bar-wc-254',
+    section: 'BAR',
+    blueprintArea: 'Financial Statement Analysis',
+    topicId: 'derivatives-hedging',
+    topic: 'Derivatives and Hedging',
+    subtopic: 'Embedded Derivatives',
+    difficulty: 'hard',
+    question: 'A company issues a $1,000,000 convertible bond with a conversion feature allowing holders to convert into common stock. The bond is issued at par. Under GAAP, how should the conversion feature be accounted for?',
+    options: [
+      'Bifurcate and record conversion option at fair value as a separate derivative',
+      'Record entirely as debt; conversion feature is not separated for traditional convertibles',
+      'Allocate proceeds between debt and equity using the with-and-without method',
+      'Record at fair value with all changes in earnings'
+    ],
+    correctAnswer: 1,
+    explanation: 'Under ASC 815, conversion features in traditional convertible debt are generally not bifurcated because they are considered clearly and closely related to the host debt instrument and meet the scope exception for contracts indexed to and settled in an entity\'s own equity. The entire instrument is recorded as debt. IFRS differs by requiring separation of the conversion feature in certain cases.',
+    reference: 'ASC 815-15-25, Embedded Derivatives'
+  },
+  {
+    id: 'bar-wc-255',
+    section: 'BAR',
+    blueprintArea: 'Financial Statement Analysis',
+    topicId: 'derivatives-hedging',
+    topic: 'Derivatives and Hedging',
+    subtopic: 'Net Investment Hedges',
+    difficulty: 'hard',
+    question: 'A U.S. parent company has a net investment of $50,000,000 in a foreign subsidiary. It designates foreign currency debt as a hedge of this net investment. The functional currency of the subsidiary weakens against USD, causing a $3,000,000 translation loss on the subsidiary. The debt generates a $2,500,000 gain. Where is the $500,000 difference reported?',
+    options: [
+      'Net $500,000 loss in current earnings',
+      'Net $500,000 loss in OCI (cumulative translation adjustment)',
+      '$3,000,000 loss in OCI, $2,500,000 gain in current earnings',
+      '$3,000,000 translation adjustment, $2,500,000 in AOCI hedge component'
+    ],
+    correctAnswer: 1,
+    explanation: 'In a net investment hedge, the effective portion of the gain/loss on the hedging instrument is recorded in the cumulative translation adjustment in OCI, along with the translation gain/loss on the net investment. The $2,500,000 gain offsets against the $3,000,000 loss, resulting in a net $500,000 loss in OCI. Any ineffective portion would be recognized in earnings.',
+    reference: 'ASC 815-35, Net Investment Hedges'
+  },
+  {
+    id: 'bar-wc-256',
+    section: 'BAR',
+    blueprintArea: 'Financial Statement Analysis',
+    topicId: 'derivatives-hedging',
+    topic: 'Derivatives and Hedging',
+    subtopic: 'Hedge Effectiveness',
+    difficulty: 'medium',
+    question: 'Under ASC 815, which of the following would cause a hedging relationship to be discontinued prospectively?',
+    options: [
+      'The derivative\'s fair value decreases below zero',
+      'The hedged item is sold or extinguished',
+      'Interest rates move in the opposite direction than expected',
+      'The hedge ratio changes slightly due to market conditions'
+    ],
+    correctAnswer: 1,
+    explanation: 'Hedge accounting must be discontinued when the hedged item is sold, settled, or otherwise no longer exists. The hedge relationship ceases because there is nothing to hedge. Fair value going negative, interest rate movements, or minor changes in hedge ratios do not automatically discontinue hedging if the relationship remains highly effective and all criteria continue to be met.',
+    reference: 'ASC 815-25-40, Discontinuation of Fair Value Hedges'
+  },
+  // ISC - Database Security and Data Management
+  {
+    id: 'isc-wc-211',
+    section: 'ISC',
+    blueprintArea: 'Information Systems and Data Management',
+    topicId: 'database-security',
+    topic: 'Database Security',
+    subtopic: 'SQL Injection Prevention',
+    difficulty: 'hard',
+    question: 'A company\'s web application is vulnerable to SQL injection attacks. Which control provides the MOST effective protection against SQL injection?',
+    options: [
+      'Firewall rules blocking port 1433',
+      'Input validation using parameterized queries (prepared statements)',
+      'Encryption of database connections using TLS',
+      'Regular database backups'
+    ],
+    correctAnswer: 1,
+    explanation: 'Parameterized queries (prepared statements) are the most effective protection against SQL injection because they separate SQL code from data. User input is treated as data only, not executable code, preventing attackers from manipulating queries. Input validation, while helpful, cannot catch all variations. Firewalls and encryption address different threats, and backups don\'t prevent attacks.',
+    reference: 'OWASP SQL Injection Prevention Cheat Sheet'
+  },
+  {
+    id: 'isc-wc-212',
+    section: 'ISC',
+    blueprintArea: 'Information Systems and Data Management',
+    topicId: 'database-security',
+    topic: 'Database Security',
+    subtopic: 'Data Masking',
+    difficulty: 'medium',
+    question: 'A company needs to provide production database copies to developers for testing. The database contains sensitive customer PII. Which technique should be used to protect PII while maintaining data utility?',
+    options: [
+      'Full disk encryption',
+      'Role-based access control',
+      'Dynamic data masking or static data anonymization',
+      'Database activity monitoring'
+    ],
+    correctAnswer: 2,
+    explanation: 'Data masking (static for non-production environments or dynamic for real-time masking) replaces sensitive data with realistic but fictional data, maintaining referential integrity and data utility for testing while protecting PII. Static anonymization permanently alters copies for non-production use. Encryption, RBAC, and monitoring don\'t address the need to provide usable test data.',
+    reference: 'NIST SP 800-188, De-Identifying Government Datasets'
+  },
+  {
+    id: 'isc-wc-213',
+    section: 'ISC',
+    blueprintArea: 'Information Systems and Data Management',
+    topicId: 'data-governance',
+    topic: 'Data Governance',
+    subtopic: 'Data Classification',
+    difficulty: 'medium',
+    question: 'A company is implementing a data classification scheme. Which approach is MOST effective for ensuring sensitive data is properly classified?',
+    options: [
+      'Classify all data as confidential by default',
+      'Allow users to self-classify their own data without oversight',
+      'Define clear classification criteria with data owner accountability',
+      'Use only automated classification tools without human review'
+    ],
+    correctAnswer: 2,
+    explanation: 'Effective data classification requires clear criteria defining each classification level, combined with data owner accountability for applying classifications correctly. Over-classification (all confidential) wastes resources, user self-classification without oversight leads to inconsistency, and purely automated tools miss context. A governance framework with defined criteria and owner responsibility is most effective.',
+    reference: 'ISO 27002:2022, Information Classification'
+  },
+  {
+    id: 'isc-wc-214',
+    section: 'ISC',
+    blueprintArea: 'Information Systems and Data Management',
+    topicId: 'data-governance',
+    topic: 'Data Governance',
+    subtopic: 'Data Retention and Destruction',
+    difficulty: 'hard',
+    question: 'A company subject to multiple regulations (SOX, HIPAA, industry-specific) has conflicting data retention requirements. Which approach should the company take?',
+    options: [
+      'Follow the shortest retention period to minimize data exposure',
+      'Follow the longest applicable retention period for each data type',
+      'Delete all data after 7 years as a standard practice',
+      'Retain data indefinitely to avoid any compliance issues'
+    ],
+    correctAnswer: 1,
+    explanation: 'When multiple retention requirements apply to the same data, organizations must follow the longest applicable period to avoid regulatory violations. Deleting data too early could violate regulations requiring longer retention. However, once the longest period expires, data should be destroyed to minimize risk. Indefinite retention creates unnecessary risk and may violate data minimization principles.',
+    reference: 'ARMA International, Generally Accepted Recordkeeping Principles'
+  },
+  // TCP - S Corporation Taxation Advanced
+  {
+    id: 'tcp-wc-211',
+    section: 'TCP',
+    blueprintArea: 'Entity Tax Planning',
+    topicId: 's-corp-taxation',
+    topic: 'S Corporation Taxation',
+    subtopic: 'Built-In Gains Tax',
+    difficulty: 'hard',
+    question: 'An S corporation converted from C corporation status five years ago. At conversion, it held land with FMV of $2,000,000 and basis of $500,000. This year, the land is sold for $2,500,000. What is the built-in gains tax consequence?',
+    options: [
+      'No built-in gains tax; the 5-year recognition period has expired',
+      'Built-in gains tax on $1,500,000 (the unrealized gain at conversion)',
+      'Built-in gains tax on $2,000,000 (total gain)',
+      'Built-in gains tax on $500,000 (post-conversion appreciation)'
+    ],
+    correctAnswer: 1,
+    explanation: 'The built-in gains (BIG) tax recognition period is 5 years post-TCJA (reduced from 10 years). Since exactly 5 years have passed, the sale occurs within the recognition period. The BIG tax applies to the lesser of: (1) recognized built-in gain ($1,500,000 FMV at conversion minus $500,000 basis) or (2) taxable income. Post-conversion appreciation ($500,000) is not subject to BIG tax.',
+    reference: 'IRC Section 1374, Tax on Built-In Gains'
+  },
+  {
+    id: 'tcp-wc-212',
+    section: 'TCP',
+    blueprintArea: 'Entity Tax Planning',
+    topicId: 's-corp-taxation',
+    topic: 'S Corporation Taxation',
+    subtopic: 'Accumulated Adjustments Account',
+    difficulty: 'hard',
+    question: 'An S corporation has the following: beginning AAA $100,000; ordinary income $80,000; separately stated deduction (charitable contribution) $10,000; distribution to shareholder $120,000. There is no E&P from C corporation years. What is the ending AAA?',
+    options: [
+      '$50,000',
+      '$70,000',
+      '$0 with $50,000 taxable dividend',
+      '$0 with $50,000 return of capital'
+    ],
+    correctAnswer: 0,
+    explanation: 'AAA is calculated: Beginning $100,000 + Income $80,000 - Deductions $10,000 = $170,000 before distributions. Distributions reduce AAA but not below zero. Distributable AAA = $170,000, but only $120,000 was distributed. Ending AAA = $170,000 - $120,000 = $50,000. Since there\'s no C corp E&P, the entire distribution is tax-free return of basis (then capital gain if exceeds basis).',
+    reference: 'IRC Section 1368, Distributions'
+  },
+  {
+    id: 'tcp-wc-213',
+    section: 'TCP',
+    blueprintArea: 'Entity Tax Planning',
+    topicId: 's-corp-taxation',
+    topic: 'S Corporation Taxation',
+    subtopic: 'Second Class of Stock',
+    difficulty: 'medium',
+    question: 'An S corporation has various debt instruments outstanding. Which of the following would most likely be recharacterized as a second class of stock, potentially terminating the S election?',
+    options: [
+      'A bank loan with standard commercial terms',
+      'A shareholder loan with interest rate significantly above market rate and contingent payments based on profits',
+      'Accounts payable to a related vendor',
+      'A convertible debt instrument held by a non-shareholder'
+    ],
+    correctAnswer: 1,
+    explanation: 'A debt instrument may be reclassified as equity (second class of stock) if it has characteristics suggesting equity rather than debt. Key factors include: contingent payments based on profits, interest rates significantly above market, subordination, lack of repayment dates. A shareholder loan with above-market interest and profit-based contingent payments resembles preferred stock and could terminate S status.',
+    reference: 'Treasury Regulations Section 1.1361-1(l), Second Class of Stock'
+  },
+  {
+    id: 'tcp-wc-214',
+    section: 'TCP',
+    blueprintArea: 'Entity Tax Planning',
+    topicId: 's-corp-taxation',
+    topic: 'S Corporation Taxation',
+    subtopic: 'Inadvertent Termination Relief',
+    difficulty: 'medium',
+    question: 'An S corporation unknowingly issues stock to a partnership (ineligible shareholder), which is discovered 18 months later. The company immediately redeems the shares. What should the company do to preserve S status?',
+    options: [
+      'S status is permanently terminated; no relief is available',
+      'File a protective C corporation return and amend shareholder returns',
+      'Request inadvertent termination relief from the IRS under Section 1362(f)',
+      'The termination is automatically ignored since it was less than 24 months'
+    ],
+    correctAnswer: 2,
+    explanation: 'Under IRC Section 1362(f), if an S corporation\'s election terminates due to an inadvertent event, the IRS may "waive" the termination if: (1) the termination was inadvertent, (2) steps are taken to correct the disqualifying condition within a reasonable time, and (3) the corporation and shareholders agree to be treated as if the election had been in effect. Request relief via private letter ruling.',
+    reference: 'IRC Section 1362(f), Inadvertent Terminations'
+  }
+];

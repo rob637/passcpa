@@ -371,14 +371,15 @@ describe('subscription service', () => {
   });
 
   describe('subscriptionService.endTrial', () => {
-    it('should revert to free tier', async () => {
+    it('should revert to free tier with expired status', async () => {
       await subscriptionService.endTrial('test-user');
 
       expect(mockUpdateDoc).toHaveBeenCalled();
       const updateCall = mockUpdateDoc.mock.calls[0];
       expect(updateCall[1].tier).toBe('free');
-      expect(updateCall[1].status).toBe('active');
-      expect(updateCall[1].trialEnd).toBeNull();
+      expect(updateCall[1].status).toBe('expired');
+      // trialEnd is preserved (not set to null) to track trial history
+      expect(updateCall[1].trialEnd).toBeUndefined();
     });
   });
 
